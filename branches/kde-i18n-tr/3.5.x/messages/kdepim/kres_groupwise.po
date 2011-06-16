@@ -1,0 +1,328 @@
+# translation of kres_groupwise.po to Türkçe
+#
+# Görkem Çetin <gorkem@kde.org.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kres_groupwise\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-08-02 01:15+0200\n"
+"PO-Revision-Date: 2008-02-29 00:11+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@lists.kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: LoKalize 0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Tolga Günkut"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "cetingonul@ttnet.net.tr"
+
+#: kabc_resourcegroupwise.cpp:290
+#, c-format
+msgid "Loading GroupWise resource %1"
+msgstr "GroupWise kaynağı yükleniyor: %1 "
+
+#: kabc_resourcegroupwise.cpp:363
+msgid "Fetching System Address Book"
+msgstr "Sistem Adres Defteri Getiriliyor"
+
+#: kabc_resourcegroupwise.cpp:373
+msgid "Fetching User Address Books"
+msgstr "Kullanıcı Adres Defterleri Getiriliyor"
+
+#: kabc_resourcegroupwise.cpp:443
+msgid "Updating System Address Book"
+msgstr "Güncellenen Sistem Adres Defteri"
+
+#: kabc_resourcegroupwiseconfig.cpp:64 kcal_resourcegroupwiseconfig.cpp:50
+msgid "URL:"
+msgstr "URL:"
+
+#: kabc_resourcegroupwiseconfig.cpp:70 kcal_resourcegroupwiseconfig.cpp:55
+msgid "User:"
+msgstr "Kullanıcı:"
+
+#: kabc_resourcegroupwiseconfig.cpp:76 kcal_resourcegroupwiseconfig.cpp:60
+msgid "Password:"
+msgstr "Parola:"
+
+#: kabc_resourcegroupwiseconfig.cpp:88
+msgid "Retrieve Address Book List From Server"
+msgstr "Sunucudan Adres Defteri Listesini Getir "
+
+#: kabc_resourcegroupwiseconfig.cpp:92
+msgid "Address Book"
+msgstr "Adres Defteri"
+
+#: kabc_resourcegroupwiseconfig.cpp:93
+msgid "Personal"
+msgstr "Kişisel"
+
+#: kabc_resourcegroupwiseconfig.cpp:94
+msgid "Frequent Contacts"
+msgstr "Sık Bağlanılanlar"
+
+#: kabc_resourcegroupwiseconfig.cpp:99
+msgid "Address book for new contacts:"
+msgstr "Yeni bağlantılar için adres defteri"
+
+#: kcal_resourcegroupwise.cpp:167
+msgid "Downloading calendar"
+msgstr "İndirilen takvim"
+
+#: kcal_resourcegroupwise.cpp:192
+msgid "Error parsing calendar data."
+msgstr "Hata ayrıştırma takvim verisi"
+
+#: kcal_resourcegroupwise.cpp:248
+msgid "Unable to login to server: "
+msgstr "Sunucuya erişim olanaksız: "
+
+#: kcal_resourcegroupwise.cpp:282
+msgid "Added"
+msgstr "Ekledi"
+
+#: kcal_resourcegroupwise.cpp:283
+msgid "Changed"
+msgstr "İptal Etti"
+
+#: kcal_resourcegroupwise.cpp:284
+msgid "Deleted"
+msgstr "Sildi"
+
+#: kcal_resourcegroupwiseconfig.cpp:66
+msgid "View User Settings"
+msgstr "Kullanıcı ayarlarını görüntüle"
+
+#: kcal_resourcegroupwiseconfig.cpp:126
+msgid "GroupWise Settings"
+msgstr "GroupWise ayarları"
+
+#. i18n: file groupwisesettingswidgetbase.ui line 22
+#: rc.cpp:3 soap/contactconverter.cpp:264
+#, no-c-format
+msgid "Group"
+msgstr "Grup"
+
+#. i18n: file groupwisesettingswidgetbase.ui line 33
+#: rc.cpp:6
+#, no-c-format
+msgid "Setting"
+msgstr "Ayarlar"
+
+#. i18n: file groupwisesettingswidgetbase.ui line 44
+#: rc.cpp:9
+#, no-c-format
+msgid "Value"
+msgstr "Değer"
+
+#. i18n: file groupwisesettingswidgetbase.ui line 55
+#: rc.cpp:12
+#, no-c-format
+msgid "Locked"
+msgstr "Kilitli"
+
+#. i18n: file kresources_kabc_groupwise.kcfg line 9
+#: rc.cpp:15 rc.cpp:60
+#, no-c-format
+msgid "Server URL"
+msgstr "URL Sunucu"
+
+#. i18n: file kresources_kabc_groupwise.kcfg line 10
+#: rc.cpp:18 rc.cpp:63
+#, no-c-format
+msgid "URL of SOAP interface of GroupWise server"
+msgstr "GroupWise sunucusunun SOAP arayüzünün URL'si"
+
+#. i18n: file kresources_kabc_groupwise.kcfg line 13
+#: rc.cpp:21 rc.cpp:66
+#, no-c-format
+msgid "User Name"
+msgstr "Kullanıcı Adı"
+
+#. i18n: file kresources_kabc_groupwise.kcfg line 16
+#: rc.cpp:24 rc.cpp:69 soap/soapdebug.cpp:40
+#, no-c-format
+msgid "Password"
+msgstr "Parola"
+
+#. i18n: file kresources_kabc_groupwise.kcfg line 21
+#: rc.cpp:27
+#, no-c-format
+msgid "Ids of Address Books"
+msgstr "Adres Defteri Erişim Numaraları(EN)"
+
+#. i18n: file kresources_kabc_groupwise.kcfg line 24
+#: rc.cpp:30
+#, no-c-format
+msgid "Names of Address Books"
+msgstr "Adres Defterlerinin isimleri"
+
+#. i18n: file kresources_kabc_groupwise.kcfg line 27
+#: rc.cpp:33
+#, no-c-format
+msgid "Personal State of Address Books"
+msgstr "Adres Defterlerinin Kişisel Durumu"
+
+#. i18n: file kresources_kabc_groupwise.kcfg line 30
+#: rc.cpp:36
+#, no-c-format
+msgid "Frequent Contacts state of Address Books"
+msgstr "Adres Defterlerinin Sık Bağlanılanlar durumu"
+
+#. i18n: file kresources_kabc_groupwise.kcfg line 33
+#: rc.cpp:39
+#, no-c-format
+msgid "Readable Address Books"
+msgstr "Okunabilen Adres Defterleri"
+
+#. i18n: file kresources_kabc_groupwise.kcfg line 36
+#: rc.cpp:42
+#, no-c-format
+msgid "Address Book for new Contacts"
+msgstr "Yeni Bağlantılar için Adres Defteri"
+
+#. i18n: file kresources_kabc_groupwise.kcfg line 39
+#: rc.cpp:45
+#, no-c-format
+msgid "ID of System Address Book"
+msgstr "Sistem Adres Defterinin Erişim Numarası(EN)"
+
+#. i18n: file kresources_kabc_groupwise.kcfg line 42
+#: rc.cpp:48
+#, no-c-format
+msgid "Last time the Post Office was rebuilt"
+msgstr "Son kez Posta Ofisi yeniden inşa edildi."
+
+#. i18n: file kresources_kabc_groupwise.kcfg line 45
+#: rc.cpp:51
+#, no-c-format
+msgid "The first sequence number of the GW System Address Book held locally"
+msgstr ""
+
+#. i18n: file kresources_kabc_groupwise.kcfg line 48
+#: rc.cpp:54
+#, no-c-format
+msgid "The last sequence number of the GW System Address Book held locally"
+msgstr ""
+
+#. i18n: file kresources_kabc_groupwise.kcfg line 51
+#: rc.cpp:57
+#, no-c-format
+msgid "Applications which should load the System Address Book"
+msgstr "Sistem Adres Defterini yüklemesi gereken uygulama"
+
+#. i18n: file kresources_kcal_groupwise.kcfg line 19
+#: rc.cpp:72
+#, no-c-format
+msgid "TCP Port"
+msgstr "TCP Portu"
+
+#: soap/contactconverter.cpp:251
+msgid "Resource"
+msgstr "Kaynak"
+
+#: soap/groupwiseserver.cpp:135 soap/groupwiseserver.cpp:152
+#, c-format
+msgid "Connect failed: %1."
+msgstr "Bağlantı başarısız: %1 "
+
+#: soap/groupwiseserver.cpp:344
+msgid "Login failed, but the GroupWise server did not report an error"
+msgstr "Erişim başarısız, fakat GroupWise sunucusu bir hata raporlamadı. "
+
+#: soap/groupwiseserver.cpp:1448
+msgid "SSL Error"
+msgstr "SSL hatası"
+
+#: soap/gwjobs.cpp:124
+#, c-format
+msgid "Unable to read GroupWise address book: %1"
+msgstr "GroupWise adres defterini okumak olanaksız: %1 "
+
+#: soap/gwjobs.cpp:616
+msgid "Unable to read GroupWise address book: reading %1 returned no items."
+msgstr ""
+"GroupWise adres defteri okunamadı: okunan %1 hiçbir öğe geri döndürmedi."
+
+#: soap/incidenceconverter.cpp:231
+msgid "Novell GroupWise does not support locations for to-dos."
+msgstr "Novell GroupWise yapılacak ögelerini desteklemiyor."
+
+#: soap/ksslsocket.cpp:324
+msgid ""
+"The IP address of the host %1 does not match the one the certificate was issued "
+"to."
+msgstr ""
+"Ana makinanın IP adresi %1 yayınlanan sertifikaların herhangi biriyle "
+"uyuşmuyor."
+
+#: soap/ksslsocket.cpp:329 soap/ksslsocket.cpp:339 soap/ksslsocket.cpp:355
+msgid "Server Authentication"
+msgstr "Sunucu Doğrulama"
+
+#: soap/ksslsocket.cpp:330 soap/ksslsocket.cpp:340
+msgid "&Details"
+msgstr "&Ayrıntılar"
+
+#: soap/ksslsocket.cpp:335
+msgid "The server certificate failed the authenticity test (%1)."
+msgstr "Sunucu sertifikası doğrulama testinde başarısız oldu (%1)."
+
+#: soap/ksslsocket.cpp:352
+msgid ""
+"Would you like to accept this certificate forever without being prompted?"
+msgstr "Bu sertifika istemde bulunmaksızın daima kabul edilsin mi?"
+
+#: soap/ksslsocket.cpp:356
+msgid "&Forever"
+msgstr "&Daima"
+
+#: soap/ksslsocket.cpp:357
+msgid "&Current Sessions Only"
+msgstr "&Sadece Şuanki bölümler"
+
+#: soap/soapdebug.cpp:36
+msgid "Server"
+msgstr "Sunucu"
+
+#: soap/soapdebug.cpp:38
+msgid "User"
+msgstr "Kullanıcı"
+
+#: soap/soapdebug.cpp:42
+msgid "Free/Busy user name"
+msgstr "Serbest/Meşgul kullanıcı adı"
+
+#: soap/soapdebug.cpp:43
+msgid "Addressbook identifier"
+msgstr "Adres Defteri tanımlayıcı"
+
+#: soap/soapdebug.cpp:49
+msgid "Groupwise Soap Debug"
+msgstr "Groupwise SOAP Hata ayıklaması"
+
+#, fuzzy
+#~ msgid "Downloading system addressbook"
+#~ msgstr "İndirilen adres defteri"
+
+#, fuzzy
+#~ msgid "Downloading user addressbooks"
+#~ msgstr "İndirilen adres defteri"
+
+#~ msgid "Co&ntinue"
+#~ msgstr "De&vam"
+
+#~ msgid "Form1"
+#~ msgstr "Form 1"

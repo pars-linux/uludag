@@ -1,0 +1,141 @@
+# translation of kfouleggs.po to Türkçe
+# translation of kfouleggs.po to Turkish
+# Copyright (C) 2004, 2005 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2002.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>,2003.
+# Ömer Fadıl USTA <omer_fad@yahoo.com>, 2004.
+# Bülent ŞENER <bulent@kde.org.tr>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kfouleggs\n"
+"POT-Creation-Date: 2005-05-18 21:24+0200\n"
+"PO-Revision-Date: 2005-08-10 13:41+0300\n"
+"Last-Translator: Bülent ŞENER <bulent@kde.org.tr>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.1\n"
+
+#: ai.cpp:10
+msgid "Occupied lines:"
+msgstr "Doldurulmuş satırlar:"
+
+#: ai.cpp:12
+msgid "Number of spaces:"
+msgstr "Boşluk sayısı:"
+
+#: ai.cpp:12
+msgid "Number of spaces under mean height"
+msgstr "Kritik yükseklik altındaki boşluk sayısı:"
+
+#: ai.cpp:14
+msgid "Peak-to-peak distance:"
+msgstr "Uçtan-uca uzaklık:"
+
+#: ai.cpp:16
+msgid "Mean height:"
+msgstr "Kritik yükseklik:"
+
+#: ai.cpp:18
+msgid "Number of removed eggs:"
+msgstr "Silinen yumurta sayısı:"
+
+#: ai.cpp:20
+msgid "Number of puyos:"
+msgstr "Yumurta sayısı:"
+
+#: ai.cpp:22
+msgid "Number of chained puyos:"
+msgstr "Bağlı yumurta sayısı:"
+
+#: field.cpp:17
+msgid "Display the amount of foul eggs sent by your opponent."
+msgstr "Sizden rakibe gönderilen bozuk yumurtaların sayısı göster"
+
+#: field.cpp:42
+msgid "Total:"
+msgstr "Toplam:"
+
+#: field.cpp:49
+msgid ""
+"Display the number of removed groups (\"puyos\") classified by the number of "
+"chained removal."
+msgstr "Kaldırılmış kümelerin (\"puyoları\") sayısını göster."
+
+#: field.cpp:60
+msgid "Display the number of removed groups (\"puyos\")."
+msgstr "Kaldırılmış kümelerin (\"puyoları\") sayısını göster."
+
+#: main.cpp:24
+msgid "KFoulEggs"
+msgstr "KÇürükYumurtalar"
+
+#: main.cpp:25
+msgid ""
+"KFoulEggs is an adaptation of the well-known\n"
+"(at least in Japan) PuyoPuyo game"
+msgstr ""
+"KÇürükYumurtalar (en azından Japonya'da) iyi\n"
+"bilinen PuyoPuyo oyununun bir uyarlamasıdır."
+
+#: main.cpp:28
+msgid "Puyos"
+msgstr "Puyolar"
+
+#: piece.cpp:30
+msgid "Garbage color:"
+msgstr "Çöp rengi:"
+
+#: piece.cpp:31
+msgid "Color #%1:"
+msgstr "Renk #%1:"
+
+#. i18n: file kfouleggsui.rc line 6
+#: rc.cpp:3
+#, no-c-format
+msgid "&Multiplayer"
+msgstr "&Çoklu Oyuncu"
+
+#. i18n: file kfouleggs.kcfg line 8
+#: rc.cpp:6
+#, no-c-format
+msgid "Occupied lines"
+msgstr "Dolu yollar"
+
+#. i18n: file kfouleggs.kcfg line 14
+#: rc.cpp:9
+#, no-c-format
+msgid "Number of spaces"
+msgstr "Boşluk sayısı"
+
+#. i18n: file kfouleggs.kcfg line 20
+#: rc.cpp:12
+#, no-c-format
+msgid "Peak-to-peak distance"
+msgstr "Zirveden zirveye uzaklık"
+
+#. i18n: file kfouleggs.kcfg line 26
+#: rc.cpp:15
+#, no-c-format
+msgid "Mean height"
+msgstr "Ortalama yükseklik"
+
+#. i18n: file kfouleggs.kcfg line 32
+#: rc.cpp:18
+#, no-c-format
+msgid "Number of removed eggs"
+msgstr "Silinen yumurta sayısı"
+
+#. i18n: file kfouleggs.kcfg line 38
+#: rc.cpp:21
+#, no-c-format
+msgid "Number of puyos"
+msgstr "Puyoların sayısı"
+
+#. i18n: file kfouleggs.kcfg line 49
+#: rc.cpp:24
+#, no-c-format
+msgid "Number of chained puyos"
+msgstr "Tutsak puyoların sayısı"

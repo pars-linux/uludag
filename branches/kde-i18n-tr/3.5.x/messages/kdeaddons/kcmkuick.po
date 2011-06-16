@@ -1,0 +1,90 @@
+# translation of kcmkuick.po to turkish
+# translation of kcmkuick.po to Turkish
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Görkem Çetin <gorkem@kde.org>, 2003
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkuick\n"
+"POT-Creation-Date: 2004-10-12 01:18+0200\n"
+"PO-Revision-Date: 2004-05-28 12:22+0200\n"
+"Last-Translator: YILDIZ KARDEŞLER <turkishprogram@xposta.com>\n"
+"Language-Team: turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: kcmkuick.cpp:39
+msgid "KCM Kuick"
+msgstr "KCM Kuick"
+
+#: kcmkuick.cpp:40
+msgid "KControl module for Kuick's configuration"
+msgstr "Kuicks yapılandırması için KDE Kontrol Modülü"
+
+#: kcmkuick.cpp:151
+msgid ""
+"<h1>Kuick</h1> With this module you can configure Kuick, the KDE quickcopy and "
+"move plugin for Konqueror."
+msgstr ""
+"<h1>Kuick</h1> Bu modülle Kuick i yapılandırabilirsiniz. Kuick Konqueror için "
+"KDE hızlı kopyalama ve taşıma eklentisidir."
+
+#. i18n: file kcmkuickdialog.ui line 30
+#: rc.cpp:3
+#, no-c-format
+msgid "&Show \"Copy To\" and \"Move To\" entries in context menus"
+msgstr "\"Kopyala\" ve \"Taşı\" girdilerini içerik menü&sünde Göster"
+
+#. i18n: file kcmkuickdialog.ui line 38
+#: rc.cpp:6
+#, no-c-format
+msgid "Copy Operations"
+msgstr "Kopyalama İşlemleri"
+
+#. i18n: file kcmkuickdialog.ui line 55
+#: rc.cpp:9
+#, no-c-format
+msgid "&Clear List"
+msgstr "Listeyi &Temizle"
+
+#. i18n: file kcmkuickdialog.ui line 63
+#: rc.cpp:12 rc.cpp:27
+#, no-c-format
+msgid "folders."
+msgstr "dizin."
+
+#. i18n: file kcmkuickdialog.ui line 79
+#: rc.cpp:15 rc.cpp:24
+#, no-c-format
+msgid "Cache the last"
+msgstr "Son"
+
+#. i18n: file kcmkuickdialog.ui line 117
+#: rc.cpp:18
+#, no-c-format
+msgid "Move Operations"
+msgstr "Taşıma İşlemleri"
+
+#. i18n: file kcmkuickdialog.ui line 134
+#: rc.cpp:21
+#, no-c-format
+msgid "Clear &List"
+msgstr "&Listeyi Temizle"
+
+#~ msgid "Form2"
+#~ msgstr "Form2"

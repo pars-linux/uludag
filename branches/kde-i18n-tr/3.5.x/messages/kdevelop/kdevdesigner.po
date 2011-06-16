@@ -1,0 +1,64 @@
+# translation of kdevdesigner.po to Türkçe
+# translation of kdevdesigner.po to Turkish
+# Copyright (C) 2004, 2005 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Kaya Oğuz <kaya@kuzeykutbu.org>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevdesigner\n"
+"POT-Creation-Date: 2007-03-26 21:53+0200\n"
+"PO-Revision-Date: 2005-07-05 19:06+0300\n"
+"Last-Translator: Kaya Oğuz <kaya@kuzeykutbu.org>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.1\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: kdevdesigner.cpp:78
+msgid "Could not find the KDevDesigner part."
+msgstr "KDevDesigner Bileşeni bulunamadı"
+
+#: main.cpp:31
+msgid "KDE GUI Designer"
+msgstr "KDE Grafik Arayüz Tasarımcısı"
+
+#: main.cpp:37
+#, fuzzy
+msgid "Document to open"
+msgstr "Açılacak belge"
+
+#: main.cpp:43
+msgid "KDevDesigner"
+msgstr "KDevDesigner"
+
+#. i18n: file kdevdesigner_shell.rc line 12
+#: rc.cpp:9
+#, no-c-format
+msgid "&Project"
+msgstr "&Proje"
+
+#. i18n: file kdevdesigner_shell.rc line 18
+#: rc.cpp:15
+#, no-c-format
+msgid "&Layout"
+msgstr "&Düzen"
+
+#. i18n: file kdevdesigner_shell.rc line 21
+#: rc.cpp:18
+#, no-c-format
+msgid "&Window"
+msgstr "&Pencere"

@@ -1,0 +1,183 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ksokoban\n"
+"POT-Creation-Date: 2005-05-18 21:24+0200\n"
+"PO-Revision-Date: 2002-10-18 16:26+0300\n"
+"Last-Translator: Ömer Fadıl USTA <omer_fad@hotmail.com>\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.6\n"
+
+#: InternalCollections.cpp:45
+msgid "Sasquatch"
+msgstr "Sasquatch"
+
+#: InternalCollections.cpp:49
+msgid "Mas Sasquatch"
+msgstr "Mas Sasquatch"
+
+#: InternalCollections.cpp:53
+msgid "Sasquatch III"
+msgstr "Sasquatch III"
+
+#: InternalCollections.cpp:57
+msgid "Microban (easy)"
+msgstr "Mikroban (kolay)"
+
+#: InternalCollections.cpp:61
+msgid "Sasquatch IV"
+msgstr "Sasquatch IV"
+
+#: MainWindow.cpp:93
+msgid "&Load Levels..."
+msgstr "Seviyeleri &Yükle.."
+
+#: MainWindow.cpp:95
+msgid "&Next Level"
+msgstr "&Sonraki Seviye"
+
+#: MainWindow.cpp:97
+msgid "&Previous Level"
+msgstr "Ö&nceki Seviye"
+
+#: MainWindow.cpp:99
+msgid "Re&start Level"
+msgstr "Se&viyeyi Tekrar Başlat"
+
+#: MainWindow.cpp:102
+msgid "&Level Collection"
+msgstr "Seviye &Kolleksiyonu"
+
+#: MainWindow.cpp:117
+msgid "&Slow"
+msgstr "Y&avaş"
+
+#: MainWindow.cpp:118
+msgid "&Medium"
+msgstr "&Orta"
+
+#: MainWindow.cpp:119
+msgid "&Fast"
+msgstr "&Hızlı"
+
+#: MainWindow.cpp:120
+msgid "&Off"
+msgstr "&Dışarı"
+
+#: MainWindow.cpp:123
+msgid "&Animation"
+msgstr "&Canlandırma"
+
+#: MainWindow.cpp:128 MainWindow.cpp:130 MainWindow.cpp:132 MainWindow.cpp:134
+#: MainWindow.cpp:136 MainWindow.cpp:138 MainWindow.cpp:140 MainWindow.cpp:142
+#: MainWindow.cpp:144 MainWindow.cpp:146 MainWindow.cpp:153 MainWindow.cpp:155
+#: MainWindow.cpp:157 MainWindow.cpp:159 MainWindow.cpp:161 MainWindow.cpp:163
+#: MainWindow.cpp:165 MainWindow.cpp:167 MainWindow.cpp:169 MainWindow.cpp:171
+msgid "(unused)"
+msgstr "(kullanılmıyor)"
+
+#: MainWindow.cpp:149
+msgid "&Set Bookmark"
+msgstr "&Yer İmi Koy"
+
+#: MainWindow.cpp:174
+msgid "&Go to Bookmark"
+msgstr "Yer İmine &git"
+
+#: MainWindow.cpp:248
+msgid "(invalid)"
+msgstr "(geçersiz)"
+
+#: MainWindow.cpp:304
+msgid "Load Levels From File"
+msgstr "Seviyeleri Dosyadan Yükle"
+
+#: MainWindow.cpp:331
+msgid "No levels found in file"
+msgstr "Dosyada seviye bulunamadı"
+
+#: PlayField.cpp:53
+msgid "Level:"
+msgstr "Seviye:"
+
+#: PlayField.cpp:53
+msgid "Steps:"
+msgstr "Adımlar:"
+
+#: PlayField.cpp:54
+msgid "Pushes:"
+msgstr "İtmeler:"
+
+#: PlayField.cpp:479
+msgid "Level completed"
+msgstr "Seviye tamamlandı"
+
+#: PlayField.cpp:844
+msgid ""
+"This is the last level in\n"
+"the current collection."
+msgstr ""
+"Bu mevcut kolleksiyonun\n"
+"son seviyesidir."
+
+#: PlayField.cpp:850
+msgid ""
+"You have not completed\n"
+"this level yet."
+msgstr ""
+"Bu seviyeyi henüz\n"
+"tamamlamadınız."
+
+#: PlayField.cpp:864
+msgid ""
+"This is the first level in\n"
+"the current collection."
+msgstr ""
+"Bu mevcut kolleksiyonun\n"
+"ilk seviyesidir."
+
+#: PlayField.cpp:1017
+msgid ""
+"Sorry, bookmarks for external levels\n"
+"is not implemented yet."
+msgstr ""
+"Üzgünüm, harici seviyeler için ayraçlar\n"
+"henüz çalışmıyor"
+
+#: PlayField.cpp:1040
+msgid "This level is broken"
+msgstr "Bu seviye kırık(bozuk)"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Ömer Fadıl USTA"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "omer_fad@hotmail.com"
+
+#: main.cpp:30
+msgid "The japanese warehouse keeper game"
+msgstr "KSokoban geleneksel bir Japon oyunudur"
+
+#: main.cpp:37
+msgid "Level collection file to load"
+msgstr "Yüklenecek Seviye kolleksiyon dosyası"
+
+#: main.cpp:45
+msgid "KSokoban"
+msgstr "KSokoban"
+
+#: main.cpp:53
+msgid "For contributing the Sokoban levels included in this game"
+msgstr "Bu oyundaki Sokoban seviyelerine katkılarından dolayı"

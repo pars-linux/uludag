@@ -1,0 +1,828 @@
+# translation of kimagemapeditor.po to 
+# translation of kimagemapeditor.po to Türkçe
+# translation of kimagemapeditor.po to Turkish
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004.
+# Aydın Demirel <aydin@kde.org.tr>, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: kimagemapeditor\n"
+"POT-Creation-Date: 2007-12-30 01:24+0100\n"
+"PO-Revision-Date: 2005-05-04 22:17+0000\n"
+"Last-Translator: Aydın Demirel <aydin@kde.org.tr>\n"
+"Language-Team:  <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+
+#: kimearea.h:180 kimedialogs.cpp:432
+msgid "Rectangle"
+msgstr "Dikdörtgen"
+
+#: kimearea.h:203 kimedialogs.cpp:433
+msgid "Circle"
+msgstr "Çember"
+
+#: kimearea.h:229 kimedialogs.cpp:434
+msgid "Polygon"
+msgstr "Çokgen"
+
+#: kimagemapeditor.cpp:106 kimagemapeditor.cpp:135 mapslistview.cpp:29
+msgid "Maps"
+msgstr "Haritalar"
+
+#: kimagemapeditor.cpp:245 mapslistview.cpp:158
+msgid "unnamed"
+msgstr "isimsiz"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Engin ÇAĞATAY, Aydın DEMİREL"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "engincagatay@yahoo.com, aydin@kde.org.tr"
+
+#: kimagemapeditor.cpp:259 main.cpp:28
+msgid "An HTML imagemap editor"
+msgstr "Bir HTML resimharitası düzenleyicisi"
+
+#: main.cpp:34
+msgid "Write HTML-Code to stdout on exit"
+msgstr "Çıkışta HTML-Kodu'nu stdout'a yaz"
+
+#: main.cpp:35
+msgid "File to open"
+msgstr "Açılacak dosya"
+
+#: kimagemapeditor.cpp:258 main.cpp:43
+msgid "KImageMapEditor"
+msgstr "KResimHaritaDüzenleyicisi"
+
+#: main.cpp:47
+msgid "For helping me with the Makefiles, and creating the Debian package"
+msgstr ""
+"Makefiles dosyalarıyla ve Debian paketlerinin yapımında yardım ettiği için"
+
+#: main.cpp:48
+msgid "For helping me fixing --enable-final mode"
+msgstr "--enable-final kipini düzeltmede yardım ettiği için"
+
+#: main.cpp:49
+msgid "For the Spanish translation"
+msgstr "İspanyolca çevirisi için"
+
+#: main.cpp:50
+msgid "For the Dutch translation"
+msgstr "Hollandaca çevirisi için"
+
+#: main.cpp:51
+msgid "For the French translation"
+msgstr "Fransızca çevirisi için"
+
+#: arealistview.cpp:38 kimagemapeditor.cpp:105 kimagemapeditor.cpp:134
+msgid "Areas"
+msgstr "Alanlar"
+
+#: arealistview.cpp:39 kimedialogs.cpp:840
+msgid "Preview"
+msgstr "Önizleme"
+
+#: arealistview.cpp:47
+msgid ""
+"<h3>Area List</h3>The area list shows you all areas of the map."
+"<br>The left column shows the link associated with the area; the right column "
+"shows the part of the image that is covered by the area."
+"<br>The maximum size of the preview images can be configured."
+msgstr ""
+"<h3>Alan Listesi</h3>Alan Listesi, haritanın tüm alanlarını gösterir."
+"<br>Sol sütun alanla ilişkilendirilmiş köprüyü, sağ sütun ise alanın içerdiği "
+"resmin bir bölümünü gösterir."
+"<br>Önizleme resimlerinin en yüksek boyutu ayarlanabilir."
+
+#: arealistview.cpp:51
+msgid "A list of all areas"
+msgstr "Tüm alanların bir listesi"
+
+#: kimecommands.cpp:33
+#, c-format
+msgid "Cut %1"
+msgstr "%1 Kes"
+
+#: kimecommands.cpp:77
+#, c-format
+msgid "Delete %1"
+msgstr "%1 Sil"
+
+#: kimecommands.cpp:87
+#, c-format
+msgid "Paste %1"
+msgstr "%1 Yapıştır"
+
+#: kimecommands.cpp:132
+#, c-format
+msgid "Move %1"
+msgstr "%1 Taşı"
+
+#: kimecommands.cpp:194
+#, c-format
+msgid "Resize %1"
+msgstr "%1 Yeniden boyutlandır"
+
+#: kimecommands.cpp:241
+#, c-format
+msgid "Add point to %1"
+msgstr "%1'e Nokta ekle"
+
+#: kimecommands.cpp:290
+#, c-format
+msgid "Remove point from %1"
+msgstr "%1'den Nokta sil"
+
+#: kimecommands.cpp:343
+#, c-format
+msgid "Create %1"
+msgstr "%1 Yarat"
+
+#: imageslistview.cpp:57 kimagemapeditor.cpp:107 kimagemapeditor.cpp:136
+#: kimeshell.cpp:160
+msgid "Images"
+msgstr "Resimler"
+
+#: imageslistview.cpp:58
+msgid "Usemap"
+msgstr "Kullanımharitası"
+
+#: kimearea.cpp:49
+msgid "noname"
+msgstr "isimsiz"
+
+#: kimearea.cpp:1451
+msgid "Number of Areas"
+msgstr "Alanların Sayısı"
+
+#. i18n: file kimagemapeditorpartui.rc line 50
+#: rc.cpp:12
+#, no-c-format
+msgid "&Map"
+msgstr "&Harita"
+
+#. i18n: file kimagemapeditorpartui.rc line 61
+#: kimagemapeditor.cpp:549 rc.cpp:15
+#, no-c-format
+msgid "&Image"
+msgstr "&Resim"
+
+#. i18n: file kimagemapeditorpartui.rc line 77
+#: rc.cpp:21 rc.cpp:30
+#, no-c-format
+msgid "KImageMapEditor Main Toolbar"
+msgstr "KResimHaritaDüzenleyici Ana Araç Çubuğu"
+
+#. i18n: file kimagemapeditorpartui.rc line 96
+#: rc.cpp:24
+#, no-c-format
+msgid "KImageMapEditor Draw Toolbar"
+msgstr "KResimHaritaDüzenleyici Çizim Araç Çubuğu"
+
+#: kimagemapeditor.cpp:436
+msgid ""
+"<h3>Open File</h3>Click this to <em>open</em> a new picture or HTML file."
+msgstr ""
+"<h3>Dosya Aç</h3> Yeni bir resim ya da HTML dosyası <em>açmak</em> "
+"için buna tıklayın."
+
+#: kimagemapeditor.cpp:437
+msgid "Open new picture or HTML file"
+msgstr "Yeni bir resim ya da HTML dosyası aç"
+
+#: kimagemapeditor.cpp:445
+msgid ""
+"<h3>Save File</h3>Click this to <em>save</em> the changes to the HTML file."
+msgstr ""
+"<h3>Dosyayı Kaydet</h3> Değişiklikleri HTML dosyasına <em>kaydetmek</em> "
+"için buna tıklayın."
+
+#: kimagemapeditor.cpp:446
+msgid "Save HTML file"
+msgstr "HTML dosyası kaydet"
+
+#: kimagemapeditor.cpp:455
+msgid ""
+"<h3>Close File</h3>Click this to <em>close</em> the currently open HTML file."
+msgstr ""
+"<h3>Dosyayı Kapat</h3> Mevcut açık HTML dosyasını <em>kapatmak</em> "
+"için buna tıklayın."
+
+#: kimagemapeditor.cpp:456
+msgid "Close HTML file"
+msgstr "HTML dosyasını kapat"
+
+#: kimagemapeditor.cpp:461
+msgid "<h3>Copy</h3>Click this to <em>copy</em> the selected area."
+msgstr "<h3>Kopyala</h3> Seçili alanı <em>kopyalamak</em> için buna tıklayın."
+
+#: kimagemapeditor.cpp:468
+msgid "<h3>Cut</h3>Click this to <em>cut</em> the selected area."
+msgstr "<h3>Kes</h3>Seçili alanı <em>kesmek</em> için buna tıklayın."
+
+#: kimagemapeditor.cpp:475
+msgid "<h3>Paste</h3>Click this to <em>paste</em> the copied area."
+msgstr ""
+"<h3>Yapıştır</h3> kopyalanmış alanı <em>yapıştırmak </em> için buna tıklayın."
+
+#: kimagemapeditor.cpp:484
+msgid "<h3>Delete</h3>Click this to <em>delete</em> the selected area."
+msgstr "<h3>Sil</h3>Seçili alanı <em>silmek</em> için buna tıklayın."
+
+#: kimagemapeditor.cpp:492
+msgid "Pr&operties"
+msgstr "&Özellikler"
+
+#: kimagemapeditor.cpp:504
+msgid "<h3>Zoom</h3>Choose the desired zoom level."
+msgstr "<h3>Büyütme</h3>İstediğiniz büyütme seviyesini seçin."
+
+#: kimagemapeditor.cpp:507
+#, c-format
+msgid "25%"
+msgstr "25%"
+
+#: kimagemapeditor.cpp:508
+#, c-format
+msgid "50%"
+msgstr "50%"
+
+#: kimagemapeditor.cpp:509
+#, c-format
+msgid "100%"
+msgstr "100%"
+
+#: kimagemapeditor.cpp:510
+#, c-format
+msgid "150%"
+msgstr "150%"
+
+#: kimagemapeditor.cpp:511
+#, c-format
+msgid "200%"
+msgstr "200%"
+
+#: kimagemapeditor.cpp:512
+#, c-format
+msgid "250%"
+msgstr "250%"
+
+#: kimagemapeditor.cpp:513
+#, c-format
+msgid "300%"
+msgstr "300%"
+
+#: kimagemapeditor.cpp:514
+#, c-format
+msgid "500%"
+msgstr "500%"
+
+#: kimagemapeditor.cpp:515
+#, c-format
+msgid "750%"
+msgstr "750%"
+
+#: kimagemapeditor.cpp:516
+#, c-format
+msgid "1000%"
+msgstr "1000%"
+
+#: kimagemapeditor.cpp:520
+msgid "Highlight Areas"
+msgstr "Vurgulama Alanları"
+
+#: kimagemapeditor.cpp:523
+msgid "Show Alt Tag"
+msgstr "Alt İmi Göster"
+
+#: kimagemapeditor.cpp:526
+msgid "Hide Alt Tag"
+msgstr "Alt İmi Gizle"
+
+#: kimagemapeditor.cpp:529
+msgid "Map &Name..."
+msgstr "Harita &Adı..."
+
+#: kimagemapeditor.cpp:532
+msgid "Ne&w Map..."
+msgstr "&Yeni Harita..."
+
+#: kimagemapeditor.cpp:534
+msgid "Create a new map"
+msgstr "Yeni bir harita oluştur"
+
+#: kimagemapeditor.cpp:536
+msgid "D&elete Map"
+msgstr "Harita &Sil"
+
+#: kimagemapeditor.cpp:538
+msgid "Delete the current active map"
+msgstr "Mevcut aktif haritayı sil"
+
+#: kimagemapeditor.cpp:540
+msgid "Edit &Default Area..."
+msgstr "Ö&ntanımlı Alanı Düzenle..."
+
+#: kimagemapeditor.cpp:542
+msgid "Edit the default area of the current active map"
+msgstr "Mevcut aktif haritanın öntanımlı alanını düzenle"
+
+#: kimagemapeditor.cpp:544
+msgid "&Preview"
+msgstr "Öni&zleme"
+
+#: kimagemapeditor.cpp:546
+msgid "Show a preview"
+msgstr "Önizleme göster"
+
+#: kimagemapeditor.cpp:551
+msgid "Add Image..."
+msgstr "Resim Ekle..."
+
+#: kimagemapeditor.cpp:553
+msgid "Add a new image"
+msgstr "Yeni bir resim ekle"
+
+#: kimagemapeditor.cpp:555
+msgid "Remove Image"
+msgstr "Resim kaldır"
+
+#: kimagemapeditor.cpp:557
+msgid "Remove the current visible image"
+msgstr "Mevcut görünen resmi kaldır"
+
+#: kimagemapeditor.cpp:559
+msgid "Edit Usemap..."
+msgstr "Kullanımharitasını Düzenle..."
+
+#: kimagemapeditor.cpp:561
+msgid "Edit the usemap tag of the current visible image"
+msgstr "Mevcut görünmez resmin kullanımharitası imini düzenle"
+
+#: kimagemapeditor.cpp:563
+msgid "Show &HTML"
+msgstr "&HTML Göster"
+
+#: kimagemapeditor.cpp:568
+msgid "&Selection"
+msgstr "&Seçim"
+
+#: kimagemapeditor.cpp:572
+msgid "<h3>Selection</h3>Click this to select areas."
+msgstr "<h3>Seçim</h3>Alanlar seçmek için buna tıklayın."
+
+#: kimagemapeditor.cpp:578
+msgid "&Circle"
+msgstr "&Çember"
+
+#: kimagemapeditor.cpp:582
+msgid "<h3>Circle</h3>Click this to start drawing a circle."
+msgstr "<h3>Çember</h3>Bir çember çizmeye başlamak için buna tıklayın."
+
+#: kimagemapeditor.cpp:587
+msgid "&Rectangle"
+msgstr "&Dikdörtgen"
+
+#: kimagemapeditor.cpp:591
+msgid "<h3>Rectangle</h3>Click this to start drawing a rectangle."
+msgstr "<h3>Dikdörtgen</h3>bir dikdörtgen çizmeye başlamak için buna tıklayın."
+
+#: kimagemapeditor.cpp:596
+msgid "&Polygon"
+msgstr "Ç&okgen"
+
+#: kimagemapeditor.cpp:600
+msgid "<h3>Polygon</h3>Click this to start drawing a polygon."
+msgstr "<h3>Çokgen</h3>Bir çokgen çizmeye başlamak için buna tıklayın."
+
+#: kimagemapeditor.cpp:605
+msgid "&Freehand Polygon"
+msgstr "Serbest Çizim Ç&okgen"
+
+#: kimagemapeditor.cpp:609
+msgid "<h3>Freehandpolygon</h3>Click this to start drawing a freehand polygon."
+msgstr ""
+"<h3>Serbestçizimçokgeni</h3>Bir serbest çizim çokgeni çizimine başlamak için "
+"buna tıklayın."
+
+#: kimagemapeditor.cpp:614
+msgid "&Add Point"
+msgstr "&Nokta Ekle"
+
+#: kimagemapeditor.cpp:618
+msgid "<h3>Add Point</h3>Click this to add points to a polygon."
+msgstr "<h3>Nokta Ekle</h3>Bir çokgene noktalar eklemek için buna tıklayın."
+
+#: kimagemapeditor.cpp:623
+msgid "&Remove Point"
+msgstr "Nokta &Sil"
+
+#: kimagemapeditor.cpp:627
+msgid "<h3>Remove Point</h3>Click this to remove points from a polygon."
+msgstr "<h3>Nokta Sil</h3>Bir çokgenden noktalar silmek için buna tıklayın."
+
+#: kimagemapeditor.cpp:634
+msgid "Cancel Drawing"
+msgstr "Çizimi İptal Et"
+
+#: kimagemapeditor.cpp:637
+msgid "Move Left"
+msgstr "Sola Taşı"
+
+#: kimagemapeditor.cpp:640
+msgid "Move Right"
+msgstr "Sağa Taşı"
+
+#: kimagemapeditor.cpp:643
+msgid "Move Up"
+msgstr "Yukarı Taşı"
+
+#: kimagemapeditor.cpp:646
+msgid "Move Down"
+msgstr "Aşağı Taşı"
+
+#: kimagemapeditor.cpp:649
+msgid "Increase Width"
+msgstr "Genişliği Artır"
+
+#: kimagemapeditor.cpp:652
+msgid "Decrease Width"
+msgstr "Genişliği Azalt"
+
+#: kimagemapeditor.cpp:655
+msgid "Increase Height"
+msgstr "Yüksekliği Artır"
+
+#: kimagemapeditor.cpp:658
+msgid "Decrease Height"
+msgstr "Yüksekliği Azalt"
+
+#: kimagemapeditor.cpp:673
+msgid "Bring to Front"
+msgstr "Öne Getir"
+
+#: kimagemapeditor.cpp:676
+msgid "Send to Back"
+msgstr "Arkaya Götür"
+
+#: kimagemapeditor.cpp:679
+msgid "Bring Forward One"
+msgstr "Bir Öne Taşı"
+
+#: kimagemapeditor.cpp:681
+msgid "Send Back One"
+msgstr "Bir Arkaya Taşı"
+
+#: kimagemapeditor.cpp:690
+msgid "Configure KImageMapEditor..."
+msgstr "KResimHaritaDüzenleyicisi'ni Yapılandır..."
+
+#: kimagemapeditor.cpp:695
+msgid "Show Area List"
+msgstr "Alan Listesini Göster"
+
+#: kimagemapeditor.cpp:699
+msgid "Show Map List"
+msgstr "Harita Listesini Göster"
+
+#: kimagemapeditor.cpp:703
+msgid "Show Image List"
+msgstr "Resim Listesini Göster"
+
+#: kimagemapeditor.cpp:707
+msgid "Hide Area List"
+msgstr "Alan Listesini Gizle"
+
+#: kimagemapeditor.cpp:708
+msgid "Hide Map List"
+msgstr "Harita Listesini Gizle"
+
+#: kimagemapeditor.cpp:709
+msgid "Hide Image List"
+msgstr "Resim Listesini Gizle"
+
+#: kimagemapeditor.cpp:722
+msgid " Selection: -  Cursor: x: 0, y: 0 "
+msgstr " Seçim: -  İmleç: x: 0, y: 0 "
+
+#: kimagemapeditor.cpp:798
+msgid " Cursor: x: %1, y: %2 "
+msgstr " İmleç: x: %1, y: %2 "
+
+#: kimagemapeditor.cpp:806 kimagemapeditor.cpp:819
+msgid " Selection: x: %1, y: %2, w: %3, h: %4 "
+msgstr " Seçim: x: %1, y: %2, gen: %3, yük: %4 "
+
+#: kimagemapeditor.cpp:811
+msgid " Selection: - "
+msgstr " Seçim: - "
+
+#: kimagemapeditor.cpp:871
+msgid "Drop an image or HTML file"
+msgstr "Bir resmi ya da HTML dosyasını tut"
+
+#: kimagemapeditor.cpp:1511 kimagemapeditor.cpp:1515
+msgid "Enter Map Name"
+msgstr "Harita İsmi Girin"
+
+#: kimagemapeditor.cpp:1512 kimagemapeditor.cpp:1516
+msgid "Enter the name of the map:"
+msgstr "Haritanın ismini girin:"
+
+#: kimagemapeditor.cpp:1522
+msgid "The name <em>%1</em> already exists."
+msgstr "<em>%1</em> ismi zaten var."
+
+#: kimagemapeditor.cpp:1532
+msgid "HTML Code of Map"
+msgstr "Haritanın HTML Kodu"
+
+#: kimagemapeditor.cpp:1572
+msgid ""
+"*.png *.jpg *.jpeg *.gif *.htm *.html|Web File\n"
+"*.png *.jpg *.jpeg *.gif *.bmp *.xbm *.xpm *.pnm *.mng|Images\n"
+"*.htm *.html|HTML Files\n"
+"*.png|PNG Images\n"
+"*.jpg *.jpeg|JPEG Images\n"
+"*.gif|GIF-Images\n"
+"*|All Files"
+msgstr ""
+"*.png *.jpg *.jpeg *.gif *.htm *.html|Web Dosyası\n"
+"*.png *.jpg *.jpeg *.gif *.bmp *.xbm *.xpm *.pnm *.mng|Resimler\n"
+"*.htm *.html|HTML Dosyaları\n"
+"*.png|PNG Resimleri\n"
+"*.jpg *.jpeg|JPEG Resimleri\n"
+"*.gif|GIF-Resimleri\n"
+"*|Tüm Dosyalar"
+
+#: kimagemapeditor.cpp:1576
+msgid "Choose File to Open"
+msgstr "Açılacak Dosyayı Seç"
+
+#: kimagemapeditor.cpp:1613
+msgid "HTML File"
+msgstr "HTML Dosyası"
+
+#: kimagemapeditor.cpp:1614
+msgid "Text File"
+msgstr "Metin Dosyası"
+
+#: kimagemapeditor.cpp:1614 kimedialogs.cpp:509 kimeshell.cpp:162
+msgid "All Files"
+msgstr "Tüm Dosyalar"
+
+#: kimagemapeditor.cpp:1625
+msgid ""
+"<qt>The file <em>%1</em> already exists."
+"<br>Do you want to overwrite it?</qt>"
+msgstr "<qt><em>%1</em> zaten var.<br>Üzerine yazmak ister misiniz?</qt>"
+
+#: kimagemapeditor.cpp:1626
+msgid "Overwrite File?"
+msgstr "Dosyanın Üzerine Yazılsın mı?"
+
+#: kimagemapeditor.cpp:1626
+#, fuzzy
+msgid "Overwrite"
+msgstr "Dosyanın Üzerine Yazılsın mı?"
+
+#: kimagemapeditor.cpp:1630
+msgid "<qt>You do not have write permission for the file <em>%1</em>.</qt>"
+msgstr "<qt><em>%1</em> dosyası için yazma izniniz yok.</qt>"
+
+#: kimagemapeditor.cpp:1649
+msgid "<qt>The file <b>%1</b> does not exist.</qt>"
+msgstr "<qt><b>%1</b> dosyası bulunamadı.</qt>"
+
+#: kimagemapeditor.cpp:1650
+msgid "File Does Not Exist"
+msgstr "Dosya Mevcut Değil"
+
+#: kimagemapeditor.cpp:2270
+msgid ""
+"<qt>The file <i>%1</i> could not be saved, because you do not have the required "
+"write permissions.</qt>"
+msgstr ""
+"<qt><i>%1</i> dosyası kaydedilemedi, çünkü gerekli olan yazma izinlerine sahip "
+"değilsiniz.</qt>"
+
+#: kimagemapeditor.cpp:2585
+msgid ""
+"<qt>Are you sure you want to delete the map <i>%1</i>? "
+"<br><b>There is no way to undo this.</b></qt>"
+msgstr ""
+"<qt><i>%1</i> haritasının silmek istediğinizden emin misiniz? "
+"<br><b>Bu işlem geri alınamaz.</b></qt>"
+
+#: kimagemapeditor.cpp:2587
+msgid "Delete Map?"
+msgstr "Harita Silinsin mi?"
+
+#: kimagemapeditor.cpp:2634
+msgid ""
+"<qt>The file <i>%1</i> has been modified."
+"<br>Do you want to save it?</qt>"
+msgstr "<qt><i>%1</i> dosyası değiştirildi.<br>Kaydetmek istiyor musunuz?</qt>"
+
+#: kimagemapeditor.cpp:2760 kimagemapeditor.cpp:2762
+msgid "Enter Usemap"
+msgstr "Kullanımharitasını Girin"
+
+#: kimagemapeditor.cpp:2764
+msgid "Enter the usemap value:"
+msgstr "Kullanımharitası değerini girin:"
+
+#: kimeshell.cpp:159
+msgid "Web Files"
+msgstr "Web Dosyaları"
+
+#: kimeshell.cpp:161
+msgid "HTML Files"
+msgstr "HTML Dosyaları"
+
+#: kimeshell.cpp:162
+msgid "PNG Images"
+msgstr "PNG Resimleri"
+
+#: kimeshell.cpp:162
+msgid "JPEG Images"
+msgstr "JPEG Resimleri"
+
+#: kimeshell.cpp:162
+msgid "GIF Images"
+msgstr "GIF Resimleri"
+
+#: kimeshell.cpp:163
+msgid "Choose Picture to Open"
+msgstr "Açılacak Resmi Seçin"
+
+#: kimedialogs.cpp:81
+msgid "Top &X:"
+msgstr "Üst &X:"
+
+#: kimedialogs.cpp:92
+msgid "Top &Y:"
+msgstr "Üst &Y:"
+
+#: kimedialogs.cpp:103
+msgid "&Width:"
+msgstr "&Genişlik:"
+
+#: kimedialogs.cpp:114
+msgid "Hei&ght:"
+msgstr "&Yükseklik:"
+
+#: kimedialogs.cpp:142
+msgid "Center &X:"
+msgstr "Merkez &X:"
+
+#: kimedialogs.cpp:154
+msgid "Center &Y:"
+msgstr "Merkez &Y:"
+
+#: kimedialogs.cpp:166
+msgid "&Radius:"
+msgstr "&Çap:"
+
+#: kimedialogs.cpp:289
+msgid "Top &X"
+msgstr "Üst &X"
+
+#: kimedialogs.cpp:300
+msgid "Top &Y"
+msgstr "Üst &Y"
+
+#: kimedialogs.cpp:336
+msgid "&HREF:"
+msgstr "&LINK:"
+
+#: kimedialogs.cpp:340
+msgid "Alt. &Text:"
+msgstr "Alt. Me&tin:"
+
+#: kimedialogs.cpp:341
+msgid "Tar&get:"
+msgstr "Hede&f:"
+
+#: kimedialogs.cpp:342
+msgid "Tit&le:"
+msgstr "Baş&lık:"
+
+#: kimedialogs.cpp:346
+msgid "Enable default map"
+msgstr "Öntanımlı haritayı etkin kıl"
+
+#: kimedialogs.cpp:376
+msgid "OnClick:"
+msgstr "Tıklandığında:"
+
+#: kimedialogs.cpp:377
+msgid "OnDblClick:"
+msgstr "Çift Tıklandığında:"
+
+#: kimedialogs.cpp:378
+msgid "OnMouseDown:"
+msgstr "Fare aşağı indiğinde:"
+
+#: kimedialogs.cpp:379
+msgid "OnMouseUp:"
+msgstr "Fare yukarı çıktığında:"
+
+#: kimedialogs.cpp:380
+msgid "OnMouseOver:"
+msgstr "Fare üstüne geldiğinde:"
+
+#: kimedialogs.cpp:381
+msgid "OnMouseMove:"
+msgstr "Fare hareketinde:"
+
+#: kimedialogs.cpp:382
+msgid "OnMouseOut:"
+msgstr "Fare uzaklaştığında:"
+
+#: kimedialogs.cpp:423
+msgid "Area Tag Editor"
+msgstr "Alan Etiketi Düzenleyicisi"
+
+#: kimedialogs.cpp:435
+msgid "Selection"
+msgstr "Seçim"
+
+#: kimedialogs.cpp:459
+msgid "&General"
+msgstr "&Genel"
+
+#: kimedialogs.cpp:466
+msgid "Coor&dinates"
+msgstr "Koor&dinatlar"
+
+#: kimedialogs.cpp:468
+msgid "&JavaScript"
+msgstr "&JavaScript"
+
+#: kimedialogs.cpp:509
+msgid "Choose File"
+msgstr "Dosya Seç"
+
+#: kimedialogs.cpp:574
+msgid "Choose Map & Image to Edit"
+msgstr "Düzenlenecek Harita & Resmi Seçin"
+
+#: kimedialogs.cpp:585
+msgid "Select an image and/or a map that you want to edit"
+msgstr "Düzenlemek istediğiniz bir resmi ve/veya haritayı seçin"
+
+#: kimedialogs.cpp:596
+msgid "&Maps"
+msgstr "&Haritalar"
+
+#: kimedialogs.cpp:608
+msgid "Image Preview"
+msgstr "Resim Önizleme"
+
+#: kimedialogs.cpp:631
+msgid "No maps found"
+msgstr "Hiç harita bulunamadı"
+
+#: kimedialogs.cpp:656
+msgid "No images found"
+msgstr "Hiç resim bulunamadı"
+
+#: kimedialogs.cpp:669
+msgid "&Images"
+msgstr "&Resimler"
+
+#: kimedialogs.cpp:678
+msgid "Path"
+msgstr "Yol"
+
+#: kimedialogs.cpp:753
+msgid "Preferences"
+msgstr "Seçenekler"
+
+#: kimedialogs.cpp:762
+msgid "&Maximum image preview height:"
+msgstr "En &yüksek resim önizleme yüksekliği:"
+
+#: kimedialogs.cpp:775
+msgid "&Undo limit:"
+msgstr "G&eri-alma limiti:"
+
+#: kimedialogs.cpp:785
+msgid "&Redo limit:"
+msgstr "&Tekrarlama limiti:"
+
+#: kimedialogs.cpp:794
+msgid "&Start with last used document"
+msgstr "&Son kullanılan belgeyle başla"

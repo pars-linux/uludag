@@ -1,0 +1,1069 @@
+# translation of kdesktop.po to
+# Copyright (C) 2002, 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
+#
+# Gokcen Ogutcu <gokceno@biker.gen.tr>, 2000.
+# Görkem Çetin <gorkem@kde.org>, 2002, 2003, 2004.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdesktop\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-08 01:18+0200\n"
+"PO-Revision-Date: 2007-07-08 19:09+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: lock/autologout.cc:39
+msgid "<nobr><qt><b>Automatic Log Out</b></qt><nobr>"
+msgstr "<nobr><qt><b>Otomatik Çıkış</b></qt><nobr>"
+
+#: lock/autologout.cc:40
+msgid ""
+"<qt>To prevent being logged out, resume using this session by moving the mouse "
+"or pressing a key.</qt>"
+msgstr ""
+
+#: lock/autologout.cc:80
+#, c-format
+msgid ""
+"_n: <nobr><qt>You will be automatically logged out in 1 second</qt></nobr>\n"
+"<nobr><qt>You will be automatically logged out in %n seconds</qt></nobr>"
+msgstr ""
+"<nobr><qt>%n saniye içinde otomatik olarak sistemden çıkacaksınız.</qt></nobr>"
+
+#: lock/lockdlg.cc:82
+msgid "<nobr><b>The session is locked</b><br>"
+msgstr "<nobr><b>Oturum kilitli</b><br>"
+
+#: lock/lockdlg.cc:83
+msgid "<nobr><b>The session was locked by %1</b><br>"
+msgstr "<nobr><b>Oturum %1 tarafından kilitlendi</b><br>"
+
+#: lock/lockdlg.cc:93
+msgid "Sw&itch User..."
+msgstr "&Kullanıcı Değiştir..."
+
+#: lock/lockdlg.cc:94
+msgid "Unl&ock"
+msgstr "Kilit&i Aç"
+
+#: lock/lockdlg.cc:191
+msgid "<b>Unlocking failed</b>"
+msgstr "<b>Kilit açma başarısız oldu</b>"
+
+#: lock/lockdlg.cc:197
+msgid "<b>Warning: Caps Lock on</b>"
+msgstr "<b>Uyarı: Caps Lock açık</b>"
+
+#: lock/lockdlg.cc:423
+msgid ""
+"Cannot unlock the session because the authentication system failed to work;\n"
+"you must kill kdesktop_lock (pid %1) manually."
+msgstr ""
+"Oturum kilidi açılamadı, çünkü kimlik sınama sistemi çalışmıyor.\n"
+"Elle kdesktop_lock (pid %1) programını sonlandırmalısınız."
+
+#: lock/lockdlg.cc:526
+msgid ""
+"You have chosen to open another desktop session instead of resuming the current "
+"one."
+"<br>The current session will be hidden and a new login screen will be "
+"displayed."
+"<br>An F-key is assigned to each session; F%1 is usually assigned to the first "
+"session, F%2 to the second session and so on. You can switch between sessions "
+"by pressing Ctrl, Alt and the appropriate F-key at the same time. Additionally, "
+"the KDE Panel and Desktop menus have actions for switching between sessions."
+msgstr ""
+"Başka bir masaüstü oturum açmaya çalışıyorsunuz."
+"<br>Bu işlem için güncel oturum gizlenecek ve bir giriş ekranı "
+"görüntülenecektir. "
+"<br>Ayrıca her oturum için bir F-tuşu tanımlanacaktır. Genellikle ilk oturum "
+"için F%1, ikincisi için F%2 .. tanımlanır. Oturumlar arasında gezmek için "
+"Control - Alt ve karşılık gelen tuşa basmalısınız.</p>"
+
+#: krootwm.cc:842 lock/lockdlg.cc:539
+msgid "&Start New Session"
+msgstr "&Yeni Oturum Aç"
+
+#: lock/lockdlg.cc:551
+msgid "&Do not ask again"
+msgstr "&Tekrar sorma"
+
+#: lock/lockdlg.cc:651
+msgid "Session"
+msgstr "Oturum"
+
+#: lock/lockdlg.cc:652
+msgid "Location"
+msgstr "Konum"
+
+#: lock/lockdlg.cc:678
+msgid ""
+"_: session\n"
+"&Activate"
+msgstr "&Etkinleştir"
+
+#: lock/lockdlg.cc:687
+msgid "Start &New Session"
+msgstr "&Yeni Oturum Aç"
+
+#: lock/lockprocess.cc:742
+msgid ""
+"Will not lock the session, as unlocking would be impossible:\n"
+msgstr ""
+"Oturum kilidi açılamayacağı için oturum kilitlenmeyecektir:\n"
+
+#: lock/lockprocess.cc:746
+msgid "Cannot start <i>kcheckpass</i>."
+msgstr "<i>Kcheckpass</i> programı çalıştırılamadı."
+
+#: lock/lockprocess.cc:747
+msgid "<i>kcheckpass</i> is unable to operate. Possibly it is not SetUID root."
+msgstr "<i>Kcheckpass</i> çalıştırılamadı. SetUID root olmayabilir."
+
+#: lock/lockprocess.cc:790
+msgid "No appropriate greeter plugin configured."
+msgstr "Uygun bir karşılayıcı eklentisi bulunmuyor"
+
+#: lock/main.cc:54
+msgid "Force session locking"
+msgstr "Oturumu kilitlemeyi zorla"
+
+#: lock/main.cc:55
+msgid "Only start screensaver"
+msgstr "Sadece ekran koruyucusunu başlat"
+
+#: lock/main.cc:56
+msgid "Only use the blank screensaver"
+msgstr "Sadece boş ekran koruyucusunu kullan"
+
+#: lock/main.cc:66
+msgid "KDesktop Locker"
+msgstr "Masaüstü Kilitleyici"
+
+#: lock/main.cc:66
+msgid "Session Locker for KDesktop"
+msgstr "KDesktop İçin Oturum Kilitleyici"
+
+#: desktop.cc:771
+msgid "Set as Primary Background Color"
+msgstr "Birinci Arkaplan Rengi Olarak Tanımla"
+
+#: desktop.cc:772
+msgid "Set as Secondary Background Color"
+msgstr "İkinci Arkaplan Rengi Olarak Tanımla"
+
+#: desktop.cc:789
+msgid "&Save to Desktop..."
+msgstr "&Masaüstüne Kaydet..."
+
+#: desktop.cc:791
+msgid "Set as &Wallpaper"
+msgstr "&Duvar Kağıdı Yap"
+
+#: desktop.cc:799
+msgid "Enter a name for the image below:"
+msgstr "Aşağıdaki resim için bir isim verin:"
+
+#: desktop.cc:808
+msgid "image.png"
+msgstr "resim.png"
+
+#: desktop.cc:871
+msgid ""
+"Could not log out properly.\n"
+"The session manager cannot be contacted. You can try to force a shutdown by "
+"pressing Ctrl+Alt+Backspace; note, however, that your current session will not "
+"be saved with a forced shutdown."
+msgstr ""
+"Oturum düzgün şekilde kapatılamadı. \n"
+"Oturum yöneticisiyle bağlantı sağlanamadı. Ctrl+Alt+Backspace tuşlarına aynı "
+"anda basarak kapatmaya zorlamayı deneyebilirsiniz. Bu durumda kullandığınız "
+"oturum kaydedilmeyecek ve çalıştırdığınız programlar da kapatılacaktır."
+
+#: init.cc:68
+msgid ""
+"%1 is a file, but KDE needs it to be a directory; move it to %2.orig and create "
+"directory?"
+msgstr ""
+"%1 bir dosya ancak KDE için bunun bir dizin olması gerekir, bu dosya %2.orig "
+"olarak taşınsın ve dizin oluşturulsun mu?"
+
+#: init.cc:68
+msgid "Move It"
+msgstr "Taşı"
+
+#: init.cc:68
+msgid "Do Not Move"
+msgstr "Taşıma"
+
+#: init.cc:82
+msgid ""
+"Could not create directory %1; check for permissions or reconfigure the desktop "
+"to use another path."
+msgstr ""
+"%1 dizini oluşturulamadı. Lütfen izinleri gözden geçirerek tekrar deneyin."
+
+#: kdiconview.cc:437
+msgid "&Rename"
+msgstr "&Yeniden adlandır"
+
+#: kdiconview.cc:438
+msgid "&Properties"
+msgstr "Ö&zellikler"
+
+#: kdiconview.cc:439
+msgid "&Move to Trash"
+msgstr "Çöp &Kutusuna At"
+
+#: krootwm.cc:133
+msgid "Run Command..."
+msgstr "Komut Çalıştır..."
+
+#: krootwm.cc:137
+msgid "Configure Desktop..."
+msgstr "Masaüstünü Yapılandır..."
+
+#: krootwm.cc:139 krootwm.cc:364
+msgid "Disable Desktop Menu"
+msgstr "Masaüstü Menüsünü İptal Et"
+
+#: krootwm.cc:143
+msgid "Unclutter Windows"
+msgstr "Pencereleri Düzenle"
+
+#: krootwm.cc:145
+msgid "Cascade Windows"
+msgstr "Pencereleri Diz"
+
+#: krootwm.cc:151
+msgid "By Name (Case Sensitive)"
+msgstr "İsme Göre (Küçük/büyük Harf Duyarlı)"
+
+#: krootwm.cc:153
+msgid "By Name (Case Insensitive)"
+msgstr "İsme Göre (Küçük/büyük Harf Duyarsız)"
+
+#: krootwm.cc:155
+msgid "By Size"
+msgstr "Boyuta Göre"
+
+#: krootwm.cc:157
+msgid "By Type"
+msgstr "Türe Göre"
+
+#: krootwm.cc:159
+msgid "By Date"
+msgstr "Tarihe Göre"
+
+#: krootwm.cc:162
+msgid "Directories First"
+msgstr "Önce Dizinler"
+
+#: krootwm.cc:165
+msgid "Line Up Horizontally"
+msgstr "Yatay Diz"
+
+#: krootwm.cc:168
+msgid "Line Up Vertically"
+msgstr "Dikey Diz"
+
+#: krootwm.cc:171
+msgid "Align to Grid"
+msgstr "Kılavuza Uydur"
+
+#. i18n: file kdesktop.kcfg line 180
+#: krootwm.cc:175 rc.cpp:215
+#, no-c-format
+msgid "Lock in Place"
+msgstr "Bulunduğu Yere Kilitle"
+
+#: krootwm.cc:181
+msgid "Refresh Desktop"
+msgstr "Masaüstünü Tazele"
+
+#: kdesktopbindings.cpp:31 krootwm.cc:187
+msgid "Lock Session"
+msgstr "Oturumu Kilitle"
+
+#: krootwm.cc:192
+msgid "Log Out \"%1\"..."
+msgstr "\"%1\" Kullanıcısından Çık..."
+
+#: krootwm.cc:198
+msgid "Start New Session"
+msgstr "Yeni Oturum Aç"
+
+#: krootwm.cc:202
+msgid "Lock Current && Start New Session"
+msgstr "Şimdiki Oturumu Kilitle ve Yeni Oturum Aç"
+
+#: krootwm.cc:342 krootwm.cc:420
+msgid "Sort Icons"
+msgstr "Simgeleri Sırala"
+
+#: krootwm.cc:344
+msgid "Line Up Icons"
+msgstr "Simgeleri Diz"
+
+#: krootwm.cc:371
+msgid "Enable Desktop Menu"
+msgstr "Masaüstü Menüsünü Etkinleştir"
+
+#: krootwm.cc:430
+msgid "Icons"
+msgstr "Simgeler"
+
+#: krootwm.cc:436 krootwm.cc:492
+msgid "Windows"
+msgstr "Pencere"
+
+#: kdesktopbindings.cpp:26 krootwm.cc:452
+msgid "Switch User"
+msgstr "Kullanıcı Değiştir"
+
+#: krootwm.cc:481
+msgid "Sessions"
+msgstr "Oturumlar"
+
+#: krootwm.cc:485
+msgid "New"
+msgstr "Yeni"
+
+#: kdesktopbindings.cpp:14 krootwm.cc:491
+msgid "Desktop"
+msgstr "Masaüstü"
+
+#: krootwm.cc:830
+msgid ""
+"<p>You have chosen to open another desktop session."
+"<br>The current session will be hidden and a new login screen will be "
+"displayed."
+"<br>An F-key is assigned to each session; F%1 is usually assigned to the first "
+"session, F%2 to the second session and so on. You can switch between sessions "
+"by pressing Ctrl, Alt and the appropriate F-key at the same time. Additionally, "
+"the KDE Panel and Desktop menus have actions for switching between sessions.</p>"
+msgstr ""
+"<p>Başka bir masaüstü oturumu açmak istediniz. "
+"<br>Bu işlem için güncel oturum gizlenecek ve bir giriş ekranı "
+"görüntülenecektir. "
+"<br>Ayrıca her oturum için bir F-tuşu tanımlanacaktır. Genellikle ilk oturum "
+"için F%1, ikincisi için F%2 .. tanımlanır. Oturumlar arasında gezmek için "
+"Control - Alt ve karşılık gelen tuşa basmalısınız.</p>"
+
+#: krootwm.cc:841
+msgid "Warning - New Session"
+msgstr "Uyarı - Yeni Oturum"
+
+#: main.cc:46
+msgid "The KDE desktop"
+msgstr "KDE masaüstü"
+
+#: main.cc:52
+msgid "Use this if the desktop window appears as a real window"
+msgstr "Masaüstü gerçek bir pencere gibi görünüyorsa bunu kullanın"
+
+#: main.cc:53
+msgid "Obsolete"
+msgstr "Gereksiz"
+
+#: main.cc:54
+msgid "Wait for kded to finish building database"
+msgstr "kded'nin veritabanını oluşturmasını bekle"
+
+#: main.cc:153
+msgid "KDesktop"
+msgstr "KMasaüstü"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Mehmet Tarımcı"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "mehmet@gelecek.com.tr"
+
+#: kdesktopbindings.cpp:20 minicli.cpp:79
+msgid "Run Command"
+msgstr "Komut Çalıştır"
+
+#: kdesktopbindings.cpp:24
+msgid "Show Taskmanager"
+msgstr "Görev Yöneticisini Göster"
+
+#: kdesktopbindings.cpp:25
+msgid "Show Window List"
+msgstr "Pencere Listesini Göster"
+
+#: kdesktopbindings.cpp:37
+msgid "Log Out"
+msgstr "Çıkış"
+
+#: kdesktopbindings.cpp:38
+msgid "Log Out Without Confirmation"
+msgstr "Sormadan Çık"
+
+#: kdesktopbindings.cpp:39
+msgid "Halt without Confirmation"
+msgstr "Durdururken sorma"
+
+#: kdesktopbindings.cpp:40
+msgid "Reboot without Confirmation"
+msgstr "Bilgisayarı Bana Sormadan Yeniden Başlat"
+
+#: minicli.cpp:93 minicli.cpp:639
+msgid "&Options >>"
+msgstr "&Seçenekler >>"
+
+#: minicli.cpp:96
+msgid "&Run"
+msgstr "Ça&lıştır"
+
+#: minicli.cpp:392
+msgid "<qt>The user <b>%1</b> does not exist on this system.</qt>"
+msgstr "<qt><b>%1</b> kullanıcısı bu sistemde mevcut değil.</qt>"
+
+#: minicli.cpp:402
+msgid ""
+"You do not exist.\n"
+msgstr ""
+"Mevcut değilsiniz.\n"
+
+#: minicli.cpp:427
+msgid "Incorrect password; please try again."
+msgstr "Hatalı şifre, lütfen tekrar deneyin."
+
+#: minicli.cpp:538
+msgid ""
+"<center><b>%1</b></center>\n"
+"You do not have permission to execute this command."
+msgstr ""
+"<center><b>%1</b>"
+"<center>\n"
+"Bu komutu çalıştırmaya hakkınız yok."
+
+#: minicli.cpp:566
+msgid ""
+"<center><b>%1</b></center>\n"
+"Could not run the specified command."
+msgstr ""
+"<center><b>%1</b>"
+"<center>\n"
+"Belirtilen komut çalıştırılamadı."
+
+#: minicli.cpp:578
+msgid ""
+"<center><b>%1</b></center>\n"
+"The specified command does not exist."
+msgstr ""
+"<center><b>%1</b></center>\n"
+"Belirtilen komut bulunamadı."
+
+#: minicli.cpp:627
+msgid "&Options <<"
+msgstr "&Seçenekler <<"
+
+#: minicli.cpp:832
+msgid ""
+"Running a realtime application can be very dangerous. If the application "
+"misbehaves, the system might hang unrecoverably.\n"
+"Are you sure you want to continue?"
+msgstr ""
+"Eşzamanlı bir uygulama çalıştırmak tehlikeli olabilir. Eğer uygulama yanlış "
+"çalışırsa, sistem kilitlenebilir.\n"
+"Devam etmek istediğinize emin misiniz?"
+
+#: minicli.cpp:835
+msgid "Warning - Run Command"
+msgstr "Uyarı - Komut Çalıştır"
+
+#: minicli.cpp:835
+msgid "&Run Realtime"
+msgstr "Gerçek Zamanlı Çalıştı&r"
+
+#. i18n: file minicli_ui.ui line 172
+#: rc.cpp:3
+#, no-c-format
+msgid "Run with realtime &scheduling"
+msgstr "Gerçek zamanlı çalış"
+
+#. i18n: file minicli_ui.ui line 180
+#: rc.cpp:6
+#, no-c-format
+msgid ""
+"<qt>Select whether realtime scheduling should be enabled for the application. "
+"The scheduler governs which process will run and which will have to wait. Two "
+"schedulers are available:\n"
+"<ul>\n"
+"<li><em>Normal:</em> This is the standard, timesharing scheduler. It will "
+"divide fairly the available processing time between all processes.</li>\n"
+"<li><em>Realtime:</em>This scheduler will run your application uninterrupted "
+"until it gives up the processor. This can be dangerous. An application that "
+"does not give up the processor might hang the system. You need root's password "
+"to use the scheduler.</li>\n"
+"</ul>\n"
+"</qt>"
+msgstr ""
+"<qt>Buradan uygulama için hangi zamanlayıcıyı kullanacağınızı seçebilirsiniz. "
+"Zamanlayıcı işletim sisteminizin hangi uygulamanın çalışıp hangisinin "
+"bekleyeceğini belirleyen parçasıdır. İki zamanlayıcı kullanılabilir:\n"
+"<ul>\n"
+"<li><em>Normal:</em> Bu standart, zaman paylaştırıcıdır. Zamanı adil olarak tün "
+"uygulamalara böler. </li>\n"
+"<li><em>Eşzamanlı:</em> Bu zamanlayıcı uygulama işlemciyle işini bitirene kadar "
+"uygulamanın işlemini kesmeyecektir. Bu tehlikeli olabilir. İşlemciyi bırakmayan "
+"bir uygulama sistemi kilitleyebilir. Bunu kullanabilmek için root parolasına "
+"ihtiyacınız var. </li>\n"
+"</ul>\n"
+"</qt>"
+
+#. i18n: file minicli_ui.ui line 199
+#: rc.cpp:14
+#, no-c-format
+msgid "User&name:"
+msgstr "Kulla&nıcı adı:"
+
+#. i18n: file minicli_ui.ui line 205
+#: rc.cpp:17 rc.cpp:47
+#, no-c-format
+msgid "Enter the user you want to run the application as here."
+msgstr "Uygulamayı çalıştırmak istediğiniz kulanıcı adını buraya girin."
+
+#. i18n: file minicli_ui.ui line 224
+#: rc.cpp:20 rc.cpp:26
+#, no-c-format
+msgid "Enter the password here for the user you specified above."
+msgstr "Yukarıda belirtilen kullanıcının parolasını buraya yazın."
+
+#. i18n: file minicli_ui.ui line 243
+#: rc.cpp:23
+#, no-c-format
+msgid "Pass&word:"
+msgstr "&Parola:"
+
+#. i18n: file minicli_ui.ui line 257
+#: rc.cpp:29
+#, no-c-format
+msgid "Run in &terminal window"
+msgstr "&Terminalde çalıştır"
+
+#. i18n: file minicli_ui.ui line 260
+#: rc.cpp:32
+#, no-c-format
+msgid ""
+"Check this option if the application you want to run is a text mode "
+"application. The application will then be run in a terminal emulator window."
+msgstr ""
+"Eğer çalıştırmak istediğiniz uygulama text tabanlı ise bu özelliği seçin. "
+"Uygulama bir terminal emilasyon penceresinde çalıştırılacak."
+
+#. i18n: file minicli_ui.ui line 279
+#: rc.cpp:35
+#, no-c-format
+msgid "&Priority:"
+msgstr "Ön&celik:"
+
+#. i18n: file minicli_ui.ui line 285
+#: rc.cpp:38 rc.cpp:53 rc.cpp:59 rc.cpp:62
+#, no-c-format
+msgid ""
+"The priority that the command will be run with can be set here. From left to "
+"right, it goes from low to high. The center position is the default value. For "
+"priorities higher than the default, you will need to provide the root password."
+msgstr ""
+"Öncelik burada belirlenebilir. Soldan sağa, düşükten yükseğe doğru gider. Orta "
+"değer öntanımlıdır. Öntanımlıdan yüksek öncelikler için root parolasına "
+"ihtiyacınız vardır."
+
+#. i18n: file minicli_ui.ui line 312
+#: rc.cpp:41
+#, no-c-format
+msgid "Run with a &different priority"
+msgstr "Farklı bir ö&ncelik ile çalıştır"
+
+#. i18n: file minicli_ui.ui line 315
+#: rc.cpp:44
+#, no-c-format
+msgid ""
+"Check this option if you want to run the application with a different priority. "
+"A higher priority tells the operating system to give more processing time to "
+"your application."
+msgstr ""
+"Eğer uygulamayı farklı bir öncelik ile çalıştırmak istiyorsanız bu özelliği "
+"seçin. Daha büyük öncelikler işletim sisteminize uygulama için daha fazla işlem "
+"zamanı ayırması gerektiğini belirtir."
+
+#. i18n: file minicli_ui.ui line 356
+#: rc.cpp:50
+#, no-c-format
+msgid "Low"
+msgstr "Düşük"
+
+#. i18n: file minicli_ui.ui line 370
+#: rc.cpp:56
+#, no-c-format
+msgid "High"
+msgstr "Yüksek"
+
+#. i18n: file minicli_ui.ui line 411
+#: rc.cpp:65
+#, no-c-format
+msgid "Run as a different &user"
+msgstr "&Farklı bir kullanıcı olarak çalıştır"
+
+#. i18n: file minicli_ui.ui line 414
+#: rc.cpp:68
+#, no-c-format
+msgid ""
+"Check this option if you want to run the application with a different user id. "
+"Every process has a user id associated with it. This id code determines file "
+"access and other permissions. The password of the user is required to do this."
+msgstr ""
+"Eğer uygulamayı farklı bir kullanıcı numarası ile çalıştırmak istiyorsanız bu "
+"özelliği seçin. Her uygulama kendisiyle ilişkilendirilmiş bir kullanıcı "
+"numarasına sahiptir. Bu kullanıcı numarası dosya erişimleri ve diğer hakları "
+"düzenler. Bunu yapabilmek için kullanıcının parolası gereklidir.  "
+
+#. i18n: file minicli_ui.ui line 470
+#: rc.cpp:71
+#, no-c-format
+msgid "Com&mand:"
+msgstr "Ko&mut:"
+
+#. i18n: file minicli_ui.ui line 476
+#: rc.cpp:74 rc.cpp:77
+#, no-c-format
+msgid ""
+"Enter the command you wish to execute or the address of the resource you want "
+"to open. This can be a remote URL like \"www.kde.org\" or a local one like "
+"\"~/.kderc\"."
+msgstr ""
+"Çalıştırılacak dosyayı girin, ya da açılacak web sayfası adresini belirtin. Bu "
+"\"www.kde.org\" gibi uzaktaki bir makinanın adresi ya da \"~/.kderc\" gibi "
+"yerel bir dosya olabilir."
+
+#. i18n: file minicli_ui.ui line 533
+#: rc.cpp:80
+#, no-c-format
+msgid ""
+"Enter the name of the application you want to run or the URL you want to view"
+msgstr ""
+"Çalıştırmak istediğiniz uygulamanın adını ya da görüntülenecek web sayfasının "
+"adresini girin"
+
+#. i18n: file kdesktop.kcfg line 11
+#: rc.cpp:83
+#, no-c-format
+msgid "Common settings for all desktops"
+msgstr "Tüm masaüstleri için genel ayarlar"
+
+#. i18n: file kdesktop.kcfg line 12
+#: rc.cpp:86
+#, no-c-format
+msgid ""
+"If you want the same background settings to be applied to all desktops enable "
+"this option."
+msgstr ""
+"Tüm masaüstlerine aynı arkaplanı uygulamak için bu seçeneği etkin hale getirin."
+
+#. i18n: file kdesktop.kcfg line 16
+#: rc.cpp:89
+#, no-c-format
+msgid "Common settings for all screens"
+msgstr "Tüm ekranlar için genel ayarlar"
+
+#. i18n: file kdesktop.kcfg line 17
+#: rc.cpp:92
+#, no-c-format
+msgid ""
+"If you want the same background settings to be applied to all screens enable "
+"this option."
+msgstr ""
+"Tüm masaüstlerine aynı arkaplan ayarlarını uygulamak için bu seçeneği etkin "
+"hale getirin."
+
+#. i18n: file kdesktop.kcfg line 21
+#: rc.cpp:95
+#, no-c-format
+msgid "Draw backgrounds per screen"
+msgstr "Her ekran için arkaplan çiz"
+
+#. i18n: file kdesktop.kcfg line 22
+#: rc.cpp:98
+#, no-c-format
+msgid ""
+"If you want to draw to each screen separately in xinerama mode enable this "
+"option."
+msgstr ""
+
+#. i18n: file kdesktop.kcfg line 26
+#: rc.cpp:101
+#, no-c-format
+msgid "Limit background cache"
+msgstr "Arkaplan önbelleğini sınırla"
+
+#. i18n: file kdesktop.kcfg line 27
+#: rc.cpp:104
+#, no-c-format
+msgid ""
+"Enable this option if you want to limit the cache size for the background."
+msgstr ""
+
+#. i18n: file kdesktop.kcfg line 31
+#: rc.cpp:107
+#, no-c-format
+msgid "Background cache size"
+msgstr "Arkaplan önbellek boyu"
+
+#. i18n: file kdesktop.kcfg line 32
+#: rc.cpp:110
+#, no-c-format
+msgid ""
+"Here you can enter how much memory KDE should use for caching the "
+"background(s). If you have different backgrounds for the different desktops "
+"caching can make switching desktops smoother at the expense of higher memory "
+"use."
+msgstr ""
+
+#. i18n: file kdesktop.kcfg line 38
+#: rc.cpp:113
+#, no-c-format
+msgid "Show icons on desktop"
+msgstr "Masaüstündeki simgeleri göster"
+
+#. i18n: file kdesktop.kcfg line 39
+#: rc.cpp:116
+#, no-c-format
+msgid ""
+"Uncheck this option if you do not want to have icons on the desktop. Without "
+"icons the desktop will be somewhat faster but you will no longer be able to "
+"drag files to the desktop."
+msgstr ""
+
+#. i18n: file kdesktop.kcfg line 43
+#: rc.cpp:119
+#, no-c-format
+msgid "Allow programs in desktop window"
+msgstr "Masaüstü penceresinde programlara izin ver"
+
+#. i18n: file kdesktop.kcfg line 44
+#: rc.cpp:122
+#, no-c-format
+msgid ""
+"Check this option if you want to run X11 programs that draw into the desktop "
+"such as xsnow, xpenguin or xmountain. If you have problems with applications "
+"like netscape that check the root window for running instances, disable this "
+"option."
+msgstr ""
+
+#. i18n: file kdesktop.kcfg line 55
+#: rc.cpp:125
+#, no-c-format
+msgid "Automatically line up icons"
+msgstr "Simgeleri otomatik diz"
+
+#. i18n: file kdesktop.kcfg line 56
+#: rc.cpp:128
+#, no-c-format
+msgid ""
+"Check this option if you want to see your icons automatically aligned to the "
+"grid when you move them."
+msgstr ""
+"Simgelerin masaüstünde otomatik sıralanmasını istiyorsanız bu seçeneği "
+"tıklayın."
+
+#. i18n: file kdesktop.kcfg line 60
+#: rc.cpp:131 rc.cpp:209
+#, no-c-format
+msgid "Sort directories first"
+msgstr "Önce dizinleri sırala"
+
+#. i18n: file kdesktop.kcfg line 71
+#: rc.cpp:134
+#, no-c-format
+msgid "Mouse wheel over desktop background switches desktop"
+msgstr ""
+
+#. i18n: file kdesktop.kcfg line 72
+#: rc.cpp:137
+#, no-c-format
+msgid ""
+"You can switch between the virtual desktops by using the mouse wheel over the "
+"desktop background."
+msgstr ""
+
+#. i18n: file kdesktop.kcfg line 83
+#: rc.cpp:140
+#, no-c-format
+msgid "Terminal application"
+msgstr "Uçbirim uygulaması"
+
+#. i18n: file kdesktop.kcfg line 84
+#: rc.cpp:143
+#, no-c-format
+msgid "Defines which terminal application is used."
+msgstr "Hangi uçbirim programının kullanılacağını belirler."
+
+#. i18n: file kdesktop.kcfg line 88
+#: rc.cpp:146
+#, no-c-format
+msgid "Left Mouse Button Action"
+msgstr "Sol Fare Düğme Eylemi"
+
+#. i18n: file kdesktop.kcfg line 89
+#: rc.cpp:149
+#, no-c-format
+msgid ""
+"You can choose what happens when you click the left button of your pointing "
+"device on the desktop."
+msgstr ""
+
+#. i18n: file kdesktop.kcfg line 93
+#: rc.cpp:152
+#, no-c-format
+msgid "Middle Mouse Button Action"
+msgstr "Orta Fare Düğme Eylemi"
+
+#. i18n: file kdesktop.kcfg line 94
+#: rc.cpp:155
+#, no-c-format
+msgid ""
+"You can choose what happens when you click the middle button of your pointing "
+"device on the desktop."
+msgstr ""
+
+#. i18n: file kdesktop.kcfg line 98
+#: rc.cpp:158
+#, no-c-format
+msgid "Right Mouse Button Action"
+msgstr "Sağ Fare Düğme Eylemi"
+
+#. i18n: file kdesktop.kcfg line 99
+#: rc.cpp:161
+#, no-c-format
+msgid ""
+"You can choose what happens when you click the right button of your pointing "
+"device on the desktop."
+msgstr ""
+
+#. i18n: file kdesktop.kcfg line 105
+#: rc.cpp:164
+#, no-c-format
+msgid "KDE major version number"
+msgstr "KDE büyük sürüm numarası"
+
+#. i18n: file kdesktop.kcfg line 110
+#: rc.cpp:167
+#, no-c-format
+msgid "KDE minor version number"
+msgstr "KDE küçük sürüm numarası"
+
+#. i18n: file kdesktop.kcfg line 115
+#: rc.cpp:170
+#, no-c-format
+msgid "KDE release version number"
+msgstr "KDE ek sürüm numarası"
+
+#. i18n: file kdesktop.kcfg line 122
+#: rc.cpp:173
+#, no-c-format
+msgid "Normal text color used for icon labels"
+msgstr "Simge metinleri için kullanılacak normal metin rengi"
+
+#. i18n: file kdesktop.kcfg line 126
+#: rc.cpp:176
+#, no-c-format
+msgid "Background color used for icon labels"
+msgstr "Simge etiketleri için kullanılacak arkaplan rengi"
+
+#. i18n: file kdesktop.kcfg line 131
+#: rc.cpp:179
+#, no-c-format
+msgid "Enable text shadow"
+msgstr "Metin gölgelerini etkinleştir"
+
+#. i18n: file kdesktop.kcfg line 132
+#: rc.cpp:182
+#, no-c-format
+msgid ""
+"Check here to enable a shadow outline around the desktop font. This also "
+"improves the readability of the desktop text against backgrounds of a similar "
+"color."
+msgstr ""
+
+#. i18n: file kdesktop.kcfg line 145
+#: rc.cpp:185
+#, no-c-format
+msgid "Show hidden files"
+msgstr "Gizli dosyaları göster"
+
+#. i18n: file kdesktop.kcfg line 146
+#: rc.cpp:188
+#, no-c-format
+msgid ""
+"<p>If you check this option, any files in your desktop directory that begin "
+"with a period (.) will be shown. Usually, such files contain configuration "
+"information, and remain hidden from view.</p>\\n"
+"<p>For example, files which are named \\\".directory\\\" are plain text files "
+"which contain information for Konqueror, such as the icon to use in displaying "
+"a directory, the order in which files should be sorted, etc. You should not "
+"change or delete these files unless you know what you are doing.</p>"
+msgstr ""
+"<p>Bu seçeneği tıklarsanız, masaüstünde nokta (.) ile başlayan tüm dosyalar "
+"görüntülenecektir. Bu dosyalar genellikle yapılandırma ve ayar amacıyla "
+"kullanılır, ne yaptığınızı bilmiyorsanız lütfen bu dosyaları silmeyin ya da "
+"içeriğini değiştirmeyin.</p>"
+
+#. i18n: file kdesktop.kcfg line 150
+#: rc.cpp:191
+#, no-c-format
+msgid "Align direction"
+msgstr "Hizalama yönü"
+
+#. i18n: file kdesktop.kcfg line 151
+#: rc.cpp:194
+#, no-c-format
+msgid ""
+"If this is enabled, icons are aligned vertically, otherwise horizontally."
+msgstr ""
+
+#. i18n: file kdesktop.kcfg line 155
+#: rc.cpp:197
+#, no-c-format
+msgid "Show Icon Previews For"
+msgstr "Simge Önizlemelerini Göster"
+
+#. i18n: file kdesktop.kcfg line 156
+#: rc.cpp:200
+#, no-c-format
+msgid "Select for which types of files you want to enable preview images."
+msgstr ""
+
+#. i18n: file kdesktop.kcfg line 170
+#: rc.cpp:203
+#, no-c-format
+msgid "Sort criterion"
+msgstr "Sıralama ölçütü"
+
+#. i18n: file kdesktop.kcfg line 171
+#: rc.cpp:206
+#, no-c-format
+msgid ""
+"Sets the sort criterion. Possible choices are NameCaseSensitive = 0, "
+"NameCaseInsensitive = 1, Size = 2, Type = 3, Date = 4."
+msgstr ""
+
+#. i18n: file kdesktop.kcfg line 176
+#: rc.cpp:212
+#, no-c-format
+msgid ""
+"Enable this to place directories in front of the sorted list, otherwise they "
+"are amongst the files."
+msgstr ""
+
+#. i18n: file kdesktop.kcfg line 181
+#: rc.cpp:218
+#, no-c-format
+msgid "Check this option if you want to keep your icons from moving."
+msgstr ""
+"Masaüstündeki simgelerin taşınmasını engellemek istiyorsanız bu seçeneği "
+"işaretleyin."
+
+#. i18n: file kdesktop.kcfg line 202
+#: rc.cpp:221
+#, no-c-format
+msgid "Device Types to exclude"
+msgstr "Hariç tutulacak aygıt türleri"
+
+#. i18n: file kdesktop.kcfg line 203
+#: rc.cpp:224
+#, no-c-format
+msgid "The device types which you do not want to see on the desktop."
+msgstr "Masaüstünde görüntülenmesini istemediğiniz aygıt türleri"
+
+#. i18n: file kdesktop.kcfg line 211
+#: rc.cpp:227
+#, no-c-format
+msgid "Current application's menu bar (Mac OS-style)"
+msgstr "Geçerli uygulamanın menü çubuğu (Mac OS-stili)"
+
+#. i18n: file kdesktop.kcfg line 212
+#: rc.cpp:230
+#, no-c-format
+msgid ""
+"If this option is selected, applications will not have their menu bar attached "
+"to their own window anymore. Instead, there is one menu bar at the top of the "
+"screen which shows the menus of the currently active application. You might "
+"recognize this behavior from Mac OS."
+msgstr ""
+
+#. i18n: file kdesktop.kcfg line 218
+#: rc.cpp:233
+#, no-c-format
+msgid "Desktop menu bar"
+msgstr "Masaüstü menü çubuğu"
+
+#. i18n: file kdesktop.kcfg line 219
+#: rc.cpp:236
+#, no-c-format
+msgid ""
+"If this option is selected, there is one menu bar at the top of the screen "
+"which shows the desktop menus."
+msgstr ""
+
+#. i18n: file kdesktop.kcfg line 225
+#: rc.cpp:239
+#, no-c-format
+msgid "Enable screen saver"
+msgstr "Ekran koruyucusunu etkinleştir"
+
+#. i18n: file kdesktop.kcfg line 226
+#: rc.cpp:242
+#, no-c-format
+msgid "Enables the screen saver."
+msgstr "Ekran koruyucusunu etkinleştirir"
+
+#. i18n: file kdesktop.kcfg line 230
+#: rc.cpp:245
+#, no-c-format
+msgid "Screen saver timeout"
+msgstr "Ekran koruyucu zaman aşımı"
+
+#. i18n: file kdesktop.kcfg line 231
+#: rc.cpp:248
+#, no-c-format
+msgid "Sets the seconds after which the screen saver is started."
+msgstr "Ekran koruyucu zaman aşımını belirler."
+
+#. i18n: file kdesktop.kcfg line 235
+#: rc.cpp:251
+#, no-c-format
+msgid "Suspend screen saver when DPMS kicks in"
+msgstr ""
+
+#. i18n: file kdesktop.kcfg line 238
+#: rc.cpp:254
+#, no-c-format
+msgid ""
+"Usually the screen saver is suspended when display power saving kicks in,\n"
+"       as nothing can be seen on the screen anyway, obviously. However, some "
+"screen savers\n"
+"       actually perform useful computations, so it is not desirable to suspend "
+"them."
+msgstr ""
+
+#~ msgid "Disable screen saver during presentation or TV"
+#~ msgstr "Sunum yaparken ve TV izlerken ekran koruyucuyu pasifleştir"
+
+#~ msgid "Enable this option if you want to disable the screen saver while watching TV or movies."
+#~ msgstr "Sunum yaparken ve TV izlerken ekran koruyucuyu pasifleştirmek için bu seçeneği işaretleyin."

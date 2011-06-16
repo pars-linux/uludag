@@ -1,0 +1,96 @@
+# translation of kcmnic.po to
+# Copyright (C) 2004, 2007 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2002, 2004.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmnic\n"
+"POT-Creation-Date: 2006-12-31 02:37+0100\n"
+"PO-Revision-Date: 2007-07-08 18:44+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: nic.cpp:93
+msgid "Name"
+msgstr "İsim"
+
+#: nic.cpp:94
+msgid "IP Address"
+msgstr "IP Adresi"
+
+#: nic.cpp:95
+msgid "Network Mask"
+msgstr "Ağ Maskesi"
+
+#: nic.cpp:96
+msgid "Type"
+msgstr "Tür"
+
+#: nic.cpp:97
+msgid "State"
+msgstr "Durum"
+
+#: nic.cpp:98
+msgid "HWaddr"
+msgstr "Donanım Adresi"
+
+#: nic.cpp:110
+msgid "kcminfo"
+msgstr "kcminfo"
+
+#: nic.cpp:111
+msgid "KDE Panel System Information Control Module"
+msgstr "KDE Sistem Bilgisi Kontrol Modülü"
+
+#: nic.cpp:113
+msgid "(c) 2001 - 2002 Alexander Neundorf"
+msgstr "(c) 2001 - 2002 Alexander Neundorf"
+
+#: nic.cpp:148
+msgid ""
+"_: State of network card is connected\n"
+"Up"
+msgstr "Çalışıyor"
+
+#: nic.cpp:149
+msgid ""
+"_: State of network card is disconnected\n"
+"Down"
+msgstr "Çalışmıyor"
+
+#: nic.cpp:195 nic.cpp:303
+msgid "Broadcast"
+msgstr "Yayın"
+
+#: nic.cpp:197 nic.cpp:296
+msgid "Point to Point"
+msgstr "Noktadan Noktaya (PtP)"
+
+#: nic.cpp:200 nic.cpp:310
+msgid "Multicast"
+msgstr "Çokluyayın"
+
+#: nic.cpp:203 nic.cpp:317
+msgid "Loopback"
+msgstr "Loopback"
+
+#: nic.cpp:205 nic.cpp:217 nic.cpp:238
+msgid "Unknown"
+msgstr "Bilinmiyor"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"

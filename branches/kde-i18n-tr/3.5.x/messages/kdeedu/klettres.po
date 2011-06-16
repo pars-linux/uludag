@@ -1,0 +1,438 @@
+# translation of klettres.po to
+# translation of klettres.po to Türkçe
+# translation of klettres.po to Turkish
+# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Görkem Çetin <gorkem@kde.org>, 2002, 2004.
+# Engin Çağatay <engincagatay@yahoo.com>, 2004, 2005.
+# Ayşe Genç <ayse@uludag.org.tr>, 2005.
+# Zerrin Cakmakkaya <zerrin@uludag.org.tr>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: klettres\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-08 01:24+0200\n"
+"PO-Revision-Date: 2005-07-16 01:10+0300\n"
+"Last-Translator: Engin Çağatay <engincagatay@yahoo.com>\n"
+"Language-Team: Türkçe <yerelleştirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Ömer Fadıl USTA, Engin Çağatay, Zerrin Çakmakkaya"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "omer_fad@hotmail.com, engincagatay@yahoo.com"
+
+#: klettres.cpp:139
+msgid "Romanized Hindi"
+msgstr ""
+
+#: klettres.cpp:141
+msgid "Luganda"
+msgstr ""
+
+#: klettres.cpp:177
+msgid ""
+"The file sounds.xml was not found in\n"
+"$KDEDIR/share/apps/klettres/\n"
+"\n"
+"Please install this file and start KLettres again.\n"
+"\n"
+msgstr ""
+"$KDEDIR/share/apps/klettres/data/ içinde\n"
+"sounds.xml dosyası bulunamadı\n"
+"\n"
+"Lütfen bu dosyayı kurun ve KLetters'ı yeniden başlatın.\n"
+"\n"
+
+#: klettres.cpp:198
+msgid "New Sound"
+msgstr "Yeni Ses"
+
+#: klettres.cpp:199
+msgid "Play a new sound"
+msgstr "Yeni bir ses çal"
+
+#: klettres.cpp:200
+msgid ""
+"You can play a new sound by clicking this button or using the File menu, New "
+"Sound."
+msgstr ""
+
+#: klettres.cpp:201
+msgid "Get Alphabet in New Language..."
+msgstr "Yeni Dilde Alfabe Al..."
+
+#: klettres.cpp:202
+msgid "Replay Sound"
+msgstr "Sesi Yeniden Çal"
+
+#: klettres.cpp:203
+msgid "Play the same sound again"
+msgstr "Aynı sesi bir daha çal"
+
+#: klettres.cpp:204
+msgid ""
+"You can replay the same sound again by clicking this button or using the File "
+"menu, Replay Sound."
+msgstr ""
+
+#: klettres.cpp:208
+msgid "Hide &Menubar"
+msgstr "&Menü Çubuğunu Gizle"
+
+#: klettres.cpp:210
+msgid "You can show or hide the menubar as you wish by clicking this button."
+msgstr ""
+
+#: klettres.cpp:212
+msgid "L&evel"
+msgstr "S&eviye"
+
+#: klettres.cpp:213
+msgid "Select the level"
+msgstr "Seviyeyi seçin"
+
+#: klettres.cpp:214
+msgid ""
+"You can select the level: level 1 displays a letter and you hear it; level 2 "
+"does not display the letter, you only hear it; level 3 displays a syllable and "
+"you hear it; level 4 does not display the syllable, you only hear it."
+msgstr ""
+
+#: klettres.cpp:216
+msgid "&Language"
+msgstr "Di&l"
+
+#: klettres.cpp:219
+msgid "Level 1"
+msgstr "1. Seviye"
+
+#: klettres.cpp:220
+msgid "Level 2"
+msgstr "2. Seviye"
+
+#: klettres.cpp:221
+msgid "Level 3"
+msgstr "3. Seviye"
+
+#: klettres.cpp:222
+msgid "Level 4"
+msgstr "4. Seviye"
+
+#: klettres.cpp:225
+msgid "Themes"
+msgstr "Temalar"
+
+#: klettres.cpp:226
+msgid "Classroom"
+msgstr "Sınıf"
+
+#: klettres.cpp:227
+msgid "Arctic"
+msgstr ""
+
+#: klettres.cpp:228
+msgid "Desert"
+msgstr "Çöl"
+
+#: klettres.cpp:230
+msgid "Select the theme"
+msgstr "Temayı seçin"
+
+#: klettres.cpp:231
+msgid ""
+"Here you can change the theme for KLettres. A theme consists in the background "
+"picture and the font color for the letter displayed."
+msgstr ""
+
+#: klettres.cpp:233
+msgid "Mode Kid"
+msgstr "Çocuk Kipi"
+
+#: klettres.cpp:234
+msgid ""
+"If you are in the Grown-up mode, clicking on this button will set up the Kid "
+"mode. The Kid mode has no menubar and the font is bigger in the statusbar."
+msgstr ""
+
+#: klettres.cpp:235
+#, fuzzy
+msgid "Mode Grown-up"
+msgstr "Yetişkin Kipi"
+
+#: klettres.cpp:236
+msgid "The Grown-up mode is the normal mode where you can see the menubar."
+msgstr ""
+
+#: klettres.cpp:271
+msgid "Font Settings"
+msgstr "Yazıtipi Ayarları"
+
+#: klettres.cpp:275
+msgid "Timer"
+msgstr "Kronometre"
+
+#: klettres.cpp:288 klettres.cpp:372
+#, c-format
+msgid "Current language is %1"
+msgstr "Geçerli Dil - %1"
+
+#: klettres.cpp:292 klettres.cpp:361
+#, c-format
+msgid "Current level is %1"
+msgstr "Geçerli seviye - %1"
+
+#: klettres.cpp:325 klettres.cpp:439
+#, fuzzy
+msgid "Show Menubar"
+msgstr "Menü çubuğunu göster"
+
+#: klettres.cpp:330 klettres.cpp:413
+#, fuzzy
+msgid "Hide Menubar"
+msgstr "&Menü Çubuğunu Gizle"
+
+#: klettres.cpp:411
+#, fuzzy
+msgid "Grown-up mode is currently active"
+msgstr "Yetişkin kipi şu anda etkin"
+
+#: klettres.cpp:412
+msgid "Switch to Kid mode"
+msgstr "Çocuk kipine geç"
+
+#: klettres.cpp:437
+msgid "Kid mode is currently active"
+msgstr "Çocuk kipi şu anda etkin"
+
+#: klettres.cpp:438
+#, fuzzy
+msgid "Switch to Grown-up mode"
+msgstr "Yetişkin kipine geç"
+
+#: klettres.cpp:461
+msgid ""
+"File $KDEDIR/share/apps/klettres/%1.txt not found;\n"
+"please check your installation."
+msgstr ""
+"$KDEDIR/share/apps/%1.txt dosyası bulunamadı!\n"
+"Lütfen kurulumunuzu gözden geçirin."
+
+#: klettres.cpp:478
+#, c-format
+msgid "Inserts the character %1"
+msgstr "%1 karakterini araya sokar"
+
+#: klettresview.cpp:47
+msgid "Type the letter or syllable that you just heard"
+msgstr "Duyduğunuz harfi yazın"
+
+#: klettresview.cpp:102
+msgid "Start"
+msgstr "Başla"
+
+#: main.cpp:33
+msgid ""
+"KLettres helps a very young child or an adult learning \n"
+"a new language by associating sounds and \n"
+"letters in this language.\n"
+"13 languages are available: British, Czech, Danish, Dutch, English, French,\n"
+"German, Hebrew, Italian, Luganda, Romanized Hindi, Spanish and Slovak."
+msgstr ""
+
+#: main.cpp:48
+msgid "KLettres"
+msgstr "KLettres"
+
+#: main.cpp:52
+msgid "French sounds"
+msgstr "Fransızca sesler"
+
+#: main.cpp:54
+msgid "Dutch sounds"
+msgstr "Almanca sesler"
+
+#: main.cpp:56
+msgid "Danish sounds"
+msgstr "Danca sesler"
+
+#: main.cpp:58
+msgid "Czech sounds"
+msgstr "Çekçe sesler"
+
+#: main.cpp:60
+msgid "Slovak sounds"
+msgstr "Slovak sesler"
+
+#: main.cpp:62
+msgid "English sounds"
+msgstr "İngilizce sesler"
+
+#: main.cpp:64
+msgid "Italian sounds"
+msgstr "İtalyanca sesler"
+
+#: main.cpp:66
+msgid "Spanish sounds"
+msgstr "İspanyolca sesler"
+
+#: main.cpp:68
+msgid "Romanized Hindi sounds"
+msgstr ""
+
+#: main.cpp:70
+msgid "Luganda sounds"
+msgstr ""
+
+#: main.cpp:72
+#, fuzzy
+msgid "German sounds"
+msgstr "Danca sesler"
+
+#: main.cpp:74
+#, fuzzy
+msgid "Hebrew sounds"
+msgstr "Fransızca sesler"
+
+#: main.cpp:76
+#, fuzzy
+msgid "British English sounds"
+msgstr "İngilizce sesler"
+
+#: main.cpp:78
+msgid "Icons"
+msgstr "Simgeler"
+
+#: main.cpp:80
+msgid "Background picture"
+msgstr "Arkaplan resmi"
+
+#: main.cpp:82
+msgid "Support and coding guidance"
+msgstr "Destek"
+
+#: main.cpp:84
+msgid "SVG icon"
+msgstr "SVG simgesi"
+
+#: main.cpp:86
+msgid "Code for generating special characters' icons"
+msgstr "Özel karakter simgeleri yaratmak için kod"
+
+#: main.cpp:88
+msgid "Port to KConfig XT, coding help"
+msgstr "KConfig XT dönüşümü, kodlama yardımı"
+
+#: main.cpp:90
+msgid "Kids and grown-up SVG icons"
+msgstr "Çocuk ve yetişkin SVG simgeleri"
+
+#: main.cpp:92
+msgid "Timer setting widgets"
+msgstr ""
+
+#. i18n: file klettresui.rc line 15
+#: rc.cpp:6
+#, no-c-format
+msgid "L&ook"
+msgstr "G&örünüm"
+
+#. i18n: file klettresui.rc line 33
+#: rc.cpp:12
+#, no-c-format
+msgid "Main"
+msgstr "Ana"
+
+#. i18n: file klettresui.rc line 47
+#: rc.cpp:15
+#, no-c-format
+msgid "Characters"
+msgstr "Karakterler"
+
+#. i18n: file timerdlg.ui line 30
+#: rc.cpp:18
+#, no-c-format
+msgid "Set the time between 2 letters."
+msgstr "İki harf arasındaki zamanı ayarlayın."
+
+#. i18n: file timerdlg.ui line 59
+#: rc.cpp:21 rc.cpp:30
+#, no-c-format
+msgid "Set the timer (in minutes)"
+msgstr "Zamanlayıcıyı ayarlayın (dakika cinsinden)"
+
+#. i18n: file timerdlg.ui line 62
+#: rc.cpp:24 rc.cpp:33
+#, no-c-format
+msgid "Only used if Use a timer is checked"
+msgstr ""
+
+#. i18n: file timerdlg.ui line 70
+#: rc.cpp:27
+#, no-c-format
+msgid "Kid Mode"
+msgstr "Çocuk Kipi"
+
+#. i18n: file timerdlg.ui line 178
+#: rc.cpp:36
+#, no-c-format
+msgid "Grown-up Mode"
+msgstr "Yetişkin Kipi"
+
+#. i18n: file klettres.kcfg line 9
+#: rc.cpp:39
+#, no-c-format
+msgid "Language"
+msgstr "&Dil"
+
+#. i18n: file klettres.kcfg line 12
+#: rc.cpp:42
+#, no-c-format
+msgid "Theme"
+msgstr "Tema"
+
+#. i18n: file klettres.kcfg line 21
+#: rc.cpp:45
+#, no-c-format
+msgid "Mode"
+msgstr "Kip"
+
+#. i18n: file klettres.kcfg line 29
+#: rc.cpp:48
+#, no-c-format
+msgid "Difficulty level."
+msgstr "Zorluk derecesi."
+
+#. i18n: file klettres.kcfg line 35
+#: rc.cpp:51
+#, no-c-format
+msgid "Kid Timer"
+msgstr "Çocuk Zaman Ayarı"
+
+#. i18n: file klettres.kcfg line 39
+#: rc.cpp:54
+#, no-c-format
+msgid "Grown-up Timer"
+msgstr "Yetişkin Zaman Ayarı"
+
+#: soundfactory.cpp:78
+msgid "Error while loading the sound names."
+msgstr "Ses isimlerini yüklerken hata."
+
+#: timer.cpp:35 timer.cpp:36 timer.cpp:44 timer.cpp:45
+msgid "tenths of second"
+msgstr ""
+
+#~ msgid "Hide menubar"
+#~ msgstr "Menü çubuğunu gizle"

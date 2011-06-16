@@ -1,0 +1,861 @@
+# translation of kmid.po to
+# Serdar Cevher <scevher@anet.com.tr>, 2001.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+# Copyright (C) 2003, 2007 Free Software Foundation, Inc.
+msgid ""
+msgstr ""
+"Project-Id-Version: kmid\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-08-24 02:38+0200\n"
+"PO-Revision-Date: 2007-05-14 23:32+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Ömer Fadıl Usta"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "omer_fad@hotmail.com"
+
+#: channel.cpp:90
+#, c-format
+msgid "Channel %1"
+msgstr "Kanal %1"
+
+#: channelcfgdlg.cpp:15
+msgid "Configure Channel View"
+msgstr "Kanal Görünümünü Yapılandır"
+
+#: channelcfgdlg.cpp:20
+msgid "Choose Look Mode"
+msgstr "Görünüm Lipini Seç"
+
+#: channelcfgdlg.cpp:22
+msgid "3D look"
+msgstr "3B görünüm"
+
+#: channelcfgdlg.cpp:23
+msgid "3D - filled"
+msgstr "3D - doldurulmuş"
+
+#: channelview.cpp:36
+msgid "Channel View"
+msgstr "Kanal Görüntüsü"
+
+#: collectdlg.cpp:43
+msgid "Collections Manager"
+msgstr "Kolleksiyon Yöneticisi"
+
+#: collectdlg.cpp:51
+msgid "Available collections:"
+msgstr "Mevcut kolleksiyonlar:"
+
+#: collectdlg.cpp:71
+msgid "Songs in selected collection:"
+msgstr "Seçili kolleksiyondaki şarkılar:"
+
+#: collectdlg.cpp:85
+msgid "&New..."
+msgstr "&Yeni..."
+
+#: collectdlg.cpp:89
+msgid "&Copy..."
+msgstr "&Kopyala..."
+
+#: collectdlg.cpp:98
+msgid "&Add..."
+msgstr "&Ekle..."
+
+#: collectdlg.cpp:158
+msgid "New Collection"
+msgstr "Yeni Kolleksiyon"
+
+#: collectdlg.cpp:159
+msgid "Enter the name of the new collection:"
+msgstr "Yeni kolleksiyonun adını giriniz:"
+
+#: collectdlg.cpp:167 collectdlg.cpp:193 collectdlg.cpp:235
+msgid "The name '%1' is already used"
+msgstr "'%1' adı zaten kullanılıyor"
+
+#: collectdlg.cpp:184
+msgid "Copy Collection"
+msgstr "Kolleksiyonu Kopyala"
+
+#: collectdlg.cpp:185
+msgid "Enter the name of the copy collection:"
+msgstr "Kopya kolleksiyonunun adını giriniz:"
+
+#: collectdlg.cpp:227
+msgid "Change Collection Name"
+msgstr "Kolleksiyon Adını Değiştir"
+
+#: collectdlg.cpp:228
+msgid "Enter the name of the selected collection:"
+msgstr "Seçili kolleksiyonun yeni adını giriniz:"
+
+#: kmid_part.cpp:51
+msgid "MIDI/Karaoke file player"
+msgstr "MIDI/Karaoke dosya çalıcısı"
+
+#: kmid_part.cpp:52
+msgid "(c) 1997,98,99,2000, Antonio Larrosa Jimenez"
+msgstr "(c) 1997,98,99,2000, Antonio Larrosa Jimenez"
+
+#: kmid_part.cpp:55
+msgid "Original Developer/Maintainer"
+msgstr "Asıl Geliştirici/Destekleyici"
+
+#: kmid_part.cpp:80
+msgid "Play"
+msgstr "Çal"
+
+#: kmid_part.cpp:88
+msgid "Backward"
+msgstr "Geri"
+
+#: kmid_part.cpp:93 kmidframe.cpp:113
+msgid "Forward"
+msgstr "İleri"
+
+#: kmidclient.cpp:101
+msgid "Tempo:"
+msgstr "Tempo:"
+
+#: kmidclient.cpp:293
+msgid "The file %1 does not exist or cannot be opened."
+msgstr "%1 dosyası mevcut değil ya da açılamıyor."
+
+#: kmidclient.cpp:296
+msgid "The file %1 is not a MIDI file."
+msgstr "%1 dosyası bir MIDI dosyası değil"
+
+#: kmidclient.cpp:298
+msgid ""
+"Ticks per quarter note is negative. Please send this file to larrosa@kde.org"
+msgstr ""
+"Nota başına vuruş sayısı negatif, lütfen bu dosyayı larrosa@kde.org adresine "
+"gönderiniz"
+
+#: kmidclient.cpp:300
+msgid "Not enough memory."
+msgstr "Yetersiz bellek."
+
+#: kmidclient.cpp:302
+msgid "This file is corrupted or not well built."
+msgstr "Bu dosya bozulmuş ya da düzgün oluşturulamamış"
+
+#: kmidclient.cpp:304
+msgid "%1 is not a regular file."
+msgstr "%1 dosyası düzgün bir dosya değil"
+
+#: kmidclient.cpp:305
+msgid "Unknown error message"
+msgstr "Bilinmeyen hata mesajı"
+
+#: kmidclient.cpp:510
+msgid "You must load a file before playing it."
+msgstr "Bir dosyayı çalmadan önce onu yüklemelisiniz"
+
+#: kmidclient.cpp:516
+msgid "A song is already being played."
+msgstr "Zaten bir şarkı çalınıyor"
+
+#: kmidclient.cpp:522
+msgid ""
+"Could not open /dev/sequencer.\n"
+"Probably there is another program using it."
+msgstr ""
+"/dev/sequencer açılamadı\n"
+"Başka bir program tarafından kullanılıyor olabilir."
+
+#: kmidframe.cpp:90
+msgid "&Save Lyrics..."
+msgstr "Şarkı Sö&zlerini Kaydet..."
+
+#: kmidframe.cpp:94
+msgid "&Play"
+msgstr "Ç&al"
+
+#: kmidframe.cpp:96
+msgid "P&ause"
+msgstr "&Duraklat"
+
+#: kmidframe.cpp:98
+msgid "&Stop"
+msgstr "D&urdur"
+
+#: kmidframe.cpp:101
+msgid "P&revious Song"
+msgstr "Ö&nceki Şarkı"
+
+#: kmidframe.cpp:104
+msgid "&Next Song"
+msgstr "S&onraki Şarkı"
+
+#: kmidframe.cpp:107
+msgid "&Loop"
+msgstr "&Döngü"
+
+#: kmidframe.cpp:110
+msgid "Rewind"
+msgstr "Geriye Sar"
+
+#: kmidframe.cpp:116
+msgid "&Organize..."
+msgstr "&Ayarla..."
+
+#: kmidframe.cpp:120
+msgid "In Order"
+msgstr "Sırasında"
+
+#: kmidframe.cpp:121
+msgid "Shuffle"
+msgstr "Karıştır"
+
+#: kmidframe.cpp:123
+msgid "Play Order"
+msgstr "Sıralı Çal"
+
+#: kmidframe.cpp:128
+msgid "Auto-Add to Collection"
+msgstr "Kolleksiyona Otomatik Ekle"
+
+#: kmidframe.cpp:132
+msgid "&General MIDI"
+msgstr "&Genel MIDI"
+
+#: kmidframe.cpp:133
+msgid "&MT-32"
+msgstr "&MT-32"
+
+#: kmidframe.cpp:135
+msgid "File Type"
+msgstr "Dosya Tipi"
+
+#: kmidframe.cpp:141
+msgid "&Text Events"
+msgstr "&Metin Olayları"
+
+#: kmidframe.cpp:142
+msgid "&Lyric Events"
+msgstr "Şarkı &Sözü Olayları"
+
+#: kmidframe.cpp:144
+msgid "Display Events"
+msgstr "Görüntü Olayları"
+
+#: kmidframe.cpp:150
+msgid "Automatic Text Chooser"
+msgstr "Otomatik Metin Seçici"
+
+#: kmidframe.cpp:154
+msgid "Show &Volume Bar"
+msgstr "Ses Çu&buğunu Göster"
+
+#: kmidframe.cpp:157
+msgid "Hide &Volume Bar"
+msgstr "Ses Çu&buğunu Gizle"
+
+#: kmidframe.cpp:159
+msgid "Show &Channel View"
+msgstr "&Kanalları Göster"
+
+#: kmidframe.cpp:162
+msgid "Hide &Channel View"
+msgstr "Kanal &Görünümünü Gizle"
+
+#: kmidframe.cpp:164
+msgid "Channel View &Options..."
+msgstr "K&anal Görünüm Seçenekleri..."
+
+#: kmidframe.cpp:168
+msgid "&Font Change..."
+msgstr "&Yazıtipi Değişimi..."
+
+#: kmidframe.cpp:172
+msgid "MIDI &Setup..."
+msgstr "M&idi Ayarları..."
+
+#: kmidframe.cpp:286 kmidframe.cpp:561 midicfgdlg.cpp:117
+msgid "Only local files are currently supported."
+msgstr "Sadece yerel dosyalar destekleniyor."
+
+#: kmidframe.cpp:469
+msgid ""
+"Could not open /dev/sequencer to get some info.\n"
+"Probably there is another program using it."
+msgstr ""
+"bilgi almak için /dev/sequencer açılamadı\n"
+"Başka bir program tarafından kullanılıyor olabilr."
+
+#: kmidframe.cpp:570
+msgid ""
+"File %1 already exists\n"
+"Do you want to overwrite it?"
+msgstr ""
+"%1 dosyası zaten mevcut\n"
+"Üzerine yazmak istiyor musunuz ?"
+
+#: kmidframe.cpp:571
+msgid "Overwrite"
+msgstr "Üzerine yaz"
+
+#: main.cpp:63
+msgid "File to open"
+msgstr "Açılacak dosya"
+
+#: midicfgdlg.cpp:42
+msgid "Configure MIDI Devices"
+msgstr "MIDI aygıtlarını yapılandır"
+
+#: midicfgdlg.cpp:49
+msgid "Select the MIDI device you want to use:"
+msgstr "Kullanmak istediğiniz MIDI aygıtını seçin:"
+
+#: midicfgdlg.cpp:68
+msgid "Use the MIDI map:"
+msgstr "MIDI haritasını kullan:"
+
+#: midicfgdlg.cpp:82 midicfgdlg.cpp:92 midicfgdlg.cpp:132
+msgid "None"
+msgstr "Hiçbiri"
+
+#. i18n: file kmidui.rc line 7
+#: rc.cpp:6
+#, no-c-format
+msgid "&Song"
+msgstr "Ş&arkı"
+
+#. i18n: file kmidui.rc line 15
+#: rc.cpp:9
+#, no-c-format
+msgid "&Collections"
+msgstr "&Kolleksiyonlar"
+
+#: slman.cpp:225
+msgid "Temporary Collection"
+msgstr "Geçici Kolleksiyon"
+
+#: instrname.i18n:6
+msgid "Acoustic Grand Piano"
+msgstr "Akustik Büyük Piyano"
+
+#: instrname.i18n:7
+msgid "Bright Acoustic Piano"
+msgstr "Parlak Akustik Piyano"
+
+#: instrname.i18n:8
+msgid "Electric Grand Piano"
+msgstr "Elektrikli Büyük Piyano"
+
+#: instrname.i18n:9
+msgid "Honky-Tonk"
+msgstr "Honky-Tonk"
+
+#: instrname.i18n:10
+msgid "Rhodes Piano"
+msgstr "Rodos Piyanosu"
+
+#: instrname.i18n:11
+msgid "Chorused Piano"
+msgstr "Çok sesli Piyano"
+
+#: instrname.i18n:12
+msgid "Harpsichord"
+msgstr "Harpsikord"
+
+#: instrname.i18n:13
+msgid "Clavinet"
+msgstr "Klarnet"
+
+#: instrname.i18n:14
+msgid "Celesta"
+msgstr "Celesta"
+
+#: instrname.i18n:15
+msgid "Glockenspiel"
+msgstr "Glockenspiel"
+
+#: instrname.i18n:16
+msgid "Music Box"
+msgstr "Müzik Kutusu"
+
+#: instrname.i18n:17
+msgid "Vibraphone"
+msgstr "Vibrafon"
+
+#: instrname.i18n:18
+msgid "Marimba"
+msgstr "Marimba"
+
+#: instrname.i18n:19
+msgid "Xylophone"
+msgstr "Ksilofon"
+
+#: instrname.i18n:20
+msgid "Tubular Bells"
+msgstr "Tüp Çanlar"
+
+#: instrname.i18n:21
+msgid "Dulcimer"
+msgstr "Santur"
+
+#: instrname.i18n:22
+msgid "Hammond Organ"
+msgstr "Hammong Org"
+
+#: instrname.i18n:23
+msgid "Percussive Organ"
+msgstr "Vurmalı Org"
+
+#: instrname.i18n:24
+msgid "Rock Organ"
+msgstr "Rock Org"
+
+#: instrname.i18n:25
+msgid "Church Organ"
+msgstr "Kilise Orgu"
+
+#: instrname.i18n:26
+msgid "Reed Organ"
+msgstr "Havalı Org"
+
+#: instrname.i18n:27
+msgid "Accordion"
+msgstr "Akordiyon"
+
+#: instrname.i18n:28
+msgid "Harmonica"
+msgstr "Mızıka"
+
+#: instrname.i18n:29
+msgid "Tango Accordion"
+msgstr "Tango Akordiyonu"
+
+#: instrname.i18n:30
+msgid "Acoustic Guitar (Nylon)"
+msgstr "Akustik Gitar (Naylon)"
+
+#: instrname.i18n:31
+msgid "Acoustic Guitar (Steel)"
+msgstr "Akustik Gitar (Çelik)"
+
+#: instrname.i18n:32
+msgid "Electric Guitar (Jazz)"
+msgstr "Elektro Gitar (Jazz)"
+
+#: instrname.i18n:33
+msgid "Electric Guitar (Clean)"
+msgstr "Elektro Gitar (Normal)"
+
+#: instrname.i18n:34
+msgid "Electric Guitar (Muted)"
+msgstr "Elektro Gitar (Susturulmuş)"
+
+#: instrname.i18n:35
+msgid "Overdriven Guitar"
+msgstr "Overdrive'lı Gitar"
+
+#: instrname.i18n:36
+msgid "Distortion Guitar"
+msgstr "Distortion Gitar"
+
+#: instrname.i18n:37
+msgid "Guitar Harmonics"
+msgstr "Gitar Harmonileri"
+
+#: instrname.i18n:38
+msgid "Acoustic Bass"
+msgstr "Akustik Bas"
+
+#: instrname.i18n:39
+msgid "Electric Bass (Finger)"
+msgstr "Elektro Bas (Parmak)"
+
+#: instrname.i18n:40
+msgid "Electric Bass (Pick)"
+msgstr "Elektro Bas (Pena)"
+
+#: instrname.i18n:41
+msgid "Fretless Bass"
+msgstr "Perdesiz Bas"
+
+#: instrname.i18n:42
+msgid "Slap Bass 1"
+msgstr "Slap Bas 1"
+
+#: instrname.i18n:43
+msgid "Slap Bass 2"
+msgstr "Slap Bas 2"
+
+#: instrname.i18n:44
+msgid "Synth Bass 1"
+msgstr "Sint Bas 1"
+
+#: instrname.i18n:45
+msgid "Synth Bass 2"
+msgstr "Sint Bas 2"
+
+#: instrname.i18n:46
+msgid "Violin"
+msgstr "Keman"
+
+#: instrname.i18n:47
+msgid "Viola"
+msgstr "Viyola"
+
+#: instrname.i18n:48
+msgid "Cello"
+msgstr "Çello"
+
+#: instrname.i18n:49
+msgid "Contrabass"
+msgstr "Kontrbas"
+
+#: instrname.i18n:50
+msgid "Tremolo Strings"
+msgstr "Üçlemeli Yaylılar"
+
+#: instrname.i18n:51
+msgid "Pizzicato Strings"
+msgstr "Çekmeli Yaylılar"
+
+#: instrname.i18n:52
+msgid "Orchestral Harp"
+msgstr "Orkestral Harp"
+
+#: instrname.i18n:53
+msgid "Timpani"
+msgstr "Timpani"
+
+#: instrname.i18n:54
+msgid "String Ensemble 1"
+msgstr "Yaylı Sazlar 1"
+
+#: instrname.i18n:55
+msgid "String Ensemble 2"
+msgstr "Yaylı Sazlar 2"
+
+#: instrname.i18n:56
+msgid "Synth Strings 1"
+msgstr "Sint Yaylılar 1"
+
+#: instrname.i18n:57
+msgid "Synth Strings 2"
+msgstr "Sint Yaylılar 2"
+
+#: instrname.i18n:58
+msgid "Choir Aahs"
+msgstr "Koro Aah'ları"
+
+#: instrname.i18n:59
+msgid "Voice Oohs"
+msgstr "Oh Vokalleri"
+
+#: instrname.i18n:60
+msgid "Synth Voice"
+msgstr "Sint İnsan Sesi"
+
+#: instrname.i18n:61
+msgid "Orchestra Hit"
+msgstr "Orkestra Vuruşu"
+
+#: instrname.i18n:62
+msgid "Trumpet"
+msgstr "Trompet"
+
+#: instrname.i18n:63
+msgid "Trombone"
+msgstr "Trombon"
+
+#: instrname.i18n:64
+msgid "Tuba"
+msgstr "Tuba"
+
+#: instrname.i18n:65
+msgid "Muted Trumpet"
+msgstr "Susturuculu Trompet"
+
+#: instrname.i18n:66
+msgid "French Horn"
+msgstr "Fransız Kornosu"
+
+#: instrname.i18n:67
+msgid "Brass Section"
+msgstr "Nefesliler"
+
+#: instrname.i18n:68
+msgid "Synth Brass 1"
+msgstr "Sint Nefesliler 1"
+
+#: instrname.i18n:69
+msgid "Synth Brass 2"
+msgstr "Sint Nefesliler 2"
+
+#: instrname.i18n:70
+msgid "Soprano Sax"
+msgstr "Soprano Saksafon"
+
+#: instrname.i18n:71
+msgid "Alto Sax"
+msgstr "Alto Saksafon"
+
+#: instrname.i18n:72
+msgid "Tenor Sax"
+msgstr "Tenor Saksafon"
+
+#: instrname.i18n:73
+msgid "Baritone Sax"
+msgstr "Bariton Saksafon"
+
+#: instrname.i18n:74
+msgid "Oboe"
+msgstr "Obua"
+
+#: instrname.i18n:75
+msgid "English Horn"
+msgstr "İngiliz Kornosu"
+
+#: instrname.i18n:76
+msgid "Bassoon"
+msgstr "Fagot"
+
+#: instrname.i18n:77
+msgid "Clarinet"
+msgstr "Klarnet"
+
+#: instrname.i18n:78
+msgid "Piccolo"
+msgstr "Pikolo"
+
+#: instrname.i18n:79
+msgid "Flute"
+msgstr "Flüt"
+
+#: instrname.i18n:80
+msgid "Recorder"
+msgstr "Kaydedici"
+
+#: instrname.i18n:81
+msgid "Pan Flute"
+msgstr "Yan Flüt"
+
+#: instrname.i18n:82
+msgid "Blown Bottle"
+msgstr "Şişe üflemesi"
+
+#: instrname.i18n:83
+msgid "Shakuhachi"
+msgstr "Shakuhacki"
+
+#: instrname.i18n:84
+msgid "Whistle"
+msgstr "Islık"
+
+#: instrname.i18n:85
+msgid "Ocarina"
+msgstr "Okarina"
+
+#: instrname.i18n:86
+msgid "Lead 1 - Square Wave"
+msgstr "Solo 1 - Dörtlü Dalga"
+
+#: instrname.i18n:87
+msgid "Lead 2 - Saw Tooth"
+msgstr "Solo 2 - Testere Diş Dalga"
+
+#: instrname.i18n:88
+msgid "Lead 3 - Calliope"
+msgstr "Solo 3 - Borulu Org"
+
+#: instrname.i18n:89
+msgid "Lead 4 - Chiflead"
+msgstr "Solo 4 - Chiflead"
+
+#: instrname.i18n:90
+msgid "Lead 5 - Charang"
+msgstr "Solo 5 - Charang"
+
+#: instrname.i18n:91
+msgid "Lead 6 - Voice"
+msgstr "Solo 6 - Vokal"
+
+#: instrname.i18n:92
+msgid "Lead 7 - Fifths"
+msgstr "Solo 7 - Beşliler"
+
+#: instrname.i18n:93
+msgid "Lead 8 - Bass+Lead"
+msgstr "Solo 8 - Bas+Solo"
+
+#: instrname.i18n:94
+msgid "Pad 1 - New Age"
+msgstr "Pad 1 - New Age"
+
+#: instrname.i18n:95
+msgid "Pad 2 - Warm"
+msgstr "Pad 2 - Sıcak"
+
+#: instrname.i18n:96
+msgid "Pad 3 - Polysynth"
+msgstr "Pad 3 - Polisint"
+
+#: instrname.i18n:97
+msgid "Pad 4 - Choir"
+msgstr "Pad 4 - Koro"
+
+#: instrname.i18n:98
+msgid "Pad 5 - Bow"
+msgstr "Pad 5 - Bow"
+
+#: instrname.i18n:99
+msgid "Pad 6 - Metallic"
+msgstr "Pad 6 - Metalik"
+
+#: instrname.i18n:100
+msgid "Pad 7 - Halo"
+msgstr "Pad 7 - Halo"
+
+#: instrname.i18n:101
+msgid "Pad 8 - Sweep"
+msgstr "Pad 8 - Sweep"
+
+#: instrname.i18n:102
+msgid "FX 1 - Rain"
+msgstr "FX 1 - Yağmur"
+
+#: instrname.i18n:103
+msgid "FX 2 - Soundtrack"
+msgstr "FX 2 - Tema"
+
+#: instrname.i18n:104
+msgid "FX 3 - Crystal"
+msgstr "FX 3 - Kristal"
+
+#: instrname.i18n:105
+msgid "FX 4 - Atmosphere"
+msgstr "FX 4 - Atmosfer"
+
+#: instrname.i18n:106
+msgid "FX 5 - Brightness"
+msgstr "FX 5 - Parlaklık"
+
+#: instrname.i18n:107
+msgid "FX 6 - Goblins"
+msgstr "FX 6 - Hayaletler"
+
+#: instrname.i18n:108
+msgid "FX 7 - Echoes"
+msgstr "FX 7 - Ekolar"
+
+#: instrname.i18n:109
+msgid "FX 8 - Sci-fi"
+msgstr "FX 8 - Bilim-kurgu"
+
+#: instrname.i18n:110
+msgid "Sitar"
+msgstr "Sitar"
+
+#: instrname.i18n:111
+msgid "Banjo"
+msgstr "Banço"
+
+#: instrname.i18n:112
+msgid "Shamisen"
+msgstr "Shamisen"
+
+#: instrname.i18n:113
+msgid "Koto"
+msgstr "Koto"
+
+#: instrname.i18n:114
+msgid "Kalimba"
+msgstr "Kalimba"
+
+#: instrname.i18n:115
+msgid "Bagpipe"
+msgstr "Gayda"
+
+#: instrname.i18n:116
+msgid "Fiddle"
+msgstr "Fiddle"
+
+#: instrname.i18n:117
+msgid "Shannai"
+msgstr "Shannai"
+
+#: instrname.i18n:118
+msgid "Tinkle Bell"
+msgstr "Çan Çınlaması"
+
+#: instrname.i18n:119
+msgid "Agogo"
+msgstr "Agogo"
+
+#: instrname.i18n:120
+msgid "Steel Drum"
+msgstr "Çelik Davul"
+
+#: instrname.i18n:121
+msgid "Wook Block"
+msgstr "Wook Block"
+
+#: instrname.i18n:122
+msgid "Taiko Drum"
+msgstr "Taiko Davul"
+
+#: instrname.i18n:123
+msgid "Melodic Tom"
+msgstr "Melodik Tom"
+
+#: instrname.i18n:124
+msgid "Synth Drum"
+msgstr "Sint Davul"
+
+#: instrname.i18n:125
+msgid "Reverse Cymbal"
+msgstr "Ters Zil"
+
+#: instrname.i18n:126
+msgid "Guitar Fret Noise"
+msgstr "Gitar Fret Sesi"
+
+#: instrname.i18n:127
+msgid "Breath Noise"
+msgstr "Nefes Sesi"
+
+#: instrname.i18n:128
+msgid "Seashore"
+msgstr "Dalga Sesi"
+
+#: instrname.i18n:129
+msgid "Bird Tweet"
+msgstr "Kuş Ötüşü"
+
+#: instrname.i18n:130
+msgid "Telephone"
+msgstr "Telefon"
+
+#: instrname.i18n:131
+msgid "Helicopter"
+msgstr "Helikopter"
+
+#: instrname.i18n:132
+msgid "Applause"
+msgstr "Alkış"
+
+#: instrname.i18n:133
+msgid "Gunshot"
+msgstr "Silah sesi"

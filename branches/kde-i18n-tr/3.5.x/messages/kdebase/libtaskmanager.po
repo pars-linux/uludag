@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2001
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kde \n"
+"POT-Creation-Date: 2007-08-31 01:13+0200\n"
+"PO-Revision-Date: 2002-02-14 22:14GMT+0200\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Turkish <kde-i18n-tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.8\n"
+
+#: taskmanager.cpp:808
+msgid "modified"
+msgstr "değiştirildi"
+
+#: taskrmbmenu.cpp:69
+msgid "Ad&vanced"
+msgstr "&Gelişmiş"
+
+#: taskrmbmenu.cpp:74
+msgid "To &Desktop"
+msgstr "&Masaüstüne"
+
+#: taskrmbmenu.cpp:78
+msgid "&To Current Desktop"
+msgstr "&Güncel Masaüstüne"
+
+#: taskrmbmenu.cpp:89
+msgid "&Move"
+msgstr "&Taşı"
+
+#: taskrmbmenu.cpp:92
+msgid "Re&size"
+msgstr "&Yeniden Boyutlandır"
+
+#: taskrmbmenu.cpp:95
+msgid "Mi&nimize"
+msgstr "&Küçült"
+
+#: taskrmbmenu.cpp:99
+msgid "Ma&ximize"
+msgstr "&Büyüt"
+
+#: taskrmbmenu.cpp:103
+msgid "&Shade"
+msgstr "K&apla"
+
+#: taskrmbmenu.cpp:136
+msgid "All to &Desktop"
+msgstr "Hepsini Masaüstü&ne"
+
+#: taskrmbmenu.cpp:138
+msgid "All &to Current Desktop"
+msgstr "Hepsini Gün&cel Masaüstüne"
+
+#: taskrmbmenu.cpp:153
+msgid "Mi&nimize All"
+msgstr "He&psini Küçült"
+
+#: taskrmbmenu.cpp:166
+msgid "Ma&ximize All"
+msgstr "Hepsini Bü&yüt"
+
+#: taskrmbmenu.cpp:179
+msgid "&Restore All"
+msgstr "&Hepsini Kurtar"
+
+#: taskrmbmenu.cpp:194
+msgid "&Close All"
+msgstr "Hepsini K&apat"
+
+#: taskrmbmenu.cpp:205
+msgid "Keep &Above Others"
+msgstr "&Diğerlerinin Üzerinde Tut"
+
+#: taskrmbmenu.cpp:210
+msgid "Keep &Below Others"
+msgstr "D&iğerlerinin Altında Tut"
+
+#: taskrmbmenu.cpp:215
+msgid "&Fullscreen"
+msgstr "&Tam Ekran"
+
+#: taskrmbmenu.cpp:232 taskrmbmenu.cpp:253
+msgid "&All Desktops"
+msgstr "&Tüm Masaüstleri"

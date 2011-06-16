@@ -1,0 +1,1362 @@
+# translation of kdelibs_colors.po to Türkçe
+# translation of kdelibs_colors2.po to Turkish
+# translation of kdelibs_colors.po to Turkish
+# Copyright (C) 2003, 2005 Free Software Foundation, Inc.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2003.
+# Bekir SONAT <cortexbs@yahoo.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs_colors\n"
+"POT-Creation-Date: 2005-05-18 21:23+0200\n"
+"PO-Revision-Date: 2005-07-14 13:01+0300\n"
+"Last-Translator: Bekir SONAT <cortexbs@yahoo.com>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: colors.cpp:1
+msgid ""
+"_: color\n"
+"AliceBlue"
+msgstr "Alice Mavisi"
+
+#: colors.cpp:2
+msgid ""
+"_: color\n"
+"AntiqueWhite"
+msgstr "Antika Beyaz"
+
+#: colors.cpp:3
+msgid ""
+"_: color\n"
+"AntiqueWhite1"
+msgstr "Antika Beyaz1"
+
+#: colors.cpp:4
+msgid ""
+"_: color\n"
+"AntiqueWhite2"
+msgstr "Antika Beyaz 2"
+
+#: colors.cpp:5
+msgid ""
+"_: color\n"
+"AntiqueWhite3"
+msgstr "Antika Beyaz 3"
+
+#: colors.cpp:6
+msgid ""
+"_: color\n"
+"AntiqueWhite4"
+msgstr "Antika Beyaz 4"
+
+#: colors.cpp:7
+msgid ""
+"_: color\n"
+"BlanchedAlmond"
+msgstr "haşlanmış badem"
+
+#: colors.cpp:8
+msgid ""
+"_: color\n"
+"CadetBlue1"
+msgstr "Asker Mavisi 1"
+
+#: colors.cpp:9
+msgid ""
+"_: color\n"
+"CadetBlue2"
+msgstr "Asker Mavisi 2"
+
+#: colors.cpp:10
+msgid ""
+"_: color\n"
+"CadetBlue3"
+msgstr "Asker Mavisi 3"
+
+#: colors.cpp:11
+msgid ""
+"_: color\n"
+"CornflowerBlue"
+msgstr "Patlak Mısır Mavisi"
+
+#: colors.cpp:12
+msgid ""
+"_: color\n"
+"DarkGray"
+msgstr "Koyu KülRengi"
+
+#: colors.cpp:13
+msgid ""
+"_: color\n"
+"DarkGrey"
+msgstr "Koyu Gri"
+
+#: colors.cpp:14
+msgid ""
+"_: color\n"
+"DarkKhaki"
+msgstr "Koyu Haki"
+
+#: colors.cpp:15
+msgid ""
+"_: color\n"
+"DarkOliveGreen1"
+msgstr "Koyu Zeytin Yeşili 1"
+
+#: colors.cpp:16
+msgid ""
+"_: color\n"
+"DarkOliveGreen2"
+msgstr "Koyu Zeytin Yeşili 2 "
+
+#: colors.cpp:17
+msgid ""
+"_: color\n"
+"DarkSalmon"
+msgstr "Koyu somon"
+
+#: colors.cpp:18
+msgid ""
+"_: color\n"
+"DarkSeaGreen"
+msgstr "Koyu Deniz Yeşili"
+
+#: colors.cpp:19
+msgid ""
+"_: color\n"
+"DarkSeaGreen1"
+msgstr "Koyu Deniz Yeşili 1"
+
+#: colors.cpp:20
+msgid ""
+"_: color\n"
+"DarkSeaGreen2"
+msgstr "Koyu Deniz Yeşili 2"
+
+#: colors.cpp:21
+msgid ""
+"_: color\n"
+"DarkSeaGreen3"
+msgstr "Koyu Deniz Yeşili 3"
+
+#: colors.cpp:22
+msgid ""
+"_: color\n"
+"DarkSeaGreen4"
+msgstr "Koyu Deniz Yeşili 4"
+
+#: colors.cpp:23
+msgid ""
+"_: color\n"
+"DarkSlateGray1"
+msgstr "Koyu Mavimsi Kurşuni 1"
+
+#: colors.cpp:24
+msgid ""
+"_: color\n"
+"DarkSlateGray2"
+msgstr "Koyu Mavimsi Kurşuni 2"
+
+#: colors.cpp:25
+msgid ""
+"_: color\n"
+"DarkSlateGray3"
+msgstr "Koyu Mavimsi Kurşuni 3"
+
+#: colors.cpp:26
+msgid ""
+"_: color\n"
+"DimGray"
+msgstr "Donuk Gri"
+
+#: colors.cpp:27
+msgid ""
+"_: color\n"
+"DimGrey"
+msgstr "donuk Gri"
+
+#: colors.cpp:28
+msgid ""
+"_: color\n"
+"FloralWhite"
+msgstr "Çiçek Beyazı"
+
+#: colors.cpp:29
+msgid ""
+"_: color\n"
+"GhostWhite"
+msgstr "Silik Beyaz"
+
+#: colors.cpp:30
+msgid ""
+"_: color\n"
+"HotPink"
+msgstr "Sıcak Pembe"
+
+#: colors.cpp:31
+msgid ""
+"_: color\n"
+"HotPink1"
+msgstr "Sıcak Pembe 1"
+
+#: colors.cpp:32
+msgid ""
+"_: color\n"
+"HotPink2"
+msgstr "Sıcak Pembe 2"
+
+#: colors.cpp:33
+msgid ""
+"_: color\n"
+"IndianRed1"
+msgstr "Kızılderili Kırmızısı 1"
+
+#: colors.cpp:34
+msgid ""
+"_: color\n"
+"LavenderBlush"
+msgstr "Lavanta Pembesi"
+
+#: colors.cpp:35
+msgid ""
+"_: color\n"
+"LavenderBlush1"
+msgstr "Lavanta Pembesi 1"
+
+#: colors.cpp:36
+msgid ""
+"_: color\n"
+"LavenderBlush2"
+msgstr "Lavanta Pembesi 2"
+
+#: colors.cpp:37
+msgid ""
+"_: color\n"
+"LavenderBlush3"
+msgstr "Lavanta Pembesi 3"
+
+#: colors.cpp:38
+msgid ""
+"_: color\n"
+"LavenderBlush4"
+msgstr "Lavanta Pembesi 4"
+
+#: colors.cpp:39
+msgid ""
+"_: color\n"
+"LemonChiffon"
+msgstr "Limoni"
+
+#: colors.cpp:40
+msgid ""
+"_: color\n"
+"LemonChiffon1"
+msgstr "Limoni 1"
+
+#: colors.cpp:41
+msgid ""
+"_: color\n"
+"LemonChiffon2"
+msgstr "Limoni 2"
+
+#: colors.cpp:42
+msgid ""
+"_: color\n"
+"LemonChiffon3"
+msgstr "Limoni 3"
+
+#: colors.cpp:43
+msgid ""
+"_: color\n"
+"LemonChiffon4"
+msgstr "Limoni 4"
+
+#: colors.cpp:44
+msgid ""
+"_: color\n"
+"LightBlue"
+msgstr "Açık Mavi"
+
+#: colors.cpp:45
+msgid ""
+"_: color\n"
+"LightBlue1"
+msgstr "Açık Mavi 1"
+
+#: colors.cpp:46
+msgid ""
+"_: color\n"
+"LightBlue2"
+msgstr "Açık Mavi 2"
+
+#: colors.cpp:47
+msgid ""
+"_: color\n"
+"LightBlue3"
+msgstr "Açık Mavi 3"
+
+#: colors.cpp:48
+msgid ""
+"_: color\n"
+"LightBlue4"
+msgstr "Açık Mavi 4"
+
+#: colors.cpp:49
+msgid ""
+"_: color\n"
+"LightCoral"
+msgstr "Açık mercan"
+
+#: colors.cpp:50
+msgid ""
+"_: color\n"
+"LightCyan"
+msgstr "Açık Cyan"
+
+#: colors.cpp:51
+msgid ""
+"_: color\n"
+"LightCyan1"
+msgstr "Açık Cyan 1"
+
+#: colors.cpp:52
+msgid ""
+"_: color\n"
+"LightCyan2"
+msgstr "Açık Cyan 2"
+
+#: colors.cpp:53
+msgid ""
+"_: color\n"
+"LightCyan3"
+msgstr "Açık Cyan 3"
+
+#: colors.cpp:54
+msgid ""
+"_: color\n"
+"LightCyan4"
+msgstr "Açık Cyan 4"
+
+#: colors.cpp:55
+msgid ""
+"_: color\n"
+"LightGoldenrod"
+msgstr "Açık Sarısabır"
+
+#: colors.cpp:56
+msgid ""
+"_: color\n"
+"LightGoldenrod1"
+msgstr "Açık Sarısabır 1"
+
+#: colors.cpp:57
+msgid ""
+"_: color\n"
+"LightGoldenrod2"
+msgstr "Açık Sarısabır 2"
+
+#: colors.cpp:58
+msgid ""
+"_: color\n"
+"LightGoldenrod3"
+msgstr "Açık Sarısabır 3"
+
+#: colors.cpp:59
+msgid ""
+"_: color\n"
+"LightGoldenrodYellow"
+msgstr "Açık Sarısabır Sarısı"
+
+#: colors.cpp:60
+msgid ""
+"_: color\n"
+"LightGray"
+msgstr "Açık Gri"
+
+#: colors.cpp:61
+msgid ""
+"_: color\n"
+"LightGreen"
+msgstr "Açık Yeşil"
+
+#: colors.cpp:62
+msgid ""
+"_: color\n"
+"LightGrey"
+msgstr "Açık Gri"
+
+#: colors.cpp:63
+msgid ""
+"_: color\n"
+"LightPink"
+msgstr "Açık pembe"
+
+#: colors.cpp:64
+msgid ""
+"_: color\n"
+"LightPink1"
+msgstr "Açık pembe 1"
+
+#: colors.cpp:65
+msgid ""
+"_: color\n"
+"LightPink2"
+msgstr "Açık pembe 2"
+
+#: colors.cpp:66
+msgid ""
+"_: color\n"
+"LightPink3"
+msgstr "Açık pembe 3"
+
+#: colors.cpp:67
+msgid ""
+"_: color\n"
+"LightSalmon"
+msgstr "Açık Somon"
+
+#: colors.cpp:68
+msgid ""
+"_: color\n"
+"LightSalmon1"
+msgstr "Açık Somon 1"
+
+#: colors.cpp:69
+msgid ""
+"_: color\n"
+"LightSalmon2"
+msgstr "Açık Somon 2"
+
+#: colors.cpp:70
+msgid ""
+"_: color\n"
+"LightSkyBlue"
+msgstr "Açık Gök Mavisi"
+
+#: colors.cpp:71
+msgid ""
+"_: color\n"
+"LightSkyBlue1"
+msgstr "Açık Gök Mavisi 1"
+
+#: colors.cpp:72
+msgid ""
+"_: color\n"
+"LightSkyBlue2"
+msgstr "Açık Gök Mavisi 2"
+
+#: colors.cpp:73
+msgid ""
+"_: color\n"
+"LightSkyBlue3"
+msgstr "Açık Gök Mavisi 3"
+
+#: colors.cpp:74
+msgid ""
+"_: color\n"
+"LightSlateBlue"
+msgstr "Açık Kaya Mavisi"
+
+#: colors.cpp:75
+msgid ""
+"_: color\n"
+"LightSlateGray"
+msgstr "Açık Kaya Kırçılı"
+
+#: colors.cpp:76
+msgid ""
+"_: color\n"
+"LightSlateGrey"
+msgstr "Açık Kaya Grisi"
+
+#: colors.cpp:77
+msgid ""
+"_: color\n"
+"LightSteelBlue"
+msgstr "Açık Çelik Mavisi"
+
+#: colors.cpp:78
+msgid ""
+"_: color\n"
+"LightSteelBlue1"
+msgstr "Açık Çelik Mavisi 1"
+
+#: colors.cpp:79
+msgid ""
+"_: color\n"
+"LightSteelBlue2"
+msgstr "Açık Çelik Mavisi 2"
+
+#: colors.cpp:80
+msgid ""
+"_: color\n"
+"LightSteelBlue3"
+msgstr "Açık Çelik Mavisi 3"
+
+#: colors.cpp:81
+msgid ""
+"_: color\n"
+"LightSteelBlue4"
+msgstr "Açık Çelik Mavisi 4"
+
+#: colors.cpp:82
+msgid ""
+"_: color\n"
+"LightYellow"
+msgstr "Açık Sarı"
+
+#: colors.cpp:83
+msgid ""
+"_: color\n"
+"LightYellow1"
+msgstr "Açık Sarı 1"
+
+#: colors.cpp:84
+msgid ""
+"_: color\n"
+"LightYellow2"
+msgstr "Açık Sarı 2"
+
+#: colors.cpp:85
+msgid ""
+"_: color\n"
+"LightYellow3"
+msgstr "Açık Sarı 3"
+
+#: colors.cpp:86
+msgid ""
+"_: color\n"
+"LightYellow4"
+msgstr "Açık Sarı 4"
+
+#: colors.cpp:87
+msgid ""
+"_: color\n"
+"MediumAquamarine"
+msgstr "Orta Denizdibi"
+
+#: colors.cpp:88
+msgid ""
+"_: color\n"
+"MediumOrchid1"
+msgstr "Orta Orkide 1"
+
+#: colors.cpp:89
+msgid ""
+"_: color\n"
+"MediumPurple"
+msgstr "Orta Mor"
+
+#: colors.cpp:90
+msgid ""
+"_: color\n"
+"MediumPurple1"
+msgstr "Orta Mor 1"
+
+#: colors.cpp:91
+msgid ""
+"_: color\n"
+"MediumPurple2"
+msgstr "Orta Mor 2"
+
+#: colors.cpp:92
+msgid ""
+"_: color\n"
+"MediumPurple3"
+msgstr "Orta Mor 3"
+
+#: colors.cpp:93
+msgid ""
+"_: color\n"
+"MediumSlateBlue"
+msgstr "Orta Kaya Mavisi"
+
+#: colors.cpp:94
+#, fuzzy
+msgid ""
+"_: color\n"
+"MintCream"
+msgstr "Naneli Krem rengi"
+
+#: colors.cpp:95
+msgid ""
+"_: color\n"
+"MistyRose"
+msgstr "Gülkurusu"
+
+#: colors.cpp:96
+msgid ""
+"_: color\n"
+"MistyRose1"
+msgstr "Gülkurusu 1"
+
+#: colors.cpp:97
+msgid ""
+"_: color\n"
+"MistyRose2"
+msgstr "Gülkurusu 2"
+
+#: colors.cpp:98
+msgid ""
+"_: color\n"
+"MistyRose3"
+msgstr "Gülkurusu 3"
+
+#: colors.cpp:99
+msgid ""
+"_: color\n"
+"MistyRose4"
+msgstr "Gülkurusu 4"
+
+#: colors.cpp:100
+msgid ""
+"_: color\n"
+"NavajoWhite"
+msgstr "Navajo Beyazı"
+
+#: colors.cpp:101
+msgid ""
+"_: color\n"
+"NavajoWhite1"
+msgstr "Navajo Beyazı 1"
+
+#: colors.cpp:102
+msgid ""
+"_: color\n"
+"NavajoWhite2"
+msgstr "Navajo Beyazı 2"
+
+#: colors.cpp:103
+msgid ""
+"_: color\n"
+"NavajoWhite3"
+msgstr "Navajo Beyazı 3"
+
+#: colors.cpp:104
+msgid ""
+"_: color\n"
+"OldLace"
+msgstr "Eski Dantel rengi"
+
+#: colors.cpp:105
+msgid ""
+"_: color\n"
+"PaleGoldenrod"
+msgstr "Solgun Sarısabır"
+
+#: colors.cpp:106
+msgid ""
+"_: color\n"
+"PaleGreen"
+msgstr "Solgun Yeşil"
+
+#: colors.cpp:107
+msgid ""
+"_: color\n"
+"PaleGreen1"
+msgstr "Solgun Yeşil 1"
+
+#: colors.cpp:108
+msgid ""
+"_: color\n"
+"PaleGreen2"
+msgstr "Solgun Yeşil 2"
+
+#: colors.cpp:109
+msgid ""
+"_: color\n"
+"PaleGreen3"
+msgstr "Solgun Yeşil 3"
+
+#: colors.cpp:110
+msgid ""
+"_: color\n"
+"PaleTurquoise"
+msgstr "Solgun Türkuaz"
+
+#: colors.cpp:111
+msgid ""
+"_: color\n"
+"PaleTurquoise1"
+msgstr "Solgun Türkuaz 1"
+
+#: colors.cpp:112
+msgid ""
+"_: color\n"
+"PaleTurquoise2"
+msgstr "Solgun Türkuaz 2"
+
+#: colors.cpp:113
+msgid ""
+"_: color\n"
+"PaleTurquoise3"
+msgstr "Solgun Türkuaz 3"
+
+#: colors.cpp:114
+msgid ""
+"_: color\n"
+"PaleTurquoise4"
+msgstr "Solgun Türkuaz 4"
+
+#: colors.cpp:115
+msgid ""
+"_: color\n"
+"PaleVioletRed"
+msgstr "Solgun Menekşe Kırmızısı"
+
+#: colors.cpp:116
+msgid ""
+"_: color\n"
+"PaleVioletRed1"
+msgstr "Solgun Menekşe Kırmızısı 1"
+
+#: colors.cpp:117
+msgid ""
+"_: color\n"
+"PaleVioletRed2"
+msgstr "Solgun Menekşe Kırmızısı 2"
+
+#: colors.cpp:118
+msgid ""
+"_: color\n"
+"PaleVioletRed3"
+msgstr "Solgun Menekşe Kırmızısı 3"
+
+#: colors.cpp:119
+msgid ""
+"_: color\n"
+"PapayaWhip"
+msgstr "Papaya Sapı"
+
+#: colors.cpp:120
+#, fuzzy
+msgid ""
+"_: color\n"
+"PeachPuff"
+msgstr "Şeftali Kokusu"
+
+#: colors.cpp:121
+#, fuzzy
+msgid ""
+"_: color\n"
+"PeachPuff1"
+msgstr "Şeftali Kokusu 1"
+
+#: colors.cpp:122
+#, fuzzy
+msgid ""
+"_: color\n"
+"PeachPuff2"
+msgstr "Şeftali Kokusu 2"
+
+#: colors.cpp:123
+#, fuzzy
+msgid ""
+"_: color\n"
+"PeachPuff3"
+msgstr "Şeftali Kokusu 3"
+
+#: colors.cpp:124
+#, fuzzy
+msgid ""
+"_: color\n"
+"PeachPuff4"
+msgstr "Şeftali Kokusu 4"
+
+#: colors.cpp:125
+msgid ""
+"_: color\n"
+"PowderBlue"
+msgstr "Toz Mavisi"
+
+#: colors.cpp:126
+msgid ""
+"_: color\n"
+"RosyBrown"
+msgstr "Gülümsü kahverengi"
+
+#: colors.cpp:127
+msgid ""
+"_: color\n"
+"RosyBrown1"
+msgstr "Gülümsü kahverengi 1"
+
+#: colors.cpp:128
+msgid ""
+"_: color\n"
+"RosyBrown2"
+msgstr "Gülümsü kahverengi 2"
+
+#: colors.cpp:129
+msgid ""
+"_: color\n"
+"RosyBrown3"
+msgstr "Gülümsü kahverengi 3"
+
+#: colors.cpp:130
+msgid ""
+"_: color\n"
+"RosyBrown4"
+msgstr "Gülümsü kahverengi 4"
+
+#: colors.cpp:131
+msgid ""
+"_: color\n"
+"SkyBlue"
+msgstr "Gök Mavisi"
+
+#: colors.cpp:132
+msgid ""
+"_: color\n"
+"SkyBlue1"
+msgstr "Gök Mavisi 1"
+
+#: colors.cpp:133
+msgid ""
+"_: color\n"
+"SkyBlue2"
+msgstr "Gök Mavisi 2"
+
+#: colors.cpp:134
+msgid ""
+"_: color\n"
+"SkyBlue3"
+msgstr "Gök Mavisi 3"
+
+#: colors.cpp:135
+msgid ""
+"_: color\n"
+"SlateBlue1"
+msgstr "Kaya Mavisi 1"
+
+#: colors.cpp:136
+msgid ""
+"_: color\n"
+"SlateBlue2"
+msgstr "Kaya Mavisi 2"
+
+#: colors.cpp:137
+msgid ""
+"_: color\n"
+"SlateGray"
+msgstr "Kaya Kırçılı"
+
+#: colors.cpp:138
+msgid ""
+"_: color\n"
+"SlateGray1"
+msgstr "Kaya Kırçılı 1"
+
+#: colors.cpp:139
+msgid ""
+"_: color\n"
+"SlateGray2"
+msgstr "Kaya Kırçılı 2"
+
+#: colors.cpp:140
+msgid ""
+"_: color\n"
+"SlateGray3"
+msgstr "Kaya Kırçılı 3"
+
+#: colors.cpp:141
+msgid ""
+"_: color\n"
+"SlateGray4"
+msgstr "Kaya Kırçılı 4"
+
+#: colors.cpp:142
+msgid ""
+"_: color\n"
+"SlateGrey"
+msgstr "Kaya Grisi"
+
+#: colors.cpp:143
+msgid ""
+"_: color\n"
+"WhiteSmoke"
+msgstr "Beyaz Duman"
+
+#: colors.cpp:144
+msgid ""
+"_: color\n"
+"aquamarine"
+msgstr "Denizdibi"
+
+#: colors.cpp:145
+msgid ""
+"_: color\n"
+"aquamarine1"
+msgstr "Denizdibi 1"
+
+#: colors.cpp:146
+msgid ""
+"_: color\n"
+"aquamarine2"
+msgstr "Denizdibi 2"
+
+#: colors.cpp:147
+msgid ""
+"_: color\n"
+"aquamarine3"
+msgstr "Denizdibi 3"
+
+#: colors.cpp:148
+msgid ""
+"_: color\n"
+"azure"
+msgstr "mine çiçeği"
+
+#: colors.cpp:149
+msgid ""
+"_: color\n"
+"azure1"
+msgstr "mine çiçeği 1"
+
+#: colors.cpp:150
+msgid ""
+"_: color\n"
+"azure2"
+msgstr "mine çiçeği 2"
+
+#: colors.cpp:151
+msgid ""
+"_: color\n"
+"azure3"
+msgstr "mine çiçeği 3"
+
+#: colors.cpp:152
+msgid ""
+"_: color\n"
+"azure4"
+msgstr "mine çiçeği 4"
+
+#: colors.cpp:153
+msgid ""
+"_: color\n"
+"beige"
+msgstr "bej"
+
+#: colors.cpp:154
+msgid ""
+"_: color\n"
+"bisque"
+msgstr "bulamaç"
+
+#: colors.cpp:155
+msgid ""
+"_: color\n"
+"bisque1"
+msgstr "bulamaç 1"
+
+#: colors.cpp:156
+msgid ""
+"_: color\n"
+"bisque2"
+msgstr "bulamaç 2"
+
+#: colors.cpp:157
+msgid ""
+"_: color\n"
+"bisque3"
+msgstr "bulamaç 3"
+
+#: colors.cpp:158
+msgid ""
+"_: color\n"
+"bisque4"
+msgstr "bulamaç 4"
+
+#: colors.cpp:159
+msgid ""
+"_: color\n"
+"burlywood"
+msgstr "sütlü kahve"
+
+#: colors.cpp:160
+msgid ""
+"_: color\n"
+"burlywood1"
+msgstr "sütlü kahve 1"
+
+#: colors.cpp:161
+msgid ""
+"_: color\n"
+"burlywood2"
+msgstr "sütlü kahve 2"
+
+#: colors.cpp:162
+msgid ""
+"_: color\n"
+"burlywood3"
+msgstr "sütlü kahve 3"
+
+#: colors.cpp:163
+msgid ""
+"_: color\n"
+"cornsilk"
+msgstr "kemik sarısı"
+
+#: colors.cpp:164
+msgid ""
+"_: color\n"
+"cornsilk1"
+msgstr "kemik sarısı 1"
+
+#: colors.cpp:165
+msgid ""
+"_: color\n"
+"cornsilk2"
+msgstr "kemik sarısı 2"
+
+#: colors.cpp:166
+msgid ""
+"_: color\n"
+"cornsilk3"
+msgstr "kemik sarısı 3"
+
+#: colors.cpp:167
+msgid ""
+"_: color\n"
+"cornsilk4"
+msgstr "kemik sarısı 4"
+
+#: colors.cpp:168
+msgid ""
+"_: color\n"
+"gainsboro"
+msgstr "Gainsboro"
+
+#: colors.cpp:169
+msgid ""
+"_: color\n"
+"honeydew"
+msgstr "çamsakızı"
+
+#: colors.cpp:170
+msgid ""
+"_: color\n"
+"honeydew1"
+msgstr "çamsakızı 1"
+
+#: colors.cpp:171
+msgid ""
+"_: color\n"
+"honeydew2"
+msgstr "çamsakızı 2"
+
+#: colors.cpp:172
+msgid ""
+"_: color\n"
+"honeydew3"
+msgstr "çamsakızı 3"
+
+#: colors.cpp:173
+msgid ""
+"_: color\n"
+"honeydew4"
+msgstr "çamsakızı 4"
+
+#: colors.cpp:174
+msgid ""
+"_: color\n"
+"ivory"
+msgstr "fildişi"
+
+#: colors.cpp:175
+msgid ""
+"_: color\n"
+"ivory1"
+msgstr "fildişi 1"
+
+#: colors.cpp:176
+msgid ""
+"_: color\n"
+"ivory2"
+msgstr "fildişi 2"
+
+#: colors.cpp:177
+msgid ""
+"_: color\n"
+"ivory3"
+msgstr "fildişi 3"
+
+#: colors.cpp:178
+msgid ""
+"_: color\n"
+"ivory4"
+msgstr "fildişi 4"
+
+#: colors.cpp:179
+msgid ""
+"_: color\n"
+"khaki"
+msgstr "haki"
+
+#: colors.cpp:180
+msgid ""
+"_: color\n"
+"khaki1"
+msgstr "haki 1"
+
+#: colors.cpp:181
+msgid ""
+"_: color\n"
+"khaki2"
+msgstr "haki 2"
+
+#: colors.cpp:182
+msgid ""
+"_: color\n"
+"khaki3"
+msgstr "haki 3"
+
+#: colors.cpp:183
+msgid ""
+"_: color\n"
+"lavender"
+msgstr "lavanta"
+
+#: colors.cpp:184
+msgid ""
+"_: color\n"
+"linen"
+msgstr "keten"
+
+#: colors.cpp:185
+msgid ""
+"_: color\n"
+"moccasin"
+msgstr "kösele"
+
+#: colors.cpp:186
+msgid ""
+"_: color\n"
+"orchid"
+msgstr "orkide"
+
+#: colors.cpp:187
+msgid ""
+"_: color\n"
+"orchid1"
+msgstr "orkide 1"
+
+#: colors.cpp:188
+msgid ""
+"_: color\n"
+"orchid2"
+msgstr "orkide 2"
+
+#: colors.cpp:189
+msgid ""
+"_: color\n"
+"orchid3"
+msgstr "orkide 3"
+
+#: colors.cpp:190
+msgid ""
+"_: color\n"
+"pink"
+msgstr "pembe"
+
+#: colors.cpp:191
+msgid ""
+"_: color\n"
+"pink1"
+msgstr "pembe 1"
+
+#: colors.cpp:192
+msgid ""
+"_: color\n"
+"pink2"
+msgstr "pembe 2"
+
+#: colors.cpp:193
+msgid ""
+"_: color\n"
+"pink3"
+msgstr "pembe 3"
+
+#: colors.cpp:194
+msgid ""
+"_: color\n"
+"plum"
+msgstr "erik"
+
+#: colors.cpp:195
+msgid ""
+"_: color\n"
+"plum1"
+msgstr "erik 1"
+
+#: colors.cpp:196
+msgid ""
+"_: color\n"
+"plum2"
+msgstr "erik 2"
+
+#: colors.cpp:197
+msgid ""
+"_: color\n"
+"plum3"
+msgstr "erik 3"
+
+#: colors.cpp:198
+msgid ""
+"_: color\n"
+"plum4"
+msgstr "erik 4"
+
+#: colors.cpp:199
+msgid ""
+"_: color\n"
+"salmon"
+msgstr "somon"
+
+#: colors.cpp:200
+msgid ""
+"_: color\n"
+"salmon1"
+msgstr "somon 1"
+
+#: colors.cpp:201
+msgid ""
+"_: color\n"
+"seashell"
+msgstr "deniz kabuğu"
+
+#: colors.cpp:202
+msgid ""
+"_: color\n"
+"seashell1"
+msgstr "deniz kabuğu 1"
+
+#: colors.cpp:203
+msgid ""
+"_: color\n"
+"seashell2"
+msgstr "deniz kabuğu 2"
+
+#: colors.cpp:204
+msgid ""
+"_: color\n"
+"seashell3"
+msgstr "deniz kabuğu 3"
+
+#: colors.cpp:205
+msgid ""
+"_: color\n"
+"seashell4"
+msgstr "deniz kabuğu 4"
+
+#: colors.cpp:206
+msgid ""
+"_: color\n"
+"snow"
+msgstr "kar"
+
+#: colors.cpp:207
+msgid ""
+"_: color\n"
+"snow1"
+msgstr "kar 1"
+
+#: colors.cpp:208
+msgid ""
+"_: color\n"
+"snow2"
+msgstr "kar 2"
+
+#: colors.cpp:209
+msgid ""
+"_: color\n"
+"snow3"
+msgstr "kar 3"
+
+#: colors.cpp:210
+msgid ""
+"_: color\n"
+"snow4"
+msgstr "kar 4"
+
+#: colors.cpp:211
+msgid ""
+"_: color\n"
+"tan"
+msgstr "güneş yanığı"
+
+#: colors.cpp:212
+msgid ""
+"_: color\n"
+"thistle"
+msgstr "devedikeni"
+
+#: colors.cpp:213
+msgid ""
+"_: color\n"
+"thistle1"
+msgstr "devedikeni 1"
+
+#: colors.cpp:214
+msgid ""
+"_: color\n"
+"thistle2"
+msgstr "devedikeni 2"
+
+#: colors.cpp:215
+msgid ""
+"_: color\n"
+"thistle3"
+msgstr "devedikeni 3"
+
+#: colors.cpp:216
+msgid ""
+"_: color\n"
+"thistle4"
+msgstr "devedikeni 4"
+
+#: colors.cpp:217
+msgid ""
+"_: color\n"
+"violet"
+msgstr "menekşe"
+
+#: colors.cpp:218
+msgid ""
+"_: color\n"
+"wheat"
+msgstr "buğday"
+
+#: colors.cpp:219
+msgid ""
+"_: color\n"
+"wheat1"
+msgstr "buğday 1"
+
+#: colors.cpp:220
+msgid ""
+"_: color\n"
+"wheat2"
+msgstr "buğday 2"
+
+#: colors.cpp:221
+msgid ""
+"_: color\n"
+"wheat3"
+msgstr "buğday 3"
+
+#: colors.cpp:222
+msgid ""
+"_: color\n"
+"wheat4"
+msgstr "buğday 4"
+
+#: colors.cpp:223
+msgid ""
+"_: color\n"
+"white"
+msgstr "Beyaz"

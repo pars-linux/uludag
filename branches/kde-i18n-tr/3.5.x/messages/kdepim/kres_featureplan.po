@@ -1,0 +1,56 @@
+# translation of kres_featureplan.po to Türkçe
+# Görkem Çetin <gorkem@kde.org.tr>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kres_featureplan\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-01-16 01:25+0100\n"
+"PO-Revision-Date: 2005-07-17 23:32+0300\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org.tr>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Tolga Günkut"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "Tolga Günkut"
+
+#: kcal_resourcefeatureplan.cpp:91
+msgid "Feature Plan"
+msgstr "Plan Özelliği"
+
+#: kcal_resourcefeatureplanconfig.cpp:45
+msgid "Filename:"
+msgstr "Dosya Adı:"
+
+#: kcal_resourcefeatureplanconfig.cpp:51
+msgid "Filter email:"
+msgstr "E-postayı süzgeçle:"
+
+#. i18n: file kresources_kcal_featureplan.kcfg line 16
+#: kcal_resourcefeatureplanconfig.cpp:57 rc.cpp:9
+#, no-c-format
+msgid "Use CVS"
+msgstr "CVS kullan"
+
+#. i18n: file kresources_kcal_featureplan.kcfg line 10
+#: rc.cpp:3
+#, no-c-format
+msgid "Filename"
+msgstr "Dosya Adı"
+
+#. i18n: file kresources_kcal_featureplan.kcfg line 13
+#: rc.cpp:6
+#, no-c-format
+msgid "Filter for Email"
+msgstr "E-posta için süzgeç"

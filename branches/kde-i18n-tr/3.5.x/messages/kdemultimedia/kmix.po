@@ -1,0 +1,679 @@
+# translation of kmix.po to
+# Copyright (C) 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
+#
+#  Tuncay YENİAY <tuncayyeniay@mynet.com>,2002.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# YILDIZ KARDESLER <turkishprogram@xposta.com>, 2004.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Onur Küçük <onur@uludag.org.tr>, 2005.
+# Ayşe Genç <ayse@uludag.org.tr>, 2005.
+# Engin Çağatay <engincagatay@yahoo.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kmix\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-08-12 01:17+0200\n"
+"PO-Revision-Date: 2007-05-14 23:14+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Serdar Soytetir, Onur Küçük, Ayşe Genç"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "tulliana@gmail.com, onur@uludag.org.tr, ayse@uludag.org.tr"
+
+#: dialogselectmaster.cpp:41
+msgid "Select Master Channel"
+msgstr "Ana Kanalı Seçin"
+
+#: dialogselectmaster.cpp:73
+msgid "Current Mixer"
+msgstr "Geçerli Karıştırıcı"
+
+#: dialogselectmaster.cpp:91 kmix.cpp:167
+msgid "Current mixer"
+msgstr "Geçerli karıştırıcı"
+
+#: dialogselectmaster.cpp:96
+msgid "Select the channel representing the master volume:"
+msgstr "Ana kanal olarak kullanılacak kanalı seçin:"
+
+#: kmix.cpp:115
+msgid "Configure &Global Shortcuts..."
+msgstr "Genel &Kısayollları Yapılandır..."
+
+#: kmix.cpp:119
+msgid "Hardware &Information"
+msgstr "Donanım &Bilgisi"
+
+#: kmix.cpp:120 kmixdockwidget.cpp:369
+msgid "Hide Mixer Window"
+msgstr "Karıştırıcı Penceresini Gizle"
+
+#: kmix.cpp:123
+msgid "Increase Volume of Master Channel"
+msgstr "Ana Kanalın Sesini Yükselt"
+
+#: kmix.cpp:125
+msgid "Decrease Volume of Master Channel"
+msgstr "Ana Kanalın Sesini Alçalt"
+
+#: kmix.cpp:127
+msgid "Toggle Mute of Master Channel"
+msgstr "Ana Kanalın Sesini Aç / Kapat"
+
+#: kmix.cpp:162
+msgid "Current mixer:"
+msgstr "Geçerli karıştırıcı:"
+
+#: kmix.cpp:216
+msgid "Select Channel"
+msgstr "Kanal Seç"
+
+#: kmix.cpp:513
+msgid "The change of orientation will be adopted on the next start of KMix."
+msgstr "Değişiklikler KMix yeniden başlatıldığında uygulanacaktır."
+
+#: kmix.cpp:594
+msgid "Mixer Hardware Information"
+msgstr "Karıştırıcı Donanım Bilgisi"
+
+#: kmixapplet.cpp:92
+msgid "Configure - Mixer Applet"
+msgstr "Karıştırıcı Programcığını Yapılandır"
+
+#: kmixapplet.cpp:157
+msgid "KMix Panel Applet"
+msgstr "KMix Panel Programcığı"
+
+#: kmixapplet.cpp:159
+msgid ""
+"(c) 1996-2000 Christian Esken\n"
+"(c) 2000-2003 Christian Esken, Stefan Schimanski"
+msgstr ""
+"(c) 1996-2000 Christian Esken\n"
+"(c) 2000-2003 Christian Esken, Stefan Schimanski"
+
+#: kmixapplet.cpp:207
+msgid "Select Mixer"
+msgstr "Karıştırıcı Seç"
+
+#: kmixapplet.cpp:216
+msgid ""
+"For detailed credits, please refer to the About information of the KMix program"
+msgstr ""
+"Detaylı bilgi için, lütfen Kmix programının hakkında bilgisine başvurun."
+
+#: kmixapplet.cpp:323
+msgid "Mixers"
+msgstr "Karıştırıcılar"
+
+#: kmixapplet.cpp:324
+msgid "Available mixers:"
+msgstr "Kullanılabilir karıştırıcılar:"
+
+#: kmixapplet.cpp:330
+msgid "Invalid mixer entered."
+msgstr "Geçersiz karıştırıcı girildi."
+
+#: kmixctrl.cpp:37
+msgid "kmixctrl - kmix volume save/restore utility"
+msgstr "kmixctrl - kmix ses kayıt/yükleme uygulaması"
+
+#: kmixctrl.cpp:42
+msgid "Save current volumes as default"
+msgstr "Geçerli ses ayarlamalarını öntanımlı olarak kaydet"
+
+#: kmixctrl.cpp:44
+msgid "Restore default volumes"
+msgstr "Öntanımlı ses ayarlarını yükle"
+
+#: kmixctrl.cpp:52
+msgid "KMixCtrl"
+msgstr "KMixCtrl"
+
+#: kmixdockwidget.cpp:82
+msgid "M&ute"
+msgstr "S&essiz"
+
+#: kmixdockwidget.cpp:90
+msgid "Select Master Channel..."
+msgstr "Ana Kanalı Seç..."
+
+#: kmixdockwidget.cpp:177
+msgid "Mixer cannot be found"
+msgstr "Karıştırıcı bulunamadı"
+
+#: kmixdockwidget.cpp:188
+msgid "Volume at %1%"
+msgstr "Ses %%1"
+
+#: kmixdockwidget.cpp:190
+msgid " (Muted)"
+msgstr " (Sessiz)"
+
+#: kmixdockwidget.cpp:373
+msgid "Show Mixer Window"
+msgstr "Karıştırıcı Penceresini Göster"
+
+#: kmixerwidget.cpp:80
+msgid "Invalid mixer"
+msgstr "Geçersiz karıştırıcı."
+
+#: kmixerwidget.cpp:124
+msgid "Output"
+msgstr "Çıkış"
+
+#: kmixerwidget.cpp:125
+msgid "Input"
+msgstr "Giriş"
+
+#: kmixerwidget.cpp:126
+msgid "Switches"
+msgstr "Anahtarlar"
+
+#: kmixerwidget.cpp:128
+msgid "Surround"
+msgstr "Surround"
+
+#: kmixerwidget.cpp:130
+msgid "Grid"
+msgstr "Izgara"
+
+#: kmixerwidget.cpp:152
+msgid "Left/Right balancing"
+msgstr "Sol/Sağ balansı"
+
+#: kmixprefdlg.cpp:49
+msgid "&Dock into panel"
+msgstr "Pano içine &kenetle"
+
+#: kmixprefdlg.cpp:51
+msgid "Docks the mixer into the KDE panel"
+msgstr "Karıştırıcıyı KDE paneline gömer"
+
+#: kmixprefdlg.cpp:53
+msgid "Enable system tray &volume control"
+msgstr "Sistem ses &denetimini etkinleştir"
+
+#: kmixprefdlg.cpp:57
+msgid "Show &tickmarks"
+msgstr "İşare&tler"
+
+#: kmixprefdlg.cpp:60
+msgid "Enable/disable tickmark scales on the sliders"
+msgstr "Kaydırma çubukları üzerindeki çizgileri açar/kapatır"
+
+#: kmixprefdlg.cpp:62
+msgid "Show &labels"
+msgstr "&Etiketleri göster"
+
+#: kmixprefdlg.cpp:65
+msgid "Enables/disables description labels above the sliders"
+msgstr "Kaydırma çubukları için açıklama satırlarını açar/kapatır"
+
+#: kmixprefdlg.cpp:68
+msgid "Restore volumes on login"
+msgstr "Giriş yapınca ses ayarlarını yenile"
+
+#: kmixprefdlg.cpp:72
+msgid "Numbers"
+msgstr "Numaralar"
+
+#: kmixprefdlg.cpp:74
+msgid "Volume Values: "
+msgstr "Ses Değerleri: "
+
+#: kmixprefdlg.cpp:75
+msgid "&None"
+msgstr "&Hiçbiri"
+
+#: kmixprefdlg.cpp:76
+msgid "A&bsolute"
+msgstr "&Durağan"
+
+#: kmixprefdlg.cpp:77
+msgid "&Relative"
+msgstr "D&eğişken"
+
+#: kmixprefdlg.cpp:93
+msgid "Slider Orientation: "
+msgstr "Kaydırma Çubuklarının Konumu: "
+
+#: kmixprefdlg.cpp:94
+msgid "&Horizontal"
+msgstr "&Yatay"
+
+#: kmixprefdlg.cpp:95
+msgid "&Vertical"
+msgstr "&Dikey"
+
+#: main.cpp:32
+msgid "KMix - KDE's full featured mini mixer"
+msgstr "Kmix - KDE'nin tam kapsamlı mini karıştırıcısı"
+
+#: main.cpp:42
+msgid "KMix"
+msgstr "Kmix"
+
+#: main.cpp:44
+msgid ""
+"(c) 1996-2000 Christian Esken\n"
+"(c) 2000-2003 Christian Esken, Stefan Schimanski\n"
+"(c) 2002-2005 Christian Esken, Helio Chissini de Castro"
+msgstr ""
+"(c) 1996-2000 Christian Esken\n"
+"(c) 2000-2003 Christian Esken, Stefan Schimanski\n"
+"(c) 2002-2005 Christian Esken, Helio Chissini de Castro"
+
+#: main.cpp:47
+msgid "Current redesign and co-maintainer, Alsa 0.9x port"
+msgstr "Yeniden tasarım ve yardımcı-geliştirici, Alsa 0.9x desteği"
+
+#: main.cpp:50
+msgid "Solaris port"
+msgstr "Solaris portu"
+
+#: main.cpp:51
+msgid "SGI Port"
+msgstr "SGI Port"
+
+#: main.cpp:52 main.cpp:53
+msgid "*BSD fixes"
+msgstr "*BSD fixes"
+
+#: main.cpp:54
+msgid "ALSA port"
+msgstr "ALSA port"
+
+#: main.cpp:55
+msgid "HP/UX port"
+msgstr "HP/UX port"
+
+#: main.cpp:56
+msgid "NAS port"
+msgstr "NAS port"
+
+#: main.cpp:57
+msgid "Mute and volume preview, other fixes"
+msgstr "Diğer güçlükler, sessiz ve ses önizlemesi"
+
+#: mdwenum.cpp:56 mdwslider.cpp:69 mdwswitch.cpp:57
+msgid "&Hide"
+msgstr "&Gizlen"
+
+#: mdwenum.cpp:57 mdwswitch.cpp:58
+msgid "C&onfigure Shortcuts..."
+msgstr "Kısay&olları Yapılandır..."
+
+#: mdwenum.cpp:63
+msgid "Next Value"
+msgstr "Sıradaki Değer"
+
+#: mdwslider.cpp:67
+msgid "&Split Channels"
+msgstr "&Kanalları Ayır"
+
+#: mdwslider.cpp:71
+msgid "&Muted"
+msgstr "S&essiz"
+
+#: mdwslider.cpp:75
+msgid "Set &Record Source"
+msgstr "&Kayıt Kaynağını Belirle"
+
+#: mdwslider.cpp:79
+msgid "C&onfigure Global Shortcuts..."
+msgstr "Genel &Kısayolları Yapılandır..."
+
+#: mdwslider.cpp:84
+msgid "Increase Volume of '%1'"
+msgstr "'%1'Ses Düzeyini Yükselt"
+
+#: mdwslider.cpp:86
+msgid "Decrease Volume of '%1'"
+msgstr "'%1'Ses Düzeyini Alçalt"
+
+#: mdwslider.cpp:88
+msgid "Toggle Mute of '%1'"
+msgstr "'%1'Sesini Kapat"
+
+#: mdwslider.cpp:235
+msgid "Mute"
+msgstr "Sessiz"
+
+#: mdwslider.cpp:349
+msgid "Record"
+msgstr "Kayıt"
+
+#: mdwswitch.cpp:63
+msgid "Toggle Switch"
+msgstr "Değiştirme Düğmesi"
+
+#: mixdevice.cpp:47 mixer_oss.cpp:63 mixer_oss.cpp:64
+msgid "unknown"
+msgstr "bilinmiyor"
+
+#: mixer_alsa9.cpp:807
+msgid ""
+"You do not have permission to access the alsa mixer device.\n"
+"Please verify if all alsa devices are properly created."
+msgstr ""
+"Alsa karıştırıcı aygıtına erişim izniniz yok. Lütfen alsa karıştırıcı\n"
+"aygıtının düzgün oluşturulduğundan emin olun"
+
+#: mixer_alsa9.cpp:811
+msgid ""
+"Alsa mixer cannot be found.\n"
+"Please check that the soundcard is installed and the\n"
+"soundcard driver is loaded.\n"
+msgstr ""
+"Alsa karıştırıcısı bulunamadı.\n"
+"Lütfen ses kartının takılı olduğundan veya ses kartı\n"
+"sürücüsünün yüklendiğinden emin olun.\n"
+
+#: mixer_backend.cpp:111
+msgid ""
+"kmix:You do not have permission to access the mixer device.\n"
+"Please check your operating systems manual to allow the access."
+msgstr ""
+"kmix:Karıştırıcı aygıtına erişim izniniz yok.\n"
+"Erişim izni için lütfen işletim sisteminizin dökümanlarına başvurun."
+
+#: mixer_backend.cpp:115
+msgid "kmix: Could not write to mixer."
+msgstr "kmix: Karıştırıcıya yazılamadı."
+
+#: mixer_backend.cpp:118
+msgid "kmix: Could not read from mixer."
+msgstr "kmix: Karıştırıcıdan okunamadı."
+
+#: mixer_backend.cpp:121
+msgid "kmix: Your mixer does not control any devices."
+msgstr "kmix: Karıştırıcınız herhangi bir aygıtı kontrol etmiyor."
+
+#: mixer_backend.cpp:124
+msgid ""
+"kmix: Mixer does not support your platform. See mixer.cpp for porting hints "
+"(PORTING)."
+msgstr "kmix: Karıştırıcı platformunuzu desteklemiyor."
+
+#: mixer_backend.cpp:127
+msgid "kmix: Not enough memory."
+msgstr "kmix: Yetersiz bellek."
+
+#: mixer_backend.cpp:133
+msgid ""
+"kmix: Mixer cannot be found.\n"
+"Please check that the soundcard is installed and that\n"
+"the soundcard driver is loaded.\n"
+msgstr ""
+"kmix: Karıştırıcı bulunamıyor.\n"
+"Lütfen ses kartınızın kurulmuş olup olmadığını ve\n"
+"ses kartı sürücüsünün yüklenip yüklenmediğini kontrol edin\n"
+
+#: mixer_backend.cpp:138
+msgid ""
+"kmix: Initial set is incompatible.\n"
+"Using a default set.\n"
+msgstr ""
+"kmix: Başlangıç ayarı uyumsuz.\n"
+"Öntanımlı bir ayar kullanılıyor.\n"
+
+#: mixer_backend.cpp:142
+msgid "kmix: Unknown error. Please report how you produced this error."
+msgstr ""
+"kmix: Bilinmeyen hata. Lütfen bu hatayı nasıl meydana getirdiğinizi bildiriniz."
+
+#: mixer_oss.cpp:54
+msgid "Volume"
+msgstr "Ses Düzeyi"
+
+#: mixer_oss.cpp:54
+msgid "Bass"
+msgstr "Bas"
+
+#: mixer_oss.cpp:54
+msgid "Treble"
+msgstr "Tiz"
+
+#: mixer_oss.cpp:55
+msgid "Synth"
+msgstr "Synth"
+
+#: mixer_oss.cpp:55
+msgid "Pcm"
+msgstr "Pcm"
+
+#: mixer_oss.cpp:55
+msgid "Speaker"
+msgstr "Hoparlör"
+
+#: mixer_oss.cpp:56
+msgid "Line"
+msgstr "Giriş"
+
+#: mixer_oss.cpp:56 mixer_sun.cpp:71
+msgid "Microphone"
+msgstr "Mikrofon"
+
+#: mixer_oss.cpp:56 mixer_sun.cpp:73
+msgid "CD"
+msgstr "CD"
+
+#: mixer_oss.cpp:57
+msgid "Mix"
+msgstr "Mix"
+
+#: mixer_oss.cpp:57
+msgid "Pcm2"
+msgstr "Pcm2"
+
+#: mixer_oss.cpp:57
+msgid "RecMon"
+msgstr "KayıtMon"
+
+#: mixer_oss.cpp:58
+msgid "IGain"
+msgstr "IGain"
+
+#: mixer_oss.cpp:58
+msgid "OGain"
+msgstr "OGain"
+
+#: mixer_oss.cpp:58
+msgid "Line1"
+msgstr "Kanal1"
+
+#: mixer_oss.cpp:59
+msgid "Line2"
+msgstr "Kanal2"
+
+#: mixer_oss.cpp:59
+msgid "Line3"
+msgstr "Kanal3"
+
+#: mixer_oss.cpp:59
+msgid "Digital1"
+msgstr "Dijital1"
+
+#: mixer_oss.cpp:60
+msgid "Digital2"
+msgstr "Dijital2"
+
+#: mixer_oss.cpp:60
+msgid "Digital3"
+msgstr "Dijital3"
+
+#: mixer_oss.cpp:60
+msgid "PhoneIn"
+msgstr "Telefon İçeri"
+
+#: mixer_oss.cpp:61
+msgid "PhoneOut"
+msgstr "Telefom Dışarı"
+
+#: mixer_oss.cpp:61
+msgid "Video"
+msgstr "Video"
+
+#: mixer_oss.cpp:61
+msgid "Radio"
+msgstr "Radyo"
+
+#: mixer_oss.cpp:62
+msgid "Monitor"
+msgstr "Monitör"
+
+#: mixer_oss.cpp:62
+msgid "3D-depth"
+msgstr "3D-derinlik"
+
+#: mixer_oss.cpp:62
+msgid "3D-center"
+msgstr "3D-orta"
+
+#: mixer_oss.cpp:64
+msgid "unused"
+msgstr "kullanılmayan"
+
+#: mixer_oss.cpp:211 mixer_oss4.cpp:341
+msgid ""
+"kmix: You do not have permission to access the mixer device.\n"
+"Login as root and do a 'chmod a+rw /dev/mixer*' to allow the access."
+msgstr ""
+"kmix: Karıştırıcı aygıtına erişim izniniz yok.\n"
+"root kullanıcısıyla girin ve 'chmod a+rw /dev/mixer*' komutunu çalıştırın."
+
+#: mixer_oss.cpp:215 mixer_oss4.cpp:345
+msgid ""
+"kmix: Mixer cannot be found.\n"
+"Please check that the soundcard is installed and the\n"
+"soundcard driver is loaded.\n"
+"On Linux you might need to use 'insmod' to load the driver.\n"
+"Use 'soundon' when using commercial OSS."
+msgstr ""
+"kmix: Karıştırıcı bulunamıyor.\n"
+"Lütfen ses kartınızın kurulmuş olup olmadığını ve\n"
+"ses kartı sürücüsünün yüklenip yüklenmediğini kontrol edin\n"
+"Linux üzerinde, sürücüyü yüklemek için 'insmod' komutunu \n"
+"kullanmanız gerekebilir."
+
+#: mixer_sun.cpp:66
+msgid "Master Volume"
+msgstr "Ana Ses"
+
+#: mixer_sun.cpp:67
+msgid "Internal Speaker"
+msgstr "İç Hoparlör"
+
+#: mixer_sun.cpp:68
+msgid "Headphone"
+msgstr "Kulaklık"
+
+#: mixer_sun.cpp:69
+msgid "Line Out"
+msgstr "Çıkış"
+
+#: mixer_sun.cpp:70
+msgid "Record Monitor"
+msgstr "Kayıt Gösterici"
+
+#: mixer_sun.cpp:72
+msgid "Line In"
+msgstr "Giriş"
+
+#: mixer_sun.cpp:228
+msgid ""
+"kmix: You do not have permission to access the mixer device.\n"
+"Ask your system administrator to fix /dev/audioctl to allow access."
+msgstr ""
+"kmix: Karıştırıcı aygıtına erişim izniniz yok.\n"
+"/dev/audioctl'ye erişim izni için lütfen sistem yöneticinize başvurun."
+
+#: mixertoolbox.cpp:196
+msgid "Sound drivers supported:"
+msgstr "Desteklenen ses sürücüleri:"
+
+#: mixertoolbox.cpp:197
+msgid "Sound drivers used:"
+msgstr "Kullanılan ses sürücüleri:"
+
+#. i18n: file colorwidget.ui line 28
+#: rc.cpp:9
+#, no-c-format
+msgid "&Use custom colors"
+msgstr "Özel &renkler kullan"
+
+#. i18n: file colorwidget.ui line 39
+#: rc.cpp:12
+#, no-c-format
+msgid "Active"
+msgstr "Etkin"
+
+#. i18n: file colorwidget.ui line 64
+#: rc.cpp:15
+#, no-c-format
+msgid "&Silent:"
+msgstr "&Sessiz:"
+
+#. i18n: file colorwidget.ui line 108
+#: rc.cpp:18
+#, no-c-format
+msgid "&Loud:"
+msgstr "Yü&ksekSesli:"
+
+#. i18n: file colorwidget.ui line 122
+#: rc.cpp:21
+#, no-c-format
+msgid "&Background:"
+msgstr "A&rkaplan:"
+
+#. i18n: file colorwidget.ui line 138
+#: rc.cpp:24
+#, no-c-format
+msgid "Muted"
+msgstr "Sessiz"
+
+#. i18n: file colorwidget.ui line 152
+#: rc.cpp:27
+#, no-c-format
+msgid "Lou&d:"
+msgstr "Yük&sekSesli:"
+
+#. i18n: file colorwidget.ui line 166
+#: rc.cpp:30
+#, no-c-format
+msgid "Backgrou&nd:"
+msgstr "A&rkaplan:"
+
+#. i18n: file colorwidget.ui line 180
+#: rc.cpp:33
+#, no-c-format
+msgid "Silen&t:"
+msgstr "Sessi&z:"
+
+#: viewbase.cpp:62
+msgid "&Channels"
+msgstr "&Kanallar"
+
+#: viewbase.cpp:134
+msgid "Device Settings"
+msgstr "Aygıt Ayarları"
+
+#: viewdockareapopup.cpp:139
+msgid "Mixer"
+msgstr "Karıştırıcılar"

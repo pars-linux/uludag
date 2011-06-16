@@ -1,0 +1,54 @@
+# translation of kfile_mpeg.po to
+# Ahmet AYGÜN <ahmet@zion.gen.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kfile_mpeg\n"
+"POT-Creation-Date: 2006-08-16 04:08+0200\n"
+"PO-Revision-Date: 2007-05-14 23:20+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: kfile_mpeg.cpp:58
+msgid "Technical Details"
+msgstr "Teknik Detaylar"
+
+#: kfile_mpeg.cpp:62
+msgid "Length"
+msgstr "Uzunluk"
+
+#: kfile_mpeg.cpp:65
+msgid "Resolution"
+msgstr "Çözünürlük"
+
+#: kfile_mpeg.cpp:67
+msgid "Frame Rate"
+msgstr "Çerçeve Hızı"
+
+#: kfile_mpeg.cpp:68
+msgid "fps"
+msgstr "fps"
+
+#: kfile_mpeg.cpp:70
+msgid "Video Codec"
+msgstr "Video Kodlayıcısı"
+
+#: kfile_mpeg.cpp:71
+msgid "Audio Codec"
+msgstr "Ses Kodlayıcısı"
+
+#: kfile_mpeg.cpp:73
+msgid "Aspect ratio"
+msgstr "Yüksekliğin genişliğe oranı"
+
+#: kfile_mpeg.cpp:556
+msgid "Unknown"
+msgstr "Bilinmiyor"
+
+#: kfile_mpeg.cpp:563
+msgid "default"
+msgstr "öntanımlı"

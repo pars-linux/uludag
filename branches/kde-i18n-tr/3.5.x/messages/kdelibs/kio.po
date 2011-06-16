@@ -1,0 +1,6345 @@
+# translation of kio.po to
+# Kdelibs Turkish translation file
+# Copyright (C) 2000,2003, 2004, 2005, 2007 Free Software Foundation, Inc.
+#
+# Ömer Fadıl USTA <omer_fad@hotmail.com>,1999-2002.
+# Görkem Çetin <gorkem@kde.org>, 2002,2003, 2004.
+# Tuncay YENİAY <tuncayyeniay@mynet.com>,2002.
+# Ayşe Genç <ayse@uludag.org.tr>, 2005.
+# Görkem Çetin <gorkem@kde.org.tr>, 2005.
+# Görkem Çetin <gorkem@gorkemcetin.com>, 2005.
+# Bekir SONAT <cortexbs@yahoo.com>, 2005.
+# Bekir SONAT <bekirsonat@kde.org.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kio\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-08 01:16+0200\n"
+"PO-Revision-Date: 2007-07-06 22:07+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=1; plural=0;\n"
+
+#: kio/netaccess.cpp:67
+msgid "File '%1' is not readable"
+msgstr "'%1' dosyası okunabilir değil"
+
+#: kio/netaccess.cpp:438
+msgid "ERROR: Unknown protocol '%1'"
+msgstr "HATA: Bilinmeyen protokol '%1'"
+
+#: kio/global.cpp:729 kio/job.cpp:1761 kio/job.cpp:3228 kio/job.cpp:3745
+#: kio/paste.cpp:65
+msgid "File Already Exists"
+msgstr "Dosya Zaten Var"
+
+#: kio/global.cpp:739 kio/job.cpp:2938
+msgid "Folder Already Exists"
+msgstr "Dizin Zaten Var"
+
+#: kio/job.cpp:3228 kio/job.cpp:3745
+msgid "Already Exists as Folder"
+msgstr "Bir Dizin Olarak Zaten Mevcut"
+
+#: kio/kimageio.cpp:231
+msgid "All Pictures"
+msgstr "Tüm Resimler"
+
+#: kio/pastedialog.cpp:49
+msgid "Data format:"
+msgstr "Veri biçimi:"
+
+#: kio/renamedlg.cpp:119
+msgid "&Rename"
+msgstr "&Yeniden Adlandır"
+
+#: kio/renamedlg.cpp:121
+msgid "Suggest New &Name"
+msgstr "&Yeni Bir İsim Öner"
+
+#: kio/renamedlg.cpp:127
+msgid "&Skip"
+msgstr "&Atla"
+
+#: kio/renamedlg.cpp:130
+msgid "&Auto Skip"
+msgstr "&Otomatik Atla"
+
+#: kio/renamedlg.cpp:135
+msgid "&Overwrite"
+msgstr "Üzerine &yaz"
+
+#: kio/renamedlg.cpp:139
+msgid "O&verwrite All"
+msgstr "Hepsinin Üzerine &Yaz"
+
+#: kio/renamedlg.cpp:145
+msgid "&Resume"
+msgstr "&Devam et"
+
+#: kio/renamedlg.cpp:150
+msgid "R&esume All"
+msgstr "&Hepsine Devam Et"
+
+#: kio/renamedlg.cpp:161
+msgid ""
+"This action would overwrite '%1' with itself.\n"
+"Please enter a new file name:"
+msgstr ""
+"Bu eylem '%1'in üzerine kendisini yazacak.\n"
+"Lütfen yeni bir dosya adı girin:"
+
+#: kio/renamedlg.cpp:163
+msgid "C&ontinue"
+msgstr "&Devam et"
+
+#: kio/renamedlg.cpp:232 kio/renamedlg.cpp:311
+msgid "An older item named '%1' already exists."
+msgstr "'%1' isimli daha eski bir öğe zaten var."
+
+#: kio/renamedlg.cpp:234 kio/renamedlg.cpp:313
+msgid "A similar file named '%1' already exists."
+msgstr "'%1' adlı bir dosya zaten var."
+
+#: kio/renamedlg.cpp:236 kio/renamedlg.cpp:315
+msgid "A newer item named '%1' already exists."
+msgstr "'%1' isimli daha yeni bir öğe zaten var."
+
+#: kio/renamedlg.cpp:248 kio/renamedlg.cpp:284
+#, c-format
+msgid "size %1"
+msgstr "boyut %1 "
+
+#: kio/renamedlg.cpp:256 kio/renamedlg.cpp:291
+#, c-format
+msgid "created on %1"
+msgstr "%1 tarihinde oluşturuldu"
+
+#: kio/renamedlg.cpp:263 kio/renamedlg.cpp:298
+#, c-format
+msgid "modified on %1"
+msgstr "%1 tarihinde değiştirildi"
+
+#: kio/renamedlg.cpp:273
+msgid "The source file is '%1'"
+msgstr "Kaynak dosya adı '%1'"
+
+#: kio/kdirlister.cpp:282 kio/kdirlister.cpp:293 kio/krun.cpp:864
+#: kio/paste.cpp:213 kio/renamedlg.cpp:431
+#, c-format
+msgid ""
+"Malformed URL\n"
+"%1"
+msgstr ""
+"Bozuk URL\n"
+"%1"
+
+#: kio/paste.cpp:49 kio/paste.cpp:115
+msgid "Filename for clipboard content:"
+msgstr "Pano içeriği için dosya adı:"
+
+#: kio/paste.cpp:108
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: kio/paste.cpp:123
+msgid ""
+"The clipboard has changed since you used 'paste': the chosen data format is no "
+"longer applicable. Please copy again what you wanted to paste."
+msgstr ""
+"Son 'yapıştır' işleminizden bu yana pano içeriği değişti: seçilen veri biçimi "
+"artık uygulanabilir değil. Lütfen yapıştırmak istediğiniz şeyi yeniden "
+"kopyalayın."
+
+#: kio/paste.cpp:201 kio/paste.cpp:224 kio/paste.cpp:251
+msgid "The clipboard is empty"
+msgstr "Pano boş"
+
+#: kio/paste.cpp:299
+#, c-format
+msgid ""
+"_n: &Paste File\n"
+"&Paste %n Files"
+msgstr "%n &Dosya Yapıştır"
+
+#: kio/paste.cpp:301
+#, c-format
+msgid ""
+"_n: &Paste URL\n"
+"&Paste %n URLs"
+msgstr "%n A&dres Yapıştır"
+
+#: kio/paste.cpp:303
+msgid "&Paste Clipboard Contents"
+msgstr "&Pano İçeriğini Yapıştır"
+
+#: kio/observer.cpp:332 misc/uiserver.cpp:1218
+msgid "The peer SSL certificate appears to be corrupt."
+msgstr "SSL sertifikasında bir hata var."
+
+#: kio/observer.cpp:332 kio/tcpslavebase.cpp:706 misc/uiserver.cpp:1218
+msgid "SSL"
+msgstr "SSL"
+
+#: kio/chmodjob.cpp:173
+msgid ""
+"<qt>Could not modify the ownership of file <b>%1</b>"
+". You have insufficient access to the file to perform the change.</qt>"
+msgstr ""
+"<qt><b>%1</b> dosyasının sahibi değiştirilemedi. Dosya üzerinde bu değişikliği "
+"yapmak için yeterli haklara sahip değilsiniz.</qt>"
+
+#: kio/chmodjob.cpp:173
+msgid "&Skip File"
+msgstr "&Dosyayı Atla"
+
+#: kio/kfilemetainfo.cpp:844
+msgid "s"
+msgstr "s"
+
+#: kio/kfilemetainfo.cpp:847
+msgid "ms"
+msgstr "ms"
+
+#: kio/kfilemetainfo.cpp:850
+msgid "bps"
+msgstr "bps"
+
+#: kio/kfilemetainfo.cpp:853
+msgid "pixels"
+msgstr "benek"
+
+#: kio/kfilemetainfo.cpp:856
+msgid "in"
+msgstr "in"
+
+#: kio/kfilemetainfo.cpp:859
+msgid "cm"
+msgstr "cm"
+
+#: kio/kfilemetainfo.cpp:862
+msgid "B"
+msgstr "B"
+
+#: kio/kfilemetainfo.cpp:865
+msgid "KB"
+msgstr "KB"
+
+#: kio/kfilemetainfo.cpp:868
+msgid "fps"
+msgstr "fps"
+
+#: kio/kfilemetainfo.cpp:871
+msgid "dpi"
+msgstr "dpi"
+
+#: kio/kfilemetainfo.cpp:874
+msgid "bpp"
+msgstr "bpp"
+
+#: kio/kfilemetainfo.cpp:877
+msgid "Hz"
+msgstr "Hz"
+
+#: kio/kfilemetainfo.cpp:880
+msgid "mm"
+msgstr "mm"
+
+#: kio/kmimetype.cpp:110
+msgid "No mime types installed."
+msgstr "Hiçbir mime türü yüklenmemiş."
+
+#: kio/kmimetype.cpp:136
+#, c-format
+msgid ""
+"Could not find mime type\n"
+"%1"
+msgstr ""
+"%1\n"
+"mime türü bulunamadı"
+
+#: kio/kmimetype.cpp:796
+msgid "The desktop entry file %1 has no Type=... entry."
+msgstr "Masaüstü giriş dosyası %1 için Type=... girdisi yok."
+
+#: kio/kmimetype.cpp:817
+msgid ""
+"The desktop entry of type\n"
+"%1\n"
+"is unknown."
+msgstr ""
+"%1\n"
+"türünden masaüstü girişi\n"
+"bilinmiyor."
+
+#: kio/kmimetype.cpp:831 kio/kmimetype.cpp:933 kio/kmimetype.cpp:1115
+msgid ""
+"The desktop entry file\n"
+"%1\n"
+"is of type FSDevice but has no Dev=... entry."
+msgstr ""
+"%1\n"
+"masaüstü giriş dosyası\n"
+"FSDevice türünde ama Dev=... girişi yok."
+
+#: kio/kmimetype.cpp:877
+msgid ""
+"The desktop entry file\n"
+"%1\n"
+"is of type Link but has no URL=... entry."
+msgstr ""
+"%1\n"
+"masaüstü giriş dosyası\n"
+"Link türünden ama URL=... girişi yok."
+
+#: kio/kmimetype.cpp:943
+msgid "Mount"
+msgstr "Bağla"
+
+#: kio/kmimetype.cpp:954
+msgid "Eject"
+msgstr "Çıkar"
+
+#: kio/kmimetype.cpp:956
+msgid "Unmount"
+msgstr "Ayır"
+
+#: kio/kmimetype.cpp:1073
+msgid ""
+"The desktop entry file\n"
+"%1\n"
+" has an invalid menu entry\n"
+"%2."
+msgstr ""
+"%1\n"
+"masaüstü giriş dosyasının\n"
+"hatalı bir menü girişi var:\n"
+"%2."
+
+#: kio/tcpslavebase.cpp:319
+msgid ""
+"You are about to leave secure mode. Transmissions will no longer be encrypted.\n"
+"This means that a third party could observe your data in transit."
+msgstr ""
+"Güvenli kipten çıkıyorsunuz. Tüm iletişim şifrelenmemiş bir şekilde "
+"sürdürülecektir.\n"
+"Bu nedenle sizden başkası aktarmak istediğiniz veriyi izleyebilir."
+
+#: kio/tcpslavebase.cpp:325 kio/tcpslavebase.cpp:1087
+msgid "Security Information"
+msgstr "Güvenlik Bilgisi"
+
+#: kio/tcpslavebase.cpp:326
+msgid "C&ontinue Loading"
+msgstr "&Yüklemeye devam et"
+
+#: kio/tcpslavebase.cpp:677
+msgid "Enter the certificate password:"
+msgstr "Sertifika parolasını girin:"
+
+#: kio/tcpslavebase.cpp:678
+msgid "SSL Certificate Password"
+msgstr "SSL Sertifika Parolası"
+
+#: kio/tcpslavebase.cpp:691
+msgid "Unable to open the certificate. Try a new password?"
+msgstr "Sertifika açılamadı. Yeni bir parola denemek istiyor musunuz?"
+
+#: kio/tcpslavebase.cpp:704
+msgid "The procedure to set the client certificate for the session failed."
+msgstr "Bu oturum için istemci sertifikası tanımlanma işlemi başarısız oldu."
+
+#: kio/tcpslavebase.cpp:875
+msgid ""
+"The IP address of the host %1 does not match the one the certificate was issued "
+"to."
+msgstr ""
+"%1 isimli makinenin IP adresi ile sertifika verilen makinenin IP adresi birbiri "
+"ile uyuşmuyor."
+
+#: kio/tcpslavebase.cpp:880 kio/tcpslavebase.cpp:888 kio/tcpslavebase.cpp:923
+#: kio/tcpslavebase.cpp:997 kio/tcpslavebase.cpp:1009
+#: kio/tcpslavebase.cpp:1018 kio/tcpslavebase.cpp:1049
+msgid "Server Authentication"
+msgstr "Sunucu Yetki Denetimi"
+
+#: kio/tcpslavebase.cpp:881 kio/tcpslavebase.cpp:889 kio/tcpslavebase.cpp:1019
+msgid "&Details"
+msgstr "&Ayrıntılar"
+
+#: kio/tcpslavebase.cpp:882 kio/tcpslavebase.cpp:890
+msgid "Co&ntinue"
+msgstr "&Devam et"
+
+#: kio/tcpslavebase.cpp:884 kio/tcpslavebase.cpp:1014
+msgid "The server certificate failed the authenticity test (%1)."
+msgstr "Sunucu sertifikası kimlik denetiminden başarısız oldu (%1)."
+
+#: kio/tcpslavebase.cpp:920 kio/tcpslavebase.cpp:1046
+msgid ""
+"Would you like to accept this certificate forever without being prompted?"
+msgstr ""
+"Daha ileride bu sertifikayı size sorulmaksızın kabul etmek istiyor musunuz?"
+
+#: kio/tcpslavebase.cpp:924 kio/tcpslavebase.cpp:1050
+msgid "&Forever"
+msgstr "&Her zaman"
+
+#: kio/tcpslavebase.cpp:925 kio/tcpslavebase.cpp:1051
+msgid "&Current Sessions Only"
+msgstr "&Sadece Şimdiki Oturumlar"
+
+#: kio/tcpslavebase.cpp:996
+msgid ""
+"You have indicated that you wish to accept this certificate, but it is not "
+"issued to the server who is presenting it. Do you wish to continue loading?"
+msgstr ""
+"Bu sertifikayı almak için gerekli ayarları yaptınız, ancak bu sertifika "
+"gönderen sunucuyla ilişkili değil. Yüklemeye devam etmek istiyor musunuz?"
+
+#: kio/tcpslavebase.cpp:1008
+msgid ""
+"SSL certificate is being rejected as requested. You can disable this in the KDE "
+"Control Center."
+msgstr ""
+"SSL sertifikası geri çevrildi. Bu özelliği KDE Kontrol Merkezi'nde "
+"kapatabilirsiniz."
+
+#: kio/tcpslavebase.cpp:1020
+msgid "Co&nnect"
+msgstr "&Bağlan"
+
+#: kio/tcpslavebase.cpp:1076
+msgid ""
+"You are about to enter secure mode. All transmissions will be encrypted unless "
+"otherwise noted.\n"
+"This means that no third party will be able to easily observe your data in "
+"transit."
+msgstr ""
+"Güvenli kipe giriyorsunuz. Tüm iletişim şifrelenmiş bir şekilde "
+"sürdürülecektir.\n"
+"Bu nedenle sizden başkası aktarmak istediğiniz veriyi izleyemeyecektir."
+
+#: kio/tcpslavebase.cpp:1088
+msgid "Display SSL &Information"
+msgstr "&SSL Bilgisini Göster"
+
+#: kio/tcpslavebase.cpp:1090
+msgid "C&onnect"
+msgstr "&Bağlan"
+
+#: kio/kdcopservicestarter.cpp:64
+#, c-format
+msgid "No service implementing %1"
+msgstr "%1 kullanan servis yok"
+
+#: kio/kscan.cpp:52
+msgid "Acquire Image"
+msgstr "Resmi Tara"
+
+#: kio/kscan.cpp:95
+msgid "OCR Image"
+msgstr "OCR Resim"
+
+#: kio/defaultprogress.cpp:104
+msgid "Source:"
+msgstr "Kaynak:"
+
+#: kio/defaultprogress.cpp:111 kio/defaultprogress.cpp:433
+msgid "Destination:"
+msgstr "Hedef:"
+
+#: kio/defaultprogress.cpp:149
+msgid "&Keep this window open after transfer is complete"
+msgstr "İndirme &tamamlandıktan sonra bu pencereyi açık tut"
+
+#: kio/defaultprogress.cpp:157
+msgid "Open &File"
+msgstr "&Dosya Aç"
+
+#: kio/defaultprogress.cpp:163
+msgid "Open &Destination"
+msgstr "&Hedefi Aç"
+
+#: kio/defaultprogress.cpp:179 misc/uiserver.cpp:632
+msgid "Progress Dialog"
+msgstr "İşlem Penceresi"
+
+#: kio/defaultprogress.cpp:226
+#, no-c-format
+msgid ""
+"_n: %n folder\n"
+"%n folders"
+msgstr "%n dizin"
+
+#: kio/defaultprogress.cpp:228
+#, no-c-format
+msgid ""
+"_n: %n file\n"
+"%n files"
+msgstr "%n dosya"
+
+#: kio/defaultprogress.cpp:239
+msgid "%1 % of %2 "
+msgstr "%%1 / %2 "
+
+#: kio/defaultprogress.cpp:241
+msgid ""
+"_n: %1 % of 1 file\n"
+"%1 % of %n files"
+msgstr "%%1 / %n dosya"
+
+#: kio/defaultprogress.cpp:243
+msgid "%1 %"
+msgstr "%%1"
+
+#: kio/defaultprogress.cpp:252
+msgid " (Copying)"
+msgstr " (Kopyalanıyor)"
+
+#: kio/defaultprogress.cpp:255
+msgid " (Moving)"
+msgstr " (Taşıyor)"
+
+#: kio/defaultprogress.cpp:258
+msgid " (Deleting)"
+msgstr " (Siliniyor)"
+
+#: kio/defaultprogress.cpp:261
+msgid " (Creating)"
+msgstr " (oluşturuluyor)"
+
+#: kio/defaultprogress.cpp:264
+msgid " (Done)"
+msgstr " (Tamamlandı)"
+
+#: kio/defaultprogress.cpp:285
+msgid "%1 of %2 complete"
+msgstr "%1 tamamlandı (toplam: %2)"
+
+#: kio/defaultprogress.cpp:299 kio/defaultprogress.cpp:314
+msgid ""
+"_n: %1 / %n folder\n"
+"%1 / %n folders"
+msgstr "%1 / %n dizin"
+
+#: kio/defaultprogress.cpp:301 kio/defaultprogress.cpp:317
+msgid ""
+"_n: %1 / %n file\n"
+"%1 / %n files"
+msgstr "%1 / %n dosya"
+
+#: kio/defaultprogress.cpp:325 misc/uiserver.cpp:288
+msgid "Stalled"
+msgstr "Durakladı"
+
+#: kio/defaultprogress.cpp:327
+msgid "%1/s ( %2 remaining )"
+msgstr "%1/s ( %2 kaldı )"
+
+#: kio/defaultprogress.cpp:336
+msgid "Copy File(s) Progress"
+msgstr "Dosya Kopyalama Durumu"
+
+#: kio/defaultprogress.cpp:350
+msgid "Move File(s) Progress"
+msgstr "Dosya Taşıma Durumu"
+
+#: kio/defaultprogress.cpp:364
+msgid "Creating Folder"
+msgstr "Dizin Oluşturuluyor"
+
+#: kio/defaultprogress.cpp:376
+msgid "Delete File(s) Progress"
+msgstr "Dosyalar Siliniyor"
+
+#: kio/defaultprogress.cpp:387
+msgid "Loading Progress"
+msgstr "Yükleme Yapılıyor"
+
+#: kio/defaultprogress.cpp:396
+msgid "Examining File Progress"
+msgstr "Dosyalar İnceleniyor"
+
+#: kio/defaultprogress.cpp:403
+#, c-format
+msgid "Mounting %1"
+msgstr "%1 Bağlanıyor"
+
+#: kio/defaultprogress.cpp:410 misc/uiserver.cpp:378
+msgid "Unmounting"
+msgstr "Ayrılıyor"
+
+#: kio/defaultprogress.cpp:418
+#, c-format
+msgid "Resuming from %1"
+msgstr "%1 üzerinden devam ediliyor"
+
+#: kio/defaultprogress.cpp:420
+msgid "Not resumable"
+msgstr "Devam edilemez"
+
+#: kio/defaultprogress.cpp:456
+msgid "%1/s (done)"
+msgstr "%1/s (tamamlandı)"
+
+#: kio/kservice.cpp:837
+msgid "Updating System Configuration"
+msgstr "Sistem Yapılandırması Güncelleniyor"
+
+#: kio/kservice.cpp:838
+msgid "Updating system configuration."
+msgstr "Sistem yapılandırması güncelleniyor."
+
+#: kio/global.cpp:48 kio/global.cpp:81
+msgid "%1 B"
+msgstr "%1 B"
+
+#: kio/global.cpp:62
+msgid "%1 TB"
+msgstr "%1 TB"
+
+#: kio/global.cpp:64
+msgid "%1 GB"
+msgstr "%1 GB"
+
+#: kio/global.cpp:70
+msgid "%1 MB"
+msgstr "%1 MB"
+
+#: kio/global.cpp:76
+msgid "%1 KB"
+msgstr "%1 KB"
+
+#: kio/global.cpp:86
+msgid "0 B"
+msgstr "0 B"
+
+#: kio/global.cpp:122
+msgid ""
+"_n: 1 day %1\n"
+"%n days %1"
+msgstr "%n gün %1"
+
+#: kio/global.cpp:152
+msgid "No Items"
+msgstr "Öğe Yok"
+
+#: kio/global.cpp:152
+#, c-format
+msgid ""
+"_n: One Item\n"
+"%n Items"
+msgstr "%n Öğe"
+
+#: kio/global.cpp:154
+msgid "No Files"
+msgstr "Dosya Yok"
+
+#: kio/global.cpp:154
+#, c-format
+msgid ""
+"_n: One File\n"
+"%n Files"
+msgstr "%n Dosya"
+
+#: kio/global.cpp:158
+msgid "(%1 Total)"
+msgstr "(Toplam %1)"
+
+#: kio/global.cpp:161
+msgid "No Folders"
+msgstr "Dizin Yok"
+
+#: kio/global.cpp:161
+#, c-format
+msgid ""
+"_n: One Folder\n"
+"%n Folders"
+msgstr "%n Dizin"
+
+#: kio/global.cpp:220
+#, c-format
+msgid "Could not read %1."
+msgstr "%1 okunamadı."
+
+#: kio/global.cpp:223
+#, c-format
+msgid "Could not write to %1."
+msgstr "%1'e yazılamıyor."
+
+#: kio/global.cpp:226
+#, c-format
+msgid "Could not start process %1."
+msgstr "%1 süreci başlatılamıyor."
+
+#: kio/global.cpp:229
+#, c-format
+msgid ""
+"Internal Error\n"
+"Please send a full bug report at http://bugs.kde.org\n"
+"%1"
+msgstr ""
+"İç hata\n"
+"Lütfen http://bugs.kde.org'a bir hata bildirimi yollayın\n"
+"%1"
+
+#: kio/global.cpp:232
+#, c-format
+msgid "Malformed URL %1."
+msgstr "Hatalı URL: %1."
+
+#: kio/global.cpp:235
+msgid "The protocol %1 is not supported."
+msgstr "%1 protokolü desteklenmiyor."
+
+#: kio/global.cpp:238
+msgid "The protocol %1 is only a filter protocol."
+msgstr "%1 protokolü sadece bir süzgeç protokolü."
+
+#: kio/global.cpp:245
+msgid "%1 is a folder, but a file was expected."
+msgstr "%1 bir dizin, ama bir dosya bekleniyordu."
+
+#: kio/global.cpp:248
+msgid "%1 is a file, but a folder was expected."
+msgstr "%1 bir dosya, ama bir dizin bekleniyordu."
+
+#: kio/global.cpp:251
+msgid "The file or folder %1 does not exist."
+msgstr "%1 dosya veya dizini mevcut değil."
+
+#: kio/global.cpp:254
+msgid "A file named %1 already exists."
+msgstr "%1 adlı bir dosya zaten var."
+
+#: kio/global.cpp:257
+msgid "A folder named %1 already exists."
+msgstr "%1 adlı bir dizin zaten var."
+
+#: kio/global.cpp:260
+msgid "No hostname specified."
+msgstr "Hiç makina adı belirtilmedi."
+
+#: kio/global.cpp:260
+#, c-format
+msgid "Unknown host %1"
+msgstr "Bilinmeyen makina %1"
+
+#: kio/global.cpp:263
+#, c-format
+msgid "Access denied to %1."
+msgstr "%1 adresine erişim engellendi."
+
+#: kio/global.cpp:266
+#, c-format
+msgid ""
+"Access denied.\n"
+"Could not write to %1."
+msgstr ""
+"Erişim engellendi.\n"
+"%1 dosyasına yazılamıyor."
+
+#: kio/global.cpp:269
+#, c-format
+msgid "Could not enter folder %1."
+msgstr "%1 dizinine girilemedi."
+
+#: kio/global.cpp:272
+msgid "The protocol %1 does not implement a folder service."
+msgstr "%1 protokolü bir dizin servisi tanımlamıyor."
+
+#: kio/global.cpp:275
+#, c-format
+msgid "Found a cyclic link in %1."
+msgstr "%1 üzerinde bir çembersel bağlantı bulundu."
+
+#: kio/global.cpp:281
+#, c-format
+msgid "Found a cyclic link while copying %1."
+msgstr "%1 dosyasının kopyalanması sırasında bir çembersel bağlantı bulundu."
+
+#: kio/global.cpp:284
+#, c-format
+msgid "Could not create socket for accessing %1."
+msgstr "%1 adresine erişmek için soket oluşturulamıyor."
+
+#: kio/global.cpp:287
+#, c-format
+msgid "Could not connect to host %1."
+msgstr "Bilgisayara bağlantı kurulamadı: %1."
+
+#: kio/global.cpp:290
+msgid "Connection to host %1 is broken."
+msgstr "%1 bilgisayarına olan bağlantı koptu."
+
+#: kio/global.cpp:293
+msgid "The protocol %1 is not a filter protocol."
+msgstr "%1 protokolü bir süzgeç protokolü değil."
+
+#: kio/global.cpp:296
+#, c-format
+msgid ""
+"Could not mount device.\n"
+"The reported error was:\n"
+"%1"
+msgstr ""
+"Aygıt bağlanamadı.\n"
+"Oluşan hata:\n"
+"%1"
+
+#: kio/global.cpp:299
+#, c-format
+msgid ""
+"Could not unmount device.\n"
+"The reported error was:\n"
+"%1"
+msgstr ""
+"Aygıt ayrılamadı.\n"
+"Oluşan hata:\n"
+"%1"
+
+#: kio/global.cpp:302
+#, c-format
+msgid "Could not read file %1."
+msgstr "%1 dosyası okunamıyor."
+
+#: kio/global.cpp:305
+#, c-format
+msgid "Could not write to file %1."
+msgstr "%1 dosyasına yazılamıyor."
+
+#: kio/global.cpp:308
+#, c-format
+msgid "Could not bind %1."
+msgstr "%1 bağlanamadı."
+
+#: kio/global.cpp:311
+#, c-format
+msgid "Could not listen %1."
+msgstr "%1 dinlenemiyor."
+
+#: kio/global.cpp:314
+#, c-format
+msgid "Could not accept %1."
+msgstr "%1 kabul edilemedi."
+
+#: kio/global.cpp:320
+#, c-format
+msgid "Could not access %1."
+msgstr "Erişilemedi: %1."
+
+#: kio/global.cpp:323
+#, c-format
+msgid "Could not terminate listing %1."
+msgstr "Listeleme kesilemedi: %1."
+
+#: kio/global.cpp:326
+#, c-format
+msgid "Could not make folder %1."
+msgstr "Dizin oluşturulamadı: %1."
+
+#: kio/global.cpp:329
+#, c-format
+msgid "Could not remove folder %1."
+msgstr "%1 dizini silinemedi."
+
+#: kio/global.cpp:332
+#, c-format
+msgid "Could not resume file %1."
+msgstr "%1 dosyasına devam edilemiyor."
+
+#: kio/global.cpp:335
+#, c-format
+msgid "Could not rename file %1."
+msgstr "%1'in adı değiştirilemedi."
+
+#: kio/global.cpp:338
+#, c-format
+msgid "Could not change permissions for %1."
+msgstr "%1 için izinler değiştirilemiyor."
+
+#: kio/global.cpp:341
+#, c-format
+msgid "Could not delete file %1."
+msgstr "%1 dosyası silinemiyor."
+
+#: kio/global.cpp:344
+msgid "The process for the %1 protocol died unexpectedly."
+msgstr "%1 protokolü için olan işlem beklenmedik bir biçimde bitti."
+
+#: kio/global.cpp:347
+#, c-format
+msgid ""
+"Error. Out of memory.\n"
+"%1"
+msgstr ""
+"Hata. Bellek yetersiz.\n"
+"%1"
+
+#: kio/global.cpp:350
+#, c-format
+msgid ""
+"Unknown proxy host\n"
+"%1"
+msgstr ""
+"Bilinmeyen vekil sunucu\n"
+"%1"
+
+#: kio/global.cpp:353
+msgid "Authorization failed, %1 authentication not supported"
+msgstr "Yetki denetimi başarısız, %1 denetimi desteklenmiyor"
+
+#: kio/global.cpp:356
+#, c-format
+msgid ""
+"User canceled action\n"
+"%1"
+msgstr ""
+"Kullanıcı işlemi durdurdu\n"
+"%1"
+
+#: kio/global.cpp:359
+#, c-format
+msgid ""
+"Internal error in server\n"
+"%1"
+msgstr ""
+"Sunucuda iç hata\n"
+"%1"
+
+#: kio/global.cpp:362
+#, c-format
+msgid ""
+"Timeout on server\n"
+"%1"
+msgstr ""
+"Sunucuda zaman aşımı\n"
+"%1"
+
+#: kio/global.cpp:365
+#, c-format
+msgid ""
+"Unknown error\n"
+"%1"
+msgstr ""
+"Bilinmeyen hata\n"
+"%1"
+
+#: kio/global.cpp:368
+#, c-format
+msgid ""
+"Unknown interrupt\n"
+"%1"
+msgstr ""
+"Bilinmeyen kesinti\n"
+"%1"
+
+#: kio/global.cpp:379
+msgid ""
+"Could not delete original file %1.\n"
+"Please check permissions."
+msgstr ""
+"Orijinal dosya %1 silinemedi.\n"
+"Lütfen izinlerinizi kontrol ediniz."
+
+#: kio/global.cpp:382
+msgid ""
+"Could not delete partial file %1.\n"
+"Please check permissions."
+msgstr ""
+"Kısmi dosya %1 silinemedi.\n"
+"Lütfen izinlerinizi kontrol ediniz."
+
+#: kio/global.cpp:385
+msgid ""
+"Could not rename original file %1.\n"
+"Please check permissions."
+msgstr ""
+"Orijinal dosya %1 yeniden adlandırılamadı.\n"
+"Lütfen izinlerinizi kontrol ediniz."
+
+#: kio/global.cpp:388
+msgid ""
+"Could not rename partial file %1.\n"
+"Please check permissions."
+msgstr ""
+"Kısmi dosya %1 yeniden adlandırılamadı.\n"
+"Lütfen izinlerinizi kontrol ediniz."
+
+#: kio/global.cpp:391
+msgid ""
+"Could not create symlink %1.\n"
+"Please check permissions."
+msgstr ""
+"%1 sembolik bağlantısı yapılamadı.\n"
+"Lütfen izinleri kontrol ediniz."
+
+#: kio/global.cpp:397
+msgid ""
+"Could not write file %1.\n"
+"Disk full."
+msgstr ""
+"%1 dosyasına yazılamıyor.\n"
+"Disk dolu."
+
+#: kio/global.cpp:400
+#, c-format
+msgid ""
+"The source and destination are the same file.\n"
+"%1"
+msgstr ""
+"Kaynak ve hedef dosya aynı.\n"
+"%1"
+
+#: kio/global.cpp:406
+msgid "%1 is required by the server, but is not available."
+msgstr "%1 sunucu tarafından isteniyor, ancak bulunamadı."
+
+#: kio/global.cpp:409
+msgid "Access to restricted port in POST denied."
+msgstr "POST içindeki kısıtlı port erişimi engellendi."
+
+#: kio/global.cpp:412
+msgid ""
+"Unknown error code %1\n"
+"%2\n"
+"Please send a full bug report at http://bugs.kde.org."
+msgstr ""
+"Bilinmeyen hata kodu %1\n"
+"%2\n"
+"Lütfen, http://bugs.kde.org adresine tam bir hata bildirimi yollayınız."
+
+#: kio/global.cpp:422
+#, c-format
+msgid "Opening connections is not supported with the protocol %1."
+msgstr "%1 protokolü ile bağlantı açmak mümkün değil."
+
+#: kio/global.cpp:424
+#, c-format
+msgid "Closing connections is not supported with the protocol %1."
+msgstr "%1 protokolü ile bağlantı kapatmak mümkün değil."
+
+#: kio/global.cpp:426
+#, c-format
+msgid "Accessing files is not supported with the protocol %1."
+msgstr "Dosyalara erişim %1 protokolü ile yapılamaz."
+
+#: kio/global.cpp:428
+msgid "Writing to %1 is not supported."
+msgstr "%1'e yazmak henüz desteklenmiyor."
+
+#: kio/global.cpp:430
+#, c-format
+msgid "There are no special actions available for protocol %1."
+msgstr "%1 protokolü için özel işlemler mevcut değil."
+
+#: kio/global.cpp:432
+#, c-format
+msgid "Listing folders is not supported for protocol %1."
+msgstr "%1 protokolü için dizin listeleme desteklenmiyor."
+
+#: kio/global.cpp:434
+msgid "Retrieving data from %1 is not supported."
+msgstr "%1 adresinden veri alma desteklenmiyor."
+
+#: kio/global.cpp:436
+msgid "Retrieving mime type information from %1 is not supported."
+msgstr "%1 adresinden MIME tür bilgisi alma desteklenmiyor."
+
+#: kio/global.cpp:438
+msgid "Renaming or moving files within %1 is not supported."
+msgstr "%1 içinde dosya taşımak ya da isimlerini değiştirmek desteklenmiyor."
+
+#: kio/global.cpp:440
+#, c-format
+msgid "Creating symlinks is not supported with protocol %1."
+msgstr "%1 protokolü ile sembolik bağlantı oluşturulması mümkün değil."
+
+#: kio/global.cpp:442
+msgid "Copying files within %1 is not supported."
+msgstr "%1 içinde dosya kopyalamak desteklenmiyor."
+
+#: kio/global.cpp:444
+msgid "Deleting files from %1 is not supported."
+msgstr "%1'den dosya silmek desteklenmiyor."
+
+#: kio/global.cpp:446
+#, c-format
+msgid "Creating folders is not supported with protocol %1."
+msgstr "%1 protokolü yardımıyla dizin oluşturmak mümkün değil."
+
+#: kio/global.cpp:448
+#, c-format
+msgid "Changing the attributes of files is not supported with protocol %1."
+msgstr ""
+"%1 protokolü yardımıyla dosyaların özelliklerini değiştirmek mümkün değil."
+
+#: kio/global.cpp:450
+msgid "Using sub-URLs with %1 is not supported."
+msgstr "%1 protokolü ile URL kullanmak mümkün değildir."
+
+#: kio/global.cpp:452
+#, c-format
+msgid "Multiple get is not supported with protocol %1."
+msgstr "%1 protokolü yardımıyla çoklu alma işlemi desteklenmiyor."
+
+#: kio/global.cpp:454
+msgid "Protocol %1 does not support action %2."
+msgstr "%1 protokolü %2 eylemini desteklemiyor."
+
+#: kio/global.cpp:474 kio/global.cpp:556
+msgid "(unknown)"
+msgstr "(Bilinmeyen)"
+
+#: kio/global.cpp:486
+msgid "<b>Technical reason</b>: "
+msgstr "<b>Teknik neden</b>: "
+
+#: kio/global.cpp:487
+msgid "</p><p><b>Details of the request</b>:"
+msgstr "</p><p><b>İstek detayları</b>:"
+
+#: kio/global.cpp:488
+msgid "</p><ul><li>URL: %1</li>"
+msgstr "</p><ul><li>URL: %1</li>"
+
+#: kio/global.cpp:490
+msgid "<li>Protocol: %1</li>"
+msgstr "<li>Protocol: %1</li>"
+
+#: kio/global.cpp:492
+msgid "<li>Date and time: %1</li>"
+msgstr "<li>Tarih ve saat: %1</li>"
+
+#: kio/global.cpp:493
+msgid "<li>Additional information: %1</li></ul>"
+msgstr "<li>Ek bilgi: %1</li></ul>"
+
+#: kio/global.cpp:495
+msgid "<p><b>Possible causes</b>:</p><ul><li>"
+msgstr "<p><b>Olası nedenler</b>:</p><ul><li>"
+
+#: kio/global.cpp:500
+msgid "<p><b>Possible solutions</b>:</p><ul><li>"
+msgstr "<p><b>Olası çözümler</b>:</p><ul><li>"
+
+#: kio/global.cpp:566
+msgid ""
+"Contact your appropriate computer support system, whether the system "
+"administrator, or technical support group for further assistance."
+msgstr "Bilgisayarınızı kontrol eden yetkili sistem yöneticilerine başvurun."
+
+#: kio/global.cpp:569
+msgid "Contact the administrator of the server for further assistance."
+msgstr "Yardım için sistem yöneticisine başvurun."
+
+#: kio/global.cpp:572
+msgid "Check your access permissions on this resource."
+msgstr "Bu kaynak üzerindeki erişim düzeyinizi kontrol edin."
+
+#: kio/global.cpp:573
+msgid ""
+"Your access permissions may be inadequate to perform the requested operation on "
+"this resource."
+msgstr "Size verilen haklar, bu işlemi yapmanız için yeterli olmayabilir."
+
+#: kio/global.cpp:575
+msgid ""
+"The file may be in use (and thus locked) by another user or application."
+msgstr ""
+"Bu dosya başka bir kullanıcı ya da uygulama tarafından kullanılıyor olabilir."
+
+#: kio/global.cpp:577
+msgid ""
+"Check to make sure that no other application or user is using the file or has "
+"locked the file."
+msgstr ""
+"Bu dosyayı başka bir kişi tarafından kullanılmadığına ve kilitli olmadığına "
+"emin olun."
+
+#: kio/global.cpp:579
+msgid "Although unlikely, a hardware error may have occurred."
+msgstr "Küçük bir olasılık da olsa, bir donanım hatası var olabilir."
+
+#: kio/global.cpp:581
+msgid "You may have encountered a bug in the program."
+msgstr "Program içindeki bir hatayla karşılaşmış olabilirsiniz."
+
+#: kio/global.cpp:582
+msgid ""
+"This is most likely to be caused by a bug in the program. Please consider "
+"submitting a full bug report as detailed below."
+msgstr ""
+"Bunun nedeni programdaki bir hata olabilir. Lütfen aşağıdaki ayrıntılara göre "
+"bir hata raporu gönderiniz."
+
+#: kio/global.cpp:584
+msgid ""
+"Update your software to the latest version. Your distribution should provide "
+"tools to update your software."
+msgstr ""
+"Yazılımınızı son sürüme güncelleyin. Kullandığınız dağıtım içindeki güncelleme "
+"programları bu işlem için yardımcı olacaktır."
+
+#: kio/global.cpp:586
+msgid ""
+"When all else fails, please consider helping the KDE team or the third party "
+"maintainer of this software by submitting a high quality bug report. If the "
+"software is provided by a third party, please contact them directly. Otherwise, "
+"first look to see if the same bug has been submitted by someone else by "
+"searching at the <a href=\"http://bugs.kde.org/\">KDE bug reporting website</a>"
+". If not, take note of the details given above, and include them in your bug "
+"report, along with as many other details as you think might help."
+msgstr ""
+", KDE grubuna bir hata raporu göndermenizi öneririz. Eğer bu yazılım bir üçüncü "
+"parti firma tarafından aktarılmış ise lütfen doğrudan bu kurum ile bağlantıya "
+"geçiniz. Göndereceğiniz hata raporunun daha önce başka bir kişi tarafından "
+"gönderilmediğini araştırmak için <a href=\"http://bugs.kde.org/\">"
+"<a href=\"http://bugs.kde.org/\">KDE hata raporlama web sitesi</a>"
+"'ne bağlantı kurmanız gerekebilir. Eğer aynı hata başka bir kişi tarafından "
+"raporlanmamış ise lütfen raporunuzda bu hatayı belirtiniz. "
+
+#: kio/global.cpp:594
+msgid "There may have been a problem with your network connection."
+msgstr "Ağ bağlantılarınızla ilgili bir sorun olabilir."
+
+#: kio/global.cpp:597
+msgid ""
+"There may have been a problem with your network configuration. If you have been "
+"accessing the Internet with no problems recently, this is unlikely."
+msgstr "Ağ ayarlarınızda bir sorun olabilir."
+
+#: kio/global.cpp:600
+msgid ""
+"There may have been a problem at some point along the network path between the "
+"server and this computer."
+msgstr ""
+"Sunucu ve bu bilgisayar arasındaki ağ yolunun bir noktasında bir sorun "
+"olabilir."
+
+#: kio/global.cpp:602
+msgid "Try again, either now or at a later time."
+msgstr "Şimdi, ya da daha sonra yeniden deneyin."
+
+#: kio/global.cpp:603
+msgid "A protocol error or incompatibility may have occurred."
+msgstr "Bir protokol hatası ya da uyumsuzluğu oluşmuş olabilir."
+
+#: kio/global.cpp:604
+msgid "Ensure that the resource exists, and try again."
+msgstr "Kaynağın olduğuna emin olduktan sonra yeniden deneyin."
+
+#: kio/global.cpp:605
+msgid "The specified resource may not exist."
+msgstr "Belirtilen kaynak bulunmayabilir."
+
+#: kio/global.cpp:606
+msgid "You may have incorrectly typed the location."
+msgstr "Adresi yanlış yazmış olabilirsiniz."
+
+#: kio/global.cpp:607
+msgid "Double-check that you have entered the correct location and try again."
+msgstr "Lütfen doğru konumu girdiğinizi kontrol ederek tekrar deneyin."
+
+#: kio/global.cpp:609
+msgid "Check your network connection status."
+msgstr "Ağ bağlantı durumunu yeniden kontrol edin."
+
+#: kio/global.cpp:613
+msgid "Cannot Open Resource For Reading"
+msgstr "Kaynak, Okuma İçin Açılamadı"
+
+#: kio/global.cpp:614
+msgid ""
+"This means that the contents of the requested file or folder <strong>%1</strong> "
+"could not be retrieved, as read access could not be obtained."
+msgstr ""
+"İstenen dosya veya dizinin (<strong>%1</strong>) içeriği alınamadı, çünkü okuma "
+"izni bulunmuyor."
+
+#: kio/global.cpp:617
+msgid "You may not have permissions to read the file or open the folder."
+msgstr "Dosya okumaya ya da dizini açmaya yetkiniz yok."
+
+#: kio/global.cpp:623
+msgid "Cannot Open Resource For Writing"
+msgstr "Kaynak, Yazma İçin Açılamadı"
+
+#: kio/global.cpp:624
+msgid ""
+"This means that the file, <strong>%1</strong>, could not be written to as "
+"requested, because access with permission to write could not be obtained."
+msgstr ""
+"<strong>%1</strong> dosyasına yazılamadı. Bu dosyaya yazma erişim hakkı "
+"bulunmuyor."
+
+#: kio/global.cpp:632
+msgid "Cannot Initiate the %1 Protocol"
+msgstr "%1 protokolü başlatılamadı."
+
+#: kio/global.cpp:633
+msgid "Unable to Launch Process"
+msgstr "'Süreç Başlatılamadı!"
+
+#: kio/global.cpp:634
+msgid ""
+"The program on your computer which provides access to the <strong>%1</strong> "
+"protocol could not be started. This is usually due to technical reasons."
+msgstr ""
+"<strong>%1</strong> protokolüne erişim için kullanılan program çalıştırılamadı. "
+"Bu bir teknik hata olabilir."
+
+#: kio/global.cpp:637
+msgid ""
+"The program which provides compatibility with this protocol may not have been "
+"updated with your last update of KDE. This can cause the program to be "
+"incompatible with the current version and thus not start."
+msgstr ""
+"Son KDE güncellemenizden sonra bu protokol ile uyumluluk sağlaması gereken "
+"program çalışmıyor olabilir. "
+
+#: kio/global.cpp:645
+msgid "Internal Error"
+msgstr "İç Hata"
+
+#: kio/global.cpp:646
+msgid ""
+"The program on your computer which provides access to the <strong>%1</strong> "
+"protocol has reported an internal error."
+msgstr ""
+"Bilgisayarınızda <strong>%1</strong> protokolüne erişim sağlayan program bir iç "
+"hata raporladı."
+
+#: kio/global.cpp:654
+msgid "Improperly Formatted URL"
+msgstr "Hatalı Biçimlendirilmiş URL"
+
+#: kio/global.cpp:655
+msgid ""
+"The <strong>U</strong>niform <strong>R</strong>esource <strong>L</strong>"
+"ocator (URL) that you entered was not properly formatted. The format of a URL "
+"is generally as follows:"
+"<blockquote><strong>protocol://user:password@www.example.org:port/folder/filenam"
+"e.extension?query=value</strong></blockquote>"
+msgstr ""
+"Girilen adres (URL) düzgün bir biçime sahip değil. Bir adres genellikle "
+"aşağıdaki biçime sahiptir:"
+"<blockquote><strong>protokol://kullanıcı:parola@www.örnek.org.tr:/port/dizin/dos"
+"ya.uzantı?değişken=değer</strong></blockquote>"
+
+#: kio/global.cpp:664
+#, c-format
+msgid "Unsupported Protocol %1"
+msgstr "Desteklenmeyen Protokol %1"
+
+#: kio/global.cpp:665
+msgid ""
+"The protocol <strong>%1</strong> is not supported by the KDE programs currently "
+"installed on this computer."
+msgstr ""
+"<strong>%1</strong> protokolü bu bilgisayarda çalıştırılan KDE programları "
+"tarafından desteklenmiyor."
+
+#: kio/global.cpp:668
+msgid "The requested protocol may not be supported."
+msgstr "İstenen protokol desteklenmeyebilir."
+
+#: kio/global.cpp:669
+msgid ""
+"The versions of the %1 protocol supported by this computer and the server may "
+"be incompatible."
+msgstr ""
+"%1 protokolünün bu bilgisayar ve uzaktaki sunucu tarafından desteklenen "
+"sürümleri uyumsuz olabilir."
+
+#: kio/global.cpp:671
+msgid ""
+"You may perform a search on the Internet for a KDE program (called a kioslave "
+"or ioslave) which supports this protocol. Places to search include <a "
+"href=\"http://kde-apps.org/\">http://kde-apps.org/</a> "
+"and <a href=\"http://freshmeat.net/\">http://freshmeat.net/</a>."
+msgstr ""
+"Bu protokolü destekleyen bir KDE programı için internet üzerinde tarama "
+"yapabilirsiniz. Araştırma yapılabilecek yerler <a "
+"href=\"http://www.kde-apps.org/\">http://www.kde-apps.org/</a> "
+"ve <a href=\"http://freshmeat.net/\">http://freshmeat.net/</a> olabilir."
+
+#: kio/global.cpp:680
+msgid "URL Does Not Refer to a Resource."
+msgstr "Bu URL bir kaynağı işaret etmiyor."
+
+#: kio/global.cpp:681
+msgid "Protocol is a Filter Protocol"
+msgstr "Bu bir Süzgeç Protokolüdür"
+
+#: kio/global.cpp:682
+msgid ""
+"The <strong>U</strong>niform <strong>R</strong>esource <strong>L</strong>"
+"ocator (URL) that you entered did not refer to a specific resource."
+msgstr "Girdiğiniz adres (URL) belirli bir kaynağı göstermiyor."
+
+#: kio/global.cpp:685
+msgid ""
+"KDE is able to communicate through a protocol within a protocol; the protocol "
+"specified is only for use in such situations, however this is not one of these "
+"situations. This is a rare event, and is likely to indicate a programming "
+"error."
+msgstr ""
+"KDE, bir protokol içinden başka bir protokolün iletişimine izin verebilir. Bu "
+"durumda taşıyıcı protokol sadece iletişim amaçlı kullanılır. Ancak bu nadiren "
+"rastlanan bir durumdur ve genellikle programlama hatasına işaret eder."
+
+#: kio/global.cpp:693
+#, c-format
+msgid "Unsupported Action: %1"
+msgstr "Desteklenmeyen Eylem: %1"
+
+#: kio/global.cpp:694
+msgid ""
+"The requested action is not supported by the KDE program which is implementing "
+"the <strong>%1</strong> protocol."
+msgstr ""
+"<strong>%1</strong> protokolünü kullanan eylem KDE programları tarafından "
+"desteklenmiyor."
+
+#: kio/global.cpp:697
+msgid ""
+"This error is very much dependent on the KDE program. The additional "
+"information should give you more information than is available to the KDE "
+"input/output architecture."
+msgstr "Bu hata KDE programına bağlıdır."
+
+#: kio/global.cpp:700
+msgid "Attempt to find another way to accomplish the same outcome."
+msgstr "Benzer bir sonuç alınabilecek başka bir yöntem bulunmaya çalışılıyor."
+
+#: kio/global.cpp:705
+msgid "File Expected"
+msgstr "Dosya Bekleniyordu"
+
+#: kio/global.cpp:706
+msgid ""
+"The request expected a file, however the folder <strong>%1</strong> "
+"was found instead."
+msgstr "Bir dosya bekleniyordu, ancak <strong>%1</strong> dizini bulundu."
+
+#: kio/global.cpp:708
+msgid "This may be an error on the server side."
+msgstr "Sunucu tarafında bir hata olabilir."
+
+#: kio/global.cpp:713
+msgid "Folder Expected"
+msgstr "Dosya Bekleniyordu"
+
+#: kio/global.cpp:714
+msgid ""
+"The request expected a folder, however the file <strong>%1</strong> "
+"was found instead."
+msgstr ""
+"Bu istek bir dizin bekliyordu, ancak yerine <strong>%1</strong> "
+"dosyası bulundu."
+
+#: kio/global.cpp:721
+msgid "File or Folder Does Not Exist"
+msgstr "Dosya Veya Dizin Bulunamadı."
+
+#: kio/global.cpp:722
+msgid "The specified file or folder <strong>%1</strong> does not exist."
+msgstr "Belirtilen <strong>%1</strong> dosya ya da dizini bulunamadı."
+
+#: kio/global.cpp:730
+msgid ""
+"The requested file could not be created because a file with the same name "
+"already exists."
+msgstr "İstenen dosya oluşturulamadı, çünkü bu isimde bir dosya zaten var."
+
+#: kio/global.cpp:732
+msgid "Try moving the current file out of the way first, and then try again."
+msgstr "Önce bu dosyayı taşıyın, daha sonra yeniden deneyin."
+
+#: kio/global.cpp:734
+msgid "Delete the current file and try again."
+msgstr "Dosyayı silin ve yeniden deneyin."
+
+#: kio/global.cpp:735
+msgid "Choose an alternate filename for the new file."
+msgstr "Yeni dosya için farklı bir dosya adı seçiniz."
+
+#: kio/global.cpp:740
+msgid ""
+"The requested folder could not be created because a folder with the same name "
+"already exists."
+msgstr "İstenen dizin oluşturulamadı, çünkü bu isimde bir dizin zaten var."
+
+#: kio/global.cpp:742
+msgid "Try moving the current folder out of the way first, and then try again."
+msgstr "Önce bu dosyayı taşıyın, daha sonra yeniden deneyin."
+
+#: kio/global.cpp:744
+msgid "Delete the current folder and try again."
+msgstr "Mevcut dizini silin ve yeniden deneyin."
+
+#: kio/global.cpp:745
+msgid "Choose an alternate name for the new folder."
+msgstr "Yeni dizin için farklı bir isim seçiniz."
+
+#: kio/global.cpp:749
+msgid "Unknown Host"
+msgstr "Bilinmeyen Makina"
+
+#: kio/global.cpp:750
+msgid ""
+"An unknown host error indicates that the server with the requested name, "
+"<strong>%1</strong>, could not be located on the Internet."
+msgstr ""
+"\"Bilinmeyen makine adı hatası\", istenen <strong>%1</strong> "
+"isimli makinenin internet üzerinden ulaşılamadığını gösterir."
+
+#: kio/global.cpp:753
+msgid ""
+"The name that you typed, %1, may not exist: it may be incorrectly typed."
+msgstr "Girilen isim (%1) mevcut olmayabilir: Hatalı yazılmış olabilir."
+
+#: kio/global.cpp:760
+msgid "Access Denied"
+msgstr "Erişim Engellendi"
+
+#: kio/global.cpp:761
+msgid "Access was denied to the specified resource, <strong>%1</strong>."
+msgstr "<strong>%1<strong> kaynağına erişim engellendi."
+
+#: kio/global.cpp:763 kio/global.cpp:979
+msgid "You may have supplied incorrect authentication details or none at all."
+msgstr "Hatalı ya da geçersiz yetki bilgileri aktarmış olabilirsiniz."
+
+#: kio/global.cpp:765 kio/global.cpp:981
+msgid "Your account may not have permission to access the specified resource."
+msgstr "Hesabınızın bu kaynağa erişme izni bulunmayabilir."
+
+#: kio/global.cpp:767 kio/global.cpp:983 kio/global.cpp:995
+msgid ""
+"Retry the request and ensure your authentication details are entered correctly."
+msgstr ""
+"İsteği yeniden deneyin ve yetki bilgilerinizin karşıya doğru aktarıldığına emin "
+"olun."
+
+#: kio/global.cpp:773
+msgid "Write Access Denied"
+msgstr "Yazma Erişimi Engellendi"
+
+#: kio/global.cpp:774
+msgid ""
+"This means that an attempt to write to the file <strong>%1</strong> "
+"was rejected."
+msgstr "<strong>%1</strong> isimli dosyaya yazma işlemi engellendi."
+
+#: kio/global.cpp:781
+msgid "Unable to Enter Folder"
+msgstr "Dizine Geçilemiyor"
+
+#: kio/global.cpp:782
+msgid ""
+"This means that an attempt to enter (in other words, to open) the requested "
+"folder <strong>%1</strong> was rejected."
+msgstr "<strong>%1</strong> dizinine girme isteği engellendi."
+
+#: kio/global.cpp:790
+msgid "Folder Listing Unavailable"
+msgstr "Dizin Listelemesi Yapılamadı"
+
+#: kio/global.cpp:791
+msgid "Protocol %1 is not a Filesystem"
+msgstr "%1 protokolü bir dosya sistemi değil"
+
+#: kio/global.cpp:792
+msgid ""
+"This means that a request was made which requires determining the contents of "
+"the folder, and the KDE program supporting this protocol is unable to do so."
+msgstr ""
+"Dizin içeriği okunmaya çalışıldı, ancak bu protokolü destekleyen KDE programı "
+"işlemi tamamlayamadı."
+
+#: kio/global.cpp:800
+msgid "Cyclic Link Detected"
+msgstr "Çapraz Bağ Bulundu"
+
+#: kio/global.cpp:801
+msgid ""
+"UNIX environments are commonly able to link a file or folder to a separate name "
+"and/or location. KDE detected a link or series of links that results in an "
+"infinite loop - i.e. the file was (perhaps in a roundabout way) linked to "
+"itself."
+msgstr ""
+"Bir UNIX ortamında bir dosya ya da dizin farklı bir bölgeye bağlanabilir. KDE "
+"sınırsız sayıda bağlantıya neden olan bir durumla karşılaştı."
+
+#: kio/global.cpp:805 kio/global.cpp:827
+msgid ""
+"Delete one part of the loop in order that it does not cause an infinite loop, "
+"and try again."
+msgstr "Bu çevrim içindeki bir bağlantıyı silin ve yeniden deneyin."
+
+#: kio/global.cpp:814
+msgid "Request Aborted By User"
+msgstr "İstek Kullanıcı Tarafından İptal Edildi"
+
+#: kio/global.cpp:815 kio/global.cpp:1108
+msgid "The request was not completed because it was aborted."
+msgstr "İstek iptal edildiğinden dolayı tamamlanamadı."
+
+#: kio/global.cpp:817 kio/global.cpp:1011 kio/global.cpp:1110
+msgid "Retry the request."
+msgstr "İsteği yineleyin."
+
+#: kio/global.cpp:821
+msgid "Cyclic Link Detected During Copy"
+msgstr "Kopyalama Sırasında Karşılıklı Bağ Bulundu"
+
+#: kio/global.cpp:822
+msgid ""
+"UNIX environments are commonly able to link a file or folder to a separate name "
+"and/or location. During the requested copy operation, KDE detected a link or "
+"series of links that results in an infinite loop - i.e. the file was (perhaps "
+"in a roundabout way) linked to itself."
+msgstr ""
+"Bir UNIX ortamında bir dosya ya da dizin farklı bir bölgeye bağlanabilir. KDE "
+"sınırsız sayıda bağlantıya neden olan bir durumla karşılaştı."
+
+#: kio/global.cpp:832
+msgid "Could Not Create Network Connection"
+msgstr "Ağ Bağlantısı Yapılamadı"
+
+#: kio/global.cpp:833
+msgid "Could Not Create Socket"
+msgstr "Soket Oluşturulamadı"
+
+#: kio/global.cpp:834
+msgid ""
+"This is a fairly technical error in which a required device for network "
+"communications (a socket) could not be created."
+msgstr ""
+"Bu durum, ağ erişiminin yapılamaması sonucu teknik bir hata doğurmuştur."
+
+#: kio/global.cpp:836 kio/global.cpp:949 kio/global.cpp:960 kio/global.cpp:969
+msgid ""
+"The network connection may be incorrectly configured, or the network interface "
+"may not be enabled."
+msgstr ""
+"Ağ ayarları düzgün yapılandırılmamış, ya da ağ kartı sisteme tanıtılmamış "
+"olabilir."
+
+#: kio/global.cpp:842
+msgid "Connection to Server Refused"
+msgstr "Sunucuya Bağlantı Reddedildi"
+
+#: kio/global.cpp:843
+msgid ""
+"The server <strong>%1</strong> refused to allow this computer to make a "
+"connection."
+msgstr "<strong>%1</strong> sunucusu bu bilgisayarın bağlantısını reddetti."
+
+#: kio/global.cpp:845
+msgid ""
+"The server, while currently connected to the Internet, may not be configured to "
+"allow requests."
+msgstr "Sunucu, isteklere cevap verecek şekilde yapılandırılmamış olabilir."
+
+#: kio/global.cpp:847
+msgid ""
+"The server, while currently connected to the Internet, may not be running the "
+"requested service (%1)."
+msgstr ""
+"İnternet'e bağlı olan bu sunucu istenen servisi (%1) çalıştırmayabilir."
+
+#: kio/global.cpp:849
+msgid ""
+"A network firewall (a device which restricts Internet requests), either "
+"protecting your network or the network of the server, may have intervened, "
+"preventing this request."
+msgstr ""
+"Bilgisayarınız ile İnternet arasında bulunan bir güvenlik duvarı bu isteği "
+"engellemiş olabilir."
+
+#: kio/global.cpp:856
+msgid "Connection to Server Closed Unexpectedly"
+msgstr "Sunucu ile olan bağlantı beklenmedik şekilde sonlandı"
+
+#: kio/global.cpp:857
+msgid ""
+"Although a connection was established to <strong>%1</strong>"
+", the connection was closed at an unexpected point in the communication."
+msgstr ""
+"<strong>%1</strong> adresine bir bağlantı yapılmasına rağmen, iletişim "
+"sırasında beklenmedik bir kopukluk yaşandı."
+
+#: kio/global.cpp:860
+msgid ""
+"A protocol error may have occurred, causing the server to close the connection "
+"as a response to the error."
+msgstr ""
+"Bir protokol hatası oluştu ve bu hata sonucunda sunucu bağlantıyı kesti."
+
+#: kio/global.cpp:866
+msgid "URL Resource Invalid"
+msgstr "Geçersiz Adres"
+
+#: kio/global.cpp:867
+msgid "Protocol %1 is not a Filter Protocol"
+msgstr "%1 protokolü bir süzgeç protokolü değil."
+
+#: kio/global.cpp:868
+msgid ""
+"The <strong>U</strong>niform <strong>R</strong>esource <strong>L</strong>"
+"ocator (URL) that you entered did not refer to a valid mechanism of accessing "
+"the specific resource, <strong>%1%2</strong>."
+msgstr ""
+"Girmiş olduğunuz <strong>U</strong>niform <strong>R</strong>resource <strong>"
+"L</strong>ocator (URL) bu kaynağa erişmek için geçerli bir mekanizma "
+"barındırmıyor, <strong>%1%2</strong>."
+
+#: kio/global.cpp:873
+msgid ""
+"KDE is able to communicate through a protocol within a protocol. This request "
+"specified a protocol be used as such, however this protocol is not capable of "
+"such an action. This is a rare event, and is likely to indicate a programming "
+"error."
+msgstr ""
+
+#: kio/global.cpp:881
+msgid "Unable to Initialize Input/Output Device"
+msgstr "Giriş/Çıkış Aygıtı Başlatılamadı"
+
+#: kio/global.cpp:882
+msgid "Could Not Mount Device"
+msgstr "Aygıt Bağlanamadı"
+
+#: kio/global.cpp:883
+msgid ""
+"The requested device could not be initialized (\"mounted\"). The reported error "
+"was: <strong>%1</strong>"
+msgstr "İstenen aygıt bağlanamadı. Verilen hata mesajı: <strong>%1</strong>."
+
+#: kio/global.cpp:886
+msgid ""
+"The device may not be ready, for example there may be no media in a removable "
+"media device (i.e. no CD-ROM in a CD drive), or in the case of a "
+"peripheral/portable device, the device may not be correctly connected."
+msgstr ""
+"Aygıt hazı olmayabilir. Örneğin, CD sürücüsü içinde bir CD olmaması, ya da bir "
+"dahili/harici aygıtla ilgili bağlantı problemleri bu hatanın alınmasına yol "
+"açabilir."
+
+#: kio/global.cpp:890
+msgid ""
+"You may not have permissions to initialize (\"mount\") the device. On UNIX "
+"systems, often system administrator privileges are required to initialize a "
+"device."
+msgstr ""
+"Bu aygıtın bağlanması (mount) için geçerli haklarınız olmayabilir. UNIX türevi "
+"sistemlerde genellikle sadece sistem yöneticileri bir aygıtın sisteme "
+"bağlanmasına izin verebilir."
+
+#: kio/global.cpp:894
+msgid ""
+"Check that the device is ready; removable drives must contain media, and "
+"portable devices must be connected and powered on.; and try again."
+msgstr ""
+"Aygıtın hazır olduğunu kontrol edin. Sökülebilir aygıtların içinde yedekleme "
+"ünitesi bulunma ve taşınabilir aygıtların elektrik bağlantıları tam olmalıdır."
+
+#: kio/global.cpp:900
+msgid "Unable to Uninitialize Input/Output Device"
+msgstr "Giriş/Çıkış Aygıtı Başlatılamadı"
+
+#: kio/global.cpp:901
+msgid "Could Not Unmount Device"
+msgstr "Aygıt Ayrılamadı"
+
+#: kio/global.cpp:902
+msgid ""
+"The requested device could not be uninitialized (\"unmounted\"). The reported "
+"error was: <strong>%1</strong>"
+msgstr ""
+"İstenen işlem (aygıtın ayrılması) başarılı olamadı. Bildirilen hata: <strong>"
+"%1</strong>"
+
+#: kio/global.cpp:905
+msgid ""
+"The device may be busy, that is, still in use by another application or user. "
+"Even such things as having an open browser window on a location on this device "
+"may cause the device to remain in use."
+msgstr ""
+"Aygıt şu anda meşgul olabilir. Bu aygıtı gösterecek şekilde bir web tarayıcı "
+"penceresinin açık olması bile bu aygıtın kullanımda kalmasını gerektirebilir."
+
+#: kio/global.cpp:909
+msgid ""
+"You may not have permissions to uninitialize (\"unmount\") the device. On UNIX "
+"systems, system administrator privileges are often required to uninitialize a "
+"device."
+msgstr ""
+"Bu aygıtın ayrılması (umount) için geçerli haklarınız olmayabilir. UNIX türevi "
+"sistemlerde genellikle sadece sistem yöneticileri bir aygıtın sistemden "
+"ayrılmasına izin verebilir."
+
+#: kio/global.cpp:913
+msgid "Check that no applications are accessing the device, and try again."
+msgstr ""
+"Hiç bir uygulamanın bu aygıta erişiyor olmadığını kontrol edip yeniden deneyin."
+
+#: kio/global.cpp:918
+msgid "Cannot Read From Resource"
+msgstr "Kaynaktan Okunamadı"
+
+#: kio/global.cpp:919
+msgid ""
+"This means that although the resource, <strong>%1</strong>"
+", was able to be opened, an error occurred while reading the contents of the "
+"resource."
+msgstr ""
+"Bu, <strong>%1</strong> kaynağı her ne kadar açılabilmiş olsa da, içindekiler "
+"okunurken bir hata oluştuğu anlamına gelir."
+
+#: kio/global.cpp:922
+msgid "You may not have permissions to read from the resource."
+msgstr "Bu kaynaktan okuma izniniz olmayabilir."
+
+#: kio/global.cpp:931
+msgid "Cannot Write to Resource"
+msgstr "Kaynağa Yazılamadı"
+
+#: kio/global.cpp:932
+msgid ""
+"This means that although the resource, <strong>%1</strong>"
+", was able to be opened, an error occurred while writing to the resource."
+msgstr ""
+"<strong>%1</strong> kaynağı açılmış olmasına rağmen bu kaynağa yazdırılma "
+"sırasında bir hata alınmıştır."
+
+#: kio/global.cpp:935
+msgid "You may not have permissions to write to the resource."
+msgstr "Kaynağa yazma izniniz olmayabilir."
+
+#: kio/global.cpp:944 kio/global.cpp:955
+msgid "Could Not Listen for Network Connections"
+msgstr "Ağ Bağlantıları Okunamıyor"
+
+#: kio/global.cpp:945
+msgid "Could Not Bind"
+msgstr "Bağlanılamıyor"
+
+#: kio/global.cpp:946 kio/global.cpp:957
+msgid ""
+"This is a fairly technical error in which a required device for network "
+"communications (a socket) could not be established to listen for incoming "
+"network connections."
+msgstr ""
+"Bu hata, ağ iletişimi için gerekli bir cihaz'ın ( örneğin bir soket ), gelen ağ "
+"bağlantıları'nı dinlemek için konumlandırılamadığı ile ilgili hayli teknik bir "
+"hatadır."
+
+#: kio/global.cpp:956
+msgid "Could Not Listen"
+msgstr "Dinlenemiyor"
+
+#: kio/global.cpp:966
+msgid "Could Not Accept Network Connection"
+msgstr "Ağ Bağlantısı Kurulamıyor"
+
+#: kio/global.cpp:967
+msgid ""
+"This is a fairly technical error in which an error occurred while attempting to "
+"accept an incoming network connection."
+msgstr ""
+"Bu hata, gelen ağ bağlantıları'nın kabul edilmesi esnasında oluşanhayli teknik "
+"bir hatadır."
+
+#: kio/global.cpp:971
+msgid "You may not have permissions to accept the connection."
+msgstr "Bağlantıyı kabul etmek için yeterli izniniz olmayabilir."
+
+#: kio/global.cpp:976
+#, c-format
+msgid "Could Not Login: %1"
+msgstr "Giriş yapılamadı: %1"
+
+#: kio/global.cpp:977
+msgid ""
+"An attempt to login to perform the requested operation was unsuccessful."
+msgstr "Yapılması istenen giriş başarılı olamadı."
+
+#: kio/global.cpp:988
+msgid "Could Not Determine Resource Status"
+msgstr "Kaynağın Durumu Belirlenemedi"
+
+#: kio/global.cpp:989
+msgid "Could Not Stat Resource"
+msgstr "Kaynağa Erişilemiyor"
+
+#: kio/global.cpp:990
+msgid ""
+"An attempt to determine information about the status of the resource <strong>"
+"%1</strong>, such as the resource name, type, size, etc., was unsuccessful."
+msgstr ""
+"<strong>%1</strong> kaynağına erişim sırasında alınması gereken isim, tür ve "
+"boyut bilgilerine erişilemedi."
+
+#: kio/global.cpp:993
+msgid "The specified resource may not have existed or may not be accessible."
+msgstr "Belirtilen kaynak bulunmayabilir, ya da erişim imkanı olmayabilir."
+
+#: kio/global.cpp:1001
+msgid "Could Not Cancel Listing"
+msgstr "Listeleme Kesilemedi"
+
+#: kio/global.cpp:1002
+msgid "FIXME: Document this"
+msgstr "FIXME: Document this"
+
+#: kio/global.cpp:1006
+msgid "Could Not Create Folder"
+msgstr "Dizin Oluşturulamadı"
+
+#: kio/global.cpp:1007
+msgid "An attempt to create the requested folder failed."
+msgstr "İstenen dizinin oluşturulması sırasında hata."
+
+#: kio/global.cpp:1008
+msgid "The location where the folder was to be created may not exist."
+msgstr "Dizinin oluşturulacağı konum olmayabilir."
+
+#: kio/global.cpp:1015
+msgid "Could Not Remove Folder"
+msgstr "Dizin Silinemedi"
+
+#: kio/global.cpp:1016
+msgid "An attempt to remove the specified folder, <strong>%1</strong>, failed."
+msgstr "Belirtilen <strong>%1</strong> dizini silinemedi."
+
+#: kio/global.cpp:1018
+msgid "The specified folder may not exist."
+msgstr "Belirtilen yerde bu isimde bir dizin olmayabilir."
+
+#: kio/global.cpp:1019
+msgid "The specified folder may not be empty."
+msgstr "Belirtilen dizin boş olmayabilir."
+
+#: kio/global.cpp:1022
+msgid "Ensure that the folder exists and is empty, and try again."
+msgstr "Bu dizinin boş olduğunu kontrol ederek yeniden deneyin."
+
+#: kio/global.cpp:1027
+msgid "Could Not Resume File Transfer"
+msgstr "Dosya Aktarımına Devam Edilemiyor"
+
+#: kio/global.cpp:1028
+msgid ""
+"The specified request asked that the transfer of file <strong>%1</strong> "
+"be resumed at a certain point of the transfer. This was not possible."
+msgstr ""
+"Belirtilen istek <strong>%1</strong> dosyasının aktarımının, belirli bir "
+"noktadan devam edilebilmesini istedi. Bu mümkün değil."
+
+#: kio/global.cpp:1031
+msgid "The protocol, or the server, may not support file resuming."
+msgstr "Sunucu, dosya aktarımına devam edilmesini desteklemiyor."
+
+#: kio/global.cpp:1033
+msgid "Retry the request without attempting to resume transfer."
+msgstr "Dosya aktarımına kaldığı yerden devam etmeksizin isteği yinele."
+
+#: kio/global.cpp:1038
+msgid "Could Not Rename Resource"
+msgstr "Kaynağın Adı Değiştirilemedi"
+
+#: kio/global.cpp:1039
+msgid "An attempt to rename the specified resource <strong>%1</strong> failed."
+msgstr ""
+"Belirtilen aygıtın (<strong>%1</strong>) adının değiştirilmesi isteği başarısız "
+"oldu."
+
+#: kio/global.cpp:1047
+msgid "Could Not Alter Permissions of Resource"
+msgstr "Kaynağın İzinleri Değiştirilemedi"
+
+#: kio/global.cpp:1048
+msgid ""
+"An attempt to alter the permissions on the specified resource <strong>"
+"%1</strong> failed."
+msgstr ""
+"Belirtilen aygıtın (<strong>%1</strong>) izin haklarının değiştirilmesi isteği "
+"başarısız oldu."
+
+#: kio/global.cpp:1055
+msgid "Could Not Delete Resource"
+msgstr "Kaynak Silinemedi"
+
+#: kio/global.cpp:1056
+msgid "An attempt to delete the specified resource <strong>%1</strong> failed."
+msgstr "<strong>%1</strong> kaynağının silinmesi işleminde bir hata oluştu."
+
+#: kio/global.cpp:1063
+msgid "Unexpected Program Termination"
+msgstr "Beklenmeyen Program Sonlanması"
+
+#: kio/global.cpp:1064
+msgid ""
+"The program on your computer which provides access to the <strong>%1</strong> "
+"protocol has unexpectedly terminated."
+msgstr ""
+"Bilgisayarınızdaki, <strong>%1</strong> protokolüne erişim sağlayan  program "
+"beklenmedik bir şekilde sonlandırılmış. "
+
+#: kio/global.cpp:1072
+msgid "Out of Memory"
+msgstr "Bellek Yetersiz"
+
+#: kio/global.cpp:1073
+msgid ""
+"The program on your computer which provides access to the <strong>%1</strong> "
+"protocol could not obtain the memory required to continue."
+msgstr "<strong>%1</strong> protokolü için istenen bellek yetersiz."
+
+#: kio/global.cpp:1081
+msgid "Unknown Proxy Host"
+msgstr "Bilinmeyen Vekil Sunucu"
+
+#: kio/global.cpp:1082
+msgid ""
+"While retrieving information about the specified proxy host, <strong>%1</strong>"
+", an Unknown Host error was encountered. An unknown host error indicates that "
+"the requested name could not be located on the Internet."
+msgstr ""
+"Tanımlanmış vekil sunucu hakkındaki bilgiye erişirken, <strong>%1</strong> "
+", sorgulanan ismin internet üzerinde bulunamadığını belirten 'Bilinmeyen Vekil "
+"Sunucu' hatası oluştu."
+
+#: kio/global.cpp:1086
+msgid ""
+"There may have been a problem with your network configuration, specifically "
+"your proxy's hostname. If you have been accessing the Internet with no problems "
+"recently, this is unlikely."
+msgstr ""
+"Ağ yapılandırmanızda bir sorun olabilir, özellikle vekil sunucu adını yeniden "
+"kontrol etmenizi öneririz. Eğer son zamanlarda İnternet erişiminde herhangi bir "
+"sorun yaşamamışsanız bu gibi bir durumla karşılaşmanız bazı dahili sorunların "
+"varlığını gösterir."
+
+#: kio/global.cpp:1090
+msgid "Double-check your proxy settings and try again."
+msgstr "Vekil sunucu ayarlarınızı kontrol ederek tekrar teneyin."
+
+#: kio/global.cpp:1095
+msgid "Authentication Failed: Method %1 Not Supported"
+msgstr "Yetki Denetimi Başarısız: %1 Yöntemi Desteklenmiyor"
+
+#: kio/global.cpp:1097
+#, c-format
+msgid ""
+"Although you may have supplied the correct authentication details, the "
+"authentication failed because the method that the server is using is not "
+"supported by the KDE program implementing the protocol %1."
+msgstr ""
+"Doğru yetki bilgileri sağlamış olmanıza rağmen, yetki denetimi başarısız oldu, "
+"çünkü sunucunun kullandığı yöntem, %1 protokolünü uygulayan KDE programı "
+"tarafından desteklenmiyor."
+
+#: kio/global.cpp:1101
+msgid ""
+"Please file a bug at <a href=\"http://bugs.kde.org/\">http://bugs.kde.org/</a> "
+"to inform the KDE team of the unsupported authentication method."
+msgstr ""
+"Lütfen <a href=http://bugs.kde.org>http://bugs.kde.org</a> "
+"adresine giderek KDE Grubu'nu bu durumla ilgili olarak bilgilendirin."
+
+#: kio/global.cpp:1107
+msgid "Request Aborted"
+msgstr "İstek Durduruldu"
+
+#: kio/global.cpp:1114
+msgid "Internal Error in Server"
+msgstr "Sunucuda İç Hata"
+
+#: kio/global.cpp:1115
+msgid ""
+"The program on the server which provides access to the <strong>%1</strong> "
+"protocol has reported an internal error: %0."
+msgstr ""
+"Sunucunuzdaki, <strong>%1</strong> protokolüne erişim sağlayan program içsel "
+"bir hata oluştuğunu bildirdi:%0"
+
+#: kio/global.cpp:1118
+msgid ""
+"This is most likely to be caused by a bug in the server program. Please "
+"consider submitting a full bug report as detailed below."
+msgstr ""
+"Bu durum sunucudaki programın bir hatasından doğabilir. Lütfen aşağıdaki "
+"bilgilere uygun olacak şekilde bir hata raporu gönderin."
+
+#: kio/global.cpp:1121
+msgid "Contact the administrator of the server to advise them of the problem."
+msgstr "Bu problem ile ilgili olarak sistem yöneticisi ile bağlantı kurun."
+
+#: kio/global.cpp:1123
+msgid ""
+"If you know who the authors of the server software are, submit the bug report "
+"directly to them."
+msgstr ""
+"Sunucu yazılımını hazırlayanların e-posta adreslerini biliyorsanız, bu "
+"kişilerle bağlantıya geçip hata raporu gönderin."
+
+#: kio/global.cpp:1128
+msgid "Timeout Error"
+msgstr "Zaman Aşımı Hatası"
+
+#: kio/global.cpp:1129
+msgid ""
+"Although contact was made with the server, a response was not received within "
+"the amount of time allocated for the request as follows:"
+"<ul>"
+"<li>Timeout for establishing a connection: %1 seconds</li>"
+"<li>Timeout for receiving a response: %2 seconds</li>"
+"<li>Timeout for accessing proxy servers: %3 seconds</li></ul>"
+"Please note that you can alter these timeout settings in the KDE Control "
+"Center, by selecting Network -> Preferences."
+msgstr ""
+"Sunucu ile bağlantı kurulmasına rağmen, belirlenen zaman aralıkları içinde bir "
+"cevap alınamadı. Aşağıdaki bilgiler bu ayarları göstermektedir. "
+"<ul> "
+"<li>Bir bağlantının kurulması için gereken zaman: %1 saniye</li> "
+"<li>Bir cevabın alınması için gereken zaman: %2 saniye</li> "
+"<li>Vekil sunucuya erişmek için gereken zaman: %3 saniye</li> </ul> "
+"Bu süreleri KDE kontrol merkezinde bulunan Ağ -> Tercihler bölümünden "
+"değiştirebilirsiniz."
+
+#: kio/global.cpp:1140
+msgid "The server was too busy responding to other requests to respond."
+msgstr "Sunucu çok meşgul olduğu için cevap veremedi."
+
+#: kio/global.cpp:1146
+msgid "Unknown Error"
+msgstr "Bilinmeyen Hata"
+
+#: kio/global.cpp:1147
+msgid ""
+"The program on your computer which provides access to the <strong>%1</strong> "
+"protocol has reported an unknown error: %2."
+msgstr ""
+"Bilgisayarınızdaki, <strong>%1</strong> protokolüne erişim sağlayan program bir "
+"bilinmeyen hata oluştuğunu bildirdi:%2"
+
+#: kio/global.cpp:1155
+msgid "Unknown Interruption"
+msgstr "Bilinmeyen Kesinti"
+
+#: kio/global.cpp:1156
+msgid ""
+"The program on your computer which provides access to the <strong>%1</strong> "
+"protocol has reported an interruption of an unknown type: %2."
+msgstr ""
+"Bilgisayarınızdaki, <strong>%1</strong> protokolüne erişim sağlayan program, "
+"bilinmeyen ir türde kesinti' oluştuğunu bildirdi:%2."
+
+#: kio/global.cpp:1164
+msgid "Could Not Delete Original File"
+msgstr "Asıl Dosya Silinemiyor"
+
+#: kio/global.cpp:1165
+msgid ""
+"The requested operation required the deleting of the original file, most likely "
+"at the end of a file move operation. The original file <strong>%1</strong> "
+"could not be deleted."
+msgstr ""
+"Uygulanmak istenen işlem tıpkı bir taşıma işlemi gibi dosyanın aslının "
+"silinmesini gerektiriyor. Dosyanın aslı olan <strong>%1</strong> "
+"dosyası silinemez."
+
+#: kio/global.cpp:1174
+msgid "Could Not Delete Temporary File"
+msgstr "Geçici Dosya Silinemiyor"
+
+#: kio/global.cpp:1175
+#, fuzzy
+msgid ""
+"The requested operation required the creation of a temporary file in which to "
+"save the new file while being downloaded. This temporary file <strong>"
+"%1</strong> could not be deleted."
+msgstr ""
+"Bu geçici dosya  <strong>%1</strong> silinemiyor. Geçici dosya oluşturulması, "
+"indirilmikte olan  yeni bir dosya'yı kaydetmek için gerçekleştirilir "
+
+#: kio/global.cpp:1184
+msgid "Could Not Rename Original File"
+msgstr "Asıl Dosyanın Adı Değiştirilemiyor"
+
+#: kio/global.cpp:1185
+msgid ""
+"The requested operation required the renaming of the original file <strong>"
+"%1</strong>, however it could not be renamed."
+msgstr ""
+"İstenen işlem, <strong>%1</strong> dosyasının adını değiştirmeyi "
+"gerektiriyordu, ancak bu dosyanın adı değiştirilemedi."
+
+#: kio/global.cpp:1193
+msgid "Could Not Rename Temporary File"
+msgstr "Geçici Dosyanın Adı Değiştirilemedi"
+
+#: kio/global.cpp:1194
+msgid ""
+"The requested operation required the creation of a temporary file <strong>"
+"%1</strong>, however it could not be created."
+msgstr ""
+"İstenen işlem, <strong>%1</strong>  geçici dosyasının oluşturulmasını "
+"gerektiriyordu, ancak bu dosya oluşturulamadı."
+
+#: kio/global.cpp:1202
+msgid "Could Not Create Link"
+msgstr "Bağlantı Oluşturulamadı"
+
+#: kio/global.cpp:1203
+msgid "Could Not Create Symbolic Link"
+msgstr "Sembolik Bağlantı Oluşturulamadı"
+
+#: kio/global.cpp:1204
+msgid "The requested symbolic link %1 could not be created."
+msgstr "İstenen sembolik bağlantı (%1) oluşturulamadı."
+
+#: kio/global.cpp:1211
+msgid "No Content"
+msgstr "İçerik Yok"
+
+#: kio/global.cpp:1216
+msgid "Disk Full"
+msgstr "Disk Dolu"
+
+#: kio/global.cpp:1217
+msgid ""
+"The requested file <strong>%1</strong> could not be written to as there is "
+"inadequate disk space."
+msgstr "<strong>%1<strong> dosyası yazılamadı. Diskte yeterli alan yok."
+
+#: kio/global.cpp:1219
+msgid ""
+"Free up enough disk space by 1) deleting unwanted and temporary files; 2) "
+"archiving files to removable media storage such as CD-Recordable discs; or 3) "
+"obtain more storage capacity."
+msgstr ""
+"1) Gereksiz ve geçici dosyalarınızı silerek, 2) yazılabilir CD'lere mevcut "
+"arşivinizi aktararak, ya da 3) daha geniş bir disk temin ederek mevcut "
+"sisteminizde daha fazla yer açmanız gerekmektedir."
+
+#: kio/global.cpp:1226
+msgid "Source and Destination Files Identical"
+msgstr "Dosya ve Hedef Dosyaları Aynı"
+
+#: kio/global.cpp:1227
+msgid ""
+"The operation could not be completed because the source and destination files "
+"are the same file."
+msgstr "İşlem tamamlanamadı, çünkü hedef ve kaynak dosyaları aynı."
+
+#: kio/global.cpp:1229
+msgid "Choose a different filename for the destination file."
+msgstr "Hedef dosya için yeni bir dosya adı seçin."
+
+#: kio/global.cpp:1240
+msgid "Undocumented Error"
+msgstr "Belgelenmeyen Hata"
+
+#: kio/statusbarprogress.cpp:132
+msgid " Stalled "
+msgstr " Durakladı "
+
+#: kio/statusbarprogress.cpp:134 misc/uiserver.cpp:1102
+msgid " %1/s "
+msgstr " %1/s "
+
+#: kio/passdlg.cpp:57
+msgid "Password"
+msgstr "Parola"
+
+#: kio/passdlg.cpp:98
+msgid "You need to supply a username and a password"
+msgstr "Bir kullanıcı adı ve parola girmeniz gerekiyor"
+
+#. i18n: file ./kfile/kpropertiesdesktopadvbase.ui line 134
+#: kfile/kpropertiesdialog.cpp:3699 kio/passdlg.cpp:108 rc.cpp:105
+#, no-c-format
+msgid "&Username:"
+msgstr "&Kullanıcı adı:"
+
+#: kio/passdlg.cpp:125
+msgid "&Password:"
+msgstr "&Parola:"
+
+#: kio/passdlg.cpp:147
+msgid "&Keep password"
+msgstr "Parolayı &sakla"
+
+#: kio/passdlg.cpp:345 kpasswdserver/kpasswdserver.cpp:371
+msgid "Authorization Dialog"
+msgstr "Kimlik Bilgisi Penceresi"
+
+#: kio/krun.cpp:120
+msgid ""
+"<qt>Unable to enter <b>%1</b>.\n"
+"You do not have access rights to this location.</qt>"
+msgstr ""
+"<qt>%1'e girilemedi.\n"
+"Bu bölgeye giriş izniniz yok.</qt>"
+
+#: kio/krun.cpp:159
+msgid ""
+"<qt>The file <b>%1</b> is an executable program. For safety it will not be "
+"started.</qt>"
+msgstr ""
+"<qt><b>%1</b> dosyası çalıştırılabilir bir programdır. Güvenlik önlemi olarak "
+"bu program başlatılmayacaktır.</qt>"
+
+#: kio/krun.cpp:166
+msgid "<qt>You do not have permission to run <b>%1</b>.</qt>"
+msgstr "<qt><b>%1</b> programını çalıştırmaya izniniz yok.</qt>"
+
+#: kio/krun.cpp:203
+msgid "You are not authorized to open this file."
+msgstr "Bu dosyayı çalıştırmak için gerekli yetkilere sahip değilsiniz."
+
+#: kfile/kopenwith.cpp:835 kio/krun.cpp:207
+msgid "Open with:"
+msgstr "Birlikte aç:"
+
+#: kio/krun.cpp:545
+msgid "You are not authorized to execute this file."
+msgstr "Bu dosyayı çalıştırmak için gerekli yetkilere sahip değilsiniz."
+
+#: kio/krun.cpp:565
+#, c-format
+msgid "Launching %1"
+msgstr "%1 Başlatılıyor"
+
+#: kio/krun.cpp:746
+msgid "You are not authorized to execute this service."
+msgstr "Bu servisi çalıştırmak için gerekli yetkilere sahip değilsiniz."
+
+#: kio/krun.cpp:900
+msgid ""
+"<qt>Unable to run the command specified. The file or folder <b>%1</b> "
+"does not exist.</qt>"
+msgstr ""
+"<qt>Belirtilen komut çalıştırılamıyor. <b>%1</b> dosyası ya da dizini mevcut "
+"değil.</qt>"
+
+#: kio/krun.cpp:1400
+msgid "Could not find the program '%1'"
+msgstr "'%1' programı bulunamadı."
+
+#: kio/kfileitem.cpp:730
+msgid "Symbolic Link"
+msgstr "Sembolik Bağlantı"
+
+#: kio/kfileitem.cpp:732
+msgid "%1 (Link)"
+msgstr "%1 (Bağlantı)"
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:270
+#: bookmarks/kbookmarkmenu.cc:791 kfile/kpropertiesdialog.cpp:3930
+#: kio/kfileitem.cpp:774
+msgid "Name:"
+msgstr "Ad:"
+
+#: kfile/kpropertiesdialog.cpp:927 kio/kfileitem.cpp:775
+msgid "Type:"
+msgstr "Tür:"
+
+#: kio/kfileitem.cpp:779
+msgid "Link to %1 (%2)"
+msgstr "%1'e bağlantı (%2)"
+
+#: kfile/kpropertiesdialog.cpp:977 kio/kfileitem.cpp:787
+msgid "Size:"
+msgstr "Boy:"
+
+#: kfile/kpropertiesdialog.cpp:1045 kio/kfileitem.cpp:792
+msgid "Modified:"
+msgstr "Değiştirme:"
+
+#: kio/kfileitem.cpp:798
+msgid "Owner:"
+msgstr "Sahibi:"
+
+#: kio/kfileitem.cpp:799
+msgid "Permissions:"
+msgstr "İzinler:"
+
+#: kio/skipdlg.cpp:63
+msgid "Skip"
+msgstr "Atla"
+
+#: kio/skipdlg.cpp:66
+msgid "Auto Skip"
+msgstr "Otomatik Atla"
+
+#: kio/kshred.cpp:212
+msgid "Shredding:  pass %1 of 35"
+msgstr "Dosya tamamen siliniyor: %1/35"
+
+#: kio/slave.cpp:370
+#, c-format
+msgid "Unable to create io-slave: %1"
+msgstr "io-slave oluşturulamadı: %1"
+
+#: kio/slave.cpp:401
+msgid "Unknown protocol '%1'."
+msgstr "Bilinmeyen protokol '%1'."
+
+#: kio/slave.cpp:409
+msgid "Can not find io-slave for protocol '%1'."
+msgstr "'%1' protokolü için ioslave bulunamadı."
+
+#: kio/slave.cpp:437
+msgid "Cannot talk to klauncher"
+msgstr "klauncher ile konuşulamadı."
+
+#: kio/slave.cpp:448
+#, c-format
+msgid ""
+"Unable to create io-slave:\n"
+"klauncher said: %1"
+msgstr ""
+"io-slave oluşturulamadı:\n"
+"klauncher iletisi: %1"
+
+#: kfile/kpropertiesdialog.cpp:2686 kio/kmimetypechooser.cpp:75
+msgid "Mime Type"
+msgstr "Mime Türü"
+
+#: kfile/kpropertiesdialog.cpp:2697 kio/kmimetypechooser.cpp:80
+msgid "Comment"
+msgstr "Açıklama"
+
+#: kio/kmimetypechooser.cpp:84
+msgid "Patterns"
+msgstr "Desenler"
+
+#: kio/kmimetypechooser.cpp:94
+msgid "&Edit..."
+msgstr "&Düzenle..."
+
+#: kio/kmimetypechooser.cpp:104
+msgid "Click this button to display the familiar KDE mime type editor."
+msgstr ""
+"Alışık olduğunuz KDE mime-tipi düzenleyiciyi görüntülemek için bu düğmeye "
+"tıklayın."
+
+#: kssl/ksslcertdlg.cc:61
+msgid "Certificate"
+msgstr "Sertifika"
+
+#: kssl/ksslcertdlg.cc:67
+msgid "Save selection for this host."
+msgstr "Bu makine için seçimleri kaydet."
+
+#: kssl/ksslcertdlg.cc:75
+msgid "Send certificate"
+msgstr "Sertifika gönder"
+
+#: kssl/ksslcertdlg.cc:79
+msgid "Do not send a certificate"
+msgstr "Sertifika gönderme"
+
+#: kssl/ksslcertdlg.cc:84
+msgid "KDE SSL Certificate Dialog"
+msgstr "KDE SSL Sertifika Penceresi"
+
+#: kssl/ksslcertdlg.cc:139
+msgid ""
+"The server <b>%1</b> requests a certificate."
+"<p>Select a certificate to use from the list below:"
+msgstr ""
+"<b>%1</b> sunucusu bir setifika gerektiriyor."
+"<p>Aşağıdaki listeden bir sertifika seçin:"
+
+#: kssl/ksslcertificate.cc:202
+msgid "Signature Algorithm: "
+msgstr "İmza Algoritması:"
+
+#: kssl/ksslcertificate.cc:203
+msgid "Unknown"
+msgstr "Bilinmeyen"
+
+#: kssl/ksslcertificate.cc:206
+msgid "Signature Contents:"
+msgstr "İmza İçeriği:"
+
+#: kssl/ksslcertificate.cc:338
+msgid ""
+"_: Unknown\n"
+"Unknown key algorithm"
+msgstr "Bilinmeyen anahtar algoritması"
+
+#: kssl/ksslcertificate.cc:341
+msgid "Key type: RSA (%1 bit)"
+msgstr "Anahtar türü: RSA (%1 bit)"
+
+#: kssl/ksslcertificate.cc:344
+msgid "Modulus: "
+msgstr "Modül: "
+
+#: kssl/ksslcertificate.cc:357
+msgid "Exponent: 0x"
+msgstr "Üs: 0x"
+
+#: kssl/ksslcertificate.cc:363
+msgid "Key type: DSA (%1 bit)"
+msgstr "Anahtar türü: DSA (%1 bit)"
+
+#: kssl/ksslcertificate.cc:366
+msgid "Prime: "
+msgstr "Özel: "
+
+#: kssl/ksslcertificate.cc:380
+msgid "160 bit prime factor: "
+msgstr ""
+
+#: kssl/ksslcertificate.cc:404
+msgid "Public key: "
+msgstr "Genel anahtar: "
+
+#: kssl/ksslcertificate.cc:920
+msgid "The certificate is valid."
+msgstr "Sertifika geçerli."
+
+#: kssl/ksslcertificate.cc:924
+msgid ""
+"Certificate signing authority root files could not be found so the certificate "
+"is not verified."
+msgstr "Sertifikayı imzalayan dosyalar bulunamadı ve sertifika onaylanamadı."
+
+#: kssl/ksslcertificate.cc:927
+msgid "Certificate signing authority is unknown or invalid."
+msgstr "Sertifikayı veren kurum bilinmiyor"
+
+#: kssl/ksslcertificate.cc:929
+msgid "Certificate is self-signed and thus may not be trustworthy."
+msgstr "Sertifika kendi kendine şifrelendiği için güvenilir olmayabilir."
+
+#: kssl/ksslcertificate.cc:931
+msgid "Certificate has expired."
+msgstr "Sertifika zaman aşımına uğramış."
+
+#: kssl/ksslcertificate.cc:933
+msgid "Certificate has been revoked."
+msgstr "Sertifika silinmiş."
+
+#: kssl/ksslcertificate.cc:935
+msgid "SSL support was not found."
+msgstr "SSL desteği bulunamadı."
+
+#: kssl/ksslcertificate.cc:937
+msgid "Signature is untrusted."
+msgstr "İmza güvensiz."
+
+#: kssl/ksslcertificate.cc:939
+msgid "Signature test failed."
+msgstr "İmza testi başarısız oldu."
+
+#: kssl/ksslcertificate.cc:942
+msgid "Rejected, possibly due to an invalid purpose."
+msgstr "Reddedildi, muhtemelen geçersiz bir amacı olduğundan."
+
+#: kssl/ksslcertificate.cc:944
+msgid "Private key test failed."
+msgstr "Özel anahtar denemesi başarısız."
+
+#: kssl/ksslcertificate.cc:946
+msgid "The certificate has not been issued for this host."
+msgstr "Sertifika bu bilgisayar için verilmemiş."
+
+#: kssl/ksslcertificate.cc:948
+msgid "This certificate is not relevant."
+msgstr "Bu sertifika geçersiz."
+
+#: kssl/ksslcertificate.cc:953
+msgid "The certificate is invalid."
+msgstr "Sertifika geçersiz."
+
+#: kssl/ksslutils.cc:79
+msgid "GMT"
+msgstr "GMT"
+
+#: kssl/ksslkeygen.cc:48
+msgid "KDE Certificate Request"
+msgstr "KDE Sertifika İsteği"
+
+#: kssl/ksslkeygen.cc:50
+msgid "KDE Certificate Request - Password"
+msgstr "SSL Sertifika İsteği - Parola"
+
+#: kssl/ksslkeygen.cc:93
+msgid "Unsupported key size."
+msgstr "Desteklenmeyen anahtar uzunluğu."
+
+#: kssl/ksslinfodlg.cc:120 kssl/ksslkeygen.cc:93
+msgid "KDE SSL Information"
+msgstr "KDE SSL Bilgisi"
+
+#: kssl/ksslkeygen.cc:97 misc/uiserver.cpp:1383
+msgid "KDE"
+msgstr "KDE"
+
+#: kssl/ksslkeygen.cc:97
+msgid "Please wait while the encryption keys are generated..."
+msgstr "Şifreleme anahtarları hazırlanıncaya kadar lütfen bekleyiniz..."
+
+#: kssl/ksslkeygen.cc:107
+msgid "Do you wish to store the passphrase in your wallet file?"
+msgstr "Parola deyimi'ni Cüzdan dosyasında saklamak ister misiniz?"
+
+#: kssl/ksslkeygen.cc:107
+msgid "Store"
+msgstr "Kaydet"
+
+#: kssl/ksslkeygen.cc:107
+msgid "Do Not Store"
+msgstr "Kaydetme"
+
+#: kssl/ksslkeygen.cc:210
+msgid "2048 (High Grade)"
+msgstr "2048 (Yüksek Seviye)"
+
+#: kssl/ksslkeygen.cc:211
+msgid "1024 (Medium Grade)"
+msgstr "1024 (Orta Seviye)"
+
+#: kssl/ksslkeygen.cc:212
+msgid "768  (Low Grade)"
+msgstr "768 (Düşük Seviye)"
+
+#: kssl/ksslkeygen.cc:213
+msgid "512  (Low Grade)"
+msgstr "512 (Düşük Seviye)"
+
+#: kssl/ksslkeygen.cc:215
+msgid "No SSL support."
+msgstr "SSL desteği yok."
+
+#: kssl/ksslpemcallback.cc:36
+msgid "Certificate password"
+msgstr "Sertifika parolası"
+
+#: kssl/ksslinfodlg.cc:92 kssl/ksslinfodlg.cc:149
+msgid "Current connection is secured with SSL."
+msgstr "Mevcut bağlantı SSL üzerinden güvenlidir."
+
+#: kssl/ksslinfodlg.cc:95 kssl/ksslinfodlg.cc:152
+msgid "Current connection is not secured with SSL."
+msgstr "Mevcut bağlantı SSL ile güvenli hale getirilmemiştir."
+
+#: kssl/ksslinfodlg.cc:99
+msgid "SSL support is not available in this build of KDE."
+msgstr "Bu KDE sürümünde SSL desteği bulunmamaktadır."
+
+#: kssl/ksslinfodlg.cc:109
+msgid "C&ryptography Configuration..."
+msgstr "Ş&ifreleme Yapılandırması..."
+
+#: kssl/ksslinfodlg.cc:142
+msgid ""
+"The main part of this document is secured with SSL, but some parts are not."
+msgstr ""
+"Bu belgenin ana kısmı SSL ile şifrelenmiştir, ancak bazı kısımlar hala "
+"şifrelenmemiştir."
+
+#: kssl/ksslinfodlg.cc:144
+msgid "Some of this document is secured with SSL, but the main part is not."
+msgstr ""
+"Bu belgenin bazı kısımları SSL ile şifrelenmiştir, ancak ana kısım "
+"şifrelenmemiştir."
+
+#: kssl/ksslinfodlg.cc:184
+msgid "Chain:"
+msgstr "Zincir:"
+
+#: kssl/ksslinfodlg.cc:193
+msgid "0 - Site Certificate"
+msgstr "0 - Site Sertifikası"
+
+#: kssl/ksslinfodlg.cc:210
+msgid "Peer certificate:"
+msgstr "Uç sertifika:"
+
+#: kssl/ksslinfodlg.cc:212
+msgid "Issuer:"
+msgstr "Veren:"
+
+#: kssl/ksslinfodlg.cc:218
+msgid "IP address:"
+msgstr "IP adresi:"
+
+#: kfile/kpropertiesdialog.cpp:2565 kssl/ksslinfodlg.cc:227
+msgid "URL:"
+msgstr "URL:"
+
+#: kssl/ksslinfodlg.cc:230
+msgid "Certificate state:"
+msgstr "Sertifika durumu:"
+
+#: kssl/ksslinfodlg.cc:236
+msgid "Valid from:"
+msgstr "Geçerlilik başlangıç tarihi:"
+
+#: kssl/ksslinfodlg.cc:238
+msgid "Valid until:"
+msgstr "Son geçerlilik tarihi:"
+
+#: kssl/ksslinfodlg.cc:241
+msgid "Serial number:"
+msgstr "Seri numarası:"
+
+#: kssl/ksslinfodlg.cc:243
+msgid "MD5 digest:"
+msgstr "MD5 digest:"
+
+#: kssl/ksslinfodlg.cc:246
+msgid "Cipher in use:"
+msgstr "Kullanımdaki şifreleme:"
+
+#: kssl/ksslinfodlg.cc:248
+msgid "Details:"
+msgstr "Ayrıntılar:"
+
+#: kssl/ksslinfodlg.cc:250
+msgid "SSL version:"
+msgstr "SSL sürümü:"
+
+#: kssl/ksslinfodlg.cc:252
+msgid "Cipher strength:"
+msgstr "Şifreleme derinliği:"
+
+#: kssl/ksslinfodlg.cc:253
+msgid "%1 bits used of a %2 bit cipher"
+msgstr "%2 bitlik şifrelemede kullanılana %1 bit"
+
+#: kssl/ksslinfodlg.cc:401
+msgid "Organization:"
+msgstr "Kurum:"
+
+#: kssl/ksslinfodlg.cc:406
+msgid "Organizational unit:"
+msgstr "Departman:"
+
+#: kssl/ksslinfodlg.cc:411
+msgid "Locality:"
+msgstr "Konum:"
+
+#: kssl/ksslinfodlg.cc:416
+msgid ""
+"_: Federal State\n"
+"State:"
+msgstr "Eyalet:"
+
+#: kssl/ksslinfodlg.cc:421
+msgid "Country:"
+msgstr "Ülke:"
+
+#: kssl/ksslinfodlg.cc:426
+msgid "Common name:"
+msgstr "Genel isim:"
+
+#: kssl/ksslinfodlg.cc:431
+msgid "Email:"
+msgstr "E-posta:"
+
+#: misc/kpac/proxyscout.cpp:124
+#, c-format
+msgid ""
+"The proxy configuration script is invalid:\n"
+"%1"
+msgstr "Vekil sunucu yapılandırma dosyası geçersiz: %1"
+
+#: misc/kpac/proxyscout.cpp:184
+#, c-format
+msgid ""
+"The proxy configuration script returned an error:\n"
+"%1"
+msgstr ""
+"Vekil sunucu yapılandırma dosyası bir hata verdi:\n"
+"%1"
+
+#: misc/kpac/downloader.cpp:81
+#, c-format
+msgid ""
+"Could not download the proxy configuration script:\n"
+"%1"
+msgstr ""
+"Vekil yapılandırma dosyası alınamadı: \n"
+"%1"
+
+#: misc/kpac/downloader.cpp:83
+msgid "Could not download the proxy configuration script"
+msgstr "Vekil sunucu yapılandırma programı indirilemedi."
+
+#: misc/kpac/discovery.cpp:116
+msgid "Could not find a usable proxy configuration script"
+msgstr "Kullanılabilir bir vekil sunucu yapılandırma dosyası bulunamadı"
+
+#: misc/kfile/fileprops.cpp:200
+msgid "Do not print the mimetype of the given file(s)"
+msgstr "Verilen dosya(lar)nın mime türünü yazdırma"
+
+#: misc/kfile/fileprops.cpp:204
+msgid ""
+"List all supported metadata keys of the given file(s). If mimetype is not "
+"specified, the mimetype of the given files is used."
+msgstr ""
+"Verilen dosya(lar)ın desteklenen tüm metadata anahtarlarını listele. Eğer "
+"Mime-türü belirlenmemişse,-verilen dosyalarınki kullanılacak."
+
+#: misc/kfile/fileprops.cpp:210
+msgid ""
+"List all preferred metadata keys of the given file(s). If mimetype is not "
+"specified, the mimetype of the given files is used."
+msgstr ""
+"Verilen dosya(lar)ın tercih edilen tüm metadata anahtarlarını listele. Eğer "
+"Mime-türü belirlenmemişse,-verilen dosyalarınki kullanılacak."
+
+#: misc/kfile/fileprops.cpp:216
+msgid "List all metadata keys which have a value in the given file(s)."
+msgstr ""
+"Verilen dosya(lar)daki bir değer içeren tüm metadata anahtarlarını listele."
+
+#: misc/kfile/fileprops.cpp:221
+msgid "Prints all mimetypes for which metadata support is available."
+msgstr "Metadata desteği olan tüm Mime-türlerini yazdırır."
+
+#: misc/kfile/fileprops.cpp:226
+msgid ""
+"Do not print a warning when more than one file was given and they do not all "
+"have the same mimetype."
+msgstr ""
+"Hepsi aynı mime türüne sahip olmayan birden fazla dosya verildiğinde, bir uyarı "
+"yazdırma. "
+
+#: misc/kfile/fileprops.cpp:231
+msgid "Prints all metadata values, available in the given file(s)."
+msgstr "Verilen dosya(lar) içinde mümkün olan tüm metadata değerlerini yazdır."
+
+#: misc/kfile/fileprops.cpp:236
+msgid "Prints the preferred metadata values, available in the given file(s)."
+msgstr ""
+"Verilen dosya(lar) içinde mümkün olan tercih edilen metadata değerlerini "
+"yazdır. "
+
+#: misc/kfile/fileprops.cpp:240
+msgid ""
+"Opens a KDE properties dialog to allow viewing and modifying of metadata of the "
+"given file(s)"
+msgstr ""
+"Verilen dosya(lar)ın metadata bilgilerini görüntülemeye ve değiştirmeye izin "
+"veren bir KDE özellikler diyalog penceresi açar."
+
+#: misc/kfile/fileprops.cpp:244
+msgid ""
+"Prints the value for 'key' of the given file(s). 'key' may also be a "
+"comma-separated list of keys"
+msgstr ""
+"Verilen dosyaların, 'anahtar' için verilen değerlerini yazdırır. Bu 'anahtar', "
+"aynı zamanda, anahtarların-virgülle-ayrılmış-bir-listesi de olabilir."
+
+#: misc/kfile/fileprops.cpp:248
+#, fuzzy
+msgid ""
+"Attempts to set the value 'value' for the metadata key 'key' for the given "
+"file(s)"
+msgstr ""
+"Verilen dosya(lar)da; 'value' için bir değer ve 'key' için bir metadata "
+"anahtarı ayarlamaya uğraşır."
+
+#: misc/kfile/fileprops.cpp:251
+#, fuzzy
+msgid "The group to get values from or set values to"
+msgstr "Grup, değer'lerden alınacak veya değer'lere atanacak"
+
+#: misc/kfile/fileprops.cpp:255
+msgid "The file (or a number of files) to operate on."
+msgstr "İşlem gören dosya ( veya dosyaların sayısı )"
+
+#: misc/kfile/fileprops.cpp:270
+msgid "No support for metadata extraction found."
+msgstr "Metadata çıkarımı için destek bulunamadı."
+
+#: misc/kfile/fileprops.cpp:275
+msgid "Supported MimeTypes:"
+msgstr "Desteklenen MIME Türleri:"
+
+#: misc/kfile/fileprops.cpp:410
+msgid "kfile"
+msgstr "kfile"
+
+#: misc/kfile/fileprops.cpp:411
+msgid "A commandline tool to read and modify metadata of files."
+msgstr ""
+"Dosyaların metadata bilgilerini okumak ve değiştirmek için bir komut-satırı "
+"araç'ı."
+
+#: misc/kfile/fileprops.cpp:438
+msgid "No files specified"
+msgstr "Hiç dosya adı belirtilmemiş"
+
+#: misc/kfile/fileprops.cpp:467
+msgid "Cannot determine metadata"
+msgstr "Metadata belirlenemedi"
+
+#: misc/kwalletd/kwalletd.cpp:400
+msgid ""
+"<qt>KDE has requested to open the wallet '<b>%1</b>'. Please enter the password "
+"for this wallet below."
+msgstr ""
+"<qt>KDE, '<b>%1</b>' cüzdanının açılmasını talep ediyor. Lütfen bu cüzdan için "
+"gerekli parolayı aşağıdaki kutucuğa giriniz."
+
+#: misc/kwalletd/kwalletd.cpp:402
+msgid ""
+"<qt>The application '<b>%1</b>' has requested to open the wallet '<b>%2</b>"
+"'. Please enter the password for this wallet below."
+msgstr ""
+"<qt>'<b>%1</b>' uygulaması '<b>%2</b>' cüzdanının açılmasını talep ediyor. "
+"Lütfen bu cüzdan için gerekli parolayı aşağıdaki kutucuğa giriniz."
+
+#: kfile/kfiledialog.cpp:1833 misc/kwalletd/kwalletd.cpp:405
+#: misc/kwalletd/kwalletd.cpp:419
+msgid "&Open"
+msgstr "&Aç"
+
+#: misc/kwalletd/kwalletd.cpp:414
+msgid ""
+"KDE has requested to open the wallet. This is used to store sensitive data in a "
+"secure fashion. Please enter a password to use with this wallet or click cancel "
+"to deny the application's request."
+msgstr ""
+"KDE, bir cüzdanın açılması talebinde bulundu. Bu işlem, gizli verilerin güvenli "
+"bir şekilde depolanmasına imkan tanır. Lütfen bu cüzdan için kullanacağınız "
+"parolayı girin ya da uygulamanın talebini geri çevirmek içiniptal düğmesine "
+"tıklayın."
+
+#: misc/kwalletd/kwalletd.cpp:416
+msgid ""
+"<qt>The application '<b>%1</b>' has requested to open the KDE wallet. This is "
+"used to store sensitive data in a secure fashion. Please enter a password to "
+"use with this wallet or click cancel to deny the application's request."
+msgstr ""
+"<qt><b>%1</b> uygulaması "
+"bir·cüzdanın·açılması·talebinde·bulundu.·Bu·işlem,"
+"·gizli·verilerin·güvenli·bir·şekilde·depolanmasına·imkan·tanır. "
+"Lütfen·bu·cüzdan·için·kullanacağınız·parolayı·girin·ya·da·uygulamanın·talebini·g"
+"eri·çevirmek·içiniptal·düğmesine·tıklayın."
+
+#: misc/kwalletd/kwalletd.cpp:423
+msgid ""
+"<qt>KDE has requested to create a new wallet named '<b>%1</b>"
+"'. Please choose a password for this wallet, or cancel to deny the "
+"application's request."
+msgstr ""
+"<qt>KDE, <b>%1</b> isimli bir cüzdanın açılması talebinde bulundu. Lütfen bu "
+"cüzdanın parolasını seçin, ya da uygulamanın talebini geri çevirmek için iptal "
+"düğmesine tıklayın."
+
+#: misc/kwalletd/kwalletd.cpp:425
+msgid ""
+"<qt>The application '<b>%1</b>' has requested to create a new wallet named '<b>"
+"%2</b>'. Please choose a password for this wallet, or cancel to deny the "
+"application's request."
+msgstr ""
+"<qt><b>%1</b> isimli uygulama, <b>%2</b> isimli bir cüzdanın açılması talebinde "
+"bulundu. Lütfen bu cüzdanın parolasını seçin, ya da uygulamanın talebini geri "
+"çevirmek için iptal düğmesine tıklayın."
+
+#: misc/kwalletd/kwalletd.cpp:428
+msgid "C&reate"
+msgstr "&Oluştur"
+
+#: misc/kwalletd/kwalletd.cpp:432 misc/kwalletd/kwalletd.cpp:607
+#: misc/kwalletd/kwalletd.cpp:623 misc/kwalletd/kwalletd.cpp:634
+#: misc/kwalletd/kwalletd.cpp:639 misc/kwalletd/kwalletd.cpp:1157
+msgid "KDE Wallet Service"
+msgstr "KDE Cüzdan Servisi"
+
+#: misc/kwalletd/kwalletd.cpp:444
+msgid ""
+"<qt>Error opening the wallet '<b>%1</b>'. Please try again."
+"<br>(Error code %2: %3)"
+msgstr ""
+"<qt><b>%1> cüzdanı açılırken bir hata oluştu. Lütfen yeniden deneyin. "
+"<br>(Hata kodu %2: %3)"
+
+#: misc/kwalletd/kwalletd.cpp:518
+msgid "<qt>KDE has requested access to the open wallet '<b>%1</b>'."
+msgstr "<qt>KDE, <b>%1</b> cüzdanına erişme talebinde bulundu."
+
+#: misc/kwalletd/kwalletd.cpp:520
+msgid ""
+"<qt>The application '<b>%1</b>' has requested access to the open wallet '<b>"
+"%2</b>'."
+msgstr "<qt><b>%1</b> uygulaması <b>%2</b> cüzdanına erişim talebinde bulundu."
+
+#: misc/kwalletd/kwalletd.cpp:607
+msgid ""
+"Unable to open wallet. The wallet must be opened in order to change the "
+"password."
+msgstr ""
+"Cüzdan açılamadı. Parolanın değiştirilebilmesi için önce cüzdanın açılması "
+"gereklidir."
+
+#: misc/kwalletd/kwalletd.cpp:622
+msgid "<qt>Please choose a new password for the wallet '<b>%1</b>'."
+msgstr "<qt>Lütfen <b>%1</b> cüzdanı için yeni bir parola seçin."
+
+#: misc/kwalletd/kwalletd.cpp:634
+msgid "Error re-encrypting the wallet. Password was not changed."
+msgstr "Parolanın şifrelenmesi sırasında hata. Parola değiştirilmedi."
+
+#: misc/kwalletd/kwalletd.cpp:639
+msgid "Error reopening the wallet. Data may be lost."
+msgstr "Cüzdanın yeniden açılması sırasında hata. Veri kaybı olabilir."
+
+#: misc/kwalletd/kwalletd.cpp:1157
+msgid ""
+"There have been repeated failed attempts to gain access to a wallet. An "
+"application may be misbehaving."
+msgstr ""
+"Arka arkaya, Cüzdan'a erişmeye çalışan başarısız girişimler yapıldı. Bir "
+"uygulama yanlış çalışıyor olabilir. "
+
+#: misc/kwalletd/kwalletwizard.ui.h:23
+msgid "<qt>Password is empty.  <b>(WARNING: Insecure)"
+msgstr "<qt>Parola boş. <b>(UYARI: Güvensiz)"
+
+#: misc/kwalletd/kwalletwizard.ui.h:25
+msgid "Passwords match."
+msgstr "Parolalar uyuştu."
+
+#: misc/kwalletd/kwalletwizard.ui.h:28
+msgid "Passwords do not match."
+msgstr "Parolalar uyuşmadı."
+
+#: misc/ktelnetservice.cpp:41
+msgid "telnet service"
+msgstr "telnet servisi"
+
+#: misc/ktelnetservice.cpp:42
+msgid "telnet protocol handler"
+msgstr "telnet protokol kotarıcı"
+
+#: misc/ktelnetservice.cpp:76
+msgid "You do not have permission to access the %1 protocol."
+msgstr "%1 protokolüne erişmek için yeterli izine sahip değilsiniz."
+
+#: misc/uiserver.cpp:98 misc/uiserver.cpp:603 misc/uiserver.cpp:682
+msgid "Settings..."
+msgstr "Ayarlar..."
+
+#: misc/uiserver.cpp:126
+msgid "Configure Network Operation Window"
+msgstr "Ağ İşlem Penceresini Yapılandır"
+
+#: misc/uiserver.cpp:130
+msgid "Show system tray icon"
+msgstr "Sistem çekmecesi simgesini göster"
+
+#: misc/uiserver.cpp:131
+msgid "Keep network operation window always open"
+msgstr "Ağ işlem penceresini her zaman açık tut"
+
+#: misc/uiserver.cpp:132
+msgid "Show column headers"
+msgstr "Sütun başlıklarını göster"
+
+#: misc/uiserver.cpp:133
+msgid "Show toolbar"
+msgstr "Araç çubuğunu göster"
+
+#: misc/uiserver.cpp:134
+msgid "Show statusbar"
+msgstr "Durum çubuğunu göster"
+
+#: misc/uiserver.cpp:135
+msgid "Column widths are user adjustable"
+msgstr "Sütun genişlikleri kullanıcı tarafından ayarlanabilir"
+
+#: misc/uiserver.cpp:136
+msgid "Show information:"
+msgstr "Bilgi göster:"
+
+#: misc/uiserver.cpp:143 misc/uiserver.cpp:474
+msgid "URL"
+msgstr "URL"
+
+#: misc/uiserver.cpp:144 misc/uiserver.cpp:473
+msgid ""
+"_: Remaining Time\n"
+"Rem. Time"
+msgstr "Kalan Süre"
+
+#: misc/uiserver.cpp:145 misc/uiserver.cpp:472
+msgid "Speed"
+msgstr "Hız"
+
+#: kfile/kfiledetailview.cpp:67 misc/uiserver.cpp:146 misc/uiserver.cpp:471
+msgid "Size"
+msgstr "Boyut"
+
+#: misc/uiserver.cpp:147 misc/uiserver.cpp:470
+#, c-format
+msgid "%"
+msgstr "%"
+
+#: misc/uiserver.cpp:148 misc/uiserver.cpp:469
+msgid "Count"
+msgstr "Sayaç"
+
+#: misc/uiserver.cpp:149 misc/uiserver.cpp:468
+msgid ""
+"_: Resume\n"
+"Res."
+msgstr "Devm."
+
+#: misc/uiserver.cpp:150 misc/uiserver.cpp:467
+msgid "Local Filename"
+msgstr "Yerel Dosya Adı"
+
+#: misc/uiserver.cpp:151 misc/uiserver.cpp:466
+msgid "Operation"
+msgstr "İşlem"
+
+#: misc/uiserver.cpp:254
+msgid "%1 / %2"
+msgstr "%1 / %2"
+
+#: misc/uiserver.cpp:291
+msgid "%1/s"
+msgstr "%1/s"
+
+#: misc/uiserver.cpp:302
+msgid "Copying"
+msgstr "Kopyalanıyor"
+
+#: misc/uiserver.cpp:311
+msgid "Moving"
+msgstr "Taşınıyor"
+
+#: misc/uiserver.cpp:320
+msgid "Creating"
+msgstr "Oluşturuluyor"
+
+#: misc/uiserver.cpp:329
+msgid "Deleting"
+msgstr "Siliniyor"
+
+#: misc/uiserver.cpp:337
+msgid "Loading"
+msgstr "Yükleniyor"
+
+#: misc/uiserver.cpp:362
+msgid "Examining"
+msgstr "İnceleniyor"
+
+#: misc/uiserver.cpp:370
+msgid "Mounting"
+msgstr "Bağlanıyor"
+
+#: misc/uiserver.cpp:608 misc/uiserver.cpp:1097
+msgid " Files: %1 "
+msgstr " Dosya: %1 "
+
+#: misc/uiserver.cpp:609
+msgid ""
+"_: Remaining Size\n"
+" Rem. Size: %1 kB "
+msgstr "Kalan Boyut: %1 kB "
+
+#: misc/uiserver.cpp:610
+msgid ""
+"_: Remaining Time\n"
+" Rem. Time: 00:00:00 "
+msgstr " Kalan Süre : 00:00:00 "
+
+#: misc/uiserver.cpp:611
+msgid " %1 kB/s "
+msgstr " %1 kB/s"
+
+#: misc/uiserver.cpp:679
+msgid "Cancel Job"
+msgstr "Görevi İptal Et"
+
+#: misc/uiserver.cpp:1098
+msgid ""
+"_: Remaining Size\n"
+" Rem. Size: %1 "
+msgstr "Kalan Boyut: %1 "
+
+#: misc/uiserver.cpp:1100
+msgid ""
+"_: Remaining Time\n"
+" Rem. Time: %1 "
+msgstr "Kalan Süre: %1 "
+
+#: misc/uiserver.cpp:1384
+msgid "KDE Progress Information UI Server"
+msgstr "KDE İlerleme Bilgisi Sunucusu"
+
+#: misc/uiserver.cpp:1387 misc/uiserver.cpp:1388
+msgid "Developer"
+msgstr "Programcı"
+
+#: misc/ksendbugmail/main.cpp:22
+msgid "Subject line"
+msgstr "Konu satırı"
+
+#: misc/ksendbugmail/main.cpp:23
+msgid "Recipient"
+msgstr "Alıcı"
+
+#: misc/ksendbugmail/main.cpp:33
+msgid "Error connecting to server."
+msgstr "Sunucuya bağlantıda hata."
+
+#: misc/ksendbugmail/main.cpp:36
+msgid "Not connected."
+msgstr "Bağlantı yok."
+
+#: misc/ksendbugmail/main.cpp:39
+msgid "Connection timed out."
+msgstr "Bağlantı zaman aşımına uğradı."
+
+#: misc/ksendbugmail/main.cpp:42
+msgid "Time out waiting for server interaction."
+msgstr "Sunucudan cevabı zaman aşımına uğradı."
+
+#: misc/ksendbugmail/main.cpp:46
+msgid "Server said: \"%1\""
+msgstr "Sunucu cevabı: \"%1\""
+
+#: misc/ksendbugmail/main.cpp:62
+msgid "KSendBugMail"
+msgstr "KSendBugMail"
+
+#: misc/ksendbugmail/main.cpp:63
+msgid "Sends a short bug report to submit@bugs.kde.org"
+msgstr "submit@bugs.kde.org'a küçük bir mektup gönderir"
+
+#: misc/ksendbugmail/main.cpp:65
+msgid "Author"
+msgstr "Yazar"
+
+#: misc/kmailservice.cpp:32
+msgid "KMailService"
+msgstr "KMailService"
+
+#: misc/kmailservice.cpp:32
+msgid "Mail service"
+msgstr "E-posta servisi"
+
+#: kioexec/main.cpp:50
+msgid "KIO Exec - Opens remote files, watches modifications, asks for upload"
+msgstr ""
+"KIO Exec - Uzaktaki dosyaları açar, değişimlerini gözetler, yükleme için "
+"sorgular"
+
+#: kioexec/main.cpp:54
+msgid "Treat URLs as local files and delete them afterwards"
+msgstr "URL'lere yerel dosyalar gibi davran ve sonrasında sil"
+
+#: kioexec/main.cpp:55
+msgid "Suggested file name for the downloaded file"
+msgstr "İndirilen dosya için önerilen dosya adı"
+
+#: kioexec/main.cpp:56
+msgid "Command to execute"
+msgstr "Çalıştırılacak komut"
+
+#: kioexec/main.cpp:57
+msgid "URL(s) or local file(s) used for 'command'"
+msgstr "'komut' için kullanılan URL(ler) veya yerel dosya(lar)"
+
+#: kioexec/main.cpp:73
+msgid ""
+"'command' expected.\n"
+msgstr ""
+"'komut' bekleniyordu.\n"
+
+#: kioexec/main.cpp:102
+msgid ""
+"The URL %1\n"
+"is malformed"
+msgstr ""
+"'%1' adresi\n"
+"hatalı görünüyor"
+
+#: kioexec/main.cpp:104
+msgid ""
+"Remote URL %1\n"
+"not allowed with --tempfiles switch"
+msgstr ""
+"Uzaktaki URL %1\n"
+"--tempfiles anahtarına izin verilmez"
+
+#: kioexec/main.cpp:237
+msgid ""
+"The supposedly temporary file\n"
+"%1\n"
+"has been modified.\n"
+"Do you still want to delete it?"
+msgstr ""
+"%1 isimli geçici dosya değiştirildi\n"
+"Bu dosyayı yine de silmek istiyor musunuz?"
+
+#: kioexec/main.cpp:238 kioexec/main.cpp:245
+msgid "File Changed"
+msgstr "Dosya Değiştirildi"
+
+#: kioexec/main.cpp:238
+msgid "Do Not Delete"
+msgstr "Silme"
+
+#: kioexec/main.cpp:244
+msgid ""
+"The file\n"
+"%1\n"
+"has been modified.\n"
+"Do you want to upload the changes?"
+msgstr ""
+"\"%1\"\n"
+"isimli dosya değiştirildi.\n"
+"Güncellemeleri göndermek istiyor musunuz?"
+
+#: kioexec/main.cpp:245
+msgid "Upload"
+msgstr "Gönder"
+
+#: kioexec/main.cpp:245
+msgid "Do Not Upload"
+msgstr "Gönderme"
+
+#: kioexec/main.cpp:274
+msgid "KIOExec"
+msgstr "KIOExec"
+
+#: kfile/kimagefilepreview.cpp:53
+msgid "&Automatic preview"
+msgstr "&Otomatik önizleme"
+
+#: kfile/kimagefilepreview.cpp:58
+msgid "&Preview"
+msgstr "Ö&nizleme"
+
+#: kfile/kfileview.cpp:77
+msgid "Unknown View"
+msgstr "Bilinmeyen Görüntü"
+
+#: kfile/kpreviewprops.cpp:49
+msgid "P&review"
+msgstr "Ö&nizleme"
+
+#: kfile/kfilespeedbar.cpp:46
+msgid "Desktop"
+msgstr "Masaüstü"
+
+#: kfile/kfilespeedbar.cpp:53
+msgid "Documents"
+msgstr "Belgeler"
+
+#: kfile/kdiroperator.cpp:1264 kfile/kfilespeedbar.cpp:57
+msgid "Home Folder"
+msgstr "Ev Dizini"
+
+#: kfile/kfilespeedbar.cpp:62
+msgid "Storage Media"
+msgstr "Depolama Aygıtı"
+
+#: kfile/kfilespeedbar.cpp:67
+msgid "Network Folders"
+msgstr "Ağ Klasörleri"
+
+#: kfile/kcustommenueditor.cpp:88
+msgid "Menu Editor"
+msgstr "Menü Düzenleyici"
+
+#: kfile/kcustommenueditor.cpp:94 kfile/kdiroperator.cpp:1258
+msgid "Menu"
+msgstr "Menü"
+
+#: kfile/kcustommenueditor.cpp:98
+msgid "New..."
+msgstr "Yeni..."
+
+#: kfile/kcustommenueditor.cpp:100
+msgid "Move Up"
+msgstr "Yukarı Taşı"
+
+#: kfile/kcustommenueditor.cpp:101
+msgid "Move Down"
+msgstr "Aşağı Taşı"
+
+#: kfile/kfiledialog.cpp:1676 kfile/kfilefiltercombo.cpp:32
+msgid "*|All Files"
+msgstr "*|Tüm Dosyalar"
+
+#: kfile/kfilefiltercombo.cpp:164
+msgid "All Supported Files"
+msgstr "Desteklenen Tüm Dosyalar"
+
+#: kfile/kopenwith.cpp:150
+msgid "Known Applications"
+msgstr "Bilinen Uygulamalar"
+
+#: kfile/kicondialog.cpp:332 kfile/kopenwith.cpp:296
+msgid "Applications"
+msgstr "Uygulamalar"
+
+#: kfile/kopenwith.cpp:322
+msgid "Open With"
+msgstr "Birlikte Aç"
+
+#: kfile/kopenwith.cpp:326
+msgid ""
+"<qt>Select the program that should be used to open <b>%1</b>"
+". If the program is not listed, enter the name or click the browse button.</qt>"
+msgstr ""
+"<qt><b>%1</b>'i açarken kullanılması gereken programı seçiniz. Program listede "
+"bulunmuyorsa, adını girin ya da gözat düğmesine tıklayın.</qt>"
+
+#: kfile/kopenwith.cpp:332
+msgid "Choose the name of the program with which to open the selected files."
+msgstr "Seçili dosyaları açmakta kullanılacak programın adını seçiniz."
+
+#: kfile/kopenwith.cpp:353
+#, c-format
+msgid "Choose Application for %1"
+msgstr "%1 İçin Uygulama Seç"
+
+#: kfile/kopenwith.cpp:354
+msgid ""
+"<qt>Select the program for the file type: <b>%1</b>. If the program is not "
+"listed, enter the name or click the browse button.</qt>"
+msgstr ""
+"<qt><b>%1</b> dosya türünü açarken kullanılması gereken programı seçin. Program "
+"listede yeralmıyorsa, adını girin ya da gözat düğmesine tıklayın.</qt>"
+
+#: kfile/kopenwith.cpp:366
+msgid "Choose Application"
+msgstr "Uygulamayı Seç"
+
+#: kfile/kopenwith.cpp:367
+msgid ""
+"<qt>Select a program. If the program is not listed, enter the name or click the "
+"browse button.</qt>"
+msgstr ""
+"<qt> Bir program seçin. Eğer program listede yoksa adını girin, ya da Gözat "
+"düğmesine tıklayın.</qt>"
+
+#: kfile/kopenwith.cpp:406
+msgid "Clear input field"
+msgstr "Giriş alanını temizle"
+
+#: kfile/kopenwith.cpp:436
+#, fuzzy
+msgid ""
+"Following the command, you can have several place holders which will be "
+"replaced with the actual values when the actual program is run:\n"
+"%f - a single file name\n"
+"%F - a list of files; use for applications that can open several local files at "
+"once\n"
+"%u - a single URL\n"
+"%U - a list of URLs\n"
+"%d - the directory of the file to open\n"
+"%D - a list of directories\n"
+"%i - the icon\n"
+"%m - the mini-icon\n"
+"%c - the comment"
+msgstr ""
+"Aşağıdaki komutlar ile, güncel program çalıştığında asıl değerleri ile "
+"değiştirilecek çeşitli yer-tutuculara sahip olabilirsiniz :\n"
+"%f - bir tek dosya adı\n"
+"%F - bir dosya listesi; bir kerede birçok dosya açabilen uygulamalar için\n"
+"%u - bir tek URL\n"
+"%U - a URL listesi\n"
+"%d - açılacak dosyanın dizin'i\n"
+"%D - dizinler listesi\n"
+"%i - simge\n"
+"%m - mini-simge\n"
+"%c - yorum"
+
+#: kfile/kopenwith.cpp:469
+msgid "Run in &terminal"
+msgstr "&Uçbirimde çalıştır"
+
+#: kfile/kopenwith.cpp:480
+msgid "&Do not close when command exits"
+msgstr "&Komuttan çıkıldığı zaman kapatma"
+
+#: kfile/kopenwith.cpp:497
+msgid "&Remember application association for this type of file"
+msgstr "&Bu dosya türüyle uygulamayı ilişkilendir"
+
+#: kfile/kicondialog.cpp:241 kfile/kicondialog.cpp:250
+msgid "Select Icon"
+msgstr "Simge Seç"
+
+#: kfile/kicondialog.cpp:270
+msgid "Icon Source"
+msgstr "Simge Kaynağı"
+
+#: kfile/kicondialog.cpp:276
+msgid "S&ystem icons:"
+msgstr "&Sistem simgeleri:"
+
+#: kfile/kicondialog.cpp:281
+msgid "O&ther icons:"
+msgstr "&Diğer simgeler:"
+
+#. i18n: file ./kfile/kpropertiesdesktopbase.ui line 213
+#: kfile/kicondialog.cpp:283 kfile/kpropertiesdialog.cpp:3615 rc.cpp:288
+#, no-c-format
+msgid "&Browse..."
+msgstr "&Gözat..."
+
+#: kfile/kicondialog.cpp:293
+msgid "Clear Search"
+msgstr "Aramayı Temizle"
+
+#: kfile/kicondialog.cpp:297
+msgid "&Search:"
+msgstr "Ar&a:"
+
+#: kfile/kicondialog.cpp:308
+msgid "Search interactively for icon names (e.g. folder)."
+msgstr "Simge isimleri için (dizin vs.) etkileşimli arama."
+
+#. i18n: file ./kfile/knotifywidgetbase.ui line 204
+#: kfile/kicondialog.cpp:330 rc.cpp:165
+#, no-c-format
+msgid "Actions"
+msgstr "Eylemler"
+
+#: kfile/kicondialog.cpp:331
+msgid "Animations"
+msgstr "Animasyonlar"
+
+#: kfile/kicondialog.cpp:333
+msgid "Categories"
+msgstr "Kategoriler"
+
+#: kfile/kicondialog.cpp:334
+msgid "Devices"
+msgstr "Aygıtlar"
+
+#: kfile/kicondialog.cpp:335
+msgid "Emblems"
+msgstr "Amblemler"
+
+#: kfile/kicondialog.cpp:336
+msgid "Emotes"
+msgstr "Duygu Simgeleri"
+
+#: kfile/kicondialog.cpp:337
+msgid "Filesystems"
+msgstr "Dosya sistemleri"
+
+#: kfile/kicondialog.cpp:338
+msgid "International"
+msgstr "Uluslararası"
+
+#: kfile/kicondialog.cpp:339
+msgid "Mimetypes"
+msgstr "Mime türleri"
+
+#: kfile/kicondialog.cpp:340
+msgid "Places"
+msgstr "Konumlar"
+
+#: kfile/kicondialog.cpp:341
+msgid "Status"
+msgstr "Durum"
+
+#: kfile/kicondialog.cpp:589
+msgid "*.png *.xpm *.svg *.svgz|Icon Files (*.png *.xpm *.svg *.svgz)"
+msgstr "*.png *.xpm *.svg *.svgz|Simge Dosyaları (*.png *.xpm *.svg *.svgz)"
+
+#: kfile/kfilemetainfowidget.cpp:111
+msgid "<Error>"
+msgstr "<Hata>"
+
+#: kfile/kfilepreview.cpp:63
+msgid "Preview"
+msgstr "Önizleme"
+
+#: kfile/kfilepreview.cpp:69
+msgid "No preview available."
+msgstr "Önizleme yapılamıyor."
+
+#: kfile/kacleditwidget.cpp:63 kfile/kacleditwidget.cpp:421
+#: kfile/kfiledetailview.cpp:70
+msgid "Owner"
+msgstr "Sahip"
+
+#: kfile/kacleditwidget.cpp:64 kfile/kacleditwidget.cpp:423
+msgid "Owning Group"
+msgstr "Sahip Olan Grup"
+
+#: kfile/kacleditwidget.cpp:65 kfile/kacleditwidget.cpp:425
+#: kfile/kpropertiesdialog.cpp:1980
+msgid "Others"
+msgstr "Diğerleri"
+
+#: kfile/kacleditwidget.cpp:66 kfile/kacleditwidget.cpp:427
+msgid "Mask"
+msgstr "Maske"
+
+#: kfile/kacleditwidget.cpp:67 kfile/kacleditwidget.cpp:429
+msgid "Named User"
+msgstr "İsimlendirilmiş Kullanıcı"
+
+#: kfile/kacleditwidget.cpp:68 kfile/kacleditwidget.cpp:431
+msgid "Named Group"
+msgstr "İsimlendirilmiş Grup"
+
+#: kfile/kacleditwidget.cpp:81
+msgid "Add Entry..."
+msgstr "Girdi Ekle..."
+
+#: kfile/kacleditwidget.cpp:83
+msgid "Edit Entry..."
+msgstr "Girdiyi Düzenle..."
+
+#: kfile/kacleditwidget.cpp:85
+msgid "Delete Entry"
+msgstr "Girdiyi Sil"
+
+#: kfile/kacleditwidget.cpp:280
+msgid " (Default)"
+msgstr "(Öntanımlı)"
+
+#: kfile/kacleditwidget.cpp:397
+msgid "Edit ACL Entry"
+msgstr "ACL Girdisini Düzenle"
+
+#: kfile/kacleditwidget.cpp:407
+msgid "Entry Type"
+msgstr "Girdi Tipi"
+
+#: kfile/kacleditwidget.cpp:410
+msgid "Default for new files in this folder"
+msgstr "Bu dizindeki yeni dosyalar için öntanımlılar"
+
+#: kfile/kacleditwidget.cpp:446
+msgid "User: "
+msgstr "Kullanıcı: "
+
+#: kfile/kacleditwidget.cpp:450
+msgid "Group: "
+msgstr "Grup: "
+
+#: kfile/kacleditwidget.cpp:563
+msgid "Type"
+msgstr "Tip"
+
+#: kfile/kacleditwidget.cpp:564 kfile/kfiledetailview.cpp:66
+msgid "Name"
+msgstr "Ad"
+
+#: kfile/kacleditwidget.cpp:565
+msgid ""
+"_: read permission\n"
+"r"
+msgstr "r"
+
+#: kfile/kacleditwidget.cpp:566
+msgid ""
+"_: write permission\n"
+"w"
+msgstr "w"
+
+#: kfile/kacleditwidget.cpp:567
+msgid ""
+"_: execute permission\n"
+"x"
+msgstr "x"
+
+#: kfile/kacleditwidget.cpp:568
+msgid "Effective"
+msgstr ""
+
+#: kfile/kdirselectdialog.cpp:90
+msgid "Select Folder"
+msgstr "Dizin Seç"
+
+#: kfile/kdiroperator.cpp:1269 kfile/kdirselectdialog.cpp:92
+#: kfile/kdirselectdialog.cpp:125
+msgid "New Folder..."
+msgstr "Yeni Dizin..."
+
+#: kfile/kdirselectdialog.cpp:109
+msgid "Folders"
+msgstr "Dizinler"
+
+#: kfile/kdirselectdialog.cpp:128
+msgid "Show Hidden Folders"
+msgstr "Gizli Dizinelri Göster"
+
+#: kfile/kdiroperator.cpp:389 kfile/kdiroperator.cpp:393
+#: kfile/kdirselectdialog.cpp:407 kfile/kdirselectdialog.cpp:411
+msgid "New Folder"
+msgstr "Yeni Dizin"
+
+#: kfile/kdiroperator.cpp:394 kfile/kdirselectdialog.cpp:412
+#, c-format
+msgid ""
+"Create new folder in:\n"
+"%1"
+msgstr ""
+"Burada yeni dizin oluştur:\n"
+"%1"
+
+#: kfile/kdiroperator.cpp:422 kfile/kdirselectdialog.cpp:435
+msgid "A file or folder named %1 already exists."
+msgstr "%1 adlı bir dizin ya da dosya zaten var."
+
+#: kfile/kdiroperator.cpp:426 kfile/kdirselectdialog.cpp:439
+msgid "You do not have permission to create that folder."
+msgstr "Bu dizini oluşturmaya izniniz yok."
+
+#: bookmarks/kbookmarkmenu.cc:797 kfile/kpropertiesdialog.cpp:968
+#: kfile/kurlrequesterdlg.cpp:47
+msgid "Location:"
+msgstr "Konum:"
+
+#: kfile/knotifydialog.cpp:81
+msgid "Sounds"
+msgstr "Sesler"
+
+#: kfile/knotifydialog.cpp:82
+msgid "Logging"
+msgstr "Kaydediliyor"
+
+#: kfile/knotifydialog.cpp:83
+msgid "Program Execution"
+msgstr "Program Çalışması"
+
+#: kfile/knotifydialog.cpp:84
+msgid "Message Windows"
+msgstr "Mesaj Penceresi"
+
+#: kfile/knotifydialog.cpp:85
+msgid "Passive Windows"
+msgstr "Etkisiz Pencereler"
+
+#: kfile/knotifydialog.cpp:86
+msgid "Standard Error Output"
+msgstr "Standart Hata Çıktısı"
+
+#: kfile/knotifydialog.cpp:87
+msgid "Taskbar"
+msgstr "Görev çubuğu"
+
+#: kfile/knotifydialog.cpp:121
+msgid "Execute a program"
+msgstr "Bir program çalıştır"
+
+#: kfile/knotifydialog.cpp:122
+msgid "Print to Standard error output"
+msgstr "Standart hata çıktısını görüntüle"
+
+#: kfile/knotifydialog.cpp:123
+msgid "Display a messagebox"
+msgstr "Bir uyarı mesajı göster"
+
+#: kfile/knotifydialog.cpp:124
+msgid "Log to a file"
+msgstr "Bir dosyaya kaydet"
+
+#: kfile/knotifydialog.cpp:125
+msgid "Play a sound"
+msgstr "Ses çal"
+
+#: kfile/knotifydialog.cpp:126
+msgid "Flash the taskbar entry"
+msgstr "Görev çubuğu girdisini parlat"
+
+#: kfile/knotifydialog.cpp:163
+msgid "Notification Settings"
+msgstr "Bildirim Ayarları"
+
+#: kfile/knotifydialog.cpp:309
+msgid ""
+"<qt>You may use the following macros"
+"<br>in the commandline:"
+"<br><b>%e</b>: for the event name,"
+"<br><b>%a</b>: for the name of the application that sent the event,"
+"<br><b>%s</b>: for the notification message,"
+"<br><b>%w</b>: for the numeric window ID where the event originated,"
+"<br><b>%i</b>: for the numeric event ID."
+msgstr ""
+"<qt>Aşağıdaki makroları komut satırında"
+"<br>şöyle kullanabilirsiniz:"
+"<br><b>%e</b>: olay ismi için,"
+"<br><b>%a</b>: olayı gönderen uygulamanın ismi için,"
+"<br><b>%s</b>: bilgilendirme iletisi için,"
+"<br><b>%w</b>: olayın kaynaklandığı pencerenin rakamsal ID' si için,"
+"<br><b>%i</b>: olayın rakamsal ID'si için."
+
+#: kfile/knotifydialog.cpp:339
+msgid "Advanced <<"
+msgstr "Gelişmiş <<"
+
+#: kfile/knotifydialog.cpp:340
+msgid "Hide advanced options"
+msgstr "Gelişmiş seçenekleri gizle"
+
+#: kfile/knotifydialog.cpp:356
+msgid "Advanced >>"
+msgstr "Gelişmiş >>"
+
+#: kfile/knotifydialog.cpp:357
+msgid "Show advanced options"
+msgstr "Gelişmiş özellikleri göster"
+
+#: kfile/knotifydialog.cpp:782
+msgid "This will cause the notifications to be reset to their defaults."
+msgstr "Bu, uyarıların da öntanımlı değerlerine döndürülmesine neden olur."
+
+#: kfile/knotifydialog.cpp:784
+msgid "Are You Sure?"
+msgstr "Emin Misiniz?"
+
+#: kfile/knotifydialog.cpp:785
+msgid "&Reset"
+msgstr "&Sıfırla"
+
+#: kfile/knotifydialog.cpp:858
+msgid "Select Sound File"
+msgstr "Ses Dosyası Seçin"
+
+#: kfile/knotifydialog.cpp:894
+msgid "Select Log File"
+msgstr "Günlük Dosyası Seçin"
+
+#: kfile/knotifydialog.cpp:908
+msgid "Select File to Execute"
+msgstr "Çalıştırılacak Dosyayı Seçin"
+
+#: kfile/knotifydialog.cpp:942
+msgid "The specified file does not exist."
+msgstr "Belirtilen dosya bulunamadı."
+
+#: kfile/knotifydialog.cpp:1012
+msgid "No description available"
+msgstr "Açıklama yok"
+
+#: kfile/kfiledialog.cpp:347
+msgid "Please specify the filename to save to."
+msgstr "Kaydedilecek dosya adını belirtin."
+
+#: kfile/kfiledialog.cpp:349
+msgid "Please select the file to open."
+msgstr "Lütfen açılacak dosyayı seçin."
+
+#: kfile/kfiledialog.cpp:410 kfile/kfiledialog.cpp:453
+#: kfile/kfiledialog.cpp:1550
+msgid "You can only select local files."
+msgstr "Sadece yerel dosyaları seçebilirsiniz."
+
+#: kfile/kfiledialog.cpp:411 kfile/kfiledialog.cpp:454
+#: kfile/kfiledialog.cpp:1551
+msgid "Remote Files Not Accepted"
+msgstr "Uzaktaki Dosyalar Kabul Edilmiyor"
+
+#: kfile/kfiledialog.cpp:445
+msgid ""
+"%1\n"
+"does not appear to be a valid URL.\n"
+msgstr ""
+"%1\n"
+"geçerli bir URL gibi görünmüyor.\n"
+
+#: kfile/kfiledialog.cpp:445
+msgid "Invalid URL"
+msgstr "Geçersiz URL"
+
+#: kfile/kfiledialog.cpp:782
+msgid ""
+"<p>While typing in the text area, you may be presented with possible matches. "
+"This feature can be controlled by clicking with the right mouse button and "
+"selecting a preferred mode from the <b>Text Completion</b> menu."
+msgstr ""
+"<p> Metin alanında yazarken, size olası kelime eşleşmeleri sunulacak. Bu "
+"özelliği, farenin sağ tuşuna basınca çıkan <b>Metin Tamamlama</b> "
+"menüsünde arzu ettiğiniz kipi seçerek denetleyebilirsiniz."
+
+#: kfile/kfiledialog.cpp:791
+msgid "This is the name to save the file as."
+msgstr "Kaydedilecek dosyanın adı."
+
+#: kfile/kfiledialog.cpp:796
+msgid ""
+"This is the list of files to open. More than one file can be specified by "
+"listing several files, separated by spaces."
+msgstr ""
+"Burada açılacak dosyaların bir listesi vardır. Aralarında boşluk karakteri "
+"olacak şekilde birden fazla dosya adı belirtilebilir."
+
+#: kfile/kfiledialog.cpp:803
+msgid "This is the name of the file to open."
+msgstr "Bu açılacak dosyanın adıdır"
+
+#: kfile/kfiledialog.cpp:841
+msgid "Current location"
+msgstr "Geçerli konum"
+
+#: kfile/kfiledialog.cpp:842
+msgid ""
+"This is the currently listed location. The drop-down list also lists commonly "
+"used locations. This includes standard locations, such as your home folder, as "
+"well as locations that have been visited recently."
+msgstr ""
+
+#: kfile/kfiledialog.cpp:849
+#, c-format
+msgid "Root Folder: %1"
+msgstr "Kök Dizini: %1"
+
+#: kfile/kfiledialog.cpp:855
+#, c-format
+msgid "Home Folder: %1"
+msgstr "Başlangıç Dizini: %1"
+
+#: kfile/kfiledialog.cpp:864
+#, c-format
+msgid "Documents: %1"
+msgstr "Belgeler: %1"
+
+#: kfile/kfiledialog.cpp:871
+#, c-format
+msgid "Desktop: %1"
+msgstr "Masaüstü: %1"
+
+#: kfile/kfiledialog.cpp:912
+msgid ""
+"<qt>Click this button to enter the parent folder."
+"<p>For instance, if the current location is file:/home/%1 clicking this button "
+"will take you to file:/home.</qt>"
+msgstr ""
+"<qt>Üst dizine geçmek için bu düğmeyi tıklayın."
+"<p>Örnek olarak, eğer güncel konum file:/home/%1 ise bu düğmeye tıklanması "
+"halinde file:/home dizinine geçeceksiniz.</qt>"
+
+#: kfile/kfiledialog.cpp:916
+msgid "Click this button to move backwards one step in the browsing history."
+msgstr "Tarama günlüğünde bir adım geri gitmek için bu düğmeyi tıklayın."
+
+#: kfile/kfiledialog.cpp:918
+msgid "Click this button to move forward one step in the browsing history."
+msgstr "Tarama günlüğünde bir adım ileri gitmek için bu düğmeyi tıklayın."
+
+#: kfile/kfiledialog.cpp:920
+msgid "Click this button to reload the contents of the current location."
+msgstr "Güncel konumdaki bilgileri yeniden yüklemek için bu düğmeye tıklayın."
+
+#: kfile/kfiledialog.cpp:923
+msgid "Click this button to create a new folder."
+msgstr "Yeni bir dizin oluşturmak için bu düğmeye tıklayın."
+
+#: kfile/kfiledialog.cpp:926
+msgid "Show Quick Access Navigation Panel"
+msgstr "Hızlı Erişim Gezgin Panelini Göster"
+
+#: kfile/kfiledialog.cpp:927
+msgid "Hide Quick Access Navigation Panel"
+msgstr "Hızlı Erişim Gezgin Panelini Gizle"
+
+#: kfile/kfiledialog.cpp:932
+msgid "Show Bookmarks"
+msgstr "Yer İmlerini Göster"
+
+#: kfile/kfiledialog.cpp:933
+msgid "Hide Bookmarks"
+msgstr "Yer İmlerini Gizle"
+
+#: kfile/kfiledialog.cpp:938
+msgid ""
+"<qt>This is the configuration menu for the file dialog. Various options can be "
+"accessed from this menu including: "
+"<ul>"
+"<li>how files are sorted in the list</li>"
+"<li>types of view, including icon and list</li>"
+"<li>showing of hidden files</li>"
+"<li>the Quick Access navigation panel</li>"
+"<li>file previews</li>"
+"<li>separating folders from files</li></ul></qt>"
+msgstr ""
+"<qt>Dosya dialogları için yapılandırma menüsü. Bu menüden, aşağıdaki çeşitli "
+"seçeneklere erişebilirsiniz: "
+"<ul>"
+"<li>dosyaların listelerde sıralanma biçimi</li>"
+"<li>görünüm türleri,-simge ve liste dahil</li>"
+"<li>gizli dosyaların gösterilmesi</li>"
+"<li>Hızlı Erişim gezgin paneli</li>"
+"<li>dosya öngörünümleri</li>"
+"<li>dizinlerin dosyalardan ayrılması</li></ul></qt>"
+
+#: kfile/kfiledialog.cpp:992
+msgid "&Location:"
+msgstr "&Konum:"
+
+#: kfile/kfiledialog.cpp:1017
+msgid ""
+"<qt>This is the filter to apply to the file list. File names that do not match "
+"the filter will not be shown."
+"<p>You may select from one of the preset filters in the drop down menu, or you "
+"may enter a custom filter directly into the text area."
+"<p>Wildcards such as * and ? are allowed.</qt>"
+msgstr ""
+"<qt>Dosya listelerine uygulanacak süzgeçler. Süzgeç ile eşleşmeyen dosya "
+"isimleri görüntülenmeyecektir."
+"<p> Açılır menüden var olan bir tanesini seçebilir veya doğrudan metin alanına "
+"süzgeç ifadenizi yazabilirsiniz."
+"<p> * ve ?  gibi genel arama karakterleri kullanabilirsiniz.</qt>"
+
+#: kfile/kfiledialog.cpp:1023
+msgid "&Filter:"
+msgstr "&Süzgeç:"
+
+#: kfile/kfiledialog.cpp:1480
+msgid ""
+"The chosen filenames do not\n"
+"appear to be valid."
+msgstr ""
+"Seçilen dosya adlarıı \n"
+"geçersiz görünüyor."
+
+#: kfile/kfiledialog.cpp:1482
+msgid "Invalid Filenames"
+msgstr "Geçersiz Dosya Adları"
+
+#: kfile/kfiledialog.cpp:1512
+msgid ""
+"The requested filenames\n"
+"%1\n"
+"do not appear to be valid;\n"
+"make sure every filename is enclosed in double quotes."
+msgstr ""
+"Aşağıda belirtilen dosya isimleri\n"
+"%1\n"
+"geçerli değil.\n"
+"Tüm dosya isimlerinin çift tırnak içinde olduğundan emin olun."
+
+#: kfile/kfiledialog.cpp:1516
+msgid "Filename Error"
+msgstr "Dosya Adı Hatası"
+
+#: kfile/kfiledialog.cpp:1673
+msgid "*|All Folders"
+msgstr "*|Tüm Dizinler"
+
+#: kfile/kfiledialog.cpp:1973
+msgid "Automatically select filename e&xtension (%1)"
+msgstr "Dosya adı sonekini otomatik seç (%1)"
+
+#: kfile/kfiledialog.cpp:1974
+msgid "the extension <b>%1</b>"
+msgstr "<b>%1</b> uzantısı"
+
+#: kfile/kfiledialog.cpp:1982
+msgid "Automatically select filename e&xtension"
+msgstr "D&osya adı sonekini otomatik seç"
+
+#: kfile/kfiledialog.cpp:1983
+msgid "a suitable extension"
+msgstr "uygun bir uzantı"
+
+#: kfile/kfiledialog.cpp:1994
+msgid ""
+"This option enables some convenient features for saving files with extensions:"
+"<br>"
+"<ol>"
+"<li>Any extension specified in the <b>%1</b> text area will be updated if you "
+"change the file type to save in."
+"<br>"
+"<br></li>"
+"<li>If no extension is specified in the <b>%2</b> text area when you click <b>"
+"Save</b>, %3 will be added to the end of the filename (if the filename does not "
+"already exist). This extension is based on the file type that you have chosen "
+"to save in."
+"<br>"
+"<br>If you do not want KDE to supply an extension for the filename, you can "
+"either turn this option off or you can suppress it by adding a period (.) to "
+"the end of the filename (the period will be automatically removed).</li></ol>"
+"If unsure, keep this option enabled as it makes your files more manageable."
+msgstr ""
+"Bu seçenek, dosyaları uzantılarıyla beraber kaydetmek için bazı uygun "
+"özellikleri etkinleştirir."
+"<br>"
+"<ol>"
+"<li>Kayıt anında dosya tipini değiştirdiğinizde, <b>%1</b> "
+"metin alanı içinde tanımladığınız her uzantı güncellenecektir. "
+"<br>"
+"<br></li>"
+"<li>Eğer <b>%2</b> metin alanında hiçbir uzantı tanımlamamışsanız, <b>Kaydet</b> "
+"dediğinizde, %3 dosyanın sonuna eklenecektir ( dosya adı zaten mevcut değilse). "
+"Bu uzantı, kaydedilen dosya türü temelinde olacaktır."
+"<br>"
+"<br>Eğer KDE'nin dosyaadları için bir uzantı sağlamasını istemiyorsanız; Bu "
+"seçeneği kapatabilir veya dosyaadının sonuna bir nokta (.) ekleyerek "
+"baskılayabilirsiniz ( nokta'nızın otomatik olarak silinecektir! ). </li></ol> "
+"Emin değilseniz, bu seçeneği etkin halde tutmak, sizin için daha yararlıdır."
+
+#: kfile/kfiledialog.cpp:2268
+msgid ""
+"<qt>This button allows you to bookmark specific locations. Click on this button "
+"to open the bookmark menu where you may add, edit or select a bookmark."
+"<p>These bookmarks are specific to the file dialog, but otherwise operate like "
+"bookmarks elsewhere in KDE.</qt>"
+msgstr ""
+"<qt>Bu düğme belirli adresleri yer imine kaydetmeye yarar. Bir yer imi ile "
+"ilgili işlemleri (kaydetme, düzenleme ve silme) yapmak için bu düğmeye "
+"tıklayın. "
+
+#: kfile/kfileiconview.cpp:62
+msgid "Small Icons"
+msgstr "Küçük Simgeler"
+
+#: kfile/kfileiconview.cpp:67
+msgid "Large Icons"
+msgstr "Büyük Simgeler"
+
+#: kfile/kfileiconview.cpp:75
+msgid "Thumbnail Previews"
+msgstr "Küçük Resim Önizleme"
+
+#: kfile/kfileiconview.cpp:119
+msgid "Icon View"
+msgstr "Simge Görünüm"
+
+#: kfile/kurlrequester.cpp:213
+msgid "Open file dialog"
+msgstr "Dosya penceresini aç"
+
+#: kfile/kdiroperator.cpp:448
+msgid "You did not select a file to delete."
+msgstr "Silmek için bir dosya seçmediniz."
+
+#: kfile/kdiroperator.cpp:449
+msgid "Nothing to Delete"
+msgstr "Silinecek Öğe Yok"
+
+#: kfile/kdiroperator.cpp:471
+msgid ""
+"<qt>Do you really want to delete\n"
+" <b>'%1'</b>?</qt>"
+msgstr "<qt><b>'%1</b>'i gerçekten silmek istiyor musunuz?</qt>"
+
+#: kfile/kdiroperator.cpp:473
+msgid "Delete File"
+msgstr "Dosyayı Sil"
+
+#: kfile/kdiroperator.cpp:478
+#, c-format
+msgid ""
+"_n: Do you really want to delete this item?\n"
+"Do you really want to delete these %n items?"
+msgstr "Bu %n öğeyi silmek istiyor musunuz?"
+
+#: kfile/kdiroperator.cpp:480
+msgid "Delete Files"
+msgstr "Dosyaları Sil"
+
+#: kfile/kdiroperator.cpp:511
+msgid "You did not select a file to trash."
+msgstr "Çöpe göndermek için bir dosya seçmediniz."
+
+#: kfile/kdiroperator.cpp:512
+msgid "Nothing to Trash"
+msgstr "Çöpe Gönderilecek Öğe Yok"
+
+#: kfile/kdiroperator.cpp:534
+msgid ""
+"<qt>Do you really want to trash\n"
+" <b>'%1'</b>?</qt>"
+msgstr ""
+"<qt>Gerçekten bu dosyayı çöpe göndermek istiyor musunuz?\n"
+" <b>'%1'</b>?</qt>"
+
+#: kfile/kdiroperator.cpp:536
+msgid "Trash File"
+msgstr "Dosyayı Çöpe Gönder"
+
+#: kfile/kdiroperator.cpp:537 kfile/kdiroperator.cpp:544
+msgid ""
+"_: to trash\n"
+"&Trash"
+msgstr "Çö&pe gönder"
+
+#: kfile/kdiroperator.cpp:541
+#, c-format
+msgid ""
+"_n: translators: not called for n == 1\n"
+"Do you really want to trash these %n items?"
+msgstr "Gerekten bu %n öğeyi çöpe göndermek istiyor musunuz?"
+
+#: kfile/kdiroperator.cpp:543
+msgid "Trash Files"
+msgstr "Dosyaları Çöpe Gönder"
+
+#: kfile/kdiroperator.cpp:658 kfile/kdiroperator.cpp:726
+msgid "The specified folder does not exist or was not readable."
+msgstr "Belirtilen dizin yok veya okunamıyor."
+
+#: kfile/kdiroperator.cpp:920 kfile/kdiroperator.cpp:1321
+#: kfile/kfiledetailview.cpp:64
+msgid "Detailed View"
+msgstr "Detaylı Görünüm"
+
+#: kfile/kdiroperator.cpp:925 kfile/kdiroperator.cpp:1319
+msgid "Short View"
+msgstr "Kısa Görünüm"
+
+#: kfile/kdiroperator.cpp:1260
+msgid "Parent Folder"
+msgstr "Üst Dizin"
+
+#: kfile/kdiroperator.cpp:1271
+msgid "Move to Trash"
+msgstr "Dosyaları Çöpe Taşı"
+
+#: kfile/kdiroperator.cpp:1282
+msgid "Sorting"
+msgstr "Sıralama"
+
+#: kfile/kdiroperator.cpp:1283
+msgid "By Name"
+msgstr "Ada göre"
+
+#: kfile/kdiroperator.cpp:1286
+msgid "By Date"
+msgstr "Tarihe Göre"
+
+#: kfile/kdiroperator.cpp:1289
+msgid "By Size"
+msgstr "Boyuta Göre"
+
+#: kfile/kdiroperator.cpp:1292
+msgid "Reverse"
+msgstr "Ters Sıralama"
+
+#: kfile/kdiroperator.cpp:1302
+msgid "Folders First"
+msgstr "Dizin Listesi"
+
+#: kfile/kdiroperator.cpp:1304
+msgid "Case Insensitive"
+msgstr "Büyük Küçük Harfe Duyarsız"
+
+#: kfile/kdiroperator.cpp:1324
+msgid "Show Hidden Files"
+msgstr "Gizli Dosyaları Göster"
+
+#: kfile/kdiroperator.cpp:1327
+msgid "Separate Folders"
+msgstr "Ayrı Dizinler"
+
+#: kfile/kdiroperator.cpp:1331
+msgid "Show Preview"
+msgstr "Önizlemeyi Göster"
+
+#: kfile/kdiroperator.cpp:1335
+msgid "Hide Preview"
+msgstr "Önizlemeyi Gizle"
+
+#: kfile/kfiledetailview.cpp:68
+msgid "Date"
+msgstr "Tarih"
+
+#: kfile/kfiledetailview.cpp:69
+msgid "Permissions"
+msgstr "İzinler"
+
+#: kfile/kfiledetailview.cpp:71 kfile/kpropertiesdialog.cpp:1976
+msgid "Group"
+msgstr "Grup"
+
+#: kfile/kmetaprops.cpp:130
+msgid "&Meta Info"
+msgstr "&Bilgi"
+
+#: kfile/kpropertiesdialog.cpp:177 kfile/kpropertiesdialog.cpp:193
+#: kfile/kpropertiesdialog.cpp:209 kfile/kpropertiesdialog.cpp:232
+#: kfile/kpropertiesdialog.cpp:252 kfile/kpropertiesdialog.cpp:272
+#, c-format
+msgid "Properties for %1"
+msgstr "%1 için özellikler"
+
+#: kfile/kpropertiesdialog.cpp:208
+#, c-format
+msgid ""
+"_n: <never used>\n"
+"Properties for %n Selected Items"
+msgstr "%n Seçili Öğenin Özellikleri"
+
+#: kfile/kpropertiesdialog.cpp:740
+msgid "&General"
+msgstr "&Genel"
+
+#: kfile/kpropertiesdialog.cpp:944
+msgid "Create new file type"
+msgstr "Yeni dosya tipi oluştur"
+
+#: kfile/kpropertiesdialog.cpp:946
+msgid "Edit file type"
+msgstr "Dosya türünü düzenle"
+
+#: kfile/kpropertiesdialog.cpp:959
+msgid "Contents:"
+msgstr "İçerik:"
+
+#: kfile/kpropertiesdialog.cpp:1001
+msgid "Calculate"
+msgstr "Hesapla"
+
+#: kfile/kpropertiesdialog.cpp:1012 kfile/kpropertiesdialog.cpp:1239
+msgid "Refresh"
+msgstr "Tazele"
+
+#: kfile/kpropertiesdialog.cpp:1020
+msgid "Points to:"
+msgstr "İşaretçi:"
+
+#: kfile/kpropertiesdialog.cpp:1034
+msgid "Created:"
+msgstr "Oluşturuldu:"
+
+#: kfile/kpropertiesdialog.cpp:1056
+msgid "Accessed:"
+msgstr "Erişim:"
+
+#: kfile/kpropertiesdialog.cpp:1075
+msgid "Mounted on:"
+msgstr "Bağlama noktası:"
+
+#: kfile/kpropertiesdialog.cpp:1082 kfile/kpropertiesdialog.cpp:2888
+msgid "Free disk space:"
+msgstr "Boş disk alanı:"
+
+#: kfile/kpropertiesdialog.cpp:1189 kfile/kpropertiesdialog.cpp:1204
+#: kfile/kpropertiesdialog.cpp:3031
+#, no-c-format
+msgid ""
+"_: Available space out of total partition size (percent used)\n"
+"%1 out of %2 (%3% used)"
+msgstr "%1/%2 (kullanılan: %3%)"
+
+#: kfile/kpropertiesdialog.cpp:1215
+msgid ""
+"Calculating... %1 (%2)\n"
+"%3, %4"
+msgstr ""
+"Hesaplanıyor... %1 (%2)\n"
+"%3, %4"
+
+#: kfile/kpropertiesdialog.cpp:1218 kfile/kpropertiesdialog.cpp:1234
+#, c-format
+msgid ""
+"_n: 1 file\n"
+"%n files"
+msgstr "%n dosya"
+
+#: kfile/kpropertiesdialog.cpp:1219 kfile/kpropertiesdialog.cpp:1235
+#, c-format
+msgid ""
+"_n: 1 sub-folder\n"
+"%n sub-folders"
+msgstr "%n alt dizin"
+
+#: kfile/kpropertiesdialog.cpp:1248
+msgid "Calculating..."
+msgstr "Hesaplıyor..."
+
+#: kfile/kpropertiesdialog.cpp:1282
+msgid "Stopped"
+msgstr "Durduruldu"
+
+#: kfile/kpropertiesdialog.cpp:1322
+msgid "The new file name is empty."
+msgstr "Yeni dosya adı boş."
+
+#: kfile/kpropertiesdialog.cpp:1460 kfile/kpropertiesdialog.cpp:2621
+#: kfile/kpropertiesdialog.cpp:2778 kfile/kpropertiesdialog.cpp:3059
+#: kfile/kpropertiesdialog.cpp:3340 kfile/kpropertiesdialog.cpp:3836
+#: kfile/kpropertiesdialog.cpp:4079
+msgid ""
+"<qt>Could not save properties. You do not have sufficient access to write to <b>"
+"%1</b>.</qt>"
+msgstr ""
+"<qt>Özellikler kaydedilemedi. <b>%1</b>'ye yazabilmek için yeterli izniniz "
+"bulunmuyor. </qt>"
+
+#: kfile/kpropertiesdialog.cpp:1534 kfile/kpropertiesdialog.cpp:1538
+#: kfile/kpropertiesdialog.cpp:1543
+msgid "Forbidden"
+msgstr "İzin yok"
+
+#: kfile/kpropertiesdialog.cpp:1535
+msgid "Can Read"
+msgstr "Okuyabilir"
+
+#: kfile/kpropertiesdialog.cpp:1536
+msgid "Can Read & Write"
+msgstr "Okuyabilir ve Yazabilir"
+
+#: kfile/kpropertiesdialog.cpp:1539
+msgid "Can View Content"
+msgstr "İçeriğini Görebilir"
+
+#: kfile/kpropertiesdialog.cpp:1540
+msgid "Can View & Modify Content"
+msgstr "İçeriği Görebilir ve Değiştirebilir"
+
+#: kfile/kpropertiesdialog.cpp:1544
+msgid "Can View Content & Read"
+msgstr "İçeriği Görebilir ve Okuyabilir"
+
+#: kfile/kpropertiesdialog.cpp:1545
+msgid "Can View/Read & Modify/Write"
+msgstr "Görebilir/Okuyabilir ve Değiştirebilir/Yazabilir"
+
+#: kfile/kpropertiesdialog.cpp:1639
+msgid "&Permissions"
+msgstr "İ&zinler"
+
+#: kfile/kpropertiesdialog.cpp:1650 kfile/kpropertiesdialog.cpp:1904
+msgid "Access Permissions"
+msgstr "Erişim İzinleri"
+
+#: kfile/kpropertiesdialog.cpp:1661
+msgid ""
+"_n: This file is a link and does not have permissions.\n"
+"All files are links and do not have permissions."
+msgstr "Buradaki tüm dosyalar bağlantıdır ve izinleri yoktur."
+
+#: kfile/kpropertiesdialog.cpp:1664
+msgid "Only the owner can change permissions."
+msgstr "Sadece dosyanın sahibi izinleri değiştirebilir."
+
+#: kfile/kpropertiesdialog.cpp:1667
+msgid "O&wner:"
+msgstr "&Sahibi:"
+
+#: kfile/kpropertiesdialog.cpp:1673
+msgid "Specifies the actions that the owner is allowed to do."
+msgstr ""
+"Sahibi'ne (owner), yapabilmesi için izin verilecek eylemleri belirler. "
+
+#: kfile/kpropertiesdialog.cpp:1675
+msgid "Gro&up:"
+msgstr "&Grubu:"
+
+#: kfile/kpropertiesdialog.cpp:1681
+msgid "Specifies the actions that the members of the group are allowed to do."
+msgstr "Grup Üyelerine, yapabilmesi için izin verilecek eylemleri belirler. "
+
+#: kfile/kpropertiesdialog.cpp:1683
+msgid "O&thers:"
+msgstr "&Diğerleri:"
+
+#: kfile/kpropertiesdialog.cpp:1689
+msgid ""
+"Specifies the actions that all users, who are neither owner nor in the group, "
+"are allowed to do."
+msgstr ""
+"Ne sahip ne de grup üyesi olan, yani tüm kullanıcılara, yapabilmesi için izin "
+"verilecek eylemleri belirler. "
+
+#: kfile/kpropertiesdialog.cpp:1694
+msgid "Only own&er can rename and delete folder content"
+msgstr "&Sadece sahibi dizin içeriğini değiştirebilir ya da silebilir"
+
+#: kfile/kpropertiesdialog.cpp:1695
+msgid "Is &executable"
+msgstr "Ça&lıştırılabilir"
+
+#: kfile/kpropertiesdialog.cpp:1699
+#, fuzzy
+msgid ""
+"Enable this option to allow only the folder's owner to delete or rename the "
+"contained files and folders. Other users can only add new files, which requires "
+"the 'Modify Content' permission."
+msgstr ""
+"Bu seçenek, dizin ve içindeki dosyaların, sadece dizin'in sahibi tarafından "
+"silinip, isimlerinin değiştirilebilmesine izin verir. Diğer kullanıcılar, "
+"'İçeriği Değiştir' iznine tabi olarak sadece yeni dosyalar ekleyebileceklerdir."
+
+#: kfile/kpropertiesdialog.cpp:1703
+msgid ""
+"Enable this option to mark the file as executable. This only makes sense for "
+"programs and scripts. It is required when you want to execute them."
+msgstr ""
+"Dosyaları çalıştırılabilir olarak işaretleyebilmek için bu seçeneği "
+"etkinleştirir. Bu sadece program ve betikleri ilgilendirir. Onları çalıştırmak "
+"istediğinizde gerekecektir."
+
+#: kfile/kpropertiesdialog.cpp:1710
+msgid "A&dvanced Permissions"
+msgstr "&Gelişmiş İzinler"
+
+#: kfile/kpropertiesdialog.cpp:1719
+msgid "Ownership"
+msgstr "Sahiplik"
+
+#: kfile/kpropertiesdialog.cpp:1728
+msgid "User:"
+msgstr "Kullanıcı:"
+
+#: kfile/kpropertiesdialog.cpp:1814
+msgid "Group:"
+msgstr "Grup:"
+
+#: kfile/kpropertiesdialog.cpp:1856
+msgid "Apply changes to all subfolders and their contents"
+msgstr "Değişiklikleri tüm alt dizinlere ve içindekilere uygula"
+
+#: kfile/kpropertiesdialog.cpp:1894
+msgid "Advanced Permissions"
+msgstr "Gelişmiş İzinler"
+
+#: kfile/kpropertiesdialog.cpp:1913
+msgid "Class"
+msgstr "Sınıf"
+
+#: kfile/kpropertiesdialog.cpp:1918
+msgid ""
+"Show\n"
+"Entries"
+msgstr "Göster"
+
+#: kfile/kpropertiesdialog.cpp:1920
+msgid "Read"
+msgstr "Oku"
+
+#: kfile/kpropertiesdialog.cpp:1925
+msgid "This flag allows viewing the content of the folder."
+msgstr "Bu seçenek dizin içeriğinin görüntülenmesini sağlar."
+
+#: kfile/kpropertiesdialog.cpp:1927
+msgid "The Read flag allows viewing the content of the file."
+msgstr "Okuma seçeneği, dosyanın içeriğinin görüntülenmesini sağlar."
+
+#: kfile/kpropertiesdialog.cpp:1931
+msgid ""
+"Write\n"
+"Entries"
+msgstr "Yaz"
+
+#: kfile/kpropertiesdialog.cpp:1933
+msgid "Write"
+msgstr "Yaz"
+
+#: kfile/kpropertiesdialog.cpp:1938
+msgid ""
+"This flag allows adding, renaming and deleting of files. Note that deleting and "
+"renaming can be limited using the Sticky flag."
+msgstr ""
+"Bu bayrak, dosyaları eklemeye, silmeye, yeniden isimlendirmeye izin verir. "
+"Silme ve isimlendirme Yapışkan bayrak kullanımıyla kısıtlanabilir"
+
+#: kfile/kpropertiesdialog.cpp:1941
+msgid "The Write flag allows modifying the content of the file."
+msgstr "Yazma bayrağı, dosyanın içeriğinin değiştirilmesine izin verir."
+
+#: kfile/kpropertiesdialog.cpp:1946
+msgid ""
+"_: Enter folder\n"
+"Enter"
+msgstr "Gir"
+
+#: kfile/kpropertiesdialog.cpp:1947
+msgid "Enable this flag to allow entering the folder."
+msgstr "Dizine girebilmek için bu bayrağı etkinleştirin."
+
+#: kfile/kpropertiesdialog.cpp:1950
+msgid "Exec"
+msgstr "Çalıştır"
+
+#: kfile/kpropertiesdialog.cpp:1951
+msgid "Enable this flag to allow executing the file as a program."
+msgstr ""
+"Dosya'nın bir program gibi çalıştırılabilmesine izin vermek için bu bayrağı "
+"etkinleştirin."
+
+#: kfile/kpropertiesdialog.cpp:1961
+msgid "Special"
+msgstr "Özel"
+
+#: kfile/kpropertiesdialog.cpp:1965
+msgid ""
+"Special flag. Valid for the whole folder, the exact meaning of the flag can be "
+"seen in the right hand column."
+msgstr ""
+"Özel bayrak. Dizin'in tümü için geçerlidir. Bayrağın tam olarak anlattıkları "
+"sağ yandaki sütunda görülebilir."
+
+#: kfile/kpropertiesdialog.cpp:1968
+msgid ""
+"Special flag. The exact meaning of the flag can be seen in the right hand "
+"column."
+msgstr ""
+"Özel bayrak. Bayrağın tam olarak anlattıkları sağ yandaki sütunda görülebilir."
+
+#. i18n: file ./kfile/kpropertiesdesktopadvbase.ui line 95
+#: kfile/kpropertiesdialog.cpp:1972 rc.cpp:96
+#, no-c-format
+msgid "User"
+msgstr "Kullanıcı"
+
+#: kfile/kpropertiesdialog.cpp:1984
+msgid "Set UID"
+msgstr "Etkin UID"
+
+#: kfile/kpropertiesdialog.cpp:1988
+msgid ""
+"If this flag is set, the owner of this folder will be the owner of all new "
+"files."
+msgstr ""
+"Eğer bu bayrak koyulmuşsa, bu dizinin sahibi, tüm yeni dosyaların da sahibi "
+"olacaktır."
+
+#: kfile/kpropertiesdialog.cpp:1991
+msgid ""
+"If this file is an executable and the flag is set, it will be executed with the "
+"permissions of the owner."
+msgstr ""
+"Eğer bu bir çalıştırılabilir dosya ise ve bayrak açık (1) ise , bu program "
+"sahibinin haklarıyla çalıştırılır."
+
+#: kfile/kpropertiesdialog.cpp:1995
+msgid "Set GID"
+msgstr "Etkin GID"
+
+#: kfile/kpropertiesdialog.cpp:1999
+msgid ""
+"If this flag is set, the group of this folder will be set for all new files."
+msgstr ""
+"Eğer bu bayrak ayarlanırsa, bu dizinin grubu tüm yeni dosyalar için de öyle "
+"olacaktır."
+
+#: kfile/kpropertiesdialog.cpp:2002
+msgid ""
+"If this file is an executable and the flag is set, it will be executed with the "
+"permissions of the group."
+msgstr ""
+"Eğer bu dosya çalıştırılabilir bir dosya ise ve bayrağı öyle ayarlanmışsa, bu "
+"grubun izinleri ile çalıştırılabilecektir."
+
+#: kfile/kpropertiesdialog.cpp:2006
+msgid ""
+"_: File permission\n"
+"Sticky"
+msgstr "Yapışkan"
+
+#: kfile/kpropertiesdialog.cpp:2010
+msgid ""
+"If the Sticky flag is set on a folder, only the owner and root can delete or "
+"rename files. Otherwise everybody with write permissions can do this."
+msgstr ""
+"Eğer bir dizin'e Yapışkan bayrak konulmuşsa, sadece sahibi ve root silip "
+"adlandırılır. Aksi takdirde, yazma izni olan herkes bunu yapabilir."
+
+#: kfile/kpropertiesdialog.cpp:2014
+msgid ""
+"The Sticky flag on a file is ignored on Linux, but may be used on some systems"
+msgstr ""
+"Bu Yapışkan bayrak açık ise, Linux dosyayı görmez,ama diğer sistemler "
+"kullanabilir."
+
+#: kfile/kpropertiesdialog.cpp:2193
+msgid "Link"
+msgstr "Bağlantı"
+
+#: kfile/kpropertiesdialog.cpp:2209
+msgid "Varying (No Change)"
+msgstr ""
+
+#: kfile/kpropertiesdialog.cpp:2308
+msgid ""
+"_n: This file uses advanced permissions\n"
+"These files use advanced permissions."
+msgstr "Bu dosyalar gelişmiş izinleri kullanır."
+
+#: kfile/kpropertiesdialog.cpp:2329
+msgid ""
+"_n: This folder uses advanced permissions.\n"
+"These folders use advanced permissions."
+msgstr "Bu dizinler gelişmiş izinleri kullanır."
+
+#: kfile/kpropertiesdialog.cpp:2344
+msgid "These files use advanced permissions."
+msgstr "Bu dosyalar gelişmiş izinleri kullanır."
+
+#: kfile/kpropertiesdialog.cpp:2560
+msgid "U&RL"
+msgstr "U&RL"
+
+#: kfile/kpropertiesdialog.cpp:2665
+msgid "A&ssociation"
+msgstr "İliş&ki"
+
+#: kfile/kpropertiesdialog.cpp:2674
+msgid "Pattern ( example: *.html;*.htm )"
+msgstr "Sonek ( örnek: *.html;*.htm )"
+
+#: kfile/kpropertiesdialog.cpp:2707
+msgid "Left click previews"
+msgstr "Sol tuşla önizleme"
+
+#: kfile/kpropertiesdialog.cpp:2826
+msgid "De&vice"
+msgstr "Ay&gıt"
+
+#: kfile/kpropertiesdialog.cpp:2856
+msgid "Device (/dev/fd0):"
+msgstr "Aygıt (/dev/fd0):"
+
+#: kfile/kpropertiesdialog.cpp:2857
+msgid "Device:"
+msgstr "Aygıt:"
+
+#: kfile/kpropertiesdialog.cpp:2867
+msgid "Read only"
+msgstr "Salt-Okunur"
+
+#: kfile/kpropertiesdialog.cpp:2871
+msgid "File system:"
+msgstr "Dosya sistemi:"
+
+#: kfile/kpropertiesdialog.cpp:2879
+msgid "Mount point (/mnt/floppy):"
+msgstr "Bağlama noktası (/mnt/floppy):"
+
+#: kfile/kpropertiesdialog.cpp:2880
+msgid "Mount point:"
+msgstr "Bağlama noktası:"
+
+#: kfile/kpropertiesdialog.cpp:2911
+msgid "Unmounted Icon"
+msgstr "Ayrılma Simgesi"
+
+#: kfile/kpropertiesdialog.cpp:3091 kfile/kpropertiesdialog.cpp:3896
+msgid "&Application"
+msgstr "&Uygulama"
+
+#: kfile/kpropertiesdialog.cpp:3213
+#, c-format
+msgid "Add File Type for %1"
+msgstr "%1 İçin Dosya Türü Ekle"
+
+#: bookmarks/kbookmarkmenu.cc:829 kfile/kpropertiesdialog.cpp:3216
+msgid "&Add"
+msgstr "&Ekle"
+
+#: kfile/kpropertiesdialog.cpp:3217 kfile/kpropertiesdialog.cpp:3218
+msgid ""
+"Add the selected file types to\n"
+"the list of supported file types."
+msgstr ""
+"Seçilen dosya türünü desteklenen\n"
+" dosya türleri listesine ekle."
+
+#: kfile/kpropertiesdialog.cpp:3412 kfile/kpropertiesdialog.cpp:3868
+msgid "Only executables on local file systems are supported."
+msgstr "Sadece yerel dosya sistemindeki programlar çalıştırılabilir."
+
+#: kfile/kpropertiesdialog.cpp:3424
+#, c-format
+msgid "Advanced Options for %1"
+msgstr "%1 İçin Gelişmiş Seçenekler"
+
+#: kfile/kpropertiesdialog.cpp:3583
+msgid "E&xecute"
+msgstr "Ça&lıştır"
+
+#: kfile/kpropertiesdialog.cpp:3590
+msgid "Comman&d:"
+msgstr "&Komut:"
+
+#: kfile/kpropertiesdialog.cpp:3599
+#, fuzzy
+msgid ""
+"Following the command, you can have several place holders which will be "
+"replaced with the actual values when the actual program is run:\n"
+"%f - a single file name\n"
+"%F - a list of files; use for applications that can open several local files at "
+"once\n"
+"%u - a single URL\n"
+"%U - a list of URLs\n"
+"%d - the folder of the file to open\n"
+"%D - a list of folders\n"
+"%i - the icon\n"
+"%m - the mini-icon\n"
+"%c - the caption"
+msgstr ""
+"Aşağıdaki komutlar ile, güncel program çalıştığında asıl değerleri ile "
+"değiştirilecek çeşitli yer-tutuculara sahip olabilirsiniz :\n"
+"%f - bir tek dosya adı\n"
+"%F - bir dosya listesi; bir kerede birçok dosya açabilen uygulamalar için\n"
+"%u - bir tek URL\n"
+"%U - a URL listesi\n"
+"%d - açılacak dosyanın dizin'i\n"
+"%D - dizinler listesi\n"
+"%i - simge\n"
+"%m - mini-simge\n"
+"%c -  başlık"
+
+#: kfile/kpropertiesdialog.cpp:3620
+msgid "Panel Embedding"
+msgstr "Panele Gömülü"
+
+#: kfile/kpropertiesdialog.cpp:3629
+msgid "&Execute on click:"
+msgstr "&Tıklandığında çalıştır:"
+
+#: kfile/kpropertiesdialog.cpp:3637
+msgid "&Window title:"
+msgstr "&Pencere başlığı:"
+
+#. i18n: file ./kfile/kpropertiesdesktopadvbase.ui line 55
+#: kfile/kpropertiesdialog.cpp:3657 rc.cpp:81
+#, no-c-format
+msgid "&Run in terminal"
+msgstr "&Uçbirimde çalıştır"
+
+#. i18n: file ./kfile/kpropertiesdesktopadvbase.ui line 77
+#: kfile/kpropertiesdialog.cpp:3672 rc.cpp:90
+#, no-c-format
+msgid "Do not &close when command exits"
+msgstr "&Komut çıktığı zaman kapatma"
+
+#. i18n: file ./kfile/kpropertiesdesktopadvbase.ui line 66
+#: kfile/kpropertiesdialog.cpp:3676 rc.cpp:87
+#, no-c-format
+msgid "&Terminal options:"
+msgstr "&Terminal seçenekleri"
+
+#. i18n: file ./kfile/kpropertiesdesktopadvbase.ui line 106
+#: kfile/kpropertiesdialog.cpp:3696 rc.cpp:99
+#, no-c-format
+msgid "Ru&n as a different user"
+msgstr "&Farklı kullanıcıyla çalıştır"
+
+#: kfile/kpropertiesdialog.cpp:3937
+msgid "Description:"
+msgstr "Açıklama:"
+
+#: kfile/kpropertiesdialog.cpp:3943
+msgid "Comment:"
+msgstr "Açıklama:"
+
+#: kfile/kpropertiesdialog.cpp:3949
+msgid "File types:"
+msgstr "Dosya türü:"
+
+#: kfile/kfilesharedlg.cpp:56
+msgid "&Share"
+msgstr "&Paylaştır"
+
+#: kfile/kfilesharedlg.cpp:128
+msgid "Only folders in your home folder can be shared."
+msgstr ""
+"Sadece kendi başlangıç dizininiz altında bulunan dizinler paylaştırılabilir."
+
+#: kfile/kfilesharedlg.cpp:139
+msgid "Not shared"
+msgstr "Paylaştırılmamış"
+
+#: kfile/kfilesharedlg.cpp:144
+msgid "Shared"
+msgstr "Paylaştırılmış"
+
+#: kfile/kfilesharedlg.cpp:156
+msgid ""
+"Sharing this folder makes it available under Linux/UNIX (NFS) and Windows "
+"(Samba)."
+msgstr ""
+"Bu dizini paylaştırmakla onu Linux/UNIX (NFS) ve Windows (Samba) üzerinden "
+"kullanılabilir bir hale getiriyorsunuz."
+
+#: kfile/kfilesharedlg.cpp:162
+msgid "You can also reconfigure file sharing authorization."
+msgstr "Ayrıca dosya paylaşım yetkilendirmesini yeniden yapılandırabilirsiniz."
+
+#: kfile/kfilesharedlg.cpp:165 kfile/kfilesharedlg.cpp:189
+msgid "Configure File Sharing..."
+msgstr "Dosya Paylaşımını Yapılandır..."
+
+#: kfile/kfilesharedlg.cpp:174
+msgid ""
+"Error running 'filesharelist'. Check if installed and in $PATH or /usr/sbin."
+msgstr ""
+"'filesharelist' çalıştırılamadı. $PATH içinde kurulu olup olmadığını "
+"denetleyin."
+
+#: kfile/kfilesharedlg.cpp:181
+msgid "You need to be authorized to share folders."
+msgstr "Dizinleri paylaşıma açmak için yetkili kullanıcı olmanız gereklidir."
+
+#: kfile/kfilesharedlg.cpp:184
+msgid "File sharing is disabled."
+msgstr "Dosya paylaşımı etkin değil."
+
+#: kfile/kfilesharedlg.cpp:249
+msgid "Sharing folder '%1' failed."
+msgstr "'%1' dizinini paylaşma sırasında hata."
+
+#: kfile/kfilesharedlg.cpp:250
+msgid ""
+"An error occurred while trying to share folder '%1'. Make sure that the Perl "
+"script 'fileshareset' is set suid root."
+msgstr ""
+"'%1' dizini paylaşıma açılırken bir hata oluştu. Lütfen 'fileshareset' isimli "
+"Perl betiğinin root haklarına sahip olduğundan emin olun."
+
+#: kfile/kfilesharedlg.cpp:255
+msgid "Unsharing folder '%1' failed."
+msgstr "'%1' dizini paylaşımdan çıkarılamadı."
+
+#: kfile/kfilesharedlg.cpp:256
+msgid ""
+"An error occurred while trying to unshare folder '%1'. Make sure that the Perl "
+"script 'fileshareset' is set suid root."
+msgstr ""
+"'%1' dizini paylaşımdan çıkarılırken bir hata oluştu. Lütfen 'fileshareset' "
+"isimli Perl betiğinin root haklarına sahip olduğundan emin olun."
+
+#: kfile/kurlbar.cpp:348
+msgid ""
+"<qt>The <b>Quick Access</b> panel provides easy access to commonly used file "
+"locations."
+"<p>Clicking on one of the shortcut entries will take you to that location."
+"<p>By right clicking on an entry you can add, edit and remove shortcuts.</qt>"
+msgstr ""
+"<qt><b>Hızlı Erişim</b> paneli, sık kullanılan dosya yerleşimlerine kolayca "
+"erişebilmeyi sağlar."
+"<p>Kısayol girdilerinden birine tıklamak, sizi yerleşime götürecektir."
+"<p>Girdi üzerinde sağ tıklayarak kısayollarda ekle, düzelt, sil işlemleri.</qt>"
+
+#: kfile/kurlbar.cpp:730
+msgid "&Large Icons"
+msgstr "&Büyük Simgeler"
+
+#: kfile/kurlbar.cpp:730
+msgid "&Small Icons"
+msgstr "&Küçük Simgeler"
+
+#: kfile/kurlbar.cpp:736
+msgid "&Edit Entry..."
+msgstr "Girdiyi &Düzenle..."
+
+#: kfile/kurlbar.cpp:740
+msgid "&Add Entry..."
+msgstr "&Girdi Ekle..."
+
+#: kfile/kurlbar.cpp:744
+msgid "&Remove Entry"
+msgstr "Girdiyi &Sil"
+
+#: kfile/kurlbar.cpp:776
+msgid "Enter a description"
+msgstr "Bir açıklama yazın"
+
+#: kfile/kurlbar.cpp:922
+msgid "Edit Quick Access Entry"
+msgstr "Hızlı Erişim Girdi Ayarları"
+
+#: kfile/kurlbar.cpp:925
+msgid ""
+"<qt><b>Please provide a description, URL and icon for this Quick Access "
+"entry.</b></br></qt>"
+msgstr ""
+"<qt><b>Hızlı erişim girdisi için bir açıklama, adres ve simge girin.</b></br>"
+"</qt>"
+
+#: kfile/kurlbar.cpp:932
+msgid ""
+"<qt>This is the text that will appear in the Quick Access panel."
+"<p>The description should consist of one or two words that will help you "
+"remember what this entry refers to.</qt>"
+msgstr ""
+"<qt> Bu, hızlı erişim panelinde görüntülenecek olan metindir."
+"<p> Açıklama , bu hızlı erişimin ne işe yaradığını gösterecek kadar detaylı "
+"olmalıdır.</qt>"
+
+#. i18n: file ./kfile/kpropertiesdesktopbase.ui line 125
+#: kfile/kurlbar.cpp:935 rc.cpp:239
+#, no-c-format
+msgid "&Description:"
+msgstr "&Açıklama:"
+
+#: kfile/kurlbar.cpp:942
+#, fuzzy
+msgid ""
+"<qt>This is the location associated with the entry. Any valid URL may be used. "
+"For example:"
+"<p>%1"
+"<br>http://www.kde.org"
+"<br>ftp://ftp.kde.org/pub/kde/stable"
+"<p>By clicking on the button next to the text edit box you can browse to an "
+"appropriate URL.</qt>"
+msgstr ""
+"<qt>Girdi ile ilişkilendirilecek yerleşimdir. Herhangi bir geçerli adres "
+"kullanılabilir. Örneğin: "
+"<p>%1"
+"<br>http://www.kde.org"
+"<br>ftp://ftp.kde.org/pub/kde/stable"
+"<p>Sonraki düğmesine basarak, adrese uygun bir metin yazacağınız bir kutuya "
+"ulaşacaksınız.</qt>"
+
+#: kfile/kurlbar.cpp:946
+msgid "&URL:"
+msgstr "&URL:"
+
+#: kfile/kurlbar.cpp:953
+msgid ""
+"<qt>This is the icon that will appear in the Quick Access panel."
+"<p>Click on the button to select a different icon.</qt>"
+msgstr ""
+"<qt> Bu, hızlı erişim panelinde görüntülenecek olan simgedir."
+"<p> Farklı bir simge seçmek için düğmenin üzerine tıklayın.</qt>"
+
+#: kfile/kurlbar.cpp:955
+msgid "Choose an &icon:"
+msgstr "B&ir simge seçin:"
+
+#: kfile/kurlbar.cpp:971
+msgid "&Only show when using this application (%1)"
+msgstr "&Sadece bu uygulamayı kullanırken göster (%1)"
+
+#: kfile/kurlbar.cpp:974
+msgid ""
+"<qt>Select this setting if you want this entry to show only when using the "
+"current application (%1)."
+"<p>If this setting is not selected, the entry will be available in all "
+"applications.</qt>"
+msgstr ""
+"<qt>Bu girdi'nin, sadece şu andaki uygulama (%1) çalışırken görüntülenmesini "
+"istiyorsanız bu ayarı etkinleştirin."
+"<p>Eğer bu ayar seçilmezse, girdi tüm uygulamalar tarafından kullanılabilir "
+"olacaktır.</qt>"
+
+#: tests/kurifiltertest.cpp:144
+msgid "kurifiltertest"
+msgstr "kurifiltertest"
+
+#: tests/kurifiltertest.cpp:145
+msgid "Unit test for the URI filter plugin framework."
+msgstr ""
+
+#: tests/kurifiltertest.cpp:150
+msgid "Use space as keyword delimeter for web shortcuts"
+msgstr "Web kısayolları için kelime ayırıcı olarak boşluk kullan"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org.tr"
+
+#. i18n: file ./kssl/keygenwizard2.ui line 25
+#: rc.cpp:3
+#, no-c-format
+msgid ""
+"You must now provide a password for the certificate request. Please choose a "
+"very secure password as this will be used to encrypt your private key."
+msgstr ""
+"Sertifika talebi için bir parola girmeniz gerekiyor. Lütfen gizli anahtarınızı "
+"şifrelemek için çok güvenli bir parola seçiniz."
+
+#. i18n: file ./kssl/keygenwizard2.ui line 38
+#: rc.cpp:6
+#, no-c-format
+msgid "&Repeat password:"
+msgstr "Parolayı Te&krarla:"
+
+#. i18n: file ./kssl/keygenwizard2.ui line 49
+#: rc.cpp:9
+#, no-c-format
+msgid "&Choose password:"
+msgstr "Parolayı &seç:"
+
+#. i18n: file ./kssl/keygenwizard.ui line 25
+#: rc.cpp:12
+#, no-c-format
+msgid ""
+"You have indicated that you wish to obtain or purchase a secure certificate. "
+"This wizard is intended to guide you through the procedure. You may cancel at "
+"any time, and this will abort the transaction."
+msgstr ""
+"Güvenli bir sertifika edinmek veya satın almak dileğinizi belirttiniz. Bu "
+"sihirbaz, tüm süreç boyunca size eşlik edecektir. Dilediğiniz herhangi bir "
+"aşamada iptal ederek aktarımı kesebileceksiniz."
+
+#. i18n: file ./misc/kwalletd/kwalletwizard.ui line 16
+#: rc.cpp:15
+#, no-c-format
+msgid "KDE Wallet Wizard"
+msgstr "KDE Cüzdan Sihirbazı"
+
+#. i18n: file ./misc/kwalletd/kwalletwizard.ui line 23
+#: rc.cpp:18
+#, no-c-format
+msgid "Introduction"
+msgstr "Giriş"
+
+#. i18n: file ./misc/kwalletd/kwalletwizard.ui line 56
+#: rc.cpp:21
+#, no-c-format
+msgid "<u>KWallet</u> - The KDE Wallet System"
+msgstr "<u>KWallet</u> - KDE Cüzdan Sistemi"
+
+#. i18n: file ./misc/kwalletd/kwalletwizard.ui line 81
+#: rc.cpp:24
+#, no-c-format
+msgid ""
+"Welcome to KWallet, the KDE Wallet System.  KWallet allows you to store your "
+"passwords and other personal information on disk in an encrypted file, "
+"preventing others from viewing the information.  This wizard will tell you "
+"about KWallet and help you configure it for the first time."
+msgstr ""
+"KDE Cüzdan Sistemine hoşgeldiniz. KWallet, hassas ve güvenli olması gereken tüm "
+"bilgilerinizin disk üzerinde şifrelenmiş bir şekilde tutulmasına olanak verir. "
+"Bu süre içinde başkası, size ait bu bilgilere erişemez. Bu sihirbaz KWallet "
+"hakkında bilgi verecek ve sizin için yapılandıracaktır."
+
+#. i18n: file ./misc/kwalletd/kwalletwizard.ui line 112
+#: rc.cpp:27
+#, no-c-format
+msgid "&Basic setup (recommended)"
+msgstr "&Temel kurulum (önerilen)"
+
+#. i18n: file ./misc/kwalletd/kwalletwizard.ui line 123
+#: rc.cpp:30
+#, no-c-format
+msgid "&Advanced setup"
+msgstr "&Gelişmiş ayarlar"
+
+#. i18n: file ./misc/kwalletd/kwalletwizard.ui line 180
+#: rc.cpp:36
+#, no-c-format
+msgid ""
+"The KDE Wallet system stores your data in a <i>wallet</i> "
+"file on your local hard disk.  The data is only written in encrypted form, "
+"presently using the blowfish algorithm with your password as the key.  When a "
+"wallet is opened, the wallet manager application will launch and display an "
+"icon in the system tray.  You can use this application to manage your wallets.  "
+"It even permits you to drag wallets and wallet contents, allowing you to easily "
+"copy a wallet to a remote system."
+msgstr ""
+"KWallet, verilerinizi yerel sabit diskinizdeki <i>cüzdanlarda</i> "
+"tutar. Veriler sadece şifrelenmiş bir şekilde, bluefish algoritması "
+"kullanılarak depolanır. Bir cüzdan açıldığı zaman cüzdan yöneticisi sistem "
+"panelinde bir simge görüntüler. Bu uygulamayı, cüzdanlarınıza erişmek için "
+"kullanabilirsiniz. Aynı program cüzdanları ve cüzdan içeriklerini sürükleyip "
+"bırakmanızı da sağlayabilir. Böylece cüzdanları uzaktaki bir sisteme kolayca "
+"gönderebilirsiniz."
+
+#. i18n: file ./misc/kwalletd/kwalletwizard.ui line 193
+#: rc.cpp:39
+#, no-c-format
+msgid "Password Selection"
+msgstr "Parola Seçimi"
+
+#. i18n: file ./misc/kwalletd/kwalletwizard.ui line 204
+#: rc.cpp:42
+#, no-c-format
+msgid ""
+"Various applications may attempt to use the KDE wallet to store passwords or "
+"other information such as web form data and cookies.  If you would like these "
+"applications to use the wallet, you must enable it now and choose a password.  "
+"The password you choose <i>cannot</i> be recovered if it is lost, and will "
+"allow anyone who knows it to obtain all the information contained in the "
+"wallet."
+msgstr ""
+"Çeşitli uygulamalar, parolalarını ya da örneğin web formu verileri ya da "
+"kurabiyeler gibi bilgilerini saklamak için KDE Cüzdan'ı kullanmaya teşebbüs "
+"edebilir. Eğer bu uygulamaların cüzdanı kullanmasını istiyorsanız, cüzdanı "
+"etkinleştirmeli ve bir parola belirlemelisiniz. Bu parola kaybedildiğinde <i>"
+"kurtarılabilir değildir</i>, parolayı bilen herkes cüzdan içerisinde saklı tüm "
+"bilgileri elde edebilir."
+
+#. i18n: file ./misc/kwalletd/kwalletwizard.ui line 234
+#: rc.cpp:45
+#, no-c-format
+msgid "Enter a new password:"
+msgstr "Yeni bir parola girin:"
+
+#. i18n: file ./misc/kwalletd/kwalletwizard.ui line 251
+#: rc.cpp:48
+#, no-c-format
+msgid "Verify password:"
+msgstr "Parolayı Yeniden Gir:"
+
+#. i18n: file ./misc/kwalletd/kwalletwizard.ui line 301
+#: rc.cpp:51
+#, no-c-format
+msgid "Yes, I wish to use the KDE wallet to store my personal information."
+msgstr ""
+"Evet, gizli bilgilerimi korumak için KDE cüzdan sistemini kullanmak istiyorum."
+
+#. i18n: file ./misc/kwalletd/kwalletwizard.ui line 390
+#: rc.cpp:54
+#, no-c-format
+msgid "Security Level"
+msgstr "Güvenlik Seviyesi"
+
+#. i18n: file ./misc/kwalletd/kwalletwizard.ui line 401
+#: rc.cpp:57
+#, no-c-format
+msgid ""
+"The KDE Wallet system allows you to control the level of security of your "
+"personal data.  Some of these settings do impact usability.  While the default "
+"settings are generally acceptable for most users, you may wish to change some "
+"of them.  You may further tune these settings from the KWallet control module."
+msgstr ""
+"KDE Cüzdan sistemi, kişisel verilerinizin güvenlik seviyesini kontrol etmenizi "
+"de sağlar. Bu ayarlardan bazıları sistemin kullanışlığına etki edebilir. "
+"Öntanımlı ayarlar pek çok kullanıcı için kabul edilebilir bir ortam sağlar. Tüm "
+"bu ayarları istendiği anda KWallet kontrol modülünden değiştirmek mümkündür."
+
+#. i18n: file ./misc/kwalletd/kwalletwizard.ui line 432
+#: rc.cpp:60
+#, no-c-format
+msgid "Store network passwords and local passwords in separate wallet files"
+msgstr "Ağ parolalarını ve yerel parolaları ayrı cüzdan dosyalarında sakla"
+
+#. i18n: file ./misc/kwalletd/kwalletwizard.ui line 440
+#: rc.cpp:63
+#, no-c-format
+msgid "Automatically close idle wallets"
+msgstr "Uzun süre kullanılmayan cüzdanları kapat"
+
+#. i18n: file ./misc/kwalletd/kbetterthankdialogbase.ui line 60
+#: rc.cpp:66
+#, no-c-format
+msgid "Allow &Once"
+msgstr "&Sadece Bir Kez İzin Ver"
+
+#. i18n: file ./misc/kwalletd/kbetterthankdialogbase.ui line 71
+#: rc.cpp:69
+#, no-c-format
+msgid "Allow &Always"
+msgstr "&Her Zaman İzin Ver"
+
+#. i18n: file ./misc/kwalletd/kbetterthankdialogbase.ui line 79
+#: rc.cpp:72
+#, no-c-format
+msgid "&Deny"
+msgstr "&Reddet"
+
+#. i18n: file ./misc/kwalletd/kbetterthankdialogbase.ui line 87
+#: rc.cpp:75
+#, no-c-format
+msgid "Deny &Forever"
+msgstr "&Her Zaman Reddet"
+
+#. i18n: file ./kfile/kpropertiesdesktopadvbase.ui line 27
+#: rc.cpp:78
+#, no-c-format
+msgid "Terminal"
+msgstr "Terminal"
+
+#. i18n: file ./kfile/kpropertiesdesktopadvbase.ui line 58
+#: rc.cpp:84
+#, no-c-format
+msgid ""
+"Check this option if the application you want to run is a text mode application "
+"or if you want the information that is provided by the terminal emulator "
+"window."
+msgstr ""
+"Eğer çalıştırmak istediğiniz uygulama, bir metin kipinde uygulama ise veya "
+"terminal emülatör penceresinde sağlanacak bilgiyi istiyorsanız bu seçeneği "
+"işaretleyin."
+
+#. i18n: file ./kfile/kpropertiesdesktopadvbase.ui line 80
+#: rc.cpp:93
+#, no-c-format
+msgid ""
+"Check this option if the text mode application offers relevant information on "
+"exit. Keeping the terminal emulator open allows you to retrieve this "
+"information."
+msgstr ""
+
+#. i18n: file ./kfile/kpropertiesdesktopadvbase.ui line 109
+#: rc.cpp:102
+#, fuzzy, no-c-format
+msgid ""
+"Check this option if you want to run this application with a different user id. "
+"Every process has a different user id associated with it. This id code "
+"determines file access and other permissions. The password of the user is "
+"required to use this option."
+msgstr ""
+"Eğer bu uygulamayı farklı bir kullanıcı kimliği ile çalıştırmak istiyorsanız bu "
+"seçeneği işaretleyin. Her süreç, onunla ilişkilendirilmiş farklı bir kullanıcı "
+"kimliğine sahip olacaktır. Bu kimlik, dosya erişimlerini ve diğer izinlerini "
+"belirleyecektir. Bu seçeneği kullanmak için kullanıcı parolası gerekecektir."
+
+#. i18n: file ./kfile/kpropertiesdesktopadvbase.ui line 140
+#: rc.cpp:108
+#, no-c-format
+msgid "Enter the user name you want to run the application as."
+msgstr "Bu uygulamayı çalıştıracağınız kullanıcının adını girin."
+
+#. i18n: file ./kfile/kpropertiesdesktopadvbase.ui line 148
+#: rc.cpp:111
+#, no-c-format
+msgid "Enter the user name you want to run the application as here."
+msgstr "Bu uygulamayı çalıştıracağınız kullanıcının adını girin."
+
+#. i18n: file ./kfile/kpropertiesdesktopadvbase.ui line 158
+#: rc.cpp:114
+#, no-c-format
+msgid "Startup"
+msgstr "Başlangıç"
+
+#. i18n: file ./kfile/kpropertiesdesktopadvbase.ui line 169
+#: rc.cpp:117
+#, no-c-format
+msgid "Enable &launch feedback"
+msgstr "Ç&alıştırma geribildirimini etkinleştir"
+
+#. i18n: file ./kfile/kpropertiesdesktopadvbase.ui line 172
+#: rc.cpp:120
+#, no-c-format
+msgid ""
+"Check this option if you want to make clear that your application has started. "
+"This visual feedback may appear as a busy cursor or in the taskbar."
+msgstr ""
+"Uygulamanızın başlatıldığını görünür hale getirmek için bu seçeneği "
+"işaretleyin. Bu görsel etkileşim, görev çubuğunda belirecek 'meşgul imleci' ile "
+"sağlanacaktır."
+
+#. i18n: file ./kfile/kpropertiesdesktopadvbase.ui line 180
+#: rc.cpp:123
+#, no-c-format
+msgid "&Place in system tray"
+msgstr "&Panel çubuğuna yerleştir"
+
+#. i18n: file ./kfile/kpropertiesdesktopadvbase.ui line 183
+#: rc.cpp:126
+#, fuzzy, no-c-format
+msgid ""
+"Check this option if you want to have a system tray handle for your "
+"application."
+msgstr ""
+"Uygulamanız için bir 'sistem izleme tutamak'ı sağlamak istiyorsanız bu seçeneği "
+"işaretleyin."
+
+#. i18n: file ./kfile/kpropertiesdesktopadvbase.ui line 191
+#: rc.cpp:129
+#, no-c-format
+msgid "&DCOP registration:"
+msgstr "&DCOP kaydı:"
+
+#. i18n: file ./kfile/kpropertiesdesktopadvbase.ui line 200
+#: rc.cpp:132
+#, no-c-format
+msgid "None"
+msgstr "Hiçbiri"
+
+#. i18n: file ./kfile/kpropertiesdesktopadvbase.ui line 205
+#: rc.cpp:135
+#, no-c-format
+msgid "Multiple Instances"
+msgstr "Farklı Gerçeklemeler"
+
+#. i18n: file ./kfile/kpropertiesdesktopadvbase.ui line 210
+#: rc.cpp:138
+#, no-c-format
+msgid "Single Instance"
+msgstr "Tek Gerçekleme"
+
+#. i18n: file ./kfile/kpropertiesdesktopadvbase.ui line 215
+#: rc.cpp:141
+#, no-c-format
+msgid "Run Until Finished"
+msgstr "Bitirinceye Kadar Çalıştır"
+
+#. i18n: file ./kfile/knotifywidgetbase.ui line 91
+#: rc.cpp:144
+#, no-c-format
+msgid "Events"
+msgstr "Olaylar"
+
+#. i18n: file ./kfile/knotifywidgetbase.ui line 117
+#: rc.cpp:147
+#, no-c-format
+msgid "Quick Controls"
+msgstr "Hızlı Kontroller"
+
+#. i18n: file ./kfile/knotifywidgetbase.ui line 128
+#: rc.cpp:150
+#, no-c-format
+msgid "Apply to &all applications"
+msgstr "Tüm programlara &uygula"
+
+#. i18n: file ./kfile/knotifywidgetbase.ui line 170
+#: rc.cpp:153
+#, no-c-format
+msgid "Turn O&ff All"
+msgstr "Hepsini &kapat"
+
+#. i18n: file ./kfile/knotifywidgetbase.ui line 173
+#: rc.cpp:156 rc.cpp:162
+#, no-c-format
+msgid "Allows you to change the behavior for all events at once"
+msgstr "Tüm olaylar için davranışı bir çırpıda değiştirmenize izin verir."
+
+#. i18n: file ./kfile/knotifywidgetbase.ui line 181
+#: rc.cpp:159
+#, no-c-format
+msgid "Turn O&n All"
+msgstr "Hepsini &aç"
+
+#. i18n: file ./kfile/knotifywidgetbase.ui line 215
+#: rc.cpp:168
+#, no-c-format
+msgid "Print a message to standard &error output"
+msgstr "&Standart hata çıktısına bir mesaj gönder"
+
+#. i18n: file ./kfile/knotifywidgetbase.ui line 223
+#: rc.cpp:171
+#, no-c-format
+msgid "Show a &message in a pop-up window"
+msgstr "&Küçük bir pencerede mesaj göster"
+
+#. i18n: file ./kfile/knotifywidgetbase.ui line 231
+#: rc.cpp:174
+#, no-c-format
+msgid "E&xecute a program:"
+msgstr "B&ir program çalıştır:"
+
+#. i18n: file ./kfile/knotifywidgetbase.ui line 247
+#: rc.cpp:177
+#, no-c-format
+msgid "Play a &sound:"
+msgstr "&Ses çal:"
+
+#. i18n: file ./kfile/knotifywidgetbase.ui line 258
+#: rc.cpp:180
+#, no-c-format
+msgid "Test the Sound"
+msgstr "Sesi Dene"
+
+#. i18n: file ./kfile/knotifywidgetbase.ui line 268
+#: rc.cpp:183
+#, no-c-format
+msgid "Mark &taskbar entry"
+msgstr "&Görev çubuğu girdisini işaretle"
+
+#. i18n: file ./kfile/knotifywidgetbase.ui line 276
+#: rc.cpp:186
+#, no-c-format
+msgid "&Log to a file:"
+msgstr "&Bir dosyaya kaydet:"
+
+#. i18n: file ./kfile/knotifywidgetbase.ui line 352
+#: rc.cpp:189
+#, no-c-format
+msgid "&Use a passive window that does not interrupt other work"
+msgstr "&Diğer işleri engellemeyen pasif bir pencere kullan"
+
+#. i18n: file ./kfile/knotifywidgetbase.ui line 378
+#: rc.cpp:192
+#, no-c-format
+msgid "Less Options"
+msgstr "Daha Az Seçenek"
+
+#. i18n: file ./kfile/knotifywidgetbase.ui line 406
+#: rc.cpp:195
+#, no-c-format
+msgid "Player Settings"
+msgstr "Oynatıcı Ayarları..."
+
+#. i18n: file ./kfile/kpropertiesmimetypebase.ui line 27
+#: rc.cpp:198
+#, no-c-format
+msgid "Select one or more file types to add:"
+msgstr "Eklenecek dosya türlerini seçin:"
+
+#. i18n: file ./kfile/kpropertiesmimetypebase.ui line 36
+#: rc.cpp:201 rc.cpp:219
+#, no-c-format
+msgid "Mimetype"
+msgstr "Mime türü"
+
+#. i18n: file ./kfile/kpropertiesmimetypebase.ui line 47
+#: rc.cpp:204 rc.cpp:222
+#, no-c-format
+msgid "Description"
+msgstr "Açıklama"
+
+#. i18n: file ./kfile/kpropertiesmimetypebase.ui line 61
+#: rc.cpp:207
+#, no-c-format
+msgid ""
+"<qt>"
+"<p>Select one or more types of file that your application can handle here. This "
+"list is organized by <u>mimetypes</u>.</p>\n"
+"<p>MIME, Multipurpose Internet (e)Mail Extension, is a standard protocol for "
+"identifying the type of data based on filename extensions and correspondent <u>"
+"mimetypes</u>. Example: the \"bmp\" part that comes after the dot in flower.bmp "
+"indicates that it is a specific kind of image, <u>image/x-bmp</u>"
+". To know which application should open each type of file, the system should be "
+"informed about the abilities of each application to handle these extensions and "
+"mimetypes.</p>"
+msgstr ""
+"<qt>"
+"<p> Uygulamanızın işlem yapacağı bir veya daha fazla dosya türünü "
+"buradaseçebilirsiniz. Bu liste <u>MIME-tipleri</u> tarafından yönetilir.</p>\n"
+"<p>MIME, Multipurpose Internet (e)Mail Extension, ( Çok Amaçlı İnternet e-Posta "
+"Uzantısı ) protokolü, dosya adı uzantıları ve  eşdeğer <u>mime-tipleri</u> "
+"temelinde, veri tiplerinin tanımlanması için oluşturulmuş yerleşik bir "
+"protokoldür.Örneğin: 'anadolu.bmp' dosya ismi içindeki, noktadan-sonra-gelen  "
+"\"bmp\" kısmı, bu dosyanın bir tür görüntü dosyası ( BitMap Image ) olduğunu "
+"belirtir. Bunun MIME anlatımı : <u>image/x-bmp</u> şeklinde olacaktır.Her bir "
+"dosya türü'nü hangi uygulamanın açıp-işleyeceğini bilmek için, sisteminiz, "
+"uygulamaların bu uzantıları ve mime-tip'lerini ele alma - işleme yetenekleri "
+"hakkında bilgilendirilmiş olmalıdır.</p>"
+
+#. i18n: file ./kfile/kpropertiesdesktopbase.ui line 44
+#: rc.cpp:211
+#, no-c-format
+msgid "&Supported file types:"
+msgstr "&Desteklenen dosya türleri:"
+
+#. i18n: file ./kfile/kpropertiesdesktopbase.ui line 52
+#: rc.cpp:214 rc.cpp:225
+#, no-c-format
+msgid ""
+"<qt>"
+"<p>This list should show the types of file that your application can handle. "
+"This list is organized by <u>mimetypes</u>.</p>\n"
+"<p>MIME, Multipurpose Internet (e)Mail Extension, is a standard protocol for "
+"identifying the type of data based on filename extensions and correspondent <u>"
+"mimetypes</u>. Example: the \"bmp\" part that comes after the dot in flower.bmp "
+"indicates that it is a specific kind of image, <u>image/x-bmp</u>"
+". To know which application should open each type of file, the system should be "
+"informed about the abilities of each application to handle these extensions and "
+"mimetypes.</p>\n"
+"<p>If you want to associate this application with one or more mimetypes that "
+"are not in this list, click on the button <b>Add</b> "
+"below. If there are one or more filetypes that this application cannot handle, "
+"you may want to remove them from the list clicking on the button <b>Remove</b> "
+"below.</p></qt>"
+msgstr ""
+"<qt>"
+"<p> Uygulamanızın işlem yapacağı bir veya daha fazla dosya türünü "
+"buradaseçebilirsiniz. Bu liste <u>MIME-tipleri</u> tarafından yönetilir.</p>\n"
+"<p>MIME, Multipurpose Internet (e)Mail Extension, ( Çok Amaçlı İnternet e-Posta "
+"Uzantısı ) protokolü, dosya adı uzantıları ve  eşdeğer <u>mime-tipleri</u> "
+"temelinde, veri tiplerinin tanımlanması için oluşturulmuş yerleşik bir "
+"protokoldür.Örneğin: 'anadolu.bmp' dosya ismi içindeki, noktadan-sonra-gelen  "
+"\"bmp\" kısmı, bu dosyanın bir tür görüntü dosyası ( BitMap Image ) olduğunu "
+"belirtir. Bunun MIME anlatımı : <u>image/x-bmp</u> şeklinde olacaktır.Her bir "
+"dosya türü'nü hangi uygulamanın açıp-işleyeceğini bilmek için, sisteminiz, "
+"uygulamaların bu uzantıları ve mime-tip'lerini ele alma - işleme yetenekleri "
+"hakkında bilgilendirilmiş olmalıdır.</p> "
+"<p>Eğer uygulamayı bu listede bulunmayan bir veya daha fazla mime-türü ile "
+"ilişkilendirmek isterseniz  <b>Ekle</b>, ilişkiyi kaldırmak için <b>Sil</b>.</p>"
+"</qt>"
+
+#. i18n: file ./kfile/kpropertiesdesktopbase.ui line 103
+#: rc.cpp:230
+#, no-c-format
+msgid "&Name:"
+msgstr "&İsim:"
+
+#. i18n: file ./kfile/kpropertiesdesktopbase.ui line 109
+#: rc.cpp:233 rc.cpp:236
+#, no-c-format
+msgid ""
+"Type the name you want to give to this application here. This application will "
+"appear under this name in the applications menu and in the panel."
+msgstr ""
+"Uygulamaya vermek istediğiniz adı yazın. Uygulamalar menüsünde ve panel'de , "
+"uygulamanız verdiğiniz bu isim ile görüntülenecektir."
+
+#. i18n: file ./kfile/kpropertiesdesktopbase.ui line 131
+#: rc.cpp:242 rc.cpp:245
+#, no-c-format
+msgid ""
+"Type the description of this application, based on its use, here. Examples: a "
+"dial up application (KPPP) would be \"Dial up tool\"."
+msgstr ""
+"Bu uygulama hakkında,kullanımına uyar şekilde bir açıklama yazın. Örn: "
+"Çevirmeli Ağ Uygulaması (KPPP) için \"İnternete Bağlantım\"."
+
+#. i18n: file ./kfile/kpropertiesdesktopbase.ui line 147
+#: rc.cpp:248
+#, no-c-format
+msgid "Comm&ent:"
+msgstr "&Açıklama:"
+
+#. i18n: file ./kfile/kpropertiesdesktopbase.ui line 153
+#: rc.cpp:251 rc.cpp:254
+#, no-c-format
+msgid "Type any comment you think is useful here."
+msgstr "İhtiyaç duyabileceğiniz herhangi bir açıklamayı buraya yazın."
+
+#. i18n: file ./kfile/kpropertiesdesktopbase.ui line 169
+#: rc.cpp:257
+#, no-c-format
+msgid "Co&mmand:"
+msgstr "&Komut:"
+
+#. i18n: file ./kfile/kpropertiesdesktopbase.ui line 186
+#: rc.cpp:260 rc.cpp:274
+#, no-c-format
+msgid ""
+"Type the command to start this application here.\n"
+"\n"
+"Following the command, you can have several place holders which will be "
+"replaced with the actual values when the actual program is run:\n"
+"%f - a single file name\n"
+"%F - a list of files; use for applications that can open several local files at "
+"once\n"
+"%u - a single URL\n"
+"%U - a list of URLs\n"
+"%d - the directory of the file to open\n"
+"%D - a list of directories\n"
+"%i - the icon\n"
+"%m - the mini-icon\n"
+"%c - the caption"
+msgstr ""
+"Bu uygulamayı başlatma komutunu buraya yazın:\n"
+"\n"
+"Aşağıdaki komutlar ile, güncel program çalıştığında asıl değerleri ile "
+"değiştirilecek çeşitli yer-tutuculara sahip olabilirsiniz :\n"
+"%f - bir tek dosya adı\n"
+"%F - bir dosya listesi; bir kerede birçok dosya açabilen uygulamalar için\n"
+"%u - bir tek URL\n"
+"%U - a URL listesi\n"
+"%d - açılacak dosyanın dizin'i\n"
+"%D - dizinler listesi\n"
+"%i - simge\n"
+"%m - mini-simge\n"
+"%c - başlık"
+
+#. i18n: file ./kfile/kpropertiesdesktopbase.ui line 216
+#: rc.cpp:291
+#, no-c-format
+msgid ""
+"Click here to browse your file system in order to find the desired executable."
+msgstr ""
+"İstenen programı bulmak için dosya sistemini aramak amacıyla buraya "
+"tıklayabilirsiniz."
+
+#. i18n: file ./kfile/kpropertiesdesktopbase.ui line 224
+#: rc.cpp:294
+#, no-c-format
+msgid "&Work path:"
+msgstr "Ça&lışma yolu:"
+
+#. i18n: file ./kfile/kpropertiesdesktopbase.ui line 230
+#: rc.cpp:297 rc.cpp:300
+#, no-c-format
+msgid "Sets the working directory for your application."
+msgstr "Uygulamanızın çalışma dizinini ayarlar."
+
+#. i18n: file ./kfile/kpropertiesdesktopbase.ui line 246
+#: rc.cpp:303
+#, no-c-format
+msgid "Add..."
+msgstr "Ekle..."
+
+#. i18n: file ./kfile/kpropertiesdesktopbase.ui line 249
+#: rc.cpp:306
+#, no-c-format
+msgid ""
+"Click on this button if you want to add a type of file (mimetype) that your "
+"application can handle."
+msgstr ""
+"Uygulamanızın işleyebileceği bir dosya tipi ( mime-tipi ) eklemek istiyorsanız "
+"bu düğmeye tıklayın."
+
+#. i18n: file ./kfile/kpropertiesdesktopbase.ui line 277
+#: rc.cpp:312
+#, no-c-format
+msgid ""
+"If you want to remove a type of file (mimetype) that your application cannot "
+"handle, select the mimetype in the list above and click on this button."
+msgstr ""
+"Uygulamanızın işleyemeyeceği bir dosya tipi ( mime-tipi ) ni silmek için "
+"yukarıdaki listeden bir mime-tipi seçin ve bu düğmeye tıklayın"
+
+#. i18n: file ./kfile/kpropertiesdesktopbase.ui line 302
+#: rc.cpp:315
+#, no-c-format
+msgid "Ad&vanced Options"
+msgstr "&Gelişmiş Seçenekler"
+
+#. i18n: file ./kfile/kpropertiesdesktopbase.ui line 305
+#: rc.cpp:318
+#, no-c-format
+msgid ""
+"Click here to modify the way this application will run, launch feedback, DCOP "
+"options or to run it as a different user."
+msgstr ""
+
+#: ../kioslave/http/http.cc:5155 kpasswdserver/kpasswdserver.cpp:346
+msgid "  Do you want to retry?"
+msgstr "  Yeniden denemek istiyor musunuz?"
+
+#: ../kioslave/http/http.cc:5156 kpasswdserver/kpasswdserver.cpp:348
+msgid "Authentication"
+msgstr "Yetki Denetimi"
+
+#: kpasswdserver/kpasswdserver.cpp:348
+msgid "Retry"
+msgstr "Yeniden dene"
+
+#: httpfilter/httpfilter.cc:278
+msgid "Unexpected end of data, some information may be lost."
+msgstr "Beklenmeyen veri sonu. Bazı bilgiler kaybolmuş olabilir."
+
+#: httpfilter/httpfilter.cc:335
+msgid "Receiving corrupt data."
+msgstr "Bozulmuş veri alınıyor."
+
+#: bookmarks/kbookmarkimporter_ns.cc:110 bookmarks/kbookmarkimporter_ns.cc:113
+msgid "*.html|HTML Files (*.html)"
+msgstr "*.html|HTML Dosyaları (*.html)"
+
+#: bookmarks/kbookmarkimporter_ns.cc:197
+msgid "<!-- This file was generated by Konqueror -->"
+msgstr "<!-- Bu dosya Konqueror tarafından oluşturulmuştur -->"
+
+#: bookmarks/kbookmarkimporter_opera.cc:110
+#: bookmarks/kbookmarkimporter_opera.cc:113
+msgid "*.adr|Opera Bookmark Files (*.adr)"
+msgstr "*.adr|Opera Yer İmleri Dosyaları (*.adr)"
+
+#: bookmarks/kbookmarkmenu.cc:506 bookmarks/kbookmarkmenu_p.h:146
+msgid "Add Bookmark"
+msgstr "Yer İmi Ekle"
+
+#: bookmarks/kbookmarkmenu.cc:259
+msgid "Add Bookmark Here"
+msgstr "Buraya Yer İmi Ekle"
+
+#: bookmarks/kbookmarkmenu.cc:276
+msgid "Open Folder in Bookmark Editor"
+msgstr "Dizini Yer İmleri Düzenleyicisinde Aç"
+
+#: bookmarks/kbookmarkmenu.cc:279
+msgid "Delete Folder"
+msgstr "Dizini Sil"
+
+#: bookmarks/kbookmarkmenu.cc:287
+msgid "Copy Link Address"
+msgstr "Bağlantı Adresini Kopyala"
+
+#: bookmarks/kbookmarkmenu.cc:290
+msgid "Delete Bookmark"
+msgstr "Yer İmini Sil"
+
+#: bookmarks/kbookmarkmenu.cc:318
+msgid "Bookmark Properties"
+msgstr "Yer İmi Özellikleri"
+
+#: bookmarks/kbookmarkmanager.cc:506 bookmarks/kbookmarkmenu.cc:343
+msgid "Cannot add bookmark with empty URL."
+msgstr "Boş bir adres yer imlerine eklenemez."
+
+#: bookmarks/kbookmarkmenu.cc:381
+msgid ""
+"Are you sure you wish to remove the bookmark folder\n"
+"\"%1\"?"
+msgstr ""
+"Gerçekten bu yer imi klasörünü silmek istiyor musunuz?\n"
+"\"%1\""
+
+#: bookmarks/kbookmarkmenu.cc:382
+msgid ""
+"Are you sure you wish to remove the bookmark\n"
+"\"%1\"?"
+msgstr ""
+"Gerçekten bu yer imini silmek istiyor musunuz?\n"
+"\"%1\""
+
+#: bookmarks/kbookmarkmenu.cc:383
+msgid "Bookmark Folder Deletion"
+msgstr "Yer İmi Dizini Silinmesi"
+
+#: bookmarks/kbookmarkmenu.cc:384
+msgid "Bookmark Deletion"
+msgstr "Yer İmi Silinmesi"
+
+#: bookmarks/kbookmarkmenu.cc:486
+msgid "Bookmark Tabs as Folder..."
+msgstr "Sekmeleri Yer İmlerine Ekle..."
+
+#: bookmarks/kbookmarkmenu.cc:495
+msgid "Add a folder of bookmarks for all open tabs."
+msgstr "Tüm açık sekmeler için bir yer imi klasörü ekle."
+
+#: bookmarks/kbookmarkmenu.cc:515
+msgid "Add a bookmark for the current document"
+msgstr "Güncel belge için yer imi ekle"
+
+#: bookmarks/kbookmarkmenu.cc:529
+msgid "Edit your bookmark collection in a separate window"
+msgstr "Ayrı bir pencerede yer imlerini düzenle"
+
+#: bookmarks/kbookmarkmenu.cc:538
+msgid "&New Bookmark Folder..."
+msgstr "&Yeni Yer İmi Dizini..."
+
+#: bookmarks/kbookmarkmenu.cc:550
+msgid "Create a new bookmark folder in this menu"
+msgstr "Bu menü içinde yeni bir yer imi dizini aç"
+
+#: bookmarks/kbookmarkmenu.cc:684
+msgid "Quick Actions"
+msgstr "Hızlı Eylemler"
+
+#: bookmarks/kbookmarkmenu.cc:831
+msgid "&New Folder..."
+msgstr "&Yeni Dizin..."
+
+#: bookmarks/kbookmarkmenu.cc:948
+msgid "Bookmark"
+msgstr "Yer İmi"
+
+#: bookmarks/kbookmarkmenu.cc:1115
+msgid "Netscape Bookmarks"
+msgstr "Netscape Yer İmleri"
+
+#: bookmarks/kbookmark.cc:117
+msgid "Create New Bookmark Folder"
+msgstr "Yeni Yer İmi Dizini Oluştur"
+
+#: bookmarks/kbookmark.cc:118
+#, c-format
+msgid "Create New Bookmark Folder in %1"
+msgstr "%1 İçinde Yeni Yer İmi Dizini Oluştur"
+
+#: bookmarks/kbookmark.cc:120
+msgid "New folder:"
+msgstr "Yeni dizin:"
+
+#: bookmarks/kbookmark.cc:286
+msgid "--- separator ---"
+msgstr "--- ayraç ---"
+
+#: bookmarks/kbookmarkmanager.cc:365
+msgid ""
+"Unable to save bookmarks in %1. Reported error was: %2. This error message will "
+"only be shown once. The cause of the error needs to be fixed as quickly as "
+"possible, which is most likely a full hard drive."
+msgstr ""
+"Yer imleri %1 dosyasına kaydedilemedi. Oluşan hata: %2. Bu hata mesajı sadece "
+"bir kere gösterilir. Bu hatanın olabildiğince çabuk çözülmesi gerekir. "
+"Diskinizde yer kalmamış gibi görünüyor."
+
+#: ../kioslave/ftp/ftp.cc:451
+#, c-format
+msgid "Opening connection to host %1"
+msgstr "%1 makinesine bağlantı kuruluyor"
+
+#: ../kioslave/ftp/ftp.cc:469
+#, c-format
+msgid "Connected to host %1"
+msgstr "%1 bilgisayarına bağlanıldı"
+
+#: ../kioslave/ftp/ftp.cc:518
+msgid ""
+"%1.\n"
+"\n"
+"Reason: %2"
+msgstr ""
+"%1.\n"
+"\n"
+"Neden: %2"
+
+#: ../kioslave/ftp/ftp.cc:541
+msgid "Sending login information"
+msgstr "Giriş bilgileri gönderiliyor"
+
+#: ../kioslave/ftp/ftp.cc:588
+msgid ""
+"Message sent:\n"
+"Login using username=%1 and password=[hidden]\n"
+"\n"
+"Server replied:\n"
+"%2\n"
+"\n"
+msgstr ""
+"İleti gönderildi:\n"
+"Kullanıcı adı=%1 ve parola=[gizli] ile sisteme girildi\n"
+"\n"
+"Sunucudan gelen cevap:\n"
+"%2\n"
+"\n"
+
+#: ../kioslave/ftp/ftp.cc:596 ../kioslave/http/http.cc:5167
+msgid "You need to supply a username and a password to access this site."
+msgstr "Bu adrese girmek için bir kullanıcı adı ve parolası vermelisiniz."
+
+#: ../kioslave/ftp/ftp.cc:598 ../kioslave/http/http.cc:5175
+msgid "Site:"
+msgstr "Adres:"
+
+#: ../kioslave/ftp/ftp.cc:599
+msgid "<b>%1</b>"
+msgstr "<b>%1</b>"
+
+#: ../kioslave/ftp/ftp.cc:662
+msgid "Login OK"
+msgstr "Giriş onaylandı"
+
+#: ../kioslave/ftp/ftp.cc:691
+#, c-format
+msgid "Could not login to %1."
+msgstr "%1 adresine girilemedi."
+
+#: ../kioslave/file/file.cc:564 ../kioslave/file/file.cc:798
+#, c-format
+msgid ""
+"Could not change permissions for\n"
+"%1"
+msgstr ""
+"%1 dosyası için\n"
+"izinler değiştirilemiyor"
+
+#: ../kioslave/file/file.cc:730
+msgid "Cannot copy file from %1 to %2. (Errno: %3)"
+msgstr "Dosya %1 konumundan %2 konumuna kopyalanamadı. (Hata no: %3)"
+
+#: ../kioslave/file/file.cc:1209
+#, c-format
+msgid "No media in device for %1"
+msgstr "%1 için aygıtta medya bulunamadı"
+
+#: ../kioslave/file/file.cc:1375
+msgid "No Media inserted or Media not recognized."
+msgstr "Ortam takılmadı ya da tanınmadı."
+
+#: ../kioslave/file/file.cc:1385 ../kioslave/file/file.cc:1591
+msgid "\"vold\" is not running."
+msgstr "\"vold\" çalışmıyor."
+
+#: ../kioslave/file/file.cc:1419
+msgid "Could not find program \"mount\""
+msgstr "\"mount\" programı bulunamadı"
+
+#: ../kioslave/file/file.cc:1604
+msgid "Could not find program \"umount\""
+msgstr "\"umount\" programı bulunamadı"
+
+#: ../kioslave/file/file.cc:1709
+#, c-format
+msgid "Could not read %1"
+msgstr "%1 okunamadı"
+
+#: ../kioslave/http/http_cache_cleaner.cpp:53
+#: ../kioslave/http/http_cache_cleaner.cpp:194
+msgid "KDE HTTP cache maintenance tool"
+msgstr "KDE HTTP önbellek destekleme aracı"
+
+#: ../kioslave/http/http_cache_cleaner.cpp:59
+msgid "Empty the cache"
+msgstr "Önbelleği boşalt"
+
+#: ../kioslave/http/kcookiejar/main.cpp:30
+msgid "HTTP Cookie Daemon"
+msgstr "HTTP Çerez Servisi"
+
+#: ../kioslave/http/kcookiejar/main.cpp:36
+msgid "Shut down cookie jar"
+msgstr "Çerez jar uygulamasını kapat"
+
+#: ../kioslave/http/kcookiejar/main.cpp:37
+msgid "Remove cookies for domain"
+msgstr "Bu alan için tüm çerezleri kaldır"
+
+#: ../kioslave/http/kcookiejar/main.cpp:38
+msgid "Remove all cookies"
+msgstr "Tüm çerezleri kaldır"
+
+#: ../kioslave/http/kcookiejar/main.cpp:39
+msgid "Reload configuration file"
+msgstr "Yapılandırma dosyasını yeniden yükle"
+
+#: ../kioslave/http/kcookiejar/main.cpp:46
+msgid "HTTP cookie daemon"
+msgstr "HTTP çerez programı"
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:80
+msgid "Cookie Alert"
+msgstr "Çerez Alarmı"
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:112
+#, c-format
+msgid ""
+"_n: You received a cookie from\n"
+"You received %n cookies from"
+msgstr "Şu makinadan %n çerez aldınız:"
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:129
+msgid " <b>[Cross Domain!]</b>"
+msgstr " <b>[Cross Domain!]</b>"
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:132
+msgid "Do you want to accept or reject?"
+msgstr "Kabul mü, yoksa red mi edeceksiniz?"
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:143
+msgid "Apply Choice To"
+msgstr "Seçimi Uygula"
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:146
+msgid "&Only this cookie"
+msgstr "&Sadece bu çerez"
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:146
+msgid "&Only these cookies"
+msgstr "&Sadece bu çerezler"
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:149
+msgid ""
+"Select this option to accept/reject only this cookie. You will be prompted if "
+"another cookie is received. <em>(see WebBrowsing/Cookies in the Control "
+"Center)</em>."
+msgstr ""
+"Sadece bu çerezi kabul etmek ya da reddetmek için bu seçeneği tıklayın. "
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:154
+msgid "All cookies from this do&main"
+msgstr "Bu &alandan gelen tüm çerezler"
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:156
+#, fuzzy
+msgid ""
+"Select this option to accept/reject all cookies from this site. Choosing this "
+"option will add a new policy for the site this cookie originated from. This "
+"policy will be permanent until you manually change it from the Control Center "
+"<em>(see WebBrowsing/Cookies in the Control Center)</em>."
+msgstr ""
+"Bu adresten gelebilecek tüm çerezleri kabul etmek ya da reddetmek için bu "
+"düğmeyi tıklayın."
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:163
+msgid "All &cookies"
+msgstr "Tüm ç&erezler"
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:165
+msgid ""
+"Select this option to accept/reject all cookies from anywhere. Choosing this "
+"option will change the global cookie policy set in the Control Center for all "
+"cookies <em>(see WebBrowsing/Cookies in the Control Center)</em>."
+msgstr ""
+"Her yerden tüm çerezleri kabul etmek ya da reddetmek için bu düğmeyi tıklayın."
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:182
+msgid "&Accept"
+msgstr "&Kabul et"
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:187
+msgid "&Reject"
+msgstr "&Reddet"
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:197
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:228
+msgid "&Details <<"
+msgstr "&Ayrıntılar <<"
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:197
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:220
+msgid "&Details >>"
+msgstr "&Ayrıntılar >>"
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:201
+msgid "See or modify the cookie information"
+msgstr "Detaylı çerez bilgisini gör/değiştir"
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:263
+msgid "Cookie Details"
+msgstr "Çerez Detayları"
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:278
+msgid "Value:"
+msgstr "Değer:"
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:285
+msgid "Expires:"
+msgstr "Sonlanma tarihi:"
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:292
+msgid "Path:"
+msgstr "Yol:"
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:299
+msgid "Domain:"
+msgstr "Alan:"
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:306
+msgid "Exposure:"
+msgstr "Açıklık:"
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:315
+msgid ""
+"_: Next cookie\n"
+"&Next >>"
+msgstr "&İleri >>"
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:320
+msgid "Show details of the next cookie"
+msgstr "Sonraki çerez bilgilerini göster"
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:353
+msgid "Not specified"
+msgstr "Belirtilmemiş"
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:362
+msgid "End of Session"
+msgstr "Oturum Sonu"
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:367
+msgid "Secure servers only"
+msgstr "Sadece güvenli sunucular"
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:369
+msgid "Secure servers, page scripts"
+msgstr "Güvenli sunucular, sayfa betikleri"
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:374
+msgid "Servers"
+msgstr "Sunucular"
+
+#: ../kioslave/http/kcookiejar/kcookiewin.cpp:376
+msgid "Servers, page scripts"
+msgstr "Sunucular, sayfa betikleri"
+
+#: ../kioslave/http/http.cc:467
+msgid "No host specified."
+msgstr "Hiç makina adı belirtilmemiş."
+
+#: ../kioslave/http/http.cc:1553
+msgid "Otherwise, the request would have succeeded."
+msgstr "Belirtilseydi, istek başarılı olacaktı."
+
+#: ../kioslave/http/http.cc:1557
+msgid "retrieve property values"
+msgstr "özellik değerlerini al"
+
+#: ../kioslave/http/http.cc:1560
+msgid "set property values"
+msgstr "özellik değerlerini tanımla"
+
+#: ../kioslave/http/http.cc:1563
+msgid "create the requested folder"
+msgstr "belirtilen dizini oluştur"
+
+#: ../kioslave/http/http.cc:1566
+msgid "copy the specified file or folder"
+msgstr "belirtilen dizin ya da dosyayı kopyala"
+
+#: ../kioslave/http/http.cc:1569
+msgid "move the specified file or folder"
+msgstr "belirtilen dizin ya da dosyayı taşı"
+
+#: ../kioslave/http/http.cc:1572
+msgid "search in the specified folder"
+msgstr "belirtilen dizinde ara"
+
+#: ../kioslave/http/http.cc:1575
+msgid "lock the specified file or folder"
+msgstr "belirtilen dizin ya da dosyayı kilitile"
+
+#: ../kioslave/http/http.cc:1578
+msgid "unlock the specified file or folder"
+msgstr "belirtilen dizin ya da dosyanın kilidini aç"
+
+#: ../kioslave/http/http.cc:1581
+msgid "delete the specified file or folder"
+msgstr "belirtilen dizin ya da dosyayı sil"
+
+#: ../kioslave/http/http.cc:1584
+msgid "query the server's capabilities"
+msgstr "Sunucunun özelliklerini kontrol et"
+
+#: ../kioslave/http/http.cc:1587
+msgid "retrieve the contents of the specified file or folder"
+msgstr "belirtilen dizin ya da dosyanın içeriğini al"
+
+#: ../kioslave/http/http.cc:1599 ../kioslave/http/http.cc:1752
+msgid "An unexpected error (%1) occurred while attempting to %2."
+msgstr "%2 için çalışıştırılırken beklenmedik bir hata (%1) oluştu."
+
+#: ../kioslave/http/http.cc:1607
+msgid "The server does not support the WebDAV protocol."
+msgstr "Sunucu WebDAV protokolünü desteklemiyor."
+
+#: ../kioslave/http/http.cc:1648
+msgid ""
+"An error occurred while attempting to %1, %2. A summary of the reasons is "
+"below."
+"<ul>"
+msgstr ""
+"%1, %2 işlemi sırasında hata. Bu hata ile ilgili bir özet bilgi aşağıda "
+"verilmiştir."
+"<ul>"
+
+#: ../kioslave/http/http.cc:1660 ../kioslave/http/http.cc:1763
+#, c-format
+msgid "Access was denied while attempting to %1."
+msgstr "%1: İşlem yapılırken erişim reddedildi."
+
+#: ../kioslave/http/http.cc:1667
+msgid "The specified folder already exists."
+msgstr "Belirtilen dizin zaten var."
+
+#: ../kioslave/http/http.cc:1673 ../kioslave/http/http.cc:1768
+msgid ""
+"A resource cannot be created at the destination until one or more intermediate "
+"collections (folders) have been created."
+msgstr ""
+
+#: ../kioslave/http/http.cc:1682
+#, c-format
+msgid ""
+"The server was unable to maintain the liveness of the properties listed in the "
+"propertybehavior XML element or you attempted to overwrite a file while "
+"requesting that files are not overwritten. %1"
+msgstr ""
+
+#: ../kioslave/http/http.cc:1692
+#, c-format
+msgid "The requested lock could not be granted. %1"
+msgstr "İstenen kilit tamamlanamadı: %1"
+
+#: ../kioslave/http/http.cc:1698
+msgid "The server does not support the request type of the body."
+msgstr "Bu istek talebini sunucu anlamadı."
+
+#: ../kioslave/http/http.cc:1703 ../kioslave/http/http.cc:1775
+msgid "Unable to %1 because the resource is locked."
+msgstr "Kaynak kilitli. '%1' işlemi sırasında hata"
+
+#: ../kioslave/http/http.cc:1707
+msgid "This action was prevented by another error."
+msgstr "Bu eylem başka bir hata nedeniyle engellendi."
+
+#: ../kioslave/http/http.cc:1714 ../kioslave/http/http.cc:1780
+msgid ""
+"Unable to %1 because the destination server refuses to accept the file or "
+"folder."
+msgstr "%1: İşlem yapılamadı, çünkü "
+
+#: ../kioslave/http/http.cc:1721 ../kioslave/http/http.cc:1786
+msgid ""
+"The destination resource does not have sufficient space to record the state of "
+"the resource after the execution of this method."
+msgstr ""
+
+#: ../kioslave/http/http.cc:1743
+#, c-format
+msgid "upload %1"
+msgstr "Gönder: %1"
+
+#: ../kioslave/http/http.cc:2062
+msgid "Connecting to %1..."
+msgstr "%1 adresine bağlantı kuruluyor..."
+
+#: ../kioslave/http/http.cc:2080 ../kioslave/http/http.cc:2084
+msgid "Proxy %1 at port %2"
+msgstr "Vekil sunucu %1, port %2"
+
+#: ../kioslave/http/http.cc:2110
+msgid "Connection was to %1 at port %2"
+msgstr "%1 konumuna %2 portundan bağlıydı"
+
+#: ../kioslave/http/http.cc:2116
+msgid "%1 (port %2)"
+msgstr "%1 (%2. port)"
+
+#: ../kioslave/http/http.cc:2640
+msgid "%1 contacted. Waiting for reply..."
+msgstr "%1 ile bağlantı kuruldu. Cevap bekleniyor..."
+
+#: ../kioslave/http/http.cc:3008
+msgid "Server processing request, please wait..."
+msgstr "Sunucu isteği işliyor, lütfen bekleyiniz..."
+
+#: ../kioslave/http/http.cc:3884
+msgid "Requesting data to send"
+msgstr "Gönderilecek veri alınıyor"
+
+#: ../kioslave/http/http.cc:3925
+#, c-format
+msgid "Sending data to %1"
+msgstr "%1 adresine veri gönderiliyor"
+
+#: ../kioslave/http/http.cc:4344
+msgid "Retrieving %1 from %2..."
+msgstr "%2 adresinden %1 alınıyor..."
+
+#: ../kioslave/http/http.cc:4353
+msgid "Retrieving from %1..."
+msgstr "%1 adresinden alınıyor..."
+
+#: ../kioslave/http/http.cc:5147 ../kioslave/http/http.cc:5295
+msgid "Authentication Failed."
+msgstr "Yetki Denetimi Başarısız."
+
+#: ../kioslave/http/http.cc:5150 ../kioslave/http/http.cc:5298
+msgid "Proxy Authentication Failed."
+msgstr "Vekil Sunucu Yetki Denetimi Başarısız."
+
+#: ../kioslave/http/http.cc:5176 ../kioslave/http/http.cc:5193
+msgid "<b>%1</b> at <b>%2</b>"
+msgstr "<b>%1</b>, <b>%2</b>"
+
+#: ../kioslave/http/http.cc:5183
+msgid ""
+"You need to supply a username and a password for the proxy server listed below "
+"before you are allowed to access any sites."
+msgstr ""
+"Herhangi bir siteye girmeden önce aşağıda listelenen vekil sunucular için bir "
+"kullanıcı adı ve parola girmelisiniz."
+
+#: ../kioslave/http/http.cc:5192
+msgid "Proxy:"
+msgstr "Vekil sunucu:"
+
+#: ../kioslave/http/http.cc:5214
+msgid "Authentication needed for %1 but authentication is disabled."
+msgstr "%1 için yetki denetimi gerekli fakat denetim etkisizleştirilmiş."
+
+#: ../kioslave/http/http.cc:5836
+msgid ""
+"Unsupported method: authentication will fail. Please submit a bug report."
+msgstr ""
+"Desteklenmeyen yöntem: yetki denetiminde hata. Lütfen bir hata raporu gönderin."
+
+#: ../kioslave/metainfo/metainfo.cpp:99
+#, c-format
+msgid "No metainfo for %1"
+msgstr "%1 için bilgi bulunamadı"

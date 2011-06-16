@@ -1,0 +1,390 @@
+# translation of kedit.po to Türkçe
+# translation of kedit.po to Turkish
+# Copyright (C) 2000,2003, 2004 Free Software Foundation, Inc.
+# Mehmet TARIMCI <mehmet@gelecek.com.tr>, 2000.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Engin Çağatay <engincagatay@yahoo.com>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kedit\n"
+"POT-Creation-Date: 2008-07-08 01:19+0200\n"
+"PO-Revision-Date: 2004-11-20 06:40+0200\n"
+"Last-Translator: Engin Çağatay <engincagatay@yahoo.com>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.3\n"
+
+#. i18n: file color.ui line 66
+#: rc.cpp:6
+#, no-c-format
+msgid "Use &custom colors"
+msgstr "Özel renkler &kullan"
+
+#. i18n: file color.ui line 77
+#: rc.cpp:9
+#, no-c-format
+msgid "&Foreground color:"
+msgstr "Önplan r&engi:"
+
+#. i18n: file color.ui line 91
+#: rc.cpp:12
+#, no-c-format
+msgid "&Background color:"
+msgstr "&Arkaplan rengi:"
+
+#. i18n: file misc.ui line 27
+#: rc.cpp:15
+#, no-c-format
+msgid "&Word wrap:"
+msgstr "Sözcük Ka&ydır:"
+
+#. i18n: file misc.ui line 49
+#: rc.cpp:18
+#, no-c-format
+msgid "Make &backup when saving a file"
+msgstr "&Dosya kaydedildiğinde yedeğini al"
+
+#. i18n: file misc.ui line 58
+#: rc.cpp:21
+#, no-c-format
+msgid "Disable Wrapping"
+msgstr "Sarmayı İptal Et"
+
+#. i18n: file misc.ui line 63
+#: rc.cpp:24
+#, no-c-format
+msgid "Soft Wrapping"
+msgstr "Yumuşak Sarma"
+
+#. i18n: file misc.ui line 68
+#: rc.cpp:27
+#, no-c-format
+msgid "At Specified Column"
+msgstr "Belirtilen Sütunda"
+
+#. i18n: file misc.ui line 100
+#: rc.cpp:30
+#, no-c-format
+msgid "Wrap &column:"
+msgstr "Sütu&na yay:"
+
+#. i18n: file kedit.kcfg line 16
+#: rc.cpp:36
+#, no-c-format
+msgid "Use custom colors."
+msgstr "Özel renkler kullan."
+
+#. i18n: file kedit.kcfg line 20
+#: rc.cpp:39
+#, no-c-format
+msgid "Text color"
+msgstr "Metin rengi"
+
+#. i18n: file kedit.kcfg line 24
+#: rc.cpp:42
+#, no-c-format
+msgid "Background color"
+msgstr "Arkaplan rengi"
+
+#. i18n: file kedit.kcfg line 28
+#: rc.cpp:45
+#, no-c-format
+msgid "Wrapping mode"
+msgstr "Yayma modu"
+
+#. i18n: file kedit.kcfg line 37
+#: rc.cpp:48
+#, no-c-format
+msgid "Wrap at column"
+msgstr "Sütuna yay"
+
+#. i18n: file kedit.kcfg line 41
+#: rc.cpp:51
+#, no-c-format
+msgid "Make backup when saving a file"
+msgstr "Dosya kaydedilirken yedeğini al"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Serdar Cevher"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "serdar@linuxtr.com"
+
+#: kedit.cpp:220
+msgid "&Insert File..."
+msgstr "&Dosya Ekle..."
+
+#: kedit.cpp:222
+msgid "In&sert Date"
+msgstr "&Tarih Ekle"
+
+#: kedit.cpp:224
+msgid "Cl&ean Spaces"
+msgstr "&Boşlukları Temizle "
+
+#: kedit.cpp:239
+msgid "OVR"
+msgstr "OVR"
+
+#: kedit.cpp:240
+msgid "Line:000000 Col: 000"
+msgstr "Satır:000000 Sütun: 000"
+
+#: kedit.cpp:246
+msgid "Line: 1 Col: 1"
+msgstr "Satır: 1 Sütun: 1"
+
+#: kedit.cpp:247
+msgid "INS"
+msgstr "INS"
+
+#: kedit.cpp:390
+msgid "Spellcheck:  Started."
+msgstr "Dilbilgisi kontrolu: Başladı."
+
+#: kedit.cpp:393
+msgid "Spellcheck"
+msgstr "Dilbilgisi kontrolü"
+
+#: kedit.cpp:421
+msgid "Spellcheck:  %1% complete"
+msgstr "Kontrol %1% tamamlandı"
+
+#: kedit.cpp:433
+msgid "Spellcheck:  Aborted."
+msgstr "Dilbilgisi kontrolu: İptal edildi"
+
+#: kedit.cpp:437
+msgid "Spellcheck:  Complete."
+msgstr "Dilbilgisi kontrolu:  Tamamlandı"
+
+#: kedit.cpp:464
+msgid ""
+"ISpell could not be started.\n"
+"Please make sure you have ISpell properly configured and in your PATH."
+msgstr ""
+"ISpell başlatılamadı.\n"
+"Lütfen ISpell'in doğru yapılandırıldığından ve PATH'da olduğundan emin olun."
+
+#: kedit.cpp:470
+msgid "Spellcheck:  Crashed."
+msgstr "Dilbilgisi kontrolu:  Çöktü"
+
+#: kedit.cpp:471
+msgid "ISpell seems to have crashed."
+msgstr "ISpell çökmüş gibi görünüyor."
+
+#: kedit.cpp:483
+msgid "Open File"
+msgstr "Dosya Aç"
+
+#: kedit.cpp:494
+msgid ""
+"The file you have requested is larger than KEdit is designed for. Please ensure "
+"you have enough system resources available to safely load this file, or "
+"consider using a program that is designed to handle large files such as KWrite."
+msgstr ""
+"İstediğiniz dosya KEdit'in tasarım sınırından daha büyük. Bu dosyayı yüklemek "
+"için yeterli sistem kaynağınız olduğundan emin olun, veya büyük dosyalar için "
+"tasarlanmış olan programları kullanın, örneğin KWrite."
+
+#: kedit.cpp:497
+msgid "Attempting to Open Large File"
+msgstr "Büyük Bir Dosya Açılmaya Çalışılıyor"
+
+#: kedit.cpp:530 kedit.cpp:568 kedit.cpp:1154
+msgid "Done"
+msgstr "Tamam"
+
+#: kedit.cpp:553
+msgid "Insert File"
+msgstr "Dosya Ekle"
+
+#: kedit.cpp:597 kedit.cpp:661
+msgid ""
+"This document has been modified.\n"
+"Would you like to save it?"
+msgstr ""
+"Bu belge degişikliğe uğradı.\n"
+"Kaydetmek ister misiniz?"
+
+#: kedit.cpp:618
+msgid ""
+"Could not save the file.\n"
+"Exit anyways?"
+msgstr ""
+"Bu dosya saklanamadı.\n"
+"Yine de çıkılsın mı?"
+
+#: kedit.cpp:702
+#, c-format
+msgid "Wrote: %1"
+msgstr "Yazıldı: %1"
+
+#: kedit.cpp:725
+msgid "Save File As"
+msgstr "Dosyayı Farklı Kaydet"
+
+#: kedit.cpp:734
+msgid ""
+"A file named \"%1\" already exists. Are you sure you want to overwrite it?"
+msgstr ""
+"\"%1\" isimli bir dosya zaten var. Bunun üzerine yazmak istiyor musunuz?"
+
+#: kedit.cpp:736
+msgid "Overwrite File?"
+msgstr "Dosyanın Üzerine Yazılsın mı?"
+
+#: kedit.cpp:737
+msgid "Overwrite"
+msgstr "Üzerine yaz"
+
+#: kedit.cpp:751
+#, c-format
+msgid "Saved as: %1"
+msgstr "%1 olarak kaydedildi"
+
+#: kedit.cpp:856
+msgid "[New Document]"
+msgstr "[Yeni Belge]"
+
+#: kedit.cpp:889
+msgid "Line: %1 Col: %2"
+msgstr "Satır: %1 Sütun: %2"
+
+#: kedit.cpp:899
+#, c-format
+msgid "Date: %1"
+msgstr "Tarih: %1"
+
+#: kedit.cpp:900
+#, c-format
+msgid "File: %1"
+msgstr "Dosya: %1"
+
+#: kedit.cpp:911
+#, c-format
+msgid "Print %1"
+msgstr "%1 Yazdır"
+
+#: kedit.cpp:979
+msgid "Printing aborted."
+msgstr "Yazdırma durduruldu."
+
+#: kedit.cpp:981
+msgid "Printing complete."
+msgstr "Yazdırma tamamlandı."
+
+#: kedit.cpp:1026 kedit.cpp:1079
+msgid "You have specified a folder"
+msgstr "Bir dizin belirttiniz"
+
+#: kedit.cpp:1034
+msgid "The specified file does not exist"
+msgstr "Belirtilen dosya bulunamadı"
+
+#: kedit.cpp:1042
+msgid "You do not have read permission to this file."
+msgstr "Bu dosyayı okumak için izininiz yok."
+
+#: kedit.cpp:1087
+msgid "Unable to make a backup of the original file."
+msgstr "Asıl dosyanın yedeği alınamıyor."
+
+#: kedit.cpp:1098
+msgid "Unable to write to file."
+msgstr "Dosyaya yazılamadı."
+
+#: kedit.cpp:1115
+msgid "Could not save file."
+msgstr "Dosya saklanamadı."
+
+#: kedit.cpp:1128
+#, c-format
+msgid ""
+"Malformed URL\n"
+"%1"
+msgstr ""
+"Geçersiz URL\n"
+"%1"
+
+#: kedit.cpp:1144
+msgid "Cannot download file."
+msgstr "Dosya indirilemedi."
+
+#: kedit.cpp:1187
+msgid "New Window"
+msgstr "Yeni Pencere"
+
+#: kedit.cpp:1190
+msgid "New Window Created"
+msgstr "Yeni Pencere Oluşturuldu"
+
+#: kedit.cpp:1192
+msgid "Load Command Done"
+msgstr "Komut Yükleme Tamam"
+
+#: kedit.cpp:1253
+msgid "KDE text editor"
+msgstr "KDE Metin Editörü"
+
+#: kedit.cpp:1257
+msgid "Encoding to use for the following documents"
+msgstr "Belirtilen belgeler için kullanılacak kodlama sistemi"
+
+#: kedit.cpp:1258
+msgid "File or URL to open"
+msgstr "Açılacak Dosya veya URL"
+
+#: kedit.cpp:1266
+msgid "KEdit"
+msgstr "KEdit"
+
+#: kedit.cpp:1329
+msgid "Editor Font"
+msgstr "Düzenleyici Yazıtipi"
+
+#: kedit.cpp:1333
+msgid "Color"
+msgstr "Renk"
+
+#: kedit.cpp:1333
+msgid "Text Color in Editor Area"
+msgstr "Düzenleyici Alanındaki Metin Rengi"
+
+#: kedit.cpp:1336
+msgid "Spelling"
+msgstr "Heceleme"
+
+#: kedit.cpp:1337
+msgid "Spelling Checker"
+msgstr "Yazım Denetleyici"
+
+#: ktextfiledlg.cpp:65
+msgid "Select Encoding..."
+msgstr "Kodlamayı Seçin..."
+
+#: ktextfiledlg.cpp:93
+msgid "Select Encoding"
+msgstr "Kodlamayı Seçin"
+
+#: ktextfiledlg.cpp:100
+msgid "Select encoding for text file: "
+msgstr "Metin dosyası için kodlamayı seçin: "
+
+#: ktextfiledlg.cpp:104
+msgid "Default Encoding"
+msgstr "Öntanımlı Kodlama"
+
+#: ktextfiledlg.cpp:107
+msgid "Default encoding"
+msgstr "Öntanımlı kodlama"

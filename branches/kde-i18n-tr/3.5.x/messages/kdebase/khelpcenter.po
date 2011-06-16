@@ -1,0 +1,619 @@
+# translation of khelpcenter.po to Turkish
+# Copyright (C) 2003, 2004, 2007 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2002,2003, 2004.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: khelpcenter\n"
+"POT-Creation-Date: 2007-05-19 02:14+0200\n"
+"PO-Revision-Date: 2007-09-09 15:20+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=1; plural=0;\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: application.cpp:57
+msgid "URL to display"
+msgstr "Gösterilecek adres"
+
+#: application.cpp:63 navigator.cpp:466
+msgid "KDE Help Center"
+msgstr "KDE Yardım Merkezi"
+
+#: application.cpp:65 khc_indexbuilder.cpp:176
+msgid "The KDE Help Center"
+msgstr "KDE Yardım Merkezi"
+
+#: application.cpp:67
+msgid "(c) 1999-2003, The KHelpCenter developers"
+msgstr "(c) 1999-2003, KDE yardım merkezi geliştiricileri"
+
+#: application.cpp:71
+msgid "Original Author"
+msgstr "Asıl Yazar"
+
+#: application.cpp:73
+msgid "Info page support"
+msgstr "Info sayfa desteği"
+
+#: docmetainfo.cpp:32
+msgid "Top-Level Documentation"
+msgstr "Üst Seviye Belgeler"
+
+#: docmetainfo.cpp:72
+msgid ""
+"_: doctitle (language)\n"
+"%1 (%2)"
+msgstr "%1 (%2)"
+
+#: docmetainfo.cpp:108
+msgid "English"
+msgstr "İngilizce"
+
+#: fontdialog.cpp:39
+msgid "Font Configuration"
+msgstr "Yazıtipi Ayarları"
+
+#: fontdialog.cpp:59
+msgid "Sizes"
+msgstr "Boyutlar"
+
+#: fontdialog.cpp:65
+msgid "M&inimum font size:"
+msgstr "&En küçük yazıtipi boyutu:"
+
+#: fontdialog.cpp:72
+msgid "M&edium font size:"
+msgstr "&Orta yazıtipi boyutu:"
+
+#: fontdialog.cpp:88
+msgid "S&tandard font:"
+msgstr "&Standart yazıtipi:"
+
+#: fontdialog.cpp:94
+msgid "F&ixed font:"
+msgstr "&Sabit yazıtipi:"
+
+#: fontdialog.cpp:100
+msgid "S&erif font:"
+msgstr "S&erif yazıtipi:"
+
+#: fontdialog.cpp:106
+msgid "S&ans serif font:"
+msgstr "S&ans serif yazıtipi:"
+
+#: fontdialog.cpp:112
+msgid "&Italic font:"
+msgstr "&Eğik yazıtipi:"
+
+#: fontdialog.cpp:118
+msgid "&Fantasy font:"
+msgstr "&Fantazi yazıtipi:"
+
+#: fontdialog.cpp:127
+msgid "Encoding"
+msgstr "Kodlama"
+
+#: fontdialog.cpp:133
+msgid "&Default encoding:"
+msgstr "Ö&ntanımlı kodlama:"
+
+#: fontdialog.cpp:138 fontdialog.cpp:203
+msgid "Use Language Encoding"
+msgstr "Dil Kodlaması Kullan"
+
+#: fontdialog.cpp:142
+msgid "&Font size adjustment:"
+msgstr "&Yazıtipi boyutu ayarlama:"
+
+#: glossary.cpp:87
+msgid "By Topic"
+msgstr "Başlığa Göre"
+
+#: glossary.cpp:90 infotree.cpp:91
+msgid "Alphabetically"
+msgstr "Alfabetik"
+
+#: glossary.cpp:147
+msgid "Rebuilding cache..."
+msgstr "Önbellek yeniden hazırlanıyor..."
+
+#: glossary.cpp:177
+msgid "Rebuilding cache... done."
+msgstr "Önbellek yeniden hazırlanıyor... tamamlandı."
+
+#: glossary.cpp:272
+msgid ""
+"Unable to show selected glossary entry: unable to open file 'glossary.html.in'!"
+msgstr "Seçilen kelime görüntülenemedi: 'glossary.html.in' bulunamadı."
+
+#: glossary.cpp:277
+msgid "See also: "
+msgstr "Ayrıca bkz:"
+
+#: glossary.cpp:292
+msgid "KDE Glossary"
+msgstr "KDE Sözlüğü"
+
+#: htmlsearchconfig.cpp:44
+msgid "ht://dig"
+msgstr "ht://dig"
+
+#: htmlsearchconfig.cpp:51
+msgid ""
+"The fulltext search feature makes use of the ht://dig HTML search engine. You "
+"can get ht://dig at the"
+msgstr ""
+"Tam metin arama özelliği ht //dig HTML arama motorundan yararlanır. ht //dig "
+"den alabilirsiniz"
+
+#: htmlsearchconfig.cpp:57
+msgid "Information about where to get the ht://dig package."
+msgstr "Paketler hakkında bilgi almak için ht //dig package"
+
+#: htmlsearchconfig.cpp:61
+msgid "ht://dig home page"
+msgstr "ht://dig ev sayfası"
+
+#: htmlsearchconfig.cpp:67
+msgid "Program Locations"
+msgstr "Program Konumları"
+
+#: htmlsearchconfig.cpp:74
+msgid "htsearch:"
+msgstr "htsearch:"
+
+#: htmlsearchconfig.cpp:80
+msgid "Enter the URL of the htsearch CGI program."
+msgstr "htsearch CGI programının yolunu girin."
+
+#: htmlsearchconfig.cpp:85
+msgid "Indexer:"
+msgstr "İndeksleyici:"
+
+#: htmlsearchconfig.cpp:91
+msgid "Enter the path to your htdig indexer program here."
+msgstr "Htdig indexer program yolunu giriniz."
+
+#: htmlsearchconfig.cpp:97
+msgid "htdig database:"
+msgstr "htdig veritabanı:"
+
+#: htmlsearchconfig.cpp:103
+msgid "Enter the path to the htdig database folder."
+msgstr "Htdig veritabanı dizini için yol giriniz."
+
+#: infotree.cpp:94
+msgid "By Category"
+msgstr "Kategoriye Göre"
+
+#: kcmhelpcenter.cpp:61
+msgid "Change Index Folder"
+msgstr "İndeks Dizinini Değiştir"
+
+#: kcmhelpcenter.cpp:67 kcmhelpcenter.cpp:287
+msgid "Index folder:"
+msgstr "İndeks dizini:"
+
+#: kcmhelpcenter.cpp:97
+msgid "Build Search Indices"
+msgstr "Arama İndeksi Oluştur"
+
+#: kcmhelpcenter.cpp:110
+msgid "Index creation log:"
+msgstr "İndeks oluşturma günlüğü:"
+
+#: kcmhelpcenter.cpp:175
+msgid "Index creation finished."
+msgstr "İndeks oluşturma işlemi tamamlandı."
+
+#: kcmhelpcenter.cpp:204
+msgid "Details <<"
+msgstr "Ayrıntılar <<"
+
+#: kcmhelpcenter.cpp:217
+msgid "Details >>"
+msgstr "Ayrıntılar >>"
+
+#: kcmhelpcenter.cpp:226
+msgid "Build Search Index"
+msgstr "Arama İndeksi Oluştur"
+
+#: kcmhelpcenter.cpp:235
+msgid "Build Index"
+msgstr "İndeksi Oluştur"
+
+#: kcmhelpcenter.cpp:267
+msgid ""
+"To be able to search a document, there needs to exist a search\n"
+"index. The status column of the list below shows, if an index\n"
+"for a document exists.\n"
+msgstr ""
+"Bir dokümanı arayabilmek için bir arama indeksi olması gerekir.\n"
+"Listenin altındaki durum sütunu bir doküman için indeks olup olmadığını\n"
+"gösterir.\n"
+
+#: kcmhelpcenter.cpp:270
+msgid ""
+"To create an index check the box in the list and press the\n"
+"\"Build Index\" button.\n"
+msgstr ""
+"Bir indeks oluşturmak için listeden kutucuğu işaretleyin ve\n"
+"\"İndeksi Oluştur\" düğmesine basın.\n"
+
+#: kcmhelpcenter.cpp:278
+msgid "Search Scope"
+msgstr "Arama Sahası"
+
+#: kcmhelpcenter.cpp:279
+msgid "Status"
+msgstr "Durum"
+
+#: kcmhelpcenter.cpp:293
+msgid "Change..."
+msgstr "Değiştir..."
+
+#: kcmhelpcenter.cpp:312
+msgid "<qt>The folder <b>%1</b> does not exist; unable to create index.</qt>"
+msgstr "<qt><b>%1</b> dizini yok; indeks oluşturulamıyor.</qt>"
+
+#: kcmhelpcenter.cpp:352
+msgid "Missing"
+msgstr "Kayıp"
+
+#: kcmhelpcenter.cpp:397
+msgid ""
+"Document '%1' (%2):\n"
+msgstr ""
+"Doküman '%1' (%2):\n"
+
+#: kcmhelpcenter.cpp:402
+msgid "No document type."
+msgstr "Doküman tipi yok."
+
+#: kcmhelpcenter.cpp:408
+msgid "No search handler available for document type '%1'."
+msgstr "'%1' doküman tipi için arayıcı yok."
+
+#: kcmhelpcenter.cpp:415
+msgid "No indexing command specified for document type '%1'."
+msgstr "'%1' doküman tipi için indeksleme komutu belirtilmedi."
+
+#: kcmhelpcenter.cpp:530
+msgid "Failed to build index."
+msgstr "İndeks oluşturma işlemi başarısız oldu."
+
+#: kcmhelpcenter.cpp:588
+#, c-format
+msgid ""
+"Error executing indexing build command:\n"
+"%1"
+msgstr ""
+"İndeks oluşturma komutu çalıştırılırken hata:\n"
+"%1"
+
+#: khc_indexbuilder.cpp:104
+msgid "Unable to start command '%1'."
+msgstr "'%1' komutu başlatılamadı."
+
+#: khc_indexbuilder.cpp:166
+msgid "Document to be indexed"
+msgstr "İndekslenecek doküman"
+
+#: khc_indexbuilder.cpp:167
+msgid "Index directory"
+msgstr "İndeks dizini"
+
+#: khc_indexbuilder.cpp:174
+msgid "KHelpCenter Index Builder"
+msgstr "KDE Yardım Merkezi İndeks Oluşturucu"
+
+#: khc_indexbuilder.cpp:178
+msgid "(c) 2003, The KHelpCenter developers"
+msgstr "(c) 2003, KDE Yardım Merkezi Geliştiricileri"
+
+#: mainwindow.cpp:58
+msgid "Search Error Log"
+msgstr "Arama Hatası Günlüğü"
+
+#: mainwindow.cpp:110
+msgid "Preparing Index"
+msgstr "İndeks Hazırlanıyor"
+
+#: mainwindow.cpp:158
+msgid "Ready"
+msgstr "Hazır"
+
+#: mainwindow.cpp:215
+msgid "Previous Page"
+msgstr "Önceki Sayfa"
+
+#: mainwindow.cpp:217
+msgid "Moves to the previous page of the document"
+msgstr "Önceki sayfaya gider"
+
+#: mainwindow.cpp:219
+msgid "Next Page"
+msgstr "Sonraki Sayfa"
+
+#: mainwindow.cpp:221
+msgid "Moves to the next page of the document"
+msgstr "Sonraki sayfaya gider"
+
+#: mainwindow.cpp:224
+msgid "Table of &Contents"
+msgstr "İç&indekiler"
+
+#: mainwindow.cpp:225
+msgid "Table of contents"
+msgstr "İçindekiler"
+
+#: mainwindow.cpp:226
+msgid "Go back to the table of contents"
+msgstr "İçindekiler kısmına geri git"
+
+#: mainwindow.cpp:230
+msgid "&Last Search Result"
+msgstr "&Son Arama Sonuçları"
+
+#: mainwindow.cpp:235
+msgid "Build Search Index..."
+msgstr "Arama İndeksi Oluştur..."
+
+#: mainwindow.cpp:243
+msgid "Show Search Error Log"
+msgstr "Arama Hatası Günlüğünü Göster"
+
+#: mainwindow.cpp:250
+msgid "Configure Fonts..."
+msgstr "Yazıtiplerini Yapılandır..."
+
+#: mainwindow.cpp:251
+msgid "Increase Font Sizes"
+msgstr "Yazıtipi Boyutunu Büyüt"
+
+#: mainwindow.cpp:252
+msgid "Decrease Font Sizes"
+msgstr "Yazıtipi Boyutunu Küçült"
+
+#: navigator.cpp:107
+msgid "Clear search"
+msgstr "Aramayı temizle"
+
+#: navigator.cpp:115
+msgid "&Search"
+msgstr "&Ara"
+
+#: navigator.cpp:187
+msgid "Search Options"
+msgstr "Arama Seçenekleri"
+
+#: navigator.cpp:195
+msgid "G&lossary"
+msgstr "&Sözlük"
+
+#: navigator.cpp:465
+msgid "Start Page"
+msgstr "Başlangıç Sayfası"
+
+#: navigator.cpp:553
+msgid "Unable to run search program."
+msgstr "Arama programı çalıştırılamadı."
+
+#: navigator.cpp:594
+msgid "A search index does not yet exist. Do you want to create the index now?"
+msgstr "Bir arama indeksi henüz yapılmadı. İndeks şimdi yaratılsın mı?"
+
+#: navigator.cpp:598
+msgid "Create"
+msgstr "Oluştur"
+
+#: navigator.cpp:599
+msgid "Do Not Create"
+msgstr "Oluşturma"
+
+#. i18n: file khelpcenterui.rc line 25
+#: rc.cpp:12
+#, no-c-format
+msgid "&Go"
+msgstr "&Git"
+
+#. i18n: file khelpcenter.kcfg line 11
+#: rc.cpp:18 rc.cpp:27
+#, no-c-format
+msgid "Path to index directory."
+msgstr "İndeks dizini yolu."
+
+#. i18n: file khelpcenter.kcfg line 12
+#: rc.cpp:21 rc.cpp:30
+#, no-c-format
+msgid "Path to directory containing search indices."
+msgstr "Arama indekslerinin bulunduğu dizinin yolu."
+
+#. i18n: file khelpcenter.kcfg line 26
+#: rc.cpp:24 rc.cpp:33
+#, no-c-format
+msgid "Currently visible navigator tab"
+msgstr "Şimdiki görünen gezinme sekmesi"
+
+#: searchengine.cpp:76
+msgid "Error: No document type specified."
+msgstr "Hata: Doküman tipi belirtilmedi."
+
+#: searchengine.cpp:78
+msgid "Error: No search handler for document type '%1'."
+msgstr "Hata: '%1' doküman tipi için arayıcı yok."
+
+#: searchengine.cpp:226
+msgid "Unable to initialize SearchHandler from file '%1'."
+msgstr "'%1' dosyasından Arayıcı başlatılamadı."
+
+#: searchengine.cpp:240
+msgid "No valid search handler found."
+msgstr "Geçerli bir arayıcı bulunamadı."
+
+#: searchengine.cpp:306
+msgid "Search Results for '%1':"
+msgstr "'%1' Arama Sonuçları:"
+
+#: searchengine.cpp:311
+msgid "Search Results"
+msgstr "Arama Sonuçları"
+
+#: searchhandler.cpp:132
+msgid "Error executing search command '%1'."
+msgstr "'%1' arama komutu çalıştırılırken hata oluştu."
+
+#: searchhandler.cpp:152
+msgid "No search command or URL specified."
+msgstr "Arama komutu ya da adres belirtilmedi."
+
+#: searchhandler.cpp:233
+#, c-format
+msgid "Error: %1"
+msgstr "Hata: %1"
+
+#: searchwidget.cpp:56
+msgid "and"
+msgstr "ve"
+
+#: searchwidget.cpp:57
+msgid "or"
+msgstr "veya"
+
+#: searchwidget.cpp:59
+msgid "&Method:"
+msgstr "&Yöntem:"
+
+#: searchwidget.cpp:73
+msgid "Max. &results:"
+msgstr "Azami &sonuç sayısı:"
+
+#: searchwidget.cpp:87
+msgid "&Scope selection:"
+msgstr "&Saha seçimi:"
+
+#: searchwidget.cpp:94
+msgid "Scope"
+msgstr "Saha"
+
+#: searchwidget.cpp:97
+msgid "Build Search &Index..."
+msgstr "A&rama İndeksi Oluştur..."
+
+#: searchwidget.cpp:352
+msgid "Custom"
+msgstr "Özel"
+
+#: searchwidget.cpp:356
+msgid "All"
+msgstr "Tümü"
+
+#: searchwidget.cpp:358
+msgid "None"
+msgstr "Hiçbiri"
+
+#: searchwidget.cpp:360
+msgid "unknown"
+msgstr "bilinmeyen"
+
+#: view.cpp:114
+msgid "Conquer your Desktop!"
+msgstr "Masaüstünüzü Keşfedin!"
+
+#: view.cpp:118
+msgid "Help Center"
+msgstr "Yardım Merkezi"
+
+#: view.cpp:120
+msgid "Welcome to the K Desktop Environment"
+msgstr "K Masaüstü Ortamına Hoşgeldiniz"
+
+#: view.cpp:121
+msgid "The KDE team welcomes you to user-friendly UNIX computing"
+msgstr "KDE grubu sizi kullanıcı dostu bir Linux ile karşılıyor"
+
+#: view.cpp:122
+msgid ""
+"KDE is a powerful graphical desktop environment for UNIX workstations. A\n"
+"KDE desktop combines ease of use, contemporary functionality and outstanding\n"
+"graphical design with the technological superiority of the UNIX operating\n"
+"system."
+msgstr ""
+"KDE UNIX iş yerleri için güçlü bir grafiksel masaüstüdür.\n"
+"KDE, UNIX işletim sisteminin teknolojik üstünlüğü ile grafik tasarımın\n"
+"masaüstü kolaylığını birleştirir."
+
+#: view.cpp:126
+msgid "What is the K Desktop Environment?"
+msgstr "K Masaüstü Ortamı Nedir?"
+
+#: view.cpp:127
+msgid "Contacting the KDE Project"
+msgstr "KDE Projesiyle İletişim"
+
+#: view.cpp:128
+msgid "Supporting the KDE Project"
+msgstr "KDE Projesine Destek"
+
+#: view.cpp:129
+msgid "Useful links"
+msgstr "Faydalı bağlantılar"
+
+#: view.cpp:130
+msgid "Getting the most out of KDE"
+msgstr "KDE'den en iyi şekilde yararlanın"
+
+#: view.cpp:131
+msgid "General Documentation"
+msgstr "Genel Belgeler"
+
+#: view.cpp:132
+msgid "A Quick Start Guide to the Desktop"
+msgstr "Masaüstüne Hızlı Bir Başlangıç"
+
+#: view.cpp:133
+msgid "KDE Users' guide"
+msgstr "KDE Kullanıcı Kılavuzu"
+
+#: view.cpp:134
+msgid "Frequently asked questions"
+msgstr "Sıkça Sorulan Sorular"
+
+#: view.cpp:135
+msgid "Basic Applications"
+msgstr "Temel Uygulamalar"
+
+#: view.cpp:136
+msgid "The Kicker Desktop Panel"
+msgstr "Kicker Masaüstü Paneli"
+
+#: view.cpp:137
+msgid "The KDE Control Center"
+msgstr "KDE Kontrol Merkezi"
+
+#: view.cpp:138
+msgid "The Konqueror File manager and Web Browser"
+msgstr "Konqueror Dosya Yöneticisi ve Web Tarayıcısı"
+
+#: view.cpp:269
+msgid "Copy Link Address"
+msgstr "Bağlantı Adresini Kopyala"

@@ -1,0 +1,457 @@
+# translation of kwin4.po to
+# translation of kwin4.po to Turkish
+# Görkem Çetin, 2000
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002,2003.
+# Görkem Çetin <gorkem@kde.org>, 2002, 2003.
+# Ömer Fadıl USTA <omer_fad@yahoo.com>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kwin4\n"
+"POT-Creation-Date: 2005-05-18 21:24+0200\n"
+"PO-Revision-Date: 2004-06-26 04:54+0300\n"
+"Last-Translator: Ömer Fadıl USTA <omer_fad@yahoo.com>\n"
+"Language-Team: Turkish <ceviri@bilisimlab.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.2\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Ömer Fadıl USTA"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "omer_fad@hotmail.com"
+
+#: kwin4.cpp:67
+msgid "Chat Dlg"
+msgstr "Konuşma Penceresi"
+
+#: kwin4.cpp:73
+msgid "Chat"
+msgstr "Konuş"
+
+#: kwin4.cpp:79
+msgid "Configure..."
+msgstr "Yapılandır..."
+
+#: kwin4.cpp:192
+msgid "Start a new game"
+msgstr "Yeni Oyun"
+
+#: kwin4.cpp:195
+msgid "Open a saved game..."
+msgstr "Kaydedilmiş oyunu aç..."
+
+#: kwin4.cpp:198
+msgid "Save a game..."
+msgstr "Oyunu kaydet..."
+
+#: kwin4.cpp:201
+msgid "Ending the current game..."
+msgstr "Şimdiki oyunu bitiriyorum..."
+
+#: kwin4.cpp:202
+msgid "Aborts a currently played game. No winner will be declared."
+msgstr "Şimdiki oyunu bitirir. Doğal olarak kimse kazanamaz."
+
+#: kwin4.cpp:204
+msgid "&Network Configuration..."
+msgstr "&Ağ Yapılandırması..."
+
+#: kwin4.cpp:207
+msgid "Network Chat..."
+msgstr "Ağ Sohbet..."
+
+#: kwin4.cpp:211
+msgid "Debug KGame"
+msgstr "Debug KGame"
+
+#: kwin4.cpp:214
+msgid "&Show Statistics"
+msgstr "İstatistikleri &Göster"
+
+#: kwin4.cpp:216
+msgid "Show statistics."
+msgstr "İstatistikleri Göster."
+
+#: kwin4.cpp:219
+msgid "Shows a hint on how to move."
+msgstr "Hareket etmek için ipucu gösterir."
+
+#: kwin4.cpp:222
+msgid "Quits the program."
+msgstr "Programdan çıkar."
+
+#: kwin4.cpp:225
+msgid "Undo last move."
+msgstr "Son hareketi geri al"
+
+#: kwin4.cpp:228
+msgid "Redo last move."
+msgstr "Son hareketi ileri al."
+
+#: kwin4.cpp:242 kwin4.cpp:252
+msgid "Ready"
+msgstr "Hazır"
+
+#: kwin4.cpp:251
+msgid "This leaves space for the mover"
+msgstr "Hareket eden için boşluk bırakır"
+
+#: kwin4.cpp:254
+msgid "(c) Martin Heni   "
+msgstr "(c) Martin Heni   "
+
+#: kwin4.cpp:255
+msgid "Welcome to KWin4"
+msgstr "KWin4 Oyununa Hoşgeldiniz"
+
+#: kwin4.cpp:457
+msgid "No game  "
+msgstr "Oyun yok  "
+
+#: kwin4.cpp:459
+msgid " - Yellow "
+msgstr "- Sarı "
+
+#: kwin4.cpp:461
+msgid " - Red "
+msgstr "- Kırmızı "
+
+#: kwin4.cpp:463
+msgid "Nobody  "
+msgstr "Hiçkimse "
+
+#: kwin4.cpp:482
+msgid ""
+"The network game ended!\n"
+msgstr ""
+"Ağ oyunu bitti!\n"
+
+#: kwin4.cpp:493
+msgid "Game running..."
+msgstr "Oyun çalışıyor..."
+
+#: kwin4.cpp:504
+msgid "The game is drawn. Please restart next round."
+msgstr "Bu oyun berabere bitti. Yeni oyuna başlayınız."
+
+#: kwin4.cpp:512
+msgid "%1 won the game. Please restart next round."
+msgstr "%1 oyunu kazandı. Yeni oyuna başlayınız."
+
+#: kwin4.cpp:518
+msgid " Game aborted. Please restart next round."
+msgstr " Oyun bitirildi. Yeni oyun için tekrar başlayınız."
+
+#: kwin4.cpp:536
+msgid "Network Configuration"
+msgstr "Ağ Yapılandırması"
+
+#: kwin4.cpp:548
+msgid "Yellow should be played by remote"
+msgstr "Sarı uzaktaki oyuncu tarafından oynanmalıdır"
+
+#: kwin4.cpp:549
+msgid "Red should be played by remote"
+msgstr "Kırmızı, uzaktaki oyuncu tarafından oynanmalı"
+
+#: kwin4.cpp:621
+msgid "General"
+msgstr "Genel"
+
+#: kwin4view.cpp:350
+msgid ""
+"_: 1. intro line, welcome to win4\n"
+"Welcome"
+msgstr "Win4"
+
+#: kwin4view.cpp:356
+msgid ""
+"_: 2. intro line, welcome to win4\n"
+"to"
+msgstr "Oyununa"
+
+#: kwin4view.cpp:362
+msgid ""
+"_: 3. intro line, welcome to win4\n"
+"KWin4"
+msgstr "Hoşgeldiniz"
+
+#: kwin4view.cpp:606
+msgid "Hold on... the other player has not been yet..."
+msgstr "Bekleyin. Diğer oyuncu henüz gelmedi."
+
+#: kwin4view.cpp:607
+msgid "Hold your horses..."
+msgstr "Atları tut..."
+
+#: kwin4view.cpp:608
+msgid "Ah ah ah... only one go at a time..."
+msgstr "Bir anda sadece bir hareket..."
+
+#: kwin4view.cpp:609
+msgid "Please wait... it is not your turn."
+msgstr "Lütfen bekleyiniz.. Sizin sıranız değil."
+
+#: main.cpp:30
+msgid "Enter debug level"
+msgstr "Hata ayıklama seviyesini girin."
+
+#: main.cpp:39
+msgid "KWin4"
+msgstr "KWin4"
+
+#: main.cpp:41
+msgid "KWin4: Two player network game"
+msgstr "KWin4: İki oyunculu ağ oyunu"
+
+#: main.cpp:45
+msgid "Beta testing"
+msgstr "Beta test denemesi"
+
+#: main.cpp:46
+msgid "Code Improvements"
+msgstr "Kod Geliştirmeler"
+
+#. i18n: file settings.ui line 24
+#: rc.cpp:9
+#, no-c-format
+msgid "Player Names"
+msgstr "Oyuncu İsimleri"
+
+#. i18n: file settings.ui line 35
+#: rc.cpp:12
+#, no-c-format
+msgid "Player 1:"
+msgstr "1. Oyuncu:"
+
+#. i18n: file settings.ui line 43
+#: rc.cpp:15
+#, no-c-format
+msgid "Player 2:"
+msgstr "2. Oyuncu:"
+
+#. i18n: file settings.ui line 63
+#: rc.cpp:18
+#, no-c-format
+msgid "Computer Difficulty"
+msgstr "Bilgisayar Zorluğu"
+
+#. i18n: file settings.ui line 74
+#: rc.cpp:21
+#, no-c-format
+msgid "Easy"
+msgstr "Kolay"
+
+#. i18n: file settings.ui line 82
+#: rc.cpp:24
+#, no-c-format
+msgid "Hard"
+msgstr "Zor"
+
+#. i18n: file settings.ui line 111
+#: rc.cpp:27 rc.cpp:126
+#, no-c-format
+msgid "Change the strength of the computer player."
+msgstr "Bilgisayarın oyuncusunun gücünü değiştir."
+
+#. i18n: file settings.ui line 121
+#: rc.cpp:30
+#, no-c-format
+msgid "Starting Player Color"
+msgstr "Başlayan Oyuncunun Rengi"
+
+#. i18n: file settings.ui line 132
+#: rc.cpp:33
+#, no-c-format
+msgid "Red"
+msgstr "Kırmızı"
+
+#. i18n: file settings.ui line 143
+#: rc.cpp:36
+#, no-c-format
+msgid "Yellow"
+msgstr "Sarı"
+
+#. i18n: file settings.ui line 153
+#: rc.cpp:39
+#, no-c-format
+msgid "Red Plays With"
+msgstr "Kırmızı"
+
+#. i18n: file settings.ui line 164
+#: rc.cpp:42 rc.cpp:54
+#, no-c-format
+msgid "Mouse"
+msgstr "Fare ile oynuyor"
+
+#. i18n: file settings.ui line 175
+#: rc.cpp:45 rc.cpp:57
+#, no-c-format
+msgid "Computer"
+msgstr "Bilgisayar"
+
+#. i18n: file settings.ui line 183
+#: rc.cpp:48 rc.cpp:60
+#, no-c-format
+msgid "Keyboard"
+msgstr "Klavye ile oynuyor"
+
+#. i18n: file settings.ui line 193
+#: rc.cpp:51
+#, no-c-format
+msgid "Yellow Plays With"
+msgstr "Sarı"
+
+#. i18n: file statistics.ui line 16
+#: rc.cpp:63
+#, no-c-format
+msgid "Statistics"
+msgstr "İstatistikler"
+
+#. i18n: file statistics.ui line 63
+#: rc.cpp:66 rc.cpp:111
+#, no-c-format
+msgid "Player 1"
+msgstr "1. Oyuncu"
+
+#. i18n: file statistics.ui line 71
+#: rc.cpp:69
+#, no-c-format
+msgid "Name"
+msgstr "İsim"
+
+#. i18n: file statistics.ui line 82
+#: rc.cpp:72
+#, no-c-format
+msgid "Won"
+msgstr "Kazanma"
+
+#. i18n: file statistics.ui line 98
+#: rc.cpp:75
+#, no-c-format
+msgid "Lost"
+msgstr "Kaybetme"
+
+#. i18n: file statistics.ui line 119
+#: rc.cpp:78
+#, no-c-format
+msgid "Sum"
+msgstr "Toplam"
+
+#. i18n: file statistics.ui line 130
+#: rc.cpp:81
+#, no-c-format
+msgid "Aborted"
+msgstr "Bitirme"
+
+#. i18n: file statistics.ui line 149
+#: rc.cpp:84
+#, no-c-format
+msgid "Clear All Statistics"
+msgstr "Tüm İstatistikleri Sil"
+
+#. i18n: file statistics.ui line 189
+#: rc.cpp:90 rc.cpp:114
+#, no-c-format
+msgid "Player 2"
+msgstr "2. Oyuncu"
+
+#. i18n: file statistics.ui line 202
+#: rc.cpp:93
+#, no-c-format
+msgid "Drawn"
+msgstr "Berabere"
+
+#. i18n: file statuswidget.ui line 70
+#: rc.cpp:96
+#, no-c-format
+msgid "W"
+msgstr "G"
+
+#. i18n: file statuswidget.ui line 81
+#: rc.cpp:99
+#, no-c-format
+msgid "D"
+msgstr "B"
+
+#. i18n: file statuswidget.ui line 92
+#: rc.cpp:102
+#, no-c-format
+msgid "L"
+msgstr "M"
+
+#. i18n: file statuswidget.ui line 114
+#: rc.cpp:108
+#, no-c-format
+msgid "Bk"
+msgstr "Bk"
+
+#. i18n: file kwin4.kcfg line 9
+#: rc.cpp:117
+#, no-c-format
+msgid "Network connection port"
+msgstr "Ağ bağlantı limanı"
+
+#. i18n: file kwin4.kcfg line 13
+#: rc.cpp:120
+#, fuzzy, no-c-format
+msgid "Game name"
+msgstr "1. Oyunucu adı"
+
+#. i18n: file kwin4.kcfg line 16
+#: rc.cpp:123
+#, no-c-format
+msgid "Network connection host"
+msgstr "Ağ bağlantı makinası"
+
+#. i18n: file kwin4.kcfg line 27
+#: rc.cpp:129
+#, no-c-format
+msgid "Player 1 name"
+msgstr "1. Oyunucu adı"
+
+#. i18n: file kwin4.kcfg line 31
+#: rc.cpp:132
+#, fuzzy, no-c-format
+msgid "Player 2 name"
+msgstr "1. Oyunucu adı"
+
+#: scorewidget.cpp:46
+msgid "Form1"
+msgstr "Form1"
+
+#: scorewidget.cpp:60
+msgid "vs"
+msgstr "ve"
+
+#: scorewidget.cpp:83
+msgid "Level"
+msgstr "Seviye"
+
+#: scorewidget.cpp:97
+msgid ""
+"_: number of MOVE in game\n"
+"Move"
+msgstr "Hamle"
+
+#: scorewidget.cpp:111
+msgid "Chance"
+msgstr "Şans"
+
+#: scorewidget.cpp:164
+msgid "Winner"
+msgstr "Kaybeden"
+
+#: scorewidget.cpp:166
+msgid "Loser"
+msgstr "Kazanan"

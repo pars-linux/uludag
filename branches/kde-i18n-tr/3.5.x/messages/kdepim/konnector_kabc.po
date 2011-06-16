@@ -1,0 +1,26 @@
+# translation of konnector_kabc.po to Türkçe
+# Görkem Çetin <gorkem@kde.org.tr>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: konnector_kabc\n"
+"POT-Creation-Date: 2005-01-10 01:42+0100\n"
+"PO-Revision-Date: 2005-05-02 12:52+0000\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org.tr>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: kabckonnector.cpp:74
+msgid "Address Book"
+msgstr "Adres Defteri"
+
+#: kabckonnector.cpp:119
+msgid "Address Book Konnector"
+msgstr "Adres Defteri Bağlantısı"
+
+#: kabckonnectorconfig.cpp:76
+msgid "Select the address book you want to sync with."
+msgstr "Eşzamanlama yapmak istediğiniz adres defterini seçin."

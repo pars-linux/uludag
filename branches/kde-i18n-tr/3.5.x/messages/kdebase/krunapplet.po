@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+#  Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: krunapplet\n"
+"POT-Creation-Date: 2005-05-18 21:24+0200\n"
+"PO-Revision-Date: 2002-11-11 19:09+0000\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.6\n"
+
+#: runapplet.cpp:59
+msgid "Run command:"
+msgstr "Komutu çalıştır:"
+
+#: runapplet.cpp:170
+msgid "< Run"
+msgstr "< Çalıştır"
+
+#: runapplet.cpp:177
+msgid "Run >"
+msgstr "Çalıştır >"
+
+#: runapplet.cpp:226
+msgid "You have to enter a command to execute or a URL to be opened first."
+msgstr "Çalıştırılmak üzere komut veya açılması için bir URL belirtiniz."
+
+#: runapplet.cpp:237
+#, fuzzy
+msgid ""
+"Unable to log out properly.\n"
+"The session manager cannot be contacted. You can try to force a shutdown by "
+"pressing Ctrl+Alt+Backspace. Note, however, that your current session will not "
+"be saved with a forced shutdown."
+msgstr ""
+"Düzgün çıkış yapılamıyor. \n"
+"İşlem yöneticisine bağlantı kurulamadı. Sistemi kapatmaya zorlamak için CTRL, "
+"SHIFT ve BACKSPACE tuşlarına aynı anda basabilirsiniz. Ancak bu işlem sonunda "
+"kaydedilmemiş bilgiler yok olacaktır."
+
+#: runapplet.cpp:268
+msgid ""
+"<qt>The program name or command <b>%1</b>\n"
+"cannot be found. Please correct the command\n"
+"or URL and try again</qt>"
+msgstr ""
+"<qt>Program adı veya komut (<b>%1</b>)\n"
+"bulunamıyor. Lütfen URL'yi veya komutu düzeltip \n"
+"tekrar deneyin </qt>"
+
+#: runapplet.cpp:280
+msgid ""
+"<qt>Could not run <b>%1</b>.\n"
+"Please correct the command or URL and try again.</qt>"
+msgstr ""
+"<qt><b>%1</b> çalıştırılamıyorLütfen komutu veya URL'yi düzeltin ve tekrar "
+"deneyin"

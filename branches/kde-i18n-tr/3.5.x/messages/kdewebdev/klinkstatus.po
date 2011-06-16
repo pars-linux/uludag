@@ -1,0 +1,664 @@
+# translation of klinkstatus.po to 
+# translation of klinkstatus.po to Türkçe
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
+# Aydın Demirel <aydin@kde.org.tr>, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: klinkstatus\n"
+"POT-Creation-Date: 2008-08-14 01:19+0200\n"
+"PO-Revision-Date: 2005-05-07 17:56+0000\n"
+"Last-Translator: Aydın Demirel <aydin@kde.org.tr>\n"
+"Language-Team:  <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+
+#: engine/searchmanager.cpp:505 ui/resultview.cpp:137
+msgid "Javascript not supported"
+msgstr "Javascript desteklenmiyor"
+
+#: ui/tablelinkstatus.cpp:91
+msgid "Status"
+msgstr "Durum"
+
+#: ui/tablelinkstatus.cpp:96
+msgid "Label"
+msgstr "Etiket"
+
+#: ui/tablelinkstatus.cpp:100
+msgid "URL"
+msgstr "URL"
+
+#: ui/tablelinkstatus.cpp:277 ui/treeview.cpp:348
+msgid "All"
+msgstr "Tümü"
+
+#: ui/tablelinkstatus.cpp:286 ui/tablelinkstatus.cpp:291 ui/treeview.cpp:357
+#: ui/treeview.cpp:363
+msgid "Edit Referrer with Quanta"
+msgstr "Başvurucuyu Quanta ile Düzenle"
+
+#: ui/tablelinkstatus.cpp:295 ui/treeview.cpp:367
+msgid "Open URL"
+msgstr "URL Aç"
+
+#: ui/tablelinkstatus.cpp:298 ui/treeview.cpp:370
+msgid "Open Referrer URL"
+msgstr "Başvurucu URL Aç"
+
+#: ui/tablelinkstatus.cpp:303 ui/treeview.cpp:375
+msgid "Copy URL"
+msgstr "URL'yi Kopyala"
+
+#: ui/tablelinkstatus.cpp:306 ui/treeview.cpp:378
+msgid "Copy Referrer URL"
+msgstr "Başvurucu URL'yi kopyala"
+
+#: ui/tablelinkstatus.cpp:309 ui/treeview.cpp:381
+msgid "Copy Cell Text"
+msgstr "Hücre Metni'ni Kopyala"
+
+#: ui/tablelinkstatus.cpp:389 ui/treeview.cpp:295
+msgid "<qt>File <b>%1</b> cannot be opened. Might be a DCOP problem.</qt>"
+msgstr "<qt>Dosya <b>%1</b> açılamadı. Bir DCOP sorunu olabilir.</qt>"
+
+#: ui/tablelinkstatus.cpp:410 ui/tablelinkstatus.cpp:431 ui/treeview.cpp:316
+#: ui/treeview.cpp:337
+msgid "Invalid URL."
+msgstr "Geçersiz URL."
+
+#: ui/tablelinkstatus.cpp:419 ui/treeview.cpp:325
+msgid "ROOT URL."
+msgstr "KÖK URL."
+
+#: engine/linkchecker.cpp:128 ui/tablelinkstatus.cpp:590
+#: ui/tablelinkstatus.cpp:655
+msgid "Timeout"
+msgstr "Zaman aşımı"
+
+#: ui/tablelinkstatus.cpp:592
+msgid "not supported"
+msgstr "desteklenmiyor"
+
+#: engine/linkstatus.cpp:138 engine/linkstatus.cpp:163
+#: engine/linkstatus.cpp:169 ui/tablelinkstatus.cpp:659
+msgid "Malformed"
+msgstr "Kusurlu"
+
+#: ui/tablelinkstatus.cpp:682 ui/tablelinkstatus.cpp:685
+#, c-format
+msgid "%1"
+msgstr "%1 "
+
+#: ui/documentrootdialog.cpp:40
+msgid ""
+"As you are using a protocol different than HTTP, \n"
+"there is no way to guess where the document root is, \n"
+"in order to resolve relative URLs like the ones started with \"/\".\n"
+"\n"
+"Please specify one:"
+msgstr ""
+
+#: ui/sessionwidget.cpp:241 ui/sessionwidget.cpp:364 ui/sessionwidget.cpp:387
+#: ui/sessionwidget.cpp:545 ui/sessionwidget.cpp:629
+msgid "Checking..."
+msgstr "Kontrol ediliyor..."
+
+#: ui/sessionwidget.cpp:351
+msgid "Cowardly refusing to check an empty URL."
+msgstr "Boş bir URL kontrol etmek için korkakça reddetme"
+
+#: ui/sessionwidget.cpp:365 ui/sessionwidget.cpp:388 ui/sessionwidget.cpp:463
+msgid "Stopped"
+msgstr "Durduruldu"
+
+#. i18n: file ./ui/sessionwidgetbase.ui line 367
+#: rc.cpp:54 ui/sessionwidget.cpp:435
+#, no-c-format
+msgid "Ready"
+msgstr "Hazır"
+
+#: ui/sessionwidget.cpp:531 ui/sessionwidget.cpp:539
+msgid "Adding level..."
+msgstr "Seviye ekleniyor..."
+
+#: ui/sessionwidget.cpp:686
+msgid "Export Results as HTML"
+msgstr ""
+
+#: ui/tabwidgetsession.cpp:61
+msgid "Open new tab"
+msgstr ""
+
+#: ui/tabwidgetsession.cpp:69
+msgid "Close the current tab"
+msgstr ""
+
+#: ui/tabwidgetsession.cpp:123
+msgid "Session"
+msgstr "Oturum"
+
+#: ui/resultssearchbar.cpp:72
+#, fuzzy
+msgid "S&earch:"
+msgstr "Ara"
+
+#: ui/resultssearchbar.cpp:83
+#, fuzzy
+msgid "Status:"
+msgstr "Durum"
+
+#: ui/resultssearchbar.cpp:93
+msgid "All Links"
+msgstr "Tüm Bağlantılar"
+
+#: ui/resultssearchbar.cpp:94
+msgid "Good Links"
+msgstr "İyi Bağlantılar"
+
+#: ui/resultssearchbar.cpp:95
+msgid "Broken Links"
+msgstr "Kırık Bağlantılar"
+
+#: ui/resultssearchbar.cpp:96
+msgid "Malformed Links"
+msgstr "Kusurlu Bağlantılar"
+
+#: ui/resultssearchbar.cpp:97
+msgid "Undetermined Links"
+msgstr "Tanımlanamayan Bağlantılar"
+
+#: ui/resultssearchbar.cpp:100
+msgid "Clear filter"
+msgstr ""
+
+#: ui/resultssearchbar.cpp:101
+msgid "Enter the terms to filter the result link list"
+msgstr ""
+
+#: ui/resultssearchbar.cpp:102
+msgid "Choose what kind of link status to show in result list"
+msgstr ""
+
+#: klinkstatus.cpp:75
+msgid ""
+"Could not find the KLinkStatus part; did you configure with '--prefix=/$KDEDIR' "
+"and perform 'make install'?"
+msgstr ""
+"KBağlantıDurumu parçası bulunamadı;'--prefix=/$KDEDIR' ile yapılandırıp 'make "
+"install' yaptınız mı?"
+
+#: utils/xsl.cpp:165
+msgid "Message is null."
+msgstr ""
+
+#: utils/xsl.cpp:170
+msgid "The selected stylesheet is invalid."
+msgstr ""
+
+#: utils/xsl.cpp:177
+msgid "Message could not be parsed. This is likely due to an encoding problem."
+msgstr ""
+
+#: utils/xsl.cpp:182
+msgid ""
+"<div><b>KLinkStatus encountered the following error while parsing a message:</b>"
+"<br />%1</div>"
+msgstr ""
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Aydın Demirel"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "aydin@kde.org.tr"
+
+#: main.cpp:34
+msgid ""
+"A Link Checker.\n"
+"\n"
+"KLinkStatus belongs to the kdewebdev module from KDE."
+msgstr "KBağlantıDurumu KDE'den kdewebdev modülüne aittir."
+
+#: main.cpp:40
+msgid "Document to open"
+msgstr "Açılacak belge"
+
+#: klinkstatus_part.cpp:180 main.cpp:48
+msgid "KLinkStatus"
+msgstr "KBağlantıDurumu"
+
+#: engine/linkstatus_impl.h:122
+msgid "ROOT"
+msgstr "KÖK"
+
+#: engine/linkchecker.cpp:382
+msgid "No Content"
+msgstr "İçerik Yok"
+
+#: engine/linkchecker.cpp:612 engine/linkchecker.cpp:647
+msgid "Link destination not found."
+msgstr "Bağlantı ereği bulunamadı."
+
+#: engine/linkstatus.cpp:104
+#, c-format
+msgid "Parent: %1"
+msgstr "Üst: %1"
+
+#: engine/linkstatus.cpp:108
+#, c-format
+msgid "URL: %1"
+msgstr "URL: %1"
+
+#: engine/linkstatus.cpp:109
+#, c-format
+msgid "Original URL: %1"
+msgstr "Özgün URL: %1"
+
+#: engine/linkstatus.cpp:111
+#, c-format
+msgid "Node: %1"
+msgstr "Düğüm: %1"
+
+#: actionmanager.cpp:90
+msgid "New Link Check"
+msgstr "Yeni Bağlantı Kontrolü"
+
+#: actionmanager.cpp:95
+msgid "Open URL..."
+msgstr "URL Aç..."
+
+#: actionmanager.cpp:100
+msgid "Close Tab"
+msgstr "Sekmeyi Kapat"
+
+#: actionmanager.cpp:108
+msgid "Configure KLinkStatus..."
+msgstr "KBağlantıDurumunu Yapılandır..."
+
+#: actionmanager.cpp:114
+msgid "About KLinkStatus"
+msgstr "KBağlantıDurumu Hakkında"
+
+#: actionmanager.cpp:118
+msgid "&Report Bug..."
+msgstr "Hata &Raporu..."
+
+#: actionmanager.cpp:135
+msgid "E&xport Results as HTML..."
+msgstr ""
+
+#: actionmanager.cpp:143
+#, fuzzy
+msgid "&Follow last Link checked"
+msgstr "Kontrol edilen son bağlantıyı takip et"
+
+#: actionmanager.cpp:150
+msgid "&Hide Search Panel"
+msgstr ""
+
+#: actionmanager.cpp:153
+msgid "&Show Search Panel"
+msgstr ""
+
+#: actionmanager.cpp:156
+msgid "&Reset Search Options"
+msgstr ""
+
+#: actionmanager.cpp:162
+#, fuzzy
+msgid "&Start Search"
+msgstr "Ara"
+
+#: actionmanager.cpp:168
+#, fuzzy
+msgid "&Pause Search"
+msgstr "Ara"
+
+#: actionmanager.cpp:174
+#, fuzzy
+msgid "St&op Search"
+msgstr "Ara"
+
+#. i18n: file klinkstatus_part.rc line 32
+#: rc.cpp:12 rc.cpp:24 rc.cpp:192 rc.cpp:207
+#, fuzzy, no-c-format
+msgid "S&earch"
+msgstr "Ara"
+
+#. i18n: file ./ui/sessionwidgetbase.ui line 36
+#: rc.cpp:30
+#, no-c-format
+msgid "Search"
+msgstr "Ara"
+
+#. i18n: file ./ui/sessionwidgetbase.ui line 110
+#: rc.cpp:33
+#, no-c-format
+msgid "URL: "
+msgstr "URL: "
+
+#. i18n: file ./ui/sessionwidgetbase.ui line 175
+#: rc.cpp:36
+#, fuzzy, no-c-format
+msgid "Recursivel&y:"
+msgstr "Özyineli olarak:"
+
+#. i18n: file ./ui/sessionwidgetbase.ui line 181
+#: rc.cpp:39
+#, no-c-format
+msgid "Check pages recursively"
+msgstr "Özyineli olarak sayfaları kontrol et"
+
+#. i18n: file ./ui/sessionwidgetbase.ui line 192
+#: rc.cpp:42 rc.cpp:93
+#, no-c-format
+msgid "Unlimited"
+msgstr "Sınırsız"
+
+#. i18n: file ./ui/sessionwidgetbase.ui line 215
+#: rc.cpp:45
+#, fuzzy, no-c-format
+msgid "Do &not check parent folders"
+msgstr "Üst klasörleri kontrol etme"
+
+#. i18n: file ./ui/sessionwidgetbase.ui line 253
+#: rc.cpp:48
+#, fuzzy, no-c-format
+msgid "Chec&k external links"
+msgstr "Harici bağlantıları kontrol et"
+
+#. i18n: file ./ui/sessionwidgetbase.ui line 291
+#: rc.cpp:51
+#, no-c-format
+msgid "Do not check regular expression:"
+msgstr "Düzenli ifadeyi kontrol etme:"
+
+#. i18n: file ./ui/sessionwidgetbase.ui line 457
+#: rc.cpp:57
+#, no-c-format
+msgid "Elapsed time:"
+msgstr "Geçen süre:"
+
+#. i18n: file ./ui/sessionwidgetbase.ui line 460
+#: rc.cpp:60 rc.cpp:63
+#, no-c-format
+msgid "hh:mm:ss.zzz"
+msgstr "ss:dd:sn:sls"
+
+#. i18n: file ./ui/settings/configsearchdialog.ui line 24
+#: rc.cpp:66
+#, no-c-format
+msgid "Network"
+msgstr "Ağ"
+
+#. i18n: file ./ui/settings/configsearchdialog.ui line 71
+#: rc.cpp:69
+#, no-c-format
+msgid "Timeout in seconds:"
+msgstr "Saniyelerdeki zamanaşımı:"
+
+#. i18n: file ./ui/settings/configsearchdialog.ui line 109
+#: rc.cpp:72
+#, no-c-format
+msgid "Number of simultaneous connections:"
+msgstr "Eşzamanlı bağlantıların sayısı:"
+
+#. i18n: file ./ui/settings/configsearchdialog.ui line 119
+#: rc.cpp:75
+#, no-c-format
+msgid "Input"
+msgstr "Giriş"
+
+#. i18n: file ./ui/settings/configsearchdialog.ui line 152
+#: rc.cpp:78
+#, no-c-format
+msgid "Check parent folders"
+msgstr "Üst klasörleri kontrol et"
+
+#. i18n: file ./ui/settings/configsearchdialog.ui line 171
+#: rc.cpp:81
+#, no-c-format
+msgid "Number of items in URL history:"
+msgstr "URL tarihçesi içindeki öğelerin sayısı:"
+
+#. i18n: file ./ui/settings/configsearchdialog.ui line 179
+#: rc.cpp:84
+#, no-c-format
+msgid "Check external links"
+msgstr "Harici bağlantıları kontrol et"
+
+#. i18n: file ./ui/settings/configsearchdialog.ui line 198
+#: rc.cpp:87
+#, no-c-format
+msgid "Recursive"
+msgstr "Özyineli"
+
+#. i18n: file ./ui/settings/configsearchdialog.ui line 234
+#: rc.cpp:90
+#, no-c-format
+msgid "Depth:"
+msgstr "Derinlik:"
+
+#. i18n: file ./ui/settings/configsearchdialog.ui line 276
+#: rc.cpp:96
+#, no-c-format
+msgid "Quanta"
+msgstr "Quanta"
+
+#. i18n: file ./ui/settings/configsearchdialog.ui line 287
+#: rc.cpp:99
+#, no-c-format
+msgid "Use preview prefix"
+msgstr "Önek önizlemesini kullan"
+
+#. i18n: file ./ui/settings/configsearchdialog.ui line 293
+#: rc.cpp:102
+#, no-c-format
+msgid ""
+"Check this one if you want to use Quanta's project preview prefix in the URL to "
+"check"
+msgstr ""
+"Eğer URL içindekini kontrol etmek için Quanta'nın proje önizleme önek'ini "
+"kullanmak istiyorsanız bunun birini kontrol edin."
+
+#. i18n: file ./ui/settings/configsearchdialog.ui line 303
+#: rc.cpp:105
+#, no-c-format
+msgid "Remember settings when exit"
+msgstr "Çıkışta ayarları hatırla"
+
+#. i18n: file ./ui/settings/configidentificationdialogui.ui line 34
+#: klinkstatus_part.cpp:153 rc.cpp:108
+#, no-c-format
+msgid "Identification"
+msgstr ""
+
+#. i18n: file ./ui/settings/configidentificationdialogui.ui line 57
+#: rc.cpp:111
+#, no-c-format
+msgid "User-Agent"
+msgstr ""
+
+#. i18n: file ./ui/settings/configidentificationdialogui.ui line 92
+#: rc.cpp:117
+#, no-c-format
+msgid "Send Identification"
+msgstr ""
+
+#. i18n: file ./ui/settings/configresultsdialog.ui line 35
+#: rc.cpp:123
+#, fuzzy, no-c-format
+msgid "Tree"
+msgstr "Ağaç görünümü"
+
+#. i18n: file ./ui/settings/configresultsdialog.ui line 43
+#: rc.cpp:126
+#, fuzzy, no-c-format
+msgid "Flat"
+msgstr "Düz görünüm"
+
+#. i18n: file ./ui/settings/configresultsdialog.ui line 53
+#: rc.cpp:129
+#, no-c-format
+msgid "Misc"
+msgstr ""
+
+#. i18n: file ./ui/settings/configresultsdialog.ui line 64
+#: rc.cpp:132
+#, fuzzy, no-c-format
+msgid "Follow Last Link Checked"
+msgstr "Kontrol edilen son bağlantıyı takip et"
+
+#. i18n: file ./cfg/klinkstatus.kcfg line 8
+#: rc.cpp:135
+#, no-c-format
+msgid "Maximum number of entries in the combo url."
+msgstr "Açılır url içindeki girişlerin azami sayısı."
+
+#. i18n: file ./cfg/klinkstatus.kcfg line 13
+#: rc.cpp:138
+#, no-c-format
+msgid "Maximum number of simultaneous connections."
+msgstr "Eşzamanlı bağlantıların azami sayısı."
+
+#. i18n: file ./cfg/klinkstatus.kcfg line 18
+#: rc.cpp:141
+#, no-c-format
+msgid "Timeout on getting an URL."
+msgstr "URL alınırken zamanaşımı."
+
+#. i18n: file ./cfg/klinkstatus.kcfg line 23
+#: rc.cpp:144
+#, no-c-format
+msgid "History of combo url."
+msgstr "Açılır url'nin tarihçesi."
+
+#. i18n: file ./cfg/klinkstatus.kcfg line 27
+#: rc.cpp:147
+#, no-c-format
+msgid "Whether to do a recursive check."
+msgstr "Bir özyineli kontrol yapıp yapmamak."
+
+#. i18n: file ./cfg/klinkstatus.kcfg line 32
+#: rc.cpp:150
+#, no-c-format
+msgid "Maximum depth to check."
+msgstr "Kontrol etmek için azami derinlik."
+
+#. i18n: file ./cfg/klinkstatus.kcfg line 37
+#: rc.cpp:153
+#, no-c-format
+msgid "Whether to check parent folders."
+msgstr "Üst klasörü kontrol edip etmemek."
+
+#. i18n: file ./cfg/klinkstatus.kcfg line 42
+#: rc.cpp:156
+#, no-c-format
+msgid "Whether to check external links."
+msgstr "Harici bağlantıları kontrol edip etmemek."
+
+#. i18n: file ./cfg/klinkstatus.kcfg line 47
+#: rc.cpp:159
+#, no-c-format
+msgid "Whether to remeber the check settings like depth, and so on, on exit."
+msgstr ""
+"Çıkışta derinlik ve bu ve buna benzer kontrol ayarlarını hatırlayıp "
+"hatırlamamak."
+
+#. i18n: file ./cfg/klinkstatus.kcfg line 52
+#: rc.cpp:162
+#, no-c-format
+msgid ""
+"Whether preview prefix in Quanta project is used to set the URL to check."
+msgstr ""
+"URL kontrolünü ayarlamak için kullanılan Quanta projesinde önek önizlemesi "
+"yapıp yapmamak."
+
+#. i18n: file ./cfg/klinkstatus.kcfg line 57
+#: rc.cpp:165 rc.cpp:168
+#, no-c-format
+msgid "Whether to display a tree view or a flat view in the results view."
+msgstr ""
+"Bir düz görünüm ya da ağaç görünüm sonuçlarını sonuçlar görünümü içinde "
+"gösterip göstermemek."
+
+#. i18n: file ./cfg/klinkstatus.kcfg line 67
+#: rc.cpp:171
+#, no-c-format
+msgid ""
+"Whether to automatically adjust the width of the result columns (Not used)."
+msgstr ""
+"Sonuç sütunlarının genişliğini otomatik olarak ayarlayıp ayarlamamak "
+"(Kullanılmıyor)."
+
+#. i18n: file ./cfg/klinkstatus.kcfg line 72
+#: rc.cpp:174
+#, no-c-format
+msgid ""
+"Whether the viewport of the result view should follow the last link checked."
+msgstr ""
+"Kontrol edilen son bağlantıyı takip etmesi gereken sonucun görüntü kapısı olup "
+"olmadığı."
+
+#. i18n: file ./cfg/klinkstatus.kcfg line 77
+#: rc.cpp:177
+#, no-c-format
+msgid ""
+"Whether the user can see if the markup is valid by showing a column with an "
+"icon indicator."
+msgstr ""
+
+#. i18n: file ./cfg/klinkstatus.kcfg line 82
+#: rc.cpp:180
+#, no-c-format
+msgid "Whether to send an User-Agent in HTTP requests."
+msgstr ""
+
+#. i18n: file ./cfg/klinkstatus.kcfg line 87
+#: rc.cpp:183
+#, no-c-format
+msgid "Defines the HTTP User-Agent to send."
+msgstr ""
+
+#: klinkstatus_part.cpp:51
+msgid "A Link Checker"
+msgstr "Bir Bağlantı Kontrol Edici"
+
+#: klinkstatus_part.cpp:151
+msgid "Check"
+msgstr "Kontrol Et"
+
+#: klinkstatus_part.cpp:152
+msgid "Results"
+msgstr "Sonuçlar"
+
+#: klinkstatus_part.cpp:154
+msgid "Configure the way KLinkstatus reports itself"
+msgstr ""
+
+#: klinkstatus_part.cpp:187
+msgid "KLinkStatus Part"
+msgstr "KBağlantıDurumu Parçası"
+
+#~ msgid "&Pause"
+#~ msgstr "&Duraklat"
+
+#~ msgid "&Resume"
+#~ msgstr "Ge&ri Dön"
+
+#~ msgid "&Check"
+#~ msgstr "&Kontrol Et"
+
+#~ msgid "Click here to begin searching"
+#~ msgstr "Aramaya başlamak için buraya tıklayın"
+
+#~ msgid "Tree View"
+#~ msgstr "Ağaç görünümü"

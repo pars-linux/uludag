@@ -1,0 +1,1654 @@
+# translation of klock.po to
+# Copyright (C) 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Bülent Bolat <bbolat@yildiz.edu.tr>, 2004.
+# Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
+# Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: klock\n"
+"POT-Creation-Date: 2008-07-08 01:23+0200\n"
+"PO-Revision-Date: 2007-05-16 21:16+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: kdesavers/Euphoria.cpp:900
+msgid "Euphoria"
+msgstr "Euphoria"
+
+#: kdesavers/Euphoria.cpp:977 kdesavers/Flux.cpp:863
+#: kdesavers/SolarWinds.cpp:675
+msgid "Regular"
+msgstr "Düzenli"
+
+#: kdesavers/Euphoria.cpp:978
+msgid "Grid"
+msgstr "Kılavuz"
+
+#: kdesavers/Euphoria.cpp:979
+msgid "Cubism"
+msgstr "Kübizm"
+
+#: kdesavers/Euphoria.cpp:980
+msgid "Bad Math"
+msgstr "Kötü Matematik"
+
+#: kdesavers/Euphoria.cpp:981
+msgid "M-Theory"
+msgstr "M-Teori"
+
+#: kdesavers/Euphoria.cpp:982
+msgid "UHFTEM"
+msgstr "UHFTEM"
+
+#: kdesavers/Euphoria.cpp:983
+msgid "Nowhere"
+msgstr "Hiç bir yer"
+
+#: kdesavers/Euphoria.cpp:984
+msgid "Echo"
+msgstr "Yankı"
+
+#: kdesavers/Euphoria.cpp:985
+msgid "Kaleidoscope"
+msgstr "Kaleydeskop"
+
+#: kdesavers/Euphoria.cpp:986 kdesavers/Flux.cpp:869
+#: kdesavers/SolarWinds.cpp:681
+msgid "(Random)"
+msgstr "(Rastgele)"
+
+#: kdesavers/Euphoria.cpp:992
+msgid "Setup Euphoria Screen Saver"
+msgstr "Euphoria Ekran Koruyucusunu Ayarla"
+
+#: kdesavers/Euphoria.cpp:1003 kdesavers/Flux.cpp:886
+#: kdesavers/SolarWinds.cpp:698 kdesavers/science.cpp:865
+msgid "Mode:"
+msgstr "Kip:"
+
+#: kdesavers/Euphoria.cpp:1040
+msgid ""
+"<h3>Euphoria 1.0</h3>\n"
+"<p>Copyright (c) 2002 Terence M. Welsh"
+"<br>\n"
+"<a href=\"http://www.reallyslick.com/\">http://www.reallyslick.com/</a></p>\n"
+"\n"
+"<p>Ported to KDE by Karl Robillard</p>"
+msgstr ""
+"<h3>Euphoria 1.0</h3>\n"
+"<p>Telif Hakkı (c) 2002 Terence M. Welsh"
+"<br>\n"
+"<a href=\"http://www.reallyslick.com/\">http://www.reallyslick.com/</a></p>\n"
+"\n"
+"<p>Ported to KDE by Karl Robillard</p>"
+
+#: kdesavers/Flux.cpp:784
+msgid "Flux"
+msgstr "Flux"
+
+#: kdesavers/Flux.cpp:864
+msgid "Hypnotic"
+msgstr "Hipnotizma"
+
+#: kdesavers/Flux.cpp:865
+msgid "Insane"
+msgstr "Çılgın"
+
+#: kdesavers/Flux.cpp:866
+msgid "Sparklers"
+msgstr "Kıvılcım"
+
+#: kdesavers/Flux.cpp:867
+msgid "Paradigm"
+msgstr "Paradigma"
+
+#: kdesavers/Flux.cpp:868
+msgid "Galactic"
+msgstr "Uzay Yolu"
+
+#: kdesavers/Flux.cpp:875
+msgid "Setup Flux Screen Saver"
+msgstr "Flux Ekran Koruyucusunu Ayarla"
+
+#: kdesavers/Flux.cpp:921
+msgid ""
+"<h3>Flux 1.0</h3>\n"
+"<p>Copyright (c) 2002 Terence M. Welsh"
+"<br>\n"
+"<a href=\"http://www.reallyslick.com/\">http://www.reallyslick.com/</a></p>\n"
+"\n"
+"<p>Ported to KDE by Karl Robillard</p>"
+msgstr ""
+"<h3>Flux 1.0</h3>\n"
+"<p>Telif Hakkı (c) 2002 Terence M. Welsh"
+"<br>\n"
+"<a href=\"http://www.reallyslick.com/\">http://www.reallyslick.com/</a></p>\n"
+"\n"
+"<p>Ported to KDE by Karl Robillard</p>"
+
+#: kdesavers/SolarWinds.cpp:598
+msgid "Solar Winds"
+msgstr "Güneş Rüzgarları"
+
+#: kdesavers/SolarWinds.cpp:676
+msgid "Cosmic Strings"
+msgstr "Kosmik Işınlar"
+
+#: kdesavers/SolarWinds.cpp:677
+msgid "Cold Pricklies"
+msgstr "Soğuk Pricklies"
+
+#: kdesavers/SolarWinds.cpp:678
+msgid "Space Fur"
+msgstr "Uzay Kürkü"
+
+#: kdesavers/SolarWinds.cpp:679
+msgid "Jiggly"
+msgstr "Titreme"
+
+#: kdesavers/SolarWinds.cpp:680
+msgid "Undertow"
+msgstr "Anafor"
+
+#: kdesavers/SolarWinds.cpp:687
+msgid "Setup Solar Wind"
+msgstr "Güneş Rüzgarını Ayarla"
+
+#: kdesavers/SolarWinds.cpp:733
+msgid ""
+"<h3>Solar Winds 1.0</h3>\n"
+"<p>Copyright (c) 2002 Terence M. Welsh"
+"<br>\n"
+"<a href=\"http://www.reallyslick.com/\">http://www.reallyslick.com/</a></p>\n"
+"\n"
+"<p>Ported to KDE by Karl Robillard</p>"
+msgstr ""
+"<h3>Solar Winds 1.0</h3>\n"
+"<p>Telif Hakkı(c) 2002 Terence M. Welsh"
+"<br>\n"
+"<a href=\"http://www.reallyslick.com/\">http://www.reallyslick.com/</a></p>\n"
+"\n"
+"<p>Ported to KDE by Karl Robillard</p>"
+
+#: kdesavers/banner.cpp:44
+msgid "KBanner"
+msgstr "KBanner"
+
+#: kdesavers/banner.cpp:61
+msgid "Setup Banner Screen Saver"
+msgstr "Banner Ekran Koruyucusunu Ayarla"
+
+#: kdesavers/banner.cpp:80
+msgid "Family:"
+msgstr "Aile:"
+
+#: kdesavers/banner.cpp:89 kdesavers/science.cpp:897
+msgid "Size:"
+msgstr "Boy:"
+
+#: kdesavers/banner.cpp:99
+msgid "Bold"
+msgstr "Kalın"
+
+#. i18n: file kdesavers/firesaversetup.ui line 541
+#: kdesavers/banner.cpp:110 rc.cpp:84
+#, no-c-format
+msgid "Color:"
+msgstr "Renk:"
+
+#: kdesavers/banner.cpp:118
+msgid "Cycling color"
+msgstr "Değişen renk"
+
+#: kdesavers/banner.cpp:133 kdesavers/lines.cpp:139 kdesavers/lorenz.cpp:82
+#: kdesavers/polygon.cpp:87 kdesavers/science.cpp:932 xsavers/space.cpp:593
+#: xsavers/swarm.cpp:328
+msgid "Speed:"
+msgstr "Hız:"
+
+#: kdesavers/banner.cpp:148
+msgid "Message:"
+msgstr "Mesaj:"
+
+#: kdesavers/banner.cpp:157
+msgid "Show current time"
+msgstr "Şimdiki zamanı göster"
+
+#: kdesavers/banner.cpp:343
+msgid ""
+"Banner Version 2.2.1\n"
+"\n"
+"Written by Martin R. Jones 1996\n"
+"mjones@kde.org\n"
+"Extended by Alexander Neundorf 2000\n"
+"alexander.neundorf@rz.tu-ilmenau.de\n"
+msgstr ""
+"Banner Sürüm 2.2.1\n"
+"\n"
+"Martin R. Jones 1996\n"
+"mjones@kde.org\n"
+"Eklentiler: Alexander Neundorf 2000\n"
+"alexander.neundorf@rz.tu-ilmenau.de\n"
+
+#: kdesavers/blob.cpp:51
+msgid "KBlob"
+msgstr "KBlob"
+
+#: kdesavers/blob.cpp:70
+msgid "Random Linear"
+msgstr "Rastgele Doğrusal"
+
+#: kdesavers/blob.cpp:71
+msgid "Horizontal Sine"
+msgstr "Yatay Sinüs"
+
+#: kdesavers/blob.cpp:72
+msgid "Circular Bounce"
+msgstr "Dairesel Zıplama"
+
+#: kdesavers/blob.cpp:73
+msgid "Polar Coordinates"
+msgstr "Polar Koordinatlar"
+
+#. i18n: file kdesavers/rotationcfg.ui line 110
+#: kdesavers/blob.cpp:74 rc.cpp:456
+#, no-c-format
+msgid "Random"
+msgstr "Rastgele"
+
+#: kdesavers/blob.cpp:88
+msgid "This screen saver requires a color display."
+msgstr "Bu ekran koruyucusu için renkli bir ekran gerekiyor."
+
+#: kdesavers/blob.cpp:438
+msgid "Setup Blob Screen Saver"
+msgstr "Baloncuk Ekran Koruyucusunu Ayarla"
+
+#: kdesavers/blob.cpp:456
+msgid "Frame duration:"
+msgstr "Çerçeve hızı:"
+
+#. i18n: file kdesavers/slideshowcfg.ui line 109
+#: kdesavers/blob.cpp:458 rc.cpp:498
+#, no-c-format
+msgid " sec"
+msgstr " san"
+
+#: kdesavers/blob.cpp:463
+msgid "Algorithm:"
+msgstr "Algoritma:"
+
+#: kdesavers/blob.cpp:522
+msgid ""
+"Blobsaver Version 0.1\n"
+"\n"
+"Written by Tiaan Wessels 1997\n"
+"tiaan@netsys.co.za"
+msgstr ""
+"Blobsaver Sürüm 0.1\n"
+"\n"
+"Tiaan Wessels 1997\n"
+"tiaan@netsys.co.za"
+
+#: kdesavers/firesaver.cpp:73
+msgid "Setup Screen Saver"
+msgstr "Ekran Koruyucusunu Ayarla"
+
+#: kdesavers/firesaver.cpp:84
+msgid ""
+"<h3>KFireSaver 3D 1.0</h3>\n"
+"<p>TEST Koral - Enrico Ros::2004</p>"
+msgstr ""
+"<h3>KFireSaver 3D 1.0</h3>\n"
+"<p>DENEME Koral - Enrico Ros::2004</p>"
+
+#: kdesavers/firesaver.cpp:99
+msgid "Fireworks 3D (GL)"
+msgstr "HavaiFişek 3D (GL)"
+
+#: kdesavers/firesaver.cpp:522
+msgid "www.kde.org"
+msgstr "www.kde.org"
+
+#: kdesavers/firesaver.cpp:523
+msgid "My KDE, please!"
+msgstr "Benim KDE'em, lütfen!"
+
+#: kdesavers/firesaver.cpp:524
+msgid "KoNqUeR the World"
+msgstr "KoNqUeR Dünyası"
+
+#: kdesavers/firesaver.cpp:525
+msgid "KFIRESAVER 3D"
+msgstr "KFIRESAVER 3D"
+
+#: kdesavers/firesaver.cpp:526
+msgid "Gimme your eyes..."
+msgstr "Gözlerini bana ver..."
+
+#: kdesavers/firesaver.cpp:527
+msgid "Thank you for using KDE"
+msgstr "KDE kullandığınız için teşekkür ederiz"
+
+#: kdesavers/firesaver.cpp:528
+msgid "Going insane tonight"
+msgstr "Çılgın geceye gidiş"
+
+#: kdesavers/firesaverwriter.cpp:97
+msgid "Welcome to KDE %1.%2.%3"
+msgstr "KDE %1.%2.%3 e Hoşgeldiniz"
+
+#: kdesavers/fountain.cpp:41
+msgid "Particle Fountain Screen Saver"
+msgstr "Su Kaynağı Ekran Koruyucusu"
+
+#: kdesavers/fountain.cpp:144
+msgid ""
+"<h3>Particle Fountain</h3>\n"
+"<p>Particle Fountain Screen Saver for KDE</p>\n"
+"Copyright (c)  Ian Reinhart Geiser 2001"
+"<br>\n"
+"\n"
+"<p>KConfig code and KScreenSaver \"Setup...\" improvements by Nick Betcher "
+"<nbetcher@usinternet.com> 2001</p>"
+msgstr ""
+"<h3>Parça Kaynağı</h3>\n"
+"<p>KDE için Parça Kaynağı Ekran Koruyucusu</p>\n"
+"Telif Hakkı(c)  Ian Reinhart Geiser 2001"
+"<br>\n"
+"\n"
+"<p>KConfig kodu ve KScreenSaver ilerlemeleri içinNick Betcher "
+"<nbetcher@usinternet.com> 2001</p>"
+
+#: kdesavers/gravity.cpp:40
+msgid "Particle Gravity Screen Saver"
+msgstr "Yerçekimi Ekran Koruyucusu"
+
+#: kdesavers/gravity.cpp:130
+msgid ""
+"<h3>Gravity</h3>\n"
+"<p>Particle Gravity Screen Saver for KDE</p>\n"
+"Copyright (c)  Ian Reinhart Geiser 2001"
+"<br>\n"
+"\n"
+"<p>KConfig code and KScreenSaver \"Setup...\" improvements by Nick Betcher "
+"<nbetcher@usinternet.com> 2001</p>"
+msgstr ""
+"<h3>Yerçekimi</h3>\n"
+"<p>KDE için Yerçekimi Ekran Koruyucusu</p>\n"
+"Telif Hakkı (c)  Ian Reinhart Geiser 2001"
+"<br>"
+
+#: kdesavers/kclock.cpp:54
+msgid "Clock"
+msgstr "Saat"
+
+#: kdesavers/kclock.cpp:72
+msgid "Setup Clock Screen Saver"
+msgstr "Saat Ekran Koruyucusu"
+
+#. i18n: file kdesavers/firesaversetup.ui line 747
+#: kdesavers/kclock.cpp:86 rc.cpp:132
+#, no-c-format
+msgid "Colors"
+msgstr "Renkler"
+
+#: kdesavers/kclock.cpp:91
+msgid "&Hour-hand:"
+msgstr "&Akrep:"
+
+#: kdesavers/kclock.cpp:100
+msgid "&Minute-hand:"
+msgstr "&Yelkovan:"
+
+#: kdesavers/kclock.cpp:109
+msgid "&Second-hand:"
+msgstr "&Saniye:"
+
+#: kdesavers/kclock.cpp:118
+msgid "Scal&e:"
+msgstr "Ölç&ek:"
+
+#: kdesavers/kclock.cpp:127
+msgid "&Background:"
+msgstr "&Arkaplan:"
+
+#: kdesavers/kclock.cpp:144
+msgid "Si&ze:"
+msgstr "Bo&yut:"
+
+#: kdesavers/kclock.cpp:155
+msgid "Small"
+msgstr "Küçük"
+
+#: kdesavers/kclock.cpp:157
+msgid "Medium"
+msgstr "Orta"
+
+#: kdesavers/kclock.cpp:159
+msgid "Big"
+msgstr "Büyük"
+
+#: kdesavers/kclock.cpp:163
+msgid "&Keep clock centered"
+msgstr "&Saati ortada tut"
+
+#: kdesavers/kclock.cpp:228
+msgid ""
+"Clock Screen Saver"
+"<br>Version 1.0"
+"<br><nobr>Melchior FRANZ (c) 2003</nobr>"
+msgstr ""
+"Saat Ekran Koruyucusu"
+"<br> Sürüm 1.0"
+"<br><nobr>Melchior FRANZ (c) 2003</nobr>"
+
+#: kdesavers/kvm.cpp:65
+msgid "Virtual Machine"
+msgstr "Sanal Makine"
+
+#: kdesavers/kvm.cpp:277
+msgid "Setup Virtual Machine"
+msgstr "Sanal Makineyi Ayarla"
+
+#: kdesavers/kvm.cpp:289
+msgid "Virtual machine speed:"
+msgstr "Sanal makine hızı:"
+
+#: kdesavers/kvm.cpp:303
+msgid "Display update speed:"
+msgstr "Görüntünün tazelenme hızı:"
+
+#: kdesavers/kvm.cpp:378
+msgid ""
+"Virtual Machine Version 0.1\n"
+"\n"
+"Copyright (c) 2000 Artur Rataj <art@zeus.polsl.gliwice.pl>\n"
+msgstr ""
+"Sanal Makine Sürüm 0.1\n"
+"\n"
+"Telif hakkı (c) 2000 Artur Rataj <art@zeus.polsl.gliwice.pl>\n"
+
+#: kdesavers/kvm.cpp:379
+msgid "About Virtual Machine"
+msgstr "Sanal Makine Hakkında"
+
+#: kdesavers/lines.cpp:37
+msgid "KLines"
+msgstr "Çizgiler"
+
+#: kdesavers/lines.cpp:116
+msgid "Setup Lines Screen Saver"
+msgstr "Çizgiler Ekran Koruyucusunu Ayarla"
+
+#. i18n: file kdesavers/rotationcfg.ui line 136
+#: kdesavers/lines.cpp:128 kdesavers/polygon.cpp:66 rc.cpp:465
+#, no-c-format
+msgid "Length:"
+msgstr "Uzunluk:"
+
+#: kdesavers/lines.cpp:149
+msgid "Beginning:"
+msgstr "Başlangıç:"
+
+#: kdesavers/lines.cpp:157
+msgid "Middle:"
+msgstr "Orta:"
+
+#: kdesavers/lines.cpp:165
+msgid "End:"
+msgstr "Bitiş:"
+
+#: kdesavers/lines.cpp:240
+msgid ""
+"Lines Version 2.2.0\n"
+"\n"
+"Written by Dirk Staneker 1997\n"
+"dirk.stanerker@student.uni-tuebingen.de"
+msgstr ""
+"Çizgiler Sürüm 2.2.0\n"
+"\n"
+"Dirk Staneker 1997\n"
+"dirk.stanerker@student.uni-tuebingen.de"
+
+#: kdesavers/lorenz.cpp:33
+msgid "KLorenz"
+msgstr "KLorenz"
+
+#: kdesavers/lorenz.cpp:70
+msgid "Setup Lorenz Attractor"
+msgstr "Lorenz Çekicisini Ayarla"
+
+#: kdesavers/lorenz.cpp:92
+msgid "Epoch:"
+msgstr "Devir:"
+
+#: kdesavers/lorenz.cpp:102
+msgid "Color rate:"
+msgstr "Renk oranı:"
+
+#: kdesavers/lorenz.cpp:112
+msgid "Rotation Z:"
+msgstr "Z Deviri:"
+
+#: kdesavers/lorenz.cpp:122
+msgid "Rotation Y:"
+msgstr "Y Deviri:"
+
+#: kdesavers/lorenz.cpp:132
+msgid "Rotation X:"
+msgstr "X Deviri:"
+
+#: kdesavers/lorenz.cpp:220
+msgid ""
+"Lorenz Attractor screen saver for KDE\n"
+"\n"
+"Copyright (c) 2000 Nicolas Brodu"
+msgstr ""
+"KDE için Lorenz ekran koruyucusu\n"
+"\n"
+"Telif Hakkı (c) 2000 Nicolas Brodu"
+
+#: kdesavers/pendulum.cpp:58
+msgid "Simulation of a two-part pendulum"
+msgstr "İki parçalı sarkaç simülasyonu"
+
+#: kdesavers/pendulum.cpp:706
+msgid ""
+"Ratio of 2nd mass to sum of both masses.\n"
+"Valid values from %1 to %2."
+msgstr ""
+"İkinci kütlenin tüm ktülelerin toplamına oranı\n"
+"%1 ve %2 arasındaki değerler geçerlidir."
+
+#: kdesavers/pendulum.cpp:711
+msgid ""
+"Ratio of 2nd pendulum part length to the sum of both part lengths.\n"
+"Valid values from %1 to %2."
+msgstr ""
+"Sarkacın ikinci kısmının uzunluğunun toplam uzunluğa oranı\n"
+"%1 ve %2 arasındaki değerler geçerlidir."
+
+#: kdesavers/pendulum.cpp:716 kdesavers/rotation.cpp:728
+msgid ""
+"Gravitational constant in arbitrary units.\n"
+"Valid values from %1 to %2."
+msgstr ""
+"Yerçekimi sabiti\n"
+"%1 ve %2 arasındaki değerler geçerlidir."
+
+#: kdesavers/pendulum.cpp:721
+msgid ""
+"Energy in units of the maximum potential energy of the given configuration.\n"
+"Valid values from %1 to %2."
+msgstr ""
+"Verilen yapılandırmanın en fazla potansiyel enerji cinsinden enerjisi.\n"
+"%1 ve %2 arasındaki değerler geçerlidir."
+
+#: kdesavers/pendulum.cpp:726
+msgid ""
+"Time in seconds after which a random perspective change occurs.\n"
+"Valid values from %1 to %2."
+msgstr ""
+"Rasgele bir perspektif değişiminden sonra geçen zaman(saniye cinsinden)\n"
+"%1 ve %2 arasındaki değerler geçerlidir."
+
+#: kdesavers/pendulum.cpp:788
+msgid ""
+"<h3>KPendulum Screen Saver for KDE</h3>"
+"<p>Simulation of a two-part pendulum</p>"
+"<p>Copyright (c) Georg&nbsp;Drenkhahn 2004</p>"
+"<p><tt>georg-d@users.sourceforge.net</tt></p>"
+msgstr ""
+"<h3>KSarkaç KDE Ekran Koruyucusu</h3> "
+"<p>İki parçalı bir sarkacın simülasyonu</p> "
+"<p>Copyright (c) Georg&nbsp;Drenkhahn 2004</p>"
+"<p><tt>georg-d@users.sourceforge.net</tt></p>"
+
+#: kdesavers/polygon.cpp:35
+msgid "KPolygon"
+msgstr "Poligon"
+
+#: kdesavers/polygon.cpp:53
+msgid "Setup Polygon Screen Saver"
+msgstr "Poligon Ekran Koruyucusunu Ayarla"
+
+#: kdesavers/polygon.cpp:77
+msgid "Vertices:"
+msgstr "Dikeyler:"
+
+#: kdesavers/polygon.cpp:185
+msgid ""
+"Polygon Version 2.2.0\n"
+"\n"
+"Written by Martin R. Jones 1996\n"
+"mjones@kde.org"
+msgstr ""
+"Poligon Sürüm 2.2.0\n"
+"\n"
+"Yazarı Martin R. Jones 1996\n"
+"mjones@kde.org"
+
+#: kdesavers/rotation.cpp:60
+msgid "Simulation of a force free rotating asymmetric body"
+msgstr "Kuvvetten bağımsız dönen asimetrik bir beden simülasyonu"
+
+#: kdesavers/rotation.cpp:718
+msgid ""
+"Length of traces in seconds of visibility.\n"
+"Valid values from %1 to %2."
+msgstr ""
+"Saniye cinsinden izlerin görünme süresi.\n"
+"%1 ve %2 arasındaki değerleri alabilir."
+
+#: kdesavers/rotation.cpp:723
+msgid ""
+"Angular momentum in z direction in arbitrary units.\n"
+"Valid values from %1 to %2."
+msgstr ""
+"Z doprultusundaki açısal momentum.\n"
+"%1 ve %2 arasındaki değerleri alabilir."
+
+#: kdesavers/rotation.cpp:782
+msgid ""
+"<h3>KRotation Screen Saver for KDE</h3>"
+"<p>Simulation of a force free rotating asymmetric body</p>"
+"<p>Copyright (c) Georg&nbsp;Drenkhahn 2004</p>"
+"<p><tt>georg-d@users.sourceforge.net</tt></p>"
+msgstr ""
+"<h3>KRotation KDE Ekran Koruyucusu</h3>"
+"<p>Kuvvetten bağımsız dönen asimetrik bir beden simülasyonu</p>"
+"<p>Copyright (c) Georg&nbsp;Drenkhahn 2004</p>"
+"<p><tt>georg-d@users.sourceforge.net</tt></p>"
+
+#: kdesavers/science.cpp:58
+msgid "Science Screen Saver"
+msgstr "Bilim Ekran Koruyucusu"
+
+#: kdesavers/science.cpp:81
+msgid "Whirl"
+msgstr "Fırıldak"
+
+#: kdesavers/science.cpp:84
+msgid "Sphere"
+msgstr "Küre"
+
+#: kdesavers/science.cpp:87
+msgid "Exponential"
+msgstr "Karıştırarak"
+
+#: kdesavers/science.cpp:90
+msgid "Contraction"
+msgstr "Çekilme"
+
+#: kdesavers/science.cpp:93
+msgid "Wave"
+msgstr "Dalga"
+
+#: kdesavers/science.cpp:96
+msgid "Curvature"
+msgstr "Kavis"
+
+#: kdesavers/science.cpp:850
+msgid "Setup Science Screen Saver"
+msgstr "Bilim Ekran Koruyucusunu Ayarla"
+
+#: kdesavers/science.cpp:877
+msgid "Inverse"
+msgstr "Ters"
+
+#: kdesavers/science.cpp:884
+msgid "Gravity"
+msgstr "Çekim"
+
+#: kdesavers/science.cpp:890
+msgid "Hide background"
+msgstr "Gizli arkaplan"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1349
+#: kdesavers/science.cpp:915 rc.cpp:294
+#, no-c-format
+msgid "Intensity:"
+msgstr "Yoğunluk:"
+
+#: kdesavers/science.cpp:945
+msgid "Motion:"
+msgstr "Hareket:"
+
+#: kdesavers/science.cpp:1148
+msgid ""
+"Science Version 0.26.5\n"
+"\n"
+"Written by Rene Beutler (1998)\n"
+"rbeutler@g26.ethz.ch"
+msgstr ""
+"Bilim Sürüm 0.26.5\n"
+"\n"
+"Yazarı Rene Beutler (1998)\n"
+"rbeutler@g26.ethz.ch"
+
+#: kdesavers/slideshow.cpp:50 kdesavers/slideshow.cpp:57
+msgid "KSlideshow"
+msgstr "Slayt Gösterisi"
+
+#: kdesavers/slideshow.cpp:752
+msgid "No images found"
+msgstr "Resim bulunamadı"
+
+#: kdesavers/slideshow.cpp:924
+msgid "Setup Slide Show Screen Saver"
+msgstr "Slayt Gösterisi Ekran Koruyucusunu Ayarla"
+
+#: kdesavers/slideshow.cpp:1013
+msgid "SlideShow"
+msgstr "Slayt Gösterisi"
+
+#: kdesavers/wave.cpp:42
+msgid "Bitmap Wave Screen Saver"
+msgstr "Bitmap Wave Ekran Koruyucusu"
+
+#: kdesavers/wave.cpp:108
+msgid ""
+"<h3>Bitmap Flag Screen Saver</h3>\n"
+"<p>Waving Flag Screen Saver for KDE</p>\n"
+"Copyright (c)  Ian Reinhart Geiser 2001"
+msgstr ""
+"<h3>Bitmap Flag Ekran Koruyucusu</h3>\n"
+"<p>KDE  Waving Flag Ekran Koruyucusu </p>\n"
+"Telif Hakkı (c)  Ian Reinhart Geiser 2001"
+
+#: xsavers/main.cpp:28
+msgid "KDE Screen Lock/Saver"
+msgstr "KDE Ekran Koruyucusu/Kilitleyicisi"
+
+#: xsavers/main.cpp:33
+msgid "Setup screen saver"
+msgstr "Ekran koruyucusunu ayarla"
+
+#: xsavers/main.cpp:34
+msgid "Run in the specified XWindow"
+msgstr "Belirtilen XWindow altında çalıştır"
+
+#: xsavers/main.cpp:35
+msgid "Run in the root XWindow"
+msgstr "Kök XWindow altında çalıştır"
+
+#: xsavers/main.cpp:36
+msgid "Start screen saver in demo mode"
+msgstr "Ekran koruyucusu gösteri kipinde başlat"
+
+#: xsavers/main.cpp:52
+msgid "KLock"
+msgstr "Kilitle"
+
+#: xsavers/space.cpp:426
+msgid ""
+"GL can not render with root visual\n"
+msgstr ""
+"GL, kök X Window altında çalışamaz\n"
+
+#: xsavers/space.cpp:579
+msgid "Setup Space Screen Saver"
+msgstr "Uzay Ekran Koruyucusunu Ayarla"
+
+#: xsavers/space.cpp:603
+msgid "Warp interval:"
+msgstr "Işınlama aralığı:"
+
+#: xsavers/space.cpp:676
+msgid ""
+"KSpace\n"
+"Copyright (c) 1998\n"
+"Bernd Johannes Wuebben <wuebben@kde.org>"
+msgstr ""
+"KSpace\n"
+"Telif hakkı (c) 1998\n"
+"Bernd Johannes Wuebben <wuebben@kde.org>"
+
+#: xsavers/swarm.cpp:317
+msgid "Setup Swarm Screen Saver"
+msgstr "Arı Ekran Koruyucusunu Ayarla"
+
+#: xsavers/swarm.cpp:341
+msgid "Number of bees:"
+msgstr "Arı sayısı:"
+
+#: xsavers/swarm.cpp:417
+msgid ""
+"Swarm\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensaver by Emanuel Pirker."
+msgstr ""
+"Swarm\n"
+"\n"
+"Telif hakkı (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"kscreensaver için uyarlayan Emanuel Pirker."
+
+#: xsavers/swarm.cpp:418
+msgid "About Swarm"
+msgstr "Swarm Hakkında"
+
+#. i18n: file kdesavers/firesaversetup.ui line 24
+#: rc.cpp:3
+#, no-c-format
+msgid "KFireSaver Setup"
+msgstr "KFireSaver Ayarla"
+
+#. i18n: file kdesavers/firesaversetup.ui line 38
+#: rc.cpp:6
+#, no-c-format
+msgid "&Load"
+msgstr "&Yükle"
+
+#. i18n: file kdesavers/firesaversetup.ui line 44
+#: rc.cpp:9
+#, no-c-format
+msgid "KDE (default)"
+msgstr "KDE (öntanımlı)"
+
+#. i18n: file kdesavers/firesaversetup.ui line 49
+#: rc.cpp:12
+#, no-c-format
+msgid "Elegant White"
+msgstr "Zarif Beyaz"
+
+#. i18n: file kdesavers/firesaversetup.ui line 54
+#: rc.cpp:15
+#, no-c-format
+msgid "Quick Simple"
+msgstr "Kolay Örnek"
+
+#. i18n: file kdesavers/firesaversetup.ui line 59
+#: rc.cpp:18
+#, no-c-format
+msgid "Enhanced Reality"
+msgstr "Gelişmiş Gerçeklik"
+
+#. i18n: file kdesavers/firesaversetup.ui line 64
+#: rc.cpp:21
+#, no-c-format
+msgid "Hypnotic Illusions"
+msgstr "Hipnotizmasal İlüzyon"
+
+#. i18n: file kdesavers/firesaversetup.ui line 84
+#: rc.cpp:24
+#, no-c-format
+msgid "Preset:"
+msgstr "Öndeğer:"
+
+#. i18n: file kdesavers/firesaversetup.ui line 116
+#: rc.cpp:27
+#, no-c-format
+msgid "Preview"
+msgstr "Önizleme"
+
+#. i18n: file kdesavers/firesaversetup.ui line 204
+#: rc.cpp:30
+#, no-c-format
+msgid "preview window"
+msgstr "önizleme penceresi"
+
+#. i18n: file kdesavers/firesaversetup.ui line 207
+#: rc.cpp:33
+#, no-c-format
+msgid "Here is the preview (if it is not detached)"
+msgstr "Burada önizlemesini görebilirsiniz (eğer ayrılmamışsa)"
+
+#. i18n: file kdesavers/firesaversetup.ui line 221
+#: rc.cpp:36
+#, no-c-format
+msgid "P R E V I E W"
+msgstr "Ö N İ Z L E M E"
+
+#. i18n: file kdesavers/firesaversetup.ui line 251
+#: rc.cpp:39
+#, no-c-format
+msgid "&Show in separate window"
+msgstr "Ayrı bir pencerede gö&ster"
+
+#. i18n: file kdesavers/firesaversetup.ui line 259
+#: rc.cpp:42
+#, no-c-format
+msgid "&Apply && Update"
+msgstr "Uygul&a ve Güncelle"
+
+#. i18n: file kdesavers/firesaversetup.ui line 271
+#: rc.cpp:45
+#, no-c-format
+msgid "Show"
+msgstr "Göster"
+
+#. i18n: file kdesavers/firesaversetup.ui line 298
+#: rc.cpp:48
+#, no-c-format
+msgid "Show type:"
+msgstr "Tür Göster:"
+
+#. i18n: file kdesavers/firesaversetup.ui line 304
+#: rc.cpp:51
+#, no-c-format
+msgid "Simple Show"
+msgstr "Örnek Gösterim"
+
+#. i18n: file kdesavers/firesaversetup.ui line 309
+#: rc.cpp:54
+#, no-c-format
+msgid "Completely Random"
+msgstr "Tamamen Rasgele"
+
+#. i18n: file kdesavers/firesaversetup.ui line 314
+#: rc.cpp:57
+#, no-c-format
+msgid "Only Change Color"
+msgstr "Sadece Değişen Renk"
+
+#. i18n: file kdesavers/firesaversetup.ui line 319
+#: rc.cpp:60
+#, no-c-format
+msgid "Only Change Fireworks"
+msgstr "Sadece Değişen HavaiFişek"
+
+#. i18n: file kdesavers/firesaversetup.ui line 358
+#: rc.cpp:63
+#, no-c-format
+msgid "Number of fireworks:"
+msgstr "HavaiFişek sayısı:"
+
+#. i18n: file kdesavers/firesaversetup.ui line 366
+#: rc.cpp:66
+#, no-c-format
+msgid "few"
+msgstr "az"
+
+#. i18n: file kdesavers/firesaversetup.ui line 402
+#: rc.cpp:69 rc.cpp:267
+#, no-c-format
+msgid "more"
+msgstr "daha fazla"
+
+#. i18n: file kdesavers/firesaversetup.ui line 437
+#: rc.cpp:72
+#, no-c-format
+msgid "Size of particles:"
+msgstr "Parçacıkların boyu:"
+
+#. i18n: file kdesavers/firesaversetup.ui line 445
+#: rc.cpp:75 rc.cpp:297 rc.cpp:309
+#, no-c-format
+msgid "small"
+msgstr "küçük"
+
+#. i18n: file kdesavers/firesaversetup.ui line 478
+#: rc.cpp:78 rc.cpp:312
+#, no-c-format
+msgid "big"
+msgstr "büyük"
+
+#. i18n: file kdesavers/firesaversetup.ui line 505
+#: rc.cpp:81
+#, no-c-format
+msgid "Use bottom fire"
+msgstr "Alt ateşi kullan"
+
+#. i18n: file kdesavers/firesaversetup.ui line 552
+#: rc.cpp:87
+#, no-c-format
+msgid "Select the color"
+msgstr "Renk seç"
+
+#. i18n: file kdesavers/firesaversetup.ui line 579
+#: rc.cpp:90
+#, no-c-format
+msgid "Enable sounds"
+msgstr "Sese izin ver"
+
+#. i18n: file kdesavers/firesaversetup.ui line 587
+#: rc.cpp:93
+#, no-c-format
+msgid "Limit overload (recommended)"
+msgstr "Aşırı yüklemeyi sınırla (önerilir)"
+
+#. i18n: file kdesavers/firesaversetup.ui line 595
+#: rc.cpp:96
+#, no-c-format
+msgid "Realtime fps adjust (recommended)"
+msgstr "Gerçek zamanlı fps dengeleme (önerilir)"
+
+#. i18n: file kdesavers/firesaversetup.ui line 622
+#: rc.cpp:99 rc.cpp:135
+#, no-c-format
+msgid "Fireworks"
+msgstr "Havai fişek"
+
+#. i18n: file kdesavers/firesaversetup.ui line 658
+#: rc.cpp:102
+#, no-c-format
+msgid "Blinding white"
+msgstr "Parlak beyaz"
+
+#. i18n: file kdesavers/firesaversetup.ui line 666
+#: rc.cpp:105
+#, no-c-format
+msgid "Velvet purple"
+msgstr "Velvet Moru"
+
+#. i18n: file kdesavers/firesaversetup.ui line 674
+#: rc.cpp:108
+#, no-c-format
+msgid "Deep-sea green"
+msgstr "Koyu deniz yeşili"
+
+#. i18n: file kdesavers/firesaversetup.ui line 682
+#: rc.cpp:111
+#, no-c-format
+msgid "Deep red"
+msgstr "Koyu kırmızı"
+
+#. i18n: file kdesavers/firesaversetup.ui line 690
+#: rc.cpp:114
+#, no-c-format
+msgid "Multicolor"
+msgstr "Çoklurenk"
+
+#. i18n: file kdesavers/firesaversetup.ui line 693
+#: rc.cpp:117
+#, no-c-format
+msgid "try bi-color fireworks"
+msgstr "iki renkli havai fişekleri dene"
+
+#. i18n: file kdesavers/firesaversetup.ui line 696
+#: rc.cpp:120
+#, no-c-format
+msgid "This allow a random creation of fireworks that explodes in 2 colors"
+msgstr "2 renkte patlayan havai fişeklerin rasgele üretilmesini sağlar"
+
+#. i18n: file kdesavers/firesaversetup.ui line 704
+#: rc.cpp:123
+#, no-c-format
+msgid "Boring blue"
+msgstr "Sıkıcı mavi"
+
+#. i18n: file kdesavers/firesaversetup.ui line 729
+#: rc.cpp:126
+#, no-c-format
+msgid "Hot orange"
+msgstr "Sıcak turuncu"
+
+#. i18n: file kdesavers/firesaversetup.ui line 737
+#: rc.cpp:129
+#, no-c-format
+msgid "Purest green"
+msgstr "Saf yeşil"
+
+#. i18n: file kdesavers/firesaversetup.ui line 771
+#: rc.cpp:138
+#, no-c-format
+msgid "Flames ring"
+msgstr "Alev halkası"
+
+#. i18n: file kdesavers/firesaversetup.ui line 774
+#: rc.cpp:141 rc.cpp:147 rc.cpp:153 rc.cpp:159 rc.cpp:165 rc.cpp:171
+#: rc.cpp:177 rc.cpp:183
+#, no-c-format
+msgid "try me"
+msgstr "beni dene"
+
+#. i18n: file kdesavers/firesaversetup.ui line 782
+#: rc.cpp:144
+#, no-c-format
+msgid "Atomic splitter"
+msgstr "Atomik bölücü"
+
+#. i18n: file kdesavers/firesaversetup.ui line 793
+#: rc.cpp:150
+#, no-c-format
+msgid "Sparkling fall"
+msgstr "Kıvılcım yağmuru"
+
+#. i18n: file kdesavers/firesaversetup.ui line 804
+#: rc.cpp:156
+#, no-c-format
+msgid "Classic"
+msgstr "Klasik"
+
+#. i18n: file kdesavers/firesaversetup.ui line 815
+#: rc.cpp:162
+#, no-c-format
+msgid "Only explosion"
+msgstr "Yalnızca patlama"
+
+#. i18n: file kdesavers/firesaversetup.ui line 853
+#: rc.cpp:168
+#, no-c-format
+msgid "SuperNova"
+msgstr "SüperNova"
+
+#. i18n: file kdesavers/firesaversetup.ui line 864
+#: rc.cpp:174
+#, no-c-format
+msgid "Toxic spirals"
+msgstr "Zehirli spiraller"
+
+#. i18n: file kdesavers/firesaversetup.ui line 875
+#: rc.cpp:180
+#, no-c-format
+msgid "Flames world"
+msgstr "Alev dünyası"
+
+#. i18n: file kdesavers/firesaversetup.ui line 890
+#: rc.cpp:186
+#, no-c-format
+msgid "Specials"
+msgstr "Özel"
+
+#. i18n: file kdesavers/firesaversetup.ui line 918
+#: rc.cpp:189
+#, no-c-format
+msgid "Logos"
+msgstr "Logolar"
+
+#. i18n: file kdesavers/firesaversetup.ui line 924
+#: rc.cpp:192
+#, no-c-format
+msgid "Watch exploding images"
+msgstr "Patlayan resimleri izle"
+
+#. i18n: file kdesavers/firesaversetup.ui line 927
+#: rc.cpp:195
+#, no-c-format
+msgid "Enable images explosion."
+msgstr "Resim patlamalarını etkinleştirir."
+
+#. i18n: file kdesavers/firesaversetup.ui line 977
+#: rc.cpp:198
+#, no-c-format
+msgid "KDE icons"
+msgstr "KDE ikonları"
+
+#. i18n: file kdesavers/firesaversetup.ui line 980
+#: rc.cpp:201
+#, no-c-format
+msgid "Enables KDE Icons"
+msgstr "KDE Simgelerini Etkin kılar"
+
+#. i18n: file kdesavers/firesaversetup.ui line 983
+#: rc.cpp:204
+#, no-c-format
+msgid "Enables random KDE Icons explosions."
+msgstr "Rastgele KDE simge patlamalarını etkinleştir."
+
+#. i18n: file kdesavers/firesaversetup.ui line 991
+#: rc.cpp:207
+#, no-c-format
+msgid "Tux"
+msgstr "Tux"
+
+#. i18n: file kdesavers/firesaversetup.ui line 997
+#: rc.cpp:210
+#, no-c-format
+msgid "Enables Tux"
+msgstr "Penguenleri Gösterir"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1000
+#: rc.cpp:213
+#, no-c-format
+msgid "Enables random Tux explosions."
+msgstr "Rastgele Tux.patlamalarını etkin kılar."
+
+#. i18n: file kdesavers/firesaversetup.ui line 1008
+#: rc.cpp:216
+#, no-c-format
+msgid "Reduce detail"
+msgstr "Detayları azalt"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1011
+#: rc.cpp:219
+#, no-c-format
+msgid "useful for increasing speed"
+msgstr "artan hızla kullanışlı"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1014
+#: rc.cpp:222
+#, no-c-format
+msgid "When enabled speeds up logo explosion but reduces quality."
+msgstr "Seçildiğinde logoyu hızlandırır ancak kalite düşer."
+
+#. i18n: file kdesavers/firesaversetup.ui line 1022
+#: rc.cpp:225
+#, no-c-format
+msgid "Konqui"
+msgstr "Konqui"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1025
+#: rc.cpp:228
+#, no-c-format
+msgid "Enables Konqui"
+msgstr "Konqui'yi Gösterir"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1028
+#: rc.cpp:231
+#, no-c-format
+msgid "Enables random Konqui explosions."
+msgstr "Rastgele Konqui.patlamalarını etkin kılar."
+
+#. i18n: file kdesavers/firesaversetup.ui line 1046
+#: rc.cpp:234
+#, no-c-format
+msgid "Frequency:"
+msgstr "Sıklık:"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1054
+#: rc.cpp:237
+#, no-c-format
+msgid "sometimes"
+msgstr "bazen"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1087
+#: rc.cpp:240
+#, no-c-format
+msgid "often"
+msgstr "genellikle"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1158
+#: rc.cpp:243
+#, no-c-format
+msgid "Flickering"
+msgstr "Kırpışma"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1161
+#: rc.cpp:246
+#, no-c-format
+msgid "enables a natural 'flicker' effect"
+msgstr "doğal bir kırpışma efekti sağlar"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1164
+#: rc.cpp:249
+#, no-c-format
+msgid "This option produces a sort of vibration in the lightness of the star."
+msgstr "Bu seçenek yıldızın ışığında bir tür dalgalanma oluşturur."
+
+#. i18n: file kdesavers/firesaversetup.ui line 1172
+#: rc.cpp:252
+#, no-c-format
+msgid "Red-blue gradient"
+msgstr "Kırmızı-mavi gradyen"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1175
+#: rc.cpp:255
+#, no-c-format
+msgid "emulate horizon coloring"
+msgstr "yatay renklendirmeyi emüle et"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1178
+#: rc.cpp:258
+#, no-c-format
+msgid "Gives lower stars a reddish tint."
+msgstr "Alçak yıldızlara kızıl gölge verir."
+
+#. i18n: file kdesavers/firesaversetup.ui line 1196
+#: rc.cpp:261
+#, no-c-format
+msgid "Number:"
+msgstr "Numara:"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1204
+#: rc.cpp:264
+#, no-c-format
+msgid "less"
+msgstr "daha az"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1266
+#: rc.cpp:270 rc.cpp:363 rc.cpp:390 rc.cpp:525
+#, no-c-format
+msgid "Stars"
+msgstr "Yıldızlar"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1272
+#: rc.cpp:273 rc.cpp:282
+#, no-c-format
+msgid "Watch the stars"
+msgstr "Yıldızları izle"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1275
+#: rc.cpp:276 rc.cpp:285
+#, no-c-format
+msgid "Enable stars in the sky."
+msgstr "Gökteki yıldızları etkin kıl."
+
+#. i18n: file kdesavers/firesaversetup.ui line 1283
+#: rc.cpp:279
+#, no-c-format
+msgid "Writings"
+msgstr "Yazımlar"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1302
+#: rc.cpp:288
+#, no-c-format
+msgid "Effects"
+msgstr "Efektler"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1313
+#: rc.cpp:291
+#, no-c-format
+msgid "Flash screen on explosions"
+msgstr "Patlamalarda ekranı parlat"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1390
+#: rc.cpp:300
+#, no-c-format
+msgid "hypnotic"
+msgstr "hipnotizma"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1417
+#: rc.cpp:303
+#, no-c-format
+msgid "Mega flares"
+msgstr "Mega alevler"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1453
+#: rc.cpp:306
+#, no-c-format
+msgid "Dimension:"
+msgstr "Boyut:"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1521
+#: rc.cpp:315
+#, no-c-format
+msgid "Fireworks leave a particle trail"
+msgstr "Havai fişekler arkalarında bir parçacık izi bırakır"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1524
+#: rc.cpp:318 rc.cpp:321
+#, no-c-format
+msgid "not yet ported"
+msgstr "henüz uygulanmadı"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1560
+#: rc.cpp:324
+#, no-c-format
+msgid "Flash opacity:"
+msgstr "Parlama opaklığı:"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1568
+#: rc.cpp:327
+#, no-c-format
+msgid "min"
+msgstr "en az"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1601
+#: rc.cpp:330
+#, no-c-format
+msgid "max"
+msgstr "en çok"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1628
+#: rc.cpp:333
+#, no-c-format
+msgid "Fade effect"
+msgstr "Sönüm efekti"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1639
+#: rc.cpp:336
+#, no-c-format
+msgid "Spherical light after explosion"
+msgstr "Patlamadan sonraki küresel ışık"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1642
+#: rc.cpp:339
+#, no-c-format
+msgid "warning, this can shock your mind :-)"
+msgstr "uyarı, bu aklınızı tavana vurdurabilir :-)"
+
+#. i18n: file kdesavers/firesaversetup.ui line 1645
+#: rc.cpp:342
+#, no-c-format
+msgid ""
+"Multiplies the scale factor for particles near you, resulting in a colorful "
+"experience."
+msgstr ""
+"Bize yakın nesnelerin büyüklük katsayısını katlar, renkli bir deneyimle "
+"sonuçlanır."
+
+#. i18n: file kdesavers/fountaincfg.ui line 28
+#: rc.cpp:345
+#, no-c-format
+msgid "Particle Fountain Setup"
+msgstr "Kaya Ekran Koruyucusunu Ayarla"
+
+#. i18n: file kdesavers/fountaincfg.ui line 59
+#: rc.cpp:348 rc.cpp:375 rc.cpp:510
+#, no-c-format
+msgid "Use textures"
+msgstr "Doku kullan"
+
+#. i18n: file kdesavers/fountaincfg.ui line 111
+#: rc.cpp:360 rc.cpp:387 rc.cpp:522
+#, no-c-format
+msgid "Shapes"
+msgstr "Şekil"
+
+#. i18n: file kdesavers/fountaincfg.ui line 153
+#: rc.cpp:366 rc.cpp:393 rc.cpp:528
+#, no-c-format
+msgid "Flares"
+msgstr "Alevler"
+
+#. i18n: file kdesavers/fountaincfg.ui line 170
+#: rc.cpp:369 rc.cpp:396 rc.cpp:531
+#, no-c-format
+msgid "Particle size:"
+msgstr "Nokta boyutu:"
+
+#. i18n: file kdesavers/gravitycfg.ui line 28
+#: rc.cpp:372
+#, no-c-format
+msgid "Gravity Setup"
+msgstr "Ağırlık Ayarla"
+
+#. i18n: file kdesavers/pendulumcfg.ui line 42
+#: rc.cpp:399
+#, no-c-format
+msgid "KPendulum Setup"
+msgstr "KSarkaç Ayarları"
+
+#. i18n: file kdesavers/pendulumcfg.ui line 90
+#: rc.cpp:402
+#, no-c-format
+msgid ""
+"<p align=\"center\">\n"
+"m<sub>2</sub>"
+"<br>\n"
+"-----------"
+"<br>\n"
+"m<sub>1</sub>+m<sub>2</sub>\n"
+"</p>"
+msgstr ""
+"<p align=\"center\">\n"
+"m<sub>2</sub>"
+"<br>\n"
+"-----------"
+"<br>\n"
+"m<sub>1</sub>+m<sub>2</sub>\n"
+"</p>"
+
+#. i18n: file kdesavers/pendulumcfg.ui line 134
+#: rc.cpp:409
+#, no-c-format
+msgid ""
+"<p align=\"center\">\n"
+"l<sub>2</sub>"
+"<br>\n"
+"------"
+"<br>\n"
+"l<sub>1</sub>+l<sub>2</sub>\n"
+"</p>"
+msgstr ""
+"<p align=\"center\">\n"
+"l<sub>2</sub>"
+"<br>\n"
+"------"
+"<br>\n"
+"l<sub>1</sub>+l<sub>2</sub>\n"
+"</p>"
+
+#. i18n: file kdesavers/pendulumcfg.ui line 174
+#: rc.cpp:416
+#, no-c-format
+msgid "g"
+msgstr "g"
+
+#. i18n: file kdesavers/pendulumcfg.ui line 217
+#: rc.cpp:419
+#, no-c-format
+msgid "E"
+msgstr "E"
+
+#. i18n: file kdesavers/pendulumcfg.ui line 261
+#: rc.cpp:422
+#, no-c-format
+msgid ""
+"Perspective"
+"<br>\n"
+"Change [s]"
+msgstr ""
+"Perspektif"
+"<br>\n"
+"değişiklik [ler]"
+
+#. i18n: file kdesavers/pendulumcfg.ui line 264
+#: rc.cpp:426
+#, no-c-format
+msgid ""
+"specify the time in seconds after which a random perspective change occurs"
+msgstr "Rasgele perspektif değişimi bittikten sonra zamanı saniyelerle belirt"
+
+#. i18n: file kdesavers/pendulumcfg.ui line 313
+#: rc.cpp:429
+#, no-c-format
+msgid "Bars"
+msgstr "Çubuklar"
+
+#. i18n: file kdesavers/pendulumcfg.ui line 327
+#: rc.cpp:432
+#, no-c-format
+msgid "M1"
+msgstr "M1"
+
+#. i18n: file kdesavers/pendulumcfg.ui line 341
+#: rc.cpp:435
+#, no-c-format
+msgid "M2"
+msgstr "M2"
+
+#. i18n: file kdesavers/rotationcfg.ui line 42
+#: rc.cpp:447
+#, no-c-format
+msgid "KRotation Setup"
+msgstr "KRotation Ayar"
+
+#. i18n: file kdesavers/rotationcfg.ui line 80
+#: rc.cpp:450
+#, no-c-format
+msgid "Traces"
+msgstr "İzler"
+
+#. i18n: file kdesavers/rotationcfg.ui line 102
+#: rc.cpp:453
+#, no-c-format
+msgid "x"
+msgstr "x"
+
+#. i18n: file kdesavers/rotationcfg.ui line 118
+#: rc.cpp:459
+#, no-c-format
+msgid "y"
+msgstr "y"
+
+#. i18n: file kdesavers/rotationcfg.ui line 126
+#: rc.cpp:462
+#, no-c-format
+msgid "z"
+msgstr "z"
+
+#. i18n: file kdesavers/rotationcfg.ui line 212
+#: rc.cpp:468
+#, no-c-format
+msgid "Theta:"
+msgstr "Teta:"
+
+#. i18n: file kdesavers/rotationcfg.ui line 228
+#: rc.cpp:471
+#, no-c-format
+msgid "Lz:"
+msgstr "Lz:"
+
+#. i18n: file kdesavers/slideshowcfg.ui line 27
+#: rc.cpp:483
+#, no-c-format
+msgid "&Include images from sub-folders"
+msgstr "&Alt dizinlerdeki resimleri de al"
+
+#. i18n: file kdesavers/slideshowcfg.ui line 35
+#: rc.cpp:486
+#, no-c-format
+msgid "&Random order"
+msgstr "&Rastgele"
+
+#. i18n: file kdesavers/slideshowcfg.ui line 48
+#: rc.cpp:489
+#, no-c-format
+msgid "Resi&ze images"
+msgstr "&Resimleri boyutlandır"
+
+#. i18n: file kdesavers/slideshowcfg.ui line 73
+#: rc.cpp:492
+#, no-c-format
+msgid "I&mage folder:"
+msgstr "&Resim dizini:"
+
+#. i18n: file kdesavers/slideshowcfg.ui line 84
+#: rc.cpp:495
+#, no-c-format
+msgid "Show &names"
+msgstr "İ&simleri göster"
+
+#. i18n: file kdesavers/slideshowcfg.ui line 126
+#: rc.cpp:501
+#, no-c-format
+msgid "&Delay:"
+msgstr "&Gecikme:"
+
+#. i18n: file kdesavers/slideshowcfg.ui line 137
+#: rc.cpp:504
+#, no-c-format
+msgid "Random &position"
+msgstr "&Rastgele konum"
+
+#. i18n: file kdesavers/wavecfg.ui line 36
+#: rc.cpp:507
+#, no-c-format
+msgid "Bitmap Flag Setup"
+msgstr "Bitmap Bayrak Ayarla"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Adil YILDIZ"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "adil_yildiztr@yahoo.com"

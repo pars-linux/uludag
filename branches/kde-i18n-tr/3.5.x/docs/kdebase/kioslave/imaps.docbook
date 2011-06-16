@@ -1,0 +1,33 @@
+<article lang="&language;" id="imaps">
+<title
+>imaps</title>
+<articleinfo>
+<authorgroup>
+<author
+><firstname
+>Michael</firstname
+><surname
+>Haeckel</surname
+> <affiliation
+><address
+><email
+>Michael@Haeckel.Net</email
+></address
+></affiliation
+></author>
+</authorgroup>
+ 
+<date
+>2001-08-07</date>
+ 
+ 
+</articleinfo>
+
+<para
+>IMAPS, <ulink url="help:/kioslave/imap.html"
+>IMAP</ulink
+> protokolünün SSL üzerinden şifrelenmiş bir halidir.</para>
+
+</article>
+
+

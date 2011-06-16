@@ -1,0 +1,75 @@
+# translation of uachangerplugin.po to Turkish
+# translation of uachangerplugin.po to turkish
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# Görkem Çetin, <gorkem@kde.org>, 2001, 2004.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: uachangerplugin\n"
+"POT-Creation-Date: 2005-06-28 01:37+0200\n"
+"PO-Revision-Date: 2004-05-28 12:28+0200\n"
+"Last-Translator: YILDIZ KARDEŞLER <turkishprogram@xposta.com>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "YILDIZ KARDEŞLER"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "turkishprogram@xposta.com"
+
+#. i18n: file uachangerplugin.rc line 8
+#: rc.cpp:6
+#, no-c-format
+msgid "Extra Toolbar"
+msgstr "Ek Araççubuğu"
+
+#: uachangerplugin.cpp:45
+msgid "Change Browser Identification"
+msgstr "Tarayıcı Kimliğini Değiştir"
+
+#: uachangerplugin.cpp:60
+msgid "Change Browser &Identification"
+msgstr "&Tarayıcı Kimliğini Değiştir"
+
+#: uachangerplugin.cpp:143
+#, c-format
+msgid "Version %1"
+msgstr "Sürüm %1"
+
+#: uachangerplugin.cpp:150
+msgid "Version %1 on %2"
+msgstr "Sürüm %1 üstünde %2"
+
+#: uachangerplugin.cpp:152
+msgid "%1 %2 on %3"
+msgstr "%1 %2 üstünde %3"
+
+#: uachangerplugin.cpp:175
+msgid "Other"
+msgstr "Diğer"
+
+#: uachangerplugin.cpp:213
+msgid "Identify As"
+msgstr "Kullanılacak Kimlik"
+
+#: uachangerplugin.cpp:219
+msgid "Default Identification"
+msgstr "Öntanımlı Kimlik"
+
+#: uachangerplugin.cpp:247
+msgid "Apply to Entire Site"
+msgstr "Bütün Siteye Uygula"
+
+#: uachangerplugin.cpp:252
+msgid "Configure..."
+msgstr "Yapılandır..."

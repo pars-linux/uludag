@@ -1,0 +1,1100 @@
+# translation of kleopatra.po to Türkçe
+# translation of kleopatra.po to Turkish
+# Copyright (C) 2004 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Yaşar ŞENTÜRK <yasar@dijitaltek.com>, 2004.
+# Adem Alp YILDIZ <ademalp@kde.org.tr>, 2004.
+# Serdar Soytetir <tulliana@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kleopatra\n"
+"POT-Creation-Date: 2008-08-19 01:19+0200\n"
+"PO-Revision-Date: 2008-02-29 15:58+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@lists.kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: LoKalize 0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: conf/appearanceconfigwidget.cpp:72
+msgid "<unnamed>"
+msgstr "<isimsiz>"
+
+#: conf/dirservconfigpage.cpp:155
+msgid "LDAP &timeout (minutes:seconds)"
+msgstr "LDAP &zaman aşımı (dakika:saniye)"
+
+#: conf/dirservconfigpage.cpp:168
+msgid "&Maximum number of items returned by query"
+msgstr ""
+
+#: conf/dirservconfigpage.cpp:175
+msgid "Automatically add &new servers discovered in CRL distribution points"
+msgstr ""
+
+#: conf/dirservconfigpage.cpp:286
+msgid "Backend error: gpgconf does not seem to know the entry for %1/%2/%3"
+msgstr ""
+
+#: conf/dirservconfigpage.cpp:290
+msgid "Backend error: gpgconf has wrong type for %1/%2/%3: %4 %5"
+msgstr "Arka uç hatası: %1/%2/%3: %4 %5 için gpgconf tipi yanlış"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Serdar Soytetir, Yaşar Şentürk"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "tulliana@gmail.com, yasar@dijitaltek.com"
+
+#: aboutdata.cpp:42
+msgid "KDE Key Manager"
+msgstr "KDE Anahtar Yöneticisi"
+
+#: aboutdata.cpp:52
+msgid "Current Maintainer"
+msgstr "Şimdiki Geliştirici"
+
+#: aboutdata.cpp:53
+msgid "Former Maintainer"
+msgstr "Önceki Geliştirici"
+
+#: aboutdata.cpp:54 aboutdata.cpp:55
+msgid "Original Author"
+msgstr "Asıl Yazar"
+
+#: aboutdata.cpp:61
+msgid "Backend configuration framework, KIO integration"
+msgstr "Arkayüz Ayar İskeleti, KIO Entegrasyonu"
+
+#: aboutdata.cpp:64
+msgid "Key-state dependant colors and fonts in the key list"
+msgstr "Anahtar listesindeki anahtar durumuna bağlı renkler ve yazı tipleri"
+
+#: aboutdata.cpp:67
+msgid "Certificate Wizard KIOSK integration, infrastructure"
+msgstr "Sertifika Sihirbazı KIOSK entegrasyonu, altyapı"
+
+#: aboutdata.cpp:70
+msgid "Support for obsolete EMAIL RDN in Certificate Wizard"
+msgstr "Sertifika Sihirbazı' nda eskimiş E-POSTA RDN desteği"
+
+#: aboutdata.cpp:73
+msgid "DN display ordering support, infrastructure"
+msgstr ""
+
+#: aboutdata.cpp:79
+msgid "Kleopatra"
+msgstr "Kleopatra"
+
+#: certificateinfowidgetimpl.cpp:128
+msgid "Valid"
+msgstr "Geçerli"
+
+#: certificateinfowidgetimpl.cpp:131
+msgid "Can be used for signing"
+msgstr "İmzalamak için kullanılabilir"
+
+#: certificateinfowidgetimpl.cpp:133
+msgid "Can be used for encryption"
+msgstr "Şifreleme için kullanılabilir"
+
+#: certificateinfowidgetimpl.cpp:135
+msgid "Can be used for certification"
+msgstr "Sertifikalandırma için kullanılabilir"
+
+#: certificateinfowidgetimpl.cpp:137
+msgid "Can be used for authentication"
+msgstr "Kimlik denetimi için kullanılabilir"
+
+#: certificateinfowidgetimpl.cpp:139
+msgid "Fingerprint"
+msgstr "Parmakizi"
+
+#: certificateinfowidgetimpl.cpp:140 certmanager.cpp:137
+msgid "Issuer"
+msgstr "Veren"
+
+#: certificateinfowidgetimpl.cpp:141
+msgid "Serial Number"
+msgstr "Seri Numarası"
+
+#: certificateinfowidgetimpl.cpp:148
+msgid "Country"
+msgstr "Ülke"
+
+#: certificateinfowidgetimpl.cpp:149
+msgid "Organizational Unit"
+msgstr "Departman"
+
+#: certificateinfowidgetimpl.cpp:150
+msgid "Organization"
+msgstr "Organizasyon"
+
+#: certificateinfowidgetimpl.cpp:151
+msgid "Location"
+msgstr "Konum"
+
+#: certificateinfowidgetimpl.cpp:152
+msgid "Common Name"
+msgstr "Ortak Ad"
+
+#: certificateinfowidgetimpl.cpp:153 certificateinfowidgetimpl.cpp:173
+msgid "Email"
+msgstr "E-posta"
+
+#: certificateinfowidgetimpl.cpp:164 certmanager.cpp:136
+msgid "Subject"
+msgstr "Konu"
+
+#: certificateinfowidgetimpl.cpp:176
+msgid "A.k.a."
+msgstr "Takma isim"
+
+#: certificateinfowidgetimpl.cpp:187
+msgid ""
+"<qt>"
+"<p>An error occurred while fetching the certificate <b>%1</b> "
+"from the backend:</p>"
+"<p><b>%2</b></p></qt>"
+msgstr ""
+"<qt> "
+"<p>Arkayüzden <b>%1</b> sertifikası alınırken bir hata oluştu:</p>"
+"<p><b>%2</b></p></qt>"
+
+#: certificateinfowidgetimpl.cpp:192 certmanager.cpp:537
+msgid "Certificate Listing Failed"
+msgstr "Sertifika Listeleme Başarısız"
+
+#: certificateinfowidgetimpl.cpp:252
+msgid "Fetching Certificate Chain"
+msgstr "Sertifika Zinciri Alınıyor"
+
+#: certificateinfowidgetimpl.cpp:269 certificateinfowidgetimpl.cpp:295
+#, c-format
+msgid ""
+"Failed to execute gpgsm:\n"
+"%1"
+msgstr ""
+"gpgsm çalıştrıma başarısız:\n"
+"%1"
+
+#: certificateinfowidgetimpl.cpp:269
+msgid "program not found"
+msgstr "program bulunamadı"
+
+#: certificateinfowidgetimpl.cpp:297
+msgid "program cannot be executed"
+msgstr "program çalıştırılamadı"
+
+#: certificateinfowidgetimpl.cpp:330
+msgid "Issuer certificate not found ( %1)"
+msgstr "Dağıtıcı sertifikası bulunamadı ( %1)"
+
+#: certificateinfowidgetimpl.cpp:380 certmanager.cpp:1153
+msgid "Additional Information for Key"
+msgstr "Anahtar İçin Ek Bilgi"
+
+#: certificatewizardimpl.cpp:91
+msgid ""
+"_: Format string for the labels in the \"Your Personal Data\" page - required "
+"field\n"
+"*%1 (%2):"
+msgstr "*%1 (%2):"
+
+#: certificatewizardimpl.cpp:94
+msgid ""
+"_: Format string for the labels in the \"Your Personal Data\" page\n"
+"%1 (%2):"
+msgstr "%1 (%2):"
+
+#: certificatewizardimpl.cpp:141
+#, c-format
+msgid ""
+"_n: %n bit\n"
+"%n bits"
+msgstr "%n bit"
+
+#: certificatewizardimpl.cpp:257
+#, c-format
+msgid "Could not start certificate generation: %1"
+msgstr "Sertifika üretimi başlatılamadı: %1"
+
+#: certificatewizardimpl.cpp:259 certificatewizardimpl.cpp:282
+#: certmanager.cpp:876 certmanager.cpp:878 certmanager.cpp:937
+#: certmanager.cpp:992 certmanager.cpp:994 crlview.cpp:111 crlview.cpp:134
+msgid "Certificate Manager Error"
+msgstr "Sertifika Yöneticisi Hatası"
+
+#: certificatewizardimpl.cpp:263
+msgid "Generating key"
+msgstr "Anahtar üretiliyor"
+
+#: certificatewizardimpl.cpp:280
+#, c-format
+msgid "Could not generate certificate: %1"
+msgstr "Sertifika üretilemedi: %1"
+
+#: certificatewizardimpl.cpp:437
+#, c-format
+msgid ""
+"DCOP Communication Error, unable to send certificate using KMail.\n"
+"%1"
+msgstr ""
+"DCOP Bağlantı Hatası, KMail kullanılarak sertifika gönderilemez.\n"
+"%1"
+
+#: certificatewizardimpl.cpp:461
+msgid "DCOP Communication Error, unable to send certificate using KMail."
+msgstr "DCOP Bağlantı Hatası, KMail kullanılarak sertifika gönderilemez."
+
+#: certificatewizardimpl.cpp:483 certmanager.cpp:1240
+msgid ""
+"A file named \"%1\" already exists. Are you sure you want to overwrite it?"
+msgstr ""
+"\"%1\" adında bir dosya zaten var. Dosyanın üzerine yazmak istediğinize emin "
+"misiniz?"
+
+#: certificatewizardimpl.cpp:485 certmanager.cpp:1242
+msgid "Overwrite File?"
+msgstr "Dosya Üzerine Yazılsın mı?"
+
+#: certificatewizardimpl.cpp:486 certmanager.cpp:1243
+msgid "&Overwrite"
+msgstr "&Üzerine Yaz"
+
+#: certmanager.cpp:138
+msgid "Serial"
+msgstr "Seri"
+
+#: certmanager.cpp:265
+msgid "Stop Operation"
+msgstr "İşlemi Durdur"
+
+#: certmanager.cpp:270
+msgid "New Key Pair..."
+msgstr "Yeni Anahtar Çifti..."
+
+#: certmanager.cpp:274
+msgid "Hierarchical Key List"
+msgstr "Hiyerarşik Anahtar Listesi"
+
+#: certmanager.cpp:278
+msgid "Expand All"
+msgstr "Tümünü Aç"
+
+#: certmanager.cpp:281
+msgid "Collapse All"
+msgstr "Tümünü Kapat"
+
+#: certmanager.cpp:285
+msgid "Refresh CRLs"
+msgstr "CRL' leri Yenile"
+
+#: certmanager.cpp:290
+msgid "Revoke"
+msgstr "İptal Et"
+
+#: certmanager.cpp:295
+msgid "Extend"
+msgstr "Genişlet"
+
+#: certmanager.cpp:306
+msgid "Validate"
+msgstr "Doğrula"
+
+#: certmanager.cpp:311
+msgid "Import Certificates..."
+msgstr "Sertifikaları Al..."
+
+#: certmanager.cpp:316
+msgid "Import CRLs..."
+msgstr "CRL' leri Al..."
+
+#: certmanager.cpp:321
+msgid "Export Certificates..."
+msgstr "Sertifikaları Aktar..."
+
+#: certmanager.cpp:325
+msgid "Export Secret Key..."
+msgstr "Gizili Anahtarı Aktar..."
+
+#: certmanager.cpp:330
+msgid "Certificate Details..."
+msgstr "Sertifika Detayları..."
+
+#: certmanager.cpp:333
+msgid "Download"
+msgstr "İndir"
+
+#: certmanager.cpp:340
+msgid "Dump CRL Cache..."
+msgstr "CRL Önbelleğini Dök..."
+
+#: certmanager.cpp:345
+msgid "Clear CRL Cache..."
+msgstr "CRL Önbelleğini Temizle..."
+
+#: certmanager.cpp:350
+msgid "GnuPG Log Viewer..."
+msgstr "GnuPG Kayıt Görüntüleyici..."
+
+#: certmanager.cpp:355
+msgid "Search:"
+msgstr "Ara:"
+
+#: certmanager.cpp:362
+msgid "In Local Certificates"
+msgstr "Yerel Sertifikalarda"
+
+#: certmanager.cpp:362
+msgid "In External Certificates"
+msgstr "Harici Sertifikalarda"
+
+#: certmanager.cpp:366
+msgid "Find"
+msgstr "Bul"
+
+#: certmanager.cpp:372
+msgid "Configure &GpgME Backend"
+msgstr "&GpgME Arkayüzünü Ayarla"
+
+#: certmanager.cpp:465
+msgid "Canceled."
+msgstr "İptal edildi."
+
+#: certmanager.cpp:466
+msgid "Failed."
+msgstr "Hata."
+
+#: certmanager.cpp:467
+msgid "Done."
+msgstr "Tamamlandı."
+
+#: certmanager.cpp:480
+#, c-format
+msgid ""
+"_n: %n Key.\n"
+"%n Keys."
+msgstr "%n Anahtar."
+
+#: certmanager.cpp:515
+msgid "Refreshing keys..."
+msgstr "Anahtarlar yenileniyor..."
+
+#: certmanager.cpp:525
+#, c-format
+msgid ""
+"An error occurred while trying to refresh keys:\n"
+"%1"
+msgstr ""
+"Anahtarları yenilemeye çalışırken bir hata oluştu:\n"
+"%1"
+
+#: certmanager.cpp:527
+msgid "Refreshing Keys Failed"
+msgstr "Anahtarları Yenileme Başarısız"
+
+#: certmanager.cpp:532
+msgid ""
+"<qt>"
+"<p>An error occurred while fetching the certificates from the backend:</p>"
+"<p><b>%1</b></p></qt>"
+msgstr ""
+"<qt> "
+"<p>Arkayüzden sertifikaları alırken bir hata oluştu:</p>"
+"<p><b>%1</b></p></qt>"
+
+#: certmanager.cpp:579
+msgid "Fetching keys..."
+msgstr "Anahtarlar alınıyor..."
+
+#: certmanager.cpp:604
+msgid ""
+"The query result has been truncated.\n"
+"Either the local or a remote limit on the maximum number of returned hits has "
+"been exceeded.\n"
+"You can try to increase the local limit in the configuration dialog, but if one "
+"of the configured servers is the limiting factor, you have to refine your "
+"search."
+msgstr ""
+"Sorgu sonucu kesildi.\n"
+"Azami geri dönüş bilgisi ile ilgili yerel veya uzak bir limit aşıldı.\n"
+"Ayar diyaloğundan yerel limiti arttırmayı deneyebilirsiniz, ancak kısıtlamaya "
+"sunuculardan birisi neden oluyorsa, arama işleminizi daha az sonuç üretecek "
+"hale getirmelisiniz."
+
+#: certmanager.cpp:672
+msgid "Select Certificate File"
+msgstr "Sertifika Dosyasını Seç"
+
+#: certmanager.cpp:705
+msgid ""
+"<qt>"
+"<p>An error occurred while trying to download the certificate %1:</p>"
+"<p><b>%2</b></p></qt>"
+msgstr ""
+"<qt> "
+"<p>%1 sertifikasını indirmeye çalışırken bir hata oluştu: </p>"
+"<p><b>%2</b></p></qt>"
+
+#: certmanager.cpp:711
+msgid "Certificate Download Failed"
+msgstr "Sertifika İndirme Başarısız"
+
+#: certmanager.cpp:735
+msgid "Fetching certificate from server..."
+msgstr "Sunucudan sertifika alınıyor..."
+
+#: certmanager.cpp:773
+msgid ""
+"<qt>"
+"<p>An error occurred while trying to import the certificate %1:</p>"
+"<p><b>%2</b></p></qt>"
+msgstr ""
+"<qt> "
+"<p>%1 sertifikasını almaya çalışırken bir hata oluştu: </p>"
+"<p><b>%2</b></p></qt>"
+
+#: certmanager.cpp:778
+msgid "Certificate Import Failed"
+msgstr "Sertifika Alma Başarısız"
+
+#: certmanager.cpp:788
+msgid "Importing certificates..."
+msgstr "Sertifikalar alınıyor..."
+
+#: certmanager.cpp:809
+msgid "<tr><td align=\"right\">%1</td><td>%2</td></tr>"
+msgstr "<tr><td align=\"right\">%1</td><td>%2</td></tr>"
+
+#: certmanager.cpp:810
+msgid "<tr><td align=\"right\"><b>%1</b></td><td>%2</td></tr>"
+msgstr "<tr><td align=\"right\"><b>%1</b></td><td>%2</td></tr>"
+
+#: certmanager.cpp:813
+msgid "Total number processed:"
+msgstr "Toplam işlem sayısı:"
+
+#: certmanager.cpp:815
+msgid "Imported:"
+msgstr "Alınan:"
+
+#: certmanager.cpp:818
+msgid "New signatures:"
+msgstr "Yeni imzalar:"
+
+#: certmanager.cpp:821
+msgid "New user IDs:"
+msgstr "Yeni kullanıcı numaraları:"
+
+#: certmanager.cpp:824
+msgid "Keys without user IDs:"
+msgstr "Kullanıcı numarası olmayan anahtarlar:"
+
+#: certmanager.cpp:827
+msgid "New subkeys:"
+msgstr "Yeni alt anahtarlar:"
+
+#: certmanager.cpp:830
+msgid "Newly revoked:"
+msgstr "Yeni iptal edilen:"
+
+#: certmanager.cpp:833
+msgid "Not imported:"
+msgstr "Alınmamış:"
+
+#: certmanager.cpp:836
+msgid "Unchanged:"
+msgstr "Değiştirilmemiş:"
+
+#: certmanager.cpp:839
+msgid "Secret keys processed:"
+msgstr "Gizli anahtarlar işlendi:"
+
+#: certmanager.cpp:842
+msgid "Secret keys imported:"
+msgstr "Alınan gizli anahtarlar:"
+
+#: certmanager.cpp:845
+msgid "Secret keys <em>not</em> imported:"
+msgstr "<em>Alınmamış</em> gizli anahtarlar:"
+
+#: certmanager.cpp:850
+msgid "Secret keys unchanged:"
+msgstr "Değiştirilmemiş gizli anahtarlar:"
+
+#: certmanager.cpp:854
+msgid "<qt><p>Detailed results of importing %1:</p><table>%2</table></qt>"
+msgstr "<qt><p>%1 alma işleminin detaylı sonuçları:</p><table>%2</table></qt>"
+
+#: certmanager.cpp:857
+msgid "Certificate Import Result"
+msgstr "Sertifika Alma Sonucu"
+
+#: certmanager.cpp:876
+msgid ""
+"The GpgSM process that tried to import the CRL file ended prematurely because "
+"of an unexpected error."
+msgstr ""
+"GpgSM' nin CRL dosyası aktarma girişimi beklenmeyen bir hata ile sonladı."
+
+#: certmanager.cpp:878
+#, c-format
+msgid ""
+"An error occurred when trying to import the CRL file. The output from GpgSM "
+"was:\n"
+"%1"
+msgstr ""
+"CRL dosyasını almaya çalışırken bir hata oluştu. GpgSM çıktısı şöyleydi:\n"
+"%1"
+
+#: certmanager.cpp:880
+msgid "CRL file imported successfully."
+msgstr "CRL dosyası başarıyla alındı."
+
+#: certmanager.cpp:880 certmanager.cpp:996
+msgid "Certificate Manager Information"
+msgstr "Sertifika Yönetici Bilgisi"
+
+#: certmanager.cpp:892
+msgid "Certificate Revocation List (*.crl *.arl *-crl.der *-arl.der)"
+msgstr "Sertifika İptal Listesi (*.crl *.arl *-crl.der *-arl.der)"
+
+#: certmanager.cpp:896
+msgid "Select CRL File"
+msgstr "CRL Dosyası Seç"
+
+#: certmanager.cpp:937
+msgid "Unable to start %1 process. Please check your installation."
+msgstr "%1 işlemi başlatılamaz. Lütfen kurulumunuzu kontrol edin."
+
+#: certmanager.cpp:992
+msgid ""
+"The DirMngr process that tried to clear the CRL cache ended prematurely because "
+"of an unexpected error."
+msgstr ""
+"DirMngr' nin CRL önbelleğini temizleme girişimi beklenmeyen bir hata ile "
+"sonlandı."
+
+#: certmanager.cpp:994
+#, c-format
+msgid ""
+"An error occurred when trying to clear the CRL cache. The output from DirMngr "
+"was:\n"
+"%1"
+msgstr ""
+"CRL önbelleğini temizlemeye çalışırken bir hata oluştu. DirMngr çıktısı "
+"şöyleydi:\n"
+"%1"
+
+#: certmanager.cpp:996
+msgid "CRL cache cleared successfully."
+msgstr "CRL önbelleği başarıyla temizlendi."
+
+#: certmanager.cpp:1002
+msgid ""
+"<qt>"
+"<p>An error occurred while trying to delete the certificates:</p>"
+"<p><b>%1</b></p></qt>"
+msgstr ""
+"<qt> "
+"<p>Sertifikaları silmeye çalışırken bir hata oluştu:</p>"
+"<p><b>%1</b></p></qt>"
+
+#: certmanager.cpp:1006 certmanager.cpp:1101
+msgid "Certificate Deletion Failed"
+msgstr "Sertifika Silme Başarısız"
+
+#: certmanager.cpp:1040
+msgid "Checking key dependencies..."
+msgstr "Anahtar bağımlılıkları kontrol ediliyor..."
+
+#: certmanager.cpp:1066
+msgid ""
+"Some or all of the selected certificates are issuers (CA certificates) for "
+"other, non-selected certificates.\n"
+"Deleting a CA certificate will also delete all certificates issued by it."
+msgstr ""
+"Seçtiğiniz sertifikalardan bazıları veya tümü, seçili olmayan sertifikaların "
+"sağlayıcılarıdır (CA sertifikaları).\n"
+"Bir CA sertifikasını silerseniz, kendisi tarafından sağlanan tüm sertifikalar "
+"da silinecektir."
+
+#: certmanager.cpp:1071
+msgid "Deleting CA Certificates"
+msgstr "CA Seritifikaları Siliniyor"
+
+#: certmanager.cpp:1077
+msgid ""
+"_n: Do you really want to delete this certificate and the %1 certificates it "
+"certified?\n"
+"Do you really want to delete these %n certificates and the %1 certificates they "
+"certified?"
+msgstr ""
+"Bu %n sertifikalarını ve onlar tarafından sağlanan %1 sertifikalarını silmek "
+"istediğinize emin misiniz?"
+
+#: certmanager.cpp:1080
+#, c-format
+msgid ""
+"_n: Do you really want to delete this certificate?\n"
+"Do you really want to delete these %n certificates?"
+msgstr "Bu %n sertifikalarını silmek istediğinize emin misiniz?"
+
+#: certmanager.cpp:1083
+msgid "Delete Certificates"
+msgstr "Sertifikaları Sil"
+
+#: certmanager.cpp:1093
+msgid ""
+"<qt>"
+"<p>An error occurred while trying to delete the certificate:</p>"
+"<p><b>%1</b>"
+"<p></qt>"
+msgstr ""
+"<qt> "
+"<p>Sertifikayı silmeye çalışırken bir hata oluştu: </p>"
+"<p><b>%1</b>"
+"<p></qt>"
+
+#: certmanager.cpp:1096
+msgid ""
+"<qt>"
+"<p>An error occurred while trying to delete the certificates:</p>"
+"<p><b>%1</b>"
+"<p></qt>"
+msgstr ""
+"<qt> "
+"<p>Sertifikaları silmeye çalışırken bir hata oluştu: </p>"
+"<p><b>%1</b>"
+"<p></qt>"
+
+#: certmanager.cpp:1100
+msgid "Operation not supported by the backend."
+msgstr "İşlem arkayüz tarafından desteklenmiyor."
+
+#: certmanager.cpp:1115
+msgid "Deleting keys..."
+msgstr "Anahtarlar siliniyor..."
+
+#: certmanager.cpp:1205
+msgid ""
+"<qt>"
+"<p>An error occurred while trying to export the certificate:</p>"
+"<p><b>%1</b></p></qt>"
+msgstr ""
+"<qt> "
+"<p>Sertifikayı aktarmaya çalışırken bir hata oluştu: </p>"
+"<p><b>%1</b></p></qt>"
+
+#: certmanager.cpp:1209
+msgid "Certificate Export Failed"
+msgstr "Sertifika Aktarımı Başarısız"
+
+#: certmanager.cpp:1224
+msgid "Exporting certificate..."
+msgstr "Sertifikalar aktarılıyor..."
+
+#: certmanager.cpp:1259
+msgid "ASCII Armored Certificate Bundles (*.pem)"
+msgstr ""
+
+#: certmanager.cpp:1263 certmanager.cpp:1380
+msgid "Save Certificate"
+msgstr "Sertifikayı Kaydet"
+
+#: certmanager.cpp:1279
+msgid "Secret Key Export"
+msgstr "Gizli Anahtar Aktarma"
+
+#: certmanager.cpp:1280
+msgid ""
+"Select the secret key to export (<b>Warning: The PKCS#12 format is insecure; "
+"exporting secret keys is discouraged</b>):"
+msgstr ""
+
+#: certmanager.cpp:1298
+msgid ""
+"<qt>"
+"<p>An error occurred while trying to export the secret key:</p>"
+"<p><b>%1</b></p></qt>"
+msgstr ""
+"<qt> "
+"<p>Gizli anahtar aktarılmaya çalışırken bir hata oluştu: </p>"
+"<p><b>%1</b></p></qt>"
+
+#: certmanager.cpp:1302
+msgid "Secret-Key Export Failed"
+msgstr "Gizli Anahtar Aktarımı Başarısız"
+
+#: certmanager.cpp:1344 certmanager.cpp:1359
+msgid "Exporting secret key..."
+msgstr "Gizli anahtar aktarılıyor..."
+
+#: certmanager.cpp:1345
+msgid ""
+"Choose a charset for encoding the pkcs#12 passphrase (utf8 is recommended)"
+msgstr ""
+
+#: certmanager.cpp:1376
+msgid "PKCS#12 Key Bundle (*.p12)"
+msgstr ""
+
+#: certmanager.cpp:1427
+msgid ""
+"Could not start GnuPG LogViewer (kwatchgnupg). Please check your installation!"
+msgstr ""
+"GnuPG Kayıt Görüntüleyici (kwatchgnupg) başlatılamadı. Lütfen kurulumunuzu "
+"kontrol edin!"
+
+#: certmanager.cpp:1429
+msgid "Kleopatra Error"
+msgstr "Kleopatra Hatası"
+
+#: crlview.cpp:57
+msgid "CRL cache dump:"
+msgstr "CRL önbelleği dökümü:"
+
+#: crlview.cpp:111
+msgid "Unable to start gpgsm process. Please check your installation."
+msgstr "gpgsm başlatılamaz. Lütfen kurulumunuzu kontrol edin."
+
+#: crlview.cpp:134
+msgid "The GpgSM process ended prematurely because of an unexpected error."
+msgstr "GpgSM beklenmeyen bir hata ile sonlandı."
+
+#: main.cpp:55
+msgid "Search for external certificates initially"
+msgstr "Açılışta harici sertifikaları ara"
+
+#: main.cpp:56
+msgid "Initial query string"
+msgstr "Açılış sorgusu"
+
+#: main.cpp:57
+msgid "Name of certificate file to import"
+msgstr "Alınacak sertifika dosyası adı"
+
+#: main.cpp:71
+msgid ""
+"<qt>The crypto plugin could not be initialized."
+"<br>Certificate Manager will terminate now.</qt>"
+msgstr ""
+"<qt>Kripto eklentisi başlatılamadı. "
+"<br>Sertifika yöneticisi şimdi sonlandırılacak.</qt>"
+
+#. i18n: file kleopatraui.rc line 26
+#: rc.cpp:9 rc.cpp:21
+#, no-c-format
+msgid "&Certificates"
+msgstr "&Sertifikalar"
+
+#. i18n: file kleopatraui.rc line 37
+#: rc.cpp:12
+#, no-c-format
+msgid "C&RLs"
+msgstr "C&RLler"
+
+#. i18n: file kleopatraui.rc line 51
+#: rc.cpp:18
+#, no-c-format
+msgid "Search Toolbar"
+msgstr "Arama Araç Çubuğu"
+
+#. i18n: file certificateinfowidget.ui line 45
+#: rc.cpp:24
+#, no-c-format
+msgid "&Details"
+msgstr "De&taylar"
+
+#. i18n: file certificateinfowidget.ui line 57
+#: rc.cpp:27
+#, no-c-format
+msgid "Description"
+msgstr "Açıklama"
+
+#. i18n: file certificateinfowidget.ui line 105
+#: rc.cpp:33
+#, no-c-format
+msgid "&Chain"
+msgstr "&Zincir"
+
+#. i18n: file certificateinfowidget.ui line 117
+#: rc.cpp:36
+#, no-c-format
+msgid "Path"
+msgstr "Yol"
+
+#. i18n: file certificateinfowidget.ui line 140
+#: rc.cpp:39
+#, no-c-format
+msgid "Du&mp"
+msgstr "&Dök"
+
+#. i18n: file certificateinfowidget.ui line 171
+#: rc.cpp:42
+#, no-c-format
+msgid "&Import to Local"
+msgstr "&Yerele Al"
+
+#. i18n: file certificateinfowidget.ui line 209
+#: rc.cpp:45
+#, no-c-format
+msgid "Certificate Information"
+msgstr "Sertifika Bilgisi"
+
+#. i18n: file certificatewizard.ui line 16
+#: rc.cpp:48 rc.cpp:51
+#, no-c-format
+msgid "Key Generation Wizard"
+msgstr "Anahtar Üretim Sihirbazı"
+
+#. i18n: file certificatewizard.ui line 45
+#: rc.cpp:54
+#, no-c-format
+msgid ""
+"<b>Welcome to the Key Generation Wizard.</b>\n"
+"<br>\n"
+"<br>\n"
+"In a few easy steps, this wizard will help you to create a new key pair and "
+"request a certificate for it. You can then use your certificate in order to "
+"sign messages, to encrypt messages and to decrypt messages that other people "
+"send to you in encrypted form.\n"
+"<p>\n"
+"The key pair will be generated in a decentralized manner. Please contact your "
+"local help desk if you are unsure how to obtain a certificate for your new key "
+"in your organization."
+msgstr ""
+"<b>Anahtar Üretim Sihirbazı' na Hoş Geldiniz</b>\n"
+"<br>\n"
+"<br>\n"
+"Bu sihirbaz, birkaç basit adımda yeni bir anahtar çifti ve bu anahtar çifti "
+"için bir sertifika istemi oluşturmanıza yardımcı olacak. Sertifikanızı "
+"isteğinize bağlı olarak mesajları imzalamada, mesajları şifrelemede ve size "
+"başkalarının gönderdiği şifreli mesajları çözmede kullanabilirsiniz.\n"
+"<p>\n"
+"Anahtar çifti merkezileştirilmemiş şekilde oluşturulacaktır. Eğer yeni "
+"anahtarınız için kuruluşunuz içerisinde nasıl sertifika alacağınızdan emin "
+"değilseniz, lütfen yerel yardım masanıza başvurun."
+
+#. i18n: file certificatewizard.ui line 72
+#: rc.cpp:62
+#, no-c-format
+msgid "Key Parameters"
+msgstr "Anahtar Parametreleri"
+
+#. i18n: file certificatewizard.ui line 83
+#: rc.cpp:65
+#, no-c-format
+msgid ""
+"On this page, you will configure the cryptographic key length and the type of "
+"certificate to create."
+msgstr ""
+"Bu sayfada kriptografik anahtar uzunluğunu ve oluşturulacak sertifikanın türünü "
+"ayarlayacaksınız."
+
+#. i18n: file certificatewizard.ui line 111
+#: rc.cpp:68
+#, no-c-format
+msgid "Cryptographic Key Length"
+msgstr "Kriptografik Anahtar Uzunluğu"
+
+#. i18n: file certificatewizard.ui line 122
+#: rc.cpp:71
+#, no-c-format
+msgid "Choose &key length:"
+msgstr "&Anahtar uzunluğunu seçin:"
+
+#. i18n: file certificatewizard.ui line 157
+#: rc.cpp:74
+#, no-c-format
+msgid "Certificate Usage"
+msgstr "Sertifika Kullanımı"
+
+#. i18n: file certificatewizard.ui line 168
+#: rc.cpp:77
+#, no-c-format
+msgid "For &signing only"
+msgstr "Sadece imza&lama için"
+
+#. i18n: file certificatewizard.ui line 176
+#: rc.cpp:80
+#, no-c-format
+msgid "For &encrypting only"
+msgstr "Sadece şi&freleme için"
+
+#. i18n: file certificatewizard.ui line 184
+#: rc.cpp:83
+#, no-c-format
+msgid "For signing &and encrypting"
+msgstr "İmzalama &ve şifreleme için"
+
+#. i18n: file certificatewizard.ui line 216
+#: rc.cpp:86
+#, no-c-format
+msgid "Your Personal Data"
+msgstr "Kişisel Bilginiz"
+
+#. i18n: file certificatewizard.ui line 227
+#: rc.cpp:89
+#, no-c-format
+msgid ""
+"On this page, you will enter some personal data that will be stored in your "
+"certificate and that will help other people to determine that it is actually "
+"you who is sending a message."
+msgstr ""
+"Bu sayfada, gerçekten kimin mesaj gönderdiğini insanların belirleyebilmesinde "
+"yardımcı olacak ve sertifikanızda saklanacak bazı kişisel bilgiler "
+"gireceksiniz."
+
+#. i18n: file certificatewizard.ui line 255
+#: rc.cpp:92
+#, no-c-format
+msgid "&Insert My Address"
+msgstr "Adresimi &Ekle"
+
+#. i18n: file certificatewizard.ui line 258
+#: rc.cpp:95
+#, no-c-format
+msgid ""
+"This will insert your address if you have set the \"Who am I\" information in "
+"the address book"
+msgstr ""
+
+#. i18n: file certificatewizard.ui line 304
+#: rc.cpp:98
+#, no-c-format
+msgid "Decentralized Key Generation"
+msgstr "Merkezileştirilmemiş Anahtar Oluşturma"
+
+#. i18n: file certificatewizard.ui line 323
+#: rc.cpp:101
+#, no-c-format
+msgid ""
+"<qt>"
+"<p>On this page, you will create a key pair in a decentralized way.\n"
+"</p>"
+"<p>You can either store the certificate request in a file for later "
+"transmission or \n"
+"send it to the Certificate Authority (CA) directly. Please check with \n"
+"your local help desk if you are unsure what to select here.</p>"
+"<p>\n"
+"Once you are done with your settings, click \n"
+"<em>Generate Key Pair and Certificate Request</em> in order to generate your "
+"key pair and a corresponding certificate request.</p>\n"
+"<p><b>Note:</b> if you choose to send via email directly, \n"
+"a kmail composer will be opened; you can add detailed information for the CA\n"
+"there.</p><qt>"
+msgstr ""
+
+#. i18n: file certificatewizard.ui line 359
+#: rc.cpp:112
+#, no-c-format
+msgid "Certificate Request Options"
+msgstr "Sertifika İsteme Ayarları"
+
+#. i18n: file certificatewizard.ui line 381
+#: rc.cpp:115
+#, no-c-format
+msgid "&Store in a file:"
+msgstr "Dosyada sa&kla:"
+
+#. i18n: file certificatewizard.ui line 389
+#: rc.cpp:118
+#, no-c-format
+msgid "Send to CA as an &email message:"
+msgstr "CA' yı bir e-posta :&mesajı olarak gönder:"
+
+#. i18n: file certificatewizard.ui line 405
+#: rc.cpp:121
+#, no-c-format
+msgid "Add email to DN in request for broken CAs"
+msgstr ""
+
+#. i18n: file certificatewizard.ui line 421
+#: rc.cpp:124
+#, no-c-format
+msgid "&Generate Key Pair && Certificate Request"
+msgstr "&Anahtar Çifti && Sertifika İsteği Oluştur"
+
+#. i18n: file certificatewizard.ui line 465
+#: rc.cpp:127
+#, no-c-format
+msgid "Your Certificate Request is Ready to Be Sent"
+msgstr "Sertifika İsteğiniz Gönderilmek İçin Hazır"
+
+#. i18n: file certificatewizard.ui line 486
+#: rc.cpp:130
+#, no-c-format
+msgid ""
+"<qt>\n"
+"Your key pair has now been created and stored locally. The corresponding "
+"certificate request is now ready to be sent to the CA (certification authority) "
+"which will generate a certificate for you and send it back via email (unless "
+"you have selected storage in a file). Please review the certificate details "
+"shown below.\n"
+"<p>\n"
+"If you want to change anything, press Back and make your changes; otherwise, "
+"press Finish to send the certificate request to the CA.\n"
+"</qt>"
+msgstr ""
+
+#. i18n: file conf/appearanceconfigwidgetbase.ui line 16
+#: rc.cpp:137
+#, no-c-format
+msgid "Color & Font Configuration"
+msgstr "Renk ve Yazı Tipi Ayarları"
+
+#. i18n: file conf/appearanceconfigwidgetbase.ui line 25
+#: rc.cpp:140
+#, no-c-format
+msgid "Key Categories"
+msgstr "Anahtar Kategorileri"
+
+#. i18n: file conf/appearanceconfigwidgetbase.ui line 54
+#: rc.cpp:143
+#, no-c-format
+msgid "Set &Text Color..."
+msgstr "&Yazı Rengini Ayarla..."
+
+#. i18n: file conf/appearanceconfigwidgetbase.ui line 65
+#: rc.cpp:146
+#, no-c-format
+msgid "Set &Background Color..."
+msgstr "Arka&plan Rengini Ayarla..."
+
+#. i18n: file conf/appearanceconfigwidgetbase.ui line 76
+#: rc.cpp:149
+#, no-c-format
+msgid "Set F&ont..."
+msgstr "Ya&zı Tipini Ayarla..."
+
+#. i18n: file conf/appearanceconfigwidgetbase.ui line 98
+#: rc.cpp:155
+#, no-c-format
+msgid "Bold"
+msgstr "Kalın"
+
+#. i18n: file conf/appearanceconfigwidgetbase.ui line 109
+#: rc.cpp:158
+#, no-c-format
+msgid "Strikeout"
+msgstr "Üzeri Çizili"
+
+#. i18n: file conf/appearanceconfigwidgetbase.ui line 137
+#: rc.cpp:161
+#, no-c-format
+msgid "Default Appearance"
+msgstr "Öntanımlı Görünüm"
+
+#~ msgid "Alt+G"
+#~ msgstr "Alt+G"

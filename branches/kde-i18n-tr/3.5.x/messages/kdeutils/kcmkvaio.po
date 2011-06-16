@@ -1,0 +1,132 @@
+# translation of kcmkvaio.po to Turkish
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkvaio\n"
+"POT-Creation-Date: 2004-10-12 01:17+0200\n"
+"PO-Revision-Date: 2003-11-13 17:46+0200\n"
+"Last-Translator: YILDIZ KARDEŞLER <turkishprogram@xposta.com>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Rıdvan CAN"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "ridvan@geleceklinux.org"
+
+#: main.cpp:53
+msgid "kcmkvaio"
+msgstr "kcmkvaio"
+
+#: main.cpp:54
+msgid "KDE Control Module for Sony Vaio Laptop Hardware"
+msgstr "Sony Vaio Dizüstü Bilgisayarı için KDE Denetim Birimi"
+
+#: main.cpp:60
+msgid "Original author"
+msgstr "İlk yazar"
+
+#. i18n: file kcmkvaio_general.ui line 16
+#: rc.cpp:3
+#, no-c-format
+msgid "KVaio: General Options"
+msgstr "KVaio: Genel Seçenekler"
+
+#. i18n: file kcmkvaio_general.ui line 36
+#: rc.cpp:6
+#, no-c-format
+msgid ""
+"Cannot find the <i>Sony Programmable Interrupt Controller</i>"
+". If this is a Sony Vaio Laptop, make sure the <b>sonypi</b> "
+"driver module loads without failures."
+msgstr ""
+"<i>Sony Programlanabilir Kesilme Kontrolörü</i> bulunamadı. Eğer bu bir Sony "
+"Vaio Dizüstü ise <i>sonypi</i> sürücü modülünün hatasız yüklendiğinden emin "
+"olun."
+
+#. i18n: file kcmkvaio_general.ui line 61
+#: rc.cpp:9
+#, no-c-format
+msgid "System Power"
+msgstr "Sistem Gücü"
+
+#. i18n: file kcmkvaio_general.ui line 72
+#: rc.cpp:12
+#, no-c-format
+msgid "Remaining battery capacity:"
+msgstr "Kalan pil kapasitesi:"
+
+#. i18n: file kcmkvaio_general.ui line 110
+#: rc.cpp:15
+#, no-c-format
+msgid "AC"
+msgstr "AC"
+
+#. i18n: file kcmkvaio_general.ui line 151
+#: rc.cpp:18
+#, no-c-format
+msgid "Bat 1"
+msgstr "Pil 1"
+
+#. i18n: file kcmkvaio_general.ui line 187
+#: rc.cpp:21
+#, no-c-format
+msgid "Bat 2"
+msgstr "Pil 2"
+
+#. i18n: file kcmkvaio_general.ui line 200
+#: rc.cpp:24
+#, no-c-format
+msgid "Other Options"
+msgstr "Diğer Seçenekler"
+
+#. i18n: file kcmkvaio_general.ui line 211
+#: rc.cpp:27
+#, no-c-format
+msgid "Periodically inform about battery and AC adapter status"
+msgstr "Pil ve AC adaptörü durumu hakkında periyodik olarak bilgi ver"
+
+#. i18n: file kcmkvaio_general.ui line 219
+#: rc.cpp:30
+#, no-c-format
+msgid "Show battery and AC status on Back button press"
+msgstr "Geri düğmesi basıldığında pil ve AC durumunu göster"
+
+#. i18n: file kcmkvaio_general.ui line 227
+#: rc.cpp:33
+#, no-c-format
+msgid "Report unhandled events using On Screen Display"
+msgstr "Açık gösterimde kullanılan olayları ele almayan rapor"
+
+#~ msgid "<h1>Later</h1>"
+#~ msgstr "<h1>Sonra</h1>"
+
+#~ msgid "Jog Dial Actions"
+#~ msgstr "Gösterge Olaylarını Anımsat"
+
+#~ msgid "CTRL+Jog Dial modifies display brightness"
+#~ msgstr "CTRL+Göstergeyi iterek parlaklığı değiştirebilirsiniz"
+
+#, fuzzy
+#~ msgid "Jog Dial press simulates middle mouse button"
+#~ msgstr "Orta fare butonuna basmak gösterge itmesinin yerini tutar"
+
+#~ msgid "0%"
+#~ msgstr "0%"
+
+#~ msgid "ALT+Jog Dial modifies sound volume"
+#~ msgstr "ALT+Göstergeyi iterek ses düzeyini değiştirebilirsiniz"
+
+#~ msgid "Brightness:"
+#~ msgstr "Parlaklık:"

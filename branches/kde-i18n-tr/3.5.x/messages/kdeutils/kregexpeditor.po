@@ -1,0 +1,893 @@
+# translation of kregexpeditor.po to Türkçe
+# translation of kregexpeditor.po to Turkish
+# translation of kregexpeditor.po to
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# YILDIZ KARDEŞLER <turkishprogram@xposta.com>, 2003.
+# Engin Çağatay <engincagatay@yahoo.com>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kregexpeditor\n"
+"POT-Creation-Date: 2005-08-18 04:29+0200\n"
+"PO-Revision-Date: 2004-11-19 20:15+0200\n"
+"Last-Translator: Engin Çağatay <engincagatay@yahoo.com>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.3\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: altnwidget.cpp:38 altnwidget.cpp:48 regexpbuttons.cpp:108
+msgid "Alternatives"
+msgstr "Alternatifler"
+
+#: altnwidget.cpp:225
+msgid "Selecting several alternatives is currently not supported."
+msgstr "Birden çok alternatif seçmek şimdilik desteklenmiyor."
+
+#: altnwidget.cpp:227
+msgid "Selection Invalid"
+msgstr "Geçersiz Seçim"
+
+#: characterswidget.cpp:124
+msgid ""
+"- A word character\n"
+msgstr ""
+"- Bir kelime karakteri\n"
+
+#: characterswidget.cpp:127
+msgid ""
+"- A non-word character\n"
+msgstr ""
+"- Kelime harici karakter\n"
+
+#: characterswidget.cpp:130
+msgid ""
+"- A digit character\n"
+msgstr ""
+"- Rakam karakteri\n"
+
+#: characterswidget.cpp:133
+msgid ""
+"- A non-digit character\n"
+msgstr ""
+"- Rakam Harici Karakter\n"
+
+#: characterswidget.cpp:136
+msgid ""
+"- A space character\n"
+msgstr ""
+"- Boşluk karakteri\n"
+
+#: characterswidget.cpp:139
+msgid ""
+"- A non-space character\n"
+msgstr ""
+"- Boşluk harici karakter\n"
+
+#: characterswidget.cpp:156
+msgid "from "
+msgstr "başlangıç "
+
+#: characterswidget.cpp:156
+msgid " to "
+msgstr " bitiş "
+
+#: characterswidget.cpp:166
+msgid "Any Character Except"
+msgstr "Bunlar dışında karakter"
+
+#: characterswidget.cpp:168
+msgid "One of Following Characters"
+msgstr "Bu Karakterlerden Biri"
+
+#: characterswidget.cpp:287
+msgid "Specify Characters"
+msgstr "Karakterleri Belirle"
+
+#: characterswidget.cpp:294
+msgid "Do not match the characters specified here"
+msgstr "Burda belirtilmiş karakterlerle eşleştirme"
+
+#: characterswidget.cpp:300
+msgid "Predefined Character Ranges"
+msgstr "Önceden Tanımlanmış Karakter Aralıkları"
+
+#: characterswidget.cpp:304
+msgid "A word character"
+msgstr "Bir kelime karakteri"
+
+#: characterswidget.cpp:305
+msgid "A digit character"
+msgstr "Bir rakam karakteri"
+
+#: characterswidget.cpp:306
+msgid "A space character"
+msgstr "Bir boşluk karakteri"
+
+#: characterswidget.cpp:308
+msgid "A non-word character"
+msgstr "Kelime harici karakter"
+
+#: characterswidget.cpp:309
+msgid "A non-digit character"
+msgstr "rakam harici karakter"
+
+#: characterswidget.cpp:310
+msgid "A non-space character"
+msgstr "baoşluk harici karakter"
+
+#: characterswidget.cpp:313
+msgid "Single Characters"
+msgstr "Tek Karakter"
+
+#: characterswidget.cpp:321 characterswidget.cpp:337
+msgid "More Entries"
+msgstr "Daha Fazla Girdi"
+
+#: characterswidget.cpp:328
+msgid "Character Ranges"
+msgstr "Karakter Aralıkları"
+
+#: characterswidget.cpp:410
+msgid "From:"
+msgstr "Başlangıç:"
+
+#: characterswidget.cpp:417
+msgid ""
+"_: end of range\n"
+"To:"
+msgstr ""
+
+#: charselector.cpp:60
+msgid "Normal Character"
+msgstr "Normal Karakter"
+
+#: charselector.cpp:61
+msgid "Unicode Char in Hex."
+msgstr "Onaltılık Unikod Karakter"
+
+#: charselector.cpp:62
+msgid "Unicode Char in Oct."
+msgstr "Sekizlik Unikod Karakter"
+
+#: charselector.cpp:64
+msgid "The Bell Character (\\a)"
+msgstr "Zil Karakteri (\\a)"
+
+#: charselector.cpp:65
+msgid "The Form Feed Character (\\f)"
+msgstr "Form besleme karakteri (\\f)"
+
+#: charselector.cpp:66
+msgid ""
+"The Line Feed Character (\\n)"
+msgstr ""
+"Satır Besleme Karakteri (\\n)"
+
+#: charselector.cpp:67
+msgid "The Carriage Return Character (\\r)"
+msgstr "Yeni Satır (carriage return) Karakteri (\\r)"
+
+#: charselector.cpp:68
+msgid "The Horizontal Tab Character (\\t)"
+msgstr "Yatay Sekme Karakteri (\\t)"
+
+#: charselector.cpp:69
+msgid "The Vertical Tab Character (\\v)"
+msgstr "Dikey Sekme Karakteri (\\v)"
+
+#: compoundwidget.cpp:46
+msgid "&Title:"
+msgstr "&Başlık:"
+
+#: compoundwidget.cpp:50
+msgid "&Description:"
+msgstr "&Açıklama:"
+
+#: compoundwidget.cpp:54
+msgid "&Automatically replace using this item"
+msgstr "Bunu kullanara &otomatik değiştir"
+
+#: compoundwidget.cpp:55
+msgid ""
+"When the content of this box is typed in to the ASCII line,"
+"<br>this box will automatically be added around it,"
+"<br>if this check box is selected."
+msgstr ""
+"Bu kutunun içeriği ASCII satırına yazıldığında,"
+"<br>burası işaretli ise,"
+"<br>ibu kutu onun etrafına eklenecek."
+
+#: compoundwidget.cpp:123
+msgid "Configure Compound"
+msgstr "Bileşimi Yapılandır"
+
+#: editorwindow.cpp:221
+msgid "There is no selection."
+msgstr "Seçim yok."
+
+#: editorwindow.cpp:221
+msgid "Missing Selection"
+msgstr "Kayıp Seçim"
+
+#: editorwindow.cpp:280
+msgid "There is no widget under cursor."
+msgstr "İmleç altında parçacık yok"
+
+#: editorwindow.cpp:280
+msgid "Invalid Operation"
+msgstr "Geçersiz İşlem"
+
+#: editorwindow.cpp:332
+msgid "&Save Regular Expression..."
+msgstr "&Düzenli İfadeyi Kaydet..."
+
+#: editorwindow.cpp:377
+msgid "Enter name:"
+msgstr "İsim girin:"
+
+#: editorwindow.cpp:378
+msgid "Name for Regular Expression"
+msgstr "Düzenli İfade İçin İsim"
+
+#: editorwindow.cpp:386
+msgid "<p>Overwrite named regular expression <b>%1</b></p>"
+msgstr "<p>İsimlendirilmiş düzenli ifadenin üzerine yaz <b>%1</b></p>"
+
+#: editorwindow.cpp:386 userdefinedregexps.cpp:203
+msgid "Overwrite"
+msgstr ""
+
+#: editorwindow.cpp:393
+#, c-format
+msgid "Could not open file for writing: %1"
+msgstr "Dosya açılamadı: %1"
+
+#: emacsregexpconverter.cpp:79
+msgid "Look ahead regular expressions not supported in Emacs style"
+msgstr "Emacs stilinde desteklenmeyen düzenli ifadelere bak"
+
+#: emacsregexpconverter.cpp:182
+msgid "Word boundary and non word boundary is not supported in Emacs syntax"
+msgstr "Kelime sınırı ve kelime olmayan sınırı Emacs kodlamasında desteklenmez"
+
+#: errormap.cpp:49
+msgid ""
+"Your regular expression is invalid, due to something preceding a 'line start'."
+msgstr ""
+"Düzenli ifadeniz geçersiz, bir 'satır başlangıc'ından önce birşeyler var."
+
+#: errormap.cpp:50 errormap.cpp:59 errormap.cpp:69
+msgid "Regular Expression Error"
+msgstr "Düzenli İfade Hatası"
+
+#: errormap.cpp:58
+msgid ""
+"Your regular expression is invalid, due to something following a 'line end'."
+msgstr "Düzenli ifadeniz geçersiz, 'satır sonu'ndan sonra birşeyler var."
+
+#: errormap.cpp:68
+msgid ""
+"Your regular expression is invalid. 'Look Ahead' regular expression must be the "
+"last sub expression."
+msgstr ""
+"Düzenli ifadeniz geçersiz. 'Look Ahead' düzenli ifadesi son alt ifade "
+"olmalıdır."
+
+#: infopage.cpp:35
+msgid ""
+"_: Translators, feel free to add yourself in the text below, asking for a "
+"postcard ;-), also feel free to add a section saying "
+"<h2>Translators</h2>. Kind regards, and thanks for your work - Jesper.\n"
+"<h1>Regular Expression Editor</h1>"
+"<p>What you are currently looking at is an editor for <i>Regular Expressions</i>"
+".</p>"
+"<p>The upper part in the middle is the editing area, the lower part is a "
+"verification window where you can try your regular expressions right away. The "
+"row of buttons is the editing actions. This is actually very similar to common "
+"drawing programs. Select an editing tool to start editing your regular "
+"expression, and press the mouse button in the editing area where you want this "
+"item inserted.</p>"
+"<p>For a more detailed description of this editor see the <a href=\"doc://\">"
+"info pages</a></p>"
+"<h2>What is a regular expression?</h2>If you do not know what a regular "
+"expression is, then it might be a good idea to read <a "
+"href=\"doc://whatIsARegExp\">the introduction to regular expressions</a>."
+"<p>"
+msgstr ""
+"<h1>Düzenli İfade Düzenleyici</h1>"
+"<p>Şu anda baktığınız şey <i>Düzenli İfadeler</i> için bir düzenleyici.</p>"
+"<p>Ortadaki üst kısım düzenleme alanı, alt kısım ise düzenli ifadelerinizi "
+"denemeniz için onaylama penceresidir. Düğmelerin bulunduğu satırda ise "
+"düzenleme eylemleri bulunur. Genel çizim programları ile aynı yapıdadır. Bir "
+"düzenleme aracını seçerek düzenli ifadenizi düzenlemeye başlayabilirsiniz ve "
+"öğeyi nereye eklemek istiyorsanız alanda oraya tıklayın.</p>"
+"<p>Daha fazla detaylı bilgi içib <a href=\"doc://\">bilgi sayfası</a> "
+"tıklayın</p>"
+"<h2>Düzenli ifade nedir?</h2>Bir düzenli ifade nedir diye bilmiyorsanız işte "
+"tam okumanız gerekenleri<a href=\"doc://whatIsARegExp\">"
+"Düzenli ifadelere giriş</a>'te bulabilirsiniz."
+"<p>"
+
+#: infopage.cpp:53
+msgid ""
+"<h2>Send the author an electronic postcard</h2>I don't get any money for "
+"working on KRegExpEditor, I therefore appreciate it very much when users tell "
+"me what they think about my work. I would therefore be very happy if you <a "
+"href=\"mailto:blackie@kde.org?subject=KRegExpEditor\">sent me a short mail</a>"
+", telling me that you use my regular expression editor."
+"<h2>Author</h2><a href=\"http://www.blackie.dk/\">Jesper K. Pedersen</a> "
+"&lt;<a href=\"mailto:blackie@kde.org\">blackie@kde.org</a>&gt;"
+msgstr ""
+"<h2>Yazara elektronik posta kartı yollayın</h2>KRegExpEditor'de çalışırken para "
+"kazanmadım.Kullanıcıların programım hakkında düşündükleri beni daha mutlu "
+"ediyor. Düzenli İfade Düzenleyici programım hakkında kısaca görüşlerinizi "
+"içeren bir maili <a href=\"mailto:blackie@kde.org?subject=KRegExpEditor\">"
+"email adresime</a> gönderebilirseniz beni mutlu edersiniz."
+"<h2>Yazar</h2><a href=\"http://www.blackie.dk/\">Jesper K. Pedersen</a> "
+"&lt;<a href=\"mailto:blackie@kde.org\">blackie@kde.org</a>&gt;"
+
+#: kregexpeditorgui.cpp:72
+msgid "Regular Expression Editor"
+msgstr "Düzenli İfade Düzenleyicisi"
+
+#: kregexpeditorprivate.cpp:66
+msgid ""
+"In this window you will find predefined regular expressions. Both regular "
+"expressions you have developed and saved, and regular expressions shipped with "
+"the system."
+msgstr ""
+"Bu pencere öntanımı düzenli ifadeleri bulabilirsiniz. Tasarladığınız ve "
+"kaydettiğiniz düzenli ifadeler ve sisteme gönderilen ifadeler bulunur."
+
+#: kregexpeditorprivate.cpp:74
+msgid ""
+"In this window you will develop your regular expressions. Select one of the "
+"actions from the action buttons above, and click the mouse in this window to "
+"insert the given action."
+msgstr ""
+"Bu pencerede düzenli ifade tasarlarsınız. Üstteki eylem düğmelerinden bir eylem "
+"seçin ve seçili eylemi eklemek için fare ile bu pencereye tıklayın."
+
+#: kregexpeditorprivate.cpp:81
+#, fuzzy
+msgid ""
+"Type in some text in this window, and see what the regular expression you have "
+"developed matches."
+"<p>Each second match will be colored in red and each other match will be "
+"colored blue, simply so you can distinguish them from each other."
+"<p>If you select part of the regular expression in the editor window, then this "
+"part will be highlighted - This allows you to <i>debug</i> "
+"your regular expressions"
+msgstr ""
+"Bu pencereye birşeyler girin, ve uyuşan düzenli ifadeleri görün. "
+"<p>Her ikili renkten biri kırmızı diğeri mavi renkte olacak böylece birini "
+"diğerinden ayırmak kolay olacaktır. "
+"<p>Düzenleme penceresinde düzenli ifadenin bir kısmı seçilirse bu parça "
+"renklendirilir. - Bu düzenli ifadenizi <i>ayıklamanıza</i> yarar"
+
+#: kregexpeditorprivate.cpp:158
+msgid "ASCII syntax:"
+msgstr "ASCII sözdizimi:"
+
+#: kregexpeditorprivate.cpp:165
+#, fuzzy
+msgid "Clear expression"
+msgstr "Düzenli ifade doğruluğu"
+
+#: kregexpeditorprivate.cpp:168
+msgid ""
+"This is the regular expression in ASCII syntax. You are likely only to be "
+"interested in this if you are a programmer, and need to develop a regular "
+"expression using QRegExp."
+"<p>You may develop your regular expression both by using the graphical editor, "
+"and by typing the regular expression in this line edit."
+msgstr ""
+"Bu düzenli ifadenin ascii kodlamasındaki halidir. Eğer progamcıysanız ve "
+"düzenli ifadenizi QRegExp ile tasarlamak zorundaysanız bu sizi ilgilendirir."
+"<p>Düzenli ifadenizi grafiksel düzenleyicisini veya bu satır düzenleyicisini "
+"kullanarak tasarlamak isteyebilirsiniz"
+
+#: kregexpeditorprivate.cpp:374
+msgid "Could not open file '%1' for reading"
+msgstr "'%1' dosyası okumak için açılamadı"
+
+#: lookaheadwidget.cpp:52
+msgid "Pos. Look Ahead"
+msgstr "Poz. Look Ahead"
+
+#: lookaheadwidget.cpp:54
+msgid "Neg. Look Ahead"
+msgstr "Neg. Look Ahead"
+
+#: main.cpp:38
+msgid "RegExp Editor"
+msgstr "Düzenli İfade Düzenleyici"
+
+#: main.cpp:39
+msgid "Editor for Regular Expressions"
+msgstr "Düzenli İfadeler İçin Düzenleyici"
+
+#: predefined-regexps.cpp:1
+msgid "anything"
+msgstr "hiçbirşey"
+
+#: predefined-regexps.cpp:2
+#, fuzzy
+msgid "This regular expression matches anything."
+msgstr "Bu düzenli ifade hiçbir şey ile uyuşmuyor."
+
+#: predefined-regexps.cpp:3
+msgid "spaces"
+msgstr ""
+
+#: predefined-regexps.cpp:4
+msgid "Matches an arbitrary amount of whitespace."
+msgstr ""
+
+#: regexpbuttons.cpp:66
+msgid "Selection tool"
+msgstr "Seçim aracı"
+
+#: regexpbuttons.cpp:67
+msgid ""
+"<qt>This will change the state of the editor to <i>selection state</i>."
+"<p>In this state you will not be inserting <i>regexp items</i>"
+", but instead select them. To select a number of items, press down the left "
+"mouse button and drag it over the items."
+"<p>When you have selected a number of items, you may use cut/copy/paste. These "
+"functions are found in the right mouse button menu.</qt>"
+msgstr ""
+"<qt>Bu editörün durumunu <i>seçim durumuna</i> getirecek."
+"<p>Bu durumda <i>düzenli ifadeler</i> ekleyemeyeceksiniz, Fakat bunun yerine "
+"onları seçeceksiniz.. Birkaç tane nesne birden seçmek için fareninsol tuşuna "
+"basılı tutarak istediğinizi seçin."
+"<p>Birkaç nesne seçtiğinizde, kes/kopyala/yapıştır'ı kullanabilirsiniz. Bu "
+"özellikler sağ fare tuşunun menüsünde bulunur.</qt>"
+
+#: regexpbuttons.cpp:76
+msgid "Text"
+msgstr "Metin"
+
+#: regexpbuttons.cpp:77
+msgid ""
+"<qt>This will insert a text field, where you may write text. The text you write "
+"will be matched literally. (i.e. you do not need to escape any characters)</qt>"
+msgstr ""
+"<qt>Bu metin yazabileceğiniz bir metin alanı ekler. Yazdığınız metin edebi "
+"olarak eşleştirilir. (Mesela herhangi bir karakteri kaçırmanız(escape) "
+"gerekmez)</qt>"
+
+#: regexpbuttons.cpp:82
+msgid "A single character specified in a range"
+msgstr "Belirli bir aralıktaki tek karakter"
+
+#: regexpbuttons.cpp:83
+msgid ""
+"<qt>This will match a single character from a predefined range."
+"<p>When you insert this widget a dialog box will appear, which lets you specify "
+"which characters this <i>regexp item</i> will match.</qt>"
+msgstr ""
+"<qt>Bu belirli bir sınırdan tek bir karakter eşleyecek."
+"<p>Bu parçacığa tıkladığınızda bir diyalog kutusu çıkar ve bu <i>"
+"düzenli ifadenin</i> hangi karakterlerle eşleşeceğini seçersiniz.</qt>"
+
+#: regexpbuttons.cpp:89
+msgid "Any character"
+msgstr "Herhangi bir karakter"
+
+#: regexpbuttons.cpp:90
+msgid "<qt>This will match any single character</qt>"
+msgstr "<qt>Bu herhangi bir tek karakteri eşler</qt>"
+
+#: regexpbuttons.cpp:94
+msgid "Repeated content"
+msgstr "Tekrarlanan içerik"
+
+#: regexpbuttons.cpp:95
+msgid ""
+"<qt>This <i>regexp item</i> will repeat the <i>regexp items</i> "
+"it surrounds a specified number of times."
+"<p>The number of times to repeat may be specified using ranges. e.g. You may "
+"specify that it should match from 2 to 4 times, that it should match exactly 5 "
+"times, or that it should match at least one time."
+"<p>Examples:"
+"<br>If you specify that it should match <i>any</i> time, and the content it "
+"surrounds is <tt>abc</tt>, then this <i>regexp item</i> "
+"will match the empty string, the string <tt>abc</tt>, the string <tt>abcabc</tt>"
+", the string <tt>abcabcabcabc</tt>, etc.</qt>"
+msgstr ""
+"<qt> <i>Düzenli ifadeler</i> belirli sayıda <i>düzenli ifadeleri</i> "
+"tekrarlar. "
+"<p> Bu sayı belirli bir alanda olabilir. Mesela, elementin 2 den 4 e 5 e kadar "
+"veya en az bir defa bulunmasını sağlayabilirsiniz. "
+"<p> Örnek: "
+"<br>Eğer <i>herhangi</i> bir defa bulunmasını ve metnin <tt>abc </tt> "
+"içermesini sağlayabilirsiniz. Ayrıca <i>element</i> bir cümlede olabilir, <tt>"
+"abc</tt>, <tt>abcabc</tt>, <tt>abcabcabcabc</tt> örneği gibi.</qt>"
+
+#: regexpbuttons.cpp:109
+msgid ""
+"<qt>This <i>regexp item</i> will match any of its alternatives.</p>"
+"You specify alternatives by placing <i>regexp items</i> "
+"on top of each other inside this widget.</qt>"
+msgstr ""
+"<qt>Bu <i>düzenli ifade</i>alternatiflerden biriyle eşleşecek.</p>"
+"Alternatifleri bu bileşende, <i>düzenli ifadeleri</i> "
+"birbiri üstüne koyarak belirtirsiniz.</qt>"
+
+#: regexpbuttons.cpp:115
+msgid "Compound regexp"
+msgstr "Düzenli İfade Bileşimi"
+
+#: regexpbuttons.cpp:116
+msgid ""
+"<qt>This <i>regexp item</i> serves two purposes:"
+"<ul>"
+"<li>It makes it possible for you to collapse a huge <i>regexp item</i> "
+"into a small box. This makes it easier for you to get an overview of large <i>"
+"regexp items</i>. This is especially useful if you load a predefined <i>"
+"regexp item</i> you perhaps don't care about the inner workings of."
+msgstr ""
+"<qt> <i>Düzenli ifadeler</i> iki faydası vardır: "
+"<ul> "
+"<li>küçük bir pencerede küçültülmüş düzenli bir ifadenin büyük bir <i>"
+"düzenli ifade </i> olması. Bu size büyük <i>düzenli ifadeler</i> "
+"hakkında bakış açınızın genişlemesini sağlar. Özellik ile <i>"
+"düzenli ifadeleri</i> bir dosyadan yönlendirip yüklermede ve onun dahili "
+"fonksiyonlarını kullanmak isteğinizde yardımcı olur."
+
+#: regexpbuttons.cpp:124
+msgid "Beginning of line"
+msgstr "Satır başlangıcı"
+
+#: regexpbuttons.cpp:125
+msgid "<qt>This will match the beginning of a line.</qt>"
+msgstr "<qt>Bu satırın başlangıcını eşleyecek.</qt>"
+
+#: regexpbuttons.cpp:129
+msgid "End of line"
+msgstr "Satır sonu"
+
+#: regexpbuttons.cpp:130
+msgid "<qt>This will match the end of a line.</qt>"
+msgstr "<qt>Bu satır sonunu eşleyecek.</qt>"
+
+#: regexpbuttons.cpp:134
+msgid "Word boundary"
+msgstr "Kelime sınırı"
+
+#: regexpbuttons.cpp:135
+msgid ""
+"<qt>This asserts a word boundary (This part does not actually match any "
+"characters)</qt>"
+msgstr "<qt>Bu kelime sınısını belirler (kelimeleri kontrol etmez) </qt>"
+
+#: regexpbuttons.cpp:138
+msgid "Non Word boundary"
+msgstr "Kelime olmayan sınır"
+
+#: regexpbuttons.cpp:139
+msgid ""
+"<qt>This asserts a non-word boundary (This part does not actually match any "
+"characters)</qt>"
+msgstr ""
+"<qt>Bu kelime olmayan sınırları belirler (bu bölüm kelimeleri kontrol "
+"etmez)</qt>"
+
+#: regexpbuttons.cpp:143
+msgid "Positive Look Ahead"
+msgstr "Pozitif Look Ahead"
+
+#: regexpbuttons.cpp:144
+msgid ""
+"<qt>This asserts a regular expression (This part does not actually match any "
+"characters). You can only use this at the end of a regular expression.</qt>"
+msgstr ""
+"<qt> Bu düzenli ifadeleri belirler (Bu parça herhangi bir karakter ile "
+"uyuşmaz). Bunu sadece düzenli ifadelerin sonunda kullanabilirsiniz.</qt>"
+
+#: regexpbuttons.cpp:148
+msgid "Negative Look Ahead"
+msgstr "Negatif Look Ahead"
+
+#: regexpbuttons.cpp:149
+msgid ""
+"<qt>This asserts a regular expression that must not match (This part does not "
+"actually match any characters). You can only use this at the end of a regular "
+"expression.</qt>"
+msgstr ""
+"<qt> Bu uyuşmayan düzenli ifadeleri belirler (Bu parça herhangi bir karakter "
+"ile uyuşmaz). Bunu sadece düzenli ifadelerin sonunda kullanabilirsiniz.</qt>"
+
+#: repeatregexp.cpp:59 repeatregexp.cpp:67
+msgid ""
+"<p>Value for attribute <b>%1</b> was not an integer for element <b>%2</b></p>"
+"<p>It contained the value <b>%3</b></p>"
+msgstr ""
+"<p>Değer özelliği <b>%1</b>, <b>%2</b> elementi için bir tamsayı değil.</p>"
+"<p>I<b>%3</b> değerini içeriyor.</p>"
+
+#: repeatregexp.cpp:62 repeatregexp.cpp:70 textrangeregexp.cpp:131
+#: textregexp.cpp:58 widgetfactory.cpp:166 widgetfactory.cpp:195
+#: widgetfactory.cpp:202
+msgid "Error While Loading From XML File"
+msgstr "XML Dosyasından Yüklenirken Hata"
+
+#: repeatwidget.cpp:79
+msgid "Number of Times to Repeat Content"
+msgstr "İçeriği Tekrar Etme Sayısı"
+
+#: repeatwidget.cpp:175
+msgid "Times to Match"
+msgstr "Eşleme Sayısı"
+
+#: repeatwidget.cpp:178
+msgid "Any number of times (including zero times)"
+msgstr "Herhangi bir kez (sıfır dahil)"
+
+#: repeatwidget.cpp:192
+msgid "At least"
+msgstr "En az"
+
+#: repeatwidget.cpp:193
+msgid "At most"
+msgstr "En çok"
+
+#: repeatwidget.cpp:194
+msgid "Exactly"
+msgstr "Tam"
+
+#: repeatwidget.cpp:197
+msgid "From"
+msgstr "Başlangıç"
+
+#: repeatwidget.cpp:205
+msgid "to"
+msgstr "bitiş"
+
+#: repeatwidget.cpp:207 repeatwidget.cpp:228
+msgid "time(s)"
+msgstr "kez"
+
+#: repeatwidget.cpp:269
+msgid "Repeated Any Number of Times"
+msgstr "Hiç Bir Sayı için Tekrarlanmadı"
+
+#: repeatwidget.cpp:270
+#, fuzzy, c-format
+msgid ""
+"_n: Repeated at Least 1 Time\n"
+"Repeated at Least %n Times"
+msgstr "En Az %1 Kez Tekrarlandı"
+
+#: repeatwidget.cpp:271
+#, fuzzy, c-format
+msgid ""
+"_n: Repeated at Most 1 Time\n"
+"Repeated at Most %n Times"
+msgstr "En Çok %1 Kez Tekrarlandı"
+
+#: repeatwidget.cpp:272
+#, fuzzy, c-format
+msgid ""
+"_n: Repeated Exactly 1 Time\n"
+"Repeated Exactly %n Times"
+msgstr "Tamamen %1 Kez Tekrarlandı"
+
+#: repeatwidget.cpp:273
+msgid "Repeated From %1 to %2 Times"
+msgstr "%1  İçin  %2 Kere Tekrarlandı"
+
+#: textrangeregexp.cpp:130
+msgid ""
+"<p>Invalid sub element to element <b>TextRange</b>. Tag was <b>%1</b></p>"
+msgstr ""
+"<p> <b>Metin kenarları</b> için geçersiz alt element. Tag  <b>%1</b></p>"
+
+#: textregexp.cpp:57
+msgid "<p>Element <b>Text</b> did not contain any textual data.</p>"
+msgstr "<p><b>Metin</b> bileşini hiç metinsel veri içermiyor.</p>"
+
+#: userdefinedregexps.cpp:45
+#, fuzzy
+msgid "Compound regular expressions:"
+msgstr "Düzenli ifade bileşimi"
+
+#: userdefinedregexps.cpp:67
+msgid "User Defined"
+msgstr "Kullanıcı Tanımlı"
+
+#: userdefinedregexps.cpp:92
+#, fuzzy
+msgid "General"
+msgstr "genel"
+
+#: userdefinedregexps.cpp:104
+#, c-format
+msgid "Could not open file for reading: %1"
+msgstr "Dosya okumak için açılamadı: %1"
+
+#: userdefinedregexps.cpp:114
+msgid "File %1 containing user defined regular expression contained an error"
+msgstr "Kullanıcı tanımlı düzenli ifade içeren %1 dosyası bir hata taşıyor"
+
+#: userdefinedregexps.cpp:157
+msgid "Rename..."
+msgstr "Yeniden adlandır..."
+
+#: userdefinedregexps.cpp:193
+msgid "New name:"
+msgstr "Yeni isim:"
+
+#: userdefinedregexps.cpp:194
+msgid "Rename Item"
+msgstr "Öğeyi Yeniden Adlandır"
+
+#: userdefinedregexps.cpp:203
+msgid "<p>Overwrite named regular expression <b>%1</b>?</p>"
+msgstr "<p>İsimlendirilmiş düzenli ifade <b>%1</b>'in üzerine yazılsn mı ?</p>"
+
+#: userdefinedregexps.cpp:203
+msgid "Do Not Overwrite"
+msgstr ""
+
+#: verifybuttons.cpp:50
+msgid "Verify regular expression"
+msgstr "Düzenli ifade doğruluğu"
+
+#: verifybuttons.cpp:51
+msgid ""
+"Shows what part of the regular expression is being matched in the <i>"
+"verifier window</i>.(The window below the graphical editor window)."
+msgstr ""
+"<i>Onay penceresi</i>nde düzenli ifadenin hangi kısmının uyuştuğunu "
+"gösterir.(Grafik düzenleyici pencere altındaki pencere)."
+
+#: verifybuttons.cpp:60
+msgid "Load text in the verifier window"
+msgstr "Onay penceresindeki metni yükle"
+
+#: verifybuttons.cpp:66
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: verifybuttons.cpp:117
+msgid "Verify on the Fly"
+msgstr "Yazarken Doğruluğunu Kontrol Et"
+
+#: verifybuttons.cpp:123
+msgid "Toggle on-the-fly verification of regular expression"
+msgstr "Düzenli ifadenin sinekte onaylamasını değiştir"
+
+#: verifybuttons.cpp:124
+msgid ""
+"Enabling this option will make the verifier update for each edit. If the verify "
+"window contains much text, or if the regular expression is either complex or "
+"matches a lot of time, this may be very slow."
+msgstr ""
+"Bu seçeneği değiştirmek onaylayıcıyı her değişiklikte güncellemeye ayarlar. "
+"Eğer onay penceresi çok fazla metin içerirse veya düzenli ifade karmaşıksa veya "
+"çok fazla süre alacaksa, bu çok yavaş olabilir."
+
+#: verifybuttons.cpp:130
+msgid "RegExp Language"
+msgstr "Düzenli İfade Dili"
+
+#: widgetfactory.cpp:165
+msgid "<p>Unknown tag while reading XML. Tag was <b>%1</b></p>"
+msgstr "<p>XML yüklenirken bilinmeyen etiket: <b>%1</b></p>"
+
+#: widgetfactory.cpp:186
+msgid ""
+"Error while loading regular expression from XML. Most probably the regular "
+"expression had unmatched tags."
+msgstr ""
+"XML'den düzenli ifade yüklenirken hata. Büyük ihtimalle düzenli ifade "
+"eşlenmemiş etiketlere sahip."
+
+#: widgetfactory.cpp:187
+msgid "Error While Loading Regular Expression From XML"
+msgstr "XML'den Düzenli İfade Yüklenirken Hata"
+
+#: widgetfactory.cpp:194
+msgid "<p>XML file did not contain a <b>%1</b> tag.</p>"
+msgstr "<p>XML dosyası <b>%1</b> tag'ını içermiyor.</p>"
+
+#: widgetfactory.cpp:200
+msgid ""
+"<p>Error while reading XML file. The element just below the tag <b>%1</b> "
+"was not an element.</p>"
+msgstr ""
+"<p>XML dosyası okunurken hata. <b>%1</b> tag'ının altındaki element aslında "
+"element.değilmiş.</p>"
+
+#: zerowidgets.cpp:75
+msgid ""
+"Any\n"
+"Character"
+msgstr ""
+"Herhangi bir\n"
+"Karakter"
+
+#: zerowidgets.cpp:91
+msgid ""
+"Line\n"
+"Start"
+msgstr ""
+"Satır\n"
+"Başlangıç"
+
+#: zerowidgets.cpp:107
+msgid ""
+"Line\n"
+"End"
+msgstr ""
+"Satır\n"
+"Bitiş"
+
+#: zerowidgets.cpp:121
+msgid ""
+"Word\n"
+"Boundary"
+msgstr ""
+"Kelime\n"
+"Sınırı"
+
+#: zerowidgets.cpp:136
+msgid ""
+"Non-word\n"
+"Boundary"
+msgstr ""
+"Kelime harici\n"
+"Komşuluğu"
+
+#: KMultiFormListBox/ccp.cpp:72
+msgid "Insert Blank"
+msgstr "Boşluk Ekle"
+
+#: KMultiFormListBox/kmultiformlistbox-multivisible.cpp:264
+msgid "Due to a bug, it is not possible to remove the last element."
+msgstr "Bir hata sonucu, son elementi kaldırmak mümkün değil."
+
+#: KMultiFormListBox/kmultiformlistbox-multivisible.cpp:264
+msgid "Internal Error"
+msgstr "İç Hata"
+
+#: KMultiFormListBox/kmultiformlistbox-multivisible.cpp:282
+msgid "There is no element on the clipboard to paste in."
+msgstr "Yapıştırmak için panoda hiç element yok."
+
+#: KMultiFormListBox/kmultiformlistbox-windowed.cpp:68
+msgid "Up"
+msgstr "Yukarı"
+
+#: KMultiFormListBox/kmultiformlistbox-windowed.cpp:73
+msgid "Down"
+msgstr "Aşağı"
+
+#: KMultiFormListBox/kmultiformlistbox-windowed.cpp:153
+msgid "Delete item \"%1\"?"
+msgstr "\"%1\" nesnesini sileyim mi?"
+
+#: KMultiFormListBox/kmultiformlistbox-windowed.cpp:153
+msgid "Delete Item"
+msgstr "Nesneyi Sil"
+
+#: KMultiFormListBox/widgetwindow.cpp:23 KMultiFormListBox/widgetwindow.cpp:29
+msgid "Widget Configuration"
+msgstr "Parçacık YapılandırmasıWidget"

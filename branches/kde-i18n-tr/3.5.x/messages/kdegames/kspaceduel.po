@@ -1,0 +1,332 @@
+# translation of kspaceduel.po to Turkish
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002,2003.
+# Görkem Çetin <gorkem@kde.org>, 2002
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kspaceduel\n"
+"POT-Creation-Date: 2005-05-18 21:24+0200\n"
+"PO-Revision-Date: 2003-08-08 04:54+0200\n"
+"Last-Translator: Ömer Fadıl USTA <omer_fad@hotmail.com>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.5\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Ömer Fadıl USTA"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "omer_fad@hotmail.com"
+
+#: dialogs.cpp:50
+msgid "Game speed:"
+msgstr "Oyun hızı:"
+
+#: dialogs.cpp:50
+msgid "Shot speed:"
+msgstr "Atış hızı:"
+
+#: dialogs.cpp:51 dialogs.cpp:54 dialogs.cpp:57 dialogs.cpp:58
+msgid "Energy need:"
+msgstr "Enerji gereksinimi:"
+
+#: dialogs.cpp:51 dialogs.cpp:55
+msgid "Max number:"
+msgstr "Azami sayı:"
+
+#: dialogs.cpp:52 dialogs.cpp:55
+msgid "Damage:"
+msgstr "Hasar:"
+
+#: dialogs.cpp:52 dialogs.cpp:62
+msgid "Life time:"
+msgstr "Yaşam zamanı:"
+
+#: dialogs.cpp:53 dialogs.cpp:56
+msgid "Reload time:"
+msgstr "Yeniden yükleme zamanı:"
+
+#: dialogs.cpp:53
+msgid "Mine fuel:"
+msgstr "Mayın yakıtı:"
+
+#: dialogs.cpp:54
+msgid "Activate time:"
+msgstr "Zamanı etkinleştir:"
+
+#: dialogs.cpp:56
+msgid "Acceleration:"
+msgstr "Hızlanma:"
+
+#: dialogs.cpp:57
+msgid "Rotation speed:"
+msgstr "Dönüş hızı:"
+
+#: dialogs.cpp:58
+msgid "Crash damage:"
+msgstr "Çarpışma hasarı:"
+
+#: dialogs.cpp:59
+msgid "Sun energy:"
+msgstr "Güneş enerjisi:"
+
+#: dialogs.cpp:59
+msgid "Gravity:"
+msgstr "Yerçekimi:"
+
+#: dialogs.cpp:60
+msgid "Position X:"
+msgstr "X Konumu:"
+
+#: dialogs.cpp:60
+msgid "Position Y:"
+msgstr "Y Konumu:"
+
+#: dialogs.cpp:61
+msgid "Velocity X:"
+msgstr "Y hızı:"
+
+#: dialogs.cpp:61
+msgid "Velocity Y:"
+msgstr "Y hızı:"
+
+#: dialogs.cpp:62
+msgid "Appearance time:"
+msgstr "Görünme süresi:"
+
+#: dialogs.cpp:63
+msgid "Energy amount:"
+msgstr "Enerji miktarı:"
+
+#: dialogs.cpp:63
+msgid "Shield amount:"
+msgstr "Kalkan miktarı:"
+
+#: dialogs.cpp:158
+msgid "Custom"
+msgstr "Özel"
+
+#: dialogs.cpp:174 dialogs.cpp:395
+msgid "General"
+msgstr "Genel"
+
+#: dialogs.cpp:175 main.cpp:27
+msgid "Bullet"
+msgstr "Mermi"
+
+#: dialogs.cpp:176
+msgid ""
+"_: Name\n"
+"Mine"
+msgstr "Mayın"
+
+#: dialogs.cpp:177
+msgid "Ship"
+msgstr "Gemi"
+
+#: dialogs.cpp:178
+msgid "Sun"
+msgstr "Güneş"
+
+#: dialogs.cpp:179 topwidget.cpp:73
+msgid "Start"
+msgstr "Baslat"
+
+#: dialogs.cpp:180
+msgid "Powerups"
+msgstr "Ateşleme"
+
+#: dialogs.cpp:395
+msgid "General Settings"
+msgstr "Genel Ayarlar"
+
+#: dialogs.cpp:398
+msgid "Game"
+msgstr "Oyun"
+
+#: dialogs.cpp:398
+msgid "Game Settings"
+msgstr "Oyun Ayarları"
+
+#: main.cpp:8
+msgid "KDE Space Game"
+msgstr "KDE Uzay Oyunu"
+
+#: main.cpp:12
+msgid "KSpaceDuel"
+msgstr "KSpaceDuel"
+
+#: main.cpp:27
+msgid "Chaos"
+msgstr "Kaos"
+
+#: main.cpp:27
+msgid "Lack of energy"
+msgstr "Enerji ihtiyacı"
+
+#: mainview.cpp:344 topwidget.cpp:122
+msgid " paused "
+msgstr "bekletiliyor "
+
+#: mainview.cpp:494
+msgid "Press %1 to start"
+msgstr "Başlamak için %1 basın"
+
+#: mainview.cpp:543
+msgid "draw round"
+msgstr "yeniden turla"
+
+#: mainview.cpp:546
+msgid "blue player won the round"
+msgstr "mavi oyuncu turu kazandı"
+
+#: mainview.cpp:554
+msgid "red player won the round"
+msgstr "kırmızı oyuncu turu kazandı"
+
+#: mainview.cpp:559
+msgid "Press %1 for new round"
+msgstr "Yeni tur için %1 basın"
+
+#: playerinfo.cpp:20 playerinfo.cpp:52
+msgid "Hit points"
+msgstr "Vuruş sayıları"
+
+#: playerinfo.cpp:23 playerinfo.cpp:54
+msgid "Energy"
+msgstr "Enerji"
+
+#: playerinfo.cpp:26 playerinfo.cpp:56
+msgid "Wins"
+msgstr "Kazanılan"
+
+#. i18n: file general.ui line 30
+#: rc.cpp:9
+#, no-c-format
+msgid "Hit Points"
+msgstr "Vuruş Sayıları"
+
+#. i18n: file general.ui line 63
+#: rc.cpp:12
+#, no-c-format
+msgid "Red player:"
+msgstr "Kırmızı oyuncu:"
+
+#. i18n: file general.ui line 71
+#: rc.cpp:15
+#, no-c-format
+msgid "Blue player:"
+msgstr "Mavi oyuncu:"
+
+#. i18n: file general.ui line 103
+#: rc.cpp:18
+#, no-c-format
+msgid "Graphics"
+msgstr "Grafikler"
+
+#. i18n: file general.ui line 114
+#: rc.cpp:21
+#, no-c-format
+msgid "Refresh time:"
+msgstr "Tazeleme zamanı:"
+
+#. i18n: file general.ui line 169
+#: rc.cpp:24
+#, no-c-format
+msgid "Red Player"
+msgstr "Kırmızı Oyuncu"
+
+#. i18n: file general.ui line 180
+#: rc.cpp:27 rc.cpp:48
+#, no-c-format
+msgid "Player is AI"
+msgstr "Oyuncu Yapay Zeka"
+
+#. i18n: file general.ui line 191
+#: rc.cpp:30 rc.cpp:51
+#, no-c-format
+msgid "Difficulty:"
+msgstr "Zorluk :"
+
+#. i18n: file general.ui line 197
+#: rc.cpp:33 rc.cpp:54
+#, no-c-format
+msgid "Trainee"
+msgstr "Aday"
+
+#. i18n: file general.ui line 202
+#: rc.cpp:36 rc.cpp:57
+#, no-c-format
+msgid "Normal"
+msgstr "normal"
+
+#. i18n: file general.ui line 207
+#: rc.cpp:39 rc.cpp:60
+#, no-c-format
+msgid "Hard"
+msgstr "Zor"
+
+#. i18n: file general.ui line 212
+#: rc.cpp:42 rc.cpp:63
+#, no-c-format
+msgid "Insane"
+msgstr "Delicesine"
+
+#. i18n: file general.ui line 232
+#: rc.cpp:45
+#, no-c-format
+msgid "Blue Player"
+msgstr "Mavi Oyuncu"
+
+#: topwidget.cpp:67
+msgid "&New Round"
+msgstr "&Yeni Tur"
+
+#: topwidget.cpp:84
+msgid "Player 1 Rotate Left"
+msgstr "1. Oyuncu Sola Çevirme"
+
+#: topwidget.cpp:87
+msgid "Player 1 Rotate Right"
+msgstr "1. Oyuncu Sağa Çevirme"
+
+#: topwidget.cpp:90
+msgid "Player 1 Accelerate"
+msgstr "1. Oyuncu Hızlandırma"
+
+#: topwidget.cpp:93
+msgid "Player 1 Shot"
+msgstr "1.Oyuncu Ateş"
+
+#: topwidget.cpp:96
+msgid "Player 1 Mine"
+msgstr "1. Oyuncu Mayın"
+
+#: topwidget.cpp:100
+msgid "Player 2 Rotate Left"
+msgstr "2. Oyuncu Sola Çevirme"
+
+#: topwidget.cpp:103
+msgid "Player 2 Rotate Right"
+msgstr "2. Oyuncu Sağa Çevirme"
+
+#: topwidget.cpp:106
+msgid "Player 2 Accelerate"
+msgstr "2. Oyuncu Hızlandırma"
+
+#: topwidget.cpp:109
+msgid "Player 2 Shot"
+msgstr "2. Oyuncu Ateş"
+
+#: topwidget.cpp:112
+msgid "Player 2 Mine"
+msgstr "2. Oyuncu Mayın"

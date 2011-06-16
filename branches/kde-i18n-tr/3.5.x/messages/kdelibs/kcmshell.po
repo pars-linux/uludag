@@ -1,0 +1,80 @@
+# translation of kcmshell.po to Türkçe
+# Görkem Çetin <gorkem@kde.org>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmshell\n"
+"POT-Creation-Date: 2006-08-13 04:02+0200\n"
+"PO-Revision-Date: 2004-12-29 08:57+0000\n"
+"Last-Translator: Barış Metin <baris@uludag.org.tr>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Barış Metin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "baris@uludag.org.tr"
+
+#: main.cpp:56
+msgid "List all possible modules"
+msgstr "Kullanılabilir tüm modülleri listele"
+
+#: main.cpp:57
+msgid "Configuration module to open"
+msgstr "Açılacak yapılandırma modülü"
+
+#: main.cpp:58
+msgid "Specify a particular language"
+msgstr "Belirli bir dil kullan"
+
+#: main.cpp:59
+msgid "Embeds the module with buttons in window with id <id>"
+msgstr "Modülü <id> pencere kimlikli pencerenin içerisine düğmeleri ile göm"
+
+#: main.cpp:60
+msgid "Embeds the module without buttons in window with id <id>"
+msgstr ""
+"Modülü <id> pencere kimlikli pencerenin içerisine düğmeleri olmadan göm"
+
+#: main.cpp:61
+msgid "Do not display main window"
+msgstr "Ana pencereyi gösterme"
+
+#: main.cpp:201
+msgid "KDE Control Module"
+msgstr "KDE Yapılandırma Modülü"
+
+#: main.cpp:203
+msgid "A tool to start single KDE control modules"
+msgstr "KDE yapılandırma modüllerini başlatmak için bir araç"
+
+#: main.cpp:205
+msgid "(c) 1999-2004, The KDE Developers"
+msgstr "(c) 1999-2004, KDE Geliştiricileri"
+
+#: main.cpp:207
+msgid "Maintainer"
+msgstr "Programın Yöneticisi"
+
+#: main.cpp:228
+msgid "The following modules are available:"
+msgstr "Aşağıdaki modüller kullanılabilir:"
+
+#: main.cpp:247
+msgid "No description available"
+msgstr "Tanım bilgisi yok"
+
+#: main.cpp:314
+#, c-format
+msgid "Configure - %1"
+msgstr "Yapılandır - %1"

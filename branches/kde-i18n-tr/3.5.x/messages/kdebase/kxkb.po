@@ -1,0 +1,459 @@
+# translation of kxkb.po to
+# Copyright (C) 2003, 2004, 2007 Free Software Foundation, Inc.
+#
+# Muhsin YEŞİLYILMAZ <muhsinyy@hotmail.com>, 2000.
+# Görkem Çetin <gorkem@kde.org>, 2002, 2003, 2004.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>,2003.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kxkb\n"
+"POT-Creation-Date: 2006-04-06 03:54+0200\n"
+"PO-Revision-Date: 2007-07-06 16:32+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=1; plural=0;\n"
+
+#: kxkb.cpp:373
+msgid "A utility to switch keyboard maps"
+msgstr "Klavye dil haritalarını değiştirmek için araç"
+
+#: kxkb.cpp:377
+msgid "KDE Keyboard Tool"
+msgstr "KDE Klavye Aracı"
+
+#: kxkbtraywindow.cpp:60
+msgid "Error changing keyboard layout to '%1'"
+msgstr "Klavye ayarlarını '%1' diline çevirirken bir hata oluştu"
+
+#: kxkbtraywindow.cpp:110
+msgid "Configure..."
+msgstr "Yapılandır..."
+
+#: pixmap.cpp:243
+msgid "Belgian"
+msgstr "Belçika dili"
+
+#: pixmap.cpp:244
+msgid "Bulgarian"
+msgstr "Bulgarca"
+
+#: pixmap.cpp:245
+msgid "Brazilian"
+msgstr "Brezilya dili"
+
+#: pixmap.cpp:246
+msgid "Canadian"
+msgstr "Kanada dili"
+
+#: pixmap.cpp:247
+msgid "Czech"
+msgstr "Çekçe"
+
+#: pixmap.cpp:248
+msgid "Czech (qwerty)"
+msgstr "Çekçe (qwerty)"
+
+#: pixmap.cpp:249
+msgid "Danish"
+msgstr "Danimarka dili"
+
+#: pixmap.cpp:250
+msgid "Estonian"
+msgstr "Estonyaca"
+
+#: pixmap.cpp:251
+msgid "Finnish"
+msgstr "Fince"
+
+#: pixmap.cpp:252
+msgid "French"
+msgstr "Fransızca"
+
+#: pixmap.cpp:253
+msgid "German"
+msgstr "Almanca"
+
+#: pixmap.cpp:254
+msgid "Hungarian"
+msgstr "Macarca"
+
+#: pixmap.cpp:255
+msgid "Hungarian (qwerty)"
+msgstr "Macarca (qwerty)"
+
+#: pixmap.cpp:256
+msgid "Italian"
+msgstr "İtalyanca"
+
+#: pixmap.cpp:257
+msgid "Japanese"
+msgstr "Japonca"
+
+#: pixmap.cpp:258
+msgid "Lithuanian"
+msgstr "Litvanyaca"
+
+#: pixmap.cpp:259
+msgid "Norwegian"
+msgstr "Norveççe"
+
+#: pixmap.cpp:260
+msgid "PC-98xx Series"
+msgstr "PC-98xx Serisi"
+
+#: pixmap.cpp:261
+msgid "Polish"
+msgstr "Polonya dili"
+
+#: pixmap.cpp:262
+msgid "Portuguese"
+msgstr "Portekizce"
+
+#: pixmap.cpp:263
+msgid "Romanian"
+msgstr "Romence"
+
+#: pixmap.cpp:264
+msgid "Russian"
+msgstr "Rusça"
+
+#: pixmap.cpp:265
+msgid "Slovak"
+msgstr "Slovakça"
+
+#: pixmap.cpp:266
+msgid "Slovak (qwerty)"
+msgstr "Slovakça (qwerty)"
+
+#: pixmap.cpp:267
+msgid "Spanish"
+msgstr "İspanyolca"
+
+#: pixmap.cpp:268
+msgid "Swedish"
+msgstr "İsveççe"
+
+#: pixmap.cpp:269
+msgid "Swiss German"
+msgstr "İsviçre Almancası"
+
+#: pixmap.cpp:270
+msgid "Swiss French"
+msgstr "İsviçre Fransızcası"
+
+#: pixmap.cpp:271
+msgid "Thai"
+msgstr "Thai dili"
+
+#: pixmap.cpp:272
+msgid "United Kingdom"
+msgstr "İngiltere"
+
+#: pixmap.cpp:273
+msgid "U.S. English"
+msgstr "Amerikan İngilizcesi"
+
+#: pixmap.cpp:274
+msgid "U.S. English w/ deadkeys"
+msgstr "ABD İngilizcesi"
+
+#: pixmap.cpp:275
+msgid "U.S. English w/ISO9995-3"
+msgstr "Amerikan İngilizcesi (ISO9995-3)"
+
+#: pixmap.cpp:278
+msgid "Armenian"
+msgstr "Ermenice"
+
+#: pixmap.cpp:279
+msgid "Azerbaijani"
+msgstr "Azerice"
+
+#: pixmap.cpp:280
+msgid "Icelandic"
+msgstr "İzlanda dili"
+
+#: pixmap.cpp:281
+msgid "Israeli"
+msgstr "İbranice"
+
+#: pixmap.cpp:282
+msgid "Lithuanian azerty standard"
+msgstr "Litvanya standart azerty"
+
+#: pixmap.cpp:283
+msgid "Lithuanian querty \"numeric\""
+msgstr "Litvanya nümerik querty"
+
+#: pixmap.cpp:284
+msgid "Lithuanian querty \"programmer's\""
+msgstr "Litvanya programcı querty"
+
+#: pixmap.cpp:285
+msgid "Macedonian"
+msgstr "Makedonca"
+
+#: pixmap.cpp:286
+msgid "Serbian"
+msgstr "Sırpça"
+
+#: pixmap.cpp:287
+msgid "Slovenian"
+msgstr "Slovence"
+
+#: pixmap.cpp:288
+msgid "Vietnamese"
+msgstr "Vietnam dili"
+
+#: pixmap.cpp:291
+msgid "Arabic"
+msgstr "Arapça"
+
+#: pixmap.cpp:292
+msgid "Belarusian"
+msgstr "Belarusça"
+
+#: pixmap.cpp:293
+msgid "Bengali"
+msgstr "Bengal"
+
+#: pixmap.cpp:294
+msgid "Croatian"
+msgstr "Hırvatça"
+
+#: pixmap.cpp:295
+msgid "Greek"
+msgstr "Yunanca"
+
+#: pixmap.cpp:296
+msgid "Latvian"
+msgstr "Latvianca"
+
+#: pixmap.cpp:297
+msgid "Lithuanian qwerty \"numeric\""
+msgstr "Litvanya nümerik querty"
+
+#: pixmap.cpp:298
+msgid "Lithuanian qwerty \"programmer's\""
+msgstr "Litvanya programcı querty"
+
+#: pixmap.cpp:299
+msgid "Turkish"
+msgstr "Türkçe"
+
+#: pixmap.cpp:300
+msgid "Ukrainian"
+msgstr "Ukraynaca"
+
+#: pixmap.cpp:303
+msgid "Albanian"
+msgstr "Arnavut"
+
+#: pixmap.cpp:304
+msgid "Burmese"
+msgstr "Burmese"
+
+#: pixmap.cpp:305
+msgid "Dutch"
+msgstr "Hollanda dili"
+
+#: pixmap.cpp:306
+msgid "Georgian (latin)"
+msgstr "Gürcüce (latin)"
+
+#: pixmap.cpp:307
+msgid "Georgian (russian)"
+msgstr "Gürcüce (rus)"
+
+#: pixmap.cpp:308
+msgid "Gujarati"
+msgstr "Gujarati"
+
+#: pixmap.cpp:309
+msgid "Gurmukhi"
+msgstr "Gurmukhi"
+
+#: pixmap.cpp:310
+msgid "Hindi"
+msgstr "Hintçe"
+
+#: pixmap.cpp:311
+msgid "Inuktitut"
+msgstr "Inuktitut"
+
+#: pixmap.cpp:312
+msgid "Iranian"
+msgstr "Persçe"
+
+#: pixmap.cpp:314
+msgid "Latin America"
+msgstr "Latin Amerika"
+
+#: pixmap.cpp:315
+msgid "Maltese"
+msgstr "Maltese"
+
+#: pixmap.cpp:316
+msgid "Maltese (US layout)"
+msgstr "Maltese (US)"
+
+#: pixmap.cpp:317
+msgid "Northern Saami (Finland)"
+msgstr "Kuzey Sami (Finlandiya)"
+
+#: pixmap.cpp:318
+msgid "Northern Saami (Norway)"
+msgstr "Kuzey Sami (Norveç)"
+
+#: pixmap.cpp:319
+msgid "Northern Saami (Sweden)"
+msgstr "Kuzey Sami (İsveç)"
+
+#: pixmap.cpp:320
+msgid "Polish (qwertz)"
+msgstr "Lehçe (qwerty)"
+
+#: pixmap.cpp:321
+msgid "Russian (cyrillic phonetic)"
+msgstr "Rusça (kiril)"
+
+#: pixmap.cpp:322
+msgid "Tajik"
+msgstr "Tajik"
+
+#: pixmap.cpp:323
+msgid "Turkish (F)"
+msgstr "Türkçe (F)"
+
+#: pixmap.cpp:324
+msgid "U.S. English w/ ISO9995-3"
+msgstr "Amerikan İngilizcesi (ISO9995-3)"
+
+#: pixmap.cpp:325
+msgid "Yugoslavian"
+msgstr "Yugoslavca"
+
+#: pixmap.cpp:328
+msgid "Bosnian"
+msgstr "Bosnaca"
+
+#: pixmap.cpp:329
+msgid "Croatian (US)"
+msgstr "Croatian (US)"
+
+#: pixmap.cpp:330
+msgid "Dvorak"
+msgstr "Dvorak"
+
+#: pixmap.cpp:331
+msgid "French (alternative)"
+msgstr "Fransızca (alternatif)"
+
+#: pixmap.cpp:332
+msgid "French Canadian"
+msgstr "Fransız Kanada dili"
+
+#: pixmap.cpp:333
+msgid "Kannada"
+msgstr "Kannada dili"
+
+#: pixmap.cpp:334
+msgid "Lao"
+msgstr "Lao"
+
+#: pixmap.cpp:335
+msgid "Malayalam"
+msgstr "Malayalam"
+
+#: pixmap.cpp:336
+msgid "Mongolian"
+msgstr "Mongolian"
+
+#: pixmap.cpp:337
+msgid "Ogham"
+msgstr "Ogham"
+
+#: pixmap.cpp:338
+msgid "Oriya"
+msgstr "Oriya"
+
+#: pixmap.cpp:339
+msgid "Syriac"
+msgstr "Siriac"
+
+#: pixmap.cpp:340
+msgid "Telugu"
+msgstr "Telugu"
+
+#: pixmap.cpp:341
+msgid "Thai (Kedmanee)"
+msgstr "Thai (Kedmanee)"
+
+#: pixmap.cpp:342
+msgid "Thai (Pattachote)"
+msgstr "Thai (Pattachote)"
+
+#: pixmap.cpp:343
+msgid "Thai (TIS-820.2538)"
+msgstr "Thai (TIS-820.2538)"
+
+#: pixmap.cpp:346
+msgid "Uzbek"
+msgstr "Özbek"
+
+#: pixmap.cpp:347
+msgid "Faroese"
+msgstr "Faroe"
+
+#: pixmap.cpp:350
+msgid "Dzongkha / Tibetan"
+msgstr "Dzongkha / Tibetçe"
+
+#: pixmap.cpp:351
+msgid "Hungarian (US)"
+msgstr "Macarca (US)"
+
+#: pixmap.cpp:352
+msgid "Irish"
+msgstr "İrlandaca"
+
+#: pixmap.cpp:353
+msgid "Israeli (phonetic)"
+msgstr "İsrail Dili (fonetik)"
+
+#: pixmap.cpp:354
+msgid "Serbian (Cyrillic)"
+msgstr "Sırpça (Kiril)"
+
+#: pixmap.cpp:355
+msgid "Serbian (Latin)"
+msgstr "Sırpça (Latin)"
+
+#: pixmap.cpp:356
+msgid "Swiss"
+msgstr "İsviçre Dili"
+
+#: kxkbbindings.cpp:9
+msgid "Keyboard"
+msgstr "Klavye"
+
+#: kxkbbindings.cpp:10
+msgid "Switch to Next Keyboard Layout"
+msgstr "Sonraki Klavye Haritasına Geç:"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"

@@ -1,0 +1,37 @@
+# translation of kabc_sql.po to Turkish
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>,2002.
+# Görkem Çetin <gorkem@kde.org>, 2003
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kabc_sql\n"
+"POT-Creation-Date: 2005-05-18 21:23+0200\n"
+"PO-Revision-Date: 2003-04-24 13:21+0000\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0\n"
+
+#: resourcesqlconfig.cpp:41
+#, fuzzy
+msgid "Username:"
+msgstr "Kullanıcı adı:"
+
+#: resourcesqlconfig.cpp:47
+msgid "Password:"
+msgstr "Parola:"
+
+#: resourcesqlconfig.cpp:54
+msgid "Host:"
+msgstr "Makine:"
+
+#: resourcesqlconfig.cpp:60
+msgid "Port:"
+msgstr "Port:"
+
+#: resourcesqlconfig.cpp:70
+msgid "Database:"
+msgstr "Veritabanı :"

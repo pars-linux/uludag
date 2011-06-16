@@ -1,0 +1,176 @@
+# translation of kcoloredit.po to Türkçe
+# translation of kcoloredit.po to
+# translation of kcoloredit.po to Turkish
+# kde
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2001,2002, 2003, 2004.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcoloredit\n"
+"POT-Creation-Date: 2006-06-05 03:59+0200\n"
+"PO-Revision-Date: 2004-10-24 03:01+0300\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9\n"
+
+#: kcoloreditview.cpp:122 texteditselection.cpp:49
+msgid "hex."
+msgstr "onaltılık."
+
+#: gradientselection.cpp:41
+msgid "Variable"
+msgstr "Değişken"
+
+#: gradientselection.cpp:49
+msgid "Synchronize"
+msgstr "Eşzamanla"
+
+#: colorselector.cpp:82
+msgid "0"
+msgstr "0"
+
+#: palette.cpp:122 palette.cpp:128 palette.cpp:137
+msgid "Invalid format"
+msgstr "Geçersiz biçim"
+
+#: palette.cpp:163
+msgid "Could not open file"
+msgstr "Dosya açılamadı"
+
+#: palette.cpp:179 palette.cpp:198
+msgid "Write error"
+msgstr "Yazma hatası"
+
+#: palette.cpp:210
+msgid "Could not open file for writing"
+msgstr "Dosya yazmak için açılamadı"
+
+#: loadpalettedlg.cpp:35
+msgid "Load Palette"
+msgstr "Paleti Yükle"
+
+#: loadpalettedlg.cpp:41
+msgid "Select a palette:"
+msgstr "Bir palet seçin:"
+
+#: loadpalettedlg.cpp:60
+msgid "Custom Colors"
+msgstr "Özel Renkler"
+
+#: loadpalettedlg.cpp:62
+msgid "Recent Colors"
+msgstr "Son Kullanılan Renkler"
+
+#: loadpalettedlg.cpp:93
+msgid "*|All Files"
+msgstr "*|Tüm Dosyalar"
+
+#: loadpalettedlg.cpp:93
+msgid "Open File"
+msgstr "Dosya Aç"
+
+#: kcoloreditview.cpp:50
+msgid "Add Color"
+msgstr "Renk Ekle"
+
+#: kcoloreditview.cpp:55
+msgid "At cursor"
+msgstr "İmlecin üzerinde"
+
+#: kcoloredit.cpp:268 kcoloreditview.cpp:58
+msgid "Overwrite"
+msgstr "Üzerine yaz"
+
+#: kcoloreditview.cpp:74
+msgid "Color at Cursor"
+msgstr "İmlecin üzerinde renk"
+
+#: kcoloreditview.cpp:78
+msgid "Name"
+msgstr "İsim"
+
+#: kcoloreditdoc.cpp:111
+msgid ""
+"The current file has been modified.\n"
+"Do you want to save it?"
+msgstr ""
+"Geçerli dosya değiştirildi.\n"
+"Kaydetmek ister misiniz?"
+
+#: kcoloreditdoc.cpp:112
+msgid "Do Not Save"
+msgstr ""
+
+#: kcoloredit.cpp:77
+msgid "New &Window"
+msgstr "Yeni &Pencere"
+
+#: kcoloredit.cpp:92
+msgid "Show &Color Names"
+msgstr "&Renk İsimlerini Göster"
+
+#: kcoloredit.cpp:95
+msgid "Hide &Color Names"
+msgstr "R&enk İsimlerini Gizle"
+
+#: kcoloredit.cpp:96
+msgid "From &Palette"
+msgstr "&Paletten Al"
+
+#: kcoloredit.cpp:99
+msgid "From &Screen"
+msgstr "&Ekrandan Al"
+
+#: kcoloredit.cpp:106
+msgid "Ready."
+msgstr "Hazır."
+
+#: kcoloredit.cpp:259
+msgid "All Files"
+msgstr "Tüm Dosyalar"
+
+#: kcoloredit.cpp:266
+msgid ""
+"A Document with this name already exists.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"Bu isimde bir dosya zaten var.\n"
+"Üzerine yazmak istiyor musunuz?"
+
+#: main.cpp:26 main.cpp:40
+msgid "KColorEdit"
+msgstr "KColorEdit"
+
+#: main.cpp:32
+msgid "File to open"
+msgstr "Açılacak dosya"
+
+#: main.cpp:44
+msgid "Rewrote UI code to be KDE standards compliant"
+msgstr "KDE uyumlu olması için arayüz yeniden kodlandı"
+
+#. i18n: file kcoloreditui.rc line 12
+#: rc.cpp:6
+#, fuzzy, no-c-format
+msgid "&Color"
+msgstr "Renk Ekle"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#~ msgid "A color editor for KDE"
+#~ msgstr "KDE için bir renk düzenleyici"

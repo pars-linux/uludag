@@ -1,0 +1,165 @@
+# Translation of kres_blogging.po to Turkish
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Ozan Eren BILGEN <oebilgen@uekae.tubitak.gov.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kres_blogging\n"
+"POT-Creation-Date: 2005-02-02 01:26+0100\n"
+"PO-Revision-Date: 2008-02-29 00:17+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@lists.kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: LoKalize 0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: kcal_resourcebloggingconfig.cpp:35
+msgid ""
+"Currently, the blogging resource is only read-only. You will not be able to add "
+"journals to this resource or upload any changes to the server."
+msgstr ""
+
+#: kcal_resourcebloggingconfig.cpp:35
+msgid "Read-Only"
+msgstr "Salt- Okunur"
+
+#. i18n: file resourcebloggingsettings.ui line 44
+#: rc.cpp:3
+#, no-c-format
+msgid "Service:"
+msgstr "Servis:"
+
+#. i18n: file resourcebloggingsettings.ui line 50
+#: rc.cpp:6
+#, no-c-format
+msgid "Custom"
+msgstr "Özel"
+
+#. i18n: file resourcebloggingsettings.ui line 55
+#: rc.cpp:9
+#, no-c-format
+msgid "Blogger.com"
+msgstr "Blogger.com"
+
+#. i18n: file resourcebloggingsettings.ui line 72
+#: rc.cpp:12
+#, no-c-format
+msgid "Server Settings"
+msgstr "Sunucu Yapılandırması"
+
+#. i18n: file resourcebloggingsettings.ui line 91
+#: rc.cpp:15
+#, no-c-format
+msgid "URL:"
+msgstr "Adres:"
+
+#. i18n: file resourcebloggingsettings.ui line 99
+#: rc.cpp:18
+#, no-c-format
+msgid "Username:"
+msgstr "Kullanıcı adı:"
+
+#. i18n: file resourcebloggingsettings.ui line 112
+#: rc.cpp:21
+#, no-c-format
+msgid "Password:"
+msgstr "Parola:"
+
+#. i18n: file resourcebloggingsettings.ui line 120
+#: rc.cpp:24
+#, no-c-format
+msgid "http://www.kdedevelopers.com/xmlrpc.php"
+msgstr "http://www.kdedevelopers.com/xmlrpc.php"
+
+#. i18n: file resourcebloggingsettings.ui line 147
+#: rc.cpp:27
+#, no-c-format
+msgid "Server API:"
+msgstr "Sunucu API:"
+
+#. i18n: file resourcebloggingsettings.ui line 153
+#: rc.cpp:30
+#, no-c-format
+msgid "Blogger API"
+msgstr "Blogger API"
+
+#. i18n: file resourcebloggingsettings.ui line 158
+#: rc.cpp:33
+#, no-c-format
+msgid "Drupal API"
+msgstr "Drupal API"
+
+#. i18n: file resourcebloggingsettings.ui line 163
+#: rc.cpp:36
+#, no-c-format
+msgid "metaWeblog API"
+msgstr "metaWeblog API"
+
+#. i18n: file resourcebloggingsettings.ui line 168
+#: rc.cpp:39
+#, no-c-format
+msgid "Moveable Type API"
+msgstr "Taşınabilir Tip API"
+
+#. i18n: file resourcebloggingsettings.ui line 185
+#: rc.cpp:42
+#, no-c-format
+msgid "Templates"
+msgstr "Örnekler"
+
+#. i18n: file resourcebloggingsettings.ui line 204
+#: rc.cpp:45
+#, no-c-format
+msgid "</TITLE>"
+msgstr "</TITLE>"
+
+#. i18n: file resourcebloggingsettings.ui line 212
+#: rc.cpp:48
+#, no-c-format
+msgid "Title tags:"
+msgstr "Başlk imleri:"
+
+#. i18n: file resourcebloggingsettings.ui line 228
+#: rc.cpp:51
+#, no-c-format
+msgid "<TITLE>"
+msgstr "<TITLE>"
+
+#. i18n: file resourcebloggingsettings.ui line 247
+#: rc.cpp:54
+#, no-c-format
+msgid "<CATEGORY>"
+msgstr "<CATEGORY>"
+
+#. i18n: file resourcebloggingsettings.ui line 263
+#: rc.cpp:57
+#, no-c-format
+msgid "Category tags:"
+msgstr "Sınıflandırma imleri:"
+
+#. i18n: file resourcebloggingsettings.ui line 279
+#: rc.cpp:60
+#, no-c-format
+msgid "</CATEGORY>"
+msgstr "</CATEGORY>"
+
+#: xmlrpcjob.cpp:173
+#, c-format
+msgid ""
+"Unknown type of XML markup received. Markup: \n"
+" %1"
+msgstr "Bilinmeyen XML imi %1 alındı."
+
+#~ msgid "User:"
+#~ msgstr "Kullanıcı:"
+
+#~ msgid "svrMgrView"
+#~ msgstr "svrMgrView"
+
+#~ msgid "Unable to interpret posting returned by the server"
+#~ msgstr "Sunucu yanıtı yorumlanamadı"
+
+#~ msgid "Received invalid XML markup: %1 at %2:%3"
+#~ msgstr "Geçersiz XML imi: %2:%3 konumunda %1"

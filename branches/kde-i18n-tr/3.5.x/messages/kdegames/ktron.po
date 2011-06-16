@@ -1,0 +1,438 @@
+# translation of ktron.po to Türkçe
+# translation of ktron.po to
+# translation of ktron.po to Turkish
+# Copyright (C) 2003, 2005 Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002,2003.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Bülent ŞENER <bulent@kde.org.tr>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ktron\n"
+"POT-Creation-Date: 2008-07-08 01:19+0200\n"
+"PO-Revision-Date: 2005-08-10 13:29+0300\n"
+"Last-Translator: Bülent ŞENER <bulent@kde.org.tr>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.1\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Ömer Fadıl USTA, Bülent ŞENER"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "omer_fad@hotmail.com, bulent@kde.org.tr"
+
+#: ktron.cpp:60
+msgid "Player 1 Up"
+msgstr "1. Oyuncu Yukarı"
+
+#: ktron.cpp:62
+msgid "Player 1 Down"
+msgstr "2. Oyuncu Aşağı"
+
+#: ktron.cpp:64
+msgid "Player 1 Right"
+msgstr "1. Oyuncu Sağa"
+
+#: ktron.cpp:66
+msgid "Player 1 Left"
+msgstr "1. Oyuncu Sola"
+
+#: ktron.cpp:68
+msgid "Player 1 Accelerator"
+msgstr "1. Oyuncu Hızlanma"
+
+#: ktron.cpp:71
+msgid "Player 2 Up"
+msgstr "2. Oyuncu Yukarı"
+
+#: ktron.cpp:73
+msgid "Player 2 Down"
+msgstr "2. Oyuncu Aşağı"
+
+#: ktron.cpp:75
+msgid "Player 2 Right"
+msgstr "2. Oyuncu Sağa"
+
+#: ktron.cpp:77
+msgid "Player 2 Left"
+msgstr "2. Oyuncu Sola"
+
+#: ktron.cpp:79
+msgid "Player 2 Accelerator"
+msgstr "2. Oyuncu Hızlanma"
+
+#: ktron.cpp:96
+msgid "Player 1"
+msgstr "1. Oyuncu"
+
+#: ktron.cpp:99
+msgid "Player 2"
+msgstr "2. oyuncu"
+
+#: ktron.cpp:111
+msgid "Computer(%1)"
+msgstr "Bilgisayar(%1)"
+
+#: ktron.cpp:113
+msgid "Computer"
+msgstr "Bilgisayar"
+
+#: ktron.cpp:150 ktron.cpp:157 main.cpp:37
+msgid "KTron"
+msgstr "KTron"
+
+#: ktron.cpp:161
+msgid "%1 has won!"
+msgstr "%1 kazandı!"
+
+#: ktron.cpp:164
+msgid "%1 has won versus %2 with %3 : %4 points!"
+msgstr "%1 ve %3 , %2 ye karşı kazandı : %4 puan!"
+
+#: ktron.cpp:168
+msgid "Winner"
+msgstr "Kazanan"
+
+#: ktron.cpp:186
+msgid "General"
+msgstr "Genel"
+
+#: ktron.cpp:187
+msgid "A.I."
+msgstr "A.I."
+
+#: main.cpp:29
+msgid "A race in hyperspace"
+msgstr "Sonsuz uzayda bir yarış"
+
+#: main.cpp:30
+msgid ""
+"(c) 1998-2000, Matthias Kiefer\n"
+"\n"
+"Parts of the algorithms for the computer player are from\n"
+"xtron-1.1 by Rhett D. Jacobs <rhett@hotel.canberra.edu.au>"
+msgstr ""
+"Matthias Kiefer, (c) 1998-2000\n"
+"\n"
+"Bilgisayarın kontrolü için bazı algoritmalar\n"
+"xtron-1.1'den - Rhett D. Jacobs <rhett@hotel.canberra.edu.au> 'den alınmıştır."
+
+#: main.cpp:39
+msgid "Original author"
+msgstr "Asıl yazar"
+
+#: main.cpp:40
+msgid "Various improvements"
+msgstr "Çeşitli geliştirmeler"
+
+#. i18n: file ai.ui line 47
+#: rc.cpp:3
+#, no-c-format
+msgid "Computer Controls"
+msgstr "Bilgisayar Kontrolü"
+
+#. i18n: file ai.ui line 58
+#: rc.cpp:6
+#, no-c-format
+msgid "Player &1"
+msgstr "&1. Oyuncu"
+
+#. i18n: file ai.ui line 66
+#: rc.cpp:9
+#, no-c-format
+msgid "Player &2"
+msgstr "&2. Oyuncu"
+
+#. i18n: file ai.ui line 93
+#: rc.cpp:12
+#, no-c-format
+msgid "Intelligence:"
+msgstr "Zeka:"
+
+#. i18n: file ai.ui line 99
+#: rc.cpp:15
+#, no-c-format
+msgid "Beginner"
+msgstr "Başlangıç"
+
+#. i18n: file ai.ui line 104
+#: rc.cpp:18
+#, no-c-format
+msgid "Average"
+msgstr "Orta"
+
+#. i18n: file ai.ui line 109
+#: rc.cpp:21
+#, no-c-format
+msgid "Expert"
+msgstr "Uzman"
+
+#. i18n: file appearance.ui line 47
+#: rc.cpp:24
+#, no-c-format
+msgid "Line style:"
+msgstr "Çizgi stili:"
+
+#. i18n: file appearance.ui line 53
+#: rc.cpp:27
+#, no-c-format
+msgid "3D Line"
+msgstr "3D Çizgi"
+
+#. i18n: file appearance.ui line 58
+#: rc.cpp:30
+#, no-c-format
+msgid "3D Rectangles"
+msgstr "3D Dörtgenler"
+
+#. i18n: file appearance.ui line 63
+#: rc.cpp:33
+#, no-c-format
+msgid "Flat"
+msgstr "Düz"
+
+#. i18n: file appearance.ui line 68
+#: rc.cpp:36
+#, no-c-format
+msgid "Circles"
+msgstr "Daireler"
+
+#. i18n: file appearance.ui line 80
+#: rc.cpp:39
+#, no-c-format
+msgid "Line Size"
+msgstr "Çizgi Boyutu"
+
+#. i18n: file appearance.ui line 91
+#: rc.cpp:42
+#, no-c-format
+msgid "Large"
+msgstr "Geniş"
+
+#. i18n: file appearance.ui line 102
+#: rc.cpp:45
+#, no-c-format
+msgid "Small"
+msgstr "Küçük"
+
+#. i18n: file appearance.ui line 113
+#: rc.cpp:48
+#, no-c-format
+msgid "Medium"
+msgstr "Orta"
+
+#. i18n: file appearance.ui line 155
+#: rc.cpp:51
+#, no-c-format
+msgid "Background"
+msgstr "Arkaplan"
+
+#. i18n: file appearance.ui line 166
+#: rc.cpp:54
+#, no-c-format
+msgid "Color:"
+msgstr "Renk:"
+
+#. i18n: file appearance.ui line 185
+#: rc.cpp:57
+#, no-c-format
+msgid "Image:"
+msgstr "Resim:"
+
+#. i18n: file appearance.ui line 213
+#: rc.cpp:60
+#, no-c-format
+msgid "Player 1 color:"
+msgstr "1. Oyuncunun Rengi"
+
+#. i18n: file appearance.ui line 236
+#: rc.cpp:63
+#, no-c-format
+msgid "Player 2 color:"
+msgstr "2. Oyuncunun Rengi"
+
+#. i18n: file general.ui line 47
+#: rc.cpp:66
+#, no-c-format
+msgid "Behavior"
+msgstr "Davranış"
+
+#. i18n: file general.ui line 58
+#: rc.cpp:69
+#, no-c-format
+msgid "&Show winner by changing color"
+msgstr "Kazananı renk değiştirerek &göster"
+
+#. i18n: file general.ui line 66
+#: rc.cpp:72
+#, no-c-format
+msgid "&Disable acceleration"
+msgstr "Hızlanmayı &pasifleştir"
+
+#. i18n: file general.ui line 74
+#: rc.cpp:75
+#, no-c-format
+msgid "&Crash when moving in the opposite direction"
+msgstr "&Ters yönde giderken çarpış"
+
+#. i18n: file general.ui line 84
+#: rc.cpp:78
+#, no-c-format
+msgid "Player Names"
+msgstr "Oyuncu İsimleri"
+
+#. i18n: file general.ui line 105
+#: rc.cpp:81
+#, no-c-format
+msgid "Player 1:"
+msgstr "1. oyuncu:"
+
+#. i18n: file general.ui line 113
+#: rc.cpp:84
+#, no-c-format
+msgid "Player 2:"
+msgstr "2. oyuncu"
+
+#. i18n: file general.ui line 123
+#: rc.cpp:87
+#, no-c-format
+msgid "Speed"
+msgstr "Hız"
+
+#. i18n: file general.ui line 168
+#: rc.cpp:90
+#, no-c-format
+msgid "Slow"
+msgstr "Yavaş"
+
+#. i18n: file general.ui line 187
+#: rc.cpp:96
+#, no-c-format
+msgid "Fast"
+msgstr "Hızlı"
+
+#. i18n: file ktron.kcfg line 9
+#: rc.cpp:99
+#, no-c-format
+msgid "The background color of the game."
+msgstr "Oyunun arkaplanı."
+
+#. i18n: file ktron.kcfg line 13
+#: rc.cpp:102
+#, no-c-format
+msgid "The color of player 1"
+msgstr "1. oyuncunun rengi"
+
+#. i18n: file ktron.kcfg line 17
+#: rc.cpp:105
+#, no-c-format
+msgid "The color of player 2"
+msgstr "2. oyuncunun rengi"
+
+#. i18n: file ktron.kcfg line 21
+#: rc.cpp:108
+#, no-c-format
+msgid "Whether to show the winner by changing color."
+msgstr "Kazanan, rengi değişen çizgilerle gösterilsin mi?"
+
+#. i18n: file ktron.kcfg line 25
+#: rc.cpp:111
+#, no-c-format
+msgid "Whether to disable acceleration."
+msgstr "İvmelenme etkinleştirilsin mi?"
+
+#. i18n: file ktron.kcfg line 29
+#: rc.cpp:114
+#, no-c-format
+msgid "Whether changing in the opposite direction causes a crash."
+msgstr "Geriye dönüşlerin sonucunda çarpışma olsun mu?"
+
+#. i18n: file ktron.kcfg line 33
+#: rc.cpp:117
+#, no-c-format
+msgid "The width of the line."
+msgstr "Çizginin genişliği."
+
+#. i18n: file ktron.kcfg line 37
+#: rc.cpp:120
+#, no-c-format
+msgid "The speed of the line."
+msgstr "Çizginin hızı"
+
+#. i18n: file ktron.kcfg line 42
+#: rc.cpp:123
+#, no-c-format
+msgid "The skill of the computer player."
+msgstr "Bilgisayar oyuncusunun zekası."
+
+#. i18n: file ktron.kcfg line 51
+#: rc.cpp:126
+#, no-c-format
+msgid "The line style."
+msgstr "Çizgi stili."
+
+#. i18n: file ktron.kcfg line 62
+#: rc.cpp:129
+#, no-c-format
+msgid "Whether to use a custom background image."
+msgstr "Özel bir arkaplan resmi kullanılıp kullanılmayacağı."
+
+#. i18n: file ktron.kcfg line 66
+#: rc.cpp:132
+#, no-c-format
+msgid "Custom background image to use."
+msgstr "Kullanılacak özel arkaplan resmi."
+
+#. i18n: file ktron.kcfg line 70
+#: rc.cpp:135
+#, no-c-format
+msgid "Whether player 1 is a computer player."
+msgstr "1. oyuncu bilgisayar oyuncusu mu olsun?"
+
+#. i18n: file ktron.kcfg line 74
+#: rc.cpp:138
+#, no-c-format
+msgid "Whether player 2 is a computer player."
+msgstr "2. oyuncu bilgisayar oyuncusu mu olsun?"
+
+#. i18n: file ktron.kcfg line 78
+#: rc.cpp:141
+#, no-c-format
+msgid "The name of player 1."
+msgstr "1. oyuncunun adı"
+
+#. i18n: file ktron.kcfg line 81
+#: rc.cpp:144
+#, no-c-format
+msgid "The name of player 2."
+msgstr "2. oyuncunun adı"
+
+#: tron.cpp:98
+#, c-format
+msgid ""
+"Wasn't able to load wallpaper\n"
+"%1"
+msgstr ""
+"Duvar kağıdını yükleyemedim\n"
+"%1"
+
+#: tron.cpp:591
+msgid "Game paused"
+msgstr "Oyun Durdu"
+
+#: tron.cpp:601
+msgid "Crash!"
+msgstr "Çarptı!"
+
+#: tron.cpp:622
+msgid "Press any of your direction keys to start!"
+msgstr "Başlamak için yön tuşlarından birine basın!"

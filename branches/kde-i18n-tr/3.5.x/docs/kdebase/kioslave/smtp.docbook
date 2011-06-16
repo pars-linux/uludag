@@ -1,0 +1,11 @@
+<article lang="&language;" id="smtp">
+<title>smtp</title>
+
+<para>
+A protocol to send mail from the client workstation to the mail server.
+</para>
+
+<para> See : <ulink url="http://raddist.rad.com/networks/1998/smtp/smtp.htm#SMTP">Simple Mail Transfer Protocol </ulink>.
+</para>
+
+</article>

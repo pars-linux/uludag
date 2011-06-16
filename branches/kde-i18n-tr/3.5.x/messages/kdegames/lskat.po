@@ -1,0 +1,487 @@
+# translation of lskat.po to Türkçe
+# translation of lskat.po to Turkish
+# Copyright (C) 2004, 2005 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@gelecek.com.tr>, 2000.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Ömer Fadıl USTA <omer_fad@yahoo.com>, 2004.
+# Bülent ŞENER <bulent@kde.org.tr>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: lskat\n"
+"POT-Creation-Date: 2005-05-18 21:24+0200\n"
+"PO-Revision-Date: 2005-08-10 11:20+0300\n"
+"Last-Translator: Bülent ŞENER <bulent@kde.org.tr>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.1\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Ömer Fadıl USTA , Bülent ŞENER"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "omer_fad@hotmail.com , bulent@kde.org.tr"
+
+#: lskat.cpp:162 lskat.cpp:163
+msgid "Starting a new game..."
+msgstr "Yeni oyuna başlanıyor..."
+
+#: lskat.cpp:164
+msgid "&End Game"
+msgstr "&Oyunu Bitir"
+
+#: lskat.cpp:166
+msgid "Ending the current game..."
+msgstr "Son oyunu bitirir."
+
+#: lskat.cpp:167
+msgid "Aborts a currently played game. No winner will be declared."
+msgstr "Oynanan oyunu iptal eder. Kazanan tanımlanmayacak."
+
+#: lskat.cpp:168
+msgid "&Clear Statistics"
+msgstr "İs&tatistikleri Temizle"
+
+#: lskat.cpp:170
+msgid "Delete all time statistics..."
+msgstr "Bütün istatistikleri sil..."
+
+#: lskat.cpp:171
+msgid "Clears the all time statistics which is kept in all sessions."
+msgstr "Bütün sezonların içinde tutulan zaman istatistiklerini temizler."
+
+#: lskat.cpp:172
+msgid "Send &Message..."
+msgstr "Mesaj &Yolla..."
+
+#: lskat.cpp:174
+msgid "Sending message to remote player..."
+msgstr "Uzaktaki oyuncuya mesaj yollama..."
+
+#: lskat.cpp:175
+msgid "Allows you to talk with a remote player."
+msgstr "Uzaktaki bir oyuncuyla konuşmanızı sağlar."
+
+#: lskat.cpp:177
+msgid "Exiting..."
+msgstr "Çıkılıyor..."
+
+#: lskat.cpp:178
+msgid "Quits the program."
+msgstr "Programdan çıkar."
+
+#: lskat.cpp:180
+msgid "Starting Player"
+msgstr "Oyuncuyu Başlatıyor"
+
+#: lskat.cpp:182
+msgid "Changing starting player..."
+msgstr "Başlangıç oyuncusu değiştiriliyor..."
+
+#: lskat.cpp:183
+msgid "Chooses which player begins the next game."
+msgstr "Birsonraki oyuna hangi oyuncunun başlayacağını seçer."
+
+#: lskat.cpp:185
+msgid "Player &1"
+msgstr "Oyuncu &1"
+
+#: lskat.cpp:186
+msgid "Player &2"
+msgstr "Oyuncu &2"
+
+#: lskat.cpp:189
+msgid "Player &1 Played By"
+msgstr "Oyuncu &1' i oynayan:"
+
+#: lskat.cpp:191 lskat.cpp:192
+msgid "Changing who plays player 1..."
+msgstr "Kimin oyuncu 1'i oynayacağı değiştiriliyor..."
+
+#: lskat.cpp:194
+msgid "&Player"
+msgstr "&Oyuncu"
+
+#: lskat.cpp:195
+msgid "&Computer"
+msgstr "&Bilgisayar"
+
+#: lskat.cpp:196
+msgid "&Remote"
+msgstr "&Uzaktan"
+
+#: lskat.cpp:198
+msgid "Player &2 Played By"
+msgstr "Oyuncu &2 'yi oynayan:"
+
+#: lskat.cpp:200 lskat.cpp:201
+msgid "Changing who plays player 2..."
+msgstr "Kimin oyuncu 2'yi oynayacağı değiştiriliyor..."
+
+#: lskat.cpp:204
+msgid "&Level"
+msgstr "&Seviye"
+
+#: lskat.cpp:206
+msgid "Change level..."
+msgstr "Seviyeyi değiştir..."
+
+#: lskat.cpp:207
+msgid "Change the strength of the computer player."
+msgstr "Bilgisayar oyuncusunun seviyesini değiştir."
+
+#: lskat.cpp:209
+msgid "&Normal"
+msgstr "&Normal"
+
+#: lskat.cpp:210
+msgid "&Advanced"
+msgstr "&Gelişmiş"
+
+#: lskat.cpp:211
+msgid "&Hard"
+msgstr "&Zor"
+
+#: lskat.cpp:214
+msgid "Select &Card Deck..."
+msgstr "Kart &Destesini Seç..."
+
+#: lskat.cpp:216
+msgid "Configure card decks..."
+msgstr "Kart destesini düzenle..."
+
+#: lskat.cpp:217
+msgid "Choose how the cards should look."
+msgstr "Kartların nasıl görüneceğini seçin."
+
+#: lskat.cpp:219
+msgid "Change &Names..."
+msgstr "İsimleri &Değiştir..."
+
+#: lskat.cpp:221 lskat.cpp:222
+msgid "Configure player names..."
+msgstr "Oyuncu isimleri düzenleniyor..."
+
+#: lskat.cpp:238
+msgid "This leaves space for the mover"
+msgstr "Bu taşıyıcı için boşluk bırakır"
+
+#: lskat.cpp:239 lskat.cpp:545 lskat.cpp:875
+msgid "Ready"
+msgstr "Hazır"
+
+#: lskat.cpp:241
+msgid "(c) Martin Heni   "
+msgstr "(c) Martin Heni   "
+
+#: lskat.cpp:242
+msgid "Welcome to Lieutenant Skat"
+msgstr "Lieutenant Skat'a Hoşgeldiniz"
+
+#: lskat.cpp:264 lskat.cpp:336 lskat.cpp:687 lskatview.cpp:288 main.cpp:33
+msgid "Lieutenant Skat"
+msgstr "Lieutenant Skat"
+
+#: lskat.cpp:358
+msgid "Do you really want to clear the all time statistical data?"
+msgstr "Tüm istatistikleri temizlemek istediğinizden emin misiniz?"
+
+#: lskat.cpp:403
+msgid "Game ended...start a new one..."
+msgstr "Oyun bitti... yenisine başla..."
+
+#: lskat.cpp:587
+msgid "No game running"
+msgstr "Çalışan oyun yok"
+
+#: lskat.cpp:590
+msgid "%1 to move..."
+msgstr "%1 taşı ..."
+
+#: lskat.cpp:605
+msgid ""
+"Cannot start player 1. Maybe the network connection failed or the computer "
+"player process file is not found."
+msgstr ""
+"Oyuncu 1 başlayamıyor. Ağ bağlantısı kesilmiş ya da bilgisayar oyuncusunun "
+"çalışma dosyası bulunamamış olabilir."
+
+#: lskat.cpp:614
+msgid ""
+"Cannot start player 2. Maybe the network connection failed or the computer "
+"player process file is not found."
+msgstr ""
+"Oyuncu 2 başlayamıyor. Ağ bağlantısı kesilmiş ya da bilgisayar oyuncusunun "
+"çalışma dosyası bulunamamış olabilir."
+
+#: lskat.cpp:680
+msgid "Remote connection to %1:%2..."
+msgstr "Uzağa bağlanacak %1:%2..."
+
+#: lskat.cpp:684
+msgid "Offering remote connection on port %1..."
+msgstr "%1'nci  limandan uzaktan bağlantı isteği yapılıyor ..."
+
+#: lskat.cpp:686
+msgid "Abort"
+msgstr "İptal Et"
+
+#: lskat.cpp:769
+msgid "Waiting for the computer to move..."
+msgstr "Bilgisayarın hamlesi için bekleniyor..."
+
+#: lskat.cpp:785
+msgid "Waiting for remote player..."
+msgstr "Uzaktaki oyuncu için bekleniyor..."
+
+#: lskat.cpp:792
+msgid "Please make your move..."
+msgstr "Lütfen hamlenizi yapın..."
+
+#: lskat.cpp:827
+msgid "Remote connection lost for player 1..."
+msgstr "Oyuncu 1 için bağlantı kaybedildi..."
+
+#: lskat.cpp:834
+msgid "Remote connection lost for player 2..."
+msgstr "Oyuncu 2 için bağlantı kaybedildi..."
+
+#: lskat.cpp:846
+msgid ""
+"Message from remote player:\n"
+msgstr ""
+"Uzaktaki oyuncudan mesaj:\n"
+
+#: lskat.cpp:864
+msgid "Remote player ended game..."
+msgstr "Uzaktaki oyuncu oyunu bitirdi..."
+
+#: lskat.cpp:889
+msgid "You are network client...loading remote game..."
+msgstr "Siz uzaktaki ağa bağlanıyorsunuz...oyun yükleniyor..."
+
+#: lskat.cpp:902
+msgid "You are network server..."
+msgstr "Siz ağ sağlayıcısısınız..."
+
+#: lskat.cpp:960
+msgid ""
+"Severe internal error. Move to illegal position.\n"
+"Restart game and report bug to the developer.\n"
+msgstr ""
+"İç hata. İllegal pozisyona hamle.\n"
+"Oyunu yeniden başlatın ve hatayı geliştiriciye ulaştırın.\n"
+
+#: lskat.cpp:986
+msgid ""
+"This move would not follow the rulebook.\n"
+"Better think again!\n"
+msgstr ""
+"Bu hamle kurallara uygun değil\n"
+"Daha dikkatli düşün!\n"
+
+#: lskat.cpp:992
+msgid ""
+"It is not your turn.\n"
+msgstr ""
+"Sizin sıranız değil.\n"
+
+#: lskat.cpp:997
+msgid ""
+"This move is not possible.\n"
+msgstr ""
+"Bu hamlenin yapılması mümkün değil.\n"
+
+#: lskatdoc.cpp:749
+msgid "Alice"
+msgstr "Alice"
+
+#: lskatdoc.cpp:751
+msgid "Bob"
+msgstr "Bob"
+
+#: lskatview.cpp:297
+msgid "for"
+msgstr "için"
+
+#: lskatview.cpp:306
+msgid "K D E"
+msgstr "K D E"
+
+#: lskatview.cpp:407
+msgid "Game over"
+msgstr "Oyun bitti"
+
+#: lskatview.cpp:417
+msgid "Game was aborted - no winner"
+msgstr "Oyun iptal edildi - kazanan yok"
+
+#: lskatview.cpp:428
+msgid "      Game is drawn"
+msgstr "      Oyun berabere"
+
+#: lskatview.cpp:432
+msgid "Player 1 - %1 won "
+msgstr "Oyuncu 1 - %1 kazandı "
+
+#: lskatview.cpp:436
+msgid "Player 2 - %1 won "
+msgstr "Oyuncu 2 - %1 kazandı "
+
+#: lskatview.cpp:445 lskatview.cpp:660
+msgid "Score:"
+msgstr "Puan:"
+
+#: lskatview.cpp:472 lskatview.cpp:476
+msgid "%1 points"
+msgstr "%1 puan"
+
+#: lskatview.cpp:495 lskatview.cpp:512
+msgid "%1 won to nil. Congratulations!"
+msgstr "%1 kazandı. Tebrikler!"
+
+#: lskatview.cpp:503 lskatview.cpp:520
+msgid "%1 won with 90 points. Super!"
+msgstr "%1 90 puanla kazandı. Harika!"
+
+#: lskatview.cpp:505 lskatview.cpp:522
+msgid "%1 won over 90 points. Super!"
+msgstr "%1 90 puanı geçerek kazandı. Süper!"
+
+#: lskatview.cpp:664
+msgid "Move:"
+msgstr "Hareket:"
+
+#: lskatview.cpp:696
+msgid "Points:"
+msgstr "Puan:"
+
+#: lskatview.cpp:701
+msgid "Won:"
+msgstr "Kazanan:"
+
+#: lskatview.cpp:706
+msgid "Games:"
+msgstr "Oyunlar:"
+
+#: lskatview.cpp:838
+msgid "Hold on... the other player hasn't been yet..."
+msgstr "Bekleyin...Diğer oyuncu henüz hazır değil..."
+
+#: lskatview.cpp:841
+msgid "Hold your horses..."
+msgstr "Atlarınızı götürün..."
+
+#: lskatview.cpp:844
+msgid "Ah ah ah... only one go at a time..."
+msgstr "Ah ah ah...her turda yalnız biri gider"
+
+#: lskatview.cpp:847
+msgid "Please wait... it is not your turn."
+msgstr "Lütfen bekleyin...sizin sıranız değil."
+
+#: main.cpp:23
+msgid "Enter debug level"
+msgstr "Geliştirme seviyesini girin"
+
+#: main.cpp:35
+msgid "Card Game"
+msgstr "İskambil Oyunu"
+
+#: main.cpp:39
+msgid "Beta testing"
+msgstr "Beta denemesi"
+
+#: msgdlg.cpp:43
+msgid "Send Message to Remote Player"
+msgstr "Uzaktaki Oyuncuya Mesaj Gönder"
+
+#: msgdlg.cpp:49
+msgid "Enter Message"
+msgstr "Mesaj Gir"
+
+#: msgdlg.cpp:58
+msgid "Send"
+msgstr "Yolla"
+
+#: namedlg.cpp:29
+msgid "Configure Names"
+msgstr "İsimleri Düzenle"
+
+#: namedlg.cpp:46
+msgid "Player Names"
+msgstr "Oyuncu İsimleri"
+
+#: namedlg.cpp:64
+msgid "Player 1:"
+msgstr "Oyuncu 1:"
+
+#: namedlg.cpp:69 namedlg.cpp:84
+msgid "Enter a player's name"
+msgstr "Bir oyuncu ismi girin"
+
+#: namedlg.cpp:79
+msgid "Player 2:"
+msgstr "Oyuncu 2:"
+
+#. i18n: file networkdlgbase.ui line 16
+#: rc.cpp:9
+#, no-c-format
+msgid "Network Options"
+msgstr "Ağ Seçeneklerini Ayarla"
+
+#. i18n: file networkdlgbase.ui line 35
+#: rc.cpp:12
+#, no-c-format
+msgid "Play As"
+msgstr "Oyuncu İsimleri "
+
+#. i18n: file networkdlgbase.ui line 46
+#: rc.cpp:15
+#, no-c-format
+msgid "Server"
+msgstr "Sunucu"
+
+#. i18n: file networkdlgbase.ui line 57
+#: rc.cpp:18
+#, no-c-format
+msgid "Client"
+msgstr "İstemci"
+
+#. i18n: file networkdlgbase.ui line 88
+#: rc.cpp:21
+#, no-c-format
+msgid "Game name:"
+msgstr "Oyun adı:"
+
+#. i18n: file networkdlgbase.ui line 131
+#: rc.cpp:24
+#, no-c-format
+msgid "Network games:"
+msgstr "Ağ oyunları:"
+
+#. i18n: file networkdlgbase.ui line 166
+#: rc.cpp:27
+#, no-c-format
+msgid "Host:"
+msgstr "Sunucu:"
+
+#. i18n: file networkdlgbase.ui line 195
+#: rc.cpp:30
+#, no-c-format
+msgid "Port:"
+msgstr "Port:"
+
+#. i18n: file networkdlgbase.ui line 216
+#: rc.cpp:33
+#, no-c-format
+msgid "Choose a port to connect to"
+msgstr "Bağlantı için bir port seçin"

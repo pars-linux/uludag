@@ -1,0 +1,49 @@
+# translation of libdmctl.po to
+#
+# Görkem Çetin <gorkem@kde.org.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: libdmctl\n"
+"POT-Creation-Date: 2007-11-02 01:14+0100\n"
+"PO-Revision-Date: 2007-07-06 16:21+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=1; plural=0;\n"
+
+#: dmctl.cpp:353
+msgid ""
+"_: user: ...\n"
+"%1: TTY login"
+msgstr "%1: Terminal girişi"
+
+#: dmctl.cpp:359
+msgid "Unused"
+msgstr "Kullanılmıyor"
+
+#: dmctl.cpp:361
+msgid "X login on remote host"
+msgstr "Uzak makineden X girişi"
+
+#: dmctl.cpp:362
+#, c-format
+msgid ""
+"_: ... host\n"
+"X login on %1"
+msgstr "%1 üzerinde X girişi"
+
+#: dmctl.cpp:365
+msgid ""
+"_: user: session type\n"
+"%1: %2"
+msgstr "%1: %2"
+
+#: dmctl.cpp:380
+msgid ""
+"_: session (location)\n"
+"%1 (%2)"
+msgstr "%1 (%2)"

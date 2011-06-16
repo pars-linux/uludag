@@ -1,0 +1,126 @@
+# translation of kaboodle.po to Türkçe
+# translation of kaboodle.po to
+# translation of kaboodle.po to Turkish
+# Copyright (C) 2003, 2005 Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Görkem Çetin <gorkem@kde.org>, 2002, 2003.
+# Engin Çağatay <engincagatay@yahoo.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kaboodle\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-01-24 01:34+0100\n"
+"PO-Revision-Date: 2005-07-13 16:00+0300\n"
+"Last-Translator: Engin Çağatay <engincagatay@yahoo.com>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "erkaN kaplaN"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "omer_fad@hotmail.com"
+
+#: conf.cpp:39
+msgid "Start playing automatically"
+msgstr "Otomatik olarak çalmaya başla"
+
+#: conf.cpp:40
+msgid "Quit when finished playing"
+msgstr "Çalmayı bitirdikten sonra çık"
+
+#: kaboodle_factory.cpp:69
+msgid "Kaboodle"
+msgstr "Kaboodle"
+
+#: kaboodle_factory.cpp:70
+msgid "The Lean KDE Media Player"
+msgstr "KDE Çokluortam Çalıcısı"
+
+#: kaboodle_factory.cpp:74
+msgid "Maintainer"
+msgstr "Yazar"
+
+#: kaboodle_factory.cpp:75
+msgid "Previous Maintainer"
+msgstr "Önceki Yazar"
+
+#: kaboodle_factory.cpp:76
+msgid "Application icon"
+msgstr "Uygulama simgesi"
+
+#: kaboodle_factory.cpp:77
+msgid "Original Noatun Developer"
+msgstr "Noatun Geliştiricisi"
+
+#: kaboodle_factory.cpp:78
+msgid "Konqueror Embedding"
+msgstr "Konquer'a Gömülme"
+
+#: main.cpp:38
+msgid "URL to open"
+msgstr "Açılacak URLAdresi"
+
+#: main.cpp:40
+msgid "Turn on Qt Debug output"
+msgstr "Qt Hata Ayıklama Seçeneğini Etkinleştir"
+
+#: player.cpp:63
+msgid "&Play"
+msgstr "Ç&al"
+
+#: player.cpp:64
+msgid "&Pause"
+msgstr "&Beklet"
+
+#: player.cpp:65
+msgid "&Stop"
+msgstr "&Durdur"
+
+#: player.cpp:66
+msgid "&Looping"
+msgstr "&Sürekli Çal"
+
+#: player.cpp:103
+msgid "aRts could not load this file."
+msgstr "aRts bu dosyayı yükleyemiyor."
+
+#: player.cpp:246
+msgid "Playing %1 - %2"
+msgstr "Çalıyor: %1 - %2"
+
+#. i18n: file kaboodlepartui.rc line 9
+#: rc.cpp:3 rc.cpp:9
+#, no-c-format
+msgid "Kaboodle Toolbar"
+msgstr "Kaboodle Araç Çubuğu"
+
+#: userinterface.cpp:99
+msgid "Player"
+msgstr "Çalıcı"
+
+#: userinterface.cpp:101
+msgid "Video"
+msgstr "Video"
+
+#: userinterface.cpp:112
+msgid "Select File to Play"
+msgstr "Çalmak İçin Bir Dosya Seçin"
+
+#: view.cpp:88
+msgid "Play"
+msgstr "Çal"
+
+#: view.cpp:89
+msgid "Pause"
+msgstr "Beklet"

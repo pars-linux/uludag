@@ -1,0 +1,44 @@
+# translation of kfile_mhtml.po to Turkish
+# translation of kfile_mhtml.po to Türkçe
+# Görkem Çetin <gorkem@kde.org.tr>, 2005.
+# Cemil MUTLU <mawilos@gmail.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kfile_mhtml\n"
+"POT-Creation-Date: 2005-01-19 01:25+0100\n"
+"PO-Revision-Date: 2005-07-09 21:21+0300\n"
+"Last-Translator: Cemil MUTLU <mawilos@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: kfile_mhtml.cpp:43
+msgid "Document Information"
+msgstr "Belge Bilgileri"
+
+#: kfile_mhtml.cpp:45
+msgid "Subject"
+msgstr "Konu"
+
+#: kfile_mhtml.cpp:46
+msgid "Sender"
+msgstr "Gönderen"
+
+#: kfile_mhtml.cpp:47
+msgid "Recipient"
+msgstr "Alıcı"
+
+#: kfile_mhtml.cpp:48
+msgid "CC"
+msgstr "CC"
+
+#: kfile_mhtml.cpp:49
+msgid "BCC"
+msgstr "BCC"
+
+#: kfile_mhtml.cpp:50
+msgid "Date"
+msgstr "Tarih"

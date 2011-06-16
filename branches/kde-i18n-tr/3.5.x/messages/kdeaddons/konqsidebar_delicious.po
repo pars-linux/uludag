@@ -1,0 +1,121 @@
+# translation of konqsidebar_delicious.po to
+#
+# Görkem Çetin <gorkem@gorkemcetin.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: konqsidebar_delicious\n"
+"POT-Creation-Date: 2005-08-18 04:32+0200\n"
+"PO-Revision-Date: 2007-05-16 20:26+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: mainWidget.cpp:233
+msgid "Check All"
+msgstr "Tümünü İşaretle"
+
+#: mainWidget.cpp:234
+msgid "Uncheck All"
+msgstr "Tümünü Bırak"
+
+#: mainWidget.cpp:235
+msgid "Toggle All"
+msgstr "Tümünü Değiştir"
+
+#: mainWidget.cpp:238
+msgid "Rename Tag..."
+msgstr "Etiketi Yeniden Adlandır..."
+
+#: mainWidget.cpp:305
+msgid "Rename Tag"
+msgstr "Etiketi Yeniden Adlandır"
+
+#: mainWidget.cpp:305
+msgid "Provide a new name for tag '%1':"
+msgstr "'%1' etiketi için yeni bir isim girin:"
+
+#: mainWidget.cpp:327 mainWidget.cpp:338
+msgid "Delete Bookmark"
+msgstr "Yer İmini Sil"
+
+#: mainWidget.cpp:337
+msgid ""
+"Do you really want to remove the bookmark\n"
+"%1?"
+msgstr ""
+"Bu yer imini gerçekten silmek istiyor musunuz?\n"
+"%1"
+
+#: plugin.cpp:85
+msgid "del.icio.us Bookmarks"
+msgstr "del.icio.us Yer İmleri"
+
+#. i18n: file widget.ui line 32
+#: rc.cpp:3
+#, no-c-format
+msgid "Tags"
+msgstr "Etiketler"
+
+#. i18n: file widget.ui line 43
+#: rc.cpp:6
+#, no-c-format
+msgid "&Refresh Tags"
+msgstr "&Etiketleri Tazele"
+
+#. i18n: file widget.ui line 46
+#: rc.cpp:9
+#, no-c-format
+msgid "Refresh the list of tags"
+msgstr "Etiket listesini tazele"
+
+#. i18n: file widget.ui line 52
+#: rc.cpp:12
+#, no-c-format
+msgid "Tag"
+msgstr "Etiket"
+
+#. i18n: file widget.ui line 63
+#: rc.cpp:15
+#, no-c-format
+msgid "Count"
+msgstr "Sayı"
+
+#. i18n: file widget.ui line 100
+#: rc.cpp:21
+#, no-c-format
+msgid "Refresh &Bookmarks"
+msgstr "Yer İmlerini Taz&ele"
+
+#. i18n: file widget.ui line 103
+#: rc.cpp:24
+#, no-c-format
+msgid "Refresh the list of bookmarks according to the selected tags"
+msgstr "Seçilen etiketlere göre yer imleri listesini tazele"
+
+#. i18n: file widget.ui line 111
+#: rc.cpp:27
+#, no-c-format
+msgid "Post &New..."
+msgstr "Yeni &Gönder..."
+
+#. i18n: file widget.ui line 114
+#: rc.cpp:30
+#, no-c-format
+msgid "Post a new bookmark"
+msgstr "Yeni bir yer imi gönder"
+
+#. i18n: file widget.ui line 120
+#: rc.cpp:33
+#, no-c-format
+msgid "Description"
+msgstr "Tanım"
+
+#. i18n: file widget.ui line 131
+#: rc.cpp:36
+#, no-c-format
+msgid "Date"
+msgstr "Tarih"

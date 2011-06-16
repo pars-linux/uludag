@@ -1,0 +1,48 @@
+# translation of kfile_cpp.po to Turkish
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2002.
+# Cemil MUTLU <mawilos@gmail.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kfile_cpp\n"
+"POT-Creation-Date: 2005-05-18 21:25+0200\n"
+"PO-Revision-Date: 2005-07-15 02:55+0300\n"
+"Last-Translator: Cemil MUTLU <mawilos@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: kfile_cpp.cpp:48
+msgid "General"
+msgstr "Genel"
+
+#: kfile_cpp.cpp:51
+msgid "Lines"
+msgstr "Satırlar"
+
+#: kfile_cpp.cpp:53
+msgid "Code"
+msgstr "Kod"
+
+#: kfile_cpp.cpp:55
+msgid "Comment"
+msgstr "Açıklama"
+
+#: kfile_cpp.cpp:57
+msgid "Blank"
+msgstr "Boş"
+
+#: kfile_cpp.cpp:59
+msgid "Strings"
+msgstr "Dizgeler"
+
+#: kfile_cpp.cpp:61
+msgid "i18n Strings"
+msgstr "i18n Dizgeleri"
+
+#: kfile_cpp.cpp:63
+msgid "Included Files"
+msgstr "İçerilen Dosyalar"

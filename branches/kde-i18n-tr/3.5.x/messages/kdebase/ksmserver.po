@@ -1,0 +1,85 @@
+# translation of ksmserver.po to Türkçe
+# translation of ksmserver.po to Turkish
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ksmserver\n"
+"POT-Creation-Date: 2007-03-07 02:42+0100\n"
+"PO-Revision-Date: 2005-06-14 01:38+0200\n"
+"Last-Translator: Adil YILDIZ <adil@kde.org.tr>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: main.cpp:30
+msgid ""
+"The reliable KDE session manager that talks the standard X11R6 \n"
+"session management protocol (XSMP)."
+msgstr ""
+"Standart X11R6 oturum yönetim protokolünü (XSMP) kullanan\n"
+"güvenilir KDE oturum yöneticisi."
+
+#: main.cpp:35
+msgid "Restores the saved user session if available"
+msgstr "Mümkünse kaydedilen oturumu yeniden yükler"
+
+#: main.cpp:37
+msgid ""
+"Starts 'wm' in case no other window manager is \n"
+"participating in the session. Default is 'kwin'"
+msgstr ""
+"Oturumda yeralan başka bir pencere yöneticisi yoksa \n"
+"'wm'i başlatır. Öntanımlı 'kwin'."
+
+#: main.cpp:38
+msgid "Also allow remote connections"
+msgstr "Uzaktan bağlantılara izin ver"
+
+#: main.cpp:182
+msgid "The KDE Session Manager"
+msgstr "KDE Oturum Yöneticisi"
+
+#: main.cpp:186
+msgid "Maintainer"
+msgstr "Sağlayıcı"
+
+#: shutdown.cpp:349
+msgid "Logout canceled by '%1'"
+msgstr ""
+
+#: shutdowndlg.cpp:102
+msgid "End Session for \"%1\""
+msgstr "\"%1\" için oturumu kapat"
+
+#: shutdowndlg.cpp:128
+msgid "&End Current Session"
+msgstr "&Güncel Oturumu Kapat"
+
+#: shutdowndlg.cpp:136
+msgid "&Turn Off Computer"
+msgstr "&Bilgisayarı Kapat"
+
+#: shutdowndlg.cpp:144
+msgid "&Restart Computer"
+msgstr "&Bilgisayarı Yeniden Başlat"
+
+#: shutdowndlg.cpp:164
+msgid ""
+"_: current option in boot loader\n"
+" (current)"
+msgstr " (seçili)"

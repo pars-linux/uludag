@@ -1,0 +1,1669 @@
+# translation of knewsticker.po to
+# translation of knewsticker.po to Turkish
+# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+# Görkem Çetin, 2001
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Rıdvan CAN <ridvancan@linux-sevenler.org>, 2004.
+# A. Murat Eren <meren@uludag.org.tr>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: knewsticker\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-08 01:20+0200\n"
+"PO-Revision-Date: 2005-07-18 03:11+0300\n"
+"Last-Translator: A. Murat Eren <meren@uludag.org.tr>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.1\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem ÇetinA. Murat Eren"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.orgmeren@uludag.org.tr"
+
+#: knewsticker.cpp:46 knewsticker.cpp:474
+msgid "KNewsTicker"
+msgstr "Haber Alıcı"
+
+#: knewsticker.cpp:47
+msgid "A news ticker applet."
+msgstr "Haber alıcı programcığı."
+
+#: knewsticker.cpp:48
+msgid "(c) 2000, 2001 The KNewsTicker developers"
+msgstr "(c) 2000, 2001 KNewsTicker Geliştiricileri"
+
+#: knewsticker.cpp:58
+msgid "Show menu"
+msgstr "Menüyü göster"
+
+#: knewsticker.cpp:76
+msgid "Original author"
+msgstr "Asıl yazar"
+
+#: knewsticker.cpp:78
+msgid "Hypertext headlines and much more"
+msgstr "Hipermetin başlıklar ve diğerleri"
+
+#: knewsticker.cpp:80
+msgid "Mouse wheel support"
+msgstr "Fare tekerleği desteği"
+
+#: knewsticker.cpp:82
+msgid "Rotated scrolling text modes"
+msgstr "Döndürülmüş kayan yazı kipi"
+
+#: knewsticker.cpp:289
+msgid ""
+"<qt>Could not update news site '%1'."
+"<br>The supplied resource file is probably invalid or broken.</qt>"
+msgstr ""
+"<qt>%1 Haber grubu sitesi güncellenemedi\n"
+"<br>Verilen kaynak dosyası hatalı ya da eksik olabilir.</qt>"
+
+#: knewsticker.cpp:293
+msgid ""
+"<qt>The following news sites had problems. Their resource files are probably "
+"invalid or broken."
+"<ul>"
+msgstr ""
+"<qt>Aşağıdaki haber grubu adresinde sorunlar var. Kaynak dosyaları geçersiz, ya "
+"da kullanılamıyor."
+"<ul>"
+
+#: knewsticker.cpp:301
+msgid ""
+"Failed to update several news sites. The Internet connection might be cut."
+msgstr ""
+"Haber grubu adresine bağlantı kurulamadı. İnternet bağlantısı kesilmiş "
+"olabilir."
+
+#: knewsticker.cpp:432 knewsticker.cpp:463
+msgid "Check News"
+msgstr "Haberleri Al"
+
+#: knewsticker.cpp:438
+msgid "Currently Being Updated, No Articles Available"
+msgstr "Halen güncelleniyor, hiç ek haber yok"
+
+#: knewsticker.cpp:454
+msgid "No Articles Available"
+msgstr "Hiç Haber Yok"
+
+#: knewsticker.cpp:464
+msgid "Offline Mode"
+msgstr "Çevrimdışı Kipi"
+
+#: knewsticker.cpp:477
+msgid "About KNewsTicker"
+msgstr "Haber Alıcı Hakkında"
+
+#: knewsticker.cpp:479
+msgid "Configure KNewsTicker..."
+msgstr "Haber Alıcıyı Yapılandır..."
+
+#: knewstickerconfig.cpp:102
+msgid "News query interval:"
+msgstr "Haber sorgulama aralığı:"
+
+#: knewstickerconfig.cpp:146
+msgid "All News Sources"
+msgstr "Tüm Haber Kaynakları"
+
+#: common/newsengine.cpp:88 common/newsengine.h:71 knewstickerconfig.cpp:242
+#: knewstickerstub/knewstickerstub.cpp:59 newsscroller.cpp:192
+msgid "Unknown"
+msgstr "Bilinmeyen"
+
+#: knewstickerconfig.cpp:254 knewstickerstub/knewstickerstub.cpp:62
+#: knewstickerstub/knewstickerstub.cpp:63 newsscroller.cpp:195
+#: newsscroller.cpp:196
+#, c-format
+msgid "Unknown %1"
+msgstr "Bilinmeyen %1"
+
+#: knewstickerconfig.cpp:321
+#, c-format
+msgid ""
+"_n: "
+"<p>Do you really want to remove %n news source?</p>\n"
+"<p>Do you really want to remove these %n news sources?</p>"
+msgstr ""
+
+#: knewstickerconfig.cpp:345
+msgid "<p>Do you really want to remove the selected filter?</p>"
+msgstr ""
+
+#: knewstickerconfig.cpp:364 newssourcedlgimpl.cpp:199
+msgid "Edit News Source"
+msgstr "Haber Kaynağını Düzenle"
+
+#: knewstickerconfig.cpp:365
+msgid "&Add News Source"
+msgstr "H&aber Kaynağı Ekle"
+
+#: knewstickerconfig.cpp:367
+msgid "&Modify '%1'"
+msgstr "&Değiştir: %1"
+
+#: knewstickerconfig.cpp:369
+msgid "&Remove '%1'"
+msgstr "&Sil: %1"
+
+#: knewstickerconfig.cpp:371
+msgid "&Remove News Sources"
+msgstr "&Haber Kaynaklarını Sil"
+
+#: knewstickerconfig.cpp:374
+msgid "&Modify News Source"
+msgstr "&Haber Kaynağını Düzenle"
+
+#: knewstickerconfig.cpp:375
+msgid "&Remove News Source"
+msgstr "&Haber Kaynağını Sil"
+
+#: newsscroller.cpp:185
+msgid "<p>Do you really want to add '%1' to the list of news sources?</p>"
+msgstr ""
+
+#: newsscroller.cpp:443
+msgid " +++ No News Available +++"
+msgstr " +++ Haber Yok +++"
+
+#: newssourcedlgimpl.cpp:29
+msgid "Downloading Data"
+msgstr "Veri İndiriliyor"
+
+#: newssourcedlgimpl.cpp:35
+msgid ""
+"<qt>Please wait while KNewsTicker is downloading some data necessary to suggest "
+"reasonable values."
+"<br/>"
+"<br/>This will not take longer than one minute.</qt>"
+msgstr ""
+"<qt>Lütfen KNewsTicker programı verileri indirirken bekleyiniz."
+"<br/>"
+"<br/>Bu işlem bir dakikadan daha fazla sürmeyecektir.</qt>"
+
+#: newssourcedlgimpl.cpp:72
+msgid "Could not retrieve the specified source file."
+msgstr "Belirtilen kaynak dosyası alınamadı."
+
+#: newssourcedlgimpl.cpp:124
+msgid "You have to specify a name for this news source to be able to use it."
+msgstr "Bu haber kaynağına bir isim vermelisiniz."
+
+#: newssourcedlgimpl.cpp:125
+msgid "No Name Specified"
+msgstr "İsim Verilmedi"
+
+#: newssourcedlgimpl.cpp:219
+msgid ""
+"You have to specify the source file for this news source to be able to use it."
+msgstr "Bu haber kaynağına bir isim vermelisiniz."
+
+#: newssourcedlgimpl.cpp:220
+msgid "No Source File Specified"
+msgstr "Kaynak Dosyası Belirtilmedi"
+
+#: newssourcedlgimpl.cpp:226
+msgid ""
+"KNewsTicker needs a valid RDF or RSS file to suggest sensible values. The "
+"specified source file is invalid."
+msgstr ""
+"KNewsTicker anlamlı değerler gösterebilmek için geçerli bir RDF ya da RSS "
+"dosyasına ihtiyaç duyar. Belirtilen kaynak dosyası geçersiz."
+
+#: newssourcedlgimpl.cpp:228
+msgid "Invalid Source File"
+msgstr "Geçersiz Kaynak Dosyası"
+
+#. i18n: file knewstickerconfigwidget.ui line 52
+#: rc.cpp:3 rc.cpp:6 rc.cpp:527 rc.cpp:530
+#, no-c-format
+msgid "General"
+msgstr "Genel"
+
+#. i18n: file knewstickerconfigwidget.ui line 96
+#: rc.cpp:9 rc.cpp:533
+#, no-c-format
+msgid " min"
+msgstr " dak"
+
+#. i18n: file knewstickerconfigwidget.ui line 99
+#: rc.cpp:12 rc.cpp:536
+#, no-c-format
+msgid "Never"
+msgstr "Hiç bir zaman"
+
+#. i18n: file knewstickerconfigwidget.ui line 102
+#: rc.cpp:15 rc.cpp:539
+#, no-c-format
+msgid "Interval of news queries"
+msgstr "Haber indirme aralığı"
+
+#. i18n: file knewstickerconfigwidget.ui line 108
+#: rc.cpp:18 rc.cpp:542
+#, no-c-format
+msgid ""
+"Here you can define at what interval KNewsTicker queries the configured news "
+"sources for new headlines. This depends generally on how fast you would like to "
+"hear about news and how much load you want to put on the network:"
+"<ul>\n"
+"<li>A lower value (lower than <b>15 minutes</b>) enables you to get notified "
+"about news very quickly if you want or need to. Please note that it increases "
+"the network traffic significantly, though. Therefore, such low values should "
+"not be used if you query popular news sites (such as <a "
+"href=\"http://slashdot.org\">Slashdot</a> or <a href=\"http://freshmeat.net\">"
+"Freshmeat</a>) as they have generally already enough work processing the "
+"incoming queries.</li>\n"
+"<li>A higher value (higher than <b>45 minutes</b>) will make you hear about "
+"news less quickly. For non-timecritical applications, it should be suitable, "
+"though. The positive aspect of longer intervals is that only very little load "
+"is put on the network; this saves resources and nerves, for you and the system "
+"administrators of the news sites you query.</li></ul>\n"
+"The default value (30 minutes) should be appropriate and reasonable in most "
+"cases."
+msgstr ""
+"Burada, KNewsTicker'ın yapılandırılmış haber kaynaklarını, yeni başlıkları "
+"kontrol etmesi için hangi sıklıkta kontrol etmesi gerektiğini "
+"tanımlayabilirsiniz. Bu genellikle hangi sıklıkta haberler hakkında bilgi almak "
+"istediğiniz ya da ağ bağlantısına ne kadar yüklenmek istediğiinzle ilgilidir: "
+"<ul>\n"
+"<li>Düşük bir değer (<b>15 dakika</b>dan daha düşük) eğer istiyor ya da "
+"ihtiyacınız varsa yeni haberler hakkında çok hızlı bilgi sahibi olmanızı "
+"sağlar, fakat bunun ağ bağlantısını ciddi şekilde kullandığı göz önünde "
+"bulundurulmalıdır. Bu yüzden bu kadar düşük değerler popüler haber siteleri "
+"için tavsiye edilmez (<a href=\"http://slashdot.org\">Slashdot</a> "
+"ya da <a href=\"http://freshmeat.net\">Freshmeat</a> gibi).</li>\n"
+"<li>Daha yüksek bir değer (<b>45 dakika</b>dan daha yüksek) yeni haberlerden "
+"daha seyrek haberdar olmanıza neden olur. Zaman krıtik olmayan durumlarda bu, "
+"uygun bir seçimdir. Bu seçimin avantaçı kullandığınız ağ bağlantısına ve "
+"faydalandığınız haber sitelerinin kaynaklarına çok az bir yük getirecek "
+"olmasıdır</li></ul>\n"
+"Ön tanımlı değer (30 dakika) bir çok durum için en isabetli tercihtir."
+
+#. i18n: file knewstickerconfigwidget.ui line 130
+#: rc.cpp:24 rc.cpp:548
+#, no-c-format
+msgid "Nonsensitive"
+msgstr "Küçük/büyük harf duyarsız"
+
+#. i18n: file knewstickerconfigwidget.ui line 133
+#: rc.cpp:27 rc.cpp:33 rc.cpp:42 rc.cpp:51 rc.cpp:551 rc.cpp:557 rc.cpp:566
+#: rc.cpp:575
+#, no-c-format
+msgid "Mousewheel sensitivity"
+msgstr "Fare tekerleği duyarlılığı"
+
+#. i18n: file knewstickerconfigwidget.ui line 136
+#: rc.cpp:30 rc.cpp:554
+#, no-c-format
+msgid ""
+"This slider allows you to define how quickly/slowly the text should be scrolled "
+"when using the mousewheel."
+msgstr ""
+"Bu sürgü tekerlekli fare kullanırken kaydırmanın ne kadar hızlı ya da yavaş "
+"olacağını tanımlamanıza olanak sağlar."
+
+#. i18n: file knewstickerconfigwidget.ui line 159
+#: rc.cpp:36 rc.cpp:45 rc.cpp:54 rc.cpp:560 rc.cpp:569 rc.cpp:578
+#, no-c-format
+msgid ""
+"This slider allows you to define how fast/slow the text should be scrolled when "
+"using the mousewheel."
+msgstr ""
+"Bu sürgü tekerlekli fare kullanırken kaydırmanın ne kadar hızlı ya da yavaş "
+"olacağını tanımlamanıza olanak sağlar."
+
+#. i18n: file knewstickerconfigwidget.ui line 167
+#: rc.cpp:39 rc.cpp:563
+#, no-c-format
+msgid "Sensitive"
+msgstr "Duyarlı"
+
+#. i18n: file knewstickerconfigwidget.ui line 183
+#: rc.cpp:48 rc.cpp:572
+#, no-c-format
+msgid "&Mousewheel sensitivity:"
+msgstr "&Fare tekerleği duyarlılığı:"
+
+#. i18n: file knewstickerconfigwidget.ui line 200
+#: rc.cpp:57 rc.cpp:581
+#, no-c-format
+msgid "&Use custom names for news sites"
+msgstr "&Haber siteleri için özel isim kullan"
+
+#. i18n: file knewstickerconfigwidget.ui line 203
+#: rc.cpp:60 rc.cpp:584
+#, no-c-format
+msgid "Use the names defined in the list of news sources"
+msgstr "Haber kaynakları listesinde tanımlanmış isimleri kullan"
+
+#. i18n: file knewstickerconfigwidget.ui line 206
+#: rc.cpp:63 rc.cpp:587
+#, no-c-format
+msgid ""
+"Check this box to make the news ticker use the names you specified in the list "
+"of news sources (available on the tab labeled <i>News sources</i>"
+") instead of the ones the news sites themselves report."
+"<br>This can be handy for news sites which report a very long or useless name."
+msgstr ""
+"KNewsTicker'ın yeni kaynakların ismi olarak haber sitelerinin kendi verdikleri "
+"isim yerine listede belirttiğiniz isimleri kullanması için bu kutucuğu seçili "
+"hale getirin. "
+"<br>Bu, çok uzun ve kullanışsız isimler sunan haber siteleri için kullanışlı "
+"olabilir."
+
+#. i18n: file knewstickerconfigwidget.ui line 235
+#: rc.cpp:66 rc.cpp:590
+#, no-c-format
+msgid "News Sources"
+msgstr "Haber Kaynakları"
+
+#. i18n: file knewstickerconfigwidget.ui line 250
+#: rc.cpp:69 rc.cpp:593
+#, no-c-format
+msgid "Name of Site"
+msgstr "Sayfanın Adı"
+
+#. i18n: file knewstickerconfigwidget.ui line 261
+#: rc.cpp:72 rc.cpp:596
+#, no-c-format
+msgid "Source File"
+msgstr "Kaynak Dosyası"
+
+#. i18n: file knewstickerconfigwidget.ui line 272
+#: rc.cpp:75 rc.cpp:599
+#, no-c-format
+msgid "Max. Articles"
+msgstr "Azami Haber Sayısı"
+
+#. i18n: file knewstickerconfigwidget.ui line 291
+#: rc.cpp:78 rc.cpp:602
+#, no-c-format
+msgid "News sources to be queried"
+msgstr "Tarama yapılacak haber kaynağı"
+
+#. i18n: file knewstickerconfigwidget.ui line 298
+#: rc.cpp:81 rc.cpp:605
+#, no-c-format
+msgid ""
+"This list lets you manage the list of news sites the news ticker will query for "
+"headlines. The news sources are arranged in a tree-like hierarchy and sorted by "
+"topic."
+"<br>The column labeled \"Max. articles\" shows how many articles will be cached "
+"for the news sites (read: how many articles will be accessible through the "
+"context menu)."
+"<ul>\n"
+"<li>To add a site, you can either drag the URL of the RDF or RSS file to this "
+"list from Konqueror or any other application, or use the <i>Add...</i> "
+"button in the bottom right corner.</li>\n"
+"<li>To modify a site, just double-click on the particular news source you would "
+"like to edit and an input field will pop up which lets you edit the respective "
+"property.</li>\n"
+"<li>To remove a site, simply select a news source in the list and click on the "
+"<i>Remove</i> button in the lower right corner.</li></ul>\n"
+"Note that you can also right-click on the list to open a menu which lets you "
+"add and remove news sources. You can also enable or disable certain news "
+"sources temporarily by checking or unchecking the box next to it; those news "
+"sources whose boxes are checked are considered activated and will be processed "
+"by KNewsTicker."
+msgstr ""
+
+#. i18n: file knewstickerconfigwidget.ui line 309
+#: rc.cpp:88 rc.cpp:141 rc.cpp:612 rc.cpp:665
+#, no-c-format
+msgid "R&emove"
+msgstr "&Sil"
+
+#. i18n: file knewstickerconfigwidget.ui line 312
+#: rc.cpp:91 rc.cpp:615
+#, no-c-format
+msgid "Remove selected site"
+msgstr "Seçilen sayfayı sil"
+
+#. i18n: file knewstickerconfigwidget.ui line 315
+#: rc.cpp:94 rc.cpp:618
+#, no-c-format
+msgid ""
+"Click this button to remove the currently selected news site from the list."
+msgstr "Seçili haber sitesini listeden çıkarmak için bu butona tıklayınız."
+
+#. i18n: file knewstickerconfigwidget.ui line 340
+#: rc.cpp:97 rc.cpp:621
+#, no-c-format
+msgid "Add..."
+msgstr "Ekle..."
+
+#. i18n: file knewstickerconfigwidget.ui line 343
+#: rc.cpp:100 rc.cpp:624
+#, no-c-format
+msgid "Add a new site"
+msgstr "Yeni bir site ekle"
+
+#. i18n: file knewstickerconfigwidget.ui line 346
+#: rc.cpp:103 rc.cpp:627
+#, no-c-format
+msgid ""
+"Click this button to add a new site to the list. Note that you can also drag a "
+"RDF or RSS file to this list (i.e. from Konqueror) to add it to the list."
+msgstr ""
+"Listeye yeni bir site eklemek için bu butona tıklayınız. Ayrıca, bir RDF ya da "
+"RSS dosyasını listeye eklemek için sürükleyip bırakabilirsiniz (örneğin "
+"Konqueror'dan)."
+
+#. i18n: file knewstickerconfigwidget.ui line 357
+#: rc.cpp:106 rc.cpp:630
+#, no-c-format
+msgid "&Modify..."
+msgstr "&Değiştir..."
+
+#. i18n: file knewstickerconfigwidget.ui line 360
+#: rc.cpp:109 rc.cpp:633
+#, no-c-format
+msgid "Modify selected news source"
+msgstr "Seçili haber kaynağını düzenle"
+
+#. i18n: file knewstickerconfigwidget.ui line 363
+#: rc.cpp:112 rc.cpp:636
+#, no-c-format
+msgid ""
+"Click this button to open a dialog which lets you edit the properties (such as "
+"the name, the source file, or the icon) of the currently selected news source."
+msgstr ""
+
+#. i18n: file knewstickerconfigwidget.ui line 373
+#: rc.cpp:115 rc.cpp:639
+#, no-c-format
+msgid "Filters"
+msgstr "Süzgeçler"
+
+#. i18n: file knewstickerconfigwidget.ui line 388
+#: rc.cpp:118 rc.cpp:642
+#, no-c-format
+msgid "Action"
+msgstr "Eylem"
+
+#. i18n: file knewstickerconfigwidget.ui line 410
+#: rc.cpp:121 rc.cpp:645
+#, no-c-format
+msgid "Affects"
+msgstr "Efektler"
+
+#. i18n: file knewstickerconfigwidget.ui line 432
+#: rc.cpp:124 rc.cpp:648
+#, no-c-format
+msgid "Condition"
+msgstr "Durum"
+
+#. i18n: file knewstickerconfigwidget.ui line 443
+#: rc.cpp:127 rc.cpp:651
+#, no-c-format
+msgid "Expression"
+msgstr "İfade"
+
+#. i18n: file knewstickerconfigwidget.ui line 462
+#: rc.cpp:130 rc.cpp:654
+#, no-c-format
+msgid "Currently configured filters"
+msgstr "Halen yapılandırılmış süzgeçler"
+
+#. i18n: file knewstickerconfigwidget.ui line 470
+#: rc.cpp:133 rc.cpp:657
+#, no-c-format
+msgid ""
+"Here you can see the list of currently configured filters and manage them as "
+"well as add new filters. Managing them is fairly easy:"
+"<ul>\n"
+"<li>To <b>add</b> a new filter, specify its properties in the box below labeled "
+"<i>Filter properties</i> and press the <i>Add</i> button in the lower right "
+"corner.</li>\n"
+"<li><b>Modifying</b> an existing filter is done in a similar manner: simply "
+"select the filter you would like to edit in the list and change its properties "
+"in the box below.</li>\n"
+"<li>Finally, to <b>remove</b> a filter, select it in the list and press the "
+"button labeled <i>Remove</i> in the lower right corner.</li></ul>\n"
+"You can also enable or disable certain filters temporarily by checking or "
+"unchecking the box next to them; those filters whose boxes are checked are "
+"considered enabled and will be honored by KNewsTicker."
+"<br>\n"
+"Note that the filters are processed from the top to the bottom so that of two "
+"filters which might nullify each other (like \"Show...does not contain KDE\" "
+"and \"Show...contains KDE\") only the one which is lower in the list will take "
+"effect."
+msgstr ""
+
+#. i18n: file knewstickerconfigwidget.ui line 501
+#: rc.cpp:144 rc.cpp:668
+#, no-c-format
+msgid "Remove selected filter"
+msgstr "Seçili süzgeci sil"
+
+#. i18n: file knewstickerconfigwidget.ui line 504
+#: rc.cpp:147 rc.cpp:671
+#, no-c-format
+msgid "Press this button to remove the selected filter from the list."
+msgstr "Seçili filtreyi listeden çıkarmak için bu butona basınız."
+
+#. i18n: file knewstickerconfigwidget.ui line 512
+#: rc.cpp:150 rc.cpp:674
+#, no-c-format
+msgid "A&dd"
+msgstr "&Ekle"
+
+#. i18n: file knewstickerconfigwidget.ui line 515
+#: rc.cpp:153 rc.cpp:677
+#, no-c-format
+msgid "Add configured filter"
+msgstr "Yapılandırılan süzgeci ekle"
+
+#. i18n: file knewstickerconfigwidget.ui line 518
+#: rc.cpp:156 rc.cpp:680
+#, no-c-format
+msgid "Press this button to add the configured filter to the list."
+msgstr "Yapılandırılmış filtreyi listeye eklemek için bu butona basınız."
+
+#. i18n: file knewstickerconfigwidget.ui line 526
+#: rc.cpp:159 rc.cpp:683
+#, no-c-format
+msgid "Filter Properties"
+msgstr "Süzgeç Özellikleri"
+
+#. i18n: file knewstickerconfigwidget.ui line 541
+#: rc.cpp:162 rc.cpp:686
+#, no-c-format
+msgid "Hide"
+msgstr "Gizle"
+
+#. i18n: file knewstickerconfigwidget.ui line 546
+#: common/configaccess.cpp:394 common/configaccess.cpp:616 rc.cpp:165
+#: rc.cpp:689
+#, no-c-format
+msgid "Show"
+msgstr "Göster"
+
+#. i18n: file knewstickerconfigwidget.ui line 553
+#: rc.cpp:168 rc.cpp:692
+#, no-c-format
+msgid "Action for this filter"
+msgstr "Bu süzgeç için eylem"
+
+#. i18n: file knewstickerconfigwidget.ui line 556
+#: rc.cpp:171 rc.cpp:695
+#, no-c-format
+msgid ""
+"Here you can define what should happen if this filter matches (e.g. whether the "
+"matching articles should be shown or hidden)."
+msgstr ""
+
+#. i18n: file knewstickerconfigwidget.ui line 581
+#: rc.cpp:174 rc.cpp:698
+#, no-c-format
+msgid "articles from"
+msgstr ""
+
+#. i18n: file knewstickerconfigwidget.ui line 587
+#: common/configaccess.cpp:376 common/configaccess.cpp:617 rc.cpp:177
+#: rc.cpp:701
+#, no-c-format
+msgid "all news sources"
+msgstr "tüm haber grupları"
+
+#. i18n: file knewstickerconfigwidget.ui line 594
+#: rc.cpp:180 rc.cpp:704
+#, no-c-format
+msgid "Affected news sources"
+msgstr "Etkilenen haber kaynakları"
+
+#. i18n: file knewstickerconfigwidget.ui line 597
+#: rc.cpp:183 rc.cpp:707
+#, no-c-format
+msgid ""
+"Here you can specify which news sources (or all of them) are affected. Note "
+"that only the news sources which have been activated on the <i>News sources</i> "
+"tab are shown in this combo box."
+msgstr ""
+
+#. i18n: file knewstickerconfigwidget.ui line 605
+#: rc.cpp:186 rc.cpp:710
+#, no-c-format
+msgid "whose"
+msgstr "kimin"
+
+#. i18n: file knewstickerconfigwidget.ui line 613
+#: rc.cpp:189 rc.cpp:713
+#, no-c-format
+msgid "Keyword/Expression"
+msgstr "Anahtar kelime/ifade"
+
+#. i18n: file knewstickerconfigwidget.ui line 619
+#: rc.cpp:192 rc.cpp:716
+#, no-c-format
+msgid ""
+"Here you can type a keyword or expression to be used for this filter which "
+"depends on the condition you selected in the combo box at the right:"
+"<ul>\n"
+"<li><b>contain</b>, <b>does not contain</b> - you should probably enter a "
+"keyword here, like \"KDE\", \"Baseball\" or \"Business\". The keyword is not "
+"case-sensitive so it does not matter whether you type \"kde\", \"KDE\" or "
+"\"kDe\".</li>\n"
+"<li><b>equals</b>, <b>does not equal</b> - enter a phrase or expression here to "
+"have the filter match only those articles whose headlines match <b>exactly</b> "
+"the text you typed. The phrase you type will be considered to be "
+"case-sensitive, so it makes a difference whether you show articles which "
+"contain \"Boeing\" or \"BOEING\".</li>\n"
+"<li><b>matches</b> - a regular expression is expected. Recommended only if you "
+"are familiar with regular expressions, i.e. it should be used by advanced users "
+"only.</li></ul>"
+msgstr ""
+
+#. i18n: file knewstickerconfigwidget.ui line 644
+#: rc.cpp:198 rc.cpp:722
+#, no-c-format
+msgid "headlines"
+msgstr "başlıklar"
+
+#. i18n: file knewstickerconfigwidget.ui line 650
+#: common/configaccess.cpp:381 common/configaccess.cpp:618 rc.cpp:201
+#: rc.cpp:725
+#, no-c-format
+msgid "contain"
+msgstr "içeriyor"
+
+#. i18n: file knewstickerconfigwidget.ui line 655
+#: common/configaccess.cpp:383 rc.cpp:204 rc.cpp:728
+#, no-c-format
+msgid "do not contain"
+msgstr "içermiyor"
+
+#. i18n: file knewstickerconfigwidget.ui line 660
+#: common/configaccess.cpp:385 rc.cpp:207 rc.cpp:731
+#, no-c-format
+msgid "equal"
+msgstr "eşit"
+
+#. i18n: file knewstickerconfigwidget.ui line 665
+#: common/configaccess.cpp:387 rc.cpp:210 rc.cpp:734
+#, no-c-format
+msgid "do not equal"
+msgstr "eşit değil"
+
+#. i18n: file knewstickerconfigwidget.ui line 670
+#: rc.cpp:213 rc.cpp:737
+#, no-c-format
+msgid "match"
+msgstr "eşleşen"
+
+#. i18n: file knewstickerconfigwidget.ui line 677
+#: rc.cpp:216 rc.cpp:740
+#, no-c-format
+msgid "Condition for this filter"
+msgstr "Bu süzgeç için durum"
+
+#. i18n: file knewstickerconfigwidget.ui line 685
+#: rc.cpp:219 rc.cpp:743
+#, no-c-format
+msgid ""
+"This combo box lets you specify the condition under which the "
+"keyword/expression you entered in the input field at the right will match. You "
+"can select one of the following values:"
+"<ul>\n"
+"<li>contain - the filter matches if the headline contains the keyword.</li>\n"
+"<li>does not contain - the filter matches if the headline does not contain the "
+"keyword.</li>\n"
+"<li>equals - the filter matches if the headline equals the expression.</li>\n"
+"<li>does not equal - the filter matches if the headline does not equal the "
+"expression.</li>\n"
+"<li>matches - the filter matches if the expression matches the headline. The "
+"expression you typed at the right will be considered a regular expression in "
+"this mode.</li>"
+msgstr ""
+
+#. i18n: file knewstickerconfigwidget.ui line 697
+#: rc.cpp:227 rc.cpp:751
+#, no-c-format
+msgid "Scroller"
+msgstr "Kaydırıcı"
+
+#. i18n: file knewstickerconfigwidget.ui line 714
+#: rc.cpp:230 rc.cpp:754
+#, no-c-format
+msgid "Behavior"
+msgstr "Davranış"
+
+#. i18n: file knewstickerconfigwidget.ui line 745
+#: rc.cpp:233 rc.cpp:757
+#, no-c-format
+msgid "&Scrolling speed:"
+msgstr "&Geçiş hızı:"
+
+#. i18n: file knewstickerconfigwidget.ui line 751
+#: rc.cpp:236 rc.cpp:245 rc.cpp:251 rc.cpp:260 rc.cpp:760 rc.cpp:769
+#: rc.cpp:775 rc.cpp:784
+#, no-c-format
+msgid "Scrolling speed"
+msgstr "Kaydırma hızı"
+
+#. i18n: file knewstickerconfigwidget.ui line 754
+#: rc.cpp:239 rc.cpp:248 rc.cpp:254 rc.cpp:263 rc.cpp:763 rc.cpp:772
+#: rc.cpp:778 rc.cpp:787
+#, no-c-format
+msgid ""
+"Here you can define how fast the text should be scrolling. If you only have a "
+"little space on your taskbar (and therefore a rather small news ticker), you "
+"should probably set this to a slower speed so that you have a chance to read "
+"the headlines. For wider news tickers (and better eyes), faster scrolling is "
+"probably appropriate so that you do not have to wait too long for the next "
+"headline."
+msgstr ""
+
+#. i18n: file knewstickerconfigwidget.ui line 776
+#: rc.cpp:242 rc.cpp:766
+#, no-c-format
+msgid "Slow"
+msgstr "Yavaş"
+
+#. i18n: file knewstickerconfigwidget.ui line 813
+#: rc.cpp:257 rc.cpp:781
+#, no-c-format
+msgid "Fast"
+msgstr "Hızlı"
+
+#. i18n: file knewstickerconfigwidget.ui line 831
+#: rc.cpp:266 rc.cpp:790
+#, no-c-format
+msgid "Di&rection of scrolling:"
+msgstr "&Kaydırma yönü:"
+
+#. i18n: file knewstickerconfigwidget.ui line 837
+#: rc.cpp:269 rc.cpp:293 rc.cpp:793 rc.cpp:817
+#, no-c-format
+msgid "Direction of scrolling"
+msgstr "Kayma yönü"
+
+#. i18n: file knewstickerconfigwidget.ui line 840
+#: rc.cpp:272 rc.cpp:796
+#, no-c-format
+msgid ""
+"These options allow you to define in what direction the text should be "
+"scrolled, e.g. to the left or to the right, upwards or downwards."
+msgstr ""
+"Bu seçenek metnin hangi yönde kaydırılması gerektiğini tanımlamanıza olanak "
+"sağlar; sağa, sola, yukarı ya da aşağı gibi."
+
+#. i18n: file knewstickerconfigwidget.ui line 846
+#: rc.cpp:275 rc.cpp:799
+#, no-c-format
+msgid "To the Left"
+msgstr "Sola"
+
+#. i18n: file knewstickerconfigwidget.ui line 851
+#: rc.cpp:278 rc.cpp:802
+#, no-c-format
+msgid "To the Right"
+msgstr "Sağa"
+
+#. i18n: file knewstickerconfigwidget.ui line 856
+#: rc.cpp:281 rc.cpp:805
+#, no-c-format
+msgid "Upwards"
+msgstr "Yukarı"
+
+#. i18n: file knewstickerconfigwidget.ui line 861
+#: rc.cpp:284 rc.cpp:808
+#, no-c-format
+msgid "Downwards"
+msgstr "Aşağı doğru"
+
+#. i18n: file knewstickerconfigwidget.ui line 866
+#: rc.cpp:287 rc.cpp:811
+#, no-c-format
+msgid "Upwards, Rotated"
+msgstr "Yukarı, Döndürülmüş"
+
+#. i18n: file knewstickerconfigwidget.ui line 871
+#: rc.cpp:290 rc.cpp:814
+#, no-c-format
+msgid "Downwards, Rotated"
+msgstr "Aşağı, Döndürülmüş"
+
+#. i18n: file knewstickerconfigwidget.ui line 881
+#: rc.cpp:296 rc.cpp:820
+#, no-c-format
+msgid ""
+"These options allow you to define in what direction the text should be "
+"scrolled, e.g. to the left or to the right, upwards or downwards. Rotated means "
+"the text is rotated 90 degrees."
+msgstr ""
+
+#. i18n: file knewstickerconfigwidget.ui line 911
+#: rc.cpp:302 rc.cpp:826
+#, no-c-format
+msgid "H&ighlighted color:"
+msgstr "&Vurgulama rengi:"
+
+#. i18n: file knewstickerconfigwidget.ui line 917
+#: rc.cpp:305 rc.cpp:311 rc.cpp:829 rc.cpp:835
+#, no-c-format
+msgid "Highlighted color"
+msgstr "Vurgulama rengi"
+
+#. i18n: file knewstickerconfigwidget.ui line 920
+#: rc.cpp:308 rc.cpp:832
+#, no-c-format
+msgid ""
+"Click the button at the right to open a convenient color-selection dialog which "
+"lets you choose the color of the headlines when they are highlighted (when you "
+"move the mouse over them)."
+msgstr ""
+
+#. i18n: file knewstickerconfigwidget.ui line 934
+#: rc.cpp:314 rc.cpp:838
+#, no-c-format
+msgid ""
+"Click this button to open a convenient color-selection dialog which lets you "
+"choose the color of the headlines when they are highlighted (when you move the "
+"mouse over them)."
+msgstr ""
+
+#. i18n: file knewstickerconfigwidget.ui line 942
+#: rc.cpp:317 rc.cpp:841
+#, no-c-format
+msgid "&Background color:"
+msgstr "&Arkaplan rengi:"
+
+#. i18n: file knewstickerconfigwidget.ui line 948
+#: rc.cpp:320 rc.cpp:326 rc.cpp:844 rc.cpp:850
+#, no-c-format
+msgid "Background color"
+msgstr "Arkaplan rengi"
+
+#. i18n: file knewstickerconfigwidget.ui line 951
+#: rc.cpp:323 rc.cpp:847
+#, no-c-format
+msgid ""
+"Click the button at the right to open a convenient color-selection dialog which "
+"lets you choose the background color of the scrolling text."
+msgstr ""
+
+#. i18n: file knewstickerconfigwidget.ui line 965
+#: rc.cpp:329 rc.cpp:853
+#, no-c-format
+msgid ""
+"Click this button to open a convenient color-selection dialog which lets you "
+"choose the background color of the scrolling text."
+msgstr ""
+
+#. i18n: file knewstickerconfigwidget.ui line 973
+#: rc.cpp:332 rc.cpp:856
+#, no-c-format
+msgid "&Foreground color:"
+msgstr "Ö&nplan rengi:"
+
+#. i18n: file knewstickerconfigwidget.ui line 979
+#: rc.cpp:335 rc.cpp:341 rc.cpp:859 rc.cpp:865
+#, no-c-format
+msgid "Foreground color"
+msgstr "Önplan rengi"
+
+#. i18n: file knewstickerconfigwidget.ui line 982
+#: rc.cpp:338 rc.cpp:862
+#, no-c-format
+msgid ""
+"Click the button at the right to open a convenient color-selection dialog which "
+"lets you choose the color of the scrolling text."
+msgstr ""
+
+#. i18n: file knewstickerconfigwidget.ui line 996
+#: rc.cpp:344 rc.cpp:868
+#, no-c-format
+msgid ""
+"Click this button to open a convenient color-selection dialog which lets you "
+"choose the color of the scrolling text."
+msgstr ""
+
+#. i18n: file knewstickerconfigwidget.ui line 1004
+#: rc.cpp:347 rc.cpp:871
+#, no-c-format
+msgid "F&ont:"
+msgstr "&Yazıtipi"
+
+#. i18n: file knewstickerconfigwidget.ui line 1010
+#: rc.cpp:350 rc.cpp:359 rc.cpp:874 rc.cpp:883
+#, no-c-format
+msgid "Scrolling text font"
+msgstr "Kayan metin yazıtipi"
+
+#. i18n: file knewstickerconfigwidget.ui line 1013
+#: rc.cpp:353 rc.cpp:877
+#, no-c-format
+msgid ""
+"Click on the button at the right labeled <i>Choose Font...</i> "
+"to choose the font which will be used for the scrolling text. Please note that "
+"certain fonts are harder to read than others, especially when they are used as "
+"scrolling text. You should probably choose a font which can be easily read "
+"while it is moving."
+msgstr ""
+
+#. i18n: file knewstickerconfigwidget.ui line 1021
+#: rc.cpp:356 rc.cpp:880
+#, no-c-format
+msgid "Choose Font..."
+msgstr "Yazıtipini Seç..."
+
+#. i18n: file knewstickerconfigwidget.ui line 1027
+#: rc.cpp:362 rc.cpp:886
+#, no-c-format
+msgid ""
+"Click here to choose the font which will be used for the scrolling text. Please "
+"note that certain fonts are harder to read than others, especially when they "
+"are used as a scrolling text. You should probably choose a font which can be "
+"easily read while it is moving."
+msgstr ""
+
+#. i18n: file knewstickerconfigwidget.ui line 1054
+#: rc.cpp:368 rc.cpp:892
+#, no-c-format
+msgid "Scroll the most recent headlines onl&y"
+msgstr "&Sadece son eklenen başlıkları kaydır"
+
+#. i18n: file knewstickerconfigwidget.ui line 1057
+#: rc.cpp:371 rc.cpp:895
+#, no-c-format
+msgid "Show only the most recent headline for each news site in the scroller"
+msgstr "Kaydırıcıda sadece son eklenen başlıkları görüntüler"
+
+#. i18n: file knewstickerconfigwidget.ui line 1060
+#: rc.cpp:374 rc.cpp:898
+#, no-c-format
+msgid ""
+"Check this button to show only the most recent headline for each news site. "
+msgstr ""
+"Sadece her bir haber sitesinin son güncel başlıklarını görmek için seçiniz. "
+
+#. i18n: file knewstickerconfigwidget.ui line 1068
+#: rc.cpp:377 rc.cpp:901
+#, no-c-format
+msgid "Show icons"
+msgstr "Simgeleri göster"
+
+#. i18n: file knewstickerconfigwidget.ui line 1071
+#: rc.cpp:380 rc.cpp:904
+#, no-c-format
+msgid "Show icons in the scrolling text"
+msgstr "Kayan yazılarda simgeleri göster"
+
+#. i18n: file knewstickerconfigwidget.ui line 1074
+#: rc.cpp:383 rc.cpp:907
+#, no-c-format
+msgid ""
+"Click this button to make KNewsTicker show the icons of the news site to which "
+"each headline belongs. This makes associating a headline to a news site very "
+"easy but takes up some space in the text."
+msgstr ""
+
+#. i18n: file knewstickerconfigwidget.ui line 1082
+#: rc.cpp:386 rc.cpp:910
+#, no-c-format
+msgid "&Temporarily slowed scrolling"
+msgstr "&Fareyle geçici olarak yavaşlatılmış kaydırma"
+
+#. i18n: file knewstickerconfigwidget.ui line 1085
+#: rc.cpp:389 rc.cpp:913
+#, no-c-format
+msgid "Slow the scrolling down when mouse points at the scroller"
+msgstr "Fare kaydırıcının üzerine geldiği zaman yavaşlasın"
+
+#. i18n: file knewstickerconfigwidget.ui line 1088
+#: rc.cpp:392 rc.cpp:916
+#, no-c-format
+msgid ""
+"Check this box to make KNewsTicker slow the scrolling down when you move the "
+"mouse cursor over the scrolling text. This makes clicking on items and dragging "
+"the icons (if enabled) away a lot easier."
+msgstr ""
+
+#. i18n: file knewstickerconfigwidget.ui line 1096
+#: rc.cpp:395 rc.cpp:919
+#, no-c-format
+msgid "&Underline highlighted headline"
+msgstr "&Işıklandırılmış başlığın altını çiz"
+
+#. i18n: file knewstickerconfigwidget.ui line 1099
+#: rc.cpp:398 rc.cpp:922
+#, no-c-format
+msgid "Underline the currently highlighted headline"
+msgstr "Işıklandırılmış başlığın altını çiz"
+
+#. i18n: file knewstickerconfigwidget.ui line 1102
+#: rc.cpp:401 rc.cpp:925
+#, no-c-format
+msgid ""
+"Check this box to have the currently highlighted headline (e.g. the headline "
+"which is currently under the mouse cursor) underlined."
+msgstr ""
+
+#. i18n: file newssourcedlg.ui line 26
+#: rc.cpp:404 rc.cpp:928
+#, no-c-format
+msgid "Add News Source"
+msgstr "Haber Kaynağı Ekle"
+
+#. i18n: file newssourcedlg.ui line 50
+#: rc.cpp:407 rc.cpp:931
+#, no-c-format
+msgid "News Source Properties"
+msgstr "Haber Kaynağı Özellikleri"
+
+#. i18n: file newssourcedlg.ui line 71
+#: rc.cpp:410 rc.cpp:934
+#, no-c-format
+msgid "&Name:"
+msgstr "&İsim:"
+
+#. i18n: file newssourcedlg.ui line 77
+#: rc.cpp:413 rc.cpp:419 rc.cpp:937 rc.cpp:943
+#, no-c-format
+msgid "Name of the news source"
+msgstr "Haber kaynağının adı"
+
+#. i18n: file newssourcedlg.ui line 80
+#: rc.cpp:416 rc.cpp:422 rc.cpp:940 rc.cpp:946
+#, no-c-format
+msgid ""
+"Here you can enter the name of the news source."
+"<br>Note that you can also use the button at the bottom right labeled <i>"
+"Suggest</i> to let KNewsTicker fill this field automatically, after you have "
+"entered a source file below."
+msgstr ""
+
+#. i18n: file newssourcedlg.ui line 99
+#: rc.cpp:425 rc.cpp:949
+#, no-c-format
+msgid "Source &file:"
+msgstr "&Kaynak dosyası:"
+
+#. i18n: file newssourcedlg.ui line 105
+#: rc.cpp:428 rc.cpp:494 rc.cpp:952 rc.cpp:1018
+#, no-c-format
+msgid "The source file for this news source"
+msgstr "Bu haber kaynağı için kaynak dosyası"
+
+#. i18n: file newssourcedlg.ui line 108
+#: rc.cpp:431 rc.cpp:497 rc.cpp:955 rc.cpp:1021
+#, no-c-format
+msgid ""
+"Enter the path to the source file for the news source you want to add here. If "
+"you specified a source file here, you can use the button at the bottom right "
+"labeled <i>Suggest</i> to let KNewsTicker fill in the remaining values "
+"automatically."
+msgstr ""
+
+#. i18n: file newssourcedlg.ui line 116
+#: rc.cpp:434 rc.cpp:958
+#, no-c-format
+msgid "&Icon:"
+msgstr "&Simge:"
+
+#. i18n: file newssourcedlg.ui line 122
+#: rc.cpp:437 rc.cpp:443 rc.cpp:961 rc.cpp:967
+#, no-c-format
+msgid "Path to the icon for this news source"
+msgstr "Bu haber kaynağı için simgenin yolu"
+
+#. i18n: file newssourcedlg.ui line 125
+#: rc.cpp:440 rc.cpp:446 rc.cpp:964 rc.cpp:970
+#, no-c-format
+msgid ""
+"Here you can specify the path to an icon to be used for this news source. Icons "
+"make it easier to distinguish between multiple news sources as the headlines "
+"scroll by."
+"<br>Note that you can also use the button at the bottom right labeled <i>"
+"Suggest</i> to let KNewsTicker fill this field automatically, after you have "
+"entered a source file above."
+msgstr ""
+
+#. i18n: file newssourcedlg.ui line 158
+#: rc.cpp:449 rc.cpp:973
+#, no-c-format
+msgid "Icon to be used for this news source"
+msgstr "Bu haber kaynağı için kullanılacak simge"
+
+#. i18n: file newssourcedlg.ui line 161
+#: rc.cpp:452 rc.cpp:976
+#, no-c-format
+msgid ""
+"This is what the currently configured icon for this news source looks like. To "
+"change this icon, use the input field at the left."
+msgstr ""
+
+#. i18n: file newssourcedlg.ui line 169
+#: rc.cpp:455 rc.cpp:979
+#, no-c-format
+msgid "Ca&tegory:"
+msgstr "&Sınıf:"
+
+#. i18n: file newssourcedlg.ui line 175
+#: rc.cpp:458 rc.cpp:464 rc.cpp:982 rc.cpp:988
+#, no-c-format
+msgid "Into which category does this news source belong?"
+msgstr "Bu haber kaynağı hangi kategoriye giriyor?"
+
+#. i18n: file newssourcedlg.ui line 178
+#: rc.cpp:461 rc.cpp:467 rc.cpp:985 rc.cpp:991
+#, no-c-format
+msgid ""
+"Here you can specify into which category this news source belongs. Arranging "
+"the news sources into categories makes it much easier to maintain large lists "
+"of news sources."
+"<br>Note that you can also use the button at the bottom right labeled <i>"
+"Suggest</i> to let KNewsTicker fill this field automatically, after you have "
+"entered a source file above."
+msgstr ""
+
+#. i18n: file newssourcedlg.ui line 208
+#: rc.cpp:470 rc.cpp:994
+#, no-c-format
+msgid "&Max. articles:"
+msgstr "&Azami makale sayısı:"
+
+#. i18n: file newssourcedlg.ui line 214
+#: rc.cpp:473 rc.cpp:479 rc.cpp:997 rc.cpp:1003
+#, no-c-format
+msgid "Maximum number of articles"
+msgstr "Azami makale sayısı"
+
+#. i18n: file newssourcedlg.ui line 217
+#: rc.cpp:476 rc.cpp:482 rc.cpp:1000 rc.cpp:1006
+#, no-c-format
+msgid ""
+"This option lets you define how many articles KNewsTicker should cache for this "
+"news source. This value will never be exceeded."
+"<br>Note that you can also use the button at the bottom right labeled <i>"
+"Suggest</i> to let KNewsTicker fill this field automatically, after you have "
+"entered a source file above."
+msgstr ""
+
+#. i18n: file newssourcedlg.ui line 242
+#: rc.cpp:485 rc.cpp:1009
+#, no-c-format
+msgid "The file is a &program"
+msgstr "&Bu dosya bir program"
+
+#. i18n: file newssourcedlg.ui line 245
+#: rc.cpp:488 rc.cpp:1012
+#, no-c-format
+msgid "Is the specified source file a program?"
+msgstr "Belirtilen kaynak dosyası bir program mı?"
+
+#. i18n: file newssourcedlg.ui line 248
+#: rc.cpp:491 rc.cpp:1015
+#, no-c-format
+msgid ""
+"Check this box to tell KNewsTicker that the file you specified in the above "
+"input field labeled <i>Source file</i> is a program and not a RDF or RSS file. "
+"KNewsTicker will then process the output (as received on <i>stdout</i>"
+") of that program."
+msgstr ""
+"Aşağıdaki <i>Kaynak dosyası</i> isimli girdi kutucuğunda belirttiğiniz dosyanın "
+"bir RDF ya da RSS dosyası değil, bir program dosyası olduğunu KNewsTicker'a "
+"söylemek için bu kutucuğu seçili hale getiriniz. Bu sayede KNewsTicker bu "
+"programın çıktısını işler (<i>stdout</i>'tan aldığı hali ile)."
+
+#. i18n: file newssourcedlg.ui line 272
+#: rc.cpp:503 rc.cpp:1027
+#, no-c-format
+msgid "Cancel this configuration"
+msgstr "Bu yapılandırmayı iptal et"
+
+#. i18n: file newssourcedlg.ui line 275
+#: rc.cpp:506 rc.cpp:1030
+#, no-c-format
+msgid ""
+"Press this button to close this dialog, discarding all entered information."
+msgstr ""
+"Girilmiş bütün bilgileri iptal ederek diyalog penceresini kapatmak için bu "
+"butona basınız."
+
+#. i18n: file newssourcedlg.ui line 286
+#: rc.cpp:509 rc.cpp:1033
+#, no-c-format
+msgid "&Suggest"
+msgstr "&Öner"
+
+#. i18n: file newssourcedlg.ui line 289
+#: rc.cpp:512 rc.cpp:1036
+#, no-c-format
+msgid "Suggest suitable values"
+msgstr "Uygun değerler öner"
+
+#. i18n: file newssourcedlg.ui line 292
+#: rc.cpp:515 rc.cpp:1039
+#, no-c-format
+msgid ""
+"Press this button to make KNewsTicker guess more or less reasonable values for "
+"some of the news properties (such as the name, icon or maximum number of "
+"articles)."
+"<br>Note that you have to supply a source file in order to use this function."
+msgstr ""
+
+#. i18n: file newssourcedlg.ui line 306
+#: rc.cpp:521 rc.cpp:1045
+#, no-c-format
+msgid "Acknowledge these values"
+msgstr "Bu değerleri onayla"
+
+#. i18n: file newssourcedlg.ui line 309
+#: rc.cpp:524 rc.cpp:1048
+#, no-c-format
+msgid ""
+"Press this button to apply the values of this dialog and return to the previous "
+"configuration dialog."
+msgstr ""
+"Girilen değerleri onaylamak ve önceki yapılandırma penceresine dönmek için bu "
+"düğmeye tıklayın."
+
+#. i18n: file kntsrcfilepropsdlg/kntsrcfilepropsdlgwidget.ui line 64
+#: rc.cpp:1051
+#, no-c-format
+msgid "Icon of this news site"
+msgstr "Haber grubu simgesi"
+
+#. i18n: file kntsrcfilepropsdlg/kntsrcfilepropsdlgwidget.ui line 67
+#: rc.cpp:1054
+#, no-c-format
+msgid "Here you can see the icon of this news site."
+msgstr "Bu haber grubunun simgesini buradan görebilirsiniz."
+
+#. i18n: file kntsrcfilepropsdlg/kntsrcfilepropsdlgwidget.ui line 75
+#: rc.cpp:1057
+#, no-c-format
+msgid "heise online news"
+msgstr "heise çevrimiçi haber"
+
+#. i18n: file kntsrcfilepropsdlg/kntsrcfilepropsdlgwidget.ui line 78
+#: rc.cpp:1060
+#, no-c-format
+msgid "http://www.heise.de/newsticker/"
+msgstr "http://www.heise.de/newsticker/"
+
+#. i18n: file kntsrcfilepropsdlg/kntsrcfilepropsdlgwidget.ui line 86
+#: rc.cpp:1063
+#, no-c-format
+msgid "Description:"
+msgstr "Açıklama:"
+
+#. i18n: file kntsrcfilepropsdlg/kntsrcfilepropsdlgwidget.ui line 89
+#: rc.cpp:1066 rc.cpp:1081
+#, no-c-format
+msgid "Brief description of the news site"
+msgstr "Haber sitesi için özet açıklama"
+
+#. i18n: file kntsrcfilepropsdlg/kntsrcfilepropsdlgwidget.ui line 92
+#: rc.cpp:1069 rc.cpp:1084
+#, no-c-format
+msgid ""
+"Here you can see a brief description about the news site and its contents."
+msgstr ""
+"Burada haber siteleri ve içerikleri ile ilgili özet bilgileri görebilirsiniz."
+
+#. i18n: file kntsrcfilepropsdlg/kntsrcfilepropsdlgwidget.ui line 100
+#: rc.cpp:1072
+#, no-c-format
+msgid "Name:"
+msgstr "İsim:"
+
+#. i18n: file kntsrcfilepropsdlg/kntsrcfilepropsdlgwidget.ui line 106
+#: rc.cpp:1075
+#, no-c-format
+msgid "Name of the news site"
+msgstr "Haber sitesinin ismi"
+
+#. i18n: file kntsrcfilepropsdlg/kntsrcfilepropsdlgwidget.ui line 109
+#: rc.cpp:1078
+#, no-c-format
+msgid "This is the name of the news site."
+msgstr "Bu haber sitesinin ismi."
+
+#. i18n: file kntsrcfilepropsdlg/kntsrcfilepropsdlgwidget.ui line 167
+#: rc.cpp:1087
+#, no-c-format
+msgid "Available articles:"
+msgstr "Kullanılabilir haberler:"
+
+#. i18n: file kntsrcfilepropsdlg/kntsrcfilepropsdlgwidget.ui line 170
+#: rc.cpp:1090 rc.cpp:1096
+#, no-c-format
+msgid "Articles contained within this source file"
+msgstr "Bu kaynak dosyayı içermiş konular"
+
+#. i18n: file kntsrcfilepropsdlg/kntsrcfilepropsdlgwidget.ui line 173
+#: rc.cpp:1093
+#, no-c-format
+msgid ""
+"This list shows the headlines and links to the corresponding complete articles "
+"which have been stored in the source file whose properties you are watching."
+msgstr ""
+"Bu liste şu anda özelliklerini izlemekte olduğunuz kaynak dosyası içerisine "
+"saklanmış olan başlıkları ve yazıların tümüne ulaşmanızı sağlayacak bağları "
+"gösterir "
+
+#. i18n: file kntsrcfilepropsdlg/kntsrcfilepropsdlgwidget.ui line 192
+#: rc.cpp:1099
+#, no-c-format
+msgid ""
+"This list shows the headlines and links to the corresponding complete articles "
+"which have been stored in the source file whose properties you are watching."
+"<p>You can open the corresponding full article for each headline by, depending "
+"on the global KDE settings, clicking or double-clicking on a headline"
+msgstr ""
+"Bu liste şu anda özelliklerini izlemekte olduğunuz kaynak dosyası içerisine "
+"saklanmış olan başlıkları ve yazıların tümüne ulaşmanızı sağlayacak bağları "
+"gösterir "
+"<p>Genel KDE ayarlarına bağlı olarak her bir başlık için yazının tümünü çift ya "
+"da tek tıklama ile açabilirsiniz"
+
+#: common/newsengine.cpp:74
+msgid "Arts"
+msgstr "Sanat"
+
+#: common/newsengine.cpp:75
+msgid "Business"
+msgstr "İş"
+
+#: common/newsengine.cpp:76
+msgid "Computers"
+msgstr "Bilgisayar"
+
+#: common/newsengine.cpp:77
+msgid "Games"
+msgstr "Oyunlar"
+
+#: common/newsengine.cpp:78
+msgid "Health"
+msgstr "Sağlık"
+
+#: common/newsengine.cpp:79
+msgid "Home"
+msgstr "Ev"
+
+#: common/newsengine.cpp:80
+msgid "Recreation"
+msgstr "Eğlence"
+
+#: common/newsengine.cpp:81
+msgid "Reference"
+msgstr "Referans"
+
+#: common/newsengine.cpp:82
+msgid "Science"
+msgstr "Bilim"
+
+#: common/newsengine.cpp:83
+msgid "Shopping"
+msgstr "Alışveriş"
+
+#: common/newsengine.cpp:84
+msgid "Society"
+msgstr "Topluluklar"
+
+#: common/newsengine.cpp:85
+msgid "Sports"
+msgstr "Spor"
+
+#: common/newsengine.cpp:87
+msgid "Magazines"
+msgstr "Dergiler"
+
+#: common/newsengine.cpp:219
+msgid ""
+"<p>The program '%1' was terminated abnormally."
+"<br>This can happen if it receives the SIGKILL signal.</p>"
+msgstr ""
+"<p>'%1' programı olağandışı bir şekilde sonlandırıldı. "
+"<p> SIGKILL sinyali aldığı için sonlanmış olabilir.</p>"
+
+#: common/newsengine.cpp:234
+msgid "<p>Program output:<br>%1<br>"
+msgstr "<p>Program çıktısı:<br>%1<br>"
+
+#: common/newsengine.cpp:236
+msgid "An error occurred while updating the news source '%1'."
+msgstr "Haber kaynağı '%1' güncellenirken hata oluştu!"
+
+#: common/newsengine.cpp:238
+msgid "KNewsTicker Error"
+msgstr "KNewsTicker Hatası"
+
+#: common/newsengine.cpp:250
+msgid "The program '%1' could not be started at all."
+msgstr "'%1' programı başlatılamadı."
+
+#: common/newsengine.cpp:251
+msgid ""
+"The program '%1' tried to read or write a file or directory which could not be "
+"found."
+msgstr ""
+"'%1' programı olmayan bir dosya veya dizin okumaya ya da yazmaya çalıştı."
+
+#: common/newsengine.cpp:253
+msgid "An error occurred while the program '%1' tried to read or write data."
+msgstr "'%1' programı  bilgi okumaya ya da yazmaya çalışırken hata oluştu."
+
+#: common/newsengine.cpp:255
+msgid ""
+"The program '%1' was passed too many arguments. Please adjust the command line "
+"in the configuration dialog."
+msgstr ""
+"'%1' programından çok fazla argüman geçti. Lütfen bu programı yapılandırma "
+"penceresinden ayarlayın."
+
+#: common/newsengine.cpp:257
+msgid ""
+"An external system program upon which the program '%1' relied could not be "
+"executed."
+msgstr "'%1' programının ihtiyaç duyduğu harici programa ulaşılamıyor. "
+
+#: common/newsengine.cpp:259
+msgid ""
+"The program '%1' tried to read or write a file or directory but lacks the "
+"permission to do so."
+msgstr "'%1' programı yetkiler dışında bir dosya okuma ya da yazma istiyor."
+
+#: common/newsengine.cpp:261
+msgid "The program '%1' tried to access a device which was not available."
+msgstr "'%1' programı kullanılmayan bir aygıta ulaşmaya çalışıyor."
+
+#: common/newsengine.cpp:263
+msgid "There is no more space left on the device used by the program '%1'."
+msgstr "'%1' programı tarafından kullanılan boş yer kalmadı."
+
+#: common/newsengine.cpp:265
+msgid ""
+"The program '%1' tried to create a temporary file on a read only file system."
+msgstr "'%1' programı sadece okuma yetkili sistemde dosya oluşturmaya çalıştı"
+
+#: common/newsengine.cpp:267
+msgid ""
+"The program '%1' tried to call a function which is not implemented or attempted "
+"to access an external resource which does not exist."
+msgstr ""
+"'%1' programı ya tamamlanmamış bir işlevi çağırdı ya da bulunmayan dış kaynağa "
+"ulaşmaya çalıştı."
+
+#: common/newsengine.cpp:270
+msgid ""
+"The program '%1' was unable to retrieve input data and was therefore unable to "
+"return any XML data."
+msgstr ""
+"'%1' programı girdi bilgilerini alamıyor ve herhangi bir XML bilgi geri "
+"döndüremiyor."
+
+#: common/newsengine.cpp:272
+msgid ""
+"The program '%1' tried to access a host which is not connected to a network."
+msgstr "'%1' programı ağa dahil olmayan bir bilgisayara bağlanmaya çalıştı"
+
+#: common/newsengine.cpp:274
+msgid "The program '%1' tried to access a protocol which is not implemented."
+msgstr "'%1' programı desteklenmeyen bir protokole ulaşmaya çalıştı."
+
+#: common/newsengine.cpp:276
+msgid ""
+"The program '%1' requires you to configure a destination address to retrieve "
+"data from. Please refer to the documentation of the program for information on "
+"how to do that."
+msgstr ""
+"'%1' programı bilginin geleceği gidiş adresini ayarlamanıza ihtiya. duyuyor."
+
+#: common/newsengine.cpp:279
+msgid ""
+"The program '%1' tried to use a socket type which is not supported by this "
+"system."
+msgstr ""
+"'%1' programı sistem tarafından desteklenmeyen bir soket tipi kullanmaya "
+"çalışıyor."
+
+#: common/newsengine.cpp:281
+msgid "The program '%1' tried to access an unreachable network."
+msgstr "'%1' programı ulaşılamayan bir ağı denedi."
+
+#: common/newsengine.cpp:283
+msgid ""
+"The network the program '%1' was trying to access dropped the connection with a "
+"reset."
+msgstr "'%1' ağ programı yeniden başlatmak için bağlantıyı kesmeye çalıştı."
+
+#: common/newsengine.cpp:285
+msgid "The connection of the program '%1' was reset by peer."
+msgstr "'%1' programının bağlantısı tekrar başlatılırdı. "
+
+#: common/newsengine.cpp:287
+msgid "The connection the program '%1' was trying to establish timed out."
+msgstr "'%1' bağlantı programı belirlenen sürede bağlantı kuramadı."
+
+#: common/newsengine.cpp:289
+msgid "The connection the program '%1' was trying to establish was refused."
+msgstr "'%1' bağlantı programının doğrulama isteği reddedildi. "
+
+#: common/newsengine.cpp:291
+msgid "The host the program '%1' was trying to reach is down."
+msgstr "'%1' programının ulaşmaya çalıştığı bilgisayar erişilmez. "
+
+#: common/newsengine.cpp:293
+msgid ""
+"The host the program '%1' was trying to reach is unreachable, no route to host."
+msgstr "'%1' programının ulaşmaya çalıştığı bilgisayar erişilmez.  yol yok."
+
+#: common/newsengine.cpp:295
+#, fuzzy
+msgid ""
+"KNewsTicker could not execute the program '%1' because its executable bit was "
+"not set. You can mark that program as executable by executing the following "
+"steps:"
+"<ul>"
+"<li>Open a Konqueror window and browse to the program</li>"
+"<li>Click on the file with the right mouse button, and select 'Properties'</li>"
+"<li>Open the 'Permissions' tab and make sure that the box in the column 'Exec' "
+"and the row 'User' is checked to ensure that the current user is allowed to "
+"execute that file.</li></ul>"
+msgstr ""
+"KNewsTicker '%1' programını çalıştıramıyor. Çünkü uygulamanın yetkileri "
+"çalıştırma için ayarlanmamış,Konqueror dan bu dosyayı seçip, farenizin sağ "
+"düğmesini tıklayarak özelliklerden gerekli yetkiyi verebilirsiniz."
+
+#: common/newsengine.cpp:303
+msgid ""
+"The program '%1' sent a bad request which was not understood by the server."
+msgstr "'%1' programına sunucu tarafından anlaşılamayan bir istekte bulundu."
+
+#: common/newsengine.cpp:305
+msgid ""
+"The program '%1' failed to issue an authorization for an area which needs some "
+"form of authorization before it can be accessed."
+msgstr "'%1' programı sonlandırıldı."
+
+#: common/newsengine.cpp:308
+#, fuzzy
+msgid ""
+"The program '%1' aborted because it could not access the data without paying "
+"for it."
+msgstr "'%1' programı sonlandırıldı."
+
+#: common/newsengine.cpp:310
+msgid "The program '%1' tried to access a forbidden source."
+msgstr "'%1' programı gizli kaynaklara ulaşmaya çalışıyor."
+
+#: common/newsengine.cpp:312
+msgid "The program '%1' tried to access data which could not be found."
+msgstr "'%1' programı bulunmayan bir bilgiye ulaşmaya çalışıyor."
+
+#: common/newsengine.cpp:314
+msgid "The HTTP request of the program '%1' timed out."
+msgstr "'%1'programına HTTP isteği sonlandırdı."
+
+#: common/newsengine.cpp:315
+#, fuzzy
+msgid ""
+"A server error has been encountered. It is likely that you cannot do anything "
+"about it."
+msgstr "Sunucu hatası oluştu. Birşey yapabileceğinize benzemiyor."
+
+#: common/newsengine.cpp:317
+msgid ""
+"The HTTP protocol version used by the program '%1' was not understood by the "
+"HTTP server or source."
+msgstr ""
+"'%1' programı HTTP protokolü sürümü sunucu veya kaynak tarafından "
+"anlaşılamıyor."
+
+#: common/newsengine.cpp:319
+msgid "KNewsTicker was unable to detect the exact reasons for the error."
+msgstr "KNewsTicker hata için bir sonuca varamadı."
+
+#: knewstickerstub/knewstickerstub.cpp:23
+msgid "KNewsTickerStub"
+msgstr "KNewsTickerStub"
+
+#: knewstickerstub/knewstickerstub.cpp:25
+msgid "A frontend to the KNewsTicker configuration"
+msgstr "KNewsTicker yapılandırması için önyüz"
+
+#: knewstickerstub/knewstickerstub.cpp:26
+msgid "(c)2000, 2001 Frerich Raabe"
+msgstr "(c)2000, 2001 Frerich Raabe"
+
+#: knewstickerstub/knewstickerstub.cpp:31
+msgid "Add the RDF/RSS file referenced by <url>"
+msgstr "<url> tarafından belirtilen RDF/RSS dosyasını ekle"
+
+#: knewstickerstub/knewstickerstub.cpp:41
+msgid "Author"
+msgstr "Yazar"
+
+#: kntsrcfilepropsdlg/kntsrcfilepropsdlg.cpp:54
+msgid "News Resource"
+msgstr "Haber Kaynakları"
+
+#, fuzzy
+#~ msgid ""
+#~ "_n: <p>Do you really want to remove %n news source?</p><p>Press 'Yes' to remove the news source from the list, press 'No' to keep it and close this dialog.</p>\n"
+#~ "<p>Do you really want to remove these %n news sources?</p><p>Press 'Yes' to remove the news sources from the list, press 'No' to keep them and close this dialog.</p>"
+#~ msgstr "<p>%n haber kaynağını silmek istediğinize emin misiniz?</p><p>Kaynağı listeden silmek için 'Evet', saklamak içinse 'Hayır'a basıp diyalog penceresini kapatınız.</p>\n"
+
+#~ msgid "<p>Do you really want to remove the selected filter?</p><p>Press 'Yes' to remove the filter from the list, press 'No' to keep it and close this dialog.</p>"
+#~ msgstr "<p>Seçili filtreyi silmek istediğinize emin misiniz?</p><p>Filtreyi listeden silmek için 'Evet', saklamak içinse 'Hayır'a basıp diyalog penceresini kapatınız.</p>"
+
+#~ msgid "<p>Do you really want to add '%1' to the list of news sources?</p><p>Press 'Yes' to add the news source to the list, press 'No' to cancel and close this dialog.</p>"
+#~ msgstr "<p>Gerçekten <br>%1</br> sitesini haber grubu kaynaklarına eklemek istiyor musunuz?</p><p>Listeye eklemek için Evet, bu pencereyi kapatmak için Hayır düğmesine tıklayın.</p>"

@@ -1,0 +1,427 @@
+# translation of kwalletmanager.po to
+# translation of kwalletmanager.po to Turkish
+# translation of kwalletmanager.po to Türkçe
+# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# YILDIZ KARDEŞLER <turkishprogram@xposta.com>, 2003.
+# Engin Çağatay <engincagatay@yahoo.com>, 2004.
+# Ayşe Genç <ayse@uludag.org.tr>, 2005.
+# Bekir SONAT <cortexbs@yahoo.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kwalletmanager\n"
+"POT-Creation-Date: 2008-07-08 01:20+0200\n"
+"PO-Revision-Date: 2005-07-12 11:55+0300\n"
+"Last-Translator: Bekir SONAT <cortexbs@yahoo.com>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "YILDIZ KARDEŞLER "
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "turkishprogram@xposta.com"
+
+#: allyourbase.cpp:197
+#, fuzzy
+msgid "An entry by the name '%1' already exists. Would you like to continue?"
+msgstr "'%1' adıyla bir giriş yapılmış zaten. Devam etmek istiyor musunuz?"
+
+#: allyourbase.cpp:220
+msgid "A folder by the name '%1' already exists.  What would you like to do?"
+msgstr "'%1' adlı klasör mevcut. Ne yapmak istiyorsunuz?"
+
+#: allyourbase.cpp:353
+#, fuzzy
+msgid "Folders"
+msgstr "Klasörler"
+
+#: allyourbase.cpp:397
+msgid "An unexpected error occurred trying to drop the item"
+msgstr "Öge'yi taşımaya çalışırken beklenmedik bir hata oluştu"
+
+#: allyourbase.cpp:479
+msgid "An unexpected error occurred trying to drop the entry"
+msgstr "Girdi'yi taşımaya çalışırken beklenmedik bir hata oluştu"
+
+#: allyourbase.cpp:508
+msgid ""
+"An unexpected error occurred trying to delete the original folder, but the "
+"folder has been copied successfully"
+msgstr ""
+"Asıl klasörü silmeye çalışırken beklenmedik bir hata oluştu, fakat klasör "
+"başarıyla kopyalandı."
+
+#: allyourbase.cpp:659
+msgid "That wallet file already exists.  You cannot overwrite wallets."
+msgstr "Cüzdan zaten mevcut. Cüzdanların üzerine yazamazsınız."
+
+#: kwalleteditor.cpp:81
+msgid "&Show values"
+msgstr "&Değerleri göster"
+
+#: kwalleteditor.cpp:161
+msgid "&New Folder..."
+msgstr "&Yeni Dizin..."
+
+#: kwalleteditor.cpp:167
+msgid "&Delete Folder"
+msgstr "&Dizini Sil"
+
+#: kwalleteditor.cpp:175 kwalletpopup.cpp:45
+msgid "Change &Password..."
+msgstr "&Parolayı Değiştir..."
+
+#: kwalleteditor.cpp:181
+#, fuzzy
+msgid "&Merge Wallet..."
+msgstr "&Yeni Cüzdan..."
+
+#: kwalleteditor.cpp:187
+msgid "&Import XML..."
+msgstr "XML A&l..."
+
+#: kwalleteditor.cpp:193
+msgid "&Export..."
+msgstr "&Aktar..."
+
+#: kwalleteditor.cpp:219
+msgid ""
+"This wallet was forced closed.  You must reopen it to continue working with it."
+msgstr ""
+"Cüzdan kapanmaya zorlanmış. Çalışmaya devam etmek için tekrar açmalısınız."
+
+#: kwalleteditor.cpp:254
+msgid "Passwords"
+msgstr "Şifreler"
+
+#: kwalleteditor.cpp:255
+msgid "Maps"
+msgstr "Haritalar"
+
+#: kwalleteditor.cpp:256
+msgid "Binary Data"
+msgstr "İkili Veri"
+
+#: kwalleteditor.cpp:257
+msgid "Unknown"
+msgstr "Bilinmeyen"
+
+#: kwalleteditor.cpp:296
+msgid "Are you sure you wish to delete the folder '%1' from the wallet?"
+msgstr "'%1' adlı klasörü cüzdandan silmek istediğinizden emin misiniz?"
+
+#: kwalleteditor.cpp:300
+#, fuzzy
+msgid "Error deleting folder."
+msgstr "Klasör silme hatası. Hata kodu=%1"
+
+#: kwalleteditor.cpp:319
+msgid "New Folder"
+msgstr "Yeni Dizin"
+
+#: kwalleteditor.cpp:320
+msgid "Please choose a name for the new folder:"
+msgstr "Lütfen yeni dizin için bir isim girin:"
+
+#: kwalleteditor.cpp:330
+msgid "Sorry, that folder name is in use. Try again?"
+msgstr "Üzgünüm, bu dizin adı kullanımda. Yeniden denemek ister misiniz?"
+
+#: kwalleteditor.cpp:330 kwalleteditor.cpp:662
+msgid "Try Again"
+msgstr ""
+
+#: kwalleteditor.cpp:330 kwalleteditor.cpp:662 kwalletmanager.cpp:376
+msgid "Do Not Try"
+msgstr ""
+
+#: kwalleteditor.cpp:369
+#, c-format
+msgid "Error saving entry. Error code: %1"
+msgstr "Girdi kaydetme hatası. Hata kodu: %1"
+
+#: kwalleteditor.cpp:404 kwalleteditor.cpp:737
+#, c-format
+msgid "Password: %1"
+msgstr "Şifre: %1"
+
+#: kwalleteditor.cpp:416 kwalleteditor.cpp:739
+#, c-format
+msgid "Name-Value Map: %1"
+msgstr "Ad-Değer Haritası: %1"
+
+#: kwalleteditor.cpp:424 kwalleteditor.cpp:741
+#, c-format
+msgid "Binary Data: %1"
+msgstr "İkili Veri: %1"
+
+#: kwalleteditor.cpp:588 kwalleteditor.cpp:598
+msgid "&New..."
+msgstr "&Yeni..."
+
+#: kwalleteditor.cpp:589
+msgid "&Rename"
+msgstr "Yeniden Adlandı&r"
+
+#: kwalleteditor.cpp:650
+msgid "New Entry"
+msgstr "Yeni Girdi"
+
+#: kwalleteditor.cpp:651
+msgid "Please choose a name for the new entry:"
+msgstr "Yeni girdi için ad seçin:"
+
+#: kwalleteditor.cpp:662
+msgid "Sorry, that entry already exists. Try again?"
+msgstr "Üzgünüm, girdi mevcut. Tekrar denensin mi?"
+
+#: kwalleteditor.cpp:679 kwalleteditor.cpp:690
+msgid "An unexpected error occurred trying to add the new entry"
+msgstr "Yeni bir giriş eklemeye çalışırken beklenmedik bir hata oluştu"
+
+#: kwalleteditor.cpp:733
+msgid "An unexpected error occurred trying to rename the entry"
+msgstr "Girdi'yi yeniden aadlandırırken beklenmedik bir hata oluştu"
+
+#: kwalleteditor.cpp:753
+msgid "Are you sure you wish to delete the item '%1'?"
+msgstr "Seçili öğe '%1'i silmek istediğinizden emin misiniz?"
+
+#: kwalleteditor.cpp:757
+msgid "An unexpected error occurred trying to delete the entry"
+msgstr "Girdi'yi silmeye çalışırken beklenmedik bir hata oluştu"
+
+#: kwalleteditor.cpp:785
+msgid "Unable to open the requested wallet."
+msgstr "İstenilen cüzdan açılamıyor."
+
+#: kwalleteditor.cpp:821
+#, fuzzy
+msgid "Unable to access wallet '<b>%1</b>'."
+msgstr " '<b>%1</b>' XML dosyasına erişilemiyor."
+
+#: kwalleteditor.cpp:850 kwalleteditor.cpp:880 kwalleteditor.cpp:910
+#: kwalleteditor.cpp:1001
+msgid ""
+"Folder '<b>%1</b>' already contains an entry '<b>%2</b>"
+"'.  Do you wish to replace it?"
+msgstr ""
+"'<b>%1</b> dizini zaten bir '<b>%2</b>' girdisi içeriyor. Değiştirmek ister "
+"misiniz?"
+
+#: kwalleteditor.cpp:949
+msgid "Unable to access XML file '<b>%1</b>'."
+msgstr " '<b>%1</b>' XML dosyasına erişilemiyor."
+
+#: kwalleteditor.cpp:955
+msgid "Error opening XML file '<b>%1</b>' for input."
+msgstr "'<b>%1</b>' XML dosyası girdi için açılamıyor."
+
+#: kwalleteditor.cpp:962
+msgid "Error reading XML file '<b>%1</b>' for input."
+msgstr "'<b>%1</b>' XML dosyası girdi için okunamıyor."
+
+#: kwalleteditor.cpp:969
+msgid "Error: XML file does not contain a wallet."
+msgstr "Hata: XML dosyası bir cüzdan içermiyor."
+
+#: kwalleteditor.cpp:1109
+#, fuzzy
+msgid "The file '%1' already exists. Would you like to overwrite this file?"
+msgstr "'%1' adıyla bir giriş yapılmış zaten. Devam etmek istiyor musunuz?"
+
+#: kwalleteditor.cpp:1109
+msgid "Overwrite"
+msgstr ""
+
+#: kwalletmanager.cpp:63 kwalletmanager.cpp:322
+msgid "KDE Wallet: No wallets open."
+msgstr "KDE Cüzdan: Açık çüzdan yok."
+
+#: kwalletmanager.cpp:71 kwalletmanager.cpp:177
+msgid "KDE Wallet: A wallet is open."
+msgstr "KDE Cüzdan: Bir çüzdan açık."
+
+#: kwalletmanager.cpp:115 kwalletpopup.cpp:37
+msgid "&New Wallet..."
+msgstr "&Yeni Cüzdan..."
+
+#: kwalletmanager.cpp:118
+msgid "Configure &Wallet..."
+msgstr "&Cüzdanı Yapılandır..."
+
+#: kwalletmanager.cpp:124
+msgid "Close &All Wallets"
+msgstr "Tüm Cüzd&anları Kapat"
+
+#: kwalletmanager.cpp:223
+msgid "Are you sure you wish to delete the wallet '%1'?"
+msgstr "'%1' adlı cüzdanı silmek istediğinizden emin misiniz?"
+
+#: kwalletmanager.cpp:229
+#, c-format
+msgid "Unable to delete the wallet. Error code was %1."
+msgstr "Cüzdan silinemiyor. Hata kodu %1."
+
+#: kwalletmanager.cpp:238
+msgid ""
+"Unable to close wallet cleanly. It is probably in use by other applications. Do "
+"you wish to force it closed?"
+msgstr ""
+"Cüzdan temiz olarak kapatılamıyor. Büyük bir ihtimalle diğer programlar "
+"tarafından kullanılıyor. Kapanmaya zorlansın mı?"
+
+#: kwalletmanager.cpp:238
+msgid "Force Closure"
+msgstr ""
+
+#: kwalletmanager.cpp:238
+msgid "Do Not Force"
+msgstr ""
+
+#: kwalletmanager.cpp:242
+#, c-format
+msgid "Unable to force the wallet closed. Error code was %1."
+msgstr "Cüzdan kapatılmaya zorlanamıyor. Hata kodu %1."
+
+#: kwalletmanager.cpp:263 kwalletmanager.cpp:305
+#, c-format
+msgid "Error opening wallet %1."
+msgstr "Cüzdan açma hatası %1."
+
+#: kwalletmanager.cpp:357
+msgid "Please choose a name for the new wallet:"
+msgstr "Yeni cüzdan için bir ad girin:"
+
+#: kwalletmanager.cpp:365
+msgid "New Wallet"
+msgstr "Yeni Cüzdan"
+
+#: kwalletmanager.cpp:376
+msgid "Sorry, that wallet already exists. Try a new name?"
+msgstr "Üzgünüm, bu cüzdan mevcut. Değişik bir isim dene?"
+
+#: kwalletmanager.cpp:376
+msgid "Try New"
+msgstr ""
+
+#: kwalletmanager.cpp:384
+msgid "Please choose a name that contains only alphanumeric characters:"
+msgstr "Lütfen sadece sayı ve harf içeren bir isim seçin:"
+
+#: kwalletpopup.cpp:60
+msgid "Disconnec&t"
+msgstr "Bağlan&tıyı Kes"
+
+#: kwmapeditor.cpp:43
+msgid "Key"
+msgstr "Anahtar"
+
+#: kwmapeditor.cpp:44
+msgid "Value"
+msgstr "Değer"
+
+#: kwmapeditor.cpp:121
+msgid "&New Entry"
+msgstr "Ye&ni Girdi"
+
+#: main.cpp:45
+msgid "Show window on startup"
+msgstr "Başlangıçta pencereyi göster"
+
+#: main.cpp:46
+msgid "For use by kwalletd only"
+msgstr "Sadece kwalletd tarafından kullanım için"
+
+#: main.cpp:47
+msgid "A wallet name"
+msgstr "Bir cüzdan adı"
+
+#: main.cpp:51 main.cpp:70
+msgid "KDE Wallet Manager"
+msgstr "KDE Cüzdan Yönetici"
+
+#: main.cpp:52
+msgid "KDE Wallet Management Tool"
+msgstr "KDE Cüzdan Yönetim Aracı"
+
+#: main.cpp:54
+msgid "(c) 2003,2004 George Staikos"
+msgstr "(c) 2003,2004 George Staikos"
+
+#: main.cpp:57
+msgid "Primary author and maintainer"
+msgstr "Birincil yazar ve destekçisi"
+
+#: main.cpp:58
+msgid "Developer"
+msgstr "Geliştirici"
+
+#. i18n: file kbetterthankdialogbase.ui line 60
+#: rc.cpp:18
+#, no-c-format
+msgid "&Replace"
+msgstr "Değişti&r"
+
+#. i18n: file kbetterthankdialogbase.ui line 71
+#: rc.cpp:21
+#, no-c-format
+msgid "Replace &All"
+msgstr "&Tümünü Değiştir"
+
+#. i18n: file kbetterthankdialogbase.ui line 79
+#: rc.cpp:24
+#, no-c-format
+msgid "&Skip"
+msgstr "&Atla"
+
+#. i18n: file kbetterthankdialogbase.ui line 87
+#: rc.cpp:27
+#, no-c-format
+msgid "Skip A&ll"
+msgstr "Hepsini At&la"
+
+#. i18n: file walletwidget.ui line 237
+#: rc.cpp:36
+#, no-c-format
+msgid "Hide &Contents"
+msgstr "İçerikleri &Gizle"
+
+#. i18n: file walletwidget.ui line 269
+#: rc.cpp:39
+#, no-c-format
+msgid ""
+"This is a binary data entry.  It cannot be editted as its format is unknown and "
+"application specific."
+msgstr ""
+"Bu bir ikili veri girdisi. Biçimi bilinmediği ve uygulama özeli olduğu için "
+"düzenlenemez."
+
+#. i18n: file walletwidget.ui line 398
+#: rc.cpp:42
+#, no-c-format
+msgid "Show &Contents"
+msgstr "İç&eriği Göster"
+
+#~ msgid "WalletWidget"
+#~ msgstr "CüzdanParçacığı"
+
+#~ msgid "Alt+U"
+#~ msgstr "Alt+U"
+
+#~ msgid "Alt+S"
+#~ msgstr "Alt+S"
+
+#~ msgid "Alt+C"
+#~ msgstr "Alt+C"

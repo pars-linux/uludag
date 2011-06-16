@@ -1,0 +1,3510 @@
+# translation of kgpg.po to
+# Copyright (C) 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# Serkan Arıkuşu <kde-i18n-tr@kde.org>, 2004.
+# Engin Çağatay <engincagatay@yahoo.com>, 2004.
+# Bekir SONAT <cortexbs@yahoo.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kgpg\n"
+"POT-Creation-Date: 2008-07-11 01:32+0200\n"
+"PO-Revision-Date: 2007-07-09 06:11+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=1; plural=0;\n"
+
+#: kgpg.cpp:83
+msgid "&Decrypt && Save File"
+msgstr "&Dosyayı Aç ve Kaydet"
+
+#: kgpg.cpp:84
+msgid "&Show Decrypted File"
+msgstr "&Açılmış Dosyayı Göster"
+
+#: kgpg.cpp:85
+msgid "&Encrypt File"
+msgstr "D&osyayı Şifrele"
+
+#: kgpg.cpp:86
+msgid "&Sign File"
+msgstr "&Dosyayı İmzala"
+
+#: kgpg.cpp:101 kgpg.cpp:270
+msgid "KGpg - encryption tool"
+msgstr "KGpg - şifreleme aracı"
+
+#: kgpg.cpp:142 kgpg.cpp:1012
+msgid "Clipboard is empty."
+msgstr "Pano boş."
+
+#: kgpg.cpp:150
+msgid ""
+"<qt>KGpg will now create a temporary archive file:"
+"<br><b>%1</b> to process the encryption. The file will be deleted after the "
+"encryption is finished.</qt>"
+msgstr ""
+"<qt>KGpg şifreleme işlemini gerçekleştirmek için şimdi geçici bir arşiv dosyası "
+"<b>%1</b> oluşturacaktır. "
+"<br>Şifreleme bittiği zaman dosya silinecektir. </qt>"
+
+#: kgpg.cpp:150
+msgid "Temporary File Creation"
+msgstr "Geçici Dosya Oluşturma"
+
+#: kgpg.cpp:156
+msgid "Compression method for archive:"
+msgstr "Arşiv için sıkıştırma yöntemi:"
+
+#: kgpg.cpp:158
+msgid "Zip"
+msgstr "Zip"
+
+#: kgpg.cpp:159
+msgid "Gzip"
+msgstr "Gzip"
+
+#: kgpg.cpp:160
+msgid "Bzip2"
+msgstr "Bzip2"
+
+#: kgpg.cpp:197 kgpg.cpp:409 kgpgeditor.cpp:268 kgpglibrary.cpp:95
+msgid "File Already Exists"
+msgstr "Bu Dosya Zaten Var"
+
+#: kgpg.cpp:209
+msgid "Processing folder compression and encryption"
+msgstr "Dizin sıkıştırma ve şifreleme işlemi gerçekleştiriliyor"
+
+#: kgpg.cpp:209 kgpglibrary.cpp:125 kgpglibrary.cpp:197
+msgid "Please wait..."
+msgstr "Lütfen bekleyin..."
+
+#: kgpg.cpp:225
+msgid "Unable to create temporary file"
+msgstr "Geçici dosya oluşturulamıyor"
+
+#: kgpg.cpp:302
+msgid "Shred Files"
+msgstr "Dosyayı Parçalara Ayır"
+
+#: kgpg.cpp:308
+msgid "Do you really want to <a href=\"whatsthis:%1\">shred</a> these files?"
+msgstr ""
+"Bu dosyaları gerçekten <a href=\"whatsthis:%1\">öğütmek</a> istiyor musunuz?"
+
+#: kgpg.cpp:308 kgpgoptions.cpp:97
+msgid ""
+"<qt>"
+"<p>You must be aware that <b>shredding is not secure</b> "
+"on all file systems, and that parts of the file may have been saved in a "
+"temporary file or in the spooler of your printer if you previously opened it in "
+"an editor or tried to print it. Only works on files (not on folders).</p></qt>"
+msgstr ""
+"<qt>"
+"<p><b>Öğütme'nin</b> tüm dosya sistemlerinde <b>güvenli olmadığı</b> "
+"nı aklınızdan çıkarmayın. Dosya'ya ait veri parçacıkları, geçici dosyalarda; "
+"veya düzenleyicide daha önceden açılarak yazdırılmak istenmiş dosyalar, "
+"yazdırma kuyruğunda kaydedilmiş olabilir. Klasörler değil,Sadece dosyalar "
+"içindir.</p></qt>"
+
+#: kgpg.cpp:442
+msgid "Unable to read temporary archive file"
+msgstr "Geçici Dosya okunamadı"
+
+#: kgpg.cpp:447
+msgid "Extract to: "
+msgstr "Buraya Aç: "
+
+#: kgpg.cpp:530
+msgid "<p>The dropped text is a public key.<br>Do you want to import it ?</p>"
+msgstr "<p>Bırakılan metin bir açık anahtar.<br>Almak istiyor musunuz?</p>"
+
+#: kgpg.cpp:545
+msgid "No encrypted text found."
+msgstr "Şifrelenmiş metin bulunamadı."
+
+#: kgpg.cpp:580
+msgid ""
+"<qt>You have not set a path to your GnuPG config file."
+"<br>This may cause some surprising results in KGpg's execution."
+"<br>Would you like to start KGpg's Wizard to fix this problem?</qt>"
+msgstr ""
+"<qt>Henüz GnuPG yapılandırma dosyanızı oluşturmadınız."
+"<br>KGpg çalıştırılırken beklenmedik sonuçlarla karşılaşabilirsiniz."
+"<br>Şİmdi KGpg Sihirbazını çalıştırarak bu problemi çözmek ister misiniz?</qt>"
+
+#: kgpg.cpp:580
+msgid "Start Wizard"
+msgstr "Sihirbazı Başlat"
+
+#: kgpg.cpp:580
+msgid "Do Not Start"
+msgstr "Başlatma"
+
+#: kgpg.cpp:624
+msgid ""
+"<qt><b>The GnuPG configuration file was not found</b>"
+". Please make sure you have GnuPG installed. Should KGpg try to create a config "
+"file ?</qt>"
+msgstr ""
+"<qt><b>GnuPG yapılandırma dosyası bulunamadı</b>. Lütfen GnuPG'nin sisteminizde "
+"yüklü olduğundan emin olun. KGpg, yapılandırma dosyasını oluşturmayı denesin "
+"mi?</qt>"
+
+#: kgpg.cpp:624
+msgid "Create Config"
+msgstr "Yapılandırma Dosyası Oluştur"
+
+#: kgpg.cpp:624
+msgid "Do Not Create"
+msgstr "Oluşturma"
+
+#: kgpg.cpp:633
+msgid ""
+"<qt><b>The GnuPG configuration file was not found</b>"
+". Please make sure you have GnuPG installed and give the path to the config "
+"file.</qt>"
+msgstr ""
+"<qt><b>GnuPG yapılandırma dosyası bulunamadı</b>. Lütfen sisteminizde GnuGP'nin "
+"yüklü olduğundan emin olun ve yapılandırma dosyasının nerede olduğunu "
+"belirtin.</qt>"
+
+#: kgpg.cpp:640
+msgid ""
+"Your GnuPG version seems to be older than 1.2.0. Photo Id's and Key Groups will "
+"not work properly. Please consider upgrading GnuPG (http://gnupg.org)."
+msgstr ""
+"GnuPG sürümünüz 1.2.0 sürümünden eski görünüyor. Fotoğraf ve Anahtar Grupları "
+"düzgün çalışmayacaktır. Lütfen GnuPG'yi güncelleştirin (http://gnupg.org)."
+
+#: kgpg.cpp:682
+msgid "Step Three: Select your Default Private Key"
+msgstr "Üçüncü Adım: Öntanımlı Açık Anahtarınızı Seçin"
+
+#. i18n: file conf_misc.ui line 94
+#: kgpg.cpp:724 rc.cpp:179
+#, no-c-format
+msgid "Shredder"
+msgstr "Silici"
+
+#: kgpg.cpp:780
+msgid "&Encrypt Clipboard"
+msgstr "&Panoyu şifrele"
+
+#: kgpg.cpp:781
+msgid "&Decrypt Clipboard"
+msgstr "Pano&yu aç"
+
+#: kgpg.cpp:782
+msgid "&Sign/Verify Clipboard"
+msgstr "Pano&yu İmzala/Doğrula"
+
+#: kgpg.cpp:785 listkeys.cpp:536
+msgid "&Open Editor"
+msgstr "Dü&zenleyiciyi Aç"
+
+#: kgpg.cpp:787 kgpgeditor.cpp:145
+msgid "&Open Key Manager"
+msgstr "&Anahtar Yöneticisini Aç"
+
+#: kgpg.cpp:789 listkeys.cpp:575
+msgid "&Key Server Dialog"
+msgstr "Anahtar Sunucu &Penceresi"
+
+#: kgpg.cpp:927
+msgid ""
+"<qt>The use of <b>GnuPG Agent</b> is enabled in GnuPG's configuration file "
+"(%1)."
+"<br>However, the agent does not seem to be running. This could result in "
+"problems with signing/decryption."
+"<br>Please disable GnuPG Agent from KGpg settings, or fix the agent.</qt>"
+msgstr ""
+"<qt><b>GnuPG Ajanının</b> kullanımı GNUPG yapılandırma dosyasında (%1) etkin "
+"kılınmış ."
+"<br>Bununla birlikte, ajan çalışmıyor gibi görünüyor. Bu şifreleme işlemleri "
+"sırasında sorunlara yool açabilir. "
+"<br> Lütfen KGpg ayarlarında GnuPG ajanını deaktive edin, veya ajanın "
+"çalışmasını sağlayın.</qt>"
+
+#: kgpg.cpp:964
+msgid ""
+"Unable to perform requested operation.\n"
+"Please select only one folder, or several files, but do not mix files and "
+"folders."
+msgstr ""
+"Üzgünüm, istenilen işlemi gerçekleştiremiyorum.\n"
+"Lütfen sadece bir dizin veya birden fazla dosya seçin, dizin ve dosyaları "
+"beraber seçmeyin."
+
+#: kgpg.cpp:979
+msgid "Cannot shred folder."
+msgstr "Dizin öğütülemez."
+
+#: kgpg.cpp:984
+msgid "Cannot decrypt and show folder."
+msgstr "Dizin şifresi açılıp gösterilemiyor."
+
+#: kgpg.cpp:989
+msgid "Cannot sign folder."
+msgstr "Dizin imzalanamıyor."
+
+#: kgpg.cpp:994
+msgid "Cannot verify folder."
+msgstr "Dizin doğrulanamıyor."
+
+#: kgpg.cpp:1036
+msgid "Encrypted following text:"
+msgstr "Aşağıdaki metin şifrelendi:"
+
+#: listkeys.cpp:217
+msgid "Private Key List"
+msgstr "Gizli Anahtar Listesi"
+
+#. i18n: file groupedit.ui line 28
+#: listkeys.cpp:228 listkeys.cpp:608 popuppublic.cpp:127 rc.cpp:312 rc.cpp:327
+#: rc.cpp:615
+#, no-c-format
+msgid "Name"
+msgstr "İsim"
+
+#. i18n: file groupedit.ui line 39
+#: listkeys.cpp:229 listkeys.cpp:609 popuppublic.cpp:128 rc.cpp:315 rc.cpp:330
+#: rc.cpp:339 rc.cpp:618
+#, no-c-format
+msgid "Email"
+msgstr "E-posta"
+
+#. i18n: file searchres.ui line 79
+#: listkeys.cpp:230 popuppublic.cpp:129 rc.cpp:624
+#, no-c-format
+msgid "ID"
+msgstr "No"
+
+#: listkeys.cpp:236
+msgid "Choose secret key:"
+msgstr "Bir gizli anahtarı seçin:"
+
+#: keyinfowidget.cpp:210 keyinfowidget.cpp:357 keyinfowidget.cpp:359
+#: keyinfowidget.cpp:449 listkeys.cpp:257 listkeys.cpp:3056
+#: popuppublic.cpp:383
+msgid "Unlimited"
+msgstr "Sınırsız"
+
+#. i18n: file keyproperties.ui line 256
+#: keygener.cpp:56 listkeys.cpp:301 rc.cpp:392
+#, no-c-format
+msgid "Expiration:"
+msgstr "Son Kullanma Tarihi:"
+
+#: listkeys.cpp:316
+msgid ""
+"<qt><b>Some of your secret keys are untrusted.</b>"
+"<br>Change their trust if you want to use them for signing.</qt>"
+msgstr ""
+"<qt><b>Gizli anahtarlarınızdan bazıları güvenilir değil.</b>"
+"<br>İmzalama işlemi için bu anahtarları kullanmak istiyorsanız anahtarların "
+"güvenilirliğini değiştirin.</qt>"
+
+#: listkeys.cpp:437
+msgid "<p>Do you want to import file <b>%1</b> into your key ring?</p>"
+msgstr "<p><b>%1</b> dosyasını anahtar zincirinize aktarmak ister misiniz?</p>"
+
+#: kgpginterface.cpp:830 kgpgview.cpp:242 listkeys.cpp:437
+msgid "Do Not Import"
+msgstr "İçeri Aktarma"
+
+#: listkeys.cpp:534
+msgid "Key Management"
+msgstr "Anahtar Yönetimi"
+
+#: listkeys.cpp:537
+msgid "E&xport Public Keys..."
+msgstr "&Genel Anahtarı Aktar..."
+
+#: listkeys.cpp:538
+msgid "&Delete Keys"
+msgstr "&Anahtarı Sil"
+
+#: listkeys.cpp:539
+msgid "&Sign Keys..."
+msgstr "A&nahtarı İmzala..."
+
+#: listkeys.cpp:540
+msgid "Delete Sign&ature"
+msgstr "İmzayı &Sil"
+
+#: listkeys.cpp:541
+msgid "&Edit Key"
+msgstr "Anahtarı &Düzenle"
+
+#: listkeys.cpp:542
+msgid "&Import Key..."
+msgstr "Anahtarı A&l..."
+
+#: listkeys.cpp:543
+msgid "Set as De&fault Key"
+msgstr "Anah&tarı Öntanımlı Yap"
+
+#: keyservers.cpp:169 listkeys.cpp:544
+msgid "Import Key From Keyserver"
+msgstr "Anahtarı Anahtar Sunucusundan al"
+
+#: listkeys.cpp:545
+msgid "Import &Missing Signatures From Keyserver"
+msgstr "Anahtar Sunucusundan &Eksik İmzaları al"
+
+#: listkeys.cpp:546
+msgid "&Refresh Keys From Keyserver"
+msgstr "Anahta&rları Anahtar Sunucusundan Tazele"
+
+#: listkeys.cpp:548
+msgid "&Create Group with Selected Keys..."
+msgstr "&Seçili Anahtarlar ile Grup Oluştur..."
+
+#: listkeys.cpp:549
+msgid "&Delete Group"
+msgstr "Grubu S&il"
+
+#: listkeys.cpp:550
+msgid "&Edit Group"
+msgstr "&Grubu Düzenle"
+
+#: listkeys.cpp:552
+msgid "&Create New Contact in Address Book"
+msgstr "Adres Defterinde Yeni &Kişi Oluştur"
+
+#: listkeys.cpp:553 popuppublic.cpp:149
+msgid "&Go to Default Key"
+msgstr "Öntanımlı A&nahtarı Seç"
+
+#: listkeys.cpp:558
+msgid "&Refresh List"
+msgstr "&Listeyi Tazele"
+
+#: listkeys.cpp:559
+msgid "&Open Photo"
+msgstr "Fo&toğrafı Aç"
+
+#: listkeys.cpp:560
+msgid "&Delete Photo"
+msgstr "Fotoğ&rafı Sil"
+
+#: listkeys.cpp:561
+msgid "&Add Photo"
+msgstr "Fotoğraf E&kle"
+
+#: listkeys.cpp:563
+msgid "&Add User Id"
+msgstr "Kullanıcı no &ekle"
+
+#: listkeys.cpp:564
+msgid "&Delete User Id"
+msgstr "Kullanı&cı no sil"
+
+#: listkeys.cpp:566
+msgid "Edit Key in &Terminal"
+msgstr "Anahtarı Terminalde &Düzenle"
+
+#: listkeys.cpp:567
+msgid "Export Secret Key..."
+msgstr "Gizli Anahtarı Aktar..."
+
+#: listkeys.cpp:568
+msgid "Revoke Key..."
+msgstr "Anahtarı Feshet..."
+
+#: listkeys.cpp:570
+msgid "Delete Key Pair"
+msgstr "Anahtar Çiftini Sil"
+
+#: listkeys.cpp:571
+msgid "&Generate Key Pair..."
+msgstr "Anahtar Çifti &Oluştur..."
+
+#: listkeys.cpp:573
+msgid "&Regenerate Public Key"
+msgstr "Açık Anahtarı Tekrar Oluştu&r"
+
+#: listkeys.cpp:577
+msgid "Tip of the &Day"
+msgstr "&Günün İpucu"
+
+#: listkeys.cpp:578
+msgid "View GnuPG Manual"
+msgstr "GnuPG Kılavuzunu Oku"
+
+#: listkeys.cpp:580
+msgid "&Show only Secret Keys"
+msgstr "Sadece Gi&zli Anahtarları Göster"
+
+#: listkeys.cpp:583
+msgid "&Hide Expired/Disabled Keys"
+msgstr "&Süresi Biten ve Etkisiz Anahtarları Gizle"
+
+#: listkeys.cpp:586 listkeys.cpp:610
+msgid "Trust"
+msgstr "Güvenilirlik"
+
+#: listkeys.cpp:587 listkeys.cpp:612
+msgid "Size"
+msgstr "Boyut"
+
+#. i18n: file searchres.ui line 68
+#: listkeys.cpp:588 listkeys.cpp:613 rc.cpp:621
+#, no-c-format
+msgid "Creation"
+msgstr "Oluşturulma"
+
+#: listkeys.cpp:589 listkeys.cpp:611
+msgid "Expiration"
+msgstr "Son kullanma"
+
+#: listkeys.cpp:592
+msgid "&Photo ID's"
+msgstr "&Fotoğraf"
+
+#. i18n: file conf_misc.ui line 286
+#: listkeys.cpp:597 rc.cpp:225 rc.cpp:231
+#, no-c-format
+msgid "Disable"
+msgstr "Kapat"
+
+#: listkeys.cpp:598
+msgid "Small"
+msgstr "Küçük"
+
+#: listkeys.cpp:599
+msgid "Medium"
+msgstr "Orta"
+
+#: listkeys.cpp:600
+msgid "Large"
+msgstr "Büyük"
+
+#. i18n: file groupedit.ui line 50
+#: listkeys.cpp:614 rc.cpp:318 rc.cpp:333
+#, no-c-format
+msgid "Id"
+msgstr "No"
+
+#: listkeys.cpp:700 popuppublic.cpp:118
+msgid "Clear Search"
+msgstr "Aramayı Temizle"
+
+#: listkeys.cpp:703 popuppublic.cpp:121
+msgid "Search: "
+msgstr "Ara: "
+
+#: listkeys.cpp:708
+msgid "Filter Search"
+msgstr "Aramayı Filtrele"
+
+#: listkeys.cpp:718
+msgid "00000 Keys, 000 Groups"
+msgstr "00000 Anahtar, 000 Grup"
+
+#: listkeys.cpp:865
+msgid "You can only refresh primary keys. Please check your selection."
+msgstr ""
+"Sadece birincil anahtarları tazeleyebilirsiniz. Lütfen seçiminizi kontrol edin."
+
+#: listkeys.cpp:922
+msgid "Add New User Id"
+msgstr "Yeni Kullanıcı no ekle"
+
+#: listkeys.cpp:945
+msgid ""
+"The image must be a JPEG file. Remember that the image is stored within your "
+"public key.If you use a very large picture, your key will become very large as "
+"well! Keeping the image close to 240x288 is a good size to use."
+msgstr ""
+"Resim, JPEG dosyası olmalıdır. Resmin açık anahtarınızın içinde yer alacağını "
+"unutmayın. Eğer çok büyük bir resim seçerseniz, anahtarınız da çok büyük "
+"olacaktır. 240x288'e yakın bir dosya kullanım için iyi olacaktır."
+
+#: listkeys.cpp:963
+msgid ""
+"Something unexpected happened during the requested operation.\n"
+"Please check details for full log output."
+msgstr ""
+"İstenilen işlem sırasında beklenmeyen bir şey oldu\n"
+"Detaylar için lütfen günlük dosyası çıktısını kontrol edin."
+
+#: listkeys.cpp:969
+msgid ""
+"<qt>Are you sure you want to delete Photo id <b>%1</b>"
+"<br>from key <b>%2 &lt;%3&gt;</b> ?</qt>"
+msgstr ""
+"<qt> Fotoğrafı <b>%2 & lt; %3 &gt; </b> anahtarından silmek istediğinize emin "
+"misin<b>%1</b> </qt>"
+
+#: listkeys.cpp:1014 listkeys.cpp:1245 listkeys.cpp:1376 listkeys.cpp:1623
+#: listkeys.cpp:2575
+msgid "Photo id"
+msgstr "Fotoğraf"
+
+#: listkeys.cpp:1073
+msgid "<qt>Search string '<b>%1</b>' not found."
+msgstr "<qt> Aranılan <b>%1</b> kelime bulunamadı."
+
+#: listkeys.cpp:1129
+msgid "Unable to contact the address book. Please check your installation."
+msgstr "Adres Defteri'ne ulaşılamadı. Lütfen kurulumunuzu kontol edin."
+
+#: listkeys.cpp:1234
+msgid "Public Key"
+msgstr "Açık Anahtar"
+
+#: listkeys.cpp:1236
+msgid "Sub Key"
+msgstr "Alt Anahtar"
+
+#: listkeys.cpp:1238
+msgid "Secret Key Pair"
+msgstr "Gizli Anahtar Çifti"
+
+#: listkeys.cpp:1240
+msgid "Key Group"
+msgstr "Anahtar Grubu"
+
+#: listkeys.cpp:1242
+msgid "Signature"
+msgstr "İmza"
+
+#: listkeys.cpp:1244
+msgid "User ID"
+msgstr "Kullanıcı Kimliği"
+
+#: listkeys.cpp:1246
+msgid "Photo ID"
+msgstr "Fotoğraf Kimliği"
+
+#: listkeys.cpp:1248
+msgid "Revocation Signature"
+msgstr "Feshetme imzası"
+
+#: listkeys.cpp:1250
+msgid "Orphaned Secret Key"
+msgstr "Terkedilmiş Gizlilik Anahtarı"
+
+#: listkeys.cpp:1278 listkeys.cpp:1684 listkeys.cpp:1740 listkeys.cpp:2284
+#: listkeys.cpp:2464 listkeys.cpp:2771 listkeys.cpp:2858 listkeys.cpp:2885
+#: listkeys.cpp:2920
+msgid "%1 Keys, %2 Groups"
+msgstr "%1 Anahtar, %2 Grup"
+
+#: listkeys.cpp:1327
+msgid "Sorry, this key is not valid for encryption or not trusted."
+msgstr "Üzgünüm, bu anahtar şifreleme için uygun veya güvenilir değil."
+
+#: keyinfowidget.cpp:158 listkeys.cpp:1368 listkeys.cpp:3109
+msgid "Revoked"
+msgstr "Feshedilmiş"
+
+#: listkeys.cpp:1410
+msgid "Create Revocation Certificate"
+msgstr "Feshetme Belgesi Oluştur"
+
+#: listkeys.cpp:1414
+msgid "ID: "
+msgstr "No: "
+
+#: listkeys.cpp:1457
+msgid ""
+"Secret keys SHOULD NOT be saved in an unsafe place.\n"
+"If someone else can access this file, encryption with this key will be "
+"compromised!\n"
+"Continue key export?"
+msgstr ""
+"Gizli anahtarlar güvenilir olmayan yerlere KAYDEDİLMEMELİDİR.\n"
+"Birisi bu dosyaya ulaşırsa, bu anahtarla yapılan şifrelemeler tehlikeye "
+"atılacaktır!\n"
+"Anahtar aktarımına devam edilsin mi?"
+
+#: listkeys.cpp:1459
+msgid "Do Not Export"
+msgstr "Dışarı Aktarma"
+
+#: listkeys.cpp:1469
+msgid "Export PRIVATE KEY As"
+msgstr "Gizli Anahtarı Farklı Aktar"
+
+#: listkeys.cpp:1481
+msgid ""
+"Your PRIVATE key \"%1\" was successfully exported.\n"
+"DO NOT leave it in an insecure place."
+msgstr ""
+"GİZLİ anahtarınız \"%1\" başarılı bir şekilde aktarıldı.\n"
+"Güvenli olmayan bir yerde SAKLAMAYIN."
+
+#: listkeys.cpp:1483
+msgid ""
+"Your secret key could not be exported.\n"
+"Check the key."
+msgstr ""
+"Gizli Anahtarınız aktarılamadı.\n"
+"Anahtarı kontrol edin."
+
+#: listkeys.cpp:1514
+msgid "Public Key Export"
+msgstr "Açık Anahtarı aktar"
+
+#: kgpgeditor.cpp:250 listkeys.cpp:1519
+msgid "Save File"
+msgstr "Dosyayı Kaydet"
+
+#: listkeys.cpp:1556
+msgid ""
+"Your public key \"%1\" was successfully exported\n"
+msgstr ""
+"Açık anahtarınız \"%1\" başarılı bir şekilde aktarıldı.\n"
+
+#: listkeys.cpp:1558
+msgid ""
+"Your public key could not be exported\n"
+"Check the key."
+msgstr ""
+"Açık anahtarınız aktarılamadı\n"
+"Anahtarı kontrol edin."
+
+#: listkeys.cpp:1631
+msgid ""
+"This key is an orphaned secret key (secret key without public key.) It is "
+"currently not usable.\n"
+"\n"
+"Would you like to regenerate the public key?"
+msgstr ""
+"Bu anahtar bir Terkedilmiş Gizlilik Anahtarıdır (Açık anahtarı olmayan Gizli "
+"Anahtar.) Şu haliyle kullanılabilir değil.\n"
+"\n"
+"Açık anahtarı yeniden üretmek ister misiniz?"
+
+#: listkeys.cpp:1632
+msgid "Generate"
+msgstr "Oluştur"
+
+#: listkeys.cpp:1632
+msgid "Do Not Generate"
+msgstr "Oluşturma"
+
+#: listkeys.cpp:1670
+msgid "<qt>Are you sure you want to delete group <b>%1</b> ?</qt>"
+msgstr "<qt><b>%1</b> grubunu silmek istediğinize emin misiniz ?<qt>"
+
+#: listkeys.cpp:1720
+msgid ""
+"<qt>You cannot create a group containing signatures, subkeys or other "
+"groups.</qt>"
+msgstr ""
+"<qt>İmzalar, alt anahtarlar veya başka gruplar içeren bir grup "
+"oluşturamazsınız.</qt>"
+
+#: listkeys.cpp:1723
+msgid "Create New Group"
+msgstr "Yeni Grup Oluştur"
+
+#: listkeys.cpp:1723
+msgid "Enter new group name:"
+msgstr "Yeni Grup İsmini Girin:"
+
+#: listkeys.cpp:1728
+msgid ""
+"Following keys are not valid or not trusted and will not be added to the group:"
+msgstr ""
+"Aşağıdaki anahtarlar geçerli veya güvenli değil, gruba eklenmeyecekler:"
+
+#: listkeys.cpp:1742
+msgid ""
+"<qt>No valid or trusted key was selected. The group <b>%1</b> "
+"will not be created.</qt>"
+msgstr ""
+"<qt>Geçerli veya güvenilir anahtar seçilmedi. <b>%1</b> "
+"grubu oluşturulmayacak.</qt>"
+
+#: listkeys.cpp:1769
+msgid ""
+"Following keys are in the group but are not valid or not in your keyring. They "
+"will be removed from the group."
+msgstr ""
+"Aşağıdaki anahtarlar grupta yer alıyorlar ama geçerli veya güvenilir değiller "
+"veya anahtar zincirinizde bulunmuyorlar. Bu anahtarlar gruptan çıkartılacaklar."
+
+#: listkeys.cpp:1778
+msgid "Group Properties"
+msgstr "Grup Özellikleri"
+
+#: listkeys.cpp:1842
+msgid "You can only sign primary keys. Please check your selection."
+msgstr ""
+"Sadece birincil anahtarları imzalayabilirsiniz. Lütfen seçiminizi kontrol edin."
+
+#: listkeys.cpp:1865
+msgid ""
+"<qt>You are about to sign key:"
+"<br>"
+"<br>%1"
+"<br>ID: %2"
+"<br>Fingerprint: "
+"<br><b>%3</b>."
+"<br>"
+"<br>You should check the key fingerprint by phoning or meeting the key owner to "
+"be sure that someone is not trying to intercept your communications</qt>"
+msgstr ""
+"<qt>Aşağıdaki anahtarı imzalamak üzeresiniz: "
+"<br> "
+"<br>%1 "
+"<br>ID: %2 "
+"<br>Parmak izi: "
+"<br><b>%3</b>. "
+"<br>"
+"<br> Başka birisinin iletişiminize dahil olmadığından emin olmak için anahtarın "
+"parmak izini telefonla veya anahtar sahibi ile buluşarak kontrol "
+"etmelisiniz.</qt>"
+
+#: listkeys.cpp:1877
+msgid ""
+"<qt>You are about to sign the following keys in one pass."
+"<br><b>If you have not carefully checked all fingerprints, the security of your "
+"communications may be compromised.</b></qt>"
+msgstr ""
+"<qt>Aşağıdaki anahtarları bir kerede imzalamak üzeresiniz."
+"<br><b>Eğer dikkatli bir şekilde tüm parmak izlerini kontrol etmediyseniz, "
+"iletişiminizin güvenliği tehlikeye atılmış olabilir.</b></qt>"
+
+#: listkeys.cpp:1887
+#, c-format
+msgid ""
+"_n: How carefully have you checked that the key really belongs to the person "
+"with whom you wish to communicate:\n"
+"How carefully have you checked that the %n keys really belong to the people "
+"with whom you wish to communicate:"
+msgstr ""
+"%n anahtarın iletişim kurmak istediğiniz kişilere ait olduğunu ne kadar "
+"dikkatli kontrol ettiniz:"
+
+#: listkeys.cpp:1891
+msgid "I Will Not Answer"
+msgstr "Cevap Vermeyeceğim"
+
+#: listkeys.cpp:1892
+msgid "I Have Not Checked at All"
+msgstr "Hiç Kontrol Etmedim"
+
+#: listkeys.cpp:1893
+msgid "I Have Done Casual Checking"
+msgstr "Rastgele Kontrol Ettim"
+
+#: listkeys.cpp:1894
+msgid "I Have Done Very Careful Checking"
+msgstr "Çok Dikkatli Kontrol Ettim"
+
+#: listkeys.cpp:1897
+msgid "Local signature (cannot be exported)"
+msgstr "Yerel imza (dışarıya aktarılamaz)"
+
+#: listkeys.cpp:1900
+msgid "Do not sign all user id's (open terminal)"
+msgstr "Tüm kullanıcı numaralarını imzalama (terminal ekranı aç)"
+
+#: listkeys.cpp:1961
+msgid "<qt>Bad passphrase, key <b>%1</b> not signed.</qt>"
+msgstr "<qt>Yanlış parola, <b>%1</b> anahtarı imzalanmadı..</qt>"
+
+#: listkeys.cpp:1961
+msgid " ("
+msgstr " ("
+
+#: listkeys.cpp:1961
+msgid ")"
+msgstr ")"
+
+#: listkeys.cpp:1986
+msgid "All signatures for this key are already in your keyring"
+msgstr "Bu anahtar için bütün imzalar zaten anahtar zincirinizde bulunuyor"
+
+#: listkeys.cpp:2051
+msgid "Edit key manually to delete this signature."
+msgstr "Bu imzayı silmek için anahtarı elle düzenleyin."
+
+#: listkeys.cpp:2064
+msgid "Edit key manually to delete a self-signature."
+msgstr "Kendi imzanızı silmek için anahtarı elle düzenleyin."
+
+#: listkeys.cpp:2067
+msgid ""
+"<qt>Are you sure you want to delete signature"
+"<br><b>%1</b> from key:"
+"<br><b>%2</b>?</qt>"
+msgstr ""
+"<qt><b>%2</b> anahtarından "
+"<br> <b>%1</b> imzasını silmek istediğinize emin misiniz?</qt>"
+
+#: listkeys.cpp:2086
+msgid "Requested operation was unsuccessful, please edit the key manually."
+msgstr "İstenilen işlem başarısız oldu, lütfen anahtarı elle düzenleyin."
+
+#: listkeys.cpp:2137
+msgid ""
+"<b>Enter passphrase for %1</b>:"
+"<br>Passphrase should include non alphanumeric characters and random sequences"
+msgstr ""
+"<b>%1 için parolayı girin</b>: "
+"<br>Parola içinde alfanümerik olmayan karakterler ve bulunmasını güçleştirecek "
+"dizgiler yer almalıdır"
+
+#: listkeys.cpp:2141
+msgid ""
+"This passphrase is not secure enough.\n"
+"Minimum length= 5 characters"
+msgstr ""
+"Bu parola yeteri kadar güvenli değil.\n"
+"Uzunluk en az= 5 karakter olmalıdır"
+
+#: listkeys.cpp:2152
+msgid "Generating new key pair."
+msgstr "Yeni anahtar çifti oluşturuluyor."
+
+#: listkeys.cpp:2162
+msgid ""
+"\n"
+"Please wait..."
+msgstr ""
+"\n"
+"Lütfen bekleyiniz..."
+
+#: listkeys.cpp:2170
+msgid "Generating New Key..."
+msgstr "Yeni Anahtar Oluşturuluyor..."
+
+#: listkeys.cpp:2275 listkeys.cpp:2738 listkeys.cpp:2772 listkeys.cpp:2859
+#: listkeys.cpp:2886 listkeys.cpp:2921
+msgid "Ready"
+msgstr "Hazır"
+
+#: listkeys.cpp:2279
+msgid ""
+"Something unexpected happened during the key pair creation.\n"
+"Please check details for full log output."
+msgstr ""
+"Anahtar çifti oluşturulması sırasında beklenmeyen bir durumla karşılaşıldı.\n"
+"Lütfen ayrıntılar için tüm günlük çıktısını inceleyin."
+
+#. i18n: file newkey.ui line 16
+#: listkeys.cpp:2285 rc.cpp:562
+#, no-c-format
+msgid "New Key Pair Created"
+msgstr "Yeni Anahtar Çifti Oluşturuldu"
+
+#: listkeys.cpp:2313 listkeys.cpp:2317
+msgid "backup copy"
+msgstr "yedek kopya"
+
+#: listkeys.cpp:2329
+msgid "<qt>Cannot open file <b>%1</b> for printing...</qt>"
+msgstr "<qt><b>%1</b> dosyası baskı için açılamıyor...</qt>"
+
+#: listkeys.cpp:2348
+msgid ""
+"<p>Delete <b>SECRET KEY</b> pair <b>%1</b>?</p>Deleting this key pair means you "
+"will never be able to decrypt files encrypted with this key again."
+msgstr ""
+"<p><b>GİZLİ ANAHTAR</b> çifti <b>%1</b> silinsin mi?</p> "
+"Bu anahtar çiftini silmek, bu anahtar ile şifrelenmiş dosyaları bir daha "
+"açamayacağınız anlamına gelir."
+
+#: listkeys.cpp:2409
+msgid ""
+"<qt>The following are secret key pairs:"
+"<br><b>%1</b>They will not be deleted."
+"<br></qt>"
+msgstr ""
+"<qt>Aşağıdakiler gizli anahtar çiftleridir: "
+"<br><b>%1</b> Bu çiftler silinmeyeceklerdir."
+"<br></qt>"
+
+#: listkeys.cpp:2415
+#, c-format
+msgid ""
+"_n: <qt><b>Delete the following public key?</b></qt>\n"
+"<qt><b>Delete the following %n public keys?</b></qt>"
+msgstr "<qt><b>Aşağıdaki %n tane açık anahtar silinsin mi?</b></qt>"
+
+#: listkeys.cpp:2470
+msgid "Key Import"
+msgstr "Anahtar Al"
+
+#: listkeys.cpp:2474
+msgid "Open File"
+msgstr "Dosyayı Aç"
+
+#: listkeys.cpp:2483 listkeys.cpp:2493
+msgid "Importing..."
+msgstr "Alınıyor..."
+
+#: listkeys.cpp:2614 listkeys.cpp:2616 listkeys.cpp:2619
+msgid " [Revocation signature]"
+msgstr "[Feshetme imzası]"
+
+#: listkeys.cpp:2628
+msgid " [local]"
+msgstr " [yerel]"
+
+#: listkeys.cpp:2641
+msgid "%1 subkey"
+msgstr "%1 altanahtarı"
+
+#: listkeys.cpp:2660
+msgid "Loading Keys..."
+msgstr "Anahtarlar Yükleniyor..."
+
+#: keyinfowidget.cpp:162 listkeys.cpp:2709 listkeys.cpp:2792 listkeys.cpp:2826
+#: listkeys.cpp:2955 listkeys.cpp:3113
+msgid "Expired"
+msgstr "Son kullanma tarihi geçmiş"
+
+#: listkeys.cpp:3079
+msgid "RSA"
+msgstr "RSA"
+
+#: listkeys.cpp:3083
+msgid "ElGamal"
+msgstr "ElGamal"
+
+#: listkeys.cpp:3086
+msgid "DSA"
+msgstr "DSA"
+
+#: keyinfowidget.cpp:145 listkeys.cpp:3097
+msgid "Unknown"
+msgstr "Bilinmeyen"
+
+#: keyinfowidget.cpp:149 listkeys.cpp:3101
+msgid "Invalid"
+msgstr "Geçersiz"
+
+#: keyinfowidget.cpp:153 keyinfowidget.cpp:193 listkeys.cpp:3105
+#: listkeys.cpp:3142
+msgid "Disabled"
+msgstr "Etkin değil"
+
+#: keyinfowidget.cpp:166 listkeys.cpp:3117
+msgid "Undefined"
+msgstr "Tanımsız"
+
+#: keyinfowidget.cpp:170 listkeys.cpp:3121
+msgid "None"
+msgstr "Hiçbiri"
+
+#: keyinfowidget.cpp:174 listkeys.cpp:3125
+msgid "Marginal"
+msgstr "Kısmen"
+
+#: keyinfowidget.cpp:178 listkeys.cpp:3129
+msgid "Full"
+msgstr "Tam"
+
+#: keyinfowidget.cpp:182 listkeys.cpp:3133
+msgid "Ultimate"
+msgstr "Sonsuz"
+
+#: listkeys.cpp:3137
+msgid "?"
+msgstr "?"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Serkan Arıkuşu, Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "arikusu@bahcesehir.edu.tr, gorkem@kde.org"
+
+#: main.cpp:30
+msgid ""
+"Kgpg - simple gui for gpg\n"
+"\n"
+"Kgpg was designed to make gpg very easy to use.\n"
+"I tried to make it as secure as possible.\n"
+"Hope you enjoy it."
+msgstr ""
+"Kgpg - gpg için sade bir arayüz\n"
+"\n"
+"Kpgp gpg kullanımını kolaylaştırmak için tasarlanmıştır.\n"
+"Olabileceği kadar güvenli olmasına çalıştım.\n"
+"Umarım hoşunuza gider."
+
+#: main.cpp:36
+msgid "Encrypt file"
+msgstr "Dosyayı şifrele"
+
+#: main.cpp:37
+msgid "Open key manager"
+msgstr "Anahtar Yöneticisini Aç"
+
+#: main.cpp:38
+msgid "Show encrypted file"
+msgstr "Şifrelenmiş dosyayı göster"
+
+#: main.cpp:39
+msgid "Sign file"
+msgstr "Dosyayı imzala"
+
+#: main.cpp:40
+msgid "Verify signature"
+msgstr "İmzayı doğrula"
+
+#: main.cpp:41
+msgid "Shred file"
+msgstr "Dosyayı öğüt"
+
+#: main.cpp:42
+msgid "File to open"
+msgstr "Açılacak dosya"
+
+#: main.cpp:50
+msgid "KGpg"
+msgstr "KGpg"
+
+#: kgpgview.cpp:97
+msgid ""
+"<qt><b>Remote file dropped</b>."
+"<br>The remote file will now be copied to a temporary file to process requested "
+"operation. This temporary file will be deleted after operation.</qt>"
+msgstr ""
+"<qt><b>Uzak sistemdeki bir dosya bırakıldı</b>."
+"<br>İstenilen işlemi gerçekleştirmek için, dosya önce geçici bir dosyaya "
+"kopyalanacaktır. İşlemden sonra bu geçici dosya silinecektir.</qt>"
+
+#: kgpgview.cpp:100
+msgid "Could not download file."
+msgstr "Dosya indirilemedi."
+
+#: kgpglibrary.cpp:225 kgpgview.cpp:130
+msgid ""
+"<p>The file <b>%1</b> is a public key."
+"<br>Do you want to import it ?</p>"
+msgstr ""
+"<p><b>%1</b> dosyası açık bir anahtardır. "
+"<br> Almak ister misiniz?</p>"
+
+#: kgpgview.cpp:143
+msgid ""
+"This file is a private key.\n"
+"Please use kgpg key management to import it."
+msgstr ""
+"Bu gizli bir anahtar!\n"
+"Lütfen almak için kgpg Anahtar Yöneticisi'ni kullanın."
+
+#: kgpglibrary.cpp:240 kgpgview.cpp:165 kgpgview.cpp:361
+msgid "Decryption failed."
+msgstr "Şifre açılması işleminde hata."
+
+#: kgpgview.cpp:179
+msgid "Unable to read file."
+msgstr "Dosya okunamadı."
+
+#: kgpgview.cpp:211
+msgid "S&ign/Verify"
+msgstr "İ&mzala/Doğrula"
+
+#: kgpgview.cpp:212
+msgid "En&crypt"
+msgstr "Ş&ifrele"
+
+#: kgpgview.cpp:213
+msgid "&Decrypt"
+msgstr "Ş&ifreyi aç"
+
+#: kgpgview.cpp:231
+msgid "untitled"
+msgstr "isimsiz"
+
+#: kgpginterface.cpp:829 kgpgview.cpp:241
+msgid ""
+"<qt><b>Missing signature:</b>"
+"<br>Key id: %1"
+"<br>"
+"<br>Do you want to import this key from a keyserver?</qt>"
+msgstr ""
+"<qt><b>Bulunamayan imza</b> "
+"<br> Anahtar No: %1"
+"<br>"
+"<br>Bu anahtarı bir anahtar sunucusundan almak ister misiniz?</qt>"
+
+#: kgpgview.cpp:242
+msgid "Missing Key"
+msgstr "Eksik Anahtar"
+
+#: kgpgview.cpp:295
+msgid "Signing not possible: bad passphrase or missing key"
+msgstr "İmzalamada hata oluştu: hatalı parola, ya da eksik anahtar"
+
+#: kgpgview.cpp:388
+msgid "Encryption failed."
+msgstr "Şifreleme hatası."
+
+#: popuppublic.cpp:91
+msgid "Select Public Key"
+msgstr "Açık anahtarı seç"
+
+#: popuppublic.cpp:109
+#, c-format
+msgid "Select Public Key for %1"
+msgstr "%1 için Açık Anahtarı Seç"
+
+#. i18n: file conf_encryption.ui line 52
+#: popuppublic.cpp:152 rc.cpp:54
+#, no-c-format
+msgid "ASCII armored encryption"
+msgstr "ASCII zırhlı şifreleme"
+
+#. i18n: file conf_encryption.ui line 88
+#: popuppublic.cpp:153 rc.cpp:75
+#, no-c-format
+msgid "Allow encryption with untrusted keys"
+msgstr "Güvenilmeyen anahtarlar ile şifrelemeye izin ver"
+
+#. i18n: file conf_encryption.ui line 64
+#: popuppublic.cpp:154 rc.cpp:61
+#, no-c-format
+msgid "Hide user id"
+msgstr "Kullanıcı kimliğini gizle"
+
+#: popuppublic.cpp:157
+msgid ""
+"<b>Public keys list</b>: select the key that will be used for encryption."
+msgstr ""
+"<b>Açık anahtar listesi</b>: Şifreleme için kullanılacak anahtarı seçin."
+
+#: popuppublic.cpp:159
+msgid ""
+"<b>ASCII encryption</b>: makes it possible to open the encrypted file/message "
+"in a text editor"
+msgstr ""
+"<b>ASCII şifrelemesi</b>: Şifrelenmiş dosya veya mesajın, bir metin "
+"düzenleyicisinde açılabilmesini sağlar"
+
+#: popuppublic.cpp:161
+msgid ""
+"<b>Hide user ID</b>: Do not put the keyid into encrypted packets. This option "
+"hides the receiver of the message and is a countermeasure against traffic "
+"analysis. It may slow down the decryption process because all available secret "
+"keys are tried."
+msgstr ""
+"<b>Kullanıcı kimliğini gizle</b>: Şifrelenmiş paketlerin içine anahtar "
+"numarasını koyma. Bu seçenek iletinin alıcısını gizler ve trafik analizine "
+"karşı bir önlemdir. Şifre açma işlemini yavaşlatabilir, çünkü uygun bütün gizli "
+"anahtarlar denenir."
+
+#: popuppublic.cpp:165
+msgid ""
+"<b>Allow encryption with untrusted keys</b>: when you import a public key, it "
+"is usually marked as untrusted and you cannot use it unless you sign it in "
+"order to make it 'trusted'. Checking this box enables you to use any key, even "
+"if it has not be signed."
+msgstr ""
+"<b>Güvenilir olmayan anahtarlar ile şifrelemeye izin ver</b>"
+": Bir açık anahtar alındığında, genellikle güvenilmeyen olarak işaretlenir ve "
+"imzalamadığınız sürece bu anahtarı kullanamazsınız. Bu seçeneği işaretlerseniz, "
+"imzası olmasa bile bütün anahtarları kullanabilirsiniz."
+
+#. i18n: file conf_encryption.ui line 76
+#: popuppublic.cpp:174 rc.cpp:68
+#, no-c-format
+msgid "Shred source file"
+msgstr "Kaynak dosyayı öğüt"
+
+#: popuppublic.cpp:176
+msgid ""
+"<b>Shred source file</b>: permanently remove source file. No recovery will be "
+"possible"
+msgstr ""
+"<b>Kaynak dosyayı öğüt</b>: kaynak dosyayı sürekli olarak kaldır. Kurtarma "
+"imkanı olmayacaktır"
+
+#: popuppublic.cpp:178
+msgid ""
+"<qt><b>Shred source file:</b><br />"
+"<p>Checking this option will shred (overwrite several times before erasing) the "
+"files you have encrypted. This way, it is almost impossible that the source "
+"file is recovered.</p>"
+"<p><b>But you must be aware that this is not secure</b> "
+"on all file systems, and that parts of the file may have been saved in a "
+"temporary file or in the spooler of your printer if you previously opened it in "
+"an editor or tried to print it. Only works on files (not on folders).</p></qt>"
+msgstr ""
+"<qt><b>Kaynak dosya'yı Öğüt:</b><br />"
+"<p>Bu seçeneği işaretleyerek, şifrelenmiş dosyaların öğütülmesi ( silme "
+"işleminden önce dosyanın üzerinde defalarca yazılması) sağlanacaktır. Bu yolla, "
+"kaynak dosyanın onarılarak içeriğine erişilmesi neredeyse olanaksız hale "
+"gelecektir.</p>"
+"<p><b>Öğütme'nin tüm dosya sistemlerinde güvenli olmadığı</b> "
+"nı unutmayın!Dosya'ya ait veri parçacıkları, geçici dosyalarda;veya "
+"düzenleyicide daha önceden açılarak yazdırılmak istenmiş dosyalar, yazdırma "
+"kuyruğunda kaydedilmiş olabilir. ( Klasörler değil,Sadece dosyalar içindir.)</p>"
+"</qt>"
+
+#: popuppublic.cpp:179
+msgid "<a href=\"whatsthis:%1\">Read this before using shredding</a>"
+msgstr ""
+"<a href=\"whatsthis:%1\">Dosya öğütmeyi kullanmadan önce bunu okuyun</a>"
+
+#: popuppublic.cpp:184
+msgid "Symmetrical encryption"
+msgstr "Simetrik Şifreleme"
+
+#: popuppublic.cpp:186
+msgid ""
+"<b>Symmetrical encryption</b>: encryption does not use keys. You just need to "
+"give a password to encrypt/decrypt the file"
+msgstr ""
+"<b>Simetrik Şifreleme</b>: Şifrelemede anahtarlar kullanılmaz. Dosyayı "
+"şifrelemek veya şifreyi açmak için sadece bir şifre kullanırsınız"
+
+#: popuppublic.cpp:198
+msgid "Custom option:"
+msgstr "Özel seçenek:"
+
+#: popuppublic.cpp:202
+msgid ""
+"<b>Custom option</b>: for experienced users only, allows you to enter a gpg "
+"command line option, like: '--armor'"
+msgstr ""
+"<b>Özel seçenek</b>: sadece deneyimli kullanıcılar içindir, gpg için bir satır "
+"komutu (--armor gibi) girmenizi sağlar"
+
+#: kgpgoptions.cpp:69 kgpgoptions.cpp:76 kgpgoptions.cpp:428
+#: kgpgoptions.cpp:584 kgpgoptions.cpp:590
+msgid "(Default)"
+msgstr "(öntanımlı)"
+
+#. i18n: file conf_encryption.ui line 17
+#: kgpgoptions.cpp:101 rc.cpp:41
+#, no-c-format
+msgid "Encryption"
+msgstr "Şifreleme"
+
+#: kgpgoptions.cpp:102
+msgid "Decryption"
+msgstr "Şifre açma"
+
+#: kgpgoptions.cpp:104
+msgid "GnuPG Settings"
+msgstr "GnuPG Ayarları"
+
+#: kgpgoptions.cpp:105
+msgid "Key Servers"
+msgstr "Anahtar Sunucuları"
+
+#: kgpgoptions.cpp:106
+msgid "Misc"
+msgstr "Çeşitli"
+
+#: kgpgoptions.cpp:188
+msgid "New GnuPG Home Location"
+msgstr "Yeni GnuPG Başlangıç Konumu"
+
+#: kgpgoptions.cpp:196
+msgid ""
+"No configuration file was found in the selected location.\n"
+"Do you want to create it now ?\n"
+"\n"
+"Without configuration file, neither KGpg nor Gnupg will work properly."
+msgstr ""
+"Seçilen yerleşimde herhangi bir yapılandırma dosyası bulunamadı.\n"
+"Şimdi bir tane oluşturulmasını ister misiniz ?\n"
+"\n"
+"Yapılandırma dosyası olmaksızın, ne KGpg ne de Gnupg düzgün olarak "
+"çalışamayacaktır."
+
+#: kgpgoptions.cpp:196
+msgid "No Configuration File Found"
+msgstr "Yapılandırma Dosyası Bulunamadı"
+
+#: kgpgoptions.cpp:196
+msgid "Create"
+msgstr "Oluştur"
+
+#: kgpgoptions.cpp:196
+msgid "Ignore"
+msgstr "Yoksay"
+
+#: kgpgoptions.cpp:204
+msgid ""
+"Cannot create configuration file. Please check if destination media is mounted "
+"and if you have write access"
+msgstr ""
+"Yapılandırma dosyası oluşturulamıyor. Hedef ortamın bağlandığından ve yazma "
+"izniniz olduğundan emin olun"
+
+#: kgpgoptions.cpp:456
+msgid "Sign File"
+msgstr "Dosyayı İmzala"
+
+#: kgpgoptions.cpp:473
+msgid "Decrypt File"
+msgstr "Dosyanın Şifresini Aç"
+
+#: kgpgoptions.cpp:572
+msgid "Add New Key Server"
+msgstr "Yeni Anahtar Sunucu Ekle"
+
+#: kgpgoptions.cpp:572
+msgid "Server URL:"
+msgstr "Sunucu Adresi:"
+
+#: kgpglibrary.cpp:82
+msgid "You have not chosen an encryption key."
+msgstr "Hiç şifreleme anahtarı seçmediniz."
+
+#: kgpglibrary.cpp:107
+msgid ""
+"<b>%1 Files left.</b>\n"
+"Encrypting </b>%2"
+msgstr ""
+"<b>%1 Dosya kaldı.</b>\n"
+"</b>%2 Şifreleniyor"
+
+#: kgpglibrary.cpp:108
+#, c-format
+msgid "<b>Encrypting </b>%2"
+msgstr "%2 <b>Şifreleniyor</b>"
+
+#: kgpglibrary.cpp:125
+msgid "Processing encryption (%1)"
+msgstr "Şifreleme gerçekleştiriliyor (%1)"
+
+#: kgpglibrary.cpp:143
+#, c-format
+msgid ""
+"_n: Shredding %n file\n"
+"Shredding %n files"
+msgstr "%n dosya öğütülüyor"
+
+#: kgpglibrary.cpp:157
+msgid "KGpg Error"
+msgstr "KGpg Hatası"
+
+#: kgpglibrary.cpp:157
+msgid "Process halted, not all files were shredded."
+msgstr "İşlem durduruldu, tüm dosyalar öğütülmedi."
+
+#: kgpglibrary.cpp:175
+msgid "<b>Process halted</b>.<br>Not all files were encrypted."
+msgstr "<b>İşlem durduruldu</b>.<br>Tüm dosyalar şifrelenmedi."
+
+#: kgpglibrary.cpp:195
+#, c-format
+msgid "Decrypting %1"
+msgstr "%1 Şifresi Açılıyor"
+
+#: kgpglibrary.cpp:197
+msgid "Processing decryption"
+msgstr "Şifre açma gerçekleştiriliyor"
+
+#: kgpglibrary.cpp:236
+msgid ""
+"<p>The file <b>%1</b> is a private key block. Please use KGpg key manager to "
+"import it.</p>"
+msgstr ""
+"<p><b>%1</b> dosyası gizli anahtar bloğu içeriyor. Almak için, lütfen KGpg "
+"Anahtar Yöneticisini kullanın </p>"
+
+#: kgpginterface.cpp:87
+msgid " or "
+msgstr " ya da "
+
+#: kgpginterface.cpp:144
+msgid "Enter passphrase for your file (symmetrical encryption):"
+msgstr "Dosya için parolayı girin (simetrik şifreleme):"
+
+#: kgpginterface.cpp:215 kgpginterface.cpp:392 kgpginterface.cpp:500
+#: kgpginterface.cpp:739 kgpginterface.cpp:1273
+msgid "[No user id found]"
+msgstr "[Kullanıcı No bulunamadı]"
+
+#: kgpginterface.cpp:220 kgpginterface.cpp:396
+msgid "<b>No user id found</b>. Trying all secret keys.<br>"
+msgstr "<b>Kullanıcı no. bulunamadı</b>. Tüm gizli anahtarlar deneniyor.<br>"
+
+#: kgpginterface.cpp:222 kgpginterface.cpp:398 kgpginterface.cpp:504
+msgid "<b>Bad passphrase</b>. You have %1 tries left.<br>"
+msgstr "<b>Yanlış parola</b>. %1 hakkınız kaldı <br>"
+
+#: kgpginterface.cpp:224 kgpginterface.cpp:399 kgpginterface.cpp:505
+#: kgpginterface.cpp:744
+msgid "Enter passphrase for <b>%1</b>"
+msgstr "<b>%1</b> için parolayı girin"
+
+#: kgpginterface.cpp:302
+msgid "Enter passphrase (symmetrical encryption)"
+msgstr "Parolayı girin (simetrik şifreleme)"
+
+#: kgpginterface.cpp:353
+msgid "Bad MDC detected. The encrypted text has been manipulated."
+msgstr "Yanlış MDC saptandı. Şifrelenmiş metin ile oynanmış."
+
+#: kgpginterface.cpp:574 kgpginterface.cpp:603 kgpginterface.cpp:799
+#: kgpginterface.cpp:825
+msgid "No signature found."
+msgstr "İmza bulunamadı."
+
+#: kgpginterface.cpp:591 kgpginterface.cpp:802
+msgid "<qt>Good signature from:<br><b>%1</b><br>Key ID: %2</qt>"
+msgstr "<qt><b>%1</b> İmzası doğru <br>Anahtar No: %2</qt>"
+
+#: kgpginterface.cpp:595
+msgid ""
+"<qt><b>Bad signature</b> from:"
+"<br>%1"
+"<br>Key ID: %2"
+"<br>"
+"<br><b>Text is corrupted.</b></qt>"
+msgstr ""
+"<qt>%1İmzası GEÇERSİZ"
+"<br>Anahtar No: %2"
+"<br>"
+"<br><b>Metin hasar görmüş!</b></qt>"
+
+#: kgpginterface.cpp:605 kgpginterface.cpp:815
+msgid "The signature is valid, but the key is untrusted"
+msgstr "İmza geçerli, fakat anahtara güvenilmiyor"
+
+#: kgpginterface.cpp:607 kgpginterface.cpp:817
+msgid "The signature is valid, and the key is ultimately trusted"
+msgstr "İmza geçerli, ve anahtar güvenilir"
+
+#: kgpginterface.cpp:614
+msgid "MD5 Checksum"
+msgstr "MD5 Sağlama Toplamı"
+
+#: kgpginterface.cpp:616
+msgid "Compare MD5 with Clipboard"
+msgstr "MD5 ile panoyu karşılaştır"
+
+#: kgpginterface.cpp:631
+msgid "MD5 sum for <b>%1</b> is:"
+msgstr "<b>%1</b> için MD5 toplamı:"
+
+#: kgpginterface.cpp:648
+msgid "<b>Unknown status</b>"
+msgstr "<b>Bilinmeyen durum</b>"
+
+#: kgpginterface.cpp:676
+msgid "<b>Correct checksum</b>, file is ok."
+msgstr "<b>Sağlama toplamı doğru</b>, dosya geçerli."
+
+#: kgpginterface.cpp:681
+msgid "Clipboard content is not a MD5 sum."
+msgstr "Pano içeriği geçerli bir MD5 toplamı değil."
+
+#: kgpginterface.cpp:683
+msgid "<b>Wrong checksum, FILE CORRUPTED</b>"
+msgstr "<b>Yanlış sağlama toplamı, DOSYA HASAR GÖRMÜŞ</b>"
+
+#: kgpginterface.cpp:718
+msgid "The signature file %1 was successfully created."
+msgstr "%1 imza dosyası başarılı bir şekilde oluşturuldu."
+
+#: kgpginterface.cpp:720
+msgid "Bad passphrase, signature was not created."
+msgstr "Yanlış parola, imza oluşturulmadı."
+
+#: kgpginterface.cpp:743
+msgid "<b>Bad passphrase</b>. you have %1 tries left.<br>"
+msgstr "<b>Yanlış parola</b>. %1 hakkınız kaldı.<br>"
+
+#: kgpginterface.cpp:806
+msgid ""
+"<qt><b>BAD signature</b> from:"
+"<br> %1"
+"<br>Key id: %2"
+"<br>"
+"<br><b>The file is corrupted!</b></qt>"
+msgstr ""
+"<qt> %1 imzası GEÇERSİZ"
+"<br>Anahtar No: %2"
+"<br>"
+"<br><b>Dosya hasar görmüş!</b></qt>"
+
+#: kgpginterface.cpp:910
+msgid "<qt>%1 Enter passphrase for <b>%2</b>:</qt>"
+msgstr "<qt><b>%1</b>, <b>%2</b>için parolayı girin:</qt>"
+
+#: kgpginterface.cpp:928
+msgid "<b>Bad passphrase</b>. Try again.</br>"
+msgstr "<b>Yanlış parola</b>. Yeniden deneyin.</br>"
+
+#: kgpginterface.cpp:949
+msgid ""
+"<qt>Signing key <b>%1</b> with key <b>%2</b> failed."
+"<br>Do you want to try signing the key in console mode?</qt>"
+msgstr ""
+"<qt><b>%2</b> anahtarı ile <b>%1</b> anahtarının imzalanması başarısız oldu. "
+"<br>Anahtar imzalamayı konsol modunda denemek ister misiniz?</qt>"
+
+#: kgpginterface.cpp:981
+msgid ""
+"This key has more than one user ID.\n"
+"Edit the key manually to delete signature."
+msgstr ""
+"Bu anahtarın birden fazla kullanıcı no'su bulunuyor\n"
+"İmzayı silmek için anahtarı elle düzenleyin."
+
+#: kgpginterface.cpp:1115 kgpginterface.cpp:1519 kgpginterface.cpp:1642
+#: kgpginterface.cpp:1717 kgpginterface.cpp:1803
+msgid "<qt>Enter passphrase for <b>%1</b>:</qt>"
+msgstr "<qt><b>%1</b> için parolayı girin:</qt>"
+
+#: kgpginterface.cpp:1158
+msgid ""
+"<qt><b>Changing expiration failed.</b>"
+"<br>Do you want to try changing the key expiration in console mode?</qt>"
+msgstr ""
+"<qt><b>Son kullanma tarihini değiştirme başarısız oldu.</b> "
+"<br>Son kullanma tarihini konsol modunda değiştirmeyi denemeyi ister "
+"misiniz?</qt>"
+
+#: kgpginterface.cpp:1268
+msgid "<b>Bad passphrase</b>. Try again<br>"
+msgstr "<b>Yanlış parola</b>. Yeniden deneyin<br>"
+
+#: kgpginterface.cpp:1278
+msgid "<qt>%1 Enter passphrase for <b>%2</b></qt>"
+msgstr "<qt>%1 <b>%2</b> için parolayı girin"
+
+#: kgpginterface.cpp:1293
+msgid ""
+"<qt>Enter new passphrase for <b>%1</b>"
+"<br>If you forget this passphrase, all your encrypted files and messages will "
+"be lost !"
+"<br></qt>"
+msgstr ""
+"<qt><b>%1</b> için yeni parolayı girin "
+"<br>Bu parolayı unutursanız, şifrelediğiniz tüm dosya ve mesajlar "
+"kaybedilecektir!"
+"<br></qt>"
+
+#: keyservers.cpp:496 kgpginterface.cpp:1408
+#, fuzzy, c-format
+msgid ""
+"_n: <qt>%n key processed."
+"<br></qt>\n"
+"<qt>%n keys processed."
+"<br></qt>"
+msgstr ""
+"<qt>%n anahtar işlendi."
+"<br></qt>\n"
+"<qt>%n anahtar işlendi."
+"<br></qt>"
+
+#: keyservers.cpp:498 kgpginterface.cpp:1410
+#, fuzzy, c-format
+msgid ""
+"_n: <qt>One key unchanged."
+"<br></qt>\n"
+"<qt>%n keys unchanged."
+"<br></qt>"
+msgstr ""
+"<qt>Bir anahtar değiştirilmedi."
+"<br></qt>\n"
+"<qt>%n anahtar değiştirilmedi."
+"<br></qt>"
+
+#: keyservers.cpp:500 kgpginterface.cpp:1412
+#, fuzzy, c-format
+msgid ""
+"_n: <qt>One signature imported."
+"<br></qt>\n"
+"<qt>%n signatures imported."
+"<br></qt>"
+msgstr ""
+"<qt>Bir imza alındı."
+"<br></qt>\n"
+"<qt>%n imza alındı."
+"<br></qt>"
+
+#: keyservers.cpp:502 kgpginterface.cpp:1414
+#, fuzzy, c-format
+msgid ""
+"_n: <qt>One key without ID."
+"<br></qt>\n"
+"<qt>%n keys without ID."
+"<br></qt>"
+msgstr ""
+"<qt>Bir anahtarın kimliği yok."
+"<br></qt>\n"
+"<qt>%n anahtarın kimliği yok."
+"<br></qt>"
+
+#: keyservers.cpp:504 kgpginterface.cpp:1416
+#, fuzzy, c-format
+msgid ""
+"_n: <qt>One RSA key imported."
+"<br></qt>\n"
+"<qt>%n RSA keys imported."
+"<br></qt>"
+msgstr ""
+"<qt>Bir RSA anahtarı alındı."
+"<br></qt>\n"
+"<qt>%n RSA anahtarı alındı."
+"<br></qt>"
+
+#: keyservers.cpp:506 kgpginterface.cpp:1418
+#, fuzzy, c-format
+msgid ""
+"_n: <qt>One user ID imported."
+"<br></qt>\n"
+"<qt>%n user IDs imported."
+"<br></qt>"
+msgstr ""
+"<qt>Bir kullanıcı kimliği alındı."
+"<br></qt>\n"
+"<qt>%n kullanıcı kimliği alındı."
+"<br></qt>"
+
+#: keyservers.cpp:508 kgpginterface.cpp:1420
+#, fuzzy, c-format
+msgid ""
+"_n: <qt>One subkey imported."
+"<br></qt>\n"
+"<qt>%n subkeys imported."
+"<br></qt>"
+msgstr ""
+"<qt>Bir alt anahtar alındı."
+"<br></qt>\n"
+"<qt>%n alt anahtar alındı."
+"<br></qt>"
+
+#: keyservers.cpp:510 kgpginterface.cpp:1422
+#, fuzzy, c-format
+msgid ""
+"_n: <qt>One revocation certificate imported."
+"<br></qt>\n"
+"<qt>%n revocation certificates imported."
+"<br></qt>"
+msgstr ""
+"<qt>Bir feshetme belgesi alındı."
+"<br></qt>\n"
+"<qt>%n feshetme belgesi alındı."
+"<br></qt>"
+
+#: keyservers.cpp:512 kgpginterface.cpp:1425
+#, fuzzy, c-format
+msgid ""
+"_n: <qt>One secret key processed."
+"<br></qt>\n"
+"<qt>%n secret keys processed."
+"<br></qt>"
+msgstr ""
+"<qt>Bir gizli anahtar işlendi."
+"<br></qt>\n"
+"<qt>%n gizli anahtar işlendi."
+"<br></qt>"
+
+#: keyservers.cpp:514 kgpginterface.cpp:1429
+#, fuzzy, c-format
+msgid ""
+"_n: <qt><b>One secret key imported.</b>"
+"<br></qt>\n"
+"<qt><b>%n secret keys imported.</b>"
+"<br></qt>"
+msgstr ""
+"<qt><b>Bir gizli anahtar alındı.</b>"
+"<br></qt>\n"
+"<qt><b>%n gizli anahtar alındı.</b>"
+"<br></qt>"
+
+#: keyservers.cpp:516 kgpginterface.cpp:1431
+#, fuzzy, c-format
+msgid ""
+"_n: <qt>One secret key unchanged."
+"<br></qt>\n"
+"<qt>%n secret keys unchanged."
+"<br></qt>"
+msgstr ""
+"<qt>Bir gizli anahtar değiştirilmedi."
+"<br></qt>\n"
+"<qt>%n gizli anahtar değiştirilmedi."
+"<br></qt>"
+
+#: keyservers.cpp:518 kgpginterface.cpp:1433
+#, fuzzy, c-format
+msgid ""
+"_n: <qt>One secret key not imported."
+"<br></qt>\n"
+"<qt>%n secret keys not imported."
+"<br></qt>"
+msgstr ""
+"<qt>Bir gizli anahtar alınmadı."
+"<br></qt>\n"
+"<qt>%n gizli anahtar alınmadı."
+"<br></qt>"
+
+#: keyservers.cpp:520 kgpginterface.cpp:1435
+#, fuzzy, c-format
+msgid ""
+"_n: <qt><b>One key imported:</b>"
+"<br></qt>\n"
+"<qt><b>%n keys imported:</b>"
+"<br></qt>"
+msgstr ""
+"<qt><b>Bir anahtar alındı:</b>"
+"<br></qt>\n"
+"<qt><b>%n anahtar alındı:</b>"
+"<br></qt>"
+
+#: kgpginterface.cpp:1437
+msgid ""
+"<qt>"
+"<br><b>You have imported a secret key.</b> "
+"<br>Please note that imported secret keys are not trusted by default."
+"<br>To fully use this secret key for signing and encryption, you must edit the "
+"key (double click on it) and set its trust to Full or Ultimate.</qt>"
+msgstr ""
+"<qt>"
+"<br><b>Bir gizli anahtar aktardınız.</b> "
+"<br>Lütfen aktarılmış gizli anahtarların güvenilir olmadığının varsayıldığını "
+"unutmayın."
+"<br>Bu gizli anahtarı imzalama ve şifreleme için tamamıyla kullanabilmek için "
+"anahtarı düzenlemeniz gerekmektedir. (üzerinde çift tıklayın) ve "
+"güvenilirliğini Tam veya Sonsuz olarak ayarlayın.</qt>"
+
+#: keyservers.cpp:522 kgpginterface.cpp:1441
+msgid ""
+"No key imported... \n"
+"Check detailed log for more infos"
+msgstr ""
+"Hiçbir anahtar alınmadı...\n"
+"Daha fazla bilgi için ayrıntılı günlük dosyalarına bakın"
+
+#: kgpginterface.cpp:1704
+msgid "This image is very large. Use it anyway?"
+msgstr "Bu resim çok büyük. Yine de kullanılsın mı?"
+
+#: kgpginterface.cpp:1704
+msgid "Use Anyway"
+msgstr "Kullan"
+
+#: kgpginterface.cpp:1704
+msgid "Do Not Use"
+msgstr "Kullanma"
+
+#: kgpginterface.cpp:1768
+msgid "Creation of the revocation certificate failed..."
+msgstr "Feshetme belgesi oluşturma işlemi başarısız..."
+
+#. i18n: file kgpg.rc line 16
+#: rc.cpp:6
+#, no-c-format
+msgid "Si&gnature"
+msgstr "&İmza"
+
+#. i18n: file listkeys.rc line 5
+#: rc.cpp:12
+#, no-c-format
+msgid "&Keys"
+msgstr "&Anahtarlar"
+
+#. i18n: file listkeys.rc line 24
+#: rc.cpp:18
+#, no-c-format
+msgid "&Show Details"
+msgstr "A&yrıntıları Göster"
+
+#. i18n: file listkeys.rc line 34
+#: rc.cpp:21
+#, no-c-format
+msgid "&Groups"
+msgstr "&Gruplar"
+
+#. i18n: file adduid.ui line 42
+#: rc.cpp:24
+#, no-c-format
+msgid "Name (minimum 5 characters):"
+msgstr "İsim (en az 5 karakter):"
+
+#. i18n: file adduid.ui line 50
+#: keygener.cpp:50 rc.cpp:27 rc.cpp:386 rc.cpp:585
+#, no-c-format
+msgid "Email:"
+msgstr "E-posta:"
+
+#. i18n: file adduid.ui line 58
+#: keygener.cpp:53 rc.cpp:30
+#, no-c-format
+msgid "Comment (optional):"
+msgstr "Açıklama (seçimlik):"
+
+#. i18n: file conf_decryption.ui line 55
+#: rc.cpp:33
+#, no-c-format
+msgid "Custom decryption command:"
+msgstr "Özel şifre açma komutu:"
+
+#. i18n: file conf_decryption.ui line 60
+#: rc.cpp:36
+#, no-c-format
+msgid ""
+"<qt><b>Custom Decryption Command:</b><br />\n"
+"\t\t"
+"<p>This option allows the user to specify a custom command to be executed by "
+"GPG when decryption occurs. (This is recommended for advanced users only).</p>\n"
+"\t\t</qt>"
+msgstr ""
+"<qt><b>Özel Şifre Açma Komutu:</b><br />\n"
+"\t\t"
+"<p>Bu seçenek kullanıcı şifre açma işlemi sırasında GPG tarafından "
+"çalıştırılacak özel bir komut girmesini sağlar. (Sadece deneyimli kullanıcılara "
+"önerilir).</p>\n"
+"\t\t</qt>"
+
+#. i18n: file conf_encryption.ui line 31
+#: rc.cpp:44
+#, no-c-format
+msgid "PGP 6 compatibility"
+msgstr "PGP 6 uyumluluğu"
+
+#. i18n: file conf_encryption.ui line 34
+#: rc.cpp:47
+#, no-c-format
+msgid "Alt+6"
+msgstr "Alt+6"
+
+#. i18n: file conf_encryption.ui line 38
+#: rc.cpp:50
+#, no-c-format
+msgid ""
+"<qt><b>PGP 6 compatibility:</b><br /> \n"
+"\t\t"
+"<p>Checking this option forces GnuPG to output encrypted packets that are as "
+"compliant with PGP (Pretty Good Privacy) 6 standards as possible thus allowing "
+"GnuPG users to inter operate with PGP 6 users.</p></qt>"
+msgstr ""
+"<qt><b>PGP 6 uyumluluğu:</b><br /> \n"
+"\t\t"
+"<p>Bu seçeneği işaretleme, GNUPG'nin şifrelenmiş paketleri PGP (Pretty Good "
+"Privacy) 6 standartları ile uyumlu kılar ve GnuPG kullanıcılarının PGP 6 "
+"kullanıcıları ile beraber işlemler yapabilmesini sağlar</p></qt>"
+
+#. i18n: file conf_encryption.ui line 56
+#: rc.cpp:57
+#, no-c-format
+msgid ""
+"<qt><b>ASCII armored encryption:</b> <br /> \n"
+"\t\t"
+"<p>Checking this option outputs all encrypted files in a format that can be "
+"opened by a text editor and as such the output is suitable for placing in the "
+"body of an e-mail message.</p></qt>"
+msgstr ""
+"<qt><b>ASCII zırhlı şifreleme:</b> <br /> \n"
+"\t\t"
+"<p> Bu seçeneği işaretlemek, bütün şifrelenmiş dosyaların bir metin editörü "
+"tarafından açılabilmesine imkan verir. Bu sayede şifre çıktısı e-posta "
+"mesajının gövdesine yerleştirilebilecek hale gelir.</p></qt>"
+
+#. i18n: file conf_encryption.ui line 68
+#: rc.cpp:64
+#, no-c-format
+msgid ""
+"<qt><b>Hide user ID:</b><br /> \n"
+"\t\t"
+"<p>Checking this option will remove the keyid of the recipient from all "
+"encrypted packets. The advantage: traffic analysis of the encrypted packets "
+"cannot be performed as easily because the recipient is unknown. The "
+"disadvantage: the receiver of the encrypted packets is forced to try all secret "
+"keys before being able to decrypt the packets. This can be a lengthy process "
+"depending on the number of secret keys the receiver holds.</p></qt>"
+msgstr ""
+"<qt><b>Kullanıcı numarasını gizle:</b><br /> \n"
+"\t\t"
+"<p> Bu seçeneğin seçilmesi, alıcının anahtar numarasını tüm şifrelenmiş "
+"paketlerden çıkartacaktır. Avantajı: Alıcı bilinmediği için şifrelenmiş "
+"paketlerin trafik analizi kolayca yapılamayacaktır.Dezavantajı: Şifrelenmiş "
+"paketleri alan kişi, mesaj şifresini açmak için tüm gizli anahtarları denemek "
+"zorundadır. Alıcının sahip olduğu gizli anahtar sayısına göre bu uzun süren bir "
+"işlem olabilir..</p></qt>"
+
+#. i18n: file conf_encryption.ui line 80
+#: rc.cpp:71
+#, no-c-format
+msgid ""
+"<qt><b>Shred source file:</b><br /> \n"
+"\t\t"
+"<p>Checking this option will shred (overwrite several times before erasing) the "
+"files you have encrypted. This way, it is almost impossible that the source "
+"file is recovered. But <b>you must be aware that this is not 100% secure</b> "
+"on all file systems, and that parts of the file may have been saved in a "
+"temporary file or in the spooler of your printer if you previously opened it in "
+"an editor or tried to print it. Only works on files (not on folders).</p></qt>"
+msgstr ""
+"<qt><b>Kaynak dosya'yı Öğüt:</b><br /> \n"
+"\t\t"
+"<p>Bu seçeneği işaretleyerek, şifrelenmiş dosyaların öğütülmesi ( silme "
+"işleminden önce dosyanın üzerinde defalarca yazılması) sağlanacaktır. Bu yolla, "
+"kaynak dosyanın onarılarak içeriğine erişilmesi neredeyse olanaksız hale "
+"gelecektir. Fakat<b>Öğütme'nin tüm dosya sistemlerinde %100 güvenli olmadığı</b> "
+"nı unutmayın!Dosya'ya ait veri parçacıkları, geçici dosyalarda;veya "
+"düzenleyicide daha önceden açılarak yazdırılmak istenmiş dosyalar, yazdırma "
+"kuyruğunda kaydedilmiş olabilir. ( Klasörler değil,Sadece dosyalar içindir.)</p>"
+"</qt>"
+
+#. i18n: file conf_encryption.ui line 92
+#: rc.cpp:78
+#, no-c-format
+msgid ""
+"<qt><b>Allow encryption with untrusted keys:</b> <br />\n"
+"\t\t"
+"<p>When importing a public key, the key is usually marked as untrusted and as "
+"such cannot be used unless it is signed by the default key (Thus, making it "
+"'trusted'). Checking this box enables any key to be used even if it is "
+"untrusted.</p></qt>"
+msgstr ""
+"<qt><b>Güvenilir olmayan anahtarlar ile şifrelemeye izin ver:</b> <br />\n"
+"\t\t"
+"<p>Açık anahtar alınırken, anahtar genellikle güvenilir olmayan olarak "
+"işaretlenir ve öntanımlı anahtar tarafından imzalanıp güvenilir hale "
+"getirilmedikçe kullanılamaz. Bu kutucuğu işaretlemek güvenilir olmasa bile "
+"herhangi bir anahtarın kullanılabilmesini sağlar .</p></qt>"
+
+#. i18n: file conf_encryption.ui line 133
+#: rc.cpp:82
+#, no-c-format
+msgid "Custom encryption command:"
+msgstr "Özel şifreleme komutu:"
+
+#. i18n: file conf_encryption.ui line 137
+#: rc.cpp:85
+#, no-c-format
+msgid ""
+"<qt><b>Custom encryption command:</b> <br />\n"
+"\t\t\t"
+"<p>When activated, an entry field will be shown in the key selection dialog, "
+"enabling you to enter a custom command for encryption. This option is "
+"recommended for experienced users only.</p></qt>"
+msgstr ""
+"<qt><b>Özel şifreleme komutu:</b> <br />\n"
+"\t\t\t"
+"<p> Etkinleştirildiği zaman, anahtar seçim ekranında bir girdi alanı "
+"gösterilecek ve şifreleme için buraya özel bir komut girebileceksiniz. Bu "
+"seçenek sadece deneyimli kullanıcılara önerilir.</p></qt>"
+
+#. i18n: file conf_encryption.ui line 163
+#: rc.cpp:89
+#, no-c-format
+msgid "Use *.pgp extension for encrypted files"
+msgstr "Şifrelenmiş dosyalar için *.pgp uzantısını kullan"
+
+#. i18n: file conf_encryption.ui line 167
+#: rc.cpp:92
+#, no-c-format
+msgid ""
+"<qt><b>Use *.pgp extension for encrypted files:</b><br />\n"
+"\t\t"
+"<p>Checking this option will append a .pgp extension to all encrypted files "
+"instead of a .gpg extension. This option will maintain compatibility with users "
+"of PGP (Pretty Good Privacy) software.</p></qt>"
+msgstr ""
+"<qt><b>Şifrelenmiş dosyalar için *.pgp uzantısını kullan:</b><br />\n"
+"\t\t"
+"<p>Bu seçeneğin işaretlenmesi tüm şifrelenmiş dosyaların sonuna .pgp uzantısı "
+"ekleyecektir. Bu seçenek, PGP (Pretty Good Privacy) yazılımı kullanıcıları ile "
+"uyumluluk sağlar.</p></qt>"
+
+#. i18n: file conf_encryption.ui line 175
+#: rc.cpp:96
+#, no-c-format
+msgid "Encrypt files with:"
+msgstr "Dosyaları bu anahtarla şifrele:"
+
+#. i18n: file conf_encryption.ui line 193
+#: rc.cpp:99
+#, no-c-format
+msgid ""
+"<qt><b>Encrypt files with:</b><br /> \n"
+"<p>Checking this option and selecting a key will force any file encryption "
+"operation to use the selected key. KGpg will not query for a recipient and the "
+"default key will be bypassed.</p></qt>"
+msgstr ""
+"<qt><b>Dosyaları bu anahtarla şifrele:</b><br /> \n"
+"<p> Bu seçenek işaretlenip bir anahtar seçildiğinde, bütün dosya şifreleme "
+"işlemlerinin seçili anahtarı kullanması zorunlu hale getirilir. KGpg, bir alıcı "
+"ismi sormayacak ve öntanımlı anahtar yok sayılacaktır.</p></qt>"
+
+#. i18n: file conf_encryption.ui line 209
+#: rc.cpp:103 rc.cpp:119
+#, no-c-format
+msgid "..."
+msgstr "..."
+
+#. i18n: file conf_encryption.ui line 225
+#: rc.cpp:106 rc.cpp:116 rc.cpp:136
+#, no-c-format
+msgid "Change..."
+msgstr "Değiştir..."
+
+#. i18n: file conf_encryption.ui line 233
+#: rc.cpp:109
+#, no-c-format
+msgid "Always encrypt with:"
+msgstr "Her zaman bu anahtarla şifrele:"
+
+#. i18n: file conf_encryption.ui line 251
+#: rc.cpp:112
+#, no-c-format
+msgid ""
+"<qt><b>Always encrypt with:</b><br /> \n"
+"<p>This ensures all files/messages will also be encrypted with the chosen key. "
+"However, if the \"Encrypt files with:\" option is selected that chosen key will "
+"override the \"Always encrypt with:\" selection.</p></qt>"
+msgstr ""
+"<qt><b>Her zaman bu anahtarla şifrele:</b><br /> \n"
+"<p>Bu seçenek, tüm dosya ve iletilerin seçilen anahtar ile şifrelenmesini "
+"sağlar. Bununla birlikte, eğer \"Dosyaları bu anahtarla şifrele\" seçeneği "
+"seçili ise, burada seçilen anahtar \"Her zaman bu anahtarla şifrele\" "
+"seçeneğinden öncelikli hale gelir.</p></qt>"
+
+#. i18n: file conf_gpg.ui line 18
+#: rc.cpp:122
+#, no-c-format
+msgid ""
+"<qt><b>Global Settings:</b><br />\n"
+"\t"
+"<p></p>\n"
+"\t</qt>"
+msgstr ""
+"<qt><b>Genel Ayarlar:</b><br />\n"
+"\t"
+"<p></p>\n"
+"\t</qt>"
+
+#. i18n: file conf_gpg.ui line 32
+#: rc.cpp:127
+#, no-c-format
+msgid "GnuPG Home"
+msgstr "GnuPG Dizini"
+
+#. i18n: file conf_gpg.ui line 43
+#: rc.cpp:130
+#, no-c-format
+msgid "Configuration file:"
+msgstr "Yapılandırma dosyası:"
+
+#. i18n: file conf_gpg.ui line 51
+#: rc.cpp:133
+#, no-c-format
+msgid "Home location:"
+msgstr "Dizin konumu:"
+
+#. i18n: file conf_gpg.ui line 137
+#: rc.cpp:139
+#, no-c-format
+msgid "&Use GnuPG agent"
+msgstr "&GnuPG aracısını kullan"
+
+#. i18n: file conf_gpg.ui line 145
+#: rc.cpp:142
+#, no-c-format
+msgid "Additional Keyring"
+msgstr "Ek Anahtar Çifti"
+
+#. i18n: file conf_gpg.ui line 156
+#: rc.cpp:145
+#, no-c-format
+msgid "Pu&blic:"
+msgstr "Açı&k:"
+
+#. i18n: file conf_gpg.ui line 164
+#: rc.cpp:148
+#, no-c-format
+msgid "Private:"
+msgstr "Özel:"
+
+#. i18n: file conf_gpg.ui line 201
+#: rc.cpp:151
+#, no-c-format
+msgid "Use only this keyring"
+msgstr "Sadece bu anahtar çiftini kullan"
+
+#. i18n: file conf_misc.ui line 31
+#: rc.cpp:154
+#, no-c-format
+msgid "Global Settings"
+msgstr "Global Ayarlar"
+
+#. i18n: file conf_misc.ui line 42
+#: rc.cpp:157
+#, no-c-format
+msgid "Start KGpg automatically at login"
+msgstr "Girişte KGpg otomatik olarak çalışsın"
+
+#. i18n: file conf_misc.ui line 49
+#: rc.cpp:160
+#, no-c-format
+msgid ""
+"<qt><b>Start KGpg automatically at KDE startup:</b><br />\n"
+"<p>If checked KGpg will start automatically each time that KDE starts up.</p>"
+"</qt>"
+msgstr ""
+"<qt><b>KGpg'yi girişte otomatik olarak başlat:</b><br />\n"
+"<p>Seçilirse, KGpg her KDe  açılışında otomatik olarak başlayacaktır.</p></qt>"
+
+#. i18n: file conf_misc.ui line 63
+#: rc.cpp:164
+#, no-c-format
+msgid "Use mouse selection instead of clipboard"
+msgstr "Pano yerine mouse ile seçmeyi kullan"
+
+#. i18n: file conf_misc.ui line 67
+#: rc.cpp:167
+#, no-c-format
+msgid ""
+"<qt><b>Use mouse selection instead of clipboard:</b> <br />\n"
+"\t\t\t"
+"<p>If checked, clipboard operations in KGpg will use the selection clipboard, "
+"that means highlighting a text to copy, and middle button (or right+left "
+"together) to paste. If this option is not checked, the clipboard will work with "
+"Key shortcuts (Ctrl-c, Ctrl-v).</p></qt> "
+msgstr ""
+"<qt><b>Pano yerine mouse seçimini kullan:</b> <br />\n"
+"\t\t\t"
+"<p> Seçili ise, KGpg pano işlemlerinde seçili panoyu kullanacaktır. Bu "
+"kopyalamak için bir metnin seçilmesini, ve yapıştırmak için de orta düğmenin "
+"(veya sol ve sağ tuş beraber) kullanılmasını sağlar. Seçili değil ise, pano "
+"kısa yol tuşları (Ctrl-c, Ctrl-v= ile beraber çalışacaktır.</p></qt> "
+
+#. i18n: file conf_misc.ui line 82
+#: rc.cpp:171
+#, no-c-format
+msgid ""
+"Display warning before creating temporary files\n"
+"(only occurs on remote files operations)"
+msgstr ""
+"Geçici dosyaları oluştururken uyarı göster.\n"
+"(Sadece başka bir sistem üzerindeki işlemlerde olur)"
+
+#. i18n: file conf_misc.ui line 86
+#: rc.cpp:175
+#, no-c-format
+msgid ""
+"<qt><b>Display warning before creating temporary files:</b><br />\n"
+"\t\t\t"
+"<p></p></qt>"
+msgstr ""
+"<qt><b>Geçici dosya oluşturuken uyarı mesajı göster:</b><br />\n"
+"\t\t\t"
+"<p></p></qt>"
+
+#. i18n: file conf_misc.ui line 122
+#: rc.cpp:182
+#, no-c-format
+msgid "Install Shredder"
+msgstr "Silici Kur"
+
+#. i18n: file conf_misc.ui line 133
+#: rc.cpp:185
+#, no-c-format
+msgid ""
+"KGpg allows you to create a shredder on your desktop.\n"
+"It will shred (overwrite several times before erasing) the\n"
+"files you drop on it, making it almost impossible to recover\n"
+"the original file."
+msgstr ""
+"KGpg, masaüstüne bir silici kurmanıza yardımcı olur.\n"
+"Bu silici, üzerine sürüklediğiniz dosyaları bir kaç kez silerek\n"
+"asıl dosyanın kurtarılmasını imkansız hale getirir."
+
+#. i18n: file conf_misc.ui line 144
+#: rc.cpp:191
+#, no-c-format
+msgid "textLabel5"
+msgstr "metinEtiketi5"
+
+#. i18n: file conf_misc.ui line 176
+#: rc.cpp:194
+#, no-c-format
+msgid "Applet && Menus"
+msgstr "Programcıklar ve Menüler"
+
+#. i18n: file conf_misc.ui line 187
+#: rc.cpp:197
+#, no-c-format
+msgid "Left mouse click opens (restart KGpg to apply):"
+msgstr "Sol fare tuşunun işlevi (uygulamak için KGpg'yi tekrar başlatın):"
+
+#. i18n: file conf_misc.ui line 193
+#: rc.cpp:200
+#, no-c-format
+msgid "Key Manager"
+msgstr "Anahtar Yöneticisi"
+
+#. i18n: file conf_misc.ui line 198
+#: kgpgeditor.cpp:252 rc.cpp:203
+#, no-c-format
+msgid "Editor"
+msgstr "Düzenleyici"
+
+#. i18n: file conf_misc.ui line 235
+#: rc.cpp:206
+#, no-c-format
+msgid "Konqueror Service Menus"
+msgstr "Konqueror Servis Menüleri"
+
+#. i18n: file conf_misc.ui line 254
+#: rc.cpp:209
+#, no-c-format
+msgid "Sign file service menu:"
+msgstr "Dosya imzalama servis menüsü:"
+
+#. i18n: file conf_misc.ui line 259
+#: rc.cpp:212
+#, no-c-format
+msgid ""
+"<qt><b>Sign file service menu:</b><br />\n"
+"\t\t\t\t\t"
+"<p></p>\n"
+"\t\t\t\t\t</qt>"
+msgstr ""
+"<qt><b>Dosya İmzalama Servis Menüsü:</b><br />\n"
+"\t\t\t\t\t"
+"<p></p>\n"
+"\t\t\t\t\t</qt>"
+
+#. i18n: file conf_misc.ui line 275
+#: rc.cpp:217
+#, no-c-format
+msgid "Decrypt file service menu:"
+msgstr "Dosya şifresi açma servis menüsü:"
+
+#. i18n: file conf_misc.ui line 280
+#: rc.cpp:220
+#, no-c-format
+msgid ""
+"<qt><b>Decrypt file service menu:</b><br />\n"
+"\t\t\t\t\t"
+"<p></p>\n"
+"\t\t\t\t\t</qt>"
+msgstr ""
+"<qt><b>Dosya Şifresi Aç Servis Menüsü:</b><br />\n"
+"\t\t\t\t\t"
+"<p></p>\n"
+"\t\t\t\t\t</qt>"
+
+#. i18n: file conf_misc.ui line 291
+#: rc.cpp:228 rc.cpp:234
+#, no-c-format
+msgid "Enable with All Files"
+msgstr "Tüm Dosyalar İçin Etkinleştir"
+
+#. i18n: file conf_misc.ui line 319
+#: rc.cpp:237
+#, no-c-format
+msgid "Enable with Encrypted Files"
+msgstr "Şifrelenmiş Dosyalar İçin Etkinleştir"
+
+#. i18n: file conf_misc.ui line 333
+#: rc.cpp:240
+#, no-c-format
+msgid "System Tray Applet"
+msgstr "Sistem Çekmecesi"
+
+#. i18n: file conf_misc.ui line 344
+#: rc.cpp:243
+#, no-c-format
+msgid "Event on unencrypted file drop:"
+msgstr "Şifrelenmemiş dosya bırakıldığında yapılacak işlem:"
+
+#. i18n: file conf_misc.ui line 349
+#: rc.cpp:246
+#, no-c-format
+msgid ""
+"<qt><b>Event on unencrypted file drop:</b><br />\n"
+"\t\t\t\t\t"
+"<p></p>\n"
+"\t\t\t\t\t</qt>"
+msgstr ""
+"<qt><b>Şifrelenmemiş dosya bırakıldığında yapılacak işlem:</b><br />\n"
+"\t\t\t\t\t"
+"<p></p>\n"
+"\t\t\t\t\t</qt>"
+
+#. i18n: file conf_misc.ui line 357
+#: rc.cpp:251
+#, no-c-format
+msgid "Event on encrypted file drop:"
+msgstr "Şifrelenmiş dosya bırakıldığında yapılacak işlem:"
+
+#. i18n: file conf_misc.ui line 362
+#: rc.cpp:254
+#, no-c-format
+msgid ""
+"<qt><b>Event on encrypted file drop:</b><br />\n"
+"\t\t\t\t\t"
+"<p></p>\n"
+"\t\t\t\t\t</qt>"
+msgstr ""
+"<qt><b>Şifrelenmiş dosya bırakıldığında yapılacak işlem:</b><br />\n"
+"\t\t\t\t\t"
+"<p></p>\n"
+"\t\t\t\t\t</qt>"
+
+#. i18n: file conf_misc.ui line 368
+#: rc.cpp:259
+#, no-c-format
+msgid "Encrypt"
+msgstr "Şifrele"
+
+#. i18n: file conf_misc.ui line 373
+#: rc.cpp:262
+#, no-c-format
+msgid "Sign"
+msgstr "İmzala"
+
+#. i18n: file conf_misc.ui line 378
+#: rc.cpp:265 rc.cpp:274
+#, no-c-format
+msgid "Ask"
+msgstr "Sor"
+
+#. i18n: file conf_misc.ui line 388
+#: rc.cpp:268
+#, no-c-format
+msgid "Decrypt & Save"
+msgstr "Şifreyi Aç & Kaydet"
+
+#. i18n: file conf_misc.ui line 393
+#: rc.cpp:271
+#, no-c-format
+msgid "Decrypt & Open in Editor"
+msgstr "Şifreyi Aç & Düzenleyicide Göster"
+
+#. i18n: file conf_servers.ui line 35
+#: rc.cpp:277
+#, no-c-format
+msgid "Set as Default"
+msgstr "Öntanımlı olarak Ayarla"
+
+#. i18n: file conf_servers.ui line 51
+#: rc.cpp:280
+#, no-c-format
+msgid "Add..."
+msgstr "Ekle..."
+
+#. i18n: file conf_servers.ui line 98
+#: rc.cpp:286
+#, no-c-format
+msgid ""
+"<b>INFORMATION</b>:\n"
+"Only the default server will be stored in GnuPG's configuration file,\n"
+"all others will be stored for use by KGpg only."
+msgstr ""
+"<b>AÇIKLAMA</b>:\n"
+"Sadece öntanımlı sunucu GnuPG yapılandırma dosyasına kaydedilecektir, \n"
+" diğerleri KGpg kullanımı için saklanacaktır."
+
+#. i18n: file conf_servers.ui line 106
+#: rc.cpp:291
+#, no-c-format
+msgid "Honor HTTP proxy when available"
+msgstr "Uygun olduğunda HTTP proxy kullan"
+
+#. i18n: file conf_ui2.ui line 31
+#: rc.cpp:294
+#, no-c-format
+msgid "Key Colors"
+msgstr "Anahtar Renkleri"
+
+#. i18n: file conf_ui2.ui line 50
+#: rc.cpp:297
+#, no-c-format
+msgid "Unknown keys:"
+msgstr "Bilinmeyen anahtarlar:"
+
+#. i18n: file conf_ui2.ui line 73
+#: rc.cpp:300
+#, no-c-format
+msgid "Trusted keys:"
+msgstr "Güvenilir anahtarlar:"
+
+#. i18n: file conf_ui2.ui line 81
+#: rc.cpp:303
+#, no-c-format
+msgid "Expired/disabled keys:"
+msgstr "Süresi biten/etkisiz anahtarlar:"
+
+#. i18n: file conf_ui2.ui line 89
+#: rc.cpp:306
+#, no-c-format
+msgid "Revoked keys:"
+msgstr "Feshedilen anahtarlar:"
+
+#. i18n: file conf_ui2.ui line 163
+#: rc.cpp:309
+#, no-c-format
+msgid "Editor Font"
+msgstr "Düzenleyici Yazıtipi"
+
+#. i18n: file groupedit.ui line 101
+#: rc.cpp:321
+#, no-c-format
+msgid "Available Trusted Keys"
+msgstr "Uygun Güvenilir Anahtarlar"
+
+#. i18n: file groupedit.ui line 142
+#: rc.cpp:324
+#, no-c-format
+msgid "<b>Keys in the Group</b>"
+msgstr "<b>Grup'taki Anahtarlar</b>"
+
+#. i18n: file keyexport.ui line 41
+#: rc.cpp:336 rc.cpp:477
+#, no-c-format
+msgid "Export attributes (photo id)"
+msgstr "Öznitelikleri aktar (fotoğraf)"
+
+#. i18n: file keyexport.ui line 88
+#: rc.cpp:342
+#, no-c-format
+msgid "Default key server"
+msgstr "Öntanımlı anahtar sunucu"
+
+#. i18n: file keyexport.ui line 96
+#: rc.cpp:345 rc.cpp:630
+#, no-c-format
+msgid "Clipboard"
+msgstr "Pano"
+
+#. i18n: file keyexport.ui line 112
+#: rc.cpp:348 rc.cpp:627
+#, no-c-format
+msgid "File:"
+msgstr "Dosya:"
+
+#. i18n: file keyproperties.ui line 24
+#: keyinfowidget.cpp:46 rc.cpp:351
+#, no-c-format
+msgid "Key Properties"
+msgstr "Anahtar Özellikleri"
+
+#. i18n: file keyproperties.ui line 79
+#: rc.cpp:354
+#, no-c-format
+msgid "No Photo"
+msgstr "Fotoğraf yok"
+
+#. i18n: file keyproperties.ui line 90
+#: rc.cpp:357
+#, no-c-format
+msgid ""
+"<qt><b>Photo:</b><br />\n"
+"\t\t\t"
+"<p>A photo can be included with a public key for extra security. The photo can "
+"be used as an additional method of authenticating the key. However, it should "
+"not be relied upon as the only form of authentication.</p>\n"
+"\t\t\t</qt>"
+msgstr ""
+"<qt><b>Fotoğraf:</b><br />\n"
+"\t\t\t"
+"<p>Daha fazla güvenlik için Açık anahtar içine bir fotoğraf dahil edilebilir. "
+"Fotoğraf, anahtarı doğrulamak için ek bir yöntem olarak kullanılabilir. Bununla "
+"birlikte, tek bir doğrulama yöntemi olarak güvenilmemelidir.</p>\n"
+"\t\t\t</qt>"
+
+#. i18n: file keyproperties.ui line 106
+#: rc.cpp:362
+#, no-c-format
+msgid "Photo Id:"
+msgstr "Fotoğraf no:"
+
+#. i18n: file keyproperties.ui line 131
+#: rc.cpp:365
+#, no-c-format
+msgid "Disable key"
+msgstr "Anahtarı etkisizleştir"
+
+#. i18n: file keyproperties.ui line 150
+#: rc.cpp:368
+#, no-c-format
+msgid "Change Expiration..."
+msgstr "Son Tarihi Değiştir..."
+
+#. i18n: file keyproperties.ui line 169
+#: rc.cpp:371
+#, no-c-format
+msgid "Change Passphrase..."
+msgstr "Parolayı Değiştir..."
+
+#. i18n: file keyproperties.ui line 182
+#: rc.cpp:374
+#, no-c-format
+msgid "Length:"
+msgstr "Uzunluk:"
+
+#. i18n: file keyproperties.ui line 193
+#: rc.cpp:377
+#, no-c-format
+msgid "Creation:"
+msgstr "Oluşturulma:"
+
+#. i18n: file keyproperties.ui line 204
+#: rc.cpp:380 rc.cpp:588
+#, no-c-format
+msgid "Key ID:"
+msgstr "Anahtar No:"
+
+#. i18n: file keyproperties.ui line 223
+#: rc.cpp:383
+#, no-c-format
+msgid "Owner trust:"
+msgstr "Güvenilirlik:"
+
+#. i18n: file keyproperties.ui line 245
+#: keygener.cpp:79 rc.cpp:389
+#, no-c-format
+msgid "Algorithm:"
+msgstr "Algoritma:"
+
+#. i18n: file keyproperties.ui line 275
+#: rc.cpp:395
+#, no-c-format
+msgid "Trust:"
+msgstr "Güvenilirlik:"
+
+#. i18n: file keyproperties.ui line 286
+#: rc.cpp:398
+#, no-c-format
+msgid "Comment:"
+msgstr "Açıklama:"
+
+#. i18n: file keyproperties.ui line 297
+#: keygener.cpp:47 rc.cpp:401 rc.cpp:582
+#, no-c-format
+msgid "Name:"
+msgstr "İsim:"
+
+#. i18n: file keyproperties.ui line 316
+#: rc.cpp:404 rc.cpp:579
+#, no-c-format
+msgid "Fingerprint:"
+msgstr "Parmakizi:"
+
+#. i18n: file keyproperties.ui line 393
+#: rc.cpp:407
+#, no-c-format
+msgid "Don't Know"
+msgstr "Bilmiyorum"
+
+#. i18n: file keyproperties.ui line 398
+#: rc.cpp:410
+#, no-c-format
+msgid "Do NOT Trust"
+msgstr "Güvenme"
+
+#. i18n: file keyproperties.ui line 403
+#: rc.cpp:413
+#, no-c-format
+msgid "Marginally"
+msgstr "Kısmen"
+
+#. i18n: file keyproperties.ui line 408
+#: rc.cpp:416
+#, no-c-format
+msgid "Fully"
+msgstr "Tam"
+
+#. i18n: file keyproperties.ui line 413
+#: rc.cpp:419
+#, no-c-format
+msgid "Ultimately"
+msgstr "Sonsuz"
+
+#. i18n: file keyserver.ui line 48
+#: rc.cpp:425
+#, no-c-format
+msgid "Text to search or ID of the key to import:"
+msgstr "Aranacak metin veya alınacak anahtarın no'su:"
+
+#. i18n: file keyserver.ui line 53
+#: rc.cpp:428
+#, no-c-format
+msgid ""
+"<qt><b>Text to search or ID of the key to import:</b><br />\n"
+"\t\t\t\t"
+"<p>There are multiple ways to search for a key, you can use a text or partial "
+"text search (example: entering Phil or Zimmerman will bring up all keys in "
+"which Phil or Zimmerman shows up) or you can search by the ID's of the key. Key "
+"ID's are strings of letters and numbers that uniquely identify a key (example: "
+"searching for 0xED7585F4 would bring up the key associated with that ID).</p>\n"
+"\t\t\t\t</qt>"
+msgstr ""
+"<qt><b>Aranacak metin veya alınacak anahtarın numarası::</b><br />\n"
+"\t\t\t\t"
+"<p> Bir anahtarı aramak için bir çok yol vardır. Bir metin kullanabilir veya "
+"parçalı metin araması yapabilirsiniz. (örneğin: Ali or Veli girildiğinde, "
+"içinde Ali veya Veli geçen tüm anahtarlar getirilecektir. Ek olarak, anahtar "
+"numarası girerek de arama yapabilirsiniz. Anahtar numaraları harf ve "
+"rakamlardan oluşan ve bir anahtarı tek başına tanımlayan dizilerdir. Örneğin, "
+"0xED7585F4 için yapılan bir arama, bu numara ile ilişkili olan anahtarı "
+"getirecektir.</p>\n"
+"\t\t\t\t</qt>"
+
+#. i18n: file keyserver.ui line 62
+#: rc.cpp:433
+#, no-c-format
+msgid ""
+"<b>Key Server Drop Down Dialog:</b>\n"
+"Allows the user to select the Key Server which will be used to import PGP/GnuPG "
+"keys into the local keyring."
+msgstr ""
+"<b>Anahtar Sunucusu Seçme Ekranı:</b>\n"
+"Kullanıcının PGP/GnuPG anahtarlarını yerel anahtar zincirine alması için "
+"kullanacağı Anahtar Sunucusunu seçmesini sağlar."
+
+#. i18n: file keyserver.ui line 75
+#: rc.cpp:437 rc.cpp:463
+#, no-c-format
+msgid "Key server:"
+msgstr "Anahtar sunucu:"
+
+#. i18n: file keyserver.ui line 78
+#: rc.cpp:440
+#, no-c-format
+msgid ""
+"<qt><b>Key Server:</b><br /> "
+"<p>A Key Server is a centralized repository of PGP/GnuPG keys connected to the "
+"Internet which can be conveniently accessed in order to obtain or deposit keys. "
+"Select from the drop down list to specify which key server should be used.</p> "
+"<p>Often these keys are held by people whom the user has never met and as such "
+"the authenticity is dubious at best. Refer to the GnuPG manual covering "
+"\"Web-of-Trust\" relationships to find out how GnuPG works around the problem "
+"of verifying authenticity.</p> </qt>"
+msgstr ""
+"<qt><b>Anahtar Sunucusu:</b><br /> "
+"<p> Anahtar sunucusu PGP/GnuPG anahtarlarının merkezi olarak bulunduğu ve "
+"istenilen anahtarların internet aracılığıyla uygun bir şekilde erişilebildiği "
+"bir yapıdır. Listeden hangi anahtar sunucusunun kulllanılacağını seçiniz.</p> "
+"<p> Çoğu zaman bu anahtarlar kullanıcının hiç tanımadığı kişilere aiittir ve en "
+"iyi ihtimalle güvenilirlikşüphelidir denilebilir. GnuPG'nin güvenirlik "
+"doğrulaması sorununu nasıl ele aldığını bulmak için GnuPG kılavuzunun "
+"\"Güvenilirlik-Ağı\" bölümüne bakın.</p> </qt>"
+
+#. i18n: file keyserver.ui line 86
+#: rc.cpp:443
+#, no-c-format
+msgid "&Search"
+msgstr "&Ara"
+
+#. i18n: file keyserver.ui line 97
+#: keyservers.cpp:171 rc.cpp:446
+#, no-c-format
+msgid "&Import"
+msgstr "A&l"
+
+#. i18n: file keyserver.ui line 159
+#: rc.cpp:449 rc.cpp:474
+#, no-c-format
+msgid "Honor HTTP proxy:"
+msgstr "HTTP Proxy:"
+
+#. i18n: file keyserver.ui line 199
+#: rc.cpp:455
+#, no-c-format
+msgid "&Export"
+msgstr "Ak&tar"
+
+#. i18n: file keyserver.ui line 204
+#: rc.cpp:458
+#, no-c-format
+msgid ""
+"<qt><b>Export:</b><br />\n"
+"\t\t\t\t"
+"<p>Depressing this key will export the specified key to the specified "
+"server.</p>\n"
+"\t\t\t\t</qt>"
+msgstr ""
+"<qt><b>Aktar:</b><br />\n"
+"\t\t\t\t"
+"<p>Bu tuşa basıldığı zaman seçilen anahtar belirlenen sunucuya "
+"aktarılacaktır.</p>\n"
+"\t\t\t\t</qt>"
+
+#. i18n: file keyserver.ui line 247
+#: rc.cpp:466
+#, no-c-format
+msgid "Key to be exported:"
+msgstr "Aktarılacak anahtar:"
+
+#. i18n: file keyserver.ui line 252
+#: rc.cpp:469
+#, no-c-format
+msgid ""
+"<qt><b>Key to be exported:</b><br />\n"
+"\t\t\t\t"
+"<p>This allows the user to specify the key from the drop down list that will be "
+"exported to the key server selected.</p>\n"
+"\t\t\t\t</qt>"
+msgstr ""
+"<qt><b>Aktarılacak anahtar:</b><br />\n"
+"\t\t\t\t"
+"<p>Kullanıcının seçilen sunucuya aktarılacak anahtarıbelirlemesine olanak "
+"sağlar.</p>\n"
+"\t\t\t\t</qt>"
+
+#. i18n: file kgpgrevokewidget.ui line 27
+#: rc.cpp:480
+#, no-c-format
+msgid "key id"
+msgstr "anahtar no"
+
+#. i18n: file kgpgrevokewidget.ui line 38
+#: rc.cpp:483
+#, no-c-format
+msgid "Print certificate"
+msgstr "Sertifikayı yazdır"
+
+#. i18n: file kgpgrevokewidget.ui line 46
+#: rc.cpp:486
+#, no-c-format
+msgid "Create revocation certificate for"
+msgstr "Feshetme belgesini oluşturma nedeni"
+
+#. i18n: file kgpgrevokewidget.ui line 54
+#: rc.cpp:489
+#, no-c-format
+msgid "Description:"
+msgstr "Açıklama:"
+
+#. i18n: file kgpgrevokewidget.ui line 60
+#: rc.cpp:492
+#, no-c-format
+msgid "No Reason"
+msgstr "Neden yok"
+
+#. i18n: file kgpgrevokewidget.ui line 65
+#: rc.cpp:495
+#, no-c-format
+msgid "Key Has Been Compromised"
+msgstr "Anahtar tehlikeye düştü"
+
+#. i18n: file kgpgrevokewidget.ui line 70
+#: rc.cpp:498
+#, no-c-format
+msgid "Key is Superseded"
+msgstr " Anahtarın yerine başka bir anahtar geçti"
+
+#. i18n: file kgpgrevokewidget.ui line 75
+#: rc.cpp:501
+#, no-c-format
+msgid "Key is No Longer Used"
+msgstr "Anahtar artık kullanılmıyor"
+
+#. i18n: file kgpgrevokewidget.ui line 87
+#: rc.cpp:504
+#, no-c-format
+msgid "Reason for revocation:"
+msgstr "Feshetme için sebep:"
+
+#. i18n: file kgpgrevokewidget.ui line 95
+#: rc.cpp:507
+#, no-c-format
+msgid "Save certificate:"
+msgstr "Sertifikayı kaydet:"
+
+#. i18n: file kgpgrevokewidget.ui line 109
+#: rc.cpp:510
+#, no-c-format
+msgid "Import into keyring"
+msgstr "Anahtar zinicirinin içine aktar"
+
+#. i18n: file kgpgwizard.ui line 16
+#: rc.cpp:513
+#, no-c-format
+msgid "KGpg Wizard"
+msgstr "KGpg Sihirbazı"
+
+#. i18n: file kgpgwizard.ui line 23
+#: rc.cpp:516
+#, no-c-format
+msgid "Introduction"
+msgstr "Giriş"
+
+#. i18n: file kgpgwizard.ui line 63
+#: rc.cpp:519
+#, no-c-format
+msgid ""
+"<h1>Welcome to the KGpg Wizard</h1>\n"
+"This wizard will first setup some basic configuration options required for KGpg "
+"to work properly. Next, it will allow you to create your own key pair, enabling "
+"you to encrypt your files and emails."
+msgstr ""
+"<h1>KGpg Sihirbazına hoş geldiniz </h1>\n"
+"Bu sihirbaz ilk önce KGpg'nin düzgün çalışması için gerekli temel yapılandırma "
+"seçeneklerini ayarlayacaktır. Daha sonra, dosyalarınızı ve e-postalarınızı "
+"şifrelemenizi sağlayan kendi anahtar çiftini oluşturmanızı sağlayacaktır."
+
+#. i18n: file kgpgwizard.ui line 91
+#: rc.cpp:523
+#, no-c-format
+msgid "You have GnuPG version:"
+msgstr "GnuPG Sürümü:"
+
+#. i18n: file kgpgwizard.ui line 101
+#: rc.cpp:526
+#, no-c-format
+msgid "Step One: Communication with GnuPG"
+msgstr "Birinci adım: GnuPG ile haberleşme"
+
+#. i18n: file kgpgwizard.ui line 112
+#: rc.cpp:529
+#, no-c-format
+msgid ""
+"Unless you want to try some unusual settings, just click on the \"next\" "
+"button."
+msgstr ""
+"Farklı bir ayar yapmayı düşünmüyorsanız, sadece \"İleri\" düğmesine basın."
+
+#. i18n: file kgpgwizard.ui line 123
+#: rc.cpp:532
+#, no-c-format
+msgid "KGpg needs to know where your GnuPG configuration file is stored."
+msgstr ""
+"KGpg, GNUPG yapılandırma dosyasının nerede olduğunu bilmek durumundadır."
+
+#. i18n: file kgpgwizard.ui line 156
+#: rc.cpp:535
+#, no-c-format
+msgid "<br>Path to your GnuPG options file:"
+msgstr "<br>GnuPG yapılandırma dosyası:"
+
+#. i18n: file kgpgwizard.ui line 197
+#: rc.cpp:538
+#, no-c-format
+msgid "Step Two: Install a Shredder on your Desktop"
+msgstr "İkinci Adım: Masaüstüne bir Öğütücü yükle"
+
+#. i18n: file kgpgwizard.ui line 208
+#: rc.cpp:541
+#, no-c-format
+msgid "Install shredder on my desktop"
+msgstr "Masaüstüme Öğütücüyü yükle"
+
+#. i18n: file kgpgwizard.ui line 267
+#: rc.cpp:544
+#, no-c-format
+msgid ""
+"<qt>This will install a shredder icon on your desktop."
+"<br>\n"
+"The shredder securely deletes files (overwriting them 35 times) dropped on to "
+"it.\n"
+"Remember that if you download a file or open one in an editor, parts of the "
+"file may be saved in a temporary location. Shredding will not erase these "
+"temporary files.\n"
+"<br><b>Shredding may not be 100% secure if you use a journaling file system.</b>"
+"</qt>"
+msgstr ""
+"<qt>Bu işlem masaüstünüze Silici Simgesi ekleyecektir."
+"<br>\n"
+"Eğer bu silici simgesi üzerine bir dosya taşırsanız, taşınan dosya 35 kez "
+"üstüste silinecektir. Bu işlem sayesinde silinen dosyaların geri gelmesi mümkün "
+"olmayacaktır.\n"
+"<br><b>Silme işlemi ext3 ve XFS gibi dosya sistemlerinde 100% güvenli "
+"olmayabilir.</b></qt>"
+
+#. i18n: file kgpgwizard.ui line 280
+#: rc.cpp:550
+#, no-c-format
+msgid "Step Three: Ready to Create your Key Pair"
+msgstr "Üçüncü Adım: Anahtar çifti oluşturmaya hazır"
+
+#. i18n: file kgpgwizard.ui line 291
+#: rc.cpp:553 rc.cpp:705
+#, no-c-format
+msgid "Start KGpg automatically at KDE startup."
+msgstr "Girişte KGpg otomatik başlasın."
+
+#. i18n: file kgpgwizard.ui line 327
+#: rc.cpp:556
+#, no-c-format
+msgid "Your default key:"
+msgstr "Öntanımlı Anahtarınız:"
+
+#. i18n: file kgpgwizard.ui line 350
+#: rc.cpp:559
+#, no-c-format
+msgid ""
+"KGpg will now launch the key generation dialog to create your own key pair for "
+"encryption and decryption."
+msgstr ""
+"KGpg şimdi şifrelemede ve şifre açmada kullanacağınız anahtar çiftini "
+"oluşturmak için Anahtar Oluşturma Penceresini başlatacak."
+
+#. i18n: file newkey.ui line 30
+#: rc.cpp:565
+#, no-c-format
+msgid "New Key Created"
+msgstr "Yeni Anahtar Oluşturuldu"
+
+#. i18n: file newkey.ui line 41
+#: rc.cpp:568
+#, no-c-format
+msgid "You have successfully created the following key:"
+msgstr "Aşağıdaki anahtarı başarıyla oluşturdunuz:"
+
+#. i18n: file newkey.ui line 49
+#: rc.cpp:571
+#, no-c-format
+msgid "Set as your default key"
+msgstr "Anahtarı Öntanımlı Yap"
+
+#. i18n: file newkey.ui line 54
+#: rc.cpp:574
+#, no-c-format
+msgid ""
+"<qt><b>Set as your default key:</b><br />\n"
+"\t\t\t"
+"<p>Checking this option sets the newly created key pair as the default key "
+"pair.</p>\n"
+"\t\t\t</qt>"
+msgstr ""
+"<qt><b>Öntanımlı anahtar yap:</b><br />\n"
+"\t\t\t"
+"<p>Bu seçenek seçilirse oluşturulan yeni anahtar çifti öntanımlı olacaktır.</p>"
+"\n"
+"\t\t\t</qt>"
+
+#. i18n: file newkey.ui line 113
+#: rc.cpp:591
+#, no-c-format
+msgid "textLabel7"
+msgstr "metinEtiketi7"
+
+#. i18n: file newkey.ui line 121
+#: rc.cpp:594
+#, no-c-format
+msgid "textLabel8"
+msgstr "metinEtiketi8"
+
+#. i18n: file newkey.ui line 129
+#: rc.cpp:597
+#, no-c-format
+msgid "textLabel10"
+msgstr "metinEtiketi10"
+
+#. i18n: file newkey.ui line 139
+#: rc.cpp:600
+#, no-c-format
+msgid "Revocation Certificate"
+msgstr "Feshetme Belgesi"
+
+#. i18n: file newkey.ui line 150
+#: rc.cpp:603
+#, no-c-format
+msgid ""
+"It is recommended to save or print a revocation certificate in case your key is "
+"compromised."
+msgstr ""
+"Anahtarınızın tehlikeye düşmesi olasılığına karşı bir feshetme belgesi "
+"kaydetmeniz ya da yazdırmanız önerilir."
+
+#. i18n: file newkey.ui line 166
+#: rc.cpp:609
+#, no-c-format
+msgid "Save as:"
+msgstr "Farklı Kaydet:"
+
+#. i18n: file searchres.ui line 35
+#: rc.cpp:612
+#, no-c-format
+msgid "Key to import:"
+msgstr "Alınacak Anahtar:"
+
+#. i18n: file kgpg.kcfg line 9
+#: rc.cpp:633
+#, no-c-format
+msgid "Custom decryption command."
+msgstr "Özel şifre açma komutu."
+
+#. i18n: file kgpg.kcfg line 15
+#: rc.cpp:636
+#, no-c-format
+msgid "Custom encryption options"
+msgstr "Özel şifreleme seçenekleri"
+
+#. i18n: file kgpg.kcfg line 18
+#: rc.cpp:639
+#, no-c-format
+msgid "Allow custom encryption options"
+msgstr "Özel şifreleme seçeneklerine izin ver"
+
+#. i18n: file kgpg.kcfg line 22
+#: rc.cpp:642
+#, no-c-format
+msgid "File encryption key."
+msgstr "Dosya şifreleme anahtarı."
+
+#. i18n: file kgpg.kcfg line 25
+#: rc.cpp:645
+#, no-c-format
+msgid "Use ASCII armored encryption."
+msgstr "ASCII zırhlı şifreleme kullan."
+
+#. i18n: file kgpg.kcfg line 29
+#: rc.cpp:648
+#, no-c-format
+msgid "Allow encryption with untrusted keys."
+msgstr "Güvenilir olmayan anahtarlar ile şifrelemeye izin ver."
+
+#. i18n: file kgpg.kcfg line 33
+#: rc.cpp:651
+#, no-c-format
+msgid "Hide the user ID."
+msgstr "Kullanıcı Kimliğini gizle."
+
+#. i18n: file kgpg.kcfg line 37
+#: rc.cpp:654
+#, no-c-format
+msgid "Shred the source file after encryption."
+msgstr "Şifrelemeden sonra kaynak dosyayı sil."
+
+#. i18n: file kgpg.kcfg line 41
+#: rc.cpp:657
+#, no-c-format
+msgid "Enable PGP 6 compatibility."
+msgstr "PGP 6 uyumluluğunu sağla."
+
+#. i18n: file kgpg.kcfg line 45
+#: rc.cpp:660
+#, no-c-format
+msgid "Use *.pgp extension for encrypted files."
+msgstr "Şifrelenmiş dosyalar için *.pgp uzantısını kullan."
+
+#. i18n: file kgpg.kcfg line 52
+#: rc.cpp:663
+#, no-c-format
+msgid "The path of the gpg configuration file."
+msgstr "gpg yapılandırma dosyası."
+
+#. i18n: file kgpg.kcfg line 55
+#: rc.cpp:666
+#, no-c-format
+msgid "GPG groups"
+msgstr "GPG Grupları"
+
+#. i18n: file kgpg.kcfg line 58
+#: rc.cpp:669
+#, no-c-format
+msgid "Use only the additional keyring, not the default one."
+msgstr "Sadece ek anahtar çifti kullan, öntanımlı olanı kullanma."
+
+#. i18n: file kgpg.kcfg line 62
+#: rc.cpp:672
+#, no-c-format
+msgid "Enable additional public keyring."
+msgstr "Ek açık anahtar çiftini etkinleştir."
+
+#. i18n: file kgpg.kcfg line 66
+#: rc.cpp:675
+#, no-c-format
+msgid "Enable additional private keyring."
+msgstr "Ek özel anahtar çiftini etkinleştir."
+
+#. i18n: file kgpg.kcfg line 70
+#: rc.cpp:678
+#, no-c-format
+msgid "The path of the additional public keyring."
+msgstr "Ek açık anahtar çiftininin yolu."
+
+#. i18n: file kgpg.kcfg line 73
+#: rc.cpp:681
+#, no-c-format
+msgid "The path of the additional private keyring."
+msgstr "Ek özel anahtar çiftininin yolu."
+
+#. i18n: file kgpg.kcfg line 88
+#: rc.cpp:684
+#, no-c-format
+msgid "Is the first time the application runs."
+msgstr "Uygulama ilk defa çalıştırılıyor."
+
+#. i18n: file kgpg.kcfg line 92
+#: rc.cpp:687
+#, no-c-format
+msgid "The size of the editor window."
+msgstr "Düzenleyici pencerenin büyüklüğü."
+
+#. i18n: file kgpg.kcfg line 95
+#: rc.cpp:690
+#, no-c-format
+msgid "Show the trust value in key manager."
+msgstr "Anahtar Yöneticisi'nde güvenilirlik derecesini göster."
+
+#. i18n: file kgpg.kcfg line 99
+#: rc.cpp:693
+#, no-c-format
+msgid "Show the expiration value in key manager."
+msgstr "Anahtar Yöneticisi'nde son kullanma tarihini göster."
+
+#. i18n: file kgpg.kcfg line 103
+#: rc.cpp:696
+#, no-c-format
+msgid "Show the size value in key manager."
+msgstr "Anahtar Yöneticisi'nde büyüklük değerini göster."
+
+#. i18n: file kgpg.kcfg line 107
+#: rc.cpp:699
+#, no-c-format
+msgid "Show the creation value in key manager."
+msgstr "Anahtar Yöneticisi'nde oluşturulma zamanını göster."
+
+#. i18n: file kgpg.kcfg line 114
+#: rc.cpp:702
+#, no-c-format
+msgid "Use the mouse selection instead of the clipboard."
+msgstr "Pano yerine mouse ile seçmeyi kullan."
+
+#. i18n: file kgpg.kcfg line 122
+#: rc.cpp:708
+#, no-c-format
+msgid ""
+"Display a warning before creating temporary files during remote file "
+"operations."
+msgstr ""
+"Uzak sistemlerde yapılan dosya işlemlerinde, geçici dosya oluşturmadan önce "
+"uyarı göster."
+
+#. i18n: file kgpg.kcfg line 126
+#: rc.cpp:711
+#, no-c-format
+msgid "Choose default left-click behavior"
+msgstr "Öntanımlı sol-tıklama davranışını seçin"
+
+#. i18n: file kgpg.kcfg line 133
+#: rc.cpp:714
+#, no-c-format
+msgid "Handle encrypted drops"
+msgstr "Şifrelenmiş bırakmaları karşıla"
+
+#. i18n: file kgpg.kcfg line 141
+#: rc.cpp:717
+#, no-c-format
+msgid "Handle unencrypted drops"
+msgstr "Şifrelenmemiş bırakmaları karşıla"
+
+#. i18n: file kgpg.kcfg line 149
+#: rc.cpp:720
+#, no-c-format
+msgid "Show the \"sign file\" service menu."
+msgstr "\"Dosya İmzala\" Servis Menüsünü göster."
+
+#. i18n: file kgpg.kcfg line 157
+#: rc.cpp:723
+#, no-c-format
+msgid "Show the \"decrypt file\" service menu."
+msgstr "\"Dosya Şifresi Aç\" Servis Menüsünü göster."
+
+#. i18n: file kgpg.kcfg line 169
+#: rc.cpp:726
+#, no-c-format
+msgid "Show tip of the day."
+msgstr "Günün İpucunu göster."
+
+#. i18n: file kgpg.kcfg line 176
+#: rc.cpp:729
+#, no-c-format
+msgid "Color used for trusted keys."
+msgstr "Güvenilir anahtarlar için kullanılan renk."
+
+#. i18n: file kgpg.kcfg line 180
+#: rc.cpp:732
+#, no-c-format
+msgid "Color used for revoked keys."
+msgstr "Feshedilen anahtarlar için kullanılan renk."
+
+#. i18n: file kgpg.kcfg line 184
+#: rc.cpp:735
+#, no-c-format
+msgid "Color used for unknown keys."
+msgstr "Bilinmeyen anahtarlar için kullanılan renk."
+
+#. i18n: file kgpg.kcfg line 188
+#: rc.cpp:738
+#, no-c-format
+msgid "Color used for untrusted keys."
+msgstr "Güvenilir olmayan anahtarlar için kullanılan renk."
+
+#. i18n: file kgpg.kcfg line 202
+#: rc.cpp:744
+#, no-c-format
+msgid "Use HTTP proxy when available."
+msgstr "Mümkün olduğunda HTTP vekili kullan."
+
+#: keygener.cpp:37
+msgid "Key Generation"
+msgstr "Anahtar Üretimi"
+
+#: keygener.cpp:40
+msgid "Expert Mode"
+msgstr "Uzman Kipi"
+
+#: keygener.cpp:45
+msgid "Generate Key Pair"
+msgstr "Anahtar Çiftini Oluştur"
+
+#: keygener.cpp:62
+msgid "Never"
+msgstr "Hiç bir zaman"
+
+#: keygener.cpp:63
+msgid "Days"
+msgstr "Gün"
+
+#: keygener.cpp:64
+msgid "Weeks"
+msgstr "Hafta"
+
+#: keygener.cpp:65
+msgid "Months"
+msgstr "Ay"
+
+#: keygener.cpp:66
+msgid "Years"
+msgstr "Yıl"
+
+#: keygener.cpp:70
+msgid "Key size:"
+msgstr "Anahtar boyutu:"
+
+#: keygener.cpp:94
+msgid "You must give a name."
+msgstr "Bir isim vermelisiniz."
+
+#: keygener.cpp:100
+msgid "You are about to create a key with no email address"
+msgstr "E-posta adresi olmayan bir anahtar oluşturmak üzeresiniz"
+
+#: keygener.cpp:103
+msgid "Email address not valid"
+msgstr "E-posta adresi geçerli değil"
+
+#: detailedconsole.cpp:43
+msgid "Details"
+msgstr "Ayrıntılar"
+
+#: detailedconsole.cpp:55
+msgid "Info"
+msgstr "Bilgi"
+
+#: keyinfowidget.cpp:257 keyinfowidget.cpp:266
+msgid "none"
+msgstr "hiçbiri"
+
+#: keyinfowidget.cpp:355
+msgid "Choose New Expiration"
+msgstr "Yeni Son tarih seç"
+
+#: keyinfowidget.cpp:433
+msgid "Passphrase for the key was changed"
+msgstr "Anahtar için parola değiştirldi"
+
+#: keyinfowidget.cpp:453
+msgid "Could not change expiration"
+msgstr "Son tarih değiştirilemedi"
+
+#: keyinfowidget.cpp:453
+msgid "Bad passphrase"
+msgstr "Yanlış parola"
+
+#: tips.cpp:3
+msgid ""
+"<p>If you want to decrypt a text file, simply drag and drop it into the editor "
+"window. Kgpg will do the rest. Even remote files can be dropped.</p>\n"
+"<p>Drag a public key into the editor window and kgpg will automatically import "
+"it if you want.</p>\n"
+msgstr ""
+"<p>Eğer bir metin dosyasını şifrelemek istiyorsanız, düzenleyici penceresinie "
+"sürükleyip bırakmanız yeterli olacaktır. Gerisini Kgpg yapacaktır. Uzak "
+"sistemlerdeki dosyalar bile bu şekilde bırakılabilir. </p>\n"
+"<p>Düzenleyici penceresinie bir açık anahtar sürükleyin, isterseniz kpgp "
+"otomatik olarak alacaktır.</p>\n"
+
+#: tips.cpp:9
+msgid ""
+"<p>The easiest way to encrypt a file: simply right click on the file, and you "
+"have an encrypt option in the contextual menu.\n"
+"This works in <strong>konqueror</strong> or on your Desktop!</p>\n"
+msgstr ""
+"<p>Bir dosyayı şifrelemenin en kolay yolu: dosya üstüne sağ tuşla basın ve "
+"açılan menüde şifrele seçeneği olduğunu göreceksiniz.\n"
+"Bu işlem <strong>konqueror</strong> ile veya masaüstündeki dosyalarınızla "
+"çalışır!</p>\n"
+
+#: tips.cpp:15
+msgid ""
+"<p>If you want to encrypt a message for several persons, just select several "
+"encryption keys by pressing the \"Ctrl\" key.</p>\n"
+msgstr ""
+"<p>Bir iletiyi birden fazla kişi için şifrelemek isterseniz, tek yapmanız "
+"gereken  \"Ctrl\" tuşuna basarak birden fazla şifreleme anahtarı seçmektir.</p>"
+"\n"
+
+#: tips.cpp:20
+msgid ""
+"<p><strong>You don't know anything about encryption?</strong>"
+"<br>\n"
+"No problem, simply create yourself a key pair in the key management window. "
+"Then, export your public key & mail it to your friends."
+"<br>\n"
+"Ask them to do the same & import their public keys. Finally, to send an "
+"encrypted message, type it in the Kgpg editor, then click \"encrypt\". Choose \n"
+"your friend key and click \"encrypt\" again. The message will be encrypted, "
+"ready to be sent by email.</p>\n"
+msgstr ""
+"<p><strong>Şifreleme hakkında hiçbir şey bilmiyor musunuz?</strong>"
+"<br>\n"
+"Problem değil, sadece anahtar yönetimi penceresinde kendinize bir anahtar çifti "
+"oluşuturun. Sonra, açık anahtarınızı aktarın ve arkadaşlarınıza e-posta ile "
+"gönderin."
+"<br>\n"
+"Onlardan da aynı şeyi yapmalarını ve açık anahtarlarını almalarını isteyin. Son "
+"olarak, şifrelenmiş bir metin göndermek için, Kgpg düzenleyicisinden yazın ve "
+"\"şifrele\"yi seçin. Arkadaşınızı seçin\n"
+" ve \"şifreleye\" tekrar basın. Mesaj e-posta ile gönderilmek için The message "
+"will be encrypted, şifrelenmiş olacaktır.</p>\n"
+
+#: tips.cpp:28
+msgid ""
+"<p>To perform an operation on a key, open the key management window & right "
+"click on the key. A popup menu with all available options will appear.</p>\n"
+msgstr ""
+"<p>Bir anahtar ile ilgili işlem yapmak için, anahtar yönetimi penceresini açın "
+"ve anahtara sağ tuşla tıklayın. Uygun seçenekler içeren bir menü "
+"açılacaktır.</p>\n"
+
+#: tips.cpp:33
+msgid ""
+"<p>Decrypt a file with a single mouse click on it. You will then be prompted "
+"for password & that's all!</p>\n"
+msgstr ""
+"<p>Tek bir tuşla dosyanın şifresini açabilirsiniz. Size şifreniz sorulacaktır, "
+"hepsi bu kadar.!</p>\n"
+
+#: tips.cpp:38
+msgid ""
+"<p>If you only want to open the key manager, type \"kgpg -k\" in the command "
+"line prompt.</p>\n"
+msgstr ""
+"<p>Sadece Anahtar Yöneticisini açmak istiyorsanız, komut satırında \"kgpg -k\" "
+"yazın.</p>\n"
+
+#: tips.cpp:43
+msgid ""
+"<p>Typing \"kgpg -s filename\" will decrypt the file filename and open it in "
+"Kgpg's editor.</p>\n"
+msgstr ""
+"<p>\"kgpg -s dosyaadı\" yazarsanız şifre açılacak ve dosya Kgpg "
+"düzenleyicisinde görülecektir.</p>\n"
+
+#: kgpgeditor.cpp:143
+msgid "&Encrypt File..."
+msgstr "&Dosyayı Şifrele..."
+
+#: kgpgeditor.cpp:144
+msgid "&Decrypt File..."
+msgstr "&Dosyanın Şifresini Aç..."
+
+#: kgpgeditor.cpp:149
+msgid "&Generate Signature..."
+msgstr "&İmza Oluştur..."
+
+#: kgpgeditor.cpp:150
+msgid "&Verify Signature..."
+msgstr "İ&mzayı Onayla..."
+
+#: kgpgeditor.cpp:151
+msgid "&Check MD5 Sum..."
+msgstr "MD5 Ö&zetini Kontrol Et..."
+
+#: kgpgeditor.cpp:220 kgpgeditor.cpp:230 kgpgeditor.cpp:467 kgpgeditor.cpp:481
+#: kgpgeditor.cpp:513
+msgid "*|All Files"
+msgstr "*|Tüm Dosyalar"
+
+#: kgpgeditor.cpp:220
+msgid "Open File to Encode"
+msgstr "Kodlanacak dosyayı Aç"
+
+#: kgpgeditor.cpp:230
+msgid "Open File to Decode"
+msgstr "Kodu çözülecek dosyayı aç"
+
+#: kgpgeditor.cpp:244
+msgid "Decrypt File To"
+msgstr "Şifrelenmiş Dosyayı şuraya aç"
+
+#: kgpgeditor.cpp:317
+msgid ""
+"The document could not been saved, as the selected encoding cannot encode every "
+"unicode character in it."
+msgstr ""
+"Seçilen kodlama dosya içindeki bütün unicode karakterleri kodlayamadığı için "
+"dosya kaydedilemiyor."
+
+#: kgpgeditor.cpp:325 kgpgeditor.cpp:352
+msgid ""
+"The document could not be saved, please check your permissions and disk space."
+msgstr ""
+"Belge kaydedilemedi, lütfen izinlerinizi ve disk boşluğunu kontrol edin."
+
+#: kgpgeditor.cpp:379 kgpgeditor.cpp:388
+msgid "Overwrite existing file %1?"
+msgstr "Varolan %1 dosyası silinsin mi?"
+
+#: kgpgeditor.cpp:380 kgpgeditor.cpp:389
+msgid "Overwrite"
+msgstr "Üzerine Yaz"
+
+#: kgpgeditor.cpp:467 kgpgeditor.cpp:513
+msgid "Open File to Verify"
+msgstr "Doğrulama için dosyayı açın"
+
+#: kgpgeditor.cpp:481
+msgid "Open File to Sign"
+msgstr "İmza için dosyayı açın"
+
+#: keyservers.cpp:55
+msgid "Key Server"
+msgstr "Anahtar Sunucusu"
+
+#: keyservers.cpp:163 keyservers.cpp:409
+msgid "You must enter a search string."
+msgstr "Aranacak kelimeyi girmelisiniz."
+
+#: keyservers.cpp:178
+msgid "Connecting to the server..."
+msgstr "Sunucuya bağlanıyor..."
+
+#: keyservers.cpp:233
+msgid "You must choose a key."
+msgstr "Bir anahtar seçmelisiniz."
+
+#: keyservers.cpp:265
+msgid "Found %1 matching keys"
+msgstr "%1 adet eşleşen anahtar bulundu"
+
+#: keyservers.cpp:374 keyservers.cpp:442
+msgid "<b>Connecting to the server...</b>"
+msgstr "<b>Sunucuya bağlantı kuruluyor...</b>"
+
+#: keyservers.cpp:375 keyservers.cpp:443
+msgid "&Abort"
+msgstr "İş&lemi iptal et"

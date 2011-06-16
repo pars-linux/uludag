@@ -1,0 +1,215 @@
+# translation of kcmmedia.po to
+#
+# Bekir SONAT <cortexbs@yahoo.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmmedia\n"
+"POT-Creation-Date: 2008-07-08 01:18+0200\n"
+"PO-Revision-Date: 2007-05-26 05:53+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Bekir SONAT"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "bekirsonat@cortex.com.tr"
+
+#: main.cpp:51
+msgid "&Notifications"
+msgstr "&Uyarılar"
+
+#: main.cpp:56
+msgid "&Advanced"
+msgstr "&Gelişmiş"
+
+#: main.cpp:63
+msgid "Storage Media"
+msgstr "Barındırma Ortamı"
+
+#: main.cpp:65
+msgid "Storage Media Control Panel Module"
+msgstr "Depolama Ortamı Denetim Paneli Modülü"
+
+#: main.cpp:67
+msgid "(c) 2005 Jean-Remy Falleri"
+msgstr "(c) 2005 Jean-Remy Falleri"
+
+#: main.cpp:68
+msgid "Maintainer"
+msgstr "Bakıcısı"
+
+#: main.cpp:70
+msgid "Help for the application design"
+msgstr "Uygulama tasarımı için yardım"
+
+#: main.cpp:100
+msgid "FIXME : Write me..."
+msgstr "FIXME : Bana yazın..."
+
+#: managermodule.cpp:40
+msgid "No support for HAL on this system"
+msgstr "Bu sistemde HAL desteği yok"
+
+#: managermodule.cpp:47
+msgid "No support for CD polling on this system"
+msgstr "Bu sistemde CD seçme desteği yok"
+
+#: notifiermodule.cpp:46
+msgid "All Mime Types"
+msgstr "Tüm Mime Tipleri"
+
+#. i18n: file managermoduleview.ui line 24
+#: rc.cpp:3
+#, no-c-format
+msgid "Enable HAL backend"
+msgstr "HAL desteğini etkinleştir"
+
+#. i18n: file managermoduleview.ui line 27
+#: rc.cpp:6
+#, no-c-format
+msgid ""
+"Select this if you want to enable the Hardware Abstraction Layer "
+"(http://hal.freedesktop.org/wiki/Software/hal) support."
+msgstr ""
+"Donanım Soyutlama Katmanı (HAL http://hal.freedesktop.org/wiki/Software/hal) "
+"desteğini etkinleştirmek için bunu seçin."
+
+#. i18n: file managermoduleview.ui line 35
+#: rc.cpp:9
+#, no-c-format
+msgid "Enable CD polling"
+msgstr "CD Seçmeyi etkinleştir"
+
+#. i18n: file managermoduleview.ui line 38
+#: rc.cpp:12
+#, no-c-format
+msgid "Select this to enable the CD polling."
+msgstr "CD Seçimini etkinleştirmek için bunu seçin."
+
+#. i18n: file managermoduleview.ui line 46
+#: rc.cpp:15
+#, no-c-format
+msgid "Enable medium application autostart after mount"
+msgstr ""
+"Aygıt bağlandıktan sonra ortam uygulamasını otomatik başlatmayı etkinleştir"
+
+#. i18n: file managermoduleview.ui line 49
+#: rc.cpp:18
+#, no-c-format
+msgid ""
+"Select this if you want to enable application autostart after mounting a "
+"device."
+msgstr ""
+"Ortam uygulamasını aygıt bağlandıktan hemen sonra otomatik başlatmayı "
+"etkinleştirmek için bunu seçin."
+
+#. i18n: file notifiermoduleview.ui line 48
+#: rc.cpp:21
+#, no-c-format
+msgid "Medium types:"
+msgstr "Ortam tipleri:"
+
+#. i18n: file notifiermoduleview.ui line 64
+#: rc.cpp:24
+#, no-c-format
+msgid ""
+"Here is the list of the available types of medium which can be monitored. You "
+"can filter the available actions by selecting a type of medium. If you want to "
+"see all the actions, select \"All Mime Types\"."
+msgstr ""
+"Burada izlenebilir ortam tiplerinin bir listesi var. Ortam tipini seçerek uygun "
+"davranışları filtreleyebilirsiniz. Tüm davranışları görmek istiyorsanız \"Tüm "
+"Mime Tipleri\"'ni seçmelisiniz."
+
+#. i18n: file notifiermoduleview.ui line 90
+#: rc.cpp:27
+#, no-c-format
+msgid "&Add..."
+msgstr "&Ekle..."
+
+#. i18n: file notifiermoduleview.ui line 93
+#: rc.cpp:30
+#, no-c-format
+msgid "Click here to add an action."
+msgstr "Bir simge eklemek için buraya tıklayın."
+
+#. i18n: file notifiermoduleview.ui line 104
+#: rc.cpp:36
+#, no-c-format
+msgid "Click here to delete the selected action if possible."
+msgstr "Eğer yapılabiliyorsa, seçilen davranışı silmek için buraya tıklayın."
+
+#. i18n: file notifiermoduleview.ui line 112
+#: rc.cpp:39
+#, no-c-format
+msgid "&Edit..."
+msgstr "&Düzenle..."
+
+#. i18n: file notifiermoduleview.ui line 115
+#: rc.cpp:42
+#, no-c-format
+msgid "Click here to edit the selected action if possible."
+msgstr ""
+"Eğer yapılabiliyorsa, seçilen davranışı düzenlemek için buraya tıklayın."
+
+#. i18n: file notifiermoduleview.ui line 123
+#: rc.cpp:45
+#, no-c-format
+msgid "&Toggle as Auto Action"
+msgstr "&Otomatik Davranışı Seç / Bırak"
+
+#. i18n: file notifiermoduleview.ui line 126
+#: rc.cpp:48
+#, no-c-format
+msgid ""
+"Click here to perform this action automatically on detection of the selected "
+"medium type (this option is disabled when \"All Mime Types\" is selected)."
+msgstr ""
+"Seçilen ortam tipi bulunduğunda bu davranışı otomatik olarak yapmak için buraya "
+"tıklayın (bu seçenek eğer  \"Tüm Mime Tipleri\" seçili ise pasifleştirilir)."
+
+#. i18n: file notifiermoduleview.ui line 153
+#: rc.cpp:51
+#, no-c-format
+msgid ""
+"Here is the list of the available actions. You can modify them by using the "
+"buttons on your right."
+msgstr ""
+"Burada kullanabileceğiniz davranışların bir listesi var. Bu davranışları "
+"sağınızdaki düğmeleri kullanarak düzenleyebilirsiniz."
+
+#. i18n: file serviceview.ui line 30
+#: rc.cpp:54 rc.cpp:57 serviceconfigdialog.cpp:40
+#, no-c-format
+msgid "Edit Service"
+msgstr "Servisi Düzenle"
+
+#. i18n: file serviceview.ui line 188
+#: rc.cpp:60
+#, no-c-format
+msgid "Available &medium types:"
+msgstr "Kullanılabilir &ortam tipleri:"
+
+#. i18n: file serviceview.ui line 191
+#: rc.cpp:63
+#, no-c-format
+msgid "Displa&y service for:"
+msgstr "S&ervisi bunun için göster:"
+
+#. i18n: file serviceview.ui line 218
+#: rc.cpp:66
+#, no-c-format
+msgid "Command:"
+msgstr "Komut:"

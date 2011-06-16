@@ -1,0 +1,43 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2005-05-18 21:25+0200\n"
+"PO-Revision-Date: 2002-07-14 15:21+0300\n"
+"Last-Translator: Görkem Çetin <gorkem@gelecek.com.tr>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.6\n"
+
+#: kfile_po.cpp:50
+msgid "Catalog Information"
+msgstr "Katalog Bilgisi"
+
+#: kfile_po.cpp:53
+msgid "Total Messages"
+msgstr "Toplam İleti"
+
+#: kfile_po.cpp:54
+msgid "Fuzzy Messages"
+msgstr "Belirsiz İleti"
+
+#: kfile_po.cpp:55
+msgid "Untranslated Messages"
+msgstr "Çevrilmemiş İleti"
+
+#: kfile_po.cpp:56
+msgid "Last Translator"
+msgstr "Son Çeviren"
+
+#: kfile_po.cpp:57
+msgid "Language Team"
+msgstr "Çeviri Grubu"
+
+#: kfile_po.cpp:58
+msgid "Revision"
+msgstr "Yeniden düzenleme"

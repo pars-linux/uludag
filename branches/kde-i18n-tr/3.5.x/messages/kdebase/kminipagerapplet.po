@@ -1,0 +1,189 @@
+# translation of kminipagerapplet.po to Turkish
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Cemil MUTLU <mawilos@gmail.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kminipagerapplet\n"
+"POT-Creation-Date: 2008-08-18 01:16+0200\n"
+"PO-Revision-Date: 2005-07-11 00:31+0300\n"
+"Last-Translator: Cemil MUTLU <mawilos@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: pagerapplet.cpp:680
+msgid "&Launch Pager"
+msgstr "Sa&yfalayıcıyı Başlat"
+
+#: pagerapplet.cpp:683
+msgid "&Rename Desktop \"%1\""
+msgstr "Masaüstlerini Yeniden &Adlandır \"%1\""
+
+#: pagerapplet.cpp:689
+msgid "Pager Layout"
+msgstr "Sayfalayıcı Yerleşimi"
+
+#: pagerapplet.cpp:693
+msgid "&Automatic"
+msgstr "Otom&atik"
+
+#: pagerapplet.cpp:694
+msgid ""
+"_: one row or column\n"
+"&1"
+msgstr "&1"
+
+#: pagerapplet.cpp:695
+msgid ""
+"_: two rows or columns\n"
+"&2"
+msgstr "&2"
+
+#: pagerapplet.cpp:696
+msgid ""
+"_: three rows or columns\n"
+"&3"
+msgstr "&3"
+
+#: pagerapplet.cpp:698
+msgid "&Rows"
+msgstr "Satı&rlar"
+
+#: pagerapplet.cpp:699
+msgid "&Columns"
+msgstr "&Sütunlar"
+
+#: pagerapplet.cpp:702
+msgid "&Window Thumbnails"
+msgstr "Pencere Görünümü"
+
+#: pagerapplet.cpp:703
+msgid "&Window Icons"
+msgstr "Pencere Simgesi"
+
+#: pagerapplet.cpp:705
+msgid "Text Label"
+msgstr "Metin Etiketi"
+
+#: pagerapplet.cpp:706
+msgid "Desktop N&umber"
+msgstr "Masaüstü Nu&marası"
+
+#: pagerapplet.cpp:708
+msgid "Desktop N&ame"
+msgstr "Masaüstü &Adı"
+
+#: pagerapplet.cpp:710
+msgid "N&o Label"
+msgstr "Etiketsiz"
+
+#: pagerapplet.cpp:713
+msgid "Background"
+msgstr "Arka Plan"
+
+#: pagerapplet.cpp:714
+msgid "&Elegant"
+msgstr "&Zarif"
+
+#: pagerapplet.cpp:716
+msgid "&Transparent"
+msgstr "&Saydam"
+
+#: pagerapplet.cpp:718
+msgid "&Desktop Wallpaper"
+msgstr "Masaüstü &Duvar Kağıdı"
+
+#: pagerapplet.cpp:721
+msgid "&Pager Options"
+msgstr "&Sayfalayıcı Seçenekleri"
+
+#: pagerapplet.cpp:724
+msgid "&Configure Desktops..."
+msgstr "Masaüstlerini &Yapılandır..."
+
+#: pagerbutton.cpp:807
+#, c-format
+msgid ""
+"_n: and 1 other\n"
+"and %n others"
+msgstr ""
+
+#: pagerbutton.cpp:815
+#, fuzzy, c-format
+msgid ""
+"_n: One window:\n"
+"%n windows:"
+msgstr "%n Pencereleri:"
+
+#. i18n: file pagersettings.kcfg line 12
+#: rc.cpp:3
+#, no-c-format
+msgid "None"
+msgstr "&Hiçbiri"
+
+#. i18n: file pagersettings.kcfg line 15
+#: rc.cpp:6
+#, no-c-format
+msgid "Name"
+msgstr "İ&sim"
+
+#. i18n: file pagersettings.kcfg line 18
+#: rc.cpp:9
+#, no-c-format
+msgid "Number"
+msgstr "Numara"
+
+#. i18n: file pagersettings.kcfg line 22
+#: rc.cpp:12
+#, no-c-format
+msgid "Virtual desktop label type"
+msgstr "Sanal masaüstü etiket türü"
+
+#. i18n: file pagersettings.kcfg line 28
+#: rc.cpp:15
+#, no-c-format
+msgid "Plain"
+msgstr "Sade"
+
+#. i18n: file pagersettings.kcfg line 31
+#: rc.cpp:18
+#, no-c-format
+msgid "Transparent"
+msgstr "Saydam"
+
+#. i18n: file pagersettings.kcfg line 34
+#: rc.cpp:21
+#, no-c-format
+msgid "Live"
+msgstr "Canlı"
+
+#. i18n: file pagersettings.kcfg line 38
+#: rc.cpp:24
+#, no-c-format
+msgid "Virtual desktop background type"
+msgstr "Sanal masaüstü arka plan türü"
+
+#. i18n: file pagersettings.kcfg line 42
+#: rc.cpp:27
+#, no-c-format
+msgid "Number of rows to arrange the desktop previews into"
+msgstr "Masaüstü önizlemeleri içinde hizalanacak satırların numarası"
+
+#. i18n: file pagersettings.kcfg line 49
+#: rc.cpp:30
+#, no-c-format
+msgid "Show desktop preview?"
+msgstr "Masaüstü önizlemesini gösterilsin mi?"
+
+#. i18n: file pagersettings.kcfg line 54
+#: rc.cpp:33
+#, no-c-format
+msgid "Show window icons in previews?"
+msgstr "Masaüstü simgeleri önizlemeli olarak gösterilsin mi?"
+
+#~ msgid "and %1 others"
+#~ msgstr "ve diğer %1'ler"

@@ -1,0 +1,59 @@
+# translation of kstyle_phase_config.po to turkish
+# translation of kstyle_phase_config.po to Türkçe
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kstyle_phase_config\n"
+"POT-Creation-Date: 2005-01-31 01:35+0100\n"
+"PO-Revision-Date: 2004-10-26 00:09+0300\n"
+"Last-Translator: Adem Alp YILDIZ <ademalp@linux-sevenler.org>\n"
+"Language-Team: turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9\n"
+
+#. i18n: file styledialog.ui line 16
+#: rc.cpp:3
+#, no-c-format
+msgid "Style Dialog"
+msgstr "Biçem Penceresi"
+
+#. i18n: file styledialog.ui line 33
+#: rc.cpp:6
+#, no-c-format
+msgid "Style Settings"
+msgstr "Biçem Ayarları"
+
+#. i18n: file styledialog.ui line 44
+#: rc.cpp:9
+#, no-c-format
+msgid "Use &gradients"
+msgstr "&Gradyan Kullan"
+
+#. i18n: file styledialog.ui line 47
+#: rc.cpp:12
+#, no-c-format
+msgid ""
+"This option will draw buttons and several other widgets using a gradient "
+"texture"
+msgstr ""
+"Bu seçenek düğmeleri ve bazı diğer bileşenleri bir geçiş dokusu ile çizecek"
+
+#. i18n: file styledialog.ui line 55
+#: rc.cpp:15
+#, no-c-format
+msgid "Highlight on &mouse hover"
+msgstr "&Fare ile üzerine gelince canlan"
+
+#. i18n: file styledialog.ui line 58
+#: rc.cpp:18
+#, no-c-format
+msgid ""
+"This option will highlight buttons and several other widgets when the mouse "
+"cursor is over them"
+msgstr ""
+"Bu seçenek fare ile düğmelerin ve bazı diğer bileşenlerin üzerine geldiği zaman "
+"canlandıracak"

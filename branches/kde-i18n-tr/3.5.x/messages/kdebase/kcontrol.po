@@ -1,0 +1,302 @@
+# translation of kcontrol.po to
+# Görkem Çetin <gorkem@gelecek.com.tr> , 2000
+# Copyright (C) 2003, 2004, 2007 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2002, 2004.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcontrol\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-01-05 01:15+0100\n"
+"PO-Revision-Date: 2007-09-24 03:04+0300\n"
+"Last-Translator: Serdar Soytetir\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: aboutwidget.cpp:43 main.cpp:104
+msgid "KDE Control Center"
+msgstr "KDE Kontrol Merkezi"
+
+#: aboutwidget.cpp:45
+msgid "Configure your desktop environment."
+msgstr "Masaüstünüzü ayarlayın."
+
+#: aboutwidget.cpp:47
+msgid ""
+"Welcome to the \"KDE Control Center\", a central place to configure your "
+"desktop environment. Select an item from the index on the left to load a "
+"configuration module."
+msgstr ""
+"Masaüstü yapılandırması için kullanılan KDE Kontrol Merkezi'ne hoş geldiniz. "
+"Bir yapılandırma modülünü yüklemek için soldaki dizinden bir öğe seçiniz."
+
+#: aboutwidget.cpp:53 main.cpp:108
+msgid "KDE Info Center"
+msgstr "KDE Bilgi Merkezi"
+
+#: aboutwidget.cpp:55
+msgid "Get system and desktop environment information"
+msgstr "Sistem ve masaüstü ortamı bilgisini göster"
+
+#: aboutwidget.cpp:57
+msgid ""
+"Welcome to the \"KDE Info Center\", a central place to find information about "
+"your computer system."
+msgstr ""
+"Bilgisayarınız hakkındaki tüm bilgiye ulaşmak üzere hazırlanmış \"KDE Bilgi "
+"Merkezine\" hoşgeldiniz."
+
+#: aboutwidget.cpp:61
+msgid ""
+"Use the \"Search\" field if you are unsure where to look for a particular "
+"configuration option."
+msgstr ""
+"Belli bir yapılandırma seçeneği için nereye bakacağınızdan emin değilseniz "
+"\"Ara\" sekmesini kullanın."
+
+#: aboutwidget.cpp:64
+msgid "KDE version:"
+msgstr "KDE sürümü:"
+
+#: aboutwidget.cpp:65
+msgid "User:"
+msgstr "Kullanıcı:"
+
+#: aboutwidget.cpp:66
+msgid "Hostname:"
+msgstr "Makine adı:"
+
+#: aboutwidget.cpp:67
+msgid "System:"
+msgstr "Sistem:"
+
+#: aboutwidget.cpp:68
+msgid "Release:"
+msgstr "Dağıtım:"
+
+#: aboutwidget.cpp:69
+msgid "Machine:"
+msgstr "İşlemci:"
+
+#: dockcontainer.cpp:133
+msgid "<big><b>Loading...</b></big>"
+msgstr "<big><b>Yükleniyor...</b></big>"
+
+#: dockcontainer.cpp:201 toplevel.cpp:376
+msgid ""
+"There are unsaved changes in the active module.\n"
+"Do you want to apply the changes before running the new module or discard the "
+"changes?"
+msgstr ""
+"Etkin modülde kaydedilmemiş değişiklikler var.\n"
+"Yeni modülü çalıştırmadan önce değişiklikleri \n"
+"uygulamayı istiyor musunuz ?"
+
+#: dockcontainer.cpp:204 toplevel.cpp:379
+msgid ""
+"There are unsaved changes in the active module.\n"
+"Do you want to apply the changes before exiting the Control Center or discard "
+"the changes?"
+msgstr ""
+"Etkin modülde kaydedilmemiş değişiklikler var.\n"
+"Kontrol merkezinden çıkmadan önce değişiklikleri \n"
+"uygulamayı istiyor musunuz?"
+
+#: dockcontainer.cpp:207 toplevel.cpp:382
+msgid "Unsaved Changes"
+msgstr "Kaydedilmemiş Değişiklikler"
+
+#: helpwidget.cpp:44
+msgid ""
+"<p>Use the \"What's This?\" (Shift+F1) to get help on specific options.</p>"
+"<p>To read the full manual click <a href=\"%1\">here</a>.</p>"
+msgstr ""
+"<p>\"Bu nedir?\" (Shift+F1) özelliğini kullanarak belirli seçenekler hakkında "
+"bilgi alabilirsiniz</p>"
+"<p>Tüm kılavuzu okumak için <a href=\"%1\">burayı</a> tıklayın.</p>"
+
+#: helpwidget.cpp:51
+msgid ""
+"<h1>KDE Info Center</h1>There is no quick help available for the active info "
+"module."
+"<br>"
+"<br>Click <a href = \"kinfocenter/index.html\">here</a> "
+"to read the general Info Center manual."
+msgstr ""
+"<h1>KDE Bilgi Merkezi</h1>Üzgünüm, aktif kontrol modülü için hızlı yardım yok."
+"<br>"
+"<br>Genel kontrol merkezi kılavuzunu okumak için <a "
+"href=\"kcontrol/index.html\">buraya</a> tıklayın."
+
+#: helpwidget.cpp:56
+msgid ""
+"<h1>KDE Control Center</h1>There is no quick help available for the active "
+"control module."
+"<br>"
+"<br>Click <a href = \"kcontrol/index.html\">here</a> "
+"to read the general Control Center manual."
+msgstr ""
+"<h1>KDE Kontrol Merkezi</h1> Aktif kontrol modülü için hızlı yardım yok."
+"<br>"
+"<br>Genel kontrol merkezi kılavuzunu okumak için <a "
+"href=\"kcontrol/index.html\">buraya</a> tıklayın."
+
+#: kcrootonly.cpp:30
+msgid ""
+"<big>You need super user privileges to run this control module.</big>"
+"<br>Click on the \"Administrator Mode\" button below."
+msgstr ""
+"<big>Bu denetim modülünü çalıştırmak için root kullanıcı haklarına sahip "
+"olmanız gerekir.</big>"
+"<br>Aşağıdaki \"Yönetici Kipi\"düğmesine tıklayınız."
+
+#: main.cpp:105
+msgid "The KDE Control Center"
+msgstr "KDE Kontrol Merkezi"
+
+#: main.cpp:106 main.cpp:110
+msgid "(c) 1998-2004, The KDE Control Center Developers"
+msgstr "(c) 1998-2004, KDE Kontrol Merkezi Geliştiricileri"
+
+#: main.cpp:109
+msgid "The KDE Info Center"
+msgstr "KDE Bilgi Merkezi"
+
+#: main.cpp:128 main.cpp:130
+msgid "Current Maintainer"
+msgstr "Güncel Yazar"
+
+#: modules.cpp:160
+msgid "<big>Loading...</big>"
+msgstr "<big>Yükleniyor...</big>"
+
+#: moduletreeview.cpp:65
+msgid "The %1 configuration group. Click to open it."
+msgstr "%1 yapılandırma grubu. Açmak için tıklayın."
+
+#: moduletreeview.cpp:67
+msgid ""
+"This treeview displays all available control modules. Click on one of the "
+"modules to receive more detailed information."
+msgstr ""
+"Bu ağaç yapısı tüm kullanılabilir modülleri görüntüler. Bir modül hakkında daha "
+"detaylı bilgi almak için üzerine tıklayın."
+
+#: proxywidget.cpp:54
+msgid "The currently loaded configuration module."
+msgstr "Şu anda yüklenmiş olan yapılandırma modülü."
+
+#: proxywidget.cpp:88
+msgid ""
+"<b>Changes in this module require root access.</b>"
+"<br>Click the \"Administrator Mode\" button to allow modifications in this "
+"module."
+msgstr ""
+"<b>Bu modül üzerinde yapılacak değişiklikler root kullanıcısı erişimi "
+"istemektedir.</b>"
+"<br>\"Yönetici Kipi\" düğmesine tıklayarak bu işlemi gerçekleştirin."
+
+#: proxywidget.cpp:92
+msgid ""
+"This module requires special permissions, probably for system-wide "
+"modifications; therefore, it is required that you provide the root password to "
+"be able to change the module's properties.  If you do not provide the password, "
+"the module will be disabled."
+msgstr ""
+"Bu modül özel izinlere ihtiyaç duyar. Bu nedenle modül özelliklerini "
+"değiştirmek için root parolasını bilmelisiniz. Parolayı vermedikçe bu modül "
+"kapalı duracaktır."
+
+#: proxywidget.cpp:211
+msgid "&Reset"
+msgstr "&Sıfırla"
+
+#: proxywidget.cpp:212
+msgid "&Administrator Mode"
+msgstr "&Yönetici Kipi"
+
+#. i18n: file kcontrolui.rc line 5
+#: rc.cpp:6 rc.cpp:15
+#, no-c-format
+msgid "&Mode"
+msgstr "Şe&kil"
+
+#. i18n: file kcontrolui.rc line 9
+#: rc.cpp:9 rc.cpp:18
+#, no-c-format
+msgid "Icon &Size"
+msgstr "&Simge Boyutu"
+
+#: searchwidget.cpp:78
+msgid "&Keywords:"
+msgstr "Anahtar &kelimeler:"
+
+#: searchwidget.cpp:85
+msgid "&Results:"
+msgstr "So&nuçlar:"
+
+#: toplevel.cpp:105
+msgid "Clear search"
+msgstr "Aramayı temizle"
+
+#: toplevel.cpp:107
+msgid "Search:"
+msgstr "A&ra:"
+
+#: toplevel.cpp:241
+msgid "&Icon View"
+msgstr "&Simge Görünümü"
+
+#: toplevel.cpp:246
+msgid "&Tree View"
+msgstr "Ağaç &Görünümü"
+
+#: toplevel.cpp:251
+msgid "&Small"
+msgstr "&Küçük"
+
+#: toplevel.cpp:256
+msgid "&Medium"
+msgstr "&Orta"
+
+#: toplevel.cpp:261
+msgid "&Large"
+msgstr "&Büyük"
+
+#: toplevel.cpp:266
+msgid "&Huge"
+msgstr "&Çok büyük"
+
+#: toplevel.cpp:270 toplevel.cpp:392 toplevel.cpp:447
+msgid "About Current Module"
+msgstr "Güncel Modül Hakkında"
+
+#: toplevel.cpp:281 toplevel.cpp:357
+msgid "&Report Bug..."
+msgstr "Hata &Bildir..."
+
+#: toplevel.cpp:359
+msgid "Report Bug on Module %1..."
+msgstr "Modül %1 İçin Hata Bildir..."
+
+#: toplevel.cpp:440
+#, c-format
+msgid ""
+"_: Help menu->about <modulename>\n"
+"About %1"
+msgstr "%1 hakkında"

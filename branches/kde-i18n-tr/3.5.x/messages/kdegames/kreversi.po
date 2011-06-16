@@ -1,0 +1,437 @@
+# translation of kreversi.po to Türkçe
+# translation of kreversi.po to Turkish
+# translation of kreversi.po to
+# translation of kreversi.po to
+# translation of kreversi.po to
+# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Tuncay YENİAY <tuncayyeniay@mynet.com>,2002.
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# Ömer Fadıl USTA <omer_fad@yahoo.com>, 2004.
+# Bülent ŞENER <bulent@kde.org.tr>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kreversi\n"
+"POT-Creation-Date: 2008-07-08 01:19+0200\n"
+"PO-Revision-Date: 2005-08-10 13:24+0300\n"
+"Last-Translator: Bülent ŞENER <bulent@kde.org.tr>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.1\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Tuncay YENİAY, Bülent ŞENER"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "tuncayyeniay@mynet.com, bulent@kde.org.tr"
+
+#: board.cpp:268
+msgid "Click"
+msgstr "Tık"
+
+#: highscores.cpp:31
+msgid "1 (Beginner)"
+msgstr "1 (Başlangıç)"
+
+#: highscores.cpp:32
+msgid "2"
+msgstr "2"
+
+#: highscores.cpp:33
+msgid "3"
+msgstr "3"
+
+#: highscores.cpp:34
+msgid "4 (Average)"
+msgstr "4 (Ortalama)"
+
+#: highscores.cpp:35
+msgid "5"
+msgstr "5"
+
+#: highscores.cpp:36
+msgid "6"
+msgstr "6"
+
+#: highscores.cpp:37
+msgid "7 (Expert)"
+msgstr "7 (Uzman)"
+
+#: highscores.cpp:85
+msgid "anonymous"
+msgstr "anonim"
+
+#: kreversi.cpp:164
+msgid "&Stop Thinking"
+msgstr "&Düşünmeyi Bırak"
+
+#: kreversi.cpp:167
+msgid "&Continue Thinking"
+msgstr "&Düşünmeye Devam Et"
+
+#: kreversi.cpp:170
+msgid "S&witch Sides"
+msgstr "&Tarafları Değiştir"
+
+#: kreversi.cpp:179
+#, fuzzy
+msgid "Show Last Move"
+msgstr "Son hareketi göster"
+
+#: kreversi.cpp:183
+#, fuzzy
+msgid "Show Legal Moves"
+msgstr "Geçerli hareketleri göster"
+
+#: kreversi.cpp:224
+msgid ""
+"You are already running an unfinished game.  If you abort the old game to start "
+"a new one, the old game will be registered as a loss in the highscore file.\n"
+"What do you want to do?"
+msgstr ""
+"Henüz bitmemiş bir oyunu çalıştırmaya çalışıyorsunuz. Eski oyunu kapatırsanız "
+"ve yeni bir oyun başlatırsanız eski oyun istatistiklere kaybedildi olarak "
+"geçecektir.\n"
+"Ne yapmak istersiniz?"
+
+#: kreversi.cpp:229
+msgid "Abort Current Game?"
+msgstr "Geçerli oyun sonlandırılsın mı?"
+
+#: kreversi.cpp:230
+msgid "Abort Old Game"
+msgstr "Eski oyunu sonlandır"
+
+#: kreversi.cpp:231
+msgid "Continue Old Game"
+msgstr "Eski oyuna devam et"
+
+#: kreversi.cpp:281
+msgid "Game saved."
+msgstr "Oyun kaydedildi"
+
+#: kreversi.cpp:386
+msgid "You cannot switch sides in the middle of the computer's move."
+msgstr ""
+
+#: kreversi.cpp:387
+msgid "Notice"
+msgstr "Uyarı"
+
+#: kreversi.cpp:394
+msgid "If you switch side, your score will not be added to the highscores."
+msgstr "Eğer taraf değiştirirseniz, puanınız listeye eklenmeyecektir."
+
+#: kreversi.cpp:466
+msgid "Your turn"
+msgstr "Sizin sıranız"
+
+#: kreversi.cpp:468
+msgid "Computer's turn"
+msgstr "Bilgisayarın sırası"
+
+#: kreversi.cpp:473
+msgid " (interrupted)"
+msgstr " (kesildi)"
+
+#: kreversi.cpp:586
+msgid "Illegal move"
+msgstr "Geçersiz hamle"
+
+#: kreversi.cpp:599
+msgid "End of game"
+msgstr "Oyunun sonu"
+
+#: kreversi.cpp:610
+msgid "Draw!"
+msgstr "Berabere!"
+
+#: kreversi.cpp:611
+msgid ""
+"Game is drawn!\n"
+"\n"
+"You     : %1\n"
+"Computer: %2"
+msgstr ""
+"Oyun bitti\n"
+"\n"
+"Siz       : %1\n"
+"Bilgisayar: %2"
+
+#: kreversi.cpp:613 kreversi.cpp:620 kreversi.cpp:627
+msgid "Game Ended"
+msgstr "Oyun Bitti"
+
+#: kreversi.cpp:617
+msgid "Game won!"
+msgstr "Oyun kazandı!"
+
+#: kreversi.cpp:618
+msgid ""
+"Congratulations, you have won!\n"
+"\n"
+"You     : %1\n"
+"Computer: %2"
+msgstr ""
+"Tebrikler, kazandınız!\n"
+"\n"
+"Siz       : %1\n"
+"Bilgisayar: %2"
+
+#: kreversi.cpp:624
+msgid "Game lost!"
+msgstr "Oyun kaybetti!"
+
+#: kreversi.cpp:625
+msgid ""
+"You have lost the game!\n"
+"\n"
+"You     : %1\n"
+"Computer: %2"
+msgstr ""
+"Oyunu kaybettiniz!\n"
+"\n"
+"Siz      : %1\n"
+"Bilgisyar: %2"
+
+#: kreversi.cpp:757
+msgid "General"
+msgstr "Genel"
+
+#: main.cpp:51
+msgid "KDE Board Game"
+msgstr "KDE Tahta Oyunu"
+
+#: main.cpp:57
+msgid "KReversi"
+msgstr "KReversi"
+
+#: main.cpp:62
+msgid "Game engine, ported from his JAVA applet."
+msgstr "Oyun motoru, Java Programcığına geçirtme"
+
+#: main.cpp:63
+msgid "Comments and bugfixes."
+msgstr "Yorum ve hata düzeltmeler."
+
+#: main.cpp:64
+msgid "Raytraced chips."
+msgstr "Renkli toplar"
+
+#: main.cpp:65
+msgid "Cleaning, bugfixes, some enhancements."
+msgstr "Çeşitli geliştirmeler"
+
+#: qreversigameview.cpp:175
+#, fuzzy
+msgid "Moves"
+msgstr "&Hamle"
+
+#: qreversigameview.cpp:206
+msgid "White"
+msgstr "Beyaz"
+
+#: qreversigameview.cpp:207
+msgid "Black"
+msgstr "Siyah"
+
+#: qreversigameview.cpp:210
+msgid "Red"
+msgstr ""
+
+#: qreversigameview.cpp:211
+msgid "Blue"
+msgstr ""
+
+#: qreversigameview.cpp:288 qreversigameview.cpp:293
+msgid "You"
+msgstr "Siz"
+
+#. i18n: file kreversiui.rc line 12
+#: rc.cpp:6
+#, no-c-format
+msgid "&Move"
+msgstr "&Hamle"
+
+#. i18n: file kreversiui.rc line 30
+#: rc.cpp:12
+#, no-c-format
+msgid "View Toolbar"
+msgstr "Araç Kutusunu Göster"
+
+#. i18n: file settings.ui line 16
+#: rc.cpp:15
+#, no-c-format
+msgid "Settings"
+msgstr "Ayarlar"
+
+#. i18n: file settings.ui line 67
+#: rc.cpp:18
+#, no-c-format
+msgid "&Grayscale chips"
+msgstr "&Siyah beyaz toplar"
+
+#. i18n: file settings.ui line 75
+#: rc.cpp:21
+#, no-c-format
+msgid "Play Game"
+msgstr "Oyunu Oyna"
+
+#. i18n: file settings.ui line 86
+#: rc.cpp:24
+#, no-c-format
+msgid "Casually"
+msgstr "Tesadüfi"
+
+#. i18n: file settings.ui line 100
+#: rc.cpp:27
+#, no-c-format
+msgid "Competitively"
+msgstr "Rekabetçi bir şekilde"
+
+#. i18n: file settings.ui line 113
+#: rc.cpp:30
+#, no-c-format
+msgid "&Computer Skill"
+msgstr "&Bilgisayarın Seviyesi"
+
+#. i18n: file settings.ui line 144
+#: rc.cpp:33
+#, no-c-format
+msgid "Beginner"
+msgstr "Başlangıç"
+
+#. i18n: file settings.ui line 155
+#: rc.cpp:36
+#, no-c-format
+msgid "Expert"
+msgstr "Uzman"
+
+#. i18n: file settings.ui line 166
+#: rc.cpp:39
+#, no-c-format
+msgid "Average"
+msgstr "Ortalama"
+
+#. i18n: file settings.ui line 179
+#: rc.cpp:42
+#, no-c-format
+msgid "Animation Speed"
+msgstr "Canlandırma hızı"
+
+#. i18n: file settings.ui line 190
+#: rc.cpp:45
+#, no-c-format
+msgid "Slow"
+msgstr "Yavaş"
+
+#. i18n: file settings.ui line 201
+#: rc.cpp:48
+#, no-c-format
+msgid "Fast"
+msgstr "Hızlı"
+
+#. i18n: file settings.ui line 237
+#: rc.cpp:51
+#, no-c-format
+msgid "&Animation"
+msgstr "&Canlandırma"
+
+#. i18n: file settings.ui line 248
+#: rc.cpp:54
+#, no-c-format
+msgid "&Background"
+msgstr "&Arkaplan"
+
+#. i18n: file settings.ui line 259
+#: rc.cpp:57
+#, no-c-format
+msgid "Color:"
+msgstr "Renk:"
+
+#. i18n: file settings.ui line 272
+#: rc.cpp:60
+#, no-c-format
+msgid "&Image:"
+msgstr "&Resim:"
+
+#. i18n: file kreversi.kcfg line 11
+#: rc.cpp:63
+#, no-c-format
+msgid "Whether to use a grayscale board instead of colored."
+msgstr "Siyah beyaz tahta kullanılacak mı?"
+
+#. i18n: file kreversi.kcfg line 15
+#: rc.cpp:66
+#, no-c-format
+msgid "The human color."
+msgstr "Oyuncunun rengi."
+
+#. i18n: file kreversi.kcfg line 19
+#: rc.cpp:69
+#, no-c-format
+msgid "The computer color."
+msgstr "Bilgisayarın rengi."
+
+#. i18n: file kreversi.kcfg line 23
+#: rc.cpp:72
+#, no-c-format
+msgid "Whether to use animations."
+msgstr "Canlandırma kullanılsın mı?"
+
+#. i18n: file kreversi.kcfg line 27
+#: rc.cpp:75
+#, no-c-format
+msgid "The speed of the animations."
+msgstr "Canlandırmaların hızı"
+
+#. i18n: file kreversi.kcfg line 33
+#: rc.cpp:78
+#, no-c-format
+msgid "The zoom factor of the board."
+msgstr "Tahtanın büyüklüğü"
+
+#. i18n: file kreversi.kcfg line 39
+#: rc.cpp:81
+#, no-c-format
+msgid "Whether to play competitively in contrast to casually."
+msgstr ""
+
+#. i18n: file kreversi.kcfg line 43
+#: rc.cpp:84
+#, no-c-format
+msgid "The strength of the computer player."
+msgstr "Bilgisayar oyuncusunun gücü."
+
+#. i18n: file kreversi.kcfg line 49
+#: rc.cpp:87
+#, no-c-format
+msgid "Whether to use a background image."
+msgstr "Kullanılacak arkaplan resmi"
+
+#. i18n: file kreversi.kcfg line 53
+#: rc.cpp:90
+#, no-c-format
+msgid "The background color to use."
+msgstr "Kullanılacak arkaplan rengi"
+
+#. i18n: file kreversi.kcfg line 57
+#: rc.cpp:93
+#, no-c-format
+msgid "Image to use as background."
+msgstr "Kullanılacak arkaplan resmi"
+
+#. i18n: file kreversi.kcfg line 62
+#: rc.cpp:96
+#, no-c-format
+msgid "Whether the menubar is visible."
+msgstr "Menü çubuğu görünür mü?"

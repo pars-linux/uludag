@@ -1,0 +1,1393 @@
+# translation of kdvi.po to
+# translation of kdvi.po to Türkçe
+# translation of kdvi.po to Turkish
+# Copyright (C) 2004, 2005 Free Software Foundation, Inc.
+# Yıldırım Karslıoğlu <ykarslioglu@superonline.com>, 2000.
+# Serdar Cevher <scevher@anet.com.tr>, 2001.
+# Görkem Çetin <gorkem@kde.org>, 2002, 2004.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Görkem Çetin <gorkem@gorkemcetin.com>, 2005.
+# Alper Şen <aalpersen@gmail.com>, 2005.
+# Alper Sen <aalpersen@gmail.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdvi\n"
+"POT-Creation-Date: 2008-07-08 01:19+0200\n"
+"PO-Revision-Date: 2005-07-18 15:49+0300\n"
+"Last-Translator: Alper Sen <aalpersen@gmail.com>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: TeXFontDefinition.cpp:108
+msgid "Cannot find font %1, file %2."
+msgstr "%1 yazıtipi, %2 dosyası bulunamadı."
+
+#: TeXFontDefinition.cpp:124
+#, c-format
+msgid "Checksum mismatch for font file %1"
+msgstr "%1 yazıtipi dosyasında denetleme hatası"
+
+#: TeXFontDefinition.cpp:133
+msgid "TeX virtual"
+msgstr "Sanal TeX"
+
+#: TeXFontDefinition.cpp:142
+msgid "TeX Font Metric"
+msgstr "TeX Yazıtipi Metriği"
+
+#: TeXFontDefinition.cpp:167
+msgid "FreeType"
+msgstr "FreeType"
+
+#: TeXFontDefinition.cpp:172
+#, c-format
+msgid "Cannot recognize format for font file %1"
+msgstr "Yazıtipi dosyası %1 için biçim tanınamadı"
+
+#: TeXFont_PFB.cpp:44
+msgid ""
+"The font file %1 could be opened and read, but its font format is unsupported."
+msgstr ""
+"%1 yazıtipi dosyası açılıp okunabiliyor fakat yazıtipi biçimi desteklenmiyor."
+
+#: TeXFont_PFB.cpp:50
+msgid "The font file %1 is broken, or it could not be opened or read."
+msgstr "%1 yazıtipi dosyası bzouk veya açılamıyo/okunamıyor."
+
+#: TeXFont_PFB.cpp:171
+#, c-format
+msgid ""
+"FreeType reported an error when setting the character size for font file %1."
+msgstr ""
+"FreeType, %1 yazıtipi dosyası için karakter boyutu ayarlanırken hata belirledi."
+
+#: TeXFont_PFB.cpp:187
+msgid "FreeType is unable to load glyph #%1 from font file %2."
+msgstr "FreeType, #%1 karakterini %2 yazıtipi dosyasından yükleyemedi."
+
+#: TeXFont_PFB.cpp:199
+msgid "FreeType is unable to render glyph #%1 from font file %2."
+msgstr "FreeType, #%1 karakterini %2 yazıtipi dosyasından derleyemedi."
+
+#: TeXFont_PFB.cpp:212
+msgid "Glyph #%1 is empty."
+msgstr "Glyph #%1 boş."
+
+#: TeXFont_PFB.cpp:213
+msgid "Glyph #%1 from font file %2 is empty."
+msgstr "%2 yazıtipi dosyasındaki %1 karakteri boş."
+
+#: TeXFont_PFB.cpp:282
+msgid "FreeType is unable to load metric for glyph #%1 from font file %2."
+msgstr ""
+"FreeType, #%1 karakterinin boyutlarını %2 yazıtipi dosyasından yükleyemedi."
+
+#: TeXFont_PK.cpp:94
+#, c-format
+msgid "Cannot open font file %1."
+msgstr "%1 yazıtipi dosyası açılamadı."
+
+#: TeXFont_PK.cpp:139
+msgid "TexFont_PK::operator[]: Character %1 not defined in font %2"
+msgstr "TexFont_PK::operator[]: %1 karakteri %2 yazıtipinde tanımlı değil"
+
+#: TeXFont_PK.cpp:457
+msgid "Unexpected %1 in PK file %2"
+msgstr "PK dosyası %2 içinde beklenmeyen %1"
+
+#: TeXFont_PK.cpp:524
+msgid "The character %1 is too large in file %2"
+msgstr "%2 dosyası içindeki %1 karakteri çok büyük"
+
+#: TeXFont_PK.cpp:629 TeXFont_PK.cpp:715
+msgid "Wrong number of bits stored:  char. %1, font %2"
+msgstr "Yanlış sayıda bit kaydedildi: karakter %1, yazıtipi %2"
+
+#: TeXFont_PK.cpp:631 TeXFont_PK.cpp:717
+msgid "Bad pk file (%1), too many bits"
+msgstr "Bozuk pk dosyası (%1), çok fazla bit"
+
+#: TeXFont_PK.cpp:748
+msgid "Font has non-square aspect ratio "
+msgstr "Yazıtipinde hata var! "
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: dviFile.cpp:112
+msgid "The DVI file does not start with the preamble."
+msgstr "DVI dosyası bir başlık ile başlamıyor."
+
+#: dviFile.cpp:117
+msgid ""
+"The DVI file contains the wrong version of DVI output for this program. Hint: "
+"If you use the typesetting system Omega, you have to use a special program, "
+"such as oxdvi."
+msgstr ""
+"DVI dosyası bu program için yanlış DVI çıktı sürümüne sahip. İpucu: Eğer Omega "
+"yazım sistemini kullanıyorsanız, oxdvi gibi özel bir program kullanmalısınız."
+
+#: dviFile.cpp:155
+msgid ""
+"The DVI file is badly corrupted. KDVI was not able to find the postamble."
+msgstr "DVI dosyası bozulmuş. KDVI başlığı bulamıyor."
+
+#: dviFile.cpp:170
+msgid "The postamble does not begin with the POST command."
+msgstr "DVI postamble bölümü POST komutu ile başlamıyor."
+
+#: dviFile.cpp:225
+msgid "The postamble contained a command other than FNTDEF."
+msgstr "Gönderim FNTDEF den başka bir komut içeriyor."
+
+#: dviFile.cpp:259
+msgid "The page %1 does not start with the BOP command."
+msgstr "%1 sayfası BOP komutu ile başlamıyor."
+
+#: dviFile.cpp:294
+msgid "Not enough memory to load the DVI-file."
+msgstr "DVI dosyasını yüklemek için yeterli bellek bulunmuyor."
+
+#: dviFile.cpp:300
+msgid "Could not load the DVI-file."
+msgstr "DVI dosyası yüklenemedi."
+
+#: dviRenderer.cpp:210
+msgid ""
+"<qt><strong>File corruption!</strong> KDVI had trouble interpreting your DVI "
+"file. Most likely this means that the DVI file is broken.</qt>"
+msgstr ""
+"<qt><strong>Dosya hatası!</strong> KDVI, bu dosyayı açamıyor. DVI dosyası "
+"bozulmuş olabilir.</qt>"
+
+#: dviRenderer.cpp:212 dviRenderer.cpp:483
+msgid "DVI File Error"
+msgstr "DVI Dosya Hatası"
+
+#: dviRenderer.cpp:262
+msgid "KDVI: Information"
+msgstr "KDVI Bilgisi"
+
+#: dviRenderer.cpp:277
+msgid ""
+"<qt>This DVI file contains source file information. You may click into the text "
+"with the middle mouse button, and an editor will open the TeX-source file "
+"immediately.</qt>"
+msgstr ""
+"<qt>Bu DVI dosyası kaynak dosya bilgisi içeriyor. Metne orta fare tuşu ile "
+"tıklarsanız, bir metin düzenleyici TeX-kaynak dosyasını hemen açacaktır.</qt>"
+
+#: dviRenderer.cpp:286
+msgid "Explain in more detail..."
+msgstr "Daha fazla bilgi ver..."
+
+#: dviRenderer.cpp:315
+msgid "Embedding PostScript Files"
+msgstr "PostScript Dosyaları Gömülüyor"
+
+#: dviRenderer.cpp:345
+msgid "Not all PostScript files could be embedded into your document."
+msgstr "Tüm PostScript dosyaları dökümanınıza gömülemedi."
+
+#: dviRenderer.cpp:348
+msgid ""
+"All external PostScript files were embedded into your document. You will "
+"probably want to save the DVI file now."
+msgstr ""
+"Tüm dış PostScript dosyaları dökümanınıza gömüldü. Dosyanızı büyük bir "
+"ihtimalle kaydetmek isteyeceksiniz."
+
+#: dviRenderer.cpp:439
+msgid ""
+"<qt><strong>File error.</strong> The specified file '%1' does not exist. KDVI "
+"already tried to add the ending '.dvi'.</qt>"
+msgstr ""
+"<qt><strong>Dosya hatası.</strong>Belirtilen dosya '%1' mevcut değil. KDVI "
+"'.dvi' uzantısını eklemeyi denedi.</qt>"
+
+#: dviRenderer.cpp:441
+msgid "File Error!"
+msgstr "Dosya Hatası!"
+
+#: dviRenderer.cpp:452
+msgid ""
+"<qt>Could not open file <nobr><strong>%1</strong></nobr> which has type <strong>"
+"%2</strong>. KDVI can only load DVI (.dvi) files.</qt>"
+msgstr ""
+"<qt><strong>%2</strong> tipindeki <nobr><strong>%1</strong></nobr> "
+"dosyası açılamadı. KDVI sadece DVI (.dvi) dosyalarını yükleyebilir.</qt>"
+
+#: dviRenderer.cpp:463 dviRenderer.cpp:481
+msgid ""
+"<qt>File corruption! KDVI had trouble interpreting your DVI file. Most likely "
+"this means that the DVI file is broken.</qt>"
+msgstr ""
+"<qt>Dosya bozuk! KDVI DVI dosyanızı açmakta zorluk çekiyor. DVI dosyanız büyük "
+"bir ihtimalle bozulmuş.</qt>"
+
+#: dviRenderer.cpp:640
+msgid ""
+"<qt>You have asked KDVI to locate the place in the DVI file which corresponds "
+"to line %1 in the TeX-file <strong>%2</strong>. It seems, however, that the DVI "
+"file does not contain the necessary source file information. We refer to the "
+"manual of KDVI for a detailed explanation on how to include this information. "
+"Press the F1 key to open the manual.</qt>"
+msgstr ""
+"<qt>KDVI'den TeX-dosyası <strong>%2</strong> %1 satırında belirtilen DVI "
+"dosyasının yerini bulmasını istediniz. Ama görünüşe göre DVI dosyası gerekli "
+"kaynak dosyası bilgisini içermiyor. KDVI elkitabına bu bilginin nasıl "
+"ekleneceğine dair bir referans verdik. Elkitabını açmak için F1 tuşuna "
+"basınız.</qt>"
+
+#: dviRenderer.cpp:645 dviRenderer.cpp:685
+msgid "Could Not Find Reference"
+msgstr "Referans Bulunamadı"
+
+#: dviRenderer.cpp:683
+msgid ""
+"<qt>KDVI was not able to locate the place in the DVI file which corresponds to "
+"line %1 in the TeX-file <strong>%2</strong>.</qt>"
+msgstr ""
+"<qt>KDVI TeX-dosyası <strong>%2</strong> %1 satırında belirtilen DVI dosyasının "
+"yerini bulamadı.</qt>"
+
+#: dviRenderer.cpp:737
+msgid ""
+"The DVI-file refers to the TeX-file <strong>%1</strong> "
+"which could not be found."
+msgstr "DVI dosyası bulunamayan <strong>%1</strong> TeX-dosyasına bağlı."
+
+#: dviRenderer.cpp:740
+msgid "Could Not Find File"
+msgstr "Dosya Bulunamadı"
+
+#: dviRenderer.cpp:747
+msgid ""
+"You have not yet specified an editor for inverse search. Please choose your "
+"favorite editor in the <strong>DVI options dialog</strong> "
+"which you will find in the <strong>Settings</strong>-menu."
+msgstr ""
+"Terslendirilmiş arama için bir düzenleyici belirtmediniz. Lütfen sevdiğiniz "
+"düzenleyiciyi <strong>Ayarlar</strong> menüsü altındaki <strong>"
+"DVI seçenekleri diyalog</strong> kutusunda belirtiniz."
+
+#: dviRenderer.cpp:752
+msgid "Need to Specify Editor"
+msgstr "Düzenleyicinin Belirtilmesi Gerekiyor"
+
+#: dviRenderer.cpp:753
+msgid "Use KDE's Editor Kate for Now"
+msgstr "Şimdilik Kate Kullan"
+
+#: dviRenderer.cpp:785
+msgid ""
+"<qt>The external program"
+"<br>"
+"<br><tt><strong>%1</strong></tt>"
+"<br/>"
+"<br/>which was used to call the editor for inverse search, reported an error. "
+"You might wish to look at the <strong>document info dialog</strong> "
+"which you will find in the File-Menu for a precise error report. The manual for "
+"KDVI contains a detailed explanation how to set up your editor for use with "
+"KDVI, and a list of common problems.</qt>"
+msgstr ""
+"<qt>Terslendirilmiş arama için olan düzenleyici çağıran dış uygulama "
+"<br>"
+"<br><tt><strong>%1</strong></tt>"
+"<br/>"
+"<br/> bir hata belirtti. Daha kesin bir hata raporu için Dosya menüsünde "
+"bulacağınız <strong>belge bilgi diyaloğuna</strong> göz atmak isteyebilirsiniz. "
+"KDVI elkitabı KDVI ile birlikte kullanabileceğiniz düzenleyicinin ayarlarının "
+"yapılandırılması ve olası karşılaşılabilecek problem listesini barındırır.</qt>"
+
+#: dviRenderer.cpp:791
+msgid "Starting the editor..."
+msgstr "Düzenleyici başlatılıyor..."
+
+#: dviRenderer_draw.cpp:269
+msgid "The DVI code set a character of an unknown font."
+msgstr "DVI kodu bilinmeyen bir yazıtipinin bir karakterinin atadı."
+
+#: dviRenderer_draw.cpp:294 dviRenderer_prescan.cpp:636
+msgid "The DVI code referred to font #%1, which was not previously defined."
+msgstr "#%1 yazıtipine başvuran DVI kodu önceden belirtilmemiş."
+
+#: dviRenderer_draw.cpp:379
+msgid "The stack was not empty when the EOP command was encountered."
+msgstr "EOP komutu çalıştırılırken yığın boş değildi."
+
+#: dviRenderer_draw.cpp:391
+msgid "The stack was empty when a POP command was encountered."
+msgstr "POP komutu çalıştırılırken yığın boş durumdaydı."
+
+#: dviRenderer_draw.cpp:515 dviRenderer_draw.cpp:524
+msgid "The DVI code referred to a font which was not previously defined."
+msgstr "DVI kodunun başvurduğu bir yazıtipi önceden tanımlanmamış."
+
+#: dviRenderer_draw.cpp:564
+msgid "An illegal command was encountered."
+msgstr "Geçersiz bir komut gerçekleşti."
+
+#: dviRenderer_draw.cpp:569
+msgid "The unknown op-code %1 was encountered."
+msgstr "Bilinmeyen işlem kodu %1 gerçekleşti."
+
+#: dviRenderer_export.cpp:83
+msgid ""
+"KDVI could not locate the program 'dvipdfm' on your computer. That program is "
+"essential for the export function to work. You can, however, convert the "
+"DVI-file to PDF using the print function of KDVI, but that will often produce "
+"documents which print ok, but are of inferior quality if viewed in the Acrobat "
+"Reader. It may be wise to upgrade to a more recent version of your TeX "
+"distribution which includes the 'dvipdfm' program.\n"
+"Hint to the perplexed system administrator: KDVI uses the shell's PATH variable "
+"when looking for programs."
+msgstr ""
+"KDVI 'dvipdfm' programını bilgisayarınızda bulamadı. Bu program dışarı aktarma "
+"işlevinin yerine getirilmesi için önemlidir. Bununla beraber KDVI'nin yazdır "
+"işlevini kullanarak DVI dosyasını PDF'ye çevirebilirsiniz ama bu genelde "
+"baskının kabul edilebilir olmasına rağmen Acrobat Reader ile bakıldığında düşük "
+"kalitede görülecektir. TeX dağıtımınızı 'dvipdfm' programını ihtiva eden son "
+"sürümlerden birine güncellemek akıllıca olabilir.\n"
+"Sistem yöneticisi için önemli ipucu: KDVI programları araken kabuğun PATH "
+"değişkenine bakar."
+
+#: dviRenderer_export.cpp:98
+msgid "*.pdf|Portable Document Format (*.pdf)"
+msgstr "*.pdf|Taşınabilir Belge Biçimi (*.pdf)"
+
+#: dviRenderer_export.cpp:98 dviRenderer_export.cpp:197
+msgid "Export File As"
+msgstr "Dosyayı Farklı çıkart"
+
+#: dviRenderer_export.cpp:103 dviRenderer_export.cpp:202
+#: kdvi_multipage.cpp:164
+msgid ""
+"The file %1\n"
+"exists. Do you want to overwrite that file?"
+msgstr ""
+"Dosya %1\n"
+"mevcut. Bu dosyanın üstüne yazmak istiyor musunuz?"
+
+#: dviRenderer_export.cpp:104 dviRenderer_export.cpp:203
+#: kdvi_multipage.cpp:165
+msgid "Overwrite File"
+msgstr "Dosyanın Üstüne Yaz"
+
+#: dviRenderer_export.cpp:104 kdvi_multipage.cpp:165
+#, fuzzy
+msgid "Overwrite"
+msgstr "Dosyanın Üstüne Yaz"
+
+#: dviRenderer_export.cpp:111
+msgid "Using dvipdfm to export the file to PDF"
+msgstr "Dosyayı PDF e dönüştürmek için dvipdfm kullanılır"
+
+#: dviRenderer_export.cpp:113
+msgid ""
+"KDVI is currently using the external program 'dvipdfm' to convert your DVI-file "
+"to PDF. Sometimes that can take a while because dvipdfm needs to generate its "
+"own bitmap fonts Please be patient."
+msgstr ""
+"KDVI DVI dosyalarınızı PDF'ye çevirmek için 'dvipdfm' dış programını "
+"kullanıyor. Bu bazen uzun sürebilir çünkü dvipdfm kendi biteşlem yazı tiplerini "
+"oluşturmalıdır. Lütfen sabırlı olunuz."
+
+#: dviRenderer_export.cpp:117
+msgid "Waiting for dvipdfm to finish..."
+msgstr "Dvipdf'in bitirmesi bekleniyor..."
+
+#: dviRenderer_export.cpp:118
+msgid "dvipdfm progress dialog"
+msgstr "dvipdfm ilerleme diyaloğu"
+
+#: dviRenderer_export.cpp:120 dviRenderer_export.cpp:223
+msgid "Please be patient"
+msgstr "Lütfen sabırlı olun"
+
+#: dviRenderer_export.cpp:136
+msgid ""
+"<qt>The external program 'dvipdf', which was used to export the file, reported "
+"an error. You might wish to look at the <strong>document info dialog</strong> "
+"which you will find in the File-Menu for a precise error report.</qt>"
+msgstr ""
+"<qt>Dosyayı dışa aktaracak 'dvipdfm' dış programı bir hata bildirdi. Daha kesin "
+"bilgi için Dosya Menüsünden <strong>belge bilgi diyaloğuna</strong> "
+"bakabilirsiniz."
+
+#: dviRenderer_export.cpp:139
+msgid "Export: %1 to PDF"
+msgstr "Dışa aktar: %1 türünden PDF'ye"
+
+#: dviRenderer_export.cpp:180
+msgid ""
+"<qt><P>This DVI file refers to external graphic files which are not in "
+"PostScript format, and cannot be handled by the <strong>dvips</strong> "
+"program that KDVI uses interally to print or to export to PostScript. The "
+"functionality that you require is therefore unavailable in this version of "
+"KDVI.</p>"
+"<p>As a workaround, you can use the <strong>File/Export As</strong>"
+"-Menu to save this file in PDF format, and then use a PDF viewer.</p>"
+"<p>The author of KDVI apologizes for the inconvenience. If enough users "
+"complain, the missing functionality might later be added.</p></qt>"
+msgstr ""
+"<qt><P>Bu DVI dosyası PostScript biçiminde olmayan grafik dosyalarını "
+"gösteriyor, ve bunlar KDVI'nin basım için ya da  PostScript'e aktarmak için "
+"kullandığı <strong>dvips</strong> programı tarafından ele alınamıyor. Gerek "
+"duyduğunuz bu işlevsellik KDVI'nin bu versiyonunda mevcut değil.</p>"
+"<p>Bunun üstesinden gelmek için <strong>Dosya/Dışarı aktar</strong> "
+"menüsünü kullanarak PDF olarak kaydedebilirsiniz ve bir PDF görüntüleyicisi "
+"kullanabilirsiniz.</p>"
+"<p>KDVI'nin yazarı bu rahatsızlık yüzünden özür diler. Eğer yeteri kadar "
+"kullanıcı yakınırsa bu işlevsellik sonradan eklenebilir :).</p></qt>"
+
+#: dviRenderer_export.cpp:187
+msgid "Functionality Unavailable"
+msgstr "İşlevsellik Kullanılabilir Değil"
+
+#: dviRenderer_export.cpp:197
+msgid "*.ps|PostScript (*.ps)"
+msgstr "*.ps|PostScript (*.ps)"
+
+#: dviRenderer_export.cpp:214
+msgid "Using dvips to export the file to PostScript"
+msgstr "Dosyanın Postscript'e aktarılması için dvips kullanılıyor"
+
+#: dviRenderer_export.cpp:216
+msgid ""
+"KDVI is currently using the external program 'dvips' to convert your DVI-file "
+"to PostScript. Sometimes that can take a while because dvips needs to generate "
+"its own bitmap fonts Please be patient."
+msgstr ""
+"KDVI şu an DVI belgelerinizi PostScript e çevirmek için harici bir program olan "
+"'dvips' kullanıyor. İşlem bu yüzden bazen zaman alabilir."
+
+#: dviRenderer_export.cpp:220
+msgid "Waiting for dvips to finish..."
+msgstr "dvips in bitirmesi bekleniyor..."
+
+#: dviRenderer_export.cpp:221
+msgid "dvips progress dialog"
+msgstr "dvips ilerleme diyaloğu"
+
+#: dviRenderer_export.cpp:299
+msgid ""
+"<qt>The external program 'dvips', which was used to export the file, reported "
+"an error. You might wish to look at the <strong>document info dialog</strong> "
+"which you will find in the File-Menu for a precise error report.</qt>"
+msgstr ""
+"<qt>Dosyayı dışa aktaracak 'dvips' dış programı bir hata bildirdi. Daha kesin "
+"bilgi için Dosya Menüsünden <strong>belge bilgi diyaloğuna</strong> "
+"bakabilirsiniz."
+
+#: dviRenderer_export.cpp:302
+msgid "Export: %1 to PostScript"
+msgstr "Aktar: %1'den PostScript'e"
+
+#: dviRenderer_prescan.cpp:87
+#, c-format
+msgid "Embedding %1"
+msgstr "%1 Gömülüyor"
+
+#: dviRenderer_prescan.cpp:105
+msgid ""
+"Page %1: The PostScript file <strong>%2</strong> could not be found."
+"<br>"
+msgstr "Sayfa %1: PostScript dosyası <strong>%2</strong> bulunamadı <br>"
+
+#: dviRenderer_prescan.cpp:255
+msgid "The papersize data '%1' could not be parsed."
+msgstr "Kağıt büyüklüğü verisi '%1' ayrıştırılamadı."
+
+#: dviWidget.cpp:115
+msgid "line %1 of %2"
+msgstr "satır: %1 / %2"
+
+#: fontpool.cpp:46
+msgid "KDVI is currently generating bitmap fonts..."
+msgstr "KDVI biteşlem yazıtiplerini üretiyor..."
+
+#: fontpool.cpp:47
+msgid "Aborts the font generation. Don't do this."
+msgstr "Font generation dan çıkılır. Bunu yapmayın."
+
+#: fontpool.cpp:48
+msgid ""
+"KDVI is currently generating bitmap fonts which are needed to display your "
+"document. For this, KDVI uses a number of external programs, such as MetaFont. "
+"You can find the output of these programs later in the document info dialog."
+msgstr "KDVI, belgenizin görğntğlemek için bit eşlem yazıtipleri oluşturuyor."
+
+#: fontpool.cpp:51
+msgid "KDVI is generating fonts. Please wait."
+msgstr "KDVI yazıtiplerini üretiyor. Lütfen bekleyiniz."
+
+#: fontpool.cpp:161
+msgid "Could not allocate memory for a font structure!"
+msgstr "Yazıtipi yapısı için bellek ayrılamadı!"
+
+#: fontpool.cpp:186
+msgid "The fontlist is currently empty."
+msgstr "Yazıtipi listesi boş."
+
+#: fontpool.cpp:190
+msgid "TeX Name"
+msgstr "TeX Adı "
+
+#: fontpool.cpp:191
+msgid "Family"
+msgstr "Aile"
+
+#: fontpool.cpp:193
+msgid "Type"
+msgstr "Tür"
+
+#: fontpool.cpp:194
+msgid "Encoding"
+msgstr "Kodlama"
+
+#: fontpool.cpp:195
+msgid "Comment"
+msgstr "Açıklama"
+
+#: fontpool.cpp:208
+msgid "Font file not found"
+msgstr "Yazıtipi dosyası bulunamadı"
+
+#: fontpool.cpp:284
+msgid ""
+"<qt>"
+"<p>KDVI was not able to locate all the font files which are necessary to "
+"display the current DVI file. Your document might be unreadable.</p></qt>"
+msgstr ""
+"<qt>"
+"<p>KDVI mevcut DVI dosyasını görüntülemek için gerekli olan yazıtipi "
+"dosyalarını konumlandıramıyor. Dökümanınız okunamayabilir.</p></qt>"
+
+#: fontpool.cpp:288
+msgid "Not All Font Files Found"
+msgstr "Tüm Yazıtipi Dosyaları Bulunamadı"
+
+#: fontpool.cpp:299
+msgid "Locating fonts..."
+msgstr "Yazıtipleri yerleştiriliyor..."
+
+#: fontpool.cpp:358
+msgid ""
+"<p>KDVI relies on the <b>kpsewhich</b> program to locate font files on your "
+"hard disc and to generate PK fonts, if necessary.</p>"
+msgstr "<p>KDVI "
+
+#: fontpool.cpp:361
+msgid ""
+"<p>The shell process for the kpsewhich program could not be started. "
+"Consequently, some font files could not be found, and your document might by "
+"unreadable. If this error is reproducable please report the issue to the KDVI "
+"developers using the 'Help' menu."
+"<p>"
+msgstr ""
+"<p>kpsewhich programı için kabuk işlemi başlatılamadı. Bazı yazı tipi dosyaları "
+"da bulunamadı ve belgeniz okunamayabilir. Eğer bu hatanın nasıl tekrar "
+"edebileceğini biliyorsanız Yardım menüsünü kullanarak KDVI geliştiricilerine "
+"haber veriniz. "
+"<p>"
+
+#: fontpool.cpp:367 fontpool.cpp:405
+msgid "Problem locating fonts - KDVI"
+msgstr "Yazıtipi bulunamadı - KDVI"
+
+#: fontpool.cpp:384
+msgid "Font generation aborted - KDVI"
+msgstr "Yazıtipi tasarlanması iptal edildi - KDVI"
+
+#: fontpool.cpp:394
+msgid ""
+"<p>There were problems running kpsewhich. As a result, some font files could "
+"not be located, and your document might be unreadable.</p>"
+"<p><b>Possible reason:</b> The kpsewhich program is perhaps not installed on "
+"your system, or it cannot be found in the current search path.</p>"
+"<p><b>What you can do:</b> The kpsewhich program is normally contained in "
+"distributions of the TeX typesetting system. If TeX is not installed on your "
+"system, you could install the TeTeX distribution (www.tetex.org). If you are "
+"sure that TeX is installed, please try to use the kpsewhich program from the "
+"command line to check if it really works.</p>"
+msgstr ""
+"<p>kpsewhich yürütülmesinde hata. Sonuç olarak bazı yazıtipi dosyaları "
+"bulunamadı ve belgeniz okunamayabilir.</p>"
+"<p><b>Mümkün neden:</b> kpsewhich programı sisteminizde kurulu olmayabilir ya "
+"da şu anki arama yolunda bulunamadı.</p>"
+"<p><b>Ne yapabilirsiniz:</b> kpsewhich programı genelde TeX yazma sistemini "
+"dağıtımlarında bulunur. Eğer TeX sisteminizde kurulu değilse TeTeX dağıtımını "
+"(www.tetex.org) kurabilirsiniz. Eğer TeX'in kurulduğuna eminseniz gerçekten "
+"çalışıp çalışmadığını anlamak için komut satırından kpsewhich programını "
+"çalıştırmayı deneyiniz.</p>"
+
+#: fontpool.cpp:590
+msgid "Currently generating %1 at %2 dpi"
+msgstr "%2 dpi da %1 üretiliyor"
+
+#: fontprogress.cpp:33
+msgid "Abort"
+msgstr "İptal"
+
+#: fontprogress.cpp:37
+msgid "What's going on here?"
+msgstr "Burada neler oluyor?"
+
+#: fontprogress.cpp:51
+msgid "%v of %m"
+msgstr "%v / %m"
+
+#: infodialog.cpp:25
+#, fuzzy
+msgid "Document Info"
+msgstr "&Belge Bilgisi"
+
+#: infodialog.cpp:27
+msgid "DVI File"
+msgstr "DVI Dosyası"
+
+#: infodialog.cpp:30
+msgid "Information on the currently loaded DVI-file."
+msgstr "Mevcut yüklü DVI-dosyası bilgisi."
+
+#: infodialog.cpp:38
+msgid "Information on currently loaded fonts."
+msgstr "Mevcut yüklü yazıtiplerinin bilgisi."
+
+#: infodialog.cpp:39
+msgid ""
+"This text field shows detailed information about the currently loaded fonts. "
+"This is useful for experts who want to locate problems in the setup of TeX or "
+"KDVI."
+msgstr "Bu metin yeni yüklenen yazıtpileri hakkında detaylı bilgi içerir."
+
+#: infodialog.cpp:43
+msgid "External Programs"
+msgstr "Harici Programlar"
+
+#: infodialog.cpp:46
+msgid "No output from any external program received."
+msgstr "Hiçbir harici programdan çıktı alınmadı."
+
+#: infodialog.cpp:47
+msgid "Output of external programs."
+msgstr "harici program çıktıları."
+
+#: infodialog.cpp:48
+msgid ""
+"KDVI uses external programs, such as MetaFont, dvipdfm or dvips. This text "
+"field shows the output of these programs. That is useful for experts who want "
+"to find problems in the setup of TeX or KDVI."
+msgstr ""
+"KDVI, MetaFonti dvidfm veya dvips gibi arici programları kullanır. Bu metin "
+"alanıda bu programların çıktılarını görebilirsiniz."
+
+#: infodialog.cpp:64
+msgid "There is no DVI file loaded at the moment."
+msgstr "Şu an yüklü bir DVI dosyası yok."
+
+#: infodialog.cpp:67
+msgid "Filename"
+msgstr "Dosya adı"
+
+#: infodialog.cpp:71
+msgid "File Size"
+msgstr "Dosya Boyu"
+
+#: infodialog.cpp:73
+msgid "The file does no longer exist."
+msgstr "Böyle bir dosya yok."
+
+#: infodialog.cpp:76
+msgid "#Pages"
+msgstr "#Sayfa"
+
+#: infodialog.cpp:77
+msgid "Generator/Date"
+msgstr "Üreten/Tarih"
+
+#: kdvi_multipage.cpp:70
+msgid "Document &Info"
+msgstr "&Belge Bilgisi"
+
+#: kdvi_multipage.cpp:71
+msgid "Embed External PostScript Files..."
+msgstr "Harici PostScript Dosyalarını Göm..."
+
+#: kdvi_multipage.cpp:72
+msgid "Enable All Warnings && Messages"
+msgstr "Tüm Mesajları Ve Uyarıları Etkinleştir"
+
+#: kdvi_multipage.cpp:73
+msgid "PostScript..."
+msgstr "PostScript..."
+
+#: kdvi_multipage.cpp:74
+msgid "PDF..."
+msgstr "PDF..."
+
+#: kdvi_multipage.cpp:101 main.cpp:34
+msgid "KDVI"
+msgstr "KDVI"
+
+#: kdvi_multipage.cpp:102 main.cpp:29
+msgid ""
+"A previewer for Device Independent files (DVI files) produced by the TeX "
+"typesetting system."
+msgstr ""
+"TeX yazı sistemi tarafından üretilmiş Aygıt Bağımsız dosyalar (DVI) için "
+"önizleyici."
+
+#: kdvi_multipage.cpp:105
+msgid ""
+"This program displays Device Independent (DVI) files which are produced by the "
+"TeX typesetting system.\n"
+"KDVI 1.3 is based on original code from KDVI version 0.43 and xdvik."
+msgstr ""
+"Bu program TeX yazı sistemi tarafından üretilmiş Aygıt Bağımsız dosyaları (DVI) "
+"gösterir.\n"
+"KDVI 1.3 0.43 versiyon KDVI ve xdvik orjinal kodu üzerine temellendirilmiştir."
+
+#: kdvi_multipage.cpp:109 main.cpp:41
+msgid "Current Maintainer."
+msgstr "Mevcut Sorumlu"
+
+#: kdvi_multipage.cpp:113 main.cpp:45
+msgid "Author of kdvi 0.4.3"
+msgstr "Kdvi yazarı"
+
+#: kdvi_multipage.cpp:114 main.cpp:46
+msgid "Maintainer of xdvik"
+msgstr "Xdvik yazarı"
+
+#: kdvi_multipage.cpp:115 main.cpp:47
+msgid "Author of xdvi"
+msgstr "Xdvi yazarı"
+
+#: kdvi_multipage.cpp:116 main.cpp:48
+msgid "Testing and bug reporting."
+msgstr "Hata bildirim"
+
+#: kdvi_multipage.cpp:117 main.cpp:49
+msgid "Re-organisation of source code."
+msgstr "Kaynak kodun tekrar düzenlenmesi"
+
+#: kdvi_multipage.cpp:153
+msgid "Save File As"
+msgstr "Dosyayı Farklı Kaydet"
+
+#: kdvi_multipage.cpp:196
+msgid "*.dvi *.DVI|TeX Device Independent Files (*.dvi)"
+msgstr "*.dvi *.DVI|TeX Aygıt Bağımsız Dosyalar (*.dvi)"
+
+#: kdvi_multipage.cpp:208
+msgid "TeX Fonts"
+msgstr "TeX Yazıtipleri"
+
+#: kdvi_multipage.cpp:209
+msgid "DVI Specials"
+msgstr "DVI Özellikleri"
+
+#: kdvi_multipage.cpp:242
+#, c-format
+msgid "Print %1"
+msgstr "Yazdır: %1"
+
+#: kdvi_multipage.cpp:251
+msgid ""
+"The list of pages you selected was empty.\n"
+"Maybe you made an error in selecting the pages, e.g. by giving an invalid range "
+"like '7-2'."
+msgstr ""
+"Seçtiğiniz sayfalar listesi boş.\n"
+"Safaları seçerken bir hata yapmış olabilirsiniz, örn '7-2' gibi yanlış bir "
+"aralık vermiş olabilirsiniz."
+
+#: kdvi_multipage.cpp:414
+msgid "All messages and warnings will now be shown."
+msgstr "Tüm mesajlar ve uyarılar gösterilecektir."
+
+#: kdvi_multipage.cpp:465
+msgid ""
+"<qt>This function searches the DVI file for plain text. Unfortunately, this "
+"version of KDVI treats only plain ASCII characters properly. Symbols, "
+"ligatures, mathematical formulae, accented characters, and non-English text, "
+"such as Russian or Korean, will most likely be messed up completely. Continue "
+"anyway?</qt>"
+msgstr ""
+"<qt>Bu işlev düz metin için DVI dosyasını arar. Ne yazık ki KDVI'nin bu "
+"versiyonu sadece düz ASCII karakterleri doğru şekilde işler. Semboller, bileşik "
+"harfler, matematiksel formüller, vurgulu karakterler ve İngilizce olmayan "
+"metinler, Rusça ya da Korece, tamamen bozulabilir. Yine de devam edeyim mi?</qt>"
+
+#: kdvi_multipage.cpp:469 kdvi_multipage_texthandling.cpp:64
+msgid "Function May Not Work as Expected"
+msgstr "Fonksiyon Beklenildiği Gibi Çalışmayabilir"
+
+#: kdvi_multipage_texthandling.cpp:60
+msgid ""
+"<qt>This function exports the DVI file to a plain text. Unfortunately, this "
+"version of KDVI treats only plain ASCII characters properly. Symbols, "
+"ligatures, mathematical formulae, accented characters, and non-English text, "
+"such as Russian or Korean, will most likely be messed up completely.</qt>"
+msgstr ""
+"<qt>Bu işlev düz metin için DVI dosyasını dışa aktarır. Ne yazık ki KDVI'nin bu "
+"versiyonu sadece düz ASCII karakterleri doğru şekilde işler. Semboller, bileşik "
+"harfler, matematiksel formüller, vurgulu karakterler ve İngilizce olmayan "
+"metinler, Rusça ya da Korece, tamamen bozulabilir. Yine de devam edeyim mi?</qt>"
+
+#: kdvi_multipage_texthandling.cpp:65
+msgid "Continue Anyway"
+msgstr "Yine De Devam Et"
+
+#: main.cpp:21
+#, fuzzy
+msgid ""
+"Check if the file is loaded in another KDVI.\n"
+"If it is, bring up the other KDVI. Otherwise, load the file."
+msgstr ""
+"Dosyanın diğer KDVI ile yüklenip yüklenmediğini kontrol edin. Eğer öyleyse öbür "
+"KDVI'yi açın. Yoksa dosyayı yükleyin."
+
+#: main.cpp:23
+msgid "Navigate to this page"
+msgstr ""
+
+#: main.cpp:24
+msgid "Files to load"
+msgstr "Yüklenecek dosyalar"
+
+#: main.cpp:37
+#, fuzzy
+msgid ""
+"This program displays Device Independent (DVI) files which are produced by the "
+"TeX typesetting system.\n"
+"This KDVI version is based on original code from KDVI version 0.43 and xdvik."
+msgstr ""
+"Bu program TeX yazı sistemi tarafından üretilmiş Aygıt Bağımsız dosyaları (DVI) "
+"gösterir.\n"
+"KDVI 1.3 0.43 versiyon KDVI ve xdvik orjinal kodu üzerine temellendirilmiştir."
+
+#: main.cpp:80
+msgid "The URL %1 is not well-formed."
+msgstr "%1 URL'si doğru oluşturulmamış."
+
+#: main.cpp:86
+msgid ""
+"The URL %1 does not point to a local file. You can only specify local files if "
+"you are using the '--unique' option."
+msgstr ""
+"%1 URL'si yerel dosyayı göstermiyor. Eğer '--unique' seçeneğini kullanıyorsanız "
+"sadece yerel dosyaları seçebilirsiniz."
+
+#: optionDialogFontsWidget.cpp:34
+msgid "This version of KDVI does not support type 1 fonts."
+msgstr "KDVI'ın bu sürümü tip 1 yazıtiplerini desteklememektedir."
+
+#: optionDialogFontsWidget.cpp:35
+msgid ""
+"KDVI needs the FreeType library to access type 1 fonts. This library was not "
+"present when KDVI was compiled. If you want to use type 1 fonts, you must "
+"either install the FreeType library and recompile KDVI yourself, or find a "
+"precompiled software package for your operating system."
+msgstr ""
+"KDVI tür 1 yazıtiplerine erişmek için FreeType kütüphanesine ihtiyaç duyuyor. "
+"Bu kütüphane KDVI derlenirken yoktu. Tür 1 yazı tiplerini kullanmak "
+"istiyorsanız ya FreeType kütüphanesini kurmalı ve KDVI kendiniz derlemeli ya da "
+"işletim sisteminiz için derlenmiş yazılım paketini bulmalısınız."
+
+#: optionDialogSpecialWidget.cpp:32
+msgid "User-Defined Editor"
+msgstr "Kullanıcı Tanımlı Düzenleyici"
+
+#: optionDialogSpecialWidget.cpp:34
+msgid "Enter the command line below."
+msgstr "Aşağıya komut satırını girin."
+
+#: optionDialogSpecialWidget.cpp:38
+msgid "Click 'Help' to learn how to set up Emacs."
+msgstr "Emacs'ı ayarlamak için 'Yardım' düğmesine tıklayın."
+
+#: optionDialogSpecialWidget.cpp:42
+msgid "Kate perfectly supports inverse search."
+msgstr "Kate tersine aramayı en iyi şekilde destekliyor."
+
+#: optionDialogSpecialWidget.cpp:46
+msgid "Kile works very well"
+msgstr "Kile iyi bir şekilde çalışıyor"
+
+#: optionDialogSpecialWidget.cpp:50
+msgid "NEdit perfectly supports inverse search."
+msgstr "NEdit tersine aramayı en iyi şekilde destekliyor."
+
+#: optionDialogSpecialWidget.cpp:54
+msgid "VIM version 6.0 or greater works just fine."
+msgstr "VIM sürüm 6.0 veya daha üstü iyi çalışıyor."
+
+#: optionDialogSpecialWidget.cpp:58
+msgid "Click 'Help' to learn how to set up XEmacs."
+msgstr "XEmacs'ı ayarlamak için 'Yardım' düğmesine tıklayın."
+
+#: psgs.cpp:152
+msgid "Generating PostScript graphics..."
+msgstr "PostScript grafikleri oluşturuluyor..."
+
+#: psgs.cpp:250
+msgid ""
+"<qt>The version of Ghostview that is installed on this computer does not "
+"contain any of the Ghostview device drivers that are known to KDVI. PostScript "
+"support has therefore been turned off in KDVI.</qt>"
+msgstr ""
+"<qt>Bu bilgisayara yüklenmiş Ghostview KDVI'nin tanıdığı hiçbir Ghostview aygıt "
+"sürücülerini içermiyor. PostScript desteği bu yüzden KDVI'de kapatıldı.</qt>"
+
+#: psgs.cpp:253
+msgid ""
+"<qt>"
+"<p>The Ghostview program, which KDVI uses internally to display the PostScript "
+"graphics that is included in this DVI file, is generally able to write its "
+"output in a variety of formats. The sub-programs that Ghostview uses for these "
+"tasks are called 'device drivers'; there is one device driver for each format "
+"that Ghostview is able to write. Different versions of Ghostview often have "
+"different sets of device drivers available. It seems that the version of "
+"Ghostview that is installed on this computer does not contain <strong>"
+"any</strong> of the device drivers that are known to KDVI.</p>"
+"<p>It seems unlikely that a regular installation of Ghostview would not contain "
+"these drivers. This error may therefore point to a serious misconfiguration of "
+"the Ghostview installation on your computer.</p>"
+"<p>If you want to fix the problems with Ghostview, you can use the command "
+"<strong>gs --help</strong> to display the list of device drivers contained in "
+"Ghostview. Among others, KDVI can use the 'png256', 'jpeg' and 'pnm' drivers. "
+"Note that KDVI needs to be restarted to re-enable PostScript support.</p></qt>"
+msgstr ""
+"<qt>"
+"<p>KDVI'nin bu DVI dosyasının sahip olduğu PostScript grafiklerini göstermek "
+"için kullandığı Ghostview programı genelde çıktısını bir çok biçimde yazabilir. "
+"Ghostview'in bu tür görevler için kullandığı bu alt programlara 'aygıt "
+"sürücüleri' denir; Ghostview yazabildiği her biçim için bir tane aygıt sürücüsü "
+"vardır. Her farklı Ghostview sürümü bir çok farklı aygıt sürücüsü setine "
+"sahiptir. Görünüşe göre bilgisayarda yüklü Ghostview KDVI'nin tanıdığı <strong>"
+"herhangi bir</strong> aygıt sürücüsü içermiyor.</p>"
+"<p>Ghostview'in normal yüklemesinin bu sürücleri içermemesi normal değildir. Bu "
+"hata bilgisayarınızdaki Ghostview'ın ciddi ayar bozuklukları içerdiğini "
+"gösterebilir.</p>"
+"<p>Ghostview ile ilgili problemleri çözmek isterseniz <strong>gs --help</strong> "
+"komutunu kullanıp Ghostview'in hangi aygıt sürücülerine sahip olduğunu "
+"görebilirsiniz. Bunların dışında KDVI 'png256', 'jpeg' ve 'pnm' sürücülerini "
+"kullanabilir. KDVI'nin PostScript desteğini yeniden etkinleştirmesi için baştan "
+"başlatılması gerektiğini unutmayın.</p></qt>"
+
+#. i18n: file kdvi_part.rc line 6
+#: rc.cpp:6
+#, no-c-format
+msgid "Export As"
+msgstr "Farklı Aktar"
+
+#. i18n: file optionDialogFontsWidget_base.ui line 28
+#: rc.cpp:18
+#, no-c-format
+msgid "Use font hinting for Type 1 fonts, if available"
+msgstr "Mümkünse Tip 1 yazıtiplerini kullan"
+
+#. i18n: file optionDialogFontsWidget_base.ui line 31
+#: rc.cpp:21
+#, no-c-format
+msgid ""
+"You should enable this, if the use of font hinting improves readability on your "
+"machine."
+msgstr ""
+"Eğer yazıtipi işaretleme makinenizde okunabilirliği artırıyorsa bunu etkin hale "
+"getirebilirsiniz."
+
+#. i18n: file optionDialogFontsWidget_base.ui line 34
+#: rc.cpp:24
+#, no-c-format
+msgid ""
+"Many modern fonts contain \"font hinting\" information which can be used to "
+"improve the appearance of a font on low-resolution displays, such as a computer "
+"monitor, or a notebook screen. However, many people find the \"improved\" fonts "
+"quite ugly and prefer to have this option disabled."
+msgstr ""
+"Birçok modern yazı tipi bilgisayar monitörü ayda dizüstü ekranı gibi düşük "
+"çöznürlükteki ekranlarda görünümü iyileştirmek için \"yazıtipi ipucu\" bilgisi "
+"ihtiva ederler. Bununla birlikte birçok kişi \"geliştirilmiş\" yazıtiplerini "
+"çirkin bulurlar ve bu seçeneği etkinsizleştirirler."
+
+#. i18n: file optionDialogSpecialWidget_base.ui line 27
+#: rc.cpp:27
+#, no-c-format
+msgid "Show PostScript specials"
+msgstr "Özel Postscriptleri göster"
+
+#. i18n: file optionDialogSpecialWidget_base.ui line 30
+#: rc.cpp:30
+#, no-c-format
+msgid "If in doubt, enable this option."
+msgstr "Kuşkuluysanız, bu seçeneği açın."
+
+#. i18n: file optionDialogSpecialWidget_base.ui line 33
+#: rc.cpp:33 rc.cpp:83
+#, no-c-format
+msgid ""
+"Some DVI files contain PostScript graphics. If enabled, KDVI will use the "
+"Ghostview PostScript interpreter to display these. You probably want to enable "
+"this option, unless you have a DVI-file whose PostScript part is broken, or too "
+"large for your machine."
+msgstr ""
+"Bazı DVI dosyaları PostScript grafikleri içerebilir. Eğer etkinleştirilirse, "
+"KDVI bunları göstermek için ghostview PostScript yorumlayıcısını kullanabilir. "
+"Bozuk bir DVI dosyanız olmadıkça veya DVI dosyanız makineniz için aşırı büyük "
+"değilse bu seçeneği etkinleştirmek isteyebilrsiniz."
+
+#. i18n: file optionDialogSpecialWidget_base.ui line 41
+#: rc.cpp:36
+#, no-c-format
+msgid "Editor for Inverse Search"
+msgstr "Geri Arama İçin Düzenleyici"
+
+#. i18n: file optionDialogSpecialWidget_base.ui line 60
+#: rc.cpp:39
+#, no-c-format
+msgid "Choose an editor which is used in inverse search."
+msgstr "Geri arama için kullanılacak düzenleyiciyi seçin."
+
+#. i18n: file optionDialogSpecialWidget_base.ui line 64
+#: rc.cpp:42
+#, no-c-format
+msgid ""
+"<p>Some DVI files contain 'inverse search' information. If such a DVI file is "
+"loaded, you can right-click into KDVI and an editor will open, load the TeX "
+"file and jump to the correct position. You can select your favorite editor "
+"here. If in doubt, 'nedit' is usually a good choice.</p>\n"
+"<p>Check the KDVI manual to see how to prepare DVI files which support the "
+"inverse search.</p>"
+msgstr ""
+"<p>Bazı DVI dosyaları terslendirilmiş arama bilgisi ihtiva eder. Eğer bu tür "
+"bir DVI dosyası yüklenmişse KDVI'ye sağ tıklarsanız bir düzenleyici açılır TeX "
+"dosyasını yükler ve doğru noktaya atlar. Sevdiğiniz düzenleyiciyi buradan "
+"seçebilirsiniz. Emin değilseniz 'nedit' genelde iyi bir seçimdir.</p>\n"
+"<p>Terslendirilmiş aramayı destekleyen DVI dosyaları oluşturmak için bilgiyi "
+"KDVI el kitabından bakabilirsiniz.</p>"
+
+#. i18n: file optionDialogSpecialWidget_base.ui line 80
+#: rc.cpp:46
+#, no-c-format
+msgid "Description:"
+msgstr "Açıklama:"
+
+#. i18n: file optionDialogSpecialWidget_base.ui line 96
+#: rc.cpp:49
+#, no-c-format
+msgid "Shell command:"
+msgstr "Kabuk komutu:"
+
+#. i18n: file optionDialogSpecialWidget_base.ui line 115
+#: rc.cpp:52
+#, no-c-format
+msgid ""
+"Explains about the editor's capabilities in conjunction with inverse search."
+msgstr "Düzenleyicinin ters arama ile birleşimi sonucu yeteneklerini açıklar."
+
+#. i18n: file optionDialogSpecialWidget_base.ui line 119
+#: rc.cpp:55
+#, no-c-format
+msgid ""
+"<p>Not all editors are well suited for inverse search. For instance, many "
+"editors have no command like 'If the file is not yet loaded, load it. "
+"Otherwise, bring the window with the file to the front'. If you are using an "
+"editor like this, clicking into the DVI file will always open a new editor, "
+"even if the TeX file is already open. Likewise, many editors have no command "
+"line argument that would allow KDVI to specify the exact line which you wish to "
+"edit.</p>\n"
+"<p>If you feel that KDVI's support for a certain editor is inadequate, please "
+"write to kebekus@kde.org.</p>"
+msgstr ""
+"<p>Tüm düzenleyiciler terslendirilmiş aramayı tam desteklemezler. Mesela "
+"'birçok' bir çok düzenleyici 'Eğer dosya hala yüklenmediyse, yükle, yüklenmişse "
+"pencereyi öne getir' gibi bir komut satırı sunmazlar. Eğer böyle bir "
+"düzenleyici kullanıyorsanız bir DVI dosyasına tıklamak TeX dosyası açık olsa "
+"bile her zaman yeni bir düzenleyici açar. Buna benzer olarak birçok düzenleyici "
+"KDVI ile hangi satırı düzenleyeceğinizi belirtmenize olanak sağlayacak komut "
+"satırı argümanına sahip değildir.</p>\n"
+"<p> Eğer KDVI'nin bir düzenleyiciy doğru destek vermediğini düşünüyorsanız "
+"lütfen kebekus@kde.org'a yazınız.</p>"
+
+#. i18n: file optionDialogSpecialWidget_base.ui line 135
+#: rc.cpp:59
+#, no-c-format
+msgid "Shell-command line used to start the editor."
+msgstr "Düzenleyiciyi başlatmak için kabuk komut satırı kullanıldı."
+
+#. i18n: file optionDialogSpecialWidget_base.ui line 138
+#: rc.cpp:62
+#, no-c-format
+msgid ""
+"If you are using inverse search, KDVI uses this command line to start the "
+"editor. The field '%f' is replaced with the filename, and '%l' is replaced with "
+"the line number."
+msgstr ""
+"Terslendirilmiş aramayı kullanıyorsanız KDVI bu komut satırını kullanarak "
+"düzenleyiciyi başlatır. '%f' alanı dosya ismi ve '%l' satır ismi ile "
+"değiştirilir."
+
+#. i18n: file optionDialogSpecialWidget_base.ui line 154
+#: rc.cpp:65
+#, no-c-format
+msgid "Editor:"
+msgstr "Düzenleyici:"
+
+#. i18n: file optionDialogSpecialWidget_base.ui line 170
+#: rc.cpp:68
+#, no-c-format
+msgid "What is 'inverse search'? "
+msgstr "'Geri arama' nedir? "
+
+#. i18n: file optionDialogSpecialWidget_base.ui line 176
+#: rc.cpp:71
+#, no-c-format
+msgid "inv-search"
+msgstr "ters-arama"
+
+#. i18n: file kdvi.kcfg line 10
+#: rc.cpp:74
+#, no-c-format
+msgid ""
+"Use MetaFont to generate missing fonts. If in doubt, enable this option."
+msgstr ""
+"Eksik yazıtiplerini oluşturmak için MetaFont'u kullanın. Kuşkuluysanız, bu "
+"seçeneği açın."
+
+#. i18n: file kdvi.kcfg line 11
+#: rc.cpp:77
+#, no-c-format
+msgid ""
+"Allows KDVI to use MetaFont to produce bitmap fonts. Unless you have a very "
+"specific reason, you probably want to enable this option."
+msgstr ""
+"KDVI ın bit eşlem yazıtipleri yapması için MetaFont  kullanmasına izin "
+"verir.Çok özel bir nedeniniz olmadıkça bu seçeneği açmak isteyebilirsiniz."
+
+#. i18n: file kdvi.kcfg line 15
+#: rc.cpp:80
+#, no-c-format
+msgid "Show PostScript specials. If in doubt, enable this option."
+msgstr "PostScript özelliklerini göster. Kuşkuluysanız, bu seçeneği açın."
+
+#. i18n: file kdvi.kcfg line 20
+#: rc.cpp:86
+#, no-c-format
+msgid ""
+"Use font hinting. You should enable this, if the use of font hinting improves "
+"readability on your machine."
+msgstr ""
+"Yazıtipi işaretlemeyi kullan. Eğer yazıtipi işaretleme makinenizde "
+"okunabilirliği artırıyorsa bunu etkin hale getirebilirsiniz."
+
+#. i18n: file kdvi.kcfg line 21
+#: rc.cpp:89
+#, no-c-format
+msgid ""
+"Many modern fonts contain &quot;font hinting&quot; information which can be "
+"used to improve the appearance of a font on low-resolution displays, such as a "
+"computer monitor, or a notebook screen. However, many people find the "
+"&quot;improved&quot; fonts quite ugly and prefer to have this option disabled."
+msgstr ""
+"Birçok modern yazı tipi bilgisayar monitörü ayda dizüstü ekranı gibi düşük "
+"çöznürlükteki ekranlarda görünümü iyileştirmek için &quot;yazıtipi ipucu&quot; "
+"bilgisi ihtiva ederler. Bununla birlikte birçok kişi &quot;geliştirilmiş&quot; "
+"yazıtiplerini çirkin bulurlar ve bu seçeneği etkinsizleştirirler."
+
+#: special.cpp:39
+msgid "That makes 25 errors. Further error messages will not be printed."
+msgstr "25 hata oluşturdu. Sonraki hata mesajları yazılmayacak."
+
+#: special.cpp:224
+msgid ""
+"Error in DVIfile '%1', page %2. Color pop command issued when the color stack "
+"is empty."
+msgstr ""
+"Sayfa %2, '%1' DVI dosyasında hata. Renkli pop komutu renk yığını boş olduğunda "
+"kullanıldı."
+
+#: special.cpp:309
+#, fuzzy
+msgid ""
+"Malformed parameter in the epsf special command.\n"
+"Expected a float to follow %1 in %2"
+msgstr "epsf özel komutunda bozuk değişken."
+
+#: special.cpp:435
+#, c-format
+msgid ""
+"File not found: \n"
+" %1"
+msgstr ""
+"Dosya bulunamadı: \n"
+" %1"
+
+#: special.cpp:702
+msgid ""
+"Error in DVIfile '%1', page %2. Could not interpret angle in text rotation "
+"special."
+msgstr ""
+"Sayfa %2, '%1' DVI dosyasında hata. Metin yönlendirilmesi özelliğinde açı "
+"verilemedi."
+
+#: special.cpp:725
+msgid "The special command '%1' is not implemented."
+msgstr "Özel komut %1 tamamlanmadı."
+
+#: tips.cpp:3
+msgid ""
+"<p>...that KDVI can also load compressed DVI-files? \n"
+msgstr ""
+"<p>...KDVI sıkıştırılmış DVI dosyalarını da yükleyebilir? \n"
+
+#: tips.cpp:8
+msgid ""
+"<p>...that you can mark text with the right mouse button and paste it\n"
+"into any application?\n"
+msgstr ""
+"<p> sağ fare tuşu ile metin seçebileceğinizi ve \n"
+"başka bir uygulamaya yapıştırabileceğinizi?...\n"
+
+#: tips.cpp:14
+msgid ""
+"<p>...that KDVI now supports inverse search? You can click into your DVI file \n"
+"with the middle mouse button and your editor opens, loads the TeX file, and\n"
+"jumps to the proper line! <a href=\"help:/kdvi/inverse-search.html\">The \n"
+"manual explains how to set up your editor for this.</a> \n"
+msgstr ""
+"<p>...KDVI'nin terslendirilmiş aramayı artık desteklediğini? DVI dosyanıza "
+"orta\n"
+"tuş ile tıklayınca düzenleyiciniz açılır, TeX dosyası yüklenir, ve doğru "
+"satıra\n"
+"atlar! <a href=\"help:/kdvi/inverse-search.html\">Elkitabı bu işlem için \n"
+"düzenleyicinizin nasıl ayarlanacağını anlatıyor</a>\n"
+
+#: tips.cpp:22
+msgid ""
+"<p>...that KDVI supports forward search? If you use Emacs or XEmacs, you can \n"
+"jump directly from the TeX file to the associated place in the DVI file. \n"
+"<a href=\"help:/kdvi/forward-search.html\">The manual explains how to set up \n"
+"your editor for this.</a> \n"
+msgstr ""
+"<p>...KDVI'nin ileri aramayı desteklediğini? Eğer Emacs ya da XEmacs \n"
+"kullanıyorsanız TeX dosyasından doğrudan DVI dosyasında ilişkilendirilmiş\n"
+" yere atlayabilirsiniz. <a href=\"help:/kdvi/forward-search.html\"> El kitabı \n"
+"düzenleyicinizi nasıl ayarlayacağınızı anlatıyor.</a> \n"
+
+#: tips.cpp:30
+msgid ""
+"<p>...that KDVI now offers full text search? \n"
+msgstr ""
+"<p>...KDVI şimdi tam metin aramayı sunuyor? \n"
+
+#: tips.cpp:35
+msgid ""
+"<p>...that KDVI can save your DVI file as PostScript, PDF, and even plain text? "
+"\n"
+msgstr ""
+"<p>...KDVI DVI dosyanızı PostScript, PDF ve hatta salt metin olarak bile "
+"kaydedebilir? \n"
+
+#: util.cpp:73
+msgid "Fatal Error! "
+msgstr "Kritik Hata! "
+
+#: util.cpp:76
+msgid ""
+"Fatal error.\n"
+"\n"
+msgstr ""
+"Kritik hata.\n"
+"\n"
+
+#: util.cpp:78
+msgid ""
+"\n"
+"\n"
+"This probably means that either you found a bug in KDVI,\n"
+"or that the DVI file, or auxiliary files (such as font files, \n"
+"or virtual font files) were really badly broken.\n"
+"KDVI will abort after this message. If you believe that you \n"
+"found a bug, or that KDVI should behave better in this situation\n"
+"please report the problem."
+msgstr ""
+"\n"
+"\n"
+"Bu, KDVI içinde bir hata bulduğunuz, DVI dosyası veya yardımcı dosyalar�n\n"
+"(örneğin yazı tipi dosyaları, sanal yazı tipi dosyaları) bozuk olduğu\n"
+"anlamına geliyor.\n"
+"KDVI bu hmesajdan sonra kapanacak. Eğer bir hata bulduğunuza\n"
+"veya KDVI nin bu durumda daha iyi çalışacağına inanıyorsanız\n"
+"lütfen sorunu bildirin."
+
+#: vf.cpp:86
+msgid "Checksum mismatch"
+msgstr "Dosya denetleme hatası"
+
+#: vf.cpp:87
+msgid " in font file "
+msgstr " yazıtipinde "
+
+#: vf.cpp:132
+msgid "Could not allocate memory for a macro table."
+msgstr "Makro tablosu için hafıza ayrılamıyor."
+
+#: vf.cpp:149
+msgid "Virtual character "
+msgstr "Sanal karakter "
+
+#: vf.cpp:149
+msgid " in font "
+msgstr " yazıtipinde "
+
+#: vf.cpp:150
+msgid " ignored."
+msgstr " yok sayıldı."
+
+#: vf.cpp:180
+#, c-format
+msgid "Wrong command byte found in VF macro list: %1"
+msgstr "VF makro listesinde yanlış komut baytı bulundu: %1"
+
+#, fuzzy
+#~ msgid ""
+#~ "This program displays Device Independent (DVI) files which are produced by the TeX typesetting system.\n"
+#~ "KDVI 1.4 is based on original code from KDVI version 0.43 and xdvik."
+#~ msgstr ""
+#~ "Bu program TeX yazı sistemi tarafından üretilmiş Aygıt Bağımsız dosyaları (DVI) gösterir.\n"
+#~ "KDVI 1.3 0.43 versiyon KDVI ve xdvik orjinal kodu üzerine temellendirilmiştir."
+
+#, fuzzy
+#~ msgid ""
+#~ "Sets paper size (not implemented at the moment,\n"
+#~ "only for compatibility with lyx)"
+#~ msgstr "Kağıt büyüklüğünü ayarlar. (şimdilik uyarlanmamıştır, sadece lyx ile uyumluluk için)"
+
+#~ msgid "Text..."
+#~ msgstr "Metin..."
+
+#~ msgid "*.txt|Plain Text (Latin 1) (*.txt)"
+#~ msgstr "*.txt|Düz Metin (Latin 1) (*.txt)"
+
+#~ msgid "Exporting to text..."
+#~ msgstr "Metne aktarılıyor..."
+
+#~ msgid "optionDialogSpecialWidget_base"
+#~ msgstr "optionDialogSpecialWidget_base"

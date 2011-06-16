@@ -1,0 +1,414 @@
+# translation of kdeprintfax.po to turkish
+# translation of kdeprintfax.po to Turkish
+# Copyright (C) 2002,2003, 2004 Free Software Foundation, Inc.
+# Görkem Çetin, <gorkem@kde.org>, 2000,2002, 2004.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdeprintfax\n"
+"POT-Creation-Date: 2006-04-28 03:54+0200\n"
+"PO-Revision-Date: 2004-04-09 00:24+0000\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.3.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: confsystem.cpp:50
+msgid "F&ax system:"
+msgstr "&Faks sistemi:"
+
+#: confsystem.cpp:51
+msgid "Co&mmand:"
+msgstr "&Komut:"
+
+#: confsystem.cpp:61
+msgid "Fax &server (if any):"
+msgstr "&Faks sunucu (varsa):"
+
+#: confsystem.cpp:62
+msgid "&Fax/Modem device:"
+msgstr "&Faks/Modem aygıtı:"
+
+#: confsystem.cpp:65
+msgid "Standard Modem Port"
+msgstr "Standart Modem Portu"
+
+#: confsystem.cpp:67
+#, c-format
+msgid "Serial Port #%1"
+msgstr "Seri Port %1"
+
+#: confsystem.cpp:68
+msgid "Other"
+msgstr "Diğer"
+
+#: faxctrl.cpp:387
+msgid "Converting input files to PostScript"
+msgstr ""
+
+#: faxctrl.cpp:462
+msgid "Sending fax to %1 (%2)"
+msgstr "Faks %1 alıcısına gönderiliyor (%2)"
+
+#: faxctrl.cpp:467
+#, c-format
+msgid "Sending to fax using: %1"
+msgstr "%1 kullanılarak faksa gönderiliyor"
+
+#: faxctrl.cpp:471
+msgid "Sending fax to %1..."
+msgstr "Faks %1 alıcısına gönderiliyor..."
+
+#: faxctrl.cpp:482
+msgid "Skipping %1..."
+msgstr "%1 atlanıyor..."
+
+#: faxctrl.cpp:500
+msgid "Filtering %1..."
+msgstr "%1 filtreleniyor..."
+
+#: faxctrl.cpp:618
+msgid "Fax log"
+msgstr "Faks günlüğü"
+
+#: faxctrl.cpp:620
+msgid "Fax Log"
+msgstr "Faks Günlüğü"
+
+#: faxctrl.cpp:629 faxctrl.cpp:659
+msgid "KDEPrint Fax Tool Log"
+msgstr ""
+
+#: faxctrl.cpp:664
+msgid "Cannot open file for writing."
+msgstr "Dosya açılamadı."
+
+#: conffax.cpp:43
+msgid "High (204x196 dpi)"
+msgstr "Yüksek (204x196 dpi)"
+
+#: conffax.cpp:44
+msgid "Low (204x98 dpi)"
+msgstr "Düşük (204x98 dpi)"
+
+#: conffax.cpp:45
+msgid "A4"
+msgstr "A4"
+
+#: conffax.cpp:46
+msgid "Letter"
+msgstr "Zarf"
+
+#: conffax.cpp:47
+msgid "Legal"
+msgstr "Legal"
+
+#: conffax.cpp:48
+msgid "&Resolution:"
+msgstr "Çö&zünürlük:"
+
+#: conffax.cpp:50
+msgid "&Paper size:"
+msgstr "&Sayfa boyutu:"
+
+#: confgeneral.cpp:41
+msgid "&Name:"
+msgstr "İ&sim:"
+
+#: confgeneral.cpp:43
+msgid "&Company:"
+msgstr "&Firma:"
+
+#: confgeneral.cpp:45
+msgid "N&umber:"
+msgstr "&Numara:"
+
+#: confgeneral.cpp:48
+msgid "Replace international prefix '+' with:"
+msgstr ""
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: main.cpp:33
+msgid "A small fax utility to be used with kdeprint."
+msgstr "Kdeprint ile kullanılabilecek küçük bir faks uygulaması."
+
+#: main.cpp:39
+msgid "Phone number to fax to"
+msgstr ""
+
+#: main.cpp:40
+msgid "Send fax immediately"
+msgstr "Faksı hemen gönder"
+
+#: main.cpp:41
+msgid "Exit after sending"
+msgstr "Gönderdikten sonra çık"
+
+#: main.cpp:42
+msgid "File to fax (added to the file list)"
+msgstr "Fakslanacak dosya"
+
+#: main.cpp:50
+msgid "KdeprintFax"
+msgstr "KdeprintFax"
+
+#: filterdlg.cpp:31
+msgid "Filter Parameters"
+msgstr "Filtre Parametreleri"
+
+#: filterdlg.cpp:37
+msgid "MIME type:"
+msgstr "Mime türü:"
+
+#: filterdlg.cpp:38
+msgid "Command:"
+msgstr "Komut:"
+
+#. i18n: file kdeprintfaxui.rc line 10
+#: rc.cpp:6
+#, no-c-format
+msgid "Fa&x"
+msgstr "&Faks"
+
+#: conffilters.cpp:42
+msgid "Mime Type"
+msgstr "Mime Türü"
+
+#: conffilters.cpp:43
+msgid "Command"
+msgstr "Komut"
+
+#: conffilters.cpp:65
+msgid "Add filter"
+msgstr "Filtre ekle"
+
+#: conffilters.cpp:66
+msgid "Modify filter"
+msgstr "Filtre düzenle"
+
+#: conffilters.cpp:67
+msgid "Remove filter"
+msgstr "Filtre kaldır"
+
+#: conffilters.cpp:68
+msgid "Move filter up"
+msgstr "Filtreyi yukarı çıkar"
+
+#: conffilters.cpp:69
+msgid "Move filter down"
+msgstr "Filtreyi aşağı indir"
+
+#: conffilters.cpp:133
+msgid "Empty parameters."
+msgstr "Boş parametre"
+
+#: configdlg.cpp:34
+msgid "Personal"
+msgstr "Kişisel"
+
+#: configdlg.cpp:34
+msgid "Personal Settings"
+msgstr "Kişisel Ayarlar"
+
+#: configdlg.cpp:37
+msgid "Page setup"
+msgstr "Sayfa düzeni"
+
+#: configdlg.cpp:37
+msgid "Page Setup"
+msgstr "Sayfa Düzeni"
+
+#: configdlg.cpp:40
+msgid "System"
+msgstr "Sistem"
+
+#: configdlg.cpp:40
+msgid "Fax System Selection"
+msgstr "Faks Sistem Seçimi"
+
+#: configdlg.cpp:43
+msgid "Filters"
+msgstr "Filtreler"
+
+#: configdlg.cpp:43
+msgid "Filters Configuration"
+msgstr "Süzgeç Yapılandırması"
+
+#: faxab.cpp:41 kdeprintfax.cpp:88
+msgid "Name"
+msgstr "İsim"
+
+#: faxab.cpp:42 kdeprintfax.cpp:87 kdeprintfax.cpp:562
+msgid "Fax Number"
+msgstr "Faks Numarası"
+
+#: faxab.cpp:44
+msgid "Entries:"
+msgstr "Girdiler:"
+
+#: faxab.cpp:47
+msgid "&Edit Addressbook"
+msgstr "&Adres Defterini Düzenle"
+
+#: faxab.cpp:150
+msgid "No fax number found in your address book."
+msgstr "Adres defterinde hiç faks numarası bulunamadı."
+
+#: kdeprintfax.cpp:74
+msgid "Move up"
+msgstr "Yukarı taşı"
+
+#: kdeprintfax.cpp:79
+msgid "Move down"
+msgstr "Aşağı taşı"
+
+#: kdeprintfax.cpp:82
+msgid "F&iles:"
+msgstr "&Dosyalar:"
+
+#: kdeprintfax.cpp:89
+#, fuzzy
+msgid "Enterprise"
+msgstr "&Kuruluş:"
+
+#: kdeprintfax.cpp:96
+msgid "Add fax number"
+msgstr "Faks numarası ekle"
+
+#: kdeprintfax.cpp:100
+msgid "Add fax number from addressbook"
+msgstr "Adres defterinden faks numarası ekle"
+
+#: kdeprintfax.cpp:104
+msgid "Remove fax number"
+msgstr "Faks numarasını sil"
+
+#: kdeprintfax.cpp:107
+msgid "&Comment:"
+msgstr "&Açıklama:"
+
+#: kdeprintfax.cpp:118
+msgid "Sched&ule:"
+msgstr "&Zamanlama:"
+
+#: kdeprintfax.cpp:120
+msgid "Now"
+msgstr "Şimdi"
+
+#: kdeprintfax.cpp:121
+msgid "At Specified Time"
+msgstr "Belirtilen Bir Tarihte"
+
+#: kdeprintfax.cpp:128
+msgid "Send Co&ver Sheet"
+msgstr ""
+
+#: kdeprintfax.cpp:131
+msgid "Su&bject:"
+msgstr "&Konu:"
+
+#: kdeprintfax.cpp:172 kdeprintfax.cpp:252
+msgid "Processing..."
+msgstr "İşleniyor..."
+
+#: kdeprintfax.cpp:173 kdeprintfax.cpp:402
+msgid "Idle"
+msgstr "Boş"
+
+#: kdeprintfax.cpp:177
+msgid "Send to Fax"
+msgstr "Faksa Gönder"
+
+#: kdeprintfax.cpp:191
+msgid "&Add File..."
+msgstr "&Dosya Ekle..."
+
+#: kdeprintfax.cpp:192
+msgid "&Remove File"
+msgstr "&Dosyayı Sil"
+
+#: kdeprintfax.cpp:193
+msgid "&Send Fax"
+msgstr "Fa&ksı Gönder"
+
+#: kdeprintfax.cpp:194
+msgid "A&bort"
+msgstr "İ&ptal"
+
+#: kdeprintfax.cpp:195
+msgid "A&ddress Book"
+msgstr "&Adres Defteri"
+
+#: kdeprintfax.cpp:196
+msgid "V&iew Log"
+msgstr "&Günlük Dosyasını İncele"
+
+#: kdeprintfax.cpp:197
+msgid "Vi&ew File"
+msgstr "&Dosyayı Görüntüle"
+
+#: kdeprintfax.cpp:198
+msgid "&New Fax Recipient..."
+msgstr "&Yeni Faks Alıcısı..."
+
+#: kdeprintfax.cpp:245
+msgid "No file to fax."
+msgstr "Fakslanacak dosya yok."
+
+#: kdeprintfax.cpp:247
+msgid "No fax number specified."
+msgstr "Hiç faks numarası belirtilmedi."
+
+#: kdeprintfax.cpp:255
+msgid "Unable to start Fax process."
+msgstr "Faks işlemi başlatılamadı."
+
+#: kdeprintfax.cpp:261
+msgid "Unable to stop Fax process."
+msgstr "Faks işlemi durdurulamadı."
+
+#: kdeprintfax.cpp:284
+#, c-format
+msgid "Unable to retrieve %1."
+msgstr "%1 alınamıyor"
+
+#: kdeprintfax.cpp:409
+msgid "Fax error: see log message for more information."
+msgstr "Faks hatası: Daha fazla bilgi için kayıt dosyasını inceleyin."
+
+#: kdeprintfax.cpp:564
+msgid "Enter recipient fax properties."
+msgstr ""
+
+#: kdeprintfax.cpp:565
+msgid "&Number:"
+msgstr "&Numara:"
+
+#: kdeprintfax.cpp:566
+msgid "N&ame:"
+msgstr "İ&sim:"
+
+#: kdeprintfax.cpp:567
+msgid "&Enterprise:"
+msgstr "&Kuruluş:"
+
+#: kdeprintfax.cpp:593
+msgid "Invalid fax number."
+msgstr "Geçersiz faks numarası."
+
+#~ msgid "Fax number"
+#~ msgstr "Faks numarası"

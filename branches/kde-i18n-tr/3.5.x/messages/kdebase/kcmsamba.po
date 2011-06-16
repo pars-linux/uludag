@@ -1,0 +1,345 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE 1.0\n"
+"POT-Creation-Date: 2005-07-06 01:31+0200\n"
+"PO-Revision-Date: 2002-11-12 22:31+0000\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.6\n"
+
+#: main.cpp:63
+msgid "&Exports"
+msgstr "&Verilen"
+
+#: main.cpp:64
+msgid "&Imports"
+msgstr "&Alınan"
+
+#: main.cpp:65
+msgid "&Log"
+msgstr "&Kayıt"
+
+#: main.cpp:66
+msgid "&Statistics"
+msgstr "İ&statistikler"
+
+#: main.cpp:71
+msgid ""
+"The Samba and NFS Status Monitor is a front end to the programs <em>"
+"smbstatus</em> and <em>showmount</em>. Smbstatus reports on current Samba "
+"connections, and is part of the suite of Samba tools, which implements the SMB "
+"(Session Message Block) protocol, also called the NetBIOS or LanManager "
+"protocol. This protocol can be used to provide printer sharing or drive sharing "
+"services on a network including machines running the various flavors of "
+"Microsoft Windows."
+"<p> Showmount is part of the NFS software package. NFS stands for Network File "
+"System and is the traditional UNIX way to share directories over the network. "
+"In this case the output of <em>showmount -a localhost</em> "
+"is parsed. On some systems showmount is in /usr/sbin, check if you have "
+"showmount in your PATH."
+msgstr ""
+"Samba ve NFS Durum Monitörü <em>smbstatus</em> ve <em>showmount</em> "
+"programları için birer ön yüzdür. Smbstatus mevcut Samba bağlantılarını "
+"bildirir ve NetBIOS ya da LanManager protokol de denen SMB (Session Message "
+"Block) protokolünü gerçekleştiren Samba araçlarının bir parçasıdır. Bu "
+"protokol, Microsoft Windows'un çeşitli türlerinin kurulu olduğu makinalar "
+"içeren bir ağda yazıcı ve dosya paylaşımı hizmetlerini yerine getirir."
+"<p> Showmount NFS yazılım paketinin bir parçasıdır. NFS Network File System (Ağ "
+"Dosya Sistemi) ifadesinin kısaltmasıdır ve UNIX'te ağ üzerinde dizin paylaşımı "
+"bununla yapılır. Burada <em>showmount - bir yerel makine</em> "
+"parsellenir. Bazı sistemlerde showmount /usr/sbin altındadır. Showmount'un "
+"PATH'inizde yer alıp almadığını kontrol ediniz."
+
+#: main.cpp:85
+msgid "kcmsamba"
+msgstr "kcmsamba"
+
+#: main.cpp:86
+msgid "KDE Panel System Information Control Module"
+msgstr "KDE Paneli Sistem Bilgi Denetim Modülü"
+
+#: main.cpp:88
+msgid "(c) 2002 KDE Information Control Module Samba Team"
+msgstr "(c) 2002 KDE Information Control Module Samba Team"
+
+#: kcmsambaimports.cpp:46 ksmbstatus.cpp:63
+msgid "Type"
+msgstr "Tür"
+
+#: ksmbstatus.cpp:64
+msgid "Service"
+msgstr "Hizmet"
+
+#: ksmbstatus.cpp:65
+msgid "Accessed From"
+msgstr "Erişilen Yer"
+
+#: ksmbstatus.cpp:66
+msgid "UID"
+msgstr "UID"
+
+#: ksmbstatus.cpp:67
+msgid "GID"
+msgstr "GID"
+
+#: ksmbstatus.cpp:68
+msgid "PID"
+msgstr "PID"
+
+#: ksmbstatus.cpp:69
+msgid "Open Files"
+msgstr "Dosya Aç"
+
+#: ksmbstatus.cpp:182
+msgid "Error: Unable to run smbstatus"
+msgstr "Hata: smbstatus başlatılamıyor"
+
+#: ksmbstatus.cpp:184
+msgid "Error: Unable to open configuration file \"smb.conf\""
+msgstr "Hata: Yapılandırma dosyası \"smb.conf\" açılamıyor"
+
+#: kcmsambaimports.cpp:47
+msgid "Resource"
+msgstr "Kaynak"
+
+#: kcmsambaimports.cpp:48
+msgid "Mounted Under"
+msgstr "Bağlama Noktası"
+
+#: kcmsambaimports.cpp:50
+msgid ""
+"This list shows the Samba and NFS shared resources mounted on your system from "
+"other hosts. The \"Type\" column tells you whether the mounted resource is a "
+"Samba or an NFS type of resource. The \"Resource\" column shows the descriptive "
+"name of the shared resource. Finally, the third column, which is labeled "
+"\"Mounted under\" shows the location on your system where the shared resource "
+"is mounted."
+msgstr ""
+"Bu liste, diğer makinalardan sisteminize bağlanmış olan Samba ve NFS paylaş�m "
+"kaynaklarını gösterir. \"Tür\" sütunu bağlı kaynağın Samba mı yoksa NFS "
+"türünden bir kaynak mı olduğunu gösterir. \"Kaynak\" sütunu paylaşılan kaynağın "
+"açıklayıcı ismini gösterir. Son olarak, \"Bağland�ğı yer\" adlı üçüncü kolon, "
+"paylaşılan kaynağın sisteminizde bağlı olduğu konumu gösterir."
+
+#: kcmsambalog.cpp:43
+msgid "Samba log file: "
+msgstr "Samba kayıt dosyası: "
+
+#: kcmsambalog.cpp:45
+msgid "Show opened connections"
+msgstr "Açılan bağlantıları göster"
+
+#: kcmsambalog.cpp:46
+msgid "Show closed connections"
+msgstr "Kapanan bağlantıları göster"
+
+#: kcmsambalog.cpp:47
+msgid "Show opened files"
+msgstr "Açılan dosyaları göster"
+
+#: kcmsambalog.cpp:48
+msgid "Show closed files"
+msgstr "Kapatılan dosyaları göster"
+
+#: kcmsambalog.cpp:64
+msgid ""
+"This page presents the contents of your samba log file in a friendly layout. "
+"Check that the correct log file for your computer is listed here. If you need "
+"to, correct the name or location of the log file, and then click the \"Update\" "
+"button."
+msgstr ""
+"Bu sayfa samba'nızın kayıt dosyasının içeriğini anlaşılır bir görünümde sunar. "
+"Bilgisayarınız için doğru kayıt dosyasının burada listelenip listelenmediğini "
+"kontrol ediniz. Gerekirse, kayıt dosyasının adını ya da konumunu düzeltin ve "
+"\"Güncelle\" düğmesine tıklayınız."
+
+#: kcmsambalog.cpp:69
+msgid ""
+"Check this option if you want to view the details for connections opened to "
+"your computer."
+msgstr ""
+"Bilgisayarınıza açılmış bağlantıların ayrıntılarını görmek istiyorsanız bu "
+"seçeneği işaretleyiniz."
+
+#: kcmsambalog.cpp:72
+msgid ""
+"Check this option if you want to view the events when connections to your "
+"computer were closed."
+msgstr ""
+"Bilgisayarınıza yapılmış bağlantılar kapanırken, olayları görmek istiyorsanız "
+"bu seçeneği işaretleyiniz."
+
+#: kcmsambalog.cpp:75
+msgid ""
+"Check this option if you want to see the files which were opened on your "
+"computer by remote users. Note that file open/close events are not logged "
+"unless the samba log level is set to at least 2 (you cannot set the log level "
+"using this module)."
+msgstr ""
+"Uzaktaki kullanıcılar tarafından bilgisayarınızda açılan dosyaları görmek "
+"istiyorsanız bu seçeneği işaretleyiniz. Açma/kapatma olayları, samba kayıt "
+"seviyesi en azından 2 olarak ayarlanmadıkça kaydedilmez."
+
+#: kcmsambalog.cpp:81
+msgid ""
+"Check this option if you want to see the events when files opened by remote "
+"users were closed. Note that file open/close events are not logged unless the "
+"samba log level is set to at least 2 (you cannot set the log level using this "
+"module)."
+msgstr ""
+"Uzaktaki kullanıcılar tarafından açılan dosyalar kapandığında oluşanolayları "
+"görmek istiyorsanız bu seçeneği işaretleyiniz. Açma/kapatma olayları, samba "
+"kayıt seviyesi en azından 2 olarak ayarlanmadıkça kaydedilmez."
+
+#: kcmsambalog.cpp:87
+msgid ""
+"Click here to refresh the information on this page. The log file (shown above) "
+"will be read to obtain the events logged by samba."
+msgstr ""
+"Bu sayfadaki bilgileri tazelemek için buraya tıklayınız. (Yukarıda gösterilen) "
+"Kayıt dosyası samba tarafından kaydedilen olayları edinmek için okunacaktır."
+
+#: kcmsambalog.cpp:97
+msgid "Date & Time"
+msgstr "Tarih & Saat"
+
+#: kcmsambalog.cpp:98 kcmsambastatistics.cpp:67
+msgid "Event"
+msgstr "Olay"
+
+#: kcmsambalog.cpp:99 kcmsambastatistics.cpp:68
+msgid "Service/File"
+msgstr "Hizmet/Dosya"
+
+#: kcmsambalog.cpp:100 kcmsambastatistics.cpp:69
+msgid "Host/User"
+msgstr "Makine/Kullanıcı"
+
+#: kcmsambalog.cpp:102
+msgid ""
+"This list shows details of the events logged by samba. Note that events at the "
+"file level are not logged unless you have configured the log level for samba to "
+"2 or greater."
+"<p> As with many other lists in KDE, you can click on a column heading to sort "
+"on that column. Click again to change the sorting direction from ascending to "
+"descending or vice versa."
+"<p> If the list is empty, try clicking the \"Update\" button. The samba log "
+"file will be read and the list refreshed."
+msgstr ""
+"Bu liste samba tarafından kaydı tutulan olayların ayrıntılarını gösterir. Samba "
+"kayıt seviyesini 2 ya da daha üzerine ayarlamadığınız sürece dosya "
+"seviyesindeki olaylar kaydedilmez."
+"<p> KDE'deki diğer bir çok liste gibi, belli bir sütuna göre sıralama yapmak "
+"için o sütunun başl�ğına tıklayabilirsiniz. Sıralamayı artandan azalana "
+"çevirmek ya da tersini yapmak için bir kez daha tıklayınız."
+"<p>Liste boşsa \"Güncelle\" düğmesine tıklamayı deneyiniz. Samba kayıt dosyası "
+"okunacak ve liste tazelenecektir."
+
+#: kcmsambalog.cpp:218 kcmsambastatistics.cpp:153 kcmsambastatistics.cpp:204
+msgid "CONNECTION OPENED"
+msgstr "BAĞLANTI AÇILDI"
+
+#: kcmsambalog.cpp:224
+msgid "CONNECTION CLOSED"
+msgstr "BAĞLANTI KAPATILDI"
+
+#: kcmsambalog.cpp:231
+msgid "            FILE OPENED"
+msgstr "            DOSYA AÇILDI"
+
+#: kcmsambalog.cpp:239
+msgid "            FILE CLOSED"
+msgstr "             DOSYA KAPATILDI"
+
+#: kcmsambalog.cpp:249
+#, c-format
+msgid "Could not open file %1"
+msgstr "Dosya %1 açılamadı "
+
+#: kcmsambastatistics.cpp:49
+msgid "Connections: 0"
+msgstr "Bağlantılar: 0"
+
+#: kcmsambastatistics.cpp:50
+msgid "File accesses: 0"
+msgstr "Dosya erişimleri: 0"
+
+#: kcmsambastatistics.cpp:52
+msgid "Event: "
+msgstr "Olay: "
+
+#: kcmsambastatistics.cpp:54
+msgid "Service/File:"
+msgstr "Hizmet/Dosya:"
+
+#: kcmsambastatistics.cpp:56
+msgid "Host/User:"
+msgstr "Makine/Kullanıcı:"
+
+#: kcmsambastatistics.cpp:57
+msgid "&Search"
+msgstr "&Ara"
+
+#: kcmsambastatistics.cpp:58
+msgid "Clear Results"
+msgstr "Sonuçları Temizle"
+
+#: kcmsambastatistics.cpp:59
+msgid "Show expanded service info"
+msgstr "Ayrıntılı hizmet bilgisini göster"
+
+#: kcmsambastatistics.cpp:60
+msgid "Show expanded host info"
+msgstr "Ayrıntılı makine bilgisini göster"
+
+#: kcmsambastatistics.cpp:66
+msgid "Nr"
+msgstr "Nr"
+
+#: kcmsambastatistics.cpp:70
+msgid "Hits"
+msgstr "Erişim sayısı"
+
+#: kcmsambastatistics.cpp:73 kcmsambastatistics.cpp:139
+msgid "Connection"
+msgstr "Bağlantı"
+
+#: kcmsambastatistics.cpp:74
+msgid "File Access"
+msgstr "Dosya Erişimi"
+
+#: kcmsambastatistics.cpp:129
+#, c-format
+msgid "Connections: %1"
+msgstr "Bağlantılar: %1"
+
+#: kcmsambastatistics.cpp:130
+#, c-format
+msgid "File accesses: %1"
+msgstr "Dosya erişimleri: %1"
+
+#: kcmsambastatistics.cpp:166 kcmsambastatistics.cpp:210
+msgid "FILE OPENED"
+msgstr "DOSYA AÇILDI"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#~ msgid " Error: Unable to run showmount"
+#~ msgstr " Hata: showmount başlatılamıyor"

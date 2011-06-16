@@ -1,0 +1,54 @@
+<article lang="&language;" id="fish">
+<title>fish</title>
+<articleinfo>
+<authorgroup>
+<author><firstname>J&ouml;rg</firstname><surname>Walter</surname>
+<affiliation><address><email>trouble@garni.ch</email></address></affiliation>
+</author>
+</authorgroup>
+
+<date>2002-06-23</date>
+<releaseinfo>1.1.1</releaseinfo>
+
+</articleinfo>
+
+<para>Allows you to access another computer's files using a simple
+<acronym>SSH</acronym> shell account and standard &UNIX; utilities on
+the remote side. This way, no server software is needed and you gain
+access to that computer's files as if they were local (or on
+<acronym>NFS</acronym>, since it is slower than local access). It uses
+the same protocol as <application>MidnightCommander</application>'s
+#sh <acronym>VFS</acronym> handler.</para>
+
+<para>Fish should work with any roughly <acronym>POSIX</acronym> compatible
+&UNIX; based remote computer. It uses the shell commands
+<command>cat</command>, <command>chgrp</command>,
+<command>chmod</command>, <command>chown</command>,
+<command>cp</command>, <command>dd</command>,
+<command>env</command>, <command>expr</command>,
+<command>grep</command>, <command>ls</command>,
+<command>mkdir</command>, <command>mv</command>,
+<command>rm</command>, <command>rmdir</command>,
+<command>sed</command>,
+and <command>wc</command>. Fish starts
+<command>/bin/sh</command> as its shell and expects it to be a
+Bourne shell (or compatible, like <command>bash</command>).
+If the <command>sed</command> and
+<command>file</command> commands are available, as well as a
+<filename>/etc/apache/magic</filename> file with &MIME; type
+signatures, these will be used to guess &MIME; types.
+</para>
+
+<para>If <application>Perl</application> is available on the remote
+machine, it will be used instead. Then only <command>env</command> and
+<command>/bin/sh</command> are needed. Using
+<application>Perl</application> has the additional benefit of being
+faster.</para>
+
+<para>Fish may even work on &Windows; machines, if tools like
+<application>Cygwin</application> are installed.  All the above
+utilities must be in the system <envar>PATH</envar>, and the initial
+shell must be able to process the command <command>echo
+FISH:;/bin/sh</command> correctly.</para>
+
+</article>

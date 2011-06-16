@@ -1,0 +1,122 @@
+# translation of kwireless.po to Türkçe
+# translation of kwireless.po to
+# translation of kwireless.po to Turkish
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# root, 2004.
+# root, 2004.
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# S.Çağlar Onur <caglar@uludag.org.tr>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kwireless\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-12-11 01:20+0100\n"
+"PO-Revision-Date: 2005-01-08 00:43+0300\n"
+"Last-Translator: S.Çağlar Onur <caglar@uludag.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: kwireless.cpp:40
+msgid ""
+"<qt><b>KWireLess</b>"
+"<br>Displays information about wireless network devices.<br />"
+"KWireLess is licensed to you under the terms of the GPL.<br /><i>"
+"(C) 2003 Mirko Boehm</i></qt>"
+msgstr ""
+"<qt><b>KWireLess</b> "
+"<br>Kablosuz ağ donanımları ile  ilgili bilgileri gösterir.<br /> "
+"KWireLess GPL olarak lisanslanmıştır."
+"<br/><i>(C) 2003 Mirko Boehm</i></qt>"
+
+#: kwireless.cpp:44
+msgid "About KWireLess"
+msgstr "KWireLess Hakkında"
+
+#: kwirelesswidget.cpp:53 kwirelesswidget.cpp:63 kwirelesswidget.cpp:73
+msgid "%1%"
+msgstr "%1%"
+
+#: kwirelesswidget.cpp:130
+msgid "unknown"
+msgstr "bilinmiyor"
+
+#: linuxwirelesswidget.cpp:172
+msgid "<unknown>"
+msgstr "<bilinmiyor>"
+
+#: linuxwirelesswidget.cpp:175
+msgid "enabled"
+msgstr "etkin"
+
+#: linuxwirelesswidget.cpp:178
+msgid "disabled"
+msgstr "etkin değil"
+
+#: linuxwirelesswidget.cpp:178
+msgid "no information"
+msgstr "bilgi yok"
+
+#: linuxwirelesswidget.cpp:201
+msgid "%1: Link Quality %2, Bitrate: %3"
+msgstr "%1: Bağlantı Kalitesi: %2, Bitoranı: %3"
+
+#. i18n: file propertytablebase.ui line 16
+#: propertytable.cpp:35 rc.cpp:3
+#, no-c-format
+msgid "Wireless Network Device Properties"
+msgstr "Kablosuz Ağ Aygıtı Özellikleri"
+
+#: propertytable.cpp:107
+msgid "Device:"
+msgstr "Aygıt:"
+
+#: propertytable.cpp:108
+msgid "ESSID (network name):"
+msgstr "ESSID (ağ adı):"
+
+#: propertytable.cpp:109
+msgid "Link quality:"
+msgstr "Bağlantı kalitesi:"
+
+#: propertytable.cpp:110
+msgid "Signal strength:"
+msgstr "Sinyal gücü:"
+
+#: propertytable.cpp:111
+msgid "Noise level:"
+msgstr "Gürültü seviyesi:"
+
+#: propertytable.cpp:112
+msgid "Bit rate:"
+msgstr "Veri akış hızı:"
+
+#: propertytable.cpp:113
+msgid "Encryption:"
+msgstr "Şifreleme:"
+
+#. i18n: file propertytablebase.ui line 28
+#: rc.cpp:6
+#, no-c-format
+msgid "Property"
+msgstr "Özellik"
+
+#. i18n: file propertytablebase.ui line 33
+#: rc.cpp:9
+#, no-c-format
+msgid "Value"
+msgstr "Değer"
+
+#. i18n: file propertytablebase.ui line 62
+#: rc.cpp:12
+#, no-c-format
+msgid "Network device:"
+msgstr "Ağ aygıtı:"
+
+#~ msgid "in use"
+#~ msgstr "kullanımda"
+
+#~ msgid "not in use"
+#~ msgstr "kullanımda değil"

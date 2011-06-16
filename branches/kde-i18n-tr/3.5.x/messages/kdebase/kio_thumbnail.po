@@ -1,0 +1,52 @@
+# translation of kio_thumbnail.po to
+# Görkem Çetin <gorkem@gorkemcetin.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kio_thumbnail\n"
+"POT-Creation-Date: 2005-06-03 01:23+0200\n"
+"PO-Revision-Date: 2005-07-07 01:39+0200\n"
+"Last-Translator: Adil YILDIZ <adil@kde.org.tr>\n"
+"Language-Team:  <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: thumbnail.cpp:174
+msgid "No MIME Type specified."
+msgstr "MIME Tipi belirtilmedi."
+
+#: thumbnail.cpp:184
+msgid "No or invalid size specified."
+msgstr "Boyut belirtilmedi ya da geçersiz."
+
+#: thumbnail.cpp:265
+msgid "No plugin specified."
+msgstr "Eklenti belirtilmedi."
+
+#: thumbnail.cpp:283
+#, c-format
+msgid "Cannot load ThumbCreator %1"
+msgstr "ThumbCreator %1 yüklenemedi"
+
+#: thumbnail.cpp:291
+#, c-format
+msgid "Cannot create thumbnail for %1"
+msgstr "%1 için küçük resim oluşturulamadı"
+
+#: thumbnail.cpp:358
+msgid "Failed to create a thumbnail."
+msgstr "Küçük resim oluşturma başarısız."
+
+#: thumbnail.cpp:373
+msgid "Could not write image."
+msgstr "Resim yazılamadı."
+
+#: thumbnail.cpp:398
+#, c-format
+msgid "Failed to attach to shared memory segment %1"
+msgstr "Paylaşılan bellek parçası %1'e ekleme başarısız"
+
+#: thumbnail.cpp:403
+msgid "Image is too big for the shared memory segment"
+msgstr "Resim paylaşılan bellek parçası için çok büyük"

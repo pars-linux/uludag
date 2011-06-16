@@ -1,0 +1,165 @@
+# translation of kworldclock.po to Türkçe
+# translation of kworldclock.po to Turkish
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kworldclock\n"
+"POT-Creation-Date: 2004-10-12 01:17+0200\n"
+"PO-Revision-Date: 2004-09-22 23:28+0300\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.3.1\n"
+
+#. i18n: file about.ui line 16
+#: rc.cpp:3
+#, no-c-format
+msgid "About KDE World Clock"
+msgstr "KDE Dünya Saati Hakkında"
+
+#. i18n: file about.ui line 77
+#: rc.cpp:6
+#, no-c-format
+msgid "The KDE World Clock"
+msgstr "KDE Dünya Saati"
+
+#. i18n: file about.ui line 120
+#: rc.cpp:9
+#, no-c-format
+msgid ""
+"This is a little toy to display the time on each place on the earth. \n"
+"\n"
+"Copyright: (c) 2000 Matthias Hoelzer-Kluepfel"
+msgstr ""
+"Bu küçük program dünyanın herhangi bir yerindeki saati görmenize yarar. \n"
+"\n"
+"Telif Hakkı: (c) 2000 Matthias Hoelzer Kluepfel"
+
+#. i18n: file clock.ui line 16
+#: rc.cpp:17
+#, no-c-format
+msgid "Edit Clock Settings"
+msgstr "Saat Ayarlarını Düzenle"
+
+#. i18n: file clock.ui line 122
+#: rc.cpp:20
+#, no-c-format
+msgid "Please enter the settings for the clock."
+msgstr "Lütfen saatin ayarlarını yapın."
+
+#. i18n: file clock.ui line 130
+#: rc.cpp:23
+#, no-c-format
+msgid "&Caption:"
+msgstr "&Yer:"
+
+#. i18n: file clock.ui line 146
+#: rc.cpp:26
+#, no-c-format
+msgid "&Timezone:"
+msgstr "&Zaman Dilimi:"
+
+#: main.cpp:59 main.cpp:178
+msgid "KDE World Clock"
+msgstr "KDE Dünya Saati"
+
+#: main.cpp:167
+msgid "Write out a file containing the actual map"
+msgstr "Gerçek haritayı içeren bir dosya yaz"
+
+#: main.cpp:168
+msgid "The name of the theme to use"
+msgstr "Kullanılacak temanın adı"
+
+#: main.cpp:169
+msgid "List available themes"
+msgstr "Mevcut temaları listele"
+
+#: main.cpp:170
+msgid "The name of the file to write to"
+msgstr "Yazılacak dosyanın adı"
+
+#: main.cpp:171
+msgid "The size of the map to dump"
+msgstr "Yazılacak haritanın boyutu"
+
+#: mapwidget.cpp:88
+msgid "Add &Red"
+msgstr "&Kırmızı Ekle"
+
+#: mapwidget.cpp:91
+msgid "Add &Green"
+msgstr "&Yeşil Ekle"
+
+#: mapwidget.cpp:94
+msgid "Add &Blue"
+msgstr "&Mavi Ekle"
+
+#: mapwidget.cpp:96
+msgid "Add &Custom..."
+msgstr "Ö&zel Ekle..."
+
+#: mapwidget.cpp:99
+msgid "&Remove Flag"
+msgstr "&Bayrağı Kaldır"
+
+#: mapwidget.cpp:100
+msgid "&Remove All Flags"
+msgstr "&Tüm Bayrakları Kaldır"
+
+#: mapwidget.cpp:114 zoneclock.cpp:70
+msgid "&Add..."
+msgstr "&Ekle..."
+
+#: mapwidget.cpp:117
+msgid "&Flags"
+msgstr "&Bayraklar"
+
+#: mapwidget.cpp:120
+msgid "&Clocks"
+msgstr "&Saatler"
+
+#: mapwidget.cpp:123
+msgid "&Map Theme"
+msgstr "&Harita Teması"
+
+#: mapwidget.cpp:124
+msgid "Show &Daylight"
+msgstr "&Gün Işığını Göster"
+
+#: mapwidget.cpp:125
+msgid "Show &Cities"
+msgstr "Ş&ehirleri Göster"
+
+#: mapwidget.cpp:126
+msgid "Show F&lags"
+msgstr "&Bayrakları Göster"
+
+#: mapwidget.cpp:131
+msgid "&Save Settings"
+msgstr "&Ayarları Kaydet"
+
+#: mapwidget.cpp:265
+msgid "Do you really want to remove all flags?"
+msgstr "Gerçekten tüm bayrakları kaldırmak istiyor musunuz?"
+
+#: zoneclock.cpp:69
+msgid "&Edit..."
+msgstr "&Düzenle..."
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Ömer Fadıl USTA"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "omer_fad@hotmail.com"

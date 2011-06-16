@@ -1,0 +1,286 @@
+# translation of ktuberling.po to 
+# translation of ktuberling.po to Turkish
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Görkem Çetin <gorkem@kde.org>, 2002, 2003.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ktuberling\n"
+"POT-Creation-Date: 2006-08-13 04:05+0200\n"
+"PO-Revision-Date: 2003-12-13 14:56+0000\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team:  <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.2\n"
+
+#. i18n: file ktuberlingui.rc line 7
+#: rc.cpp:6
+#, no-c-format
+msgid "&Playground"
+msgstr "&Tür"
+
+#. i18n: file ktuberlingui.rc line 12
+#: rc.cpp:9
+#, no-c-format
+msgid "&Speech"
+msgstr "&Dil"
+
+#: main.cpp:16
+#, fuzzy
+msgid "Potato to open"
+msgstr "Açılacak patates"
+
+#: main.cpp:22
+msgid "Potato game for kids"
+msgstr "Çocuklar için patates oyunu"
+
+#: main.cpp:23
+msgid ""
+"A program by Eric Bischoff <e.bischoff@noos.fr>\n"
+"and John Calhoun.\n"
+"\n"
+"This program is dedicated to my daughter Sunniva."
+msgstr ""
+"Bu bir Eric Bischoff (e.bischoff@noss.fr)\n"
+"ve John Calhoun programıdır.\n"
+"\n"
+"Bu program kızkardeşim Sunniva'ya adanmıştır."
+
+#: main.cpp:31
+msgid "KTuberling"
+msgstr "KTuberling"
+
+#: main.cpp:34
+msgid "Developer"
+msgstr "Geliştirici"
+
+#: main.cpp:35
+msgid "Original concept and artwork"
+msgstr "Orjinal fikir ve sanatsal işler"
+
+#: main.cpp:36 main.cpp:37
+msgid "New artwork"
+msgstr "Yeni sanatsal işler"
+
+#: main.cpp:38
+msgid "Sounds tuning"
+msgstr "Ses ayarlaması"
+
+#: toplevel.cpp:262
+msgid "Save &as Picture..."
+msgstr "Resim O&larak kaydet..."
+
+#: toplevel.cpp:272
+msgid "&No Sound"
+msgstr "&Sessiz"
+
+#: toplevel.cpp:312
+msgid "Could not load file."
+msgstr "Dosya yüklenemedi."
+
+#: toplevel.cpp:335 toplevel.cpp:372
+msgid "Only saving to local files is currently supported."
+msgstr "Şimdilik sadece yerel dosyalara kayıt destekleniyor."
+
+#: toplevel.cpp:350 toplevel.cpp:402
+msgid "Could not save file."
+msgstr "Dosya kaydedilemedi."
+
+#: toplevel.cpp:360
+#, fuzzy
+msgid ""
+"*.xpm|UNIX Pixmaps (*.xpm)\n"
+"*.jpg|JPEG Compressed Files (*.jpg)\n"
+"*.png|Next Generation Pictures (*.png)\n"
+"*.bmp|Windows Bitmaps (*.bmp)\n"
+"*|All Picture Formats"
+msgstr ""
+"*.xpm|Unix pixmap (*.xpm)\n"
+"*.jpg|JPEG sıkıştırılmış dosya (*.jpg)\n"
+"*.png|Yeni Nesil resimler (*.png)\n"
+"*.bmp|Windows bitmap (*.bmp)\n"
+"*|Tüm resim biçimleri"
+
+#: toplevel.cpp:396
+msgid "Unknown picture format."
+msgstr "Bilinmeyen resim biçimi"
+
+#: toplevel.cpp:411
+#, c-format
+msgid "Print %1"
+msgstr "%1 Yazdır"
+
+#: toplevel.cpp:416
+msgid "Could not print picture."
+msgstr "Resim bastırılamıyor."
+
+#: toplevel.cpp:419
+msgid "Picture successfully printed."
+msgstr "Resim başarıyla bastırıldı."
+
+#: playground.cpp:504
+msgid ""
+"Fatal error:\n"
+"Unable to load the pictures, aborting."
+msgstr ""
+"İç hata:\n"
+"Resimleri yükleyemiyorum. Çıkıyorum."
+
+#: soundfactory.cpp:73
+msgid "Error while loading the sound names."
+msgstr "Ses isimleri yüklenirken hata oluştu."
+
+#: pics/layout.i18n:7
+msgid "Potato &Guy"
+msgstr "Patates &Adam"
+
+#: pics/layout.i18n:9 pics/layout.i18n:18
+msgid "Eyes"
+msgstr "Gözler"
+
+#: pics/layout.i18n:10
+#, fuzzy
+msgid "Eyebrows"
+msgstr "Kirpikler"
+
+#: pics/layout.i18n:11
+msgid "Noses"
+msgstr "Burunlar"
+
+#: pics/layout.i18n:12
+msgid "Ears"
+msgstr "Kulaklar"
+
+#: pics/layout.i18n:13
+msgid "Mouths"
+msgstr "Ağızlar"
+
+#: pics/layout.i18n:14
+msgid "Goodies"
+msgstr "Diğerşeyler"
+
+#: pics/layout.i18n:16
+msgid "&Penguin"
+msgstr "&Penguen"
+
+#: pics/layout.i18n:19
+msgid "Tie"
+msgstr "Gravat"
+
+#: pics/layout.i18n:20
+msgid "Hair"
+msgstr "Saç"
+
+#: pics/layout.i18n:21
+msgid "Necklaces"
+msgstr "Gerdanlıklar"
+
+#: pics/layout.i18n:22
+msgid "Hats"
+msgstr "Şapkalar"
+
+#: pics/layout.i18n:23
+msgid "Glasses"
+msgstr "Gözlükler"
+
+#: pics/layout.i18n:24
+msgid "Scarf"
+msgstr "Eşarf"
+
+#: pics/layout.i18n:26
+msgid "&Aquarium"
+msgstr "&Akvaryum"
+
+#: pics/layout.i18n:28
+msgid "Fishes"
+msgstr "Balıklar"
+
+#: pics/layout.i18n:29
+msgid "Others"
+msgstr "Diğerleri"
+
+#: pics/layout.i18n:31
+msgid "&Danish"
+msgstr "&Danimarkalı"
+
+#: pics/layout.i18n:32
+msgid "&German"
+msgstr "&Alman"
+
+#: pics/layout.i18n:33
+msgid "&English"
+msgstr "&İngiliz"
+
+#: pics/layout.i18n:34
+msgid "Sp&anish"
+msgstr "İs&panyol"
+
+#: pics/layout.i18n:35
+msgid "Fi&nnish"
+msgstr "&Finlandiyalı"
+
+#: pics/layout.i18n:36
+msgid "&French"
+msgstr "&Fransız"
+
+#: pics/layout.i18n:37
+msgid "&Italian"
+msgstr "&italyan"
+
+#: pics/layout.i18n:38
+msgid "Low Sa&xon"
+msgstr ""
+
+#: pics/layout.i18n:39
+msgid "D&utch"
+msgstr "&Hollandalı"
+
+#: pics/layout.i18n:40
+msgid "&Portuguese"
+msgstr "&Portekiz"
+
+#: pics/layout.i18n:41
+msgid "&Romanian"
+msgstr "&Romanyalı"
+
+#: pics/layout.i18n:42
+msgid "&Slovak"
+msgstr "&Slovak"
+
+#: pics/layout.i18n:43
+msgid "S&lovenian"
+msgstr "&Slovenyalı"
+
+#: pics/layout.i18n:44
+msgid "S&wedish"
+msgstr "İs&viçreli"
+
+#: pics/layout.i18n:45
+msgid "Ser&bian"
+msgstr ""
+
+#: pics/layout.i18n:48
+msgid ""
+"_: NOTE_TO_THE_TRANSLATORS\n"
+"The translators have the opportunity to translate the\n"
+"sounds spoken in the game.\n"
+"See the technical reference section in ktuberling's\n"
+"documentation for more information on how to do that.\n"
+"(translate this message as \"DONE\" when you have translated\n"
+"the sounds; otherwise leave it untranslated as a reminder)"
+msgstr "DONE"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Ömer Fadıl USTA"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "omer_fad@hotmail.com"

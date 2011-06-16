@@ -1,0 +1,864 @@
+# translation of kiconedit.po to Türkçe
+# translation of kiconedit.po to
+# translation of kiconedit.po to
+# translation of kiconedit.po to Turkish
+# Copyright (C) 2000, 2003, 2004 Free Software Foundation, Inc.
+# Yıldırım Karslıoğlu <ykarslioglu@superonline.com>, 2000.
+# Görkem Çetin <gorkem@kde.org>, 2002, 2003.
+# Tuncay YENİAY <tuncayyeniay@mynet.com>,2002.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kiconedit\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-03-05 03:45+0100\n"
+"PO-Revision-Date: 2004-06-28 15:48+0300\n"
+"Last-Translator: Adem Alp YILDIZ <ademalp@linux-sevenler.org>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.3\n"
+
+#. i18n: file kiconeditui.rc line 45
+#: rc.cpp:18
+#, fuzzy, no-c-format
+msgid "Tools Toolbar"
+msgstr "Palet Araç Çubuğu"
+
+#. i18n: file kiconeditui.rc line 63
+#: rc.cpp:21
+#, fuzzy, no-c-format
+msgid "Pallette Toolbar"
+msgstr "Palet Araç Çubuğu"
+
+#: main.cpp:35
+msgid "KDE Icon Editor"
+msgstr "KDE Simge Düzenleyici"
+
+#: main.cpp:39
+msgid "Icon file(s) to open"
+msgstr "Açılacak dosya(lar)"
+
+#: main.cpp:45
+msgid "KIconEdit"
+msgstr "KIconEdit"
+
+#: main.cpp:55
+msgid "Bug fixes and GUI tidy up"
+msgstr "Hata gidermeler"
+
+#: kiconedit.cpp:168 kiconeditslots.cpp:84 kiconeditslots.cpp:139
+#: kiconeditslots.cpp:283
+msgid ""
+"The current file has been modified.\n"
+"Do you want to save it?"
+msgstr ""
+"Çalıştığınız dosya değişikliğe uğradı.\n"
+"Değişiklikleri kaydetmek istiyor musunuz?"
+
+#: kiconedit.cpp:242
+msgid "New &Window"
+msgstr "Yeni &Pencere"
+
+#: kiconedit.cpp:244
+msgid ""
+"New window\n"
+"\n"
+"Opens a new icon editor window."
+msgstr ""
+"Yeni pencere\n"
+"\n"
+"Yeni bir simge düzenleyici penceresi açar."
+
+#: kiconedit.cpp:247
+msgid ""
+"New\n"
+"\n"
+"Create a new icon, either from a template or by specifying the size"
+msgstr ""
+"Yeni\n"
+"\n"
+"Şablondan veya boyut belirterek yeni bir simge oluşturur"
+
+#: kiconedit.cpp:251
+msgid ""
+"Open\n"
+"\n"
+"Open an existing icon"
+msgstr ""
+"Aç\n"
+"\n"
+"Varolan bir simgeyi açar"
+
+#: kiconedit.cpp:259
+msgid ""
+"Save\n"
+"\n"
+"Save the current icon"
+msgstr ""
+"Kaydet\n"
+"\n"
+"Çalışılan simgeyi kaydeder"
+
+#: kiconedit.cpp:264
+msgid ""
+"Print\n"
+"\n"
+"Opens a print dialog to let you print the current icon."
+msgstr ""
+"Yazdır\n"
+"\n"
+"Yazdırma penceresi açarak çalıştığınız simgeyi yazdırmanızı sağlar."
+
+#: kiconedit.cpp:272
+msgid ""
+"Cut\n"
+"\n"
+"Cut the current selection out of the icon.\n"
+"\n"
+"(Tip: You can make both rectangular and circular selections)"
+msgstr ""
+"Kes\n"
+"\n"
+"Simgedeki seçilen bir alanı keser.\n"
+"\n"
+"(İpucu: Hem dikdörtgen hem de dairesel alan seçimleri yapabilirsiniz)"
+
+#: kiconedit.cpp:276
+msgid ""
+"Copy\n"
+"\n"
+"Copy the current selection out of the icon.\n"
+"\n"
+"(Tip: You can make both rectangular and circular selections)"
+msgstr ""
+"Kopyala\n"
+"\n"
+"Simgedeki seçilen bir alanı kopyalar.\n"
+"\n"
+"(İpucu: Hem dikdörtgen biçimli, hem de dairesel alan seçimleri yapabilirsiniz)"
+
+#: kiconedit.cpp:280
+msgid ""
+"Paste\n"
+"\n"
+"Paste the contents of the clipboard into the current icon.\n"
+"\n"
+"If the contents are larger than the current icon you can paste them in a new "
+"window.\n"
+"\n"
+"(Tip: Select \"Paste transparent pixels\" in the configuration dialog if you "
+"also want to paste transparency.)"
+msgstr ""
+"Yapıştır\n"
+"\n"
+"Pano içeriğini güncel simgeye yapıştırır.\n"
+"\n"
+"Pano içeriği simgeden daha büyükse yeni bir pencereye yapıştırabilirsiniz.\n"
+"\n"
+"(İpucu: Simgeye \"Şeffaf pikselleri yapıştır\" menüsü ile şeffaf görüntü "
+"yapıştırabilirsiniz)"
+
+#: kiconedit.cpp:287
+msgid "Paste as &New"
+msgstr "Y&eni Olarak Yapıştır"
+
+#: kiconedit.cpp:293
+msgid "Resi&ze..."
+msgstr "Yeniden &Boyutlandır..."
+
+#: kiconedit.cpp:295
+msgid ""
+"Resize\n"
+"\n"
+"Smoothly resizes the icon while trying to preserve the contents"
+msgstr ""
+"Boyutlandır\n"
+"\n"
+"İçeriği koruyarak simgeyi yeniden boyutlandırır"
+
+#: kiconedit.cpp:298
+msgid "&GrayScale"
+msgstr "&Gri tonlama"
+
+#: kiconedit.cpp:300
+msgid ""
+"Gray scale\n"
+"\n"
+"Gray scale the current icon.\n"
+"(Warning: The result is likely to contain colors not in the icon palette"
+msgstr ""
+"Gri tonlama\n"
+"\n"
+"Çalıştığınız simgeyi grinin tonlarında gösterir.\n"
+"(Uyarı: Sonuç simge tuvalinde olmayan renkleri içerebilir.)"
+
+#: kiconedit.cpp:307
+msgid ""
+"Zoom in\n"
+"\n"
+"Zoom in by one."
+msgstr ""
+"Yakınlaş\n"
+"\n"
+"Bir derece yakınlaş."
+
+#: kiconedit.cpp:311
+msgid ""
+"Zoom out\n"
+"\n"
+"Zoom out by one."
+msgstr ""
+"Uzaklaş\n"
+"\n"
+"Bir derece uzaklaş."
+
+#: kiconedit.cpp:317
+#, no-c-format
+msgid "100%"
+msgstr "%100"
+
+#: kiconedit.cpp:321
+#, no-c-format
+msgid "200%"
+msgstr "%200"
+
+#: kiconedit.cpp:325
+#, no-c-format
+msgid "500%"
+msgstr "%500"
+
+#: kiconedit.cpp:329
+#, no-c-format
+msgid "1000%"
+msgstr "%1000"
+
+#: kiconedit.cpp:343
+msgid "Show &Grid"
+msgstr "Kılavuzu &Göster"
+
+#: kiconedit.cpp:346
+msgid "Hide &Grid"
+msgstr "Kılavuzu &Gizle"
+
+#: kiconedit.cpp:347
+msgid ""
+"Show grid\n"
+"\n"
+"Toggles the grid in the icon edit grid on/off"
+msgstr ""
+"Kılavuzları göster\n"
+"\n"
+"Kılavuzları gösterir/gizler"
+
+#: kiconedit.cpp:352
+msgid "Color Picker"
+msgstr "Renk Seçici"
+
+#: kiconedit.cpp:356
+msgid ""
+"Color Picker\n"
+"\n"
+"The color of the pixel clicked on will be the current draw color"
+msgstr ""
+"Renk Seçici\n"
+"\n"
+"Tıklanan beneğin rengi çizim rengi olarak tanımlanır"
+
+#: kiconedit.cpp:359
+msgid "Freehand"
+msgstr "Serbest Çizim"
+
+#: kiconedit.cpp:363
+msgid ""
+"Free hand\n"
+"\n"
+"Draw non-linear lines"
+msgstr ""
+"Serbest çizim\n"
+"\n"
+"Doğrusal olmayan çizgiler çizer"
+
+#: kiconedit.cpp:368
+msgid "Rectangle"
+msgstr "Dikdörtgen"
+
+#: kiconedit.cpp:372
+msgid ""
+"Rectangle\n"
+"\n"
+"Draw a rectangle"
+msgstr ""
+"Dikdörtgen\n"
+"\n"
+"Dikdörtgen çizer"
+
+#: kiconedit.cpp:374
+msgid "Filled Rectangle"
+msgstr "İçi Dolu Dikdörtgen"
+
+#: kiconedit.cpp:378
+msgid ""
+"Filled rectangle\n"
+"\n"
+"Draw a filled rectangle"
+msgstr ""
+"İçi dolu dikdörtgen\n"
+"\n"
+"İçi dolu dikdörtgen çizer"
+
+#: kiconedit.cpp:380
+msgid "Circle"
+msgstr "Çember"
+
+#: kiconedit.cpp:384
+msgid ""
+"Circle\n"
+"\n"
+"Draw a circle"
+msgstr ""
+"Çember\n"
+"\n"
+"Çember çizer"
+
+#: kiconedit.cpp:386
+msgid "Filled Circle"
+msgstr "İçi Dolu Çember"
+
+#: kiconedit.cpp:390
+msgid ""
+"Filled circle\n"
+"\n"
+"Draw a filled circle"
+msgstr ""
+"Daire\n"
+"\n"
+"Daire çizer"
+
+#: kiconedit.cpp:392
+msgid "Ellipse"
+msgstr "Elips"
+
+#: kiconedit.cpp:396
+msgid ""
+"Ellipse\n"
+"\n"
+"Draw an ellipse"
+msgstr ""
+"Elips\n"
+"\n"
+"Elips çizer"
+
+#: kiconedit.cpp:398
+msgid "Filled Ellipse"
+msgstr "İçi Dolu Elips"
+
+#: kiconedit.cpp:402
+msgid ""
+"Filled ellipse\n"
+"\n"
+"Draw a filled ellipse"
+msgstr ""
+"İçi dolu elips\n"
+"\n"
+"İçi dolu elips çizer"
+
+#: kiconedit.cpp:404
+msgid "Spray"
+msgstr "Püskürtme aracı"
+
+#: kiconedit.cpp:408
+msgid ""
+"Spray\n"
+"\n"
+"Draw scattered pixels in the current color"
+msgstr ""
+"Püskürtme aracı\n"
+"\n"
+"Çalıştığınız renklerde serpiştirilmiş noktalar çizer"
+
+#: kiconedit.cpp:411
+msgid "Flood Fill"
+msgstr "Tümünü Doldur"
+
+#: kiconedit.cpp:415
+msgid ""
+"Flood fill\n"
+"\n"
+"Fill adjoining pixels with the same color with the current color"
+msgstr ""
+"Tümünü doldur\n"
+"Birbirinin aynı renk değeri olan komşu pikselleri seçili renk ile doldurur"
+
+#: kiconedit.cpp:418
+msgid "Line"
+msgstr "Çizgi"
+
+#: kiconedit.cpp:422
+msgid ""
+"Line\n"
+"\n"
+"Draw a straight line vertically, horizontally or at 45 deg. angles"
+msgstr ""
+"Çizgi\n"
+"\n"
+"Yatay, dikey veya 45 derece açıyla düz bir doğru çizer"
+
+#: kiconedit.cpp:425
+msgid "Eraser (Transparent)"
+msgstr "Silgi (Transparan)"
+
+#: kiconedit.cpp:429
+msgid ""
+"Erase\n"
+"\n"
+"Erase pixels. Set the pixels to be transparent\n"
+"\n"
+"(Tip: If you want to draw transparency with a different tool, first click on "
+"\"Erase\" then on the tool you want to use)"
+msgstr ""
+"Temizle\n"
+"\n"
+"Pikselleri temizler ve şeffaf yapar\n"
+"\n"
+"(İpucu: Değişik bir araçla şeffaf çizim yapmak istiyorsanız önce\"Temizle\"yi "
+"tıklayın, sonra kullanmak istediğiniz aracı seçin"
+
+#: kiconedit.cpp:434
+msgid "Rectangular Selection"
+msgstr "Dikdörtgen Seçim"
+
+#: kiconedit.cpp:438
+msgid ""
+"Select\n"
+"\n"
+"Select a rectangular section of the icon using the mouse."
+msgstr ""
+"Seç\n"
+"\n"
+"Simgenin dikdörgensel bir bölümünü fare ile seçin."
+
+#: kiconedit.cpp:441
+msgid "Circular Selection"
+msgstr "Dairesel Seçim"
+
+#: kiconedit.cpp:445
+msgid ""
+"Select\n"
+"\n"
+"Select a circular section of the icon using the mouse."
+msgstr ""
+"Seç\n"
+"\n"
+"Simgenin çembersel bir bölümünü fare ile seçin."
+
+#: kiconedit.cpp:460
+msgid "Palette Toolbar"
+msgstr "Palet Araç Çubuğu"
+
+#: kiconedit.cpp:471
+msgid ""
+"Statusbar\n"
+"\n"
+"The statusbar gives information on the status of the current icon. The fields "
+"are:\n"
+"\n"
+"\t- Application messages\n"
+"\t- Cursor position\n"
+"\t- Size\n"
+"\t- Zoom factor\n"
+"\t- Number of colors"
+msgstr ""
+"Durum çubuğu\n"
+"\n"
+"Güncel simge hakkında bazı bilgiler verir. Kullanılan alanlar:\n"
+"\n"
+"\t- Uygulama mesajları\n"
+"\t- İmlecin yeri\n"
+"\t- Boyut\n"
+"\t- Yakınlaşma çarpanı\n"
+"\t- Renk sayısı"
+
+#: kiconedit.cpp:480 kiconeditslots.cpp:446 kiconeditslots.cpp:452
+#, c-format
+msgid "Colors: %1"
+msgstr "Renkler: %1"
+
+#: kicongrid.cpp:90
+msgid ""
+"Icon draw grid\n"
+"\n"
+"The icon grid is the area where you draw the icons.\n"
+"You can zoom in and out using the magnifying glasses on the toolbar.\n"
+"(Tip: Hold the magnify button down for a few seconds to zoom to a predefined "
+"scale)"
+msgstr ""
+"Simge çizim alanı\n"
+"\n"
+"Simgeler bu alan içerisinde tasarlanır. Araçlardaki büyüteç ile\n"
+"çizdiğiniz simgeyi yakınlaştırabilir veya uzaklaştırabilirsiniz.\n"
+"(İpucu: Büyüteçi bir kaç saniye basılı tutarsanız öntanımlı bir boyutlandırma "
+"yaparsınız)"
+
+#: kicongrid.cpp:116
+msgid "width"
+msgstr "en"
+
+#: kicongrid.cpp:121
+msgid "height"
+msgstr "boy"
+
+#: kicongrid.cpp:125
+msgid ""
+"Rulers\n"
+"\n"
+"This is a visual representation of the current cursor position"
+msgstr ""
+"Cetveller\n"
+"\n"
+"Fare imlecinin pozisyonunu gösterirler"
+
+#: kicongrid.cpp:816
+msgid "Free Hand"
+msgstr "Serbest Çizim"
+
+#: kicongrid.cpp:1020
+msgid ""
+"There was an error loading a blank image.\n"
+msgstr ""
+"Boş resim yüklerken bir hata oluştu.\n"
+
+#: kicongrid.cpp:1152
+msgid "All selected"
+msgstr "Tümü seçildi"
+
+#: kicongrid.cpp:1163
+msgid "Cleared"
+msgstr "Temizlendi"
+
+#: kicongrid.cpp:1205
+msgid "Selected area cut"
+msgstr "Seçilen alanı kes"
+
+#: kicongrid.cpp:1209
+msgid "Selected area copied"
+msgstr "Seçilen alan kopyalandı"
+
+#: kicongrid.cpp:1234
+msgid ""
+"The clipboard image is larger than the current image!\n"
+"Paste as new image?"
+msgstr ""
+"Panodaki resim çalıştığınız resimden daha büyük!\n"
+"Yeni resim olarak yapıştırmak ister misiniz?"
+
+#: kicongrid.cpp:1235
+msgid "Do Not Paste"
+msgstr ""
+
+#: kicongrid.cpp:1354 kicongrid.cpp:1388
+msgid "Done pasting"
+msgstr "Yapıştırma tamamlandı"
+
+#: kicongrid.cpp:1359 kicongrid.cpp:1394
+msgid ""
+"Invalid pixmap data in clipboard!\n"
+msgstr ""
+"Panoda geçersiz pixmap verisi!\n"
+
+#: kicongrid.cpp:1901
+msgid "Drawn Array"
+msgstr "Beraber Dizi"
+
+#: palettetoolbar.cpp:46
+msgid ""
+"Preview\n"
+"\n"
+"This is a 1:1 preview of the current icon"
+msgstr ""
+"Önizleme\n"
+"\n"
+"Simgenin 1:1 görünümü"
+
+#: palettetoolbar.cpp:54
+msgid ""
+"Current color\n"
+"\n"
+"This is the currently selected color"
+msgstr ""
+"Mevcut renk\n"
+"\n"
+"Bu mevcut seçili renk"
+
+#: palettetoolbar.cpp:58
+msgid "System colors:"
+msgstr "Sistem renkleri:"
+
+#: palettetoolbar.cpp:61
+msgid ""
+"System colors\n"
+"\n"
+"Here you can select colors from the KDE icon palette"
+msgstr ""
+"Sistem renkleri\n"
+"\n"
+"KDE simge tuvalinden renkleri seçebilirsiniz"
+
+#: palettetoolbar.cpp:70
+msgid "Custom colors:"
+msgstr "Özel renkler:"
+
+#: palettetoolbar.cpp:73
+msgid ""
+"Custom colors\n"
+"\n"
+"Here you can build a palette of custom colors.\n"
+"Double-click on a box to edit the color"
+msgstr ""
+"Özel renkler\n"
+"\n"
+"Burada kendi renklerinizi oluşturabilirsiniz.\n"
+"Bunun için kutucuğu çift tıklayıp renkleri düzenlemeniz yeterlidir"
+
+#: kicon.cpp:73
+msgid ""
+"The URL: %1 \n"
+"seems to be malformed.\n"
+msgstr ""
+"URL %1 hatalı gibi duruyor.\n"
+
+#: kicon.cpp:89 kicon.cpp:104
+msgid ""
+"There was an error loading:\n"
+"%1\n"
+msgstr ""
+"Yüklerken bir hata oluştu:\n"
+"%1\n"
+
+#: kicon.cpp:178
+msgid "Save Icon As"
+msgstr "Simgeyi Farklı Kaydet"
+
+#: kicon.cpp:210
+msgid "A file named \"%1\" already exists. Overwrite it?"
+msgstr "\"%1\" isminde bir dosya var. Üzerine yazmak istiyor musunuz?"
+
+#: kicon.cpp:212
+msgid "Overwrite File?"
+msgstr "Dosyanın Üzerine Yazılsın mı?"
+
+#: kicon.cpp:213
+msgid "&Overwrite"
+msgstr "Üzerine &yaz"
+
+#: kicon.cpp:268
+msgid ""
+"There was an error saving:\n"
+"%1\n"
+msgstr ""
+"Bu dosyayı kaydederken bir hata oluştu:\n"
+"%1\n"
+
+#: kresize.cpp:36
+msgid "Size"
+msgstr "Boyut"
+
+#: kresize.cpp:67
+msgid "Select Size"
+msgstr "Boyut Seçin"
+
+#: knew.cpp:44
+msgid "Standard File"
+msgstr "Standart Dosya"
+
+#: knew.cpp:48
+msgid "Source File"
+msgstr "Kaynak Dosya"
+
+#: knew.cpp:52
+msgid "Compressed File"
+msgstr "Sıkıştırılmış dosya"
+
+#: knew.cpp:56
+msgid "Standard Folder"
+msgstr "Standart Dizin"
+
+#: knew.cpp:60
+msgid "Standard Package"
+msgstr "Standart Paket"
+
+#: knew.cpp:64
+msgid "Mini Folder"
+msgstr "Mini Dizin"
+
+#: knew.cpp:68
+msgid "Mini Package"
+msgstr "Mini Paket"
+
+#: knew.cpp:168
+msgid "Create from scratch"
+msgstr "Sıfırdan başlayarak oluştur"
+
+#: knew.cpp:172
+msgid "Create from template"
+msgstr "Şablon kullanarak oluştur"
+
+#: kiconconfig.cpp:121 knew.cpp:199
+msgid "Templates"
+msgstr "Şablonlar"
+
+#: knew.cpp:230
+msgid "Create New Icon"
+msgstr "Yeni Simge Oluştur"
+
+#: knew.cpp:251
+msgid "Select Icon Type"
+msgstr "Simge Türü Seç"
+
+#: knew.cpp:252 knew.cpp:293
+msgid "Create From Scratch"
+msgstr "Sıfırdan Başlayarak Oluştur"
+
+#: knew.cpp:299
+msgid "Create From Template"
+msgstr "Şablon Kullanarak Oluştur"
+
+#: kiconeditslots.cpp:198
+#, c-format
+msgid "Print %1"
+msgstr "%1 yazdır"
+
+#: kiconeditslots.cpp:425
+msgid ""
+"_: Status Position\n"
+"%1, %2"
+msgstr "%1, %2"
+
+#: kiconeditslots.cpp:431
+msgid ""
+"_: Status Size\n"
+"%1 x %2"
+msgstr "%1 x %2"
+
+#: kiconeditslots.cpp:471
+msgid "modified"
+msgstr "değiştirildi"
+
+#: kiconconfig.cpp:56
+msgid "Icon Template"
+msgstr "Simge Şablonu"
+
+#: kiconconfig.cpp:61
+msgid "Template"
+msgstr "Şablon"
+
+#: kiconconfig.cpp:70
+msgid "Description:"
+msgstr "Tanım:"
+
+#: kiconconfig.cpp:75
+msgid "Path:"
+msgstr "Yol:"
+
+#: kiconconfig.cpp:141
+msgid "&Add..."
+msgstr "&Ekle..."
+
+#: kiconconfig.cpp:144
+msgid "&Edit..."
+msgstr "Dü&zenle..."
+
+#: kiconconfig.cpp:247
+msgid "Select Background"
+msgstr "Arkaplanı Seç"
+
+#: kiconconfig.cpp:263
+msgid "Use co&lor"
+msgstr "&Renk kullan"
+
+#: kiconconfig.cpp:267
+msgid "Use pix&map"
+msgstr "&Resim kullan"
+
+#: kiconconfig.cpp:280
+msgid "Choose..."
+msgstr "Seç..."
+
+#: kiconconfig.cpp:283
+msgid "Preview"
+msgstr "Önizleme"
+
+#: kiconconfig.cpp:363
+msgid "Only local files are supported yet."
+msgstr ""
+"Şimdilik yalnızca kendi makinenizdeki dosyalar üzerinde işlem yapabilirsiniz."
+
+#: kiconconfig.cpp:384
+msgid "Paste &transparent pixels"
+msgstr "Şeffaf pikselleri yapış&tır"
+
+#: kiconconfig.cpp:388
+msgid "Show &rulers"
+msgstr "Cetvelle&ri Gözter"
+
+#: kiconconfig.cpp:392
+msgid "Transparency Display"
+msgstr "Şeffaflık Görünümü"
+
+#: kiconconfig.cpp:402
+msgid "&Solid color:"
+msgstr "&Sadece renk:"
+
+#: kiconconfig.cpp:412
+msgid "Checker&board"
+msgstr "D&ama tahtası"
+
+#: kiconconfig.cpp:422
+msgid "Small"
+msgstr "Küçük"
+
+#: kiconconfig.cpp:423
+msgid "Medium"
+msgstr "Orta"
+
+#: kiconconfig.cpp:424
+msgid "Large"
+msgstr "Büyük"
+
+#: kiconconfig.cpp:427
+msgid "Si&ze:"
+msgstr "Bo&yut:"
+
+#: kiconconfig.cpp:433
+msgid "Color &1:"
+msgstr "Renk&1:"
+
+#: kiconconfig.cpp:439
+msgid "Color &2:"
+msgstr "Renk&2:"
+
+#: kiconconfig.cpp:540
+msgid "Icon Templates"
+msgstr "Simge Şablonları"
+
+#: kiconconfig.cpp:543
+msgid "Background"
+msgstr "Arkaplan"
+
+#: kiconconfig.cpp:546
+msgid "Icon Grid"
+msgstr "Simge Kılavuzu"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Tuncay YENİAY"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "tuncayyeniay@mynet.com"

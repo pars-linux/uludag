@@ -1,0 +1,25 @@
+# translation of kfileaudiopreview.po to Türkçe
+# translation of kfileaudiopreview.po to Turkish
+# Copyright (C) 2003, 2005 Free Software Foundation, Inc.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+# Görkem Çetin <gorkem@kde.org.tr>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kfileaudiopreview\n"
+"POT-Creation-Date: 2006-10-03 02:33+0200\n"
+"PO-Revision-Date: 2005-06-01 23:39+0000\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org.tr>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: kfileaudiopreview.cpp:67
+msgid "Media Player"
+msgstr "Çoklu Ortam Oynatıcı"
+
+#: kfileaudiopreview.cpp:93
+msgid "Play &automatically"
+msgstr "Otom&atik oynat"

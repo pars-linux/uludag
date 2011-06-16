@@ -1,0 +1,580 @@
+# translation of klaptopdaemon.po to turkish
+# translation of klaptopdaemon.po to Türkçe
+# translation of klaptopdaemon.po to Turkish
+# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+# Zafer Bahadır <zbahadir@turk.net>, 2003.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# YILDIZ KARDEŞLER <turkishprogram@xposta.com>, 2003.
+# Engin Çağatay <engincagatay@yahoo.com>, 2004.
+# Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
+# Bekir SONAT <cortexbs@yahoo.com>, 2005.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: klaptopdaemon\n"
+"POT-Creation-Date: 2008-02-03 01:21+0100\n"
+"PO-Revision-Date: 2005-07-11 18:04+0300\n"
+"Last-Translator: Bekir SONAT <cortexbs@yahoo.com>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: portable.cpp:945
+msgid ""
+"Your computer seems to have a partial ACPI installation. ACPI was probably "
+"enabled, but some of the sub-options were not - you need to enable at least 'AC "
+"Adaptor' and 'Control Method Battery' and then rebuild your kernel."
+msgstr ""
+"Bilgisayarınızda ACPI parça kurulum olarak yüklenmiş. ACPI açık fakat, bazı alt "
+"seçenekleri kapalı - en azından 'AC Adaptor' ve 'Kontrol Metod Pili' "
+"modüllerini açıp çekirdeğini yeniden inşa etmelisiniz."
+
+#: portable.cpp:949
+msgid ""
+"Your computer doesn't have the Linux APM (Advanced Power Management) or ACPI "
+"software installed, or doesn't have the APM kernel drivers installed - check "
+"out the <a href=\"http://www.linuxdoc.org/HOWTO/Laptop-HOWTO.html\">"
+"Linux Laptop-HOWTO</a> document for information on how to install APM."
+msgstr "Bu bilgisayara linux APM (Gelişmiş güç yöneticisi) desteği bulunmuyor."
+
+#: portable.cpp:961
+msgid ""
+"\n"
+"If you make /usr/bin/apm setuid then you will also be able to choose 'suspend' "
+"and 'standby' in the above dialog - check out the help button below to find out "
+"how to do this"
+msgstr ""
+"\n"
+"/usr/bin/apm programını setuid yaparsanız, yukarıdaki\n"
+"askıya al ve beklemeye al menülerini de seçebilirsiniz."
+
+#: portable.cpp:969
+msgid ""
+"\n"
+"You may need to enable ACPI suspend/resume in the ACPI panel"
+msgstr ""
+"\n"
+"ACPI panelindeki ACPI bekleme/devam seçeneğini aktif etmeniz gerekebilir"
+
+#: portable.cpp:973
+msgid ""
+"\n"
+"Your system does not support suspend/standby"
+msgstr ""
+"\n"
+"Sisteminiz asılı bırakmayı desteklemiyor"
+
+#: portable.cpp:1049 portable.cpp:2189 portable.cpp:2595 portable.cpp:2890
+msgid "No PCMCIA controller detected"
+msgstr "PCMCIA denetleyici bulunamadı"
+
+#: portable.cpp:1053
+msgid "Card 0:"
+msgstr "Kart 0:"
+
+#: portable.cpp:1055
+msgid "Card 1:"
+msgstr "Kart 1:"
+
+#: portable.cpp:1170
+msgid ""
+"Your system has APM installed but may not be able to use all of its features "
+"without further setup - look in the 'APM Config' tab for information about "
+"setting up APM for suspend and resume"
+msgstr ""
+"Sistemde APM desteği bulunuyor, ancak ek ayarlar yapılmadıkçatüm özellikler "
+"kullanılmayabilir. Lütfen APM Yapılandırma sekmesiniAPM desteği için tıklayın "
+"ve gerekli ayarları yapın."
+
+#: portable.cpp:1176
+msgid ""
+"Your system has ACPI installed but may not be able to use all of its features "
+"without further setup - look in the 'ACPI Config' tab for information about "
+"setting up ACPI for suspend and resume"
+msgstr ""
+"Sistemde·ACPI·desteği·bulunuyor,·ancak·ek·ayarlar· yapılmadıkça tüm· "
+"özellikler·kullanılmayabilir.·Lütfen·ACPI·Yapılandırma sekmesini "
+"APM·desteği·için·tıklayın·ve·gerekli·ayarları·yapın."
+
+#: portable.cpp:1333
+msgid "%1 MHz (%2)"
+msgstr "%1·MHz·(%2)"
+
+#: portable.cpp:1709
+msgid "%1 MHz"
+msgstr "%1·MHz"
+
+#: portable.cpp:2151
+msgid ""
+"There is no /dev/apm file on this system. Please review the FreeBSD handbook on "
+"how to create a device node for the APM device driver (man 4 apm)."
+msgstr ""
+"Bu sistemde /dev/apm dosyası mevcut değil. APM aygıt sürücüsü için nasıl aygıt "
+"kolu oluşturulacağını FreeBSD dökümanlarından bakınız (man 4 apm)."
+
+#: portable.cpp:2154
+msgid ""
+"Your system has the proper device node for APM support, however you cannot "
+"access it. If you are logged in as root right now, you have a problem, "
+"otherwise contact your local sysadmin and ask for read/write access to "
+"/dev/apm."
+msgstr ""
+"Sisteminiz APM desteği için gerekli aygıt koluna sahip, fakat erişemiyorsunuz.  "
+"Eğer root olarak giriş yapmışsanız, bir probleminiz var, farklı bir kullanıcı "
+"girişi yapmışsanız sistem yöneticisine /dev/apm'ye okuma/yazma erişiminizi "
+"sorunuz."
+
+#: portable.cpp:2157 portable.cpp:2562
+msgid "Your kernel lacks support for Advanced Power Management."
+msgstr "Sisteminizde Gelişmiş Güç Yönetimi Desteği bulunmamaktadır."
+
+#: portable.cpp:2161 portable.cpp:2566
+msgid "There was a generic error while opening /dev/apm."
+msgstr "/dev/apm açılırken bir hata oluştu."
+
+#: portable.cpp:2166 portable.cpp:2571
+msgid "APM has most likely been disabled."
+msgstr "APM büyük ihtimalle kapatılmış durumda."
+
+#: portable.cpp:2556
+msgid ""
+"There is no /dev/apm file on this system. Please review the NetBSD "
+"documentation on how to create a device node for the APM device driver (man 4 "
+"apm)."
+msgstr ""
+"Bu sistemde /dev/apm dosyası mevcut değil. APM aygıt sürücüsü için nasıl aygıt "
+"kolu oluşturulacağını NetBSD dökümanlarından bakınız (man 4 apm)."
+
+#: portable.cpp:2559
+msgid ""
+"Your system has the proper device node for APM support, however you cannot "
+"access it. If you have APM compiled into the kernel this should not happen."
+msgstr ""
+"Sisteminiz APM desteği için gerekli aygıt koluna sahip, fakat erişemiyorsunuz. "
+"Eğer APM çekirdeğe derlenmiş ise bu meydana gelebilir."
+
+#: portable.cpp:2866
+msgid ""
+"Your computer or operating system is not supported by the current version of "
+"the\n"
+"KDE laptop control panels. If you want help porting these panels to work with "
+"it\n"
+"please contact paul@taniwha.com."
+msgstr ""
+"Bilgisayarınız veya işletim sisteminiz KDE laptop kontrol panelleri tarafından "
+"desteklenmiyor.\n"
+"Eğer bu panelleri sisteminizde çalışacak şekilde aktarmak(port) istiyorsanız "
+"paul@taniwha.com \n"
+"ile bağlantıya geçin."
+
+#: laptop_check.cpp:32
+msgid "KDE laptop daemon starter"
+msgstr "KDE Dizüstü Programı Başlatıcı"
+
+#: laptop_check.cpp:41
+msgid "KLaptop"
+msgstr "KLaptop"
+
+#: laptop_daemon.cpp:539 laptop_daemon.cpp:545 laptop_daemon.cpp:553
+#: laptop_daemon.cpp:558
+msgid "Battery power is running out."
+msgstr "Pilin gücü zayıflıyor."
+
+#: laptop_daemon.cpp:540 laptop_daemon.cpp:546
+msgid "%1 % charge left."
+msgstr "% %1 oranında dolu."
+
+#: laptop_daemon.cpp:554
+#, c-format
+msgid ""
+"_n: 1 minute left.\n"
+"%n minutes left."
+msgstr "%n dakika kaldı."
+
+#: laptop_daemon.cpp:559
+#, c-format
+msgid ""
+"_n: 1% left.\n"
+"%n percent left."
+msgstr "Yüzde %n kaldı."
+
+#: laptop_daemon.cpp:691
+msgid "Your battery is now fully charged."
+msgstr "Piliniz tam olarak dolduruldu"
+
+#: laptop_daemon.cpp:691
+msgid "Laptop Battery"
+msgstr "Dizüstü Pili"
+
+#: laptop_daemon.cpp:825
+msgid "Logout failed."
+msgstr "Çıkış işlemi başarısız."
+
+#: laptop_daemon.cpp:832
+msgid "Shutdown failed."
+msgstr "Kapatma işlemi başarısız."
+
+#: kpcmcia.cpp:96 kpcmcia.cpp:163
+msgid "Empty slot."
+msgstr "Boş yuva."
+
+#: kpcmciainfo.cpp:56
+msgid "PCMCIA & CardBus Slots"
+msgstr "PCMCIA & Kart Yuvaları"
+
+#: kpcmciainfo.cpp:66 kpcmciainfo.cpp:95
+msgid "Ready."
+msgstr "Hazır."
+
+#: kpcmciainfo.cpp:134
+#, c-format
+msgid "Card Slot %1"
+msgstr "Kart Yuvası %1"
+
+#: kpcmciainfo.cpp:179 kpcmciainfo.cpp:290
+msgid "&Eject"
+msgstr "Çı&kar"
+
+#: kpcmciainfo.cpp:180 kpcmciainfo.cpp:293
+msgid "&Suspend"
+msgstr "&Asılı bırak"
+
+#: kpcmciainfo.cpp:181
+msgid "&Reset"
+msgstr "&Sıfırla"
+
+#: kpcmciainfo.cpp:201
+msgid "Resetting card..."
+msgstr "Kart sıfırlanıyor..."
+
+#: kpcmciainfo.cpp:208
+msgid "Inserting new card..."
+msgstr "Yeni kart takılıyor..."
+
+#: kpcmciainfo.cpp:212
+msgid "Ejecting card..."
+msgstr "Kart çıkartılıyor..."
+
+#: kpcmciainfo.cpp:223
+msgid "Suspending card..."
+msgstr "Kart asılı bırakılıyor..."
+
+#: kpcmciainfo.cpp:226
+msgid "Resuming card..."
+msgstr "Karta devam ediliyor..."
+
+#: kpcmciainfo.cpp:237
+msgid "Card type: %1 "
+msgstr "Kart türü: %1"
+
+#: kpcmciainfo.cpp:240
+#, c-format
+msgid "Driver: %1"
+msgstr "Sürücü: %1"
+
+#: kpcmciainfo.cpp:243
+msgid "IRQ: %1%2"
+msgstr "IRQ: %1%2"
+
+#: kpcmciainfo.cpp:247
+msgid " (used for memory)"
+msgstr " (bellek için kullanılır)"
+
+#: kpcmciainfo.cpp:250
+msgid " (used for memory and I/O)"
+msgstr " (bellek ve G/Ç için kullanılır)"
+
+#: kpcmciainfo.cpp:253
+msgid " (used for CardBus)"
+msgstr " CardBus için kullanılır)"
+
+#: kpcmciainfo.cpp:259 kpcmciainfo.cpp:264
+msgid "none"
+msgstr "hiçbiri"
+
+#: kpcmciainfo.cpp:262
+#, c-format
+msgid "I/O port(s): %1"
+msgstr "G/Ç portu: %1"
+
+#: kpcmciainfo.cpp:267
+msgid "Bus: %1 bit %2"
+msgstr "Yol: %1 bit %2"
+
+#: kpcmciainfo.cpp:269
+msgid "Bus: unknown"
+msgstr "Veriyolu: bilinmiyor"
+
+#: kpcmciainfo.cpp:270
+msgid "PC Card"
+msgstr "PC Kartı"
+
+#: kpcmciainfo.cpp:270
+msgid "Cardbus"
+msgstr "Cardbus"
+
+#: kpcmciainfo.cpp:272
+#, c-format
+msgid "Device: %1"
+msgstr "Aygıt: %1"
+
+#: kpcmciainfo.cpp:275
+msgid "Power: +%1V"
+msgstr "Güç: +%1V"
+
+#: kpcmciainfo.cpp:278
+msgid "Programming power: +%1V, +%2V"
+msgstr "Programlama gücü: +%1V, +%2V"
+
+#: kpcmciainfo.cpp:281
+#, c-format
+msgid "Configuration base: 0x%1"
+msgstr "Yapılandırma tabanı:0x%1"
+
+#: kpcmciainfo.cpp:283
+msgid "Configuration base: none"
+msgstr "Yapılandırma tabanı: yok"
+
+#: kpcmciainfo.cpp:295
+msgid "Resu&me"
+msgstr "Deva&m"
+
+#: daemondock.cpp:54
+#, fuzzy
+msgid "KLaptop Daemon"
+msgstr "KLaptop Programı"
+
+#: daemondock.cpp:83
+msgid "&Configure KLaptop..."
+msgstr "&KLaptop Programını Yapılandır..."
+
+#: daemondock.cpp:86
+msgid "Screen Brightness..."
+msgstr "Ekran Parlaklığı..."
+
+#: daemondock.cpp:90
+msgid "Performance Profile..."
+msgstr "Performans Profili..."
+
+#: daemondock.cpp:99
+msgid "CPU Throttling..."
+msgstr "CPU Kısıtlanıyor..."
+
+#: daemondock.cpp:108
+msgid "Standby..."
+msgstr "Bekleme..."
+
+#: daemondock.cpp:109
+msgid "&Lock && Suspend..."
+msgstr "&Kilitle ve Asılı Bırak"
+
+#: daemondock.cpp:110
+msgid "&Suspend..."
+msgstr "&Asılı Bırak..."
+
+#: daemondock.cpp:111
+msgid "&Lock && Hibernate..."
+msgstr "Ki&litle ve Askıya al..."
+
+#: daemondock.cpp:112
+msgid "&Hibernate..."
+msgstr "As&kıya Al..."
+
+#: daemondock.cpp:116
+msgid "&Hide Monitor"
+msgstr "Ekranı &Gizle"
+
+#: daemondock.cpp:239
+msgid ""
+"You will need to supply a root password to allow KLaptopDaemon to restart "
+"itself as the superuser. It may take up to a minute for the new daemon to start "
+"up and the old one to close."
+msgstr ""
+"KLaptopDaemon'u superuser olarak yeniden başlatmak için root şifresi "
+"gereklidir. Eskisinin kapanıp yeni programın açılması bir dakika kadar zaman "
+"alabilir."
+
+#: daemondock.cpp:244 daemondock.cpp:261 daemondock.cpp:265
+msgid "KLaptopDaemon"
+msgstr "KLaptop Programı"
+
+#: daemondock.cpp:260
+msgid ""
+"PCMCIA cannot be enabled since kdesu cannot be found. Please make sure that it "
+"is installed correctly."
+msgstr ""
+"PCMCIA, kdesu bulunamadığından beri etkinleştirilemiyor. Lütfen düzgün "
+"yüklendiğinden emin olun."
+
+#: daemondock.cpp:264
+msgid "PCMCIA cannot be enabled just now."
+msgstr "PCMCIA şu anda açılamıyor."
+
+#: daemondock.cpp:271
+msgid ""
+"Are you sure you want to hide the battery monitor? Your battery will still be "
+"monitored in the background."
+msgstr ""
+"Pil izleyicisini gizlemek istiyor musunuz? Piliniz arkaplanda sürekli olarak "
+"izleniyor olacaktır."
+
+#: daemondock.cpp:271
+#, fuzzy
+msgid "Hide Monitor"
+msgstr "Ekranı &Gizle"
+
+#: daemondock.cpp:271
+msgid "Do Not Hide"
+msgstr ""
+
+#: daemondock.cpp:289
+msgid "Are you sure you want to quit the battery monitor?"
+msgstr "Pil izleyicisini kapatmak istiyor musunuz?"
+
+#: daemondock.cpp:294
+msgid "Do you wish to disable the battery monitor from starting in the future?"
+msgstr ""
+"Pil izleyicisini daha ileride başlangıçta çalışmamasını istiyor musunuz?"
+
+#: daemondock.cpp:294
+msgid "Disable"
+msgstr ""
+
+#: daemondock.cpp:294
+msgid "Keep Enabled"
+msgstr ""
+
+#: daemondock.cpp:369
+msgid "Power Manager Not Found"
+msgstr "Güç Yöneticisi Bulunamadı"
+
+#: daemondock.cpp:378
+#, fuzzy
+msgid "%1:%2 hours left"
+msgstr "%1:%2 dakika kaldı"
+
+#: daemondock.cpp:381
+msgid "%1% charged"
+msgstr "%1% dolu"
+
+#: daemondock.cpp:384
+msgid "No Battery"
+msgstr "Pil Yok"
+
+#: daemondock.cpp:390
+msgid "Charging"
+msgstr "Doluyor"
+
+#: daemondock.cpp:392
+msgid "Not Charging"
+msgstr "Doldurulmuyor"
+
+#: daemondock.cpp:405
+#, c-format
+msgid "CPU: %1"
+msgstr "MİB: %1"
+
+#: daemondock.cpp:413
+#, c-format
+msgid "Slot %1"
+msgstr "Yuva %1"
+
+#: daemondock.cpp:422
+msgid "Card Slots..."
+msgstr "Kart Yuvaları..."
+
+#: daemondock.cpp:429
+msgid "Details..."
+msgstr "Ayrıntılar..."
+
+#: daemondock.cpp:434
+msgid "Eject"
+msgstr "Çıkar"
+
+#: daemondock.cpp:437
+msgid "Suspend"
+msgstr "Asılı bırak"
+
+#: daemondock.cpp:440
+msgid "Resume"
+msgstr "Devam et"
+
+#: daemondock.cpp:443
+msgid "Reset"
+msgstr "Sıfırla"
+
+#: daemondock.cpp:448
+msgid "Actions"
+msgstr "Eylemler"
+
+#: daemondock.cpp:454
+msgid "Ready"
+msgstr "Hazır"
+
+#: daemondock.cpp:456
+msgid "Busy"
+msgstr "Meşgul"
+
+#: daemondock.cpp:458
+msgid "Suspended"
+msgstr "Asılı bırakıldı"
+
+#: daemondock.cpp:463
+msgid "Enable PCMCIA"
+msgstr "PCMCIA'i etkinleştir"
+
+#: daemondock.cpp:630
+msgid "Laptop power management not available"
+msgstr "Dizüstü güç yönetimi mevcut değil"
+
+#: daemondock.cpp:631 daemondock.cpp:651 daemondock.cpp:669
+msgid "N/A"
+msgstr ""
+
+#: daemondock.cpp:635
+msgid "Plugged in - fully charged"
+msgstr "Fişe takılı - tam olarak dolu"
+
+#: daemondock.cpp:643
+#, fuzzy
+msgid "Plugged in - %1% charged (%2:%3 hours left)"
+msgstr "Takılı - %1% şarj edildi (%2:%3 zaman kaldı)"
+
+#: daemondock.cpp:647
+msgid "Plugged in - %1% charged"
+msgstr "Fişe takılı - %1% dolu"
+
+#: daemondock.cpp:650
+msgid "Plugged in - no battery"
+msgstr "Fişe takılı - pil yok"
+
+#: daemondock.cpp:660
+#, fuzzy
+msgid "Running on batteries - %1% charged (%2:%3 hours left)"
+msgstr "Pilden çalışıyor  - %1% şajlı (%2:%3 zaman kaldı)"
+
+#: daemondock.cpp:663
+msgid "Running on batteries - %1% charged"
+msgstr "Pilden çalışıyor  - %1% dolu"
+
+#: daemondock.cpp:668
+msgid "No power source found"
+msgstr "Bir güç kaynağı bulunamadı"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Zafer Bahadır"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "zbahadır@turk.net"
+
+#~ msgid " "
+#~ msgstr " "

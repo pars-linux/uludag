@@ -1,0 +1,774 @@
+# translation of kcmkeys.po to
+# translation of kcmkeys.po to Turkish
+# Copyright (C) 2003, 2004, 2007 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2003., 2003, 2004.
+# Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
+# Adil YILDIZ <adil@linux-sevenler.org>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkeys\n"
+"POT-Creation-Date: 2006-08-22 02:34+0200\n"
+"PO-Revision-Date: 2007-07-05 15:19+0300\n"
+"Last-Translator: Serdar Soytetir\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: shortcuts.cpp:93
+msgid ""
+"<h1>Key Bindings</h1> Using key bindings you can configure certain actions to "
+"be triggered when you press a key or a combination of keys, e.g. Ctrl+C is "
+"normally bound to 'Copy'. KDE allows you to store more than one 'scheme' of key "
+"bindings, so you might want to experiment a little setting up your own scheme "
+"while you can still change back to the KDE defaults."
+"<p> In the tab 'Global Shortcuts' you can configure non-application specific "
+"bindings like how to switch desktops or maximize a window. In the tab "
+"'Application Shortcuts' you will find bindings typically used in applications, "
+"such as copy and paste."
+msgstr ""
+"<h1>Tuş Bağıntıları</h1> Tuş bağıntılarını kullanarak belirli işlemlerin "
+"belirlenen tuşlara basılmasıyla yapılmasını sağlayabilirsiniz (örneğin CTRL-C "
+"genellikle 'Kopyala' için kullanılır). KDE birden fazla plan tanımlamanıza izin "
+"verir, böylelikle kendi ayarlarınızı deneyip istediğiniz zaman KDE öntanımlı "
+"değerlerine geri dönebilirsiniz. "
+"<p>'Evrensel Kısayollar' sekmesinde pencere genişletme veya masaüstü değiştirme "
+"gibi uygulamasal olmayan özellikleri yapılandırabilrsiniz. 'Uygulama "
+"Kısayolları' sekmesinde uygulamalar tarafından kullanılan kopyala ve yapıştır "
+"tipik uygulama özelliklerini bulabilirsiniz."
+
+#: shortcuts.cpp:152
+msgid ""
+"Click here to remove the selected key bindings scheme. You cannot remove the "
+"standard system-wide schemes 'Current scheme' and 'KDE default'."
+msgstr ""
+"Seçili tuş bağlayıcı planını silmek için buraya tıklayın. 'Şimdiki şema' ve "
+"'öntanımlı KDE' gibi standart şemaları silemezsiniz."
+
+#: shortcuts.cpp:158
+msgid "New scheme"
+msgstr "Yeni şema"
+
+#: shortcuts.cpp:163
+msgid "&Save..."
+msgstr "&Kaydet..."
+
+#: shortcuts.cpp:165
+msgid ""
+"Click here to add a new key bindings scheme. You will be prompted for a name."
+msgstr ""
+"Yeni bir tuş bağlayıcı plan seçmek için buraya tıklayın. Bir isim sorulacak."
+
+#: shortcuts.cpp:177
+msgid "&Global Shortcuts"
+msgstr "&Genel Kısayollar"
+
+#: shortcuts.cpp:182
+msgid "Shortcut Se&quences"
+msgstr "&Kısayol Sıraları"
+
+#: shortcuts.cpp:187
+msgid "App&lication Shortcuts"
+msgstr "&Uygulama Kısayolları"
+
+#: shortcuts.cpp:248
+msgid "User-Defined Scheme"
+msgstr "Kullanıcı Tanımlı Şema"
+
+#: shortcuts.cpp:249
+msgid "Current Scheme"
+msgstr "Şimdiki Şema"
+
+#: shortcuts.cpp:292
+msgid ""
+"Your current changes will be lost if you load another scheme before saving this "
+"one."
+msgstr "Kaydetmeden Önceki Değişiklikler Yokolabilir."
+
+#: shortcuts.cpp:312
+msgid ""
+"This scheme requires the \"%1\" modifier key, which is not available on your "
+"keyboard layout. Do you wish to view it anyway?"
+msgstr ""
+"Bu şema için \"%1\" değiştirici tuşu gerekli, ve bu tuş klavye yerleşiminizde "
+"mevcut değil. Yine de görüntülemek istiyor musunuz?"
+
+#: modifiers.cpp:194 modifiers.cpp:290 shortcuts.cpp:314
+msgid "Win"
+msgstr "Pencere"
+
+#: shortcuts.cpp:341 shortcuts.cpp:374
+msgid "Save Key Scheme"
+msgstr "Tuş Şemasını Kaydet"
+
+#: shortcuts.cpp:342
+msgid "Enter a name for the key scheme:"
+msgstr "Tuş planı için bir isim giriniz:"
+
+#: shortcuts.cpp:372
+msgid ""
+"A key scheme with the name '%1' already exists;\n"
+"do you want to overwrite it?\n"
+msgstr ""
+"'%1' isimli bir tuş şeması mevcut;\n"
+"üzerine yazmak ister misiniz?\n"
+
+#: shortcuts.cpp:375
+msgid "Overwrite"
+msgstr "Üzerine yaz"
+
+#: modifiers.cpp:174
+msgid "KDE Modifiers"
+msgstr "KDE Değiştiricileri"
+
+#: modifiers.cpp:177
+msgid "Modifier"
+msgstr "Değiştirici"
+
+#: modifiers.cpp:182 modifiers.cpp:235
+msgid "X11-Mod"
+msgstr "X11-Mod"
+
+#: modifiers.cpp:188 modifiers.cpp:288
+msgid ""
+"_: QAccel\n"
+"Ctrl"
+msgstr "Ctrl"
+
+#: modifiers.cpp:207
+msgid "Macintosh keyboard"
+msgstr "Macintosh klavye"
+
+#: modifiers.cpp:212
+msgid "MacOS-style modifier usage"
+msgstr "MacOS stili değiştirici kullanımı"
+
+#: modifiers.cpp:215
+msgid ""
+"Checking this box will change your X Modifier Mapping to better reflect the "
+"standard MacOS modifier key usage. It allows you to use <i>Command+C</i> for <i>"
+"Copy</i>, for instance, instead of the PC standard of <i>Ctrl+C</I>. <b>"
+"Command</b> will be used for application and console commands, <b>Option</b> "
+"as a command modifier and for navigating menus and dialogs, and <b>Control</b> "
+"for window manager commands."
+msgstr ""
+"Bu kutuyu işaretlerseniz, X Değiştirici haritalarını MacOs değiştirici "
+"tuşlarını kullanabilirsiniz."
+
+#: modifiers.cpp:228
+msgid "X Modifier Mapping"
+msgstr "X değiştirici planlayıcı"
+
+#: modifiers.cpp:278 modifiers.cpp:284 treeview.cpp:108
+msgid "Command"
+msgstr "Komut"
+
+#: modifiers.cpp:279 modifiers.cpp:283
+msgid "Option"
+msgstr "Seçenek"
+
+#: modifiers.cpp:280 modifiers.cpp:282
+msgid "Control"
+msgstr "Denetim"
+
+#: modifiers.cpp:297
+#, c-format
+msgid "Key %1"
+msgstr "Tuş %1"
+
+#: modifiers.cpp:330
+msgid "None"
+msgstr "Boş"
+
+#: modifiers.cpp:343
+msgid ""
+"You can only activate this option if your X keyboard layout has the 'Super' or "
+"'Meta' keys properly configured as modifier keys."
+msgstr ""
+"Eğer X klavye düzeni 'Super' ya da 'Meta' tuşlarına uygun değiştirici tuşları "
+"varsa, Yalnızca bu opsiyonu aktifleştirebilirsiniz."
+
+#: main.cpp:54
+msgid ""
+"<h1>Keyboard Shortcuts</h1> Using shortcuts you can configure certain actions "
+"to be triggered when you press a key or a combination of keys, e.g. Ctrl+C is "
+"normally bound to 'Copy'. KDE allows you to store more than one 'scheme' of "
+"shortcuts, so you might want to experiment a little setting up your own scheme, "
+"although you can still change back to the KDE defaults."
+"<p> In the 'Global Shortcuts' tab you can configure non-application-specific "
+"bindings, like how to switch desktops or maximize a window; in the 'Application "
+"Shortcuts' tab you will find bindings typically used in applications, such as "
+"copy and paste."
+msgstr ""
+"<h1>Klavye Kısayolları</h1>Kısayolları kullanarak belirli eylemleri "
+"tetikleyebilirsiniz, örn Ctrl+C öntanımlı olarak 'Kopyala' eylemine atanmıştır. "
+"KDE birden çok kısayol şeması saklamanıza izin verir, böylece şemanızda "
+"değişiklliker yaparak değişik şemalar üzerinde deneyim kazaanbilirsiniz, "
+"herzaman KDE öntanımlılarına geri dönebilirsiniz. "
+"<p>'Evrensel Kısayollar' sekmesinde pencere genişletme veya masaüstü değiştirme "
+"gibi uygulamasal olmayan özellikleri yapılandırabilrsiniz. 'Uygulama "
+"Kısayolları' sekmesinde uygulamalar tarafından kullanılan kopyala ve yapıştır "
+"tipik uygulama özelliklerini bulabilirsiniz."
+
+#: main.cpp:77
+msgid "Shortcut Schemes"
+msgstr "Kısayol Şemaları"
+
+#: main.cpp:81
+msgid "Command Shortcuts"
+msgstr "Komut Kısayolları"
+
+#: main.cpp:86
+msgid "Modifier Keys"
+msgstr "Değiştirici Tuşlar"
+
+#: treeview.cpp:109
+msgid "Shortcut"
+msgstr "Kısayol"
+
+#: treeview.cpp:110
+msgid "Alternate"
+msgstr "Sıralı"
+
+#: commandShortcuts.cpp:73
+msgid ""
+"<h1>Command Shortcuts</h1> Using key bindings you can configure applications "
+"and commands to be triggered when you press a key or a combination of keys."
+msgstr ""
+"<h1>Komut Kısayolları</h1> Belli bir tuş ya da tuş kombinasyonuna bastığınız "
+"zaman bir uygulama ya da komutun çalışmasını sağlayabilirsiniz."
+
+#: commandShortcuts.cpp:83
+msgid ""
+"<qt>Below is a list of known commands which you may assign keyboard shortcuts "
+"to. To edit, add or remove entries from this list use the <a "
+"href=\"launchMenuEditor\">KDE menu editor</a>.</qt>"
+msgstr ""
+"<qt>Aşağıda, klavye kısayolları atayabileceğiniz programların bir listesini "
+"bulacaksınız. Bu liste üzerinde yapacağınız düzenleme, ekleme ya da silme "
+"işlemleri için <a href=\"launchMenuEditor\">KDE menü düzenleyicisini</a> "
+"kullanabilirsiniz.</qt>"
+
+#: commandShortcuts.cpp:96
+msgid ""
+"This is a list of all the desktop applications and commands currently defined "
+"on this system. Click to select a command to assign a keyboard shortcut to. "
+"Complete management of these entries can be done via the menu editor program."
+msgstr ""
+"Bu liste, bu makinede yer alan masaüstü uygulamaları ve komutları gösterir. Bir "
+"klavye kısayolu atamak için listedeki öğelerden bir tanesi üzerine tıklayın. "
+"Tüm girdilerin yönetimi menü düzenleyici programı tarafından yapılabilir."
+
+#: commandShortcuts.cpp:104
+msgid "Shortcut for Selected Command"
+msgstr "Seçilen Komut için Kısayol"
+
+#: commandShortcuts.cpp:109
+msgid ""
+"_: no key\n"
+"&None"
+msgstr "&Hiçbiri"
+
+#: commandShortcuts.cpp:110
+msgid "The selected command will not be associated with any key."
+msgstr "Seçilen komut herhangi bir tuşa bağıntılı olmayacaktır."
+
+#: commandShortcuts.cpp:112
+msgid "C&ustom"
+msgstr "Ö&zel"
+
+#: commandShortcuts.cpp:114
+msgid ""
+"If this option is selected you can create a customized key binding for the "
+"selected command using the button to the right."
+msgstr ""
+"Eğer bu seçenek seçiliyse sağdaki düğmeyi kullanarak özel tuş takımı "
+"oluşturabilirsiniz."
+
+#: commandShortcuts.cpp:119
+msgid ""
+"Use this button to choose a new shortcut key. Once you click it, you can press "
+"the key-combination which you would like to be assigned to the currently "
+"selected command."
+msgstr ""
+"Yeni bir kısayol tuşu tanımmlaak için bu düğmeyi kullanın. Düğmeye bir defa "
+"bastıktan sonra seçili komut için istediğiniz tuş kombinasyonunu "
+"seçebilirsiniz."
+
+#: commandShortcuts.cpp:142
+msgid ""
+"The KDE menu editor (kmenuedit) could not be launched.\n"
+"Perhaps it is not installed or not in your path."
+msgstr ""
+"KDE menü düzenleyici çalıştırılamadı.\n"
+"Bu program sistemde kurulu olmayabilir."
+
+#: commandShortcuts.cpp:144
+msgid "Application Missing"
+msgstr "Uygulama Bulunamadı"
+
+#: ../../kwin/kwinbindings.cpp:18
+msgid "System"
+msgstr "Sistem"
+
+#: ../../kwin/kwinbindings.cpp:20
+msgid "Navigation"
+msgstr "Gezgin"
+
+#: ../../kwin/kwinbindings.cpp:21
+msgid "Walk Through Windows"
+msgstr "Pencerelerde Yürü"
+
+#: ../../kwin/kwinbindings.cpp:22
+msgid "Walk Through Windows (Reverse)"
+msgstr "Windows'ta Yürü(Ters)"
+
+#: ../../kwin/kwinbindings.cpp:23
+msgid "Walk Through Desktops"
+msgstr "Masaüstlerinde Yürü"
+
+#: ../../kwin/kwinbindings.cpp:24
+msgid "Walk Through Desktops (Reverse)"
+msgstr "Masaüstlerinde Yürü(Ters)"
+
+#: ../../kwin/kwinbindings.cpp:25
+msgid "Walk Through Desktop List"
+msgstr "Masaüstü Listesinde Yürü"
+
+#: ../../kwin/kwinbindings.cpp:26
+msgid "Walk Through Desktop List (Reverse)"
+msgstr "Masaüstü Listesinde Yürü(Ters)"
+
+#: ../../kwin/kwinbindings.cpp:28
+msgid "Windows"
+msgstr "Pencereler"
+
+#: ../../kwin/kwinbindings.cpp:29
+msgid "Window Operations Menu"
+msgstr "Pencere İşlemleri Menüsü"
+
+#: ../../kwin/kwinbindings.cpp:30
+msgid "Close Window"
+msgstr "Pencereyi Kapat"
+
+#: ../../kwin/kwinbindings.cpp:32
+msgid "Maximize Window"
+msgstr "Pencereyi Büyüt"
+
+#: ../../kwin/kwinbindings.cpp:34
+msgid "Maximize Window Vertically"
+msgstr "Pencereyi Dikey Büyüt"
+
+#: ../../kwin/kwinbindings.cpp:36
+msgid "Maximize Window Horizontally"
+msgstr "Pencereyi Yatay Büyüt"
+
+#: ../../kwin/kwinbindings.cpp:38
+msgid "Minimize Window"
+msgstr "Pencereyi İndir"
+
+#: ../../kwin/kwinbindings.cpp:40
+msgid "Shade Window"
+msgstr "Pencereyi Gölgele"
+
+#: ../../kwin/kwinbindings.cpp:42
+msgid "Move Window"
+msgstr "Daha Çok Pencere"
+
+#: ../../kwin/kwinbindings.cpp:44
+msgid "Resize Window"
+msgstr "Pencereyi Yeniden Boyutlandır"
+
+#: ../../kwin/kwinbindings.cpp:46
+msgid "Raise Window"
+msgstr "Pencereyi Yükselt"
+
+#: ../../kwin/kwinbindings.cpp:48
+msgid "Lower Window"
+msgstr "Pencereyi Simge Durumuna Küçült"
+
+#: ../../kwin/kwinbindings.cpp:50
+msgid "Toggle Window Raise/Lower"
+msgstr "Pencereyi Yükselt/Alçalt"
+
+#: ../../kwin/kwinbindings.cpp:51
+msgid "Make Window Fullscreen"
+msgstr "Pencereyi Tam Ekran Yap"
+
+#: ../../kwin/kwinbindings.cpp:53
+msgid "Hide Window Border"
+msgstr "Pencere Kenarlığını Gizle"
+
+#: ../../kwin/kwinbindings.cpp:55
+msgid "Keep Window Above Others"
+msgstr "Pencereyi Diğerlerinin Üzerinde Tut"
+
+#: ../../kwin/kwinbindings.cpp:57
+msgid "Keep Window Below Others"
+msgstr "Pencereyi Diğerlerinin Altına Gönder"
+
+#: ../../kwin/kwinbindings.cpp:59
+msgid "Activate Window Demanding Attention"
+msgstr "Pencere İsteme Uyarısını Etkinleştir"
+
+#: ../../kwin/kwinbindings.cpp:60
+msgid "Setup Window Shortcut"
+msgstr "Pencere Kısayolunu Ayarla"
+
+#: ../../kwin/kwinbindings.cpp:61
+msgid "Pack Window to the Right"
+msgstr "Pencereyi Sağa Gönder"
+
+#: ../../kwin/kwinbindings.cpp:63
+msgid "Pack Window to the Left"
+msgstr "Pencereyi Sola Gönder"
+
+#: ../../kwin/kwinbindings.cpp:65
+msgid "Pack Window Up"
+msgstr "Pencereyi Yukarı Gönder"
+
+#: ../../kwin/kwinbindings.cpp:67
+msgid "Pack Window Down"
+msgstr "Pencereyi Aşağıya Gönder"
+
+#: ../../kwin/kwinbindings.cpp:69
+msgid "Pack Grow Window Horizontally"
+msgstr "Pencereyi Yatay Büyüt"
+
+#: ../../kwin/kwinbindings.cpp:71
+msgid "Pack Grow Window Vertically"
+msgstr "Pencereyi Dikey Büyüt"
+
+#: ../../kwin/kwinbindings.cpp:73
+msgid "Pack Shrink Window Horizontally"
+msgstr "Pencereyi Yatay Daralt"
+
+#: ../../kwin/kwinbindings.cpp:75
+msgid "Pack Shrink Window Vertically"
+msgstr "Pencereyi Dikey Daralt"
+
+#: ../../kwin/kwinbindings.cpp:78
+msgid "Window & Desktop"
+msgstr "Pencere & Masaüstü"
+
+#: ../../kwin/kwinbindings.cpp:79
+msgid "Keep Window on All Desktops"
+msgstr "Pencereyi Tüm Masaüstlerinde Görüntüle"
+
+#: ../../kwin/kwinbindings.cpp:81
+msgid "Window to Desktop 1"
+msgstr "Pencereyi 1. Masaüstüne Gönder"
+
+#: ../../kwin/kwinbindings.cpp:82
+msgid "Window to Desktop 2"
+msgstr "Pencereyi 2. Masaüstüne Gönder"
+
+#: ../../kwin/kwinbindings.cpp:83
+msgid "Window to Desktop 3"
+msgstr "Pencereyi 3. Masaüstüne Gönder"
+
+#: ../../kwin/kwinbindings.cpp:84
+msgid "Window to Desktop 4"
+msgstr "Pencereyi 4. Masaüstüne Gönder"
+
+#: ../../kwin/kwinbindings.cpp:85
+msgid "Window to Desktop 5"
+msgstr "Pencereyi 5. Masaüstüne Gönder"
+
+#: ../../kwin/kwinbindings.cpp:86
+msgid "Window to Desktop 6"
+msgstr "Pencereyi 6. Masaüstüne Gönder"
+
+#: ../../kwin/kwinbindings.cpp:87
+msgid "Window to Desktop 7"
+msgstr "Pencereyi 7. Masaüstüne Gönder"
+
+#: ../../kwin/kwinbindings.cpp:88
+msgid "Window to Desktop 8"
+msgstr "Pencereyi 8. Masaüstüne Gönder"
+
+#: ../../kwin/kwinbindings.cpp:89
+msgid "Window to Desktop 9"
+msgstr "Pencereyi 9. Masaüstüne Gönder"
+
+#: ../../kwin/kwinbindings.cpp:90
+msgid "Window to Desktop 10"
+msgstr "Pencereyi 10. Masaüstüne Gönder"
+
+#: ../../kwin/kwinbindings.cpp:91
+msgid "Window to Desktop 11"
+msgstr "Pencereyi 11. Masaüstüne Gönder"
+
+#: ../../kwin/kwinbindings.cpp:92
+msgid "Window to Desktop 12"
+msgstr "Pencereyi 12. Masaüstüne Gönder"
+
+#: ../../kwin/kwinbindings.cpp:93
+msgid "Window to Desktop 13"
+msgstr "Pencereyi 13. Masaüstüne Gönder"
+
+#: ../../kwin/kwinbindings.cpp:94
+msgid "Window to Desktop 14"
+msgstr "Pencereyi 14. Masaüstüne Gönder"
+
+#: ../../kwin/kwinbindings.cpp:95
+msgid "Window to Desktop 15"
+msgstr "Pencereyi 15. Masaüstüne Gönder"
+
+#: ../../kwin/kwinbindings.cpp:96
+msgid "Window to Desktop 16"
+msgstr "Pencereyi 16. Masaüstüne Gönder"
+
+#: ../../kwin/kwinbindings.cpp:97
+msgid "Window to Desktop 17"
+msgstr "Pencereyi 17. Masaüstüne Gönder"
+
+#: ../../kwin/kwinbindings.cpp:98
+msgid "Window to Desktop 18"
+msgstr "Pencereyi 18. Masaüstüne Gönder"
+
+#: ../../kwin/kwinbindings.cpp:99
+msgid "Window to Desktop 19"
+msgstr "Pencereyi 19. Masaüstüne Gönder"
+
+#: ../../kwin/kwinbindings.cpp:100
+msgid "Window to Desktop 20"
+msgstr "Pencereyi 20. Masaüstüne Gönder"
+
+#: ../../kwin/kwinbindings.cpp:101
+msgid "Window to Next Desktop"
+msgstr "Pencereyi Sonraki Masaüstüne Gönder"
+
+#: ../../kwin/kwinbindings.cpp:102
+msgid "Window to Previous Desktop"
+msgstr "Pencereyi Önceki Masaüstüne Gönder"
+
+#: ../../kwin/kwinbindings.cpp:103
+msgid "Window One Desktop to the Right"
+msgstr "Pencereyi Bir Masaüstü Sağa Gönder"
+
+#: ../../kwin/kwinbindings.cpp:104
+msgid "Window One Desktop to the Left"
+msgstr "Pencereyi Bir Masaüstü Sola Gönder"
+
+#: ../../kwin/kwinbindings.cpp:105
+msgid "Window One Desktop Up"
+msgstr "Pencereyi Bir Masaüstü Yukarı"
+
+#: ../../kwin/kwinbindings.cpp:106
+msgid "Window One Desktop Down"
+msgstr "Pencereyi Bir Alt Masastüne Gönder"
+
+#: ../../kwin/kwinbindings.cpp:108
+msgid "Desktop Switching"
+msgstr "Masaüstü Değişimi"
+
+#: ../../kwin/kwinbindings.cpp:109
+msgid "Switch to Desktop 1"
+msgstr "Masaüstü 1'e Geç"
+
+#: ../../kwin/kwinbindings.cpp:110
+msgid "Switch to Desktop 2"
+msgstr "Masaüstü 2'ye Geç"
+
+#: ../../kwin/kwinbindings.cpp:111
+msgid "Switch to Desktop 3"
+msgstr "Masaüstü 3'e Geç"
+
+#: ../../kwin/kwinbindings.cpp:112
+msgid "Switch to Desktop 4"
+msgstr "Masaüstü 4'e Geç"
+
+#: ../../kwin/kwinbindings.cpp:113
+msgid "Switch to Desktop 5"
+msgstr "Masaüstü 5'e Geç"
+
+#: ../../kwin/kwinbindings.cpp:114
+msgid "Switch to Desktop 6"
+msgstr "Masaüstü 6'ya Geç"
+
+#: ../../kwin/kwinbindings.cpp:115
+msgid "Switch to Desktop 7"
+msgstr "Masaüstü 7'ye Geç"
+
+#: ../../kwin/kwinbindings.cpp:116
+msgid "Switch to Desktop 8"
+msgstr "Masaüstü 8'e Geç"
+
+#: ../../kwin/kwinbindings.cpp:117
+msgid "Switch to Desktop 9"
+msgstr "Masaüstü 9'a Geç"
+
+#: ../../kwin/kwinbindings.cpp:118
+msgid "Switch to Desktop 10"
+msgstr "Masaüstü 10'a Geç"
+
+#: ../../kwin/kwinbindings.cpp:119
+msgid "Switch to Desktop 11"
+msgstr "Masaüstü 11'e Geç"
+
+#: ../../kwin/kwinbindings.cpp:120
+msgid "Switch to Desktop 12"
+msgstr "Masaüstü 12'ye Geç"
+
+#: ../../kwin/kwinbindings.cpp:121
+msgid "Switch to Desktop 13"
+msgstr "Masaüstü 13'e Geç"
+
+#: ../../kwin/kwinbindings.cpp:122
+msgid "Switch to Desktop 14"
+msgstr "Masaüstü 14'e Geç"
+
+#: ../../kwin/kwinbindings.cpp:123
+msgid "Switch to Desktop 15"
+msgstr "Masaüstü 15'e Geç"
+
+#: ../../kwin/kwinbindings.cpp:124
+msgid "Switch to Desktop 16"
+msgstr "Masaüstü 16'ya Geç"
+
+#: ../../kwin/kwinbindings.cpp:125
+msgid "Switch to Desktop 17"
+msgstr "Masaüstü 17'ye Geç"
+
+#: ../../kwin/kwinbindings.cpp:126
+msgid "Switch to Desktop 18"
+msgstr "Masaüstü 18'e Geç"
+
+#: ../../kwin/kwinbindings.cpp:127
+msgid "Switch to Desktop 19"
+msgstr "Masaüstü 19'a Geç"
+
+#: ../../kwin/kwinbindings.cpp:128
+msgid "Switch to Desktop 20"
+msgstr "Masaüstü 20'ye geç"
+
+#: ../../kwin/kwinbindings.cpp:129
+msgid "Switch to Next Desktop"
+msgstr "Bir Sonraki masaüstüne Geç"
+
+#: ../../kwin/kwinbindings.cpp:130
+msgid "Switch to Previous Desktop"
+msgstr "Bir Önceki Masaüstüne Geç"
+
+#: ../../kwin/kwinbindings.cpp:131
+msgid "Switch One Desktop to the Right"
+msgstr "Sağdaki Bir Masaüstüne Geç"
+
+#: ../../kwin/kwinbindings.cpp:132
+msgid "Switch One Desktop to the Left"
+msgstr "Soldaki Bir Masaüstüne Geç"
+
+#: ../../kwin/kwinbindings.cpp:133
+msgid "Switch One Desktop Up"
+msgstr "Üstteki Bir Masaüstüne Geç"
+
+#: ../../kwin/kwinbindings.cpp:134
+msgid "Switch One Desktop Down"
+msgstr "Alttaki Bir Masaüstüne Geç"
+
+#: ../../kwin/kwinbindings.cpp:137
+msgid "Mouse Emulation"
+msgstr "Fare Emülasyonu"
+
+#: ../../kwin/kwinbindings.cpp:138
+msgid "Kill Window"
+msgstr "Pencereyi Öldür"
+
+#: ../../kwin/kwinbindings.cpp:139
+msgid "Window Screenshot"
+msgstr "Pencere Yakala"
+
+#: ../../kwin/kwinbindings.cpp:140
+msgid "Desktop Screenshot"
+msgstr "Masaüstü Yakala"
+
+#: ../../kwin/kwinbindings.cpp:145
+msgid "Block Global Shortcuts"
+msgstr "Genel Kısayolları Engelle"
+
+#: ../../kicker/kicker/core/kickerbindings.cpp:39
+msgid "Panel"
+msgstr "Panel"
+
+#: ../../kicker/kicker/core/kickerbindings.cpp:40
+msgid "Popup Launch Menu"
+msgstr "Popup Çalıştırma Menüsü"
+
+#: ../../kicker/kicker/core/kickerbindings.cpp:45
+msgid "Toggle Showing Desktop"
+msgstr "Görünen Masaüstü"
+
+#: ../../kicker/taskbar/taskbarbindings.cpp:33
+msgid "Next Taskbar Entry"
+msgstr "Sonraki Görev Çubuğu Girdisi"
+
+#: ../../kicker/taskbar/taskbarbindings.cpp:34
+msgid "Previous Taskbar Entry"
+msgstr "Önceki Görev Çubuğu Girdisi"
+
+#: ../../kdesktop/kdesktopbindings.cpp:14
+msgid "Desktop"
+msgstr "Masaüstü"
+
+#: ../../kdesktop/kdesktopbindings.cpp:20
+msgid "Run Command"
+msgstr "Komut Çalıştır"
+
+#: ../../kdesktop/kdesktopbindings.cpp:24
+msgid "Show Taskmanager"
+msgstr "Görevyöneticisini Göster"
+
+#: ../../kdesktop/kdesktopbindings.cpp:25
+msgid "Show Window List"
+msgstr "pencere Listesini Göster"
+
+#: ../../kdesktop/kdesktopbindings.cpp:26
+msgid "Switch User"
+msgstr "Kullanıcıyı Değiştir"
+
+#: ../../kdesktop/kdesktopbindings.cpp:31
+msgid "Lock Session"
+msgstr "Oturumu Kilitle"
+
+#: ../../kdesktop/kdesktopbindings.cpp:37
+msgid "Log Out"
+msgstr "Çıkış"
+
+#: ../../kdesktop/kdesktopbindings.cpp:38
+msgid "Log Out Without Confirmation"
+msgstr "Onaylamadan Çık"
+
+#: ../../kdesktop/kdesktopbindings.cpp:39
+msgid "Halt without Confirmation"
+msgstr "Onaylamadan Durdur"
+
+#: ../../kdesktop/kdesktopbindings.cpp:40
+msgid "Reboot without Confirmation"
+msgstr "Onaylamadan yeniden Başlat"
+
+#: ../../klipper/klipperbindings.cpp:29
+msgid "Clipboard"
+msgstr "Pano"
+
+#: ../../klipper/klipperbindings.cpp:31
+msgid "Show Klipper Popup-Menu"
+msgstr "Klipper Popup Menüsünü Göster"
+
+#: ../../klipper/klipperbindings.cpp:32
+msgid "Manually Invoke Action on Current Clipboard"
+msgstr "Mevcut Panodaki Eylemi Elle Çalıştır"
+
+#: ../../klipper/klipperbindings.cpp:33
+msgid "Enable/Disable Clipboard Actions"
+msgstr "Pano olayları Açık/kapalı"
+
+#: ../../kxkb/kxkbbindings.cpp:9
+msgid "Keyboard"
+msgstr "Klavye"
+
+#: ../../kxkb/kxkbbindings.cpp:10
+msgid "Switch to Next Keyboard Layout"
+msgstr "Sonraki Klavye Düzenine Geç"

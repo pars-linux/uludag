@@ -1,0 +1,240 @@
+# translation of mediacontrol.po to
+# translation of mediacontrol.po to Türkçe
+# translation of mediacontrol.po to turkish
+# translation of mediacontrol.po to Turkish
+# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>,2002-2003.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004, 2005.
+# Zerrin Cakmakkaya <zerrin@uludag.org.tr>, 2005.
+# Cemil MUTLU <mawilos@gmail.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mediacontrol\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-08-12 01:19+0200\n"
+"PO-Revision-Date: 2005-07-13 21:19+0300\n"
+"Last-Translator: Cemil MUTLU <mawilos@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Ömer Fadıl USTA"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "omer_fad@hotmail.com"
+
+#: kscdInterface.cpp:259
+msgid ""
+"_: artist - trackname\n"
+"%1 - %2"
+msgstr "%1 - %2"
+
+#: kscdInterface.cpp:273
+msgid ""
+"_: (album) - trackname\n"
+"(%1) - %2"
+msgstr "(%1) - %2"
+
+#: kscdInterface.cpp:280
+msgid ""
+"_: artistname (albumname)\n"
+"%1 (%2)"
+msgstr "%1 (%2)"
+
+#: kscdInterface.cpp:284
+msgid ""
+"_: artistname (albumname) - trackname\n"
+"%1 (%2) - %3"
+msgstr "%1 (%2) - %3"
+
+#: mediacontrol.cpp:99 mediacontrol.cpp:155 mediacontrolconfig.cpp:46
+msgid "MediaControl"
+msgstr "MediaControl"
+
+#: mediacontrol.cpp:101
+msgid "A small control-applet for various media players"
+msgstr "Çeşitli ortam yürütücüleri için küçük bir kontrol programcığı"
+
+#: mediacontrol.cpp:116
+msgid "Main Developer"
+msgstr "Ana Geliştirici"
+
+#: mediacontrol.cpp:118
+msgid "Initial About-Dialog"
+msgstr "İlk 'Hakkında' Penceresi"
+
+#: mediacontrol.cpp:121 mediacontrol.cpp:123
+msgid "Button-Pixmaps"
+msgstr "Düğme Simgeleri"
+
+#: mediacontrol.cpp:125
+msgid "Fix for Noatun-Support"
+msgstr "Noatun Desteği için Düzeltme"
+
+#: mediacontrol.cpp:127
+msgid "Fix for Vertical Slider"
+msgstr "Dikey Kaydırıcı için Düzeltme"
+
+#: mediacontrol.cpp:129
+msgid "Volume Control Implementation"
+msgstr "Ses Kontrolü Uygulaması"
+
+#: mediacontrol.cpp:131
+msgid "Fix for JuK-Support"
+msgstr "JuK-Desteği için Düzeltme"
+
+#: mediacontrol.cpp:133
+msgid "mpd-Support"
+msgstr "mpd Desteği"
+
+#: mediacontrol.cpp:156
+msgid "Configure MediaControl..."
+msgstr "MediaControl'ü Yapılandır..."
+
+#: mediacontrol.cpp:158
+msgid "About MediaControl"
+msgstr "MediaControl Hakkında"
+
+#: mediacontrol.cpp:215
+msgid "Start the player"
+msgstr "Oynatıcıyı başlat"
+
+#: mediacontrol.cpp:426
+msgid "There was trouble loading theme %1. Please choose a different theme."
+msgstr ""
+"%1 teması yüklenirken bir sorunla karşılaşıldı. Lütfen başka bir tema seçin."
+
+#: mpdInterface.cpp:140
+msgid ""
+"Connection refused to %1:%2.\n"
+"Is mpd running?"
+msgstr ""
+"%1:%2'ye bağlantı reddedildi.\n"
+"mpd çalışıyor mu?"
+
+#: mpdInterface.cpp:143
+msgid "Host '%1' not found."
+msgstr "'%1' ana makinesi bulunamadı."
+
+#: mpdInterface.cpp:146
+msgid "Error reading socket."
+msgstr "Soket okuma hatası."
+
+#: mpdInterface.cpp:149
+msgid "Connection error"
+msgstr "Bağlantı hatası"
+
+#: mpdInterface.cpp:154 mpdInterface.cpp:209
+msgid "MediaControl MPD Error"
+msgstr "MediaControl MPD Hatası"
+
+#: mpdInterface.cpp:155
+msgid "Reconnect"
+msgstr "Yeniden bağlan"
+
+#: mpdInterface.cpp:562
+#, c-format
+msgid "No tags: %1"
+msgstr "Etiket yok: %1"
+
+#: playerInterface.cpp:32
+msgid "Could not start media player."
+msgstr "Ortam oynatıcısı başlatılamıyor."
+
+#. i18n: file mediacontrolconfigwidget.ui line 46
+#: rc.cpp:3
+#, no-c-format
+msgid "&General"
+msgstr "&Genel"
+
+#. i18n: file mediacontrolconfigwidget.ui line 57
+#: rc.cpp:6
+#, no-c-format
+msgid "Media-Player"
+msgstr "Medya-Oynatıcı"
+
+#. i18n: file mediacontrolconfigwidget.ui line 68
+#: rc.cpp:9
+#, no-c-format
+msgid "Select the multimedia player you are using from this list."
+msgstr "Bu listeden kullandığınız medya-oynatıcıyı seçiniz."
+
+#. i18n: file mediacontrolconfigwidget.ui line 86
+#: rc.cpp:12
+#, no-c-format
+msgid "&Wheel scroll seconds:"
+msgstr "&Fare tekerleği süresi:"
+
+#. i18n: file mediacontrolconfigwidget.ui line 97
+#: rc.cpp:15
+#, no-c-format
+msgid "Sets the number of lines a mousewheel will scroll in the current file."
+msgstr ""
+"Bir fare tekerleği döndürülmesi ile mevcut dosya için kaydırılacak satır "
+"sayısını atar."
+
+#. i18n: file mediacontrolconfigwidget.ui line 109
+#: rc.cpp:18
+#, no-c-format
+msgid "&Themes"
+msgstr "&Temalar"
+
+#. i18n: file mediacontrolconfigwidget.ui line 120
+#: rc.cpp:21
+#, no-c-format
+msgid "&Use themes"
+msgstr "Temaları &kullan"
+
+#. i18n: file mediacontrolconfigwidget.ui line 126
+#: rc.cpp:24
+#, no-c-format
+msgid "default"
+msgstr "öntanımlı"
+
+#. i18n: file mediacontrolconfigwidget.ui line 171
+#: rc.cpp:27
+#, no-c-format
+msgid "Preview"
+msgstr "Önizleme"
+
+#. i18n: file mediacontrolconfigwidget.ui line 178
+#: rc.cpp:30
+#, no-c-format
+msgid "Shows you how the selected theme will look"
+msgstr "Seçtiğiniz temanın nasıl görüneceğini gösterir"
+
+#. i18n: file mediacontrolconfigwidget.ui line 215
+#: rc.cpp:33
+#, no-c-format
+msgid "<"
+msgstr "<"
+
+#. i18n: file mediacontrolconfigwidget.ui line 243
+#: rc.cpp:36 rc.cpp:45
+#, no-c-format
+msgid ">"
+msgstr ">"
+
+#. i18n: file mediacontrolconfigwidget.ui line 271
+#: rc.cpp:39
+#, no-c-format
+msgid "o"
+msgstr "o"
+
+#. i18n: file mediacontrolconfigwidget.ui line 299
+#: rc.cpp:42
+#, no-c-format
+msgid "O"
+msgstr "O"

@@ -1,0 +1,716 @@
+# translation of kandy.po to Türkçe
+# Translation of kandy.po to Turkish
+# Copyright (C) 2003, 2005 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2001, 2003.
+# Ozan Eren BILGEN <oebilgen@uekae.tubitak.gov.tr>, 2005.
+# Engin Çağatay <engincagatay@yahoo.com>, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: kandy\n"
+"POT-Creation-Date: 2006-07-25 03:59+0200\n"
+"PO-Revision-Date: 2005-07-17 01:12+0300\n"
+"Last-Translator: Engin Çağatay <engincagatay@yahoo.com>\n"
+"Language-Team: Türkçe <yerelleştirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin, Ozan Eren BİLGE, Engi Çağatay"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org, oebilgen@uekae.tubitak.gov.tr, engincagatay@yahoo.com"
+
+#: atcommand.cpp:53
+msgid "New Command"
+msgstr "Yeni Komut"
+
+#: atcommand.cpp:309
+#, c-format
+msgid "Arg %1"
+msgstr "Arg %1"
+
+#: cmdpropertiesdialog.cpp:109
+msgid "Enter parameter name:"
+msgstr "Parametre adını verin:"
+
+#: kandy.cpp:79 kandy.cpp:335 mobilegui.cpp:1513 mobilemain.cpp:57
+msgid " Disconnected "
+msgstr " Bağlantı koptu "
+
+#: kandy.cpp:105
+#, c-format
+msgid "Could not load file %1"
+msgstr "%1 dosyası yüklenemedi"
+
+#: kandy.cpp:116
+#, c-format
+msgid "Could not save file %1."
+msgstr "%1 dosyası kaydedilemedi."
+
+#: kandy.cpp:139
+msgid "Mobile GUI"
+msgstr "Cep Telefon Grafik Arayüzü"
+
+#. i18n: file mobilegui_base.ui line 453
+#: kandy.cpp:142 mobilegui.cpp:1452 mobilegui.cpp:1491 rc.cpp:126
+#, no-c-format
+msgid "Connect"
+msgstr "Bağlan"
+
+#: kandy.cpp:144 mobilegui.cpp:1458
+msgid "Disconnect"
+msgstr "Bağlantıyı kes"
+
+#: kandy.cpp:293
+msgid "New Profile"
+msgstr "Yeni Profil"
+
+#: kandy.cpp:303 mobilemain.cpp:172
+msgid "Save changes to profile %1?"
+msgstr "Değişiklikler %1 profiline kaydedilsin mi?"
+
+#: kandy.cpp:321
+#, c-format
+msgid "Cannot open modem device %1."
+msgstr "%1 modem aygıtı açılamadı."
+
+#: kandy.cpp:322 main.cpp:69 main.cpp:74
+msgid "Modem Error"
+msgstr "Modem Hatası"
+
+#: kandy.cpp:326 mobilegui.cpp:1466
+msgid " Connected "
+msgstr " Bağlantı Kuruldu "
+
+#: kandyprefsdialog.cpp:77
+msgid "Serial Interface"
+msgstr "Seri Arayüz"
+
+#: kandyprefsdialog.cpp:116
+msgid "Address Book"
+msgstr "Adres Defteri"
+
+#: kandyprefsdialog.cpp:353
+msgid "Windows"
+msgstr "Pencereler"
+
+#. i18n: file mobilegui_base.ui line 165
+#: kandyview.cpp:78 rc.cpp:72 rc.cpp:99
+#, no-c-format
+msgid "Name"
+msgstr "İsim"
+
+#: kandyview.cpp:79
+msgid "Command"
+msgstr "Komut"
+
+#: kandyview.cpp:80
+msgid "Hex"
+msgstr "Onaltılı"
+
+#: kandyview.cpp:86
+msgid "Add..."
+msgstr "Ekle..."
+
+#: kandyview.cpp:90
+msgid "Edit..."
+msgstr "Düzenle..."
+
+#: kandyview.cpp:98
+msgid "Execute"
+msgstr "Çalıştır"
+
+#: kandyview.cpp:108
+msgid "Input:"
+msgstr "Girdi:"
+
+#: kandyview.cpp:119
+msgid "Output:"
+msgstr "Çıktı:"
+
+#: kandyview.cpp:129
+msgid "Result:"
+msgstr "Sonuç:"
+
+#: kandyview.cpp:253
+msgid "Enter value for %1:"
+msgstr "%1 için değer girin"
+
+#: main.cpp:43
+msgid "Communicating with your mobile phone."
+msgstr "Cep telefonu ile iletişim kuruluyor."
+
+#: main.cpp:49
+msgid "Show terminal window"
+msgstr "Terminal penceresini göster."
+
+#: main.cpp:50
+msgid "Show mobile GUI"
+msgstr "Cep telefonu grafik arayüzünü göster."
+
+#: main.cpp:51
+msgid "Do not show GUI"
+msgstr "Grafik arayüz gösterme"
+
+#: main.cpp:52
+msgid "Filename of command profile file"
+msgstr "Komut profil dosya adı."
+
+#: main.cpp:69
+msgid "Modem is off."
+msgstr "Modem kapalı."
+
+#: main.cpp:74
+msgid "Modem is busy."
+msgstr "Modem meşgul."
+
+#: main.cpp:90
+msgid "Kandy"
+msgstr "Kandy"
+
+#: mobilegui.cpp:295 mobilegui.cpp:454
+msgid "Reading mobile phonebook..."
+msgstr "Cep telefonu adres defteri okunuyor..."
+
+#: mobilegui.cpp:424
+msgid "Writing mobile phonebook..."
+msgstr "Cep telefonu adres defterine yazılıyor..."
+
+#: mobilegui.cpp:433
+msgid "Wrote mobile phonebook."
+msgstr "Cep telefonu adres defterine yazıldı."
+
+#: mobilegui.cpp:493
+msgid "Reading KDE address book..."
+msgstr "KDE adres defteri okunuyor..."
+
+#: mobilegui.cpp:643
+msgid "Read KDE address book."
+msgstr "KDE adres defteri okundu."
+
+#: mobilegui.cpp:951
+msgid "Wrote KDE address book."
+msgstr "KDE adres defterine yazıldı"
+
+#: mobilegui.cpp:1162
+msgid "Read mobile phonebook."
+msgstr "Cep telefonu adres defteri okundu."
+
+#: mobilegui.cpp:1313
+msgid "Kab Entry:"
+msgstr "Kab Girdisi:"
+
+#: mobilegui.cpp:1316
+msgid "Mobile Entry:"
+msgstr "Cep Telefonu Girdisi:"
+
+#: mobilegui.cpp:1321
+msgid "Conflicting Entries"
+msgstr "Çakışan Girdiler"
+
+#: mobilegui.cpp:1323
+msgid "Use Kab Entry"
+msgstr "Kab Girdisini Kullan"
+
+#: mobilegui.cpp:1324
+msgid "Use Mobile Entry"
+msgstr "Cep Telefonu Girdisini Kullan"
+
+#: mobilegui.cpp:1401
+msgid "Synced phonebooks."
+msgstr "Adres defterleri eşzamanlı hale getirildi."
+
+#. i18n: file mobilegui_base.ui line 156
+#: mobilegui.cpp:1529 mobilegui.cpp:1541 mobilegui.cpp:1549 rc.cpp:69
+#, no-c-format
+msgid "KDE Address Book"
+msgstr "KDE Adres Defteri"
+
+#: mobilegui.cpp:1536
+msgid "KDE Address Book (modified)"
+msgstr "KDE Adres Defteri (değiştirilmiş)"
+
+#: mobilegui.cpp:1564
+msgid "The KDE address book contains unsaved changes."
+msgstr "KDE Adres Defteri kaydedilmemiş değişiklikler içeriyor"
+
+#: mobilegui.cpp:1567 mobilegui.cpp:1652
+msgid "Unsaved Changes"
+msgstr "Kaydedilmemiş Değişiklikler"
+
+#. i18n: file mobilegui_base.ui line 232
+#: mobilegui.cpp:1590 mobilegui.cpp:1597 mobilegui.cpp:1614 mobilegui.cpp:1624
+#: mobilegui.cpp:1631 rc.cpp:84
+#, no-c-format
+msgid "Mobile Phone Book"
+msgstr "Cep Telefonu Adres Defteri"
+
+#: mobilegui.cpp:1607
+msgid "Mobile Phone Book (modified)"
+msgstr "Cep Telefonu Adres Defteri (değiştirilmiş)"
+
+#: mobilegui.cpp:1649
+msgid "The mobile phone book contains unsaved changes."
+msgstr "Cep telefonu adres defteri kaydedilmemiş değişiklikler içeriyor"
+
+#. i18n: file mobilegui_base.ui line 361
+#: mobilemain.cpp:76 rc.cpp:108
+#, no-c-format
+msgid "Terminal"
+msgstr "Terminal"
+
+#: modem.cpp:197
+msgid ""
+"Unable to open device '%1'. Please check that you have sufficient permissions."
+msgstr ""
+"%1 aygıtı açılamadı. Lütfen yeterli izne sahip olup olmadığınızı denetleyin."
+
+#: modem.cpp:206
+msgid "Communication setup failed (tcgetattr code: %1)"
+msgstr "Bağlantı yapılandırması başarısız oldu (tcgetattr kodu: %1)"
+
+#: modem.cpp:223
+msgid "tcsetattr() failed."
+msgstr "tcsetattr() hatası."
+
+#: modem.cpp:282
+msgid "Unable to lock device '%1'."
+msgstr "%1 aygıtı kitlenemiyor."
+
+#: modem.cpp:301
+msgid "Unable to open lock file '%1'."
+msgstr "%1 kilit dosyası açılamadı."
+
+#: modem.cpp:309
+msgid "Unable to read lock file '%1'."
+msgstr "%1 kilit dosyası açılamadı."
+
+#: modem.cpp:319
+msgid "Unable to get PID from file '%1'."
+msgstr "'%1' dosyasından PID okunamadı."
+
+#: modem.cpp:325
+msgid "Process with PID %1, which is locking the device, is still running."
+msgstr "Cihazı kitli tutan %1 PID'li süreç halen çalışıyor."
+
+#: modem.cpp:331
+msgid "Unable to emit signal to PID of existing lock file."
+msgstr "Varolan kilit dosyasının PID'ine sinyal gönderilemiyor."
+
+#: modem.cpp:337
+msgid ""
+"Unable to create lock file '%1'. Please check that you have sufficient "
+"permissions."
+msgstr ""
+"%1 kilit dosyası yaratılamadı. Lütfen yeterli izne sahip olup olmadığınızı "
+"denetleyin."
+
+#. i18n: file kandymobileui.rc line 4
+#: rc.cpp:3 rc.cpp:6
+#, no-c-format
+msgid "&Show"
+msgstr "&Göster"
+
+#. i18n: file cmdpropertiesdialog_base.ui line 16
+#: rc.cpp:9
+#, no-c-format
+msgid "Command Properties"
+msgstr "Komut Özellikleri"
+
+#. i18n: file cmdpropertiesdialog_base.ui line 46
+#: rc.cpp:12
+#, no-c-format
+msgid "Name:"
+msgstr "Ad:"
+
+#. i18n: file cmdpropertiesdialog_base.ui line 54
+#: rc.cpp:15
+#, no-c-format
+msgid "String:"
+msgstr "Dizi:"
+
+#. i18n: file cmdpropertiesdialog_base.ui line 62
+#: rc.cpp:18
+#, no-c-format
+msgid "Hex result"
+msgstr "Onaltılı sonuç"
+
+#. i18n: file cmdpropertiesdialog_base.ui line 68
+#: rc.cpp:21
+#, no-c-format
+msgid "Position"
+msgstr "Konum"
+
+#. i18n: file cmdpropertiesdialog_base.ui line 79
+#: rc.cpp:24
+#, no-c-format
+msgid "Parameter"
+msgstr "Parametre"
+
+#. i18n: file cmdpropertiesdialog_base.ui line 90
+#: rc.cpp:27
+#, no-c-format
+msgid "Value"
+msgstr "Değer"
+
+#. i18n: file mobilegui_base.ui line 16
+#: rc.cpp:36
+#, no-c-format
+msgid "Mobile Device"
+msgstr "Cep Telefonu Aygıtı"
+
+#. i18n: file mobilegui_base.ui line 41
+#: rc.cpp:39
+#, no-c-format
+msgid "Model Information"
+msgstr "Model Bilgisi"
+
+#. i18n: file mobilegui_base.ui line 50
+#: rc.cpp:42
+#, no-c-format
+msgid "Model:"
+msgstr "Model:"
+
+#. i18n: file mobilegui_base.ui line 59
+#: rc.cpp:45
+#, no-c-format
+msgid "Serial number:"
+msgstr "Seri numarası:"
+
+#. i18n: file mobilegui_base.ui line 68
+#: rc.cpp:48 rc.cpp:51 rc.cpp:54 rc.cpp:57 rc.cpp:120
+#, no-c-format
+msgid "x"
+msgstr "x"
+
+#. i18n: file mobilegui_base.ui line 104
+#: rc.cpp:60
+#, no-c-format
+msgid "Manufacturer:"
+msgstr "Üretici firma:"
+
+#. i18n: file mobilegui_base.ui line 113
+#: rc.cpp:63
+#, no-c-format
+msgid "GSM version:"
+msgstr "GSM sürümü:"
+
+#. i18n: file mobilegui_base.ui line 145
+#: rc.cpp:66
+#, no-c-format
+msgid "Address Books"
+msgstr "Adres Defterleri"
+
+#. i18n: file mobilegui_base.ui line 176
+#: rc.cpp:75 rc.cpp:102
+#, no-c-format
+msgid "Phone"
+msgstr "Telefon"
+
+#. i18n: file mobilegui_base.ui line 197
+#: rc.cpp:78 rc.cpp:87
+#, no-c-format
+msgid "Read"
+msgstr "Oku"
+
+#. i18n: file mobilegui_base.ui line 222
+#: rc.cpp:81 rc.cpp:90
+#, no-c-format
+msgid "Write"
+msgstr "Yaz"
+
+#. i18n: file mobilegui_base.ui line 276
+#: rc.cpp:93
+#, no-c-format
+msgid "Save to File..."
+msgstr "Dosyaya Kaydet..."
+
+#. i18n: file mobilegui_base.ui line 332
+#: rc.cpp:105
+#, no-c-format
+msgid "Sync"
+msgstr "Eşzamanla"
+
+#. i18n: file mobilegui_base.ui line 388
+#: rc.cpp:111
+#, no-c-format
+msgid "Status"
+msgstr "Durum"
+
+#. i18n: file mobilegui_base.ui line 405
+#: rc.cpp:114
+#, no-c-format
+msgid "Battery charge:"
+msgstr "Pil yükü:"
+
+#. i18n: file mobilegui_base.ui line 413
+#: rc.cpp:117
+#, no-c-format
+msgid "Signal quality:"
+msgstr "Sinyal kalitesi:"
+
+#. i18n: file mobilegui_base.ui line 429
+#: rc.cpp:123
+#, no-c-format
+msgid "xx %"
+msgstr "xx %"
+
+#. i18n: file mobilegui_base.ui line 472
+#: rc.cpp:129
+#, no-c-format
+msgid "Refresh"
+msgstr "Yenile"
+
+#. i18n: file mobilegui_base.ui line 483
+#: rc.cpp:132
+#, no-c-format
+msgid "Set Clock"
+msgstr "Saati ayarla"
+
+#. i18n: file kandy.kcfg line 10
+#: rc.cpp:135
+#, no-c-format
+msgid "Serial device"
+msgstr "Seri aygıt"
+
+#. i18n: file kandy.kcfg line 14
+#: rc.cpp:138
+#, no-c-format
+msgid "Baud rate"
+msgstr "Bağlantı hızı"
+
+#. i18n: file kandy.kcfg line 18
+#: rc.cpp:141
+#, no-c-format
+msgid "Lock directory"
+msgstr "Kilit dizini"
+
+#. i18n: file kandy.kcfg line 22
+#: rc.cpp:144
+#, no-c-format
+msgid "Open modem on startup"
+msgstr "Başlangıçta modemi aç"
+
+#. i18n: file kandy.kcfg line 26
+#: rc.cpp:147
+#, no-c-format
+msgid "Auto-set clock of mobile on connection"
+msgstr "Cep telefonunun saatini bağlantı anında kendiliğinden ayarla"
+
+#. i18n: file kandy.kcfg line 33
+#: rc.cpp:150
+#, no-c-format
+msgid "Exclude home numbers"
+msgstr "Ev telefonu numaralarını içerme"
+
+#. i18n: file kandy.kcfg line 37
+#: rc.cpp:153
+#, no-c-format
+msgid "Exclude work numbers"
+msgstr "İş telefonu numaralarını içerme"
+
+#. i18n: file kandy.kcfg line 41
+#: rc.cpp:156
+#, no-c-format
+msgid "Exclude messaging numbers"
+msgstr "Mesajlaşma numaralarını içerme"
+
+#. i18n: file kandy.kcfg line 45
+#: rc.cpp:159
+#, no-c-format
+msgid "Exclude fax numbers"
+msgstr "Faks numaralarını içerme"
+
+#. i18n: file kandy.kcfg line 49
+#: rc.cpp:162
+#, no-c-format
+msgid "Exclude cell numbers"
+msgstr "Cep telefonu numaralarını içerme"
+
+#. i18n: file kandy.kcfg line 53
+#: rc.cpp:165
+#, no-c-format
+msgid "Exclude video phone numbers"
+msgstr "Video telefon numaralarını içerme"
+
+#. i18n: file kandy.kcfg line 57
+#: rc.cpp:168
+#, no-c-format
+msgid "Exclude mailbox numbers"
+msgstr "Posta kutusu numaralarını içerme"
+
+#. i18n: file kandy.kcfg line 61
+#: rc.cpp:171
+#, no-c-format
+msgid "Exclude modem numbers"
+msgstr "Modem numaralarını içerme"
+
+#. i18n: file kandy.kcfg line 65
+#: rc.cpp:174
+#, no-c-format
+msgid "Exclude car phone numbers"
+msgstr "Araç telefonu numaralarını içerme"
+
+#. i18n: file kandy.kcfg line 69
+#: rc.cpp:177
+#, no-c-format
+msgid "Exclude ISDN numbers"
+msgstr "ISDN numaralarını içerme"
+
+#. i18n: file kandy.kcfg line 73
+#: rc.cpp:180
+#, no-c-format
+msgid "Exclude pager numbers"
+msgstr "Pager numaralarını içerme"
+
+#. i18n: file kandy.kcfg line 78
+#: rc.cpp:183
+#, no-c-format
+msgid "Use home suffix"
+msgstr "Ev soneki kullan"
+
+#. i18n: file kandy.kcfg line 82
+#: rc.cpp:186
+#, no-c-format
+msgid "Use work suffix"
+msgstr "İş soneki kullan"
+
+#. i18n: file kandy.kcfg line 86
+#: rc.cpp:189
+#, no-c-format
+msgid "Use messaging suffix"
+msgstr "Mesajlaşma soneki kullan"
+
+#. i18n: file kandy.kcfg line 90
+#: rc.cpp:192
+#, no-c-format
+msgid "Use fax suffix"
+msgstr "Fax soneki kullan"
+
+#. i18n: file kandy.kcfg line 94
+#: rc.cpp:195
+#, no-c-format
+msgid "Use mobile suffix"
+msgstr "Cep Telefonu soneki kullan"
+
+#. i18n: file kandy.kcfg line 98
+#: rc.cpp:198
+#, no-c-format
+msgid "Use video suffix"
+msgstr "Video soneki kullan"
+
+#. i18n: file kandy.kcfg line 102
+#: rc.cpp:201
+#, no-c-format
+msgid "Use mailbox suffix"
+msgstr "Posta kutusu soneki kullan"
+
+#. i18n: file kandy.kcfg line 106
+#: rc.cpp:204
+#, no-c-format
+msgid "Use modem suffix"
+msgstr "Modem soneki kullan"
+
+#. i18n: file kandy.kcfg line 110
+#: rc.cpp:207
+#, no-c-format
+msgid "Use car suffix"
+msgstr "Araç soneki kullan"
+
+#. i18n: file kandy.kcfg line 114
+#: rc.cpp:210
+#, no-c-format
+msgid "Use ISDN suffix"
+msgstr "ISDN soneki kullan"
+
+#. i18n: file kandy.kcfg line 118
+#: rc.cpp:213
+#, no-c-format
+msgid "Use pager suffix"
+msgstr "Pager soneki kullan"
+
+#. i18n: file kandy.kcfg line 123
+#: rc.cpp:216
+#, no-c-format
+msgid "Home suffix"
+msgstr "Ev soneki"
+
+#. i18n: file kandy.kcfg line 127
+#: rc.cpp:219
+#, no-c-format
+msgid "Work suffix"
+msgstr "İş soneki"
+
+#. i18n: file kandy.kcfg line 131
+#: rc.cpp:222
+#, no-c-format
+msgid "Messaging suffix"
+msgstr "Mesajlaşma soneki"
+
+#. i18n: file kandy.kcfg line 135
+#: rc.cpp:225
+#, no-c-format
+msgid "Fax suffix"
+msgstr "Faks soneki"
+
+#. i18n: file kandy.kcfg line 139
+#: rc.cpp:228
+#, no-c-format
+msgid "Cell suffix"
+msgstr "Cep soneki"
+
+#. i18n: file kandy.kcfg line 143
+#: rc.cpp:231
+#, no-c-format
+msgid "Video suffix"
+msgstr "Video soneki"
+
+#. i18n: file kandy.kcfg line 147
+#: rc.cpp:234
+#, no-c-format
+msgid "Mailbox suffix"
+msgstr "Posta kutusu soneki"
+
+#. i18n: file kandy.kcfg line 151
+#: rc.cpp:237
+#, no-c-format
+msgid "Modem suffix"
+msgstr "Modem soneki."
+
+#. i18n: file kandy.kcfg line 155
+#: rc.cpp:240
+#, no-c-format
+msgid "Car suffix"
+msgstr "Araç soneki"
+
+#. i18n: file kandy.kcfg line 159
+#: rc.cpp:243
+#, no-c-format
+msgid "ISDN suffix"
+msgstr "ISDN soneki"
+
+#. i18n: file kandy.kcfg line 163
+#: rc.cpp:246
+#, no-c-format
+msgid "Pager suffix"
+msgstr "Pager soneki"
+
+#. i18n: file kandy.kcfg line 171
+#: rc.cpp:249
+#, no-c-format
+msgid "Open terminal window on startup"
+msgstr "Başlangıçta terminal penceresini aç"
+
+#. i18n: file kandy.kcfg line 175
+#: rc.cpp:252
+#, no-c-format
+msgid "Open mobile window on startup"
+msgstr "Başlangıçta telefon penceresini aç"

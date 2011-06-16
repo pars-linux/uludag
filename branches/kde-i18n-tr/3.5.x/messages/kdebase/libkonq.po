@@ -1,0 +1,297 @@
+# translation of libkonq.po to Türkçe
+# translation of libkonq.po to Turkish
+# Turkish translation of libkonq.
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"POT-Creation-Date: 2007-09-26 01:13+0200\n"
+"PO-Revision-Date: 2005-06-14 01:41+0200\n"
+"Last-Translator: Adil YILDIZ <adil@kde.org.tr>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: knewmenu.cc:67 knewmenu.cc:79
+msgid "Create New"
+msgstr "Yeni Oluştur"
+
+#: knewmenu.cc:96
+msgid "Link to Device"
+msgstr "Aygıta Bağlantı"
+
+#: knewmenu.cc:386
+msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+msgstr "<qt><b>%1</b> şablon dosyası bulunamadı.</qt>"
+
+#: knewmenu.cc:399
+msgid "File name:"
+msgstr "Dosya adı:"
+
+#: konq_bgnddlg.cc:43
+msgid "Background Settings"
+msgstr "Arkaplan Ayarları"
+
+#: konq_bgnddlg.cc:49
+msgid "Background"
+msgstr "Arkaplan"
+
+#: konq_bgnddlg.cc:61
+msgid "Co&lor:"
+msgstr "&Renk:"
+
+#: konq_bgnddlg.cc:72
+msgid "&Picture:"
+msgstr "R&esim:"
+
+#: konq_bgnddlg.cc:90
+msgid "Preview"
+msgstr "Önizleme"
+
+#: konq_bgnddlg.cc:140
+msgid "None"
+msgstr "Hiçbiri"
+
+#: konq_dirpart.cc:140
+msgid "Enlarge Icons"
+msgstr "Simgeleri Büyüt"
+
+#: konq_dirpart.cc:141
+msgid "Shrink Icons"
+msgstr "Simgeleri Küçült"
+
+#: konq_dirpart.cc:143
+msgid "&Default Size"
+msgstr "Ö&ntanımlı Boyut"
+
+#: konq_dirpart.cc:144
+msgid "&Huge"
+msgstr "&Kocaman"
+
+#: konq_dirpart.cc:146
+msgid "&Very Large"
+msgstr "&Çok Büyük"
+
+#: konq_dirpart.cc:147
+msgid "&Large"
+msgstr "&Büyük"
+
+#: konq_dirpart.cc:148
+msgid "&Medium"
+msgstr "&Normal"
+
+#: konq_dirpart.cc:149
+msgid "&Small"
+msgstr "&Küçük"
+
+#: konq_dirpart.cc:151
+msgid "&Tiny"
+msgstr "&Minik"
+
+#: konq_dirpart.cc:222
+msgid "Configure Background..."
+msgstr "Arkaplanı Yapılandır..."
+
+#: konq_dirpart.cc:225
+msgid "Allows choosing of background settings for this view"
+msgstr "Bu görünüm için bir arkaplan resmi seçmeye olanak verir"
+
+#: konq_dirpart.cc:318
+msgid "<p>You do not have enough permissions to read <b>%1</b></p>"
+msgstr "<p><b>%1</b> dizinini okumak için yeterli izniniz yok.</p>"
+
+#: konq_dirpart.cc:321
+msgid "<p><b>%1</b> does not seem to exist anymore</p>"
+msgstr "<p><b>%1</b> bulunamadı</p>"
+
+#: konq_dirpart.cc:491
+#, c-format
+msgid "Search result: %1"
+msgstr "Arama sonucu: %1"
+
+#: konq_operations.cc:269
+#, c-format
+msgid ""
+"_n: Do you really want to delete this item?\n"
+"Do you really want to delete these %n items?"
+msgstr "Bu %n öğeyi silmek istiyor musunuz?"
+
+#: konq_operations.cc:271
+msgid "Delete Files"
+msgstr "Dosyaları Sil"
+
+#: konq_operations.cc:278
+#, c-format
+msgid ""
+"_n: Do you really want to shred this item?\n"
+"Do you really want to shred these %n items?"
+msgstr "Bu %n öğeyi diskten tamamen silmek istiyor musunuz?"
+
+#: konq_operations.cc:280
+msgid "Shred Files"
+msgstr "Dosyaları Tamamen Sil"
+
+#: konq_operations.cc:281
+msgid "Shred"
+msgstr "Tamamen Sil"
+
+#: konq_operations.cc:288
+#, c-format
+msgid ""
+"_n: Do you really want to move this item to the trash?\n"
+"Do you really want to move these %n items to the trash?"
+msgstr "Gerçekten bu %n dosyayı çöpe göndermek istiyor musunuz?"
+
+#: konq_operations.cc:290
+msgid "Move to Trash"
+msgstr "Çöpe Taşı"
+
+#: konq_operations.cc:291
+msgid ""
+"_: Verb\n"
+"&Trash"
+msgstr "Çöpe gönde&r"
+
+#: konq_operations.cc:342
+msgid "You cannot drop a folder on to itself"
+msgstr "Bir dizini kendi üzerine taşıyamazsınız."
+
+#: konq_operations.cc:388
+msgid "File name for dropped contents:"
+msgstr "Bırakılan içerik için dosya adı:"
+
+#: konq_operations.cc:567
+msgid "&Move Here"
+msgstr "B&uraya Taşı"
+
+#: konq_operations.cc:569
+msgid "&Copy Here"
+msgstr "&Buraya Kopyala"
+
+#: konq_operations.cc:570
+msgid "&Link Here"
+msgstr "Bu&raya Bağ Koy"
+
+#: konq_operations.cc:572
+msgid "Set as &Wallpaper"
+msgstr "&Arkaplan Resmi Yap"
+
+#: konq_operations.cc:574
+msgid "C&ancel"
+msgstr "İ&ptal"
+
+#: konq_operations.cc:728 konq_operations.cc:730 konq_operations.cc:732
+msgid "New Folder"
+msgstr "Yeni Dizin"
+
+#: konq_operations.cc:733
+msgid "Enter folder name:"
+msgstr "Dizin adını verin:"
+
+#: konq_popupmenu.cc:471
+msgid "&Open"
+msgstr "&Aç"
+
+#: konq_popupmenu.cc:471
+msgid "Open in New &Window"
+msgstr "&Yeni Pencerede Aç"
+
+#: konq_popupmenu.cc:478
+msgid "Open the trash in a new window"
+msgstr "Çöp kutusunu yeni pencerede aç"
+
+#: konq_popupmenu.cc:480
+msgid "Open the medium in a new window"
+msgstr "Belgeyi yeni bir pencerede aç"
+
+#: konq_popupmenu.cc:482
+msgid "Open the document in a new window"
+msgstr "Belgeyi yeni bir pencerede aç"
+
+#: konq_popupmenu.cc:501
+msgid "Create &Folder..."
+msgstr "&Dizin Oluştur..."
+
+#: konq_popupmenu.cc:508
+msgid "&Restore"
+msgstr "&Geri al"
+
+#: konq_popupmenu.cc:579
+msgid "&Empty Trash Bin"
+msgstr "Çö&p Kutusunu Boşalt"
+
+#: konq_popupmenu.cc:601
+msgid "&Bookmark This Page"
+msgstr "&Bu Sayfayı Yer İmlerine Ekle"
+
+#: konq_popupmenu.cc:603
+msgid "&Bookmark This Location"
+msgstr "B&u Konumu Yer İmlerine Ekle"
+
+#: konq_popupmenu.cc:606
+msgid "&Bookmark This Folder"
+msgstr "Bu &Dizini Yer İmlerine Ekle"
+
+#: konq_popupmenu.cc:608
+msgid "&Bookmark This Link"
+msgstr "Bu B&ağlantıyı Yer İmlerine Ekle"
+
+#: konq_popupmenu.cc:610
+msgid "&Bookmark This File"
+msgstr "Bu &Dosyayı Yer İmlerine Ekle"
+
+#: konq_popupmenu.cc:858
+msgid "&Open With"
+msgstr "&Birlikte Aç"
+
+#: konq_popupmenu.cc:888
+#, c-format
+msgid "Open with %1"
+msgstr "%1 ile aç"
+
+#: konq_popupmenu.cc:902
+msgid "&Other..."
+msgstr "&Diğer..."
+
+#: konq_popupmenu.cc:906 konq_popupmenu.cc:913
+msgid "&Open With..."
+msgstr "&Birlikte Aç..."
+
+#: konq_popupmenu.cc:933
+msgid "Ac&tions"
+msgstr "&Eylemler"
+
+#: konq_popupmenu.cc:967
+msgid "&Properties"
+msgstr "Ö&zellikler"
+
+#: konq_popupmenu.cc:981
+msgid "Share"
+msgstr "Paylaştır"
+
+#: konq_undo.cc:253
+msgid "Und&o"
+msgstr "&Geri Al"
+
+#: konq_undo.cc:257
+msgid "Und&o: Copy"
+msgstr "&Geri Al: Kopyala"
+
+#: konq_undo.cc:259
+msgid "Und&o: Link"
+msgstr "&Geri Al: Bağlantı"
+
+#: konq_undo.cc:261
+msgid "Und&o: Move"
+msgstr "&Geri Al: Taşı"
+
+#: konq_undo.cc:263
+msgid "Und&o: Trash"
+msgstr "&Geri Al: Çöp"
+
+#: konq_undo.cc:265
+msgid "Und&o: Create Folder"
+msgstr "&Geri Al: Dizin Oluştur"

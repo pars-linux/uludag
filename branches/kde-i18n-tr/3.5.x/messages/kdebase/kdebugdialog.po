@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Gokcen Ogutcu <gokceno@biker.gen.tr>, 2000.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdebug\n"
+"POT-Creation-Date: 2005-05-18 21:24+0200\n"
+"PO-Revision-Date: 2005-06-14 01:17+0200\n"
+"Last-Translator: Adil YILDIZ <adil@kde.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: kdebugdialog.cpp:46 klistdebugdialog.cpp:37
+msgid "Debug Settings"
+msgstr "Hata Ayıklama Ayarları"
+
+#: kdebugdialog.cpp:51
+msgid "Debug area:"
+msgstr "Hata ayıklama alanı:"
+
+#: kdebugdialog.cpp:67
+msgid "Message Box"
+msgstr "Mesaj Kutusu"
+
+#: kdebugdialog.cpp:68
+msgid "Shell"
+msgstr "Kabuk"
+
+#: kdebugdialog.cpp:69
+msgid "Syslog"
+msgstr "Sistem Günlüğü"
+
+#: kdebugdialog.cpp:70
+msgid "None"
+msgstr "Hiçbiri"
+
+#: kdebugdialog.cpp:79 kdebugdialog.cpp:104 kdebugdialog.cpp:129
+#: kdebugdialog.cpp:154
+msgid "Output to:"
+msgstr "Çıktı yeri:"
+
+#: kdebugdialog.cpp:86 kdebugdialog.cpp:111 kdebugdialog.cpp:136
+#: kdebugdialog.cpp:161
+msgid "Filename:"
+msgstr "Dosya adı:"
+
+#: kdebugdialog.cpp:150
+msgid "Fatal Error"
+msgstr "Ölümcül Hata"
+
+#: kdebugdialog.cpp:173
+msgid "Abort on fatal errors"
+msgstr "Ölümcül hatalarda işlemi durdur"
+
+#: klistdebugdialog.cpp:56
+msgid "&Select All"
+msgstr "&Hepsini Seç"
+
+#: klistdebugdialog.cpp:57
+msgid "&Deselect All"
+msgstr "Hiçbirisini &Seçme"
+
+#: main.cpp:72
+#, fuzzy
+msgid "Show the fully-fledged dialog instead of the default list dialog"
+msgstr ""
+"Öntanımlı liste pencere kutusu yerine gelişmiş diyalog kutusunu göster."
+
+#: main.cpp:80
+msgid "KDebugDialog"
+msgstr "KDebug Mesaj Kutusu"
+
+#: main.cpp:81
+msgid "A dialog box for setting preferences for debug output"
+msgstr "Hata ayıklama çıktısı seçeneklerini düzenlemek için mesaj kutusu"
+
+#: main.cpp:83
+msgid "Maintainer"
+msgstr "Yazar"

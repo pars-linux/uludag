@@ -1,0 +1,144 @@
+# translation of ktexteditor_isearch.po to Türkçe
+# translation of ktexteditor_isearch.po to Turkish
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2002.
+# Bekir SONAT <cortexbs@yahoo.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ktexteditor_isearch\n"
+"POT-Creation-Date: 2007-05-29 02:14+0200\n"
+"PO-Revision-Date: 2005-07-15 22:26+0300\n"
+"Last-Translator: Bekir SONAT <cortexbs@yahoo.com>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: ISearchPlugin.cpp:68 ISearchPlugin.cpp:371
+#, fuzzy
+msgid "Search Incrementally"
+msgstr "Artımsal Arama"
+
+#: ISearchPlugin.cpp:72 ISearchPlugin.cpp:372
+#, fuzzy
+msgid "Search Incrementally Backwards"
+msgstr "Artımsal Geriye Arama"
+
+#: ISearchPlugin.cpp:76 ISearchPlugin.cpp:79
+#, fuzzy
+msgid "I-Search:"
+msgstr "A-Arama"
+
+#: ISearchPlugin.cpp:95
+msgid "Search"
+msgstr "Arama"
+
+#: ISearchPlugin.cpp:101
+msgid "Search Options"
+msgstr "Arama Seçenekleri"
+
+#: ISearchPlugin.cpp:106 ISearchPlugin.cpp:412
+msgid "Case Sensitive"
+msgstr "küçük/BÜYÜK duyarlı"
+
+#: ISearchPlugin.cpp:115 ISearchPlugin.cpp:414
+msgid "From Beginning"
+msgstr "Baştan Başla"
+
+#: ISearchPlugin.cpp:124 ISearchPlugin.cpp:416
+msgid "Regular Expression"
+msgstr "Düzenli İfade"
+
+#: ISearchPlugin.cpp:244
+#, fuzzy
+msgid ""
+"_: Incremental Search\n"
+"I-Search:"
+msgstr "A-Arama"
+
+#: ISearchPlugin.cpp:247
+#, fuzzy
+msgid ""
+"_: Incremental Search found no match\n"
+"Failing I-Search:"
+msgstr "Başarısız A-Arama"
+
+#: ISearchPlugin.cpp:250
+#, fuzzy
+msgid ""
+"_: Incremental Search in the reverse direction\n"
+"I-Search Backward:"
+msgstr "Geriye A-Arama"
+
+#: ISearchPlugin.cpp:253
+#, fuzzy
+msgid "Failing I-Search Backward:"
+msgstr "Başarısız Geriye A-Arama"
+
+#: ISearchPlugin.cpp:256
+#, fuzzy
+msgid ""
+"_: Incremental Search has passed the end of the document\n"
+"Wrapped I-Search:"
+msgstr "Sardırmalı A-Arama:"
+
+#: ISearchPlugin.cpp:259
+#, fuzzy
+msgid "Failing Wrapped I-Search:"
+msgstr "Başarısız Sardırmalı A-Arama:"
+
+#: ISearchPlugin.cpp:262
+#, fuzzy
+msgid "Wrapped I-Search Backward:"
+msgstr "Sardırmalı Geriye A-Arama:"
+
+#: ISearchPlugin.cpp:265
+#, fuzzy
+msgid "Failing Wrapped I-Search Backward:"
+msgstr "Başarısız Sardırmalı Geriye A-Arama:"
+
+#: ISearchPlugin.cpp:269
+#, fuzzy
+msgid ""
+"_: Incremental Search has passed both the end of the document and the original "
+"starting position\n"
+"Overwrapped I-Search:"
+msgstr "Sardırma ötesi A-Arama:"
+
+#: ISearchPlugin.cpp:272
+#, fuzzy
+msgid "Failing Overwrapped I-Search:"
+msgstr "Başarısız Sardırma ötesi A-Arama:"
+
+#: ISearchPlugin.cpp:275
+#, fuzzy
+msgid "Overwrapped I-Search Backwards:"
+msgstr "Sardırma ötesi Geriye A-Arama:"
+
+#: ISearchPlugin.cpp:278
+#, fuzzy
+msgid "Failing Overwrapped I-Search Backward:"
+msgstr "Başarısız Sardırma ötesi Geriye A-Arama:"
+
+#: ISearchPlugin.cpp:280
+#, fuzzy
+msgid "Error: unknown i-search state!"
+msgstr "Hata: Bilinmeyen A-Arama durumu!"
+
+#: ISearchPlugin.cpp:341
+#, fuzzy
+msgid "Next Incremental Search Match"
+msgstr "Sonraki Artımsal Arama Eşleşeni"
+
+#: ISearchPlugin.cpp:342
+#, fuzzy
+msgid "Previous Incremental Search Match"
+msgstr "Önceki Artımsal Arama Eşleşeni"
+
+#. i18n: file ktexteditor_isearchui.rc line 9
+#: rc.cpp:6
+#, fuzzy, no-c-format
+msgid "Search Toolbar"
+msgstr "Arama Araç Çubuğu"

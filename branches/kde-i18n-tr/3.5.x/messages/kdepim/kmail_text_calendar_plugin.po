@@ -1,0 +1,111 @@
+# translation of kmail_text_calendar_plugin.po to Türkçe
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Serdar Soytetir <tulliana@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kmail_text_calendar_plugin\n"
+"POT-Creation-Date: 2008-08-19 01:19+0200\n"
+"PO-Revision-Date: 2008-02-28 21:13+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@lists.kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: LoKalize 0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: text_calendar.cpp:326
+msgid "Incidence with no summary"
+msgstr ""
+
+#: text_calendar.cpp:330 text_calendar.cpp:341
+#, c-format
+msgid "Answer: %1"
+msgstr "Yanıt: %1"
+
+#: text_calendar.cpp:333
+#, c-format
+msgid "Delegated: %1"
+msgstr ""
+
+#: text_calendar.cpp:336
+#, c-format
+msgid "Forwarded: %1"
+msgstr "Yönlendirilmiş: %1"
+
+#: text_calendar.cpp:386
+msgid "Could not save file to KOrganizer"
+msgstr "Dosya KOrganizer'a kaydedilemedi"
+
+#: text_calendar.cpp:415 text_calendar.cpp:556
+msgid "Reaction to Invitation"
+msgstr ""
+
+#. i18n("Decline Counter Proposal")
+#: text_calendar.cpp:416 text_calendar.cpp:557
+msgid "Comment:"
+msgstr "Açıklama:"
+
+#: text_calendar.cpp:441
+msgid "Delegation to organizer is not possible."
+msgstr ""
+
+#: text_calendar.cpp:648
+msgid "Accept incidence"
+msgstr "Olayı kabul et"
+
+#: text_calendar.cpp:650
+msgid "Accept incidence conditionally"
+msgstr "Olayı durumsal olarak kabul et"
+
+#: text_calendar.cpp:655
+msgid "Create a counter proposal..."
+msgstr ""
+
+#: text_calendar.cpp:657
+msgid "Throw mail away"
+msgstr "E-postayı sil"
+
+#: text_calendar.cpp:659
+msgid "Decline incidence"
+msgstr "Olayı reddet"
+
+#: text_calendar.cpp:664
+msgid "Check my calendar..."
+msgstr "Takvimi kontrol et..."
+
+#: text_calendar.cpp:666
+msgid "Enter incidence into my calendar"
+msgstr "Olayı takvimime yerleştir"
+
+#: text_calendar.cpp:668
+msgid "Delegate incidence"
+msgstr ""
+
+#: text_calendar.cpp:670
+msgid "Forward incidence"
+msgstr ""
+
+#: text_calendar.cpp:672
+msgid "Remove incidence from my calendar"
+msgstr "Olayı takvimimden sil"
+
+#: delegateselector.cpp:32
+msgid "Select delegate"
+msgstr "Temsilci seç"
+
+#: delegateselector.cpp:37
+msgid "Delegate:"
+msgstr "[Temsilci Gönde:]"
+
+#: delegateselector.cpp:40
+msgid "Keep me informed about status changes of this incidence."
+msgstr ""
+
+#: attendeeselector.cpp:31
+msgid "Select Attendees"
+msgstr ""
+
+#: attendeeselector.cpp:44
+msgid "Click to add a new attendee"
+msgstr ""

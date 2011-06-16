@@ -1,0 +1,618 @@
+# translation of krec.po to
+# Copyright (C) 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
+#
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# YILDIZ KARDESLER <turkishprogram@xposta.com>, 2004.
+# Onur Küçük <onur@uludag.org.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: krec\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-08-20 04:11+0200\n"
+"PO-Revision-Date: 2007-05-14 23:21+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: mp3_export/krecexport_mp3.cpp:34
+msgid "Unknown encoding error."
+msgstr "Bilinmeyen kodlama hatası."
+
+#: mp3_export/krecexport_mp3.cpp:35
+msgid "Buffer was too small."
+msgstr "Tampon çok küçük."
+
+#: mp3_export/krecexport_mp3.cpp:36
+msgid "Memory allocation problem."
+msgstr "Bellek ayırma sorunu."
+
+#: mp3_export/krecexport_mp3.cpp:37
+msgid "Parameter initialisation not performed."
+msgstr "Parametre başlatılamadı."
+
+#: mp3_export/krecexport_mp3.cpp:38
+msgid "Psycho acoustic problems."
+msgstr "Akustik sorun."
+
+#: mp3_export/krecexport_mp3.cpp:39
+msgid "OGG cleanup encoding error."
+msgstr "OGG temizleme kodlama hatası."
+
+#: mp3_export/krecexport_mp3.cpp:40
+msgid "OGG frame encoding error"
+msgstr "OGG çerçeve kodlama hatası"
+
+#: mp3_export/krecexport_mp3.cpp:78
+msgid "At this time MP3-Export only supports files in stereo and 16bit."
+msgstr "MP3 aktarma sadece stereo ve 16 bit dosyaları destekliyor."
+
+#: mp3_export/krecexport_mp3.cpp:83
+msgid ""
+"Please note that this plugin takes its qualitysettings from the corresponding "
+"section of the Audio CDs Control Center module configuration. Make use of the "
+"Control Center to configure these settings."
+msgstr ""
+"Bu eklenti kalite ayarlarını Ses CD'si Kontrol Merkezi modül ayarlarının ilgili "
+"kısmından almaktadır. Bu ayarları değiştirmek için Kontrol Merkezi'ni "
+"kullanınız."
+
+#: mp3_export/krecexport_mp3.cpp:87 ogg_export/krecexport_ogg.cpp:78
+msgid "Quality Configuration"
+msgstr "Kalite Yapılandırması"
+
+#: mp3_export/krecexport_mp3.cpp:127 mp3_export/krecexport_mp3.cpp:144
+msgid "MP3 encoding error."
+msgstr "MP3 kodlama hatası."
+
+#: ogg_export/krecexport_ogg.cpp:69
+msgid ""
+"At this time OGG-export only supports files in 44kHz samplingrate, 16bit and 2 "
+"channels."
+msgstr ""
+"Şu anda OGG-oluşturma sadece 44kHz örneklemehızında, 16bit ve 2 kanal "
+"özelliklerinde dosyaları desteklemektedir."
+
+#: ogg_export/krecexport_ogg.cpp:75
+msgid ""
+"Please note that this plugin takes its qualitysettings from the corresponding "
+"section of the audiocd:/ configuration. Make use of the Control Center to "
+"configure these settings."
+msgstr ""
+"Bu eklenti kalite ayarlarını audiocd:/ ayarlarının ilgili kısmından almaktadır. "
+"Bu ayarları değiştirmek için Kontrol Merkezi'ni kullanınız."
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "erkaN kaplaN"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "erkaN@linux-sevenler.org"
+
+#: krecconfig_fileswidget.cpp:39
+msgid "Sampling Rate"
+msgstr "Örnekleme Hızı"
+
+#: krecconfig_fileswidget.cpp:41
+msgid "48000 Hz"
+msgstr "48000 Hz"
+
+#: krecconfig_fileswidget.cpp:42
+msgid "44100 Hz"
+msgstr "44100 Hz"
+
+#: krecconfig_fileswidget.cpp:43
+msgid "22050 Hz"
+msgstr "22050 Hz"
+
+#: krecconfig_fileswidget.cpp:44
+msgid "11025 Hz"
+msgstr "11025 Hz"
+
+#: krecconfig_fileswidget.cpp:45 krecconfigure.cpp:69 krecconfigure.cpp:72
+msgid "Other"
+msgstr "Diğer"
+
+#: krecconfig_fileswidget.cpp:48
+msgid "Other:"
+msgstr "Diğer:"
+
+#: krecconfig_fileswidget.cpp:54
+msgid "Channels"
+msgstr "Kanal"
+
+#: krecconfig_fileswidget.cpp:56
+msgid "Stereo (2 channels)"
+msgstr "Stereo (2 kanal)"
+
+#: krecconfig_fileswidget.cpp:57
+msgid "Mono (1 channel)"
+msgstr "Mono (1 kanal)"
+
+#: krecconfig_fileswidget.cpp:58
+msgid "Bits"
+msgstr "Bit"
+
+#: krecconfig_fileswidget.cpp:60
+msgid "16 bit"
+msgstr "16 bit"
+
+#: krecconfig_fileswidget.cpp:61
+msgid "8 bit"
+msgstr "8 bit"
+
+#: krecconfig_fileswidget.cpp:63
+msgid "Use defaults for creating new files"
+msgstr "Yeni dosyalar oluştururken varsayılanları kullan"
+
+#: krecconfigure.cpp:50
+msgid "<qt><b>Timedisplay Related Settings</b></qt>"
+msgstr "<qt><b>Zaman Göstergesi İle İlgili Ayarlar</b></qt>"
+
+#: krecconfigure.cpp:56
+msgid "Timedisplay Style"
+msgstr "Zaman Göstergesi Biçimi"
+
+#: krecconfigure.cpp:59
+msgid "Plain samples"
+msgstr "Basit örnekler"
+
+#: krecconfigure.cpp:60
+msgid "[hours:]mins:secs:samples"
+msgstr "[saat:]dakika:saniye:örnekleme"
+
+#: krecconfigure.cpp:61
+msgid "[hours:]mins:secs:frames"
+msgstr "[hours:]mins:secs:frames"
+
+#: krecconfigure.cpp:62
+msgid "MByte.KByte"
+msgstr "MBayt.KBayt"
+
+#: krecconfigure.cpp:63
+msgid "Framebase"
+msgstr "Çerçeve tabanı"
+
+#: krecconfigure.cpp:66
+msgid "30 frames per second (American TV)"
+msgstr "30 çerçeve/dakika (Amerikan TV)"
+
+#: krecconfigure.cpp:67
+msgid "25 frames per second (European TV)"
+msgstr "25 çerçeve/dakika (Avrupa TV)"
+
+#: krecconfigure.cpp:68
+msgid "75 frames per second (CD)"
+msgstr "75 kare bölü saniye (CD)"
+
+#: krecconfigure.cpp:79
+msgid "Show verbose times ( XXmins:XXsecs:XXframes instead of XX:XX::XX )"
+msgstr ""
+"Ayrıntılı zamanları göster (XX:XX:XX yerine XXdakika:XXsaniye:XXçerçeve)"
+
+#: krecconfigure.cpp:84
+msgid "<qt><b>Miscellaneous Settings</b></qt>"
+msgstr "<qt><b>Çeşitli Ayarlar</b></qt>"
+
+#: krecconfigure.cpp:87
+msgid "Show tip of the day at startup"
+msgstr "Program açılışında ipuçlarını göster"
+
+#: krecconfigure.cpp:91
+msgid "Enable All Hidden Messages"
+msgstr "Tüm gizli mesajlar olanaklı"
+
+#: krecconfigure.cpp:94
+msgid ""
+"<qt><i>All messages with the \"Don't show this message again\" option are shown "
+"again after selecting this button.</i></qt>"
+msgstr ""
+"<qt><i>\"Bu mesajı bir daha gösterme\" içeren mesajlar bu düğme tekrar "
+"seçildiğinde görülecektir.</i></qt>"
+
+#: krecfile.cpp:56
+msgid "Using default properties for the new file"
+msgstr "Yeni dosyalarda varsayılan özellikler kullanılıyor"
+
+#: krecfile.cpp:97
+msgid "'%1' loaded."
+msgstr "'%1' yüklendi."
+
+#: krecfile.cpp:141
+msgid "No need to save."
+msgstr "Kayıt gerekli değil."
+
+#: krecfile.cpp:145
+msgid "Saving in progress..."
+msgstr "Kaydetme durumu..."
+
+#: krecfile.cpp:171
+msgid "Saving \"%1\" was successful."
+msgstr "\"%1\" hatasız kaydedildi."
+
+#: krecfile.cpp:281
+msgid "Part deleted."
+msgstr "Kısım silindi."
+
+#: krecfile.cpp:432
+msgid "Do you really want to delete the selected part '%1'?"
+msgstr "Seçili parça '%1' i silmeyi gerçekten istiyor musunuz?"
+
+#: krecfile.cpp:432
+msgid "Delete Part?"
+msgstr "Kısım silinsin mi?"
+
+#: krecfileview.cpp:35 krecfileview.cpp:79 krecfileviewhelpers.cpp:227
+#: krecfileviewhelpers.cpp:246
+msgid "<no file>"
+msgstr "<dosya yok>"
+
+#: krecfileview.cpp:59
+msgid "file with no name"
+msgstr "dosya ile isimsiz"
+
+#: krecfileviewhelpers.cpp:141
+msgid "MB"
+msgstr "MB"
+
+#: krecfileviewhelpers.cpp:147
+msgid "kB"
+msgstr "kB"
+
+#: krecfileviewhelpers.cpp:161 krecfileviewhelpers.cpp:188
+msgid "hours"
+msgstr "saat"
+
+#: krecfileviewhelpers.cpp:166 krecfileviewhelpers.cpp:193
+msgid "mins"
+msgstr "dakika"
+
+#: krecfileviewhelpers.cpp:170 krecfileviewhelpers.cpp:197
+msgid "secs"
+msgstr "saniye"
+
+#: krecfileviewhelpers.cpp:174
+msgid "frames"
+msgstr "çerçeve"
+
+#: krecfileviewhelpers.cpp:204 krecfileviewhelpers.cpp:210
+msgid "samples"
+msgstr "örnek"
+
+#: krecfileviewhelpers.cpp:219 krecfileviewhelpers.cpp:238
+#, c-format
+msgid "kByte: %1"
+msgstr "kByte: %1"
+
+#: krecfileviewhelpers.cpp:220 krecfileviewhelpers.cpp:239
+#, c-format
+msgid "[h:]m:s.f %1"
+msgstr "[h:]m:s.f %1"
+
+#: krecfileviewhelpers.cpp:221 krecfileviewhelpers.cpp:240
+#, c-format
+msgid "[h:]m:s.s %1"
+msgstr "[h:]m:s.s %1"
+
+#: krecfileviewhelpers.cpp:222 krecfileviewhelpers.cpp:241
+msgid "%1 Samples"
+msgstr "%1 Örnek"
+
+#: krecfileviewhelpers.cpp:224
+msgid "Position"
+msgstr "Durum"
+
+#: krecfileviewhelpers.cpp:243
+msgid "Size"
+msgstr "Boyut"
+
+#: krecfileviewhelpers.cpp:258
+#, c-format
+msgid "Position: %1"
+msgstr "Durum: %1"
+
+#: krecfileviewhelpers.cpp:261
+#, c-format
+msgid "Size: %1"
+msgstr "Boyut: %1"
+
+#: krecfilewidgets.cpp:122
+msgid "Toggle Active/Disabled State"
+msgstr "Açık/Kapalı durumunu değiştir."
+
+#: krecfilewidgets.cpp:125
+msgid "Remove This Part"
+msgstr "Bu Bölümü Sil"
+
+#: krecfilewidgets.cpp:126
+msgid "Change Title of This Part"
+msgstr "Bu Bölümün Başlığını değiştir"
+
+#: krecfilewidgets.cpp:127
+msgid "Change Comment of This Part"
+msgstr "Bu Bölümün Yorumunu Değiştir"
+
+#: krecfilewidgets.cpp:222
+msgid "Lots of Data"
+msgstr "Çok Fazla Veri"
+
+#: krecfilewidgets.cpp:304
+msgid "New Title"
+msgstr "Yeni Başlık"
+
+#: krecfilewidgets.cpp:304
+msgid "Enter new part title:"
+msgstr "Yeni Bölüm Başlığı"
+
+#: krecfilewidgets.cpp:309
+msgid "New Comment"
+msgstr "Yeni Yorum"
+
+#: krecfilewidgets.cpp:309
+msgid "Enter new part comment:"
+msgstr "Yeni Bölüm Yorumu:"
+
+#: krecnewproperties.cpp:55
+msgid "Properties for the new File"
+msgstr "Yeni dosya özellikleri"
+
+#: krecord.cpp:71
+msgid "Recording level"
+msgstr "Kayıt seviyesi"
+
+#: krecord.cpp:131
+msgid "Save File As"
+msgstr "Dosyayı Farklı Kaydet"
+
+#: krecord.cpp:141
+msgid ""
+"The document \"%1\" has been modified.\n"
+"Do you want to save it?"
+msgstr ""
+"\"%1\" adlı döküman değiştirilmiş.\n"
+"Kaydetmek istiyor musunuz?"
+
+#: krecord.cpp:172
+msgid "Sorry, an encoding method could not be determined."
+msgstr "Üzgünüm, bir kodalama metodu belirlenemedi."
+
+#: krecord.cpp:173
+msgid ""
+"<qt>This can have several reasons:"
+"<ul>"
+"<li>You did not specify an ending.</li>"
+"<li>You specified an ending but there is no plugin available for this ending. "
+"In both cases be sure to choose an ending of the list presented in the previous "
+"dialog.</li>"
+"<li>The plugin loading mechanism isn't working. If you are sure you did "
+"everything right, please file a bugreport saying what you where about to do and "
+"please quote the following line:<br />%1</li></ul></qt>"
+msgstr ""
+"<qt>Bunun bir çok sebebi olabilir:"
+"<ul>"
+"<li>Bir bitiş belirtmediniz</li>"
+"<li>Bir bitiş belirttiniz fakat bu bitiş için bir eklenti mevcut değil. Her iki "
+"seçenekte de önceki pencerede listelenen bitişlerden birini seçtiğinizden emin "
+"olun.</li>"
+"<li>Eklenti yükleme mekanızması çalışmıyor olabilir. Herşeyi doğru "
+"yaptığınızdan emin iseniz takip eden satırıda içeren nerede neler yaptığınızı "
+"bildiren bir bug(hata) raporu yazınız:<b>%1</li></ul></qt>"
+
+#: krecord.cpp:183
+msgid "Could not determine encodingmethod"
+msgstr "Kodlama metodu belirlenemedi."
+
+#: krecord.cpp:185
+msgid "There is nothing to export."
+msgstr "Aktarılacak dosya yok."
+
+#: krecord.cpp:297
+msgid "Export..."
+msgstr "Dosya Aktar..."
+
+#: krecord.cpp:300
+msgid "&Record"
+msgstr "&Kaydet"
+
+#. i18n: file krecui.rc line 8
+#: krecord.cpp:302 rc.cpp:3
+#, no-c-format
+msgid "&Play"
+msgstr "Ç&al"
+
+#: krecord.cpp:304
+msgid "&Stop"
+msgstr "&Dur"
+
+#: krecord.cpp:306
+msgid "Play Through"
+msgstr "Çalmaya devam"
+
+#: krecord.cpp:309
+msgid "Go to &Beginning"
+msgstr "&Başlangıça Git"
+
+#: krecord.cpp:311
+msgid "Go to &End"
+msgstr "&Sona Git"
+
+#: krecord.cpp:316
+msgid "Start aRts Control Tool"
+msgstr "aRts Denetim Aracını Başlat"
+
+#: krecord.cpp:318
+msgid "Start KMix"
+msgstr "KMix'i Başlat"
+
+#: krecord.cpp:342
+msgid ""
+"Your system is missing the Synth_STEREO_COMPRESSOR aRts module.\n"
+"You will be able to use KRec but without the great functions of the compressor."
+msgstr ""
+"Sisteminizde Synth_STEREO_COMPRESSOR aRts modülü bulunamadı.\n"
+"KRec kullanabileceksiniz ancak sıkıştırma özelliklerinden "
+"faydalanamayacaksınız."
+
+#: krecord.cpp:343
+msgid ""
+"Possible reasons are:\n"
+"- You installed KRec on its own without the rest of kdemultimedia.\n"
+"- You installed everything correctly, but did not restart the aRts daemon\n"
+" and therefore it is not aware of the new effects.\n"
+"- This is a bug."
+msgstr ""
+"Olası hata nedenleri:\n"
+"- KRec kurulu fakat diğer kdemultimedia paketleri eksik\n"
+"- Hepsi doğru kurulu fakat aRts demonu tekrar başlatılmadı.\n"
+"- Olası bir Bug."
+
+#: krecord.cpp:344
+msgid "Unable to Find Compressor"
+msgstr "Sıkıştırıcı bulunamıyor"
+
+#: main.cpp:30
+msgid ""
+"This is a recording tool for KDE.\n"
+"It uses aRts, just look at the audiomanager\n"
+"and you will find it there accepting sound\n"
+"for recording."
+msgstr ""
+"Bu KDE için haırlanmış bir kayıt aracıdır.\n"
+"aRts kullanmaktadır, ses yöneticisine bakın\n"
+"ve orada ses kayıtlarının alınıp alınmadığına bakın."
+
+#: main.cpp:47
+msgid "KRec"
+msgstr "KRec"
+
+#: main.cpp:50
+msgid ""
+"Creator \n"
+"Look at the website www.arnoldarts.de \n"
+"for other good stuff."
+msgstr "Yazar"
+
+#: main.cpp:51
+msgid "Helped where he was asked"
+msgstr "Yardımcı"
+
+#: main.cpp:52
+msgid "Made some minor improvements"
+msgstr "Küçük bazı düzeltmeler"
+
+#: main.cpp:53
+msgid ""
+"They indirectly wrote the exports. At least I learned from their files and "
+"patches."
+msgstr ""
+"Dolaylı olarak dışarı aktarma kısımlarını yazdılar. En azından dosyalarından ve "
+"yamalarından öğrendim."
+
+#. i18n: file krecui.rc line 35
+#: rc.cpp:9
+#, no-c-format
+msgid "Play"
+msgstr "Çal"
+
+#. i18n: file krecui.rc line 43
+#: rc.cpp:12
+#, no-c-format
+msgid "Compressor"
+msgstr "Sıkıştırıcı"
+
+#: tips.cpp:3
+msgid ""
+"<h4>...that KRec does non-destructive Recording?</h4>\n"
+"<p>\n"
+"That means if you have a recording and want to record only a part for a second "
+"(third or more) time, your first (and second and later) version is still on "
+"disc and can still be restored. Only for Playback/Export the old version is "
+"overlayed by the newer one.\n"
+"</p>\n"
+msgstr ""
+"<h4>...KRec tahrip etmeyen kayıt sistemi kullanmakta?</h4>\n"
+"<p>\n"
+"Bunun anlamı eğer elinizde bir kayıt varsa ve bunun sadece bir kısmını ikinci "
+"(ya da üçüncü ya da daha fazla) kez kayıt etmek isterseniz, ilk (ikinci, üçüncü "
+"vs.) sürümü disk üzerinde durmaya devam edebilecek ve istediğiniz zaman geri "
+"alabileceksiniz. Sadece Çalma/Dosya Oluşturma esnasında eski sürüm "
+"kullanılmayacak.\n"
+"</p>\n"
+
+#: tips.cpp:11
+msgid ""
+"<h4>...which event caused the first version of KRec?</h4>\n"
+"<p>\n"
+"Some friends of mine asked me whether I could do the recordings for a radioplay "
+"for them. So I was searching for an easy-to-use recording tool running on my "
+"favorite OS. After some searching (without finding something suitable) I "
+"started a first version of KRec.\n"
+"</p>\n"
+msgstr ""
+"<h4>...hangi olay KRec'in ilk sürümünün çıkmasına sebep oldu?</h4>\n"
+"<p>\n"
+"Bazı arkadaşlarım bana bir radyo oyunu için kayıt yapıp yapamayacağımı "
+"sormuştu. Ben de en seviğim işletim sistemi için kolay kullanılabilen bir kayıt "
+"aracı araştırmaya başladım. Bir miktar aradıktan (ve uygun bir program "
+"bulamadıktan) sonra KRec'in ilk sürümüne başladım.\n"
+"</p>\n"
+
+#: tips.cpp:19
+msgid ""
+"<h4>...that developers are very happy to hear from the users?</h4>\n"
+"<p>\n"
+"Most developers are very happy to see their applications used by other people. "
+"So if you want to say \"Thank you\" or you have some problems, don't hesitate "
+"to mail us/me. You can find the email addresses of the author in the "
+"\"Help\"-menu under \"About KRec\".\n"
+"</p>\n"
+msgstr ""
+"<h4>...geliştiriciler kullanıcılardan mesaj gelmesini çok severler?</h4>\n"
+"<p>\n"
+"Pek çok geliştirici yazılımlarının başkaları tarafından kullanıldığını "
+"görmekten mutlu olurlar. bu sebeple \"Teşekkür ederim\" demek ya da bir "
+"probleminizi iletmek isterseniz bana/bize eposta atmaktan çekinmeyin. Yazarın "
+"eposta adresini \"Yardım\" menüsünde \"KRec Hakkında\" kısmında "
+"bulabilirsiniz.\n"
+"</p>\n"
+
+#: tips.cpp:27
+msgid ""
+"<h4>...that you are invited to report bugs?</h4>\n"
+"<p>\n"
+"Altough a lot of testing is done, our capabilities of catching every possible "
+"event/configuration are limited. So if you find a bug use \"Report Bug\" in the "
+"\"Help\"-menu or go directly to http://bugs.kde.org.\n"
+"</p>\n"
+msgstr ""
+"<h4>...hataları raporlamaya davetlisiniz?</h4>\n"
+"<p>\n"
+"Pek çok deneme yapmamıza rağmen mümkün olan her olayı/ayarı gerçekleştirme "
+"yeteneğimiz sınırlı. Bu sebeple bir hata bulursanız \"Yardım\" menüsünde \"Hata "
+"Bildir\" kullanın ya da http://bugs.kde.org adresine gidiniz.\n"
+"</p>\n"
+
+#: tips.cpp:35
+msgid ""
+"<h4>...that KRec is far from complete?</h4>\n"
+"<p>\n"
+"So if you have a nice feature you think KRec should incorporate please tell us! "
+"To avoid duplicates and improve productivity please do it via bugs.kde.org or "
+"the bug reporting tools and us wishlist as severity.\n"
+"</p>\n"
+msgstr ""
+"<h4>...KRec tamamlanmış bir program değil?</h4>\n"
+"<p>\n"
+"KRec'e eklenmesi gerektiğini düşündüğünüz bir özellik varsa lütfen bize "
+"bildirin! Üretkenliği arttırmak için lütfen bize bildirimlerinizi bugs.kde.org "
+"adresinden ya da hata bildirim araçlarını kullanarak iletiniz.\n"
+"</p>\n"

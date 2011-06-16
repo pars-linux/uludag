@@ -1,0 +1,100 @@
+# translation of kview_scale.po to turkish
+# translation of kview_scale.po to Turkish
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2002.
+# Tuncay YENİAY <tuncayyeniay@mynet.com>,2002.
+# Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kview_scale\n"
+"POT-Creation-Date: 2005-05-18 21:25+0200\n"
+"PO-Revision-Date: 2005-06-28 21:56+0000\n"
+"Last-Translator: Adem Alp YILDIZ <ademalp@kde.org.tr>\n"
+"Language-Team: turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.1\n"
+
+#: kview_scale.cpp:49
+msgid "&Scale Image..."
+msgstr "&Resmi Odakla..."
+
+#: kview_scale.cpp:64
+msgid "Scale Image"
+msgstr "Resmi Odakla"
+
+#: kview_scale.cpp:69 scaledlg.cpp:51
+msgid "Pixel Dimensions"
+msgstr "Benek Boyutları"
+
+#: kview_scale.cpp:77 scaledlg.cpp:63
+msgid "Original width:"
+msgstr "Asıl genişlik:"
+
+#: kview_scale.cpp:81 kview_scale.cpp:91 kview_scale.cpp:127 scaledlg.cpp:66
+#: scaledlg.cpp:75 scaledlg.cpp:93
+msgid "Height:"
+msgstr "Yükseklik:"
+
+#: kview_scale.cpp:88 kview_scale.cpp:124 scaledlg.cpp:72 scaledlg.cpp:90
+msgid "New width:"
+msgstr "Yeni genişlik:"
+
+#: kview_scale.cpp:99 scaledlg.cpp:119
+msgid "px"
+msgstr "bn"
+
+#: kview_scale.cpp:100 scaledlg.cpp:120
+#, c-format
+msgid "%"
+msgstr "%"
+
+#: kview_scale.cpp:105 scaledlg.cpp:81
+msgid "Ratio X:"
+msgstr "X Oranı:"
+
+#: kview_scale.cpp:108 kview_scale.cpp:144 scaledlg.cpp:84 scaledlg.cpp:102
+msgid "Y:"
+msgstr "Y:"
+
+#: kview_scale.cpp:117 kview_scale.cpp:151 scaledlg.cpp:128 scaledlg.cpp:146
+msgid "Link"
+msgstr "Bağ"
+
+#: kview_scale.cpp:119 scaledlg.cpp:52
+msgid "Print Size && Display Units"
+msgstr "Çıktı Boyutu ve Görüntü Üniteleri"
+
+#: kview_scale.cpp:135 scaledlg.cpp:137
+msgid "in"
+msgstr "in"
+
+#: kview_scale.cpp:136 scaledlg.cpp:138
+msgid "mm"
+msgstr "mm"
+
+#: kview_scale.cpp:141 scaledlg.cpp:99
+msgid "Resolution X:"
+msgstr "X Çözünürlüğü:"
+
+#. i18n: file kview_scale.rc line 4
+#: rc.cpp:3
+#, no-c-format
+msgid "&Image"
+msgstr "&Resim"
+
+#. i18n: file kview_scale.rc line 10
+#: rc.cpp:6
+#, no-c-format
+msgid "&Extra Toolbar"
+msgstr "&Ek Araç Çubuğu"
+
+#: scaledlg.cpp:149
+msgid "pixels/in"
+msgstr "benek/in"
+
+#: scaledlg.cpp:150
+msgid "pixels/mm"
+msgstr "benek/mm"

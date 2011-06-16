@@ -1,0 +1,962 @@
+# translation of ksysv.po to
+# Copyright (C) 2003, 2004, 2007 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2001,2003, 2004.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# RIDVAN CAN <ridvan@geleceklinux.org>, 2003.
+# Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: ksysv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-09-19 01:14+0200\n"
+"PO-Revision-Date: 2007-05-16 21:05+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: IOCore.cpp:51
+msgid ""
+"<error>FAILED</error> to remove <cmd>%1</cmd> from <cmd>%2</cmd>: \"%3\""
+"<br/>"
+msgstr "%2 'den %1 kaldırılamadı: \"%3\"<br/>"
+
+#: IOCore.cpp:55
+msgid ""
+"FAILED to remove %1 from %2: \"%3\"\n"
+msgstr ""
+"%2 'den %1 kaldırılamadı: \"%3\"\n"
+
+#: IOCore.cpp:62
+msgid "removed <cmd>%1</cmd> from <cmd>%2</cmd><br/>"
+msgstr "%2 'den %1 kaldırıldı"
+
+#: IOCore.cpp:66
+msgid ""
+"removed %1 from %2\n"
+msgstr ""
+"%2 'den %1 kaldırıldı\n"
+
+#: IOCore.cpp:95
+msgid "created <cmd>%1</cmd> in <cmd>%2</cmd><br/>"
+msgstr "%2 'de %1 oluşturulamadı <br/>"
+
+#: IOCore.cpp:96
+msgid ""
+"created %1 in %2\n"
+msgstr ""
+"%2 'de %1 oluşturuldu\n"
+
+#: IOCore.cpp:100
+msgid ""
+"<error>FAILED</error> to create <cmd>%1</cmd> in <cmd>%2</cmd>: \"%3\""
+"<br/>"
+msgstr "%2 'de %1 oluşturulurken hata oluştu: \"%3\"<br/>"
+
+#: IOCore.cpp:105
+msgid ""
+"FAILED to create %1 in %2: \"%3\"\n"
+msgstr ""
+"%2 'de %1 oluşturulamadı: \"%3\"\n"
+
+#. i18n: file ksysvui.rc line 73
+#: OldView.cpp:89 OldView.cpp:91 rc.cpp:21 rc.cpp:27
+#, no-c-format
+msgid "Runlevel Menu"
+msgstr "Çalışma Seviyesi Menüsü"
+
+#. i18n: file ksysvui.rc line 82
+#: OldView.cpp:93 rc.cpp:24
+#, no-c-format
+msgid "Services Menu"
+msgstr "Servisler Menüsü"
+
+#: OldView.cpp:193
+msgid ""
+"&Available\n"
+"Services"
+msgstr ""
+"&Kullanılabilir\n"
+"Servisler"
+
+#: OldView.cpp:198
+msgid ""
+"<p>These are the <img src=\"small|exec\"/> <strong>services</strong> "
+"available on your computer. To start a service, drag it onto the <em>Start</em> "
+"section of a runlevel.</p>"
+"<p>To stop one, do the same for the <em>Stop</em> section.</p>"
+msgstr ""
+"<p>Bilgisayarınızdaki kullanılabilir <bold>servisler</bold> "
+"bunlardır. <img src=\"small|exec\"/> Bir servisi başlatmak için, o servisi "
+"çalışma seviyesinin <em>Başlat</em> kısmına sürükleyin.</p>"
+"<p>Durdurmak için ise, aynı işlemi <em>Durdur</em> kısmı için uygulayın.</p>"
+
+#: OldView.cpp:242
+msgid ""
+"<p>You can drag services from a runlevel onto the <img src=\"small|trash\"/> "
+"<strong>trashcan</strong> to delete them from that runlevel.</p>"
+"<p>The <strong>Undo command</strong> can be used to restore deleted entries.</p>"
+msgstr ""
+"<p> Çalışma seviyesindeki servisleri <img src=\"small|trash\"/> "
+"çöp kutusuna sürükleyip bırakarak silebilirsiniz.</p>"
+"<p> Silinmiş servisleri <strong>Gerial komutu</strong>"
+"nu kullanarak geri alabilirsiniz.</p>"
+
+#: OldView.cpp:254
+#, c-format
+msgid "Runlevel &%1"
+msgstr "Çalışma seviyesi &%1"
+
+#: OldView.cpp:256
+#, c-format
+msgid "Runlevel %1"
+msgstr "Çalışma seviyesi %1"
+
+#: OldView.cpp:260
+msgid ""
+"<p>These are the services <strong>started</strong> in runlevel %1.</p>"
+"<p>The number shown on the left of the <img src=\"user|ksysv_start\"/> "
+"icon determines the order in which the services are started. You can arrange "
+"them via drag and drop, as long as a suitable <em>sorting number</em> "
+"can be generated.</p>"
+"<p>If that's not possible, you have to change the number manually via the "
+"<strong>Properties dialog box</strong>.</p>"
+msgstr ""
+"<p>Bunlar %1 numaralı çalışma seviyesinde <strong>başlatılacak</strong> "
+"olan servislerdir.</p>"
+"<p><img src=\"user|ksysv_start\"/> simgesinin solunda gösterilen numara o "
+"servisin başlama sırasını belirtir. Bunları <em>sıra numarası</em> "
+"uygun oldugu sürece sürükleyip bırakarak sıralayabilirsiniz.</p>"
+"<p>Eğer mümkün değilse, numarayı <strong>Özellikler</strong> "
+"dialog penceresinden elle değiştirebilirsiniz.</p>"
+
+#: OldView.cpp:268
+msgid "Start"
+msgstr "Başla"
+
+#: OldView.cpp:278
+msgid ""
+"<p>These are the services <strong>stopped</strong> in runlevel %1.</p>"
+"<p>The number shown on the left of the <img src=\"user|ksysv_stop\"/> "
+"icon determines the order in which the services are stopped. You can arrange "
+"them via drag and drop, as long as a suitable <em>sorting number</em> "
+"can be generated.</p>"
+"<p>If that's not possible, you have to change the number manually via the "
+"<strong>Properties dialog box</strong>.</p>"
+msgstr ""
+"<p>Bunlar %1 numaralı çalışma seviyesinde <strong>durdurulacak</strong> "
+"olan servislerdir. </p>"
+"<p><img src=\"user|ksysv_start\"/> simgesinin solunda gösterilen numara o "
+"servisin başlama sırasını belirtir. Bunları <em>sıra numarası</em> "
+"uygun oldugu sürece sürükleyip bırakarak sıralayabilirsiniz.</p>"
+"<p>Eğer mümkün değilse, numarayı <strong>Özellikler</strong> "
+"dialog penceresinden elle değiştirebilirsiniz.</p>"
+
+#: OldView.cpp:353
+#, c-format
+msgid ""
+"Drag here to start services\n"
+"when entering runlevel %1"
+msgstr ""
+"Bu alana %1 numaralı çalışma seviyesine girildiğinde\n"
+"başlatılacak servisleri sürükleyin"
+
+#: OldView.cpp:355
+#, c-format
+msgid ""
+"Drag here to stop services\n"
+"when entering runlevel %1"
+msgstr ""
+"Bu alana %1 numaralı çalışma seviyesine girildiğinde\n"
+"durdurulacak servisleri sürükleyin"
+
+#: OldView.cpp:414
+msgid "The services available on your computer"
+msgstr "Bilgisayarınızda mevcut servisler"
+
+#: OldView.cpp:474
+msgid "<vip>WRITING CONFIGURATION</vip>"
+msgstr "<vip>AYARLAR KAYDEDİLİYOR</vip>"
+
+#: OldView.cpp:475
+msgid "** WRITING CONFIGURATION **"
+msgstr "** AYARLAR KAYDEDİLİYOR **"
+
+#: OldView.cpp:479
+msgid "<rl>RUNLEVEL %1</rl>"
+msgstr "<rl>ÇALIŞMA SEVİYESİ %1</rl>"
+
+#: OldView.cpp:480
+msgid "** RUNLEVEL %1 **"
+msgstr "** ÇALIŞMA SEVİYESİ %1 **"
+
+#: OldView.cpp:616
+msgid "** <stop>Stopping</stop> <cmd>%1</cmd> **<br/>"
+msgstr "** <cmd>%1</cmd> <stop>durduruluyor</stop> **<br/>"
+
+#: OldView.cpp:617
+msgid "** Stopping %1 **"
+msgstr "** %1 durduruluyor **"
+
+#: OldView.cpp:622
+msgid " stop"
+msgstr " durdur"
+
+#: OldView.cpp:642
+msgid "** <start>Starting</start> <cmd>%1</cmd> **<br/>"
+msgstr "** <cmd>%1</cmd> <start>başlatılıyor</start> **<br/>"
+
+#: OldView.cpp:643
+msgid "** Starting %1 **"
+msgstr "** %1 Başlatılıyor **"
+
+#: OldView.cpp:648
+msgid " start"
+msgstr " başlat"
+
+#: OldView.cpp:682
+msgid "** Re-starting <cmd>%1</cmd> **</br>"
+msgstr "** <cmd>%1</cmd> tekrar başlatılıyor **</br>"
+
+#: OldView.cpp:683
+msgid "** Re-starting %1 **"
+msgstr "** %1 Tekrar başlatılıyor **"
+
+#: OldView.cpp:688
+msgid " restart"
+msgstr " tekrar başlat"
+
+#: OldView.cpp:937
+msgid ""
+"<p>You have specified that your system's init scripts are located in the folder "
+"<tt><b>%1</b></tt>, but this folder does not exist. You probably selected the "
+"wrong distribution during configuration.</p> "
+"<p>If you reconfigure %2, it may be possible to fix the problem. If you choose "
+"to reconfigure, you should shut down the application and the configuration "
+"wizard will appear the next time %3 is run. If you choose not to reconfigure, "
+"you will not be able to view or edit your system's init configuration.</p>"
+"<p>Would you like to reconfigure %4?</p>"
+msgstr ""
+"<p>Sistem açılış betiklerinin <tt><b>%1</b></tt> adresinde olduğunu "
+"belirtmişsiniz, ancak bu dizin mevcut değil. Yapılandırma sırasında yanlış "
+"dağıtımı seçmiş olabilirsiniz. Eğer %2'yi yeniden yapılandırırsanız hatayı "
+"giderebilirsiniz. Yeniden yapılandırmayı seçerseniz, uygulamayı kapatın. Tekrar "
+"açılışta %3 çalıştırılacaktır. Eğer yeniden yapılandırmak istemiyorsanız "
+"sistemin açılış dosyalarını düzenleyemeyeceksiniz.</p>"
+"<p>%4'i yeniden yapılandırmak istiyor musunuz?</p>"
+
+#: OldView.cpp:954
+msgid "Folder Does Not Exist"
+msgstr "Dizin Bulunamadı"
+
+#: OldView.cpp:954
+msgid "Reconfigure"
+msgstr "Yeniden Yapılandır"
+
+#: OldView.cpp:954
+msgid "Do Not Reconfigure"
+msgstr "Yeniden Yapılandırma"
+
+#: OldView.cpp:965
+msgid ""
+"<p>You do not have the right permissions to edit your system's init "
+"configuration. However, you are free to browse the runlevels.</p>"
+"<p>If you really want to edit the configuration, either <strong>restart</strong> "
+"%1 <strong>as root</strong> (or another privileged user), or ask your sysadmin "
+"to install %2 <em>suid</em> or <em>sgid</em>.</p>"
+"<p>The latter way is not recommended though, due to security issues.</p>"
+msgstr ""
+"<p>Üzgünüm, sisteminizin init ayarlarınız değiştirmek için doğru yetkiye sahip "
+"değilsiniz. Ancak çalışma seviyelerini gezmekte serbestsiniz.</p>"
+"<p>Eğer ayarları düzenlemek isterseniz <strong>root olarak</strong> <strong>"
+"tekrar başlatın</strong>  %1 (veya başka yetkili bir kullanıcı olarak veya "
+"sistem uzmanınıza) %2 <em>suid</em> veya <em>sgid</em> "
+"şeklinde kurmasını söyleyin.</p>"
+"<p>Son seçenek güvenlik açısından tavsiye edilmez.</p>"
+
+#: OldView.cpp:977
+msgid "Insufficient Permissions"
+msgstr "Yetersiz Haklar(ruhsat)"
+
+#: OldView.cpp:1029
+msgid "&Other..."
+msgstr "&Diğer..."
+
+#. i18n: file lookandfeelconfig.ui line 18
+#: PreferencesDialog.cpp:41 rc.cpp:111
+#, no-c-format
+msgid "Look & Feel"
+msgstr "Görünüm"
+
+#. i18n: file configwizard.ui line 301
+#: PreferencesDialog.cpp:69 rc.cpp:75
+#, no-c-format
+msgid "Paths"
+msgstr "Yollar"
+
+#: PreferencesDialog.cpp:79
+msgid "Settings Not Fitting Anywhere Else"
+msgstr "Ayarlar Uyuşmuyor"
+
+#: PreferencesDialog.cpp:143
+msgid ""
+"The service folder you specified does not exist.\n"
+"You can continue if you want to, or you can click Cancel to select a new "
+"folder."
+msgstr ""
+"Tanımladığınız servis dizini bulunmuyor.\n"
+"İsterseniz devam edebilirsiniz veya yeni bir dizin seçmek için İptal düğmesine "
+"tıklayarak çıkabilirsiniz."
+
+#: PreferencesDialog.cpp:154
+msgid ""
+"The runlevel folder you specified does not exist.\n"
+"You can continue if you want to, or you can click Cancel to select a new "
+"folder."
+msgstr ""
+"Tanımladığınız çalışma seviyesi dizini bulunmuyor.\n"
+"İsterseniz devam edebilirsiniz veya yeni bir dizin seçmek için 'İptal' "
+"düğmesine tıklayarak çıkabilirsiniz."
+
+#: Properties.cpp:42
+msgid "&Service"
+msgstr "&Servisler"
+
+#: Properties.cpp:50
+msgid "Description:"
+msgstr "Açıklamalar:"
+
+#: Properties.cpp:57
+msgid "Actions"
+msgstr "Eylemler"
+
+#: Properties.cpp:67
+msgid "S&top"
+msgstr "&Durdur"
+
+#: Properties.cpp:70
+msgid "&Restart"
+msgstr "&Tekrar başlat"
+
+#: Properties.cpp:121
+msgid "&Entry"
+msgstr "&Giriş"
+
+#: Properties.cpp:126
+msgid "&Name:"
+msgstr "İsi&m:"
+
+#: Properties.cpp:131
+msgid "&Points to service:"
+msgstr "İşa&retçi:"
+
+#: Properties.cpp:137
+msgid "&Sorting number:"
+msgstr "Sı&ralama numarası:"
+
+#: RunlevelAuthIcon.cpp:27
+msgid "Editing disabled - please check your permissions"
+msgstr "Düzenleme engellendi - lütfen yetkilerinizi kontrol ediniz"
+
+#: RunlevelAuthIcon.cpp:28
+msgid "Editing enabled"
+msgstr "Düzenleme aktif"
+
+#: TopWidget.cpp:118
+msgid "Start Service"
+msgstr "Hizmeti Başlat"
+
+#: TopWidget.cpp:119
+msgid "&Choose which service to start:"
+msgstr "&Başlatılacak servisi seçin:"
+
+#: TopWidget.cpp:121
+msgid "Stop Service"
+msgstr "Hizmeti Durdur"
+
+#: TopWidget.cpp:122
+msgid "&Choose which service to stop:"
+msgstr "&Hangi servisi durduracağınızı seçin:"
+
+#: TopWidget.cpp:124
+msgid "Restart Service"
+msgstr "Hizmeti Tekrar Başlat"
+
+#: TopWidget.cpp:125
+msgid "&Choose which service to restart:"
+msgstr "&Tekrar başlatılacak servisi seçiniz:"
+
+#: TopWidget.cpp:127
+msgid "Edit Service"
+msgstr "Hizmeti Düzenle"
+
+#: TopWidget.cpp:128
+msgid "&Choose which service to edit:"
+msgstr "&Düzenlenecek servisi seçiniz:"
+
+#: TopWidget.cpp:215
+msgid "Re&vert Configuration"
+msgstr "&Yapılandırmayı Geri al"
+
+#: TopWidget.cpp:221
+msgid "&Save Configuration"
+msgstr "Ya&pılandırmayı Kaydet"
+
+#: TopWidget.cpp:226
+msgid "Save &Log..."
+msgstr "K&ayıt dosyasını kaydet..."
+
+#: TopWidget.cpp:234
+msgid "&Print Log..."
+msgstr "&Kayıt Dosyasını Yazdır..."
+
+#: TopWidget.cpp:250
+msgid "P&roperties"
+msgstr "Ö&zellikler"
+
+#: TopWidget.cpp:254
+msgid "&Open"
+msgstr "&Aç"
+
+#: TopWidget.cpp:258
+msgid "Open &With"
+msgstr "&Birlikte Aç"
+
+#: TopWidget.cpp:267
+msgid "Show &Log"
+msgstr "Kayıt D&osyasını Göster"
+
+#: TopWidget.cpp:270
+msgid "Hide &Log"
+msgstr "Kayıt D&osyasını Gizle"
+
+#: TopWidget.cpp:273
+msgid "&Start Service..."
+msgstr "&Servisleri başlat..."
+
+#: TopWidget.cpp:277
+msgid "&Stop Service..."
+msgstr "Se&rvisi durdur..."
+
+#: TopWidget.cpp:281
+msgid "&Restart Service..."
+msgstr "&Servisi tekrar başlat..."
+
+#: TopWidget.cpp:285
+msgid "&Edit Service..."
+msgstr "&Servisi düzenle..."
+
+#: TopWidget.cpp:299
+msgid "There are unsaved changes. Are you sure you want to quit?"
+msgstr "Kaydedilmemiş değişiklikler varÇıkmak istediğinize emin misiniz?"
+
+#: TopWidget.cpp:313
+msgid "Do you really want to revert all unsaved changes?"
+msgstr ""
+"Kaydedilmemiş bütün değişiklikleri geri almak istediğinizden emin misiniz?"
+
+#: TopWidget.cpp:314
+msgid "Revert Configuration"
+msgstr "Yapılandırmayı Geri al"
+
+#: TopWidget.cpp:315
+msgid "&Revert"
+msgstr "&Geri al"
+
+#: TopWidget.cpp:326
+msgid ""
+"You're about to save the changes made to your init configuration. Wrong "
+"settings can make your system hang on startup.\n"
+"Do you wish to continue?"
+msgstr ""
+"Sisteminizin init yapılandırmasında yapılan değişiklikleri \n"
+"kaydetmek üzeresiniz.\n"
+"Yanlış ayarların, sisteminizin açılmasını engelleyebileceğini unutmayınız.\n"
+"Devam etmek istiyor musunuz?"
+
+#: TopWidget.cpp:330
+msgid "Save Configuration"
+msgstr "Yapılandırmayı Kaydet"
+
+#: TopWidget.cpp:398
+msgid ""
+"<p>Click on the checkboxes to <strong>show</strong> or <strong>hide</strong> "
+"runlevels.</p> "
+"<p>The list of currently visible runlevels is saved when you use the <strong>"
+"Save Options command</strong>.</p>"
+msgstr ""
+"<p>Çalışma seviyesi pencerelerini <strong>gizle</strong>mek veya <strong>"
+"göster</strong>mek için seçim kutularına tıklayın.</p>"
+"<p>Mevcut görülebilir çalışma seviyeleri <strong>Ayarları kaydet "
+"komutunu</strong> işlettiğiniz zaman kaydedilecektir.</p>"
+
+#: TopWidget.cpp:402
+msgid "Show only the selected runlevels"
+msgstr "Sadece seçili çalışma seviyelerini göster"
+
+#: TopWidget.cpp:404
+msgid "Show runlevels:"
+msgstr "Çalışma seviyelerini göster:"
+
+#: TopWidget.cpp:422
+msgid ""
+"<p>If the lock is closed <img src=\"user|ksysv_locked\"/>"
+", you don't have the right <strong>permissions</strong> "
+"to edit the init configuration.</p>"
+"<p>Either restart %1 as root (or another more privileged user), or ask your "
+"sysadmin to install %1 <em>suid</em> or <em>sgid</em>.</p>"
+"<p>The latter way is <strong>not</strong> recommended though, due to security "
+"issues.</p>"
+msgstr ""
+"<p>Eğer kilit kapalı <img src=\"user|ksysv_locked\"/> "
+"ise, başlangıç ayarlarını yapmak için yeterli <strong>izinlere</strong> "
+"sahip değilsinizdir.</p>"
+"<p>Ya %1 programını root kullanıcısı ile başlatın, ya da sistem yöneticinizden "
+"%1 programını <em>suid</em> veya <em>sgid</em> olarak düzenlemesini isteyin.</p> "
+"<p>Son yol güvenlik sorunlarına yol açabileceğinden tavsiye <strong>"
+"edilmez</strong>.</p>"
+
+#: TopWidget.cpp:566
+msgid " Changed"
+msgstr " Değiştirildi"
+
+#: TopWidget.cpp:753
+msgid "Print Log File"
+msgstr "Günlük Dosyasını Yazdır"
+
+#: TopWidget.cpp:768
+msgid "<h1>KDE Sys-V Init Editor Log</h1>"
+msgstr "<h1>SysV-Init Düzenleyici Kaydı</h1>"
+
+#: TopWidget.cpp:778
+msgid "<h3>Printed on %1</h3><br/><br/>"
+msgstr "<h3>%1 tarihinde yazıldı</h3><br/><br/>"
+
+#: TopWidget.cpp:830
+msgid ""
+"<p>Unable to generate a valid sorting number for this position. This means that "
+"there was no number available between the two adjacent services, and the "
+"service did not fit in lexically.</p>"
+"<p>Please adjust the sorting numbers manually via the <strong>"
+"Properties dialog box</strong>.</p>"
+msgstr ""
+"<p>Üzgünüm, ancak bu konum için geçerli bir sıralama numarası bulamadım. Bunun "
+"anlamı, birbiri ardına çalışacak olan iki servis arasına yerleştirilecek bir "
+"numaranın bulunamamasıdır. Lütfen <strong>Özellikler</strong> "
+"penceresini açıp bu işlemi elle yapın.</p>"
+
+#: TopWidget.cpp:837
+msgid "Unable to Generate Sorting Number"
+msgstr "Sıralama numarası oluşturulamadı"
+
+#: TopWidget.cpp:841
+msgid "Unable to generate sorting number. Please change manually."
+msgstr "Sıralama numarası oluşturulamadı. Lütfen kendiniz değiştirin."
+
+#: TopWidget.cpp:1055
+msgid "Configuration package saved successfully."
+msgstr "Ayar paketi başarıyla kaydedildi."
+
+#: TopWidget.cpp:1085
+msgid "Configuration package loaded successfully."
+msgstr "Ayar paketi başarıyla yüklendi."
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Ömer Fadıl USTA"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "omer_fad@hotmail.com"
+
+#: ksv_core.cpp:35
+msgid "No description available."
+msgstr "Tanımlama yok."
+
+#: ksv_core.cpp:155
+msgid " log files"
+msgstr " kayıt dosyaları"
+
+#: ksv_core.cpp:163
+msgid "Saved Init Configurations"
+msgstr "Yapılandırmayı Kaydet"
+
+#: ksvdraglist.cpp:332
+msgid "No."
+msgstr "No."
+
+#: ksvdraglist.cpp:336
+msgid "Name"
+msgstr "İsim"
+
+#: ksvdraglist.cpp:348 ksvdraglist.cpp:352 ksvdraglist.cpp:355
+msgid "Drag Menu"
+msgstr "Sürükle Menüsü"
+
+#: main.cpp:58
+msgid "SysV-Init Editor"
+msgstr "SysV-Init Düzenleyici"
+
+#: main.cpp:59
+msgid "Editor for Sys-V like init configurations"
+msgstr "Init ayarlarına benzeyen bir Sys-V editörü"
+
+#: main.cpp:62
+msgid ""
+"Similar to Red Hat's\"tksysv\", but SysV-Init Editor allows\n"
+"drag-and-drop, as well as keyboard use."
+msgstr ""
+"Red Hat'in \"tksysv\" programına benzer, fakat SysV-Init Düzenleyici\n"
+"klavye kullanımının yanı sıra sürükle-bırak işlemlerini destekler."
+
+#: main.cpp:65
+msgid "Main developer"
+msgstr "Ana Geliştirici"
+
+#. i18n: file configwizard.ui line 23
+#: rc.cpp:30
+#, no-c-format
+msgid "Configuration Wizard"
+msgstr "Yapılandırma Sihirbazı"
+
+#. i18n: file configwizard.ui line 39
+#: rc.cpp:33
+#, no-c-format
+msgid "Operating System"
+msgstr "İşletim Sistemi"
+
+#. i18n: file configwizard.ui line 58
+#: rc.cpp:36
+#, no-c-format
+msgid "<h3>What Operating System do you use?</h3>"
+msgstr "<h3>Hangi işletim sistemini kullanıyorsunuz?</h3>"
+
+#. i18n: file configwizard.ui line 91
+#: rc.cpp:39
+#, no-c-format
+msgid "Choose Your Operating System"
+msgstr "İşletim Sisteminizi Seçiniz"
+
+#. i18n: file configwizard.ui line 110
+#: rc.cpp:42
+#, no-c-format
+msgid "&Linux"
+msgstr "&Linux"
+
+#. i18n: file configwizard.ui line 121
+#: rc.cpp:45 rc.cpp:72
+#, no-c-format
+msgid "&Other"
+msgstr "&Diğer"
+
+#. i18n: file configwizard.ui line 157
+#: rc.cpp:48
+#, no-c-format
+msgid "Distribution"
+msgstr "Dağıtım"
+
+#. i18n: file configwizard.ui line 176
+#: rc.cpp:51
+#, no-c-format
+msgid "Choose Your Distribution"
+msgstr "Dağıtımınızı Seçiniz"
+
+#. i18n: file configwizard.ui line 195
+#: rc.cpp:54
+#, no-c-format
+msgid "&Debian GNU/Linux"
+msgstr "&Debian GNU/Linux"
+
+#. i18n: file configwizard.ui line 210
+#: rc.cpp:57
+#, no-c-format
+msgid "&Red Hat Linux"
+msgstr "&Red Hat Linux"
+
+#. i18n: file configwizard.ui line 221
+#: rc.cpp:60
+#, no-c-format
+msgid "&SuSE Linux"
+msgstr "&SuSE Linux"
+
+#. i18n: file configwizard.ui line 232
+#: rc.cpp:63
+#, no-c-format
+msgid "&Mandrake Linux"
+msgstr "&Mandrake Linux"
+
+#. i18n: file configwizard.ui line 243
+#: rc.cpp:66
+#, no-c-format
+msgid "&Corel Linux OS"
+msgstr "&Corel Linux"
+
+#. i18n: file configwizard.ui line 254
+#: rc.cpp:69
+#, no-c-format
+msgid "Conec&tiva Linux"
+msgstr "Conec&tiva Linux"
+
+#. i18n: file configwizard.ui line 341
+#: rc.cpp:78 rc.cpp:211
+#, no-c-format
+msgid "&Service path:"
+msgstr "&Servis yolu:"
+
+#. i18n: file configwizard.ui line 389
+#: rc.cpp:81 rc.cpp:214
+#, no-c-format
+msgid "Enter the path to the folder containing the services"
+msgstr "Servisleri içeren dizini belirtin"
+
+#. i18n: file configwizard.ui line 400
+#: rc.cpp:84 rc.cpp:217
+#, no-c-format
+msgid "&Browse..."
+msgstr "&Gözat..."
+
+#. i18n: file configwizard.ui line 404
+#: rc.cpp:87 rc.cpp:220
+#, no-c-format
+msgid "Select the folder containing the services"
+msgstr "Servisleri içeren dizini seçiniz"
+
+#. i18n: file configwizard.ui line 463
+#: rc.cpp:90 rc.cpp:223
+#, no-c-format
+msgid "&Runlevel path:"
+msgstr "Ç&alışma seviyesi yolu:"
+
+#. i18n: file configwizard.ui line 511
+#: rc.cpp:93 rc.cpp:226
+#, no-c-format
+msgid "Enter the path to the folder containing the runlevel folders"
+msgstr "Çalışma seviyesi dizinlerini içeren dizini belirtin"
+
+#. i18n: file configwizard.ui line 522
+#: rc.cpp:96 rc.cpp:229
+#, no-c-format
+msgid "Br&owse..."
+msgstr "&Gözat..."
+
+#. i18n: file configwizard.ui line 526
+#: rc.cpp:99 rc.cpp:232
+#, no-c-format
+msgid "Select the folder containing the runlevel folders "
+msgstr "Çalışma seviyesi dizinlerinizin bulunduğu dizini seçin "
+
+#. i18n: file configwizard.ui line 564
+#: rc.cpp:102
+#, no-c-format
+msgid "Configuration Complete"
+msgstr "Yapılandırma Tamamlandı"
+
+#. i18n: file configwizard.ui line 586
+#: rc.cpp:105
+#, no-c-format
+msgid ""
+"<h1>Congratulations!</h1>\n"
+"<p>\n"
+"You have finished the initial configuration of SysV-Init Editor. <b>Press</b> "
+"the button labeled <b>Finish</b> to start editing your init-configuration.\n"
+"</p>"
+msgstr ""
+"<h1>Tebrikler!</h1>\n"
+"<p>\n"
+"SysV-Init Düzenleyicisinin ilk ayarlarını tamamladınız. Şimdi <b>Bitir</b> "
+"düğmesine tıklayarak diğer ayarları yapabilirsiniz.<b>İnit</b> "
+"yapılandırmasını başarıyla bitirdiniz.\n"
+"</p>"
+
+#. i18n: file lookandfeelconfig.ui line 70
+#: rc.cpp:117
+#, no-c-format
+msgid "C&hoose..."
+msgstr "&Seç..."
+
+#. i18n: file lookandfeelconfig.ui line 98
+#: rc.cpp:120 rc.cpp:123
+#, no-c-format
+msgid "dummy-font"
+msgstr "boş-yazıtipi"
+
+#. i18n: file lookandfeelconfig.ui line 134
+#: rc.cpp:126
+#, no-c-format
+msgid "Services:"
+msgstr "Servisler:"
+
+#. i18n: file lookandfeelconfig.ui line 150
+#: rc.cpp:129
+#, no-c-format
+msgid "Sorting numbers:"
+msgstr "Sıralama numaraları:"
+
+#. i18n: file lookandfeelconfig.ui line 166
+#: rc.cpp:132
+#, no-c-format
+msgid "&Choose..."
+msgstr "&Seç..."
+
+#. i18n: file lookandfeelconfig.ui line 203
+#: rc.cpp:135
+#, no-c-format
+msgid "Colors"
+msgstr "Renkler"
+
+#. i18n: file lookandfeelconfig.ui line 251
+#: rc.cpp:138 rc.cpp:151 rc.cpp:164 rc.cpp:174
+#, no-c-format
+msgid "Dummy"
+msgstr "Boş"
+
+#. i18n: file lookandfeelconfig.ui line 254
+#: rc.cpp:141
+#, no-c-format
+msgid "Choose a color for changed services"
+msgstr "Değiştirilen servisler için bir renk seçiniz"
+
+#. i18n: file lookandfeelconfig.ui line 258
+#: rc.cpp:144
+#, no-c-format
+msgid ""
+"<p>Use the <strong>Select Color dialog box</strong> to pick a text color for "
+"<em>services that have been changed</em> (either order/sorting number or "
+"name).</p>\n"
+"<p>Changed service entries will be distinguished by this color.</p>"
+msgstr ""
+"<p>Değişen <strong>servisler için</strong> belirlenmiş metin rengini <em>"
+"iletişim pencersinden seçerek</em>  kullan (ya düzen/sınıf numarası ya da "
+"isim).</p>\n"
+"<p>Değişmiş servis girişleri bu renkle etkin olacaklar</p>"
+
+#. i18n: file lookandfeelconfig.ui line 266
+#: rc.cpp:148
+#, no-c-format
+msgid "&Changed:"
+msgstr "&Değiştirilenler:"
+
+#. i18n: file lookandfeelconfig.ui line 302
+#: rc.cpp:154
+#, no-c-format
+msgid "Choose a color for service new to a runlevel"
+msgstr "Bir çalışma seviyesine yeni eklenen servisler için renk seçin"
+
+#. i18n: file lookandfeelconfig.ui line 306
+#: rc.cpp:157
+#, no-c-format
+msgid ""
+"<p>Use the <strong>Select Color dialog box</strong> to pick a text color for "
+"<em>services new to a runlevel</em>.</p>\n"
+"<p>New service entries will be distinguished by this color.</p>"
+msgstr ""
+"<p>Yeni <strong>servisler için</strong> belirlenmiş metin rengini <em>"
+"iletişim pencersinden seçerek</em>  kullan</p>\n"
+"<p>Yeni eklenen servis girdileri bu renk sayesinde kolayca farkedilebilir.</p>"
+
+#. i18n: file lookandfeelconfig.ui line 314
+#: rc.cpp:161
+#, no-c-format
+msgid "&New:"
+msgstr "&Yeni:"
+
+#. i18n: file lookandfeelconfig.ui line 350
+#: rc.cpp:167
+#, no-c-format
+msgid "Choose a color for changed services that are selected"
+msgstr "Seçili servisler için bir renk seçin"
+
+#. i18n: file lookandfeelconfig.ui line 354
+#: rc.cpp:170
+#, no-c-format
+msgid ""
+"<p>Use the <strong>Select Color dialog box</strong> to pick a selected text "
+"color for <em>services that have been changed</em> (either order/sorting number "
+"or name).</p>\n"
+"<p>Changed service entries will be distinguished by this color while they are "
+"selected.</p>"
+msgstr ""
+"<p>Değişen <strong>servisler için</strong> belirlenmiş metin rengini <em>"
+"iletişim pencersinden seçerek</em>  kullan (ya düzen/sınıf numarası ya da "
+"isim).</p>\n"
+"<p>Yeni eklenen servis girdileri bu renk sayesinde kolayca farkedilebilir.</p>"
+
+#. i18n: file lookandfeelconfig.ui line 382
+#: rc.cpp:177
+#, no-c-format
+msgid "Choose a color for services new to a runlevel that are selected"
+msgstr "Yeni ve seçili servisler için bir renk seçin"
+
+#. i18n: file lookandfeelconfig.ui line 386
+#: rc.cpp:180
+#, no-c-format
+msgid ""
+"<p>Use the <strong>Select Color dialog box</strong> to pick a selected text "
+"color for <em>services new to a runlevel</em>.</p>\n"
+"<p>New service entries will be distinguished by this color while they are "
+"selected.</p>"
+msgstr ""
+"<p>Yeni <strong>servisler için</strong> belirlenmiş metin rengini <em>"
+"iletişim pencersinden seçerek</em>  kullan (ya düzen/sınıf numarası ya da "
+"isim).</p>\n"
+"<p>Yeni eklenen servis girdileri bu renk sayesinde kolayca farkedilebilir.</p>"
+
+#. i18n: file lookandfeelconfig.ui line 394
+#: rc.cpp:184
+#, no-c-format
+msgid "New && &selected:"
+msgstr "Yeni ve &seçili:"
+
+#. i18n: file lookandfeelconfig.ui line 410
+#: rc.cpp:187
+#, no-c-format
+msgid "Changed && s&elected:"
+msgstr "Değişmiş ve &seçili:"
+
+#. i18n: file miscconfig.ui line 38
+#: rc.cpp:193
+#, no-c-format
+msgid "Informational Messages"
+msgstr "Bilgi Mesajı"
+
+#. i18n: file miscconfig.ui line 73
+#: rc.cpp:196
+#, no-c-format
+msgid "Show all messages again:"
+msgstr "tüm mesajları yeniden göster:"
+
+#. i18n: file miscconfig.ui line 98
+#: rc.cpp:199
+#, no-c-format
+msgid "&Show All"
+msgstr "&Tümünü Göster"
+
+#. i18n: file miscconfig.ui line 108
+#: rc.cpp:202
+#, no-c-format
+msgid "&Warn if not allowed to write configuration"
+msgstr "&Yapılandırma ayarları yazılamıyorsa uyar"
+
+#. i18n: file miscconfig.ui line 116
+#: rc.cpp:205
+#, no-c-format
+msgid "Warn &if unable to generate a sorting number"
+msgstr "&Sıralama numarası oluşturulamıyorsa uyar"
+
+#. i18n: file pathconfig.ui line 26
+#: rc.cpp:208
+#, no-c-format
+msgid "Path Configuration"
+msgstr "Yol Yapılandırması"
+
+#: trash.cpp:47 trash.cpp:48
+msgid "Drag here to remove services"
+msgstr "Servisleri kaldırmak için buraya sürükleyin"

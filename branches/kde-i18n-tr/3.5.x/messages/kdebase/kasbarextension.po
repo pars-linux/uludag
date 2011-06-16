@@ -1,0 +1,551 @@
+# translation of kasbarextension.po to Turkish
+# Copyright (C) 2003, 2004, 2007 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2001, 2004.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+# Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Adil YILDIZ <adil@linux-sevenler.org>, 2004.
+msgid ""
+msgstr ""
+"Project-Id-Version: kasbarextension\n"
+"POT-Creation-Date: 2006-08-13 04:04+0200\n"
+"PO-Revision-Date: 2007-07-05 07:05+0300\n"
+"Last-Translator: Serdar Soytetir\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: kasaboutdlg.cpp:87 kasaboutdlg.cpp:153
+msgid "About Kasbar"
+msgstr "Kasbar Hakkında"
+
+#: kasaboutdlg.cpp:156
+msgid "<qt><body><h2>Kasbar Version: %1</h2><b>KDE Version:</b> %2</body></qt>"
+msgstr "<qt><body><h2>Kasbar Sürüm: %1</h2><b>KDE Sürüm:</b> %2</body></qt>"
+
+#: kasaboutdlg.cpp:164
+msgid ""
+"<html><body>"
+"<p>Kasbar TNG began as a port of the original Kasbar applet to the (then new) "
+"extension API, but ended up as a complete rewrite because of the range of "
+"features needed by different groups of users. In the process of the rewrite all "
+"the standard features provided by the default taskbar were added, along with "
+"some more original ones such as thumbnails.</p>"
+"<p>You can find information about the latest developments in Kasbar at <a "
+"href=\"%3\">%4</a>, the Kasbar homepage.</p></body></html>"
+msgstr ""
+"<html><body>"
+"<p>Kasbar TNG eklenti API'si için orjinal Kasbar uygulamacığı bir portu olarak "
+"başladı, fakat değişik kullanıcı gruplarının geniş aralıktaki ihtiyaçlarını "
+"karşılamak için yeni baştan yazılarak tamamlandı. Öntanımlı görev çubuğundaki "
+"tüm özellikler yeniden yazılarak eklendi, daha orjinalleri de yazıldı "
+"küçükresimler gibi.</p>"
+"<p>Kasbar TNG için daha geniş bilgiye <a href=\"%3\">%4</a> "
+"adresinden ulaşabilirsiniz</p></body></html>"
+
+#: kasaboutdlg.cpp:184
+msgid "Authors"
+msgstr "Yazarlar"
+
+#: kasaboutdlg.cpp:185
+msgid "Kasbar Authors"
+msgstr "Kasbar Yazarları"
+
+#: kasaboutdlg.cpp:190
+msgid ""
+"<html><b>Richard Moore</b> <a href=\"mailto:rich@kde.org\">rich@kde.org</a>"
+"<br><b>Homepage:</b> <a href=\"http://xmelegance.org/\">"
+"http://xmelegance.org/</a>"
+"<p>Developer and maintainer of the Kasbar TNG code.</p>"
+"<hr/><b>Daniel M. Duley (Mosfet)</b> <a href=\"mailto:mosfet@kde.org\">"
+"mosfet@kde.org</a>"
+"<br><b>Homepage:</b> <a href=\"http://www.mosfet.org/\">"
+"http://www.mosfet.org/</a>"
+"<p>Mosfet wrote the original Kasbar applet on which this extension is based. "
+"There is little of the original code remaining, but the basic look in opaque "
+"mode is almost identical to this first implementation.</p></html>"
+msgstr ""
+"<html><b>Richard Moore</b><a href=\"mailto:rich@kde.org\">rich@kde.org</a>"
+"<br><b>Ev sayfası:</b> <a href=\"http://xmelegance.org/\">"
+"http://xmelegance.org/</a> "
+"<p>Kasbar TNG kodu geliştiricisi</p>"
+"<hr/><b>Daniel Duley (Mosfet)</b> <a href=\"mailto:mosfet@kde.org\">"
+"mosfet@kde.org</a>"
+"<br><b>Ev sayfası</b> <a href=\"http://www.mosfet.org/\">"
+"http://www.mosfet.org</a> "
+"<p>Mosfet bu eklentilerin taban alındığı orjinal Kasbar uygulamacığını yazdı "
+"Hala biraz orjinal kod mevcuttur, fakat saydam olamayan sade görünüm biçimi ilk "
+"yayım ile hemen hemen aynıdır.</p></html>"
+
+#: kasaboutdlg.cpp:214
+msgid "BSD License"
+msgstr "BSD Lisansı"
+
+#: kasaboutdlg.cpp:216 kasaboutdlg.cpp:242
+msgid ""
+"Kasbar may be used under the terms of either the BSD license, or the GNU Public "
+"License."
+msgstr "Kasbar BSD veya GNU GPL lisansı altında kullanılabilinir."
+
+#: kasaboutdlg.cpp:240
+msgid "GPL License"
+msgstr "GPL Lisansı"
+
+#: kasbarapp.cpp:78
+msgid "An alternative task manager"
+msgstr "Bir başka görev yönetici"
+
+#: kasgroupitem.cpp:84
+msgid "Group"
+msgstr "Grup"
+
+#: kasgroupitem.cpp:294
+msgid "&Ungroup"
+msgstr "Gr&up Boz"
+
+#: kasgroupitem.cpp:296 kastaskitem.cpp:338
+msgid "&Kasbar"
+msgstr "&Kasbar"
+
+#: kasitem.cpp:91
+msgid "Kasbar"
+msgstr "Kasbar"
+
+#: kasprefsdlg.cpp:83
+msgid "Kasbar Preferences"
+msgstr "Kasbar Tercihleri"
+
+#: kasprefsdlg.cpp:123
+msgid "Specifies the size of the task items."
+msgstr "Görev öğelerinin boyunu belirler."
+
+#: kasprefsdlg.cpp:125
+msgid "Si&ze:"
+msgstr "&Boy:"
+
+#: kasprefsdlg.cpp:128
+msgid "Enormous"
+msgstr "Dev ötesi"
+
+#: kasprefsdlg.cpp:129
+msgid "Huge"
+msgstr "Dev"
+
+#: kasprefsdlg.cpp:130
+msgid "Large"
+msgstr "Büyük"
+
+#: kasprefsdlg.cpp:131
+msgid "Medium"
+msgstr "Orta"
+
+#: kasprefsdlg.cpp:132
+msgid "Small"
+msgstr "Küçük"
+
+#: kasprefsdlg.cpp:133
+msgid "Custom"
+msgstr "Özel"
+
+#: kasprefsdlg.cpp:162
+msgid ""
+"Specifies the maximum number of items that should be placed in a line before "
+"starting a new row or column. If the value is 0 then all the available space "
+"will be used."
+msgstr ""
+"Önce yerleştirlen en yüksek parça sayısı belirt satır ya da sütunla başlat. "
+"Eğer değer 0 olursa geride kalan boş alan kullanılacak."
+
+#: kasprefsdlg.cpp:165
+msgid "Bo&xes per line: "
+msgstr "Sa&tır başına kutu: "
+
+#: kasprefsdlg.cpp:181
+msgid "&Detach from screen edge"
+msgstr "&Ekran kenarından ayır"
+
+#: kasprefsdlg.cpp:182
+msgid "Detaches the bar from the screen edge and makes it draggable."
+msgstr "Çubuğu ekranın kenarından ayırır ve taşınabilir hale getirir."
+
+#: kasprefsdlg.cpp:195
+msgid "Background"
+msgstr "Arkaplan"
+
+#: kasprefsdlg.cpp:197
+msgid "Trans&parent"
+msgstr "Ş&effaf"
+
+#: kasprefsdlg.cpp:198
+msgid "Enables pseudo-transparent mode."
+msgstr "Şeffaf kipi etkinleştirir."
+
+#: kasprefsdlg.cpp:202
+msgid "Enable t&int"
+msgstr "Ş&effaflaştırmayı etkinleştir"
+
+#: kasprefsdlg.cpp:204
+msgid "Enables tinting the background that shows through in transparent mode."
+msgstr "Arkaplan üzerinde kalan resimleri şeffaflaştırır."
+
+#: kasprefsdlg.cpp:210
+msgid "Specifies the color used for the background tint."
+msgstr "Arkaplan şeffaflaştırması için kullanılan rengi belirler."
+
+#: kasprefsdlg.cpp:214
+msgid "Tint &color:"
+msgstr "Şeffaflaştırma &rengi:"
+
+#: kasprefsdlg.cpp:223
+msgid "Specifies the strength of the background tint."
+msgstr "Arkaplan şeffaflaştırmasının oranını belirtir."
+
+#: kasprefsdlg.cpp:227
+msgid "Tint &strength: "
+msgstr "Şe&ffaflaştırma oranı: "
+
+#: kasprefsdlg.cpp:243
+msgid "Thumbnails"
+msgstr "Küçük resimler"
+
+#: kasprefsdlg.cpp:245
+msgid "Enable thu&mbnails"
+msgstr "&Küçük resimleri etkinleştir"
+
+#: kasprefsdlg.cpp:247
+msgid ""
+"Enables the display of a thumbnailed image of the window when you move your "
+"mouse pointer over an item. The thumbnails are approximate, and may not reflect "
+"the current window contents.\n"
+"\n"
+"Using this option on a slow machine may cause performance problems."
+msgstr ""
+"Bir pencere taşınırken bu pencerenin küçültülmüş bir halini de görüntüler."
+
+#: kasprefsdlg.cpp:254
+msgid "&Embed thumbnails"
+msgstr "Gömülü küçükr&esimler"
+
+#: kasprefsdlg.cpp:260
+msgid ""
+"Controls the size of the window thumbnails. Using large sizes may cause "
+"performance problems."
+msgstr ""
+"Pencere küçük resim büyüklüğünü denetler.Kullanılan büyük boylar başarım "
+"problemlerine neden olabilirler."
+
+#: kasprefsdlg.cpp:262
+msgid "Thumbnail &size: "
+msgstr "Küçük Resim &büyüklüğü: "
+
+#: kasprefsdlg.cpp:272
+msgid ""
+"Controls the frequency with which the thumbnail of the active window is "
+"updated. If the value is 0 then no updates will be performed.\n"
+"\n"
+"Using small values may cause performance problems on slow machines."
+msgstr ""
+"Aktif pencere küçük resim frekans denetimi güncellendi .Eğer değer 0 olursa "
+"güncellemeler yapılmayacaktır.\n"
+"\n"
+"Kullanılan küçük değerler yavaş makinalarda problemlere neden olabilir."
+
+#: kasprefsdlg.cpp:275
+msgid "&Update thumbnail every: "
+msgstr "&Küçük resimleri bu aralıkla güncelle: "
+
+#: kasprefsdlg.cpp:280
+msgid "seconds"
+msgstr "saniye"
+
+#: kasprefsdlg.cpp:290
+msgid "Behavior"
+msgstr "Davranış"
+
+#: kasprefsdlg.cpp:292
+msgid "&Group windows"
+msgstr "Pencereleri &grupla"
+
+#: kasprefsdlg.cpp:294
+msgid "Enables the grouping together of related windows."
+msgstr "Birbiriyle ilintili pencereleri gruplandırır."
+
+#: kasprefsdlg.cpp:299
+msgid "Show all &windows"
+msgstr "Tüm pencereleri &göster"
+
+#: kasprefsdlg.cpp:301
+msgid ""
+"Enables the display of all windows, not just those on the current desktop."
+msgstr "Geçerli masaüstünde tüm pencerelerin görüntüsünü etkinleştir."
+
+#: kasprefsdlg.cpp:305
+msgid "&Group windows on inactive desktops"
+msgstr "Etkin olmayan masaüstlerindeki pencereleri &grupla"
+
+#: kasprefsdlg.cpp:307
+msgid ""
+"Enables the grouping together of windows that are not on the current desktop."
+msgstr ""
+"Açık masaüstünde bulunmayan pencereleri birbiri ile gruplamayı etkinleştirir."
+
+#: kasprefsdlg.cpp:312
+msgid "Only show &minimized windows"
+msgstr "Sadece küçültül&müş pencereleri göster"
+
+#: kasprefsdlg.cpp:314
+msgid ""
+"When this option is checked only minimized windows are shown in the bar. This "
+"gives Kasbar similar behavior to the icon handling in older environments like "
+"CDE or OpenLook."
+msgstr ""
+"Bu seçenek seçildiğinde çubukta sadece küçültülmüş pencereler gösterilir. Bu "
+"Kasbar'a eski CDE veya OpenLook tarzı bir davranış kazandırır."
+
+#: kasprefsdlg.cpp:326
+msgid "Colors"
+msgstr "Renkler"
+
+#: kasprefsdlg.cpp:331
+msgid "Label foreground:"
+msgstr "Ön alan etiketi:"
+
+#: kasprefsdlg.cpp:338
+msgid "Label background:"
+msgstr "Arkaplan etiketi:"
+
+#: kasprefsdlg.cpp:347
+msgid "Inactive foreground:"
+msgstr "Etkin olmayan ön alan:"
+
+#: kasprefsdlg.cpp:353
+msgid "Inactive background:"
+msgstr "Etkin olmayan arkaplan:"
+
+#: kasprefsdlg.cpp:362
+msgid "Active foreground:"
+msgstr "Etkin ön alan:"
+
+#: kasprefsdlg.cpp:368
+msgid "Active background:"
+msgstr "Etkin arkaplan:"
+
+#: kasprefsdlg.cpp:376
+msgid "&Progress color:"
+msgstr "İşlem çubuğu &rengi:"
+
+#: kasprefsdlg.cpp:382
+msgid "&Attention color:"
+msgstr "Uy&arı rengi:"
+
+#: kasprefsdlg.cpp:393
+msgid "Indicators"
+msgstr "Belirteçler"
+
+#: kasprefsdlg.cpp:401
+msgid "Advanced"
+msgstr "Gelişmiş"
+
+#: kasprefsdlg.cpp:404
+msgid "Enable &startup notifier"
+msgstr "&Başlangıç uyarıcısını etkinleştir"
+
+#: kasprefsdlg.cpp:406
+msgid ""
+"Enables the display of tasks that are starting but have not yet created a "
+"window."
+msgstr ""
+"Başlatılan görüntü görevlerini etkinleştir fakat başlatılmış pencerede."
+
+#: kasprefsdlg.cpp:412
+msgid "Enable &modified indicator"
+msgstr "&Düzenlenme bildiricisini etkinleştir"
+
+#: kasprefsdlg.cpp:414
+msgid ""
+"Enables the display of a floppy disk state icon for windows containing a "
+"modified document."
+msgstr ""
+"Disk sürücü durum ikonunu görüntüsünü etkinleştir içeren pencerelerde ve "
+"değiştirilmiş belgede."
+
+#: kasprefsdlg.cpp:419
+msgid "Enable &progress indicator"
+msgstr "&İşlem göstergesini etkinleştir"
+
+#: kasprefsdlg.cpp:421
+msgid ""
+"Enables the display of a progress bar in the label of windows show are progress "
+"indicators."
+msgstr ""
+"İşlem yapan pencerelerde etiket kısmında bir işlem çubuğu göstermeyi "
+"etkinleştirir."
+
+#: kasprefsdlg.cpp:426
+msgid "Enable &attention indicator"
+msgstr "Uy&arı bildirecini etkinleştir"
+
+#: kasprefsdlg.cpp:428
+msgid ""
+"Enables the display of an icon that indicates a window that needs attention."
+msgstr ""
+"Uyarıya ihtiyacı olan pencereleri bildirmek için bir simge göstermeyi "
+"etkinleştirir."
+
+#: kasprefsdlg.cpp:432
+msgid "Enable frames for inactive items"
+msgstr "Etkin olmayan nesneler için çerçeveleri etkinleştir"
+
+#: kasprefsdlg.cpp:434
+msgid ""
+"Enables frames around inactive items, if you want the bar to disappear into the "
+"background you should probably uncheck this option."
+msgstr ""
+"Etkin olmayan nesneler etrafına çerçeve çizer, eğer çubuğun arkaplanda "
+"kaybolmasını istiyorsanız bu seçeneği seçmeyin."
+
+#: kasprefsdlg.cpp:445
+msgid ""
+"_n:  pixel\n"
+" pixels"
+msgstr " piksel"
+
+#: kastasker.cpp:154
+msgid "Show &All Windows"
+msgstr "Tüm Pencereleri &Göster"
+
+#: kastasker.cpp:161
+msgid "&Group Windows"
+msgstr "Pencereleri &Grupla"
+
+#: kastasker.cpp:168
+msgid "Show &Clock"
+msgstr "Saati &Göster"
+
+#: kastasker.cpp:174
+msgid "Show &Load Meter"
+msgstr "Yük&leme Göstergesini Göster"
+
+#: kastasker.cpp:183
+msgid "&Floating"
+msgstr "Kay&dırma"
+
+#: kastasker.cpp:190
+msgid "R&otate Bar"
+msgstr "Çevir&me Çubuğu"
+
+#: kastasker.cpp:197
+msgid "&Refresh"
+msgstr "Ye&nile"
+
+#: kastasker.cpp:201
+msgid "&Configure Kasbar..."
+msgstr "Kasbar Yapılan&dır..."
+
+#: kastasker.cpp:205
+msgid "&About Kasbar"
+msgstr "K&asbar Hakkında"
+
+#: kastaskitem.cpp:231
+msgid "All"
+msgstr "Hepsi"
+
+#: kastaskitem.cpp:336
+msgid "To &Tray"
+msgstr "Sis&tem Çekmecesine"
+
+#: kastaskitem.cpp:340
+msgid "&Properties"
+msgstr "Ö&zellik"
+
+#: kastaskitem.cpp:360
+msgid "Could Not Send to Tray"
+msgstr "Sistem Çekmecesine Gönderilemiyor"
+
+#: kastaskitem.cpp:361
+#, c-format
+msgid "%1"
+msgstr "%1"
+
+#: kastaskitem.cpp:381 kastaskitem.cpp:382
+msgid "Task Properties"
+msgstr "Görev Tercihleri"
+
+#: kastaskitem.cpp:389 kastaskitem.cpp:464
+msgid "General"
+msgstr "Genel"
+
+#: kastaskitem.cpp:390
+msgid "Task"
+msgstr "Görev"
+
+#: kastaskitem.cpp:392
+msgid "Item"
+msgstr "Nesne"
+
+#: kastaskitem.cpp:393
+msgid "Bar"
+msgstr "Çubuk"
+
+#: kastaskitem.cpp:396
+msgid "NET"
+msgstr "NET"
+
+#: kastaskitem.cpp:420
+msgid "Property"
+msgstr "Özellik"
+
+#: kastaskitem.cpp:421
+msgid "Type"
+msgstr "Tür"
+
+#: kastaskitem.cpp:422
+msgid "Value"
+msgstr "Değer"
+
+#: kastaskitem.cpp:468
+msgid ""
+"<html><body><b>Name</b>: $name"
+"<br><b>Visible name</b>: $visibleName"
+"<br>"
+"<br><b>Iconified</b>: $iconified"
+"<br><b>Minimized</b>: $minimized"
+"<br><b>Maximized</b>: $maximized"
+"<br><b>Shaded</b>: $shaded"
+"<br><b>Always on top</b>: $alwaysOnTop"
+"<br>"
+"<br><b>Desktop</b>: $desktop"
+"<br><b>All desktops</b>: $onAllDesktops"
+"<br>"
+"<br><b>Iconic name</b>: $iconicName"
+"<br><b>Iconic visible name</b>: $visibleIconicName"
+"<br>"
+"<br><b>Modified</b>: $modified"
+"<br><b>Demands attention</b>: $demandsAttention"
+"<br></body></html>"
+msgstr ""
+"<html><body><b>Ad</b>: $name"
+"<br><b>Görünen Ad</b>: $visibleName"
+"<br>"
+"<br><b>Simge</b>: $iconified"
+"<br><b>Küçültülmüş</b>: $minimized"
+"<br><b>Büyütümüş</b>: $maximized"
+"<br><b>Gölgelenmiş</b>: $shaded "
+"<br><b>Herzaman en üstte</b>: $alwaysOnTop"
+"<br>"
+"<br><b>Masaüstü</b>: $desktop"
+"<br><b>Tüm Masaüstleri</b>: $onAllDesktops"
+"<br>"
+"<br><b>Simgesel Ad</b>: $iconicName"
+"<br><b>Simgesel Görünen Ad</b>: $visibleIconicName"
+"<br>"
+"<br><b>Değiştirilme</b>: $modified"
+"<br><b>Uyarı Sorma</b>: $demandsAttention"
+"<br></body></html>"
+
+#: kastaskitem.cpp:504
+msgid "NET WM Specification Info"
+msgstr "NET WM Tanımlama bilgisi"

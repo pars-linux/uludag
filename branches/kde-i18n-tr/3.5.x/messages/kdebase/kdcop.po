@@ -1,0 +1,175 @@
+# translation of kdcop.po to Turkish
+# translation of kdcop.po to
+# Copyright (C) 2003, 2007 Free Software Foundation, Inc.
+#
+# Görkem Çetin, 2000.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdcop\n"
+"POT-Creation-Date: 2007-05-15 02:14+0200\n"
+"PO-Revision-Date: 2007-07-09 23:02+0300\n"
+"Last-Translator: Serdar Soytetir\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#. i18n: file kdcopui.rc line 4
+#: rc.cpp:3
+#, no-c-format
+msgid "&Extra"
+msgstr "&Ek"
+
+#. i18n: file kdcopview.ui line 33
+#: rc.cpp:9
+#, no-c-format
+msgid "&Search:"
+msgstr "&Ara:"
+
+#. i18n: file kdcopview.ui line 78
+#: rc.cpp:12
+#, no-c-format
+msgid "none"
+msgstr "hiçbiri"
+
+#. i18n: file kdcopview.ui line 108
+#: rc.cpp:15
+#, no-c-format
+msgid "Returned data type:"
+msgstr "Dönen veri türü:"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: kdcop.cpp:20
+msgid "KDCOP"
+msgstr "KDCOP"
+
+#: kdcop.cpp:21
+msgid "A graphical DCOP browser/client"
+msgstr "Grafik arayüzlü DCOP gösterici/alıcı"
+
+#: kdcopwindow.cpp:226
+msgid "%1 (default)"
+msgstr "%1 (öntanımlı)"
+
+#: kdcopwindow.cpp:288
+msgid "Welcome to the KDE DCOP browser"
+msgstr "KDE DCOP tarayıcısına hoşgeldiniz"
+
+#: kdcopwindow.cpp:293
+msgid "Application"
+msgstr "Uygulama"
+
+#: kdcopwindow.cpp:325
+msgid "&Execute"
+msgstr "Ç&alıştır"
+
+#: kdcopwindow.cpp:335
+msgid "Execute the selected DCOP call."
+msgstr "Seçili DCOP çağrısını çalıştır."
+
+#: kdcopwindow.cpp:337
+msgid "Language Mode"
+msgstr "Dil Kipi"
+
+#: kdcopwindow.cpp:345
+msgid "Set the current language export."
+msgstr "Güncel dil aktarımını tanımla."
+
+#: kdcopwindow.cpp:364
+msgid "DCOP Browser"
+msgstr "DCOP Gösterici"
+
+#: kdcopwindow.cpp:411
+msgid "No parameters found."
+msgstr "Hiç parametre bulunmadı."
+
+#: kdcopwindow.cpp:411
+msgid "DCOP Browser Error"
+msgstr "DCOP Gösterici Hatası"
+
+#: kdcopwindow.cpp:427
+#, c-format
+msgid "Call Function %1"
+msgstr "%1 Fonksiyonunu Çağır"
+
+#: kdcopwindow.cpp:431
+msgid "Name"
+msgstr "Ad"
+
+#: kdcopwindow.cpp:432
+msgid "Type"
+msgstr "Tip"
+
+#: kdcopwindow.cpp:433
+msgid "Value"
+msgstr "Değer"
+
+#: kdcopwindow.cpp:640
+msgid "X"
+msgstr "X"
+
+#: kdcopwindow.cpp:641
+msgid "Y"
+msgstr "Y"
+
+#: kdcopwindow.cpp:671 kdcopwindow.cpp:798
+#, c-format
+msgid "Cannot handle datatype %1"
+msgstr "%1 veri türü üzerinde işlem yapılamıyor"
+
+#: kdcopwindow.cpp:833
+msgid "DCOP call failed"
+msgstr "DCOP çağrısında hata"
+
+#: kdcopwindow.cpp:835
+#, c-format
+msgid "<p>DCOP call failed.</p>%1"
+msgstr "<p>DCOP çağrısında hata oluştu</p>%1"
+
+#: kdcopwindow.cpp:846
+msgid ""
+"<p>Application is still registered with DCOP; I do not know why this call "
+"failed.</p>"
+msgstr ""
+"<p>Uygulama hala DCOP ile kayıtlı durumda, bu çağrının neden başarısız olduğunu "
+"bilmiyorum.</p>"
+
+#: kdcopwindow.cpp:858
+msgid "<p>The application appears to have unregistered with DCOP.</p>"
+msgstr "<p>Uygulama DCOP'la olan kaydını kopardı.</p>"
+
+#: kdcopwindow.cpp:874
+msgid "DCOP call %1 executed"
+msgstr "%1 DCOP çağrısı çalıştırıldı"
+
+#: kdcopwindow.cpp:883
+msgid "<strong>%1</strong>"
+msgstr "<strong>%1</strong>"
+
+#: kdcopwindow.cpp:890
+#, c-format
+msgid "Unknown type %1."
+msgstr "Bilinmeyen tür: %1"
+
+#: kdcopwindow.cpp:896
+msgid "No returned values"
+msgstr "Geri dönen değer yok"
+
+#: kdcopwindow.cpp:1101
+#, c-format
+msgid "Do not know how to demarshal %1"
+msgstr "%1'i nasıl kullanabileceğimi bilmiyorum"

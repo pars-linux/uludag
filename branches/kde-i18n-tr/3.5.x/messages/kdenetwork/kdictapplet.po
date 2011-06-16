@@ -1,0 +1,48 @@
+# translation of kdictapplet.po to Turkish
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Görkem Çetin, <gorkem@kde.org> 2001
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdictapplet\n"
+"POT-Creation-Date: 2004-10-12 01:17+0200\n"
+"PO-Revision-Date: 2003-09-12 05:02+0300\n"
+"Last-Translator: Ömer Fadıl USTA <omer_fad@hotmail.com>\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.2\n"
+
+#: kdictapplet.cpp:92
+msgid "Dictionary:"
+msgstr "Sözlük:"
+
+#: kdictapplet.cpp:98 kdictapplet.cpp:107 kdictapplet.cpp:146
+#: kdictapplet.cpp:155
+msgid "Look up a word or phrase with Kdict"
+msgstr "Kdict ile bir kelimeyi veya deyimi arat"
+
+#: kdictapplet.cpp:110
+msgid "C"
+msgstr "Ş"
+
+#: kdictapplet.cpp:116
+msgid "Define selected text"
+msgstr "Seçili metni tanımlayın"
+
+#: kdictapplet.cpp:118
+msgid "D"
+msgstr "K"
+
+#: kdictapplet.cpp:125
+msgid "Define word/phrase"
+msgstr "Kelime tanımla"
+
+#: kdictapplet.cpp:127
+msgid "M"
+msgstr "E"
+
+#: kdictapplet.cpp:134
+msgid "Find matching definitions"
+msgstr "Eşleşen tanımları bul"

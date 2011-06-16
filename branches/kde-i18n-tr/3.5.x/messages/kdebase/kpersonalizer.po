@@ -1,0 +1,570 @@
+# translation of kpersonalizer.po to Türkçe
+# translation of kpersonalizer.po to Turkish
+# kde
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2001,2002.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Bekir SONAT <cortexbs@yahoo.com>, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: kpersonalizer\n"
+"POT-Creation-Date: 2005-09-03 02:36+0200\n"
+"PO-Revision-Date: 2005-07-12 17:11+0300\n"
+"Last-Translator: Bekir SONAT <cortexbs@yahoo.com>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: kstylepage.cpp:50
+msgid "Style"
+msgstr "Stil"
+
+#: kstylepage.cpp:51
+msgid "Description"
+msgstr "Açıklama"
+
+#: kstylepage.cpp:55
+msgid "Plastik"
+msgstr "Plastik"
+
+#: kstylepage.cpp:55
+msgid "Light"
+msgstr "Hafif"
+
+#: kstylepage.cpp:56
+msgid "KDE default style"
+msgstr "KDE öntanımlı stil"
+
+#: kstylepage.cpp:59
+msgid "KDE Classic"
+msgstr "Klasik KDE"
+
+#: kstylepage.cpp:60
+msgid "Classic KDE style"
+msgstr "Klasik KDE stili"
+
+#: kstylepage.cpp:63
+msgid "Keramik"
+msgstr "Keramik"
+
+#: kstylepage.cpp:64
+msgid "The previous default style"
+msgstr "Önceki öntanımlı stil"
+
+#: kstylepage.cpp:67
+msgid "Sunshine"
+msgstr "Gün doğuşu"
+
+#: kstylepage.cpp:68
+msgid "A very common desktop"
+msgstr "Sık kullanılan bir masaüstü"
+
+#: kstylepage.cpp:71
+msgid "Redmond"
+msgstr "Redmond"
+
+#: kstylepage.cpp:72
+msgid "A style from the northwest of the USA"
+msgstr "Kuzey batıdan gelen bir stil"
+
+#: kstylepage.cpp:75
+msgid "Platinum"
+msgstr "Platin"
+
+#: kstylepage.cpp:76
+msgid "The platinum style"
+msgstr "Platin biçemi"
+
+#: kcountrypage.cpp:48
+msgid "<h3>Welcome to KDE %1</h3>"
+msgstr "<h3>KDE %1 sürümüne hoş geldiniz</h3>"
+
+#: kcountrypage.cpp:90 kcountrypage.cpp:117 kfindlanguage.cpp:82
+msgid "without name"
+msgstr "isimsiz"
+
+#: kcountrypage.cpp:142
+msgid "All"
+msgstr "Tümü"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: main.cpp:27 main.cpp:38
+msgid "KPersonalizer"
+msgstr "KPersonalizer"
+
+#: main.cpp:31
+msgid "Personalizer is restarted by itself"
+msgstr "Personalizer kendi kendine yeniden başlatıldı"
+
+#: main.cpp:32
+msgid "Personalizer is running before KDE session"
+msgstr "Personalizer bir KDE oturumundan önce başlatıldı"
+
+#: kpersonalizer.cpp:67
+msgid "Step 1: Introduction"
+msgstr "1. Adım: Giriş"
+
+#: kpersonalizer.cpp:71
+msgid "Step 2: I want it my Way..."
+msgstr "2. Adım: Kendime Göre Bir Masaüstü İstiyorum..."
+
+#: kpersonalizer.cpp:75
+msgid "Step 3: Eyecandy-O-Meter"
+msgstr "3. Adım: Göz zevki her şeyden önce gelir"
+
+#: kpersonalizer.cpp:79
+msgid "Step 4: Everybody loves Themes"
+msgstr "4. Adım: Herkes temaları sever"
+
+#: kpersonalizer.cpp:83
+msgid "Step 5: Time to Refine"
+msgstr "5. Adım: Son ayarlar"
+
+#: kpersonalizer.cpp:86
+msgid "S&kip Wizard"
+msgstr "&Sihirbazı Atla"
+
+#: kpersonalizer.cpp:152
+msgid ""
+"<p>Are you sure you want to quit the Desktop Settings Wizard?</p>"
+"<p>The Desktop Settings Wizard helps you to configure the KDE desktop to your "
+"personal liking.</p>"
+"<p>Click <b>Cancel</b> to return and finish your setup.</p>"
+msgstr ""
+"<p>Gerçekten Masaüstü Ayar Sihirbazından çıkmak istiyor musunuz?</p>"
+"<p>Masaüstü Ayarları Sihirbazı, KDE masaüstü ortamını kolayca istediğiniz "
+"şekliyle ayarlamanızı sağlar. </p>"
+"<p>Geri dönmek ve ayarları bitirmek için <b>İptal</b> düğmesine tıklayın.</p>"
+
+#: kpersonalizer.cpp:156
+msgid ""
+"<p>Are you sure you want to quit the Desktop Settings Wizard?</p>"
+"<p>If yes, click <b>Quit</b> and all changes will be lost."
+"<br>If not, click <b>Cancel</b> to return and finish your setup.</p>"
+msgstr ""
+"<p>Gerçekten Masaüstü Ayar Sihirbazından çıkmak istiyor musunuz?</p>"
+"Çıkmak istiyorsanız, <b>Çık</b> düğmesine tıklayın. Ayarlarınız silinecektir."
+"<br>Devam etmek istiyorsanız <b>İptal</b> düğmesine tıklayın.</p>"
+
+#: kpersonalizer.cpp:160
+msgid "All Changes Will Be Lost"
+msgstr "Tüm Değişiklikler Silinecektir"
+
+#: kospage.cpp:352
+msgid ""
+"<b>Window activation:</b> <i>Focus on click</i>"
+"<br><b>Titlebar double-click:</b> <i>Shade window</i>"
+"<br><b>Mouse selection:</b> <i>Single click</i>"
+"<br><b>Application startup notification:</b> <i>busy cursor</i>"
+"<br><b>Keyboard scheme:</b> <i>KDE default</i>"
+"<br>"
+msgstr ""
+"<br><b>Pencere etkileşimi:</b> <i>Tıkladığında odakla</i>"
+"<br><b>Başlık çubuğu çift tıklama:</b> <i>Pencereyi topla</i>"
+"<br><b>Fare seçimi:</b> <i>Tek tıklama</i>"
+"<br><b>Uygulama başlama bildirisi:</b> <i>meşgul imleç</i>"
+"<br><b>Klavye düzeni:</b> <i>Öntanımlı KDE</i>"
+"<br>"
+
+#: kospage.cpp:364
+msgid ""
+"<b>Window activation:</b> <i>Focus follows mouse</i>"
+"<br><b>Titlebar double-click:</b> <i>Shade window</i>"
+"<br><b>Mouse selection:</b> <i>Single click</i>"
+"<br><b>Application startup notification:</b> <i>none</i>"
+"<br><b>Keyboard scheme:</b> <i>UNIX</i>"
+"<br>"
+msgstr ""
+"<b>Pencere etkileşimi:</b> <i>Odak fareyi izlesin</i>"
+"<br><b>Başlık çubuğu çift tıklama:</b> <i>Pencereyi gölgele</i>"
+"<br><b>Fare seçimi:</b> <i>Tek tıklama</i>"
+"<br><b>Uygulama başlama bildirisi:</b> <i>Hiçbiri</i>"
+"<br><b>Klavye düzeni:</b> <i>UNIX</i>"
+"<br>"
+
+#: kospage.cpp:376
+msgid ""
+"<b>Window activation:</b> <i>Focus on click</i>"
+"<br><b>Titlebar double-click:</b> <i>Maximize window</i>"
+"<br><b>Mouse selection:</b> <i>Double click</i>"
+"<br><b>Application startup notification:</b> <i>busy cursor</i>"
+"<br><b>Keyboard scheme:</b> <i>Windows</i>"
+"<br>"
+msgstr ""
+"<br><b>Pencere etkileşimi:</b> <i>Tıkladığında odakla</i>"
+"<br><b>Başlık çubuğu çift tıklama:</b> <i>Pencereyi büyüt</i>"
+"<br><b>Fare seçimi:</b> <i>Çift tıklama</i>"
+"<br><b>Uygulama başlama bildirisi:</b> <i>meşgul imleç</i>"
+"<br><b>Klavye düzeni:</b> <i>Windows</i>"
+"<br>"
+
+#: kospage.cpp:388
+msgid ""
+"<b>Window activation:</b> <i>Focus on click</i>"
+"<br><b>Titlebar double-click:</b> <i>Shade window</i>"
+"<br><b>Mouse selection:</b> <i>Single click</i>"
+"<br><b>Application startup notification:</b> <i>none</i>"
+"<br><b>Keyboard scheme:</b> <i>Mac</i>"
+"<br>"
+msgstr ""
+"<br><b>Pencere etkileşimi:</b> <i>Tıkladığında odakla</i>"
+"<br><b>Başlık çubuğu çift tıklama:</b> <i>Pencereyi topla</i>"
+"<br><b>Fare seçimi:</b> <i>Tek tıklama</i>"
+"<br><b>Uygulama başlama bildirisi:</b> <i>hiçbiri</i>"
+"<br><b>Klavye düzeni:</b> <i>Mac</i>"
+"<br>"
+
+#: keyecandypage.cpp:67
+msgid "Features"
+msgstr "Özellikler"
+
+#: keyecandypage.cpp:71
+msgid "Desktop Wallpaper"
+msgstr "Masaüstü Duvar Kağıdı"
+
+#: keyecandypage.cpp:73
+msgid "Window Moving/Resizing Effects"
+msgstr "Pencere Taşıma/Yeniden Boyutlandırma Efektleri"
+
+#: keyecandypage.cpp:75
+msgid "Display Contents in Moving/Resizing Windows"
+msgstr "Pencereleri Taşırken/Yeniden Boyutlarken İçeriğini Göster"
+
+#: keyecandypage.cpp:78
+msgid "File Manager Background Picture"
+msgstr "Dosya Yöneticisi Arkaplan Resmi"
+
+#: keyecandypage.cpp:80
+msgid "Panel Background Picture"
+msgstr "Panel Arkaplan Resmi"
+
+#: keyecandypage.cpp:83
+msgid "Panel Icon Popups"
+msgstr "Panel Simge Açılımları"
+
+#: keyecandypage.cpp:85
+msgid "Icon Highlighting"
+msgstr "Simge Aydınlatması"
+
+#: keyecandypage.cpp:87
+msgid "File Manager Icon Animation"
+msgstr "Dosya Yöneticisi Arkaplan Resmi"
+
+#: keyecandypage.cpp:90
+msgid "Sound Theme"
+msgstr "Ses Teması"
+
+#: keyecandypage.cpp:96
+msgid "Large Desktop Icons"
+msgstr "Büyük Masaüstü Simgeleri"
+
+#: keyecandypage.cpp:98
+msgid "Large Panel Icons"
+msgstr "Büyük Panel Simgeleri"
+
+#: keyecandypage.cpp:102
+msgid "Smoothed Fonts (Antialiasing)"
+msgstr "Daha Yumuşak Yazıtipleri"
+
+#: keyecandypage.cpp:106
+msgid "Preview Images"
+msgstr "Resimleri Önizle"
+
+#: keyecandypage.cpp:108
+msgid "Icons on Buttons"
+msgstr "Düğmeler Üzerinde Simgeler"
+
+#: keyecandypage.cpp:112
+msgid "Animated Combo Boxes"
+msgstr "Canlandırmalı Çoklu Kutular"
+
+#: keyecandypage.cpp:116
+msgid "Fading Tooltips"
+msgstr "Yavaş Geçişen Balon İpuçları"
+
+#: keyecandypage.cpp:119
+msgid "Preview Text Files"
+msgstr "Metin Dosyalarını Önizle"
+
+#: keyecandypage.cpp:122
+msgid "Fading Menus"
+msgstr "Yavaş Geçişen Menüler"
+
+#: keyecandypage.cpp:124
+msgid "Preview Other Files"
+msgstr "Diğer Dosyaları Önizle"
+
+#. i18n: file kcountrypagedlg.ui line 64
+#: rc.cpp:3
+#, no-c-format
+msgid "Please choose your language:"
+msgstr "Lütfen dil seçiminizi yapın:"
+
+#. i18n: file kcountrypagedlg.ui line 82
+#: rc.cpp:6
+#, no-c-format
+msgid ""
+"<p>This Personalizer will help you configure the basic setup of your KDE "
+"desktop in five quick, easy steps. You can set things like your country (for "
+"date and time formats, etc.), language, desktop behavior and more.</p>\n"
+"<p>You will be able to change all the settings later using the KDE Control "
+"Center. You may choose to postpone your personalization until later by clicking "
+"on <b>Skip Wizard</b>. Any changes made so far, will then be reversed, except "
+"for the country and language settings. However, new users are encouraged to use "
+"this simple method.</p>\n"
+"<p>If you already like your KDE configuration and wish to quit the Wizard, "
+"click <b>Skip Wizard</b>, then <b>Quit</b>.</p>"
+msgstr ""
+"<p> Bu masaüstü ayarları sihirbazı, temel KDE ayarlarınızı toplam 5 küçük "
+"adımda tamamlayacaktır. İsteğinize bağlı olarak ülke (dil olarak Türkçe, para "
+"birimi olarak TL gibi), masaüstü davranışı ve diğer pek çok ayrıntıyı seçme "
+"imkanına sahipsiniz.</p>\n"
+"<p>Burada yaptığınız ayarlar daha sonra KDE Kontrol Merkezi altından da "
+"düzenlenebilir. <b>Sihirbazı Atla</b> düğmesine tıklayarak bu aşamayı "
+"geçebilir, sihirbazı istediğiniz zaman yeniden çalıştırabilirsiniz. Ancak yeni "
+"kullanıcıların bu basit yöntemi uygulamalarını öneriyoruz.</p>\n"
+"<p>Eğer güncel KDE yapılandırmasını zaten beğeniyor ve bu programdan çıkmak "
+"istiyorsanız, önce <b>Sihirbazı Atla</b>, sonra da <b>Çık</b> "
+"düğmesine tıklamanız yeterlidir. </p>"
+
+#. i18n: file kcountrypagedlg.ui line 100
+#: rc.cpp:11
+#, no-c-format
+msgid "<h3>Welcome to KDE %VERSION%!</h3>"
+msgstr "<h3>KDE %VERSION sürümüne hoşgeldiniz</h3>"
+
+#. i18n: file kcountrypagedlg.ui line 148
+#: rc.cpp:14
+#, no-c-format
+msgid "Please choose your country:"
+msgstr "Lütfen ülkenizi seçin:"
+
+#. i18n: file keyecandypagedlg.ui line 64
+#: rc.cpp:17
+#, no-c-format
+msgid ""
+"<P>KDE offers many visually appealing special effects, such as smoothed fonts, "
+"previews in the file manager and animated menus. All this beauty, however, "
+"comes at a small performance cost. </P>\n"
+"If you have a fast, new processor, you might want to turn them all on, but for "
+"those of us with slower processors, starting off with less eye candy helps to "
+"keep your desktop more responsive."
+msgstr ""
+"<p>KDE, yumuşak yazıtipleri, dosya yöneticisi Konqueror ile dosya önizlemeleri "
+"ve canlandırmalı menüler gibi pek çok görsel efekt barındırır. Tüm bu efektlere "
+"sahip olmak için iyi bir işlemciniz olmalıdır.</p>\n"
+"Eğer hızlı, yeni bir işlemciye sahipseniz tüm bu efektleri açabilirsiniz. Ancak "
+"daha yavaş işlemci kullanıyorsanız, daha az albenili bir masaüstü ile "
+"başlamanızı öneriyoruz."
+
+#. i18n: file keyecandypagedlg.ui line 96
+#: rc.cpp:21
+#, no-c-format
+msgid ""
+"Slow Processor\n"
+"(fewer effects)"
+msgstr ""
+"Yavaş İşlemci\n"
+"(daha az efekt)"
+
+#. i18n: file keyecandypagedlg.ui line 107
+#: rc.cpp:25
+#, no-c-format
+msgid "Slow processors perform poorly with effects"
+msgstr "Yavaş işlemciler, görsel efektlere karşı ağır kalabilir."
+
+#. i18n: file keyecandypagedlg.ui line 137
+#: rc.cpp:28
+#, no-c-format
+msgid ""
+"Fast Processor\n"
+"(more effects)"
+msgstr ""
+"Hızlı İşlemci\n"
+"(daha çok efekt)"
+
+#. i18n: file keyecandypagedlg.ui line 145
+#: rc.cpp:32
+#, no-c-format
+msgid "Fast processors can support all effects"
+msgstr "Hızlı işlemciler tüm efektleri destekler"
+
+#. i18n: file keyecandypagedlg.ui line 183
+#: rc.cpp:35
+#, no-c-format
+msgid "Show &Details >>"
+msgstr "&Ayrıntıları Göster >>"
+
+#. i18n: file kospagedlg.ui line 60
+#: rc.cpp:38
+#, no-c-format
+msgid "Description:"
+msgstr "Açıklama:"
+
+#. i18n: file kospagedlg.ui line 68
+#: rc.cpp:41
+#, no-c-format
+msgid "Select Preferred System Behavior"
+msgstr "Tercih Ettiğiniz Sistem Davranışını Seçin"
+
+#. i18n: file kospagedlg.ui line 79
+#: rc.cpp:44
+#, no-c-format
+msgid "KDE (TM)"
+msgstr "KDE (TM)"
+
+#. i18n: file kospagedlg.ui line 90
+#: rc.cpp:47
+#, no-c-format
+msgid "UNIX (R)"
+msgstr "UNIX (R)"
+
+#. i18n: file kospagedlg.ui line 98
+#: rc.cpp:50
+#, no-c-format
+msgid "Microsoft Windows (R)"
+msgstr "Microsoft Windows (R)"
+
+#. i18n: file kospagedlg.ui line 106
+#: rc.cpp:53
+#, no-c-format
+msgid "Apple MacOS (R)"
+msgstr "Apple MacOS (R)"
+
+#. i18n: file kospagedlg.ui line 126
+#: rc.cpp:56
+#, no-c-format
+msgid ""
+"<b>System Behavior</b>"
+"<br>\n"
+"Graphical User Interfaces behave differently on various Operating Systems.\n"
+"KDE allows you to customize its behavior according to your needs."
+msgstr ""
+"<b>Sistem Davranışı</b>"
+"<br>\n"
+"Grafiksel arayüzler, farklı işletim sistemleri altında farklı davranabilir. \n"
+"KDE, isteklerinize uygun olarak bu davranışları düzenleyebilir."
+
+#. i18n: file kospagedlg.ui line 168
+#: rc.cpp:61
+#, no-c-format
+msgid ""
+"For motion impaired users, KDE provides keyboard gestures to activate special "
+"keyboard settings."
+msgstr ""
+"Hareket özürlü kullanıcıları düşünerek, KDE, özel klavye ayarlamalarını "
+"etkinleştirmek için klavye kolaylıkları sağlar."
+
+#. i18n: file kospagedlg.ui line 179
+#: rc.cpp:64
+#, no-c-format
+msgid "Enable accessibility related keyboard gestures"
+msgstr "Erişilebilirlik ile ilgili klavye kolaylıkları."
+
+#. i18n: file krefinepagedlg.ui line 33
+#: rc.cpp:67
+#, no-c-format
+msgid ""
+"<h3>Finished</h3>\n"
+"<p>After closing this dialog you can always restart this Wizard by choosing the "
+"entry <b>Desktop Settings Wizard</b> from the Settings menu.</p>"
+msgstr ""
+"<h3>Tamamlandı</h3>"
+"<p>Bu pencereyi kapattıktan sonra, sihirbazı istediğiniz bir zamanda Ayarlar "
+"menüsünden \"Masaüstü Ayarlar Sihirbazı\" girdisini seçerek "
+"çalıştırabilirsiniz.</p>"
+
+#. i18n: file krefinepagedlg.ui line 81
+#: rc.cpp:71
+#, no-c-format
+msgid ""
+"You can refine the settings you made by starting the KDE Control Center by "
+"choosing the entry <b>Control Center</b> in the K menu."
+msgstr ""
+"KDE Ayarlar menüsünden <b>Kontrol Merkezi</b>'ni seçerek KDE Kontrol Merkezi'ni "
+"çalıştırabilir ve ek ayarlamalar yapabilirsiniz."
+
+#. i18n: file krefinepagedlg.ui line 133
+#: rc.cpp:74
+#, no-c-format
+msgid "You can also start the KDE Control Center using the button below."
+msgstr ""
+"Ayrıca KDE Kontrol Merkezini, aşağıdaki düğme yardımıyla da "
+"çalıştırabilirsiniz."
+
+#. i18n: file krefinepagedlg.ui line 203
+#: rc.cpp:77
+#, no-c-format
+msgid "&Launch KDE Control Center"
+msgstr "&KDE Kontrol Merkezini Çalıştır"
+
+#. i18n: file kstylepagedlg.ui line 32
+#: rc.cpp:80
+#, no-c-format
+msgid ""
+"Please choose the way your computer should look by selecting one of the items "
+"below."
+msgstr ""
+"Lütfen bilgisayarınızın nasıl görüneceğini aşağıdaki öğelerden birisini seçerek "
+"belirleyin."
+
+#. i18n: file kstylepagedlg.ui line 89
+#: rc.cpp:83
+#, no-c-format
+msgid "Preview"
+msgstr "Önizleme"
+
+#. i18n: file stylepreview.ui line 42
+#: rc.cpp:86
+#, no-c-format
+msgid "Tab 1"
+msgstr "1. Sekme"
+
+#. i18n: file stylepreview.ui line 61
+#: rc.cpp:89
+#, no-c-format
+msgid "Button"
+msgstr "Düğme"
+
+#. i18n: file stylepreview.ui line 72
+#: rc.cpp:92
+#, no-c-format
+msgid "ComboBox"
+msgstr "Çoklu Kutu"
+
+#. i18n: file stylepreview.ui line 92
+#: rc.cpp:95
+#, no-c-format
+msgid "Button Group"
+msgstr "Düğme Grubu"
+
+#. i18n: file stylepreview.ui line 103
+#: rc.cpp:98 rc.cpp:101
+#, no-c-format
+msgid "RadioButton"
+msgstr "Radyo Düğmesi"
+
+#. i18n: file stylepreview.ui line 136
+#: rc.cpp:104
+#, no-c-format
+msgid "CheckBox"
+msgstr "Onay Kutusu"
+
+#. i18n: file stylepreview.ui line 165
+#: rc.cpp:107
+#, no-c-format
+msgid "Tab 2"
+msgstr "2. Sekme"

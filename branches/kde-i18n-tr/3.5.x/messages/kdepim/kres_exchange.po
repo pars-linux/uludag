@@ -1,0 +1,60 @@
+# translation of kres_exchange.po to Türkçe
+# Görkem Çetin <gorkem@kde.org>, 2004.
+msgid ""
+msgstr ""
+"Project-Id-Version: kres_exchange\n"
+"POT-Creation-Date: 2006-03-25 04:00+0100\n"
+"PO-Revision-Date: 2004-10-23 12:35+0300\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9\n"
+
+#: resourceexchangeconfig.cpp:42
+msgid "Host:"
+msgstr "Makine:"
+
+#: resourceexchangeconfig.cpp:47
+msgid "Port:"
+msgstr "Port:"
+
+#: resourceexchangeconfig.cpp:52
+msgid "Account:"
+msgstr "Hesap:"
+
+#: resourceexchangeconfig.cpp:57
+msgid "Password:"
+msgstr "Parola:"
+
+#: resourceexchangeconfig.cpp:63
+msgid "Determine mailbox &automatically"
+msgstr "&E-posta kutusunu otomatik bul"
+
+#: resourceexchangeconfig.cpp:68
+msgid "Mailbox URL:"
+msgstr "Posta kutusu adresi:"
+
+#: resourceexchangeconfig.cpp:71
+msgid "&Find"
+msgstr "&Bul"
+
+#: resourceexchangeconfig.cpp:75
+msgid "Cache timeout:"
+msgstr "Önbellek zaman aşımı:"
+
+#: resourceexchangeconfig.cpp:142
+msgid "Could not determine mailbox URL, please check your account settings."
+msgstr ""
+"E-posta kutusunun adresi bulunamadı. Lütfen hesap ayarlarınızı yeniden gözden "
+"geçirin."
+
+#: resourceexchangeconfig.cpp:150
+msgid ""
+"_n:  second\n"
+" seconds"
+msgstr ""
+
+#~ msgid " seconds"
+#~ msgstr " saniye"

@@ -1,0 +1,868 @@
+# translation of kcmcrypto.po to Türkçe
+# translation of kcmcrypto.po to
+# translation of kcmcrypto.po to Turkish
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# Togan Müftüoğlu <toganm@yahoo.com>, 2000.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Görkem Çetin <gorkem@gelecek.com.tr>, 2001.
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmcrypto\n"
+"POT-Creation-Date: 2007-07-30 01:13+0200\n"
+"PO-Revision-Date: 2005-07-17 21:54+0200\n"
+"Last-Translator: Adil YILDIZ <adil@kde.org.tr>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: crypto.cpp:107
+msgid "%1 (%2 of %3 bits)"
+msgstr "%1 (%2 / %3 bit)"
+
+#: crypto.cpp:226
+msgid ""
+"<h1>Crypto</h1> This module allows you to configure SSL for use with most KDE "
+"applications, as well as manage your personal certificates and the known "
+"certificate authorities."
+msgstr ""
+"<h1>Şifreleme</h1> Bu modül SSL'in ayarlanması ile pek çok KDE uygulamasının "
+"kullanılmasını ve kişisel sertifikalarınızla bilinen sertifika otoritelerinin "
+"denetimini sağlar."
+
+#: crypto.cpp:239
+msgid "kcmcrypto"
+msgstr "kcmcrypto"
+
+#: crypto.cpp:239
+msgid "KDE Crypto Control Module"
+msgstr "KDE Şifreleme Kontrol Modülü"
+
+#: crypto.cpp:241
+msgid "(c) 2000 - 2001 George Staikos"
+msgstr "(c) 2000 - 2001 George Staikos"
+
+#: crypto.cpp:267
+msgid "Enable &TLS support if supported by the server"
+msgstr "Sunucu tarafından desteklendiğinde &TLS desteğini etkinleştir"
+
+#: crypto.cpp:270
+msgid ""
+"TLS is the newest revision of the SSL protocol. It integrates better with other "
+"protocols and has replaced SSL in protocols such as POP3 and SMTP."
+msgstr ""
+"TLS, SSL protokolünün en yeni versiyonudur.  Diğer protokollerle birleşerek "
+"daha çok gelişti ve SSL'nin POP3 ve HTTP gibi protokollerde yerini aldı."
+
+#: crypto.cpp:275
+msgid "Enable SSLv&2"
+msgstr "SSLv&2'yi etkinleştir"
+
+#: crypto.cpp:278
+msgid ""
+"SSL v2 is the second revision of the SSL protocol. It is most common to enable "
+"v2 and v3."
+msgstr ""
+"SSLv2 SSL protokolünün ikinci versiyonudur. Pek çok durumda V2 ve V3 aktif "
+"kılınır."
+
+#: crypto.cpp:282
+msgid "Enable SSLv&3"
+msgstr "SSLv&3'ü etkinleştir"
+
+#: crypto.cpp:285
+msgid ""
+"SSL v3 is the third revision of the SSL protocol. It is most common to enable "
+"v2 and v3."
+msgstr ""
+"SSLv3 SSL protokolünün üçüncü versiyonudur. Pek çok durumda V2 ve V3 aktif "
+"kılınır."
+
+#: crypto.cpp:291
+msgid "SSLv2 Ciphers to Use"
+msgstr "Kullanılacak SSLv2 Şifrelemesi"
+
+#: crypto.cpp:292
+msgid ""
+"Select the ciphers you wish to enable when using the SSL v2 protocol. The "
+"actual protocol used will be negotiated with the server at connection time."
+msgstr ""
+"SSL v2 protokolünü kullanırken aktif kılınacak şifrelemeleri seçiniz. "
+"Kullanılacak gerçek protokol bağlantı anında sunucu ile belirlenecektir"
+
+#: crypto.cpp:302
+msgid ""
+"SSL ciphers cannot be configured because this module was not linked with "
+"OpenSSL."
+msgstr "SSL şifrelemeleri ayarlanamıyor, çünkü bu modül OpenSSL ilebağlanmamış"
+
+#: crypto.cpp:317
+msgid "SSLv3 Ciphers to Use"
+msgstr "Kullanılacak SSLv3 Şifrelemesi"
+
+#: crypto.cpp:318
+msgid ""
+"Select the ciphers you wish to enable when using the SSL v3 protocol. The "
+"actual protocol used will be negotiated with the server at connection time."
+msgstr ""
+"SSL v3 protokolünü kullanırken aktif kılınacak şifrelemeleri seçiniz. "
+"Kullanılacak gerçek protokol bağlantı anında sunucu ile belirlenecektir"
+
+#: crypto.cpp:332
+msgid "Cipher Wizard"
+msgstr "Şifre Sihirbazı"
+
+#: crypto.cpp:335
+msgid ""
+"<qt>Use these preconfigurations to more easily configure the SSL encryption "
+"settings. You can choose among the following modes: "
+"<ul>"
+msgstr ""
+"<qt>SSL şifrelemeyi daha kolay yapılandırmak için bu önyapılandırmaları kullan. "
+"Aşağıdaki biçimlerden seçebilirsiniz: "
+"<ul>"
+
+#: crypto.cpp:338
+msgid "Most Compatible"
+msgstr "En Uyumlu"
+
+#: crypto.cpp:339
+msgid ""
+"<li><b>Most Compatible:</b> Select the settings found to be most "
+"compatible.</li>"
+msgstr "<li><b>En Uyumlu:</B> En uygun bulunan ayarları seç.</li>"
+
+#: crypto.cpp:340
+msgid "US Ciphers Only"
+msgstr "Sadece US Şifreleri"
+
+#: crypto.cpp:341
+msgid ""
+"<li><b>US Ciphers Only:</b> Select only the US strong (&gt;= 128 bit) "
+"encryption ciphers.</li>"
+msgstr ""
+"<li><b>Sadece US Şifreleri</b> Sadece güçlü şifrelemeyi (>= 128 bit) seç.</li>"
+
+#: crypto.cpp:342
+msgid "Export Ciphers Only"
+msgstr "Sadece Şifrelemeleri Ver"
+
+#: crypto.cpp:343
+msgid ""
+"<li><b>Export Ciphers Only:</b> Select only the weak ciphers (&lt;= 56 "
+"bit).</li>"
+msgstr ""
+"<li><b>Sadece Şifreleri Ver:</b>Sadece zayıf şifrelemeyi seç (&lt;= 56 "
+"bit).</li>"
+
+#: crypto.cpp:344
+msgid "Enable All"
+msgstr "Tümünü Etkinleştir"
+
+#: crypto.cpp:345
+msgid "<li><b>Enable All:</b> Select all SSL ciphers and methods.</li></ul>"
+msgstr ""
+"<li><b>Hepsini Etkinleştir</b> Tüm SSL şifrelerini ve yöntemlerini seç.</li>"
+"</ul>"
+
+#: crypto.cpp:356
+msgid "Warn on &entering SSL mode"
+msgstr "SSL kipine geçildiğinde &uyar"
+
+#: crypto.cpp:359
+msgid "If selected, you will be notified when entering an SSL enabled site"
+msgstr "Eğer seçilmişse SSL kullanan siteye girdiğinizde uyarılacaksınız"
+
+#: crypto.cpp:363
+msgid "Warn on &leaving SSL mode"
+msgstr "SSL kipinden &ayrılırken uyar"
+
+#: crypto.cpp:366
+msgid "If selected, you will be notified when leaving an SSL based site."
+msgstr "Eğer seçilis ise SSL destekli siteden ayrılırken uyarılacaksınız"
+
+#: crypto.cpp:370
+msgid "Warn on sending &unencrypted data"
+msgstr "Şifrelenmemiş &bilgi yollarken uyar"
+
+#: crypto.cpp:373
+msgid ""
+"If selected, you will be notified before sending unencrypted data via a web "
+"browser."
+msgstr ""
+"Eğer seçili ise web tarayıcınızdan şifrelenmemiş bilgi yollanırken sizi uyarır"
+
+#: crypto.cpp:378
+msgid "Warn on &mixed SSL/non-SSL pages"
+msgstr "SSL/SSLsiz &karışık sayfalarda uyar"
+
+#: crypto.cpp:381
+msgid ""
+"If selected, you will be notified if you view a page that has both encrypted "
+"and non-encrypted parts."
+msgstr ""
+"Eğer seçili ise hem şifreli hemde şifrelenmemiş kısımları olan sayfayı izlerken "
+"sizi uyarır"
+
+#: crypto.cpp:394
+msgid "Path to OpenSSL Shared Libraries"
+msgstr "Paylaştırılmış OpenSSL kütüphaneleriniz için yol"
+
+#: crypto.cpp:398
+msgid "&Test"
+msgstr "&Dene"
+
+#: crypto.cpp:408
+msgid "Use EGD"
+msgstr "EGD kullan"
+
+#: crypto.cpp:410
+msgid "Use entropy file"
+msgstr "Entropi dosyası kullan"
+
+#: crypto.cpp:418 crypto.cpp:2278
+msgid "Path to EGD:"
+msgstr "EGD yolu:"
+
+#: crypto.cpp:424
+msgid ""
+"If selected, OpenSSL will be asked to use the entropy gathering daemon (EGD) "
+"for initializing the pseudo-random number generator."
+msgstr ""
+"Bu seçenek seçiliyse, pseudo-rastgele numara makinesi için EGD(entropy "
+"gathering daemon)'nin kullanımı amacıyla OpenSSL sorgulanacaktır."
+
+#: crypto.cpp:427
+msgid ""
+"If selected, OpenSSL will be asked to use the given file as entropy for "
+"initializing the pseudo-random number generator."
+msgstr ""
+"Bu seçenek seçiliyse, pseudo-rastgele numara makinesi için EGD(entropy "
+"gathering daemon)'nin kullanımı amacıyla OpenSSL sorgulanacaktır."
+
+#: crypto.cpp:430
+msgid ""
+"Enter the path to the socket created by the entropy gathering daemon (or the "
+"entropy file) here."
+msgstr ""
+"Entropy Gathering daemon tarafından oluşturulan soketin dizin yolunu Buraya "
+"Giriniz."
+
+#: crypto.cpp:433
+msgid "Click here to browse for the EGD socket file."
+msgstr "EGD soket dosyasını bulmak için buraya tıklayın."
+
+#: crypto.cpp:451
+msgid ""
+"This list box shows which certificates of yours KDE knows about. You can easily "
+"manage them from here."
+msgstr ""
+"Bu liste kutusu KDE tarayıcınızın hangi sertifikalarınızı bildiğini gösterir. "
+"Onları buradan kolayca kontrol edebilirsiniz"
+
+#: crypto.cpp:455 crypto.cpp:615 crypto.cpp:731
+msgid "Common Name"
+msgstr "Ortak İsim"
+
+#: crypto.cpp:456
+msgid "Email Address"
+msgstr "E-posta Adresi"
+
+#: crypto.cpp:459 crypto.cpp:734
+msgid "I&mport..."
+msgstr "&Al..."
+
+#: crypto.cpp:463 crypto.cpp:618
+msgid "&Export..."
+msgstr "&Gönder"
+
+#: crypto.cpp:468 crypto.cpp:573
+msgid "Remo&ve"
+msgstr "Çı&kar"
+
+#: crypto.cpp:473
+msgid "&Unlock"
+msgstr "K&ilidi Aç"
+
+#: crypto.cpp:478
+msgid "Verif&y"
+msgstr "&Onayla"
+
+#: crypto.cpp:483
+msgid "Chan&ge Password..."
+msgstr "&Parolayı Değiştir..."
+
+#: crypto.cpp:493 crypto.cpp:648
+msgid "This is the information known about the owner of the certificate."
+msgstr "Bu sertifikanın sahibi hakkında bilinen bilgidir."
+
+#: crypto.cpp:495 crypto.cpp:650
+msgid "This is the information known about the issuer of the certificate."
+msgstr "Bu sertifikanın tirajı hakkında bilinen bilgidir."
+
+#: crypto.cpp:498 crypto.cpp:653
+msgid "Valid from:"
+msgstr "Geçerlilik süresi başlangıcı:"
+
+#: crypto.cpp:499 crypto.cpp:654
+msgid "Valid until:"
+msgstr "Geçerlilik süresi sonu:"
+
+#: crypto.cpp:504 crypto.cpp:663
+msgid "The certificate is valid starting at this date."
+msgstr "Bu sertifika bu tarihte başlarken geçerli."
+
+#: crypto.cpp:506 crypto.cpp:665
+msgid "The certificate is valid until this date."
+msgstr "Bu sertifika bu tarihe kadar geçerli."
+
+#: crypto.cpp:508 crypto.cpp:701 crypto.cpp:765
+msgid "MD5 digest:"
+msgstr "MD5 dağıtımı:"
+
+#: crypto.cpp:511 crypto.cpp:704 crypto.cpp:768
+msgid "A hash of the certificate used to identify it quickly."
+msgstr "Kimliklendirmek için kullanılan bir sertifika parçası."
+
+#: crypto.cpp:515
+msgid "On SSL Connection..."
+msgstr "SSL Bağlantıda ....."
+
+#: crypto.cpp:516
+msgid "&Use default certificate"
+msgstr "Ö&ntanımlı sertifikayı kullan...."
+
+#: crypto.cpp:517
+msgid "&List upon connection"
+msgstr "&Bağlantı anında listele "
+
+#: crypto.cpp:518
+msgid "&Do not use certificates"
+msgstr "&Sertifikaları kullanma"
+
+#: crypto.cpp:522 crypto.cpp:592 crypto.cpp:708 crypto.cpp:772
+msgid ""
+"SSL certificates cannot be managed because this module was not linked with "
+"OpenSSL."
+msgstr "SSL sertifikaları kullanılamaz ,çünkü bu modül Open SSL ilebağlanmamış"
+
+#: crypto.cpp:537
+msgid "Default Authentication Certificate"
+msgstr "Öntanımlı Kimlik Onaylama Sertifikası"
+
+#: crypto.cpp:538
+msgid "Default Action"
+msgstr "Öntanımlı Eylem"
+
+#: crypto.cpp:539
+msgid "&Send"
+msgstr "&Gönder"
+
+#: crypto.cpp:540 crypto.cpp:691
+msgid "&Prompt"
+msgstr "&Sor"
+
+#: crypto.cpp:541
+msgid "Do &not send"
+msgstr "Gönder&me"
+
+#: crypto.cpp:543
+msgid "Default certificate:"
+msgstr "Öntanımlı sertifika"
+
+#: crypto.cpp:550
+msgid "Host authentication:"
+msgstr "Makine kimlik onayı:"
+
+#: crypto.cpp:554
+msgid "Host"
+msgstr "Makine"
+
+#: crypto.cpp:555
+msgid "Certificate"
+msgstr "Sertifika"
+
+#: crypto.cpp:556 crypto.cpp:688
+msgid "Policy"
+msgstr "Plan"
+
+#: crypto.cpp:558
+msgid "Host:"
+msgstr "Makine:"
+
+#: crypto.cpp:559
+msgid "Certificate:"
+msgstr "Sertifika:"
+
+#: crypto.cpp:566
+msgid "Action"
+msgstr "Eylem"
+
+#: crypto.cpp:567 crypto.h:185
+msgid "Send"
+msgstr "Gönder"
+
+#: crypto.cpp:568 crypto.h:191
+msgid "Prompt"
+msgstr "Sor"
+
+#: crypto.cpp:569
+msgid "Do not send"
+msgstr "Gönderme"
+
+#: crypto.cpp:572
+msgid "Ne&w"
+msgstr "&Yeni"
+
+#: crypto.cpp:611
+msgid ""
+"This list box shows which site and person certificates KDE knows about. You can "
+"easily manage them from here."
+msgstr ""
+"Bu liste kutusu KDE tarayıcınızın hangi site ve kişi sertifikalarını bildiğini "
+"gösterir. Onları buradan kolayca kontrol edebilirsiniz"
+
+#: crypto.cpp:614 crypto.cpp:729
+msgid "Organization"
+msgstr "Organizasyon"
+
+#: crypto.cpp:621
+msgid ""
+"This button allows you to export the selected certificate to a file of various "
+"formats."
+msgstr ""
+"Bu düğme seçilen sertifikayı çeşitli biçimlerde dosya olarak ihraç etmeyi "
+"sağlar."
+
+#: crypto.cpp:628
+msgid ""
+"This button removes the selected certificate from the certificate cache."
+msgstr ""
+"Bu düğme seçilen sertifikayı sertifika önbelleğinden çıkartmayı sağlar."
+
+#: crypto.cpp:632
+msgid "&Verify"
+msgstr "&Onayla"
+
+#: crypto.cpp:635
+msgid "This button tests the selected certificate for validity."
+msgstr "Bu düğme seçilen sertifikaya geçerlilik testi uygular."
+
+#: crypto.cpp:668
+msgid "Cache"
+msgstr "Önbellek"
+
+#: crypto.cpp:669
+msgid "Permanentl&y"
+msgstr "Sürekl&i"
+
+#: crypto.cpp:670
+msgid "&Until"
+msgstr "&Geçerlilik süresi sınırı"
+
+#: crypto.cpp:681
+msgid "Select here to make the cache entry permanent."
+msgstr "Sürekli önbellek girdisini oluşturmak için burayı seçin."
+
+#: crypto.cpp:683
+msgid "Select here to make the cache entry temporary."
+msgstr "Geçici önbellek girdisini oluşturmak için burayı seçin."
+
+#: crypto.cpp:685
+msgid "The date and time until the certificate cache entry should expire."
+msgstr ""
+"Sertifika önbelleği girdisinden önceki tarih ve saat sona ermiş olacaktır."
+
+#: crypto.cpp:689
+msgid "Accep&t"
+msgstr "Ka&bul et"
+
+#: crypto.cpp:690
+msgid "Re&ject"
+msgstr "R&ed"
+
+#: crypto.cpp:695
+msgid "Select this to always accept this certificate."
+msgstr "Bu sertifikayı herzaman kabul etmek için bunu seçin."
+
+#: crypto.cpp:697
+msgid "Select this to always reject this certificate."
+msgstr "Bu sertifikayı herzaman reddetmek için bunu seçin."
+
+#: crypto.cpp:699
+msgid ""
+"Select this if you wish to be prompted for action when receiving this "
+"certificate."
+msgstr "Bu sertifikayı alırken hızlı olmak için bunu seçin."
+
+#: crypto.cpp:725
+msgid ""
+"This list box shows which certificate authorities KDE knows about. You can "
+"easily manage them from here."
+msgstr ""
+"Bu liste kutusu KDE tarayıcınızın hangi sertifika onaylayıcılarını bildiğini "
+"gösterir. Onları buradan kolayca kontrol edebilirsiniz"
+
+#: crypto.cpp:730
+msgid "Organizational Unit"
+msgstr "Organizasyonal Birim"
+
+#: crypto.cpp:743
+msgid "Res&tore"
+msgstr "&Geriye al "
+
+#: crypto.cpp:753
+msgid "Accept for site signing"
+msgstr "Site imzalaması için kabul et"
+
+#: crypto.cpp:754
+msgid "Accept for email signing"
+msgstr "E-posta imzalaması için kabul et"
+
+#: crypto.cpp:755
+msgid "Accept for code signing"
+msgstr "Kod imzalaması için kabul et"
+
+#: crypto.cpp:787
+msgid "Warn on &self-signed certificates or unknown CA's"
+msgstr ""
+"&Kişisel imzalanmış veya bilinmeyen CA (Sertifika Otoritesi) halinde uyar"
+
+#: crypto.cpp:789
+msgid "Warn on &expired certificates"
+msgstr "Geç&miş sertifikalarda uyar"
+
+#: crypto.cpp:791
+msgid "Warn on re&voked certificates"
+msgstr "İ&ptal edilmiş sertifikalarda uyar"
+
+#: crypto.cpp:801
+msgid ""
+"This list box shows which sites you have decided to accept a certificate from "
+"even though the certificate might fail the validation procedure."
+msgstr ""
+"Bu liste kutusu hangi sitelerden onaylama prosedürü başarısız olsa da sertifika "
+"kabul ettiğinizi gösterir"
+
+#: crypto.cpp:809
+msgid "&Add"
+msgstr "&Ekle"
+
+#: crypto.cpp:822
+msgid ""
+"These options are not configurable because this module was not linked with "
+"OpenSSL."
+msgstr "Bu seçenekler ayarlanamıyor çünkü bu modül Open SSL ile bağlanmamış"
+
+#: certexport.cpp:93 certexport.cpp:108 certexport.cpp:116 crypto.cpp:832
+#: crypto.cpp:1039 crypto.cpp:1341 crypto.cpp:1370 crypto.cpp:1387
+#: crypto.cpp:1389 crypto.cpp:1572 crypto.cpp:1590 crypto.cpp:1642
+#: crypto.cpp:1674 crypto.cpp:1676 crypto.cpp:1870 crypto.cpp:1890
+#: crypto.cpp:1956 crypto.cpp:1963 crypto.cpp:1978 crypto.cpp:2030
+msgid "SSL"
+msgstr "SSL"
+
+#: crypto.cpp:834 crypto.cpp:2258 crypto.cpp:2266 crypto.cpp:2270
+msgid "OpenSSL"
+msgstr "SSL"
+
+#: crypto.cpp:836
+msgid "Your Certificates"
+msgstr "Sertifikalarınız"
+
+#: crypto.cpp:837
+msgid "Authentication"
+msgstr "Kimlik Denetimi"
+
+#: crypto.cpp:838
+msgid "Peer SSL Certificates"
+msgstr "Karşıdakinin SSL Sertifikaları"
+
+#: crypto.cpp:839
+msgid "SSL Signers"
+msgstr "SSL İmzalayanlar"
+
+#: crypto.cpp:842
+msgid "Validation Options"
+msgstr "Onaylama Seçenekleri"
+
+#: crypto.cpp:1035
+msgid ""
+"If you do not select at least one SSL algorithm, either SSL will not work or "
+"the application may be forced to choose a suitable default."
+msgstr ""
+"Eğer en az bir SSL algoritması seçmezseniz, ya SSl çalışmayacaktır yada "
+"uygulama öntanımlı bir seçeneği kullanacaktır."
+
+#: crypto.cpp:1087
+msgid "If you do not select at least one cipher, SSLv2 will not work."
+msgstr "Eğer en az bir şifreleme seçmezseniz SSLv2 çalışmayacaktır."
+
+#: crypto.cpp:1089
+msgid "SSLv2 Ciphers"
+msgstr "SSLv2 Şifreleri"
+
+#: crypto.cpp:1106
+msgid "If you do not select at least one cipher, SSLv3 will not work."
+msgstr "Eğer en az bir şifreleme seçmezseniz SSLv3 çalışmayacaktır."
+
+#: crypto.cpp:1108
+msgid "SSLv3 Ciphers"
+msgstr "SSLv3 şifreleri"
+
+#: crypto.cpp:1340
+msgid "Could not open the certificate."
+msgstr "Sertifikala açılamıyor."
+
+#: crypto.cpp:1370
+msgid "Error obtaining the certificate."
+msgstr "&Sertifikaları kullanma"
+
+#: crypto.cpp:1387 crypto.cpp:1674
+msgid "This certificate passed the verification tests successfully."
+msgstr "Bu sertifika doğrulama testini başarıyla geçti."
+
+#: crypto.cpp:1389 crypto.cpp:1676
+msgid "This certificate has failed the tests and should be considered invalid."
+msgstr "Bu sertifika testleri geçemedi ve geçersiz olarak dikkate alınmalı."
+
+#: crypto.cpp:1566
+msgid "Certificate password"
+msgstr "Sertifika parolası"
+
+#: crypto.cpp:1572
+msgid "The certificate file could not be loaded. Try a different password?"
+msgstr "Sertifika dosyası yüklenemedi. Farklı bir parola denensin mi?"
+
+#: crypto.cpp:1572
+msgid "Try"
+msgstr "Dene"
+
+#: crypto.cpp:1572
+msgid "Do Not Try"
+msgstr "Deneme"
+
+#: crypto.cpp:1590
+msgid ""
+"A certificate with that name already exists. Are you sure that you wish to "
+"replace it?"
+msgstr "Aynı isimle bir sertifika zaten var. Üzerine yazmak istiyor musunuz?"
+
+#: crypto.cpp:1623 crypto.cpp:1655 crypto.cpp:1703
+msgid "Enter the certificate password:"
+msgstr "Sertifika parolasını girin:"
+
+#: crypto.cpp:1629 crypto.cpp:1661 crypto.cpp:1709 crypto.cpp:1807
+msgid "Decoding failed. Please try again:"
+msgstr "Kod açmada (şifre çözmede) hata oluştu. Lütfen yeniden deneyin:"
+
+#: crypto.cpp:1642
+msgid "Export failed."
+msgstr "Aktarmada hata oluştu."
+
+#: crypto.cpp:1802
+msgid "Enter the OLD password for the certificate:"
+msgstr "Sertifikanın eski parolasını girin:"
+
+#: crypto.cpp:1815
+msgid "Enter the new certificate password"
+msgstr "Sertifikanın yeni parolasını girin"
+
+#: crypto.cpp:1867 crypto.cpp:1962
+msgid "This is not a signer certificate."
+msgstr "Bu imzalayanın sertifikası değil."
+
+#: crypto.cpp:1887 crypto.cpp:1977
+msgid "You already have this signer certificate installed."
+msgstr "Bu imzalayan kurumun sertifikası zaten kurulu."
+
+#: crypto.cpp:1955
+msgid "The certificate file could not be loaded."
+msgstr "Sertifika dosyası yüklenemedi."
+
+#: crypto.cpp:2006
+msgid "Do you want to make this certificate available to KMail as well?"
+msgstr "Bu sertifakanın KMail içinde geçerli olmasını istiyormusunuz?"
+
+#: crypto.cpp:2006
+msgid "Make Available"
+msgstr "Mümkün Hale Getir"
+
+#: crypto.cpp:2006
+msgid "Do Not Make Available"
+msgstr "Mümkün Hale Getirme"
+
+#: crypto.cpp:2012
+msgid ""
+"Could not execute Kleopatra. You might have to install or update the kdepim "
+"package."
+msgstr ""
+"Kleopatra çalıştıırlamıyor. kdepim paketini yüklemeli veya güncellemelisiniz."
+
+#: crypto.cpp:2030
+msgid ""
+"This will revert your certificate signers database to the KDE default.\n"
+"This operation cannot be undone.\n"
+"Are you sure you wish to continue?"
+msgstr ""
+"Sertifika imzalayanların veritabanı KDE öntanımlı değerlerine geri\n"
+"döndürülecektir. Bu işlemi geri alamazsınız.\n"
+"Devam etmek istiyor musunuz?"
+
+#: crypto.cpp:2030
+msgid "Revert"
+msgstr "Geri al"
+
+#: crypto.cpp:2256 crypto.cpp:2264
+msgid "Failed to load OpenSSL."
+msgstr "OpenSSL yüklenemedi."
+
+#: crypto.cpp:2257
+msgid "libssl was not found or successfully loaded."
+msgstr "libssl bulunamadı ya da yüklenemedi."
+
+#: crypto.cpp:2265
+msgid "libcrypto was not found or successfully loaded."
+msgstr "libcrypto bulunamadı ya da başarıyla yüklenemedi."
+
+#: crypto.cpp:2270
+msgid "OpenSSL was successfully loaded."
+msgstr "OpenSSL başarıyla yüklendi."
+
+#: crypto.cpp:2289
+msgid "Path to entropy file:"
+msgstr "Entropi dosyasının yolu:"
+
+#: crypto.cpp:2302
+msgid "Personal SSL"
+msgstr "Kişisel SSL"
+
+#: crypto.cpp:2303
+msgid "Server SSL"
+msgstr "SSL Sunucu"
+
+#: crypto.cpp:2304
+msgid "S/MIME"
+msgstr "S/MIME"
+
+#: crypto.cpp:2305
+msgid "PGP"
+msgstr "PGP"
+
+#: crypto.cpp:2306
+msgid "GPG"
+msgstr "GPG"
+
+#: crypto.cpp:2307
+msgid "SSL Personal Request"
+msgstr "Kişisel SSL İsteği"
+
+#: crypto.cpp:2308
+msgid "SSL Server Request"
+msgstr "SSL Sunucu İsteği"
+
+#: crypto.cpp:2309
+msgid "Netscape SSL"
+msgstr "Netscape SSL"
+
+#: crypto.cpp:2310
+msgid ""
+"_: Server certificate authority\n"
+"Server CA"
+msgstr "Sunucu CA"
+
+#: crypto.cpp:2311
+msgid ""
+"_: Personal certificate authority\n"
+"Personal CA"
+msgstr "Kişisel CA"
+
+#: crypto.cpp:2312
+msgid ""
+"_: Secure MIME certificate authority\n"
+"S/MIME CA"
+msgstr "MIME CA"
+
+#: crypto.cpp:2404
+msgid "None"
+msgstr "Hiçbiri"
+
+#: certexport.cpp:44
+msgid "X509 Certificate Export"
+msgstr "X509 Sertifika İhracı"
+
+#: certexport.cpp:46
+msgid "Format"
+msgstr "Biçim"
+
+#: certexport.cpp:47
+msgid "&PEM"
+msgstr "&PEM"
+
+#: certexport.cpp:48
+msgid "&Netscape"
+msgstr "&Netscape"
+
+#: certexport.cpp:49
+msgid "&DER/ASN1"
+msgstr "&DER/ASN1"
+
+#: certexport.cpp:50
+msgid "&Text"
+msgstr "&Metin"
+
+#: certexport.cpp:54
+msgid "Filename:"
+msgstr "Dosya adı:"
+
+#: certexport.cpp:65
+msgid "&Export"
+msgstr "&Aktar"
+
+#: certexport.cpp:93
+msgid "Internal error. Please report to kfm-devel@kde.org."
+msgstr "İç hata.  Lütfen kfm-devel@kde.org adresine hatayı bildirin."
+
+#: certexport.cpp:108
+msgid "Error converting the certificate into the requested format."
+msgstr "Sertifikayı belirtilen biçime dönüştürürken hata."
+
+#: certexport.cpp:116
+msgid "Error opening file for output."
+msgstr "Dosyaya yazdırılırken bir hata oluştu."
+
+#: kdatetimedlg.cpp:39
+msgid "Date & Time Selector"
+msgstr "Tarih ve Saat Seçici"
+
+#: kdatetimedlg.cpp:44
+msgid "Hour:"
+msgstr "Saat:"
+
+#: kdatetimedlg.cpp:49
+msgid "Minute:"
+msgstr "Dakika:"
+
+#: kdatetimedlg.cpp:54
+msgid "Second:"
+msgstr "Saniye:"
+
+#: crypto.h:188
+#, fuzzy
+msgid "Don't Send"
+msgstr "Gönderme"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Ömer Fadıl USTA"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "omer_fad@hotmail.com"

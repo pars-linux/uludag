@@ -1,0 +1,1079 @@
+# translation of kviewshell.po to Türkçe
+# translation of kviewshell.po to
+# translation of kviewshell.po to Turkish
+# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2002, 2003.
+#  Tuncay YENİAY <tuncayyeniay@mynet.com>,2002.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Alper Sen <aalpersen@gmail.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kviewshell\n"
+"POT-Creation-Date: 2008-07-08 01:19+0200\n"
+"PO-Revision-Date: 2005-07-18 13:37+0300\n"
+"Last-Translator: Alper Sen <aalpersen@gmail.com>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Tuncay YENİAY Alper Şen"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "tuncayyeniay@mynet.com aalpersen@gmail.com"
+
+#: documentWidget.cpp:547
+#, c-format
+msgid "Link to %1"
+msgstr "%1 konumuna bağ"
+
+#: empty_multipage.cpp:42
+msgid "Empty Multipage"
+msgstr "Boş Çoklu Sayfa"
+
+#: empty_multipage.cpp:45 kviewpart.cpp:1412
+msgid "Copyright (c) 2005 Wilfried Huss"
+msgstr "Her Hakkı Saklıdır (c) 2005 Wilfried Huss"
+
+#: kmultipage.cpp:70
+msgid "Thumbnails"
+msgstr "Küçük Resimler"
+
+#: kmultipage.cpp:158
+msgid "Save File As"
+msgstr "Dosyayı Farklı Kaydet"
+
+#: kmultipage.cpp:169
+msgid ""
+"The file %1\n"
+"exists. Shall I overwrite that file?"
+msgstr ""
+"%1 dosyası zaten var.\n"
+"Üzerine yazılsın mı?"
+
+#: kmultipage.cpp:170 kmultipage.cpp:1916
+msgid "Overwrite File"
+msgstr "Dosyanın Üzerine Yaz"
+
+#: kmultipage.cpp:170 kmultipage.cpp:1916
+#, fuzzy
+msgid "Overwrite"
+msgstr "Gözden Geçirmek"
+
+#: kmultipage.cpp:770
+#, c-format
+msgid "Print %1"
+msgstr "%1 yazdır"
+
+#: kmultipage.cpp:1422 kmultipage.cpp:1564
+msgid "Search interrupted"
+msgstr "Kesintisiz ara"
+
+#: kmultipage.cpp:1430 kmultipage.cpp:1572
+msgid "Search page %1 of %2"
+msgstr "Arama sayfası %2 sayfanın %1 sayfası"
+
+#: kmultipage.cpp:1475
+msgid ""
+"<qt>The search string <strong>%1</strong> could not be found by the end of the "
+"document. Should the search be restarted from the beginning of the "
+"document?</qt>"
+msgstr ""
+"<qt><strong>%1</strong> arama dizgisi belgenin sonuna kadar bulunamadı. Aramayı "
+"dosyanın başından olacak şekilde tekrar başlatayım mı?</qt>"
+
+#: kmultipage.cpp:1478 kmultipage.cpp:1620
+msgid "Text Not Found"
+msgstr "Metin Bulunamadı"
+
+#: kmultipage.cpp:1502 kmultipage.cpp:1644
+msgid "<qt>The search string <strong>%1</strong> could not be found.</qt>"
+msgstr "<qt><strong>%1</strong> arama dizgisi bulunamadı.</qt>"
+
+#: kmultipage.cpp:1617
+msgid ""
+"<qt>The search string <strong>%1</strong> could not be found by the beginning "
+"of the document. Should the search be restarted from the end of the "
+"document?</qt>"
+msgstr ""
+"<qt><strong>%1</strong> arama dizgisi belgenin başında bulunamadı. Aramayı "
+"dosyanın sonunda olacak şekilde tekrar başlatayım mı?</qt>"
+
+#: kmultipage.cpp:1713
+#, c-format
+msgid "Reloading file %1"
+msgstr "%1 dosyası tekrar yükleniyor"
+
+#: kmultipage.cpp:1749
+#, c-format
+msgid "Loading file %1"
+msgstr "%1 dosyası yükleniyor"
+
+#: kmultipage.cpp:1906
+msgid "*.txt|Plain Text (Latin 1) (*.txt)"
+msgstr ""
+
+#: kmultipage.cpp:1906
+#, fuzzy
+msgid "Export File As"
+msgstr "Dosyayı Farklı Kaydet"
+
+#: kmultipage.cpp:1915
+#, fuzzy
+msgid ""
+"The file %1\n"
+"exists. Do you want to overwrite that file?"
+msgstr ""
+"%1 dosyası zaten var.\n"
+"Üzerine yazılsın mı?"
+
+#: kmultipage.cpp:1926
+msgid "Exporting to text..."
+msgstr ""
+
+#: kmultipage.cpp:1926
+msgid "Abort"
+msgstr ""
+
+#: kprintDialogPage_pageoptions.cpp:26
+#, fuzzy
+msgid "Page Size & Placement"
+msgstr "Sayfa Boyutu ve Yerleşimi"
+
+#: kprintDialogPage_pageoptions.cpp:42
+msgid "Center the page on paper"
+msgstr "Sayfayı kağıt üzerinde ortala"
+
+#: kprintDialogPage_pageoptions.cpp:43
+msgid "If this option is enabled, the pages are centered on the paper."
+msgstr "Eğer bu seçenek aktif ise sayfalar kağıt üzerinde ortalanır."
+
+#: kprintDialogPage_pageoptions.cpp:44
+msgid ""
+"<qt>"
+"<p>If this option is enabled, the pages will be printed centered on the paper; "
+"this makes more visually-appealing printouts.</p>"
+"<p>If the option is not enabled, all pages will be placed in the top-left "
+"corner of the paper.</p></qt>"
+msgstr ""
+"<qt>"
+"<p>Eğer bu seçenek etkin ise sayfalar kağıda ortalanarak basılır; bu görsel "
+"olarak daha çekici baskı almayı sağlar.</p>"
+"<p>Eğer bu seçenek etkin değil ise sayfalar kağıdın sol üst köşesine gelecek "
+"şekilde basılır.</p></qt>"
+
+#: kprintDialogPage_pageoptions.cpp:52
+msgid "Automatically choose landscape or portrait orientation"
+msgstr "Yatay ya da düşey yönlendirmeyi otomatik seç"
+
+#: kprintDialogPage_pageoptions.cpp:53
+msgid ""
+"If this option is enabled, some pages might be rotated to better fit the paper "
+"size."
+msgstr ""
+"Eğer bu seçenek etkinleştirilirse bazı sayfaların kağıda daha iyi sığması için "
+"yönü değiştirilebilir."
+
+#: kprintDialogPage_pageoptions.cpp:54
+msgid ""
+"<qt>"
+"<p>If this option is enabled, landscape or portrait orientation are "
+"automatically chosen on a page-by-page basis. This makes better use of the "
+"paper and gives more visually-appealing printouts.</p>"
+"<p><b>Note:</b> This option overrides the Portrait/Landscape option chosen in "
+"the printer properties. If this option is enabled, and if the pages in your "
+"document have different sizes, then some pages might be rotated while others "
+"are not.</p></qt>"
+msgstr ""
+"<qt>"
+"<p>Eğer bu seçenek etkinleştirilirse, düşey ya da yatay yönlendirme her sayfaya "
+"göre otomatik olarak seçilecek. Bu kağıdın daha iyi kullanılmasını sağlar ve "
+"daha görsel çekici baskı sağlar.</p>"
+"<p><b>Not:</b> Bu seçenek yazıcı seçeneklerindeki Düşey/Yatay seçeneğinin "
+"üzerine yazar. Bu seçenek etkinleştirilir ve belgeleriniz farklı boyutlara "
+"sahipse o zaman bazı sayfalar döndürülürken bazıları döndürülmez.</p></qt>"
+
+#: kprintDialogPage_pageoptions.cpp:73
+msgid "Shrink oversized pages to fit paper size"
+msgstr "Büyük sayfaları kağıda sığacak şekilde küçült"
+
+#: kprintDialogPage_pageoptions.cpp:74
+msgid ""
+"If this option is enabled, large pages that would not fit the printer's paper "
+"size will be shrunk."
+msgstr ""
+"Eğer bu seçenek etkinleştirilirse normalde yazıcının kağıdına sığmayacak büyük "
+"sayfalar küçültülür."
+
+#: kprintDialogPage_pageoptions.cpp:75
+msgid ""
+"<qt>"
+"<p>If this option is enabled, large pages that would not fit the printer's "
+"paper size will be shrunk so that edges won't be cut off during printing.</p>"
+"<p><b>Note:</b> If this option is enabled, and if the pages in your document "
+"have different sizes, then different pages might be shrunk by different scaling "
+"factors.</p></qt>"
+msgstr ""
+"<qt>"
+"<p>Eğer bu seçenek etkinleştirilirse baskı sırasında köşeler kırpılmaması için "
+"küçültülecek.</p>"
+"<p><b>Not:</b> Eğer bu seçenek etkinleştirilirse ve belgeleriniz farklı "
+"boyutlara sahipse farklı sayfalar farklı ölçeklerde küçültülmüş olabilir.</p>"
+"</qt>"
+
+#: kprintDialogPage_pageoptions.cpp:84
+msgid "Expand small pages to fit paper size"
+msgstr "Küçük sayfaları kağıda sığacak şekilde büyüt."
+
+#: kprintDialogPage_pageoptions.cpp:85
+msgid ""
+"If this option is enabled, small pages will be enlarged so that they fit the "
+"printer's paper size."
+msgstr ""
+"Eğer bu seçenek etkinleştirilirse küçük sayfalar yazıcının kağıdına sığacak "
+"şekilde büyütülür."
+
+#: kprintDialogPage_pageoptions.cpp:86
+msgid ""
+"<qt>"
+"<p>If this option is enabled, small pages will be enlarged so that they fit the "
+"printer's paper size.</p>"
+"<p><b>Note:</b> If this option is enabled, and if the pages in your document "
+"have different sizes, then different pages might be expanded by different "
+"scaling factors.</p></qt>"
+msgstr ""
+"<qt>"
+"<p>Eğer bu seçenek etkinleştirilirse küçük sayfalar yazıcının kağıt boyuna "
+"uyması için genişletilecek.</p>"
+"<p><b>Not:</b>  Eğer bu seçenek etkinleştirilirse ve belgeleriniz farklı "
+"boyutlara sahipse farklı sayfalar farklı ölçeklerde büyütülmüş olabilir.</p>"
+"</qt>"
+
+#: kviewpart.cpp:116
+msgid "<qt>No MultiPage found.</qt>"
+msgstr "<qt>Hiç çoklu sayfa bulunmadı.</qt>"
+
+#: kviewpart.cpp:133 kviewpart.cpp:810
+msgid ""
+"<qt>No service implementing the given mimetype and fullfilling the given "
+"constraint expression can be found.</qt>"
+msgstr ""
+"<qt>Verilen mimetipi uyarlayan ve verilen kısıt anlatımı sağlayan hizmet "
+"bulunamadı.</qt>"
+
+#: kviewpart.cpp:136 kviewpart.cpp:813
+msgid "<qt>The specified service provides no shared library.</qt>"
+msgstr ""
+"<qt>Belirtilen hizmet herhangi bir paylaşılan kütüphane sağlamıyor.</qt>"
+
+#: kviewpart.cpp:139
+msgid ""
+"<qt>"
+"<p>The specified library <b>%1</b> could not be loaded. The error message "
+"returned was:</p>"
+"<p><b>%2</b></p></qt>"
+msgstr ""
+"<qt>"
+"<p>Belirtilen <b>%1</b> kütüphane yüklenmemedi. Döndürülen hata mesajı:</p>"
+"<p><b>%2</b></p></qt>"
+
+#: kviewpart.cpp:143 kviewpart.cpp:819
+msgid "<qt>The library does not export a factory for creating components.</qt>"
+msgstr "<qt>Kütüphane bileşen yaratmak için bir factory aktarmıyor.</qt>"
+
+#: kviewpart.cpp:146 kviewpart.cpp:822
+msgid ""
+"<qt>The factory does not support creating components of the specified type.</qt>"
+msgstr "<qt>Factory seçilen türde bileşen yaratacakmayı desteklemiyor.</qt>"
+
+#: kviewpart.cpp:150
+msgid ""
+"<qt>"
+"<p><b>Problem:</b> The document <b>%1</b> cannot be shown.</p>"
+"<p><b>Reason:</b> The software component <b>%2</b> which is required to display "
+"your files could not be initialized. This could point to serious "
+"misconfiguration of your KDE system, or to damaged program files.</p>"
+"<p><b>What you can do:</b> You could try to re-install the software packages in "
+"question. If that does not help, you could file an error report, either to the "
+"provider of your software (e.g. the vendor of your Linux distribution), or "
+"directly to the authors of the software. The entry <b>Report Bug...</b> "
+"in the <b>Help</b> menu helps you to contact the KDE programmers.</p></qt>"
+msgstr ""
+"<qt>"
+"<p><b>Problem:</b> <b>%1</b> belgesi gösterilemiyor.</p>"
+"<p><b>Sebep:</b> Dosyalarınızı göstermek için gereken <b>%2</b> "
+"yazılım bileşeni ilklendirilemedi. Bu KDE sisteminiz ile ilgili ciddi ayarlama "
+"hatalarını ya da bozulmuş program dosyaları gösteriyor olabilir.</p>"
+"<p><b>Yapabilecekleriniz:</b> Sorudaki program paketlerini tekrar "
+"kurabilirsiniz. Eğer bu fayda etmez ise, yazılımınızı sağlayanlara (ör. Linux "
+"dağıtımınızı sağlayanlara) ya da yazılımı yazanlara hata raporu "
+"gönderebilirsiniz. <b>Yardım</b> menüsündeki <b>Hata Bildir...</b> "
+"girdisi KDE programcılarına ulaşmanız yardımcı olur.</p></qt>"
+
+#: kviewpart.cpp:159 kviewpart.cpp:836
+msgid "Error Initializing Software Component"
+msgstr "Yazılım Bileşeni İlklendirilmesinde Hata"
+
+#: kviewpart.cpp:173
+msgid "Text..."
+msgstr ""
+
+#: kviewpart.cpp:193
+msgid "Show &Sidebar"
+msgstr "&Yan Çubuğu Göster"
+
+#: kviewpart.cpp:195
+msgid "Hide &Sidebar"
+msgstr "&Yan Çubuğu Gizle"
+
+#: kviewpart.cpp:196
+msgid "&Watch File"
+msgstr "&Dosyayı İzle"
+
+#: kviewpart.cpp:197
+msgid "Show Scrollbars"
+msgstr "Kaydırma Çubuklarını Göster"
+
+#: kviewpart.cpp:198
+msgid "Hide Scrollbars"
+msgstr "Kaydırma Çubuklarını Gizle"
+
+#: kviewpart.cpp:202
+msgid "Single Page"
+msgstr "Tekil Sayfa"
+
+#: kviewpart.cpp:203
+msgid "Continuous"
+msgstr "Devamlı"
+
+#: kviewpart.cpp:204
+msgid "Continuous - Facing"
+msgstr "Devamlı - Yüzü dönük"
+
+#: kviewpart.cpp:205
+msgid "Overview"
+msgstr "Gözden Geçirmek"
+
+#: kviewpart.cpp:206
+msgid "View Mode"
+msgstr "Görünüm Kipi"
+
+#: kviewpart.cpp:213
+msgid "Preferred &Orientation"
+msgstr "&Tercih Edilen Yerleşim"
+
+#: kviewpart.cpp:230
+msgid "Preferred Paper &Size"
+msgstr "Tercih Edilen Sayfa Bo&yu"
+
+#: kviewpart.cpp:232
+msgid "Custom Size..."
+msgstr "Özel Boyut..."
+
+#: kviewpart.cpp:236
+msgid "&Use Document Specified Paper Size"
+msgstr "&Belgenin Önerdiği Sayfa Boyunu Kullan"
+
+#: kviewpart.cpp:243
+msgid "&Fit to Page"
+msgstr "&Sayfaya sığdır"
+
+#: kviewpart.cpp:245
+msgid "Fit to Page &Width"
+msgstr "Sayfa &Genişliğine Sığdır"
+
+#: kviewpart.cpp:247
+msgid "Fit to Page &Height"
+msgstr "Sayfa &Yüksekliğine Sığdır"
+
+#: kviewpart.cpp:266
+msgid "Read Up Document"
+msgstr "Belgeyi Yukarı Doğru Oku"
+
+#: kviewpart.cpp:267
+msgid "Read Down Document"
+msgstr "Belgeyi Aşağı Doğru Oku"
+
+#: kviewpart.cpp:274
+msgid "&Move Tool"
+msgstr ""
+
+#: kviewpart.cpp:275
+#, fuzzy
+msgid "&Selection Tool"
+msgstr "Seçimi &Tersle"
+
+#: kviewpart.cpp:286
+msgid "&Back"
+msgstr "G&eri"
+
+#: kviewpart.cpp:288
+msgid "&Forward"
+msgstr "İ&leri"
+
+#: kviewpart.cpp:302
+msgid "About KViewShell"
+msgstr "KViewShell Hakkında"
+
+#: kviewpart.cpp:308
+msgid "Scroll Up"
+msgstr "Yukarı Kaydır"
+
+#: kviewpart.cpp:309
+msgid "Scroll Down"
+msgstr "Aşağı Kaydır"
+
+#: kviewpart.cpp:310
+msgid "Scroll Left"
+msgstr "Sola Kaydır"
+
+#: kviewpart.cpp:311
+msgid "Scroll Right"
+msgstr "Sağa Kaydır"
+
+#: kviewpart.cpp:313
+msgid "Scroll Up Page"
+msgstr "Sayfayı Yukarı Kaydır"
+
+#: kviewpart.cpp:314
+msgid "Scroll Down Page"
+msgstr "Sayfayı Aşağı Kaydır"
+
+#: kviewpart.cpp:315
+msgid "Scroll Left Page"
+msgstr "Sayfayı Sola Kaydır"
+
+#: kviewpart.cpp:316
+msgid "Scroll Right Page"
+msgstr "Sayfayı Sağa Kaydır"
+
+#: kviewpart.cpp:429
+msgid "portrait"
+msgstr "Portre"
+
+#: kviewpart.cpp:431
+msgid "landscape"
+msgstr "manzara"
+
+#: kviewpart.cpp:456
+msgid ""
+"Your document has been modified. Do you really want to open another document?"
+msgstr "BElgeniz değiştirildi. Gerçekten başka bir belge açmak istiyormusunuz?"
+
+#: kviewpart.cpp:457
+#, fuzzy
+msgid "Warning - Document Was Modified"
+msgstr "Uyarı - Belge değiştirildi"
+
+#: kviewpart.cpp:645
+msgid "<qt>File <nobr><strong>%1</strong></nobr> does not exist.</qt>"
+msgstr "<qt><nobr><strong>%1</strong></nobr> dosyası bulunamadı.</qt>"
+
+#: kviewpart.cpp:654
+msgid "Loading '%1'..."
+msgstr "'%1' yükleniyor..."
+
+#: kviewpart.cpp:671
+msgid "<qt><strong>File Error!</strong> Could not create temporary file.</qt>"
+msgstr "<qt><strong>Dosya Hatası!</strong> Geçici dosya oluşturulamıyor.</qt>"
+
+#: kviewpart.cpp:680
+msgid ""
+"<qt><strong>File Error!</strong> Could not create temporary file <nobr><strong>"
+"%1</strong></nobr>.</qt>"
+msgstr ""
+"<qt><strong>Dosya Hatası!</strong> Geçici dosya <nobr><strong>%1</strong></nobr> "
+"oluşturulamıyor.</qt>"
+
+#: kviewpart.cpp:701
+msgid ""
+"<qt><strong>File Error!</strong> Could not open the file <nobr><strong>"
+"%1</strong></nobr> for uncompression. The file will not be loaded.</qt>"
+msgstr ""
+"<qt><strong>Dosya Hatası!</strong> <nobr><strong>%1</strong></nobr> "
+"dosyası ayıklanmak için açılamıyor. Dosya yüklenmeyecek.</qt>"
+
+#: kviewpart.cpp:704
+msgid ""
+"<qt>This error typically occurs if you do not have enough permissions to read "
+"the file. You can check ownership and permissions if you right-click on the "
+"file in the Konqueror file manager and then choose the 'Properties' menu.</qt>"
+msgstr ""
+"<qt>Bu hata genellikle dosyayı okuma hakkı olmayınca ortaya çıkar. Dosya "
+"üzerindeki haklarınızı kontrol etmek için Konqueror dosya yöneticinde dosya "
+"üzerine sağ tuş ile tıklayıp 'Özellikler' menüsünü seçebilirsiniz.</qt>"
+
+#: kviewpart.cpp:714
+msgid "Uncompressing..."
+msgstr "Açılıyor..."
+
+#: kviewpart.cpp:715
+msgid ""
+"<qt>Uncompressing the file <nobr><strong>%1</strong></nobr>. Please wait.</qt>"
+msgstr ""
+"<qt>Dosya açılıyor: <nobr><strong>%1</strong></nobr>. Lütfen bekleyin.</qt>"
+
+#: kviewpart.cpp:748
+msgid ""
+"<qt><strong>File Error!</strong> Could not uncompress the file <nobr><strong>"
+"%1</strong></nobr>. The file will not be loaded.</qt>"
+msgstr ""
+"<qt><strong>Dosya Hatası!</strong> Dosya açılamıyor <nobr><strong>%1</strong>"
+"</nobr>. Dosya yüklenmiyecek.</qt>"
+
+#: kviewpart.cpp:750
+msgid ""
+"<qt>This error typically occurs if the file is corrupt. If you want to be sure, "
+"try to decompress the file manually using command-line tools.</qt>"
+msgstr ""
+"<qt>Bu hata genellikle dosya bozuksa meydana gelir. Emin olmak istiyorsanız, "
+"dosyayı komut satırında elle açmayı deneyin.</qt>"
+
+#: kviewpart.cpp:776
+msgid ""
+"<qt>The document <b>%1</b> cannot be shown because its file type is not "
+"supported.</qt>"
+msgstr ""
+"<qt><b>%1</b> belgesi gösterilemiyor çünkü dosya tipi desteklenmiyor.</qt>"
+
+#: kviewpart.cpp:778
+msgid ""
+"<qt>The file has mime type <b>%1</b> which is not supported by any of the "
+"installed KViewShell plugins.</qt>"
+msgstr ""
+"<qt>Dosya <b>%1</b> mime tipine sahip ve yüklü hiçbir KViewShell eklentisi "
+"tarafından desteklenmiyor.</qt>"
+
+#: kviewpart.cpp:816
+msgid ""
+"<qt>"
+"<p>The specified library <b>%1</b> could not be loaded. The error message "
+"returned was:</p> "
+"<p><b>%2</b></p></qt>"
+msgstr ""
+"<qt>"
+"<p>Belirtilen <b>%1</b> kütüphanesi yüklenemedi. Döndürülen hata:</p> "
+"<p><b>%2</b></p></qt>"
+
+#: kviewpart.cpp:826
+msgid ""
+"<qt>"
+"<p><b>Problem:</b> The document <b>%1</b> cannot be shown.</p>"
+"<p><b>Reason:</b> The software component <b>%2</b> which is required to display "
+"files of type <b>%3</b> could not be initialized. This could point to serious "
+"misconfiguration of your KDE system, or to damaged program files.</p>"
+"<p><b>What you can do:</b> You could try to re-install the software packages in "
+"question. If that does not help, you could file an error report, either to the "
+"provider of your software (e.g. the vendor of your Linux distribution), or "
+"directly to the authors of the software. The entry <b>Report Bug...</b> "
+"in the <b>Help</b> menu helps you to contact the KDE programmers.</p></qt>"
+msgstr ""
+"<qt>"
+"<p><b>Problem:</b> <b>%1</b> belgesi gösterilemiyor.</p>"
+"<p><b>Sebep:</b> <b>%3</b> türündeki dosyalarınızı göstermek için gereken <b>"
+"%2</b> yazılım bileşeni ilklendirilemedi. Bu KDE sisteminiz ile ilgili ciddi "
+"ayarlama hatalarını ya da bozulmuş program dosyaları gösteriyor olabilir.</p>"
+"<p><b>Yapabilecekleriniz:</b> Sorudaki program paketlerini tekrar "
+"kurabilirsiniz. Eğer bu fayda etmez ise, yazılımınızı sağlayanlara (ör. Linux "
+"dağıtımınızı sağlayanlara) ya da yazılımı yazanlara hata raporu "
+"gönderebilirsiniz. <b>Yardım</b> menüsündeki <b>Hata Bildir...</b> "
+"girdisi KDE programcılarına ulaşmanız yardımcı olur.</p></qt>"
+"s you to contact the KDE programmers.</p></qt>"
+
+#: kviewpart.cpp:929
+msgid "Your document has been modified. Do you really want to close it?"
+msgstr "Belgeniz değiştirildi. Gerçekten kapatmak istiyormusunuz?"
+
+#: kviewpart.cpp:930
+#, fuzzy
+msgid "Document Was Modified"
+msgstr "Uyarı - Belge değiştirildi"
+
+#: kviewpart.cpp:997 kviewpart.cpp:1400
+msgid "Page %1 of %2"
+msgstr "Sayfa: %1 / %2"
+
+#: kviewpart.cpp:1011
+msgid "Go to Page"
+msgstr "Sayfaya Git"
+
+#: kviewpart.cpp:1011
+msgid "Page:"
+msgstr "Sayfa:"
+
+#: kviewpart.cpp:1184 zoom.cpp:24 zoom.cpp:110
+#, fuzzy
+msgid "Fit to Page Width"
+msgstr "Sayfa &Genişliğine Sığdır"
+
+#: kviewpart.cpp:1189 zoom.cpp:25 zoom.cpp:111
+#, fuzzy
+msgid "Fit to Page Height"
+msgstr "Sayfa &Yüksekliğine Sığdır"
+
+#: kviewpart.cpp:1194 zoom.cpp:26 zoom.cpp:112
+#, fuzzy
+msgid "Fit to Page"
+msgstr "&Sayfaya sığdır"
+
+#: kviewpart.cpp:1409
+msgid "Document Viewer Part"
+msgstr "Belge Gösterici Bölümü"
+
+#: kviewpart.cpp:1421 main.cpp:37
+msgid "KViewShell"
+msgstr "KViewShell"
+
+#: kviewpart.cpp:1424
+msgid "Original Author"
+msgstr "İlk Yazar"
+
+#: kviewpart.cpp:1427 main.cpp:45
+msgid "Framework"
+msgstr "Taslak"
+
+#: kviewpart.cpp:1429
+msgid "Former KGhostView Maintainer"
+msgstr "Eski KGhostView Sorumlusu"
+
+#: kviewpart.cpp:1431 main.cpp:52
+msgid "KGhostView Author"
+msgstr "KGhostView Yazarı"
+
+#: kviewpart.cpp:1433 main.cpp:54
+msgid "Navigation widgets"
+msgstr "Gezinti panelleri"
+
+#: kviewpart.cpp:1435 main.cpp:56
+msgid "Basis for shell"
+msgstr "Kabuk için temel"
+
+#: kviewpart.cpp:1437 main.cpp:58
+msgid "Port to KParts"
+msgstr "KParts'a geçit"
+
+#: kviewpart.cpp:1439 main.cpp:60
+msgid "Dialog boxes"
+msgstr "İletişim kutuları"
+
+#: kviewpart.cpp:1441 main.cpp:62
+msgid "DCOP-Interface, major improvements"
+msgstr "DCOP Arayüzü"
+
+#: kviewpart.cpp:1443
+msgid "Interface enhancements"
+msgstr "Arayüz geliştirmeleri"
+
+#: kviewpart.cpp:1456
+msgid "User Interface"
+msgstr "Kullanıcı arayüzü"
+
+#: kviewpart.cpp:1459
+msgid "Accessibility"
+msgstr "Erişilebilirlik"
+
+#: kviewshell.cpp:69
+msgid "No viewing component found"
+msgstr "İzleme eklentisi bulunamadı"
+
+#: kviewshell.cpp:259
+msgid "Use the Escape key to leave the fullscreen mode."
+msgstr "Tam ekran kipinden çıkmak için Escape tuşunu kullanın."
+
+#: kviewshell.cpp:259
+msgid "Entering Fullscreen Mode"
+msgstr "Tam Ekrana Geçiliyor"
+
+#: main.cpp:22
+#, fuzzy
+msgid ""
+"Check if the file is loaded in another kviewshell.\n"
+"If it is, bring up the other kviewshell. Otherwise, load the file."
+msgstr ""
+"Dosyanın başka kviewshell'de yüklü olduğunu kontrol edin. Yüklü ise diğer "
+"kviewshell'i açın. Değilse dosyayı yükleyin."
+
+#: main.cpp:24
+#, fuzzy
+msgid ""
+"Loads a plugin which supports files of type <mimetype>,\n"
+"if one is installed."
+msgstr ""
+"Eğer biri yüklü ise <mimetype> dosya tipini destekleyen eklentiyi yükler."
+
+#: main.cpp:26
+#, fuzzy
+msgid "Navigate to this page"
+msgstr "Gezinti panelleri"
+
+#: main.cpp:27
+msgid "Files to load"
+msgstr "Yüklenecek dosyalar"
+
+#: main.cpp:32
+msgid "Generic framework for viewer applications"
+msgstr "Görüntüleme uygulamaları için genel taslak."
+
+#: main.cpp:41
+msgid ""
+"Displays various document formats. Based on original code from KGhostView."
+msgstr ""
+"Çeşitli belge biçimlerini gösterir. KGHostView'in orjinal kodu üzerinde "
+"temellenmiştir."
+
+#: main.cpp:43
+#, fuzzy
+msgid "Current Maintainer"
+msgstr "KGhostView Sağlayıcısı"
+
+#: main.cpp:48
+msgid "KGhostView Maintainer"
+msgstr "KGhostView Sağlayıcısı"
+
+#: main.cpp:91
+msgid "The URL %1 is not well-formed."
+msgstr "%1 adresi düzgün biçimde değil."
+
+#: main.cpp:96
+msgid ""
+"The URL %1 does not point to a local file. You can only specify local files if "
+"you are using the '--unique' option."
+msgstr ""
+"%1 adresi yerel bir dosyaya bağlı değil. '-unique' seçeneğini kullanıyorsanız "
+"sadece yerel dosyaları gösterebilirsiniz."
+
+#: marklist.cpp:185
+#, fuzzy
+msgid "Select for printing"
+msgstr "&Mevcut Sayfayı Seç"
+
+#: marklist.cpp:563
+msgid "Select &Current Page"
+msgstr "&Mevcut Sayfayı Seç"
+
+#: marklist.cpp:564
+msgid "Select &All Pages"
+msgstr "Tüm Sayfaları S&eç"
+
+#: marklist.cpp:565
+msgid "Select &Even Pages"
+msgstr "Ç&ift Sayfaları Seç"
+
+#: marklist.cpp:566
+msgid "Select &Odd Pages"
+msgstr "T&ek Sayfaları Seç"
+
+#: marklist.cpp:567
+msgid "&Invert Selection"
+msgstr "Seçimi &Tersle"
+
+#: marklist.cpp:568
+msgid "&Deselect All Pages"
+msgstr "Hiç&bir Sayfa Seçme"
+
+#: pageSizeDialog.cpp:29
+msgid "Page Size"
+msgstr "Sayfa Boyu"
+
+#: pageSizeWidget.cpp:32
+msgid "Custom Size"
+msgstr "Özel Boy"
+
+#. i18n: file kviewerpart.rc line 11
+#: rc.cpp:6
+#, no-c-format
+msgid "Export As"
+msgstr ""
+
+#. i18n: file kviewerpart.rc line 45
+#: rc.cpp:15 rc.cpp:30
+#, no-c-format
+msgid "&Go"
+msgstr "&Git"
+
+#. i18n: file optionDialogAccessibilityWidget.ui line 35
+#: rc.cpp:39
+#, no-c-format
+msgid "Change &Colors"
+msgstr "&Renkleri Değiştir"
+
+#. i18n: file optionDialogAccessibilityWidget.ui line 67
+#: rc.cpp:42
+#, no-c-format
+msgid "Warning: these options can badly affect drawing speed."
+msgstr "Uyarı: bu seçenekler çizim hızını kötü etkileyebilirler."
+
+#. i18n: file optionDialogAccessibilityWidget.ui line 109
+#: rc.cpp:45
+#, no-c-format
+msgid "&Invert colors"
+msgstr "Renkleri ters&le"
+
+#. i18n: file optionDialogAccessibilityWidget.ui line 120
+#: rc.cpp:48
+#, no-c-format
+msgid "Change &paper color"
+msgstr "Say&fa rengini değiştir"
+
+#. i18n: file optionDialogAccessibilityWidget.ui line 156
+#: rc.cpp:51
+#, no-c-format
+msgid "Paper color:"
+msgstr "Sayfa rengi:"
+
+#. i18n: file optionDialogAccessibilityWidget.ui line 197
+#: rc.cpp:54
+#, no-c-format
+msgid "&Change dark and light colors"
+msgstr "K&oyu ve açık renkleri değiştir."
+
+#. i18n: file optionDialogAccessibilityWidget.ui line 292
+#: rc.cpp:57
+#, no-c-format
+msgid "Light color:"
+msgstr "Açık renk:"
+
+#. i18n: file optionDialogAccessibilityWidget.ui line 320
+#: rc.cpp:60
+#, no-c-format
+msgid "Dark color:"
+msgstr "Koyu renk:"
+
+#. i18n: file optionDialogAccessibilityWidget.ui line 330
+#: rc.cpp:63
+#, no-c-format
+msgid "Convert to &black and white"
+msgstr "S&iyah beyaz'a çevir"
+
+#. i18n: file optionDialogAccessibilityWidget.ui line 349
+#: rc.cpp:66
+#, no-c-format
+msgid "Contrast:"
+msgstr "Karşıtlık:"
+
+#. i18n: file optionDialogAccessibilityWidget.ui line 438
+#: rc.cpp:69
+#, no-c-format
+msgid "Threshold:"
+msgstr "Eşik:"
+
+#. i18n: file optionDialogGUIWidget_base.ui line 25
+#: rc.cpp:72
+#, no-c-format
+msgid "Enabled"
+msgstr "Etkin"
+
+#. i18n: file optionDialogGUIWidget_base.ui line 30
+#: rc.cpp:75
+#, no-c-format
+msgid "Disabled"
+msgstr "Etkin değil"
+
+#. i18n: file optionDialogGUIWidget_base.ui line 35
+#: rc.cpp:78
+#, no-c-format
+msgid "Only on Hover"
+msgstr "Sadece Üstündeyken"
+
+#. i18n: file optionDialogGUIWidget_base.ui line 47
+#: rc.cpp:81
+#, no-c-format
+msgid ""
+"<qt>Controls how hyperlinks are underlined:\n"
+"<ul>\n"
+"<li><b>Enabled</b>: Always underline links</li>\n"
+"<li><b>Disabled</b>: Never underline links</li>\n"
+"<li><b>Only on Hover</b>: Underline when the mouse is moved over the link</li>\n"
+"</ul></qt>"
+msgstr ""
+"<qt>Bağların altçizgilerini kontrol eder :\n"
+"<ul>\n"
+"<li><b>Etkin</b>: Her zaman bağların altını çiz</li>\n"
+"<li><b>Etkin değil</b>: Hiçbir zaman bağların altını çizme</li>\n"
+"<li><b>Sadece Üstündeyken</b>: Fare bağın üstündeyken altını çiz.</li>\n"
+"</ul></qt>"
+
+#. i18n: file optionDialogGUIWidget_base.ui line 63
+#: rc.cpp:89
+#, no-c-format
+msgid "Underline links:"
+msgstr "Bağların altını çiz:"
+
+#. i18n: file optionDialogGUIWidget_base.ui line 71
+#: rc.cpp:92
+#, no-c-format
+msgid "Show &thumbnail previews"
+msgstr "&Küçük resim önizlemesini göster"
+
+#. i18n: file optionDialogGUIWidget_base.ui line 79
+#: rc.cpp:95
+#, no-c-format
+msgid "Overview Mode"
+msgstr "Gözden Geçirme Kipi"
+
+#. i18n: file optionDialogGUIWidget_base.ui line 98
+#: rc.cpp:98
+#, no-c-format
+msgid "Rows:"
+msgstr "Sıra:"
+
+#. i18n: file optionDialogGUIWidget_base.ui line 136
+#: rc.cpp:101
+#, no-c-format
+msgid "Columns:"
+msgstr "Sütün:"
+
+#. i18n: file pageSizeWidget_base.ui line 47
+#: rc.cpp:104
+#, no-c-format
+msgid "Page Format"
+msgstr "Sayfa Biçimi"
+
+#. i18n: file pageSizeWidget_base.ui line 64
+#: rc.cpp:107
+#, no-c-format
+msgid "Format:"
+msgstr "Biçim:"
+
+#. i18n: file pageSizeWidget_base.ui line 72
+#: rc.cpp:110
+#, no-c-format
+msgid "Width:"
+msgstr "Genişlik:"
+
+#. i18n: file pageSizeWidget_base.ui line 80
+#: rc.cpp:113
+#, no-c-format
+msgid "Height:"
+msgstr "Yükseklik:"
+
+#. i18n: file pageSizeWidget_base.ui line 88
+#: rc.cpp:116
+#, no-c-format
+msgid "Width of the chosen paper size in portrait orientation"
+msgstr "Seçili yaprağın boyutunun genişliği portre biçiminde"
+
+#. i18n: file pageSizeWidget_base.ui line 96
+#: rc.cpp:119
+#, no-c-format
+msgid "Height of the chosen paper size in portrait orientation"
+msgstr "Seçili yaprağın boyutunun yüksekliği portre biçiminde"
+
+#. i18n: file pageSizeWidget_base.ui line 102
+#: rc.cpp:122 rc.cpp:131
+#, no-c-format
+msgid "cm"
+msgstr "cm"
+
+#. i18n: file pageSizeWidget_base.ui line 107
+#: rc.cpp:125 rc.cpp:134
+#, no-c-format
+msgid "mm"
+msgstr "mm"
+
+#. i18n: file pageSizeWidget_base.ui line 112
+#: rc.cpp:128 rc.cpp:137
+#, no-c-format
+msgid "in"
+msgstr "in"
+
+#. i18n: file pageSizeWidget_base.ui line 144
+#: rc.cpp:140
+#, no-c-format
+msgid "Orientation:"
+msgstr "Yerleşim:"
+
+#. i18n: file pageSizeWidget_base.ui line 188
+#: rc.cpp:149
+#, no-c-format
+msgid "Page Preview"
+msgstr "Sayfa Önizlemesi"
+
+#. i18n: file kviewshell.kcfg line 72
+#: rc.cpp:152
+#, no-c-format
+msgid ""
+"\n"
+"      <qt>\n"
+"        Controls how hyperlinks are underlined:\n"
+"        "
+"<ul>\n"
+"          "
+"<li><b>UL_Enabled</b>: Always underline links</li>\n"
+"          "
+"<li><b>UL_Disabled</b>: Never underline links</li>\n"
+"          "
+"<li><b>UL_OnlyOnHover</b>: Underline when the mouse is moved over the link</li>"
+"\n"
+"        </ul>\n"
+"      </qt>\n"
+"    "
+msgstr ""
+"\n"
+"      <qt>\n"
+"        Controls how hyperlinks are underlined:\n"
+"        "
+"<ul>\n"
+"          "
+"<li><b>UL_Enabled</b>: Bağların her zaman altını çiz</li>\n"
+"          "
+"<li><b>UL_Disabled</b>: Bağların altını çizme</li>\n"
+"          "
+"<li><b>UL_OnlyOnHover</b>: Fare bağın üstündeyken altını çiz</li>\n"
+"        </ul>\n"
+"      </qt>\n"
+"    "
+
+#: searchWidget.cpp:53
+msgid "Search:"
+msgstr "Ara:"
+
+#: searchWidget.cpp:63
+#, fuzzy
+msgid "Find previous"
+msgstr "Öncekini Bul"
+
+#: searchWidget.cpp:68
+#, fuzzy
+msgid "Find next"
+msgstr "Sonrakini Bul"
+
+#: searchWidget.cpp:72
+msgid "Case sensitive"
+msgstr "Harf büyüklüğüne duyarlı"
+
+#: tableOfContents.cpp:45
+msgid "Topic"
+msgstr "Başlık"
+
+#, fuzzy
+#~ msgid "OverWrite"
+#~ msgstr "Gözden Geçirmek"
+
+#, fuzzy
+#~ msgid ""
+#~ "Sets paper size (not implemented at the moment,\n"
+#~ "only for compatibility with lyx)"
+#~ msgstr "Sayfa boyutunu düzenler"
+
+#, fuzzy
+#~ msgid "pageSizeWidget_base"
+#~ msgstr "optionDialogGUIWidget_base"
+
+#~ msgid "Using this checkbox you can select pages for printing."
+#~ msgstr "Bu onay kutusunu kullanarak yazdırılacak sayfaları seçebilirsiniz."
+
+#~ msgid "optionDialogAccessibilityWidget"
+#~ msgstr "optionDialogAccessibilityWidget"
+
+#~ msgid "Alt+T"
+#~ msgstr "Alt+T"

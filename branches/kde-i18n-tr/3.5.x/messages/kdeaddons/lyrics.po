@@ -1,0 +1,211 @@
+# translation of lyrics.po to Türkçe
+# translation of lyrics.po to turkish
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# Durmuş Celep <durmusc_tr@yahoo.com>,2002.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>,2002.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: lyrics\n"
+"POT-Creation-Date: 2004-11-24 01:22+0100\n"
+"PO-Revision-Date: 2004-07-30 01:40+0300\n"
+"Last-Translator: Adem Alp YILDIZ <ademalp@linux-sevenler.org>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.3\n"
+
+#: cmodule.cpp:47
+msgid "Lyrics"
+msgstr "Şarkı sözleri"
+
+#: cmodule.cpp:47
+msgid "Configure Lyrics Plugin"
+msgstr "Şarkı Sözleri Eklentisini Yapılandır"
+
+#: cmodule.cpp:56
+msgid "Search providers:"
+msgstr "Arayıcılar:"
+
+#: cmodule.cpp:61 cmodule.h:24
+msgid "New Search Provider"
+msgstr "Yeni Arayıcı"
+
+#: cmodule.cpp:62
+msgid "Delete Search Provider"
+msgstr "Arayıcıyı Sil"
+
+#: cmodule.cpp:63
+msgid "Move Up"
+msgstr "Yukarı Taşı"
+
+#: cmodule.cpp:64
+msgid "Move Down"
+msgstr "Aşağı Taşı"
+
+#: cmodule.cpp:69
+msgid "Search Provider Properties"
+msgstr "Sağlayıcının Özelliklerini Ara"
+
+#: cmodule.cpp:72
+msgid "Name:"
+msgstr "İsim:"
+
+#: cmodule.cpp:74
+msgid "Query:"
+msgstr "Ara:"
+
+#: cmodule.cpp:78
+msgid ""
+"For your query, you can use any property of your multimedia item, just "
+"enclosing it with a $(property).\n"
+"\n"
+"Some common properties used are $(title), $(author) and $(album). For example, "
+"to search in Google for the author, title and track, just use:\n"
+"http://www.google.com/search?q=$(author)+$(title)+$(track)"
+msgstr ""
+"Aramanız için çokluortam nesnenizin herhangi bir özelliğini, $(özellik) "
+"şeklindebelirterek kullanabilirsiniz.\n"
+"\n"
+"Sık kullanılan bazı özellikler $(başlık), $(yazar) ve $(albüm) 'dür. "
+"Örneğin;Google'da yazar, başlık ve ize göre arama yapmak için:\n"
+"http://www.google.com/search?q=$(yazar)+$(başlık)+$(iz)"
+
+#: cmodule.cpp:122
+msgid ""
+"You must have at least one search provider. The current one will not be "
+"removed."
+msgstr "En az bir adet arayıcınızın olması gerek. Şimdiki kaldırılmayacak."
+
+#: lyrics.cpp:36
+msgid "&Follow Noatun Playlist"
+msgstr "Noa&tun'un çalma listesini takip et"
+
+#: lyrics.cpp:38
+msgid "&Link URL to File"
+msgstr "Adre&si Dosyaya Bağla"
+
+#: lyrics.cpp:44
+msgid "Search provider:"
+msgstr "Arayıcı:"
+
+#: lyrics.cpp:44
+msgid "Search Provider"
+msgstr "Tedarikci Ara"
+
+#: lyrics.cpp:45
+msgid "&Search Provider"
+msgstr "Tedarikci &Ara"
+
+#: lyrics.cpp:48
+msgid "&View Lyrics"
+msgstr "Şa&rkı sözlerini göster"
+
+#: lyrics.cpp:63
+msgid "Ready"
+msgstr "Hazır"
+
+#: lyrics.cpp:82
+msgid "Please enter the URL you want to go to:"
+msgstr "Lütfen gitmek istediğiniz adresi giriniz:"
+
+#: lyrics.cpp:101
+msgid ""
+"Choosing this option, the current URL will be attached to the current file. "
+"This way, if you try to view the lyrics of this file later, you won't have to "
+"search for it again. This information can be stored between sessions, as long "
+"as your playlist stores metadata about the multimedia items (almost all the "
+"playlists do). If you want to be able to search for other lyrics for this "
+"music, you must select this option again to clear the stored URL."
+msgstr ""
+"Bu seçenekle geçerli URL , geçerli dosyaya eklenecek. Bu yolla, parçanın şarkı "
+"sözlerini tekrar görmek isterseniz, yeniden arama yapmak zorunda "
+"kalmayacaksınız. Bu bilgi, çalma listeniz çokluortam nesneleri hakkında "
+"metadata saklayabildiği sürece(ki nerdeyse hepsi saklayabilir) oturumlar "
+"arasında saklanır. Parça hakkında daha başka şarkı sözleri aramak "
+"isterseniz,saklanmış URL'leri temizlemek için bu seçeneği tekrar seçmeniz "
+"gerekir."
+
+#: lyrics.cpp:117
+msgid "Loading..."
+msgstr "Yükleniyor..."
+
+#: lyrics.cpp:124
+msgid "Loaded"
+msgstr "Yüklendi"
+
+#: lyrics.cpp:125
+#, c-format
+msgid "Lyrics: %1"
+msgstr "Şarkı sözü: %1"
+
+#: lyrics.cpp:180
+msgid ""
+"You can only view the lyrics of the current song, and currently there is none."
+msgstr "Ancak şimdiki parçanın sözlerini görebilirsiniz ve şu an hiç yok."
+
+#: lyrics.cpp:199
+#, c-format
+msgid "Loading Lyrics for %1"
+msgstr "%1 için şarkı sözü yükleniyor"
+
+#: lyrics.cpp:203
+msgid ""
+"<HTML><BODY>"
+"<p><strong>Please wait! Searching for...</strong></p>"
+"<TABLE BORDER=1 WIDTH=\"100%\"><TR><TD BGCOLOR=\"#707671\"><strong>"
+"Title</strong></TD><TD>%1</TD></TR><TR><TD BGCOLOR=\"#707671\"><strong>"
+"Author</strong></TD><TD>%2</TD></TR><TR><TD BGCOLOR=\"#707671\"><strong>"
+"Album</strong></TD><TD>%3</TD></TR></TABLE>"
+msgstr ""
+"<HTML><BODY>"
+"<p><strong>Lütfen bekleyin! Aranıyor...</strong></p>"
+"<TABLE BORDER=1 WIDTH=\"100%\"><TR><TD BGCOLOR=\"#707671\"><strong>"
+"Başlık</strong></TD><TD>%1</TD></TR><TR><TD BGCOLOR=\"#707671\"><strong>"
+"Yazar</strong></TD><TD>%2</TD></TR><TR><TD BGCOLOR=\"#707671\"><strong>"
+"Albüm</strong></TD><TD>%3</TD></TR></TABLE>"
+
+#: lyrics.cpp:221
+msgid ""
+"<hr>"
+"<p><strong>Searching at %1</strong>"
+"<br><small>(<a href=\"%3\">%2</a></small>)</p>"
+msgstr ""
+"<hr>"
+"<p><strong>%1 'de aranıyor</strong>"
+"<br><small>(<a href=\"%3\">%2</a></small>)</p>"
+
+#: lyrics.cpp:229
+msgid ""
+"<hr>"
+"<p><strong>Using the stored URL</strong>"
+"<br><small>(<a href=\"%2\">%1</a></small>)</p>"
+msgstr ""
+"<hr>"
+"<p><strong>Saklanmış URL kullanılıyor</strong>"
+"<br><small>(<a href=\"%2\">%1</a></small>)</p>"
+
+#: lyrics.cpp:235
+msgid ""
+"In order to find the lyrics for the current song, this plugin uses the "
+"properties stored with each song, such as its title, author and album. These "
+"properties are usually retrieved by a tag reader, but in some cases they may "
+"not be present or be incorrect. In that case, the Lyrics plugin will not be "
+"able to find the lyrics until these properties are fixed (you can fix them "
+"using the tag editor).\n"
+"Hint: The lucky tag plugin, present in the kdeaddons module, can try to guess "
+"properties such as title and author from the filename of a song. Enabling it "
+"may increase the probability of finding lyrics."
+msgstr ""
+"Bu eklenti şimdiki şarkının sözlerini bulmak için, her parçayla birlikte "
+"saklanan başlık, yazar ve albüm gibi özellikleri kullanır. Bu özellikler "
+"genellikle bir işaret(tag) okuyucusuyla alınır ama bazı durumlarda bunlar "
+"yoktur ya da yanlıştır. Bu durumda Şarkı Sözleri eklentisi, bu özellikler "
+"düzeltilene kadar sözleri bulamayacaktır.(Düzeltmeyi bir etiket düzenleyicisi "
+"ile yapabilirsiniz).\n"
+"İpucu: kdeaddons paketinde bulunan lucky etiket düzenleyicisi, dosya isminden "
+"başlık, yazar gibi özellikleri, tahmin etmeye çalışır. Bunu etkinleştirerek "
+"şarkı sözlerini bulma olasılığını artırabilirsiniz."

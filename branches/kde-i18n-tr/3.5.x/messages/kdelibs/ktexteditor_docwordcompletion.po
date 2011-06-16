@@ -1,0 +1,88 @@
+# translation of ktexteditor_docwordcompletion.po to Türkçe
+# translation of ktexteditor_docwordcompletion.po to Turkish
+# Copyright (C) 2004, 2005 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Bekir SONAT <cortexbs@yahoo.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ktexteditor_docwordcompletion\n"
+"POT-Creation-Date: 2007-02-18 02:38+0100\n"
+"PO-Revision-Date: 2005-07-14 04:19+0300\n"
+"Last-Translator: Bekir SONAT <cortexbs@yahoo.com>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: docwordcompletion.cpp:109
+msgid "Word Completion Plugin"
+msgstr "Sözcük Tamamlama Eklentisi"
+
+#: docwordcompletion.cpp:114
+msgid "Configure the Word Completion Plugin"
+msgstr "Sözcük Tamamlama Eklentisini Yapılandır"
+
+#: docwordcompletion.cpp:148
+msgid "Reuse Word Above"
+msgstr "Yukardaki Sözcüğü Yeniden Kullan"
+
+#: docwordcompletion.cpp:150
+msgid "Reuse Word Below"
+msgstr "Aşağıdaki Sözcüğü Yeniden Kullan"
+
+#: docwordcompletion.cpp:152
+msgid "Pop Up Completion List"
+msgstr "Açılır Tamamlama Listesi"
+
+#: docwordcompletion.cpp:154
+msgid "Shell Completion"
+msgstr "Kabuk Tamamlama"
+
+#: docwordcompletion.cpp:156
+msgid "Automatic Completion Popup"
+msgstr "Otomatik Tamamlama Açılır Menüsü"
+
+#: docwordcompletion.cpp:498
+msgid "Automatically &show completion list"
+msgstr "Tamamlama listesini otomatik olarak Gö&ster"
+
+#: docwordcompletion.cpp:511
+msgid ""
+"_: Translators: This is the first part of two strings wich will comprise the "
+"sentence 'Show completions when a word is at least N characters'. The first "
+"part is on the right side of the N, which is represented by a spinbox widget, "
+"followed by the second part: 'characters long'. Characters is a ingeger number "
+"between and including 1 and 30. Feel free to leave the second part of the "
+"sentence blank if it suits your language better. \n"
+"Show completions &when a word is at least"
+msgstr "Tamamlamaları göstermek için Sözcük en az :"
+
+#: docwordcompletion.cpp:517
+msgid ""
+"_: This is the second part of two strings that will comprise teh sentence 'Show "
+"completions when a word is at least N characters'\n"
+"characters long."
+msgstr "harf olmalı."
+
+#: docwordcompletion.cpp:520
+msgid ""
+"Enable the automatic completion list popup as default. The popup can be "
+"disabled on a view basis from the 'Tools' menu."
+msgstr ""
+"Otomatik tamamlama listesi açılır menüsünü öntanımlı olarak etkinleştirir. "
+"Açılır menü, Araçlar menüsünde görünüm üzerinden etkisizleştirilebilir."
+
+#: docwordcompletion.cpp:523
+msgid ""
+"Define the length a word should have before the completion list is displayed."
+msgstr ""
+"Sözcüğün kaç harfi girildiğinde tamamlama listesinin görüntüleneceğini "
+"belirleyin."
+
+#. i18n: file docwordcompletionui.rc line 6
+#: rc.cpp:6
+#, no-c-format
+msgid "Word Completion"
+msgstr "Sözcük Tamamlama"

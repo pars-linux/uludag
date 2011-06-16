@@ -1,0 +1,1585 @@
+# translation of noatun.po to Türkçe
+# translation of noatun.po to
+# translation of noatun.po to Turkish
+# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+# Serdar Cevher <scevher@anet.com.tr>, 2001.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Görkem Çetin <gorkem@kde.org>, 2002,2003.
+# YILDIZ KARDESLER <turkishprogram@xposta.com>, 2004.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Onur Küçük <onur@uludag.org.tr>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: noatun\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-08 01:20+0200\n"
+"PO-Revision-Date: 2005-01-09 02:14+0200\n"
+"Last-Translator: Onur Küçük <onur@uludag.org.tr>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+
+#. i18n: file ./library/equalizerwidget.ui line 16
+#: library/equalizerview.cpp:111 rc.cpp:3
+#, no-c-format
+msgid "Equalizer"
+msgstr "Ekolayzır"
+
+#. i18n: file ./library/equalizerwidget.ui line 38
+#: rc.cpp:6
+#, no-c-format
+msgid "Pre&amp:"
+msgstr "Pre&amp:"
+
+#. i18n: file ./library/equalizerwidget.ui line 123
+#: rc.cpp:9
+#, no-c-format
+msgid "+/-"
+msgstr "+/-"
+
+#. i18n: file ./library/equalizerwidget.ui line 138
+#: rc.cpp:12
+#, no-c-format
+msgid "&Bands"
+msgstr "&Bantlar"
+
+#. i18n: file ./library/equalizerwidget.ui line 173
+#: rc.cpp:15
+#, no-c-format
+msgid "&Presets"
+msgstr "Önaya&r"
+
+#. i18n: file ./library/equalizerwidget.ui line 217
+#: rc.cpp:21
+#, no-c-format
+msgid "A&dd"
+msgstr "&Ekle"
+
+#. i18n: file ./library/equalizerwidget.ui line 252
+#: rc.cpp:24
+#, no-c-format
+msgid "&Enabled"
+msgstr "&Etkin"
+
+#. i18n: file ./library/equalizerwidget.ui line 277
+#: rc.cpp:27
+#, no-c-format
+msgid "&Number of bands:"
+msgstr "Ba&nt Sayısı:"
+
+#. i18n: file ./library/equalizerwidget.ui line 316
+#: rc.cpp:30
+#, no-c-format
+msgid "Re&set EQ"
+msgstr "EQ &Sıfırla"
+
+#. i18n: file ./modules/excellent/excellentui.rc line 12
+#: rc.cpp:36 rc.cpp:120
+#, no-c-format
+msgid "&Go"
+msgstr "&Başla"
+
+#. i18n: file ./modules/systray/yhconfigwidget.ui line 31
+#: rc.cpp:48
+#, no-c-format
+msgid "&General"
+msgstr "&Genel"
+
+#. i18n: file ./modules/systray/yhconfigwidget.ui line 42
+#: rc.cpp:51
+#, no-c-format
+msgid "Show a &tooltip for the current track"
+msgstr "Geçerli parça için bir &ipucu göster"
+
+#. i18n: file ./modules/systray/yhconfigwidget.ui line 50
+#: rc.cpp:54
+#, no-c-format
+msgid "Show &covers in popup window and tooltip"
+msgstr "Kapakları açılan pen&cerede göster"
+
+#. i18n: file ./modules/systray/yhconfigwidget.ui line 58
+#: rc.cpp:57
+#, no-c-format
+msgid "Popup Window"
+msgstr "Açılan Pencere"
+
+#. i18n: file ./modules/systray/yhconfigwidget.ui line 69
+#: rc.cpp:60
+#, no-c-format
+msgid "Display popup window t&ime:"
+msgstr "Açılan pencere süresini gös&ter:"
+
+#. i18n: file ./modules/systray/yhconfigwidget.ui line 80
+#: rc.cpp:63
+#, no-c-format
+msgid "Show &buttons in popup window"
+msgstr "Açılan pencerede göster &düğmeleri göster"
+
+#. i18n: file ./modules/systray/yhconfigwidget.ui line 88
+#: rc.cpp:66
+#, no-c-format
+msgid "s"
+msgstr "s"
+
+#. i18n: file ./modules/systray/yhconfigwidget.ui line 106
+#: rc.cpp:69
+#, no-c-format
+msgid "Announce tracks with a &popup window"
+msgstr "Parçayı yeni bir popup &penceresinde göster"
+
+#. i18n: file ./modules/systray/yhconfigwidget.ui line 116
+#: rc.cpp:72
+#, no-c-format
+msgid "State Icon Display"
+msgstr "Durum ikonunu göster"
+
+#. i18n: file ./modules/systray/yhconfigwidget.ui line 130
+#: rc.cpp:75
+#, no-c-format
+msgid "&Animated"
+msgstr "H&areketli"
+
+#. i18n: file ./modules/systray/yhconfigwidget.ui line 138
+#: rc.cpp:78
+#, no-c-format
+msgid "&Flashing"
+msgstr "&Yanıp Sönen"
+
+#. i18n: file ./modules/systray/yhconfigwidget.ui line 146
+#: rc.cpp:81
+#, no-c-format
+msgid "&Static"
+msgstr "&Sabit"
+
+#. i18n: file ./modules/systray/yhconfigwidget.ui line 157
+#: library/noatunstdaction.cpp:165 modules/kaiman/userinterface.cpp:539
+#: modules/kjofol-skin/kjbutton.cpp:230 rc.cpp:84 rc.cpp:190
+#, no-c-format
+msgid "&None"
+msgstr "&Hiçbiri"
+
+#. i18n: file ./modules/systray/yhconfigwidget.ui line 186
+#: rc.cpp:87
+#, no-c-format
+msgid "Ad&vanced"
+msgstr "&Gelişmiş"
+
+#. i18n: file ./modules/systray/yhconfigwidget.ui line 197
+#: rc.cpp:90
+#, no-c-format
+msgid "Middle Mouse Button Action"
+msgstr "Fare Orta Tuşu Eylemi"
+
+#. i18n: file ./modules/systray/yhconfigwidget.ui line 208
+#: rc.cpp:93
+#, no-c-format
+msgid "Hide / Show play&list"
+msgstr "Ça&lma Listesini Göster / Gizle"
+
+#. i18n: file ./modules/systray/yhconfigwidget.ui line 216
+#: rc.cpp:96
+#, no-c-format
+msgid "&Play / Pause"
+msgstr "&Çal / Beklet"
+
+#. i18n: file ./modules/systray/yhconfigwidget.ui line 226
+#: rc.cpp:99
+#, no-c-format
+msgid "Mouse &Wheel"
+msgstr "&Fare Tekerleği"
+
+#. i18n: file ./modules/systray/yhconfigwidget.ui line 245
+#: rc.cpp:102
+#, no-c-format
+msgid "&Keyboard modifier:"
+msgstr "&Klave değiştirici:"
+
+#. i18n: file ./modules/systray/yhconfigwidget.ui line 263
+#: rc.cpp:105
+#, no-c-format
+msgid "Action:"
+msgstr "Hareket:"
+
+#. i18n: file ./modules/systray/yhconfigwidget.ui line 271
+#: rc.cpp:108
+#, no-c-format
+msgid "&Nothing"
+msgstr "&Hiçbiri"
+
+#. i18n: file ./modules/systray/yhconfigwidget.ui line 279
+#: rc.cpp:111
+#, no-c-format
+msgid "Change v&olume"
+msgstr "Ses seviyesini &değiştir"
+
+#. i18n: file ./modules/systray/yhconfigwidget.ui line 287
+#: rc.cpp:114
+#, no-c-format
+msgid "Switch &track"
+msgstr "&Parça Değiştir"
+
+#. i18n: file ./modules/simple/propertiesdialog.ui line 38
+#: rc.cpp:132
+#, no-c-format
+msgid "&Details"
+msgstr "&Ayrıntılar"
+
+#. i18n: file ./modules/simple/propertiesdialog.ui line 138
+#: rc.cpp:135
+#, no-c-format
+msgid "Type:"
+msgstr "Tür:"
+
+#. i18n: file ./modules/simple/propertiesdialog.ui line 163
+#: rc.cpp:138
+#, no-c-format
+msgid "Length:"
+msgstr "Uzunluk:"
+
+#. i18n: file ./modules/simple/propertiesdialog.ui line 184
+#: rc.cpp:141
+#, no-c-format
+msgid "Audio:"
+msgstr "Audio:"
+
+#. i18n: file ./modules/simple/propertiesdialog.ui line 205
+#: rc.cpp:144
+#, no-c-format
+msgid "Video:"
+msgstr "Vidyo:"
+
+#. i18n: file ./modules/simple/propertiesdialog.ui line 228
+#: rc.cpp:147
+#, no-c-format
+msgid "&PlayObject"
+msgstr "&Çal"
+
+#. i18n: file ./modules/simple/propertiesdialog.ui line 257
+#: rc.cpp:150
+#, no-c-format
+msgid "Description:"
+msgstr "Açıklamalar:"
+
+#. i18n: file ./modules/simple/propertiesdialog.ui line 268
+#: rc.cpp:153
+#, no-c-format
+msgid "Capabilities"
+msgstr "Becerileri"
+
+#. i18n: file ./modules/kjofol-skin/kjskinselectorwidget.ui line 51
+#: rc.cpp:165
+#, no-c-format
+msgid "Preview"
+msgstr "Önceki "
+
+#. i18n: file ./modules/kjofol-skin/kjskinselectorwidget.ui line 153
+#: rc.cpp:168
+#, no-c-format
+msgid "About skin:"
+msgstr "Tema hakkında:"
+
+#. i18n: file ./modules/kjofol-skin/kjskinselectorwidget.ui line 170
+#: rc.cpp:171
+#, no-c-format
+msgid ""
+"Here you will see all the comments people wrote about their skins.\n"
+"It can be several lines and usually does not contain anything interesting but "
+"still this will be shown."
+msgstr ""
+"Buradan arayüz tasarımcılarının arayüzleri hakkında yazdıklarına "
+"ulaşabilirsiniz.\n"
+"bu birkaç satır olabilir ve ilgi çekici bir şey bulunmaz faka yine de "
+"gösterilir."
+
+#. i18n: file ./modules/kjofol-skin/kjskinselectorwidget.ui line 205
+#: rc.cpp:175
+#, no-c-format
+msgid "Install Skin"
+msgstr "Tema kur"
+
+#. i18n: file ./modules/kjofol-skin/kjskinselectorwidget.ui line 213
+#: rc.cpp:178
+#, no-c-format
+msgid "Remove Skin"
+msgstr "Tema kaldır"
+
+#. i18n: file ./modules/kjofol-skin/kjguisettingswidget.ui line 38
+#: rc.cpp:181
+#, no-c-format
+msgid "Visualization"
+msgstr "Görsellik"
+
+#. i18n: file ./modules/kjofol-skin/kjguisettingswidget.ui line 55
+#: rc.cpp:184
+#, no-c-format
+msgid "Oscillo&scope"
+msgstr "&Osiloskop"
+
+#. i18n: file ./modules/kjofol-skin/kjguisettingswidget.ui line 63
+#: rc.cpp:187
+#, no-c-format
+msgid "&Analyzer"
+msgstr "&Analizci"
+
+#. i18n: file ./modules/kjofol-skin/kjguisettingswidget.ui line 101
+#: rc.cpp:193
+#, no-c-format
+msgid "U&pdate every:"
+msgstr "&Her:"
+
+#. i18n: file ./modules/kjofol-skin/kjguisettingswidget.ui line 121
+#: rc.cpp:196
+#, no-c-format
+msgid "ms"
+msgstr "ms'de güncelle"
+
+#. i18n: file ./modules/kjofol-skin/kjguisettingswidget.ui line 133
+#: modules/kjofol-skin/kjsliders.cpp:244
+#: modules/kjofol-skin/kjtextdisplay.cpp:537 rc.cpp:199
+#, no-c-format
+msgid "Pitch"
+msgstr "Ton yüksekliği"
+
+#. i18n: file ./modules/kjofol-skin/kjguisettingswidget.ui line 172
+#: rc.cpp:202
+#, no-c-format
+msgid "&Lower limit:"
+msgstr "&Alt sınır:"
+
+#. i18n: file ./modules/kjofol-skin/kjguisettingswidget.ui line 192
+#: rc.cpp:205 rc.cpp:211
+#, no-c-format
+msgid "%"
+msgstr "%"
+
+#. i18n: file ./modules/kjofol-skin/kjguisettingswidget.ui line 224
+#: rc.cpp:208
+#, no-c-format
+msgid "&Upper limit:"
+msgstr "Ü&st sınır:"
+
+#. i18n: file ./modules/kjofol-skin/kjguisettingswidget.ui line 258
+#: rc.cpp:214
+#, no-c-format
+msgid "Display &tooltips"
+msgstr "&Balon yardımlarını göster"
+
+#. i18n: file ./modules/kjofol-skin/kjguisettingswidget.ui line 266
+#: rc.cpp:217
+#, no-c-format
+msgid "Display splash sc&reen"
+msgstr "&Açılış ekranı göster"
+
+#. i18n: file ./modules/kjofol-skin/kjguisettingswidget.ui line 305
+#: rc.cpp:220
+#, no-c-format
+msgid "T&itle display scrolling speed:"
+msgstr "&Başlık gösterme hızı:"
+
+#. i18n: file ./modules/kjofol-skin/kjguisettingswidget.ui line 316
+#: rc.cpp:223
+#, no-c-format
+msgid "Slow"
+msgstr "Yavaş"
+
+#. i18n: file ./modules/kjofol-skin/kjguisettingswidget.ui line 356
+#: modules/winskin/winSkinConfig.cpp:74 rc.cpp:226
+#, no-c-format
+msgid "Fast"
+msgstr "Hızlı"
+
+#. i18n: file ./modules/kjofol-skin/kjguisettingswidget.ui line 366
+#: rc.cpp:229
+#, no-c-format
+msgid "System Font"
+msgstr "Sistem Yazıtipi"
+
+#. i18n: file ./modules/kjofol-skin/kjguisettingswidget.ui line 389
+#: rc.cpp:232
+#, no-c-format
+msgid "Color:"
+msgstr "Renk:"
+
+#. i18n: file ./modules/kjofol-skin/kjguisettingswidget.ui line 397
+#: rc.cpp:235
+#, no-c-format
+msgid "Font:"
+msgstr "Yazıtipi:"
+
+#. i18n: file ./modules/kjofol-skin/kjguisettingswidget.ui line 416
+#: rc.cpp:238
+#, no-c-format
+msgid "Use system font"
+msgstr "Sistem yazıtiplerini kullan"
+
+#: app/main.cpp:8
+msgid "The Fusion of Frequencies"
+msgstr "Frekansların Birleşmesi"
+
+#: app/main.cpp:13
+msgid "Files/URLs to open"
+msgstr "Açılacak Dosya/URL"
+
+#: app/main.cpp:19 modules/kaiman/userinterface.cpp:516
+#: modules/kjofol-skin/kjloader.cpp:122 modules/simple/userinterface.cpp:56
+#: modules/systray/systray.cpp:123 modules/winskin/waSkin.cpp:105
+msgid "Noatun"
+msgstr "Noatun"
+
+#: app/main.cpp:21
+msgid "(c) 2000-2004, The Noatun Developers"
+msgstr "(c) 2000-2004, Noatun Geliştiricileri"
+
+#: app/main.cpp:23
+msgid "Noatun Developer"
+msgstr "Noatun Geliştiricisi"
+
+#: app/main.cpp:25
+msgid "Patron of the aRts"
+msgstr "Sanatların patronu"
+
+#: app/main.cpp:27
+msgid "MPEG Codec and OGG Vorbis Support"
+msgstr "MPEG Codec ve OGG Vorbis Desteği"
+
+#: app/main.cpp:29
+msgid "Infrared Control Support and HTML playlist export"
+msgstr "Kızılötesi Kontrol Desteği ve HTML şarkı listesi ihracı"
+
+#: app/main.cpp:31
+msgid "HTML playlist export and Plugin System"
+msgstr "HTML şarkı listesi ihracı ve Plugin Sistemi"
+
+#: app/main.cpp:33
+msgid "Kaiman Skin Support"
+msgstr "Kaiman Yüz desteği"
+
+#: app/main.cpp:35
+msgid "Extended K-Jöfol Skin Support, EXTM3U playlist loading"
+msgstr "Gelişmiş K-Jöfol Arayüz Desteği, EXTM3U çalma listesi yükleniyor"
+
+#: app/main.cpp:38
+msgid "Special help with the equalizer"
+msgstr "Ekolayzır için özel yardım"
+
+#: library/video.cpp:119
+msgid "Video - Noatun"
+msgstr "Vidyo - Noatun"
+
+#: library/ksaver.cpp:81 modules/splitplaylist/view.cpp:470
+#, c-format
+msgid "Could not write to %1."
+msgstr "%1: yazmada hata."
+
+#: library/cmodule.cpp:32
+msgid "General"
+msgstr "Genel"
+
+#: library/cmodule.cpp:32
+msgid "General Options"
+msgstr "Genel Seçenekler"
+
+#: library/cmodule.cpp:34
+msgid "&Return to start of playlist on finish"
+msgstr "&Bittiğinde çalma listesinin başına git"
+
+#: library/cmodule.cpp:36
+msgid ""
+"When the playlist is finished playing, return to the start, but do not start "
+"playing."
+msgstr ""
+"Çalınacaklar listesinin çalınması bitince, başlangıca dön ama çalmaya başlama."
+
+#: library/cmodule.cpp:38
+msgid "Allow only one &instance of Noatun"
+msgstr "&Noatun'un sadece bir penceresine izin ver"
+
+#: library/cmodule.cpp:40
+msgid ""
+"Starting noatun a second time will cause it to just append items from the start "
+"to the current instance."
+msgstr ""
+"noatun'un ikinci defa başlatılması sadece başlangıçtan şu anki çalışmaya ekleme "
+"yapmasına neden olacaktır."
+
+#: library/cmodule.cpp:42
+msgid "Clear playlist &when opening a file"
+msgstr "&Dosya açarken çalma listesini temizle "
+
+#: library/cmodule.cpp:44
+msgid ""
+"Opening a file with the global Open menu item will clear the playlist first."
+msgstr ""
+"Global Açma menüsünü kullanara dosya açılması halinde önce şarkı listesi "
+"temizlenecektir."
+
+#: library/cmodule.cpp:46
+msgid "&Use fast hardware volume control"
+msgstr "&Hızlı donanım ses denetimini kullan "
+
+#: library/cmodule.cpp:48
+msgid ""
+"Use the hardware mixer instead of aRts'. It affects all streams, not just "
+"Noatun's, but is a little faster."
+msgstr ""
+"Sanatların arasındaki donanım karıştırıcısını kullanın. Bütün akışları etkiler, "
+"sadece Noatun'unkileri değil, ama biraz daha hızlıdır."
+
+#: library/cmodule.cpp:50
+msgid "Display &remaining play time"
+msgstr "&Kalan çalma zamanını göster"
+
+#: library/cmodule.cpp:52
+msgid ""
+"Counters count down towards zero, showing remaining time instead of elapsed "
+"time."
+msgstr ""
+"Sayaçlar sıfıra doğru geri sayar, geçen zaman yerine kalan zaman gösterilir."
+
+#: library/cmodule.cpp:54
+msgid "Title &format:"
+msgstr "Başlık &biçimi:"
+
+#: library/cmodule.cpp:59
+msgid ""
+"Select a title to use for each file (in the playlist and user interface). Each "
+"element such as $(title) is replaced with the property with the name as given "
+"in the parentheses. The properties include, but are not limited to: title, "
+"author, date, comments and album."
+msgstr ""
+"Her dosya için bir başlık seçin.( çalma listesinde veya kullanıcı arayüzünde) "
+"Her element mesela, $(title), parantez içindeki metin tarafında değiştirilir. "
+"Bu elementlere ait olmayanlar: Başlık, Yazar, Tarih Yorum ve Ablbümdür."
+
+#: library/cmodule.cpp:64
+msgid "&Download folder:"
+msgstr "İ&ndirme dizini:"
+
+#: library/cmodule.cpp:69
+msgid "When opening a non-local file, download it to the selected folder."
+msgstr "Yerel olmayan bir dosyayı açarken, seçili dizine indir."
+
+#: library/cmodule.cpp:71
+msgid "Play Behavior on Startup"
+msgstr "Başlangıçta Çalma Davranışı"
+
+#: library/cmodule.cpp:74
+msgid "Restore &play state"
+msgstr "Çalmaya &kaldığı yerden devam et"
+
+#: library/cmodule.cpp:78
+msgid "Automatically play &first file"
+msgstr "&Otomatik olarak ilk parçayı çal "
+
+#: library/cmodule.cpp:82
+msgid "&Do not start playing"
+msgstr "Çalmaya &başlama"
+
+#: library/pluginmodule.cpp:140
+msgid "Plugins"
+msgstr "Eklentiler"
+
+#: library/pluginmodule.cpp:140
+msgid "Select Your Plugins"
+msgstr "Eklentileri Seçin"
+
+#: library/pluginmodule.cpp:148
+msgid "<b>Select one or more interfaces to use:</b>"
+msgstr "<b>Lütfen kullanılacak bir ya da iki arayüz seçin.</b>"
+
+#: library/pluginmodule.cpp:151 library/pluginmodule.cpp:163
+#: library/pluginmodule.cpp:174 library/pluginmodule.cpp:186
+msgid "Name"
+msgstr "İsim"
+
+#: library/pluginmodule.cpp:152 library/pluginmodule.cpp:164
+#: library/pluginmodule.cpp:175 library/pluginmodule.cpp:187
+msgid "Description"
+msgstr "Açıklamalar"
+
+#: library/pluginmodule.cpp:153 library/pluginmodule.cpp:165
+#: library/pluginmodule.cpp:176 library/pluginmodule.cpp:188
+msgid "Author"
+msgstr "Yazar"
+
+#: library/pluginmodule.cpp:154 library/pluginmodule.cpp:166
+#: library/pluginmodule.cpp:177 library/pluginmodule.cpp:189
+msgid "License"
+msgstr "Lisans"
+
+#: library/pluginmodule.cpp:156
+msgid "&Interfaces"
+msgstr "&Arayüzler"
+
+#: library/pluginmodule.cpp:160
+msgid "<b>Select one playlist to use:</b>"
+msgstr "<b>Kullanılacak bir çalma listesi seçin:</b>"
+
+#: library/noatunstdaction.cpp:175 library/pluginmodule.cpp:168
+#: modules/kaiman/userinterface.cpp:543 modules/kjofol-skin/kjbutton.cpp:232
+msgid "&Playlist"
+msgstr "Parça &Listesi"
+
+#: library/pluginmodule.cpp:172
+msgid "<b>Select any visualizations to use:</b>"
+msgstr "<b>Kullanılacak başka bir eklenti seçin:</b> "
+
+#: library/noatunstdaction.cpp:115 library/pluginmodule.cpp:179
+msgid "&Visualizations"
+msgstr "&Görsel Kip"
+
+#: library/pluginmodule.cpp:184
+msgid "<b>Select any other plugins to use:</b>"
+msgstr "<b>Kullanılacak başka bir eklenti seçin:</b>"
+
+#: library/pluginmodule.cpp:191
+msgid "O&ther Plugins"
+msgstr "&Diğer Eklentiler"
+
+#: library/pluginmodule.cpp:401
+msgid ""
+"<qt>Changing your playlist plugin will stop playback. Different playlists may "
+"use different methods of storing information, so after changing playlists you "
+"may have to recreate your playlist.</qt>"
+msgstr ""
+"<qt>Çalma listesi eklentisini değiştirilmesi çalma işlemini durdurur. Farklı "
+"çalma listeleri farkı bilgilerin metodlarıdır. Bu yüzden çalma listesinin "
+"değiştirilmesinden sonra kendi özel çalma listenizi oluşturulması gerekir. </qt>"
+
+#: library/downloader.cpp:101
+msgid "Unknown"
+msgstr "Bilinmeyen "
+
+#: library/equalizerview.cpp:45 library/equalizerview.cpp:51
+#: library/equalizerview.cpp:146 library/equalizerview.cpp:270
+msgid "Custom"
+msgstr "Özel"
+
+#: library/equalizerview.cpp:284
+msgid "New Preset"
+msgstr "Yeni Ayar"
+
+#: library/noatuntags/tags.cpp:181
+msgid "Tagging"
+msgstr "Tagging"
+
+#: library/noatuntags/tags.cpp:181
+msgid "Settings for Tag Loaders"
+msgstr "Tag yükleyici ayarları"
+
+#: library/noatuntags/tags.cpp:184
+msgid "Rescan All Tags"
+msgstr "Bütün Tag'ları tekrar tara"
+
+#: library/noatuntags/tags.cpp:189
+msgid "Load tags &automatically"
+msgstr "Tag'lari &otomatik yükle"
+
+#: library/noatuntags/tags.cpp:202
+msgid ""
+"_: The time between each time noatun scans for a new file, and updates tags "
+"(e.g., ID3)\n"
+"Interval:"
+msgstr "Aralık:"
+
+#: library/noatuntags/tags.cpp:210
+msgid ""
+"_: Milliseconds\n"
+" ms"
+msgstr " ms"
+
+#: library/pref.cpp:12
+msgid "Preferences - Noatun"
+msgstr "Tercihler - Noatun"
+
+#: library/engine.cpp:257
+msgid "There was an error communicating to the aRts daemon."
+msgstr "aRts sistemi ile iletişimde hata oluştu."
+
+#: library/engine.cpp:257
+msgid "aRts error"
+msgstr "aRts hatası"
+
+#: library/engine.cpp:577
+msgid ""
+"Connecting/starting aRts soundserver failed. Make sure that artsd is configured "
+"properly."
+msgstr ""
+"Ses sunucusu başlatılamıyor/bağlanılamıyor. Lütfen artsdnin düzgün "
+"yapılandırıldığına emin olun."
+
+#: library/app.cpp:118 modules/marquis/marquis.cpp:161
+msgid ""
+"No playlist plugin was found. Please make sure that Noatun was installed "
+"correctly."
+msgstr ""
+"Çalma listesi eklentisi bulunamadı. Lütfen Noatun kurulumunuzu düzeltin."
+
+#: library/app.cpp:409 modules/kjofol-skin/kjbutton.cpp:217
+#: modules/splitplaylist/view.cpp:896
+msgid "Select File to Play"
+msgstr "Çalınacak Dosyayı seçin "
+
+#: library/playlistsaver.cpp:110 library/playlistsaver.cpp:306
+#: library/playlistsaver.cpp:559
+#, c-format
+msgid "Stream from %1"
+msgstr "%1 'den veri akımı"
+
+#: library/playlistsaver.cpp:751
+msgid "Stream from %1 (port: %2)"
+msgstr "%1 (port: %2) 'den veri akımı"
+
+#: library/playlistsaver.cpp:753
+msgid "Stream from %1, (ip: %2, port: %3)"
+msgstr "%1, (ip: %2, port: %3) 'den veri akımı"
+
+#: library/noatunstdaction.cpp:25 library/noatunstdaction.cpp:45
+#: modules/infrared/irprefs.cpp:252 modules/kjofol-skin/kjbutton.cpp:117
+#: modules/noatunui/userinterface.cpp:54
+msgid "Play"
+msgstr "Başlat"
+
+#: library/noatunstdaction.cpp:39 modules/infrared/irprefs.cpp:266
+#: modules/kjofol-skin/kjbutton.cpp:119
+msgid "Pause"
+msgstr "Beklet"
+
+#: library/noatunstdaction.cpp:50 modules/infrared/irprefs.cpp:272
+msgid "Show Playlist"
+msgstr "Listeyi göster"
+
+#: library/noatunstdaction.cpp:52
+msgid "Hide Playlist"
+msgstr "Çalma Listresini Gizle"
+
+#: library/noatunstdaction.cpp:71
+msgid "&Actions"
+msgstr "&Hareket"
+
+#: library/noatunstdaction.cpp:163
+msgid "&Loop"
+msgstr "&Döngü"
+
+#: library/noatunstdaction.cpp:170 modules/kaiman/userinterface.cpp:541
+#: modules/kjofol-skin/kjbutton.cpp:231
+msgid "&Song"
+msgstr "&Şarkı"
+
+#: library/noatunstdaction.cpp:180 modules/kaiman/userinterface.cpp:545
+#: modules/kjofol-skin/kjbutton.cpp:233
+msgid "&Random"
+msgstr "&Rastgele"
+
+#: library/noatunstdaction.cpp:242
+msgid "&Effects..."
+msgstr "&Efektler..."
+
+#: library/noatunstdaction.cpp:247
+msgid "E&qualizer..."
+msgstr "E&kolayzır..."
+
+#: library/noatunstdaction.cpp:252
+msgid "&Back"
+msgstr "&Geri"
+
+#: library/noatunstdaction.cpp:270
+msgid "&Forward"
+msgstr "İ&leri"
+
+#: library/noatunstdaction.cpp:275
+msgid "&Play"
+msgstr "&Başlat"
+
+#: library/noatunstdaction.cpp:288
+msgid "&Pause"
+msgstr "Beklet"
+
+#: library/vequalizer.cpp:845
+msgid "Trance"
+msgstr "Trance"
+
+#: library/vequalizer.cpp:846
+msgid "Dance"
+msgstr "Dans"
+
+#: library/vequalizer.cpp:847
+msgid "Metal"
+msgstr "Metal"
+
+#: library/vequalizer.cpp:848
+msgid "Jazz"
+msgstr "Caz"
+
+#: library/vequalizer.cpp:849
+msgid "Zero"
+msgstr "Sıfır"
+
+#: library/vequalizer.cpp:850
+msgid "Eclectic Guitar"
+msgstr "Eklektik Gitar"
+
+#: library/effectview.cpp:75
+msgid "Effects"
+msgstr "Efektler"
+
+#: library/effectview.cpp:104
+msgid "Effects - Noatun"
+msgstr "Efektler - Noatun"
+
+#: library/effectview.cpp:112
+msgid "Available Effects"
+msgstr "Kullanılabilir Efektler"
+
+#: library/effectview.cpp:122
+msgid "Active Effects"
+msgstr "Etkin Efektler"
+
+#: library/effectview.cpp:156
+msgid "Up"
+msgstr "Yukarı"
+
+#: library/effectview.cpp:157
+msgid "Down"
+msgstr "Aşağı"
+
+#: library/effectview.cpp:170
+msgid ""
+"This shows all available effects.\n"
+"\n"
+"To activate a plugin, drag files from here to the active pane on the right."
+msgstr ""
+"Varolan tüm efektleri gösterir\n"
+"\n"
+"Eklentiyi etkinleştirmek için sağdaki Etkin panosuna taşıyın."
+
+#: library/effectview.cpp:171
+msgid "This will place the selected effect at the bottom of your chain."
+msgstr "Bu seçilen efekti zincirinizin en altına yerleştirecektir. "
+
+#: library/effectview.cpp:172
+msgid ""
+"This shows your effect chain. Noatun supports an unlimited amount of effects in "
+"any order. You can even have the same effect twice.\n"
+"\n"
+"Drag the items to and from here to add and remove them, respectively. You may "
+"also reorder them with drag-and-drop. These actions can also be performed with "
+"the buttons to the right."
+msgstr ""
+"Bu efekt listesini gösterir. Noatun sınırsız efektleri destekler. Hatta aynı "
+"efekti iki kere çalıştırabilirsiniz.\n"
+"\n"
+"Öğeyi buraya sürükleyip bırakın , böylece eklenir veya silinir. Çekip bırakma "
+"sıralamasını değiştirebilirsiniz. Bu işlemi sağdaki düğme ilede yapabilirsiniz."
+
+#: library/effectview.cpp:173
+msgid "Move the currently selected effect up in the chain."
+msgstr "Seçilen efekti zincirde yukarı taşıyın."
+
+#: library/effectview.cpp:174
+msgid "Move the currently selected effect down in the chain."
+msgstr "Seçilen efekti zincirde aşağı taşıyın."
+
+#: library/effectview.cpp:175
+msgid ""
+"Configure the currently selected effect.\n"
+"\n"
+"You can change things such as intensity from here."
+msgstr ""
+"Suan seçili olan efekti ayarlayın.\n"
+"\n"
+"Örneğin yoğunluğu buradan değiştirebilirsiniz."
+
+#: library/effectview.cpp:176
+msgid "This will remove the selected effect from your chain."
+msgstr "Bu seçilen efektin zincirinizden çıkartılması demektir."
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "erkaN kaplaN"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "erkan@linux-sevenler.org"
+
+#: modules/keyz/keyz.cpp:33
+msgid "Play/Pause"
+msgstr "Çal/Beklet"
+
+#: modules/keyz/keyz.cpp:36
+msgid "Stop Playing"
+msgstr "Çalmayı durdur "
+
+#: modules/keyz/keyz.cpp:42 modules/kjofol-skin/kjbutton.cpp:139
+#: modules/noatunui/userinterface.cpp:60 modules/simple/userinterface.cpp:214
+msgid "Forward"
+msgstr "İleri"
+
+#: modules/keyz/keyz.cpp:45
+msgid "Show/Hide Playlist"
+msgstr "Çalma Listesini Göster/Gizle"
+
+#: modules/keyz/keyz.cpp:48
+msgid "Open File to Play"
+msgstr "Çalınacak dosyayı açın "
+
+#: modules/keyz/keyz.cpp:51
+msgid "Effects Configuration"
+msgstr "Efekt yapılandırması"
+
+#: modules/keyz/keyz.cpp:54
+msgid "Preferences"
+msgstr "Tercihler"
+
+#: modules/infrared/irprefs.cpp:262 modules/keyz/keyz.cpp:57
+msgid "Volume Up"
+msgstr "Sesi aç "
+
+#: modules/infrared/irprefs.cpp:260 modules/keyz/keyz.cpp:60
+msgid "Volume Down"
+msgstr "Sesi kıs"
+
+#: modules/infrared/irprefs.cpp:264 modules/keyz/keyz.cpp:63
+msgid "Mute"
+msgstr "Sesi Kes"
+
+#: modules/infrared/irprefs.cpp:270 modules/keyz/keyz.cpp:66
+msgid "Seek Forward"
+msgstr "İleriye Doğru Ara"
+
+#: modules/infrared/irprefs.cpp:268 modules/keyz/keyz.cpp:69
+msgid "Seek Backward"
+msgstr "Geriye Doğru Ara"
+
+#: modules/infrared/irprefs.cpp:274 modules/keyz/keyz.cpp:72
+msgid "Next Section"
+msgstr "Sonraki Bölüm"
+
+#: modules/infrared/irprefs.cpp:276 modules/keyz/keyz.cpp:75
+msgid "Previous Section"
+msgstr "Önceki Bölüm"
+
+#: modules/keyz/keyz.cpp:78
+msgid "Copy Song Title to Clipboard"
+msgstr "Panele parça başlığını kopyala"
+
+#: modules/keyz/keyz.cpp:82
+msgid "Show/Hide Main Window"
+msgstr "Ana Pencereyi Göster/Gizle"
+
+#: modules/keyz/keyz.cpp:174
+msgid "Keyz"
+msgstr "Keyz"
+
+#: modules/keyz/keyz.cpp:174
+msgid "Shortcut Configuration"
+msgstr "Kısayol Yapılandırması"
+
+#: modules/monoscope/monoscope.cpp:27
+msgid "Monoscope"
+msgstr "Monoskop"
+
+#: modules/monoscope/monoscope.cpp:43
+msgid "Toggle Monoscope"
+msgstr "Monoskop"
+
+#: modules/excellent/userinterface.cpp:85
+msgid "Show &Volume Control"
+msgstr "Ses &kontrollerini göster"
+
+#: modules/excellent/userinterface.cpp:86
+msgid "Hide &Volume Control"
+msgstr "Ses &Kontrollerini Gizle"
+
+#: modules/excellent/userinterface.cpp:317
+#: modules/noatunui/userinterface.cpp:263
+msgid "No looping"
+msgstr "Tekrarlama yok"
+
+#: modules/excellent/userinterface.cpp:320
+#: modules/noatunui/userinterface.cpp:267
+msgid "Song looping"
+msgstr "Parça tekrarı"
+
+#: modules/excellent/userinterface.cpp:323
+#: modules/noatunui/userinterface.cpp:271
+msgid "Playlist looping"
+msgstr "Tekrar eden liste"
+
+#: modules/excellent/userinterface.cpp:326
+#: modules/noatunui/userinterface.cpp:275
+msgid "Random play"
+msgstr "Rastgele çal"
+
+#: modules/excellent/userinterface.cpp:338
+msgid "<qt>Press %1 to show the menubar.</qt>"
+msgstr "<qt>Menü çubuğunu görmek için %1 tıklayın</qt>"
+
+#: modules/metatag/edit.cpp:27
+msgid "Tag Editor"
+msgstr "Etiket Düzenleyici"
+
+#: modules/metatag/edit.cpp:84
+msgid "&Title"
+msgstr "&Başlık"
+
+#: modules/metatag/edit.cpp:85
+msgid "&Artist"
+msgstr "&Sanatçı"
+
+#: modules/metatag/edit.cpp:86
+msgid "A&lbum"
+msgstr "&Albüm"
+
+#: modules/metatag/edit.cpp:87
+msgid "&Date"
+msgstr "&Tarih"
+
+#: modules/metatag/edit.cpp:88
+msgid "T&rack"
+msgstr "&İz"
+
+#: modules/metatag/edit.cpp:89
+msgid "&Genre"
+msgstr "&Tarz"
+
+#: modules/metatag/edit.cpp:90
+msgid "Co&mment"
+msgstr "&Açıklama"
+
+#: modules/metatag/metatag.cpp:35
+msgid "&Tag Editor..."
+msgstr "&Etiket düzeltme"
+
+#: modules/splitplaylist/find.cpp:8
+msgid "Find"
+msgstr "Bul"
+
+#: modules/splitplaylist/find.cpp:8
+msgid "&Find"
+msgstr "B&ul"
+
+#: modules/splitplaylist/find.cpp:22
+msgid "&Regular expression"
+msgstr "&Düzenli ifade"
+
+#: modules/splitplaylist/find.cpp:23
+msgid "Find &backwards"
+msgstr "&Geriye doğru ara"
+
+#: modules/splitplaylist/view.cpp:351
+msgid "Time"
+msgstr "Zaman"
+
+#: modules/splitplaylist/view.cpp:645
+msgid "Add &Files..."
+msgstr "Dosyaları &Ekle..."
+
+#: modules/splitplaylist/view.cpp:646
+msgid "Add Fol&ders..."
+msgstr "Dizinleri &Ekle..."
+
+#: modules/splitplaylist/view.cpp:658
+msgid "Shuffle"
+msgstr "Karıştır"
+
+#: modules/splitplaylist/view.cpp:749
+msgid "End of playlist reached. Continue searching from beginning?"
+msgstr "Belgenin sonuna ulaşıldı. Baştan devam edeyim mi?"
+
+#: modules/splitplaylist/view.cpp:754
+msgid "Beginning of playlist reached. Continue searching from end?"
+msgstr "Çalma listesinin başına ulaşıldı. Sondan devam edeyim mi?"
+
+#: modules/splitplaylist/view.cpp:836
+msgid "Save Playlist"
+msgstr "Listeyi sakla"
+
+#: modules/splitplaylist/view.cpp:845
+msgid "Open Playlist"
+msgstr "Çalma Listesi Aç"
+
+#: modules/splitplaylist/view.cpp:907
+msgid "Select Folder"
+msgstr "Dizini Seç"
+
+#: modules/kjofol-skin/kjbutton.cpp:123 modules/noatunui/userinterface.cpp:67
+#: modules/simple/userinterface.cpp:227 modules/splitplaylist/view.cpp:935
+msgid "Playlist"
+msgstr "Çalım Listesi"
+
+#: modules/systray/cmodule.cpp:48
+msgid "System Tray Icon"
+msgstr "Sistem Çekmecesi Simgesini Yapılandır"
+
+#: modules/systray/cmodule.cpp:48
+msgid "Configure System Tray Icon"
+msgstr "Sistem Çekmecesi Simgesini Yapılandır"
+
+#: modules/infrared/irprefs.cpp:170 modules/systray/cmodule.cpp:55
+#: modules/winskin/winSkinConfig.cpp:63
+msgid "None"
+msgstr "Hiçbiri"
+
+#: modules/systray/cmodule.cpp:56
+msgid "Shift"
+msgstr "Shift"
+
+#: modules/systray/cmodule.cpp:57
+msgid "Alt"
+msgstr "Alt"
+
+#: modules/systray/cmodule.cpp:58
+msgid "Ctrl"
+msgstr "Ctrl"
+
+#: modules/systray/systray.cpp:202
+msgid "Noatun - Paused"
+msgstr "Noatun - Durakladı"
+
+#: modules/systray/systray.cpp:207
+msgid "Noatun - Playing"
+msgstr "Noatun - Çalıyor"
+
+#: modules/systray/systray.cpp:259
+msgid "Noatun - Stopped"
+msgstr "Noatun - Durduruldu"
+
+#: modules/kaiman/style.cpp:1381
+msgid "Cannot load style. Style not installed."
+msgstr "Stili yükleyemiyor. Stil yüklü değil."
+
+#: modules/kaiman/style.cpp:1385
+msgid "Cannot load style. Unsupported or faulty style description."
+msgstr "Stili yükleyemiyor. Desteklenmeyen veya hatalı stil tanımlaması."
+
+#: modules/kaiman/userinterface.cpp:91
+msgid "Cannot load skin %1. Switching to default skin."
+msgstr "%1 arayüz yüklenemiyor. Öntanımlı arayüze geri dönülüyor."
+
+#: modules/kaiman/userinterface.cpp:94
+#, c-format
+msgid "Cannot load default skin %1."
+msgstr "Öntanımlı arayüz %1 yüklenemiyor."
+
+#: modules/kaiman/userinterface.cpp:523
+msgid ""
+"_: TITLE (LENGTH)\n"
+"%1 (%2)"
+msgstr "%1 (%2)"
+
+#: modules/kaiman/userinterface.cpp:538 modules/kjofol-skin/kjbutton.cpp:229
+msgid "Loop Style"
+msgstr "Döngü Türü"
+
+#: modules/kaiman/pref.cpp:35 modules/kaiman/pref.cpp:39
+msgid "Kaiman Skins"
+msgstr "Kaiman Yüzleri"
+
+#: modules/kaiman/pref.cpp:35
+msgid "Skin Selection for the Kaiman Plugin"
+msgstr "Kaiman eklentisi için tema seçimi"
+
+#: modules/simple/propertiesdialog.ui.h:39
+#: modules/simple/propertiesdialog.ui.h:40
+#: modules/simple/propertiesdialog.ui.h:41
+#: modules/simple/propertiesdialog.ui.h:42
+#: modules/simple/propertiesdialog.ui.h:43
+msgid "unknown"
+msgstr "Bilinmiyor"
+
+#: modules/simple/propertiesdialog.ui.h:49
+#, c-format
+msgid "Properties for %1"
+msgstr "%1 özellikleri"
+
+#: modules/simple/userinterface.cpp:130
+msgid "&Properties"
+msgstr "&Özellikler"
+
+#: modules/simple/userinterface.cpp:208
+msgid "Play / Pause"
+msgstr "Çal / Beklet"
+
+#: modules/kjofol-skin/kjsliders.cpp:53 modules/kjofol-skin/kjsliders.cpp:143
+#: modules/kjofol-skin/kjtextdisplay.cpp:429
+#: modules/simple/userinterface.cpp:233
+msgid "Volume"
+msgstr "Ses"
+
+#: modules/kjofol-skin/kjprefs.cpp:49
+msgid "K-Jöfol Skins"
+msgstr "K-Jofol Arayüzleri"
+
+#: modules/kjofol-skin/kjprefs.cpp:49
+msgid "Skin Selection For the K-Jöfol Plugin"
+msgstr "K-Jofol Eklentisi İçin Arayüz Seçimi"
+
+#: modules/kjofol-skin/kjprefs.cpp:63
+msgid "&Skin Selector"
+msgstr "&Tema Seçimi"
+
+#: modules/kjofol-skin/kjprefs.cpp:64
+msgid "O&ther Settings"
+msgstr "&Diğer Ayarlar"
+
+#: modules/kjofol-skin/kjprefs.cpp:388
+msgid "Non-Local files are not supported yet"
+msgstr "Yerel olmayan dosyalar şu anda desteklenmiyor"
+
+#: modules/kjofol-skin/kjprefs.cpp:403
+msgid "The selected file does not appear to be a valid zip-archive"
+msgstr "Seçilen dosya geçerli bir Zip dosyası değil."
+
+#: modules/kjofol-skin/kjprefs.cpp:424
+msgid "Extracting skin-archive failed"
+msgstr "Arşivin açılmasında hata"
+
+#: modules/kjofol-skin/kjprefs.cpp:472
+msgid ""
+"Installing new skin failed: Destination path is invalid.\n"
+"Please report a bug to the K-Jöfol maintainer"
+msgstr ""
+"Yeni arayüz kurulumu başarısız. Verilen yol geçersiz.\n"
+"Lütfen bu hatayı  K-Jöfol yöneticisine hata olarak bildirin"
+
+#: modules/kjofol-skin/kjprefs.cpp:483
+msgid ""
+"Installing new skin failed: Either source or destination path is invalid.\n"
+"Please report a bug to the K-Jöfol maintainer"
+msgstr ""
+"Yeni arayüz kurumu başarısız. Diğer kaynak veya verilen yol geçersiz.\n"
+"Lütfen bu hatayı  K-Jöfol yöneticisine hata olarak bildirin"
+
+#: modules/kjofol-skin/kjprefs.cpp:498
+msgid ""
+"No new skin has been installed.\n"
+"Make sure the archive contains a valid K-Jöfol skin"
+msgstr ""
+"Yeni arayüz kurulamadı.\n"
+"Arşivin K-Jöfol arayüz dosyaları içerdiğine emin olun"
+
+#: modules/kjofol-skin/kjprefs.cpp:502
+msgid "The new skin has been successfully installed"
+msgstr "Yeni tema başarıyla kuruldu"
+
+#: modules/kjofol-skin/kjprefs.cpp:511
+msgid ""
+"Are you sure you want to remove %1?\n"
+"This will delete the files installed by this skin "
+msgstr ""
+"Gerçekten %1'i silmek istiyor musunuz?\n"
+"Bu işlem bu tema tarafından yerleştirilen tüm dosyaları silecektir."
+
+#: modules/kjofol-skin/kjprefs.cpp:519
+msgid "Confirmation"
+msgstr "Onaylama"
+
+#: modules/kjofol-skin/kjtextdisplay.cpp:66
+msgid "Welcome to Noatun"
+msgstr "Noatun'a Hoşgeldiniz"
+
+#: modules/kjofol-skin/kjtextdisplay.cpp:177
+msgid "Filename"
+msgstr "Dosya adı"
+
+#: modules/kjofol-skin/kjtextdisplay.cpp:335
+msgid "Play time left"
+msgstr "Kalan çalma zamanı"
+
+#: modules/kjofol-skin/kjtextdisplay.cpp:337
+msgid "Current play time"
+msgstr "Şimdiki çalma zamanı"
+
+#: modules/kjofol-skin/kjtextdisplay.cpp:643
+msgid "Sample rate in kHz"
+msgstr "Sample hızı ( kHz olarak)"
+
+#: modules/kjofol-skin/kjtextdisplay.cpp:645
+msgid "Bitrate in kbps"
+msgstr "Bit hızı (kbps olarak)"
+
+#: modules/kjofol-skin/kjbutton.cpp:111
+msgid "Minimize"
+msgstr "Küçült"
+
+#: modules/kjofol-skin/kjbutton.cpp:125
+msgid "Loop"
+msgstr "Döngü"
+
+#: modules/kjofol-skin/kjbutton.cpp:127
+msgid "Show Equalizer Window"
+msgstr "Ekolayzır Penceresini Göster"
+
+#: modules/kjofol-skin/kjbutton.cpp:129
+msgid "Turn on Equalizer"
+msgstr "Ekolayzır'ı Aç"
+
+#: modules/kjofol-skin/kjbutton.cpp:131
+msgid "Turn off Equalizer"
+msgstr "Ekolayzır'ı Kapat"
+
+#: modules/kjofol-skin/kjbutton.cpp:133
+msgid "Reset Equalizer"
+msgstr "Ekolayzır'ı Sıfırla"
+
+#: modules/infrared/irprefs.cpp:258 modules/kjofol-skin/kjbutton.cpp:135
+msgid "Next"
+msgstr "Sonraki"
+
+#: modules/kjofol-skin/kjbutton.cpp:137
+msgid "Previous"
+msgstr "Önceki"
+
+#: modules/kjofol-skin/kjbutton.cpp:141
+msgid "Rewind"
+msgstr "Geriye Al"
+
+#: modules/kjofol-skin/kjbutton.cpp:143
+msgid "K-Jöfol Preferences"
+msgstr "K-Jöfol Özellikleri"
+
+#: modules/kjofol-skin/kjbutton.cpp:145
+msgid "Switch to dockmode"
+msgstr "Dock moduna geç"
+
+#: modules/kjofol-skin/kjbutton.cpp:147
+msgid "Return from dockmode"
+msgstr "Dockmodunu kapat"
+
+#: modules/kjofol-skin/kjloader.cpp:145
+msgid "There was trouble loading skin %1. Please select another skin file."
+msgstr "%1 yüzünü yüklemede sorun var. Lütfen başka bir yüz dosyası seçin."
+
+#: modules/voiceprint/prefs.cpp:12 modules/voiceprint/voiceprint.cpp:25
+msgid "Voiceprint"
+msgstr "Sesbaskısı"
+
+#: modules/voiceprint/prefs.cpp:12
+msgid "Options for the Voiceprint Visualization"
+msgstr "Sesbaskısı imgelenme seçenekleri"
+
+#: modules/voiceprint/prefs.cpp:19
+msgid "&Foreground color:"
+msgstr "Ö&nplan rengi:"
+
+#: modules/voiceprint/prefs.cpp:25
+msgid "&Background color:"
+msgstr "&Arkaplan rengi:"
+
+#: modules/voiceprint/prefs.cpp:31
+msgid "&Sweep color:"
+msgstr "&Temizleme rengi:"
+
+#: modules/infrared/lirc.cpp:22
+msgid ""
+"Could not create a socket to receive infrared signals. The error is:\n"
+msgstr ""
+"Kızılötesi sinyallerini almak için soket oluşturulamadı. Hata:\n"
+
+#: modules/infrared/lirc.cpp:30
+msgid ""
+"Could not establish a connection to receive infrared signals. The error is:\n"
+msgstr ""
+"Kızılötesi sinyalleri almak için bağlantı oluşturulamadı. hata:\n"
+
+#: modules/infrared/irprefs.cpp:55
+msgid "Infrared Control"
+msgstr "Kızılötesi Kontrol"
+
+#: modules/infrared/irprefs.cpp:55
+msgid "Configure Infrared Commands"
+msgstr "Kızılötesi komutlarını ayarlayın "
+
+#: modules/infrared/irprefs.cpp:60
+msgid "Remote control &commands:"
+msgstr "Uzaktan kumanda kontrol &komutları"
+
+#: modules/infrared/irprefs.cpp:66
+msgid "&Action:"
+msgstr "&Hareket"
+
+#: modules/infrared/irprefs.cpp:73
+msgid "&Repeat"
+msgstr "&Tekrarla"
+
+#: modules/infrared/irprefs.cpp:77
+msgid "&Interval:"
+msgstr "&Ara"
+
+#: modules/infrared/irprefs.cpp:132
+msgid "You do not have any remote control configured."
+msgstr "Ayarlanmış herhangi bir uzaktan kumandanız yok."
+
+#: modules/infrared/irprefs.cpp:133
+msgid "Please make sure lirc is setup correctly."
+msgstr "Lütfen lirc'in doğru ayarlandığından emin olun"
+
+#: modules/infrared/irprefs.cpp:137
+msgid "Connection could not be established."
+msgstr "Bağlantı gerçekleştirilemedi."
+
+#: modules/infrared/irprefs.cpp:138
+msgid "Please make sure lirc is setup correctly and lircd is running."
+msgstr ""
+"Lütfen lirc ayarlarının doğru olduğundan ve lircd'nin çalıştığından emin olun"
+
+#: modules/infrared/irprefs.cpp:144
+msgid "Button"
+msgstr "Düğme"
+
+#: modules/infrared/irprefs.cpp:145
+msgid "Action"
+msgstr "Hareket"
+
+#: modules/infrared/irprefs.cpp:146
+msgid "Interval"
+msgstr "Ara"
+
+#: modules/htmlexport/htmlexport.cpp:20
+msgid "&Export Playlist..."
+msgstr "Ç&alma Listesini Farklı Kaydet..."
+
+#: modules/htmlexport/htmlexport.cpp:42
+msgid "Export Playlist"
+msgstr "Çalma Listesini Farklı Kaydet"
+
+#: modules/htmlexport/htmlexport.cpp:60 modules/htmlexport/htmlexport.cpp:90
+msgid "Noatun Playlist"
+msgstr "Oatun Çalma Listesi"
+
+#: modules/htmlexport/htmlexport.cpp:175
+msgid "Playlist Export"
+msgstr "Çalma Listesini Kaydet"
+
+#: modules/htmlexport/htmlexport.cpp:175
+msgid "Colors & Settings for HTML Export"
+msgstr "HTML aktarma için renk ve diğer ayarlar "
+
+#: modules/htmlexport/htmlexport.cpp:201
+msgid "HTML Color Settings"
+msgstr "HTML Renk Ayarları"
+
+#: modules/htmlexport/htmlexport.cpp:215
+msgid "Text:"
+msgstr "Metin:"
+
+#: modules/htmlexport/htmlexport.cpp:219
+msgid "Background:"
+msgstr "Arkaplan:"
+
+#: modules/htmlexport/htmlexport.cpp:223
+msgid "Heading:"
+msgstr "Başlık:"
+
+#: modules/htmlexport/htmlexport.cpp:227
+msgid "Link hover:"
+msgstr "Asılı Bağ Rengi:"
+
+#: modules/htmlexport/htmlexport.cpp:248
+msgid "Background Image"
+msgstr "Arkaplan Resmi"
+
+#: modules/htmlexport/htmlexport.cpp:259
+msgid "Hyper&link playlist entries to their URL"
+msgstr "URL &çalma listesi"
+
+#: modules/htmlexport/htmlexport.cpp:263
+msgid "&Number playlist entries"
+msgstr "&Çalma listesini numarala"
+
+#: modules/winskin/waSkin.cpp:451
+msgid "Seek to: %1/%2 (%3%)"
+msgstr "Git: %1/%2 (%3%)"
+
+#: modules/winskin/waSkin.cpp:558
+msgid "Balance: Center"
+msgstr "Denge: Merkez"
+
+#: modules/winskin/waSkin.cpp:561
+msgid "Balance: %1% Left"
+msgstr "Denge: %1% Sol"
+
+#: modules/winskin/waSkin.cpp:563
+msgid "Balance: %1% Right"
+msgstr "Denge: %1% Sağ"
+
+#: modules/winskin/waSkin.cpp:675
+msgid "Volume: %1%"
+msgstr "Ses: %1%"
+
+#: modules/winskin/guiSpectrumAnalyser.cpp:37
+msgid "Visualization Mode"
+msgstr "Görsel Kip"
+
+#: modules/winskin/guiSpectrumAnalyser.cpp:38
+msgid "Analyzer Mode"
+msgstr "Analizci Kipi"
+
+#: modules/winskin/guiSpectrumAnalyser.cpp:40
+msgid "Analyzer"
+msgstr "Analizci"
+
+#: modules/winskin/guiSpectrumAnalyser.cpp:41
+msgid "Disabled"
+msgstr "Kapalı"
+
+#: modules/winskin/guiSpectrumAnalyser.cpp:45
+msgid "Normal"
+msgstr "Normal"
+
+#: modules/winskin/guiSpectrumAnalyser.cpp:46
+msgid "Fire"
+msgstr "Alev"
+
+#: modules/winskin/guiSpectrumAnalyser.cpp:47
+msgid "Vertical Lines"
+msgstr "Dikey Çizgiler"
+
+#: modules/winskin/winSkinConfig.cpp:27
+msgid "Winskin"
+msgstr "Winskin"
+
+#: modules/winskin/winSkinConfig.cpp:28
+msgid "Skin Selection for the Winskin Plugin"
+msgstr "Winskin eklentisi için yüz seçimi"
+
+#: modules/winskin/winSkinConfig.cpp:43
+msgid "&Install New Skin..."
+msgstr "&Yeni tema ekle..."
+
+#: modules/winskin/winSkinConfig.cpp:46
+msgid "&Remove Skin"
+msgstr "T&emayı sil"
+
+#: modules/winskin/winSkinConfig.cpp:58
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: modules/winskin/winSkinConfig.cpp:62
+msgid "T&itle scrolling speed:"
+msgstr "&Başlık kayma hızı:"
+
+#: modules/winskin/winSkinConfig.cpp:159
+msgid "You cannot remove this skin."
+msgstr "Bu temayı silemezsiniz."
+
+#: modules/winskin/winSkinConfig.cpp:166
+msgid "<qt>Are you sure you want to remove the <b>%1</b> skin?</qt>"
+msgstr "<qt> <b> %1</b> temasını silmek istediğinizden emin misiniz? </qt>"
+
+#: modules/noatunui/userinterface.cpp:73
+msgid "Change loop style"
+msgstr "Döngü türünü değiştir"
+
+#: modules/noatunui/userinterface.cpp:104
+#: modules/noatunui/userinterface.cpp:218
+msgid "No File Loaded"
+msgstr "Dosya yüklenmedi"

@@ -1,0 +1,162 @@
+# Translation of kio_sieve.po to Turkish
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2003
+# Ozan Eren BILGEN <oebilgen@uekae.tubitak.gov.tr>, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: kio_sieve\n"
+"POT-Creation-Date: 2008-03-07 02:10+0100\n"
+"PO-Revision-Date: 2005-01-07 15:07+0200\n"
+"Last-Translator: Ozan Eren BILGEN <oebilgen@uekae.tubitak.gov.tr>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0\n"
+
+#: sieve.cpp:332
+msgid "Connecting to %1..."
+msgstr "%1 adresine bağlanılıyor..."
+
+#: sieve.cpp:335
+msgid "The connection to the server was lost."
+msgstr "Sunucu ile yapılan bağlantı koptu."
+
+#: sieve.cpp:347
+msgid "Server identification failed."
+msgstr "Sunucu kimlik bildirim işlemi başarısız oldu."
+
+#: sieve.cpp:374
+msgid "Authenticating user..."
+msgstr "Kimlik denetimi yapılıyor..."
+
+#: sieve.cpp:377
+msgid "Authentication failed."
+msgstr "Kimlik denetimi başarısız."
+
+#: sieve.cpp:441 sieve.cpp:653 sieve.cpp:743 sieve.cpp:777
+msgid "Done."
+msgstr "Tamamlandı."
+
+#: sieve.cpp:453
+msgid "Activating script..."
+msgstr "Betik çalıştırılıyor..."
+
+#: sieve.cpp:469
+msgid "There was an error activating the script."
+msgstr "Betik çalıştırılırken bir hata oluştu."
+
+#: sieve.cpp:487
+msgid "There was an error deactivating the script."
+msgstr "Betik durdurulurken bir hata oluştu."
+
+#: sieve.cpp:515
+msgid "Sending data..."
+msgstr "Veri gönderiliyor..."
+
+#: sieve.cpp:532
+msgid "KIO data supply error."
+msgstr "KIO veri sağlama hatası."
+
+#: sieve.cpp:559
+msgid "Quota exceeded"
+msgstr "Kota aşıldı"
+
+#: sieve.cpp:592 sieve.cpp:1156
+msgid "Network error."
+msgstr "Ağ hatası."
+
+#: sieve.cpp:603
+msgid "Verifying upload completion..."
+msgstr "Göndermenin tamamlandığı doğrulanıyor..."
+
+#: sieve.cpp:629 sieve.cpp:637
+#, c-format
+msgid ""
+"The script did not upload successfully.\n"
+"This is probably due to errors in the script.\n"
+"The server responded:\n"
+"%1"
+msgstr ""
+"Betik gönderme işlemini başarıyla tamamlayamadı.\n"
+"Bu muhtemelen betikteki hatalardan kaynaklanmaktadır.\n"
+"Sunucu yanıtı:\n"
+"%1"
+
+#: sieve.cpp:642 sieve.cpp:646
+msgid ""
+"The script did not upload successfully.\n"
+"The script may contain errors."
+msgstr ""
+"Betik gönderme işlemini başarıyla tamamlayamadı.\n"
+"Betik hatalı olabilir."
+
+#: sieve.cpp:681
+msgid "Retrieving data..."
+msgstr "Veri alınıyor..."
+
+#: sieve.cpp:730
+msgid "Finishing up..."
+msgstr "Tamamlanıyor..."
+
+#: sieve.cpp:738
+msgid "A protocol error occurred while trying to negotiate script downloading."
+msgstr "Betik indirmesi sırasında iletişim kuralı hatası oluştu."
+
+#: sieve.cpp:750
+msgid "Folders are not supported."
+msgstr "Dizinler desteklenmiyor."
+
+#: sieve.cpp:758
+msgid "Deleting file..."
+msgstr "Dosya siliniyor..."
+
+#: sieve.cpp:773
+msgid "The server would not delete the file."
+msgstr "Sunucu dosyayı silmedi."
+
+#: sieve.cpp:792
+msgid "Cannot chmod to anything but 0700 (active) or 0600 (inactive script)."
+msgstr "0700 (etkin) veya 0600 (etkisiz betik) dışında chmod yapılamaz."
+
+#: sieve.cpp:941
+msgid "No authentication details supplied."
+msgstr "Kimlik denetimi ayrıntısı tanımlanmamış."
+
+#: sieve.cpp:999
+msgid "Sieve Authentication Details"
+msgstr "Kevgir Kimlik Denetimi Ayrıntıları"
+
+#: sieve.cpp:1000
+msgid ""
+"Please enter your authentication details for your sieve account (usually the "
+"same as your email password):"
+msgstr ""
+"Lütfen kevgir hesabınız için kimlik denetimi ayrıntılarını giriniz (genellikle "
+"e-posta parolanızla aynıdır):"
+
+#: sieve.cpp:1067 sieve.cpp:1079
+#, c-format
+msgid ""
+"A protocol error occurred during authentication.\n"
+"Choose a different authentication method to %1."
+msgstr ""
+"Kimlik denetimi sırasında iletişim kuralı hatası oluştu.\n"
+"%1 için başka bir kimlik denetim yöntemi seçiniz."
+
+#: sieve.cpp:1127
+#, c-format
+msgid ""
+"Authentication failed.\n"
+"Most likely the password is wrong.\n"
+"The server responded:\n"
+"%1"
+msgstr ""
+"Kimlik denetimi başarısız oldu.\n"
+"Muhtemelen parola hatalı.\n"
+"Sunucunun gönderdiği bilgi:\n"
+"%1"
+
+#: sieve.cpp:1205
+msgid "A protocol error occurred."
+msgstr "Bir iletişim kuralı hatası oluştu."

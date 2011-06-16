@@ -1,0 +1,359 @@
+# translation of ktimemon.po to
+# Copyright (C) 2007 Free Software Foundation, Inc.
+#
+# Görkem Çetin, <gorkem@kde.org>, 2001.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: ktimemon\n"
+"POT-Creation-Date: 2006-04-15 04:00+0200\n"
+"PO-Revision-Date: 2007-05-16 20:00+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: confdlg.cc:50
+msgid "&General"
+msgstr "&Genel"
+
+#: confdlg.cc:54
+msgid "Sample &Rate"
+msgstr "Örnekleme &Hızı"
+
+#: confdlg.cc:59
+msgid " msec"
+msgstr " ms"
+
+#: confdlg.cc:62
+msgid "Scaling"
+msgstr "Ölçekleme"
+
+#: confdlg.cc:67
+msgid "&Automatic"
+msgstr "&Otomatik"
+
+#: confdlg.cc:72
+msgid "&Paging:"
+msgstr "&Sayfalama:"
+
+#: confdlg.cc:76
+msgid "&Swapping:"
+msgstr "&Takaslama:"
+
+#: confdlg.cc:79
+msgid "&Context switch:"
+msgstr "İ&çerik değişimi:"
+
+#: confdlg.cc:85
+msgid "C&olors"
+msgstr "&Renkler"
+
+#: confdlg.cc:98 confdlg.cc:104
+msgid "Kernel:"
+msgstr "Çekirdek:"
+
+#: confdlg.cc:99
+msgid "User:"
+msgstr "Kullanıcı:"
+
+#: confdlg.cc:100
+msgid "Nice:"
+msgstr "İyileştirme:"
+
+#: confdlg.cc:101
+msgid "IOWait:"
+msgstr "GirdiÇıktıBekleme:"
+
+#: confdlg.cc:105
+msgid "Used:"
+msgstr "Kullanılan:"
+
+#: confdlg.cc:106
+msgid "Buffers:"
+msgstr "Tamponlar:"
+
+#: confdlg.cc:107
+msgid "Cached:"
+msgstr "Önbelleklenen:"
+
+#: confdlg.cc:110
+msgid "CPU"
+msgstr "İşlemci"
+
+#: confdlg.cc:125
+msgid "Memory"
+msgstr "Bellek"
+
+#: confdlg.cc:139
+msgid "Swap"
+msgstr "Takas"
+
+#: confdlg.cc:142
+msgid "Swap:"
+msgstr "Takas"
+
+#: confdlg.cc:151
+msgid "Backgd:"
+msgstr "Arkaplan:"
+
+#: confdlg.cc:164
+msgid "&Interaction"
+msgstr "&Etkileşim"
+
+#: confdlg.cc:168
+msgid "Mouse Events"
+msgstr "Fare Olayları"
+
+#: confdlg.cc:183
+msgid "Left button:"
+msgstr "Sol tuş:"
+
+#: confdlg.cc:184
+msgid "Middle button:"
+msgstr "Orta tuş:"
+
+#: confdlg.cc:185
+msgid "Right button:"
+msgstr "Sağ tuş:"
+
+#: confdlg.cc:193
+msgid "Is Ignored"
+msgstr "Gözardı Edilmiş"
+
+#: confdlg.cc:196
+msgid "Pops Up Menu"
+msgstr "Menüyü Açar"
+
+#: confdlg.cc:197
+msgid "Starts"
+msgstr "Başlar"
+
+#: sample.cc:103
+msgid ""
+"Unable to open the file '%1'. The diagnostics are:\n"
+"%2.\n"
+"This file is required to determine current memory usage.\n"
+"Maybe your proc filesystem is non-Linux standard?"
+msgstr ""
+"Üzgünüm, %1 dosyası açılamadı. Hata mesajı:\n"
+"%2\n"
+"Bu dosya, bellek kullanımını öğrenmek için gereklidir.\n"
+"/proc dosya sisteminiz Linux standardıyla uyumlu olmayabilir."
+
+#: sample.cc:113
+msgid ""
+"Unable to open the file '%1'. The diagnostics are:\n"
+"%2.\n"
+"This file is required to determine current system info. Maybe your proc "
+"filesystem is non-Linux standard?"
+msgstr ""
+"Üzgünüm, %1 dosyası açılamadı. Hata mesajı:\n"
+"%2\n"
+"Bu dosya, sistem bilgisini öğrenmek için gereklidir./proc dosya sisteminiz "
+"Linux uyumlu olmayabilir."
+
+#: sample.cc:123
+msgid ""
+"Unable to initialize the 'kstat' library. This library is used for accessing "
+"kernel information. The diagnostics are:\n"
+"%1.\n"
+"Are you really running Solaris? Please contact the maintainer at "
+"mueller@kde.org who will try to figure out what went wrong."
+msgstr ""
+"Üzgünüm, kstat kütüphanesi ilklendirilemedi. Bu kütüphane çekirdek bilgilerine "
+"ulaşabilmek için gereklidir. Hata mesajı:\n"
+"%1\n"
+"Solaris mi çalıştırıyorsunuz? Eğer bana (mueller@kde.org) bir e-posta "
+"gönderirseniz, neyin hatalı olduğunu bulmaya çalışırım."
+
+#: sample.cc:212
+msgid ""
+"Unable to read the memory usage file '%1'.\n"
+"The diagnostics are: %2"
+msgstr ""
+"'%1' dosyasının bellek kullanımı okunamadı.\n"
+"Hata: %2"
+
+#: sample.cc:222
+msgid ""
+"The memory usage file '%1' seems to use a different file format than expected.\n"
+"Maybe your version of the proc filesystem is incompatible with supported "
+"versions. Please contact the developer at http://bugs.kde.org/ who will try to "
+"sort this out."
+msgstr ""
+"'%1' bellek kullanımı dosyası beklenenden farklı bir biçem kullanıyor.\n"
+"Kullandığınız proc dosya sistemi desteklenen sürümle uyumlu olmayabilir. Lütfen "
+"bu durumu aydınlatabilecek olan geliştirici ile http://bugs.kde.org/ adresinden "
+"bağlantıya geçin."
+
+#: sample.cc:239
+msgid ""
+"Unable to read the system usage file '%1'.\n"
+"The diagnostics are: %2"
+msgstr ""
+"Üzgünüm, sistem kullanım dosyası '%1' okunamadı.\n"
+"Oluşan hata: %2"
+
+#: sample.cc:266
+msgid ""
+"Unable to obtain system information.\n"
+"The table(2) system call returned an error for table %1.\n"
+"Please contact the maintainer at mueller@kde.org who will try to figure out "
+"what went wrong."
+msgstr ""
+"Sistem bilgisi elde edilemedi.\n"
+"table(2) sistem çağrısı '%1' hata mesajı verdi.\n"
+"Bu sorunu mueller@kde.org adresine bildirebilirsiniz."
+
+#: sample.cc:309
+msgid ""
+"Unable to find any entries for CPU statistics in the 'kstat' library. Are you "
+"running a non-standard version of Solaris?\n"
+"Please contact the maintainer via http://bugs.kde.org/ who will try to sort "
+"this out."
+msgstr ""
+"'kstat' kütüphanesinde işlemci istatistikleriyle ilgili hiçbir girdi "
+"bulunamadı. Standart olmayan bir Solaris sürümü mü kullanıyorsunuz ?\n"
+"Lütfen bu durumu aydınlatabilecek olan geliştirici ile http://bugs.kde.org/ "
+"adresinden bağlantıya geçin."
+
+#: sample.cc:325
+msgid ""
+"Unable to read the CPU statistics entry from the 'kstat' library. The "
+"diagnostics are '%1'.\n"
+"Please contact the maintainer via http://bugs.kde.org/ who will try to sort "
+"this out."
+msgstr ""
+"'kstat' kütüphanesinden işlemci istatistikleri okunamadı. Hata bildirimi "
+"mesajı:'%1'\n"
+"Lütfen bu durumu aydınlatabilecek olan geliştirici ile http://bugs.kde.org/ "
+"adresinden bağlantıya geçin."
+
+#: sample.cc:338
+msgid ""
+"The number of CPUs appears to have changed at very short notice, or the 'kstat' "
+"library returns inconsistent results (%1 vs. %2 CPUs).\n"
+"Please contact the maintainer via http://bugs.kde.org/ who will try to sort "
+"this out."
+msgstr ""
+"Kullanılan işlemci sayısı kısa bir süre için değişti ya da 'kstat' kütüphanesi "
+"tutarlı olmayan sonuçlar bildiriyor. (%1 yerine %2 işlemci)\n"
+"Lütfen bu durumu aydınlatabilecek olan geliştirici ile http://bugs.kde.org/ "
+"adresinden bağlantıya geçin."
+
+#: sample.cc:350
+msgid ""
+"Unable to read the memory statistics entry from the 'kstat' library. The "
+"diagnostics are '%1'\n"
+"You might want to contact the maintainer at http://bugs.kde.org/ who will try "
+"to sort this out."
+msgstr ""
+"'kstat' kütüphanesinden bellek istatistikleri okunamadı. Hata bildirimi "
+"mesajı:'%1'\n"
+"Lütfen bu durumu aydınlatabilecek olan geliştirici ile http://bugs.kde.org/ "
+"adresinden bağlantıya geçin."
+
+#: sample.cc:367
+msgid ""
+"There seems to be a problem with KTimeMon's handling of the 'kstat' library: 0 "
+"bytes of physical memory determined!\n"
+"Free memory is %1, available memory is %2.\n"
+"Please contact the maintainer at mueller@kde.org who will try to sort this out."
+msgstr ""
+"KTimeMon'un 'kstat' kütüphanesini kullanmasında bir sorun olabilir: Fiziksel "
+"bellek 0 byte olarak belirlendi !\n"
+"Boş bellek %1, bulunan bellek %2.\n"
+"Bu sorunu mueller@kde.org adresine bildirebilirsiniz."
+
+#: sample.cc:379
+msgid ""
+"Unable to determine the number of swap spaces. The diagnostics are '%1'.\n"
+"Please contact the maintainer at http://bugs.kde.org/ who will try to sort this "
+"out."
+msgstr ""
+"Takas alanlarının sayısı belirlenemedi. Hata mesajı: %1.\n"
+"Lütfen bu durumu aydınlatabilecek olan geliştirici ile "
+"http://bugs.kde.org/adresinden bağlantıya geçin."
+
+#: sample.cc:388
+msgid ""
+"KTimeMon ran out of memory while trying to determine the swap usage.\n"
+"Attempted to allocate %1 bytes of memory (2 * %2 + %3 * %4).\n"
+"Please contact the maintainer at http://bugs.kde.org/ who will try to sort this "
+"out."
+msgstr ""
+"KTimeMon takas kullanımını belirlemeye çalışırken bellek yetersizliğiyle "
+"karşılaştı.\n"
+"%1 byte bellek alanı ayırılmaya çalışıldı.(2 * %2 + %3 * %4).\n"
+"Lütfen bu durumu aydınlatabilecek olan geliştirici ile http://bugs.kde.org/ "
+"adresinden bağlantıya geçin."
+
+#: sample.cc:400
+msgid ""
+"Unable to determine the swap usage.\n"
+"The diagnostics are '%1'.\n"
+"Please contact the maintainer at http://bugs.kde.org/ who will try to sort this "
+"out."
+msgstr ""
+"Takas kullanımı belirlenemedi.\n"
+"Karşılaşılan hata tanımlaması '%1'.\n"
+"Lütfen bu durumu aydınlatabilecek olan geliştirici ile http://bugs.kde.org/ "
+"adresinden bağlantıya geçin."
+
+#: sample.cc:407
+msgid ""
+"Information was requested for %1 swap spaces, but only %2 swap entries were "
+"returned.\n"
+"KTimeMon will attempt to continue.\n"
+"Please contact the maintainer at http://bugs.kde.org/ who will try to sort this "
+"out."
+msgstr ""
+"%1 takas alanı için bilgi istendi fakat sadece %2 takas alanı bulundu.\n"
+"KTimeMon çalışmaya devam etmeyi deneyecek.\n"
+"Lütfen bu durumu aydınlatabilecek olan geliştirici ile http://bugs.kde.org/ "
+"adresinden bağlantıya geçin."
+
+#: timemon.cc:173
+msgid ""
+"cpu: %1% idle\n"
+"mem: %2 MB %3% free\n"
+"swap: %4 MB %5% free"
+msgstr ""
+"işlemci: %1% boş\n"
+"bellek: %2 MB %3% boş\n"
+"takas: %4 MB %5% boş"
+
+#: timemon.cc:238
+msgid ""
+"KTimeMon for KDE\n"
+"Maintained by Dirk A. Mueller <dmuell@gmx.net>\n"
+"Written by M. Maierhofer (m.maierhofer@tees.ac.uk)\n"
+"Based on timemon by H. Maierhofer"
+msgstr ""
+"KDE için ktimemon\n"
+"Dirk A. Mueller tarafından yönetiliyor<dmuell@gmx.net>\n"
+"M. Maierhofer tarafından yazıldı (m.maierhofer@tees.ac.uk)\n"
+"H. Maierhofer'ın timemon programını kullanır."
+
+#: timemon.cc:246
+msgid "System Monitor"
+msgstr "Sistem Gözlemleyicisi"
+
+#: timemon.cc:247
+msgid "Horizontal Bars"
+msgstr "Dikey Çubuklar"
+
+#: timemon.cc:248
+msgid "Preferences..."
+msgstr "Seçenekler..."
+
+#: timemon.cc:428
+msgid ""
+"Got diagnostic output from child command:\n"
+"\n"
+msgstr ""
+"Çocuk komuttan hata bildirim çıktısı alındı:\n"
+"\n"

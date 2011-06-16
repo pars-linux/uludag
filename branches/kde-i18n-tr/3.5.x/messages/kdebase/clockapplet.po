@@ -1,0 +1,664 @@
+# translation of clockapplet.po to turkish
+# translation of clockapplet.po to Türkçe
+# translation of clockapplet.po to Turkish
+# Copyright (C) 2000, 2003, 2004, 2005 Free Software Foundation, Inc.
+#
+# Tuncay YENİAY <tuncayyeniay@mynet.com>,2002.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>,1999-2002.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: clockapplet\n"
+"POT-Creation-Date: 2008-08-19 01:16+0200\n"
+"PO-Revision-Date: 2008-04-28 22:03+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@lists.kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: LoKalize 0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: clock.cpp:93
+msgid "Configure - Clock"
+msgstr "Saati Yapılandır"
+
+#: clock.cpp:136
+msgid "General"
+msgstr "Genel"
+
+#: clock.cpp:680
+msgid ""
+"_: hour\n"
+"one"
+msgstr "bir"
+
+#: clock.cpp:680
+msgid ""
+"_: hour\n"
+"two"
+msgstr "iki"
+
+#: clock.cpp:681
+msgid ""
+"_: hour\n"
+"three"
+msgstr "üç"
+
+#: clock.cpp:681
+msgid ""
+"_: hour\n"
+"four"
+msgstr "dört"
+
+#: clock.cpp:681
+msgid ""
+"_: hour\n"
+"five"
+msgstr "beş"
+
+#: clock.cpp:682
+msgid ""
+"_: hour\n"
+"six"
+msgstr "altı"
+
+#: clock.cpp:682
+msgid ""
+"_: hour\n"
+"seven"
+msgstr "yedi"
+
+#: clock.cpp:682
+msgid ""
+"_: hour\n"
+"eight"
+msgstr "sekiz"
+
+#: clock.cpp:683
+msgid ""
+"_: hour\n"
+"nine"
+msgstr "dokuz"
+
+#: clock.cpp:683
+msgid ""
+"_: hour\n"
+"ten"
+msgstr "on"
+
+#: clock.cpp:683
+msgid ""
+"_: hour\n"
+"eleven"
+msgstr "onbir"
+
+#: clock.cpp:684
+msgid ""
+"_: hour\n"
+"twelve"
+msgstr "oniki"
+
+#: clock.cpp:687
+#, no-c-format
+msgid "%0 o'clock"
+msgstr "saat %0"
+
+#: clock.cpp:688
+#, no-c-format
+msgid "five past %0"
+msgstr "%0 'ı 5 geçiyor"
+
+#: clock.cpp:689
+#, no-c-format
+msgid "ten past %0"
+msgstr "%0 'ı 10 geçiyor"
+
+#: clock.cpp:690
+#, no-c-format
+msgid "quarter past %0"
+msgstr "%0 'ı çeyrek geçiyor"
+
+#: clock.cpp:691
+#, no-c-format
+msgid "twenty past %0"
+msgstr "%0 'ı yirmi geçiyor"
+
+#: clock.cpp:692
+#, no-c-format
+msgid "twenty five past %0"
+msgstr "%0 'ı yirmibeş geçiyor"
+
+#: clock.cpp:693
+#, no-c-format
+msgid "half past %0"
+msgstr "%0 buçuk"
+
+#: clock.cpp:694
+#, no-c-format
+msgid "twenty five to %1"
+msgstr "%1 'e yirmibeş var"
+
+#: clock.cpp:695
+#, no-c-format
+msgid "twenty to %1"
+msgstr "%1 'e yirmi var"
+
+#: clock.cpp:696
+#, no-c-format
+msgid "quarter to %1"
+msgstr "%1 'e çeyrek var"
+
+#: clock.cpp:697
+#, no-c-format
+msgid "ten to %1"
+msgstr "%1 'e on var"
+
+#: clock.cpp:698
+#, no-c-format
+msgid "five to %1"
+msgstr "%1 'e beş var"
+
+#: clock.cpp:699
+#, no-c-format
+msgid "%1 o'clock"
+msgstr "saat %1"
+
+#: clock.cpp:702
+#, no-c-format
+msgid ""
+"_: one\n"
+"%0 o'clock"
+msgstr "saat %0"
+
+#: clock.cpp:703
+#, no-c-format
+msgid ""
+"_: one\n"
+"five past %0"
+msgstr "%0 'ı beş geçiyor"
+
+#: clock.cpp:704
+#, no-c-format
+msgid ""
+"_: one\n"
+"ten past %0"
+msgstr "%0 'ı on geçiyor"
+
+#: clock.cpp:705
+#, no-c-format
+msgid ""
+"_: one\n"
+"quarter past %0"
+msgstr "%0 'ı çeyrek geçiyor"
+
+#: clock.cpp:706
+#, no-c-format
+msgid ""
+"_: one\n"
+"twenty past %0"
+msgstr "%0 'ı yirmi geçiyor"
+
+#: clock.cpp:707
+#, no-c-format
+msgid ""
+"_: one\n"
+"twenty five past %0"
+msgstr "%0 'ı yirmibeş geçiyor"
+
+#: clock.cpp:708
+#, no-c-format
+msgid ""
+"_: one\n"
+"half past %0"
+msgstr "%0 buçuk"
+
+#: clock.cpp:709
+#, no-c-format
+msgid ""
+"_: one\n"
+"twenty five to %1"
+msgstr "%1 'e yirmibeş var"
+
+#: clock.cpp:710
+#, no-c-format
+msgid ""
+"_: one\n"
+"twenty to %1"
+msgstr "%1 'e yirmi var"
+
+#: clock.cpp:711
+#, no-c-format
+msgid ""
+"_: one\n"
+"quarter to %1"
+msgstr "%1 'e çeyrek var"
+
+#: clock.cpp:712
+#, no-c-format
+msgid ""
+"_: one\n"
+"ten to %1"
+msgstr "%1 'e on var"
+
+#: clock.cpp:713
+#, no-c-format
+msgid ""
+"_: one\n"
+"five to %1"
+msgstr "%1 'e beş var"
+
+#: clock.cpp:714
+#, no-c-format
+msgid ""
+"_: one\n"
+"%1 o'clock"
+msgstr "saat %1"
+
+#: clock.cpp:716
+msgid "Night"
+msgstr "Gece"
+
+#: clock.cpp:717
+msgid "Early morning"
+msgstr "Kuşluk zamanı"
+
+#: clock.cpp:717
+msgid "Morning"
+msgstr "Sabah"
+
+#: clock.cpp:717
+msgid "Almost noon"
+msgstr "Öğleye doğru"
+
+#: clock.cpp:718
+msgid "Noon"
+msgstr "Öğle"
+
+#: clock.cpp:718
+msgid "Afternoon"
+msgstr "Öğleden sonra"
+
+#: clock.cpp:718
+msgid "Evening"
+msgstr "Akşam"
+
+#: clock.cpp:719
+msgid "Late evening"
+msgstr "Yatsı"
+
+#: clock.cpp:821
+msgid "Start of week"
+msgstr "Hafta başı"
+
+#: clock.cpp:823
+msgid "Middle of week"
+msgstr "Hafta ortası"
+
+#: clock.cpp:825
+msgid "End of week"
+msgstr "Hafta sonu"
+
+#: clock.cpp:827
+msgid "Weekend!"
+msgstr "Hafta sonu!"
+
+#: clock.cpp:1502
+msgid "Clock"
+msgstr "Saat"
+
+#: clock.cpp:1528 clock.cpp:1731
+msgid "Local Timezone"
+msgstr "Yerel Zaman Dilimi"
+
+#: clock.cpp:1537
+msgid "&Configure Timezones..."
+msgstr "&Zaman Dilimlerini Yapılandır..."
+
+#: clock.cpp:1541
+msgid "&Plain"
+msgstr "&Düz"
+
+#: clock.cpp:1542
+msgid "&Digital"
+msgstr "&Sayısal"
+
+#: clock.cpp:1543
+msgid "&Analog"
+msgstr "&Analog"
+
+#: clock.cpp:1544
+msgid "&Fuzzy"
+msgstr "&Bulanık"
+
+#: clock.cpp:1547
+msgid "&Type"
+msgstr "&Tip"
+
+#: clock.cpp:1548
+msgid "Show Time&zone"
+msgstr "Zaman Dilimini &Göster"
+
+#: clock.cpp:1551
+msgid "&Adjust Date && Time..."
+msgstr "&Saati ve Günü Ayarla..."
+
+#: clock.cpp:1553
+msgid "Date && Time &Format..."
+msgstr "Saat ve Günün &Biçimi..."
+
+#: clock.cpp:1556
+msgid "C&opy to Clipboard"
+msgstr "Panoya &Kopyala"
+
+#: clock.cpp:1560
+msgid "&Configure Clock..."
+msgstr "&Saati Yapılandır..."
+
+#: clock.cpp:1813
+#, c-format
+msgid "Showing time for %1"
+msgstr "%1 için zaman gösteriliyor"
+
+#: datepicker.cpp:58
+msgid "Calendar"
+msgstr "Takvim"
+
+#. i18n: file analog.ui line 27
+#: rc.cpp:3 rc.cpp:45 rc.cpp:78 rc.cpp:132
+#, no-c-format
+msgid "Display"
+msgstr "Ekran"
+
+#. i18n: file analog.ui line 38
+#: rc.cpp:6 rc.cpp:48 rc.cpp:81 rc.cpp:135
+#, no-c-format
+msgid "Dat&e"
+msgstr "&Tarih"
+
+#. i18n: file analog.ui line 46
+#: rc.cpp:9 rc.cpp:51
+#, no-c-format
+msgid "Seco&nds"
+msgstr "Sa&niyeler"
+
+#. i18n: file analog.ui line 57
+#: rc.cpp:12 rc.cpp:54 rc.cpp:84 rc.cpp:141
+#, no-c-format
+msgid "Da&y of week"
+msgstr "Haf&tanın günü"
+
+#. i18n: file analog.ui line 65
+#: rc.cpp:15 rc.cpp:60 rc.cpp:87 rc.cpp:144
+#, no-c-format
+msgid "&Frame"
+msgstr "Ç&erçeve"
+
+#. i18n: file analog.ui line 92
+#: rc.cpp:18 rc.cpp:63 rc.cpp:90 rc.cpp:147
+#, no-c-format
+msgid "Time"
+msgstr "Zaman"
+
+#. i18n: file analog.ui line 136
+#: rc.cpp:21 rc.cpp:69 rc.cpp:99 rc.cpp:156 rc.cpp:162
+#, no-c-format
+msgid "Foreground color:"
+msgstr "Önplan rengi:"
+
+#. i18n: file analog.ui line 167
+#: rc.cpp:24 rc.cpp:72 rc.cpp:96 rc.cpp:153 rc.cpp:165
+#, no-c-format
+msgid "Background color:"
+msgstr "Arkaplan rengi:"
+
+#. i18n: file analog.ui line 192
+#: rc.cpp:27 rc.cpp:75
+#, no-c-format
+msgid "Shadow color:"
+msgstr "Gölge rengi:"
+
+#. i18n: file analog.ui line 205
+#: rc.cpp:30
+#, no-c-format
+msgid "Antialias:"
+msgstr "Pürüzsüz:"
+
+#. i18n: file analog.ui line 214
+#: rc.cpp:33
+#, no-c-format
+msgid "None"
+msgstr "Hiçbiri"
+
+#. i18n: file analog.ui line 219
+#: rc.cpp:36
+#, no-c-format
+msgid "Low Quality"
+msgstr "Düşük Kalite"
+
+#. i18n: file analog.ui line 224
+#: rc.cpp:39
+#, no-c-format
+msgid "High Quality"
+msgstr "Yüksek Kalite"
+
+#. i18n: file analog.ui line 256
+#: rc.cpp:42
+#, no-c-format
+msgid "&LCD look"
+msgstr "&LCD görünümü"
+
+#. i18n: file digital.ui line 65
+#: rc.cpp:57
+#, no-c-format
+msgid "Blin&king dots"
+msgstr "&Yanıp sönen noktalar"
+
+#. i18n: file digital.ui line 111
+#: rc.cpp:66
+#, no-c-format
+msgid "LCD look"
+msgstr "LCD görünümü"
+
+#. i18n: file fuzzy.ui line 124
+#: rc.cpp:93 rc.cpp:150 rc.cpp:168
+#, no-c-format
+msgid "Font:"
+msgstr "Yazıtipi:"
+
+#. i18n: file fuzzy.ui line 205
+#: rc.cpp:102
+#, no-c-format
+msgid "Low"
+msgstr "Düşük"
+
+#. i18n: file fuzzy.ui line 239
+#: rc.cpp:105
+#, no-c-format
+msgid "High"
+msgstr "Yüksek"
+
+#. i18n: file fuzzy.ui line 249
+#: rc.cpp:108
+#, no-c-format
+msgid "Fuzziness:"
+msgstr "Bulanıklık:"
+
+#. i18n: file fuzzy.ui line 260
+#: rc.cpp:111
+#, no-c-format
+msgid "Date Font"
+msgstr "Tarih Yazıtipi"
+
+#. i18n: file settings.ui line 31
+#: rc.cpp:114
+#, no-c-format
+msgid "&Appearance"
+msgstr "&Görünüm"
+
+#. i18n: file settings.ui line 56
+#: rc.cpp:117
+#, no-c-format
+msgid "Clock type:"
+msgstr "Saat türü:"
+
+#. i18n: file settings.ui line 65
+#: rc.cpp:120
+#, no-c-format
+msgid "Plain Clock"
+msgstr "Basit Saat"
+
+#. i18n: file settings.ui line 70
+#: rc.cpp:123
+#, no-c-format
+msgid "Digital Clock"
+msgstr "Dijital Saat"
+
+#. i18n: file settings.ui line 75
+#: rc.cpp:126
+#, no-c-format
+msgid "Analog Clock"
+msgstr "Analog Saat"
+
+#. i18n: file settings.ui line 80
+#: rc.cpp:129
+#, no-c-format
+msgid "Fuzzy Clock"
+msgstr "Bulanık Saat"
+
+#. i18n: file settings.ui line 162
+#: rc.cpp:138
+#, no-c-format
+msgid "&Seconds"
+msgstr "S&aniyeler"
+
+#. i18n: file settings.ui line 326
+#: rc.cpp:159
+#, no-c-format
+msgid "Date"
+msgstr "Tarih"
+
+#. i18n: file settings.ui line 438
+#: rc.cpp:171
+#, no-c-format
+msgid "&Timezones"
+msgstr "Zaman Dili&mleri"
+
+#. i18n: file settings.ui line 447
+#: rc.cpp:174
+#, no-c-format
+msgid "City"
+msgstr "Şehir"
+
+#. i18n: file settings.ui line 458
+#: rc.cpp:177
+#, no-c-format
+msgid "Comment"
+msgstr "Açıklama"
+
+#. i18n: file settings.ui line 474
+#: rc.cpp:180
+#, no-c-format
+msgid ""
+"A list of timezones known to your system. Press the middle mouse button on the "
+"clock in the taskbar and it shows you the time in the selected cities."
+msgstr ""
+"Sistemde bilinen zaman dilimlerinin listesi. Görev çubuğunda bulunan saat "
+"üzerine farenizin orta tuşuyla tıklayın ve seçili şehirlerdeki saatleri görün."
+
+#. i18n: file clockapplet.kcfg line 10
+#: rc.cpp:183
+#, no-c-format
+msgid "Clock type"
+msgstr "Saat türü"
+
+#. i18n: file clockapplet.kcfg line 22
+#: rc.cpp:186 rc.cpp:189 rc.cpp:210 rc.cpp:228 rc.cpp:255 rc.cpp:282
+#, no-c-format
+msgid "Foreground color."
+msgstr "Önplan rengi."
+
+#. i18n: file clockapplet.kcfg line 30
+#: rc.cpp:192 rc.cpp:207 rc.cpp:279
+#, no-c-format
+msgid "Font for the clock."
+msgstr "Saatin yazıtipi."
+
+#. i18n: file clockapplet.kcfg line 40
+#: rc.cpp:195 rc.cpp:216 rc.cpp:243
+#, no-c-format
+msgid "Show seconds."
+msgstr "Saniyeleri göster."
+
+#. i18n: file clockapplet.kcfg line 44
+#: rc.cpp:198 rc.cpp:219 rc.cpp:246 rc.cpp:270
+#, no-c-format
+msgid "Show date."
+msgstr "Günü göster."
+
+#. i18n: file clockapplet.kcfg line 48
+#: rc.cpp:201 rc.cpp:222 rc.cpp:249 rc.cpp:273
+#, no-c-format
+msgid "Show day of week."
+msgstr "Haftanın gününü göster."
+
+#. i18n: file clockapplet.kcfg line 52
+#: rc.cpp:204 rc.cpp:225 rc.cpp:252 rc.cpp:276
+#, no-c-format
+msgid "Show frame."
+msgstr "Çerçeveyi göster."
+
+#. i18n: file clockapplet.kcfg line 69
+#: rc.cpp:213 rc.cpp:231 rc.cpp:258 rc.cpp:285
+#, no-c-format
+msgid "Background color."
+msgstr "Arkaplan rengi."
+
+#. i18n: file clockapplet.kcfg line 99
+#: rc.cpp:234 rc.cpp:261
+#, no-c-format
+msgid "Shadow color."
+msgstr "Gölge rengi."
+
+#. i18n: file clockapplet.kcfg line 103
+#: rc.cpp:237
+#, no-c-format
+msgid "Blink"
+msgstr "Parla"
+
+#. i18n: file clockapplet.kcfg line 107
+#: rc.cpp:240 rc.cpp:264
+#, no-c-format
+msgid "LCD Style"
+msgstr "LCD türü"
+
+#. i18n: file clockapplet.kcfg line 145
+#: rc.cpp:267
+#, no-c-format
+msgid "Anti-Alias factor"
+msgstr "Yumuşatma oranı"
+
+#. i18n: file clockapplet.kcfg line 178
+#: rc.cpp:288
+#, no-c-format
+msgid "Fuzzyness"
+msgstr "Bulanıklık"
+
+#. i18n: file clockapplet.kcfg line 184
+#: rc.cpp:291
+#, no-c-format
+msgid "Show window frame"
+msgstr "Çerçeveyi göster"
+
+#. i18n: file clockapplet.kcfg line 188
+#: rc.cpp:294
+#, no-c-format
+msgid "Default size of the calendar"
+msgstr "Takvimin öntanımlı boyutu"
+
+#~ msgid "Cannot generate time-zone list"
+#~ msgstr "Zaman-dilimi listesi oluşturulamıyor"

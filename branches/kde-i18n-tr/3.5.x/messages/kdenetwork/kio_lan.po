@@ -1,0 +1,37 @@
+# translation of kio_lan.po to Türkçe
+# translation of kio_lan.po to Turkish
+# kde
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2001, 2004.
+# Rıdvan CAN <ridvancan@linux-sevenler.org>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kio_lan\n"
+"POT-Creation-Date: 2005-03-25 01:18+0100\n"
+"PO-Revision-Date: 2004-10-23 12:38+0300\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9\n"
+
+#: kio_lan.cpp:150
+msgid ""
+"<qt>The Lisa daemon does not appear to be running."
+"<p>In order to use the LAN Browser the Lisa daemon must be installed and "
+"activated by the system administrator."
+msgstr ""
+"<qt> Lisa programı çalışır durumda değil."
+"<p>Yerel ağın taranabilmesi ve bilgisayarların bulunabilmesi için Lisa programı "
+"sistem yöneticisi tarafından kurulmalı ve etkin hale getirilmelidir."
+
+#: kio_lan.cpp:190 kio_lan.cpp:209 kio_lan.cpp:384
+#, c-format
+msgid "Received unexpected data from %1"
+msgstr "%1 adresinden beklenmeyen bir veri alındı"
+
+#: kio_lan.cpp:641
+msgid "No hosts allowed in rlan:/ URL"
+msgstr "rlan:/ için makine adına izin yok "

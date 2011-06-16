@@ -1,0 +1,32 @@
+# translation of kio_settings.po to Türkçe
+# translation of kio_settings.po to
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kio_settings\n"
+"POT-Creation-Date: 2005-05-18 21:24+0200\n"
+"PO-Revision-Date: 2004-10-02 16:26+0300\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9\n"
+
+#: kio_settings.cc:194
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: kio_settings.cc:194
+msgid "Applications"
+msgstr "Uygulamalar"
+
+#: kio_settings.cc:194
+msgid "Programs"
+msgstr "Programlar"
+
+#: kio_settings.cc:206 kio_settings.cc:230
+msgid "Unknown settings folder"
+msgstr "Bilinmeyen ayarlar dizini"

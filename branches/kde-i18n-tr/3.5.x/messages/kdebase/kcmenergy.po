@@ -1,0 +1,87 @@
+# translation of kcmenergy.po to 
+# translation of kcmenergy.po to Turkish
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com
+# Görkem Çetin <gorkem@kde.org>, 2003.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmenergy\n"
+"POT-Creation-Date: 2005-05-18 21:24+0200\n"
+"PO-Revision-Date: 2003-12-13 15:38+0000\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team:  <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.2\n"
+
+#: energy.cpp:145
+msgid ""
+"<h1>Display Power Control</h1> If your display supports power saving features, "
+"you can configure them using this module."
+"<p> There are three levels of power saving: standby, suspend, and off. The "
+"greater the level of power saving, the longer it takes for the display to "
+"return to an active state."
+"<p> To wake up the display from a power saving mode, you can make a small "
+"movement with the mouse, or press a key that is not likely to cause any "
+"unintentional side-effects, for example, the \"Shift\" key."
+msgstr ""
+"<h1>Ekran Enerji Tasarrufu</h1> Eğer ekranınız enerji tasarrufu özelliklerini "
+"destekliyorsa, bu modül yardımıyla ayarlamalar yapabilirsiniz."
+
+#: energy.cpp:165
+msgid "&Enable display power management"
+msgstr "Ekran enerji yönetimini &etkinleştir"
+
+#: energy.cpp:168
+msgid "Check this option to enable the power saving features of your display."
+msgstr "Ekran enerji korumasını etkinleştirmek için bu seçeneği tıklayın."
+
+#: energy.cpp:171
+msgid "Your display does not support power saving."
+msgstr "Ekranınız güç korumasını desteklemiyor."
+
+#: energy.cpp:178
+msgid "Learn more about the Energy Star program"
+msgstr "Energy Star uygulaması hakkında daha geniş bilgi"
+
+#: energy.cpp:187
+msgid "&Standby after:"
+msgstr "&Askıya al:"
+
+#: energy.cpp:189 energy.cpp:200 energy.cpp:212
+msgid " min"
+msgstr " dak"
+
+#: energy.cpp:190 energy.cpp:201 energy.cpp:213
+msgid "Disabled"
+msgstr "Kapalı"
+
+#: energy.cpp:193
+msgid ""
+"Choose the period of inactivity after which the display should enter "
+"\"standby\" mode. This is the first level of power saving."
+msgstr "Ekran askıya alınana kadar geçen süreyi belirtin."
+
+#: energy.cpp:198
+msgid "S&uspend after:"
+msgstr "Be&klet:"
+
+#: energy.cpp:204
+msgid ""
+"Choose the period of inactivity after which the display should enter "
+"\"suspend\" mode. This is the second level of power saving, but may not be "
+"different from the first level for some displays."
+msgstr "Ekran bekleme konumuna geçinceye kadar geçen süreyi belirtin."
+
+#: energy.cpp:210
+msgid "&Power off after:"
+msgstr "&Bilgisayarı kapat:"
+
+#: energy.cpp:216
+msgid ""
+"Choose the period of inactivity after which the display should be powered off. "
+"This is the greatest level of power saving that can be achieved while the "
+"display is still physically turned on."
+msgstr "Ekran tamamen kapatılana kadar geçen süreyi belirtin."

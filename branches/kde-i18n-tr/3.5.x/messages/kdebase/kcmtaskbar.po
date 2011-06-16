@@ -1,0 +1,320 @@
+# translation of kcmtaskbar.po to
+# Copyright (C) 2007 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2002.
+# Serdar Soytetir <tulliana@gmail.com>, 2007, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmtaskbar\n"
+"POT-Creation-Date: 2008-07-08 01:18+0200\n"
+"PO-Revision-Date: 2008-02-03 15:27+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@lists.kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: LoKalize 0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: kcmtaskbar.cpp:83
+msgid "Show Task List"
+msgstr "Görev Listesini Göster"
+
+#: kcmtaskbar.cpp:83
+msgid "Show Operations Menu"
+msgstr "İşlem Menüsünü Göster"
+
+#: kcmtaskbar.cpp:84
+msgid "Activate, Raise or Minimize Task"
+msgstr "Görevi Etkinleştir, Alçalt ya da Yükselt"
+
+#: kcmtaskbar.cpp:85
+msgid "Activate Task"
+msgstr "Görevi Etkinleştir"
+
+#: kcmtaskbar.cpp:85
+msgid "Raise Task"
+msgstr "Görevi Yükselt"
+
+#: kcmtaskbar.cpp:86
+msgid "Lower Task"
+msgstr "Görevi Alçalt"
+
+#: kcmtaskbar.cpp:86
+msgid "Minimize Task"
+msgstr "Görevi Küçült"
+
+#: kcmtaskbar.cpp:87
+msgid "To Current Desktop"
+msgstr "Geçerli Masaüstüne"
+
+#: kcmtaskbar.cpp:88
+msgid "Close Task"
+msgstr "Görevi Kapat"
+
+#: kcmtaskbar.cpp:106
+msgid "Never"
+msgstr "Asla"
+
+#: kcmtaskbar.cpp:106
+msgid "When Taskbar Full"
+msgstr "Görev Çubuğu Doluysa"
+
+#: kcmtaskbar.cpp:107
+msgid "Always"
+msgstr "Her Zaman"
+
+#: kcmtaskbar.cpp:129
+msgid "Elegant"
+msgstr "Şık"
+
+#: kcmtaskbar.cpp:130
+msgid "Classic"
+msgstr "Klasik"
+
+#: kcmtaskbar.cpp:131
+msgid "For Transparency"
+msgstr "Şeffaflık İçin"
+
+#: kcmtaskbar.cpp:144
+msgid ""
+"<h1>Taskbar</h1> You can configure the taskbar here. This includes options such "
+"as whether or not the taskbar should show all windows at once or only those on "
+"the current desktop. You can also configure whether or not the Window List "
+"button will be displayed."
+msgstr ""
+"<h1>Görev Çubuğu</h1> Görev çubuğunu burada özelleştirebilirsiniz. Bu görev "
+"çubuğunun panele gömülmesi ya da dışarıda olmasını kapsar. Aynı zamanda görev "
+"çubuğunun pencere listesi düğmesini göstermesini ya da gizlemesini de "
+"sağlayabilirsiniz."
+
+#: kcmtaskbar.cpp:176
+msgid "kcmtaskbar"
+msgstr "kcmtaskbar"
+
+#: kcmtaskbar.cpp:177
+msgid "KDE Taskbar Control Module"
+msgstr "KDE Görev Çubuğu Kontrol Modülü"
+
+#: kcmtaskbar.cpp:179
+msgid "(c) 2000 - 2001 Matthias Elter"
+msgstr "(c) 2000 - 2001 Matthias Elter"
+
+#: kcmtaskbar.cpp:182
+msgid "KConfigXT conversion"
+msgstr "KConfigXT dönüşümü"
+
+#: kcmtaskbar.cpp:209 kcmtaskbar.cpp:210 kcmtaskbar.cpp:211
+msgid "Cycle Through Windows"
+msgstr "Pencereler Arasında Geçiş Yap"
+
+#: kcmtaskbar.cpp:243
+msgid "Custom"
+msgstr "Özel"
+
+#. i18n: file kcmtaskbarui.ui line 16
+#: rc.cpp:3 rc.cpp:6
+#, no-c-format
+msgid "Taskbar"
+msgstr "Görev çubuğu"
+
+#. i18n: file kcmtaskbarui.ui line 47
+#: rc.cpp:9
+#, no-c-format
+msgid "Sort windows by desk&top"
+msgstr "Pencereleri masaüs&tlerine göre sırala"
+
+#. i18n: file kcmtaskbarui.ui line 55
+#: rc.cpp:12
+#, no-c-format
+msgid ""
+"Selecting this option causes the taskbar to show windows in order of the "
+"desktop they appear on.\n"
+"\n"
+"By default this option is selected."
+msgstr ""
+
+#. i18n: file kcmtaskbarui.ui line 63
+#: rc.cpp:17
+#, no-c-format
+msgid "&Show windows from all desktops"
+msgstr "&Pencereleri tüm masaüstlerinde göster"
+
+#. i18n: file kcmtaskbarui.ui line 71
+#: rc.cpp:20
+#, no-c-format
+msgid ""
+"Turning this option off will cause the taskbar to display <b>only</b> "
+"the windows on the current desktop. \n"
+"\n"
+"By default, this option is selected and all windows are shown."
+msgstr ""
+"Bu seçeneği kapatmak görev çubuğunun <b>sadece</b> geçerli masaüstündeki "
+"pencereleri göstermesinine neden olur. \n"
+"\n"
+"Öntanımlı olarak bu seçenek açıktır ve tüm pencereler gösterilir."
+
+#. i18n: file kcmtaskbarui.ui line 79
+#: rc.cpp:25
+#, no-c-format
+msgid "Show window list &button"
+msgstr "&Pencere listesi düğmesini göster"
+
+#. i18n: file kcmtaskbarui.ui line 85
+#: rc.cpp:28
+#, no-c-format
+msgid ""
+"Selecting this option causes the taskbar to display a button that, when "
+"clicked, shows a list of all windows in a popup menu."
+msgstr ""
+
+#. i18n: file kcmtaskbarui.ui line 105
+#: rc.cpp:31
+#, no-c-format
+msgid ""
+"The taskbar can group similar windows into single buttons. When one of these "
+"window group buttons are clicked on a menu appears showing all the windows in "
+"that group. This can be especially useful with the <em>Show all windows</em> "
+"option.\n"
+"\n"
+"You can set the taskbar to <strong>Never</strong> group windows, to <strong>"
+"Always</strong> group windows or to group windows only <strong>"
+"When the Taskbar is Full</strong>.\n"
+"\n"
+"By default the taskbar groups windows when it is full."
+msgstr ""
+
+#. i18n: file kcmtaskbarui.ui line 113
+#: rc.cpp:38
+#, no-c-format
+msgid "&Group similar tasks:"
+msgstr "&Benzer görevleri grupla:"
+
+#. i18n: file kcmtaskbarui.ui line 124
+#: rc.cpp:41
+#, no-c-format
+msgid "Show o&nly minimized windows"
+msgstr "&Sadece simge halindeki pencereleri göster"
+
+#. i18n: file kcmtaskbarui.ui line 129
+#: rc.cpp:44
+#, no-c-format
+msgid ""
+"Select this option if you want the taskbar to display <b>only</b> "
+"minimized windows. \n"
+"\n"
+"By default, this option is not selected and the taskbar will show all windows."
+msgstr ""
+"Görev çubuğunun <b>sadece</b> küçültülmüş pencereleri göstermesini istiyorsanız "
+"bu seçeneği işaretleyin. \n"
+"\n"
+"Öntanımlı olarak bu seçenek seçili değildir ve görev çubuğu tüm pencereleri "
+"gösterir."
+
+#. i18n: file kcmtaskbarui.ui line 137
+#: rc.cpp:49
+#, no-c-format
+msgid "Sho&w application icons"
+msgstr "&Uygulama simgelerini göster"
+
+#. i18n: file kcmtaskbarui.ui line 145
+#: rc.cpp:52
+#, no-c-format
+msgid ""
+"Select this option if you want window icons to appear along with their titles "
+"in the taskbar.\n"
+"\n"
+"By default this option is selected."
+msgstr ""
+
+#. i18n: file kcmtaskbarui.ui line 153
+#: rc.cpp:57
+#, no-c-format
+msgid "Show windows from all sc&reens"
+msgstr "&Pencereleri tüm masaüstlerinde göster"
+
+#. i18n: file kcmtaskbarui.ui line 161
+#: rc.cpp:60
+#, no-c-format
+msgid ""
+"Turning this option off will cause the taskbar to display <b>only</b> "
+"windows which are on the same Xinerama screen as the taskbar.\n"
+"\n"
+"By default, this option is selected and all windows are shown."
+msgstr ""
+"Bu seçeneği kapatmak görev çubuğunun <b>sadece</b> aynı Xinerama ekranındaki "
+"pencereleri göstermesinine neden olur.\n"
+"\n"
+"Öntanımlı olarak bu seçenek seçilidir ve tüm pencereler gösterilir."
+
+#. i18n: file kcmtaskbarui.ui line 174
+#: rc.cpp:65
+#, no-c-format
+msgid "A&ppearance:"
+msgstr "G&örünüm:"
+
+#. i18n: file kcmtaskbarui.ui line 188
+#: rc.cpp:68
+#, no-c-format
+msgid "Use &custom colors"
+msgstr "Özel renkler k&ullan"
+
+#. i18n: file kcmtaskbarui.ui line 257
+#: rc.cpp:71
+#, no-c-format
+msgid "&Background color:"
+msgstr "Arkapl&an rengi:"
+
+#. i18n: file kcmtaskbarui.ui line 276
+#: rc.cpp:74
+#, no-c-format
+msgid "Inacti&ve task text color:"
+msgstr "Pasif görev metin reng&i:"
+
+#. i18n: file kcmtaskbarui.ui line 287
+#: rc.cpp:77
+#, no-c-format
+msgid "Active task te&xt color:"
+msgstr "Aktif göre&v metin rengi:"
+
+#. i18n: file kcmtaskbarui.ui line 334
+#: rc.cpp:80
+#, no-c-format
+msgid "Sort alphabeticall&y by application name"
+msgstr "Uygulama adına göre alfabetik olarak &sırala"
+
+#. i18n: file kcmtaskbarui.ui line 347
+#: rc.cpp:83
+#, no-c-format
+msgid "Actions"
+msgstr "Eylemler"
+
+#. i18n: file kcmtaskbarui.ui line 358
+#: rc.cpp:86
+#, no-c-format
+msgid "&Left button:"
+msgstr "&Sol düğme:"
+
+#. i18n: file kcmtaskbarui.ui line 369
+#: rc.cpp:89
+#, no-c-format
+msgid "&Middle button:"
+msgstr "&Orta düğme:"
+
+#. i18n: file kcmtaskbarui.ui line 380
+#: rc.cpp:92
+#, no-c-format
+msgid "Right b&utton:"
+msgstr "S&ağ düğme:"

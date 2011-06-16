@@ -1,0 +1,571 @@
+# translation of kmahjongg.po to Türkçe
+# translation of kmahjongg.po to
+# translation of kmahjongg.po to Turkish
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Görkem Çetin <gorkem@kde.org>, 2002, 2003, 2004.
+# Ömer Fadıl USTA <omer_fad@yahoo.com>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kmahjongg\n"
+"POT-Creation-Date: 2006-06-18 03:58+0200\n"
+"PO-Revision-Date: 2004-10-17 21:27+0300\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9\n"
+
+#: Editor.cpp:85
+msgid "Edit Board Layout"
+msgstr "Tahta Düzenini Ayarla"
+
+#: Editor.cpp:114
+msgid "New board"
+msgstr "Yeni tahta"
+
+#: Editor.cpp:117
+msgid "Open board"
+msgstr "Tahtayı aç"
+
+#: Editor.cpp:120
+msgid "Save board"
+msgstr "Tahtayı kaydet"
+
+#: Editor.cpp:127
+msgid "Select"
+msgstr "Seç"
+
+#: Editor.cpp:137
+msgid "Move tiles"
+msgstr "Döşemeleri taşı"
+
+#: Editor.cpp:140
+msgid "Add tiles"
+msgstr "Döşeme ekle"
+
+#: Editor.cpp:142
+msgid "Remove tiles"
+msgstr "Döşemeleri sil"
+
+#: Editor.cpp:158
+msgid "Shift left"
+msgstr "Sola kaydır"
+
+#: Editor.cpp:160
+msgid "Shift up"
+msgstr "Yukarı kaydır"
+
+#: Editor.cpp:162
+msgid "Shift down"
+msgstr "Aşağı kaydır"
+
+#: Editor.cpp:164
+msgid "Shift right"
+msgstr "Sağa kaydır"
+
+#: Editor.cpp:168
+msgid "Exit"
+msgstr "Çık"
+
+#: Editor.cpp:263
+msgid "Tiles: %1 Pos: %2,%3,%4"
+msgstr "Döşemeler: %1 Sıra: %2,%3,%4"
+
+#: Editor.cpp:275 Editor.cpp:312
+msgid ""
+"*.layout|Board Layout (*.layout)\n"
+"*|All Files"
+msgstr ""
+"*.layout|Tahta Düzeni (*.layout)\n"
+"*|Tüm Dosyalar"
+
+#: Editor.cpp:278 Preview.cpp:161
+msgid "Open Board Layout"
+msgstr "Tahta Düzeni Aç"
+
+#: Editor.cpp:315 Editor.cpp:333
+msgid "Save Board Layout"
+msgstr "Tahta Düzenini Kaydet"
+
+#: Editor.cpp:319 Preview.cpp:392 kmahjongg.cpp:536
+msgid "Only saving to local files currently supported."
+msgstr "Sadece yerel dosyalara kaydedilebilir."
+
+#: Editor.cpp:330 Preview.cpp:403
+msgid "A file with that name already exists. Do you wish to overwrite it?"
+msgstr "Bu isimde bir dosya zaten var, üzerine yazmak istiyor musunuz?"
+
+#: Editor.cpp:358
+msgid "The board has been modified. Would you like to save the changes?"
+msgstr "Tahta düzeni değiştirildi. Değişiklikleri kaydetmek istiyor musunuz?"
+
+#: Editor.cpp:366
+msgid "Save failed. Aborting operation."
+msgstr "Kaydetme başarısız. İşlem durduruldu."
+
+#: HighScore.cpp:64
+msgid "Pos"
+msgstr "Sıra"
+
+#: HighScore.cpp:77
+msgid "Name"
+msgstr "İsim"
+
+#: HighScore.cpp:86
+msgid "Board"
+msgstr "Tahta"
+
+#: HighScore.cpp:94
+msgid "Score"
+msgstr "Puan"
+
+#: HighScore.cpp:102
+msgid "Time"
+msgstr "Süre"
+
+#: HighScore.cpp:165
+msgid "Scores"
+msgstr "Puanlar"
+
+#: HighScore.cpp:465
+msgid "Anonymous"
+msgstr "Anonim"
+
+#: HighScore.cpp:498
+msgid ""
+"Resetting the high scores will remove all high score entries both in memory and "
+"on disk. Do you wish to proceed?"
+msgstr ""
+"Tüm Skorların silinmesi halinde hem disk, hem de bellekteki tümyüksek puan "
+"bilgileri silinecektir. Devam etmek istiyor musunuz?"
+
+#: HighScore.cpp:502
+msgid "Reset High Scores"
+msgstr "Puan Listesini Sıfırla"
+
+#: HighScore.cpp:502
+msgid "Reset"
+msgstr ""
+
+#: Preview.cpp:35
+#, fuzzy
+msgid "Load..."
+msgstr "Yükle"
+
+#: Preview.cpp:86
+msgid "Change Background Image"
+msgstr "Arkaplan Resmini Değiştir"
+
+#: Preview.cpp:88
+#, fuzzy
+msgid ""
+"*.bgnd|Background Image (*.bgnd)\n"
+msgstr ""
+"*.bgnd|Arkaplan Resmi\n"
+"*.bmp|Windows Biteşlem Dosyası (*.bmp)\n"
+
+#: Preview.cpp:94
+msgid "Change Tile Set"
+msgstr "Döşemeleri Değiştir"
+
+#: Preview.cpp:95
+#, fuzzy
+msgid ""
+"*.tileset|Tile Set File (*.tileset)\n"
+msgstr ""
+"*.tileset|Döşeme Dosyası\n"
+
+#: Preview.cpp:101
+#, fuzzy
+msgid ""
+"*.layout|Board Layout File (*.layout)\n"
+msgstr ""
+"*.layout|Tahta Düzeni Dosyası\n"
+
+#: Preview.cpp:102
+msgid "Change Board Layout"
+msgstr "Tahta Düzenini Değiştir"
+
+#: Preview.cpp:108
+#, fuzzy
+msgid ""
+"*.theme|KMahjongg Theme File (*.theme)\n"
+msgstr ""
+"*.theme|Kmahjongg Dekoru\n"
+
+#: Preview.cpp:109
+msgid "Choose Theme"
+msgstr "Dekor Seç"
+
+#: Preview.cpp:121
+#, fuzzy
+msgid "*|All Files"
+msgstr ""
+"*|Tüm Dosyalar\n"
+
+#: Preview.cpp:210
+msgid "That is not a valid theme file."
+msgstr "Bu dosya bir dekor dosyası değil."
+
+#: Preview.cpp:386
+msgid "Save Theme"
+msgstr "Dekoru Kaydet"
+
+#: Preview.cpp:405
+msgid "Overwrite"
+msgstr ""
+
+#: Preview.cpp:412 kmahjongg.cpp:543
+msgid "Could not write to file. Aborting."
+msgstr "Dosyaya kaydedilemedi. Çıkılıyor."
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Ömer Fadıl USTA"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "omer_fad@hotmail.com"
+
+#: boardwidget.cpp:47
+msgid ""
+"An error occurred when loading the tileset file %1\n"
+"KMahjongg will now terminate."
+msgstr ""
+"%1 döşeme dosyası yüklenirken bir hata oluştu\n"
+"KMahjongg şimdi sonlandırılacak."
+
+#: boardwidget.cpp:58
+#, c-format
+msgid ""
+"An error occurred when loading the background image\n"
+"%1"
+msgstr ""
+"Arkaplan rengini yüklerken bir hata oluştu\n"
+"%1"
+
+#: boardwidget.cpp:59
+msgid "KMahjongg will now terminate."
+msgstr "Kmahjongg şimdi sonlandırılacak."
+
+#: boardwidget.cpp:67
+msgid ""
+"An error occurred when loading the board layout %1\n"
+"KMahjongg will now terminate."
+msgstr ""
+"%1 tahta düzenini yüklerken bir hata oluştu\n"
+"KMahjongg şimdi sonlandırılacak."
+
+#: boardwidget.cpp:112
+msgid ""
+"KMahjongg could not locate the file: %1\n"
+"or the default file of type: %2\n"
+"KMahjongg will now terminate"
+msgstr ""
+"KMahjongg  %1 dosyasını, ya da \n"
+"öntanımlı dosya türünü (%2) bulamadı.\n"
+"Program sonlandırılacak."
+
+#: boardwidget.cpp:503
+msgid "Undo operation done successfully."
+msgstr "Geri alma işlemi başarı ile tamamlandı"
+
+#: boardwidget.cpp:507
+msgid "What do you want to undo? You have done nothing!"
+msgstr "Neyi geri alacaksın? Bir şey yapmadın ki!"
+
+#: boardwidget.cpp:526
+msgid "Sorry, you have lost the game."
+msgstr "Üzgünüm, oyunu kaybettin."
+
+#: boardwidget.cpp:568
+msgid "Demo mode. Click mousebutton to stop."
+msgstr "Demo modu. Durmak için tıkla."
+
+#: boardwidget.cpp:577
+msgid "Now it's you again."
+msgstr "İşte yine senin sıran."
+
+#: boardwidget.cpp:600
+msgid "Your computer has lost the game."
+msgstr "Bilgisayarınız oyunu kaybetmiştir."
+
+#: boardwidget.cpp:695
+msgid "Congratulations. You have won!"
+msgstr "Tebrikler. Kazandınız!"
+
+#: boardwidget.cpp:726
+msgid "Calculating new game..."
+msgstr "Yeni oyun hesaplanıyor..."
+
+#: boardwidget.cpp:731
+msgid "Error converting board information!"
+msgstr "Tahta bilgisini dönüştürmede hata!"
+
+#: boardwidget.cpp:758
+msgid "Ready. Now it is your turn."
+msgstr "Hazır. Şimdi sıra sizde."
+
+#: boardwidget.cpp:765
+msgid "Error generating new game!"
+msgstr "Oyunu oluşturmada hata!"
+
+#: boardwidget.cpp:1686
+msgid "Game over: You have no moves left."
+msgstr "Oyun bitti: Hamle yapamıyorsunuz."
+
+#: boardwidget.cpp:1807
+#, c-format
+msgid ""
+"Failed to load image:\n"
+"%1"
+msgstr ""
+"Resim yüklenemedi:\n"
+"%1"
+
+#: kmahjongg.cpp:136
+msgid "New Numbered Game..."
+msgstr "Yeni Sayılı Oyun..."
+
+#: kmahjongg.cpp:137
+msgid "Open Th&eme..."
+msgstr "&Dekoru Aç..."
+
+#: kmahjongg.cpp:138
+msgid "Open &Tileset..."
+msgstr "Döş&emeleri Aç..."
+
+#: kmahjongg.cpp:139
+msgid "Open &Background..."
+msgstr "&Arkaplan Resmini Aç..."
+
+#: kmahjongg.cpp:140
+msgid "Open La&yout..."
+msgstr "Dü&zeni Aç..."
+
+#: kmahjongg.cpp:141
+msgid "Sa&ve Theme..."
+msgstr "D&ekoru Kaydet..."
+
+#: kmahjongg.cpp:144
+msgid "Shu&ffle"
+msgstr "&Karıştır"
+
+#: kmahjongg.cpp:146
+msgid "Show &Matching Tiles"
+msgstr "Uyan Döşe&meleri Göster"
+
+#: kmahjongg.cpp:147
+msgid "Hide &Matching Tiles"
+msgstr "Uyan Döşem&eleri Gizle"
+
+#: kmahjongg.cpp:162
+#, fuzzy
+msgid "&Board Editor"
+msgstr "&Tahta Düzenleyici..."
+
+#: kmahjongg.cpp:213
+msgid "Enter game number:"
+msgstr "Oyunun numarasını girin:"
+
+#. i18n: file settings.ui line 47
+#: kmahjongg.cpp:240 rc.cpp:18
+#, no-c-format
+msgid "General"
+msgstr "Genel"
+
+#: kmahjongg.cpp:369
+msgid "You have won!"
+msgstr "Kazandın!"
+
+#: kmahjongg.cpp:400
+#, c-format
+msgid "Game number: %1"
+msgstr "Oyun numarası: %1"
+
+#: kmahjongg.cpp:410
+#, fuzzy
+msgid "Removed: %1/%2  Combinations left: %3"
+msgstr "Silinen: %1/%2  Kalan: %3"
+
+#: kmahjongg.cpp:464
+msgid "Load Game"
+msgstr "Oyunu Yükle"
+
+#: kmahjongg.cpp:475
+msgid "Could not read from file. Aborting."
+msgstr "Dosyadan okunamıyor. İşlem durdurulacak."
+
+#: kmahjongg.cpp:483
+msgid "File format not recognized."
+msgstr "Dosya yapısı bilinmiyor."
+
+#: kmahjongg.cpp:529
+msgid "Save Game"
+msgstr "Oyunu Kaydet"
+
+#: main.cpp:9
+msgid "Mahjongg for KDE"
+msgstr "KDE için Mahjongg"
+
+#: main.cpp:13
+msgid "KMahjongg"
+msgstr "KMahjongg"
+
+#: main.cpp:16
+msgid "Original Author"
+msgstr "Asıl Yazar"
+
+#: main.cpp:17
+msgid "Current maintainer"
+msgstr ""
+
+#: main.cpp:18
+msgid "Rewrite and Extension"
+msgstr "Yazan ve Geliştiren"
+
+#: main.cpp:19
+msgid ""
+"Solvable game generation\n"
+"based on algorithm by Michael Meeks in GNOME mahjongg"
+msgstr ""
+"Çözülebilir oyun oluşturulmasında \n"
+"Michael Meeks'in GNOME Mahjongg'daki algoritması temel alınmıştır."
+
+#: main.cpp:20
+msgid "Tile set contributor and web page maintainer"
+msgstr "Döşeme ekleyen ve web sayfasını düzenleyen"
+
+#: main.cpp:21
+msgid "Code cleanup"
+msgstr "Kod temizleme"
+
+#. i18n: file kmahjonggui.rc line 16
+#: rc.cpp:9
+#, no-c-format
+msgid "&Move"
+msgstr "&Taşı"
+
+#. i18n: file settings.ui line 58
+#: rc.cpp:21
+#, no-c-format
+msgid "Show removed tiles"
+msgstr "Silinen döşemeleri göster"
+
+#. i18n: file settings.ui line 66
+#: rc.cpp:24
+#, no-c-format
+msgid "Generate solvable games"
+msgstr "Çözülebilir Oyunlar Oluştur"
+
+#. i18n: file settings.ui line 77
+#: rc.cpp:27
+#, no-c-format
+msgid "Play winning animation"
+msgstr "Yenme canlandırmasını oynat"
+
+#. i18n: file settings.ui line 107
+#: rc.cpp:30
+#, no-c-format
+msgid "Background"
+msgstr "Arkaplan"
+
+#. i18n: file settings.ui line 118
+#: rc.cpp:33
+#, no-c-format
+msgid "Scale"
+msgstr "Oranla"
+
+#. i18n: file settings.ui line 126
+#: rc.cpp:36
+#, no-c-format
+msgid "Tiled"
+msgstr "Döşeli"
+
+#. i18n: file settings.ui line 139
+#: rc.cpp:39
+#, no-c-format
+msgid "Tiles"
+msgstr "Döşemeler"
+
+#. i18n: file settings.ui line 150
+#: rc.cpp:42
+#, no-c-format
+msgid "Draw shadows"
+msgstr "Gölge kullan"
+
+#. i18n: file settings.ui line 161
+#: rc.cpp:45
+#, no-c-format
+msgid "Use mini-tiles"
+msgstr "Küçük döşemeleri kullan"
+
+#. i18n: file kmahjongg.kcfg line 9
+#: rc.cpp:48
+#, no-c-format
+msgid "The tile-set to use."
+msgstr "Kullanılacak döşeme."
+
+#. i18n: file kmahjongg.kcfg line 12
+#: rc.cpp:51
+#, no-c-format
+msgid "The background to use."
+msgstr "Kullanılacak arkaplan"
+
+#. i18n: file kmahjongg.kcfg line 15
+#: rc.cpp:54
+#, no-c-format
+msgid "The layout of the tiles."
+msgstr "Döşemelerin düzeni."
+
+#. i18n: file kmahjongg.kcfg line 18
+#: rc.cpp:57
+#, no-c-format
+msgid "Whether to show removed tiles."
+msgstr "Silinen döşemelerin görüntülenip görüntülenmeyeceği."
+
+#. i18n: file kmahjongg.kcfg line 22
+#: rc.cpp:60
+#, no-c-format
+msgid "Whether to use miniature tiles."
+msgstr "Minyatür döşemelerin kullanılıp kullanılmayacağı."
+
+#. i18n: file kmahjongg.kcfg line 26
+#: rc.cpp:63
+#, no-c-format
+msgid "Whether the tiles have shadows."
+msgstr "Döşemelerin gölgesi var mı?"
+
+#. i18n: file kmahjongg.kcfg line 30
+#: rc.cpp:66
+#, no-c-format
+msgid "Whether all games should be solvable."
+msgstr "Tüm oyunlar çözülebilir mi?"
+
+#. i18n: file kmahjongg.kcfg line 34
+#: rc.cpp:69
+#, no-c-format
+msgid "Whether the background should be tiled instead of scaled."
+msgstr "Arkaplan sıralı mı yoksa orantısal mı olacak?"
+
+#. i18n: file kmahjongg.kcfg line 38
+#: rc.cpp:72
+#, no-c-format
+msgid "Whether an animation should be played on victory."
+msgstr "Zaferden sonra bir bitiş animasyonu gösterilsin mi?"
+
+#. i18n: file kmahjongg.kcfg line 42
+#: rc.cpp:75
+#, fuzzy, no-c-format
+msgid "Whether matching tiles are shown."
+msgstr "Döşemelerin gölgesi var mı?"
+
+#~ msgid "Implemented some bugfixes and wishes"
+#~ msgstr "Hata Düzeltmeleri ve Öneriler"

@@ -1,0 +1,1912 @@
+# translation of kolourpaint.po to
+# translation of kolourpaint.po to Türkçe
+# translation of kolourpaint.po to Turkish
+# Copyright (C) 2004, 2005 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Görkem Çetin <gorkem@gorkemcetin.com>, 2005.
+# Alper Şen <aalpersen@gmail.com>, 2005.
+# Alper Sen <aalpersen@gmail.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kolourpaint\n"
+"POT-Creation-Date: 2007-10-23 01:13+0200\n"
+"PO-Revision-Date: 2005-07-18 13:59+0300\n"
+"Last-Translator: Alper Sen <aalpersen@gmail.com>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Adem Alp Yıldız Alper Şen"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "ademalp@linux-sevenler.org aalpersen@gmail.com"
+
+#: kolourpaint.cpp:53
+msgid "Image file to open"
+msgstr "Açılacak resim dosyası"
+
+#: kolourpaint.cpp:63
+msgid "KolourPaint"
+msgstr "KolourPaint"
+
+#: kolourpaint.cpp:65
+msgid "Paint Program for KDE"
+msgstr "KDE için boyama programı"
+
+#: kolourpaint.cpp:79
+msgid "Maintainer"
+msgstr "Geliştirici"
+
+#: kolourpaint.cpp:80
+msgid "Chief Investigator"
+msgstr "Şef Müfettiş"
+
+#: kolourpaint.cpp:82 kolourpaint.cpp:84 kolourpaint.cpp:85
+msgid "Icons"
+msgstr "Simgeler"
+
+#: kolourpaint.cpp:83
+msgid "InputMethod Support"
+msgstr "InputMethod Desteği"
+
+#: kpcommandhistory.cpp:628
+#, c-format
+msgid "&Undo: %1"
+msgstr "&Geri al: %1"
+
+#: kpcommandhistory.cpp:639
+#, c-format
+msgid "&Redo: %1"
+msgstr "&Yinele: %1"
+
+#: kpcommandhistory.cpp:787
+msgid "%1: %2"
+msgstr "%1: %2"
+
+#: kpcommandhistory.cpp:795
+#, c-format
+msgid ""
+"_n: %n more item\n"
+"%n more items"
+msgstr "Ek %n öğe"
+
+#: kpdocument.cpp:255
+msgid "Could not open \"%1\"."
+msgstr "\"%1\" açılamadı."
+
+#: kpdocument.cpp:281
+msgid "Could not open \"%1\" - unknown mimetype."
+msgstr "\"%1\" açılamadı - bilinmeyen mime tipi."
+
+#: kpdocument.cpp:296
+msgid ""
+"Could not open \"%1\" - unsupported image format.\n"
+"The file may be corrupt."
+msgstr ""
+"\"%1\" açılamadı - desteklenmeyen resim biçimi.\n"
+"Dosya bozulmuş olabilir."
+
+#: kpdocument.cpp:304
+msgid ""
+"The image \"%1\" may have more colors than the current screen mode. In order to "
+"display it, some colors may be changed. Try increasing your screen depth to at "
+"least %2bpp.\n"
+"It also contains translucency which is not fully supported. The translucency "
+"data will be approximated with a 1-bit transparency mask."
+msgstr ""
+"%1 ekran kipindeki renklerden daha fazla renk içermekte. Gösterebilmek için "
+"bazı renkler değiştiriliecek. Ekran derinliğinizi enaz %2bpp ayarlamayı "
+"deneyin.\n"
+"Ayrıca desteklenmeyen yarısaydamlığı da içeriyor. Yarısaydamlık verisi 1-bit "
+"büyük şeffaflık maskesi ile yakınlaştırılacaktır."
+
+#: kpdocument.cpp:315
+msgid ""
+"The image \"%1\" may have more colors than the current screen mode. In order to "
+"display it, some colors may be changed. Try increasing your screen depth to at "
+"least %2bpp."
+msgstr ""
+"%1 ekran kipindeki renklerden daha fazla renk içermekte. Gösterebilmek için "
+"bazı renkler değiştiriliecek. Ekran derinliğinizi enaz %2bpp ayarlamayı "
+"deneyin."
+
+#: kpdocument.cpp:320
+msgid ""
+"The image \"%1\" contains translucency which is not fully supported. The "
+"translucency data will be approximated with a 1-bit transparency mask."
+msgstr ""
+"%1 desteklenmeyen yarısaydamlığı içeriyor. Yarısaydamlık verisi 1-bit büyük "
+"şeffaflık maskesi ile yakınlaştırılacaktır."
+
+#: kpdocument.cpp:333
+msgid "Could not open \"%1\" - out of graphics memory."
+msgstr "\"%1\" açılamadı - grafik hafıza yetersiz."
+
+#: kpdocument.cpp:429
+msgid "Could not save image - insufficient information."
+msgstr "Resim kaydedilemedi - yetersiz bilgi."
+
+#: kpdocument.cpp:430
+msgid ""
+"URL: %1\n"
+"Mimetype: %2"
+msgstr ""
+"Adres: %1\n"
+"Mime tipi: %2"
+
+#: kpdocument.cpp:434
+msgid "<empty>"
+msgstr "<boş>"
+
+#: kpdocument.cpp:436
+msgid "Internal Error"
+msgstr "İç Hata"
+
+#: kpdocument.cpp:469
+msgid ""
+"<qt>"
+"<p>The <b>%1</b> format may not be able to preserve all of the image's color "
+"information.</p>"
+"<p>Are you sure you want to save in this format?</p></qt>"
+msgstr ""
+"<qt>"
+"<p><b>%1</b> biçimi resmin tüm renk bilgisini içermeyebilir.</p>"
+"<p>Bu biçimde kaydetmek istediğinize emin misiniz?</p></qt>"
+
+#: kpdocument.cpp:476
+msgid "Lossy File Format"
+msgstr "Kayıplı Dosya Biçimi"
+
+#: kpdocument.cpp:484
+msgid ""
+"<qt>"
+"<p>Saving the image at the low color depth of %1-bit may result in the loss of "
+"color information. Any transparency will also be removed.</p>"
+"<p>Are you sure you want to save at this color depth?</p></qt>"
+msgstr ""
+"<qt>"
+"<p>Resmi %1-bit düşük renk derinliğinde kaydetmek renk bilgisinin kaybına neden "
+"olabilir. Ayrıca yarı şeffaflık ta yok olacaktır.</p>"
+"<p>Bu renk derinliğinde kaydetmek istediğinize emin misiniz?</p></qt>"
+
+#: kpdocument.cpp:491
+msgid "Low Color Depth"
+msgstr "Düşük Ekran Derinliği"
+
+#: kpdocument.cpp:602
+msgid "Could not save image - unable to create temporary file."
+msgstr "Resim kaydedilemedi - geçici dosya oluşturulamadı."
+
+#: kpdocument.cpp:609
+msgid "Could not save as \"%1\"."
+msgstr "\"%1\" olarak kaydedilemedi."
+
+#: kpdocument.cpp:638
+msgid ""
+"A document called \"%1\" already exists.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"\"%1\" adlı döküman mevcut.\n"
+"Üzerine yazmak ister misiniz?"
+
+#: kpdocument.cpp:642
+msgid "Overwrite"
+msgstr "Üzerine Yaz"
+
+#: kpdocument.cpp:782
+msgid "Could not save image - failed to upload."
+msgstr "Resim kaydedilemedi - gönderim başarısız."
+
+#: kpdocumentsaveoptionswidget.cpp:74 kpdocumentsaveoptionswidget.cpp:80
+msgid "Save Preview"
+msgstr "Önizlemeyi Kaydet"
+
+#: kpdocumentsaveoptionswidget.cpp:151
+msgid "%1 bytes"
+msgstr "%1 bayt"
+
+#: kpdocumentsaveoptionswidget.cpp:152
+msgid "%1 bytes (%2%)"
+msgstr "%1 bayt (%2%)"
+
+#: kpdocumentsaveoptionswidget.cpp:153
+msgid "%1 B"
+msgstr "%1 B"
+
+#: kpdocumentsaveoptionswidget.cpp:154
+msgid "%1 B (%2%)"
+msgstr "%1 B (%%2)"
+
+#: kpdocumentsaveoptionswidget.cpp:155
+msgid "%1 B (approx. %2%)"
+msgstr "%1 B (yaklaşık %%2)"
+
+#: kpdocumentsaveoptionswidget.cpp:156
+msgid "%1B"
+msgstr "%1B"
+
+#: kpdocumentsaveoptionswidget.cpp:157
+msgid "%1B (%2%)"
+msgstr "%1B (%%2)"
+
+#: kpdocumentsaveoptionswidget.cpp:158
+msgid "%1B (approx. %2%)"
+msgstr "%1B (yaklaşık %%2)"
+
+#: kpdocumentsaveoptionswidget.cpp:159
+msgid "%1 bytes (approx. %2%)"
+msgstr "%1 bayt (yaklaşık %%2)"
+
+#: kpdocumentsaveoptionswidget.cpp:299
+msgid "Convert &to:"
+msgstr "&Dönüştür:"
+
+#: kpdocumentsaveoptionswidget.cpp:304
+msgid "Quali&ty:"
+msgstr "&Kalite:"
+
+#: kpdocumentsaveoptionswidget.cpp:312
+msgid "&Preview"
+msgstr "Ö&nizleme"
+
+#: kpdocumentsaveoptionswidget.cpp:431
+msgid "Monochrome"
+msgstr "Tek renk"
+
+#: kpdocumentsaveoptionswidget.cpp:432
+msgid "Monochrome (Dithered)"
+msgstr "Tek renk (Titrek)"
+
+#: kpdocumentsaveoptionswidget.cpp:436
+msgid "256 Color"
+msgstr "256 Renk"
+
+#: kpdocumentsaveoptionswidget.cpp:437
+msgid "256 Color (Dithered)"
+msgstr "256 Renk (Titrek)"
+
+#: kpdocumentsaveoptionswidget.cpp:442
+msgid "24-bit Color"
+msgstr "24 Bit Renk"
+
+#: kpmainwindow.cpp:251
+#, fuzzy
+msgid "Color Box"
+msgstr "Renkler"
+
+#: kpmainwindow.cpp:855
+msgid ""
+"The document \"%1\" has been modified.\n"
+"Do you want to save it?"
+msgstr ""
+"\"%1\" belgesi değiştirildi.\n"
+"Kaydedilmesini ister misiniz?"
+
+#: kpmainwindow_edit.cpp:66
+msgid ""
+"The image to be pasted may have more colors than the current screen mode. In "
+"order to display it, some colors may be changed. Try increasing your screen "
+"depth to at least %1bpp.\n"
+"It also contains translucency which is not fully supported. The translucency "
+"data will be approximated with a 1-bit transparency mask."
+msgstr ""
+"Yapıştırılan resim ekran kipindeki renklerden daha fazla renk içeriyor "
+"olabilir. Gösterebilmek için bazı renkler değiştiriliecek. Ekran derinliğinizi "
+"enaz %1bpp ayarlamayı deneyin.\n"
+"Ayrıca tam desteklenmeyen yarısaydamlığı da içeriyor. Yarısaydamlık verisi "
+"1-bit büyük şeffaflık maskesi ile yakınlaştırılacaktır."
+
+#: kpmainwindow_edit.cpp:76
+msgid ""
+"The image to be pasted may have more colors than the current screen mode. In "
+"order to display it, some colors may be changed. Try increasing your screen "
+"depth to at least %1bpp."
+msgstr ""
+"Yapıştırılan resim ekran kipindeki renklerden daha fazla renk içeriyor "
+"olabilir. Gösterebilmek için bazı renkler değiştiriliecek. Ekran derinliğinizi "
+"enaz %1bpp ayarlamayı deneyin."
+
+#: kpmainwindow_edit.cpp:80
+msgid ""
+"The image to be pasted contains translucency which is not fully supported. The "
+"translucency data will be approximated with a 1-bit transparency mask."
+msgstr ""
+"Yapıştırılan resim tam olarak desteklenmeyen yarı saydamlık içeriyor. "
+"Yarısaydamlık verisi 1-bit büyük şeffaflık maskesi ile yakınlaştırılacaktır."
+
+#: kpmainwindow_edit.cpp:109
+msgid "Paste in &New Window"
+msgstr "Ye&ni Pencere Yapıştır"
+
+#: kpmainwindow_edit.cpp:114
+msgid "&Delete Selection"
+msgstr "&Seçimi Sil"
+
+#: kpmainwindow_edit.cpp:121
+msgid "C&opy to File..."
+msgstr "D&osyaya Kopyala..."
+
+#: kpmainwindow_edit.cpp:123
+msgid "Paste &From File..."
+msgstr "&Dosyadan Yapıştır..."
+
+#: kpmainwindow_edit.cpp:460 tools/kptoolselection.cpp:718
+msgid "Text: Create Box"
+msgstr "Metin Oluşturma Kutusu"
+
+#: kpmainwindow_edit.cpp:461 kpmainwindow_image.cpp:246
+#: tools/kptoolcrop.cpp:331 tools/kptoolselection.cpp:1178
+msgid "Selection: Create"
+msgstr "Seçim: Oluştur"
+
+#: kpmainwindow_edit.cpp:538
+msgid "Text: Paste"
+msgstr "Metin: Yapıştır"
+
+#: kpmainwindow_edit.cpp:718
+msgid ""
+"<qt>"
+"<p>KolourPaint cannot paste the contents of the clipboard as the data "
+"unexpectedly disappeared.</p>"
+"<p>This usually occurs if the application which was responsible for the "
+"clipboard contents has been closed.</p></qt>"
+msgstr ""
+"<qt>"
+"<p>KolourPaint veri beklenmeyen bir şekilde kaybolduğu için pano verisini "
+"yapıştıramıyor.</p>"
+"<p>Bu genellikle pano içeriğinden sorumlu olan programın kapanması sonucu "
+"olur.</p></qt>"
+
+#: kpmainwindow_edit.cpp:724
+msgid "Cannot Paste"
+msgstr "Yapıştırılamıyor"
+
+#: kpmainwindow_edit.cpp:845
+msgid "Text: Delete Box"
+msgstr "Metin: Kutuyu Sil"
+
+#: kpmainwindow_edit.cpp:846
+msgid "Selection: Delete"
+msgstr "Seçim: Sil"
+
+#: kpmainwindow_edit.cpp:918
+msgid "Text: Finish"
+msgstr "Metin: Bitir"
+
+#: kpmainwindow_edit.cpp:919
+msgid "Selection: Deselect"
+msgstr "Seçim: Seçim İptal"
+
+#: kpmainwindow_edit.cpp:995
+msgid "Copy to File"
+msgstr "Dosyaya Kopyala"
+
+#: kpmainwindow_edit.cpp:1042
+msgid "Paste From File"
+msgstr "Dosyadan Yapıştır"
+
+#: kpmainwindow_file.cpp:82
+msgid "E&xport..."
+msgstr "Ç&evir..."
+
+#: kpmainwindow_file.cpp:85
+#, fuzzy
+msgid "Scan..."
+msgstr "..."
+
+#: kpmainwindow_file.cpp:89
+msgid "Reloa&d"
+msgstr "&Yeniden yükle"
+
+#: kpmainwindow_file.cpp:98
+msgid "Set as Wa&llpaper (Centered)"
+msgstr "Masaüstü Resmi O&larak Ata (Ortalanmış)"
+
+#: kpmainwindow_file.cpp:100
+msgid "Set as Wallpaper (&Tiled)"
+msgstr "Masaüstü Resmi Olarak Ata (Uza&t)"
+
+#: kpmainwindow_file.cpp:372
+msgid "Open Image"
+msgstr "Resim Aç"
+
+#: kpmainwindow_file.cpp:446
+msgid "Scanning support is not installed."
+msgstr ""
+
+#: kpmainwindow_file.cpp:447
+msgid "No Scanning Support"
+msgstr ""
+
+#: kpmainwindow_file.cpp:528
+#, fuzzy
+msgid "Cannot scan - out of graphics memory."
+msgstr "\"%1\" açılamadı - grafik hafıza yetersiz."
+
+#: kpmainwindow_file.cpp:529
+#, fuzzy
+msgid "Cannot Scan"
+msgstr "Yapıştırılamıyor"
+
+#: kpmainwindow_file.cpp:779
+msgid "Save Image As"
+msgstr "Resmi Farklı Kaydet"
+
+#: kpmainwindow_file.cpp:897
+msgid ""
+"The document \"%1\" has been modified.\n"
+"Reloading will lose all changes since you last saved it.\n"
+"Are you sure?"
+msgstr ""
+"\"%1\" belgesi değiştirildi.\n"
+"Yeniden yüklemek eski kayıdınızdan bu yana yaptığınız tüm değişiklikleri "
+"kaybettirecek.\n"
+"Devam etmek istiyor musunuz?"
+
+#: kpmainwindow_file.cpp:907
+msgid ""
+"The document \"%1\" has been modified.\n"
+"Reloading will lose all changes.\n"
+"Are you sure?"
+msgstr ""
+"\"%1\" belgesi değiştirildi.\n"
+"Yeniden yüklemek tüm değişiklikleri kaybettirecek.\n"
+"Devam etmek istiyor musunuz?"
+
+#: kpmainwindow_file.cpp:1245
+msgid ""
+"You must save this image before sending it.\n"
+"Do you want to save it?"
+msgstr ""
+"Resmi göndermeden önce kaydetmelisiniz.\n"
+"Kaydetmek ister misiniz?"
+
+#: kpmainwindow_file.cpp:1288
+msgid ""
+"Before this image can be set as the wallpaper, you must save it as a local "
+"file.\n"
+"Do you want to save it?"
+msgstr ""
+"Bu resmi masaüstü resmi olarak atayabilmek için, dosyayı yerel bir dosya olarak "
+"kaydetmelisiniz.\n"
+"Dosyayı kaydetmek ister misiniz?"
+
+#: kpmainwindow_file.cpp:1294
+msgid ""
+"Before this image can be set as the wallpaper, you must save it.\n"
+"Do you want to save it?"
+msgstr ""
+"Bu resmi masaüstü resmi olarak atayabilmek için kaydetmelisiniz.\n"
+"Dosyayı kaydetmek ister misiniz?"
+
+#: kpmainwindow_file.cpp:1358
+msgid "Could not change wallpaper."
+msgstr "Masaüstü resmi değiştirilemiyor."
+
+#: kpmainwindow_help.cpp:59
+msgid "Acquiring &Screenshots"
+msgstr "&Ekran görüntüleri alınıyor"
+
+#: kpmainwindow_help.cpp:133
+msgid ""
+"<p>To acquire a screenshot, press <b>%1</b>.  The screenshot will be placed "
+"into the clipboard and you will be able to paste it in KolourPaint.</p>"
+"<p>You may configure the <b>Desktop Screenshot</b> shortcut in the KDE Control "
+"Center module <a href=\"configure kde shortcuts\">Keyboard Shortcuts</a>.</p>"
+"<p>Alternatively, you may try the application <a href=\"run ksnapshot\">"
+"KSnapshot</a>.</p>"
+msgstr ""
+"<p>Ekran görüntüsü yakalamak için <b>%1</b>'e basın. Ekran görüntüsü panoya "
+"yerleştirilecek ve böylece KolourPaint'e yapıştırabileceksiniz.</p>"
+"<p><b>Masaüstü Görüntüsü Yakalama</b> kısayolunu KDE Kontrol Merkezinde <a "
+"href=\"configure kde shortcuts\">Klavye Kısayolları</a> "
+"modülünde yapılandırabilirsiniz.</p>"
+"<p>Alternatf olarak <a href=\"run ksnapshot\">KSnapshot</a> "
+"programını kullanabilirsiniz.</p>"
+
+#: kpmainwindow_help.cpp:154
+msgid ""
+"<p>You do not appear to be running KDE.</p>"
+"<p>Once you have loaded KDE:"
+"<br>"
+"<blockquote>To acquire a screenshot, press <b>%1</b>"
+".  The screenshot will be placed into the clipboard and you will be able to "
+"paste it in KolourPaint.</blockquote></p>"
+"<p>Alternatively, you may try the application <a href=\"run ksnapshot\">"
+"KSnapshot</a>.</p>"
+msgstr ""
+"<p>KDE'yi çalıştırmıyor görünüyorsunuz..</p>"
+"<p>KDE'yi yükledikten sonra:"
+"<br>"
+"<blockquote>Ekran yakalamak için <b>%1</b> tuşuna basın. Ekran görüntüsü panoya "
+"yerleştirilecek ve böylece KolourPaint'e yapıştırabileceksiniz.</blockquote></p>"
+"<p>Alternatf olarak <a href=\"run ksnapshot\">KSnapshot</a> "
+"programını kullanabilirsiniz.</p>"
+
+#: kpmainwindow_help.cpp:183
+msgid "Acquiring Screenshots"
+msgstr "Ekran Görüntüleri Alınıyor"
+
+#: kpmainwindow_image.cpp:92
+msgid "R&esize / Scale..."
+msgstr "Boyutlan&dır/Büyüt..."
+
+#: kpmainwindow_image.cpp:95
+msgid "Se&t as Image (Crop)"
+msgstr "&Resim Olarak Ayarla (Kırp)"
+
+#: kpmainwindow_image.cpp:101
+msgid "&Flip..."
+msgstr "&Döndür..."
+
+#: kpmainwindow_image.cpp:104
+msgid "&Rotate..."
+msgstr "Ç&evir..."
+
+#: kpmainwindow_image.cpp:107
+msgid "S&kew..."
+msgstr "E&ğ..."
+
+#: kpmainwindow_image.cpp:110
+msgid "Reduce to Mo&nochrome (Dithered)"
+msgstr "&Tek renge Düşür (Dithered)"
+
+#: kpmainwindow_image.cpp:113
+msgid "Reduce to &Grayscale"
+msgstr "&Gri Tona Dönüştür"
+
+#: kpmainwindow_image.cpp:116
+msgid "&Invert Colors"
+msgstr "Renkler&i Çevir"
+
+#: kpmainwindow_image.cpp:119
+msgid "C&lear"
+msgstr "Temiz&le"
+
+#: kpmainwindow_image.cpp:122
+msgid "&More Effects..."
+msgstr "Daha Faz&la Efekt..."
+
+#. i18n: file kolourpaintui.rc line 71
+#: kpmainwindow_image.cpp:160 rc.cpp:6 rc.cpp:18 rc.cpp:24 rc.cpp:36
+#, no-c-format
+msgid "&Image"
+msgstr "&Resim"
+
+#: kpmainwindow_image.cpp:161
+msgid "Select&ion"
+msgstr "&Seçim"
+
+#: kpmainwindow_settings.cpp:64
+msgid "Show &Path"
+msgstr "&Yolu Göster"
+
+#: kpmainwindow_settings.cpp:66
+msgid "Hide &Path"
+msgstr "&Yolu Gizle"
+
+#: kpmainwindow_settings.cpp:196
+msgid "You have to restart KolourPaint for these changes to take effect."
+msgstr ""
+"Bu değişikliklerin geçerli olması için KolourPaint'i yeniden başlatmalısınız."
+
+#: kpmainwindow_settings.cpp:197
+msgid "Toolbar Settings Changed"
+msgstr "Araç Çubuğu Ayarları Değişti"
+
+#: kpmainwindow_statusbar.cpp:144
+msgid "%1,%2"
+msgstr "%1,%2"
+
+#: kpmainwindow_statusbar.cpp:151
+msgid "%1,%2 - %3,%4"
+msgstr "%1,%2 - %3,%4"
+
+#: kpmainwindow_statusbar.cpp:192 kpmainwindow_statusbar.cpp:221
+#: widgets/kptoolwidgeterasersize.cpp:88
+#: widgets/kptoolwidgetspraycansize.cpp:91
+#, c-format
+msgid "%1x%2"
+msgstr "%1x%2"
+
+#: kpmainwindow_statusbar.cpp:247
+msgid "%1bpp"
+msgstr "%1bpp"
+
+#: kpmainwindow_statusbar.cpp:271 kpmainwindow_view.cpp:219
+msgid "%1%"
+msgstr "%%1"
+
+#: kpmainwindow_text.cpp:52
+msgid "Font Family"
+msgstr "Yazıtipi Ailesi"
+
+#: kpmainwindow_text.cpp:57
+msgid "Bold"
+msgstr "Kalın"
+
+#: kpmainwindow_text.cpp:63
+msgid "Underline"
+msgstr "Altı Çizili"
+
+#: kpmainwindow_text.cpp:66
+msgid "Strike Through"
+msgstr "Üzeri Çizili"
+
+#: kpmainwindow_tools.cpp:104
+msgid "Previous Tool Option (Group #1)"
+msgstr "Önceki Araç Seçeneği (Grup #1)"
+
+#: kpmainwindow_tools.cpp:109
+msgid "Next Tool Option (Group #1)"
+msgstr "Sonraki Araç Seçeneği (Grup #1)"
+
+#: kpmainwindow_tools.cpp:115
+msgid "Previous Tool Option (Group #2)"
+msgstr "Önceki Araç Seçeneği (Grup #2)"
+
+#: kpmainwindow_tools.cpp:120
+msgid "Next Tool Option (Group #2)"
+msgstr "Sonraki Araç Seçeneği (Grup #2)"
+
+#: kpmainwindow_tools.cpp:129
+#, fuzzy
+msgid "Tool Box"
+msgstr "Metin Kutusu"
+
+#: kpmainwindow_tools.cpp:525
+msgid ""
+"<qt>"
+"<p>Resizing the image to %1x%2 may take a substantial amount of memory. This "
+"can reduce system responsiveness and cause other application resource "
+"problems.</p>"
+"<p>Are you sure want to resize the image?</p></qt>"
+msgstr ""
+"<qt>"
+"<p>Resim %1x%2 çözünürlüğüne göre yeniden boyutlandırılıyor, bu mevcut hafızaya "
+"göre uzun süre alabilir. Bu sistemin yanıt vermesini yavaşlatabilir ve diğer "
+"programların kaynakları kullanmasında problem yaratabilir.</p>"
+"<p>Resmi yeniden boyutlandırmaya emin misiniz?</p></qt>"
+
+#: kpmainwindow_tools.cpp:535 tools/kptoolresizescale.cpp:1137
+msgid "Resize Image?"
+msgstr "Resmi Yeniden Boyutlandır?"
+
+#: kpmainwindow_tools.cpp:536 tools/kptoolresizescale.cpp:1138
+msgid "R&esize Image"
+msgstr "&Resmi Yeniden Boyutlarndır"
+
+#: kpmainwindow_view.cpp:93
+msgid "Show &Grid"
+msgstr "&Kılavuzu Göster"
+
+#: kpmainwindow_view.cpp:95
+msgid "Hide &Grid"
+msgstr "&Kılavuzu Gizle"
+
+#: kpmainwindow_view.cpp:101
+msgid "Show T&humbnail"
+msgstr "&Küçük Resim Göster"
+
+#: kpmainwindow_view.cpp:103
+msgid "Hide T&humbnail"
+msgstr "&Küçük Resim Gizle"
+
+#: kpmainwindow_view.cpp:106
+msgid "Zoo&med Thumbnail Mode"
+msgstr "&Yakınlaştırılmış Küçük Resim Kipi"
+
+#: kpmainwindow_view.cpp:115
+msgid "Enable Thumbnail &Rectangle"
+msgstr "Küçük Resim Dörtgenini Etkin Kıl"
+
+#: kpmainwindow_view.cpp:237
+msgid ""
+"Setting the zoom level to a value that is not a multiple of 100% results in "
+"imprecise editing and redraw glitches.\n"
+"Do you really want to set to zoom level to %1%?"
+msgstr ""
+"100% ün katları olmayan yakınlaştırma seviyesine ayarlamak kesin olmayan "
+"düzenleme işlemlerine yol açacaktır.\n"
+"Yakınlaştırma seviyesini gerçekten %1% ayarlamak istediğinizden emin misiniz?"
+
+#: kpmainwindow_view.cpp:242
+msgid "Set Zoom Level to %1%"
+msgstr "Yakınlaşma Seviyesini %1%'e Ayarla"
+
+#: kpselection.cpp:323 tools/kptooltext.cpp:48
+msgid "Text"
+msgstr "Metin"
+
+#: kpselection.cpp:325 tools/kptoolresizescale.cpp:576
+msgid "Selection"
+msgstr "Seçim"
+
+#: kpthumbnail.cpp:157
+msgid "Thumbnail"
+msgstr "Küçük Resim"
+
+#: kptool.cpp:199
+#, fuzzy
+msgid ""
+"_: <Tool Name> (<Single Accel Key>)\n"
+"%1 (%2)"
+msgstr ""
+"_: <Tool Name> (<Single Accel Key>)\n"
+"%1 (%2)"
+
+#: kptool.cpp:1498
+msgid "Right click to cancel."
+msgstr "İptal etmek için sağ fare tuşuna tıklayın."
+
+#: kptool.cpp:1500
+msgid "Left click to cancel."
+msgstr "İptal etmek için sol fare tuşuna tıklayın."
+
+#: kptool.cpp:1524
+msgid "%1: "
+msgstr "%1: "
+
+#: kpviewscrollablecontainer.cpp:155 kpviewscrollablecontainer.cpp:907
+#: kpviewscrollablecontainer.cpp:913 kpviewscrollablecontainer.cpp:919
+msgid "Left drag the handle to resize the image."
+msgstr "Resmin boyutunu değiştirmek için sol tıklayıp sürükleyin"
+
+#: kpviewscrollablecontainer.cpp:214
+msgid "Resize Image: Let go of all the mouse buttons."
+msgstr "Resmi tekrar boyutla: Tüm fare tuşlarını serbest bırakın."
+
+#: kpviewscrollablecontainer.cpp:244
+msgid "Resize Image: Right click to cancel."
+msgstr "Resmi tekrar boyutla: İptal etmek için sağ tıklayın."
+
+#. i18n: file kolourpaintui.rc line 104
+#: rc.cpp:9 rc.cpp:27
+#, no-c-format
+msgid "Text Toolbar"
+msgstr "Metin Araççubuğu"
+
+#. i18n: file kolourpaintui.rc line 114
+#: rc.cpp:12 rc.cpp:30
+#, no-c-format
+msgid "Selection Tool RMB Menu"
+msgstr "Seçim Aracı Fare Sağ Tuş Menüsü"
+
+#: pixmapfx/kpcoloreffect.cpp:63 tools/kptoolclear.cpp:74
+#: tools/kptoolconverttograyscale.cpp:62 tools/kptoolflip.cpp:89
+#: tools/kptoolrotate.cpp:78 tools/kptoolskew.cpp:81
+#, c-format
+msgid "Selection: %1"
+msgstr "Seçim: %1"
+
+#: pixmapfx/kpeffectbalance.cpp:60 pixmapfx/kpeffectsdialog.cpp:99
+msgid "Balance"
+msgstr "Denge"
+
+#: pixmapfx/kpeffectbalance.cpp:262
+msgid "&Brightness:"
+msgstr "&Parlaklık:"
+
+#: pixmapfx/kpeffectbalance.cpp:265
+msgid "Re&set"
+msgstr "&Sıfırla"
+
+#: pixmapfx/kpeffectbalance.cpp:267
+msgid "Co&ntrast:"
+msgstr "Karşıt&lık:"
+
+#: pixmapfx/kpeffectbalance.cpp:270
+msgid "&Reset"
+msgstr "&Sıfırla"
+
+#: pixmapfx/kpeffectbalance.cpp:272
+msgid "&Gamma:"
+msgstr "&Gama:"
+
+#: pixmapfx/kpeffectbalance.cpp:281
+msgid "Rese&t"
+msgstr "&Sıfırla"
+
+#: pixmapfx/kpeffectbalance.cpp:288
+msgid "C&hannels:"
+msgstr "&Kanallar:"
+
+#: pixmapfx/kpeffectbalance.cpp:290
+msgid "All"
+msgstr "Tümü"
+
+#: pixmapfx/kpeffectbalance.cpp:291
+msgid "Red"
+msgstr "Kırmızı"
+
+#: pixmapfx/kpeffectbalance.cpp:292
+msgid "Green"
+msgstr "Yeşil"
+
+#: pixmapfx/kpeffectbalance.cpp:293
+msgid "Blue"
+msgstr "Mavi"
+
+#: pixmapfx/kpeffectbalance.cpp:296
+msgid "Reset &All Values"
+msgstr "&Tüm Değerleri Sıfırla"
+
+#: pixmapfx/kpeffectbalance.cpp:365
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: pixmapfx/kpeffectblursharpen.cpp:51
+msgid "Soften"
+msgstr "Yumuşat"
+
+#: pixmapfx/kpeffectblursharpen.cpp:53
+msgid "Sharpen"
+msgstr "Keskinleştir"
+
+#: pixmapfx/kpeffectblursharpen.cpp:134 pixmapfx/kpeffectemboss.cpp:119
+msgid "&Amount:"
+msgstr "&Miktar:"
+
+#: pixmapfx/kpeffectemboss.cpp:53 pixmapfx/kpeffectsdialog.cpp:100
+msgid "Emboss"
+msgstr "Kabartma"
+
+#: pixmapfx/kpeffectemboss.cpp:122
+msgid "None"
+msgstr "Hiçbiri"
+
+#: pixmapfx/kpeffectemboss.cpp:138 pixmapfx/kpeffectflatten.cpp:153
+msgid "E&nable"
+msgstr "E&tkinleştir"
+
+#: pixmapfx/kpeffectflatten.cpp:59 pixmapfx/kpeffectsdialog.cpp:101
+msgid "Flatten"
+msgstr "Düzleştir"
+
+#: pixmapfx/kpeffectflatten.cpp:215
+msgid "Colors"
+msgstr "Renkler"
+
+#: pixmapfx/kpeffectinvert.cpp:52 pixmapfx/kpeffectinvert.cpp:60
+msgid "Invert Colors"
+msgstr "Renkleri Ters Çevir"
+
+#: pixmapfx/kpeffectinvert.cpp:52 pixmapfx/kpeffectsdialog.cpp:102
+msgid "Invert"
+msgstr "Ters Çevir"
+
+#: pixmapfx/kpeffectinvert.cpp:168
+msgid "&Red"
+msgstr "&Kırmızı"
+
+#: pixmapfx/kpeffectinvert.cpp:169
+msgid "&Green"
+msgstr "&Yeşil"
+
+#: pixmapfx/kpeffectinvert.cpp:170
+msgid "&Blue"
+msgstr "&Mavi"
+
+#: pixmapfx/kpeffectinvert.cpp:175
+msgid "&All"
+msgstr "&Tümü"
+
+#: pixmapfx/kpeffectinvert.cpp:249
+msgid "Channels"
+msgstr "Kanallar"
+
+#: pixmapfx/kpeffectreducecolors.cpp:201
+msgid "Reduce to Monochrome (Dithered)"
+msgstr "Monokroma Dönüştür (Titrek)"
+
+#: pixmapfx/kpeffectreducecolors.cpp:203
+msgid "Reduce to Monochrome"
+msgstr "Monokroma Dönüştür"
+
+#: pixmapfx/kpeffectreducecolors.cpp:208
+msgid "Reduce to 256 Color (Dithered)"
+msgstr "256 Renge Dönüştür (Titrek)"
+
+#: pixmapfx/kpeffectreducecolors.cpp:210
+msgid "Reduce to 256 Color"
+msgstr "256 Renge Dönüştür"
+
+#: pixmapfx/kpeffectreducecolors.cpp:287
+msgid "&Monochrome"
+msgstr "&Tek Renk"
+
+#: pixmapfx/kpeffectreducecolors.cpp:290
+#, fuzzy
+msgid "Mo&nochrome (dithered)"
+msgstr "T&ek Renk (Titrek)"
+
+#: pixmapfx/kpeffectreducecolors.cpp:292
+#, fuzzy
+msgid "256 co&lor"
+msgstr "256 &Renk"
+
+#: pixmapfx/kpeffectreducecolors.cpp:294
+#, fuzzy
+msgid "256 colo&r (dithered)"
+msgstr "256 R&enk (Titrek)"
+
+#: pixmapfx/kpeffectreducecolors.cpp:296
+#, fuzzy
+msgid "24-&bit color"
+msgstr "24-&bit Renk"
+
+#: pixmapfx/kpeffectreducecolors.cpp:419
+msgid "Reduce To"
+msgstr "Dönüştür:"
+
+#: pixmapfx/kpeffectsdialog.cpp:82
+msgid "More Image Effects (Selection)"
+msgstr "Daha Fazla Resim Efekti (Seçim)"
+
+#: pixmapfx/kpeffectsdialog.cpp:84
+msgid "More Image Effects"
+msgstr "Daha Fazla Resim Efekti"
+
+#: pixmapfx/kpeffectsdialog.cpp:96
+msgid "&Effect:"
+msgstr "&Efekt:"
+
+#: pixmapfx/kpeffectsdialog.cpp:103
+msgid "Reduce Colors"
+msgstr "Renkleri Dönüştür"
+
+#: pixmapfx/kpeffectsdialog.cpp:104
+msgid "Soften & Sharpen"
+msgstr "Yumuşat & Keskinleştir"
+
+#: pixmapfx/kppixmapfx.cpp:355
+msgid "Low Screen Depth"
+msgstr "Düşük Ekran Derinliği"
+
+#: pixmapfx/kppixmapfx.cpp:362
+msgid "Image Contains Translucency"
+msgstr "Resim Yarısaydamlık İçeriyor"
+
+#: tools/kptoolairspray.cpp:62 tools/kptoolairspray.cpp:255
+msgid "Spraycan"
+msgstr "Sprey Kutusu"
+
+#: tools/kptoolairspray.cpp:62
+msgid "Sprays graffiti"
+msgstr "Grafiti spreyi"
+
+#: tools/kptoolairspray.cpp:80
+msgid "Click or drag to spray graffiti."
+msgstr "Grafiti sıkmak için tıklayın veya sürükleyin."
+
+#: tools/kptoolairspray.cpp:209 tools/kptoolcolorpicker.cpp:114
+#: tools/kptoolfloodfill.cpp:139 tools/kptoolpen.cpp:878
+#: tools/kptoolpolygon.cpp:678 tools/kptoolrectangle.cpp:517
+#: tools/kptoolselection.cpp:134 tools/kptoolselection.cpp:1103
+msgid "Let go of all the mouse buttons."
+msgstr "Tüm fare tuşları ile gitmasine için ver."
+
+#: tools/kptoolautocrop.cpp:314
+msgid ""
+"KolourPaint cannot remove the selection's internal border as it could not be "
+"located."
+msgstr "KolourPaint bulunamadığı için seçimin iç sınırını kaldıramadı."
+
+#: tools/kptoolautocrop.cpp:316
+msgid "Cannot Remove Internal Border"
+msgstr "İç Sınır Kaldırılamadı"
+
+#: tools/kptoolautocrop.cpp:322
+msgid ""
+"KolourPaint cannot automatically crop the image as its border could not be "
+"located."
+msgstr "KolourPaint sınırı bulunamadığı için otomatik olarak resmi kırpamadı."
+
+#: tools/kptoolautocrop.cpp:324
+msgid "Cannot Autocrop"
+msgstr "Otomatik Kırpılamadı"
+
+#: tools/kptoolautocrop.cpp:516
+msgid "Remove Internal B&order"
+msgstr "İç &Sınırı Kaldır"
+
+#: tools/kptoolautocrop.cpp:518
+msgid "Remove Internal Border"
+msgstr "İç Sınırı Kaldır"
+
+#: tools/kptoolautocrop.cpp:523
+msgid "Autocr&op"
+msgstr "&Otomatik Kırp"
+
+#: tools/kptoolautocrop.cpp:525
+msgid "Autocrop"
+msgstr "Otomatik Kırp"
+
+#: tools/kptoolbrush.cpp:34 tools/kptoolpen.cpp:203
+msgid "Brush"
+msgstr "Fırça"
+
+#: tools/kptoolbrush.cpp:35
+msgid "Draw using brushes of different shapes and sizes"
+msgstr "Değişik şekillerde ve boyutlarda fırçalar ile çizim yapar"
+
+#: tools/kptoolcolorpicker.cpp:54 tools/kptoolcolorpicker.cpp:167
+msgid "Color Picker"
+msgstr "Resim Seçici"
+
+#: tools/kptoolcolorpicker.cpp:54
+msgid "Lets you select a color from the image"
+msgstr "Resimden bir renk seçmeyi sağlar"
+
+#: tools/kptoolcolorpicker.cpp:76
+msgid "Click to select a color."
+msgstr "Renk seçmek için tıklayın."
+
+#: tools/kptoolcolorwasher.cpp:34 tools/kptoolpen.cpp:209
+#: tools/kptoolpen.cpp:389
+msgid "Color Eraser"
+msgstr "Renk Silici"
+
+#: tools/kptoolcolorwasher.cpp:35
+msgid "Replaces pixels of the foreground color with the background color"
+msgstr "Önplan renklerini arkaplan renkleri ile değiştirir"
+
+#: tools/kptoolconverttograyscale.cpp:59
+msgid "Reduce to Grayscale"
+msgstr "Gri Tona Dönüştür"
+
+#: tools/kptoolcrop.cpp:227
+msgid "Set as Image"
+msgstr "Resim Olarak Kaydet"
+
+#: tools/kptoolcurve.cpp:36
+msgid "Curve"
+msgstr "Eğri"
+
+#: tools/kptoolcurve.cpp:37
+msgid "Draws curves"
+msgstr "Eğriler çizer"
+
+#: tools/kptoolellipse.cpp:34 tools/kptoolrectangle.cpp:581
+msgid "Ellipse"
+msgstr "Çember"
+
+#: tools/kptoolellipse.cpp:35
+msgid "Draws ellipses and circles"
+msgstr "Çemberler ve daireler çizer"
+
+#: tools/kptoolellipticalselection.cpp:36
+msgid "Selection (Elliptical)"
+msgstr "Seçim (Dairesel)"
+
+#: tools/kptoolellipticalselection.cpp:37
+msgid "Makes an elliptical or circular selection"
+msgstr "Eliptik ya da dairesel seçim yapar"
+
+#: tools/kptooleraser.cpp:34 tools/kptoolpen.cpp:206
+msgid "Eraser"
+msgstr "Silgi"
+
+#: tools/kptooleraser.cpp:34
+msgid "Lets you rub out mistakes"
+msgstr "Hataları silmenizi sağlar"
+
+#: tools/kptoolflip.cpp:72
+msgid "Flip"
+msgstr "Döndür"
+
+#: tools/kptoolflip.cpp:75
+msgid "Flip horizontally and vertically"
+msgstr "Dikey ve yatay olarak döndür"
+
+#: tools/kptoolflip.cpp:77
+msgid "Flip horizontally"
+msgstr "Yatay olarak döndür"
+
+#: tools/kptoolflip.cpp:79
+msgid "Flip vertically"
+msgstr "Dikey olarak döndür"
+
+#: tools/kptoolflip.cpp:154
+msgid "Flip Selection"
+msgstr "Seçimi Döndür"
+
+#: tools/kptoolflip.cpp:154
+msgid "Flip Image"
+msgstr "Resmi Döndür"
+
+#: tools/kptoolflip.cpp:165 tools/kptoolrotate.cpp:269
+msgid "Direction"
+msgstr "Yön"
+
+#: tools/kptoolflip.cpp:168
+msgid "&Vertical (upside-down)"
+msgstr "Dike&y (üstü altına)"
+
+#: tools/kptoolflip.cpp:169
+msgid "&Horizontal"
+msgstr "Ya&tay"
+
+#: tools/kptoolfloodfill.cpp:55 tools/kptoolfloodfill.cpp:180
+msgid "Flood Fill"
+msgstr "Su Dolgusu"
+
+#: tools/kptoolfloodfill.cpp:55
+msgid "Fills regions in the image"
+msgstr "Resimdeki bölgeleri doldurur"
+
+#: tools/kptoolfloodfill.cpp:68
+msgid "Click to fill a region."
+msgstr "Bir bölgeyi doldurmak için tıklayın."
+
+#: tools/kptoolfreeformselection.cpp:36
+msgid "Selection (Free-Form)"
+msgstr "Seçim (Serbest Form)"
+
+#: tools/kptoolfreeformselection.cpp:37
+msgid "Makes a free-form selection"
+msgstr "Serbest seçim yapmanızı sağlar"
+
+#: tools/kptoolline.cpp:36
+msgid "Line"
+msgstr "Çizgi"
+
+#: tools/kptoolline.cpp:37
+msgid "Draws lines"
+msgstr "Çizgi çizer"
+
+#: tools/kptoolpen.cpp:75 tools/kptoolpen.cpp:200
+msgid "Pen"
+msgstr "Kalem"
+
+#: tools/kptoolpen.cpp:75
+msgid "Draws dots and freehand strokes"
+msgstr "Noktalar ve serbest çizimler çizer"
+
+#: tools/kptoolpen.cpp:112 tools/kptoolpen.cpp:113
+msgid "Click to draw dots or drag to draw strokes."
+msgstr "Nokta çizmek için tıklayın veya serbest çizgi çizmek için sürükleyin."
+
+#: tools/kptoolpen.cpp:115
+msgid "Click or drag to erase."
+msgstr "Silmek için tıkla veya sürükle."
+
+#: tools/kptoolpen.cpp:117
+msgid "Click or drag to erase pixels of the foreground color."
+msgstr "Ön plan renklerini silmek için tıkla veya sürükle."
+
+#: tools/kptoolpen.cpp:213
+msgid "Custom Pen or Brush"
+msgstr "Özel Kalem veya Fırça"
+
+#: tools/kptoolpolygon.cpp:317
+msgid "Polygon"
+msgstr "Çokgen"
+
+#: tools/kptoolpolygon.cpp:317
+msgid "Draws polygons"
+msgstr "Çokgenler çizer"
+
+#: tools/kptoolpolygon.cpp:342 tools/kptoolrectangle.cpp:307
+msgid "Drag to draw."
+msgstr "Çizmek için sürükle."
+
+#: tools/kptoolpolygon.cpp:345
+msgid "Drag to draw the first line."
+msgstr "İlk çizgiyi çizmek için sürükle."
+
+#: tools/kptoolpolygon.cpp:347
+msgid "Drag out the start and end points."
+msgstr "Başlangıç ve bitiş noktaları arasında sürükle."
+
+#: tools/kptoolpolygon.cpp:725
+msgid "Left drag another line or right click to finish."
+msgstr "Başka çizgi için sol sürükleyin ya da bitirmek için sağ tıklayın."
+
+#: tools/kptoolpolygon.cpp:729
+msgid "Right drag another line or left click to finish."
+msgstr "Başka çizgi için sağ sürükleyin ya da bitirmek için sol tıklayın."
+
+#: tools/kptoolpolygon.cpp:740
+msgid "Left drag to set the first control point or right click to finish."
+msgstr ""
+"Birinci denetim noktasını atamak için sol sürükle, bitirmek için sağ tıkla."
+
+#: tools/kptoolpolygon.cpp:744
+msgid "Right drag to set the first control point or left click to finish."
+msgstr ""
+"Birinci denetim noktasını atamak için sağ sürükle, bitirmek için sol tıkla."
+
+#: tools/kptoolpolygon.cpp:751
+msgid "Left drag to set the last control point or right click to finish."
+msgstr ""
+"Sonuncu denetim noktasını atamak için sol sürükle, bitirmek için sağ tıkla."
+
+#: tools/kptoolpolygon.cpp:755
+msgid "Right drag to set the last control point or left click to finish."
+msgstr ""
+"Sonuncu denetim noktasını atamak için sağ sürükle, bitirmek için sol tıkla."
+
+#: tools/kptoolpolyline.cpp:36
+msgid "Connected Lines"
+msgstr "Bağlı Çizgiler"
+
+#: tools/kptoolpolyline.cpp:37
+msgid "Draws connected lines"
+msgstr "Bağlı çizgiler çizer"
+
+#: tools/kptoolpreviewdialog.cpp:126 tools/kptoolresizescale.cpp:727
+msgid "Dimensions"
+msgstr "Boyutlar"
+
+#: tools/kptoolpreviewdialog.cpp:128 tools/kptoolresizescale.cpp:734
+msgid "Original:"
+msgstr "Orjinal:"
+
+#: tools/kptoolpreviewdialog.cpp:132 tools/kptoolpreviewdialog.cpp:219
+msgid "%1 x %2"
+msgstr "%1 x %2"
+
+#: tools/kptoolpreviewdialog.cpp:161 widgets/kpcolorsimilaritydialog.cpp:58
+msgid "Preview"
+msgstr "Önizleme"
+
+#: tools/kptoolrectangle.cpp:175 tools/kptoolrectangle.cpp:577
+msgid "Rectangle"
+msgstr "Dikdörtgen"
+
+#: tools/kptoolrectangle.cpp:175
+msgid "Draws rectangles and squares"
+msgstr "Dikdörtgenler ve kareler çizer"
+
+#: tools/kptoolrectangle.cpp:579 tools/kptoolroundedrectangle.cpp:34
+msgid "Rounded Rectangle"
+msgstr "Dairesel Dikdörtgen"
+
+#: tools/kptoolrectselection.cpp:36
+msgid "Selection (Rectangular)"
+msgstr "Seçim (Dikdörtgen)"
+
+#: tools/kptoolrectselection.cpp:37
+msgid "Makes a rectangular selection"
+msgstr "Dörtgenel seçim yapar"
+
+#: tools/kptoolresizescale.cpp:118 tools/kptoolselection.cpp:2029
+msgid "Text: Resize Box"
+msgstr "Metin: Tekrar Boyutlandırma Kutusu"
+
+#: tools/kptoolresizescale.cpp:123
+msgid "Selection: Scale"
+msgstr "Seçim: Ölçekle"
+
+#: tools/kptoolresizescale.cpp:125 tools/kptoolselection.cpp:2030
+msgid "Selection: Smooth Scale"
+msgstr "Seçim: Yumuşak Ölçekle"
+
+#: tools/kptoolresizescale.cpp:133
+msgid "Resize"
+msgstr "Yeniden Boyutlandır"
+
+#: tools/kptoolresizescale.cpp:135
+msgid "Scale"
+msgstr "Büyüt"
+
+#: tools/kptoolresizescale.cpp:137
+msgid "Smooth Scale"
+msgstr "Yumuşak Büyüt"
+
+#: tools/kptoolresizescale.cpp:511
+msgid "Resize / Scale"
+msgstr "Boyutlandır"
+
+#: tools/kptoolresizescale.cpp:567
+msgid "Ac&t on:"
+msgstr "E&ylem:"
+
+#: tools/kptoolresizescale.cpp:573
+msgid "Entire Image"
+msgstr "Tüm Resim"
+
+#: tools/kptoolresizescale.cpp:579
+msgid "Text Box"
+msgstr "Metin Kutusu"
+
+#: tools/kptoolresizescale.cpp:645
+msgid "Operation"
+msgstr "İşlem"
+
+#: tools/kptoolresizescale.cpp:647
+msgid ""
+"<qt>"
+"<ul>"
+"<li><b>Resize</b>: The size of the picture will be increased by creating new "
+"areas to the right and/or bottom (filled in with the background color) or "
+"decreased by cutting it at the right and/or bottom.</li>"
+"<li><b>Scale</b>: The picture will be expanded by duplicating pixels or "
+"squashed by dropping pixels.</li>"
+"<li><b>Smooth Scale</b>: This is the same as <i>Scale</i> "
+"except that it blends neighboring pixels to produce a smoother looking "
+"picture.</li></ul></qt>"
+msgstr ""
+"<qt>"
+"<ul>"
+"<li><b>Yeniden boyutlandırma</b>: Resim sağda ve/veya aşşağıda yeni alanların "
+"oluşturulması(arka plan rengi ile doldurularak) ile büyütülecek yada sağdan "
+"ve/veya aşşağıdan kesilme ile küçültülecek.</li>"
+"<li><b>Ölçek</b>: Resim beneklerin çoğaltılması ile genişletilcek yada "
+"azaltılması ile küçültülecek.</li>"
+"<li><b>Yumuşak Ölçek</b>: Bu <i>Ölçek</i> ile aynıdır fakat bu sefer komşu "
+"beneklerin karıştırılması ile daha güzel gözüken bir resim yaratır.</li></ul>"
+"</qt>"
+
+#: tools/kptoolresizescale.cpp:669
+msgid "&Resize"
+msgstr "Yeniden Boyutlandı&r"
+
+#: tools/kptoolresizescale.cpp:674
+msgid "&Scale"
+msgstr "Büyü&t"
+
+#: tools/kptoolresizescale.cpp:679
+msgid "S&mooth Scale"
+msgstr "&Yumuşak Ölçekle"
+
+#: tools/kptoolresizescale.cpp:729
+msgid "Width:"
+msgstr "Genişlik:"
+
+#: tools/kptoolresizescale.cpp:731
+msgid "Height:"
+msgstr "Yükseklik:"
+
+#: tools/kptoolresizescale.cpp:738 tools/kptoolresizescale.cpp:745
+#: tools/kptoolresizescale.cpp:754
+msgid "x"
+msgstr "x"
+
+#: tools/kptoolresizescale.cpp:743
+msgid "&New:"
+msgstr "Ye&ni:"
+
+#: tools/kptoolresizescale.cpp:748
+msgid "&Percent:"
+msgstr "&Yüzde:"
+
+#: tools/kptoolresizescale.cpp:753 tools/kptoolresizescale.cpp:759
+#: widgets/kpcolorsimilaritydialog.cpp:81
+#, c-format
+msgid "%"
+msgstr "%"
+
+#: tools/kptoolresizescale.cpp:761
+msgid "Keep &aspect ratio"
+msgstr "Or&anı koru"
+
+#: tools/kptoolresizescale.cpp:1115
+msgid ""
+"<qt>"
+"<p>Resizing the text box to %1x%2 may take a substantial amount of memory. This "
+"can reduce system responsiveness and cause other application resource "
+"problems.</p>"
+"<p>Are you sure you want to resize the text box?</p></qt>"
+msgstr ""
+"<qt>"
+"<p>Metin kutusu %1x%2 çözünürlüğüne boyutlandırılıyor. Bu sistemin daha geç "
+"cevap vermesine ve diğer programların kaynak kullanımında probleme yol "
+"açabilir.</p>"
+"<p>Metin kutusunu yeniden boyutlandırmak istediğinize emin misiniz?</p></qt>"
+
+#: tools/kptoolresizescale.cpp:1123
+msgid "Resize Text Box?"
+msgstr "Metin Kutusu Yeniden Boyutlandırılsın mı?"
+
+#: tools/kptoolresizescale.cpp:1124
+msgid "R&esize Text Box"
+msgstr "Metin Kutusunu &Yeniden Boyutlandır"
+
+#: tools/kptoolresizescale.cpp:1129
+msgid ""
+"<qt>"
+"<p>Resizing the image to %1x%2 may take a substantial amount of memory. This "
+"can reduce system responsiveness and cause other application resource "
+"problems.</p>"
+"<p>Are you sure you want to resize the image?</p></qt>"
+msgstr ""
+"<qt>"
+"<p>Resim %1x%2 çözünürlüğüne göre yeniden boyutlandırılıyor, bu mevcut hafızaya "
+"göre uzun süre alabilir. Bu sistemin yanıt vermesini yavaşlatabilir ve diğer "
+"programların kaynakları kullanmasında problem yaratabilir.</p>"
+"<p>Resmi yeniden boyutlandırmaya emin misiniz?</p></qt>"
+
+#: tools/kptoolresizescale.cpp:1147
+msgid ""
+"<qt>"
+"<p>Scaling the image to %1x%2 may take a substantial amount of memory. This can "
+"reduce system responsiveness and cause other application resource problems.</p>"
+"<p>Are you sure you want to scale the image?</p></qt>"
+msgstr ""
+"<qt>"
+"<p>Resim %1x%2 çözünürlüğüne göre yeniden ölçekleniyor, bu mevcut hafızaya göre "
+"uzun süre alabilir. Bu sistemin yanıt vermesini yavaşlatabilir ve diğer "
+"programların kaynakları kullanmasında problem yaratabilir.</p>"
+"<p>Resmi ölçeklendirmeye emin misiniz?</p></qt>"
+
+#: tools/kptoolresizescale.cpp:1155
+msgid "Scale Image?"
+msgstr "Resmi Ölçekle?"
+
+#: tools/kptoolresizescale.cpp:1156
+msgid "Scal&e Image"
+msgstr "Resmi Ö&lçekle"
+
+#: tools/kptoolresizescale.cpp:1161
+msgid ""
+"<qt>"
+"<p>Scaling the selection to %1x%2 may take a substantial amount of memory. This "
+"can reduce system responsiveness and cause other application resource "
+"problems.</p>"
+"<p>Are you sure you want to scale the selection?</p></qt>"
+msgstr ""
+"<qt>"
+"<p>Seçim %1x%2 çözünürlüğüne göre ölçeklendiriliyor, bu mevcut hafızaya göre "
+"uzun süre alabilir. Bu sistemin yanıt vermesini yavaşlatabilir ve diğer "
+"programların kaynakları kullanmasında problem yaratabilir.</p>"
+"<p>Seçimi ölçeklendirmeye emin misiniz?</p></qt>"
+
+#: tools/kptoolresizescale.cpp:1169
+msgid "Scale Selection?"
+msgstr "Seçimi Ölçekle?"
+
+#: tools/kptoolresizescale.cpp:1170
+msgid "Scal&e Selection"
+msgstr "Seçimi Ö&lçekle"
+
+#: tools/kptoolresizescale.cpp:1179
+msgid ""
+"<qt>"
+"<p>Smooth Scaling the image to %1x%2 may take a substantial amount of memory. "
+"This can reduce system responsiveness and cause other application resource "
+"problems.</p>"
+"<p>Are you sure you want to smooth scale the image?</p></qt>"
+msgstr ""
+"<qt>"
+"<p>Resim %1x%2 çözünürlüğüne göre yumuşak ölçeklendiriliyor, bu mevcut hafızaya "
+"göre uzun süre alabilir. Bu sistemin yanıt vermesini yavaşlatabilir ve diğer "
+"programların kaynakları kullanmasında problem yaratabilir.</p>"
+"<p>Resmi yumuşak ölçeklendirmeye emin misiniz?</p></qt>"
+
+#: tools/kptoolresizescale.cpp:1187
+msgid "Smooth Scale Image?"
+msgstr "Resmi Yumuşak Ölçekle?"
+
+#: tools/kptoolresizescale.cpp:1188
+msgid "Smooth Scal&e Image"
+msgstr "Resmi Y&umuşak Ölçekle"
+
+#: tools/kptoolresizescale.cpp:1193
+msgid ""
+"<qt>"
+"<p>Smooth Scaling the selection to %1x%2 may take a substantial amount of "
+"memory. This can reduce system responsiveness and cause other application "
+"resource problems.</p>"
+"<p>Are you sure you want to smooth scale the selection?</p></qt>"
+msgstr ""
+"<qt>"
+"<p>Seçim %1x%2 çözünürlüğüne göre yumuşak ölçeklendiriliyor, bu mevcut hafızaya "
+"göre uzun süre alabilir. Bu sistemin yanıt vermesini yavaşlatabilir ve diğer "
+"programların kaynakları kullanmasında problem yaratabilir.</p>"
+"<p>Seçimi yumuşak ölçeklendirmeye emin misiniz?</p></qt>"
+
+#: tools/kptoolresizescale.cpp:1201
+msgid "Smooth Scale Selection?"
+msgstr "Seçimi Yumuşak Ölçekle?"
+
+#: tools/kptoolresizescale.cpp:1202
+msgid "Smooth Scal&e Selection"
+msgstr "Seçimi Yu&muşak Ölçekle"
+
+#: tools/kptoolrotate.cpp:75
+msgid "Rotate"
+msgstr "Döndür"
+
+#: tools/kptoolrotate.cpp:239
+msgid "Rotate Selection"
+msgstr "Seçimi Döndür"
+
+#: tools/kptoolrotate.cpp:239
+msgid "Rotate Image"
+msgstr "Resmi Döndür"
+
+#: tools/kptoolrotate.cpp:240
+msgid "After Rotate:"
+msgstr "Döndürdükten Sonra:"
+
+#: tools/kptoolrotate.cpp:280
+msgid "Cou&nterclockwise"
+msgstr "Saat Yönünün &Tersi"
+
+#: tools/kptoolrotate.cpp:281
+msgid "C&lockwise"
+msgstr "&Saat Yönü"
+
+#: tools/kptoolrotate.cpp:312 tools/kptoolskew.cpp:255
+msgid "Angle"
+msgstr "Açı"
+
+#: tools/kptoolrotate.cpp:316
+msgid "90 &degrees"
+msgstr "90 &derece"
+
+#: tools/kptoolrotate.cpp:317
+msgid "180 d&egrees"
+msgstr "180 d&erece"
+
+#: tools/kptoolrotate.cpp:318
+msgid "270 de&grees"
+msgstr "270 de&rece"
+
+#: tools/kptoolrotate.cpp:320
+msgid "C&ustom:"
+msgstr "Ö&zel:"
+
+#: tools/kptoolrotate.cpp:324 tools/kptoolskew.cpp:267
+#: tools/kptoolskew.cpp:278
+msgid "degrees"
+msgstr "derece"
+
+#: tools/kptoolrotate.cpp:457
+msgid ""
+"<qt>"
+"<p>Rotating the selection to %1x%2 may take a substantial amount of memory. "
+"This can reduce system responsiveness and cause other application resource "
+"problems.</p>"
+"<p>Are you sure want to rotate the selection?</p></qt>"
+msgstr ""
+"<qt>"
+"<p>Seçim %1x%2 çözünürlüğüne göre döndürülüyor, bu mevcut hafızaya göre uzun "
+"süre alabilir. Bu sistemin yanıt vermesini yavaşlatabilir ve diğer programların "
+"kaynakları kullanmasında problem yaratabilir.</p>"
+"<p>Seçimi döndürmeye emin misiniz?</p></qt>"
+
+#: tools/kptoolrotate.cpp:465
+msgid "Rotate Selection?"
+msgstr "Seçimi Döndür?"
+
+#: tools/kptoolrotate.cpp:466
+msgid "Rotat&e Selection"
+msgstr "Seçimi Dö&ndür"
+
+#: tools/kptoolrotate.cpp:472
+msgid ""
+"<qt>"
+"<p>Rotating the image to %1x%2 may take a substantial amount of memory. This "
+"can reduce system responsiveness and cause other application resource "
+"problems.</p>"
+"<p>Are you sure want to rotate the image?</p></qt>"
+msgstr ""
+"<qt>"
+"<p>Resim %1x%2 çözünürlüğüne göre döndürülüyor, bu mevcut hafızaya göre uzun "
+"süre alabilir. Bu sistemin yanıt vermesini yavaşlatabilir ve diğer programların "
+"kaynakları kullanmasında problem yaratabilir.</p>"
+"<p>Resmi döndürmeye emin misiniz?</p></qt>"
+
+#: tools/kptoolrotate.cpp:480
+msgid "Rotate Image?"
+msgstr "Resmi Döndür?"
+
+#: tools/kptoolrotate.cpp:481
+msgid "Rotat&e Image"
+msgstr "Resmi Dön&dür"
+
+#: tools/kptoolroundedrectangle.cpp:35
+msgid "Draws rectangles and squares with rounded corners"
+msgstr "Yuvarlatılmış köşeli dikdörtgenler ve kareler çizer"
+
+#: tools/kptoolselection.cpp:140
+msgid "Left drag to resize text box."
+msgstr "Metin kutusunu tekrar boyutlandırmak için sol tuşla sürükle."
+
+#: tools/kptoolselection.cpp:142
+msgid "Left drag to scale selection."
+msgstr "Seçimi ölçekleme için sol sürükle."
+
+#: tools/kptoolselection.cpp:149
+msgid "Left click to change cursor position."
+msgstr "İmleç yerini değiştirmek için sol tıkla."
+
+#: tools/kptoolselection.cpp:151
+msgid "Left drag to move text box."
+msgstr "Metin kutusun taşımak için sol tuşla sürükle."
+
+#: tools/kptoolselection.cpp:155
+msgid "Left drag to move selection."
+msgstr "Seçimi taşımak için sol tuşla sürükle."
+
+#: tools/kptoolselection.cpp:161
+msgid "Left drag to create text box."
+msgstr "Metin kutusu oluşturmak için sol tuşla sürükle."
+
+#: tools/kptoolselection.cpp:163
+msgid "Left drag to create selection."
+msgstr "Seçimi oluşturmak için sol tuşla sürükle."
+
+#: tools/kptoolselection.cpp:1133
+msgid "%1: Smear"
+msgstr "%1: Leke"
+
+#: tools/kptoolselection.cpp:1140
+msgid "Text: Move Box"
+msgstr "Metin: Kutuyu Taşı"
+
+#: tools/kptoolselection.cpp:1141
+msgid "Selection: Move"
+msgstr "Seçim: Taşı"
+
+#: tools/kptoolselection.cpp:1320
+msgid "Selection: Transparency"
+msgstr "Seçim: Şeffaflık"
+
+#: tools/kptoolselection.cpp:1371
+msgid "Selection: Opaque"
+msgstr "Seçim: Donuk"
+
+#: tools/kptoolselection.cpp:1372
+msgid "Selection: Transparent"
+msgstr "Seçim: Şeffaf"
+
+#: tools/kptoolselection.cpp:1411
+msgid "Selection: Transparency Color"
+msgstr "Seçim: Şeffaflık Rengi"
+
+#: tools/kptoolselection.cpp:1450
+msgid "Selection: Transparency Color Similarity"
+msgstr "Seçim: Şeffaflık Rengi Benzerliği"
+
+#: tools/kptoolskew.cpp:78
+msgid "Skew"
+msgstr "Eğ"
+
+#: tools/kptoolskew.cpp:225
+msgid "Skew Selection"
+msgstr "Seçimi Eğ"
+
+#: tools/kptoolskew.cpp:225
+msgid "Skew Image"
+msgstr "Resmi Eğ"
+
+#: tools/kptoolskew.cpp:226
+msgid "After Skew:"
+msgstr "Eğdikten Sonra:"
+
+#: tools/kptoolskew.cpp:262
+msgid "&Horizontal:"
+msgstr "&Yatay:"
+
+#: tools/kptoolskew.cpp:273
+msgid "&Vertical:"
+msgstr "Di&key:"
+
+#: tools/kptoolskew.cpp:406
+msgid ""
+"<qt>"
+"<p>Skewing the selection to %1x%2 may take a substantial amount of memory. This "
+"can reduce system responsiveness and cause other application resource "
+"problems.</p>"
+"<p>Are you sure want to skew the selection?</p></qt>"
+msgstr ""
+"<qt>"
+"<p>Seçim %1x%2 çözünürlüğüne göre eğiliyor, bu mevcut hafızaya göre uzun süre "
+"alabilir. Bu sistemin yanıt vermesini yavaşlatabilir ve diğer programların "
+"kaynakları kullanmasında problem yaratabilir.</p>"
+"<p>Seçimi eğmeye emin misiniz?</p></qt>"
+
+#: tools/kptoolskew.cpp:414
+msgid "Skew Selection?"
+msgstr "Seçimi Eğ?"
+
+#: tools/kptoolskew.cpp:415
+msgid "Sk&ew Selection"
+msgstr "Seçimi &Eğ"
+
+#: tools/kptoolskew.cpp:421
+msgid ""
+"<qt>"
+"<p>Skewing the image to %1x%2 may take a substantial amount of memory. This can "
+"reduce system responsiveness and cause other application resource problems.</p>"
+"<p>Are you sure want to skew the image?</p></qt>"
+msgstr ""
+"<qt>"
+"<p>Resim %1x%2 çözünürlüğüne göre eğiliyor, bu mevcut hafızaya göre uzun süre "
+"alabilir. Bu sistemin yanıt vermesini yavaşlatabilir ve diğer programların "
+"kaynakları kullanmasında problem yaratabilir.</p>"
+"<p>Resmi eğmeye emin misiniz?</p></qt>"
+
+#: tools/kptoolskew.cpp:429
+msgid "Skew Image?"
+msgstr "Resmi Eğ?"
+
+#: tools/kptoolskew.cpp:430
+msgid "Sk&ew Image"
+msgstr "Resmi &Eğ"
+
+#: tools/kptooltext.cpp:48
+msgid "Writes text"
+msgstr "Metin yazar"
+
+#: tools/kptooltext.cpp:207
+msgid "Text: New Line"
+msgstr "Metin: Yeni Satır"
+
+#: tools/kptooltext.cpp:228
+msgid "Text: Backspace"
+msgstr "Metin: Geri Sil"
+
+#: tools/kptooltext.cpp:249 tools/kptooltext.cpp:579 tools/kptooltext.cpp:645
+msgid "Text: Delete"
+msgstr "Metin: Sil"
+
+#: tools/kptooltext.cpp:499 tools/kptooltext.cpp:598 tools/kptooltext.cpp:665
+msgid "Text: Write"
+msgstr "Metin: Yaz"
+
+#: tools/kptooltext.cpp:738
+msgid "Text: Opaque Background"
+msgstr "Metin: Donuk Arkaplan"
+
+#: tools/kptooltext.cpp:739
+msgid "Text: Transparent Background"
+msgstr "Metin: Şeffaf Arkaplan"
+
+#: tools/kptooltext.cpp:760
+msgid "Text: Swap Colors"
+msgstr "Metin: Renkleri Değiştir"
+
+#: tools/kptooltext.cpp:779
+msgid "Text: Foreground Color"
+msgstr "Metin: Önplan Rengi"
+
+#: tools/kptooltext.cpp:798
+msgid "Text: Background Color"
+msgstr "Metin: Arkaplan Rengi"
+
+#: tools/kptooltext.cpp:832
+msgid "Text: Font"
+msgstr "Metin: Yazıtipi"
+
+#: tools/kptooltext.cpp:857
+msgid "Text: Font Size"
+msgstr "Metin: Yazıtipi Boyutu"
+
+#: tools/kptooltext.cpp:877
+msgid "Text: Bold"
+msgstr "Metin: Kalın"
+
+#: tools/kptooltext.cpp:896
+msgid "Text: Italic"
+msgstr "Metin: Eğik"
+
+#: tools/kptooltext.cpp:915
+msgid "Text: Underline"
+msgstr "Metin: Altıçizili"
+
+#: tools/kptooltext.cpp:934
+msgid "Text: Strike Through"
+msgstr "Metin: Üzeri Çizik"
+
+#: widgets/kpcolorsimilaritycube.cpp:70
+msgid ""
+"<qt>"
+"<p><b>Color Similarity</b> is how close colors must be in the RGB Color Cube to "
+"be considered the same.</p>"
+"<p>If you set it to something other than <b>Exact</b>"
+", you can work more effectively with dithered images and photos.</p>"
+"<p>This feature applies to transparent selections, as well as the Flood Fill, "
+"Color Eraser and Autocrop tools.</p>"
+"<p>To configure it, double click on the cube.</p></qt>"
+msgstr ""
+"<qt> "
+"<p><b>Renk Benzerliği</b>RGB Renk Küpünde hangi aralıktaki renklerin aynı "
+"olduğudur.</p> "
+"<p><b>Tam</b>'dan başka bir değere ayarladığınızda, daha etkili olarak kararsız "
+"resimlerle ve fotoğraflarla çalışabilirsiniz.</p> "
+"<p>Bu özellik şeffaf seçimlere uygulandığı gibi, Su Dolgusu, Renk Silgisi ve "
+"Otomatik Kırp araçlarına da uygulanır.</p> "
+"<p>Ayarlamak için küpe çift tıklayın</p></qt>"
+
+#: widgets/kpcolorsimilaritycube.cpp:91
+msgid ""
+"<qt>"
+"<p><b>Color Similarity</b> is how close colors must be in the RGB Color Cube to "
+"be considered the same.</p>"
+"<p>If you set it to something other than <b>Exact</b>"
+", you can work more effectively with dithered images and photos.</p>"
+"<p>This feature applies to transparent selections, as well as the Flood Fill, "
+"Color Eraser and Autocrop tools.</p></qt>"
+msgstr ""
+"<qt> "
+"<p><b>Renk Benzerliği</b>RGB Renk Küpünde hangi aralıktaki renklerin aynı "
+"olduğudur.</p> "
+"<p><b>Tam</b>'dan başka bir değere ayarladığınızda, daha etkili olarak kararsız "
+"resimlerle çalışabilirsiniz.</p> "
+"<p>Bu özellik şeffaf seçimlere uygulandığı gibi, Su Dolgusu, Renk Silgisi ve "
+"Otomatik Kırp araçlarına da uygulanır.</p></qt>"
+
+#: widgets/kpcolorsimilaritydialog.cpp:50
+msgid "Color Similarity"
+msgstr "Renk Benzerliği"
+
+#: widgets/kpcolorsimilaritydialog.cpp:76
+msgid "RGB Color Cube Distance"
+msgstr "RGB Renk Küp Uzaklığı"
+
+#: widgets/kpcolorsimilaritydialog.cpp:82
+msgid "Exact Match"
+msgstr "Tam Eş"
+
+#: widgets/kpcolortoolbar.cpp:762
+#: widgets/kptoolwidgetopaqueortransparent.cpp:45
+msgid "Transparent"
+msgstr "Şeffaf"
+
+#: widgets/kpcolortoolbar.cpp:915
+msgid "Color similarity: %1%"
+msgstr "Renk benzerliği: %1%"
+
+#: widgets/kpcolortoolbar.cpp:917
+msgid "Color similarity: Exact"
+msgstr "Renk benzerliği: Tam"
+
+#: widgets/kpsqueezedtextlabel.cpp:114
+msgid "..."
+msgstr "..."
+
+#: widgets/kptoolwidgetbrush.cpp:135
+msgid "1x1"
+msgstr "1x1"
+
+#: widgets/kptoolwidgetbrush.cpp:143
+msgid "Circle"
+msgstr "Çember"
+
+#: widgets/kptoolwidgetbrush.cpp:146
+msgid "Square"
+msgstr "Kare"
+
+#: widgets/kptoolwidgetbrush.cpp:150
+msgid "Slash"
+msgstr "Bölü"
+
+#: widgets/kptoolwidgetbrush.cpp:154
+msgid "Backslash"
+msgstr "Tersbölü"
+
+#: widgets/kptoolwidgetbrush.cpp:161
+msgid "%1x%2 %3"
+msgstr "%1x%2 %3"
+
+#: widgets/kptoolwidgetfillstyle.cpp:115
+msgid "No Fill"
+msgstr "Dolgu Yok"
+
+#: widgets/kptoolwidgetfillstyle.cpp:118
+msgid "Fill with Background Color"
+msgstr "Arkaplan Rengi ile Doldur"
+
+#: widgets/kptoolwidgetfillstyle.cpp:121
+msgid "Fill with Foreground Color"
+msgstr "Önplan Rengi ile Doldur"
+
+#: widgets/kptoolwidgetopaqueortransparent.cpp:43
+msgid "Opaque"
+msgstr "Opak"

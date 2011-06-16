@@ -1,0 +1,39 @@
+# translation of crashesplugin.po to
+# Copyright (C) 2005, 2007 Free Software Foundation, Inc.
+#
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2003.
+# Cemil MUTLU <mawilos@gmail.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: crashesplugin\n"
+"POT-Creation-Date: 2005-08-10 10:20+0200\n"
+"PO-Revision-Date: 2007-05-16 16:57+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: crashesplugin.cpp:45
+msgid "&Crashes"
+msgstr "&Çökmeler"
+
+#: crashesplugin.cpp:91 crashesplugin.cpp:115
+msgid "All Pages of This Crash"
+msgstr "Bu Çökmeye ait Tüm Sayfalar"
+
+#: crashesplugin.cpp:121
+msgid "No Recovered Crashes"
+msgstr "Hiç Kurtarılmış Çökme Yok"
+
+#: crashesplugin.cpp:133
+msgid "&Clear List of Crashes"
+msgstr "Çökmelerin &Listesini Temizle"
+
+#. i18n: file crashesplugin.rc line 8
+#: rc.cpp:6
+#, no-c-format
+msgid "Extra Toolbar"
+msgstr "Ekstra Araç Çubuğu"

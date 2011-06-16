@@ -1,0 +1,232 @@
+# Translation of kcmkabconfig.po to Turkish
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# Ozan Eren BILGEN <oebilgen@uekae.tubitak.gov.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkabconfig\n"
+"POT-Creation-Date: 2005-08-13 01:40+0200\n"
+"PO-Revision-Date: 2008-02-29 15:56+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@lists.kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: LoKalize 0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Rıdvan Can, Ozan Eren BİLGEN"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "ridvan@linuxdeneyimi.org, oebilgen@uekae.tubitak.gov.tr"
+
+#: addhostdialog.cpp:37
+msgid "Add Host"
+msgstr "Düğüm Ekle"
+
+#: addresseewidget.cpp:59
+msgid "Add..."
+msgstr "Ekle..."
+
+#: addresseewidget.cpp:60
+msgid "Edit..."
+msgstr "Düzenle..."
+
+#: addresseewidget.cpp:93
+msgid "New"
+msgstr "Yeni"
+
+#: addresseewidget.cpp:140
+msgid "Prefixes"
+msgstr "Önekler"
+
+#: addresseewidget.cpp:140
+msgid "Enter prefix:"
+msgstr "Ön eki girin:"
+
+#: addresseewidget.cpp:143
+msgid "Inclusions"
+msgstr "İçerilenler"
+
+#: addresseewidget.cpp:143
+msgid "Enter inclusion:"
+msgstr "Kapsamayı girin:"
+
+#: addresseewidget.cpp:146
+msgid "Suffixes"
+msgstr "Sonekler"
+
+#: addresseewidget.cpp:146
+msgid "Enter suffix:"
+msgstr "Son eki girin:"
+
+#: addresseewidget.cpp:149
+msgid "Default formatted name:"
+msgstr "Öntanımlı isim:"
+
+#: addresseewidget.cpp:153
+msgid "Empty"
+msgstr "Boş"
+
+#: addresseewidget.cpp:154
+msgid "Simple Name"
+msgstr "Adı"
+
+#: addresseewidget.cpp:155
+msgid "Full Name"
+msgstr "Tam Adı"
+
+#: addresseewidget.cpp:156
+msgid "Reverse Name with Comma"
+msgstr "Virgülle Ayrılmış Ters İsim"
+
+#: addresseewidget.cpp:157
+msgid "Reverse Name"
+msgstr "Ters İsim"
+
+#: extensionconfigdialog.cpp:34
+msgid "Extension Settings"
+msgstr "Uzantı Ayarları"
+
+#: kabconfigwidget.cpp:62 kabconfigwidget.cpp:154
+msgid "General"
+msgstr "Genel"
+
+#: kabconfigwidget.cpp:66
+msgid "Honor KDE single click"
+msgstr "KDE için tıklayın"
+
+#: kabconfigwidget.cpp:69
+msgid "Automatic name parsing for new addressees"
+msgstr "Yeni adresleri otomatik isimlendir"
+
+#: kabconfigwidget.cpp:72
+msgid "Trade single name component as family name"
+msgstr "Tek adlı bileşeni aile ismi olarak değiş"
+
+#: kabconfigwidget.cpp:80
+msgid "Limit unfiltered display to 100 contacts"
+msgstr "Filtrelenmemiş görünümü 100 bağlantıyla sınırla"
+
+#: kabconfigwidget.cpp:85
+msgid "Addressee editor type:"
+msgstr "Addressee düzenleyici tipi"
+
+#: kabconfigwidget.cpp:89
+msgid "Full Editor"
+msgstr "Tam Kapsamlı Düzenleyici"
+
+#: kabconfigwidget.cpp:90
+msgid "Simple Editor"
+msgstr "Basit Düzenleyici"
+
+#: kabconfigwidget.cpp:99
+msgid "Script-Hooks"
+msgstr "Betik Kancaları"
+
+#: kabconfigwidget.cpp:102
+msgid "Phone:"
+msgstr "Telefon:"
+
+#: kabconfigwidget.cpp:106
+msgid "<ul><li>%N: Phone Number</li></ul>"
+msgstr "<ul><li>%N: Telefon Numarası</li></ul>"
+
+#: kabconfigwidget.cpp:109
+msgid "Fax:"
+msgstr "Faks:"
+
+#: kabconfigwidget.cpp:113
+msgid "<ul><li>%N: Fax Number</li></ul>"
+msgstr "<ul><li>%N: Faks Numarası</li></ul>"
+
+#: kabconfigwidget.cpp:117
+msgid "SMS Text:"
+msgstr "SMS Metni:"
+
+#: kabconfigwidget.cpp:121
+msgid ""
+"<ul>"
+"<li>%N: Phone Number</li>"
+"<li>%F: File containing the text message(s)</li></ul>"
+msgstr ""
+"<ul>"
+"<li>%N: Telefon Numarası</li>"
+"<li>%F: Metin iletiyi içeren dosya</li></ul>"
+
+#: kabconfigwidget.cpp:129
+msgid "Location Map"
+msgstr "Konum Haritası"
+
+#: kabconfigwidget.cpp:135
+msgid ""
+"<ul> "
+"<li>%s: Street</li>"
+"<li>%r: Region</li>"
+"<li>%l: Location</li>"
+"<li>%z: Zip Code</li>"
+"<li>%c: Country ISO Code</li> </ul>"
+msgstr ""
+"<ul> "
+"<li>%s: Sokak</li>"
+"<li>%r: Bölge</li>"
+"<li>%l: Konum</li>"
+"<li>%z: Posta Kodu</li>"
+"<li>%c: Ülke Kodu</li> </ul>"
+
+#: kabconfigwidget.cpp:158
+msgid "Contact"
+msgstr "Bağlantı"
+
+#: kcmkabconfig.cpp:54
+msgid "kcmkabconfig"
+msgstr "kcmkabconfig"
+
+#: kcmkabconfig.cpp:55
+msgid "KAddressBook Configure Dialog"
+msgstr "KAdres Defteri ile yapılandırma için haberleşiliyor"
+
+#: kcmkabconfig.cpp:57 kcmkabldapconfig.cpp:58
+msgid "(c), 2003 - 2004 Tobias Koenig"
+msgstr "(c), 2003 - 2004 Tobias Koenig"
+
+#: kcmkabldapconfig.cpp:55
+msgid "kcmkabldapconfig"
+msgstr "kcmkabldapconfig"
+
+#: kcmkabldapconfig.cpp:56
+msgid "KAB LDAP Configure Dialog"
+msgstr "KAB LDAP ile yapılandırma için haberleşiliyor"
+
+#: ldapoptionswidget.cpp:138
+msgid "Edit Host"
+msgstr "Düğüm Düzenle"
+
+#: ldapoptionswidget.cpp:263
+msgid "LDAP Servers"
+msgstr "LDAP Sunucuları"
+
+#: ldapoptionswidget.cpp:268
+msgid "Check all servers that should be used:"
+msgstr "Kullanılmış olması gerek bütün sunucuları denetle:"
+
+#: ldapoptionswidget.cpp:291
+msgid "&Add Host..."
+msgstr "Düğüm &Ekle..."
+
+#: ldapoptionswidget.cpp:292
+msgid "&Edit Host..."
+msgstr "Düğüm &Düzenle..."
+
+#: ldapoptionswidget.cpp:294
+msgid "&Remove Host"
+msgstr "Düğüm &Sil"

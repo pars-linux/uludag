@@ -1,0 +1,94 @@
+# translation of kmilo_kvaio.po to Türkçe
+# translation of kmilo_kvaio.po to Turkish
+# Copyright (C) 2004, 2005 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Engin Çağatay <engincagatay@yahoo.com>, 2004.
+# Bekir SONAT <cortexbs@yahoo.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kmilo_kvaio\n"
+"POT-Creation-Date: 2005-07-08 01:34+0200\n"
+"PO-Revision-Date: 2005-07-11 17:19+0300\n"
+"Last-Translator: Bekir SONAT <cortexbs@yahoo.com>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: kvaio.cpp:158
+msgid "Memory Stick inserted"
+msgstr "Hafıza Çubuğu yerleştirildi"
+
+#: kvaio.cpp:161
+msgid "Memory Stick ejected"
+msgstr "Hafıza Çubuğu çıkartıldı"
+
+#: kvaio.cpp:170
+msgid "Unhandled event: "
+msgstr "İşlenemeyen olay:"
+
+#: kvaio.cpp:387
+msgid "AC Connected"
+msgstr "AC Bağlandı"
+
+#: kvaio.cpp:387
+msgid "AC Disconnected"
+msgstr "AC Kapatıldı"
+
+#: kvaio.cpp:393
+msgid "Battery is Fully Charged. "
+msgstr "Pil Tamamen Doldu."
+
+#: kvaio.cpp:400
+msgid "Caution: Battery is Almost Empty (%1% remaining)."
+msgstr "Uyarı: Pil Neredeyse Boş (%%1 kaldı)."
+
+#: kvaio.cpp:403
+msgid "Alert: Battery is Empty!"
+msgstr "Uyarı: Pil Boş!"
+
+#: kvaio.cpp:406
+msgid "No Battery Inserted."
+msgstr "Pil Yerleştirilmemiş."
+
+#: kvaio.cpp:409
+msgid "Remaining Battery Capacity: %1%"
+msgstr "Kalan Pil Kapasitesi: %%1"
+
+#: kvaio.cpp:434 kvaio.cpp:447
+msgid "Brightness"
+msgstr "Parlaklık"
+
+#: kvaio.cpp:455
+msgid "Volume"
+msgstr "Ses Düzeyi"
+
+#: kvaio.cpp:481 kvaio.cpp:548
+msgid "Starting KMix..."
+msgstr "KMix başlıyor.."
+
+#: kvaio.cpp:500 kvaio.cpp:571
+msgid "It seems that KMix is not running."
+msgstr "KMix çalışıyor gibi görünmüyor.."
+
+#: kvaio.cpp:592
+msgid "Mute on"
+msgstr "Sessizlik Açık"
+
+#: kvaio.cpp:595
+msgid "Mute off"
+msgstr "Sessizlik Kapalı"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Engin Çağatay"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "engincagatay@yahoo.com"

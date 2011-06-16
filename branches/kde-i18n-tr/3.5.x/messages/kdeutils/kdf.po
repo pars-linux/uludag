@@ -1,0 +1,243 @@
+# translation of kdf.po to Türkçe
+# translation of kdf.po to Turkish
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# Erol Öz <eroloz@bilgi.edu.tr> , 2000
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdf\n"
+"POT-Creation-Date: 2004-12-29 14:54+0100\n"
+"PO-Revision-Date: 2004-10-17 21:49+0300\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Ömer Fadıl USTA"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "omer_fad@hotmail.com"
+
+#: disklist.cpp:267
+#, c-format
+msgid "could not execute [%s]"
+msgstr "[%s] çalıştırılamadı"
+
+#: disks.cpp:229
+msgid ""
+"Called: %1\n"
+"\n"
+msgstr ""
+" Çağrılan: %1\n"
+"\n"
+
+#: disks.cpp:233
+#, c-format
+msgid "could not execute %1"
+msgstr "[%1] çalıştırılamadı"
+
+#: kcmdf.cpp:53
+msgid ""
+"<h3>Hardware Information</h3>"
+"<br> All the information modules return information about a certain aspect of "
+"your computer hardware or your operating system. Not all modules are available "
+"on all hardware architectures and/or operating systems."
+msgstr ""
+"<h3>Donenım Bilgisi</h3>"
+"<br> Bütün bilgi modülleri bilgisayarınızın donanımı ya da işletim sisteminiz "
+"hakkında belirli bir bilgi toplarlar. Bütün modüller her mimaride ve/veya "
+"işletim sistemlerinde çalışmaz."
+
+#: kconftest.cpp:44
+msgid "A test application"
+msgstr "Bir deneme uygulaması"
+
+#: kdf.cpp:33
+msgid "KDE free disk space utility"
+msgstr "KDE boş disk alanı yardımcısı"
+
+#: kdf.cpp:67
+msgid "KDiskFree"
+msgstr "KDiskFree"
+
+#: kdfconfig.cpp:58 kdfwidget.cpp:104 mntconfig.cpp:69
+msgid "Icon"
+msgstr "Simge"
+
+#: kdfconfig.cpp:59 kdfwidget.cpp:105 mntconfig.cpp:70
+msgid "Device"
+msgstr "Aygıt"
+
+#: kdfconfig.cpp:60 kdfwidget.cpp:106
+msgid "Type"
+msgstr "Tür"
+
+#: kdfconfig.cpp:61 kdfwidget.cpp:107
+msgid "Size"
+msgstr "Boyut"
+
+#: kdfconfig.cpp:62 kdfwidget.cpp:108 mntconfig.cpp:71
+msgid "Mount Point"
+msgstr "Bağlama Noktası"
+
+#: kdfconfig.cpp:63 kdfwidget.cpp:109
+msgid "Free"
+msgstr "Boş"
+
+#: kdfconfig.cpp:65 kdfwidget.cpp:111
+#, no-c-format
+msgid "Full %"
+msgstr "% Dolu"
+
+#: kdfconfig.cpp:66 kdfwidget.cpp:112
+msgid "Usage"
+msgstr "Kullanım"
+
+#: kdfconfig.cpp:91 kdfconfig.cpp:184 kdfconfig.cpp:217 kdfconfig.cpp:240
+#: kdfconfig.cpp:253 kdfconfig.cpp:254
+msgid "visible"
+msgstr "görünür"
+
+#: kdfconfig.cpp:115
+msgid "Update frequency [seconds]. The value 0 disables update"
+msgstr ""
+"Güncelleme sıklığı [saniye]. 0 değeri güncellemeyi etkisiz hale getirir"
+
+#: kdfconfig.cpp:121
+#, c-format
+msgid "File manager (e.g. konsole -e mc %m):"
+msgstr "Dosya yöneticisi (Örnek: konsole -e mc %m):"
+
+#: kdfconfig.cpp:130
+msgid "Open file manager automatically on mount"
+msgstr "Bağlama gerçekleştiğinde otomatik olarak dosya yöneticisini aç"
+
+#: kdfconfig.cpp:136
+msgid "Pop up a window when a disk gets critically full"
+msgstr "Bir disk tehlikeli derecede dolduğunda bir pencere aç"
+
+#: kdfconfig.cpp:217 kdfconfig.cpp:253
+msgid "hidden"
+msgstr "gizli"
+
+#: kdfwidget.cpp:340 kdfwidget.cpp:341
+msgid "N/A"
+msgstr "N/A"
+
+#: kdfwidget.cpp:379 kwikdisk.cpp:288
+msgid "Device [%1] on [%2] is getting critically full!"
+msgstr "[%2] nin üzerindeki [%1] aygıtı kritik derecede doluyor!"
+
+#: kdfwidget.cpp:469
+msgid "Mount Device"
+msgstr "Aygıtı Bağla"
+
+#: kdfwidget.cpp:470
+msgid "Unmount Device"
+msgstr "Aygıtı Ayır"
+
+#: kdfwidget.cpp:472
+msgid "Open in File Manager"
+msgstr "Dosya Yöneticisinde Aç"
+
+#: kdfwidget.cpp:489 kdfwidget.cpp:490
+msgid "MOUNTING"
+msgstr "BAĞLANIYOR"
+
+#: kwikdisk.cpp:48
+msgid "KDE Free disk space utility"
+msgstr "KDE boş disk alanı yardımcısı"
+
+#: kwikdisk.cpp:172 kwikdisk.cpp:324
+msgid "KwikDisk"
+msgstr "KwikDisk"
+
+#: kwikdisk.cpp:178
+msgid "%1 (%2) %3 on %4"
+msgstr "%4 üzerinde %1 (%2) %3"
+
+#: kwikdisk.cpp:179
+msgid "Unmount"
+msgstr "Ayır"
+
+#: kwikdisk.cpp:179
+msgid "Mount"
+msgstr "Bağla"
+
+#: kwikdisk.cpp:219
+msgid "You must login as root to mount this disk"
+msgstr "Bu diski bağlayabilmek için root olarak giriş yapmalısınız"
+
+#: kwikdisk.cpp:229
+msgid "&Start KDiskFree"
+msgstr "KDiskFree'yi &Başlat"
+
+#: kwikdisk.cpp:233
+msgid "&Configure KwikDisk..."
+msgstr "&KWikDisk'i Yapılandır..."
+
+#: kwikdisk.cpp:327
+msgid "Original author"
+msgstr "Asıl yazar"
+
+#: kwikdisk.cpp:329
+msgid "KDE 2 changes"
+msgstr "KDE 2 değişiklikleri"
+
+#: kwikdisk.cpp:330
+msgid "KDE 3 changes"
+msgstr "KDE 3 değişiklikleri"
+
+#: mntconfig.cpp:72
+msgid "Mount Command"
+msgstr "Bağlama Komutu"
+
+#: mntconfig.cpp:73
+msgid "Unmount Command"
+msgstr "Ayırma Komutu"
+
+#: mntconfig.cpp:82 mntconfig.cpp:84
+msgid "None"
+msgstr "Hiçbiri"
+
+#: mntconfig.cpp:110
+msgid "Get Mount Command"
+msgstr "Bağlama Komutu Al"
+
+#: mntconfig.cpp:125
+msgid "Get Unmount Command"
+msgstr "Ayırma Komutunu Al"
+
+#: mntconfig.cpp:258
+msgid ""
+"This filename is not valid: %1\n"
+"It must end with \"_mount\" or \"_unmount\"."
+msgstr ""
+"Bu dosya adı geçersiz: %1\n"
+"Dosya adı \"_mount\" ya da \"_unmount\" şeklinde bitmelidir."
+
+#: mntconfig.cpp:294
+msgid "Only local files supported."
+msgstr "Yalnızca yerel dosyalar desteklenir."
+
+#: mntconfig.cpp:310
+msgid "Only local files are currently supported."
+msgstr "Şimdilik yalnızca yerel dosyalar destekleniyor."
+
+#: optiondialog.cpp:32
+msgid "General Settings"
+msgstr "Genel Ayarlar"
+
+#: optiondialog.cpp:38
+msgid "Mount Commands"
+msgstr "Bağlama Komutları"

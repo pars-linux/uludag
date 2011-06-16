@@ -1,0 +1,1671 @@
+# translation of cervisia.po to Turkish
+# translation of cervisia.po to
+# Turkish translations for Cervisia messages.
+# Copyright (C) 2001, 2002, 2003, 2005 Free Software Foundation, Inc.
+# Nilgün Belma Bugüner <nilgun@superonline.com>, 2001, 2002.
+# Görkem Çetin <gorkem@gelecek.com.tr>, 2001.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Cemil MUTLU <mawilos@gmail.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cervisia\n"
+"POT-Creation-Date: 2007-09-24 01:15+0200\n"
+"PO-Revision-Date: 2005-07-16 14:04+0300\n"
+"Last-Translator: Cemil MUTLU <mawilos@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Nilgün Belma Bugüner"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "nilgun@superonline.com"
+
+#: addremovedlg.cpp:37
+msgid "CVS Add"
+msgstr "Ekleme Kipi"
+
+#: addremovedlg.cpp:38
+msgid "CVS Add Binary"
+msgstr "İkilik Ekleme Kipi"
+
+#: addremovedlg.cpp:39
+msgid "CVS Remove"
+msgstr "Silme Kipi"
+
+#: addremovedlg.cpp:46
+msgid "Add the following files to the repository:"
+msgstr "Aşağıdaki dosyaları depoya ekle:"
+
+#: addremovedlg.cpp:47
+msgid "Add the following binary files to the repository:"
+msgstr "Aşağıdaki ikili dosyaları depoya ekle:"
+
+#: addremovedlg.cpp:48
+msgid "Remove the following files from the repository:"
+msgstr "Aşağıdaki dosyaları depodan kaldır:"
+
+#: addremovedlg.cpp:68
+msgid "This will also remove the files from your local working copy."
+msgstr "Bu işlem yerel makinede çalıştığınız kopyayı da silecektir."
+
+#: addrepositorydlg.cpp:37
+msgid "Add Repository"
+msgstr "Depo Ekle"
+
+#: addrepositorydlg.cpp:45 checkoutdlg.cpp:72
+msgid "&Repository:"
+msgstr "&Depo:"
+
+#: addrepositorydlg.cpp:58
+msgid "Use remote &shell (only for :ext: repositories):"
+msgstr "&Uzak kabuk kullan (sadece :ext: için):"
+
+#: addrepositorydlg.cpp:65
+msgid "Invoke this program on the server side:"
+msgstr "Bu programı sunucu tarafında çalıştır:"
+
+#: addrepositorydlg.cpp:74
+msgid "Use different &compression level:"
+msgstr "Ö&ntanımlı sıkıştırma seviyesi:"
+
+#: addrepositorydlg.cpp:80
+msgid "Download cvsignore file from server"
+msgstr "cvsignore dosyasını sunucudan indir"
+
+#: addrepositorydlg.cpp:172
+msgid "Repository Settings"
+msgstr "Depo Ayarları"
+
+#: annotatectl.cpp:82
+#, c-format
+msgid "CVS Annotate: %1"
+msgstr "Değişiklik Bilgileri: %1"
+
+#: annotatectl.cpp:93
+msgid "CVS Annotate"
+msgstr "Değişiklik Bilgileri"
+
+#: cervisiapart.cpp:116
+msgid "Starting cvsservice failed with message: "
+msgstr "cvsservice başlatılamadı. Hata mesajı:"
+
+#: cervisiapart.cpp:152
+#, fuzzy
+msgid ""
+"This KPart is non-functional, because the cvs DCOP service could not be "
+"started."
+msgstr "cvs DCOP servisini çalıştıramadığımız için bu KPart'ın fonksiyonu yok"
+
+#: cervisiapart.cpp:193
+msgid "Remote CVS working folders are not supported."
+msgstr "Uzaktaki CVS çalışma dizinleri desteklenmiyor."
+
+#: cervisiapart.cpp:202
+msgid ""
+"You cannot change to a different folder while there is a running cvs job."
+msgstr "Çalışan bir CVS görevi varken başka bir dizine geçemezsiniz."
+
+#: cervisiapart.cpp:219
+msgid ""
+"F - All files are hidden, the tree shows only folders\n"
+"N - All up-to-date files are hidden\n"
+"R - All removed files are hidden"
+msgstr ""
+"F - Tüm dosyalar gizli. Ağaç sadece dizinleri gösterir\n"
+"N - Tüm güncel dosyalar gizli\n"
+"R - Tüm silinen dosyalar gizli"
+
+#: cervisiapart.cpp:235
+msgid "O&pen Sandbox..."
+msgstr "Çalışma Dizini &Aç..."
+
+#: cervisiapart.cpp:238
+msgid "Opens a CVS working folder in the main window"
+msgstr "Ana pencerede bir CVS çalışma dizini açar"
+
+#: cervisiapart.cpp:242
+msgid "Recent Sandboxes"
+msgstr "Son Çalışma Dizinleri"
+
+#: cervisiapart.cpp:246
+msgid "&Insert ChangeLog Entry..."
+msgstr "Değişiklik &Günlüğü Girdisi Ekle..."
+
+#: cervisiapart.cpp:249
+msgid "Inserts a new intro into the file ChangeLog in the toplevel folder"
+msgstr "Tepe dizindeki ChangeLog dosyasına yeni bir girdi ekler."
+
+#: cervisiapart.cpp:256
+msgid "Updates (cvs update) the selected files and folders"
+msgstr "Seçilen dosya ve dizinleri günceller (cvs update)"
+
+#: cervisiapart.cpp:260
+msgid "&Status"
+msgstr "&Durum"
+
+#: cervisiapart.cpp:263
+msgid "Updates the status (cvs -n update) of the selected files and folders"
+msgstr "Seçilen dosya ve dizinlerin durumunu günceller (cvs -n update)"
+
+#: cervisiapart.cpp:270
+msgid "Opens the marked file for editing"
+msgstr "Seçili dosyayı düzenlemek amacıyla açar"
+
+#: cervisiapart.cpp:274
+msgid "Reso&lve..."
+msgstr "Çö&zümle..."
+
+#: cervisiapart.cpp:277
+msgid "Opens the resolve dialog with the selected file"
+msgstr "Seçili dosyada çelişen değişiklikleri çözümlemek için pencere açar."
+
+#: cervisiapart.cpp:281
+msgid "&Commit..."
+msgstr "&Gönder..."
+
+#: cervisiapart.cpp:284
+msgid "Commits the selected files"
+msgstr "(cvs commit) Seçili dosyaları gönderir"
+
+#: cervisiapart.cpp:288
+msgid "&Add to Repository..."
+msgstr "&Depoya Ekle..."
+
+#: cervisiapart.cpp:291
+msgid "Adds (cvs add) the selected files to the repository"
+msgstr "(cvs add) Seçili dosyaları depoya ekler"
+
+#: cervisiapart.cpp:295
+msgid "Add &Binary..."
+msgstr "İ&kilik Dosya Ekle..."
+
+#: cervisiapart.cpp:298
+msgid "Adds (cvs -kb add) the selected files as binaries to the repository"
+msgstr ""
+"(cvs -kb add) Seçili dosyaları depoya çalıştırılabilir dosya olarak ekler"
+
+#: cervisiapart.cpp:302
+msgid "&Remove From Repository..."
+msgstr "Depodan &Kaldır..."
+
+#: cervisiapart.cpp:305
+msgid "Removes (cvs remove) the selected files from the repository"
+msgstr "(cvs remove) Seçili dosyaları depodan kaldırır"
+
+#: cervisiapart.cpp:309
+msgid "Rever&t"
+msgstr "&Geri al"
+
+#: cervisiapart.cpp:312
+msgid "Reverts (cvs update -C) the selected files (only cvs 1.11)"
+msgstr ""
+"(cvs update -C) Seçili dosyaları eski haline döndürür. (sadece cvs-1.11)"
+
+#: cervisiapart.cpp:317
+msgid "&Properties"
+msgstr "Ö&zellikler"
+
+#: cervisiapart.cpp:328
+msgid "Stops any running sub-processes"
+msgstr "Çalışan bir alt süreci durdurur"
+
+#: cervisiapart.cpp:333
+msgid "Browse &Log..."
+msgstr "Dosya &Günlüğünü Göster..."
+
+#: cervisiapart.cpp:336
+msgid "Shows the revision tree of the selected file"
+msgstr "Seçili dosyanın sürüm ağacını gösterir"
+
+#: cervisiapart.cpp:341
+msgid "Browse Multi-File Log..."
+msgstr "Dosyaların Günlüğünü Göster..."
+
+#: cervisiapart.cpp:345
+msgid "&Annotate..."
+msgstr "&Değişiklik Bilgileri..."
+
+#: cervisiapart.cpp:348
+msgid "Shows a blame-annotated view of the selected file"
+msgstr "Seçili dosyada kim, ne zaman, ne yapmış gösterir"
+
+#: cervisiapart.cpp:352
+msgid "&Difference to Repository (BASE)..."
+msgstr "Depoya göre &Farklar (TABAN)..."
+
+#: cervisiapart.cpp:355
+msgid ""
+"Shows the differences of the selected file to the checked out version (tag "
+"BASE)"
+msgstr "Seçili dosya ile sunucudaki dosya arasındaki farkları (TABAN) gösterir"
+
+#: cervisiapart.cpp:359
+msgid "Difference to Repository (HEAD)..."
+msgstr "Depoya göre Farklar (BAŞ)..."
+
+#: cervisiapart.cpp:362
+msgid ""
+"Shows the differences of the selected file to the newest version in the "
+"repository (tag HEAD)"
+msgstr "Seçili dosya ile sunucudaki dosya arasındaki farkları (BAŞ) gösterir"
+
+#: cervisiapart.cpp:366
+msgid "Last &Change..."
+msgstr "&Son Değişiklik..."
+
+#: cervisiapart.cpp:369
+msgid ""
+"Shows the differences between the last two revisions of the selected file"
+msgstr "Seçili dosyanın son iki sürümü arasındaki farkları gösterir"
+
+#: cervisiapart.cpp:373
+msgid "&History..."
+msgstr "&Geçmiş..."
+
+#: cervisiapart.cpp:376
+msgid "Shows the CVS history as reported by the server"
+msgstr "Sunucu tarafından raporlanan CVS geçmişini gösterir"
+
+#: cervisiapart.cpp:380
+msgid "&Unfold File Tree"
+msgstr "&Dalları Dökümle"
+
+#: cervisiapart.cpp:384
+msgid "Opens all branches of the file tree"
+msgstr "Dosya ağacının tüm branşlarını açar"
+
+#: cervisiapart.cpp:388
+msgid "&Fold File Tree"
+msgstr "&Dal dökümlerini kapat"
+
+#: cervisiapart.cpp:391
+msgid "Closes all branches of the file tree"
+msgstr "Dosya ağacının tüm branşlarını kapatır"
+
+#: cervisiapart.cpp:398
+msgid "&Tag/Branch..."
+msgstr "&Etiket/Branş..."
+
+#: cervisiapart.cpp:401
+msgid "Creates a tag or branch for the selected files"
+msgstr "Seçili dosyalar için bir branş ya da etiket oluşturur"
+
+#: cervisiapart.cpp:405
+msgid "&Delete Tag..."
+msgstr "&Etiketi Sil..."
+
+#: cervisiapart.cpp:408
+msgid "Deletes a tag from the selected files"
+msgstr "Seçili dosyalardan bir etiketi siler"
+
+#: cervisiapart.cpp:412
+msgid "&Update to Tag/Date..."
+msgstr "&Etikete/Tarihe Güncelle..."
+
+#: cervisiapart.cpp:415
+msgid "Updates the selected files to a given tag, branch or date"
+msgstr "Seçili dosyaları belirtilen etiket, branş ya da tarihe günceller"
+
+#: cervisiapart.cpp:419
+msgid "Update to &HEAD"
+msgstr "&HEAD'e güncelle"
+
+#: cervisiapart.cpp:422
+msgid "Updates the selected files to the HEAD revision"
+msgstr "Seçili dosyaları HEAD sürümüne günceller"
+
+#: cervisiapart.cpp:426
+msgid "&Merge..."
+msgstr "&Birleştir..."
+
+#: cervisiapart.cpp:429
+msgid "Merges a branch or a set of modifications into the selected files"
+msgstr ""
+"Bir değişiklik kümesini ya da branşı seçili dosyaların içine katıştırır"
+
+#: cervisiapart.cpp:433
+msgid "&Add Watch..."
+msgstr "&Bildirim Ekle..."
+
+#: cervisiapart.cpp:436
+msgid "Adds a watch for the selected files"
+msgstr "Seçili dosyalar için bildirim ekler"
+
+#: cervisiapart.cpp:440
+msgid "&Remove Watch..."
+msgstr "Bildirimi &Kaldır..."
+
+#: cervisiapart.cpp:443
+msgid "Removes a watch from the selected files"
+msgstr "Seçili dosyalar için bildirimi kaldırır"
+
+#: cervisiapart.cpp:447
+msgid "Show &Watchers"
+msgstr "&Bildirilenleri Göster"
+
+#: cervisiapart.cpp:450
+msgid "Shows the watchers of the selected files"
+msgstr "Seçili dosyalar için bildirim alanları gösterir"
+
+#: cervisiapart.cpp:454
+msgid "Ed&it Files"
+msgstr "Düzenleme Kipini &Başlat"
+
+#: cervisiapart.cpp:457
+msgid "Edits (cvs edit) the selected files"
+msgstr "(cvs edit) Seçili dosyaları düzenleme kipine alır"
+
+#: cervisiapart.cpp:461
+msgid "U&nedit Files"
+msgstr "Düzenleme Kipini &Kapat"
+
+#: cervisiapart.cpp:464
+msgid "Unedits (cvs unedit) the selected files"
+msgstr "(cvs unedit) Seçili dosyaları düzenleme kipinden çıkarır"
+
+#: cervisiapart.cpp:468
+msgid "Show &Editors"
+msgstr "&Yazarları Göster"
+
+#: cervisiapart.cpp:471
+msgid "Shows the editors of the selected files"
+msgstr "Seçili dosyaları düzenleyenleri gösterir"
+
+#: cervisiapart.cpp:475
+msgid "&Lock Files"
+msgstr "Dosyaları &Kilitle"
+
+#: cervisiapart.cpp:478
+msgid "Locks the selected files, so that others cannot modify them"
+msgstr "Seçili dosya başkaları değiştirmesin diye kilitle"
+
+#: cervisiapart.cpp:482
+msgid "Unl&ock Files"
+msgstr "Dosyaların Kilitlerini &Kaldır"
+
+#: cervisiapart.cpp:485
+msgid "Unlocks the selected files"
+msgstr "Seçili dosyaların kilitlerini kaldırır"
+
+#: cervisiapart.cpp:489
+msgid "Create &Patch Against Repository..."
+msgstr "Depoya Karşı &Yama Oluştur..."
+
+#: cervisiapart.cpp:492
+msgid "Creates a patch from the modifications in your sandbox"
+msgstr "Çalışma dizininizdeki değişikliklerden bir yama oluşturur"
+
+#: cervisiapart.cpp:499
+msgid "&Create..."
+msgstr "&Oluştur..."
+
+#: cervisiapart.cpp:503
+msgid "&Checkout..."
+msgstr "İşleyiş &kontrolü..."
+
+#: cervisiapart.cpp:506
+msgid "Allows you to checkout a module from a repository"
+msgstr "Bir modülü depodan komple indirir"
+
+#: cervisiapart.cpp:510
+msgid "&Import..."
+msgstr "&Tamamını Gönder..."
+
+#: cervisiapart.cpp:513
+msgid "Allows you to import a module into a repository"
+msgstr "Bir modülü depoya komple yükler"
+
+#: cervisiapart.cpp:517
+msgid "&Repositories..."
+msgstr "&Depolar..."
+
+#: cervisiapart.cpp:520
+msgid "Configures a list of repositories you regularly use"
+msgstr "Sürekli kullandığınız depoları yapılandırır"
+
+#: cervisiapart.cpp:527
+msgid "Hide All &Files"
+msgstr "Tüm Dosyaları &Gizle"
+
+#: cervisiapart.cpp:530
+msgid "Show All &Files"
+msgstr "Tüm Dosyaları &Göster"
+
+#: cervisiapart.cpp:531
+msgid "Determines whether only folders are shown"
+msgstr "Dizinlerin gösterilmesini/gizlenmesini sağlar"
+
+#: cervisiapart.cpp:535
+msgid "Hide Unmodified Files"
+msgstr "Değişmeyen Dosyaları Gizle"
+
+#: cervisiapart.cpp:538
+msgid "Show Unmodified Files"
+msgstr "Değişmeyen Dosyaları Göster"
+
+#: cervisiapart.cpp:539
+#, fuzzy
+msgid "Determines whether files with status up-to-date or unknown are hidden"
+msgstr "Güncel dosyaların gösterilmemesini sağlar"
+
+#: cervisiapart.cpp:544
+msgid "Hide Removed Files"
+msgstr "Silinen Dosyaları Gizle"
+
+#: cervisiapart.cpp:547
+msgid "Show Removed Files"
+msgstr "SilinenDosyaları Gizle"
+
+#: cervisiapart.cpp:548
+msgid "Determines whether removed files are hidden"
+msgstr "Silinen dosyaların gösterilmemesini sağlar"
+
+#: cervisiapart.cpp:552
+msgid "Hide Non-CVS Files"
+msgstr "CVS'de Olmayan Dosyaları Gizle"
+
+#: cervisiapart.cpp:555
+msgid "Show Non-CVS Files"
+msgstr "CVS'de Olmayan Dosyaları Göster"
+
+#: cervisiapart.cpp:556
+msgid "Determines whether files not in CVS are hidden"
+msgstr "CVS'de olmayan dosyaların gizli olup olmadığına bakar"
+
+#: cervisiapart.cpp:560
+msgid "Hide Empty Folders"
+msgstr "Boş Dizinleri Gizle"
+
+#: cervisiapart.cpp:563
+msgid "Show Empty Folders"
+msgstr "Boş Dizinleri Gizle"
+
+#: cervisiapart.cpp:564
+#, fuzzy
+msgid "Determines whether folders without visible entries are hidden"
+msgstr "Silinen dosyaların gösterilmemesini sağlar"
+
+#: cervisiapart.cpp:568
+msgid "Create &Folders on Update"
+msgstr "Güncellerken Dizinleri &Oluştur"
+
+#: cervisiapart.cpp:571
+msgid "Determines whether updates create folders"
+msgstr "Güncelleme sırasında dizinlerin oluşturulmasını sağlar"
+
+#: cervisiapart.cpp:575
+msgid "&Prune Empty Folders on Update"
+msgstr "Güncellerken &Boş Dizinleri Sil"
+
+#: cervisiapart.cpp:578
+msgid "Determines whether updates remove empty folders"
+msgstr "Güncelleme sırasında boş dizinlerin kaldırılmasını sağlar"
+
+#: cervisiapart.cpp:582
+msgid "&Update Recursively"
+msgstr "&Ardışık Güncelle"
+
+#: cervisiapart.cpp:585
+msgid "Determines whether updates are recursive"
+msgstr "Güncelleme sırasında alt dizinlerde güncellenir"
+
+#: cervisiapart.cpp:589
+msgid "C&ommit && Remove Recursively"
+msgstr "A&rdışık Gönder ve Sil"
+
+#: cervisiapart.cpp:592
+msgid "Determines whether commits and removes are recursive"
+msgstr "Gönderme ve silmede alt dizinlerde de işlem yapılmasını sağlar"
+
+#: cervisiapart.cpp:596
+msgid "Do cvs &edit Automatically When Necessary"
+msgstr "G&erektiğinde Düzenleme Kipini Kendiliğinden Etkinleştir"
+
+#: cervisiapart.cpp:599
+msgid "Determines whether automatic cvs editing is active"
+msgstr "Otomatik olarak düzenleme kipinin etkin olup olmadığına bakar"
+
+#: cervisiapart.cpp:603
+msgid "Configure Cervisia..."
+msgstr "Cervisia'yı Yapılandır..."
+
+#: cervisiapart.cpp:606
+msgid "Allows you to configure the Cervisia KPart"
+msgstr "Cervisia'yı özelleştirmenizi sağlar"
+
+#: cervisiapart.cpp:616
+msgid "CVS &Manual"
+msgstr "&CVS Kılavuzu"
+
+#: cervisiapart.cpp:619
+msgid "Opens the help browser with the CVS documentation"
+msgstr "CVS belgelerini göstermek için KDE Yardım Merkezini çalıştırır"
+
+#: cervisiapart.cpp:626
+msgid "Unfold Folder"
+msgstr "&Dizini Kaldır"
+
+#: cervisiapart.cpp:629
+msgid "Fold Folder"
+msgstr "&Dizin Kıvrımı"
+
+#: cervisiapart.cpp:673
+msgid "Edit With"
+msgstr "Birlikte &Başlat"
+
+#: cervisiapart.cpp:713
+msgid ""
+"Cervisia %1\n"
+"(Using KDE %2)\n"
+"\n"
+"Copyright (c) 1999-2002\n"
+"Bernd Gehrmann <bernd@mail.berlios.de>\n"
+"\n"
+"This program is free software; you can redistribute it and/or modify\n"
+"it under the terms of the GNU General Public License as published by\n"
+"the Free Software Foundation; either version 2 of the License, or\n"
+"(at your option) any later version.\n"
+"This program is distributed in the hope that it will be useful,\n"
+"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+"GNU General Public License for more details.\n"
+"See the ChangeLog file for a list of contributors."
+msgstr ""
+"Cervisia sürüm %1\n"
+"(KDE %2)\n"
+"\n"
+"Telif Hakkı © 1999-2002\n"
+"Bernd Gehrmann <bernd@mail.berlios.de>\n"
+"\n"
+"Bu uygulama, Trolltech AS of Norway tarafından yayınlanan Q Kamu\n"
+"Lisansı koşulları altında dağıtılmaktadır. Bu Lisansın bir kopyasını\n"
+"kaynak paketi içindeki LICENSE.QPL dosyasında bulabilirsiniz.\n"
+"\n"
+"Bu uygulama faydalı olacağı umularak dağıtılmaktadır, ancak HİÇBİR\n"
+"GARANTİSİ YOKTUR; hatta, SATILABİLİRLİĞİ veya ŞAHSİ KULLANIMINIZA\n"
+"UYGUNLUĞU için bile garanti verilmez.\n"
+"\n"
+"Destek verenlerin listesini ChangeLog dosyasında bulabilirsiniz."
+
+#: cervisiapart.cpp:728
+msgid "About Cervisia"
+msgstr "Cervisia Hakkında"
+
+#: cervisiapart.cpp:736
+msgid "Cervisia Part"
+msgstr "Cervisia Part"
+
+#: cervisiapart.cpp:737 main.cpp:150
+msgid "A CVS frontend"
+msgstr "Bir CVS istemcisi"
+
+#: cervisiapart.cpp:739
+msgid "Copyright (c) 1999-2002 Bernd Gehrmann"
+msgstr "Telif hakkı © 1999-2002 Bernd Gehrmann"
+
+#: cervisiapart.cpp:742 main.cpp:155
+msgid "Original author and former maintainer"
+msgstr "Asıl yazar"
+
+#: cervisiapart.cpp:744 main.cpp:157
+msgid "Maintainer"
+msgstr "Sorumlu"
+
+#: cervisiapart.cpp:746 main.cpp:159
+msgid "Developer"
+msgstr "Geliştirici"
+
+#: cervisiapart.cpp:749 main.cpp:164
+msgid "Conversion to KPart"
+msgstr "KPart'a Aktarım"
+
+#: cervisiapart.cpp:759
+msgid "Open Sandbox"
+msgstr "Çalışma Dizini Aç"
+
+#: cervisiapart.cpp:816
+msgid "CVS Edit"
+msgstr "Düzenleme Kipi"
+
+#: cervisiapart.cpp:1349 diffdlg.cpp:255 logdlg.cpp:467
+msgid "CVS Diff"
+msgstr "Fark Kipi"
+
+#: cervisiapart.cpp:1364 diffdlg.cpp:491 logdlg.cpp:482 resolvedlg.cpp:351
+msgid "Could not open file for writing."
+msgstr "Dosya yazmak için açılamıyor."
+
+#: cervisiapart.cpp:1511
+msgid "The revision looks invalid."
+msgstr "Sürüm numarası geçersiz görünüyor."
+
+#: cervisiapart.cpp:1518
+msgid "This is the first revision of the branch."
+msgstr "Bu, branşın ilk değişikliğidir."
+
+#: cervisiapart.cpp:1644
+msgid "Invoking help on Cervisia"
+msgstr "Cervisia yardımı açılıyor"
+
+#: cervisiapart.cpp:1651
+msgid "Invoking help on CVS"
+msgstr "CVS kılavuzu açılıyor"
+
+#: cervisiapart.cpp:1687
+msgid "Done"
+msgstr "Bitti"
+
+#: cervisiapart.cpp:1696
+msgid "A CVS commit to repository %1 is done"
+msgstr "%1 deposuna bir CVS teslim etmesi tamamlandı"
+
+#: cervisiapart.cpp:1717
+msgid ""
+"This is not a CVS folder.\n"
+"If you did not intend to use Cervisia, you can switch view modes within "
+"Konqueror."
+msgstr ""
+"Bu bir CVS dizini değil.\n"
+"Eğer Cervisia'yı kullanmayı düşünmüyorsanız, Konqueror içindeki görünüm kipleri "
+"arasında değişim yapabilirsiniz."
+
+#: cervisiashell.cpp:53
+msgid "The Cervisia library could not be loaded."
+msgstr "Cervisia Kütüphanesi yüklenemedi."
+
+#: cervisiashell.cpp:97
+msgid "Allows you to configure the toolbar"
+msgstr "Araç çubuğunu yapılandırmanızı sağlar"
+
+#: cervisiashell.cpp:103
+msgid "Allows you to customize the keybindings"
+msgstr "Tuş kısayollarını özelleştirmenizi sağlar"
+
+#: cervisiashell.cpp:108
+msgid "Exits Cervisia"
+msgstr "Cervisia Çıkışları"
+
+#: cervisiashell.cpp:116
+msgid "Invokes the KDE help system with the Cervisia documentation"
+msgstr "Cervisia belgelerini göstermek için KDE yardım sistemini çalıştırır"
+
+#: cervisiashell.cpp:121
+msgid "Opens the bug report dialog"
+msgstr "Hata bildirme diyaloğu açar"
+
+#: cervisiashell.cpp:126
+msgid "Displays the version number and copyright information"
+msgstr "Sürüm numarasını ve telif hakkı bilgilerini gösterir"
+
+#: cervisiashell.cpp:131
+msgid "Displays the information about KDE and its version number"
+msgstr "KDE ve sürümü hakkındaki bilgileri gösterir"
+
+#: changelogdlg.cpp:44
+msgid "Edit ChangeLog"
+msgstr "Günlüğü Düzenle"
+
+#: changelogdlg.cpp:81
+msgid "The ChangeLog file could not be written."
+msgstr "Günlük dosyası yazılamadı."
+
+#: changelogdlg.cpp:101
+msgid "A ChangeLog file does not exist. Create one?"
+msgstr "Bir günlük dosyası yok. Oluşturulsun mu?"
+
+#: changelogdlg.cpp:103
+msgid "Create"
+msgstr "Oluştur"
+
+#: changelogdlg.cpp:112
+msgid "The ChangeLog file could not be read."
+msgstr "Günlük dosyası okunamadı."
+
+#: checkoutdlg.cpp:54 checkoutdlg.cpp:345
+msgid "CVS Checkout"
+msgstr "CVS İşleyiş Kontrolü"
+
+#: checkoutdlg.cpp:54
+msgid "CVS Import"
+msgstr "CVS İçe Aktarma"
+
+#: checkoutdlg.cpp:79 checkoutdlg.cpp:95
+msgid "&Module:"
+msgstr "&Modül:"
+
+#: checkoutdlg.cpp:86 checkoutdlg.cpp:100 mergedlg.cpp:56 tagdlg.cpp:60
+#: updatedlg.cpp:56
+msgid "Fetch &List"
+msgstr "&Listeyi al"
+
+#: checkoutdlg.cpp:109
+msgid "&Branch tag:"
+msgstr "&Dal etiketi:"
+
+#: checkoutdlg.cpp:116
+msgid "Re&cursive checkout"
+msgstr "Özyinele&meli işleyiş kontrolü"
+
+#: checkoutdlg.cpp:140
+msgid "Working &folder:"
+msgstr "Çalışma &dizini:"
+
+#: checkoutdlg.cpp:149
+msgid "&Vendor tag:"
+msgstr "Ü&retici etiketi:"
+
+#: checkoutdlg.cpp:156
+msgid "&Release tag:"
+msgstr "&Dağıtım etiketi:"
+
+#: checkoutdlg.cpp:163
+msgid "&Ignore files:"
+msgstr "&Yoksayılan dosyalar:"
+
+#: checkoutdlg.cpp:170
+msgid "&Comment:"
+msgstr "&Açıklama:"
+
+#: checkoutdlg.cpp:174
+msgid "Import as &binaries"
+msgstr "Çalıştırıla&bilir olarak dahil et"
+
+#: checkoutdlg.cpp:178
+msgid "Use file's modification time as time of import"
+msgstr ""
+
+#: checkoutdlg.cpp:186
+msgid "Chec&k out as:"
+msgstr ""
+
+#: checkoutdlg.cpp:189
+msgid "Ex&port only"
+msgstr "Sadece &Dışa Aktarma"
+
+#: checkoutdlg.cpp:290
+msgid "Please choose an existing working folder."
+msgstr "Lütfen mevcut bir çalışma dizinini seçin."
+
+#: checkoutdlg.cpp:295 checkoutdlg.cpp:380
+msgid "Please specify a module name."
+msgstr "Lütfen bir modül ismi belirtin."
+
+#: checkoutdlg.cpp:304
+msgid "Please specify a vendor tag and a release tag."
+msgstr "Lütfen bir üretici ve dağıtım etiketi belirtin."
+
+#: checkoutdlg.cpp:310
+msgid ""
+"Tags must start with a letter and may contain\n"
+"letters, digits and the characters '-' and '_'."
+msgstr ""
+"Bir etiket bir harfle başlamalı, harfler,\n"
+"rakamlar ile '-' ve '_' karakterleri dışında\n"
+"karakter içermemelidir."
+
+#: checkoutdlg.cpp:320
+msgid "A branch must be specified for export."
+msgstr ""
+
+#: checkoutdlg.cpp:374
+msgid "Please specify a repository."
+msgstr "Lütfen bir depo belirtin."
+
+#: checkoutdlg.cpp:390
+msgid "CVS Remote Log"
+msgstr "CVS Uzak Günlüğü"
+
+#: commitdlg.cpp:57
+msgid "CVS Commit"
+msgstr "CVS Gönderme"
+
+#: commitdlg.cpp:66
+msgid "Commit the following &files:"
+msgstr "Aşağıdaki d&osyaları gönder:"
+
+#: commitdlg.cpp:80
+msgid "Older &messages:"
+msgstr "Eski &iletiler:"
+
+#: commitdlg.cpp:90
+msgid "&Log message:"
+msgstr "&Günlük iletisi:"
+
+#: commitdlg.cpp:100
+msgid "Use log message &template"
+msgstr "Günlük mesaj şablonu kullan"
+
+#: commitdlg.cpp:106 logdlg.cpp:64
+msgid "&Diff"
+msgstr "&Diff"
+
+#: commitdlg.cpp:179
+msgid "Current"
+msgstr "Şimdiki"
+
+#: cvsinitdlg.cpp:36
+msgid "Create New Repository (cvs init)"
+msgstr "Yeni Depo Oluştur (cvs init)"
+
+#: cvsinitdlg.cpp:42
+msgid "Repository folder:"
+msgstr "Depo dizini:"
+
+#: diffdlg.cpp:82
+msgid "Synchronize scroll bars"
+msgstr "Kaydırma çubuklarını eşzamanla"
+
+#: diffdlg.cpp:94 diffdlg.cpp:413
+msgid "%1 differences"
+msgstr "%1 farklılık"
+
+#: diffdlg.cpp:225
+#, c-format
+msgid "CVS Diff: %1"
+msgstr "Fark Kipi: %1"
+
+#: diffdlg.cpp:227
+msgid "Repository:"
+msgstr "Depo:"
+
+#: diffdlg.cpp:228 diffdlg.cpp:231
+msgid "Revision "
+msgstr "Sürüm "
+
+#: diffdlg.cpp:230
+msgid "Working dir:"
+msgstr "Çalışma dizini:"
+
+#: diffdlg.cpp:411 resolvedlg.cpp:386
+msgid "%1 of %2"
+msgstr "%2nin %1i"
+
+#: entry_status.cpp:37
+msgid "Locally Modified"
+msgstr "Yerel Olarak Değiştirilmiş"
+
+#: entry_status.cpp:40
+msgid "Locally Added"
+msgstr "Yerel olarak Eklenmiş"
+
+#: entry_status.cpp:43
+msgid "Locally Removed"
+msgstr "Yerel olarak Silinmiş"
+
+#: entry_status.cpp:46
+msgid "Needs Update"
+msgstr "Güncelleme Gerekir"
+
+#: entry_status.cpp:49
+msgid "Needs Patch"
+msgstr "Yama Gerekir"
+
+#: entry_status.cpp:52
+msgid "Needs Merge"
+msgstr "Birleştirme Gerekir"
+
+#: entry_status.cpp:55
+msgid "Up to Date"
+msgstr "Güncel"
+
+#: entry_status.cpp:58
+msgid "Conflict"
+msgstr "Çelişki"
+
+#: entry_status.cpp:61
+msgid "Updated"
+msgstr "Güncellenen"
+
+#: entry_status.cpp:64
+msgid "Patched"
+msgstr "Yamalı"
+
+#: entry_status.cpp:67
+msgid "Removed"
+msgstr "Silinmiş"
+
+#: entry_status.cpp:70
+msgid "Not in CVS"
+msgstr "CVS'de değil"
+
+#: entry_status.cpp:73
+msgid "Unknown"
+msgstr "Bilinmeyen"
+
+#: historydlg.cpp:117 historydlg.cpp:363
+msgid "Commit, Modified "
+msgstr "Gönderme, Değiştirilmiş "
+
+#: historydlg.cpp:118 historydlg.cpp:364
+msgid "Commit, Added "
+msgstr "Gönderme, Ekli "
+
+#: historydlg.cpp:119 historydlg.cpp:365
+msgid "Commit, Removed "
+msgstr "Gönderme, Silinmiş "
+
+#: historydlg.cpp:125 historydlg.cpp:355
+msgid "Checkout "
+msgstr "İşleyiş kontrolü"
+
+#: historydlg.cpp:131 loginfo.cpp:64
+msgid "Tag"
+msgstr "Etiket"
+
+#: historydlg.cpp:155 loglist.cpp:120
+msgid "Date"
+msgstr "Tarih"
+
+#: historydlg.cpp:156
+msgid "Event"
+msgstr "Eylem"
+
+#: historydlg.cpp:157 loglist.cpp:119
+msgid "Author"
+msgstr "Yazar"
+
+#: historydlg.cpp:158 loglist.cpp:118 updateview.cpp:53
+msgid "Revision"
+msgstr "Sürüm"
+
+#: historydlg.cpp:160
+msgid "Repo Path"
+msgstr "Depo Yolu"
+
+#: historydlg.cpp:164
+msgid "Show c&ommit events"
+msgstr "&Gönderme olaylarını göster"
+
+#: historydlg.cpp:167
+msgid "Show ch&eckout events"
+msgstr "İşl&eyiş kontrolü olaylarını göster"
+
+#: historydlg.cpp:170
+msgid "Show &tag events"
+msgstr "&Etiket olaylarını göster"
+
+#: historydlg.cpp:173
+msgid "Show &other events"
+msgstr "&Diğer eylemleri göster"
+
+#: historydlg.cpp:176
+msgid "Only &user:"
+msgstr "Sadece &kullanıcı:"
+
+#: historydlg.cpp:178
+msgid "Only &filenames matching:"
+msgstr "Sadece eşleşen d&osya adları:"
+
+#: historydlg.cpp:180
+msgid "Only &folders matching:"
+msgstr "Sadece eşleşen d&izinler:"
+
+#: historydlg.cpp:313 historydlg.cpp:319
+msgid "CVS History"
+msgstr "CVS Geçmişi"
+
+#: historydlg.cpp:356
+msgid "Tag "
+msgstr "Etiket "
+
+#: historydlg.cpp:357
+msgid "Release "
+msgstr "Dağıtım "
+
+#: historydlg.cpp:358
+msgid "Update, Deleted "
+msgstr "Güncelle, Silinen "
+
+#: historydlg.cpp:359
+msgid "Update, Copied "
+msgstr "Güncelle, Kopyalanan "
+
+#: historydlg.cpp:360
+msgid "Update, Merged "
+msgstr "Güncelle, Katıştırılan "
+
+#: historydlg.cpp:361
+msgid "Update, Conflict "
+msgstr "Güncelle, Çelişen "
+
+#: historydlg.cpp:362
+#, fuzzy
+msgid "Update, Patched "
+msgstr "Güncelle, Silinen "
+
+#: historydlg.cpp:366
+msgid "Unknown "
+msgstr "Bilinmeyen "
+
+#: logdlg.cpp:63
+msgid "&Annotate"
+msgstr "&Değişiklik Bilgileri"
+
+#: logdlg.cpp:86
+msgid "S&earch:"
+msgstr ""
+
+#: logdlg.cpp:98
+msgid "&Tree"
+msgstr "&Ağaç"
+
+#: logdlg.cpp:99
+msgid "&List"
+msgstr "&Liste"
+
+#: logdlg.cpp:100
+msgid "CVS &Output"
+msgstr "&CVS Çıktısı"
+
+#: logdlg.cpp:105
+msgid ""
+"Choose revision A by clicking with the left mouse button,\n"
+"revision B by clicking with the middle mouse button."
+msgstr ""
+"A sürümünü seçmek için sol fare tuşunu,\n"
+"B sürümünü seçmek için orta fare tuşunu kullanınız."
+
+#: logdlg.cpp:134
+msgid "Revision A:"
+msgstr "A sürümü:"
+
+#: logdlg.cpp:134
+msgid "Revision B:"
+msgstr "B sürümü:"
+
+#: logdlg.cpp:142
+msgid "Select by tag:"
+msgstr "Etikete göre Seçim:"
+
+#: logdlg.cpp:150
+msgid "Author:"
+msgstr "Yazar:"
+
+#: logdlg.cpp:157
+msgid "Date:"
+msgstr "Tarih:"
+
+#: logdlg.cpp:164
+msgid "Comment/Tags:"
+msgstr "Yorum/Etiketler:"
+
+#: logdlg.cpp:180
+msgid ""
+"This revision is used when you click Annotate.\n"
+"It is also used as the first item of a Diff operation."
+msgstr ""
+"Değişiklik Bilgilerinde tıkladığınızda bu sürüm kullanılır.\n"
+"Ayrıca, bir fark işleminin ilk öğesi olarak da kullanılır."
+
+#: logdlg.cpp:183
+msgid "This revision is used as the second item of a Diff operation."
+msgstr "Bu sürüm bir Fark işleminin ikinci öğesi olarak kullanılmıştır."
+
+#: logdlg.cpp:198
+msgid ""
+"_: to view something\n"
+"&View"
+msgstr "&Görüntüle"
+
+#: logdlg.cpp:199
+msgid "Create Patch..."
+msgstr "Yama Oluştur..."
+
+#: logdlg.cpp:236
+#, c-format
+msgid "CVS Log: %1"
+msgstr "CVS Günlüğü: %1"
+
+#: logdlg.cpp:242
+msgid "CVS Log"
+msgstr "Günlük Kipi"
+
+#: logdlg.cpp:390
+msgid " (Branchpoint)"
+msgstr " (Branş başlangıcı)"
+
+#: logdlg.cpp:410
+msgid "Please select revision A or B first."
+msgstr "Lütfen önce A ve B sürümlerini seçin."
+
+#: logdlg.cpp:431
+msgid "View File"
+msgstr "Dosyayı Görüntüle"
+
+#: logdlg.cpp:450 logdlg.cpp:509
+msgid "Please select revision A or revisions A and B first."
+msgstr "Lütfen öncelikle sürüm A veya sürüm A ve B seçin."
+
+#: loginfo.cpp:58
+msgid "Branchpoint"
+msgstr "Branş başlangıcı"
+
+#: loginfo.cpp:61
+msgid "On Branch"
+msgstr "Branş"
+
+#: loglist.cpp:121
+msgid "Branch"
+msgstr "Branş"
+
+#: loglist.cpp:122
+msgid "Comment"
+msgstr "Açıklama"
+
+#: loglist.cpp:123
+msgid "Tags"
+msgstr "Etiketler"
+
+#: logplainview.cpp:56
+#, c-format
+msgid "revision %1"
+msgstr "sürüm %1"
+
+#: logplainview.cpp:59
+msgid "Select for revision A"
+msgstr "Sürüm A için Seç"
+
+#: logplainview.cpp:62
+msgid "Select for revision B"
+msgstr "Sürüm B için Seç"
+
+#: logplainview.cpp:65
+msgid "date: %1; author: %2"
+msgstr "tarih: %1; yazar: %2"
+
+#: main.cpp:143
+msgid "The sandbox to be loaded"
+msgstr "Yüklenecek çalışma dizini"
+
+#: main.cpp:144
+msgid "Show resolve dialog for the given file"
+msgstr "Seçili dosyada çelişen değişiklikleri çözümlemek için pencere açar"
+
+#: main.cpp:145
+msgid "Show log dialog for the given file"
+msgstr "Verilen dosya için günlük penceresi göster"
+
+#: main.cpp:146
+msgid "Show annotation dialog for the given file"
+msgstr "Verilen dosya için ek açıklama penceresi göster"
+
+#: main.cpp:149
+msgid "Cervisia"
+msgstr "Cervisia"
+
+#: main.cpp:151
+#, fuzzy
+msgid ""
+"Copyright (c) 1999-2002 Bernd Gehrmann\n"
+"Copyright (c) 2002-2007 the Cervisia authors"
+msgstr ""
+"Copyright (c) 1999-2002 Bernd Gehrmann\n"
+"Copyright (c) 2002-2004 the Cervisia authors"
+
+#: main.cpp:161
+msgid "Documentation"
+msgstr "Belgelendirme"
+
+#: mergedlg.cpp:38
+msgid "CVS Merge"
+msgstr "CVS Birleştir"
+
+#: mergedlg.cpp:49
+msgid "Merge from &branch:"
+msgstr "Katıştırılacak &Branş:"
+
+#: mergedlg.cpp:65
+msgid "Merge &modifications:"
+msgstr "Birleştirilecek &değişiklikler:"
+
+#: mergedlg.cpp:68
+msgid "between tag: "
+msgstr "etiket: "
+
+#: mergedlg.cpp:72
+msgid "and tag: "
+msgstr "ile bu etiket:"
+
+#: mergedlg.cpp:76 updatedlg.cpp:71
+msgid "Fetch L&ist"
+msgstr "L&isteyi Al"
+
+#: misc.cpp:85
+msgid "CVS Status"
+msgstr "Durum Bilgileri Kipi"
+
+#: misc.cpp:218
+msgid ""
+"A file named \"%1\" already exists. Are you sure you want to overwrite it?"
+msgstr ""
+
+#: misc.cpp:219
+msgid "Overwrite File?"
+msgstr "Dosya Üzerine Yazılsın mı?"
+
+#: misc.cpp:220
+msgid "&Overwrite"
+msgstr "Özerine Yazılsın mı?"
+
+#: misc.cpp:220
+msgid "Overwrite the file"
+msgstr "Dosyayı üzerine yaz"
+
+#: patchoptiondlg.cpp:38
+msgid "Output Format"
+msgstr "Çıktı Biçimi"
+
+#: patchoptiondlg.cpp:44
+msgid "Context"
+msgstr "Bağlam"
+
+#: patchoptiondlg.cpp:45
+msgid "Normal"
+msgstr "Normal"
+
+#: patchoptiondlg.cpp:46
+msgid "Unified"
+msgstr "Birleştirilmiş"
+
+#: patchoptiondlg.cpp:49
+msgid "&Number of context lines:"
+msgstr "&Bğlam satırlarının sayısı:"
+
+#: patchoptiondlg.cpp:59
+msgid "Ignore Options"
+msgstr "&Yoksayılan Seçenekler:"
+
+#: patchoptiondlg.cpp:62
+msgid "Ignore added or removed empty lines"
+msgstr "Eklenen veya kaldırılan boş satırları yoksay"
+
+#: patchoptiondlg.cpp:64
+msgid "Ignore changes in the amount of whitespace"
+msgstr "Ayırma boşluğu miktarındaki değişiklikleri yoksay"
+
+#: patchoptiondlg.cpp:66
+msgid "Ignore all whitespace"
+msgstr "Bütün ayırma boşluklarını yoksay"
+
+#: patchoptiondlg.cpp:67
+msgid "Ignore changes in case"
+msgstr "Örnekteki değişiklikleri yoksay"
+
+#: protocolview.cpp:127
+msgid ""
+"[Exited with status %1]\n"
+msgstr ""
+"[Durum %1 ile Çıktı]\n"
+
+#: protocolview.cpp:129
+msgid ""
+"[Finished]\n"
+msgstr ""
+"[Bitti]\n"
+
+#: protocolview.cpp:132
+msgid ""
+"[Aborted]\n"
+msgstr ""
+"[iptal edildi]\n"
+
+#. i18n: file cervisiaui.rc line 42
+#: rc.cpp:21 rc.cpp:69
+#, no-c-format
+msgid "&Advanced"
+msgstr "&Gelişmiş"
+
+#. i18n: file cervisiaui.rc line 62
+#: rc.cpp:24 rc.cpp:72
+#, no-c-format
+msgid "&Repository"
+msgstr "&Depo"
+
+#. i18n: file settingsdlg_advanced.ui line 41
+#: rc.cpp:36
+#, no-c-format
+msgid "&Timeout after which a progress dialog appears (in ms):"
+msgstr "Bir işlem penceresi göründükten sonraki &zamanaşımı (ms):"
+
+#. i18n: file settingsdlg_advanced.ui line 52
+#: rc.cpp:39
+#, no-c-format
+msgid "Default compression &level:"
+msgstr "Ö&ntanımlı sıkıştırma seviyesi:"
+
+#. i18n: file settingsdlg_advanced.ui line 63
+#: rc.cpp:42
+#, no-c-format
+msgid "Utilize a running or start a new ssh-agent process"
+msgstr "Bir ssh-agent sürecine bir çalışma veya başlangıç kullan"
+
+#. i18n: file cervisiapart.kcfg line 24
+#: rc.cpp:45
+#, no-c-format
+msgid ""
+"The foreground color used to highlight files with a conflict in the file view."
+msgstr ""
+
+#. i18n: file cervisiapart.kcfg line 33
+#: rc.cpp:48
+#, fuzzy, no-c-format
+msgid "Delay (ms) until the progress dialog appears."
+msgstr "Bir işlem penceresi göründükten sonraki &zamanaşımı (ms):"
+
+#: repositorydlg.cpp:147
+msgid "Logged in"
+msgstr "Girildi"
+
+#: repositorydlg.cpp:147
+msgid "Not logged in"
+msgstr "Girilmedi"
+
+#: repositorydlg.cpp:149
+msgid "No login required"
+msgstr "Kimlik kanıtlama gerekmiyor"
+
+#: repositorydlg.cpp:157
+msgid "Configure Access to Repositories"
+msgstr "Depolara Erişim Yapılandırması"
+
+#: repositorydlg.cpp:170
+msgid "Repository"
+msgstr "Depo"
+
+#: repositorydlg.cpp:171
+msgid "Method"
+msgstr "Yöntem"
+
+#: repositorydlg.cpp:172
+msgid "Compression"
+msgstr "Sıkıştırma"
+
+#: repositorydlg.cpp:173 settingsdlg.cpp:296 updateview.cpp:52
+msgid "Status"
+msgstr "Durum"
+
+#: repositorydlg.cpp:182
+msgid "&Add..."
+msgstr "&Ekle..."
+
+#: repositorydlg.cpp:183
+msgid "&Modify..."
+msgstr "&Düzenle..."
+
+#: repositorydlg.cpp:186
+msgid "Login..."
+msgstr "Giriş..."
+
+#: repositorydlg.cpp:187
+msgid "Logout"
+msgstr "Çıkış"
+
+#: repositorydlg.cpp:337
+msgid "This repository is already known."
+msgstr "Bu depo zaten biliniyor."
+
+#: repositorydlg.cpp:426
+msgid "Login failed."
+msgstr "Giriş hatalı."
+
+#: repositorydlg.cpp:451
+msgid "CVS Logout"
+msgstr "CVS Çıkış"
+
+#: resolvedlg.cpp:118
+msgid "Your version (A):"
+msgstr "Sürümünüz (A):"
+
+#: resolvedlg.cpp:126
+msgid "Other version (B):"
+msgstr "Diğer sürüm (B):"
+
+#: resolvedlg.cpp:137
+msgid "Merged version:"
+msgstr "Katışık sürüm:"
+
+#: resolvedlg.cpp:225
+#, c-format
+msgid "CVS Resolve: %1"
+msgstr "CVS Çözümleme: %1"
+
+#: resolvedlg.cpp:388
+msgid "%1 conflicts"
+msgstr "%1 çelişki"
+
+#: settingsdlg.cpp:81
+msgid "Configure Cervisia"
+msgstr "Cervisia'yı Yapılandır"
+
+#: settingsdlg.cpp:237
+msgid "General"
+msgstr "Genel"
+
+#: settingsdlg.cpp:241
+msgid "&User name for the change log editor:"
+msgstr "Günlük düzenleyici için &kullanıcı ismi:"
+
+#: settingsdlg.cpp:249
+msgid "&Path to CVS executable, or 'cvs':"
+msgstr "&CVS komutu için yol:"
+
+#: settingsdlg.cpp:265
+#, fuzzy
+msgid "Diff Viewer"
+msgstr "Fark yerleştirme:"
+
+#: settingsdlg.cpp:268
+msgid "&Number of context lines in diff dialog:"
+msgstr "&Farklar penceresindeki bağlam satırlarının sayısı:"
+
+#: settingsdlg.cpp:273
+msgid "Additional &options for cvs diff:"
+msgstr "cvs diff için &ek seçenekler:"
+
+#: settingsdlg.cpp:277
+msgid "Tab &width in diff dialog:"
+msgstr "Fark penceresi için &sekme uzunluğu:"
+
+#: settingsdlg.cpp:282
+msgid "External diff &frontend:"
+msgstr "Dış fark &arayüzü:"
+
+#: settingsdlg.cpp:299
+msgid ""
+"When opening a sandbox from a &remote repository,\n"
+"start a File->Status command automatically"
+msgstr ""
+"Bir &Uzak depodan bir çalışma dizini açarken,\n"
+"Dosya->Durum komutunu otomatik olarak çalıştır."
+
+#: settingsdlg.cpp:301
+msgid ""
+"When opening a sandbox from a &local repository,\n"
+"start a File->Status command automatically"
+msgstr ""
+"Bir &Yerel depodan bir çalışma dizini açarken,\n"
+"Dosya->Durum komutunu otomatik olarak çalıştır."
+
+#: settingsdlg.cpp:314
+msgid "Advanced"
+msgstr "Gelişmiş"
+
+#: settingsdlg.cpp:335
+msgid "Font for &Protocol Window..."
+msgstr "&Protokol Penceresi için Yazıtipi..."
+
+#: settingsdlg.cpp:337
+msgid "Font for A&nnotate View..."
+msgstr "Değişiklik &Bilgileri Görünümü için Yazıtipi..."
+
+#: settingsdlg.cpp:339
+msgid "Font for D&iff View..."
+msgstr "&Fark Görünümü için Yazıtipi..."
+
+#: settingsdlg.cpp:341
+msgid "Font for ChangeLog View..."
+msgstr "Değişiklik Bilgileri Görünümü için Yazıtipi..."
+
+#: settingsdlg.cpp:345
+msgid "Colors"
+msgstr "Renkler"
+
+#: settingsdlg.cpp:349
+msgid "Conflict:"
+msgstr "Çelişki:"
+
+#: settingsdlg.cpp:353
+msgid "Diff change:"
+msgstr "Fark değişimi:"
+
+#: settingsdlg.cpp:357
+msgid "Local change:"
+msgstr "Yerel değişim:"
+
+#: settingsdlg.cpp:361
+msgid "Diff insertion:"
+msgstr "Fark yerleştirme:"
+
+#: settingsdlg.cpp:365
+msgid "Remote change:"
+msgstr "Karşıdaki değişim:"
+
+#: settingsdlg.cpp:369
+msgid "Diff deletion:"
+msgstr "Fark Silme:"
+
+#: settingsdlg.cpp:373
+msgid "Not in cvs:"
+msgstr "CVS'de değil:"
+
+#: settingsdlg.cpp:377
+msgid "Split main window &horizontally"
+msgstr "Ana pencereyi &alt/üst olarak böl"
+
+#: tagdlg.cpp:46
+msgid "CVS Delete Tag"
+msgstr "Etiket Silme Kipi"
+
+#: tagdlg.cpp:46
+msgid "CVS Tag"
+msgstr "Etiketleme Kipi"
+
+#: tagdlg.cpp:58 tagdlg.cpp:75
+msgid "&Name of tag:"
+msgstr "&Etiket ismi:"
+
+#: tagdlg.cpp:81
+msgid "Create &branch with this tag"
+msgstr "Branşı &bu etiketle oluştur"
+
+#: tagdlg.cpp:84
+msgid "&Force tag creation even if tag already exists"
+msgstr "Etiket olsa bile yine de etiketi &oluştur"
+
+#: tagdlg.cpp:117
+msgid "You must define a tag name."
+msgstr "Bir etiket ismi belirtmelisiniz."
+
+#: tagdlg.cpp:125
+msgid ""
+"Tag must start with a letter and may contain letters, digits and the characters "
+"'-' and '_'."
+msgstr ""
+"Bir etiket bir harfle başlamalı ve harfler, rakamlar ile '-' ve '_' "
+"karakterleri dışında karakter içermemelidir."
+
+#: updatedlg.cpp:38
+msgid "CVS Update"
+msgstr "CVS Güncelleme"
+
+#: updatedlg.cpp:49
+msgid "Update to &branch: "
+msgstr "&Güncellenecek branş: "
+
+#: updatedlg.cpp:65
+msgid "Update to &tag: "
+msgstr "Güncellenecek &etiket: "
+
+#: updatedlg.cpp:80
+msgid "Update to &date ('yyyy-mm-dd'):"
+msgstr "&Tarihe güncelle ( 'yyyy-aa-gg' biçiminde veriniz):"
+
+#: updateview.cpp:50
+msgid "File Name"
+msgstr "Dosya Adı"
+
+#: updateview.cpp:51
+#, fuzzy
+msgid "File Type"
+msgstr "Dosya Adı"
+
+#: updateview.cpp:54
+msgid "Tag/Date"
+msgstr "Etiket/Tarih"
+
+#: updateview.cpp:55
+msgid "Timestamp"
+msgstr "Zaman Damgası"
+
+#: watchdlg.cpp:35
+msgid "CVS Watch Add"
+msgstr "Bildirim Ekleme Kipi"
+
+#: watchdlg.cpp:35
+msgid "CVS Watch Remove"
+msgstr "CVS Bildirim Silme"
+
+#: watchdlg.cpp:42
+msgid "Add watches for the following events:"
+msgstr "Aşağıdaki eylemler için bildirim ekle:"
+
+#: watchdlg.cpp:43
+msgid "Remove watches for the following events:"
+msgstr "Aşağıdaki eylemler için bildirimi kaldır:"
+
+#: watchdlg.cpp:46
+msgid "&All"
+msgstr "&Tümü"
+
+#: watchdlg.cpp:51
+msgid "&Only:"
+msgstr "&Sadece:"
+
+#: watchdlg.cpp:59
+msgid "&Commits"
+msgstr "&Gönderiler"
+
+#: watchdlg.cpp:63
+msgid "&Edits"
+msgstr "&Düzenlemeler"
+
+#: watchdlg.cpp:67
+msgid "&Unedits"
+msgstr "&Kaldırılırken Düzenlemeler"
+
+#: watchersdlg.cpp:55
+msgid "Watcher"
+msgstr "İzleyici"
+
+#: watchersdlg.cpp:57
+msgid "Unedit"
+msgstr "Kaldırılan Düzenleme"
+
+#: watchersdlg.cpp:58
+msgid "Commit"
+msgstr "Gönderme"
+
+#: watchersdlg.cpp:78 watchersdlg.cpp:84
+msgid "CVS Watchers"
+msgstr "CVS İzleyicileri"

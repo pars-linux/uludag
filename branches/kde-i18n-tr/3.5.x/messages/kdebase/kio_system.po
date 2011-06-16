@@ -1,0 +1,21 @@
+# translation of kio_system.po to Türkçe
+# Adem Alp YILDIZ <ademalp@kde.org.tr>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kio_system\n"
+"POT-Creation-Date: 2006-04-28 03:54+0200\n"
+"PO-Revision-Date: 2005-01-11 12:28+0200\n"
+"Last-Translator: Adil YILDIZ <adil@kde.org.tr>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: kio_system.cpp:35
+msgid "Protocol name"
+msgstr "Protokol adı"
+
+#: kio_system.cpp:36 kio_system.cpp:37
+msgid "Socket name"
+msgstr "Soket adı"

@@ -1,0 +1,507 @@
+# translation of libkscan.po to Türkçe
+# translation of libkscan.po to Turkish
+# Copyright (C) 2004, 2005 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2002.
+# Tuncay YENİAY <tuncayyeniay@mynet.com>,2002.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Alper Sen <aalpersen@gmail.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: libkscan\n"
+"POT-Creation-Date: 2008-02-01 01:56+0100\n"
+"PO-Revision-Date: 2005-07-15 13:58+0300\n"
+"Last-Translator: Alper Sen <aalpersen@gmail.com>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: devselector.cpp:46
+msgid "Welcome to Kooka"
+msgstr "Kooka'ya Hoşgeldiniz"
+
+#: devselector.cpp:62
+msgid "Select Scan Device"
+msgstr "Tarama Aygıtını Seçin"
+
+#: devselector.cpp:69
+msgid "&Do not ask on startup again, always use this device"
+msgstr "&Açılışta yeniden sorma, hep bu aygıtı kullan"
+
+#: gammadialog.cpp:33
+msgid "Custom Gamma Tables"
+msgstr "Özel Gama Tabloları"
+
+#: gammadialog.cpp:59
+msgid ""
+"<B>Edit the custom gamma table</B><BR>This gamma table is passed to the scanner "
+"hardware."
+msgstr ""
+"<B>Özel gama tablosunu düzenle</B><BR>Bu gama tablosu tarayıcı aygıtına "
+"aktarılacaktır."
+
+#: gammadialog.cpp:67
+msgid "Brightness"
+msgstr "Aydınlık"
+
+#: gammadialog.cpp:72
+msgid "Contrast"
+msgstr "Kontrast"
+
+#: gammadialog.cpp:77
+msgid "Gamma"
+msgstr "Gama"
+
+#: img_canvas.cpp:1025
+msgid "%1x%2 pixel, %3 bit"
+msgstr "%1x%2 piksel, %3 bit"
+
+#: img_canvas.cpp:1034
+msgid "Fit window best"
+msgstr "Pencere en uyguna uydur"
+
+#: img_canvas.cpp:1037
+msgid "Original size"
+msgstr "Orjinal boyut"
+
+#: img_canvas.cpp:1040
+msgid "Fit Width"
+msgstr "Genişliğe Uydur"
+
+#: img_canvas.cpp:1043
+msgid "Fit Height"
+msgstr "Yüksekliğe Uydur"
+
+#: img_canvas.cpp:1046
+msgid "Zoom to %1 %%"
+msgstr "%%1'e Yakınlaştır"
+
+#: img_canvas.cpp:1049
+msgid "Unknown scaling!"
+msgstr "Bilinmeyen boyutlandırma!"
+
+#: imgscaledialog.cpp:46
+msgid "Select Image Zoom"
+msgstr "Resim Odaklama Oranını Seçin"
+
+#: imgscaledialog.cpp:52
+#, c-format
+msgid "25 %"
+msgstr "% 25"
+
+#: imgscaledialog.cpp:58
+#, c-format
+msgid "50 %"
+msgstr "% 50"
+
+#: imgscaledialog.cpp:64
+#, c-format
+msgid "75 %"
+msgstr "% 75"
+
+#: imgscaledialog.cpp:70
+#, c-format
+msgid "100 %"
+msgstr "% 100"
+
+#: imgscaledialog.cpp:76
+#, c-format
+msgid "150 %"
+msgstr "% 150"
+
+#: imgscaledialog.cpp:82
+#, c-format
+msgid "200 %"
+msgstr "% 200"
+
+#: imgscaledialog.cpp:88
+#, c-format
+msgid "300 %"
+msgstr "% 300"
+
+#: imgscaledialog.cpp:94
+#, c-format
+msgid "400 %"
+msgstr "% 400"
+
+#: imgscaledialog.cpp:101
+msgid "Custom scale factor:"
+msgstr "Özel odaklama oranı:"
+
+#: kscandevice.cpp:279
+msgid "the default startup setup"
+msgstr "öntanımlı başlangıç ayarları"
+
+#: kscandevice.cpp:304
+msgid "No scanner selected"
+msgstr "Hiç tarayıcı seçilmedi"
+
+#: kscanslider.cpp:56
+#, c-format
+msgid "Revert value back to its standard value %1"
+msgstr "Değeri kendi standart değeri %1'e geri döndür"
+
+#: massscandialog.cpp:36
+msgid "ADF Scanning"
+msgstr "ADF Tarama"
+
+#: massscandialog.cpp:44
+msgid "<B>Mass Scanning</B>"
+msgstr "<B>Kütle Tarama</B>"
+
+#: massscandialog.cpp:48
+msgid "Scan Parameter"
+msgstr "Tarama Parametresi"
+
+#: massscandialog.cpp:55
+#, c-format
+msgid "Scanning <B>%s</B> with <B>%d</B> dpi"
+msgstr "<B>%s</B>, <B>%d</B> dpi çözünürlükle taranıyor"
+
+#: massscandialog.cpp:59
+#, c-format
+msgid "Storing new images in folder <B>%s</B>"
+msgstr "Yeni resimler <B>%s</B> dizininde saklanıyor"
+
+#: massscandialog.cpp:64
+msgid "Scan Progress"
+msgstr "Tarama İşlemi"
+
+#: massscandialog.cpp:73
+#, c-format
+msgid "Scanning page %1"
+msgstr "%1. sayfa taranıyor"
+
+#: massscandialog.cpp:77
+msgid "Cancel Scan"
+msgstr "Taramayı İptal Et"
+
+#: massscandialog.cpp:86
+msgid "Start Scan"
+msgstr "Taramaya Başla"
+
+#: previewer.cpp:149
+msgid "Scale to W&idth"
+msgstr "&Genişliğe Uydur"
+
+#: previewer.cpp:153
+msgid "Scale to &Height"
+msgstr "&Yüksekliğe uydur"
+
+#: previewer.cpp:162
+msgid "<B>Preview</B>"
+msgstr "<B>Önizleme</B>"
+
+#: previewer.cpp:165
+msgid "Scan Size"
+msgstr "Tarama Boyutu"
+
+#: previewer.cpp:169
+msgid "Custom"
+msgstr "Özel"
+
+#: previewer.cpp:170
+msgid "DIN A4"
+msgstr "A4"
+
+#: previewer.cpp:171
+msgid "DIN A5"
+msgstr "A5"
+
+#: previewer.cpp:172
+msgid "DIN A6"
+msgstr "A6"
+
+#: previewer.cpp:173
+msgid "9x13 cm"
+msgstr "9x13 cm"
+
+#: previewer.cpp:174
+msgid "10x15 cm"
+msgstr "10x15 cm"
+
+#: previewer.cpp:175
+msgid "Letter"
+msgstr "Mektup"
+
+#: previewer.cpp:184
+msgid " Landscape "
+msgstr " Yatay "
+
+#: previewer.cpp:187
+msgid "&Landscape"
+msgstr "&Yatay"
+
+#: previewer.cpp:189
+msgid "P&ortrait"
+msgstr "&Dikey"
+
+#: previewer.cpp:203
+msgid "Auto-Selection"
+msgstr "Otomatik-Seçim"
+
+#: previewer.cpp:206
+#, fuzzy
+msgid "Active on"
+msgstr "etkin"
+
+#: previewer.cpp:207
+msgid ""
+"Check here if you want autodetection\n"
+"of the document on the preview."
+msgstr ""
+"Önizlemede otomatik tanımlama olmasını\n"
+"istiyorsanız burayı seçin."
+
+#: previewer.cpp:212 previewer.cpp:610
+msgid "Black"
+msgstr "Siyah"
+
+#: previewer.cpp:213 previewer.cpp:610
+msgid "White"
+msgstr "Beyaz"
+
+#: previewer.cpp:219
+msgid ""
+"Select whether a scan of the empty\n"
+"scanner glass results in a\n"
+"black or a white image."
+msgstr ""
+"Siyah veya beyaz bir resimde\n"
+"tarayıcı camının sonucun\n"
+"boş tarama olarak çıkıp çıkmadığını seçin."
+
+#: previewer.cpp:224
+msgid "scanner background"
+msgstr "tarayıcı arkaplanı"
+
+#: previewer.cpp:226
+msgid "Thresh&old:"
+msgstr "Başla&ngıç:"
+
+#: previewer.cpp:231
+msgid ""
+"Threshold for autodetection.\n"
+"All pixels higher (on black background)\n"
+"or smaller (on white background)\n"
+"than this are considered to be part of the image."
+msgstr ""
+"Otomatik tanımlama için başlangıç.\n"
+"Bu değerden büyük (siyah arkaplanda)\n"
+"yada küçük (beyaz arkaplanda)\n"
+"değerler resmin parçası olarak algılanacaktır."
+
+#: previewer.cpp:238
+msgid "Dust size:"
+msgstr "Toz boyutu:"
+
+#: previewer.cpp:249
+msgid "Selection"
+msgstr "Seçim"
+
+#: previewer.cpp:251
+msgid "width - mm"
+msgstr "genişlik - mm"
+
+#: previewer.cpp:252
+msgid "height - mm"
+msgstr "yükseklik - mm"
+
+#: previewer.cpp:261
+msgid "Size:"
+msgstr "Boyut:"
+
+#: previewer.cpp:263
+msgid ""
+"This size field shows how large the uncompressed image will be.\n"
+"It tries to warn you, if you try to produce huge images by \n"
+"changing its background color."
+msgstr ""
+"Bu alan sıkıştırılmış dosyanın ne kadar büyük olacağını gösterir. \n"
+"Arkaplan resmini değiştirdiğiniz zaman boyu artan dosyalar için \n"
+"sizi uyaracaktır."
+
+#: previewer.cpp:266
+msgid "-"
+msgstr "-"
+
+#: previewer.cpp:480
+msgid "width %1 mm"
+msgstr "genişlik %1 mm"
+
+#: previewer.cpp:484
+msgid "height %1 mm"
+msgstr "yükseklik %1 mm"
+
+#: previewer.cpp:608
+msgid ""
+"The autodetection of images on the preview depends on the background color of "
+"the preview image (Think of a preview of an empty scanner).\n"
+"Please select whether the background of the preview image is black or white"
+msgstr ""
+"Önizlemeden otomatik resim tanıma önizlenen resmin arkaplan rengine dayanır "
+"(Boş bir tarayıcının önizlemesini düşünün).\n"
+"Önizlenen resmin arkaplanın siyah mı beyaz mı olduğunu seçin"
+
+#: previewer.cpp:609
+msgid "Image Autodetection"
+msgstr "Resim Otamatik Tanıma"
+
+#: scandialog.cpp:75
+msgid "&Scanning"
+msgstr "&Tarama"
+
+#: scandialog.cpp:113
+msgid "Startup Options"
+msgstr "Başlangıç Seçenekleri"
+
+#: scandialog.cpp:114
+msgid "Note: changing these options will affect the scan plugin on next start."
+msgstr "Not: bu seçenek sonraki açılışta tarayıcı eklentisini etkileyecektir."
+
+#: scandialog.cpp:119
+msgid "&Ask for the scan device on plugin startup"
+msgstr "&Başlangıçta tarayıcı aygıtını ara"
+
+#: scandialog.cpp:121
+msgid ""
+"You can uncheck this if you do not want to be asked which scanner to use on "
+"startup."
+msgstr ""
+"Açılış sırasında hangi tarayıcıyı kullanacağınızın sorulmaması için burayı "
+"kapatabilirsiniz."
+
+#: scandialog.cpp:125
+msgid "&Query the network for scan devices"
+msgstr "&Ağı tarayıcı aygıtları için ara"
+
+#: scandialog.cpp:127
+msgid "Check this if you want to query for configured network scan stations."
+msgstr "Bu seçenek işaretlenirse ağ üzerindeki tarama aygıtları bulunacaktır."
+
+#: scanparams.cpp:118
+msgid "<B>Scanner Settings</B>"
+msgstr "<B>Tarayıcı Ayarları</B>"
+
+#: scanparams.cpp:159
+msgid "Final S&can"
+msgstr "&Son Tarama"
+
+#: scanparams.cpp:161
+msgid "&Preview Scan"
+msgstr "&Tarama Önizleme"
+
+#: scanparams.cpp:166
+msgid "Scanning in progress"
+msgstr "Tarama işlemi devam ediyor"
+
+#: scanparams.cpp:279
+msgid "Source..."
+msgstr "Kaynak..."
+
+#: scanparams.cpp:341
+msgid "Resolution"
+msgstr "Çözünürlük"
+
+#: scanparams.cpp:459
+msgid "Custom Gamma Table"
+msgstr "Özel Gama Tablosu"
+
+#: scanparams.cpp:465
+msgid "Edit..."
+msgstr "Düzenle..."
+
+#: scanparams.cpp:500
+msgid "Acquire a gray preview even in color mode (faster)"
+msgstr "Renkli kipte olsa bile gri önizleme göster (daha hızlı)"
+
+#: scanparams.cpp:518
+msgid ""
+"<B>Problem: No Scanner was found</B><P>Your system does not provide a SANE <I>"
+"(Scanner Access Now Easy)</I> installation, which is required by the KDE scan "
+"support.<P>Please install and configure SANE correctly on your system.<P>"
+"Visit the SANE homepage under http://www.sane-project.org to find out more "
+"about SANE installation and configuration. "
+msgstr ""
+"<B>Hata: Hiç tarayıcı aygıtı bulunamadı</B><P>Sisteminizde SANE <I>"
+"(Scanner Access Now Easy)</I> paketi kurulu değil. Bu paket KDE tarama "
+"sisteminin kullanılması için gereklidir.<P>Lütfen SANE paketini kurup düzgün "
+"şekilde yapılandırın.<P>Lütfen http://www.mostang.com/sane adresine gidip SANE "
+"paketini sisteminize kurun. "
+
+#: scanparams.cpp:589
+msgid "*|All Files (*)"
+msgstr "*|Tüm Dosyalar (*)"
+
+#: scanparams.cpp:599
+msgid "*.pnm|PNM Image Files (*.pnm)"
+msgstr "*.pnm|PNM Resim Dosyaları (*.pnm)"
+
+#: scanparams.cpp:605
+msgid "Select Input File"
+msgstr "Girdi Dosyasını Seçin"
+
+#: scanparams.cpp:670
+msgid "SANE debug (pnm only)"
+msgstr "SANE hata ayıklama (sadece pnm)"
+
+#: scanparams.cpp:675
+msgid "virt. Scan (all Qt modes)"
+msgstr "Sanal Tarama (Tüm Qt kipleri)"
+
+#: scanparams.cpp:736
+msgid "convert the image to gray on loading"
+msgstr "yüklerken resmi griye çevir"
+
+#: scanparams.cpp:745
+msgid "Simulate three-pass acquiring"
+msgstr "Üç geçişli tarama yap"
+
+#: scanparams.cpp:775
+msgid "KSANE"
+msgstr "KSANE"
+
+#: scanparams.cpp:776
+msgid ""
+"The filename for virtual scanning is not set.\n"
+"Please set the filename first."
+msgstr ""
+"Görsel tarama için dosya adı belirtilmedi.\n"
+"Önce dosya adını seçmelisiniz."
+
+#: scansourcedialog.cpp:49
+msgid "Scan Source Selection"
+msgstr "Tarama Kaynağı Seçimi"
+
+#: scansourcedialog.cpp:54
+msgid ""
+"<B>Source selection</B><P>Note that you may see more sources than actually "
+"exist"
+msgstr ""
+"<B>Kaynak seçimi</B><P>Gerçekte bulunandan daha fazla kaynak görebilirsiniz"
+
+#: scansourcedialog.cpp:60
+msgid "Select the Scanner document source:"
+msgstr "Tarayıcı belge kaynağını seçin:"
+
+#: scansourcedialog.cpp:71
+msgid "Advanced ADF-Options"
+msgstr "Gelişmiş ADF Seçenekleri"
+
+#: scansourcedialog.cpp:76
+msgid "Scan until ADF reports out of paper"
+msgstr "ADF kağıt bitti mesajı verinceye kadar tara"
+
+#: scansourcedialog.cpp:80
+msgid "Scan only one sheet of ADF per click"
+msgstr "Her tıklamada bir ADF kağıdı kullan"
+
+#: sizeindicator.cpp:69
+msgid "%1 kB"
+msgstr "%1 kB"
+
+#: sizeindicator.cpp:76
+msgid "%1 MB"
+msgstr "%1 MB"

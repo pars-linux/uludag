@@ -1,0 +1,886 @@
+# translation of kcalc.po to turkish
+# translation of kcalc.po to Türkçe
+# translation of kcalc.po to
+# translation of kcalc.po to Turkish
+# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2002,2003, 2004.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Engin Çağatay <engincagatay@yahoo.com>, 2004.
+# Onur Küçük <onur@uludag.org.tr>, 2004.
+# İsmail Şimşek <simsek@kde.org.tr>, 2005.
+# Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcalc\n"
+"POT-Creation-Date: 2008-07-08 01:19+0200\n"
+"PO-Revision-Date: 2005-06-28 22:22+0000\n"
+"Last-Translator: Adem Alp YILDIZ <ademalp@kde.org.tr>\n"
+"Language-Team: turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.1\n"
+"Plural-Forms:  nplurals=1; plural=0;\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Onur Küçük, İsmail Şimşek"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org, simsek@kde.org.tr"
+
+#: kcalc.cpp:77
+msgid "KDE Calculator"
+msgstr "KDE Hesap Makinesi"
+
+#: kcalc.cpp:107
+msgid "Base"
+msgstr "Taban"
+
+#: kcalc.cpp:112
+#, fuzzy
+msgid "He&x"
+msgstr "O&naltılık"
+
+#: kcalc.cpp:114
+msgid "Switch base to hexadecimal."
+msgstr "Tabanı onaltılık sisteme dönüştür."
+
+#: kcalc.cpp:116
+msgid "&Dec"
+msgstr "&Onluk"
+
+#: kcalc.cpp:118
+msgid "Switch base to decimal."
+msgstr "Tabanı onluk sisteme dönüştür."
+
+#: kcalc.cpp:120
+msgid "&Oct"
+msgstr "&Sekizlik"
+
+#: kcalc.cpp:122
+msgid "Switch base to octal."
+msgstr "Tabanı sekizlik sisteme dönüştür."
+
+#: kcalc.cpp:124
+msgid "&Bin"
+msgstr "İk&ilik"
+
+#: kcalc.cpp:126
+msgid "Switch base to binary."
+msgstr "Tabanı ikili sisteme dönüştür."
+
+#: kcalc.cpp:130
+msgid "&Angle"
+msgstr "&Açı"
+
+#: kcalc.cpp:132
+msgid "Choose the unit for the angle measure"
+msgstr "Açı ölçü birimini seçin"
+
+#: kcalc.cpp:136
+msgid "Degrees"
+msgstr "Derece"
+
+#: kcalc.cpp:137
+msgid "Radians"
+msgstr "Radyan"
+
+#: kcalc.cpp:138
+msgid "Gradians"
+msgstr "Gradyan"
+
+#: kcalc.cpp:147
+msgid "Inverse mode"
+msgstr "Ters kip"
+
+#: kcalc.cpp:170
+msgid "Modulo"
+msgstr "Mod"
+
+#: kcalc.cpp:171
+msgid "Integer division"
+msgstr "Tamsayı bölmesi"
+
+#: kcalc.cpp:180
+msgid "Reciprocal"
+msgstr "Evrik değer"
+
+#: kcalc.cpp:187
+msgid "Factorial"
+msgstr "Faktöryel"
+
+#: kcalc.cpp:198
+msgid "Square"
+msgstr "Kare"
+
+#: kcalc.cpp:199
+msgid "Third power"
+msgstr "Küp"
+
+#: kcalc.cpp:207
+msgid "Square root"
+msgstr "Kare kök"
+
+#: kcalc.cpp:208
+msgid "Cube root"
+msgstr "Küp kök"
+
+#: kcalc.cpp:220
+msgid "x to the power of y"
+msgstr "x nin y kuvveti"
+
+#: kcalc.cpp:221
+msgid "x to the power of 1/y"
+msgstr "x'in 1/y kuvveti"
+
+#: kcalc.cpp:420
+msgid "&Statistic Buttons"
+msgstr "İ&statistiksel Düğmeler"
+
+#: kcalc.cpp:426
+msgid "Science/&Engineering Buttons"
+msgstr ""
+
+#: kcalc.cpp:432
+msgid "&Logic Buttons"
+msgstr "&Lojik Düğmeler"
+
+#: kcalc.cpp:438
+msgid "&Constants Buttons"
+msgstr "Sa&bitler Düğmeleri"
+
+#: kcalc.cpp:445
+msgid "&Show All"
+msgstr "&Tümünü Göster"
+
+#: kcalc.cpp:448
+msgid "&Hide All"
+msgstr "&Tümünü Gizle"
+
+#: kcalc.cpp:549
+msgid "Exponent"
+msgstr "Üs"
+
+#: kcalc.cpp:561
+msgid "Multiplication"
+msgstr "Çarpma"
+
+#: kcalc.cpp:565
+msgid "Pressed Multiplication-Button"
+msgstr "Çarpım Düğmesine Basıldı"
+
+#: kcalc.cpp:569
+msgid "Division"
+msgstr "Bölme"
+
+#: kcalc.cpp:575
+msgid "Addition"
+msgstr "Toplama"
+
+#: kcalc.cpp:581
+msgid "Subtraction"
+msgstr "Çıkarma"
+
+#: kcalc.cpp:588
+msgid "Decimal point"
+msgstr "Ondalık işareti"
+
+#: kcalc.cpp:591 kcalc.cpp:593
+msgid "Pressed Decimal Point"
+msgstr "Ondalık İşaretine Basıldı"
+
+#: kcalc.cpp:597
+msgid "Result"
+msgstr "Sonuç"
+
+#: kcalc.cpp:601 kcalc.cpp:603
+msgid "Pressed Equal-Button"
+msgstr "Eşittir Düğmesine Basıldı"
+
+#: kcalc.cpp:643
+msgid "Memory recall"
+msgstr "Bellekten getir"
+
+#: kcalc.cpp:651
+msgid "Add display to memory"
+msgstr "Görüntüyü hafızaya ekle"
+
+#: kcalc.cpp:652
+msgid "Subtract from memory"
+msgstr "Hafızadan çıkar"
+
+#: kcalc.cpp:661
+msgid "Memory store"
+msgstr "Hafızaya kaydet"
+
+#: kcalc.cpp:667
+msgid "Clear memory"
+msgstr "Belleği temizle"
+
+#: kcalc.cpp:676
+msgid "Pressed ESC-Button"
+msgstr "ESC Düğmesine Basıldı"
+
+#: kcalc.cpp:680
+msgid "Clear all"
+msgstr "Hepsini temizle"
+
+#: kcalc.cpp:692
+msgid "Percent"
+msgstr "Yüzde"
+
+#: kcalc.cpp:698
+msgid "Change sign"
+msgstr "İşareti değiştir"
+
+#: kcalc.cpp:750
+msgid "Bitwise AND"
+msgstr "Bit AND"
+
+#: kcalc.cpp:757
+msgid "Bitwise OR"
+msgstr "Bit OR"
+
+#: kcalc.cpp:764
+msgid "Bitwise XOR"
+msgstr "Bit XOR"
+
+#: kcalc.cpp:771
+msgid "One's complement"
+msgstr "Bir'in tümleyeni"
+
+#: kcalc.cpp:779
+msgid "Left bit shift"
+msgstr "Sola bit kaydırma"
+
+#: kcalc.cpp:788
+msgid "Right bit shift"
+msgstr "Sağa bit kaydırma"
+
+#: kcalc.cpp:803
+msgid "Hyperbolic mode"
+msgstr "Hiperbolik kip"
+
+#: kcalc.cpp:813
+msgid "Sine"
+msgstr "Sinüs"
+
+#: kcalc.cpp:814
+msgid "Arc sine"
+msgstr "Ark sinüs"
+
+#: kcalc.cpp:815
+msgid "Hyperbolic sine"
+msgstr "Hiperbolik Sinüs"
+
+#: kcalc.cpp:817
+msgid "Inverse hyperbolic sine"
+msgstr "Ters hiperbolik sinüs"
+
+#: kcalc.cpp:827
+msgid "Cosine"
+msgstr "Kosinüs"
+
+#: kcalc.cpp:828
+msgid "Arc cosine"
+msgstr "Ark kosinüs"
+
+#: kcalc.cpp:829
+msgid "Hyperbolic cosine"
+msgstr "Hiperbolik kosinüs"
+
+#: kcalc.cpp:831
+msgid "Inverse hyperbolic cosine"
+msgstr "Ters hiperbolik kosinüs"
+
+#: kcalc.cpp:841
+msgid "Tangent"
+msgstr "Tanjant"
+
+#: kcalc.cpp:842
+msgid "Arc tangent"
+msgstr "Ark tanjant"
+
+#: kcalc.cpp:843
+msgid "Hyperbolic tangent"
+msgstr "Hiperbolik tanjant"
+
+#: kcalc.cpp:845
+msgid "Inverse hyperbolic tangent"
+msgstr "Ters hiperbolik tanjant"
+
+#: kcalc.cpp:854
+msgid "Natural log"
+msgstr "Doğal Logaritma"
+
+#: kcalc.cpp:855
+msgid "Exponential function"
+msgstr "Üssel fonksiyon"
+
+#: kcalc.cpp:866
+msgid "Logarithm to base 10"
+msgstr "Logaritma tabanı 10"
+
+#: kcalc.cpp:867
+msgid "10 to the power of x"
+msgstr "10'un x kuvveti"
+
+#: kcalc.cpp:886
+msgid "Number of data entered"
+msgstr "Girilen veri sayısı"
+
+#: kcalc.cpp:888
+msgid "Sum of all data items"
+msgstr "Tüm veri öğelerinin toplamı"
+
+#: kcalc.cpp:898 kcalc.cpp:901
+msgid "Median"
+msgstr "Medyan"
+
+#: kcalc.cpp:907
+msgid "Mean"
+msgstr "Ortalama"
+
+#: kcalc.cpp:910
+msgid "Sum of all data items squared"
+msgstr "Tüm veri öğelerinin toplamının karesi"
+
+#: kcalc.cpp:921
+msgid "Sample standard deviation"
+msgstr "Örnek standart sapma"
+
+#: kcalc.cpp:923
+msgid "Standard deviation"
+msgstr "Standart sapma"
+
+#: kcalc.cpp:933
+msgid "Enter data"
+msgstr "Veri girin"
+
+#: kcalc.cpp:934
+msgid "Delete last data item"
+msgstr "Son veri öğesini sil"
+
+#: kcalc.cpp:944
+msgid "Clear data store"
+msgstr "Kayıtlı veriyi temizle"
+
+#: kcalc.cpp:1019
+msgid "&Constants"
+msgstr "&Sabitler"
+
+#: kcalc.cpp:1768
+msgid "Last stat item erased"
+msgstr "Son istatistik öğesi silindi"
+
+#: kcalc.cpp:1779
+msgid "Stat mem cleared"
+msgstr "İstatistik belleği temizlendi"
+
+#. i18n: file general.ui line 16
+#: kcalc.cpp:1825 rc.cpp:78
+#, no-c-format
+msgid "General"
+msgstr "Genel"
+
+#: kcalc.cpp:1825
+msgid "General Settings"
+msgstr "Genel Ayarlar"
+
+#: kcalc.cpp:1833
+msgid "Select Display Font"
+msgstr "Görünüm Yazıtipi Seçin"
+
+#: kcalc.cpp:1839
+msgid "Colors"
+msgstr "Renkler"
+
+#: kcalc.cpp:1839
+msgid "Button & Display Colors"
+msgstr "Düğme & Görünüm Rengi"
+
+#. i18n: file constants.ui line 16
+#: kcalc.cpp:1876 rc.cpp:36
+#, no-c-format
+msgid "Constants"
+msgstr "Sabitler"
+
+#: kcalc.cpp:2273
+msgid "KCalc"
+msgstr "KCalc"
+
+#: kcalc.cpp:2275
+#, fuzzy
+msgid ""
+"(c) 2003-2005, Klaus Niederkrüger\n"
+"(c) 1996-2000, Bernd Johannes Wuebben\n"
+"(c) 2000-2005, The KDE Team"
+msgstr ""
+"(c) 1996-2000, Bernd Johannes Wuebben\n"
+"(c) 2000-2003, KDE Grubu"
+
+#: kcalc_const_button.cpp:37 kcalc_const_button.cpp:47
+msgid "Write display data into memory"
+msgstr "Görüntü verisini hafızaya yaz"
+
+#: kcalc_const_button.cpp:74
+msgid "Set Name"
+msgstr "İsim Ayarla"
+
+#: kcalc_const_button.cpp:75
+msgid "Choose From List"
+msgstr "Listeden Seç"
+
+#: kcalc_const_button.cpp:88
+msgid "New Name for Constant"
+msgstr "Sabit İçin Yeni İsim"
+
+#: kcalc_const_button.cpp:88
+msgid "New name:"
+msgstr "Yeni isim:"
+
+#: kcalc_const_menu.cpp:29
+msgid "Pi"
+msgstr "Pi"
+
+#: kcalc_const_menu.cpp:32
+msgid "Euler Number"
+msgstr "Euler Sayısı"
+
+#: kcalc_const_menu.cpp:35
+msgid "Golden Ratio"
+msgstr ""
+
+#: kcalc_const_menu.cpp:36
+msgid "Light Speed"
+msgstr "Işık Hızı"
+
+#: kcalc_const_menu.cpp:37
+msgid "Planck's Constant"
+msgstr "Planck Sabiti"
+
+#: kcalc_const_menu.cpp:38
+msgid "Constant of Gravitation"
+msgstr "Çekim Sabiti"
+
+#: kcalc_const_menu.cpp:39
+msgid "Earth Acceleration"
+msgstr "Yerçekimi İvmesi"
+
+#: kcalc_const_menu.cpp:40
+msgid "Elementary Charge"
+msgstr "Birim Yük"
+
+#: kcalc_const_menu.cpp:41
+msgid "Impedance of Vacuum"
+msgstr "Boşluğun Empedansı"
+
+#: kcalc_const_menu.cpp:42
+msgid "Fine-Structure Constant"
+msgstr "Hassas Yapı Sabiti"
+
+#: kcalc_const_menu.cpp:43
+msgid "Permeability of Vacuum"
+msgstr "Boşluğun Geçirgenliği"
+
+#: kcalc_const_menu.cpp:44
+msgid "Permittivity of vacuum"
+msgstr "Boşluğun Yüklenebilirliği"
+
+#: kcalc_const_menu.cpp:45
+msgid "Boltzmann Constant"
+msgstr "Boltzmann Sabiti"
+
+#: kcalc_const_menu.cpp:46
+msgid "Atomic Mass Unit"
+msgstr "Atomik Kütle Birimi"
+
+#: kcalc_const_menu.cpp:47
+msgid "Molar Gas Constant"
+msgstr "Molar Gaz Sabiti"
+
+#: kcalc_const_menu.cpp:48
+msgid "Stefan-Boltzmann Constant"
+msgstr "Stefan-Boltzmann Sabiti"
+
+#: kcalc_const_menu.cpp:49
+msgid "Avogadro's Number"
+msgstr "Avogadro Sayısı"
+
+#: kcalc_const_menu.cpp:61
+msgid "Mathematics"
+msgstr "Matematik"
+
+#: kcalc_const_menu.cpp:62
+msgid "Electromagnetism"
+msgstr "Elektromanyetizma"
+
+#: kcalc_const_menu.cpp:63
+msgid "Atomic && Nuclear"
+msgstr "Atomik ve Nükleer"
+
+#: kcalc_const_menu.cpp:64
+msgid "Thermodynamics"
+msgstr "Termodinamik"
+
+#: kcalc_const_menu.cpp:65
+msgid "Gravitation"
+msgstr "Yerçekimi"
+
+#: kcalc_core.cpp:965
+msgid "Stack processing error - empty stack"
+msgstr "Yığın işleme hatası - yığın boş"
+
+#. i18n: file colors.ui line 27
+#: rc.cpp:6
+#, no-c-format
+msgid "Display Colors"
+msgstr "Görünüm Renkleri"
+
+#. i18n: file colors.ui line 38
+#: rc.cpp:9
+#, no-c-format
+msgid "&Foreground:"
+msgstr "Ö&nplan:"
+
+#. i18n: file colors.ui line 49
+#: rc.cpp:12
+#, no-c-format
+msgid "&Background:"
+msgstr "A&rkaplan:"
+
+#. i18n: file colors.ui line 109
+#: rc.cpp:15
+#, no-c-format
+msgid "Button Colors"
+msgstr "Düğme Renkleri"
+
+#. i18n: file colors.ui line 120
+#: rc.cpp:18
+#, no-c-format
+msgid "&Functions:"
+msgstr "&Fonksiyonlar:"
+
+#. i18n: file colors.ui line 131
+#: rc.cpp:21
+#, no-c-format
+msgid "He&xadecimals:"
+msgstr "&Onaltılıklar:"
+
+#. i18n: file colors.ui line 142
+#: rc.cpp:24
+#, no-c-format
+msgid "O&perations:"
+msgstr "İş&lemler:"
+
+#. i18n: file colors.ui line 210
+#: rc.cpp:27
+#, no-c-format
+msgid "&Numbers:"
+msgstr "&Sayılar:"
+
+#. i18n: file colors.ui line 229
+#: rc.cpp:30
+#, no-c-format
+msgid "St&atistic functions:"
+msgstr "İstatistik &fonksiyonlar:"
+
+#. i18n: file colors.ui line 240
+#: rc.cpp:33
+#, no-c-format
+msgid "&Memory:"
+msgstr "&Bellek:"
+
+#. i18n: file constants.ui line 27
+#: rc.cpp:39
+#, no-c-format
+msgid "Configure Constants"
+msgstr "Sabitleri Yapılandır"
+
+#. i18n: file constants.ui line 38
+#: rc.cpp:42
+#, no-c-format
+msgid "C1"
+msgstr "C1"
+
+#. i18n: file constants.ui line 99
+#: rc.cpp:45 rc.cpp:51 rc.cpp:57 rc.cpp:63 rc.cpp:69 rc.cpp:75
+#, no-c-format
+msgid "Predefined"
+msgstr "Önceden tanımlı"
+
+#. i18n: file constants.ui line 109
+#: rc.cpp:48
+#, no-c-format
+msgid "C2"
+msgstr "C2"
+
+#. i18n: file constants.ui line 180
+#: rc.cpp:54
+#, no-c-format
+msgid "C3"
+msgstr "C3"
+
+#. i18n: file constants.ui line 251
+#: rc.cpp:60
+#, no-c-format
+msgid "C4"
+msgstr "C4"
+
+#. i18n: file constants.ui line 322
+#: rc.cpp:66
+#, no-c-format
+msgid "C5"
+msgstr "C5"
+
+#. i18n: file constants.ui line 393
+#: rc.cpp:72
+#, no-c-format
+msgid "C6"
+msgstr "C6"
+
+#. i18n: file general.ui line 30
+#: rc.cpp:81
+#, no-c-format
+msgid "Precision"
+msgstr "Hassasiyet"
+
+#. i18n: file general.ui line 41
+#: rc.cpp:84
+#, no-c-format
+msgid "Set &decimal precision"
+msgstr "O&ndalık hassasiyetini ayarla"
+
+#. i18n: file general.ui line 52
+#: rc.cpp:87
+#, fuzzy, no-c-format
+msgid "Decimal &digits:"
+msgstr "Ondalık işareti"
+
+#. i18n: file general.ui line 88
+#: rc.cpp:90
+#, no-c-format
+msgid "&Maximum number of digits:"
+msgstr "&Azami hane sayısı:"
+
+#. i18n: file general.ui line 123
+#: rc.cpp:93
+#, no-c-format
+msgid "Misc"
+msgstr "Çeşitli"
+
+#. i18n: file general.ui line 134
+#: rc.cpp:96
+#, no-c-format
+msgid "&Beep on error"
+msgstr "&Hatada ses çıkar"
+
+#. i18n: file general.ui line 145
+#: rc.cpp:99
+#, no-c-format
+msgid "Show &result in window title"
+msgstr "Sonuçla&rı pencere başlığında göster"
+
+#. i18n: file general.ui line 153
+#: rc.cpp:102
+#, no-c-format
+msgid "Group digits"
+msgstr "Basamakları gruplandır"
+
+#. i18n: file kcalc.kcfg line 12
+#: rc.cpp:105
+#, no-c-format
+msgid "The foreground color of the display."
+msgstr "Görünümün metin rengi."
+
+#. i18n: file kcalc.kcfg line 16
+#: rc.cpp:108
+#, no-c-format
+msgid "The background color of the display."
+msgstr "Görünümün arkaplan rengi."
+
+#. i18n: file kcalc.kcfg line 20
+#: rc.cpp:111
+#, no-c-format
+msgid "The color of number buttons."
+msgstr "Sayı düğmelerinin rengi."
+
+#. i18n: file kcalc.kcfg line 25
+#: rc.cpp:114
+#, no-c-format
+msgid "The color of function buttons."
+msgstr "Fonksiyon düğmelerinin rengi."
+
+#. i18n: file kcalc.kcfg line 29
+#: rc.cpp:117
+#, no-c-format
+msgid "The color of statistical buttons."
+msgstr "İstatistiksel düğmelerin rengi."
+
+#. i18n: file kcalc.kcfg line 33
+#: rc.cpp:120
+#, no-c-format
+msgid "The color of hex buttons."
+msgstr "Onaltılılık düğmelerin rengi."
+
+#. i18n: file kcalc.kcfg line 37
+#: rc.cpp:123
+#, no-c-format
+msgid "The color of memory buttons."
+msgstr "Hafıza düğmelerinin rengi."
+
+#. i18n: file kcalc.kcfg line 41
+#: rc.cpp:126
+#, no-c-format
+msgid "The color of operation buttons."
+msgstr "İşlem düğmelerinin rengi."
+
+#. i18n: file kcalc.kcfg line 47
+#: rc.cpp:129
+#, no-c-format
+msgid "The font to use in the display."
+msgstr "Ekranda görüntülenecek yazıtipi."
+
+#. i18n: file kcalc.kcfg line 53
+#: rc.cpp:132
+#, fuzzy, no-c-format
+msgid "Maximum number of digits displayed."
+msgstr "Azami hane sayısı."
+
+#. i18n: file kcalc.kcfg line 59
+#: rc.cpp:135
+#, no-c-format
+msgid ""
+"\n"
+"\tKCalc can compute with many more digits than the number that\n"
+"\tfits on the display. This setting gives the maximum number of\n"
+"\tdigits displayed, before KCalc starts using scientific notation,\n"
+"\ti.e. notation of the type 2.34e12.\n"
+"      "
+msgstr ""
+
+#. i18n: file kcalc.kcfg line 65
+#: rc.cpp:143
+#, fuzzy, no-c-format
+msgid "Number of fixed decimal digits."
+msgstr "Sabit ondalık yerlerin sayısı."
+
+#. i18n: file kcalc.kcfg line 69
+#: rc.cpp:146
+#, no-c-format
+msgid "Whether to use fixed decimal places."
+msgstr "Sabit ondalık yerlerin kullanımı."
+
+#. i18n: file kcalc.kcfg line 75
+#: rc.cpp:149
+#, no-c-format
+msgid "Whether to beep on error."
+msgstr "Hatada ses çıkar."
+
+#. i18n: file kcalc.kcfg line 79
+#: rc.cpp:152
+#, no-c-format
+msgid "Whether to show the result in the window title."
+msgstr "Sonucun pencere başlığında gösterimi."
+
+#. i18n: file kcalc.kcfg line 83
+#: rc.cpp:155
+#, no-c-format
+msgid "Whether to group digits."
+msgstr "Basamakların gruplandırılıp gruplandırılmayacağı."
+
+#. i18n: file kcalc.kcfg line 87
+#: rc.cpp:158
+#, no-c-format
+msgid "Whether to show statistical buttons."
+msgstr "İstatistiksel düğmelerin gösterimi."
+
+#. i18n: file kcalc.kcfg line 92
+#: rc.cpp:161
+#, no-c-format
+msgid ""
+"Whether to show buttons with functions used in science/engineering,\n"
+"\t     like exp, log, sin etc."
+msgstr ""
+
+#. i18n: file kcalc.kcfg line 96
+#: rc.cpp:165
+#, no-c-format
+msgid "Whether to show logic buttons."
+msgstr "Lojik düğmelerin gösterimi."
+
+#. i18n: file kcalc.kcfg line 100
+#: rc.cpp:168
+#, no-c-format
+msgid "Whether to show constant buttons."
+msgstr "Sabit düğmelerin gösterimi."
+
+#. i18n: file kcalc.kcfg line 106
+#: rc.cpp:171
+#, no-c-format
+msgid "Name of the user programmable constants."
+msgstr "Kullanıcının programlayabileceği sabitlerin ismi."
+
+#. i18n: file kcalc.kcfg line 117
+#: rc.cpp:174
+#, no-c-format
+msgid "List of user programmable constants"
+msgstr "Kullanıcının programlayabileceği sabitlerin listesi"
+
+#~ msgid "Decimal &places:"
+#~ msgstr "&Ondalık yeri:"
+
+#~ msgid "&Exp/Log-Buttons"
+#~ msgstr "&Logaritmik Düğmeler"
+
+#~ msgid "&Trigonometric Buttons"
+#~ msgstr "&Trigonometrik Düğmeler"
+
+#, fuzzy
+#~ msgid "Built with 32 bit precision"
+#~ msgstr "%1 bitlik (uzun ikili) hassasiyetiyle derlendi"
+
+#, fuzzy
+#~ msgid "Built with 64 bit precision"
+#~ msgstr "%1 bitlik (uzun ikili) hassasiyetiyle derlendi"
+
+#, fuzzy
+#~ msgid "Built with 96 bit precision"
+#~ msgstr "%1 bitlik (uzun ikili) hassasiyetiyle derlendi"
+
+#, fuzzy
+#~ msgid "Built with %1 bit precision"
+#~ msgstr "%1 bitlik (uzun ikili) hassasiyetiyle derlendi"
+
+#, fuzzy
+#~ msgid ""
+#~ "Note: Due to a broken C library, KCalc's precision \n"
+#~ "was conditionally reduced at compile time from\n"
+#~ "'long double' to 'double'. \n"
+#~ "\n"
+#~ "Owners of systems with a working libc may \n"
+#~ "want to recompile KCalc with 'long double' \n"
+#~ "precision enabled. See the README for details."
+#~ msgstr ""
+#~ "%1 bitlik (uzun ikili) hassasiyetiyle derlendi\n"
+#~ "\n"
+#~ "Not: Bozuk C kütüphanesi sonucu, Hesap \n"
+#~ "Makinası'nın hassasiyeti derleme sırasında 'uzun \n"
+#~ "ikili'den 'ikili'ye indirildi. \n"
+#~ "\n"
+#~ "Çalışan libc kütüphanesi olanlar Hesap Makinası'nı \n"
+#~ "'uzun ikili' hassasiyetiyle derlemek isyebilirler. \n"
+#~ "Ayrıntılar için README dosyasına bakın."
+
+#~ msgid "Whether to show Exp/Log buttons."
+#~ msgstr "Logaritmik düğmelerinin gösterimi."
+
+#~ msgid "Whether to show trigonometric buttons."
+#~ msgstr "Trigonometrik düğmelerin gösterimi."

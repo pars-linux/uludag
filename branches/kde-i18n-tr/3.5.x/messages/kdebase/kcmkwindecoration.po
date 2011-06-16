@@ -1,0 +1,226 @@
+# translation of kcmkwindecoration.po to Turkish
+# translation of kcmkwindecoration.po to Türkçe
+# kde
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2001, 2003.
+# Adil YILDIZ <adil@linux-sevenler.org>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkwindecoration\n"
+"POT-Creation-Date: 2005-10-28 02:43+0200\n"
+"PO-Revision-Date: 2005-06-14 01:14+0200\n"
+"Last-Translator: Adil YILDIZ <adil@kde.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: buttons.cpp:136
+msgid "Buttons"
+msgstr "Düğmeler"
+
+#: buttons.cpp:611
+msgid "KDE"
+msgstr "KDE"
+
+#: buttons.cpp:663
+msgid "%1 (unavailable)"
+msgstr "%1 (mevcut değil)"
+
+#: buttons.cpp:683
+msgid ""
+"To add or remove titlebar buttons, simply <i>drag</i> "
+"items between the available item list and the titlebar preview. Similarly, drag "
+"items within the titlebar preview to re-position them."
+msgstr ""
+"Başlık çubuğu düğmelerini eklemek için sadece listeden bir öğe seçerek başlık "
+"çubuğu önizleme penceresine doğru sürüklemek yeterlidir."
+
+#: buttons.cpp:780
+msgid "Resize"
+msgstr "Boyutlandır"
+
+#: buttons.cpp:784
+msgid "Shade"
+msgstr "Gölge"
+
+#: buttons.cpp:788
+msgid "Keep Below Others"
+msgstr "Diğerlerinin Altında Tut"
+
+#: buttons.cpp:792
+msgid "Keep Above Others"
+msgstr "Diğerlerinin Üstünde Tut"
+
+#: buttons.cpp:800
+msgid "Maximize"
+msgstr "Büyüt"
+
+#: buttons.cpp:804
+msgid "Minimize"
+msgstr "Küçült"
+
+#: buttons.cpp:812
+msgid "On All Desktops"
+msgstr "Tüm Masaüstlerinde"
+
+#: buttons.cpp:816
+msgid "Menu"
+msgstr "Menü"
+
+#: buttons.cpp:820
+msgid "--- spacer ---"
+msgstr "--- boşluk ---"
+
+#: kwindecoration.cpp:90
+msgid ""
+"Select the window decoration. This is the look and feel of both the window "
+"borders and the window handle."
+msgstr "Pencere dekorunu seçin."
+
+#: kwindecoration.cpp:95
+msgid "Decoration Options"
+msgstr "Dekorasyon Seçenekleri"
+
+#: kwindecoration.cpp:105
+msgid "B&order size:"
+msgstr "Kenarlık b&oyutu:"
+
+#: kwindecoration.cpp:108
+msgid "Use this combobox to change the border size of the decoration."
+msgstr ""
+"Dekorasyonun kenarlık boyutunu değiştirmek için bu açılır kutuyu kullan."
+
+#: kwindecoration.cpp:124
+msgid "&Show window button tooltips"
+msgstr "&Pencere düğmesi ipuçlarını göster"
+
+#: kwindecoration.cpp:126
+msgid ""
+"Enabling this checkbox will show window button tooltips. If this checkbox is "
+"off, no window button tooltips will be shown."
+msgstr ""
+"Bu düğmeye tıkladığınızda pencere düğmelerine ilişkin ipuçlarını "
+"görebilirsiniz."
+
+#: kwindecoration.cpp:130
+msgid "Use custom titlebar button &positions"
+msgstr "Özel &başlık çubuğu düğme konumlarını kullan"
+
+#: kwindecoration.cpp:132
+msgid ""
+"The appropriate settings can be found in the \"Buttons\" Tab; please note that "
+"this option is not available on all styles yet."
+msgstr ""
+"Uygun ayarlar \"Düğmeler\" sekmesinde bulunabilir; ancak bu seçenek tüm "
+"biçemler için henüz kullanılabilir değildir."
+
+#: kwindecoration.cpp:163
+msgid "&Window Decoration"
+msgstr "&Pencere Dekorasyonu"
+
+#: kwindecoration.cpp:164
+msgid "&Buttons"
+msgstr "&Düğmeler"
+
+#: kwindecoration.cpp:182
+msgid "kcmkwindecoration"
+msgstr "kcmkwindecoration"
+
+#: kwindecoration.cpp:183
+msgid "Window Decoration Control Module"
+msgstr "Pencere Dekoru Kontrol Modülü"
+
+#: kwindecoration.cpp:185
+msgid "(c) 2001 Karol Szwed"
+msgstr "(c) 2001 Karol Szwed"
+
+#: kwindecoration.cpp:237 kwindecoration.cpp:439
+msgid "KDE 2"
+msgstr "KDE 2"
+
+#: kwindecoration.cpp:266
+msgid "Tiny"
+msgstr "Minik"
+
+#: kwindecoration.cpp:267
+msgid "Normal"
+msgstr "Normal"
+
+#: kwindecoration.cpp:268
+msgid "Large"
+msgstr "Büyük"
+
+#: kwindecoration.cpp:269
+msgid "Very Large"
+msgstr "Çok Büyük"
+
+#: kwindecoration.cpp:270
+msgid "Huge"
+msgstr "Kocaman"
+
+#: kwindecoration.cpp:271
+msgid "Very Huge"
+msgstr "İnanılmaz!"
+
+#: kwindecoration.cpp:272
+msgid "Oversized"
+msgstr "Aşırı Büyük"
+
+#: kwindecoration.cpp:591
+msgid ""
+"<h1>Window Manager Decoration</h1>"
+"<p>This module allows you to choose the window border decorations, as well as "
+"titlebar button positions and custom decoration options.</p>"
+"To choose a theme for your window decoration click on its name and apply your "
+"choice by clicking the \"Apply\" button below. If you do not want to apply your "
+"choice you can click the \"Reset\" button to discard your changes."
+"<p>You can configure each theme in the \"Configure [...]\" tab. There are "
+"different options specific for each theme.</p>"
+"<p>In \"General Options (if available)\" you can activate the \"Buttons\" tab "
+"by checking the \"Use custom titlebar button positions\" box. In the "
+"\"Buttons\" tab you can change the positions of the buttons to your liking.</p>"
+msgstr ""
+"<h1>Pencere Yöneticisi Dekorasyonu</h1> "
+"<p>Bu modül pencere kenarlarının dekorasyonu ile başlık çubuğundaki düğmelerin "
+"konumunu ayarlamaya olanak verir. </p>Pencere dekorasyonunda kullanılacak bir "
+"tema seçmek için sadece üzerine tıklamak ve \"Uygula\" düğmesine basmak "
+"yeterlidir. Eğer seçimin uygun olmadığını düşünüyorsanız \"Sıfırla\" düğmesine "
+"tıklamak ve değişiklikleri silmek gerekecektir. "
+"<p>Her temayı \"Yapılandır...\" düğmesinden değiştirebilirsiniz. Temalar için "
+"farklı yapılandırma seçenekleri mevcuttur.</p> "
+"<p>Eğer varsa, \"Genel Seçenekler\" altında \"Özel başlık çubuğu düğme "
+"konumlarını kullan\" düğmesine tıklayarak \"Düğmeler\" sekmesini etkinleştirmek "
+"mümkündür. \"Düğmeler\" sekmesinde ise her düğmenin konumunu zevkinize göre "
+"ayarlayabilirsiniz.</p>"
+
+#: preview.cpp:48
+msgid ""
+"No preview available.\n"
+"Most probably there\n"
+"was a problem loading the plugin."
+msgstr ""
+"Önizleme kullanılamıyor.\n"
+"Eklenti yüklenirken bir \n"
+"hata alınmış olabilir."
+
+#: preview.cpp:330
+msgid "Active Window"
+msgstr "Öndeki Pencere"
+
+#: preview.cpp:330
+msgid "Inactive Window"
+msgstr "Arkadaki Pencere"

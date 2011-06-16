@@ -1,0 +1,860 @@
+# translation of kcmkwinrules.po to Turkish
+# translation of kcmkwinrules.po to Türkçe
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Adil YILDIZ <adil@linux-sevenler.org>, 2004.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkwinrules\n"
+"POT-Creation-Date: 2008-07-08 01:18+0200\n"
+"PO-Revision-Date: 2005-06-14 01:15+0200\n"
+"Last-Translator: Adil YILDIZ <adil@kde.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Adil YILDIZ"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "adil@kde.org.tr"
+
+#. i18n: file ruleswidgetbase.ui line 335
+#: detectwidget.cpp:87 rc.cpp:128 rc.cpp:632
+#, no-c-format
+msgid "Normal Window"
+msgstr "Normal Pencere"
+
+#. i18n: file ruleswidgetbase.ui line 370
+#: detectwidget.cpp:88 rc.cpp:149 rc.cpp:653
+#, no-c-format
+msgid "Desktop"
+msgstr "Masaüstü"
+
+#. i18n: file ruleswidgetbase.ui line 350
+#: detectwidget.cpp:89 rc.cpp:137 rc.cpp:641
+#, no-c-format
+msgid "Dock (panel)"
+msgstr "Panel"
+
+#. i18n: file ruleswidgetbase.ui line 355
+#: detectwidget.cpp:90 rc.cpp:140 rc.cpp:644
+#, no-c-format
+msgid "Toolbar"
+msgstr "Araç Çubuğu"
+
+#. i18n: file ruleswidgetbase.ui line 360
+#: detectwidget.cpp:91 rc.cpp:143 rc.cpp:647
+#, no-c-format
+msgid "Torn-Off Menu"
+msgstr "Menüyü Kapat"
+
+#. i18n: file ruleswidgetbase.ui line 340
+#: detectwidget.cpp:92 rc.cpp:131 rc.cpp:635
+#, no-c-format
+msgid "Dialog Window"
+msgstr "İletişim Penceresi"
+
+#. i18n: file ruleswidgetbase.ui line 375
+#: detectwidget.cpp:93 rc.cpp:152 rc.cpp:656
+#, no-c-format
+msgid "Override Type"
+msgstr "Geçersizlik Tipi"
+
+#. i18n: file ruleswidgetbase.ui line 380
+#: detectwidget.cpp:94 rc.cpp:155 rc.cpp:659
+#, no-c-format
+msgid "Standalone Menubar"
+msgstr "Tekbasşına Menü Çubuğu"
+
+#. i18n: file ruleswidgetbase.ui line 345
+#: detectwidget.cpp:95 rc.cpp:134 rc.cpp:638
+#, no-c-format
+msgid "Utility Window"
+msgstr "Yardımcı Yazılım Penceresi"
+
+#. i18n: file ruleswidgetbase.ui line 365
+#: detectwidget.cpp:96 rc.cpp:146 rc.cpp:650
+#, no-c-format
+msgid "Splash Screen"
+msgstr "Açılış Ekranı"
+
+#: detectwidget.cpp:106
+msgid "Unknown - will be treated as Normal Window"
+msgstr "Bilimeyen - Normal Pencere olarak listelenecek"
+
+#: kcm.cpp:49
+msgid "kcmkwinrules"
+msgstr "kcmkwinrules"
+
+#: kcm.cpp:50
+msgid "Window-Specific Settings Configuration Module"
+msgstr "Pencereye Özel Ayarlar Yapılandırma Birimi"
+
+#: kcm.cpp:51
+msgid "(c) 2004 KWin and KControl Authors"
+msgstr "(c) 2004 KWin ve KControl Yazarları"
+
+#: kcm.cpp:81
+msgid ""
+"<h1>Window-specific Settings</h1> Here you can customize window settings "
+"specifically only for some windows. "
+"<p>Please note that this configuration will not take effect if you do not use "
+"KWin as your window manager. If you do use a different window manager, please "
+"refer to its documentation for how to customize window behavior."
+msgstr ""
+"<h1>Pencere Özel Ayarları</h1> Buradan sadece bazı pencereler için özel pencere "
+"ayarları belirtebilirsiniz. "
+"<p>Pencere yönetici olarak KWin'i kullanmıyorsanız bu yapılandırmalar işe "
+"yaramıyacaktır. Başka bir pencere yöneticisi kullanıyorsanız, pencere "
+"davanışlarını değiştirmek için lütfen yardım belgelerine bakın."
+
+#: kcm.cpp:97
+msgid "Remember settings separately for every window"
+msgstr "Her pencere için ayarları ayrı ayrı hatırla"
+
+#: kcm.cpp:98
+msgid "Show internal settings for remembering"
+msgstr "Hatırlama için iç ayarları göster"
+
+#: kcm.cpp:99
+msgid "Internal setting for remembering"
+msgstr "Hatırlama için iç ayarlar"
+
+#: main.cpp:154
+#, fuzzy, c-format
+msgid "Application settings for %1"
+msgstr "%1 için ayarlar"
+
+#: main.cpp:178
+#, fuzzy, c-format
+msgid "Window settings for %1"
+msgstr "%1 için ayarlar"
+
+#: main.cpp:279
+msgid "KWin"
+msgstr "KWin"
+
+#: main.cpp:280
+msgid "KWin helper utility"
+msgstr "KWin Yardım Uygulaması"
+
+#: main.cpp:290
+msgid "This helper utility is not supposed to be called directly."
+msgstr "Bu Yardım uygulaması doğrudan çağrılamaz."
+
+#. i18n: file detectwidgetbase.ui line 44
+#: rc.cpp:3 rc.cpp:161
+#, no-c-format
+msgid "Extra role:"
+msgstr "Ek rol:"
+
+#. i18n: file detectwidgetbase.ui line 52
+#: rc.cpp:6
+#, no-c-format
+msgid "Class:"
+msgstr "Sınıf:"
+
+#. i18n: file detectwidgetbase.ui line 60
+#: rc.cpp:9
+#, no-c-format
+msgid "Role:"
+msgstr "Rol:"
+
+#. i18n: file detectwidgetbase.ui line 76
+#: rc.cpp:12
+#, no-c-format
+msgid "Title:"
+msgstr "Başlık:"
+
+#. i18n: file detectwidgetbase.ui line 116
+#: rc.cpp:15
+#, no-c-format
+msgid "Type:"
+msgstr "Tip:"
+
+#. i18n: file detectwidgetbase.ui line 132
+#: rc.cpp:18
+#, no-c-format
+msgid "Machine:"
+msgstr "Makine:"
+
+#. i18n: file detectwidgetbase.ui line 154
+#: rc.cpp:21
+#, no-c-format
+msgid "Information About Selected Window"
+msgstr "Seçili Pencere Hakkında Bilgi"
+
+#. i18n: file detectwidgetbase.ui line 173
+#: rc.cpp:24
+#, no-c-format
+msgid "Use window &class (whole application)"
+msgstr "Pen&cere sınıfını kullan (tüm uygulama)"
+
+#. i18n: file detectwidgetbase.ui line 179
+#: rc.cpp:27
+#, no-c-format
+msgid ""
+"For selecting all windows belonging to a specific application, selecting only "
+"window class should usually work."
+msgstr ""
+"Özel bir uuyglamaya ait tüm pencereleri seçmek için, sadece pencere sınıfını "
+"seçmek çoğunlukla çalışacaktır."
+
+#. i18n: file detectwidgetbase.ui line 187
+#: rc.cpp:30
+#, no-c-format
+msgid "Use window class and window &role (specific window)"
+msgstr "Pence&re sınıfı ve pencere rolü (özel pencere)"
+
+#. i18n: file detectwidgetbase.ui line 190
+#: rc.cpp:33
+#, no-c-format
+msgid ""
+"For selecting a specific window in an application, both window class and window "
+"role should be selected. Window class will determine the application, and "
+"window role the specific window in the application; many applications do not "
+"provide useful window roles though."
+msgstr ""
+"Bir uygulamada özel bir pencereyi seçmek için pencere sınıfı ve pencere rolü "
+"seçilmelidir. Pencere sınıfı uygulamayı, pencere rolü ise belirtilen pencereyi "
+"bulacaktır, fakat bir çok program kullanılabilir pencere rolleri sunmamaktadır."
+
+#. i18n: file detectwidgetbase.ui line 198
+#: rc.cpp:36
+#, no-c-format
+msgid "Use &whole window class (specific window)"
+msgstr "Tüm pencere sınıfını k&ullan (özel pencere)"
+
+#. i18n: file detectwidgetbase.ui line 201
+#: rc.cpp:39
+#, no-c-format
+msgid ""
+"With some (non-KDE) applications whole window class can be sufficient for "
+"selecting a specific window in an application, as they set whole window class "
+"to contain both application and window role."
+msgstr ""
+"Bazı (KDE-dışı) uygulamalarda tüm pencere sınıfı uygulamdaki özel bir pencereyi "
+"seçmekte yeterli olmaktadır, bu tür uygulamalarda tüm pencere sınıfını hem "
+"uygulama hemde pencere rollerini içerek şekilde ayarlamışlardır."
+
+#. i18n: file detectwidgetbase.ui line 209
+#: rc.cpp:42
+#, no-c-format
+msgid "Match also window &title"
+msgstr "Pencere başlığıyla da eşleş&tir"
+
+#. i18n: file editshortcutbase.ui line 26
+#: rc.cpp:45
+#, no-c-format
+msgid ""
+"A single shortcut can be easily assigned or cleared using the two buttons. Only "
+"shortcuts with modifiers can be used."
+"<p>\n"
+"It is possible to have several possible shortcuts, and the first available "
+"shortcut will be used. The shortcuts are specified using space-separated "
+"shortcut sets. One set is specified as <i>base</i>+(<i>list</i>"
+"), where base are modifiers and list is a list of keys."
+"<br>\n"
+"For example \"<b>Shift+Alt+(123) Shift+Ctrl+(ABC)</b>\" will first try <b>"
+"Shift+Alt+1</b>, then others with <b>Shift+Ctrl+C</b> as the last one."
+msgstr ""
+"Bir tek kısayol basitçe iki düğme kullanılarak atanır veya temizlenir. Sadece "
+"değiştiricili kısayollar kullanılabilir."
+"<p>\n"
+"Bir çok kısayola sahip olmak mümkündür, ve ilk mümkün olan kısayol kullanılır. "
+"Kısayollar boşluk ile ayrılmış kısayolu setleri il özelleştirilmiştir. Bir set "
+"<i>taban</i>+(<i>liste</i>) şeklinde özelleştirilmiştir, Burada taban "
+"değiştiricileri ve liste tuşların listesini belirtir."
+"<br>\n"
+"Örneğin.\"<b>Shift+Alt+(123) Shift+Ctrl+(ABC)</b>\" önce <b>Shift+Alt+1</b>"
+"'i deneyecek sırayla devam edecek en son olarak <b>Shift+Ctrl+C</b>"
+"'yi deneyecektir."
+
+#. i18n: file editshortcutbase.ui line 81
+#: rc.cpp:50
+#, no-c-format
+msgid "&Single Shortcut"
+msgstr "Tek Kı&sayol"
+
+#. i18n: file editshortcutbase.ui line 106
+#: rc.cpp:53
+#, no-c-format
+msgid "C&lear"
+msgstr "Temiz&le"
+
+#. i18n: file ruleslistbase.ui line 32
+#: rc.cpp:56
+#, no-c-format
+msgid "&New..."
+msgstr "Ye&ni..."
+
+#. i18n: file ruleslistbase.ui line 40
+#: rc.cpp:59
+#, no-c-format
+msgid "&Modify..."
+msgstr "Değiş&tir..."
+
+#. i18n: file ruleslistbase.ui line 59
+#: rc.cpp:65
+#, no-c-format
+msgid "Move &Up"
+msgstr "Y&ukarı Taşı"
+
+#. i18n: file ruleslistbase.ui line 67
+#: rc.cpp:68
+#, no-c-format
+msgid "Move &Down"
+msgstr "&Aşağı Taşı"
+
+#. i18n: file ruleswidgetbase.ui line 31
+#: rc.cpp:71
+#, no-c-format
+msgid "&Window"
+msgstr "Pence&re"
+
+#. i18n: file ruleswidgetbase.ui line 42
+#: rc.cpp:74
+#, no-c-format
+msgid "De&scription:"
+msgstr "&Tanım:"
+
+#. i18n: file ruleswidgetbase.ui line 58
+#: rc.cpp:77
+#, no-c-format
+msgid "Window &class (application type):"
+msgstr "Pen&cere sınıfı (uygulama tipi):"
+
+#. i18n: file ruleswidgetbase.ui line 69
+#: rc.cpp:80
+#, no-c-format
+msgid "Window &role:"
+msgstr "Pence&re Rolü:"
+
+#. i18n: file ruleswidgetbase.ui line 100
+#: rc.cpp:83 rc.cpp:98 rc.cpp:167 rc.cpp:182 rc.cpp:197
+#, no-c-format
+msgid "Unimportant"
+msgstr "Önemsiz"
+
+#. i18n: file ruleswidgetbase.ui line 105
+#: rc.cpp:86 rc.cpp:101 rc.cpp:170 rc.cpp:185 rc.cpp:200
+#, no-c-format
+msgid "Exact Match"
+msgstr "Tam Eşleştirme"
+
+#. i18n: file ruleswidgetbase.ui line 110
+#: rc.cpp:89 rc.cpp:104 rc.cpp:173 rc.cpp:188 rc.cpp:203
+#, no-c-format
+msgid "Substring Match"
+msgstr "Altmetin Eşleştirme"
+
+#. i18n: file ruleswidgetbase.ui line 115
+#: rc.cpp:92 rc.cpp:107 rc.cpp:176 rc.cpp:191 rc.cpp:206
+#, no-c-format
+msgid "Regular Expression"
+msgstr "Düzenli İfade"
+
+#. i18n: file ruleswidgetbase.ui line 250
+#: rc.cpp:113
+#, no-c-format
+msgid "Match w&hole window class"
+msgstr "Tam pencere sınıfını eş&leştir"
+
+#. i18n: file ruleswidgetbase.ui line 258
+#: rc.cpp:116
+#, no-c-format
+msgid "Detect Window Properties"
+msgstr "Pencere Özelliklerini Tanı"
+
+#. i18n: file ruleswidgetbase.ui line 286
+#: rc.cpp:119
+#, no-c-format
+msgid "&Detect"
+msgstr "&Tanı"
+
+#. i18n: file ruleswidgetbase.ui line 315
+#: rc.cpp:122
+#, no-c-format
+msgid "Window &Extra"
+msgstr "Pencere &Eki"
+
+#. i18n: file ruleswidgetbase.ui line 326
+#: rc.cpp:125
+#, no-c-format
+msgid "Window &types:"
+msgstr "Pencere &tipleri:"
+
+#. i18n: file ruleswidgetbase.ui line 395
+#: rc.cpp:158
+#, no-c-format
+msgid "Window t&itle:"
+msgstr "Pencere başl&ığı:"
+
+#. i18n: file ruleswidgetbase.ui line 427
+#: rc.cpp:164
+#, no-c-format
+msgid "&Machine (hostname):"
+msgstr "&Makine (evsahibi):"
+
+#. i18n: file ruleswidgetbase.ui line 664
+#: rc.cpp:212
+#, no-c-format
+msgid "&Geometry"
+msgstr "&Geometri"
+
+#. i18n: file ruleswidgetbase.ui line 673
+#: rc.cpp:215 rc.cpp:245 rc.cpp:263 rc.cpp:284 rc.cpp:305 rc.cpp:326
+#: rc.cpp:350 rc.cpp:371 rc.cpp:413 rc.cpp:458 rc.cpp:470 rc.cpp:479
+#: rc.cpp:488 rc.cpp:506 rc.cpp:524 rc.cpp:542 rc.cpp:560 rc.cpp:578
+#: rc.cpp:596 rc.cpp:623 rc.cpp:674 rc.cpp:683 rc.cpp:713 rc.cpp:728
+#: rc.cpp:740 rc.cpp:752 rc.cpp:764
+#, no-c-format
+msgid "Do Not Affect"
+msgstr "Etkileme"
+
+#. i18n: file ruleswidgetbase.ui line 678
+#: rc.cpp:218 rc.cpp:248 rc.cpp:266 rc.cpp:287 rc.cpp:308 rc.cpp:329
+#: rc.cpp:353 rc.cpp:416 rc.cpp:491 rc.cpp:509 rc.cpp:527 rc.cpp:545
+#: rc.cpp:563 rc.cpp:599
+#, no-c-format
+msgid "Apply Initially"
+msgstr "İlk Olarak Uygula"
+
+#. i18n: file ruleswidgetbase.ui line 683
+#: rc.cpp:221 rc.cpp:251 rc.cpp:269 rc.cpp:290 rc.cpp:311 rc.cpp:332
+#: rc.cpp:356 rc.cpp:419 rc.cpp:494 rc.cpp:512 rc.cpp:530 rc.cpp:548
+#: rc.cpp:566 rc.cpp:602
+#, no-c-format
+msgid "Remember"
+msgstr "Hatırla"
+
+#. i18n: file ruleswidgetbase.ui line 688
+#: rc.cpp:224 rc.cpp:254 rc.cpp:272 rc.cpp:293 rc.cpp:314 rc.cpp:335
+#: rc.cpp:359 rc.cpp:374 rc.cpp:422 rc.cpp:461 rc.cpp:473 rc.cpp:482
+#: rc.cpp:497 rc.cpp:515 rc.cpp:533 rc.cpp:551 rc.cpp:569 rc.cpp:581
+#: rc.cpp:605 rc.cpp:626 rc.cpp:677 rc.cpp:686 rc.cpp:716 rc.cpp:731
+#: rc.cpp:743 rc.cpp:755 rc.cpp:767
+#, no-c-format
+msgid "Force"
+msgstr "Zorla"
+
+#. i18n: file ruleswidgetbase.ui line 693
+#: rc.cpp:227 rc.cpp:257 rc.cpp:275 rc.cpp:296 rc.cpp:317 rc.cpp:338
+#: rc.cpp:362 rc.cpp:425 rc.cpp:500 rc.cpp:518 rc.cpp:536 rc.cpp:554
+#: rc.cpp:572 rc.cpp:608
+#, no-c-format
+msgid "Apply Now"
+msgstr "Şimdi Uygula"
+
+#. i18n: file ruleswidgetbase.ui line 698
+#: rc.cpp:230 rc.cpp:260 rc.cpp:278 rc.cpp:299 rc.cpp:320 rc.cpp:341
+#: rc.cpp:365 rc.cpp:377 rc.cpp:428 rc.cpp:464 rc.cpp:476 rc.cpp:485
+#: rc.cpp:503 rc.cpp:521 rc.cpp:539 rc.cpp:557 rc.cpp:575 rc.cpp:584
+#: rc.cpp:611 rc.cpp:629 rc.cpp:680 rc.cpp:689 rc.cpp:719 rc.cpp:734
+#: rc.cpp:746 rc.cpp:758 rc.cpp:770
+#, no-c-format
+msgid "Force Temporarily"
+msgstr "Geçici Olarak Zorla"
+
+#. i18n: file ruleswidgetbase.ui line 716
+#: rc.cpp:233 rc.cpp:242 rc.cpp:707 rc.cpp:725
+#, no-c-format
+msgid "0123456789-+,xX:"
+msgstr "0123456789-+,xX:"
+
+#. i18n: file ruleswidgetbase.ui line 724
+#: rc.cpp:236
+#, no-c-format
+msgid "&Size"
+msgstr "Boyu&t"
+
+#. i18n: file ruleswidgetbase.ui line 732
+#: rc.cpp:239
+#, no-c-format
+msgid "&Position"
+msgstr "Ye&r"
+
+#. i18n: file ruleswidgetbase.ui line 849
+#: rc.cpp:281
+#, no-c-format
+msgid "Maximized &horizontally"
+msgstr "Yatay büyütü&lmüş"
+
+#. i18n: file ruleswidgetbase.ui line 906
+#: rc.cpp:302
+#, no-c-format
+msgid "&Fullscreen"
+msgstr "Tam &Ekran"
+
+#. i18n: file ruleswidgetbase.ui line 952
+#: rc.cpp:323
+#, no-c-format
+msgid "Maximized &vertically"
+msgstr "Dike&y büyütülmüş"
+
+#. i18n: file ruleswidgetbase.ui line 1006
+#: rc.cpp:344
+#, no-c-format
+msgid "&Desktop"
+msgstr "M&asaüstü"
+
+#. i18n: file ruleswidgetbase.ui line 1014
+#: rc.cpp:347
+#, no-c-format
+msgid "Sh&aded"
+msgstr "Gölg&eli"
+
+#. i18n: file ruleswidgetbase.ui line 1082
+#: rc.cpp:368
+#, no-c-format
+msgid "M&inimized"
+msgstr "Kü&çültülmüş"
+
+#. i18n: file ruleswidgetbase.ui line 1116
+#: rc.cpp:383
+#, no-c-format
+msgid "No Placement"
+msgstr "Yerleştirme Yok"
+
+#. i18n: file ruleswidgetbase.ui line 1121
+#: rc.cpp:386
+#, no-c-format
+msgid "Smart"
+msgstr "Akıllı"
+
+#. i18n: file ruleswidgetbase.ui line 1126
+#: rc.cpp:389
+#, fuzzy, no-c-format
+msgid "Maximizing"
+msgstr "En f&azla boyut"
+
+#. i18n: file ruleswidgetbase.ui line 1131
+#: rc.cpp:392
+#, no-c-format
+msgid "Cascade"
+msgstr "Basamakla"
+
+#. i18n: file ruleswidgetbase.ui line 1136
+#: rc.cpp:395
+#, no-c-format
+msgid "Centered"
+msgstr "Ortala"
+
+#. i18n: file ruleswidgetbase.ui line 1141
+#: rc.cpp:398
+#, no-c-format
+msgid "Random"
+msgstr "Rasgele"
+
+#. i18n: file ruleswidgetbase.ui line 1146
+#: rc.cpp:401
+#, no-c-format
+msgid "Top-Left Corner"
+msgstr "Üst-Sol Köşe"
+
+#. i18n: file ruleswidgetbase.ui line 1151
+#: rc.cpp:404
+#, no-c-format
+msgid "Under Mouse"
+msgstr "Farenin Altı"
+
+#. i18n: file ruleswidgetbase.ui line 1156
+#: rc.cpp:407
+#, no-c-format
+msgid "On Main Window"
+msgstr "Ana Pencerede"
+
+#. i18n: file ruleswidgetbase.ui line 1171
+#: rc.cpp:410
+#, no-c-format
+msgid "P&lacement"
+msgstr "Yer&leştirme"
+
+#. i18n: file ruleswidgetbase.ui line 1236
+#: rc.cpp:431
+#, no-c-format
+msgid "&Preferences"
+msgstr "Özellikle&r"
+
+#. i18n: file ruleswidgetbase.ui line 1247
+#: rc.cpp:434
+#, no-c-format
+msgid "Keep &above"
+msgstr "Üstt&e tut"
+
+#. i18n: file ruleswidgetbase.ui line 1255
+#: rc.cpp:437
+#, no-c-format
+msgid "Keep &below"
+msgstr "&Altta tut"
+
+#. i18n: file ruleswidgetbase.ui line 1263
+#: rc.cpp:440
+#, no-c-format
+msgid "Skip pa&ger"
+msgstr "Say&falayıcıyı atla"
+
+#. i18n: file ruleswidgetbase.ui line 1271
+#: rc.cpp:443
+#, no-c-format
+msgid "Skip &taskbar"
+msgstr "Görev çubuğunu a&tla"
+
+#. i18n: file ruleswidgetbase.ui line 1279
+#: rc.cpp:446
+#, no-c-format
+msgid "&No border"
+msgstr "Ke&narlık yok"
+
+#. i18n: file ruleswidgetbase.ui line 1287
+#: rc.cpp:449
+#, no-c-format
+msgid "Accept &focus"
+msgstr "O&daklamayı kabul et"
+
+#. i18n: file ruleswidgetbase.ui line 1295
+#: rc.cpp:452
+#, no-c-format
+msgid "&Closeable"
+msgstr "Kapatıla&bilir"
+
+#. i18n: file ruleswidgetbase.ui line 1303
+#: rc.cpp:455
+#, no-c-format
+msgid "A&ctive opacity in %"
+msgstr "Op&aklığı etkinleştir %"
+
+#. i18n: file ruleswidgetbase.ui line 1337
+#: rc.cpp:467 rc.cpp:587
+#, no-c-format
+msgid "0123456789"
+msgstr "0123456789"
+
+#. i18n: file ruleswidgetbase.ui line 1862
+#: rc.cpp:590
+#, no-c-format
+msgid "I&nactive opacity in %"
+msgstr "Opaklığı kapat %"
+
+#. i18n: file ruleswidgetbase.ui line 1870
+#: rc.cpp:593
+#, no-c-format
+msgid "Shortcut"
+msgstr "Kısayol"
+
+#. i18n: file ruleswidgetbase.ui line 1919
+#: rc.cpp:614
+#, no-c-format
+msgid "Edit..."
+msgstr "Düzenle..."
+
+#. i18n: file ruleswidgetbase.ui line 1937
+#: rc.cpp:617
+#, no-c-format
+msgid "W&orkarounds"
+msgstr "Çalışma Ala&nları"
+
+#. i18n: file ruleswidgetbase.ui line 1948
+#: rc.cpp:620
+#, no-c-format
+msgid "&Focus stealing prevention"
+msgstr "O&dak çalma koruması"
+
+#. i18n: file ruleswidgetbase.ui line 2035
+#: rc.cpp:662
+#, no-c-format
+msgid "Opaque"
+msgstr "Opak"
+
+#. i18n: file ruleswidgetbase.ui line 2040
+#: rc.cpp:665
+#, no-c-format
+msgid "Transparent"
+msgstr "Şeffaf"
+
+#. i18n: file ruleswidgetbase.ui line 2055
+#: rc.cpp:668
+#, no-c-format
+msgid "Window &type"
+msgstr "Pencere &tipi"
+
+#. i18n: file ruleswidgetbase.ui line 2063
+#: rc.cpp:671
+#, no-c-format
+msgid "&Moving/resizing"
+msgstr "Taşı&ma/boyutlandırma"
+
+#. i18n: file ruleswidgetbase.ui line 2115
+#: rc.cpp:692
+#, no-c-format
+msgid "None"
+msgstr "Yok"
+
+#. i18n: file ruleswidgetbase.ui line 2120
+#: rc.cpp:695
+#, no-c-format
+msgid "Low"
+msgstr "Düüşk"
+
+#. i18n: file ruleswidgetbase.ui line 2125
+#: rc.cpp:698
+#, no-c-format
+msgid "Normal"
+msgstr "Normal"
+
+#. i18n: file ruleswidgetbase.ui line 2130
+#: rc.cpp:701
+#, no-c-format
+msgid "High"
+msgstr "Yüksek"
+
+#. i18n: file ruleswidgetbase.ui line 2135
+#: rc.cpp:704
+#, no-c-format
+msgid "Extreme"
+msgstr "Çok Yüksek"
+
+#. i18n: file ruleswidgetbase.ui line 2161
+#: rc.cpp:710
+#, no-c-format
+msgid "M&inimum size"
+msgstr "&En az boyut"
+
+#. i18n: file ruleswidgetbase.ui line 2192
+#: rc.cpp:722
+#, no-c-format
+msgid "M&aximum size"
+msgstr "En f&azla boyut"
+
+#. i18n: file ruleswidgetbase.ui line 2234
+#: rc.cpp:737
+#, fuzzy, no-c-format
+msgid "Ignore requested &geometry"
+msgstr "İstenen ye&ri yoksay"
+
+#. i18n: file ruleswidgetbase.ui line 2293
+#: rc.cpp:749
+#, no-c-format
+msgid "Strictly obey geometry"
+msgstr "Kesin uyulan geometri"
+
+#. i18n: file ruleswidgetbase.ui line 2349
+#: rc.cpp:761
+#, no-c-format
+msgid "Block global shortcuts"
+msgstr ""
+
+#: ruleswidget.cpp:55
+msgid ""
+"Enable this checkbox to alter this window property for the specified window(s)."
+msgstr ""
+"Bu pencerenin özelliklerini belirtilmiş diğer pencerelere uygulamak için bu "
+"seçim kutusu seçin."
+
+#: ruleswidget.cpp:57
+#, fuzzy
+msgid ""
+"Specify how the window property should be affected:"
+"<ul>"
+"<li><em>Do Not Affect:</em> The window property will not be affected and "
+"therefore the default handling for it will be used. Specifying this will block "
+"more generic window settings from taking effect.</li>"
+"<li><em>Apply Initially:</em> The window property will be only set to the given "
+"value after the window is created. No further changes will be affected.</li>"
+"<li><em>Remember:</em> The value of the window property will be remembered and "
+"every time time the window is created, the last remembered value will be "
+"applied.</li>"
+"<li><em>Force:</em> The window property will be always forced to the given "
+"value.</li>"
+"<li><em>Apply Now:</em> The window property will be set to the given value "
+"immediately and will not be affected later (this action will be deleted "
+"afterwards).</li>"
+"<li><em>Force temporarily:</em> The window property will be forced to the given "
+"value until it is hidden (this action will be deleted after the window is "
+"hidden).</li></ul>"
+msgstr ""
+"Pencere özelliğinin nasıl etkileneceğini belirtin:"
+"<ul>"
+"<li><em>Etkilenme:</em> Pencere özelliği etkilenmeyecektir ve öntanımlı ayarlar "
+"kullanılacaktır. Bunu belirtmek bir çok genel pencerenin etkilenmesini "
+"engelliyeecktir.</li>"
+"<li><em>İlk Olarak Uygula:</em> Pencere özelliği, pencere oluşturlduktan sonra "
+"verilen değere ayarlanacaktır. Daha başka değişiklik olmayacaktır.</li>"
+"<li><em>Hatırla:</em> Pencere özelliğinin değeri her zaman hatırlanacak ve en "
+"son hatırlanan değer uygulanacaktır.</li>"
+"<li><em>Zorla:</em> Bu, pencere özelliğini herzaman verilen değerlere "
+"zorlar.</li></ul>"
+
+#: ruleswidget.cpp:72
+#, fuzzy
+msgid ""
+"Specify how the window property should be affected:"
+"<ul>"
+"<li><em>Do Not Affect:</em> The window property will not be affected and "
+"therefore the default handling for it will be used. Specifying this will block "
+"more generic window settings from taking effect.</li>"
+"<li><em>Force:</em> The window property will be always forced to the given "
+"value.</li>"
+"<li><em>Force temporarily:</em> The window property will be forced to the given "
+"value until it is hidden (this action will be deleted after the window is "
+"hidden).</li></ul>"
+msgstr ""
+"Pencere özelliğinin nasıl etkileneceğini belirtin:"
+"<ul>"
+"<li><em>Etkilenme:</em> Pencere özelliği etkilenmeyecektir ve öntanımlı ayarlar "
+"kullanılacaktır. Bunu belirtmek bir çok genel pencerenin etkilenmesini "
+"engelliyecektir.</li>"
+"<li><em>Zorla:</em> Bu, pencere özelliğini herzaman verilen değerlere "
+"zorlar.</li></ul>"
+
+#: ruleswidget.cpp:117
+msgid "All Desktops"
+msgstr "Tüm Masaüstleri"
+
+#: ruleswidget.cpp:652
+#, c-format
+msgid "Settings for %1"
+msgstr "%1 için ayarlar"
+
+#: ruleswidget.cpp:654
+msgid "Unnamed entry"
+msgstr "İsimsiz girdi"
+
+#: ruleswidget.cpp:665
+msgid ""
+"You have specified the window class as unimportant.\n"
+"This means the settings will possibly apply to windows from all applications. "
+"If you really want to create a generic setting, it is recommended you at least "
+"limit the window types to avoid special window types."
+msgstr ""
+"Pencere sınıfını önemsiz olarak tanımladınız.\n"
+"Bu ayarlarınızın tüm uygulamalara uygulanacağı anlamına gelir. Gerçekten genel "
+"bir ayar oluşturmak istiyorsanız, en azından pencere tipini belirterek özel "
+"pencereleri korumanızı öneririz."
+
+#: ruleswidget.cpp:690
+msgid "Edit Window-Specific Settings"
+msgstr "Pencereye Özel Ayarlarını Yapılandır"
+
+#: ruleswidget.cpp:713
+msgid ""
+"This configuration dialog allows altering settings only for the selected window "
+"or application. Find the setting you want to affect, enable the setting using "
+"the checkbox, select in what way the setting should be affected and to which "
+"value."
+msgstr ""
+
+#: ruleswidget.cpp:717
+msgid "Consult the documentation for more details."
+msgstr ""
+
+#: ruleswidget.cpp:749
+msgid "Edit Shortcut"
+msgstr "Kısayolu Düzenle"

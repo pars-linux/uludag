@@ -1,0 +1,89 @@
+# translation of katemake.po to
+# Copyright (C) 2003, 2007 Free Software Foundation, Inc.
+#
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: katemake\n"
+"POT-Creation-Date: 2006-08-18 04:13+0200\n"
+"PO-Revision-Date: 2007-05-16 19:43+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: plugin_katemake.cpp:86
+msgid "Make Output"
+msgstr "Make çıktısı"
+
+#: plugin_katemake.cpp:159
+msgid "Running make..."
+msgstr "Make çalıştırılıyor..."
+
+#: plugin_katemake.cpp:160 plugin_katemake.cpp:509
+msgid "No Errors."
+msgstr "Hata Yok."
+
+#: plugin_katemake.cpp:336
+msgid "Next Error"
+msgstr "Sonraki Hata"
+
+#: plugin_katemake.cpp:340
+msgid "Previous Error"
+msgstr "Önceki Hata"
+
+#: plugin_katemake.cpp:344
+msgid "Make"
+msgstr "Make"
+
+#: plugin_katemake.cpp:348
+msgid "Configure..."
+msgstr "Yapılandır..."
+
+#: plugin_katemake.cpp:360
+msgid "Line"
+msgstr "Satır"
+
+#: plugin_katemake.cpp:362
+msgid "Message"
+msgstr "Mesaj"
+
+#: plugin_katemake.cpp:502
+msgid "Make Results"
+msgstr "Make Sonuçları"
+
+#: plugin_katemake.cpp:503
+msgid "No errors."
+msgstr "Hata yok."
+
+#: plugin_katemake.cpp:645
+msgid ""
+"The file <i>%1</i> is not a local file. Non-local files cannot be compiled."
+msgstr ""
+"<i>%1</i> dosyası yerel bir dosya değildir.Yerel olmayan dosyalar derlenemez."
+
+#: plugin_katemake.cpp:665
+#, c-format
+msgid "<b>Error:</b> Failed to run %1."
+msgstr "<b>Hata:</b> %1 çalıştırılırken hata."
+
+#: plugin_katemake.cpp:687
+msgid "Directories"
+msgstr "Dizinler"
+
+#: plugin_katemake.cpp:692
+msgid "Source prefix:"
+msgstr "Kaynak öneki:"
+
+#: plugin_katemake.cpp:697
+msgid "Build prefix:"
+msgstr "İnşa öneki:"
+
+#. i18n: file ui.rc line 4
+#: rc.cpp:3
+#, no-c-format
+msgid "&Make"
+msgstr "&Make"

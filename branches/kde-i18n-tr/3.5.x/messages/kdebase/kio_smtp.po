@@ -1,0 +1,223 @@
+# translation of kio_smtp.po to 
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kio_smtp\n"
+"POT-Creation-Date: 2007-07-17 01:45+0200\n"
+"PO-Revision-Date: 2003-12-09 00:06+0200\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team:  <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.2\n"
+
+#: command.cc:138
+msgid ""
+"The server rejected both EHLO and HELO commands as unknown or unimplemented.\n"
+"Please contact the server's system administrator."
+msgstr ""
+
+#: command.cc:152
+msgid ""
+"Unexpected server response to %1 command.\n"
+"%2"
+msgstr ""
+"%1 komutuna bilinmeyen sunucu cevabı.\n"
+"%2"
+
+#: command.cc:172
+msgid ""
+"Your SMTP server does not support TLS. Disable TLS, if you want to connect "
+"without encryption."
+msgstr ""
+"SMTP sunucunuz TLS desteklemiyor. Şifresiz bağlantı kurmak istiyorsanız TLS'i "
+"iptal edin."
+
+#: command.cc:186
+msgid ""
+"Your SMTP server claims to support TLS, but negotiation was unsuccessful.\n"
+"You can disable TLS in KDE using the crypto settings module."
+msgstr ""
+"Kullandığınız SMTP sunucusu TLS desteklediğini söylemesine rağmen bağlantı "
+"kurulamadı.\n"
+"Şifreleme ayarları bölümünden TLS desteğini kapatabilirsiniz."
+
+#: command.cc:191
+msgid "Connection Failed"
+msgstr "Bağlantıda Hata"
+
+#: command.cc:242
+msgid "Authentication support is not compiled into kio_smtp."
+msgstr ""
+
+#: command.cc:271
+#, fuzzy
+msgid "No authentication details supplied."
+msgstr "Uyumlu bir kimlik sınama yöntemi bulunamadı."
+
+#: command.cc:374
+#, fuzzy
+msgid ""
+"Your SMTP server does not support %1.\n"
+"Choose a different authentication method.\n"
+"%2"
+msgstr ""
+"SMTP sunucunuz %1 desteklemiyor.\n"
+"Farklı bir kimlik sınama yöntemi deneyin.\n"
+"%2"
+
+#: command.cc:378
+#, fuzzy, c-format
+msgid ""
+"Your SMTP server does not support authentication.\n"
+"  %2"
+msgstr ""
+"SMTP sunucunuz kimlik sınamayı desteklemiyor.\n"
+"%2"
+
+#: command.cc:382
+#, c-format
+msgid ""
+"Authentication failed.\n"
+"Most likely the password is wrong.\n"
+"%1"
+msgstr ""
+"Kimlik sınamada hata oluştu.\n"
+"Parola geçersiz olabilir.\n"
+"%1"
+
+#: command.cc:520
+msgid "Could not read data from application."
+msgstr "Uygulamadan veri okunamadı."
+
+#: command.cc:537
+#, c-format
+msgid ""
+"The message content was not accepted.\n"
+"%1"
+msgstr ""
+"Mesajın içeriği kabul edilmedi.\n"
+"%1"
+
+#: response.cc:105
+#, c-format
+msgid ""
+"The server responded:\n"
+"%1"
+msgstr ""
+"Sunucu cevabı: \n"
+"%1"
+
+#: response.cc:108
+msgid "The server responded: \"%1\""
+msgstr "Sunucu cevabı: \"%1\""
+
+#: response.cc:111
+msgid "This is a temporary failure. You may try again later."
+msgstr "Bu geçici bir hatadır. Daha sonra tekrar deneyiniz."
+
+#: smtp.cc:174
+msgid "The application sent an invalid request."
+msgstr "Uygulama geçersiz bir istek gönderdi."
+
+#: smtp.cc:236
+msgid "The sender address is missing."
+msgstr "Gönderici adres eksik."
+
+#: smtp.cc:244
+msgid "SMTPProtocol::smtp_open failed (%1)"
+msgstr "SMTPProtocol::smtp_open hata verdi (%1)"
+
+#: smtp.cc:252
+msgid ""
+"Your server does not support sending of 8-bit messages.\n"
+"Please use base64 or quoted-printable encoding."
+msgstr ""
+"Sunucunuz 8-bit mesajların iletilmesini desteklemiyor.\n"
+"Lütfen base64 ya da okunabilir bir kodlama kullanın."
+
+#: smtp.cc:331
+msgid "Invalid SMTP response (%1) received."
+msgstr "Geçersiz SMTP cevabı (%1) alındı."
+
+#: smtp.cc:518
+#, c-format
+msgid ""
+"The server did not accept the connection.\n"
+"%1"
+msgstr ""
+"Sunucu bağlantıyı kabul etmedi: \n"
+"%1"
+
+#: smtp.cc:593
+#, fuzzy
+msgid "Username and password for your SMTP account:"
+msgstr "SMTP hesabı için kullanıcı adı ve parolanız:"
+
+#: transactionstate.cc:53
+#, c-format
+msgid ""
+"The server did not accept a blank sender address.\n"
+"%1"
+msgstr ""
+"Sunucu, gönderenin boş adresini kabul etmedi:\n"
+"%1"
+
+#: transactionstate.cc:56
+msgid ""
+"The server did not accept the sender address \"%1\".\n"
+"%2"
+msgstr ""
+"Sunucu, gönderenin adresini kabul etmedi (%1)\n"
+"%2"
+
+#: transactionstate.cc:97
+#, c-format
+msgid ""
+"Message sending failed since the following recipients were rejected by the "
+"server:\n"
+"%1"
+msgstr ""
+
+#: transactionstate.cc:107
+#, fuzzy, c-format
+msgid ""
+"The attempt to start sending the message content failed.\n"
+"%1"
+msgstr ""
+"E-postanın gönderilmesinde bir hata oluştu.\n"
+"Sunucunun verdiği yanıt: \"%1\""
+
+#: transactionstate.cc:111
+msgid "Unhandled error condition. Please send a bug report."
+msgstr "Bir hata alındı. Lütfen hata raporu hazırlayıp gönderin."
+
+#, fuzzy
+#~ msgid ""
+#~ "Your SMTP server does not support %1.\n"
+#~ "Choose a different authentication method."
+#~ msgstr ""
+#~ "SMTP sunucunuz %1 desteklemiyor.\n"
+#~ "Farklı bir kimlik sınama yöntemi deneyin."
+
+#~ msgid "When prompted, you ran away."
+#~ msgstr "Cevap gönderilemedi."
+
+#, fuzzy
+#~ msgid ""
+#~ "The server did not accept the recipient \"%1\".\n"
+#~ "%2"
+#~ msgstr "Sunucu bağlantıyı kabul etmedi: \"%1\""
+
+#~ msgid ""
+#~ "One of the recipients was not accepted.\n"
+#~ "The server responded: \"%1\""
+#~ msgstr ""
+#~ "Bazı alıcılar kabul edilmedi.\n"
+#~ "Sunucunun verdiği yanıt: \"%1\""
+
+#~ msgid "Invalid SMTP response received: \"%1\""
+#~ msgstr "Geçersiz SMTP cevabı alındı: \"%1\""

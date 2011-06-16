@@ -1,0 +1,395 @@
+# translation of kaccess.po to turkish
+# Copyright (C) 2003, 2005 Free Software Foundation, Inc.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+# Adil YILDIZ <adil@kde.org.tr>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kaccess\n"
+"POT-Creation-Date: 2006-09-16 02:33+0200\n"
+"PO-Revision-Date: 2005-03-24 09:46+0000\n"
+"Last-Translator: Adil YILDIZ <adil@kde.org.tr>\n"
+"Language-Team: turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: kaccess.cpp:44
+msgid ""
+"The Shift key has been locked and is now active for all of the following "
+"keypresses."
+msgstr ""
+
+#: kaccess.cpp:45
+msgid "The Shift key is now active."
+msgstr ""
+
+#: kaccess.cpp:46
+msgid "The Shift key is now inactive."
+msgstr ""
+
+#: kaccess.cpp:48
+msgid ""
+"The Ctrl key has been locked and is now active for all of the following "
+"keypresses."
+msgstr ""
+
+#: kaccess.cpp:49
+msgid "The Ctrl key is now active."
+msgstr ""
+
+#: kaccess.cpp:50
+msgid "The Ctrl key is now inactive."
+msgstr ""
+
+#: kaccess.cpp:52
+msgid ""
+"The Alt key has been locked and is now active for all of the following "
+"keypresses."
+msgstr ""
+
+#: kaccess.cpp:53
+msgid "The Alt key is now active."
+msgstr ""
+
+#: kaccess.cpp:54
+msgid "The Alt key is now inactive."
+msgstr ""
+
+#: kaccess.cpp:56
+msgid ""
+"The Win key has been locked and is now active for all of the following "
+"keypresses."
+msgstr ""
+
+#: kaccess.cpp:57
+msgid "The Win key is now active."
+msgstr ""
+
+#: kaccess.cpp:58
+msgid "The Win key is now inactive."
+msgstr ""
+
+#: kaccess.cpp:60
+msgid ""
+"The Meta key has been locked and is now active for all of the following "
+"keypresses."
+msgstr ""
+
+#: kaccess.cpp:61
+msgid "The Meta key is now active."
+msgstr ""
+
+#: kaccess.cpp:62
+msgid "The Meta key is now inactive."
+msgstr ""
+
+#: kaccess.cpp:64
+msgid ""
+"The Super key has been locked and is now active for all of the following "
+"keypresses."
+msgstr ""
+
+#: kaccess.cpp:65
+msgid "The Super key is now active."
+msgstr ""
+
+#: kaccess.cpp:66
+msgid "The Super key is now inactive."
+msgstr ""
+
+#: kaccess.cpp:68
+msgid ""
+"The Hyper key has been locked and is now active for all of the following "
+"keypresses."
+msgstr ""
+
+#: kaccess.cpp:69
+msgid "The Hyper key is now active."
+msgstr ""
+
+#: kaccess.cpp:70
+msgid "The Hyper key is now inactive."
+msgstr ""
+
+#: kaccess.cpp:72
+msgid ""
+"The Alt Gr key has been locked and is now active for all of the following "
+"keypresses."
+msgstr ""
+
+#: kaccess.cpp:73
+msgid "The Alt Gr key is now active."
+msgstr ""
+
+#: kaccess.cpp:74
+msgid "The Alt Gr key is now inactive."
+msgstr ""
+
+#: kaccess.cpp:76
+msgid "The Num Lock key has been activated."
+msgstr ""
+
+#: kaccess.cpp:78
+msgid "The Num Lock key is now inactive."
+msgstr ""
+
+#: kaccess.cpp:80
+msgid "The Caps Lock key has been activated."
+msgstr ""
+
+#: kaccess.cpp:82
+msgid "The Caps Lock key is now inactive."
+msgstr ""
+
+#: kaccess.cpp:84
+msgid "The Scroll Lock key has been activated."
+msgstr ""
+
+#: kaccess.cpp:86
+msgid "The Scroll Lock key is now inactive."
+msgstr ""
+
+#: kaccess.cpp:540
+msgid "AltGraph"
+msgstr "AltGraph"
+
+#: kaccess.cpp:542
+msgid "Hyper"
+msgstr "Hiper"
+
+#: kaccess.cpp:544
+msgid "Super"
+msgstr "Süper"
+
+#: kaccess.cpp:546
+msgid "Meta"
+msgstr "Meta"
+
+#: kaccess.cpp:594
+msgid "&When a gesture was used:"
+msgstr "Bir hareke&t kullanıldığında:"
+
+#: kaccess.cpp:600
+msgid "Change Settings Without Asking"
+msgstr "Ayarları Sormadan Değiştir"
+
+#: kaccess.cpp:601
+msgid "Show This Confirmation Dialog"
+msgstr "Bu Doğrulama Penceresini Göster"
+
+#: kaccess.cpp:602
+msgid "Deactivate All AccessX Features & Gestures"
+msgstr "Tüm AccessX Özelliklerini & Hareketlerini Kapat"
+
+#: kaccess.cpp:641 kaccess.cpp:643
+msgid "Sticky keys"
+msgstr "Yapışkan tuşlar"
+
+#: kaccess.cpp:646 kaccess.cpp:648
+msgid "Slow keys"
+msgstr "Yavaş tuşlar"
+
+#: kaccess.cpp:651 kaccess.cpp:653
+msgid "Bounce keys"
+msgstr "Sıçrama tuşları"
+
+#: kaccess.cpp:656 kaccess.cpp:658
+msgid "Mouse keys"
+msgstr "Fare tuşları"
+
+#: kaccess.cpp:663
+msgid "Do you really want to deactivate \"%1\"?"
+msgstr "\"%1\"i gerçekten kapatmak istiyor musun?"
+
+#: kaccess.cpp:666
+msgid "Do you really want to deactivate \"%1\" and \"%2\"?"
+msgstr "\"%1\"i ve \"%2\"yi gerçekten kapatmak istiyor musun?"
+
+#: kaccess.cpp:669
+msgid "Do you really want to deactivate \"%1\", \"%2\" and \"%3\"?"
+msgstr "\"%1\"i, \"%2\"yi ve \"%3\"ü gerçekten kapatmak istiyor musun?"
+
+#: kaccess.cpp:673
+msgid "Do you really want to deactivate \"%1\", \"%2\", \"%3\" and \"%4\"?"
+msgstr "\"%1\"i, \"%2\"yi, \"%3\"ü ve\"%4\"ü gerçekten kapatmak istiyor musun?"
+
+#: kaccess.cpp:680
+msgid "Do you really want to activate \"%1\"?"
+msgstr "\"%1\"i gerçekten etkinleştirmek istiyor musun?"
+
+#: kaccess.cpp:683
+msgid "Do you really want to activate \"%1\" and to deactivate \"%2\"?"
+msgstr "\"%1\"i etkinleştirmeyi ve \"%2\"yi kapatmayı gerçekten istiyor musun?"
+
+#: kaccess.cpp:686
+msgid ""
+"Do you really want to activate \"%1\" and to deactivate \"%2\" and \"%3\"?"
+msgstr ""
+"\"%1\"i etkinleştirmeyi ve \"%2\"yi ve \"%3\"ü kapatmayı gerçekten istiyor "
+"musun?"
+
+#: kaccess.cpp:690
+msgid ""
+"Do you really want to activate \"%1\" and to deactivate \"%2\", \"%3\" and "
+"\"%4\"?"
+msgstr ""
+"\"%1\"i etkinleştirmeyi ve \"%2\"yi, \"%3\"ü ve \"%4\"ü kapatmayı gerçekten "
+"istiyor musun?"
+
+#: kaccess.cpp:697
+msgid "Do you really want to activate \"%1\" and \"%2\"?"
+msgstr "\"%1\"i ve \"%2\"yi etkinleştirmeyi gerçekten istiyor musun?"
+
+#: kaccess.cpp:700
+msgid ""
+"Do you really want to activate \"%1\" and \"%2\" and to deactivate \"%3\"?"
+msgstr ""
+"\"%1\"i ve \"%2\"yi etkinleştirmeyi ve \"%3\"ü kapatmayı gerçekten istiyor "
+"musun?"
+
+#: kaccess.cpp:704
+msgid ""
+"Do you really want to activate \"%1\", and \"%2\" and to deactivate \"%3\" and "
+"\"%4\"?"
+msgstr ""
+"\"%1\"i ve \"%2\"yi etkinleştirmeyi ve \"%3\"ü ve \"%4\"ü kapatmayı gerçekten "
+"istiyor musun?"
+
+#: kaccess.cpp:711
+msgid "Do you really want to activate \"%1\", \"%2\" and \"%3\"?"
+msgstr "\"%1\"i, \"%2\"yi ve \"%3\"ü etkinleştirmeyi gerçekten istiyor musun?"
+
+#: kaccess.cpp:715
+msgid ""
+"Do you really want to activate \"%1\", \"%2\" and \"%3\" and to deactivate "
+"\"%4\"?"
+msgstr ""
+"\"%1\"i, \"%2\"yi ve \"%3\"ü etkinleştirmeyi ve \"%4\"ü kapatmayı gerçekten "
+"istiyor musun?"
+
+#: kaccess.cpp:721
+msgid "Do you really want to activate \"%1\", \"%2\", \"%3\" and \"%4\"?"
+msgstr ""
+"\"%1\"i, \"%2\"yi, \"%3\"ü ve \"%4\"ü etkinleştirmeyi gerçekten istiyor musun?"
+
+#: kaccess.cpp:728
+msgid "An application has requested to change this setting."
+msgstr "Bir uygulama bu ayarın değişmesini istedi."
+
+#: kaccess.cpp:732
+msgid ""
+"You held down the Shift key for 8 seconds or an application has requested to "
+"change this setting."
+msgstr ""
+"Shift tuşunu 8 saniye basılı tuttunuz veya bir uygulama bu ayarın değişmesini "
+"istedi."
+
+#: kaccess.cpp:734
+msgid ""
+"You pressed the Shift key 5 consecutive times or an application has requested "
+"to change this setting."
+msgstr ""
+"Shift tuşuna ardarda 5 kere bastınız veya bir uygulama bu ayarın değişmesini "
+"istedi."
+
+#: kaccess.cpp:738
+msgid "You pressed %1 or an application has requested to change this setting."
+msgstr "%1'e bastınız veya bir uygulama bu ayarın değişmesini istedi."
+
+#: kaccess.cpp:744
+msgid ""
+"An application has requested to change these settings, or you used a "
+"combination of several keyboard gestures."
+msgstr ""
+"Bir uygulama bu ayarların değişmesini istedi veya siz birçok klavye "
+"hareketinden birini kullandınız."
+
+#: kaccess.cpp:746
+msgid "An application has requested to change these settings."
+msgstr "Bir uygulama bu ayarların değişmesini istedi."
+
+#: kaccess.cpp:751
+msgid ""
+"These AccessX settings are needed for some users with motion impairments and "
+"can be configured in the KDE Control Center. You can also turn them on and off "
+"with standardized keyboard gestures.\n"
+"\n"
+"If you do not need them, you can select \"Deactivate all AccessX features and "
+"gestures\"."
+msgstr ""
+"Bu AccessX ayarları, bazı hareket engelli kullanıcılar için kolaylık "
+"sağlamaktadır ve KDE Kontrol Merkezinden yapılandırılabilir. Ayrıca bazı "
+"standart klavye hareketleri ile de açıp kapatılabilir.\n"
+"\n"
+"Eğer ihtiyacınız yoksa, \"Tüm AccessX özelliklerini ve hareketlerini kapat\"'ı "
+"seçebilirsiniz."
+
+#: kaccess.cpp:768
+msgid ""
+"Slow keys has been enabled. From now on, you need to press each key for a "
+"certain length of time before it is accepted."
+msgstr ""
+
+#: kaccess.cpp:770
+msgid "Slow keys has been disabled."
+msgstr ""
+
+#: kaccess.cpp:773
+msgid ""
+"Bounce keys has been enabled. From now on, each key will be blocked for a "
+"certain length of time after it is used."
+msgstr ""
+
+#: kaccess.cpp:775
+msgid "Bounce keys has been disabled."
+msgstr ""
+
+#: kaccess.cpp:778
+msgid ""
+"Sticky keys has been enabled. From now on, modifier keys will stay latched "
+"after you have released them."
+msgstr ""
+
+#: kaccess.cpp:780
+msgid "Sticky keys has been disabled."
+msgstr ""
+
+#: kaccess.cpp:783
+msgid ""
+"Mouse keys has been enabled. From now on, you can use the number pad of your "
+"keyboard in order to control the mouse."
+msgstr ""
+
+#: kaccess.cpp:785
+msgid "Mouse keys has been disabled."
+msgstr ""
+
+#: main.cpp:9
+msgid "kaccess"
+msgstr "kaccess"
+
+#: main.cpp:9
+msgid "KDE Accessibility Tool"
+msgstr "KDE Erişilebilirlik Aracı"
+
+#: main.cpp:11
+msgid "(c) 2000, Matthias Hoelzer-Kluepfel"
+msgstr "(c) 2000, Matthias Hoelzer-Kluepfel"
+
+#: main.cpp:13
+msgid "Author"
+msgstr "Yazar"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Adil YILDIZ"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "adil@kde.org.tr"

@@ -1,0 +1,439 @@
+# translation of kmrml.po to Türkçe
+# translation of kmrml.po to
+# translation of kmrml.po to
+# translation of kmrml.po to Turkish
+# translation of kcmkmrml.po to
+# Copyright (C) 2002,2003, 2004, 2005 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2002,2003.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Alper Sen <aalpersen@gmail.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kmrml\n"
+"POT-Creation-Date: 2006-11-25 02:35+0100\n"
+"PO-Revision-Date: 2005-07-15 13:57+0300\n"
+"Last-Translator: Alper Sen <aalpersen@gmail.com>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: algorithmdialog.cpp:64
+msgid "Configure Query Algorithms"
+msgstr "Sorgu Algoritmalarını Yapılandır"
+
+#: algorithmdialog.cpp:75
+msgid "Collection: "
+msgstr "Kolleksiyon: "
+
+#: algorithmdialog.cpp:85
+msgid "Algorithm: "
+msgstr "Algoritma: "
+
+#: mrml.cpp:95
+msgid "Unable to start the Indexing Server. Aborting the query."
+msgstr "Indeksleme sunucusu başlatılamıyor. Sorgu iptal ediliyor."
+
+#: mrml.cpp:120
+msgid "No MRML data is available."
+msgstr "MRML verisi mevcut değil."
+
+#: mrml.cpp:152
+msgid "Could not connect to GIFT server."
+msgstr "GIFT sunucusuna bağlanılamıyor."
+
+#: mrml_part.cpp:141
+msgid "Server to query:"
+msgstr "Tarama yapılacak sunucu:"
+
+#: mrml_part.cpp:148
+msgid "Search in collection:"
+msgstr "Kolleksiyonda ara:"
+
+#: mrml_part.cpp:159
+msgid "Configure algorithm"
+msgstr "Algoritmayı yapılandır"
+
+#: mrml_part.cpp:168
+msgid "Maximum result images:"
+msgstr "En fazla resim sonucu:"
+
+#: mrml_part.cpp:171
+msgid "Random search"
+msgstr "Rastgele arama"
+
+#: mrml_part.cpp:207
+msgid ""
+"There is no image collection available\n"
+"at %1.\n"
+msgstr ""
+"%1'de resim kolleksiyonu mevcut\n"
+"değil.\n"
+
+#: mrml_part.cpp:208
+msgid "No Image Collection"
+msgstr "Resim Kolleksiyonu Yok"
+
+#: mrml_part.cpp:248
+msgid "You can only search by example images on a local indexing server."
+msgstr "Yerel indexleme sunucusunda sadece örnek resimleri arayabilirsiniz."
+
+#: mrml_part.cpp:250
+msgid "Only Local Servers Possible"
+msgstr "Sadece Yerel Sunucular Mümkün"
+
+#: mrml_part.cpp:278
+msgid ""
+"There are no indexable folders specified. Do you want to configure them now?"
+msgstr ""
+"İndekslenebilir klasör tanımlanmamış. Hemen yapılandırmak istiyor musunuz?"
+
+#: mrml_part.cpp:281
+msgid "Configuration Missing"
+msgstr "Yapılandırma Dosyası Bulunamadı"
+
+#: mrml_part.cpp:283
+msgid "Do Not Configure"
+msgstr ""
+
+#: mrml_part.cpp:313
+msgid "Connecting to indexing server at %1..."
+msgstr "%1 adresindeki indeksleme sunucusuna bağlantı kuruluyor..."
+
+#: mrml_part.cpp:354
+msgid "Downloading reference files..."
+msgstr "Referans dosyaları alınıyor..."
+
+#: mrml_part.cpp:497
+msgid ""
+"Server returned error:\n"
+"%1\n"
+msgstr ""
+"Sunucu bir hata geri döndürdü:\n"
+"%1\n"
+
+#: mrml_part.cpp:499
+msgid "Server Error"
+msgstr "Sunucu Hatası"
+
+#: mrml_part.cpp:548 mrml_part.cpp:787
+msgid "&Search"
+msgstr "&Ara"
+
+#: mrml_part.cpp:685
+msgid "Error formulating the query. The \"query-step\" element is missing."
+msgstr "Sorgu formüle edilirken hata. \"query-step\" sorgu-adım nesnesi eksik."
+
+#: mrml_part.cpp:687
+msgid "Query Error"
+msgstr "Tarama Hatası"
+
+#: mrml_part.cpp:691
+msgid "Random search..."
+msgstr "Rastgele arama..."
+
+#: mrml_part.cpp:692
+msgid "Searching..."
+msgstr "Arama yapılıyor..."
+
+#: mrml_part.cpp:701
+msgid "Ready."
+msgstr "Hazır."
+
+#: mrml_part.cpp:784
+msgid "&Connect"
+msgstr "&Bağlan"
+
+#: mrml_part.cpp:790
+msgid "Sto&p"
+msgstr "&Dur"
+
+#: mrml_part.cpp:837
+msgid "MRML Client for KDE"
+msgstr "KDE için MRML İstemcisi"
+
+#: mrml_part.cpp:839
+msgid "A tool to search for images by their content"
+msgstr "İçeriğine göre resim arama aracı"
+
+#: mrml_part.cpp:841
+msgid "(c) 2001-2002, Carsten Pfeiffer"
+msgstr "(c) 2001-2002, Carsten Pfeiffer"
+
+#: mrml_part.cpp:843
+msgid "http://devel-home.kde.org/~pfeiffer/kmrml/"
+msgstr "http://devel-home.kde.org/~pfeiffer/kmrml/"
+
+#: mrml_part.cpp:846
+msgid "Developer, Maintainer"
+msgstr "Geliştirici"
+
+#: mrml_part.cpp:849
+msgid "Developer of the GIFT, Helping Hand"
+msgstr "Yardımcı"
+
+#: mrml_view.cpp:58
+msgid "No thumbnail available"
+msgstr "Küçükresim mevcut değil"
+
+#: mrml_view.cpp:300
+msgid ""
+"You can refine queries by giving feedback about the current result and pressing "
+"the Search button again."
+msgstr ""
+"Sorgularınızı mevcut sonuçlara daha fazla bilgi ekleyerek ve Ara düğmesine "
+"tekrar basarak iyileştirebilirsiniz."
+
+#: mrml_view.cpp:301
+msgid "Relevant"
+msgstr "İlgili"
+
+#: mrml_view.cpp:302
+msgid "Neutral"
+msgstr "Orta"
+
+#: mrml_view.cpp:303
+msgid "Irrelevant"
+msgstr "İlgisiz"
+
+#. i18n: file kcontrol/serverconfigwidget.ui line 74
+#: rc.cpp:3
+#, no-c-format
+msgid "&Add"
+msgstr "&Ekle"
+
+#. i18n: file kcontrol/serverconfigwidget.ui line 114
+#: rc.cpp:9
+#, no-c-format
+msgid "TCP/IP Port Number of the Indexing Server"
+msgstr "İndeksleme Sunucusunun TCP/IP Port Numarası"
+
+#. i18n: file kcontrol/serverconfigwidget.ui line 122
+#: rc.cpp:12
+#, no-c-format
+msgid "Au&to"
+msgstr "&Otomatik"
+
+#. i18n: file kcontrol/serverconfigwidget.ui line 125
+#: rc.cpp:15
+#, no-c-format
+msgid ""
+"Tries to automatically determine the port. This works only for local servers."
+msgstr ""
+"Otomatik olarak portu bulmaya çalışır. Bu sadece yerel sunucularda işe yarar."
+
+#. i18n: file kcontrol/serverconfigwidget.ui line 152
+#: rc.cpp:18
+#, no-c-format
+msgid "Ho&stname:"
+msgstr "&Makine adı:"
+
+#. i18n: file kcontrol/serverconfigwidget.ui line 163
+#: rc.cpp:21
+#, no-c-format
+msgid "P&ort:"
+msgstr "&Port:"
+
+#. i18n: file kcontrol/serverconfigwidget.ui line 176
+#: rc.cpp:24
+#, no-c-format
+msgid "Per&form authentication"
+msgstr "&Kimlik denetimi yap"
+
+#. i18n: file kcontrol/serverconfigwidget.ui line 229
+#: rc.cpp:27
+#, no-c-format
+msgid "&Username:"
+msgstr "&Kullanıcı adı:"
+
+#. i18n: file kcontrol/serverconfigwidget.ui line 245
+#: rc.cpp:30
+#, no-c-format
+msgid "&Password:"
+msgstr "&Parola:"
+
+#: kcontrol/indexer.cpp:115
+msgid "<qt>Next Folder: <br><b>%1</b>"
+msgstr "<qt>Sonraki Dizin: <br><b>%1</b>"
+
+#: kcontrol/indexer.cpp:163
+msgid "<qt>Processing folder %1 of %2: <br><b>%3</b><br>File %4 of %5.</qt>"
+msgstr "<qt>Dizinler işleniyor: %1 / %2: <br><b>%3</b><br>Dosya: %4 / %5.</qt>"
+
+#: kcontrol/indexer.cpp:180 kcontrol/mainpage.cpp:420
+msgid "Finished."
+msgstr "Tamamlandı."
+
+#: kcontrol/indexer.cpp:180
+msgid "Writing data..."
+msgstr "Veriler yazılıyor..."
+
+#: kcontrol/kcmkmrml.cpp:51
+msgid "KCMKMrml"
+msgstr "KCMKMrml"
+
+#: kcontrol/kcmkmrml.cpp:53
+msgid "Advanced Search Control Module"
+msgstr "Gelişmiş Arama Kontrol Modülü"
+
+#: kcontrol/kcmkmrml.cpp:55
+msgid "Copyright 2002, Carsten Pfeiffer"
+msgstr "Copyright 2002, Carsten Pfeiffer"
+
+#: kcontrol/kcmkmrml.cpp:84
+msgid ""
+"Cannot find executables \"gift\" and/or \"gift-add-collection.pl\" in the "
+"PATH.\n"
+"Please install the \"GNU Image Finding Tool\"."
+msgstr ""
+
+#: kcontrol/kcmkmrml.cpp:107
+msgid "Do you really want the configuration to be reset to the defaults?"
+msgstr "Yapılandırma ayarlarının eski hale getirilmesini istiyor musunuz?"
+
+#: kcontrol/kcmkmrml.cpp:108
+msgid "Reset Configuration"
+msgstr "Yapılandırmayı Sıfırla"
+
+#: kcontrol/kcmkmrml.cpp:133
+msgid ""
+"<h1>Image Index</h1>KDE can make use of the GNU Image Finding Tool (GIFT) to "
+"perform queries based not just on filenames, but on file content."
+"<p>For example, you can search for an image by giving an example image that "
+"looks similar to the one you are looking for.</p>"
+"<p>For this to work, your image directories need to be indexed by, for example, "
+"the GIFT server.</p>"
+"<p>Here you can configure the servers (you can also query remote servers) and "
+"the directories to index.</p>"
+msgstr ""
+"<h1>Resim Indeksi</h1>KDE GNU Resim Arama Aracı GIFT'i kullanarak, sadece dosya "
+"adlarını değil içeriklerini kullanrak sorgular oluşturmanıza olanak verir. "
+"<p>Örneğin, aradığınız resme benzeyen başka bir resmi arama aracına örnek "
+"olarak verdiğinizde aradığınız resmi bulmaya çalışır.</p>"
+"<p>Bunun çalışması için, resim dizinleriniz GIFT sunucusu tarafında "
+"indekslenmiş olmalıdır.</p>"
+"<p>Sunucuları (ayrıca uzak sunucuları) buradan yapılandırabilirsiniz ve "
+"indekslenecek dizinleri belirtebilirsiniz.</p>"
+
+#: kcontrol/mainpage.cpp:64
+msgid "Indexing Server Configuration"
+msgstr "İndeksleme Sunucu Yapılandırması"
+
+#: kcontrol/mainpage.cpp:67
+msgid "Hostname of the Indexing Server"
+msgstr "İndeksleme sunucu adı"
+
+#: kcontrol/mainpage.cpp:80 kcontrol/mainpage.cpp:85
+#, fuzzy
+msgid "Folders to Be Indexed"
+msgstr "İndekslenecek dizinler"
+
+#: kcontrol/mainpage.cpp:172
+msgid ""
+"You did not specify any folders to be indexed. This means you will be unable to "
+"perform queries on your computer."
+msgstr ""
+"İndekslemek için bir dizin belirtmediniz. Bu sorguları bilgisayarınızda "
+"yapamayacağınız anlamına gelir."
+
+#: kcontrol/mainpage.cpp:312
+msgid "Select Folder You Want to Index"
+msgstr "İndekslenecek Dizini Seçin"
+
+#: kcontrol/mainpage.cpp:387
+msgid "Removing old Index Files"
+msgstr "Eski Indeks dosyaları kaldırılıyor"
+
+#: kcontrol/mainpage.cpp:388 kcontrol/mainpage.cpp:436
+msgid "Processing..."
+msgstr "İşlem sürüyor..."
+
+#: kcontrol/mainpage.cpp:426
+msgid ""
+"The settings have been saved. Now, the configured directories need to be "
+"indexed. This may take a while. Do you want to do this now?"
+msgstr ""
+"Ayarlar kaydedildi. Yapılandırılan tüm dizinler indekslenecektir. Bu işlem bir "
+"kaç dakika sürebilir. Devam etmek istiyor musunuz?"
+
+#: kcontrol/mainpage.cpp:430
+msgid "Start Indexing Now?"
+msgstr "İndekslemeye Başlansın mı?"
+
+#: kcontrol/mainpage.cpp:431
+msgid "Index"
+msgstr ""
+
+#: kcontrol/mainpage.cpp:431
+msgid "Do Not Index"
+msgstr ""
+
+#: kcontrol/mainpage.cpp:435
+msgid "Indexing Folders"
+msgstr "Dizinler İndeksleniyor"
+
+#: kcontrol/mainpage.cpp:461
+msgid "Is the \"GNU Image Finding Tool\" properly installed?"
+msgstr ""
+
+#: kcontrol/mainpage.cpp:468
+#, c-format
+msgid "Unknown error: %1"
+msgstr ""
+
+#: kcontrol/mainpage.cpp:471
+msgid "An error occurred during indexing. The index might be invalid."
+msgstr ""
+
+#: kcontrol/mainpage.cpp:472
+#, fuzzy
+msgid "Indexing Aborted"
+msgstr "Dizinler İndeksleniyor"
+
+#: server/watcher.cpp:146
+msgid ""
+"<qt>The server with the command line"
+"<br>%1"
+"<br>is not available anymore. Do you want to restart it?"
+msgstr ""
+"<qt>Komut satırı destekli sunucu"
+"<br>%1"
+"<br>artık mevcut değil. Yeniden başlatmak ister misiniz?"
+
+#: server/watcher.cpp:150 server/watcher.cpp:179
+msgid "Service Failure"
+msgstr "Servis Hatası"
+
+#: server/watcher.cpp:150
+msgid "Restart Server"
+msgstr ""
+
+#: server/watcher.cpp:150
+msgid "Do Not Restart"
+msgstr ""
+
+#: server/watcher.cpp:175
+msgid "Unable to start the server with the command line<br>%1<br>Try again?"
+msgstr "Sunucu<br>%1<br>komutu ile başlatılamıyor. Tekrar denensin mi?"
+
+#: server/watcher.cpp:179
+msgid "Try Again"
+msgstr ""
+
+#: server/watcher.cpp:179
+msgid "Do Not Try"
+msgstr ""

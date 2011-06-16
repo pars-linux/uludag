@@ -1,0 +1,117 @@
+# translation of knetwalk.po to Türkçe
+# translation of knetwalk.po to
+# Görkem Çetin <gorkem@gorkemcetin.com>, 2005.
+# Bülent ŞENER <bulent@kde.org.tr>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: knetwalk\n"
+"POT-Creation-Date: 2006-12-21 02:39+0100\n"
+"PO-Revision-Date: 2005-08-10 11:15+0300\n"
+"Last-Translator: Bülent ŞENER <bulent@kde.org.tr>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.1\n"
+
+#. i18n: file knetwalk.kcfg line 9
+#: rc.cpp:6
+#, fuzzy, no-c-format
+msgid "Default user name"
+msgstr "Öntanımlı yazar adı"
+
+#. i18n: file knetwalk.kcfg line 13
+#: rc.cpp:9
+#, no-c-format
+msgid "Default difficulty level"
+msgstr ""
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Bülent ŞENER"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "bulent@kde.org.tr"
+
+#: highscores.cpp:69
+msgid "anonymous"
+msgstr "anonim"
+
+#: main.cpp:27
+msgid "KNetWalk, a game for system administrators."
+msgstr "KNetWalk, sistem yöneticileri için bir oyun."
+
+#: main.cpp:33
+#, fuzzy
+msgid "Start in novice mode"
+msgstr "Acemi kipte başlat."
+
+#: main.cpp:34
+#, fuzzy
+msgid "Start in normal mode"
+msgstr "Normal kipte başlat."
+
+#: main.cpp:35
+#, fuzzy
+msgid "Start in expert mode"
+msgstr "Uzman kipte başlat."
+
+#: main.cpp:36
+#, fuzzy
+msgid "Start in master mode"
+msgstr "Gelişmiş kipte başlat."
+
+#: main.cpp:42
+msgid "knetwalk"
+msgstr "knetwalk"
+
+#: main.cpp:43
+msgid "(C) 2004, 2005 Andi Peredri, ported to KDE by Thomas Nagy"
+msgstr ""
+
+#: mainwindow.cpp:75
+msgid "Novice"
+msgstr "Acemi"
+
+#: mainwindow.cpp:76
+msgid "Normal"
+msgstr "Normal"
+
+#: mainwindow.cpp:77
+msgid "Expert"
+msgstr "Uzman"
+
+#: mainwindow.cpp:78
+msgid "Master"
+msgstr "Gelişmiş"
+
+#: mainwindow.cpp:89
+#, fuzzy
+msgid ""
+"<h3>Rules of the Game</h3>"
+"<p>You are the system administrator and your goal is to connect each computer "
+"to the central server."
+"<p>Click the right mouse button to turn the cable in a clockwise direction, and "
+"the left mouse button to turn it in a counter-clockwise direction."
+"<p>Start the LAN with as few turns as possible!"
+msgstr ""
+"<h3>Rules of Game</h3>"
+"<p>Siz sistem yöneticisisiniz ve amacınız her bilgisayarı merkez sunucu "
+"bilgisayara bağlamak."
+"<p>Farenin sağ düğmesini tıklayarak bilgisayarın ağ bağlantısını kesebilir ya "
+"da sağ düğmeyi tıklayarak yeni ağ bağlantısı ekleyebilirsiniz."
+"<p>Ağı birkaç bağlantı olasılığı ile başlatın!"
+
+#: mainwindow.cpp:151 mainwindow.cpp:372
+#, c-format
+msgid "Click: %1"
+msgstr "Tıkla : %1"
+
+#~ msgid "Default author name"
+#~ msgstr "Öntanımlı yazar adı"

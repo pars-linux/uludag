@@ -1,0 +1,896 @@
+# translation of khotkeys.po to Turkish
+# translation of khotkeys.po to
+# translation of khotkeys.po to Türkçe
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# YILDIZ KARDEŞLER <turkishprogram@xposta.com>, 2003.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: khotkeys\n"
+"POT-Creation-Date: 2008-07-08 01:18+0200\n"
+"PO-Revision-Date: 2004-09-07 23:27+0300\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.3.1\n"
+
+#. i18n: file kcontrol/ui/action_group_tab_ui.ui line 30
+#: rc.cpp:3
+#, no-c-format
+msgid "Action group &name:"
+msgstr "&Eylem grubu adı:"
+
+#. i18n: file kcontrol/ui/action_group_tab_ui.ui line 63
+#: kcontrol/action_group_tab.cpp:54 kcontrol/action_group_tab.cpp:72
+#: kcontrol/general_tab.cpp:94 kcontrol/general_tab.cpp:112 rc.cpp:6 rc.cpp:78
+#, no-c-format
+msgid "&Disable"
+msgstr "&Kapat"
+
+#. i18n: file kcontrol/ui/action_group_tab_ui.ui line 88
+#: rc.cpp:9 rc.cpp:81 rc.cpp:234
+#, no-c-format
+msgid "&Comment:"
+msgstr "&Açıklama:"
+
+#. i18n: file kcontrol/ui/action_list_widget_ui.ui line 30
+#: rc.cpp:12 rc.cpp:33 rc.cpp:164 rc.cpp:219
+#, no-c-format
+msgid "Comment:"
+msgstr "Açıklama:"
+
+#. i18n: file kcontrol/ui/action_list_widget_ui.ui line 73
+#: rc.cpp:15 rc.cpp:36 rc.cpp:167 rc.cpp:222
+#, no-c-format
+msgid "&New"
+msgstr "&Yeni"
+
+#. i18n: file kcontrol/ui/action_list_widget_ui.ui line 81
+#: rc.cpp:18 rc.cpp:39 rc.cpp:170 rc.cpp:225
+#, no-c-format
+msgid "&Modify..."
+msgstr "&Düzenle..."
+
+#. i18n: file kcontrol/ui/actions_listview_widget_ui.ui line 30
+#: kcontrol/tab_widget.cpp:425 rc.cpp:27
+#, no-c-format
+msgid "Actions"
+msgstr "Eylemler"
+
+#. i18n: file kcontrol/ui/command_url_widget_ui.ui line 38
+#: rc.cpp:30
+#, no-c-format
+msgid "Command/URL to execute:"
+msgstr "Çalıştırılacak komut/adres:"
+
+#. i18n: file kcontrol/ui/dcop_widget_ui.ui line 30
+#: rc.cpp:48
+#, no-c-format
+msgid "Remote &application:"
+msgstr "&Uzak uygulama"
+
+#. i18n: file kcontrol/ui/dcop_widget_ui.ui line 63
+#: rc.cpp:51
+#, no-c-format
+msgid "Remote &object:"
+msgstr "Uzak &nesne:"
+
+#. i18n: file kcontrol/ui/dcop_widget_ui.ui line 96
+#: rc.cpp:54
+#, no-c-format
+msgid "Called &function:"
+msgstr "Çağırılan &fonksiyon:"
+
+#. i18n: file kcontrol/ui/dcop_widget_ui.ui line 129
+#: rc.cpp:57
+#, no-c-format
+msgid "Arguments:"
+msgstr "Parametreler:"
+
+#. i18n: file kcontrol/ui/dcop_widget_ui.ui line 193
+#: rc.cpp:60
+#, no-c-format
+msgid "&Try"
+msgstr "&Dene"
+
+#. i18n: file kcontrol/ui/dcop_widget_ui.ui line 218
+#: rc.cpp:63
+#, no-c-format
+msgid "Run &KDCOP"
+msgstr "&KDCOP Çalıştır"
+
+#. i18n: file kcontrol/ui/general_settings_tab_ui.ui line 24
+#: rc.cpp:66
+#, no-c-format
+msgid "Disable KHotKeys daemon"
+msgstr "KHotkey programını pasifleştir"
+
+#. i18n: file kcontrol/ui/general_settings_tab_ui.ui line 57
+#: rc.cpp:69
+#, no-c-format
+msgid "Import New Actions..."
+msgstr "Yeni Eylemleri Al..."
+
+#. i18n: file kcontrol/ui/general_tab_ui.ui line 30
+#: rc.cpp:72
+#, no-c-format
+msgid "Action &name:"
+msgstr "&Eylem adı:"
+
+#. i18n: file kcontrol/ui/general_tab_ui.ui line 60
+#: rc.cpp:75
+#, no-c-format
+msgid "Action &type:"
+msgstr "E&ylem türü:"
+
+#. i18n: file kcontrol/ui/gesture_triggers_tab_ui.ui line 36
+#: rc.cpp:84
+#, no-c-format
+msgid "Gestures:"
+msgstr "Mimikler:"
+
+#. i18n: file kcontrol/ui/gesture_triggers_tab_ui.ui line 153
+#: rc.cpp:87 rc.cpp:90 rc.cpp:93
+#, no-c-format
+msgid "Edit..."
+msgstr "Düzenle..."
+
+#. i18n: file kcontrol/ui/gestures_settings_tab_ui.ui line 24
+#: rc.cpp:96
+#, no-c-format
+msgid "Disable mouse gestures globally"
+msgstr "Fare hareketlerini genel olarak pasifleştir"
+
+#. i18n: file kcontrol/ui/gestures_settings_tab_ui.ui line 40
+#: rc.cpp:99
+#, no-c-format
+msgid "Mouse button:"
+msgstr "Fare düğmesi:"
+
+#. i18n: file kcontrol/ui/gestures_settings_tab_ui.ui line 66
+#: rc.cpp:102
+#, no-c-format
+msgid "Gesture timeout (ms):"
+msgstr "Mimik zaman aşımı (ms):"
+
+#. i18n: file kcontrol/ui/gestures_settings_tab_ui.ui line 90
+#: rc.cpp:105
+#, no-c-format
+msgid "Windows to Exclude"
+msgstr "Hariç Bırakılacak Pencere"
+
+#. i18n: file kcontrol/ui/info_tab_ui.ui line 16
+#: rc.cpp:108
+#, no-c-format
+msgid "Info_tab_ui"
+msgstr ""
+
+#. i18n: file kcontrol/ui/info_tab_ui.ui line 34
+#: rc.cpp:111
+#, fuzzy, no-c-format
+msgid ""
+"<p>This module allows configuring input actions, like mouse gestures, keyboard "
+"shortcuts for performing commands, launching applications or DCOP calls, and "
+"similar.</p>\n"
+"<p><b>NOTE: </b>If you are not an experienced user, you should be careful with "
+"modifying the actions, and should limit your changes mainly to "
+"enabling/disabling actions, and changing triggers.</p>"
+msgstr ""
+"<p>Bu modül giriş eylemlerini örn, fare hareketleri, klavye kısayolları, "
+"uygulama başlatma veya DCOP çağırma ve benzerlerini ayarlamanıza olanak "
+"verir.</p>\n"
+"<p><b>NOT: </b>Gelişmiş bir kullanıcı değilseniz, eylemleri değiştiriken "
+"dikkatli olmalısınız ve kendinizi eylemleri aktifleştirme ve pasifleştirme ve "
+"tetikçileri değiştirmede kısıtlayın</p>"
+
+#. i18n: file kcontrol/ui/keyboard_input_widget_ui.ui line 16
+#: rc.cpp:115
+#, fuzzy, no-c-format
+msgid "Keyboard_input_widget_ui"
+msgstr "Klavye girdisi:"
+
+#. i18n: file kcontrol/ui/keyboard_input_widget_ui.ui line 33
+#: rc.cpp:118
+#, no-c-format
+msgid "Keyboard input:"
+msgstr "Klavye girdisi:"
+
+#. i18n: file kcontrol/ui/keyboard_input_widget_ui.ui line 66
+#: rc.cpp:121
+#, no-c-format
+msgid "Modify..."
+msgstr "Düzenle..."
+
+#. i18n: file kcontrol/ui/keyboard_input_widget_ui.ui line 76
+#: rc.cpp:124
+#, no-c-format
+msgid "Send Input To"
+msgstr ""
+
+#. i18n: file kcontrol/ui/keyboard_input_widget_ui.ui line 83
+#: rc.cpp:127
+#, no-c-format
+msgid ""
+"Specify the window where the keyboard input should be sent to:"
+"<ul>\n"
+"<li><em>Action window:</em> The window where the triggering action happened; "
+"this is usually the currently active window, except for mouse gesture triggers "
+"- where it is the window under mouse - and window triggers -where it is the "
+"window triggering the action.</li>\n"
+"<li><em>Active window:</em> The currently active window.</li>\n"
+"<li><em>Specific window:</em> Any window matching the given criteria.</li>\n"
+"</ul>"
+msgstr ""
+
+#. i18n: file kcontrol/ui/keyboard_input_widget_ui.ui line 94
+#: rc.cpp:134
+#, no-c-format
+msgid "Action window"
+msgstr "Eylem penceresi"
+
+#. i18n: file kcontrol/ui/keyboard_input_widget_ui.ui line 105
+#: rc.cpp:137
+#, no-c-format
+msgid "Active window"
+msgstr "Etkin pencere"
+
+#. i18n: file kcontrol/ui/keyboard_input_widget_ui.ui line 113
+#: rc.cpp:140
+#, no-c-format
+msgid "Specific window"
+msgstr "Belirtilen pencere"
+
+#. i18n: file kcontrol/ui/keyboard_input_widget_ui.ui line 123
+#: kcontrol/tab_widget.cpp:430 rc.cpp:143 rc.cpp:216
+#, no-c-format
+msgid "Window"
+msgstr "Pencere"
+
+#. i18n: file kcontrol/ui/main_buttons_widget_ui.ui line 38
+#: rc.cpp:146
+#, no-c-format
+msgid "&New Action"
+msgstr "&Yeni Eylem"
+
+#. i18n: file kcontrol/ui/main_buttons_widget_ui.ui line 46
+#: rc.cpp:149
+#, no-c-format
+msgid "New &Group"
+msgstr "&Yeni Grup"
+
+#. i18n: file kcontrol/ui/main_buttons_widget_ui.ui line 54
+#: rc.cpp:152
+#, no-c-format
+msgid "Delete Action"
+msgstr "Eylemi Sil"
+
+#. i18n: file kcontrol/ui/main_buttons_widget_ui.ui line 76
+#: rc.cpp:155
+#, no-c-format
+msgid "Global &Settings"
+msgstr "&Genel Ayarlar"
+
+#. i18n: file kcontrol/ui/menuentry_widget_ui.ui line 30
+#: rc.cpp:158
+#, no-c-format
+msgid "Menu entry to execute:"
+msgstr "Çalıştırılacak menü girdisi:"
+
+#. i18n: file kcontrol/ui/menuentry_widget_ui.ui line 60
+#: rc.cpp:161
+#, no-c-format
+msgid "&Browse..."
+msgstr "&Gözat..."
+
+#. i18n: file kcontrol/ui/voice_input_widget_ui.ui line 46
+#: rc.cpp:179
+#, no-c-format
+msgid "&Play"
+msgstr ""
+
+#. i18n: file kcontrol/ui/voice_input_widget_ui.ui line 54
+#: rc.cpp:182
+#, no-c-format
+msgid "&Record"
+msgstr ""
+
+#. i18n: file kcontrol/ui/voice_input_widget_ui.ui line 62
+#: rc.cpp:185
+#, no-c-format
+msgid "&Stop"
+msgstr ""
+
+#. i18n: file kcontrol/ui/voice_settings_tab_ui.ui line 24
+#: rc.cpp:188
+#, no-c-format
+msgid ""
+"In order to trigger a spoken action, you have to press the key (or combination "
+"of keys) configured below, speak the command and then press the same key again "
+"once you have finished speaking."
+msgstr ""
+
+#. i18n: file kcontrol/ui/voice_settings_tab_ui.ui line 43
+#: rc.cpp:191
+#, fuzzy, no-c-format
+msgid "Shortcut:"
+msgstr "Kısayol tetikçisi : "
+
+#. i18n: file kcontrol/ui/voice_settings_tab_ui.ui line 51
+#: rc.cpp:194
+#, no-c-format
+msgid "None"
+msgstr ""
+
+#. i18n: file kcontrol/ui/voice_settings_tab_ui.ui line 96
+#: rc.cpp:197
+#, no-c-format
+msgid ""
+"<b>Note:</b> To get voice recognition working correctly and in full duplex "
+"mode: \n"
+"make sure <i>Full duplex</i> is checked in your <i>Sound System</i> options."
+msgstr ""
+
+#. i18n: file kcontrol/ui/window_trigger_widget_ui.ui line 30
+#: rc.cpp:201
+#, no-c-format
+msgid "Trigger When"
+msgstr "Tetikle"
+
+#. i18n: file kcontrol/ui/window_trigger_widget_ui.ui line 47
+#: rc.cpp:204
+#, no-c-format
+msgid "Window appears"
+msgstr "Pencere görüntülendiğinde"
+
+#. i18n: file kcontrol/ui/window_trigger_widget_ui.ui line 55
+#: rc.cpp:207
+#, no-c-format
+msgid "Window disappears"
+msgstr "Pencere kaybolduğunda"
+
+#. i18n: file kcontrol/ui/window_trigger_widget_ui.ui line 63
+#: rc.cpp:210
+#, no-c-format
+msgid "Window activates"
+msgstr "Pencere etkin hale geldiğinde"
+
+#. i18n: file kcontrol/ui/window_trigger_widget_ui.ui line 71
+#: rc.cpp:213
+#, no-c-format
+msgid "Window deactivates"
+msgstr "Pencere etkisiz hale geldiğinde"
+
+#. i18n: file kcontrol/ui/windowdef_simple_widget_ui.ui line 77
+#: rc.cpp:237
+#, no-c-format
+msgid "Window &title:"
+msgstr "&Pencere başlığı:"
+
+#. i18n: file kcontrol/ui/windowdef_simple_widget_ui.ui line 86
+#: rc.cpp:240 rc.cpp:264 rc.cpp:288
+#, no-c-format
+msgid "Is Not Important"
+msgstr "Önemli Değil"
+
+#. i18n: file kcontrol/ui/windowdef_simple_widget_ui.ui line 91
+#: rc.cpp:243 rc.cpp:267 rc.cpp:291
+#, no-c-format
+msgid "Contains"
+msgstr "İçerir"
+
+#. i18n: file kcontrol/ui/windowdef_simple_widget_ui.ui line 96
+#: rc.cpp:246 rc.cpp:270 rc.cpp:294
+#, no-c-format
+msgid "Is"
+msgstr "Eşit"
+
+#. i18n: file kcontrol/ui/windowdef_simple_widget_ui.ui line 101
+#: rc.cpp:249 rc.cpp:273 rc.cpp:297
+#, no-c-format
+msgid "Matches Regular Expression"
+msgstr "Düzenli İfade Eşleşir"
+
+#. i18n: file kcontrol/ui/windowdef_simple_widget_ui.ui line 106
+#: rc.cpp:252 rc.cpp:276 rc.cpp:300
+#, no-c-format
+msgid "Does Not Contain"
+msgstr "İçermez"
+
+#. i18n: file kcontrol/ui/windowdef_simple_widget_ui.ui line 111
+#: rc.cpp:255 rc.cpp:279 rc.cpp:303
+#, no-c-format
+msgid "Is Not"
+msgstr "Değil"
+
+#. i18n: file kcontrol/ui/windowdef_simple_widget_ui.ui line 116
+#: rc.cpp:258 rc.cpp:282 rc.cpp:306
+#, no-c-format
+msgid "Does Not Match Regular Expression"
+msgstr "Düzenli İfade Eşleşmez"
+
+#. i18n: file kcontrol/ui/windowdef_simple_widget_ui.ui line 166
+#: rc.cpp:261
+#, no-c-format
+msgid "Window c&lass:"
+msgstr "&Pencere sınıfı:"
+
+#. i18n: file kcontrol/ui/windowdef_simple_widget_ui.ui line 255
+#: rc.cpp:285
+#, no-c-format
+msgid "Window &role:"
+msgstr "&Pencere rolü:"
+
+#. i18n: file kcontrol/ui/windowdef_simple_widget_ui.ui line 361
+#: rc.cpp:309
+#, no-c-format
+msgid "&Autodetect"
+msgstr "&Otomatik algıla"
+
+#. i18n: file kcontrol/ui/windowdef_simple_widget_ui.ui line 405
+#: rc.cpp:312
+#, no-c-format
+msgid "Window Types"
+msgstr "Pencere Türleri"
+
+#. i18n: file kcontrol/ui/windowdef_simple_widget_ui.ui line 422
+#: rc.cpp:315
+#, no-c-format
+msgid "Normal"
+msgstr "Normal"
+
+#. i18n: file kcontrol/ui/windowdef_simple_widget_ui.ui line 430
+#: rc.cpp:318
+#, no-c-format
+msgid "Dialog"
+msgstr "Pencere"
+
+#. i18n: file kcontrol/ui/windowdef_simple_widget_ui.ui line 438
+#: rc.cpp:321
+#, no-c-format
+msgid "Desktop"
+msgstr "Masaüstü"
+
+#. i18n: file kcontrol/ui/windowdef_simple_widget_ui.ui line 446
+#: rc.cpp:324
+#, no-c-format
+msgid "Dock"
+msgstr "Yerleştir"
+
+#: app/app.cpp:147 kcontrol/kcmkhotkeys.cpp:89
+msgid "KHotKeys"
+msgstr "KHotKeys"
+
+#: app/app.cpp:148
+msgid "KHotKeys daemon"
+msgstr "KHotKeys programı"
+
+#: shared/actions.cpp:181
+msgid "Command/URL : "
+msgstr "Komut/URL : "
+
+#: shared/actions.cpp:218
+msgid "Menuentry : "
+msgstr "Menügirdisi : "
+
+#: shared/actions.cpp:302
+msgid "DCOP : "
+msgstr "DCOP : "
+
+#: shared/actions.cpp:396
+msgid "Keyboard input : "
+msgstr "Klavye girdisi : "
+
+#: shared/actions.cpp:442
+msgid "Activate window : "
+msgstr "Etkin pencere : "
+
+#: shared/conditions.cpp:297
+msgid "Active window: "
+msgstr "Etkin pencere: "
+
+#: shared/conditions.cpp:366
+msgid "Existing window: "
+msgstr "Mevcut pencere: "
+
+#: kcontrol/condition_list_widget.cpp:49 shared/conditions.cpp:414
+msgid ""
+"_: Not_condition\n"
+"Not"
+msgstr "Değil"
+
+#: kcontrol/condition_list_widget.cpp:50 shared/conditions.cpp:458
+msgid ""
+"_: And_condition\n"
+"And"
+msgstr "Ve"
+
+#: kcontrol/condition_list_widget.cpp:51 shared/conditions.cpp:499
+msgid ""
+"_: Or_condition\n"
+"Or"
+msgstr "Ya da"
+
+#: shared/settings.cpp:70
+msgid ""
+"This \"actions\" file has already been imported before. Are you sure you want "
+"to import it again?"
+msgstr ""
+
+#: shared/settings.cpp:81
+msgid ""
+"This \"actions\" file has no ImportId field and therefore it cannot be "
+"determined whether or not it has been imported already. Are you sure you want "
+"to import it?"
+msgstr ""
+
+#: kcontrol/menuedit.cpp:95 shared/settings.cpp:250
+msgid "These entries were created using Menu Editor."
+msgstr "Bu girdiler Menü Düzenleyici kullanılarak oluşturulmuştur."
+
+#: shared/triggers.cpp:153
+#, fuzzy
+msgid "Shortcut trigger: "
+msgstr "Kısayol tetikçisi : "
+
+#: shared/triggers.cpp:318
+#, fuzzy
+msgid "Window trigger: "
+msgstr "Pencere tetikçisi : "
+
+#: shared/triggers.cpp:354
+#, fuzzy
+msgid "Gesture trigger: "
+msgstr "Hareket tetikçisi : "
+
+#: shared/triggers.cpp:414
+#, fuzzy
+msgid "Voice trigger: "
+msgstr "Kısayol tetikçisi : "
+
+#: shared/voices.cpp:211
+msgid "Voice"
+msgstr ""
+
+#: shared/windows.cpp:371
+#, fuzzy
+msgid "Window simple: "
+msgstr "Basit pencere : "
+
+#: shared/khotkeysglobal.h:48
+msgid "Menu Editor entries"
+msgstr "Menü Düzenleyici girdileri"
+
+#: kcontrol/action_group_tab.cpp:70 kcontrol/general_tab.cpp:110
+msgid "&Disable (group is disabled)"
+msgstr "&Pasifleştir (grup pasfileştirildi)"
+
+#: kcontrol/action_list_widget.cpp:46
+msgid "Command/URL..."
+msgstr "Komut/URL..."
+
+#: kcontrol/action_list_widget.cpp:47
+msgid "K-Menu Entry..."
+msgstr "K-Menü Girdisi..."
+
+#: kcontrol/action_list_widget.cpp:48
+msgid "DCOP Call..."
+msgstr "DCOP Çağrısı"
+
+#: kcontrol/action_list_widget.cpp:49
+msgid "Keyboard Input..."
+msgstr "Klavye Girdisi..."
+
+#: kcontrol/action_list_widget.cpp:50
+msgid "Activate Window..."
+msgstr "Pencereyi Etkinleştir..."
+
+#: kcontrol/condition_list_widget.cpp:47
+msgid "Active Window..."
+msgstr "Etkin Pencere..."
+
+#: kcontrol/condition_list_widget.cpp:48
+msgid "Existing Window..."
+msgstr "Mevcut Pencere..."
+
+#: kcontrol/condition_list_widget.cpp:159
+msgid ""
+"A group is selected.\n"
+"Add the new condition in this selected group?"
+msgstr ""
+"Bir grup seçildi.\n"
+"Bu seçili grup için yeni durum eklensin mi?"
+
+#: kcontrol/condition_list_widget.cpp:159
+#, fuzzy
+msgid "Add in Group"
+msgstr "Yeni Eylem Grubu"
+
+#: kcontrol/condition_list_widget.cpp:159
+#, fuzzy
+msgid "Ignore Group"
+msgstr "&Yeni Grup"
+
+#: kcontrol/condition_list_widget.cpp:351
+#: kcontrol/condition_list_widget.cpp:374
+#: kcontrol/windowdef_list_widget.cpp:216
+msgid "Window Details"
+msgstr "Pencere Detayları"
+
+#: kcontrol/dcop_widget.cpp:37
+msgid ""
+"_: to try\n"
+"&Try"
+msgstr "&Dene"
+
+#: kcontrol/dcop_widget.cpp:83
+msgid "Failed to run KDCOP"
+msgstr "KDCOP çalıştırılamadı"
+
+#: kcontrol/general_tab.cpp:45
+msgid "Generic"
+msgstr "Genel"
+
+#: kcontrol/general_tab.cpp:49
+msgid "Keyboard Shortcut -> Command/URL (simple)"
+msgstr "Klavye Kısayolu -> Komut/URL (basit)"
+
+#: kcontrol/general_tab.cpp:53
+msgid "K-Menu Entry (simple)"
+msgstr "K-Menü Girdisi (basit)"
+
+#: kcontrol/general_tab.cpp:57
+msgid "Keyboard Shortcut -> DCOP Call (simple)"
+msgstr "Klavye Kısayolu -> DCOP Çağrısı (basit)"
+
+#: kcontrol/general_tab.cpp:61
+msgid "Keyboard Shortcut -> Keyboard Input (simple)"
+msgstr "Klavye Kısayolu -> Klavye Girdisi (basit)"
+
+#: kcontrol/general_tab.cpp:65
+msgid "Gesture -> Keyboard Input (simple)"
+msgstr "Hareket -> Klavye Girdisi (basit)"
+
+#: kcontrol/general_tab.cpp:69
+msgid "Keyboard Shortcut -> Activate Window (simple)"
+msgstr "Klavye Kısayolu -> Pencere Aktifleştir (basit)"
+
+#: kcontrol/gesturerecordpage.cpp:35
+msgid ""
+"Draw the gesture you would like to record below. Press and hold the left mouse "
+"button while drawing, and release when you have finished.\n"
+"\n"
+"You will be required to draw the gesture 3 times. After each drawing, if they "
+"match, the indicators below will change to represent which step you are on.\n"
+"\n"
+"If at any point they do not match, you will be required to restart. If you want "
+"to force a restart, use the reset button below.\n"
+"\n"
+"Draw here:"
+msgstr ""
+"Aşağıya kaydetmet istediğiniz şekli çiz. Çizerken sol fare tuşunu basılı "
+"tutun.\n"
+"\n"
+"Şekli üç defa çizmek zorundasınız. Her çizimin sonunda çizimler tutuyorsa "
+"alttaki gösterge hangi adımda olduğunuzu beliirtir.\n"
+"\n"
+"Her hangi bir noktada uyuşmuyorsa tekrar başlamak zorundasınız. Yeniden "
+"başlatmak için alttaki sıfırla düğmesini kullanın.\n"
+"\n"
+"Buraya Çizin:"
+
+#: kcontrol/gesturerecordpage.cpp:64
+msgid "&Reset"
+msgstr "&Sıfırla"
+
+#: kcontrol/gesturerecordpage.cpp:106 kcontrol/gesturerecordpage.cpp:122
+#, fuzzy
+msgid "Your gestures did not match."
+msgstr "Hareketiniz uyuşmuyor."
+
+#: kcontrol/gesturerecordpage.cpp:128
+msgid ""
+"You have already completed the three required drawings. Either press 'Ok' to "
+"save or 'Reset' to try again."
+msgstr ""
+"Gerekli üç çizimi tamamladınız. Kaydetmek için 'Tamam' tekrar denemek için "
+"'Sıfırla' düğmelerine basınız"
+
+#: kcontrol/gestures_settings_tab.cpp:33
+msgid "Button 2 (middle)"
+msgstr "Düğme 2 (orta)"
+
+#: kcontrol/gestures_settings_tab.cpp:34
+msgid "Button 3 (secondary)"
+msgstr "3. düğme (ikincil)"
+
+#: kcontrol/gestures_settings_tab.cpp:35
+msgid "Button 4 (often wheel up)"
+msgstr "Düğme 4 (genelde tekerlek yukarı)"
+
+#: kcontrol/gestures_settings_tab.cpp:36
+msgid "Button 5 (often wheel down)"
+msgstr "Düğme 5 (genelde tekerlek aşağı)"
+
+#: kcontrol/gestures_settings_tab.cpp:37
+msgid "Button 6 (if available)"
+msgstr "Düğme 6 (mevcutsa)"
+
+#: kcontrol/gestures_settings_tab.cpp:38
+msgid "Button 7 (if available)"
+msgstr "Düğme 7 (mevcutsa)"
+
+#: kcontrol/gestures_settings_tab.cpp:39
+msgid "Button 8 (if available)"
+msgstr "Düğme 8 (mevcutsa)"
+
+#: kcontrol/gestures_settings_tab.cpp:40
+msgid "Button 9 (if available)"
+msgstr "Düğme 9 (mevcutsa)"
+
+#: kcontrol/kcmkhotkeys.cpp:92
+msgid "(c) 1999-2005 Lubos Lunak"
+msgstr ""
+
+#: kcontrol/kcmkhotkeys.cpp:93
+msgid "Maintainer"
+msgstr ""
+
+#: kcontrol/kcmkhotkeys.cpp:223
+msgid "New Action"
+msgstr "Yeni Eylem"
+
+#: kcontrol/kcmkhotkeys.cpp:244
+msgid "New Action Group"
+msgstr "Yeni Eylem Grubu"
+
+#: kcontrol/kcmkhotkeys.cpp:276
+#, fuzzy
+msgid "Select File with Actions to Be Imported"
+msgstr "Eylemlerle ihrac edilecek dosyayı seçin"
+
+#: kcontrol/kcmkhotkeys.cpp:283
+msgid ""
+"Import of the specified file failed. Most probably the file is not a valid file "
+"with actions."
+msgstr ""
+"Belirtilen dosyanın ihracı yapılamadı. Büyük bir ihtimalle eylemle geçerli bir "
+"dosya değil."
+
+#: kcontrol/menuedit.cpp:236 kcontrol/menuedit.cpp:237
+#: kcontrol/menuedit.cpp:276
+msgid "K Menu - "
+msgstr "K Menü - "
+
+#: kcontrol/tab_widget.cpp:417
+msgid "Info"
+msgstr "Bilgi"
+
+#: kcontrol/tab_widget.cpp:418
+msgid "General Settings"
+msgstr "Genel Ayarlar"
+
+#: kcontrol/tab_widget.cpp:419
+msgid "Gestures Settings"
+msgstr "Hareket Ayarları"
+
+#: kcontrol/tab_widget.cpp:420 kcontrol/tab_widget.cpp:421
+msgid "General"
+msgstr "Genel"
+
+#: kcontrol/tab_widget.cpp:422
+msgid "Triggers"
+msgstr "Tetikçiler"
+
+#: kcontrol/tab_widget.cpp:423
+msgid "Keyboard Shortcut"
+msgstr "Klavye Kısayolu"
+
+#: kcontrol/tab_widget.cpp:424
+msgid "Gestures"
+msgstr "Mimikler"
+
+#: kcontrol/tab_widget.cpp:426
+msgid "Command/URL Settings"
+msgstr "Komut/URL Ayarları"
+
+#: kcontrol/tab_widget.cpp:427
+msgid "Menu Entry Settings"
+msgstr "Menü Girdisi Ayarları"
+
+#: kcontrol/tab_widget.cpp:428
+msgid "DCOP Call Settings"
+msgstr "DCOP Çağrısı Ayarları"
+
+#: kcontrol/tab_widget.cpp:429
+msgid "Keyboard Input Settings"
+msgstr "Klavye Girdisi Ayarları"
+
+#: kcontrol/tab_widget.cpp:431
+msgid "Conditions"
+msgstr "Koşullar"
+
+#: kcontrol/tab_widget.cpp:432
+#, fuzzy
+msgid "Voices Settings"
+msgstr "Hareket Ayarları"
+
+#: kcontrol/triggers_tab.cpp:51
+msgid "Shortcut Trigger..."
+msgstr "Kısayol Tetikçisi..."
+
+#: kcontrol/triggers_tab.cpp:52
+msgid "Gesture Trigger..."
+msgstr "Hareket Tetikçisi"
+
+#: kcontrol/triggers_tab.cpp:53
+msgid "Window Trigger..."
+msgstr "Pencere Tetikçisi"
+
+#: kcontrol/triggers_tab.cpp:56
+#, fuzzy
+msgid "Voice Trigger..."
+msgstr "Kısayol Tetikçisi..."
+
+#: kcontrol/triggers_tab.cpp:226
+msgid "Select keyboard shortcut:"
+msgstr "Klavye kısayolunu seçin:"
+
+#: kcontrol/voicerecorder.cpp:74
+msgid "Recording..."
+msgstr ""
+
+#: kcontrol/voicerecorder.cpp:124
+msgid ""
+"The word you recorded is too close to the existing reference '%1'. Please "
+"record another word."
+msgstr ""
+
+#: kcontrol/voicerecorder.cpp:131
+msgid ""
+"Unable to extract voice information from noise.\n"
+"If this error occurs repeatedly, it suggests that there is either too much "
+"background noise, or the quality of your microphone is too poor."
+msgstr ""
+
+#: kcontrol/voicerecordpage.cpp:31
+msgid ""
+"Enter a code for the sound (e.g. the word you are saying) and record the same "
+"word twice."
+msgstr ""
+
+#: kcontrol/voicerecordpage.cpp:81
+msgid "<qt>%1<br><font color='red'>The sound code already exists</font></qt>"
+msgstr ""
+
+#: kcontrol/voicerecordpage.cpp:89
+msgid ""
+"<qt>%1"
+"<br><font color='red'>One of the sound references is not correct</font></qt>"
+msgstr ""
+
+#: kcontrol/windowdef_list_widget.cpp:45
+msgid "Simple Window..."
+msgstr "Basit Pencere..."
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr ""
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr ""
+
+#, fuzzy
+#~ msgid "khotkeys"
+#~ msgstr "KHotKeys"
+
+#~ msgid "version %1"
+#~ msgstr "sürüm %1"

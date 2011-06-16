@@ -1,0 +1,116 @@
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: akdepasswd\n"
+"POT-Creation-Date: 2005-07-09 01:31+0200\n"
+"PO-Revision-Date: 2008-02-26 22:40+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@lists.kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: LoKalize 0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: kdepasswd.cpp:24
+msgid "Change password of this user"
+msgstr "Bu kullanıcının parolasını değiştir"
+
+#: kdepasswd.cpp:31
+msgid "KDE passwd"
+msgstr "KDE passwd"
+
+#: kdepasswd.cpp:32
+msgid "Changes a UNIX password."
+msgstr "Bir UNIX parolası değiştirir."
+
+#: kdepasswd.cpp:34
+msgid "Maintainer"
+msgstr "Projeyi Yürüten"
+
+#: kdepasswd.cpp:60
+msgid "You need to be root to change the password of other users."
+msgstr ""
+"Diğer kullanıcıların parolalarını değiştirebilmek için root kullanıcısı olmanız "
+"gerekir."
+
+#: passwddlg.cpp:19 passwddlg.cpp:87
+msgid "Change Password"
+msgstr "Parola Değiştir"
+
+#: passwddlg.cpp:20
+msgid "Please enter your current password:"
+msgstr "Lütfen şimdikit parolanızı girin:"
+
+#: passwddlg.cpp:41 passwddlg.cpp:159
+msgid "Conversation with 'passwd' failed."
+msgstr "'passwd' komutu ile iletişim sağlanamadı."
+
+#: passwddlg.cpp:51
+msgid "Could not find the program 'passwd'."
+msgstr "'passwd' uygulaması bulunamadı."
+
+#: passwddlg.cpp:56
+msgid "Incorrect password. Please try again."
+msgstr "Yanlış parola. Lütfen yeniden deneyin."
+
+#: passwddlg.cpp:60
+msgid "Internal error: illegal return value from PasswdProcess::checkCurrent."
+msgstr "İç hata: PasswdProcess::checkCurrent dan uygunsuz değer dönüşü."
+
+#: passwddlg.cpp:89
+msgid "Please enter your new password:"
+msgstr "Lütfen yeni parolanızı girin:"
+
+#: passwddlg.cpp:91
+msgid "Please enter the new password for user <b>%1</b>:"
+msgstr "Lütfen <b>%1</b> kullanıcısı için yeni parolayı girin:"
+
+#: passwddlg.cpp:108
+msgid ""
+"Your password is longer than 8 characters. On some systems, this can cause "
+"problems. You can truncate the password to 8 characters, or leave it as it is."
+msgstr ""
+"Parolanız 8 karakterden uzundur. Bu bazı sistemlerde sorun yaratabilir. "
+"Parolayı 8 karakter ile sınırlayabilir ya da olduğu gibi bırakabilirsiniz."
+
+#: passwddlg.cpp:111
+msgid ""
+"The password is longer than 8 characters. On some systems, this can cause "
+"problems. You can truncate the password to 8 characters, or leave it as it is."
+msgstr ""
+"Parola 8 karakterden uzundur. Bu bazı sistemlerde sorun yaratabilir. Parolayı 8 "
+"karakter ile sınırlayabilir ya da olduğu gibi bırakabilirsiniz."
+
+#: passwddlg.cpp:115
+msgid "Password Too Long"
+msgstr "Çok Uzun Parola"
+
+#: passwddlg.cpp:116
+msgid "Truncate"
+msgstr "Sınırla"
+
+#: passwddlg.cpp:117
+msgid "Use as Is"
+msgstr "Olduğu gibi Bırak"
+
+#: passwddlg.cpp:138
+msgid "Your password has been changed."
+msgstr "Parolanız değiştirildi."
+
+#: passwddlg.cpp:148
+msgid "Your password has not been changed."
+msgstr "Parolanız değiştirilmedi."
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Serdar Soytetir"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "tulliana@gmail.com"

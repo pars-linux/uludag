@@ -1,0 +1,413 @@
+# translation of domtreeviewer.po to
+# Copyright (C) 2003, 2005, 2007 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2001,2002.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+# Cemil MUTLU <mawilos@gmail.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: domtreeviewer\n"
+"POT-Creation-Date: 2006-05-18 04:07+0200\n"
+"PO-Revision-Date: 2007-05-16 20:02+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: domtreecommands.cpp:33
+msgid "No error"
+msgstr "Hata yok"
+
+#: domtreecommands.cpp:34
+msgid "Index size exceeded"
+msgstr "indeks boyutu aşıldı"
+
+#: domtreecommands.cpp:35
+msgid "DOMString size exceeded"
+msgstr "DOM Dizgi boyutu aşıldı"
+
+#: domtreecommands.cpp:36
+msgid "Hierarchy request error"
+msgstr "Hiyerarşi istek hatası"
+
+#: domtreecommands.cpp:37
+msgid "Wrong document"
+msgstr "Yanlış belge"
+
+#: domtreecommands.cpp:38
+msgid "Invalid character"
+msgstr "Geçersiz karakter"
+
+#: domtreecommands.cpp:39
+msgid "No data allowed"
+msgstr "İnin verilmiş veri yok"
+
+#: domtreecommands.cpp:40
+msgid "No modification allowed"
+msgstr "İzin verilen değişiklik yok"
+
+#: domtreecommands.cpp:41
+msgid "Not found"
+msgstr "Bulunamadı"
+
+#: domtreecommands.cpp:42
+msgid "Not supported"
+msgstr "Desteklenmiyor"
+
+#: domtreecommands.cpp:43
+msgid "Attribute in use"
+msgstr "Kullanılan Öznitelik"
+
+#: domtreecommands.cpp:44
+msgid "Invalid state"
+msgstr "Geçersiz durum"
+
+#: domtreecommands.cpp:45
+msgid "Syntax error"
+msgstr "Sözdizimi hatası"
+
+#: domtreecommands.cpp:46
+msgid "Invalid modification"
+msgstr "Geçersiz değişiklik"
+
+#: domtreecommands.cpp:47
+msgid "Namespace error"
+msgstr "İsim boşluğu hatası"
+
+#: domtreecommands.cpp:48
+msgid "Invalid access"
+msgstr "Geçersiz erişim"
+
+#: domtreecommands.cpp:56
+#, c-format
+msgid "Unknown Exception %1"
+msgstr "Bilinmeyen İstisna %1"
+
+#: domtreecommands.cpp:292
+msgid "Add attribute"
+msgstr "Öznitelik ekle"
+
+#: domtreecommands.cpp:322
+msgid "Change attribute value"
+msgstr "Öznitelik değerini değiştir"
+
+#: domtreecommands.cpp:353
+msgid "Remove attribute"
+msgstr "Öznitelik kaldır"
+
+#: domtreecommands.cpp:385
+msgid "Rename attribute"
+msgstr "Özniteliği yeniden adlandır"
+
+#: domtreecommands.cpp:421
+msgid "Change textual content"
+msgstr "Metnin içeriğini değiştir"
+
+#: domtreecommands.cpp:483
+msgid "Insert node"
+msgstr "Düğüm ekle"
+
+#: domtreecommands.cpp:511
+msgid "Remove node"
+msgstr "Düğüm kaldır"
+
+#: domtreecommands.cpp:557
+msgid "Move node"
+msgstr "Düğüm taşı"
+
+#: domtreeview.cpp:127
+#, c-format
+msgid "DOM Tree for %1"
+msgstr "%1 için DOM Ağacı"
+
+#. i18n: file domtreeviewbase.ui line 147
+#: domtreeview.cpp:127 rc.cpp:51
+#, no-c-format
+msgid "DOM Tree"
+msgstr "DOM Ağacı"
+
+#: domtreeview.cpp:464
+msgid "Move Nodes"
+msgstr "Düğümleri Taşı"
+
+#: domtreeview.cpp:527
+msgid "Save DOM Tree as HTML"
+msgstr "DOM Ağacını HTML olarak kaydet"
+
+#: domtreeview.cpp:532
+msgid "File Exists"
+msgstr "Dosya Mevcut"
+
+#: domtreeview.cpp:533
+msgid ""
+"Do you really want to overwrite: \n"
+"%1?"
+msgstr ""
+"Gerçekten üzerine yazmak istiyor musunuz? \n"
+"%1"
+
+#: domtreeview.cpp:534
+msgid "Overwrite"
+msgstr "Üzerine Yaz"
+
+#: domtreeview.cpp:547
+msgid "Unable to Open File"
+msgstr "Dosya Açılamıyor"
+
+#: domtreeview.cpp:548
+msgid ""
+"Unable to open \n"
+" %1 \n"
+" for writing"
+msgstr ""
+"%1 dosyası\n"
+" yazmak için açılamadı"
+
+#: domtreeview.cpp:552
+msgid "Invalid URL"
+msgstr "Geçersiz URL"
+
+#: domtreeview.cpp:553
+msgid ""
+"This URL \n"
+" %1 \n"
+" is not valid."
+msgstr ""
+"%1 adresi \n"
+" geçerli değil."
+
+#: domtreeview.cpp:766
+msgid "Delete Nodes"
+msgstr "Öznitelikleri Sil"
+
+#: domtreeview.cpp:988
+msgid "<Click to add>"
+msgstr "<Eklemek için tıkla>"
+
+#: domtreeview.cpp:1215
+msgid "Delete Attributes"
+msgstr "Öznitelikleri Sil"
+
+#: domtreewindow.cpp:135
+msgid "Show Message Log"
+msgstr "İleti Geçmişini Göster"
+
+#: domtreewindow.cpp:145
+msgid "Expand"
+msgstr "Genişlet"
+
+#: domtreewindow.cpp:149
+msgid "Increase expansion level"
+msgstr "Genişleme düzeyi aşılması"
+
+#: domtreewindow.cpp:150
+msgid "Collapse"
+msgstr "Çökme"
+
+#: domtreewindow.cpp:154
+msgid "Decrease expansion level"
+msgstr "Genişleme düzeyi azalması"
+
+#: domtreewindow.cpp:161
+msgid "Delete nodes"
+msgstr "Düğümleri sil"
+
+#: domtreewindow.cpp:162
+msgid "New &Element ..."
+msgstr "Yeni &Eleman ..."
+
+#: domtreewindow.cpp:166
+msgid "New &Text Node ..."
+msgstr "Yeni &Metin Düğümü ..."
+
+#: domtreewindow.cpp:174
+msgid "Delete attributes"
+msgstr "Öz&nitelikleri sil"
+
+#: plugin_domtreeviewer.cpp:22
+msgid "Show &DOM Tree"
+msgstr "&DOM Ağacını Göster"
+
+#. i18n: file domtreeviewerui.rc line 15
+#: rc.cpp:12
+#, no-c-format
+msgid "&Go"
+msgstr "&Git"
+
+#. i18n: file domtreeviewerui.rc line 21
+#: rc.cpp:18
+#, no-c-format
+msgid "Tree Toolbar"
+msgstr "Ağaç Araç Çubuğu"
+
+#. i18n: file plugin_domtreeviewer.rc line 8
+#: rc.cpp:24
+#, no-c-format
+msgid "Extra Toolbar"
+msgstr "Ek Araç Çubuğu"
+
+#. i18n: file attributeeditdialog.ui line 16
+#: rc.cpp:27
+#, no-c-format
+msgid "Edit Attribute"
+msgstr "Öznitelik düzenle"
+
+#. i18n: file attributeeditdialog.ui line 35
+#: rc.cpp:30
+#, no-c-format
+msgid "Attribute &name:"
+msgstr "Öz&nitelik ismi"
+
+#. i18n: file attributeeditdialog.ui line 53
+#: rc.cpp:33
+#, no-c-format
+msgid "Attribute &value:"
+msgstr "Öz&nitelik &değeri"
+
+#. i18n: file domtreeviewbase.ui line 22
+#: rc.cpp:42
+#, no-c-format
+msgid "DOM Tree Viewer"
+msgstr "DOM Ağaç Görünümü"
+
+#. i18n: file domtreeviewbase.ui line 95
+#: rc.cpp:45
+#, no-c-format
+msgid "&List"
+msgstr "&Listele"
+
+#. i18n: file domtreeviewbase.ui line 128
+#: rc.cpp:48
+#, no-c-format
+msgid "H&ide"
+msgstr "G&izle"
+
+#. i18n: file domtreeviewbase.ui line 183
+#: rc.cpp:54
+#, no-c-format
+msgid "DOM Node Info"
+msgstr "DOM Düğüm bilgisi"
+
+#. i18n: file domtreeviewbase.ui line 202
+#: rc.cpp:57
+#, no-c-format
+msgid "Node &value:"
+msgstr "Düğüm D&eğeri"
+
+#. i18n: file domtreeviewbase.ui line 213
+#: rc.cpp:60
+#, no-c-format
+msgid "Node &type:"
+msgstr "Düğüm &türü:"
+
+#. i18n: file domtreeviewbase.ui line 224
+#: rc.cpp:63
+#, no-c-format
+msgid "Namespace &URI:"
+msgstr "URL ismi için boşluk:"
+
+#. i18n: file domtreeviewbase.ui line 235
+#: rc.cpp:66
+#, no-c-format
+msgid "Node &name:"
+msgstr "Düğüm is&mi"
+
+#. i18n: file domtreeviewbase.ui line 332
+#: rc.cpp:69
+#, no-c-format
+msgid "Name"
+msgstr "İsim"
+
+#. i18n: file domtreeviewbase.ui line 343
+#: rc.cpp:72
+#, no-c-format
+msgid "Value"
+msgstr "Değer"
+
+#. i18n: file domtreeviewbase.ui line 414
+#: rc.cpp:75
+#, no-c-format
+msgid "Appl&y"
+msgstr "U&ygula"
+
+#. i18n: file domtreeviewbase.ui line 456
+#: rc.cpp:78
+#, no-c-format
+msgid "DOM Tree Options"
+msgstr "DOM Ağacı Tercihleri"
+
+#. i18n: file domtreeviewbase.ui line 467
+#: rc.cpp:81
+#, no-c-format
+msgid "&Pure"
+msgstr "&Saf"
+
+#. i18n: file domtreeviewbase.ui line 478
+#: rc.cpp:84
+#, no-c-format
+msgid "Show &attributes"
+msgstr "Öz&nitelikleri göster"
+
+#. i18n: file domtreeviewbase.ui line 489
+#: rc.cpp:87
+#, no-c-format
+msgid "Highlight &HTML"
+msgstr "&HTML ışıklandır"
+
+#. i18n: file elementeditdialog.ui line 16
+#: rc.cpp:90
+#, no-c-format
+msgid "Edit Element"
+msgstr "Eleman Düzenle"
+
+#. i18n: file elementeditdialog.ui line 35
+#: rc.cpp:93
+#, no-c-format
+msgid "Element &name:"
+msgstr "Elema&n İsmi"
+
+#. i18n: file elementeditdialog.ui line 61
+#: rc.cpp:96
+#, no-c-format
+msgid "Element &namespace:"
+msgstr "Elema&n isim boşluğu"
+
+#. i18n: file elementeditdialog.ui line 118
+#: rc.cpp:99 rc.cpp:123
+#, no-c-format
+msgid "&Append as Child"
+msgstr "&Alt Olarak Ekle"
+
+#. i18n: file elementeditdialog.ui line 132
+#: rc.cpp:102 rc.cpp:126
+#, no-c-format
+msgid "Insert &Before Current"
+msgstr "Önüne Ekle"
+
+#. i18n: file messagedialog.ui line 16
+#: rc.cpp:108
+#, no-c-format
+msgid "Message Log"
+msgstr "İleti Geçmişi"
+
+#. i18n: file messagedialog.ui line 55
+#: rc.cpp:111
+#, no-c-format
+msgid "C&lear"
+msgstr "Temiz&le"
+
+#. i18n: file texteditdialog.ui line 16
+#: rc.cpp:117
+#, no-c-format
+msgid "Edit Text"
+msgstr "Metin Düzenle"
+
+#. i18n: file texteditdialog.ui line 27
+#: rc.cpp:120
+#, no-c-format
+msgid "Edit &text for text node:"
+msgstr "Me&tin düğümü için metni düzenle:"

@@ -1,0 +1,103 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>,2002.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kodo\n"
+"POT-Creation-Date: 2004-10-12 01:17+0200\n"
+"PO-Revision-Date: 2002-09-25 20:57+0300\n"
+"Last-Translator: Ömer Fadıl USTA <omer_fad@hotmail.com>\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.6\n"
+
+#: main.cpp:67
+msgid "KOdometer"
+msgstr "Faremetre"
+
+#: main.cpp:68
+msgid "KOdometer measures your desktop mileage"
+msgstr "FareMetre masaüstünüzde farenin aldığı yolu ölçer"
+
+#: main.cpp:71
+msgid "A mouse odometer"
+msgstr "Bir Fare metre"
+
+#: main.cpp:77
+msgid "KDE 2 porting and some code cleanups"
+msgstr "KDE 2'ye aktarma ve kod temizleme"
+
+#: kodometer.cpp:33
+msgid "inch"
+msgstr "inç"
+
+#: kodometer.cpp:33
+msgid "inches"
+msgstr "inç"
+
+#: kodometer.cpp:34
+msgid "cm"
+msgstr "cm"
+
+#: kodometer.cpp:35
+msgid "foot"
+msgstr "fit"
+
+#: kodometer.cpp:35
+msgid "feet"
+msgstr "fit"
+
+#: kodometer.cpp:36
+msgid "meter"
+msgstr "metre"
+
+#: kodometer.cpp:36
+msgid "meters"
+msgstr "metre"
+
+#: kodometer.cpp:37
+msgid "mile"
+msgstr "mil"
+
+#: kodometer.cpp:37
+msgid "miles"
+msgstr "mil"
+
+#: kodometer.cpp:38
+msgid "km"
+msgstr "km"
+
+#: kodometer.cpp:91
+msgid "&Enable"
+msgstr "&Etkinleştir"
+
+#: kodometer.cpp:92
+msgid "&Metric Display"
+msgstr "&Metrik Görünüm"
+
+#: kodometer.cpp:94
+msgid "Auto &Reset Trip"
+msgstr "Yolculuğu Otomatik &Sıfırlar"
+
+#: kodometer.cpp:96
+msgid "Reset &Trip"
+msgstr "&Yolculuğu Sıfırla"
+
+#: kodometer.cpp:97
+msgid "Reset &Odometer"
+msgstr "Y&olölçücüyü Sıfırla"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Erol Öz"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "eroloz@bilgi.edu.tr"

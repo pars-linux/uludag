@@ -1,0 +1,1872 @@
+# translation of kate.po to
+# translation of kate.po to
+# translation of kate.po to Turkish
+# Görkem Çetin <gorkem@kde.org>, 2002,2003, 2004.
+# Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Adil YILDIZ <adil@linux-sevenler.org>, 2004.
+msgid ""
+msgstr ""
+"Project-Id-Version: kate\n"
+"POT-Creation-Date: 2008-08-14 01:15+0200\n"
+"PO-Revision-Date: 2007-07-05 12:02+0300\n"
+"Last-Translator: Serdar Soytetir\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: app/kateexternaltools.cpp:276
+msgid "Failed to expand the command '%1'."
+msgstr "'%1' komutu çalıştırılamadı."
+
+#: app/kateexternaltools.cpp:277
+msgid "Kate External Tools"
+msgstr "Kate Harici Araçlar"
+
+#: app/kateexternaltools.cpp:427
+msgid "Edit External Tool"
+msgstr "Dış Araçı Düzenle"
+
+#: app/kateexternaltools.cpp:441
+msgid "&Label:"
+msgstr "Eti&ket:"
+
+#: app/kateexternaltools.cpp:446
+msgid "The name will be displayed in the 'Tools->External' menu"
+msgstr "İsim 'Araçlar->Harici' menüsünde görünecektir"
+
+#: app/kateexternaltools.cpp:456
+msgid "S&cript:"
+msgstr "B&etik:"
+
+#: app/kateexternaltools.cpp:461
+msgid ""
+"<p>The script to execute to invoke the tool. The script is passed to /bin/sh "
+"for execution. The following macros will be expanded:</p>"
+"<ul>"
+"<li><code>%URL</code> - the URL of the current document."
+"<li><code>%URLs</code> - a list of the URLs of all open documents."
+"<li><code>%directory</code> - the URL of the directory containing the current "
+"document."
+"<li><code>%filename</code> - the filename of the current document."
+"<li><code>%line</code> - the current line of the text cursor in the current "
+"view."
+"<li><code>%column</code> - the column of the text cursor in the current view."
+"<li><code>%selection</code> - the selected text in the current view."
+"<li><code>%text</code> - the text of the current document.</ul>"
+msgstr ""
+"<p>Aracı korumak için çalıştırılacak komut. Aşağıdaki makrolar "
+"kullanılabilir:</p>"
+"<ul>"
+"<li><code>%URL</code> - seçili belgenin adresi."
+"<li><code>%URLs</code> - tüm açık olan belgelerin adreslerinin listesi."
+"<li><code>%directory</code> - seçili belgenin bulunduğu dizinin adresi."
+"<li><code>%filename</code> - seçili belgenin dosya adı."
+"<li><code>%line</code> - seçili görünümde metin imlecinin bulunduğu satır."
+"<li><code>%column</code> - seçili görünümde metin imlecinin bulunduğu sütun."
+"<li><code>%selection</code> - seçili görünümde seli olan metin."
+"<li><code>%text</code> - seçili belgenin metni.</ul>"
+
+#: app/kateexternaltools.cpp:479
+msgid "&Executable:"
+msgstr "Ç&alıştırılan dosya:"
+
+#: app/kateexternaltools.cpp:484
+msgid ""
+"The executable used by the command. This is used to check if a tool should be "
+"displayed; if not set, the first word of <em>command</em> will be used."
+msgstr ""
+"Komutla kullanılan çalıştırılabilir. Bu bir aracın görünürlüğünü kontrol etmek "
+"için kullanılır; ayarlanmamışsa <em>komut</em>'un ilk kelimesi kullanılır."
+
+#: app/kateexternaltools.cpp:490
+msgid "&Mime types:"
+msgstr "&Mime türleri:"
+
+#: app/kateexternaltools.cpp:495
+msgid ""
+"A semicolon-separated list of mime types for which this tool should be "
+"available; if this is left empty, the tool is always available. To choose from "
+"known mimetypes, press the button on the right."
+msgstr ""
+"Hangi aracın mevcutluğu için iki nokta üstüste ile ayrılmış dosya uzantıları "
+"listesi; eğer bu boş ise araç her zaman mevcuttur. Bilinen dosya uzantıların "
+"seçim yapmak için sağdaki düğmeye basın."
+
+#: app/kateexternaltools.cpp:504
+msgid "Click for a dialog that can help you creating a list of mimetypes."
+msgstr ""
+"Mimetiplerinin listesinin oluşturulmasında yardımcı olabilecek pencereyi açmak "
+"için tıklayın."
+
+#: app/kateexternaltools.cpp:508
+msgid "&Save:"
+msgstr "Kayde&t:"
+
+#: app/kateexternaltools.cpp:512
+msgid "None"
+msgstr "Yok"
+
+#: app/kateexternaltools.cpp:512
+msgid "Current Document"
+msgstr "Geçerli Belge"
+
+#: app/kateexternaltools.cpp:512
+msgid "All Documents"
+msgstr "Tüm Belgeler"
+
+#: app/kateexternaltools.cpp:516
+msgid ""
+"You can elect to save the current or all [modified] documents prior to running "
+"the command. This is helpful if you want to pass URLs to an application like, "
+"for example, an FTP client."
+msgstr ""
+"Bu komutu çalıştırmadan önce seçili  veya tüm değiştirilmiş belgeleri kaydetme "
+"şansınız var. Bu komut, bu adresleri bir ftp programına geçmek için "
+"kullanmanızda yardmıcı olacaktır."
+
+#: app/kateexternaltools.cpp:523
+msgid "&Command line name:"
+msgstr "&Komut satırı adı:"
+
+#: app/kateexternaltools.cpp:528
+msgid ""
+"If you specify a name here, you can invoke the command from the view command "
+"lines with exttool-the_name_you_specified_here. Please do not use spaces or "
+"tabs in the name."
+msgstr ""
+"Eğer burada bir isim belirlerseniz, komutu komut satırı görünümünden "
+"exttool-belirttiginiz_isim ile koruyabilirsiniz. Lütfen isim alanında boşluk "
+"veya sekme kullanmayın."
+
+#: app/kateexternaltools.cpp:539
+msgid "You must specify at least a name and a command"
+msgstr "En az bir isim ve bir komut girmelisiniz"
+
+#: app/kateexternaltools.cpp:548
+msgid "Select the MimeTypes for which to enable this tool."
+msgstr "Bu aracı etkinleştirmek için MimeTiplerini seçin."
+
+#: app/kateexternaltools.cpp:550
+msgid "Select Mime Types"
+msgstr "Mime Türlerini Seç"
+
+#: app/kateexternaltools.cpp:568
+msgid "&New..."
+msgstr "&Yeni..."
+
+#: app/kateexternaltools.cpp:576
+msgid "&Edit..."
+msgstr "&Düzenle..."
+
+#: app/kateexternaltools.cpp:580
+msgid "Insert &Separator"
+msgstr "Ayraç &Ekle"
+
+#: app/kateexternaltools.cpp:602
+msgid ""
+"This list shows all the configured tools, represented by their menu text."
+msgstr ""
+"Bu liste yapılandırılmış araçları listeler, keni menü metinleri ile sunulurlar."
+
+#: app/kateviewspace.cpp:320 app/kateviewspace.cpp:359
+msgid " INS "
+msgstr " EKL "
+
+#: app/kateviewspace.cpp:325 app/kateviewspace.cpp:363
+msgid " NORM "
+msgstr " NORM "
+
+#: app/kateviewspace.cpp:351
+msgid " Line: %1 Col: %2 "
+msgstr " Satır: %1 Sütun: %2 "
+
+#: app/kateviewspace.cpp:355
+msgid " R/O "
+msgstr " S/O "
+
+#: app/kateviewspace.cpp:357
+msgid " OVR "
+msgstr " ÜZY "
+
+#: app/kateviewspace.cpp:363
+msgid " BLK "
+msgstr " BLK "
+
+#: app/kateconsole.cpp:129
+msgid ""
+"Do you really want to pipe the text to the console? This will execute any "
+"contained commands with your user rights."
+msgstr ""
+"Metni gerçekten konsola borulamak istiyor musunuz? Bu, metin içerisindeki tüm "
+"komutları kullanıcı haklarınızla çalıştıracak."
+
+#: app/kateconsole.cpp:130
+msgid "Pipe to Console?"
+msgstr "Konsola Borulansın mı?"
+
+#: app/kateconsole.cpp:131
+msgid "Pipe to Console"
+msgstr "Konsola Borula"
+
+#: app/katemainwindow.cpp:212 app/katesavemodifieddialog.cpp:152
+msgid "Documents"
+msgstr "Belgeler"
+
+#: app/katemainwindow.cpp:216
+msgid "Filesystem Browser"
+msgstr "Dosyasistemi Tarayıcı"
+
+#: app/kategrepdialog.cpp:71 app/katemainwindow.cpp:223
+msgid "Find in Files"
+msgstr "Dosyalarda Bul"
+
+#: app/katemainwindow.cpp:230
+msgid "Terminal"
+msgstr "Terminal"
+
+#: app/katemainwindow.cpp:242
+msgid "Create a new document"
+msgstr "Yeni bir belge oluştur"
+
+#: app/katemainwindow.cpp:243
+msgid "Open an existing document for editing"
+msgstr "Mevcut dosyayı düzenlemek için aç"
+
+#: app/katemainwindow.cpp:246 app/kwritemain.cpp:151
+msgid ""
+"This lists files which you have opened recently, and allows you to easily open "
+"them again."
+msgstr ""
+"Son zamanlarda açılan dosyaları sıralar, ve onları kolaylıkla tekrar "
+"açabilmenizi sağlar."
+
+#: app/katemainwindow.cpp:248
+msgid "Save A&ll"
+msgstr "Hepsini &Kaydet"
+
+#: app/katemainwindow.cpp:249
+msgid "Save all open, modified documents to disk."
+msgstr "Bütün açık, değiştirilmiş belgeleri diske kaydet."
+
+#: app/katemainwindow.cpp:251
+msgid "Close the current document."
+msgstr "Seçili belgeyi kapat."
+
+#: app/katemainwindow.cpp:253
+msgid "Clos&e All"
+msgstr "Hepsini &Kapat"
+
+#: app/katemainwindow.cpp:254
+msgid "Close all open documents."
+msgstr "Tüm açık belgeleri kapat."
+
+#: app/katemainwindow.cpp:256
+msgid "Send one or more of the open documents as email attachments."
+msgstr "Bir veya daha fazla açık belgeyi e-posta ekleri olarak gönder."
+
+#: app/katemainwindow.cpp:258
+msgid "Close this window"
+msgstr "Bu pencereyi kapat"
+
+#: app/katemainwindow.cpp:261
+msgid "Create a new Kate view (a new window with the same document list)."
+msgstr "Yeni bir Kate penceresi aç (aynı belge listesiyle yeni bir pencere)."
+
+#: app/kateconfigdialog.cpp:268 app/kateconfigdialog.cpp:269
+#: app/katemainwindow.cpp:265 app/katemainwindow.cpp:540
+msgid "External Tools"
+msgstr "Harici Araçlar"
+
+#: app/katemainwindow.cpp:266
+msgid "Launch external helper applications"
+msgstr "Harici yardımcı araçları çalıştır"
+
+#: app/katemainwindow.cpp:272
+msgid "Open W&ith"
+msgstr "&Birlikte Aç"
+
+#: app/katemainwindow.cpp:273
+msgid ""
+"Open the current document using another application registered for its file "
+"type, or an application of your choice."
+msgstr ""
+"Geçerli belgeyi dosya yapısı için kaydedilmiş başka bir programla, veya "
+"seçeceğiniz başka bir programla aç."
+
+#: app/katemainwindow.cpp:278 app/kwritemain.cpp:174
+msgid "Configure the application's keyboard shortcut assignments."
+msgstr "Uygulamanın klavye kısayollarını yapılandır."
+
+#: app/katemainwindow.cpp:281 app/kwritemain.cpp:177
+msgid "Configure which items should appear in the toolbar(s)."
+msgstr "Alet çubuğunda görünmesini istediğiniz öğeleri belirleyin."
+
+#: app/katemainwindow.cpp:284
+msgid ""
+"Configure various aspects of this application and the editing component."
+msgstr "Bu programın ve düzenleme bileşeninin çeşitli yönlerini yapılandır."
+
+#: app/katemainwindow.cpp:288
+msgid "&Pipe to Console"
+msgstr "Kon&sola Boru"
+
+#: app/katemainwindow.cpp:291
+msgid "This shows useful tips on the use of this application."
+msgstr "Uygulamanın kullanımı hakkında kullanışlı ipuçları gösterir."
+
+#: app/katemainwindow.cpp:295
+msgid "&Plugins Handbook"
+msgstr "Eklentile&r El Kitabı"
+
+#: app/katemainwindow.cpp:296
+msgid "This shows help files for various available plugins."
+msgstr "Mevcut eklentiler için yardım dosyalarını gösterir."
+
+#: app/katemainwindow.cpp:305
+msgid ""
+"_: Menu entry Session->New\n"
+"&New"
+msgstr "Ye&ni"
+
+#: app/katemainwindow.cpp:308
+msgid "Save &As..."
+msgstr "F&arklı Kaydet..."
+
+#: app/katemainwindow.cpp:309
+msgid "&Manage..."
+msgstr "&Yönet..."
+
+#: app/katemainwindow.cpp:312
+msgid "&Quick Open"
+msgstr "Hı&zlı Açılış"
+
+#: app/katedocmanager.cpp:431 app/katemainwindow.cpp:340
+msgid "New file opened while trying to close Kate, closing aborted."
+msgstr "Kate kapatılırken yeni dosya açıldı, kapatılma iptal edildi."
+
+#: app/katedocmanager.cpp:432 app/katemainwindow.cpp:341
+msgid "Closing Aborted"
+msgstr "Kapatma İptal Edildi"
+
+#: app/katemainwindow.cpp:489
+msgid ""
+"_: 'document name [*]', [*] means modified\n"
+"%1 [*]"
+msgstr "%1 [*]"
+
+#: app/katemainwindow.cpp:611
+msgid "&Other..."
+msgstr "&Diğer..."
+
+#: app/katemainwindow.cpp:621
+msgid "Other..."
+msgstr "Diğer..."
+
+#: app/katemainwindow.cpp:638
+msgid "Application '%1' not found!"
+msgstr "'%1' uygulaması bulunamadı!"
+
+#: app/katemainwindow.cpp:638
+msgid "Application Not Found!"
+msgstr "Uygulama Bulunamadı!"
+
+#: app/katemainwindow.cpp:666
+msgid ""
+"<p>The current document has not been saved, and cannot be attached to an email "
+"message."
+"<p>Do you want to save it and proceed?"
+msgstr ""
+"<p>Geçerli döküman kaydedilmedi, bu yüzden bir e-postaya eklenemez."
+"<p>Belgeyi kaydedip devam etmek istiyor musunuz?"
+
+#: app/katemainwindow.cpp:669
+msgid "Cannot Send Unsaved File"
+msgstr "Kaydedilmemiş Dosya Gönderilemez"
+
+#: app/katemainwindow.cpp:677 app/katemainwindow.cpp:698
+msgid "The file could not be saved. Please check if you have write permission."
+msgstr ""
+"Bu dosya kaydedilemedi. Lütfen gerekli izinlerin olup olmadığını kontrol "
+"ediniz."
+
+#: app/katemainwindow.cpp:688
+msgid ""
+"<p>The current file:"
+"<br><strong>%1</strong>"
+"<br>has been modified. Modifications will not be available in the attachment."
+"<p>Do you want to save it before sending it?"
+msgstr ""
+"<p>Geçerli dosya:"
+"<br><strong>%1</strong>"
+"<br>değiştirildi. Değişiklikler ekte bulunamayacak."
+"<p>Göndermeden önce kaydetmek ister misiniz?"
+
+#: app/katemainwindow.cpp:691
+msgid "Save Before Sending?"
+msgstr "Göndermeden Önce Kaydedilsin mi?"
+
+#: app/katemainwindow.cpp:691
+msgid "Do Not Save"
+msgstr "Kaydetme"
+
+#: app/katemailfilesdialog.cpp:47
+msgid "Email Files"
+msgstr "Dosyaları Postala"
+
+#: app/katemailfilesdialog.cpp:49 app/katemailfilesdialog.cpp:99
+msgid "&Show All Documents >>"
+msgstr "&Bütün Belgeleri Göster"
+
+#: app/katemailfilesdialog.cpp:52
+msgid "&Mail..."
+msgstr "&Postala..."
+
+#: app/katemailfilesdialog.cpp:57
+msgid ""
+"<p>Press <strong>Mail...</strong> to email the current document."
+"<p>To select more documents to send, press <strong>Show All "
+"Documents&nbsp;&gt;&gt;</strong>."
+msgstr ""
+"<p>Belgeyi postalamak için <strong>Postala...</strong>ya basınız."
+"<p>Gönderilecek başka belgeler seçmek için <strong>Bütün Belgeleri "
+"Göster&nbsp;&gt;&gt;</strong>e basınız."
+
+#: app/kateconfigplugindialogpage.cpp:81 app/katemailfilesdialog.cpp:61
+msgid "Name"
+msgstr "İsim"
+
+#: app/katefilelist.cpp:142 app/katefilelist.cpp:579
+#: app/katemailfilesdialog.cpp:62
+msgid "URL"
+msgstr "URL"
+
+#: app/katemailfilesdialog.cpp:104
+msgid "&Hide Document List <<"
+msgstr "Belge Listesini &Sakla <<"
+
+#: app/katemailfilesdialog.cpp:105
+msgid "Press <strong>Mail...</strong> to send selected documents"
+msgstr "Seçili belgeleri göndermek için <strong>Postala...</strong>'ya basınız"
+
+#: app/katemwmodonhddialog.cpp:61
+msgid "Documents Modified on Disk"
+msgstr "Diskteki Değiştirilmiş Belgeler"
+
+#: app/katemwmodonhddialog.cpp:63
+msgid "&Ignore"
+msgstr "Yo&ksay"
+
+#: app/katemwmodonhddialog.cpp:64
+msgid "&Overwrite"
+msgstr "Üzeri&ne Yaz"
+
+#: app/katemwmodonhddialog.cpp:68
+msgid ""
+"Removes the modified flag from the selected documents and closes the dialog if "
+"there are no more unhandled documents."
+msgstr ""
+"Seçili belgelerden değiştirildi bayrağını kaldırır ve ele alınacak daha fazla "
+"belge yoksa pencereyi kapatır."
+
+#: app/katemwmodonhddialog.cpp:71
+msgid ""
+"Overwrite selected documents, discarding the disk changes and closes the dialog "
+"if there are no more unhandled documents."
+msgstr ""
+"Diskteki değişiklikleri göz ardı ederek seçili belgelerin üzerine yazar ve daha "
+"fazla ele alınacak belge yoksa pencereyi kapatır."
+
+#: app/katemwmodonhddialog.cpp:74
+msgid ""
+"Reloads the selected documents from disk and closes the dialog if there are no "
+"more unhandled documents."
+msgstr ""
+"Diskteki seçili belgeleri tekrar yükler ve daha fazla ele alınacak belge yoksa "
+"pencereyi kapatır."
+
+#: app/katemwmodonhddialog.cpp:87
+msgid ""
+"<qt>The documents listed below has changed on disk."
+"<p>Select one or more at the time and press an action button until the list is "
+"empty.</qt>"
+msgstr ""
+"<qt>Altta listelenen diskteki belgeler değiştirilmiş."
+"<p>Liste boşalana kadar bir veya daha fazla öğe seçerek olay düğmelerinden "
+"birine basın.</qt>"
+
+#: app/katemwmodonhddialog.cpp:93
+msgid "Filename"
+msgstr "Dosya Adı"
+
+#: app/katemwmodonhddialog.cpp:94
+msgid "Status on Disk"
+msgstr "Diskteki Durumu"
+
+#: app/katemwmodonhddialog.cpp:98
+msgid "Modified"
+msgstr "Değiştirilmiş"
+
+#: app/katemwmodonhddialog.cpp:98
+msgid "Created"
+msgstr "Oluşturulmuş"
+
+#: app/katemwmodonhddialog.cpp:98
+msgid "Deleted"
+msgstr "Silinmiş"
+
+#: app/katemwmodonhddialog.cpp:108
+msgid "&View Difference"
+msgstr "Farkla&rı Gör"
+
+#: app/katemwmodonhddialog.cpp:111
+msgid ""
+"Calculates the difference between the the editor contents and the disk file for "
+"the selected document, and shows the difference with the default application. "
+"Requires diff(1)."
+msgstr ""
+"Seçili belge için düzenleyicinin içeriği ve diskteki dosya arasındaki farkları "
+"hesaplar, ve öntanımlu uygulama ile farkları gösterir. diff(1) gerekir."
+
+#: app/katemwmodonhddialog.cpp:163
+msgid ""
+"Could not save the document \n"
+"'%1'"
+msgstr ""
+"Belge kaydedilemiyor \n"
+"'%1'"
+
+#: app/katemwmodonhddialog.cpp:268
+msgid ""
+"The diff command failed. Please make sure that diff(1) is installed and in your "
+"PATH."
+msgstr ""
+"diff komutu başarısız. diff(1)'in kurulu olduğundan ve yolunun doğru "
+"tanımlandığından emin olun."
+
+#: app/katemwmodonhddialog.cpp:270
+msgid "Error Creating Diff"
+msgstr "Diff Oluşturma Hatalı"
+
+#: app/kateconfigdialog.cpp:91 app/kateconfigdialog.cpp:97
+#: app/kateconfigdialog.cpp:174 app/kateconfigdialog.cpp:243
+#: app/kateconfigdialog.cpp:252 app/kateconfigdialog.cpp:260
+#: app/kateconfigdialog.cpp:268 app/kateconfigdialog.cpp:317
+msgid "Application"
+msgstr "Uygulama"
+
+#: app/kateconfigdialog.cpp:97
+msgid "General"
+msgstr "Genel"
+
+#: app/kateconfigdialog.cpp:98
+msgid "General Options"
+msgstr "Genel Seçenekler"
+
+#: app/kateconfigdialog.cpp:105
+msgid "&Appearance"
+msgstr "&Görünüm"
+
+#: app/kateconfigdialog.cpp:110
+msgid "&Show full path in title"
+msgstr "Tam &yolu başlıkta göster"
+
+#: app/kateconfigdialog.cpp:112
+msgid ""
+"If this option is checked, the full document path will be shown in the window "
+"caption."
+msgstr ""
+"Eğer bu seçenek işaretlenirse, belgenin tam yolu pencere başlığında gösterilir."
+
+#: app/kateconfigdialog.cpp:117
+msgid "&Behavior"
+msgstr "&Davranış"
+
+#: app/kateconfigdialog.cpp:122
+msgid "Sync &terminal emulator with active document"
+msgstr "&Konsol emülatörünü etkin belgeyle eşleştir"
+
+#: app/kateconfigdialog.cpp:125
+msgid ""
+"If this is checked, the built in Konsole will <code>cd</code> "
+"to the directory of the active document when started and whenever the active "
+"document changes, if the document is a local file."
+msgstr ""
+"Seçili ise, gömülü Konsole başlatıldığında etkin belgenin dizinine gider ve "
+"belge yerel ise hep belgeyle aynı dizinde kalır."
+
+#: app/kateconfigdialog.cpp:132
+msgid "Wa&rn about files modified by foreign processes"
+msgstr "Yabancı işlemle&r tarafında değiştirilen dosyalarda uyar"
+
+#: app/kateconfigdialog.cpp:135
+msgid ""
+"If enabled, when Kate receives focus you will be asked what to do with files "
+"that have been modified on the hard disk. If not enabled, you will be asked "
+"what to do with a file that has been modified on the hard disk only when that "
+"file gains focus inside Kate."
+msgstr ""
+"Etkinleştirildiğinde, Kate penceresine diğer pencereler arasında "
+"odaklanıldığında size diskte değiştilmiş dosyalar olduğunu, bunlara ne "
+"yapılması gerektiğini sorar. Etkinleştirilmez ise Kate penceresi içerisinde "
+"tıklanılan dosyanın diskte değiştirilmiş olduğunu ve bununla ne yapılacağını "
+"sorar."
+
+#: app/kateconfigdialog.cpp:143
+msgid "Meta-Information"
+msgstr "Genel Bilgi"
+
+#: app/kateconfigdialog.cpp:148
+msgid "Keep &meta-information past sessions"
+msgstr "Geçmiş oturumlardaki &meta-bilgisini sakla"
+
+#: app/kateconfigdialog.cpp:151
+msgid ""
+"Check this if you want document configuration like for example bookmarks to be "
+"saved past editor sessions. The configuration will be restored if the document "
+"has not changed when reopened."
+msgstr ""
+"Eğer belgenizin yapılandırmasını saklamak istiyorsanız (örneğin sık "
+"kullanılanlar eski düzenleyici oturumlarına saklanacaktır) bunu işaretleyin. "
+"Yapılandırma saklanacak ve eğer dosya değiştirilmemişse yeniden "
+"yükleneceklerdir."
+
+#: app/kateconfigdialog.cpp:159
+msgid "&Delete unused meta-information after:"
+msgstr "Kullanılmayan m&eta-bilgisini sil:"
+
+#: app/kateconfigdialog.cpp:161
+msgid "(never)"
+msgstr "(hiç bir zaman)"
+
+#: app/kateconfigdialog.cpp:162
+msgid " day(s)"
+msgstr " gün"
+
+#: app/kateconfigdialog.cpp:174
+msgid "Sessions"
+msgstr "Oturumlar"
+
+#: app/kateconfigdialog.cpp:175
+msgid "Session Management"
+msgstr "Oturum Yönetimi"
+
+#: app/kateconfigdialog.cpp:181
+msgid "Elements of Sessions"
+msgstr "Oturumun Elemanları"
+
+#: app/kateconfigdialog.cpp:186
+msgid "Include &window configuration"
+msgstr "Pencere a&yarlarını içer"
+
+#: app/kateconfigdialog.cpp:190
+msgid ""
+"Check this if you want all your views and frames restored each time you open "
+"Kate"
+msgstr ""
+"Kate'i her açışınızda görünümlerin ve pencerelerin yeniden açılmasını "
+"istiyorsanız bunu seçiniz"
+
+#: app/kateconfigdialog.cpp:195
+msgid "Behavior on Application Startup"
+msgstr "Uygulama Başlangıcındaki Davranış"
+
+#: app/kateconfigdialog.cpp:199
+msgid "&Start new session"
+msgstr "Yeni o&turum başlat"
+
+#: app/kateconfigdialog.cpp:200
+msgid "&Load last-used session"
+msgstr "Son ku&llanılan oturumu yükle"
+
+#: app/kateconfigdialog.cpp:201
+msgid "&Manually choose a session"
+msgstr "Elle oturu&m seç"
+
+#: app/kateconfigdialog.cpp:216
+msgid "Behavior on Application Exit or Session Switch"
+msgstr "Uygulamadan Çıkıldığındaki veya Oturum Değişimindeki Davranış"
+
+#: app/kateconfigdialog.cpp:220
+msgid "&Do not save session"
+msgstr "Oturumu kay&detme"
+
+#: app/kateconfigdialog.cpp:221
+msgid "&Save session"
+msgstr "O&turumu kaydet"
+
+#: app/kateconfigdialog.cpp:222
+msgid "&Ask user"
+msgstr "Kull&anıcıya Sor"
+
+#: app/kateconfigdialog.cpp:243
+msgid "File Selector"
+msgstr "Dosya Seçici"
+
+#: app/kateconfigdialog.cpp:245
+msgid "File Selector Settings"
+msgstr "Dosya Seçici Ayarları"
+
+#: app/kateconfigdialog.cpp:252
+msgid "Document List"
+msgstr "Belge Listesi"
+
+#: app/kateconfigdialog.cpp:253
+msgid "Document List Settings"
+msgstr "Belge Listesi Seçenekleri"
+
+#: app/kateconfigdialog.cpp:260 app/kateconfigdialog.cpp:317
+msgid "Plugins"
+msgstr "Eklentiler"
+
+#: app/kateconfigdialog.cpp:261
+msgid "Plugin Manager"
+msgstr "Eklenti Yöneticisi"
+
+#: app/kateconfigdialog.cpp:276 app/kateconfigdialog.cpp:282
+msgid "Editor"
+msgstr "Düzenleyici"
+
+#: app/kategrepdialog.cpp:102
+msgid "Pattern:"
+msgstr "Desen:"
+
+#: app/kategrepdialog.cpp:118
+msgid "Case sensitive"
+msgstr "Büyük-küçük harf duyarlı"
+
+#: app/kategrepdialog.cpp:123
+msgid "Regular expression"
+msgstr "Düzenli ifade"
+
+#: app/kategrepdialog.cpp:129
+msgid "Template:"
+msgstr "Şablon:"
+
+#: app/kategrepdialog.cpp:148
+msgid "Files:"
+msgstr "Dosyalar:"
+
+#: app/kategrepdialog.cpp:160
+msgid "Folder:"
+msgstr "Dizin:"
+
+#: app/kategrepdialog.cpp:178
+msgid "Recursive"
+msgstr "Özyinelemeli"
+
+#: app/kategrepdialog.cpp:186 app/kategrepdialog.cpp:475
+msgid "Find"
+msgstr "Bul"
+
+#: app/kategrepdialog.cpp:201
+msgid ""
+"<p>Enter the expression you want to search for here."
+"<p>If 'regular expression' is unchecked, any non-space letters in your "
+"expression will be escaped with a backslash character."
+"<p>Possible meta characters are:"
+"<br><b>.</b> - Matches any character"
+"<br><b>^</b> - Matches the beginning of a line"
+"<br><b>$</b> - Matches the end of a line"
+"<br><b>\\&lt;</b> - Matches the beginning of a word"
+"<br><b>\\&gt;</b> - Matches the end of a word"
+"<p>The following repetition operators exist:"
+"<br><b>?</b> - The preceding item is matched at most once"
+"<br><b>*</b> - The preceding item is matched zero or more times"
+"<br><b>+</b> - The preceding item is matched one or more times"
+"<br><b>{<i>n</i>}</b> - The preceding item is matched exactly <i>n</i> times"
+"<br><b>{<i>n</i>,}</b> - The preceding item is matched <i>n</i> or more times"
+"<br><b>{,<i>n</i>}</b> - The preceding item is matched at most <i>n</i> times"
+"<br><b>{<i>n</i>,<i>m</i>}</b> - The preceding item is matched at least <i>n</i>"
+", but at most <i>m</i> times."
+"<p>Furthermore, backreferences to bracketed subexpressions are available via "
+"the notation <code>\\#</code>."
+"<p>See the grep(1) documentation for the full documentation."
+msgstr ""
+"<p>Aramak istediğiniz düzenli ifadeyi buraya giriniz.."
+"<p>Mümkün metakarakterler:"
+"<br><b>.</b> - Herhangi bir karakterle eşlenmiş"
+"<br><b>^</b> - Bir satırın başıyla eşlenmiş"
+"<br><b>$</b> - Bir satırın sonuyla eşlenmiş"
+"<br><b>\\\\\\&lt;</b> - Bir kelimenin başıyla eşlenmiş "
+"<br><b>\\\\\\&gt;</b> - Bir kelimenin sonuyla eşlenmiş"
+"<p>Şu tekrarlama işleçleri vardır:"
+"<br><b>?</b> - Önceki nesne birden fazla eşlenmemiş"
+"<br><b>*</b> - Önceki öğe sıfır veya daha fazla kere eşlenmiş"
+"<br><b>+</b> - Önceki nesne bir veya daha fazla eşlenmiş times"
+"<br><b>{<i>n</i>}</b> - Önceki öğe tam <i>n</i> kere eşlenmiştimes"
+"<br><b>{<i>n</i>,}</b> - Önceki öğe <i>n</i> kere veya daha çok eşlenmiş"
+"<br><b>{,<i>n</i>}</b> - The preceding item is matched at most <i>n</i> times"
+"<br><b>{<i>n</i>,<i>m</i>}</b> - The preceding item is matched at least <i>n</i>"
+","
+"<br>   but at most <i>m</i> times."
+"<p>Furthermore, backreferences to bracketed subexpressions are available via "
+"the notation <code>\\#</code>."
+"<p>See the grep(1) documentation for the full documentation."
+
+#: app/kategrepdialog.cpp:224
+msgid ""
+"Enter the file name pattern of the files to search here.\n"
+"You may give several patterns separated by commas."
+msgstr ""
+"Aranacak dosyaların isim biçimini giriniz.\n"
+"Virgüllerle ayrılmış şekilde birden fazla biçim girebilirsiniz."
+
+#: app/kategrepdialog.cpp:227
+#, c-format
+msgid ""
+"You can choose a template for the pattern from the combo box\n"
+"and edit it here. The string %s in the template is replaced\n"
+"by the pattern input field, resulting in the regular expression\n"
+"to search for."
+msgstr ""
+"Desen için açılır kutudan bir şablon seçip burada\n"
+"düzenleyebilirsiniz. Şablondaki %s satırı girdi\n"
+"alanındaki desenle değiştirilicektir, aramalar için\n"
+"düzenli ifade ile sonuçlanacaktır."
+
+#: app/kategrepdialog.cpp:232
+msgid "Enter the folder which contains the files in which you want to search."
+msgstr "İçinde arama yapmak istediğiniz dosyaların bulunduğu dizini giriniz."
+
+#: app/kategrepdialog.cpp:234
+msgid "Check this box to search in all subfolders."
+msgstr "Bütün altdizinlerde aramak için bu kutuyu işaretleyin."
+
+#: app/kategrepdialog.cpp:236
+msgid ""
+"If this option is enabled (the default), the search will be case sensitive."
+msgstr ""
+"Eğer bu seçenek etkinleştirilirse (öntanımlı), arama karakter büyüklüğüne göre "
+"arar."
+
+#: app/kategrepdialog.cpp:238
+msgid ""
+"<p>If this is enabled, your pattern will be passed unmodified to <em>"
+"grep(1)</em>. Otherwise, all characters that are not letters will be escaped "
+"using a backslash character to prevent grep from interpreting them as part of "
+"the expression."
+msgstr ""
+"Eğer bu etkinse, deseniniz <em>grep(1)</em>'e düzenlenmemiş olarak geçecektir. "
+"Etkin değilse harf olmayan bütün karakterler ters bölü işareti ile düzenli "
+"ifade içine alacaktır."
+
+#: app/kategrepdialog.cpp:243
+msgid ""
+"The results of the grep run are listed here. Select a\n"
+"filename/line number combination and press Enter or doubleclick\n"
+"on the item to show the respective line in the editor."
+msgstr ""
+"Grep çalışması sonuçları burada listelenir. İstediğiniz satırı\n"
+"düzenlemek için dosyaadı/satır numarası birleşimini seçrek enter\n"
+"tuşuna basın veya nesnenin üzerine çift tıklayın."
+
+#: app/kategrepdialog.cpp:327
+msgid "You must enter an existing local folder in the 'Folder' entry."
+msgstr "'Dizin' girişine mevcut yerel bir dizin girmelisiniz."
+
+#: app/kategrepdialog.cpp:328
+msgid "Invalid Folder"
+msgstr "Geçersiz Dizin"
+
+#: app/kategrepdialog.cpp:479
+msgid "<strong>Error:</strong><p>"
+msgstr "<strong>Hata:</strong><p>"
+
+#: app/kategrepdialog.cpp:479
+msgid "Grep Tool Error"
+msgstr "Grep Programı Hatası"
+
+#: app/katemain.cpp:41
+msgid "Start Kate with a given session"
+msgstr "Kate'i verilen oturum ile başlat"
+
+#: app/katemain.cpp:43
+msgid "Use a already running kate instance (if possible)"
+msgstr "Sadece şuanda çalışan kate sürecini kullan (eğer mümkünse)"
+
+#: app/katemain.cpp:45
+msgid "Only try to reuse kate instance with this pid"
+msgstr "Kate sürecini sadece bu pid numarası ile kullanmayı dene"
+
+#: app/katemain.cpp:47 app/kwritemain.cpp:532
+msgid "Set encoding for the file to open"
+msgstr "Açılacak belgenin karakter kümesine belirle"
+
+#: app/katemain.cpp:49 app/kwritemain.cpp:533
+msgid "Navigate to this line"
+msgstr "Bu satıra git"
+
+#: app/katemain.cpp:51 app/kwritemain.cpp:534
+msgid "Navigate to this column"
+msgstr "Bu sütuna git"
+
+#: app/katemain.cpp:53 app/kwritemain.cpp:531
+msgid "Read the contents of stdin"
+msgstr "stdin'in içeriğini oku"
+
+#: app/katemain.cpp:54 app/kwritemain.cpp:535
+msgid "Document to open"
+msgstr "Açılacak belge"
+
+#: app/katemain.cpp:63
+msgid "Kate"
+msgstr "Kate"
+
+#: app/katemain.cpp:64
+msgid "Kate - Advanced Text Editor"
+msgstr "Kate - Gelişmiş Metin Düzenleyici"
+
+#: app/katemain.cpp:65 app/kwritemain.cpp:552
+msgid "(c) 2000-2005 The Kate Authors"
+msgstr "(c) 2000-2005 Kate Yazarları"
+
+#: app/katemain.cpp:67 app/kwritemain.cpp:554
+msgid "Maintainer"
+msgstr "Geliştirici"
+
+#: app/katemain.cpp:68 app/katemain.cpp:69 app/katemain.cpp:70
+#: app/katemain.cpp:75 app/kwritemain.cpp:555 app/kwritemain.cpp:556
+#: app/kwritemain.cpp:557 app/kwritemain.cpp:562
+msgid "Core Developer"
+msgstr "Çekirdek Geliştirici"
+
+#: app/katemain.cpp:71 app/kwritemain.cpp:558
+msgid "The cool buffersystem"
+msgstr "İyi tampon sistemi"
+
+#: app/katemain.cpp:72 app/kwritemain.cpp:559
+msgid "The Editing Commands"
+msgstr "Düzenleme Komutları"
+
+#: app/katemain.cpp:73 app/kwritemain.cpp:560
+msgid "Testing, ..."
+msgstr "Test ediliyor, ..."
+
+#: app/katemain.cpp:74 app/kwritemain.cpp:561
+msgid "Former Core Developer"
+msgstr "İlk Geliştirici"
+
+#: app/katemain.cpp:76 app/kwritemain.cpp:563
+msgid "KWrite Author"
+msgstr "KWrite Yazarı"
+
+#: app/katemain.cpp:77 app/kwritemain.cpp:564
+msgid "KWrite port to KParts"
+msgstr "KParts'a aktar"
+
+#: app/katemain.cpp:80 app/kwritemain.cpp:567
+msgid "KWrite Undo History, Kspell integration"
+msgstr "KWrite Gerial Geçmişi, Kspell entegrasyonu"
+
+#: app/katemain.cpp:81 app/kwritemain.cpp:568
+msgid "KWrite XML Syntax highlighting support"
+msgstr "XML için ışıklandırma desteği"
+
+#: app/katemain.cpp:82 app/kwritemain.cpp:569
+msgid "Patches and more"
+msgstr "Yamalar ve fazlası"
+
+#: app/katemain.cpp:83
+msgid "Developer & Highlight wizard"
+msgstr "Geliştirici"
+
+#: app/katemain.cpp:85 app/kwritemain.cpp:571
+msgid "Highlighting for RPM Spec-Files, Perl, Diff and more"
+msgstr "RPM dosyaları, Perl, Diff ve diğerleri için ışıklandırma"
+
+#: app/katemain.cpp:86 app/kwritemain.cpp:572
+msgid "Highlighting for VHDL"
+msgstr "VHDL için Işıklandırma"
+
+#: app/katemain.cpp:87 app/kwritemain.cpp:573
+msgid "Highlighting for SQL"
+msgstr "SQL için Işıklandırma"
+
+#: app/katemain.cpp:88 app/kwritemain.cpp:574
+msgid "Highlighting for Ferite"
+msgstr "Ferite için Işıklandırma"
+
+#: app/katemain.cpp:89 app/kwritemain.cpp:575
+msgid "Highlighting for ILERPG"
+msgstr "ILERPG için Işıklandırma"
+
+#: app/katemain.cpp:90 app/kwritemain.cpp:576
+msgid "Highlighting for LaTeX"
+msgstr "LaTeX için Işıklandırma"
+
+#: app/katemain.cpp:91 app/kwritemain.cpp:577
+msgid "Highlighting for Makefiles, Python"
+msgstr "Makefile, Python Vurgulaması"
+
+#: app/katemain.cpp:92 app/kwritemain.cpp:578
+msgid "Highlighting for Python"
+msgstr "Python için Işıklandırma"
+
+#: app/katemain.cpp:94 app/kwritemain.cpp:580
+msgid "Highlighting for Scheme"
+msgstr "Scheme için Işıklandırma"
+
+#: app/katemain.cpp:95 app/kwritemain.cpp:581
+msgid "PHP Keyword/Datatype list"
+msgstr "PHP Anahtar kelime/Veri tipi listesi"
+
+#: app/katemain.cpp:96 app/kwritemain.cpp:582
+msgid "Very nice help"
+msgstr "Çok güzel yardım"
+
+#: app/katemain.cpp:97 app/kwritemain.cpp:583
+msgid "All people who have contributed and I have forgotten to mention"
+msgstr "Katkıda bulunan ama yazmayı unuttuğum herkes"
+
+#: _translatorinfo.cpp:1 app/katemain.cpp:99 app/kwritemain.cpp:585
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3 app/katemain.cpp:99 app/kwritemain.cpp:585
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: app/katedocmanager.cpp:395
+msgid ""
+"<p>The document '%1' has been modified, but not saved."
+"<p>Do you want to save your changes or discard them?"
+msgstr ""
+"<p>%1 belgesi değiştirildi, ancak kaydedilmedi."
+"<p>Bu dosyayı kaydetmek istiyor musunuz?"
+
+#: app/katedocmanager.cpp:397
+msgid "Close Document"
+msgstr "Belgeyi Kaydet"
+
+#: app/katedocmanager.cpp:483
+msgid "Reopening files from the last session..."
+msgstr "Son oturumdaki dosyalar açılıyor..."
+
+#: app/katedocmanager.cpp:490
+msgid "Starting Up"
+msgstr "Başlatılıyor"
+
+#: app/katesession.cpp:78 app/katesession.cpp:102 app/katesession.cpp:252
+msgid "Default Session"
+msgstr "Öntanımlı Oturum"
+
+#: app/katesession.cpp:82
+msgid "Unnamed Session"
+msgstr "İsimsiz Oturum"
+
+#: app/katesession.cpp:104
+msgid "Session (%1)"
+msgstr "Oturum (%1)"
+
+#: app/katesession.cpp:384
+msgid "Save Session?"
+msgstr "Oturumu Kaydet?"
+
+#: app/katesession.cpp:391
+msgid "Save current session?"
+msgstr "Seçili oturumu kaydet?"
+
+#: app/katesession.cpp:392
+msgid "Do not ask again"
+msgstr "Tekrar sorma"
+
+#: app/katesession.cpp:482
+msgid "No session selected to open."
+msgstr "Açılması içim oturum seçilmedi."
+
+#: app/katesession.cpp:482
+msgid "No Session Selected"
+msgstr "Oturum Seçilmedi"
+
+#: app/katesession.cpp:554
+msgid "Specify Name for Current Session"
+msgstr "Seçili Oturum için Ad Belirt"
+
+#: app/katesession.cpp:554 app/katesession.cpp:572 app/katesession.cpp:850
+msgid "Session name:"
+msgstr "Oturum adı:"
+
+#: app/katesession.cpp:561
+msgid "To save a new session, you must specify a name."
+msgstr "Yeni bir oturumu kaydetmek için, bir ad belirtmelisiniz."
+
+#: app/katesession.cpp:561 app/katesession.cpp:579 app/katesession.cpp:857
+msgid "Missing Session Name"
+msgstr "Eksik Oturum Adı"
+
+#: app/katesession.cpp:572
+msgid "Specify New Name for Current Session"
+msgstr "Seçili Oturum İçin Yeni Bir Ad Belirtin"
+
+#: app/katesession.cpp:579 app/katesession.cpp:857
+msgid "To save a session, you must specify a name."
+msgstr "Bir oturumu kaydetmek için bir ad belirtmelisiniz."
+
+#: app/katesession.cpp:618
+msgid "Session Chooser"
+msgstr "Oturum Seçici"
+
+#: app/katesession.cpp:623 app/katesession.cpp:715
+msgid "Open Session"
+msgstr "Oturumu Aç"
+
+#: app/katesession.cpp:624
+msgid "New Session"
+msgstr "Yeni Oturum"
+
+#: app/katesession.cpp:642 app/katesession.cpp:732 app/katesession.cpp:796
+msgid "Session Name"
+msgstr "Oturum Adı"
+
+#: app/katesession.cpp:643 app/katesession.cpp:733 app/katesession.cpp:797
+msgid "Open Documents"
+msgstr "Belgeleri Aç"
+
+#: app/katesession.cpp:660
+msgid "&Always use this choice"
+msgstr "Herz&aman bu seçimini kullan"
+
+#: app/katesession.cpp:720
+msgid "&Open"
+msgstr "A&ç"
+
+#: app/katesession.cpp:781
+msgid "Manage Sessions"
+msgstr "Oturumları Yönet"
+
+#: app/katesession.cpp:810
+msgid "&Rename..."
+msgstr "Yeniden Adlandı&r..."
+
+#: app/katesession.cpp:850
+msgid "Specify New Name for Session"
+msgstr "Oturum İçin Yeni Ad Girin"
+
+#: app/katefilelist.cpp:139
+msgid "Sort &By"
+msgstr "Sır&alama"
+
+#: app/katefilelist.cpp:142 app/katefilelist.cpp:579
+msgid "Opening Order"
+msgstr "Açma Sırası"
+
+#: app/katefilelist.cpp:142 app/katefilelist.cpp:579
+msgid "Document Name"
+msgstr "Belge Adı"
+
+#: app/katefilelist.cpp:373
+msgid ""
+"<b>This file was changed (modified) on disk by another program.</b><br />"
+msgstr ""
+"<b>Diskteki bu dosya başka program tarafından değiştirilmiş (içerik).</b><br />"
+
+#: app/katefilelist.cpp:375
+msgid ""
+"<b>This file was changed (created) on disk by another program.</b><br />"
+msgstr ""
+"<b>Diskteki bu dosya başka program tarafından değiştirilmiş (oluşturulmuş).</b>"
+"<br />"
+
+#: app/katefilelist.cpp:377
+msgid ""
+"<b>This file was changed (deleted) on disk by another program.</b><br />"
+msgstr ""
+"<b>Diskteki bu dosya başka program tarafından değiştirilmiş (silinmiş).</b>"
+"<br />"
+
+#: app/katefilelist.cpp:553
+msgid "Background Shading"
+msgstr "Arkaplan Gölgelendirme"
+
+#: app/katefilelist.cpp:559
+msgid "&Enable background shading"
+msgstr "Arkaplan gölg&elendirmeyi etkinleştir"
+
+#: app/katefilelist.cpp:563
+msgid "&Viewed documents' shade:"
+msgstr "Görün&tülenmiş belgelerin gölgesi:"
+
+#: app/katefilelist.cpp:568
+msgid "&Modified documents' shade:"
+msgstr "Değiştiril&miş belgelerin gölgegi:"
+
+#: app/katefilelist.cpp:575
+msgid "&Sort by:"
+msgstr "Sır&alama yöntemi:"
+
+#: app/katefilelist.cpp:585
+msgid ""
+"When background shading is enabled, documents that have been viewed or edited "
+"within the current session will have a shaded background. The most recent "
+"documents have the strongest shade."
+msgstr ""
+"Arkplan gölgelendirme etkinleştiğinde, daha önce görüntülenmiş veya düzenlenmiş "
+"belgeler gölgeli bir arkaplana sahip olur. En son kullanılan belge arkaplanı "
+"daha koyu olur."
+
+#: app/katefilelist.cpp:589
+msgid "Set the color for shading viewed documents."
+msgstr "Görüntülenmiş belgeleri gölgelemek için renk belirtin."
+
+#: app/katefilelist.cpp:591
+msgid ""
+"Set the color for modified documents. This color is blended into the color for "
+"viewed files. The most recently edited documents get most of this color."
+msgstr ""
+"Değiştirilmiş belgelerin rengini belirtin. Bu renk görüntülenmiş belgelere "
+"bölünecek. En son düzenlenen belge bu rengin çoğunu alacaktır."
+
+#: app/katefilelist.cpp:596
+msgid "Set the sorting method for the documents."
+msgstr "Belelerin sıralama biçimini ayarla."
+
+#: app/kwritemain.cpp:82
+msgid ""
+"A KDE text-editor component could not be found;\n"
+"please check your KDE installation."
+msgstr ""
+"Bir KDE metin düzenleyici eklentisi bulunamadı;\n"
+"lütfen KDE kurulumunu kontrol edin."
+
+#: app/kwritemain.cpp:142
+msgid "Use this to close the current document"
+msgstr "Aktuel belgeyi kapatmak içn bunu kullanın"
+
+#: app/kwritemain.cpp:145
+msgid "Use this command to print the current document"
+msgstr "Aktuel belgeyi yazdırmak için bu komutu kullan"
+
+#: app/kwritemain.cpp:146
+msgid "Use this command to create a new document"
+msgstr "Yeni belge oluşturmak için bu komutu kullan"
+
+#: app/kwritemain.cpp:147
+msgid "Use this command to open an existing document for editing"
+msgstr "Mevcut dosyayı düzenlemek için bu komutu kullan"
+
+#: app/kwritemain.cpp:155
+msgid "Create another view containing the current document"
+msgstr "Geçerli belgeyi içeren yeni bir görünüm oluştur"
+
+#: app/kwritemain.cpp:157
+msgid "Choose Editor..."
+msgstr "Düzenleyiciyi Seç..."
+
+#: app/kwritemain.cpp:159
+msgid "Override the system wide setting for the default editing component"
+msgstr "Sistem genelinde öntanımlı düzenleme bileşenini geçersiz kıl"
+
+#: app/kwritemain.cpp:161
+msgid "Close the current document view"
+msgstr "Yürürlükteki belge penceresini kapat"
+
+#: app/kwritemain.cpp:167
+msgid "Use this command to show or hide the view's statusbar"
+msgstr "Durum çubuğunu göstermek veya gizlemek için bu komutu kullan"
+
+#: app/kwritemain.cpp:169
+msgid "Sho&w Path"
+msgstr "Y&olu Göster"
+
+#: app/kwritemain.cpp:171
+msgid "Hide Path"
+msgstr "Yolu Gizle"
+
+#: app/kwritemain.cpp:172
+msgid "Show the complete document path in the window caption"
+msgstr "Pencere başlığında belgenin tam yerini göster"
+
+#: app/kateviewmanager.cpp:375 app/kwritemain.cpp:229
+msgid "Open File"
+msgstr "Dosya Aç"
+
+#: app/kwritemain.cpp:253
+msgid ""
+"The given file could not be read, check if it exists or if it is readable for "
+"the current user."
+msgstr ""
+"Verilen dosya okunamıyor, mevcut olup olmadığını veya mevcut kullanıcı "
+"tarafından okunabilirliğini kontrol edin."
+
+#: app/kwritemain.cpp:549
+msgid "KWrite"
+msgstr "KWrite"
+
+#: app/kwritemain.cpp:551
+msgid "KWrite - Text Editor"
+msgstr "KWrite - Metin Düzenleyicisi"
+
+#: app/kateapp.cpp:210 app/kateapp.cpp:322 app/kwritemain.cpp:682
+msgid ""
+"The file '%1' could not be opened: it is not a normal file, it is a folder."
+msgstr "'%1' adlı dosya açılamıyor: normal bir dosya değil, bu bir klasör."
+
+#: app/kwritemain.cpp:696
+msgid "Choose Editor Component"
+msgstr "Düzenleyici Parça Seçiniz"
+
+#: app/kateviewmanager.cpp:97
+msgid "New Tab"
+msgstr "Yeni Sekme"
+
+#: app/kateviewmanager.cpp:100
+msgid "Close Current Tab"
+msgstr "Geçerli Sekmeyi Kapat"
+
+#: app/kateviewmanager.cpp:104
+msgid "Activate Next Tab"
+msgstr "Sonraki Sekmeyi Etkinleştir"
+
+#: app/kateviewmanager.cpp:109
+msgid "Activate Previous Tab"
+msgstr "Önceki Sekmeyi Etkinleştir"
+
+#: app/kateviewmanager.cpp:116
+msgid "Split Ve&rtical"
+msgstr "Dik&ey Böl"
+
+#: app/kateviewmanager.cpp:119
+msgid "Split the currently active view vertically into two views."
+msgstr "Geçerli pencereyi dikey olarak ikiye böl."
+
+#: app/kateviewmanager.cpp:121
+msgid "Split &Horizontal"
+msgstr "Ya&tay Böl"
+
+#: app/kateviewmanager.cpp:124
+msgid "Split the currently active view horizontally into two views."
+msgstr "Geçerli pencereyi yatay olarak ikiye böl."
+
+#: app/kateviewmanager.cpp:126
+msgid "Cl&ose Current View"
+msgstr "&Geçerli Görünümü Kapat"
+
+#: app/kateviewmanager.cpp:130
+msgid "Close the currently active splitted view"
+msgstr "Geçerli bölünmüş pencereyi kapat"
+
+#: app/kateviewmanager.cpp:132
+msgid "Next View"
+msgstr "Sonraki Görünüm"
+
+#: app/kateviewmanager.cpp:135
+msgid "Make the next split view the active one."
+msgstr "Bir sonraki bölünmüş pencereyi geçerli yap."
+
+#: app/kateviewmanager.cpp:137
+msgid "Previous View"
+msgstr "Önceki Görünüm"
+
+#: app/kateviewmanager.cpp:139
+msgid "Make the previous split view the active one."
+msgstr "Bir önceki bölünmüş görünümü geçerli yap."
+
+#: app/kateviewmanager.cpp:149
+msgid "Open a new tab"
+msgstr "Yeni sekme aç"
+
+#: app/kateviewmanager.cpp:157
+msgid "Close the current tab"
+msgstr "Seçili sekmeyi kapat"
+
+#: app/katemdi.cpp:140
+msgid "Tool &Views"
+msgstr "A&raç Görünümleri"
+
+#: app/katemdi.cpp:141
+msgid "Show Side&bars"
+msgstr "Yan Çubukları G&öster"
+
+#: app/katemdi.cpp:143
+msgid "Hide Side&bars"
+msgstr "Yan Çubukları G&izle"
+
+#: app/katemdi.cpp:176
+#, c-format
+msgid "Show %1"
+msgstr "%1'i Göster"
+
+#: app/katemdi.cpp:179
+#, c-format
+msgid "Hide %1"
+msgstr "%1'i Gizle"
+
+#: app/katemdi.cpp:464
+msgid "Behavior"
+msgstr "Davranış"
+
+#: app/katemdi.cpp:466
+msgid "Make Non-Persistent"
+msgstr "Süreksiz Yap"
+
+#: app/katemdi.cpp:466
+msgid "Make Persistent"
+msgstr "Sürekli Yap"
+
+#: app/katemdi.cpp:468
+msgid "Move To"
+msgstr "Taşı"
+
+#: app/katemdi.cpp:471
+msgid "Left Sidebar"
+msgstr "Sol Yan Çubuğu"
+
+#: app/katemdi.cpp:474
+msgid "Right Sidebar"
+msgstr "Sağ Yan Çubuğu"
+
+#: app/katemdi.cpp:477
+msgid "Top Sidebar"
+msgstr "Üst Yan Çubuğu"
+
+#: app/katemdi.cpp:480
+msgid "Bottom Sidebar"
+msgstr "Alt Kenar Çubuğu"
+
+#: app/katemdi.cpp:778
+msgid ""
+"<qt>You are about to hide the sidebars. With hidden sidebars it is not possible "
+"to directly access the tool views with the mouse anymore, so if you need to "
+"access the sidebars again invoke <b>Window &gt; Tool Views &gt; Show "
+"Sidebars</b> in the menu. It is still possible to show/hide the tool views with "
+"the assigned shortcuts.</qt>"
+msgstr ""
+"<qt>Yan Çubukları gizlemek üzeresiniz. Yan çubukları gizlerseniz artık fare ile "
+"bu çubuklara erişemezsiniz. Eğer yan çubuklara tekrar erişmek isterseniz "
+"menüden <b>Pencere &gt; Araç Görünümleri &gt; Yan Çubukları Göster</b> "
+"yolunu takip edin. Atanmış kısayolları kullanarak araç görünümlerini "
+"göstermek/gizlemek de mümkündür.</qt>"
+
+#: app/kateconfigplugindialogpage.cpp:82
+msgid "Comment"
+msgstr "Açıklamalar"
+
+#: app/kateconfigplugindialogpage.cpp:83
+msgid ""
+"Here you can see all available Kate plugins. Those with a check mark are "
+"loaded, and will be loaded again the next time Kate is started."
+msgstr ""
+"Burada bütün mevcut Kate eklentilerini görebilirsiniz. İşaterlenmiş olanlar şu "
+"anda yüklüdür, ve Kate yeniden başlatıldığında da yüklenecektir."
+
+#: app/katesavemodifieddialog.cpp:78
+msgid "Save As (%1)"
+msgstr "Farklı Kaydet (%1)"
+
+#: app/katesavemodifieddialog.cpp:129
+msgid "Save Documents"
+msgstr "Belgeleri Kaydet"
+
+#: app/katesavemodifieddialog.cpp:132
+msgid "&Save Selected"
+msgstr "&Seçiliyi Kaydet"
+
+#: app/katesavemodifieddialog.cpp:138
+msgid "&Abort Closing"
+msgstr "K&apatmayı İptal Et"
+
+#: app/katesavemodifieddialog.cpp:142
+msgid ""
+"<qt>The following documents have been modified. Do you want to save them before "
+"closing?</qt>"
+msgstr ""
+"<qt>Aşağıdaki belgeler değiştirilmiş. Kapatmadan önce kaydetmek ister "
+"misiniz?</qt>"
+
+#: app/katesavemodifieddialog.cpp:144
+msgid "Title"
+msgstr "Başlık"
+
+#: app/katesavemodifieddialog.cpp:145
+msgid "Location"
+msgstr "Yer"
+
+#: app/katesavemodifieddialog.cpp:149
+msgid "Projects"
+msgstr "Projeler"
+
+#: app/katesavemodifieddialog.cpp:164
+msgid "Se&lect All"
+msgstr "&Hepsini Seç"
+
+#: app/katesavemodifieddialog.cpp:211
+msgid ""
+"Data you requested to be saved could not be written. Please choose how you want "
+"to proceed."
+msgstr ""
+"Kaydetmek istediğiniz veri yazılamıyor. Lütfen nasıl devam etmek istediğinizi "
+"seçin."
+
+#: app/katefileselector.cpp:170
+msgid "Current Document Folder"
+msgstr "Geçerli Belge Dizini"
+
+#: app/katefileselector.cpp:198
+msgid ""
+"<p>Here you can enter a path for a folder to display."
+"<p>To go to a folder previously entered, press the arrow on the right and "
+"choose one. "
+"<p>The entry has folder completion. Right-click to choose how completion should "
+"behave."
+msgstr ""
+"<p>Burada gösterilecek bir dizinin yolunu girebilirsiniz. "
+"<p> Önceden girilmiş bir dizine gitmek için, sağ kenardaki oka basıp birini "
+"seçin. "
+"<p>Dizin tamamlama burada mevcuttur.Sağ tıklayarak tamamlamanın nasıl "
+"çalışacağını belirleyebilirsiniz."
+
+#: app/katefileselector.cpp:203
+msgid ""
+"<p>Here you can enter a name filter to limit which files are displayed."
+"<p>To clear the filter, toggle off the filter button to the left."
+"<p>To reapply the last filter used, toggle on the filter button."
+msgstr ""
+"<p>Burada gösterilecek dosyaları kısıtlamak için bir isim filtresi "
+"girebilirsiniz. "
+"<p>Filtreyi kaldırmak için, soldaki filtre düğmesini kapalı konuma getiriniz. "
+"<p>Son kullanılan filtreyi uygulamak için, filtre düğmesini açık konuma "
+"getiriniz."
+
+#: app/katefileselector.cpp:207
+msgid ""
+"<p>This button clears the name filter when toggled off, or reapplies the last "
+"filter used when toggled on."
+msgstr ""
+"<p>Bu düğme kapalıyken isim filtresini kaldırır, açıkken ise son kullanılan "
+"filtreyi uygular."
+
+#: app/katefileselector.cpp:321
+msgid "Apply last filter (\"%1\")"
+msgstr "Son filtreyi uygula (\"%1\")"
+
+#: app/katefileselector.cpp:326
+msgid "Clear filter"
+msgstr "Filtreyi temizle"
+
+#: app/katefileselector.cpp:536
+msgid "Toolbar"
+msgstr "Araç Çubuğu"
+
+#: app/katefileselector.cpp:538
+msgid "A&vailable actions:"
+msgstr "&Kullanılabilir eylemler:"
+
+#: app/katefileselector.cpp:539
+msgid "S&elected actions:"
+msgstr "&Seçili eylemler:"
+
+#: app/katefileselector.cpp:547
+msgid "Auto Synchronization"
+msgstr "Otomatik Eşitleme"
+
+#: app/katefileselector.cpp:548
+msgid "When a docu&ment becomes active"
+msgstr "Bir &belge etkin olunca"
+
+#: app/katefileselector.cpp:549
+msgid "When the file selector becomes visible"
+msgstr "Eğer dosya seçici görünmez ise"
+
+#: app/katefileselector.cpp:556
+msgid "Remember &locations:"
+msgstr "Hatırlanacak &konumlar:"
+
+#: app/katefileselector.cpp:563
+msgid "Remember &filters:"
+msgstr "&Filtreleri hatırla:"
+
+#: app/katefileselector.cpp:570
+msgid "Session"
+msgstr "Oturum"
+
+#: app/katefileselector.cpp:571
+msgid "Restore loca&tion"
+msgstr "Konumları &tekrar kaydet"
+
+#: app/katefileselector.cpp:572
+msgid "Restore last f&ilter"
+msgstr "Son &süzgeçleri tekrar kaydet"
+
+#: app/katefileselector.cpp:592
+msgid ""
+"<p>Decides how many locations to keep in the history of the location combo box."
+msgstr ""
+"<p>Geçmiş'teki yer açılır kutusunda ne kadar adres saklanacağına karar verir."
+
+#: app/katefileselector.cpp:597
+msgid ""
+"<p>Decides how many filters to keep in the history of the filter combo box."
+msgstr ""
+"<p>Geçmiş'teki süzme açılır kutusuna ne kadar süzgeç saklanacağına karar verir."
+
+#: app/katefileselector.cpp:602
+msgid ""
+"<p>These options allow you to have the File Selector automatically change "
+"location to the folder of the active document on certain events."
+"<p>Auto synchronization is <em>lazy</em>, meaning it will not take effect until "
+"the file selector is visible."
+"<p>None of these are enabled by default, but you can always sync the location "
+"by pressing the sync button in the toolbar."
+msgstr ""
+"<p>Bu seçenekler Dosya Seçici'nin bazı olaylarda otomatik olarak geçerli  "
+"belgenin dizinine geçmesine izin vermenizi sağlar. "
+"<p>Otomatik eşleme <em>tembel</em>dir, yani dosya seçici görünmeden işlem "
+"yapmaz. "
+"<p>Bu seçenekler öntanımlı olarak kapalıdır, ama yeri her zaman alet "
+"çubuğundaki eşleme düğmesiyle eşleyebilirsiniz."
+
+#: app/katefileselector.cpp:611
+msgid ""
+"<p>If this option is enabled (default), the location will be restored when you "
+"start Kate."
+"<p><strong>Note</strong> that if the session is handled by the KDE session "
+"manager, the location is always restored."
+msgstr ""
+"<p>Bu seçenek seçili ise Kate her başladığında kaldığı yerde açılacaktır. "
+"<p><strong>Eğer</strong> oturum KDE oturum yöneticisi tarafından yürütülüyorsa "
+"bu seçenek her zaman geçerli olacaktır."
+
+#: app/katefileselector.cpp:615
+msgid ""
+"<p>If this option is enabled (default), the current filter will be restored "
+"when you start Kate."
+"<p><strong>Note</strong> that if the session is handled by the KDE session "
+"manager, the filter is always restored."
+"<p><strong>Note</strong> that some of the autosync settings may override the "
+"restored location if on."
+msgstr ""
+"<p>Bu seçenek seçili (öntanımlı) ise Kate her başlatıldığında geçerli filtre "
+"geri yüklenecektir. "
+"<p><strong>Eğer</strong>oturum KDE oturum yöneticisi tarafından yürütülüyorsa "
+"bu seçenek her zaman geçerli olacaktır. "
+"<p><strong>Yalnız</strong> bazı otomatik eşleme seçenekleri bu geri yüklemeyi "
+"geçersiz kılabilir."
+
+#. i18n: file ./data/kateui.rc line 43
+#: rc.cpp:9
+#, no-c-format
+msgid "&Document"
+msgstr "&Belge"
+
+#. i18n: file ./data/kateui.rc line 62
+#: rc.cpp:18
+#, no-c-format
+msgid "Sess&ions"
+msgstr "Oturu&mlar"
+
+#. i18n: file ./data/kateui.rc line 85
+#: rc.cpp:24
+#, no-c-format
+msgid "&Window"
+msgstr "Pence&re"
+
+#: tips.cpp:3
+msgid ""
+"<p>Kate comes with a nice set of plugins, providing simple\n"
+"and advanced features of all sorts.</p>\n"
+"<p>You can enable/disable plugins to suit your needs in the configuration "
+"dialog,\n"
+"choose <strong>Settings -&gt;configure</strong> to launch that.</p>\n"
+msgstr ""
+"<p>Kate basit veya gelişmiş özellikler sağlayan eklentilerle\n"
+" birlikte gelir.</p>\n"
+"<p>Eklentileri ihtiyaçlarınıza uyacak şekilde eklemek/çıkartmak için\n"
+" <strong> Ayarlar &gt;yapılandır</strong>ı seçiniz.</p>\n"
+
+#: tips.cpp:11
+msgid ""
+"<p>You can swap the characters on each side of the cursor just by pressing\n"
+"<strong>Ctrl+T</strong></p>\n"
+msgstr ""
+"<p>İmlecin iki yanındaki karakterlerin yerlerini sadece <strong>Ctrl+T</strong>"
+"\n"
+"ye basarak değiştirebilirsiniz.</p> \n"
+
+#: tips.cpp:17
+msgid ""
+"<p>You can export the current document as a HTML file, including\n"
+"syntax highlighting.</p>\n"
+"<p>Just choose <strong>File -&gt; Export -&gt; HTML...</strong></p>\n"
+msgstr ""
+"<p>Geçerli belgeyi sayfa yapılandırıcılarını içerecek şekilde bir HTML\n"
+"dosya olarak göndermek için <strong>Dosya -&gt, Gönder -&gt, HTML...<strong> "
+"seçiniz.\n"
+
+#: tips.cpp:24
+msgid ""
+"<p>You can split the Kate editor as many times as you like and\n"
+"in either direction. Each frame has its own status bar and\n"
+"can display any open document.</p>\n"
+"<p>Just choose "
+"<br><strong>View -&gt; Split [ Horizontal | Vertical ]</strong></p>\n"
+msgstr ""
+"<p>Kate düzenleyiciyi her yönde istediğiniz kadar bölümleyebilirsiniz.\n"
+"Her pencerenin kendi durum çubuğu vardır ve herhangi bir açık\n"
+"belgeyi gösterebilir.</p>\n"
+"<p>Tek yapmanız gereken "
+"<br><strong>Görünüm -&gt; [ Yatay | Dikey ] Böl</strong> seçmektir.</p>\n"
+
+#: tips.cpp:32
+msgid ""
+"<p>You can drag the Tool views (<em>File List</em> and <em>File Selector</em>)\n"
+"to any side that you want them in Kate, or stack them, or even tear them off "
+"the\n"
+"main window.</p>\n"
+msgstr ""
+"<p>Alet pencerelerini (<em>Dosya Listesi</em> ve <em>Dosya Seçici</em>)\n"
+"Kate içinde herhangi bir kenara sürükleyebilir, üstüste koyabilir, hatta ana\n"
+" pencereden dışarı taşıyabilirsiniz.</p>\n"
+
+#: tips.cpp:39
+msgid ""
+"<p>Kate has a built-in terminal emulator, just click on <strong>"
+"\"Terminal\"</strong> at\n"
+"the bottom to show or hide it as you desire.</p>\n"
+msgstr ""
+"<p>Kate içinde yerleşik bir uçbirim emülatörü vardır, Alttaki <strong>"
+"\"Terminal\"</strong>'e\n"
+"basarak gösterebilir veya gizleyebilirsiniz.</p>\n"
+
+#: tips.cpp:45
+msgid ""
+"<p>Kate can highlight the current line with a\n"
+"<table bgcolor=\"yellow\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" "
+"width=\"100%\">"
+"<tr>"
+"<td>different\n"
+"background color.<strong>|</strong></td></tr></table></p>\n"
+"<p>You can set the color in the <em>Colors</em> page of the configuration\n"
+"dialog.</p>\n"
+msgstr ""
+"<p>Kate geçerli satırı\n"
+"<table bgcolor=\"yellow\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" "
+"width=\"100%\">"
+"<tr>"
+"<td>farklı \n"
+"bir arkaplan rengi ile işaretleyebilir.<strong>|</strong></td></tr></table></p>"
+"\n"
+"<p>Bu rengi yapılandırma penceresinin <em>Renkler</em> sayfasından\n"
+"belirleyebilirsiniz.</p>\n"
+
+#: tips.cpp:54
+msgid ""
+"<p>You can open the currently edited file in any other application from within\n"
+"Kate.</p>\n"
+"<p>Choose <strong>File -&gt; Open With</strong> for the list of programs\n"
+"configured\n"
+"for the document type. There is also an option <strong>Other...</strong> to\n"
+"choose any application on your system.</p>\n"
+msgstr ""
+"<p>Düzenlenen dosyayı başka bir uygulama ile Kate içinden \n"
+"açabilirsiniz.</p>\n"
+"<p>Belge türüne uygun programlara <strong>Dosya -&gt; Birlikte Aç</strong> ile\n"
+" ulaşabilirsiniz. Herhangi bir programla açmak için ise <strong>"
+"Başka...</strong>\n"
+"seçeneğini kullanabilirsiniz.</p>\n"
+
+#: tips.cpp:64
+msgid ""
+"<p>You can configure the editor to always display the line numbers and/or\n"
+"bookmark panes when started from the <strong>View Defaults</strong> "
+"page of the\n"
+"configuration dialog.</p>\n"
+msgstr ""
+"<p>Düzenleyiciyi açıldığında her zaman satır numaralarını ve/veya işaretleri \n"
+"gösterecek şekilde ayarlamak için yapılandırma penceresindeki \n"
+"<strong>Öntanımlıları Göster</strong> sayfasını kullanabilirsiniz.</p>\n"
+
+#: tips.cpp:71
+msgid ""
+"<p>You can download new or updated <em>Syntax highlight definitions</em> from\n"
+"the <strong>Highlighting</strong> page in the configuration dialog.</p>\n"
+"<p>Just click the <em>Download...</em> button on the <em>Highlight Modes</em>\n"
+"tab (You have to be online, of course...).</p>\n"
+msgstr ""
+"<p>Yeni veya güncellenmiş <em>Kod renklendirme tanımlarını</em>\n"
+"Yapılandırma penceresindeki <strong>Renklendirme</strong> "
+"sayfasından indirebilirsiniz.</p>\n"
+"<p>Sadece <em>Renklendirme Biçimleri</em> sekmesindeki <em>İndir...</em> "
+"düğmesine\n"
+"basmalısınız (Tabiki internete bağlı olmalısınız...).</p>\n"
+
+#: tips.cpp:79
+msgid ""
+"<p>You can cycle through all open documents by pressing <strong>"
+"Alt+Left</strong>\n"
+"or <strong>Alt+Right</strong>. The next/previous document will immediately be "
+"displayed\n"
+"in the active frame.</p>\n"
+msgstr ""
+"<p>Açık belgeler arasında gezinmek için <strong>Alt+Sol</strong> veya \n"
+"<strong>Alt+Sağ</strong>tuşlarını kullanabilirsiniz.Sonraki/Önceki belge \n"
+"geçerli pencerede açılacaktır.</p>\n"
+
+#: tips.cpp:86
+msgid ""
+"<p>You can do cool sed-like regular expression replacements using <em>"
+"Command Line</em>.</p>\n"
+"<p>For example, press <strong>F7</strong> and enter <code>"
+"s /oldtext/newtext/g</code>\n"
+"to replace &quot;oldtext&quot; with &quot;newtext&quot; throughout the current\n"
+"line.</p>\n"
+msgstr ""
+"<p>Sed-benzeri düzenli ifadele değişiklikleri yapmak için <em>"
+"Komut Satırını</em> kullanabilirsiniz.</p>\n"
+"<p>Örneğin <strong>F7</strong> basın ve <code>s /eskimetin/yenimetin/g</code> "
+"girin\n"
+"ve &quot;eskimetin&quot;'i &quot;yenimetin&quot; ile değiştirin.\n"
+"</p>\n"
+
+#: tips.cpp:94
+msgid ""
+"<p>You can repeat your last search by just pressing <strong>F3</strong>, or\n"
+"<strong>Shift+F3</strong> if you want to search backwards.</p>\n"
+msgstr ""
+"<p>Son yaptığınız aramayı sadece <strong>F3</strong> tuşuna basarak \n"
+" tekrarlayabilirsiniz.Geriye doğru aramak için <strong>Shift+F3</strong>"
+"'e basın.</p> \n"
+
+#: tips.cpp:100
+msgid ""
+"<p>You can filter the files displayed in the <em>File Selector</em> tool view.\n"
+"</p>\n"
+"<p>Simply enter your filter in the filter entry at the bottom, for example:\n"
+"<code>*.html *.php</code> if you only want to see HTML and PHP files in the\n"
+"current folder.</p>\n"
+"<p>The File Selector will even remember your filters for you.</strong></p>\n"
+msgstr ""
+"<p><em>Dosya seçici</em> penceresindeki dosyaları filtreleyebilirsiniz.\n"
+"</p>\n"
+"<p>En alttaki filtre kutusunu kullanın, mesela: \n"
+"<code>*.html *.php</code> dizindeki HTML ve PHP dosyaları gösterir.</p>\n"
+"<p>Dosya seçici filtreleri hatırlama özelliğine sahiptir.</strong></p>\n"
+
+#: tips.cpp:110
+msgid ""
+"<p>You can have two views - or even more - of the same document in Kate. "
+"Editing\n"
+"in either will be reflected in both.</p>\n"
+"<p>So if you find yourself scrolling up and down to look at text at the other\n"
+"end of a document, just press <strong>Ctrl+Shift+T</strong> to split\n"
+"horizontally.</p>\n"
+msgstr ""
+"<p>Aynı belgeyi birden fazla pencerede açabilirsiniz. Birisinde yaptığınız \n"
+"değişiklikler diğerine de aktarılacaktır.</p>\n"
+"<p>Eğer bir dosyanın başında ve sonunda çok sık değişiklikler yapıyorsanız,\n"
+"kaydırmak yerine <strong>Ctrl+Shift+T</strong>'ye basarak pencereyi yatay \n"
+"olarak bölmeniz kolaylık sağlayabilir.</p>\n"
+
+#: tips.cpp:119
+msgid ""
+"<p>Press <strong>F8</strong> or <strong>Shift+F8</strong> to switch to the\n"
+"next/previous frame.</p>\n"
+msgstr ""
+"<p><strong>F8</strong> ve <strong>Shift+F8</strong> tuşları sonraki/önceki \n"
+"pencereye geçmenizi sağlar.</p>\n"

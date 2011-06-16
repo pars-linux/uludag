@@ -1,0 +1,688 @@
+# translation of kcron.po to Türkçe
+# translation of kcron.po to Turkish
+# KDE TÜRKÇELEŞTİRME PROJESİ.
+# Copyright (C) 2000,2003, 2004 Free Software Foundation, Inc.
+# Tuncay YENİAY <tuncayyeniay@mynet.com>,2002.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>,2002.
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# RIDVAN CAN <ridvan@geleceklinux.org>, 2003.
+# Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcron\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-05-25 02:16+0200\n"
+"PO-Revision-Date: 2004-10-30 19:44+0300\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Tuncay YENİAY"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "tuncayyeniay@mynet.com"
+
+#: ctcron.cpp:54 ktlistcron.cpp:44
+msgid "(System Crontab)"
+msgstr "(Sistem İş Listesi)"
+
+#: ctcron.cpp:63
+msgid "No password entry found for user '%1'"
+msgstr "'%1' kullanıcısı için parola bilgisi yok"
+
+#: ctcron.cpp:74
+msgid "No password entry found for uid '%1'"
+msgstr "'%1' kullanıcı numarası için parola bilgisi yok"
+
+#: ctcron.cpp:274
+msgid "An error occurred while updating crontab."
+msgstr "Crontab güncellenirken bir hata oluştu."
+
+#: ctdom.cpp:33 ctdow.cpp:58 cttask.cpp:316
+msgid "every day "
+msgstr "her gün"
+
+#: ctdom.cpp:50
+msgid "1st"
+msgstr "1'inci"
+
+#: ctdom.cpp:50
+msgid "2nd"
+msgstr "2'inci"
+
+#: ctdom.cpp:51
+msgid "3rd"
+msgstr "3'üncü"
+
+#: ctdom.cpp:51
+msgid "4th"
+msgstr "4'üncü"
+
+#: ctdom.cpp:52
+msgid "5th"
+msgstr "5'inci"
+
+#: ctdom.cpp:52
+msgid "6th"
+msgstr "6'ıncı"
+
+#: ctdom.cpp:53
+msgid "7th"
+msgstr "7'inci"
+
+#: ctdom.cpp:53
+msgid "8th"
+msgstr "8'inci"
+
+#: ctdom.cpp:54
+msgid "9th"
+msgstr "9'uncu"
+
+#: ctdom.cpp:54
+msgid "10th"
+msgstr "10'uncu"
+
+#: ctdom.cpp:55
+msgid "11th"
+msgstr "11'inci"
+
+#: ctdom.cpp:55
+msgid "12th"
+msgstr "12'inci"
+
+#: ctdom.cpp:56
+msgid "13th"
+msgstr "13'üncü"
+
+#: ctdom.cpp:56
+msgid "14th"
+msgstr "14'üncü"
+
+#: ctdom.cpp:57
+msgid "15th"
+msgstr "15'inci"
+
+#: ctdom.cpp:57
+msgid "16th"
+msgstr "16'ıncı"
+
+#: ctdom.cpp:58
+msgid "17th"
+msgstr "17'inci"
+
+#: ctdom.cpp:58
+msgid "18th"
+msgstr "18'inci"
+
+#: ctdom.cpp:59
+msgid "19th"
+msgstr "19'uncu"
+
+#: ctdom.cpp:59
+msgid "20th"
+msgstr "20'nci"
+
+#: ctdom.cpp:60
+msgid "21st"
+msgstr "21'inci"
+
+#: ctdom.cpp:60
+msgid "22nd"
+msgstr "22'inci"
+
+#: ctdom.cpp:61
+msgid "23rd"
+msgstr "23'üncü"
+
+#: ctdom.cpp:61
+msgid "24th"
+msgstr "24'üncü"
+
+#: ctdom.cpp:62
+msgid "25th"
+msgstr "25'inci"
+
+#: ctdom.cpp:62
+msgid "26th"
+msgstr "26'ncı"
+
+#: ctdom.cpp:63
+msgid "27th"
+msgstr "27'nci"
+
+#: ctdom.cpp:63
+msgid "28th"
+msgstr "28'inci"
+
+#: ctdom.cpp:64
+msgid "29th"
+msgstr "29'uncu"
+
+#: ctdom.cpp:64
+msgid "30th"
+msgstr "30'uncu"
+
+#: ctdom.cpp:65
+msgid "31st"
+msgstr "31'inci"
+
+#: ctdow.cpp:60
+msgid "weekday "
+msgstr "haftanın günü"
+
+#: ctdow.cpp:78
+msgid "Mon"
+msgstr "Pzt"
+
+#: ctdow.cpp:78
+msgid "Tue"
+msgstr "Sa"
+
+#: ctdow.cpp:79
+msgid "Wed"
+msgstr "Çrş"
+
+#: ctdow.cpp:79
+msgid "Thu"
+msgstr "Prş"
+
+#: ctdow.cpp:80
+msgid "Fri"
+msgstr "Cu"
+
+#: ctdow.cpp:80
+msgid "Sat"
+msgstr "Cts"
+
+#: ctdow.cpp:81
+msgid "Sun"
+msgstr "Paz"
+
+#: ctmonth.cpp:32
+msgid "every month "
+msgstr "her ay"
+
+#: ctmonth.cpp:49
+msgid "January"
+msgstr "Ocak"
+
+#: ctmonth.cpp:49
+msgid "February"
+msgstr "Şubat"
+
+#: ctmonth.cpp:50
+msgid "March"
+msgstr "Mart"
+
+#: ctmonth.cpp:50
+msgid "April"
+msgstr "Nisan"
+
+#: ctmonth.cpp:51
+msgid ""
+"_: May long\n"
+"May"
+msgstr "Mayıs"
+
+#: ctmonth.cpp:51
+msgid "June"
+msgstr "Haziran"
+
+#: ctmonth.cpp:52
+msgid "July"
+msgstr "Temmuz"
+
+#: ctmonth.cpp:52
+msgid "August"
+msgstr "Ağustos"
+
+#: ctmonth.cpp:53
+msgid "September"
+msgstr "Eylül"
+
+#: ctmonth.cpp:53
+msgid "October"
+msgstr "Ekim"
+
+#: ctmonth.cpp:54
+msgid "November"
+msgstr "Kasım"
+
+#: ctmonth.cpp:54
+msgid "December"
+msgstr "Aralık"
+
+#: cttask.cpp:251
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#: cttask.cpp:252
+msgid ""
+"_: Please translator, read the README.translators file in kcron's source code\n"
+"DAYS_OF_MONTH of MONTHS"
+msgstr "AYIN_GÜNÜNÜN_GÜNÜ"
+
+#: cttask.cpp:253
+msgid ""
+"_: Really, read that file\n"
+"every DAYS_OF_WEEK"
+msgstr "her GÜNÜN_HAFTASI"
+
+#: cttask.cpp:254
+msgid "DOM_FORMAT as well as DOW_FORMAT"
+msgstr "DOW_BİÇİMİ kadar DOM_BİÇİMİ"
+
+#: cttask.cpp:255
+msgid "At TIME"
+msgstr "ZAMAN"
+
+#: cttask.cpp:256
+msgid "TIME_FORMAT, DATE_FORMAT"
+msgstr "TIME_FORMAT, DATE_FORMAT"
+
+#: cttask.cpp:302
+msgid ", and "
+msgstr ", ve "
+
+#: cttask.cpp:304 ctunit.cpp:187
+msgid " and "
+msgstr " ve "
+
+#: cttask.cpp:306 ctunit.cpp:189
+msgid ", "
+msgstr ", "
+
+#: ctunit.cpp:186
+msgid ","
+msgstr ","
+
+#: ktapp.cpp:42 ktapp.cpp:381
+msgid "Task Scheduler"
+msgstr "Görev Zamanlayıcı"
+
+#: ktapp.cpp:72
+msgid ""
+"The following error occurred while initializing KCron:\n"
+"\n"
+"%1\n"
+"\n"
+"KCron will now exit.\n"
+msgstr ""
+"KCron çalıştırılırken aşağıdaki hata oluştu:\n"
+"\n"
+"%1\n"
+"KCron sonlandırılacaktır.\n"
+
+#: ktapp.cpp:96
+msgid ""
+"You can use this application to schedule programs to run in the background.\n"
+"To schedule a new task now, click on the Tasks folder and select Edit/New from "
+"the menu."
+msgstr ""
+"Arkaplanda çalışacak programları planlamak için bu uygulamayı  "
+"kullanabilirsiniz.\n"
+"Şimdi yeni bir görev tanımlamak için Görevler klasörüne tıklayın ve menüden "
+"Düzenle/Yeni'yi seçin."
+
+#: ktapp.cpp:96
+msgid "Welcome to the Task Scheduler"
+msgstr "Görev Zamanlayıcıya Hoşgeldiniz"
+
+#: ktapp.cpp:131
+msgid "&New..."
+msgstr "&Yeni..."
+
+#: ktapp.cpp:133
+msgid "M&odify..."
+msgstr "&Değiştir..."
+
+#: ktapp.cpp:135 kttask.cpp:171 ktvariable.cpp:74
+msgid "&Enabled"
+msgstr "&Etkin"
+
+#: ktapp.cpp:136
+msgid "&Run Now"
+msgstr "Şimdi Ç&alıştır"
+
+#: ktapp.cpp:146 ktapp.cpp:257 ktapp.cpp:268 ktapp.cpp:288 ktapp.cpp:295
+#: ktapp.cpp:302 ktapp.cpp:309 ktapp.cpp:316 ktapp.cpp:323 ktapp.cpp:341
+#: ktapp.cpp:348 ktapp.cpp:361 ktapp.cpp:374
+msgid "Ready."
+msgstr "Hazır."
+
+#: ktapp.cpp:214
+msgid ""
+"Scheduled tasks have been modified.\n"
+"Do you want to save changes?"
+msgstr ""
+"Zamanlanan görevler değişti.\n"
+"Değişiklikleri kaydetmek ister misiniz?"
+
+#: ktapp.cpp:255
+msgid "Saving..."
+msgstr "Kaydediliyor..."
+
+#: ktapp.cpp:266
+msgid "Printing..."
+msgstr "Yazdırılıyor..."
+
+#: ktapp.cpp:285
+msgid "Cutting to clipboard..."
+msgstr "Pano'ya taşınıyor..."
+
+#: ktapp.cpp:293
+msgid "Copying to clipboard..."
+msgstr "Pano'ya kopyalanıyor..."
+
+#: ktapp.cpp:300
+msgid "Pasting from clipboard..."
+msgstr "Pano'dan yapıştırılıyor..."
+
+#: ktapp.cpp:307
+msgid "Adding new entry..."
+msgstr "Yeni girdi ekleniyor..."
+
+#: ktapp.cpp:314
+msgid "Modifying entry..."
+msgstr "Girdi değiştiriliyor..."
+
+#: ktapp.cpp:321
+msgid "Deleting entry..."
+msgstr "Girdi siliniyor..."
+
+#: ktapp.cpp:331
+msgid "Disabling entry..."
+msgstr "Girdi kullanılamıyor..."
+
+#: ktapp.cpp:337
+msgid "Enabling entry..."
+msgstr "Girdi kullanıma hazırlanıyor..."
+
+#: ktapp.cpp:346
+msgid "Running command..."
+msgstr "Çalışan komut..."
+
+#: ktapp.cpp:395
+msgid "Create a new task or variable."
+msgstr "Yeni görev veya değişken oluştur."
+
+#: ktapp.cpp:398
+msgid "Edit the selected task or variable."
+msgstr "Seçilen görevi veya değişkeni düzenle."
+
+#: ktapp.cpp:401
+msgid "Delete the selected task or variable."
+msgstr "Seçilen görev veya değişkeni sil."
+
+#: ktapp.cpp:404
+msgid "Enable/disable the selected task or variable."
+msgstr "Seçilen görev veya değişken kullanılabilir/kullanılamaz."
+
+#: ktapp.cpp:407
+msgid "Run the selected task now."
+msgstr "Seçilen görevi şimdi çalıştır."
+
+#: ktapp.cpp:421
+msgid "Enable/disable the tool bar."
+msgstr "Araç çubuğunu etkin/etkin değil."
+
+#: ktapp.cpp:424
+msgid "Enable/disable the status bar."
+msgstr "Durum çubuğu kullanılabilir/kullanılamaz yap."
+
+#: ktlisttask.cpp:43 ktlistvar.cpp:43
+msgid "Disabled"
+msgstr "Kullanılamaz"
+
+#: ktlisttask.cpp:57 ktlistvar.cpp:66
+msgid "Disabled."
+msgstr "Kullanılamaz."
+
+#: ktlisttask.cpp:62
+msgid "Modify Task"
+msgstr "Görev Düzenle"
+
+#: ktlisttasks.cpp:41
+msgid "Tasks"
+msgstr "Görevler"
+
+#: ktlisttasks.cpp:47
+msgid "Edit Task"
+msgstr "Görev Düzenle"
+
+#: ktlisttasks.cpp:74
+msgid "Task name:"
+msgstr "Görev adı:"
+
+#: ktlisttasks.cpp:75
+msgid "Program:"
+msgstr "Program:"
+
+#: ktlisttasks.cpp:76 ktlistvars.cpp:72
+msgid "Description:"
+msgstr "Tanımlama:"
+
+#: ktlisttasks.cpp:85
+msgid "No tasks..."
+msgstr "Görev yok..."
+
+#: ktlistvar.cpp:72
+msgid "Modify Variable"
+msgstr "Değişken Düzenle"
+
+#: ktlistvars.cpp:43
+msgid "Edit Variable"
+msgstr "Değişken Düzenle"
+
+#: ktlistvars.cpp:70
+msgid "Variable:"
+msgstr "Değişken:"
+
+#: ktlistvars.cpp:71
+msgid "Value:"
+msgstr "Değer:"
+
+#: ktlistvars.cpp:81
+msgid "No variables..."
+msgstr "Değişken yok..."
+
+#: ktlistvars.cpp:98
+msgid "Variables"
+msgstr "Değişkenler"
+
+#: ktprint.cpp:81
+msgid "Print Cron Tab"
+msgstr "İş Listesini Yazdır"
+
+#: ktprintopt.cpp:26
+msgid "Cron Options"
+msgstr "Cron Seçenekleri"
+
+#: ktprintopt.cpp:30
+msgid "Print cron&tab"
+msgstr "İş &listesini yazdır"
+
+#: ktprintopt.cpp:33
+msgid "Print &all users"
+msgstr "&Tüm kullanıcıları yazdır"
+
+#: kttask.cpp:112
+msgid "&Run as:"
+msgstr "&Çalıştır:"
+
+#: kttask.cpp:138
+msgid "&Comment:"
+msgstr "&Açıklama:"
+
+#: kttask.cpp:150
+msgid "&Program:"
+msgstr "&Program:"
+
+#: kttask.cpp:165
+msgid "&Browse..."
+msgstr "&Gözat..."
+
+#: kttask.cpp:176
+msgid "&Silent"
+msgstr "&Sessiz"
+
+#: kttask.cpp:185
+msgid "Months"
+msgstr "Aylar"
+
+#: kttask.cpp:201 kttask.cpp:234 kttask.cpp:254 kttask.cpp:314 kttask.cpp:343
+#: kttask.cpp:712 kttask.cpp:741 kttask.cpp:750 kttask.cpp:779 kttask.cpp:788
+#: kttask.cpp:817 kttask.cpp:826 kttask.cpp:855 kttask.cpp:864 kttask.cpp:893
+msgid "Set All"
+msgstr "Hepsini Tanımla"
+
+#: kttask.cpp:207
+msgid "Days of Month"
+msgstr "Ayın Günleri"
+
+#: kttask.cpp:238
+msgid "Days of Week"
+msgstr "Haftanın Günleri"
+
+#: kttask.cpp:260
+msgid "Daily"
+msgstr "Günlük"
+
+#: kttask.cpp:266
+msgid "Run every day"
+msgstr "Her gün çalıştır"
+
+#: kttask.cpp:271
+msgid "Hours"
+msgstr "Saatler"
+
+#: kttask.cpp:276
+msgid "AM"
+msgstr "ÖÖ"
+
+#: kttask.cpp:299
+msgid "PM"
+msgstr "ÖS"
+
+#: kttask.cpp:318
+msgid "Minutes"
+msgstr "Dakika"
+
+#: kttask.cpp:528
+msgid ""
+"Please enter the following to schedule the task:\n"
+msgstr ""
+"Lütfen görevi zamanlamak için aşağıdaki bilgileri girin:\n"
+
+#: kttask.cpp:534
+msgid "the program to run"
+msgstr "çalıştırılacak program"
+
+#: kttask.cpp:546
+msgid "the months"
+msgstr "aylar"
+
+#: kttask.cpp:567
+msgid "either the days of the month or the days of the week"
+msgstr "ayın günleri veya haftanın günleri"
+
+#: kttask.cpp:583
+msgid "the hours"
+msgstr "saatler"
+
+#: kttask.cpp:599
+msgid "the minutes"
+msgstr "dakikalar"
+
+#: kttask.cpp:627
+msgid "Cannot locate program. Please re-enter."
+msgstr "Program konumlandırılamadı. Lütfen yeniden girin."
+
+#: kttask.cpp:635
+msgid "Program is not an executable file. Please re-enter."
+msgstr "Program çalıştırılabilir bir dosya değil. Lütfen yeniden girin."
+
+#: kttask.cpp:703
+msgid "Only local or mounted files can be executed by crontab."
+msgstr "Sadece yerel ya da bağlı dosyalar crontab tarafından çalıştırılabilir."
+
+#: ktvariable.cpp:37
+msgid "&Variable:"
+msgstr "&Değişken:"
+
+#: ktvariable.cpp:55
+msgid "Va&lue:"
+msgstr "D&eğer:"
+
+#: ktvariable.cpp:64
+msgid "Co&mment:"
+msgstr "&Açıklama::"
+
+#: ktvariable.cpp:106
+msgid "Override default home folder."
+msgstr "Öntanımlı ev dizini dikkate alma."
+
+#: ktvariable.cpp:111
+msgid "Email output to specified account."
+msgstr "Belirtilen hesaba e-posta çıktısı."
+
+#: ktvariable.cpp:116
+msgid "Override default shell."
+msgstr "Öntanımlı kabuğu dikkate alma."
+
+#: ktvariable.cpp:121
+msgid "Folders to search for program files."
+msgstr "Program dosyaları için araştırılacak dizinler."
+
+#: ktvariable.cpp:133
+msgid "Please enter the variable name."
+msgstr "Lütfen değişken adı giriniz."
+
+#: ktvariable.cpp:140
+msgid "Please enter the variable value."
+msgstr "Lütfen değişkenin değerini giriniz."
+
+#: ktview.cpp:104
+msgid "Users/Tasks/Variables"
+msgstr "Kullanıcılar/Görevler/Değişkenler"
+
+#: ktview.cpp:106
+msgid "Tasks/Variables"
+msgstr "Görevler/Değişkenler"
+
+#: ktview.cpp:108
+msgid "Value"
+msgstr "Değer"
+
+#: ktview.cpp:109
+msgid "Description"
+msgstr "Tanımlama"
+
+#: ktview.cpp:275
+msgid ""
+"_: user on host\n"
+"%1 <%2> on %3"
+msgstr "%1 <%2>, %3 üzerinde"
+
+#: ktview.cpp:283
+msgid "Scheduled Tasks"
+msgstr "Zamanlanmış Görevler"
+
+#: main.cpp:20
+msgid "KDE Task Scheduler"
+msgstr "KDE Görev Zamanlayıcı"
+
+#: main.cpp:22
+msgid "KCron"
+msgstr "KCron"

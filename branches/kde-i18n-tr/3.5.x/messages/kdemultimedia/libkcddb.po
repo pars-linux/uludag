@@ -1,0 +1,813 @@
+# translation of libkcddb.po to
+# Turkish translation of libkcddb.
+# Copyright (C) 2003,2004, 2005, 2007 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Aydın Demirel <aydndemirel@yahoo.com>, 2004.
+# Engin Çağatay <engincagatay@yahoo.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkcddb\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-08 01:20+0200\n"
+"PO-Revision-Date: 2007-05-14 23:30+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: categories.cpp:21 genres.cpp:61
+msgid "Blues"
+msgstr "Blues"
+
+#: categories.cpp:21 genres.cpp:64
+msgid "Classical"
+msgstr "Classical"
+
+#: categories.cpp:21 genres.cpp:66
+msgid ""
+"_: music genre\n"
+"Country"
+msgstr "Country"
+
+#: categories.cpp:22
+msgid "Data"
+msgstr "Data"
+
+#: categories.cpp:22 genres.cpp:71
+msgid "Folk"
+msgstr "Folk"
+
+#: categories.cpp:22 genres.cpp:77
+msgid "Jazz"
+msgstr "Jazz"
+
+#: categories.cpp:23 genres.cpp:79
+msgid "New Age"
+msgstr "New Age"
+
+#: categories.cpp:23 genres.cpp:85
+msgid "Reggae"
+msgstr "Reggae"
+
+#: categories.cpp:23 genres.cpp:86
+msgid "Rock"
+msgstr "Rock"
+
+#: categories.cpp:23 genres.cpp:89
+msgid "Soundtrack"
+msgstr "Soundtrack"
+
+#: cddb.cpp:166
+msgid "Success"
+msgstr "Success"
+
+#: cddb.cpp:170
+msgid "Server error"
+msgstr "Sunucu hatası"
+
+#: cddb.cpp:174
+msgid "Host not found"
+msgstr "Makine bulunamadı"
+
+#: cddb.cpp:178
+msgid "No response"
+msgstr "Cevap alınamadı"
+
+#: cddb.cpp:182
+msgid "No record found"
+msgstr "Kayıt bulunamadı"
+
+#: cddb.cpp:186
+msgid "Multiple records found"
+msgstr "Birden fazla kayıt bulundu"
+
+#: cddb.cpp:190
+msgid "Cannot save"
+msgstr "Kaydedilemedi"
+
+#: cddb.cpp:194
+msgid "Invalid category"
+msgstr "Geçersiz kategori"
+
+#: cddb.cpp:198
+msgid "Unknown error"
+msgstr "Bilinmeyen hata"
+
+#: cdinfoencodingwidget.cpp:65
+msgid ""
+"_: artist - cdtitle\n"
+"%1 - %2"
+msgstr "%1 - %2"
+
+#: genres.cpp:57
+msgid "Unknown"
+msgstr "Bilinmeyen"
+
+#: genres.cpp:57
+msgid "A Cappella"
+msgstr "A Cappella"
+
+#: genres.cpp:57
+msgid "Acid Jazz"
+msgstr "Acid Jazz"
+
+#: genres.cpp:58
+msgid "Acid Punk"
+msgstr "Acid Punk"
+
+#: genres.cpp:58
+msgid "Acid"
+msgstr "Acid"
+
+#: genres.cpp:58
+msgid "Acoustic"
+msgstr "Acoustic"
+
+#: genres.cpp:58
+msgid "Alternative"
+msgstr "Alternative"
+
+#: genres.cpp:59
+msgid "Alt. Rock"
+msgstr "Alt. Rock"
+
+#: genres.cpp:59
+msgid "Ambient"
+msgstr "Ambient"
+
+#: genres.cpp:59
+msgid "Anime"
+msgstr "Anime"
+
+#: genres.cpp:59
+msgid "Avantgarde"
+msgstr "Avantgarde"
+
+#: genres.cpp:60
+msgid "Ballad"
+msgstr "Ballad"
+
+#: genres.cpp:60
+msgid "Bass"
+msgstr "Bass"
+
+#: genres.cpp:60
+msgid "Beat"
+msgstr "Beat"
+
+#: genres.cpp:60
+msgid "Bebop"
+msgstr "Bebop"
+
+#: genres.cpp:61
+msgid "Big Band"
+msgstr "Big Band"
+
+#: genres.cpp:61
+msgid "Black Metal"
+msgstr "Black Metal"
+
+#: genres.cpp:61
+msgid "Bluegrass"
+msgstr "Bluegrass"
+
+#: genres.cpp:62
+msgid "Booty Bass"
+msgstr "Booty Bass"
+
+#: genres.cpp:62
+msgid "BritPop"
+msgstr "BritPop"
+
+#: genres.cpp:62
+msgid "Cabaret"
+msgstr "Cabaret"
+
+#: genres.cpp:62
+msgid "Celtic"
+msgstr "Celtic"
+
+#: genres.cpp:63
+msgid "Chamber Music"
+msgstr "Chamber Music"
+
+#: genres.cpp:63
+msgid "Chanson"
+msgstr "Chanson"
+
+#: genres.cpp:63
+msgid "Chorus"
+msgstr "Chorus"
+
+#: genres.cpp:63
+msgid "Christian Gangsta Rap"
+msgstr "Christian Gangsta Rap"
+
+#: genres.cpp:64
+msgid "Christian Rap"
+msgstr "Christian Rap"
+
+#: genres.cpp:64
+msgid "Christian Rock"
+msgstr "Christian Rock"
+
+#: genres.cpp:64
+msgid "Classic Rock"
+msgstr "Classic Rock"
+
+#: genres.cpp:65
+msgid "Club-house"
+msgstr "Club-house"
+
+#: genres.cpp:65
+msgid "Club"
+msgstr "Club"
+
+#: genres.cpp:65
+msgid "Comedy"
+msgstr "Comedy"
+
+#: genres.cpp:65
+msgid "Contemporary Christian"
+msgstr "Contemporary Christian"
+
+#: genres.cpp:66
+msgid "Crossover"
+msgstr "Crossover"
+
+#: genres.cpp:66
+msgid "Cult"
+msgstr "Cult"
+
+#: genres.cpp:66
+msgid "Dance Hall"
+msgstr "Dance Hall"
+
+#: genres.cpp:67
+msgid "Dance"
+msgstr "Dance"
+
+#: genres.cpp:67
+msgid "Darkwave"
+msgstr "Darkwave"
+
+#: genres.cpp:67
+msgid "Death Metal"
+msgstr "Death Metal"
+
+#: genres.cpp:67
+msgid "Disco"
+msgstr "Disco"
+
+#: genres.cpp:68
+msgid "Dream"
+msgstr "Dream"
+
+#: genres.cpp:68
+msgid "Drum & Bass"
+msgstr "Drum & Bass"
+
+#: genres.cpp:68
+msgid "Drum Solo"
+msgstr "Drum Solo"
+
+#: genres.cpp:68
+msgid "Duet"
+msgstr "Duet"
+
+#: genres.cpp:69
+msgid "Easy Listening"
+msgstr "Easy Listening"
+
+#: genres.cpp:69
+msgid "Electronic"
+msgstr "Electronic"
+
+#: genres.cpp:69
+msgid "Ethnic"
+msgstr "Ethnic"
+
+#: genres.cpp:69
+msgid "Eurodance"
+msgstr "Eurodance"
+
+#: genres.cpp:70
+msgid "Euro-House"
+msgstr "Euro-House"
+
+#: genres.cpp:70
+msgid "Euro-Techno"
+msgstr "Euro-Techno"
+
+#: genres.cpp:70
+msgid "Fast-Fusion"
+msgstr "Fast-Fusion"
+
+#: genres.cpp:70
+msgid "Folklore"
+msgstr "Folklore"
+
+#: genres.cpp:71
+msgid "Folk/Rock"
+msgstr "Folk/Rock"
+
+#: genres.cpp:71
+msgid "Freestyle"
+msgstr "Freestyle"
+
+#: genres.cpp:71
+msgid "Funk"
+msgstr "Funk"
+
+#: genres.cpp:72
+msgid "Fusion"
+msgstr "Fusion"
+
+#: genres.cpp:72
+msgid "Game"
+msgstr "Game"
+
+#: genres.cpp:72
+msgid "Gangsta Rap"
+msgstr "Gangsta Rap"
+
+#: genres.cpp:72
+msgid "Goa"
+msgstr "Goa"
+
+#: genres.cpp:73
+msgid "Gospel"
+msgstr "Gospel"
+
+#: genres.cpp:73
+msgid "Gothic Rock"
+msgstr "Gothic Rock"
+
+#: genres.cpp:73
+msgid "Gothic"
+msgstr "Gothic"
+
+#: genres.cpp:73
+msgid "Grunge"
+msgstr "Grunge"
+
+#: genres.cpp:74
+msgid "Hardcore"
+msgstr "Hardcore"
+
+#: genres.cpp:74
+msgid "Hard Rock"
+msgstr "Hard Rock"
+
+#: genres.cpp:74
+msgid "Heavy Metal"
+msgstr "Heavy Metal"
+
+#: genres.cpp:74
+msgid "Hip-Hop"
+msgstr "Hip-Hop"
+
+#: genres.cpp:75
+msgid "House"
+msgstr "House"
+
+#: genres.cpp:75
+msgid "Humor"
+msgstr "Humor"
+
+#: genres.cpp:75
+msgid "Indie"
+msgstr "Indie"
+
+#: genres.cpp:75
+msgid "Industrial"
+msgstr "Industrial"
+
+#: genres.cpp:76
+msgid "Instrumental Pop"
+msgstr "Instrumental Pop"
+
+#: genres.cpp:76
+msgid "Instrumental Rock"
+msgstr "Instrumental Rock"
+
+#: genres.cpp:76
+msgid "Instrumental"
+msgstr "Instrumental"
+
+#: genres.cpp:76
+msgid "Jazz+Funk"
+msgstr "Jazz+Funk"
+
+#: genres.cpp:77
+msgid "JPop"
+msgstr "JPop"
+
+#: genres.cpp:77
+msgid "Jungle"
+msgstr "Jungle"
+
+#: genres.cpp:77
+msgid "Latin"
+msgstr "Latin"
+
+#: genres.cpp:77
+msgid "Lo-Fi"
+msgstr "Lo-Fi"
+
+#: genres.cpp:78
+msgid "Meditative"
+msgstr "Meditative"
+
+#: genres.cpp:78
+msgid "Merengue"
+msgstr "Merengue"
+
+#: genres.cpp:78
+msgid "Metal"
+msgstr "Metal"
+
+#: genres.cpp:78
+msgid "Musical"
+msgstr "Musical"
+
+#: genres.cpp:79
+msgid "National Folk"
+msgstr "National Folk"
+
+#: genres.cpp:79
+msgid "Native American"
+msgstr "Native American"
+
+#: genres.cpp:79
+msgid "Negerpunk"
+msgstr "Negerpunk"
+
+#: genres.cpp:80
+msgid "New Wave"
+msgstr "New Wave"
+
+#: genres.cpp:80
+msgid "Noise"
+msgstr "Noise"
+
+#: genres.cpp:80
+msgid "Oldies"
+msgstr "Oldies"
+
+#: genres.cpp:80
+msgid "Opera"
+msgstr "Opera"
+
+#: genres.cpp:81
+msgid "Other"
+msgstr "Diğer"
+
+#: genres.cpp:81
+msgid "Polka"
+msgstr "Polka"
+
+#: genres.cpp:81
+msgid "Polsk Punk"
+msgstr "Polsk Punk"
+
+#: genres.cpp:81
+msgid "Pop-Funk"
+msgstr "Pop-Funk"
+
+#: genres.cpp:82
+msgid "Pop/Funk"
+msgstr "Pop/Funk"
+
+#: genres.cpp:82
+msgid "Pop"
+msgstr "Pop"
+
+#: genres.cpp:82
+msgid "Porn Groove"
+msgstr "Porn Groove"
+
+#: genres.cpp:82
+msgid "Power Ballad"
+msgstr "Power Ballad"
+
+#: genres.cpp:83
+msgid "Pranks"
+msgstr "Pranks"
+
+#: genres.cpp:83
+msgid "Primus"
+msgstr "Primus"
+
+#: genres.cpp:83
+msgid "Progressive Rock"
+msgstr "Progressive Rock"
+
+#: genres.cpp:83
+msgid "Psychedelic Rock"
+msgstr "Psychedelic Rock"
+
+#: genres.cpp:84
+msgid "Psychedelic"
+msgstr "Psychedelic"
+
+#: genres.cpp:84
+msgid "Punk Rock"
+msgstr "Punk Rock"
+
+#: genres.cpp:84
+msgid "Punk"
+msgstr "Punk"
+
+#: genres.cpp:84
+msgid "R&B"
+msgstr "R&B"
+
+#: genres.cpp:85
+msgid "Rap"
+msgstr "Rap"
+
+#: genres.cpp:85
+msgid "Rave"
+msgstr "Rave"
+
+#: genres.cpp:85
+msgid "Retro"
+msgstr "Retro"
+
+#: genres.cpp:86
+msgid "Revival"
+msgstr "Revival"
+
+#: genres.cpp:86
+msgid "Rhythmic Soul"
+msgstr "Rhythmic Soul"
+
+#: genres.cpp:86
+msgid "Rock & Roll"
+msgstr "Rock & Roll"
+
+#: genres.cpp:87
+msgid "Salsa"
+msgstr "Salsa"
+
+#: genres.cpp:87
+msgid "Samba"
+msgstr "Samba"
+
+#: genres.cpp:87
+msgid "Satire"
+msgstr "Satire"
+
+#: genres.cpp:87
+msgid "Showtunes"
+msgstr "Showtunes"
+
+#: genres.cpp:88
+msgid "Ska"
+msgstr "Ska"
+
+#: genres.cpp:88
+msgid "Slow Jam"
+msgstr "Slow Jam"
+
+#: genres.cpp:88
+msgid "Slow Rock"
+msgstr "Slow Rock"
+
+#: genres.cpp:88
+msgid "Sonata"
+msgstr "Sonata"
+
+#: genres.cpp:89
+msgid "Soul"
+msgstr "Soul"
+
+#: genres.cpp:89
+msgid "Sound Clip"
+msgstr "Sound Clip"
+
+#: genres.cpp:89
+msgid "Southern Rock"
+msgstr "Southern Rock"
+
+#: genres.cpp:90
+msgid "Space"
+msgstr "Space"
+
+#: genres.cpp:90
+msgid "Speech"
+msgstr "Speech"
+
+#: genres.cpp:90
+msgid "Swing"
+msgstr "Swing"
+
+#: genres.cpp:90
+msgid "Symphonic Rock"
+msgstr "Symphonic Rock"
+
+#: genres.cpp:91
+msgid "Symphony"
+msgstr "Symphony"
+
+#: genres.cpp:91
+msgid "Synthpop"
+msgstr "Synthpop"
+
+#: genres.cpp:91
+msgid "Tango"
+msgstr "Tango"
+
+#: genres.cpp:91
+msgid "Techno-Industrial"
+msgstr "Techno-Industrial"
+
+#: genres.cpp:92
+msgid "Techno"
+msgstr "Techno"
+
+#: genres.cpp:92
+msgid "Terror"
+msgstr "Terror"
+
+#: genres.cpp:92
+msgid "Thrash Metal"
+msgstr "Thrash Metal"
+
+#: genres.cpp:92
+msgid "Top 40"
+msgstr "Top 40"
+
+#: genres.cpp:93
+msgid "Trailer"
+msgstr "Trailer"
+
+#: genres.cpp:93
+msgid "Trance"
+msgstr "Trance"
+
+#: genres.cpp:93
+msgid "Tribal"
+msgstr "Tribal"
+
+#: genres.cpp:93
+msgid "Trip-Hop"
+msgstr "Trip-Hop"
+
+#: genres.cpp:94
+msgid "Vocal"
+msgstr "Vocal"
+
+#. i18n: file cdinfodialogbase.ui line 32
+#: rc.cpp:3
+#, no-c-format
+msgid "Revision:"
+msgstr "Gözden geçirme:"
+
+#. i18n: file cdinfodialogbase.ui line 40
+#: rc.cpp:6
+#, no-c-format
+msgid "Use the name of the artist if there is no title."
+msgstr "Bir başlık yoksa, sanatçının ismini kullan."
+
+#. i18n: file cdinfodialogbase.ui line 48
+#: rc.cpp:9
+#, no-c-format
+msgid "&Category:"
+msgstr "&Kategori:"
+
+#. i18n: file cdinfodialogbase.ui line 67
+#: rc.cpp:12
+#, no-c-format
+msgid ""
+"Write names as \"first last\", not \"last, first\". Omit any leading \"The\".  "
+"Use \"Various\" for compilations."
+msgstr ""
+"İsimleri \"ad soyad\" olarak yazın, \"soyad, ad\" olarak değil. Derlemeler için "
+" \"The\" yazan yerleri silin ve \"Çeşitli\" kullanın."
+
+#. i18n: file cdinfodialogbase.ui line 75
+#: rc.cpp:15
+#, no-c-format
+msgid "&Artist:"
+msgstr "S&anatçı:"
+
+#. i18n: file cdinfodialogbase.ui line 86
+#: rc.cpp:18
+#, no-c-format
+msgid "&Year:"
+msgstr "&Yıl:"
+
+#. i18n: file cdinfodialogbase.ui line 97
+#: rc.cpp:21
+#, no-c-format
+msgid "&Genre:"
+msgstr "&Tarz:"
+
+#. i18n: file cdinfodialogbase.ui line 111
+#: rc.cpp:24
+#, no-c-format
+msgid "Disc Id values must be unique within a category."
+msgstr "Bir kategori içindeki Disk Kimliği değerleri eşsiz olmalı."
+
+#. i18n: file cdinfodialogbase.ui line 130
+#: rc.cpp:27
+#, no-c-format
+msgid "&Multiple artists"
+msgstr "&Çoklu Sanatçı"
+
+#. i18n: file cdinfodialogbase.ui line 146
+#: rc.cpp:30
+#, no-c-format
+msgid "Comment:"
+msgstr "Yorum:"
+
+#. i18n: file cdinfodialogbase.ui line 157
+#: rc.cpp:33
+#, no-c-format
+msgid "&Title:"
+msgstr "&Başlık:"
+
+#. i18n: file cdinfodialogbase.ui line 174
+#: rc.cpp:36
+#, no-c-format
+msgid "Avoid custom values, as they will be written to CDDB as-is."
+msgstr ""
+"Özel değerlerden kaçının çünkü bunlar CDDB'ye belirsiz olarak yazılacaktır."
+
+#. i18n: file cdinfodialogbase.ui line 182
+#: rc.cpp:39
+#, no-c-format
+msgid "Disc Id:"
+msgstr "Disk Kkimliği:"
+
+#. i18n: file cdinfodialogbase.ui line 190
+#: rc.cpp:42
+#, no-c-format
+msgid "Length:"
+msgstr "Uzunluk:"
+
+#. i18n: file cdinfodialogbase.ui line 211
+#: rc.cpp:45
+#, no-c-format
+msgid "Track"
+msgstr "Parça"
+
+#. i18n: file cdinfodialogbase.ui line 222
+#: rc.cpp:48
+#, no-c-format
+msgid "Length"
+msgstr "Uzunluk"
+
+#. i18n: file cdinfodialogbase.ui line 233
+#: rc.cpp:51
+#, no-c-format
+msgid "Title"
+msgstr "Başlık"
+
+#. i18n: file cdinfodialogbase.ui line 244
+#: rc.cpp:54
+#, no-c-format
+msgid "Comment"
+msgstr "Yorum"
+
+#. i18n: file cdinfodialogbase.ui line 255
+#: rc.cpp:57
+#, no-c-format
+msgid "Artist"
+msgstr "Sanatçı"
+
+#. i18n: file cdinfodialogbase.ui line 274
+#: rc.cpp:60
+#, no-c-format
+msgid "For a CD-Extra, set title to \"Data\"."
+msgstr "Bir CD-Extra için, başlığı \"Data\" olarak ayarlayın."
+
+#. i18n: file cdinfodialogbase.ui line 307
+#: rc.cpp:63
+#, no-c-format
+msgid "Change Encoding..."
+msgstr "Kodlamayı Değiştir..."
+
+#. i18n: file cdinfodialogbase.ui line 317
+#: rc.cpp:66
+#, no-c-format
+msgid "Playing order:"
+msgstr "Çalma sırası:"
+
+#. i18n: file cdinfoencodingwidgetbase.ui line 24
+#: rc.cpp:69
+#, no-c-format
+msgid "Encoding:"
+msgstr "Kodlama:"
+
+#. i18n: file cdinfoencodingwidgetbase.ui line 37
+#: rc.cpp:72
+#, no-c-format
+msgid "Preview"
+msgstr "Önizleme"

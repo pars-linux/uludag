@@ -1,0 +1,37 @@
+<article lang="&language;" id="finger">
+<title
+>finger</title>
+
+<para
+>Finger, kullanıcılar hakkında bilgi almak için kullanılan bir programdır</para>
+
+<para
+>Eğer uzak makinede finger etkinleştirilirse, kullanıcı adını da bilmeniz halinde kolayca bu kullanıcı hakkında bilgi (e-postası var mı, ya da .plan dosyasında ne yazıyor?) alabilirsiniz.</para>
+
+<para
+>Finger genellikle kullanıcıadı@makineadı şekilnde bir ifade ile tanımlanır, ancak bu tanım kullanıcının e-posta adresi ile aynı olmayabilir.</para>
+
+<para
+>Pek çok İnternet servis sağlayıcısı finger erişimine izin vermez. </para>
+
+<para
+>Diğer kullanıcılar yerel <filename
+>.plan</filename
+> dosyalarını genellikle PGP anahtarlarını tutmak için kullanırlar. </para>
+
+<para
+>Finger kioslave programını şu şekilde kullanın: <userinput
+>finger://<replaceable
+>kullanıcıadı</replaceable
+>@<replaceable
+>makineadı</replaceable
+></userinput
+></para>
+
+<para
+> See the manual: <ulink url="man:/finger"
+>finger</ulink
+>. </para>
+
+</article>
+

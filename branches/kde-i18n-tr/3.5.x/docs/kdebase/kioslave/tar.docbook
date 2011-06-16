@@ -1,0 +1,15 @@
+<article lang="&language;" id="tar">
+<title
+>tar</title>
+
+<para
+> Bir Arşivleyici Program  tar dosyası adı ile bilinen arşiv dosyasını saklamak veya açmak için dizayn edilir. Bir Tar dosyası bir Teyp kasedi içinde olabileceği gibi normal bir dosyada olabilir. </para>
+
+<para
+> See the manual: <ulink url="man:/tar"
+>tar</ulink
+>. </para>
+
+</article>
+
+

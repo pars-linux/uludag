@@ -1,0 +1,633 @@
+# translation of kcminput.po to Turkish
+# KDE TÜRKÇELEŞTİRME PROJESİ.
+# Copyright (C) 2000,2003, 2004, 2005, 2007 Free Software Foundation, Inc.
+# Adem GUNES <adem@alaeddin.cc.selcuk.edu.tr>, 2000.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Adil YILDIZ <adil@linux-sevenler.org>, 2004.
+# Adil YILDIZ <adil@kde.org.tr>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcminput\n"
+"POT-Creation-Date: 2006-08-22 02:34+0200\n"
+"PO-Revision-Date: 2007-07-05 15:17+0300\n"
+"Last-Translator: Serdar Soytetir\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Adil YILDIZ"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "adil@kde.org.tr"
+
+#: logitechmouse.cpp:50 logitechmouse.cpp:92
+#, c-format
+msgid "Mouse type: %1"
+msgstr "Fare tipi: %1"
+
+#: logitechmouse.cpp:225
+msgid ""
+"RF channel 1 has been set. Please press Connect button on mouse to re-establish "
+"link"
+msgstr ""
+"RF Kanal 1 ayarlandı. Lütfen faredeki Bağlanma (Connect) tuşuna basın ve fare "
+"ile bağlantıyı sağlayın"
+
+#: logitechmouse.cpp:225 logitechmouse.cpp:229
+msgid "Press Connect Button"
+msgstr "Bağlan Tuşuna Bas"
+
+#: logitechmouse.cpp:229
+msgid ""
+"RF channel 2 has been set. Please press Connect button on mouse to re-establish "
+"link"
+msgstr ""
+"RF Kanal 2 ayarlandı. Lütfen faredeki Bağlanma (Connect) tuşuna basın ve fare "
+"ile bağlantıyı sağlayın"
+
+#: logitechmouse.cpp:356
+msgid "none"
+msgstr "yok"
+
+#: logitechmouse.cpp:359 logitechmouse.cpp:389
+msgid "Cordless Mouse"
+msgstr "Kablosuz Fare"
+
+#: logitechmouse.cpp:362 logitechmouse.cpp:368 logitechmouse.cpp:371
+msgid "Cordless Wheel Mouse"
+msgstr "Kablosuz Tekerlekli Fare"
+
+#: logitechmouse.cpp:365
+msgid "Cordless MouseMan Wheel"
+msgstr "Kablosuz MouseMan Tekeri"
+
+#: logitechmouse.cpp:374
+msgid "Cordless TrackMan Wheel"
+msgstr "Kablosuz TrackMan Tekeri"
+
+#: logitechmouse.cpp:377
+msgid "TrackMan Live"
+msgstr "TracMan Canlı"
+
+#: logitechmouse.cpp:380
+msgid "Cordless TrackMan FX"
+msgstr "Kablosuz TrackMan FX"
+
+#: logitechmouse.cpp:383
+msgid "Cordless MouseMan Optical"
+msgstr "Kablosuz Optik MouseMan"
+
+#: logitechmouse.cpp:386
+msgid "Cordless Optical Mouse"
+msgstr "Kablosuz Optik Fare"
+
+#: logitechmouse.cpp:392
+msgid "Cordless MouseMan Optical (2ch)"
+msgstr "Kablosuz Optik MouseMan (2knl)"
+
+#: logitechmouse.cpp:395
+msgid "Cordless Optical Mouse (2ch)"
+msgstr "Kablosuz Optik Fare (2knl)"
+
+#: logitechmouse.cpp:398
+msgid "Cordless Mouse (2ch)"
+msgstr "Kablosuz Fare (2knl)"
+
+#: logitechmouse.cpp:401
+msgid "Cordless Optical TrackMan"
+msgstr "Kablosuz Optik TrackMan"
+
+#: logitechmouse.cpp:404
+msgid "MX700 Cordless Optical Mouse"
+msgstr "MX700 Kablosuz Optik Fare"
+
+#: logitechmouse.cpp:407
+msgid "MX700 Cordless Optical Mouse (2ch)"
+msgstr "MX700 Kablosuz Optik Fare (2knl)"
+
+#: logitechmouse.cpp:410
+msgid "Unknown mouse"
+msgstr "Bilinmeyen fare"
+
+#: mouse.cpp:82
+msgid ""
+"<h1>Mouse</h1> This module allows you to choose various options for the way in "
+"which your pointing device works. Your pointing device may be a mouse, "
+"trackball, or some other hardware that performs a similar function."
+msgstr ""
+"<h1>Fare</h1> Bu modül imleç aygıtınızın nasıl çalışacağına ilişkin çeşitli "
+"seçenekleri belirlemenize olanak tanır. İmleç aygıtın�z fare ya da benzeri bir "
+"işlev gören başka bir donanım olabilir."
+
+#: mouse.cpp:101
+msgid "&General"
+msgstr "&Genel"
+
+#: mouse.cpp:106
+msgid ""
+"If you are left-handed, you may prefer to swap the functions of the left and "
+"right buttons on your pointing device by choosing the 'left-handed' option. If "
+"your pointing device has more than two buttons, only those that function as the "
+"left and right buttons are affected. For example, if you have a three-button "
+"mouse, the middle button is unaffected."
+msgstr ""
+"Sol elinizi kullanıyorsanız, imleç aygıtınızın sol ve sağ düğmelerinin "
+"işlevlerini 'sol el' seçeneğini işaretleyerek takas etmeyi tercih "
+"edebilirsiniz. İmlec aygıtınızın ikiden fazla düğmesi varsa, sadece sol ve sağ "
+"düğmeler olarak işlev görenler etkilenir. Örneğin, üç düğmeli bir fareniz varsa "
+"orta düğme etkilenmez."
+
+#: mouse.cpp:116
+msgid ""
+"The default behavior in KDE is to select and activate icons with a single click "
+"of the left button on your pointing device. This behavior is consistent with "
+"what you would expect when you click links in most web browsers. If you would "
+"prefer to select with a single click, and activate with a double click, check "
+"this option."
+msgstr ""
+"KDE'nin öntanımlı davranışı, farenin sol tuşuna tek tıklamakla simgeleri seçmek "
+"ve etkinleştirmektir. Bu davranış, web üzerinde çalışırken de "
+"karşılaşabileceğiniz bir yöntemdir. Eğer tek tıklama ile seçmek ve çift tıklama "
+"ile etkinleştirmek istiyorsanız bu seçeneği işaretleyin."
+
+#: mouse.cpp:124
+msgid "Activates and opens a file or folder with a single click."
+msgstr "Bir dizini ya da dosyayı tek tıklamayla açar."
+
+#: mouse.cpp:130
+msgid ""
+"If you check this option, pausing the mouse pointer over an icon on the screen "
+"will automatically select that icon. This may be useful when single clicks "
+"activate icons, and you want only to select the icon without activating it."
+msgstr ""
+"Bu seçeneği işaretlerseniz, ekrandaki bir simge üzerinde fare imlecinin "
+"duraklaması, bu simgenin otomatik olarak seçilmesini sağlayacaktır. Bu, tek "
+"tıklamanın simgeleri etkin hale getirmesi tercih edildiğinde ve bir simgeyi "
+"etkin hale getirmeden seçmek istediğinizde yararlı olabilir."
+
+#: mouse.cpp:142
+msgid ""
+"If you have checked the option to automatically select icons, this slider "
+"allows you to select how long the mouse pointer must be paused over the icon "
+"before it is selected."
+msgstr ""
+"Simgeleri otomatik seç seçeneğini işaretlediyseniz, bu kaydırma çubuğuyla bir "
+"simgenin seçilmesi için fare imlecinin o simge üzerinde ne kadar süreyle "
+"duraklaması gerektiğini belirleyebilirsiniz."
+
+#: mouse.cpp:147
+msgid "Show feedback when clicking an icon"
+msgstr "Simgeye tıklandığında geri itilimi göster"
+
+#: mouse.cpp:179
+msgid "&Cursor Theme"
+msgstr "&İmleç Teması"
+
+#: mouse.cpp:183
+msgid "Advanced"
+msgstr "Gelişmiş"
+
+#: mouse.cpp:189
+msgid "Pointer acceleration:"
+msgstr "İmleç hızlandırma:"
+
+#: mouse.cpp:194
+msgid ""
+"This option allows you to change the relationship between the distance that the "
+"mouse pointer moves on the screen and the relative movement of the physical "
+"device itself (which may be a mouse, trackball, or some other pointing device.)"
+"<p> A high value for the acceleration will lead to large movements of the mouse "
+"pointer on the screen even when you only make a small movement with the "
+"physical device. Selecting very high values may result in the mouse pointer "
+"flying across the screen, making it hard to control."
+msgstr ""
+"Bu seçenek size, fare imlecinin ekranda katettiği mesafe ile fiziksel aygıtın "
+"(fare ya da başka herhangi bir imleç aygıtı olabilir) hareketi arasındaki "
+"ilişkiyi değiştirme olanağı tanır."
+"<p> Yüksek bir hızlandırma değeri, fiziksel aygıtla çok küçük bir hareket bile "
+"yapsanız, fare imlecinin ekranda büyük bir hareket yapmasını sonuçlar. Çok "
+"yüksek değerlerin seçilmesi, fare imlecini ekranda adeta uçurarak kontrolünü "
+"zorlaştırır."
+
+#: mouse.cpp:207
+msgid "Pointer threshold:"
+msgstr "İmleç başlangıcı:"
+
+#: mouse.cpp:215
+msgid ""
+"The threshold is the smallest distance that the mouse pointer must move on the "
+"screen before acceleration has any effect. If the movement is smaller than the "
+"threshold, the mouse pointer moves as if the acceleration was set to 1X;"
+"<p> thus, when you make small movements with the physical device, there is no "
+"acceleration at all, giving you a greater degree of control over the mouse "
+"pointer. With larger movements of the physical device, you can move the mouse "
+"pointer rapidly to different areas on the screen."
+msgstr ""
+"Marj, hızlandırmanın devreye girmesinden önce fare imlecinin ekranda katetmesi "
+"gereken asgari mesafedir. Eğer hareket marjdan küçükse, fare imleci fare imleci "
+"hızlandırma sanki 1X'e ayarlıymış gibi hareket eder;"
+"<p> böylece, fiziksel aygıtla küçük hareketler yaptığınızda, hiç h�zlandırma "
+"olmaz ve fare imleci üzerinde daha güçlü bir kontrole sahip olursunuz. Fiziksel "
+"aygıtın büyük hareketleriyle, fare imlecini ekranın farklı alanlarına çok hızlı "
+"bir biçimde hareket ettirebilirsiniz."
+
+#: mouse.cpp:229
+msgid "Double click interval:"
+msgstr "Çift tıklama aralığı:"
+
+#: mouse.cpp:231 mouse.cpp:249 mouse.cpp:303 mouse.cpp:311 mouse.cpp:320
+msgid " msec"
+msgstr " ms"
+
+#: mouse.cpp:236
+msgid ""
+"The double click interval is the maximal time (in milliseconds) between two "
+"mouse clicks which turns them into a double click. If the second click happens "
+"later than this time interval after the first click, they are recognized as two "
+"separate clicks."
+msgstr ""
+"Çift tıklama süresi iki fare tıklaması arasında geçecek azami zamandır "
+"(milisaniye cinsinden). Eğer ikinci tıklama bu zamandan sonra yap�lmışsa bu "
+"tıklamalar iki ayrı tıklama olarak algılanacaklardır."
+
+#: mouse.cpp:247
+msgid "Drag start time:"
+msgstr "Sürükleme başlangıç zamanı:"
+
+#: mouse.cpp:254
+msgid ""
+"If you click with the mouse (e.g. in a multi-line editor) and begin to move the "
+"mouse within the drag start time, a drag operation will be initiated."
+msgstr ""
+"Eğer fare ile tıklarsanız (örn: bir metin düzenleyicide) ve fareyi sürüklemeye "
+"başlangıç zamanı içinde hareket ettirmeye başlarsanız, sürükleme işlemi "
+"yapılacaktır."
+
+#: mouse.cpp:260
+msgid "Drag start distance:"
+msgstr "Sürüklemeye başlangıç uzaklığı:"
+
+#: mouse.cpp:268
+msgid ""
+"If you click with the mouse and begin to move the mouse at least the drag start "
+"distance, a drag operation will be initiated."
+msgstr ""
+"Eğer fare ile tıklarsanız ve en az sürüklemeye başlangıç uzaklığı kadar fareyi "
+"hareket ettirirseniz, sürükleme işlemi yapılacaktır."
+
+#: mouse.cpp:274
+msgid "Mouse wheel scrolls by:"
+msgstr "Fare tekeri kaydırması:"
+
+#: mouse.cpp:282
+msgid ""
+"If you use the wheel of a mouse, this value determines the number of lines to "
+"scroll for each wheel movement. Note that if this number exceeds the number of "
+"visible lines, it will be ignored and the wheel movement will be handled as a "
+"page up/down movement."
+msgstr ""
+"Farenin tekerleğini kullanıyorsanız bu değer her tekerlek hareketinde ne "
+"kadarsatır kayacağını belirler."
+
+#: mouse.cpp:288
+msgid "Mouse Navigation"
+msgstr "Fare Hareketi"
+
+#: mouse.cpp:296
+msgid "&Move pointer with keyboard (using the num pad)"
+msgstr "&Fareyi nümerik klavye kullanarak hareket ettir"
+
+#: mouse.cpp:302
+msgid "&Acceleration delay:"
+msgstr "&Hızlandırma gecikmesi:"
+
+#: mouse.cpp:310
+msgid "R&epeat interval:"
+msgstr "&Tekrarlama aralığı:"
+
+#: mouse.cpp:318
+msgid "Acceleration &time:"
+msgstr "İ&mleç hızlandırma süresi:"
+
+#: mouse.cpp:326
+msgid "Ma&ximum speed:"
+msgstr "&Azami hız:"
+
+#: mouse.cpp:328
+msgid " pixel/sec"
+msgstr " piksel/saniye"
+
+#: mouse.cpp:334
+msgid "Acceleration &profile:"
+msgstr "Hızlandırma &profili:"
+
+#: mouse.cpp:407
+msgid "Mouse"
+msgstr "Fare"
+
+#: mouse.cpp:408
+msgid "(c) 1997 - 2005 Mouse developers"
+msgstr "(c) 1997 - 2005 Fare tasarımcıları"
+
+#: mouse.cpp:710 mouse.cpp:715
+msgid ""
+"_n:  pixel\n"
+" pixels"
+msgstr " piksel"
+
+#: mouse.cpp:720
+msgid ""
+"_n:  line\n"
+" lines"
+msgstr " satır"
+
+#. i18n: file kmousedlg.ui line 38
+#: rc.cpp:3
+#, no-c-format
+msgid "Button Order"
+msgstr "Düğme Sırası"
+
+#. i18n: file kmousedlg.ui line 89
+#: rc.cpp:6
+#, no-c-format
+msgid "Righ&t handed"
+msgstr "&Sağ el "
+
+#. i18n: file kmousedlg.ui line 100
+#: rc.cpp:9
+#, no-c-format
+msgid "Le&ft handed"
+msgstr "Sol &el"
+
+#. i18n: file kmousedlg.ui line 132
+#: rc.cpp:12
+#, no-c-format
+msgid "Re&verse scroll direction"
+msgstr "Ters ka&ydırma yönü"
+
+#. i18n: file kmousedlg.ui line 135
+#: rc.cpp:15
+#, no-c-format
+msgid ""
+"Change the direction of scrolling for the mouse wheel or the 4th and 5th mouse "
+"buttons."
+msgstr ""
+"Fare ile kaydırma yaparken veya 4.üncü ve 5.inci tuşları kullanırken yönü "
+"değiştir."
+
+#. i18n: file kmousedlg.ui line 143
+#: rc.cpp:18
+#, no-c-format
+msgid "Icons"
+msgstr "Simgeler"
+
+#. i18n: file kmousedlg.ui line 154
+#: rc.cpp:21
+#, no-c-format
+msgid "Dou&ble-click to open files and folders (select icons on first click)"
+msgstr ""
+"&Dizin ve dosyaları açmak için çift tıkla (ilk tıklamada simgeler seçilir)"
+
+#. i18n: file kmousedlg.ui line 179
+#: rc.cpp:24
+#, no-c-format
+msgid "Visual f&eedback on activation"
+msgstr "Etkinleşmede &görsel geri itilim "
+
+#. i18n: file kmousedlg.ui line 187
+#: rc.cpp:27
+#, no-c-format
+msgid "Cha&nge pointer shape over icons"
+msgstr "&Simge üzerindeyken imleci değiştir "
+
+#. i18n: file kmousedlg.ui line 198
+#: rc.cpp:30
+#, no-c-format
+msgid "A&utomatically select icons"
+msgstr "&Simgeleri otomatik seç"
+
+#. i18n: file kmousedlg.ui line 231
+#: rc.cpp:33
+#, no-c-format
+msgid "Short"
+msgstr "Kısa"
+
+#. i18n: file kmousedlg.ui line 273
+#: rc.cpp:36
+#, no-c-format
+msgid "Dela&y:"
+msgstr "&Gecikme:"
+
+#. i18n: file kmousedlg.ui line 284
+#: rc.cpp:39
+#, no-c-format
+msgid "Long"
+msgstr "Uzun"
+
+#. i18n: file kmousedlg.ui line 316
+#: rc.cpp:42
+#, no-c-format
+msgid "&Single-click to open files and folders"
+msgstr "D&izin ve dosyaları açmak için tek tıkla"
+
+#. i18n: file logitechmouse_base.ui line 24
+#: rc.cpp:45
+#, no-c-format
+msgid "Cordless Name"
+msgstr "Kablosuz Adı"
+
+#. i18n: file logitechmouse_base.ui line 32
+#: rc.cpp:48
+#, no-c-format
+msgid ""
+"You have a Logitech Mouse connected, and libusb was found at compile time, but "
+"it was not possible to access this mouse. This is probably caused by a "
+"permissions problem - you should consult the manual on how to fix this."
+msgstr ""
+"Bir Logitech Fare bağlı ve libusb derleme zamanında bulunda fakat fareye erişim "
+"mümkün olmadı. Bu büyük ihtimalle bir izin problemidir - Bu sorunun üssteinden "
+"gelmek için el kitabına bakmanız tavsiye edilir."
+
+#. i18n: file logitechmouse_base.ui line 46
+#: rc.cpp:51
+#, no-c-format
+msgid "Sensor Resolution"
+msgstr "Alıcı Çözünürlüğü"
+
+#. i18n: file logitechmouse_base.ui line 60
+#: rc.cpp:54
+#, no-c-format
+msgid "400 counts per inch"
+msgstr "Inch başına 400 sayım"
+
+#. i18n: file logitechmouse_base.ui line 71
+#: rc.cpp:57
+#, no-c-format
+msgid "800 counts per inch"
+msgstr "Inch başına 800 sayım"
+
+#. i18n: file logitechmouse_base.ui line 87
+#: rc.cpp:60
+#, no-c-format
+msgid "Battery Level"
+msgstr "Pil Seviyesi"
+
+#. i18n: file logitechmouse_base.ui line 111
+#: rc.cpp:63
+#, no-c-format
+msgid "RF Channel"
+msgstr "RF Kanalı"
+
+#. i18n: file logitechmouse_base.ui line 125
+#: rc.cpp:66
+#, no-c-format
+msgid "Channel 1"
+msgstr "Kanal 1"
+
+#. i18n: file logitechmouse_base.ui line 142
+#: rc.cpp:69
+#, no-c-format
+msgid "Channel 2"
+msgstr "Kanal 2"
+
+#: core/themepage.cpp:60
+msgid "Select the cursor theme you want to use:"
+msgstr "Kullanmak istediğiniz imleç temasını seçin:"
+
+#: core/themepage.cpp:66 xcursor/themepage.cpp:93
+msgid "Name"
+msgstr "İsim"
+
+#: core/themepage.cpp:67 xcursor/themepage.cpp:94
+msgid "Description"
+msgstr "Açıklama"
+
+#: core/themepage.cpp:105 xcursor/themepage.cpp:139
+msgid "You have to restart KDE for these changes to take effect."
+msgstr "Bu değişikliğin etkin olması için KDE'yi yeniden başlatmalısınız."
+
+#: core/themepage.cpp:106 xcursor/themepage.cpp:140
+msgid "Cursor Settings Changed"
+msgstr "İmleç Ayarları Değiştirildi"
+
+#: core/themepage.cpp:148
+msgid "Small black"
+msgstr "Küçük siyah"
+
+#: core/themepage.cpp:149
+msgid "Small black cursors"
+msgstr "Küçük siyah imleçler"
+
+#: core/themepage.cpp:153
+msgid "Large black"
+msgstr "Büyük siyah"
+
+#: core/themepage.cpp:154
+msgid "Large black cursors"
+msgstr "Büyük siyah imleç"
+
+#: core/themepage.cpp:158
+msgid "Small white"
+msgstr "Küçük beyaz"
+
+#: core/themepage.cpp:159
+msgid "Small white cursors"
+msgstr "Küçük beyaz imleç"
+
+#: core/themepage.cpp:163
+msgid "Large white"
+msgstr "Büyük beyaz"
+
+#: core/themepage.cpp:164
+msgid "Large white cursors"
+msgstr "Büyük beyaz imleç"
+
+#: xcursor/themepage.cpp:84
+msgid "Select the cursor theme you want to use (hover preview to test cursor):"
+msgstr ""
+"Kullanmak istediğiniz imleç temasını seçin (imleci denemek için önizlemenin "
+"üzerinden geçin):"
+
+#: xcursor/themepage.cpp:104
+msgid "Install New Theme..."
+msgstr "Yeni Tema Kur..."
+
+#: xcursor/themepage.cpp:105
+msgid "Remove Theme"
+msgstr "Temayı Sil"
+
+#: xcursor/themepage.cpp:212
+msgid "Drag or Type Theme URL"
+msgstr "Tema Adresini Taşı veya Yaz"
+
+#: xcursor/themepage.cpp:221
+#, c-format
+msgid "Unable to find the cursor theme archive %1."
+msgstr "%1 imleç tema arşivi bulunamadı."
+
+#: xcursor/themepage.cpp:223
+msgid ""
+"Unable to download the cursor theme archive; please check that the address %1 "
+"is correct."
+msgstr ""
+"İmleç tema arşivi indirilemedi; lütfen %1 adresinin doğruluğunu kontrol edin."
+
+#: xcursor/themepage.cpp:231
+msgid "The file %1 does not appear to be a valid cursor theme archive."
+msgstr "%1 dosya geçerli bir imleç tema dosya değil."
+
+#: xcursor/themepage.cpp:240
+msgid ""
+"<qt>Are you sure you want to remove the <strong>%1</strong> cursor theme?"
+"<br>This will delete all the files installed by this theme.</qt>"
+msgstr ""
+"<qt><strong>%1</strong> imleç temasını kaldırmak istediğinizden emin misiniz?"
+"<br>Bu işlem bu tema ile yüklenen tüm dosyaları silecektir.</qt>"
+
+#: xcursor/themepage.cpp:246
+msgid "Confirmation"
+msgstr "Onaylama"
+
+#: xcursor/themepage.cpp:300
+msgid ""
+"A theme named %1 already exists in your icon theme folder. Do you want replace "
+"it with this one?"
+msgstr ""
+"%1 isminde bir tema simge teması dizinde bulunuyor. Üzerine yazmak istiyor "
+"musunuz?"
+
+#: xcursor/themepage.cpp:302
+msgid "Overwrite Theme?"
+msgstr "Temanın Üzerine Yazılsın mı?"
+
+#: xcursor/themepage.cpp:336 xcursor/themepage.cpp:483
+msgid "No description available"
+msgstr "Açıklama yok"
+
+#: xcursor/themepage.cpp:537
+msgid "No theme"
+msgstr "Tema yok"
+
+#: xcursor/themepage.cpp:537
+msgid "The old classic X cursors"
+msgstr "Eski klasik X imleci"
+
+#: xcursor/themepage.cpp:539
+msgid "System theme"
+msgstr "Sistem teması"
+
+#: xcursor/themepage.cpp:539
+msgid "Do not change cursor theme"
+msgstr "İmleç temasını değiştirme"

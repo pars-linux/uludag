@@ -1,0 +1,267 @@
+# translation of kdevtipofday.po to Türkçe
+# kde
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2001.
+# Kaya Oğuz <kaya@kuzeykutbu.org>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdevtipofday\n"
+"POT-Creation-Date: 2007-03-26 21:53+0200\n"
+"PO-Revision-Date: 2005-07-09 18:01+0300\n"
+"Last-Translator: Kaya Oğuz <kaya@kuzeykutbu.org>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.1\n"
+
+#: tipofday_part.cpp:36
+msgid "&Tip of the Day"
+msgstr "&Günün ipucu... "
+
+#: tipofday_part.cpp:38
+msgid "A tip how to use KDevelop"
+msgstr "KDevelop'u nasıl kullanacağınıza ilişkin bir ipucu verir"
+
+#: tipofday_part.cpp:39
+msgid ""
+"<b>Tip of the day</b>"
+"<p>Will display another good tip \n"
+"contributed by KDevelop users."
+msgstr ""
+"<b>Günün ipucu</b>"
+"<p>KDevelop kullanıcılarının hazırladığı\n"
+"güzel başka bir ipucu gösterir."
+
+#: tips.cc:3
+msgid ""
+"<p>If you want to specify additional command-line options to your make program, "
+"you can set them in the <b>Project Options</b> dialog, <b>Make Options</b> "
+"tab.\n"
+msgstr ""
+"<p>Eğer programlarınızın oluşturulması için ilave bir komut satırı seçeneği "
+"belirlemek isterseniz, <b>Proje Seçenekleri</b> penceresinde <b>"
+"Make Seçenekleri</b> sekmesinde ayarlayabilirsiniz.\n"
+
+#: tips.cc:8
+msgid ""
+"<p>If you use functions of other libraries than the target is currently linked "
+"with, you can specify them in the <b>Target Options</b> dialog.\n"
+msgstr ""
+"<p> Eğer geçerli bağlananların dışında başka kütüphanelerin fonksiyonlarını "
+"uygulamada kullanmak isterseniz, <b>Hedef Seçenekleri</b> "
+"penceresinden ayarlayabilirsiniz\n"
+
+#: tips.cc:13
+msgid ""
+"<p>If you want to change your application's version number, you can change it "
+"in the <b>Project Options</b> dialog, <b>General</b> "
+"tab, automatically updating your project.\n"
+msgstr ""
+"<p> Eğer uygulamanızın sürüm numarasını değiştirmek isterseniz, bunu <b>"
+"Proje Seçenekleri</b> penceresinin <b>Genel</b> sekmesinden yapabilirsiniz ve "
+"otomatikman projeniz güncellenecektir.\n"
+
+#: tips.cc:18
+msgid ""
+"<p>If you want to create a new project, choose \"Project\"->"
+"\"New Project\" from the menu.\n"
+msgstr ""
+"<p>Eğer yeni bir proje oluşturma isterseniz, menu çubuğundan \"Proje\"-> "
+"\"Yeni Proje\" seçeneğini seçin.\n"
+
+#: tips.cc:23
+msgid ""
+"<p>If you changed your applications' classes, you should update your API "
+"documentation by selecting \"Build API Documentation\" from the Build menu.\n"
+msgstr ""
+"<p> Eğer uygulamanızın sınıflarını değiştirdiyseniz, API belgelerinizi \"API "
+"Doc oluştur\" bölümünden güncelleyebilirsiniz.\n"
+
+#: tips.cc:28
+msgid ""
+"<p>You can save time if you select \"Compile File\" from the Build menu or the "
+"toolbar, to only compile your current implementation file.\n"
+msgstr ""
+"<p> Derle menüsünden \"Dosya derle\" seçerek zamanı kaydedebilirsiniz\n"
+
+#: tips.cc:33
+msgid ""
+"<p>If you're searching for information on classes or classmembers, select "
+"\"Search for Help on...\" from the Help menu or use \"Index\" tab of the "
+"documentation tree.\n"
+msgstr ""
+"<p> Eğer sınıflar veya sınıf üyeleri hakkında detaylı bilgi isterseniz Yardım "
+"menüsünden \"Bunun için yardım ara..\" seçerek veya belgelendirme ağacındaki "
+"\"Index\" sekmesini kullanarak arama yapabilirsiniz.\n"
+
+#: tips.cc:38
+#, fuzzy
+msgid ""
+"<p>If you want to have info about something in the KDevelop window, select the "
+"\"What's this?\" button in the toolbar and click on the item you don't know "
+"about.\n"
+msgstr ""
+"<p> Eğer KDevelop penceresindeki herhangi birsey hakkında bilgi isterseniz araç "
+"çubugundaki \"Bu nedir?\" seçip, öğenin üstüne tıklayarak onun hakkında bilgi "
+"alabilrisiniz.\n"
+
+#: tips.cc:43
+msgid ""
+"<p>Hint: You can search the documentation for a keyword by marking the word and "
+"select \"Search in Documentation\" in the right button popup menu.\n"
+msgstr ""
+"<p>İpucu: Bir anahtar kelimeyi belgelerde aramayı kelimeyi işaretleyip sağ tuş "
+"menüsündeki \"Belgelerde Ara\" seçeneğini kullanarak yapabilirsiniz.\n"
+
+#: tips.cc:48
+msgid ""
+"<p>The KDevelop Team wishes you a nice day !\n"
+msgstr ""
+"<p>KDevelop takımı size iyi bir gün diler!\n"
+
+#: tips.cc:53
+msgid ""
+"<p>If you have found a bug in KDevelop, please let us know. Use KDE Bugzilla at "
+"http://bugs.kde.org/ or select \"Help\"->\"Report Bug\" from the menu.\n"
+msgstr ""
+"<p>Eğer KDevelop'da bir hata bulursanız, lütfen bize haber verin. "
+"http://bugs.kde.org/ adresindeki KDE Bugzilla'yı kullanın ya da menüden "
+"\"Yardım\"->\"Hata Raporla\"yı seçin.\n"
+
+#: tips.cc:58
+msgid ""
+"<p>If you want to add your own documentation to the documentation tree use <b>"
+"Documentation Tree</b> tab in the <b>Configure KDevelop</b> dialog.\n"
+msgstr ""
+"<p>Eğer belge ağacına kendi belgeleriniz eklemek isterseniz, <b>"
+"KDevelop'u Ayarla</b> penceresindeki <b>Belgelendirme Ağacı</b> "
+"sekmesini kullanın.\n"
+
+#: tips.cc:63
+msgid ""
+"<p>...that you can create a new class with \"New Class\" from the \"Project\" "
+"menu?\n"
+msgstr ""
+"<p>...\"Proje\" menüsünde \"yeni sınıf\" tıklayarak yeni bir sınıf "
+"oluşturabileceğinizi ?\n"
+
+#: tips.cc:68
+msgid ""
+"<p>To open a project, select \"Open Project\" from the \"Project\" menu.\n"
+msgstr ""
+"<p>Bir proje açmak için \"Proje\" menüsünden \"Proje Aç\"ı tıklayın.\n"
+
+#: tips.cc:73
+msgid ""
+"<p>If you compile your project and get an error, you can click on the error "
+"message to switch to the file and line where the error occurred.\n"
+msgstr ""
+"<p> Projenizi derlerken aldığınız hata mesajlarına tıklayarak, hatanın tam "
+"olarak nerde olduğunu bulup görebilirsiniz ?\n"
+
+#: tips.cc:78
+msgid ""
+"<p>...that you can debug your programs within KDevelop by selecting \"Debug\"->"
+"\"Start\" in the menu?\n"
+msgstr ""
+"<p>...menüden \"Hata Ayıkla\"->\"Başlat\"'ı seçerek KDevelop içinden "
+"programlarınızda hata ayıklayabileceğinizi?\n"
+
+#: tips.cc:83
+msgid ""
+"<p>...that you can switch between classes or namespaces by selecting the class "
+"or namespace combo in the toolbar?\n"
+msgstr ""
+"<p>...araç çubuğundaki birleşik giriş kutusundan sınıf veya ad uzayını seçerek "
+"sınıf ve ad uzayları arasında değişim yapabileceğinizi?\n"
+
+#: tips.cc:88
+msgid ""
+"<p>...that you can preview images and icons by selecting them in the file "
+"viewer's trees?\n"
+msgstr ""
+"<p>...dosya görünümü ağacında resim ve simgeleri seçerek önizleyebileceğinizi?\n"
+
+#: tips.cc:93
+msgid ""
+"<p>...that you can set the compiler options in the <b>Project Options</b> "
+"dialog, <b>Configure Options</b> tab?\n"
+msgstr ""
+"<p>...derleyici seçeneklerini <b>Proje Seçenekleri</b> penceresinin <b>"
+"Seçenekleri Ayarla</b> sekmesinde belirtebileceğinizi?\n"
+
+#: tips.cc:98
+msgid ""
+"<p>...that you can copy text from the documentation browser to the clipboard "
+"and insert it into your sources?\n"
+msgstr ""
+"<p>...belge görüntüleyiciden panoya metin kopyalayıp kaynaklarınıza "
+"ekleyebileceğinizi?\n"
+
+#: tips.cc:103
+msgid ""
+"<p>...that you should keep your library documentation up to date after "
+"installing new libraries?\n"
+msgstr ""
+"<p>...yeni kütüphaneler kurduktan sonra bile kendi kütüphane belgelerinizi "
+"güncel bir şekilde tutabilirsiniz.\n"
+
+#: tips.cc:108
+msgid ""
+"<p>...that you can configure the syntax-highlighting of the editor?\n"
+msgstr ""
+"<p>...düzenleyice sözdizimi vurgulamasını ayarlayabilirsiniz.\n"
+
+#: tips.cc:113
+msgid ""
+"<p>...that you can access more internal debug functions selecting \"Debug\"->"
+"\"Viewers\"?\n"
+msgstr ""
+"<p>...\"Hata Ayıkla\"->\"Görüntüleyici\" seçerek daha iç hata ayıklama "
+"fonksiyonlarına ulaşabileceğinizi?\n"
+
+#: tips.cc:118
+msgid ""
+"<p>...that you can move the cursor by words with Ctrl and left or right arrow?\n"
+msgstr ""
+"<p>...CTRL + sağ-sol yön tuşu ile kelimeler arasında taşıma yapabilirsiniz\n"
+
+#: tips.cc:123
+msgid ""
+"<p>...that your source bookmarks are stored in the project?\n"
+msgstr ""
+"<p>... kaynak yerimleriniz proje içinde saklandığını?\n"
+
+#: tips.cc:128
+msgid ""
+"<p>...that your documentation bookmarks are stored globally in KDevelop "
+"configuration?\n"
+msgstr ""
+"<p>...belgelendirme yerimlerinizin KDevelop ayarlarında saklandığını?\n"
+
+#: tips.cc:133
+msgid ""
+"<p>...that you can start grep search from inside editor with context menu?\n"
+msgstr ""
+"<p>...bağlam menüsü ile düzenleyici içinden grep ile arama "
+"başlatabileceğinizi?\n"
+
+#: tips.cc:138
+msgid ""
+"<p>...that you can set the installation path in \"Project\"->"
+"\"Project Options\" \"Configure Options\" with just adding "
+"\"--prefix=/install/path/\" to the \"Configure arguments\"-list?\n"
+msgstr ""
+"<p>...kurulum yolunu \"Proje\"->\"Proje Seçenekleri\" \"Seçenekleri Ayarla\" "
+"penceresindeki \"argümanları ayarla listesine \"--prefix=/install/path\" "
+"ekleyerek belirtebileceğinizi?\n"
+
+#: tips.cc:143
+msgid ""
+"<p>...that you can compilie your project in \"debug-mode\" and "
+"\"optimized-mode\"?\n"
+msgstr ""
+"<p>...projenizi \"hata ayıklama kipi\" ve \"iyileme kipi\"nde "
+"derleyebileceğinizi?\n"

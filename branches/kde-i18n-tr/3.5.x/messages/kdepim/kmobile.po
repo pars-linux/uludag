@@ -1,0 +1,288 @@
+# Translation of kmobile.po to Turkish
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# Ozan Eren BILGEN <oebilgen@uekae.tubitak.gov.tr>, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: kmobile\n"
+"POT-Creation-Date: 2005-07-25 01:39+0200\n"
+"PO-Revision-Date: 2005-01-07 15:13+0200\n"
+"Last-Translator: Ozan Eren BILGEN <oebilgen@uekae.tubitak.gov.tr>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin, Ozan Eren BİLGEN"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org, oebilgen@uekae.tubitak.gov.tr"
+
+#: kmobile.cpp:107
+msgid "&Add Device..."
+msgstr "&Aygıt Ekle..."
+
+#: kmobile.cpp:109
+msgid "&Remove Device"
+msgstr "A&ygıtı Kaldır..."
+
+#: kmobile.cpp:109
+msgid "Remove this device"
+msgstr "Bu aygıtı kaldır"
+
+#: kmobile.cpp:111
+msgid "Re&name Device..."
+msgstr "Ay&gıtı Yeniden İsimlendir..."
+
+#: kmobile.cpp:113
+msgid "&Configure Device..."
+msgstr "Aygı&tı Yapılandır..."
+
+#: kmobile.cpp:259
+msgid "Add New Mobile or Portable Device"
+msgstr "Yeni Bir Mobil veya Taşınabilir Aygıt Ekle"
+
+#: kmobile.cpp:261
+msgid "Please select the category to which your new device belongs:"
+msgstr "Lütfen aygıtınızın hangi sınıfa girdiğini aşağıdaki listeden seçin:"
+
+#: kmobile.cpp:262
+msgid "&Scan for New Devices..."
+msgstr "Y&eni Aygıtları Tara..."
+
+#: kmobile.cpp:266
+msgid "&Add"
+msgstr "&Ekle"
+
+#: kmobile.cpp:330
+msgid ""
+"<qt>You have no mobile devices configured yet."
+"<p>Do you want to add a device now ?</qt>"
+msgstr ""
+"<qt>Sistemdeki mobil aygıtlar yapılandırılmamış. "
+"<p>Yeni bir aygıt eklemek istiyor musunuz?</qt>"
+
+#: kmobile.cpp:332
+msgid "KDE Mobile Device Access"
+msgstr "KDE Mobil Aygıt Erişimi"
+
+#: kmobile.cpp:332
+msgid "Do Not Add"
+msgstr ""
+
+#: kmobiledevice.cpp:56
+msgid "Unknown Device"
+msgstr "Bilinmeyen Aygıt"
+
+#: kmobiledevice.cpp:57
+msgid "n/a"
+msgstr "yok"
+
+#: kmobiledevice.cpp:58
+msgid "Unknown Connection"
+msgstr "Bilinmeyen Bağlantı"
+
+#: kmobiledevice.cpp:110
+msgid "This device does not need any configuration."
+msgstr "Bu aygıt için yapılandırma gerekmiyor."
+
+#: kmobiledevice.cpp:149
+msgid "Cellular Mobile Phone"
+msgstr "Cep Telefonu"
+
+#: kmobiledevice.cpp:150
+msgid "Organizer"
+msgstr ""
+
+#: kmobiledevice.cpp:151
+msgid "Digital Camera"
+msgstr "Sayısal Kamera"
+
+#: kmobiledevice.cpp:152
+msgid "Music/MP3 Player"
+msgstr "Müzik/MP3 Çalıcı"
+
+#: kmobiledevice.cpp:154
+msgid "Unclassified Device"
+msgstr "Sınıflandırılmamış Aygıt"
+
+#: kmobiledevice.cpp:172
+msgid "Contacts"
+msgstr "Bağlantılar"
+
+#: kmobiledevice.cpp:173
+msgid "Calendar"
+msgstr "Takvim"
+
+#: kmobiledevice.cpp:174
+msgid "Notes"
+msgstr "Notlar"
+
+#: kmobiledevice.cpp:176
+msgid "Unknown"
+msgstr "Bilinmiyor"
+
+#: kmobiledevice.cpp:388
+msgid "Invalid device (%1)"
+msgstr "Geçersiz aygıt (%1)"
+
+#: kmobiledevice.cpp:395
+#, c-format
+msgid ""
+"Unable to read lockfile %s. Please check for reason and remove the lockfile by "
+"hand."
+msgstr ""
+"Kilit dosyası %s okunamıyor. Lütfen nedenini denetleyin ve kilit dosyasını elle "
+"silin."
+
+#: kmobiledevice.cpp:414
+msgid "Lockfile %1 is stale. Please check permissions."
+msgstr "Kilit dosyası %1 geçersiz. Lütfen izinleri denetleyin."
+
+#: kmobiledevice.cpp:418
+msgid "Device %1 already locked."
+msgstr "%1 aygıtı zaten kilitli."
+
+#: kmobiledevice.cpp:427
+msgid "Device %1 seems to be locked by unknown process."
+msgstr "%1 aygıtı bilinmeyen bir süreç tarafından kilitlenmiş gözüküyor."
+
+#: kmobiledevice.cpp:429
+msgid "Please check permission on lock directory."
+msgstr "Lütfen kilit dizini izinlerini denetleyiniz."
+
+#: kmobiledevice.cpp:431
+msgid "Cannot create lockfile %1. Please check for existence of path."
+msgstr "Kilit dosyası %1 yaratılamıyor. Lütfen yolun varlığını denetleyiniz."
+
+#: kmobiledevice.cpp:433
+msgid "Could not create lockfile %1. Error-Code is %2."
+msgstr "Kilit dosyası %1 yaratılamıyor. Hata kodu: %2."
+
+#: kmobileview.cpp:76
+msgid "Configuration saved"
+msgstr "Yapılandırma kaydedildi"
+
+#: kmobileview.cpp:89
+msgid "Configuration restored"
+msgstr "Yapılandırma geri yüklendi"
+
+#: kmobileview.cpp:134
+msgid "%1 removed"
+msgstr "%1 silindi"
+
+#: kmobileview.cpp:158
+msgid "Connection to %1 established"
+msgstr "%1 aygıtına bağlantı sağlandı"
+
+#: kmobileview.cpp:159
+msgid "Connection to %1 failed"
+msgstr "%1 aygıtına bağlantı kurulamadı"
+
+#: kmobileview.cpp:173
+msgid "%1 disconnected"
+msgstr "%1 bağlantısı kesildi"
+
+#: kmobileview.cpp:174
+msgid "Disconnection of %1 failed"
+msgstr "%1 aygıtından ayrılma gerçekleştirilemedi"
+
+#: kmobileview.cpp:306
+msgid "Read addressbook entry %1 from %2"
+msgstr "%1 adres defteri girdisini %2 kaynağından oku"
+
+#: kmobileview.cpp:328
+msgid "Storing contact %1 on %2 failed"
+msgstr "%1 bağlantısını %2 kaynağına kaydetme işlemi başarısız oldu"
+
+#: kmobileview.cpp:329
+msgid "Contact %1 stored on %2"
+msgstr "%1 bağlantısı %2 kaynağına kaydedildi"
+
+#: kmobileview.cpp:370
+msgid "Read note %1 from %2"
+msgstr "%1 notunu %2 kaynağından oku"
+
+#: kmobileview.cpp:387
+msgid "Stored note %1 to %2"
+msgstr "%1 notu %2 kaynağına kaydedildi"
+
+#: main.cpp:28
+msgid "KDE mobile devices manager"
+msgstr "KDE mobil aygıt yöneticisi"
+
+#: main.cpp:34
+msgid "Minimize on startup to system tray"
+msgstr "Başlangıçta panel çubuğuna yerleş"
+
+#: main.cpp:40
+msgid "KMobile"
+msgstr "KMobile"
+
+#: pref.cpp:13
+msgid "Preferences"
+msgstr "Tercihler"
+
+#: pref.cpp:20
+msgid "First Page"
+msgstr "İlk Sayfa"
+
+#: pref.cpp:20
+msgid "Page One Options"
+msgstr "Birinci Sayfa Seçenekleri"
+
+#: pref.cpp:23
+msgid "Second Page"
+msgstr "İkinci Sayfa"
+
+#: pref.cpp:23
+msgid "Page Two Options"
+msgstr "İkinci Sayfa Seçenekleri"
+
+#: pref.cpp:33 pref.cpp:42
+msgid "Add something here"
+msgstr "Buraya bir şeyler ekleyin"
+
+#. i18n: file kmobileui.rc line 10
+#: rc.cpp:6
+#, no-c-format
+msgid "&Device"
+msgstr "&Aygıt"
+
+#. i18n: file kmobile_selectiondialog.ui line 16
+#: rc.cpp:12
+#, no-c-format
+msgid "Select Mobile Device"
+msgstr "Mobil Aygıtı Seçin"
+
+#. i18n: file kmobile_selectiondialog.ui line 35
+#: rc.cpp:15
+#, no-c-format
+msgid "<b>Select mobile device:</b>"
+msgstr "<b>Mobil aygıtı seçin:</b>"
+
+#. i18n: file kmobile_selectiondialog.ui line 65
+#: rc.cpp:18
+#, no-c-format
+msgid "Add &New Device..."
+msgstr "&Yeni Aygıt Ekle..."
+
+#. i18n: file kmobile_selectiondialog.ui line 73
+#: rc.cpp:21
+#, no-c-format
+msgid "S&elect"
+msgstr "&Seç"
+
+#. i18n: file kmobile_selectiondialog.ui line 101
+#: rc.cpp:24
+#, no-c-format
+msgid "C&ancel"
+msgstr "İ&ptal Et"

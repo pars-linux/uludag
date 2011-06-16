@@ -1,0 +1,50 @@
+# translation of ktexteditor_insertfile.po to Türkçe
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>,2002.
+# Bekir SONAT <cortexbs@yahoo.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ktexteditor_insertfile\n"
+"POT-Creation-Date: 2005-06-14 01:24+0200\n"
+"PO-Revision-Date: 2005-07-14 01:32+0300\n"
+"Last-Translator: Bekir SONAT <cortexbs@yahoo.com>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: insertfileplugin.cpp:79
+msgid "Insert File..."
+msgstr "Dosya Ekle..."
+
+#: insertfileplugin.cpp:88
+msgid "Choose File to Insert"
+msgstr "Eklemek için Dosya seçiniz"
+
+#: insertfileplugin.cpp:116
+msgid ""
+"Failed to load file:\n"
+"\n"
+msgstr ""
+"Dosya yüklemesi başarısız:\n"
+"\n"
+
+#: insertfileplugin.cpp:116 insertfileplugin.cpp:137 insertfileplugin.cpp:159
+msgid "Insert File Error"
+msgstr "Dosya Ekleme Hatası"
+
+#: insertfileplugin.cpp:130
+msgid ""
+"<p>The file <strong>%1</strong> does not exist or is not readable, aborting."
+msgstr ""
+"<p><strong>%1</strong> dosyası yok veya okunamıyor, işlem iptal ediliyor."
+
+#: insertfileplugin.cpp:134
+msgid "<p>Unable to open file <strong>%1</strong>, aborting."
+msgstr "<p><strong>%1</strong> dosyası açılamıyor, işlem iptal ediliyor."
+
+#: insertfileplugin.cpp:157
+msgid "<p>File <strong>%1</strong> had no contents."
+msgstr "<p><strong>%1</strong> dosyasının içeriği yok."

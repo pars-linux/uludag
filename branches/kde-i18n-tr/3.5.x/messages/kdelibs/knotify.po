@@ -1,0 +1,110 @@
+# translation of knotify.po to Türkçe
+# translation of knotify.po to
+# Copyright (C) 2003, 2005 Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com> , 2002.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Görkem Çetin <gorkem@kde.org.tr>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: knotify\n"
+"POT-Creation-Date: 2007-01-27 02:36+0100\n"
+"PO-Revision-Date: 2005-01-10 18:00+0000\n"
+"Last-Translator: Barış Metin <baris@uludag.org.tr>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9\n"
+
+#: knotify.cpp:108
+msgid "KNotify"
+msgstr "KNotify"
+
+#: knotify.cpp:109
+msgid "KDE Notification Server"
+msgstr "KDE Bildirim Sunucusu"
+
+#: knotify.cpp:111
+msgid "Current Maintainer"
+msgstr "Programcı"
+
+#: knotify.cpp:113
+msgid "Sound support"
+msgstr "Ses desteği"
+
+#: knotify.cpp:114
+msgid "Previous Maintainer"
+msgstr "Önceki Programcı"
+
+#: knotify.cpp:151
+msgid ""
+"During the previous startup, KNotify crashed while creating Arts::Dispatcher. "
+"Do you want to try again or disable aRts sound output?\n"
+"\n"
+"If you choose to disable aRts output now, you can re-enable it later or select "
+"an alternate sound player in the System Notifications control panel."
+msgstr ""
+"Bir önceki başlangıçta, KNotify Arts::Dispatcher'ı oluştururken çöktü. Tekrar "
+"denemek ya da aRts ses çıkışını iptal etmek ister misiniz?\n"
+"\n"
+"aRts ses çıkışını iptal etmeyi seçerseniz, daha sonra aktifleştirebilir ya da "
+"kontrol panelindeki Sistem Bildirimleri bölümünden başka bir ses çalıcısı "
+"seçebilirsiniz."
+
+#: knotify.cpp:157 knotify.cpp:196
+msgid "KNotify Problem"
+msgstr "KNotify Sorunu"
+
+#: knotify.cpp:158 knotify.cpp:197
+msgid "&Try Again"
+msgstr "&Yeniden Dene"
+
+#: knotify.cpp:159 knotify.cpp:198
+msgid "D&isable aRts Output"
+msgstr "&aRts Çıktısını Kapat"
+
+#: knotify.cpp:190
+msgid ""
+"During the previous startup, KNotify crashed while instantiating KNotify. Do "
+"you want to try again or disable aRts sound output?\n"
+"\n"
+"If you choose to disable aRts output now, you can re-enable it later or select "
+"an alternate sound player in the System Notifications control panel."
+msgstr ""
+"Bir önceki başlangıçta, KNotify başlatılırken çöktü. Tekrar denemek ya da aRts "
+"ses çıkışını iptal etmek ister misiniz?\n"
+"\n"
+"aRts ses çıkışını iptal etmeyi seçerseniz, daha sonra aktifleştirebilir ya da "
+"kontrol panelindeki Sistem Bildirimleri bölümünden başka bir ses çalıcısı "
+"seçebilirsiniz."
+
+#: knotify.cpp:573
+msgid "Notification"
+msgstr "Bildirim"
+
+#: knotify.cpp:582
+msgid "Catastrophe!"
+msgstr "Facia!"
+
+#: knotify.cpp:788
+msgid "KDE System Notifications"
+msgstr "KDE Sistem Bildirimleri"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr ""
+"Çevirmenlerin İsimleri : \n"
+"Ömer Fadıl USTA \n"
+"Erol Öz"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr ""
+"Çevirmenlerin E-posta Adresi :\n"
+"omer_fad@hotmail.com \n"
+"eroloz@bilgi.edu.tr"

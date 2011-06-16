@@ -1,0 +1,402 @@
+# translation of kenolaba.po to Türkçe
+# translation of kenolaba.po to Turkish
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# Y. Kürşat Tuncel <kursat@linux.org.tr>, 1999.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002,2003.
+# Görkem Çetin <gorkem@kde.org>, 2002, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kenolaba\n"
+"POT-Creation-Date: 2005-05-18 21:24+0200\n"
+"PO-Revision-Date: 2004-10-24 02:54+0300\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9\n"
+
+#: AbTop.cpp:36
+msgid "&Easy"
+msgstr "&Kolay"
+
+#: AbTop.cpp:37
+msgid "&Normal"
+msgstr "&Normal"
+
+#: AbTop.cpp:38
+msgid "&Hard"
+msgstr "&Zor"
+
+#: AbTop.cpp:39
+msgid "&Challenge"
+msgstr "&Düello"
+
+#: AbTop.cpp:43
+msgid "&Red"
+msgstr "&Kırmızı"
+
+#: AbTop.cpp:44
+msgid "&Yellow"
+msgstr "&Sarı"
+
+#: AbTop.cpp:45
+msgid "&Both"
+msgstr "&Her İkisi"
+
+#: AbTop.cpp:46
+msgid "&None"
+msgstr "H&içbiri"
+
+#: AbTop.cpp:138
+msgid "&Stop Search"
+msgstr "&Aramayı Durdur"
+
+#: AbTop.cpp:141
+msgid "Take &Back"
+msgstr "&Geri al"
+
+#: AbTop.cpp:145
+msgid "&Forward"
+msgstr "İ&leri"
+
+#: AbTop.cpp:154
+msgid "&Restore Position"
+msgstr "&Pozisyonu Geri Al"
+
+#: AbTop.cpp:159
+msgid "&Save Position"
+msgstr "Pozisyonu &Kaydet"
+
+#: AbTop.cpp:166
+msgid "&Network Play"
+msgstr "&Ağ Oyunu"
+
+#: AbTop.cpp:179
+msgid "&Move Slow"
+msgstr "&Yavaş hareket"
+
+#: AbTop.cpp:183
+msgid "&Render Balls"
+msgstr "&Topları Renklendir"
+
+#: AbTop.cpp:187
+msgid "&Spy"
+msgstr "&Casus"
+
+#: AbTop.cpp:199
+msgid "&Computer Play"
+msgstr "&Bilgisayarla Oyna"
+
+#. i18n: file EvalDlg.ui line 16
+#: AbTop.cpp:218 rc.cpp:21
+#, no-c-format
+msgid "Configure Evaluation"
+msgstr "Değerlendirmeyi Yapılandır"
+
+#: AbTop.cpp:384 AbTop.cpp:487
+msgid "Press %1 for a new game"
+msgstr "Yeni bir oyun için %1'e basın"
+
+#: AbTop.cpp:408 AbTop.cpp:467 AbTop.cpp:471
+#, c-format
+msgid "Move %1"
+msgstr "%1 Oyna"
+
+#: AbTop.cpp:427 Spy.cpp:79
+msgid "Spy"
+msgstr "Casus"
+
+#: AbTop.cpp:480 AbTop.cpp:499
+msgid "Red"
+msgstr "Kırmızı"
+
+#: AbTop.cpp:481 AbTop.cpp:499
+msgid "Yellow"
+msgstr "Sarı"
+
+#: AbTop.cpp:492
+msgid "Red won"
+msgstr "Kırmızı kazandı"
+
+#: AbTop.cpp:492
+msgid "Yellow won"
+msgstr "Sarı kazandı"
+
+#: AbTop.cpp:501
+msgid "I am thinking..."
+msgstr "Düşünüyorum..."
+
+#: AbTop.cpp:501
+msgid "It is your turn!"
+msgstr "Sıra sende!"
+
+#: BoardWidget.cpp:892 BoardWidget.cpp:933 BoardWidget.cpp:964
+#, c-format
+msgid "Board value: %1"
+msgstr "Tahta Değeri: %1"
+
+#: EvalDlgImpl.cpp:36
+msgid "Current"
+msgstr "Şimdiki"
+
+#: EvalDlgImpl.cpp:249
+msgid "Name for scheme:"
+msgstr "Şema için isim:"
+
+#: EvalDlgImpl.cpp:250
+msgid "Save Scheme"
+msgstr "Şemayı Kaydet"
+
+#: Move.cpp:22
+msgid "RightDown"
+msgstr "SağAşağı"
+
+#: Move.cpp:23
+msgid "LeftDown"
+msgstr "SolAşağı"
+
+#: Move.cpp:25
+msgid "LeftUp"
+msgstr "SolYukarı"
+
+#: Move.cpp:26
+msgid "RightUp"
+msgstr "SağYukarı"
+
+#: Move.cpp:84
+msgid "Out"
+msgstr "Dışarı"
+
+#. i18n: file EvalDlg.ui line 294
+#: Move.cpp:85 rc.cpp:30
+#, no-c-format
+msgid "Push"
+msgstr "İt"
+
+#: Spy.cpp:25
+msgid "Actual examined position:"
+msgstr "Gerçekte araştırılan pozisyon:"
+
+#: Spy.cpp:50
+msgid "Best move so far:"
+msgstr "Şu ana kadar en iyi hamle:"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Ömer Fadıl USTA"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "omer_fad@hotmail.com"
+
+#: kenolaba.cpp:17
+msgid "Board game inspired by Abalone"
+msgstr "Abalone benzeri tahta oyunu"
+
+#: kenolaba.cpp:22
+msgid "Use 'host' for network game"
+msgstr "Ağ oyunu için bilgisayar adı kullan"
+
+#: kenolaba.cpp:24
+msgid "Use 'port' for network game"
+msgstr "Ağ oyunu için port numarası kullan"
+
+#: kenolaba.cpp:41
+msgid "Kenolaba"
+msgstr "Kenolaba"
+
+#. i18n: file kenolabaui.rc line 8
+#: rc.cpp:6
+#, no-c-format
+msgid "&Move"
+msgstr "&Taşı"
+
+#. i18n: file EvalDlg.ui line 39
+#: rc.cpp:24
+#, no-c-format
+msgid "Moves"
+msgstr "Hareketler"
+
+#. i18n: file EvalDlg.ui line 270
+#: rc.cpp:27
+#, no-c-format
+msgid "Push Out"
+msgstr "Dışarı İt"
+
+#. i18n: file EvalDlg.ui line 811
+#: rc.cpp:33
+#, no-c-format
+msgid "Normal"
+msgstr "Normal"
+
+#. i18n: file EvalDlg.ui line 832
+#: rc.cpp:36
+#, no-c-format
+msgid "For every move possible the given points are added to the Evaluation."
+msgstr "Mümkün olan tüm hamleler için verilen puanlar değerlendirmeye eklenir."
+
+#. i18n: file EvalDlg.ui line 860
+#: rc.cpp:39
+#, no-c-format
+msgid "Position"
+msgstr "Pozisyon"
+
+#. i18n: file EvalDlg.ui line 916
+#: rc.cpp:42
+#, no-c-format
+msgid "Inner ring 3:"
+msgstr "İçteki çember 3:"
+
+#. i18n: file EvalDlg.ui line 972
+#: rc.cpp:45
+#, no-c-format
+msgid "Outermost ring:"
+msgstr "Dıştaki çember:"
+
+#. i18n: file EvalDlg.ui line 1028
+#: rc.cpp:48
+#, no-c-format
+msgid "Middle position:"
+msgstr "Orta pozisyon:"
+
+#. i18n: file EvalDlg.ui line 1068
+#: rc.cpp:51
+#, no-c-format
+msgid "Inner ring 2:"
+msgstr "İçteki çember 2:"
+
+#. i18n: file EvalDlg.ui line 1076
+#: rc.cpp:54 rc.cpp:57 rc.cpp:60 rc.cpp:66
+#, no-c-format
+msgid "+/-"
+msgstr "+/-"
+
+#. i18n: file EvalDlg.ui line 1116
+#: rc.cpp:63
+#, no-c-format
+msgid "Innermost ring:"
+msgstr "En içteki çember:"
+
+#. i18n: file EvalDlg.ui line 1147
+#: rc.cpp:69
+#, no-c-format
+msgid ""
+"For every ball, the given points are added to the evaluation depending on the "
+"balls position. The bonus for a given position is changed randomly in the +/- "
+"range."
+msgstr ""
+"Bütün toplar için, verilen puanlar topların pozisyonuna bağlı olan "
+"değerlendirmeye eklendi. Verilen bir pozisyon için bonus rastgele +/- "
+"aralığında değişir."
+
+#. i18n: file EvalDlg.ui line 1175
+#: rc.cpp:72
+#, no-c-format
+msgid "In-A-Row"
+msgstr "Bir-Sırada"
+
+#. i18n: file EvalDlg.ui line 1295
+#: rc.cpp:75
+#, no-c-format
+msgid "Three in-a-row:"
+msgstr "Bir sırada üç:"
+
+#. i18n: file EvalDlg.ui line 1303
+#: rc.cpp:78
+#, no-c-format
+msgid "Two in-a-row:"
+msgstr "Bir sırada iki:"
+
+#. i18n: file EvalDlg.ui line 1311
+#: rc.cpp:81
+#, no-c-format
+msgid "Four in-a-row:"
+msgstr "Bir sırada dört:"
+
+#. i18n: file EvalDlg.ui line 1319
+#: rc.cpp:84
+#, no-c-format
+msgid "Five in-a-row:"
+msgstr "Bir sırada beş"
+
+#. i18n: file EvalDlg.ui line 1342
+#: rc.cpp:87
+#, no-c-format
+msgid ""
+"For a number of balls In-a-Row, the given points are added to the evaluation"
+msgstr "Sıradaki topların numarası için, puanlar değerlendirmeye eklenir"
+
+#. i18n: file EvalDlg.ui line 1370
+#: rc.cpp:90
+#, no-c-format
+msgid "Count"
+msgstr "Sayaç"
+
+#. i18n: file EvalDlg.ui line 1442
+#: rc.cpp:93
+#, no-c-format
+msgid "4 Balls more:"
+msgstr "4 top kaldı:"
+
+#. i18n: file EvalDlg.ui line 1482
+#: rc.cpp:96
+#, no-c-format
+msgid "3 Balls more:"
+msgstr "3 top kaldı:"
+
+#. i18n: file EvalDlg.ui line 1490
+#: rc.cpp:99
+#, no-c-format
+msgid "5 Balls more:"
+msgstr "5 top kaldı:"
+
+#. i18n: file EvalDlg.ui line 1514
+#: rc.cpp:102
+#, no-c-format
+msgid "2 Balls more:"
+msgstr "2 top kaldı:"
+
+#. i18n: file EvalDlg.ui line 1538
+#: rc.cpp:105
+#, no-c-format
+msgid "1 Ball more:"
+msgstr "1 top kaldı:"
+
+#. i18n: file EvalDlg.ui line 1561
+#: rc.cpp:108
+#, no-c-format
+msgid ""
+"For a difference in the number of balls, the given points are added to the "
+"evaluation. A difference of 6 only can be a lost/won game."
+msgstr ""
+"Topların sayısındaki bir farklılıkta, verilen puanlar değerlendirmeye "
+"eklenirler. 6'nın bir farklılığı sadece kayıp ya da kazanılmış bir oyun "
+"olmasıdır. "
+
+#. i18n: file EvalDlg.ui line 1589
+#: rc.cpp:111
+#, no-c-format
+msgid "Evaluation Schemes"
+msgstr "Değerlendirme Şemaları"
+
+#. i18n: file EvalDlg.ui line 1643
+#: rc.cpp:120
+#, no-c-format
+msgid ""
+"Your evaluation scheme, defined in all other tabs of this dialog, can be stored "
+"here."
+msgstr ""
+"İşte değerlendirme şemanız. Bu diyalogun dışındaki tüm tanımlananlar "
+"saklanabilir."
+
+#. i18n: file EvalDlg.ui line 1686
+#: rc.cpp:123
+#, no-c-format
+msgid "Evaluation of actual position:"
+msgstr "Güncel pozisyonun değerlendirmesi:"

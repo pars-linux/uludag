@@ -1,0 +1,75 @@
+# translation of kio_mac.po to Türkçe
+# translation of kio_mac.po to turkish
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+# Görkem Çetin <gorkem@kde.org>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kio_mac\n"
+"POT-Creation-Date: 2005-09-21 02:57+0200\n"
+"PO-Revision-Date: 2004-10-02 16:25+0300\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9\n"
+
+#: kio_mac.cpp:94
+msgid "Unknown mode"
+msgstr "Bilinmeyen kip"
+
+#: kio_mac.cpp:115
+msgid "There was an error with hpcopy - please ensure it is installed"
+msgstr "Hpkopya da hata var - lütfen temin edip yükleyin."
+
+#: kio_mac.cpp:131
+msgid "No filename was found"
+msgstr "Dosya adı bulunamadı"
+
+#: kio_mac.cpp:144
+#, fuzzy
+msgid "There was an error with hpls - please ensure it is installed"
+msgstr "Hpls de hata var - lütfen temin edip yükleyin."
+
+#: kio_mac.cpp:187
+msgid "No filename was found in the URL"
+msgstr "Adreste dosya adı bulunamadı"
+
+#: kio_mac.cpp:201
+#, fuzzy
+msgid ""
+"hpls did not exit normally - please ensure you have installed the hfsplus tools"
+msgstr "Hpls çıkışı normal yapmadı - hfsplus araçlarını lütfen temin edin."
+
+#: kio_mac.cpp:288
+msgid ""
+"hpmount did not exit normally - please ensure that hfsplus utils are "
+"installed,\n"
+"that you have permission to read the partition (ls -l /dev/hdaX)\n"
+"and that you have specified the correct partition.\n"
+"You can specify partitions by adding ?dev=/dev/hda2 to the URL."
+msgstr ""
+"Hpmount normal çıkış yapmadı - yerleştirilmiş olan hfsplus yardımcılarını "
+"lütfen temin edin,\n"
+"belirttiğiniz (ls -l /dev/hdaX)\n"
+"bu bölümü okuma iznine sahipsiniz\n"
+"Yeni bölüm ekleyebilirsiniz? dev=/dev/hda2 adresi"
+
+#: kio_mac.cpp:320
+#, fuzzy
+msgid "hpcd did not exit normally - please ensure it is installed"
+msgstr "hpcd normal çıkış yapmadı - lütfen temin edip yükleyiniz."
+
+#: kio_mac.cpp:407
+msgid "hpls output was not matched"
+msgstr ""
+
+#: kio_mac.cpp:450
+msgid "Month output from hpls -l not matched"
+msgstr ""
+
+#: kio_mac.cpp:479
+msgid "Could not parse a valid date from hpls"
+msgstr ""

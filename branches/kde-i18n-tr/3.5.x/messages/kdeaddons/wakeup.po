@@ -1,0 +1,55 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2004-10-12 01:18+0200\n"
+"PO-Revision-Date: 2002-07-27 13:42GMT\n"
+"Last-Translator: Durmuş Celep <durmusc_tr@yahoo.com>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.8\n"
+
+#: wakeup.cpp:169
+msgid "Wakeup"
+msgstr "Uyan"
+
+#: wakeup.cpp:169
+msgid "Alarm Configuration"
+msgstr "Alarm Yapılandırması"
+
+#: wakeup.cpp:203
+msgid "Select days:"
+msgstr "Günleri seçin:"
+
+#: wakeup.cpp:204
+msgid "Hour"
+msgstr "Saat"
+
+#: wakeup.cpp:205
+msgid "Minute"
+msgstr "Dakika"
+
+#: wakeup.cpp:240
+msgid "Volume Control"
+msgstr "Ses Kontrolü"
+
+#: wakeup.cpp:241
+msgid "No change to volume, just starts the player"
+msgstr "Ses düzeyini değiştirmez, sadece çalıcıyı başlatır"
+
+#: wakeup.cpp:242
+msgid "The volume decreases slowly and finally stops the player"
+msgstr "Ses düzyi yavaş yavaş düşer ve çalıcı kapanır"
+
+#: wakeup.cpp:243
+msgid "The player starts and the volume increases to the chosen value"
+msgstr "Çalıcı başlar ve ses düzeyi seçilen düzeye yükselir"
+
+#: wakeup.cpp:248
+msgid "Volume increases to:"
+msgstr "Yükseltilecek Ses Düzeyi:"

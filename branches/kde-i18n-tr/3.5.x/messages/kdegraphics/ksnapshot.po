@@ -1,0 +1,307 @@
+# translation of ksnapshot.po to Türkçe
+# translation of ksnapshot.po to
+# Turkish translation of ksnapshot.
+# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+# Yıldırım Karslıoğlu <ykarslioglu@superonline.com>, 2000.
+# Tuncay YENİAY <tuncayyeniay@mynet.com>,2002.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Alper Sen <aalpersen@gmail.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ksnapshot\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-07-01 03:59+0200\n"
+"PO-Revision-Date: 2005-07-15 14:32+0300\n"
+"Last-Translator: Alper Sen <aalpersen@gmail.com>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#. i18n: file ksnapshotwidget.ui line 37
+#: rc.cpp:3
+#, no-c-format
+msgid ""
+"This is a preview of the current snapshot.\n"
+"\n"
+"The image can be dragged to another application or document to copy the full "
+"screenshot there. Try it with the Konqueror file manager.\n"
+"\n"
+"You can also copy the image to the clipboard by pressing Ctrl+C."
+msgstr ""
+"Güncel görüntünün önizlemesidir.\n"
+"\n"
+"Bu resmi başka bir uygulama ya da belge üzerine sürükleyip bırakabilirsiniz. "
+"Konqueor dosya yöneticisi ile deneme yapabilirsiniz!\n"
+"\n"
+"Ayrıca resmi panoya kopyalamak için Ctrl+C kullanabilirsiniz."
+
+#. i18n: file ksnapshotwidget.ui line 59
+#: rc.cpp:10
+#, no-c-format
+msgid " sec"
+msgstr " saniye"
+
+#. i18n: file ksnapshotwidget.ui line 62
+#: rc.cpp:13
+#, no-c-format
+msgid "No delay"
+msgstr "Gecikme yok"
+
+#. i18n: file ksnapshotwidget.ui line 65
+#: rc.cpp:16
+#, no-c-format
+msgid "Snapshot delay in seconds"
+msgstr "Saniye cinsinden gecikme"
+
+#. i18n: file ksnapshotwidget.ui line 75
+#: rc.cpp:19
+#, no-c-format
+msgid ""
+"<qt>\n"
+"This is the number of seconds to wait after clicking the <i>New Snapshot</i> "
+"button before taking the snapshot.\n"
+"<p>\n"
+"This is very useful for getting windows, menus and other items on the screen "
+"set up just the way you want.\n"
+"<p>\n"
+"If <i>no delay</i> is set, the program will wait for a mouse click before "
+"taking a snapshot.\n"
+"</p>\n"
+"</qt>"
+msgstr ""
+"<qt>\n"
+"Bu <i>Yeni Ekran Görüntüsü</i> tıklandıktan sonra ekran görüntüsünün alınması  "
+"için beklenecek süredir.\n"
+"<p>\n"
+"Bu pencereleri, menüleri, ve ekrandaki herhangi bir nesneyi elde etmek için çok "
+"yardımcı olur.\n"
+"<p>\n"
+"Eğer <i>bekleme yok</i> ayarlı ise, program ekran görüntüsünü almadan önce fare "
+"ile tıklanmasını bekleyecektir.\n"
+"</p>\n"
+"</qt>"
+
+#. i18n: file ksnapshotwidget.ui line 83
+#: rc.cpp:29
+#, no-c-format
+msgid "Snapshot &delay:"
+msgstr "&Gecikme:"
+
+#. i18n: file ksnapshotwidget.ui line 94
+#: rc.cpp:32
+#, no-c-format
+msgid "Cap&ture mode:"
+msgstr "&Yakalama yöntemi:"
+
+#. i18n: file ksnapshotwidget.ui line 122
+#: rc.cpp:35
+#, no-c-format
+msgid "Include &window decorations"
+msgstr "Pencere desenini de &yakala"
+
+#. i18n: file ksnapshotwidget.ui line 128
+#: rc.cpp:38
+#, no-c-format
+msgid ""
+"When enabled, snapshot of a window will also include the window decorations"
+msgstr ""
+"Etkinleştirildiğinde, bir pencerenin ekran görüntüsü ayrıca pencere "
+"dekorasyonlarınıda içerir"
+
+#. i18n: file ksnapshotwidget.ui line 134
+#: rc.cpp:41
+#, no-c-format
+msgid "Full Screen"
+msgstr "Tam Ekran"
+
+#. i18n: file ksnapshotwidget.ui line 139
+#: rc.cpp:44
+#, no-c-format
+msgid "Window Under Cursor"
+msgstr "Simgenin Altındaki Pencere"
+
+#. i18n: file ksnapshotwidget.ui line 144
+#: rc.cpp:47
+#, no-c-format
+msgid "Region"
+msgstr "Bölge"
+
+#. i18n: file ksnapshotwidget.ui line 149
+#: rc.cpp:50
+#, no-c-format
+msgid "Section of Window"
+msgstr "Pencerenin bir Kısmı"
+
+#. i18n: file ksnapshotwidget.ui line 161
+#: rc.cpp:53
+#, fuzzy, no-c-format
+msgid ""
+"<qt>Using this menu, you can select from the four following snapshot modes:\n"
+"<p>\n"
+"<b>Full Screen</b> - captures the entire desktop."
+"<br>\n"
+"<b>Window Under Cursor</b> - captures only the window (or menu) that is under "
+"the mouse cursor when the snapshot is taken."
+"<br>\n"
+"<b>Region</b> - captures only the region of the desktop that you specify. When "
+"taking a new snapshot in this mode you will be able to select any area of the "
+"screen by clicking and dragging the mouse.</p>\n"
+"<b>Section of Window</b> - captures only a section of the window. When taking a "
+"new snapshot in this mode you will be able to select any child window by moving "
+"the mouse over it.</p></qt>"
+msgstr ""
+"<qt>Bu menü yardımıyla aşağıdaki üç ekran yakalama yönteminden birisini "
+"seçebilirsiniz:\n"
+"<p>\n"
+"<b>Tam Ekran</b> - tüm masaüstünü yakalar"
+"<br>\n"
+"<b>İmlecin Altındaki Pencere</b> - sadece imlecin altında bulunan pencere ya da "
+"menüyü yakalar"
+"<br>\n"
+"<b>Bölge</b> - masaüstünün belirlediğiniz bölgesi yakalanır. Bu kipte yeni "
+"yakalama yaptığınızda fare ile tıklayıp ve sürükleyip istediğiniz alanı "
+"yakalayabilirsiniz.</p></qt>\n"
+"<b>Pencerenin bir Kısmı</b> - sadece pencerenin bir kısmını yakalar. Yeni "
+"yakalama yaptığınızda fareyi hareket ettirerek herhangi bir bağlı pencerenin "
+"üstüne gelerek yakalayabilirsiniz.</p></qt>"
+
+#. i18n: file ksnapshotwidget.ui line 177
+#: rc.cpp:61
+#, no-c-format
+msgid "&New Snapshot"
+msgstr "&Yeni Ekran Görüntüsü"
+
+#. i18n: file ksnapshotwidget.ui line 183
+#: rc.cpp:64
+#, no-c-format
+msgid "Click this button to take a new snapshot."
+msgstr "Yeni bir ekran görüntüsü için bu düğmeyi tıklayın."
+
+#. i18n: file ksnapshotwidget.ui line 208
+#: rc.cpp:67
+#, no-c-format
+msgid "&Save As..."
+msgstr "&Farklı Kaydet..."
+
+#. i18n: file ksnapshotwidget.ui line 214
+#: rc.cpp:70
+#, no-c-format
+msgid ""
+"Click this button to save the current snapshot. To quickly save the snapshot "
+"without showing the file dialog, press Ctrl+Shift+S. The filename is "
+"automatically incremented after each save."
+msgstr ""
+"Mevcut ekran görüntüsünü kaydetmek için buraya tıklayın. Ekran görüntüsünü "
+"dosya penceresi görünmeden hızlı bir şekilde kaydetmek için Ctrl+Shift+S "
+"tuşlarına basın. Dosya adı otomatik olarak artarak verilecektir."
+
+#. i18n: file ksnapshotwidget.ui line 222
+#: rc.cpp:73
+#, no-c-format
+msgid "&Copy to Clipboard"
+msgstr "&Panoya kopyala"
+
+#. i18n: file ksnapshotwidget.ui line 228
+#: rc.cpp:76
+#, no-c-format
+msgid "Click this button to copy the current snapshot to the clipboard."
+msgstr "Mevcut ekran görüntüsünü panoya kopyalamak için bu düğmeyi tıklayın."
+
+#. i18n: file ksnapshotwidget.ui line 242
+#: rc.cpp:82
+#, no-c-format
+msgid "Click this button to print the current screenshot."
+msgstr "Güncel ekran görüntüsünü yazdırmak için bu düğmeyi tıklayın."
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Tuncay YENİAY"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "tuncayyeniay@mynet.com"
+
+#: ksnapshot.cpp:102
+msgid "snapshot"
+msgstr "Görüntü Yakalayıcı"
+
+#: ksnapshot.cpp:120
+msgid "Quick Save Snapshot &As..."
+msgstr "&Ekran Görüntüsünü Hızlı Kaydet..."
+
+#: ksnapshot.cpp:121
+msgid ""
+"Save the snapshot to the file specified by the user without showing the file "
+"dialog."
+msgstr ""
+"Dosya penceresini göstermeden ekran görüntüsünü kullanıcın belirttiği dosyaya "
+"kaydet."
+
+#: ksnapshot.cpp:125
+msgid "Save Snapshot &As..."
+msgstr "&Ekran Görüntüsünü Farklı Kaydet..."
+
+#: ksnapshot.cpp:126
+msgid "Save the snapshot to the file specified by the user."
+msgstr "Kullanıcı tarafından belirlenen bir dosyaya ekran görüntüsünü kaydet."
+
+#: ksnapshot.cpp:164
+msgid "File Exists"
+msgstr "Dosya Var"
+
+#: ksnapshot.cpp:165
+msgid "<qt>Do you really want to overwrite <b>%1</b>?</qt>"
+msgstr "<qt>Gerçekten <b>%1</b> üzerine yazmak istiyor musunuz?</qt>"
+
+#: ksnapshot.cpp:166
+msgid "Overwrite"
+msgstr ""
+
+#: ksnapshot.cpp:200
+msgid "Unable to save image"
+msgstr "Resim kaydedilemiyor"
+
+#: ksnapshot.cpp:201
+#, c-format
+msgid ""
+"KSnapshot was unable to save the image to\n"
+"%1."
+msgstr "Görüntü yakalayıcı resmi%1 ismiyle kaydedemiyor."
+
+#: ksnapshot.cpp:284
+msgid "Print Screenshot"
+msgstr "Ekran Görüntüsünü Yazdır"
+
+#: ksnapshot.cpp:439
+msgid "The screen has been successfully grabbed."
+msgstr "Ekran başarıyla yakalandı."
+
+#: main.cpp:34
+msgid "KDE Screenshot Utility"
+msgstr "KDE Ekran Görüntüsü Yakalama Programı"
+
+#: main.cpp:39
+msgid "Captures the window under the mouse on startup (instead of the desktop)"
+msgstr ""
+"Başlangıçta farenin altında bulunan pencereyin görüntüsünü alır (masaüstünün "
+"değil)"
+
+#: main.cpp:45
+msgid "KSnapshot"
+msgstr "Görüntü Yakalayıcı"
+
+#: main.cpp:51
+msgid ""
+"Region Grabbing\n"
+"Reworked GUI"
+msgstr ""
+"Alan Belirleme\n"
+"Tekrar düzenlenmiş GUI"

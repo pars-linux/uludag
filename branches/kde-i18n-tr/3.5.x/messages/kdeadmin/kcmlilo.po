@@ -1,0 +1,675 @@
+# translation of kcmlilo.po to
+# KDE TüRKçELEşTiRME PROJESi.
+# Copyright (C) 2004, 2005, 2007 Free Software Foundation, Inc.
+#
+# Tuncay YENİAY <tuncayyeniay@mynet.com>,2002.
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Cemil MUTLU <mawilos@gmail.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmlilo\n"
+"POT-Creation-Date: 2007-03-13 02:18+0100\n"
+"PO-Revision-Date: 2007-05-16 21:03+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: kde-qt-common/EditWidget.cpp:43
+msgid "Select..."
+msgstr "Seçim..."
+
+#: kde-qt-common/expert.cpp:41
+msgid ""
+"You can edit the lilo.conf file directly here. All changes you make here are "
+"automatically transferred to the graphical interface."
+msgstr ""
+"lilo.conf dosyasını buradan da düzenleyebilirsiniz. Burada yaptığınız tüm "
+"değişiklikler grafik arabirime otomatik olarak aktarılacaktır."
+
+#: kde-qt-common/general.cpp:45
+msgid "Install &boot record to drive/partition:"
+msgstr "İlk &Açılış kaydını sürücü'ye/bölüm'e yükle:"
+
+#: kde-qt-common/general.cpp:55
+msgid ""
+"Select the drive or partition you want to install the LILO boot loader to here. "
+"Unless you intend to use other boot managers in addition to LILO, this should "
+"be the MBR (master boot record) of your boot drive."
+"<br>In this case, you should probably select <i>/dev/hda</i> "
+"if your boot drive is an IDE drive or <i>/dev/sda</i> "
+"if your boot drive is SCSI."
+msgstr ""
+"LILO önyükleme aracını kurmak istediğiniz sürücü veya bölümlemeyi burada "
+"seçiniz.Eğer LILO dışında başka önyükleme araçları kullanmıyorsanız önyükleme "
+"sürücünüzün MBR (ana ilkaçılış kaydı) seçiminiz olmalıdır."
+"<br>Bu durumda seçiminiz, muhtemelen IDE sürücüler için <i>/dev/hda</i> "
+"veya SCSI sürücüler için ise <i>/dev/sda</i> olmalıdır."
+
+#: kde-qt-common/general.cpp:58
+msgid "Boot the default kernel/OS &after:"
+msgstr "Öntanımlı çekirdek/OS &yüklenmesi sonrasında:"
+
+#: kde-qt-common/general.cpp:60
+msgid "/10 seconds"
+msgstr "/10 saniye sonra"
+
+#: kde-qt-common/general.cpp:64
+msgid ""
+"LILO will wait the amount of time specified here before booting the kernel (or "
+"OS) marked as <i>default</i> in the <b>Images</b> tab."
+msgstr ""
+"LILO, <b>İmajlar</b> kısmında <i>öntanımlı</i> olarak belirtilen çekirdeği "
+"(veya OS) yüklemeden önce burada girdiğiniz süre kadar bekleyecektir."
+
+#: kde-qt-common/general.cpp:67
+msgid "Use &linear mode"
+msgstr "&Doğrusal modu kullan"
+
+#: kde-qt-common/general.cpp:69
+msgid ""
+"Check this box if you want to use the linear mode."
+"<br>Linear mode tells the boot loader the location of kernels in linear "
+"addressing rather than sector/head/cylinder."
+"<br>linear mode is required for some SCSI drives, and shouldn't hurt unless "
+"you're planning to create a boot disk to be used with a different computer."
+"<br>See the lilo.conf man page for details."
+msgstr ""
+"Eğer doğrusal modu kullanmak isterseniz bu kutuyu işaretleyin."
+"<br>Doğrusal mod önyükleyiciye çekirdeğin konumunu sektör/kafa/silindir yerine "
+"doğrusal adresleme ile bulmasını söyler."
+"<br>Doğrusal mod bazı SCSI sürücüler için gereklidir ve başka bir bilgisayarda "
+"önyükleme diski oluşturmayı planlamadığınız sürece sizi incitmeyecektir. "
+"Ayrıntılar için lilo.conf man sayfasına bakınız."
+
+#: kde-qt-common/general.cpp:70
+msgid "Use &compact mode"
+msgstr "&Hızlı modu kullan"
+
+#: kde-qt-common/general.cpp:72
+msgid ""
+"Check this box if you want to use the compact mode."
+"<br>The compact mode tries to merge read requests for adjacent sectors into a "
+"single read request. This reduces load time and keeps the boot map smaller, but "
+"will not work on all systems."
+msgstr ""
+"Eğer hızlı modu kullanmak istiyorsanız bu kutuyu işaretleyin."
+"<br>Hızlı mod, ardışık sektörleri okurken okuma isteklerini tek bir okuma "
+"isteği olarak ele alır. Bu, yükleme süresini kısaltır ve önyükleme haritas�nı "
+"daha küçük yapar, ancak tüm sistemlerde çalışmaz."
+
+#: kde-qt-common/general.cpp:76 kde/Details.cpp:82 qt/Details.cpp:85
+msgid "&Record boot command lines for defaults"
+msgstr "Açılış komut satırlarını öntanımlı &kaydet"
+
+#: kde-qt-common/general.cpp:78
+msgid ""
+"Checking this box enables automatic recording of boot command lines as the "
+"defaults for the following boots. This way, lilo \"locks\" on a choice until it "
+"is manually overridden.\n"
+"This sets the <b>lock</b> option in lilo.conf."
+msgstr ""
+"Bu kutunun işaretlenmesi, önyükleme komut satırlarının daha sonraki açılışlar "
+"için öntanımlı olarak kaydedilmesini sağlar. Böylece, tekrar değiştirilinceye "
+"kadar lilo bir seçime \"kilitlenir\".\n"
+"Bu, lilo.conf dosyasında <b>lock</b> seçeneğini ayarlar."
+
+#: kde-qt-common/general.cpp:79 kde/Details.cpp:84 qt/Details.cpp:87
+msgid "R&estrict parameters"
+msgstr "Parametreleri &Kısıtla"
+
+#: kde-qt-common/general.cpp:82
+msgid ""
+"If this box is checked, a password (entered below) is required only if any "
+"parameters are changed (i.e. the user can boot <i>linux</i>, but not <i>"
+"linux single</i> or <i>linux init=/bin/sh</i>).\n"
+"This sets the <b>restricted</b> option in lilo.conf."
+"<br>This sets a default for all Linux kernels you want to boot. If you need a "
+"per-kernel setting, go to the <i>Operating systems</i> tab and select <i>"
+"Details</i>."
+msgstr ""
+"Eğer bu kutucuk işaretlenirse, çekirdeğe (sadece) farklı parametreler geçirmek "
+"için parola gerektirir (yani, kullanıcı ilk açılışta <i>linux</i> "
+"yazabilir ama <i>linux single</i> veya <i>linux init=/bin/sh</i> yazamaz).\n"
+"Bu, lilo.conf dosyasında <b>restricted</b> seçeneğini ayarlar."
+"<br>Bu, önyükleme için kullanacağınız tüm Linux çekirdekleri için geçerlidir. "
+"Eğer her çekirdek için ayrı ayar isterseniz, <i>İşletim Sistemleri</i> "
+"kısmına gidin ve oradan <i>Ayrıntılar</i>ı seçin."
+
+#: kde-qt-common/general.cpp:86 kde/Details.cpp:89 qt/Details.cpp:93
+msgid "Require &password:"
+msgstr "Gerekli &Parola:"
+
+#: kde-qt-common/general.cpp:93
+msgid ""
+"Enter the password required for bootup (if any) here. If <i>restricted</i> "
+"above is checked, the password is required for additional parameters only."
+"<br><b>WARNING:</b> The password is stored in clear text in /etc/lilo.conf. "
+"You'll want to make sure nobody untrusted can read this file. Also, you "
+"probably don't want to use your normal/root password here."
+"<br>This sets a default for all Linux kernels you want to boot. If you need a "
+"per-kernel setting, go to the <i>Operating systems</i> tab and select <i>"
+"Details</i>."
+msgstr ""
+"Önyükleme için gereken parolayı (eğer varsa) burada giriniz. Eğer yukarıda <i>"
+"restricted</i> işaretlenmişse, sadece ek parametreler için parola gereklidir."
+"<br><b>UYARI: </b> Parola, /etc/lilo.conf dosyasında açık metin olarak tutulur. "
+"Yetkisiz kullanıcıların bu dosyayı okuyamadıklarından emin olmalısınız. Gene, "
+"burada normal/yönetici parolasını girmemelisiniz."
+"<br>Bu, önyükleme yapacağınız tüm Linux çekirdekleri için ortak ayarlama yapar. "
+"Eğer her çekirdek için ayrı ayarlamalar istiyorsanız, <i>İşletim Sistemleri</i> "
+"kısmına gidin ve oradan <i>Ayrıntılar</i>ı seçin."
+
+#: kde-qt-common/general.cpp:97
+msgid "&Default graphics mode on text console:"
+msgstr "Metin ekranda öntanımlı grafik modu:"
+
+#: kde-qt-common/general.cpp:100
+msgid ""
+"You can select the default graphics mode here."
+"<br>If you intend to use a VGA graphics mode, you must compile the kernel with "
+"support for framebuffer devices. The <i>ask</i> setting brings up a prompt at "
+"boot time."
+"<br>This sets a default for all Linux kernels you want to boot. If you need a "
+"per-kernel setting, go to the <i>Operating systems</i> tab and select <i>"
+"Details</i>."
+msgstr ""
+"Öntanımlı grafik modunu buradan seçebilirsiniz."
+"<br>Eğer bir VGA grafik modunu kullanmayı tasarlıyorsanız, çekirdeği çerçeve "
+"arabellekli cihazlara destek sağlayacak şekilde yeniden derlemelisiniz. <i>"
+"Sor</i> ayar� açılış esnasında bunu size soracaktır."
+"<br>Bu, önyükleme yapacağın�z tüm Linux çekirdekleri için ortak ayarlama yapar. "
+"Eğer her çekirdek için ayrı ayarlamalar istiyorsanız, <i>İşletim Sistemleri</i> "
+"kısmına gidin ve oradan <i>Ayrıntılar</i>ı seçin."
+
+#: kde-qt-common/general.cpp:101 kde/Details.cpp:48 qt/Details.cpp:48
+msgid "default"
+msgstr "öntanımlı"
+
+#: kde-qt-common/general.cpp:102 kde/Details.cpp:49 qt/Details.cpp:49
+msgid "ask"
+msgstr "sor"
+
+#: kde-qt-common/general.cpp:103 kde/Details.cpp:50 qt/Details.cpp:50
+msgid "text 80x25 (0)"
+msgstr "metin 80x25"
+
+#: kde-qt-common/general.cpp:104 kde/Details.cpp:51 qt/Details.cpp:51
+msgid "text 80x50 (1)"
+msgstr "metin 80x50 (1)"
+
+#: kde-qt-common/general.cpp:105 kde/Details.cpp:52 qt/Details.cpp:52
+msgid "text 80x43 (2)"
+msgstr "metin 80x43 (2)"
+
+#: kde-qt-common/general.cpp:106 kde/Details.cpp:53 qt/Details.cpp:53
+msgid "text 80x28 (3)"
+msgstr "metin 80x28 (3)"
+
+#: kde-qt-common/general.cpp:107 kde/Details.cpp:54 qt/Details.cpp:54
+msgid "text 80x30 (4)"
+msgstr "metin 80x30 (4)"
+
+#: kde-qt-common/general.cpp:108 kde/Details.cpp:55 qt/Details.cpp:55
+msgid "text 80x34 (5)"
+msgstr "metin 80x34 (5)"
+
+#: kde-qt-common/general.cpp:109 kde/Details.cpp:56 qt/Details.cpp:56
+msgid "text 80x60 (6)"
+msgstr "metin 80x60 (6)"
+
+#: kde-qt-common/general.cpp:110 kde/Details.cpp:57 qt/Details.cpp:57
+msgid "text 40x25 (7)"
+msgstr "metin 40x25 (7)"
+
+#: kde-qt-common/general.cpp:111 kde/Details.cpp:58 qt/Details.cpp:58
+msgid "VGA 640x480, 256 colors (769)"
+msgstr "VGA 640x480, 256 renk (769)"
+
+#: kde-qt-common/general.cpp:112 kde/Details.cpp:59 qt/Details.cpp:59
+msgid "VGA 640x480, 32767 colors (784)"
+msgstr "VGA 640x480, 32767 renk (784)"
+
+#: kde-qt-common/general.cpp:113 kde/Details.cpp:60 qt/Details.cpp:60
+msgid "VGA 640x480, 65536 colors (785)"
+msgstr "VGA 640x480, 65536 renk (785)"
+
+#: kde-qt-common/general.cpp:114 kde/Details.cpp:61 qt/Details.cpp:61
+msgid "VGA 640x480, 16.7M colors (786)"
+msgstr "VGA 640x480, 16.7M renk (786)"
+
+#: kde-qt-common/general.cpp:115 kde/Details.cpp:62 qt/Details.cpp:62
+msgid "VGA 800x600, 256 colors (771)"
+msgstr "VGA 800x600, 256 renk (771)"
+
+#: kde-qt-common/general.cpp:116 kde/Details.cpp:63 qt/Details.cpp:63
+msgid "VGA 800x600, 32767 colors (787)"
+msgstr "VGA 800x600, 32767 renk (787)"
+
+#: kde-qt-common/general.cpp:117 kde/Details.cpp:64 qt/Details.cpp:64
+msgid "VGA 800x600, 65536 colors (788)"
+msgstr "VGA 800x600, 65536 renk (788)"
+
+#: kde-qt-common/general.cpp:118 kde/Details.cpp:65 qt/Details.cpp:65
+msgid "VGA 800x600, 16.7M colors (789)"
+msgstr "VGA 800x600, 16.7M renk (789)"
+
+#: kde-qt-common/general.cpp:119 kde/Details.cpp:66 qt/Details.cpp:66
+msgid "VGA 1024x768, 256 colors (773)"
+msgstr "VGA 1024x768, 256 renk (773)"
+
+#: kde-qt-common/general.cpp:120 kde/Details.cpp:67 qt/Details.cpp:67
+msgid "VGA 1024x768, 32767 colors (790)"
+msgstr "VGA 1024x768, 32767 renk (790)"
+
+#: kde-qt-common/general.cpp:121 kde/Details.cpp:68 qt/Details.cpp:68
+msgid "VGA 1024x768, 65536 colors (791)"
+msgstr "VGA 1024x768, 65536 renk (791)"
+
+#: kde-qt-common/general.cpp:122 kde/Details.cpp:69 qt/Details.cpp:69
+msgid "VGA 1024x768, 16.7M colors (792)"
+msgstr "VGA 1024x768, 16.7M renk (792)"
+
+#: kde-qt-common/general.cpp:123 kde/Details.cpp:70 qt/Details.cpp:70
+msgid "VGA 1280x1024, 256 colors (775)"
+msgstr "VGA 1280x1024, 256 renk (775)"
+
+#: kde-qt-common/general.cpp:124 kde/Details.cpp:71 qt/Details.cpp:71
+msgid "VGA 1280x1024, 32767 colors (793)"
+msgstr "VGA 1280x1024, 32767 renk (793)"
+
+#: kde-qt-common/general.cpp:125 kde/Details.cpp:72 qt/Details.cpp:72
+msgid "VGA 1280x1024, 65536 colors (794)"
+msgstr "VGA 1280x1024, 65536 renk (794)"
+
+#: kde-qt-common/general.cpp:126 kde/Details.cpp:73 qt/Details.cpp:73
+msgid "VGA 1280x1024, 16.7M colors (795)"
+msgstr "VGA 1280x1024, 16.7M renk (795)"
+
+#: kde-qt-common/general.cpp:130
+msgid "Enter LILO &prompt automatically"
+msgstr "LILO komut istemi otomatik gelsin"
+
+#: kde-qt-common/general.cpp:131
+msgid ""
+"If this box is checked, LILO goes to the LILO prompt whether or not a key is "
+"pressed. If it is turned off, LILO boots the default operating system unless "
+"shift is pressed (in that case, it goes to the LILO prompt)."
+"<br>This sets the <i>prompt</i> option in lilo.conf."
+msgstr ""
+"Eğer bu kutu işaretlenirse, bir tuşa basılsın veya basılmasın LILO komut istemi "
+"ekrana gelir. Eğer kapatılırsa, shift tuşu basılmadıkça öntan�mlı işletim "
+"sistemi yüklenir (shift basılırsa, LILO komut istemi gelir)."
+"<br>Bu, lilo.conf dosyasında <b>prompt</b> seçeneğini ayarlar."
+
+#: kde-qt-common/images.cpp:53
+msgid ""
+"This is the list of kernels and operating systems you can currently boot. "
+"Select which one you want to edit here."
+msgstr ""
+"Bu, şu anda önyükleme yapabileceğiniz çekirdek ve OS'lerin listesidir. "
+"Düzenlemek için istediğiniz işletim sistemini seçiniz."
+
+#: kde-qt-common/images.cpp:59 kde-qt-common/images.cpp:281
+msgid "&Kernel:"
+msgstr "Ç&ekirdek"
+
+#: kde-qt-common/images.cpp:60 kde-qt-common/images.cpp:187
+msgid "Enter the filename of the kernel you want to boot here."
+msgstr "İlkaçılış yapmak istediğiniz çekirdeğin dosya adını giriniz."
+
+#: kde-qt-common/images.cpp:62 kde-qt-common/images.cpp:188
+#: kde-qt-common/images.cpp:216
+msgid "&Label:"
+msgstr "&Etiket:"
+
+#: kde-qt-common/images.cpp:63 kde-qt-common/images.cpp:188
+msgid "Enter the label (name) of the kernel you want to boot here."
+msgstr "İlkaçılış yapmak istediğiniz çekirdeğin etiketini (adını) giriniz."
+
+#: kde-qt-common/images.cpp:65 kde-qt-common/images.cpp:189
+msgid "&Root filesystem:"
+msgstr "&Kök dosya sistemi:"
+
+#: kde-qt-common/images.cpp:66 kde-qt-common/images.cpp:189
+msgid ""
+"Enter the root filesystem (i.e. the partition that will be mounted as / at boot "
+"time) for the kernel you want to boot here."
+msgstr ""
+"Önyükleme yapmak istediğini çekirdek için kök dosya sistemini (yani, aç�lışta / "
+"olarak bağlanan bölümü) buraya giriniz."
+
+#: kde-qt-common/images.cpp:68 kde-qt-common/images.cpp:190
+msgid "&Initial ramdisk:"
+msgstr "&Başlangıç ramdiski:"
+
+#: kde-qt-common/images.cpp:69 kde-qt-common/images.cpp:190
+msgid ""
+"If you want to use an initial ramdisk (initrd) for this kernel, enter its "
+"filename here. Leave this field blank if you don't intend to use an initial "
+"ramdisk for this kernel."
+msgstr ""
+"Eğer bu çekirdek için başlangıç ramdiski (initrd) kullanmak istiyorsan�z, "
+"buraya onun adını giriniz. Aksi halde bu alanı boş bırakınız."
+
+#: kde-qt-common/images.cpp:71
+msgid "E&xtra parameters:"
+msgstr "Ek parametreler:"
+
+#: kde-qt-common/images.cpp:72
+msgid ""
+"Enter any extra parameters you wish to pass to the kernel here. Usually, this "
+"can be left blank."
+"<br>This sets the <i>append</i> option in lilo.conf."
+msgstr ""
+"Eğer çekirdeğe yollamak istediğiniz ek parametreler varsa buraya onları "
+"giriniz. Burası genellikle boş bırakılabilir."
+"<br>Bu, lilo.conf dosyas�nda <b>prompt</b> seçeneğini ayarlar."
+
+#: kde-qt-common/images.cpp:79
+msgid "Set &Default"
+msgstr "Ön&tanımlı Yap"
+
+#: kde-qt-common/images.cpp:80
+msgid "Boot this kernel/OS if the user doesn't make a different choice"
+msgstr "Eğer kullanıcı farklı birini seçmezse bu çekirdek/OS yüklenir."
+
+#: kde-qt-common/images.cpp:82
+msgid "De&tails"
+msgstr "Ayrın&tılar"
+
+#: kde-qt-common/images.cpp:83
+msgid ""
+"This button brings up a dialog box with further, less commonly used, options."
+msgstr ""
+"Bu düğme az kullanılan seçenekler de dahil, bir diyalog kutusu ekrana getirir."
+
+#: kde-qt-common/images.cpp:85
+msgid "&Probe"
+msgstr "&Sına"
+
+#: kde-qt-common/images.cpp:87
+msgid ""
+"Automatically generate a (hopefully) reasonable lilo.conf for your system"
+msgstr "Kendiliğinden sisteminiz için (umarız) uygun bir lilo.conf hazırlar."
+
+#: kde-qt-common/images.cpp:88
+msgid "&Check Configuration"
+msgstr "&Yapılandırmayı Denetle"
+
+#: kde-qt-common/images.cpp:90
+msgid "Run LILO in test mode to see if the configuration is ok"
+msgstr ""
+"Yapılandırmanın doğruluğunu onaylamak için LILO'yu test modunda çalışt�rır."
+
+#: kde-qt-common/images.cpp:91
+msgid "Add &Kernel..."
+msgstr "&Çekirdek Ekle"
+
+#: kde-qt-common/images.cpp:93
+msgid "Add a new Linux kernel to the boot menu"
+msgstr "Önyükleme menüsüne yeni bir Linux çekirdeği ekler."
+
+#: kde-qt-common/images.cpp:94
+msgid "Add Other &OS..."
+msgstr "&Diğer İşletim Sistemlerini Ekle"
+
+#: kde-qt-common/images.cpp:96
+msgid "Add a non-Linux OS to the boot menu"
+msgstr "Önyükleme menüsüne Linux dışında başka bir OS ekler."
+
+#: kde-qt-common/images.cpp:97
+msgid "&Remove Entry"
+msgstr "&Girdiyi Sil"
+
+#: kde-qt-common/images.cpp:99
+msgid "Remove entry from the boot menu"
+msgstr "Önyükleme menüsünden elemanı siler."
+
+#: kde-qt-common/images.cpp:177
+msgid ""
+"Configuration ok. LILO said:\n"
+msgstr ""
+"Yapılandırma tamam. LILO mesajı:\n"
+
+#: kde-qt-common/images.cpp:178
+msgid "Configuration OK"
+msgstr "Yapılandırma Tamam"
+
+#: kde-qt-common/images.cpp:180
+msgid ""
+"Configuration NOT ok. LILO said:\n"
+msgstr ""
+"Yapılandırmada hata var. LILO mesajı:\n"
+
+#: kde-qt-common/images.cpp:181
+msgid "Configuration NOT ok"
+msgstr "Yapılandırmada hata var"
+
+#: kde-qt-common/images.cpp:187
+msgid "&Kernel filename:"
+msgstr "Ç&ekirdek dosya adı:"
+
+#: kde-qt-common/images.cpp:215
+msgid "Boot from dis&k:"
+msgstr "&Diskten açılış:"
+
+#: kde-qt-common/images.cpp:215
+msgid ""
+"Enter the partition containing the operating system you'd like to boot here."
+msgstr "Önyükleme için kullanmak istediğiniz bölümlemeyi giriniz."
+
+#: kde-qt-common/images.cpp:216
+msgid "Enter the label (name) of the operating system here."
+msgstr "Buraya işletim sisteminin etiketini (adını) giriniz."
+
+#: kde-qt-common/images.cpp:297
+msgid "Dis&k:"
+msgstr "Dis&k:"
+
+#: kde-qt-common/mainwidget.cpp:43
+msgid "&General Options"
+msgstr "&Genel Seçenekler"
+
+#: kde-qt-common/mainwidget.cpp:44
+msgid "&Operating Systems"
+msgstr "İşletim &Sistemleri"
+
+#: kde-qt-common/mainwidget.cpp:45 kde-qt-common/mainwidget.cpp:65
+#: kde-qt-common/mainwidget.cpp:94 kde-qt-common/mainwidget.cpp:100
+msgid "&Expert"
+msgstr "&Uzman"
+
+#: kde-qt-common/mainwidget.cpp:96 kde-qt-common/mainwidget.cpp:104
+msgid "&General options"
+msgstr "&Genel seçenekler"
+
+#: kde-qt-common/mainwidget.cpp:98 kde-qt-common/mainwidget.cpp:102
+msgid "&Operating systems"
+msgstr "İşletim &Sistemleri"
+
+#: kde/Details.cpp:44 qt/Details.cpp:44
+msgid "&Graphics mode on text console:"
+msgstr "Metin ekranda &grafik modu:"
+
+#: kde/Details.cpp:47 qt/Details.cpp:47
+msgid ""
+"You can select the graphics mode for this kernel here."
+"<br>If you intend to use a VGA graphics mode, you must compile the kernel with "
+"support for framebuffer devices. The <i>ask</i> setting brings up a prompt at "
+"boot time."
+msgstr ""
+"Burada bu çekirdek için grafik modu seçebilirsiniz."
+"<br>Eğer herhangi bir VGA grafik moduNU kullanacaksanız, çekirdeği çerçeve "
+"arabellekli cihazlara destek sağlayacak şekilde yeniden derlemelisiniz. <i>"
+"Sor</i> ayar� açılış esnasında bunu size soracaktır."
+
+#: kde/Details.cpp:75 qt/Details.cpp:76
+msgid "Mount root filesystem &read-only"
+msgstr "Kök dosya sistemini &salt-oku bağla"
+
+#: kde/Details.cpp:76 qt/Details.cpp:77
+msgid ""
+"Mount the root filesystem for this kernel read-only. Since the init scripts "
+"normally take care of remounting the root filesystem in read-write mode after "
+"running some checks, this should always be turned on."
+"<br>Don't turn this off unless you know what you're doing."
+msgstr ""
+"Çekirdek için kök dosya sistemini salt-oku olarak bağlar. Normalde başlatma "
+"betikleri bazı testleri yaptıktan sonra zaten dosya sistemini yaz-oku olarak "
+"yeniden bağladıkları için, bu her zaman açık olmalıdır. "
+"<br>Ne yaptığınızı tam bilmediğniz sürece asla kapalı yapmayın."
+
+#: kde/Details.cpp:78 qt/Details.cpp:80
+msgid "Do not check &partition table"
+msgstr "&Bölümlendirme tablosu denetlenmesin"
+
+#: kde/Details.cpp:79
+msgid ""
+"This turns off some sanity checks while writing the configuration. This should "
+"not be used under \"normal\" circumstances, but it can be useful, for example, "
+"by providing the capability of booting from a floppy disk, without having a "
+"floppy in the drive every time you run lilo."
+"<br>This sets the <i>unsafe</i> keyword in lilo.conf."
+msgstr ""
+"Bu, yapılandırma hazırlanırken bazı mantıklı denetimleri kapatır. Zaten "
+"\"normal\" koşullar altında kullanılmaz, ama bazen faydalıdır, örneğin, lilo'yu "
+"her çalıştırdığınızda sürücüde disket olmasa bile disketten açılış özelliği "
+"sağlar."
+"<br>Bu, lilo.conf dosyasında <i>unsafe</i> anahtar sözcüğünü ayarlar."
+
+#: kde/Details.cpp:83 qt/Details.cpp:86
+msgid ""
+"Checking this box enables automatic recording of boot command lines as the "
+"default for the following bootups. This way, lilo \"locks\" on a choice until "
+"it is manually overridden."
+"<br>This sets the <b>lock</b> option in lilo.conf"
+msgstr ""
+"Bu kutucuğun işaretlenmesi, açılış komut satırlarının sonraki açılışlar için "
+"öntanımlı olarak kaydedilmesini sağlar. Böylece, tekrar belirtilinceye kadar "
+"lilo, bir seçenek üzerine \"kilitlenir\"."
+"<br>Bu, lilo.conf dosyasındaki <b>lock</b> seçeneğini ayarlar."
+
+#: kde/Details.cpp:86 qt/Details.cpp:89
+msgid ""
+"If this box is checked, a password (entered below) is required only if any "
+"parameters are changed (i.e. the user can boot <i>linux</i>, but not <i>"
+"linux single</i> or <i>linux init=/bin/sh</i>).\n"
+"This sets the <b>restricted</b> option in lilo.conf."
+msgstr ""
+"Eğer bu kutucuk işaretlenirse, çekirdeğe farklı parametreler aktar�lacaksa "
+"(aşağıdaki) parolayı gerekirir (yani, kullanıcı parametre olarak <i>linux</i> "
+"yazabilir, fakat <i>linux single</i> veya <i>linux init=/bin/sh</i> yazamaz).\n"
+"Bu, lilo.conf dosyasındaki <b>restricted</b> seçeneğini ayarlar."
+
+#: kde/Details.cpp:94 qt/Details.cpp:98
+msgid ""
+"Enter the password required for bootup (if any) here. If <i>restricted</i> "
+"above is checked, the password is required for additional parameters only."
+"<br><b>WARNING:</b> The password is stored in clear text in /etc/lilo.conf. "
+"You'll want to make sure nobody untrusted can read this file. Also, you "
+"probably don't want to use your normal/root password here."
+msgstr ""
+"Buraya gerekli görüyorsanız önyükleme için parola giriniz. Eğer yukar�da <i>"
+"restricted</i> işretlenmişse, (sadece) ek parametreler için bu parolanın "
+"girilmesi gerekecektir."
+"<br><b>UYARI: Parola /etc/lilo.conf dosyas�nda düz metin olarak tutulur. Bu "
+"dosyayı yetkisiz kullanıcıların okuyamamasını sağlayınız. Benzer olarak, burada "
+"normal/yönetici şifrenizi kullanmayınız."
+
+#: kde/kcontrol.cpp:48
+msgid "kcmlilo"
+msgstr "kcmlilo"
+
+#: kde/kcontrol.cpp:48
+msgid "LILO Configuration"
+msgstr "LILO Yapılandırması"
+
+#: kde/kcontrol.cpp:50
+msgid "(c) 2000, Bernhard Rosenkraenzer"
+msgstr "(c) 2000, Bernhard Rosenkraenzer"
+
+#: qt/Details.cpp:81
+msgid ""
+"This turns off some sanity checks while writing the configuration. This "
+"shouldn't be used under \"normal\" circumstances, but it's useful, for example, "
+"for installing the possibility to boot from a floppy disk without having a "
+"floppy in the drive every time you run lilo."
+"<br>This sets the <i>unsafe</i> keyword in lilo.conf."
+msgstr ""
+"Bu, yapılandırma hazırlanırken bazı mantıklı denetimleri kapatır. Zaten "
+"\"normal\" koşullar altında kullanılmaz, ama bazen faydalıdır, örneğin, lilo "
+"her çalıştığında eğer sürücüde disket yoksa ve disketten ilkaçılış olanağını "
+"yüklerseniz kullanılır."
+"<br>Bu, lilo.conf dosyasında <i>unsafe</i> anahtar sözcüğünü ayarlar."
+
+#: qt/standalone.cpp:41
+msgid "&What's This?"
+msgstr "Bu &Nedir?"
+
+#: qt/standalone.cpp:43
+msgid ""
+"The <i>What's This?</i> button is part of this program's help system. Click on "
+"the What's This? button then on any widget in the window to get information "
+"(like this) on it."
+msgstr ""
+"<i>Bu Nedir?</i> düğmesi programın yardım sisteminin bir parçasıdır. Bu düğmeye "
+"tıklayarak pencere içindeki bir bölge ile ilgili aç�klamalar (bunun gibi) "
+"ekrana gelir."
+
+#: qt/standalone.cpp:47
+msgid ""
+"This button calls up the program's online help system. If it does nothing, no "
+"help file has been written (yet); in that case, use the <i>What's This</i> "
+"button on the left."
+msgstr ""
+"Bu düğme programın çevrimiçi yardım sistemini çağırır. Eğer çalışm�yorsa, "
+"(henüz) yardım dosyası yazılmamıştır; bu durumda, soldaki <i>Bu nedir?</i> "
+"düğmesini kullanın."
+
+#: qt/standalone.cpp:49
+msgid "&Default"
+msgstr "Ö&ntanımlı"
+
+#: qt/standalone.cpp:50
+msgid ""
+"This button resets all parameters to some (hopefully sane) default values."
+msgstr "Bu düğme, tüm parametrelere (uygun) bazı öntanımlı değerler atar."
+
+#: qt/standalone.cpp:52
+msgid "&Reset"
+msgstr "&Sıfırla"
+
+#: qt/standalone.cpp:53
+msgid ""
+"This button resets all parameters to what they were before you started the "
+"program."
+msgstr ""
+"Bu düğme, tüm parametreleri program başlamadan önceki değerlerine geri çeker."
+
+#: qt/standalone.cpp:56
+msgid "This button saves all your changes without exiting."
+msgstr "Bu düğme tüm değişiklikleri kaydeder ve programı kapatmaz."
+
+#: qt/standalone.cpp:59
+msgid "This button saves all your changes and exits the program."
+msgstr "Bu düğme tüm değişiklikleri kaydeder ve programı kapatır."
+
+#: qt/standalone.cpp:62
+msgid "This button exits the program without saving your changes."
+msgstr "Bu düğme değişiklikleri kaydetmez ve programı kapatır."
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"

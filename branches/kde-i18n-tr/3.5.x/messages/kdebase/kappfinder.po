@@ -1,0 +1,90 @@
+# translation of kappfinder.po to Türkçe
+# translation of kappfinder.po to Turkish
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# Mehmet TARIMCI <mehmet@gelecek.com.tr>, 2000.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>,1999-2002.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
+msgid ""
+msgstr ""
+"Project-Id-Version: kappfinder\n"
+"POT-Creation-Date: 2005-05-18 21:23+0200\n"
+"PO-Revision-Date: 2004-07-09 22:49+0300\n"
+"Last-Translator: Adil YILDIZ <adil_yildiztr@yahoo.com>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.3\n"
+
+#: main.cpp:27
+msgid "KDE's application finder"
+msgstr "KDE uygulama bulucusu"
+
+#: main.cpp:30
+msgid "Install .desktop files into directory <dir>"
+msgstr "<dizin> isimli dizine .desktop dosyalarını kur"
+
+#: main.cpp:36 toplevel.cpp:50
+msgid "KAppfinder"
+msgstr "KAppfinder"
+
+#: toplevel.cpp:53
+msgid ""
+"The application finder looks for non-KDE applications on your system and adds "
+"them to the KDE menu system. Click 'Scan' to begin, select the desired "
+"applications and then click 'Apply'."
+msgstr ""
+"Uygulama bulucusu sisteminizdeki KDE'ye ait olmayan uygulamaları bularak onları "
+"KDE menülerine ekler. 'Ara' tuşuna basarak aramayı başlatabilirisiniz, "
+"istediğiniz uygulamaları seçin ve 'Uygula' tuşuna basınız."
+
+#: toplevel.cpp:63
+msgid "Application"
+msgstr "Uygulama"
+
+#: toplevel.cpp:64
+msgid "Description"
+msgstr "Açıklama"
+
+#: toplevel.cpp:65
+msgid "Command"
+msgstr "Komut"
+
+#: toplevel.cpp:76
+msgid "Summary:"
+msgstr "Özet:"
+
+#: toplevel.cpp:80
+msgid "Scan"
+msgstr "Ara"
+
+#: toplevel.cpp:85
+msgid "Unselect All"
+msgstr "Hiçbirisini Seçme"
+
+#: toplevel.cpp:245
+#, c-format
+msgid ""
+"_n: Summary: found %n application\n"
+"Summary: found %n applications"
+msgstr "Özet: %n uygulama bulundu"
+
+#: toplevel.cpp:288
+#, c-format
+msgid ""
+"_n: %n application was added to the KDE menu system.\n"
+"%n applications were added to the KDE menu system."
+msgstr "%n uygulama KDE menü sistemine eklendi."
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Mehmet Tarımcı"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "mehmet@gelecek.com.tr"

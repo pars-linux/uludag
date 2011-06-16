@@ -1,0 +1,1087 @@
+# translation of ark.po to
+# Mehmet TARIMCI <mehmet@gelecek.com.tr> , 2000.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# YILDIZ KARDEŞLER <turkishprogram@xposta.com>, 2003.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Engin Çağatay <engincagatay@yahoo.com>, 2004.
+# Onur Küçük <onur@uludag.org.tr>, 2004.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+# Copyright (C) 2003, 2004, 2007 Free Software Foundation, Inc.
+msgid ""
+msgstr ""
+"Project-Id-Version: ark\n"
+"POT-Creation-Date: 2007-11-07 01:15+0100\n"
+"PO-Revision-Date: 2007-06-17 22:11+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=1; plural=0;\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Onur Küçük"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: ace.cpp:104 ace.cpp:170 ar.cpp:102 ar.cpp:121 ar.cpp:165 ar.cpp:222
+#: ar.cpp:255 compressedfile.cpp:202 compressedfile.cpp:313 lha.cpp:156
+#: lha.cpp:226 lha.cpp:267 lha.cpp:297 rar.cpp:133 rar.cpp:208 rar.cpp:265
+#: rar.cpp:301 sevenzip.cpp:112 sevenzip.cpp:151 sevenzip.cpp:191
+#: sevenzip.cpp:239 tar.cpp:272 tar.cpp:560 tar.cpp:639 tar.cpp:683
+#: zip.cpp:105 zip.cpp:177 zip.cpp:236 zip.cpp:272 zoo.cpp:122 zoo.cpp:189
+#: zoo.cpp:248 zoo.cpp:279
+msgid "Could not start a subprocess."
+msgstr "Bir alt süreç başlatılamadı."
+
+#: arch.cpp:132
+msgid "The deletion operation failed."
+msgstr "Silme işlemi başarısız."
+
+#: arch.cpp:161
+msgid "The password was incorrect. "
+msgstr "Parola yanlış. "
+
+#: arch.cpp:162
+msgid "You must enter a password to extract the file:"
+msgstr "Dosyayı açmak için bir parola girmelisiniz:"
+
+#: arch.cpp:180
+msgid "The extraction operation failed."
+msgstr "Çıkarma işlemi başarısız oldu."
+
+#: arch.cpp:218
+msgid "The addition operation failed."
+msgstr "Ekleme işlemi başarısız oldu."
+
+#: archiveformatdlg.cpp:33
+msgid "Choose Archive Format"
+msgstr "Arşiv Biçimini Kapat"
+
+#: archiveformatdlg.cpp:40
+msgid ""
+"This file appears to be of type %1,\n"
+"which is not a supported archive format.\n"
+"In order to proceed, please choose the format\n"
+"of the file."
+msgstr ""
+"Bu dosyanın türü %1 görünüyor,\n"
+"bu nedenle desteklenen bir arşiv değil.\n"
+"Devam etmek için lütfen dosyanın \n"
+"biçimini seçiniz."
+
+#: archiveformatdlg.cpp:45
+msgid ""
+"You are about to open a file that has a non-standard extension.\n"
+"Ark has detected the format: %1\n"
+"If this is not correct, please choose the appropriate format."
+msgstr ""
+"Standart olmayan bir uzantıya sahip olan bir dosya açmak üzeresiniz.\n"
+"Ark biçimi %1 olarak algıladı.\n"
+"Doğru değilse uygun biçimi seçiniz."
+
+#: archiveformatinfo.cpp:70
+msgid "Compressed File"
+msgstr "Sıkıştırılmış Dosya"
+
+#: archiveformatinfo.cpp:114
+msgid ""
+"All Valid Archives\n"
+msgstr ""
+"Tüm Geçerli Arşivler\n"
+
+#: archiveformatinfo.cpp:115
+msgid "All Files"
+msgstr "Tüm Dosyalar"
+
+#: ark_part.cpp:47
+msgid "ark"
+msgstr "ark"
+
+#: ark_part.cpp:49
+msgid "Ark KParts Component"
+msgstr "Ark KParts Bileşeni"
+
+#: ark_part.cpp:51
+msgid "(c) 1997-2003, The Various Ark Developers"
+msgstr "(c) 1997-2003, Ark Geliştiricileri"
+
+#: ark_part.cpp:119
+msgid "Add &File..."
+msgstr "Dosya &Ekle..."
+
+#: ark_part.cpp:122
+msgid "Add Folde&r..."
+msgstr "Dizin &Ekle..."
+
+#: ark_part.cpp:125
+msgid "E&xtract..."
+msgstr "&Aç..."
+
+#: ark_part.cpp:128
+msgid "De&lete"
+msgstr "&Sil"
+
+#: ark_part.cpp:131
+msgid ""
+"_: to view something\n"
+"&View"
+msgstr "&Gözat"
+
+#: ark_part.cpp:135
+msgid "&Open With..."
+msgstr "Bi&rlikte aç..."
+
+#: ark_part.cpp:139
+msgid "Edit &With..."
+msgstr "&Birlikte Düzenle..."
+
+#: ark_part.cpp:144
+msgid "&Unselect All"
+msgstr "&Tüm Seçimleri Kaldır"
+
+#: ark_part.cpp:146
+msgid "&Invert Selection"
+msgstr "&Seçimi Tersine Çevir"
+
+#: ark_part.cpp:152
+msgid "Configure &Ark..."
+msgstr "&Ark Uygulamasını Yapılandır"
+
+#: ark_part.cpp:156
+msgid "Show Search Bar"
+msgstr "Arama Çubuğunu Göster"
+
+#: ark_part.cpp:157
+msgid "Hide Search Bar"
+msgstr "Arama Çubuğunu Gizle"
+
+#: ark_part.cpp:296
+msgid ""
+"The archive \"%1\" has been modified.\n"
+"Do you want to save it?"
+msgstr ""
+"\"%1\" adlı arşiv değiştirilmiş.\n"
+"Kaydetmet istiyor musunuz?"
+
+#: ark_part.cpp:298
+msgid "Save Archive?"
+msgstr "Arşiv kaydedilsin mi?"
+
+#: ark_part.cpp:323
+msgid "Downloading %1..."
+msgstr "%1 indiriliyor..."
+
+#: ark_part.cpp:415
+msgid "Total: 0 files"
+msgstr "Toplam: 0 dosya"
+
+#: ark_part.cpp:420 arkwidget.cpp:1808
+msgid "0 files selected"
+msgstr "0 dosya seçildi"
+
+#: arkapp.cpp:136
+msgid "Wrong number of arguments specified"
+msgstr "Hatalı sayıda argüman kullanıldı"
+
+#: arkapp.cpp:145 arkapp.cpp:188
+msgid "You need to specify at least one file to be added to the archive."
+msgstr "Arşive eklenmesi için en az bir dosya belirtmelisiniz."
+
+#: arkutils.cpp:201
+msgid "You have run out of disk space."
+msgstr "Disk Alanınız Yetersiz."
+
+#: arkwidget.cpp:91
+msgid ""
+"The file you're trying to view may be an executable. Running untrusted "
+"executables may compromise your system's security.\n"
+"Are you sure you want to run that file?"
+msgstr ""
+"Görüntülemeye çalıştığınız dosya çalıştırılabilir bir dosya olabilir. "
+"Güvenilmeyen çalıştırılabilir dosyalar sisteminizin güvenliğini tehdit "
+"edebilir.\n"
+"Dosyayı görüntülemek istediğinizden emin misiniz?"
+
+#: arkwidget.cpp:92
+msgid "Run Nevertheless"
+msgstr "Yine de Çalıştır"
+
+#: arkwidget.cpp:132
+msgid "&Search:"
+msgstr "&Ara:"
+
+#: arkwidget.cpp:198
+msgid ""
+"_n: %n file  %1\n"
+"%n files  %1"
+msgstr "%n dosya  %1"
+
+#: arkwidget.cpp:273
+msgid "Save Archive As"
+msgstr "Arşivi Farklı Kaydet"
+
+#: arkwidget.cpp:278
+msgid ""
+"Please save your archive in the same format as the original.\n"
+"Hint: Use one of the suggested extensions."
+msgstr ""
+"Lütfen arşivinizi orjinaliyle aynı biçimde saklayın.\n"
+"İpucu: Önerilen bir uzantıyı kullanabilirsiniz."
+
+#: arkwidget.cpp:296
+msgid "Saving..."
+msgstr "Kaydediliyor..."
+
+#: arkwidget.cpp:431
+#, c-format
+msgid "Could not create the folder %1"
+msgstr "%1 dizini oluşturulamadı"
+
+#: arkwidget.cpp:467
+#, c-format
+msgid "An error occurred while opening the archive %1."
+msgstr "%1 arşivi açılırken bir hata oluştu."
+
+#: arkwidget.cpp:498 arkwidget.cpp:1378
+msgid ""
+"The following files will not be extracted\n"
+"because they already exist:"
+msgstr ""
+"Aşağıdaki dosyalar açılmayacak, çünkü\n"
+"bunlar diskte mevcut:"
+
+#: arkwidget.cpp:513
+msgid "Not enough free disc space to extract the archive."
+msgstr "Bu arşivi açmak için yeterli disk alanı bulunmuyor."
+
+#: arkwidget.cpp:529
+msgid "An error occurred while extracting the archive."
+msgstr "Arşivi açarken bir hata oluştu."
+
+#: arkwidget.cpp:669
+msgid "An error occurred while adding the files to the archive."
+msgstr "Arşive dosya eklerken bir hata oluştu."
+
+#: arkwidget.cpp:708
+msgid "The archive %1 does not exist."
+msgstr "Arşiv %1 mevcut değil"
+
+#: arkwidget.cpp:714
+msgid "You do not have permission to access that archive."
+msgstr "Bu arşive ulaşmak için yeterli izne sahip değilsiniz."
+
+#: arkwidget.cpp:795
+msgid "Archive already exists. Do you wish to overwrite it?"
+msgstr "Arşiv zaten mevcut. Üzerine yazmak ister misiniz?"
+
+#: arkwidget.cpp:796
+msgid "Archive Already Exists"
+msgstr "Arşiv Zaten Mevcut"
+
+#: arkwidget.cpp:796
+msgid "Overwrite"
+msgstr "Üzerine Yaz"
+
+#: arkwidget.cpp:796
+msgid "Do Not Overwrite"
+msgstr "Üzerine Yazma"
+
+#: arkwidget.cpp:816
+#, c-format
+msgid "You do not have permission to write to the directory %1"
+msgstr "%1 dizinine yazma izniniz yok"
+
+#: arkwidget.cpp:829 arkwidget.cpp:979
+msgid "Create New Archive"
+msgstr "Yeni Arşiv Oluştur"
+
+#: arkwidget.cpp:976
+msgid ""
+"You are currently working with a simple compressed file.\n"
+"Would you like to make it into an archive so that it can contain multiple "
+"files?\n"
+"If so, you must choose a name for your new archive."
+msgstr ""
+"Şu anda basit bir sıkıştırılmış dosya üzerinde çalışmaktasınız.\n"
+"Bu dosyayı bir arşive dönüştürerek birden fazla dosya içerebilir hale getirmek "
+"ister misiniz?\n"
+"Yanıtınız evetse, yeni arşiviniz için bir isim seçmelisiniz."
+
+#: arkwidget.cpp:976
+msgid "Make Into Archive"
+msgstr ""
+
+#: arkwidget.cpp:976
+msgid "Do Not Make"
+msgstr "Yapma"
+
+#: arkwidget.cpp:991 arkwidget.cpp:2064
+msgid "Creating archive..."
+msgstr "Arşiv oluşturuluyor..."
+
+#: arkwidget.cpp:1094
+msgid "Select Files to Add"
+msgstr "Eklenecek Dosyaları Seçin"
+
+#: arkwidget.cpp:1133
+msgid "Adding files..."
+msgstr "Dosyalar ekleniyor..."
+
+#: arkwidget.cpp:1152
+msgid "Select Folder to Add"
+msgstr "Eklenecek Dizinleri Seçin"
+
+#: arkwidget.cpp:1157
+msgid "Adding folder..."
+msgstr "Dizin ekleniyor..."
+
+#: arkwidget.cpp:1249
+msgid "Do you really want to delete the selected items?"
+msgstr "Seçili birimleri silmek istediğinizden emin misiniz?"
+
+#: arkwidget.cpp:1270
+msgid "Removing..."
+msgstr "Siliniyor..."
+
+#: arkwidget.cpp:1317
+msgid "Open with:"
+msgstr "Birlikte aç:"
+
+#: arkwidget.cpp:1432
+msgid "The archive to extract from no longer exists."
+msgstr "Açılacak arşiv artık yok."
+
+#: arkwidget.cpp:1514 arkwidget.cpp:1541 arkwidget.cpp:1575 mainwindow.cpp:399
+msgid "Extracting..."
+msgstr "Açılıyor..."
+
+#: arkwidget.cpp:1603
+msgid "Edit with:"
+msgstr "Birlikte düzenle:"
+
+#: arkwidget.cpp:1614
+msgid "Trouble editing the file..."
+msgstr "Düzenlenirken hata oluştu..."
+
+#: arkwidget.cpp:1654
+msgid "Readding edited file..."
+msgstr "Düzenlenen dosya yeniden ekleniyor..."
+
+#: arkwidget.cpp:1673
+msgid "Extracting file to view"
+msgstr "Dosya görüntülenmek için açılıyor"
+
+#: arkwidget.cpp:1691
+msgid ""
+"The internal viewer is not able to display this file. Would you like to view it "
+"using an external program?"
+msgstr ""
+"Dahili gösterici bu dosyayı gösteremiyor. Dosyayı harici bir uygulama "
+"kullanarak görüntülemek ister misiniz?"
+
+#: arkwidget.cpp:1692
+msgid "View Externally"
+msgstr "Dışarıda Göster"
+
+#: arkwidget.cpp:1692
+msgid "Do Not View"
+msgstr "Gösterme"
+
+#: arkwidget.cpp:1812
+msgid "%1 files selected  %2"
+msgstr "%1 dosya seçildi  %2"
+
+#: arkwidget.cpp:1818
+#, c-format
+msgid "1 file selected  %2"
+msgstr "1 dosya seçildi  %2"
+
+#: arkwidget.cpp:1891
+msgid ""
+"Do you wish to add this to the current archive or open it as a new archive?"
+msgstr ""
+"Bunu şu anki arşive mi eklemek istersiniz yoksa yeni bir arşiv mi açmak "
+"istersiniz?"
+
+#: arkwidget.cpp:1893
+msgid "&Add"
+msgstr "&Ekle"
+
+#: arkwidget.cpp:1893
+msgid "&Open"
+msgstr "&Aç"
+
+#: arkwidget.cpp:1948
+msgid ""
+"There is no archive currently open. Do you wish to create one now for these "
+"files?"
+msgstr ""
+"Şu an açık bir arşiv dosyası yok. Bunlar için yenisini açmak ister misiniz?"
+
+#: arkwidget.cpp:1949
+msgid ""
+"There is no archive currently open. Do you wish to create one now for this "
+"file?"
+msgstr "Şu an açik bir arşiv yok. Bunlar için yenisini açmak ister misiniz?"
+
+#: arkwidget.cpp:1950
+msgid "Create Archive"
+msgstr "Arşiv Oluştur"
+
+#: arkwidget.cpp:1950 extractiondialog.cpp:149
+msgid "Do Not Create"
+msgstr "Oluşturma"
+
+#: arkwidget.cpp:2033 arkwidget.cpp:2146
+msgid "Unknown archive format or corrupted archive"
+msgstr "Bilinmeyen arşiv biçimi ya da bozuk arşiv"
+
+#: arkwidget.cpp:2040 arkwidget.cpp:2152
+msgid ""
+"The utility %1 is not in your PATH.\n"
+"Please install it or contact your system administrator."
+msgstr ""
+"Üzgünüm, uygulama %1 sizin (PATH)dizininizde değil.\n"
+"Lütfen onu kurun ya da sistem yöneticinize başvurun."
+
+#: arkwidget.cpp:2101
+msgid "An error occurred while trying to create the archive."
+msgstr "Arşiv oluşturulurken bir hata oluştu."
+
+#: arkwidget.cpp:2165
+msgid "Opening the archive..."
+msgstr "Arşiv açılıyor..."
+
+#: arkwidget.cpp:2189
+msgid ""
+"This archive is read-only. If you want to save it under a new name, go to the "
+"File menu and select Save As."
+msgstr ""
+"Bu arşiv salt okunur biçimde. Eğer bunu başka bir isim ile\n"
+"kaydetmek isterseniz, dosya menüsüne gidin ve Farklı Kaydet'i seçin."
+
+#: arkwidget.cpp:2207
+#, c-format
+msgid "An error occurred while trying to open the archive %1"
+msgstr "%1 arşivi açılırken bir hata oluştu"
+
+#. i18n: file general.ui line 16
+#: arkwidget.cpp:2242 rc.cpp:60
+#, no-c-format
+msgid "General"
+msgstr "Genel"
+
+#: arkwidget.cpp:2242
+msgid "General Settings"
+msgstr "Genel Ayarlar"
+
+#: arkwidget.cpp:2243
+msgid "Addition"
+msgstr "Ekleme"
+
+#: arkwidget.cpp:2243
+msgid "File Addition Settings"
+msgstr "Dosya Ekleme Ayarlamaları"
+
+#: arkwidget.cpp:2244
+msgid "Extraction"
+msgstr "Açma"
+
+#: arkwidget.cpp:2244
+msgid "Extraction Settings"
+msgstr "Açma Ayarlamaları"
+
+#: common_texts.cpp:1
+msgid " Filename "
+msgstr " Dosyaadı "
+
+#: common_texts.cpp:2
+msgid " Permissions "
+msgstr " İzinler "
+
+#: common_texts.cpp:3
+msgid " Owner/Group "
+msgstr " Sahip/Grup "
+
+#: common_texts.cpp:4
+msgid " Size "
+msgstr " Boyut "
+
+#: common_texts.cpp:5
+msgid " Timestamp "
+msgstr " Tarih "
+
+#: common_texts.cpp:6
+msgid " Link "
+msgstr " Köprü "
+
+#: common_texts.cpp:7
+msgid " Size Now "
+msgstr " Boyut "
+
+#: common_texts.cpp:8
+msgid " Ratio "
+msgstr " Oran "
+
+#: common_texts.cpp:9
+msgid ""
+"_: acronym for Cyclic Redundancy Check\n"
+" CRC "
+msgstr " CRC "
+
+#: common_texts.cpp:10
+msgid " Method "
+msgstr " Yöntem "
+
+#: common_texts.cpp:11
+msgid " Version "
+msgstr " Sürüm "
+
+#: common_texts.cpp:12
+msgid " Owner "
+msgstr " Sahip "
+
+#: common_texts.cpp:13
+msgid " Group "
+msgstr " Grup "
+
+#: common_texts.cpp:14
+msgid ""
+"_: (used as part of a sentence)\n"
+"start-up folder"
+msgstr "başlangıç dizini"
+
+#: common_texts.cpp:15
+msgid ""
+"_: folder for opening files (used as part of a sentence)\n"
+"open folder"
+msgstr "dizini aç"
+
+#: common_texts.cpp:16
+msgid ""
+"_: folder for extracting files (used as part of a sentence)\n"
+"extract folder"
+msgstr "açılacak dizin"
+
+#: common_texts.cpp:17
+msgid ""
+"_: folder for adding files (used as part of a sentence)\n"
+"add folder"
+msgstr "dizin ekle"
+
+#: common_texts.cpp:19
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: common_texts.cpp:20
+msgid "&Adding"
+msgstr "&Ekleniyor"
+
+#: common_texts.cpp:21
+msgid "&Extracting"
+msgstr "A&çılıyor"
+
+#: common_texts.cpp:22
+msgid "&Folders"
+msgstr "&Dizinler"
+
+#: common_texts.cpp:23
+msgid "Add Settings"
+msgstr "Ayarlara Ekle"
+
+#: common_texts.cpp:24
+msgid "Extract Settings"
+msgstr "Ayarları Aç"
+
+#: common_texts.cpp:25
+msgid "Replace &old files only with newer files"
+msgstr "&Eski dosyaları yenileri ile değiştir"
+
+#: common_texts.cpp:26
+msgid "Keep entries &generic (Lha)"
+msgstr "Girdileri &cinsleri gibi koru (Lha)"
+
+#. i18n: file addition.ui line 32
+#: common_texts.cpp:27 rc.cpp:33
+#, no-c-format
+msgid "Force &MS-DOS short filenames (Zip)"
+msgstr "MS-DOS &tarzı (8+3) dosya isimlerine zorla"
+
+#: common_texts.cpp:28
+msgid "Translate LF to DOS &CRLF (Zip)"
+msgstr "LF leri DOS a çavir &CRLF (Zip)"
+
+#. i18n: file addition.ui line 56
+#: common_texts.cpp:29 rc.cpp:42
+#, no-c-format
+msgid "&Recursively add subfolders (Zip, Rar)"
+msgstr "&Tekrar alt dizinleri ekle (Zip, Rar)"
+
+#. i18n: file addition.ui line 48
+#: common_texts.cpp:30 rc.cpp:39
+#, no-c-format
+msgid "&Store symlinks as links (Zip, Rar)"
+msgstr "&Sembolik bağlantıları aynen kaydet(Zip, Rar)"
+
+#. i18n: file extraction.ui line 24
+#: common_texts.cpp:31 rc.cpp:45
+#, no-c-format
+msgid "O&verwrite files (Zip, Tar, Zoo, Rar)"
+msgstr "D&osyaların üzerine kopyala (Zip, Tar, Zoo, Rar)"
+
+#. i18n: file extraction.ui line 32
+#: common_texts.cpp:32 rc.cpp:48
+#, no-c-format
+msgid "&Preserve permissions (Tar)"
+msgstr "İ&zinleri muhafaza et (Tar)"
+
+#. i18n: file extraction.ui line 40
+#: common_texts.cpp:33 rc.cpp:51
+#, no-c-format
+msgid "&Ignore folder names (Zip)"
+msgstr "D&izin isimlerini yoksay (Zip)"
+
+#: common_texts.cpp:34
+msgid "Convert filenames to &lowercase (Zip, Rar)"
+msgstr "Dosya i&simlerini küçük harfe çevir (Zip, Rar)"
+
+#: common_texts.cpp:35
+msgid "Convert filenames to &uppercase (Rar)"
+msgstr "Dosya isi&mlerini küçük harfe çevir (Rar)"
+
+#: compressedfile.cpp:73
+msgid ""
+"You are creating a simple compressed archive which contains only one input "
+"file.\n"
+"When uncompressed, the file name will be based on the name of the archive "
+"file.\n"
+"If you add more files you will be prompted to convert it to a real archive."
+msgstr ""
+"Sadece bir dosya içeren basit bir sıkıştırılmış arşiv oluşturuyorsunuz.\n"
+"Açıldığında dosya ismi arşivin ismine göre verilecek.\n"
+"Eğer daha fazla dosya eklerseniz, bunu gerçek bir arşive dönüştürmeniz "
+"istenecek."
+
+#: compressedfile.cpp:76
+msgid "Simple Compressed Archive"
+msgstr "Sıkıştırılmış Basit Arşiv"
+
+#: compressedfile.cpp:328 tar.cpp:176 tar.cpp:192
+msgid "Trouble writing to the archive..."
+msgstr "Arşive yazılırken hata..."
+
+#: extractiondialog.cpp:59
+msgid "Extract"
+msgstr "Aç"
+
+#: extractiondialog.cpp:66
+#, c-format
+msgid "Extract Files From %1"
+msgstr "%1 Buraya Dosyaları Aç"
+
+#: extractiondialog.cpp:83
+msgid "Extract:"
+msgstr "Aç:"
+
+#: extractiondialog.cpp:85
+msgid "Selected files only"
+msgstr "Sadece seçilmiş dosyalar"
+
+#: extractiondialog.cpp:86
+msgid "All files"
+msgstr "Tüm dosyalar"
+
+#: extractiondialog.cpp:93
+msgid "Extract all files"
+msgstr "Tüm dosyaları aç"
+
+#: extractiondialog.cpp:98
+msgid "Destination folder: "
+msgstr "Hedef dizin: "
+
+#. i18n: file ark.kcfg line 82
+#: extractiondialog.cpp:122 rc.cpp:135
+#, no-c-format
+msgid "Open destination folder after extraction"
+msgstr "Hedef dizini belirtin sonra açın"
+
+#: extractiondialog.cpp:148
+msgid "Create folder %1?"
+msgstr "%1 dizini oluşturulsun mu?"
+
+#: extractiondialog.cpp:149
+msgid "Missing Folder"
+msgstr "Kayıp Dizin"
+
+#: extractiondialog.cpp:149
+msgid "Create Folder"
+msgstr "Dizini Oluştur"
+
+#: extractiondialog.cpp:158
+msgid "The folder could not be created. Please check permissions."
+msgstr "Dizin oluşturulamadı. Lütfen izinleri kontrol edin."
+
+#: extractiondialog.cpp:164
+msgid ""
+"You do not have write permission to this folder. Please provide another folder."
+msgstr ""
+"Bu dizine yazma yetkiniz yok. Lütfen yetkiniz olan başka bir dizin belirleyin."
+
+#: filelistview.cpp:155
+msgid ""
+"_: Packed Ratio\n"
+"%1 %"
+msgstr "% %1"
+
+#: filelistview.cpp:201
+msgid ""
+"This area is for displaying information about the files contained within an "
+"archive."
+msgstr "Bu alan arşivin içindeki dosyalar hakkında bilgi gösterimi içindir."
+
+#: main.cpp:50
+msgid "Open extract dialog, quit when finished"
+msgstr "Çıkarma penceresini aç, işlem bitince kapat."
+
+#: main.cpp:51
+msgid ""
+"Extract 'archive' to 'folder'. Quit when finished.\n"
+"'folder' will be created if it does not exist."
+msgstr ""
+"'Arşivi' 'dizine' aç. Bittiğinde kapat.\n"
+"'Dizin' mevcut değilse oluşturulacaktır."
+
+#: main.cpp:53
+msgid "Ask for the name of the archive to add 'files' to. Quit when finished."
+msgstr "Dosyaların ekleneceği arşiv ismini sor. Bitince kapat."
+
+#: main.cpp:54
+msgid ""
+"Add 'files' to 'archive'. Quit when finished.\n"
+"'archive' will be created if it does not exist."
+msgstr ""
+"'Dosyaları' 'arşive' ekle. Bittiğinde kapat.\n"
+"'Arşiv' mevcut değilse oluştur."
+
+#: main.cpp:56
+msgid ""
+"Used with '--extract-to'. When specified, 'archive'\n"
+"will be extracted to a subfolder of 'folder'\n"
+"whose name will be the name of 'archive' without the filename extension."
+msgstr ""
+"'--buraya-aç' ile kullanılır. Tanımlandığında, 'arşiv'\n"
+"'dizinin' 'arşiv' adının uzantısız\n"
+"hali olan adlı alt dizinine açılacaktır."
+
+#: main.cpp:59
+msgid "Folder to extract to"
+msgstr "Arşivin açılacağı dizin"
+
+#: main.cpp:60
+msgid "Files to be added"
+msgstr "Eklenecek dosyalar"
+
+#: main.cpp:61
+msgid "Open 'archive'"
+msgstr "'Arşiv' aç"
+
+#: main.cpp:67
+msgid "Ark"
+msgstr "Ark"
+
+#: main.cpp:68
+msgid "KDE Archiving tool"
+msgstr "KDE Arşivleme aracı"
+
+#: main.cpp:70
+msgid "(c) 1997-2006, The Various Ark Developers"
+msgstr "(c) 1997-2006, Ark Geliştiricileri"
+
+#: main.cpp:74
+msgid "Maintainer"
+msgstr "Projeyi Sürdüren"
+
+#: main.cpp:80
+msgid "Former maintainer"
+msgstr "Önceki Geliştirici"
+
+#: main.cpp:102
+msgid "Icons"
+msgstr "Simgeler"
+
+#: main.cpp:105
+msgid "Ideas, help with the icons"
+msgstr "Fikirler, simgeler konusunda yardım"
+
+#: mainwindow.cpp:112
+msgid "New &Window"
+msgstr "&Yeni Pencere"
+
+#: mainwindow.cpp:118
+msgid "Re&load"
+msgstr "Yeniden &Yükle"
+
+#: mainwindow.cpp:224
+msgid ""
+"The archive %1 is already open and has been raised.\n"
+"Note: if the filename does not match, it only means that one of the two is a "
+"symbolic link."
+msgstr ""
+"%1 arşivi zaten açık.\n"
+"Not: Eğer dosya isimleri aynı değilse, bunun olası tek anlamı dosyalardan "
+"birinin sembolik link olmasıdır."
+
+#: mainwindow.cpp:251
+msgid "Open &as:"
+msgstr "&Farklı aç:"
+
+#: mainwindow.cpp:259
+msgid "Autodetect (default)"
+msgstr "Otomatik tanı (öntanımlı)"
+
+#: mainwindow.cpp:421
+msgid "Select Archive to Add Files To"
+msgstr "Dosyaların Ekleneceği Arşivi Seçin"
+
+#: mainwindow.cpp:434
+msgid "Compressing..."
+msgstr "Sıkıştırılıyor..."
+
+#: mainwindow.cpp:456
+msgid "Please Wait"
+msgstr "Lütfen Bekleyin"
+
+#. i18n: file ark_part.rc line 16
+#: rc.cpp:9 rc.cpp:21
+#, no-c-format
+msgid "&Action"
+msgstr "İşle&m"
+
+#. i18n: file addition.ui line 24
+#: rc.cpp:30
+#, no-c-format
+msgid "Replace old files only &with newer files"
+msgstr "&Eski dosyaları sadece yenileri ile değiştir"
+
+#. i18n: file addition.ui line 40
+#: rc.cpp:36
+#, no-c-format
+msgid "Translate &LF to DOS CRLF (Zip)"
+msgstr "&LF leri DOS CRLF (Zip) ye Çevir"
+
+#. i18n: file extraction.ui line 48
+#: rc.cpp:54
+#, no-c-format
+msgid "Convert file names to &lowercase (Zip, Rar)"
+msgstr "Dosya i&simlerini küçük harfe çevir (Zip, Rar)"
+
+#. i18n: file extraction.ui line 56
+#: rc.cpp:57
+#, no-c-format
+msgid "Convert file names to &uppercase (Rar)"
+msgstr "Dosya isi&mlerini büyük harfe çevir (Rar)"
+
+#. i18n: file general.ui line 27
+#: rc.cpp:63
+#, no-c-format
+msgid "&Use integrated viewer"
+msgstr "&Dahili izleyici kullan"
+
+#. i18n: file general.ui line 35
+#: rc.cpp:66
+#, no-c-format
+msgid "&Enable Konqueror integration"
+msgstr "&Konqueror ile bütünleşik çalış"
+
+#. i18n: file general.ui line 68
+#: rc.cpp:69
+#, no-c-format
+msgid ""
+"<font size=\"-1\"><i>Konqueror integration is only available if you install the "
+"Konqueror integration plugin from the kdeaddons package.</i></font>"
+msgstr ""
+"<font size=\"-1\"><i>Kdeaddons paketinden Konqueror bütünleştirme eklentisi "
+"kurulması halinde bu seçenek geçerlidir.</i></font>"
+
+#. i18n: file ark.kcfg line 9
+#: rc.cpp:72
+#, no-c-format
+msgid "Last folders used for extraction"
+msgstr "Açmak için kullanılan son dizinler"
+
+#. i18n: file ark.kcfg line 12
+#: rc.cpp:75
+#, no-c-format
+msgid "Replace old files only with newer files"
+msgstr "Eski dosyaları sadece yenileri ile değiştir"
+
+#. i18n: file ark.kcfg line 13
+#: rc.cpp:78
+#, no-c-format
+msgid ""
+"If this option is enabled and you add filenames that already exist in an "
+"archive, only replace the old files if the added files are newer than them"
+msgstr ""
+"Bu seçenek seçiliyse ve bir arşivde zaten mevcut olan dosya adları eklerseniz, "
+"sadece eski"
+
+#. i18n: file ark.kcfg line 17
+#: rc.cpp:81
+#, no-c-format
+msgid "Overwrite files (Zip, Tar, Zoo, Rar)"
+msgstr "Dosyaların üzerine yaz (Zip, Tar, Zoo, Rar)"
+
+#. i18n: file ark.kcfg line 18
+#: rc.cpp:84
+#, no-c-format
+msgid ""
+"Overwrite any files that have matching names on disk with the one from the "
+"archive"
+msgstr ""
+"Arşivdeki dosyalarla ayna isme sahip olan diskteki dosyaların üzerine yaz"
+
+#. i18n: file ark.kcfg line 24
+#: rc.cpp:87
+#, no-c-format
+msgid "Preserve permissions"
+msgstr "İzinleri koru"
+
+#. i18n: file ark.kcfg line 25
+#: rc.cpp:90
+#, no-c-format
+msgid ""
+"Save the user, group, and permission settings on files. Use with care, as this "
+"may result in files being extracted that do not belong to any valid user on "
+"your computer"
+msgstr ""
+"Kullanıcı, grup ve izin ayarlarını dosyaya kaydet. Dikkatli kullanın, çünkü bu, "
+"bu bilgisayarda geçerli olmayan bir kullanıcıya ait dosyaların çıkarılmasına "
+"neden olabilir"
+
+#. i18n: file ark.kcfg line 31
+#: rc.cpp:93
+#, no-c-format
+msgid "Force MS-DOS short filenames (Zip)"
+msgstr "MS-DOS tarzı (8+3) dosya isimlerine zorla (Zip)"
+
+#. i18n: file ark.kcfg line 32
+#: rc.cpp:96
+#, no-c-format
+msgid "Force names of files in Zip archives to the DOS 8.3 format"
+msgstr "Zip arşivindeki dosya isimlerini DOS 8.3 biçimine uymaya zorla"
+
+#. i18n: file ark.kcfg line 36
+#: rc.cpp:99
+#, no-c-format
+msgid "Translate LF to DOS CRLF"
+msgstr "LF'leri DOS CRLF'ye Çevir"
+
+#. i18n: file ark.kcfg line 40
+#: rc.cpp:102
+#, no-c-format
+msgid "Ignore folder names (Zip)"
+msgstr "Dizin isimlerini yoksay (Zip)"
+
+#. i18n: file ark.kcfg line 41
+#: rc.cpp:105
+#, no-c-format
+msgid ""
+"Extract all the files into the extraction folder, ignoring any folder structure "
+"in the archive."
+msgstr ""
+"Tüm dosyaları çıkarma dizinine, arşivdeki dizin yapısını yok sayarak çıkart."
+
+#. i18n: file ark.kcfg line 47
+#: rc.cpp:108
+#, no-c-format
+msgid "Store symlinks as links (Zip, Rar)"
+msgstr "Sembolik bağlantıları bağlantılar olarak kaydet (Zip, Rar)"
+
+#. i18n: file ark.kcfg line 51
+#: rc.cpp:111
+#, no-c-format
+msgid "Recursively add subfolders (Zip, Rar)"
+msgstr "Altdizinleri özyineli ekle (Zip, Rar)"
+
+#. i18n: file ark.kcfg line 55
+#: rc.cpp:114
+#, no-c-format
+msgid "Convert filenames to lowercase (Zip, Rar)"
+msgstr "Dosya isimlerini küçük harfe çevir (Zip, Rar)"
+
+#. i18n: file ark.kcfg line 59
+#: rc.cpp:117
+#, no-c-format
+msgid "Convert filenames to uppercase"
+msgstr "Dosya isimlerini büyük harfe çevir"
+
+#. i18n: file ark.kcfg line 65
+#: rc.cpp:120
+#, no-c-format
+msgid "Show search bar"
+msgstr "Arama çubuğunu göster"
+
+#. i18n: file ark.kcfg line 69
+#: rc.cpp:123
+#, no-c-format
+msgid "Enable Konqueror integration"
+msgstr "Konqueror ile bütünleşik çalış"
+
+#. i18n: file ark.kcfg line 70
+#: rc.cpp:126
+#, no-c-format
+msgid ""
+"Enables integration with Konqueror's context menus, letting you easily archive "
+"or unarchive files. This option will only work if you have the kdeaddons "
+"package installed."
+msgstr ""
+"Kolayca arşiv oluşturmak ve açmak için Konqueror'un menülerine eklenmeyi "
+"sağlar. Bu seçenek sadece kdeaddons paketi kurulu ise çalışacaktır."
+
+#. i18n: file ark.kcfg line 74
+#: rc.cpp:129
+#, no-c-format
+msgid "Use integrated viewer"
+msgstr "Dahili izleyiciyi kullan"
+
+#. i18n: file ark.kcfg line 78
+#: rc.cpp:132
+#, no-c-format
+msgid "Tar Command"
+msgstr "Tar Komutu"
+
+#. i18n: file ark.kcfg line 86
+#: rc.cpp:138
+#, no-c-format
+msgid "Enable experimental support for loading ACE files"
+msgstr "Deneysel durumdaki ACE dosyalarını yükleme desteğini etkinleştir"
+
+#: searchbar.cpp:38
+msgid "Reset Search"
+msgstr "Aramayı Sıfırla"
+
+#: searchbar.cpp:41
+msgid ""
+"Reset Search\n"
+"Resets the search bar, so that all archive entries are shown again."
+msgstr ""
+"Aramayı Sıfırla\n"
+"Arama çubuğunu sıfırlar, böylece tüm arşiv girdileri tekrar gösterilir."
+
+#: tar.cpp:405
+msgid "Unable to fork a decompressor"
+msgstr "Bir açıcı bulunamıyor"
+
+#: tar.cpp:432
+msgid "Trouble writing to the tempfile..."
+msgstr "Geçici dosyaya yazarken bir hata oluştu..."

@@ -1,0 +1,3476 @@
+# translation of kalarm.po to
+# translation of kalarm.po to
+# translation of kalarm.po to Turkish
+# Görkem Çetin <gorkem@kde.org>, 2002, 2003.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2003.
+# Ayşe Genç <ayse@uludag.org.tr>, 2005.
+# Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
+# Engin Çağatay <engincagatay@yahoo.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kalarm\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-08-19 01:19+0200\n"
+"PO-Revision-Date: 2008-02-29 15:51+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@lists.kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: LoKalize 0.2\n"
+"Plural-Forms:  nplurals=1; plural=0;\n"
+
+#: fontcolour.h:42
+msgid "Requested font"
+msgstr "İstenilen yazıtipi"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Serdar Soytetir, Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "tulliana@gmail.com, gorkem@kde.org"
+
+#: alarmcalendar.cpp:115
+msgid "%1: file name not permitted: %2"
+msgstr "%1 dosya ismine izin verilmedi: %2"
+
+#: alarmcalendar.cpp:136
+msgid "%1, %2: file names must be different"
+msgstr "%1, %2: dosya isimleri farklı olmalı"
+
+#: alarmcalendar.cpp:143
+#, c-format
+msgid "Invalid calendar file name: %1"
+msgstr "Geçersiz takvim dosyası adı: %1"
+
+#: alarmcalendar.cpp:324
+#, c-format
+msgid ""
+"Cannot open calendar:\n"
+"%1"
+msgstr ""
+"Takvim açılamadı: \n"
+" %1"
+
+#: alarmcalendar.cpp:341
+msgid ""
+"Error loading calendar:\n"
+"%1\n"
+"\n"
+"Please fix or delete the file."
+msgstr ""
+"Yüklenemeyen takvim:\n"
+"%1\n"
+"\n"
+"Lütfen dosyayı silin ya da düzeltin."
+
+#: alarmcalendar.cpp:386
+msgid ""
+"Failed to save calendar to\n"
+"'%1'"
+msgstr ""
+"Takvim '%1'e\n"
+"kaydedilemedi"
+
+#: alarmcalendar.cpp:395
+msgid ""
+"Cannot upload calendar to\n"
+"'%1'"
+msgstr ""
+"Takvim '%1'e\n"
+"gönderilemedi"
+
+#: alarmcalendar.cpp:449
+msgid "Calendar Files"
+msgstr "Takvim Dosyaları"
+
+#: alarmcalendar.cpp:471 alarmcalendar.cpp:493
+msgid "Could not load calendar '%1'."
+msgstr "'%1' takvimi yüklenemedi."
+
+#: alarmcalendar.cpp:480
+#, c-format
+msgid ""
+"Cannot download calendar:\n"
+"%1"
+msgstr ""
+"Takvim indirilemedi: \n"
+"%1"
+
+#: alarmevent.cpp:2077
+msgid ""
+"_: Brief form of 'At Login'\n"
+"Login"
+msgstr "Giriş"
+
+#: alarmevent.cpp:2077
+msgid "At login"
+msgstr "Girişte"
+
+#: alarmevent.cpp:2085 alarmevent.cpp:2119
+#, c-format
+msgid ""
+"_n: 1 Minute\n"
+"%n Minutes"
+msgstr "%n Dakika"
+
+#: alarmevent.cpp:2087 alarmevent.cpp:2121
+#, c-format
+msgid ""
+"_n: 1 Hour\n"
+"%n Hours"
+msgstr "%n Saat"
+
+#: alarmevent.cpp:2091 alarmevent.cpp:2123
+msgid ""
+"_: Hours and Minutes\n"
+"%1H %2M"
+msgstr "%1S %2D"
+
+#: alarmevent.cpp:2094 alarmevent.cpp:2126
+#, c-format
+msgid ""
+"_n: 1 Day\n"
+"%n Days"
+msgstr "%n Gün"
+
+#: alarmevent.cpp:2096 alarmevent.cpp:2127
+#, c-format
+msgid ""
+"_n: 1 Week\n"
+"%n Weeks"
+msgstr "%n Hafta"
+
+#: alarmevent.cpp:2098
+#, c-format
+msgid ""
+"_n: 1 Month\n"
+"%n Months"
+msgstr "%n Ay"
+
+#: alarmevent.cpp:2100
+#, c-format
+msgid ""
+"_n: 1 Year\n"
+"%n Years"
+msgstr "%n Yıl"
+
+#: alarmevent.cpp:2106 alarmevent.cpp:2129 soundpicker.cpp:52
+msgid "None"
+msgstr "Hiçbiri"
+
+#: alarmlistview.cpp:69 editdlg.cpp:293 editdlg.cpp:357
+msgid "Time"
+msgstr "Zaman"
+
+#: alarmlistview.cpp:70
+msgid "Time To"
+msgstr "Zaman'a Değin"
+
+#: alarmlistview.cpp:71 sounddlg.cpp:65
+msgid "Repeat"
+msgstr "Tekrarla"
+
+#: alarmlistview.cpp:74
+msgid "Message, File or Command"
+msgstr "Mesaj, Komut ya da Dosya"
+
+#: alarmlistview.cpp:329
+msgid "Next scheduled date and time of the alarm"
+msgstr "Bir sonraki uyarının planlanmış zamanı"
+
+#: alarmlistview.cpp:331
+msgid "How long until the next scheduled trigger of the alarm"
+msgstr "Uyarının bir daha görüntülenmesi için geçmesi gereken zaman"
+
+#: alarmlistview.cpp:333
+msgid "How often the alarm recurs"
+msgstr "Uyarı tekrarlamaları arasındaki süre"
+
+#: alarmlistview.cpp:335
+msgid "Background color of alarm message"
+msgstr "Uyarı iletisinin arkaplan rengi"
+
+#: alarmlistview.cpp:337
+msgid "Alarm type (message, file, command or email)"
+msgstr "Uyarı tipi (mesaj, dosya, komut ya da e-posta)"
+
+#: alarmlistview.cpp:339
+msgid ""
+"Alarm message text, URL of text file to display, command to execute, or email "
+"subject line"
+msgstr ""
+"Uyarı iletisi metni, gösterilecek metin dosyasının adresi, veya e-posta konu "
+"satırı."
+
+#: alarmlistview.cpp:340
+msgid "List of scheduled alarms"
+msgstr "Planlanmış uyarıların listesi"
+
+#: alarmlistview.cpp:534
+#, c-format
+msgid ""
+"_: n days\n"
+" %1d "
+msgstr ""
+"n gün\n"
+"%1d"
+
+#: alarmlistview.cpp:543
+msgid ""
+"_: hours:minutes\n"
+" %1:%2 "
+msgstr ""
+"saat:dakika\n"
+"%1:%2"
+
+#: alarmlistview.cpp:546
+msgid ""
+"_: days hours:minutes\n"
+" %1d %2:%3 "
+msgstr " %1g %2:%3 "
+
+#: alarmtext.cpp:246
+msgid ""
+"_: Copy-to in email headers\n"
+"Cc:"
+msgstr "Cc:"
+
+#: alarmtext.cpp:247
+msgid "Date:"
+msgstr "Tarih:"
+
+#: alarmtimewidget.cpp:47
+msgid "Time from no&w:"
+msgstr "&Şu andan itibaren geçecek zaman:"
+
+#: alarmtimewidget.cpp:50
+msgid ""
+"Enter the length of time (in hours and minutes) after the current time to "
+"schedule the alarm."
+msgstr ""
+"Uyarının ayarlanacağı zamanı şu andan itibaren saat ve dakika olarak giriniz."
+
+#: alarmtimewidget.cpp:82
+msgid ""
+"For a simple repetition, enter the date/time of the first occurrence.\n"
+"If a recurrence is configured, the start date/time will be adjusted to the "
+"first recurrence on or after the entered date/time."
+msgstr ""
+
+#: alarmtimewidget.cpp:95
+msgid "&Defer to date/time:"
+msgstr "&Bu tariye/saate ertele:"
+
+#: alarmtimewidget.cpp:95
+msgid "At &date/time:"
+msgstr "Bu &tarihte/saatte:"
+
+#: alarmtimewidget.cpp:98
+msgid "Reschedule the alarm to the specified date and time."
+msgstr "Uyarıyı belirlenmiş zamana göre tekrar ayarla."
+
+#: alarmtimewidget.cpp:99
+msgid "Schedule the alarm at the specified date and time."
+msgstr "Uyarıyı belirlenmiş tarih ve saate göre ayarla."
+
+#: alarmtimewidget.cpp:105
+msgid "Enter the date to schedule the alarm."
+msgstr "Uyarıyı ayarlamak için bir tarih girin."
+
+#: alarmtimewidget.cpp:116
+msgid "Enter the time to schedule the alarm."
+msgstr "Uyarıyı ayarlamak için bir saat girin."
+
+#: alarmtimewidget.cpp:130 editdlg.cpp:327
+msgid "An&y time"
+msgstr "&Herhangi bir zaman"
+
+#: alarmtimewidget.cpp:133
+msgid "Schedule the alarm for any time during the day"
+msgstr "Uyarıyı gün içinde herhangi bir zamana ayarla"
+
+#: alarmtimewidget.cpp:137
+msgid "Defer for time &interval:"
+msgstr "Zaman aralığınca &ertele: "
+
+#: alarmtimewidget.cpp:141
+msgid "Reschedule the alarm for the specified time interval after now."
+msgstr ""
+"Uyarıyı şu andan itibaren belirtilen zaman kadar sonrasına tekrar ayarla."
+
+#: alarmtimewidget.cpp:142
+msgid "Schedule the alarm after the specified time interval from now."
+msgstr "Uyarıyı belirtilen zaman kadar sonrasına ayarla."
+
+#: alarmtimewidget.cpp:239
+msgid "Invalid date"
+msgstr "Geçersiz tarih"
+
+#: alarmtimewidget.cpp:246 alarmtimewidget.cpp:285
+msgid "Invalid time"
+msgstr "Geçersiz saat"
+
+#: alarmtimewidget.cpp:260
+msgid "Alarm date has already expired"
+msgstr "Uyarı tarihi zaten geçmiş"
+
+#: alarmtimewidget.cpp:272
+msgid "Alarm time has already expired"
+msgstr "Alarmın zamanı geçti"
+
+#: birthdaydlg.cpp:74
+msgid "Import Birthdays From KAddressBook"
+msgstr "Doğum günlerini KAdderssBook'tan İçeri Aktar"
+
+#: birthdaydlg.cpp:85
+msgid "Birthday: "
+msgstr "Doğum günü: "
+
+#: birthdaydlg.cpp:88
+msgid "Alarm Text"
+msgstr "Alarm Metni"
+
+#: birthdaydlg.cpp:90
+msgid "Pre&fix:"
+msgstr "&Önek:"
+
+#: birthdaydlg.cpp:96
+msgid ""
+"Enter text to appear before the person's name in the alarm message, including "
+"any necessary trailing spaces."
+msgstr ""
+"Alarm iletisinde kişinin adından önce görünecek metni gerekli tüm bolşlıkları "
+"da dolduracak şekilde giriniz."
+
+#: birthdaydlg.cpp:99
+msgid "S&uffix:"
+msgstr "&Sonek:"
+
+#: birthdaydlg.cpp:105
+msgid ""
+"Enter text to appear after the person's name in the alarm message, including "
+"any necessary leading spaces."
+msgstr ""
+
+#: birthdaydlg.cpp:108
+msgid "Select Birthdays"
+msgstr "Doğum günlerini Seç"
+
+#: birthdaydlg.cpp:115 templatelistview.cpp:46
+msgid "Name"
+msgstr "İsim"
+
+#: birthdaydlg.cpp:116
+msgid "Birthday"
+msgstr "Doğum günü"
+
+#: birthdaydlg.cpp:119
+msgid ""
+"Select birthdays to set alarms for.\n"
+"This list shows all birthdays in KAddressBook except those for which alarms "
+"already exist.\n"
+"\n"
+"You can select multiple birthdays at one time by dragging the mouse over the "
+"list, or by clicking the mouse while pressing Ctrl or Shift."
+msgstr ""
+"Alarm kurmak için doğum günü seçiniz.\n"
+"Bu liste KAddressBook'ta bulunan, alarm kurulmamış tüm doğum günlerini "
+"gösterir.\n"
+"\n"
+"Bir kerede, fareyi üstlerine getirerek ya da Ctrl veya Shift'e basarken fareye "
+"tıklayarak birden fazla seçim yapabilirsiniz."
+
+#: birthdaydlg.cpp:124
+msgid "Alarm Configuration"
+msgstr "Alarm Yapılandırması"
+
+#: birthdaydlg.cpp:140
+msgid "&Reminder"
+msgstr "&Hatırlatıcı"
+
+#: birthdaydlg.cpp:141
+msgid "Check to display a reminder in advance of the birthday."
+msgstr "Doğum gününden önce hatırlatıcı gösterilmesi için seçiniz."
+
+#: birthdaydlg.cpp:142
+msgid ""
+"Enter the number of days before each birthday to display a reminder. This is in "
+"addition to the alarm which is displayed on the birthday."
+msgstr ""
+"Her doğum gününden kaç gün önce hatırlatıcı gösterileceğini yazınız. Ayrıca "
+"doğum gününde de hatırlatıcı gösterilecektir."
+
+#: birthdaydlg.cpp:160 editdlg.cpp:142
+msgid "Special Actions..."
+msgstr "Özel Eylemler..."
+
+#: birthdaydlg.cpp:171 recurrenceedit.cpp:172
+msgid "Sub-Repetition"
+msgstr "Alt-Tekrarlama"
+
+#: birthdaydlg.cpp:173
+msgid "Set up an additional alarm repetition"
+msgstr "Ek alarm tekrarlaması ayarla"
+
+#: birthdaydlg.cpp:211
+msgid "Error reading address book"
+msgstr "Adres defterinden girdi okunurken hata oluştu"
+
+#: daemon.cpp:140
+msgid "Alarm daemon not found."
+msgstr "Alarm programı bulunamadı."
+
+#: daemon.cpp:223
+msgid ""
+"Cannot enable alarms.\n"
+"Installation or configuration error: Alarm Daemon (%1) version is incompatible."
+msgstr ""
+"Alarmlar etkinleştirilemedi.\n"
+"Kurulum ya da yapılandırma hatası: Alarm servisi (%1) sürümü uyumsuz."
+
+#: daemon.cpp:237
+msgid ""
+"Alarms will be disabled if you stop KAlarm.\n"
+"(Installation or configuration error: %1 cannot locate %2 executable.)"
+msgstr ""
+"Eğer KAlarm durdurulursa alarmlar etkisiz kılınacaktır.\n"
+"(Kurulum ya da yapılandırma hatası: %1, %2 çalıştırılabilir dosyasını "
+"bulamadı.)"
+
+#: daemon.cpp:250
+msgid ""
+"Cannot enable alarms:\n"
+"Failed to register with Alarm Daemon (%1)"
+msgstr ""
+"Uyarılar etkin kılınamıyor:\n"
+"Uyarı sunucusuna kayıt olunamadı (%1)"
+
+#: daemon.cpp:307
+msgid ""
+"Cannot enable alarms:\n"
+"Failed to start Alarm Daemon (%1)"
+msgstr ""
+"Uyarılar etkin kılınamıyor:\n"
+"Uyarı sunucusuna başlatılamadı (%1)"
+
+#: daemon.cpp:727
+msgid "Enable &Alarms"
+msgstr "&Uyarıları Etkinleştir"
+
+#: daemon.cpp:730
+msgid "Disable &Alarms"
+msgstr "Uyarıları &Pasifleştir"
+
+#: deferdlg.cpp:44
+msgid "Cancel &Deferral"
+msgstr "&Ertelemeyi İptal Et"
+
+#: deferdlg.cpp:60
+msgid "Defer the alarm until the specified time."
+msgstr "Belirlenen zamana kadar uyarıyı ertele."
+
+#: deferdlg.cpp:61
+msgid "Cancel the deferred alarm. This does not affect future recurrences."
+msgstr "Ertelemeyi iptal et. Bundan sonraki tekrarlara bir etkisi olmaz."
+
+#: deferdlg.cpp:96
+msgid "Cannot defer past the alarm's next sub-repetition (currently %1)"
+msgstr ""
+"Alarrmın bir sonraki alt hatırlatıcısı geçmişe ertelenemez (şu anda %1)"
+
+#: deferdlg.cpp:99
+msgid "Cannot defer past the alarm's next recurrence (currently %1)"
+msgstr "Alarrmın bir sonraki hatırlatıcısı geçmişe ertelenemez (şu anda %1)"
+
+#: deferdlg.cpp:102
+msgid "Cannot defer past the alarm's next reminder (currently %1)"
+msgstr "Uyarı, bir sonraki hatırlatıcısından ileriye ertelenemez. (şu anda %1)"
+
+#: deferdlg.cpp:105
+msgid "Cannot defer reminder past the main alarm time (%1)"
+msgstr "Uyarı, bir sonraki tekrarından ileriye ertelenemez. (şu anda %1)"
+
+#: editdlg.cpp:104
+msgid "Choose Text or Image File to Display"
+msgstr "Gösterilecek Metni Ya Da Resim Dosyasını Seçiniz"
+
+#: editdlg.cpp:121
+msgid "Choose Log File"
+msgstr "Günlük Dosyası Seçin"
+
+#: editdlg.cpp:135
+msgid "&Recurrence - [%1]"
+msgstr "&Tekrarlanma - [%1]"
+
+#: editdlg.cpp:140
+msgid "Confirm acknowledgment"
+msgstr "Bildirimi onayla"
+
+#: editdlg.cpp:141
+msgid "Confirm ac&knowledgment"
+msgstr "Bildirimi &onayla"
+
+#: editdlg.cpp:143
+msgid "Show in KOrganizer"
+msgstr "KOrganizer'da göster"
+
+#: editdlg.cpp:144
+msgid "Show in KOr&ganizer"
+msgstr "KOr&ganizer'da göster"
+
+#: editdlg.cpp:145
+msgid "Enter a script"
+msgstr "Bir betik girin"
+
+#: editdlg.cpp:146
+msgid "Enter a scri&pt"
+msgstr "Bir be&tik girin"
+
+#: editdlg.cpp:147
+msgid "Execute in terminal window"
+msgstr "Uçbirim penceresinde çalıştır"
+
+#: editdlg.cpp:148
+msgid "Execute in terminal &window"
+msgstr "Uçbirim &penceresinde çalıştır"
+
+#: editdlg.cpp:149
+msgid "Exec&ute in terminal window"
+msgstr "Uç&birim penceresinde çalıştır"
+
+#: editdlg.cpp:150
+msgid "Lo&g to file"
+msgstr "&Günlük dosyasına kaydet"
+
+#: editdlg.cpp:151
+msgid "Copy email to self"
+msgstr "E-Postayı kendine kopyala"
+
+#: editdlg.cpp:152
+msgid "Copy &email to self"
+msgstr "&E-Postayı kendine kopyala"
+
+#: editdlg.cpp:153
+msgid "Copy email to &self"
+msgstr "E-Postayı &kendine kopyala"
+
+#: editdlg.cpp:154
+msgid ""
+"_: 'From' email address\n"
+"From:"
+msgstr "Gönderen:"
+
+#: editdlg.cpp:155
+msgid ""
+"_: 'From' email address\n"
+"&From:"
+msgstr "&Tarafından:"
+
+#: editdlg.cpp:156 messagewin.cpp:456
+msgid ""
+"_: Email addressee\n"
+"To:"
+msgstr "Alıcı:"
+
+#: editdlg.cpp:157 messagewin.cpp:463
+msgid ""
+"_: Email subject\n"
+"Subject:"
+msgstr "E-Posta konusu"
+
+#: editdlg.cpp:158
+msgid ""
+"_: Email subject\n"
+"Sub&ject:"
+msgstr "&Konu:"
+
+#: editdlg.cpp:190
+msgid "Load Template..."
+msgstr "Şablon Yükle..."
+
+#: editdlg.cpp:198
+msgid "Template name:"
+msgstr "Şablon Adı"
+
+#: editdlg.cpp:203
+msgid "Enter the name of the alarm template"
+msgstr "Uyarı şablonunun adını yazın"
+
+#: editdlg.cpp:211
+msgid "&Alarm"
+msgstr "&Uyarı"
+
+#: editdlg.cpp:230
+msgid "Action"
+msgstr "Eylem"
+
+#: editdlg.cpp:238
+msgid "Te&xt"
+msgstr "&Metin"
+
+#: editdlg.cpp:241
+msgid "If checked, the alarm will display a text message."
+msgstr "Eğer seçili ise uyarı, bir yazı görüntüleyecektir."
+
+#: editdlg.cpp:249
+msgid ""
+"If checked, the alarm will display the contents of a text or image file."
+msgstr "Eğer seçili ise uyarı, bir dosyanın içeriğini görüntüleyecektir."
+
+#: editdlg.cpp:254 find.cpp:130
+msgid "Co&mmand"
+msgstr "&Komut"
+
+#: editdlg.cpp:257
+msgid "If checked, the alarm will execute a shell command."
+msgstr "Eğer seçili ise alarm, bir kabuk programını çalıştıracaktır."
+
+#: editdlg.cpp:262 find.cpp:135
+msgid "&Email"
+msgstr "&E-posta"
+
+#: editdlg.cpp:265
+msgid "If checked, the alarm will send an email."
+msgstr "Eğer seçili ise alarm, bir e-posta gönderecektir."
+
+#: editdlg.cpp:276
+msgid "Deferred Alarm"
+msgstr "Ertelenmiş Uyarı"
+
+#: editdlg.cpp:278
+msgid "Deferred to:"
+msgstr "Ertelendiği zaman:"
+
+#: editdlg.cpp:282
+msgid "C&hange..."
+msgstr "&Değiştir..."
+
+#: editdlg.cpp:285
+msgid "Change the alarm's deferred time, or cancel the deferral"
+msgstr "Uyarının ertelenen zamanını değiştir ya da ertelemeyi iptal et"
+
+#: editdlg.cpp:301
+msgid "&Default time"
+msgstr "&Öntanımlı zaman:"
+
+#: editdlg.cpp:305
+msgid ""
+"Do not specify a start time for alarms based on this template. The normal "
+"default start time will be used."
+msgstr ""
+"Bu şablona uyan uyarılar için bir başlangıç zamanı belirleme. Öntanımlı "
+"başlangıç zamanı kullanılacaktır."
+
+#: editdlg.cpp:311
+msgid "Time:"
+msgstr "Zaman"
+
+#: editdlg.cpp:315
+msgid "Specify a start time for alarms based on this template."
+msgstr "Bu şablona uyan uyarılar için bir başlangıç zamanı belirle."
+
+#: editdlg.cpp:321
+msgid "Enter the start time for alarms based on this template."
+msgstr "Bu şablona uyan uyarıların başlangıç zamanlarını girin."
+
+#: editdlg.cpp:331
+msgid "Set the '%1' option for alarms based on this template."
+msgstr "Bu şablona uyan uyarılar için '%1' özelliğini ayarla."
+
+#: editdlg.cpp:331 recurrenceedit.cpp:272
+msgid "Any time"
+msgstr "Herhangi bir zaman"
+
+#: editdlg.cpp:340
+msgid ""
+"Set alarms based on this template to start after the specified time interval "
+"from when the alarm is created."
+msgstr ""
+
+#: editdlg.cpp:363
+msgid ""
+"Enter how long in advance of the main alarm to display a reminder alarm."
+msgstr ""
+"Uyarıdan ne kadar süre önce hatırlatıcının gösterilmesini istediğinizi yazın."
+
+#: editdlg.cpp:364
+msgid "Rem&inder:"
+msgstr "Hatırlatıcı: "
+
+#: editdlg.cpp:365
+msgid ""
+"Check to additionally display a reminder in advance of the main alarm time(s)."
+msgstr ""
+
+#: editdlg.cpp:388
+msgid "Check to copy the alarm into KOrganizer's calendar"
+msgstr "Alarmı KOrganizer'ın takvimine kopyalamak için işaretleyin"
+
+#: editdlg.cpp:392
+msgid "Schedule the alarm at the specified time."
+msgstr "Uyarı belirlenmiş zamana ayarla."
+
+#: editdlg.cpp:426
+msgid "Enter the text of the alarm message. It may be multi-line."
+msgstr "Uyarı iletisini buraya yazın. İleti birden fazla satırdan oluşabilir."
+
+#: editdlg.cpp:434
+msgid "Enter the name or URL of a text or image file to display."
+msgstr "Görüntülenecek metin ya da resim dosyasını, ya da adresi buraya yazın."
+
+#: editdlg.cpp:440 editdlg.cpp:531 sounddlg.cpp:103
+msgid "Choose a file"
+msgstr "Bir dosya seçin"
+
+#: editdlg.cpp:441
+msgid "Select a text or image file to display."
+msgstr "Gösterilecek bir metin ya da resim dosyası seçin."
+
+#: editdlg.cpp:454 fontcolour.cpp:80
+msgid "&Background color:"
+msgstr "Arkaplan rengi:"
+
+#: editdlg.cpp:457 fontcolour.cpp:85
+msgid "Select the alarm message background color"
+msgstr "Alarm mesajı arka alan rengini seç"
+
+#: editdlg.cpp:493
+msgid "Check to enter the contents of a script instead of a shell command line"
+msgstr "Bir uçbirim komutu yerine bir betiğin içeriğini girmek için seçin"
+
+#: editdlg.cpp:497
+msgid "Enter a shell command to execute."
+msgstr "Çalıştırılacak bir kabuk komutu girin."
+
+#: editdlg.cpp:501
+msgid "Enter the contents of a script to execute"
+msgstr "Çalıştırılacak olan programın içeriğini girin"
+
+#: editdlg.cpp:506
+msgid "Command Output"
+msgstr "Komut Çıktısı"
+
+#: editdlg.cpp:514
+msgid "Check to execute the command in a terminal window"
+msgstr "Komutu bir uçbirim penceresinde çalıştırmak için seçin"
+
+#: editdlg.cpp:524
+msgid "Enter the name or path of the log file."
+msgstr "Günlük dosyasının adını ya da konumunu girin."
+
+#: editdlg.cpp:532
+msgid "Select a log file."
+msgstr "Bir günlük dosyası seçin."
+
+#: editdlg.cpp:538
+msgid ""
+"Check to log the command output to a local file. The output will be appended to "
+"any existing contents of the file."
+msgstr ""
+
+#: editdlg.cpp:546
+msgid "Check to discard command output."
+msgstr ""
+
+#: editdlg.cpp:579
+msgid ""
+"Your email identity, used to identify you as the sender when sending email "
+"alarms."
+msgstr ""
+"E-posta alarmları gönderilirken sizi tanımlamak için kullanılan e-posta "
+"kimliğiniz."
+
+#: editdlg.cpp:591
+msgid ""
+"Enter the addresses of the email recipients. Separate multiple addresses by "
+"commas or semicolons."
+msgstr ""
+"E-postayı alacak olan kişi ya da kişilerin adreslerini yazınız. Birden fazla "
+"adresi virgüllerle ayırmalısınız."
+
+#: editdlg.cpp:599
+msgid "Open address book"
+msgstr "Adres defterini aç"
+
+#: editdlg.cpp:600
+msgid "Select email addresses from your address book."
+msgstr "Adres defteinden e-posta adresleri seç."
+
+#: editdlg.cpp:611
+msgid "Enter the email subject."
+msgstr "E-postanın konusunu belirtin."
+
+#: editdlg.cpp:616
+msgid "Enter the email message."
+msgstr "E-posta iletisini yazın."
+
+#: editdlg.cpp:621
+msgid "Attachment&s:"
+msgstr "&Ekler:"
+
+#: editdlg.cpp:633
+msgid "Files to send as attachments to the email."
+msgstr "E-posta ile gönderilecek ekler."
+
+#: editdlg.cpp:637
+msgid "Add..."
+msgstr "Ekle..."
+
+#: editdlg.cpp:639
+msgid "Add an attachment to the email."
+msgstr "E-postaya eklenecek olan dosyalar."
+
+#: editdlg.cpp:642
+msgid "Remo&ve"
+msgstr "&Sil"
+
+#: editdlg.cpp:644
+msgid "Remove the highlighted attachment from the email."
+msgstr "E-postadan silinecek olan dosyalar."
+
+#: editdlg.cpp:651
+msgid "If checked, the email will be blind copied to you."
+msgstr ""
+"Eğer bu kısım işaretlenirse, e-postanın bir kopyası gizli karbon kopya ile size "
+"de gönderilecektir."
+
+#: editdlg.cpp:979
+msgid "Check to be prompted for confirmation when you acknowledge the alarm."
+msgstr "Uyarı bildiriminde onay sorulması için işaretleyin."
+
+#: editdlg.cpp:1350
+msgid "You must enter a name for the alarm template"
+msgstr "Uyarı şablonu için bir isim girmelisiniz"
+
+#: editdlg.cpp:1355
+msgid "Template name is already in use"
+msgstr "Bu şablon adı zaten kullanılıyor"
+
+#: editdlg.cpp:1398
+msgid "Recurrence has already expired"
+msgstr "Tekrar zamanı geçti"
+
+#: editdlg.cpp:1426
+msgid ""
+"Reminder period must be less than the recurrence interval, unless '%1' is "
+"checked."
+msgstr ""
+"'%1' işaretli değilse hatırlatma dönemi tekrarlama aralığından kısa olmalı"
+
+#: editdlg.cpp:1441
+msgid ""
+"The duration of a repetition within the recurrence must be less than the "
+"recurrence interval minus any reminder period"
+msgstr ""
+
+#: editdlg.cpp:1448
+msgid ""
+"For a repetition within the recurrence, its period must be in units of days or "
+"weeks for a date-only alarm"
+msgstr ""
+
+#: editdlg.cpp:1470
+msgid "Do you really want to send the email now to the specified recipient(s)?"
+msgstr "Gerçekten bu e-postayı belirtilen alıcılara göndermek istiyor musunuz?"
+
+#: editdlg.cpp:1471
+msgid "Confirm Email"
+msgstr "E-posta Onayla"
+
+#: editdlg.cpp:1471
+msgid "&Send"
+msgstr "&Gönder"
+
+#: editdlg.cpp:1482
+#, c-format
+msgid ""
+"Command executed:\n"
+"%1"
+msgstr ""
+"Çalıştırılan komut:\n"
+"%1"
+
+#: editdlg.cpp:1489
+#, c-format
+msgid ""
+"\n"
+"Bcc: %1"
+msgstr ""
+"\n"
+"Bcc: %1"
+
+#: editdlg.cpp:1490
+msgid ""
+"Email sent to:\n"
+"%1%2"
+msgstr ""
+"E-postalar bu kişiye gönderildi:\n"
+"%1%2"
+
+#: editdlg.cpp:1550 messagewin.cpp:1541
+msgid "Defer Alarm"
+msgstr "Alarmı Ertele"
+
+#: editdlg.cpp:1704
+msgid ""
+"Log file must be the name or path of a local file, with write permission."
+msgstr ""
+"Günlük dosyası, yazma izni olan bir dosyanın konumu ya da ismi olmalıdır."
+
+#: editdlg.cpp:1730
+#, c-format
+msgid ""
+"Invalid email address:\n"
+"%1"
+msgstr ""
+"Geçersiz e-posta adresi:\n"
+"%1"
+
+#: editdlg.cpp:1737
+msgid "No email address specified"
+msgstr "Hiç e-posta adresi belirtilmedi"
+
+#: editdlg.cpp:1754
+#, c-format
+msgid ""
+"Invalid email attachment:\n"
+"%1"
+msgstr ""
+"Geçersiz e-posta eklentisi:\n"
+"%1"
+
+#: editdlg.cpp:1783
+msgid "Display the alarm message now"
+msgstr "Uyarı iletisini şimdi göster"
+
+#: editdlg.cpp:1800
+msgid "Display the file now"
+msgstr "Dosyayı şimdi göster"
+
+#: editdlg.cpp:1812
+msgid "Execute the specified command now"
+msgstr "Belirtilen bir komutu şimdi çalıştır"
+
+#: editdlg.cpp:1823
+msgid "Send the email to the specified addressees now"
+msgstr "Belirtilen adreslere e-postayı şimdi gönder"
+
+#: editdlg.cpp:1897
+msgid "Choose File to Attach"
+msgstr "Eklenecek Olan Dosyaları Seçin"
+
+#: editdlg.cpp:2004
+msgid "Please select a file to display"
+msgstr "Lütfen görüntülemek için bir dosya seçin"
+
+#: editdlg.cpp:2006
+msgid ""
+"%1\n"
+"not found"
+msgstr ""
+"%1\n"
+"bulunamadı"
+
+#: editdlg.cpp:2007
+msgid ""
+"%1\n"
+"is a folder"
+msgstr ""
+"%1\n"
+"bir dizin"
+
+#: editdlg.cpp:2008
+msgid ""
+"%1\n"
+"is not readable"
+msgstr ""
+"%1\n"
+"okunabilir değil"
+
+#: editdlg.cpp:2009
+msgid ""
+"%1\n"
+"appears not to be a text or image file"
+msgstr ""
+"%1\n"
+"bir metin ya da resim dosyası değil"
+
+#: find.cpp:97
+msgid "Alarm Type"
+msgstr "Alarm Türü"
+
+#: find.cpp:104
+msgid "Acti&ve"
+msgstr "Etk&in"
+
+#: find.cpp:106
+msgid "Check to include active alarms in the search."
+msgstr "Aramanın etkin alarmları içermesi için işaretleyin."
+
+#: find.cpp:109
+msgid "Ex&pired"
+msgstr "Süresi &Geçmiş"
+
+#: find.cpp:112
+msgid ""
+"Check to include expired alarms in the search. This option is only available if "
+"expired alarms are currently being displayed."
+msgstr ""
+
+#: find.cpp:120
+msgid "Text"
+msgstr "Metin"
+
+#: find.cpp:122
+msgid "Check to include text message alarms in the search."
+msgstr "Aramanın metin mesajı alarmlarını içermesi için işaretleyin."
+
+#: find.cpp:125
+msgid "Fi&le"
+msgstr "D&osya"
+
+#: find.cpp:127
+msgid "Check to include file alarms in the search."
+msgstr "Aramada dosya alarmlarını da içermek için seçin."
+
+#: find.cpp:132
+msgid "Check to include command alarms in the search."
+msgstr "Aramada komut alarmlarını da içermek için seçin."
+
+#: find.cpp:137
+msgid "Check to include email alarms in the search."
+msgstr "Aramanın e-posta alarmlarını içermesi için işaretleyin."
+
+#: find.cpp:225
+msgid "No alarm types are selected to search"
+msgstr "Aramak için bir alarm türü seçilmedi"
+
+#: find.cpp:366
+msgid ""
+"End of alarm list reached.\n"
+"Continue from the beginning?"
+msgstr ""
+"Alarm listesinin sonuna gelindi.\n"
+"Baştan devam edilsin mi?"
+
+#: find.cpp:367
+msgid ""
+"Beginning of alarm list reached.\n"
+"Continue from the end?"
+msgstr ""
+"Alarm listesinin başına gelindi.\n"
+"Sondan devam edilsin mi?"
+
+#: fontcolour.cpp:68
+msgid "&Foreground color:"
+msgstr "Ö&nplan rengi:"
+
+#: fontcolour.cpp:73
+msgid "Select the alarm message foreground color"
+msgstr "Uyarı iletisi ön plan rengini seç"
+
+#: fontcolour.cpp:91
+msgid "Add Co&lor..."
+msgstr "&Renk Ekle..."
+
+#: fontcolour.cpp:94
+msgid "Choose a new color to add to the color selection list."
+msgstr "Renk seçim listesine eklemek için yeni bir renk seçiniz."
+
+#: fontcolour.cpp:97
+msgid "&Remove Color"
+msgstr "Rengi &Sil"
+
+#: fontcolour.cpp:101
+msgid ""
+"Remove the color currently shown in the background color chooser, from the "
+"color selection list."
+msgstr ""
+"Arkaplan renk seçicisinde şu anda gösterilen rengi renk seçim listesinden "
+"kaldır."
+
+#: fontcolour.cpp:108
+msgid "Use &default font"
+msgstr "&Öntanımlı yazıtipini kullan"
+
+#: fontcolour.cpp:112
+msgid ""
+"Check to use the default font current at the time the alarm is displayed."
+msgstr ""
+"Uyarının görüntüleceği zaman ön tanımlı yazıtipini kullanmak için seçin."
+
+#: fontcolourbutton.cpp:48
+msgid "Font && Co&lor..."
+msgstr "&Yazıtipi ve Renk..."
+
+#: fontcolourbutton.cpp:52
+msgid ""
+"Choose the font, and foreground and background color, for the alarm message."
+msgstr "Uyarı iletisinin yazıtipi, önplan ve arkaplan rengini seçin."
+
+#: fontcolourbutton.cpp:59
+msgid "The Quick Brown Fox Jumps Over The Lazy Dog"
+msgstr "Dağ Başını Duman Almış, Gümüş Dere Durmaz Akar"
+
+#: fontcolourbutton.cpp:63
+msgid ""
+"This sample text illustrates the current font and color settings. You may edit "
+"it to test special characters."
+msgstr ""
+
+#: fontcolourbutton.cpp:100
+msgid "Choose Alarm Font & Color"
+msgstr "Yazıtipi ve Renk"
+
+#: functions.cpp:505
+msgid "Error saving alarms"
+msgstr "Alarmlar kaydedilirken hata"
+
+#: functions.cpp:506
+msgid "Error saving alarm"
+msgstr "Alarm kaydetme hatası"
+
+#: functions.cpp:509
+msgid "Error deleting alarms"
+msgstr "Alarmlar silinirken hata"
+
+#: functions.cpp:510
+msgid "Error deleting alarm"
+msgstr "Alarm silme hatası"
+
+#: functions.cpp:513
+msgid "Error saving reactivated alarms"
+msgstr "Yeniden etkinleştirilen alarmlar kaydedilirken hata"
+
+#: functions.cpp:514
+msgid "Error saving reactivated alarm"
+msgstr "Yeniden etkinleştirilen alarm kaydetme hatası"
+
+#: functions.cpp:517
+msgid "Error saving alarm template"
+msgstr "Alarm şablonu kaydetme hatası"
+
+#: functions.cpp:532
+msgid "Unable to show alarms in KOrganizer"
+msgstr "Alarmlar KOrganizer içerisinde gösterilemiyor"
+
+#: functions.cpp:533
+msgid "Unable to show alarm in KOrganizer"
+msgstr "Alarm KOrganizer içerisinde gösterilemiyor"
+
+#: functions.cpp:536
+msgid "Unable to update alarm in KOrganizer"
+msgstr "Alarm KOrganizer içerisinde güncellenemiyor"
+
+#: functions.cpp:539
+msgid "Unable to delete alarms from KOrganizer"
+msgstr "Alarmlar KOrganizer içerisinden silinemiyor"
+
+#: functions.cpp:540
+msgid "Unable to delete alarm from KOrganizer"
+msgstr "Alarm KOrganizer içerisinden silinemiyor"
+
+#: functions.cpp:634
+msgid ""
+"_: Please set the 'From' email address...\n"
+"%1\n"
+"Please set it in the Preferences dialog."
+msgstr ""
+"%1\n"
+"Lütfen Gönderenin e-posta adresini Seçenekler penceresinden ayarlayın."
+
+#: functions.cpp:638
+msgid ""
+"Alarms are currently disabled.\n"
+"Do you want to enable alarms now?"
+msgstr ""
+"Uyarılar şu anda etkisiz.\n"
+"Uyarıları etkinleştirmek ister misiniz?"
+
+#: functions.cpp:639
+msgid "Enable"
+msgstr "Etkinleştir"
+
+#: functions.cpp:639
+msgid "Keep Disabled"
+msgstr "Pasif Olarak Bırak"
+
+#: functions.cpp:706
+msgid ""
+"Unable to start KMail\n"
+"(%1)"
+msgstr ""
+"KMail başlatılamıyor\n"
+"(%1)"
+
+#: kalarmapp.cpp:332
+msgid "%1 requires %2, %3 or %4"
+msgstr "%1'in, %2, %3 ya da %4'e ihtiyacı var"
+
+#: kalarmapp.cpp:334
+msgid "%1, %2, %3 mutually exclusive"
+msgstr "%1,%2,%3 aynı anda kullanılamaz"
+
+#: kalarmapp.cpp:344
+msgid "%1: wrong calendar file"
+msgstr "%1: hatalı takvim dosyası"
+
+#: kalarmapp.cpp:372
+msgid "%1: Event %2 not found, or not editable"
+msgstr "%1: Etkinlik %2 bulunamadı ya da düzenlenebilir değil"
+
+#: kalarmapp.cpp:404 kalarmapp.cpp:406 kalarmapp.cpp:416 kalarmapp.cpp:508
+#: kalarmapp.cpp:510 kalarmapp.cpp:519 kalarmapp.cpp:585 kalarmapp.cpp:587
+#: kalarmapp.cpp:589 kalarmapp.cpp:609 kalarmapp.cpp:619 kalarmapp.cpp:622
+#: kalarmapp.cpp:624
+msgid "%1 incompatible with %2"
+msgstr "%1 %2 ile uyumsuz"
+
+#: kalarmapp.cpp:408
+#, c-format
+msgid "message incompatible with %1"
+msgstr "ileti %1 ile uyumsuz"
+
+#: kalarmapp.cpp:438
+msgid "%1: invalid email address"
+msgstr "%1: geçersiz e-posta adresi"
+
+#: kalarmapp.cpp:456 kalarmapp.cpp:458 kalarmapp.cpp:460 kalarmapp.cpp:462
+#: kalarmapp.cpp:528 kalarmapp.cpp:569 kalarmapp.cpp:571 kalarmapp.cpp:642
+msgid "%1 requires %2"
+msgstr "%2'e, %1 tarafından ihtiyaç duyuluyor"
+
+#: kalarmapp.cpp:481 kalarmapp.cpp:492 kalarmapp.cpp:499 kalarmapp.cpp:525
+#: kalarmapp.cpp:534 kalarmapp.cpp:546 kalarmapp.cpp:597 kalarmapp.cpp:628
+#: kalarmapp.cpp:639
+msgid "Invalid %1 parameter"
+msgstr "Geçersiz %1 parametresi"
+
+#: kalarmapp.cpp:536
+msgid "%1 earlier than %2"
+msgstr "%1 %2'dan önce"
+
+#: kalarmapp.cpp:548 kalarmapp.cpp:630
+msgid "Invalid %1 parameter for date-only alarm"
+msgstr "Sadece gün için hazırlanan uyarı için geçersiz %1 parametresi"
+
+#: kalarmapp.cpp:555
+msgid "Invalid %1 and %2 parameters: repetition is longer than %3 interval"
+msgstr ""
+"%1 ve %2 parametreleri geçersiz: tekrarlama %3 aralığından daha uzun olamaz"
+
+#: kalarmapp.cpp:604
+msgid "%1 requires %2 or %3"
+msgstr "%1, %2 ya da %3'a ihtiyaç duyuyor"
+
+#: kalarmapp.cpp:611
+msgid "%1 requires speech synthesis to be configured using KTTSD"
+msgstr "%1 KTTSD için yapılandırılmış ses analizi gerektirir"
+
+#: kalarmapp.cpp:731
+msgid ": option(s) only valid with a message/%1/%2"
+msgstr ": seçenek(ler) sadece ileti/%1/%2 ile geçerlidir"
+
+#: kalarmapp.cpp:751
+msgid ""
+"\n"
+"Use --help to get a list of available command line options.\n"
+msgstr ""
+"\n"
+"Mevcut komut satırı parametrelerini --help kullanarak listeleyebilirsiniz.\n"
+
+#: kalarmapp.cpp:824
+msgid ""
+"Quitting will disable alarms\n"
+"(once any alarm message windows are closed)."
+msgstr ""
+"Çıkış uyarıları geçersiz kılacak.(herhangi bir uyarı penceresi ilk "
+"kapandığında)"
+
+#: kalarmapp.cpp:1817
+msgid "Error creating temporary script file"
+msgstr "Geçici betik dosyası oluşturulamıyor"
+
+#: kalarmapp.cpp:1908
+msgid "Pre-alarm action:"
+msgstr "Uyarı öncesi eylemi:"
+
+#: kalarmapp.cpp:1910
+msgid "Post-alarm action:"
+msgstr "Uyarı sonrası eylemi:"
+
+#: kamail.cpp:86
+msgid ""
+"A 'From' email address must be configured in order to execute email alarms."
+msgstr "Gönderen E-Posta adresini, E-Posta uyarıları işletilirken kullanılır."
+
+#: kamail.cpp:89
+msgid ""
+"_: KMail folder name: this should be translated the same as in kmail\n"
+"sent-mail"
+msgstr "gönderilmiş iletiler"
+
+#: kamail.cpp:118
+msgid ""
+"Invalid 'From' email address.\n"
+"KMail identity '%1' not found."
+msgstr ""
+"Geçersiz 'Gönderen' adresi.\n"
+"'%1' KMail kimliği bulunamadı."
+
+#: kamail.cpp:125
+msgid ""
+"Invalid 'From' email address.\n"
+"Email identity '%1' has no email address"
+msgstr ""
+"Geçersiz 'Gönderen' adresi.\n"
+"'%1' E-posta kimliğinin e-posta adresi yok."
+
+#: kamail.cpp:134
+msgid ""
+"No 'From' email address is configured (no default KMail identity found)\n"
+"Please set it in KMail or in the KAlarm Preferences dialog."
+msgstr ""
+"Hiç bir 'Gönderen' e-posta adresi yapılandırılmadı (KMail öntanımlı kimliği "
+"yok)\n"
+"Lütfen KMail içerisinden ya da KAlarm Seçenekler penceresinden ayarlayın."
+
+#: kamail.cpp:137
+msgid ""
+"No 'From' email address is configured.\n"
+"Please set it in the KDE Control Center or in the KAlarm Preferences dialog."
+msgstr ""
+"Hiç bir 'Gönderen' e-posta adresi yapılandırılmadı.\n"
+"Lütfen KDE Kontrol Merkezi içerisinden ya da KAlarm Seçenekler penceresinden "
+"ayarlayın."
+
+#: kamail.cpp:141
+msgid ""
+"No 'From' email address is configured.\n"
+"Please set it in the KAlarm Preferences dialog."
+msgstr ""
+"Hiç bir 'Gönderen' e-posta adresi yapılandırılmadı.\n"
+"Lütfen KAlarm Seçenekler penceresinden ayarlayın."
+
+#: kamail.cpp:170
+msgid "%1 not found"
+msgstr "%1 bulunamadı"
+
+#: kamail.cpp:272 kamail.cpp:327
+msgid "Error calling KMail"
+msgstr "Kmail çalıştırılmaya çalıştırılırken hata"
+
+#: kamail.cpp:440
+#, c-format
+msgid ""
+"Error attaching file:\n"
+"%1"
+msgstr ""
+"Dosyayı eklerken hata:\n"
+"%1"
+
+#: kamail.cpp:449
+#, c-format
+msgid ""
+"Attachment not found:\n"
+"%1"
+msgstr ""
+"Eklenti bulunamadı:\n"
+"%1"
+
+#: kamail.cpp:540
+msgid "An email has been queued to be sent by KMail"
+msgstr "KMail ile gönderilmek üzere bir posta kuyruğa eklendi"
+
+#: kamail.cpp:541
+msgid "An email has been queued to be sent"
+msgstr "Bir posta gönderilmek üzere kuyruğa eklendi"
+
+#: kamail.cpp:924
+msgid "Failed to send email"
+msgstr "E-posta gönderilemedi"
+
+#: kamail.cpp:925
+msgid "Error copying sent email to KMail %1 folder"
+msgstr "Gönderilmiş e-posta KMail içerisindeki %1 dizinine kopyalanamadı"
+
+#: latecancel.cpp:35
+msgid "Cancel if late"
+msgstr "Geç kalmışsa iptal et"
+
+#: latecancel.cpp:36
+msgid "Ca&ncel if late"
+msgstr "&Geç kalmışsa iptal et"
+
+#: latecancel.cpp:37
+msgid "Auto-close window after this time"
+msgstr "Bundan sonra pencereyi otomatik kapat"
+
+#: latecancel.cpp:38
+msgid "Auto-close window after late-cancelation time"
+msgstr "Geç-iptal zamanından sonra pencereyi otomatik olarak kapat"
+
+#: latecancel.cpp:39
+msgid "Auto-close w&indow after late-cancelation time"
+msgstr "Geç-iptal zamanından sonra &pencereyi otomatik olarak kapat"
+
+#: latecancel.cpp:48
+msgid ""
+"If checked, the alarm will be canceled if it cannot be triggered within the "
+"specified period after its scheduled time. Possible reasons for not triggering "
+"include your being logged off, X not running, or the alarm daemon not running.\n"
+"\n"
+"If unchecked, the alarm will be triggered at the first opportunity after its "
+"scheduled time, regardless of how late it is."
+msgstr ""
+"Seçili ise, uyarı belirtilen zamandan 1 dakika sonraya kadar çalışmazsa iptal "
+"edilir. Çalışamama sebepleri arasında kullanıcının çıkmış olması, X pencere "
+"ortamının çalışmıyor olması, veya uyarı programcığının çalışmaması "
+"gösterilebilir.\n"
+"\n"
+"Seçili değil ise, uyarı belirtilen zamandan ne kadar sonra olursa olsun ilk "
+"fırsatta çalışacaktır. "
+
+#: latecancel.cpp:72
+msgid ""
+"_: Cancel if late by 10 minutes\n"
+"Ca&ncel if late by"
+msgstr "Şu kadardan daha fazla gecikmişse &iptal et"
+
+#: latecancel.cpp:73
+msgid "Enter how late will cause the alarm to be canceled"
+msgstr "Uyarının ne kadar geç kaldıktan sonra iptal edileceğini yazınız."
+
+#: latecancel.cpp:83
+msgid ""
+"Automatically close the alarm window after the expiry of the late-cancelation "
+"period"
+msgstr ""
+
+#: main.cpp:37
+msgid "Prompt for confirmation when alarm is acknowledged"
+msgstr "Alarm bildiriminde onaylama iste"
+
+#: main.cpp:39
+msgid "Attach file to email (repeat as needed)"
+msgstr "E-Postaya dosya ekle (gerekirse tekrarla)"
+
+#: main.cpp:40
+msgid "Auto-close alarm window after --late-cancel period"
+msgstr ""
+
+#: main.cpp:41
+msgid "Blind copy email to self"
+msgstr "E-postanın bir kopyasını bana gönder"
+
+#: main.cpp:43
+msgid "Beep when message is displayed"
+msgstr "İleti görüntülendiğinde sesle uyar"
+
+#: main.cpp:46
+msgid "Message background color (name or hex 0xRRGGBB)"
+msgstr "İleti arkaplan rengi (renk adı, ya da onaltılı 0xRRGGBB şeklinde)"
+
+#: main.cpp:49
+msgid "Message foreground color (name or hex 0xRRGGBB)"
+msgstr "İleti arkaplan rengi (renk adı, ya da onaltılı 0xRRGGBB şeklinde)"
+
+#: main.cpp:50
+msgid "URL of calendar file"
+msgstr "Takvim dosyasının URL adresi"
+
+#: main.cpp:51
+msgid "Cancel alarm with the specified event ID"
+msgstr "İleti belirtilen olay kimliği ile iptal et"
+
+#: main.cpp:53
+msgid "Disable the alarm"
+msgstr "Uyarıyı kapat"
+
+#: main.cpp:55
+msgid "Execute a shell command line"
+msgstr "Bir kabuk komutunu çalıştır"
+
+#: main.cpp:56
+msgid "Display the alarm edit dialog to edit the specified alarm"
+msgstr "Belirtilen alarmı düzenlemek için alarm düzenleme penceresini göster"
+
+#: main.cpp:58
+msgid "Display the alarm edit dialog to edit a new alarm"
+msgstr "Yeni bir alarmı düzenlemek için alarm düzenleme penceresini göster"
+
+#: main.cpp:59
+msgid "Display the alarm edit dialog, preset with a template"
+msgstr "Alarm düzenleme penceresini göster, bir şablonla başla"
+
+#: main.cpp:61
+msgid "File to display"
+msgstr "Görüntülenecek dosya"
+
+#: main.cpp:63
+msgid "KMail identity to use as sender of email"
+msgstr "E-postanın göndericisi olarak kullanılacak kimlik"
+
+#: main.cpp:64
+msgid "Trigger or cancel alarm with the specified event ID"
+msgstr "İletiyi belirtilen olay kimliği ile iptal et ya da çalıştır"
+
+#: main.cpp:66
+msgid "Interval between alarm repetitions"
+msgstr "Uyarı tekrarlanmaları arasındaki süre"
+
+#: main.cpp:68
+msgid "Show alarm as an event in KOrganizer"
+msgstr "Alarmı, KOrganizer'da bir olay olarak göster"
+
+#: main.cpp:70
+msgid "Cancel alarm if more than 'period' late when triggered"
+msgstr ""
+
+#: main.cpp:72
+msgid "Repeat alarm at every login"
+msgstr "Her girişte uyarıyı tekrarla"
+
+#: main.cpp:74
+msgid "Send an email to the given address (repeat as needed)"
+msgstr "Verilen adrese e-posta yolla (gerekiyorsa tekrarla)"
+
+#: main.cpp:76
+msgid "Audio file to play once"
+msgstr "Çalınacak ses dosyası"
+
+#: main.cpp:79
+msgid "Audio file to play repeatedly"
+msgstr "Tekrarlanarak çalınacak ses dosyası"
+
+#: main.cpp:81
+msgid "Specify alarm recurrence using iCalendar syntax"
+msgstr "Uyarı tekrarını iCalenrar söz dizimi kullanarak belirt"
+
+#: main.cpp:83
+msgid "Display reminder in advance of alarm"
+msgstr "Uyarıdan önce hatırlatıcıyı göster"
+
+#: main.cpp:84
+msgid "Display reminder once, before first alarm recurrence"
+msgstr ""
+
+#: main.cpp:86
+msgid "Number of times to repeat alarm (including initial occasion)"
+msgstr ""
+"İlk görüntülenmesinden sonra uyarının kaç kez tekrar edeceği (ilk sefer dahil)"
+
+#: main.cpp:87
+msgid "Reset the alarm scheduling daemon"
+msgstr "Uyarı zamanlayıcı uygulamayı sıfırla"
+
+#: main.cpp:89
+msgid "Speak the message when it is displayed"
+msgstr "Gösterildiğinde, mesajı seslendir"
+
+#: main.cpp:90
+msgid "Stop the alarm scheduling daemon"
+msgstr "Alarm zamanlayıcı uygulamasını durdur"
+
+#: main.cpp:92
+msgid "Email subject line"
+msgstr "E-Posta konu satırı"
+
+#: main.cpp:94
+msgid "Trigger alarm at time [[[yyyy-]mm-]dd-]hh:mm, or date yyyy-mm-dd"
+msgstr ""
+"Uyarıyı [[[yyyy-]aa-]gg-]ss:dd zamanında, veya yyyy-aa-gg tarihinde çalıştır"
+
+#: main.cpp:95
+msgid "Display system tray icon"
+msgstr "Sistem çekmecesi simgesini göster"
+
+#: main.cpp:96
+msgid "Trigger alarm with the specified event ID"
+msgstr "Uyarıyı belirtilen olay ile çalıştır"
+
+#: main.cpp:98
+msgid "Repeat until time [[[yyyy-]mm-]dd-]hh:mm, or date yyyy-mm-dd"
+msgstr ""
+"[[[yyyy-]aa-]gg-]ss:dd zamanına,  veya yyyy-aa-gg tarihine kadar tekrarla"
+
+#: main.cpp:101
+msgid "Volume to play audio file"
+msgstr "Çalınacak dosyanın ses seviyesi"
+
+#: main.cpp:103
+msgid "Message text to display"
+msgstr "Görüntülenecek ileti dosyası"
+
+#: main.cpp:110
+msgid "KAlarm"
+msgstr "KAlarm"
+
+#: main.cpp:111
+msgid "Personal alarm message, command and email scheduler for KDE"
+msgstr "KDE için kişisel uyarı iletisi, komut ve e-posta zamanlayıcısı"
+
+#: mainwindow.cpp:99
+msgid "Show &Alarm Times"
+msgstr "&Uyarı Sayılarını Göster"
+
+#: mainwindow.cpp:100
+msgid "Show alarm ti&me"
+msgstr "Uyarı &zamanını göster"
+
+#: mainwindow.cpp:101
+msgid "Show Time t&o Alarms"
+msgstr "&Geçmiş Uyarıları Göster"
+
+#: mainwindow.cpp:102
+msgid "Show time unti&l alarm"
+msgstr "Uyarıya kalan zaman&ı göster"
+
+#: mainwindow.cpp:103
+msgid "Show Expired Alarms"
+msgstr "Geçmiş Alarmları Göster"
+
+#: mainwindow.cpp:104
+msgid "Show &Expired Alarms"
+msgstr "&Geçmiş Uyarıları Göster"
+
+#: mainwindow.cpp:105
+msgid "Hide Expired Alarms"
+msgstr "Geçmiş Alarmları Sakla"
+
+#: mainwindow.cpp:106
+msgid "Hide &Expired Alarms"
+msgstr "Geçmiş Uyarıları Sakla"
+
+#: mainwindow.cpp:297
+msgid ""
+"Failure to create menus\n"
+"(perhaps %1 missing or corrupted)"
+msgstr ""
+"Menüler oluşturulurken hata oluştu\n"
+"(%1 bulunamıyor ya da bozuk)"
+
+#: mainwindow.cpp:329
+msgid "&Templates..."
+msgstr "Şablonlar..."
+
+#: mainwindow.cpp:330 templatedlg.cpp:61
+msgid "&New..."
+msgstr "&Yeni..."
+
+#: mainwindow.cpp:331
+msgid "New &From Template"
+msgstr "Şablon&dan Yeni"
+
+#: mainwindow.cpp:332
+msgid "Create Tem&plate..."
+msgstr "Yeni Şablon Oluştur"
+
+#: mainwindow.cpp:333
+msgid "&Copy..."
+msgstr "&Kopyala..."
+
+#: mainwindow.cpp:334 messagewin.cpp:520 templatedlg.cpp:66
+msgid "&Edit..."
+msgstr "&Değiştir..."
+
+#: mainwindow.cpp:336
+msgid "Reac&tivate"
+msgstr "Yeniden E&tkinleştir"
+
+#: mainwindow.cpp:340
+msgid "Hide &Alarm Times"
+msgstr "&Uyarı Sayılarını Sakla"
+
+#: mainwindow.cpp:342
+msgid "Hide Time t&o Alarms"
+msgstr "Uyarılara Kalan Zamanları Sakla"
+
+#: mainwindow.cpp:345
+msgid "Show in System &Tray"
+msgstr "Sistem &Çekmecesinde Göster"
+
+#: mainwindow.cpp:346
+msgid "Hide From System &Tray"
+msgstr "Sistem Çekmecesinde &Gösterme"
+
+#: mainwindow.cpp:347
+msgid "Import &Alarms..."
+msgstr "&Alarmları İçeri Aktar..."
+
+#: mainwindow.cpp:348
+msgid "Import &Birthdays..."
+msgstr "&Doğum Günlerini İçeri Aktar..."
+
+#: mainwindow.cpp:349
+msgid "&Refresh Alarms"
+msgstr "A&larmları Tazele"
+
+#: mainwindow.cpp:541
+msgid "New Alarm"
+msgstr "Yeni Alarm"
+
+#: mainwindow.cpp:611 messagewin.cpp:1459
+msgid "Edit Alarm"
+msgstr "Alarmı Düzenle"
+
+#: mainwindow.cpp:646
+msgid "Expired Alarm"
+msgstr "Süresi Geçmiş Alarm"
+
+#: mainwindow.cpp:646
+msgid "read-only"
+msgstr "salt okunur"
+
+#: mainwindow.cpp:647
+msgid "View Alarm"
+msgstr "Alarmı Göster"
+
+#: mainwindow.cpp:674
+#, c-format
+msgid ""
+"_n: Do you really want to delete the selected alarm?\n"
+"Do you really want to delete the %n selected alarms?"
+msgstr "Gerçekten seçili %n alarmı silmek istiyor musunuz?"
+
+#: mainwindow.cpp:675
+msgid ""
+"_n: Delete Alarm\n"
+"Delete Alarms"
+msgstr "Alarmları Sil"
+
+#: mainwindow.cpp:1026
+msgid ""
+"_: Undo/Redo [action]\n"
+"%1 %2"
+msgstr "%1 %2"
+
+#: mainwindow.cpp:1027
+msgid ""
+"_: Undo [action]: message\n"
+"%1 %2: %3"
+msgstr "%1 %2: %3"
+
+#: mainwindow.cpp:1391
+msgid "Ena&ble"
+msgstr "Et&kinleştir"
+
+#: mainwindow.cpp:1391
+msgid "Disa&ble"
+msgstr "&Pasifleştir"
+
+#: messagewin.cpp:290 messagewin.cpp:323
+msgid "Reminder"
+msgstr "Hatırlatıcı"
+
+#: messagewin.cpp:290
+msgid "Message"
+msgstr "İleti"
+
+#: messagewin.cpp:318
+msgid ""
+"The scheduled date/time for the message (as opposed to the actual time of "
+"display)."
+msgstr ""
+"İleti için belirlenmiş tarih/saat (görüntülenme zamanından farklı olarak)."
+
+#: messagewin.cpp:341
+msgid "The file whose contents are displayed below"
+msgstr "İçeriği aşağıda gösterilen dosya"
+
+#: messagewin.cpp:367
+msgid "The contents of the file to be displayed"
+msgstr "Görüntülenecek dosyanın içeriği"
+
+#: messagewin.cpp:375
+msgid "File is a folder"
+msgstr "Bu bir dizin"
+
+#: messagewin.cpp:375
+msgid "Failed to open file"
+msgstr "Dosya açılamadı"
+
+#: messagewin.cpp:375 sounddlg.cpp:445
+msgid "File not found"
+msgstr "Dosya bulunamadı"
+
+#: messagewin.cpp:394
+msgid "The alarm message"
+msgstr "Uyarı iletisi"
+
+#: messagewin.cpp:452
+msgid "The email to send"
+msgstr "Gönderilecek e-posta"
+
+#: messagewin.cpp:515
+msgid "Acknowledge the alarm"
+msgstr "Uyarıyı onayla"
+
+#: messagewin.cpp:525
+msgid "Edit the alarm."
+msgstr "Alarmı düzenle."
+
+#: messagewin.cpp:531
+msgid "&Defer..."
+msgstr "&Ertele..."
+
+#: messagewin.cpp:537
+msgid ""
+"Defer the alarm until later.\n"
+"You will be prompted to specify when the alarm should be redisplayed."
+msgstr ""
+"Uyarıyı sonraya ertele.\n"
+"Uyarıyının tekrar gösterilmesini istediğiniz zaman size sorulacak."
+
+#: messagewin.cpp:553 sounddlg.cpp:314
+msgid "Stop sound"
+msgstr "Sesi kapat"
+
+#: messagewin.cpp:554 sounddlg.cpp:315
+msgid "Stop playing the sound"
+msgstr "Sesi çalmayı durdur"
+
+#: messagewin.cpp:570
+msgid ""
+"_: Locate this email in KMail\n"
+"Locate in KMail"
+msgstr "KMail içerisinde konumlandır"
+
+#: messagewin.cpp:571
+msgid "Locate and highlight this email in KMail"
+msgstr "Bu e-postayı KMail içerisine konumlandır ve vurgula"
+
+#: messagewin.cpp:583
+msgid "Activate KAlarm"
+msgstr "KAlarm Uygulamasını Etkinleştir"
+
+#: messagewin.cpp:625
+msgid "Today"
+msgstr "Bugün"
+
+#: messagewin.cpp:627
+#, c-format
+msgid ""
+"_n: Tomorrow\n"
+"in %n days' time"
+msgstr "'%n gün içinde'"
+
+#: messagewin.cpp:629
+#, c-format
+msgid ""
+"_n: in 1 week's time\n"
+"in %n weeks' time"
+msgstr "%n hafta içibde"
+
+#: messagewin.cpp:643
+#, c-format
+msgid ""
+"_n: in 1 minute's time\n"
+"in %n minutes' time"
+msgstr "%n dakika içinde"
+
+#: messagewin.cpp:645
+#, c-format
+msgid ""
+"_n: in 1 hour's time\n"
+"in %n hours' time"
+msgstr "%n saat içinde"
+
+#: messagewin.cpp:647
+#, c-format
+msgid ""
+"_n: in 1 hour 1 minute's time\n"
+"in %n hours 1 minute's time"
+msgstr "%n saat 1 dakika içinde"
+
+#: messagewin.cpp:649
+msgid ""
+"_n: in 1 hour %1 minutes' time\n"
+"in %n hours %1 minutes' time"
+msgstr "%n saat %1 dakika içinde"
+
+#: messagewin.cpp:822 messagewin.cpp:836
+msgid "Unable to speak message"
+msgstr "Mesaj okunamıyor"
+
+#: messagewin.cpp:836
+msgid "DCOP Call sayMessage failed"
+msgstr "DCOP Çağrısı sayMessage başarısız oldu"
+
+#: messagewin.cpp:858 sounddlg.cpp:302
+#, c-format
+msgid ""
+"Cannot open audio file:\n"
+"%1"
+msgstr ""
+"Ses dosyası açılamadı:\n"
+"%1"
+
+#: messagewin.cpp:882
+msgid ""
+"Unable to set master volume\n"
+"(Error accessing KMix:\n"
+"%1)"
+msgstr ""
+"Ana ses ayarlanamadı\n"
+"(KMix'e erişilirken hata:\n"
+"%1)"
+
+#: messagewin.cpp:1403
+msgid "Do you really want to acknowledge this alarm?"
+msgstr "Bu uyarı bildirisini onaylamak istiyor musunuz?"
+
+#: messagewin.cpp:1404
+msgid "Acknowledge Alarm"
+msgstr "Uyarıyı Onayla"
+
+#: messagewin.cpp:1404
+msgid "&Acknowledge"
+msgstr "&Onayla"
+
+#: messagewin.cpp:1449
+msgid "Unable to locate this email in KMail"
+msgstr "Bu e-posta KMail içerisine konumlandırılamadı"
+
+#: prefdlg.cpp:120
+msgid "Preferences"
+msgstr "Tercihler"
+
+#: prefdlg.cpp:125
+msgid "General"
+msgstr "Genel"
+
+#: prefdlg.cpp:128
+msgid "Email"
+msgstr "E-posta"
+
+#: prefdlg.cpp:128
+msgid "Email Alarm Settings"
+msgstr "Uyarı E-Postası Ayarları"
+
+#: prefdlg.cpp:131
+msgid "View Settings"
+msgstr "Ayarları Görüntüle"
+
+#: prefdlg.cpp:134
+msgid "Font & Color"
+msgstr "Yazıtipi & Renk"
+
+#: prefdlg.cpp:134
+msgid "Default Font and Color"
+msgstr "Öntanımlı Yazıtipi ve Renk"
+
+#: prefdlg.cpp:137
+msgid "Default Alarm Edit Settings"
+msgstr "Öntanımlı Uyarı Düzenleme Seçenekleri"
+
+#: prefdlg.cpp:256
+msgid "Run Mode"
+msgstr "Çalışma Modu"
+
+#: prefdlg.cpp:264
+msgid "&Run only on demand"
+msgstr "&Sadece gerektiğinde çalış"
+
+#: prefdlg.cpp:268
+msgid ""
+"Check to run KAlarm only when required.\n"
+"\n"
+"Notes:\n"
+"1. Alarms are displayed even when KAlarm is not running, since alarm monitoring "
+"is done by the alarm daemon.\n"
+"2. With this option selected, the system tray icon can be displayed or hidden "
+"independently of KAlarm."
+msgstr ""
+"KAlarm uygulamasını sadece gerektiğinde çalıştırmak için işaretleyin.\n"
+"\n"
+"Notlar:\n"
+"1. Alarmlar KAlarm çalışmasa bile gösterilir, çünkü alarm izleme programcığı "
+"çalışır haldedir.\n"
+"2. Bu seçenek ile sistem kutusu simgesi KAlarm'dan bağımsız olarak gizlenebilir "
+"veya gösterilebilir. "
+
+#: prefdlg.cpp:275
+msgid "Run continuously in system &tray"
+msgstr "Sistem &çekmecesinde sürekli çalıştır"
+
+#: prefdlg.cpp:279
+msgid ""
+"Check to run KAlarm continuously in the KDE system tray.\n"
+"\n"
+"Notes:\n"
+"1. With this option selected, closing the system tray icon will quit KAlarm.\n"
+"2. You do not need to select this option in order for alarms to be displayed, "
+"since alarm monitoring is done by the alarm daemon. Running in the system tray "
+"simply provides easy access and a status indication."
+msgstr ""
+"KAlarm uygulamasının KDE sistem panelinde sürekli çalıştırılması için "
+"işaretleyin.\n"
+"\n"
+"Notlar:\n"
+"1. Bu seçenek işaretli iken sistem panel simgesini kapatmak KAlarm uygulamasını "
+"kapatır.\n"
+"2. Uyarı takibi uyarı programı tarafından yapıldığı için, uyarıların "
+"gösterilmesi için bu seçeneği seçmeniz gerekli değildir. Sistem panelinde "
+"çalışmanın getirileri hızlı erişim ve durum göstergesidir."
+
+#: prefdlg.cpp:287
+msgid "Disa&ble alarms while not running"
+msgstr "Ç&alışmıyorken uyarıları etkisizleştir"
+
+#: prefdlg.cpp:291
+msgid ""
+"Check to disable alarms whenever KAlarm is not running. Alarms will only appear "
+"while the system tray icon is visible."
+msgstr ""
+"KAlarm çalışmazken uyarıları etkisizleştirmek için işaretleyin. Uyarılar sadece "
+"sistem panel simgesi görünürken etkin olacaktır."
+
+#: prefdlg.cpp:294
+msgid "Warn before &quitting"
+msgstr "&Çıkmadan önce uyar"
+
+#: prefdlg.cpp:297
+msgid "Check to display a warning prompt before quitting KAlarm."
+msgstr "KAlarm uygulamasından çıkmadan önce uyarı gösterilmesi için seçin."
+
+#: prefdlg.cpp:300 prefdlg.cpp:537
+msgid "Autostart at &login"
+msgstr "Girişte &otomatik başla"
+
+#: prefdlg.cpp:307
+msgid "Start alarm monitoring at lo&gin"
+msgstr "Gi&rişte alarm izleyicisini başlat"
+
+#: prefdlg.cpp:311
+msgid ""
+"Automatically start alarm monitoring whenever you start KDE, by running the "
+"alarm daemon (%1).\n"
+"\n"
+"This option should always be checked unless you intend to discontinue use of "
+"KAlarm."
+msgstr ""
+"KDE her başlatıldığında alarm izleyici uygulamasını alarm (%1) servisini "
+"çalıştırarak başlat.\n"
+"KAlarm uygulamasını kullanmadığınız taktirde bu seçenek her zaman seçili "
+"olmalıdır."
+
+#: prefdlg.cpp:322
+msgid "&Start of day for date-only alarms:"
+msgstr "&Günlük alarmlar için günün başlama saati:"
+
+#: prefdlg.cpp:326
+msgid ""
+"The earliest time of day at which a date-only alarm (i.e. an alarm with \"any "
+"time\" specified) will be triggered."
+msgstr ""
+"Sadece günü belirli bir alarm için en erken ( örneğin \"herhangi bir zaman\" "
+"olarak belirlenen) çalıştırılma zamanı."
+
+#: prefdlg.cpp:334
+msgid "Con&firm alarm deletions"
+msgstr "&Alarm silme işlemlerini doğrula"
+
+#: prefdlg.cpp:337
+msgid "Check to be prompted for confirmation each time you delete an alarm."
+msgstr "Bir alarmı silmeden önce onay penceresinin çıkması için seçin."
+
+#: prefdlg.cpp:342
+msgid "Expired Alarms"
+msgstr "Geçmiş Uyarılar"
+
+#: prefdlg.cpp:347
+msgid "Keep alarms after e&xpiry"
+msgstr "Uyarıları geçtikten sonra &sakla"
+
+#: prefdlg.cpp:351
+msgid ""
+"Check to store alarms after expiry or deletion (except deleted alarms which "
+"were never triggered)."
+msgstr ""
+"Uyarıları geçtikten veya sildikten sonra saklamak için işaretleyin (hiç "
+"çalışmadan silinmiş uyarılar hariç)."
+
+#: prefdlg.cpp:356
+msgid "Discard ex&pired alarms after:"
+msgstr "&Geçmiş uyarıları şu zamandan sonra at:"
+
+#: prefdlg.cpp:363
+msgid "da&ys"
+msgstr "&gün"
+
+#: prefdlg.cpp:367
+msgid ""
+"Uncheck to store expired alarms indefinitely. Check to enter how long expired "
+"alarms should be stored."
+msgstr ""
+"Seçili değil ise geçmiş uyarılar süresiz olarak saklanır. Ne kadar süre "
+"saklanacağını belirlemek için işaretleyin. "
+
+#: prefdlg.cpp:370
+msgid "Clear Expired Alar&ms"
+msgstr "Geçmiş Uyarıları &Sil"
+
+#: prefdlg.cpp:374
+msgid "Delete all existing expired alarms."
+msgstr "Mevcut bütün geçmiş uyarıları sil."
+
+#: prefdlg.cpp:379
+msgid "Terminal for Command Alarms"
+msgstr "Komut Alarmları için Uçbirim"
+
+#: prefdlg.cpp:381
+msgid ""
+"Choose which application to use when a command alarm is executed in a terminal "
+"window"
+msgstr ""
+
+#: prefdlg.cpp:388
+msgid ""
+"_: The parameter is a command line, e.g. 'xterm -e'\n"
+"Check to execute command alarms in a terminal window by '%1'"
+msgstr ""
+
+#: prefdlg.cpp:414
+msgid "Other:"
+msgstr "Diğer:"
+
+#: prefdlg.cpp:422
+msgid ""
+"Enter the full command line needed to execute a command in your chosen terminal "
+"window. By default the alarm's command string will be appended to what you "
+"enter here. See the KAlarm Handbook for details of special codes to tailor the "
+"command line."
+msgstr ""
+
+#: prefdlg.cpp:473
+#, c-format
+msgid ""
+"Command to invoke terminal window not found:\n"
+"%1"
+msgstr ""
+
+#: prefdlg.cpp:528
+msgid ""
+"You should not uncheck this option unless you intend to discontinue use of "
+"KAlarm"
+msgstr ""
+"Eğer KAlarm kullanmaya devam etmek istiyorsanız bu seçeneği seçili "
+"bırakmalısınız"
+
+#: prefdlg.cpp:537
+msgid "Autostart system tray &icon at login"
+msgstr "&Girişte sistem çekmecesi simgesini otomatik başlat"
+
+#: prefdlg.cpp:538
+msgid "Check to run KAlarm whenever you start KDE."
+msgstr "Her KDE açılışında KAlarm uygulamasını çalıştırmak için işaretleyin."
+
+#: prefdlg.cpp:539
+msgid "Check to display the system tray icon whenever you start KDE."
+msgstr ""
+"Her KDE çalıştırdığınızda sistem çekmecesi simgesini görüntülemek için "
+"işaretleyiniz."
+
+#: prefdlg.cpp:603
+msgid "Email client:"
+msgstr "E-posta istemcisi:"
+
+#: prefdlg.cpp:606
+msgid "&KMail"
+msgstr "&KMail"
+
+#: prefdlg.cpp:609
+msgid "&Sendmail"
+msgstr "S&endmail"
+
+#: prefdlg.cpp:615
+msgid ""
+"Choose how to send email when an email alarm is triggered.\n"
+"KMail: The email is sent automatically via KMail. KMail is started first if "
+"necessary.\n"
+"Sendmail: The email is sent automatically. This option will only work if your "
+"system is configured to use sendmail or a sendmail compatible mail transport "
+"agent."
+msgstr ""
+"Bir alarm tetiklendiğinde e-postanın nasıl gönderileceğini buradan seçin.\n"
+"KMail: E-postalarınız otomatik olarak gönderilir. Eğer gerekliyse önce KMail "
+"başlatılır.\n"
+"Sendmail: E-postalarınız otomatik olarak gönderilir. Bu seçeneğin çalışabilmesi "
+"için sisteminizin sendmail kullanacak şekilde yapılandırılmış olması ya da "
+"sendmail ile uyumlu bir istemcinizin olması gerekir."
+
+#: prefdlg.cpp:621
+msgid "Co&py sent emails into KMail's %1 folder"
+msgstr "Gönderilen iletileri KMail'in %1 dizinine kopyala"
+
+#: prefdlg.cpp:624
+msgid "After sending an email, store a copy in KMail's %1 folder"
+msgstr ""
+"Bir e-posta gönderildikten sonra iletiyi KMail'in %1 dizinine yerleştir"
+
+#: prefdlg.cpp:629
+msgid "Your Email Address"
+msgstr "E-Posta Adresiniz"
+
+#: prefdlg.cpp:650
+msgid ""
+"Your email address, used to identify you as the sender when sending email "
+"alarms."
+msgstr ""
+"E-Posta adresiniz, uyarılar e-posta ile gönderilirken gönderici kimliği olarak "
+"kullanılır."
+
+#: prefdlg.cpp:657
+msgid "&Use address from Control Center"
+msgstr "De&netim Masasındaki e-posta adresini kullan"
+
+#: prefdlg.cpp:661
+msgid ""
+"Check to use the email address set in the KDE Control Center, to identify you "
+"as the sender when sending email alarms."
+msgstr ""
+"KDE denetim masasındaki e-posta adresini gönderici e-posta adresi olarak "
+"kullanmak için seçiniz."
+
+#: prefdlg.cpp:665
+msgid "Use KMail &identities"
+msgstr "KMail kimliklerini kullan"
+
+#: prefdlg.cpp:669
+msgid ""
+"Check to use KMail's email identities to identify you as the sender when "
+"sending email alarms. For existing email alarms, KMail's default identity will "
+"be used. For new email alarms, you will be able to pick which of KMail's "
+"identities to use."
+msgstr ""
+
+#: prefdlg.cpp:676
+msgid ""
+"_: 'Bcc' email address\n"
+"&Bcc:"
+msgstr "&Bcc:"
+
+#: prefdlg.cpp:690
+msgid ""
+"Your email address, used for blind copying email alarms to yourself. If you "
+"want blind copies to be sent to your account on the computer which KAlarm runs "
+"on, you can simply enter your user login name."
+msgstr ""
+"Size uyarı e-postalarının karbon kopyaları (bcc) gönderilirken, sizin e-posta "
+"adresiniz kullanılır. Eğer bcc e-postalar KAlarm'ı çalıştırdığınız "
+"bilgisayardaki hesabınızdan gönderilsin istiyorsanız makinedeki kullanıcı "
+"adınızı girebilirsiniz."
+
+#: prefdlg.cpp:698
+msgid "Us&e address from Control Center"
+msgstr "De&netim masasındaki E-Posta adresini kullan"
+
+#: prefdlg.cpp:702
+msgid ""
+"Check to use the email address set in the KDE Control Center, for blind copying "
+"email alarms to yourself."
+msgstr ""
+"KDE denetim masasındaki E-Posta adresinizi bcc e-postalar için kullanmak "
+"kullanmak istiyorsanız seçiniz."
+
+#: prefdlg.cpp:708
+msgid "&Notify when remote emails are queued"
+msgstr "Uzaktaki e-postalar kuyruklandığında haber ver"
+
+#: prefdlg.cpp:711
+msgid ""
+"Display a notification message whenever an email alarm has queued an email for "
+"sending to a remote system. This could be useful if, for example, you have a "
+"dial-up connection, so that you can then ensure that the email is actually "
+"transmitted."
+msgstr ""
+
+#: prefdlg.cpp:789
+msgid "No valid 'Bcc' email address is specified."
+msgstr ""
+
+#: prefdlg.cpp:796
+msgid ""
+"%1\n"
+"Are you sure you want to save your changes?"
+msgstr ""
+"%1\n"
+"Değişiklikleri kaydetmek istediğinize emin misiniz?"
+
+#: prefdlg.cpp:802
+#, c-format
+msgid "No email address is currently set in the KDE Control Center. %1"
+msgstr "KDE Denetim masasında ayarlanmış hiç bir e-posta adresi yok. %1"
+
+#: prefdlg.cpp:807
+#, c-format
+msgid "No KMail identities currently exist. %1"
+msgstr "Ayarlanmış hernagi bir KMail kimliği yok. %1"
+
+#: prefdlg.cpp:825
+msgid "Message Font && Color"
+msgstr "İleti Yazıtipi ve Rengi"
+
+#: prefdlg.cpp:836
+msgid "Di&sabled alarm color:"
+msgstr "Etkisizleştirilmiş Uyarı &rengi:"
+
+#: prefdlg.cpp:841
+msgid "Choose the text color in the alarm list for disabled alarms."
+msgstr ""
+"Etkisizleştirlmiş uyarıların alarm listesinde görüneceği rengi seçiniz."
+
+#: prefdlg.cpp:846
+msgid "E&xpired alarm color:"
+msgstr "Geçmiş uyarı &rengi:"
+
+#: prefdlg.cpp:851
+msgid "Choose the text color in the alarm list for expired alarms."
+msgstr "Geçmiş uyarıların uyarı listesinde görüneceği rengi seçiniz."
+
+#: prefdlg.cpp:895
+msgid "The default setting for \"%1\" in the alarm edit dialog."
+msgstr "Uyarı ayarlama penceresinde \"%1\" için öntanımlı değer."
+
+#: prefdlg.cpp:896
+msgid ""
+"Check to select %1 as the default setting for \"%2\" in the alarm edit dialog."
+msgstr ""
+
+#: prefdlg.cpp:899
+msgid "Display Alarms"
+msgstr "Alarmları Görüntüle"
+
+#: prefdlg.cpp:916
+msgid "Reminder &units:"
+msgstr "Hatırlatma &üniteleri:"
+
+#: prefdlg.cpp:926
+msgid "The default units for the reminder in the alarm edit dialog."
+msgstr "Uyarı ayarlama penceresinde tekrarlama aralığı için öntanımlı değer."
+
+#: prefdlg.cpp:950
+msgid "Repea&t sound file"
+msgstr "Ses dosyasını &tekrarla"
+
+#: prefdlg.cpp:952
+msgid ""
+"_: sound file \"Repeat\" checkbox\n"
+"The default setting for sound file \"%1\" in the alarm edit dialog."
+msgstr "Uyarı ayarlama penceresindeki öntanımlı ses dosyası \"%1\" ayarı."
+
+#: prefdlg.cpp:958
+msgid "Sound &file:"
+msgstr "&Ses dosyası"
+
+#: prefdlg.cpp:966
+msgid "Choose a sound file"
+msgstr "Bir ses dosyası seçin"
+
+#: prefdlg.cpp:968
+msgid "Enter the default sound file to use in the alarm edit dialog."
+msgstr ""
+"Uyarı ayarlama penceresinde kullanılacak öntanımlı ses dosyasını giriniz."
+
+#: prefdlg.cpp:974
+msgid "Command Alarms"
+msgstr "Komut Alarmları"
+
+#: prefdlg.cpp:991
+msgid "Email Alarms"
+msgstr "E-posta Alarmları"
+
+#: prefdlg.cpp:1018
+msgid "&Recurrence:"
+msgstr "&Tekrar"
+
+#: prefdlg.cpp:1031
+msgid "The default setting for the recurrence rule in the alarm edit dialog."
+msgstr "Uyarı ayarlama penceresinde tekrarlama aralığı için öntanımlı değer."
+
+#: prefdlg.cpp:1037
+msgid "In non-leap years, repeat yearly February 29th alarms on:"
+msgstr "Artık olmayan yıllarda, 29 Şubat uyarılarını şu tarihte tekrarla:"
+
+#: prefdlg.cpp:1045
+msgid "February 2&8th"
+msgstr "28 Ş&ubat"
+
+#: prefdlg.cpp:1048
+msgid "March &1st"
+msgstr "1 &Mart"
+
+#: prefdlg.cpp:1051
+msgid "Do &not repeat"
+msgstr "&Tekrarlama"
+
+#: prefdlg.cpp:1056
+msgid ""
+"For yearly recurrences, choose what date, if any, alarms due on February 29th "
+"should occur in non-leap years.\n"
+"Note that the next scheduled occurrence of existing alarms is not re-evaluated "
+"when you change this setting."
+msgstr ""
+
+#: prefdlg.cpp:1182
+msgid ""
+"You must enter a sound file when %1 is selected as the default sound type"
+msgstr ""
+"%1 öntanımlı ses türü olarak seçildiğinde, bir ses dosyası girmelisiniz"
+
+#: prefdlg.cpp:1195
+msgid "System Tray Tooltip"
+msgstr "Görev Çubuğu İpucu"
+
+#: prefdlg.cpp:1202
+msgid "Show next &24 hours' alarms"
+msgstr "Gelecek &24 saatin uyarılarını göster"
+
+#: prefdlg.cpp:1206
+msgid ""
+"Specify whether to include in the system tray tooltip, a summary of alarms due "
+"in the next 24 hours"
+msgstr ""
+"Görev çubuğu ipucunda gelecek 24 saat içinde olan uyarıların özetinin "
+"gösterilip gösterilmeyeceğini seçiniz"
+
+#: prefdlg.cpp:1211
+msgid "Ma&ximum number of alarms to show:"
+msgstr "&Gösterilecek en fazla uyarı sayısı:"
+
+#: prefdlg.cpp:1218
+msgid ""
+"Uncheck to display all of the next 24 hours' alarms in the system tray tooltip. "
+"Check to enter an upper limit on the number to be displayed."
+msgstr ""
+"Gelecek 24 saatin uyarılarının hepsinin görev çubuğu ipucunda gösterilmesi için "
+"kutucuğu işaretlemeyiniz. Gösterilecek adete üst sınır koymak için kutucuğu "
+"işaretleyiniz."
+
+#: prefdlg.cpp:1226
+msgid ""
+"Specify whether to show in the system tray tooltip, the time at which each "
+"alarm is due"
+msgstr ""
+"Her uyarının ne zamana ayarlandığını görev çubuğu ipucunda gösterilip "
+"gösterilmeyeceğini belirtiniz"
+
+#: prefdlg.cpp:1233
+msgid ""
+"Specify whether to show in the system tray tooltip, how long until each alarm "
+"is due"
+msgstr ""
+"Her uyarıya ne kadar zaman kaldığını görev çubuğu ipucunda gösterilip "
+"gösterilmeyeceğini belirtiniz"
+
+#: prefdlg.cpp:1238
+msgid "&Prefix:"
+msgstr "&Önek:"
+
+#: prefdlg.cpp:1243
+msgid ""
+"Enter the text to be displayed in front of the time until the alarm, in the "
+"system tray tooltip"
+msgstr ""
+"Sistem çekmecesinde uyarıya kalan sürenin önünde gösterilecek metni giriniz"
+
+#: prefdlg.cpp:1248
+msgid "Message &windows have a title bar and take keyboard focus"
+msgstr ""
+
+#: prefdlg.cpp:1251
+msgid ""
+"Specify the characteristics of alarm message windows:\n"
+"- If checked, the window is a normal window with a title bar, which grabs "
+"keyboard input when it is displayed.\n"
+"- If unchecked, the window does not interfere with your typing when it is "
+"displayed, but it has no title bar and cannot be moved or resized."
+msgstr ""
+
+#: prefdlg.cpp:1259
+msgid "System tray icon &update interval:"
+msgstr "Sistem paneli simgesi &güncelleme aralığı:"
+
+#: prefdlg.cpp:1264 sounddlg.cpp:161
+msgid "seconds"
+msgstr "saniye"
+
+#: prefdlg.cpp:1266
+msgid ""
+"How often to update the system tray icon to indicate whether or not the Alarm "
+"Daemon is monitoring alarms."
+msgstr ""
+"Uyarı programının uyarıları gözleyip gözlemediğini belirlemek için sistem "
+"paneli simgesinin güncelleme sıklığı."
+
+#. i18n: file kalarmui.rc line 32
+#: rc.cpp:9 rc.cpp:21
+#, no-c-format
+msgid "&Actions"
+msgstr "&Eylemler"
+
+#: recurrenceedit.cpp:69
+msgid "No recurrence"
+msgstr "&Tekrar yok"
+
+#: recurrenceedit.cpp:70
+msgid "No Recurrence"
+msgstr "&Tekrar Yok"
+
+#: recurrenceedit.cpp:71
+msgid "At Login"
+msgstr "Girişte"
+
+#: recurrenceedit.cpp:72
+msgid "At &login"
+msgstr "Girişte &otomatik başla"
+
+#: recurrenceedit.cpp:73
+msgid "Hourly/Minutely"
+msgstr "Saatlik/Dakikalık"
+
+#: recurrenceedit.cpp:74
+msgid "Ho&urly/Minutely"
+msgstr "&Saat/Dakika"
+
+#: recurrenceedit.cpp:75
+msgid "Daily"
+msgstr "Günlük"
+
+#: recurrenceedit.cpp:76
+msgid "&Daily"
+msgstr "&Günlük"
+
+#: recurrenceedit.cpp:77
+msgid "Weekly"
+msgstr "Haftalık"
+
+#: recurrenceedit.cpp:78
+msgid "&Weekly"
+msgstr "&Haftalık"
+
+#: recurrenceedit.cpp:79
+msgid "Monthly"
+msgstr "Aylık"
+
+#: recurrenceedit.cpp:80
+msgid "&Monthly"
+msgstr "&Aylık"
+
+#: recurrenceedit.cpp:81
+msgid "Yearly"
+msgstr "Yıllık"
+
+#: recurrenceedit.cpp:82
+msgid "&Yearly"
+msgstr "&Yıllık"
+
+#: recurrenceedit.cpp:106
+msgid "Recurrence Rule"
+msgstr "Tekrarlama Kuralı"
+
+#: recurrenceedit.cpp:124
+msgid "Do not repeat the alarm"
+msgstr "Uyarıyı düzenli olarak tekrarlama"
+
+#: recurrenceedit.cpp:130
+msgid ""
+"Trigger the alarm at the specified date/time and at every login until then.\n"
+"Note that it will also be triggered any time the alarm daemon is restarted."
+msgstr ""
+"Belirlenen zamana kadar yapılan her girişte uyarıyı tekrarla.\n"
+"Uyarı programı tekrar başlatıldığında da uyarılar tekrarlanacaktır."
+
+#: recurrenceedit.cpp:137
+msgid "Repeat the alarm at hourly/minutely intervals"
+msgstr "Alarmı saatlik/dakikalık sınırsız tekrarla"
+
+#: recurrenceedit.cpp:143
+msgid "Repeat the alarm at daily intervals"
+msgstr "Alarmı günlük olarak sınırsız tekrarla"
+
+#: recurrenceedit.cpp:149
+msgid "Repeat the alarm at weekly intervals"
+msgstr "Alarmı sınırsız haftalık olarak tekrarla"
+
+#: recurrenceedit.cpp:155
+msgid "Repeat the alarm at monthly intervals"
+msgstr "Alarmı aylık olarak sınırsız tekrarla"
+
+#: recurrenceedit.cpp:161
+msgid "Repeat the alarm at annual intervals"
+msgstr "Alarmı sınırsız tekrarla"
+
+#: recurrenceedit.cpp:177
+msgid ""
+"Set up a repetition within the recurrence, to trigger the alarm multiple times "
+"each time the recurrence is due."
+msgstr ""
+
+#: recurrenceedit.cpp:219
+msgid "Recurrence End"
+msgstr "Tekrarlama Sonu"
+
+#: recurrenceedit.cpp:225
+msgid "No &end"
+msgstr "Son &yok"
+
+#: recurrenceedit.cpp:228
+msgid "Repeat the alarm indefinitely"
+msgstr "Alarmı sınırsız tekrarla"
+
+#: recurrenceedit.cpp:233
+msgid "End a&fter:"
+msgstr "&Sonra bitir:"
+
+#: recurrenceedit.cpp:236
+msgid "Repeat the alarm for the number of times specified"
+msgstr "Alarmı belirtilen bir sayı kadar tekrarla"
+
+#: recurrenceedit.cpp:244
+msgid "Enter the total number of times to trigger the alarm"
+msgstr "Alarmın toplam kaç kere çalıştırılacağını giriniz"
+
+#: recurrenceedit.cpp:246
+msgid "occurrence(s)"
+msgstr "tekrar(lar)"
+
+#: recurrenceedit.cpp:256
+msgid "End &by:"
+msgstr "&Zamanda bitir:"
+
+#: recurrenceedit.cpp:259
+msgid ""
+"Repeat the alarm until the date/time specified.\n"
+"\n"
+"Note: This applies to the main recurrence only. It does not limit any "
+"sub-repetition which will occur regardless after the last main recurrence."
+msgstr ""
+
+#: recurrenceedit.cpp:265
+msgid "Enter the last date to repeat the alarm"
+msgstr "Alarmın tekrarlanacağı son tarihi giriniz."
+
+#: recurrenceedit.cpp:270
+msgid "Enter the last time to repeat the alarm."
+msgstr "Alarmın tekrarlanacağı son tarihi giriniz"
+
+#: recurrenceedit.cpp:277
+msgid ""
+"Stop repeating the alarm after your first login on or after the specified end "
+"date"
+msgstr ""
+
+#: recurrenceedit.cpp:293
+msgid "E&xceptions"
+msgstr "İ&stisnalar"
+
+#: recurrenceedit.cpp:305
+msgid "The list of exceptions, i.e. dates/times excluded from the recurrence"
+msgstr "İstisnaların listesi, örneğin, tekrarlanmayacak tarihler/saatler"
+
+#: recurrenceedit.cpp:321
+msgid ""
+"Enter a date to insert in the exceptions list. Use in conjunction with the Add "
+"or Change button below."
+msgstr ""
+"İstisnalar listesine bir tarih eklemek için Ekle düğmesini, değişiklik yapmak "
+"için Değiştir düğmesini kullanın."
+
+#: recurrenceedit.cpp:330
+msgid "Add the date entered above to the exceptions list"
+msgstr "Yukarıdaki tarihi istisnalar listesine ekle"
+
+#: recurrenceedit.cpp:337
+msgid ""
+"Replace the currently highlighted item in the exceptions list with the date "
+"entered above"
+msgstr ""
+"İstisnalar listesindeki seçili nesneyi yukarıda girilen tarihle değiştir"
+
+#: recurrenceedit.cpp:344
+msgid "Remove the currently highlighted item from the exceptions list"
+msgstr "E-postadan silinecek olan dosyalar."
+
+#: recurrenceedit.cpp:372
+msgid "End date is earlier than start date"
+msgstr "Bitiş tarihi, başlangıç tarihinden önce"
+
+#: recurrenceedit.cpp:373
+msgid "End date/time is earlier than start date/time"
+msgstr "Bitiş tarihi/saati, başlangıç tarihi/saatinden önce"
+
+#: recurrenceedit.cpp:641
+msgid ""
+"_: Date cannot be earlier than start date\n"
+"start date"
+msgstr "başlama tarihi"
+
+#: recurrenceedit.cpp:1031
+msgid "Recur e&very"
+msgstr "&Tekrarlama süresi"
+
+#: recurrenceedit.cpp:1099
+msgid "hours:minutes"
+msgstr "Saat/Dakika"
+
+#: recurrenceedit.cpp:1100
+msgid "Enter the number of hours and minutes between repetitions of the alarm"
+msgstr "Alarmın tekrarları arasındaki süreyi (saat ve dakika cinsinden) girin"
+
+#: recurrenceedit.cpp:1118
+msgid ""
+"_: On: Tuesday\n"
+"O&n:"
+msgstr "&Gün:"
+
+#: recurrenceedit.cpp:1196
+msgid "No day selected"
+msgstr "Gün seçilmedi"
+
+#: recurrenceedit.cpp:1225
+msgid "day(s)"
+msgstr "&günler"
+
+#: recurrenceedit.cpp:1226
+msgid "Enter the number of days between repetitions of the alarm"
+msgstr "Alarm tekrarları arasındaki gün sayısını girin"
+
+#: recurrenceedit.cpp:1228
+msgid "Select the days of the week on which the alarm is allowed to occur"
+msgstr ""
+
+#: recurrenceedit.cpp:1230 recurrenceedit.cpp:1244
+msgid "Select the days of the week on which to repeat the alarm"
+msgstr "Alarmın haftada tekrarlanacağı günü seçiniz"
+
+#: recurrenceedit.cpp:1242
+msgid "week(s)"
+msgstr "hafta(lar)"
+
+#: recurrenceedit.cpp:1243
+msgid "Enter the number of weeks between repetitions of the alarm"
+msgstr "Alarm tekrarları arasındaki hafta sayısını girin"
+
+#: recurrenceedit.cpp:1267
+msgid ""
+"_: On day number in the month\n"
+"O&n day"
+msgstr "Gü&n"
+
+#: recurrenceedit.cpp:1271
+msgid "Repeat the alarm on the selected day of the month"
+msgstr "Alarmı ayın seçilen gününde tekrarla"
+
+#: recurrenceedit.cpp:1277
+msgid ""
+"_: Last day of month\n"
+"Last"
+msgstr "Son günü"
+
+#: recurrenceedit.cpp:1280
+msgid "Select the day of the month on which to repeat the alarm"
+msgstr "Alarmın ayda tekrarlanacağı günü seçiniz"
+
+#: recurrenceedit.cpp:1292
+msgid ""
+"_: On the 1st Tuesday\n"
+"On t&he"
+msgstr "Şu &Gün"
+
+#: recurrenceedit.cpp:1297
+msgid ""
+"Repeat the alarm on one day of the week, in the selected week of the month"
+msgstr ""
+"Alarmı ayın seçilen bir haftasında, o haftanın seçilen bir gününde tekrarla"
+
+#: recurrenceedit.cpp:1300
+msgid "1st"
+msgstr "1."
+
+#: recurrenceedit.cpp:1301
+msgid "2nd"
+msgstr "2."
+
+#: recurrenceedit.cpp:1302
+msgid "3rd"
+msgstr "3."
+
+#: recurrenceedit.cpp:1303
+msgid "4th"
+msgstr "4."
+
+#: recurrenceedit.cpp:1304
+msgid "5th"
+msgstr "5."
+
+#: recurrenceedit.cpp:1305
+msgid ""
+"_: Last Monday in March\n"
+"Last"
+msgstr "Son günü"
+
+#: recurrenceedit.cpp:1306
+msgid "2nd Last"
+msgstr "Sondan ikinci"
+
+#: recurrenceedit.cpp:1307
+msgid "3rd Last"
+msgstr "Sondan üçüncü"
+
+#: recurrenceedit.cpp:1308
+msgid "4th Last"
+msgstr "Sondan dördüncü"
+
+#: recurrenceedit.cpp:1309
+msgid "5th Last"
+msgstr "Sondan beşinci"
+
+#: recurrenceedit.cpp:1312
+msgid ""
+"_: Every (Monday...) in month\n"
+"Every"
+msgstr "Her"
+
+#: recurrenceedit.cpp:1315
+msgid "Select the week of the month in which to repeat the alarm"
+msgstr "Alarmın ayda tekrarlanacağı haftayı seçiniz"
+
+#: recurrenceedit.cpp:1328
+msgid "Select the day of the week on which to repeat the alarm"
+msgstr "Alarmın haftada tekrarlanacağı günü seçiniz"
+
+#: recurrenceedit.cpp:1446
+msgid "month(s)"
+msgstr "ay(lar)"
+
+#: recurrenceedit.cpp:1447
+msgid "Enter the number of months between repetitions of the alarm"
+msgstr "Alarm tekrarları arasındaki ay sayısını girin"
+
+#: recurrenceedit.cpp:1458
+msgid "year(s)"
+msgstr "yıl(lar)"
+
+#: recurrenceedit.cpp:1459
+msgid "Enter the number of years between repetitions of the alarm"
+msgstr "Alarm tekrarları arasındaki yıl sayısını girin"
+
+#: recurrenceedit.cpp:1464
+msgid ""
+"_: List of months to select\n"
+"Months:"
+msgstr "Aylar:"
+
+#: recurrenceedit.cpp:1483
+msgid "Select the months of the year in which to repeat the alarm"
+msgstr "Alarmın yılda tekrarlanacağı ayı seçiniz"
+
+#: recurrenceedit.cpp:1490
+msgid "February 2&9th alarm in non-leap years:"
+msgstr ""
+
+#: recurrenceedit.cpp:1493
+msgid ""
+"_: No date\n"
+"None"
+msgstr "Hiçbiri"
+
+#: recurrenceedit.cpp:1494
+msgid ""
+"_: 1st March (short form)\n"
+"1 Mar"
+msgstr "1 Mar"
+
+#: recurrenceedit.cpp:1495
+msgid ""
+"_: 28th February (short form)\n"
+"28 Feb"
+msgstr "28 Şub"
+
+#: recurrenceedit.cpp:1501
+msgid ""
+"Select which date, if any, the February 29th alarm should trigger in non-leap "
+"years"
+msgstr ""
+
+#: recurrenceedit.cpp:1585
+msgid "No month selected"
+msgstr "Ay seçilmedi"
+
+#: reminder.cpp:39
+msgid "Reminder for first recurrence only"
+msgstr "Sadece ilk tekrarlama için hatırlatıcı"
+
+#: reminder.cpp:40
+msgid "Reminder for first rec&urrence only"
+msgstr "Sadece ilk t&ekrarlama için hatırlatıcı"
+
+#: reminder.cpp:52
+msgid "in advance"
+msgstr "önce"
+
+#: reminder.cpp:64
+msgid "Display the reminder only before the first time the alarm is scheduled"
+msgstr ""
+
+#: repetition.cpp:85
+msgid "Alarm Sub-Repetition"
+msgstr "Alarm Alt-Tekrarı"
+
+#: repetition.cpp:163
+msgid ""
+"_: Repeat every 10 minutes\n"
+"&Repeat every"
+msgstr "Tekrarlama a&ralığı"
+
+#: repetition.cpp:164
+msgid ""
+"Instead of the alarm triggering just once at each recurrence, checking this "
+"option makes the alarm trigger multiple times at each recurrence."
+msgstr ""
+
+#: repetition.cpp:166
+msgid "Enter the time between repetitions of the alarm"
+msgstr "Alarm tekrarları arasındaki zamanı girin"
+
+#: repetition.cpp:179
+msgid "&Number of repetitions:"
+msgstr "Tekrarla&ma sayısı:"
+
+#: repetition.cpp:182
+msgid ""
+"Check to specify the number of times the alarm should repeat after each "
+"recurrence"
+msgstr ""
+
+#: repetition.cpp:190
+msgid ""
+"Enter the number of times to trigger the alarm after its initial occurrence"
+msgstr ""
+
+#: repetition.cpp:196
+msgid "&Duration:"
+msgstr "&Süre:"
+
+#: repetition.cpp:199
+msgid "Check to specify how long the alarm is to be repeated"
+msgstr "Alarmın ne kadar süre tekrarlanacağını belirtmek için işaretleyin"
+
+#: repetition.cpp:205
+msgid "Enter the length of time to repeat the alarm"
+msgstr "Alarmın tekrarlanacağı süreyi girin"
+
+#: sounddlg.cpp:63
+msgid "Set volume"
+msgstr "Sesi ayarla"
+
+#: sounddlg.cpp:64
+msgid "Set &volume"
+msgstr "Sesi a&yarla"
+
+#: sounddlg.cpp:66
+msgid "Re&peat"
+msgstr "Tek&rarla"
+
+#: sounddlg.cpp:90 sounddlg.cpp:376
+msgid "Test the sound"
+msgstr "Sesi test et"
+
+#: sounddlg.cpp:91 sounddlg.cpp:377
+msgid "Play the selected sound file."
+msgstr "Seçilen sesi çal."
+
+#: sounddlg.cpp:96
+msgid "Enter the name or URL of a sound file to play."
+msgstr "Çalınacak ses dosyasının ismini ya da web adresini girin."
+
+#: sounddlg.cpp:104
+msgid "Select a sound file to play."
+msgstr "Çalınacak ses dosyasını seçin."
+
+#: sounddlg.cpp:110
+msgid ""
+"If checked, the sound file will be played repeatedly for as long as the message "
+"is displayed."
+msgstr ""
+"İşaretlenirse, ses, mesajın gösterildiği süre boyunca tekrar tekrar çalınacak."
+
+#: sounddlg.cpp:114
+msgid "Volume"
+msgstr "Ses"
+
+#: sounddlg.cpp:133
+msgid "Select to choose the volume for playing the sound file."
+msgstr "Ses dosyasının çalınacağı ses düzeyini ayarlamak için seçin."
+
+#: sounddlg.cpp:140
+msgid "Choose the volume for playing the sound file."
+msgstr "Ses dosyasının çalınacağı ses düzeyini seçin."
+
+#: sounddlg.cpp:144
+msgid "Fade"
+msgstr "Kaybol"
+
+#: sounddlg.cpp:148
+msgid "Select to fade the volume when the sound file first starts to play."
+msgstr ""
+
+#: sounddlg.cpp:155
+msgid ""
+"_: Time period over which to fade the sound\n"
+"Fade time:"
+msgstr "Kaybolma süresi:"
+
+#: sounddlg.cpp:163
+msgid ""
+"Enter how many seconds to fade the sound before reaching the set volume."
+msgstr ""
+
+#: sounddlg.cpp:169
+msgid "Initial volume:"
+msgstr "Başlangıç ses düzeyi:"
+
+#: sounddlg.cpp:176
+msgid "Choose the initial volume for playing the sound file."
+msgstr "Ses dosyası çalınırken başlanılacak ses düzeyini seçin."
+
+#: soundpicker.cpp:51
+msgid ""
+"_: An audio sound\n"
+"Sound"
+msgstr "Ses"
+
+#: soundpicker.cpp:53
+msgid "Beep"
+msgstr "Zil"
+
+#: soundpicker.cpp:54
+msgid "Speak"
+msgstr "Seslendir"
+
+#: soundpicker.cpp:55
+msgid "Sound file"
+msgstr "Ses dosyası"
+
+#: soundpicker.cpp:66
+msgid ""
+"_: An audio sound\n"
+"&Sound:"
+msgstr "&Ses:"
+
+#: soundpicker.cpp:86
+msgid "Configure sound file"
+msgstr "Ses dosyasını yapılandır"
+
+#: soundpicker.cpp:87
+msgid "Configure a sound file to play when the alarm is displayed."
+msgstr "Alarm gösterilirken çalınacak ses dosyasını ayarla."
+
+#: soundpicker.cpp:116
+msgid "Choose a sound to play when the message is displayed."
+msgstr "Alarm gösterilirken çalınacak bir ses dosyası seç."
+
+#: soundpicker.cpp:117
+msgid "%1: the message is displayed silently."
+msgstr "%1: ileti sessizce gösterilir."
+
+#: soundpicker.cpp:118
+msgid "%1: a simple beep is sounded."
+msgstr "%1: bir basit bip sesi çaldı."
+
+#: soundpicker.cpp:119
+msgid ""
+"%1: an audio file is played. You will be prompted to choose the file and set "
+"play options."
+msgstr ""
+
+#: soundpicker.cpp:127
+msgid "%1: the message text is spoken."
+msgstr "%1: ileti metni okunur."
+
+#: soundpicker.cpp:239
+msgid "Sound File"
+msgstr "Ses Dosyası"
+
+#: soundpicker.cpp:286
+msgid "Sound Files"
+msgstr "Ses Dosyaları"
+
+#: soundpicker.cpp:286
+msgid "All Files"
+msgstr "Tüm Dosyalar"
+
+#: soundpicker.cpp:291
+msgid "Choose Sound File"
+msgstr "Ses Dosyasını Seçin"
+
+#: specialactions.cpp:51
+msgid "Specify actions to execute before and after the alarm is displayed."
+msgstr ""
+"Alarm gösterilmeden önce ve gösterildikten sonra çalıştırılacak eylemleri "
+"belirtin."
+
+#: specialactions.cpp:72
+msgid "Special Alarm Actions"
+msgstr "Özel Alarm Eylemleri"
+
+#: specialactions.cpp:144
+msgid "Pre-a&larm action:"
+msgstr "A&larm öncesi eylem:"
+
+#: specialactions.cpp:151
+msgid ""
+"Enter a shell command to execute before the alarm is displayed.\n"
+"Note that it is executed only when the alarm proper is displayed, not when a "
+"reminder or deferred alarm is displayed.\n"
+"N.B. KAlarm will wait for the command to complete before displaying the alarm."
+msgstr ""
+
+#: specialactions.cpp:158
+msgid "Post-alar&m action:"
+msgstr "Alarm sonrası eyle&m:"
+
+#: specialactions.cpp:165
+msgid ""
+"Enter a shell command to execute after the alarm window is closed.\n"
+"Note that it is not executed after closing a reminder window. If you defer the "
+"alarm, it is not executed until the alarm is finally acknowledged or closed."
+msgstr ""
+
+#: templatedlg.cpp:47
+msgid "Alarm Templates"
+msgstr "Alarm Şablonları"
+
+#: templatedlg.cpp:54
+msgid "The list of alarm templates"
+msgstr "Alarm şablonlarının listesi"
+
+#: templatedlg.cpp:63
+msgid "Create a new alarm template"
+msgstr "Yeni bir alarm şablonu oluştur"
+
+#: templatedlg.cpp:68
+msgid "Edit the currently highlighted alarm template"
+msgstr "Vurgulanan alarm şablonunu düzenle"
+
+#: templatedlg.cpp:71
+msgid "Co&py"
+msgstr "Ko&pyala"
+
+#: templatedlg.cpp:74
+msgid ""
+"Create a new alarm template based on a copy of the currently highlighted "
+"template"
+msgstr ""
+
+#: templatedlg.cpp:79
+msgid "Delete the currently highlighted alarm template"
+msgstr "Şimdi vurgulanan şablonu sil"
+
+#: templatedlg.cpp:143
+msgid "New Alarm Template"
+msgstr "Yeni Alarm Şablonu"
+
+#: templatedlg.cpp:165
+msgid "Edit Alarm Template"
+msgstr "Alarm Şablonunu Düzenle"
+
+#: templatedlg.cpp:189
+#, c-format
+msgid ""
+"_n: Do you really want to delete the selected alarm template?\n"
+"Do you really want to delete the %n selected alarm templates?"
+msgstr "Gerçekten seçili %n alarm şablonunu silmek istiyor musunuz?"
+
+#: templatedlg.cpp:190
+msgid ""
+"_n: Delete Alarm Template\n"
+"Delete Alarm Templates"
+msgstr "Alarm Şablonlarını Sil"
+
+#: templatelistview.cpp:83
+msgid "Alarm type"
+msgstr "Alarm türü"
+
+#: templatelistview.cpp:85
+msgid "Name of the alarm template"
+msgstr "Alarm şablonunun adı"
+
+#: templatepickdlg.cpp:38
+msgid "Choose Alarm Template"
+msgstr "Alarm Şablonu Seçin"
+
+#: templatepickdlg.cpp:46
+msgid "Select a template to base the new alarm on."
+msgstr "Yeni alarmın baz alacağı bir şablon seçin."
+
+#: traywindow.cpp:83
+msgid "Cannot load system tray icon."
+msgstr "Sistem çekmecesi simgesi yüklenemedi."
+
+#: traywindow.cpp:91
+msgid "&New Alarm..."
+msgstr "&Yeni Alarm..."
+
+#: traywindow.cpp:92
+msgid "New Alarm From &Template"
+msgstr "Şa&blondan Yeni Alarm"
+
+#: traywindow.cpp:269
+msgid ""
+"_: prefix + hours:minutes\n"
+"(%1%2:%3)"
+msgstr "(%1%2:%3)"
+
+#: traywindow.cpp:271
+msgid ""
+"_: prefix + hours:minutes\n"
+"%1%2:%3"
+msgstr "%1%2:%3"
+
+#: traywindow.cpp:356
+msgid "%1 - disabled"
+msgstr "%1 - kapatıldı"
+
+#: undo.cpp:353
+msgid "Alarm not found"
+msgstr "Alarm bulunamadı"
+
+#: undo.cpp:354
+msgid "Error recreating alarm"
+msgstr "Alarm yeniden etkinleştirilemiyor"
+
+#: undo.cpp:355
+msgid "Error recreating alarm template"
+msgstr "Alarm şablonu yeniden oluşturulurken hata"
+
+#: undo.cpp:356
+msgid "Cannot reactivate expired alarm"
+msgstr "Geçmiş alarm yeniden etkinleştirilemiyor"
+
+#: undo.cpp:357
+msgid "Program error"
+msgstr "Program hatası"
+
+#: undo.cpp:358
+msgid "Unknown error"
+msgstr "Bilinmeyen hata"
+
+#: undo.cpp:360
+msgid ""
+"_: Undo-action: message\n"
+"%1: %2"
+msgstr "%1: %2"
+
+#: undo.cpp:595
+msgid ""
+"_: Action to create a new alarm\n"
+"New alarm"
+msgstr "Yeni alarm"
+
+#: undo.cpp:597
+msgid ""
+"_: Action to delete an alarm\n"
+"Delete alarm"
+msgstr "Alarm sil"
+
+#: undo.cpp:600
+msgid ""
+"_: Action to create a new alarm template\n"
+"New template"
+msgstr "Yeni şablon"
+
+#: undo.cpp:602
+msgid ""
+"_: Action to delete an alarm template\n"
+"Delete template"
+msgstr "Şablon sil"
+
+#: undo.cpp:604
+msgid "Delete expired alarm"
+msgstr "Zamanı geçen alarmı sil"
+
+#: undo.cpp:864
+msgid ""
+"_: Action to edit an alarm\n"
+"Edit alarm"
+msgstr "Alarmı düzenle"
+
+#: undo.cpp:866
+msgid ""
+"_: Action to edit an alarm template\n"
+"Edit template"
+msgstr "Şablon düzenle"
+
+#: undo.cpp:1007
+msgid "Delete multiple alarms"
+msgstr "Çoklu alarmları sil"
+
+#: undo.cpp:1009
+msgid "Delete multiple templates"
+msgstr "Çoklu şablonları sil"
+
+#: undo.cpp:1016
+msgid "Delete multiple expired alarms"
+msgstr "Zamanı çoklu geçen alarmı sil"
+
+#: undo.cpp:1059 undo.cpp:1103
+msgid "Reactivate alarm"
+msgstr "Alarmı yeniden etkinleştir"
+
+#: undo.cpp:1126
+msgid "Reactivate multiple alarms"
+msgstr "Birden çok alarmı yeniden etkinleştir"
+
+#: lib/colourcombo.cpp:185
+msgid "Custom..."
+msgstr "Özel..."
+
+#: lib/dateedit.cpp:63
+#, c-format
+msgid "Date cannot be earlier than %1"
+msgstr "%1 öncesi tarih uygun değil"
+
+#: lib/dateedit.cpp:68
+#, c-format
+msgid "Date cannot be later than %1"
+msgstr "%1 sonrası tarih uygun değil"
+
+#: lib/dateedit.cpp:79
+msgid "today"
+msgstr "bugün"
+
+#: lib/shellprocess.cpp:146
+msgid "Failed to execute command (shell access not authorized):"
+msgstr "Komut çalıştırılamadı:"
+
+#: lib/shellprocess.cpp:149
+msgid "Failed to execute command:"
+msgstr "Komut çalıştırılamadı:"
+
+#: lib/shellprocess.cpp:151
+msgid "Command execution error:"
+msgstr "Komut çalıştırma hatası:"
+
+#: lib/timeperiod.cpp:37
+msgid "minutes"
+msgstr "dakika"
+
+#: lib/timeperiod.cpp:38
+msgid "Minutes"
+msgstr "Dakika"
+
+#: lib/timeperiod.cpp:39
+msgid "hours/minutes"
+msgstr "saat/dakika"
+
+#: lib/timeperiod.cpp:40
+msgid "Hours/Minutes"
+msgstr "Saat/Dakika"
+
+#: lib/timeperiod.cpp:41
+msgid "days"
+msgstr "&günler"
+
+#: lib/timeperiod.cpp:42
+msgid "Days"
+msgstr "Gün"
+
+#: lib/timeperiod.cpp:43
+msgid "weeks"
+msgstr "haftalar"
+
+#: lib/timeperiod.cpp:44
+msgid "Weeks"
+msgstr "Hafta"
+
+#: lib/timespinbox.cpp:96
+msgid ""
+"Press the Shift key while clicking the spin buttons to adjust the time by a "
+"larger step (6 hours / 5 minutes)."
+msgstr "s"
+
+#: kalarmd/admain.cpp:42
+msgid "KAlarm Daemon"
+msgstr "KAlarm Servisi"
+
+#: kalarmd/admain.cpp:43
+msgid "KAlarm Alarm Daemon"
+msgstr "KAlarm Alarm Servisi"
+
+#: kalarmd/admain.cpp:46
+msgid "Maintainer"
+msgstr "Projeyi Yürüten"
+
+#: kalarmd/admain.cpp:47
+msgid "Author"
+msgstr "Yazar"
+
+#: kalarmd/admain.cpp:48
+msgid "Original Author"
+msgstr "Asıl Yazar"
+
+#~ msgid ""
+#~ "_: first week of January\n"
+#~ "of:"
+#~ msgstr "Bu ayın ilk haftası:"
+
+#~ msgid ""
+#~ "_: This refers to simple repetitions set up using the Simple Repetition dialog\n"
+#~ "Cannot defer past the alarm's next repetition (currently %1)"
+#~ msgstr "Uyarı, bir sonraki tekrarından ileriye ertelenemez. (şu anda %1)"
+
+#~ msgid ""
+#~ "_: This refers to recurrences set up using the Recurrence tab\n"
+#~ "Cannot defer past the alarm's next recurrence (currently %1)"
+#~ msgstr "Uyarı, bir sonraki tekrarından ileriye ertelenemez. (şu anda %1)"
+
+#~ msgid "Recurrence:"
+#~ msgstr "Tekrar"
+
+#~ msgid ""
+#~ "How often the alarm recurs.\n"
+#~ "The times shown are those configured in the Recurrence tab and in the Simple Repetition dialog."
+#~ msgstr ""
+#~ "Alarmın ne kadar sıklıkla tekrarlandığı.\n"
+#~ "Uyarıın tekrarlanma sıklığı Tekrarlanma ekranında gösterilir."
+
+#~ msgid "Set up a simple, or additional, alarm repetition"
+#~ msgstr "Basit ya da ek bir uyarı tekrarlama zamanı ayarla"
+
+#~ msgid "Repeat the alarm until the date/time specified"
+#~ msgstr "Belirlenen zamana kadar alarmı tekrarla"
+
+#~ msgid "Message color"
+#~ msgstr "Mesaj rengi"
+
+#~ msgid "Choose the background color for the alarm message."
+#~ msgstr "Uyarı iletisinin arkaplan rengini seçin."
+
+#~ msgid "Show alarm &time"
+#~ msgstr "Uyarı &zamanını göster"
+
+#~ msgid "Show time u&ntil alarm"
+#~ msgstr "Uyarıya kadar &zamanı göster"
+
+#~ msgid "Alarm List"
+#~ msgstr "Uyarı Listesi"
+
+#~ msgid "Specify whether to show in the alarm list, the time at which each alarm is due"
+#~ msgstr "Uyarının ayarlandığı zamanın alarm listesinde görünüp görünmeyeceğini seçiniz"
+
+#~ msgid "Specify whether to show in the alarm list, how long until each alarm is due"
+#~ msgstr "Uyarı listesinde, her alarma ne kadar süre kaldığının gösterilip gösterilmeyeceğini seçiniz"
+
+#~ msgid "Specify whether to show expired alarms in the alarm list"
+#~ msgstr "Geçmiş alarmların alarm listesinde gösterilip gösterilmeyeceğini seçin"

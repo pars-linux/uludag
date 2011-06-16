@@ -1,0 +1,126 @@
+# translation of kfaxview.po to
+# translation of kfaxview.po to Turkish
+# Görkem Çetin <gorkem@gorkemcetin.com>, 2005.
+# Alper Şen <aalpersen@gmail.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kfaxview\n"
+"POT-Creation-Date: 2005-10-15 02:46+0200\n"
+"PO-Revision-Date: 2005-07-17 20:41+0300\n"
+"Last-Translator: Alper Şen <aalpersen@gmail.com>\n"
+"Language-Team:  <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Alper Şen"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "aalpersen@gmail.com"
+
+#: faxmultipage.cpp:61 main.cpp:53
+msgid "KFaxView"
+msgstr "KFaxView"
+
+#: faxmultipage.cpp:62
+msgid "KViewshell Fax Plugin."
+msgstr "KViewShell Faks Eklentisi"
+
+#: faxmultipage.cpp:65
+msgid "This program previews fax (g3) files."
+msgstr "Bu program faks (g3) dosyalarını önizler."
+
+#: faxmultipage.cpp:68
+msgid "Current Maintainer."
+msgstr "Mevcut Sorumlu"
+
+#: faxmultipage.cpp:80
+msgid "*.g3|Fax (g3) file (*.g3)"
+msgstr "*.g3|Faks (g3) dosyası (*.g3)"
+
+#: faxrenderer.cpp:139
+msgid ""
+"<qt><strong>File error.</strong> The specified file '%1' does not exist.</qt>"
+msgstr ""
+"<qt><strong>Dosya hatası.</strong> Belirilen %1 dosyası bulunamadı.</qt>"
+
+#: faxrenderer.cpp:140 faxrenderer.cpp:161 faxrenderer.cpp:166
+msgid "File Error"
+msgstr "Dosya Hatası"
+
+#: faxrenderer.cpp:160 faxrenderer.cpp:164
+msgid ""
+"<qt><strong>File error.</strong> The specified file '%1' could not be "
+"loaded.</qt>"
+msgstr ""
+"<qt><strong>Dosya hatası.</strong> Belirilen %1 dosyası yüklenemedi.</qt>"
+
+#: main.cpp:20
+#, fuzzy
+msgid ""
+"Check if the file is loaded in another KFaxView instance.\n"
+"If it is, bring up the other KFaxView. Otherwise, load the file."
+msgstr ""
+"Dosyanın başka bir KFaxView ile yüklenip yüklenmediğini konttrol edin. Öyleyse "
+"diğer KFaxView ,le çalışın. Yoksa dosyayı yükleyin."
+
+#: main.cpp:22
+msgid "Navigate to this page"
+msgstr ""
+
+#: main.cpp:25 main.cpp:27 main.cpp:28 main.cpp:30 main.cpp:32 main.cpp:34
+#: main.cpp:36 main.cpp:38 main.cpp:40 main.cpp:41 main.cpp:42
+msgid "(obsolete)"
+msgstr ""
+
+#: main.cpp:43
+msgid "Files to load"
+msgstr "Yüklenecek dosyalar"
+
+#: main.cpp:48
+msgid "A previewer for Fax files."
+msgstr "Faks dosyaları için önizleyici"
+
+#: main.cpp:56
+msgid "Fax-G3 plugin for the KViewShell document viewer framework."
+msgstr ""
+
+#: main.cpp:59
+msgid "KViewShell plugin"
+msgstr "KViewShell eklentisi"
+
+#: main.cpp:64
+#, fuzzy
+msgid "KViewShell maintainer"
+msgstr "KViewShell eklentisi"
+
+#: main.cpp:68
+msgid "Fax file loading"
+msgstr "Faks dosyası yükleniyor"
+
+#: main.cpp:100
+msgid "The URL %1 is not well-formed."
+msgstr "%1 URL'si doğru oluşturulmamış."
+
+#: main.cpp:106
+msgid ""
+"The URL %1 does not point to a local file. You can only specify local files if "
+"you are using the '--unique' option."
+msgstr ""
+"%1 URL'si yerel dosyayı göstermiyor. Eğer '--unique' seçeneğini kullanıyorsanız "
+"sadece yerel dosyaları belirtebilirsiniz."
+
+#~ msgid "Sets paper size (not implemented at the moment, only for compatibility with lyx)"
+#~ msgstr "Kağıt boyutunu ayarla (şimdilik uyarlanmamıştır, sadece lyx ile uyumluluk için)"
+
+#~ msgid "This program displays FAX-G3 files."
+#~ msgstr "Bu program FAX-G3 dosyalarını gösterir."

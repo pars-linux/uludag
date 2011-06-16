@@ -1,0 +1,33 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2005-05-18 21:23+0200\n"
+"PO-Revision-Date: 2002-11-16 13:55+0000\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.6\n"
+
+#: kate_kdatatool.cpp:78
+msgid "Data Tools"
+msgstr "Veri Araçları"
+
+#: kate_kdatatool.cpp:153 kate_kdatatool.cpp:175
+msgid "(not available)"
+msgstr "(ulaşılamaz)"
+
+#: kate_kdatatool.cpp:183
+msgid ""
+"Data tools are only available when text is selected, or when the right mouse "
+"button is clicked over a word. If no data tools are offered even when text is "
+"selected, you need to install them. Some data tools are part of the KOffice "
+"package."
+msgstr ""
+"Veri araçları sadece seçildikleri zaman kullanılabilirler. Bazı veri araçları "
+"KOffice paketiyle birlikte gelir."

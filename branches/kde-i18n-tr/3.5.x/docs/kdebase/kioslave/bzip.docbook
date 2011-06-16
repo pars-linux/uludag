@@ -1,0 +1,27 @@
+<article lang="&language;" id="bzip">
+<title
+>bzip</title>
+
+<para
+><command
+>bzip</command
+> bir sıkıştırma programıdır. Halen çok sık kullanılmamakla beraber yerini bzip2 adında daha gelişmiş bir programa bırakmaktadır.</para>
+
+<para
+>The bzip kioslave doğrudan kullanılabilir değildir. Bir filtre amaçlı olarak iş görür. Örneğin, tar kioslave bir dosyayı bzip kioslave üzerinden filtreleyebilir ve <literal role="extension"
+>tar.bz</literal
+> dosyasını doğrudan &konqueror; içinde gösterebilir.</para>
+
+<para
+>&konqueror; altında <literal role="extension"
+>bz</literal
+> uzantısı bulunan sıkıştırılmış bir dosyaya tıklarsanız, kioslave bunu açacak ve normal (sıkıştırılmamış) bir dosya gibi görüntüleyecektir.</para>
+
+<para
+>Eğer bir geliştirici iseniz, ve bzip filtresini kullanmak istiyorsanız, daha geniş bilgi için <ulink url="http://developer.kde.org"
+>http://developer.kde.org</ulink
+> adresine bakmanızı öneriyoruz.</para>
+
+</article>
+
+

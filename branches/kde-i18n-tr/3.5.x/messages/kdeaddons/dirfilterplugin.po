@@ -1,0 +1,74 @@
+# translation of dirfilterplugin.po to
+# Copyright (C) 2003, 2005, 2007 Free Software Foundation, Inc.
+#
+#
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+# Cemil MUTLU <mawilos@gmail.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: dirfilterplugin\n"
+"POT-Creation-Date: 2005-12-31 03:19+0100\n"
+"PO-Revision-Date: 2007-05-16 19:39+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: dirfilterplugin.cpp:155
+msgid "View F&ilter"
+msgstr "&Süzgeci Göster"
+
+#: dirfilterplugin.cpp:158
+msgid "Allow to filter the currently displayed items by filetype."
+msgstr ""
+"Dosya türüne göre mevcut gösterilecek olan öğelerin filtrelenmesine izin ver."
+
+#: dirfilterplugin.cpp:175
+msgid "Clear Filter Field"
+msgstr "Süzgeç Alanını Temizle"
+
+#: dirfilterplugin.cpp:179
+msgid "Clear filter field<p>Clears the content of the filter field."
+msgstr "Süzgeç alanını temizle<p>Süzgeç alanının içeriğini temizle."
+
+#: dirfilterplugin.cpp:195
+msgid ""
+"Enter here a text which an item in the view must contain anywhere to be shown."
+msgstr ""
+"Buraya her yerde gösterilecek olan ve görünümde bulunan bir öge ekleyin."
+
+#: dirfilterplugin.cpp:199
+msgid "Filter Field"
+msgstr "Süzgeç Alanı"
+
+#: dirfilterplugin.cpp:250
+msgid "Only Show Items of Type"
+msgstr "Sadece Öğelerin Türlerini Göster"
+
+#: dirfilterplugin.cpp:316
+msgid "Use Multiple Filters"
+msgstr "Çoklu Süzgeç Kullan"
+
+#: dirfilterplugin.cpp:321
+msgid "Show Count"
+msgstr "Sayıyı Göster"
+
+#: dirfilterplugin.cpp:325
+msgid "Reset"
+msgstr "Sıfırla"
+
+#. i18n: file dirfilterplugin.rc line 8
+#: rc.cpp:6
+#, no-c-format
+msgid "Extra Toolbar"
+msgstr "Ek Araç Çubuğu"
+
+#. i18n: file dirfilterplugin.rc line 11
+#: rc.cpp:9
+#, no-c-format
+msgid "Filter Toolbar"
+msgstr "Süzgeç Araç Çubuğu"

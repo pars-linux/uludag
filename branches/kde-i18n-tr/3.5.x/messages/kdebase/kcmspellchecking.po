@@ -1,0 +1,45 @@
+# translation of kcmspellchecking.po to 
+# kde
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2001, 2003.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmspellchecking\n"
+"POT-Creation-Date: 2005-05-18 21:24+0200\n"
+"PO-Revision-Date: 2003-12-09 00:05+0200\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team:  <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.2\n"
+
+#: spellchecking.cpp:38
+msgid "Spell Checking Settings"
+msgstr "İmla Denetimi Ayarları"
+
+#: spellchecking.cpp:46
+msgid ""
+"<h1>Spell Checker</h1>"
+"<p>This control module allows you to configure the KDE spell checking system. "
+"You can configure:"
+"<ul>"
+"<li> which spell checking program to use"
+"<li> which types of spelling errors are identified"
+"<li> which dictionary is used by default.</ul>"
+"<br>The KDE spell checking system (KSpell) provides support for two common "
+"spell checking utilities: ASpell and ISpell. This allows you to share "
+"dictionaries between KDE applications and non-KDE applications.</p>"
+msgstr ""
+"<h1>İmla Denetimi</h1>"
+"<p>Bu kontrol modülü KDE imla denetim sistemini ayarlamanıza olanak verir. "
+"Ayarlayabileceğiniz özellikler arasında, "
+"<ul> "
+"<li>Hangi imla denetim programının kullanılacağı "
+"<li>Hangi sözlüğün öntanımlı olarak kullanılacağı"
+"<li>Hangi imla hatalarının belirleneceği </ul>"
+"<br>bulunur. KDE imla denetim sistemi (KSpell) hem ASpell, hem de ISpell için "
+"için destek vermektedir. Bu özellik KDE ve KDE dışı uygulamaların birbirleri "
+"arasında sözlük paylaşmalarına da olanak tanır.</p>"

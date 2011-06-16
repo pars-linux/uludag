@@ -1,0 +1,37 @@
+# translation of kmilo_generic.po to Türkçe
+# translation of kmilo_generic.po to Turkish
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Engin Çağatay <engincagatay@yahoo.com>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kmilo_generic\n"
+"POT-Creation-Date: 2008-02-07 01:30+0100\n"
+"PO-Revision-Date: 2004-11-19 20:05+0200\n"
+"Last-Translator: Engin Çağatay <engincagatay@yahoo.com>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.3\n"
+
+#: generic_monitor.cpp:126 generic_monitor.cpp:166 generic_monitor.cpp:260
+msgid "Starting KMix..."
+msgstr "KMix Başlatılıyor..."
+
+#: generic_monitor.cpp:139 generic_monitor.cpp:184 generic_monitor.cpp:282
+msgid "It seems that KMix is not running."
+msgstr "KMix çalışmıyor gibi görünüyor."
+
+#: generic_monitor.cpp:226
+msgid "Volume"
+msgstr "Ses"
+
+#: generic_monitor.cpp:299
+msgid "Mute on"
+msgstr "Sesi Kapat"
+
+#: generic_monitor.cpp:301
+msgid "Mute off"
+msgstr "Sesi Aç"

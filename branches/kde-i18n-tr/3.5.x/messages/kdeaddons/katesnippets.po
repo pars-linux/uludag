@@ -1,0 +1,38 @@
+# translation of katesnippets.po to Türkçe
+# Görkem Çetin <gorkem@kde.org>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: katesnippets\n"
+"POT-Creation-Date: 2005-05-08 01:27+0200\n"
+"PO-Revision-Date: 2004-10-30 19:43+0300\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9\n"
+
+#. i18n: file CWidgetSnippetsBase.ui line 19
+#: plugin_katesnippets.cpp:121 rc.cpp:6
+#, no-c-format
+msgid "Snippets"
+msgstr "Kod parçacıkları"
+
+#. i18n: file CWidgetSnippetsBase.ui line 42
+#: rc.cpp:9
+#, no-c-format
+msgid "Snippet"
+msgstr "Kod parçacığı"
+
+#. i18n: file CWidgetSnippetsBase.ui line 88
+#: rc.cpp:12
+#, no-c-format
+msgid "A list of Snippets"
+msgstr "Kod parçacıklarının listesi"
+
+#. i18n: file CWidgetSnippetsBase.ui line 91
+#: rc.cpp:15
+#, no-c-format
+msgid "A list of Snippets, what else"
+msgstr "Kod parçacıklarının listesi"

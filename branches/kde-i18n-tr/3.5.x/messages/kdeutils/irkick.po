@@ -1,0 +1,109 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2005-07-24 01:36+0200\n"
+"PO-Revision-Date: 2003-11-14 00:40+0200\n"
+"Last-Translator: YILDIZ KARDEŞLER <turkishprogram@xposta.com>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "YILDIZ KARDEŞLER"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "turkishprogram@xposta.com"
+
+#: irkick.cpp:58
+msgid "KDE Lirc Server: Ready."
+msgstr "KDE Lirc Sunucusu: Hazır."
+
+#: irkick.cpp:62
+msgid "KDE Lirc Server: No infra-red remote controls found."
+msgstr "KDE Lirc Sunucusu: Kızıl ötesi uzak kontrolü bulunamadı."
+
+#: irkick.cpp:75
+msgid "&Configure..."
+msgstr "Ayarlar..."
+
+#: irkick.cpp:94
+msgid ""
+"The infrared system has severed its connection. Remote controls are no longer "
+"available."
+msgstr ""
+"Kızıl Ötesi sistem bağlantısı kesildi. Uzak kontroller artık kullanılamaz."
+
+#: irkick.cpp:102
+msgid ""
+"A connection to the infrared system has been made. Remote controls may now be "
+"available."
+msgstr ""
+"Kızıl Ötesi sistemine bir bağlantı gerçekleştirildi. Uzak Kontroller artık "
+"kullanılabilir."
+
+#: irkick.cpp:118
+msgid ""
+"Should the Infrared Remote Control server start automatically when you begin "
+"KDE?"
+msgstr ""
+"KDE açılırken Kızıl Ötesi Uzak Kontrol sunucusu otomatik olarak başlatılsın mı?"
+
+#: irkick.cpp:118
+msgid "Automatically Start?"
+msgstr "Otomatik Başlat?"
+
+#: irkick.cpp:118
+#, fuzzy
+msgid "Start Automatically"
+msgstr "Otomatik Başlat?"
+
+#: irkick.cpp:118
+msgid "Do Not Start"
+msgstr ""
+
+#: irkick.cpp:129
+msgid "Resetting all modes."
+msgstr "Tüm modlar yeniden başlatılıyor."
+
+#: irkick.cpp:247
+msgid "Starting <b>%1</b>..."
+msgstr "<b>%1</b> başlatılıyor..."
+
+#: main.cpp:22
+msgid "IRKick"
+msgstr "IRKick"
+
+#: main.cpp:22
+msgid "The KDE Infrared Remote Control Server"
+msgstr "KDE Kızıl Ötesi Uzak Kontrol Sunucusu"
+
+#: main.cpp:23
+msgid "Author"
+msgstr "Yazan"
+
+#: main.cpp:24
+msgid "Original LIRC interface code"
+msgstr "Özgün LIRC arayüz kodu"
+
+#: main.cpp:25
+msgid "Ideas, concept code"
+msgstr "Fikirler,  genel kavram kodu"
+
+#: main.cpp:26
+msgid "Random patches"
+msgstr "Rastgele yamalar"
+
+#: main.cpp:27
+msgid "Ideas"
+msgstr "Fikirler"

@@ -1,0 +1,31 @@
+<article lang="&language;" id="bzip2">
+<title
+>bzip2</title>
+
+<para
+>Bzip2 bir sıkıştırma programıdır</para>
+
+<para
+><command
+>bzip2</command
+> bir sıkıştırma programıdır. Örneğin, bir <literal role="extension"
+>tar.bz2</literal
+> dosyasını &konqueror; altında açmak için bzip2 kioslave'e ihtiyaç duyarsınız.</para>
+
+<para
+>&konqueror; altında <literal role="extension"
+>.bz2</literal
+> uzantısı bulunan sıkıştırılmış bir dosyaya tıklarsanız, kioslave bunu açacak ve normal (sıkıştırılmamış) bir dosya gibi görüntüleyecektir.</para>
+
+<para
+>Eğer bir geliştirici iseniz, ve bzip2 filtresini kullanmak istiyorsanız, daha geniş bilgi için <ulink url="http://developer.kde.org"
+>http://developer.kde.org</ulink
+> adresine bakmanızı öneriyoruz.</para>
+
+<para
+> See the manual: <ulink url="man:/bzip2"
+>bzip2</ulink
+>. </para>
+
+</article>
+

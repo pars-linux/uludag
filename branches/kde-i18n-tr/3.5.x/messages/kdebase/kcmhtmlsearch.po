@@ -1,0 +1,159 @@
+# translation of kcmhtmlsearch.po to 
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# Tuncay YENİAY <tuncayyeniay@mynet.com>,2002.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmhtmlsearch\n"
+"POT-Creation-Date: 2005-05-18 21:23+0200\n"
+"PO-Revision-Date: 2003-12-11 22:27+0200\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team:  <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.2\n"
+
+#: kcmhtmlsearch.cpp:43
+msgid "ht://dig"
+msgstr "ht://dig"
+
+#: kcmhtmlsearch.cpp:50
+msgid ""
+"The fulltext search feature makes use of the ht://dig HTML search engine. You "
+"can get ht://dig at the"
+msgstr ""
+"Tamtext arama özelliği ht://dig HTML arama motorunun kullanımına olanak tanır. "
+"ht://dig 'i alabileceğiniz yer"
+
+#: kcmhtmlsearch.cpp:56
+msgid "Information about where to get the ht://dig package."
+msgstr "ht://dig paketinin nereden alınacağı ile ilgili bilgi."
+
+#: kcmhtmlsearch.cpp:60
+msgid "ht://dig home page"
+msgstr "ht://dig ana sayfası"
+
+#: kcmhtmlsearch.cpp:66
+msgid "Program Locations"
+msgstr "Program Yerleri"
+
+#: kcmhtmlsearch.cpp:73
+msgid "ht&dig"
+msgstr "ht&dig"
+
+#: kcmhtmlsearch.cpp:78
+msgid "Enter the path to your htdig program here, e.g. /usr/local/bin/htdig"
+msgstr "htdig programının patikasını buraya girin, örn. /usr/local/bin/htdig"
+
+#: kcmhtmlsearch.cpp:83
+msgid "ht&search"
+msgstr "ht&search"
+
+#: kcmhtmlsearch.cpp:88
+msgid ""
+"Enter the path to your htsearch program here, e.g. /usr/local/bin/htsearch"
+msgstr ""
+"htsearch programının patikasını buraya girin, örn. /usr/local/bin/htsearch"
+
+#: kcmhtmlsearch.cpp:93
+msgid "ht&merge"
+msgstr "ht&merge"
+
+#: kcmhtmlsearch.cpp:98
+msgid ""
+"Enter the path to your htmerge program here, e.g. /usr/local/bin/htmerge"
+msgstr ""
+"htmerge programının patikasını buraya girin, örn. /usr/local/bin/htmerge"
+
+#: kcmhtmlsearch.cpp:104
+msgid "Scope"
+msgstr "Etki alanı"
+
+#: kcmhtmlsearch.cpp:106
+msgid ""
+"Here you can select which parts of the documentation should be included in the "
+"fulltext search index. Available options are the KDE Help pages, the installed "
+"man pages, and the installed info pages. You can select any number of these."
+msgstr ""
+"Buradan dökümantasyonun hangi bölümlerinin arama indeksine dahil edileceğini "
+"belirleyebilirsiniz. Kullanılabilir seçenekler KDE Yardım sayfaları, yüklenmiş "
+"man sayfaları, ve yüklenmiş info sayfaları. Bunlardan istediğiniz kadarını "
+"seçebilirsiniz."
+
+#: kcmhtmlsearch.cpp:111
+msgid "&KDE help"
+msgstr "&KDE yardım"
+
+#: kcmhtmlsearch.cpp:115
+msgid "&Man pages"
+msgstr "&Kılavuz sayfaları"
+
+#: kcmhtmlsearch.cpp:120
+msgid "&Info pages"
+msgstr "&Info sayfaları"
+
+#: kcmhtmlsearch.cpp:125
+msgid "Additional Search Paths"
+msgstr "Ekli Arama Patikaları"
+
+#: kcmhtmlsearch.cpp:127
+msgid ""
+"Here you can add additional paths to search for documentation. To add a path, "
+"click on the <em>Add...</em> button and select the folder from where additional "
+"documentation should be searched. You can remove folders by clicking on the <em>"
+"Delete</em> button."
+msgstr ""
+"Buradan aranacak dökümanlar için ek yollar kleyebilirsiniz. Bir yoleklemek "
+"için, <em>Ekle...</em> düğmesine tıklayın ve aranacak dökümanlar için eklenecek "
+"dizini seçin. <em>Sil</em> düğmesine tıklayarak dizinleri silebilirsiniz."
+
+#: kcmhtmlsearch.cpp:132
+msgid "Add..."
+msgstr "Ekle..."
+
+#: kcmhtmlsearch.cpp:142
+msgid "Language Settings"
+msgstr "Dil Ayarları"
+
+#: kcmhtmlsearch.cpp:144
+msgid "Here you can select the language you want to create the index for."
+msgstr "Buradan index oluşturacağınız dili seçebilirisiniz."
+
+#: kcmhtmlsearch.cpp:146
+msgid "&Language"
+msgstr "&Man sayfaları"
+
+#: kcmhtmlsearch.cpp:158
+msgid "Generate Index..."
+msgstr "İndeks Oluştur..."
+
+#: kcmhtmlsearch.cpp:159
+msgid "Click this button to generate the index for the fulltext search."
+msgstr "Tamtext aramaya idex oluşturmak için bu düğmeye basın."
+
+#: kcmhtmlsearch.cpp:203
+msgid ""
+"<h1>Help Index</h1> This configuration module lets you configure the ht://dig "
+"engine which can be used for fulltext search in the KDE documentation as well "
+"as other system documentation like man and info pages."
+msgstr ""
+"<h1>Yardım Indeksi</h1> Bu yapılandırma modülü size KDE dökümantasyonu ve man "
+"ve info sayfaları gibi diğer sistem dökümantasyonlarında arama yapmak için "
+"kullanılabilecek ht://dig motorunu yapılandırmanızı sağlar."
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Tuncay YENİAY"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "tuncayyeniay@mynet.com"
+
+#~ msgid "without name"
+#~ msgstr "isimsiz"

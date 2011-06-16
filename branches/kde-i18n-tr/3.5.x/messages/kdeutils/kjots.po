@@ -1,0 +1,320 @@
+# translation of kjots.po to
+# KDE TÜRKÇELEŞTİRME PROJESİ.
+# Copyright (C) 2000, 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
+#
+# Adem GUNES <adem@alaeddin.cc.selcuk.edu.tr>, 2000.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Engin Çağatay <engincagatay@yahoo.com>, 2004.
+# Bekir SONAT <cortexbs@yahoo.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kjots\n"
+"POT-Creation-Date: 2007-05-02 02:16+0200\n"
+"PO-Revision-Date: 2007-06-28 16:48+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=1; plural=0;\n"
+
+#: KJotsMain.cpp:77
+msgid "Pages"
+msgstr "Sayfa(lar)"
+
+#: KJotsMain.cpp:107
+msgid "Next Book"
+msgstr "Sonraki Kitap"
+
+#: KJotsMain.cpp:109
+msgid "Previous Book"
+msgstr "Önceki Kitap"
+
+#: KJotsMain.cpp:111
+msgid "Next Page"
+msgstr "Sonraki Sayfa"
+
+#: KJotsMain.cpp:113
+msgid "Previous Page"
+msgstr "Önceki Sayfa"
+
+#: KJotsMain.cpp:117
+msgid "&New Page"
+msgstr "Ye&ni Sayfa"
+
+#: KJotsMain.cpp:118
+msgid "New &Book..."
+msgstr "&Yeni Kitap..."
+
+#: KJotsMain.cpp:121
+msgid "Export Page"
+msgstr "Sayfayı Aktar"
+
+#: KJotsMain.cpp:122 KJotsMain.cpp:130
+msgid "To Text File..."
+msgstr "Metin Dosyasına..."
+
+#: KJotsMain.cpp:125 KJotsMain.cpp:133
+msgid "To HTML File..."
+msgstr "HTML Dosyasına..."
+
+#: KJotsMain.cpp:129
+msgid "Export Book"
+msgstr "Kitap Aktar"
+
+#: KJotsMain.cpp:137
+msgid "&Delete Page"
+msgstr "S&ayfayı Sil"
+
+#: KJotsMain.cpp:139
+msgid "Delete Boo&k"
+msgstr "&Kitabı Sil"
+
+#: KJotsMain.cpp:142
+msgid "Manual Save"
+msgstr "Elle Kaydet"
+
+#: KJotsMain.cpp:153
+msgid "Copy &into Page Title"
+msgstr "Sayfa Başlığına &Kopyala"
+
+#: KJotsMain.cpp:164
+msgid "Rename..."
+msgstr "Yeniden İsimlendir..."
+
+#: KJotsMain.cpp:166
+msgid "Insert Date"
+msgstr "Tarih Ekle"
+
+#: KJotsMain.cpp:286
+msgid "New Book"
+msgstr "Yeni Kitap"
+
+#: KJotsMain.cpp:287 kjotsentry.cpp:498
+msgid "Book name:"
+msgstr "Kitap adı:"
+
+#: KJotsMain.cpp:318
+msgid "<qt>Are you sure you want to delete the <strong>%1</strong> book?</qt>"
+msgstr ""
+"<qt><strong>%1</strong> adlı kitabı silmek istediğinizden emin misiniz? </qt>"
+
+#: KJotsMain.cpp:319
+msgid "Delete Book"
+msgstr "Kitabı Sil"
+
+#: KJotsMain.cpp:362
+msgid "<qt>Are you sure you want to delete the <strong>%1</strong> page?</qt>"
+msgstr ""
+"<qt><strong>%1</strong> adlı sayfayı silmek istediğinizden emin misiniz? </qt>"
+
+#: KJotsMain.cpp:364
+msgid "Delete Page"
+msgstr "Sayfayı Sil"
+
+#: KJotsMain.cpp:400
+msgid "Autosave"
+msgstr "Otokayıt"
+
+#: KJotsMain.cpp:496 KJotsMain.cpp:537
+msgid ""
+"The file <strong>%1</strong> already exists. Do you wish to overwrite it?"
+msgstr ""
+"<strong>%1</strong>adlı dosya zaten mevcut. Üzerine yazmak istiyor musunuz?"
+
+#: KJotsMain.cpp:496 KJotsMain.cpp:537
+msgid "File Exists"
+msgstr "Dosya Mevcut"
+
+#: KJotsMain.cpp:496 KJotsMain.cpp:537
+msgid "Overwrite"
+msgstr "Üzerine Yaz"
+
+#: KJotsMain.cpp:828
+msgid ""
+"This bookmark is from an older version of KJots and is not fully supported. It "
+"may or may not work. You should delete and recreate this bookmark."
+msgstr ""
+"Bu Yerimi Kjots'un eski bir sürümüne ait ve tam olarak desteklenmiyor. "
+"Çalışabilirliği kesin değil. Silip yeniden oluşturmayı deneyin lütfen."
+
+#: KJotsMain.cpp:1119
+msgid ""
+"All pages must be inside a book. Would you like to create a new book to put the "
+"page in, or would you prefer to not move the page at all?"
+msgstr ""
+"Tüm sayfalar bir kitabın içerisinde olmalı. Sayfayı koymak için boş bir kitap "
+"oluşturulsun mu yoksa sayfayı şimdi taşımak istemiyor musunuz?"
+
+#: KJotsMain.cpp:1123
+msgid "Create New Book"
+msgstr "Yeni Kitap Oluştur"
+
+#: KJotsMain.cpp:1123
+msgid "Do Not Move Page"
+msgstr "Sayfayı Taşıma"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "YILDIZ KARDEŞLER"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "turkishprogram@xposta.com"
+
+#: kjotsedit.cpp:48
+msgid "Open URL"
+msgstr "URL Aç"
+
+#: kjotsentry.cpp:497
+msgid "Rename Book"
+msgstr "Kitabı Yeniden İsimlendir"
+
+#: kjotsentry.cpp:535
+#, c-format
+msgid "Saving %1"
+msgstr "%1 Kaydediliyor"
+
+#: kjotsentry.cpp:536
+msgid "Saving the contents of %1 to %2"
+msgstr " %1 içindekiler %2'ye kaydediliyor "
+
+#: kjotsentry.cpp:616 kjotsentry.cpp:998
+#, c-format
+msgid "Print: %1"
+msgstr "Yazdır: %1"
+
+#: kjotsentry.cpp:647
+msgid "Untitled Book"
+msgstr "İsimsiz Kitap"
+
+#: kjotsentry.cpp:800
+msgid "Table of Contents"
+msgstr "İçindekiler"
+
+#: kjotsentry.cpp:908
+msgid "Rename Page"
+msgstr "Sayfayı Yeniden Adlandır"
+
+#: kjotsentry.cpp:909
+msgid "Page title:"
+msgstr "Sayfa başlığı:"
+
+#: kjotsentry.cpp:1069
+#, c-format
+msgid "Page %1"
+msgstr "Sayfa %1"
+
+#: main.cpp:37
+msgid "KDE note taking utility"
+msgstr "KDE not alma uygulaması"
+
+#: main.cpp:44
+msgid "KJots"
+msgstr "Kjots"
+
+#: main.cpp:47
+msgid "Current maintainer"
+msgstr "Güncel yazar"
+
+#: main.cpp:51
+msgid "Original author"
+msgstr "Asıl yazar"
+
+#. i18n: file confpagemisc.ui line 30
+#: rc.cpp:9
+#, no-c-format
+msgid " minutes"
+msgstr "dakika"
+
+#. i18n: file confpagemisc.ui line 33
+#: rc.cpp:12
+#, no-c-format
+msgid "1 minute"
+msgstr "1 dakika"
+
+#. i18n: file confpagemisc.ui line 42
+#: rc.cpp:15 rc.cpp:21
+#, no-c-format
+msgid ""
+"This is the number of minutes KJots will wait before automatically saving "
+"changes."
+msgstr "Bu KJots'un otomatik olarak kaydetmeden önce bekliyeceği süredir."
+
+#. i18n: file confpagemisc.ui line 50
+#: rc.cpp:18
+#, no-c-format
+msgid "S&ave every:"
+msgstr "Kaydetme sıklığ&ı:"
+
+#. i18n: file confpagemisc.ui line 115
+#: rc.cpp:24
+#, no-c-format
+msgid "&Save changes periodically"
+msgstr "Ara &sıra değişiklikleri kaydet"
+
+#. i18n: file confpagemisc.ui line 121
+#: rc.cpp:27
+#, no-c-format
+msgid ""
+"When \"Enable autosave\" is checked, KJots will automatically save changes made "
+"to books at the interval defined below."
+msgstr ""
+"\"Otokayıt Aktif\" seçili olduğunda, KJots seçilen sürede bir kitabı otomatik "
+"olarak kaydeder."
+
+#. i18n: file confpagemisc.ui line 129
+#: rc.cpp:30
+#, no-c-format
+msgid "Use Unico&de encoding"
+msgstr "Unico&de şifreleme kullan"
+
+#. i18n: file kjots.kcfg line 9
+#: rc.cpp:33
+#, no-c-format
+msgid "How the main window is divided."
+msgstr "Ana pencerenin nasıl bölündüğü."
+
+#. i18n: file kjots.kcfg line 12
+#: rc.cpp:36
+#, no-c-format
+msgid "The book or page that is currently active."
+msgstr "Kitap veya sayfa zaten açık."
+
+#. i18n: file kjots.kcfg line 15
+#: rc.cpp:39
+#, no-c-format
+msgid "The font used to display the contents of books."
+msgstr "Kitapların içeriğini göstermekte kullanılan yazıtipi"
+
+#. i18n: file kjots.kcfg line 19
+#: rc.cpp:42
+#, no-c-format
+msgid "Whether books should be saved automatically."
+msgstr "Kitaplar otomatik olarak kaydedilecek."
+
+#. i18n: file kjots.kcfg line 23
+#: rc.cpp:45
+#, no-c-format
+msgid "Whether UTF-8 encoding should be forced for saving and loading."
+msgstr "Kaydetme ve yükleme için UTF-8 şifrelemeye zorlanacak."
+
+#. i18n: file kjots.kcfg line 27
+#: rc.cpp:48
+#, no-c-format
+msgid "The interval in minutes at which books should be saved automatically."
+msgstr ""
+"Kitapların otomatik olarak kaydedileceği dakika cinsinden zaman aralığı."
+
+#. i18n: file kjots.kcfg line 31
+#: rc.cpp:51
+#, no-c-format
+msgid "The last ID that was used for a book or page."
+msgstr "Kitap veya sayfa için kullanılan son Kimlik."

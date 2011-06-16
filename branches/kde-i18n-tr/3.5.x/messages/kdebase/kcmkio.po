@@ -1,0 +1,2122 @@
+# translation of kcmkio.po to
+# translation of kcmkio.po to Turkish
+# Copyright (C) 2000,2003, 2004, 2007 Free Software Foundation, Inc.
+# Adem GUNES <adem@alaeddin.cc.selcuk.edu.tr>, 2000.
+# Serdar Cevher <scevher@anet.com.tr>, 2001.
+# Görkem Çetin <gorkem@kde.org>, 2002,2003, 2004.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>,2002.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2003.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Adil YILDIZ <adil@linux-sevenler.org>, 2004.
+# Adem Alp YILDIZ <ademalp@kde.org.tr>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkio\n"
+"POT-Creation-Date: 2008-07-08 01:18+0200\n"
+"PO-Revision-Date: 2007-07-05 15:23+0300\n"
+"Last-Translator: Serdar Soytetir\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Engin ÇAĞATAY"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "engincagatay@yahoo.com"
+
+#: cache.cpp:105
+msgid ""
+"<h1>Cache</h1>"
+"<p>This module lets you configure your cache settings.</p>"
+"<p>The cache is an internal memory in Konqueror where recently read web pages "
+"are stored. If you want to retrieve a web page again that you have recently "
+"read, it will not be downloaded from the Internet, but rather retrieved from "
+"the cache, which is a lot faster.</p>"
+msgstr ""
+"<h1>Önbellek</h1>"
+"<p>Bu modül önbellek ayarlarınızı yapmanızı sağlar. </p> "
+"<p>Önbellekleme Konqueror içinde kullanılan, daha önceden yüklenmiş web "
+"sayfalarının tutulduğu içsel bir bellek sistemidir. Eğer daha önce okuduğunuz "
+"bir sayfaya erişmek isterseniz sayfa karşıdan tekrar istenmeyecek, önbellekten "
+"okunacaktır.</p>"
+
+#: kcookiesmain.cpp:32
+msgid ""
+"Unable to start the cookie handler service.\n"
+"You will not be able to manage the cookies that are stored on your computer."
+msgstr ""
+"Çerez yönetici servisi çalıştırılamıyor.\n"
+"Bilgisayarınızdaki çerezleri yönetemeyeceksiniz."
+
+#: kcookiesmain.cpp:42
+msgid "&Policy"
+msgstr "&Politika"
+
+#: kcookiesmain.cpp:48
+msgid "&Management"
+msgstr "&Yönetim"
+
+#: kcookiesmain.cpp:83
+msgid ""
+"<h1>Cookies</h1> Cookies contain information that Konqueror (or other KDE "
+"applications using the HTTP protocol) stores on your computer, initiated by a "
+"remote Internet server. This means that a web server can store information "
+"about you and your browsing activities on your machine for later use. You might "
+"consider this an invasion of privacy. "
+"<p> However, cookies are useful in certain situations. For example, they are "
+"often used by Internet shops, so you can 'put things into a shopping basket'. "
+"Some sites require you have a browser that supports cookies. "
+"<p> Because most people want a compromise between privacy and the benefits "
+"cookies offer, KDE offers you the ability to customize the way it handles "
+"cookies. So you might want to set KDE's default policy to ask you whenever a "
+"server wants to set a cookie, allowing you to decide. For your favorite "
+"shopping web sites that you trust, you might want to set the policy to accept, "
+"then you can access the web sites without being prompted every time KDE "
+"receives a cookie."
+msgstr ""
+"<h1>Çerezler</h1> Çerezler Konqueror (ya da http protokolünü kullanan diğer KDE "
+"uygulamaları) tarafından bilgisayarınızda saklanan ve uzak bir internet "
+"sunucusu tarafından kullanılan bilgiler içerir. Bunun anlamı bir web "
+"sunucusunun sizin hakkınızda ve tarama faaliyetleriniz hakkında makinanıza daha "
+"sonra kullanmak üzere bilgi yerleştirebileceğidir. Bunun özel hayatınıza bir "
+"saldırı olduğunu düşünebilirsiniz. "
+"<p>   Ancak, çerezler belli durumlarda yararlıdır. Örneğin, çoğu internet "
+"mağazası tarafından kullanılırlar ve böylece 'bir alışveriş sepetine birşeyler "
+"koymanız' mümkün olur. Bazı siteler çerez desteği olan bir tarayıcıya sahip "
+"olmanızı gerektirir. "
+"<p> Çoğu insan özel yaşam ile çerezlerin sağladığı yararlar arasında bir denge "
+"kurmak istediği için, KDE size çerezlere nasıl davranacağını belirleme olanağı "
+"tanımaktadır. Bu nedenle KDE'nin öntanımlı politikasını bir sunucu çerez "
+"yerleştirmek istediğinde sizin teyidinizi alacak şekilde ayarlayarak karar "
+"verme şansına sahip olabilirsiniz.  Güvendiğiniz gözde alışveriş siteleriniz "
+"için politikayı kabule ayarlayarak, KDE'nin her çerez alışında size sormasını "
+"engelleyerek web sitelerini kullanabilirsiniz. "
+
+#: kcookiesmanagement.cpp:150 kcookiesmanagement.cpp:170
+msgid "DCOP Communication Error"
+msgstr "DCOP İletişim Hatası"
+
+#: kcookiesmanagement.cpp:151
+msgid "Unable to delete all the cookies as requested."
+msgstr "İstenen tüm çerezler silinemiyor."
+
+#: kcookiesmanagement.cpp:171
+msgid "Unable to delete cookies as requested."
+msgstr "İstenen çerezler silinemiyor."
+
+#: kcookiesmanagement.cpp:241
+msgid "<h1>Cookies Management Quick Help</h1>"
+msgstr "<h1>Çerez Yöneticisi Hızlı Yardımı</h1>"
+
+#: kcookiesmanagement.cpp:250
+msgid "Information Lookup Failure"
+msgstr "Bilgi Tarama Hatası"
+
+#: kcookiesmanagement.cpp:251
+msgid ""
+"Unable to retrieve information about the cookies stored on your computer."
+msgstr "Bilgisayarınızdaki çerezler hakkında bilgi toplanamıyor."
+
+#: kcookiesmanagement.cpp:332
+msgid "End of session"
+msgstr "Oturum sonu"
+
+#: kcookiespolicies.cpp:112
+msgid "New Cookie Policy"
+msgstr "Yeni Çerez Politikası"
+
+#: kcookiespolicies.cpp:151
+msgid "Change Cookie Policy"
+msgstr "Çerez Politikasını Değiştir"
+
+#: kcookiespolicies.cpp:176
+msgid ""
+"<qt>A policy already exists for"
+"<center><b>%1</b></center>Do you want to replace it?</qt>"
+msgstr ""
+"<qt>Zaten "
+"<center><b>%1</b></center> için bir politika var. Bunun üzerine yazmak ister "
+"misiniz?</qt>"
+
+#: kcookiespolicies.cpp:180
+msgid "Duplicate Policy"
+msgstr "Politikayı İkizle"
+
+#: kcookiespolicies.cpp:408
+msgid ""
+"Unable to communicate with the cookie handler service.\n"
+"Any changes you made will not take effect until the service is restarted."
+msgstr ""
+"Çerez yönetici servisine ulaşılamıyor.\n"
+"Yaptığınız değişiklikler bu servis tekrar başlatılana kadar uygulanmayacak."
+
+#: kcookiespolicies.cpp:449
+msgid ""
+"<h1>Cookies</h1> Cookies contain information that Konqueror (or any other KDE "
+"application using the HTTP protocol) stores on your computer from a remote "
+"Internet server. This means that a web server can store information about you "
+"and your browsing activities on your machine for later use. You might consider "
+"this an invasion of privacy."
+"<p>However, cookies are useful in certain situations. For example, they are "
+"often used by Internet shops, so you can 'put things into a shopping basket'. "
+"Some sites require you have a browser that supports cookies."
+"<p>Because most people want a compromise between privacy and the benefits "
+"cookies offer, KDE offers you the ability to customize the way it handles "
+"cookies. You might, for example want to set KDE's default policy to ask you "
+"whenever a server wants to set a cookie or simply reject or accept everything. "
+"For example, you might choose to accept all cookies from your favorite shopping "
+"web site. For this all you have to do is either browse to that particular site "
+"and when you are presented with the cookie dialog box, click on <i> "
+"This domain </i> under the 'apply to' tab and choose accept or simply specify "
+"the name of the site in the <i> Domain Specific Policy </i> "
+"tab and set it to accept. This enables you to receive cookies from trusted web "
+"sites without being asked every time KDE receives a cookie."
+msgstr ""
+"<h1>Çerezler</h1> Çerezler Konqueror (ya da HTTP protokolünü kullanan diğer KDE "
+"uygulamaları) tarafından bilgisayarınızda saklanan ve uzak bir internet "
+"sunucusu tarafından kullanılan bilgiler içerir. Bunun anlamı bir web "
+"sunucusunun sizin hakkınızda ve tarama faaliyetleriniz hakkında makinanıza daha "
+"sonra kullanmak üzere bilgi yerleştirebileceğidir. Bunun özel hayatınıza bir "
+"saldırı olduğunu düşünebilirsiniz. "
+"<p> Ancak, çerezler belli durumlarda yararlıdır. Örneğin, çoğu internet "
+"mağazası tarafından kullanılırlar ve böylece 'bir alışveriş sepetine birşeyler "
+"koymanız' mümkün olur. Bazı siteler çerez desteği olan bir tarayıcıya sahip "
+"olmanızı gerektirir. "
+"<p> Çoğu insan özel yaşam ile çerezlerin sağladığı yararlar arasında bir denge "
+"kurmak istediği için, KDE size çerezlere nasıl davranılacağını belirleme "
+"olanağı tanımaktadır. Bu nedenle KDE'nin öntanımlı politikasını bir sunucu "
+"çerez yerleştirmek istediğinde sizin teyidinizi alacak şekilde ayarlayarak "
+"karar verme şansına sahip olabilirsiniz. Güvendiğiniz gözde alışveriş "
+"siteleriniz için politikayı kabule ayarlayarak, KDE'nin her çerez alışında size "
+"sormasını engelleyerek web sitelerini kullanabilirsiniz. Bunun için bütün "
+"yapmanız gereken ya o özel siteyi taramak ve çerez iletişim kutusu ile "
+"karşılaştığınızda 'uygula' sekmesinin altındaki <i>Bu alan</i>"
+"'ı tıklamak ve kabulü seçmek ya da sadece <i>Etki Alanına Özel Politika</i> "
+"sekmesinde sitenin adını belirtmek ve bunu kabul'e ayarlamaktır. Bu, KDE her "
+"çerez aldığında, size sorulmadan güvenilir web sitelerinden çerez alabilmenizi "
+"sağlar."
+
+#: kenvvarproxydlg.cpp:70
+msgid "Variable Proxy Configuration"
+msgstr "Değişken Vekil Sunucu Yapılandırması"
+
+#: kenvvarproxydlg.cpp:136 kenvvarproxydlg.cpp:285
+msgid "You must specify at least one valid proxy environment variable."
+msgstr "En az bir geçerli vekil sunucu çevresel değişkeni belirtmelisiniz."
+
+#: kenvvarproxydlg.cpp:139 kenvvarproxydlg.cpp:288
+msgid ""
+"<qt>Make sure you entered the actual environment variable name rather than its "
+"value. For example, if the environment variable is "
+"<br><b>HTTP_PROXY=http://localhost:3128</b>"
+"<br> you need to enter <b>HTTP_PROXY</b> here instead of the actual value "
+"http://localhost:3128.</qt>"
+msgstr ""
+"<qt>Gerçek çevre değişkeninin değeri yerine ismini girdiğinizden emin olun. "
+"Örneğin, eğer çevre değişkeni "
+"<br><b>HTTP_PROXY=http://localhost:3128</b> "
+"<br> ise, siz buraya değişken tarafından belirtilen gerçek adres yerine <b>"
+"HTTP_PROXY</b> girmelisiniz.</qt>"
+
+#: kenvvarproxydlg.cpp:147 kenvvarproxydlg.cpp:296 kproxydlg.cpp:372
+msgid "Invalid Proxy Setup"
+msgstr "Geçersiz Vekil Sunucu Ayarı"
+
+#: kenvvarproxydlg.cpp:151
+msgid "Successfully verified."
+msgstr "Başarıyla onaylandı."
+
+#: kenvvarproxydlg.cpp:152
+msgid "Proxy Setup"
+msgstr "Vekil Sunucu Ayarları"
+
+#: kenvvarproxydlg.cpp:179
+msgid ""
+"Did not detect any environment variables commonly used to set system wide proxy "
+"information."
+msgstr ""
+"Sistem kapsamında vekil bilgisini ayarlamak için ortak olarak kullanılan "
+"herhangi bir çevre değişkeni algılamadı."
+
+#: kenvvarproxydlg.cpp:183
+msgid ""
+"<qt>To learn about the variable names the automatic detection process searches "
+"for, press OK, click on the quick help button on the window title bar of the "
+"previous dialog and then click on the \"<b>Auto Detect</b>\" button.</qt>"
+msgstr ""
+"<qt> Otomatik algılama işleminin aradığı değişken isimlerini öğrenmek için "
+"TAMAM'a basın ve önceki iletişim kutusunun sağ üst köşesindeki hızlı yardım "
+"düğmesini tıklayıp \"<b>Otomatik Algıla</b>\" düğmesine tıklayın.</qt>"
+
+#: kenvvarproxydlg.cpp:191
+msgid "Automatic Proxy Variable Detection"
+msgstr "Otomatik Vekil Sunucu Bulma"
+
+#: kmanualproxydlg.cpp:47
+msgid "Manual Proxy Configuration"
+msgstr "Elle Vekil Sunucu Yapılandırma"
+
+#: kmanualproxydlg.cpp:271
+msgid "Invalid Proxy Setting"
+msgstr "Geçersiz Vekil Sunucu Ayarı"
+
+#: kmanualproxydlg.cpp:272
+msgid ""
+"One or more of the specified proxy settings are invalid. The incorrect entries "
+"are highlighted."
+msgstr ""
+"Belirtilen vekil sunucuların bir ya da birkaçı geçersiz. Doğru olan girdiler "
+"belirtilmiştir."
+
+#: kmanualproxydlg.cpp:343
+msgid "You entered a duplicate address. Please try again."
+msgstr "Aynı adresi iki kez girdiniz. Lütfen yeniden deneyin."
+
+#: kmanualproxydlg.cpp:345
+msgid "<qt><center><b>%1</b></center> is already in the list.</qt>"
+msgstr "<qt><center><b>%1</b></center> zaten listede var.</qt>"
+
+#: kmanualproxydlg.cpp:347
+msgid "Duplicate Entry"
+msgstr "Çift Girdi"
+
+#: kmanualproxydlg.cpp:359
+msgid "New Exception"
+msgstr "Yeni Kural Dışı Durum"
+
+#: kmanualproxydlg.cpp:366
+msgid "Change Exception"
+msgstr "Kural Dışı Durumu Değiştir"
+
+#: kmanualproxydlg.cpp:442
+msgid "Invalid Entry"
+msgstr "Geçersiz Girdi"
+
+#: kmanualproxydlg.cpp:445
+msgid "The address you have entered is not valid."
+msgstr "Girdiğiniz adres geçerli değil."
+
+#: kmanualproxydlg.cpp:447
+msgid ""
+"<qt>Make sure none of the addresses or URLs you specified contain invalid or "
+"wildcard characters such as spaces, asterisks (*), or question marks(?)."
+"<p><u>Examples of VALID entries:</u>"
+"<br/><code>http://mycompany.com, 192.168.10.1, mycompany.com, localhost, "
+"http://localhost</code>"
+"<p><u>Examples of INVALID entries:</u>"
+"<br/><code>http://my company.com, http:/mycompany,com file:/localhost</code>"
+"</qt>"
+msgstr ""
+"<qt>Belirttiğiniz adreslerin veya URL'lerin geçersiz veya boşluk, yıldız (*), "
+"soru işareti (?) gibi özel karakter içermediğinden emin olun."
+"<p><u>GEÇERLİ girdilere örnekler:</u>"
+"<br/><code>http://sirketim.com, 192.168.10.1, sirketim.com, localhost, "
+"http://localhost</code>"
+"<p><u>GEÇERSİZ girdilere örnekler:<u>"
+"<br/><code>http://benim sirketim.com, http:/sirketim.com, file:/localhost</code>"
+"</qt>"
+
+#: kmanualproxydlg.cpp:468
+msgid "Enter the URL or address that should use the above proxy settings:"
+msgstr ""
+"Yukarıdaki vekil sunucu ayarlarını kullanacak olan URL veya adresi girin:"
+
+#: kmanualproxydlg.cpp:471
+msgid ""
+"Enter the address or URL that should be excluded from using the above proxy "
+"settings:"
+msgstr ""
+"Yukarıdaki vekil sunucunun dışında tutulmasını istediğiniz adresi veya "
+"URL'yiyazın:"
+
+#: kmanualproxydlg.cpp:474
+msgid ""
+"<qt>Enter a valid address or url."
+"<p><b><u>NOTE:</u></b> Wildcard matching such as <code>*.kde.org</code> "
+"is not supported. If you want to match any host in the <code>.kde.org</code> "
+"domain, e.g. <code>printing.kde.org</code>, then simply enter <code>"
+".kde.org</code></qt>"
+msgstr ""
+"<qt>Geçerli bir adres veya url girin."
+"<p><b><u>NOT:</u></b> Özel karakter eşleştirme -<code>*.kde.org.tr</code> "
+"gibi- desteklenmez. Eğer <code>.kde.org.tr</code> alan adında herhangi bir "
+"alanı eşleştirmek istiyorsanız, örneğin <code>forum.kde.org.tr</code>"
+", basitçe <code>.kde.org.tr</code> girin.</qt>"
+
+#: kproxydlg.cpp:54
+msgid "&Proxy"
+msgstr "Vekil &Sunucu"
+
+#: kproxydlg.cpp:55
+msgid "&SOCKS"
+msgstr "&SOCKS"
+
+#: kproxydlg.cpp:220
+msgid ""
+"The address of the automatic proxy configuration script is invalid. Please "
+"correct this problem before proceeding. Otherwise, your changes you will be "
+"ignored."
+msgstr ""
+"Otomatik vekil yapılanış betiğindeki adres geçersiz. Lütfen ilerlemeden önce bu "
+"sorunu düzeltin. Yoksa yaptığınız değişiklikler yoksayılacaktır."
+
+#: kproxydlg.cpp:348
+msgid ""
+"<h1>Proxy</h1>"
+"<p>A proxy server is an intermediate program that sits between your machine and "
+"the Internet and provides services such as web page caching and/or "
+"filtering.</p>"
+"<p>Caching proxy servers give you faster access to sites you have already "
+"visited by locally storing or caching the content of those pages; filtering "
+"proxy servers, on the other hand, provide the ability to block out requests for "
+"ads, spam, or anything else you want to block.</p>"
+"<p><u>Note:</u> Some proxy servers provide both services.</p>"
+msgstr ""
+
+#: kproxydlg.cpp:367
+msgid ""
+"<qt>The proxy settings you specified are invalid."
+"<p>Please click on the <b>Setup...</b> button and correct the problem before "
+"proceeding; otherwise your changes will be ignored.</qt>"
+msgstr ""
+"<qt>Girdiğiniz vekil ayarları geçersiz. İlerlemeden önce bu sorunu düzeltmek "
+"için lütfen <em>Ayarla...</em> düğmesine tıklayın. Yoksa yaptığınız "
+"değişiklikler yoksayılacaktır.</qt>"
+
+#: ksaveioconfig.cpp:239 ksaveioconfig.cpp:253
+msgid "Update Failed"
+msgstr "Güncelleme Başarısız Oldu"
+
+#: ksaveioconfig.cpp:240
+msgid ""
+"You have to restart the running applications for these changes to take effect."
+msgstr ""
+"Bu değişikliklerin etki göstermesi için çalışan bütün uygulamaları yeniden "
+"başlatmak zorundasınız."
+
+#: ksaveioconfig.cpp:254
+msgid "You have to restart KDE for these changes to take effect."
+msgstr ""
+"Bu değişikliklerin etki göstermesi için çalışan bütün uygulamaları yeniden "
+"başlatmak zorundasınız."
+
+#: main.cpp:85
+msgid ""
+"<h1>Local Network Browsing</h1>Here you setup your <b>"
+"\"Network Neighborhood\"</b>. You can use either the LISa daemon and the lan:/ "
+"ioslave, or the ResLISa daemon and the rlan:/ ioslave."
+"<br>"
+"<br>About the <b>LAN ioslave</b> configuration:"
+"<br> If you select it, the ioslave, <i>if available</i>"
+", will check whether the host supports this service when you open this host. "
+"Please note that paranoid people might consider even this to be an attack."
+"<br><i>Always</i> means that you will always see the links for the services, "
+"regardless of whether they are actually offered by the host. <i>Never</i> "
+"means that you will never have the links to the services. In both cases you "
+"will not contact the host, so nobody will ever regard you as an attacker."
+"<br>"
+"<br>More information about <b>LISa</b> can be found at <a "
+"href=\"http://lisa-home.sourceforge.net\">the LISa Homepage</a> "
+"or contact Alexander Neundorf &lt;<a href=\"mailto:neundorf@kde.org\">"
+"neundorf@kde.org</a>&gt;."
+msgstr ""
+"<h1>Yerel Ağ Tarama</h1>bölümde<b>\"Ağ Komşuları\"</b>"
+"nı yapılandırabilirsiniz. Bu işlem için LISa programı yardımıyla lan:/ "
+"kısayolunu çalıştırabilir, ya da ResLISa programı üzerinden rlan:/ kısayolunu "
+"kullanabilirsiniz."
+"<br>"
+"<br><b>Yerel ağ</b> yapılandırması:"
+"<br> Eğer LAN yapılandırmasını seçerseniz bir bilgisayara erişim kurduğunuz "
+"zaman o bilgisayardaki servisin çalışıp çalışmadığı kontrol edilebilir. Dikkat: "
+"Paranoid insanlar bunun bir saldırı olduğunu sanabilir."
+"<br><i>Her zaman</i> seçeneği, bu servisin bağlantılarını, bilgisayar bu "
+"servisi bulundurmuyor olsa dahi görebilmenizi sağlayacaktır. <i>Asla</i> "
+"ise bu servislere hiç bir bağlantınızın olmayacağı anlamına geliri dolayısıyla "
+"kimse sizi saldırgan sanmayacaktır."
+"<br>"
+"<br> LISa hakkında daha fazla bilgi için: <a "
+"href=\"http://lisa-home.sourceforge.net\">LISa Web Sayfasından</a> "
+"veya Alexander Neundorf &lt;<a href=\"mailto:neundorf@kde.org\">"
+"neundorf@kde.org</a>&gt; adresinden alabilirsiniz."
+
+#: main.cpp:105
+msgid "&Windows Shares"
+msgstr "&Windows Paylaşımları"
+
+#: main.cpp:111
+msgid "&LISa Daemon"
+msgstr "&LISa Sistemi"
+
+#: main.cpp:125
+msgid "lan:/ Iosla&ve"
+msgstr "lan:/ Iosla&ve"
+
+#: netpref.cpp:22
+msgid "Timeout Values"
+msgstr "Zaman Aşımı Değerleri"
+
+#: netpref.cpp:23
+msgid ""
+"Here you can set timeout values. You might want to tweak them if your "
+"connection is very slow. The maximum allowed value is %1 seconds."
+msgstr ""
+"Burada zaman aşımı değerlerini belirleyebilirsiniz. Eğer bağlantı hızı yavaş "
+"ise bunalrı değiştirmek isteyebilirsiniz. İzin verilen azami değer %1 "
+"saniyedir."
+
+#: netpref.cpp:30 netpref.cpp:37 netpref.cpp:44 netpref.cpp:51
+msgid " sec"
+msgstr " sn"
+
+#: netpref.cpp:31
+msgid "Soc&ket read:"
+msgstr "&Okunan soket:"
+
+#: netpref.cpp:38
+msgid "Pro&xy connect:"
+msgstr "Vekil &bağlantısı:"
+
+#: netpref.cpp:45
+msgid "Server co&nnect:"
+msgstr "Sunucu &bağlantısı:"
+
+#: netpref.cpp:52
+msgid "&Server response:"
+msgstr "Sunucu ce&vabı:"
+
+#: netpref.cpp:56
+msgid "FTP Options"
+msgstr "FTP Seçenekleri"
+
+#: netpref.cpp:57
+msgid "Enable passive &mode (PASV)"
+msgstr "Pasif &kipi etkinleştir (PASV)"
+
+#: netpref.cpp:58
+msgid ""
+"Enables FTP's \"passive\" mode. This is required to allow FTP to work from "
+"behind firewalls."
+msgstr ""
+"FTP'nin \"pasif\" kipini etkinleştirir. FTP'nin güvenlik duvarı arkasından "
+"çalışmasına izin vermek için gereklidir."
+
+#: netpref.cpp:59
+msgid "Mark &partially uploaded files"
+msgstr "Bölümsel olarak &yüklenen dosyaları işaretle"
+
+#: netpref.cpp:60
+msgid ""
+"<p>Marks partially uploaded FTP files.</p>"
+"<p>When this option is enabled, partially uploaded files will have a \".part\" "
+"extension. This extension will be removed once the transfer is complete.</p>"
+msgstr ""
+"<p>Bölümsel olarak yüklenen dosyaları işaretler.</p> "
+"<p>Bu seçenek etkinleştirildiğinde, bölümsel olarak yüklenmiş dosyalar bir "
+"\".part\" uzantısına sahip olurlar. Aktarma tamamlandığında bu uzantılar yok "
+"edilecektir.</p>"
+
+#: netpref.cpp:131
+msgid ""
+"<h1>Network Preferences</h1>Here you can define the behavior of KDE programs "
+"when using Internet and network connections. If you experience timeouts or use "
+"a modem to connect to the Internet, you might want to adjust these settings."
+msgstr ""
+"<h1>Ağ Tercihleri</h1> Burada, internet ve ağ bağlantılarını kullanırken KDE "
+"programlarının davranışlarını açıklayabilirsiniz. Zamanaşımları yaşadıysanız ya "
+"da İnternete bağlanmak için modem kullanıyorsanız, bu ayarları ayarlamak "
+"isteyebilirsiniz."
+
+#. i18n: file cache_ui.ui line 47
+#: rc.cpp:3
+#, no-c-format
+msgid "Disk cache &size:"
+msgstr "D&isk önbellek boyutu:"
+
+#. i18n: file cache_ui.ui line 67
+#: rc.cpp:6
+#, no-c-format
+msgid " KB"
+msgstr " KB"
+
+#. i18n: file cache_ui.ui line 78
+#: rc.cpp:9
+#, no-c-format
+msgid "C&lear Cache"
+msgstr "Önbelleği &Temizle"
+
+#. i18n: file cache_ui.ui line 103
+#: rc.cpp:12
+#, no-c-format
+msgid "&Use cache"
+msgstr "&Önbellek kullan"
+
+#. i18n: file cache_ui.ui line 106
+#: rc.cpp:15
+#, no-c-format
+msgid ""
+"Check this box if you want the web pages you visit to be stored on your hard "
+"disk for quicker access. The stored pages will only be updated as needed "
+"instead of on every visit to that site. This is especially useful if you have a "
+"slow connection to the Internet."
+msgstr ""
+"Web sayfalarının sabit diske kopyalanıp daha hızlı erişilmelerini istiyorsanız "
+"bu seçeneği işaretleyin. Bu özelliği etkinleştirmek, sadece gereken dosyalar "
+"İnternet'ten indirileceği için tarayıcınızı daha hızlı hale getirecektir. "
+"Özellikle yavaş İnternet bağlantısı olanlar için önerilir."
+
+#. i18n: file cache_ui.ui line 117
+#: rc.cpp:18 rc.cpp:246
+#, no-c-format
+msgid "Policy"
+msgstr "Politika"
+
+#. i18n: file cache_ui.ui line 128
+#: rc.cpp:21
+#, no-c-format
+msgid "&Keep cache in sync"
+msgstr "Önbelleği &senkronize et"
+
+#. i18n: file cache_ui.ui line 131
+#: rc.cpp:24
+#, no-c-format
+msgid ""
+"Verify whether the cached web page is valid before attempting to fetch the web "
+"page again."
+msgstr "Önbellekten alınan web sayfalarının geçerli olup olmadığını denetle."
+
+#. i18n: file cache_ui.ui line 139
+#: rc.cpp:27
+#, no-c-format
+msgid "Use cache whenever &possible"
+msgstr "Mümkünse ö&nbellek kullan"
+
+#. i18n: file cache_ui.ui line 142
+#: rc.cpp:30
+#, no-c-format
+msgid ""
+"Always use documents from the cache when available. You can still use the "
+"reload button to synchronize the cache with the remote host."
+msgstr ""
+"İnternete bağlanmadan önce her zaman önbelleğe bakılması için bunu "
+"etkinleştirin."
+
+#. i18n: file cache_ui.ui line 150
+#: rc.cpp:33
+#, no-c-format
+msgid "O&ffline browsing mode"
+msgstr "Ç&evrimdışı gözatma kipi"
+
+#. i18n: file cache_ui.ui line 153
+#: rc.cpp:36
+#, no-c-format
+msgid ""
+"Do not fetch web pages that are not already stored in the cache. Offline mode "
+"prevents you from viewing pages that you have not previously visited."
+msgstr ""
+"Önbellekte kayıtlı web sayfalarını indirme. Bu kipte daha önce ziyaret "
+"edilmemiş web sayfaları görüntülenmez."
+
+#. i18n: file envvarproxy_ui.ui line 30
+#: rc.cpp:39 rc.cpp:54
+#, no-c-format
+msgid ""
+"<qt>\n"
+"Enter the name of the environment variable, e.g. <b>FTP_PROXY</b>"
+", used to store the address of the FTP proxy server."
+"<p>\n"
+"Alternatively, you can click on the <b>\"Auto Detect\"</b> "
+"button to attempt an automatic discovery of this variable.\n"
+"</qt>"
+msgstr ""
+"<qt>\n"
+"FTP vekil sunucusunun adresini saklamak için kullanılan ortam değişkeninin "
+"adını girin,örneğin.<tt>FTP_PROXY</tt>. "
+"<p> Alternatif olarak, bu değişkenin otomatik olarak keşfini denemek için <tt>"
+"\"Otomatik Algılama\"</tt> düğmesine tıklayabilirsiniz. </qt>"
+
+#. i18n: file envvarproxy_ui.ui line 41
+#: rc.cpp:45 rc.cpp:87
+#, no-c-format
+msgid ""
+"<qt>\n"
+"Enter the name of the environment variable, e.g. <b>HTTP_PROXY</b>"
+", used to store the address of the HTTP proxy server."
+"<p>\n"
+"Alternatively, you can click on the <b>\"Auto Detect\"</b> "
+"button to attempt automatic discovery of this variable.\n"
+"</qt>"
+msgstr ""
+"<qt>\n"
+"HTTP vekil sunucusunun adresini saklamak için kullanılan ortam değişkeninin "
+"adını girin,örneğin.<tt>HTTP_PROXY</tt>. "
+"<p> Alternatif olarak, bu değişkenin otomatik olarak keşfini denemek için <tt>"
+"\"Otomatik Algılama\"</tt> düğmesine tıklayabilirsiniz. </qt>"
+
+#. i18n: file envvarproxy_ui.ui line 49
+#: rc.cpp:51 rc.cpp:375
+#, no-c-format
+msgid "&FTP:"
+msgstr "&FTP:"
+
+#. i18n: file envvarproxy_ui.ui line 66
+#: rc.cpp:60 rc.cpp:378
+#, no-c-format
+msgid "HTTP&S:"
+msgstr "HTTP&S:"
+
+#. i18n: file envvarproxy_ui.ui line 75
+#: rc.cpp:63 rc.cpp:93
+#, no-c-format
+msgid ""
+"<qt>\n"
+"Enter the name of the environment variable, e.g. <b>HTTPS_PROXY</b>"
+", used to store the address of the HTTPS proxy server."
+"<p>\n"
+"Alternatively, you can click on the <b>\"Auto Detect\"</b> "
+"button to attempt an automatic discovery of this variable.\n"
+"</qt>"
+msgstr ""
+"<qt>\n"
+"HTTPS vekil sunucusunun adresini saklamak için kullanılan ortam değişkeninin "
+"adını girin,örneğin.<tt>HTTPS_PROXY</tt>. "
+"<p> Alternatif olarak, bu değişkenin otomatik olarak keşfini denemek için <tt>"
+"\"Otomatik Algılama\"</tt> düğmesine tıklayabilirsiniz. </pt>"
+
+#. i18n: file envvarproxy_ui.ui line 83
+#: rc.cpp:69
+#, no-c-format
+msgid "Show the &value of the environment variables"
+msgstr "Ç&evre değişkenlerini göster"
+
+#. i18n: file envvarproxy_ui.ui line 91
+#: rc.cpp:72
+#, no-c-format
+msgid "&Verify"
+msgstr "&Doğrula"
+
+#. i18n: file envvarproxy_ui.ui line 94
+#: rc.cpp:75
+#, no-c-format
+msgid ""
+"<qt>Verify whether or not the environment variable names you supplied are "
+"valid. If an environment variable is not found, the associated labels will be "
+"<b>highlighted</b> to indicate that they are invalid.</qt>"
+msgstr ""
+"<qt>Sağladığınız çevre değişkeni isimlerinin geçerli olup olmadığına hızlı bir "
+"biçimde karar vermek için bu düğmeye tıklayın. Eğer bir çevre değişkeni "
+"bulunmazsa ilişkili etiketler geçersiz ayarları belirtmek için <b>"
+"vurgulanacaktır</b>.</qt>"
+
+#. i18n: file envvarproxy_ui.ui line 102
+#: rc.cpp:78
+#, no-c-format
+msgid "Auto &Detect"
+msgstr "Otomatik &Bul"
+
+#. i18n: file envvarproxy_ui.ui line 105
+#: rc.cpp:81
+#, no-c-format
+msgid ""
+"<qt>Attempt automatic discovery of the environment variables used for setting "
+"system wide proxy information."
+"<p> This feature works by searching for commonly used variable names such as "
+"HTTP_PROXY, FTP_PROXY and NO_PROXY.</qt>"
+msgstr ""
+"<qt> Genel vekil sunucu bilgisini alabilmek için kullanılan çevresel "
+"değişkenlerin araştırılması için bu seçenek kullanılabilir."
+"<p>Bu özellik, HTTP_PROXY, FTP_PROXY ve NO_PROXY çevresel değişkenlerine "
+"bakacak ve uygun bir şekilde vekil sunucu ayarlarını yapacaktır.</qt>"
+
+#. i18n: file envvarproxy_ui.ui line 113
+#: rc.cpp:84 rc.cpp:381
+#, no-c-format
+msgid "H&TTP:"
+msgstr "&HTTP:"
+
+#. i18n: file envvarproxy_ui.ui line 144
+#: rc.cpp:99 rc.cpp:108
+#, no-c-format
+msgid ""
+"<qt>\n"
+"Enter the environment variable, e.g. <b>NO_PROXY</b>"
+", used to store the addresses of sites for which the proxy server should not be "
+"used."
+"<p>\n"
+"Alternatively, you can click on the <b>\"Auto Detect\"</b> "
+"button to attempt an automatic discovery of this variable.\n"
+"</qt>"
+msgstr ""
+"<qt>\n"
+"FTP vekil sunucusunun adresini saklamak için kullanılan ortam değişkeninin "
+"adını girin,örneğin.<tt>FTP_PROXY</tt>. "
+"<p>\n"
+" Alternatif olarak, bu değişkenin otomatik olarak keşfini denemek için <tt>"
+"\"Otomatik Algılama\"</tt> düğmesine tıklayabilirsiniz. \n"
+"</qt>"
+
+#. i18n: file envvarproxy_ui.ui line 152
+#: rc.cpp:105
+#, no-c-format
+msgid "NO &PROXY:"
+msgstr "&Vekil Yok:"
+
+#. i18n: file kcookiesmanagementdlg_ui.ui line 33
+#: rc.cpp:114
+#, no-c-format
+msgid "Domain [Group]"
+msgstr "Etki Alanı [Grup]"
+
+#. i18n: file kcookiesmanagementdlg_ui.ui line 44
+#: rc.cpp:117
+#, no-c-format
+msgid "Host [Set By]"
+msgstr "Alanadı [Ayarlayan]"
+
+#. i18n: file kcookiesmanagementdlg_ui.ui line 85
+#: rc.cpp:120 rc.cpp:237 rc.cpp:680
+#, no-c-format
+msgid "D&elete"
+msgstr "&Sil"
+
+#. i18n: file kcookiesmanagementdlg_ui.ui line 93
+#: rc.cpp:123 rc.cpp:240 rc.cpp:686
+#, no-c-format
+msgid "Delete A&ll"
+msgstr "&Tümünü sil"
+
+#. i18n: file kcookiesmanagementdlg_ui.ui line 101
+#: rc.cpp:126
+#, no-c-format
+msgid "Change &Policy..."
+msgstr "Çerez &Politikasını Değiştir..."
+
+#. i18n: file kcookiesmanagementdlg_ui.ui line 109
+#: rc.cpp:129
+#, no-c-format
+msgid "&Reload List"
+msgstr "&Listeyi Yeniden Yükle"
+
+#. i18n: file kcookiesmanagementdlg_ui.ui line 144
+#: rc.cpp:132 rc.cpp:254
+#, no-c-format
+msgid "..."
+msgstr "..."
+
+#. i18n: file kcookiesmanagementdlg_ui.ui line 147
+#: rc.cpp:135 rc.cpp:257
+#, no-c-format
+msgid "Clear Search"
+msgstr "Aramayı Temizle"
+
+#. i18n: file kcookiesmanagementdlg_ui.ui line 155
+#: rc.cpp:138 rc.cpp:260
+#, no-c-format
+msgid "&Search:"
+msgstr "&Ara:"
+
+#. i18n: file kcookiesmanagementdlg_ui.ui line 166
+#: rc.cpp:141
+#, no-c-format
+msgid "Search interactively for domains and hosts"
+msgstr "Alan adı ve Alan sağlayıcılar için etkileşimli arama"
+
+#. i18n: file kcookiesmanagementdlg_ui.ui line 181
+#: rc.cpp:144
+#, no-c-format
+msgid "Details"
+msgstr "Çerez ayrıntıları"
+
+#. i18n: file kcookiesmanagementdlg_ui.ui line 216
+#: rc.cpp:147
+#, no-c-format
+msgid "Name:"
+msgstr "İsim:"
+
+#. i18n: file kcookiesmanagementdlg_ui.ui line 227
+#: rc.cpp:150
+#, no-c-format
+msgid "Value:"
+msgstr "Değer:"
+
+#. i18n: file kcookiesmanagementdlg_ui.ui line 238
+#: rc.cpp:153
+#, no-c-format
+msgid "Domain:"
+msgstr "Etkialanı:"
+
+#. i18n: file kcookiesmanagementdlg_ui.ui line 249
+#: rc.cpp:156
+#, no-c-format
+msgid "Path:"
+msgstr "Yol:"
+
+#. i18n: file kcookiesmanagementdlg_ui.ui line 260
+#: rc.cpp:159
+#, no-c-format
+msgid "Expires:"
+msgstr "Sona erme:"
+
+#. i18n: file kcookiesmanagementdlg_ui.ui line 271
+#: rc.cpp:162
+#, no-c-format
+msgid "Secure:"
+msgstr "Güvenlik:"
+
+#. i18n: file kcookiespoliciesdlg_ui.ui line 24
+#: rc.cpp:165
+#, no-c-format
+msgid "Enable coo&kies"
+msgstr "Çerezleri &etkinleştir"
+
+#. i18n: file kcookiespoliciesdlg_ui.ui line 30
+#: rc.cpp:168
+#, no-c-format
+msgid ""
+"<qt>\n"
+"Enable cookie support. Normally you will want to have cookie support enabled "
+"and customize it to suit your privacy needs."
+"<p>\n"
+"Please note that disabling cookie support might make many web sites "
+"unbrowsable.\n"
+"</qt>"
+msgstr ""
+"<qt>\n"
+"Bu seçenek çerez (cookie) desteğini etkinleştirir."
+"<p>\n"
+" Genellikle çerez desteğinin etkin olması ve bunun gizlilik gereğine uygun "
+"biçimde özelleştirilmesi istenir.\n"
+"</qt>"
+
+#. i18n: file kcookiespoliciesdlg_ui.ui line 49
+#: rc.cpp:174
+#, no-c-format
+msgid "Only acce&pt cookies from originating server"
+msgstr "&Sadece merkezi sunucuda oluşturulan çerezleri kabul et"
+
+#. i18n: file kcookiespoliciesdlg_ui.ui line 54
+#: rc.cpp:177
+#, no-c-format
+msgid ""
+"<qt>\n"
+"Reject the so called third-party cookies. These are cookies that originate from "
+"a site other than the one you are currently browsing. For example, if you visit "
+"<b>www.foobar.com</b> while this option is on, only cookies that originate from "
+"www.foobar.com will be processed per your settings. Cookies from any other site "
+"will be rejected. This reduces the chances of site operators compiling a "
+"profile about your daily browsing habits.\n"
+"</qt>"
+msgstr ""
+"<qt>\n"
+"İstediğiniz siteler haricindekilerde yapılmış olan bütün çerezleri (cookies) "
+"reddetmek için bu seçeneği işaretleyin. Örneğin, <b>www.foobar.com</b> "
+"sitesini, bu seçenek işaretli iken ziyaret ettiğinizde sadece "
+"www.foobar.com'dan gelen çerezler ayarlarınıza göre işlem görür. Bütün diğer "
+"çerezler otomatik olarak reddedilir. Bu, site operatörlerinin sizin günlük "
+"tarama alışkanlıklarınız hakkında bir çizelge çıkarmaları şansını düşürür.\n"
+"</qt>"
+
+#. i18n: file kcookiespoliciesdlg_ui.ui line 62
+#: rc.cpp:182
+#, no-c-format
+msgid "Automaticall&y accept session cookies"
+msgstr "Oturum çerezlerini &otomatik olarak kabul et"
+
+#. i18n: file kcookiespoliciesdlg_ui.ui line 68
+#: rc.cpp:185
+#, no-c-format
+msgid ""
+"<qt>\n"
+"Automatically accept temporary cookies meant to expire at the end of the "
+"current session. Such cookies will not be stored in your computer's hard drive "
+"or storage device. Instead, they are deleted when you close all applications "
+"(e.g. your browser) that use them."
+"<p>\n"
+"<u>NOTE:</u> Checking this option along with the next one will override your "
+"default as well as site specific cookie policies. However, doing so also "
+"increases your privacy since all cookies will be removed when the current "
+"session ends.\n"
+"</qt>"
+msgstr ""
+"<qt>\n"
+"Geçici Çerezleri, yani yürürlükteki oturumdan sonra yok olan çerezleri, "
+"otomatik olarak kabul etmek için bu seçeneği işaretleyin. Böyle çerezler "
+"bilgisayarınızın diskinde ya da saklama aygıtlarında kaydedilmeyecektir. Bunun "
+"yerine, bunları kullanan tüm uygulamaları (örneğin, tarayıcınızı) "
+"kapattığınızda bunlar silinecektir. "
+"<p>\n"
+"<u>NOT:</u> Bu seçeneği bir sonraki ile birlikte seçmek öntanımlı, hatta siteye "
+"özel çerez politikalarınızı geçersiz kılacaktır. Dahası, böyle yapmak, ayrıca, "
+"yürürlükteki oturum bittiğinde bütün çerezler silineceği için, sizin kişisel "
+"gizliliğinizi de artırır.\n"
+"</qt>"
+
+#. i18n: file kcookiespoliciesdlg_ui.ui line 76
+#: rc.cpp:191
+#, no-c-format
+msgid "Treat &all cookies as session cookies"
+msgstr "&Bütün çerezlere oturum çerezi gibi davran"
+
+#. i18n: file kcookiespoliciesdlg_ui.ui line 82
+#: rc.cpp:194
+#, no-c-format
+msgid ""
+"<qt>\n"
+"Treat all cookies as session cookies. Session cookies are small pieces of data "
+"that are temporarily stored in your computer's memory until you quit or close "
+"all applications (e.g. your browser) that use them. Unlike regular cookies, "
+"session cookies are never stored on your hard drive or other storage medium."
+"<p>\n"
+"<u>NOTE:</u> Checking this option along with the previous one will override "
+"your default as well as site specific cookie policies. However, doing so also "
+"increases your privacy since all cookies will be removed when the current "
+"session ends.\n"
+"</qt>"
+msgstr ""
+"<qt>\n"
+"Bütün çerezlere oturum çerezi gibi davranmak için bu seçeneği işaretleyin. "
+"Oturum çerezleri, bunları kullanan bütün uygulamaları (örneğin tarayıcınız) "
+"kapatmanıza ya da bütün uygulamalardan çıkmanıza kadar bilgisayarınızın "
+"belleğinde saklanan küçük veri parçalarıdır. Normal çerezlerden farklı olarak, "
+"oturum çerezleri bilgisayarınızın diskinde ya da saklama aygıtlarında hiçbir "
+"zaman saklanmaz. "
+"<p>\n"
+"<u> NOT:</u> Bu seçeneği bir önceki ile birlikte seçmek öntanımlı, hatta siteye "
+"özel çerez politikalarınızı geçersiz kılacaktır. Dahası, böyle yapmak, ayrıca, "
+"yürürlükteki oturum bittiğinde bütün çerezler silineceği için, sizin kişisel "
+"gizliliğinizi de artırır.\n"
+" </qt>"
+
+#. i18n: file kcookiespoliciesdlg_ui.ui line 92
+#: rc.cpp:200
+#, no-c-format
+msgid "Default Policy"
+msgstr "Öntanımlı Politika"
+
+#. i18n: file kcookiespoliciesdlg_ui.ui line 106
+#: rc.cpp:203
+#, no-c-format
+msgid ""
+"<qt>\n"
+"Determines how cookies received from a remote machine will be handled: \n"
+"<ul>\n"
+"<li><b>Ask</b> will cause KDE to ask for your confirmation whenever a server "
+"wants to set a cookie.\"</li>\n"
+"<li><b>Accept</b> will cause cookies to be accepted without prompting you.</li>"
+"\n"
+"<li><b>Reject</b> will cause the cookiejar to refuse all cookies it "
+"receives.</li>\n"
+"</ul>"
+"<p>\n"
+"<u>NOTE:</u> Domain specific policies, which can be set below, always take "
+"precedence over the default policy.\n"
+"</qt>"
+msgstr ""
+"Öntanımlı politika, özel bir politika ile ilişkisi olmayan uzaktaki makineden "
+"alınan çerezlerin nasıl ele alınacağına karar verir."
+"<li><b>Sor</b>KDE'nin bir sunucu tarafından her çerez yerleştirilmesinde sizden "
+"onay almasını sağlar </li> "
+"<ul>"
+"<li><b>Kabul</b> çerezlerin size hatırlatılmadan kabul edilmesini sağlar. </li> "
+"<li><b>Reddet</b> KDE'nin aldığı tüm çerezleri reddetmesini sağlar.</li></ul>"
+
+#. i18n: file kcookiespoliciesdlg_ui.ui line 117
+#: rc.cpp:214
+#, no-c-format
+msgid "Ask &for confirmation"
+msgstr "&Onay iste"
+
+#. i18n: file kcookiespoliciesdlg_ui.ui line 125
+#: rc.cpp:217
+#, no-c-format
+msgid "Accep&t all cookies"
+msgstr "Bütün çerezleri öntanımlı olarak &kabul et"
+
+#. i18n: file kcookiespoliciesdlg_ui.ui line 133
+#: rc.cpp:220
+#, no-c-format
+msgid "Re&ject all cookies"
+msgstr "Bütün çerezleri öntanımlı olarak &reddet"
+
+#. i18n: file kcookiespoliciesdlg_ui.ui line 143
+#: rc.cpp:223
+#, no-c-format
+msgid "Site Policy"
+msgstr "Politikayı İkizle"
+
+#. i18n: file kcookiespoliciesdlg_ui.ui line 148
+#: rc.cpp:226
+#, no-c-format
+msgid ""
+"<qt>\n"
+"To add a new policy, simply click on the <b>Add...</b> "
+"button and supply the necessary information. To change an existing policy, use "
+"the <b>Change...</b> button and choose the new policy from the policy dialog "
+"box. Clicking on the <b>Delete</b> button will remove the currently selected "
+"policy causing the default policy setting to be used for that domain whereas <b>"
+"Delete All</b> will remove all the site specific policies.\n"
+"</qt>"
+msgstr ""
+"Yeni bir politika eklemek için, <i>Ekle...</i> düğmesine tıklayın ve tüm "
+"gerekli bilgileri verin. Mevcut bir politikayı değiştirmek için <i>"
+"Değiştir...</i> düğmesini kullanın. <i>Sil...</i> düğmesine tıklayarak mevcut "
+"bir politikayı silebilirsiniz."
+
+#. i18n: file kcookiespoliciesdlg_ui.ui line 184
+#: rc.cpp:231 rc.cpp:428 rc.cpp:668
+#, no-c-format
+msgid "&New..."
+msgstr "&Yeni..."
+
+#. i18n: file kcookiespoliciesdlg_ui.ui line 192
+#: rc.cpp:234 rc.cpp:674
+#, no-c-format
+msgid "Chan&ge..."
+msgstr "D&eğiştir..."
+
+#. i18n: file kcookiespoliciesdlg_ui.ui line 216
+#: rc.cpp:243
+#, no-c-format
+msgid "Domain"
+msgstr "Etki Alanı"
+
+#. i18n: file kcookiespoliciesdlg_ui.ui line 254
+#: rc.cpp:249
+#, no-c-format
+msgid ""
+"<qt>\n"
+"List of sites for which you have set a specific cookie policy. Specific "
+"policies override the default policy setting for these sites.\n"
+"</qt>"
+msgstr ""
+"<qt>\n"
+"Özel çerez politikaları belirlediğiniz sitelerin listesi.Özel politikalar bu "
+"siteler için öntanımlı ayarları geçersiz  kılar.\n"
+"</pt>"
+
+#. i18n: file kcookiespoliciesdlg_ui.ui line 295
+#: rc.cpp:263
+#, no-c-format
+msgid "Search interactively for domains"
+msgstr "Alan adları için etkileşimli arama"
+
+#. i18n: file kproxydlg_ui.ui line 22
+#: rc.cpp:266
+#, no-c-format
+msgid ""
+"<qt>\n"
+"Setup proxy configuration.\n"
+"<p>\n"
+"A proxy server is an intermediate machine that sits between your computer and "
+"the Internet and provides services such as web page caching and filtering. "
+"Caching proxy servers give you faster access to web sites you have already "
+"visited by locally storing or caching those pages; filtering proxy servers "
+"usually provide the ability to block out requests for ads, spam, or anything "
+"else you want to block.\n"
+"<p>\n"
+"If you are uncertain whether or not you need to use a proxy server to connect "
+"to the Internet, consult your Internet service provider's setup guide or your "
+"system administrator.\n"
+"</qt>"
+msgstr ""
+"<qt>\n"
+"Vekil sunucu yapılandırması "
+"<p>\n"
+"İnternet bağlantınız için vekil sunucuları etkinleştirmek için bu kutuyu "
+"işaretleyin. \n"
+"<p>\n"
+"Vekil sunucu kullanımının seçiminize bağlı olduğunu, fakat size internetteki "
+"veriye daha hızlı erişim verme imkanıolduğunu unutmayınız. "
+"<p>\n"
+"İnternete bağlanmak için bir vekil sunucuya ihtiyacınızın olup olmadığı "
+"hakkında kararsız iseniz, lütfen internet servis sağlayıcınızın kurulum "
+"kılavuzuna ya da sistem yöneticinize danışın.\n"
+"</qt>"
+
+#. i18n: file kproxydlg_ui.ui line 59
+#: rc.cpp:275
+#, no-c-format
+msgid "Connect to the &Internet directly"
+msgstr "İnternete &doğrudan bağlan"
+
+#. i18n: file kproxydlg_ui.ui line 65
+#: rc.cpp:278
+#, no-c-format
+msgid "Connect to the Internet directly."
+msgstr "İnternete doğrudan bağlan."
+
+#. i18n: file kproxydlg_ui.ui line 76
+#: rc.cpp:281
+#, no-c-format
+msgid "A&utomatically detect proxy configuration"
+msgstr "&Otomatik bulunan betik dosyası"
+
+#. i18n: file kproxydlg_ui.ui line 83
+#: rc.cpp:284
+#, no-c-format
+msgid ""
+"<qt>\n"
+"Automatically detect and configure the proxy settings."
+"<p>\n"
+"Automatic detection is performed using the <b>Web Proxy Auto-Discovery Protocol "
+"(WPAD)</b>."
+"<p>\n"
+"<b>NOTE:</b> This option might not work properly or not work at all in some "
+"UNIX/Linux distributions. If you encounter a problem when using this option, "
+"please check the FAQ section at http://konqueror.kde.org.\n"
+"</qt>"
+msgstr ""
+
+#. i18n: file kproxydlg_ui.ui line 94
+#: rc.cpp:291
+#, no-c-format
+msgid "U&se the following proxy configuration URL"
+msgstr "Aşağıdaki &vekil sunucu adresini kullan"
+
+#. i18n: file kproxydlg_ui.ui line 97
+#: rc.cpp:294
+#, no-c-format
+msgid "Use the specified proxy script URL to configure the proxy settings."
+msgstr "Vekil sunucu ayarlarını ayarlamak için gösterilen betiği kullan."
+
+#. i18n: file kproxydlg_ui.ui line 141
+#: rc.cpp:297
+#, no-c-format
+msgid "Enter the address for the proxy configuration script."
+msgstr "HTTP vekil sunucusunun adresini girin."
+
+#. i18n: file kproxydlg_ui.ui line 170
+#: rc.cpp:300
+#, no-c-format
+msgid "Use preset proxy environment &variables"
+msgstr "Çevre değişkenşlerini önceden &belirle"
+
+#. i18n: file kproxydlg_ui.ui line 176
+#: rc.cpp:303
+#, no-c-format
+msgid ""
+"<qt>\n"
+"Use environment variables to configure the proxy settings."
+"<p>\n"
+"Environment variables such as <b>HTTP_PROXY</b> and <b>NO_PROXY</b> "
+"are usually used in multi-user UNIX installations, where both graphical and "
+"non-graphical applications need to share the same proxy configuration "
+"information.\n"
+"</qt>"
+msgstr ""
+"<qt>\n"
+"Vekil sunucu ayarlarını yapmak için ortam değişkenlerini kullan."
+"<p>\n"
+"<b>HTTP_PROXY</b> ve <b>NO_PROXY</b> gibi ortam değişkenleri genellikle aynı "
+"vekil ayar bilgilerini paylaşan grafiksel ve grafiksel olmayan "
+"çoklu-kullanıcılı unix uygulamaları tarafından kullanılır.\n"
+"</qt>"
+
+#. i18n: file kproxydlg_ui.ui line 187
+#: rc.cpp:309 rc.cpp:321
+#, no-c-format
+msgid "Setup..."
+msgstr "Ayarla..."
+
+#. i18n: file kproxydlg_ui.ui line 190
+#: rc.cpp:312
+#, no-c-format
+msgid "Show the proxy environment variable configuration dialog."
+msgstr "Vekil sunucu çevresel değişkeni yapılandırma penceresini göster."
+
+#. i18n: file kproxydlg_ui.ui line 219
+#: rc.cpp:315
+#, no-c-format
+msgid "&Manually specify the proxy settings"
+msgstr "&Elle belirtilen ayarlar"
+
+#. i18n: file kproxydlg_ui.ui line 222
+#: rc.cpp:318
+#, no-c-format
+msgid "Manually enter proxy server configuration information."
+msgstr "Vekil sunucu ayar bilgilerini elle gir."
+
+#. i18n: file kproxydlg_ui.ui line 236
+#: rc.cpp:324
+#, no-c-format
+msgid "Show the manual proxy configuration dialog."
+msgstr "Elle vekil sunucu yapılandırma penceresini göster."
+
+#. i18n: file kproxydlg_ui.ui line 251
+#: rc.cpp:327
+#, no-c-format
+msgid "Authori&zation"
+msgstr "Kimlik Denetimi"
+
+#. i18n: file kproxydlg_ui.ui line 262
+#: rc.cpp:330
+#, no-c-format
+msgid "Prompt as &needed"
+msgstr "&Gerektiği zaman sor"
+
+#. i18n: file kproxydlg_ui.ui line 268
+#: rc.cpp:333
+#, no-c-format
+msgid "Prompt for login information whenever it is required."
+msgstr "Gerektiğinde giriş bilgisi için onay iste."
+
+#. i18n: file kproxydlg_ui.ui line 279
+#: rc.cpp:336
+#, no-c-format
+msgid "Use the following lo&gin information."
+msgstr "&Aşağıdaki giriş bilgisini kullan."
+
+#. i18n: file kproxydlg_ui.ui line 282
+#: rc.cpp:339
+#, no-c-format
+msgid "Use the information below to login into proxy servers as needed."
+msgstr "Vekil sunucularına giriş için gerektiğinde aşağıdaki bilgiyi kullan."
+
+#. i18n: file kproxydlg_ui.ui line 321
+#: rc.cpp:342 rc.cpp:351
+#, no-c-format
+msgid "Login password."
+msgstr "Giriş şifresi."
+
+#. i18n: file kproxydlg_ui.ui line 332
+#: rc.cpp:345 rc.cpp:357
+#, no-c-format
+msgid "Login name."
+msgstr "Etki alanı adı:"
+
+#. i18n: file kproxydlg_ui.ui line 343
+#: rc.cpp:348
+#, no-c-format
+msgid "Password:"
+msgstr "Parola:"
+
+#. i18n: file kproxydlg_ui.ui line 357
+#: rc.cpp:354
+#, no-c-format
+msgid "Username:"
+msgstr "Kullanıcı adı:"
+
+#. i18n: file kproxydlg_ui.ui line 375
+#: rc.cpp:360
+#, no-c-format
+msgid "O&ptions"
+msgstr "&FTP Seçenekleri"
+
+#. i18n: file kproxydlg_ui.ui line 386
+#: rc.cpp:363
+#, no-c-format
+msgid "Use persistent connections to proxy"
+msgstr "Vekil sunucu için sürekli bağlantılar kullan"
+
+#. i18n: file kproxydlg_ui.ui line 392
+#: rc.cpp:366
+#, no-c-format
+msgid ""
+"<qt>\n"
+"Use persistent proxy connection."
+"<p>\n"
+"Although a persistent proxy connection is faster, note that it only works "
+"correctly with proxies that are fully HTTP 1.1 compliant. Do <b>not</b> "
+"use this option in combination with non-HTTP 1.1 compliant proxy servers such "
+"as JunkBuster and WWWOfle.\n"
+"</qt>"
+msgstr ""
+"<qt>\n"
+"Vekil sunucu için sürekli bağlantılar kullan"
+"<p>\n"
+"Sürekli bir bağlantı hızlı olmasına rağmen sadece HTTP 1.1 uyumlu vekil "
+"sunucular ile çalışır. Bu seçeneği JunkBuster ve WWWOfle gibi HTTP 1.1 uyumlu "
+"olmayan vekil sunucular için kullanmayın.\n"
+"</qt>"
+
+#. i18n: file manualproxy_ui.ui line 27
+#: rc.cpp:372
+#, no-c-format
+msgid "Ser&vers"
+msgstr "Sunucular"
+
+#. i18n: file manualproxy_ui.ui line 95
+#: rc.cpp:384
+#, no-c-format
+msgid "Enter the address of the HTTP proxy server."
+msgstr "HTTP vekil sunucusunun adresini girin."
+
+#. i18n: file manualproxy_ui.ui line 103
+#: rc.cpp:387
+#, no-c-format
+msgid "Enter the address of the HTTPS proxy server."
+msgstr "HTTPS vekil sunucusunun adresini girin."
+
+#. i18n: file manualproxy_ui.ui line 111
+#: rc.cpp:390
+#, no-c-format
+msgid "Enter the address of the FTP proxy server."
+msgstr "FTP vekil sunucusunun adresini girin"
+
+#. i18n: file manualproxy_ui.ui line 122
+#: rc.cpp:393
+#, no-c-format
+msgid ""
+"Enter the port number of the FTP proxy server. Default 8080. Another common "
+"value is 3128."
+msgstr ""
+"HTTP vekil sunucusunun port numarasını girin. Öntanımlı değer 8080'dir. Diğeri "
+"3128"
+
+#. i18n: file manualproxy_ui.ui line 133
+#: rc.cpp:396 rc.cpp:399
+#, no-c-format
+msgid ""
+"Enter the port number of the HTTP proxy server. Default is 8080. Another common "
+"value is 3128."
+msgstr ""
+"HTTP vekil sunucusunun port numarasını girin. Öntanımlı değer 8080'dir. Diğeri "
+"3128"
+
+#. i18n: file manualproxy_ui.ui line 175
+#: rc.cpp:402
+#, no-c-format
+msgid "&Use the same proxy server for all protocols"
+msgstr "Tüm protokoller için aynı vekil sunucusunu kullan"
+
+#. i18n: file manualproxy_ui.ui line 193
+#: rc.cpp:405
+#, no-c-format
+msgid "E&xceptions"
+msgstr "Kural Dışı Durumlar"
+
+#. i18n: file manualproxy_ui.ui line 204
+#: rc.cpp:408
+#, no-c-format
+msgid "Use proxy only for entries in this list"
+msgstr "Sadece bu listedeki girdiler için vekil sunucu kullan"
+
+#. i18n: file manualproxy_ui.ui line 209
+#: rc.cpp:411
+#, no-c-format
+msgid ""
+"<qt>\n"
+"Reverse the use of the exception list. Checking this box will result in the "
+"proxy servers being used only when the requested URL matches one of the "
+"addresses listed here."
+"<p>This feature is useful if all you want or need is to use a proxy server  for "
+"a few specific sites."
+"<p>If you have more complex requirements you might want to use a configuration "
+"script.\n"
+"</qt>"
+msgstr ""
+"<qt>\n"
+"Kural dışı durum listesini tersine çevirmek için bu kutuyu işaretleyin. "
+"Örenğin, bu kutuyu işaretlemek, sadece istenen URL burda listelenen herhangi "
+"bir adrese uyuyor ise vekil sunucunun çalışması ile sonuçlanır. "
+"<p>Bu özellik tüm istediğiniz ya da gerek duyduğunuz vekil sunucuyu sadece az "
+"sayıda özel siteler için kullanacaksınız kullanışlıdır. "
+"<p>Eğer daha karmaşık gereksinimleriniz varsa bir yapılandırma betiği kullanmak "
+"isteyebilirsiniz.\n"
+"</qt>"
+
+#. i18n: file manualproxy_ui.ui line 228
+#: rc.cpp:416
+#, no-c-format
+msgid "D&elete All"
+msgstr "&Tümünü sil"
+
+#. i18n: file manualproxy_ui.ui line 231
+#: rc.cpp:419
+#, no-c-format
+msgid "Remove all proxy exception addresses from the list."
+msgstr "Tüm vekil istisnası adreslerini listeden sil."
+
+#. i18n: file manualproxy_ui.ui line 242
+#: rc.cpp:422
+#, no-c-format
+msgid "De&lete"
+msgstr "&Sil"
+
+#. i18n: file manualproxy_ui.ui line 245
+#: rc.cpp:425
+#, no-c-format
+msgid "Remove the selected proxy exception address from the list."
+msgstr "Seçilen vekil istisnası adreslerini listeden sil."
+
+#. i18n: file manualproxy_ui.ui line 256
+#: rc.cpp:431
+#, no-c-format
+msgid "Add new proxy exception address to the list."
+msgstr "Listeye yeni bir vekil istisna adresi ekle."
+
+#. i18n: file manualproxy_ui.ui line 267
+#: rc.cpp:434
+#, no-c-format
+msgid "C&hange..."
+msgstr "D&eğiştir..."
+
+#. i18n: file manualproxy_ui.ui line 270
+#: rc.cpp:437
+#, no-c-format
+msgid "Change the selected proxy exception address."
+msgstr "Seçili kural dışı durum adresini değiştirmek için bu düğmeye tıklayın."
+
+#. i18n: file policydlg_ui.ui line 27
+#: rc.cpp:440
+#, no-c-format
+msgid "&Domain name:"
+msgstr "Etki alanı adı:"
+
+#. i18n: file policydlg_ui.ui line 35
+#: rc.cpp:443 rc.cpp:448
+#, no-c-format
+msgid ""
+"<qt>\n"
+"Enter the host or domain to which this policy applies, e.g. <b>www.kde.org</b> "
+"or <b>.kde.org</b>.\n"
+"</qt>"
+msgstr ""
+"Bu politikanın uygulandığı hostu ya da etki alanı adını girin. Örneğin <i>"
+"www.kde.org</i> ya da <i>.kde.org</i>"
+
+#. i18n: file policydlg_ui.ui line 53
+#: rc.cpp:453
+#, no-c-format
+msgid "&Policy:"
+msgstr "&Politika"
+
+#. i18n: file policydlg_ui.ui line 66
+#: rc.cpp:456 rc.cpp:475
+#, no-c-format
+msgid ""
+"<qt>\n"
+"Select the desired policy:\n"
+"<ul>\n"
+"<li><b>Accept</b> - Allows this site to set cookies</li>\n"
+"<li><b>Reject</b> - Refuse all cookies sent from this site</li>\n"
+"<li><b>Ask</b> - Prompt when cookies are received from this site</li>\n"
+"</ul>\n"
+"</qt>"
+msgstr ""
+"<qt>\n"
+"İstenen politikayı seçin:\n"
+"<ul>\n"
+"<li><b>Kabul et</b> - Çerez ayarı için bu siteye izin verir</li>\n"
+"<li>Reddet</b> - Bu siteden yollanan tüm çerezleri reddeder</li>\n"
+"<li><b>Sor</b> - Bu siteden bir çerez alındığı zaman sorar"
+"<li> \n"
+"</ul> \n"
+"<qt>"
+
+#. i18n: file policydlg_ui.ui line 72
+#: rc.cpp:466
+#, no-c-format
+msgid "Accept"
+msgstr "Kabul et"
+
+#. i18n: file policydlg_ui.ui line 77
+#: rc.cpp:469
+#, no-c-format
+msgid "Reject"
+msgstr "Reddet"
+
+#. i18n: file policydlg_ui.ui line 82
+#: rc.cpp:472
+#, no-c-format
+msgid "Ask"
+msgstr "Sor"
+
+#. i18n: file socksbase.ui line 16
+#: rc.cpp:485
+#, no-c-format
+msgid "SOCKS"
+msgstr "SOCKS"
+
+#. i18n: file socksbase.ui line 34
+#: rc.cpp:488
+#, no-c-format
+msgid "&Enable SOCKS support"
+msgstr "&SOCKS desteğini etkinleştir"
+
+#. i18n: file socksbase.ui line 37
+#: rc.cpp:491
+#, no-c-format
+msgid ""
+"Check this to enable SOCKS4 and SOCKS5 support in KDE applications and I/O "
+"subsystems."
+msgstr ""
+"KDE uygulamalarında ve I/O anasistemlerinde SOCKS4 ve SOCKS5 desteğini sağlamak "
+"için işaretleyin."
+
+#. i18n: file socksbase.ui line 48
+#: rc.cpp:494
+#, no-c-format
+msgid "SOCKS Implementation"
+msgstr "SOCKS Uyarlaması"
+
+#. i18n: file socksbase.ui line 59
+#: rc.cpp:497
+#, no-c-format
+msgid "A&uto detect"
+msgstr "Otomatik &Denetle"
+
+#. i18n: file socksbase.ui line 65
+#: rc.cpp:500
+#, no-c-format
+msgid ""
+"If you select Autodetect, then KDE will automatically search for an "
+"implementation of SOCKS on your computer."
+msgstr ""
+"Eğer 'Atomatik Algıla'yı seçerseniz, KDE bilgisayarınızda otomatik olarak bir "
+"SOCKS uyarlaması arayacaktır."
+
+#. i18n: file socksbase.ui line 73
+#: rc.cpp:503
+#, no-c-format
+msgid "&NEC SOCKS"
+msgstr "&NEC SOCKS"
+
+#. i18n: file socksbase.ui line 79
+#: rc.cpp:506
+#, no-c-format
+msgid "This will force KDE to use NEC SOCKS if it can be found."
+msgstr ""
+"Bu seçenek KDE'yi ,bulunursa, NEC SOCKS'i kullanmak için zorlayacaktır."
+
+#. i18n: file socksbase.ui line 87
+#: rc.cpp:509
+#, no-c-format
+msgid "Use &custom library"
+msgstr "Özel &kütüphane kullan"
+
+#. i18n: file socksbase.ui line 93
+#: rc.cpp:512
+#, no-c-format
+msgid ""
+"Select custom if you wish to use an unlisted SOCKS library. Please note that "
+"this may not always work as it depends on the API of the library which you "
+"specify (below)."
+msgstr ""
+"Listelenmemiş bir SOCKS kütüphanesi kullanmak için özeli seçin.Aşağıda "
+"belirteceğiniz kütüphanenin API'sine bağlı olduğu için her zaman "
+"çalışmayabilir."
+
+#. i18n: file socksbase.ui line 117
+#: rc.cpp:515
+#, no-c-format
+msgid "&Path:"
+msgstr "&Yol:"
+
+#. i18n: file socksbase.ui line 137
+#: rc.cpp:518
+#, no-c-format
+msgid "Enter the path to an unsupported SOCKS library."
+msgstr "Desteklenmeyen SOCKS kütüphanesinin dizinini yazın."
+
+#. i18n: file socksbase.ui line 147
+#: rc.cpp:521
+#, no-c-format
+msgid "&Dante"
+msgstr "&Dante"
+
+#. i18n: file socksbase.ui line 153
+#: rc.cpp:524
+#, no-c-format
+msgid "This will force KDE to use Dante if it can be found."
+msgstr "Bu seçenek KDE'yi ,bulunursa, Dante'yi kullanmaya zorlar."
+
+#. i18n: file socksbase.ui line 174
+#: rc.cpp:527
+#, no-c-format
+msgid "Additional Library Search Paths"
+msgstr "Ek Kütüphane Arama Dizinleri"
+
+#. i18n: file socksbase.ui line 177
+#: rc.cpp:530
+#, no-c-format
+msgid ""
+"Here you can specify additional directories to search for the SOCKS libraries. "
+"/usr/lib, /usr/local/lib, /usr/local/socks5/lib and /opt/socks5/lib are already "
+"searched by default."
+msgstr ""
+"Burada SOCKS kütüphaneleri için ek dizinler belirtebilirsiniz. /usr/lib, "
+"/usr/local/lib, /usr/local/socks5/lib ve /opt/socks5/lib öntanımlı olarak "
+"arandı."
+
+#. i18n: file socksbase.ui line 186
+#: rc.cpp:533
+#, no-c-format
+msgid "Path"
+msgstr "Yol"
+
+#. i18n: file socksbase.ui line 207
+#: rc.cpp:536
+#, no-c-format
+msgid "This is the list of additional paths that will be searched."
+msgstr "Aranacak ek dizinlerin listesi."
+
+#. i18n: file socksbase.ui line 251
+#: rc.cpp:539
+#, no-c-format
+msgid "&Add"
+msgstr "&Ekle"
+
+#. i18n: file socksbase.ui line 299
+#: rc.cpp:545
+#, no-c-format
+msgid "&Test"
+msgstr "&Dene"
+
+#. i18n: file socksbase.ui line 302
+#: rc.cpp:548
+#, no-c-format
+msgid "Click here to test SOCKS support."
+msgstr "SOCS desteğini denemek için buraya tıklayın."
+
+#. i18n: file uagentproviderdlg_ui.ui line 32
+#: rc.cpp:551
+#, no-c-format
+msgid "&When browsing the following site:"
+msgstr "&Aşağıdaki siteye bağlanırken:"
+
+#. i18n: file uagentproviderdlg_ui.ui line 41
+#: rc.cpp:554 rc.cpp:560
+#, no-c-format
+msgid ""
+"<qt>\n"
+"Enter the site or domain name where a fake browser identification should be "
+"used."
+"<p>\n"
+"<u>NOTE:</u> Wildcard syntax such as \\\"*,?\\\" is NOT allowed: instead, use "
+"the top level address of a site to make generic matches; for example, if you "
+"want all KDE sites to receive a fake browser identification, you would enter "
+"<code>.kde.org</code> - the fake identity would then be sent to any KDE site "
+"that ends with <code>.kde.org</code>.\n"
+"</qt>"
+msgstr ""
+"<qt>\n"
+"Sahte bir kimliğin kullanılacak olduğu site ya da etkiadına girin."
+"<p>\n"
+"<u>NOT:</u> \"*,?\" gibi özel karakter sözdizimi desteklenmiyor. Bir sitenin "
+"üst düzey adresini girmek yerine altında bulunan bütün yerler için benzer "
+"kopyalar girin. Örneğin, <code>http://www.acme.com</code> "
+"adresindeki bütün sitelerin sahte tarayıcı tanımlamasını almasını istiyorsanız, "
+"sadece buraya <code>acme.com</code> girin.\n"
+"</qt>"
+
+#. i18n: file uagentproviderdlg_ui.ui line 60
+#: rc.cpp:566
+#, no-c-format
+msgid "&Use the following identification:"
+msgstr "Aşağıdaki &kimliği kullan:"
+
+#. i18n: file uagentproviderdlg_ui.ui line 68
+#: rc.cpp:569 rc.cpp:574
+#, no-c-format
+msgid ""
+"<qt>\n"
+"Select the browser identification to use whenever contacting the site you "
+"specified above.\n"
+"</qt>"
+msgstr ""
+"<qt>Herhangi bir zamanda aşağıda verilmiş sitelere bağlanılırken kullanılacak "
+"tarayıcı tanımlamasını seçin.<P>Seçimin üstünde, eğer mümkünse, doğru bir "
+"tanımlama aşağıdaki kutuda da gösterilecek."
+
+#. i18n: file uagentproviderdlg_ui.ui line 86
+#: rc.cpp:579
+#, no-c-format
+msgid "Real identification:"
+msgstr "Gerçek kimlik:"
+
+#. i18n: file uagentproviderdlg_ui.ui line 94
+#: rc.cpp:582 rc.cpp:587
+#, no-c-format
+msgid ""
+"<qt>\n"
+"The actual browser identification text that will be sent to the remote "
+"machine.\n"
+"</qt>"
+msgstr ""
+"<qt>\n"
+"Sunucu makineye gönderilecek tarayıcı tanımlaması metni.\n"
+"</qt>"
+
+#. i18n: file useragentdlg_ui.ui line 19
+#: rc.cpp:598
+#, no-c-format
+msgid ""
+"<qt>\n"
+"Here you can modify the default browser-identification text or set a site <code>"
+"(eg. www.kde.org)</code> or a domain <code>(eg. kde.org)</code> "
+"specific identification text."
+"<p>\n"
+"To add a new site specific identification text, click the <code>New</code> "
+"button and supply the necessary information. To change an existing site "
+"specific entry, click on the <code>Change</code> button. The <code>Delete</code> "
+"button will remove the selected site specific identification text, causing the "
+"setting to be used for that site or domain.\n"
+"</qt>"
+msgstr ""
+
+#. i18n: file useragentdlg_ui.ui line 33
+#: rc.cpp:604
+#, no-c-format
+msgid "&Send identification"
+msgstr "Tarayıcı &tanımlaması gönder "
+
+#. i18n: file useragentdlg_ui.ui line 43
+#: rc.cpp:607
+#, no-c-format
+msgid ""
+"<qt>\n"
+"Send the browser identification to web sites."
+"<p>\n"
+"<u>NOTE:</u> Many sites rely on this information to display pages properly, "
+"hence, it is highly recommended that you do not totally disable this feature "
+"but rather customize it."
+"<p>\n"
+"By default, only minimal identification information is sent to remote sites. "
+"The identification text that will be sent is shown below.\n"
+"</qt>"
+msgstr ""
+"<qt>Eğer seçilmemişse, internette gezilirken sitelere tarayıcınız hakkında "
+"tanımlama bilgisi gönderilmeyecektir.<P><u>NOT:</u> Birçok site sayfayaları "
+"düzgün gösterebilmek için bu bilgiyi kullanır, bu yüzden, bu seçeneği tamamen "
+"iptal etmemeniz şiddetle tavsiye edilir fakat düzenleyebilirsiniz.<P>"
+"Sadece asgari bilgi aşağıda <b>kalın</b> olarak gösterilen sitelere "
+"gönderilir.</qt>"
+
+#. i18n: file useragentdlg_ui.ui line 54
+#: rc.cpp:614
+#, no-c-format
+msgid "Default Identification"
+msgstr "Tekrarlanan Tanımlama"
+
+#. i18n: file useragentdlg_ui.ui line 57
+#: rc.cpp:617
+#, no-c-format
+msgid ""
+"The browser identification text sent to the sites you visit. Use the provided "
+"options to customize it."
+msgstr ""
+"Gezdiğiniz sitelere gönderilen tarayıcı tanımlaması metni.Özelleştirmek için "
+"seçenekleri kullanın."
+
+#. i18n: file useragentdlg_ui.ui line 88
+#: rc.cpp:620
+#, no-c-format
+msgid ""
+"The browser identification text sent to the sites you visit. You can customize "
+"it using the options provided below."
+msgstr ""
+"Bu tarama sürerken uzaktaki sitelere gönderilen öntanımlı tanımlamadır.  Bunu "
+"aşağıdaki işaret kutularnıı kullanarak değiştirebilirsiniz."
+
+#. i18n: file useragentdlg_ui.ui line 96
+#: rc.cpp:623
+#, no-c-format
+msgid "Add operating s&ystem name"
+msgstr "İşletim &sistemi adı ekle"
+
+#. i18n: file useragentdlg_ui.ui line 99
+#: rc.cpp:626
+#, no-c-format
+msgid ""
+"Includes your operating system's name in the browser identification text."
+msgstr "Web tarayıcı tanımlama dizgisine işletim sistemi adını da belirtir."
+
+#. i18n: file useragentdlg_ui.ui line 135
+#: rc.cpp:629
+#, no-c-format
+msgid "Add operating system &version"
+msgstr "İşletim sistemi &sürümü ekle"
+
+#. i18n: file useragentdlg_ui.ui line 138
+#: rc.cpp:632
+#, no-c-format
+msgid ""
+"Includes your operating system's version number in the browser identification "
+"text."
+msgstr ""
+"Web tarayıcı tanımlama dizgisine işletim sistemi sürüm numarasını ekler."
+
+#. i18n: file useragentdlg_ui.ui line 148
+#: rc.cpp:635
+#, no-c-format
+msgid "Add &platform name"
+msgstr "P&latform adı ekle"
+
+#. i18n: file useragentdlg_ui.ui line 151
+#: rc.cpp:638
+#, no-c-format
+msgid "Includes your platform type in the browser identification text"
+msgstr "Web tarayıcı tanımlaması metnine platform türünü ekler."
+
+#. i18n: file useragentdlg_ui.ui line 159
+#: rc.cpp:641
+#, no-c-format
+msgid "Add &machine (processor) type"
+msgstr "M&akine (işlemci) tipi ekle"
+
+#. i18n: file useragentdlg_ui.ui line 162
+#: rc.cpp:644
+#, no-c-format
+msgid "Includes your machine's CPU type in the browser identification text."
+msgstr "Web tarayıcı tanımlama metnine makinenizin işlemcisini ekler."
+
+#. i18n: file useragentdlg_ui.ui line 170
+#: rc.cpp:647
+#, no-c-format
+msgid "Add lang&uage information"
+msgstr "Di&l ayarlamalarınızı ekleyin"
+
+#. i18n: file useragentdlg_ui.ui line 173
+#: rc.cpp:650
+#, no-c-format
+msgid "Includes your language settings in the browser identification text."
+msgstr "Web tarayıcı tanımlama dizgisine dil ayarlarınızı ekler."
+
+#. i18n: file useragentdlg_ui.ui line 186
+#: rc.cpp:653
+#, no-c-format
+msgid "Site Specific Identification"
+msgstr "Site/etkialanı Özel Tanımlaması"
+
+#. i18n: file useragentdlg_ui.ui line 198
+#: rc.cpp:656
+#, no-c-format
+msgid "Site Name"
+msgstr "Site/Etki Alanı"
+
+#. i18n: file useragentdlg_ui.ui line 209
+#: rc.cpp:659
+#, no-c-format
+msgid "Identification"
+msgstr "Tanımlama Ekle"
+
+#. i18n: file useragentdlg_ui.ui line 220
+#: rc.cpp:662
+#, no-c-format
+msgid "User Agent"
+msgstr "Kullanıcı Ajanı"
+
+#. i18n: file useragentdlg_ui.ui line 248
+#: rc.cpp:665
+#, no-c-format
+msgid ""
+"List of sites for which the specified identification text will be used instead "
+"of the default one."
+msgstr ""
+"Öntanımlı yerine, belirtilen tanımlama metninin gönderileceği sitelerin listesi"
+
+#. i18n: file useragentdlg_ui.ui line 267
+#: rc.cpp:671
+#, no-c-format
+msgid "Add new identification text for a site."
+msgstr "Özel bir site için tarayıcı tanımlaması ekle."
+
+#. i18n: file useragentdlg_ui.ui line 278
+#: rc.cpp:677
+#, no-c-format
+msgid "Change the selected identifier text."
+msgstr "Seçilen tanıtıcıyı değiştir."
+
+#. i18n: file useragentdlg_ui.ui line 289
+#: rc.cpp:683
+#, no-c-format
+msgid "Delete the selected identifier text."
+msgstr "Seçilen tanıtıcıyı sil."
+
+#. i18n: file useragentdlg_ui.ui line 300
+#: rc.cpp:689
+#, no-c-format
+msgid "Delete all identifiers."
+msgstr "Tüm tanıtıcıları sil."
+
+#. i18n: file kio_ftprc.kcfg line 10
+#: rc.cpp:692
+#, no-c-format
+msgid "Disable Passive FTP"
+msgstr "Pasif FTP'yi Kapat"
+
+#. i18n: file kio_ftprc.kcfg line 11
+#: rc.cpp:695
+#, no-c-format
+msgid ""
+"When FTP connections are passive the client connects to the server, instead of "
+"the other way round, so firewalls do not block the connection; old FTP servers "
+"may not support Passive FTP though."
+msgstr ""
+
+#. i18n: file kio_ftprc.kcfg line 16
+#: rc.cpp:698
+#, no-c-format
+msgid "Mark partially uploaded files"
+msgstr "Bölümsel olarak yüklenen dosyaları işaretle"
+
+#. i18n: file kio_ftprc.kcfg line 17
+#: rc.cpp:701
+#, no-c-format
+msgid ""
+"While a file is being uploaded its extension is \".part\". When fully uploaded "
+"it is renamed to its real name."
+msgstr ""
+"Bir dosya yüklenirken uzantısı \".part\" olarak görünür. Dosya tamamen "
+"yüklendiğinde gerçek adını alır."
+
+#: smbrodlg.cpp:43
+msgid "This is the configuration for the samba client only, not the server."
+msgstr ""
+"Bu, yalnızca Samba İstemcisi için bir yapılandırmadır, sunucu için değil."
+
+#: smbrodlg.cpp:47
+msgid "Default user name:"
+msgstr "Öntanımlı kullanıcı adı:"
+
+#: smbrodlg.cpp:53
+msgid "Default password:"
+msgstr "Öntanımlı parola:"
+
+#: smbrodlg.cpp:171
+msgid ""
+"<h1>Windows Shares</h1>Konqueror is able to access shared windows filesystems "
+"if properly configured. If there is a specific computer from which you want to "
+"browse, fill in the <em>Browse server</em> field. This is mandatory if you do "
+"not run Samba locally. The <em>Broadcast address</em> and <em>WINS address</em> "
+"fields will also be available, if you use the native code, or the location of "
+"the 'smb.conf' file from which the options are read, when using Samba. In any "
+"case, the broadcast address (interfaces in smb.conf) must be set up if it is "
+"guessed incorrectly or you have multiple cards. A WINS server usually improves "
+"performance, and reduces the network load a lot."
+"<p>The bindings are used to assign a default user for a given server, possibly "
+"with the corresponding password, or for accessing specific shares. If you "
+"choose to, new bindings will be created for logins and shares accessed during "
+"browsing. You can edit all of them from here. Passwords will be stored locally, "
+"and scrambled so as to render them unreadable to the human eye. For security "
+"reasons, you may not want to do that, as entries with passwords are clearly "
+"indicated as such."
+"<p>"
+msgstr ""
+"<h1>Windows Paylaşımları</h1>Konqueror eğer doğru yapılandırılırsa paylaşıma "
+"açılmış Windows dosya sistemlerine erişebilir. Gözatmakta kullanmak istediğiniz "
+"belli bir bilgisayar varsa, <em>Gözatma sunucusu</em> "
+"alanına yazınız. Samba'yı yerel olarak çalıştırmıyorsanız bunu yazmanız "
+"zorunludur. Yerel kod ya da Samba kullanırken seçeneklerin okunduğu 'smb.conf' "
+"dosyasının konumunu kullanıyorsanız <em>Yayın adresi</em> ve <em>"
+"WINS adresi</em> alanları da mevcuttur. Her halükarda yanlış tahmin edilmesi ya "
+"da birden fazla kartınızın olması hallerinde yayın adresi (sm.conf'taki "
+"arayüzler) ayarlanmalıdır. WINS sunucuları genellikle performansı arttırır ve "
+"ağ trafiğini büyük oranda azaltır."
+"<p>Bağıllar belli bir sunucu ya da belli hisselere erişim için, muhtemelen "
+"parolasıyla birlikte, öntanımlı bir kullanıcı atamakta kullanılırlar. Bunu "
+"seçerseniz, gözatma sırasında kullanılan kullanıcı adları ve erişilen "
+"paylaşımlar için yeni bağıllar oluşturulacaktır. Bunların tümünü buradan "
+"ayarlayabilirsiniz. Parolalar yerel olarak kaydedilecek ve insanların "
+"okuyamayacağı şekilde karıştırılacaktır. Güvenlik nedeniyle, bunu yapmak "
+"istemeyebilirsiniz. Parolalı girişler açıkça gösterilir."
+"<p>"
+
+#: socks.cpp:42
+msgid "kcmsocks"
+msgstr "kcmsocks"
+
+#: socks.cpp:42
+msgid "KDE SOCKS Control Module"
+msgstr "KDE SOCKS Kontrol Modülü"
+
+#: socks.cpp:44
+msgid "(c) 2001 George Staikos"
+msgstr "(c) 2001 George Staikos"
+
+#: socks.cpp:92
+msgid "These changes will only apply to newly started applications."
+msgstr "Bu değişiklikler sadece yeni başlayan uygulamalara etki edecektir."
+
+#: socks.cpp:94 socks.cpp:127 socks.cpp:132
+msgid "SOCKS Support"
+msgstr "SOCKS Desteği"
+
+#: socks.cpp:126
+msgid "Success: SOCKS was found and initialized."
+msgstr "Başarıldı: SOCKS bulundu ve ayarlandı."
+
+#: socks.cpp:131
+msgid "SOCKS could not be loaded."
+msgstr "SOCKS yüklenemedi."
+
+#: socks.cpp:270
+msgid ""
+"<h1>SOCKS</h1>"
+"<p>This module allows you to configure KDE support for a SOCKS server or "
+"proxy.</p>"
+"<p>SOCKS is a protocol to traverse firewalls as described in <a "
+"href=\"http://rfc.net/rfc1928.html\">RFC 1928</a>. "
+"<p>If you have no idea what this is and if your system administrator does not "
+"tell you to use it, leave it disabled.</p>"
+msgstr ""
+"<h1>SOCKS</h1> "
+"<p>Bu modül sayesinde SOCKS sunucuya veya vekil sunucuya KDE üzerinden bağlantı "
+"kurulabilir.</p> "
+"<p>SOCKS, <a href=\"http://rfc.net/rfc1928.html\">RFC 1928</a> "
+"içinde tanımlanmış bir protokoldür. "
+"<p> Eğer SOCKS'ın ne olduğunu bilmiyorsanız, ya da sistem yöneticinizden SOCKS "
+"kullanımını ait bir bilgi almamışsanız bu seçeneği kapalı tutun.</p>"
+
+#: useragentdlg.cpp:225
+msgid ""
+"<qt>"
+"<center>Found an existing identification for"
+"<br/><b>%1</b>"
+"<br/>Do you want to replace it?</center></qt>"
+msgstr ""
+"<qt> "
+"<center> "
+"<br/><b>%1</b>"
+"<br/>için var olan bir tanıtıcı bulundu. Bunu değiştirmek ister "
+"misiniz?</center></qt>"
+
+#: useragentdlg.cpp:230
+msgid "Duplicate Identification"
+msgstr "Tekrarlanan Tanımlama"
+
+#: useragentdlg.cpp:248
+msgid "Add Identification"
+msgstr "Tanımlama Ekle"
+
+#: useragentdlg.cpp:267
+msgid "Modify Identification"
+msgstr "Tanımlama Düzenle"
+
+#: useragentdlg.cpp:383
+msgid ""
+"<h1>Browser Identification</h1> The browser-identification module allows you to "
+"have full control over how Konqueror will identify itself to web sites you "
+"browse.<P>This ability to fake identification is necessary because some web "
+"sites do not display properly when they detect that they are not talking to "
+"current versions of either Netscape Navigator or Internet Explorer, even if the "
+"browser actually supports all the necessary features to render those pages "
+"properly. For such sites, you can use this feature to try to browse them. "
+"Please understand that this might not always work, since such sites might be "
+"using non-standard web protocols and or specifications.<P><u>NOTE:</u> "
+"To obtain specific help on a particular section of the dialog box, simply click "
+"on the quick help button on the window title bar, then click on the section for "
+"which you are seeking help."
+msgstr ""
+"<h1>Tarayıcı Tanımlaması</h1> Tarayıcı tanımlaması denetim ekranı Konqueror'un "
+"kendini web sitelerine ne olarak tanıttığı üzerinde tam kontrole sahip olmanıza "
+"izin verir. <P>Sahte kimlik yeteneği gereklidir, çünkü bazı web siteleri, "
+"\"desteklenmeyen tarayıcı\" bu sayfaları tam olarak geri göndermek için gerekli "
+"olan tüm özellikleri gerçekte desteklese bile, Netscape Navigator'ın ya da "
+"İnternet Explorer'ın yürürlükte olmayan versiyonları ile konuşmadığını "
+"algıladıkları zaman tam olarak görünmezler. Bu sebepten dolayı, bu tip siteler "
+"için, öntanımlı tanımlamayı site ya da etki alanına özel girişler ekleyek "
+"tekrar yazmak isteyebilirsiniz. <P><u>NOT:</u>  İletişim kutusunun herhangi bir "
+"bölümü hakkında yardım elde etmek için, sadece bu pencerenin sağ üst "
+"köşesindeki küçük <b>?</b>  düğmesini tıklayın, sonra da yardım aradığınız "
+"bölümün üzerine tıklayın."

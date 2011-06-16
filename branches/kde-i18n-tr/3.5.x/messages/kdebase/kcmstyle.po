@@ -1,0 +1,392 @@
+# translation of kcmstyle.po to Türkçe
+# translation of kcmstyle.po to Turkish
+# Görkem Çetin <gorkem@kde.org>, 2004.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmstyle\n"
+"POT-Creation-Date: 2006-08-23 02:32+0200\n"
+"PO-Revision-Date: 2004-09-07 23:32+0300\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.3.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: kcmstyle.cpp:121
+msgid ""
+"<h1>Style</h1>This module allows you to modify the visual appearance of user "
+"interface elements, such as the widget style and effects."
+msgstr ""
+"<h1>Stil</h1>Bu modül kullanıcı arayüz bileşenlerinin görünümünü ayarlamanızı "
+"sağlar."
+
+#: kcmstyle.cpp:134
+msgid "kcmstyle"
+msgstr "kcmstyle"
+
+#: kcmstyle.cpp:135
+msgid "KDE Style Module"
+msgstr "KDE Stil Modülü"
+
+#: kcmstyle.cpp:137
+msgid "(c) 2002 Karol Szwed, Daniel Molkentin"
+msgstr "(c) 2002 Karol Szwed, Daniel Molkentin"
+
+#: kcmstyle.cpp:158
+msgid "Widget Style"
+msgstr "Parçacık Stili"
+
+#: kcmstyle.cpp:171
+msgid "Con&figure..."
+msgstr "&Yapılandır..."
+
+#: kcmstyle.cpp:182
+msgid "Sho&w icons on buttons"
+msgstr "&Düğme üzerinde simgeleri göster"
+
+#: kcmstyle.cpp:184
+msgid "E&nable tooltips"
+msgstr "İpuçları &etkin"
+
+#: kcmstyle.cpp:186
+msgid "Show tear-off handles in &popup menus"
+msgstr "&Açılır menülerde menü ayırma çizgisini göster"
+
+#: kcmstyle.cpp:190
+msgid "Preview"
+msgstr "Önizleme"
+
+#: kcmstyle.cpp:208
+msgid "&Enable GUI effects"
+msgstr "&GUI Efektlerini Etkinleştir"
+
+#: kcmstyle.cpp:216 kcmstyle.cpp:224 kcmstyle.cpp:233 kcmstyle.cpp:243
+msgid "Disable"
+msgstr "Kapat"
+
+#: kcmstyle.cpp:217 kcmstyle.cpp:225 kcmstyle.cpp:234
+msgid "Animate"
+msgstr "Canlandır"
+
+#: kcmstyle.cpp:218
+msgid "Combobo&x effect:"
+msgstr "Ç&oklu kutucuk efekti:"
+
+#: kcmstyle.cpp:226 kcmstyle.cpp:235
+msgid "Fade"
+msgstr "Kaybol"
+
+#: kcmstyle.cpp:227
+msgid "&Tool tip effect:"
+msgstr "İ&pucu efekti:"
+
+#: kcmstyle.cpp:236
+msgid "Make Translucent"
+msgstr "Yarı Geçirgen Yap"
+
+#: kcmstyle.cpp:237
+msgid "&Menu effect:"
+msgstr "&Menü efekti:"
+
+#: kcmstyle.cpp:244
+msgid "Application Level"
+msgstr "Uygulama Seviyesi"
+
+#: kcmstyle.cpp:246
+msgid "Me&nu tear-off handles:"
+msgstr "&Menü ayırma yeri:"
+
+#: kcmstyle.cpp:251
+msgid "Menu &drop shadow"
+msgstr "Menüde &gölgelendirme"
+
+#: kcmstyle.cpp:272
+msgid "Software Tint"
+msgstr "Yazılım Rengi"
+
+#: kcmstyle.cpp:273
+msgid "Software Blend"
+msgstr "Yazılım Harmanlamak"
+
+#: kcmstyle.cpp:275
+msgid "XRender Blend"
+msgstr "XRender Harman"
+
+#: kcmstyle.cpp:288
+#, c-format
+msgid "0%"
+msgstr "0%"
+
+#: kcmstyle.cpp:290
+#, c-format
+msgid "50%"
+msgstr "50%"
+
+#: kcmstyle.cpp:292
+#, c-format
+msgid "100%"
+msgstr "100%"
+
+#: kcmstyle.cpp:295
+msgid "Menu trans&lucency type:"
+msgstr "&Menü yarı geçirgenlik türü:"
+
+#: kcmstyle.cpp:297
+msgid "Menu &opacity:"
+msgstr "&Menü matlığı:"
+
+#: kcmstyle.cpp:326
+msgid "High&light buttons under mouse"
+msgstr "&Fare altındaki düğmeleri aydınlat"
+
+#: kcmstyle.cpp:327
+msgid "Transparent tool&bars when moving"
+msgstr "Araç çubuğu &hareket halindeyken şeffaf"
+
+#: kcmstyle.cpp:332
+msgid "Text pos&ition:"
+msgstr "Metin &konumu:"
+
+#: kcmstyle.cpp:334
+msgid "Icons Only"
+msgstr "Sadece Simgeler"
+
+#: kcmstyle.cpp:335
+msgid "Text Only"
+msgstr "Sadece Metin"
+
+#: kcmstyle.cpp:336
+msgid "Text Alongside Icons"
+msgstr "Simge Yanında Metin"
+
+#: kcmstyle.cpp:337
+msgid "Text Under Icons"
+msgstr "Simge Altında Metin"
+
+#: kcmstyle.cpp:379
+msgid "&Style"
+msgstr "&Stil"
+
+#: kcmstyle.cpp:380
+msgid "&Effects"
+msgstr "Efe&ktler"
+
+#: kcmstyle.cpp:381
+msgid "&Toolbar"
+msgstr "&Araç çubuğu"
+
+#: kcmstyle.cpp:418 kcmstyle.cpp:429
+msgid "There was an error loading the configuration dialog for this style."
+msgstr "Bu stil için yapılandırma penceresi yüklenemedi"
+
+#: kcmstyle.cpp:420 kcmstyle.cpp:431
+msgid "Unable to Load Dialog"
+msgstr "Pencere Yüklenemedi"
+
+#: kcmstyle.cpp:520
+msgid ""
+"<qt>Selected style: <b>%1</b>"
+"<br>"
+"<br>One or more effects that you have chosen could not be applied because the "
+"selected style does not support them; they have therefore been disabled."
+"<br>"
+"<br>"
+msgstr ""
+
+#: kcmstyle.cpp:532
+msgid "Menu translucency is not available.<br>"
+msgstr "Menü yarı geçirgenliği kullanılamaz.<br>"
+
+#: kcmstyle.cpp:539
+msgid "Menu drop-shadows are not available."
+msgstr "Menü gölgelendirmesi kullanılamaz."
+
+#: kcmstyle.cpp:722 kcmstyle.cpp:834
+msgid "No description available."
+msgstr "Açıklama yok."
+
+#: kcmstyle.cpp:834
+#, c-format
+msgid "Description: %1"
+msgstr "Açıklama: %1"
+
+#: kcmstyle.cpp:1013
+msgid ""
+"Here you can choose from a list of predefined widget styles (e.g. the way "
+"buttons are drawn) which may or may not be combined with a theme (additional "
+"information like a marble texture or a gradient)."
+msgstr ""
+
+#: kcmstyle.cpp:1017
+msgid ""
+"This area shows a preview of the currently selected style without having to "
+"apply it to the whole desktop."
+msgstr ""
+
+#: kcmstyle.cpp:1021
+msgid ""
+"This page allows you to enable various widget style effects. For best "
+"performance, it is advisable to disable all effects."
+msgstr ""
+
+#: kcmstyle.cpp:1023
+msgid ""
+"If you check this box, you can select several effects for different widgets "
+"like combo boxes, menus or tooltips."
+msgstr ""
+
+#: kcmstyle.cpp:1025
+msgid ""
+"<p><b>Disable: </b>do not use any combo box effects.</p>\n"
+"<b>Animate: </b>Do some animation."
+msgstr ""
+
+#: kcmstyle.cpp:1027
+msgid ""
+"<p><b>Disable: </b>do not use any tooltip effects.</p>\n"
+"<p><b>Animate: </b>Do some animation.</p>\n"
+"<b>Fade: </b>Fade in tooltips using alpha-blending."
+msgstr ""
+
+#: kcmstyle.cpp:1030
+msgid ""
+"<p><b>Disable: </b>do not use any menu effects.</p>\n"
+"<p><b>Animate: </b>Do some animation.</p>\n"
+"<p><b>Fade: </b>Fade in menus using alpha-blending.</p>\n"
+"<b>Make Translucent: </b>Alpha-blend menus for a see-through effect. (KDE "
+"styles only)"
+msgstr ""
+
+#: kcmstyle.cpp:1034
+msgid ""
+"When enabled, all popup menus will have a drop-shadow, otherwise drop-shadows "
+"will not be displayed. At present, only KDE styles can have this effect "
+"enabled."
+msgstr ""
+
+#: kcmstyle.cpp:1037
+msgid ""
+"<p><b>Software Tint: </b>Alpha-blend using a flat color.</p>\n"
+"<p><b>Software Blend: </b>Alpha-blend using an image.</p>\n"
+"<b>XRender Blend: </b>Use the XFree RENDER extension for image blending (if "
+"available). This method may be slower than the Software routines on "
+"non-accelerated displays, but may however improve performance on remote "
+"displays.</p>\n"
+msgstr ""
+
+#: kcmstyle.cpp:1042
+msgid "By adjusting this slider you can control the menu effect opacity."
+msgstr ""
+
+#: kcmstyle.cpp:1045
+msgid ""
+"<b>Note:</b> that all widgets in this combobox do not apply to Qt-only "
+"applications."
+msgstr ""
+
+#: kcmstyle.cpp:1047
+msgid ""
+"If this option is selected, toolbar buttons will change their color when the "
+"mouse cursor is moved over them."
+msgstr ""
+
+#: kcmstyle.cpp:1049
+msgid ""
+"If you check this box, the toolbars will be transparent when moving them "
+"around."
+msgstr ""
+
+#: kcmstyle.cpp:1051
+msgid ""
+"If you check this option, the KDE application will offer tooltips when the "
+"cursor remains over items in the toolbar."
+msgstr ""
+
+#: kcmstyle.cpp:1053
+msgid ""
+"<p><b>Icons only:</b> Shows only icons on toolbar buttons. Best option for low "
+"resolutions.</p>"
+"<p><b>Text only: </b>Shows only text on toolbar buttons.</p>"
+"<p><b>Text alongside icons: </b> Shows icons and text on toolbar buttons. Text "
+"is aligned alongside the icon.</p><b>Text under icons: </b> "
+"Shows icons and text on toolbar buttons. Text is aligned below the icon."
+msgstr ""
+
+#: kcmstyle.cpp:1060
+msgid ""
+"If you enable this option, KDE Applications will show small icons alongside "
+"some important buttons."
+msgstr ""
+
+#: kcmstyle.cpp:1062
+msgid ""
+"If you enable this option some pop-up menus will show so called tear-off "
+"handles. If you click them, you get the menu inside a widget. This can be very "
+"helpful when performing the same action multiple times."
+msgstr ""
+
+#: menupreview.cpp:160
+#, c-format
+msgid "%"
+msgstr "%"
+
+#. i18n: file stylepreview.ui line 59
+#: rc.cpp:3
+#, no-c-format
+msgid "Tab 1"
+msgstr "1. Sekme"
+
+#. i18n: file stylepreview.ui line 70
+#: rc.cpp:6
+#, no-c-format
+msgid "Button Group"
+msgstr "Düğme Grubu"
+
+#. i18n: file stylepreview.ui line 81
+#: rc.cpp:9 rc.cpp:12
+#, no-c-format
+msgid "Radio button"
+msgstr "Radyo düğmesi"
+
+#. i18n: file stylepreview.ui line 114
+#: rc.cpp:15
+#, no-c-format
+msgid "Checkbox"
+msgstr "İşaretleme kutusu"
+
+#. i18n: file stylepreview.ui line 139
+#: rc.cpp:18
+#, no-c-format
+msgid "Combobox"
+msgstr "Çoklu Kutucuk"
+
+#. i18n: file stylepreview.ui line 240
+#: rc.cpp:21
+#, no-c-format
+msgid "Button"
+msgstr "Düğme"
+
+#. i18n: file stylepreview.ui line 269
+#: rc.cpp:24
+#, no-c-format
+msgid "Tab 2"
+msgstr "2. Sekme"
+
+#: styleconfdialog.cpp:27
+#, c-format
+msgid "Configure %1"
+msgstr "Yapılandır: %1"

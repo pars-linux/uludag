@@ -1,0 +1,313 @@
+# translation of kfile_jpeg.po to Türkçe
+# translation of kfile_jpeg.po to
+# translation of kfile_jpeg.po to Turkish
+# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2002, 2003.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Görkem Çetin <gorkem@gorkemcetin.com>, 2005.
+# Alper Sen <aalpersen@gmail.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kfile_jpeg\n"
+"POT-Creation-Date: 2004-10-12 01:17+0200\n"
+"PO-Revision-Date: 2005-07-15 13:52+0300\n"
+"Last-Translator: Alper Sen <aalpersen@gmail.com>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: kfile_jpeg.cpp:58
+msgid "JPEG Exif"
+msgstr "JPEG Exif"
+
+#: kfile_jpeg.cpp:61
+msgid "Comment"
+msgstr "Açıklama"
+
+#: kfile_jpeg.cpp:67
+msgid "Camera Manufacturer"
+msgstr "Kamera Üreticisi"
+
+#: kfile_jpeg.cpp:70
+msgid "Camera Model"
+msgstr "Kamera Modeli"
+
+#: kfile_jpeg.cpp:73
+msgid "Date/Time"
+msgstr "Tarih/Saat"
+
+#: kfile_jpeg.cpp:76
+msgid "Creation Date"
+msgstr "Oluşturulma Tarihi"
+
+#: kfile_jpeg.cpp:79
+msgid "Creation Time"
+msgstr "Oluşturulma Saati"
+
+#: kfile_jpeg.cpp:82
+msgid "Dimensions"
+msgstr "Boyutlar"
+
+#: kfile_jpeg.cpp:90
+msgid "Color Mode"
+msgstr "Renk Kipi"
+
+#: kfile_jpeg.cpp:93
+msgid "Flash Used"
+msgstr "Flash Kullanıldı"
+
+#: kfile_jpeg.cpp:95
+msgid "Focal Length"
+msgstr "Odaksal Uzunluk"
+
+#: kfile_jpeg.cpp:99
+msgid "35mm Equivalent"
+msgstr "35mm Karşılığı"
+
+#: kfile_jpeg.cpp:103
+msgid "CCD Width"
+msgstr "CCD Genişliği"
+
+#: kfile_jpeg.cpp:107
+msgid "Exposure Time"
+msgstr "Poz Süresi"
+
+#: kfile_jpeg.cpp:111
+msgid "Aperture"
+msgstr "Apertür"
+
+#: kfile_jpeg.cpp:114
+msgid "Focus Dist."
+msgstr "Odak Uzakl."
+
+#: kfile_jpeg.cpp:117
+msgid "Exposure Bias"
+msgstr "Poz Meyili"
+
+#: kfile_jpeg.cpp:120
+msgid "Whitebalance"
+msgstr "Beyaz dengesi"
+
+#: kfile_jpeg.cpp:123
+msgid "Metering Mode"
+msgstr "Ölçüm Kipi"
+
+#: kfile_jpeg.cpp:126
+msgid "Exposure"
+msgstr "Poz"
+
+#: kfile_jpeg.cpp:129
+msgid "ISO Equiv."
+msgstr "ISO Eşl."
+
+#: kfile_jpeg.cpp:132
+msgid "JPEG Quality"
+msgstr "JPEG Kalitesi"
+
+#: kfile_jpeg.cpp:135
+msgid "User Comment"
+msgstr "Kullanıcı Açıklaması"
+
+#: kfile_jpeg.cpp:139
+msgid "JPEG Process"
+msgstr "JPEG İşlemi"
+
+#: kfile_jpeg.cpp:142
+msgid "Thumbnail"
+msgstr "Küçük resimler"
+
+#: kfile_jpeg.cpp:248
+msgid "Color"
+msgstr "Renk"
+
+#: kfile_jpeg.cpp:248
+msgid "Black and white"
+msgstr "Siyah ve beyaz"
+
+#: kfile_jpeg.cpp:252
+msgid ""
+"_: Flash\n"
+"(unknown)"
+msgstr "(bilinmeyen)"
+
+#: kfile_jpeg.cpp:254
+msgid ""
+"_: Flash\n"
+"No"
+msgstr "Hayır"
+
+#: kfile_jpeg.cpp:259
+msgid ""
+"_: Flash\n"
+"Fired"
+msgstr "Ateşli"
+
+#: kfile_jpeg.cpp:264
+msgid ""
+"_: Flash\n"
+"Fill Fired"
+msgstr "Ateşle doldur"
+
+#: kfile_jpeg.cpp:267
+msgid ""
+"_: Flash\n"
+"Off"
+msgstr "Kapalı"
+
+#: kfile_jpeg.cpp:270
+msgid ""
+"_: Flash\n"
+"Auto Off"
+msgstr "Otomatik Kapanma"
+
+#: kfile_jpeg.cpp:275
+msgid ""
+"_: Flash\n"
+"Auto Fired"
+msgstr "Otomatik Ateşli"
+
+#: kfile_jpeg.cpp:278
+msgid ""
+"_: Flash\n"
+"Not Available"
+msgstr "Kullanılabilir Değil"
+
+#: kfile_jpeg.cpp:319
+msgid "Infinite"
+msgstr "Sonsuz"
+
+#: kfile_jpeg.cpp:335 kfile_jpeg.cpp:370 kfile_jpeg.cpp:378 kfile_jpeg.cpp:403
+#: kfile_jpeg.cpp:439 kfile_jpeg.cpp:462
+msgid "Unknown"
+msgstr "Bilinmeyen"
+
+#: kfile_jpeg.cpp:338
+msgid "Daylight"
+msgstr "Gün ışığı"
+
+#: kfile_jpeg.cpp:341
+msgid "Fluorescent"
+msgstr "Floresan"
+
+#: kfile_jpeg.cpp:345
+msgid "Tungsten"
+msgstr "Tungsten"
+
+#: kfile_jpeg.cpp:348
+msgid "Standard light A"
+msgstr "Standart A ışığı"
+
+#: kfile_jpeg.cpp:351
+msgid "Standard light B"
+msgstr "Standart B ışığı"
+
+#: kfile_jpeg.cpp:354
+msgid "Standard light C"
+msgstr "Standart C ışığı"
+
+#: kfile_jpeg.cpp:357
+msgid "D55"
+msgstr "D55 "
+
+#: kfile_jpeg.cpp:360
+msgid "D65"
+msgstr "D65"
+
+#: kfile_jpeg.cpp:363
+msgid "D75"
+msgstr "D75"
+
+#: kfile_jpeg.cpp:366 kfile_jpeg.cpp:399
+msgid "Other"
+msgstr "Diğer"
+
+#: kfile_jpeg.cpp:381
+msgid "Average"
+msgstr "Ortalama"
+
+#: kfile_jpeg.cpp:384
+msgid "Center weighted average"
+msgstr "Orta Ağırlıklı Ortalama"
+
+#: kfile_jpeg.cpp:387
+msgid "Spot"
+msgstr "Spot"
+
+#: kfile_jpeg.cpp:390
+msgid "MultiSpot"
+msgstr "Çoklu Spot"
+
+#: kfile_jpeg.cpp:393
+msgid "Pattern"
+msgstr "Desen"
+
+#: kfile_jpeg.cpp:396
+msgid "Partial"
+msgstr "Kısmi"
+
+#: kfile_jpeg.cpp:411
+msgid "Not defined"
+msgstr "Tanımsız"
+
+#: kfile_jpeg.cpp:414
+msgid "Manual"
+msgstr "Elle"
+
+#: kfile_jpeg.cpp:417
+msgid "Normal program"
+msgstr "Normal program"
+
+#: kfile_jpeg.cpp:420
+msgid "Aperture priority"
+msgstr "Delik önceliği"
+
+#: kfile_jpeg.cpp:423
+msgid "Shutter priority"
+msgstr "Diafram Önceliği"
+
+#: kfile_jpeg.cpp:426
+msgid ""
+"Creative program\n"
+"(biased toward fast shutter speed)"
+msgstr ""
+"Oluşturucu Program\n"
+"(hızlı diafram hızına eğilimli)"
+
+#: kfile_jpeg.cpp:429
+msgid ""
+"Action program\n"
+"(biased toward fast shutter speed)"
+msgstr ""
+"Hareket Programı\n"
+"(hızlı diafram hızına eğilimli)"
+
+#: kfile_jpeg.cpp:432
+msgid ""
+"Portrait mode\n"
+"(for closeup photos with the background out of focus)"
+msgstr ""
+"Portre Kipi\n"
+"(arkaplanı odak dışı kalan yakın çekim fotoğraflar için)"
+
+#: kfile_jpeg.cpp:435
+msgid ""
+"Landscape mode\n"
+"(for landscape photos with the background in focus)"
+msgstr ""
+"Yerçekimi kipi\n"
+"(arkaplanın odak içinde olduğu yerçekimi fotoğraflar için)"
+
+#: kfile_jpeg.cpp:453
+msgid "Basic"
+msgstr "Temel"
+
+#: kfile_jpeg.cpp:456
+msgid "Normal"
+msgstr "Normal"
+
+#: kfile_jpeg.cpp:459
+msgid "Fine"
+msgstr "Detaylı"

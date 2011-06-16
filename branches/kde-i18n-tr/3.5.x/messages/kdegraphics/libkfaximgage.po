@@ -1,0 +1,74 @@
+# translation of libkfaximgage.po to
+# translation of libkfaximgage.po to Turkish
+# Görkem Çetin <gorkem@gorkemcetin.com>, 2005.
+# Alper Şen <aalpersen@gmail.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: libkfaximgage\n"
+"POT-Creation-Date: 2005-10-15 02:46+0200\n"
+"PO-Revision-Date: 2005-07-17 20:45+0300\n"
+"Last-Translator: Alper Şen <aalpersen@gmail.com>\n"
+"Language-Team:  <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: kfaximage.cpp:189
+msgid "Unable to open file for reading."
+msgstr "Okumak için dosya açılamıyor."
+
+#: kfaximage.cpp:194
+msgid "Unable to read file header (file too short)."
+msgstr "Dosya başlığı okunamadı (dosya çok kısa)"
+
+#: kfaximage.cpp:203
+msgid "This is not a TIFF FAX file."
+msgstr "Bu bir TIFF FAX dosyası değil."
+
+#: kfaximage.cpp:228
+msgid "Invalid or incomplete TIFF file."
+msgstr "Bozuk ya da tamamlanmamış TIFF dosyası."
+
+#: kfaximage.cpp:329
+msgid ""
+"In file %1\n"
+"StripsPerImage tag 273=%2,tag279=%3\n"
+msgstr ""
+"%1 dosyasında\n"
+"StripsPerImage etiket 273=%2, etiket279=%3\n"
+
+#: kfaximage.cpp:372
+msgid ""
+"Due to patent reasons LZW (Lempel-Ziv & Welch) compressed Fax files cannot be "
+"loaded yet.\n"
+msgstr ""
+"Patent sorunları yüzünden LZW (Lempel-Ziv & Welch) ile sıkıştırılmış faks "
+"dosyaları yüklenemedi.\n"
+
+#: kfaximage.cpp:377
+msgid ""
+"This version can only handle Fax files\n"
+msgstr ""
+"Bu versiyon faks dosyalarını sadece işler\n"
+
+#: kfaximage.cpp:406
+msgid "%1: Bad Fax File"
+msgstr "%1: Bozuk Faks Dosyası"
+
+#: kfaximage.cpp:472
+msgid "Trying to expand too many strips."
+msgstr "Çok fazla strip açılmaya çalışılıyor."
+
+#: kfaximage.cpp:498
+msgid "Only the first page of the PC Research multipage file will be shown."
+msgstr "PC Araştırma çoklu sayfa dosyasının sadece ilk sayfası gösterilecek."
+
+#: kfaximage.cpp:511
+msgid "No fax found in file."
+msgstr "Dosyada faks bulunamadı."
+
+#: kfaximage.cpp:631
+msgid "Fax G3 format not yet supported."
+msgstr "G3 biçimi henüz desteklenmiyor."

@@ -1,0 +1,146 @@
+# translation of kio_smb.po to
+# Copyright (C) 2003, 2005, 2007 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2001, 2003.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Görkem Çetin <gorkem@kde.org.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kio_smb\n"
+"POT-Creation-Date: 2005-11-08 02:45+0100\n"
+"PO-Revision-Date: 2007-07-06 16:58+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=1; plural=0;\n"
+
+#: kio_smb_auth.cpp:131
+msgid "<qt>Please enter authentication information for <b>%1</b></qt>"
+msgstr "<qt>Lütfen<b>%1</b> için kimlik doğrulama bilgilerini girin</qt>"
+
+#: kio_smb_auth.cpp:135
+msgid ""
+"Please enter authentication information for:\n"
+"Server = %1\n"
+"Share = %2"
+msgstr ""
+"Lütfen aşağıdaki kimlik denetim bilgilerini girin:\n"
+"Sunucu = %1\n"
+"Paylaşım = %2"
+
+#: kio_smb_auth.cpp:175
+msgid "libsmbclient failed to initialize"
+msgstr "Libsmbclient başlatılamadı"
+
+#: kio_smb_auth.cpp:181
+msgid "libsmbclient failed to create context"
+msgstr "lbsmbclient çevreyi oluştururken başarısız oldu"
+
+#: kio_smb_auth.cpp:191
+msgid "libsmbclient failed to initialize context"
+msgstr "lbsmbclient çevreyi başlatırken başarısız oldu"
+
+#: kio_smb_browse.cpp:67
+msgid ""
+"%1:\n"
+"Unknown file type, neither directory or file."
+msgstr ""
+"%1\n"
+"Bilinmeyen dosya türü."
+
+#: kio_smb_browse.cpp:126
+#, c-format
+msgid "File does not exist: %1"
+msgstr "Bu isimde bir dosya yok: %1"
+
+#: kio_smb_browse.cpp:242
+msgid ""
+"Unable to find any workgroups in your local network. This might be caused by an "
+"enabled firewall."
+msgstr ""
+"Yerel ağınızda hiç çalışma grubu bulunamadı. Buna etkinleştirilmiş bir firewall "
+"neden olmuş olabilir."
+
+#: kio_smb_browse.cpp:249
+#, c-format
+msgid "No media in device for %1"
+msgstr "%1 için aygıtta medya yok"
+
+#: kio_smb_browse.cpp:257
+#, c-format
+msgid "Could not connect to host for %1"
+msgstr "%1 için makineye bağlantı kurulamadı"
+
+#: kio_smb_browse.cpp:273
+#, c-format
+msgid "Error while connecting to server responsible for %1"
+msgstr "%1 sorumlusu olan sunucuya bağlanırken hata oluştu"
+
+#: kio_smb_browse.cpp:281
+msgid "Share could not be found on given server"
+msgstr "Verilen sunucu üzerinde bu isimde bir paylaşım bulunamadı"
+
+#: kio_smb_browse.cpp:284
+msgid "BAD File descriptor"
+msgstr "Hatalı dosya belirteci"
+
+#: kio_smb_browse.cpp:291
+msgid ""
+"The given name could not be resolved to a unique server. Make sure your network "
+"is setup without any name conflicts between names used by Windows and by UNIX "
+"name resolution."
+msgstr ""
+"Verilen isim eşsiz bir sunucu olarak çözümlenemedi. Ağınız içerisinde bulunan, "
+"Windows tarafındaki ve UNIX tarafındaki isimlerin çakışmadığından emin olun."
+
+#: kio_smb_browse.cpp:297
+msgid ""
+"libsmbclient reported an error, but did not specify what the problem is. This "
+"might indicate a severe problem with your network - but also might indicate a "
+"problem with libsmbclient.\n"
+"If you want to help us, please provide a tcpdump of the network interface while "
+"you try to browse (be aware that it might contain private data, so do not post "
+"it if you are unsure about that - you can send it privately to the developers "
+"if they ask for it)"
+msgstr ""
+"libsmbclient bir hata bildirdi, ancak hatanın ne olduğu belirtilmedi. Bu "
+"ağınızdaki bir sunucu sorununu gösteriyor olabilir. Aynı zamanda libsmbclient "
+"sorunu da olabilir.\n"
+"Eğer bize yardım etmek istiyorsanız, gözatma sırasında ağınızın bir tcpdump "
+"çıktısını alarak bize gönderin (Lütfen bunun özel verilerinizi içerebileceğini "
+"unutmayın ve emin olmadan göndermeyin - geliştiriciler istediğinde özel olarak "
+"gönderebilirsiniz)"
+
+#: kio_smb_browse.cpp:308
+#, c-format
+msgid "Unknown error condition in stat: %1"
+msgstr "Bilinmeyen hata: %1"
+
+#: kio_smb_mount.cpp:125 kio_smb_mount.cpp:166
+msgid ""
+"\n"
+"Make sure that the samba package is installed properly on your system."
+msgstr ""
+"\n"
+"Lütfen sisteminizde Samba paketlerinin kurulu olduğunu kontrol edin."
+
+#: kio_smb_mount.cpp:135
+msgid ""
+"Mounting of share \"%1\" from host \"%2\" by user \"%3\" failed.\n"
+"%4"
+msgstr ""
+"\"%3\" kullanıcısı tarafından \"%2\" makinesindeki \"%1\" paylaşımı "
+"bağlanamadı.\n"
+"%4"
+
+#: kio_smb_mount.cpp:176
+msgid ""
+"Unmounting of mountpoint \"%1\" failed.\n"
+"%2"
+msgstr ""
+"\"%1\" bağlantı noktasını ayırma işlemi başarısız oldu.\n"
+"%2"

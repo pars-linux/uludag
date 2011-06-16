@@ -1,0 +1,256 @@
+# translation of drkonqi.po to Türkçe
+# translation of drkonqi.po to Turkish
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drkonqi\n"
+"POT-Creation-Date: 2008-01-23 01:15+0100\n"
+"PO-Revision-Date: 2005-07-17 21:54+0200\n"
+"Last-Translator: Adil YILDIZ <adil@kde.org.tr>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Erol Öz"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "eroloz@bilgi.edu.tr"
+
+#: backtrace.cpp:83
+msgid "Could not generate a backtrace as the debugger '%1' was not found."
+msgstr ""
+"'%1' hata ayıklayıcı bulunamadığı için geriye dönük izleme mümkün değil."
+
+#: debugger.cpp:65
+msgid "C&opy"
+msgstr "K&opyala"
+
+#: debugger.cpp:82
+msgid "Done."
+msgstr "Bitti."
+
+#: debugger.cpp:103
+#, c-format
+msgid "Backtrace saved to %1"
+msgstr "Geriye dönük izleme %1 dosyasına kaydedildi"
+
+#: debugger.cpp:107
+msgid "Cannot create a file in which to save the backtrace"
+msgstr "Geriye dönük izleme kayıdı yapılacak dosya oluşturulamadı"
+
+#: debugger.cpp:115
+msgid "Select Filename"
+msgstr "Dosyaadını Seçin"
+
+#: debugger.cpp:123
+msgid ""
+"A file named \"%1\" already exists. Are you sure you want to overwrite it?"
+msgstr "\"%1\" isimli bir dosya mevcut. Üzerine yazmak ister misiniz?"
+
+#: debugger.cpp:125
+msgid "Overwrite File?"
+msgstr "Dosyanın üzerine yazılsın mı?"
+
+#: debugger.cpp:126
+msgid "&Overwrite"
+msgstr "Üzeri&ne Yaz"
+
+#: debugger.cpp:138
+msgid "Cannot open file %1 for writing"
+msgstr "%1 dosyası yazmak için açılamadı"
+
+#: debugger.cpp:146
+msgid "Unable to create a valid backtrace."
+msgstr "Geçerli bir geriye dönük izleme oluşturulamıyor."
+
+#: debugger.cpp:147
+msgid ""
+"This backtrace appears to be of no use.\n"
+"This is probably because your packages are built in a way which prevents "
+"creation of proper backtraces, or the stack frame was seriously corrupted in "
+"the crash.\n"
+"\n"
+msgstr ""
+"Bu geriye dönük izleme kullanılmıyor gibi görünüyor.\n"
+"Bu paketlerinizin geriye dönük izleme oluşturmasını engellemesinden dolayı "
+"olabilir, veya yığın çercevesi ciddi bir şekilde bozulmuş olabilir.\n"
+"\n"
+
+#: debugger.cpp:156
+msgid "Loading backtrace..."
+msgstr "Geriye dönük izleme yükleniyor..."
+
+#: debugger.cpp:179
+msgid ""
+"The following options are enabled:\n"
+"\n"
+msgstr ""
+"Aşağıdaki seçenekler etkinleştirildi:\n"
+"\n"
+
+#: debugger.cpp:181
+msgid ""
+"\n"
+"As the usage of these options is not recommended - because they can, in rare "
+"cases, be responsible for KDE problems - a backtrace will not be generated.\n"
+"You need to turn these options off and reproduce the problem again in order to "
+"get a backtrace.\n"
+msgstr ""
+"\n"
+"Bu seçeneklerin kullanılması tavsiye edilmez, çünkü nadir durumlarda KDE "
+"problemlerine yol açabilmektedirler. Geri izleme oluşturulmayacaktır.\n"
+"Geri izleme alabilmeniz için bu seçenekleri kapatmanız ve hatayı yeniden "
+"oluşturmanız gerekmektedir.\n"
+
+#: debugger.cpp:186
+msgid "Backtrace will not be created."
+msgstr "Programın izlenmesi yapılmıyor."
+
+#: debugger.cpp:194
+msgid "Loading symbols..."
+msgstr "Semboller yükleniyor..."
+
+#: debugger.cpp:216
+msgid ""
+"System configuration startup check disabled.\n"
+msgstr ""
+"Sistem yapılandırması başlangıç denetimi kapatıldı.\n"
+
+#: drbugreport.cpp:54
+msgid "You have to edit the description before the report can be sent."
+msgstr "Rapor gönderilmeden önce açıklamayı yazmanız gerekir."
+
+#: krashconf.cpp:74
+msgid "unknown"
+msgstr "bilinmeyen"
+
+#: main.cpp:43
+msgid "KDE crash handler gives the user feedback if a program crashed"
+msgstr ""
+"KDE çöküş bilgi sistemi, bir program çöktügünde kullanıcıya bilgi verir"
+
+#: main.cpp:47
+msgid "The signal number that was caught"
+msgstr "Yakalanan sinyal numarası"
+
+#: main.cpp:48
+msgid "Name of the program"
+msgstr "Programın adı"
+
+#: main.cpp:49
+msgid "Path to the executable"
+msgstr "Çalıştırılabilir dosyanın yolu"
+
+#: main.cpp:50
+msgid "The version of the program"
+msgstr "Programın sürümü"
+
+#: main.cpp:51
+msgid "The bug address to use"
+msgstr "Kullanılacak hata adresi"
+
+#: main.cpp:52
+msgid "Translated name of the program"
+msgstr "Programın tercüme edilmiş adı"
+
+#: main.cpp:53
+msgid "The PID of the program"
+msgstr "Programın Süreç Nosu (PID)"
+
+#: main.cpp:54
+msgid "Startup ID of the program"
+msgstr "Programın başlangıç kimliği"
+
+#: main.cpp:55
+msgid "The program was started by kdeinit"
+msgstr "Program kdeinit tarafından başlatılmış"
+
+#: main.cpp:56
+msgid "Disable arbitrary disk access"
+msgstr "Rastgele disk erişimini kapat"
+
+#: main.cpp:72
+msgid "The KDE Crash Handler"
+msgstr "KDE Çöküş Bilgi Sistemi"
+
+#: toplevel.cpp:59
+msgid "&Bug report"
+msgstr "&Hata raporu"
+
+#: toplevel.cpp:60
+msgid "&Debugger"
+msgstr "Hata &ayıklayıcı"
+
+#: toplevel.cpp:64
+msgid "&General"
+msgstr "&Genel"
+
+#: toplevel.cpp:79
+msgid "&Backtrace"
+msgstr "&Geriye Dönük İzleme"
+
+#: toplevel.cpp:103
+msgid "<p><b>Short description</b></p><p>%1</p>"
+msgstr "<p><b>Kısa açıklama</b></p><p>%1</p>"
+
+#: toplevel.cpp:107
+msgid "<p><b>What is this?</b></p><p>%1</p>"
+msgstr "<p><b>Bu nedir?</b></p><p>%1</p>"
+
+#: toplevel.cpp:111
+msgid "<p><b>What can I do?</b></p><p>%1</p>"
+msgstr "<p><b>Ne yapabilirim?</b></p><p>%1</p>"
+
+#: toplevel.cpp:116
+msgid "<p><b>Application crashed</b></p><p>The program %appname crashed.</p>"
+msgstr "<p><b>Çöken Uygulama</b></p><p>%appname programı çöktü.</p>"
+
+#: toplevel.cpp:135
+msgid ""
+"<p>Do you want to generate a backtrace? This will help the developers to figure "
+"out what went wrong.</p>\n"
+"<p>Unfortunately this will take some time on slow machines.</p>"
+"<p><b>Note: A backtrace is not a substitute for a proper description of the bug "
+"and information on how to reproduce it. It is not possible to fix the bug "
+"without a proper description.</b></p>"
+msgstr ""
+"<p>Geriye dönük izleme oluşturmak ister misiniz? Bu, programcılara neyin yanlış "
+"gittiğini saptamakta yardımcı olacaktır.</p>\n"
+" "
+"<p>Maalesef, bu, yavaş makinalarda biraz zaman alacaktır.</p>"
+"<p><b>Not: Geriye dönük izleme, hatanın tam bir tanımının ve bu hatanın nasıl "
+"ortaya çıktığına dair bilgilerin yerini tutamaz. Hatanın tam bir tanımı olmadan "
+"bu hatanın düzeltilmesi mümkün değildir.</b></p>"
+
+#: toplevel.cpp:147
+msgid "Include Backtrace"
+msgstr "Geriye Dönük İzleme Ekle"
+
+#: toplevel.cpp:147
+msgid "Generate"
+msgstr "Oluştur"
+
+#: toplevel.cpp:147
+msgid "Do Not Generate"
+msgstr "Oluşturma"
+
+#: toplevel.cpp:215
+msgid "It was not possible to generate a backtrace."
+msgstr "Geriye dönük izleme oluşturulması mümkün değil."
+
+#: toplevel.cpp:216
+msgid "Backtrace Not Possible"
+msgstr "Geriye Dönük İzleme Mümkün Değil"

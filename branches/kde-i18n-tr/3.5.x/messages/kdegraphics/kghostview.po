@@ -1,0 +1,730 @@
+# translation of kghostview.po to
+# translation of kghostview.po to
+# translation of kghostview.po to Turkish
+# Türkçe
+# Copyright (C) 2000, 2003, 2004, 2007 Free Software Foundation, Inc.
+#
+# Yıldırım Karslıoğlu <ykarslioglu@superonline.com>, 2000.
+# Görkem Çetin <gorkem@kde.org>, 2002, 2003.
+# Tuncay YENİAY <tuncayyeniay@mynet.com>,2002.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Onur Küçük <onur@uludag.org.tr>, 2004.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kghostview\n"
+"POT-Creation-Date: 2008-07-08 01:19+0200\n"
+"PO-Revision-Date: 2007-09-11 19:41+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=1; plural=0;\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Onur Küçük"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "tuncayyeniay@mynet.com"
+
+#: infodialog.cpp:36
+msgid "Document Information"
+msgstr "Belge Bilgileri"
+
+#: infodialog.cpp:44
+msgid "File name:"
+msgstr "Dosya adı:"
+
+#: infodialog.cpp:49
+msgid "Document title:"
+msgstr "Belge başlığı:"
+
+#: infodialog.cpp:54
+msgid "Publication date:"
+msgstr "Yayım tarihi:"
+
+#: kdscerrordialog.cpp:76
+msgid "Ignore All"
+msgstr "Tümünü Yoksay"
+
+#: kdscerrordialog.cpp:90
+msgid "DSC Information"
+msgstr "DSC bilgileri"
+
+#: kdscerrordialog.cpp:93
+msgid "DSC Warning"
+msgstr "DSC Uyarıları"
+
+#: kdscerrordialog.cpp:96
+msgid "DSC Error"
+msgstr "DSC Hatası"
+
+#: kdscerrordialog.cpp:100
+msgid "On line %1:"
+msgstr "%1. satırda:"
+
+#: kdscerrordialog.cpp:144
+msgid "Lines in DSC documents must be shorter than 255 characters."
+msgstr "DSC belgelerindeki satırların 255 karakterden az olması gereklidir."
+
+#: kgv_miniwidget.cpp:121 kgv_miniwidget.cpp:127
+msgid "Go to Page"
+msgstr "Sayfaya Git"
+
+#: kgv_miniwidget.cpp:121 kgv_miniwidget.cpp:127
+msgid "Page:"
+msgstr "Sayfa:"
+
+#: kgv_miniwidget.cpp:485
+msgid "Page 1"
+msgstr "Sayfa 1"
+
+#: kgv_miniwidget.cpp:488
+msgid "Page %1 of %2"
+msgstr "Sayfa: %1 / %2"
+
+#: kgv_miniwidget.cpp:492
+msgid "Page %1 (%2 of %3)"
+msgstr "Sayfa %1 (%2 of %3)"
+
+#: kgv_view.cpp:156
+msgid "Ghostscript Messages"
+msgstr "Ghostscript Mesajları"
+
+#: kgv_view.cpp:190
+msgid "Document &Info"
+msgstr "Belge &Bilgisi"
+
+#: kgv_view.cpp:197
+msgid "Mark Current Page"
+msgstr "Şimdiki Sayfayı İşaretle"
+
+#: kgv_view.cpp:201
+msgid "Mark &All Pages"
+msgstr "&Tüm Sayfaları İşaretle"
+
+#: kgv_view.cpp:205
+msgid "Mark &Even Pages"
+msgstr "Çi&ft Sayfaları İşaretle"
+
+#: kgv_view.cpp:209
+msgid "Mark &Odd Pages"
+msgstr "T&ek Sayfaları İşaretle"
+
+#: kgv_view.cpp:213
+msgid "&Toggle Page Marks"
+msgstr "S&ayfa İşaretlerini Göster/Gizle"
+
+#: kgv_view.cpp:217
+msgid "&Remove Page Marks"
+msgstr "Sayfa İşaretlerini &Kaldır"
+
+#: kgv_view.cpp:225 viewcontrol.cpp:106
+msgid "&Orientation"
+msgstr "&Yönelim"
+
+#: kgv_view.cpp:227
+msgid "Paper &Size"
+msgstr "Sayfa &Boyutu"
+
+#: kgv_view.cpp:230
+msgid "No &Flicker"
+msgstr "Titreme &Kapalı"
+
+#: kgv_view.cpp:235
+msgid "Auto"
+msgstr "Otomatik"
+
+#: kgv_view.cpp:238 viewcontrol.cpp:77
+msgid "Upside Down"
+msgstr "Başaşağı"
+
+#: kgv_view.cpp:239 viewcontrol.cpp:76
+msgid "Seascape"
+msgstr "Deniz Manzarası"
+
+#: kgv_view.cpp:276
+msgid "&Fit to Page Width"
+msgstr "Sayfa &Genişliğine Sığdır"
+
+#: kgv_view.cpp:279
+msgid "&Fit to Screen"
+msgstr "&Ekrana Uydur"
+
+#: kgv_view.cpp:283
+msgid "Previous Page"
+msgstr "Önceki Sayfa"
+
+#: kgv_view.cpp:285
+msgid "Moves to the previous page of the document"
+msgstr "Belgede önceki sayfaya gider"
+
+#: kgv_view.cpp:287
+msgid "Next Page"
+msgstr "Sonraki Sayfa"
+
+#: kgv_view.cpp:289
+msgid "Moves to the next page of the document"
+msgstr "Belgede sonraki sayfaya gider"
+
+#: kgv_view.cpp:293
+msgid "Moves to the first page of the document"
+msgstr "Belgede ilk sayfaya gider"
+
+#: kgv_view.cpp:297
+msgid "Moves to the last page of the document"
+msgstr "Belgede son sayfaya gider"
+
+#: kgv_view.cpp:301
+#, fuzzy
+msgid "Read Up"
+msgstr "Yukarı Doğru Oku"
+
+#: kgv_view.cpp:307
+#, fuzzy
+msgid "Read Down"
+msgstr "Aşağı Doğru Oku"
+
+#: kgv_view.cpp:315
+msgid "Show &Scrollbars"
+msgstr "Kaydı&rma Çubuklarını Göster"
+
+#: kgv_view.cpp:317
+msgid "Hide &Scrollbars"
+msgstr "Kaydı&rma Çubuklarını Gizle"
+
+#: kgv_view.cpp:318
+msgid "&Watch File"
+msgstr "Dos&ya İzle"
+
+#: kgv_view.cpp:321
+msgid "Show &Page List"
+msgstr "&Sayfa Listesini Göster"
+
+#: kgv_view.cpp:323
+msgid "Hide &Page List"
+msgstr "&Sayfa Listesini Gizle"
+
+#: kgv_view.cpp:324
+msgid "Show Page &Labels"
+msgstr "Sayfa Etiket&lerini Göster"
+
+#: kgv_view.cpp:326
+msgid "Hide Page &Labels"
+msgstr "Sayfa Etiket&lerini Gizle"
+
+#: kgv_view.cpp:352
+msgid "Auto "
+msgstr "Otomatik "
+
+#: kgv_view.cpp:369
+msgid "KGhostView"
+msgstr "KGhostView"
+
+#: kgv_view.cpp:371
+msgid ""
+"Viewer for PostScript (.ps, .eps) and Portable Document Format (.pdf) files"
+msgstr ""
+"Postscript (.ps, .eps) ve Portable Document Format (.pdf) dosya görüntüleyicisi"
+
+#: kgv_view.cpp:375
+msgid ""
+"KGhostView displays, prints, and saves PostScript and PDF files.\n"
+"Based on original work by Tim Theisen."
+msgstr ""
+"KGhostView Postscript ve PDF dosyaları görüntüler, yazdırır ve kaydeder.\n"
+"Tim Theisen'in orjinal çalşıması üzerinde temellenmiştir."
+
+#: kgv_view.cpp:379
+msgid "Current maintainer"
+msgstr "Şimdiki geliştirici"
+
+#: kgv_view.cpp:383
+msgid "Maintainer 2000-2003"
+msgstr "Geliştirici 1999-2003"
+
+#: kgv_view.cpp:386
+msgid "Maintainer 1999-2000"
+msgstr "Maintainer 1999-2000"
+
+#: kgv_view.cpp:390
+msgid "Original author"
+msgstr "İlk yazarı"
+
+#: kgv_view.cpp:393
+msgid "Basis for shell"
+msgstr "Kabuk için temel"
+
+#: kgv_view.cpp:396
+msgid "Port to KParts"
+msgstr "Kparts'a geçit"
+
+#: kgv_view.cpp:399
+msgid "Dialog boxes"
+msgstr "İletişim kutuları"
+
+#: kgv_view.cpp:402
+msgid "for contributing GSView's DSC parser."
+msgstr "GSView DSC yardım için."
+
+#: kgv_view.cpp:747
+msgid ""
+"<qt>An error occurred in rendering."
+"<br><strong>%1</strong>"
+"<br>The display may contain errors."
+"<br>Below are any error messages which were received from Ghostscript (<nobr>"
+"<strong>%2</strong></nobr>) which may help you.</qt>"
+msgstr ""
+"<qt>Derlenirken bir hata oluştu. "
+"<br><strong>%1</strong> "
+"<br>Görünüm hatalar içerebilir. "
+"<br>AlttakilerGhostscript tarafından alınan size yardımcı olabilecek hata "
+"mesajlarıdır (<nobr><strong>%2</strong></nobr>).</qt>"
+
+#: kgvconfigdialog.cpp:113
+msgid ""
+"Your version of gs (version %1) is too old, since it has security issues which "
+"are impossible to resolve. Please upgrade to a newer version.\n"
+"KGhostView will try to work with it, but it may not display any files at all.\n"
+"Version %2 seems to be appropriate on your system, although newer versions will "
+"work as well."
+msgstr ""
+"Gs sürümünüz (sürüm %1) çok eski, ve çözümlenemeyecek güvenlik açıkları mevcut. "
+"Lütfen yeni bir sürüme yükseltin. KGhostView çalıştırmayı denemeye\n"
+"devam edecek fakat dosyaların tamamını gösteremeyebilir.\n"
+"Sürüm %2 sisteminize uygun, yeni sürüm daha iyi çalışabilir."
+
+#: kgvconfigdialog.cpp:143
+msgid "General"
+msgstr "Genel"
+
+#: kgvconfigdialog.cpp:145
+#, fuzzy
+msgid ""
+"Ghostscript\n"
+"Configuration"
+msgstr "Ghostscript Yapılandırması"
+
+#: kgvdocument.cpp:99
+msgid ""
+"<qt>Could not open <nobr><strong>%1</strong></nobr>: File does not exist.</qt>"
+msgstr "<qt><nobr><strong>%1</strong></nobr> açılamadı: Dosya bulunamadı.</qt>"
+
+#: kgvdocument.cpp:108
+msgid ""
+"<qt>Could not open <nobr><strong>%1</strong></nobr>: Permission denied.</qt>"
+msgstr ""
+"<qt><nobr><strong>%1</strong></nobr> açılamadı. Yeterli izniniz yok.</qt>"
+
+#: kgvdocument.cpp:134 kgvshell.cpp:254
+#, c-format
+msgid "Could not create temporary file: %1"
+msgstr "Geçici dosya oluşturulamadı: %1"
+
+#: kgvdocument.cpp:158
+msgid ""
+"<qt>Could not open <nobr><strong>%1</strong></nobr> which has type <strong>"
+"%2</strong>. KGhostview can only load PostScript (.ps, .eps) and Portable "
+"Document Format (.pdf) files.</qt>"
+msgstr ""
+"<qt><strong>%2</strong> tipindeki <nobr><strong>%1</strong></nobr> "
+"dosyası açılamıyor.KGhostview sadece Postscript (.ps, .eps) ve (.pdf) dosyaları "
+"yükleyebilir.</qt>"
+
+#: kgvdocument.cpp:192 kgvdocument.cpp:223
+msgid "<qt>Could not uncompress <nobr><strong>%1</strong></nobr>.</qt>"
+msgstr "<qt>Dosya açılamadı <nobr><strong>%1</strong></nobr>.</qt>"
+
+#: kgvdocument.cpp:203
+#, c-format
+msgid "Could not create temporary file: %2"
+msgstr "Geçici dosya oluşturulamadı: %2"
+
+#: kgvdocument.cpp:241
+msgid "<qt>Could not open file <nobr><strong>%1</strong></nobr>.</qt>"
+msgstr ""
+"<qt><nobr><strong>%1</strong></nobr> dosyası açılırken hata oluştu</qt>"
+
+#: kgvdocument.cpp:262
+msgid "<qt>Error opening file <nobr><strong>%1</strong></nobr>: %2</qt>"
+msgstr ""
+"<qt><nobr><strong>%1</strong></nobr>: dosyası açılırken hata oluştu: %2</qt>"
+
+#: kgvdocument.cpp:524 kgvdocument.cpp:551
+#, c-format
+msgid "Print %1"
+msgstr "Yazdır: %1"
+
+#: kgvdocument.cpp:531 kgvdocument.cpp:662
+msgid "Printing failed because the list of pages to be printed was empty."
+msgstr ""
+"Yazdırılacak sayfalar listesi boş olduğundan yazdırma işlemi başarısız oldu."
+
+#: kgvdocument.cpp:533 kgvdocument.cpp:664
+msgid "Error Printing"
+msgstr "Yazdırma Hatası"
+
+#: kgvdocument.cpp:537
+msgid ""
+"<qt><strong>Printing failure:</strong>"
+"<br>Could not convert to PostScript</qt>"
+msgstr ""
+"<qt><strong>Yazma başarısız:</strong> "
+"<br>PostScript'e dönüştürülemedi</qt>"
+
+#: kgvshell.cpp:82
+msgid "&Maximize"
+msgstr "&Azamileştir"
+
+#: kgvshell.cpp:104
+msgid "Full Screen Options"
+msgstr "Tam Ekran Seçenekleri"
+
+#: kgvshell.cpp:271
+#, c-format
+msgid "Could not open standard input stream: %1"
+msgstr "Standart girdi açılamadı: %1"
+
+#: kgvshell.cpp:284
+msgid ""
+"*.ps *.ps.bz2 *.ps.gz *.eps *.eps.gz *.pdf|All Document Files\n"
+"*.ps *.ps.bz2 *.ps.gz|PostScript Files\n"
+"*.pdf *.pdf.gz *.pdf.bz2|Portable Document Format (PDF) Files\n"
+"*.eps *.eps.gz *.eps.bz2|Encapsulated PostScript Files\n"
+"*|All Files"
+msgstr ""
+"*.ps *.ps.bz2 *.ps.gz *.eps *.eps.gz *.pdf|Tüm Belgeler\n"
+"*.ps *.ps.bz2 *.ps.gz|PostScript Dosyaları\n"
+"*.pdf *.pdf.gz *.pdf.bz2|Portable Document Format (PDF) Dosyaları\n"
+"*.eps *.eps.gz *.eps.bz2|EPS dosyası\n"
+"*|Tüm Dosyalar"
+
+#: kpswidget.cpp:389
+msgid ""
+"Could not start Ghostscript. This is most likely caused by an incorrectly "
+"specified interpreter."
+msgstr "Ghostscript başlatılamadı."
+
+#: kpswidget.cpp:423
+#, c-format
+msgid "Exited with error code %1."
+msgstr "%1 hata kodu ile çıktı."
+
+#: kpswidget.cpp:425
+msgid "Process killed or crashed."
+msgstr "İşlem sonlandırıldı veya kapatıldı."
+
+#: logwindow.cpp:39
+msgid "Configure Ghostscript"
+msgstr "Ghostscript'i Yapılandır"
+
+#: main.cpp:33
+msgid ""
+"Page to open. Use --page=3 to show the third page, for example. Note that if "
+"the page does not exist, any other page may be displayed"
+msgstr ""
+"Açılacak sayfa. Örneğin üçüncü sayfayı açmak için '-page=3' kullanın. Sayfa "
+"mevcut değilse, başka sayfa gösterilebilir"
+
+#: main.cpp:34
+msgid "Magnification of the display"
+msgstr "Görünümü büyütme"
+
+#: main.cpp:35
+msgid ""
+"The orientation of the shown image. Use either \"auto\", \"portrait\", "
+"\"landscape\", \"upsidedown\" or \"seascape\""
+msgstr ""
+"Gösterilen resmin biçimi. Biçimler için aşağıdaki komutları kullanbilirsiniz: "
+"otomatik için \"auto\", portre için \"portrait\", yerçekimi için \"landscape\", "
+"üstü altına için \"upsidedown\" veya deniz çekimi için \"seascape\""
+
+#: main.cpp:36
+msgid "Equivalent to orientation=portrait"
+msgstr "Biçime denk=portre"
+
+#: main.cpp:37
+msgid "Equivalent to orientation=landscape"
+msgstr "Biçime denk=yer çekimi"
+
+#: main.cpp:38
+msgid "Equivalent to orientation=upsidedown"
+msgstr "Biçime denk=üstü altına"
+
+#: main.cpp:39
+msgid "Equivalent to orientation=seascape"
+msgstr "Biçime denk=deniz çekimi"
+
+#: main.cpp:42
+msgid "Location to open"
+msgstr "Açılacak yer"
+
+#: marklist.cpp:47
+msgid "Using this checkbox you can select pages for printing."
+msgstr "Yazdırılacak sayfaları seçmek için bu seçenek kutusunu kullanın."
+
+#. i18n: file kghostviewui.rc line 40
+#: rc.cpp:3 rc.cpp:18
+#, no-c-format
+msgid "&Main Toolbar"
+msgstr "&Ana Araç Çubuğu"
+
+#. i18n: file generalsettingswidget.ui line 28
+#: rc.cpp:21
+#, no-c-format
+msgid "&Enable anti-aliasing of fonts and images"
+msgstr "&Yazıtipleri ve resimler için yumuşatmayı etkinleştir"
+
+#. i18n: file generalsettingswidget.ui line 31
+#: rc.cpp:24 rc.cpp:67 rc.cpp:73
+#, no-c-format
+msgid ""
+"Anti-aliasing makes the result look better, but it makes the display take "
+"longer"
+msgstr ""
+"Yazıtipi yumuşatması sonucun daha iyi görünmesini sağlar, fakat görüntüleme "
+"süresini artırır"
+
+#. i18n: file generalsettingswidget.ui line 42
+#: rc.cpp:27
+#, no-c-format
+msgid "&Use platform fonts"
+msgstr "&Platform yazıtipleri kullan"
+
+#. i18n: file generalsettingswidget.ui line 50
+#: rc.cpp:30
+#, no-c-format
+msgid "&Show Ghostscript messages in a separate box"
+msgstr "&Ghostscript mesajlarını ayrı bir pencerede göster"
+
+#. i18n: file generalsettingswidget.ui line 54
+#: rc.cpp:33
+#, no-c-format
+msgid ""
+"Ghostscript is the basic renderer (the program which draws the picture)"
+"<br>\n"
+"In case of problems you might want to see its error messages"
+msgstr ""
+"Ghostscript basit bir derleyicidir (resmi çizen program)"
+"<br>\n"
+"Problem olduğunda hata mesajlarını görmek isteyebilirsiniz"
+
+#. i18n: file generalsettingswidget.ui line 62
+#: rc.cpp:37
+#, no-c-format
+msgid "Palette"
+msgstr "Palet"
+
+#. i18n: file generalsettingswidget.ui line 73
+#: rc.cpp:40
+#, no-c-format
+msgid "&Monochrome"
+msgstr "&Tek renk"
+
+#. i18n: file generalsettingswidget.ui line 84
+#: rc.cpp:43
+#, no-c-format
+msgid "&Grayscale"
+msgstr "&Siyah beyaz"
+
+#. i18n: file generalsettingswidget.ui line 95
+#: rc.cpp:46
+#, no-c-format
+msgid "Co&lor"
+msgstr "&Renkli"
+
+#. i18n: file gssettingswidget.ui line 36
+#: rc.cpp:49
+#, no-c-format
+msgid "Auto Con&figure"
+msgstr "Otomat&ik Yapılandır"
+
+#. i18n: file gssettingswidget.ui line 61
+#: rc.cpp:52
+#, no-c-format
+msgid "Settings"
+msgstr "Ayarlar"
+
+#. i18n: file gssettingswidget.ui line 72
+#: rc.cpp:55
+#, no-c-format
+msgid "&Interpreter:"
+msgstr "&Yorumlayıcı:"
+
+#. i18n: file gssettingswidget.ui line 83
+#: rc.cpp:58
+#, no-c-format
+msgid "Ghostscript is the basic renderer (i.e. the program which draws)"
+msgstr "Ghostscript basit derleyicidir (çizen program)"
+
+#. i18n: file gssettingswidget.ui line 91
+#: rc.cpp:61
+#, no-c-format
+msgid "(detected gs version: %1)"
+msgstr "(sistemdeki gs sürümü: %1)"
+
+#. i18n: file gssettingswidget.ui line 99
+#: rc.cpp:64
+#, no-c-format
+msgid "&Non-antialiasing arguments:"
+msgstr "&Non-antialiasing argümanları:"
+
+#. i18n: file gssettingswidget.ui line 118
+#: rc.cpp:70
+#, no-c-format
+msgid "An&tialiasing arguments:"
+msgstr "&Yazıtipi yumuşatma argümanları:"
+
+#. i18n: file kghostview.kcfg line 9
+#: rc.cpp:76
+#, no-c-format
+msgid "Whether to use anti-aliasing."
+msgstr "Yazıtipi yumuşatması kullanılması."
+
+#. i18n: file kghostview.kcfg line 10
+#: rc.cpp:79
+#, no-c-format
+msgid ""
+"Anti-aliasing makes the result look better, specially regarding text, but it "
+"makes the display take longer"
+msgstr ""
+"Yazıtipi yumuşatması sonucun daha iyi görünmesini sağlar, fakat görüntüleme "
+"süresini artırır"
+
+#. i18n: file kghostview.kcfg line 20
+#: rc.cpp:82
+#, no-c-format
+msgid "Whether to see a window with Ghostscript messages"
+msgstr "Ghostscript mesajları içeren bir pencere görüntülenmesi"
+
+#. i18n: file kghostview.kcfg line 21
+#: rc.cpp:85
+#, no-c-format
+msgid ""
+"Whether to see a window with Ghostscript messages. This can give you additional "
+"information on the files you see. In case of an error, a window will popup "
+"regardless of this option."
+msgstr ""
+"Ghostscript mesajları içeren bir pencere görüntülenmesi. Gördüğünüz dosyalar "
+"hakkında daha fazla bilgi edinmenizi sağlar. Hata oluşması durumunda bu "
+"seçeneğe bakılmaksızın bir pencere açılacaktır."
+
+#. i18n: file kghostview.kcfg line 25
+#: rc.cpp:88
+#, no-c-format
+msgid "Use Platform Fonts"
+msgstr "Platform Yazıtipleri Kullan"
+
+#. i18n: file kghostview.kcfg line 30
+#: rc.cpp:91
+#, no-c-format
+msgid "Whether to show the page list"
+msgstr "Sayfa listesinin görüntülenmesi"
+
+#. i18n: file kghostview.kcfg line 35
+#: rc.cpp:94
+#, no-c-format
+msgid "Whether to show page names instead of numbers"
+msgstr "Sayı yerine sayfa isimlerinin görüntülenmesi"
+
+#. i18n: file kghostview.kcfg line 36
+#: rc.cpp:97
+#, no-c-format
+msgid ""
+"Sometimes information is available on page names which can be used in the list "
+"panner instead of just the numbers. Most often, these names are, in fact, "
+"another numbering. Often, the first few pages use roman numbering (i, ii, iii, "
+"iv ...) followed by arabic numbers from one (1, 2, 3...) when the real content "
+"starts."
+msgstr ""
+"Bazen sayfa listesinde kullanılmak üzere sayfa isimleri ile ilgili olarak "
+"sayıların yanında başka bilgi de bulunur. Çoğunlukla bu bilgi bir başka "
+"numaralama sistemidir. Genelde ilk bir kaç sayfa roma sayıları (i, ii, iii, iv "
+"...) kullanır, asıl içerik başladığında ise birden başlayarak arapça (1, 2, 3 "
+"...) sayılar kullanır."
+
+#. i18n: file kghostview.kcfg line 40
+#: rc.cpp:100
+#, no-c-format
+msgid "Whether to show scroll bars when pages are too big"
+msgstr "Sayfalar çok büyük olduğunda kaydırma çubuğunun gösterilmesi"
+
+#. i18n: file kghostview.kcfg line 45
+#: rc.cpp:103
+#, no-c-format
+msgid "Watch File"
+msgstr "Dosya İzle"
+
+#. i18n: file kghostview.kcfg line 46
+#: rc.cpp:106
+#, no-c-format
+msgid ""
+"If this is on, then the file will be reloaded whenever it changes on disk"
+msgstr "Açık ise disk üzerindeki dosya her değiştiğinde tekrar yüklenecek"
+
+#. i18n: file kghostview.kcfg line 52
+#: rc.cpp:109
+#, no-c-format
+msgid "The ghostscript interpreter to use"
+msgstr "Kullanılacak ghostscript yorumlayıcısı"
+
+#. i18n: file kghostview.kcfg line 53
+#: rc.cpp:112
+#, no-c-format
+msgid ""
+"Kghostview does not, itself, display the document: it relies on ghostscript, "
+"and therefore needs it to be available. Here you can define the ghostscript "
+"interpreter to use."
+msgstr ""
+"Kghostview kendi başına belgeyi göstermez, bu iş için ghostscript kullanır ve "
+"sistemde bulunmasına ihtiyaç duyar. Buradan kullanılacak ghostscript "
+"yorumlayıcıyı seçebilirsiniz."
+
+#. i18n: file kghostview.kcfg line 57
+#: rc.cpp:115
+#, no-c-format
+msgid "Arguments for ghostscript if running with antialiasing"
+msgstr "Yazıtipi yumuşatması aktif olan ghostscript argümanları"
+
+#. i18n: file kghostview.kcfg line 67
+#: rc.cpp:118
+#, no-c-format
+msgid "This is the ghostscript version you are running"
+msgstr "Kullandığınız ghostscript sürümü"
+
+#. i18n: file kghostview.kcfg line 68
+#: rc.cpp:121
+#, no-c-format
+msgid ""
+"This is the version of ghostscript you are running. Normally you will not need "
+"to change this since it gets detected automatically."
+msgstr ""
+"Kullandığınız ghostscript sürümü. Normal koşullarda otomatik olarak tanındığı "
+"için değiştirmenize gerek yoktur."
+
+#. i18n: file kghostview.kcfg line 71
+#: rc.cpp:124
+#, no-c-format
+msgid "This is an internal setting"
+msgstr "Bu dahili bir ayardır"
+
+#: viewcontrol.cpp:87
+msgid "&Magnification"
+msgstr "&Büyütme"
+
+#: viewcontrol.cpp:98
+msgid "M&edia"
+msgstr "O&rtam"
+
+#~ msgid ""
+#~ "_: zoom-factor (percentage)\n"
+#~ "%1%"
+#~ msgstr "%1%"

@@ -1,0 +1,22 @@
+# translation of kmilo_delli8k.po to Türkçe
+# Görkem Çetin <gorkem@kde.org>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kmilo_delli8k\n"
+"POT-Creation-Date: 2004-11-24 01:19+0100\n"
+"PO-Revision-Date: 2004-11-24 22:43+0000\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9\n"
+
+#: delli8k.cpp:108
+msgid "Mute On"
+msgstr "Ses Kapalı"
+
+#: delli8k.cpp:110
+msgid "Mute Off"
+msgstr "Ses Açık"

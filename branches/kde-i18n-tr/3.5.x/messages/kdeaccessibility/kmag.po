@@ -1,0 +1,411 @@
+# translation of kmag.po to
+# Copyright (C) 2004, 2005, 2007 Free Software Foundation, Inc.
+#
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Osman Yüksel <yuxel@sonsuzdongu.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kmag\n"
+"POT-Creation-Date: 2006-05-28 04:04+0200\n"
+"PO-Revision-Date: 2007-05-16 16:36+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: kmagzoomview.cpp:159
+msgid ""
+"This is the main window which shows the contents of the selected region. The "
+"contents will be magnified according to the zoom level that is set."
+msgstr ""
+"Bu pencere seçilen bölgenin içeriğini gösterir. Belirlenen yakınlaşma "
+"seviyesine göre içerik büyütülecektir."
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Serdar Soytetir, YILDIZ KARDEŞLER"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "tulliana@gmail.com, turkishprogram@xposta.com"
+
+#: main.cpp:37
+msgid "File to open"
+msgstr "Açılacak dosya"
+
+#: kmagselrect.cpp:228 main.cpp:45
+msgid "KMagnifier"
+msgstr "Kmagnifier"
+
+#: main.cpp:46
+msgid "Screen magnifier for the K Desktop Environment (KDE)"
+msgstr "KDE için ekran büyüteci"
+
+#: main.cpp:53
+msgid "Rewrite and current maintainer"
+msgstr "Şimdiki geliştirici"
+
+#: main.cpp:56
+msgid "Original idea and author (KDE1)"
+msgstr "Orijinal fikir ve ilk yazar (KDE1)"
+
+#: main.cpp:58
+msgid ""
+"Rework of the user interface, improved selection window, speed optimisation, "
+"rotation, bug fixes"
+msgstr ""
+"Kullanıcı arayüzü, geliştirilmiş seçim penceresi, hız uygunlaştırılması, "
+"çevirme, hata düzeltimleri"
+
+#: main.cpp:59
+msgid "Some tips"
+msgstr "Bazı ipuçları"
+
+#: kmagselrect.cpp:228
+msgid "Selection Window"
+msgstr "Seçim Penceresi"
+
+#: kmag.cpp:92
+msgid "&Very Low"
+msgstr "Ç&ok Düşük"
+
+#: kmag.cpp:92
+msgid "&Low"
+msgstr "&Düşük"
+
+#: kmag.cpp:92
+msgid "&Medium"
+msgstr "&Orta"
+
+#: kmag.cpp:92
+msgid "&High"
+msgstr "&Yüksek"
+
+#: kmag.cpp:92
+msgid "V&ery High"
+msgstr "Ço&k Yüksek"
+
+#: kmag.cpp:100
+msgid "&No Rotation (0 Degrees)"
+msgstr "Döndürme Yok (0 Derece)"
+
+#: kmag.cpp:100
+msgid "&Left (90 Degrees)"
+msgstr "So&la (90 Derece)"
+
+#: kmag.cpp:100
+msgid "&Upside Down (180 Degrees)"
+msgstr "&Üstten Alta(180 Derece)"
+
+#: kmag.cpp:100
+msgid "&Right (270 Degrees)"
+msgstr "S&ağa (270 Derece)"
+
+#: kmag.cpp:129
+msgid "New &Window"
+msgstr "&Yeni Pencere"
+
+#: kmag.cpp:131
+msgid "Open a new KMagnifier window"
+msgstr "Yeni bir büyüteç penceresi açar"
+
+#: kmag.cpp:133
+msgid "&Stop"
+msgstr "&Dur"
+
+#: kmag.cpp:135
+msgid "Click to stop window refresh"
+msgstr "Pencere tazelemesini durdurmak için tıklayın"
+
+#: kmag.cpp:136
+msgid ""
+"Clicking on this icon will <b>start</b> / <b>stop</b>  "
+"updating of the display. Stopping the update will zero the processing power  "
+"required (CPU usage)"
+msgstr ""
+"Bu simgeye tıklamak görünümü güncellemeyi <b>başlatır</b> / <b>durdurur</b>"
+".Güncellemeyi durdurmak işlemci gücünü sıfırlar  gereksinim (CPU Kullanımı)"
+
+#: kmag.cpp:140
+msgid "&Save Snapshot As..."
+msgstr "Ekran Görüntüsünü &Farklı Kaydet..."
+
+#: kmag.cpp:142
+msgid "Saves the zoomed view to an image file."
+msgstr "Yaklaştırılmış görünümü bir resim dosyası olarak kaydeder."
+
+#: kmag.cpp:143
+msgid "Save image to a file"
+msgstr "Resmi dosyaya kaydet"
+
+#: kmag.cpp:146
+msgid "Click on this button to print the current zoomed view."
+msgstr "Yaklaştırılmış görünümü yazdırmak için bu düğmeye basın."
+
+#: kmag.cpp:149 kmag.cpp:150
+msgid "Quits the application"
+msgstr "Uygulamadan çıkar"
+
+#: kmag.cpp:153
+msgid ""
+"Click on this button to copy the current zoomed view to the clipboard which you "
+"can paste in other applications."
+msgstr ""
+"Yakınlaştırılmış görünümü panoya kopyalayıp, diğer uygulamalara yapıştırabilmek "
+"için bu düğmeye tıklayın."
+
+#: kmag.cpp:154
+msgid "Copy zoomed image to clipboard"
+msgstr "Yakınlaştırılmış resmi panoya kopyala"
+
+#: kmag.cpp:156
+msgid "Show &Menu"
+msgstr "&Menüyü Göster"
+
+#: kmag.cpp:159
+msgid "Hide &Menu"
+msgstr "&Menüyü Gizle"
+
+#: kmag.cpp:161
+msgid "Show Main &Toolbar"
+msgstr "Ana &Araç Çubuğunu Göster"
+
+#: kmag.cpp:164
+msgid "Hide Main &Toolbar"
+msgstr "Ana A&raç Çubuğunu Gizle"
+
+#: kmag.cpp:166
+msgid "Show &View Toolbar"
+msgstr "&Görüntüleme Çubuğunu Göster"
+
+#: kmag.cpp:169
+msgid "Hide &View Toolbar"
+msgstr "Görünüm Araç Çubuğunu Gi&zle"
+
+#: kmag.cpp:171
+msgid "Show &Settings Toolbar"
+msgstr "A&yarlar Araç Çubuğunu Göster"
+
+#: kmag.cpp:174
+msgid "Hide &Settings Toolbar"
+msgstr "A&yarlar Araç Çubuğunu Gizle"
+
+#: kmag.cpp:177
+msgid "&Follow Mouse Mode"
+msgstr "&Fareyi İzle Kipi"
+
+#: kmag.cpp:179
+msgid "Magnify mouse area into window"
+msgstr "Pencere içerisinde fare alanını büyüt"
+
+#: kmag.cpp:180
+msgid ""
+"In this mode the area around the mouse cursor is shown in a normal window."
+msgstr ""
+"Bu kipte fare imlecinin etrafındaki alan normal bir pencerede gösterilir."
+
+#: kmag.cpp:182
+msgid "S&election Window Mode"
+msgstr "Seçim Penceresi Ki&pi"
+
+#: kmag.cpp:184
+msgid "Magnify selected area into window"
+msgstr "Pencere içerisinde seçilen alanı büyüt"
+
+#: kmag.cpp:185
+msgid ""
+"In this mode a selection window is opened. The selected area is shown in a "
+"normal window."
+msgstr ""
+"Bu kipte bir seçim penceresi açılır. Seçilen alan ise normal bir pencerede "
+"gösterilir."
+
+#: kmag.cpp:187
+msgid "&Top Screen Edge Mode"
+msgstr "&Üst Ekran Gölgesi Kipi"
+
+#: kmag.cpp:189
+msgid "Magnify mouse area to top screen edge"
+msgstr "Fare alanını üst ekran gölgesine büyüt"
+
+#: kmag.cpp:190
+msgid ""
+"In this mode the area around the mouse is magnified to the top screen edge."
+msgstr ""
+"Bu kipte fare imlecinin etrafındaki alan üst ekran gölgesine büyütülür."
+
+#: kmag.cpp:192
+msgid "&Left Screen Edge Mode"
+msgstr "So&l Ekran Gölgesi Kipi"
+
+#: kmag.cpp:194
+msgid "Magnify mouse area to left screen edge"
+msgstr "Fare alanını sol ekran gölgesine büyüt"
+
+#: kmag.cpp:195
+msgid ""
+"In this mode the area around the mouse is magnified to the left screen edge."
+msgstr ""
+"Bu kipte fare imlecinin etrafındaki alan sol ekran gölgesine büyütülür."
+
+#: kmag.cpp:197
+msgid "&Right Screen Edge Mode"
+msgstr "&Sağ Ekran Gölgesi Kipi"
+
+#: kmag.cpp:199
+msgid "Magnify mouse area to right screen edge"
+msgstr "Fare alanını sağ ekran gölgesine büyüt"
+
+#: kmag.cpp:200
+msgid ""
+"In this mode the area around the mouse is magnified to the right screen edge."
+msgstr ""
+"Bu kipte fare imlecinin etrafındaki alan sağ ekran gölgesine büyütülür."
+
+#: kmag.cpp:202
+msgid "&Bottom Screen Edge Mode"
+msgstr "&Alt Ekran Gölgesi Kipi"
+
+#: kmag.cpp:204
+msgid "Magnify mouse area to bottom screen edge"
+msgstr "Fare alanını alt ekran gölgesine büyüt"
+
+#: kmag.cpp:205
+msgid ""
+"In this mode the area around the mouse is magnified to the bottom screen edge."
+msgstr ""
+"Bu kipte fare imlecinin etrafındaki alan alt ekran gölgesine büyütülür."
+
+#: kmag.cpp:207
+msgid "Hide Mouse &Cursor"
+msgstr "&Fare İmlecini Sakla"
+
+#: kmag.cpp:210
+msgid "Show Mouse &Cursor"
+msgstr "Fare İmle&cini Göster"
+
+#: kmag.cpp:212
+msgid "Hide the mouse cursor"
+msgstr "Fare imlecini sakla"
+
+#: kmag.cpp:215
+msgid "Click on this button to <b>zoom-in</b> on the selected region."
+msgstr "Seçilen bölgeye <b>yakınlaşmak</b> için bu düğmeye tıklayın."
+
+#: kmag.cpp:219
+msgid "Select the zoom factor."
+msgstr "Odaklama oranını seç."
+
+#: kmag.cpp:220
+msgid "Zoom factor"
+msgstr "Odaklama oranı"
+
+#: kmag.cpp:223
+msgid "Click on this button to <b>zoom-out</b> on the selected region."
+msgstr "Seçilen bölgeden <b>uzaklaşmak</b> için bu düğmeye tıklayın."
+
+#: kmag.cpp:225
+msgid "&Invert Colors"
+msgstr "Renkleri Tersine &Çevir"
+
+#: kmag.cpp:228
+msgid "&Rotation"
+msgstr "&Döndürme"
+
+#: kmag.cpp:230
+msgid "Select the rotation degree."
+msgstr "Döndürme derecesini seç."
+
+#: kmag.cpp:231
+msgid "Rotation degree"
+msgstr "Döndürme derecesi"
+
+#: kmag.cpp:239
+msgid "Re&fresh"
+msgstr "Ta&zele"
+
+#: kmag.cpp:241
+msgid ""
+"Select the refresh rate. The higher the rate, the more computing power (CPU) "
+"will be needed."
+msgstr ""
+"Tazeleme hızını belirleyin. Yüksek tazeleme hızı, daha çok işlemci gücü "
+"harcanması demektir."
+
+#: kmag.cpp:242
+msgid "Refresh rate"
+msgstr "Tazeleme oranı"
+
+#: kmag.cpp:560
+msgid "Save Snapshot As"
+msgstr "Ekran Görüntüsünü Farklı Kaydet"
+
+#: kmag.cpp:567
+msgid ""
+"Unable to save temporary file (before uploading to the network file you "
+"specified)."
+msgstr "Geçici dosya oluşturulamadı (belirttiğiniz dosya gönderilmeden önce)."
+
+#: kmag.cpp:568 kmag.cpp:572 kmag.cpp:584
+msgid "Error Writing File"
+msgstr "Dosyayı Kaydederken Hata Oluştu"
+
+#: kmag.cpp:571
+msgid "Unable to upload file over the network."
+msgstr "Dosya ağ üzerinden karşıya gönderilemiyor."
+
+#: kmag.cpp:574 kmag.cpp:586
+#, c-format
+msgid ""
+"Current zoomed image saved to\n"
+"%1"
+msgstr ""
+"Büyütülmüş resim kaydedildi:\n"
+"%1"
+
+#: kmag.cpp:583
+msgid ""
+"Unable to save file. Please check if you have permission to write to the "
+"directory."
+msgstr ""
+"Dosya kaydedilemedi. Lütfen bu dizine yazma hakkınızın bulunduğuna emin olun."
+
+#: kmag.cpp:603
+msgid "Click to stop window update"
+msgstr "Pencere güncellemesini durdurmak için tıklayın"
+
+#: kmag.cpp:606
+msgid "Start"
+msgstr "Başla"
+
+#: kmag.cpp:607
+msgid "Click to start window update"
+msgstr "Pencere güncellemesini başlatmak için tıklayın"
+
+#: kmag.cpp:637
+msgid "Magnify to Screen Edge - Select Size"
+msgstr "Ekran Gölgesini Büyüt - Boyut Seç"
+
+#: kmag.cpp:638 kmag.cpp:654 kmag.cpp:670 kmag.cpp:686
+msgid "Size:"
+msgstr "Boyut:"
+
+#: kmag.cpp:653
+msgid "Magnify to Left Screen Edge - Select Size"
+msgstr "Sol Ekran Gölgesini Büyüt - Boyut Seç"
+
+#: kmag.cpp:669
+msgid "Magnify to Right Screen Edge - Select Size"
+msgstr "Sağl Ekran Gölgesini Büyüt - Boyut Seç"
+
+#: kmag.cpp:685
+msgid "Magnify to Bottom Screen Edge - Select Size"
+msgstr "Alt Ekran Gölgesini Büyüt - Boyut Seç"

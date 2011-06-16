@@ -1,0 +1,75 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2004-10-12 01:18+0200\n"
+"PO-Revision-Date: 2002-07-28 00:51GMT\n"
+"Last-Translator: Durmuş Celep <durmusc_tr@yahoo.com>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.8\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: gui.cpp:81
+msgid "Nex Configuration"
+msgstr "Nex Yapılandırması"
+
+#: gui.cpp:98 gui.cpp:178
+msgid "Name"
+msgstr "İsim"
+
+#: gui.cpp:110
+msgid "Main"
+msgstr "Ana"
+
+#: nex.cpp:413
+msgid "&Erase between frames"
+msgstr "Çerçeve aralarında &Sil"
+
+#: nex.cpp:419
+msgid "&Convolve audio"
+msgstr "&Sesi evriştir"
+
+#: nex.cpp:424
+msgid "Comments"
+msgstr "Açıklamalar"
+
+#: nex.cpp:571
+msgid "Nex"
+msgstr "Nex"
+
+#: nex.cpp:572
+msgid "The awesome customizable scope"
+msgstr "Şaşırtıcı, özelleştirilebilir alan"
+
+#: nex.cpp:576
+msgid "Nex Author"
+msgstr "Nex Yazarı "
+
+#: noatunplugin.cpp:37
+msgid "Unable to start noatunNex. Check your installation."
+msgstr "noatunNex başlatılamadı. Kurulumunuzu inceleyin."
+
+#: renderers.cpp:25
+msgid "Pair"
+msgstr "İkiz"
+
+#: renderers.cpp:26
+msgid "Solid"
+msgstr "Katı"

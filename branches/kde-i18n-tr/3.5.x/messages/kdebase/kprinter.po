@@ -1,0 +1,140 @@
+# translation of kprinter.po to
+# Copyright (C) 2005, 2007 Free Software Foundation, Inc.
+# Görkem Çetin, <gorkem@kde.org> 2001
+#
+# Bekir SONAT <cortexbs@yahoo.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kprinter\n"
+"POT-Creation-Date: 2005-05-18 21:24+0200\n"
+"PO-Revision-Date: 2007-07-08 18:55+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: main.cpp:29
+msgid "Make an internal copy of the files to print"
+msgstr "Yazdırılacak dosyaların içsel bir kopyasını oluştur"
+
+#: main.cpp:31
+msgid "Printer/destination to print on"
+msgstr "Yazıcı ya da yazdırılacak hedef"
+
+#: main.cpp:33
+msgid "Title/Name for the print job"
+msgstr "Yazdırma Görevi Başlığı/adı"
+
+#: main.cpp:35
+msgid "Number of copies"
+msgstr "Kopya Sayısı"
+
+#: main.cpp:36
+msgid "Printer option"
+msgstr "Yazıcı seçenekleri"
+
+#: main.cpp:37
+msgid "Job output mode (gui, console, none)"
+msgstr "Görev çıkış kipi (grafik, konsol, hiçbiri)"
+
+#: main.cpp:38
+msgid "Print system to use (lpd, cups)"
+msgstr "Kullanılacak yazıcı sistemi (lpd, cups)"
+
+#: main.cpp:39
+msgid "Allow printing from STDIN"
+msgstr "STDIN'den yazdırmaya izin ver"
+
+#: main.cpp:40
+msgid "Do not show the print dialog (print directly)"
+msgstr "Yazdırma penceresini gösterme (doğrudan yazdır)"
+
+#: main.cpp:41
+msgid "Files to load"
+msgstr "Yüklenecek dosyalar"
+
+#: main.cpp:47
+msgid "KPrinter"
+msgstr "KPrinter"
+
+#: main.cpp:47
+msgid "A printer tool for KDE"
+msgstr "KDE için yazıcı aracı"
+
+#: printwrapper.cpp:61
+msgid "Print Information"
+msgstr "Yazdırma Bilgisi"
+
+#: printwrapper.cpp:62
+msgid "Print Warning"
+msgstr "Yazdırma Uyarısı"
+
+#: printwrapper.cpp:63
+msgid "Print Error"
+msgstr "Yazdırma Hatası"
+
+#: printwrapper.cpp:69
+msgid "Print info"
+msgstr "Yazdırma bilgisi"
+
+#: printwrapper.cpp:69
+msgid "Print warning"
+msgstr "Yazdırma uyarısı"
+
+#: printwrapper.cpp:69
+msgid "Print error"
+msgstr "Yazdırma hatası"
+
+#: printwrapper.cpp:190
+msgid ""
+"A file has been specified on the command line. Printing from STDIN will be "
+"disabled."
+msgstr "Komut satırında bir dosya belirtildi. STDIN'den yazdırma kapatılacak."
+
+#: printwrapper.cpp:196
+msgid ""
+"When using '--nodialog', you must at least specify one file to print or use the "
+"'--stdin' flag."
+msgstr ""
+"'--nodialog' parametresini kullanırken '--stdin' bayrağını da kullanmanız "
+"gereklidir."
+
+#: printwrapper.cpp:245
+msgid "The specified printer or the default printer could not be found."
+msgstr "Belirtilen yazıcı ya da öntanımlı yazıcı bulunamadı."
+
+#: printwrapper.cpp:247
+msgid "Operation aborted."
+msgstr "İşlem iptal edildi."
+
+#: printwrapper.cpp:276
+msgid "Unable to construct the print dialog."
+msgstr "Yazdırma penceresi oluşturulamadı."
+
+#: printwrapper.cpp:317
+msgid "Multiple files (%1)"
+msgstr "Çoklu dosyalar (%1)"
+
+#: printwrapper.cpp:324
+msgid "Nothing to print."
+msgstr "Yazdırılacak birşey yok"
+
+#: printwrapper.cpp:349
+msgid "Unable to open temporary file."
+msgstr "Geçici dosya açılamadı."
+
+#: printwrapper.cpp:364
+msgid "Stdin is empty, no job sent."
+msgstr "Standart giriş boş, görev gönderilmedi."
+
+#: printwrapper.cpp:376
+#, c-format
+msgid "Unable to copy file %1."
+msgstr "%1 dosyası kopyalanamadı."
+
+#: printwrapper.cpp:393
+msgid "Error while printing files"
+msgstr "Dosyalar yazdırılırken bir hata oluştu"

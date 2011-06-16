@@ -1,0 +1,43 @@
+# translation of display.po to turkish
+# translation of display.po to Türkçe
+# translation of display.po to Turkish
+# Copyright (C) 2004, 2005 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
+# Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: display\n"
+"POT-Creation-Date: 2005-05-18 21:24+0200\n"
+"PO-Revision-Date: 2005-06-28 21:42+0000\n"
+"Last-Translator: Adem Alp YILDIZ <ademalp@kde.org.tr>\n"
+"Language-Team: turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.1\n"
+
+#: display.cpp:39
+msgid "Size && Orientation"
+msgstr "Boyut ve Konum"
+
+#: display.cpp:40
+msgid "Graphics Adaptor"
+msgstr "Grafik Kartı"
+
+#: display.cpp:41
+msgid "3D Options"
+msgstr "3B Ayarları"
+
+#: display.cpp:42
+msgid "Monitor Gamma"
+msgstr "Ekran Gama"
+
+#: display.cpp:44
+msgid "Multiple Monitors"
+msgstr "Çoklu Ekran"
+
+#: display.cpp:45
+msgid "Power Control"
+msgstr "Güç Denetimi"

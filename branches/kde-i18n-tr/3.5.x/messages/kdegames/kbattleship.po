@@ -1,0 +1,550 @@
+# translation of kbattleship.po to Türkçe
+# translation of kbattleship.po to
+# translation of kbattleship.po to Turkish
+# kde
+# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+# Tuncay YENİAY <tuncayyeniay@mynet.com>,2002.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# YILDIZ KARDEŞLER <turkishprogram@xposta.com>, 2004.
+# Ömer Fadıl USTA <omer_fad@yahoo.com>, 2004.
+# Bülent ŞENER <bulent@kde.org.tr>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kbattleship\n"
+"POT-Creation-Date: 2008-07-08 01:19+0200\n"
+"PO-Revision-Date: 2005-08-10 13:51+0300\n"
+"Last-Translator: Bülent ŞENER <bulent@kde.org.tr>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.1\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Tuncay YENİAY, Bülent ŞENER"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "tuncayyeniay@mynet.com, bulent@kde.org.tr"
+
+#: kbattleship.cpp:87 kbattleship.cpp:1201
+msgid "     Player 1: %1     "
+msgstr "     1. Oyuncu: %1    "
+
+#: kbattleship.cpp:88 kbattleship.cpp:1207
+msgid "     Player 2: %1     "
+msgstr "     2. Oyuncu: %1    "
+
+#: kbattleship.cpp:89 kbattleship.cpp:430 kbattleship.cpp:704
+#: kbattleship.cpp:813 kbattleship.cpp:1220 kbattleship.cpp:1234
+msgid "Ready"
+msgstr "Hazır"
+
+#: kbattleship.cpp:96
+msgid "&Connect to Server..."
+msgstr "Sunucuya &Bağlan..."
+
+#: kbattleship.cpp:97
+msgid "&Start Server..."
+msgstr "Sunucuyu Başla&t..."
+
+#: kbattleship.cpp:98
+msgid "S&ingle Player..."
+msgstr "T&ek Oyuncu..."
+
+#: kbattleship.cpp:101
+msgid "&Enemy Info"
+msgstr "&Düşman Bilgisi"
+
+#: kbattleship.cpp:103
+msgid "&Play Sounds"
+msgstr "&Sesleri çal"
+
+#: kbattleship.cpp:104
+msgid "&Show Grid"
+msgstr "&Kılavuzları Göster"
+
+#: kbattleship.cpp:105
+msgid "Hide Grid"
+msgstr "Izgarayı Gizle"
+
+#: kbattleship.cpp:187
+msgid "Sending Message..."
+msgstr "Mesaj Gönderiliyor..."
+
+#: kbattleship.cpp:311 kbattleship.cpp:1231 kbattleship.cpp:1313
+msgid "S&ingle Player"
+msgstr "&Tek Oyuncu"
+
+#: kbattleship.cpp:314 kbattleship.cpp:406
+msgid "You won the game :)"
+msgstr "Oyunu kazandın! :)"
+
+#: kbattleship.cpp:317 kbattleship.cpp:738 kbattleship.cpp:1320
+msgid "Do you want to restart the game?"
+msgstr "Oyunu yeniden başlatmak istiyor musunuz?"
+
+#: kbattleship.cpp:317 kbattleship.cpp:738 kbattleship.cpp:1320
+msgid "Restart"
+msgstr "Yeniden başlat"
+
+#: kbattleship.cpp:317 kbattleship.cpp:738 kbattleship.cpp:1320
+msgid "Do Not Restart"
+msgstr "Yeniden Başlatma"
+
+#: kbattleship.cpp:401
+msgid "Waiting for enemy to shoot.."
+msgstr "Düşmanın ateş etmesini bekliyoruz..."
+
+#: kbattleship.cpp:419 kbattleship.cpp:425
+msgid "Enemy disconnected."
+msgstr "Düşman bağlantıyı kesti."
+
+#: kbattleship.cpp:434
+msgid "&Connect to server"
+msgstr "&Sunucuya bağlan"
+
+#: kbattleship.cpp:435
+msgid "&Start server"
+msgstr "&Sunucuyu başlat"
+
+#: kbattleship.cpp:436
+msgid "S&ingle game"
+msgstr "&Tek oyuncu"
+
+#: kbattleship.cpp:557
+msgid "Waiting for computer player to start the match..."
+msgstr "Bilgisayarın maçı başlatmasını bekliyoruz..."
+
+#: kbattleship.cpp:567 konnectionhandling.cpp:112 konnectionhandling.cpp:136
+msgid "Waiting for other player to place their ships..."
+msgstr "Diğer oyuncunun gemileri yerleştirmesini bekliyoruz..."
+
+#: kbattleship.cpp:569
+msgid "Waiting for other player to start the match..."
+msgstr "Diğer oyuncunun maçı başlatmasını bekliyoruz..."
+
+#. i18n: file dialogs/statDlg.ui line 172
+#: kbattleship.cpp:639 kbattleship.cpp:670 rc.cpp:105
+#, no-c-format
+msgid "Shots"
+msgstr "Atışlar"
+
+#. i18n: file dialogs/statDlg.ui line 263
+#: kbattleship.cpp:640 kbattleship.cpp:671 rc.cpp:111
+#, no-c-format
+msgid "Hits"
+msgstr "İsabetler"
+
+#. i18n: file dialogs/statDlg.ui line 351
+#: kbattleship.cpp:641 kbattleship.cpp:672 rc.cpp:117
+#, no-c-format
+msgid "Water"
+msgstr "Su"
+
+#: kbattleship.cpp:697
+msgid "Loading Connect-Server dialog..."
+msgstr "Sunucu bağlantı penceresi yükleniyor..."
+
+#: kbattleship.cpp:718
+msgid "The client is asking to restart the game. Do you accept?"
+msgstr "Diğer oyuncu oyunu yeniden başlatmak istiyor. Kabul ediyor musunuz?"
+
+#: kbattleship.cpp:718
+msgid "Accept Restart"
+msgstr "Yeniden başlatmayı onayla"
+
+#: kbattleship.cpp:718
+msgid "Deny Restart"
+msgstr "Yeniden başlatmayı reddet"
+
+#: kbattleship.cpp:724 kbattleship.cpp:744 kbattleship.cpp:1280
+#: konnectionhandling.cpp:118 konnectionhandling.cpp:171
+msgid ""
+"Please place your ships. Use the \"Shift\" key to place the ships vertically."
+msgstr ""
+"Lütfen gemilerinizi yerleştirin. \"Shift\" tuşu ile gemileri dikey "
+"yerleştirebilirsiniz."
+
+#: kbattleship.cpp:764
+msgid "Do you want to ask the server restarting the game?"
+msgstr "Sunucuya yeniden başlamak için sormak ister misiniz ?"
+
+#: kbattleship.cpp:764
+msgid "Ask to Restart"
+msgstr "Yeniden başlatmayı sor"
+
+#: kbattleship.cpp:764
+msgid "Do Not Ask"
+msgstr "Sorma"
+
+#: kbattleship.cpp:770
+msgid "Waiting for an answer..."
+msgstr "Cevap bekleniyor..."
+
+#: kbattleship.cpp:806
+msgid "Loading Start-Server dialog..."
+msgstr "Sunucu başlama penceresi yükleniyor..."
+
+#: kbattleship.cpp:846
+msgid "&Stop server"
+msgstr "&Sunucuyu durdur"
+
+#: kbattleship.cpp:849
+msgid "Waiting for a player..."
+msgstr "Bir oyuncu bekleniyor..."
+
+#: kbattleship.cpp:1077
+msgid "The URL passed to KDE Battleship '%1' is not a valid url"
+msgstr "URL KDE Battleship '%1' geçerli değil"
+
+#: kbattleship.cpp:1083
+msgid ""
+"The URL passed to KDE Battleship '%1' is not recognised as a Battleship game."
+msgstr "'%1' Battleship oyun adresi olarak bilinmiyor."
+
+#: kbattleship.cpp:1116
+msgid "Dis&connect from server"
+msgstr "Sunucuyla &bağlantıyı kes"
+
+#: kbattleship.cpp:1216
+msgid "Start Game"
+msgstr "Oyunu Başlat"
+
+#: kbattleship.cpp:1216
+msgid "Nick name:"
+msgstr "Rumuz:"
+
+#: kbattleship.cpp:1250
+msgid "&Stop game"
+msgstr "&Oyunu durdur"
+
+#: kbattleship.cpp:1253
+msgid "Waiting for the AI player to place the ships..."
+msgstr "Karşı tarafın gemilerini yerleştirmesini bekliyoruz..."
+
+#: kbattleship.cpp:1304 konnectionhandling.cpp:124 konnectionhandling.cpp:192
+msgid "Enemy has shot. Shoot now."
+msgstr "Düşman ateş etti. Ateş sırası sende."
+
+#: kbattleship.cpp:1316
+msgid "You lost the game. :("
+msgstr "Ne yazık ki oyunu kaybettiniz :-("
+
+#: kbattleshipserver.cpp:44
+msgid ""
+"Failed to bind to local port \"%1\"\n"
+"\n"
+"Please check if another KBattleship server instance\n"
+"is running or another application uses this port."
+msgstr ""
+"\"%1\" . liman hazırlanamıyor.\n"
+"\n"
+"Başka bir uygulamanın bu limanı meşkul edip \n"
+"etmediğini kontrol edip tekrar deneyiniz."
+
+#: kbattleshipserver.cpp:78
+msgid "The connection broke down!"
+msgstr "Bağlantı kesildi!"
+
+#. i18n: file dialogs/connectDlg.ui line 16
+#: kclientdialog.cpp:29 rc.cpp:24
+#, no-c-format
+msgid "Connect to Server"
+msgstr "Sunucuya Bağlan"
+
+#: kclientdialog.cpp:29
+msgid "&Connect"
+msgstr "&Bağlan"
+
+#: kmessage.cpp:28
+msgid "KBattleship"
+msgstr "Amiral Battı"
+
+#: kmessage.cpp:30
+msgid "The KDE Battleship clone"
+msgstr "Amiral Battı oyunu"
+
+#: konnectionhandling.cpp:74
+msgid "Connection to client lost. Aborting the game."
+msgstr "Makineye bağlantı kesildi. Oyun durduruluyor."
+
+#: konnectionhandling.cpp:97
+msgid ""
+"Connection dropped by enemy. The client's protocol implementation (%1) is not "
+"compatible with our (%2) version."
+msgstr ""
+"Düşman bağlantıyı kesti. İstemcinin protokolü (%1) şu anda bizim kullandığımız "
+"ile (%2) uyumlu değil."
+
+#: konnectionhandling.cpp:142 konnectionhandling.cpp:203
+msgid "You lost the game :("
+msgstr "Ne yazık ki oyunu kaybettin! :-("
+
+#: konnectionhandling.cpp:162
+msgid ""
+"Connection to client dropped. The client's protocol implementation (%1) is not "
+"compatible with our (%2) version."
+msgstr ""
+"Uygulamaya bağlantı koptu. Karşı uygulamanın protokolü (%1) bizim sürümümüzle "
+"(%2) uyumlu değil."
+
+#: konnectionhandling.cpp:170
+msgid "We have a player. Let's start..."
+msgstr "Bir oyuncumuz var. Hadi başlayalım..."
+
+#: konnectionhandling.cpp:180
+msgid "You can shoot now."
+msgstr "Şimdi ateş edebilirsin."
+
+#: konnectionhandling.cpp:223
+msgid "Connection refused by other host."
+msgstr "Karşıdaki bilgisayar bağlantı kabul etmiyor."
+
+#: konnectionhandling.cpp:227
+msgid "Couldn't lookup host."
+msgstr "Makine adı çözümlenemedi."
+
+#: konnectionhandling.cpp:231
+msgid "Couldn't connect to server."
+msgstr "Sunucuya bağlantı kurulamadı."
+
+#: konnectionhandling.cpp:235
+#, c-format
+msgid "Unknown error; No: %1"
+msgstr "Bilinmeyen Hata; No: %1"
+
+#: konnectionhandling.cpp:244
+msgid "Connection to server lost. Aborting the game."
+msgstr "Sunucuyla bağlantı kesildi. Oyun iptal ediliyor."
+
+#. i18n: file dialogs/serverDlg.ui line 16
+#: kserverdialog.cpp:25 rc.cpp:75
+#, no-c-format
+msgid "Start Server"
+msgstr "Sunucuyu Başlat"
+
+#: kshiplist.cpp:122
+msgid "You cannot place the ship here."
+msgstr "Gemiyi buraya koyamazsınız."
+
+#: main.cpp:28
+msgid ""
+"URL of server to attach to.  In the form kbattleship://host:port/ or host:port"
+msgstr ""
+"Sunucu adresi ekte. Şu biçimde kbattleship://host:port/ ya da host:port"
+
+#: main.cpp:36
+msgid "Project Founder, GUI Handling, Client/Server"
+msgstr "Proje Başlatıcısı, grafik arayüzü, istemci-sunucu programcısı"
+
+#: main.cpp:37
+msgid "Dialog Stuff, Client/Server"
+msgstr "Pencereler, istemci/sunucu"
+
+#: main.cpp:38
+msgid "Computer Player"
+msgstr "Bilgisayar Oyuncu"
+
+#: main.cpp:39
+msgid "Icon"
+msgstr "Simge"
+
+#: main.cpp:40
+msgid "Sounds"
+msgstr "Sesler"
+
+#: main.cpp:41
+msgid "GFX"
+msgstr "Grafik"
+
+#: main.cpp:42
+msgid "Non-Latin1 Support"
+msgstr "Latin1 Dışı Destek"
+
+#: main.cpp:43
+msgid "Various improvements"
+msgstr "Çeşitli geliştirmeler"
+
+#: main.cpp:44 main.cpp:45
+msgid "Various improvements and bugfixes"
+msgstr "Çeşitli geliştirmeler ve hata düzeltmeleri"
+
+#: main.cpp:46
+msgid "Bugfixes and refactoring"
+msgstr "Hatalar ve Düzeltmeler"
+
+#: main.cpp:47
+msgid "DNS-SD discovery"
+msgstr "DNS-SD bildirimi"
+
+#: main.cpp:58
+msgid ""
+"You don't have KBattleship pictures installed. The game cannot run without "
+"them!"
+msgstr ""
+"Amiral battı resimleri sisteme kurulu değil. Bu resimler olmadan oyun "
+"başlatılamaz!"
+
+#. i18n: file dialogs/chatDlg.ui line 16
+#: rc.cpp:9
+#, no-c-format
+msgid "Chat Widget"
+msgstr "Konuşma Programı"
+
+#. i18n: file dialogs/chatDlg.ui line 47
+#: rc.cpp:12
+#, no-c-format
+msgid "Enter a message here"
+msgstr "Buraya bir mesaj yazın"
+
+#. i18n: file dialogs/chatDlg.ui line 55
+#: rc.cpp:15
+#, no-c-format
+msgid "&Send"
+msgstr "&Gönder"
+
+#. i18n: file dialogs/chatDlg.ui line 61
+#: rc.cpp:18
+#, no-c-format
+msgid "Press here to send the message"
+msgstr "Mesajı göndermek için buraya tıklayın"
+
+#. i18n: file dialogs/chatDlg.ui line 83
+#: rc.cpp:21
+#, no-c-format
+msgid "Chat dialog:"
+msgstr "Konuşma penceresi:"
+
+#. i18n: file dialogs/connectDlg.ui line 39
+#: rc.cpp:27 rc.cpp:87
+#, no-c-format
+msgid "&Nick name:"
+msgstr "&Rumuz:"
+
+#. i18n: file dialogs/connectDlg.ui line 58
+#: rc.cpp:30 rc.cpp:90 rc.cpp:93
+#, no-c-format
+msgid "Enter a name that identifies you in the game"
+msgstr "Oyunda sizi temsil edecek bir isim girin"
+
+#. i18n: file dialogs/connectDlg.ui line 74
+#: rc.cpp:33
+#, no-c-format
+msgid "&Server:"
+msgstr "&Sunucu:"
+
+#. i18n: file dialogs/connectDlg.ui line 90
+#: rc.cpp:36
+#, no-c-format
+msgid "LAN games:"
+msgstr "Yerel Ağ Oyunları:"
+
+#. i18n: file dialogs/connectDlg.ui line 136
+#: rc.cpp:39 rc.cpp:84
+#, no-c-format
+msgid "&Port:"
+msgstr "&Port:"
+
+#. i18n: file dialogs/connectDlg.ui line 160
+#: rc.cpp:42
+#, no-c-format
+msgid "Choose a port to connect to"
+msgstr "Bağlantı yapılacak bir port ayarlayın"
+
+#. i18n: file dialogs/infoDlg.ui line 16
+#: rc.cpp:45
+#, no-c-format
+msgid "Enemy Client Information"
+msgstr "Düşman Program Bilgisi"
+
+#. i18n: file dialogs/infoDlg.ui line 72
+#: rc.cpp:48
+#, no-c-format
+msgid "Client identifier:"
+msgstr "İstemci kimlikleyicisi:"
+
+#. i18n: file dialogs/infoDlg.ui line 91
+#: rc.cpp:51
+#, no-c-format
+msgid "Client information:"
+msgstr "İstemci bilgisi:"
+
+#. i18n: file dialogs/infoDlg.ui line 107
+#: rc.cpp:54
+#, no-c-format
+msgid "CV"
+msgstr "CV"
+
+#. i18n: file dialogs/infoDlg.ui line 120
+#: rc.cpp:57
+#, no-c-format
+msgid "Client version:"
+msgstr "İstemci sürümü:"
+
+#. i18n: file dialogs/infoDlg.ui line 133
+#: rc.cpp:60
+#, no-c-format
+msgid "Protocol version:"
+msgstr "Protokol sürümü:"
+
+#. i18n: file dialogs/infoDlg.ui line 149
+#: rc.cpp:63
+#, no-c-format
+msgid "PV"
+msgstr "PS"
+
+#. i18n: file dialogs/infoDlg.ui line 165
+#: rc.cpp:66 rc.cpp:69
+#, no-c-format
+msgid "CI"
+msgstr "PB"
+
+#. i18n: file dialogs/serverDlg.ui line 31
+#: rc.cpp:78
+#, no-c-format
+msgid "&Game name:"
+msgstr "&Oyun Adı:"
+
+#. i18n: file dialogs/serverDlg.ui line 48
+#: rc.cpp:81
+#, no-c-format
+msgid "Choose a port where the server listens on"
+msgstr "Dinlenecek olan liman numarasını seçiniz"
+
+#. i18n: file dialogs/statDlg.ui line 84
+#: rc.cpp:96 rc.cpp:102
+#, no-c-format
+msgid "0"
+msgstr "0"
+
+#. i18n: file dialogs/statDlg.ui line 98
+#: rc.cpp:99
+#, no-c-format
+msgid ":"
+msgstr ":"
+
+#. i18n: file dialogs/statDlg.ui line 251
+#: rc.cpp:108
+#, no-c-format
+msgid "Shows all shots"
+msgstr "Tüm Atışları Gösterir"
+
+#. i18n: file dialogs/statDlg.ui line 339
+#: rc.cpp:114
+#, no-c-format
+msgid "Shows all hit ships"
+msgstr "Vurulan tüm gemileri göster"
+
+#. i18n: file dialogs/statDlg.ui line 427
+#: rc.cpp:120
+#, no-c-format
+msgid "Shows all water shots"
+msgstr "Tüm Su atışlarını göster"

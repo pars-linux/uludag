@@ -1,0 +1,4055 @@
+# translation of umbrello.po to Türkçe
+# translation of umbrello.po to
+# translation of umbrello.po to Turkish
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: umbrello\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-08 01:21+0200\n"
+"PO-Revision-Date: 2004-10-24 02:48+0300\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9\n"
+
+#: worktoolbar.cpp:245
+msgid "Object"
+msgstr "Nesne"
+
+#: worktoolbar.cpp:246
+msgid "Synchronous Message"
+msgstr "Senkron Mesaj"
+
+#: worktoolbar.cpp:247
+msgid "Asynchronous Message"
+msgstr "Asenkron Mesaj"
+
+#: association.cpp:87 worktoolbar.cpp:248
+msgid "Association"
+msgstr "Bağıntı"
+
+#: association.cpp:93 worktoolbar.cpp:249
+#, fuzzy
+msgid "Containment"
+msgstr "Bileşen"
+
+#: association.cpp:97 worktoolbar.cpp:250
+msgid "Anchor"
+msgstr "Çapa"
+
+#: worktoolbar.cpp:251
+msgid "Label"
+msgstr "Etiket"
+
+#: worktoolbar.cpp:252
+msgid "Note"
+msgstr "Not"
+
+#: worktoolbar.cpp:253
+msgid "Box"
+msgstr "Kutu"
+
+#: listpopupmenu.cpp:545 worktoolbar.cpp:254
+msgid "Actor"
+msgstr "Aktör"
+
+#: association.cpp:86 worktoolbar.cpp:255
+msgid "Dependency"
+msgstr "Bağımlılık"
+
+#: association.cpp:85 worktoolbar.cpp:256
+msgid "Aggregation"
+msgstr ""
+
+#: worktoolbar.cpp:257
+#, fuzzy
+msgid "Relationship"
+msgstr "Gerçekleme"
+
+#: worktoolbar.cpp:258
+#, fuzzy
+msgid "Directional Association"
+msgstr "yeni_bağıntı"
+
+#: worktoolbar.cpp:259
+msgid "Implements (Generalisation/Realisation)"
+msgstr ""
+
+#: association.cpp:94 worktoolbar.cpp:260
+msgid "Composition"
+msgstr "Bileşim"
+
+#: dialogs/diagramprintpage.cpp:92 dialogs/diagramprintpage.cpp:202
+#: listpopupmenu.cpp:548 worktoolbar.cpp:261
+msgid "Use Case"
+msgstr "Use Case"
+
+#. i18n: file dialogs/codegenerationwizardbase.ui line 249
+#: codeimport/import_utils.cpp:183 dialogs/diagramprintpage.cpp:91
+#: dialogs/diagramprintpage.cpp:198 dialogs/settingsdlg.cpp:210
+#: listpopupmenu.cpp:609 rc.cpp:360 worktoolbar.cpp:262
+#, no-c-format
+msgid "Class"
+msgstr "Sınıf"
+
+#: listpopupmenu.cpp:1030 worktoolbar.cpp:263
+msgid "Initial State"
+msgstr "Başlangıç Durumu"
+
+#: listpopupmenu.cpp:1031 worktoolbar.cpp:264
+msgid "End State"
+msgstr "Bitiş Durumu"
+
+#: dialogs/activitydialog.cpp:70 listpopupmenu.cpp:1044 worktoolbar.cpp:265
+msgid "Branch/Merge"
+msgstr "Ayrıl/Birleş"
+
+#: dialogs/activitydialog.cpp:70 worktoolbar.cpp:266
+msgid "Fork/Join"
+msgstr ""
+
+#: listpopupmenu.cpp:510 listpopupmenu.cpp:692 worktoolbar.cpp:267
+msgid "Package"
+msgstr "Paket"
+
+#: dialogs/diagramprintpage.cpp:97 dialogs/diagramprintpage.cpp:210
+#: listpopupmenu.cpp:515 worktoolbar.cpp:268
+msgid "Component"
+msgstr "Bileşen"
+
+#: listpopupmenu.cpp:525 worktoolbar.cpp:269
+msgid "Node"
+msgstr "Düğüm"
+
+#: listpopupmenu.cpp:518 worktoolbar.cpp:270
+msgid "Artifact"
+msgstr ""
+
+#: listpopupmenu.cpp:610 worktoolbar.cpp:271
+msgid "Interface"
+msgstr "Arayüz"
+
+#: listpopupmenu.cpp:611 worktoolbar.cpp:272
+msgid "Datatype"
+msgstr "Veri türü"
+
+#: listpopupmenu.cpp:612 worktoolbar.cpp:273
+#, fuzzy
+msgid "Enum"
+msgstr "Yeniden Adlandır"
+
+#: listpopupmenu.cpp:538 worktoolbar.cpp:274
+#, fuzzy
+msgid "Entity"
+msgstr "Bitiş Aktivitesi"
+
+#: worktoolbar.cpp:275
+msgid "Deep History"
+msgstr ""
+
+#: worktoolbar.cpp:276
+msgid "Shallow History"
+msgstr ""
+
+#: worktoolbar.cpp:277
+msgid "Join"
+msgstr ""
+
+#: worktoolbar.cpp:278
+#, fuzzy
+msgid "Fork"
+msgstr "Dizin"
+
+#: worktoolbar.cpp:279
+msgid "Junction"
+msgstr ""
+
+#: worktoolbar.cpp:280
+msgid "Choice"
+msgstr ""
+
+#: association.cpp:98 worktoolbar.cpp:284
+msgid "State Transition"
+msgstr "Durum Aktarımı"
+
+#: worktoolbar.cpp:285
+#, fuzzy
+msgid "Activity Transition"
+msgstr "Etkinlik geçişi"
+
+#: association.cpp:99 dialogs/activitydialog.cpp:70
+#: dialogs/diagramprintpage.cpp:96 dialogs/diagramprintpage.cpp:208
+#: worktoolbar.cpp:286
+msgid "Activity"
+msgstr "Etkinlik"
+
+#: dialogs/diagramprintpage.cpp:95 dialogs/diagramprintpage.cpp:206
+#: dialogs/statedialog.cpp:85 worktoolbar.cpp:287
+msgid "State"
+msgstr "Durum"
+
+#: listpopupmenu.cpp:1042 worktoolbar.cpp:288
+msgid "End Activity"
+msgstr "Bitiş Aktivitesi"
+
+#: listpopupmenu.cpp:1041 worktoolbar.cpp:289
+msgid "Initial Activity"
+msgstr ""
+
+#: worktoolbar.cpp:290
+msgid "Message"
+msgstr "Mesaj"
+
+#: worktoolbar.cpp:298
+msgid "UNDEFINED"
+msgstr ""
+
+#: worktoolbar.cpp:302
+#, fuzzy
+msgid "Select"
+msgstr "Seçim"
+
+#: umlwidgetcontroller.cpp:128
+msgid ""
+"Hold shift or ctrl to move in X axis. Hold shift and control to move in Y axis. "
+"Right button click to cancel move."
+msgstr ""
+
+#: umlwidgetcontroller.cpp:379
+msgid ""
+"Hold shift or ctrl to move in X axis. Hold shift and control to move in Y axis. "
+"Right button click to cancel resize."
+msgstr ""
+
+#: dialogs/activitydialog.cpp:70
+msgid "Initial activity"
+msgstr "İlk etkinlik"
+
+#: dialogs/activitydialog.cpp:70
+msgid "End activity"
+msgstr "Bitiş etkinliği"
+
+#. i18n: file codegenerators/cppcodegenerationformbase.ui line 118
+#: dialogs/activitydialog.cpp:73 dialogs/assocpropdlg.cpp:87
+#: dialogs/classpropdlg.cpp:69 dialogs/classpropdlg.cpp:170
+#: dialogs/classpropdlg.cpp:232 dialogs/settingsdlg.cpp:99
+#: dialogs/statedialog.cpp:88 dialogs/umlviewdialog.cpp:70 rc.cpp:45
+#: rc.cpp:225
+#, no-c-format
+msgid "General"
+msgstr "Genel"
+
+#: dialogs/activitydialog.cpp:73 dialogs/statedialog.cpp:88
+#: dialogs/umlattributedialog.cpp:55 dialogs/umlentityattributedialog.cpp:56
+#: dialogs/umloperationdialog.cpp:64 dialogs/umltemplatedialog.cpp:48
+msgid "General Properties"
+msgstr "Genel Özellikler"
+
+#: dialogs/activitydialog.cpp:82
+msgid "Activity type:"
+msgstr "Etkinlik türü:"
+
+#: dialogs/activitydialog.cpp:87
+msgid "Activity name:"
+msgstr "Etkinlik adı:"
+
+#. i18n: file codegenerators/cppcodegenerationformbase.ui line 36
+#: dialogs/activitydialog.cpp:90 dialogs/assocgenpage.cpp:56
+#: dialogs/assocrolepage.cpp:76 dialogs/assocrolepage.cpp:77
+#: dialogs/classgenpage.cpp:193 dialogs/classgenpage.cpp:293
+#: dialogs/classgenpage.cpp:356 dialogs/classifierlistpage.cpp:106
+#: dialogs/notedialog.cpp:29 dialogs/parmpropdlg.cpp:100
+#: dialogs/statedialog.cpp:104 docwindow.cpp:33 rc.cpp:30 rc.cpp:150
+#: rc.cpp:207 rc.cpp:445 rc.cpp:492
+#, no-c-format
+msgid "Documentation"
+msgstr "Belgeler"
+
+#: dialogs/activitydialog.cpp:108 dialogs/assocpropdlg.cpp:109
+#: dialogs/classpropdlg.cpp:243 dialogs/settingsdlg.cpp:306
+#: dialogs/statedialog.cpp:124 dialogs/umlviewdialog.cpp:107
+msgid "Font Settings"
+msgstr "Yazıtipi Ayarları"
+
+#: dialogs/activitydialog.cpp:114 dialogs/classpropdlg.cpp:75
+#: dialogs/classpropdlg.cpp:125 dialogs/settingsdlg.cpp:49
+#: dialogs/statedialog.cpp:130 dialogs/umlviewdialog.cpp:100
+#: dialogs/umlwidgetcolorpage.cpp:53 listpopupmenu.cpp:739
+#: listpopupmenu.cpp:750
+msgid "Color"
+msgstr "Renk"
+
+#: dialogs/activitydialog.cpp:114 dialogs/classpropdlg.cpp:75
+#: dialogs/classpropdlg.cpp:125
+msgid "Widget Colors"
+msgstr "Parçacık Renkleri"
+
+#: dialogs/overwritedialogue.cpp:27
+msgid "Destination File Already Exists"
+msgstr "Hedef Dosya Mevcut"
+
+#: dialogs/overwritedialogue.cpp:31
+msgid ""
+"The file %1 already exists in %2.\n"
+"\n"
+"Umbrello can overwrite the file, generate a similar\n"
+"file name or not generate this file."
+msgstr ""
+
+#: dialogs/overwritedialogue.cpp:34
+msgid "&Apply to all remaining files"
+msgstr "&Kalan tüm dosyalara uygula"
+
+#: dialogs/overwritedialogue.cpp:38 umlviewimageexporter.cpp:67
+msgid "&Overwrite"
+msgstr "Ü&zerine yaz"
+
+#: dialogs/overwritedialogue.cpp:39
+msgid "&Generate Similar File Name"
+msgstr "&Benzer Bir Dosya Adı Oluştur"
+
+#: dialogs/overwritedialogue.cpp:40
+msgid "&Do Not Generate File"
+msgstr "&Dosya Oluşturma"
+
+#: dialogs/activitypage.cpp:38 dialogs/statedialog.cpp:137
+msgid "Activities"
+msgstr "Etkinlikler"
+
+#: dialogs/activitypage.cpp:72
+msgid "New Activity..."
+msgstr "Yeni Etkinlik..."
+
+#: dialogs/activitypage.cpp:75 floatingtextwidget.cpp:178
+msgid "Rename"
+msgstr "Yeniden Adlandır"
+
+#: dialogs/activitypage.cpp:134
+msgid "New Activity"
+msgstr "Yeni Etkinlik"
+
+#: activitywidget.cpp:163 dialogs/activitypage.cpp:134 statewidget.cpp:176
+#: toolbarstateother.cpp:144 umlview.cpp:2546
+msgid "Enter the name of the new activity:"
+msgstr "Yeni etkinliğin adını girin:"
+
+#: dialogs/activitypage.cpp:135 statewidget.cpp:176 toolbarstateother.cpp:144
+#: umlview.cpp:2547
+msgid "new activity"
+msgstr "yeni etkinlik"
+
+#: dialogs/activitypage.cpp:153
+msgid "Rename Activity"
+msgstr "Etkinliği Yeniden Adlandır"
+
+#: dialogs/activitypage.cpp:153
+msgid "Enter the new name of the activity:"
+msgstr "Aktivitenin yeni adını yazın:"
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 24
+#: dialogs/codegenerationwizard.cpp:54 rc.cpp:222
+#, no-c-format
+msgid "Code Generation Options"
+msgstr "Kod Oluşturma Seçenekleri"
+
+#: dialogs/codegenerationwizard.cpp:70
+msgid "&Generate"
+msgstr "&Oluştur"
+
+#: dialogs/codegenerationwizard.cpp:120
+msgid "Finish"
+msgstr "Tamamla"
+
+#: dialogs/codegenerationwizard.cpp:132
+msgid "Code Generated"
+msgstr "Kod Oluşturuldu"
+
+#: dialogs/codegenerationwizard.cpp:134
+msgid "Not Generated"
+msgstr "Oluşturulmadı"
+
+#: dialogs/codegenerationwizard.cpp:141
+msgid "Not Yet Generated"
+msgstr "Henüz Oluşturulmadı"
+
+#: dialogs/codegenerationwizard.cpp:162
+#, fuzzy
+msgid "The folder %1 does not exist. Do you want to create it now?"
+msgstr "%1 dizini mevcut değil. Bunun üzerine yazmak istiyor musunuz?"
+
+#: dialogs/codegenerationwizard.cpp:163 dialogs/codegenerationwizard.cpp:177
+#, fuzzy
+msgid "Output Folder Does Not Exist"
+msgstr "Çıktı Dizini Mevcut Değil"
+
+#: dialogs/codegenerationwizard.cpp:163
+#, fuzzy
+msgid "Create Folder"
+msgstr "Dizin Oluşturulamadı"
+
+#: dialogs/codegenerationwizard.cpp:163
+#, fuzzy
+msgid "Do Not Create"
+msgstr "&Dosya Oluşturma"
+
+#: dialogs/codegenerationwizard.cpp:168
+msgid ""
+"The folder could not be created.\n"
+"Please make sure you have write access to its parent folder or select another, "
+"valid, folder."
+msgstr ""
+
+#: dialogs/codegenerationwizard.cpp:169
+#, fuzzy
+msgid "Error Creating Folder"
+msgstr "Dizin Oluşturulmasında Hata"
+
+#: dialogs/codegenerationwizard.cpp:176
+#, fuzzy
+msgid "Please select a valid folder."
+msgstr "Lütfen geçerli bir dizin adı seçiniz."
+
+#: dialogs/codegenerationwizard.cpp:184
+msgid ""
+"The output folder exists, but it is not writable.\n"
+"Please set the appropriate permissions or choose another folder."
+msgstr ""
+
+#: dialogs/codegenerationwizard.cpp:185
+#, fuzzy
+msgid "Error Writing to Output Folder"
+msgstr "Çıktı Dizinine Yazılmasında Hata"
+
+#: dialogs/codegenerationwizard.cpp:191
+msgid "%1 does not seem to be a folder. Please choose a valid folder."
+msgstr ""
+
+#: dialogs/codegenerationwizard.cpp:192
+#, fuzzy
+msgid "Please Choose Valid Folder"
+msgstr "Lütfen Geçerli Bir Dizin Seçiniz"
+
+#: dialogs/statedialog.cpp:85
+msgid "Initial state"
+msgstr "İlk durum"
+
+#: dialogs/statedialog.cpp:85
+msgid "End state"
+msgstr "Bitiş durumu"
+
+#: dialogs/statedialog.cpp:96
+msgid "State type:"
+msgstr "Durum türü:"
+
+#: dialogs/statedialog.cpp:101
+msgid "State name:"
+msgstr "Durum adı:"
+
+#: dialogs/statedialog.cpp:130
+msgid "Widget Color"
+msgstr "Parçacık Rengi"
+
+#: dialogs/assocpropdlg.cpp:87 dialogs/classpropdlg.cpp:69
+#: dialogs/classpropdlg.cpp:170 dialogs/classpropdlg.cpp:232
+#: dialogs/settingsdlg.cpp:99 dialogs/umlviewdialog.cpp:70
+msgid "General Settings"
+msgstr "Genel Ayarlar"
+
+#: dialogs/classpropdlg.cpp:118 dialogs/umlviewdialog.cpp:93
+msgid "Display"
+msgstr "Görünüm"
+
+#: dialogs/umlviewdialog.cpp:93
+msgid "Classes Display Options"
+msgstr "Sınıf Görünüm Seçenekleri"
+
+#: dialogs/umlviewdialog.cpp:100
+msgid "Diagram Colors"
+msgstr "Diyagram Renkleri"
+
+#: dialogs/umlviewdialog.cpp:164
+msgid "The name you have entered is invalid."
+msgstr "Verdiğiniz isim geçerli değildir."
+
+#: classifier.cpp:294 classifier.cpp:522 dialogs/umlviewdialog.cpp:165
+#: entity.cpp:78 enum.cpp:76 object_factory.cpp:159 umldoc.cpp:984
+#: umldoc.cpp:1017 umldoc.cpp:1037 umldoc.cpp:1063
+msgid "Invalid Name"
+msgstr "Geçersiz İsim"
+
+#: dialogs/umlviewdialog.cpp:170
+msgid "The name you have entered is not unique."
+msgstr "Verdiğiniz isim başka bir isimle çakışıyor."
+
+#: dialogs/umlviewdialog.cpp:171 umldoc.cpp:1068 umllistview.cpp:1918
+#: umllistview.cpp:1925 umllistview.cpp:2162
+msgid "Name Not Unique"
+msgstr "Bu İsim Kullanılıyor"
+
+#. i18n: file dialogs/codeviewerdialogbase.ui line 21
+#: dialogs/codeviewerdialog.cpp:119 dialogs/settingsdlg.cpp:301 rc.cpp:366
+#, no-c-format
+msgid "Code Viewer"
+msgstr "Kod İzleyici"
+
+#: dialogs/classifierlistpage.cpp:38 dialogs/classpropdlg.cpp:179
+#: listpopupmenu.cpp:670 refactoring/refactoringassistant.cpp:482
+msgid "Attributes"
+msgstr "Öznitelikler"
+
+#: dialogs/classifierlistpage.cpp:39
+msgid "N&ew Attribute..."
+msgstr "&Yeni Öznitelik..."
+
+#: dialogs/classifierlistpage.cpp:41 dialogs/classpropdlg.cpp:187
+#: listpopupmenu.cpp:674 refactoring/refactoringassistant.cpp:499
+msgid "Operations"
+msgstr "İşlemler"
+
+#: dialogs/classifierlistpage.cpp:42
+msgid "N&ew Operation..."
+msgstr "&Yeni İşlem..."
+
+#: dialogs/classifierlistpage.cpp:44 dialogs/classpropdlg.cpp:195
+msgid "Templates"
+msgstr "Şablonlar"
+
+#: dialogs/classifierlistpage.cpp:45
+msgid "N&ew Template..."
+msgstr "&Yeni Şablon..."
+
+#: dialogs/classifierlistpage.cpp:47 dialogs/classpropdlg.cpp:202
+msgid "Enum Literals"
+msgstr ""
+
+#: dialogs/classifierlistpage.cpp:48
+msgid "N&ew Enum Literal..."
+msgstr ""
+
+#: dialogs/classifierlistpage.cpp:50 dialogs/classpropdlg.cpp:209
+#, fuzzy
+msgid "Entity Attributes"
+msgstr "Öznitelikler"
+
+#: dialogs/classifierlistpage.cpp:51
+#, fuzzy
+msgid "N&ew Entity Attribute..."
+msgstr "&Yeni Öznitelik..."
+
+#: dialogs/classifierlistpage.cpp:101 dialogs/umloperationdialog.cpp:143
+#: uml.cpp:273
+msgid "&Properties"
+msgstr "Ö&zellikler"
+
+#. i18n: file dialogs/umlrolepropertiesbase.ui line 36
+#: dialogs/umlroledialog.cpp:25 rc.cpp:483
+#, no-c-format
+msgid "Role Properties"
+msgstr "Rol Özellikleri"
+
+#: dialogs/classpropdlg.cpp:118
+msgid "Display Options"
+msgstr "Görünüm Seçenekleri"
+
+#: dialogs/classpropdlg.cpp:179
+msgid "Attribute Settings"
+msgstr "Öznitelik Ayarları"
+
+#: dialogs/classpropdlg.cpp:187
+msgid "Operation Settings"
+msgstr "İşlem Ayarları"
+
+#: dialogs/classpropdlg.cpp:195
+msgid "Templates Settings"
+msgstr "Şablon Ayarları"
+
+#: dialogs/classpropdlg.cpp:202
+msgid "Enum Literals Settings"
+msgstr ""
+
+#: dialogs/classpropdlg.cpp:209
+#, fuzzy
+msgid "Entity Attributes Settings"
+msgstr "Öznitelik Ayarları"
+
+#: dialogs/classpropdlg.cpp:216
+msgid "Contents Settings"
+msgstr "İçerik Ayarları"
+
+#: dialogs/assocpage.cpp:25 dialogs/classpropdlg.cpp:222
+msgid "Associations"
+msgstr "Bağıntılar"
+
+#: dialogs/classpropdlg.cpp:222
+msgid "Class Associations"
+msgstr "Sınıf Bağıntıları"
+
+#: dialogs/umloperationdialog.cpp:50
+msgid "Operation Properties"
+msgstr "İşlem Özellikleri"
+
+#: dialogs/parmpropdlg.cpp:70 dialogs/umlattributedialog.cpp:68
+#: dialogs/umlentityattributedialog.cpp:69 dialogs/umloperationdialog.cpp:74
+#: dialogs/umltemplatedialog.cpp:61
+msgid "&Name:"
+msgstr "İsi&m:"
+
+#: dialogs/parmpropdlg.cpp:62 dialogs/umlattributedialog.cpp:60
+#: dialogs/umlentityattributedialog.cpp:61 dialogs/umloperationdialog.cpp:77
+#: dialogs/umltemplatedialog.cpp:53
+msgid "&Type:"
+msgstr "&Tür:"
+
+#: dialogs/classgenpage.cpp:334 dialogs/parmpropdlg.cpp:77
+#: dialogs/umlattributedialog.cpp:76 dialogs/umlentityattributedialog.cpp:77
+#: dialogs/umloperationdialog.cpp:84
+msgid "Stereotype name:"
+msgstr "Stereotip adı:"
+
+#: dialogs/umloperationdialog.cpp:89
+msgid "&Abstract operation"
+msgstr ""
+
+#: dialogs/umlattributedialog.cpp:79 dialogs/umloperationdialog.cpp:92
+msgid "Classifier &scope (\"static\")"
+msgstr ""
+
+#: dialogs/umloperationdialog.cpp:95
+msgid "&Query (\"const\")"
+msgstr ""
+
+#: dialogs/classgenpage.cpp:171 dialogs/settingsdlg.cpp:211
+#: dialogs/umlattributedialog.cpp:87 dialogs/umloperationdialog.cpp:101
+#: listpopupmenu.cpp:678
+msgid "Visibility"
+msgstr "Görünürlük"
+
+#: dialogs/classgenpage.cpp:176 dialogs/umloperationdialog.cpp:106
+msgid "P&ublic"
+msgstr "&Genel"
+
+#: dialogs/classgenpage.cpp:179 dialogs/umlattributedialog.cpp:94
+#: dialogs/umloperationdialog.cpp:109
+msgid "P&rivate"
+msgstr "Ö&zel"
+
+#: dialogs/umlattributedialog.cpp:97 dialogs/umloperationdialog.cpp:112
+msgid "Prot&ected"
+msgstr "&Korumalı"
+
+#: dialogs/umlattributedialog.cpp:100 dialogs/umloperationdialog.cpp:115
+#, fuzzy
+msgid "I&mplementation"
+msgstr "&Belgeler"
+
+#: dialogs/umloperationdialog.cpp:120
+msgid "Parameters"
+msgstr "Parametreler"
+
+#: dialogs/umloperationdialog.cpp:141
+msgid "Ne&w Parameter..."
+msgstr "&Yeni Parametre..."
+
+#: dialogs/umloperationdialog.cpp:323 dialogs/umloperationdialog.cpp:376
+msgid "You have entered an invalid parameter name."
+msgstr "Geçersiz bir parametre adı verdiniz."
+
+#: dialogs/umloperationdialog.cpp:324 dialogs/umloperationdialog.cpp:377
+msgid "Parameter Name Invalid"
+msgstr "Geçersiz Parametre Adı"
+
+#: dialogs/umloperationdialog.cpp:339
+msgid ""
+"The parameter name you have chosen\n"
+"is already being used in this operation."
+msgstr ""
+
+#: dialogs/umloperationdialog.cpp:340 dialogs/umloperationdialog.cpp:407
+msgid "Parameter Name Not Unique"
+msgstr "Parametre Adı Kullanılıyor"
+
+#: dialogs/umloperationdialog.cpp:406
+msgid ""
+"The parameter name you have chosen is already being used in this operation."
+msgstr "Verilen parametre adı bu işlemde zaten kullanılıyor."
+
+#: dialogs/umloperationdialog.cpp:456
+msgid "You have entered an invalid operation name."
+msgstr "Geçersiz bir işlem adı girdiniz."
+
+#: dialogs/umloperationdialog.cpp:457 dialogs/umloperationdialog.cpp:469
+#: refactoring/refactoringassistant.cpp:656
+msgid "Operation Name Invalid"
+msgstr "Geçersiz İşlem Adı"
+
+#: dialogs/umloperationdialog.cpp:466 refactoring/refactoringassistant.cpp:653
+msgid ""
+"An operation with that signature already exists in %1.\n"
+msgstr ""
+
+#: dialogs/umloperationdialog.cpp:468 refactoring/refactoringassistant.cpp:655
+msgid "Choose a different name or parameter list."
+msgstr "Farklı bir isim ya da parametre listesi kullanın."
+
+#: dialogs/classwizard.cpp:33 model_utils.cpp:242
+msgid "new_class"
+msgstr "yeni_sınıf"
+
+#: dialogs/classwizard.cpp:54
+msgid "New Class"
+msgstr "Yeni Sınıf"
+
+#: dialogs/classwizard.cpp:59
+msgid "Class Attributes"
+msgstr "Sınıf Öznitelikleri"
+
+#: dialogs/classwizard.cpp:63
+msgid "Class Operations"
+msgstr "Sınıf İşlemleri"
+
+#: dialogs/parmpropdlg.cpp:35
+msgid "Parameter Properties"
+msgstr "Parametre Özellikleri"
+
+#: dialogs/parmpropdlg.cpp:74 dialogs/umlattributedialog.cpp:72
+msgid "&Initial value:"
+msgstr "İ&lk değer:"
+
+#: dialogs/parmpropdlg.cpp:82
+msgid "Passing Direction"
+msgstr ""
+
+#: dialogs/parmpropdlg.cpp:84
+msgid ""
+"\"in\" is a readonly parameter, \"out\" is a writeonly parameter and \"inout\" "
+"is a parameter for reading and writing."
+msgstr ""
+
+#: dialogs/umlattributedialog.cpp:42
+msgid "Attribute Properties"
+msgstr "Öznitelik Özellikleri"
+
+#: dialogs/umlattributedialog.cpp:91
+msgid "&Public"
+msgstr "&Genel"
+
+#: dialogs/umlattributedialog.cpp:155
+msgid "You have entered an invalid attribute name."
+msgstr "Geçersiz bir öznitelik adı verdiniz."
+
+#: dialogs/umlattributedialog.cpp:156
+msgid "Attribute Name Invalid"
+msgstr "Öznitelik Adı Geçersiz"
+
+#: dialogs/umlattributedialog.cpp:163
+msgid ""
+"The attribute name you have chosen is already being used in this operation."
+msgstr ""
+
+#: dialogs/umlattributedialog.cpp:164
+msgid "Attribute Name Not Unique"
+msgstr "Öznitelik Adı Geçersiz"
+
+#: dialogs/classgenpage.cpp:50
+msgid "Class &name:"
+msgstr "Sınıf &adı:"
+
+#: dialogs/classgenpage.cpp:52
+msgid "Actor &name:"
+msgstr "Aktör &adı:"
+
+#: dialogs/classgenpage.cpp:54
+msgid "Package &name:"
+msgstr "Paket a&dı:"
+
+#: dialogs/classgenpage.cpp:56
+msgid "Use case &name:"
+msgstr "&Use case adı:"
+
+#: dialogs/classgenpage.cpp:58
+msgid "Interface &name:"
+msgstr "&Arayüz adı:"
+
+#: dialogs/classgenpage.cpp:60
+msgid "Component &name:"
+msgstr "&Bileşen adı:"
+
+#: dialogs/classgenpage.cpp:62
+msgid "Artifact &name:"
+msgstr ""
+
+#: dialogs/classgenpage.cpp:64
+#, fuzzy
+msgid "Enum &name:"
+msgstr "İsim girin:"
+
+#: dialogs/classgenpage.cpp:66
+msgid "Datatype &name:"
+msgstr "&Veri tipi adı:"
+
+#: dialogs/classgenpage.cpp:68
+#, fuzzy
+msgid "Entity &name:"
+msgstr "İsim girin:"
+
+#: dialogs/classgenpage.cpp:93 dialogs/umltemplatedialog.cpp:65
+msgid "&Stereotype name:"
+msgstr "&Stereotip adı:"
+
+#: dialogs/classgenpage.cpp:107
+msgid "&Package name:"
+msgstr "&Paket adı:"
+
+#: dialogs/classgenpage.cpp:121
+msgid "A&bstract class"
+msgstr ""
+
+#: dialogs/classgenpage.cpp:123
+msgid "A&bstract use case"
+msgstr ""
+
+#: dialogs/classgenpage.cpp:131
+msgid "&Executable"
+msgstr "Ç&alıştırılabilir"
+
+#: dialogs/classgenpage.cpp:138
+msgid "Draw As"
+msgstr "Farklı Çiz"
+
+#: dialogs/classgenpage.cpp:143 dialogs/umlwidgetcolorpage.cpp:65
+msgid "&Default"
+msgstr "Ö&ntanımlı"
+
+#: dialogs/classgenpage.cpp:149
+msgid "&Library"
+msgstr "&Kütüphane"
+
+#: dialogs/classgenpage.cpp:152
+msgid "&Table"
+msgstr "&Tablo"
+
+#: dialogs/classgenpage.cpp:182
+msgid "Pro&tected"
+msgstr "&Korumalı"
+
+#: dialogs/classgenpage.cpp:186
+#, fuzzy
+msgid "Imple&mentation"
+msgstr "&Belgeler"
+
+#: dialogs/classgenpage.cpp:256
+msgid "Class name:"
+msgstr "Sınıf adı:"
+
+#: dialogs/classgenpage.cpp:264 dialogs/classgenpage.cpp:344
+msgid "Instance name:"
+msgstr ""
+
+#: dialogs/classgenpage.cpp:272
+msgid "Draw as actor"
+msgstr "Aktör olarak çiz"
+
+#: dialogs/classgenpage.cpp:277
+msgid "Multiple instance"
+msgstr ""
+
+#: dialogs/classgenpage.cpp:284
+#, fuzzy
+msgid "Show destruction"
+msgstr "İşlemleri göster"
+
+#: dialogs/classgenpage.cpp:322
+msgid "Component name:"
+msgstr "Bileşen adı:"
+
+#: dialogs/classgenpage.cpp:324
+msgid "Node name:"
+msgstr "Düğüm adı:"
+
+#: dialogs/classgenpage.cpp:398 dialogs/classgenpage.cpp:445
+#: dialogs/classgenpage.cpp:456
+msgid ""
+"The name you have chosen\n"
+"is already being used.\n"
+"The name has been reset."
+msgstr ""
+
+#: dialogs/classgenpage.cpp:399 dialogs/classgenpage.cpp:446
+#: dialogs/classgenpage.cpp:457
+msgid "Name is Not Unique"
+msgstr ""
+
+#: dialogs/umlentityattributedialog.cpp:43
+#, fuzzy
+msgid "Entity Attribute Properties"
+msgstr "Öznitelik Özellikleri"
+
+#: dialogs/umlentityattributedialog.cpp:73
+#, fuzzy
+msgid "&Default value:"
+msgstr "Ö&ntanımlı"
+
+#: dialogs/umlentityattributedialog.cpp:81
+msgid "Length/Values:"
+msgstr ""
+
+#: dialogs/umlentityattributedialog.cpp:84
+msgid "&Auto increment"
+msgstr ""
+
+#: dialogs/umlentityattributedialog.cpp:88
+msgid "Allow &null"
+msgstr ""
+
+#: dialogs/umlentityattributedialog.cpp:92
+#, fuzzy
+msgid "Attributes:"
+msgstr "Öznitelikler"
+
+#: dialogs/umlentityattributedialog.cpp:108
+msgid "Indexing"
+msgstr ""
+
+#: dialogs/umlentityattributedialog.cpp:112
+#, fuzzy
+msgid "&None"
+msgstr "&Yeni"
+
+#: dialogs/umlentityattributedialog.cpp:115
+#, fuzzy
+msgid "&Primary"
+msgstr "&Kütüphane"
+
+#: dialogs/umlentityattributedialog.cpp:118
+msgid "&Index"
+msgstr ""
+
+#: dialogs/umlentityattributedialog.cpp:121
+msgid "&Unique"
+msgstr ""
+
+#: dialogs/umlentityattributedialog.cpp:184
+#, fuzzy
+msgid "You have entered an invalid entity attribute name."
+msgstr "Geçersiz bir öznitelik adı verdiniz."
+
+#: dialogs/umlentityattributedialog.cpp:185
+#, fuzzy
+msgid "Entity Attribute Name Invalid"
+msgstr "Öznitelik Adı Geçersiz"
+
+#: dialogs/umlentityattributedialog.cpp:192
+#, fuzzy
+msgid ""
+"The entity attribute name you have chosen is already being used in this "
+"operation."
+msgstr "Verilen parametre adı bu işlemde zaten kullanılıyor."
+
+#: dialogs/umlentityattributedialog.cpp:193
+#, fuzzy
+msgid "Entity Attribute Name Not Unique"
+msgstr "Öznitelik Adı Geçersiz"
+
+#: dialogs/diagramprintpage.cpp:35
+msgid "&Diagrams"
+msgstr "&Diyagramlar"
+
+#: dialogs/diagramprintpage.cpp:40
+msgid "Filter"
+msgstr "Filtre"
+
+#: dialogs/diagramprintpage.cpp:48
+msgid "&Current diagram"
+msgstr "&Güncel diyagram"
+
+#: dialogs/diagramprintpage.cpp:53
+msgid "&All diagrams"
+msgstr "&Tüm diyagramlar"
+
+#: dialogs/diagramprintpage.cpp:57
+msgid "&Select diagrams"
+msgstr "&Diyagramları seç"
+
+#: dialogs/diagramprintpage.cpp:61
+msgid "&Type of diagram"
+msgstr "D&iyagram türü"
+
+#: dialogs/diagramprintpage.cpp:65
+msgid "Selection"
+msgstr "Seçim"
+
+#: dialogs/diagramprintpage.cpp:93 dialogs/diagramprintpage.cpp:204
+msgid "Collaboration"
+msgstr ""
+
+#: dialogs/diagramprintpage.cpp:94 dialogs/diagramprintpage.cpp:200
+msgid "Sequence"
+msgstr "Sıra"
+
+#: dialogs/diagramprintpage.cpp:98 dialogs/diagramprintpage.cpp:212
+msgid "Deployment"
+msgstr ""
+
+#: dialogs/diagramprintpage.cpp:111 umldoc.cpp:1918
+msgid "kde-uml-Diagram"
+msgstr "KDE UML Diyagramı"
+
+#: dialogs/diagramprintpage.cpp:135
+msgid "No diagrams selected."
+msgstr "Hiç diyagram seçilmedi."
+
+#: dialogs/assocrolepage.cpp:50
+msgid "Role A Properties"
+msgstr ""
+
+#: dialogs/assocrolepage.cpp:51
+msgid "Role B Properties"
+msgstr ""
+
+#: dialogs/assocrolepage.cpp:68
+msgid "Role A Visibility"
+msgstr ""
+
+#: dialogs/assocrolepage.cpp:69
+msgid "Role B Visibility"
+msgstr ""
+
+#: dialogs/assocrolepage.cpp:70
+msgid "Role A Changeability"
+msgstr ""
+
+#: dialogs/assocrolepage.cpp:71
+msgid "Role B Changeability"
+msgstr ""
+
+#. i18n: file dialogs/umlrolepropertiesbase.ui line 59
+#: dialogs/assocrolepage.cpp:93 dialogs/assocrolepage.cpp:152 rc.cpp:486
+#, no-c-format
+msgid "Rolename:"
+msgstr "Rol adı:"
+
+#. i18n: file dialogs/umlrolepropertiesbase.ui line 77
+#: dialogs/assocrolepage.cpp:99 dialogs/assocrolepage.cpp:158 rc.cpp:489
+#, no-c-format
+msgid "Multiplicity:"
+msgstr ""
+
+#. i18n: file codegenerators/javacodegenerationformbase.ui line 129
+#: dialogs/assocrolepage.cpp:106 dialogs/assocrolepage.cpp:166
+#: dialogs/settingsdlg.cpp:259 dialogs/settingsdlg.cpp:267 rc.cpp:120
+#: rc.cpp:138 rc.cpp:177 rc.cpp:195 rc.cpp:510
+#, no-c-format
+msgid "Public"
+msgstr "Genel"
+
+#. i18n: file codegenerators/javacodegenerationformbase.ui line 134
+#: dialogs/assocrolepage.cpp:109 dialogs/assocrolepage.cpp:169
+#: dialogs/settingsdlg.cpp:260 dialogs/settingsdlg.cpp:268 rc.cpp:123
+#: rc.cpp:141 rc.cpp:180 rc.cpp:198 rc.cpp:513
+#, no-c-format
+msgid "Private"
+msgstr "Özel"
+
+#. i18n: file codegenerators/javacodegenerationformbase.ui line 139
+#: dialogs/assocrolepage.cpp:112 dialogs/assocrolepage.cpp:172
+#: dialogs/settingsdlg.cpp:261 dialogs/settingsdlg.cpp:269 rc.cpp:126
+#: rc.cpp:144 rc.cpp:183 rc.cpp:201 rc.cpp:516
+#, no-c-format
+msgid "Protected"
+msgstr "Korumalı"
+
+#. i18n: file dialogs/umlrolepropertiesbase.ui line 194
+#: dialogs/assocrolepage.cpp:115 dialogs/assocrolepage.cpp:175 rc.cpp:519
+#, fuzzy, no-c-format
+msgid "Implementation"
+msgstr "Belgeler"
+
+#. i18n: file dialogs/umlrolepropertiesbase.ui line 141
+#: dialogs/assocrolepage.cpp:132 dialogs/assocrolepage.cpp:192 rc.cpp:504
+#, no-c-format
+msgid "Changeable"
+msgstr "Değiştirilebilir"
+
+#. i18n: file dialogs/umlrolepropertiesbase.ui line 133
+#: dialogs/assocrolepage.cpp:135 dialogs/assocrolepage.cpp:195 rc.cpp:501
+#, no-c-format
+msgid "Frozen"
+msgstr "Donmuş"
+
+#. i18n: file dialogs/umlrolepropertiesbase.ui line 125
+#: dialogs/assocrolepage.cpp:138 dialogs/assocrolepage.cpp:198 rc.cpp:498
+#, no-c-format
+msgid "Add only"
+msgstr "Sadece ekleme"
+
+#: dialogs/umlwidgetcolorpage.cpp:58
+msgid "&Line:"
+msgstr "&Satır:"
+
+#: dialogs/umlwidgetcolorpage.cpp:68
+msgid "&Fill:"
+msgstr "&Doldur:"
+
+#: dialogs/umlwidgetcolorpage.cpp:75
+msgid "D&efault"
+msgstr "Ö&ntanımlı"
+
+#: dialogs/umlwidgetcolorpage.cpp:78
+msgid "&Use fill"
+msgstr ""
+
+#: dialogs/umltemplatedialog.cpp:36
+msgid "Template Properties"
+msgstr "Şablon Özellikleri "
+
+#: dialogs/umltemplatedialog.cpp:128
+msgid "You have entered an invalid template name."
+msgstr "Geçersiz bir şablon adı girdiniz."
+
+#: dialogs/umltemplatedialog.cpp:129
+msgid "Template Name Invalid"
+msgstr "Geçersiz Şablon Adı"
+
+#: dialogs/umltemplatedialog.cpp:138
+#, fuzzy
+msgid ""
+"The template parameter name you have chosen is already being used in this "
+"operation."
+msgstr "Verilen parametre adı bu işlemde zaten kullanılıyor."
+
+#: dialogs/umltemplatedialog.cpp:139
+#, fuzzy
+msgid "Template Name Not Unique"
+msgstr "Parametre Adı Kullanılıyor"
+
+#. i18n: file dialogs/exportallviewsdialogbase.ui line 90
+#: dialogs/exportallviewsdialog.cpp:51 rc.cpp:463
+#, no-c-format
+msgid "The format that the images will be exported to"
+msgstr ""
+
+#: dialogs/selectopdlg.cpp:30 dialogs/selectopdlg.cpp:35
+msgid "Select Operation"
+msgstr "İşlemi Seçin"
+
+#: dialogs/selectopdlg.cpp:43
+msgid "Sequence number:"
+msgstr "Sıra numarası:"
+
+#: dialogs/selectopdlg.cpp:46
+msgid "Class operation:"
+msgstr "Sınıf işlemi:"
+
+#: dialogs/selectopdlg.cpp:54
+msgid "Custom operation:"
+msgstr "Özel işlem:"
+
+#: dialogs/notedialog.cpp:25
+msgid "Note Documentation"
+msgstr "Not Belgesi"
+
+#: dialogs/pkgcontentspage.cpp:29
+msgid "Contained Items"
+msgstr ""
+
+#: dialogs/assocpropdlg.cpp:39
+msgid "Association Properties"
+msgstr ""
+
+#: dialogs/assocpropdlg.cpp:94
+msgid "Roles"
+msgstr "Roller"
+
+#: dialogs/assocpropdlg.cpp:94
+msgid "Role Settings"
+msgstr ""
+
+#: dialogs/assocpropdlg.cpp:112
+msgid "Association font"
+msgstr "Bağıntı yazıtipi"
+
+#: dialogs/settingsdlg.cpp:30
+msgid "Umbrello Setup"
+msgstr "Umbrello Kurulumu"
+
+#: dialogs/settingsdlg.cpp:47
+msgid "User Interface"
+msgstr "Kullanıcı Arayüzü"
+
+#: dialogs/settingsdlg.cpp:47
+msgid "User Interface Settings"
+msgstr "Kullanıcı Arayüzü Ayarları"
+
+#: dialogs/settingsdlg.cpp:54
+msgid "Line color:"
+msgstr "Satır rengi:"
+
+#: dialogs/settingsdlg.cpp:60
+msgid "D&efault Color"
+msgstr "Ö&ntanımlı Renk"
+
+#: dialogs/settingsdlg.cpp:63
+msgid "Fill color:"
+msgstr "Doldurma rengi:"
+
+#: dialogs/settingsdlg.cpp:69
+msgid "De&fault Color"
+msgstr "Ön&tanımlı Renk"
+
+#: dialogs/settingsdlg.cpp:73
+#, fuzzy
+msgid "Line width:"
+msgstr "Satır:"
+
+#: dialogs/settingsdlg.cpp:81
+#, fuzzy
+msgid "D&efault Width"
+msgstr "Ö&ntanımlı"
+
+#: dialogs/settingsdlg.cpp:86
+msgid "&Use fill color"
+msgstr ""
+
+#: dialogs/settingsdlg.cpp:108
+#, fuzzy
+msgid "Enable undo"
+msgstr "&Otomatik kaydetmeyi etkinleştir"
+
+#: dialogs/settingsdlg.cpp:112
+#, fuzzy
+msgid "Use tabbed diagrams"
+msgstr "durum diyagramı"
+
+#: dialogs/settingsdlg.cpp:116
+msgid "Use new C++/Java/Ruby generators"
+msgstr ""
+
+#: dialogs/settingsdlg.cpp:120
+#, fuzzy
+msgid "Use angular association lines"
+msgstr "İşlemi Seçin"
+
+#: dialogs/settingsdlg.cpp:126
+msgid "Autosave"
+msgstr "Otomatik kaydet"
+
+#: dialogs/settingsdlg.cpp:132
+msgid "E&nable autosave"
+msgstr "&Otomatik kaydetmeyi etkinleştir"
+
+#: dialogs/settingsdlg.cpp:136
+msgid "Select auto-save time interval (mins):"
+msgstr "Otomatik kaydetme zaman aralığını seç (dakika):"
+
+#: dialogs/settingsdlg.cpp:146
+msgid "Set autosave suffix:"
+msgstr ""
+
+#: dialogs/settingsdlg.cpp:148
+msgid ""
+"<qt>"
+"<p>The autosave file will be saved to ~/autosave.xmi if the autosaving occurs "
+"before you have manually saved the file.</p>"
+"<p>If you've already saved it, the autosave file will be saved in the same "
+"folder as the file and will be named like the file's name, followed by the "
+"suffix specified.</p>"
+"<p>If the suffix is equal to the suffix of the file you've saved, the autosave "
+"will overwrite your file automatically.</p></qt>"
+msgstr ""
+
+#: dialogs/settingsdlg.cpp:158
+msgid "Startup"
+msgstr "Başlangıç"
+
+#: dialogs/settingsdlg.cpp:164
+msgid "Sta&rtup logo"
+msgstr "&Başlangıç logosu"
+
+#: dialogs/settingsdlg.cpp:168
+msgid "&Tip of the day"
+msgstr "&Günün ipucu"
+
+#: dialogs/settingsdlg.cpp:172
+msgid "&Load last project"
+msgstr "&Son projeyi yükle"
+
+#: dialogs/settingsdlg.cpp:176
+msgid "Start new project with:"
+msgstr "Yeni bir projeye başla:"
+
+#: dialogs/settingsdlg.cpp:183
+msgid "No Diagram"
+msgstr "Diyagram Yok"
+
+#: dialogs/settingsdlg.cpp:183
+msgid "Class Diagram"
+msgstr "Sınıf Diyagramı"
+
+#: dialogs/settingsdlg.cpp:184
+msgid "Use Case Diagram"
+msgstr "Use Case Diyagramı"
+
+#: dialogs/settingsdlg.cpp:184
+msgid "Sequence Diagram"
+msgstr "Sıralı Diyagram"
+
+#: dialogs/settingsdlg.cpp:185
+msgid "Collaboration Diagram"
+msgstr ""
+
+#: dialogs/settingsdlg.cpp:185
+msgid "State Diagram"
+msgstr "Durum Diyagramı"
+
+#: dialogs/settingsdlg.cpp:186
+msgid "Activity Diagram"
+msgstr "Etkinlik Diyagramı"
+
+#: dialogs/settingsdlg.cpp:186
+msgid "Component Diagram"
+msgstr "Bileşen Diyagramı"
+
+#: dialogs/settingsdlg.cpp:187
+msgid "Deployment Diagram"
+msgstr ""
+
+#: dialogs/settingsdlg.cpp:210
+msgid "Class Settings"
+msgstr "Sınıf Ayarları"
+
+#: dialogs/settingsdlg.cpp:217
+msgid "Show &visibility"
+msgstr ""
+
+#: dialogs/settingsdlg.cpp:221
+msgid "Show attributes"
+msgstr "Öznitelikleri göster"
+
+#: dialogs/settingsdlg.cpp:225
+msgid "Show operations"
+msgstr "İşlemleri göster"
+
+#: dialogs/settingsdlg.cpp:229
+msgid "Show stereot&ype"
+msgstr "&Sterotipleri göster"
+
+#: dialogs/settingsdlg.cpp:233
+msgid "Show attribute signature"
+msgstr "Öznitelik imzalarını göster"
+
+#: dialogs/settingsdlg.cpp:238
+msgid "Show package"
+msgstr "Paketi göster"
+
+#. i18n: file dialogs/diagrampropertiespage.ui line 146
+#: dialogs/settingsdlg.cpp:242 rc.cpp:417
+#, no-c-format
+msgid "Show operation signature"
+msgstr "İşlem imzasını göster"
+
+#: dialogs/settingsdlg.cpp:247
+msgid "Starting Scope"
+msgstr ""
+
+#: dialogs/settingsdlg.cpp:252
+#, fuzzy
+msgid "Default attribute scope:"
+msgstr "İşlemi Seçin"
+
+#: dialogs/settingsdlg.cpp:255
+#, fuzzy
+msgid "Default operation scope:"
+msgstr "İşlemi Seçin"
+
+#: dialogs/settingsdlg.cpp:294
+msgid "Code Generation"
+msgstr "Kod Oluşturma"
+
+#: dialogs/settingsdlg.cpp:294
+msgid "Code Generation Settings"
+msgstr "Kod Oluşturma Ayarları"
+
+#: dialogs/settingsdlg.cpp:301
+msgid "Code Viewer Settings"
+msgstr "Kod Görüntüleyici Ayarları"
+
+#: dialogs/defaultcodegenpolicypage.cpp:36
+msgid "<p align=\"center\">No Options Available.</p>"
+msgstr ""
+
+#: dialogs/classoptionspage.cpp:59 dialogs/classoptionspage.cpp:120
+#: listpopupmenu.cpp:699
+msgid "Show"
+msgstr "Göster"
+
+#: dialogs/classoptionspage.cpp:66 dialogs/classoptionspage.cpp:126
+msgid "Operatio&ns"
+msgstr "İş&lemler"
+
+#: dialogs/classoptionspage.cpp:70 dialogs/classoptionspage.cpp:143
+msgid "&Visibility"
+msgstr "&Görünürlük"
+
+#: dialogs/classoptionspage.cpp:79 dialogs/classoptionspage.cpp:130
+msgid "O&peration signature"
+msgstr "İşle&m imzası"
+
+#: dialogs/classoptionspage.cpp:83 dialogs/classoptionspage.cpp:147
+msgid "Pac&kage"
+msgstr "&Paket"
+
+#: dialogs/classoptionspage.cpp:90 dialogs/classoptionspage.cpp:135
+msgid "Att&ributes"
+msgstr "Özn&itelikler"
+
+#: dialogs/classoptionspage.cpp:94 dialogs/classoptionspage.cpp:151
+msgid "Stereot&ype"
+msgstr "&Stereotip"
+
+#: dialogs/classoptionspage.cpp:98 dialogs/classoptionspage.cpp:139
+msgid "Attr&ibute signature"
+msgstr "Öznitelik imzası"
+
+#: dialogs/classoptionspage.cpp:108
+msgid "Draw as circle"
+msgstr "Çember olarak çiz"
+
+#. i18n: file dialogs/diagrampropertiespage.ui line 61
+#: dialogs/assocgenpage.cpp:67 rc.cpp:408
+#, no-c-format
+msgid "Name:"
+msgstr "İsim:"
+
+#: dialogs/assocgenpage.cpp:80
+msgid "Type:"
+msgstr "Tür:"
+
+#: umllistview.cpp:348
+msgid "Externalize Folder"
+msgstr ""
+
+#: docgenerators/docbookgenerator.cpp:99 umldoc.cpp:556 umldoc.cpp:565
+#: umldoc.cpp:585 umldoc.cpp:620 umldoc.cpp:633 umllistview.cpp:384
+#: umlviewimageexportermodel.cpp:158
+#, c-format
+msgid "There was a problem saving file: %1"
+msgstr "Programı kaydederken bir hata oluştu: %1"
+
+#: docgenerators/docbookgenerator.cpp:99 umldoc.cpp:556 umldoc.cpp:565
+#: umldoc.cpp:585 umldoc.cpp:620 umldoc.cpp:633 umldoc.cpp:641
+#: umllistview.cpp:385
+msgid "Save Error"
+msgstr "Kaydetme Hatası"
+
+#: umllistview.cpp:416
+#, fuzzy
+msgid "Enter Model Name"
+msgstr "İsim girin:"
+
+#: umllistview.cpp:417
+#, fuzzy
+msgid "Enter the new name of the model:"
+msgstr "Aktivitenin yeni adını yazın:"
+
+#: umllistview.cpp:1007
+msgid "Views"
+msgstr "Görünümler"
+
+#: umllistview.cpp:1907
+#, fuzzy
+msgid ""
+"The name you entered was invalid.\n"
+"Creation process has been canceled."
+msgstr ""
+"Girilen isim geçersiz!\n"
+"İsim değiştirme işlemi iptal edildi."
+
+#: umllistview.cpp:1908 umllistviewitem.cpp:479
+msgid "Name Not Valid"
+msgstr "Geçersiz İsim"
+
+#: umldoc.cpp:1067 umllistview.cpp:1917
+#, fuzzy
+msgid ""
+"The name you entered was not unique.\n"
+"Is this what you wanted?"
+msgstr ""
+"Girilen isim geçersiz!\n"
+"İsim değiştirme işlemi iptal edildi."
+
+#: umldoc.cpp:1068 umllistview.cpp:1918
+#, fuzzy
+msgid "Use Name"
+msgstr "Use Case"
+
+#: umldoc.cpp:1068 umllistview.cpp:1918
+#, fuzzy
+msgid "Enter New Name"
+msgstr "İsim girin:"
+
+#: umllistview.cpp:1924 umllistview.cpp:2161
+#, fuzzy
+msgid ""
+"The name you entered was not unique!\n"
+"Creation process has been canceled."
+msgstr ""
+"Girilen isim geçersiz!\n"
+"İsim değiştirme işlemi iptal edildi."
+
+#: umllistview.cpp:2119 umllistview.cpp:2136 umllistview.cpp:2151
+msgid "Creation canceled"
+msgstr ""
+
+#: umllistview.cpp:2339
+#, fuzzy
+msgid "Loading listview..."
+msgstr "Diyagramlar yükleniyor.."
+
+#: umllistview.cpp:2671
+msgid "The folder must be emptied before it can be deleted."
+msgstr ""
+
+#: umllistview.cpp:2672
+msgid "Folder Not Empty"
+msgstr "Dizin Boş Değil"
+
+#: enumliteral.cpp:65 floatingtextwidget.cpp:111 object_factory.cpp:153
+#: umldoc.cpp:976 umldoc.cpp:1012 umldoc.cpp:1033 umldoc.cpp:1059
+msgid "Name"
+msgstr "İsim"
+
+#: floatingtextwidget.cpp:112
+#, fuzzy
+msgid "Enter operation name:"
+msgstr "Bağıntı adını girin:"
+
+#: associationwidget.cpp:2367 floatingtextwidget.cpp:162
+msgid "Enter role name:"
+msgstr ""
+
+#: associationwidget.cpp:2329 floatingtextwidget.cpp:164
+msgid "Enter multiplicity:"
+msgstr ""
+
+#: associationwidget.cpp:2347 floatingtextwidget.cpp:171
+msgid "Enter association name:"
+msgstr "Bağıntı adını girin:"
+
+#: floatingtextwidget.cpp:173 floatingtextwidget.cpp:264
+msgid "Enter new text:"
+msgstr ""
+
+#: floatingtextwidget.cpp:175
+msgid "ERROR"
+msgstr ""
+
+#: floatingtextwidget.cpp:264
+msgid "Change Text"
+msgstr "Metni Değiştir"
+
+#: codegenerator.cpp:473
+msgid ""
+"Cannot open file %1 for writing. Please make sure the folder exists and you "
+"have permissions to write to it."
+msgstr ""
+
+#: codegenerator.cpp:473
+msgid "Cannot Open File"
+msgstr "Dosya Açılamadı"
+
+#: codegenerator.cpp:531 codegenerators/simplecodegenerator.cpp:128
+msgid ""
+"Cannot create the folder:\n"
+msgstr ""
+"Dzin oluşturulamadı:\n"
+
+#: codegenerator.cpp:532 codegenerators/simplecodegenerator.cpp:129
+msgid ""
+"\n"
+"Please check the access rights"
+msgstr ""
+"\n"
+"Lütfen erişim haklarını kontrol edin"
+
+#: codegenerator.cpp:533 codegenerators/simplecodegenerator.cpp:130
+msgid "Cannot Create Folder"
+msgstr "Dizin Oluşturulamadı"
+
+#: umlviewimageexporter.cpp:46
+#, fuzzy
+msgid "Exporting view..."
+msgstr "Çıkılıyor..."
+
+#: umlviewimageexporter.cpp:50
+msgid ""
+"An error happened when exporting the image:\n"
+msgstr ""
+
+#: codeimport/classimport.cpp:39 uml.cpp:376 uml.cpp:483 uml.cpp:660
+#: uml.cpp:688 uml.cpp:712 uml.cpp:722 uml.cpp:753 uml.cpp:758 uml.cpp:783
+#: uml.cpp:793 uml.cpp:814 uml.cpp:819 uml.cpp:832 uml.cpp:839 uml.cpp:853
+#: uml.cpp:874 uml.cpp:887 umlviewimageexporter.cpp:52
+#: umlviewimageexporterall.cpp:73
+msgid "Ready."
+msgstr "Hazır."
+
+#: umlviewimageexporter.cpp:66
+msgid ""
+"The selected file %1 exists.\n"
+"Do you want to overwrite it?"
+msgstr ""
+
+#: umlviewimageexporter.cpp:67
+msgid "File Already Exists"
+msgstr ""
+
+#: aligntoolbar.cpp:40
+msgid "Align Left"
+msgstr ""
+
+#: aligntoolbar.cpp:41
+msgid "Align Right"
+msgstr ""
+
+#: aligntoolbar.cpp:42
+msgid "Align Top"
+msgstr ""
+
+#: aligntoolbar.cpp:43
+msgid "Align Bottom"
+msgstr ""
+
+#: aligntoolbar.cpp:44
+msgid "Align Vertical Middle"
+msgstr ""
+
+#: aligntoolbar.cpp:45
+msgid "Align Horizontal Middle"
+msgstr ""
+
+#: aligntoolbar.cpp:46
+msgid "Align Vertical Distribute"
+msgstr ""
+
+#: aligntoolbar.cpp:47
+msgid "Align Horizontal Distribute"
+msgstr ""
+
+#: aligntoolbar.cpp:383
+msgid ""
+"For alignment you have to select at least 2 objects like classes or actors. You "
+"can not align associations."
+msgstr ""
+
+#: enumliteral.cpp:65 object_factory.cpp:153 stereotype.cpp:76 umldoc.cpp:976
+#: umldoc.cpp:1012 umldoc.cpp:1033 umldoc.cpp:1059
+msgid "Enter name:"
+msgstr "İsim girin:"
+
+#: classifier.cpp:294 classifier.cpp:522 entity.cpp:78 enum.cpp:76
+#: object_factory.cpp:158 umldoc.cpp:1037 umldoc.cpp:1063
+msgid "That is an invalid name."
+msgstr "Bu geçersiz bir isim."
+
+#: object_factory.cpp:164
+msgid ""
+"This is a reserved keyword for the language of the configured code generator."
+msgstr ""
+
+#: object_factory.cpp:165
+msgid "Reserved Keyword"
+msgstr ""
+
+#: classifier.cpp:296 classifier.cpp:524 entity.cpp:80 object_factory.cpp:169
+#: umldoc.cpp:1043 umldoc.cpp:1073
+msgid "That name is already being used."
+msgstr "Bu isim halen kullanılıyor."
+
+#: classifier.cpp:296 classifier.cpp:524 entity.cpp:80 object_factory.cpp:170
+#: umldoc.cpp:998 umldoc.cpp:1025 umldoc.cpp:1043 umldoc.cpp:1073
+msgid "Not a Unique Name"
+msgstr ""
+
+#: umlviewimageexportermodel.cpp:126
+#, fuzzy, c-format
+msgid "Can not create directory: %1"
+msgstr "Dizin Oluşturulamadı"
+
+#: umlviewimageexportermodel.cpp:145
+msgid "Can not save an empty diagram"
+msgstr ""
+
+#: umlviewimageexportermodel.cpp:151
+#, c-format
+msgid "A problem occured while saving diagram in %1"
+msgstr ""
+
+#: model_utils.cpp:244
+msgid "new_actor"
+msgstr "yeni_aktör"
+
+#: model_utils.cpp:246
+msgid "new_usecase"
+msgstr "yeni_usecase"
+
+#: model_utils.cpp:248
+msgid "new_package"
+msgstr "yeni_paket"
+
+#: model_utils.cpp:250
+msgid "new_component"
+msgstr "yeni_bileşen"
+
+#: model_utils.cpp:252
+msgid "new_node"
+msgstr "yeni_uç"
+
+#: model_utils.cpp:254
+msgid "new_artifact"
+msgstr ""
+
+#: model_utils.cpp:256
+msgid "new_interface"
+msgstr "yeni_arayüz"
+
+#: model_utils.cpp:258
+msgid "new_datatype"
+msgstr "yeni_veritürü"
+
+#: model_utils.cpp:260
+msgid "new_enum"
+msgstr ""
+
+#: model_utils.cpp:262
+#, fuzzy
+msgid "new_entity"
+msgstr "yeni_veritürü"
+
+#: model_utils.cpp:264
+#, fuzzy
+msgid "new_folder"
+msgstr "yeni_uç"
+
+#: model_utils.cpp:266 umlcanvasobject.cpp:147
+msgid "new_association"
+msgstr "yeni_bağıntı"
+
+#: model_utils.cpp:268
+msgid "new_object"
+msgstr "yeni_nesne"
+
+#: model_utils.cpp:559
+msgid "Empty"
+msgstr ""
+
+#: model_utils.cpp:559
+msgid "Malformed argument"
+msgstr ""
+
+#: model_utils.cpp:560
+msgid "Unknown argument type"
+msgstr ""
+
+#: model_utils.cpp:560
+msgid "Illegal method name"
+msgstr ""
+
+#: model_utils.cpp:561
+msgid "Unknown return type"
+msgstr ""
+
+#: model_utils.cpp:561
+msgid "Unspecified error"
+msgstr ""
+
+#: codeimport/classimport.cpp:34
+msgid "Importing file: %1 Progress: %2/%3"
+msgstr ""
+
+#: codeimport/import_utils.cpp:181
+msgid "Is the scope %1 a namespace or a class?"
+msgstr ""
+
+#: codeimport/import_utils.cpp:182
+msgid "C++ Import Requests Your Help"
+msgstr ""
+
+#: codeimport/import_utils.cpp:183
+#, fuzzy
+msgid "Namespace"
+msgstr "yeni_paket"
+
+#: codeimport/kdevcppparser/parser.cpp:138
+msgid "<eof>"
+msgstr ""
+
+#: codeimport/kdevcppparser/parser.cpp:323
+#: codeimport/kdevcppparser/parser.cpp:2679
+#: codeimport/kdevcppparser/parser.cpp:2878
+#: codeimport/kdevcppparser/parser.cpp:2884
+msgid "expression expected"
+msgstr ""
+
+#: codeimport/kdevcppparser/parser.cpp:598
+msgid "Declaration syntax error"
+msgstr ""
+
+#: codeimport/kdevcppparser/parser.cpp:643
+#: codeimport/kdevcppparser/parser.cpp:2770
+#: codeimport/kdevcppparser/parser.cpp:3224
+#, fuzzy
+msgid "} expected"
+msgstr "Seçili:"
+
+#: codeimport/kdevcppparser/parser.cpp:684
+msgid "namespace expected"
+msgstr ""
+
+#: codeimport/kdevcppparser/parser.cpp:688
+#, fuzzy
+msgid "{ expected"
+msgstr "Seçili:"
+
+#: codeimport/kdevcppparser/parser.cpp:761
+#: codeimport/kdevcppparser/parser.cpp:2965
+msgid "Namespace name expected"
+msgstr ""
+
+#: codeimport/kdevcppparser/parser.cpp:869
+msgid "Need a type specifier to declare"
+msgstr ""
+
+#: codeimport/kdevcppparser/parser.cpp:938
+#, fuzzy
+msgid "expected a declaration"
+msgstr "İşlemi Seçin"
+
+#: codeimport/kdevcppparser/parser.cpp:1212
+#: codeimport/kdevcppparser/parser.cpp:2178
+msgid "Constant expression expected"
+msgstr ""
+
+#: codeimport/kdevcppparser/parser.cpp:1281
+#: codeimport/kdevcppparser/parser.cpp:1378
+msgid "')' expected"
+msgstr ""
+
+#: codeimport/kdevcppparser/parser.cpp:1451
+#: codeimport/kdevcppparser/parser.cpp:1914
+#: codeimport/kdevcppparser/parser.cpp:2392
+msgid "} missing"
+msgstr ""
+
+#: codeimport/kdevcppparser/parser.cpp:2074
+msgid "Member initializers expected"
+msgstr ""
+
+#: codeimport/kdevcppparser/parser.cpp:2235
+msgid "Base class specifier expected"
+msgstr ""
+
+#: codeimport/kdevcppparser/parser.cpp:2260
+msgid "Initializer clause expected"
+msgstr ""
+
+#: codeimport/kdevcppparser/parser.cpp:2303
+msgid "Identifier expected"
+msgstr ""
+
+#: codeimport/kdevcppparser/parser.cpp:2337
+msgid "Type id expected"
+msgstr ""
+
+#: codeimport/kdevcppparser/parser.cpp:2374
+#, fuzzy
+msgid "Class name expected"
+msgstr "Seçilen Sınıflar"
+
+#: codeimport/kdevcppparser/parser.cpp:2641
+#: codeimport/kdevcppparser/parser.cpp:2795
+#: codeimport/kdevcppparser/parser.cpp:2835
+#: codeimport/kdevcppparser/parser.cpp:3282
+msgid "condition expected"
+msgstr ""
+
+#: codeimport/kdevcppparser/parser.cpp:2648
+#: codeimport/kdevcppparser/parser.cpp:2670
+#: codeimport/kdevcppparser/parser.cpp:2802
+#: codeimport/kdevcppparser/parser.cpp:2813
+msgid "statement expected"
+msgstr ""
+
+#: codeimport/kdevcppparser/parser.cpp:2705
+msgid "for initialization expected"
+msgstr ""
+
+#: codeimport/kdevcppparser/parser.cpp:3273
+msgid "catch expected"
+msgstr ""
+
+#: codeimport/kdevcppparser/errors.cpp:23
+#, fuzzy
+msgid "Internal Error"
+msgstr "Yapıştırma Hatası"
+
+#: codeimport/kdevcppparser/errors.cpp:24
+msgid "Syntax Error before '%1'"
+msgstr ""
+
+#: codeimport/kdevcppparser/errors.cpp:25
+msgid "Parse Error before '%1'"
+msgstr ""
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: main.cpp:32 main.cpp:93
+msgid "Umbrello UML Modeller"
+msgstr "Umbrello UML Modelleyici"
+
+#: main.cpp:40
+#, fuzzy
+msgid "File to open"
+msgstr "açılacak dosya"
+
+#: main.cpp:41
+msgid "export diagrams to extension and exit"
+msgstr ""
+
+#: main.cpp:42
+msgid "the local directory to save the exported diagrams in"
+msgstr ""
+
+#: main.cpp:42
+msgid "the directory of the file"
+msgstr ""
+
+#: main.cpp:43
+msgid ""
+"keep the tree structure used to store the views in the document in the target "
+"directory"
+msgstr ""
+
+#: main.cpp:95
+#, fuzzy
+msgid "(c) 2001 Paul Hensgen, (c) 2002-2006 Umbrello UML Modeller Authors"
+msgstr ""
+"(c) 2001 Paul Hensgen, (c) 2002-2003 Umbrello UML Modelleyici Yazarları"
+
+#: docgenerators/main.cpp:67 main.cpp:98
+msgid "Umbrello UML Modeller Authors"
+msgstr "Umbrello UML Modelleyici Yazarları"
+
+#: docgenerators/main.cpp:41 docgenerators/main.cpp:62
+#, fuzzy
+msgid "Umbrello UML Modeller autonomous code generator"
+msgstr "Umbrello UML Modelleyici Yazarları"
+
+#: docgenerators/main.cpp:47
+#, fuzzy
+msgid "File to transform"
+msgstr "açılacak dosya"
+
+#: docgenerators/main.cpp:48
+msgid "The XSLT file to use"
+msgstr ""
+
+#: docgenerators/main.cpp:64
+#, fuzzy
+msgid ""
+"(c) 2006 Gael de Chalendar (aka Kleag), (c) 2002-2006 Umbrello UML Modeller "
+"Authors"
+msgstr ""
+"(c) 2001 Paul Hensgen, (c) 2002-2003 Umbrello UML Modelleyici Yazarları"
+
+#: docgenerators/docbookgenerator.cpp:70 umlviewimageexporterall.cpp:58
+#, fuzzy
+msgid "Exporting all views..."
+msgstr "Resim Olarak Kaydet..."
+
+#: docgenerators/docbookgenerator.cpp:77 docgenerators/docbookgenerator.cpp:83
+#: umlviewimageexporterall.cpp:64 umlviewimageexporterall.cpp:70
+msgid "Some errors happened when exporting the images:"
+msgstr ""
+
+#: association.cpp:84
+msgid "Generalization"
+msgstr "Genelleştirme"
+
+#: association.cpp:88
+#, fuzzy
+msgid "Self Association"
+msgstr "Bağıntıyı Sil"
+
+#: association.cpp:89
+#, fuzzy
+msgid "Collaboration Message"
+msgstr "Diyagramlar yükleniyor.."
+
+#: association.cpp:90
+#, fuzzy
+msgid "Sequence Message"
+msgstr "Sıralı Diyagram"
+
+#: association.cpp:91
+#, fuzzy
+msgid "Collaboration Self Message"
+msgstr "Diyagramlar yükleniyor.."
+
+#: association.cpp:92
+msgid "Sequence Self Message"
+msgstr ""
+
+#: association.cpp:95
+msgid "Realization"
+msgstr "Gerçekleme"
+
+#: association.cpp:96
+msgid "Uni Association"
+msgstr ""
+
+#: umldoc.cpp:82 umldoc.cpp:1518
+#, fuzzy
+msgid "UML Model"
+msgstr "Umbrello UML Modelleyici"
+
+#: umldoc.cpp:106
+msgid "Logical View"
+msgstr "Mantıksal Görünüm"
+
+#: umldoc.cpp:107
+msgid "Use Case View"
+msgstr "Use Case Görünümü"
+
+#: umldoc.cpp:108
+msgid "Component View"
+msgstr "Bileşen Görünümü"
+
+#: umldoc.cpp:109
+msgid "Deployment View"
+msgstr ""
+
+#: umldoc.cpp:110
+msgid "Entity Relationship Model"
+msgstr ""
+
+#: umldoc.cpp:117 umldoc.cpp:293
+msgid "Datatypes"
+msgstr "Veri türleri"
+
+#: umldoc.cpp:229
+msgid ""
+"The current file has been modified.\n"
+"Do you want to save it?"
+msgstr ""
+"Geçerli dosya değiştirildi.\n"
+"Bunu kaydetmek istiyor musunuz?"
+
+#: umldoc.cpp:355
+msgid "The file %1 does not exist."
+msgstr "%1 dosyası bulunamadı."
+
+#: folder.cpp:289 folder.cpp:293 umldoc.cpp:355 umldoc.cpp:380 umldoc.cpp:422
+#: umldoc.cpp:434 umldoc.cpp:448 umldoc.cpp:461 umldoc.cpp:472 umldoc.cpp:488
+msgid "Load Error"
+msgstr "Yükleme Hatası"
+
+#: umldoc.cpp:380
+#, fuzzy
+msgid "The file %1 seems to be corrupted."
+msgstr "%1 dosyası bulunamadı."
+
+#: umldoc.cpp:422 umldoc.cpp:434 umldoc.cpp:461
+#, c-format
+msgid "There was no XMI file found in the compressed file %1."
+msgstr ""
+
+#: umldoc.cpp:448
+#, fuzzy, c-format
+msgid "There was a problem loading the extracted file: %1"
+msgstr "Programı yüklerken bir hata oluştu: %1"
+
+#: umldoc.cpp:472 umldoc.cpp:488
+#, c-format
+msgid "There was a problem loading file: %1"
+msgstr "Programı yüklerken bir hata oluştu: %1"
+
+#: umldoc.cpp:641
+#, c-format
+msgid "There was a problem uploading file: %1"
+msgstr ""
+
+#: umldoc.cpp:934
+msgid "use case diagram"
+msgstr "use case diyagramı"
+
+#: umldoc.cpp:936
+msgid "class diagram"
+msgstr "sınıf diyagramı"
+
+#: umldoc.cpp:938
+msgid "sequence diagram"
+msgstr "sıra diyagramı"
+
+#: umldoc.cpp:940
+msgid "collaboration diagram"
+msgstr ""
+
+#: umldoc.cpp:942
+msgid "state diagram"
+msgstr "durum diyagramı"
+
+#: umldoc.cpp:944
+msgid "activity diagram"
+msgstr "etkinlik diyagramı"
+
+#: umldoc.cpp:946
+msgid "component diagram"
+msgstr "bileşen diyagramı"
+
+#: umldoc.cpp:948
+msgid "deployment diagram"
+msgstr ""
+
+#: umldoc.cpp:950
+msgid "entity relationship diagram"
+msgstr ""
+
+#: umldoc.cpp:984 umldoc.cpp:1017
+msgid "That is an invalid name for a diagram."
+msgstr "Bu bir diyagram için geçersiz bir isim."
+
+#: umldoc.cpp:998 umldoc.cpp:1025
+msgid "A diagram is already using that name."
+msgstr "Başka bir diyagram bu ismi kullanıyor."
+
+#: umldoc.cpp:1099
+msgid "Are you sure you want to delete diagram %1?"
+msgstr "%1 diyagramını silmek istediğinize emin misiniz?"
+
+#: umldoc.cpp:1099
+msgid "Delete Diagram"
+msgstr "Diyagramı Sil"
+
+#: umldoc.cpp:1573
+msgid "Setting up the document..."
+msgstr "Belge düzenleniyor..."
+
+#: umldoc.cpp:1600
+msgid "Resolving object references..."
+msgstr ""
+
+#: umldoc.cpp:1638
+msgid "Loading UML elements..."
+msgstr "UML öğeleri yükleniyor..."
+
+#: umldoc.cpp:1811
+msgid "Loading diagrams..."
+msgstr "Diyagramlar yükleniyor.."
+
+#: umldoc.cpp:2104
+#, c-format
+msgid "/autosave%1"
+msgstr ""
+
+#: umllistviewitem.cpp:372 umllistviewitem.cpp:406 umllistviewitem.cpp:434
+msgid "Rename canceled"
+msgstr ""
+
+#: umllistviewitem.cpp:468
+msgid "Renaming an item of listview type %1 is not yet implemented."
+msgstr ""
+
+#: umllistviewitem.cpp:469
+msgid "Function Not Implemented"
+msgstr ""
+
+#: umllistviewitem.cpp:478
+#, fuzzy
+msgid ""
+"The name you entered was invalid.\n"
+"Renaming process has been canceled."
+msgstr ""
+"Girilen isim geçersiz!\n"
+"İsim değiştirme işlemi iptal edildi."
+
+#: codegenerators/cppcodegenerationform.cpp:36
+#, fuzzy
+msgid "General Options"
+msgstr "Genel ayarlar"
+
+#: codegenerators/cppcodegenerationform.cpp:38
+#, fuzzy
+msgid "Package is a namespace"
+msgstr "Paket adı:"
+
+#: codegenerators/cppcodegenerationform.cpp:41
+msgid "Virtual destructors"
+msgstr ""
+
+#: codegenerators/cppcodegenerationform.cpp:44
+msgid "Generate empty constructors"
+msgstr ""
+
+#: codegenerators/cppcodegenerationform.cpp:47
+msgid "Generate accessor methods"
+msgstr ""
+
+#: codegenerators/cppcodegenerationform.cpp:50
+#, fuzzy
+msgid "Operations are inline"
+msgstr "Geçersiz İşlem Adı"
+
+#: codegenerators/cppcodegenerationform.cpp:53
+msgid "Accessors are inline"
+msgstr ""
+
+#: codegenerators/cppcodegenerationform.cpp:57
+msgid "Accessors are public"
+msgstr ""
+
+#: umlcanvasobject.cpp:150
+msgid "new_attribute"
+msgstr "yeni_öznitelik"
+
+#: umlcanvasobject.cpp:153
+msgid "new_template"
+msgstr ""
+
+#: umlcanvasobject.cpp:156
+msgid "new_operation"
+msgstr "yeni_işlem"
+
+#: umlcanvasobject.cpp:159
+#, fuzzy
+msgid "new_literal"
+msgstr "yeni_arayüz"
+
+#: umlcanvasobject.cpp:162
+#, fuzzy
+msgid "new_field"
+msgstr "yeni_arayüz"
+
+#: uml.cpp:179
+msgid "&Export model to DocBook"
+msgstr ""
+
+#: uml.cpp:182
+msgid "&Export model to XHTML"
+msgstr ""
+
+#: uml.cpp:186
+msgid "&New Class Wizard..."
+msgstr "&Yeni Sınıf Sihirbazı..."
+
+#: uml.cpp:188
+msgid "&Add Default Datatypes for Active Language"
+msgstr ""
+
+#: uml.cpp:193
+msgid "&Code Generation Wizard..."
+msgstr "&Kod Oluşturma Sihirbazı..."
+
+#: uml.cpp:195
+msgid "&Generate All Code"
+msgstr "&Tüm Kodu Oluştur"
+
+#: uml.cpp:198
+#, fuzzy
+msgid "&Import Classes..."
+msgstr "Sı&nıfları Al..."
+
+#: uml.cpp:201
+msgid "Creates a new document"
+msgstr "Yeni bir dosya oluştururur"
+
+#: uml.cpp:202
+msgid "Opens an existing document"
+msgstr "Mevcut dosyalardan birisini açar"
+
+#: uml.cpp:203
+msgid "Opens a recently used file"
+msgstr "Son kullanılan dosyalardan birisini açar"
+
+#: uml.cpp:204
+#, fuzzy
+msgid "Saves the document"
+msgstr "Yeni bir dosya oluştururur"
+
+#: uml.cpp:205
+#, fuzzy
+msgid "Saves the document as..."
+msgstr "Belge düzenleniyor..."
+
+#: uml.cpp:206
+#, fuzzy
+msgid "Closes the document"
+msgstr "Geçerli belgeyi kapatır"
+
+#: uml.cpp:207
+#, fuzzy
+msgid "Prints out the document"
+msgstr "Geçerli belgeyi yazdırır"
+
+#: uml.cpp:208
+msgid "Quits the application"
+msgstr "Uygulamadan çıkar"
+
+#: uml.cpp:209
+msgid "Exports the model to the docbook format"
+msgstr ""
+
+#: uml.cpp:210
+msgid "Exports the model to the XHTML format"
+msgstr ""
+
+#: uml.cpp:211
+msgid "Cuts the selected section and puts it to the clipboard"
+msgstr ""
+
+#: uml.cpp:212
+msgid "Copies the selected section to the clipboard"
+msgstr ""
+
+#: uml.cpp:213
+msgid "Pastes the contents of the clipboard"
+msgstr ""
+
+#: uml.cpp:214
+msgid "Set the default program preferences"
+msgstr ""
+
+#: uml.cpp:216
+msgid "Delete &Selected"
+msgstr "&Seçileni Sil"
+
+#: uml.cpp:224
+msgid "&Class Diagram..."
+msgstr "&Sınıf Diyagramı..."
+
+#: uml.cpp:228
+msgid "&Autolayout..."
+msgstr ""
+
+#: uml.cpp:231
+msgid "&Sequence Diagram..."
+msgstr "&Sıra Diyagramı..."
+
+#: uml.cpp:234
+msgid "C&ollaboration Diagram..."
+msgstr ""
+
+#: uml.cpp:237
+msgid "&Use Case Diagram..."
+msgstr "&Use Case Diyagramı..."
+
+#: uml.cpp:240
+msgid "S&tate Diagram..."
+msgstr "D&urum Diyagramı..."
+
+#: uml.cpp:243
+msgid "&Activity Diagram..."
+msgstr "Etkinli&k Diyagramı..."
+
+#: uml.cpp:246
+msgid "Co&mponent Diagram..."
+msgstr "Bileşen &Diyagramı..."
+
+#: uml.cpp:250
+msgid "&Deployment Diagram..."
+msgstr ""
+
+#: uml.cpp:254
+#, fuzzy
+msgid "&Entity Relationship Diagram..."
+msgstr "Etkinli&k Diyagramı..."
+
+#: uml.cpp:258
+msgid "&Clear Diagram"
+msgstr "&Diyagramı Temizle"
+
+#: uml.cpp:260
+msgid "&Snap to Grid"
+msgstr "&Kılavuza Uydur"
+
+#: uml.cpp:262
+msgid "S&how Grid"
+msgstr "&Kılavuzları Göster"
+
+#: uml.cpp:265
+#, fuzzy
+msgid "&Hide Grid"
+msgstr "&Kılavuzları Göster"
+
+#: uml.cpp:269
+msgid "&Export as Picture..."
+msgstr "&Resim Olarak Kaydet..."
+
+#: uml.cpp:271
+#, fuzzy
+msgid "Export &All Diagrams as Pictures..."
+msgstr "Resim Olarak Kaydet..."
+
+#: uml.cpp:286
+msgid "&Zoom Slider"
+msgstr ""
+
+#: uml.cpp:289
+#, c-format
+msgid "Z&oom to 100%"
+msgstr ""
+
+#: uml.cpp:295
+msgid "&Move Tab Left"
+msgstr ""
+
+#: uml.cpp:296
+msgid "&Move Tab Right"
+msgstr ""
+
+#: uml.cpp:308
+#, fuzzy
+msgid "Select Diagram on Left"
+msgstr "&Diyagramları seç"
+
+#: uml.cpp:309
+#, fuzzy
+msgid "Select Diagram on Right"
+msgstr "&Diyagramları seç"
+
+#: uml.cpp:327
+msgid "&Windows"
+msgstr "&Pencereler"
+
+#: uml.cpp:347
+#, fuzzy, c-format
+msgid " &33%"
+msgstr "% &33 "
+
+#: uml.cpp:348
+#, fuzzy, c-format
+msgid " &50%"
+msgstr "% &50 "
+
+#: uml.cpp:349
+#, fuzzy, c-format
+msgid " &75%"
+msgstr "% &75 "
+
+#: uml.cpp:350
+#, fuzzy, c-format
+msgid "&100%"
+msgstr "% 1&00"
+
+#: uml.cpp:351
+#, fuzzy, c-format
+msgid "1&50%"
+msgstr "% &150"
+
+#: uml.cpp:352
+#, fuzzy, c-format
+msgid "&200%"
+msgstr "% &200 "
+
+#: uml.cpp:353
+#, fuzzy, c-format
+msgid "3&00%"
+msgstr "% 3&00"
+
+#: uml.cpp:394
+msgid "Diagram Toolbar"
+msgstr "Diyagram Araç Çubuğu"
+
+#: uml.cpp:398
+#, fuzzy
+msgid "Alignment Toolbar"
+msgstr "Diyagram Araç Çubuğu"
+
+#: listpopupmenu.cpp:615 uml.cpp:420
+msgid "Class Diagram..."
+msgstr "Sınıf Diyagramı..."
+
+#: listpopupmenu.cpp:618 uml.cpp:421
+msgid "Sequence Diagram..."
+msgstr "Sıralı Diyagram..."
+
+#: listpopupmenu.cpp:619 uml.cpp:422
+#, fuzzy
+msgid "Collaboration Diagram..."
+msgstr "Diyagramlar yükleniyor.."
+
+#: listpopupmenu.cpp:551 uml.cpp:423
+msgid "Use Case Diagram..."
+msgstr "Use Case Diyagramı..."
+
+#: listpopupmenu.cpp:616 uml.cpp:424
+msgid "State Diagram..."
+msgstr "Durum Diyagramı..."
+
+#: listpopupmenu.cpp:617 uml.cpp:425
+msgid "Activity Diagram..."
+msgstr "Etkinlik Diyagramı..."
+
+#: listpopupmenu.cpp:521 uml.cpp:426
+msgid "Component Diagram..."
+msgstr "Bileşen Diyagramı..."
+
+#: listpopupmenu.cpp:528 uml.cpp:427
+msgid "Deployment Diagram..."
+msgstr ""
+
+#: listpopupmenu.cpp:541 uml.cpp:428
+#, fuzzy
+msgid "Entity Relationship Diagram..."
+msgstr "Diyagramlar yükleniyor.."
+
+#: uml.cpp:458
+msgid "&Tree View"
+msgstr "&Ağaç Görünümü"
+
+#: uml.cpp:467
+msgid "&Documentation"
+msgstr "&Belgeler"
+
+#: uml.cpp:479 uml.cpp:664 uml.cpp:692
+msgid "Opening file..."
+msgstr "Dosya açılıyor..."
+
+#: uml.cpp:650
+msgid "Creating new document..."
+msgstr "Yeni belge oluşturuluyor..."
+
+#: uml.cpp:673
+msgid ""
+"*.xmi *.xmi.tgz *.xmi.tar.bz2 *.mdl|All Supported Files (*.xmi, *.xmi.tgz, "
+"*.xmi.tar.bz2, *.mdl)\n"
+"*.xmi|Uncompressed XMI Files (*.xmi)\n"
+"*.xmi.tgz|Gzip Compressed XMI Files (*.xmi.tgz)\n"
+"*.xmi.tar.bz2|Bzip2 Compressed XMI Files (*.xmi.tar.bz2)\n"
+"*.mdl|Rose model files"
+msgstr ""
+
+#: uml.cpp:677
+msgid "Open File"
+msgstr "Dosya Aç"
+
+#: uml.cpp:716
+msgid "Saving file..."
+msgstr "Dosya kaydediliyor..."
+
+#: uml.cpp:727
+#, fuzzy
+msgid "Saving file with a new filename..."
+msgstr "Dosya yeni bir isimle kaydediliyor..."
+
+#: uml.cpp:732
+msgid ""
+"*.xmi|XMI File\n"
+"*.xmi.tgz|Gzip Compressed XMI File\n"
+"*.xmi.tar.bz2|Bzip2 Compressed XMI File\n"
+"*|All Files"
+msgstr ""
+
+#: uml.cpp:740
+msgid ""
+"The file %1 exists.\n"
+"Do you wish to overwrite it?"
+msgstr ""
+"%1 dosyası mevcut.\n"
+"Bunun üzerine yazmak istiyor musunuz?"
+
+#: uml.cpp:740
+#, fuzzy
+msgid "Overwrite"
+msgstr "Ü&zerine yaz"
+
+#: uml.cpp:764
+msgid "Closing file..."
+msgstr "Dosya kapatılıyor..."
+
+#: uml.cpp:772
+msgid "Printing..."
+msgstr "Yazdırılıyor..."
+
+#: uml.cpp:779
+#, c-format
+msgid "Print %1"
+msgstr ""
+
+#: uml.cpp:787
+msgid "Exiting..."
+msgstr "Çıkılıyor..."
+
+#: uml.cpp:823
+msgid "Cutting selection..."
+msgstr "Seçim kesiliyor..."
+
+#: uml.cpp:836
+msgid "Copying selection to clipboard..."
+msgstr "Seçim panoya kopyalanıyor..."
+
+#: uml.cpp:844
+msgid "Inserting clipboard contents..."
+msgstr "Pano içeriği aktarılıyor..."
+
+#: uml.cpp:849
+msgid ""
+"Umbrello could not paste the clipboard contents.  The objects in the clipboard "
+"may be of the wrong type to be pasted here."
+msgstr ""
+
+#: clipboard/umlclipboard.cpp:691 uml.cpp:851
+msgid "Paste Error"
+msgstr "Yapıştırma Hatası"
+
+#: uml.cpp:863
+msgid "Toggling toolbar..."
+msgstr "Araç çubuğu açılıyor/kapatılıyor..."
+
+#: uml.cpp:878
+msgid "Toggle the statusbar..."
+msgstr "Durum çubuğunu aç/kapat..."
+
+#: uml.cpp:1186
+msgid "Cannot view code until you generate some first."
+msgstr ""
+
+#: uml.cpp:1186 uml.cpp:1189
+msgid "Cannot View Code"
+msgstr "Kod Görüntülenemedi"
+
+#: uml.cpp:1189
+msgid "Cannot view code from simple code writer."
+msgstr ""
+
+#: uml.cpp:1387
+msgid "*.idl|IDL Files (*.idl)"
+msgstr ""
+
+#: uml.cpp:1389
+msgid "*.py|Python Files (*.py)"
+msgstr ""
+
+#: uml.cpp:1391
+msgid "*.java|Java Files (*.java)"
+msgstr ""
+
+#: uml.cpp:1393
+msgid "*.pas|Pascal Files (*.pas)"
+msgstr ""
+
+#: uml.cpp:1395
+msgid "*.ads *.ada|Ada Files (*.ads *.ada)"
+msgstr ""
+
+#: uml.cpp:1397
+#, fuzzy
+msgid "*.h *.hh *.hpp *.hxx *.H|Header Files (*.h *.hh *.hpp *.hxx *.H)"
+msgstr ""
+"*.h *.hpp *.hxx|Başlık Dosyaları (*.h *.hpp *.hxx)\n"
+"*|Tüm Dosyalar"
+
+#: uml.cpp:1399
+msgid "All Files"
+msgstr ""
+
+#: uml.cpp:1401
+msgid "Select Code to Import"
+msgstr ""
+
+#. i18n: file umbrelloui.rc line 5
+#: rc.cpp:6
+#, no-c-format
+msgid "&Export"
+msgstr ""
+
+#. i18n: file umbrelloui.rc line 13
+#: rc.cpp:12
+#, no-c-format
+msgid "&Diagram"
+msgstr "&Diyagram"
+
+#. i18n: file umbrelloui.rc line 14
+#: rc.cpp:15
+#, no-c-format
+msgid "&New"
+msgstr "&Yeni"
+
+#. i18n: file umbrelloui.rc line 31
+#: rc.cpp:18
+#, no-c-format
+msgid "Sh&ow"
+msgstr "&Göster"
+
+#. i18n: file umbrelloui.rc line 43
+#: rc.cpp:24
+#, no-c-format
+msgid "&Code"
+msgstr "&Kod"
+
+#. i18n: file umbrelloui.rc line 47
+#: rc.cpp:27
+#, no-c-format
+msgid "Active &Language"
+msgstr "&Etkin Dil"
+
+#. i18n: file codegenerators/cppcodegenerationformbase.ui line 53
+#: rc.cpp:33 rc.cpp:156
+#, no-c-format
+msgid "Slash-Slash (//)"
+msgstr ""
+
+#. i18n: file codegenerators/cppcodegenerationformbase.ui line 58
+#: rc.cpp:36 rc.cpp:159
+#, no-c-format
+msgid "Slash-Star (/**  */)"
+msgstr ""
+
+#. i18n: file codegenerators/cppcodegenerationformbase.ui line 70
+#: rc.cpp:39 rc.cpp:153 rc.cpp:210
+#, fuzzy, no-c-format
+msgid "Style:"
+msgstr "Yol Biçemi"
+
+#. i18n: file codegenerators/cppcodegenerationformbase.ui line 98
+#: rc.cpp:42
+#, no-c-format
+msgid "<p align=\"center\">C++ Code Generation</p>"
+msgstr ""
+
+#. i18n: file codegenerators/cppcodegenerationformbase.ui line 136
+#: rc.cpp:48
+#, fuzzy, no-c-format
+msgid "Method Body Generation"
+msgstr "Kod Oluşturma"
+
+#. i18n: file codegenerators/cppcodegenerationformbase.ui line 164
+#: rc.cpp:51
+#, no-c-format
+msgid "Use following for classes in generated code:"
+msgstr ""
+
+#. i18n: file codegenerators/cppcodegenerationformbase.ui line 201
+#: rc.cpp:54
+#, no-c-format
+msgid "QPtrList"
+msgstr ""
+
+#. i18n: file codegenerators/cppcodegenerationformbase.ui line 202
+#: rc.cpp:57 rc.cpp:81
+#, fuzzy, no-c-format
+msgid "vector"
+msgstr "Aktör"
+
+#. i18n: file codegenerators/cppcodegenerationformbase.ui line 211
+#: rc.cpp:60
+#, fuzzy, no-c-format
+msgid "<b>Variable</b>"
+msgstr "Sınıf adı:"
+
+#. i18n: file codegenerators/cppcodegenerationformbase.ui line 233
+#: rc.cpp:63 rc.cpp:96
+#, fuzzy, no-c-format
+msgid "..."
+msgstr "Uç..."
+
+#. i18n: file codegenerators/cppcodegenerationformbase.ui line 273
+#: rc.cpp:66
+#, fuzzy, no-c-format
+msgid "QString"
+msgstr "string"
+
+#. i18n: file codegenerators/cppcodegenerationformbase.ui line 274
+#: rc.cpp:69 rc.cpp:90
+#, no-c-format
+msgid "string"
+msgstr "string"
+
+#. i18n: file codegenerators/cppcodegenerationformbase.ui line 325
+#: rc.cpp:72
+#, no-c-format
+msgid "<p align=\"center\">String</p>"
+msgstr ""
+
+#. i18n: file codegenerators/cppcodegenerationformbase.ui line 341
+#: rc.cpp:75
+#, no-c-format
+msgid "<p align=\"center\">List</p>"
+msgstr ""
+
+#. i18n: file codegenerators/cppcodegenerationformbase.ui line 364
+#: rc.cpp:78
+#, no-c-format
+msgid "qptrlist.h"
+msgstr ""
+
+#. i18n: file codegenerators/cppcodegenerationformbase.ui line 374
+#: rc.cpp:84
+#, no-c-format
+msgid "<i>global?</i>"
+msgstr ""
+
+#. i18n: file codegenerators/cppcodegenerationformbase.ui line 397
+#: rc.cpp:87
+#, fuzzy, no-c-format
+msgid "qstring.h"
+msgstr "string"
+
+#. i18n: file codegenerators/cppcodegenerationformbase.ui line 418
+#: rc.cpp:93
+#, fuzzy, no-c-format
+msgid "Class name"
+msgstr "Sınıf adı:"
+
+#. i18n: file codegenerators/cppcodegenerationformbase.ui line 448
+#: rc.cpp:99
+#, no-c-format
+msgid "<i><p align=\"center\">Include file</p></i>"
+msgstr ""
+
+#. i18n: file codegenerators/javacodegenerationformbase.ui line 40
+#: rc.cpp:102
+#, fuzzy, no-c-format
+msgid "Project Generation"
+msgstr "Kod Oluşturma"
+
+#. i18n: file codegenerators/javacodegenerationformbase.ui line 51
+#: rc.cpp:105
+#, fuzzy, no-c-format
+msgid "Create ANT build document"
+msgstr "Yeni bir dosya oluştururur"
+
+#. i18n: file codegenerators/javacodegenerationformbase.ui line 69
+#: rc.cpp:108 rc.cpp:165
+#, no-c-format
+msgid "Auto-Generate Methods"
+msgstr ""
+
+#. i18n: file codegenerators/javacodegenerationformbase.ui line 88
+#: rc.cpp:111 rc.cpp:168
+#, no-c-format
+msgid "Empty constructor methods"
+msgstr ""
+
+#. i18n: file codegenerators/javacodegenerationformbase.ui line 99
+#: rc.cpp:114 rc.cpp:171
+#, fuzzy, no-c-format
+msgid "Association accessor methods"
+msgstr "Bağıntı Adı"
+
+#. i18n: file codegenerators/javacodegenerationformbase.ui line 110
+#: rc.cpp:117 rc.cpp:174
+#, fuzzy, no-c-format
+msgid "Attribute accessor methods"
+msgstr "Öznitelik Özellikleri"
+
+#. i18n: file codegenerators/javacodegenerationformbase.ui line 144
+#: rc.cpp:129 rc.cpp:186
+#, no-c-format
+msgid "From Parent Object"
+msgstr ""
+
+#. i18n: file codegenerators/javacodegenerationformbase.ui line 159
+#: rc.cpp:132 rc.cpp:189
+#, fuzzy, no-c-format
+msgid "Default attribute accessor scope:"
+msgstr "İşlemi Seçin"
+
+#. i18n: file codegenerators/javacodegenerationformbase.ui line 177
+#: rc.cpp:135 rc.cpp:192
+#, fuzzy, no-c-format
+msgid "Default association field scope:"
+msgstr "İşlemi Seçin"
+
+#. i18n: file codegenerators/javacodegenerationformbase.ui line 198
+#: rc.cpp:147 rc.cpp:204
+#, no-c-format
+msgid "From Parent Role"
+msgstr ""
+
+#. i18n: file codegenerators/javacodegenerationformbase.ui line 269
+#: rc.cpp:162
+#, no-c-format
+msgid "<p align=\"center\">Java Code Generation</p>"
+msgstr ""
+
+#. i18n: file codegenerators/rubycodegenerationformbase.ui line 213
+#: rc.cpp:213
+#, no-c-format
+msgid "Hash (#)"
+msgstr ""
+
+#. i18n: file codegenerators/rubycodegenerationformbase.ui line 218
+#: rc.cpp:216
+#, no-c-format
+msgid "Begin-End (=begin  =end)"
+msgstr ""
+
+#. i18n: file codegenerators/rubycodegenerationformbase.ui line 240
+#: rc.cpp:219
+#, no-c-format
+msgid "<p align=\"center\">Ruby Code Generation</p>"
+msgstr ""
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 69
+#: rc.cpp:228
+#, no-c-format
+msgid "Language"
+msgstr "Dil"
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 93
+#: rc.cpp:231
+#, no-c-format
+msgid "Folders"
+msgstr "Dizinler"
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 110
+#: rc.cpp:234
+#, no-c-format
+msgid "Write all generated files to folder:"
+msgstr ""
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 118
+#: rc.cpp:237
+#, no-c-format
+msgid "Bro&wse..."
+msgstr "&Gözat..."
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 126
+#: rc.cpp:240
+#, no-c-format
+msgid "B&rowse..."
+msgstr "Gö&zat..."
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 134
+#: rc.cpp:243
+#, no-c-format
+msgid "&Include heading files from folder:"
+msgstr ""
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 145
+#: rc.cpp:246
+#, no-c-format
+msgid "Files generated by Code Generator will be written to this folder"
+msgstr ""
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 153
+#: rc.cpp:249
+#, no-c-format
+msgid ""
+"Files in this folder will be used as heading files in the generated code"
+msgstr ""
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 197
+#: rc.cpp:252
+#, no-c-format
+msgid "Overwrite Policy"
+msgstr ""
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 215
+#: rc.cpp:255
+#, no-c-format
+msgid ""
+"If a file with the same name as the name code \n"
+"generator wants to use as output file already exists:"
+msgstr ""
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 223
+#: rc.cpp:259
+#, no-c-format
+msgid "O&verwrite"
+msgstr "Ü&zerine yaz"
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 226
+#: rc.cpp:262
+#, no-c-format
+msgid "Overwrite existing files if they exist in the destination folder"
+msgstr ""
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 234
+#: rc.cpp:265
+#, no-c-format
+msgid "As&k"
+msgstr "&Sor"
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 240
+#: rc.cpp:268
+#, no-c-format
+msgid "If a file with the same name already exists, ask what to do"
+msgstr ""
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 248
+#: rc.cpp:271
+#, no-c-format
+msgid "&Use a different name"
+msgstr "&Farklı bir isim kullan"
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 251
+#: rc.cpp:274
+#, no-c-format
+msgid ""
+"If a file already exists in the destination folder, select a different name to "
+"use by adding a suffix to the file name"
+msgstr ""
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 265
+#: rc.cpp:277
+#, no-c-format
+msgid "Formatting"
+msgstr "Biçimlendirme"
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 284
+#: rc.cpp:280
+#, no-c-format
+msgid "Lines"
+msgstr "Satır"
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 346
+#: rc.cpp:283
+#, no-c-format
+msgid "Line ending style:"
+msgstr ""
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 354
+#: rc.cpp:286
+#, no-c-format
+msgid "Indentation type:"
+msgstr "Girinti türü:"
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 362
+#: rc.cpp:289
+#, no-c-format
+msgid "Indentation amount:"
+msgstr "Girinti miktarı:"
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 368
+#: rc.cpp:292
+#, no-c-format
+msgid ""
+"*NIX (\"\\n\")"
+msgstr ""
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 373
+#: rc.cpp:295
+#, fuzzy, no-c-format
+msgid ""
+"Windows (\"\\r\\n\")"
+msgstr "Pencereler"
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 378
+#: rc.cpp:298
+#, no-c-format
+msgid "Mac (\"\\r\")"
+msgstr ""
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 388
+#: rc.cpp:301
+#, no-c-format
+msgid "No Indentation"
+msgstr "Girinti Yok"
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 393
+#: rc.cpp:304
+#, no-c-format
+msgid "Tab"
+msgstr "Sekme"
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 398
+#: rc.cpp:307
+#, no-c-format
+msgid "Space"
+msgstr "Boşluk"
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 417
+#: rc.cpp:310
+#, no-c-format
+msgid "Comment Verbosity"
+msgstr ""
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 433
+#: rc.cpp:313
+#, no-c-format
+msgid ""
+"Write comments &for sections even if section \n"
+"is empty"
+msgstr ""
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 436
+#: rc.cpp:317
+#, no-c-format
+msgid ""
+"Writes comments to indicate the different sections (public, private etc) in a "
+"class, even if the sections are empty"
+msgstr ""
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 452
+#: rc.cpp:320
+#, no-c-format
+msgid "&Write documentation comments even if empty"
+msgstr ""
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 455
+#: rc.cpp:323
+#, no-c-format
+msgid "Write comments &for class and method documentation even if empty"
+msgstr ""
+
+#. i18n: file dialogs/codegenerationoptionsbase.ui line 468
+#: rc.cpp:326
+#, no-c-format
+msgid "Language Options"
+msgstr "Dil Seçenekleri"
+
+#. i18n: file dialogs/codegenerationwizardbase.ui line 16
+#: rc.cpp:329
+#, no-c-format
+msgid "Code Generation Wizard"
+msgstr "Kod Oluşturma Sihirbazı"
+
+#. i18n: file dialogs/codegenerationwizardbase.ui line 23
+#: rc.cpp:332
+#, no-c-format
+msgid "Select Classes"
+msgstr "Sınıfları Seç"
+
+#. i18n: file dialogs/codegenerationwizardbase.ui line 41
+#: rc.cpp:335
+#, no-c-format
+msgid ""
+"Place all the classes you want to generate code\n"
+"for in the right hand side list"
+msgstr ""
+
+#. i18n: file dialogs/codegenerationwizardbase.ui line 78
+#: rc.cpp:339
+#, no-c-format
+msgid "Add class for code generation"
+msgstr ""
+
+#. i18n: file dialogs/codegenerationwizardbase.ui line 101
+#: rc.cpp:342
+#, no-c-format
+msgid "Classes Selected"
+msgstr "Seçilen Sınıflar"
+
+#. i18n: file dialogs/codegenerationwizardbase.ui line 136
+#: rc.cpp:345
+#, no-c-format
+msgid "Remove class from Code Generation"
+msgstr ""
+
+#. i18n: file dialogs/codegenerationwizardbase.ui line 159
+#: rc.cpp:348
+#, no-c-format
+msgid "Classes Available"
+msgstr "Mevcut Sınıflar"
+
+#. i18n: file dialogs/codegenerationwizardbase.ui line 209
+#: rc.cpp:351
+#, no-c-format
+msgid "Code Generation Status"
+msgstr "Kod Oluşturma Durumu"
+
+#. i18n: file dialogs/codegenerationwizardbase.ui line 226
+#: rc.cpp:354
+#, no-c-format
+msgid "Press the Generation button to start the code generation"
+msgstr ""
+
+#. i18n: file dialogs/codegenerationwizardbase.ui line 234
+#: rc.cpp:357 rc.cpp:363
+#, no-c-format
+msgid "Generation Status"
+msgstr "Oluşturma Durumu"
+
+#. i18n: file dialogs/codeviewerdialogbase.ui line 43
+#: rc.cpp:369
+#, no-c-format
+msgid "Show hidden blocks"
+msgstr ""
+
+#. i18n: file dialogs/codeviewerdialogbase.ui line 59
+#: rc.cpp:372
+#, no-c-format
+msgid "<p align=\"center\">component name here</p>"
+msgstr ""
+
+#. i18n: file dialogs/codeviewerdialogbase.ui line 86
+#: rc.cpp:378
+#, no-c-format
+msgid "Show block type"
+msgstr "Blok türünü göster"
+
+#. i18n: file dialogs/codevieweroptionsbase.ui line 45
+#: rc.cpp:381
+#, no-c-format
+msgid "Colors"
+msgstr "Renkler"
+
+#. i18n: file dialogs/codevieweroptionsbase.ui line 72
+#: rc.cpp:384
+#, no-c-format
+msgid "Font:"
+msgstr "Yazıtipi:"
+
+#. i18n: file dialogs/codevieweroptionsbase.ui line 103
+#: rc.cpp:387
+#, no-c-format
+msgid "Paper:"
+msgstr "Kağıt:"
+
+#. i18n: file dialogs/codevieweroptionsbase.ui line 134
+#: rc.cpp:390
+#, no-c-format
+msgid "Selected:"
+msgstr "Seçili:"
+
+#. i18n: file dialogs/codevieweroptionsbase.ui line 260
+#: rc.cpp:393
+#, no-c-format
+msgid "<p align=\"right\">UML object block:</p>"
+msgstr ""
+
+#. i18n: file dialogs/codevieweroptionsbase.ui line 276
+#: rc.cpp:396
+#, no-c-format
+msgid "<p align=\"right\">Hidden block:</p>"
+msgstr ""
+
+#. i18n: file dialogs/codevieweroptionsbase.ui line 294
+#: rc.cpp:399
+#, no-c-format
+msgid "<p align=\"right\">Uneditable text:</p>"
+msgstr ""
+
+#. i18n: file dialogs/codevieweroptionsbase.ui line 333
+#: rc.cpp:402
+#, no-c-format
+msgid "<p align=\"right\">Editable text:</p>"
+msgstr ""
+
+#. i18n: file dialogs/diagrampropertiespage.ui line 30
+#: rc.cpp:405
+#, no-c-format
+msgid "Diagram Properties"
+msgstr "Diyagram Özellikleri"
+
+#. i18n: file dialogs/diagrampropertiespage.ui line 92
+#: rc.cpp:411
+#, no-c-format
+msgid "Zoom:"
+msgstr "Odakla:"
+
+#. i18n: file dialogs/diagrampropertiespage.ui line 119
+#: rc.cpp:414
+#, no-c-format
+msgid "%"
+msgstr "%"
+
+#. i18n: file dialogs/diagrampropertiespage.ui line 186
+#: rc.cpp:420
+#, no-c-format
+msgid "Show &grid"
+msgstr "Kılavuzları &göster"
+
+#. i18n: file dialogs/diagrampropertiespage.ui line 194
+#: rc.cpp:423
+#, no-c-format
+msgid "Snap &to grid"
+msgstr "&Kılavuza uydur"
+
+#. i18n: file dialogs/diagrampropertiespage.ui line 202
+#: rc.cpp:426
+#, no-c-format
+msgid "Snap component size"
+msgstr ""
+
+#. i18n: file dialogs/diagrampropertiespage.ui line 206
+#: rc.cpp:429
+#, no-c-format
+msgid ""
+"Snap the size of the components to be a multiple of the grid spacing.\n"
+"If 'Snap to Grid' is enabled a component will always be aligned with the grid "
+"on all 4 sides."
+msgstr ""
+
+#. i18n: file dialogs/diagrampropertiespage.ui line 257
+#: rc.cpp:433
+#, fuzzy, no-c-format
+msgid "Grid spacing:  "
+msgstr "Kılavuz aralığı: X"
+
+#. i18n: file dialogs/diagrampropertiespage.ui line 265
+#: rc.cpp:436
+#, no-c-format
+msgid "X"
+msgstr ""
+
+#. i18n: file dialogs/diagrampropertiespage.ui line 284
+#: rc.cpp:439
+#, no-c-format
+msgid "Y"
+msgstr "Y"
+
+#. i18n: file dialogs/diagrampropertiespage.ui line 346
+#: rc.cpp:442
+#, fuzzy, no-c-format
+msgid "Line width:  "
+msgstr "Satır:"
+
+#. i18n: file dialogs/exportallviewsdialogbase.ui line 16
+#: rc.cpp:448
+#, fuzzy, no-c-format
+msgid "Export all views"
+msgstr "Resim Olarak Kaydet..."
+
+#. i18n: file dialogs/exportallviewsdialogbase.ui line 49
+#: rc.cpp:451
+#, no-c-format
+msgid "&Directory to save the diagrams in:"
+msgstr ""
+
+#. i18n: file dialogs/exportallviewsdialogbase.ui line 55
+#: rc.cpp:454 rc.cpp:457
+#, no-c-format
+msgid "The base directory used to save the images"
+msgstr ""
+
+#. i18n: file dialogs/exportallviewsdialogbase.ui line 84
+#: rc.cpp:460
+#, fuzzy, no-c-format
+msgid "&Image type:"
+msgstr "Durum türü:"
+
+#. i18n: file dialogs/exportallviewsdialogbase.ui line 100
+#: rc.cpp:466
+#, fuzzy, no-c-format
+msgid "Use &folders"
+msgstr "dizin"
+
+#. i18n: file dialogs/exportallviewsdialogbase.ui line 104
+#: rc.cpp:469
+#, no-c-format
+msgid ""
+"Create in the target directory the same tree structure used\n"
+"in the document to store the views"
+msgstr ""
+
+#. i18n: file dialogs/exportallviewsdialogbase.ui line 108
+#: rc.cpp:473
+#, no-c-format
+msgid ""
+"The views are stored in folders in the document. The same tree structure used "
+"in the document to store the views can be created in the selected base "
+"directory with this option.\n"
+"Only the folders made by the user are created in the base directory (Logical "
+"view, use case view and so on aren't created)."
+msgstr ""
+
+#. i18n: file dialogs/umlrolepropertiesbase.ui line 106
+#: rc.cpp:495
+#, no-c-format
+msgid "Role Changeability"
+msgstr "Rol Değiştirilebirliği"
+
+#. i18n: file dialogs/umlrolepropertiesbase.ui line 156
+#: rc.cpp:507
+#, no-c-format
+msgid "Role Visibility"
+msgstr "Rol Görünürlüğü"
+
+#: folder.cpp:289
+#, fuzzy
+msgid "The folderfile %1 does not exist."
+msgstr "%1 dosyası bulunamadı."
+
+#: folder.cpp:293
+#, fuzzy
+msgid "The folderfile %1 cannot be opened."
+msgstr "%1 dosyası bulunamadı."
+
+#: classifier.cpp:201
+msgid ""
+"An operation with the same name and signature already exists. You can not add "
+"it again."
+msgstr ""
+
+#: activitywidget.cpp:163 toolbarstateother.cpp:143 umlview.cpp:2545
+msgid "Enter Activity Name"
+msgstr ""
+
+#: statewidget.cpp:165 toolbarstateother.cpp:147 umlview.cpp:2509
+msgid "Enter State Name"
+msgstr ""
+
+#: statewidget.cpp:165 toolbarstateother.cpp:148 umlview.cpp:2510
+msgid "Enter the name of the new state:"
+msgstr ""
+
+#: toolbarstateother.cpp:148 umlview.cpp:2511
+msgid "new state"
+msgstr ""
+
+#: listpopupmenu.cpp:695 stereotype.cpp:76
+msgid "Stereotype"
+msgstr "Stereotip"
+
+#: associationwidget.cpp:2328
+msgid "Multiplicity"
+msgstr ""
+
+#: associationwidget.cpp:2346
+msgid "Association Name"
+msgstr "Bağıntı Adı"
+
+#: associationwidget.cpp:2366
+msgid "Role Name"
+msgstr "Rol Adı"
+
+#: umlview.cpp:297 umlview.cpp:357
+msgid "Diagram: %2 Page %1"
+msgstr ""
+
+#: umlview.cpp:2578
+#, fuzzy
+msgid "Enter Diagram Name"
+msgstr "Şekli Temizle"
+
+#: umlview.cpp:2579
+#, fuzzy
+msgid "Enter the new name of the diagram:"
+msgstr "Aktivitenin yeni adını yazın:"
+
+#: umlview.cpp:2736
+msgid ""
+"You are about to delete the entire diagram.\n"
+"Are you sure?"
+msgstr ""
+
+#: umlview.cpp:2738
+msgid "Delete Diagram?"
+msgstr ""
+
+#: objectwidget.cpp:90
+msgid "Rename Object"
+msgstr "Nesnenin Adını Değiştir"
+
+#: objectwidget.cpp:91
+msgid "Enter object name:"
+msgstr ""
+
+#: clipboard/umlclipboard.cpp:687
+msgid ""
+"At least one of the items in the clipboard could not be pasted because an item "
+"of the same name already exists.  Any other items have been pasted."
+msgstr ""
+
+#: refactoring/refactoringassistant.cpp:289
+msgid "Add Base Class"
+msgstr "Temel Sınıf Ekle"
+
+#: refactoring/refactoringassistant.cpp:290
+msgid "Add Derived Class"
+msgstr "Türetilmiş Sınıf Ekle"
+
+#: refactoring/refactoringassistant.cpp:292
+#: refactoring/refactoringassistant.cpp:299
+#: refactoring/refactoringassistant.cpp:313
+msgid "Add Operation"
+msgstr "İşlem Ekle"
+
+#: refactoring/refactoringassistant.cpp:293
+#: refactoring/refactoringassistant.cpp:317
+msgid "Add Attribute"
+msgstr "Öznitelik Ekle"
+
+#: refactoring/refactoringassistant.cpp:297
+msgid "Add Base Interface"
+msgstr "Temel Arayüz Ekle"
+
+#: refactoring/refactoringassistant.cpp:298
+msgid "Add Derived Interface"
+msgstr "Türetilmiş Arayüz Ekle"
+
+#: refactoring/refactoringassistant.cpp:355
+#: refactoring/refactoringassistant.cpp:511
+msgid "Base Classifiers"
+msgstr ""
+
+#: refactoring/refactoringassistant.cpp:397
+#: refactoring/refactoringassistant.cpp:530
+msgid "Derived Classifiers"
+msgstr "Türetilmiş Tanımlayıcılar"
+
+#: tips.cpp:3
+msgid ""
+"<p>Welcome to Umbrello.</p>\n"
+"<p>UML diagrams let you design and document object oriented software.  <a "
+"href=\"help:/umbrello\">The Umbrello Handbook</a> is a good introduction to "
+"using UML.</p>\n"
+msgstr ""
+
+#: tips.cpp:9
+msgid ""
+"<p>Welcome to Umbrello 1.5.  New in this version are association classes, Ruby "
+"code generation, externalizable folders, ability to change interfaces into "
+"classes, and more.</p>\n"
+msgstr ""
+
+#: tips.cpp:14
+msgid ""
+"<p>Tabbed Diagrams and Externalized Folders are mutually exclusive. If you need "
+"External Folders then deselect &quot;Use tabbed diagrams&quot; in the General "
+"Settings.</p>\n"
+msgstr ""
+
+#: tips.cpp:19
+msgid ""
+"<p>Most diagram items can not be resized, they will resize themselves to fit to "
+"their contents.\n"
+"Boxes, notes and sequence diagram messages can be resized, just click and drag "
+"on the red square.</p>\n"
+msgstr ""
+
+#: tips.cpp:25
+msgid ""
+"<p>If you want to add an already existing class to a diagram just drag its "
+"entry from the tree view.</p>\n"
+msgstr ""
+
+#: tips.cpp:30
+msgid ""
+"<p>Umbrello's refactoring agent lets you move operations between a class and "
+"its derived and base \n"
+"classes.\n"
+"Right click a class to open the refactoring agent.</p>\n"
+msgstr ""
+
+#: tips.cpp:37
+msgid ""
+"<p>Sequence diagram objects can have a destructor box and be drawn as actors.  "
+"Double click one for\n"
+"the Properties dialogue.</p>\n"
+msgstr ""
+
+#: tips.cpp:43
+msgid ""
+"<p>Sequence diagram messages can act as constructors.  Click on the object box "
+"(rather than the vertical line) to make it a constructor.</p>\n"
+msgstr ""
+
+#: tips.cpp:48
+msgid ""
+"<p>Sequence diagrams support messages to self.  Click on the same vertical line "
+"again to create an automessage.</p>\n"
+msgstr ""
+
+#: tips.cpp:53
+msgid ""
+"<p>If on loading a foreign file nothing is displayed in the list view, try "
+"saving the model under a different name,\n"
+"closing, and reloading the saved file.  Usually the list view is then properly "
+"populated.\n"
+"</p>\n"
+msgstr ""
+
+#: tips.cpp:60
+msgid ""
+"<p>Cut and Copy will also export the image to a PNG clipboard which can be "
+"pasted into KWord\n"
+"and other applications.</p>\n"
+msgstr ""
+
+#: tips.cpp:66
+msgid ""
+"<p>Associations do not have to be in straight lines, double clicking on one "
+"will create a movable point.</p>\n"
+msgstr ""
+
+#: tips.cpp:71
+msgid ""
+"<p>You can turn on autosaving in the Configure Umbrello dialog.</p>\n"
+msgstr ""
+
+#: tips.cpp:76
+msgid ""
+"<p>Is a feature missing that you need in Umbrello? Please let us know. \n"
+"Either add it to the bugs database with Report Bug from the Help menu\n"
+"or send it to the uml-devel mailing list.</p>\n"
+"<ul>\n"
+"<li><a href=\"http://uml.sf.net/contact.php\">http://uml.sf.net/contact.php</a>"
+".</li>\n"
+"</ul>\n"
+msgstr ""
+
+#: tips.cpp:86
+msgid ""
+"<p>You can delete all selected objects by pressing Del or Backspace.</p>\n"
+msgstr ""
+
+#: tips.cpp:91
+msgid ""
+"<p>If you've found a bug in Umbrello, please let us know. \n"
+"You can submit bugs with the Report Bug tool in the Help menu.</p>\n"
+msgstr ""
+
+#: tips.cpp:97
+msgid ""
+"<p>Pressing the Escape key sets the current tool to the select tool.\n"
+"Backspace jumps to the previously used tool.</p>\n"
+msgstr ""
+
+#: tips.cpp:103
+msgid ""
+"<p>You can select all objects by pressing Ctrl-A.</p>\n"
+msgstr ""
+
+#: tips.cpp:108
+msgid ""
+"<p>You can create and setup a new class using the New Class Wizard in the Code "
+"menu.</p>\n"
+msgstr ""
+
+#: statewidget.cpp:176
+msgid "Enter Activity"
+msgstr ""
+
+#: toolbarstateassociation.cpp:119 toolbarstateassociation.cpp:175
+msgid "Incorrect use of associations."
+msgstr ""
+
+#: toolbarstateassociation.cpp:119 toolbarstateassociation.cpp:175
+msgid "Association Error"
+msgstr ""
+
+#: operation.cpp:185
+msgid "new_parameter"
+msgstr ""
+
+#: listpopupmenu.cpp:231 listpopupmenu.cpp:486
+msgid "Change Font..."
+msgstr "Yazıtipini Değiştir..."
+
+#: listpopupmenu.cpp:233
+msgid "Delete Selected Items"
+msgstr "Seçili Öğeleri Sil"
+
+#: listpopupmenu.cpp:240 listpopupmenu.cpp:718
+msgid "Draw as Circle"
+msgstr "Çember Olarak Çiz"
+
+#: listpopupmenu.cpp:243 listpopupmenu.cpp:720
+msgid "Change into Class"
+msgstr ""
+
+#: listpopupmenu.cpp:247 listpopupmenu.cpp:726
+#, fuzzy
+msgid "Change into Interface"
+msgstr "yeni_arayüz"
+
+#: listpopupmenu.cpp:281 listpopupmenu.cpp:1155
+#, fuzzy
+msgid "Enum Literal..."
+msgstr "&Yeni Şablon..."
+
+#: listpopupmenu.cpp:292 listpopupmenu.cpp:1143
+#, fuzzy
+msgid "Entity Attribute..."
+msgstr "Öznitelik..."
+
+#: listpopupmenu.cpp:318
+msgid "Move Up"
+msgstr "Yukarı Taşı"
+
+#: listpopupmenu.cpp:319
+msgid "Move Down"
+msgstr "Aşağı Taşı"
+
+#: listpopupmenu.cpp:325
+msgid "Rename Class..."
+msgstr "Sınıfın Adını Değiştir..."
+
+#: listpopupmenu.cpp:326
+msgid "Rename Object..."
+msgstr "Nesnenin Adını Değiştir..."
+
+#: listpopupmenu.cpp:334 listpopupmenu.cpp:423 listpopupmenu.cpp:564
+msgid "New Operation..."
+msgstr "Yeni İşlem..."
+
+#: listpopupmenu.cpp:335 listpopupmenu.cpp:424 listpopupmenu.cpp:1302
+msgid "Select Operation..."
+msgstr "İşlemi Seç..."
+
+#: listpopupmenu.cpp:346 listpopupmenu.cpp:430
+msgid "Change Text..."
+msgstr "Metni Değiştir..."
+
+#: listpopupmenu.cpp:360 listpopupmenu.cpp:579 listpopupmenu.cpp:1043
+msgid "Activity..."
+msgstr "Etkinlik..."
+
+#: listpopupmenu.cpp:366
+msgid "Change State Name..."
+msgstr "Durum Adını Değiştir..."
+
+#: listpopupmenu.cpp:376
+msgid "Flip Horizontal"
+msgstr ""
+
+#: listpopupmenu.cpp:378
+msgid "Flip Vertical"
+msgstr ""
+
+#: listpopupmenu.cpp:388
+msgid "Change Activity Name..."
+msgstr "Etkinlik Adını Değiştir..."
+
+#: listpopupmenu.cpp:397 listpopupmenu.cpp:400 listpopupmenu.cpp:1268
+#: listpopupmenu.cpp:1272
+msgid "Change Multiplicity..."
+msgstr ""
+
+#: listpopupmenu.cpp:403 listpopupmenu.cpp:1276
+msgid "Change Name"
+msgstr "İsmi Değiştir"
+
+#: listpopupmenu.cpp:406 listpopupmenu.cpp:1260 listpopupmenu.cpp:1282
+msgid "Change Role A Name..."
+msgstr "A Rolünün Adını Değiştir..."
+
+#: listpopupmenu.cpp:409 listpopupmenu.cpp:1264 listpopupmenu.cpp:1283
+msgid "Change Role B Name..."
+msgstr "B Rolünün Adını Değiştir..."
+
+#: listpopupmenu.cpp:461
+msgid "New"
+msgstr "Yeni"
+
+#: listpopupmenu.cpp:471 listpopupmenu.cpp:1306
+msgid "Rename..."
+msgstr "Yeniden adlandır..."
+
+#: listpopupmenu.cpp:489 listpopupmenu.cpp:734 listpopupmenu.cpp:745
+msgid "Line Color..."
+msgstr "Çizgi Rengi..."
+
+#: listpopupmenu.cpp:492
+msgid "Expand All"
+msgstr "Hepsini Aç"
+
+#: listpopupmenu.cpp:495
+msgid "Collapse All"
+msgstr "Hepsini Topla"
+
+#: listpopupmenu.cpp:498
+msgid "Duplicate"
+msgstr ""
+
+#: listpopupmenu.cpp:501
+msgid "Externalize Folder..."
+msgstr ""
+
+#: listpopupmenu.cpp:504
+#, fuzzy
+msgid "Internalize Folder"
+msgstr "Yapıştırma Hatası"
+
+#: listpopupmenu.cpp:507
+#, fuzzy
+msgid "Import Classes..."
+msgstr "Sınıfları Al..."
+
+#: listpopupmenu.cpp:512
+msgid "Subsystem"
+msgstr ""
+
+#: listpopupmenu.cpp:535 listpopupmenu.cpp:608
+msgid "Folder"
+msgstr "Dizin"
+
+#: listpopupmenu.cpp:555
+msgid "Text Line..."
+msgstr "Metin Satırı..."
+
+#: listpopupmenu.cpp:558
+msgid "Reset Label Positions"
+msgstr "Etiket Konumlarını Sıfırla"
+
+#: listpopupmenu.cpp:561
+msgid "New Parameter..."
+msgstr "Yeni Parametre..."
+
+#: listpopupmenu.cpp:567
+msgid "New Attribute..."
+msgstr "Yeni Öznitelik..."
+
+#: listpopupmenu.cpp:570 listpopupmenu.cpp:1232
+msgid "New Template..."
+msgstr "Yeni Şablon..."
+
+#: listpopupmenu.cpp:573
+#, fuzzy
+msgid "New Literal..."
+msgstr "Yeni Öznitelik..."
+
+#: listpopupmenu.cpp:576
+#, fuzzy
+msgid "New Entity Attribute..."
+msgstr "Yeni Öznitelik..."
+
+#: listpopupmenu.cpp:582
+msgid "Export as Picture..."
+msgstr "Resim Olarak Kaydet..."
+
+#: listpopupmenu.cpp:676
+#, fuzzy
+msgid "Public Only"
+msgstr "Genel"
+
+#: listpopupmenu.cpp:680
+msgid "Operation Signature"
+msgstr "İşlem İmzası"
+
+#: listpopupmenu.cpp:686
+msgid "Attribute Signature"
+msgstr "Öznitelik İmzası"
+
+#: listpopupmenu.cpp:707
+msgid "Attribute..."
+msgstr "Öznitelik..."
+
+#: listpopupmenu.cpp:708
+msgid "Operation..."
+msgstr "İşlem..."
+
+#: listpopupmenu.cpp:722
+msgid "Refactor"
+msgstr ""
+
+#: listpopupmenu.cpp:723
+msgid "View Code"
+msgstr "Kodu Görüntüle"
+
+#: listpopupmenu.cpp:735 listpopupmenu.cpp:746
+msgid "Fill Color..."
+msgstr "Doldurma Rengi..."
+
+#: listpopupmenu.cpp:736 listpopupmenu.cpp:747
+msgid "Use Fill Color"
+msgstr "Doldurma Rengi Kullan"
+
+#: listpopupmenu.cpp:1007
+msgid "Actor..."
+msgstr "Aktör..."
+
+#: listpopupmenu.cpp:1008
+msgid "Use Case..."
+msgstr "Use Case..."
+
+#: listpopupmenu.cpp:1017
+msgid "Class..."
+msgstr "Sınıf..."
+
+#: listpopupmenu.cpp:1018
+msgid "Interface..."
+msgstr "Arayüz..."
+
+#: listpopupmenu.cpp:1019
+msgid "Datatype..."
+msgstr "Veri türü..."
+
+#: listpopupmenu.cpp:1020
+msgid "Enum..."
+msgstr ""
+
+#: listpopupmenu.cpp:1021
+msgid "Package..."
+msgstr "Paket..."
+
+#: listpopupmenu.cpp:1032
+msgid "State..."
+msgstr "Durum..."
+
+#: listpopupmenu.cpp:1053
+#, fuzzy
+msgid "Subsystem..."
+msgstr "Durum..."
+
+#: listpopupmenu.cpp:1054
+msgid "Component..."
+msgstr "Bileşen..."
+
+#: listpopupmenu.cpp:1055
+msgid "Artifact..."
+msgstr ""
+
+#: listpopupmenu.cpp:1063
+msgid "Node..."
+msgstr "Uç..."
+
+#: listpopupmenu.cpp:1071
+#, fuzzy
+msgid "Entity..."
+msgstr "Etkinlik..."
+
+#: listpopupmenu.cpp:1080
+msgid "Object..."
+msgstr "Nesne..."
+
+#: listpopupmenu.cpp:1089
+msgid "Attribute"
+msgstr "Öznitelik"
+
+#: listpopupmenu.cpp:1090 listpopupmenu.cpp:1099
+msgid "Operation"
+msgstr "İşlem"
+
+#: listpopupmenu.cpp:1091 listpopupmenu.cpp:1100
+#, fuzzy
+msgid "Template"
+msgstr "Şablonlar"
+
+#: listpopupmenu.cpp:1256
+msgid "Delete Anchor"
+msgstr "Çapayı Sil"
+
+#: listpopupmenu.cpp:1281
+msgid "Change Association Name..."
+msgstr "Bağıntılar Adını Değiştir..."
+
+#: listpopupmenu.cpp:1339
+msgid "Clear Diagram"
+msgstr "Şekli Temizle"
+
+#: listpopupmenu.cpp:1342
+msgid "Snap to Grid"
+msgstr "Kılavuza Kilitle"
+
+#: listpopupmenu.cpp:1344
+msgid "Show Grid"
+msgstr "Kılavuzu Göster"
+
+#~ msgid "new_stereotype"
+#~ msgstr "yeni_stereotip"
+
+#~ msgid "folder"
+#~ msgstr "dizin"
+
+#~ msgid "No Code Generator"
+#~ msgstr "Kod Oluşturucusu Bulunamadı"
+
+#~ msgid "No Language Selected"
+#~ msgstr "Hiç Dil Seçilmedi"
+
+#, fuzzy
+#~ msgid "Diagram Save Error."
+#~ msgstr "Diyagram Yükleme Hatası"
+
+#, fuzzy
+#~ msgid "UMLRolePropertiesBase"
+#~ msgstr "Rol Özellikleri"
+
+#, fuzzy
+#~ msgid "And Line"
+#~ msgstr "Satır"
+
+#~ msgid "datatype"
+#~ msgstr "veri türü"
+
+#, fuzzy
+#~ msgid "enum"
+#~ msgstr "Yeniden Adlandır"
+
+#~ msgid "interface"
+#~ msgstr "arayüz"
+
+#~ msgid "To Foreground"
+#~ msgstr "Önplana"
+
+#~ msgid "Raise"
+#~ msgstr "Yükselt"
+
+#~ msgid "Lower"
+#~ msgstr "Alçalt"
+
+#~ msgid "To Background"
+#~ msgstr "Arkaplana"
+
+#~ msgid "Depth..."
+#~ msgstr "Derinlik..."
+
+#~ msgid "Create View"
+#~ msgstr "İzleme Oluştur"
+
+#~ msgid "Creates paths"
+#~ msgstr "Yollar oluşturur"
+
+#~ msgid "Direct Lines"
+#~ msgstr "Düz Çizgiler"
+
+#~ msgid "Orthogonal Lines"
+#~ msgstr "Ortagonal Çizgiler"
+
+#~ msgid "Path Style"
+#~ msgstr "Yol Biçemi"
+
+#~ msgid "This tool has no tooltip"
+#~ msgstr "Bunun ipucu yok"
+
+#~ msgid "AutoAdjust"
+#~ msgstr "Otomatik Ayarla"
+
+#~ msgid "Association Style"
+#~ msgstr "Bağıntı Biçemi"
+
+#, fuzzy
+#~ msgid "Form1"
+#~ msgstr "Dizin"
+
+#, fuzzy
+#~ msgid "Create Makefile document"
+#~ msgstr "Yeni bir dosya oluştururur"
+
+#, fuzzy
+#~ msgid "Use case"
+#~ msgstr "Use Case"
+
+#~ msgid "State transition"
+#~ msgstr "Durum geçişi"
+
+#, fuzzy
+#~ msgid "Branch/merge"
+#~ msgstr "Ayrıl/Birleş"
+
+#~ msgid ""
+#~ "*.h|Header Files (*.h)\n"
+#~ "*|All Files"
+#~ msgstr ""
+#~ "*.h|Başlık Dosyaları (*.h)\n"
+#~ "*|Tüm Dosyalar"
+
+#, fuzzy
+#~ msgid "DiagramPropertiesPage"
+#~ msgstr "Diyagram Özellikleri"
+
+#, fuzzy
+#~ msgid "class"
+#~ msgstr "Sınıf"
+
+#~ msgid "UML Diagrams"
+#~ msgstr "UML Diyagramları"

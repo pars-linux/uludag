@@ -1,0 +1,86 @@
+# translation of kfile_bmp.po to Turkish
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2002
+# Tuncay YENİAY <tuncayyeniay@mynet.com>,2002.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kfile_bmp\n"
+"POT-Creation-Date: 2004-10-12 01:17+0200\n"
+"PO-Revision-Date: 2002-11-16 13:50+0000\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.6\n"
+
+#: kfile_bmp.cpp:55
+msgid "Technical Details"
+msgstr "Teknik Detaylar"
+
+#: kfile_bmp.cpp:59
+msgid "Type"
+msgstr "Tür"
+
+#: kfile_bmp.cpp:61
+msgid "Dimensions"
+msgstr "Boyutlar"
+
+#: kfile_bmp.cpp:65
+msgid "Bit Depth"
+msgstr "Bit Derinliği"
+
+#: kfile_bmp.cpp:68
+msgid "Compression"
+msgstr "Sıkıştırma"
+
+#: kfile_bmp.cpp:104
+msgid "Windows Bitmap"
+msgstr "Windows Bitmap"
+
+#: kfile_bmp.cpp:106
+msgid "OS/2 Bitmap Array"
+msgstr "OS/2 Bitmap Array"
+
+#: kfile_bmp.cpp:108
+msgid "OS/2 Color Icon"
+msgstr "OS/2 Renk Simgesi"
+
+#: kfile_bmp.cpp:110
+msgid "OS/2 Color Pointer"
+msgstr "OS/2 Renkli İşaretçi"
+
+#: kfile_bmp.cpp:112
+msgid "OS/2 Icon"
+msgstr "OS/2 Simgesi"
+
+#: kfile_bmp.cpp:114
+msgid "OS/2 Pointer"
+msgstr "OS/2 İşaretçi"
+
+#: kfile_bmp.cpp:156
+msgid "None"
+msgstr "Hiçbiri"
+
+#: kfile_bmp.cpp:159
+msgid "RLE 8bit/pixel"
+msgstr "RLE 8bit/benek"
+
+#: kfile_bmp.cpp:162
+msgid "RLE 4bit/pixel"
+msgstr "RLE 4bit/benek"
+
+#: kfile_bmp.cpp:165
+msgid "Bitfields"
+msgstr "Bit Alanları"
+
+#: kfile_bmp.cpp:168
+msgid "Unknown"
+msgstr "Bilinmeyen"
+
+#~ msgid "Resolution"
+#~ msgstr "Çözünürlük"
+
+#~ msgid "bpp"
+#~ msgstr "bpp"

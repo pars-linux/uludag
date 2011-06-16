@@ -1,0 +1,823 @@
+# translation of kcmkonq.po to
+# translation of kcmkonq.po to Turkish
+# KDE TÜRKÇELEŞTİRME PROJESİ.
+# Copyright (C) 2000,2003, 2004, 2005, 2007 Free Software Foundation, Inc.
+# Adem GUNES <adem@alaeddin.cc.selcuk.edu.tr>, 2000.
+# Görkem Çetin <gorkem@kde.org>, 2002, 2003.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+# Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
+# Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkonq\n"
+"POT-Creation-Date: 2008-06-08 01:37+0200\n"
+"PO-Revision-Date: 2007-07-05 15:29+0300\n"
+"Last-Translator: Serdar Soytetir\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: behaviour.cpp:46
+msgid ""
+"<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a file "
+"manager here."
+msgstr ""
+"<h1>Konqueror Davranışı</h1> Konqueror'u burada bir dosya yöneticisi olarak "
+"davranması için yapılandırabilirsiniz."
+
+#: behaviour.cpp:50
+msgid "Misc Options"
+msgstr "Çeşitli Seçenekler"
+
+#: behaviour.cpp:66
+msgid "Open folders in separate &windows"
+msgstr "&Dizinleri ayrı pencerelerde aç"
+
+#: behaviour.cpp:67
+msgid ""
+"If this option is checked, Konqueror will open a new window when you open a "
+"folder, rather than showing that folder's contents in the current window."
+msgstr ""
+"Bu seçenek işaretliyse, bir dizine tıkladığınızda Konqueror bu dizinin "
+"içeriğini o an açık olan pencerede göstermek yerine, yeni bir pencere açar."
+
+#: behaviour.cpp:74
+msgid "&Show network operations in a single window"
+msgstr "Ağ işlemlerini tek pencerede &göster"
+
+#: behaviour.cpp:77
+msgid ""
+"Checking this option will group the progress information for all network file "
+"transfers into a single window with a list. When the option is not checked, all "
+"transfers appear in a separate window."
+msgstr ""
+"Bu seçeneğin işaretlenmesi ağ dosya transferi ile ilgili işlem bilgilerinin "
+"hepsinin tek bir pencerede listelenmesini sağlar. Bu seçenek işaretli değil "
+"iken tüm transferler ayrı pencerelerde gösterilirler."
+
+#: behaviour.cpp:85
+msgid "Show file &tips"
+msgstr "Dosya &ipuçlarını göster"
+
+#: behaviour.cpp:88
+msgid ""
+"Here you can control if, when moving the mouse over a file, you want to see a "
+"small popup window with additional information about that file"
+msgstr ""
+"Burada bir dosyanın üzerine fare ile gelindiği zaman dosya hakkında detaylı "
+"bilgi alınmasına imkan veren özelliği etkinleştirebilirsiniz"
+
+#: behaviour.cpp:108
+msgid "Show &previews in file tips"
+msgstr "D&osya ipuçlarında önizleme göster"
+
+#: behaviour.cpp:111
+msgid ""
+"Here you can control if you want the popup window to contain a larger preview "
+"for the file, when moving the mouse over it."
+msgstr ""
+"Burada bir dosyanın üzerine fare ile gelindiği zaman dosya hakkında detaylı "
+"bilgi alınmasına imkan veren özelliği etkinleştirebilirsiniz."
+
+#: behaviour.cpp:114
+msgid "Rename icons in&line"
+msgstr "&Simgeleri tıklamayla yeniden adlandır"
+
+#: behaviour.cpp:115
+msgid ""
+"Checking this option will allow files to be renamed by clicking directly on the "
+"icon name. "
+msgstr ""
+"Bu seçeneğin etkin olması halinde bir simge üzerinde tıklandığında  karşılık "
+"gelen dosya adı değiştirilebilir. "
+
+#: behaviour.cpp:121
+msgid "Home &URL:"
+msgstr "&Başlangıç adresi:"
+
+#: behaviour.cpp:126
+msgid "Select Home Folder"
+msgstr "Başlangıç Dizinini Seçin"
+
+#: behaviour.cpp:131
+msgid ""
+"This is the URL (e.g. a folder or a web page) where Konqueror will jump to when "
+"the \"Home\" button is pressed. This is usually your home folder, symbolized by "
+"a 'tilde' (~)."
+msgstr ""
+"Bu, \"Başlangıç\" düğmesine basıldığında konqueror'un gideceği adrestir (ör.  "
+"bir dizin ya da bir web sayfası). Genellikle bir 'tilda' karakteridir (~)."
+
+#: behaviour.cpp:139
+msgid "Show 'Delete' context me&nu entries which bypass the trashcan"
+msgstr "Çöp kutusuna göndermeden silmek için 'Sil' me&nü girdilerini göster"
+
+#: behaviour.cpp:143
+msgid ""
+"Check this if you want 'Delete' menu commands to be displayed on the desktop "
+"and in the file manager's context menus. You can always delete files by holding "
+"the Shift key while calling 'Move to Trash'."
+msgstr ""
+"Masaüstünde ve dosya yönetici peencreleri sağ tuş ve içerik menülerinde 'Sil' "
+"menü komutunun olmasını istiyorsanız bu seçeneği seçin. Çöp kutusuna "
+"gönderirken Shift tuşuna basılı tutarsanız da silme işlemini yapabilirsiniz."
+
+#: behaviour.cpp:148
+msgid "Ask Confirmation For"
+msgstr "Bunlar İçin Onaylama Sor"
+
+#: behaviour.cpp:150
+msgid ""
+"This option tells Konqueror whether to ask for a confirmation when you "
+"\"delete\" a file. "
+"<ul>"
+"<li><em>Move To Trash:</em> moves the file to your trash folder, from where it "
+"can be recovered very easily.</li> "
+"<li><em>Delete:</em> simply deletes the file.</li> </li></ul>"
+msgstr ""
+"Bu seçenek Konqueror'a, bir dosya bağlam menüsünde \"sil\"i seçtiğinizde ne "
+"yapacağını söyler. "
+"<ul>"
+"<li><em>Çöpe Kutusuna At:</em> dosyayı, kolayca geri alabileceğiniz çöp "
+"dizinine taşır.</li>"
+"<li><em>Sil:</em> dosyayı tamamen siler.</li></ul>"
+
+#: behaviour.cpp:159
+msgid "&Move to trash"
+msgstr "Çö&pe taşı"
+
+#: behaviour.cpp:161
+msgid "D&elete"
+msgstr "&Sil"
+
+#: browser.cpp:51
+msgid "&Appearance"
+msgstr "&Görünüm"
+
+#: browser.cpp:52
+msgid "&Behavior"
+msgstr "&Davranış"
+
+#: browser.cpp:53
+msgid "&Previews && Meta-Data"
+msgstr "Ö&nizlemeler ve Meta-Verisi"
+
+#: browser.cpp:57
+msgid "&Quick Copy && Move"
+msgstr "&Hızlı Kopyalama ve Taşıma"
+
+#: desktop.cpp:58
+msgid ""
+"<h1>Multiple Desktops</h1>In this module, you can configure how many virtual "
+"desktops you want and how these should be labeled."
+msgstr ""
+"<h1>Çoklu Masaüstü</h1> Bu modülde, kaç adet masaüstü istediğinizi ve bunların "
+"isimlerini ayarlayabilirsiniz."
+
+#: desktop.cpp:71
+msgid "N&umber of desktops: "
+msgstr "&Masaüstü sayısı: "
+
+#: desktop.cpp:77
+msgid ""
+"Here you can set how many virtual desktops you want on your KDE desktop. Move "
+"the slider to change the value."
+msgstr ""
+"Buradan masaüstünüzde kaç tane sanal masaüstü "
+"istediğiniziayarlayabilirsiniz.Çubuğu kaydırarak değeri değiştirebilirsiniz."
+
+#: desktop.cpp:88
+msgid "Desktop &Names"
+msgstr "Masaüstü İ&simleri"
+
+#: desktop.cpp:94 desktop.cpp:96
+msgid "Desktop %1:"
+msgstr "%1. Masaüstü:"
+
+#: desktop.cpp:98 desktop.cpp:99 desktop.cpp:100 desktop.cpp:101
+#, c-format
+msgid "Here you can enter the name for desktop %1"
+msgstr "Burada %1 numaralı masaüstünün ismini verebilirsiniz"
+
+#: desktop.cpp:114
+msgid "Mouse wheel over desktop background switches desktop"
+msgstr "Masaüstünde fare tekeri kullanılması ile masaüstünü değişsin"
+
+#: desktop.cpp:155
+#, c-format
+msgid "Desktop %1"
+msgstr "%1. Masaüstü"
+
+#: desktopbehavior_impl.cpp:76
+msgid "Sound Files"
+msgstr "Ses Dosyaları"
+
+#: desktopbehavior_impl.cpp:136
+msgid "&Left button:"
+msgstr "&Sol düğme:"
+
+#: desktopbehavior_impl.cpp:137
+msgid ""
+"You can choose what happens when you click the left button of your pointing "
+"device on the desktop:"
+msgstr ""
+"Masaüstünde, işaretçinizle sol tıkladığınız zaman ne olacağını seçebilirsiniz:"
+
+#: desktopbehavior_impl.cpp:140
+msgid "Right b&utton:"
+msgstr "S&ağ düğme:"
+
+#: desktopbehavior_impl.cpp:141
+msgid ""
+"You can choose what happens when you click the right button of your pointing "
+"device on the desktop:"
+msgstr ""
+"Masaüstünde, fareyle sağ tıkladığınız zaman ne olacağını seçebilirsiniz:"
+
+#: desktopbehavior_impl.cpp:157 desktopbehavior_impl.cpp:203
+msgid ""
+" "
+"<ul>"
+"<li><em>No action:</em> as you might guess, nothing happens!</li> "
+"<li><em>Window list menu:</em> a menu showing all windows on all virtual "
+"desktops pops up. You can click on the desktop name to switch to that desktop, "
+"or on a window name to shift focus to that window, switching desktops if "
+"necessary, and restoring the window if it is hidden. Hidden or minimized "
+"windows are represented with their names in parentheses.</li> "
+"<li><em>Desktop menu:</em> a context menu for the desktop pops up. Among other "
+"things, this menu has options for configuring the display, locking the screen, "
+"and logging out of KDE.</li> "
+"<li><em>Application menu:</em> the \"K\" menu pops up. This might be useful for "
+"quickly accessing applications if you like to keep the panel (also known as "
+"\"Kicker\") hidden from view.</li></ul>"
+msgstr ""
+"<ul>"
+"<li><em>Eylem yok:</em> tahmin edeceğiniz gibi hiçbir şey olmaz!</li> "
+"<li><em>Pencere liste menüsü:</em> Tüm sanal masaüstlerindeki tüm pencereleri "
+"gösteren bir menü açılır. Geçmek istediğiniz masaüstünün ya da pencerenin "
+"ismine tıklayabilir, böylece o masaüstüne ya da pencereye geçebilir, pencereye "
+"odaklanılmasını sağlayabilir, gizli durumdaysa bu durumdan çıkarabilirsiniz.. "
+"Gizli ya da simgeleştirilmiş pencereler parentez içine alınmış isimleriyle "
+"temsil edilirler.</li> "
+"<li><em>Masaüstü menüsü:</em> Masaüstü için bir bağlam menüsü açılır. Diğer "
+"şeylerin yanı sıra, bu menüde görüntü özelliklerini yapılandırma, ekranı "
+"kilitleme ya da KDE oturumunu kapatma konusunda seçenekler vardır. </li> "
+"<li><em>Uygulama menüsü:</em> \"K\" menüsü açılır. Özellikle paneli (\"Kicker\" "
+"olarak da anılır) gizli tutmak istediğinizde, uygulamalara hızlı biçimde "
+"ulaşmak açısından yararlı olabilir.</li></ul>"
+
+#: desktopbehavior_impl.cpp:178
+msgid ""
+"You can choose what happens when you click the middle button of your pointing "
+"device on the desktop: "
+"<ul>"
+"<li><em>No action:</em> as you might guess, nothing happens!</li> "
+"<li><em>Window list menu:</em> a menu showing all windows on all virtual "
+"desktops pops up. You can click on the desktop name to switch to that desktop, "
+"or on a window name to shift focus to that window, switching desktops if "
+"necessary, and restoring the window if it is hidden. Hidden or minimized "
+"windows are represented with their names in parentheses.</li> "
+"<li><em>Desktop menu:</em> a context menu for the desktop pops up. Among other "
+"things, this menu has options for configuring the display, locking the screen, "
+"and logging out of KDE.</li> "
+"<li><em>Application menu:</em> the \"K\" menu pops up. This might be useful for "
+"quickly accessing applications if you like to keep the panel (also known as "
+"\"Kicker\") hidden from view.</li></ul>"
+msgstr ""
+"Masaüstünde işaretleme aygıtınızın orta düğmesini tıkladığınızda: ne olacağını "
+"seçebilirsiniz:"
+"<ul>"
+"<li><em>Hiçbir şey:</em> tahmin edeceğiniz gibi hiçbir şey olmaz!</li> "
+"<li><em>Pencere liste menüsü:</em> Tüm sanal masaüstlerindeki tüm pencereleri "
+"gösteren bir menü açılır. Geçmek istediğiniz masaüstünün ya da pencerenin "
+"ismine tıklayabilir, böylece o masaüstüne ya da pencereye geçebilir, pencereye "
+"odaklanılmas�nı sağlayabilir, gizli durumdaysa bu durumdan çıkarabilirsiniz.. "
+"Gizli ya da simgeleştirilmiş pencereler parentez içine alınmış isimleriyle "
+"temsil edilirler.</li> "
+"<li><em>Masaüstü menüsü:</em> Masaüstü için bir bağlam menüsü açılır. Diğer "
+"şeylerin yanı sıra, bu menüde görüntü özelliklerini yapılandırma, ekranı "
+"kilitleme ya da KDE oturumunu kapatma konusunda seçenekler vardır. </li> "
+"<li><em>Uygulama menüsü:</em> \"K\" menüsü açılır. Özellikle paneli (\"Kicker\" "
+"olarak da anılır) gizli tutmak istediğinizde, uygulamalara hızlı biçimde "
+"ulaşmak açısından yararlı olabilir.</li></ul>"
+
+#: desktopbehavior_impl.cpp:269
+msgid "No Action"
+msgstr "Eylem Yok"
+
+#: desktopbehavior_impl.cpp:270
+msgid "Window List Menu"
+msgstr "Pencere Listesi Menüsü"
+
+#: desktopbehavior_impl.cpp:271
+msgid "Desktop Menu"
+msgstr "Masaüstü Menüsü"
+
+#: desktopbehavior_impl.cpp:272
+msgid "Application Menu"
+msgstr "Uygulama Menüsü"
+
+#: desktopbehavior_impl.cpp:273
+msgid "Bookmarks Menu"
+msgstr "Yer İmleri Menüsü"
+
+#: desktopbehavior_impl.cpp:274
+msgid "Custom Menu 1"
+msgstr "Özel Menü 1"
+
+#: desktopbehavior_impl.cpp:275
+msgid "Custom Menu 2"
+msgstr "Özel Menü 2"
+
+#: desktopbehavior_impl.cpp:458
+msgid ""
+"<h1>Behavior</h1>\n"
+"This module allows you to choose various options\n"
+"for your desktop, including the way in which icons are arranged and\n"
+"the pop-up menus associated with clicks of the middle and right mouse\n"
+"buttons on the desktop.\n"
+"Use the \"What's This?\" (Shift+F1) to get help on specific options."
+msgstr ""
+"<h1>Davranış</h1>\n"
+"Bu modül masaüstünüz için masaüstünde simgelerin nasıl sıralanacağını\n"
+"masaüstünde hangi fare tuşuna tıkladığınızda hangi menünün açılacağını\n"
+"kullanılacağını seçmeye yarar.\n"
+"Özel seçenekler hakkında bilgi almak için \"Bu Nedir?\" (Shift+F1) kullanın."
+
+#: fontopts.cpp:60
+msgid "&Standard font:"
+msgstr "&Standart yazıtipi:"
+
+#: fontopts.cpp:64
+msgid "This is the font used to display text in Konqueror windows."
+msgstr ""
+"Bu, Konqueror pencerelerinde metin gösterilirken kullanılan yazı tipidir."
+
+#: fontopts.cpp:79
+msgid "Font si&ze:"
+msgstr "Yazıtipi &boyutu:"
+
+#: fontopts.cpp:87
+msgid "This is the font size used to display text in Konqueror windows."
+msgstr ""
+"Bu, Konqueror pencerelerinde metin gösterilirken kullanılan yazı tipi boyudur."
+
+#: fontopts.cpp:95
+msgid "Normal te&xt color:"
+msgstr "Normal &metin rengi:"
+
+#: fontopts.cpp:99
+msgid "This is the color used to display text in Konqueror windows."
+msgstr "Bu, Konqueror pencerelerinde metin gösterilirken kullanılan renktir."
+
+#: fontopts.cpp:126
+msgid "&Text background color:"
+msgstr "&Yazı arkaplan rengi:"
+
+#: fontopts.cpp:134
+msgid "This is the color used behind the text for the icons on the desktop."
+msgstr ""
+"Bu Konqueror pencerelerinde seçili metni göstermek için kullanılan renktir."
+
+#: fontopts.cpp:146
+msgid "H&eight for icon text:"
+msgstr "Simg&e yazısı yüksekliği:"
+
+#: fontopts.cpp:154
+msgid ""
+"This is the maximum number of lines that can be used to draw icon text. Long "
+"file names are truncated at the end of the last line."
+msgstr ""
+"Simge metni için gösterilecek azami satır sayısını belirler. Uzun dosya adları "
+"son satırda yığılır."
+
+#: fontopts.cpp:165
+msgid "&Width for icon text:"
+msgstr "Simg&e yazısı genişliği:"
+
+#: fontopts.cpp:173
+msgid ""
+"This is the maximum width for the icon text when konqueror is used in multi "
+"column view mode."
+msgstr ""
+"Bu konqueror'un çoklu sütun görünüm biçiminde simge metni için en fazla "
+"genişliktir."
+
+#: fontopts.cpp:181
+msgid "&Underline filenames"
+msgstr "Dosya adlarının al&tını çiz"
+
+#: fontopts.cpp:185
+msgid ""
+"Checking this option will result in filenames being underlined, so that they "
+"look like links on a web page. Note: to complete the analogy, make sure that "
+"single click activation is enabled in the mouse control module."
+msgstr ""
+"Bu seçenek işaretlendiğinde dosya isimlerinin altı çizilir, böylece web "
+"sayfalarındaki bağlar gibi görünürler. Dikkat: Benzerliği tamamlamak için, fare "
+"kontrol modülündeki tek tıklamayla harekete geçmeyi etkin kılınız."
+
+#: fontopts.cpp:194
+msgid "Display file sizes in b&ytes"
+msgstr "Dosya boylarını &bayt cinsinden göster"
+
+#: fontopts.cpp:198
+msgid ""
+"Checking this option will result in file sizes being displayed in bytes. "
+"Otherwise file sizes are being displayed in kilobytes or megabytes if "
+"appropriate."
+msgstr ""
+"Bu seçenek işaretlendiği zaman dosya büyüklükleri bayt cinsinden "
+"gösterilecektir. Aksi takdirde tüm dosyaların boyu kilobayt ya da megabayt "
+"cinsinden verilir."
+
+#: fontopts.cpp:223
+msgid ""
+"_n:  line\n"
+" lines"
+msgstr " satır"
+
+#: fontopts.cpp:228
+msgid ""
+"_n:  pixel\n"
+" pixels"
+msgstr " piksel"
+
+#: fontopts.cpp:384
+msgid ""
+"<h1>Appearance</h1> You can configure how Konqueror looks as a file manager "
+"here."
+msgstr ""
+"<h1>Görünüm</h1>Konqueror'un bir dosya yöneticisi olarak nasıl görüntülendiğini "
+"buradan yapılandırabilirsiniz."
+
+#: previews.cpp:65
+msgid ""
+"<p>Allow previews, \"Folder Icons Reflect Contents\", and retrieval of "
+"meta-data on protocols:</p>"
+msgstr "<p>Önizlemeleri ve protokollerdeki bilgileri görmeyi sağlar:</p>"
+
+#: previews.cpp:68
+msgid ""
+"<h1>Preview Options</h1> Here you can modify the behavior of Konqueror when it "
+"shows the files in a folder."
+"<h2>The list of protocols:</h2> check the protocols over which previews should "
+"be shown; uncheck those over which they should not. For instance, you might "
+"want to show previews over SMB if the local network is fast enough, but you "
+"might disable it for FTP if you often visit very slow FTP sites with large "
+"images."
+"<h2>Maximum File Size:</h2> select the maximum file size for which previews "
+"should be generated. For instance, if set to 1 MB (the default), no preview "
+"will be generated for files bigger than 1 MB, for speed reasons."
+msgstr ""
+"<h1>Önizleme Seçenekleri</h1>Konqueror davranışını burada gösterildiği gibi "
+"değiştirebilirsiniz. "
+"<h2>Protokol listesi:</h2> önizlemesi olan protokolerle, önizlemesi olmayanları "
+"burada denetleyebilirsiniz.SMB üzerinde yerel şebeke hızı yeterli olursa "
+"önizlemeleri görebilir, fakat bu FTP sitelerinde büyük resimler kullanıldığında "
+"FTP sitelerini yavaşlatabilir."
+"<h2>Azami Dosya Boyutu: </h2> önizleme için en yüksek dosya boyutunu seçin. "
+"Örneğin, 1 Mb'tan daha büyük dosyalar için önizleme işlemi yapılmayabilir."
+
+#: previews.cpp:81
+msgid "Select Protocols"
+msgstr "Protokolleri Seçin"
+
+#: previews.cpp:89
+msgid "Local Protocols"
+msgstr "Yerel Protokoller"
+
+#: previews.cpp:91
+msgid "Internet Protocols"
+msgstr "İnternet Protokolleri"
+
+#: previews.cpp:119
+msgid ""
+"This option makes it possible to choose when the file previews, smart folder "
+"icons, and meta-data in the File Manager should be activated.\n"
+"In the list of protocols that appear, select which ones are fast enough for you "
+"to allow previews to be generated."
+msgstr ""
+"Bu seçim dosyaları seçmek için önceden gösterimi mümkün kılar ve bunun için "
+"Dosya Yöneticsindeki akıllı dosya ikonları etkinleştirilmelidir.\n"
+"Görünen protokol listesinde sizin için önceden hızlı seçilmiş olanlar "
+"gösterilir."
+
+#: previews.cpp:124
+msgid "&Maximum file size:"
+msgstr "&Azami dosya boyu:"
+
+#: previews.cpp:128
+msgid " MB"
+msgstr " MB"
+
+#: previews.cpp:135
+msgid "&Increase size of previews relative to icons"
+msgstr "&Simge büyüklüklerine göre önizlemelerin büyüklüğünü ayarla"
+
+#: previews.cpp:139
+msgid "&Use thumbnails embedded in files"
+msgstr "&Dosyalar içinde küçük resimler kullan"
+
+#: previews.cpp:145
+msgid ""
+"Select this to use thumbnails that are found inside some file types (e.g. "
+"JPEG). This will increase speed and reduce disk usage. Deselect it if you have "
+"files that have been processed by programs which create inaccurate thumbnails, "
+"such as ImageMagick."
+msgstr ""
+"Bazı dosya türleri içinde bulanan küçük resimleri kullanmak için bunu seç (Örn. "
+"JPEG) Bu disk kullanımını azaltır.Hatalı küçük resimler olursa bu özelliği "
+"kaldırın ve resim işlemden geçiriniz."
+
+#. i18n: file desktopbehavior.ui line 34
+#: rc.cpp:3
+#, no-c-format
+msgid "General"
+msgstr "Genel"
+
+#. i18n: file desktopbehavior.ui line 53
+#: rc.cpp:6
+#, no-c-format
+msgid "&Show icons on desktop"
+msgstr "Masaüstünde &simgeleri göster"
+
+#. i18n: file desktopbehavior.ui line 56
+#: rc.cpp:9
+#, no-c-format
+msgid ""
+"Uncheck this option if you do not want to have icons on the desktop. Without "
+"icons the desktop will be somewhat faster but you will no longer be able to "
+"drag files to the desktop."
+msgstr ""
+"Masaüstünde simge istemiyorsanız bu seçeneği işaretleyin. Masaüstünde simgeler "
+"bulunmadığı zaman sisteminiz daha hızlı çalışacaktır, ancak simgeleri "
+"masaüstüne kopyalayamayacaksınız."
+
+#. i18n: file desktopbehavior.ui line 92
+#: rc.cpp:12
+#, no-c-format
+msgid "Allow pro&grams in desktop window"
+msgstr "&Masaüstü penceresinde programlara izin ver"
+
+#. i18n: file desktopbehavior.ui line 95
+#: rc.cpp:15
+#, no-c-format
+msgid ""
+"Check this option if you want to run X11 programs that draw into the desktop "
+"such as xsnow, xpenguin or xmountain. If you have problems with applications "
+"like netscape that check the root window for running instances, disable this "
+"option."
+msgstr ""
+"Masaüstüne yazan xsnow, xpenguin, xmountain gibi X Window programlarının "
+"çalışmasını sağlamak için bu seçeneği tıklayın."
+
+#. i18n: file desktopbehavior.ui line 105
+#: rc.cpp:18
+#, no-c-format
+msgid "Show &tooltips"
+msgstr "İ&puçlarını göster"
+
+#. i18n: file desktopbehavior.ui line 113
+#: rc.cpp:21
+#, no-c-format
+msgid "Menu Bar at Top of Screen"
+msgstr "Menü Çubuğu Ekranın Tepesinde"
+
+#. i18n: file desktopbehavior.ui line 124
+#: rc.cpp:24
+#, no-c-format
+msgid "&None"
+msgstr "&Hiçbiri"
+
+#. i18n: file desktopbehavior.ui line 127
+#: rc.cpp:27
+#, no-c-format
+msgid ""
+"If this option is selected, there is no menu bar at the top of the screen."
+msgstr ""
+"Bu seçenek işaretlenirse ekranın en tepesinde menü çubuğu görüntülenmeyecektir."
+
+#. i18n: file desktopbehavior.ui line 135
+#: rc.cpp:30
+#, no-c-format
+msgid "&Desktop menu bar"
+msgstr "Masaüstü menü çu&buğu"
+
+#. i18n: file desktopbehavior.ui line 138
+#: rc.cpp:33
+#, no-c-format
+msgid ""
+"If this option is selected, there is one menu bar at the top of the screen "
+"which shows the desktop menus."
+msgstr ""
+"Eğer bu seçenek işaretli ise ekranın en tepesinde masaüstü menüsünü içeren bir "
+"menü çubuğu görüntülenecektir."
+
+#. i18n: file desktopbehavior.ui line 146
+#: rc.cpp:36
+#, no-c-format
+msgid "&Current application's menu bar (Mac OS-style)"
+msgstr "&Güncel uygulamanın menü çubuğu (Mac OS biçimi)"
+
+#. i18n: file desktopbehavior.ui line 149
+#: rc.cpp:39
+#, no-c-format
+msgid ""
+"If this option is selected, applications will not have their menu bar attached "
+"to their own window anymore. Instead, there is one menu bar at the top of the "
+"screen which shows the menus of the currently active application. You might "
+"recognize this behavior from Mac OS."
+msgstr ""
+"Bu seçenek seçildiğinde uygulama menüleri pencerelerinde değilde ekranın "
+"üüstnde seçili uygulamanın menülerini gösteren bir menü çubuğunda görüntülenir. "
+"Bu davranışı Mac Os'dan hatırlayabilirsiniz."
+
+#. i18n: file desktopbehavior.ui line 159
+#: rc.cpp:42
+#, no-c-format
+msgid "Mouse Button Actions"
+msgstr "Fare Düğmesi Eylemleri"
+
+#. i18n: file desktopbehavior.ui line 170
+#: rc.cpp:45
+#, no-c-format
+msgid "Middle button:"
+msgstr "Orta düğme:"
+
+#. i18n: file desktopbehavior.ui line 178
+#: rc.cpp:48
+#, no-c-format
+msgid "Left button:"
+msgstr "Sol düğme:"
+
+#. i18n: file desktopbehavior.ui line 186
+#: rc.cpp:51
+#, no-c-format
+msgid "Right button:"
+msgstr "Sağ düğme:"
+
+#. i18n: file desktopbehavior.ui line 223
+#: rc.cpp:54 rc.cpp:57 rc.cpp:60
+#, no-c-format
+msgid "Edit..."
+msgstr "Düzenle..."
+
+#. i18n: file desktopbehavior.ui line 304
+#: rc.cpp:63
+#, no-c-format
+msgid "File Icons"
+msgstr "Dosya Simgeleri"
+
+#. i18n: file desktopbehavior.ui line 315
+#: rc.cpp:66
+#, no-c-format
+msgid "Automatically &line up icons"
+msgstr "&Simgeleri otomatik olarak sırala"
+
+#. i18n: file desktopbehavior.ui line 318
+#: rc.cpp:69
+#, no-c-format
+msgid ""
+"Check this option if you want to see your icons automatically aligned to the "
+"grid when you move them."
+msgstr ""
+"Eğer simgelerinizin otomatik olarak kılavuza uydurulmasını istiyorsanız, bu "
+"seçeneği etkin hale getirin."
+
+#. i18n: file desktopbehavior.ui line 326
+#: rc.cpp:72
+#, no-c-format
+msgid "Show &hidden files"
+msgstr "G&izli dosyaları göster"
+
+#. i18n: file desktopbehavior.ui line 330
+#: rc.cpp:75
+#, no-c-format
+msgid ""
+"<p>If you check this option, any files in your desktop directory that begin "
+"with a period (.) will be shown. Usually, such files contain configuration "
+"information, and remain hidden from view.</p>\n"
+"<p>For example, files which are named \".directory\" are plain text files which "
+"contain information for Konqueror, such as the icon to use in displaying a "
+"directory, the order in which files should be sorted, etc. You should not "
+"change or delete these files unless you know what you are doing.</p>"
+msgstr ""
+"<p>Bu seçeneği işaretlerseniz masaüstü dizininizde yer alan ve nokta (.) ile "
+"başlayan dosyalar görünür hale gelir. Genellikle bu tür dosyalar, yapılandırma "
+"bilgilerini içerir ve görüntülenmez.</p>\n"
+"<p>Örneğin, \".directory\" isimli dosyalar Konqueror'ın bir dizini "
+"görüntülerken kullanacağı simge, dosyaları sıralarken uyacağı düzen, vb. "
+"hakkında bilgiler içeren düz metin dosyalarıdır. Ne yaptığınızı bilmediğiniz "
+"takdirde, bu dosyaları değiştirmemeli ve silmemelisiniz.</p>"
+
+#. i18n: file desktopbehavior.ui line 336
+#: rc.cpp:79
+#, no-c-format
+msgid "Show Icon Previews For"
+msgstr "Önizlemeler İçin Simge Göster"
+
+#. i18n: file desktopbehavior.ui line 352
+#: rc.cpp:82
+#, no-c-format
+msgid "Select for which types of files you want to enable preview images."
+msgstr "Önizlemelerini görmek istediğiniz dosya türlerini seçin."
+
+#. i18n: file desktopbehavior.ui line 362
+#: rc.cpp:85
+#, no-c-format
+msgid "Device Icons"
+msgstr "Aygıt simgeleri"
+
+#. i18n: file desktopbehavior.ui line 373
+#: rc.cpp:88
+#, no-c-format
+msgid "&Show device icons:"
+msgstr "&Aygıt simgelerini göster:"
+
+#. i18n: file desktopbehavior.ui line 379
+#: rc.cpp:91
+#, no-c-format
+msgid "Device Types to Display"
+msgstr "Görüntülenecek Aygıt Türleri"
+
+#. i18n: file desktopbehavior.ui line 398
+#: rc.cpp:94
+#, no-c-format
+msgid "Deselect the device types which you do not want to see on the desktop."
+msgstr "Masaüstünde görmek istemediğiniz aygıt türlerini seçin."
+
+#: rootopts.cpp:67
+msgid ""
+"<h1>Paths</h1>\n"
+"This module allows you to choose where in the filesystem the files on your "
+"desktop should be stored.\n"
+"Use the \"What's This?\" (Shift+F1) to get help on specific options."
+msgstr ""
+"<h1>Yollar</h1>\n"
+"Bu modül, masaüstündeki dosyalarınızın dosya sistemi içerisinde nerede "
+"saklanacağını belirlemenizi sağlar.\n"
+"\"Bu Nedir?\" (Shift+F1) kullanarak özel seçenekler için yardım alabilirsiniz."
+
+#: rootopts.cpp:74
+msgid "Des&ktop path:"
+msgstr "Masaüstünün &yolu:"
+
+#: rootopts.cpp:81
+msgid ""
+"This folder contains all the files which you see on your desktop. You can "
+"change the location of this folder if you want to, and the contents will move "
+"automatically to the new location as well."
+msgstr ""
+"Bu dizinde masaüstünde gördüğünüz tüm dosyalar yer alır. Dilerseniz bu dizinin "
+"konumunu değiştirebilirsiniz. Bu takdirde dizinin içeriği de otomatik olarak "
+"yeni konuma taşınacaktır."
+
+#: rootopts.cpp:89
+msgid "A&utostart path:"
+msgstr "&Otomatik başlangıç yolu:"
+
+#: rootopts.cpp:96
+msgid ""
+"This folder contains applications or links to applications (shortcuts) that you "
+"want to have started automatically whenever KDE starts. You can change the "
+"location of this folder if you want to, and the contents will move "
+"automatically to the new location as well."
+msgstr ""
+"Bu dizinde, KDE başladığında otomatik olarak açılmasını istediğiniz uygulamalar "
+"ya da uygulamalara bağlar (kısayollar) yer alır. Bu dizinin konumunu isterseniz "
+"değiştirebilirsiniz. Bu takdirde dizinin içeriği de otomatik olarak yeni konuma "
+"taşınacaktır."
+
+#: rootopts.cpp:105
+msgid "D&ocuments path:"
+msgstr "&Belge yolu:"
+
+#: rootopts.cpp:112
+msgid ""
+"This folder will be used by default to load or save documents from or to."
+msgstr ""
+"Bu dizin dökümanlarınızı öntanımlı olarak saklamak ve yüklemek için kullanılır."
+
+#: rootopts.cpp:202 rootopts.cpp:217
+msgid "Autostart"
+msgstr "Otomatik Başlangıç"
+
+#: rootopts.cpp:206
+msgid "Desktop"
+msgstr "Masaüstü"
+
+#: rootopts.cpp:275
+msgid ""
+"The path for '%1' has been changed;\n"
+"do you want the files to be moved from '%2' to '%3'?"
+msgstr ""
+"'%1' yolu değişti;\n"
+"Dosyaları '%2'den '%3'e taşımamı ister misiniz?"
+
+#: rootopts.cpp:276
+msgid "Confirmation Required"
+msgstr "Onaylama Gerekli"

@@ -1,0 +1,99 @@
+# translation of katexmltools.po to Türkçe
+# translation of katexmltools.po to turkish
+# translation of katexmltools.po to Turkish
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: katexmltools\n"
+"POT-Creation-Date: 2005-05-08 01:27+0200\n"
+"PO-Revision-Date: 2004-07-30 01:35+0300\n"
+"Last-Translator: Adem Alp YILDIZ <ademalp@linux-sevenler.org>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.3\n"
+
+#: plugin_katexmltools.cpp:152
+msgid "&Insert Element..."
+msgstr "Öğe &Ekle..."
+
+#: plugin_katexmltools.cpp:154
+msgid "&Close Element"
+msgstr "Element'i &Kapat"
+
+#: plugin_katexmltools.cpp:156
+msgid "Assign Meta &DTD..."
+msgstr "Meta &DTD Ata..."
+
+#: plugin_katexmltools.cpp:462
+msgid "Assign Meta DTD in XML Format"
+msgstr "XML Biçiminde Meta DTD Ata"
+
+#: plugin_katexmltools.cpp:467
+msgid ""
+"The current file has been identified as a document of type \"%1\". The meta DTD "
+"for this document type will now be loaded."
+msgstr ""
+"Geçerli dosya \"%1\" türünde bir belge olarak tanımlandı. Bu belge tipi için "
+"meta DTD bilgi şimdi yüklenecek."
+
+#: plugin_katexmltools.cpp:470
+msgid "Loading XML Meta DTD"
+msgstr "XML Meta DTD Yükleniyor"
+
+#: plugin_katexmltools.cpp:505
+msgid "The file '%1' could not be opened. The server returned an error."
+msgstr "'%1' adlı dosya açılamadı. Sunucu hata verdi."
+
+#: plugin_katexmltools.cpp:507 pseudo_dtd.cpp:50 pseudo_dtd.cpp:61
+msgid "XML Plugin Error"
+msgstr "XML Eklenti Hatası"
+
+#: plugin_katexmltools.cpp:1103
+msgid "Insert XML Element"
+msgstr "XML Elementi Ekle"
+
+#: plugin_katexmltools.cpp:1127
+msgid ""
+"Enter XML tag name and attributes (\"<\", \">\" and closing tag will be "
+"supplied):"
+msgstr ""
+"XML etiket ismi ve özelliklerini girin ( \"<\",\">\" ve kapatma etiketi "
+"sağlanacak):"
+
+#: pseudo_dtd.cpp:48
+msgid ""
+"The file '%1' could not be parsed. Please check that the file is well-formed "
+"XML."
+msgstr ""
+"'%1' adlı dosya ayrıştırılamadı. Dosyanın iyi oluşturulmuş bir XML olduğunu "
+"kontrol edin."
+
+#: pseudo_dtd.cpp:56
+msgid ""
+"The file '%1' is not in the expected format. Please check that the file is of "
+"this type:\n"
+"-//Norman Walsh//DTD DTDParse V2.0//EN\n"
+"You can produce such files with dtdparse. See the Kate Plugin documentation for "
+"more information."
+msgstr ""
+"'%1' adlı dosya beklenen türde değil. Dosyanın şu türde geçerli bir XML dosyası "
+"olduğunu kontrol edin:\n"
+"-//Norman Walsh//DTD DTDParse V2.0//EN\n"
+"Bu türdeki dosyaları dtdparse ile üretebilirsiniz. Daha fazla bilgi için Kate "
+"Eklenti belgelerine bakın."
+
+#: pseudo_dtd.cpp:71
+msgid "Analyzing meta DTD..."
+msgstr "Meta DTD inceleniyor..."
+
+#. i18n: file ui.rc line 4
+#: rc.cpp:3
+#, no-c-format
+msgid "&XML"
+msgstr "&XML"

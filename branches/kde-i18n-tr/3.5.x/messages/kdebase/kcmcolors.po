@@ -1,0 +1,381 @@
+# translation of kcmcolors.po to turkish
+# translation of kcmcolors.po to Türkçe
+# translation of kcmcolors.po to Turkish
+# translation of kcmcolors.po to
+# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+# Barış Metin <baris@gelecek.com.tr>, 2000.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Adil YILDIZ <adil@kde.org.tr>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmcolors\n"
+"POT-Creation-Date: 2006-08-22 02:34+0200\n"
+"PO-Revision-Date: 2005-03-24 10:18+0000\n"
+"Last-Translator: Adil <adil@kde.org.tr>\n"
+"Language-Team: turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org.tr"
+
+#: colorscm.cpp:100
+msgid ""
+"<h1>Colors</h1> This module allows you to choose the color scheme used for the "
+"KDE desktop. The different elements of the desktop, such as title bars, menu "
+"text, etc., are called \"widgets\". You can choose the widget whose color you "
+"want to change by selecting it from a list, or by clicking on a graphical "
+"representation of the desktop."
+"<p> You can save color settings as complete color schemes, which can also be "
+"modified or deleted. KDE comes with several predefined color schemes on which "
+"you can base your own."
+"<p> All KDE applications will obey the selected color scheme. Non-KDE "
+"applications may also obey some or all of the color settings, if this option is "
+"enabled."
+msgstr ""
+"<h1>Renkler</h1> Bu modül KDE masaüstü için renk şemaları seçmenize izin verir. "
+"Başlık çubukları, menü metinleri, vb. gibi masaüstü elemanları, \"bileşen\" "
+"olarak isimlendirilirler. Rengini değiştirmek istediğiniz parçacığı listeden, "
+"ya da masaüstünün önizlemesinden üzerine tıklayarak seçebilirsiniz."
+"<p>  Renk ayarlarını daha sonradan değiştirilip silinebilecek tüm renk planları "
+"olarak kayıt edebilirsiniz. KDE kendi renk planlarınıza taban olarak "
+"kullanabileceğiniz birçok renk planı ile birlikte gelir. "
+"<p> Tüm KDE uygulamaları bu renk ayarlarına uyacaktır. Eğer bu seçenek "
+"etkinleştirilirse KDE harici uygulamalar da bazı ya da tüm renk ayarlarına "
+"uyabilir."
+
+#: colorscm.cpp:133
+msgid ""
+"This is a preview of the color settings which will be applied if you click "
+"\"Apply\" or \"OK\". You can click on different parts of this preview image. "
+"The widget name in the \"Widget color\" box will change to reflect the part of "
+"the preview image you clicked."
+msgstr ""
+"Bu pencere, \"Uygula\" ya da \"Tamam\" tuşlarına bastığınızda uygulanacak "
+"ayarların önizlemesidir. Bu önizleme resminin değişik bölümlerine "
+"tıklayabilirsiniz. \"Eleman rengi\" kutusundaki eleman ismi önizleme resminde "
+"tıkladığınız bölümü yansıtacak şekilde değişecektir."
+
+#: colorscm.cpp:145
+msgid "Color Scheme"
+msgstr "Renk Planı"
+
+#: colorscm.cpp:154
+msgid ""
+"This is a list of predefined color schemes, including any that you may have "
+"created. You can preview an existing color scheme by selecting it from the "
+"list. The current scheme will be replaced by the selected color scheme."
+"<p> Warning: if you have not yet applied any changes you may have made to the "
+"current scheme, those changes will be lost if you select another color scheme."
+msgstr ""
+"Bu önceden belirlenmiş renklerin bir planıdır, sizin oluşturduklarınız da bunun "
+"içerisindedir. Var olan bir renk planını listeden seçerek önizlemesini "
+"görebilirsiniz. Şimdiki plan seçilen ile değiştirilecektir. "
+"<p> Uyarı: Eğer şimdiki şema üzerinde yaptığınız değişiklikleri "
+"kaydetmediyseniz, başka bir plan seçtiğinizde değişiklikleri kaybedeceksiniz."
+
+#: colorscm.cpp:162
+msgid "&Save Scheme..."
+msgstr "Ş&emayı Kaydet..."
+
+#: colorscm.cpp:165
+msgid ""
+"Press this button if you want to save the current color settings as a color "
+"scheme. You will be prompted for a name."
+msgstr ""
+"Eğer şimdiki renk ayarlarını yeni bir renk planı olarak kaydetmek isterseniz bu "
+"düğmeye basın. Sizden bir isim istenecek."
+
+#: colorscm.cpp:169
+msgid "R&emove Scheme"
+msgstr "Şemayı &Sil "
+
+#: colorscm.cpp:173
+msgid ""
+"Press this button to remove the selected color scheme. Note that this button is "
+"disabled if you do not have permission to delete the color scheme."
+msgstr ""
+"Seçili renk planını kaldırmak için bu düğmeye basın. Eğer renk planı üzerinde "
+"yetkiye sahip değilseniz bu düğmenin etkin olmayacağını unutmayın."
+
+#: colorscm.cpp:177
+msgid "I&mport Scheme..."
+msgstr "Şemayı &Aktar..."
+
+#: colorscm.cpp:180
+msgid ""
+"Press this button to import a new color scheme. Note that the color scheme will "
+"only be available for the current user."
+msgstr ""
+"Seçili renk planını kaldırmak için bu düğmeye basın. Bu renk ayarları sadece "
+"şimdiki kullanıcı için geçerli olacaktır."
+
+#: colorscm.cpp:188
+msgid "&Widget Color"
+msgstr "&Parçacık Rengi"
+
+#: colorscm.cpp:199
+msgid "Inactive Title Bar"
+msgstr "Etkin olmayan Başlık Çubuğu"
+
+#: colorscm.cpp:200
+msgid "Inactive Title Text"
+msgstr "Etkin Olmayan Başlık Metni"
+
+#: colorscm.cpp:201
+msgid "Inactive Title Blend"
+msgstr "Etkin Olmayan Başlık Karışımı"
+
+#: colorscm.cpp:202
+msgid "Active Title Bar"
+msgstr "Etkin Başlık Çubuğu"
+
+#: colorscm.cpp:203
+msgid "Active Title Text"
+msgstr "Etkin Başlık Metni"
+
+#: colorscm.cpp:204
+msgid "Active Title Blend"
+msgstr "Etkin Başlık Karışımı"
+
+#: colorscm.cpp:205
+msgid "Window Background"
+msgstr "Pencere Arkaplanı"
+
+#: colorscm.cpp:206
+msgid "Window Text"
+msgstr "Pencere Metni"
+
+#: colorscm.cpp:207
+msgid "Selected Background"
+msgstr "Seçili Arkaplan"
+
+#: colorscm.cpp:208
+msgid "Selected Text"
+msgstr "Seçili Metin"
+
+#: colorscm.cpp:209
+msgid "Standard Background"
+msgstr "Standart Arkaplan"
+
+#: colorscm.cpp:210
+msgid "Standard Text"
+msgstr "Standart Metin"
+
+#: colorscm.cpp:211
+msgid "Button Background"
+msgstr "Düğme Arkaplanı"
+
+#: colorscm.cpp:212
+msgid "Button Text"
+msgstr "Düğme Metni"
+
+#: colorscm.cpp:213
+msgid "Active Title Button"
+msgstr "Etkin Başlık Düğmesi"
+
+#: colorscm.cpp:214
+msgid "Inactive Title Button"
+msgstr "Etkisiz Başlık Düğmesi"
+
+#: colorscm.cpp:215
+msgid "Active Window Frame"
+msgstr "Etkin Pencere Çerçevesi"
+
+#: colorscm.cpp:216
+msgid "Active Window Handle"
+msgstr "Etkin Pencere Tutamacı"
+
+#: colorscm.cpp:217
+msgid "Inactive Window Frame"
+msgstr "Etkisiz Pencere Çerçevesi"
+
+#: colorscm.cpp:218
+msgid "Inactive Window Handle"
+msgstr "Etkisiz Pencere Tutamacı"
+
+#: colorscm.cpp:219
+msgid "Link"
+msgstr "Bağlantı"
+
+#: colorscm.cpp:220
+msgid "Followed Link"
+msgstr "İzlenmiş Bağlantı"
+
+#: colorscm.cpp:221
+msgid "Alternate Background in Lists"
+msgstr "Listelerde Değişken Arkaplan"
+
+#: colorscm.cpp:227
+msgid ""
+"Click here to select an element of the KDE desktop whose color you want to "
+"change. You may either choose the \"widget\" here, or click on the "
+"corresponding part of the preview image above."
+msgstr ""
+"KDE masaüstü elemanlarından rengini değiştirmek istediğinizi seçmek için buraya "
+"tıklayın. Buradaki \"eleman\"ı  seçebilir, ya da önizleme penceresindeki ilgili "
+"bölüme tıklayabilirsiniz."
+
+#: colorscm.cpp:238
+msgid ""
+"Click here to bring up a dialog box where you can choose a color for the "
+"\"widget\" selected in the above list."
+msgstr ""
+"Seçtiğiniz \"eleman\" rengini belirleyecek dialog kutusunu görmek için buraya "
+"tıklayın."
+
+#: colorscm.cpp:242
+msgid "Shade sorted column in lists"
+msgstr "Listelerde sıralanmış sütunları gölgele"
+
+#: colorscm.cpp:247
+msgid ""
+"Check this box to show the sorted column in a list with a shaded background"
+msgstr "Listelerdeki sıralanmış sütunları gölgelemek için bu kutuyu tıklayın"
+
+#: colorscm.cpp:249
+msgid "Con&trast"
+msgstr "Kontras&t"
+
+#: colorscm.cpp:262
+msgid ""
+"Use this slider to change the contrast level of the current color scheme. "
+"Contrast does not affect all of the colors, only the edges of 3D objects."
+msgstr ""
+"Şimdiki renk planının zıtlık derecesini değiştirmek için bu çubuğu kullanın. "
+"Zıtlık tüm renklere etki etmez, sadece 3 boyutlu nesnelerin köşelerini etkiler."
+
+#: colorscm.cpp:266
+msgid ""
+"_: Low Contrast\n"
+"Low"
+msgstr "Düşük"
+
+#: colorscm.cpp:270
+msgid ""
+"_: High Contrast\n"
+"High"
+msgstr "Yüksek"
+
+#: colorscm.cpp:273
+msgid "Apply colors to &non-KDE applications"
+msgstr "&Renkleri KDE dışı uygulamalara uygula"
+
+#: colorscm.cpp:277
+msgid ""
+"Check this box to apply the current color scheme to non-KDE applications."
+msgstr ""
+"KDE olmayan uygulamalara şimdiki renk şemasını uygulamak için bu kutuyu seçin."
+
+#: colorscm.cpp:282
+msgid "Colors"
+msgstr "Renkler"
+
+#: colorscm.cpp:284
+msgid "(c) 1997-2005 Colors Developers"
+msgstr "(c) 1997-2005 KDE Geliştiricileri"
+
+#: colorscm.cpp:490
+msgid ""
+"This color scheme could not be removed.\n"
+"Perhaps you do not have permission to alter the filesystem where the color "
+"scheme is stored."
+msgstr ""
+"Bu renk planı silinemez.\n"
+"Belki de renk planının saklandığı dosya sistemi \n"
+"üzerinde yetkiye sahip değilsinizdir."
+
+#: colorscm.cpp:523 colorscm.cpp:543
+msgid "Save Color Scheme"
+msgstr "Renk Planını Kaydet"
+
+#: colorscm.cpp:524
+msgid "Enter a name for the color scheme:"
+msgstr "Bu renk planı için bir isim verin:"
+
+#: colorscm.cpp:541
+msgid ""
+"A color scheme with the name '%1' already exists.\n"
+"Do you want to overwrite it?\n"
+msgstr ""
+"'%1' isimli bir renk olanı zaten mevcut.\n"
+"Üzerine yazılmasını istiyor musunuz?\n"
+
+#: colorscm.cpp:544
+msgid "Overwrite"
+msgstr "Üzerine yaz"
+
+#: colorscm.cpp:592
+msgid "Import failed."
+msgstr "Aktarma başarısız."
+
+#: colorscm.cpp:600
+msgid "Untitled Theme"
+msgstr "İsimsiz Tema"
+
+#: colorscm.cpp:858
+msgid "Current Scheme"
+msgstr "Şimdiki Renk Planı"
+
+#: colorscm.cpp:859
+msgid "KDE Default"
+msgstr "KDE Öntanımlı"
+
+#: widgetcanvas.cpp:368 widgetcanvas.cpp:369
+msgid "Inactive window"
+msgstr "Etkisiz pencere"
+
+#: widgetcanvas.cpp:412 widgetcanvas.cpp:413
+msgid "Active window"
+msgstr "Etkin pencere"
+
+#: widgetcanvas.cpp:474 widgetcanvas.cpp:475
+msgid "Standard text"
+msgstr "Standart metin"
+
+#: widgetcanvas.cpp:482 widgetcanvas.cpp:491
+msgid "Selected text"
+msgstr "Seçili metin"
+
+#: widgetcanvas.cpp:500 widgetcanvas.cpp:501
+msgid "link"
+msgstr "bağlantı"
+
+#: widgetcanvas.cpp:510 widgetcanvas.cpp:511
+msgid "followed link"
+msgstr "izlenmiş bağlantı"
+
+#: widgetcanvas.cpp:520 widgetcanvas.cpp:535
+msgid "Push Button"
+msgstr "Düğme"
+
+#: widgetcanvas.cpp:547 widgetcanvas.cpp:564
+msgid "New"
+msgstr "Yeni"
+
+#: widgetcanvas.cpp:553 widgetcanvas.cpp:565
+msgid ""
+"_: Menu item\n"
+"Open"
+msgstr "Aç"
+
+#: widgetcanvas.cpp:559 widgetcanvas.cpp:566
+msgid ""
+"_: Menu item\n"
+"Save"
+msgstr "Kaydet"

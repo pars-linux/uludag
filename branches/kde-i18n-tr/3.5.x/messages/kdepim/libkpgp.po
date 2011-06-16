@@ -1,0 +1,706 @@
+# translation of libkpgp.po to
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Ozan Eren BILGEN <oebilgen@uekae.tubitak.gov.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+# Translation of libkpgp.po to Turkish
+# Copyright (C) 2004, 2007 Free Software Foundation, Inc.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkpgp\n"
+"POT-Creation-Date: 2006-05-29 04:02+0200\n"
+"PO-Revision-Date: 2007-06-28 15:57+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=1; plural=0;\n"
+
+#: kpgp.cpp:187
+msgid ""
+"Could not find PGP executable.\n"
+"Please check your PATH is set correctly."
+msgstr ""
+"PGP uygulaması bulunamadı.\n"
+"PATH'in doğru ayarlandığını denetleyiniz."
+
+#: kpgp.cpp:206
+msgid "OpenPGP Security Check"
+msgstr "OpenPGP Güvenlik Denetimi"
+
+#: kpgp.cpp:213
+msgid "Passphrase is too long, it must contain fewer than 1024 characters."
+msgstr "Parola cümlesi çok uzun, 1024 harften az olmalı."
+
+#: kpgp.cpp:215
+msgid "Out of memory."
+msgstr "Bellek bitti."
+
+#: kpgp.cpp:286
+msgid ""
+"You just entered an invalid passphrase.\n"
+"Do you want to try again, or cancel and view the message undecrypted?"
+msgstr ""
+"Yanlış bir parola cümlesi girdiniz.\n"
+"Yeniden girmeyi mi yoksa iletiyi şifresi çözülmeden görmeyi mi istersiniz?"
+
+#: kpgp.cpp:289 kpgp.cpp:348 kpgp.cpp:377 kpgp.cpp:396 kpgp.cpp:422
+#: kpgp.cpp:589 kpgp.cpp:608
+msgid "PGP Warning"
+msgstr "PGP Uyarısı"
+
+#: kpgp.cpp:289 kpgp.cpp:349
+msgid "&Retry"
+msgstr "&Tekrar Dene"
+
+#: kpgp.cpp:343
+msgid ""
+"You entered an invalid passphrase.\n"
+"Do you want to try again, continue and leave the message unsigned, or cancel "
+"sending the message?"
+msgstr ""
+"Yanlış bir parola cümlesi girdiniz.\n"
+"Yeniden girmeyi mi, devam edip iletiyi imzalamadan göndermeyi mi, yoksa iletiyi "
+"göndermeyi iptal etmeyi mi istersiniz?"
+
+#: kpgp.cpp:350 kpgp.cpp:378
+msgid "Send &Unsigned"
+msgstr "İ&mzalamadan Gönder"
+
+#: kpgp.cpp:372
+msgid ""
+"_: %1 = 'signing failed' error message\n"
+"%1\n"
+"Do you want to send the message unsigned, or cancel sending the message?"
+msgstr ""
+"%1\n"
+"İletiyi imzalamadan göndermek mi istersiniz, iletiyi göndermekten vazgeçmek mi "
+"istersiniz?"
+
+#: kpgp.cpp:390
+msgid ""
+"_: %1 = 'bad keys' error message\n"
+"%1\n"
+"Do you want to encrypt anyway, leave the message as-is, or cancel sending the "
+"message?"
+msgstr ""
+"%1\n"
+"İletiyi olduğu gibi bırakıp şifrelemeyi mi yoksa gönderme işlemini iptal etmeyi "
+"mi istiyorsunuz?"
+
+#: kpgp.cpp:397 kpgp.cpp:609
+msgid "Send &Encrypted"
+msgstr "&Şifreli Gönder"
+
+#: kpgp.cpp:398 kpgp.cpp:590 kpgp.cpp:610
+msgid "Send &Unencrypted"
+msgstr "&Açık Gönder"
+
+#: kpgp.cpp:417
+msgid ""
+"_: %1 = 'missing keys' error message\n"
+"%1\n"
+"Do you want to leave the message as-is, or cancel sending the message?"
+msgstr ""
+"%1\n"
+"İletiyi olduğu gibi bırakmayı mı yoksa göndermemeyi mi istiyorsunuz?"
+
+#: kpgp.cpp:423
+msgid "&Send As-Is"
+msgstr "Old&uğu Gibi Gönder"
+
+#: kpgp.cpp:434
+#, c-format
+msgid ""
+"The following error occurred:\n"
+"%1"
+msgstr ""
+"Aşağıdaki hata oluştu:\n"
+"%1"
+
+#: kpgp.cpp:436
+msgid ""
+"This is the error message of %1:\n"
+"%2"
+msgstr ""
+"Hata: %1:\n"
+"%2"
+
+#: kpgp.cpp:581
+msgid ""
+"You did not select an encryption key for the recipient of this message; "
+"therefore, the message will not be encrypted."
+msgstr ""
+"Bu iletinin alıcısı için şifreleme anahtarı belirlemediniz; bu yüzden ileti "
+"şifrelenmeyecek."
+
+#: kpgp.cpp:584
+msgid ""
+"You did not select an encryption key for any of the recipients of this message; "
+"therefore, the message will not be encrypted."
+msgstr ""
+"Bu iletinin hiçbir alıcısı için şifreleme anahtarı belirlemediniz; bu yüzden "
+"ileti şifrelenmeyecek."
+
+#: kpgp.cpp:600
+msgid ""
+"You did not select an encryption key for one of the recipients; this person "
+"will not be able to decrypt the message if you encrypt it."
+msgstr ""
+"Bu iletinin alıcılarından biri için şifreleme anahtarı belirlemediniz; bu "
+"yüzden ilgili kişi şifreli gönderirseniz iletinin şifresini çözemeyecek."
+
+#: kpgp.cpp:603
+msgid ""
+"You did not select encryption keys for some of the recipients; these persons "
+"will not be able to decrypt the message if you encrypt it."
+msgstr ""
+"Bu iletinin alıcılarından bazıları için şifreleme anahtarı belirlemediniz; bu "
+"yüzden ilgili kişiler şifreli gönderirseniz iletinin şifresini çözemeyecek."
+
+#: kpgp.cpp:877
+msgid ""
+"This feature is\n"
+"still missing"
+msgstr ""
+"Bu özellik\n"
+"halen eksiktir"
+
+#: kpgp.cpp:925 kpgp.cpp:960 kpgp.cpp:996
+msgid ""
+"You either do not have GnuPG/PGP installed or you chose not to use GnuPG/PGP."
+msgstr ""
+"Sisteminizde GnuPG/PGP kururlu değil ya da GnuPG/PGP kullanmamayı tercih "
+"ettiniz."
+
+#: kpgp.cpp:1211 kpgp.cpp:1275 kpgp.cpp:1301 kpgpui.cpp:1527 kpgpui.cpp:1539
+msgid "Encryption Key Selection"
+msgstr "Şifreleme Anahtarı Seçimi"
+
+#: kpgp.cpp:1215
+msgid ""
+"_: if in your language something like 'key(s)' isn't possible please use the "
+"plural in the translation\n"
+"There is a problem with the encryption key(s) for \"%1\".\n"
+"\n"
+"Please re-select the key(s) which should be used for this recipient."
+msgstr ""
+"\"%1\" için kullanılacak şifreleme anahtar(lar)ında sorun var.\n"
+"\n"
+"Lütfen bu alıcı için kullanılacak anahtar(lar)ı tekrar seçiniz."
+
+#: kpgp.cpp:1279
+msgid ""
+"_: if in your language something like 'key(s)' isn't possible please use the "
+"plural in the translation\n"
+"No valid and trusted OpenPGP key was found for \"%1\".\n"
+"\n"
+"Select the key(s) which should be used for this recipient."
+msgstr ""
+"\"%1\" için geçerli bir OpenPGP anahtarı bulunamadı.\n"
+"\n"
+"Lütfen bu alıcı için kullanılacak anahtar(lar)ı tekrar seçiniz."
+
+#: kpgp.cpp:1305
+msgid ""
+"_: if in your language something like 'key(s)' isn't possible please use the "
+"plural in the translation\n"
+"More than one key matches \"%1\".\n"
+"\n"
+"Select the key(s) which should be used for this recipient."
+msgstr ""
+"\"%1\" için birden fazla anahtar var.\n"
+"\n"
+"Lütfen bu alıcı için kullanılacak anahtar(lar)ı tekrar seçiniz."
+
+#: kpgpbase2.cpp:139 kpgpbaseG.cpp:153
+msgid ""
+"Could not find public keys matching the userid(s)\n"
+"%1;\n"
+"the message is not encrypted."
+msgstr ""
+"Aşağıdaki kullanıcı(lar) için açık anahtar bulunamadı:\n"
+"%1\n"
+"İleti şifrelenmedi."
+
+#: kpgpbase2.cpp:144 kpgpbaseG.cpp:158
+msgid ""
+"Could not find public keys matching the userid(s)\n"
+"%1;\n"
+"these persons will not be able to read the message."
+msgstr ""
+"Aşağıdaki kullanıcı(lar) için açık anahtar bulunamadı:\n"
+"%1\n"
+"Bu alıcılar iletiyi okuyamayacaklar."
+
+#: kpgpbase2.cpp:170
+msgid ""
+"Public keys not certified with trusted signature for userid(s)\n"
+"%1.\n"
+"The message is not encrypted."
+msgstr ""
+"Aşağıdaki kullanıcı(lar) için olan açık anahtarlar güvenilir imzayla "
+"onaylanmadı:\n"
+"%1\n"
+"İleti şifrelenmedi."
+
+#: kpgpbase2.cpp:176
+msgid ""
+"Public keys not certified with trusted signature for userid(s)\n"
+"%1;\n"
+"these persons will not be able to read the message."
+msgstr ""
+"Aşağıdaki kullanıcı(lar) için olan açık anahtar güvenilir imzayla onaylanmadı:\n"
+"%1\n"
+"Bu alıcılar iletiyi okuyamayacaklar."
+
+#: kpgpbase2.cpp:197
+msgid "Bad passphrase; could not sign."
+msgstr "Yanlış parola cümlesi; imzalama başarısızlıkla sonuçlandı."
+
+#: kpgpbase2.cpp:205
+msgid ""
+"Signing failed: please check your PGP User Identity, the PGP setup, and the key "
+"rings."
+msgstr ""
+"İmzalama başarısız: PGP Kullanıcı Kimliğinizi, PGP yapılandırmasını ve anahtar "
+"halkalarını denetleyiniz."
+
+#: kpgpbase2.cpp:213
+msgid "Encryption failed: please check your PGP setup and the key rings."
+msgstr ""
+"Şifreleme başarısız: Lütfen PGP yapılandırmasını ve anahtar halkalarını "
+"denetleyiniz."
+
+#: kpgpbase2.cpp:259 kpgpbase6.cpp:62 kpgpbase6.cpp:360
+msgid "error running PGP"
+msgstr "PGP çalıştırılırken hata"
+
+#: kpgpbase2.cpp:299 kpgpbase5.cpp:227 kpgpbase6.cpp:87 kpgpbaseG.cpp:257
+msgid "Bad passphrase; could not decrypt."
+msgstr "Yanlış parola cümlesi: Şifre çözme başarısızlıkla sonuçlandı."
+
+#: kpgpbase2.cpp:310 kpgpbase5.cpp:238 kpgpbaseG.cpp:278
+msgid "You do not have the secret key needed to decrypt this message."
+msgstr ""
+"Bu iletinin şifresini çözmek için gerekli olan gizli anahtara sahip değilsiniz."
+
+#: kpgpbase2.cpp:450
+msgid ""
+"The keyring file %1 does not exist.\n"
+"Please check your PGP setup."
+msgstr ""
+"Anahtar halkası dosyası %1 bulunamadı.\n"
+"PGP yapılandırmanızı denetleyiniz."
+
+#: kpgpbase2.cpp:456
+msgid "Unknown error"
+msgstr "Bilinmeyen hata"
+
+#: kpgpbase5.cpp:87
+msgid "Neither recipients nor passphrase specified."
+msgstr "Ne alıcılar ne de parola cümlesi tanımlanmış."
+
+#: kpgpbase5.cpp:128
+msgid "The passphrase you entered is invalid."
+msgstr "Girdiğiniz parola cümlesi geçersizdir."
+
+#: kpgpbase5.cpp:154
+msgid ""
+"The key(s) you want to encrypt your message to are not trusted. No encryption "
+"done."
+msgstr ""
+"İletinizi şifrelemek için kullanmak istediğiniz anahtar(lar) güvenilir "
+"değiller. Hiçbir şifreleme yapılmadı."
+
+#: kpgpbase5.cpp:157
+msgid ""
+"The following key(s) are not trusted:\n"
+"%1\n"
+"Their owner(s) will not be able to decrypt the message."
+msgstr ""
+"Aşağıdaki anahtar(lar) güvenilir değil:\n"
+"%1\n"
+"Anahtara sahip kişi(ler) iletinin şifresini çözemeyecek."
+
+#: kpgpbase5.cpp:169
+#, c-format
+msgid ""
+"Missing encryption key(s) for:\n"
+"%1"
+msgstr ""
+"%1\n"
+"için şifreleme anahtar(lar)ı eksik."
+
+#: kpgpbase5.cpp:206
+msgid "Error running PGP"
+msgstr "PGP çalıştırma hatası"
+
+#: kpgpbase6.cpp:95
+msgid "You do not have the secret key for this message."
+msgstr "Bu ileti için gizli anahtarınız yok."
+
+#: kpgpbase6.cpp:172
+msgid "??? (file ~/.pgp/pubring.pkr not found)"
+msgstr "??? (~/.pgp/pubring.pkr dosyası bulunamadı)"
+
+#: kpgpbaseG.cpp:120
+msgid "Unknown error."
+msgstr "Bilinmeyen hata."
+
+#: kpgpbaseG.cpp:183
+msgid "Signing failed because the passphrase is wrong."
+msgstr "Parola cümleniz hatalı olduğundan imzalama başarısızlıkla sonuçlandı."
+
+#: kpgpbaseG.cpp:190
+msgid "Signing failed because your secret key is unusable."
+msgstr ""
+"Gizli anahtarınız kullanılabilir olmadığından imzalama başarısızlıkla "
+"sonuçlandı."
+
+#: kpgpbaseG.cpp:221
+msgid "Error running gpg"
+msgstr "GPG çalıştırma hatası"
+
+#: kpgpbaseG.cpp:355
+msgid "??? (file ~/.gnupg/pubring.gpg not found)"
+msgstr "??? (~/.gnupg/pubring.gpg dosyası bulunamadı)"
+
+#: kpgpui.cpp:77
+msgid "Please enter your OpenPGP passphrase:"
+msgstr "Lütfen OpenPGP parola cümlenizi giriniz:"
+
+#: kpgpui.cpp:79
+msgid ""
+"Please enter the OpenPGP passphrase for\n"
+"\"%1\":"
+msgstr ""
+"\"%1\"\n"
+"için lütfen OpenPGP parola cümlenizi giriniz:"
+
+#: kpgpui.cpp:121
+msgid ""
+"Please check if encryption really works before you start using it seriously. "
+"Also note that attachments are not encrypted by the PGP/GPG module."
+msgstr ""
+"Lütfen şifrelemenin ciddi olarak kullanmadan önce gerçekten çalıştığından emin "
+"olunuz. Ayrıca eklerin PGP/GPG ile şifrelenmediğini unutmayınız."
+
+#: kpgpui.cpp:134
+msgid "Encryption Tool"
+msgstr "Şifreleme Yöntemi"
+
+#: kpgpui.cpp:138
+msgid "Select encryption tool to &use:"
+msgstr "Kullanılacak şifreleme &yöntemini seçiniz:"
+
+#: kpgpui.cpp:141
+msgid "Autodetect"
+msgstr "Kendiliğinden keşfet"
+
+#: kpgpui.cpp:142
+msgid "GnuPG - Gnu Privacy Guard"
+msgstr "GnuPG - Gnu Privacy Guard"
+
+#: kpgpui.cpp:143
+msgid "PGP Version 2.x"
+msgstr "PGP Sürüm 2.x"
+
+#: kpgpui.cpp:144
+msgid "PGP Version 5.x"
+msgstr "PGP Sürüm 5.x"
+
+#: kpgpui.cpp:145
+msgid "PGP Version 6.x"
+msgstr "PGP Sürüm 6.x"
+
+#: kpgpui.cpp:146
+msgid "Do not use any encryption tool"
+msgstr "Şifreleme yöntemi kullanma"
+
+#: kpgpui.cpp:157
+msgid "&Keep passphrase in memory"
+msgstr "Parola sözcüğünü aklında &tut"
+
+#: kpgpui.cpp:161
+msgid ""
+"<qt>"
+"<p>When this option is enabled, the passphrase of your private key will be "
+"remembered by the application as long as the application is running. Thus you "
+"will only have to enter the passphrase once.</p>"
+"<p>Be aware that this could be a security risk. If you leave your computer, "
+"others can use it to send signed messages and/or read your encrypted messages. "
+"If a core dump occurs, the contents of your RAM will be saved onto disk, "
+"including your passphrase.</p>"
+"<p>Note that when using KMail, this setting only applies if you are not using "
+"gpg-agent. It is also ignored if you are using crypto plugins.</p></qt>"
+msgstr ""
+"<qt>"
+"<p>Bu seçenek etkinleştirildiğinde, gizli anahtarınızın parola cümlesi uygulama "
+"çalıştığı sürece hatırlanacaktır. Bu yüzden, parola cümlenizi sadece bir kere "
+"belirtmeniz yeterlidir.</p>"
+"<p>Bunun bir güvenlik tehdidi yaratabileceğini göz önünde bulundurunuz. Eğer "
+"bilgisayarınızın başından ayrılırsanız, başkaları imzalı iletiler "
+"gönderebildiği gibi şifreli iletilerinizi de okuyabilir. Eğer bellek dökümü "
+"olursa, parola cümelenizle birlikte RAM'inizin içeriği diske yazılır.</p>"
+"<p>KMail kullanırken, bu yapılandırma sadece gpg-agent kulanmazken geçerlidir. "
+"Şifreleme eklentileri kullanırken, bu seçenek yine önemsenmez.</p></qt>"
+
+#: kpgpui.cpp:174
+msgid "Always encr&ypt to self"
+msgstr "Her zaman &kendime şifrele"
+
+#: kpgpui.cpp:179
+msgid ""
+"<qt>"
+"<p>When this option is enabled, the message/file will not only be encrypted "
+"with the receiver's public key, but also with your key. This will enable you to "
+"decrypt the message/file at a later time. This is generally a good idea.</p>"
+"</qt>"
+msgstr ""
+"<qt>"
+"<p>Bu seçenek etkinleştirildiğinde, ileti/dosya sadece karşı tarafın açık "
+"anahtarıyla değil, aynı zamanda Sizinkiyle de şifrelenecektir. Bu Size ileride "
+"ileti/dosya şifresinin çözebilme olasılığı sunar. Bu genelde iyi bir "
+"fikirdir.</p></qt>"
+
+#: kpgpui.cpp:188
+msgid "&Show signed/encrypted text after composing"
+msgstr "Yazdıktan sonra imzalı/şifreli metni &göster"
+
+#: kpgpui.cpp:194
+msgid ""
+"<qt>"
+"<p>When this option is enabled, the signed/encrypted text will be shown in a "
+"separate window, enabling you to know how it will look before it is sent. This "
+"is a good idea when you are verifying that your encryption system works.</p>"
+"</qt>"
+msgstr ""
+"<qt>"
+"<p>Bu seçenek etkinleştirildiğinde, imzalanan/şifrelenen metin, gönderilmeden "
+"önceki halini bilmeniz için ayrı bir pencerede görüntülenecektir. Bu şifreleme "
+"düzeneğinizi sınamak için iyi bir fikirdir.</p></qt>"
+
+#: kpgpui.cpp:200
+msgid "Always show the encryption keys &for approval"
+msgstr "Her zaman şifreleme anahtarlarını &onay için göster"
+
+#: kpgpui.cpp:205
+msgid ""
+"<qt>"
+"<p>When this option is enabled, the application will always show you a list of "
+"public keys from which you can choose the one it will use for encryption. If it "
+"is off, the application will only show the dialog if it cannot find the right "
+"key or if there are several which could be used. </p></qt>"
+msgstr ""
+"<qt>"
+"<p>Bu seçenek etkinleştirildiğinde, uygulama şifreleme için kullanabileceğiniz "
+"anahtarların bir listesini onlardan birini seçmeniz için gösterir. Eğer etkin "
+"değilse; uygulama doğru anahtarı bulamazsa veya kullanılabileceği birden fazla "
+"anahtar varsa iletişim penceresi görüntüleyecektir.</p></qt>"
+
+#: kpgpui.cpp:327
+msgid "&Search for:"
+msgstr "A&ra"
+
+#: kpgpui.cpp:336
+msgid "Key ID"
+msgstr "Anathar &ID"
+
+#: kpgpui.cpp:337
+msgid "User ID"
+msgstr "&Kullanıcı ID"
+
+#: kpgpui.cpp:351
+msgid "Remember choice"
+msgstr "Tercihleri hatırla"
+
+#: kpgpui.cpp:354
+msgid ""
+"<qt>"
+"<p>If you check this box your choice will be stored and you will not be asked "
+"again.</p></qt>"
+msgstr ""
+"<qt>"
+"<p>Eğer bu kutuyu seçerseniz, seçiminiz hatırlanacak ve daha sonra size tekrar "
+"sorulmayacaktır.</p></qt>"
+
+#: kpgpui.cpp:391
+msgid "&Reread Keys"
+msgstr "Anahtarları &Yeniden Oku"
+
+#: kpgpui.cpp:463
+#, c-format
+msgid "Fingerprint: %1"
+msgstr "Parmak izi: %1"
+
+#: kpgpui.cpp:497
+msgid "Revoked"
+msgstr "&Feshedilmiş"
+
+#: kpgpui.cpp:500
+msgid "Expired"
+msgstr "&Tarihi geçmiş"
+
+#: kpgpui.cpp:503
+msgid "Disabled"
+msgstr "&Etkin değil"
+
+#: kpgpui.cpp:506
+msgid "Invalid"
+msgstr "&Geçersiz"
+
+#: kpgpui.cpp:512
+msgid "Undefined trust"
+msgstr "&Bilinmeyen güven"
+
+#: kpgpui.cpp:515
+msgid "Untrusted"
+msgstr "&Güvenilmeyen"
+
+#: kpgpui.cpp:518
+msgid "Marginally trusted"
+msgstr "&Kısmi güven"
+
+#: kpgpui.cpp:521
+msgid "Fully trusted"
+msgstr "&Tam güven"
+
+#: kpgpui.cpp:524
+msgid "Ultimately trusted"
+msgstr "&Kesin güven"
+
+#: kpgpui.cpp:528
+msgid "Unknown"
+msgstr "Bilinmeyen"
+
+#: kpgpui.cpp:531
+msgid "Secret key available"
+msgstr "Gizli anahtar var"
+
+#: kpgpui.cpp:534
+msgid "Sign only key"
+msgstr "Sadece imzalama anahtarı"
+
+#: kpgpui.cpp:537
+msgid "Encryption only key"
+msgstr "Sadece şifreleme anahtarı"
+
+#: kpgpui.cpp:545
+msgid ""
+"_: creation date and status of an OpenPGP key\n"
+"Creation date: %1, Status: %2"
+msgstr "Yaratılma tarihi: %1, Durum: %2"
+
+#: kpgpui.cpp:551
+msgid ""
+"_: creation date, status and remark of an OpenPGP key\n"
+"Creation date: %1, Status: %2 (%3)"
+msgstr "Yaratılma tarihi: %1, Durum: %2 (%3)"
+
+#: kpgpui.cpp:1004
+msgid "Checking Keys"
+msgstr "Anahtarlar Doğrulanıyor"
+
+#: kpgpui.cpp:1005
+msgid "Checking key 0xMMMMMMMM..."
+msgstr "0xMMMMMMMM anahtarı doğrulanıyor..."
+
+#: kpgpui.cpp:1016
+msgid "Checking key 0x%1..."
+msgstr "0x%1 anahtarı doğrulanıyor..."
+
+#: kpgpui.cpp:1040
+msgid "Recheck Key"
+msgstr "Anahtarı Yeniden Denetle"
+
+#: kpgpui.cpp:1164
+msgid "OpenPGP Key Selection"
+msgstr "OpenPGP Anahtar Seçimi"
+
+#: kpgpui.cpp:1165
+msgid "Please select an OpenPGP key to use."
+msgstr "Lütfen kullanılacak OpenPGP anahtarını seçiniz."
+
+#: kpgpui.cpp:1185 kpgpui.cpp:1378 kpgpui.cpp:1435
+msgid "Change..."
+msgstr "Değiştir..."
+
+#: kpgpui.cpp:1315
+msgid "Encryption Key Approval"
+msgstr "Şifreleme Anahtarı Onayı"
+
+#: kpgpui.cpp:1334
+msgid "The following keys will be used for encryption:"
+msgstr "Aşağıdaki anahtarlar şifreleme için kullanılacaktır:"
+
+#: kpgpui.cpp:1358
+msgid "Your keys:"
+msgstr "Anahtarlarınız:"
+
+#: kpgpui.cpp:1361 kpgpui.cpp:1418
+msgid ""
+"_: <none> means 'no key'\n"
+"<none>"
+msgstr "<hiçbiri>"
+
+#: kpgpui.cpp:1409
+msgid "Recipient:"
+msgstr "Alıcı:"
+
+#: kpgpui.cpp:1415
+msgid "Encryption keys:"
+msgstr "Şifreleme anahtarları:"
+
+#: kpgpui.cpp:1444
+msgid "Encryption preference:"
+msgstr "Şifreleme tercihi:"
+
+#: kpgpui.cpp:1446
+msgid "<none>"
+msgstr "<hiçbiri>"
+
+#: kpgpui.cpp:1447
+msgid "Never Encrypt with This Key"
+msgstr "Asla Bu Anahtarla Şifreleme"
+
+#: kpgpui.cpp:1448
+msgid "Always Encrypt with This Key"
+msgstr "Her Zaman Bu Anahtarla Şifrele"
+
+#: kpgpui.cpp:1449
+msgid "Encrypt Whenever Encryption is Possible"
+msgstr "Şifreleme Mümkünse Şifrele"
+
+#: kpgpui.cpp:1450
+msgid "Always Ask"
+msgstr "Her Zaman Sor"
+
+#: kpgpui.cpp:1451
+msgid "Ask Whenever Encryption is Possible"
+msgstr "Şifreleme Mümkünse Sor"
+
+#: kpgpui.cpp:1531
+msgid ""
+"_: if in your language something like 'key(s)' isn't possible please use the "
+"plural in the translation\n"
+"Select the key(s) which should be used to encrypt the message to yourself."
+msgstr "Lütfen kendinize şifrelemek için kullanacağınız anahtar(lar)ı seçiniz."
+
+#: kpgpui.cpp:1543
+#, c-format
+msgid ""
+"_: if in your language something like 'key(s)' isn't possible please use the "
+"plural in the translation\n"
+"Select the key(s) which should be used to encrypt the message for\n"
+"%1"
+msgstr "%1 için hangi anahtar(lar) ile şifreleyeceğinizi seçiniz"
+
+#: kpgpui.cpp:1619
+msgid "OpenPGP Information"
+msgstr "OpenPGP Bilgisi"
+
+#: kpgpui.cpp:1626
+msgid "Result of the last encryption/sign operation:"
+msgstr "Son şifreleme/imzalama işleminin sonucu:"

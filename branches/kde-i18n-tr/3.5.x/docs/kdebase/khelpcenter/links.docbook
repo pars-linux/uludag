@@ -1,0 +1,92 @@
+<chapter id="web">
+<chapterinfo>
+<date
+>2000-10-02</date>
+<releaseinfo
+>1.94.00</releaseinfo>
+</chapterinfo>
+<title
+>İnternet'te &kde;</title>
+<anchor id="links"/>
+ 
+<para
+>K Masaüstü Ortamı dünya çapında geniş bir geliştirici kitlesi tarafından hazırlanmaktadır. Temel iletişim kanalımız İnternet'tir. Aşağıda &kde; ile ilgili bir çok web sayfasının adresini bulabilirsiniz.</para>
+
+
+<variablelist
+> <varlistentry
+> <term
+><ulink url="http://www.kde.org"
+>www.kde.org</ulink
+></term
+> <listitem
+><para
+>&kde; ana web sayfası</para
+></listitem
+> </varlistentry
+> <varlistentry
+> <term
+><ulink url="http://kde.themes.org"
+>kde.themes.org</ulink
+></term
+> <listitem
+><para
+>&kde; temaları</para
+></listitem
+> </varlistentry
+> <varlistentry
+> <term
+><ulink url="http://developer.kde.org"
+>developer.kde.org</ulink
+></term
+> <listitem
+><para
+>&kde; geliştiriciler merkezi</para
+></listitem
+> </varlistentry
+> <varlistentry
+> <term
+><ulink url="http://webcvs.kde.org"
+>webcvs.kde.org</ulink
+></term
+> <listitem
+><para
+>&kde; CVS deposuna web arayüz</para
+></listitem
+> </varlistentry
+> <varlistentry
+> <term
+><ulink url="http://i18n.kde.org"
+>i18n.kde.org</ulink
+></term
+> <listitem
+><para
+>&kde; yerelleştirme ve belgeleme sunucusu</para
+></listitem
+> </varlistentry
+> <varlistentry
+> <term
+><ulink url="ftp://ftp.kde.org"
+>ftp.kde.org</ulink
+></term
+> <listitem
+><para
+>Ana &kde; &FTP; sunucusu. Lütfen aşağıdaki listeden size daha yakın bir yansı adresi seçiniz.</para
+></listitem
+> </varlistentry
+> <varlistentry
+> <term
+><ulink url="http://www.kde.org/mirrors.html"
+>www.kde.org/mirrors.html</ulink
+></term
+> <listitem
+><para
+>&kde; &FTP; yansı adersleri</para
+></listitem
+> </varlistentry
+> </variablelist>
+
+</chapter>
+
+
+

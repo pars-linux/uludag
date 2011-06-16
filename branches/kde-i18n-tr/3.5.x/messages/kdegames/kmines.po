@@ -1,0 +1,478 @@
+# translation of kmines.po to
+# translation of kmines.po to Turkish
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com> , 2002,2003.
+# Serdar Cevher <scevher@anet.com.tr>, 2001.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# YILDIZ KARDEŞLER <turkishprogram@xposta.com>, 2004.
+# Ömer Fadıl USTA <omer_fad@yahoo.com>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kmines\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-05-18 21:24+0200\n"
+"PO-Revision-Date: 2004-06-26 05:12+0300\n"
+"Last-Translator: Ömer Fadıl USTA <omer_fad@yahoo.com>\n"
+"Language-Team: Turkish <ceviri@bilisimlab.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.2\n"
+
+#. i18n: file kminesui.rc line 6
+#: rc.cpp:3
+#, no-c-format
+msgid "&Move"
+msgstr "&Taşı"
+
+#. i18n: file kmines.kcfg line 9
+#: rc.cpp:6
+#, no-c-format
+msgid "The size of a square."
+msgstr "Karenin büyüklüğü."
+
+#. i18n: file kmines.kcfg line 15
+#: rc.cpp:9
+#, no-c-format
+msgid "The width of the playing field."
+msgstr "Oyun alanının genişliği"
+
+#. i18n: file kmines.kcfg line 21
+#: rc.cpp:12
+#, no-c-format
+msgid "The height of the playing field."
+msgstr "Oyun alanının yüksekliği."
+
+#. i18n: file kmines.kcfg line 27
+#: rc.cpp:15
+#, no-c-format
+msgid "The number of mines in the playing field."
+msgstr "Oyun alanındaki mayın sayıcı."
+
+#. i18n: file kmines.kcfg line 31
+#: rc.cpp:18
+#, no-c-format
+msgid "Whether the \"uncertain\" marker may be used."
+msgstr "\"Belirsiz\" işaretçisi kullanılsın mı?"
+
+#. i18n: file kmines.kcfg line 35
+#: rc.cpp:21
+#, no-c-format
+msgid "Whether the game can be played using the keyboard."
+msgstr "Oyun klavyeden oynanabilsin mi?"
+
+#. i18n: file kmines.kcfg line 39
+#: rc.cpp:24
+#, no-c-format
+msgid "Whether the game is paused when the window loses focus."
+msgstr "Pencere odağını kaybettiği zaman oyun duraklasın mı?"
+
+#. i18n: file kmines.kcfg line 43
+#: rc.cpp:27
+#, no-c-format
+msgid "Whether to set flags and reveal squares in trivial situations."
+msgstr ""
+"Mayının bulunma ihtimali kesin olan yerlere otomatik olarak bayrak dik."
+
+#. i18n: file kmines.kcfg line 47
+#: rc.cpp:30
+#, no-c-format
+msgid "The difficulty level."
+msgstr "Güçlük seviyesi."
+
+#. i18n: file kmines.kcfg line 72
+#: rc.cpp:33
+#, no-c-format
+msgid "Mouse button actions"
+msgstr "Fare düğmesi eylemleri"
+
+#. i18n: file kmines.kcfg line 85
+#: rc.cpp:36
+#, no-c-format
+msgid "Color"
+msgstr "Renk"
+
+#. i18n: file kmines.kcfg line 90
+#: rc.cpp:39
+#, no-c-format
+msgid "Mine Color"
+msgstr "Mayın Rengi"
+
+#. i18n: file kmines.kcfg line 101
+#: rc.cpp:42
+#, no-c-format
+msgid "Whether the menubar is visible."
+msgstr "Menü çubuğu görünür olsun mu?"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Tuncay YENİAY"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "tuncayyeniay@mynet.com"
+
+#: defines.cpp:24
+msgid "Easy"
+msgstr "Kolay"
+
+#: defines.cpp:24
+msgid "Normal"
+msgstr "Normal"
+
+#: defines.cpp:24
+msgid "Expert"
+msgstr "Uzman"
+
+#: defines.cpp:25
+msgid "Custom"
+msgstr "Özel"
+
+#: dialogs.cpp:128
+msgid "Width:"
+msgstr "Genişlik:"
+
+#: dialogs.cpp:134
+msgid "Height:"
+msgstr "Yükseklik:"
+
+#: dialogs.cpp:140
+msgid "No. of mines:"
+msgstr "M. sayısı:"
+
+#: dialogs.cpp:149
+msgid "Choose level:"
+msgstr "Seviye seçin:"
+
+#: dialogs.cpp:167
+msgid "Mines (%1%):"
+msgstr "Mayınlar (%1%):"
+
+#: dialogs.cpp:197
+msgid "Left button:"
+msgstr "Sol düğme:"
+
+#: dialogs.cpp:197
+msgid "Middle button:"
+msgstr "Orta düğme:"
+
+#: dialogs.cpp:198
+msgid "Right button:"
+msgstr "Sağ düğme:"
+
+#: dialogs.cpp:207
+msgid "Reveal"
+msgstr "Aç"
+
+#: dialogs.cpp:207
+msgid "Autoreveal"
+msgstr "Otomatik Aç"
+
+#: dialogs.cpp:208
+msgid "Toggle Flag"
+msgstr "Bayrak Koy"
+
+#: dialogs.cpp:208
+msgid "Toggle ? Flag"
+msgstr "? Bayrağı Koy"
+
+#: dialogs.cpp:216
+msgid "Enable ? mark"
+msgstr "? işaretini etkinleştir"
+
+#: dialogs.cpp:219
+msgid "Enable keyboard"
+msgstr "Klavyeyi etkinleştir"
+
+#: dialogs.cpp:222
+msgid "Pause if window loses focus"
+msgstr "Eger kullanici oyunu pasifleştirirse oyunu beklet"
+
+#: dialogs.cpp:225
+msgid "\"Magic\" reveal"
+msgstr "\"Sihirli\" açma"
+
+#: dialogs.cpp:226
+msgid "Set flags and reveal squares where they are trivial."
+msgstr "Belirgin olan yerlerde otomatik bayrak koy ve aç."
+
+#: dialogs.cpp:233
+msgid "Mouse Bindings"
+msgstr "Fare Ayarları"
+
+#: dialogs.cpp:252
+msgid ""
+"When the \"magic\" reveal is on, you lose the ability to enter the highscores."
+msgstr ""
+"\"Sihirli\" açma seçiliyken yüksek skorlar tablosuna adınızı yazamazsınız."
+
+#: dialogs.cpp:257
+msgid "Flag color:"
+msgstr "Bayrak rengi:"
+
+#: dialogs.cpp:257
+msgid "Explosion color:"
+msgstr "Patlama rengi:"
+
+#: dialogs.cpp:258
+msgid "Error color:"
+msgstr "Hata rengi:"
+
+#: dialogs.cpp:286
+#, c-format
+msgid ""
+"_n: %n mine color:\n"
+"%n mines color:"
+msgstr "%n. mayının rengi:"
+
+#: field.cpp:39
+msgid "Case revealed"
+msgstr ""
+
+#: field.cpp:40
+msgid "Case autorevealed"
+msgstr ""
+
+#: field.cpp:41
+msgid "Flag set"
+msgstr "Bayrak koy"
+
+#: field.cpp:42
+msgid "Flag unset"
+msgstr "Bayrağı kaldır"
+
+#: field.cpp:43
+msgid "Question mark set"
+msgstr ""
+
+#: field.cpp:44
+msgid "Question mark unset"
+msgstr ""
+
+#: highscores.cpp:45
+msgid "Clicks"
+msgstr "Tıklamalar"
+
+#: highscores.cpp:74
+msgid "anonymous"
+msgstr "anonim"
+
+#: main.cpp:46
+msgid "Move Up"
+msgstr "Yukarı Haraket"
+
+#: main.cpp:47
+msgid "Move Down"
+msgstr "Aşağı Haraket"
+
+#: main.cpp:48
+msgid "Move Right"
+msgstr "Sağa Haraket"
+
+#: main.cpp:49
+msgid "Move Left"
+msgstr "Sola Haraket"
+
+#: main.cpp:50
+msgid "Move at Left Edge"
+msgstr "Sol Kenara Haraket"
+
+#: main.cpp:51
+msgid "Move at Right Edge"
+msgstr "Sağ Kenara Haraket"
+
+#: main.cpp:52
+msgid "Move at Top Edge"
+msgstr "Üst Kenara Haraket"
+
+#: main.cpp:53
+msgid "Move at Bottom Edge"
+msgstr "Alt Kenara Haraket"
+
+#: main.cpp:54
+msgid "Reveal Mine"
+msgstr "Mayını Aç"
+
+#: main.cpp:55
+msgid "Mark Mine"
+msgstr "Mayını İşaretle"
+
+#: main.cpp:56
+msgid "Automatic Reveal"
+msgstr "Otomatik Aç"
+
+#: main.cpp:106
+msgid "Solving Rate..."
+msgstr "Çözüm Hızı..."
+
+#: main.cpp:110
+msgid "View Log"
+msgstr "Günlüğü Göster"
+
+#: main.cpp:113
+msgid "Replay Log"
+msgstr "Günlükten Oyna"
+
+#: main.cpp:116
+msgid "Save Log..."
+msgstr "Günlüğü Kaydet..."
+
+#: main.cpp:119
+msgid "Load Log..."
+msgstr "Günlüğü Yükle..."
+
+#: main.cpp:162
+msgid "Game"
+msgstr "Oyun"
+
+#: main.cpp:165
+msgid "Custom Game"
+msgstr "Özel Oyun"
+
+#: main.cpp:190
+msgid "Keyboard game"
+msgstr "Klavyeden Oyun"
+
+#: main.cpp:191
+msgid "General"
+msgstr "Genel"
+
+#: main.cpp:235
+#, fuzzy
+msgid "KMines is a classic mine sweeper game"
+msgstr "KMines klasik bir mayın toplama oyunudur."
+
+#: main.cpp:241
+msgid "KMines"
+msgstr "KMines"
+
+#: main.cpp:245
+msgid "Smiley pixmaps"
+msgstr "Gülen resimler"
+
+#: main.cpp:246
+msgid "Solver/Adviser"
+msgstr "Çözücü/Danışman"
+
+#: main.cpp:247
+msgid "Magic reveal mode"
+msgstr "Sihirli açma kipi"
+
+#: status.cpp:68
+msgid ""
+"<qt>Mines left."
+"<br/>It turns <font color=\"red\">red</font> when you have flagged more cases "
+"than present mines.</qt>"
+msgstr ""
+"<qt>Mayınlar bitti. "
+"<br/>Varolan Mayın sayısından daha fazla bayrak kullanırsanız <font "
+"color=\"red\">Kırmızıya</font> dönüşür.</qt>"
+
+#: status.cpp:78
+msgid "Press to start a new game"
+msgstr "Yeni oyun için basın"
+
+#: status.cpp:83
+msgid ""
+"<qt>Time elapsed."
+"<br/>It turns <font color=\"blue\">blue</font> if it is a highscore and <font "
+"color=\"red\">red</font> if it is the best time.</qt>"
+msgstr ""
+"<qt>Geçen zaman."
+"<br/>Eğer yüksek bir skor olursa <font color=\"blue\">mavi</font>"
+", en yüksek skor olursa <font color=\"blue\">kırmızı</font>  olur.</qt>"
+
+#: status.cpp:103
+msgid "Mines field."
+msgstr "Mayın tarlası"
+
+#: status.cpp:111
+msgid "Press to Resume"
+msgstr "Geri Dönmek İçin Basın"
+
+#: status.cpp:190
+msgid "Explosion!"
+msgstr "Patlama!"
+
+#: status.cpp:203
+msgid "Game won!"
+msgstr "Kazandınız!"
+
+#: status.cpp:203
+msgid "Game lost!"
+msgstr "Kaybettiniz..."
+
+#: status.cpp:297
+msgid ""
+"When the solver gives you advice, your score will not be added to the "
+"highscores."
+msgstr ""
+"Eğer çözücü sana bir yol söylerse, bu oyunda aldığın puan yüksek puanlara "
+"eklenmeyecektir."
+
+#: status.cpp:327
+msgid "View Game Log"
+msgstr "Oyun Günlüğünü Göster"
+
+#: status.cpp:344
+msgid "Overwrite"
+msgstr "Üzerine Yaz"
+
+#: status.cpp:346
+msgid "The file already exists. Overwrite?"
+msgstr "Dosya zaten mevcut. Üzerine yazayım mı ?"
+
+#: status.cpp:347
+msgid "File Exists"
+msgstr "Dosya Zaten Var"
+
+#: status.cpp:370
+#, c-format
+msgid "Cannot read XML file on line %1"
+msgstr "%1 satırında XML dosyası okunamıyor"
+
+#: status.cpp:380
+msgid "Cannot load file."
+msgstr "Dosya yüklenemiyor."
+
+#: status.cpp:385
+msgid "Log file not recognized."
+msgstr "Günlük dosyası tanınmıyor."
+
+#: solver/solver.cpp:190
+msgid "Compute Solving Rate"
+msgstr "Çözme Hızını Hesapla"
+
+#: solver/solver.cpp:197
+msgid "Start"
+msgstr "Başla"
+
+#: solver/solver.cpp:201
+#, c-format
+msgid "Width: %1"
+msgstr "Genişlik: %1"
+
+#: solver/solver.cpp:204
+#, c-format
+msgid "Height: %1"
+msgstr "Yükseklik: %1"
+
+#: solver/solver.cpp:206
+msgid "Mines: %1 (%2%)"
+msgstr "Mayın: %1 (%2%)"
+
+#: solver/solver.cpp:218
+msgid "Success rate:"
+msgstr "Başarı oranı:"
+
+#: solver/solver.cpp:245
+msgid "Success rate: %1%"
+msgstr "Başarı oranı: %1%"
+
+#~ msgid "Square size:"
+#~ msgstr "Kare boyutu:"

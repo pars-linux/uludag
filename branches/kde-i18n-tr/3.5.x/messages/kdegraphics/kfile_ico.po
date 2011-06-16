@@ -1,0 +1,42 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Tuncay YENİAY <tuncayyeniay@mynet.com>,2002.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2004-10-12 01:17+0200\n"
+"PO-Revision-Date: 2002-11-14 10:24+0000\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.6\n"
+
+#: kfile_ico.cpp:56
+msgid "Technical Details"
+msgstr "Teknik Detaylar"
+
+#: kfile_ico.cpp:60
+msgid "Number of Icons"
+msgstr "Simge Sayısı"
+
+#: kfile_ico.cpp:62
+msgid "Dimensions"
+msgstr "Boyutlar"
+
+#: kfile_ico.cpp:63
+msgid "Colors"
+msgstr "Renkler"
+
+#: kfile_ico.cpp:65
+msgid "Dimensions (1st icon)"
+msgstr "Boyutlar (1. simge)"
+
+#: kfile_ico.cpp:66
+msgid "Colors (1st icon)"
+msgstr "Renk (1. simge)"
+
+#~ msgid "Resolution"
+#~ msgstr "Çözünürlük"

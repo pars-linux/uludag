@@ -1,0 +1,4043 @@
+# translation of kaddressbook.po to
+# translation of kaddressbook.po to
+# translation of kaddressbook.po to Türkçe
+# translation of kaddressbook.po to
+# translation of kaddressbook.po to Turkish
+# Kaddressbook.
+# Copyright (C) 2003,2004, 2005 Free Software Foundation, Inc.
+# Murat �man <muratsisman@mynet.com>, 2002.
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004.
+# Barış Metin <baris@uludag.org.tr>, 2004.
+# Görkem Çetin <gorkem@kde.org.tr>, 2005.
+# Engin Çağatay <engincagatay@yahoo.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kaddressbook\n"
+"POT-Creation-Date: 2008-08-19 01:19+0200\n"
+"PO-Revision-Date: 2008-02-28 17:22+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@lists.kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: LoKalize 0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: customfieldswidget.h:156
+msgid "Custom Fields"
+msgstr "Özel Alanlar"
+
+#: kaddressbook_options.h:33
+msgid "Shows contact editor with given email address"
+msgstr "Verilen e-posta adresiyle irtibat düzenleyicisini gösterir"
+
+#: kaddressbook_options.h:34
+msgid "Shows contact editor with given uid"
+msgstr "Verilen uid ile irtibat düzenleyicisini gösterir"
+
+#: kaddressbook_options.h:35
+msgid "Launches in editor only mode"
+msgstr "Sadece düzenleyici moduna geçer"
+
+#: kaddressbook_options.h:36
+msgid "Launches editor for the new contact"
+msgstr "Yeni irtibat için düzenleyiciyi açar"
+
+#: kaddressbook_options.h:37
+msgid "Work on given file"
+msgstr "Verilen dosyada çalış"
+
+#: kaddressbook_options.h:38
+msgid "Import the given vCard"
+msgstr "Verilen vCard'ı al"
+
+#: typecombo.h:94
+msgid ""
+"_: label (number)\n"
+"%1 (%2)"
+msgstr "%1 (%2)"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Engin Çağatay ve İnci Yüksel "
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "inciyuksel@gmx.net engincagatay@yahoo.com"
+
+#: addresseditwidget.cpp:100
+msgid ""
+"_: street/postal\n"
+"&Edit Addresses..."
+msgstr "&Adresleri Düzenle..."
+
+#: addresseditwidget.cpp:262
+msgid ""
+"_: street/postal\n"
+"Edit Address"
+msgstr "Adresi Düzenle"
+
+#: addresseditwidget.cpp:276
+msgid ""
+"_: <streetLabel>:\n"
+"%1:"
+msgstr "%1:"
+
+#: addresseditwidget.cpp:287
+msgid ""
+"_: <postOfficeBoxLabel>:\n"
+"%1:"
+msgstr "%1:"
+
+#: addresseditwidget.cpp:293
+msgid ""
+"_: <localityLabel>:\n"
+"%1:"
+msgstr "%1:"
+
+#: addresseditwidget.cpp:299
+msgid ""
+"_: <regionLabel>:\n"
+"%1:"
+msgstr "%1:"
+
+#: addresseditwidget.cpp:305
+msgid ""
+"_: <postalCodeLabel>:\n"
+"%1:"
+msgstr "%1:"
+
+#: addresseditwidget.cpp:311
+msgid ""
+"_: <countryLabel>:\n"
+"%1:"
+msgstr "%1:"
+
+#: addresseditwidget.cpp:318
+msgid "Edit Label..."
+msgstr "Etiketi Düzenle..."
+
+#: addresseditwidget.cpp:327
+msgid ""
+"_: street/postal\n"
+"This is the preferred address"
+msgstr "Bu tercih edilen adrestir"
+
+#: addresseditwidget.cpp:337
+msgid "New..."
+msgstr "Yeni..."
+
+#: addresseditwidget.cpp:343
+msgid "Change Type..."
+msgstr "Türü Değiştir..."
+
+#: addresseditwidget.cpp:508
+msgid "Afghanistan"
+msgstr "Afganistan"
+
+#: addresseditwidget.cpp:508
+msgid "Albania"
+msgstr "Arnavutluk"
+
+#: addresseditwidget.cpp:508
+msgid "Algeria"
+msgstr "Cezayir"
+
+#: addresseditwidget.cpp:509
+msgid "American Samoa"
+msgstr "Samoa"
+
+#: addresseditwidget.cpp:509
+msgid "Andorra"
+msgstr "Andora"
+
+#: addresseditwidget.cpp:509
+msgid "Angola"
+msgstr "Angola"
+
+#: addresseditwidget.cpp:510
+msgid "Anguilla"
+msgstr "Anguila"
+
+#: addresseditwidget.cpp:510
+msgid "Antarctica"
+msgstr "Antartika"
+
+#: addresseditwidget.cpp:510
+msgid "Antigua and Barbuda"
+msgstr "Antigua ve Barbuda"
+
+#: addresseditwidget.cpp:511
+msgid "Argentina"
+msgstr "Arjantin"
+
+#: addresseditwidget.cpp:511
+msgid "Armenia"
+msgstr "Ermenistan"
+
+#: addresseditwidget.cpp:511
+msgid "Aruba"
+msgstr "Aruba"
+
+#: addresseditwidget.cpp:512
+msgid "Ashmore and Cartier Islands"
+msgstr "Ashmore ve Cartier Adaları"
+
+#: addresseditwidget.cpp:512
+msgid "Australia"
+msgstr "Avustralya"
+
+#: addresseditwidget.cpp:513
+msgid "Austria"
+msgstr "Avusturya"
+
+#: addresseditwidget.cpp:513
+msgid "Azerbaijan"
+msgstr "Azerbaycan"
+
+#: addresseditwidget.cpp:513
+msgid "Bahamas"
+msgstr "Bahamalar"
+
+#: addresseditwidget.cpp:514
+msgid "Bahrain"
+msgstr "Bahreyn"
+
+#: addresseditwidget.cpp:514
+msgid "Bangladesh"
+msgstr "Bangladeş"
+
+#: addresseditwidget.cpp:514
+msgid "Barbados"
+msgstr "Barbados"
+
+#: addresseditwidget.cpp:515
+msgid "Belarus"
+msgstr "Belarus"
+
+#: addresseditwidget.cpp:515
+msgid "Belgium"
+msgstr "Belgium"
+
+#: addresseditwidget.cpp:515
+msgid "Belize"
+msgstr "Belize"
+
+#: addresseditwidget.cpp:516
+msgid "Benin"
+msgstr "Benin"
+
+#: addresseditwidget.cpp:516
+msgid "Bermuda"
+msgstr "Bermuda"
+
+#: addresseditwidget.cpp:516
+msgid "Bhutan"
+msgstr "Bhutan"
+
+#: addresseditwidget.cpp:517
+msgid "Bolivia"
+msgstr "Bolivya"
+
+#: addresseditwidget.cpp:517
+msgid "Bosnia and Herzegovina"
+msgstr "Bosna Hersek"
+
+#: addresseditwidget.cpp:517
+msgid "Botswana"
+msgstr "Botsvana"
+
+#: addresseditwidget.cpp:518
+msgid "Brazil"
+msgstr "Brezilya"
+
+#: addresseditwidget.cpp:518
+msgid "Brunei"
+msgstr "Brunei"
+
+#: addresseditwidget.cpp:518
+msgid "Bulgaria"
+msgstr "Bulgraristan"
+
+#: addresseditwidget.cpp:519
+msgid "Burkina Faso"
+msgstr "Burkina Faso"
+
+#: addresseditwidget.cpp:519
+msgid "Burundi"
+msgstr "Burundi"
+
+#: addresseditwidget.cpp:519
+msgid "Cambodia"
+msgstr "Kamboçya"
+
+#: addresseditwidget.cpp:520
+msgid "Cameroon"
+msgstr "Kamerun"
+
+#: addresseditwidget.cpp:520
+msgid "Canada"
+msgstr "Kanada"
+
+#: addresseditwidget.cpp:520
+msgid "Cape Verde"
+msgstr "Cape Verde"
+
+#: addresseditwidget.cpp:521
+msgid "Cayman Islands"
+msgstr "Cayman Adalar"
+
+#: addresseditwidget.cpp:521
+msgid "Central African Republic"
+msgstr "Merkezi Afrika Cumhuriyeti"
+
+#: addresseditwidget.cpp:522
+msgid "Chad"
+msgstr "Çad"
+
+#: addresseditwidget.cpp:522
+msgid "Chile"
+msgstr "Şili"
+
+#: addresseditwidget.cpp:522
+msgid "China"
+msgstr "Çin"
+
+#: addresseditwidget.cpp:522
+msgid "Colombia"
+msgstr "Kolombiya"
+
+#: addresseditwidget.cpp:523
+msgid "Comoros"
+msgstr "Komoros"
+
+#: addresseditwidget.cpp:523
+msgid "Congo"
+msgstr "Kongo"
+
+#: addresseditwidget.cpp:523
+msgid "Congo, Dem. Rep."
+msgstr "Kongo Demokratik Cumh."
+
+#: addresseditwidget.cpp:524
+msgid "Costa Rica"
+msgstr "Kosta Rika"
+
+#: addresseditwidget.cpp:524
+msgid "Croatia"
+msgstr "Hırvatistan"
+
+#: addresseditwidget.cpp:525
+msgid "Cuba"
+msgstr "Küba"
+
+#: addresseditwidget.cpp:525
+msgid "Cyprus"
+msgstr "Kıbrıs"
+
+#: addresseditwidget.cpp:525
+msgid "Czech Republic"
+msgstr "Çek Cumhuriyeti"
+
+#: addresseditwidget.cpp:526
+msgid "Denmark"
+msgstr "Danimarka"
+
+#: addresseditwidget.cpp:526
+msgid "Djibouti"
+msgstr "Cibuti"
+
+#: addresseditwidget.cpp:527
+msgid "Dominica"
+msgstr "Dominik"
+
+#: addresseditwidget.cpp:527
+msgid "Dominican Republic"
+msgstr "Dominik Cumhuriyeti"
+
+#: addresseditwidget.cpp:527
+msgid "Ecuador"
+msgstr "Ekvator"
+
+#: addresseditwidget.cpp:528
+msgid "Egypt"
+msgstr "Mısır"
+
+#: addresseditwidget.cpp:528
+msgid "El Salvador"
+msgstr "El Salvador"
+
+#: addresseditwidget.cpp:528
+msgid "Equatorial Guinea"
+msgstr "Ekvator Ginesi"
+
+#: addresseditwidget.cpp:529
+msgid "Eritrea"
+msgstr "Eritre"
+
+#: addresseditwidget.cpp:529
+msgid "Estonia"
+msgstr "Estonya"
+
+#: addresseditwidget.cpp:529
+msgid "England"
+msgstr "İngiltere"
+
+#: addresseditwidget.cpp:530
+msgid "Ethiopia"
+msgstr "Etiyopya"
+
+#: addresseditwidget.cpp:530
+msgid "European Union"
+msgstr "Avrupa Birliği"
+
+#: addresseditwidget.cpp:530
+msgid "Faroe Islands"
+msgstr "Faroe Adaları"
+
+#: addresseditwidget.cpp:531
+msgid "Fiji"
+msgstr "Fiji"
+
+#: addresseditwidget.cpp:531
+msgid "Finland"
+msgstr "Finlandiya"
+
+#: addresseditwidget.cpp:531
+msgid "France"
+msgstr "Fransa"
+
+#: addresseditwidget.cpp:532
+msgid "French Polynesia"
+msgstr "Fransz Polinezyası"
+
+#: addresseditwidget.cpp:532
+msgid "Gabon"
+msgstr "Gabon"
+
+#: addresseditwidget.cpp:532
+msgid "Gambia"
+msgstr "Gambiya"
+
+#: addresseditwidget.cpp:533
+msgid "Georgia"
+msgstr "Gürcistan"
+
+#: addresseditwidget.cpp:533
+msgid "Germany"
+msgstr "Almanya"
+
+#: addresseditwidget.cpp:533
+msgid "Ghana"
+msgstr "Gana"
+
+#: addresseditwidget.cpp:534
+msgid "Greece"
+msgstr "Yunanistan"
+
+#: addresseditwidget.cpp:534
+msgid "Greenland"
+msgstr "Grönland"
+
+#: addresseditwidget.cpp:534
+msgid "Grenada"
+msgstr "Granada"
+
+#: addresseditwidget.cpp:535
+msgid "Guam"
+msgstr "Guam"
+
+#: addresseditwidget.cpp:535
+msgid "Guatemala"
+msgstr "Guatemala"
+
+#: addresseditwidget.cpp:535
+msgid "Guinea"
+msgstr "Gine"
+
+#: addresseditwidget.cpp:536
+msgid "Guinea-Bissau"
+msgstr "Gine-Bissau"
+
+#: addresseditwidget.cpp:536
+msgid "Guyana"
+msgstr "Guyana"
+
+#: addresseditwidget.cpp:536
+msgid "Haiti"
+msgstr "Haiti"
+
+#: addresseditwidget.cpp:537
+msgid "Honduras"
+msgstr "Honduras"
+
+#: addresseditwidget.cpp:537
+msgid "Hong Kong"
+msgstr "Hong Kong"
+
+#: addresseditwidget.cpp:537
+msgid "Hungary"
+msgstr "Macaristan"
+
+#: addresseditwidget.cpp:538
+msgid "Iceland"
+msgstr "İzlanda"
+
+#: addresseditwidget.cpp:538
+msgid "India"
+msgstr "Hindistan"
+
+#: addresseditwidget.cpp:538
+msgid "Indonesia"
+msgstr "Endonezya"
+
+#: addresseditwidget.cpp:539
+msgid "Iran"
+msgstr "İran"
+
+#: addresseditwidget.cpp:539
+msgid "Iraq"
+msgstr "Irak"
+
+#: addresseditwidget.cpp:539
+msgid "Ireland"
+msgstr "İrlanda"
+
+#: addresseditwidget.cpp:540
+msgid "Israel"
+msgstr "İsrail"
+
+#: addresseditwidget.cpp:540
+msgid "Italy"
+msgstr "İtalya"
+
+#: addresseditwidget.cpp:540
+msgid "Ivory Coast"
+msgstr "Ivory Coast"
+
+#: addresseditwidget.cpp:541
+msgid "Jamaica"
+msgstr "Jamaika"
+
+#: addresseditwidget.cpp:541
+msgid "Japan"
+msgstr "Japonya"
+
+#: addresseditwidget.cpp:541
+msgid "Jordan"
+msgstr "Ürdün"
+
+#: addresseditwidget.cpp:542
+msgid "Kazakhstan"
+msgstr "Kazakistan"
+
+#: addresseditwidget.cpp:542
+msgid "Kenya"
+msgstr "Kenya"
+
+#: addresseditwidget.cpp:542
+msgid "Kiribati"
+msgstr "Kiribati"
+
+#: addresseditwidget.cpp:543
+msgid "Korea, North"
+msgstr "Kuzey Kore"
+
+#: addresseditwidget.cpp:543
+msgid "Korea, South"
+msgstr "Gney Kore"
+
+#: addresseditwidget.cpp:544
+msgid "Kuwait"
+msgstr "Kuveyt"
+
+#: addresseditwidget.cpp:544
+msgid "Kyrgyzstan"
+msgstr "Kırgızistan"
+
+#: addresseditwidget.cpp:544
+msgid "Laos"
+msgstr "Laos"
+
+#: addresseditwidget.cpp:545
+msgid "Latvia"
+msgstr "Latvia"
+
+#: addresseditwidget.cpp:545
+msgid "Lebanon"
+msgstr "Lübnan"
+
+#: addresseditwidget.cpp:545
+msgid "Lesotho"
+msgstr "Lesoto"
+
+#: addresseditwidget.cpp:546
+msgid "Liberia"
+msgstr "Liberya"
+
+#: addresseditwidget.cpp:546
+msgid "Libya"
+msgstr "Libya"
+
+#: addresseditwidget.cpp:546
+msgid "Liechtenstein"
+msgstr "Lihtentayn"
+
+#: addresseditwidget.cpp:547
+msgid "Lithuania"
+msgstr "Litvanya"
+
+#: addresseditwidget.cpp:547
+msgid "Luxembourg"
+msgstr "Lüksemburg"
+
+#: addresseditwidget.cpp:547
+msgid "Macau"
+msgstr "Macau"
+
+#: addresseditwidget.cpp:548
+msgid "Madagascar"
+msgstr "Madagaskar"
+
+#: addresseditwidget.cpp:548
+msgid "Malawi"
+msgstr "Malavi"
+
+#: addresseditwidget.cpp:548
+msgid "Malaysia"
+msgstr "Malezya"
+
+#: addresseditwidget.cpp:549
+msgid "Maldives"
+msgstr "Maldivler"
+
+#: addresseditwidget.cpp:549
+msgid "Mali"
+msgstr "Mali"
+
+#: addresseditwidget.cpp:549
+msgid "Malta"
+msgstr "Malta"
+
+#: addresseditwidget.cpp:550
+msgid "Marshall Islands"
+msgstr "Maral Adalar"
+
+#: addresseditwidget.cpp:550
+msgid "Martinique"
+msgstr "Martinik"
+
+#: addresseditwidget.cpp:550
+msgid "Mauritania"
+msgstr "Moritanya"
+
+#: addresseditwidget.cpp:551
+msgid "Mauritius"
+msgstr "Moritus"
+
+#: addresseditwidget.cpp:551
+msgid "Mexico"
+msgstr "Meksika"
+
+#: addresseditwidget.cpp:552
+msgid "Micronesia, Federated States Of"
+msgstr "Mikronezya"
+
+#: addresseditwidget.cpp:552
+msgid "Moldova"
+msgstr "Moldova"
+
+#: addresseditwidget.cpp:553
+msgid "Monaco"
+msgstr "Monako"
+
+#: addresseditwidget.cpp:553
+msgid "Mongolia"
+msgstr "Moolistan"
+
+#: addresseditwidget.cpp:553
+msgid "Montserrat"
+msgstr "Montserrat"
+
+#: addresseditwidget.cpp:554
+msgid "Morocco"
+msgstr "Moroko"
+
+#: addresseditwidget.cpp:554
+msgid "Mozambique"
+msgstr "Mozambik"
+
+#: addresseditwidget.cpp:554
+msgid "Myanmar"
+msgstr "Myanmar"
+
+#: addresseditwidget.cpp:555
+msgid "Namibia"
+msgstr "Namibya"
+
+#: addresseditwidget.cpp:556
+msgid "Nauru"
+msgstr "Nauru"
+
+#: addresseditwidget.cpp:556
+msgid "Nepal"
+msgstr "Nepal"
+
+#: addresseditwidget.cpp:556
+msgid "Netherlands"
+msgstr "Hollanda"
+
+#: addresseditwidget.cpp:557
+msgid "Netherlands Antilles"
+msgstr "Hollanda Antilleri"
+
+#: addresseditwidget.cpp:557
+msgid "New Caledonia"
+msgstr "Yeni Kaledonya"
+
+#: addresseditwidget.cpp:558
+msgid "New Zealand"
+msgstr "Yeni Zelanda"
+
+#: addresseditwidget.cpp:558
+msgid "Nicaragua"
+msgstr "Nikaragua"
+
+#: addresseditwidget.cpp:558
+msgid "Niger"
+msgstr "Nijer"
+
+#: addresseditwidget.cpp:559
+msgid "Nigeria"
+msgstr "Nijerya"
+
+#: addresseditwidget.cpp:559
+msgid "Niue"
+msgstr "Nie"
+
+#: addresseditwidget.cpp:559
+msgid "North Korea"
+msgstr "Kuzey Kure"
+
+#: addresseditwidget.cpp:560
+msgid "Northern Ireland"
+msgstr "Kuzey �landa"
+
+#: addresseditwidget.cpp:560
+msgid "Northern Mariana Islands"
+msgstr "Kuzey Mariana Adaları"
+
+#: addresseditwidget.cpp:561
+msgid "Norway"
+msgstr "Norveç"
+
+#: addresseditwidget.cpp:561
+msgid "Oman"
+msgstr "Umman"
+
+#: addresseditwidget.cpp:561
+msgid "Pakistan"
+msgstr "Pakistan"
+
+#: addresseditwidget.cpp:561
+msgid "Palau"
+msgstr "Palau"
+
+#: addresseditwidget.cpp:562
+msgid "Palestinian"
+msgstr "Filistin"
+
+#: addresseditwidget.cpp:562
+msgid "Panama"
+msgstr "Panama"
+
+#: addresseditwidget.cpp:562
+msgid "Papua New Guinea"
+msgstr "Papua Yeni Gine"
+
+#: addresseditwidget.cpp:563
+msgid "Paraguay"
+msgstr "Paraguay"
+
+#: addresseditwidget.cpp:563
+msgid "Peru"
+msgstr "Peru"
+
+#: addresseditwidget.cpp:563
+msgid "Philippines"
+msgstr "Filipinler"
+
+#: addresseditwidget.cpp:564
+msgid "Poland"
+msgstr "Polonya"
+
+#: addresseditwidget.cpp:564
+msgid "Portugal"
+msgstr "Portekiz"
+
+#: addresseditwidget.cpp:564
+msgid "Puerto Rico"
+msgstr "Porto Riko"
+
+#: addresseditwidget.cpp:565
+msgid "Qatar"
+msgstr "Katar"
+
+#: addresseditwidget.cpp:565
+msgid "Romania"
+msgstr "Romanya"
+
+#: addresseditwidget.cpp:565
+msgid "Russia"
+msgstr "Rusya"
+
+#: addresseditwidget.cpp:565
+msgid "Rwanda"
+msgstr "Ruanda"
+
+#: addresseditwidget.cpp:566 addresseditwidget.cpp:573
+msgid "St. Kitts and Nevis"
+msgstr "St. Kitts ve Nevis"
+
+#: addresseditwidget.cpp:566
+msgid "St. Lucia"
+msgstr "St. Lucia"
+
+#: addresseditwidget.cpp:567
+msgid "St. Vincent and the Grenadines"
+msgstr "St. Vincent and the Grenadines"
+
+#: addresseditwidget.cpp:567
+msgid "San Marino"
+msgstr "San Marino"
+
+#: addresseditwidget.cpp:568
+msgid "Sao Tome and Principe"
+msgstr "Sao Tome ve Principe"
+
+#: addresseditwidget.cpp:568
+msgid "Saudi Arabia"
+msgstr "Suudi Arabistan"
+
+#: addresseditwidget.cpp:569
+msgid "Senegal"
+msgstr "Senegal"
+
+#: addresseditwidget.cpp:569
+msgid "Serbia & Montenegro"
+msgstr "Sırbistan"
+
+#: addresseditwidget.cpp:569
+msgid "Seychelles"
+msgstr "Seyeller"
+
+#: addresseditwidget.cpp:570
+msgid "Sierra Leone"
+msgstr "Sierra Leone"
+
+#: addresseditwidget.cpp:570
+msgid "Singapore"
+msgstr "Singapur"
+
+#: addresseditwidget.cpp:570
+msgid "Slovakia"
+msgstr "Slovakya"
+
+#: addresseditwidget.cpp:571
+msgid "Slovenia"
+msgstr "Slovenya"
+
+#: addresseditwidget.cpp:571
+msgid "Solomon Islands"
+msgstr "Solomon Adaları"
+
+#: addresseditwidget.cpp:571
+msgid "Somalia"
+msgstr "Somali"
+
+#: addresseditwidget.cpp:572
+msgid "South Africa"
+msgstr "Gney Afrika"
+
+#: addresseditwidget.cpp:572
+msgid "South Korea"
+msgstr "Güney Kore"
+
+#: addresseditwidget.cpp:572
+msgid "Spain"
+msgstr "İspanya"
+
+#: addresseditwidget.cpp:573
+msgid "Sri Lanka"
+msgstr "Sri Lanka"
+
+#: addresseditwidget.cpp:573
+msgid "Sudan"
+msgstr "Sudan"
+
+#: addresseditwidget.cpp:574
+msgid "Suriname"
+msgstr "Surinam"
+
+#: addresseditwidget.cpp:574
+msgid "Swaziland"
+msgstr "Swaziland"
+
+#: addresseditwidget.cpp:574
+msgid "Sweden"
+msgstr "İsveç"
+
+#: addresseditwidget.cpp:575
+msgid "Switzerland"
+msgstr "İsviçre"
+
+#: addresseditwidget.cpp:575
+msgid "Syria"
+msgstr "Suriye"
+
+#: addresseditwidget.cpp:575
+msgid "Taiwan"
+msgstr "Tayvan"
+
+#: addresseditwidget.cpp:576
+msgid "Tajikistan"
+msgstr "Tacikistan"
+
+#: addresseditwidget.cpp:576
+msgid "Tanzania"
+msgstr "Tanzanya"
+
+#: addresseditwidget.cpp:576
+msgid "Thailand"
+msgstr "Tayland"
+
+#: addresseditwidget.cpp:577
+msgid "Tibet"
+msgstr "Tibet"
+
+#: addresseditwidget.cpp:577
+msgid "Togo"
+msgstr "Togo"
+
+#: addresseditwidget.cpp:577
+msgid "Tonga"
+msgstr "Tonga"
+
+#: addresseditwidget.cpp:578
+msgid "Trinidad and Tobago"
+msgstr "Trinidad Tobago"
+
+#: addresseditwidget.cpp:578
+msgid "Tunisia"
+msgstr "Tunus"
+
+#: addresseditwidget.cpp:578
+msgid "Turkey"
+msgstr "Türkiye"
+
+#: addresseditwidget.cpp:579
+msgid "Turkmenistan"
+msgstr "Türkmenistan"
+
+#: addresseditwidget.cpp:579
+msgid "Turks and Caicos Islands"
+msgstr "Turks ve Caicos Adaları"
+
+#: addresseditwidget.cpp:580
+msgid "Tuvalu"
+msgstr "Tuvalu"
+
+#: addresseditwidget.cpp:580
+msgid "Uganda"
+msgstr "Uganda"
+
+#: addresseditwidget.cpp:580
+msgid "Ukraine"
+msgstr "Ukrayna"
+
+#: addresseditwidget.cpp:581
+msgid "United Arab Emirates"
+msgstr "Birleşik Arap Emirlikleri"
+
+#: addresseditwidget.cpp:581
+msgid "United Kingdom"
+msgstr "Birleşik Krallık"
+
+#: addresseditwidget.cpp:582
+msgid "United States"
+msgstr "Amerika Birleşik Devletleri"
+
+#: addresseditwidget.cpp:582
+msgid "Uruguay"
+msgstr "Uruguay"
+
+#: addresseditwidget.cpp:582
+msgid "Uzbekistan"
+msgstr "Özbekistan"
+
+#: addresseditwidget.cpp:583
+msgid "Vanuatu"
+msgstr "Vauatu"
+
+#: addresseditwidget.cpp:583
+msgid "Vatican City"
+msgstr "Vatikan"
+
+#: addresseditwidget.cpp:583
+msgid "Venezuela"
+msgstr "Venezuela"
+
+#: addresseditwidget.cpp:584
+msgid "Vietnam"
+msgstr "Vietnam"
+
+#: addresseditwidget.cpp:584
+msgid "Western Samoa"
+msgstr "Bat Samoa"
+
+#: addresseditwidget.cpp:584
+msgid "Yemen"
+msgstr "Yemen"
+
+#: addresseditwidget.cpp:585
+msgid "Yugoslavia"
+msgstr "Yugoslavya"
+
+#: addresseditwidget.cpp:585
+msgid "Zaire"
+msgstr "Zaire"
+
+#: addresseditwidget.cpp:585
+msgid "Zambia"
+msgstr "Zambia"
+
+#: addresseditwidget.cpp:586
+msgid "Zimbabwe"
+msgstr "Zimbabwe"
+
+#: addresseditwidget.cpp:603
+msgid ""
+"_: street/postal\n"
+"Edit Address Type"
+msgstr "Adres Tipini Düzenle"
+
+#: addresseditwidget.cpp:609
+msgid ""
+"_: street/postal\n"
+"Address Types"
+msgstr "Adres Tipleri"
+
+#: addresseeeditordialog.cpp:39 undocmds.cpp:197
+msgid "Edit Contact"
+msgstr "Bağlantıları Düzenle"
+
+#: addresseeeditordialog.cpp:150
+msgid "Edit Contact '%1'"
+msgstr "'%1' Bağlantısını Düzenle"
+
+#: addresseeeditorextension.cpp:68
+msgid "Contact Editor"
+msgstr "Bağlantı Düzenleyici"
+
+#: addresseeeditorwidget.cpp:165
+msgid "Edit Name..."
+msgstr "İsmi Düzenle..."
+
+#: addresseeeditorwidget.cpp:166
+msgid "Edit the contact's name"
+msgstr "Bağlantı adını düzenle"
+
+#: addresseeeditorwidget.cpp:184
+msgid ""
+"_: <roleLabel>:\n"
+"%1:"
+msgstr "%1:"
+
+#: addresseeeditorwidget.cpp:193
+msgid ""
+"_: <organizationLabel>:\n"
+"%1:"
+msgstr "%1:"
+
+#: addresseeeditorwidget.cpp:202 nameeditdialog.cpp:102
+msgid "Formatted name:"
+msgstr "Biçimlendirilmiş isim:"
+
+#: addresseeeditorwidget.cpp:259
+msgid ""
+"_: <urlLabel>:\n"
+"%1:"
+msgstr "%1:"
+
+#: addresseeeditorwidget.cpp:269
+msgid "Blog feed:"
+msgstr "Web günlüğü kaynağı:"
+
+#: addresseeeditorwidget.cpp:292 kabcore.cpp:1356
+msgid "Select Categories..."
+msgstr "Kategorileri Seç..."
+
+#: addresseeeditorwidget.cpp:308
+msgid "&General"
+msgstr "&Genel"
+
+#: addresseeeditorwidget.cpp:332
+msgid "Department:"
+msgstr "Bölüm:"
+
+#: addresseeeditorwidget.cpp:340
+msgid "Office:"
+msgstr "Ofis:"
+
+#: addresseeeditorwidget.cpp:348
+msgid "Profession:"
+msgstr "Uzmanlık alanı:"
+
+#: addresseeeditorwidget.cpp:356
+msgid "Manager's name:"
+msgstr "Yönetici adı:"
+
+#: addresseeeditorwidget.cpp:364
+msgid "Assistant's name:"
+msgstr "Yardımcı adı:"
+
+#: addresseeeditorwidget.cpp:372
+msgid ""
+"_: <titleLabel>:\n"
+"%1:"
+msgstr "%1:"
+
+#: addresseeeditorwidget.cpp:391
+msgid "Nickname:"
+msgstr "Takma isim:"
+
+#: addresseeeditorwidget.cpp:399
+msgid "Partner's name:"
+msgstr "Partnerin adı:"
+
+#: addresseeeditorwidget.cpp:407
+msgid "Birthdate:"
+msgstr "Doğum günü:"
+
+#: addresseeeditorwidget.cpp:417
+msgid "Anniversary:"
+msgstr "Yıldönümü:"
+
+#: addresseeeditorwidget.cpp:432
+msgid "Note:"
+msgstr "Not:"
+
+#: addresseeeditorwidget.cpp:445
+msgid "&Details"
+msgstr "&Ayrıntılar"
+
+#: addresseeeditorwidget.cpp:458
+msgid "Misc"
+msgstr "Çeşitli"
+
+#: addresseeeditorwidget.cpp:844
+msgid "You must specify a valid date"
+msgstr "Geçerli bir tarih girmelisiniz"
+
+#: addresseeeditorwidget.cpp:864
+msgid "You have to enter a valid birthdate."
+msgstr "Geçerli bir doğum günü girmelisiniz."
+
+#: addresseeeditorwidget.cpp:870
+msgid "You have to enter a valid anniversary."
+msgstr "Geçerli bir yıldönümü girmelisiniz."
+
+#: addviewdialog.cpp:38
+msgid "Add View"
+msgstr "Görünüm Ekle"
+
+#: addviewdialog.cpp:52
+msgid "View name:"
+msgstr "Görünüm adı:"
+
+#: addviewdialog.cpp:60
+msgid "View Type"
+msgstr "Görünüm Türü"
+
+#: customfieldswidget.cpp:46
+msgid "Add Field"
+msgstr "Alan Ekle"
+
+#: customfieldswidget.cpp:53
+msgid "Title:"
+msgstr "Başlık:"
+
+#: customfieldswidget.cpp:61
+msgid "Type:"
+msgstr "Tür:"
+
+#: customfieldswidget.cpp:68
+msgid "Is available for all contacts"
+msgstr "Tüm bağlantılar için kullanılabilsin"
+
+#: customfieldswidget.cpp:78
+msgid "Text"
+msgstr "Metin"
+
+#: customfieldswidget.cpp:80
+msgid "Numeric Value"
+msgstr "Nümerik Değer"
+
+#: customfieldswidget.cpp:82
+msgid "Boolean"
+msgstr "Bool Değer"
+
+#: customfieldswidget.cpp:84
+msgid "Date"
+msgstr "Tarih"
+
+#: customfieldswidget.cpp:86
+msgid "Time"
+msgstr "Saat"
+
+#: customfieldswidget.cpp:88
+msgid "Date & Time"
+msgstr "Tarih & Saat"
+
+#: customfieldswidget.cpp:405
+msgid "A field with the same name already exists, please choose another one."
+msgstr "Aynı isimde bir alan zaten var, lütfen başk bir isim seçin."
+
+#: customfieldswidget.cpp:434
+msgid "Remove Field"
+msgstr "Alanı Sil"
+
+#: customfieldswidget.cpp:435
+msgid "Select the field you want to remove:"
+msgstr "Silmek istediğiniz alanı seçin:"
+
+#: customfieldswidget.cpp:466
+msgid "Add Field..."
+msgstr "Alan Ekle..."
+
+#: customfieldswidget.cpp:469
+msgid "Remove Field..."
+msgstr "Alanı Sil..."
+
+#: distributionlisteditor.cpp:161
+msgid "Edit Distribution List"
+msgstr "Dağıtım Listesini Düzenle"
+
+#: distributionlisteditor.cpp:170 filtereditdialog.cpp:122
+#: simpleaddresseeeditor.cpp:70
+msgid "Name:"
+msgstr "İsim:"
+
+#: distributionlisteditor.cpp:180
+msgid "Distribution list members:"
+msgstr "Dağıtım listesi üyeleri:"
+
+#: distributionlisteditor.cpp:259
+msgid ""
+"A distribution list with the name %1 already exists. Please choose another "
+"name."
+msgstr "%1 isimli bir dağıtım listesi zaten var. Lütfen başka bir isim seçin."
+
+#: distributionlisteditor.cpp:259
+msgid "Name in Use"
+msgstr "İsim Kullanılıyorİsim Kullanılıyor"
+
+#: distributionlistentryview.cpp:46
+msgid "<b>Distribution list:</b>"
+msgstr "<b>Dağıtım listesi:</b>"
+
+#: distributionlistentryview.cpp:59
+msgid "<b>Email address to use in this list:</b>"
+msgstr "<b>Listede kullanılacak e-posta adresi:</b>"
+
+#: distributionlistentryview.cpp:109
+msgid ""
+"_: Formatted name, role, organization\n"
+"<qt>"
+"<h2>%1</h2>"
+"<p>%2"
+"<br/>%3</p></qt>"
+msgstr "<qt><h2>%1</h2><p>%2<br/>%3</p></qt>"
+
+#: distributionlistentryview.cpp:112
+#, c-format
+msgid "<b>Address book:</b> %1"
+msgstr "<b>Adres defteri:</b> %1"
+
+#: distributionlistpicker.cpp:49
+msgid "Add New Distribution List"
+msgstr "Yeni Dağıtım Listesi Ekle"
+
+#: distributionlistpicker.cpp:96
+msgid "Enter Name"
+msgstr "İsmi Girin"
+
+#: distributionlistpicker.cpp:96
+msgid "Enter a name for the new distribution list:"
+msgstr "Yeni dağıtım listesi için bir isim girin:"
+
+#: distributionlistpicker.cpp:115
+msgid ""
+"A distribution list with the the name %1 already exists. Please choose another "
+"name"
+msgstr "%1 isimli bir dağıtım listesi zaten var. Lütfen başka bir isim seçin."
+
+#: distributionlistpicker.cpp:115
+msgid "Name Exists"
+msgstr "İsim Var"
+
+#: emaileditwidget.cpp:95 emaileditwidget.cpp:281 simpleaddresseeeditor.cpp:78
+msgid "Email:"
+msgstr "E-posta:"
+
+#: emaileditwidget.cpp:107
+msgid "Edit Email Addresses..."
+msgstr "E-posta Adresini Düzenle..."
+
+#: emaileditwidget.cpp:176
+msgid "Edit Email Addresses"
+msgstr "E-posta Adresini Düzenle"
+
+#: emaileditwidget.cpp:194 keywidget.cpp:53
+msgid "Add..."
+msgstr "Ekle..."
+
+#: emaileditwidget.cpp:198 features/distributionlistngwidget.cpp:177
+msgid "Edit..."
+msgstr "Düzenle..."
+
+#: emaileditwidget.cpp:206
+msgid "Set Standard"
+msgstr "Standarda geç"
+
+#: emaileditwidget.cpp:256
+msgid "Add Email"
+msgstr "E-posta Ekle"
+
+#: emaileditwidget.cpp:256
+msgid "New Email:"
+msgstr "Yeni E-posta"
+
+#: emaileditwidget.cpp:281
+msgid "Edit Email"
+msgstr "E-postayı Düzenle"
+
+#: emaileditwidget.cpp:305
+msgid ""
+"<qt>Are you sure that you want to remove the email address <b>%1</b>?</qt>"
+msgstr ""
+"<qt>Gerçekten <b>%1</b> e-posta adresini kaldırmak istediğinize emin "
+"misiniz?</qt>"
+
+#: emaileditwidget.cpp:306
+msgid "Confirm Remove"
+msgstr "Silmeyi Onayla"
+
+#: filtereditdialog.cpp:49
+msgid "Edit Address Book Filter"
+msgstr "Adres Defteri Filtresini Düzenle"
+
+#: filtereditdialog.cpp:131
+msgid "Category"
+msgstr "Kategori"
+
+#: filtereditdialog.cpp:142
+msgid "Show only contacts matching the selected categories"
+msgstr "Sadece seçili kategorilere uygun bağlantıları göster"
+
+#: filtereditdialog.cpp:147
+msgid "Show all contacts except those matching the selected categories"
+msgstr "Seçili kategorilere uyanlar hariç tüm bağlantıları göster"
+
+#: filtereditdialog.cpp:165
+msgid "Edit Address Book Filters"
+msgstr "Adres defteri filtrelerini düzenle"
+
+#: filtereditdialog.cpp:269
+msgid "&Add..."
+msgstr "&Ekle..."
+
+#: filtereditdialog.cpp:270
+msgid "&Edit..."
+msgstr "Dü&zenle..."
+
+#: filterselectionwidget.cpp:37
+msgid "Filter:"
+msgstr "Süzgeç:"
+
+#: freebusywidget.cpp:41
+msgid "Location of Free/Busy information:"
+msgstr "Boş/Meşgul Bilgisi Yeri:"
+
+#: geowidget.cpp:62
+msgid "Use geo data"
+msgstr "Coğrafi veri kullan"
+
+#: geowidget.cpp:65 geowidget.cpp:181
+msgid "Latitude:"
+msgstr "Enlem:"
+
+#: geowidget.cpp:74 geowidget.cpp:203
+msgid "Longitude:"
+msgstr "Boylam:"
+
+#: geowidget.cpp:83
+msgid "Edit Geo Data..."
+msgstr "Coğrafi Veriyi Düzenle..."
+
+#: geowidget.cpp:161
+msgid "Geo Data Input"
+msgstr "Coğrafi Veri Girişi"
+
+#: geowidget.cpp:177
+msgid "Sexagesimal"
+msgstr "Altmışar"
+
+#: geowidget.cpp:199
+msgid "North"
+msgstr "Kuzey"
+
+#: geowidget.cpp:200
+msgid "South"
+msgstr "Güney"
+
+#: geowidget.cpp:220
+msgid "East"
+msgstr "Doğu"
+
+#: geowidget.cpp:221
+msgid "West"
+msgstr "Batı"
+
+#: geowidget.cpp:425 xxport/csvimportdialog.cpp:65
+msgid "Undefined"
+msgstr "Tanımsız"
+
+#: imagewidget.cpp:79
+msgid "This contact's image cannot be found."
+msgstr "Bu bağlantı için resim bulunamıyor."
+
+#: imagewidget.cpp:219 incsearchwidget.cpp:50
+msgid "Reset"
+msgstr "Sıfırla"
+
+#: imagewidget.cpp:258
+msgid "Picture"
+msgstr "Resim"
+
+#: imeditwidget.cpp:52
+msgid "IM address:"
+msgstr "Hızlı Mesajlaşma adresi:"
+
+#: imeditwidget.cpp:63
+msgid "Edit IM Addresses..."
+msgstr "Hızlı Mesajlaşma Adreslerini Düzenle..."
+
+#: incsearchwidget.cpp:53
+msgid "Search:"
+msgstr "Ara:"
+
+#: incsearchwidget.cpp:59
+msgid ""
+"The incremental search"
+"<p>Enter some text here will start the search for the contact, which matches "
+"the search pattern best. The part of the contact, which will be used for "
+"matching, depends on the field selection."
+msgstr ""
+"Arttırımsal arama"
+"<p>Bağlantı için arama kriterine en iyi uyan metni buraya yazdığınızda arama "
+"başlayacaktır. Eşleştirme için kullanılacak bağlantı bölümü, seçilen alana göre "
+"değişecektir."
+
+#: incsearchwidget.cpp:63
+msgid ""
+"_: as in 'Search in:'\n"
+"&in:"
+msgstr "&içinde:"
+
+#: incsearchwidget.cpp:71
+msgid "Select incremental search field"
+msgstr "Artımsal arama alanını seçin"
+
+#: incsearchwidget.cpp:72
+msgid ""
+"Here you can choose the field, which shall be used for incremental search."
+msgstr "Buradan, arama için kullanılacak alanları seçebilirsiniz."
+
+#: incsearchwidget.cpp:118
+msgid "Visible Fields"
+msgstr "Görünür Alanlar"
+
+#: incsearchwidget.cpp:119
+msgid "All Fields"
+msgstr "Tüm Alanlar"
+
+#: kabcore.cpp:115
+msgid "Unable to load '%1'."
+msgstr "'%1' yüklenemedi."
+
+#: kabcore.cpp:121 ldapsearchdialog.cpp:95 ldapsearchdialog.cpp:307
+msgid "Department"
+msgstr "Bölüm"
+
+#: kabcore.cpp:124
+msgid "Profession"
+msgstr "Uzmanlık Alanı"
+
+#: kabcore.cpp:126
+msgid "Assistant's Name"
+msgstr "Asistan Adı"
+
+#: kabcore.cpp:128
+msgid "Manager's Name"
+msgstr "Yönetici Adı"
+
+#: kabcore.cpp:130
+msgid "Partner's Name"
+msgstr "Partnerin Adı"
+
+#: kabcore.cpp:132
+msgid "Office"
+msgstr "Ofis"
+
+#: kabcore.cpp:134
+msgid "IM Address"
+msgstr "Hızlı Mesajlaşma"
+
+#: kabcore.cpp:136
+msgid "Anniversary"
+msgstr "Yıldönümü"
+
+#: kabcore.cpp:138
+msgid "Blog"
+msgstr "Web Günlüğü"
+
+#: kabcore.cpp:297
+msgid "KAddressBook"
+msgstr "Adres Defteri"
+
+#: kabcore.cpp:298
+msgid "The KDE Address Book"
+msgstr "KDE Adres Defteri"
+
+#: kabcore.cpp:300
+msgid "(c) 1997-2005, The KDE PIM Team"
+msgstr "(c) 1997-2005, KDE PIM Takımı"
+
+#: kabcore.cpp:301
+msgid "Current maintainer"
+msgstr "Şimdiki geliştirici"
+
+#: kabcore.cpp:302
+msgid "Original author"
+msgstr "Orjinal yazar"
+
+#: kabcore.cpp:304
+msgid "Co-maintainer, libkabc port, CSV import/export"
+msgstr "Destekleyic, libkabc yazarı"
+
+#: kabcore.cpp:306
+msgid "GUI and framework redesign"
+msgstr "Grafik arayüz tasarımcısı"
+
+#: kabcore.cpp:308
+msgid "DCOP interface"
+msgstr "DCOP arayüzü"
+
+#: kabcore.cpp:309
+msgid "Contact pinning"
+msgstr "Bağlantı iliştirme"
+
+#: kabcore.cpp:310 kabcore.cpp:312
+msgid "LDAP Lookup"
+msgstr "LDAP"
+
+#: kabcore.cpp:467
+#, c-format
+msgid ""
+"_n: Do you really want to delete this distribution list?\n"
+"Do you really want to delete these %n distribution lists?"
+msgstr "Bu %n dağıtım listesini gerçekten silmek istiyor musunuz?"
+
+#: kabcore.cpp:493
+#, c-format
+msgid ""
+"_n: Do you really want to delete this contact?\n"
+"Do you really want to delete these %n contacts?"
+msgstr "Bu %n bağlantıyı gerçekten silmek istiyor musunuz?"
+
+#: kabcore.cpp:589
+msgid "Please select only one contact."
+msgstr "Lütfen sadece bir bağlantı seçin."
+
+#: kabcore.cpp:593
+msgid ""
+"<qt>Do you really want to use <b>%1</b> as your new personal contact?</qt>"
+msgstr ""
+"<qt>Gerçekten yeni kişisel bağlantı olarak <b>%1</b> "
+"kullanmak istiyor musunuz?</qt>"
+
+#: kabcore.cpp:594
+msgid "Use"
+msgstr "Kullan"
+
+#: kabcore.cpp:594
+msgid "Do Not Use"
+msgstr "Kullanma"
+
+#: features/distributionlistwidget.cpp:266 kabcore.cpp:664
+msgid "New Distribution List"
+msgstr "Yeni Dağıtım Listesi"
+
+#: kabcore.cpp:670
+msgid "New Distribution List (%1)"
+msgstr "Yeni Dağıtım Listesi (%1)"
+
+#: kabcore.cpp:859
+msgid "<qt>Unable to save address book <b>%1</b>.</qt>"
+msgstr "<qt><b>%1</b> adres defteri kaydedilemedi.</qt>"
+
+#: kabcore.cpp:866
+msgid "<qt>Unable to get access for saving the address book <b>%1</b>.</qt>"
+msgstr "<qt>Adres defterini kaydetmek için erişim sağlanamadı: <b>%1</></qt>"
+
+#: kabcore.cpp:970
+msgid ""
+"Your KDE installation is missing LDAP support, please ask your administrator or "
+"distributor for more information."
+msgstr ""
+"KDE kurulumunuz LDAP desteği içermiyor, lütfen sistem yöneticinize ya da "
+"dağıtıcınıza dafa fazla bilgi için başvurun."
+
+#: kabcore.cpp:972
+msgid "No LDAP IO Slave Available"
+msgstr "LDAP IO (G/Ç) Slave'i Mevcut Değil"
+
+#: kabcore.cpp:1008
+msgid "Address Book"
+msgstr "Adres Defteri"
+
+#: kabcore.cpp:1011
+msgid "Print Addresses"
+msgstr "Adresleri Yazdırma"
+
+#: kabcore.cpp:1177 kabcore.cpp:1630
+msgid "Contacts"
+msgstr "Kişiler"
+
+#: kabcore.cpp:1258
+msgid "&Send Email to Contact..."
+msgstr "&Bağlantıya E-posta Gönder..."
+
+#: kabcore.cpp:1261
+msgid "Send a mail to all selected contacts."
+msgstr "Seçilen tüm bağlantılara bir e-posta gönder"
+
+#: kabcore.cpp:1262
+msgid "Print a special number of contacts."
+msgstr "Özel sayıdaki bağlantıları yazdır"
+
+#: kabcore.cpp:1266
+msgid "Save all changes of the address book to the storage backend."
+msgstr "Adres defterindeki tüm değişiklikleri depolama arka ucuna kaydet."
+
+#: kabcore.cpp:1268
+msgid "&New Contact..."
+msgstr "&Yeni Bağlantı..."
+
+#: kabcore.cpp:1270
+msgid ""
+"Create a new contact"
+"<p>You will be presented with a dialog where you can add all data about a "
+"person, including addresses and phone numbers."
+msgstr ""
+"Yeni bir bağlantı yarat "
+"<p>Bir kişi hakkında tüm verileri (adresler ve telefon numaralarını da "
+"kapsayan) girmenize yardımcı olan bir iletişim kutusuyla karşılaşacaksınız."
+
+#: kabcore.cpp:1272
+msgid "&New Distribution List..."
+msgstr "&Yeni Dağıtım Listesi..."
+
+#: kabcore.cpp:1274
+msgid ""
+"Create a new distribution list"
+"<p>You will be presented with a dialog where you can create a new distribution "
+"list."
+msgstr ""
+"Yeni bir dağıtım listesi oluştur"
+"<p>Yeni bir dağıtım listesi oluşturabileceğiniz bir pencere açılacaktır."
+
+#: kabcore.cpp:1276
+msgid "Send &Contact..."
+msgstr "&Bağlantıyı Gönder..."
+
+#: kabcore.cpp:1279
+msgid "Send a mail with the selected contact as attachment."
+msgstr "Seçili bağlantıyı ek olarak e-posta ile gönder."
+
+#: kabcore.cpp:1281
+msgid "Chat &With..."
+msgstr "&Sohbete Başla..."
+
+#: kabcore.cpp:1284
+msgid "Start a chat with the selected contact."
+msgstr "Seçilen kişi ile sohbete başla."
+
+#: kabcore.cpp:1286
+msgid "&Edit Contact..."
+msgstr "B&ağlantıyı Düzenle..."
+
+#: kabcore.cpp:1289
+msgid ""
+"Edit a contact"
+"<p>You will be presented with a dialog where you can change all data about a "
+"person, including addresses and phone numbers."
+msgstr ""
+"Bağlantıyı düzenle"
+"<p>Karşınıza bir kişinin tüm özelliklerinin görüntülendiği ve düzenlenebildiği "
+"bir pencere çıkacaktır."
+
+#: kabcore.cpp:1291
+msgid "&Merge Contacts"
+msgstr "&Bağlantıları Birleştir"
+
+#: kabcore.cpp:1300
+msgid ""
+"Copy the currently selected contact(s) to system clipboard in vCard format."
+msgstr ""
+"Seçili olan bağlantıyı/bağlantıları sistem panosuna VCard biçiminde kopyala"
+
+#: kabcore.cpp:1301
+msgid ""
+"Cuts the currently selected contact(s) to system clipboard in vCard format."
+msgstr ""
+"Seçili olan bağlantıyı/bağlantıları sistem panosuna VCard biçiminde keser."
+
+#: kabcore.cpp:1302
+msgid "Paste the previously cut or copied contacts from clipboard."
+msgstr "Daha önceden taşınan ya da kopyalanan bağlantıları panodan yapıştır."
+
+#: kabcore.cpp:1303
+msgid "Selects all visible contacts from current view."
+msgstr "Şu anki görünümden görünen tüm bağlantıları seçer."
+
+#: kabcore.cpp:1307
+msgid "&Delete Contact"
+msgstr "&Bağlantıyı Sil"
+
+#: kabcore.cpp:1310
+msgid "Delete all selected contacts."
+msgstr "Seçili tüm bağlantıları sil"
+
+#: kabcore.cpp:1313
+msgid "&Copy Contact To..."
+msgstr "Kişiyi &Kopyala..."
+
+#: kabcore.cpp:1316
+msgid ""
+"Store a contact in a different Addressbook"
+"<p>You will be presented with a dialog where you can select a new storage place "
+"for this contact."
+msgstr ""
+"Bağlantıyı farklı bir Adres Defterine kaydet"
+"<p>Bu bağlantıyı depolayabileceğiniz depolama alanlarını seçebileceğiniz bir "
+"iletişim kurusu ile karşılaşacaksınız."
+
+#: kabcore.cpp:1319
+msgid "M&ove Contact To..."
+msgstr "Kişiyi &Taşı..."
+
+#: kabcore.cpp:1325
+msgid "Show Jump Bar"
+msgstr "Hızlı Erişim Çubuğunu Göster"
+
+#: kabcore.cpp:1327
+msgid "Toggle whether the jump button bar shall be visible."
+msgstr "Atla düğmesi çubuğunun görünüp görünmeyeceğini değiştir."
+
+#: kabcore.cpp:1328
+msgid "Hide Jump Bar"
+msgstr "Hızlı Erişim Çubuğunu Gizle"
+
+#: kabcore.cpp:1331
+msgid "Show Details"
+msgstr "Ayrıntıları Göster"
+
+#: kabcore.cpp:1333
+msgid "Toggle whether the details page shall be visible."
+msgstr "Detaylar sayfasının görünür olup olmadığını buradan kontrol edin."
+
+#: kabcore.cpp:1334
+msgid "Hide Details"
+msgstr "&Ayrıntıları Gizle"
+
+#: kabcore.cpp:1338
+msgid "&Configure Address Book..."
+msgstr "&KDE Adres Defterini Yapılandır..."
+
+#: kabcore.cpp:1344
+msgid ""
+"You will be presented with a dialog, that offers you all possibilities to "
+"configure KAddressBook."
+msgstr ""
+"KAdressBook'u yapılandırmak için tüm olasılıkları gösteren bir iletişim "
+"kutusuyla karşılaşacaksınız."
+
+#: kabcore.cpp:1347
+msgid "&Lookup Addresses in LDAP Directory..."
+msgstr "&LDAP'ta Ara..."
+
+#: kabcore.cpp:1349
+msgid ""
+"Search for contacts on a LDAP server"
+"<p>You will be presented with a dialog, where you can search for contacts and "
+"select the ones you want to add to your local address book."
+msgstr ""
+"Bir LDAP sunucusundaki tüm bağlantılar için arama yap "
+"<p> Bağlantılar için arama yapabileceğiniz ve yerel adres defterinize eklemek "
+"istediklerinizi seçebileceğiniz bir iletişim kutusuyla karşılaşacaksınız."
+
+#: kabcore.cpp:1351
+msgid "Set as Personal Contact Data"
+msgstr "Kişisel Bağlantı Verisi Olarak Tanımla"
+
+#: kabcore.cpp:1354
+msgid ""
+"Set the personal contact"
+"<p>The data of this contact will be used in many other KDE applications, so you "
+"do not have to input your personal data several times."
+msgstr ""
+"Kişisel bağlantıyı ayarla "
+"<p>Bu bağlantının verisi birçok KDE uygulamasında kullanılacak, böylece kişisel "
+"bilgilerinizi birçok defa girmek zorunda kalmayacaksınız."
+
+#: kabcore.cpp:1359
+msgid "Set the categories for all selected contacts."
+msgstr "Seçili tüm bağlantılar için kategorileri ayarla."
+
+#: kabcore.cpp:1361
+msgid "Clear Search Bar"
+msgstr "Arama Çubuğunu Temizle"
+
+#: kabcore.cpp:1364
+msgid "Clear Search Bar<p>Clears the content of the quick search bar."
+msgstr "Arama Çubuğunu Temizle <p>Hızlı arama çubuğunun içeriğini temizler."
+
+#: kabcore.cpp:1438
+msgid "Merge with existing categories?"
+msgstr "Mevcut kategorilerle birleştirilsin mi?"
+
+#: kabcore.cpp:1439
+msgid "Merge"
+msgstr "Birleştir"
+
+#: kabcore.cpp:1439
+msgid "Do Not Merge"
+msgstr "Birleştirme"
+
+#: kabcore.cpp:1490
+#, c-format
+msgid ""
+"_n: %n contact matches\n"
+"%n contacts matching"
+msgstr "%n kişi eşleşiyor"
+
+#: kabcore.cpp:1630
+#, c-format
+msgid "Distribution List: %1"
+msgstr "Dağıtım Listesi: %1"
+
+#: kaddressbookmain.cpp:44
+msgid "Address Book Browser"
+msgstr "Adres Defteri Tarayıcısı"
+
+#: kaddressbookmain.cpp:151
+msgid ""
+"You will be presented with a dialog, where you can configure the application "
+"wide shortcuts."
+msgstr ""
+"Uygulama çapındaki kısayolları ayarlayabileceğiniz bir iletişim kutusuyla "
+"karşılaşacaksınız."
+
+#: keywidget.cpp:47
+msgid "Keys:"
+msgstr "Anahtarlar:"
+
+#: keywidget.cpp:60
+msgid "Export..."
+msgstr "Aktar..."
+
+#: keywidget.cpp:108
+msgid "Key Type"
+msgstr "Anahtar Türü"
+
+#: keywidget.cpp:108
+msgid "Select the key type:"
+msgstr "Anahtar türünü seçin:"
+
+#: keywidget.cpp:124 xxport/csv_xxport.cpp:68 xxport/ldif_xxport.cpp:117
+msgid "<qt>Unable to open file <b>%1</b>.</qt>"
+msgstr "<qt><b>%1</b> dosyası açılamadı.</qt>"
+
+#: keywidget.cpp:156
+msgid "<qt>Do you really want to remove the key <b>%1</b>?</qt>"
+msgstr "<qt>Gerçekten <b>%1</b> anahtarını silmek istiyor musunuz?</qt>"
+
+#: ldapsearchdialog.cpp:81 ldapsearchdialog.cpp:310
+msgid "Title"
+msgstr "Başlık"
+
+#: ldapsearchdialog.cpp:82 ldapsearchdialog.cpp:293 nameeditdialog.cpp:308
+msgid "Full Name"
+msgstr "Tam Ad"
+
+#: features/distributionlistwidget.cpp:177 ldapsearchdialog.cpp:83
+#: ldapsearchdialog.cpp:172 ldapsearchdialog.cpp:294 ldapsearchdialog.cpp:367
+msgid "Email"
+msgstr "E-posta"
+
+#: ldapsearchdialog.cpp:84 ldapsearchdialog.cpp:173 ldapsearchdialog.cpp:295
+#: ldapsearchdialog.cpp:369
+msgid "Home Number"
+msgstr "Ev Numarası"
+
+#: ldapsearchdialog.cpp:85 ldapsearchdialog.cpp:174 ldapsearchdialog.cpp:296
+#: ldapsearchdialog.cpp:371
+msgid "Work Number"
+msgstr "İş Numarası"
+
+#: ldapsearchdialog.cpp:86 ldapsearchdialog.cpp:297
+msgid "Mobile Number"
+msgstr "Cep Telefonu Numarası"
+
+#: ldapsearchdialog.cpp:87 ldapsearchdialog.cpp:298
+msgid "Fax Number"
+msgstr "Faks Numarası"
+
+#: ldapsearchdialog.cpp:88
+msgid "Pager"
+msgstr "Çağrı Cihazı"
+
+#: ldapsearchdialog.cpp:89 ldapsearchdialog.cpp:301
+msgid "Street"
+msgstr "Cadde"
+
+#: ldapsearchdialog.cpp:90 ldapsearchdialog.cpp:302
+msgid "State"
+msgstr "Eyalet"
+
+#: ldapsearchdialog.cpp:91 ldapsearchdialog.cpp:303
+msgid "Country"
+msgstr "Ülke"
+
+#: ldapsearchdialog.cpp:92 ldapsearchdialog.cpp:306
+msgid "City"
+msgstr "Şehir"
+
+#: ldapsearchdialog.cpp:93 ldapsearchdialog.cpp:300 nameeditdialog.cpp:311
+msgid "Organization"
+msgstr "Kurum"
+
+#: ldapsearchdialog.cpp:94 ldapsearchdialog.cpp:299
+msgid "Company"
+msgstr "Firma"
+
+#: ldapsearchdialog.cpp:96 ldapsearchdialog.cpp:304
+msgid "Zip Code"
+msgstr "Posta Kodu"
+
+#: ldapsearchdialog.cpp:97 ldapsearchdialog.cpp:305
+#: printing/kabentrypainter.cpp:386
+msgid "Postal Address"
+msgstr "Posta Adresi"
+
+#: ldapsearchdialog.cpp:98 ldapsearchdialog.cpp:308
+msgid "Description"
+msgstr "Açıklama"
+
+#: ldapsearchdialog.cpp:99 ldapsearchdialog.cpp:309
+msgid "User ID"
+msgstr "Kullanıcı No"
+
+#: ldapsearchdialog.cpp:143 ldapsearchdialog.cpp:151
+msgid "Search for Addresses in Directory"
+msgstr "Dizinde bir Adresi Ara"
+
+#: ldapsearchdialog.cpp:160
+msgid "Search for:"
+msgstr "Ara:"
+
+#: ldapsearchdialog.cpp:167
+msgid ""
+"_: In LDAP attribute\n"
+"in"
+msgstr "içinde"
+
+#: features/distributionlistwidget.cpp:176 ldapsearchdialog.cpp:171
+#: ldapsearchdialog.cpp:362
+msgid "Name"
+msgstr "İsim"
+
+#: ldapsearchdialog.cpp:180 ldapsearchdialog.cpp:427
+msgid "&Search"
+msgstr "&Ara"
+
+#: ldapsearchdialog.cpp:188
+msgid "Recursive search"
+msgstr "Özyinelemeli ara"
+
+#: ldapsearchdialog.cpp:193
+msgid "Contains"
+msgstr "İçerir"
+
+#: ldapsearchdialog.cpp:194
+msgid "Starts With"
+msgstr "Başlar"
+
+#: ldapsearchdialog.cpp:207
+msgid "Unselect All"
+msgstr "Seçimi Temizle"
+
+#: ldapsearchdialog.cpp:213
+msgid "Add Selected"
+msgstr "Seçileni Ekle"
+
+#: ldapsearchdialog.cpp:219
+msgid "Add to Distribution List..."
+msgstr "Dağıtım Listesine Ekle..."
+
+#: ldapsearchdialog.cpp:262
+msgid ""
+"You must select a LDAP server before searching.\n"
+"You can do this from the menu Settings/Configure KAddressBook."
+msgstr ""
+"Aramadan önce bir LDAP sunucu adresi belirtmek zorundasınız. \n"
+"Bu işlemi Ayarlar/Adres Defterini Yapılandır menüsünden "
+"gerçekleştirebilirsiniz."
+
+#: ldapsearchdialog.cpp:550
+msgid "Select a distribution list to add the selected contacts to."
+msgstr "Seçilen kişileri eklemek için bir dağıtım listesi seçin."
+
+#: ldapsearchdialog.cpp:551
+msgid "Select Distribution List"
+msgstr "Dağıtım Listesini Seç"
+
+#: ldapsearchdialog.cpp:576
+msgid ""
+"_: arguments are host name, datetime\n"
+"Imported from LDAP directory %1 on %2"
+msgstr ""
+
+#: ldapsearchdialog.cpp:588
+#, c-format
+msgid ""
+"_n: The following contact was imported into your address book:\n"
+"The following %n contacts were imported into your address book:"
+msgstr "%n kişi adres defterinize eklendi:"
+
+#: ldapsearchdialog.cpp:603
+msgid "Please select the contacts you want to add to the distribution list."
+msgstr ""
+
+#: ldapsearchdialog.cpp:603
+msgid "No Contacts Selected"
+msgstr "Hiç Kişi Seçilmedi"
+
+#: nameeditdialog.cpp:50
+msgid "Edit Contact Name"
+msgstr "Bağlantı Adını Düzenle"
+
+#: nameeditdialog.cpp:59
+msgid "Honorific prefixes:"
+msgstr "Ünvan öneki:"
+
+#: nameeditdialog.cpp:68
+msgid ""
+"The predefined honorific prefixes can be extended in the settings dialog."
+msgstr ""
+"Öntanımlı ünvan ön adları yapılandırma iletişim kutusu ile düzenlenebilir."
+
+#: nameeditdialog.cpp:70
+msgid "Given name:"
+msgstr "Adı:"
+
+#: nameeditdialog.cpp:77
+msgid "Additional names:"
+msgstr "Ek adlar:"
+
+#: nameeditdialog.cpp:84
+msgid "Family names:"
+msgstr "Soyadı:"
+
+#: nameeditdialog.cpp:91
+msgid "Honorific suffixes:"
+msgstr "Ünvan soneki:"
+
+#: nameeditdialog.cpp:100
+msgid ""
+"The predefined honorific suffixes can be extended in the settings dialog."
+msgstr ""
+"Öntanımlı ünvan adları yapılandırma iletişim kutusu ile düzenlenebilir."
+
+#: nameeditdialog.cpp:114
+msgid "Parse name automatically"
+msgstr "Adı otomatik olarak ayrıştır"
+
+#: nameeditdialog.cpp:132
+msgid "Dr."
+msgstr "Dr."
+
+#: nameeditdialog.cpp:133
+msgid "Miss"
+msgstr "Bayan"
+
+#: nameeditdialog.cpp:134
+msgid "Mr."
+msgstr "Bay"
+
+#: nameeditdialog.cpp:135
+msgid "Mrs."
+msgstr "Byn."
+
+#: nameeditdialog.cpp:136
+msgid "Ms."
+msgstr "Ms."
+
+#: nameeditdialog.cpp:137
+msgid "Prof."
+msgstr "Prof."
+
+#: nameeditdialog.cpp:143
+msgid "I"
+msgstr "I"
+
+#: nameeditdialog.cpp:144
+msgid "II"
+msgstr "II"
+
+#: nameeditdialog.cpp:145
+msgid "III"
+msgstr "III"
+
+#: nameeditdialog.cpp:146
+msgid "Jr."
+msgstr "Jr."
+
+#: nameeditdialog.cpp:147
+msgid "Sr."
+msgstr "Sr."
+
+#: nameeditdialog.cpp:306
+msgid "Custom"
+msgstr "Özel"
+
+#: nameeditdialog.cpp:307
+msgid "Simple Name"
+msgstr "Basit İsim"
+
+#: nameeditdialog.cpp:309
+msgid "Reverse Name with Comma"
+msgstr "Virgülle Ayrılmış Ters İsim"
+
+#: nameeditdialog.cpp:310
+msgid "Reverse Name"
+msgstr "Ters İsim"
+
+#: phoneeditwidget.cpp:92
+msgid "Other..."
+msgstr "Diğer..."
+
+#: phoneeditwidget.cpp:295
+msgid "Edit Phone Number"
+msgstr "Telefon Numarasını Düzenle"
+
+#: phoneeditwidget.cpp:303
+msgid "This is the preferred phone number"
+msgstr "Bu tercih edilen telefon numarasıdır"
+
+#: phoneeditwidget.cpp:306
+msgid "Types"
+msgstr "Türler"
+
+#. i18n: file kaddressbook_part.rc line 6
+#: rc.cpp:6 rc.cpp:36
+#, no-c-format
+msgid "New"
+msgstr "Yeni"
+
+#. i18n: file kaddressbook_part.rc line 12
+#: rc.cpp:9 rc.cpp:39
+#, no-c-format
+msgid "&Import"
+msgstr "İ&çeri Aktar"
+
+#. i18n: file kaddressbook_part.rc line 14
+#: rc.cpp:12 rc.cpp:42
+#, no-c-format
+msgid "&Export"
+msgstr "&Dışarı Aktar"
+
+#. i18n: file kaddressbook_part.rc line 55
+#: rc.cpp:21
+#, no-c-format
+msgid "Tools"
+msgstr "Araçlar"
+
+#. i18n: file kaddressbook_part.rc line 101
+#: rc.cpp:30 rc.cpp:60
+#, no-c-format
+msgid "Contact Toolbar"
+msgstr "Bağlantı Araç Çubuğu"
+
+#. i18n: file editors/imaddressbase.ui line 24
+#: editors/imeditorwidget.cpp:369 rc.cpp:63
+#, no-c-format
+msgid ""
+"_: Instant messaging\n"
+"Edit Address"
+msgstr "Adresi Düzenle"
+
+#. i18n: file editors/imaddressbase.ui line 40
+#: rc.cpp:66
+#, no-c-format
+msgid ""
+"_: Instant messaging\n"
+"&Protocol:"
+msgstr "&Protokol:"
+
+#. i18n: file editors/imaddressbase.ui line 56
+#: rc.cpp:69
+#, no-c-format
+msgid ""
+"_: Instant messaging\n"
+"&Address:"
+msgstr "&Adres:"
+
+#. i18n: file editors/imaddressbase.ui line 67
+#: rc.cpp:72
+#, no-c-format
+msgid ""
+"_: Instant messaging\n"
+"&Network:"
+msgstr "&Ağ:"
+
+#. i18n: file editors/imeditorbase.ui line 24
+#: rc.cpp:75
+#, no-c-format
+msgid ""
+"_: Instant messaging\n"
+"IM Addresses"
+msgstr "Hızlı Mesajlaşma Adresi"
+
+#. i18n: file editors/imeditorbase.ui line 52
+#: rc.cpp:78
+#, no-c-format
+msgid ""
+"_: Instant messaging\n"
+"&Set Standard"
+msgstr "&Standart Ayarla"
+
+#. i18n: file editors/imeditorbase.ui line 55
+#: rc.cpp:81
+#, no-c-format
+msgid ""
+"_: Instant messaging\n"
+"The IM Address that is set as the standard is the address that is shown in main "
+"editor window."
+msgstr ""
+"Standart olarak seçilen Hızlı Mesajlaşma Adresi ana pencerede gösterilecek "
+"adrestir.Standart olarak seçilen Hızlı Mesajlaşma Adresi ana pencerede "
+"gösterilecek adrestir."
+
+#. i18n: file editors/imeditorbase.ui line 58
+#: rc.cpp:84
+#, no-c-format
+msgid ""
+"_: Instant messaging\n"
+"<qt>Only one IM Address can be set as the standard IM Address."
+"<br>The standard IM Address is shown in the main editor window, and other "
+"programs may use this as hint for deciding which IM Address to show.</qt>"
+msgstr ""
+"<qt>Yalnızca bir Hızlı Mesajlaşma Adresi standart mesajlaşma adresi olarak "
+"seçilebilir."
+"<br>Standart Hızlı Mesajlaşma Adresi ana düzenleyici penceresinde "
+"görüntülenecektir. Diğer programlar bunu hangi Hızlı Mesajlaşma Adresini "
+"göstereceklerine karar vermek için kullanabilir.</qt>qt>"
+"Yalnızca bir Hızlı Mesajlaşma Adresi standart mesajlaşma adresi olarak "
+"seçilebilir."
+"<br>Standart Hızlı Mesajlaşma Adresi ana düzenleyici penceresinde "
+"görüntülenecektir. Diğer programlar bunu hangi Hızlı Mesajlaşma Adresini "
+"göstereceklerine karar vermek için kullanabilir.</qt>"
+
+#. i18n: file editors/imeditorbase.ui line 66
+#: rc.cpp:87
+#, no-c-format
+msgid ""
+"_: Instant messaging\n"
+"&Remove"
+msgstr "&Kaldır"
+
+#. i18n: file editors/imeditorbase.ui line 74
+#: rc.cpp:90
+#, no-c-format
+msgid ""
+"_: Instant messaging\n"
+"&Edit..."
+msgstr "&Düzenle..."
+
+#. i18n: file editors/imeditorbase.ui line 82
+#: rc.cpp:93
+#, no-c-format
+msgid ""
+"_: Instant messaging\n"
+"&Add..."
+msgstr "&Ekle..."
+
+#. i18n: file editors/imeditorbase.ui line 88
+#: rc.cpp:96
+#, no-c-format
+msgid ""
+"_: Instant messaging\n"
+"Protocol"
+msgstr "Protokol"
+
+#. i18n: file editors/imeditorbase.ui line 99
+#: rc.cpp:99
+#, no-c-format
+msgid ""
+"_: Instant messaging\n"
+"Address"
+msgstr "Adres"
+
+#. i18n: file editors/imeditorbase.ui line 148
+#: rc.cpp:102
+#, no-c-format
+msgid ""
+"_: Instant messaging\n"
+"<em>Note:</em> Please read the help page before adding or editing Instant "
+"Messenging Addresses here."
+msgstr ""
+"<em>Not:</em> Lütfen, Hızlı Mesajlaşma Adreslerini burada düzenlemeden veya "
+"eklemeden önce yardım sayfalarını okuyun."
+
+#. i18n: file printing/ds_appearance.ui line 16
+#: rc.cpp:105
+#, no-c-format
+msgid "Appearance Page"
+msgstr "Görünüm Sayfası"
+
+#. i18n: file printing/ds_appearance.ui line 66
+#: printing/detailledstyle.cpp:80 rc.cpp:108
+#, no-c-format
+msgid "Detailed Print Style - Appearance"
+msgstr "Detaylı Yazdırma Stili Görünümü"
+
+#. i18n: file printing/ds_appearance.ui line 88
+#: rc.cpp:111
+#, no-c-format
+msgid "Font Settings"
+msgstr "Yazıtipi Ayarları"
+
+#. i18n: file printing/ds_appearance.ui line 105
+#: rc.cpp:114
+#, no-c-format
+msgid "Use standard KDE fonts"
+msgstr "Standart KDE yazıtiplerini kullan"
+
+#. i18n: file printing/ds_appearance.ui line 139
+#: rc.cpp:117
+#, no-c-format
+msgid "Details font:"
+msgstr "Ayrıntı yazıtipleri:"
+
+#. i18n: file printing/ds_appearance.ui line 150
+#: rc.cpp:120 rc.cpp:126 rc.cpp:132 rc.cpp:138 rc.cpp:141
+#, no-c-format
+msgid "Size:"
+msgstr "Boyut:"
+
+#. i18n: file printing/ds_appearance.ui line 161
+#: rc.cpp:123
+#, no-c-format
+msgid "Body font:"
+msgstr "Gövde yazıtipi:"
+
+#. i18n: file printing/ds_appearance.ui line 183
+#: rc.cpp:129
+#, no-c-format
+msgid "Fixed font:"
+msgstr "Eşaralıklı yazıtipi:"
+
+#. i18n: file printing/ds_appearance.ui line 246
+#: rc.cpp:135
+#, no-c-format
+msgid "Contact header font:"
+msgstr "Bağlantı başlık yazıtipi:"
+
+#. i18n: file printing/ds_appearance.ui line 302
+#: rc.cpp:144
+#, no-c-format
+msgid "Headlines:"
+msgstr "Başlıklar:"
+
+#. i18n: file printing/ds_appearance.ui line 335
+#: rc.cpp:147
+#, no-c-format
+msgid "Contact Headers"
+msgstr "Bağlantı Başlıkları"
+
+#. i18n: file printing/ds_appearance.ui line 352
+#: rc.cpp:150
+#, no-c-format
+msgid "Use colored contact headers"
+msgstr "Renkli bağlantı başlıkları kullan"
+
+#. i18n: file printing/ds_appearance.ui line 401
+#: rc.cpp:153
+#, no-c-format
+msgid "Headline background color:"
+msgstr "Başlık satırı arkaplan rengi:"
+
+#. i18n: file printing/ds_appearance.ui line 412
+#: rc.cpp:156
+#, no-c-format
+msgid "Headline text color:"
+msgstr "Başlık satırı metin rengi:"
+
+#. i18n: file common/kaddressbook.kcfg line 10
+#: rc.cpp:159
+#, no-c-format
+msgid "Automatic name parsing for new addressees"
+msgstr "Yeni alıcılar için otomatik isim ayrıştırma"
+
+#. i18n: file common/kaddressbook.kcfg line 18
+#: rc.cpp:162
+#, no-c-format
+msgid "Phone"
+msgstr "Telefon"
+
+#. i18n: file common/kaddressbook.kcfg line 22
+#: rc.cpp:165
+#, no-c-format
+msgid "Fax"
+msgstr "Faks"
+
+#. i18n: file common/kaddressbook.kcfg line 27
+#: rc.cpp:168
+#, no-c-format
+msgid "SMS"
+msgstr "SMS"
+
+#. i18n: file common/kaddressbook.kcfg line 28
+#: rc.cpp:171
+#, no-c-format
+msgid "The script used to send a GSM SMS text message to the mobile phone"
+msgstr ""
+
+#. i18n: file common/kaddressbook.kcfg line 34
+#: rc.cpp:174
+#, no-c-format
+msgid "Honor KDE single click"
+msgstr "KDE tek tıklama yöntemi"
+
+#. i18n: file common/kaddressbook.kcfg line 59
+#: rc.cpp:177
+#, no-c-format
+msgid ""
+"If true, the contact list will be placed above the extensions on the left "
+"(distribution list editor etc.) instead of in the middle of the main window"
+msgstr ""
+
+#: soundwidget.cpp:54
+msgid "Play"
+msgstr "Çal"
+
+#: soundwidget.cpp:61
+msgid "Store as URL"
+msgstr "URL olarak kaydet"
+
+#: soundwidget.cpp:80
+msgid ""
+"This field stores a sound file which contains the name of the contact to "
+"clarify the pronunciation."
+msgstr ""
+
+#: soundwidget.cpp:81
+msgid "Save only the URL to the sound file, not the whole object."
+msgstr ""
+
+#: undocmds.cpp:46
+#, c-format
+msgid ""
+"_n: Delete Contact\n"
+"Delete %n Contacts"
+msgstr "%n Kişiyi Sil"
+
+#: undocmds.cpp:97
+#, c-format
+msgid ""
+"_n: Paste Contact\n"
+"Paste %n Contacts"
+msgstr "%n Kişi Yapıştır"
+
+#: undocmds.cpp:153
+#, c-format
+msgid ""
+"_n: New Contact\n"
+"New %n Contacts"
+msgstr "Yeni %n KişiYeni %n Kişi"
+
+#: undocmds.cpp:222
+#, c-format
+msgid ""
+"_n: Cut Contact\n"
+"Cut %n Contacts"
+msgstr "%n Kişi Kes%n Kişi Kes"
+
+#: viewconfigurefieldspage.cpp:205
+msgid "Select Fields to Display"
+msgstr "Görüntülenecek Alanları Seç"
+
+#: viewconfigurefieldspage.cpp:220
+msgid "&Selected fields:"
+msgstr "Seçili &alanlar:"
+
+#: viewconfigurefilterpage.cpp:46
+msgid ""
+"The default filter will be activated whenever this view is displayed. This "
+"feature allows you to configure views that only interact with certain types of "
+"information based on the filter. Once the view is activated, the filter can be "
+"changed at anytime."
+msgstr ""
+"Bu görünüm gösterildiğinde öntanımlı filtre etkin olacaktır. Bu özellik sadece "
+"belli tipteki ve filtre temelli bilgi ile etkileşim halinde bulunan görünümleri "
+"derlemenize izin verir. Bu görünüm etkinleştirildikten sonra, filtre herhangi "
+"bir zamanda değiştirilebilir."
+
+#: viewconfigurefilterpage.cpp:57
+msgid "No default filter"
+msgstr "Öntanımlı filtre yok"
+
+#: viewconfigurefilterpage.cpp:61
+msgid "Use last active filter"
+msgstr "Son etkin filtreyi kullan"
+
+#: viewconfigurefilterpage.cpp:67
+msgid "Use filter:"
+msgstr "Filtre kullan:"
+
+#: viewconfigurewidget.cpp:50
+msgid "Fields"
+msgstr "Alanlar"
+
+#: viewconfigurewidget.cpp:58
+msgid "Default Filter"
+msgstr "Öntanımlı Filtre"
+
+#: viewconfigurewidget.cpp:89
+msgid "Modify View: "
+msgstr "Görünümü Düzenle:"
+
+#: viewmanager.cpp:309
+msgid "<qt>Are you sure that you want to delete the view <b>%1</b>?</qt>"
+msgstr ""
+"<qt>Gerçekten <b>%1</b> görünümünü silmek istediğinizden emin misiniz ?</qt>"
+
+#: editors/imeditorwidget.cpp:424 viewmanager.cpp:311
+msgid "Confirm Delete"
+msgstr "Silmeyi Onayla"
+
+#: viewmanager.cpp:429
+#, c-format
+msgid ""
+"_n: Import one contact into your addressbook?\n"
+"Import %n contacts into your addressbook?"
+msgstr "Adresinize %n kişiyi aktarmak istiyor musunuz?"
+
+#: viewmanager.cpp:430
+msgid "Import Contacts?"
+msgstr "Bağlantılar Alınsın mı?"
+
+#: viewmanager.cpp:430 xxport/kde2_xxport.cpp:58
+msgid "Do Not Import"
+msgstr "İçeriye Aktarma"
+
+#: viewmanager.cpp:538 views/configuretableviewdialog.cpp:123
+#: xxport/csvimportdialog.cpp:419
+msgid "None"
+msgstr "Hiçbiri"
+
+#: viewmanager.cpp:539
+msgid "Unfiled"
+msgstr "Tanımsız"
+
+#: viewmanager.cpp:562
+msgid "Select View"
+msgstr "Görünümü Seç"
+
+#: viewmanager.cpp:571
+msgid "Modify View..."
+msgstr "Görünümü Düzenle..."
+
+#: viewmanager.cpp:574
+msgid ""
+"By pressing this button a dialog opens that allows you to modify the view of "
+"the addressbook. There you can add or remove fields that you want to be shown "
+"or hidden in the addressbook like the name for example."
+msgstr ""
+"Bu düğmeye basılınca adres defterinin görünümünü değiştirebileceğiniz bir "
+"iletişim kutusu açılacaktır. Bu iletişim kutusundan, isim alanı gibi, adres "
+"defterinde gösterilmesini istediğiniz alanları seçebilirsiniz."
+
+#: viewmanager.cpp:576
+msgid "Add View..."
+msgstr "Yeni Görünüm..."
+
+#: viewmanager.cpp:579
+msgid ""
+"You can add a new view by choosing one from the dialog that appears after "
+"pressing the button. You have to give the view a name, so that you can "
+"distinguish between the different views."
+msgstr ""
+"Düğmeye bastıktan sonra çıkacak iletişim kutusundan bir görünüm türü "
+"seçebilirsiniz. Görünüm için bir isim tanımlamalısınız, bu sayede farklıgörünüm "
+"türlerini birbirinden ayırabilirsiniz."
+
+#: viewmanager.cpp:581
+msgid "Delete View"
+msgstr "Görünümü Sil"
+
+#: viewmanager.cpp:584
+msgid ""
+"By pressing this button you can delete the actual view, which you have added "
+"before."
+msgstr "Bu düğmeye basarak daha önceden eklediğiniz görünümü silebilirsiniz."
+
+#: viewmanager.cpp:586
+msgid "Refresh View"
+msgstr "Görünümü Tazele"
+
+#: viewmanager.cpp:589
+msgid "The view will be refreshed by pressing this button."
+msgstr "Bu düğmeye basarak görünümü tazeleyebilirsiniz."
+
+#: viewmanager.cpp:591
+msgid "Edit &Filters..."
+msgstr "&Filtreleri Düzenle..."
+
+#: viewmanager.cpp:594
+msgid ""
+"Edit the contact filters"
+"<p>You will be presented with a dialog, where you can add, remove and edit "
+"filters."
+msgstr ""
+"Bağlantı filtrelerini düzenle "
+"<p>Filtreler ekleyebileceğiniz, çıkarabileceğiniz ve filtreleri "
+"düzenleyebileceğiniz bir iletişim kutusuyla karşılaşacaksınız."
+
+#: xxportmanager.cpp:80
+msgid "<qt>No import plugin available for <b>%1</b>.</qt>"
+msgstr "<qt><b>%1</b> için alma eklentisi yok.</qt>"
+
+#: xxportmanager.cpp:104
+msgid "<qt>No export plugin available for <b>%1</b>.</qt>"
+msgstr "<qt><b>%1</b> için aktarma eklentisi yok.</qt>"
+
+#: xxportmanager.cpp:116
+msgid "Unable to export contacts."
+msgstr "Bağlantılar aktarılamıyor."
+
+#: xxportselectdialog.cpp:48
+msgid "Choose Which Contacts to Export"
+msgstr "Aktarılacak Bağlantıları Seçin"
+
+#: printing/stylepage.cpp:44 xxportselectdialog.cpp:80
+msgid "Ascending"
+msgstr "Artan"
+
+#: printing/stylepage.cpp:45 xxportselectdialog.cpp:81
+msgid "Descending"
+msgstr "Azalan"
+
+#: xxportselectdialog.cpp:185
+msgid "Which contacts do you want to export?"
+msgstr "Hangi bağlantıları aktarmak istiyorsunuz?"
+
+#: xxportselectdialog.cpp:188
+msgid "Selection"
+msgstr "Seçim"
+
+#: printing/selectionpage.cpp:61 xxportselectdialog.cpp:196
+msgid "&All contacts"
+msgstr "&Tüm bağlantılar"
+
+#: xxportselectdialog.cpp:198
+msgid "Export the entire address book"
+msgstr "Tüm adres defterini aktar"
+
+#: xxportselectdialog.cpp:200
+#, c-format
+msgid ""
+"_n: &Selected contact\n"
+"&Selected contacts (%n selected)"
+msgstr "&Seçilen bağlantılar (%n seçildi)"
+
+#: xxportselectdialog.cpp:201
+msgid ""
+"Only export contacts selected in KAddressBook.\n"
+"This option is disabled if no contacts are selected."
+msgstr ""
+"Sadece KAdressBook'ta seçili olan bağlantıları aktar.\n"
+"Hiç bağlantı seçilmezse, bu seçenek kapatılır."
+
+#: printing/selectionpage.cpp:71 xxportselectdialog.cpp:205
+msgid "Contacts matching &filter"
+msgstr "&Filtreye uyan bağlantılar"
+
+#: xxportselectdialog.cpp:206
+msgid ""
+"Only export contacts matching the selected filter.\n"
+"This option is disabled if you have not defined any filters"
+msgstr ""
+"Sadece seçili filtreye uyan bağlantıları aktar.\n"
+"Hiç filtre tanımlamadıysanız bu seçenek kapatılır"
+
+#: printing/selectionpage.cpp:76 xxportselectdialog.cpp:210
+msgid "Category &members"
+msgstr "Kategori ü&yeleri"
+
+#: xxportselectdialog.cpp:211
+msgid ""
+"Only export contacts who are members of a category that is checked on the list "
+"to the left.\n"
+"This option is disabled if you have no categories."
+msgstr ""
+"Solda listelenmiş kategorilerden sadece seçili olanlarının içerdiği "
+"bağlantılarını aktar.\n"
+"Hiç kategoriniz yoksa bu seçenek kapatılır."
+
+#: xxportselectdialog.cpp:216
+msgid "Select a filter to decide which contacts to export."
+msgstr "Hangi bağlantıların aktarılacağına karar vermek için bir filtre seçin."
+
+#: xxportselectdialog.cpp:222
+msgid "Check the categories whose members you want to export."
+msgstr "Üyelerini aktarmak istediğiniz kategorileri işaretleyiniz."
+
+#: printing/stylepage.cpp:123 xxportselectdialog.cpp:227
+msgid "Sorting"
+msgstr "Sıralama"
+
+#: printing/stylepage.cpp:129 xxportselectdialog.cpp:233
+msgid "Criterion:"
+msgstr "Kriter:"
+
+#: printing/stylepage.cpp:135 xxportselectdialog.cpp:239
+msgid "Order:"
+msgstr "Sıralama:"
+
+#: common/kabprefs.cpp:61
+msgid "Business"
+msgstr "İş yeri"
+
+#: common/kabprefs.cpp:61
+msgid "Family"
+msgstr "Aile"
+
+#: common/kabprefs.cpp:61
+msgid "School"
+msgstr "Okul"
+
+#: common/kabprefs.cpp:62
+msgid "Customer"
+msgstr "Müşteri"
+
+#: common/kabprefs.cpp:62
+msgid "Friend"
+msgstr "Arkadaş"
+
+#: common/locationmap.cpp:77
+msgid ""
+"No service provider available for map lookup!\n"
+"Please add one in the configuration dialog."
+msgstr ""
+"Eşlem araması için bir servis sağlayıcı ulaşılabilir değil!\n"
+"Yapılandırma iletişim kutusundan bir tane ekleyin."
+
+#: editors/cryptowidget.cpp:63
+msgid "Crypto Settings"
+msgstr "Şifreleme Ayarları"
+
+#: editors/cryptowidget.cpp:79
+msgid "Allowed Protocols"
+msgstr "İzin Verilen Protokoller"
+
+#: editors/cryptowidget.cpp:92
+msgid "Preferred OpenPGP encryption key:"
+msgstr "Tercih edilen OpenPGP şifreleme anahtarı:"
+
+#: editors/cryptowidget.cpp:98
+msgid "Preferred S/MIME encryption certificate:"
+msgstr "Tercih edilen S/MIME şifreleme sertifikası:"
+
+#: editors/cryptowidget.cpp:104
+msgid "Message Preference"
+msgstr "İleti Tercihi"
+
+#: editors/cryptowidget.cpp:111
+msgid "Sign:"
+msgstr "İmzala:"
+
+#: editors/cryptowidget.cpp:121
+msgid "Encrypt:"
+msgstr "Şifrele:"
+
+#: editors/imeditorwidget.cpp:87
+msgid ""
+"_: <nickname> on <server>\n"
+"%1 on %2"
+msgstr "%2 üzerinde %1"
+
+#: editors/imeditorwidget.cpp:144
+msgid "Edit Instant Messenging Address"
+msgstr "Hızlı Mesajlaşma Adresini Düzenle"
+
+#: editors/imeditorwidget.cpp:334
+msgid ""
+"_: Instant messaging\n"
+"Add Address"
+msgstr "Adres Ekle"
+
+#: editors/imeditorwidget.cpp:423
+#, c-format
+msgid ""
+"_n: Do you really want to delete the selected address?\n"
+"Do you really want to delete the %n selected addresses?"
+msgstr "Seçili %n adresi gerçekten silmek istiyor musunuz?"
+
+#: features/distributionlistngwidget.cpp:111
+msgid "Distribution List Editor NG"
+msgstr "Dağıtım Listesi Düzenleyici NGDağıtım Listesi Düzenleyici NG"
+
+#: features/distributionlistngwidget.cpp:128
+msgid "Distribution Lists"
+msgstr "Dağıtım Listeleri"
+
+#: features/distributionlistngwidget.cpp:134
+msgid "Add distribution list"
+msgstr "Dağıtım Listesi ekle"
+
+#: features/distributionlistngwidget.cpp:140
+msgid "Edit distribution list"
+msgstr "Dağıtım listesini düzenle"
+
+#: features/distributionlistngwidget.cpp:146
+msgid "Remove distribution list"
+msgstr "Dağıtım listesini kaldır"
+
+#: features/distributionlistngwidget.cpp:174
+msgid "New Distribution List..."
+msgstr "Yeni Dağıtım Listesi..."
+
+#: features/distributionlistngwidget.cpp:236
+msgid "All Contacts"
+msgstr "Tüm Kişiler"
+
+#: features/distributionlistwidget.cpp:163
+msgid "New List..."
+msgstr "Yeni Liste..."
+
+#: features/distributionlistwidget.cpp:167
+msgid "Rename List..."
+msgstr "Listeyi Değiştir..."
+
+#: features/distributionlistwidget.cpp:171
+msgid "Remove List"
+msgstr "Listeyi Sil"
+
+#: features/distributionlistwidget.cpp:178
+msgid "Use Preferred"
+msgstr "Tercih Edileni Kullan"
+
+#: features/distributionlistwidget.cpp:188
+msgid "Add Contact"
+msgstr "Bağlantı Ekle"
+
+#: features/distributionlistwidget.cpp:196
+msgid "Change Email..."
+msgstr "E-postayı Değiştir..."
+
+#: features/distributionlistwidget.cpp:200
+msgid "Remove Contact"
+msgstr "Bağlantıyı Sil"
+
+#: features/distributionlistwidget.cpp:267
+#: features/distributionlistwidget.cpp:307
+msgid "Please enter name:"
+msgstr "Lütfen adını giriniz:"
+
+#: features/distributionlistwidget.cpp:273
+msgid "The name already exists"
+msgstr "İsim zaten var"
+
+#: features/distributionlistwidget.cpp:306
+msgid "Rename Distribution List"
+msgstr "Dağıtım Listesinin Adını Değiştir"
+
+#: features/distributionlistwidget.cpp:313
+msgid "The name already exists."
+msgstr "İsim zaten var."
+
+#: features/distributionlistwidget.cpp:346
+msgid "<qt>Delete distribution list <b>%1</b>?</qt>"
+msgstr "<qt><b>%1</b> isimli dağıtım listesi silinsin mi?</qt>"
+
+#: features/distributionlistwidget.cpp:508
+#, c-format
+msgid ""
+"_n: Count: %n contact\n"
+"Count: %n contacts"
+msgstr "Sayı: %n kişiSayı: %n kişi"
+
+#: features/distributionlistwidget.cpp:568
+msgid "Distribution List Editor"
+msgstr "Dağıtım Listesi Düzenleyici"
+
+#: features/distributionlistwidget.cpp:626
+msgid "Select Email Address"
+msgstr "E-posta Adresini Seç"
+
+#: features/distributionlistwidget.cpp:632
+msgid "Email Addresses"
+msgstr "E-posta Adresleri"
+
+#: features/distributionlistwidget.cpp:637
+msgid "Preferred address"
+msgstr "Tercih edilen adres"
+
+#: features/resourceselection.cpp:166 features/resourceselection.cpp:374
+#: features/resourceselection.cpp:395
+msgid "Address Books"
+msgstr "Adres Defterleri"
+
+#: features/resourceselection.cpp:180
+msgid "Add Address Book"
+msgstr "Adres Defteri Ekle"
+
+#: features/resourceselection.cpp:181
+msgid "Please select type of the new address book:"
+msgstr "Yeni adres defterinin türünü seçin:"
+
+#: features/resourceselection.cpp:191
+msgid "<qt>Unable to create an address book of type <b>%1</b>.</qt>"
+msgstr "<qt><b>%1</b> türünde bir adres defteri oluşturulamadı.</qt>"
+
+#: features/resourceselection.cpp:196
+msgid "%1 address book"
+msgstr "%1 adres defteri"
+
+#: features/resourceselection.cpp:237
+msgid "<qt>Do you really want to remove the address book <b>%1</b>?</qt>"
+msgstr "<qt>Gerçekten <b>%1</b> adres defterini istiyor musunuz?</qt>"
+
+#: features/resourceselection.cpp:380
+msgid "Add addressbook"
+msgstr "Adres desfteri ekle"
+
+#: features/resourceselection.cpp:385
+msgid "Edit addressbook settings"
+msgstr "Adres defteri ayarlarını düzenle"
+
+#: features/resourceselection.cpp:390
+msgid "Remove addressbook"
+msgstr "Adres defterini kaldır"
+
+#: printing/detailledstyle.cpp:129
+msgid "Setting up fonts and colors"
+msgstr "Yazı tipi ve renkler ayarlanıyor"
+
+#: printing/detailledstyle.cpp:212
+msgid "Setting up margins and spacing"
+msgstr "Boşluklar ayarlanıyor"
+
+#: printing/detailledstyle.cpp:231 printing/mikesstyle.cpp:77
+msgid "Printing"
+msgstr "Yazdırılıyor"
+
+#: printing/detailledstyle.cpp:236 printing/mikesstyle.cpp:105
+msgid "Done"
+msgstr "Tamamlandı"
+
+#: printing/detailledstyle.cpp:288
+msgid "Detailed Style"
+msgstr "Detaylı Stil"
+
+#: printing/kabentrypainter.cpp:251
+msgid "Email address:"
+msgstr "E-posta adresi:"
+
+#: printing/kabentrypainter.cpp:252
+msgid "Email addresses:"
+msgstr "E-posta adresleri:"
+
+#: printing/kabentrypainter.cpp:264
+msgid "Telephone:"
+msgstr "Telefon:"
+
+#: printing/kabentrypainter.cpp:265
+msgid "Telephones:"
+msgstr "Telefonlar:"
+
+#: printing/kabentrypainter.cpp:282
+msgid "Web page:"
+msgstr "Web sayfası:"
+
+#: printing/kabentrypainter.cpp:363 printing/kabentrypainter.cpp:367
+msgid "Address:"
+msgstr "Adres:"
+
+#: printing/kabentrypainter.cpp:364 printing/kabentrypainter.cpp:368
+msgid "Addresses:"
+msgstr "Adresler:"
+
+#: printing/kabentrypainter.cpp:380
+msgid "Domestic Address"
+msgstr "Kaldığı Adres"
+
+#: printing/kabentrypainter.cpp:383
+msgid "International Address"
+msgstr "Uluslararası Adres"
+
+#: printing/kabentrypainter.cpp:389
+msgid "Parcel Address"
+msgstr "Paket adresi"
+
+#: printing/kabentrypainter.cpp:392
+msgid "Home Address"
+msgstr "Ev Adresi"
+
+#: printing/kabentrypainter.cpp:395
+msgid "Work Address"
+msgstr "İş Adresi"
+
+#: printing/kabentrypainter.cpp:399
+msgid "Preferred Address"
+msgstr "Tercih Edilen Adres"
+
+#: printing/kabentrypainter.cpp:473 printing/kabentrypainter.cpp:477
+msgid "(Deliver to:)"
+msgstr "(Teslim et:)"
+
+#: printing/mikesstyle.cpp:76
+msgid "Preparing"
+msgstr "Hazırlanıyor"
+
+#: printing/mikesstyle.cpp:207
+msgid "Printed on %1 by KAddressBook (http://www.kde.org)"
+msgstr ""
+"KAddressBook tarafından %1 tarihinde yazdırılmıştır (http://www.kde.org)"
+
+#: printing/mikesstyle.cpp:259
+msgid "Mike's Printing Style"
+msgstr "Mike'ın Yazdırma Stili"
+
+#: printing/printingwizard.cpp:63
+msgid "Choose Contacts to Print"
+msgstr "Yazdırılacak Bağlantıları Seçin"
+
+#: printing/printingwizard.cpp:79 printing/stylepage.cpp:113
+msgid "Choose Printing Style"
+msgstr "Yazdırma Stilini Seçin"
+
+#: printing/printingwizard.cpp:154
+msgid "Print Progress"
+msgstr "Yazdırma İşlemi"
+
+#: printing/printprogress.cpp:40
+msgid "Printing: Progress"
+msgstr "Yazdırma: Sürüyor"
+
+#: printing/printprogress.cpp:63
+msgid "Progress"
+msgstr "İşlem"
+
+#: printing/selectionpage.cpp:44
+msgid "Choose Which Contacts to Print"
+msgstr "Yazdırılacak Bağlantıları Seçin"
+
+#: printing/selectionpage.cpp:49
+msgid "Which contacts do you want to print?"
+msgstr "Hangi bağlantıları yazdırmak istiyorsunuz?"
+
+#: printing/selectionpage.cpp:63
+msgid "Print the entire address book"
+msgstr "Tüm adres defterini yazdır"
+
+#: printing/selectionpage.cpp:66
+msgid "&Selected contacts"
+msgstr "&Seçili bağlantılar"
+
+#: printing/selectionpage.cpp:67
+msgid ""
+"Only print contacts selected in KAddressBook.\n"
+"This option is disabled if no contacts are selected."
+msgstr ""
+"Sadece Adres Defteri'nde seçili bağlantıları yazdır.\n"
+"Eğer bağlantı seçilmezse bu seçenek kapalı olacaktır."
+
+#: printing/selectionpage.cpp:72
+msgid ""
+"Only print contacts matching the selected filter.\n"
+"This option is disabled if you have not defined any filters."
+msgstr ""
+"Sadece seçili filtreye uyan bağlantıları aktar.\n"
+"Hiç filtre tanımlamadıysanız bu seçenek kapatılır."
+
+#: printing/selectionpage.cpp:77
+msgid ""
+"Only print contacts who are members of a category that is checked on the list "
+"to the left.\n"
+"This option is disabled if you have no categories."
+msgstr ""
+"Solda listelenmiş kategorilerden sadece seçili olanlarının içerdiği "
+"bağlantılarını aktar.\n"
+"Hiç kategoriniz yoksa bu seçenek kapatılır."
+
+#: printing/selectionpage.cpp:82
+msgid "Select a filter to decide which contacts to print."
+msgstr ""
+"Hangi bağlantıların yazdırılacağına karar vermek için bir filtre seçin."
+
+#: printing/selectionpage.cpp:88
+msgid "Check the categories whose members you want to print."
+msgstr "Üyelerini yazdırmak istediğiniz kategorileri işaretleyiniz."
+
+#: printing/stylepage.cpp:57
+msgid "(No preview available.)"
+msgstr "(Önizleme yok)"
+
+#: printing/stylepage.cpp:118
+msgid ""
+"What should the print look like?\n"
+"KAddressBook has several printing styles, designed for different purposes.\n"
+"Choose the style that suits your needs below."
+msgstr ""
+"Baskı nasıl görünmeli?\n"
+"KadressBook değişik amaçlar için hazırlanmış bazı baskı stillerine sahiptir.\n"
+"İhtiyaçlarınıza uygun olan stili aşağıdan seçiniz."
+
+#: printing/stylepage.cpp:143
+msgid "Print Style"
+msgstr "Yazdırma Stili"
+
+#: views/configurecardviewdialog.cpp:54 views/configuretableviewdialog.cpp:48
+msgid "Look & Feel"
+msgstr "Görünüm"
+
+#: views/configurecardviewdialog.cpp:95
+msgid "Background Color"
+msgstr "Arkaplan Resmi"
+
+#: views/configurecardviewdialog.cpp:98
+msgid "Text Color"
+msgstr "Metin Rengi"
+
+#: views/configurecardviewdialog.cpp:101
+msgid "Header, Border & Separator Color"
+msgstr "Başlık, Kenarlık ve Ayraç Rengi"
+
+#: views/configurecardviewdialog.cpp:104
+msgid "Header Text Color"
+msgstr "Başlık Metin Rengi"
+
+#: views/configurecardviewdialog.cpp:107
+msgid "Highlight Color"
+msgstr "Seçili Renk"
+
+#: views/configurecardviewdialog.cpp:110
+msgid "Highlighted Text Color"
+msgstr "Seçili Metin Rengi"
+
+#: views/configurecardviewdialog.cpp:204
+msgid "General"
+msgstr "Genel"
+
+#: views/configurecardviewdialog.cpp:206
+msgid "Draw &separators"
+msgstr "&Ayraç çiz"
+
+#: views/configurecardviewdialog.cpp:209
+msgid "Separator &width:"
+msgstr "A&yraç genişliği:"
+
+#: views/configurecardviewdialog.cpp:214
+msgid "&Padding:"
+msgstr "Dol&gu"
+
+#: views/configurecardviewdialog.cpp:218
+msgid "Cards"
+msgstr "Kartlar"
+
+#: views/configurecardviewdialog.cpp:221
+msgid "&Margin:"
+msgstr "Kenar &Boşluğu:"
+
+#: views/configurecardviewdialog.cpp:225
+msgid "Draw &borders"
+msgstr "&Kenarlık çiz"
+
+#: views/configurecardviewdialog.cpp:230
+msgid ""
+"The item margin is the distance (in pixels) between the item edge and the item "
+"data. Most noticeably, incrementing the item margin will add space between the "
+"focus rectangle and the item data."
+msgstr ""
+"Kenar boşluğu öğesi, kenerlar ve öğe verisi arasındaki uzaklıktır (pixel "
+"cinsinden. En farkedilebilir şekli ile, boşluk öğesinin değerini arttırmak, "
+"odak alanı ile öğe verisi arasına boşluk ekleyecektir."
+
+#: views/configurecardviewdialog.cpp:235
+msgid ""
+"The item spacing decides the distance (in pixels) between the items and "
+"anything else: the view borders, other items or column separators."
+msgstr ""
+"Boşluk öğesi, öğeler ve diğer herşey (görüntü kenarları, diğer öğeler ya da "
+"kolon ayıraçları) arasındaki uzaklığı belirler (pixel cinsinden)."
+
+#: views/configurecardviewdialog.cpp:239
+msgid "Sets the width of column separators"
+msgstr "Sütun ayırıcılarının genişliğini ayarlar"
+
+#: views/configurecardviewdialog.cpp:242
+msgid "&Layout"
+msgstr "&Düzen"
+
+#: views/configurecardviewdialog.cpp:248
+msgid "&Enable custom colors"
+msgstr "&Özel renkleri etkinleştir"
+
+#: views/configurecardviewdialog.cpp:251
+msgid "&Colors"
+msgstr "&Renkler"
+
+#: views/configurecardviewdialog.cpp:254
+msgid ""
+"If custom colors is enabled, you may choose the colors for the view below. "
+"Otherwise colors from your current KDE color scheme are used."
+msgstr ""
+"Özel renkler aktif duruma getirilirse, görünüm için istediğiniz renkleri "
+"aşağıdan seçebilirsiniz. Yoksa, KDE'nizin renk planında seçili olan renkler "
+"kullanılır."
+
+#: views/configurecardviewdialog.cpp:258
+msgid ""
+"Double click or press RETURN on a item to select a color for the related "
+"strings in the view."
+msgstr ""
+"Görünümdeki ilgili dizgelerin renklerini seçmek için çift tıklayın veya "
+"klavyeden ENTER tuşuna basın."
+
+#: views/configurecardviewdialog.cpp:267
+msgid "&Enable custom fonts"
+msgstr "Ö&zel yazıtiplerini etkinleştir"
+
+#: views/configurecardviewdialog.cpp:275
+msgid "&Text font:"
+msgstr "&Metin yazıtipi:r"
+
+#: views/configurecardviewdialog.cpp:278 views/configurecardviewdialog.cpp:285
+msgid "Choose..."
+msgstr "Seç..."
+
+#: views/configurecardviewdialog.cpp:282
+msgid "&Header font:"
+msgstr "&Başlık yazıtipi..."
+
+#: views/configurecardviewdialog.cpp:292
+msgid ""
+"If custom fonts are enabled, you may choose which fonts to use for this view "
+"below. Otherwise the default KDE font will be used, in bold style for the "
+"header and normal style for the data."
+msgstr ""
+"Özel yazıtipleri aktif duruma getirilmişse, görünüm için hangi yazıtiplerinin "
+"kullanılacağını seçebilirsiniz. Yoksa, öntanımlı KDE yazıtipi kullanılacaktır, "
+"başlık için koyu ve veri için normal stil."
+
+#: views/configurecardviewdialog.cpp:304
+msgid "Show &empty fields"
+msgstr "&Boş alanları göster"
+
+#: views/configurecardviewdialog.cpp:305
+msgid "Show field &labels"
+msgstr "&Alan etiketlerini göster"
+
+#: views/configurecardviewdialog.cpp:309
+msgid "Be&havior"
+msgstr "&Davranış"
+
+#: views/configuretableviewdialog.cpp:117
+msgid "Row Separator"
+msgstr "Ayraç"
+
+#: views/configuretableviewdialog.cpp:120
+msgid "Alternating backgrounds"
+msgstr "Değişen arkaplanlar"
+
+#: views/configuretableviewdialog.cpp:122
+msgid "Single line"
+msgstr "Tek satır"
+
+#: views/configuretableviewdialog.cpp:129
+msgid "Enable background image:"
+msgstr "Arkaplan resmini etkinleştir:"
+
+#: views/configuretableviewdialog.cpp:142
+msgid "Enable contact tooltips"
+msgstr "Bağlantı ipuçlarını etkinleştir"
+
+#: views/configuretableviewdialog.cpp:146
+msgid "Show instant messaging presence"
+msgstr "Hızlı mesajlaşma durumunu göster"
+
+#: views/contactlistview.cpp:85 views/contactlistview.cpp:89
+msgid ""
+"_: label: value\n"
+"%1: %2"
+msgstr "%1: %2"
+
+#: views/contactlistview.cpp:95
+msgid ""
+"_: label: value\n"
+"%1: \n"
+msgstr ""
+"%1: \n"
+
+#: views/kaddressbookcardview.cpp:51
+msgid "Card"
+msgstr "Kart"
+
+#: views/kaddressbookcardview.cpp:53
+msgid "Rolodex style cards represent contacts."
+msgstr "Her bir kart bir bağlantıyı işaret eder."
+
+#: views/kaddressbookiconview.cpp:50
+msgid "Icon"
+msgstr "Simge"
+
+#: views/kaddressbookiconview.cpp:52
+msgid "Icons represent contacts. Very simple view."
+msgstr "Simgeler bağlantıları gösterir. Basit bir görünüm."
+
+#: views/kaddressbooktableview.cpp:69
+msgid "Table"
+msgstr "Tablo"
+
+#: views/kaddressbooktableview.cpp:71
+msgid ""
+"A listing of contacts in a table. Each cell of the table holds a field of the "
+"contact."
+msgstr ""
+"Bağlantıların tamamı bir tabloda görüntülenir. Tablonun her hücresi bir "
+"bağlantıyı içerir."
+
+#: views/kaddressbooktableview.cpp:138
+msgid "Presence"
+msgstr "Durum"
+
+#: xxport/bookmark_xxport.cpp:39
+msgid "Export Bookmarks Menu..."
+msgstr "Yer İmleri Menüsünü Aktar..."
+
+#: xxport/bookmark_xxport.cpp:51
+msgid "AddressBook"
+msgstr "Adres Defteri"
+
+#: xxport/bookmark_xxport.cpp:63
+msgid "Addressbook Bookmarks"
+msgstr "Adres Defteri Yer İmleri"
+
+#: xxport/csv_xxport.cpp:42
+msgid "Import CSV List..."
+msgstr "CSV Listesinden Al..."
+
+#: xxport/csv_xxport.cpp:43
+msgid "Export CSV List..."
+msgstr "CSV Listesi Aktar..."
+
+#: xxport/csv_xxport.cpp:55 xxport/ldif_xxport.cpp:102
+msgid "<qt>Unable to open file <b>%1</b>.%2.</qt>"
+msgstr "<qt><b>%1</b> dosyası açılamadı.%2.</qt>"
+
+#: xxport/csv_xxport.cpp:76
+msgid "The contacts have been exported successfully."
+msgstr "Bağlantılar başarıyla aktarıldı."
+
+#: xxport/csvimportdialog.cpp:55
+msgid "CSV Import Dialog"
+msgstr "CSV Alma Penceresi"
+
+#: xxport/csvimportdialog.cpp:166
+msgid "Importing contacts"
+msgstr "Bağlantılar alınıyor"
+
+#: xxport/csvimportdialog.cpp:375
+msgid "File to import:"
+msgstr "Alınacak dosya:"
+
+#: xxport/csvimportdialog.cpp:385
+msgid "Delimiter"
+msgstr "Ayraç"
+
+#: xxport/csvimportdialog.cpp:393
+msgid "Comma"
+msgstr "Virgül"
+
+#: xxport/csvimportdialog.cpp:397
+msgid "Semicolon"
+msgstr "Noktalı virgül"
+
+#: xxport/csvimportdialog.cpp:400
+msgid "Tabulator"
+msgstr "Sekme"
+
+#: xxport/csvimportdialog.cpp:403
+msgid "Space"
+msgstr "Boşluk"
+
+#: xxport/csvimportdialog.cpp:406
+msgid "Other"
+msgstr "Diğer"
+
+#: xxport/csvimportdialog.cpp:413
+msgid "1"
+msgstr "1"
+
+#: xxport/csvimportdialog.cpp:417
+msgid "\""
+msgstr "\""
+
+#: xxport/csvimportdialog.cpp:418
+msgid "'"
+msgstr "'"
+
+#: xxport/csvimportdialog.cpp:424
+msgid ""
+"<ul>"
+"<li>y: year with 2 digits</li>"
+"<li>Y: year with 4 digits</li>"
+"<li>m: month with 1 or 2 digits</li>"
+"<li>M: month with 2 digits</li>"
+"<li>d: day with 1 or 2 digits</li>"
+"<li>D: day with 2 digits</li></ul>"
+msgstr ""
+"<ul>"
+"<li>y: 2 hane ile yıl</li>"
+"<li>Y: 4 hane ile yıl</li>"
+"<li>m: 1 veya 2 hane ile ay</li>"
+"<li>M: 2 hane ile ay</li>"
+"<li>d: 1 veya 2 hane ile gün</li>"
+"<li>D: 2 hane ile gün</li></ul>"
+
+#: xxport/csvimportdialog.cpp:432
+msgid "Start at line:"
+msgstr "Satırda başla:"
+
+#: xxport/csvimportdialog.cpp:435
+msgid "Textquote:"
+msgstr "Alıntı:"
+
+#: xxport/csvimportdialog.cpp:438
+msgid "Date format:"
+msgstr "Tarih biçimi:"
+
+#: xxport/csvimportdialog.cpp:442
+msgid "Ignore duplicate delimiters"
+msgstr "Kopya(aynı) ayraçları gözardı et"
+
+#: xxport/csvimportdialog.cpp:453
+msgid "Apply Template..."
+msgstr "Şablonu Uygula..."
+
+#: xxport/csvimportdialog.cpp:454
+msgid "Save Template..."
+msgstr "Şablonu Kaydet..."
+
+#: xxport/csvimportdialog.cpp:506
+msgid "Using codec '%1'"
+msgstr "'%1' kodeği uygulanıyor"
+
+#: xxport/csvimportdialog.cpp:506
+msgid "Encoding"
+msgstr "Kodlama"
+
+#: xxport/csvimportdialog.cpp:666
+msgid "Local (%1)"
+msgstr "Yerel (%1)"
+
+#: xxport/csvimportdialog.cpp:667
+msgid "[guess]"
+msgstr "[tahmin]"
+
+#: xxport/csvimportdialog.cpp:668
+msgid "Latin1"
+msgstr "Latin1"
+
+#: xxport/csvimportdialog.cpp:669
+msgid "Unicode"
+msgstr "Unicode"
+
+#: xxport/csvimportdialog.cpp:670
+msgid "Microsoft Unicode"
+msgstr "Microsoft Unicode"
+
+#: xxport/csvimportdialog.cpp:785
+msgid "You have to assign at least one column."
+msgstr "En azından bir sütunu atamanız gerekiyor."
+
+#: xxport/csvimportdialog.cpp:813
+msgid "Template Selection"
+msgstr "Şablon Seçimi"
+
+#: xxport/csvimportdialog.cpp:814
+msgid "Please select a template, that matches the CSV file:"
+msgstr "Lütfen CSV dosyasına uyan bir kalıp seçin:"
+
+#: xxport/csvimportdialog.cpp:860
+msgid "Template Name"
+msgstr "Şablon Adı"
+
+#: xxport/csvimportdialog.cpp:860
+msgid "Please enter a name for the template:"
+msgstr "Şablon için bir isim girin:"
+
+#: xxport/csvimportdialog.cpp:930
+msgid "Cannot open input file."
+msgstr "Girdi dosyası açılamadı."
+
+#: xxport/eudora_xxport.cpp:44
+msgid "Import Eudora Addressbook..."
+msgstr "Eudora Adres Defterinden Al..."
+
+#: xxport/eudora_xxport.cpp:50
+msgid "Eudora Light Addressbook (*.txt)"
+msgstr "Eudora Light Adres Defteri (*.txt)"
+
+#: xxport/gnokii_xxport.cpp:85
+msgid "Import From Mobile Phone..."
+msgstr "Cep Telefonundan Al..."
+
+#: xxport/gnokii_xxport.cpp:86
+msgid "Export to Mobile Phone..."
+msgstr "Mobil Telefona Aktar..."
+
+#: xxport/gnokii_xxport.cpp:134 xxport/gnokii_xxport.cpp:824
+msgid "Failed to initialize the gnokii library."
+msgstr "Gnokii kütüphanesi başlatılamadı."
+
+#: xxport/gnokii_xxport.cpp:140 xxport/gnokii_xxport.cpp:853
+msgid ""
+"<qt>"
+"<center>Mobile Phone interface initialization failed."
+"<br>"
+"<br>The returned error message was:"
+"<br><b>%1</b>"
+"<br>"
+"<br>You might try to run \"gnokii --identify\" on the command line to check any "
+"cable/transport issues and to verify if your gnokii configuration is "
+"correct.</center></qt>"
+msgstr ""
+"<qt>"
+"<center>Cep Telefonu arayüzü başlatılamadı."
+"<br>"
+"<br>Geri dönen hata mesajı:"
+"<br><b>%1</b>"
+"<br>"
+"<br>Komut satırında \"gnokii --identify\" komutunu çalıştırarak, kablo/iletişim "
+"durumunu kontrol edebilir ve gnokii yapılandırmanızın doğruluğunu kontorl "
+"edebilirsiniz.</center></qt>"
+
+#: xxport/gnokii_xxport.cpp:179 xxport/gnokii_xxport.cpp:953
+msgid "Mobile Phone information:"
+msgstr "Cep telefonu bilgisi:"
+
+#: xxport/gnokii_xxport.cpp:180 xxport/gnokii_xxport.cpp:954
+msgid "Manufacturer"
+msgstr "Üretici"
+
+#: xxport/gnokii_xxport.cpp:181 xxport/gnokii_xxport.cpp:955
+msgid "Phone model"
+msgstr "Telefon modeli"
+
+#: xxport/gnokii_xxport.cpp:182 xxport/gnokii_xxport.cpp:956
+msgid "Revision"
+msgstr "Revizyon"
+
+#: xxport/gnokii_xxport.cpp:183 xxport/gnokii_xxport.cpp:957
+msgid "IMEI"
+msgstr "IMEI"
+
+#: xxport/gnokii_xxport.cpp:184 xxport/gnokii_xxport.cpp:958
+msgid "Phonebook status"
+msgstr "Telefon defteri durumu"
+
+#: xxport/gnokii_xxport.cpp:185 xxport/gnokii_xxport.cpp:959
+msgid "%1 out of %2 contacts used"
+msgstr "%2 bağlantıdan %1 tanesi kullanıldı"
+
+#: xxport/gnokii_xxport.cpp:211 xxport/gnokii_xxport.cpp:995
+msgid ""
+"<qt>Importing <b>%1</b> contacts from <b>%2</b> of the Mobile Phone."
+"<br>"
+"<br>%3</qt>"
+msgstr ""
+"<qt><b>%1</b> bağlantı Cep Telefonunundan (<b>%2</b>) aktarılıyor. "
+"<br>"
+"<br>%3</qt>"
+
+#: xxport/gnokii_xxport.cpp:532 xxport/gnokii_xxport.cpp:1327
+msgid ""
+"<qt>Please connect your Mobile Phone to your computer and press <b>Continue</b> "
+"to start importing the personal contacts."
+"<br>"
+"<br>Please note that if your Mobile Phone is not properly connected the "
+"following detection phase might take up to two minutes, during which "
+"KAddressbook will behave unresponsively.</qt>"
+msgstr ""
+"<qt>Kişisel bağlantılarınızı aktarmaya başlamak için, lütfen Cep Telefonunuzu "
+"bilgisayarınıza bağlayın ve <b>Devam Et</b>'e basın."
+"<br>"
+"<br>Eğer cep telefonu bağlantınız doğru olarak yapılmadı ise, bağlantı kontrolü "
+"işlemi iki dakika kadar sürebilir. Bu sırada KAddressbook erişilemez "
+"olacaktır.</qt>"
+
+#: xxport/gnokii_xxport.cpp:540 xxport/gnokii_xxport.cpp:1335
+msgid "Mobile Phone Import"
+msgstr "Mobile Telefona Alım"
+
+#: xxport/gnokii_xxport.cpp:541 xxport/gnokii_xxport.cpp:590
+#: xxport/gnokii_xxport.cpp:1336 xxport/gnokii_xxport.cpp:1385
+msgid ""
+"<qt>"
+"<center>Establishing connection to the Mobile Phone."
+"<br>"
+"<br>Please wait...</center></qt>"
+msgstr ""
+"<qt>"
+"<center>Cep Telefonuna bağlantı sağlanıyor."
+"<br>"
+"<br>Lütfen bekleyiniz...</center></qt>"
+
+#: xxport/gnokii_xxport.cpp:564 xxport/gnokii_xxport.cpp:1359
+msgid "&Stop Import"
+msgstr "&Almayı Durdur"
+
+#: xxport/gnokii_xxport.cpp:581 xxport/gnokii_xxport.cpp:1376
+msgid ""
+"<qt>Please connect your Mobile Phone to your computer and press <b>Continue</b> "
+"to start exporting the selected personal contacts."
+"<br>"
+"<br>Please note that if your Mobile Phone is not properly connected the "
+"following detection phase might take up to two minutes, during which "
+"KAddressbook will behave unresponsively.</qt>"
+msgstr ""
+"<qt>Kişisel bağlantılarınızı aktarmaya başlamak için, lütfen Cep Telefonunuzu "
+"bilgisayarınıza bağlayın ve <b>Devam Et</b>'e basın."
+"<br>"
+"<br>Eğer cep telefonu bağlantınız doğru olarak yapılmadı ise, bağlantı kontrolü "
+"işlemi iki dakika kadar sürebilir. Bu sırada KAddressbook erişilemez "
+"olacaktır.</qt>"
+
+#: xxport/gnokii_xxport.cpp:589 xxport/gnokii_xxport.cpp:773
+#: xxport/gnokii_xxport.cpp:1384 xxport/gnokii_xxport.cpp:1568
+msgid "Mobile Phone Export"
+msgstr "Mobil Telefondan Aktarım"
+
+#: xxport/gnokii_xxport.cpp:645 xxport/gnokii_xxport.cpp:1440
+msgid ""
+"<qt>Do you want the selected contacts to be <b>appended</b> "
+"to the current mobile phonebook or should they <b>replace</b> "
+"all currently existing phonebook entries ?"
+"<br>"
+"<br>Please note, that in case you choose to replace the phonebook entries, "
+"every contact in your phone will be deleted and only the newly exported "
+"contacts will be available from inside your phone.</qt>"
+msgstr ""
+"<qt>Seçili bağlantıların cep telefonu adres defterine <b>eklenmesini</b> "
+"mi yoksa cep telefonu adres defterindekileri <b>değiştirmelerini</b> "
+"mi istiyorsunuz?"
+
+#: xxport/gnokii_xxport.cpp:651 xxport/gnokii_xxport.cpp:1446
+msgid "Export to Mobile Phone"
+msgstr "Mobil Telefona Aktar"
+
+#: xxport/gnokii_xxport.cpp:652 xxport/gnokii_xxport.cpp:1447
+msgid "&Append to Current Phonebook"
+msgstr "&Geçerli Telefon Defterine Ekle"
+
+#: xxport/gnokii_xxport.cpp:653 xxport/gnokii_xxport.cpp:1448
+msgid "&Replace Current Phonebook with New Contacts"
+msgstr "Telefon Adres Defterindekileri Yeni Bağlantılar ile &Değiştir"
+
+#: xxport/gnokii_xxport.cpp:660 xxport/gnokii_xxport.cpp:1455
+msgid "&Stop Export"
+msgstr "Aktarmayı &Durdur"
+
+#: xxport/gnokii_xxport.cpp:661 xxport/gnokii_xxport.cpp:1456
+msgid ""
+"<qt>Exporting <b>%1</b> contacts to the <b>%2</b> of the Mobile Phone."
+"<br>"
+"<br>%3</qt>"
+msgstr ""
+"<qt><b>%1</b> bağlantı Cep Telefonunun <b>%2</b>sine aktarılıyor. "
+"<br>"
+"<br>%3</qt>"
+
+#: xxport/gnokii_xxport.cpp:728 xxport/gnokii_xxport.cpp:1523
+msgid ""
+"<qt>"
+"<center>All selected contacts have been sucessfully copied to the Mobile Phone."
+"<br>"
+"<br>Please wait until all remaining orphaned contacts from the Mobile Phone "
+"have been deleted.</center></qt>"
+msgstr ""
+"<qt>"
+"<center>Tüm seçilen bağlantılar başarılı bir şekilde Cep Telefonuna kopyalandı."
+"<br>"
+"<br>Lüften Cep Telefonunda kalan tüm eski bağlantıların silinmesi için "
+"bekleyin.</center></qt>"
+
+#: xxport/gnokii_xxport.cpp:733 xxport/gnokii_xxport.cpp:1528
+msgid "&Stop Delete"
+msgstr "Silmeyi İ&ptal Et"
+
+#: xxport/gnokii_xxport.cpp:753 xxport/gnokii_xxport.cpp:1548
+msgid "Export to phone finished."
+msgstr "Mobil telefona aktarım tamamlandı."
+
+#: xxport/gnokii_xxport.cpp:764 xxport/gnokii_xxport.cpp:1559
+msgid ""
+"<qt>The following contacts could not be exported to the Mobile Phone. Possible "
+"Reasons for this problem could be:"
+"<br>"
+"<ul>"
+"<li>The contacts contain more information per entry than the phone can "
+"store.</li>"
+"<li>Your phone does not allow to store multiple addresses, emails, homepages, "
+"...</li>"
+"<li>other storage size related problems.</li></ul>To avoid those kind of "
+"problems in the future please reduce the amount of different fields in the "
+"above contacts.</qt>"
+msgstr ""
+"<qt>Bu bağlantılar Cep Telefonuna aktarılamadı. Bu problemin Muhtemel Nedenleri "
+"şunlar olabilir:"
+"<br>"
+"<ul>"
+"<li>Bağlantılar telefonun saklayabileceğinden daha fazla bilgi içeriyor.</li>"
+"<li>Telefonunuz birden fazla adres, e-posta, web sayfası, vb. bilgiyi saklayama "
+"izin vermiyor.</li>"
+"<li>diğer boyut ile ilgili saklama problemleri.</li></ul>"
+"Bu tür hatalardan ileride kurtulmak için, yukarıdaki bağlantılardaki alan "
+"sayılarını azaltın.</qt>"
+
+#: xxport/gnokii_xxport.cpp:827
+msgid "Gnokii is not yet configured."
+msgstr "Gnokii henüz yapılandırılmamış."
+
+#: xxport/gnokii_xxport.cpp:839
+msgid ""
+"Gnokii reports a 'Lock File Error'.\n"
+" Please exit all other running instances of gnokii, check if you have write "
+"permissions in the /var/lock directory and try again."
+msgstr ""
+"Gnokii bir 'kilit dosyası hatası' bildirdi.\n"
+"Lütfen gnokill'in çalışan diğer tüm işlemlerinden çıkıp, /var/lock dizinine "
+"yazma hakkınız olup olmadığını kontrol edin ve tekrar deneyin."
+
+#: xxport/gnokii_xxport.cpp:868
+msgid "Unknown"
+msgstr "Bilinmeyen"
+
+#: xxport/gnokii_xxport.cpp:965
+msgid "internal memory"
+msgstr "dahili bellek"
+
+#: xxport/gnokii_xxport.cpp:966
+msgid "SIM-card memory"
+msgstr "SIM kart belleği"
+
+#: xxport/gnokii_xxport.cpp:967
+msgid "unknown memory"
+msgstr "bilinmeyen bellek"
+
+#: xxport/gnokii_xxport.cpp:1586 xxport/gnokii_xxport.cpp:1594
+msgid ""
+"Gnokii interface is not available.\n"
+"Please ask your distributor to add gnokii at compile time."
+msgstr ""
+"Gnokii arayüzü mevcut değil.\n"
+"Lütfen dağıtıcınızdan gnokii uygulamasını derleme sırasında eklemesini isteyin."
+
+#: xxport/kde2_xxport.cpp:45
+msgid "Import KDE 2 Addressbook..."
+msgstr "KDE 2 Adres Defterinden Al..."
+
+#: xxport/kde2_xxport.cpp:52
+msgid "<qt>Could not find a KDE 2 address book <b>%1</b>.</qt>"
+msgstr "<qt>KDE 2 adres defteri bulunamadı: <b>%1</b></qt>"
+
+#: xxport/kde2_xxport.cpp:57
+msgid "Override previously imported entries?"
+msgstr "Daha önceden alınmış girişlerin üzerine yaz?"
+
+#: xxport/kde2_xxport.cpp:58
+msgid "Import KDE 2 Addressbook"
+msgstr "KDE 2 Adres Defterinden Al"
+
+#: xxport/ldif_xxport.cpp:56
+msgid "Import LDIF Addressbook..."
+msgstr "LDIF Adres Defterinden Al..."
+
+#: xxport/ldif_xxport.cpp:57
+msgid "Export LDIF Addressbook..."
+msgstr "LDIF Adres Defterine Aktar..."
+
+#: xxport/ldif_xxport.cpp:73 xxport/opera_xxport.cpp:57
+msgid "<qt>Unable to open <b>%1</b> for reading.</qt>"
+msgstr "<qt><b>%1</b> dosyası okumak için açılamadı.</qt>"
+
+#: xxport/opera_xxport.cpp:44
+msgid "Import Opera Addressbook..."
+msgstr "Opera Adres Defterini Al..."
+
+#: xxport/pab_pablib.cpp:28 xxport/pab_xxport.cpp:46
+msgid "Import MS Exchange Personal Address Book (.PAB)"
+msgstr "MS Exchange Personal Address Book (.PAB) verisini al"
+
+#: xxport/pab_pablib.cpp:49
+msgid "Cannot open %1 for reading"
+msgstr "%1 okunmak için açılamıyor"
+
+#: xxport/pab_pablib.cpp:246
+msgid "%1 has no PAB id that I know of, cannot convert this"
+msgstr "%1 bildiğim türden bir PAB kimliğine sahip değil, bunu dönüştüremem"
+
+#: xxport/pab_xxport.cpp:54
+msgid "MS Exchange Personal Address Book Files (*.pab)"
+msgstr "MS Exchange Personal Address Book Dosyaları (*.pab)"
+
+#: xxport/pab_xxport.cpp:58
+msgid "<qt>Could not find a MS Exchange Personal Address Book <b>%1</b>.</qt>"
+msgstr "<qt>Bir MS Exchange Kişisel Adres Defteri bulunamadı <b>%1</b>.</qt>"
+
+#: xxport/vcard_xxport.cpp:99
+msgid "Import vCard..."
+msgstr "vCard'dan Al..."
+
+#: xxport/vcard_xxport.cpp:100
+msgid "Export vCard 2.1..."
+msgstr "vCard 2.1 Olarak Aktar..."
+
+#: xxport/vcard_xxport.cpp:101
+msgid "Export vCard 3.0..."
+msgstr "vCard 3.0 Olarak Aktar..."
+
+#: xxport/vcard_xxport.cpp:125
+msgid ""
+"You have selected a list of contacts, shall they be exported to several files?"
+msgstr ""
+"Bir liste dolusu bağlantı seçtiniz, bunlar farklı dosyalara mı çıkarılsın?"
+
+#: xxport/vcard_xxport.cpp:128
+msgid "Export to Several Files"
+msgstr "Birkaç Dosyaya Aktar"
+
+#: xxport/vcard_xxport.cpp:128
+msgid "Export to One File"
+msgstr "Bir Dosyaya Aktar"
+
+#: xxport/vcard_xxport.cpp:190
+msgid "Select vCard to Import"
+msgstr "Almak İçin bir vCard Seçin"
+
+#: xxport/vcard_xxport.cpp:197
+msgid "vCard Import Failed"
+msgstr "VCard Alımı Başarısız"
+
+#: xxport/vcard_xxport.cpp:213
+msgid ""
+"<qt>When trying to read the vCard, there was an error opening the file '%1': "
+"%2</qt>"
+msgstr "vCard okunurken, '%1' dosyası açılamadı ve hata oluştu: %2</qt>"
+
+#: xxport/vcard_xxport.cpp:221
+msgid "<qt>Unable to access vCard: %1</qt>"
+msgstr "<qt>vCard'a erişim sağlanamadı: <b>%1</></qt>"
+
+#: xxport/vcard_xxport.cpp:232
+msgid "No contacts were imported, due to errors with the vCards."
+msgstr "vCard hataları nedeniyle, hiçbir bağlantı aktarılamadı."
+
+#: xxport/vcard_xxport.cpp:234
+msgid "The vCard does not contain any contacts."
+msgstr "vCard hiçbir bağlantı içermiyor."
+
+#: xxport/vcard_xxport.cpp:402
+msgid "Import vCard"
+msgstr "vCard'ı Al"
+
+#: xxport/vcard_xxport.cpp:409
+msgid "Do you want to import this contact in your address book?"
+msgstr "Bu bağlantıyı adres defterinize eklemek istiyor musunuz?"
+
+#: xxport/vcard_xxport.cpp:420
+msgid "Import All..."
+msgstr "Hepsini Al..."
+
+#: xxport/vcard_xxport.cpp:475
+msgid "Select vCard Fields"
+msgstr "vCard Alanlarını Seç:"
+
+#: xxport/vcard_xxport.cpp:482
+msgid "Select the fields which shall be exported in the vCard."
+msgstr "Hangi alanların vCard'a aktarılacağını seç."
+
+#: xxport/vcard_xxport.cpp:485
+msgid "Private fields"
+msgstr "Özel alanlar"
+
+#: xxport/vcard_xxport.cpp:488
+msgid "Business fields"
+msgstr "İş alanları"
+
+#: xxport/vcard_xxport.cpp:491
+msgid "Other fields"
+msgstr "Diğer alanlar"
+
+#: xxport/vcard_xxport.cpp:494
+msgid "Encryption keys"
+msgstr "Şifreleme anahtarları"
+
+#~ msgid "Show Extension"
+#~ msgstr "Eklentiyi Göster"
+
+#~ msgid "Blog feed at '%1' does not contain an image."
+#~ msgstr "'%1' konumundaki web günlüğü kaynağı bir resim içermiyor."
+
+#~ msgid "Get From Blog"
+#~ msgstr "Web Günlüğünden Al"
+
+#~ msgid "Edit Address"
+#~ msgstr "Adresi Düzenle"
+
+#~ msgid "Address Types"
+#~ msgstr "Adres Türleri"
+
+#~ msgid "&Protocol:"
+#~ msgstr "&Protokol:"
+
+#~ msgid "&Address:"
+#~ msgstr "&Adres:"
+
+#~ msgid "&Network:"
+#~ msgstr "&Ağ:"
+
+#~ msgid "IM Addresses"
+#~ msgstr "Hızlı Mesajlaşma"
+
+#~ msgid "&Set Standard"
+#~ msgstr "Standardı &Seç"
+
+#~ msgid "Protocol"
+#~ msgstr "Protokol"
+
+#~ msgid "Address"
+#~ msgstr "Adres"
+
+#~ msgid "Add Address"
+#~ msgstr "Adres Ekle"
+
+#~ msgid "in"
+#~ msgstr "içinde"
+
+#~ msgid "Letter Groups"
+#~ msgstr "Harf Grupları"
+
+#~ msgid "Here you can group letters together as they are grouped in your time planner. Press 'group letter' to combine the selected letter with the letter group above it, press 'ungroup letter' to remove the last letter from a selected group."
+#~ msgstr "Burada, zaman planyacısında olduğu gibi, mektupları beraber gruplayabilirsiniz. Bir mektubu yukarısındaki mektup grubuyla birleştirmek için 'mektubu grupla'ya, seçili bir gruptaki son mektubu çıkarmak için ise 'mektubu gruptan çıkar'a basın."
+
+#~ msgid "Group Letter"
+#~ msgstr "Mektubu Grupla"
+
+#~ msgid "Ungroup Letter"
+#~ msgstr "Mektubu Grubunundan Çıkar"
+
+#~ msgid "Fill pages with empty address fields"
+#~ msgstr "Sayfaları boş adres alanları ile doldur"
+
+#~ msgid "If this option is turned on, behind the contacts on a page the remaining space will be filled with empty fields so you can add contacts manually later"
+#~ msgstr "Eğer bu seçenek bir sayfada aktif hale getirilirse, kalan boşluklar, boş alanlar ile doldurulacaktır. Bu sayede daha sonra yeni bağlantıları el ile ekleyebilirsiniz."
+
+#~ msgid "Always print pages for all tabs"
+#~ msgstr "Her zaman tüm sekmeler için sayfa yazdır"
+
+#~ msgid "If this box is checked, at least one page will be printed for every letter group, regardless of whether entries exist for this letter group. This is normally only useful in conjunction with the option 'fill pages with empty address fields'."
+#~ msgstr "Eğer bu kutu işaretlendiyse, her harf grubu için en az bir sayfa, o harf grubunda kaç tane giriş olduğu önemsenmeden yazdırılacaktır. Bu genellikle 'sayfaları boş adres alanları ile doldur' seçeneği ile birlikte kullanıldığında yararlı olacaktır."
+
+#~ msgid "Min. number of empty fields:"
+#~ msgstr "Boş alanların en az sayısı:"
+
+#~ msgid "This is the minimum number of empty fields that have to be printed in addition to real entries; if this number is not reached on the first page, more pages with empty fields only may be appended."
+#~ msgstr "Bu gerçek alanların yanında yazdırılacak boş alanların en az sayısınıdır. Eğer bu sayı ilk sayfada ulaşılamaz ise, boş alanları içeren başka sayfalar eklenebilir."
+
+#~ msgid "Print Contact's Information"
+#~ msgstr "Bağlantı bilgisini yazdır"
+
+#~ msgid "Phone numbers"
+#~ msgstr "Telefon numaraları"
+
+#~ msgid "Email addresses"
+#~ msgstr "E-posta adreleri"
+
+#~ msgid "Birthday"
+#~ msgstr "Doğum günü"
+
+#~ msgid "%N: Phone Number"
+#~ msgstr "%N: Telefon Numarası"
+
+#~ msgid "%N: Fax Number"
+#~ msgstr "%N: Faks Numarası"
+
+#~ msgid "Undoes the last <b>Cut</b>, <b>Copy</b> or <b>Paste</b>."
+#~ msgstr "Son <b>Kesme</b>, <b>Kopyalama</b> ya da <b>Yapıştırma</b> işlemini geri alır."
+
+#~ msgid "Redoes the last <b>Cut</b>, <b>Copy</b> or <b>Paste</b>."
+#~ msgstr "Son <b>Kesme</b>, <b>Kopyalama</b> ya da <b>Yapıştırma</b> işlemini yineler."
+
+#~ msgid "Undo %1"
+#~ msgstr "Geri Al, %1"
+
+#~ msgid "Redo %1"
+#~ msgstr "Yinele, %1"
+
+#~ msgid "Simple Contact Editor"
+#~ msgstr "Basit Bağlantı Düzenleyici"
+
+#~ msgid "New Contact"
+#~ msgstr "Yeni Bağlantı"
+
+#~ msgid "Entry Edit"
+#~ msgstr "Girdi Düzenle"
+
+#~ msgid "Spouse's name:"
+#~ msgstr "Eş adı:"
+
+#~ msgid "Spouse's Name"
+#~ msgstr "Eşin Adı"
