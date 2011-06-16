@@ -74,7 +74,7 @@ msgstr "Spaß ist eine ernste Angelegenheit ... Jeder hat das Recht, für einen 
 
 #: ../release.xml.in.h:15
 msgid "Get ready to install Pardus"
-msgstr "Machen Sie sich bereit Pardus zu installieren"
+msgstr "Bereit für die Installation von Pardus...?"
 
 #: ../release.xml.in.h:16
 msgid "Help will be included when Kahya implementation is complete."
