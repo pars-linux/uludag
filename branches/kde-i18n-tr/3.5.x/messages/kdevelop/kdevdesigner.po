@@ -1,20 +1,23 @@
 # translation of kdevdesigner.po to Türkçe
 # translation of kdevdesigner.po to Turkish
 # Copyright (C) 2004, 2005 Free Software Foundation, Inc.
+#
 # Görkem Çetin <gorkem@kde.org>, 2004.
 # Kaya Oğuz <kaya@kuzeykutbu.org>, 2005.
-#
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdevdesigner\n"
 "POT-Creation-Date: 2007-03-26 21:53+0200\n"
-"PO-Revision-Date: 2005-07-05 19:06+0300\n"
-"Last-Translator: Kaya Oğuz <kaya@kuzeykutbu.org>\n"
-"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2011-06-16 09:35+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
+"Language-Team: kde-l10n-3.5 <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10.1\n"
+"X-Generator: Lokalize 1.2\n"
+"Language: tr\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: _translatorinfo.cpp:1
 msgid ""
@@ -37,7 +40,6 @@ msgid "KDE GUI Designer"
 msgstr "KDE Grafik Arayüz Tasarımcısı"
 
 #: main.cpp:37
-#, fuzzy
 msgid "Document to open"
 msgstr "Açılacak belge"
 
@@ -62,3 +64,4 @@ msgstr "&Düzen"
 #, no-c-format
 msgid "&Window"
 msgstr "&Pencere"
+

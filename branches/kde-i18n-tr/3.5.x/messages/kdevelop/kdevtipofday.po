@@ -1,20 +1,23 @@
 # translation of kdevtipofday.po to Türkçe
 # kde
 # Copyright (C) 2005 Free Software Foundation, Inc.
+#
 # Görkem Çetin <gorkem@kde.org>, 2001.
 # Kaya Oğuz <kaya@kuzeykutbu.org>, 2005.
-#
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdevtipofday\n"
 "POT-Creation-Date: 2007-03-26 21:53+0200\n"
-"PO-Revision-Date: 2005-07-09 18:01+0300\n"
-"Last-Translator: Kaya Oğuz <kaya@kuzeykutbu.org>\n"
-"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2011-06-16 09:35+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
+"Language-Team: kde-l10n-3.5 <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10.1\n"
+"X-Generator: Lokalize 1.2\n"
+"Language: tr\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: tipofday_part.cpp:36
 msgid "&Tip of the Day"
@@ -36,7 +39,8 @@ msgstr ""
 
 #: tips.cc:3
 msgid ""
-"<p>If you want to specify additional command-line options to your make program, "
+"<p>If you want to specify additional command-line options to your make "
+"program, "
 "you can set them in the <b>Project Options</b> dialog, <b>Make Options</b> "
 "tab.\n"
 msgstr ""
@@ -46,7 +50,8 @@ msgstr ""
 
 #: tips.cc:8
 msgid ""
-"<p>If you use functions of other libraries than the target is currently linked "
+"<p>If you use functions of other libraries than the target is currently "
+"linked "
 "with, you can specify them in the <b>Target Options</b> dialog.\n"
 msgstr ""
 "<p> Eğer geçerli bağlananların dışında başka kütüphanelerin fonksiyonlarını "
@@ -81,7 +86,8 @@ msgstr ""
 
 #: tips.cc:28
 msgid ""
-"<p>You can save time if you select \"Compile File\" from the Build menu or the "
+"<p>You can save time if you select \"Compile File\" from the Build menu or "
+"the "
 "toolbar, to only compile your current implementation file.\n"
 msgstr ""
 "<p> Derle menüsünden \"Dosya derle\" seçerek zamanı kaydedebilirsiniz\n"
@@ -97,33 +103,36 @@ msgstr ""
 "\"Index\" sekmesini kullanarak arama yapabilirsiniz.\n"
 
 #: tips.cc:38
-#, fuzzy
 msgid ""
-"<p>If you want to have info about something in the KDevelop window, select the "
+"<p>If you want to have info about something in the KDevelop window, select "
+"the "
 "\"What's this?\" button in the toolbar and click on the item you don't know "
 "about.\n"
 msgstr ""
-"<p> Eğer KDevelop penceresindeki herhangi birsey hakkında bilgi isterseniz araç "
-"çubugundaki \"Bu nedir?\" seçip, öğenin üstüne tıklayarak onun hakkında bilgi "
-"alabilrisiniz.\n"
+"<p>Eğer KDevelop penceresindeki herhangi bir şey hakkında bilgi almak "
+"isterseniz araç "
+"çubuğundaki \"Bu nedir?\" düğmesine basıp, yardım almak istediğiniz öğenin "
+"üstüne "
+"tıklayabilirsiniz.\n"
 
 #: tips.cc:43
 msgid ""
-"<p>Hint: You can search the documentation for a keyword by marking the word and "
+"<p>Hint: You can search the documentation for a keyword by marking the word "
+"and "
 "select \"Search in Documentation\" in the right button popup menu.\n"
 msgstr ""
-"<p>İpucu: Bir anahtar kelimeyi belgelerde aramayı kelimeyi işaretleyip sağ tuş "
+"<p>İpucu: Bir anahtar kelimeyi belgelerde aramayı kelimeyi işaretleyip sağ "
+"tuş "
 "menüsündeki \"Belgelerde Ara\" seçeneğini kullanarak yapabilirsiniz.\n"
 
 #: tips.cc:48
-msgid ""
-"<p>The KDevelop Team wishes you a nice day !\n"
-msgstr ""
-"<p>KDevelop takımı size iyi bir gün diler!\n"
+msgid "<p>The KDevelop Team wishes you a nice day !\n"
+msgstr "<p>KDevelop takımı size iyi bir gün diler!\n"
 
 #: tips.cc:53
 msgid ""
-"<p>If you have found a bug in KDevelop, please let us know. Use KDE Bugzilla at "
+"<p>If you have found a bug in KDevelop, please let us know. Use KDE Bugzilla "
+"at "
 "http://bugs.kde.org/ or select \"Help\"->\"Report Bug\" from the menu.\n"
 msgstr ""
 "<p>Eğer KDevelop'da bir hata bulursanız, lütfen bize haber verin. "
@@ -150,8 +159,7 @@ msgstr ""
 #: tips.cc:68
 msgid ""
 "<p>To open a project, select \"Open Project\" from the \"Project\" menu.\n"
-msgstr ""
-"<p>Bir proje açmak için \"Proje\" menüsünden \"Proje Aç\"ı tıklayın.\n"
+msgstr "<p>Bir proje açmak için \"Proje\" menüsünden \"Proje Aç\"ı tıklayın.\n"
 
 #: tips.cc:73
 msgid ""
@@ -163,7 +171,8 @@ msgstr ""
 
 #: tips.cc:78
 msgid ""
-"<p>...that you can debug your programs within KDevelop by selecting \"Debug\"->"
+"<p>...that you can debug your programs within KDevelop by selecting "
+"\"Debug\"->"
 "\"Start\" in the menu?\n"
 msgstr ""
 "<p>...menüden \"Hata Ayıkla\"->\"Başlat\"'ı seçerek KDevelop içinden "
@@ -171,10 +180,12 @@ msgstr ""
 
 #: tips.cc:83
 msgid ""
-"<p>...that you can switch between classes or namespaces by selecting the class "
+"<p>...that you can switch between classes or namespaces by selecting the "
+"class "
 "or namespace combo in the toolbar?\n"
 msgstr ""
-"<p>...araç çubuğundaki birleşik giriş kutusundan sınıf veya ad uzayını seçerek "
+"<p>...araç çubuğundaki birleşik giriş kutusundan sınıf veya ad uzayını "
+"seçerek "
 "sınıf ve ad uzayları arasında değişim yapabileceğinizi?\n"
 
 #: tips.cc:88
@@ -182,7 +193,8 @@ msgid ""
 "<p>...that you can preview images and icons by selecting them in the file "
 "viewer's trees?\n"
 msgstr ""
-"<p>...dosya görünümü ağacında resim ve simgeleri seçerek önizleyebileceğinizi?\n"
+"<p>...dosya görünümü ağacında resim ve simgeleri seçerek "
+"önizleyebileceğinizi?\n"
 
 #: tips.cc:93
 msgid ""
@@ -209,10 +221,8 @@ msgstr ""
 "güncel bir şekilde tutabilirsiniz.\n"
 
 #: tips.cc:108
-msgid ""
-"<p>...that you can configure the syntax-highlighting of the editor?\n"
-msgstr ""
-"<p>...düzenleyice sözdizimi vurgulamasını ayarlayabilirsiniz.\n"
+msgid "<p>...that you can configure the syntax-highlighting of the editor?\n"
+msgstr "<p>...düzenleyice sözdizimi vurgulamasını ayarlayabilirsiniz.\n"
 
 #: tips.cc:113
 msgid ""
@@ -224,15 +234,14 @@ msgstr ""
 
 #: tips.cc:118
 msgid ""
-"<p>...that you can move the cursor by words with Ctrl and left or right arrow?\n"
+"<p>...that you can move the cursor by words with Ctrl and left or right "
+"arrow?\n"
 msgstr ""
 "<p>...CTRL + sağ-sol yön tuşu ile kelimeler arasında taşıma yapabilirsiniz\n"
 
 #: tips.cc:123
-msgid ""
-"<p>...that your source bookmarks are stored in the project?\n"
-msgstr ""
-"<p>... kaynak yerimleriniz proje içinde saklandığını?\n"
+msgid "<p>...that your source bookmarks are stored in the project?\n"
+msgstr "<p>... kaynak yerimleriniz proje içinde saklandığını?\n"
 
 #: tips.cc:128
 msgid ""
@@ -265,3 +274,4 @@ msgid ""
 msgstr ""
 "<p>...projenizi \"hata ayıklama kipi\" ve \"iyileme kipi\"nde "
 "derleyebileceğinizi?\n"
+

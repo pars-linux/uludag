@@ -2,22 +2,25 @@
 # translation of ppdtranslations.po to Turkish
 # Copyright (C) 2003, 2005 Free Software Foundation, Inc.
 # Görkem Çetin, <gorkem@kde.org> 2001
+#
 # Ömer Fadıl USTA , <omer_fad@hotmail.com> , 2002.
 # Görkem Çetin <gorkem@kde.org>, 2003.
 # Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
-#
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: ppdtranslations\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-05-18 21:33+0200\n"
-"PO-Revision-Date: 2005-06-28 22:07+0000\n"
-"Last-Translator: Adem Alp YILDIZ <ademalp@kde.org.tr>\n"
-"Language-Team: turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2011-06-16 09:26+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
+"Language-Team: kde-l10n-3.5 <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10.1\n"
+"X-Generator: Lokalize 1.2\n"
+"Language: tr\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: printers.cpp:2 printers.cpp:2710
 #, no-c-format
@@ -11850,7 +11853,7 @@ msgstr "Blue Adjust"
 #: printers.cpp:5180
 #, no-c-format
 msgid "Line Art && Text"
-msgstr ""
+msgstr "Çizgi Sanatı && Metin"
 
 #: printers.cpp:5182
 #, no-c-format
@@ -14341,3 +14344,4 @@ msgstr "Vert. Alignm. betw. Cartr."
 #, no-c-format
 msgid "Yellow Level (Colour cartr. only)"
 msgstr "Yellow Level (Colour cartr. only)"
+

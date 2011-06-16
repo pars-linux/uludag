@@ -3,25 +3,27 @@
 # translation of kcalc.po to
 # translation of kcalc.po to Turkish
 # Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+#
 # Görkem Çetin <gorkem@kde.org>, 2002,2003, 2004.
 # Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
 # Engin Çağatay <engincagatay@yahoo.com>, 2004.
 # Onur Küçük <onur@uludag.org.tr>, 2004.
 # İsmail Şimşek <simsek@kde.org.tr>, 2005.
 # Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
-#
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcalc\n"
 "POT-Creation-Date: 2008-07-08 01:19+0200\n"
-"PO-Revision-Date: 2005-06-28 22:22+0000\n"
-"Last-Translator: Adem Alp YILDIZ <ademalp@kde.org.tr>\n"
-"Language-Team: turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2011-06-16 09:29+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
+"Language-Team: kde-l10n-3.5 <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10.1\n"
+"X-Generator: Lokalize 1.2\n"
 "Plural-Forms:  nplurals=1; plural=0;\n"
+"Language: tr\n"
 
 #: _translatorinfo.cpp:1
 msgid ""
@@ -44,7 +46,6 @@ msgid "Base"
 msgstr "Taban"
 
 #: kcalc.cpp:112
-#, fuzzy
 msgid "He&x"
 msgstr "O&naltılık"
 
@@ -146,7 +147,7 @@ msgstr "İ&statistiksel Düğmeler"
 
 #: kcalc.cpp:426
 msgid "Science/&Engineering Buttons"
-msgstr ""
+msgstr "Bilimsel/&Mühendislik Düğmeler"
 
 #: kcalc.cpp:432
 msgid "&Logic Buttons"
@@ -417,14 +418,14 @@ msgid "KCalc"
 msgstr "KCalc"
 
 #: kcalc.cpp:2275
-#, fuzzy
 msgid ""
 "(c) 2003-2005, Klaus Niederkrüger\n"
 "(c) 1996-2000, Bernd Johannes Wuebben\n"
 "(c) 2000-2005, The KDE Team"
 msgstr ""
+"(c) 2003-2005, Klaus Niederkrüger\n"
 "(c) 1996-2000, Bernd Johannes Wuebben\n"
-"(c) 2000-2003, KDE Grubu"
+"(c) 2000-2005, KDE Ekibi"
 
 #: kcalc_const_button.cpp:37 kcalc_const_button.cpp:47
 msgid "Write display data into memory"
@@ -456,7 +457,7 @@ msgstr "Euler Sayısı"
 
 #: kcalc_const_menu.cpp:35
 msgid "Golden Ratio"
-msgstr ""
+msgstr "Altın Oran"
 
 #: kcalc_const_menu.cpp:36
 msgid "Light Speed"
@@ -660,9 +661,9 @@ msgstr "O&ndalık hassasiyetini ayarla"
 
 #. i18n: file general.ui line 52
 #: rc.cpp:87
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Decimal &digits:"
-msgstr "Ondalık işareti"
+msgstr "Ondalık &rakamlar:"
 
 #. i18n: file general.ui line 88
 #: rc.cpp:90
@@ -750,7 +751,7 @@ msgstr "Ekranda görüntülenecek yazıtipi."
 
 #. i18n: file kcalc.kcfg line 53
 #: rc.cpp:132
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Maximum number of digits displayed."
 msgstr "Azami hane sayısı."
 
@@ -768,9 +769,9 @@ msgstr ""
 
 #. i18n: file kcalc.kcfg line 65
 #: rc.cpp:143
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Number of fixed decimal digits."
-msgstr "Sabit ondalık yerlerin sayısı."
+msgstr "Sabit ondalık hane sayısı."
 
 #. i18n: file kcalc.kcfg line 69
 #: rc.cpp:146
@@ -809,6 +810,9 @@ msgid ""
 "Whether to show buttons with functions used in science/engineering,\n"
 "\t     like exp, log, sin etc."
 msgstr ""
+"Bilimsel/mühendislik uygulamalarda kullanılan işlevlerle ilgili exp, log, sin "
+"gibi\n"
+"\t    düğmelerin gösterilip gösterilmeyeceği."
 
 #. i18n: file kcalc.kcfg line 96
 #: rc.cpp:165

@@ -10,18 +10,20 @@
 # Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
 # Onur Küçük <onur@uludag.org.tr>, 2004.
 # Serdar Soytetir <tulliana@gmail.com>, 2007.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: kghostview\n"
 "POT-Creation-Date: 2008-07-08 01:19+0200\n"
-"PO-Revision-Date: 2007-09-11 19:41+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2011-06-16 09:32+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.2\n"
 "Plural-Forms:  nplurals=1; plural=0;\n"
+"Language: tr\n"
 
 #: _translatorinfo.cpp:1
 msgid ""
@@ -233,7 +235,8 @@ msgstr "KGhostView"
 msgid ""
 "Viewer for PostScript (.ps, .eps) and Portable Document Format (.pdf) files"
 msgstr ""
-"Postscript (.ps, .eps) ve Portable Document Format (.pdf) dosya görüntüleyicisi"
+"Postscript (.ps, .eps) ve Portable Document Format (.pdf) dosya "
+"görüntüleyicisi"
 
 #: kgv_view.cpp:375
 msgid ""
@@ -291,13 +294,17 @@ msgstr ""
 
 #: kgvconfigdialog.cpp:113
 msgid ""
-"Your version of gs (version %1) is too old, since it has security issues which "
+"Your version of gs (version %1) is too old, since it has security issues "
+"which "
 "are impossible to resolve. Please upgrade to a newer version.\n"
-"KGhostView will try to work with it, but it may not display any files at all.\n"
-"Version %2 seems to be appropriate on your system, although newer versions will "
+"KGhostView will try to work with it, but it may not display any files at all."
+"\n"
+"Version %2 seems to be appropriate on your system, although newer versions "
+"will "
 "work as well."
 msgstr ""
-"Gs sürümünüz (sürüm %1) çok eski, ve çözümlenemeyecek güvenlik açıkları mevcut. "
+"Gs sürümünüz (sürüm %1) çok eski, ve çözümlenemeyecek güvenlik açıkları "
+"mevcut. "
 "Lütfen yeni bir sürüme yükseltin. KGhostView çalıştırmayı denemeye\n"
 "devam edecek fakat dosyaların tamamını gösteremeyebilir.\n"
 "Sürüm %2 sisteminize uygun, yeni sürüm daha iyi çalışabilir."
@@ -307,11 +314,12 @@ msgid "General"
 msgstr "Genel"
 
 #: kgvconfigdialog.cpp:145
-#, fuzzy
 msgid ""
 "Ghostscript\n"
 "Configuration"
-msgstr "Ghostscript Yapılandırması"
+msgstr ""
+"Ghostscript\n"
+"Yapılandırması"
 
 #: kgvdocument.cpp:99
 msgid ""
@@ -336,7 +344,8 @@ msgid ""
 "Document Format (.pdf) files.</qt>"
 msgstr ""
 "<qt><strong>%2</strong> tipindeki <nobr><strong>%1</strong></nobr> "
-"dosyası açılamıyor.KGhostview sadece Postscript (.ps, .eps) ve (.pdf) dosyaları "
+"dosyası açılamıyor.KGhostview sadece Postscript (.ps, .eps) ve (.pdf) "
+"dosyaları "
 "yükleyebilir.</qt>"
 
 #: kgvdocument.cpp:192 kgvdocument.cpp:223
@@ -444,7 +453,8 @@ msgid ""
 "\"landscape\", \"upsidedown\" or \"seascape\""
 msgstr ""
 "Gösterilen resmin biçimi. Biçimler için aşağıdaki komutları kullanbilirsiniz: "
-"otomatik için \"auto\", portre için \"portrait\", yerçekimi için \"landscape\", "
+"otomatik için \"auto\", portre için \"portrait\", yerçekimi için "
+"\"landscape\", "
 "üstü altına için \"upsidedown\" veya deniz çekimi için \"seascape\""
 
 #: main.cpp:36
@@ -609,7 +619,8 @@ msgstr "Ghostscript mesajları içeren bir pencere görüntülenmesi"
 #: rc.cpp:85
 #, no-c-format
 msgid ""
-"Whether to see a window with Ghostscript messages. This can give you additional "
+"Whether to see a window with Ghostscript messages. This can give you "
+"additional "
 "information on the files you see. In case of an error, a window will popup "
 "regardless of this option."
 msgstr ""
@@ -639,15 +650,19 @@ msgstr "Sayı yerine sayfa isimlerinin görüntülenmesi"
 #: rc.cpp:97
 #, no-c-format
 msgid ""
-"Sometimes information is available on page names which can be used in the list "
+"Sometimes information is available on page names which can be used in the "
+"list "
 "panner instead of just the numbers. Most often, these names are, in fact, "
-"another numbering. Often, the first few pages use roman numbering (i, ii, iii, "
-"iv ...) followed by arabic numbers from one (1, 2, 3...) when the real content "
+"another numbering. Often, the first few pages use roman numbering (i, ii, "
+"iii, "
+"iv ...) followed by arabic numbers from one (1, 2, 3...) when the real "
+"content "
 "starts."
 msgstr ""
 "Bazen sayfa listesinde kullanılmak üzere sayfa isimleri ile ilgili olarak "
 "sayıların yanında başka bilgi de bulunur. Çoğunlukla bu bilgi bir başka "
-"numaralama sistemidir. Genelde ilk bir kaç sayfa roma sayıları (i, ii, iii, iv "
+"numaralama sistemidir. Genelde ilk bir kaç sayfa roma sayıları (i, ii, iii, "
+"iv "
 "...) kullanır, asıl içerik başladığında ise birden başlayarak arapça (1, 2, 3 "
 "...) sayılar kullanır."
 
@@ -704,7 +719,8 @@ msgstr "Kullandığınız ghostscript sürümü"
 #: rc.cpp:121
 #, no-c-format
 msgid ""
-"This is the version of ghostscript you are running. Normally you will not need "
+"This is the version of ghostscript you are running. Normally you will not "
+"need "
 "to change this since it gets detected automatically."
 msgstr ""
 "Kullandığınız ghostscript sürümü. Normal koşullarda otomatik olarak tanındığı "

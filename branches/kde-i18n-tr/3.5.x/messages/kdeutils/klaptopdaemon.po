@@ -2,33 +2,38 @@
 # translation of klaptopdaemon.po to Türkçe
 # translation of klaptopdaemon.po to Turkish
 # Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+#
+#
 # Zafer Bahadır <zbahadir@turk.net>, 2003.
 # Görkem Çetin <gorkem@kde.org>, 2003.
 # YILDIZ KARDEŞLER <turkishprogram@xposta.com>, 2003.
 # Engin Çağatay <engincagatay@yahoo.com>, 2004.
 # Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
 # Bekir SONAT <cortexbs@yahoo.com>, 2005.
-#
-#
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: klaptopdaemon\n"
 "POT-Creation-Date: 2008-02-03 01:21+0100\n"
-"PO-Revision-Date: 2005-07-11 18:04+0300\n"
-"Last-Translator: Bekir SONAT <cortexbs@yahoo.com>\n"
-"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2011-06-16 09:27+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
+"Language-Team: kde-l10n-3.5 <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10\n"
+"X-Generator: Lokalize 1.2\n"
+"Language: tr\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: portable.cpp:945
 msgid ""
 "Your computer seems to have a partial ACPI installation. ACPI was probably "
-"enabled, but some of the sub-options were not - you need to enable at least 'AC "
+"enabled, but some of the sub-options were not - you need to enable at least "
+"'AC "
 "Adaptor' and 'Control Method Battery' and then rebuild your kernel."
 msgstr ""
-"Bilgisayarınızda ACPI parça kurulum olarak yüklenmiş. ACPI açık fakat, bazı alt "
+"Bilgisayarınızda ACPI parça kurulum olarak yüklenmiş. ACPI açık fakat, bazı "
+"alt "
 "seçenekleri kapalı - en azından 'AC Adaptor' ve 'Kontrol Metod Pili' "
 "modüllerini açıp çekirdeğini yeniden inşa etmelisiniz."
 
@@ -43,8 +48,10 @@ msgstr "Bu bilgisayara linux APM (Gelişmiş güç yöneticisi) desteği bulunmu
 #: portable.cpp:961
 msgid ""
 "\n"
-"If you make /usr/bin/apm setuid then you will also be able to choose 'suspend' "
-"and 'standby' in the above dialog - check out the help button below to find out "
+"If you make /usr/bin/apm setuid then you will also be able to choose "
+"'suspend' "
+"and 'standby' in the above dialog - check out the help button below to find "
+"out "
 "how to do this"
 msgstr ""
 "\n"
@@ -109,10 +116,12 @@ msgstr "%1·MHz"
 
 #: portable.cpp:2151
 msgid ""
-"There is no /dev/apm file on this system. Please review the FreeBSD handbook on "
+"There is no /dev/apm file on this system. Please review the FreeBSD handbook "
+"on "
 "how to create a device node for the APM device driver (man 4 apm)."
 msgstr ""
-"Bu sistemde /dev/apm dosyası mevcut değil. APM aygıt sürücüsü için nasıl aygıt "
+"Bu sistemde /dev/apm dosyası mevcut değil. APM aygıt sürücüsü için nasıl "
+"aygıt "
 "kolu oluşturulacağını FreeBSD dökümanlarından bakınız (man 4 apm)."
 
 #: portable.cpp:2154
@@ -122,7 +131,8 @@ msgid ""
 "otherwise contact your local sysadmin and ask for read/write access to "
 "/dev/apm."
 msgstr ""
-"Sisteminiz APM desteği için gerekli aygıt koluna sahip, fakat erişemiyorsunuz.  "
+"Sisteminiz APM desteği için gerekli aygıt koluna sahip, fakat erişemiyorsunuz."
+"  "
 "Eğer root olarak giriş yapmışsanız, bir probleminiz var, farklı bir kullanıcı "
 "girişi yapmışsanız sistem yöneticisine /dev/apm'ye okuma/yazma erişiminizi "
 "sorunuz."
@@ -145,7 +155,8 @@ msgid ""
 "documentation on how to create a device node for the APM device driver (man 4 "
 "apm)."
 msgstr ""
-"Bu sistemde /dev/apm dosyası mevcut değil. APM aygıt sürücüsü için nasıl aygıt "
+"Bu sistemde /dev/apm dosyası mevcut değil. APM aygıt sürücüsü için nasıl "
+"aygıt "
 "kolu oluşturulacağını NetBSD dökümanlarından bakınız (man 4 apm)."
 
 #: portable.cpp:2559
@@ -153,7 +164,8 @@ msgid ""
 "Your system has the proper device node for APM support, however you cannot "
 "access it. If you have APM compiled into the kernel this should not happen."
 msgstr ""
-"Sisteminiz APM desteği için gerekli aygıt koluna sahip, fakat erişemiyorsunuz. "
+"Sisteminiz APM desteği için gerekli aygıt koluna sahip, fakat erişemiyorsunuz."
+" "
 "Eğer APM çekirdeğe derlenmiş ise bu meydana gelebilir."
 
 #: portable.cpp:2866
@@ -164,7 +176,8 @@ msgid ""
 "it\n"
 "please contact paul@taniwha.com."
 msgstr ""
-"Bilgisayarınız veya işletim sisteminiz KDE laptop kontrol panelleri tarafından "
+"Bilgisayarınız veya işletim sisteminiz KDE laptop kontrol panelleri "
+"tarafından "
 "desteklenmiyor.\n"
 "Eğer bu panelleri sisteminizde çalışacak şekilde aktarmak(port) istiyorsanız "
 "paul@taniwha.com \n"
@@ -390,7 +403,8 @@ msgstr "Ekranı &Gizle"
 #: daemondock.cpp:239
 msgid ""
 "You will need to supply a root password to allow KLaptopDaemon to restart "
-"itself as the superuser. It may take up to a minute for the new daemon to start "
+"itself as the superuser. It may take up to a minute for the new daemon to "
+"start "
 "up and the old one to close."
 msgstr ""
 "KLaptopDaemon'u superuser olarak yeniden başlatmak için root şifresi "
@@ -403,7 +417,8 @@ msgstr "KLaptop Programı"
 
 #: daemondock.cpp:260
 msgid ""
-"PCMCIA cannot be enabled since kdesu cannot be found. Please make sure that it "
+"PCMCIA cannot be enabled since kdesu cannot be found. Please make sure that "
+"it "
 "is installed correctly."
 msgstr ""
 "PCMCIA, kdesu bulunamadığından beri etkinleştirilemiyor. Lütfen düzgün "
@@ -428,7 +443,7 @@ msgstr "Ekranı &Gizle"
 
 #: daemondock.cpp:271
 msgid "Do Not Hide"
-msgstr ""
+msgstr "Gizleme"
 
 #: daemondock.cpp:289
 msgid "Are you sure you want to quit the battery monitor?"
@@ -441,11 +456,11 @@ msgstr ""
 
 #: daemondock.cpp:294
 msgid "Disable"
-msgstr ""
+msgstr "Kapat"
 
 #: daemondock.cpp:294
 msgid "Keep Enabled"
-msgstr ""
+msgstr "Etkin Tut"
 
 #: daemondock.cpp:369
 msgid "Power Manager Not Found"
@@ -532,7 +547,7 @@ msgstr "Dizüstü güç yönetimi mevcut değil"
 
 #: daemondock.cpp:631 daemondock.cpp:651 daemondock.cpp:669
 msgid "N/A"
-msgstr ""
+msgstr "N/A"
 
 #: daemondock.cpp:635
 msgid "Plugged in - fully charged"

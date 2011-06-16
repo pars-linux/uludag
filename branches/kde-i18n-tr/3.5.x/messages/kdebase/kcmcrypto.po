@@ -2,22 +2,26 @@
 # translation of kcmcrypto.po to
 # translation of kcmcrypto.po to Turkish
 # Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+#
 # Togan Müftüoğlu <toganm@yahoo.com>, 2000.
 # Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
 # Görkem Çetin <gorkem@gelecek.com.tr>, 2001.
 # Görkem Çetin <gorkem@kde.org>, 2003, 2004.
 # Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
-#
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmcrypto\n"
 "POT-Creation-Date: 2007-07-30 01:13+0200\n"
-"PO-Revision-Date: 2005-07-17 21:54+0200\n"
-"Last-Translator: Adil YILDIZ <adil@kde.org.tr>\n"
-"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2011-06-16 09:30+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
+"Language-Team: kde-l10n-3.5 <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: tr\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: crypto.cpp:107
 msgid "%1 (%2 of %3 bits)"
@@ -51,7 +55,8 @@ msgstr "Sunucu tarafından desteklendiğinde &TLS desteğini etkinleştir"
 
 #: crypto.cpp:270
 msgid ""
-"TLS is the newest revision of the SSL protocol. It integrates better with other "
+"TLS is the newest revision of the SSL protocol. It integrates better with "
+"other "
 "protocols and has replaced SSL in protocols such as POP3 and SMTP."
 msgstr ""
 "TLS, SSL protokolünün en yeni versiyonudur.  Diğer protokollerle birleşerek "
@@ -63,7 +68,8 @@ msgstr "SSLv&2'yi etkinleştir"
 
 #: crypto.cpp:278
 msgid ""
-"SSL v2 is the second revision of the SSL protocol. It is most common to enable "
+"SSL v2 is the second revision of the SSL protocol. It is most common to "
+"enable "
 "v2 and v3."
 msgstr ""
 "SSLv2 SSL protokolünün ikinci versiyonudur. Pek çok durumda V2 ve V3 aktif "
@@ -121,7 +127,8 @@ msgid ""
 "settings. You can choose among the following modes: "
 "<ul>"
 msgstr ""
-"<qt>SSL şifrelemeyi daha kolay yapılandırmak için bu önyapılandırmaları kullan. "
+"<qt>SSL şifrelemeyi daha kolay yapılandırmak için bu önyapılandırmaları "
+"kullan. "
 "Aşağıdaki biçimlerden seçebilirsiniz: "
 "<ul>"
 
@@ -204,7 +211,8 @@ msgid ""
 "If selected, you will be notified if you view a page that has both encrypted "
 "and non-encrypted parts."
 msgstr ""
-"Eğer seçili ise hem şifreli hemde şifrelenmemiş kısımları olan sayfayı izlerken "
+"Eğer seçili ise hem şifreli hemde şifrelenmemiş kısımları olan sayfayı "
+"izlerken "
 "sizi uyarır"
 
 #: crypto.cpp:394
@@ -257,7 +265,8 @@ msgstr "EGD soket dosyasını bulmak için buraya tıklayın."
 
 #: crypto.cpp:451
 msgid ""
-"This list box shows which certificates of yours KDE knows about. You can easily "
+"This list box shows which certificates of yours KDE knows about. You can "
+"easily "
 "manage them from here."
 msgstr ""
 "Bu liste kutusu KDE tarayıcınızın hangi sertifikalarınızı bildiğini gösterir. "
@@ -419,10 +428,12 @@ msgstr "&Yeni"
 
 #: crypto.cpp:611
 msgid ""
-"This list box shows which site and person certificates KDE knows about. You can "
+"This list box shows which site and person certificates KDE knows about. You "
+"can "
 "easily manage them from here."
 msgstr ""
-"Bu liste kutusu KDE tarayıcınızın hangi site ve kişi sertifikalarını bildiğini "
+"Bu liste kutusu KDE tarayıcınızın hangi site ve kişi sertifikalarını "
+"bildiğini "
 "gösterir. Onları buradan kolayca kontrol edebilirsiniz"
 
 #: crypto.cpp:614 crypto.cpp:729
@@ -431,7 +442,8 @@ msgstr "Organizasyon"
 
 #: crypto.cpp:621
 msgid ""
-"This button allows you to export the selected certificate to a file of various "
+"This button allows you to export the selected certificate to a file of "
+"various "
 "formats."
 msgstr ""
 "Bu düğme seçilen sertifikayı çeşitli biçimlerde dosya olarak ihraç etmeyi "
@@ -544,7 +556,8 @@ msgid ""
 "This list box shows which sites you have decided to accept a certificate from "
 "even though the certificate might fail the validation procedure."
 msgstr ""
-"Bu liste kutusu hangi sitelerden onaylama prosedürü başarısız olsa da sertifika "
+"Bu liste kutusu hangi sitelerden onaylama prosedürü başarısız olsa da "
+"sertifika "
 "kabul ettiğinizi gösterir"
 
 #: crypto.cpp:809
@@ -851,7 +864,6 @@ msgid "Second:"
 msgstr "Saniye:"
 
 #: crypto.h:188
-#, fuzzy
 msgid "Don't Send"
 msgstr "Gönderme"
 
@@ -866,3 +878,4 @@ msgid ""
 "_: EMAIL OF TRANSLATORS\n"
 "Your emails"
 msgstr "omer_fad@hotmail.com"
+

@@ -4,23 +4,26 @@
 # translation of kooka.po to Turkish
 # kde
 # Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+#
 # Görkem Çetin <gorkem@kde.org>, 2001,2002,2003, 2004.
 # Zerrin Cakmakkaya <zerrin@uludag.org.tr>, 2005.
 # Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
 # Alper Sen <aalpersen@gmail.com>, 2005.
-#
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: kooka\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-04-23 03:56+0200\n"
-"PO-Revision-Date: 2005-07-15 12:08+0300\n"
-"Last-Translator: Alper Sen <aalpersen@gmail.com>\n"
-"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2011-06-16 09:32+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
+"Language-Team: kde-l10n-3.5 <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10\n"
+"X-Generator: Lokalize 1.2\n"
+"Language: tr\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: _translatorinfo.cpp:1
 msgid ""
@@ -42,7 +45,8 @@ msgstr "Kooka Kayıt Yardımcısı"
 msgid ""
 "<B>Save Assistant</B><P>Select an image format to save the scanned image."
 msgstr ""
-"<B>Yardımcıyı Kaydet</B><P>Taranmış resmi saklamak için bir resim biçimi seçin."
+"<B>Yardımcıyı Kaydet</B><P>Taranmış resmi saklamak için bir resim biçimi "
+"seçin."
 
 #: img_saver.cpp:99
 msgid "Available image formats:"
@@ -168,13 +172,12 @@ msgid "Extension Missing"
 msgstr "Dosya uzantısı eksik"
 
 #: img_saver.cpp:772 img_saver.cpp:869
-#, fuzzy
 msgid "Add Extension"
-msgstr "Dosya uzantısı eksik"
+msgstr "Uzantı Ekle"
 
 #: img_saver.cpp:772 img_saver.cpp:869
 msgid "Do Not Add"
-msgstr ""
+msgstr "Ekleme"
 
 #: img_saver.cpp:789 img_saver.cpp:883
 msgid "Format changes of images are currently not supported."
@@ -341,7 +344,8 @@ msgid ""
 "The author of gocr is <B>Joerg Schulenburg</B><BR>For more information about "
 "gocr see <A HREF=http://jocr.sourceforge.net>http://jocr.sourceforge.net</A>"
 msgstr ""
-"GOCR, Açık Kaynaklı bir optik karakter tanıma projesidir. <P>gocr'nin yazarı <B>"
+"GOCR, Açık Kaynaklı bir optik karakter tanıma projesidir. <P>gocr'nin yazarı "
+"<B>"
 "Joerg Schulenburg</B>'dur.<BR>gocr hakkında daha fazla bilgi için<A "
 "HREF=http://jocr.sourceforge.net>http://jocr.sourceforge.net</A>"
 
@@ -392,7 +396,8 @@ msgid ""
 "\n"
 "Default is 10"
 msgstr ""
-"Bu değerden küçük kümeler \"toz\" olarak tanımlanıp resimden kaldırılacaktır.\n"
+"Bu değerden küçük kümeler \"toz\" olarak tanımlanıp resimden kaldırılacaktır."
+"\n"
 "\n"
 "Öntanımlı değer 10'dur."
 
@@ -424,7 +429,8 @@ msgid ""
 msgstr ""
 "Kooka'nın bu versiyonu <I>KADMOS OCR/ICR mekanizması</I> "
 "ile bağlı, ticari bir optik karakter tanıma mekanizması.<P>Kadmos bir <B>"
-"re Recognition AG</B> ürünüdür.<BR>Kadmos OCR hakkında daha fazla bilgi için <A "
+"re Recognition AG</B> ürünüdür.<BR>Kadmos OCR hakkında daha fazla bilgi için "
+"<A "
 "HREF=http://www.rerecognition.com>http://www.rerecognition.com</A>"
 
 #: kocrkadmos.cpp:110
@@ -512,7 +518,8 @@ msgid ""
 "http://www.gnu.org/software/ocrad/ocrad.html</A>"
 "<p>Images should be scanned in black/white mode for ocrad."
 "<br>Best results are achieved if the characters are at least 20 pixels high."
-"<p>Problems arise, as usual, with very bold or very light or broken characters, "
+"<p>Problems arise, as usual, with very bold or very light or broken "
+"characters, "
 "the same with merged character groups."
 msgstr ""
 "ocrad, optik karakter tanıma için bir Özgür Yazılım projesi."
@@ -768,7 +775,8 @@ msgstr "Bir sonraki başlangıçta tarayıcı seçim kutusunu göster"
 
 #: kookapref.cpp:329
 msgid ""
-"Check this if you once checked 'do not show the scanner selection on startup',\n"
+"Check this if you once checked 'do not show the scanner selection on "
+"startup',\n"
 "but you want to see it again."
 msgstr ""
 "Başlangıçta, Tarayıcı Seçme uyarısını görmek istemiyorsanız,\n"
@@ -780,7 +788,8 @@ msgstr "Başlangıçta, daha önce yüklenmiş en son resmi getir"
 
 #: kookapref.cpp:337
 msgid ""
-"Check this if you want Kooka to load the last selected image into the viewer on "
+"Check this if you want Kooka to load the last selected image into the viewer "
+"on "
 "startup.\n"
 "If your images are large, that might slow down Kooka's start."
 msgstr ""
@@ -1048,10 +1057,8 @@ msgid "KADMOS Installation Problem"
 msgstr "KADMOS Kurulum Hatası"
 
 #: ksaneocr.cpp:607
-msgid ""
-"The KADMOS OCR system could not be started:\n"
-msgstr ""
-"KADMOS OCR sistemi başlatılamadı:\n"
+msgid "The KADMOS OCR system could not be started:\n"
+msgstr "KADMOS OCR sistemi başlatılamadı:\n"
 
 #: ksaneocr.cpp:609
 msgid ""
