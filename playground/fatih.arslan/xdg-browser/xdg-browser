@@ -307,6 +307,7 @@ desktop_file_to_binary()
 }
 
 ### Browser functions
+
 browser_kde()
 {
     browser="`kreadconfig --file kdeglobals --group General --key BrowserApplication`"
@@ -322,12 +323,18 @@ browser_kde()
         browser="`grep '^BrowserApplication\[$[^]=]*\]=' "$kdeglobals" | head -n 1 | cut -d= -f 2-`"
     fi
 
-    # Kde returns the value with a exclamation sign prefix, remove it
-    if [ x"$browser" == !* ]; then
-        browser="${browser#!}"
-    fi
+    # Kde returns in two ways. One with a prefix (i.g !firefox)
+    # The other one with a desktop suffix (i.g chromium-browser.desktop)
 
-    browser_exec="`desktop_file_to_binary "$browser"`"
+    case "$browser" in
+      !*)
+        browser="${browser#!}"
+        browser_exec=`which $browser`
+        ;;
+      *)
+        browser_exec="`desktop_file_to_binary "$browser"`"
+        ;;
+    esac
 
     echo $browser_exec
 
