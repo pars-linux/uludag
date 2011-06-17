@@ -1641,7 +1641,7 @@ msgstr "Sık kullanılan dizin görünümünü seç"
 
 #: configuredialog.cpp:1912
 msgid "Show folder quick search field"
-msgstr "Hızlı dizin aAram alanını gGöster"
+msgstr "Hızlı dizin arama alanını göster"
 
 #: configuredialog.cpp:1983
 msgid "Sta&ndard format (%1)"
