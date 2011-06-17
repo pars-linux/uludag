@@ -364,7 +364,7 @@ msgstr "PDF v. %1"
 #: core/generator_pdf/generator_pdf.cpp:212
 #: core/generator_pdf/generator_pdf.cpp:221
 msgid "Format"
-msgstr "Format"
+msgstr "Biçim"
 
 #: core/generator_pdf/generator_pdf.cpp:213
 msgid "Encrypted"
@@ -414,18 +414,21 @@ msgid ""
 "with the aspect ratio changed or do you want the margins to be adapted so that "
 "the aspect ratio is preserved?"
 msgstr ""
+"Belirlediğiniz kenar boşlukları sayfanın en/boy oranını değiştiriyor. Değişmiş "
+"en/boy oranıyla mı çıktı almak istersiniz yoksa kenar boşluklarının en/boy "
+"oranını koruyacak şekilde uyumlu hale getirilmesini mi istersiniz?"
 
 #: core/generator_pdf/generator_pdf.cpp:487
 msgid "Aspect ratio change"
-msgstr ""
+msgstr "En/boy oranı değişikliği"
 
 #: core/generator_pdf/generator_pdf.cpp:488
 msgid "Print with specified margins"
-msgstr ""
+msgstr "Belirlenen kenar boşluklarıyla yazdır"
 
 #: core/generator_pdf/generator_pdf.cpp:489
 msgid "Print adapting margins to keep aspect ratio"
-msgstr ""
+msgstr "Kenar boşluklarını en/boy oranına uydurarak yazdır"
 
 #: core/generator_pdf/generator_pdf.cpp:720
 msgid "unknown"
@@ -443,7 +446,7 @@ msgstr "Tür 1C"
 msgid ""
 "_: OT means OpenType\n"
 "Type 1C (OT)"
-msgstr ""
+msgstr "Tür 1C (OT)"
 
 #: core/generator_pdf/generator_pdf.cpp:724
 msgid "Type 3"
@@ -457,7 +460,7 @@ msgstr "TrueType"
 msgid ""
 "_: OT means OpenType\n"
 "TrueType (OT)"
-msgstr ""
+msgstr "TrueType (OT)"
 
 #: core/generator_pdf/generator_pdf.cpp:727
 msgid "CID Type 0"
@@ -471,7 +474,7 @@ msgstr "CID Türü 0C"
 msgid ""
 "_: OT means OpenType\n"
 "CID Type 0C (OT)"
-msgstr ""
+msgstr "CID Tür 0C (OT)"
 
 #: core/generator_pdf/generator_pdf.cpp:730
 msgid "CID TrueType"
@@ -481,7 +484,7 @@ msgstr "CID TrueType"
 msgid ""
 "_: OT means OpenType\n"
 "CID TrueType (OT)"
-msgstr ""
+msgstr "CID TrueType (OT)"
 
 #: core/generator_pdf/generator_pdf.cpp:764
 #: core/generator_pdf/generator_pdf.cpp:766
@@ -507,64 +510,57 @@ msgid "Unknown Date"
 msgstr "Bilinmeyen Tarih"
 
 #: core/link.cpp:21
-#, fuzzy, c-format
+#, c-format
 msgid "Go to page %1"
-msgstr "Sayfaya Git"
+msgstr "%1. sayfaya git"
 
 #: core/link.cpp:21
 msgid "Open external file"
-msgstr ""
+msgstr "Harici dosyayı aç"
 
 #: core/link.cpp:26
 msgid "Execute '%1'..."
-msgstr ""
+msgstr "'%1''i çalıştır..."
 
 #: core/link.cpp:39
-#, fuzzy
 msgid "First Page"
-msgstr "Sayfayı Sığdır"
+msgstr "İlk Sayfa"
 
 #: core/link.cpp:41
 msgid "Previous Page"
-msgstr ""
+msgstr "Önceki Sayfa"
 
 #: core/link.cpp:43
-#, fuzzy
 msgid "Next Page"
-msgstr "Sayfayı Sığdır"
+msgstr "Sonraki Sayfa"
 
 #: core/link.cpp:45
-#, fuzzy
 msgid "Last Page"
-msgstr "Sayfayı Sığdır"
+msgstr "Son Sayfa"
 
 #: core/link.cpp:49
-#, fuzzy
 msgid "Forward"
-msgstr "Format"
+msgstr "İleri"
 
 #: core/link.cpp:53
-#, fuzzy
 msgid "Start Presentation"
-msgstr "Sunum"
+msgstr "Sunumu Başlat"
 
 #: core/link.cpp:55
-#, fuzzy
 msgid "End Presentation"
-msgstr "Sunum"
+msgstr "Sunumu Sonlandır"
 
 #: core/link.cpp:57
 msgid "Find..."
-msgstr ""
+msgstr "Ara..."
 
 #: core/link.cpp:59
-#, fuzzy
 msgid "Go To Page..."
-msgstr "Sayfaya Git"
+msgstr "Sayfaya Git..."
 
 #: shell/main.cpp:22
 msgid "kpdf, a kde pdf viewer based on xpdf"
-msgstr "Kpdf, KDE pdf görüntüleyici"
+msgstr "kpdf, xpdf tabanlı KDE PDF görüntüleyici"
 
 #: shell/main.cpp:28
 msgid "Document to open"
@@ -588,7 +584,7 @@ msgstr "Simge"
 
 #: shell/shell.cpp:86
 msgid "Unable to find kpdf part."
-msgstr "Kpdf parçası bulunamıyor."
+msgstr "Kpdf parçacığı bulunamıyor."
 
 #: shell/shell.cpp:132
 msgid ""
@@ -618,17 +614,16 @@ msgid ""
 msgstr "gorkem@kde.org, kaya@kuzeykutbu.org"
 
 #: part.cpp:82
-#, fuzzy
 msgid "PDF Options"
-msgstr "Filtre Seçenekleri"
+msgstr "PDF Seçenekleri"
 
 #: part.cpp:84
 msgid "Force rasterization"
-msgstr ""
+msgstr "Resim dosyasına dönüşümü zorla"
 
 #: part.cpp:85
 msgid "Rasterize into an image before printing"
-msgstr ""
+msgstr "Baskıdan önce resim dosyasına dönüştür"
 
 #: part.cpp:86
 msgid ""
@@ -636,6 +631,9 @@ msgid ""
 "usually gives somewhat worse results, but is useful when printing documents "
 "that appear to print incorrectly."
 msgstr ""
+"Her sayfanın basılmadan önce resim dosyasına dönüştürülmesini zorlar. Bu işlem "
+"genelde daha kötü sonuçlar üretse de, hatalı basılan bazı belgelerin düzgün "
+"basılmasını sağlayabilir."
 
 #: part.cpp:172
 msgid "Show &Navigation Panel"
@@ -719,12 +717,16 @@ msgid ""
 "This link points to a close document action that does not work when using the "
 "embedded viewer."
 msgstr ""
+"Bu bağlantı, gömülü gösterici kullanılırken çalışmayan, belge kapatma eylemine "
+"işaret ediyor."
 
 #: part.cpp:689
 msgid ""
 "This link points to a quit application action that does not work when using the "
 "embedded viewer."
 msgstr ""
+"Bu bağlantı, gömülü gösterici kullanılırken çalışmayan, uygulama çıkışı eylemine "
+"işaret ediyor."
 
 #: part.cpp:702
 msgid "Go to Page"
@@ -739,6 +741,8 @@ msgid ""
 "You are trying to overwrite \"%1\" with itself. This is not allowed. Please "
 "save it in another location."
 msgstr ""
+"\"%1\" dosyasının üzerine kendisini yazmaya çalışıyorsunuz. Bu mümkün değil. "
+"Lütfen başka bir konuma kaydedin."
 
 #: part.cpp:814
 msgid ""
@@ -748,7 +752,7 @@ msgstr ""
 
 #: part.cpp:814
 msgid "Overwrite"
-msgstr ""
+msgstr "Üzerine yaz"
 
 #: part.cpp:819
 msgid "File could not be saved in '%1'. Try to save it to another location."
@@ -865,9 +869,9 @@ msgstr "&DRM sınırlamalarına uy"
 
 #. i18n: file ./conf/dlggeneral.ui line 92
 #: rc.cpp:63
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "&Watch file"
-msgstr "&Dosya İzle"
+msgstr "&Dosyayı İzle"
 
 #. i18n: file ./conf/dlgpresentation.ui line 27
 #: rc.cpp:66
