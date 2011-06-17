@@ -1120,3 +1120,9 @@ msgstr "Karşıtlık:"
 #, no-c-format
 msgid "Threshold:"
 msgstr "Eşik:"
+
+msgid "Rotate Right"
+msgstr "Sağa Döndür"
+
+msgid "Rotate Left"
+msgstr "Sola Döndür"
