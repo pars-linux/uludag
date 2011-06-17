@@ -285,6 +285,26 @@ first_word()
     read first rest
     echo "$first"
 }
+
+desktop_file_to_binary()
+{
+    search="${XDG_DATA_HOME:-$HOME/.local/share}:${XDG_DATA_DIRS:-/usr/local/share:/usr/share}"
+    desktop="`basename "$1"`"
+    IFS=:
+    for dir in $search; do
+        unset IFS
+        [ "$dir" -a -d "$dir/applications" ] || continue
+        file="$dir/applications/$desktop"
+        [ -r "$file" ] || continue
+        # Remove any arguments (%F, %f, %U, %u, etc.).
+        command="`grep -E "^Exec(\[[^]=]*])?=" "$file" | cut -d= -f 2- | first_word`"
+        command="`which "$command"`"
+        readlink -f "$command"
+        return
+    done
+}
+
+### Browser functions
 browser_kde()
 {
     browser="`kreadconfig --file kdeglobals --group General --key BrowserApplication`"
@@ -350,6 +370,40 @@ browser_gnome()
 browser_xfce()
 {
     browser_exec="`exo-open --launch WebBrowser`"
+
+    if [ -x "$browser_exec" ]; then
+        if [ x"$1" == x"" ]; then
+            $browser_exec
+        else
+            $browser_exec "$1"
+        fi
+
+        if [ $? -eq 0 ]; then
+            exit_success
+        else
+            exit_failure_operation_failed
+        fi
+    else
+        exit_failure_operation_impossible "configured browser program '$browser' not found or not executable"
+    fi
+}
+
+browser_lxde()
+{
+
+    search="${XDG_CONFIG_HOME:-$HOME/.config}"
+    for dir in $search; do
+        file="$dir/libfm/pref-apps.conf"
+        [ -r "$file" ] || continue
+        grep -q "^CustomWebBrowsers=" "$file" || continue
+        desktop="`grep "^CustomWebBrowsers=" "$file" | cut -d= -f 2-`"
+        #Lxde append a ; characters to the lines
+        desktop="${browser%;}"
+        browser="`desktop_file_to_binary "$desktop"`"
+        return
+    done
+
+    browser_exec=`which $browser >/dev/null 2>/dev/null`
 
     if [ -x "$browser_exec" ]; then
         if [ x"$1" == x"" ]; then
