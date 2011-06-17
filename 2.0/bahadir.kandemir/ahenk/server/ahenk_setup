@@ -61,15 +61,18 @@ access to attrs=userPassword
        by self write
        by anonymous auth
        by dn.exact="cn=%(root_account)s, %(domain)s" write
+       by group="cn=admins, dc=groups, %(domain)s" write
        by * none
 
 access to attrs=firewallState,firewallRules
        by group="cn=firewall, dc=groups, %(domain)s" write
+       by group="cn=admins, dc=groups, %(domain)s" write
        by dn.exact="cn=%(root_account)s, %(domain)s" write
        by * read
 
 access to attrs=softwareRepositories,softwareUpdateSchedule,softwareUpdateMode
        by group="cn=software, dc=groups, %(domain)s" write
+       by group="cn=admins, dc=groups, %(domain)s" write
        by dn.exact="cn=%(root_account)s, %(domain)s" write
        by * read
 
