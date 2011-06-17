@@ -3,3 +3,4 @@ recursive-include lider *.ui
 recursive-include lider *.py
 recursive-include lider *.qrc
 recursive-include lider *.png
+recursive-include data *
