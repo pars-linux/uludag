@@ -398,7 +398,7 @@ browser_lxde()
         grep -q "^CustomWebBrowsers=" "$file" || continue
         desktop="`grep "^CustomWebBrowsers=" "$file" | cut -d= -f 2-`"
         #Lxde append a ; characters to the lines
-        desktop="${browser%;}"
+        desktop="${desktop%;}"
         browser="`desktop_file_to_binary "$desktop"`"
         return
     done
