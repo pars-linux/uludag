@@ -447,7 +447,7 @@ browser_generic()
             exit_failure_operation_failed
         fi
     else
-        exit_failure_operation_impossible "configured browser program '$TERM' not found or not executable"
+        exit_failure_operation_impossible "configured browser program '$browser' not found or not executable"
     fi
 }
 
