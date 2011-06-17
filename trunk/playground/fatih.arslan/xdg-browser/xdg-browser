@@ -347,6 +347,27 @@ browser_gnome()
     fi
 }
 
+browser_xfce()
+{
+    browser_exec="`exo-open --launch WebBrowser`"
+
+    if [ -x "$browser_exec" ]; then
+        if [ x"$1" == x"" ]; then
+            $browser_exec
+        else
+            $browser_exec "$1"
+        fi
+
+        if [ $? -eq 0 ]; then
+            exit_success
+        else
+            exit_failure_operation_failed
+        fi
+    else
+        exit_failure_operation_impossible "configured browser program '$browser' not found or not executable"
+    fi
+}
+
 browser_generic()
 {
     # if browser variable is not set, check some well known browsers instead
@@ -400,6 +421,14 @@ fi
 case "$DE" in
     kde)
     browser_kde "$command"
+    ;;
+
+    gnome)
+    browser_gnome "$command"
+    ;;
+
+    xfce)
+    browser_xfce "$command"
     ;;
 
     generic)
