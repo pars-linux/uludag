@@ -406,7 +406,7 @@ msgstr "E-postaları daha hızlı indirmek için borulama k&ullan"
 
 #: accountdialog.cpp:837
 msgid "Account Type: Disconnected IMAP Account"
-msgstr "Hesap Türü: Bağlı Olmayan IMAP Hesabı"
+msgstr "Hesap Türü: Bağlantısız IMAP Hesabı"
 
 #: accountdialog.cpp:839
 msgid "Account Type: IMAP Account"
@@ -4461,7 +4461,7 @@ msgstr "&IMAP"
 
 #: kmacctseldlg.cpp:54
 msgid "&Disconnected IMAP"
-msgstr "&Bağlı Olmayan IMAP"
+msgstr "&Bağlantısız IMAP"
 
 #: kmacctseldlg.cpp:56
 msgid "&Maildir mailbox"
