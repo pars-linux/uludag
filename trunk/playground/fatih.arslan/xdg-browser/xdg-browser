@@ -275,6 +275,8 @@ detectDE()
     elif [ x"$DESKTOP_SESSION" == x"LXDE" ]; then DE=lxde;
     else DE=""
     fi
+
+    echo $DE
 }
 
 ## Utility functions
@@ -325,7 +327,9 @@ browser_kde()
         browser="${browser#!}"
     fi
 
-    browser_exec=`which $browser >/dev/null 2>/dev/null`
+    browser_exec="`desktop_file_to_binary "$browser"`"
+
+    echo $browser_exec
 
     if [ -x "$browser_exec" ]; then
         if [ x"$1" == x"" ]; then
@@ -399,11 +403,8 @@ browser_lxde()
         desktop="`grep "^CustomWebBrowsers=" "$file" | cut -d= -f 2-`"
         #Lxde append a ; characters to the lines
         desktop="${desktop%;}"
-        browser="`desktop_file_to_binary "$desktop"`"
-        return
+        browser_exec="`desktop_file_to_binary "$desktop"`"
     done
-
-    browser_exec=`which $browser >/dev/null 2>/dev/null`
 
     if [ -x "$browser_exec" ]; then
         if [ x"$1" == x"" ]; then
@@ -483,6 +484,10 @@ case "$DE" in
 
     xfce)
     browser_xfce "$command"
+    ;;
+
+    lxde)
+    browser_lxde "$command"
     ;;
 
     generic)
