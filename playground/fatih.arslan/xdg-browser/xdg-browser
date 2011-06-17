@@ -276,6 +276,7 @@ detectDE()
     else DE=""
     fi
 
+    DE=gnome
     echo $DE
 }
 
@@ -336,8 +337,6 @@ browser_kde()
         ;;
     esac
 
-    echo $browser_exec
-
     if [ -x "$browser_exec" ]; then
         if [ x"$1" == x"" ]; then
             $browser_exec
@@ -359,7 +358,7 @@ browser_gnome()
 {
     browser="`gconftool-2 --get /desktop/gnome/applications/browser/exec | first_word`"
 
-    browser_exec=`which $browser >/dev/null 2>/dev/null`
+    browser_exec=`which $browser`
 
     if [ -x "$browser_exec" ]; then
         if [ x"$1" == x"" ]; then
