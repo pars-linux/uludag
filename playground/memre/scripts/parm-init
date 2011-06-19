@@ -32,6 +32,8 @@
 #
 ######################################################################
 
+# test commit
+
 # Trap all signals for more control
 set -e
 trap sighandler 1 2 3 6
