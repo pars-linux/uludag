@@ -94,7 +94,7 @@ msgstr "Platforma"
 
 #: .tmp/scrSmolt.py:119
 msgid "BogoMIPS"
-msgstr ""
+msgstr "BogoMIPS"
 
 #: .tmp/scrSmolt.py:120
 msgid "CPU Vendor"
@@ -579,7 +579,7 @@ msgstr "Jezik rasporeda tipkovnice"
 
 #: .tmp/ui_scrWallpaper.py:132
 msgid "Choose your favorite wallpaper for Pardus. Don't forget to check out <b>Desktop Settings</b> for downloading new and cool wallpapers."
-msgstr "Izaberite svoju omiljenu pozadinu za Pardus. Ne zaboravite provjeriti<b>Postavke radne površine</b> za preuzimanje novih i odličnih pozadina."
+msgstr "Izaberite svoju omiljenu pozadinu za Pardus. Ne zaboravite provjeriti<b>Postavke radne površine</b> za preuzimanje novih i cool pozadina."
 
 #: .tmp/ui_scrWallpaper.py:133
 msgid "Wallpapers"
