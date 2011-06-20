@@ -113,11 +113,11 @@ msgid ""
 msgstr ""
 
 #: pagerbutton.cpp:815
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "_n: One window:\n"
 "%n windows:"
-msgstr "%n Pencereleri:"
+msgstr "%n pencere:"
 
 #. i18n: file pagersettings.kcfg line 12
 #: rc.cpp:3
