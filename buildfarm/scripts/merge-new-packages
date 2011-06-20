@@ -33,8 +33,7 @@ def find_missing_delta_packages(testing_dir, stable_dir):
     for package in testing_index.packages:
         # Skip delta package if it's a new package or latest revision is not 
         # merged yet (#18254)
-        if (package.name not in releases) or 
-        (package.history[0].release not in releases.get(package.name)):
+        if package.history[0].release not in releases.get(package.name, []):
             continue
 
         for delta_package in package.deltaPackages:
