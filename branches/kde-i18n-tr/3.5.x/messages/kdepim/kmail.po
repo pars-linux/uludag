@@ -6141,6 +6141,8 @@ msgid ""
 "will only be applied when manually filtering and when filtering incoming online "
 "IMAP mail."
 msgstr ""
+"En az bir filtre, çevrimiçi IMAP hesabınızdaki bir klasörde işlem yapıyor. Bu filtreler "
+"sadece elle filtreleme yaptığınızda ve çevrimiçi IMAP iletisi geldiğinde uygulanacaktır."
 
 #: kmfilterdlg.cpp:774
 msgid ""
