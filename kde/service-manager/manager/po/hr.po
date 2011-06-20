@@ -132,7 +132,7 @@ msgstr "Servisi pokretanja"
 
 #: ui/ui_main.py:66
 msgid "Running Services"
-msgstr ""
+msgstr "Pokrenuti sevisi"
 
 #: ui/ui_main.py:67
 msgid "All Services"
