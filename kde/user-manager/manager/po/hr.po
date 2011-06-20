@@ -205,7 +205,7 @@ msgstr "Broj:"
 
 #: ui/ui_editgroup.py:89 ui/ui_edituser.py:237
 msgid "Auto"
-msgstr ""
+msgstr "Auto"
 
 #: ui/ui_edituser.py:228
 msgid "User Information"
