@@ -319,27 +319,27 @@ msgstr "Gezgin"
 
 #: ../../kwin/kwinbindings.cpp:21
 msgid "Walk Through Windows"
-msgstr "Pencerelerde Yürü"
+msgstr "Pencereleri Gez"
 
 #: ../../kwin/kwinbindings.cpp:22
 msgid "Walk Through Windows (Reverse)"
-msgstr "Windows'ta Yürü(Ters)"
+msgstr "Pencereleri Gez (Tersten)"
 
 #: ../../kwin/kwinbindings.cpp:23
 msgid "Walk Through Desktops"
-msgstr "Masaüstlerinde Yürü"
+msgstr "Masaüstlerini Gez"
 
 #: ../../kwin/kwinbindings.cpp:24
 msgid "Walk Through Desktops (Reverse)"
-msgstr "Masaüstlerinde Yürü(Ters)"
+msgstr "Masaüstlerini Gez (Tersten)"
 
 #: ../../kwin/kwinbindings.cpp:25
 msgid "Walk Through Desktop List"
-msgstr "Masaüstü Listesinde Yürü"
+msgstr "Masaüstü Listesini Gez"
 
 #: ../../kwin/kwinbindings.cpp:26
 msgid "Walk Through Desktop List (Reverse)"
-msgstr "Masaüstü Listesinde Yürü(Ters)"
+msgstr "Masaüstü Listesini Gez (Tersten)"
 
 #: ../../kwin/kwinbindings.cpp:28
 msgid "Windows"
