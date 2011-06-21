@@ -723,7 +723,7 @@ msgstr "Görevyöneticisini Göster"
 
 #: ../../kdesktop/kdesktopbindings.cpp:25
 msgid "Show Window List"
-msgstr "pencere Listesini Göster"
+msgstr "Pencere Listesini Göster"
 
 #: ../../kdesktop/kdesktopbindings.cpp:26
 msgid "Switch User"
