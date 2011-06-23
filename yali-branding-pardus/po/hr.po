@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the yali-branding-pardus package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: yali-branding-pardus\n"
@@ -14,10 +14,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Poedit-Language: Croatian\n"
 "X-Poedit-Country: CROATIA\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-Language: Croatian\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 #: ../release.xml.in.h:1
@@ -26,7 +25,7 @@ msgstr ""
 
 #: ../release.xml.in.h:2
 msgid "A bootloader is a tiny program that runs when a computer is first powered up. It is responsible for loading the operating system into memory and then transferring the control to it.&lt;br&gt;&lt;br&gt;Pardus uses GRUB (GRand Unified Bootloader) as the default bootloader. GRUB allows you to boot any supported operating system by presenting the user with a menu.&lt;br&gt;&lt;br&gt;The recommended way to use GRUB is to install it to the beginning of the boot disk, which is set by Default settings. You can choose Advanced settings for a custom installation if you know what you are doing."
-msgstr ""
+msgstr "Bootloader je maleni program koji se pokreće kada se računalo prvi put uključi. On je odgovorn za učitavanje operativnog sustava u memoriju, a zatim prijenos upravljanja na njega. &lt;br&gt; Pardus koristi GRUB (Grand Unified Bootloader) kao zadani bootloader. GRUB vam omogućuje da podignete bilo podržani operacijski sustav predstavljajući korisniku izbornik. &lt;br&gt; Preporučeni način korištenja GRUB je instalirali ga na početku boot diska, koji je postavljen po zadanim postavkama. Možete odabrati napredne postavke za prilagođene instalacije ako znate što radite."
 
 #: ../release.xml.in.h:3
 msgid "A keyboard layout sets the arrangement of keys on the keyboard. You may want to use a different layout then your keyboard&apos;s physical layout or to be sure that your keyboard is set up correctly. &lt;br&gt;&lt;br&gt;You can test the selected layout by typing in the given textbox."
@@ -54,7 +53,7 @@ msgstr "Odaberite raspored tipkovnice"
 
 #: ../release.xml.in.h:9
 msgid "Configure the bootloader"
-msgstr ""
+msgstr "Konfiguriraj bootloader"
 
 #: ../release.xml.in.h:10
 msgid "Date and time settings allows you to set the date and time of your computer. You may also want to specify a correct timezone upon your location in order to benefit from automatic daylight saving time adjustments.&lt;br&gt;&lt;br&gt;A timezone is a region of the earth that has uniform standard time, usually referred as the local time. By convention, timezones compute their local time as an offset from UTC, the Coordinated Universal Time."
@@ -82,7 +81,7 @@ msgstr "Pripremite se za Pardus instalaciju"
 
 #: ../release.xml.in.h:16
 msgid "Help will be included when Kahya implementation is complete."
-msgstr ""
+msgstr "Pomoć će biti uključen kada Kahya provedba bude završena."
 
 #: ../release.xml.in.h:17
 msgid "Here you can review your options before the installation process starts."
@@ -171,7 +170,7 @@ msgstr "Postavite vaše lokalno vrijeme i datum"
 
 #: ../release.xml.in.h:39
 msgid "Setup your account"
-msgstr ""
+msgstr "Postavite račun"
 
 #: ../release.xml.in.h:40
 msgid "Summary"
@@ -183,7 +182,7 @@ msgstr ""
 
 #: ../release.xml.in.h:42
 msgid "User accounts are successfully configured. Click Next to proceed. One note: You remember your password, don&apos;t you?"
-msgstr ""
+msgstr "Korisnički računi uspješno su konfigurirani. Kliknite Dalje da biste nastavili. Jedna napomena: Sjećate se svoje lozinke,zar&apos;ne?"
 
 #: ../release.xml.in.h:43
 msgid "Validation is comparing the packages in the medium with the original ones by file verification method. A failed validation usually is a sign of a badly mastered installation medium (CD, DVD or USB storage).&lt;br&gt;&lt;br&gt;If you are using an optical medium (i.e. CD/DVD), try burning the installation image using DAO (Disc-at-once) mode, at a lower speed (4x for DVD, 8-12x for CD)."
@@ -207,11 +206,11 @@ msgstr ""
 
 #: ../release.xml.in.h:48
 msgid "You can recover your password."
-msgstr ""
+msgstr "Možete obnoviti lozinku."
 
 #: ../release.xml.in.h:49
 msgid "You can reinstall your boot loader or you recover any user password."
-msgstr ""
+msgstr "Možete ponovo instalirati boot loader ili obnoviti bilo koju lozinku korisnika."
 
 #: ../release.xml.in.h:50
 msgid "You have successfully installed Pardus on your computer. After restarting your computer, you can finally enjoy the full benefits of Pardus.&lt;br&gt;&lt;br&gt;Please be sure that you remember your password and unmount the installation medium (remove the usb disk, eject the dvd or release the image in virtual machies)."
@@ -240,4 +239,3 @@ msgstr "Trebate najmanje 4GB neparticioniranog-neiskorištenog prostora diska da
 #: ../release.xml.in.h:56
 msgid "You've installed and booted Pardus successfully... Just a few clicks left... Pardus supports multiple users on the same system. So you need to create at least one user and set the system wide configurations. So you will be able to login and enjoy Pardus..."
 msgstr ""
-
