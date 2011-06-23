@@ -603,6 +603,7 @@
                 <Package>pycurl</Package>
                 <Package>pypolkit</Package>
                 <Package>python</Package>
+                <Package>python-networkmanager</Package>
                 <Package>python-pyliblzma</Package>
                 <Package>readline</Package>
                 <Package>rsyslog</Package>
