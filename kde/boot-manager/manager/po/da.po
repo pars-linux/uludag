@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Patrik Karlsson <patrik@pardus.nu>, 2009.
 # Peter Lyberth <peterjensen84@gmail.com>, 2009.
 msgid ""
@@ -11,29 +11,28 @@ msgstr ""
 "PO-Revision-Date: 2009-08-18 22:32+0200\n"
 "Last-Translator: Peter Lyberth <peterjensen84@gmail.com>\n"
 "Language-Team: Danish <  pardus-translators@pardus.org.tr>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"Language: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: src/boot-manager.py:95
 msgid "Boot Manager"
 msgstr "Opstartsindlæser"
 
 #: src/bootmanager/about.py:30
-#, fuzzy
 msgid "(c) 2006-2011 TUBITAK/UEKAE"
-msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr "(c) 2006-20011 TUBITAK/UEKAE"
+
+#: src/bootmanager/about.py:36
+msgid "Gökmen Göksel"
+msgstr "Gökmen Göksel"
 
 #: src/bootmanager/about.py:36
 msgid "Current Maintainer"
 msgstr "Nuværende vedligeholder"
-
-#: src/bootmanager/about.py:36
-msgid "Gökmen Göksel"
-msgstr ""
 
 #: src/bootmanager/about.py:37
 msgid "Bahadır Kandemir"
@@ -41,25 +40,25 @@ msgstr "Bahadır Kandemir"
 
 #: src/bootmanager/about.py:37
 msgid "First Developer"
-msgstr ""
+msgstr "Første Udvikler"
 
 #: src/bootmanager/about.py:38
 msgid "Aydan Taşdemir"
-msgstr ""
+msgstr "Aydan Taşdemir"
 
 #: src/bootmanager/about.py:38
 msgid "Pure Qt Support"
-msgstr ""
-
-#: src/bootmanager/about.py:39
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
+msgstr "Ren Qt Support"
 
 #: src/bootmanager/about.py:39
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Jesper Lindeberg"
+
+#: src/bootmanager/about.py:39
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "jlindeberg@gmail.com"
 
 #: src/bootmanager/edit.py:151 src/bootmanager/edit.py:153
 #: src/bootmanager/edit.py:172 src/bootmanager/edit.py:174
@@ -68,13 +67,12 @@ msgstr "Fil System"
 
 #: src/bootmanager/edit.py:153 src/bootmanager/edit.py:172
 #: src/bootmanager/edit.py:174
-#, fuzzy
 msgid "All Files"
-msgstr "Alle elementer"
+msgstr "Alle Filer"
 
 #: src/bootmanager/main.py:120
 msgid "Error"
-msgstr ""
+msgstr "Fejl"
 
 #: src/bootmanager/main.py:120
 msgid ""
@@ -89,17 +87,16 @@ msgid "All Items"
 msgstr "Alle elementer"
 
 #: src/bootmanager/main.py:350
-msgid "Do you want to delete '%1'?"
-msgstr "Vil du slette '%1'?"
-
-#: src/bootmanager/main.py:350
 msgid "Remove items"
 msgstr "Fjerne elementer"
 
+#: src/bootmanager/main.py:350
+msgid "Do you want to delete '%1'?"
+msgstr "Vil du slette '%1'?"
+
 #: src/bootmanager/main.py:383 src/bootmanager/main.py:388
-#, fuzzy
 msgid "Access denied"
-msgstr "Adgang nægtet."
+msgstr "Adgang nægtet"
 
 #: ui/ui_edit.py:148
 msgid "Title"
@@ -119,7 +116,7 @@ msgstr "Kerne"
 
 #: ui/ui_edit.py:152 ui/ui_edit.py:154
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #: ui/ui_edit.py:153
 msgid "Ramdisk File"
