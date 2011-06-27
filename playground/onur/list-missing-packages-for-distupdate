@@ -18,231 +18,256 @@ import piksemel
 import pisi
 
 defaultNextRepoURI = "http://packages.pardus.org.tr/pardus/2011/testing/i686/pisi-index.xml.xz"
-forceInstallPackages = "http://svn.pardus.org.tr/uludag/trunk/pardus-upgrade/2009_to_2011.list"
-DEBUG = False
+defaultForceInstallPackageURI = "http://svn.pardus.org.tr/uludag/trunk/pardus-upgrade/2009_to_2011.list"
+Debug = False
 
 
-def printDebug(dbgstr):
-    if DEBUG:
-        print dbgstr
+class DistupdatePlanner:
+    def __init__(self, nextRepoUri=defaultNextRepoURI, forceInstallUri=defaultForceInstallPackageURI, Debug=False):
+        self.debug = Debug
+        self.forceInstallUri = forceInstallUri
+        self.nextRepoUri = nextRepoUri
 
-def uniq(i):
-    return list(set(i))
+        self.nextRepoRaw = None
+        self.nextRepoPackages = {}
+        self.nextRepoReplaces = {}
+        self.nextRepoObsoletes = []
 
-def getIndex(uri):
-    printDebug("* Getting index from %s" % uri)
+        self.installedPackages = []
+        self.forceInstallPackages = []
+        self.missingPackages = []
 
-    try:
-        if "://" in uri:
-            rawdata = urllib2.urlopen(uri).read()
-        else:
-            rawdata = open(uri, "r").read()
-    except IOError:
-        print "could not fetch %s" % uri
-        return None
+        self.sizeOfInstalledPackages = 0
 
-    if uri.endswith("bz2"):
-        data = bz2.decompress(rawdata)
-    elif uri.endswith("xz") or uri.endswith("lzma"):
-        data = lzma.decompress(rawdata)
-    else:
-        data = rawdata
+    def printDebug(self, debugstr):
+        if self.debug:
+            print debugstr
 
-    printDebug("  done")
-    return data
+    def uniq(self, i):
+        return list(set(i))
 
-def convertToRepoDB(ix):
-    printDebug("* Converting package objects to db object")
+    def getIndex(self):
+        uri = self.nextRepoUri
+        self.printDebug("* Getting index from %s" % uri)
 
-    doc = piksemel.parseString(ix)
-    dbobj = pisi.index.Index()
-    dbobj.decode(doc, [])
-
-    printDebug("  done")
-    return dbobj
-
-def parseRepoIndex(_file):
-    printDebug("* Parsing repo index of %s" % _file)
-
-    pkgprop = {}
-    obsoletelist = []
-    ix = piksemel.parseString(getIndex(_file))
-
-    obsoleteParent = ix.getTag("Distribution").getTag("Obsoletes")
-    for node in obsoleteParent.tags("Package"):
-        obsoletelist.append(node.firstChild().data())
-
-    for i in ix.tags("Package"):
-        replaceslist = []
-
-        pkgName = i.getTagData("Name")
-        pkgURI = i.getTagData("PackageURI")
-        pkgSize = i.getTagData("PackageSize")
-        pkgHash = i.getTagData("PackageHash")
-        pkgInstalledSize = i.getTagData("InstalledSize")
-
-        replacedPackages = i.getTag("Replaces")
-
-        if replacedPackages:
-            for replaced in replacedPackages.tags("Package"):
-                replaceslist.append(replaced.firstChild().data())
-
-        pkgprop[pkgName] = [replaceslist, pkgURI, pkgSize, pkgInstalledSize, pkgHash]
-
-    printDebug("  found %d packages and %s obsoletelist" % (len(pkgprop.keys()), len(obsoletelist)))
-
-    return pkgprop, obsoletelist
-
-def getInstalledPackages():
-    printDebug("* Getting installed packages")
-
-    a = pisi.api.list_installed()
-    a.sort()
-
-    printDebug("  found %d packages" % len(a))
-
-    return a
-
-def getForceInstallPackages():
-    printDebug("* Getting force install packages")
-
-    pkglist = urllib2.urlopen(forceInstallPackages).read().split()
-
-    return pkglist
-
-def getInstalledSize(installedPackages):
-    printDebug("* Calculating installed size of installed package")
-
-    totalsize = 0
-    idb = pisi.db.installdb.InstallDB()
-
-    for i in installedPackages:
-        pkg = idb.get_package(i)
-        totalsize += pkg.installedSize
-        #print "%-30s %s" % (pkg.name, pkg.installedSize)
-
-    printDebug("  total size = %d" % totalsize)
-
-    return totalsize
-
-def getDistroDiff(installed, nextRepo, obsoletes):
-    printDebug("* Calculating package differences of old and new repos")
-
-    pkglist = []
-    replacedBy = {}
-    neededPackages = []
-
-    # we make a cache of replaced packages, not to iterate over and over on package dict
-    for i in nextRepo:
-        pkglist.append(i)
-        for r in nextRepo[i][0]:
-            pkglist.append(r)
-            if r in replacedBy:
-                replacedBy[r].append(i)
+        try:
+            if "://" in uri:
+                rawdata = urllib2.urlopen(uri).read()
             else:
-                replacedBy[r] = [i]
+                rawdata = open(uri, "r").read()
+        except IOError:
+            print "could not fetch %s" % uri
+            return None
 
-    # and we package list of removed (replaced + obsoleted) packages
-    pkglist.extend(obsoletes)
-    uniqpkglist = uniq(pkglist)
+        if uri.endswith("bz2"):
+            data = bz2.decompress(rawdata)
+        elif uri.endswith("xz") or uri.endswith("lzma"):
+            data = lzma.decompress(rawdata)
+        else:
+            data = rawdata
 
-    for i in installed:
-        if i not in uniqpkglist:
-            neededPackages.append(i)
+        self.printDebug("  done")
+        self.nextRepoRaw = data
 
-    printDebug("  found %d obsoleted and replaced packages" % len(neededPackages))
+    def convertToRepoDB(ix):
+        self.printDebug("* Converting package objects to db object")
 
-    return neededPackages
+        doc = piksemel.parseString(ix)
+        dbobj = pisi.index.Index()
+        dbobj.decode(doc, [])
 
-def findMissingPackagesForDistupdate(nextRepoURI):
-    printDebug("* Find missing packages for distupdate ")
+        self.printDebug("  done")
+        return dbobj
 
-    # parseRepoIndex returns dictionary as package[NAME] = [Replaces, PISIfile, Size, Installedsize, Checksum]
-    # and obsoleted package name list as second arg
-    nextRepo, nextRepoObsoletes = parseRepoIndex(nextRepoURI)
-    installedPackages = getInstalledPackages()
+    def parseRepoIndex(self):
+        self.printDebug("* Parsing package properties in new repo")
 
-    neededPackages = getDistroDiff(installedPackages, nextRepo, nextRepoObsoletes)
+        pkgprop = {}
+        obsoletelist = []
+        ix = piksemel.parseString(self.nextRepoRaw)
 
-    if len(neededPackages):
-        printDebug("  found packages preventing distupdate")
-        printDebug(neededPackages)
-    else:
-        printDebug("  distupdate is good to go")
+        obsoleteParent = ix.getTag("Distribution").getTag("Obsoletes")
+        for node in obsoleteParent.tags("Package"):
+            obsoletelist.append(node.firstChild().data())
 
-    return neededPackages
+        for i in ix.tags("Package"):
+            replaceslist = []
 
-def resolveDependencies(A, pkgdb):
-    printDebug("* Plan dependencies for newly installing packages")
+            pkgName = i.getTagData("Name")
+            pkgURI = i.getTagData("PackageURI")
+            pkgSize = i.getTagData("PackageSize")
+            pkgHash = i.getTagData("PackageHash")
+            pkgInstalledSize = i.getTagData("InstalledSize")
 
-    # this would be the system package db on a normal scenario
-    # packagedb = pisi.db.packagedb.PackageDB()
+            replacedPackages = i.getTag("Replaces")
 
-    # repodict = dict((pkg.name, pkg) for pkg in pkgdb.packages)
-    repodict = dict((pkg.name, pkg) for pkg in pkgdb.packages)
+            if replacedPackages:
+                for replaced in replacedPackages.tags("Package"):
+                    replaceslist.append(replaced.firstChild().data())
 
-    # our lovely fake package db, we need to make up one since
-    # we are working on a repository that is not added to system
-    class PackageDB:
-        def get_package(self, key, repo = None):
-            return repodict[str(key)]
+            pkgprop[pkgName] = [replaceslist, pkgURI, pkgSize, pkgInstalledSize, pkgHash]
 
-    packagedb = PackageDB()
+        self.printDebug("  found %d packages and %s obsoletelist" % (len(pkgprop.keys()), len(obsoletelist)))
 
-    # write package names as a list for testing
-    # A = repodict.keys()
+        self.nextRepoPackages = pkgprop
+        self.nextRepoObsoletes = obsoletelist
 
-    # construct G_f
-    G_f = pisi.pgraph.PGraph(packagedb)
+    def getInstalledPackages(self):
+        self.printDebug("* Getting installed packages")
 
-    # find the install closure graph of G_f by package
-    # set A using packagedb
-    for x in A:
-        G_f.add_package(x)
+        a = pisi.api.list_installed()
+        a.sort()
 
-    B = A
-    while len(B) > 0:
-        Bp = set()
-        for x in B:
-            pkg = packagedb.get_package(x)
-            for dep in pkg.runtimeDependencies():
-                printDebug("  checking %s" % str(dep))
+        self.printDebug("  found %d packages" % len(a))
+        self.installedPackages = a
 
-                if not dep.package in G_f.vertices():
-                    Bp.add(str(dep.package))
-                G_f.add_dep(x, dep)
+    def getForceInstallPackages(self):
+        self.printDebug("* Getting force install packages")
 
-        B = Bp
+        pkglist = urllib2.urlopen(forceInstallPackages).read().split()
+        self.forceInstallPackages = pkglist
 
-    order = G_f.topological_sort()
-    order.reverse()
+    def getInstalledSize(self):
+        self.printDebug("* Calculating installed size of installed package")
 
-    return G_f, order
+        totalsize = 0
+        idb = pisi.db.installdb.InstallDB()
+
+        for i in self.installedPackages:
+            pkg = idb.get_package(i)
+            totalsize += pkg.installedSize
+            #print "%-30s %s" % (pkg.name, pkg.installedSize)
+
+        self.printDebug("  total size = %d" % totalsize)
+        self.sizeOfInstalledPackages = totalsize
+
+    def findMissingPackages(self):
+        self.printDebug("* Calculating package differences of old and new repos")
+
+        pkglist = []
+        replacedBy = {}
+        neededPackages = []
+
+        # we make a cache of replaced packages, not to iterate over and over on package dict
+        for i in self.nextRepoPackages:
+            pkglist.append(i)
+            for r in self.nextRepoPackages[i][0]:
+                pkglist.append(r)
+                if r in replacedBy:
+                    replacedBy[r].append(i)
+                else:
+                    replacedBy[r] = [i]
+
+        self.nextRepoReplaces = replacedBy
+
+        # and we package list of removed (replaced + obsoleted) packages
+        pkglist.extend(self.nextRepoObsoletes)
+        uniqpkglist = self.uniq(pkglist)
+
+        for i in self.installedPackages:
+            if i not in uniqpkglist:
+                neededPackages.append(i)
+
+        self.printDebug("  found %d obsoleted and replaced packages" % len(neededPackages))
+        self.missingPackages = neededPackages
+
+    def findMissingPackagesForDistupdate(self):
+        self.printDebug("* Find missing packages for distupdate ")
+
+        # parseRepoIndex returns dictionary as package[NAME] = [Replaces, PISIfile, Size, Installedsize, Checksum]
+        # and obsoleted package name list as second arg
+        self.getIndex()
+        self.parseRepoIndex()
+        self.getInstalledPackages()
+        self.findMissingPackages()
+
+        neededPackages = self.missingPackages
+
+        if len(neededPackages):
+            self.printDebug("  found packages preventing distupdate")
+            self.printDebug(neededPackages)
+        else:
+            self.printDebug("  distupdate is good to go")
+
+        #return neededPackages
+
+    def resolveDependencies(self, A, pkgdb):
+        self.printDebug("* Plan dependencies for newly installing packages")
+
+        # this would be the system package db on a normal scenario
+        # packagedb = pisi.db.packagedb.PackageDB()
+
+        # repodict = dict((pkg.name, pkg) for pkg in pkgdb.packages)
+        repodict = dict((pkg.name, pkg) for pkg in pkgdb.packages)
+
+        # our lovely fake package db, we need to make up one since
+        # we are working on a repository that is not added to system
+        class PackageDB:
+            def get_package(self, key, repo = None):
+                return repodict[str(key)]
+
+        packagedb = PackageDB()
+
+        # write package names as a list for testing
+        # A = repodict.keys()
+
+        # construct G_f
+        G_f = pisi.pgraph.PGraph(packagedb)
+
+        # find the install closure graph of G_f by package
+        # set A using packagedb
+        for x in A:
+            G_f.add_package(x)
+
+        B = A
+        while len(B) > 0:
+            Bp = set()
+            for x in B:
+                pkg = packagedb.get_package(x)
+                for dep in pkg.runtimeDependencies():
+                    self.printDebug("  checking %s" % str(dep))
+
+                    if not dep.package in G_f.vertices():
+                        Bp.add(str(dep.package))
+                    G_f.add_dep(x, dep)
+
+            B = Bp
+
+        order = G_f.topological_sort()
+        order.reverse()
+
+        return G_f, order
 
 
-def planDistUpdate(targetRepo=defaultNextRepoURI):
-    printDebug("* Planning the whole distupdate process")
+    def planDistUpdate(self):
+        self.printDebug("* Planning the whole distupdate process")
+        targetRepo = self.nextRepoUri
 
-    #installtest = ["firefox"]
+        #installtest = ["firefox"]
 
-    # installed packages
-    currentPackages = getInstalledPackages()
+        # installed packages
+        currentPackages = getInstalledPackages()
 
-    # new packages needed for the new distro version
-    newDistroPackages = getForceInstallPackages()
-    currentPackages.extend(newDistroPackages)
+        # new packages needed for the new distro version
+        newDistroPackages = getForceInstallPackages()
+        currentPackages.extend(newDistroPackages)
 
-    currentPackages = uniq(currentPackages)
+        currentPackages = uniq(currentPackages)
 
-    # packages that has not been taken care of
-    missingPackages = findMissingPackagesForDistupdate(targetRepo)
+        # packages that has not been taken care of
+        missingPackages = findMissingPackagesForDistupdate(targetRepo)
 
-    indexstring = getIndex(targetrepo)
-    repodb = convertToRepoDB(indexstring)
+        indexstring = getIndex(targetrepo)
+        repodb = convertToRepoDB(indexstring)
 
-    graphobj, order = resolveDependencies(currentPackages, repodb)
+        graphobj, order = resolveDependencies(currentPackages, repodb)
 
-    print order
+        print order
+
+
+    def gogogo(self):
+        print "gidelim"
+
 
 
 if __name__ == "__main__":
@@ -254,6 +279,6 @@ if __name__ == "__main__":
         # targetrepo = "pisi-index.xml"
         targetrepo = defaultNextRepoURI
 
-    planDistUpdate(targetrepo)
-
+    weddingplanner = DistupdatePlanner(nextRepoUri=targetrepo, Debug=True)
+    weddingplanner.findMissingPackagesForDistupdate()
 
