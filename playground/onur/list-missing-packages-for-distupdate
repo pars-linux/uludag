@@ -39,6 +39,7 @@ class DistupdatePlanner:
         self.sizeOfInstalledPackagesCurrent = 0
         self.sizeOfInstalledPackagesAfterUpdate = 0
         self.sizeOfPackagesToDownload = 0
+        self.packagesToInstall = []
 
     def printDebug(self, debugstr):
         if self.debug:
@@ -208,7 +209,6 @@ class DistupdatePlanner:
             for x in B:
                 pkg = packagedb.get_package(x)
                 for dep in pkg.runtimeDependencies():
-                    self.printDebug("  checking %s" % str(dep))
 
                     if not dep.package in G_f.vertices():
                         Bp.add(str(dep.package))
@@ -216,10 +216,10 @@ class DistupdatePlanner:
 
             B = Bp
 
-        order = G_f.topological_sort()
-        order.reverse()
+        installOrder = G_f.topological_sort()
+        installOrder.reverse()
 
-        return G_f, order
+        return G_f, installOrder
 
 
     def planDistUpdate(self):
@@ -228,33 +228,34 @@ class DistupdatePlanner:
         # installed packages
         currentPackages = self.installedPackages
 
+        toRemove = []
+        toAdd = []
+
         # handle replaced packages
         for i in currentPackages:
             if i in self.nextRepoReplaces:
-                currentPackages.remove(i)
-                currentPackages.extend(self.nextRepoReplaces[i])
+                toRemove.append(i)
+                toAdd.extend(self.nextRepoReplaces[i])
 
         # remove "just obsoleted" packages
-        currentPackages = list(set(currentPackages) - set(self.nextRepoObsoletes))
+        toRemove.extend(self.nextRepoObsoletes)
 
         # this should never happen with normal usage, yet we need to calculate the scenario
-        # currentPackages = list(set(currentPackages) - set(self.missingPackages))
+        toRemove.extend(self.missingPackages)
 
         # new packages needed for the new distro version
         self.getForceInstallPackages()
-        currentPackages.extend(self.forceInstallPackages)
+        toAdd.extend(self.forceInstallPackages)
 
-        currentPackages = self.uniq(currentPackages)
-
-        # packages that has not been taken care of
-        missingPackages = self.missingPackages
+        currentPackages.extend(toAdd)
+        currentPackages = list(set(currentPackages) - set(toRemove))
 
         indexstring = self.nextRepoRaw
         repodb = self.convertToPisiRepoDB(indexstring)
 
-        graphobj, order = self.resolveDependencies(currentPackages, repodb)
+        graphobj, self.packagesToInstall = self.resolveDependencies(currentPackages, repodb)
 
-        print order
+        self.printDebug("  found %d packages will be installed" % (len(self.packagesToInstall)))
 
     def findMissingPackagesForDistupdate(self):
         self.printDebug("* Find missing packages for distupdate ")
