@@ -1,8 +1,0 @@
-[Desktop Entry]
-_Name=System Manager
-_GenericName=System Manager
-_Comment=An application for managing settings like system language, keyboard and timezone.
-Exec=system-manager
-Icon=preferences-other
-Type=Application
-Categories=Qt;KDE;System;

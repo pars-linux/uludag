@@ -1,9 +1,0 @@
-<?xml version="1.0" ?>
-<PISI>
-    <Source>
-        <Name>libhangul</Name>
-        <Summary xml:lang="tr">Hangul, akıllı girdi yolu kütüphanesi</Summary>
-        <Description xml:lang="tr">libhangul, Hangul girdi programları için genel özelliklerini sağlayan bir kütüphanedir.</Description>
-    </Source>
-</PISI>
-

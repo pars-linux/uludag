@@ -1,3 +1,0 @@
-
-#define VERSION ${VERSION}
-#define VERSION_STRING "${VERSION}"

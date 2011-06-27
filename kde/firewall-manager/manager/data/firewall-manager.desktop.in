@@ -1,9 +1,0 @@
-[Desktop Entry]
-_Name=Firewall Manager
-_GenericName=Firewall Manager
-_Comment=An application for managing firewall.
-Exec=firewall-manager
-Icon=security-high
-Type=Application
-Categories=Qt;KDE;System;
-NotShowIn=KDE;

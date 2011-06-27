@@ -1,7 +1,0 @@
-[Desktop Entry]
-_Name=Display Settings
-_Comment=Configure display devices
-Exec=display-settings
-Icon=preferences-desktop-display
-Type=Application
-Categories=Qt;KDE;Settings;

@@ -1,8 +1,0 @@
-<?xml version="1.0" ?>
-<PISI>
-    <Source>
-        <Name>perl-RadiusPerl</Name>
-        <Summary xml:lang="tr">Basit Radius istemci modülü</Summary>
-        <Description xml:lang="en">The AuthenRadius module provides a simple class that allows you to send/receive Radius requests/responses to/from a Radius server.</Description>
-    </Source>
-</PISI>

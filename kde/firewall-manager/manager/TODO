@@ -1,7 +1,0 @@
-TODO
-----
-
-- Better configuration dialogs
-- Custom widget instead of EditListBox to manage ports
-    - Multi-port support required
-- Parameter validation required

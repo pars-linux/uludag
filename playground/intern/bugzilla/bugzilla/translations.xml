@@ -1,9 +1,0 @@
-<?xml version="1.0" ?>
-<PISI>
-    <Source>
-        <Name>bugzila</Name>
-        <Summary xml:lang="tr">Hata takip sistemi</Summary>
-        <Description xml:lang="tr">Geliştirilen uygulamaların kullanımı sırasında ortaya çıkan hataların kullanıcılar tarafından geliştiricilere bildirilmesini sağlayan web tabanlı bir arayüzdür.</Description>
-    </Source>
-</PISI>
-

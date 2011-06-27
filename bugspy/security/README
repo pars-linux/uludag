@@ -1,3 +1,0 @@
-This script was taken from Gentoo to minize the work in Pardus Security. Not much has been changed from original code.
-
-Bugzilla code was changed to enter bugs on Pardus bugzilla. After bug is entered, the INI entry for this bug is added to relevant tracker files (tracker.2009.ini, tracker.2008.ini, tracker.corporate.ini).
