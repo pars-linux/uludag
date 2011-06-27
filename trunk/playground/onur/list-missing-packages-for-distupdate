@@ -126,6 +126,8 @@ class DistupdatePlanner:
         self.printDebug("* Getting force install packages")
 
         pkglist = urllib2.urlopen(forceInstallPackages).read().split()
+
+        self.printDebug("  found %d packages" % len(pkglist))
         self.forceInstallPackages = pkglist
 
     def getInstalledSize(self):
@@ -280,4 +282,6 @@ if __name__ == "__main__":
 
     weddingplanner = DistupdatePlanner(nextRepoUri=targetrepo, Debug=True)
     weddingplanner.findMissingPackagesForDistupdate()
+
+    # print weddingplanner.nextRepoReplaces["pycairo"]
 
