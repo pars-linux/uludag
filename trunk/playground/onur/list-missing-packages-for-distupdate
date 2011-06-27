@@ -225,8 +225,6 @@ class DistupdatePlanner:
     def planDistUpdate(self):
         self.printDebug("* Planning the whole distupdate process")
 
-        #installtest = ["firefox"]
-
         # installed packages
         currentPackages = self.installedPackages
 
@@ -286,8 +284,8 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         targetrepo = sys.argv[1]
     else:
-        # targetrepo = "pisi-index.xml"
-        targetrepo = defaultNextRepoURI
+        targetrepo = "pisi-index.xml"
+        # targetrepo = defaultNextRepoURI
 
     weddingplanner = DistupdatePlanner(nextRepoUri=targetrepo, Debug=True)
     weddingplanner.findMissingPackagesForDistupdate()
