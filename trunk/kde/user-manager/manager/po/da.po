@@ -14,8 +14,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: da\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: data/kcm_user-manager.desktop.in.h:1 data/user-manager.desktop.in.h:1
 msgid "An application for managing user accounts."
@@ -35,7 +35,7 @@ msgstr "Gökmen Göksel"
 
 #: src/usermanager/about.py:34
 msgid "Current Maintainer"
-msgstr "Nuværende vedligeholder"
+msgstr "Nuværende Vedligeholder"
 
 #: src/usermanager/about.py:35
 msgid "Bahadır Kandemir"
@@ -48,12 +48,12 @@ msgstr "Første Udvikler"
 #: src/usermanager/about.py:36
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Dit navn"
+msgstr "Jesper Lindeberg"
 
 #: src/usermanager/about.py:36
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "Din email"
+msgstr "jlindeberg@gmail.com"
 
 #: src/usermanager/edit.py:125
 msgid "User/group operations"
@@ -69,7 +69,7 @@ msgstr "Service aktiviteter"
 
 #: src/usermanager/edit.py:128
 msgid "Date/time operations"
-msgstr "Dato/tids aktiviteter"
+msgstr "Dato/tid aktiviteter"
 
 #: src/usermanager/edit.py:129
 msgid "Kernel/Process operations"
