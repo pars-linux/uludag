@@ -65,7 +65,7 @@ msgstr "Pakke aktiviteter"
 
 #: src/usermanager/edit.py:127
 msgid "Service operations"
-msgstr "Service aktiviteter"
+msgstr "Tjeneste aktiviteter"
 
 #: src/usermanager/edit.py:128
 msgid "Date/time operations"
@@ -105,7 +105,7 @@ msgstr "Der skal vælges mindst en gruppe."
 
 #: src/usermanager/edit.py:384
 msgid "Start with typing this user's full name."
-msgstr "Start med at indtaste denne bruger fulde navn."
+msgstr "Start med at skrive brugerens fulde navn."
 
 #: src/usermanager/edit.py:387
 msgid "You should enter a password for this user."
@@ -282,4 +282,4 @@ msgstr "Slet"
 
 #: ui/ui_main.py:82
 msgid "Add New"
-msgstr "Tilføj ny"
+msgstr "Tilføj Ny"
