@@ -13,8 +13,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .tmp/ui_configure.py:44
 msgid "Options"
@@ -31,11 +31,11 @@ msgstr "Handlinger"
 #: .tmp/historymanager/about.py:21 .tmp/historymanager/about.py:23
 #: .tmp/ui_mainwindow.py:129
 msgid "History Manager"
-msgstr "Håndtering for historik"
+msgstr "Historik Håndtering"
 
 #: .tmp/historymanager/about.py:25
 msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009-2011 TUBITAK/UEKAE"
 
 #: .tmp/historymanager/about.py:32
 msgid "İşbaran Akçayır"
@@ -43,11 +43,11 @@ msgstr "İşbaran Akçayır"
 
 #: .tmp/historymanager/about.py:32
 msgid "Current Maintainer"
-msgstr "Nuværende vedligeholder"
+msgstr "Nuværende Vedligeholder"
 
 #: .tmp/historymanager/window.py:76
 msgid "%1 Operations Loaded"
-msgstr "%1 Handlinger indlæst"
+msgstr "%1 Handlinger Indlæst"
 
 #: .tmp/historymanager/window.py:118
 msgid "Loading operation details.."
