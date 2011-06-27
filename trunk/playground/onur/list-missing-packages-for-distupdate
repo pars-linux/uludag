@@ -70,7 +70,7 @@ class DistupdatePlanner:
         self.printDebug("  done")
         self.nextRepoRaw = data
 
-    def convertToRepoDB(ix):
+    def convertToRepoDB(self, ix):
         self.printDebug("* Converting package objects to db object")
 
         doc = piksemel.parseString(ix)
@@ -125,7 +125,7 @@ class DistupdatePlanner:
     def getForceInstallPackages(self):
         self.printDebug("* Getting force install packages")
 
-        pkglist = urllib2.urlopen(forceInstallPackages).read().split()
+        pkglist = urllib2.urlopen(self.forceInstallUri).read().split()
 
         self.printDebug("  found %d packages" % len(pkglist))
         self.forceInstallPackages = pkglist
@@ -173,26 +173,6 @@ class DistupdatePlanner:
 
         self.printDebug("  found %d obsoleted and replaced packages" % len(neededPackages))
         self.missingPackages = neededPackages
-
-    def findMissingPackagesForDistupdate(self):
-        self.printDebug("* Find missing packages for distupdate ")
-
-        # parseRepoIndex returns dictionary as package[NAME] = [Replaces, PISIfile, Size, Installedsize, Checksum]
-        # and obsoleted package name list as second arg
-        self.getIndex()
-        self.parseRepoIndex()
-        self.getInstalledPackages()
-        self.findMissingPackages()
-
-        neededPackages = self.missingPackages
-
-        if len(neededPackages):
-            self.printDebug("  found packages preventing distupdate")
-            self.printDebug(neededPackages)
-        else:
-            self.printDebug("  distupdate is good to go")
-
-        #return neededPackages
 
     def resolveDependencies(self, A, pkgdb):
         self.printDebug("* Plan dependencies for newly installing packages")
@@ -244,28 +224,45 @@ class DistupdatePlanner:
 
     def planDistUpdate(self):
         self.printDebug("* Planning the whole distupdate process")
-        targetRepo = self.nextRepoUri
 
         #installtest = ["firefox"]
 
         # installed packages
-        currentPackages = getInstalledPackages()
+        currentPackages = self.installedPackages
 
         # new packages needed for the new distro version
-        newDistroPackages = getForceInstallPackages()
-        currentPackages.extend(newDistroPackages)
+        self.getForceInstallPackages()
+        currentPackages.extend(self.forceInstallPackages)
 
-        currentPackages = uniq(currentPackages)
+        currentPackages = self.uniq(currentPackages)
 
         # packages that has not been taken care of
-        missingPackages = findMissingPackagesForDistupdate(targetRepo)
+        missingPackages = self.missingPackages
 
-        indexstring = getIndex(targetrepo)
-        repodb = convertToRepoDB(indexstring)
+        indexstring = self.nextRepoRaw
+        repodb = self.convertToRepoDB(indexstring)
 
-        graphobj, order = resolveDependencies(currentPackages, repodb)
+        graphobj, order = self.resolveDependencies(currentPackages, repodb)
 
         print order
+
+    def findMissingPackagesForDistupdate(self):
+        self.printDebug("* Find missing packages for distupdate ")
+
+        # parseRepoIndex returns dictionary as package[NAME] = [Replaces, PISIfile, Size, Installedsize, Checksum]
+        # and obsoleted package name list as second arg
+        self.getIndex()
+        self.parseRepoIndex()
+        self.getInstalledPackages()
+        self.findMissingPackages()
+
+        neededPackages = self.missingPackages
+
+        if len(neededPackages):
+            self.printDebug("  found packages preventing distupdate")
+            self.printDebug(neededPackages)
+        else:
+            self.printDebug("  distupdate is good to go")
 
 
     def gogogo(self):
@@ -282,6 +279,7 @@ if __name__ == "__main__":
 
     weddingplanner = DistupdatePlanner(nextRepoUri=targetrepo, Debug=True)
     weddingplanner.findMissingPackagesForDistupdate()
+    weddingplanner.planDistUpdate()
 
     # print weddingplanner.nextRepoReplaces["pycairo"]
 
