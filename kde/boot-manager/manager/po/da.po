@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/boot-manager.py:95
 msgid "Boot Manager"
@@ -24,7 +24,7 @@ msgstr "Opstartsindlæser"
 
 #: src/bootmanager/about.py:30
 msgid "(c) 2006-2011 TUBITAK/UEKAE"
-msgstr "(c) 2006-20011 TUBITAK/UEKAE"
+msgstr "(c) 2006-2011 TUBITAK/UEKAE"
 
 #: src/bootmanager/about.py:36
 msgid "Gökmen Göksel"
@@ -32,7 +32,7 @@ msgstr "Gökmen Göksel"
 
 #: src/bootmanager/about.py:36
 msgid "Current Maintainer"
-msgstr "Nuværende vedligeholder"
+msgstr "Nuværende Vedligeholder"
 
 #: src/bootmanager/about.py:37
 msgid "Bahadır Kandemir"
@@ -108,7 +108,7 @@ msgstr "Navne på det opstartspunkt der vises i opstartsmenuen."
 
 #: ui/ui_edit.py:150
 msgid "Disk"
-msgstr "Enhed"
+msgstr "Disk"
 
 #: ui/ui_edit.py:151
 msgid "Kernel"
@@ -120,15 +120,15 @@ msgstr "..."
 
 #: ui/ui_edit.py:153
 msgid "Ramdisk File"
-msgstr "Ramdisk fil"
+msgstr "Hukommelsesdisk Fil"
 
 #: ui/ui_edit.py:155
 msgid "Boot Options"
-msgstr "Opstarts muligheder"
+msgstr "Opstarts Indstillinger"
 
 #: ui/ui_edit.py:156
 msgid "Boot options for operating system."
-msgstr "Opstarts muligheder for operativsystemet."
+msgstr "Opstarts indstillinger for operativsystemet."
 
 #: ui/ui_item.py:78
 msgid "Set or unset entry as default boot entry."
@@ -144,7 +144,7 @@ msgstr "Slet"
 
 #: ui/ui_main.py:85
 msgid "Add New"
-msgstr "Tilføj ny"
+msgstr "Tilføj Ny"
 
 #: ui/ui_options.py:42
 msgid "Boot menu display time:"
