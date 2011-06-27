@@ -35,7 +35,7 @@ msgstr "Gökmen Göksel"
 
 #: src/servicemanager/about.py:34
 msgid "Current Maintainer"
-msgstr "Nuværende vedligeholder"
+msgstr "Nuværende Vedligeholder"
 
 #: src/servicemanager/about.py:35
 msgid "Bahadır Kandemir"
