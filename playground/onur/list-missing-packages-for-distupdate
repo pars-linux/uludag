@@ -70,7 +70,7 @@ class DistupdatePlanner:
         self.printDebug("  done")
         self.nextRepoRaw = data
 
-    def convertToRepoDB(self, ix):
+    def convertToPisiRepoDB(self, ix):
         self.printDebug("* Converting package objects to db object")
 
         doc = piksemel.parseString(ix)
@@ -230,6 +230,18 @@ class DistupdatePlanner:
         # installed packages
         currentPackages = self.installedPackages
 
+        # handle replaced packages
+        for i in currentPackages:
+            if i in self.nextRepoReplaces:
+                currentPackages.remove(i)
+                currentPackages.extend(self.nextRepoReplaces[i])
+
+        # remove "just obsoleted" packages
+        currentPackages = list(set(currentPackages) - set(self.nextRepoObsoletes))
+
+        # this should never happen with normal usage, yet we need to calculate the scenario
+        # currentPackages = list(set(currentPackages) - set(self.missingPackages))
+
         # new packages needed for the new distro version
         self.getForceInstallPackages()
         currentPackages.extend(self.forceInstallPackages)
@@ -240,7 +252,7 @@ class DistupdatePlanner:
         missingPackages = self.missingPackages
 
         indexstring = self.nextRepoRaw
-        repodb = self.convertToRepoDB(indexstring)
+        repodb = self.convertToPisiRepoDB(indexstring)
 
         graphobj, order = self.resolveDependencies(currentPackages, repodb)
 
