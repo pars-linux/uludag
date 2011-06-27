@@ -93,7 +93,7 @@ msgstr "Çift Tıklama"
 #: rc.cpp:9
 #, no-c-format
 msgid "Consider the following characters &part of a word when double clicking:"
-msgstr "Bir kelimenin taki&p eden karakter bölümü için kelimeyi çift tıkla:"
+msgstr "Bir kelime çift tıklandığında, o &kelimeden sayılacak harfler:"
 
 #. i18n: file kcmkonsoledialog.ui line 107
 #: rc.cpp:12
@@ -105,7 +105,7 @@ msgstr "Çeşitli"
 #: rc.cpp:15
 #, no-c-format
 msgid "Show terminal si&ze after resizing"
-msgstr "&Yeniden boyutlandırırken terminal boyutunu göster"
+msgstr "&Yeniden boyutlandırdıktan sonra uçbirim boyutunu göster"
 
 #. i18n: file kcmkonsoledialog.ui line 126
 #: rc.cpp:18
@@ -117,38 +117,38 @@ msgstr "Çe&rçeveyi göster"
 #: rc.cpp:21
 #, no-c-format
 msgid "&Confirm quit when closing more than one session"
-msgstr "&Birden çok oturumlar varsa çıkmadan önce uyar"
+msgstr "&Birden çok oturum varsa çıkmadan önce uyar"
 
 #. i18n: file kcmkonsoledialog.ui line 142
 #: rc.cpp:24
 #, no-c-format
 msgid "&Blinking cursor"
-msgstr "&Parlayan imleç"
+msgstr "&Yanıp sönen imleç"
 
 #. i18n: file kcmkonsoledialog.ui line 150
 #: rc.cpp:27
 #, no-c-format
 msgid "&Require Ctrl key for drag and drop"
-msgstr "&Sürükle bırak için Ctrl tuşu kullanılsın"
+msgstr "&Sürükle bırak için Ctrl tuşunu kullan"
 
 #. i18n: file kcmkonsoledialog.ui line 158
 #: rc.cpp:30
 #, no-c-format
 msgid "Triple click selects &only from the current word forward"
-msgstr "Üç tıklama ileri doğru &geçerli kelimeden birini seçer"
+msgstr "Üç tıklama, tı&klanan kelimeden itibaren seçim yapsın"
 
 #. i18n: file kcmkonsoledialog.ui line 166
 #: rc.cpp:33
 #, no-c-format
 msgid "Allow progr&ams to resize terminal window"
 msgstr ""
-"Uçbirim penceresini yeniden boyutlandırmak için progr&amlara izin veriniz"
+"Progr&amlara uçbirim penceresini boyutlandırma izni ver"
 
 #. i18n: file kcmkonsoledialog.ui line 174
 #: rc.cpp:36
 #, no-c-format
 msgid "Use Ctrl+S/Ctrl+Q flow control"
-msgstr "Ctrl S/Ctrl Q akış denetimini kullan"
+msgstr "Ctrl+S/Ctrl+Q akış denetimini kullan"
 
 #. i18n: file kcmkonsoledialog.ui line 199
 #: rc.cpp:39
@@ -160,7 +160,7 @@ msgstr "İki yönlü metin yazımını destekle"
 #: rc.cpp:42
 #, no-c-format
 msgid "Seconds to detect s&ilence:"
-msgstr "Ortaya çıkarma san&iyesi:"
+msgstr "Sess&izliği farketme süresi:"
 
 #. i18n: file kcmkonsoledialog.ui line 269
 #: rc.cpp:45
@@ -190,7 +190,7 @@ msgstr "&Oturum"
 #: rc.cpp:57
 #, no-c-format
 msgid "Konsole Schema Editor"
-msgstr "Konsole şema düzenleyici"
+msgstr "Konsole Şema Düzenleyicisi"
 
 #. i18n: file schemadialog.ui line 42
 #: rc.cpp:60
@@ -691,7 +691,7 @@ msgid ""
 "list."
 msgstr ""
 "Çalıştırma girdisi geçerli bir komut değil.\n"
-"Hala oturumu kaydedebilirsiniz, fakat bu Konsol'un Oturum listesinde yer almaz."
+"Bu oturumu kaydedebilirsiniz, fakat Konsole oturum listesinde gözükmez."
 
 #: sessioneditor.cpp:306
 msgid "Invalid Execute Entry"
@@ -703,7 +703,7 @@ msgstr "Oturumu Kaydet"
 
 #: sessioneditor.cpp:359
 msgid "You are trying to remove a system session. Are you sure?"
-msgstr "Sistem oturumlarını kapatmak istiyorsunuz. Emin misiniz?"
+msgstr "Bir sistem oturumunu silmek istiyorsunuz. Emin misiniz?"
 
 #: sessioneditor.cpp:360
 msgid "Removing System Session"
