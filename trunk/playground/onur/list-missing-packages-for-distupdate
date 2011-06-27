@@ -19,7 +19,6 @@ import pisi
 
 defaultNextRepoURI = "http://packages.pardus.org.tr/pardus/2011/testing/i686/pisi-index.xml.xz"
 defaultForceInstallPackageURI = "http://svn.pardus.org.tr/uludag/trunk/pardus-upgrade/2009_to_2011.list"
-Debug = False
 
 
 class DistupdatePlanner:
@@ -37,7 +36,9 @@ class DistupdatePlanner:
         self.forceInstallPackages = []
         self.missingPackages = []
 
-        self.sizeOfInstalledPackages = 0
+        self.sizeOfInstalledPackagesCurrent = 0
+        self.sizeOfInstalledPackagesAfterUpdate = 0
+        self.sizeOfPackagesToDownload = 0
 
     def printDebug(self, debugstr):
         if self.debug:
@@ -271,8 +272,6 @@ class DistupdatePlanner:
 
 
 if __name__ == "__main__":
-    DEBUG = True
-
     if len(sys.argv) > 1:
         targetrepo = sys.argv[1]
     else:
