@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Peter Lyberth <peterjensen84@gmail.com>, 2009.
 msgid ""
 msgstr ""
@@ -10,16 +10,16 @@ msgstr ""
 "PO-Revision-Date: 2009-09-08 11:38+0200\n"
 "Last-Translator: Peter Lyberth <peterjensen84@gmail.com>\n"
 "Language-Team: Danish <pardus-translators@pardus.org.tr>\n"
-"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"Language: da\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: data/package-manager.desktop.in.h:1
 msgid "Add or Remove Software"
-msgstr ""
+msgstr "Tilføj eller Fjern Software"
 
 #: data/package-manager.desktop.in.h:2
 #: data/packagemanager-helper.desktop.in.h:2 src/progressdialog.py:62
@@ -29,25 +29,24 @@ msgstr "Pakke håndtering"
 
 #: data/package-manager.desktop.in.h:3
 msgid "PiSi Package Manager Graphical User Interface"
-msgstr ""
+msgstr "PiSi Pakke Håndteringens Grafiske Brugerflade"
 
 #: data/packagemanager-helper.desktop.in.h:1
-#, fuzzy
 msgid "Add/Remove/Update Packages"
-msgstr "Fjern pakke(r)"
+msgstr "Tilføj/Fjern/Updatere Pakker"
 
 #: src/about.py:27
-#, fuzzy
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009-2011 TUBITAK/UEKAE"
+
+#: src/about.py:36
+#, fuzzy
+msgid "Gökmen Göksel"
+msgstr "Gökmen Göksel"
 
 #: src/about.py:36
 msgid "Developer"
-msgstr ""
-
-#: src/about.py:36
-msgid "Gökmen Göksel"
-msgstr ""
+msgstr "Udvilker"
 
 #: src/about.py:37
 msgid "Faik Uygur"
@@ -55,26 +54,25 @@ msgstr "Faik Uygur"
 
 #: src/about.py:37
 msgid "First Author"
-msgstr ""
+msgstr "Første udgiver"
 
 #: src/about.py:38
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Dit navn"
 
 #: src/about.py:39
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "Dine email adresser"
 
 #: src/basketdialog.py:55 ui/ui_basketdialog.py:190
-#, fuzzy
 msgid "Clear Basket"
-msgstr "Ryd mellemlager"
+msgstr "Tøm Kurv"
 
 #: src/basketdialog.py:56
 msgid "Do you want to clear all selections ?"
-msgstr ""
+msgstr "Vil du nulstille alle valgte ?"
 
 #: src/basketdialog.py:70 src/pmutils.py:79 src/pmutils.py:84
 #: src/pmutils.py:87 src/pmutils.py:90 src/pmutils.py:93
@@ -84,7 +82,7 @@ msgstr "Pisi Fejl"
 
 #: src/basketdialog.py:173
 msgid "You must restart your system for the updates to take effect"
-msgstr ""
+msgstr "Du skal genstarte dit system før opdateringerne vil træde i kraft"
 
 #: src/basketdialog.py:175 src/basketdialog.py:184
 msgid "Update Requirements"
@@ -526,12 +524,12 @@ msgid "Update"
 msgstr "Opdater"
 
 #: src/tray.py:209
-msgid "Ignore"
-msgstr "Ignorer"
-
-#: src/tray.py:209
 msgid "Show Updates"
 msgstr "VIs opdateringer"
+
+#: src/tray.py:209
+msgid "Ignore"
+msgstr "Ignorer"
 
 #: src/webdialog.py:126 ui/ui_webdialog.py:158
 #, fuzzy
@@ -896,15 +894,12 @@ msgstr "Kontroller venligst dine netværks indstillinger og forsøg igen."
 msgid "Package Details"
 msgstr "Pakke størrelse:"
 
-#, fuzzy
 #~ msgid "No proxy server"
 #~ msgstr "Ingen proxy server"
 
-#, fuzzy
 #~ msgid "Use manual settings"
 #~ msgstr "&Generelle indstillinger"
 
-#, fuzzy
 #~ msgid "Search Button"
 #~ msgstr "Søg"
 
@@ -944,7 +939,6 @@ msgstr "Pakke størrelse:"
 #~ msgid "Succesfully finished installing %1"
 #~ msgstr "Installerede %1 succesfuldt"
 
-#, fuzzy
 #~ msgid "Succesfully finished installing packages"
 #~ msgstr "Installerede %1 succesfuldt"
 
@@ -984,15 +978,12 @@ msgstr "Pakke størrelse:"
 #~ msgid "Reverse package selections"
 #~ msgstr "Fjern markering af pakker"
 
-#, fuzzy
 #~ msgid "There are %1 updates available!"
 #~ msgstr "Der er <b>%1</b> opdateringer tilgængelige!"
 
-#, fuzzy
 #~ msgid "Help"
 #~ msgstr "&Hjælp"
 
-#, fuzzy
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 #~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -1006,29 +997,23 @@ msgstr "Pakke størrelse:"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Vælg alle pakker i denne gruppe</p> </body></html>"
 
-#, fuzzy
 #~ msgid "-- / --"
 #~ msgstr "--  / --"
 
-#, fuzzy
 #~ msgid ""
 #~ "Installed Packages\n"
 #~ "\n"
 #~ msgstr "Installer Pakke(r)"
 
-#, fuzzy
 #~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 #~ msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
-#, fuzzy
 #~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
 #~ msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
 
-#, fuzzy
 #~ msgid "Modify Package(s)"
 #~ msgstr "Fjerner pakke(r)"
 
-#, fuzzy
 #~ msgid "Upgradable Packages"
 #~ msgstr "Vis pakker der kan opdateres "
 
