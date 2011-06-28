@@ -28,17 +28,21 @@ class DistupdatePlanner:
         self.nextRepoUri = nextRepoUri
 
         self.nextRepoRaw = None
+        # package[NAME] = [Replaces, PackageFile, PackageSize, InstalledSize, Checksum]
         self.nextRepoPackages = {}
+        # package[NAME] = [replacedby1, replacedby2, ...]
         self.nextRepoReplaces = {}
         self.nextRepoObsoletes = []
 
         self.installedPackages = []
         self.forceInstallPackages = []
         self.missingPackages = []
+        self.graphobj = None
 
         self.sizeOfInstalledPackagesCurrent = 0
         self.sizeOfInstalledPackagesAfterUpdate = 0
         self.sizeOfPackagesToDownload = 0
+        self.sizeOfBiggestPackage = 0
         self.packagesToInstall = []
 
     def printDebug(self, debugstr):
@@ -97,9 +101,9 @@ class DistupdatePlanner:
 
             pkgName = i.getTagData("Name")
             pkgURI = i.getTagData("PackageURI")
-            pkgSize = i.getTagData("PackageSize")
+            pkgSize = int(i.getTagData("PackageSize"))
             pkgHash = i.getTagData("PackageHash")
-            pkgInstalledSize = i.getTagData("InstalledSize")
+            pkgInstalledSize = int(i.getTagData("InstalledSize"))
 
             replacedPackages = i.getTag("Replaces")
 
@@ -131,8 +135,8 @@ class DistupdatePlanner:
         self.printDebug("  found %d packages" % len(pkglist))
         self.forceInstallPackages = pkglist
 
-    def getInstalledSize(self):
-        self.printDebug("* Calculating installed size of installed package")
+    def calculateInstalledSize(self):
+        self.printDebug("* Calculating disk space installed packages are using")
 
         totalsize = 0
         idb = pisi.db.installdb.InstallDB()
@@ -144,6 +148,21 @@ class DistupdatePlanner:
 
         self.printDebug("  total size = %d" % totalsize)
         self.sizeOfInstalledPackages = totalsize
+
+    def calculateNextRepoSize(self):
+        self.printDebug("* Calculating package size and installed size of new packages")
+
+        for p in self.packagesToInstall:
+            i = self.nextRepoPackages[p]
+
+            self.sizeOfPackagesToDownload += i[2]
+            self.sizeOfInstalledPackagesAfterUpdate += i[3]
+
+            if i[2] > self.sizeOfBiggestPackage:
+                self.sizeOfBiggestPackage = i[2]
+
+        self.printDebug("  total download size = %d" % self.sizeOfPackagesToDownload)
+        self.printDebug("  total install size  = %d" % self.sizeOfInstalledPackagesAfterUpdate)
 
     def findMissingPackages(self):
         self.printDebug("* Calculating package differences of old and new repos")
@@ -176,7 +195,7 @@ class DistupdatePlanner:
         self.missingPackages = neededPackages
 
     def resolveDependencies(self, A, pkgdb):
-        self.printDebug("* Plan dependencies for newly installing packages")
+        self.printDebug("* Find dependencies for packages to be installed")
 
         # this would be the system package db on a normal scenario
         # packagedb = pisi.db.packagedb.PackageDB()
@@ -253,44 +272,41 @@ class DistupdatePlanner:
         indexstring = self.nextRepoRaw
         repodb = self.convertToPisiRepoDB(indexstring)
 
-        graphobj, self.packagesToInstall = self.resolveDependencies(currentPackages, repodb)
+        self.graphobj, self.packagesToInstall = self.resolveDependencies(currentPackages, repodb)
 
-        self.printDebug("  found %d packages will be installed" % (len(self.packagesToInstall)))
+        self.printDebug("  found %d packages to install" % (len(self.packagesToInstall)))
 
-    def findMissingPackagesForDistupdate(self):
+    def plan(self):
         self.printDebug("* Find missing packages for distupdate ")
 
-        # parseRepoIndex returns dictionary as package[NAME] = [Replaces, PISIfile, Size, Installedsize, Checksum]
-        # and obsoleted package name list as second arg
         self.getIndex()
         self.parseRepoIndex()
         self.getInstalledPackages()
+        self.calculateInstalledSize()
         self.findMissingPackages()
-
-        neededPackages = self.missingPackages
-
-        if len(neededPackages):
-            self.printDebug("  found packages preventing distupdate")
-            self.printDebug(neededPackages)
-        else:
-            self.printDebug("  distupdate is good to go")
-
-
-    def gogogo(self):
-        print "gidelim"
-
+        self.planDistUpdate()
+        self.calculateNextRepoSize()
 
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         targetrepo = sys.argv[1]
     else:
-        targetrepo = "pisi-index.xml"
-        # targetrepo = defaultNextRepoURI
+        # targetrepo = "pisi-index.xml"
+        targetrepo = defaultNextRepoURI
 
     weddingplanner = DistupdatePlanner(nextRepoUri=targetrepo, Debug=True)
-    weddingplanner.findMissingPackagesForDistupdate()
-    weddingplanner.planDistUpdate()
+    weddingplanner.plan()
 
-    # print weddingplanner.nextRepoReplaces["pycairo"]
+    print
+    if len(self.missingPackages):
+        weddingplanner.printDebug("  found packages preventing distupdate")
+        weddingplanner.printDebug(weddingplanner.missingPackages)
+    else:
+        weddingplanner.printDebug("  distupdate is good to go")
+
+    print
+    print "installed size %d" % weddingplanner.sizeOfInstalledPackagesCurrent
+    print "installed size after update %d" % weddingplanner.sizeOfInstalledPackagesAfterUpdate
+    print "download size %d" % weddingplanner.sizeOfPackagesToDownload
 
