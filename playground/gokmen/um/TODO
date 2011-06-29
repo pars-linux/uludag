@@ -24,9 +24,9 @@ Legend:
 Tasks:
 ------
 
-- Calculate installed packages package size (OK)
-? Calculate necessary packages size (both pisi and installed size) (OK)
-- Find minimum required free space
++ Calculate installed packages package size (OK)
++ Calculate necessary packages size (both pisi and installed size) (OK)
++ Find minimum required free space
 + Store current step in temporary file and then start from it
 + Do not reinstall all packages in Force List
 + Create a shiny upgrade-manager banner
