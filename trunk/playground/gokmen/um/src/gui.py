@@ -48,7 +48,7 @@ from backend import cleanup_pisi
 
 # Helper & Migrate Methods
 from migratekde import migrateKDE
-from repo_helper import findMissingPackagesForDistupdate
+from repohelper import DistupdatePlanner
 from migrategrubconf import migrateGrubconf
 
 # Translations
@@ -182,7 +182,9 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
 
     # Step 1 Method
     def findMissingPackages(self):
-        self.missing_packages = findMissingPackagesForDistupdate(self.target_repo)
+        updateplan = DistupdatePlanner(self.target_repo)
+        self.missing_packages = updatePlan.missingPackages
+        self.required_diskspace = updatePlan.sizeOfNeededTotalSpace
 
     # Step 1 Method
     def showResults(self):
