@@ -172,5 +172,9 @@ class OperationManager(QObject):
             if not self.state.inRemove() and signal == "removed":
                 return
             self.packageNo += 1
+            # If the number of operated packages more than total packages just fix them
+            # The issue is related to the pm-install remote package installs
+            if self.packageNo > self.totalPackages:
+                self.totalPackages = self.packageNo
             self.updatePackageProgress()
             self.emit(SIGNAL("packageChanged(int, int, QString)"), self.packageNo, self.totalPackages, i18n(signal))
