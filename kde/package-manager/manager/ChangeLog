@@ -1,3 +1,24 @@
+2011-06-29 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Fix pm-install local package install problem. 
+
+2011-06-27 transifex
+         * l10n: Updated Danish (da) translation to 100% (Jesper Lindeberg)
+         * New status: 199 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2011-06-27 transifex
+         * l10n: Updated Danish (da) translation to 54% (Jesper Lindeberg)
+         * New status: 109 messages complete with 51 fuzzies and 39 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2011-06-20 transifex
+         * l10n: Updated Croatian (hr) translation to 95% (Ivica Koli)
+         * New status: 190 messages complete with 0 fuzzies and 9 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2011-06-20 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Update ChangeLog 
+
 2011-06-13 metin.akdere
          * Show package files properly which include non-English characters.
          * Bug fixed at http://bugs.pardus.org.tr/17600
@@ -1963,24 +1984,4 @@
 
 2010-05-25 Gökmen Göksel <gokmen@pardus.org.tr>
          * Logic error #+??!!,2x'££!--.
-
-2010-05-25 Gökmen Göksel <gokmen@pardus.org.tr>
-         * it should be all not any 
-
-2010-05-25 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Check package extras before install if all packages comes from repo. 
-
-2010-05-25 Gökmen Göksel <gokmen@pardus.org.tr>
-         * - Total size of a package never change, wth ?
-         * Bug fixed at http://bugs.pardus.org.tr/13145
-
-2010-05-24 transifex
-         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
-         * New status: 164 messages complete with 0 fuzzies and 0 untranslated.
-         * Transmitted-via: Transifex (translate.pardus.org.tr).
-
-2010-05-24 transifex
-         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
-         * New status: 164 messages complete with 0 fuzzies and 0 untranslated.
-         * Transmitted-via: Transifex (translate.pardus.org.tr).
 
