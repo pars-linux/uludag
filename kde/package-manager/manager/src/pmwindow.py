@@ -53,6 +53,7 @@ class PmWindow(QDialog, PM, Ui_PmWindow):
         self.state = StateManager(self)
         self.iface = self.state.iface
         self.state._selected_packages = packages
+        self._packages = packages[:]
         self._started = False
 
         self._postexceptions = [lambda: sys.exit(1)]
@@ -157,7 +158,7 @@ class PmWindow(QDialog, PM, Ui_PmWindow):
         if isAllLocal(self.model.selectedPackages()):
             connection_required = False
 
-        operation = self.state.operationAction(self.model.selectedPackages(),
+        operation = self.state.operationAction(self._packages,
                                                reinstall = reinstall,
                                                silence = True,
                                                connection_required = connection_required)
