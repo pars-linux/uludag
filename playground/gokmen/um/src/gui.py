@@ -22,6 +22,7 @@ import urlgrabber
 # PyQt
 from PyQt4.QtGui import QDialog
 from PyQt4.QtGui import QWidget
+from PyQt4.QtGui import QMessageBox
 from PyQt4.QtCore import SIGNAL, QTimer
 
 # UI Files
@@ -178,22 +179,45 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
             if getattr(repoWidget, repo).isChecked():
                 self.target_repo = REPO_TEMPLATE % repo
 
+        if repoWidget.manual.isChecked():
+            self.target_repo = str(repoWidget.manualRepo.text())
+
         self.thread_check.start()
 
     # Step 1 Method
     def findMissingPackages(self):
-        updateplan = DistupdatePlanner(self.target_repo)
+        updatePlan = DistupdatePlanner(nextRepoUri = self.target_repo, Debug = True, forceInstallUri = FORCE_INSTALL)
+        updatePlan.plan()
         self.missing_packages = updatePlan.missingPackages
         self.required_diskspace = updatePlan.sizeOfNeededTotalSpace
 
     # Step 1 Method
     def showResults(self):
         resultWidget = self.pageWidget.getWidget(2).ui
-        resultWidget.widget.show()
-        if self.missing_packages:
-            resultWidget.package_list.clear()
-            resultWidget.package_list.addItems(self.missing_packages)
-        self.log("MISSING PACKAGES FOUND: %s" % ','.join(self.missing_packages), "GUI")
+        free_size = os.statvfs('/').f_bavail * os.statvfs('/').f_bsize
+        if self.required_diskspace == 0:
+            self.hideMessage()
+            QMessageBox.critical(self, _("Critical Error"),
+                                       _("An error ocurred while planning the upgrade procedure, "\
+                                         "this is usually caused by faulty Network Connection or "\
+                                         "wrong repo address."))
+            self.pageWidget.prev()
+            return
+        if self.required_diskspace + 200000000 > free_size:
+            self.hideMessage()
+            QMessageBox.critical(self, _("Not enough free space"),
+                                       _("This upgrade requires at least <b>%s MB</b> free space, "\
+                                         "please use another repository or remove some files "\
+                                         "to make a space for upgrade operation.") % \
+                                       str(self.required_diskspace / (1024 ** 2)))
+            self.pageWidget.prev()
+            return
+        else:
+            resultWidget.widget.show()
+            if self.missing_packages:
+                resultWidget.package_list.clear()
+                resultWidget.package_list.addItems(self.missing_packages)
+            self.log("MISSING PACKAGES FOUND: %s" % ','.join(self.missing_packages), "GUI")
         self.label_header.setText(_("Check results..."))
         self.hideMessage()
 

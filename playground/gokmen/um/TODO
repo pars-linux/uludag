@@ -37,11 +37,11 @@ Step 0: Welcome !
 
 + Ask user which repo to update to (stable/testing/devel) (?)
 
-/ Check if update is possible
++ Check if update is possible
     + check availability of packages
-    ? check free disk space ???
-    ? if update will not be healty, warn the user why and do nothing
-    ? if update is not possible ask to remove packages (??)
+    + check free disk space ???
+    + if update will not be healty, warn the user why and do nothing
+    + if update is not possible ask to remove packages (??)
 
 + Ask user to remove packages which are unsupported by 2011 and installed in 2009
 

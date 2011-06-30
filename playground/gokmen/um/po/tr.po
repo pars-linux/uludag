@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-10 13:50+0300\n"
+"POT-Creation-Date: 2011-06-30 15:59+0300\n"
 "PO-Revision-Date: 2011-06-06 12:06+0300\n"
 "Last-Translator: Gökmen Göksel <gokmen@pardus.org.tr>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
@@ -24,106 +24,123 @@ msgstr "Paket veritabanı yeniden inşa ediliyor..."
 msgid "Calculating dependencies..."
 msgstr "Bağımlılıklar hesaplanıyor..."
 
-#: src/gui.py:122
+#: src/gui.py:123
 msgid "Welcome to Upgrade Manager..."
 msgstr "Güncelleme Yöneticisi'ne Hoş Geldiniz..."
 
-#: src/gui.py:126
+#: src/gui.py:127
 msgid "Select Upgrade Repository..."
 msgstr "Güncelleme Deposunu Seçin..."
 
-#: src/gui.py:130 src/gui.py:173
+#: src/gui.py:131 src/gui.py:174
 msgid "Checking your system..."
 msgstr "Sisteminiz kontrol ediliyor..."
 
-#: src/gui.py:137 src/gui.py:142 ui/ui_mainscreen.py:59
+#: src/gui.py:138 src/gui.py:143 ui/ui_mainscreen.py:59
 msgid "Next"
 msgstr "İleri"
 
-#: src/gui.py:138 ui/ui_main.py:56
+#: src/gui.py:139 ui/ui_main.py:56
 msgid "Yes, Upgrade"
 msgstr "Evet, Güncelle"
 
-#: src/gui.py:139 ui/ui_mainscreen.py:57
+#: src/gui.py:140 ui/ui_mainscreen.py:57
 msgid "Cancel"
 msgstr "İptal"
 
-#: src/gui.py:143 ui/ui_mainscreen.py:58
+#: src/gui.py:144 ui/ui_mainscreen.py:58
 msgid "Previous"
 msgstr "Geri"
 
-#: src/gui.py:154
+#: src/gui.py:155
 msgid "Upgrading the system..."
 msgstr "Sisteminiz güncelleniyor..."
 
-#: src/gui.py:195
+#: src/gui.py:200
+msgid "Critical Error"
+msgstr "Kritik Hata"
+
+#: src/gui.py:201
+msgid "An error ocurred while planning the upgrade procedure, this is usually caused by faulty Network Connection or wrong repo address."
+msgstr "Güncelleme planı yapılırken bir hata meydana geldi, bu tip hatalar genellikle sorunlu Ağ Bağlantıları ya da yanlış depolar kullanıldığında meydana gelir."
+
+#: src/gui.py:208
+msgid "Not enough free space"
+msgstr "Yeterli boş alan yok"
+
+#: src/gui.py:209
+#, python-format
+msgid "This upgrade requires at least <b>%s MB</b> free space, please use another repository or remove some files to make a space for upgrade operation."
+msgstr "Bu güncelleme için en az <b>%s MB</b> boş alan gerekiyor, lütfen başka bir depo seçin ya da bazı dosyaları silerek sisteminizde yer açın. "
+
+#: src/gui.py:221
 msgid "Check results..."
 msgstr "Kontrol sonuçları..."
 
-#: src/gui.py:216
+#: src/gui.py:242
 msgid "Removing unsupported packages..."
 msgstr "Desteklenmeyen paketler kaldırılıyor..."
 
-#: src/gui.py:219
+#: src/gui.py:245
 msgid "Installing new package management system..."
 msgstr "Yeni paket yönetim sistemi kuruluyor..."
 
-#: src/gui.py:227
+#: src/gui.py:253
 msgid "Step 1 Completed"
 msgstr "Birinci Adım Tamamlandı"
 
-#: src/gui.py:257
+#: src/gui.py:283
 msgid "Upgrading to Pardus 2011..."
 msgstr "Pardus 2011'e güncelleniyor..."
 
-#: src/gui.py:285
+#: src/gui.py:311
 msgid "Configuring for Pardus 2011..."
 msgstr "Pardus 2011 için yapılandırılıyor..."
 
-#: src/gui.py:298
+#: src/gui.py:324
 msgid "Running Post Upgrade Operations..."
 msgstr "Güncelleme sonrası işler yapılıyor..."
 
-#: src/gui.py:316
+#: src/gui.py:342
 msgid "Rebooting to the Pardus 2011..."
 msgstr "Pardus 2011 için yeniden başlatılıyor..."
 
-#: src/gui.py:343
+#: src/gui.py:369
 #, python-format
 msgid "Installing: <b>%s</b>"
 msgstr "Yükleniyor: <b>%s</b>"
 
-#: src/gui.py:345
+#: src/gui.py:371
 #, python-format
 msgid "Installed: <b>%s</b>"
 msgstr "Yüklendi: <b>%s</b>"
 
-#: src/gui.py:347
+#: src/gui.py:373
 #, python-format
 msgid "Upgraded: <b>%s</b>"
 msgstr "Güncellendi: <b>%s</b>"
 
-#: src/gui.py:349
+#: src/gui.py:375
 #, python-format
 msgid "Configuring: <b>%s</b>"
 msgstr "Yapılandırılıyor: <b>%s</b>"
 
-#: src/gui.py:351
+#: src/gui.py:377
 #, python-format
 msgid "Configured: <b>%s</b>"
 msgstr "Yapılandırıldı: <b>%s</b>"
 
-#: src/gui.py:353
+#: src/gui.py:379
 #, python-format
 msgid "Removing: <b>%s</b>"
 msgstr "Siliniyor: <b>%s</b>"
 
-#: src/gui.py:355
+#: src/gui.py:381
 #, python-format
 msgid "Removed: <b>%s</b>"
 msgstr "Silindi: <b>%s</b>"
 
-#: src/gui.py:376
+#: src/gui.py:402
 #, python-format
 msgid "Downloading: <b>%s</b>"
 msgstr "İndiriliyor: <b>%s</b>"
@@ -162,26 +179,30 @@ msgstr ""
 "\n"
 "Bu kontroller sisteminizde yüklü paketleri ve kullanılabilecek boş alan hesaplamasını içerir."
 
-#: ui/ui_screen_2.py:50 ui/ui_screen_3.py:50 ui/ui_screen_4.py:35
+#: ui/ui_screen_2.py:57 ui/ui_screen_3.py:50 ui/ui_screen_4.py:35
 #: ui/ui_screen_5.py:75
 msgid "Analyzing your Computer"
 msgstr "Bilgisayarınız kontrol ediliyor"
 
-#: ui/ui_screen_2.py:51
+#: ui/ui_screen_2.py:58
 msgid "In order to upgrade your system, you must select an upgrade repository:"
 msgstr "Güncelleme için bir güncelleme deposu seçmelisiniz:"
 
-#: ui/ui_screen_2.py:52
+#: ui/ui_screen_2.py:59
 msgid "Stable Repository (Recommended)"
 msgstr "Kararlı Depo (Önerilen)"
 
-#: ui/ui_screen_2.py:53
+#: ui/ui_screen_2.py:60
 msgid "Testing Repository"
 msgstr "Test Deposu"
 
-#: ui/ui_screen_2.py:54
+#: ui/ui_screen_2.py:61
 msgid "Devel Repository"
 msgstr "Geliştirme Deposu"
+
+#: ui/ui_screen_2.py:62
+msgid "Manual Repository :"
+msgstr "Özel Depo Kullan :"
 
 #: ui/ui_screen_3.py:51
 msgid "Following packages are not available in selected repository:"
