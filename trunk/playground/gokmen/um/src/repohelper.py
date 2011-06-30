@@ -64,7 +64,7 @@ class DistupdatePlanner:
                 rawdata = open(uri, "r").read()
         except IOError:
             print "could not fetch %s" % uri
-            return None
+            return False
 
         if uri.endswith("bz2"):
             data = bz2.decompress(rawdata)
@@ -75,6 +75,7 @@ class DistupdatePlanner:
 
         self.printDebug("    done")
         self.nextRepoRaw = data
+        return True
 
     def convertToPisiRepoDB(self, ix):
         self.printDebug("* Converting package objects to db object")
@@ -291,14 +292,14 @@ class DistupdatePlanner:
     def plan(self):
         self.printDebug("* Find missing packages for distupdate ")
 
-        self.getIndex()
-        self.parseRepoIndex()
-        self.getInstalledPackages()
-        self.calculateInstalledSize()
-        self.findMissingPackages()
-        self.planDistUpdate()
-        self.calculateNextRepoSize()
-        self.calculeNeededSpace()
+        if self.getIndex():
+            self.parseRepoIndex()
+            self.getInstalledPackages()
+            self.calculateInstalledSize()
+            self.findMissingPackages()
+            self.planDistUpdate()
+            self.calculateNextRepoSize()
+            self.calculeNeededSpace()
 
 
 if __name__ == "__main__":
