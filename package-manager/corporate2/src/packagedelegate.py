@@ -235,9 +235,8 @@ class PackageDelegate(QStyledItemDelegate):
 
         if ptype not in ('None', 'normal'):
             widthOfTitle = self.boldFontFM.width(title) + 6 + left + textInner + _component_width
-
             p.setFont(self.tagFont)
-            rect = self.tagFontFM.boundingRect(option.rect, Qt.TextWordWrap, ptype)
+            rect = self.tagFontFM.boundingRect(option.rect, Qt.TextWordWrap, self.types[ptype][1])
             p.setPen(self.types[ptype][0])
             p.setBrush(self.types[ptype][0])
             p.drawRoundRect(widthOfTitle, top + 12, rect.width() + 4, rect.height(), 10, 10)
