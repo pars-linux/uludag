@@ -132,13 +132,13 @@ KRandRModule::KRandRModule(QWidget *parent, const QVariantList&)
 
     if (vendorText.startsWith("NVIDIA") && nvidia_file){
         nvidia = true;
-        startButton->setText("Start Nvidia Settings");
+        startButton->setText(i18n("Start Nvidia Settings"));
         startButton->setIcon(KIcon("nvidia-settings"));
         showStartButton = true;
     }
     else if (vendorText.startsWith("ATI") && ati_file){
         ati = true;
-        startButton->setText("Start Ati Control Center");
+        startButton->setText(i18n("Start Ati Control Center"));
         startButton->setIcon(KIcon("amdcccle"));
         showStartButton = true;
     }
