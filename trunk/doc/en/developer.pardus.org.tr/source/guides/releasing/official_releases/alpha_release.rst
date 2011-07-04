@@ -7,20 +7,15 @@ Alpha Release
 :Last Modified Date: |today|
 :Version: 0.1
 
-The alpha phase of the release life cycle is the first phase to begin software
+The alpha phase of the release life cycle is the phase to begin software
 testing.
 
-Feature acceptence deadline is held during this phase and the `requested features`_
-from users and developers are reported to `Pardus Bugzilla`_ before this deadline.
+The features are started to develop by developers.
 
-The requested features are reviewed and also prioritized during this period
-and no more features are added to this list. The features are also started to
-develop by developers.
-
-During this phase Alpha release brockers should also be fixed.
+During this phase Alpha release `tracker bugs`_ should also be fixed.
 
 For the packages, `urgent package list`_ is created periodically and put as text
-file under the related release' `package source repository`_ `devel branch`_.
+file under the related releases' `package source repository`_ `devel branch`_.
 These packages are updated and merged to new `package source repository`_ at given
 period and time.
 
@@ -29,8 +24,7 @@ unstable and could cause crashes or data loss.
 
 Alpha Goals
 ^^^^^^^^^^^
-#. The accepted features should be listed and prioritized at the and of Feature acceptence deadline.
-#. The Alpha official release wil be a `feature complete`_ test release.
+#. The Alpha official release will be a `feature complete`_ test release.
 #. Test `accepted features`_ of Pardus for newly release
 #. Find as many as Beta, RC, final `tracker bugs`_ as possible
 
@@ -141,7 +135,7 @@ at the "where we are" meeting.
 .. _Kaptan: http://developer.pardus.org.tr/projects/kaptan/index.html
 .. _Package Manager: http://developer.pardus.org.tr/projects/package-manager/index.html
 .. _Pisi: http://developer.pardus.org.tr/projects/pisi/index.html
-.. _severity: http://developer.pardus.org.tr/guides/bugtracking/bug_cycle.html
+.. _severity: http://developer.pardus.org.tr/guides/bugtracking/howto_bug_triage.html#bug-importance
 .. _tester list: http://lists.pardus.org.tr/mailman/listinfo/testci
 .. _Bootstrap: http://developer.pardus.org.tr/guides/releasing/bootstrapping.html
 .. _buildfarm: http://developer.pardus.org.tr/guides/releasing/preparing_buildfarm.html
