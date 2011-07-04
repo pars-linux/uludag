@@ -174,7 +174,7 @@ class Iface(Singleton):
 
     def getPackageFiles(self, package):
         if self.idb.has_package(package):
-            return ['/'+x.path for x in self.idb.get_files(package).list]
+            return [unicode('/'+x.path) for x in self.idb.get_files(package).list]
         return []
 
     # Extended Package Actions --------------------------------------------<<-
