@@ -7,7 +7,6 @@
 # without adding new distro repo / upgrading any packages
 #
 
-import os
 import sys
 
 import bz2
@@ -21,9 +20,16 @@ defaultNextRepoURI = "http://packages.pardus.org.tr/pardus/2011/testing/i686/pis
 defaultForceInstallPackageURI = "http://svn.pardus.org.tr/uludag/trunk/pardus-upgrade/2009_to_2011.list"
 
 
+class DistupdatePlannerException(Exception):
+    def __init__(self, value):
+        self.parameter = value
+    def __str__(self):
+        return repr(self.parameter)
+
 class DistupdatePlanner:
     def __init__(self, nextRepoUri=defaultNextRepoURI, forceInstallUri=defaultForceInstallPackageURI, Debug=False):
         self.debug = Debug
+        self.successful = False
         self.forceInstallUri = forceInstallUri
         self.nextRepoUri = nextRepoUri
 
@@ -63,8 +69,7 @@ class DistupdatePlanner:
             else:
                 rawdata = open(uri, "r").read()
         except IOError:
-            print "could not fetch %s" % uri
-            return False
+            raise DistupdatePlannerException("Could not fetch %s" % uri)
 
         if uri.endswith("bz2"):
             data = bz2.decompress(rawdata)
@@ -75,7 +80,6 @@ class DistupdatePlanner:
 
         self.printDebug("    done")
         self.nextRepoRaw = data
-        return True
 
     def convertToPisiRepoDB(self, ix):
         self.printDebug("* Converting package objects to db object")
@@ -123,8 +127,11 @@ class DistupdatePlanner:
     def getInstalledPackages(self):
         self.printDebug("* Getting installed packages")
 
-        a = pisi.api.list_installed()
-        a.sort()
+        try:
+            a = pisi.api.list_installed()
+            a.sort()
+        except:
+            raise DistupdatePlannerException("Could not fetch list_installed from PiSi")
 
         self.printDebug("    found %d packages" % len(a))
         self.installedPackages = a
@@ -132,7 +139,10 @@ class DistupdatePlanner:
     def getForceInstallPackages(self):
         self.printDebug("* Getting force install packages")
 
-        pkglist = urllib2.urlopen(self.forceInstallUri).read().split()
+        try:
+           pkglist = urllib2.urlopen(self.forceInstallUri).read().split()
+        except:
+            raise DistupdatePlannerException("Could not fetch force install package list")
 
         self.printDebug("    found %d packages" % len(pkglist))
         self.forceInstallPackages = pkglist
@@ -141,7 +151,10 @@ class DistupdatePlanner:
         self.printDebug("* Calculating disk space installed packages are using")
 
         totalsize = 0
-        idb = pisi.db.installdb.InstallDB()
+        try:
+            idb = pisi.db.installdb.InstallDB()
+        except:
+            raise DistupdatePlannerException("Could not connect to PiSi InstallDB")
 
         for i in self.installedPackages:
             pkg = idb.get_package(i)
@@ -292,7 +305,8 @@ class DistupdatePlanner:
     def plan(self):
         self.printDebug("* Find missing packages for distupdate ")
 
-        if self.getIndex():
+        try:
+            self.getIndex()
             self.parseRepoIndex()
             self.getInstalledPackages()
             self.calculateInstalledSize()
@@ -301,6 +315,14 @@ class DistupdatePlanner:
             self.calculateNextRepoSize()
             self.calculeNeededSpace()
 
+        except DistupdatePlannerException as e:
+            self.successful = False
+            print "DistupdatePlannerException: %s" % e.parameter
+
+        else:
+            self.successful = True
+
+        self.printDebug("    planning completed")
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:

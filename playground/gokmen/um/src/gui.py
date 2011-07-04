@@ -190,12 +190,13 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         updatePlan.plan()
         self.missing_packages = updatePlan.missingPackages
         self.required_diskspace = updatePlan.sizeOfNeededTotalSpace
+        self.planner_successful = updatePlan.successful
 
     # Step 1 Method
     def showResults(self):
         resultWidget = self.pageWidget.getWidget(2).ui
         free_size = os.statvfs('/').f_bavail * os.statvfs('/').f_bsize
-        if self.required_diskspace == 0:
+        if not self.planner_successful:
             self.hideMessage()
             QMessageBox.critical(self, _("Critical Error"),
                                        _("An error ocurred while planning the upgrade procedure, "\
