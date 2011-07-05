@@ -86,6 +86,7 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         self.connect(self.radioAuthYes, QtCore.SIGNAL("toggled(bool)"), self.slotPolicyChanged)
         self.connect(self.checkAdmin, QtCore.SIGNAL("stateChanged(int)"), self.slotAdmin)
         self.connect(self.pushAuth, QtCore.SIGNAL("clicked()"), self.slotAuth)
+        self.connect(self.pushCategoryAuth, QtCore.SIGNAL("clicked()"), self.slotCategoryAuth)
 
         self.connect(self.lineFullname, QtCore.SIGNAL("textEdited(const QString&)"), self.checkFields)
         self.connect(self.linePassword, QtCore.SIGNAL("textEdited(const QString&)"), self.checkFields)
@@ -348,7 +349,7 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
             return
 
         current=self.treeAuthorizations.currentItem()
-        if isinstance(current,PolicyItem):
+        if current.childCount() == 0:
             self.pushCategoryAuth.setDisabled(True)
         else:
             pass
