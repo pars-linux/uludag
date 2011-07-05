@@ -855,7 +855,6 @@ When activating a connection, you should either provide an interface like
             set_connection_state_down(nm_handle,arg0)
     elif options.wifi == "wifi":
         trues=["1","true","True","yes","Yes"]
-        print "geldi"
         if arg0 in trues:
             wireless_enabled(nm_handle,True)
         else:
