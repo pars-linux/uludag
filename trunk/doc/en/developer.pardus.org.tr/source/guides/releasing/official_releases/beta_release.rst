@@ -46,34 +46,84 @@ In order to do Pardus Beta official, the following criterias must be meet:
 * The default desktop environment must mount removable media
 * The desktop environment must succesfully shutdown, reboot, hibernate, logout etc.
 * Beta release must include default artwork by default for the installation manager (YALI_), graphical boot, firstboot, graphical login, desktop background and splash screens.
+* Release Upgrade should be stabilized and get almost ready to Final Release.
 
 Beta Tickets
 ^^^^^^^^^^^^
-#. Warn about `code complete`_ one week before
-#. Plan for Final product publicity and promotion materials
+
+Beta 1
+######
+#. Review tracker bugs and no urgent and high bugs present
+#. Fix high priority tracker bugs
 #. Create a list for promotion and publicity materials
 #. Plan and start for artwork pardus
    * Final Web banners
    * DVD, CD cover, guide design
    * Brochures, stand and roll-up design
    * Promotion products design
-#. Warn about artwork deadline one week before
-#. Warn about Beta freeze one week before
+#. Translation and user documentation check
+
+Release:
+#. Release Beta
+    * Upload iso to FTP servers
+    * Upload iso to torrents
+#. Announcement for Beta release on `duyuru list`_ and `announce list`_
+
+
+Beta 2
+######
+
+Release minus 2 weeks:
+# All normal, low priority tracker bugs fixed
+#. Toolchain freeze start
+#. Warn developers about:
+    #. User interface freeze
+    #. Beta freeze (`code complete`_)
+    #. Package file conflicts or unresolved package dependencies
+#. Begin Release Upgrade tests
+#. Announce EOL of 2 previous release
+#. Where we are meeting to review bugs and possibility to prolonge release.
+
+Release minus 1 week:
+#. User interface freeze
+#. Beta freeze (`code complete`_) on (`testing source repository`_)
+#. Review problems and mark as Beta tracker bug which need resolution before release
+    - Package conflicts or unresolved package dependencies
+    - Installation bugs
+    - Release Upgrade bugs
+    - High severity bugs
+#. Selectively accept package merges to resolve Alpha tracker bugs
 #. Create Beta Test Release for Beta validation tests
     * Installation media
     * Live media
 #. Prepare and make "where we are meeting" after validation tests
 #. Create release-notes
+#. Warn mirrors and ULAKBIM one week before
+#. Preperation for final release announcement and marketing materials
+
+Release minus 3 days:
+#. Resolve image based problems
+    - Package conflicts or unresolved package dependencies
+    - Installation bugs
+    - High severity bugs
+#. Test and fix Beta tracker bugs
+
+Release minus 1 day:
+#. Review Beta tracker bugs and take final decision what to fix or defer
+#. Prepare and plan RC start meeting
+
+Release:
 #. Upload release-notes to developer.pardus.org.tr
 #. Release Beta
-
-    * Warn mirrors and ULAKBIM one week before
     * Upload iso to FTP servers
     * Upload iso to torrents
-#. Send an announcement mail for Beta release
-#. Prepare and plan RC start meeting
-#. Open testing source and binary repositories
-#. Add new testing repository to packages.pardus.org.tr
+#. Announcement for Beta release on `duyuru list`_ and `announce list`_
+
+Release plus 1 day:
+#. Warn about translation freeze
+#. Warn contributors about packages that are not found on any repositories for contributor repo freeze
+#. Warn about Final repo freeze
+#. Begin the plan of next new release
 
 Beta Tracker Bugs
 ^^^^^^^^^^^^^^^^^
@@ -115,3 +165,4 @@ at the "where we are" meeting.
 .. _code complete: http://developer.pardus.org.tr/guides/releasing/feature_freeze.html
 .. _tracker bugs: http://developer.pardus.org.tr/guides/bugtracking/tracker_bug_process.html#open-tracker-bug-report
 .. _accepted features: http://bugs.pardus.org.tr/buglist.cgi?query_format=advanced&bug_severity=newfeature&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&resolution=REMIND
+.. _testing source repository: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#testing-folder
