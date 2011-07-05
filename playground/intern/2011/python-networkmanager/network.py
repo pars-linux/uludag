@@ -806,21 +806,21 @@ When activating a connection, you should either provide an interface like
                       help='Deactivates the given connection')
 
     parser.add_option("-w","--wifi",
-            choices=["0","1","false","true","no","yes"],
+            action="store_false",
             dest="wifi",
-            metavar="BOOL",
-            help='Activetas or Deactivates wifi',
+            default=False,
+            help='Activatas or deactivates wifi',
             )
 
     (options, args) = parser.parse_args()
     try:
-        connection = args[0]
+        arg0 = args[0]
     except IndexError:
-        connection = None
+        arg0 = None
     try:
-        interface=args[1]
+        arg1=args[1]
     except IndexError:
-        interface = None
+        arg1 = None
 
     if options.action == "connections":
         print_connections(nm_handle)
@@ -833,25 +833,23 @@ When activating a connection, you should either provide an interface like
     elif options.action == "edit":
         edit_connection(nm_handle)
     elif options.a_connection == "activate":
-        if connection == None:
+        if arg0 == None:
             #list connections
-            connection=get_connection(nm_handle,"Activate")
+            con=get_connection(nm_handle,"Activate")
             #Fix No interface
-            set_connection_state_up(nm_handle,connection.settings.id)
-            pass
+            set_connection_state_up(nm_handle,con.settings.id)
         else:
-            set_connection_state_up(nm_handle,connection, interface)
+            set_connection_state_up(nm_handle,arg0,arg1)
     elif options.d_connection == "deactivate":
-        if connection == None:
+        if arg0 == None:
             #list connections
-            connection=get_connection(nm_handle,"Deactivate")
-            set_connection_state_down(nm_handle,connection.settings.id)
-            pass
+            con=get_connection(nm_handle,"Deactivate")
+            set_connection_state_down(nm_handle,con.settings.id)
         else:
-            set_connection_state_down(nm_handle, connection)
+            set_connection_state_down(nm_handle,arg0)
     elif options.wifi is not None:
-        trues=["1","true","yes"]
-        if options.wifi in trues:
+        trues=["1","true","True","yes","Yes"]
+        if arg0 in trues:
             wireless_enabled(nm_handle,True)
         else:
             wireless_enabled(nm_handle,False)
