@@ -53,6 +53,7 @@ For each Pardus Alpha releases (Alpha 1, 2, 3), the following criterias must be 
 * Default applications that exist on desktop menu must be listed.
 * The `Package Manager`_ must have the correct repository and be able to download and install updates with with PiSi_.
 * The new release artwork must either refer to the current release under maintainance, or reference to a temporary test release. This artwork should be for the installer, firstboot, graphical boot, graphical login·
+* Release Upgrade tests should start and upgrade can be possible with some existed bugs.
 
 Alpha Tickets
 ^^^^^^^^^^^^^
@@ -105,16 +106,18 @@ Alpha 3
 Release minus 1 week:
 #. Feature freeze
 #. String freeze
-#. Create Alpha Test Release for Alpha validation tests
-    * Installation media
-    * Live media
 #. Prepare and make "where we are meeting" after validation tests
 #. Create release-notes
 #. Warn mirrors and ULAKBIM one week before
 
-Release minus 2 days:
+Release minus 4 days:
 #. Repo freeze for main/base repo
+     #. Open testing source and binary_ repositories
+     #. Add new testing repository_ to packages.pardus.org.tr
 #. Announce repo freeze on #pardus-devel and `gelistirici list`_ and `developer list`_
+#. Create Alpha Test Release for Alpha validation tests
+    * Installation media
+    * Live media
 #. Review problems and mark as Alpha tracker bug which need resolution before release
     - Package conflicts or unresolved package dependencies
     - Bugs that breaks default installation
@@ -134,7 +137,6 @@ Release:
 #. Announcement for Alpha release on `duyuru list`_ and `announce list`_
 
 Release plus 1 week:
-
 #. Update release notes and feature list if necessary (if a feature could not be done during alpha phase it should be removed from feature list)
 
 Alpha Tracker Bugs
@@ -190,3 +192,5 @@ at the "where we are" meeting.
 .. _announce list: http://lists.pardus.org.tr/mailman/listinfo/pardus-announce
 .. _developer list: http://lists.pardus.org.tr/mailman/listinfo/pardus-devel
 .. _gelistirici list: http://lists.pardus.org.tr/mailman/listinfo/gelistirici
+.. _binary: http://developer.pardus.org.tr/guides/releasing/repository_concepts/software_repository.html#testing-binary-repository
+.. _source: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#testing-folder
