@@ -355,10 +355,11 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
             self.pushCategoryAuth.setEnabled(True)
 
         try:
-            self.authGroup.setEnabled(True)
-            self.radioAuthNo.setChecked(item.getType() == -1)
-            self.radioAuthDefault.setChecked(item.getType() == 0)
-            self.radioAuthYes.setChecked(item.getType() == 1)
+            if isinstance(item,PolicyItem):
+                self.authGroup.setEnabled(True)
+                self.radioAuthNo.setChecked(item.getType() == -1)
+                self.radioAuthDefault.setChecked(item.getType() == 0)
+                self.radioAuthYes.setChecked(item.getType() == 1)
         except:
             self.authGroup.setEnabled(False)
 
