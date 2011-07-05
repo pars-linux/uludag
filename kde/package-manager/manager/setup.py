@@ -130,7 +130,7 @@ class Install(install):
 
         mime_icons_dir = os.path.join(root_dir, "icons/hicolor")
         icon_dir = os.path.join(root_dir, "icons/hicolor/128x128/apps")
-        mime_dir = os.path.join(root_dir, "mime/packages")
+        # mime_dir = os.path.join(root_dir, "mime/packages")
         locale_dir = os.path.join(root_dir, "locale")
         apps_dir = os.path.join(root_dir, "applications/kde4")
         project_dir = os.path.join(root_dir, "kde4/apps", PROJECT)
@@ -139,7 +139,7 @@ class Install(install):
         print "Making directories..."
         makeDirs(mime_icons_dir)
         makeDirs(icon_dir)
-        makeDirs(mime_dir)
+        # makeDirs(mime_dir)
         makeDirs(bin_dir)
         makeDirs(locale_dir)
         makeDirs(apps_dir)
