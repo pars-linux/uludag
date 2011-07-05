@@ -352,7 +352,7 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         if current.childCount() == 0:
             self.pushCategoryAuth.setDisabled(True)
         else:
-            pass
+            self.pushCategoryAuth.setEnabled(True)
 
         try:
             self.authGroup.setEnabled(True)
