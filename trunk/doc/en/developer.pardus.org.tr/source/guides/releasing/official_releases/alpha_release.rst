@@ -5,12 +5,18 @@ Alpha Release
 
 :Author: Semen Cirit
 :Last Modified Date: |today|
-:Version: 0.1
+:Version: 0.2
 
 The alpha phase of the release life cycle is the phase to begin software
-testing.
+testing and takes about 3 months. About 2 months for Alpha 1 and 4 weeks
+for Alpha 2 and 3.
 
-The features are started to develop by developers.
+At the end of the alpha phase, software should be `feature complete`_, indicating
+that no more features will be added to the software. A feature complete version
+of a software is not yet final, (it has lots of bugs) but contains all intended
+functionality of the final version.
+
+According to this feature completeness, string freeze is also realized..
 
 During this phase Alpha release `tracker bugs`_ should also be fixed.
 
@@ -30,7 +36,7 @@ Alpha Goals
 
 Alpha Release Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-In order to do Pardus Alpha official, the following criterias must be meet:
+For each Pardus Alpha releases (Alpha 1, 2, 3), the following criterias must be met:
 
 * All bugs blocking the Alpha tracker must be closed.
 * There must be no file conflicts or unresolved package dependencies in Alpha iso install and live images.
@@ -41,61 +47,95 @@ In order to do Pardus Alpha official, the following criterias must be meet:
 * The rescue mode of (YALI_) must start successfully and be able to detect and mount an existing default installation
 * The installed system must boot to th default desktop environment without user intervention
 * The desktop greeter (Kaptan_) should start when the system boot.
+* All `Pardus technologies`_ must be able to work with new features (they may have bugs)
+* All strings of `Pardus technologies`_ should be finished before Alpha released.
 * The default web browser must run and be able to download files and load extensions
 * Default applications that exist on desktop menu must be listed.
 * The `Package Manager`_ must have the correct repository and be able to download and install updates with with PiSi_.
 * The new release artwork must either refer to the current release under maintainance, or reference to a temporary test release. This artwork should be for the installer, firstboot, graphical boot, graphical login·
 
-Pre-Alpha (Developer Release) Tickets
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Prepare and plan start meeting
-#. Create general release schedule (give deadlines only for general relase cycles (Alpha, Beta, RC, Final), ( deadline for submitting new features, feature freeze, string freeze, feature complete, translation freeze, repo freeze))
-#. Put the schedule to developer.pardus.org.tr
-#. Open `devel source`_ and  `devel binary`_ repositories
-#. Add new devel repository to http://packages.pardus.org.tr
-#. Open `tracker bugs`_
-#. Prepare buildfarm servers
-#. State toolchain versions
-#. State compiler flags
-#. Prepare toolchain
-#. Bootstrap_
-#. Compile developer tools
-#. Install and build buildfarm_ systems
-#. Prepare pre-alpha (developer) release
-#. Enable `nightly builds`_
-#. Enable automatic mails about nightly build changes to `tester list`_.
-#. Review package components for orphan and dead packages
-#. Warn developers about their orphan and dead packages and developer release
-#. Warn users and developers about `feature request`_ deadline one week before
-#. Warn developers about `feature submission`_ deadline one week before
-#. Create accepted feature list
-#. Create detailed release schedule (priotirize feaute list, give other detailes for development, artwork, documentation etc.)
-#. Update schedule on developer.pardus.org.tr
-#. Prepare a developer meeting on IRC
-#. Prepare and plan Alpha start meeting
-
 Alpha Tickets
 ^^^^^^^^^^^^^
+
+Alpha 1
+#######
+
 #. Create default applications list for desktop menu
-#. Put feature list to developer.pardus.org.tr
 #. Send weekly emails about `urgent package list`_
-#. Warn about `feature freeze`_ one week before
-#. Warn about Alpha freeze one week before
-#. Plan for artwork Pardus
+#. Start for artwork Pardus
     * Wallpapers
     * Icon theme
     * Splash screens
+#. Intrusive changes phase completed (All high priority features and tasks finished)
+
+Release minus 1 week:
+#. Warn mirrors and ULAKBIM one week before
+
+Release:
+#. Release Alpha
+    * Upload iso to FTP servers
+    * Upload iso to torrents
+#. Announcement for Alpha release on `duyuru list`_ and `announce list`_
+
+Alpha 2
+#######
+
+#. Medium priority tasks and features finished
+#. At the end of this period, all remained features reviewed and reprioritized or ignored if needed.
+
+Release minus 1 week:
+#. Warn mirrors and ULAKBIM one week before
+
+
+Release:
+#. Release Alpha
+    * Upload iso to FTP servers
+    * Upload iso to torrents
+#. Announcement for Alpha release on `duyuru list`_ and `announce list`_
+
+Alpha 3
+#######
+
+#. Where we are meeting to review bugs and possibility to prolonge release.
+#. Low priority tasks and features finished
+#. Warn about `feature freeze`_ one week before
+#. Warn about Alpha repo freeze one week before
+#. Warn about String freeze
+
+Release minus 1 week:
+#. Feature freeze
+#. String freeze
 #. Create Alpha Test Release for Alpha validation tests
     * Installation media
     * Live media
 #. Prepare and make "where we are meeting" after validation tests
 #. Create release-notes
+#. Warn mirrors and ULAKBIM one week before
+
+Release minus 2 days:
+#. Repo freeze for main/base repo
+#. Announce repo freeze on #pardus-devel and `gelistirici list`_ and `developer list`_
+#. Review problems and mark as Alpha tracker bug which need resolution before release
+    - Package conflicts or unresolved package dependencies
+    - Bugs that breaks default installation
+    - High severity bugs
+#. Selectively accept package merges to resolve Alpha tracker bugs
+#. Prepare and plan Beta start meeting
+
+Release minus 1 day:
+#. Resolve any remaining Alpha tracker bugs
+#. Begin Release Upgrade tests (all new package merges and features completed and from now on repo is consistent.)
+
+Release:
 #. Upload release-notes to developer.pardus.org.tr
 #. Release Alpha
     * Upload iso to FTP servers
     * Upload iso to torrents
-#. Send an announcement mail for Alpha release
-#. Prepare and plan Beta start meeting
+#. Announcement for Alpha release on `duyuru list`_ and `announce list`_
+
+Release plus 1 week:
+
+#. Update release notes and feature list if necessary (if a feature could not be done during alpha phase it should be removed from feature list)
 
 Alpha Tracker Bugs
 ^^^^^^^^^^^^^^^^^^
@@ -109,9 +149,9 @@ A bug is considered an alpha tracker bug if one of the following criterias is me
 Alpha Postponement
 ^^^^^^^^^^^^^^^^^^
 
-#. One week before the release day, if all of the `Alpha Release Requirements`_ are not achieved, the release will be delayed one week o that the `Alpha Release Requirements`_ can be achieved.
+#. One week before the release day, if all of the `Alpha Release Requirements`_ are not achieved, the release will be delayed one week that the `Alpha Release Requirements`_ can be achieved.
 #. This delay will be added all remaining tasks and final release date.
-#. The decision for the delay will be made on "where we are" meeting that be held 2 weeks prior to the shipping date of the releases.
+#. The decision for the delay will be made on "where we are" meeting that be held 1 weeks prior to the shipping date of the releases.
 
 Validation of Alpha Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -146,3 +186,7 @@ at the "where we are" meeting.
 .. _feature request: http://developer.pardus.org.tr/guides/newfeature/newfeature_requests.html#how-do-i-propose-a-new-feature-that-i-do-not-contribute
 .. _feature submission: http://developer.pardus.org.tr/guides/newfeature/newfeature_requests.html#how-my-new-feature-request-is-accepted
 .. _feature freeze: http://developer.pardus.org.tr/guides/releasing/feature_freeze.html
+.. _duyuru list: http://lists.pardus.org.tr/mailman/listinfo/duyuru
+.. _announce list: http://lists.pardus.org.tr/mailman/listinfo/pardus-announce
+.. _developer list: http://lists.pardus.org.tr/mailman/listinfo/pardus-devel
+.. _gelistirici list: http://lists.pardus.org.tr/mailman/listinfo/gelistirici
