@@ -101,7 +101,6 @@ def print_connection(state, nm_settings, devices=[]):
     except dbus.exceptions.DBusException:
         pass
 
-
 def print_connections(nm_handle):
     """Print connection list."""
     connections = {
@@ -795,15 +794,15 @@ When activating a connection, you should either provide an interface like
                       help='Remove a connection')
 
     parser.add_option("-a", "--activate",
-                      action="store",
+                      action="store_const",
                       dest="a_connection",
-                      metavar="CONNECTION",
+                      const="activate",
                       help='Activates the given connection')
 
     parser.add_option("-d", "--deactivate",
-                      action="store",
+                      action="store_const",
                       dest="d_connection",
-                      metavar="CONNECTION",
+                      const="deactivate",
                       help='Deactivates the given connection')
 
     parser.add_option("-w","--wifi",
@@ -815,7 +814,11 @@ When activating a connection, you should either provide an interface like
 
     (options, args) = parser.parse_args()
     try:
-        interface = args[0]
+        connection = args[0]
+    except IndexError:
+        connection = None
+    try:
+        interface=args[1]
     except IndexError:
         interface = None
 
@@ -829,10 +832,23 @@ When activating a connection, you should either provide an interface like
         remove_connection(nm_handle)
     elif options.action == "edit":
         edit_connection(nm_handle)
-    elif options.a_connection is not None:
-        set_connection_state_up(nm_handle, options.a_connection, interface)
-    elif options.d_connection is not None:
-        set_connection_state_down(nm_handle, options.d_connection)
+    elif options.a_connection == "activate":
+        if connection == None:
+            #list connections
+            connection=get_connection(nm_handle,"Activate")
+            #Fix No interface
+            set_connection_state_up(nm_handle,connection.settings.id)
+            pass
+        else:
+            set_connection_state_up(nm_handle,connection, interface)
+    elif options.d_connection == "deactivate":
+        if connection == None:
+            #list connections
+            connection=get_connection(nm_handle,"Deactivate")
+            set_connection_state_down(nm_handle,connection.settings.id)
+            pass
+        else:
+            set_connection_state_down(nm_handle, connection)
     elif options.wifi is not None:
         trues=["1","true","yes"]
         if options.wifi in trues:
