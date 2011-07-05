@@ -34,64 +34,151 @@ Test Edilecek Paket Grupları
 
 Internet
 ^^^^^^^^
+Salı
+----
 akregator
-firefox
 groupware
 kget
+
+Çarşamba
+-------
 kmail
+
+Perşembe
+--------
+thunderbird
+
+Cuma
+----
+kopete
+
+Pazartesi
+---------
+konqueror
+
+Salı
+----
+firefox
+
+Çarşamba
+--------
 knetattach
 knode
-konqueror
-kopete
+
+Perşembe
+--------
 kppp
 krdc
 krfb
-thunderbird
 
 Office
 ^^^^^^
+Salı, Çarşamba
+--------------
 kontact (e-posta, kişiler, takvim, yapılacak öğeler, günlük, notlar, haberler için ayrı ayrı test edilmeli)
+
+Perşembe
+--------
 evolution
+
+Cuma
+----
 kalarm
 karm
+
+Pazartesi
+---------
 libreoffice calc
+Salı
+---
 libreoffice draw
+Çarşamba
+--------
 libreoffice impress
+Perşembe
+--------
 libreoffice writer
 
 
 Sistem
 ^^^^^^
+Salı
+----
 kwallet
 kpowersave
+
+Çarşamba, Perşembe, Cuma
+------------------------
 Sanal Makine yöneticisi (Test aşaması yok)
+
+Pazartesi-Perşembe
+------------------
 Yazdırma (Test aşaması yok)
 
 
 Grafik
 ^^^^^^
+Salı
+----
 digikam
-ghostview
+
+Çarşamba
+--------
 gimp
-gwenview
-kdvi
-kfaxview
+
+Perşembe
+--------
 kolourpaint
-kooka
+
+Cuma
+----
+gwenview
+
+Pazartesi
+---------
 kpdf
-ksnapshot
+kdvi
+ghostview
+
+Salı
+----
 kuickshow
+
+Çarşamba
+--------
 showphoto
+
+Perşembe
+--------
+ksnapshot
+kooka
+kfaxview
 
 Multimedia
 ^^^^^^^^^^^
+Salı
+----
 Amarok
+Çarşamba
+--------
 Juk
+Perşembe
+--------
 k3b
+Cuma
+----
 GnomeMedia player
+Pazartesi
+---------
 mplayer
+Salı
+----
 kaffeine
+Çarşamba
+--------
 kmix
+Perşembe
+--------
 kaudio creator
 kscd
 
