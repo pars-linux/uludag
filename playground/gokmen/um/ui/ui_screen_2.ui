@@ -118,18 +118,66 @@
  <resources/>
  <connections>
   <connection>
+   <sender>devel</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>manualRepo</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>172</x>
+     <y>244</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>313</x>
+     <y>275</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>testing</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>manualRepo</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>188</x>
+     <y>210</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>355</x>
+     <y>259</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>stable</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>manualRepo</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>215</x>
+     <y>185</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>396</x>
+     <y>273</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
    <sender>manual</sender>
-   <signal>clicked(bool)</signal>
+   <signal>toggled(bool)</signal>
    <receiver>manualRepo</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>171</x>
-     <y>266</y>
+     <x>155</x>
+     <y>267</y>
     </hint>
     <hint type="destinationlabel">
-     <x>312</x>
-     <y>264</y>
+     <x>390</x>
+     <y>276</y>
     </hint>
    </hints>
   </connection>
