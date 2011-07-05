@@ -34,71 +34,47 @@ Test Edilecek Paket Grupları
 
 Internet
 ^^^^^^^^
+
 Salı
 ----
 akregator
 groupware
 kget
-
 Çarşamba
--------
+--------
 kmail
-
+thunderbird
+kopete
 Perşembe
 --------
-thunderbird
-
+konqueror
+firefox
 Cuma
 ----
-kopete
-
-Pazartesi
----------
-konqueror
-
-Salı
-----
-firefox
-
-Çarşamba
---------
 knetattach
 knode
-
-Perşembe
---------
 kppp
 krdc
 krfb
 
 Office
 ^^^^^^
-Salı, Çarşamba
---------------
-kontact (e-posta, kişiler, takvim, yapılacak öğeler, günlük, notlar, haberler için ayrı ayrı test edilmeli)
-
-Perşembe
---------
-evolution
-
-Cuma
-----
-kalarm
-karm
-
-Pazartesi
----------
-libreoffice calc
 Salı
----
-libreoffice draw
+----
+kontact (e-posta, kişiler, takvim, yapılacak öğeler, günlük, notlar, haberler için ayrı ayrı test edilmeli)
 Çarşamba
 --------
-libreoffice impress
+evolution
+kalarm
+karm
 Perşembe
 --------
+libreoffice calc
+libreoffice draw
+Cuma
+----
+libreoffice impress
 libreoffice writer
-
 
 Sistem
 ^^^^^^
@@ -107,12 +83,12 @@ Salı
 kwallet
 kpowersave
 
-Çarşamba, Perşembe, Cuma
-------------------------
+Çarşamba, Perşembe
+------------------
 Sanal Makine yöneticisi (Test aşaması yok)
 
-Pazartesi-Perşembe
-------------------
+Cuma
+----
 Yazdırma (Test aşaması yok)
 
 
@@ -121,37 +97,23 @@ Grafik
 Salı
 ----
 digikam
+gimp
 
 Çarşamba
 --------
-gimp
-
+kolourpaint
+gwenview
 Perşembe
 --------
-kolourpaint
-
-Cuma
-----
-gwenview
-
-Pazartesi
----------
 kpdf
 kdvi
 ghostview
-
-Salı
+kooka
+Cuma
 ----
 kuickshow
-
-Çarşamba
---------
 showphoto
-
-Perşembe
---------
 ksnapshot
-kooka
 kfaxview
 
 Multimedia
@@ -159,26 +121,18 @@ Multimedia
 Salı
 ----
 Amarok
+Juk
 Çarşamba
 --------
-Juk
+GnomeMedia player
+mplayer
+kaffeine
 Perşembe
 --------
+kmix
 k3b
 Cuma
 ----
-GnomeMedia player
-Pazartesi
----------
-mplayer
-Salı
-----
-kaffeine
-Çarşamba
---------
-kmix
-Perşembe
---------
 kaudio creator
 kscd
 
