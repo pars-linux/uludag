@@ -5,39 +5,24 @@ Beta Release
 
 :Author: Semen Cirit
 :Last Modified Date: |today|
-:Version: 0.1
+:Version: 0.2
 
-At the end of the beta phase, software should be feature complete, indicating
-that no more features will be added to the software. A feature complete version
-of a software is not yet final, (it has lots of bugs)but contains all intended
-functionality of the final version.
+Beta phase is bug fixing and detailed test phase in order to stabilize new
+release and takes about 1 month.
 
-According to this feature completeness, string freeze is also realized at
-early stages of this release.
+At the end of the beta phase, software should be `code complete`_, indicating
+that there only left major bug fixes left. Code complete version of a software
+is almost similar to final.
 
-The `urgent package list`_ creation period is also finished at the end of
-this stage. There can be made a `component based`_ merged for other packages
-that have not merged yet to new release `package source repository`_.
+During this phase Beta `tracker bugs`_ should also be fixed.
 
-The `urgent package list`_ can also be used for component based merged in order
-to list the packages and their dependencies under a related component.
-
-For example, release manager can send an email like "At the end of this week we
-will finsh the merge of all game packages". And this list can also be seen under
-the related release' `package source repository`_ `devel branch`_.
-
-During this phase Beta release brockers should also be fixed.
-
-The translation freeze should also be held at the end of this stage.
-
-As we can also see that beta phase has also rapid changes and so the software can be
-unstable and could cause crashes or data loss.
-
+Beta phase has also rapid changes and so the software can be unstable and could
+cause crashes or data loss.
 
 Beta Goals
 ^^^^^^^^^^
-#. The Beta official release wil be a `code complete`_ test release.
-#. Test accepted features of Pardus for newly release
+#. The Beta official release will be a `code complete`_ test release
+#. Produce a release almost bug free and well tested
 #. Find as many as RC and final `tracker bugs`_ as possible
 
 Beta Release Requirements
@@ -54,28 +39,20 @@ In order to do Pardus Beta official, the following criterias must be meet:
 * The upgrade manager should complete the upgrade from a clean updated previous Pardus release.
 * The rescue mode of (YALI_) must start successfully and be able to detect and mount LVM, and RAID (BIOS, hardware, software) installation
 * The installed system must be able to boot with desktop environment sound
-* The all `Pardus technologies`_ must be able to work with new features.
-* The deafult browser must run video and music
+* The all `Pardus technologies`_ must be able to work with new features and almost bug free.
+* The default browser must run video and music
 * The default video player must run videos with supported extentions from disks, DVD, VCD etc.
-* The deafult music player must run songs with supported music extentions from disks, DVD, CD etc.
+* The default music player must run songs with supported music extentions from disks, DVD, CD etc.
 * The default desktop environment must mount removable media
 * The desktop environment must succesfully shutdown, reboot, hibernate, logout etc.
-* All supported languages should be announced on mail lists and the translations of these supported languages should be finished and tested before Beta released.
-
+* Beta release must include default artwork by default for the installation manager (YALI_), graphical boot, firstboot, graphical login, desktop background and splash screens.
 
 Beta Tickets
 ^^^^^^^^^^^^
-#. Send weekly emails about `urgent package list`_
-#. Warn about string freeze one week before
 #. Warn about `code complete`_ one week before
-#. Warn about translation freeze one week before
 #. Plan for Final product publicity and promotion materials
 #. Create a list for promotion and publicity materials
-#. Plan for artwork pardus
-
-   * Final Wallpapers
-   * Final Icon theme
-   * Final Splash screens
+#. Plan and start for artwork pardus
    * Final Web banners
    * DVD, CD cover, guide design
    * Brochures, stand and roll-up design

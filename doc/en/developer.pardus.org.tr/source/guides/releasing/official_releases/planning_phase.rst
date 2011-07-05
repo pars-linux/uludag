@@ -54,12 +54,19 @@ Planning Phase (Developer Release) Tickets
 #. Enable automatic mails about nightly build changes to `tester list`_.
 #. Review package components for orphan and dead packages
 #. Warn developers about their orphan and dead packages and developer release
-
+#. Plan for artwork pardus
+   * Final Wallpapers
+   * Final Icon theme
+   * Final Splash screens
 Release minus 3 week:
-#. Warn developers about `feature submission`_ deadline one week before
+#. Warn developers about `feature submission`_ deadline
 #. Create accepted feature list
+#. Put feature list to developer.pardus.org.tr
 #. Create detailed release schedule (priotirize feaute list, give other details for development, artwork, documentation etc.)
 #. Update schedule on developer.pardus.org.tr
+
+Release minus 1 week:
+#. Warn mirrors and ULAKBIM one week before
 
 Release minus 2 day:
 #. Plan and announce a developer meeting on IRC
@@ -67,6 +74,8 @@ Release minus 2 day:
 
 Release:
 #. Publish the image
+    #. Upload iso to FTP servers
+    #. Upload iso to torrents
 #. Announce pre-alpha (developer) release on `developer list`_ and `gelistirici list`_
 
 .. _requested features: http://developer.pardus.org.tr/guides/newfeature/index.html
