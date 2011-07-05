@@ -321,6 +321,11 @@ def is_hex(passw):
 def is_pass_valid(passw,stype):
     length=len(passw)
     if stype == "WEP 40/128":
+        if length>0 and length <=64:
+            return True
+        else:
+            return False
+        """
         if length==5:
             #ascii40
             return True
@@ -340,6 +345,7 @@ def is_pass_valid(passw,stype):
         else:
             #invalid
             return False
+        """
     elif stype == "WEP 128":
         if length==13:
             #ascii128
@@ -806,10 +812,10 @@ When activating a connection, you should either provide an interface like
                       help='Deactivates the given connection')
 
     parser.add_option("-w","--wifi",
-            action="store_false",
+            action="store_const",
             dest="wifi",
-            default=False,
-            help='Activatas or deactivates wifi',
+            const="wifi",
+            help='Activates or deactivates wifi',
             )
 
     (options, args) = parser.parse_args()
@@ -847,8 +853,9 @@ When activating a connection, you should either provide an interface like
             set_connection_state_down(nm_handle,con.settings.id)
         else:
             set_connection_state_down(nm_handle,arg0)
-    elif options.wifi is not None:
+    elif options.wifi == "wifi":
         trues=["1","true","True","yes","Yes"]
+        print "geldi"
         if arg0 in trues:
             wireless_enabled(nm_handle,True)
         else:
