@@ -36,7 +36,6 @@ In order to do Pardus Beta official, the following criterias must be meet:
 * The installation manager (YALI_) must  be able to complete the installation using the shrink option supported different file systems.
 * The installation manager (YALI_) must boot and run on systems using EFI
 * The installation manager (YALI_) must be able to create and install to software, hardware or BIOS RAID-0, RAID-1 or RAID-5 partitions for anything except /boot
-* The upgrade manager should complete the upgrade from a clean updated previous Pardus release.
 * The rescue mode of (YALI_) must start successfully and be able to detect and mount LVM, and RAID (BIOS, hardware, software) installation
 * The installed system must be able to boot with desktop environment sound
 * The all `Pardus technologies`_ must be able to work with new features and almost bug free.
@@ -47,6 +46,7 @@ In order to do Pardus Beta official, the following criterias must be meet:
 * The desktop environment must succesfully shutdown, reboot, hibernate, logout etc.
 * Beta release must include default artwork by default for the installation manager (YALI_), graphical boot, firstboot, graphical login, desktop background and splash screens.
 * Release Upgrade should be stabilized and get almost ready to Final Release.
+* The upgrade manager should complete the upgrade from a clean updated previous Pardus release.
 
 Beta Tickets
 ^^^^^^^^^^^^
@@ -82,21 +82,20 @@ Release minus 2 weeks:
     #. Package file conflicts or unresolved package dependencies
 #. Begin Release Upgrade tests
 #. Announce EOL of 2 previous release
-#. Where we are meeting to review bugs and possibility to prolonge release.
 
 Release minus 1 week:
-#. User interface freeze
+#. User interface freeze (artwork)
 #. Beta freeze (`code complete`_) on (`testing source repository`_)
 #. Review problems and mark as Beta tracker bug which need resolution before release
     - Package conflicts or unresolved package dependencies
     - Installation bugs
     - Release Upgrade bugs
     - High severity bugs
-#. Selectively accept package merges to resolve Alpha tracker bugs
+#. Selectively accept package merges to resolve Beta tracker bugs
 #. Create Beta Test Release for Beta validation tests
     * Installation media
     * Live media
-#. Prepare and make "where we are meeting" after validation tests
+#. Prepare and make "where we are meeting" after validation tests, in order to review bugs and possibility to prolonge release.
 #. Create release-notes
 #. Warn mirrors and ULAKBIM one week before
 #. Preperation for final release announcement and marketing materials
@@ -156,8 +155,8 @@ at the "where we are" meeting.
 .. _package source repository: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#package-source-repository
 .. _devel branch: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#devel-folder
 .. _component based: http://developer.pardus.org.tr/guides/packaging/package_components.html
-.. _alpha release requirements: http://developer.pardus.org.tr/guides/releasing/official_releases/alpha_release.html#alpha-release-requirements
-.. _severity: http://developer.pardus.org.tr/guides/bugtracking/bug_cycle.html
+.. _alpha release requirements: http://developer.pardus.org.tr/guides/releasing/official_releases/alpha_phase.html#alpha-release-requirements
+.. _severity: http://developer.pardus.org.tr/guides/bugtracking/howto_bug_triage.html#bug-importance
 .. _supported architectures: http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#architecture-support
 .. _YALI: http://developer.pardus.org.tr/projects/yali/index.html
 .. _Kaptan: http://developer.pardus.org.tr/projects/kaptan/index.html
