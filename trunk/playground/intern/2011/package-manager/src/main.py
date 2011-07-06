@@ -58,6 +58,9 @@ if __name__ == '__main__':
     font = Pds.settings('font','Sans,10').split(',')
     app.setFont(QFont(font[0], int(font[1])))
 
+    manager = MainWindow(app)
+    app.setMainWindow(manager)
+
     if config.PMConfig().systemTray():
         app.setQuitOnLastWindowClosed(False)
 
@@ -75,7 +78,7 @@ if __name__ == '__main__':
     opts, args = parser.parse_args()
 
     if not config.PMConfig().systemTray() or not opts.show_mainwindow is None:
-        print "Mainwindow"
+        manager.show()
 
     if not opts.add_repository is None:
         print opts.add_repository
@@ -87,4 +90,3 @@ if __name__ == '__main__':
 
     # Run the Package Manager
     app.exec_()
-
