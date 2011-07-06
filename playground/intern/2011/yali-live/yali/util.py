@@ -714,3 +714,33 @@ def get_collections():
 
     return packageCollection
 
+## Run an external program and capture standard out.
+# @param command The command to run.
+# @param argv A list of arguments.
+# @param stdin The file descriptor to read stdin from.
+# @param stderr The file descriptor to redirect stderr to.
+# @param root The directory to chroot to before running command.
+# @return The output of command from stdout.
+def execWithCapture(command, argv, stdin = 0, stderr = 2, root ='/'):
+    argv = list(argv)
+
+    if isinstance(stdin, str):
+        if os.access(stdin, os.R_OK):
+            stdin = open(stdin)
+        else:
+            stdin = 0
+
+    if isinstance(stderr, str):
+        stderr = open(stderr, "w")
+
+    try:
+        pipe = subprocess.Popen([command] + argv, stdin = stdin,
+                                stdout=subprocess.PIPE,
+                                stderr=subprocess.STDOUT,
+                                cwd=root)
+    except OSError, ( errno, msg ):
+        raise RuntimeError, "Error running " + command + ": " + msg
+
+    rc = pipe.stdout.read()
+    pipe.wait()
+    return rc

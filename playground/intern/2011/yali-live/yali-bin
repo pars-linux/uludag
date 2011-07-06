@@ -58,6 +58,8 @@ def load_config(options):
             options.install_type = ctx.STEP_RESCUE
         elif parser.get("general", "installation") == "oem":
             options.install_type = ctx.STEP_OEM_INSTALL
+        elif parser.get("general", "installation") == "live-install":
+            options.install_type = ctx.STEP_LIVE
         else:
             options.install_type = ctx.STEP_DEFAULT
 
@@ -178,6 +180,9 @@ def load_options(argv=None):
     parser.add_option("--oem", dest="install_type",
                       action="store_const", const=4,
                       help="start Yali with oem mode")
+    parser.add_option("--live-install", dest="install_type",
+                      action="store_const", const=5,
+                      help="start Yali with live cd installer")
     parser.add_option("--kahya", dest="kahya",
                       help="run with Kahya file", metavar="FILE")
     parser.add_option("-s", "--startFrom", dest="startFrom",

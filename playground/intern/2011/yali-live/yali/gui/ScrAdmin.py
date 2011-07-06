@@ -37,7 +37,7 @@ class Widget(QWidget, ScreenWidget):
         self.host_valid = True
         self.pass_valid = False
 
-        if ctx.flags.install_type == ctx.STEP_DEFAULT:
+        if ctx.flags.install_type in [ctx.STEP_DEFAULT, ctx.STEP_LIVE]:
             self.pthread = PThread(self, self.startInit, self.dummy)
 
         self.pds_messagebox = PMessageBox(self)
@@ -83,7 +83,7 @@ class Widget(QWidget, ScreenWidget):
         ctx.installData.rootPassword = unicode(self.ui.pass1.text())
         ctx.installData.hostName = unicode(self.ui.hostname.text())
 
-        if ctx.flags.install_type == ctx.STEP_DEFAULT:
+        if ctx.flags.install_type in [ctx.STEP_DEFAULT, ctx.STEP_LIVE]:
             #FIXME:Refactor dirty code
             if ctx.storageInitialized:
                 disks = filter(lambda d: not d.format.hidden, ctx.storage.disks)
