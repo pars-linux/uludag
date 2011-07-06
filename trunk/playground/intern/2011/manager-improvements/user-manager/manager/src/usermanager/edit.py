@@ -350,10 +350,6 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         if not item:
             return
 
-        current=self.treeAuthorizations.currentItem()
-        if current.childCount() == 0:
-            self.pushCategoryAuth.setDisabled(True)
-        else:
             self.pushCategoryAuth.setEnabled(True)
 
         try:
