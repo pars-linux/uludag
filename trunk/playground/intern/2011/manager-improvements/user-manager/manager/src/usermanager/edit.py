@@ -1,3 +1,5 @@
+#ifndef EDIT.PY
+#define EDIT.PY
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
@@ -74,7 +76,11 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
 
         # Warning icon
         self.labelSign.setPixmap(kdeui.KIcon("process-stop").pixmap(32, 32))
-        self.labelSign.hide()
+        self.labelSign.hide(
+                )
+        # Disables buttons before selecting any object
+        self.authGroup.setDisabled(True)
+        self.pushAuth.setDisabled(True)
 
         # Signals
         self.connect(self.checkAutoId, QtCore.SIGNAL("stateChanged(int)"), self.slotCheckAuto)
@@ -87,7 +93,6 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         self.connect(self.radioAuthYes, QtCore.SIGNAL("toggled(bool)"), self.slotPolicyChanged)
         self.connect(self.checkAdmin, QtCore.SIGNAL("stateChanged(int)"), self.slotAdmin)
         self.connect(self.pushAuth, QtCore.SIGNAL("clicked()"), self.slotAuth)
-        self.connect(self.pushCategoryAuth, QtCore.SIGNAL("clicked()"), self.slotCategoryAuth)
 
         self.connect(self.lineFullname, QtCore.SIGNAL("textEdited(const QString&)"), self.checkFields)
         self.connect(self.linePassword, QtCore.SIGNAL("textEdited(const QString&)"), self.checkFields)
@@ -304,14 +309,14 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
             type_ = 0
         elif self.radioAuthYes.isChecked():
             type_ = 1
-        if isinstance(self.treeAuthorizations.currentItem(),PolicyItem):
-            category = self.treeAuthorizations.currentItem()
-            category = category.parent()
-            index = self.treeAuthorizations.indexOfTopLevelItem(category)
         else:
-            category = self.treeAuthorizations.currentItem()
-            index = self.treeAuthorizations.indexOfTopLevelItem(category)
+            # If the radio buttons are all unchecked it raises an UnboundLocalError
+            # to avoid that i assigned type_ to None
+            type_ = None
+        category = self.treeAuthorizations.currentItem()
+        index = self.treeAuthorizations.indexOfTopLevelItem(category)
         tl_item = self.treeAuthorizations.topLevelItem(index)
+        # Iterates the selected category using category index which found above
         for child_index in xrange(tl_item.childCount()):
             item = tl_item.child(child_index)
             item.setType(type_)
@@ -355,28 +360,40 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
     def slotPolicySelected(self, item, previous = None):
         if not item:
             return
-        self.pushCategoryAuth.setEnabled(True)
         self.authGroup.setEnabled(True)
-
+        self.pushAuth.setEnabled(True)
+        # If selected item is a parent (category) unchecks all radio buttons
+        # because a parent has no idea of its childs status
         try:
-            if isinstance(item,PolicyItem):
+            if hasattr(item, "setType"):
                 self.radioAuthNo.setChecked(item.getType() == -1)
                 self.radioAuthDefault.setChecked(item.getType() == 0)
                 self.radioAuthYes.setChecked(item.getType() == 1)
+            else:
+                self.radioAuthNo.setAutoExclusive(False)
+                self.radioAuthDefault.setAutoExclusive(False)
+                self.radioAuthYes.setAutoExclusive(False)
+                self.radioAuthNo.setChecked(False)
+                self.radioAuthDefault.setChecked(False)
+                self.radioAuthYes.setChecked(False)
         except:
             self.authGroup.setEnabled(False)
 
     def slotPolicyChanged(self, state):
-        try:
-            item = self.treeAuthorizations.currentItem()
+        item = self.treeAuthorizations.currentItem()
+        if hasattr(item, "setType"):
             if self.radioAuthNo.isChecked():
                 item.setType(-1)
             elif self.radioAuthDefault.isChecked():
                 item.setType(0)
             elif self.radioAuthYes.isChecked():
                 item.setType(1)
-        except AttributeError:
-            pass
+        else:
+            #To avoid multiple selections
+            self.radioAuthNo.setAutoExclusive(True)
+            self.radioAuthDefault.setAutoExclusive(True)
+            self.radioAuthYes.setAutoExclusive(True)
+            self.slotCategoryAuth()
 
     def slotAdmin(self, state):
         if state == QtCore.Qt.Unchecked:
@@ -495,3 +512,4 @@ class EditGroupWidget(QtGui.QWidget, Ui_EditGroupWidget):
         else:
             self.spinId.setEnabled(True)
 
+#endif // EDIT.PY

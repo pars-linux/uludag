@@ -251,7 +251,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         if type_ == "user":
             # Reset fields
             self.widgetUserEdit.reset()
-
             if id_ != None:
                 try:
                     username, fullname, gid, homedir, shell, groups = self.iface.userInfo(id_)
@@ -390,6 +389,16 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             Cancel clicked on edit box, show item list.
         """
         self.hideEditBox()
+        self.ResetEditUi()
+
+    def ResetEditUi(self):
+        """
+            After exiting user edit interface this method clears previous selections
+            Called by both OK and Cancel buttons
+        """
+        self.widgetUserEdit.treeAuthorizations.setCurrentItem(None)
+        self.widgetUserEdit.authGroup.setDisabled(True)
+        self.widgetUserEdit.pushAuth.setDisabled(True)
 
     def slotSaveEdit(self):
         """
@@ -436,7 +445,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         finally:
             self._in_progress = False
             self.buttonBox.setDisabled(False)
-
+            self.ResetEditUi()
         # Hide edit box
         self.hideEditBox()
         # User.Manager does not emit signals, refresh whole list.
