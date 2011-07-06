@@ -11,24 +11,49 @@ import pisi
 
 # Do the proper adjustments here before using the script.
 
-smtp_user = "loker"
 
 # If set to prompt, the password will be prompted upon execution
 smtp_password = "prompt"
 
 smtp_server = "mail.pardus.org.tr"
-mail_from = "loker@pardus.org.tr"
-mail_from_name = "Koray Löker"
+
+mail_from = sys.argv[1]
+smtp_user = mail_from.split("@")[0]
+mail_from_en = "pardus-announce@pardus.org.tr"
+mail_from_name_en = "Pardus Announcements"
+mail_from_tr = "duyuru@pardus.org.tr"
+mail_from_name_tr = "Pardus Duyuruları"
 
 # If set to prompt, the password will be prompted upon execution
 smtp_password = "prompt"
 
 # Mail template
 
-mail_template = """\
-From: %(mail_from_name)s <%(mail_from)s>
-To: %(mail_to)s
-Subject: [Pardus] Kararlı depo güncellemeleri / Updates in stable repo
+mail_template_en = """\
+From: %(mail_from_name_en)s <%(mail_from_en)s>
+To: %(mail_to_en)s
+Subject: [Pardus] Updates in stable %(arch)s repo
+Content-Type: text/plain;
+            charset="utf-8"
+
+Dear Pardus users,
+
+    Below, you will find the list of packages that will be updated in the stable repo.
+We strongly recommend you to update your system in order to experience a more reliable
+Pardus with a better performance.
+
+Best regards,
+Pardus team
+
+----------------------------------------------
+
+%(packages)s
+"""
+
+mail_template_tr = """\
+From: %(mail_from_name_tr)s <%(mail_from_tr)s>
+To: %(mail_to_tr)s
+Subject: [Pardus] %(arch)s kararlı depo güncellemeleri
 Content-Type: text/plain;
             charset="utf-8"
 
@@ -39,22 +64,13 @@ yayınlanmaya başlayacaktır. Sisteminizin kararlı olması ve daha iyi perform
 sağlamanız için bu güncellemeleri yapmanızı öneririz.
 
 İyi çalışmalar,
-%(mail_from_name)s <%(mail_from)s>
-
---
-Dear Pardus users,
-
-    Below, you will find the list of packages that will be updated in the stable repo.
-We strongly recommend you to update your system in order to experience a more reliable
-Pardus with a better performance.
-
-Best regards,
-%(mail_from_name)s <%(mail_from)s>
+Pardus ekibi
 
 ----------------------------------------------
 
 %(packages)s
 """
+
 
 def send_mails(recipient, mail):
 
@@ -91,7 +107,7 @@ def send_mails(recipient, mail):
     session.quit()
 
 def usage():
-    print "Usage: %s <temporary-stable> <public-stable>" % sys.argv[0]
+    print "Usage: %s <your-mail-address> <temporary-stable> <public-stable>" % sys.argv[0]
     sys.exit(1)
 
 def generate_package_report(package_name, last_history):
@@ -120,13 +136,14 @@ if __name__ == "__main__":
 
     # Determine the packages to be updated in the stable repo
     try:
-        temp_stable_dir = sys.argv[1]
-        cur_stable_dir = sys.argv[2]
+        temp_stable_dir = sys.argv[2]
+        cur_stable_dir = sys.argv[3]
     except IndexError:
         usage()
 
     architectures = ["i686", "x86_64"]
-
+    arch_map = {"i686":"32bit", "x86_64":"64bit"}
+    
     for arch in architectures:
         if not os.path.exists(os.path.join(temp_stable_dir, arch)):
             print "Skipping %s as it doesn't exist.." % arch
@@ -161,11 +178,14 @@ if __name__ == "__main__":
                 print "Error happened for %s" % pkg_name
 
 
-        template_values = {"mail_from"      : mail_from,
-                           "mail_from_name" : mail_from_name,
-                           "mail_to"        : "loker@pardus.org.tr",
-                           "packages"       : report}
+        template_values = {"mail_from_en"      : mail_from_en,
+                           "mail_from_name_en" : mail_from_name_en,
+                           "mail_from_tr"      : mail_from_tr,
+                           "mail_from_name_tr" : mail_from_name_tr,
+                           "mail_to_tr"        : "loker@pardus.org.tr",
+                           "mail_to_en"        : "loker@pardus.org.tr",
+                           "packages"          : report,
+                           "arch"              : arch_map[arch]}
 
-        templates = mail_template % template_values
-
-        send_mails (template_values["mail_to"], templates)
+        send_mails (template_values["mail_to_tr"], mail_template_tr % template_values)
+        send_mails (template_values["mail_to_en"], mail_template_en % template_values)
