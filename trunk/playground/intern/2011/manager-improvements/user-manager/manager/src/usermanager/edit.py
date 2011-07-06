@@ -302,7 +302,9 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
             type_ = 0
         elif self.radioAuthYes.isChecked():
             type_ = 1
-        index=self.treeAuthorizations.indexOfTopLevelItem()
+        if isinstance(self.treeAuthorizations.currentItem(),PolicyItem):
+            category=self.treeAuthorizations.parent()
+        index = category.indexOfTopLevelItem()
         tl_item = self.treeAuthorizations.topLevelItem(index)
         for child_index in xrange(tl_item.childCount()):
             item = tl_item.child(child_index)
