@@ -72,7 +72,7 @@ class Widget(QWidget, ScreenWidget):
 
     def shown(self):
         #ctx.mainScreen.disableNext()
-        if ctx.flags.install_type == ctx.STEP_BASE or ctx.flags.install_type == ctx.STEP_DEFAULT:
+        if ctx.flags.install_type in [ ctx.STEP_BASE , ctx.STEP_DEFAULT , ctx.STEP_LIVE ]:
             ctx.mainScreen.ui.buttonNext.setText(_("Start Installation"))
         if ctx.flags.install_type == ctx.STEP_FIRST_BOOT:
             ctx.mainScreen.ui.buttonNext.setText(_("Apply Settings"))
@@ -189,8 +189,9 @@ class Widget(QWidget, ScreenWidget):
             ctx.mainScreen.enableBack()
             return False
 
-        if ctx.flags.install_type == ctx.STEP_BASE or ctx.flags.install_type == ctx.STEP_DEFAULT:
-            self.createPackageList()
+        if ctx.flags.install_type in [ ctx.STEP_BASE , ctx.STEP_DEFAULT, ctx.STEP_LIVE ]:
+            if ctx.flags.install_type != ctx.STEP_LIVE:
+                self.createPackageList()
 
             rc = ctx.interface.messageWindow(_("Confirm"),
                                         _("The partitioning options you have selected "

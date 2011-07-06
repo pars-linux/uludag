@@ -28,7 +28,12 @@ GUI_STEPS = {ctx.STEP_DEFAULT:("license", "mediaCheck", "keyboardSetup",
                                    "automaticPartitioning", "manualPartitioning", "bootloadersetup",
                                    "collectionSelection", "summary", "packageInstallation", "goodbye"),
              ctx.STEP_FIRST_BOOT:("welcome", "accounts", "admin", "summary", "goodbye"),
-             ctx.STEP_RESCUE:("rescue", "bootloadersetup", "passwordRescue", "goodbye")}
+             ctx.STEP_RESCUE:("rescue", "bootloadersetup", "passwordRescue", "goodbye"),
+             #live cd installer
+             ctx.STEP_LIVE:(  "accounts", "admin", "driveSelection",
+                               "automaticPartitioning", "manualPartitioning", "bootloadersetup","collectionSelection",
+                                "summary", "liveInstallation", "goodbye")
+             }
 
 stepToClass = {"license":"ScrLicense",
                "network":"ScrNetwork",
@@ -45,6 +50,7 @@ stepToClass = {"license":"ScrLicense",
                "collectionSelection":"ScrCollection",
                "summary":"ScrSummary",
                "packageInstallation":"ScrInstall",
+               "liveInstallation":"ScrLiveInstall",
                "goodbye":"ScrGoodbye",
                "rescue":"ScrRescue",
                "passwordRescue":"ScrRescuePassword"

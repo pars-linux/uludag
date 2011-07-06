@@ -22,7 +22,8 @@ avaliable_modules = [
     "ScrBootloader",          # 09
     "ScrSummary",             # 10
     "ScrInstall",             # 11
-    "ScrGoodbye"              # 12
+    "ScrGoodbye",             # 12
+    "ScrLiveInstall"          # 13
 ]
 
 module_name = sys.argv[1]
