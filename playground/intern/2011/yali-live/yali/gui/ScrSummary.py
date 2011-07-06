@@ -207,7 +207,10 @@ class Widget(QWidget, ScreenWidget):
             if not rc:
                 if yali.storage.complete(ctx.storage, ctx.interface):
                     ctx.storage.turnOnSwap()
-                    ctx.storage.mountFilesystems(readOnly=False, skipRoot=False)
+                    if ctx.flags.install_type == ctx.STEP_LIVE:
+                        ctx.storage.mountFilesystems(readOnly=None, skipRoot=False, skipDirDevices=True)
+                    else:
+                        ctx.storage.mountFilesystems(readOnly=None, skipRoot=False, skipDirDevices=False)
                     ctx.mainScreen.step_increment = 1
                     ctx.mainScreen.ui.buttonNext.setText(_("Next"))
                     return True

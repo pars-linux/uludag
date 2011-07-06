@@ -246,9 +246,10 @@ class StorageSet(object):
                 filesystems[device.format.mountpoint] = device
         return filesystems
 
-    def mountFilesystems(self, readOnly=None, skipRoot=False):
+    def mountFilesystems(self, readOnly=None, skipRoot=False, skipDirDevices=False):
         devices = self.mountpoints.values() + self.swapDevices
-        devices.extend([self.dev, self.sysfs, self.proc])
+        if skipDirDevices == False:
+            devices.extend([self.dev, self.sysfs, self.proc])
         devices.sort(key=lambda d: getattr(d.format, "mountpoint", None))
 
         for device in devices:
