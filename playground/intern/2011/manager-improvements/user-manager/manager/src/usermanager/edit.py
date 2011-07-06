@@ -14,7 +14,8 @@
 # Python
 import os
 
-# PyQt
+# PyQtNo protocol specified
+
 from PyQt4 import QtCore
 from PyQt4 import QtGui
 
@@ -234,11 +235,12 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         self.comboMainGroup.clear()
         for group in all_groups:
             # Groups
+
             item = QtGui.QListWidgetItem(self.listGroups)
             item.setText(group)
             if group in selected_groups:
                 item.setCheckState(QtCore.Qt.Checked)
-                # Add selected items to main group combo
+                # Add selected items to mhttp://svn.pardus.org.tr/uludag/trunk/playground/intern/2011/ain group combo
                 self.comboMainGroup.addItem(group)
                 # Wheel group?
                 if group == "wheel":
@@ -303,8 +305,12 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         elif self.radioAuthYes.isChecked():
             type_ = 1
         if isinstance(self.treeAuthorizations.currentItem(),PolicyItem):
-            category=self.treeAuthorizations.parent()
-        index = category.indexOfTopLevelItem()
+            category = self.treeAuthorizations.currentItem()
+            category = category.parent()
+            index = self.treeAuthorizations.indexOfTopLevelItem(category)
+        else:
+            category = self.treeAuthorizations.currentItem()
+            index = self.treeAuthorizations.indexOfTopLevelItem(category)
         tl_item = self.treeAuthorizations.topLevelItem(index)
         for child_index in xrange(tl_item.childCount()):
             item = tl_item.child(child_index)
@@ -349,12 +355,11 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
     def slotPolicySelected(self, item, previous = None):
         if not item:
             return
-
-            self.pushCategoryAuth.setEnabled(True)
+        self.pushCategoryAuth.setEnabled(True)
+        self.authGroup.setEnabled(True)
 
         try:
             if isinstance(item,PolicyItem):
-                self.authGroup.setEnabled(True)
                 self.radioAuthNo.setChecked(item.getType() == -1)
                 self.radioAuthDefault.setChecked(item.getType() == 0)
                 self.radioAuthYes.setChecked(item.getType() == 1)
@@ -362,13 +367,16 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
             self.authGroup.setEnabled(False)
 
     def slotPolicyChanged(self, state):
-        item = self.treeAuthorizations.currentItem()
-        if self.radioAuthNo.isChecked():
-            item.setType(-1)
-        elif self.radioAuthDefault.isChecked():
-            item.setType(0)
-        elif self.radioAuthYes.isChecked():
-            item.setType(1)
+        try:
+            item = self.treeAuthorizations.currentItem()
+            if self.radioAuthNo.isChecked():
+                item.setType(-1)
+            elif self.radioAuthDefault.isChecked():
+                item.setType(0)
+            elif self.radioAuthYes.isChecked():
+                item.setType(1)
+        except AttributeError:
+            pass
 
     def slotAdmin(self, state):
         if state == QtCore.Qt.Unchecked:
