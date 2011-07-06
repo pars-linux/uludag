@@ -376,8 +376,8 @@ class SystemCopy(Process):
                     os.mknod(dstname, stat.S_IFSOCK | mode)
                 elif stat.S_ISREG(st.st_mode):
                     shutil.copy2(srcname, dstname)
-                    data = [EventCopy, dstname]
-                    self.queue.put_nowait(data)
+                    #data = [EventCopy, dstname]
+                    #self.queue.put_nowait(data)
 
                 os.lchown(dstname, st.st_uid, st.st_gid)
                 if not stat.S_ISLNK(st.st_mode):
