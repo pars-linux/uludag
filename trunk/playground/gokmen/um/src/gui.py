@@ -189,6 +189,10 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         updatePlan = DistupdatePlanner(nextRepoUri = self.target_repo, Debug = True, forceInstallUri = FORCE_INSTALL)
         updatePlan.plan()
         self.missing_packages = updatePlan.missingPackages
+        try:
+            self.missing_packages.remove("upgrade-manager")
+        except ValueError:
+            pass
         self.required_diskspace = updatePlan.sizeOfNeededTotalSpace
         self.planner_successful = updatePlan.successful
 
