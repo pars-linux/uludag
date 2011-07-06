@@ -56,24 +56,34 @@ In order to do Pardus Final official, the following criterias must be met:
 Final Tickets
 ^^^^^^^^^^^^^
 Release minus 2 weeks:
+
 #. Create release-notes
 #. Prepare press release from release-notes
 #. Track the production of publicity and promotion materials
-#. Only boot and installation urgent `tracker bugs`_ fixed and needs approval.
 #. Warn mirrors and ULAKBIM one week before
 
 Release minus 5 days:
+
 #. Get ready the publicity and promotion materials and start to deliver them
 
+Release minus 3 day:
+
+#. Final freeze
+#. Only boot and installation urgent `tracker bugs`_ fixed and needs approval.
+
 Release:
+
 #. Upload release-notes to developer.pardus.org.tr
 #. Upload press-release to pardus.org.tr
 #. Release RC
-    * Upload iso to FTP servers
-    * Upload iso to torrents
+
+   * Upload iso to FTP servers
+   * Upload iso to torrents
+
 #. Announcement for RC release on `duyuru list`_ and `announce list`_
 
 Release plus 1 day:
+
 #. Continue new next release process
 
 Final Tracker Bugs
@@ -93,7 +103,7 @@ Test team has the responsibility of determining whether the criteria for the
 the test team reports on `Pardus Bugzilla`_ will be reviewed and discussed
 at the "where we are" meeting.
 
-.. _beta release requirements: http://developer.pardus.org.tr/guides/releasing/official_releases/beta_release.html#beta-release-requirements
+.. _RC release requirements: http://developer.pardus.org.tr/guides/releasing/official_releases/release_candidate_phase.html#final-release-requirements
 .. _YALI: http://developer.pardus.org.tr/projects/yali/index.html
 .. _Kaptan: http://developer.pardus.org.tr/projects/kaptan/index.html
 .. _Pardus bugzilla: http://bugs.pardus.org.tr/
@@ -102,3 +112,6 @@ at the "where we are" meeting.
 .. _EOL: http://developer.pardus.org.tr/guides/releasing/end_of_life.html
 .. _severity: http://developer.pardus.org.tr/guides/bugtracking/howto_bug_triage.html#bug-importance
 .. _tracker bugs: http://developer.pardus.org.tr/guides/bugtracking/tracker_bug_process.html
+.. _duyuru list: http://lists.pardus.org.tr/mailman/listinfo/duyuru
+.. _announce list: http://lists.pardus.org.tr/mailman/listinfo/pardus-announce
+

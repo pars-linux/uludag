@@ -53,10 +53,11 @@ Beta Tickets
 
 Beta 1
 ######
-#. Review tracker bugs and no urgent and high bugs present
-#. Fix high priority tracker bugs
+#. Review `tracker bugs`_ and no urgent and high bugs present
+#. Fix high priority `tracker bugs`_
 #. Create a list for promotion and publicity materials
 #. Plan and start for artwork pardus
+
    * Final Web banners
    * DVD, CD cover, guide design
    * Brochures, stand and roll-up design
@@ -64,9 +65,12 @@ Beta 1
 #. Translation and user documentation check
 
 Release:
+
 #. Release Beta
-    * Upload iso to FTP servers
-    * Upload iso to torrents
+
+   * Upload iso to FTP servers
+   * Upload iso to torrents
+
 #. Announcement for Beta release on `duyuru list`_ and `announce list`_
 
 
@@ -74,55 +78,71 @@ Beta 2
 ######
 
 Release minus 2 weeks:
-# All normal, low priority tracker bugs fixed
-#. Toolchain freeze start
+
+#. All normal, low priority `tracker bugs`_ fixed
+#. `Toolchain freeze`_ start
 #. Warn developers about:
-    #. User interface freeze
-    #. Beta freeze (`code complete`_)
-    #. Package file conflicts or unresolved package dependencies
+
+   * `User interface freeze`_
+   * `Beta freeze`_ (`code complete`_)
+   * Package file conflicts or unresolved package dependencies
+
 #. Begin Release Upgrade tests
 #. Announce EOL of 2 previous release
 
 Release minus 1 week:
-#. User interface freeze (artwork)
-#. Beta freeze (`code complete`_) on (`testing source repository`_)
+
+#. `User interface freeze`_ (artwork)
+#. `Beta freeze`_ (`code complete`_) on (`testing source repository`_)
 #. Review problems and mark as Beta tracker bug which need resolution before release
-    - Package conflicts or unresolved package dependencies
-    - Installation bugs
-    - Release Upgrade bugs
-    - High severity bugs
-#. Selectively accept package merges to resolve Beta tracker bugs
+
+   * Package conflicts or unresolved package dependencies
+   * Installation bugs
+   * Release Upgrade bugs
+   * High severity bugs
+
+#. Selectively accept package merges to resolve Beta `tracker bugs`_
 #. Create Beta Test Release for Beta validation tests
-    * Installation media
-    * Live media
+
+   * Installation media
+   * Live media
+
 #. Prepare and make "where we are meeting" after validation tests, in order to review bugs and possibility to prolonge release.
 #. Create release-notes
 #. Warn mirrors and ULAKBIM one week before
 #. Preperation for final release announcement and marketing materials
 
 Release minus 3 days:
+
 #. Resolve image based problems
-    - Package conflicts or unresolved package dependencies
-    - Installation bugs
-    - High severity bugs
-#. Test and fix Beta tracker bugs
+
+   * Package conflicts or unresolved package dependencies
+   * Installation bugs
+   * High severity bugs
+
+#. Test and fix Beta `tracker bugs`_
 
 Release minus 1 day:
-#. Review Beta tracker bugs and take final decision what to fix or defer
+
+#. Review Beta `tracker bugs`_ and take final decision what to fix or defer
 #. Prepare and plan RC start meeting
 
 Release:
+
 #. Upload release-notes to developer.pardus.org.tr
 #. Release Beta
-    * Upload iso to FTP servers
-    * Upload iso to torrents
+
+   * Upload iso to FTP servers
+   * Upload iso to torrents
+
 #. Announcement for Beta release on `duyuru list`_ and `announce list`_
 
 Release plus 1 day:
-#. Warn about translation freeze
-#. Warn contributors about packages that are not found on any repositories for contributor repo freeze
-#. Warn about Final repo freeze
-#. Begin the plan of next new release
+
+#. Warn about `Translation freeze`_
+#. Warn contributors about packages that are not found on any repositories for contributor `Repo freeze`_
+#. Warn about Final freeze
+#. Begin the plan of `next new release`_
 
 Beta Tracker Bugs
 ^^^^^^^^^^^^^^^^^
@@ -165,3 +185,11 @@ at the "where we are" meeting.
 .. _tracker bugs: http://developer.pardus.org.tr/guides/bugtracking/tracker_bug_process.html#open-tracker-bug-report
 .. _accepted features: http://bugs.pardus.org.tr/buglist.cgi?query_format=advanced&bug_severity=newfeature&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&resolution=REMIND
 .. _testing source repository: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#testing-folder
+.. _duyuru list: http://lists.pardus.org.tr/mailman/listinfo/duyuru
+.. _announce list: http://lists.pardus.org.tr/mailman/listinfo/pardus-announce
+.. _User interface freeze: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html#user-interface-freeze
+.. _Beta freeze: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html#beta-freeze
+.. _next new release: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html
+.. _Toolchain freeze: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html#toolchain-freeze
+.. _Translation freeze: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html#translation-freeze
+.. _Repo freeze: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html#repo-freeze

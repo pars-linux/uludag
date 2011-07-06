@@ -13,6 +13,9 @@ releases.
 .. toctree::
    :maxdepth: 2
 
-   alpha_release.rst
-   beta_release.rst
-   final_release.rst
+   release_process.rst
+   planning_phase.rst
+   alpha_phase.rst
+   beta_phase.rst
+   release_candidate_phase.rst
+   final_phase.rst

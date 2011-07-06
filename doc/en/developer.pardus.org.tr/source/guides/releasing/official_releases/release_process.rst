@@ -6,13 +6,13 @@ Pardus releases occur nearly every 8 months. Each release cycle follow general r
 General Freezes
 ---------------
 
-Open developement:
-^^^^^^^^^^^^^^^^^^
+Open developement
+^^^^^^^^^^^^^^^^^
 
 - Unrestrained general development activity, new packages and versions are automatically taken and merge without any permission.
 
-Repo Freeze:
-^^^^^^^^^^^^
+Repo Freeze
+^^^^^^^^^^^
 - At the end of this phase all packages of previous Pardus release packages merge process should be finished.
 - After this period, new packages and new versions can be merged under some permissions and restrictions.
 - In this freeze time devel branched and testing repository open.
@@ -22,38 +22,38 @@ Feature Acceptence Deadline
 
 - All features from users should be reported to Bugzilla before this deadline
 
-Feature freeze:
-^^^^^^^^^^^^^^^
-- New features can not be added to the repositories, only bug fixes can be done.
+Feature freeze
+^^^^^^^^^^^^^^
+- New features can not be added to the repositories, only bug fixes can be done. (See `feature freeze`_)
 
-User interface freeze:
-^^^^^^^^^^^^^^^^^^^^^^
+User interface freeze
+^^^^^^^^^^^^^^^^^^^^^
 - User interface can not be chaged after this time
 - It is needed for documentation and screenshots stabilization.
 
-Beta freeze:
-^^^^^^^^^^^^
+Beta freeze
+^^^^^^^^^^^
 
 - The repository is freezed until beta is released, in order to stabilize beta for tests and reach beta to a level similar to final release.
 - Bug fixes taken to repository with release manager approval
 
-String freeze:
-^^^^^^^^^^^^^^
+String freeze
+^^^^^^^^^^^^^
 - In order to stabilize translations, strings should be freezed on repositories.
 
-Toolchain freeze:
-^^^^^^^^^^^^^^^^^
+Toolchain freeze
+^^^^^^^^^^^^^^^^
 Last date for toolchain changes.
 
-Kernel freeze:
-^^^^^^^^^^^^^^
+Kernel freeze
+^^^^^^^^^^^^^
 - No new kernel versions in order to enable last final hardware compatibility checks, deadline for kernel regression fixes
 
-Translation freeze:
-^^^^^^^^^^^^^^^^^^^
+Translation freeze
+^^^^^^^^^^^^^^^^^^
 - No translations permitted after this point in order to enable final stabilization and last final tests.
 
-RC freeze:
+RC freeze
 ^^^^^^^^^^
 
 - The repository is freezed until Final is released, in order to stabilize RC for tests and reach RC to a level similar to final release.
@@ -66,6 +66,7 @@ General Milestones
 Planning
 ^^^^^^^^
 (about 2 months)
+
 - Package build system up
 - Toolchain organized
 - Features proposed, discussed on developer meeting, technical group review them and select relevant packages and technologies that fits (`Feature Acceptence Deadline`_)
@@ -80,23 +81,33 @@ Alpha 1
 
 Intrusive changes phase completed (about 2 months)
 
+- `Open developement`_
 - High priority features and tasks finished
+
+See details from `Alpha phase`_
 
 Alpha 2
 ^^^^^^^
 (about 2 weeks)
+
+- `Open developement`_
 - Medium priority tasks and features finished
 - At the end of this period, all remamined features reviewed and reprioritized or ignored if needed.
+
+See details from `Alpha phase`_
 
 Alpha 3
 ^^^^^^^
 Feature development phase completed (about 2 weeks)
 
+- `Open developement`_
 - Where we are meeting to review bugs and possibility to prolonge release.
 - Low priority tasks and features finished
 - `Feature freeze`_
 - `Repo freeze`_ for main/base repo
 - `String freeze`_
+
+See details from `Alpha phase`_
 
 Beta 1
 ^^^^^^
@@ -110,6 +121,8 @@ Stabilization phase (about 3 week)
 - Announce EOL of 2 previous release
 - Translation and user documentation check
 
+See details from `Beta phase`_
+
 Beta 2
 ^^^^^^
 Stabilization phase completed (about 2 week)
@@ -119,9 +132,12 @@ Stabilization phase completed (about 2 week)
 - `Beta freeze`
 - Preperation for final release announcement and marketing materials
 
+See details from `Beta phase`_
+
 RC
 ^^
 (about 2 weeks)
+
 - Where we are meeting to review bugs and possibility to prolonge release.
 - Fixing only urgent release tracker bugs, bug fix needs approval.
 - `Kernel freeze`_
@@ -132,11 +148,16 @@ RC
 - `RC freeze`_
 - Final Marketing and announcement ready
 
+See details from `RC phase`_
+
 Final
-^^^^^^^^
+^^^^^
 (about 2 weeks)
+
 - Only boot and installation urgent release `tracker bugs`_ fixed and needs approval.
 - Start new release cycle for the next release
+
+See details from `Final phase`_
 
 LTS technological updates (point releases)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -172,6 +193,13 @@ EOL
 - The EOL announce of a release is done at second next release beta 1 version.
 - The EOL announce date of a release 2 next release + 1 month (2n +1).
 
+See details from `EOL`_
+
 .. _Planning Phase: http://developer.pardus.org.tr/guides/releasing/official_releases/planning_phase.html
 .. _tracker bugs: http://developer.pardus.org.tr/guides/bugtracking/tracker_bug_process.html
-
+.. _feature freeze: http://developer.pardus.org.tr/guides/releasing/feature_freeze.html
+.. _Alpha phase: http://developer.pardus.org.tr/guides/releasing/official_releases/alpha_phase.html
+.. _Beta phase: http://developer.pardus.org.tr/guides/releasing/official_releases/beta_phase.html
+.. _RC phase: http://developer.pardus.org.tr/guides/releasing/official_releases/release_candidate_phase.html
+.. _Final phase: http://developer.pardus.org.tr/guides/releasing/official_releases/final_phase.html
+.. _EOL: http://developer.pardus.org.tr/guides/releasing/end_of_life.html

@@ -61,22 +61,28 @@ Alpha Tickets
 Alpha 1
 #######
 
+#. Intrusive changes phase completed (All high priority features and tasks finished)
 #. Create default applications list for desktop menu
 #. Send weekly emails about `urgent package list`_
 #. Start for artwork Pardus
-    * Wallpapers
-    * Icon theme
-    * Splash screens
-#. Intrusive changes phase completed (All high priority features and tasks finished)
+
+   * Wallpapers
+   * Icon theme
+   * Splash screens
 
 Release minus 1 week:
+
 #. Warn mirrors and ULAKBIM one week before
 
 Release:
+
 #. Release Alpha
-    * Upload iso to FTP servers
-    * Upload iso to torrents
+
+   * Upload iso to FTP servers
+   * Upload iso to torrents
+
 #. Announcement for Alpha release on `duyuru list`_ and `announce list`_
+
 
 Alpha 2
 #######
@@ -85,58 +91,75 @@ Alpha 2
 #. At the end of this period, all remained features reviewed and reprioritized or ignored if needed.
 
 Release minus 1 week:
+
 #. Warn mirrors and ULAKBIM one week before
 
-
 Release:
+
 #. Release Alpha
-    * Upload iso to FTP servers
-    * Upload iso to torrents
+
+   * Upload iso to FTP servers
+   * Upload iso to torrents
+
 #. Announcement for Alpha release on `duyuru list`_ and `announce list`_
+
 
 Alpha 3
 #######
 
 #. Where we are meeting to review bugs and possibility to prolonge release.
 #. Low priority tasks and features finished
-#. Warn about `feature freeze`_ one week before
-#. Warn about Alpha repo freeze one week before
-#. Warn about String freeze
+#. Warn about `Feature freeze`_ one week before
+#. Warn about `Repo freeze`_ one week before
+#. Warn about `String freeze`_
 
 Release minus 1 week:
-#. Feature freeze
-#. String freeze
+
+#. `Feature freeze`_
+#. `String freeze`_
 #. Prepare and make "where we are meeting" after validation tests
 #. Create release-notes
 #. Warn mirrors and ULAKBIM one week before
 
 Release minus 4 days:
-#. Repo freeze for main/base repo
-     #. Open testing source and binary_ repositories
-     #. Add new testing repository_ to packages.pardus.org.tr
+
+#. `Repo freeze`_ for main/base repo
+
+   * Open testing source_ and binary_ repositories
+   * Add new testing repository to packages.pardus.org.tr
+
 #. Announce repo freeze on #pardus-devel and `gelistirici list`_ and `developer list`_
 #. Create Alpha Test Release for Alpha validation tests
-    * Installation media
-    * Live media
+
+   * Installation media
+   * Live media
+
 #. Review problems and mark as Alpha tracker bug which need resolution before release
-    - Package conflicts or unresolved package dependencies
-    - Bugs that breaks default installation
-    - High severity bugs
+
+   * Package conflicts or unresolved package dependencies
+   * Bugs that breaks default installation
+   * High severity bugs
+
 #. Selectively accept package merges to resolve Alpha tracker bugs
 #. Prepare and plan Beta start meeting
 
 Release minus 1 day:
-#. Resolve any remaining Alpha tracker bugs
+
+#. Resolve any remaining Alpha `tracker bugs`_
 #. Begin Release Upgrade tests (all new package merges and features completed and from now on repo is consistent.)
 
 Release:
+
 #. Upload release-notes to developer.pardus.org.tr
 #. Release Alpha
-    * Upload iso to FTP servers
-    * Upload iso to torrents
+
+   * Upload iso to FTP servers
+   * Upload iso to torrents
+
 #. Announcement for Alpha release on `duyuru list`_ and `announce list`_
 
 Release plus 1 week:
+
 #. Update release notes and feature list if necessary (if a feature could not be done during alpha phase it should be removed from feature list)
 
 Alpha Tracker Bugs
@@ -187,10 +210,13 @@ at the "where we are" meeting.
 .. _tracker bugs: http://developer.pardus.org.tr/guides/bugtracking/tracker_bug_process.html#open-tracker-bug-report
 .. _feature request: http://developer.pardus.org.tr/guides/newfeature/newfeature_requests.html#how-do-i-propose-a-new-feature-that-i-do-not-contribute
 .. _feature submission: http://developer.pardus.org.tr/guides/newfeature/newfeature_requests.html#how-my-new-feature-request-is-accepted
-.. _feature freeze: http://developer.pardus.org.tr/guides/releasing/feature_freeze.html
+.. _Feature freeze: http://developer.pardus.org.tr/guides/releasing/feature_freeze.html
 .. _duyuru list: http://lists.pardus.org.tr/mailman/listinfo/duyuru
 .. _announce list: http://lists.pardus.org.tr/mailman/listinfo/pardus-announce
 .. _developer list: http://lists.pardus.org.tr/mailman/listinfo/pardus-devel
 .. _gelistirici list: http://lists.pardus.org.tr/mailman/listinfo/gelistirici
 .. _binary: http://developer.pardus.org.tr/guides/releasing/repository_concepts/software_repository.html#testing-binary-repository
 .. _source: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#testing-folder
+.. _Pardus technologies: http://developer.pardus.org.tr/projects/index.html
+.. _Repo freeze: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html#repo-freeze
+.. _String freeze: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html#string-freeze

@@ -21,14 +21,13 @@ Planning Phase Goals
 --------------------
 
 #. Toolchain organized
-#. Features proposed, discussed on developer meeting, technical group review them
-    and select relevant packages and technologies that fits (Feature Acceptence Deadline)
+#. Features proposed, discussed on developer meeting, technical group review them and select relevant packages and technologies that fits (Feature Acceptence Deadline)
 #. Planned feature list announced
 #. Release plan announced
 #. New branch officially announce and open for merging packages (Ready for all developers)
 
-Alpha Release Requirements
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Planning Phase Requirements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 In order to do Pardus Developer Release official, the following criterias must be meet:
 
 * There must be no file conflicts or unresolved package dependencies in developer release iso images
@@ -43,6 +42,7 @@ Planning Phase (Developer Release) Tickets
 #. Add new devel repository to http://packages.pardus.org.tr
 #. Open `tracker bugs`_ for Alpha, Beta, Final
 #. Warn users and developers about `feature request`_ deadline one week before
+#. Warn developers about `feature submission`_ deadline one week before
 #. Prepare buildfarm servers
 #. State toolchain versions
 #. State compiler flags
@@ -58,24 +58,35 @@ Planning Phase (Developer Release) Tickets
    * Final Wallpapers
    * Final Icon theme
    * Final Splash screens
+
+Release minus 1 month:
+
+#. `feature request`_ deadline
+
 Release minus 3 week:
-#. Warn developers about `feature submission`_ deadline
+
+#. `feature submission`_ deadline
 #. Create accepted feature list
 #. Put feature list to developer.pardus.org.tr
 #. Create detailed release schedule (priotirize feaute list, give other details for development, artwork, documentation etc.)
 #. Update schedule on developer.pardus.org.tr
 
 Release minus 1 week:
+
 #. Warn mirrors and ULAKBIM one week before
 
 Release minus 2 day:
+
 #. Plan and announce a developer meeting on IRC
 #. Prepare and plan Alpha start meeting
 
 Release:
+
 #. Publish the image
-    #. Upload iso to FTP servers
-    #. Upload iso to torrents
+
+    * Upload iso to FTP servers
+    * Upload iso to torrents
+
 #. Announce pre-alpha (developer) release on `developer list`_ and `gelistirici list`_
 
 .. _requested features: http://developer.pardus.org.tr/guides/newfeature/index.html
@@ -93,4 +104,4 @@ Release:
 .. _developer list: http://lists.pardus.org.tr/mailman/listinfo/pardus-devel
 .. _gelistirici list: http://lists.pardus.org.tr/mailman/listinfo/gelistirici
 .. _YALI: http://developer.pardus.org.tr/projects/yali/index.html
-
+.. _PiSi: http://developer.pardus.org.tr/projects/pisi/index.html

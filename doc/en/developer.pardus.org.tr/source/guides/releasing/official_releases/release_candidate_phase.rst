@@ -1,4 +1,4 @@
-.. _final-release:
+.. _rc-release:
 
 Release Candidate Phase
 =======================
@@ -56,51 +56,61 @@ In order to do Pardus RC official, the following criterias must be met:
 * All supported languages should be announced on mail lists and the translations of these supported languages should be finished and tested before RC released.
 * Upgrade manager should be ready for upgrade
 
-(about 2 weeks)
-- Request contributor release notes
-- Testing targets achieved (All features functional and bug free)
-- `RC freeze`_
-- Final Marketing and announcement ready
-
 RC Tickets
 ^^^^^^^^^^
 Release minus 2 weeks:
+
 #. All Final `tracker bugs`_ fixed
 #. Kernel freeze start
 #. Warn contributors about:
-    #. Translation freeze freeze
-    #. Repo freeze for contributors
-    #. Final freeze
-    #. Package file conflicts or unresolved package dependencies
+
+   * `Translation freeze`_
+   * `Kernel freeze`_
+   * `Repo freeze`_ for contributors
+   * `RC freeze`_
+   * Package file conflicts or unresolved package dependencies
+
 #. Begin Release Upgrade tests
 #. Plan the date of product publicity (launching)
 
 Release minus 10 days:
-#. Review problems and mark as Beta tracker bug which need resolution before release
-    - Package conflicts or unresolved package dependencies
-    - Installation bugs
-    - Release Upgrade bugs
-    - High severity bugs
+
+#. Review problems and mark as RC tracker bug which need resolution before release
+
+   * Package conflicts or unresolved package dependencies
+   * Installation bugs
+   * Release Upgrade bugs
+   * High severity bugs
+
 #. Selectively accept package merges to resolve Final tracker bugs
+#. `RC freeze`
 #. Create Final Test Release for Final validation tests
-    * Installation media
-    * Live media
+
+   * Installation media
+   * Live media
+
 #. Prepare and make "where we are meeting" after validation tests in order to review bugs possibility to prolonge release.
-#. Update feature list according to completed features
 #. Decide for RC code name and its Wallpaper
+#. Request contributor release notes
 #. Create release-notes
-#. Warn mirrors and ULAKBIM one week before
 #. Make stock plan for publicity and promotion materials
 #. Preperation for final release announcement and marketing materials
+#. Last check for update feature list according to completed features
+#. Warn mirrors and ULAKBIM one week before
 
 Release minus 7 days:
-#. Translation freeze
-#. Repo freeze for contributors
+
+#. `Translation freeze`_
+#. `Kernel freeze`_
+#. `Repo freeze`_ for contributors
 #. Resolve image based problems
-    - Package conflicts or unresolved package dependencies
-    - Installation bugs
-    - High severity bugs
+
+   * Package conflicts or unresolved package dependencies
+   * Installation bugs
+   * High severity bugs
+
 #. Test and fix Final `tracker bugs`_
+#. Testing targets achieved (All features functional and bug free)
 #. Track the production of publicity and promotion materials
 
 Release Minus 3 days:
@@ -108,13 +118,17 @@ Release Minus 3 days:
 #. Review Final `tracker bugs`_ and take final decision what to fix or defer
 #. Fixing only urgent release `tracker bugs`_, bug fix needs approval.
 #. Prepare press release from release-notes
+#. Warn about Final freeze
 
 Release:
+
 #. Upload release-notes to developer.pardus.org.tr
 #. Upload press-release to pardus.org.tr
 #. Release RC
-    * Upload iso to FTP servers
-    * Upload iso to torrents
+
+   * Upload iso to FTP servers
+   * Upload iso to torrents
+
 #. Announcement for RC release on `duyuru list`_ and `announce list`_
 
 Final Tracker Bugs
@@ -124,12 +138,12 @@ A bug is considered an final tracker bug if one of the following criterias is me
 
 #. If a package in the urgent package list of alpha, beta or final has a bug that can not be fixed with a future update or has a severity_ rating of high or urgent.
 #. Bugs that are a blocks the testing and test process. (Bugs related to untestable products)
-#. Bug relates to an unachieved `Final Release Requirements`_
+#. Bug relates to an unachieved `RC Release Requirements`_
 
 Final Postponement
 ^^^^^^^^^^^^^^^^^^
 
-#. One week before the release day, if all of the `Final Release Requirements`_ are not achieved, the release will be delayed one week that the `Final Release Requirements`_ can be achieved.
+#. One week before the release day, if all of the `RC Release Requirements`_ are not achieved, the release will be delayed one week that the `RC Release Requirements`_ can be achieved.
 #. This delay will be added all remaining tasks and final release date.
 #. The decision for the delay will be made on "where we are" meeting that be held 2 weeks prior to the shipping date of the releases.
 
@@ -137,7 +151,7 @@ Validation of Final Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Test team has the responsibility of determining whether the criteria for the
-`Final Release Requirements`_ has been met. At the end of the test process,
+`RC Release Requirements`_ has been met. At the end of the test process,
 the test team reports on `Pardus Bugzilla`_ will be reviewed and discussed
 at the "where we are" meeting.
 
@@ -150,3 +164,9 @@ at the "where we are" meeting.
 .. _EOL: http://developer.pardus.org.tr/guides/releasing/end_of_life.html
 .. _severity: http://developer.pardus.org.tr/guides/bugtracking/howto_bug_triage.html#bug-importance
 .. _tracker bugs: http://developer.pardus.org.tr/guides/bugtracking/tracker_bug_process.html
+.. _duyuru list: http://lists.pardus.org.tr/mailman/listinfo/duyuru
+.. _announce list: http://lists.pardus.org.tr/mailman/listinfo/pardus-announce
+.. _Translation freeze: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html#translation-freeze
+.. _Repo freeze: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html#repo-freeze
+.. _RC freeze: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html#rc-freeze
+.. _Kernel freeze: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html#kernel-freeze

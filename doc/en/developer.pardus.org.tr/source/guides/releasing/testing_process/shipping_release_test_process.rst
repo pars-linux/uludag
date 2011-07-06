@@ -51,7 +51,7 @@ that you find:
 .. _package source repository: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#package-source-repository
 .. _devel branch: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#devel-folder
 .. _component based: http://developer.pardus.org.tr/guides/packaging/package_components.html
-.. _Alpha release expectations and criterias: http://developer.pardus.org.tr/guides/releasing/official_releases/alpha_release.html#alpha-release-requirements
+.. _Alpha release expectations and criterias: http://developer.pardus.org.tr/guides/releasing/official_releases/alpha_phase.html#alpha-release-requirements
 .. _Beta release expectations and criterias: http://developer.pardus.org.tr/guides/releasing/official_releases/beta_release.html#beta-release-requirements
 .. _Final release expectations and criterias: http://developer.pardus.org.tr/guides/releasing/official_releases/final_release.html#final-release-requirements
 .. _Finding duplicates: http://developer.pardus.org.tr/guides/bugtracking/finding_duplicates.html
