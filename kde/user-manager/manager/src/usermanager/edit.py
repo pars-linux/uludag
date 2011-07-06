@@ -14,7 +14,8 @@
 # Python
 import os
 
-# PyQt
+# PyQtNo protocol specified
+
 from PyQt4 import QtCore
 from PyQt4 import QtGui
 
@@ -86,6 +87,7 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         self.connect(self.radioAuthYes, QtCore.SIGNAL("toggled(bool)"), self.slotPolicyChanged)
         self.connect(self.checkAdmin, QtCore.SIGNAL("stateChanged(int)"), self.slotAdmin)
         self.connect(self.pushAuth, QtCore.SIGNAL("clicked()"), self.slotAuth)
+        self.connect(self.pushCategoryAuth, QtCore.SIGNAL("clicked()"), self.slotCategoryAuth)
 
         self.connect(self.lineFullname, QtCore.SIGNAL("textEdited(const QString&)"), self.checkFields)
         self.connect(self.linePassword, QtCore.SIGNAL("textEdited(const QString&)"), self.checkFields)
@@ -99,6 +101,7 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         self.advancedGroup.hide()
         self.available_shells = []
         self._new = False
+
 
     def reset(self):
         self.wrn = ""
@@ -232,6 +235,7 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         self.comboMainGroup.clear()
         for group in all_groups:
             # Groups
+
             item = QtGui.QListWidgetItem(self.listGroups)
             item.setText(group)
             if group in selected_groups:
@@ -293,6 +297,25 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
                 item = tl_item.child(child_index)
                 item.setType(type_)
 
+    def slotCategoryAuth(self):
+        if self.radioAuthNo.isChecked():
+            type_ = -1
+        elif self.radioAuthDefault.isChecked():
+            type_ = 0
+        elif self.radioAuthYes.isChecked():
+            type_ = 1
+        if isinstance(self.treeAuthorizations.currentItem,PolicyItem):
+            category = self.treeAuthorizations.currentItem()
+            category = category.parent()
+            index = self.treeAuthorizations.indexOfTopLevelItem(category)
+        else:
+            category = self.treeAuthorizations.currentItem()
+            index = self.treeAuthorizations.indexOfTopLevelItem(category)
+        tl_item = self.treeAuthorizations.topLevelItem(index)
+        for child_index in xrange(tl_item.childCount()):
+            item = tl_item.child(child_index)
+            item.setType(type_)
+
     def slotFullnameChanged(self, name):
         if self.lineUsername.isEnabled() and not self.lineUsername.isModified():
             self.lineUsername.setText(nickGuess(name, self.nicklist))
@@ -332,22 +355,28 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
     def slotPolicySelected(self, item, previous = None):
         if not item:
             return
+        self.pushCategoryAuth.setEnabled(True)
+        self.authGroup.setEnabled(True)
+
         try:
-            self.authGroup.setEnabled(True)
-            self.radioAuthNo.setChecked(item.getType() == -1)
-            self.radioAuthDefault.setChecked(item.getType() == 0)
-            self.radioAuthYes.setChecked(item.getType() == 1)
+            if isinstance(item,PolicyItem):
+                self.radioAuthNo.setChecked(item.getType() == -1)
+                self.radioAuthDefault.setChecked(item.getType() == 0)
+                self.radioAuthYes.setChecked(item.getType() == 1)
         except:
             self.authGroup.setEnabled(False)
 
     def slotPolicyChanged(self, state):
-        item = self.treeAuthorizations.currentItem()
-        if self.radioAuthNo.isChecked():
-            item.setType(-1)
-        elif self.radioAuthDefault.isChecked():
-            item.setType(0)
-        elif self.radioAuthYes.isChecked():
-            item.setType(1)
+        try:
+            item = self.treeAuthorizations.currentItem()
+            if self.radioAuthNo.isChecked():
+                item.setType(-1)
+            elif self.radioAuthDefault.isChecked():
+                item.setType(0)
+            elif self.radioAuthYes.isChecked():
+                item.setType(1)
+        except AttributeError:
+            pass
 
     def slotAdmin(self, state):
         if state == QtCore.Qt.Unchecked:
