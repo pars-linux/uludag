@@ -58,18 +58,30 @@ if __name__ == '__main__':
     font = Pds.settings('font','Sans,10').split(',')
     app.setFont(QFont(font[0], int(font[1])))
 
-    manager = MainWindow(app)
-    app.setMainWindow(manager)
-
     if config.PMConfig().systemTray():
         app.setQuitOnLastWindowClosed(False)
 
-    if not config.PMConfig().systemTray() or "--show-mainwindow" in sys.argv:
-        manager.show()
+    #if not config.PMConfig().systemTray() or "--show-mainwindow" in sys.argv:
+    #    manager.show()
 
-    if not config.PMConfig().systemTray() or "--add-repository" in sys.argv:
-        dest = sys.argv[2]
-        print dest
+    # Arrange arguments
+    parser = OptionParser()
+    parser.add_option("--show-mainwindow",
+                      action="store_false",
+                      help="Show main window.")
+    parser.add_option("--add-repository",
+                      help="Add repository. Needs argument.")
+
+    opts, args = parser.parse_args()
+
+    if not config.PMConfig().systemTray() or not opts.show_mainwindow is None:
+        print "Mainwindow"
+
+    if not opts.add_repository is None:
+        print opts.add_repository
+
+    ##### FIXME: check argument count
+
     # Set exception handler
     sys.excepthook = handleException
 
