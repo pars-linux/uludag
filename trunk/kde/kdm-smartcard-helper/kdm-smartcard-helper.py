@@ -15,6 +15,7 @@
 
 import os
 import sys
+import glob
 
 from optparse import OptionParser
 
@@ -30,6 +31,29 @@ def debug(msg):
 def error(msg):
     print >> sys.stderr, "ERROR: %s" % msg
 
+def get_pkcs11_loggedin_users():
+    """Returns a dict of users who seems to be logged with
+    a PKCS#11 token."""
+    d = {}
+    for env in glob.glob("/proc/*/environ"):
+        try:
+            environ = open(env, "r").read().strip()
+            if "DISPLAY=" in environ:
+                env = dict([line.split("=", 1) for line in environ.split("\x00") if line])
+                d[env["USER"]] = dict([(k, env[k]) for k in env.keys() if k.startswith("PKCS11_")])
+        except IOError, e:
+            pass
+
+    return d
+
+def get_pkcs11_env_vars(user=None):
+    """Return a dict of PKCS#11 related session keys."""
+    d = {}
+    for key,value in os.environ.items():
+        if key.startswith("PKCS11_"):
+            d[key] = value
+
+    return d
 
 def main():
     # Command-line parsing
@@ -66,6 +90,8 @@ def main():
                       PyKCS11.CKA_SERIAL_NUMBER]
 
     certificates = {}
+
+    user_dict = get_pkcs11_loggedin_users()
 
     for slot in available_slots:
         try:
