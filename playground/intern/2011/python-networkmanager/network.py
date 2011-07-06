@@ -678,13 +678,11 @@ def edit_connection(nm_handle):
             changing = False
     nm_handle.get_connection(settings.uuid).update(settings)
 
-def set_connection_state_down(nm_handle, connection_id):
+def set_connection_state_down(nm_handle, connection):
     """Set the state of a given connection to Down."""
-    for active_conn in nm_handle.active_connections:
-        if active_conn.connection.settings.id == connection_id:
-            active_conn.devices[0].disconnect()
-            return
-    print "There is no active connection or no connection named %s" % connection_id
+    device=get_device(nm_handle,None,connection.settings.type)
+    device.disconnect()
+    #print "There is no active connection or no connection named %s" % connection_id
 
 def set_connection_state_up(nm_handle, connection_id, interface=None):
     """Set the state of a given connection to Up."""
@@ -850,7 +848,7 @@ When activating a connection, you should either provide an interface like
         if arg0 == None:
             #list connections
             con=get_connection(nm_handle,"Deactivate")
-            set_connection_state_down(nm_handle,con.settings.id)
+            set_connection_state_down(nm_handle,con)
         else:
             set_connection_state_down(nm_handle,arg0)
     elif options.wifi == "wifi":
