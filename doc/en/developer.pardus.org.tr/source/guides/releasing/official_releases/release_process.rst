@@ -102,8 +102,9 @@ Beta 1
 ^^^^^^
 Stabilization phase (about 3 week)
 
-- Review blocker bugs
-- Fix high priority blocker bugs
+- Review Beta `tracker bugs`_
+- No urgent and high bugs present
+- Fix high priority `tracker bugs`_
 - `Toolchain freeze`_ ?
 - `User interface freeze`_
 - Announce EOL of 2 previous release
@@ -114,8 +115,7 @@ Beta 2
 Stabilization phase completed (about 2 week)
 
 - Where we are meeting to review bugs and possibility to prolonge release.
-- No urgent and high bugs present
-- All normal, low priority blocker bugs fixed
+- All normal, low priority `tracker bugs`_ fixed
 - `Beta freeze`
 - Preperation for final release announcement and marketing materials
 
@@ -123,7 +123,7 @@ RC
 ^^
 (about 2 weeks)
 - Where we are meeting to review bugs and possibility to prolonge release.
-- Fixing only urgent release blocker bugs, bug fix needs approval.
+- Fixing only urgent release tracker bugs, bug fix needs approval.
 - `Kernel freeze`_
 - `Translation freeze`_
 - Repo freeze for contributors
@@ -135,7 +135,7 @@ RC
 Final
 ^^^^^^^^
 (about 2 weeks)
-- Only boot and installation urgent release blocker bugs fixed and needs approval.
+- Only boot and installation urgent release `tracker bugs`_ fixed and needs approval.
 - Start new release cycle for the next release
 
 LTS technological updates (point releases)
@@ -173,3 +173,5 @@ EOL
 - The EOL announce date of a release 2 next release + 1 month (2n +1).
 
 .. _Planning Phase: http://developer.pardus.org.tr/guides/releasing/official_releases/planning_phase.html
+.. _tracker bugs: http://developer.pardus.org.tr/guides/bugtracking/tracker_bug_process.html
+
