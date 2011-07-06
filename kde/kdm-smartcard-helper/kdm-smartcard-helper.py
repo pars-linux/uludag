@@ -1,5 +1,17 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+#
+# A python script which matches available sessions with the
+# available smart cards. It primarily targets AKIS smart cards but should
+# work with all PKCS#11 modules.
+#
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the
+# Free Software Foundation; either version 2 of the License, or (at your
+# option) any later version. Please read the COPYING file.
+#
+# Copyright (C) 2011 TUBITAK/UEKAE
+# Ozan Çağlayan <ozan_at_pardus.org.tr>
 
 import os
 import sys
