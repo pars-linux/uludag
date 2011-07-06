@@ -17,7 +17,7 @@ This documentation will briefly explain this standardized way and how the
 Pardus Security team use it and how it works.
 
 Constructive Notice from Security World
---------------------------------------
+----------------------------------------
 
 In order to understand how Pardus Security team work, there should be known that
 the notions of security world, what e-mail lists are used and what are their aims.

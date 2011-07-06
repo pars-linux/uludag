@@ -6,7 +6,8 @@ End of Life
 Releases for which updates are no longer provided are considered to be
 unmaintained and thus end of life or commonly referred to as EOL.
 
-.. Each release of Pardus is maintained as written in `release_life_cycle.rst`_ document. 
+Each release of Pardus is maintained as written in `release life cycle`_ document.
+
 At the end of this maintenance period, Pardus reaches its end of life.
 
 This document explains the steps for which a release has reached EOL status.
@@ -16,7 +17,7 @@ Setting EOL date
 
 The EOL date will be determined according to followings:
 
-.. * The `release_life_cycle.rst`_ stages should be taken to account.
+* The `release life cycle`_ stages should be taken to account.
 * The relational projects with the EOL release should be taken to account.
 
 Anouncement
@@ -81,6 +82,7 @@ All opened issues should be closed or moved to new release issues on `Pardus tra
 .. _gelistirici: http://lists.pardus.org.tr/mailman/listinfo/gelistirici
 .. _pardus-devel: http://lists.pardus.org.tr/mailman/listinfo/pardus-devel
 .. _Pardus tracker: http://tracker.pardus.org.tr/
+.. _release life cycle: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html
 
 **Last Modified Date:** |today|
 
