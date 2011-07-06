@@ -21,7 +21,7 @@ modName     = "servicemanager"
 version     = "3.0.0"
 homePage    = "http://developer.pardus.org.tr/projects/service-manager"
 bugEmail    = "bugs@pardus.org.tr"
-icon        = "flag-yellow"
+icon        = ("flag-yellow", "flag")
 catalog     = appName
 
 if ctx.Pds.session == ctx.pds.Kde4:

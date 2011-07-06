@@ -96,10 +96,10 @@ class ServiceItemWidget(QtGui.QWidget):
             state = self.iface.info(self.package)[2]
         if state in ('on', 'started', 'conditional_started'):
             self.running = True
-            icon = 'flag-green'
+            icon = ('flag-green', 'media-playback-start')
         else:
             self.running = False
-            icon = 'flag-black'
+            icon = ('flag-black', 'media-playback-stop')
 
         self.ui.buttonStop.setEnabled(self.running)
         self.ui.buttonReload.setEnabled(self.running)
