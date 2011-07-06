@@ -11,6 +11,7 @@
 #
 import os
 import shutil
+import stat
 from multiprocessing import Process, Queue
 from Queue import Empty
 
@@ -347,17 +348,39 @@ class SystemCopy(Process):
         for name in names:
             srcname = os.path.join(src, name)
             dstname = os.path.join(dst, name)
+            st = os.lstat(srcname)
+            mode = stat.S_IMODE(st.st_mode)
             try:
-                if os.path.isdir(srcname):
-                    self.copytree(srcname, dstname)
-                else:
+                if stat.S_ISLNK(st.st_mode):
+                    if os.path.lexists(dstname):
+                        os.unlink(dstname)
+                    linkto = os.readlink(srcname)
+                    os.symlink(linkto, dstname)
+                elif stat.S_ISDIR(st.st_mode):
+                    if not os.path.isdir(dstname):
+                        self.copytree(srcname, dstname)
+                elif stat.S_ISCHR(st.st_mode):
+                    os.mknod(dstname, stat.S_IFCHR | mode, st.st_rdev)
+                elif stat.S_ISBLK(st.st_mode):
+                    os.mknod(dstname, stat.S_IFBLK | mode, st.st_rdev)
+                elif stat.S_ISFIFO(st.st_mode):
+                    os.mknod(dstname, stat.S_IFIFO | mode)
+                elif stat.S_ISSOCK(st.st_mode):
+                    os.mknod(dstname, stat.S_IFSOCK | mode)
+                elif stat.S_ISREG(st.st_mode):
                     shutil.copy2(srcname, dstname)
                     data = [EventCopy, dstname]
                     self.queue.put_nowait(data)
-                # XXX What about devices, sockets etc.?
+
+                os.lchown(dstname, st.st_uid, st.st_gid)
+                if not stat.S_ISLNK(st.st_mode):
+                    os.chmod(dstname, mode)
+                    os.utime(dstname, (st.st_atime, st.st_mtime))
+
             except (IOError, os.error), why:
                 errors.append((srcname, dstname, str(why)))
             # catch the Error from the recursive copytree so that we can
             # continue with other files
             except Error, err:
                 errors.extend(err.args[0])
+
