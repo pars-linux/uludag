@@ -12,7 +12,7 @@
 
 import re
 import piksemel
-from os import path
+import os
 
 from PyQt4.QtGui import QMessageBox
 from PyQt4.QtGui import QDialog
@@ -267,29 +267,54 @@ class RepositorySettings(SettingsTab):
         repoAddress = ""
         if not indexAddress == "":
             repoAddress = "file://" + indexAddress
-        def generateRepoName(indexuri):
-            # check other repo names and generate a version number
-            def generateVersion(rootname):
-                defaultVer = 1
-                for repo in self.get_repo_names():
-                    if repo.startswith(rootname):
-                        ver = int(item.split(rootname)[1])
-                        if ver > defaultVer:
-                            defaultVer = ver + 1
-                return defaultVer
-            try:
-                parser = piksemel.parse(str(indexuri))
-                rootname = "%s-%s-" % (parser.getTag("Distribution").getTagData("SourceName"), parser.getTag("Distribution").getTagData("Version"))
-                ver = generateVersion(rootname)
-                return "%s%d" % (rootname, ver)
-            except:
-                rootname = "local-repo-"
-                ver = generateVersion(rootname)
-                return "%s%d" % (rootname, ver)
+            self.repoDialog.repoName.setText = generateRepoName(indexAddress)
+            self.repoDialog.repoAddress.setEditText(repoAddress)
 
-        repoName = generateRepoName(indexAddress)
-        self.repoDialog.repoName.setText(repoName)
-        self.repoDialog.repoAddress.setEditText(repoAddress)
+    def generateRepoName(self, indexuri):
+        # check other repo names and generate a version number
+        def generateVersion(rootname):
+            defaultVer = 1
+            repos = []
+            repos = pisi.api.list_repos(True)
+            for repo in repos:
+                if repo.startswith(rootname):
+                    ver = int(item.split(rootname)[1])
+                    if ver > defaultVer:
+                        defaultVer = ver + 1
+            return defaultVer
+
+        try:
+            parser = piksemel.parse(str(indexuri))
+            rootname = "%s-%s-" % (parser.getTag("Distribution").getTagData("SourceName"), parser.getTag("Distribution").getTagData("Version"))
+            ver = generateVersion(rootname)
+            return "%s%d" % (rootname, ver)
+        except:
+            rootname = "local-repo-"
+            ver = generateVersion(rootname)
+            return "%s%d" % (rootname, ver)
+
+    def __fillRepoDialog(self, repoAddress):
+        if not repoAddress == "":
+            repoName = self.generateRepoName(repoAddress)
+            self.repoDialog.repoName.setText(repoName)
+            self.repoDialog.repoAddress.setEditText("file://" + repoAddress)
+
+    def fillRepoDialog(self, dirName):
+        ''' find *.xml or *.xml.xz files in a directory '''
+        repoAddress = ""
+        if os.path.exists(dirName + "pisi-index.xml"):
+            repoAddress = dirName + "pisi-index.xml"
+        elif os.path.exists(dirName + "pisi-index.xml.xz"):
+            repoAddress = dirName + "pisi-index.xml.xz"
+        else:
+            #scan for other xml or xml.xz files
+            if os.path.exists(dirName):
+                items = os.listdir(dirName)
+                for item in items:
+                    if item.endswith(".xml") or item.endswith(".xml.xz"):
+                        repoAddress = dirName + item
+                        break
+                self.__fillRepoDialog(repoAddress)
 
     def __setRow(self, row, rowItems):
         for col in range(self.settings.repoListView.columnCount()):

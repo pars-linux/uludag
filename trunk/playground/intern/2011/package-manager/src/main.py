@@ -32,6 +32,9 @@ from mainwindow import MainWindow
 from localedata import setSystemLocale
 
 from pmutils import *
+from settingsdialog import SettingsDialog
+from settingsdialog import RepositorySettings
+from repodialog import RepoDialog
 
 # Package Manager Main App
 if __name__ == '__main__':
@@ -81,7 +84,11 @@ if __name__ == '__main__':
         manager.show()
 
     if not opts.add_repository is None:
-        print opts.add_repository
+        manager.show()
+        manager.showPreferences.trigger()
+        manager.settingsDialog.tabWidget.setCurrentIndex(2)
+        manager.settingsDialog.addRepoButton.click()
+        manager.settingsDialog.repositorySettings.fillRepoDialog(opts.add_repository)
 
     ##### FIXME: check argument count
 
