@@ -220,24 +220,25 @@ class Widget(QWidget, ScreenWidget):
 
     def copyFinished(self):
         yali.postinstall.writeFstab()
-
+        print "fstab ok"
         # Configure Pending...
         # run baselayout's postinstall first
-        yali.postinstall.initbaselayout()
+        #yali.postinstall.initbaselayout()
+        #print "initbase ok"
 
         # postscripts depend on 03locale...
         yali.util.writeLocaleFromCmdline()
-
+        print "writelocalfromcmd ok"
         #Write InitramfsConf
         yali.postinstall.writeInitramfsConf()
-
+        print "writeinitramfs ok"
         # run dbus in chroot
         yali.util.start_dbus()
-
+        print "dbus started"
         #Remove Autologin for default Live user pars
         pars=yali.users.User("pars")
         pars.setAutoLogin(False)
-
+        print "pars removed"
         #Remove autologin as root for virtual terminals
         inittablive = os.path.join(ctx.consts.target_dir,"etc/inittab")
         inittab = file(inittablive).read()
@@ -245,8 +246,10 @@ class Widget(QWidget, ScreenWidget):
         f = file(inittablive,"w")
         f.write(inittab)
         f.close()
-        
+        print "console auto login removed"
         # TODO : Uninstall yali,parted,other live stuff
+        data = [EventAllFinished]
+        self.queue.put_nowait(data)
 
     def execute(self):
         # stop slide show
@@ -282,7 +285,11 @@ class SystemCopy(Process):
 
         self.symlink_dirs = ["opt","dev","lib","bin","sbin","boot","usr"]
         self.copy_dirs = ["etc","root"]
-        self.empty_dirs = ["mnt","sys","proc","media","home","var","tmp"]
+        self.empty_dirs = ["mnt","sys","proc","media","home",
+                "var","var/log","var/log/news","var/cache","var/db",
+                "var/games","var/lib","var/lib/misc","var/local",
+                "var/lock","var/lock/subsys","var/opt","var/run",
+                "var/run/pardus","var/spool","var/state","var/tmp","var/yp","tmp"]
         self.symlink_basepath = os.readlink("/usr").replace("/usr","")
 
         ctx.logger.debug("System Copy Process started.")

@@ -174,7 +174,7 @@ def mountExistingSystem(storage, intf, rootDevice, allowDirty=None, warnDirty=No
             if rc :
                 return False
 
-        storage.storageset.mountFilesystems(readOnly=readOnly, skipRoot=True)
+        storage.storageset.mountFilesystems(readOnly=readOnly, skipRoot=True, skipDirDevices = False)
         return True
 
 
@@ -751,8 +751,8 @@ class Storage(object):
     def turnOnSwap(self):
         self.storageset.turnOnSwap()
 
-    def mountFilesystems(self, readOnly=None, skipRoot=False):
-        self.storageset.mountFilesystems(readOnly=readOnly, skipRoot=skipRoot)
+    def mountFilesystems(self, readOnly=None, skipRoot=False,skipDirDevices=False):
+        self.storageset.mountFilesystems(readOnly=readOnly, skipRoot=skipRoot,skipDirDevices=skipDirDevices)
 
     def umountFilesystems(self, swapoff=True):
         self.storageset.umountFilesystems(swapoff=swapoff)
