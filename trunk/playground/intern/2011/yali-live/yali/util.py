@@ -382,6 +382,7 @@ def stop_dbus():
 def comarLinkInitialized():
     if ctx.flags.install_type == ctx.STEP_BASE or \
        ctx.flags.install_type == ctx.STEP_DEFAULT or \
+       ctx.flags.install_type == ctx.STEP_LIVE or \
        ctx.flags.install_type == ctx.STEP_RESCUE:
         if ctx.storage.storageset.active:
             ctx.socket = os.path.join(ctx.consts.target_dir, ctx.consts.dbus_socket)
