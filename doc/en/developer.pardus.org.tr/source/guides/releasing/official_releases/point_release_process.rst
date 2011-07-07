@@ -1,35 +1,37 @@
-.. _final-release:
+.. _point-release:
 
-Final Release
-=============
+Point Release (Technological updates)
+=====================================
 
 :Author: Semen Cirit
 :Last Modified Date: |today|
-:Version: 0.2
+:Version: 0.1
 
 Final Release
 -------------
 
-This phase indicates that the software has reached a point that it is ready to and
-has been delivered and provided to the users.
+This phase is the continuation of long term support releases and released once a year. 
 
-It takes about two weeks.
+It takes about 6 months.
 
-The Final release `tracker bugs`_ are fixed, package integrity and feasibility
+The point release `tracker bugs`_ are fixed, package integrity and feasibility
 are checked, last desktop and installation validation tests are done.
 
-Final Goals
-^^^^^^^^^^^
+Point Release Goals
+^^^^^^^^^^^^^^^^^^^
+- Adding support for new hardware
+- Implementing a missing functionality in a component which will probably be needed to satisfy the original reasons for LTS creation
+- Reduce download for ongoing updates.
+- All work have to finish one month before the release in order to give time for tests
 
-* Provide a tracker bug free final release suitable for meeting the needs of our users.
 
-Final Release Requirements
+Point Release Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In order to do Pardus Final official, the following criterias must be met:
+In order to do Pardus Point release official, the following criterias must be met:
 
-* All `RC release requirements`_ must be achieved.
-* All bugs blocking the Final tracker must be closed.
+* All `Final release requirements`_ must be achieved.
+* All bugs blocking Point release tracker must be closed.
 * The installation manager (YALI_) must be able to complete an installation using IDE, SATA, SCSI and iSCSI storage devices
 * The installation manager (YALI_) must be able to create partition tables using any file system offered in installer configuration and complete installation for LVM, software, hardware or BIOS RAID, or  IDE, SATA, SCSI and iSCSI storage devices.
 * The installation manager (YALI_) must boot and run on all `supported architectures`_ from install and live images
@@ -51,55 +53,71 @@ In order to do Pardus Final official, the following criterias must be met:
 * The policy settings must work successfully
 * Final release must include default artwork by default for the installation manager (YALI_), graphical boot, firstboot, graphical login, desktop background and splash screens.
 * Pardus icon theme must be supported by the desktop greeter (Kaptan_) and should load successfully if selected.
-* Upgrade manager should be ready for upgrade.
 
-Final Tickets
-^^^^^^^^^^^^^
-Release minus 2 weeks:
+Point Release Tickets
+^^^^^^^^^^^^^^^^^^^^^
+Between release 6 months and 3 months:
+
+#. Continue stable repo updates as normal
+#. Decide about what will be done for the technological update and take decisions from
+    #. External project coordinator
+    #. Customers
+    #. Base team
+    #. Technology coordinator
+#. Open a point release tracker bug and depend decided specifications to this bug
+#. Review and triage these bugs
+
+Release minus 3 moths:
+
+#. Continue stable repo updates as normal
+#. Start to fix point release `tracker bugs`_
+
+Relase minus 1 month:
+
+#. Test all `tracker bugs`_ and fix regressions
+
+Release minus 3 weeks:
 
 #. Create release-notes
 #. Prepare press release from release-notes
-#. Track the production of publicity and promotion materials
-#. Warn mirrors and ULAKBIM one week before
+#. Warn mirrors and ULAKBIM
+#. Create Test Release for validation tests
 
-Release minus 5 days:
+   * Installation media
+   * Live media
+#. Prepare and make "where we are meeting" after validation tests, in order to review bugs and possibility to prolonge release.
+#. Review problems and mark as Point release tracker bug which need resolution before release
 
-#. Get ready the publicity and promotion materials and start to deliver them
-
-Release minus 3 day:
-
-#. Final freeze
-#. Only boot and installation urgent `tracker bugs`_ fixed and needs approval.
+   * Package conflicts or unresolved package dependencies
+   * Installation bugs
+   * High severity bugs
+#. Fix release urgent `tracker bugs`_
 
 Release:
 
 #. Upload release-notes to developer.pardus.org.tr
 #. Upload press-release to pardus.org.tr
-#. Release Final
+#. Release Point release
 
    * Upload iso to FTP servers
    * Upload iso to torrents
 
-#. Announcement for Final release on `duyuru list`_ and `announce list`_
+#. Announcement for  release on `duyuru list`_ and `announce list`_
 
-Release plus 1 day:
+Point Release Tracker Bugs
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Continue new next release process
-
-Final Tracker Bugs
-^^^^^^^^^^^^^^^^^^
-
-A bug is considered an final tracker bug if one of the following criterias is met:
+A bug is considered a point release tracker bug if one of the following criterias is met:
 
 #. If a package in the urgent package list of alpha, beta or final has a bug that can not be fixed with a future update or has a severity_ rating of high or urgent.
 #. Bugs that are a blocks the testing and test process. (Bugs related to untestable products)
-#. Bug relates to an unachieved `Final Release Requirements`_
+#. Bug relates to an unachieved `Point Release Requirements`_
 
-Validation of Final Requirements
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Validation of Point Release Requirements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Test team has the responsibility of determining whether the criteria for the
-`Final Release Requirements`_ has been met. At the end of the test process,
+`Point Release Requirements`_ has been met. At the end of the test process,
 the test team reports on `Pardus Bugzilla`_ will be reviewed and discussed
 at the "where we are" meeting.
 
