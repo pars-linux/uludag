@@ -32,9 +32,6 @@ from mainwindow import MainWindow
 from localedata import setSystemLocale
 
 from pmutils import *
-from settingsdialog import SettingsDialog
-from settingsdialog import RepositorySettings
-from repodialog import RepoDialog
 
 # Package Manager Main App
 if __name__ == '__main__':

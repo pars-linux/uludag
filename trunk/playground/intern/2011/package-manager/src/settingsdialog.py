@@ -271,7 +271,7 @@ class RepositorySettings(SettingsTab):
             self.repoDialog.repoAddress.setEditText(repoAddress)
 
     def generateRepoName(self, indexuri):
-        # check other repo names and generate a version number
+        ''' Checks other repo names and generates a version number.'''
         def generateVersion(rootname):
             defaultVer = 1
             repos = []
@@ -300,15 +300,14 @@ class RepositorySettings(SettingsTab):
             self.repoDialog.repoAddress.setEditText("file://" + repoAddress)
 
     def fillRepoDialog(self, dirName):
-        ''' find *.xml or *.xml.xz files in a directory '''
+        ''' finds *.xml or *.xml.xz files in a directory '''
         repoAddress = ""
         if os.path.exists(dirName + "pisi-index.xml"):
             repoAddress = dirName + "pisi-index.xml"
         elif os.path.exists(dirName + "pisi-index.xml.xz"):
             repoAddress = dirName + "pisi-index.xml.xz"
-        else:
-            #scan for other xml or xml.xz files
-            if os.path.exists(dirName):
+        #scan other .xml or .xml.xz files
+        elif os.path.exists(dirName):
                 items = os.listdir(dirName)
                 for item in items:
                     if item.endswith(".xml") or item.endswith(".xml.xz"):
