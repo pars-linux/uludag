@@ -267,19 +267,17 @@ class RepositorySettings(SettingsTab):
         repoAddress = ""
         if not indexAddress == "":
             repoAddress = "file://" + indexAddress
-            self.repoDialog.repoName.setText = generateRepoName(indexAddress)
+            self.repoDialog.repoName.setText(self.generateRepoName(indexAddress))
             self.repoDialog.repoAddress.setEditText(repoAddress)
 
     def generateRepoName(self, indexuri):
         ''' Checks other repo names and generates a version number.'''
         def generateVersion(rootname):
             defaultVer = 1
-            repos = []
-            repos = pisi.api.list_repos(True)
-            for repo in repos:
+            for repo in self.get_repo_names():
                 if repo.startswith(rootname):
-                    ver = int(item.split(rootname)[1])
-                    if ver > defaultVer:
+                    ver = int(repo.split(rootname)[1])
+                    if ver >= defaultVer:
                         defaultVer = ver + 1
             return defaultVer
 
@@ -301,6 +299,9 @@ class RepositorySettings(SettingsTab):
 
     def fillRepoDialog(self, dirName):
         ''' finds *.xml or *.xml.xz files in a directory '''
+        if not dirName.endswith("/"):
+            dirName += "/"
+
         repoAddress = ""
         if os.path.exists(dirName + "pisi-index.xml"):
             repoAddress = dirName + "pisi-index.xml"
@@ -308,12 +309,12 @@ class RepositorySettings(SettingsTab):
             repoAddress = dirName + "pisi-index.xml.xz"
         #scan other .xml or .xml.xz files
         elif os.path.exists(dirName):
-                items = os.listdir(dirName)
-                for item in items:
-                    if item.endswith(".xml") or item.endswith(".xml.xz"):
-                        repoAddress = dirName + item
-                        break
-                self.__fillRepoDialog(repoAddress)
+            items = os.listdir(dirName)
+            for item in items:
+                if item.endswith(".xml") or item.endswith(".xml.xz"):
+                    repoAddress = dirName + item
+                    break
+        self.__fillRepoDialog(repoAddress)
 
     def __setRow(self, row, rowItems):
         for col in range(self.settings.repoListView.columnCount()):
