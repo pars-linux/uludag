@@ -24,7 +24,6 @@ from PyQt4.QtCore import QVariant, QSize, SIGNAL, QThread
 
 #from PyKDE4 import kdeui
 #from PyKDE4.kdecore import i18n
-#from PyKDE4.solid import Solid
 #from PyKDE4.kdecore import KCmdLineArgs
 
 from QFDetector import Detector
