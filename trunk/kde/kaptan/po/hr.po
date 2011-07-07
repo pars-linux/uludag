@@ -271,11 +271,11 @@ msgstr "Izaberite sliku"
 
 #: .tmp/ui_scrAvatar.py:251
 msgid "Capture"
-msgstr ""
+msgstr "Uhvati"
 
 #: .tmp/ui_scrAvatar.py:252
 msgid "Recapture"
-msgstr ""
+msgstr "Uhvati ponovno"
 
 #: .tmp/scrMenu.py:26 .tmp/ui_scrMenu.py:123
 msgid "Menu"
@@ -462,7 +462,7 @@ msgstr "Također možete prilagoditi svoj <b>​​KDE izbornik</b> kako vi to �
 
 #: .tmp/ui_scrMenu.py:128
 msgid "Sample"
-msgstr ""
+msgstr "Uzorak"
 
 #: .tmp/ui_scrStyleItem.py:70
 msgid "styleName"
