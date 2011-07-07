@@ -1,5 +1,3 @@
-#ifndef EDIT.PY
-#define EDIT.PY
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
@@ -366,16 +364,30 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         # because a parent has no idea of its childs status
         try:
             if hasattr(item, "setType"):
+                #İf selected item is a child
                 self.radioAuthNo.setChecked(item.getType() == -1)
                 self.radioAuthDefault.setChecked(item.getType() == 0)
                 self.radioAuthYes.setChecked(item.getType() == 1)
+                self.radioAuthNo.setAutoExclusive(True)
+                self.radioAuthDefault.setAutoExclusive(True)
+                self.radioAuthYes.setAutoExclusive(True)
             else:
-                self.radioAuthNo.setAutoExclusive(False)
-                self.radioAuthDefault.setAutoExclusive(False)
-                self.radioAuthYes.setAutoExclusive(False)
-                self.radioAuthNo.setChecked(False)
-                self.radioAuthDefault.setChecked(False)
-                self.radioAuthYes.setChecked(False)
+                #if selected item is a parent
+                tmp = self.checkChilds()
+                if not tmp:
+                    self.radioAuthNo.setAutoExclusive(False)
+                    self.radioAuthDefault.setAutoExclusive(False)
+                    self.radioAuthYes.setAutoExclusive(False)
+                    self.radioAuthNo.setChecked(False)
+                    self.radioAuthDefault.setChecked(False)
+                    self.radioAuthYes.setChecked(False)
+                else:
+                    self.radioAuthNo.setChecked(self.check == -1)
+                    self.radioAuthDefault.setChecked(self.check  == 0)
+                    self.radioAuthYes.setChecked(self.check  == 1)
+                    self.radioAuthNo.setAutoExclusive(True)
+                    self.radioAuthDefault.setAutoExclusive(True)
+                    self.radioAuthYes.setAutoExclusive(True)
         except:
             self.authGroup.setEnabled(False)
 
@@ -394,6 +406,19 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
             self.radioAuthDefault.setAutoExclusive(True)
             self.radioAuthYes.setAutoExclusive(True)
             self.slotCategoryAuth()
+
+    def checkChilds(self):
+        category = self.treeAuthorizations.currentItem()
+        index = self.treeAuthorizations.indexOfTopLevelItem(category)
+        tl_item = self.treeAuthorizations.topLevelItem(index)
+        self.check=tl_item.child(0).getType()
+        # Iterates the selected category using category index which found above
+        for child_index in xrange(tl_item.childCount()):
+            item = tl_item.child(child_index)
+            tmp=item.getType()
+            if tmp is not self.check:
+                return False
+        return True
 
     def slotAdmin(self, state):
         if state == QtCore.Qt.Unchecked:
