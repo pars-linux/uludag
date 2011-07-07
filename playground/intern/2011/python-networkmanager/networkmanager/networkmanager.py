@@ -470,8 +470,14 @@ class NetworkManager(object):
     def __init__(self):
         self.bus = dbus.SystemBus()
         self.proxy = self.bus.get_object(NM_NAME, NM_PATH)
-        self.settings = self.bus.get_object(NM_NAME, NM_SETTINGS_PATH)
-        self.usersettings = self.bus.get_object(NM_USER_SETTINGS,NM_SETTINGS_PATH)
+        try :
+            self.settings = self.bus.get_object(NM_NAME, NM_SETTINGS_PATH)
+        except:
+            self.settings = None
+        try:
+            self.usersettings = self.bus.get_object(NM_USER_SETTINGS,NM_SETTINGS_PATH)
+        except :
+            self.usersettings = None
     def __repr__(self):
         return "<NetworkManager>"
 
@@ -506,10 +512,12 @@ class NetworkManager(object):
     @property
     def connections(self):
         connectionList = []
-        for path in self.settings.ListConnections(dbus_interface=NM_SETTINGS_NAME):
-            connectionList.append(Connection(self.bus,path,NM_NAME))
-        for path in self.usersettings.ListConnections(dbus_interface=NM_SETTINGS_NAME):
-            connectionList.append(Connection(self.bus,path,NM_USER_SETTINGS))
+        if self.settings != None :
+            for path in self.settings.ListConnections(dbus_interface=NM_SETTINGS_NAME):
+                connectionList.append(Connection(self.bus,path,NM_NAME))
+        if self.usersettings !=None :
+            for path in self.usersettings.ListConnections(dbus_interface=NM_SETTINGS_NAME):
+                connectionList.append(Connection(self.bus,path,NM_USER_SETTINGS))
         return connectionList
 
     @property
@@ -584,17 +592,17 @@ class NetworkManager(object):
         self.settings.AddConnection(settings._settings, dbus_interface=NM_SETTINGS_NAME)
 
     def activate_connection(self, connection, device=None, \
-                            service_name="org.freedesktop.NetworkManagerSystemSettings", \
+                            service="org.freedesktop.NetworkManagerSystemSettings", \
                             specific_object="/"):
         """
             Activates given connection on given device
             If no devices provided it will try to find proper device.
         """
-
+        if connection.service != NM_NAME:
+            service=connection.service
         if not device:
             device = self.get_device_for_connection(connection)
-
-        self.proxy.ActivateConnection(service_name, connection.proxy, device.proxy, specific_object, dbus_interface=NM_NAME)
+        self.proxy.ActivateConnection(service, connection.proxy, device.proxy, specific_object, dbus_interface=NM_NAME)
 
     def activate_connection_for_interface(self, connection, interface):
         """
@@ -719,14 +727,18 @@ class ActiveConnection(object):
         return self._proxy_get("Vpn")
 
 class Connection(object):
-    def __init__(self, bus,path,service):
+    def __init__(self, bus , path , service):
+        self.service_name=service
         self.proxy = bus.get_object(service, path);
-
     def __eq__(self, other):
         return self.settings.uuid == other.settings.uuid and self.settings.id == other.settings.id
 
     def __repr__(self):
         return "<Connection: \"%s\">" % self.settings.id
+
+    @property
+    def service(self):
+        return self.service_name
 
     @property
     def settings(self):
