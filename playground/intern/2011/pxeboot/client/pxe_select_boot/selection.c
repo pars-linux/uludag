@@ -250,8 +250,29 @@ int main()
     /* Öğeleri oluştur */
     n_choices = ARRAY_SIZE(choices);
     my_items = (ITEM **)calloc(n_choices, sizeof(ITEM *));
-    for(i = 0; i < n_choices; ++i)
-        my_items[i] = new_item(choices[i],"-----");
+
+    
+ 
+        VERSION *vers;
+        int count = 0;
+
+        vers = *Head;
+
+        if (*Head == NULL){
+            printf("Listelenecek eleman yok!");
+            return;
+        }
+        i=0;
+        while (vers) {
+
+        my_items[i] = new_item(vers->name,"-----");
+        vers=vers->Next;
+        i++;
+        }
+    
+    
+  //  for(i = 0; i < n_choices; ++i)
+  //      my_items[i] = new_item(choices[i],"-----");
 
     /* Menüyü oluştur */
     my_menu = new_menu((ITEM **)my_items);
