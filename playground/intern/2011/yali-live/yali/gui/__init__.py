@@ -30,7 +30,8 @@ GUI_STEPS = {ctx.STEP_DEFAULT:("license", "mediaCheck", "keyboardSetup",
              ctx.STEP_FIRST_BOOT:("welcome", "accounts", "admin", "summary", "goodbye"),
              ctx.STEP_RESCUE:("rescue", "bootloadersetup", "passwordRescue", "goodbye"),
              #live cd installer
-             ctx.STEP_LIVE:(  "accounts", "admin", "driveSelection",
+             ctx.STEP_LIVE:(  "license", "keyboardSetup",
+                               "timeSetup","accounts", "admin", "driveSelection",
                                "automaticPartitioning", "manualPartitioning", "bootloadersetup","collectionSelection",
                                 "summary", "liveInstallation", "goodbye")
              }
