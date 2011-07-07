@@ -8,6 +8,7 @@
 #
 # Please read the COPYING file.
 #
+import os
 import sys
 import time
 import gettext
@@ -66,9 +67,12 @@ class Widget(QWidget, ScreenWidget):
             pars=yali.users.User("pars")
             pars.setAutoLogin(False)
             print "pars autologin removed"
-            yali.util.run_batch("/sbin/mkinitramfs",["-o", "/boot/"])
+            yali.util.run_batch("mkinitramfs",["-o", os.path.join(ctx.consts.target_dir,"boot")])
             yali.util.sync()
-            print "mkinitramfs"
+            if os.path.exists(os.path.join(ctx.consts.target_dir,"boot","initramfs%s"%os.uname()[2])):
+                print "mkinitramfs created"
+            else:
+                print "failed"
 
         if not (ctx.flags.install_type == ctx.STEP_RESCUE or ctx.flags.install_type == ctx.STEP_FIRST_BOOT):
             postInstallOperations.append(yali.postinstall.Operation(_("Setting timezone..."), yali.postinstall.setupTimeZone))
