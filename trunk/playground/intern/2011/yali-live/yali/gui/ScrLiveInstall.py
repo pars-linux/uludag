@@ -225,16 +225,11 @@ class Widget(QWidget, ScreenWidget):
         # postscripts depend on 03locale...
         yali.util.writeLocaleFromCmdline()
         print "writelocalfromcmd ok"
+
         #Write InitramfsConf
         yali.postinstall.writeInitramfsConf()
         print "writeinitramfs ok"
-        # run dbus in chroot
-        yali.util.start_dbus()
-        print "dbus started"
-        #Remove Autologin for default Live user pars
-        pars=yali.users.User("pars")
-        pars.setAutoLogin(False)
-        print "pars removed"
+
         #Remove autologin as root for virtual terminals
         inittablive = os.path.join(ctx.consts.target_dir,"etc/inittab")
         inittab = file(inittablive).read()
@@ -243,10 +238,21 @@ class Widget(QWidget, ScreenWidget):
         f.write(inittab)
         f.close()
         print "console auto login removed"
+
         shutil.copy2(os.path.join(ctx.consts.source_dir,"boot/kernel"),os.path.join(ctx.consts.target_dir,"boot/kernel-%s" %os.uname()[2]))
         print "kernel copied"
+
         yali.util.run_batch("/sbin/mkinitramfs",["-o", "/mnt/target/boot/"])
         print "mkinitramfs"
+
+        # run dbus in chroot
+        yali.util.start_dbus()
+
+        #Remove Autologin for default Live user pars
+        pars=yali.users.User("pars")
+        pars.setAutoLogin(False)
+        print "pars removed"
+
         data = [EventAllFinished]
         self.queue.put_nowait(data)
 

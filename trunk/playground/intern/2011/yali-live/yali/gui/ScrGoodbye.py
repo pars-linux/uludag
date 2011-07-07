@@ -90,7 +90,7 @@ class Widget(QWidget, ScreenWidget):
             postInstallOperations.append(yali.postinstall.Operation(_("Teardown storage subsystem..."), yali.postinstall.teardownStorage))
             postInstallOperations.append(yali.postinstall.Operation(_("Installing bootloader..."), yali.postinstall.installBootloader))
 
-        if ctx.flags.install_type in [ctx.STEP_DEFAULT, ctx.STEP_BASE, ctx.STEP_RESCUE, ctx.STEP_LIVE]:
+        if ctx.flags.install_type in [ctx.STEP_DEFAULT, ctx.STEP_BASE, ctx.STEP_RESCUE]:
             postInstallOperations.append(yali.postinstall.Operation(_("Stopping to D-Bus..."), yali.util.stop_dbus))
             postInstallOperations.append(yali.postinstall.Operation(_("Teardown storage subsystem..."), yali.postinstall.teardownStorage))
 
