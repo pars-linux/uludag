@@ -265,7 +265,7 @@ int main()
         i=0;
         while (vers) {
 
-        my_items[i] = new_item(vers->name,"-----");
+        my_items[i] = new_item(vers->name, vers->id);
         vers=vers->Next;
         i++;
         }
