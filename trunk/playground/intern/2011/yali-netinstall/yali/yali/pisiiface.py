@@ -81,6 +81,18 @@ def updateRepo(name=ctx.consts.cd_repo_name):
 def removeRepo(name):
     pisi.api.remove_repo(name)
 
+def fetchUpdateList(updateList, destDir):
+    updateListURIs = []
+
+    for uri in updateList:
+        raw = ctx.consts.pardus_repo_uri.split("/")
+        raw.pop()
+        raw.append(uri)
+        updateListURIs.append("/".join(raw))
+
+    for pkgURI in updateListURIs:
+        pisi.fetcher.fetch_url(ctx.consts.pardus_repo_uri+pkgURI, destDir)
+
 def regenerateCaches():
     pisi.db.regenerate_caches()
 
