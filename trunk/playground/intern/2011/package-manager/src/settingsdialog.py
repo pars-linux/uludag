@@ -263,10 +263,8 @@ class RepositorySettings(SettingsTab):
 
     def browseLocalRepository(self):
         fd = QFileDialog()
-        indexAddress = fd.getOpenFileName(None, "Caption", "/", "Index File (*.xml *.xml.bz2 *.xz)")
-        repoAddress = ""
-        if not indexAddress == "":
-            repoAddress = "file://" + indexAddress
+        repoAddress = fd.getOpenFileName(None, "Caption", "/", "Index File (*.xml *.xml.bz2 *.xz)")
+        if not repoAddress == "":
             self.repoDialog.repoName.setText(self.generateRepoName(indexAddress))
             self.repoDialog.repoAddress.setEditText(repoAddress)
 
@@ -295,7 +293,7 @@ class RepositorySettings(SettingsTab):
         if not repoAddress == "":
             repoName = self.generateRepoName(repoAddress)
             self.repoDialog.repoName.setText(repoName)
-            self.repoDialog.repoAddress.setEditText("file://" + repoAddress)
+            self.repoDialog.repoAddress.setEditText(repoAddress)
 
     def fillRepoDialog(self, dirName):
         ''' finds *.xml or *.xml.xz files in a directory '''
