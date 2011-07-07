@@ -18,17 +18,17 @@ char buffer[BUFFER_SIZE];
 FILE *dosya;
  iksparser *p;
 
- typedef struct _VERSION{
+typedef struct _VERSION{
 
     char *name;
     char *id;
     char *size;
     char *path;
-        struct _VERSION *Next, *Prev;
+        struct _VERSION *Next;
 
 }VERSION;
 
-VERSION *Head = NULL, *Tail = NULL;
+VERSION **Head = NULL, *Tail = NULL;
 
 char *choices[] = {
       "Choice 1",
@@ -69,6 +69,7 @@ void print_in_middle(WINDOW *win, int starty, int startx, int width,
 
 int pr_tag (void *udata, char *name, char **atts, int type)
 {
+    _id = (char *) malloc(sizeof(char)* 255);
     switch (type) {
         case IKS_OPEN:
               if(strcmp(name,"Name")==0){
@@ -92,16 +93,21 @@ int pr_tag (void *udata, char *name, char **atts, int type)
       //      i += 2;
       //  }
     }
+    free(_id);
     return 0;
 }
 //----------------------------------------------------------------------------------
 
 int pr_cdata (void *udata, char *data, size_t len)
 {
+    _name = (char *) malloc(sizeof(char)* 255);
+    _size = (char *) malloc(sizeof(char)* 255);
+    _path = (char *) malloc(sizeof(char)* 255);
+    
     int i; 
     if (tmp != 0) {
-          for (i = 0; i < len; i++)
-                  putchar (data[i]);
+    //      for (i = 0; i < len; i++)
+    //              putchar (data[i]);
               if (tmp == 1){
                   strncpy(_name,data,len);
               }
@@ -110,11 +116,19 @@ int pr_cdata (void *udata, char *data, size_t len)
               }
               if(tmp==4){
                   strncpy(_path,data,len);
+             //     printf("%s",_name);
+               //   printf("%s",_id);
+               //   printf("%s",_size);
+               //   printf("%s",_path);
+         
+             add_version(_name, _id, _size, _path);
               }
          tmp=0;
          printf("\n");
     }
-    
+    free(_name);
+    free(_size);
+    free(_path);
        return 0;
 }
 
@@ -135,15 +149,13 @@ int iksemel_parse ()
          file_size = fread(buffer,sizeof(char),BUFFER_SIZE,dosya);
          p = iks_sax_new (NULL, pr_tag, pr_cdata);
          iks_parse (p,buffer, 0, 1);
-         iks_parser_delete (p);
-        
-         add_version(_name, _id, _size, _path);
+         iks_parser_delete (p); 
 
     }
     while(!EOF);
     
     fclose(dosya);
-    
+ 
     return 0;
 }
 
@@ -152,30 +164,35 @@ int iksemel_parse ()
 
 void add_version(char *name, char *id, char *size, char *path ){
 
-    VERSION *vers = (VERSION *) malloc(sizeof(VERSION));
-        if (vers == NULL) {
-            printf("Not enough memory");
-        }
+    VERSION *new = (VERSION *) malloc(sizeof(VERSION));
+ 
+    new->name = (char *) malloc(sizeof(char)* 255);
+    new->id = (char *) malloc(sizeof(char)* 255);
+    new->size = (char *) malloc(sizeof(char)* 255);
+    new->path = (char *) malloc(sizeof(char)* 255);
+    
+    if (new == NULL) {
+        printf("Not enough memory");
+    }
+    strcpy(new->name,name);
+    strcpy(new->id,id);
+    strcpy(new->size,size);
+    strcpy(new->path,path);
 
-        strcpy(vers->name,name);
-        strcpy(vers->id,id);
-        strcpy(vers->size,size);
-        strcpy(vers->path,path);
+    if (Tail == NULL) {
+        *Head = new;
+        Tail = new;
+    }
+    else {
+        Tail->Next = new;
+        Tail = Tail->Next;
+    }
+     printf("eklendi");
 
-        if (Head == NULL) {
-            Head = (VERSION *) malloc(sizeof(VERSION));
-            Head = vers;
-            vers->Prev = NULL;
-        }
-        else {
-            Tail = (VERSION *) malloc(sizeof(VERSION));
-            Tail->Next = vers;
-            vers->Prev= Tail;
-         }
-         Tail = vers;
-         vers->Next = NULL;
-             printf("eklendi");
+             
+         
 }
+
 
 
 //----------------------------------------------------------------------------------
@@ -184,8 +201,9 @@ void list_version() {
         VERSION *vers;
         int count = 0;
 
-        vers = Head;
-        if (Head == NULL){
+        vers = *Head;
+
+        if (*Head == NULL){
             printf("Listelenecek eleman yok!");
             return;
         }
@@ -208,22 +226,16 @@ void list_version() {
 int main()
 {
 
-    _name = (char *) malloc(sizeof(char)* 255);
-    _id = (char *) malloc(sizeof(char)* 255);
-    _size = (char *) malloc(sizeof(char)* 255);
-    _path = (char *) malloc(sizeof(char)* 255);
   
-    
+    Head=(VERSION **) malloc(sizeof(VERSION));
     
     
     
     //parsing xml
     printf("main fonk\n");
     iksemel_parse();
-    free(_name);
-    free(_id);
-    free(_size);
-    free(_path);
+
+    list_version();
 
     ITEM **my_items;
     int c;
