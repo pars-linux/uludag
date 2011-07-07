@@ -40,6 +40,7 @@ NM_CONN_ACTIVE="org.freedesktop.NetworkManager.Connection.Active"
 NM_SETTINGS_NAME="org.freedesktop.NetworkManagerSettings"
 NM_SETTINGS_PATH="/org/freedesktop/NetworkManagerSettings"
 NM_SETTINGS_CONNECTION="org.freedesktop.NetworkManagerSettings.Connection"
+NM_USER_SETTINGS="org.freedesktop.NetworkManagerUserSettings"
 
 NM_ACCESSPOINT="org.freedesktop.NetworkManager.AccessPoint"
 
@@ -470,15 +471,13 @@ class NetworkManager(object):
         self.bus = dbus.SystemBus()
         self.proxy = self.bus.get_object(NM_NAME, NM_PATH)
         self.settings = self.bus.get_object(NM_NAME, NM_SETTINGS_PATH)
-
+        self.usersettings = self.bus.get_object(NM_USER_SETTINGS,NM_SETTINGS_PATH)
     def __repr__(self):
         return "<NetworkManager>"
 
     def sleep(self, sleep):
         pass
 
-    def _proxy_get(self, target):
-        return self.proxy.Get(self._NM_INTERFACE, target)
 
     @property
     def devices(self):
@@ -506,9 +505,12 @@ class NetworkManager(object):
 
     @property
     def connections(self):
-        """ Returns a list of connections. """
-        return [Connection(self.bus, path)
-                for path in self.settings.ListConnections(dbus_interface=NM_SETTINGS_NAME)]
+        connectionList = []
+        for path in self.settings.ListConnections(dbus_interface=NM_SETTINGS_NAME):
+            connectionList.append(Connection(self.bus,path,NM_NAME))
+        for path in self.usersettings.ListConnections(dbus_interface=NM_SETTINGS_NAME):
+            connectionList.append(Connection(self.bus,path,NM_USER_SETTINGS))
+        return connectionList
 
     @property
     def active_connections(self):
@@ -676,7 +678,6 @@ class ActiveConnection(object):
     def __init__(self, bus, path):
         self.bus = bus
         self.proxy = bus.get_object(NM_NAME, path)
-
     def __eq__(self, other):
         return self.connection.settings.uuid == other.connection.settings.uuid and\
                self.connection.settings.id == other.connection.settings.id
@@ -694,7 +695,7 @@ class ActiveConnection(object):
     @property
     def connection(self):
         path = self._proxy_get("Connection")
-        return Connection(self.bus, path)
+        return Connection(self.bus, path,self.service_name)
 
     @property
     def specific_object(self):
@@ -718,8 +719,8 @@ class ActiveConnection(object):
         return self._proxy_get("Vpn")
 
 class Connection(object):
-    def __init__(self, bus, path):
-        self.proxy = bus.get_object(NM_NAME, path);
+    def __init__(self, bus,path,service):
+        self.proxy = bus.get_object(service, path);
 
     def __eq__(self, other):
         return self.settings.uuid == other.settings.uuid and self.settings.id == other.settings.id
@@ -1169,3 +1170,4 @@ class CdmaSettings(BaseSettings):
 
     def __init__(self, properties=_default_settings_cdma):
         super(CdmaSettings, self).__init__(properties)
+
