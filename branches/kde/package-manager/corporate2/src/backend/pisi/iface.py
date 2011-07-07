@@ -317,7 +317,14 @@ class Iface(Singleton):
         repos = repos if not repos == None else pisi.api.list_repos(only_active = only_active)
         _repos = []
         for repo in repos:
-            _repos.append((repo, self.rdb.get_repo_url(repo)))
+            try:
+                repo_obj = self.rdb.get_repo_url(repo)
+            # Check if repo is exists or not
+            # This IOError exception from pisi.db.repodb should be fixed in pisi.db
+            except IOError:
+                pass
+            else:
+                _repos.append((repo, self.rdb.get_repo_url(repo)))
         return _repos
 
     def updateRepositories(self, check_repos = None):
