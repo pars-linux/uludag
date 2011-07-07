@@ -69,7 +69,6 @@ void print_in_middle(WINDOW *win, int starty, int startx, int width,
 
 int pr_tag (void *udata, char *name, char **atts, int type)
 {
-    _id = (char *) malloc(sizeof(char)* 255);
     switch (type) {
         case IKS_OPEN:
               if(strcmp(name,"Name")==0){
@@ -86,6 +85,7 @@ int pr_tag (void *udata, char *name, char **atts, int type)
     if (atts) {
         if (strcmp(atts[0],"id")==0){
             printf("%s\n",atts[1]);
+            _id = (char *) malloc(sizeof(char)* 255);
             strcpy(_id,atts[1]);
         }
       //  while (atts[i]) {
@@ -93,42 +93,38 @@ int pr_tag (void *udata, char *name, char **atts, int type)
       //      i += 2;
       //  }
     }
-    free(_id);
     return 0;
 }
 //----------------------------------------------------------------------------------
 
 int pr_cdata (void *udata, char *data, size_t len)
 {
-    _name = (char *) malloc(sizeof(char)* 255);
-    _size = (char *) malloc(sizeof(char)* 255);
-    _path = (char *) malloc(sizeof(char)* 255);
     
     int i; 
     if (tmp != 0) {
     //      for (i = 0; i < len; i++)
     //              putchar (data[i]);
               if (tmp == 1){
+                   _name = (char *) malloc(sizeof(char)* 255);
                   strncpy(_name,data,len);
               }
               if (tmp==3){
-                 strncpy(_size,data,len);
+                  _size = (char *) malloc(sizeof(char)* 255);
+                  strncpy(_size,data,len);
               }
               if(tmp==4){
+                  _path = (char *) malloc(sizeof(char)* 255);
                   strncpy(_path,data,len);
-             //     printf("%s",_name);
-               //   printf("%s",_id);
-               //   printf("%s",_size);
-               //   printf("%s",_path);
-         
+
              add_version(_name, _id, _size, _path);
+
+             free(_name);
+             free(_size);
+             free(_path);
               }
          tmp=0;
          printf("\n");
     }
-    free(_name);
-    free(_size);
-    free(_path);
        return 0;
 }
 
