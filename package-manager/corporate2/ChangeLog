@@ -1,3 +1,9 @@
+2011-07-07 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - If user adds a new repo and press cancel it raises a pisi.db.repodb IOError exception, this patch fixes this. 
+
+2011-07-05 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Update ChangeLog 
+
 2011-07-04 metin.akdere
          * Merge from trunk/kde/package-manager/manager/src/packagedelegate.py
          * Calculate update-type string size correctly to fix layout issues in upgrade field in some locales. Fixes pb#17540.
@@ -1915,11 +1921,4 @@
 
 2010-05-25 Gökmen Göksel <gokmen@pardus.org.tr>
          * it should be all not any 
-
-2010-05-25 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Check package extras before install if all packages comes from repo. 
-
-2010-05-25 Gökmen Göksel <gokmen@pardus.org.tr>
-         * - Total size of a package never change, wth ?
-         * Bug fixed at http://bugs.pardus.org.tr/13145
 
