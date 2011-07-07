@@ -59,6 +59,16 @@ class Widget(QWidget, ScreenWidget):
 
     def runOperations(self):
         postInstallOperations = []
+            if ctx.flags.install_type == ctx.STEP_FIRST_BOOT
+                # run dbus in chroot
+                yali.util.start_dbus()
+                #Remove Autologin for default Live user pars
+                pars=yali.users.User("pars")
+                pars.setAutoLogin(False)
+                print "pars autologin removed"
+                yali.util.run_batch("/sbin/mkinitramfs",["-o", "/boot/"])
+                yali.util.sync()
+                print "mkinitramfs"
 
         if not (ctx.flags.install_type == ctx.STEP_RESCUE or ctx.flags.install_type == ctx.STEP_FIRST_BOOT):
             postInstallOperations.append(yali.postinstall.Operation(_("Setting timezone..."), yali.postinstall.setupTimeZone))

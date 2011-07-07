@@ -32,7 +32,7 @@ from yali.gui.Ui.installwidget import Ui_InstallWidget
 from yali.gui.Ui.installprogress import Ui_InstallProgress
 from pds.gui import PAbstractBox, BOTCENTER
 
-EventConfigure, EventCopy, EventSetProgress, EventError, EventCopyFinished , EventAllFinished , EventRetry = range(1001, 1008)
+EventCopy, EventSetProgress, EventError, EventCopyFinished , EventAllFinished , EventRetry = range(1001, 1007)
 
 class InstallProgressWidget(PAbstractBox):
 
@@ -163,14 +163,6 @@ class Widget(QWidget, ScreenWidget):
                 self.cur += 1
                 self.installProgress.ui.progress.setValue(self.cur)
 
-            # EventConfigure
-            elif event == EventConfigure:
-                package = data[1]
-                self.installProgress.ui.info.setText(_("Configuring <b>%s</b>") % package.name)
-                ctx.logger.debug("Pisi: %s configuring" % package.name)
-                self.cur += 1
-                self.installProgress.ui.progress.setValue(self.cur)
-
             # EventSetProgress
             elif event == EventSetProgress:
                 total = data[1]
@@ -220,15 +212,11 @@ class Widget(QWidget, ScreenWidget):
 
     def copyFinished(self):
         yali.postinstall.writeFstab()
-        print "fstab ok"
-
         # postscripts depend on 03locale...
         yali.util.writeLocaleFromCmdline()
-        print "writelocalfromcmd ok"
 
         #Write InitramfsConf
         yali.postinstall.writeInitramfsConf()
-        print "writeinitramfs ok"
 
         #Remove autologin as root for virtual terminals
         inittablive = os.path.join(ctx.consts.target_dir,"etc/inittab")
@@ -237,22 +225,9 @@ class Widget(QWidget, ScreenWidget):
         f = file(inittablive,"w")
         f.write(inittab)
         f.close()
-        print "console auto login removed"
 
         shutil.copy2(os.path.join(ctx.consts.source_dir,"boot/kernel"),os.path.join(ctx.consts.target_dir,"boot/kernel-%s" %os.uname()[2]))
         print "kernel copied"
-
-        yali.util.run_batch("/sbin/mkinitramfs",["-o", "/mnt/target/boot/"])
-        print "mkinitramfs"
-
-        # run dbus in chroot
-        yali.util.start_dbus()
-
-        #Remove Autologin for default Live user pars
-        pars=yali.users.User("pars")
-        pars.setAutoLogin(False)
-        print "pars removed"
-
         data = [EventAllFinished]
         self.queue.put_nowait(data)
 
@@ -312,7 +287,9 @@ class SystemCopy(Process):
                     total += os.stat(filename).st_size
 
         ctx.logger.debug("Sending EventSetProgress")
-        data = [EventSetProgress, total]
+        self.cursorlimit = total/100    #for every limit bytes move progress bar one percent
+        self.currentbytes = 0
+        data = [EventSetProgress, 100]
         self.queue.put_nowait(data)
 
         try:
@@ -348,7 +325,7 @@ class SystemCopy(Process):
             self.wait_condition.wait(self.mutex)
 
         ctx.logger.debug("System copy finished ...")
-        # Copying finished lets configure them
+        # Copying finished
         data = [EventCopyFinished]
         self.queue.put_nowait(data)
 
@@ -384,8 +361,11 @@ class SystemCopy(Process):
                     os.mknod(dstname, stat.S_IFSOCK | mode)
                 elif stat.S_ISREG(st.st_mode):
                     shutil.copy2(srcname, dstname)
-                    #data = [EventCopy, dstname]
-                    #self.queue.put_nowait(data)
+                    self.currentbytes += os.stat(srcname).st_size
+                    if self.currentbytes >= self.cursorlimit:
+                        data = [EventCopy, "files"]
+                        self.queue.put_nowait(data)
+                        self.currentbytes -= self.cursorlimit
 
                 os.lchown(dstname, st.st_uid, st.st_gid)
                 if not stat.S_ISLNK(st.st_mode):
