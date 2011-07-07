@@ -2,17 +2,23 @@
 
 #define ARRAY_SIZE(a) (sizeof(a) / sizeof(a[0]))
 #define CTRLD   4
+#define BUFFER_SIZE  100000
 
 #include  <stdio.h>
+#include  <stdlib.h>
+#include  <string.h>
+#include  <malloc.h>
+
 #include <iksemel.h>
 
 static int tmp=0;
 static char *_name, *_id, *_size, *_path;
 
-void add_version(char *name, char *id, char *size, char *path );
-void list_version(void);
+char buffer[BUFFER_SIZE];
+FILE *dosya;
+ iksparser *p;
 
-typedef struct _VERSION{
+ typedef struct _VERSION{
 
     char *name;
     char *id;
@@ -25,22 +31,200 @@ typedef struct _VERSION{
 VERSION *Head = NULL, *Tail = NULL;
 
 char *choices[] = {
-      "Choicıııe 1",
+      "Choice 1",
       "Choice 2",
       "Choice 3",
       "Choice 4",
       "Exit    ",
       (char *)NULL,
 };
+
 void print_in_middle(WINDOW *win, int starty, int startx, int width,
-             char *string, chtype color);
+    char *string, chtype color)
+{
+    int length, x, y;
+    float temp;
+
+    if(win == NULL)
+        win = stdscr;
+        getyx(win, y, x);
+        if(startx != 0)
+            x = startx;
+        if(starty != 0)
+            y = starty;
+        if(width == 0)
+            width = 80;
+
+        length = strlen(string);
+        temp = (width - length)/ 2;
+        x = startx + (int)temp;
+        wattron(win, color);
+        mvwprintw(win, y, x, "%s", string);
+        wattroff(win, color);
+        refresh();
+}
+
+//-------------------------------------------------------------------------------
+                        //-----   PARSE XML   -----//
+
+int pr_tag (void *udata, char *name, char **atts, int type)
+{
+    switch (type) {
+        case IKS_OPEN:
+              if(strcmp(name,"Name")==0){
+                   tmp=1;
+               }
+               if(strcmp(name,"Size")==0){
+                    tmp=3;
+                }
+               if(strcmp(name,"Path")==0){
+                    tmp=4;
+                 }
+            break;
+    }
+    if (atts) {
+        if (strcmp(atts[0],"id")==0){
+            printf("%s\n",atts[1]);
+            strcpy(_id,atts[1]);
+        }
+      //  while (atts[i]) {
+      //      printf ("%s=’%s’", atts[i], atts[i+1]);
+      //      i += 2;
+      //  }
+    }
+    return 0;
+}
+//----------------------------------------------------------------------------------
+
+int pr_cdata (void *udata, char *data, size_t len)
+{
+    int i; 
+    if (tmp != 0) {
+          for (i = 0; i < len; i++)
+                  putchar (data[i]);
+              if (tmp == 1){
+                  strncpy(_name,data,len);
+              }
+              if (tmp==3){
+                 strncpy(_size,data,len);
+              }
+              if(tmp==4){
+                  strncpy(_path,data,len);
+              }
+         tmp=0;
+         printf("\n");
+    }
+    
+       return 0;
+}
+
+//----------------------------------------------------------------------------------
+
+int iksemel_parse ()
+{
+
+    dosya=fopen("surumler.xml","r");
+
+    if (dosya== NULL) {
+        printf("Failed to open file\n");
+        return 1;
+     }
+    size_t file_size;
+
+    do{
+         file_size = fread(buffer,sizeof(char),BUFFER_SIZE,dosya);
+         p = iks_sax_new (NULL, pr_tag, pr_cdata);
+         iks_parse (p,buffer, 0, 1);
+         iks_parser_delete (p);
+        
+         add_version(_name, _id, _size, _path);
+
+    }
+    while(!EOF);
+    
+    fclose(dosya);
+    
+    return 0;
+}
+
+//-------------------------------------------------------------------------------
+
+
+void add_version(char *name, char *id, char *size, char *path ){
+
+    VERSION *vers = (VERSION *) malloc(sizeof(VERSION));
+        if (vers == NULL) {
+            printf("Not enough memory");
+        }
+
+        strcpy(vers->name,name);
+        strcpy(vers->id,id);
+        strcpy(vers->size,size);
+        strcpy(vers->path,path);
+
+        if (Head == NULL) {
+            Head = (VERSION *) malloc(sizeof(VERSION));
+            Head = vers;
+            vers->Prev = NULL;
+        }
+        else {
+            Tail = (VERSION *) malloc(sizeof(VERSION));
+            Tail->Next = vers;
+            vers->Prev= Tail;
+         }
+         Tail = vers;
+         vers->Next = NULL;
+             printf("eklendi");
+}
+
+
+//----------------------------------------------------------------------------------
+
+void list_version() {
+        VERSION *vers;
+        int count = 0;
+
+        vers = Head;
+        if (Head == NULL){
+            printf("Listelenecek eleman yok!");
+            return;
+        }
+        while (vers) {
+            printf("NAME:   %s\n", vers->name); 
+            printf("ID:   : %s\n", vers->size);
+            printf("SIZE : %s\n", vers->id);
+            printf("------------------------------\n"); 
+            ++count;
+            vers = vers->Next;
+         }
+            printf("\nToplam %d kayit listelendi\n", count);
+}
+
+
+//--------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------
+
 
 int main()
 {
-    //parsing xml
-    mainfonk();
 
+    _name = (char *) malloc(sizeof(char)* 255);
+    _id = (char *) malloc(sizeof(char)* 255);
+    _size = (char *) malloc(sizeof(char)* 255);
+    _path = (char *) malloc(sizeof(char)* 255);
   
+    
+    
+    
+    
+    //parsing xml
+    printf("main fonk\n");
+    iksemel_parse();
+    free(_name);
+    free(_id);
+    free(_size);
+    free(_path);
+
     ITEM **my_items;
     int c;
     MENU *my_menu;
@@ -118,181 +302,7 @@ int main()
      free_menu(my_menu);
      endwin();
 
-    list_version();
+//    list_version();
+ return 0;
 }
 
-void print_in_middle(WINDOW *win, int starty, int startx, int width,
-    char *string, chtype color)
-{
-    int length, x, y;
-    float temp;
-
-    if(win == NULL)
-        win = stdscr;
-        getyx(win, y, x);
-        if(startx != 0)
-            x = startx;
-        if(starty != 0)
-            y = starty;
-        if(width == 0)
-            width = 80;
-
-        length = strlen(string);
-        temp = (width - length)/ 2;
-        x = startx + (int)temp;
-        wattron(win, color);
-        mvwprintw(win, y, x, "%s", string);
-        wattroff(win, color);
-        refresh();
-}
-
-//-------------------------------------------------------------------------------
-                        //-----   PARSE XML   -----//
-
-int pr_tag (void *udata, char *name, char **atts, int type)
-{
-    switch (type) {
-        case IKS_OPEN:
-         //   printf ("%s", name);
-              if(strcmp(name,"Version")==0){
-                // printf("*%s*", element);
-                   tmp=2;
-               }
-              if(strcmp(name,"Name")==0){
-                   tmp=1;
-               }
-               if(strcmp(name,"Size")==0){
-                    tmp=3;
-                }
-               if(strcmp(name,"Path")==0){
-                    tmp=4;
-                }
-
-
-            break;
-        case IKS_CLOSE:
-         //   printf ("</%s> ", name);
-            break;
-        case IKS_SINGLE:
-         //   printf ("%s/>", name);
-            break;
-    }
-    if (atts) {
-        int i = 0;
-        if(tmp==2)
-            _id=atts[1];
-      //  while (atts[i]) {
-      //      printf ("%s=’%s’", atts[i], atts[i+1]);
-      //      i += 2;
-      //  }
-    }
-    return IKS_OK;
-}
-enum ikserror pr_cdata (void *udata, char *data, size_t len)
-{
-    int i; 
-    if(tmp!=0){
-      //    for (i = 0; i < len; i++)
-              if(tmp==1)
-                  _name=data;
-      //            putchar (data[i]);
-              if(tmp==3)
-                  _size=data;
-      //            putchar (data[i]);
-              if(tmp==4)
-                  _path=data;
-      //            putchar (data[i]);
-      //        if(tmp==4)
-      //            putchar (data[i]);
-        tmp=0;
-      //   printf("\n");
-    }
-    
-       return IKS_OK;
-              }
-
-int mainfonk ()
-{
-
-    char buffer[100000];
-    FILE *dosya;
-    char str[1000];
-    dosya=fopen("surumler.xml","r");
-    size_t file_size;
-    int done;
-
-    do{
-        file_size = fread(buffer,sizeof(char),100000,dosya);
-        dosya = file_size < sizeof(buffer);
-
-         iksparser *p;
-         p = iks_sax_new (NULL, pr_tag, pr_cdata);
-         switch (iks_parse (p,buffer, 0, 1)) {
-            case IKS_OK:
-                puts ("OK");
-                break;
-            case IKS_NOMEM:
-                puts ("Not enough memory");
-                exit (1);
-            case IKS_BADXML:
-                 puts ("XML document is not well-formed");
-                 exit (2);
-            case IKS_HOOK:
-                 puts ("Our hooks didn’t like something");
-                 exit (2);
-        }
-        add_version(_name, _id, _size, _path);
-        iks_parser_delete (p);
-        return 0;
-    }
-    while(!done);
-    fclose(dosya);
-}
-
-void add_version(char *name, char *id, char *size, char *path ){
-
-    VERSION *vers = (VERSION *) malloc(sizeof(vers));
-        if (vers == NULL) {
-            printf("Not enough memory");
-        }
-
-        vers->name=name;
-        vers->id=id;
-        vers->size=size;
-        vers->path=path;
-
-        if (Head == NULL) {
-            Head = vers;
-            vers->Prev = NULL;
-        }
-        else {
-            Tail->Next = vers;
-            vers->Prev= Tail;
-         }
-         Tail = vers;
-         vers->Next = NULL;
-             printf("eklendi");
-}
-
-
-
-
-void list_version(void) {
-        VERSION *vers;
-        int count = 0;
-               
-        vers = Head;
-        if (Head == NULL){
-            printf("Listelenecek eleman yok!");
-            return;
-        }
-        while (vers) {
-            printf("Dosyanin ismi : %s\n", vers->name); 
-            printf("Dosyanin buyuklugu : %d\n", vers->size);
-            printf("Dosyanin ozelligi : %d\n", vers->id);
-            printf("------------------------------\n"); 
-            ++count;
-            vers = vers->Next;
-         }
-            printf("\nToplam %d kayit listelendi\n", count);
-}
