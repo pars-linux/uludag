@@ -96,6 +96,7 @@ def setHostName():
         return False
 
 def setupUsers():
+    yali.util.run_batch("userdel", ["-r","pars"])
     if yali.util.check_link() and yali.users.PENDING_USERS:
         for user in yali.users.PENDING_USERS:
             ctx.logger.info("User %s adding to system" % user.username)
@@ -113,7 +114,7 @@ def setupUsers():
 
                 # If new user id is different from old one, we need to run a huge chown for it
                 user_dir = ""
-                if ctx.flags.install_type == ctx.STEP_BASE or ctx.flags.install_type == ctx.STEP_DEFAULT:
+                if ctx.flags.install_type in [ctx.STEP_BASE, ctx.STEP_DEFAULT, ctx.STEP_LIVE]:
                     user_dir = os.path.join(ctx.consts.target_dir, 'home', user.username)
                 if ctx.flags.install_type == ctx.STEP_FIRST_BOOT:
                     user_dir = os.path.join(ctx.consts.root_dir, 'home', user.username)

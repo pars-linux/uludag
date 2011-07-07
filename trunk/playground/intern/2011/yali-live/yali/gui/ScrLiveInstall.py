@@ -221,10 +221,6 @@ class Widget(QWidget, ScreenWidget):
     def copyFinished(self):
         yali.postinstall.writeFstab()
         print "fstab ok"
-        # Configure Pending...
-        # run baselayout's postinstall first
-        #yali.postinstall.initbaselayout()
-        #print "initbase ok"
 
         # postscripts depend on 03locale...
         yali.util.writeLocaleFromCmdline()
@@ -247,7 +243,10 @@ class Widget(QWidget, ScreenWidget):
         f.write(inittab)
         f.close()
         print "console auto login removed"
-        # TODO : Uninstall yali,parted,other live stuff
+        shutil.copy2(os.path.join(ctx.consts.source_dir,"boot/kernel"),os.path.join(ctx.consts.target_dir,"boot/kernel-%s" %os.uname()[2]))
+        print "kernel copied"
+        yali.util.run_batch("/sbin/mkinitramfs",["-o", "/mnt/target/boot/"])
+        print "mkinitramfs"
         data = [EventAllFinished]
         self.queue.put_nowait(data)
 
@@ -355,6 +354,9 @@ class SystemCopy(Process):
         for name in names:
             srcname = os.path.join(src, name)
             dstname = os.path.join(dst, name)
+            print srcname
+            print dstname
+            print "---"
             st = os.lstat(srcname)
             mode = stat.S_IMODE(st.st_mode)
             try:
