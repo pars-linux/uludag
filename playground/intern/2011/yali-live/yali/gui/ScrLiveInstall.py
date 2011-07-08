@@ -263,9 +263,9 @@ class SystemCopy(Process):
         self.wait_condition = wait_condition
         self.retry_answer = retry_answer
 
-        self.symlink_dirs = ["opt","dev","lib","bin","sbin","boot","usr"]
+        self.symlink_dirs = ["opt","lib","bin","sbin","boot","usr"]
         self.copy_dirs = ["etc","root"]
-        self.empty_dirs = ["mnt","sys","proc","media","home",
+        self.empty_dirs = ["mnt","sys","proc","dev","media","home",
                 "var","var/log","var/log/news","var/cache","var/db",
                 "var/games","var/lib","var/lib/misc","var/local",
                 "var/lock","var/lock/subsys","var/opt","var/run",
@@ -280,11 +280,20 @@ class SystemCopy(Process):
         #Calculate total size to be copied 
         ctx.logger.debug("Calculating total size")
         total = 0.0
-        for dire in self.copy_dirs:
-            for (path, dirs, files) in os.walk(dire):
+        for dir in self.copy_dirs:
+            for (path, dirs, files) in os.walk(dir):
                 for file in files:
                     filename = os.path.join(path, file)
                     total += os.stat(filename).st_size
+
+        for dir in self.symlink_dirs:
+            for (path, dirs, files) in os.walk(os.path.join("/",self.symlink_basepath,dir)):
+                for file in files:
+                    filename = os.path.join(path, file)
+                    st = os.lstat(filename)
+                    mode = stat.S_IMODE(st.st_mode)
+                    if stat.S_ISREG(st.st_mode):
+                        total += os.stat(filename).st_size
 
         ctx.logger.debug("Sending EventSetProgress")
         self.cursorlimit = total/100    #for every limit bytes move progress bar one percent
