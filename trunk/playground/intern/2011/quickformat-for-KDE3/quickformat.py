@@ -26,7 +26,9 @@ from PyQt4.QtCore import QVariant, QSize, SIGNAL, QThread
 #from PyKDE4.kdecore import i18n
 #from PyKDE4.kdecore import KCmdLineArgs
 
-from QFDetector import Detector
+from quickformat.qfdetector import DeviceDetector 
+from quickformat.qfdetector import DeviceProperties
+from quickformat.qfdetector import BUSES
 
 from quickformat.ui_quickformat import Ui_QuickFormat
 from quickformat.formatter import Formatter
@@ -50,17 +52,10 @@ FILE_SYSTEMS = {"Ext4":"ext4",
                 "NTFS":"ntfs-3g",
                 }
 
-ACCEPTED_BUSSES = ["usb",
-                   "firewire",
-                   "platform"] 
-
-class Volume(): 
+class Volume(DeviceProperties): 
 
     def __init__(self, volume):
-
-        bus = dbus.SystemBus()
-        self.pr = bus.get_object("org.freedesktop.UDisks",volume)
-        self.i = dbus.Interface(self.pr,"org.freedesktop.DBus.Properties")
+        DeviceProperties.__init__(self,volume)
 
         self.volume = volume
 
@@ -70,40 +65,38 @@ class Volume():
         self.file_system = self.get_volume_file_system()
         self.size = self.get_volume_size()
 
-        #self.device_type = self.get_device_type()
         self.device_bus = self.get_device_bus()
         self.device_path = self.get_device_path()
         self.device_name = self.get_device_name()
 
 
-    def get_property(self,prob):
-        return self.i.Get("org.freedesktop.UDisks.Device",prob)
-
-    def get_all_properties(self):
-        return self.i.GetAll("org.freedesktop.UDisks.Device")
+#    def get_property(self,prob):
+#        return self.i.Get("org.freedesktop.UDisks.Device",prob)
+#
+#    def get_all_properties(self):
+#        return self.i.GetAll("org.freedesktop.UDisks.Device")
 
 
     def has_accepted_bus(self):
         """ controls if the device is appropriate for formatting """
-        if self.device_bus in ACCEPTED_BUSSES:
+        if self.device_bus in BUSES:
             return True
 
     # Get Device Information
 
-
     def get_device_bus(self):
         """ returns the bus of the device """
         return self.get_property("DriveConnectionInterface")
- 
+
 
     def get_device_path(self):
         return self.get_volume_path()[:-1]
 
     def get_device_name(self):
         """ returns the device name that the volume resides on """
-	# product
+        # product
         return self.get_property("DriveVendor") + " " +  self.get_property("DriveModel")
- 
+
     # Get Volume Information
 
     def get_volume_icon(self):
@@ -121,7 +114,7 @@ class Volume():
         return self.get_property("DeviceFile")
 
     def get_volume_file_system(self):
-	# vfat
+        # vfat
         return self.get_property("IdType") 
 
     def get_volume_size(self):
@@ -170,8 +163,8 @@ class QuickFormat(QtGui.QWidget):
         self.ui.setupUi(self)
 
         self.formatter = Formatter()
-
-        self.detector = Detector() # for usb recognition
+ 
+        self.detector = DeviceDetector() 
 
         self.first_run = True
 
@@ -190,7 +183,9 @@ class QuickFormat(QtGui.QWidget):
         # Initialize the fancy notification widget (Derrived from PDS by Gokmen Goksel)
         self.__init_notifier__()
 
-        self.show_volume_list() # Detector kullanir
+        # Uses DeviceDetector class for getting device list
+        self.show_volume_list()
+
         self.generate_file_system_list()
 
         self.volume_to_format = ""
@@ -198,9 +193,9 @@ class QuickFormat(QtGui.QWidget):
         self.__make_initial_selection__(self.initial_selection)
 
         self.refreshing_devices = False
-	
-	# Monitor USB ports for any new devices
-	self.detector.iface.connect_to_signal('DeviceAdded', self.slot_refresh_volume_list)
+
+        # Monitor USB ports for any new devices
+        self.detector.iface.connect_to_signal('DeviceAdded', self.slot_refresh_volume_list)
         self.detector.iface.connect_to_signal('DeviceRemoved', self.slot_refresh_volume_list)
 
 
@@ -282,13 +277,24 @@ class QuickFormat(QtGui.QWidget):
 
         self.first_run = False
 
+    def format_confirm_message(self):
+        format_message = QtGui.QMessageBox()
+        format_message.setText("This operation will delete your all datas. Are sure to format?")
+        format_message.setIcon(QtGui.QMessageBox.Question)
+        format_message.addButton("Yes", QtGui.QMessageBox.AcceptRole)
+        format_message.addButton("No", QtGui.QMessageBox.RejectRole)
+        format_message.exec_()
+        return format_message.clickedButton().text()
+
 
     def format_device(self):
         """ Starts the formatting operation """
-        selected_file_system = FILE_SYSTEMS[str(self.ui.fileSystem.currentText())]
-        selected_label = self.ui.volumeLabel.text()
-        self.formatter.set_volume_to_format(self.volume_to_format, selected_file_system, selected_label)
-        self.formatter.start()
+
+        if self.format_confirm_message() == "Yes":
+            selected_file_system = FILE_SYSTEMS[str(self.ui.fileSystem.currentText())]
+            selected_label = self.ui.volumeLabel.text()
+            self.formatter.set_volume_to_format(self.volume_to_format, selected_file_system, selected_label)
+            self.formatter.start()
 
     def slot_format_started(self):
         self.notifier.notify(FORMAT_STARTED)
