@@ -256,6 +256,7 @@ int main()
     keypad(stdscr, TRUE);
     init_pair(1, COLOR_RED, COLOR_BLACK);
     init_pair(2, COLOR_CYAN, COLOR_BLACK);
+    init_pair(3, COLOR_MAGENTA, COLOR_BLACK);
     
     /* Öğeleri oluştur */
     n_choices = count;
@@ -277,13 +278,13 @@ int main()
     my_menu = new_menu((ITEM **)my_items);
 
     /* Menü ile ilişiklendirilecek pencereyi oluştur */
-    my_menu_win = newwin( 40,60 , (*(&row)/2)-40/2, (*(&col)/2)-60/2);
+    my_menu_win = newwin( 20,60 , (*(&row)/2)-20/2, (*(&col)/2)-60/2);
     keypad(my_menu_win, TRUE);
 
     /* Ana pencereyi ve alt pencereleri ayarla */
     set_menu_win(my_menu, my_menu_win);
-    set_menu_sub(my_menu, derwin(my_menu_win, 16, 58, 3, 1));
-    set_menu_format(my_menu, 15, 1);  //tek bi sayfa için gösterilmesini istediğimiz satır sayısı 15
+    set_menu_sub(my_menu, derwin(my_menu_win, 16, 58, 4, 2));
+    set_menu_format(my_menu, 14, 1);  //tek bi sayfa için gösterilmesini istediğimiz satır sayısı 15
 
 
     /* Menü göstericisini " * " olarak ayarla*/
@@ -294,12 +295,12 @@ int main()
     print_in_middle(my_menu_win, 1, 0, 60, "PARDUS", COLOR_PAIR(1));
     mvwaddch(my_menu_win, 2, 0, ACS_LTEE);
     mvwhline(my_menu_win, 2, 1, ACS_HLINE, 58);
-    mvwaddch(my_menu_win, 2, 69, ACS_RTEE);
+    mvwaddch(my_menu_win, 2, 59, ACS_RTEE);
     
-    attron(COLOR_PAIR(2));
+    attron(COLOR_PAIR(3));
     mvprintw(LINES - 3, 0, "ABCDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ");
     mvprintw(LINES - 2, 0, "F1 to exit,  abcdefgğhıijklmeoöprsştuüvyz");
-    attroff(COLOR_PAIR(2));
+    attroff(COLOR_PAIR(3));
     refresh();
 
     /* Menüyü ekrana yaz */
@@ -315,29 +316,33 @@ int main()
             case KEY_DOWN:
                 if(vers!=NULL && vers->Next!=NULL){
                     vers=vers->Next;
+                    attron(COLOR_PAIR(2));
                     menu_driver(my_menu, REQ_DOWN_ITEM);
-                    move(20, 0);
+                    move(60, 0);
                     clrtoeol();
-                    mvprintw(LINES-6, 0, "\n");
-                    mvprintw(LINES-6, 0, "Version : %s    %s    %s",
+                    mvprintw(LINES-10, 0, "\n");
+                    mvprintw(LINES-10, 30, "Version : %s    %s    %s",
                     item_name(current_item(my_menu)),vers->id,vers->size);
                     pos_menu_cursor(my_menu);
+                    attroff(COLOR_PAIR(2));
                 }
                 break;
             case KEY_UP:
                 if(vers!=NULL && vers->Prev!=NULL){
                     vers=vers->Prev;
+                    attron(COLOR_PAIR(2));
                     menu_driver(my_menu, REQ_UP_ITEM);
-                    move(200, 0);
+                    move(60, 0);
                     clrtoeol();
-                    mvprintw(LINES-6, 0, "\n");
-                    mvprintw(LINES-6, 0, "Version : %s    %s    %s",
+                    mvprintw(LINES-10, 0, "\n");
+                    mvprintw(LINES-10, 30, "Version : %s    %s    %s",
                     item_name(current_item(my_menu)),vers->id,vers->size);
                     pos_menu_cursor(my_menu);
+                    attroff(COLOR_PAIR(2));
                   }
                 break;
             case 10: /* Enter */
-               refresh();
+
                 break;
          }
 
