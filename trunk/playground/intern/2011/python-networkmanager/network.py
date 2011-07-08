@@ -1,5 +1,3 @@
-#ifndef NETWORK
-#define NETWORK
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
@@ -108,6 +106,8 @@ def print_connections(nm_handle):
                 '802-3-ethernet'    : [],
                 'cdma'              : [],
                 'gsm'               : [],
+                'pppoe'             : [],
+                'vpn'               : [],
                 'unknown'           : [],
             }
 
@@ -161,6 +161,8 @@ def get_connection(nm_handle, text = "connection"):
                 '802-3-ethernet'    : [],
                 'cdma'              : [],
                 'gsm'               : [],
+                'pppoe'             : [],
+                'vpn'               : [],
                 'unknown'           : [],
             }
 
@@ -400,6 +402,7 @@ def get_wireless_infs_from_user(_device):
         index_=1
         for remotePoint  in _device.access_points:
             remotes.append(remotePoint)
+
             print "  [%s] %s" % (index_,\
                     dbus_byte_array_to_string(remotePoint.ssid))
             index_+=1
@@ -865,4 +868,3 @@ When activating a connection, you should either provide an interface like
     return 0
 if __name__ == "__main__":
     sys.exit(main())
-#endif // NETWORK
