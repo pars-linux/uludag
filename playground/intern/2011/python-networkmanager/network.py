@@ -166,8 +166,28 @@ def get_connection(nm_handle, text = "connection"):
                 'unknown'           : [],
             }
 
-    for connection in nm_handle.connections:
-        connections[connection.settings.type].append(connection)
+
+
+    def list_active_connections():
+        for active_connection in nm_handle.active_connections:
+            connections[active_connection.connection.settings.type].append(active_connection.connection)
+        return connections
+
+    def list_deactive_connections():
+        actives=[]
+        active_connections=nm_handle.active_connections
+        allconnections=nm_handle.connections
+        for conn in range(len(active_connections)):
+            actives.append(active_connections[conn].connection)
+        for conn in allconnections:
+            if conn not in actives:
+                connections[conn.settings.type].append(conn)
+        return connections
+
+    if text=='Deactivate' :
+        connections=list_active_connections()
+    elif text=='Activate' :
+        connections=list_deactive_connections()
 
     connection_list = []
     index = 0
@@ -179,10 +199,10 @@ def get_connection(nm_handle, text = "connection"):
                 print "  [%s] %s" % ((index + 1 + _index), connection.settings.id)
                 connection_list.append(connection)
             index = len(connection_list)
-
-    connection_num = get_number(text, 1, len(connection_list)) - 1
-    connection = connection_list[connection_num]
-    return connection
+    if len(connection_list) > 0:
+        connection_num = get_number(text, 1, len(connection_list)) - 1
+        connection = connection_list[connection_num]
+        return connection
 
 
 def remove_connection(nm_handle):
@@ -844,16 +864,25 @@ When activating a connection, you should either provide an interface like
             #list connections
             con=get_connection(nm_handle,"Activate")
             #Fix No interface
-            set_connection_state_up(nm_handle,con.settings.id)
+            try:
+                set_connection_state_up(nm_handle,con.settings.id)
+            except AttributeError:
+                print "No connection to activate"
         else:
             set_connection_state_up(nm_handle,arg0,arg1)
     elif options.d_connection == "deactivate":
         if arg0 == None:
             #list connections
             con=get_connection(nm_handle,"Deactivate")
-            set_connection_state_down(nm_handle,con)
+            try:
+                set_connection_state_down(nm_handle,con)
+            except AttributeError:
+                print "No connection to deactivate"
         else:
-            set_connection_state_down(nm_handle,arg0)
+            try:
+                set_connection_state_down(nm_handle,arg0)
+            except AttributeError:
+                print "This connection already deactive"
     elif options.wifi == "wifi":
         trues=["1","true","True","yes","Yes"]
         if arg0 in trues:
