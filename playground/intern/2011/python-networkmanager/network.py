@@ -166,7 +166,10 @@ def get_connection(nm_handle, text = "connection"):
                 'unknown'           : [],
             }
 
-
+    def list_all_connections():
+        for connection in nm_handle.connections:
+            connections[connection.settings.type].append(connection)
+        return connections
 
     def list_active_connections():
         for active_connection in nm_handle.active_connections:
@@ -188,7 +191,10 @@ def get_connection(nm_handle, text = "connection"):
         connections=list_active_connections()
     elif text=='Activate' :
         connections=list_deactive_connections()
-
+    elif text=='Remove':
+        connections=list_all_connections()
+    elif text=='Edit':
+        connections=list_all_connections()
     connection_list = []
     index = 0
     for connection_type in connections:
@@ -744,17 +750,18 @@ def set_connection_state_up(nm_handle, connection_id, interface=None):
                     #   'gsm'               : [],
                     #   'unknown'           : [],
             }
-
-            device_list = nm_handle.devices_map[types[conn.settings.type]]
-            device = get_device(nm_handle, device_list)
-
+            try:
+                device_list = nm_handle.devices_map[types[conn.settings.type]]
+                device = get_device(nm_handle, device_list)
+            except KeyError:
+                device =None
             if device is not None:
                 if not device.state == DeviceState.UNAVAILABLE:
                     nm_handle.activate_connection(conn, device)
                 else:
                     print "Device unavailable"
             else:
-                print "No device"
+                print "No device or not supported connection type"
     else:
         print "There is no connection named: %s" % connection_id
 
