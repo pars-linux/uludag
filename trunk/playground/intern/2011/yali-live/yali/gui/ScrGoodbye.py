@@ -61,6 +61,9 @@ class Widget(QWidget, ScreenWidget):
     def runOperations(self):
         postInstallOperations = []
         if ctx.flags.install_type == ctx.STEP_LIVE:
+            ctx.logger.debug("Generating dbus machine-id")
+            if oos.remove(os.path.join(ctx.consts.target_dir,"var/lib/dbus/machine-id"))
+            yali.util.chroot("/usr/bin/dbus-uuidgen --ensure")
             # run dbus in chroot
             yali.util.start_dbus()
             #Remove Autologin for default Live user pars

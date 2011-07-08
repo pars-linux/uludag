@@ -263,12 +263,12 @@ class SystemCopy(Process):
         self.wait_condition = wait_condition
         self.retry_answer = retry_answer
 
-        self.symlink_dirs = ["opt","lib","bin","sbin","boot","usr"]
+        self.symlink_dirs = ["opt","lib","bin","sbin","boot","usr","var/lib/dbus"]
         self.copy_dirs = ["etc","root"]
         self.empty_dirs = ["mnt","sys","proc","dev","media","home",
                 "var","var/log","var/log/news","var/cache","var/db",
                 "var/games","var/lib","var/lib/misc","var/local",
-                "var/lock","var/lock/subsys","var/opt","var/run",
+                "var/lock","var/lock/subsys","var/opt","var/run","var/run/dbus",
                 "var/run/pardus","var/spool","var/state","var/tmp","var/yp","tmp"]
         self.symlink_basepath = os.readlink("/usr").replace("/usr","")
 
