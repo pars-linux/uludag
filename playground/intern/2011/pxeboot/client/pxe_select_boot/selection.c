@@ -3,6 +3,10 @@
 #define ARRAY_SIZE(a) (sizeof(a) / sizeof(a[0]))
 #define CTRLD   4
 #define BUFFER_SIZE  100000
+#define ROW_MIN 17
+#define COL_MIN 53
+#define MENU_SIZE 5 // 15 max
+
 
 #include  <stdio.h>
 #include  <stdlib.h>
@@ -206,13 +210,27 @@ void list_version() {
          printf("\nToplam %d kayit listelendi\n", count);
 }
 
+
+void screen_size(WINDOW *win, int min_row, int min_col,int *r, int *c)
+{   
+    int row,col;
+    getmaxyx(win,row,col);
+    if ((row<min_row) || (col<min_col))
+     {
+         endwin();
+         printf("\n\nScreen's too small..bitch!\n1-resize the screen\n2-restart the program.\n\n\n");
+         exit(EXIT_SUCCESS);
+     }
+    
+     *r = row;
+     *c = col;
+}
 //--------------------------------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------------------------------
 
 
 int main()
 {
-
     Head=(VERSION **) malloc(sizeof(VERSION *));
 
     //parsing xml
@@ -229,12 +247,16 @@ int main()
 
     /* Curses kipini */
     initscr();
+    int row,col;
+    screen_size(stdscr,ROW_MIN,COL_MIN,&row,&col);
+
     start_color();
     cbreak();
     noecho();
     keypad(stdscr, TRUE);
     init_pair(1, COLOR_RED, COLOR_BLACK);
-
+    init_pair(2, COLOR_CYAN, COLOR_BLACK);
+    
     /* Öğeleri oluştur */
     n_choices = count;
     my_items = (ITEM **)calloc(n_choices, sizeof(ITEM *));
@@ -244,32 +266,24 @@ int main()
     //int count = 0;
     vers = *Head;
 
-    if (*Head == NULL){
-        printf("Listelenecek eleman yok!");
-    }
     i=0;
-
-    while (vers) {
-        my_items[i] = new_item(vers->name, "-----------------");
-        vers=vers->Next;
-        i++;
-    }
-
-
-  //  for(i = 0; i < n_choices; ++i)
-  //      my_items[i] = new_item(choices[i],"-----");
+        while (vers) {
+            my_items[i] = new_item(vers->name, "\t---");
+            vers=vers->Next;
+            i++;
+        }
 
     /* Menüyü oluştur */
     my_menu = new_menu((ITEM **)my_items);
 
     /* Menü ile ilişiklendirilecek pencereyi oluştur */
-    my_menu_win = newwin(20, 60, 4, 4);
+    my_menu_win = newwin( 40,60 , (*(&row)/2)-40/2, (*(&col)/2)-60/2);
     keypad(my_menu_win, TRUE);
 
     /* Ana pencereyi ve alt pencereleri ayarla */
     set_menu_win(my_menu, my_menu_win);
     set_menu_sub(my_menu, derwin(my_menu_win, 16, 58, 3, 1));
-    set_menu_format(my_menu, 15, 1);
+    set_menu_format(my_menu, 15, 1);  //tek bi sayfa için gösterilmesini istediğimiz satır sayısı 15
 
 
     /* Menü göstericisini " * " olarak ayarla*/
@@ -281,7 +295,11 @@ int main()
     mvwaddch(my_menu_win, 2, 0, ACS_LTEE);
     mvwhline(my_menu_win, 2, 1, ACS_HLINE, 58);
     mvwaddch(my_menu_win, 2, 69, ACS_RTEE);
-    mvprintw(LINES - 2, 0, "F1 to exit");
+    
+    attron(COLOR_PAIR(2));
+    mvprintw(LINES - 3, 0, "ABCDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ");
+    mvprintw(LINES - 2, 0, "F1 to exit,  abcdefgğhıijklmeoöprsştuüvyz");
+    attroff(COLOR_PAIR(2));
     refresh();
 
     /* Menüyü ekrana yaz */
@@ -295,15 +313,16 @@ int main()
         switch(c)
         {
             case KEY_DOWN:
-                if(vers!=NULL && vers->Next!=NULL)
+                if(vers!=NULL && vers->Next!=NULL){
                     vers=vers->Next;
                     menu_driver(my_menu, REQ_DOWN_ITEM);
                     move(20, 0);
                     clrtoeol();
-                mvprintw(LINES-4, 0, "\n");
-                mvprintw(LINES-4, 0, "Version : %s    %s    %s",
-                item_name(current_item(my_menu)),vers->id,vers->size);
-                pos_menu_cursor(my_menu);
+                    mvprintw(LINES-6, 0, "\n");
+                    mvprintw(LINES-6, 0, "Version : %s    %s    %s",
+                    item_name(current_item(my_menu)),vers->id,vers->size);
+                    pos_menu_cursor(my_menu);
+                }
                 break;
             case KEY_UP:
                 if(vers!=NULL && vers->Prev!=NULL){
@@ -311,22 +330,15 @@ int main()
                     menu_driver(my_menu, REQ_UP_ITEM);
                     move(200, 0);
                     clrtoeol();
+                    mvprintw(LINES-6, 0, "\n");
+                    mvprintw(LINES-6, 0, "Version : %s    %s    %s",
+                    item_name(current_item(my_menu)),vers->id,vers->size);
+                    pos_menu_cursor(my_menu);
                   }
-                mvprintw(LINES-4, 0, "\n");
-                mvprintw(LINES-4, 0, "Version : %s    %s    %s",
-                item_name(current_item(my_menu)),vers->id,vers->size);
-                pos_menu_cursor(my_menu);
                 break;
             case 10: /* Enter */
                refresh();
                 break;
-
-            case KEY_NPAGE:
-                 menu_driver(my_menu, REQ_SCR_DPAGE);
-                 break;
-            case KEY_PPAGE:
-                 menu_driver(my_menu, REQ_SCR_UPAGE);
-                 break;
          }
 
         refresh();
@@ -340,7 +352,6 @@ int main()
      free_menu(my_menu);
      endwin();
 
-//    list_version();
  return 0;
 }
 
