@@ -67,7 +67,7 @@ class Widget(QWidget, ScreenWidget):
             pars=yali.users.User("pars")
             pars.setAutoLogin(False)
             print "pars autologin removed"
-            yali.util.run_batch("mkinitramfs",["-o", os.path.join(ctx.consts.target_dir,"boot")])
+            yali.util.chroot("mkinitramfs -o /boot -r /")
             yali.util.sync()
             if os.path.exists(os.path.join(ctx.consts.target_dir,"boot","initramfs%s"%os.uname()[2])):
                 print "mkinitramfs created"
