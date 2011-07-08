@@ -1,12 +1,14 @@
-CC=gcc
-CFLAGS=-g -Wall
+CC = gcc
+CFLAGS = -g -Wall
 
-Libcurses:-lncurses lmenu
-Libiksemel:-liksemel
+LIBCURSES := -lncurses -lmenu
+LIBIKSEMEL := -liksemel
 
 TARGETS = selection
 
 
-all:	$(CC) selection.c -o $(TARGETS) $(Libcurses) $(Libiksemel)
+all:
+	$(CC) selection.c -o $(TARGETS) $(LIBCURSES) $(LIBIKSEMEL)
 
-clean:	$(TARGETS)
+clean:
+	rm -f $(TARGETS)
