@@ -96,14 +96,17 @@ int pr_cdata (void *udata, char *data, size_t len)
               if (tmp == 1){
                    _name = (char *) malloc(sizeof(char)* (len+1));
                   strncpy(_name,data,len);
+                  _name[len]=NULL;
               }
               if (tmp==3){
                   _size = (char *) malloc(sizeof(char)* (len+1));
                   strncpy(_size,data,len);
+                  _size[len]=NULL;
               }
               if(tmp==4){
                   _path = (char *) malloc(sizeof(char)* (len+1));
                   strncpy(_path,data,len);
+                  _path[len]=NULL;
 
                   add_version(_name, _id, _size, _path);
 
@@ -159,7 +162,12 @@ void add_version(char *name, char *id, char *size, char *path ){
 
     if (new == NULL) {
         printf("Not enough memory");
+
     }
+
+    new->Next = NULL ;
+    new->Prev = NULL;
+
     strcpy(new->name,name);
     strcpy(new->id,id);
     strcpy(new->size,size);
@@ -170,7 +178,7 @@ void add_version(char *name, char *id, char *size, char *path ){
         Tail = new;
     }
     else {
-        Tail->Prev=Tail;
+        new->Prev=Tail;
         Tail->Next = new;
         Tail = Tail->Next;
     }
@@ -278,7 +286,7 @@ int main()
 
     /* Menüyü ekrana yaz */
     post_menu(my_menu);
-    wrefresh(my_menu_win);
+    //wrefresh(my_menu_win);
    // refresh();
 
     vers = *Head;
@@ -287,21 +295,24 @@ int main()
         switch(c)
         {
             case KEY_DOWN:
-                vers=vers->Next;
-                menu_driver(my_menu, REQ_DOWN_ITEM);
-                move(20, 0);
-                clrtoeol();
-                mvprintw(LINES-4, 0, "                                                                                  ");
+                if(vers!=NULL && vers->Next!=NULL)
+                    vers=vers->Next;
+                    menu_driver(my_menu, REQ_DOWN_ITEM);
+                    move(20, 0);
+                    clrtoeol();
+                mvprintw(LINES-4, 0, "\n");
                 mvprintw(LINES-4, 0, "Version : %s    %s    %s",
                 item_name(current_item(my_menu)),vers->id,vers->size);
                 pos_menu_cursor(my_menu);
                 break;
             case KEY_UP:
-                vers=vers->Prev;
-                menu_driver(my_menu, REQ_UP_ITEM);
-                move(20, 0);
-                clrtoeol();
-                mvprintw(LINES-4, 0, "                                                                                   ");
+                if(vers!=NULL && vers->Prev!=NULL){
+                    vers=vers->Prev;
+                    menu_driver(my_menu, REQ_UP_ITEM);
+                    move(200, 0);
+                    clrtoeol();
+                  }
+                mvprintw(LINES-4, 0, "\n");
                 mvprintw(LINES-4, 0, "Version : %s    %s    %s",
                 item_name(current_item(my_menu)),vers->id,vers->size);
                 pos_menu_cursor(my_menu);
@@ -317,6 +328,7 @@ int main()
                  menu_driver(my_menu, REQ_SCR_UPAGE);
                  break;
          }
+
         refresh();
      }
 
