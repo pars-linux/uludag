@@ -299,7 +299,7 @@ int main()
     
     attron(COLOR_PAIR(3));
     mvprintw(LINES - 3, 0, "ABCDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ");
-    mvprintw(LINES - 2, 0, "F1 to exit,  abcdefgğhıijklmeoöprsştuüvyz");
+    mvprintw(LINES - 2, 0, "F1 to exit\n,  abcdefgğhıijklmeoöprsştuüvyz");
     attroff(COLOR_PAIR(3));
     refresh();
 
@@ -313,15 +313,17 @@ int main()
     {
         switch(c)
         {
+            int len=0;
             case KEY_DOWN:
                 if(vers!=NULL && vers->Next!=NULL){
                     vers=vers->Next;
+                    len= strlen(vers->name)+strlen(vers->id)+ strlen(vers->size)+3*4;
                     attron(COLOR_PAIR(2));
                     menu_driver(my_menu, REQ_DOWN_ITEM);
                     move(60, 0);
                     clrtoeol();
                     mvprintw(LINES-10, 0, "\n");
-                    mvprintw(LINES-10, 30, "Version : %s    %s    %s",
+                    mvprintw(LINES-10, (*(&col)/2)-len/2, "%s    %s    %s",
                     item_name(current_item(my_menu)),vers->id,vers->size);
                     pos_menu_cursor(my_menu);
                     attroff(COLOR_PAIR(2));
@@ -330,12 +332,13 @@ int main()
             case KEY_UP:
                 if(vers!=NULL && vers->Prev!=NULL){
                     vers=vers->Prev;
+                    len= strlen(vers->name)+strlen(vers->id)+ strlen(vers->size)+3*4;
                     attron(COLOR_PAIR(2));
                     menu_driver(my_menu, REQ_UP_ITEM);
                     move(60, 0);
                     clrtoeol();
                     mvprintw(LINES-10, 0, "\n");
-                    mvprintw(LINES-10, 30, "Version : %s    %s    %s",
+                    mvprintw(LINES-10, (*(&col)/2)-len/2, "%s    %s    %s",
                     item_name(current_item(my_menu)),vers->id,vers->size);
                     pos_menu_cursor(my_menu);
                     attroff(COLOR_PAIR(2));
