@@ -22,10 +22,8 @@ def getTree(item, level = 0):
         if level and (not item.tail or not item.tail.strip()):
             item.tail = i
 
-
 #if none given
-isoFolder = "/home"
-
+isoFolder = os.getcwd()
 
 if len(sys.argv) > 1:
     isoFolder = sys.argv[1]
@@ -37,8 +35,10 @@ treeString = ""
 #get .iso file from directory
 filelist=[file for file in os.listdir(isoFolder) if file.lower().endswith(".iso")]
 if len(filelist) == 0:
-    print "There is no ISO image file."
+    print "There is no ISO image file in '%s'" %isoFolder
+    print "usage : %s [Path]" %sys.argv[0]
     sys.exit(1)
+
 for files_name in filelist: 
         iso = iso9660.ISO9660.IFS ( source = isoFolder+files_name)
         name = iso.get_volume_id()
