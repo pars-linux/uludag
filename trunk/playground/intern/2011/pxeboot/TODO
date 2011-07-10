@@ -25,14 +25,14 @@ Research / Decide :
 Server
 ------
     - PTSP like system (note changes from PTSP)
-    - a script to find and parse ISO files
+    / a script to find and parse ISO files
         - extract necessary files from ISO (pisi-index.xml, gfxboot.cfg, ...)
-        - parse files from iso needed for XML
-            - distribution name (Kurumsal 2)
-            - ISO name (Kurumsal 2 Nightly 20110705)
+        + parse files from iso needed for XML
+            + distribution name (Kurumsal 2)
+            + ISO name (Kurumsal 2 Nightly 20110705)
             - packages installed size
             - get architecture (64bit / 32bit, etc.)
-        - create XML file for the client
+        + create XML file for the client
         ? extract kernel / initramfs from ISO
         ? create initramfs containing all of the kernels of the ISO's
 
