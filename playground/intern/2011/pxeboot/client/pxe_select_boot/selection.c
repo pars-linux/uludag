@@ -1,4 +1,11 @@
+#include  <stdio.h>
+#include  <stdlib.h>
+#include  <string.h>
+#include  <malloc.h>
+#include <locale.h>
+
 #include <menu.h>
+#include <iksemel.h>
 
 #define ARRAY_SIZE(a) (sizeof(a) / sizeof(a[0]))
 #define CTRLD   4
@@ -7,16 +14,8 @@
 #define COL_MIN 53
 #define MENU_SIZE 5 // 15 max
 
-
-#include  <stdio.h>
-#include  <stdlib.h>
-#include  <string.h>
-#include  <malloc.h>
-
-#include <iksemel.h>
-
-static int tmp=0;
 char *_name, *_id, *_size, *_path;
+static int tmp=0;
 int count = 0;
 
 void add_version(char *name, char *id, char *size, char *path );
@@ -32,14 +31,6 @@ typedef struct _VERSION{
 
 VERSION **Head = NULL, *Tail = NULL;
 
-//char *choices[] = {
-//      "Choice 1",
-//      "Choice 2",
-//      "Choice 3",
-//      "Choice 4",
-//      "Exit    ",
-//      (char *)NULL,
-//};
 
 void print_in_middle(WINDOW *win, int starty, int startx, int width,
     char *string, chtype color)
@@ -231,10 +222,10 @@ void screen_size(WINDOW *win, int min_row, int min_col,int *r, int *c)
 
 int main()
 {
+    setlocale(LC_ALL , "");
     Head=(VERSION **) malloc(sizeof(VERSION *));
 
     //parsing xml
-    printf("main fonk\n");
     iksemel_parse();
 
     list_version();
@@ -317,7 +308,7 @@ int main()
             case KEY_DOWN:
                 if(vers!=NULL && vers->Next!=NULL){
                     vers=vers->Next;
-                    len= strlen(vers->name)+strlen(vers->id)+ strlen(vers->size)+3*4;
+                    len= strlen(vers->name)+strlen(vers->id)+ strlen(vers->size)+2*4;
                     attron(COLOR_PAIR(2));
                     menu_driver(my_menu, REQ_DOWN_ITEM);
                     move(60, 0);
@@ -332,7 +323,7 @@ int main()
             case KEY_UP:
                 if(vers!=NULL && vers->Prev!=NULL){
                     vers=vers->Prev;
-                    len= strlen(vers->name)+strlen(vers->id)+ strlen(vers->size)+3*4;
+                    len= strlen(vers->name)+strlen(vers->id)+ strlen(vers->size)+2*4;
                     attron(COLOR_PAIR(2));
                     menu_driver(my_menu, REQ_UP_ITEM);
                     move(60, 0);
