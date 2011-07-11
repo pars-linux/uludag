@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-07-11T21:41:06\n"
+"POT-Creation-Date: 2011-07-11T21:49:58\n"
 "PO-Revision-Date: 2011-01-19 16:31+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
@@ -23,14 +23,14 @@ msgid "Pardus &PRODVER; contains major improvements over the previous Pardus rel
 msgstr "Pardus &PRODVER;, Pardus &PREVVER; sürümüne göre önemli yenilikler içermektedir. Aşağıdaki bölümlerde bu değişiklerden kısaca bahsedilmiştir."
 
 #. Tag: para
-#, fuzzy, no-c-format
-msgid "<application>Kernel</application> - &KERNELVER; Linux kernel provides updated hardware support together with a hundreth of bug fixes."
-msgstr "<application>Çekirdek</application> - Son Linux çekirdeği &KERNELVER; binlerce hata düzeltmesinin yanında en güncel donanımlara da destek vermektedir."
+#, no-c-format
+msgid "<application>Kernel</application> - &KERNELVER; Linux kernel provides updated hardware support together with a hundred of bug fixes."
+msgstr "<application>Çekirdek</application> - &KERNELVER; Linux çekirdeği yüzlerce hata düzeltmesinin yanında en güncel donanımlara da destek vermektedir."
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "<application>YALI</application> - YALI, the installer of Pardus, gained Rescue Mode which provides easy password and bootloader recovery."
-msgstr "<application>YALI</application> - Kurulum aracı YALI, LVM/RAID ve UUID desteği kazandı."
+msgstr "<application>YALI</application> - Parola ve sistem önyükleyiciyi kolayca kurtarabilmenizi sağlayacak Kurtarma Ekranı, kurulum aracı olan YALI'ya eklendi."
 
 #. Tag: para
 #, no-c-format
@@ -38,14 +38,14 @@ msgid "<application>KDE SC</application> - Pardus &PRODVER; comes with the lates
 msgstr "<application>KDE SC</application> - Pardus &PRODVER; en güncel ve kararlı KDE Yazılım Seçkisi, KDE SC &KDEVER; ile geliyor. Masaüstü deneyiminizin daha hızlı ve kararlı olması için temel paketlere birçok hata düzeltmesi ve iyileştirmeler yapıldı."
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "<application>LibreOffice</application> - LibreOffice, an Open Source personal productivity suite sponsored by the Document Foundation, is updated to the much-awaited &LIBREOFFICEVER; version which brings huge improvements over the older version."
-msgstr "<application>LibreOffice</application> - Document Foundation tarafından geliştirilen açık kaynak kodlu ofis araçları takımı LibreOffice, Pardus &PRODVER; sürümünde artık öntanımlı oluyor."
+msgstr "<application>LibreOffice</application> - Document Foundation tarafından geliştirilen açık kaynak kodlu ofis araçları takımı LibreOffice, önceki sürümüne göre önemli değişiklikler içeren &LIBREOFFICEVER; sürümüne güncellendi."
 
 #. Tag: para
 #, no-c-format
 msgid "<application>Firefox</application> - Firefox &FIREFOXVER;, the latest stable version of the most popular Open Source web browser, is now shipped with Pardus &PRODVER;."
-msgstr ""
+msgstr "<application>Firefox</application> - En yaygın açık kaynak kodlu web tarayıcısı olan Firefox'un en güncel ve kararlı sürümü Firefox &FIREFOXVER;, Pardus &PRODVER; sürümüne dahil edildi."
 
 #~ msgid "Hardware Overview"
 #~ msgstr "Donanım"

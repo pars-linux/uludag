@@ -13,14 +13,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Welcome to Pardus &PRODVER; &PRODNAME;"
-msgstr "Pardus &PRODVER; Sürümüne Hoş Geldiniz"
+msgstr "Pardus &PRODVER; &PRODNAME; Sürümüne Hoş Geldiniz"
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Welcome to Pardus &PRODVER; &PRODNAME;, the latest maintenance release of Pardus, a powerful, KDE-focused Linux distribution."
-msgstr "KDE öncelikli, güçlü bir Linux dağıtımı olan Pardus'un en güncel ürünü olan Pardus &PRODVER; sürümüne hoş geldiniz."
+msgstr "KDE öncelikli, güçlü bir Linux dağıtımı olan Pardus'un en güncel ürünü olan Pardus &PRODVER; &PRODNAME; sürümüne hoş geldiniz."
 
 #. Tag: title
 #, no-c-format

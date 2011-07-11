@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-07-11T21:41:06\n"
+"POT-Creation-Date: 2011-07-11T21:49:58\n"
 "PO-Revision-Date: 2011-01-20 10:24+0100\n"
 "Last-Translator: Stefan Wilhelm <sw  _at_  pardususer  dot  de>\n"
 "Language-Team: None\n"
@@ -25,7 +25,7 @@ msgstr "Pardus &PRODVER; enthält gegenüber der vorherigen Pardus Version &PREV
 
 #. Tag: para
 #, fuzzy, no-c-format
-msgid "<application>Kernel</application> - &KERNELVER; Linux kernel provides updated hardware support together with a hundreth of bug fixes."
+msgid "<application>Kernel</application> - &KERNELVER; Linux kernel provides updated hardware support together with a hundred of bug fixes."
 msgstr "<application>Kernel</application> - Der neueste Linux Kernel &KERNELVER; bietet zusammen mit vielen tausend Fehlerkorrekturen eine hochaktuelle Hardwareunterstützung."
 
 #. Tag: para

@@ -28,9 +28,9 @@ msgid "YALI"
 msgstr "YALI"
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "<emphasis>YALI</emphasis>, the installer of Pardus, gained system rescue menu that provides easy bootloader and password recovery."
-msgstr "Pardus kurulum aracı <emphasis>YALI</emphasis>, LVM/RAID ve UUID desteği sunuyor."
+msgstr "Pardus kurulum aracı <emphasis>YALI</emphasis>, sistem önyükleyici ve parolalarınızı kolayca kurtarabilmeniz için artık kurtarma ekranı ile geliyor."
 
 #. Tag: title
 #, no-c-format
@@ -40,7 +40,7 @@ msgstr "Pisi"
 #. Tag: para
 #, no-c-format
 msgid "Some of the core components are now parallellized to increase the utilization of multi-core machines which means faster package operations and better package management experience."
-msgstr ""
+msgstr "Çok çekirdekli bilgisayarları daha verimli kullanmak üzere paralelleştirilen bazı bileşenleriyle Pisi, artık daha hızlı paket işlemleri ve daha iyi paket yönetimi deneyimi vaad ediyor."
 
 #. Tag: title
 #, no-c-format
@@ -50,7 +50,7 @@ msgstr ""
 #. Tag: para
 #, no-c-format
 msgid "<emphasis>QuickFormat</emphasis> is a removable device formatting tool that can integrate to Dolphin. Now, it's very easy to format USB flash drives and card readers."
-msgstr ""
+msgstr "<emphasis>QuickFormat</emphasis> Dolphin ile uyumlu çalışabilen bir çıkarılabilir aygıt formatlama aracıdır. Artık USB belleklerinizi ve çıkarılabilir bellek kartlarınızı formatlamak çok kolay."
 
 #. Tag: title
 #, no-c-format
@@ -58,24 +58,24 @@ msgid "Updates in Core Components"
 msgstr "Temel Bileşenlerde Güncellemeler"
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "<application>Kernel</application> - The Linux kernel shipped with Pardus &PRODVER; is &KERNELVER;."
-msgstr "<application>Kernel</application> - Pardus &PRODVER; ile Linux çekirdeğinin 5 Ocak 2011'de yayınlanan en son kararlı &KERNELVER; sürümüne geçildi."
+msgstr "<application>Kernel</application> - Pardus &PRODVER; ile Linux çekirdeğinin &KERNELVER; sürümü kullanılıyor."
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "<application>Plymouth</application> - The bootsplash technology used in Pardus &PREVVER; is updated to its latest version for a much stable experience."
-msgstr "<application>Plymouth</application> - Pardus &PREVVER; sürümünde açılış süreci görselleştirmesi için kullanılan teknoloji bırakılarak Plymouth teknolojisine geçildi."
+msgstr "<application>Plymouth</application> - Daha kararlı bir deneyim için; Pardus &PREVVER; sürümünde açılış süreci görselleştirmesi için kullanılan teknolojinin en son güncel sürümü tercih edildi."
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "<application>X.org</application> - xorg-server is updated to &XORGVER;."
-msgstr "<application>Perl</application> - Perl, &PERLVER; sürümüne yükseltildi."
+msgstr "<application>X.org</application> - Xorg sunucu, &XORGVER; sürümüne yükseltildi."
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "<application>TeX Live</application> - TeX Live documentation stack is updated to latest &TEXLIVEVER; version."
-msgstr "<application>TeX Live</application> - TeX Live belgeleme araçları &TEXLIVEVER; sürümüne yükseltildi."
+msgstr "<application>TeX Live</application> - TeX Live belgeleme araçları, mevcut en güncel sürüm olan &TEXLIVEVER; sürümüne yükseltildi."
 
 #. Tag: title
 #, no-c-format
@@ -95,7 +95,7 @@ msgstr "Pardus &PRODVER; en yeni KDE Yazılım Seçkisi, KDE SC &KDEVER; ile gel
 #. Tag: para
 #, no-c-format
 msgid "KDE Software Compilation, versioned &KDEVER;, provide many new features in each of KDE's components including Plasma, Solid, Nepomuk, KWin and also introduces a brand new Bluetooth framework called BlueDevil allows easy device pairing and management."
-msgstr ""
+msgstr "KDE &KDEVER; Yazılım Seçkisi, Plasma, Solid, Nepomuk, KWin gibi önemli bileşenlerine yeni özellikler eklemenin yanı sıra, Bluetooth aygıtlarınızı kolayca eşleştirmenizi ve yönetmenizi sağlayan BlueDevil ismindeki altyapısını, bu sürümle kullanıma sunuyor."
 
 #. Tag: title
 #, no-c-format
@@ -110,7 +110,7 @@ msgstr "Mozilla Firefox"
 #. Tag: para
 #, no-c-format
 msgid "Pardus &PRODVER; comes with <emphasis>Mozilla Firefox &FIREFOXVER;</emphasis> as the default web browser application. This version of Firefox introduces CSS animations, Do-Not-Track, improved support for HTML5, MathML, and SMIL, improved network, memory and JavaScript performance and fixes for several stability and security issues."
-msgstr ""
+msgstr "Pardus &PRODVER; öntanımlı web tarayıcı olarak <emphasis>Mozilla Firefox &FIREFOXVER;</emphasis> kullanmaktadır. Firefox'un bu sürümü ile birlikte; CSS animasyonları, Do-Not-Track, HTML5, MathML ve SMIL için gelişmiş destek, iyileştirilmiş ağ, bellek ve JavaScript performansı ve birçok hata düzeltmesi ve güvenlik iyileştirmeleri geliyor."
 
 #. Tag: title
 #, no-c-format
@@ -118,9 +118,9 @@ msgid "Clementine"
 msgstr "Clementine"
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "<emphasis>Clementine</emphasis>, a cross-platform music player based on Amarok 1.4 is updated to latest stability and maintenance version &CLEMENTINEVER;."
-msgstr "Amarok 1.4 sürümü temel alınarak hazırlanan platform bağımsız müzik çalar <emphasis>Clementine</emphasis> geliştirme süreci aktif devam eden, hafif ve başarılı uygulama olarak ses dosyaları için öntanımlı oynatıcı olarak yer aldı."
+msgstr "Amarok 1.4 sürümü temel alınarak hazırlanan platform bağımsız müzik çalar <emphasis>Clementine</emphasis> en güncel kararlılık ve bakım sürümü olan &CLEMENTINEVER; sürümüne güncellendi."
 
 #. Tag: title
 #, no-c-format
@@ -160,7 +160,7 @@ msgstr "Sistem Ayarları"
 #. Tag: para
 #, no-c-format
 msgid "The display configuration tool of the graphics card manufacturer is now recommended in the <emphasis>Display and Monitor</emphasis> module of the System Settings, if it suits better to your graphics card driver."
-msgstr ""
+msgstr "Sistem Ayarları uygulamasındaki ekran yapılandırma bölümü olan <emphasis>Görüntü ve Ekran</emphasis> modülü, artık gerektiği durumlarda kullanıcılara ekran kartı üreticisinin kendi yapılandırma aracını tavsiye ediyor."
 
 #. Tag: title
 #, no-c-format
@@ -170,17 +170,17 @@ msgstr "Ofis Paketi"
 #. Tag: para
 #, no-c-format
 msgid "<emphasis>LibreOffice</emphasis>, an Open Source personal productivity suite sponsored by the Document Foundation, is the default Office Suite in Pardus &PRODVER;. &LIBREOFFICEVER; version of LibreOffice introduces; improved text rendering, configurable color charts, improved thumbnailed HTML export of presentations, faster Flat ODF import/export and better desktop theme integration."
-msgstr ""
+msgstr "Document Foundation tarafından hazırlanan, açık kaynak kodlu üretim araçları paketi <emphasis>LibreOffice</emphasis> Pardus &PRODVER; sürümünün öntanımlı ofis paketidir. LibreOffice &LIBREOFFICEVER; sürümü ile birlikte gelen özellikler arasında; yazıtiplerinin daha iyi çizdirilmesi, ayarlanabilir renk çizelgeleri, sunumların küçük resimli HTML dışarı aktarımı, daha hızlı düz ODF içeri/dışarı aktarımı ve daha iyi masaüstü entegrasyonu sıralanabilir."
 
 #. Tag: title
 #, no-c-format
 msgid "Other"
-msgstr ""
+msgstr "Diğer"
 
 #. Tag: para
 #, no-c-format
 msgid "Most wanted packages like <emphasis>Skype</emphasis>, a P2P VoIP client that allows you to make voice calls, and <emphasis>Wine</emphasis>, a software that allows you to run Microsoft Windows applications, are now included in Pardus &PRODVER; package repopsitories."
-msgstr ""
+msgstr "En çok istenen paketlerden <emphasis>Skype</emphasis> (sesli aramalar yapmanızı sağlayan bir VoIP istemci) ve <emphasis>Wine</emphasis> (Microsoft Windows uygulamalarını çalıştırabilmenizi sağlayan bir araç) artık Pardus &PRODVER; paket depolarında yer alıyor."
 
 #~ msgid "The user interface is completely redesigned to improve the usability."
 #~ msgstr "Kullanışlılığı artırmak için tüm arayüz yeniden tasarlandı."

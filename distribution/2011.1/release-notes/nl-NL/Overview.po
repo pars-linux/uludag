@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-07-11T21:41:06\n"
+"POT-Creation-Date: 2011-07-11T21:49:58\n"
 "PO-Revision-Date: 2011-01-20 11:01+0100\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-doc@kde.org>\n"
@@ -28,7 +28,7 @@ msgstr "Pardus &PRODVER; bevat belangrijke verbeteringen t.o.v. de vorige uitgav
 
 #. Tag: para
 #, fuzzy, no-c-format
-msgid "<application>Kernel</application> - &KERNELVER; Linux kernel provides updated hardware support together with a hundreth of bug fixes."
+msgid "<application>Kernel</application> - &KERNELVER; Linux kernel provides updated hardware support together with a hundred of bug fixes."
 msgstr "<application>Kernel</application> - De laatste Linux-kernel &KERNELVER; ondersteunt de nieuwste hardware tezamen met talrijke foutoplossingen."
 
 #. Tag: para
