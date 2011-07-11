@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<Helping>
+  <ISO9660>
+
+    <Pardus>
+      <Version id="3"/>
+      <Name>GBackup</Name>
+      <Size>Development</Size>
+      <Path>home</Path>
+    </Pardus>
+    
+    <Pardus>
+	    <Version id="4"/>
+	    <Name>GBackup</Name>
+	    <Size>Development</Size>
+	    <Path>home</Path>
+    </Pardus>
+    
+    <Pardus>
+	    <Version id="5"/>
+	    <Name>GBackup</Name>
+	    <Size>Development</Size>
+	    <Path>home</Path>
+    </Pardus>
+
+  </ISO9660>
+</Helping>
+
