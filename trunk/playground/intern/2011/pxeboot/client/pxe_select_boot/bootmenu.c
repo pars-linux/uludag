@@ -6,8 +6,6 @@
 #include <libxml/xmlmemory.h>
 #include <libxml/parser.h>
 
-#define DEBUG(x) printf(x)
-
 #include <menu.h>
 
 #define ARRAY_SIZE(a) (sizeof(a) / sizeof(a[0]))
@@ -25,15 +23,12 @@ typedef struct vers {
     xmlChar *path;
 } vers, *versPtr;
 
-
-
 //0000000000000000000000000000000000000000000000000000000000000000000000000000000
 //-----   PARSE XML   -----//
 
 static versPtr parseVersion(xmlDocPtr doc, xmlNodePtr cur) {
     versPtr ret = NULL;
 
-DEBUG("parseVersion\n");
     /*
      * allocate the struct
      */
@@ -245,9 +240,11 @@ int main(int argc, char **argv)
 
 
     i=0;
-        for (i = 0; i < cur->nbversions; i++) 
-              my_items[i] = new_item(cur->versions[i]->name, "\t---");
 
+    for (i = 0; i < cur->nbversions; i++) 
+         my_items[i] = new_item(cur->versions[i]->name, "\t---");
+printf("hata yok");
+return 0;
     /* Menüyü oluştur */
     my_menu = new_menu((ITEM **)my_items);
 
