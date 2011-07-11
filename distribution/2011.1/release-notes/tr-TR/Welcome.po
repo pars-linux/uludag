@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-01-20T09:16:47\n"
+"POT-Creation-Date: 2011-07-11T21:41:06\n"
 "PO-Revision-Date: 2011-01-20 11:06+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
@@ -13,13 +13,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
-#, no-c-format
-msgid "Welcome to Pardus &PRODVER;"
+#, fuzzy, no-c-format
+msgid "Welcome to Pardus &PRODVER; &PRODNAME;"
 msgstr "Pardus &PRODVER; Sürümüne Hoş Geldiniz"
 
 #. Tag: para
-#, no-c-format
-msgid "Welcome to Pardus &PRODVER;, the latest release of Pardus, a powerful, KDE-focused Linux distribution."
+#, fuzzy, no-c-format
+msgid "Welcome to Pardus &PRODVER; &PRODNAME;, the latest maintenance release of Pardus, a powerful, KDE-focused Linux distribution."
 msgstr "KDE öncelikli, güçlü bir Linux dağıtımı olan Pardus'un en güncel ürünü olan Pardus &PRODVER; sürümüne hoş geldiniz."
 
 #. Tag: title

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-01-20T06:58:23\n"
+"POT-Creation-Date: 2011-07-11T21:41:06\n"
 "PO-Revision-Date: 2011-01-20 10:57+0100\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-doc@kde.org>\n"
@@ -17,13 +17,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Tag: title
-#, no-c-format
-msgid "Welcome to Pardus &PRODVER;"
+#, fuzzy, no-c-format
+msgid "Welcome to Pardus &PRODVER; &PRODNAME;"
 msgstr "Welkom bij Pardus &PRODVER;"
 
 #. Tag: para
-#, no-c-format
-msgid "Welcome to Pardus &PRODVER;, the latest release of Pardus, a powerful, KDE-focused Linux distribution."
+#, fuzzy, no-c-format
+msgid "Welcome to Pardus &PRODVER; &PRODNAME;, the latest maintenance release of Pardus, a powerful, KDE-focused Linux distribution."
 msgstr "Welkom bij Pardus &PRODVER;, de laatste uitgave van Pardus, een krachtige op KDE gebaseerde Linux-distributie."
 
 #. Tag: title
@@ -90,5 +90,3 @@ msgstr "Terugkoppeling"
 #, no-c-format
 msgid "Visit <ulink url=\"http://bugs.pardus.org.tr\">http://bugs.pardus.org.tr</ulink> to report a bug, send a bug fix or suggest improvements about Pardus.We would like to thank all of our users and community members for their valuable contributions which help improving Pardus, Linux and free software worldwide."
 msgstr "Bezoek <ulink url=\"http://bugs.pardus.org.tr\">http://bugs.pardus.org.tr</ulink> voor het rapporteren van fouten, oplossingen voor fouten of aanwijzingen voor verbeteringen van Pardus. Wij willen hierbij all onze gebruikers en gemeenschapsleden bedanken voor hun waardevolle bijdrage voor het verbeteren van Pardus, Linux and vrije wereldwijde software."
-
-
