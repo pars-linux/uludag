@@ -2,13 +2,11 @@ CC = gcc
 CFLAGS = -g -Wall
 
 LIBCURSES := -lncurses -lmenu
-LIBIKSEMEL := -liksemel
 
-TARGETS = selection
-
+TARGETS = bootmenu
 
 all:
-	$(CC) selection.c -o $(TARGETS) $(LIBCURSES) $(LIBIKSEMEL)
+	$(CC) `pkg-config libxml-2.0 --cflags --libs` bootmenu.c -o $(TARGETS) $(LIBCURSES)
 
 clean:
 	rm -f $(TARGETS)
