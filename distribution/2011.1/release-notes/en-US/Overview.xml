@@ -11,57 +11,31 @@
         a brief overview of those changes.
     </para>
 
-    <section id="sect-Release_Notes-Hardware_Overview">
-
-        <title>Hardware Overview</title>
-        <para>
-            Pardus &PRODVER; now supports 64-bit processor architecture which is supported by many new Intel and AMD processors.
-        </para>
-    </section>
-    <section id="sect-Release_Notes-Software_Overview">
-        <title>Software Overview</title>
-        <itemizedlist>
-            <listitem>
-                <para>
-                    <application>Kernel</application> - The latest Linux kernel &KERNELVER; provides an up-to-date hardware support
-                    together with a thousand of bug fixes.
-                </para>
-            </listitem>
-            <listitem>
-                <para>
-                    <application>Plymouth</application> - The bootsplash technology used in Pardus &PREVVER; is updated to its latest version for a much stable experience.
-                </para>
-            </listitem>
-            <listitem>
-                <para>
-                    <application>YALI</application> - YALI, the installer of Pardus, gained LVM/RAID and UUID support.
-                </para>
-            </listitem>
-            <listitem>
-                <para>
-                    <application>KDE SC</application> - Pardus &PRODVER; comes with the latest KDE Software Compilation, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly.
-                </para>
-            </listitem>
-            <listitem>
-                <para>
-                    <application>Kaptan</application> - Kaptan, the desktop customization tool of Pardus, now optionally captures your picture and sets it as your avatar in KDE.
-                </para>
-            </listitem>
-            <listitem>
-                <para>
-                    <application>NetworkManager</application> - GNOME NetworkManager &NMVER; is now the default networking backend in Pardus &PRODVER;. Users are now able to set up their HSPA/CDMA/VPN networks together with the already supported Ethernet and 802.11 WLAN networks.
-                </para>
-            </listitem>
-            <listitem>
-                <para>
-                    <application>GTK Oxygen style</application> - All GTK applications are now rendered with Oxygen style thanks to the <emphasis>oxygen-gtk</emphasis> project. This brings a huge improvement to the user interface consistency.
-                </para>
-            </listitem>
-            <listitem>
-                <para>
-                    <application>LibreOffice</application> - LibreOffice, an Open Source personal productivity suite sponsored by the Document Foundation, is now the default Office Suite in Pardus &PRODVER;.
-                </para>
-            </listitem>
-        </itemizedlist>
-    </section>
+    <itemizedlist>
+        <listitem>
+            <para>
+                <application>Kernel</application> - &KERNELVER; Linux kernel provides updated hardware support together with a hundreth of bug fixes.
+            </para>
+        </listitem>
+        <listitem>
+            <para>
+                <application>YALI</application> - YALI, the installer of Pardus, gained Rescue Mode which provides easy password and bootloader recovery.
+            </para>
+        </listitem>
+        <listitem>
+            <para>
+                <application>KDE SC</application> - Pardus &PRODVER; comes with the latest KDE Software Compilation, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly.
+            </para>
+        </listitem>
+        <listitem>
+            <para>
+                <application>LibreOffice</application> - LibreOffice, an Open Source personal productivity suite sponsored by the Document Foundation, is updated to the much-awaited &LIBREOFFICEVER; version which brings huge improvements over the older version.
+            </para>
+        </listitem>
+        <listitem>
+            <para>
+                <application>Firefox</application> - Firefox &FIREFOXVER;, the latest stable version of the most popular Open Source web browser, is now shipped with Pardus &PRODVER;.
+            </para>
+        </listitem>
+    </itemizedlist>
 </section>
