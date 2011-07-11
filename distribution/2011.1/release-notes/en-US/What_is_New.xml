@@ -115,8 +115,7 @@
         <itemizedlist>
             <listitem>
                 <para>
-                    <application>Kernel</application> - The Linux kernel shipped with Pardus &PRODVER; is &KERNELVER; which is the latest
-                    stable kernel released on 2011/01/05.
+                    <application>Kernel</application> - The Linux kernel shipped with Pardus &PRODVER; is &KERNELVER;.
                 </para>
             </listitem>
             <listitem>
