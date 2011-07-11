@@ -81,13 +81,13 @@ if __name__ == '__main__':
         manager.show()
 
     if not opts.add_repository is None:
-        manager.show()
-        manager.showPreferences.trigger()
-        manager.settingsDialog.tabWidget.setCurrentIndex(2)
-        manager.settingsDialog.addRepoButton.click()
-        manager.settingsDialog.repositorySettings.fillRepoDialog(opts.add_repository)
-
-    ##### FIXME: check argument count
+        repoAddress = manager.settingsDialog.repositorySettings.checkDirectory(opts.add_repository)
+        if not repoAddress == "":
+            manager.show()
+            manager.showPreferences.trigger()
+            manager.settingsDialog.tabWidget.setCurrentIndex(2)
+            manager.settingsDialog.addRepoButton.click()
+            manager.settingsDialog.repositorySettings.fillRepoDialog(repoAddress)
 
     # Set exception handler
     sys.excepthook = handleException

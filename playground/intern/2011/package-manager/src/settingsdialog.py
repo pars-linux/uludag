@@ -278,24 +278,21 @@ class RepositorySettings(SettingsTab):
                     if ver >= defaultVer:
                         defaultVer = ver + 1
             return defaultVer
-
         try:
             parser = piksemel.parse(str(indexuri))
             rootname = "%s-%s-" % (parser.getTag("Distribution").getTagData("SourceName"), parser.getTag("Distribution").getTagData("Version"))
-            ver = generateVersion(rootname)
-            return "%s%d" % (rootname, ver)
         except:
             rootname = "local-repo-"
-            ver = generateVersion(rootname)
-            return "%s%d" % (rootname, ver)
+        ver = generateVersion(rootname)
+        return "%s%d" % (rootname, ver)
 
-    def __fillRepoDialog(self, repoAddress):
+    def fillRepoDialog(self, repoAddress):
         if not repoAddress == "":
             repoName = self.generateRepoName(repoAddress)
             self.repoDialog.repoName.setText(repoName)
             self.repoDialog.repoAddress.setEditText(repoAddress)
 
-    def fillRepoDialog(self, dirName):
+    def checkDirectory(self, dirName):
         ''' finds *.xml or *.xml.xz files in a directory '''
         if not dirName.endswith("/"):
             dirName += "/"
@@ -312,7 +309,7 @@ class RepositorySettings(SettingsTab):
                 if item.endswith(".xml") or item.endswith(".xml.xz"):
                     repoAddress = dirName + item
                     break
-        self.__fillRepoDialog(repoAddress)
+        return repoAddress
 
     def __setRow(self, row, rowItems):
         for col in range(self.settings.repoListView.columnCount()):
