@@ -130,7 +130,7 @@
         <section id="sect-Release_Notes-What_is_New_Office">
             <title>Office Suite</title>
             <para>
-                <emphasis>LibreOffice</emphasis>, an Open Source personal productivity suite sponsored by the Document Foundation, is the default Office Suite in Pardus &PRODVER;. &LIBREOFFICEVER; version of LibreOffice introduces; improved text rendering, configurable color charts, improved thumbnailed HTML export of presentations, faster Flat ODF import/export and better integration desktop theme integration.
+                <emphasis>LibreOffice</emphasis>, an Open Source personal productivity suite sponsored by the Document Foundation, is the default Office Suite in Pardus &PRODVER;. &LIBREOFFICEVER; version of LibreOffice introduces; improved text rendering, configurable color charts, improved thumbnailed HTML export of presentations, faster Flat ODF import/export and better desktop theme integration.
             </para>
         </section>
 
