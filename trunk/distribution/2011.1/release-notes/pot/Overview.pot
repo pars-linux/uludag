@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-07-11T21:41:06\n"
-"PO-Revision-Date: 2011-07-11T21:41:06\n"
+"POT-Creation-Date: 2011-07-11T22:43:03\n"
+"PO-Revision-Date: 2011-07-11T22:43:03\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #. Tag: para
 #, no-c-format
-msgid "<application>Kernel</application> - &KERNELVER; Linux kernel provides updated hardware support together with a hundreth of bug fixes."
+msgid "<application>Kernel</application> - &KERNELVER; Linux kernel provides updated hardware support together with a hundred of bug fixes."
 msgstr ""
 
 #. Tag: para
