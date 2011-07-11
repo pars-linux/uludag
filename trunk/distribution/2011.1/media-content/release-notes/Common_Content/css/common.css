@@ -29,6 +29,27 @@ object.toc, iframe.toc {
 	border-right:1px solid #999;
 }
 
+/* Hide web menu */
+
+body.notoc {
+	margin-left: 3em;
+}
+
+iframe.notoc {
+	border-style:none;
+	border: none;
+	padding: 0em;
+	position:fixed;
+	width: 21px;
+	height: 29px;
+	top: 0px;
+	left:0;
+	overflow: hidden;
+	margin: 0em;
+	margin-left: -3px;
+}
+/* End hide web menu */
+
 /* desktop styles */
 body.desktop {
 	margin-left: 26em;
