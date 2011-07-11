@@ -93,12 +93,15 @@ class PM:
         elif "ALREADY RUNNING" in message:
             errorTitle = i18n("Pisi Error")
             errorMessage = i18n("Another instance of PiSi is running. Only one instance is allowed.")
+        elif "SHA1" in message and message.startsWith("/"):
+            errorTitle = i18n("Pisi Error")
+            errorMessage = i18n("Could not found pisi file(s). Please check your repositories.")
+
         else:
             errorTitle = i18n("Pisi Error")
             errorMessage = message
 
         self.messageBox = QMessageBox(errorTitle, errorMessage, QMessageBox.Critical, QMessageBox.Ok, 0, 0)
-
         if block:
             self.messageBox.exec_()
             self.runPostExceptionMethods()
