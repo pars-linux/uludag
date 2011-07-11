@@ -1,4 +1,5 @@
 all:
+	echo " ********************   Please make sure that python-beautifulsoup and publican are installed! **************** "; \
 	publican build --formats=html-single --langs=all; \
 	for lang_dir in tmp/*; do \
 	    lang=$$(basename $$lang_dir); \
