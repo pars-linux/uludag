@@ -40,10 +40,10 @@ if len(filelist) == 0:
     sys.exit(1)
 
 for files_name in filelist: 
-        iso = iso9660.ISO9660.IFS ( source = isoFolder+files_name)
+        iso = iso9660.ISO9660.IFS ( source = isoFolder+"/"+files_name)
         name = iso.get_volume_id()
         print "ISO Image Name : %s" % name
-        isopath = isoFolder + files_name
+        isopath = isoFolder +"/"+ files_name
         print "Path : %s" % isopath 
         
         isosize = os.path.getsize(isopath)/(1024*1024)
