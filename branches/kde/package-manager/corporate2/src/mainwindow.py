@@ -32,12 +32,16 @@ from pdswidgets import PMessageBox
 from statemanager import StateManager
 from settingsdialog import SettingsDialog
 
-from pds.qprogressindicator import QProgressIndicator
 from tray import Tray
 from pmutils import *
+from pds.qprogressindicator import QProgressIndicator
 
-import backend
+import os
 import config
+import backend
+import helpdialog
+import localedata
+import pds.environments
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, app = None):
@@ -150,7 +154,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.showPreferences = QAction(KIcon(("preferences-system", "package_settings")), i18n("Settings"), self)
         self.connect(self.showPreferences, SIGNAL("triggered()"), self.settingsDialog.show)
 
-        self.actionQuit = QAction(KIcon("exit"), i18n("Quit"), self)
+        self.actionHelp = QAction(KIcon("help"), i18n("&Help"), self)
+        self.actionHelp.setShortcuts(QKeySequence.HelpContents)
+        self.connect(self.actionHelp, SIGNAL("triggered()"), self.showHelp)
+
+        self.actionQuit = QAction(KIcon("exit"), i18n("&Quit"), self)
         self.actionQuit.setShortcuts(QKeySequence.Quit)
         self.connect(self.actionQuit, SIGNAL("triggered()"), qApp.exit)
 
@@ -162,6 +170,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.cw.menuButton.menu().addAction(self.showPreferences)
         self.cw.menuButton.menu().addSeparator()
+        self.cw.menuButton.menu().addAction(self.actionHelp)
         self.cw.menuButton.menu().addAction(self.actionQuit)
 
         self.cw._states = {self.cw.state.ALL    :(0, self.showAllAction),
@@ -180,6 +189,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def statusWaiting(self):
         self.updateStatusBar(i18n('Calculating dependencies...'), busy = True)
+
+    def showHelp(self):
+        lang = localedata.setSystemLocale(justGet = True)
+
+        if not lang in os.listdir("/usr/share/package-manager/help"):
+            lang = "en"
+
+        if Pds.session == pds.environments.Kde3 :
+            os.popen("khelpcenter /usr/share/package-manager/help/%s/main_help.html &" % lang)
+        else:
+            dialog = helpdialog.HelpDialog(self, helpdialog.MAINAPP)
+            dialog.show()
 
     def updateStatusBar(self, text, busy = False):
         if text == '':
