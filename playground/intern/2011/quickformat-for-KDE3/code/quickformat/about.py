@@ -33,7 +33,3 @@ text        = i18n(None)
 homePage    = "http://www.pardus.org.tr/eng/projects"
 bugEmail    = "bugs@pardus.org.tr"
 catalog     = appName
-#aboutData   = KAboutData(appName, catalog, programName, version, description, license, copyright, text, homePage, bugEmail)
-
-# Author(s)
-#aboutData.addAuthor(i18n("Renan Cakirerk"), i18n("Current Maintainer"))
