@@ -199,13 +199,14 @@ int main(int argc, char **argv)
     int i;
     gVersPtr cur;
 
+    printf("%d",argc);
     /* COMPAT: Do not genrate nodes for formatting spaces */
     LIBXML_TEST_VERSION
     xmlKeepBlanksDefault(0);
 
+    printf("%d",argc);
     for (i = 1; i < argc ; i++) {
         cur = parseGversFile(argv[i]);
-        printf("bibik");
         if ( cur )
            for (i = 0; i < cur->nbversions; i++)
                printVersion(cur->versions[i]);
@@ -241,13 +242,11 @@ int main(int argc, char **argv)
     my_items = (ITEM **)calloc(n_choices, sizeof(ITEM *));
 
 
-    i=0;
-
-    for (i = 0; i < cur->nbversions; i++){ 
+    /* İtemleri oluştur********************************************************************/
+    for (i = 0; i < cur->nbversions; i++){
         my_items[i] = new_item(cur->versions[i]->name, "\t---");
-        printf("%s\n",cur->versions[i]->name);
+        printf("**%s**\n",cur->versions[i]->name);
     }
-return 0;
 
     /* Menüyü oluştur */
     my_menu = new_menu((ITEM **)my_items);
@@ -259,7 +258,7 @@ return 0;
     /* Ana pencereyi ve alt pencereleri ayarla */
     set_menu_win(my_menu, my_menu_win);
     set_menu_sub(my_menu, derwin(my_menu_win, 16, 58, 4, 2));
-    set_menu_format(my_menu, 14, 1);  //tek bi sayfa için gösterilmesini istediğimiz satır sayısı 15
+    set_menu_format(my_menu, 14, 1);  //tek bi sayfa için gösterilmesini istediğimiz satır sayısı 14
 
 
     /* Menü göstericisini " * " olarak ayarla*/

@@ -4,21 +4,21 @@
 
     <Pardus>
       <Version id="3"/>
-      <Name>GBackup</Name>
+      <Name>Pardus Kurumsal</Name>
       <Size>Development</Size>
       <Path>home</Path>
     </Pardus>
     
     <Pardus>
 	    <Version id="4"/>
-	    <Name>GBackup</Name>
+	    <Name>Pardus 2011</Name>
 	    <Size>Development</Size>
 	    <Path>home</Path>
     </Pardus>
     
     <Pardus>
 	    <Version id="5"/>
-	    <Name>GBackup</Name>
+	    <Name>Pardus 2009</Name>
 	    <Size>Development</Size>
 	    <Path>home</Path>
     </Pardus>
