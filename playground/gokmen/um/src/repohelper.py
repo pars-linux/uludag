@@ -145,7 +145,9 @@ class DistupdatePlanner:
             raise DistupdatePlannerException("Could not fetch force install package list")
 
         self.printDebug("    found %d packages" % len(pkglist))
-        self.forceInstallPackages = pkglist
+        for i in pkglist:
+            if not i in self.nextRepoObsoletes:
+                self.forceInstallPackages.append(i)
 
     def calculateInstalledSize(self):
         self.printDebug("* Calculating disk space installed packages are using")
