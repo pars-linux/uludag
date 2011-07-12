@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-10 17:26+0200\n"
+"POT-Creation-Date: 2011-07-12 09:49+0300\n"
 "PO-Revision-Date: 2011-01-22 18:00+0100\n"
 "Last-Translator: Michał Komasa <bigkoma@gmail.com>\n"
 "Language-Team: BigKoma <bigkoma@gmail.com>\n"
@@ -82,16 +82,16 @@ msgstr "Ostrzeżenie"
 msgid "Critical Packages"
 msgstr "Kluczowe Pakiety"
 
-#: src/basketdialog.py:208 src/pmwindow.py:134
+#: src/basketdialog.py:208 src/pmwindow.py:135
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
 msgstr "Wybrane pakiety są już zainstalowane.<br>Jeżeli chcesz kontynuować,pakiety zostaną przeinstalowane."
 
-#: src/basketdialog.py:210 src/pmwindow.py:136
+#: src/basketdialog.py:210 src/pmwindow.py:137
 msgid "Already Installed Packages"
 msgstr "Pakiety już zainstalowane."
 
-#: src/basketdialog.py:211 src/mainwindow.py:142 src/mainwindow.py:144
-#: src/pmwindow.py:137
+#: src/basketdialog.py:211 src/mainwindow.py:146 src/mainwindow.py:148
+#: src/pmwindow.py:138
 msgid "Installed Packages"
 msgstr "Zainstalowane pakiety"
 
@@ -115,52 +115,56 @@ msgstr "Szukanie..."
 msgid "No results found."
 msgstr "Nic nie znaleziono."
 
-#: src/mainwidget.py:388
+#: src/mainwidget.py:386
 #, fuzzy
 msgid "Select packages"
 msgstr "Wszystkie pakiety"
 
-#: src/mainwidget.py:389
+#: src/mainwidget.py:387
 msgid "You must select at least one installed package"
 msgstr ""
 
-#: src/mainwidget.py:401
+#: src/mainwidget.py:399
 msgid "All Updates"
 msgstr "Wszystkie aktualizacje"
 
-#: src/mainwidget.py:402
+#: src/mainwidget.py:400
 msgid "Security Updates"
 msgstr "Aktualizacje bezpieczeństwa"
 
-#: src/mainwidget.py:403
+#: src/mainwidget.py:401
 msgid "Critical Updates"
 msgstr "Kluczowe aktualizacje"
 
-#: src/mainwindow.py:134 src/mainwindow.py:136
+#: src/mainwindow.py:138 src/mainwindow.py:140
 msgid "All Packages"
 msgstr "Wszystkie pakiety"
 
-#: src/mainwindow.py:138 src/mainwindow.py:140
+#: src/mainwindow.py:142 src/mainwindow.py:144
 msgid "Installable Packages"
 msgstr "Pakiety do zainstalowania"
 
-#: src/mainwindow.py:146 src/mainwindow.py:148 src/tray.py:197
+#: src/mainwindow.py:150 src/mainwindow.py:152 src/tray.py:197
 msgid "Updates"
 msgstr "Aktualizacje"
 
-#: src/mainwindow.py:150 ui/ui_mainwidget_v3.py:167
+#: src/mainwindow.py:154 ui/ui_mainwidget_v3.py:167
 msgid "Settings"
 msgstr "Ustawienia"
 
-#: src/mainwindow.py:153 src/tray.py:193
-msgid "Quit"
+#: src/mainwindow.py:157 ui/ui_settingsdialog.py:453
+msgid "&Help"
+msgstr "&Pomoc"
+
+#: src/mainwindow.py:161
+msgid "&Quit"
 msgstr ""
 
-#: src/mainwindow.py:182
+#: src/mainwindow.py:191
 msgid "Calculating dependencies..."
 msgstr "Sprawdzanie zależnosci"
 
-#: src/mainwindow.py:186
+#: src/mainwindow.py:207
 #, fuzzy
 msgid "Currently your basket is empty."
 msgstr "Aktualnie twój kosz jest pusty."
@@ -217,7 +221,7 @@ msgstr "Rozmiar pakietu:"
 msgid "Installed Version:"
 msgstr "Zainstalowana wersja:"
 
-#: src/packagedelegate.py:338
+#: src/packagedelegate.py:337
 msgid "Details"
 msgstr "Szczegóły:"
 
@@ -480,6 +484,10 @@ msgstr "Aktualizowanie repozytorium"
 #, fuzzy
 msgid "Update All Repositories"
 msgstr "Aktualizowanie repozytorium"
+
+#: src/tray.py:193
+msgid "Quit"
+msgstr ""
 
 #: src/tray.py:197
 #, fuzzy
@@ -781,10 +789,6 @@ msgstr "Użyj tego serwera proxy dla wszystkich protokołów"
 msgid "&Proxy"
 msgstr "&Proxy"
 
-#: ui/ui_settingsdialog.py:453
-msgid "&Help"
-msgstr "&Pomoc"
-
 #: ui/ui_settingsdialog.py:454
 msgid "&OK"
 msgstr "&OK"
@@ -818,62 +822,62 @@ msgstr ""
 msgid "Package Details"
 msgstr "Szczegóły pakietu"
 
-#~ msgid "z <b>%1</b> zależnościami o całkowitym rozmiarze <b>%2</b>"
-#~ msgstr "z <b>%1</b> zależnościami o całkowitym rozmiarze <b>%2</b>"
+#~ msgid "(c) 2009-2010 TUBITAK/UEKAE"
+#~ msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
-#~ msgid "z <b>%1</b> dodatkowymi zależnościami o całkowitym rozmiarze <b>%2</b> "
-#~ msgstr "z <b>%1</b> dodatkowymi zależnościami o całkowitym rozmiarze <b>%2</b> "
+#~ msgid "Developer"
+#~ msgstr "Wykonawca"
 
-#~ msgid "&Koniec"
-#~ msgstr "&Koniec"
+#~ msgid "Gökmen Göksel"
+#~ msgstr "Gökmen Göksel"
 
-#~ msgid "No proxy server"
-#~ msgstr "Bez serwera proxy:"
-
-#~ msgid "Use manual settings"
-#~ msgstr "Użyj ustawień ręcznych"
-
-#~ msgid "Use Desktop Enviorenment's settings"
-#~ msgstr "Użyj ustawień systemowych"
-
-#~ msgid "Type to filter files"
-#~ msgstr "Typ filtru plików"
-
-#~ msgid "Search Bar"
-#~ msgstr "Pasek wyszukiwania"
-
-#~ msgid "Show Updates"
-#~ msgstr "Pokaż aktualizacje"
-
-#~ msgid "Ignore"
-#~ msgstr "Ignoruj"
-
-#~ msgid "Hide summary screen"
-#~ msgstr "Ukryj ekran podsumowania"
-
-#~ msgid "Show main window"
-#~ msgstr "Pokaż główne okno."
-
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "Adresy e-mail"
-
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Nazwy"
+#~ msgid "Faik Uygur"
+#~ msgstr "Faik Uygur"
 
 #, fuzzy
 #~ msgid "First Author"
 #~ msgstr "Pierwszy Autor"
 
-#~ msgid "Faik Uygur"
-#~ msgstr "Faik Uygur"
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Nazwy"
 
-#~ msgid "Gökmen Göksel"
-#~ msgstr "Gökmen Göksel"
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "Adresy e-mail"
 
-#~ msgid "Developer"
-#~ msgstr "Wykonawca"
+#~ msgid "Show main window"
+#~ msgstr "Pokaż główne okno."
 
-#~ msgid "(c) 2009-2010 TUBITAK/UEKAE"
-#~ msgstr "(c) 2009-2010 TUBITAK/UEKAE"
+#~ msgid "Hide summary screen"
+#~ msgstr "Ukryj ekran podsumowania"
+
+#~ msgid "Ignore"
+#~ msgstr "Ignoruj"
+
+#~ msgid "Show Updates"
+#~ msgstr "Pokaż aktualizacje"
+
+#~ msgid "Search Bar"
+#~ msgstr "Pasek wyszukiwania"
+
+#~ msgid "Type to filter files"
+#~ msgstr "Typ filtru plików"
+
+#~ msgid "Use Desktop Enviorenment's settings"
+#~ msgstr "Użyj ustawień systemowych"
+
+#~ msgid "Use manual settings"
+#~ msgstr "Użyj ustawień ręcznych"
+
+#~ msgid "No proxy server"
+#~ msgstr "Bez serwera proxy:"
+
+#~ msgid "&Koniec"
+#~ msgstr "&Koniec"
+
+#~ msgid "z <b>%1</b> dodatkowymi zależnościami o całkowitym rozmiarze <b>%2</b> "
+#~ msgstr "z <b>%1</b> dodatkowymi zależnościami o całkowitym rozmiarze <b>%2</b> "
+
+#~ msgid "z <b>%1</b> zależnościami o całkowitym rozmiarze <b>%2</b>"
+#~ msgstr "z <b>%1</b> zależnościami o całkowitym rozmiarze <b>%2</b>"

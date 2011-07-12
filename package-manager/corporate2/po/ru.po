@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-10 17:26+0200\n"
+"POT-Creation-Date: 2011-07-12 09:49+0300\n"
 "PO-Revision-Date: 2011-01-17 08:29+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,16 +80,16 @@ msgstr "Предупреждение"
 msgid "Critical Packages"
 msgstr "Критические пакеты"
 
-#: src/basketdialog.py:208 src/pmwindow.py:134
+#: src/basketdialog.py:208 src/pmwindow.py:135
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
 msgstr "Выбранные пакеты уже установлены.<br>Если вы продолжите, пакеты будут установлены заново."
 
-#: src/basketdialog.py:210 src/pmwindow.py:136
+#: src/basketdialog.py:210 src/pmwindow.py:137
 msgid "Already Installed Packages"
 msgstr "Уже установленные пакеты"
 
-#: src/basketdialog.py:211 src/mainwindow.py:142 src/mainwindow.py:144
-#: src/pmwindow.py:137
+#: src/basketdialog.py:211 src/mainwindow.py:146 src/mainwindow.py:148
+#: src/pmwindow.py:138
 msgid "Installed Packages"
 msgstr "Установленные пакеты"
 
@@ -113,52 +113,56 @@ msgstr "Поиск..."
 msgid "No results found."
 msgstr "Ничего не найдено."
 
-#: src/mainwidget.py:388
+#: src/mainwidget.py:386
 #, fuzzy
 msgid "Select packages"
 msgstr "Все пакеты"
 
-#: src/mainwidget.py:389
+#: src/mainwidget.py:387
 msgid "You must select at least one installed package"
 msgstr ""
 
-#: src/mainwidget.py:401
+#: src/mainwidget.py:399
 msgid "All Updates"
 msgstr "Все обновления"
 
-#: src/mainwidget.py:402
+#: src/mainwidget.py:400
 msgid "Security Updates"
 msgstr "Обновления безопасности"
 
-#: src/mainwidget.py:403
+#: src/mainwidget.py:401
 msgid "Critical Updates"
 msgstr "Критические обновления"
 
-#: src/mainwindow.py:134 src/mainwindow.py:136
+#: src/mainwindow.py:138 src/mainwindow.py:140
 msgid "All Packages"
 msgstr "Все пакеты"
 
-#: src/mainwindow.py:138 src/mainwindow.py:140
+#: src/mainwindow.py:142 src/mainwindow.py:144
 msgid "Installable Packages"
 msgstr "Устанавливаемые пакеты"
 
-#: src/mainwindow.py:146 src/mainwindow.py:148 src/tray.py:197
+#: src/mainwindow.py:150 src/mainwindow.py:152 src/tray.py:197
 msgid "Updates"
 msgstr "Обновление"
 
-#: src/mainwindow.py:150 ui/ui_mainwidget_v3.py:167
+#: src/mainwindow.py:154 ui/ui_mainwidget_v3.py:167
 msgid "Settings"
 msgstr "Настройки"
 
-#: src/mainwindow.py:153 src/tray.py:193
-msgid "Quit"
+#: src/mainwindow.py:157 ui/ui_settingsdialog.py:453
+msgid "&Help"
+msgstr "Сп&равка"
+
+#: src/mainwindow.py:161
+msgid "&Quit"
 msgstr ""
 
-#: src/mainwindow.py:182
+#: src/mainwindow.py:191
 msgid "Calculating dependencies..."
 msgstr "Расчет зависимостей..."
 
-#: src/mainwindow.py:186
+#: src/mainwindow.py:207
 msgid "Currently your basket is empty."
 msgstr "В настоящее время Ваша корзина пуста."
 
@@ -214,7 +218,7 @@ msgstr "Размер пакета:"
 msgid "Installed Version:"
 msgstr "Установленная версия:"
 
-#: src/packagedelegate.py:338
+#: src/packagedelegate.py:337
 msgid "Details"
 msgstr "Подробнее"
 
@@ -471,6 +475,10 @@ msgstr "Обновление репозитория"
 #, fuzzy
 msgid "Update All Repositories"
 msgstr "Обновление репозитория"
+
+#: src/tray.py:193
+msgid "Quit"
+msgstr ""
 
 #: src/tray.py:197
 #, fuzzy
@@ -773,10 +781,6 @@ msgstr "<a href=#>Использовать этот прокси-сервер д
 msgid "&Proxy"
 msgstr "&Прокси-сервер"
 
-#: ui/ui_settingsdialog.py:453
-msgid "&Help"
-msgstr "Сп&равка"
-
 #: ui/ui_settingsdialog.py:454
 msgid "&OK"
 msgstr "О&К"
@@ -807,50 +811,69 @@ msgstr "Проверьте сетевые подключения и повтор
 msgid "Package Details"
 msgstr "Описание пакета"
 
-#~ msgid "No proxy server"
-#~ msgstr "Нет прокси-сервера"
+#~ msgid "(c) 2009-2010 TUBITAK/UEKAE"
+#~ msgstr "(C) 2009-2010 TUBITAK / UEKAE"
 
-#~ msgid "Use manual settings"
-#~ msgstr "Использовать пользовательские установки"
+#~ msgid "Gökmen Göksel"
+#~ msgstr "Gökmen Göksel"
 
-#~ msgid "Use Desktop Enviorenment's settings"
-#~ msgstr "Использовать установки среды рабочего стола"
+#~ msgid "Developer"
+#~ msgstr "Разработчик"
 
-#~ msgid "Search Button"
-#~ msgstr "Кнопка поиска"
+#~ msgid "Faik Uygur"
+#~ msgstr "Faik Uygur"
 
-#~ msgid "Search"
-#~ msgstr "Поиск"
+#~ msgid "First Author"
+#~ msgstr "Первый автор"
 
-#~ msgid "Action Button for current states action"
-#~ msgstr "Кнопка действия для текущего состояния"
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Ясыров Василий, Семенов Николай, Щербаков Александр, Алексей Иванов"
 
-#~ msgid "Toggler for selection all packages in Package List"
-#~ msgstr "Переключатель для выбора всех пакетов в Списке пакетов"
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "zag@vspu.ru, tribunal2000@gmail.com, neocrust@gmail.com, alexey.ivanes@gmail.com"
 
-#~ msgid "Operation"
-#~ msgstr "Операция"
+#~ msgid "Show main window"
+#~ msgstr "Показать главное окно"
 
-#~ msgid "<h3>Preparing PiSi...</h3>"
-#~ msgstr "<h3>Подготовка PiSi...</h3>"
+#~ msgid "Hide summary screen"
+#~ msgstr "Скрыть окно итогов"
 
-#~ msgid "Time remaining:"
-#~ msgstr "Оставшееся время:"
+#~ msgid "Show Updates"
+#~ msgstr "Показать обновления"
 
-#~ msgid "--  / --"
-#~ msgstr "--  / --"
+#~ msgid "Ignore"
+#~ msgstr "Игнорировать"
 
-#~ msgid "--:--:--"
-#~ msgstr "--:--:--"
+#~ msgid "Search Bar"
+#~ msgstr "Строка поиска"
 
-#~ msgid "Operation:"
-#~ msgstr "Операция:"
+#~ msgid "Type to filter files"
+#~ msgstr "По типу файлов"
 
-#~ msgid "Status:"
-#~ msgstr "Статус:"
+#~ msgid " kb/s"
+#~ msgstr " кб/с"
 
-#~ msgid "Close"
-#~ msgstr "Закрыть"
+#~ msgid "Upgradable Packages"
+#~ msgstr "Обновляемые пакеты"
+
+#~ msgid "Modify Package(s)"
+#~ msgstr "Изменить пакет(ы)"
+
+#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgstr "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+
+#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgstr "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+
+#~ msgid ""
+#~ "Installed Packages\n"
+#~ "\n"
+#~ msgstr "Установленные пакеты"
+
+#~ msgid "-- / --"
+#~ msgstr "-- / --"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -865,66 +888,47 @@ msgstr "Описание пакета"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p></body></html>"
 
-#~ msgid "-- / --"
-#~ msgstr "-- / --"
+#~ msgid "Close"
+#~ msgstr "Закрыть"
 
-#~ msgid ""
-#~ "Installed Packages\n"
-#~ "\n"
-#~ msgstr "Установленные пакеты"
+#~ msgid "Status:"
+#~ msgstr "Статус:"
 
-#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-#~ msgstr "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgid "Operation:"
+#~ msgstr "Операция:"
 
-#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
-#~ msgstr "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgid "--:--:--"
+#~ msgstr "--:--:--"
 
-#~ msgid "Modify Package(s)"
-#~ msgstr "Изменить пакет(ы)"
+#~ msgid "--  / --"
+#~ msgstr "--  / --"
 
-#~ msgid "Upgradable Packages"
-#~ msgstr "Обновляемые пакеты"
+#~ msgid "Time remaining:"
+#~ msgstr "Оставшееся время:"
 
-#~ msgid " kb/s"
-#~ msgstr " кб/с"
+#~ msgid "<h3>Preparing PiSi...</h3>"
+#~ msgstr "<h3>Подготовка PiSi...</h3>"
 
-#~ msgid "Type to filter files"
-#~ msgstr "По типу файлов"
+#~ msgid "Operation"
+#~ msgstr "Операция"
 
-#~ msgid "Search Bar"
-#~ msgstr "Строка поиска"
+#~ msgid "Toggler for selection all packages in Package List"
+#~ msgstr "Переключатель для выбора всех пакетов в Списке пакетов"
 
-#~ msgid "Ignore"
-#~ msgstr "Игнорировать"
+#~ msgid "Action Button for current states action"
+#~ msgstr "Кнопка действия для текущего состояния"
 
-#~ msgid "Show Updates"
-#~ msgstr "Показать обновления"
+#~ msgid "Search"
+#~ msgstr "Поиск"
 
-#~ msgid "Hide summary screen"
-#~ msgstr "Скрыть окно итогов"
+#~ msgid "Search Button"
+#~ msgstr "Кнопка поиска"
 
-#~ msgid "Show main window"
-#~ msgstr "Показать главное окно"
+#~ msgid "Use Desktop Enviorenment's settings"
+#~ msgstr "Использовать установки среды рабочего стола"
 
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "zag@vspu.ru, tribunal2000@gmail.com, neocrust@gmail.com, alexey.ivanes@gmail.com"
+#~ msgid "Use manual settings"
+#~ msgstr "Использовать пользовательские установки"
 
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Ясыров Василий, Семенов Николай, Щербаков Александр, Алексей Иванов"
-
-#~ msgid "First Author"
-#~ msgstr "Первый автор"
-
-#~ msgid "Faik Uygur"
-#~ msgstr "Faik Uygur"
-
-#~ msgid "Developer"
-#~ msgstr "Разработчик"
-
-#~ msgid "Gökmen Göksel"
-#~ msgstr "Gökmen Göksel"
-
-#~ msgid "(c) 2009-2010 TUBITAK/UEKAE"
-#~ msgstr "(C) 2009-2010 TUBITAK / UEKAE"
+#~ msgid "No proxy server"
+#~ msgstr "Нет прокси-сервера"
