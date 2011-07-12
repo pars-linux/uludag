@@ -86,7 +86,7 @@ def setHostName():
     if yali.util.check_link() and ctx.installData.hostName:
         ctx.logger.info("Setting hostname %s" % ctx.installData.hostName)
         ctx.link.Network.Stack["baselayout"].setHostName(unicode(ctx.installData.hostName))
-        if ctx.flags.install_type == ctx.STEP_FIRST_BOOT:
+        if ctx.flags.install_type in [ctx.STEP_FIRST_BOOT, ctx.STEP_LIVE]:
             yali.util.run_batch("hostname", [unicode(ctx.installData.hostName)])
             yali.util.run_batch("update-environment")
             ctx.logger.info("Updating environment...")
