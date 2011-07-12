@@ -107,33 +107,33 @@ static gVersPtr parseGversFile(char *filename) {
 
     cur = xmlDocGetRootElement(doc);
 
-   
+
     ret = (gVersPtr) malloc(sizeof(gVersion));
     if (ret == NULL) {
         fprintf(stderr,"out of memory\n");
-	xmlFreeDoc(doc);
-	return(NULL);
+    xmlFreeDoc(doc);
+    return(NULL);
     }
     memset(ret, 0, sizeof(gVersion));
     cur = cur->xmlChildrenNode;
     while ( cur && xmlIsBlankNode ( cur ) ) {
-	cur = cur -> next;
+    cur = cur -> next;
     }
     if ( cur == 0 ) {
-	xmlFreeDoc(doc);
-	free(ret);
-	return ( NULL );
+    xmlFreeDoc(doc);
+    free(ret);
+    return ( NULL );
     }
 
     cur = cur->xmlChildrenNode;
     while (cur != NULL) {
         if ((!xmlStrcmp(cur->name, (const xmlChar *) "Pardus")))  {
-	    curvers = parseVersion(doc , cur);
-	    if (curvers != NULL)
-	        ret->versions[ret->nbversions++] = curvers;
+        curvers = parseVersion(doc , cur);
+        if (curvers != NULL)
+            ret->versions[ret->nbversions++] = curvers;
             if (ret->nbversions >= 500) break;
-	}
-	cur = cur->next;
+    }
+    cur = cur->next;
     }
 
     return(ret);
@@ -238,16 +238,14 @@ int main(int argc, char **argv)
     /* Öğeleri oluştur */
     n_choices = cur->nbversions;
     my_items = (ITEM **)calloc(n_choices, sizeof(ITEM *));
-    char *hede;
+
     /* İtemleri oluştur********************************************************************/
     for (i = 0; i < cur->nbversions; i++){
-        hede= (char *) malloc(sizeof(char)* (255)); 
-        strcpy(hede,cur->versions[i]->name);
-        my_items[i] = new_item(hede, "---");
+        my_items[i] = new_item(cur->versions[i]->name, "---");
         printf("**%s**\n",my_items[i]);
         printf("**%s**\n",cur->versions[i]->name);
     }
-return 0;
+//return 0;
     /* Menüyü oluştur */
     my_menu = new_menu((ITEM **)my_items);
 
