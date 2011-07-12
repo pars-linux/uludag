@@ -338,53 +338,57 @@ class SystemCopy(Process):
         data = [EventCopyFinished]
         self.queue.put_nowait(data)
 
-
-    def copytree(self,src, dst):
-        names = os.listdir(src)
-        os.makedirs(dst)
+    def copytree(self, src, dst):
         errors = []
-        for name in names:
-            srcname = os.path.join(src, name)
-            dstname = os.path.join(dst, name)
-            print srcname
-            print dstname
-            print "---"
-            st = os.lstat(srcname)
-            mode = stat.S_IMODE(st.st_mode)
-            try:
-                if stat.S_ISLNK(st.st_mode):
-                    if os.path.lexists(dstname):
-                        os.unlink(dstname)
-                    linkto = os.readlink(srcname)
-                    os.symlink(linkto, dstname)
-                elif stat.S_ISDIR(st.st_mode):
-                    if not os.path.isdir(dstname):
-                        self.copytree(srcname, dstname)
-                elif stat.S_ISCHR(st.st_mode):
-                    os.mknod(dstname, stat.S_IFCHR | mode, st.st_rdev)
-                elif stat.S_ISBLK(st.st_mode):
-                    os.mknod(dstname, stat.S_IFBLK | mode, st.st_rdev)
-                elif stat.S_ISFIFO(st.st_mode):
-                    os.mknod(dstname, stat.S_IFIFO | mode)
-                elif stat.S_ISSOCK(st.st_mode):
-                    os.mknod(dstname, stat.S_IFSOCK | mode)
-                elif stat.S_ISREG(st.st_mode):
-                    shutil.copy2(srcname, dstname)
-                    self.currentbytes += os.stat(srcname).st_size
-                    if self.currentbytes >= self.cursorlimit:
-                        data = [EventCopy, "files"]
-                        self.queue.put_nowait(data)
-                        self.currentbytes -= self.cursorlimit
-
-                os.lchown(dstname, st.st_uid, st.st_gid)
-                if not stat.S_ISLNK(st.st_mode):
-                    os.chmod(dstname, mode)
-                    os.utime(dstname, (st.st_atime, st.st_mtime))
-
-            except (IOError, os.error), why:
-                errors.append((srcname, dstname, str(why)))
-            # catch the Error from the recursive copytree so that we can
-            # continue with other files
-            except Error, err:
-                errors.extend(err.args[0])
+        if not os.path.exists(dst):
+            os.mkdir(dst)
+        for (path, dirs, files) in os.walk(src):
+            #generate relative path from absolute path
+            relativedir = path.replace(src+"/","",1)
+            #for every directory in source folder
+            for dir in dirs:
+                #create inner directories
+                if not os.path.exists((os.path.join(dst,relativedir))):
+                    os.mkdir(os.path.join(dst,relativedir))
+            for file in files:
+                #copy inner files
+                srcname = os.path.join(src, path, file)
+                dstname = os.path.join(dst,relativedir, file)
+                #debug
+                print srcname
+                print dstname
+                print "---"
+                st = os.lstat(srcname)
+                mode = stat.S_IMODE(st.st_mode)
+                try:
+                    if stat.S_ISLNK(st.st_mode):
+                        if os.path.lexists(dstname):
+                            os.unlink(dstname)
+                        linkto = os.readlink(srcname)
+                        os.symlink(linkto, dstname)
+                    elif stat.S_ISCHR(st.st_mode):
+                        os.mknod(dstname, stat.S_IFCHR | mode, st.st_rdev)
+                    elif stat.S_ISBLK(st.st_mode):
+                        os.mknod(dstname, stat.S_IFBLK | mode, st.st_rdev)
+                    elif stat.S_ISFIFO(st.st_mode):
+                        os.mknod(dstname, stat.S_IFIFO | mode)
+                    elif stat.S_ISSOCK(st.st_mode):
+                        os.mknod(dstname, stat.S_IFSOCK | mode)
+                    elif stat.S_ISREG(st.st_mode):
+                        shutil.copy2(srcname, dstname)
+                        self.currentbytes += os.stat(srcname).st_size
+                        if self.currentbytes >= self.cursorlimit:
+                            data = [EventCopy, "files"]
+                            self.queue.put_nowait(data)
+                            self.currentbytes -= self.cursorlimit
+                    os.lchown(dstname, st.st_uid, st.st_gid)
+                    if not stat.S_ISLNK(st.st_mode):
+                        os.chmod(dstname, mode)
+                        os.utime(dstname, (st.st_atime, st.st_mtime))
+                except (IOError, os.error), why:
+                    errors.append((srcname, dstname, str(why)))
+                # catch the Error from the recursive copytree so that we can
+                # continue with other files
+                except Error, err:
+                    errors.extend(err.args[0])
 
