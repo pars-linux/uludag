@@ -386,7 +386,7 @@ def is_pass_valid(passw,stype):
         else:
             #invalid
             return False
-    elif stype == "WPA & WPA2":
+    elif stype == "wpa-psk":
         if length>=8 and length<=63:
             #ascii
             #valid
@@ -402,6 +402,42 @@ def is_pass_valid(passw,stype):
             return False
     else:
         return False
+
+def get_pass_infs_from_user(inf):
+    #Get secure type
+    secure=None
+    while not secure:
+        secure_type=("Unsecured","WEP 40/128","WEP 128","WPA & WPA2")
+        print colorize("Security","yellow") 
+        print "  [1] Unsecured"
+        print "  [2] WEP 40/128"
+        print "  [3] WEP 128"
+        print "  [4] WPA & WPA2"
+
+        secure_index=get_number("Security Type ",1,4)-1
+        if secure_index == 0:
+            secure=secure_type[0]
+        elif secure_index==1:
+            secure=secure_type[1]
+            passw=get_password("WEP 40/128")
+            webinfs=get_wep_inf()
+            inf["auth-alg"]=webinfs["auth"]
+            inf["wep-key"]=webinfs["index"]
+            inf["pass"]=passw
+        elif secure_index==2:
+            secure=secure_type[2]
+            passw=get_password("WEP 128")
+            webinfs=get_wep_inf()
+            inf["auth-alg"]=webinfs["auth"]
+            inf["wep-key"]=webinfs["index"]
+            inf["pass"]=passw
+        elif secure_index==3:
+            passw=get_password("wpa-psk") 
+            secure=secure_type[3]
+            inf["pass"]=passw
+    inf["secure"]=secure
+    return inf
+
 
 def get_wireless_infs_from_user(_device):
 
@@ -441,47 +477,27 @@ def get_wireless_infs_from_user(_device):
             remote=None
         elif remoteNo ==len(remotes)+1:
             remote=get_input("ESSID")
-
-
-
-    #Get secure type
-    secure=None
-    while not secure:
-        secure_type=("Unsecured","WEP 40/128","WEP 128","WPA & WPA2")
-        print colorize("Security","yellow") 
-        print "  [1] Unsecured"
-        print "  [2] WEP 40/128"
-        print "  [3] WEP 128"
-        print "  [4] WPA & WPA2"
-
-        secure_index=get_number("Security Type ",1,4)-1
-        if secure_index == 0:
-            secure=secure_type[0]
-        elif secure_index==1:
-            secure=secure_type[1]
-            passw=get_password("WEP 40/128")
-            webinfs=get_wep_inf()
-            inf["auth-alg"]=webinfs["auth"]
-            inf["wep-key"]=webinfs["index"]
-            inf["pass"]=passw
-        elif secure_index==2:
-            secure=secure_type[2]
-            passw=get_password("WEP 128")
-            webinfs=get_wep_inf()
-            inf["auth-alg"]=webinfs["auth"]
-            inf["wep-key"]=webinfs["index"]
-            inf["pass"]=passw
-        elif secure_index==3:
-            passw=get_password("WPA & WPA2") 
-            secure=secure_type[3]
-            inf["pass"]=passw
     inf["device-mode"]=device_modes[mode_no]
     inf["remote"]=remote
-    inf["secure"]=secure
+
+    inf=get_pass_infs_from_user(inf)
     return inf
+
 
 def wireless_enabled(nm_handle,interface):
     nm_handle.wireless_enabled=interface
+
+def nmanager_enabled(nm_handle,state):
+    nm_handle.enable(state)
+
+def wep_security_config(settings):
+    settings._settings["802-11-wireless"][dbus.String("security")]="802-11-wireless-security"
+    settings._settings["802-11-wireless-security"][dbus.String("auth-alg")]=inf["auth-alg"]
+    wep_index="wep-key"+str(inf["wep-key"])
+    settings._settings["802-11-wireless-security"][dbus.String(wep_index)]=inf["pass"]
+    if not inf["wep-key"] == 1:
+        settings._settings["802-11-wireless-security"][dbus.String("wep-tx-keyidx")]=inf["wep-key"]
+    return settings
 
 
 def create_wireless_connection(nm_handle, _device):
@@ -491,14 +507,6 @@ def create_wireless_connection(nm_handle, _device):
     inf=get_wireless_infs_from_user(_device)
     device_modes=["infrastructure","adhoc"]
     securities=["Unsecured","WEP 40/128","WEP 128","WPA & WPA2"]
-    def wep_security_config(settings):
-        settings._settings["802-11-wireless"][dbus.String("security")]="802-11-wireless-security"
-        settings._settings["802-11-wireless-security"][dbus.String("auth-alg")]=inf["auth-alg"]
-        wep_index="wep-key"+str(inf["wep-key"])
-        settings._settings["802-11-wireless-security"][dbus.String(wep_index)]=inf["pass"]
-        if not inf["wep-key"] == 1:
-            settings._settings["802-11-wireless-security"][dbus.String("wep-tx-keyidx")]=inf["wep-key"]
-
 
     if inf["secure"]==securities[0]:
         settings = WirelessSettings()
@@ -617,6 +625,7 @@ def get_device_by_mac(nm_handle, mac_address, type = None):
     return device
 
 def edit_connection(nm_handle):
+    import dbus
     """Edit a connection."""
     connection = get_connection(nm_handle, "Edit")
     changing = True
@@ -705,6 +714,23 @@ def edit_connection(nm_handle):
             settings.id = connection_id
         elif option == 4:
             changing = False
+    try:
+        if settings._settings['connection']['type']=='802-11-wireless':
+            if settings._settings['802-11-wireless-security'] != None:
+                inf={"secure":""}
+                inf=get_pass_infs_from_user(inf)
+                securities=["Unsecured","WEP 40/128","WEP 128","WPA & WPA2"]
+                if inf["secure"]==securities[0]:
+                    pass
+                elif inf["secure"]==securities[1]:
+                    settings=wep_security_config(settings)
+                elif inf["secure"]==securities[2]:
+                    settings=wep_security_config(settings)
+                elif inf["secure"]==securities[3]:
+                    settings._settings["802-11-wireless"][dbus.String("security")]="802-11-wireless-security"
+                    settings._settings["802-11-wireless-security"][dbus.String("psk")]=inf["pass"]
+    except KeyError:
+        pass
     nm_handle.get_connection(settings.uuid).update(settings)
 
 def set_connection_state_down(nm_handle, connection):
@@ -840,11 +866,16 @@ When activating a connection, you should either provide an interface like
                       help='Deactivates the given connection')
 
     parser.add_option("-w","--wifi",
-            action="store_const",
-            dest="wifi",
-            const="wifi",
-            help='Activates or deactivates wifi',
-            )
+                      action="store_const",
+                      dest="wifi",
+                      const="wifi",
+                      help='Activates or deactivates wifi')
+
+    parser.add_option("-n","--nmanager",
+                      action="store_const",
+                      dest="nmanager",
+                      const="nmanager",
+                      help='Activates or deactivates networkmanager')
 
     (options, args) = parser.parse_args()
     try:
@@ -896,6 +927,13 @@ When activating a connection, you should either provide an interface like
             wireless_enabled(nm_handle,True)
         else:
             wireless_enabled(nm_handle,False)
+    elif options.nmanager=="nmanager":
+        trues=["1","true","True","yes","Yes"]
+        if arg0 in trues:
+            nmanager_enabled(nm_handle,True)
+        else:
+            nmanager_enabled(nm_handle,False)
+
     else:
         parser.print_help()
         return 1

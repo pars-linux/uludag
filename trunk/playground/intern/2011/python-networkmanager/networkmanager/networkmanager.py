@@ -484,6 +484,8 @@ class NetworkManager(object):
     def sleep(self, sleep):
         pass
 
+    def enable(self,state):
+        self.proxy.Enable(state)
 
     @property
     def devices(self):
@@ -542,9 +544,11 @@ class NetworkManager(object):
         connections = {}
 
         for path in self.settings.ListConnections(dbus_interface=NM_SETTINGS_NAME):
-            conn = Connection(self.bus, path)
+            conn = Connection(self.bus, path,NM_NAME)
             connections[str(conn.settings.uuid)] = conn
-
+        for path in self.usersettings.ListConnections(dbus_interface=NM_SETTINGS_NAME):
+            conn = Connection(self.bus,path,NM_USER_SETTINGS)
+            connections[str(conn.settings.uuid)]=conn
         return connections
 
     @property
@@ -729,7 +733,7 @@ class ActiveConnection(object):
 class Connection(object):
     def __init__(self, bus , path , service):
         self.service_name=service
-        self.proxy = bus.get_object(service, path);
+        self.proxy = bus.get_object(service, path)
     def __eq__(self, other):
         return self.settings.uuid == other.settings.uuid and self.settings.id == other.settings.id
 
@@ -930,6 +934,17 @@ class BaseSettings(object):
     def __repr__(self):
         return "<Settings>"
 
+    def __fill__(self):
+        self._settings['ipv4']= dbus.Dictionary({
+        'routes': dbus.Array([], signature='au'),
+        'addresses': dbus.Array([], signature='au'),
+        'dns': dbus.Array([],signature='u'),
+        'method': 'auto',})
+        self._settings['ipv6']= dbus.Dictionary({
+        'routes': dbus.Array([], signature='(ayuayu)'),
+        'addresses': dbus.Array([], signature='(ayu)'),
+        'dns': dbus.Array([],signature='ay'),
+        'method': 'ignore',})
 
     def _has_address(self):
         """
@@ -940,6 +955,7 @@ class BaseSettings(object):
         autoconfiguration
         """
         if 'ipv4' not in self._settings:
+            self.__fill__()
             return False
         return len(self._settings['ipv4']['addresses']) > 0
 
