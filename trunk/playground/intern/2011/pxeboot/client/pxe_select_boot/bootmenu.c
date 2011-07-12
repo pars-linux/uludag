@@ -25,7 +25,6 @@ typedef struct vers {
     char *path;
 } vers, *versPtr;
 
-//0000000000000000000000000000000000000000000000000000000000000000000000000000000
 //-----   PARSE XML   -----//
 
 static versPtr parseVersion(xmlDocPtr doc, xmlNodePtr cur) {
@@ -204,7 +203,6 @@ int main(int argc, char **argv)
     LIBXML_TEST_VERSION
     xmlKeepBlanksDefault(0);
 
-    printf("%d",argc);
     for (i = 1; i < argc ; i++) {
         cur = parseGversFile(argv[i]);
         if ( cur )
@@ -240,14 +238,16 @@ int main(int argc, char **argv)
     /* Öğeleri oluştur */
     n_choices = cur->nbversions;
     my_items = (ITEM **)calloc(n_choices, sizeof(ITEM *));
-
-
+    char *hede;
     /* İtemleri oluştur********************************************************************/
     for (i = 0; i < cur->nbversions; i++){
-        my_items[i] = new_item(cur->versions[i]->name, "\t---");
+        hede= (char *) malloc(sizeof(char)* (255)); 
+        strcpy(hede,cur->versions[i]->name);
+        my_items[i] = new_item(hede, "---");
+        printf("**%s**\n",my_items[i]);
         printf("**%s**\n",cur->versions[i]->name);
     }
-
+return 0;
     /* Menüyü oluştur */
     my_menu = new_menu((ITEM **)my_items);
 
@@ -258,7 +258,7 @@ int main(int argc, char **argv)
     /* Ana pencereyi ve alt pencereleri ayarla */
     set_menu_win(my_menu, my_menu_win);
     set_menu_sub(my_menu, derwin(my_menu_win, 16, 58, 4, 2));
-    set_menu_format(my_menu, 14, 1);  //tek bi sayfa için gösterilmesini istediğimiz satır sayısı 14
+    set_menu_format(my_menu, 14, 1);  //tek bi sayfa için gösterilmesini istediğimiz satır sayısı
 
 
     /* Menü göstericisini " * " olarak ayarla*/
