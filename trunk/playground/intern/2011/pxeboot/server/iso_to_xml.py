@@ -6,6 +6,65 @@ import iso9660
 import bz2, pycdio
 import xml.etree.cElementTree as iks
 import piksemel
+import urwid
+import urwid.raw_display
+
+def selectionmenu(filelist):
+    palette = [
+            ('header','black,underline', 'light gray', 'standout,underline',
+                'black,underline', '#88a'),
+            ('panel', 'light gray', 'dark blue', '',
+                '#ffd', '#00a'),
+            ('focus', 'light gray', 'dark red', 'standout',)
+            ]
+    screen = urwid.raw_display.Screen()
+    screen.register_palette(palette)
+
+    lb = urwid.SimpleListWalker([])
+
+    radio_buttons = []
+    editedList=[]
+    def focus(widget):
+        return urwid.AttrMap(widget, None, 'focs')
+
+    def selected_item (rb, state, rb_id):
+        if state:
+            editedList=rb.label
+            return editedList 
+
+    def rb_state(text, rb_id, state=False):
+        rb=urwid.RadioButton(radio_buttons,text,state)
+        urwid.connect_signal(rb,'change',selected_item,rb_id)
+        return focus(rb)
+        def click_exit(button):
+            raise urwid.ExitMainLoop()
+    def click_exit(button):
+        raise urwid.ExitMainLoop()
+
+    lb.extend([
+        urwid.AttrMap(urwid.Text("Select Version"),'header')])
+    i=1
+    for files in filelist:
+        lb.extend([urwid.AttrMap(
+            urwid.Columns([
+                urwid.Pile([
+                    rb_state(files,i)]),]),'panel')])
+        i=i+1
+
+    lb.extend([urwid.AttrMap(
+        urwid.Columns([
+            urwid.Pile([
+                focus(urwid.Button("Exit",click_exit)),
+                ])
+            ]),'panel')
+        ])
+    def unhandled_input(key):
+        if key in ('Q','q','esc'):
+            raise urwid.ExitMainLoop()
+    urwid.MainLoop(urwid.ListBox(lb), screen=screen,
+        unhandled_input = unhandled_input).run()
+    return editedList
+
 #get as xml tree from string 
 def getTree(item, level = 0):
     i = "\n" + level * "    "
@@ -67,8 +126,8 @@ if len(sys.argv) > 2:
 treeString = ""
 
 #get .iso file from directory
-filelist=[file for file in os.listdir(isoFolder) if file.lower().endswith(".iso")]
-
+filelist=[files for files in os.listdir(isoFolder) if files.lower().endswith(".iso")]
+filelist=selectionmenu(filelist)
 if len(filelist) == 0:
     print "There is no ISO image file in '%s'" %isoFolder
     print "usage : %s [Path]" %sys.argv[0]
