@@ -792,6 +792,27 @@ def set_connection_state_up(nm_handle, connection_id, interface=None):
         print "There is no connection named: %s" % connection_id
 
 
+def show_traffic(nm):
+    for active in  nm.active_connections:
+        print_connection(ACTIVATED, active.connection.settings, active.devices)
+        traffic_monitor(active.devices[0].interface)
+
+def traffic_monitor(interface):
+
+    for line in open('/proc/net/dev','r'):
+        if ':' not in line: continue
+        if interface not in line: continue
+        line = line.strip().split(':')[1]
+        x = line.split()
+        rec = int(x[0])
+        tra = int(x[8])
+    print colorize("Received MB","red") , "%.1f" % (float(rec)/(1024*1024)) , colorize("Sent MB","blue") , "%.1f" % (float(tra)/(1024*1024))
+
+def get_connection_by_id(nm,id):
+    for active in nm.active_connections:
+        if active.connection.settings.id == id:
+            return active
+
 #####################
 ### Main function ###
 #####################
@@ -877,6 +898,12 @@ When activating a connection, you should either provide an interface like
                       const="nmanager",
                       help='Activates or deactivates networkmanager')
 
+    parser.add_option("-t","--traffic",
+                      action="store_const",
+                      dest="traffic",
+                      const="monitor",
+                      help='Traffic monitoring')
+
     (options, args) = parser.parse_args()
     try:
         arg0 = args[0]
@@ -918,9 +945,10 @@ When activating a connection, you should either provide an interface like
                 print "No connection to deactivate"
         else:
             try:
-                set_connection_state_down(nm_handle,arg0)
+                con=get_connection_by_id(nm_handle,arg0)
+                set_connection_state_down(nm_handle,con.connection)
             except AttributeError:
-                print "This connection already deactive"
+                print "This connection is already deactive"
     elif options.wifi == "wifi":
         trues=["1","true","True","yes","Yes"]
         if arg0 in trues:
@@ -933,7 +961,8 @@ When activating a connection, you should either provide an interface like
             nmanager_enabled(nm_handle,True)
         else:
             nmanager_enabled(nm_handle,False)
-
+    elif options.traffic=="monitor":
+        show_traffic(nm_handle)
     else:
         parser.print_help()
         return 1
