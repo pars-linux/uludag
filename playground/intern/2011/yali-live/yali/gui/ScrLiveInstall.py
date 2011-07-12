@@ -12,6 +12,7 @@
 import os
 import shutil
 import stat
+from distutils.dir_util import copy_tree
 from multiprocessing import Process, Queue
 from Queue import Empty
 
@@ -131,6 +132,7 @@ class Widget(QWidget, ScreenWidget):
         self.wait_condition = QWaitCondition()
         self.queue = Queue()
         self.sys_copier = SystemCopy(self.queue, self.mutex, self.wait_condition, self.retry_answer)
+        self.copy_stat = CopyStatus(self.queue, self.mutex, self.wait_condition, self.retry_answer)
 
         self.poll_timer.start(500)
 
@@ -157,11 +159,9 @@ class Widget(QWidget, ScreenWidget):
             ctx.logger.debug("checkQueueEvent: Processing %s event..." % event)
             # EventCopy
             if event == EventCopy:
-                filename = data[1]
-                self.installProgress.ui.info.setText(_("Copying <b>%s</b>" % filename))
-                ctx.logger.debug("Copying %s" % filename)
-                self.cur += 1
-                self.installProgress.ui.progress.setValue(self.cur)
+                progress = data[1]
+                self.installProgress.ui.info.setText(_("Copying"))
+                self.installProgress.ui.progress.setValue(progress)
 
             # EventSetProgress
             elif event == EventSetProgress:
@@ -263,13 +263,9 @@ class SystemCopy(Process):
         self.wait_condition = wait_condition
         self.retry_answer = retry_answer
 
-        self.symlink_dirs = ["opt","lib","bin","sbin","boot","usr","var/lib/dbus"]
-        self.copy_dirs = ["etc","root"]
-        self.empty_dirs = ["mnt","sys","proc","dev","media","home",
-                "var","var/log","var/log/news","var/cache","var/db",
-                "var/games","var/lib","var/lib/misc","var/local",
-                "var/lock","var/lock/subsys","var/opt","var/run","var/run/dbus",
-                "var/run/pardus","var/spool","var/state","var/tmp","var/yp","tmp"]
+        self.symlink_dirs = ["opt","lib","bin","sbin","boot","usr"]
+        self.copy_dirs = ["etc","root","var"]
+        self.empty_dirs = ["mnt","sys","proc","dev","media","home","tmp"]
         self.symlink_basepath = os.readlink("/usr").replace("/usr","")
 
         ctx.logger.debug("System Copy Process started.")
@@ -277,40 +273,19 @@ class SystemCopy(Process):
     def run(self):
         ctx.logger.debug("System copy process running.")
 
-        #Calculate total size to be copied 
-        ctx.logger.debug("Calculating total size")
-        total = 0.0
-        for dir in self.copy_dirs:
-            for (path, dirs, files) in os.walk(dir):
-                for file in files:
-                    filename = os.path.join(path, file)
-                    total += os.stat(filename).st_size
-
-        for dir in self.symlink_dirs:
-            for (path, dirs, files) in os.walk(os.path.join("/",self.symlink_basepath,dir)):
-                for file in files:
-                    filename = os.path.join(path, file)
-                    st = os.lstat(filename)
-                    mode = stat.S_IMODE(st.st_mode)
-                    if stat.S_ISREG(st.st_mode):
-                        total += os.stat(filename).st_size
-
-        ctx.logger.debug("Sending EventSetProgress")
-        self.cursorlimit = total/100    #for every limit bytes move progress bar one percent
-        self.currentbytes = 0
         data = [EventSetProgress, 100]
         self.queue.put_nowait(data)
-
         try:
             while True:
                 try:
                     for dir in self.empty_dirs:
-                        os.system("mkdir %s/%s" %(ctx.consts.target_dir, dir))
+                        dirname = os.path.join(ctx.consts.target_dir,dir)
+                        if not os.path.exists(dirname):
+                            os.mkdir(dirname)
                     for dir in self.copy_dirs:
-                        self.copytree(os.path.join("/",dir),os.path.join(ctx.consts.target_dir,dir))
+                        copy_tree(os.path.join("/",dir),os.path.join(ctx.consts.target_dir,dir))
                     for dir in self.symlink_dirs:
-                        self.copytree(os.path.join("/",self.symlink_basepath,dir),
-                        os.path.join(ctx.consts.target_dir,dir))
+                        copy_tree(os.path.join("/",self.symlink_basepath,dir), os.path.join(ctx.consts.target_dir,dir))
                     break # while
                 except Exception, msg:
                     # Lock the mutex
@@ -338,57 +313,77 @@ class SystemCopy(Process):
         data = [EventCopyFinished]
         self.queue.put_nowait(data)
 
-    def copytree(self, src, dst):
-        errors = []
-        if not os.path.exists(dst):
-            os.mkdir(dst)
-        for (path, dirs, files) in os.walk(src):
-            #generate relative path from absolute path
-            relativedir = path.replace(src+"/","",1)
-            #for every directory in source folder
-            for dir in dirs:
-                #create inner directories
-                if not os.path.exists((os.path.join(dst,relativedir))):
-                    os.mkdir(os.path.join(dst,relativedir))
-            for file in files:
-                #copy inner files
-                srcname = os.path.join(src, path, file)
-                dstname = os.path.join(dst,relativedir, file)
-                #debug
-                print srcname
-                print dstname
-                print "---"
-                st = os.lstat(srcname)
-                mode = stat.S_IMODE(st.st_mode)
+class CopyStatus(Process):
+
+    def __init__(self, queue, mutex, wait_condition, retry_answer):
+        Process.__init__(self)
+        self.queue = queue
+        self.mutex = mutex
+        self.wait_condition = wait_condition
+        self.retry_answer = retry_answer
+
+        self.symlink_dirs = ["opt","lib","bin","sbin","boot","usr"]
+        self.copy_dirs = ["etc","root","var"]
+        self.empty_dirs = ["mnt","sys","proc","dev","media","home","tmp"]
+        self.symlink_basepath = os.readlink("/usr").replace("/usr","")
+
+        ctx.logger.debug("Copy Status thread created.")
+
+    def run(self):
+
+        #Calculate total size to be copied 
+        ctx.logger.debug("Calculating total size")
+        total = 0.0
+        for dir in self.copy_dirs:
+            for (path, dirs, files) in os.walk(dir):
+                for file in files:
+                    filename = os.path.join(path, file)
+                    total += os.stat(filename).st_size
+
+        for dir in self.symlink_dirs:
+            for (path, dirs, files) in os.walk(os.path.join("/",self.symlink_basepath,dir)):
+                for file in files:
+                    filename = os.path.join(path, file)
+                    st = os.lstat(filename)
+                    mode = stat.S_IMODE(st.st_mode)
+                    if stat.S_ISREG(st.st_mode):
+                        total += os.stat(filename).st_size
+        try:
+            while True:
                 try:
-                    if stat.S_ISLNK(st.st_mode):
-                        if os.path.lexists(dstname):
-                            os.unlink(dstname)
-                        linkto = os.readlink(srcname)
-                        os.symlink(linkto, dstname)
-                    elif stat.S_ISCHR(st.st_mode):
-                        os.mknod(dstname, stat.S_IFCHR | mode, st.st_rdev)
-                    elif stat.S_ISBLK(st.st_mode):
-                        os.mknod(dstname, stat.S_IFBLK | mode, st.st_rdev)
-                    elif stat.S_ISFIFO(st.st_mode):
-                        os.mknod(dstname, stat.S_IFIFO | mode)
-                    elif stat.S_ISSOCK(st.st_mode):
-                        os.mknod(dstname, stat.S_IFSOCK | mode)
-                    elif stat.S_ISREG(st.st_mode):
-                        shutil.copy2(srcname, dstname)
-                        self.currentbytes += os.stat(srcname).st_size
-                        if self.currentbytes >= self.cursorlimit:
-                            data = [EventCopy, "files"]
-                            self.queue.put_nowait(data)
-                            self.currentbytes -= self.cursorlimit
-                    os.lchown(dstname, st.st_uid, st.st_gid)
-                    if not stat.S_ISLNK(st.st_mode):
-                        os.chmod(dstname, mode)
-                        os.utime(dstname, (st.st_atime, st.st_mtime))
-                except (IOError, os.error), why:
-                    errors.append((srcname, dstname, str(why)))
-                # catch the Error from the recursive copytree so that we can
-                # continue with other files
-                except Error, err:
-                    errors.extend(err.args[0])
+                    ctx.logger.debug("Getting copy status.")
+                    current = 0.0
+                    for dir in ctx.consts.target_dir:
+                        for (path, dirs, files) in os.walk(dir):
+                            for file in files:
+                                filename = os.path.join(path, file)
+                                current += os.stat(filename).st_size
+
+                    if (current/total)*100 == 100:
+                        break
+                    data = [EventCopy, (current/total)*100]
+                    self.queue.put_nowait(data)
+                except Exception, msg:
+                    # Lock the mutex
+                    self.mutex.lock()
+
+                    # Send error message
+                    data = [EventRetry, str(msg)]
+                    self.queue.put_nowait(data)
+
+                    # wait for the result
+                    self.wait_condition.wait(self.mutex)
+                    self.mutex.unlock()
+
+                    if not self.retry_answer:
+                        raise msg
+
+        except Exception, msg:
+            data = [EventError, msg]
+            self.queue.put_nowait(data)
+            # wait for the result
+            self.wait_condition.wait(self.mutex)
+
+        ctx.logger.debug("End of checking copy status ...")
+
 
