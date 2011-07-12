@@ -275,8 +275,9 @@ class QuickFormat(QtGui.QWidget):
         self.first_run = False
 
     def format_confirm_message(self):
-        format_message = QtGui.QMessageBox()
+        """'Are you sure?' message for format operation"""
 
+        format_message = QtGui.QMessageBox()
         format_message.setText(i18n("This operation will delete your all data. Are you sure to continue?"))
         format_message.setIcon(QtGui.QMessageBox.Question)
         format_message.addButton(ACCEPT, QtGui.QMessageBox.AcceptRole)
@@ -287,9 +288,9 @@ class QuickFormat(QtGui.QWidget):
 
     def format_device(self):
         """ Starts the formatting operation """
-
+        
+        # Shows a message for confirm format
         if self.format_confirm_message() == ACCEPT:
-	    
             selected_file_system = FILE_SYSTEMS[str(self.ui.fileSystem.currentText())]
             selected_label = self.ui.volumeLabel.text()
             self.formatter.set_volume_to_format(self.volume_to_format, selected_file_system, selected_label)
