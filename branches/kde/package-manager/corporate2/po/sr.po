@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-10 17:26+0200\n"
+"POT-Creation-Date: 2011-07-12 09:49+0300\n"
 "PO-Revision-Date: 2010-08-20 15:05+0400\n"
 "Last-Translator: Jozsef <Kurucity@aim.com>\n"
 "Language-Team: American English <pardus-translators@pardus.org.tr>\n"
@@ -85,17 +85,17 @@ msgstr "Упозорење"
 msgid "Critical Packages"
 msgstr "Уклањање пакета"
 
-#: src/basketdialog.py:208 src/pmwindow.py:134
+#: src/basketdialog.py:208 src/pmwindow.py:135
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
 msgstr ""
 
-#: src/basketdialog.py:210 src/pmwindow.py:136
+#: src/basketdialog.py:210 src/pmwindow.py:137
 #, fuzzy
 msgid "Already Installed Packages"
 msgstr "Инсталирај пакет(е)"
 
-#: src/basketdialog.py:211 src/mainwindow.py:142 src/mainwindow.py:144
-#: src/pmwindow.py:137
+#: src/basketdialog.py:211 src/mainwindow.py:146 src/mainwindow.py:148
+#: src/pmwindow.py:138
 #, fuzzy
 msgid "Installed Packages"
 msgstr "Инсталирај пакет(е)"
@@ -121,55 +121,60 @@ msgstr ""
 msgid "No results found."
 msgstr ""
 
-#: src/mainwidget.py:388
+#: src/mainwidget.py:386
 #, fuzzy
 msgid "Select packages"
 msgstr "Прикажи инсталиране пакете"
 
-#: src/mainwidget.py:389
+#: src/mainwidget.py:387
 msgid "You must select at least one installed package"
 msgstr ""
 
-#: src/mainwidget.py:401
+#: src/mainwidget.py:399
 msgid "All Updates"
 msgstr "Све исправке"
 
-#: src/mainwidget.py:402
+#: src/mainwidget.py:400
 msgid "Security Updates"
 msgstr "Сигурносне исправке"
 
-#: src/mainwidget.py:403
+#: src/mainwidget.py:401
 msgid "Critical Updates"
 msgstr "Критичне исправке"
 
-#: src/mainwindow.py:134 src/mainwindow.py:136
+#: src/mainwindow.py:138 src/mainwindow.py:140
 #, fuzzy
 msgid "All Packages"
 msgstr "Прикажи инсталиране пакете"
 
-#: src/mainwindow.py:138 src/mainwindow.py:140
+#: src/mainwindow.py:142 src/mainwindow.py:144
 #, fuzzy
 msgid "Installable Packages"
 msgstr "Прокажи пакете који могу да се инсталирају"
 
-#: src/mainwindow.py:146 src/mainwindow.py:148 src/tray.py:197
+#: src/mainwindow.py:150 src/mainwindow.py:152 src/tray.py:197
 #, fuzzy
 msgid "Updates"
 msgstr "Све исправке"
 
-#: src/mainwindow.py:150 ui/ui_mainwidget_v3.py:167
+#: src/mainwindow.py:154 ui/ui_mainwidget_v3.py:167
 msgid "Settings"
 msgstr "Подешавања"
 
-#: src/mainwindow.py:153 src/tray.py:193
-msgid "Quit"
+#: src/mainwindow.py:157 ui/ui_settingsdialog.py:453
+msgid "&Help"
+msgstr ""
+
+#: src/mainwindow.py:161
+#, fuzzy
+msgid "&Quit"
 msgstr "Прекид"
 
-#: src/mainwindow.py:182
+#: src/mainwindow.py:191
 msgid "Calculating dependencies..."
 msgstr ""
 
-#: src/mainwindow.py:186
+#: src/mainwindow.py:207
 msgid "Currently your basket is empty."
 msgstr "Тренутно Ваша корпа је празна."
 
@@ -227,7 +232,7 @@ msgstr "Величина пакета:"
 msgid "Installed Version:"
 msgstr "Инсталирана верзија:"
 
-#: src/packagedelegate.py:338
+#: src/packagedelegate.py:337
 msgid "Details"
 msgstr ""
 
@@ -486,6 +491,10 @@ msgstr "Ажурирање репозиторијума"
 #, fuzzy
 msgid "Update All Repositories"
 msgstr "Ажурирање репозиторијума"
+
+#: src/tray.py:193
+msgid "Quit"
+msgstr "Прекид"
 
 #: src/tray.py:197
 msgid "There are %1 updates available!"
@@ -782,10 +791,6 @@ msgstr ""
 msgid "&Proxy"
 msgstr ""
 
-#: ui/ui_settingsdialog.py:453
-msgid "&Help"
-msgstr ""
-
 #: ui/ui_settingsdialog.py:454
 msgid "&OK"
 msgstr ""
@@ -818,33 +823,39 @@ msgstr "Молимо Вас проверите мрежну конекцију �
 msgid "Package Details"
 msgstr "Величина пакета:"
 
-#~ msgid "<h3>Preparing PiSi...</h3>"
-#~ msgstr "<h3>Припремање ПиСија...</h3>"
+#~ msgid "(c) 2009-2010 TUBITAK/UEKAE"
+#~ msgstr "(c) -2010 ТУБИТАК/УЕКАЕ"
 
-#~ msgid "Time remaining:"
-#~ msgstr "Преостало време:"
+#~ msgid "Developer"
+#~ msgstr "Развијач"
 
-#~ msgid "--  / --"
-#~ msgstr "--  / --"
+#~ msgid "Gökmen Göksel"
+#~ msgstr "Гокман Гоксел"
 
-#~ msgid "--:--:--"
-#~ msgstr "--:--:--"
+#~ msgid "Faik Uygur"
+#~ msgstr "Фаик Ујгур"
 
-#~ msgid "Status:"
-#~ msgstr "Статус:"
+#~ msgid "First Author"
+#~ msgstr "Први аутор"
 
-#~ msgid "Show Installed Packages"
-#~ msgstr "Прикажи инсталиране пакете"
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Јожеф Куруцић"
 
-#~ msgid "Help"
-#~ msgstr "Помоћ"
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "Kurucity@aim.com"
 
-#~ msgid "File"
-#~ msgstr "Фајл"
+#~ msgid "Show main window"
+#~ msgstr "Прикажи главни прозор"
 
 #, fuzzy
-#~ msgid "-- / --"
-#~ msgstr "--  / --"
+#~ msgid "Upgradable Packages"
+#~ msgstr "Прикажи пакете који могу да се ажурирају"
+
+#, fuzzy
+#~ msgid "Modify Package(s)"
+#~ msgstr "Уклањање пакета"
 
 #, fuzzy
 #~ msgid ""
@@ -853,35 +864,29 @@ msgstr "Величина пакета:"
 #~ msgstr "Инсталирај пакет(е)"
 
 #, fuzzy
-#~ msgid "Modify Package(s)"
-#~ msgstr "Уклањање пакета"
+#~ msgid "-- / --"
+#~ msgstr "--  / --"
 
-#, fuzzy
-#~ msgid "Upgradable Packages"
-#~ msgstr "Прикажи пакете који могу да се ажурирају"
+#~ msgid "File"
+#~ msgstr "Фајл"
 
-#~ msgid "Show main window"
-#~ msgstr "Прикажи главни прозор"
+#~ msgid "Help"
+#~ msgstr "Помоћ"
 
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "Kurucity@aim.com"
+#~ msgid "Show Installed Packages"
+#~ msgstr "Прикажи инсталиране пакете"
 
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Јожеф Куруцић"
+#~ msgid "Status:"
+#~ msgstr "Статус:"
 
-#~ msgid "First Author"
-#~ msgstr "Први аутор"
+#~ msgid "--:--:--"
+#~ msgstr "--:--:--"
 
-#~ msgid "Faik Uygur"
-#~ msgstr "Фаик Ујгур"
+#~ msgid "--  / --"
+#~ msgstr "--  / --"
 
-#~ msgid "Gökmen Göksel"
-#~ msgstr "Гокман Гоксел"
+#~ msgid "Time remaining:"
+#~ msgstr "Преостало време:"
 
-#~ msgid "Developer"
-#~ msgstr "Развијач"
-
-#~ msgid "(c) 2009-2010 TUBITAK/UEKAE"
-#~ msgstr "(c) -2010 ТУБИТАК/УЕКАЕ"
+#~ msgid "<h3>Preparing PiSi...</h3>"
+#~ msgstr "<h3>Припремање ПиСија...</h3>"

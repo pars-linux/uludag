@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-10 17:26+0200\n"
+"POT-Creation-Date: 2011-07-12 09:49+0300\n"
 "PO-Revision-Date: 2010-05-16 14:44+0200\n"
 "Last-Translator: Davide Siciliano <edivad95@gmail.com>\n"
 "Language-Team: Italian <>\n"
@@ -84,16 +84,16 @@ msgstr "Attenzione"
 msgid "Critical Packages"
 msgstr "Pacchetti Critici"
 
-#: src/basketdialog.py:208 src/pmwindow.py:134
+#: src/basketdialog.py:208 src/pmwindow.py:135
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
 msgstr "I pacchetti selezionati sono già installati. <br>Se continui, i pacchetti saranno riinstallati"
 
-#: src/basketdialog.py:210 src/pmwindow.py:136
+#: src/basketdialog.py:210 src/pmwindow.py:137
 msgid "Already Installed Packages"
 msgstr "Pacchetti Già Installati"
 
-#: src/basketdialog.py:211 src/mainwindow.py:142 src/mainwindow.py:144
-#: src/pmwindow.py:137
+#: src/basketdialog.py:211 src/mainwindow.py:146 src/mainwindow.py:148
+#: src/pmwindow.py:138
 msgid "Installed Packages"
 msgstr "Pacchetti Installati"
 
@@ -117,52 +117,57 @@ msgstr "Cerca..."
 msgid "No results found."
 msgstr "Nessun risultato trovato."
 
-#: src/mainwidget.py:388
+#: src/mainwidget.py:386
 #, fuzzy
 msgid "Select packages"
 msgstr "Tutti Pacchetti"
 
-#: src/mainwidget.py:389
+#: src/mainwidget.py:387
 msgid "You must select at least one installed package"
 msgstr ""
 
-#: src/mainwidget.py:401
+#: src/mainwidget.py:399
 msgid "All Updates"
 msgstr "Tutti gli Aggiornamenti"
 
-#: src/mainwidget.py:402
+#: src/mainwidget.py:400
 msgid "Security Updates"
 msgstr "Aggiornamenti di Sicurezza"
 
-#: src/mainwidget.py:403
+#: src/mainwidget.py:401
 msgid "Critical Updates"
 msgstr "Aggiornamenti Critici"
 
-#: src/mainwindow.py:134 src/mainwindow.py:136
+#: src/mainwindow.py:138 src/mainwindow.py:140
 msgid "All Packages"
 msgstr "Tutti Pacchetti"
 
-#: src/mainwindow.py:138 src/mainwindow.py:140
+#: src/mainwindow.py:142 src/mainwindow.py:144
 msgid "Installable Packages"
 msgstr "Pacchetti Installabili"
 
-#: src/mainwindow.py:146 src/mainwindow.py:148 src/tray.py:197
+#: src/mainwindow.py:150 src/mainwindow.py:152 src/tray.py:197
 msgid "Updates"
 msgstr "Aggiornamenti"
 
-#: src/mainwindow.py:150 ui/ui_mainwidget_v3.py:167
+#: src/mainwindow.py:154 ui/ui_mainwidget_v3.py:167
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: src/mainwindow.py:153 src/tray.py:193
-msgid "Quit"
+#: src/mainwindow.py:157 ui/ui_settingsdialog.py:453
+msgid "&Help"
+msgstr "&Aiuto"
+
+#: src/mainwindow.py:161
+#, fuzzy
+msgid "&Quit"
 msgstr "Esci"
 
-#: src/mainwindow.py:182
+#: src/mainwindow.py:191
 msgid "Calculating dependencies..."
 msgstr "Si calcolano le dipendenze..."
 
-#: src/mainwindow.py:186
+#: src/mainwindow.py:207
 msgid "Currently your basket is empty."
 msgstr "Il tuo cestino è vuoto."
 
@@ -218,7 +223,7 @@ msgstr "Dimensione pacchetto:"
 msgid "Installed Version:"
 msgstr "Versione Installata:"
 
-#: src/packagedelegate.py:338
+#: src/packagedelegate.py:337
 msgid "Details"
 msgstr "Dettagli"
 
@@ -475,6 +480,10 @@ msgstr "Aggiornamento repository"
 #, fuzzy
 msgid "Update All Repositories"
 msgstr "Aggiornamento repository"
+
+#: src/tray.py:193
+msgid "Quit"
+msgstr "Esci"
 
 #: src/tray.py:197
 msgid "There are %1 updates available!"
@@ -779,10 +788,6 @@ msgstr "Usa questo proxy per tutti i protocolli"
 msgid "&Proxy"
 msgstr "&Proxy"
 
-#: ui/ui_settingsdialog.py:453
-msgid "&Help"
-msgstr "&Aiuto"
-
 #: ui/ui_settingsdialog.py:454
 msgid "&OK"
 msgstr "&OK"
@@ -815,107 +820,72 @@ msgstr ""
 msgid "Package Details"
 msgstr "Dettagli del Pacchetto"
 
-#~ msgid "No proxy server"
-#~ msgstr "Nessun proxy"
+#~ msgid "(c) 2009-2010 TUBITAK/UEKAE"
+#~ msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
-#~ msgid "Use manual settings"
-#~ msgstr "Usa Impostazioni Manuali"
+#~ msgid "Developer"
+#~ msgstr "Sviluppatore"
 
-#~ msgid "Use Desktop Enviorenment's settings"
-#~ msgstr "Usa le impostazioni dell'ambiente desktop"
+#~ msgid "Gökmen Göksel"
+#~ msgstr "Gökmen Göksel"
 
-#~ msgid "Search Button"
-#~ msgstr "Pulsante di Ricerca"
+#~ msgid "Faik Uygur"
+#~ msgstr "Faik Uygur"
 
-#~ msgid "Search"
-#~ msgstr "Cerca"
+#~ msgid "First Author"
+#~ msgstr "Primo autore"
 
-#~ msgid "Action Button for current states action"
-#~ msgstr "Pulsante D'Azione per azioni dello stato attuale"
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Ali Isingor"
 
-#~ msgid "Toggler for selection all packages in Package List"
-#~ msgstr "Spunta per selezionare tutti i pacchetti nella lista"
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "isingor@gmail.com"
 
-#~ msgid "Operation"
-#~ msgstr "Operazione"
+#~ msgid "Show main window"
+#~ msgstr "Mostra finestra principale"
 
-#~ msgid "<h3>Preparing PiSi...</h3>"
-#~ msgstr "<h3>Preparazione PiSi...</h3>"
+#~ msgid "Hide summary screen"
+#~ msgstr "Nascondi schermata di riepilogo"
 
-#~ msgid "Time remaining:"
-#~ msgstr "Tempo rimanente:"
+#~ msgid "There are <b>%1</b> updates available!"
+#~ msgstr "Ci sono <b>%1</b> aggiornamenti disponibili!"
 
-#~ msgid "--  / --"
+#~ msgid "Ignore"
+#~ msgstr "Ignora"
+
+#~ msgid "Show Updates"
+#~ msgstr "Mostra aggiornamenti"
+
+#~ msgid "Search Bar"
+#~ msgstr "Barra di ricerca"
+
+#~ msgid "Type to filter files"
+#~ msgstr "Digita per filtrare i file"
+
+#~ msgid " kb/s"
+#~ msgstr " kb/s"
+
+#~ msgid "Upgradable Packages"
+#~ msgstr "Mostra pacchetti aggiornabili"
+
+#~ msgid "Modify Package(s)"
+#~ msgstr "Rimozione pacchetto/i"
+
+#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgstr "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+
+#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgstr "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+
+#~ msgid ""
+#~ "Installed Packages\n"
+#~ "\n"
+#~ msgstr "Installa pacchetto/i"
+
+#~ msgid "-- / --"
 #~ msgstr "--  / --"
-
-#~ msgid "--:--:--"
-#~ msgstr "--:--:--"
-
-#~ msgid "Operation:"
-#~ msgstr "Operazione:"
-
-#~ msgid "Status:"
-#~ msgstr "Stato:"
-
-#~ msgid "Show Installed Packages"
-#~ msgstr "Mostra pacchetti installati"
-
-#~ msgid "12 new packages are installed  succesfully."
-#~ msgstr "12 nuovi pacchetti installati con successo."
-
-#~ msgid "Reverse package selections"
-#~ msgstr "Inverti selezione pacchetti"
-
-#~ msgid "pm-install"
-#~ msgstr "installato"
-
-#~ msgid "Installing %1"
-#~ msgstr "installazione in corso"
-
-#~ msgid "Package Installer"
-#~ msgstr "Gestore di Pacchetti"
-
-#~ msgid "Maintainer"
-#~ msgstr "Maintainer"
-
-#~ msgid "Delete"
-#~ msgstr "Elimina"
-
-#~ msgid "Ok"
-#~ msgstr "&Ok"
-
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(usa 0 per non imporre nessun limite)"
-
-#~ msgid "Update check"
-#~ msgstr "Controllo aggiornamenti"
-
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Limite di banda:"
-
-#~ msgid "Summary"
-#~ msgstr "Sommario"
-
-#~ msgid "%p%"
-#~ msgstr "%p%"
-
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "I pacchetti sono stati installati con successo"
-
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Installazione di %1 completata con successo"
-
-#~ msgid "Use proxy server"
-#~ msgstr "Usa proxy"
-
-#~ msgid "padding-left:15px;"
-#~ msgstr "padding-left:15px;"
-
-#~ msgid "Help"
-#~ msgstr "Aiuto"
-
-#~ msgid "File"
-#~ msgstr "File"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -930,69 +900,104 @@ msgstr "Dettagli del Pacchetto"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Seleziona tutti i pacchetti in questo gruppo</p></body></html>"
 
-#~ msgid "-- / --"
+#~ msgid "File"
+#~ msgstr "File"
+
+#~ msgid "Help"
+#~ msgstr "Aiuto"
+
+#~ msgid "padding-left:15px;"
+#~ msgstr "padding-left:15px;"
+
+#~ msgid "Use proxy server"
+#~ msgstr "Usa proxy"
+
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Installazione di %1 completata con successo"
+
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "I pacchetti sono stati installati con successo"
+
+#~ msgid "%p%"
+#~ msgstr "%p%"
+
+#~ msgid "Summary"
+#~ msgstr "Sommario"
+
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Limite di banda:"
+
+#~ msgid "Update check"
+#~ msgstr "Controllo aggiornamenti"
+
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(usa 0 per non imporre nessun limite)"
+
+#~ msgid "Ok"
+#~ msgstr "&Ok"
+
+#~ msgid "Delete"
+#~ msgstr "Elimina"
+
+#~ msgid "Maintainer"
+#~ msgstr "Maintainer"
+
+#~ msgid "Package Installer"
+#~ msgstr "Gestore di Pacchetti"
+
+#~ msgid "Installing %1"
+#~ msgstr "installazione in corso"
+
+#~ msgid "pm-install"
+#~ msgstr "installato"
+
+#~ msgid "Reverse package selections"
+#~ msgstr "Inverti selezione pacchetti"
+
+#~ msgid "12 new packages are installed  succesfully."
+#~ msgstr "12 nuovi pacchetti installati con successo."
+
+#~ msgid "Show Installed Packages"
+#~ msgstr "Mostra pacchetti installati"
+
+#~ msgid "Status:"
+#~ msgstr "Stato:"
+
+#~ msgid "Operation:"
+#~ msgstr "Operazione:"
+
+#~ msgid "--:--:--"
+#~ msgstr "--:--:--"
+
+#~ msgid "--  / --"
 #~ msgstr "--  / --"
 
-#~ msgid ""
-#~ "Installed Packages\n"
-#~ "\n"
-#~ msgstr "Installa pacchetto/i"
+#~ msgid "Time remaining:"
+#~ msgstr "Tempo rimanente:"
 
-#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-#~ msgstr "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgid "<h3>Preparing PiSi...</h3>"
+#~ msgstr "<h3>Preparazione PiSi...</h3>"
 
-#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
-#~ msgstr "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgid "Operation"
+#~ msgstr "Operazione"
 
-#~ msgid "Modify Package(s)"
-#~ msgstr "Rimozione pacchetto/i"
+#~ msgid "Toggler for selection all packages in Package List"
+#~ msgstr "Spunta per selezionare tutti i pacchetti nella lista"
 
-#~ msgid "Upgradable Packages"
-#~ msgstr "Mostra pacchetti aggiornabili"
+#~ msgid "Action Button for current states action"
+#~ msgstr "Pulsante D'Azione per azioni dello stato attuale"
 
-#~ msgid " kb/s"
-#~ msgstr " kb/s"
+#~ msgid "Search"
+#~ msgstr "Cerca"
 
-#~ msgid "Type to filter files"
-#~ msgstr "Digita per filtrare i file"
+#~ msgid "Search Button"
+#~ msgstr "Pulsante di Ricerca"
 
-#~ msgid "Search Bar"
-#~ msgstr "Barra di ricerca"
+#~ msgid "Use Desktop Enviorenment's settings"
+#~ msgstr "Usa le impostazioni dell'ambiente desktop"
 
-#~ msgid "Show Updates"
-#~ msgstr "Mostra aggiornamenti"
+#~ msgid "Use manual settings"
+#~ msgstr "Usa Impostazioni Manuali"
 
-#~ msgid "Ignore"
-#~ msgstr "Ignora"
-
-#~ msgid "There are <b>%1</b> updates available!"
-#~ msgstr "Ci sono <b>%1</b> aggiornamenti disponibili!"
-
-#~ msgid "Hide summary screen"
-#~ msgstr "Nascondi schermata di riepilogo"
-
-#~ msgid "Show main window"
-#~ msgstr "Mostra finestra principale"
-
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "isingor@gmail.com"
-
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Ali Isingor"
-
-#~ msgid "First Author"
-#~ msgstr "Primo autore"
-
-#~ msgid "Faik Uygur"
-#~ msgstr "Faik Uygur"
-
-#~ msgid "Gökmen Göksel"
-#~ msgstr "Gökmen Göksel"
-
-#~ msgid "Developer"
-#~ msgstr "Sviluppatore"
-
-#~ msgid "(c) 2009-2010 TUBITAK/UEKAE"
-#~ msgstr "(c) 2009-2010 TUBITAK/UEKAE"
+#~ msgid "No proxy server"
+#~ msgstr "Nessun proxy"

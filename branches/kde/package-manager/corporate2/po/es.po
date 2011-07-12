@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-10 17:26+0200\n"
+"POT-Creation-Date: 2011-07-12 09:49+0300\n"
 "PO-Revision-Date: 2010-01-08 21:32-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
 "Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
@@ -83,16 +83,16 @@ msgstr "Alerta"
 msgid "Critical Packages"
 msgstr "Paquetes Críticos"
 
-#: src/basketdialog.py:208 src/pmwindow.py:134
+#: src/basketdialog.py:208 src/pmwindow.py:135
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
 msgstr "Los paquetes seleccionados ya están instalados.<br>Si continúa los paquetes se volveran a instalar"
 
-#: src/basketdialog.py:210 src/pmwindow.py:136
+#: src/basketdialog.py:210 src/pmwindow.py:137
 msgid "Already Installed Packages"
 msgstr "Paquetes ya instalados"
 
-#: src/basketdialog.py:211 src/mainwindow.py:142 src/mainwindow.py:144
-#: src/pmwindow.py:137
+#: src/basketdialog.py:211 src/mainwindow.py:146 src/mainwindow.py:148
+#: src/pmwindow.py:138
 msgid "Installed Packages"
 msgstr "Paquetes instalados"
 
@@ -116,28 +116,28 @@ msgstr "Buscando.."
 msgid "No results found."
 msgstr "Nada encontrado."
 
-#: src/mainwidget.py:388
+#: src/mainwidget.py:386
 #, fuzzy
 msgid "Select packages"
 msgstr "Todos los paquetes"
 
-#: src/mainwidget.py:389
+#: src/mainwidget.py:387
 msgid "You must select at least one installed package"
 msgstr ""
 
-#: src/mainwidget.py:401
+#: src/mainwidget.py:399
 msgid "All Updates"
 msgstr "Todas las actualizaciones"
 
-#: src/mainwidget.py:402
+#: src/mainwidget.py:400
 msgid "Security Updates"
 msgstr "Actualizaciones de seguridad"
 
-#: src/mainwidget.py:403
+#: src/mainwidget.py:401
 msgid "Critical Updates"
 msgstr "Actualizaciones críticas"
 
-#: src/mainwindow.py:134 src/mainwindow.py:136
+#: src/mainwindow.py:138 src/mainwindow.py:140
 msgid "All Packages"
 msgstr "Todos los paquetes"
 
@@ -145,27 +145,32 @@ msgstr "Todos los paquetes"
 # maybe here we shoud speak about programs or applications ? the fact that it
 # is a "package" is a tecnical detail.. well there are also those "auxiliar"
 # libraries..
-#: src/mainwindow.py:138 src/mainwindow.py:140
+#: src/mainwindow.py:142 src/mainwindow.py:144
 msgid "Installable Packages"
 msgstr "Paquetes a instalar"
 
-#: src/mainwindow.py:146 src/mainwindow.py:148 src/tray.py:197
+#: src/mainwindow.py:150 src/mainwindow.py:152 src/tray.py:197
 msgid "Updates"
 msgstr "Actualizaciones"
 
-#: src/mainwindow.py:150 ui/ui_mainwidget_v3.py:167
+#: src/mainwindow.py:154 ui/ui_mainwidget_v3.py:167
 msgid "Settings"
 msgstr "Configuración"
 
-#: src/mainwindow.py:153 src/tray.py:193
-msgid "Quit"
+#: src/mainwindow.py:157 ui/ui_settingsdialog.py:453
+msgid "&Help"
+msgstr "&Ayuda"
+
+#: src/mainwindow.py:161
+#, fuzzy
+msgid "&Quit"
 msgstr "Salir"
 
-#: src/mainwindow.py:182
+#: src/mainwindow.py:191
 msgid "Calculating dependencies..."
 msgstr "Calculando dependencias..."
 
-#: src/mainwindow.py:186
+#: src/mainwindow.py:207
 msgid "Currently your basket is empty."
 msgstr "Actualmente el carrito está vacío."
 
@@ -222,7 +227,7 @@ msgstr "Descarga:"
 msgid "Installed Version:"
 msgstr "Versión instalada:"
 
-#: src/packagedelegate.py:338
+#: src/packagedelegate.py:337
 msgid "Details"
 msgstr "Detalles"
 
@@ -490,6 +495,10 @@ msgstr "Actualizando Repositorio"
 #, fuzzy
 msgid "Update All Repositories"
 msgstr "Actualizando Repositorio"
+
+#: src/tray.py:193
+msgid "Quit"
+msgstr "Salir"
 
 #: src/tray.py:197
 msgid "There are %1 updates available!"
@@ -800,10 +809,6 @@ msgstr "Usar éste servidor de proxy para todos los protocolos"
 msgid "&Proxy"
 msgstr "&Proxy"
 
-#: ui/ui_settingsdialog.py:453
-msgid "&Help"
-msgstr "&Ayuda"
-
 #: ui/ui_settingsdialog.py:454
 msgid "&OK"
 msgstr "&OK"
@@ -838,138 +843,138 @@ msgstr ""
 msgid "Package Details"
 msgstr "Detalles de Paquetes"
 
-#~ msgid "No proxy server"
-#~ msgstr "Sin servidor proxy"
+#~ msgid "Developer"
+#~ msgstr "Desarrollador"
 
-#~ msgid "Use manual settings"
-#~ msgstr "Configuración manual"
+#~ msgid "First Author"
+#~ msgstr "Autor inicial"
 
-#~ msgid "Use Desktop Enviorenment's settings"
-#~ msgstr "Usar configuración del entorno del escritorio"
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Klemens Häckel"
 
-#~ msgid "Search Button"
-#~ msgstr "Botón de búsqueda"
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "click3d (at) linuxmail.org"
 
-#~ msgid "Search"
-#~ msgstr "Buscar"
+#~ msgid "Show main window"
+#~ msgstr "Mostrar Ventana principal"
 
-#~ msgid "Toggler for selection all packages in Package List"
-#~ msgstr "Invertir selección de paquetes en la lista"
+#~ msgid "Hide summary screen"
+#~ msgstr "Ocultar resumen"
 
-#~ msgid "Operation"
-#~ msgstr "Información del Progreso"
+#~ msgid "There are <b>%1</b> updates available!"
+#~ msgstr "Hay <b>%1</b> actualizaciones disponibles!"
 
-#~ msgid "<h3>Preparing PiSi...</h3>"
-#~ msgstr "<h3>Preparando PiSi...</h3>"
+#~ msgid "Ignore"
+#~ msgstr "Ignorar"
 
-#~ msgid "Time remaining:"
-#~ msgstr "Tiempo restante:"
+#~ msgid "Show Updates"
+#~ msgstr "Mostrar actualizaciones"
 
-#~ msgid "Operation:"
-#~ msgstr "Operación:"
+#~ msgid "Search Bar"
+#~ msgstr "Barra de búsqueda"
 
-#~ msgid "Status:"
-#~ msgstr "Estado:"
+#~ msgid "Type to filter files"
+#~ msgstr "Escriba para filtrar los archivos"
 
-#~ msgid "Close"
-#~ msgstr "Cerrar"
+#~ msgid " kb/s"
+#~ msgstr " kb/s"
 
-#~ msgid "Show Installed Packages"
-#~ msgstr "Mostrar Paquetes instalados"
+#~ msgid "Upgradable Packages"
+#~ msgstr "Paquetes a actualizar"
 
-#~ msgid "Use proxy server"
-#~ msgstr "Usar servidor proxy"
-
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Instalación de %1 terminado con éxito"
-
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Instalación terminada con éxito"
-
-#~ msgid "Summary"
-#~ msgstr "Resumen"
-
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Ancho de banda máximo:"
-
-#~ msgid "Update check"
-#~ msgstr "Comprobar actualizaciones"
-
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(use 0 para indicar \"ilimitado\")"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
-
-#~ msgid "Delete"
-#~ msgstr "Eliminar"
-
-#~ msgid "Maintainer"
-#~ msgstr "Mantenedor"
-
-#~ msgid "Package Installer"
-#~ msgstr "Instalador de Paquetes"
-
-#~ msgid "Installing %1"
-#~ msgstr "Instalando %1"
-
-#~ msgid "Package Installer is already started!"
-#~ msgstr "Instalador de Paquetes ya se está ejecutando !"
-
-#~ msgid "Reverse package selections"
-#~ msgstr "Invertir seleción de paquetes"
-
-#~ msgid "Help"
-#~ msgstr "Ayuda"
-
-#~ msgid "File"
-#~ msgstr "Archivo"
+#~ msgid "Modify Package(s)"
+#~ msgstr "Modificar Paquete(s)"
 
 #~ msgid ""
 #~ "Installed Packages\n"
 #~ "\n"
 #~ msgstr "Paquetes instalados"
 
-#~ msgid "Modify Package(s)"
-#~ msgstr "Modificar Paquete(s)"
+#~ msgid "File"
+#~ msgstr "Archivo"
 
-#~ msgid "Upgradable Packages"
-#~ msgstr "Paquetes a actualizar"
+#~ msgid "Help"
+#~ msgstr "Ayuda"
 
-#~ msgid " kb/s"
-#~ msgstr " kb/s"
+#~ msgid "Reverse package selections"
+#~ msgstr "Invertir seleción de paquetes"
 
-#~ msgid "Type to filter files"
-#~ msgstr "Escriba para filtrar los archivos"
+#~ msgid "Package Installer is already started!"
+#~ msgstr "Instalador de Paquetes ya se está ejecutando !"
 
-#~ msgid "Search Bar"
-#~ msgstr "Barra de búsqueda"
+#~ msgid "Installing %1"
+#~ msgstr "Instalando %1"
 
-#~ msgid "Show Updates"
-#~ msgstr "Mostrar actualizaciones"
+#~ msgid "Package Installer"
+#~ msgstr "Instalador de Paquetes"
 
-#~ msgid "Ignore"
-#~ msgstr "Ignorar"
+#~ msgid "Maintainer"
+#~ msgstr "Mantenedor"
 
-#~ msgid "There are <b>%1</b> updates available!"
-#~ msgstr "Hay <b>%1</b> actualizaciones disponibles!"
+#~ msgid "Delete"
+#~ msgstr "Eliminar"
 
-#~ msgid "Hide summary screen"
-#~ msgstr "Ocultar resumen"
+#~ msgid "Ok"
+#~ msgstr "Ok"
 
-#~ msgid "Show main window"
-#~ msgstr "Mostrar Ventana principal"
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(use 0 para indicar \"ilimitado\")"
 
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "click3d (at) linuxmail.org"
+#~ msgid "Update check"
+#~ msgstr "Comprobar actualizaciones"
 
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Klemens Häckel"
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Ancho de banda máximo:"
 
-#~ msgid "First Author"
-#~ msgstr "Autor inicial"
+#~ msgid "Summary"
+#~ msgstr "Resumen"
 
-#~ msgid "Developer"
-#~ msgstr "Desarrollador"
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Instalación terminada con éxito"
+
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Instalación de %1 terminado con éxito"
+
+#~ msgid "Use proxy server"
+#~ msgstr "Usar servidor proxy"
+
+#~ msgid "Show Installed Packages"
+#~ msgstr "Mostrar Paquetes instalados"
+
+#~ msgid "Close"
+#~ msgstr "Cerrar"
+
+#~ msgid "Status:"
+#~ msgstr "Estado:"
+
+#~ msgid "Operation:"
+#~ msgstr "Operación:"
+
+#~ msgid "Time remaining:"
+#~ msgstr "Tiempo restante:"
+
+#~ msgid "<h3>Preparing PiSi...</h3>"
+#~ msgstr "<h3>Preparando PiSi...</h3>"
+
+#~ msgid "Operation"
+#~ msgstr "Información del Progreso"
+
+#~ msgid "Toggler for selection all packages in Package List"
+#~ msgstr "Invertir selección de paquetes en la lista"
+
+#~ msgid "Search"
+#~ msgstr "Buscar"
+
+#~ msgid "Search Button"
+#~ msgstr "Botón de búsqueda"
+
+#~ msgid "Use Desktop Enviorenment's settings"
+#~ msgstr "Usar configuración del entorno del escritorio"
+
+#~ msgid "Use manual settings"
+#~ msgstr "Configuración manual"
+
+#~ msgid "No proxy server"
+#~ msgstr "Sin servidor proxy"

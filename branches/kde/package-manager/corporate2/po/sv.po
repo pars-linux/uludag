@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-10 17:26+0200\n"
+"POT-Creation-Date: 2011-07-12 09:49+0300\n"
 "PO-Revision-Date: 2010-05-27 18:03+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@trixon.se>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -82,16 +82,16 @@ msgstr "Varning"
 msgid "Critical Packages"
 msgstr "Kritiska paket"
 
-#: src/basketdialog.py:208 src/pmwindow.py:134
+#: src/basketdialog.py:208 src/pmwindow.py:135
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
 msgstr "Valda paket är redan installerade.<br>Om du fortsätter kommer paketen att ominstalleras."
 
-#: src/basketdialog.py:210 src/pmwindow.py:136
+#: src/basketdialog.py:210 src/pmwindow.py:137
 msgid "Already Installed Packages"
 msgstr "Redan installerade paket"
 
-#: src/basketdialog.py:211 src/mainwindow.py:142 src/mainwindow.py:144
-#: src/pmwindow.py:137
+#: src/basketdialog.py:211 src/mainwindow.py:146 src/mainwindow.py:148
+#: src/pmwindow.py:138
 msgid "Installed Packages"
 msgstr "Installerade paket"
 
@@ -115,52 +115,57 @@ msgstr "Söker..."
 msgid "No results found."
 msgstr "Inga träffar."
 
-#: src/mainwidget.py:388
+#: src/mainwidget.py:386
 #, fuzzy
 msgid "Select packages"
 msgstr "Alla paket"
 
-#: src/mainwidget.py:389
+#: src/mainwidget.py:387
 msgid "You must select at least one installed package"
 msgstr ""
 
-#: src/mainwidget.py:401
+#: src/mainwidget.py:399
 msgid "All Updates"
 msgstr "Alla uppdateringar"
 
-#: src/mainwidget.py:402
+#: src/mainwidget.py:400
 msgid "Security Updates"
 msgstr "Säkerhetsuppdateringar"
 
-#: src/mainwidget.py:403
+#: src/mainwidget.py:401
 msgid "Critical Updates"
 msgstr "Kritiska uppdateringar"
 
-#: src/mainwindow.py:134 src/mainwindow.py:136
+#: src/mainwindow.py:138 src/mainwindow.py:140
 msgid "All Packages"
 msgstr "Alla paket"
 
-#: src/mainwindow.py:138 src/mainwindow.py:140
+#: src/mainwindow.py:142 src/mainwindow.py:144
 msgid "Installable Packages"
 msgstr "Installerbara paket"
 
-#: src/mainwindow.py:146 src/mainwindow.py:148 src/tray.py:197
+#: src/mainwindow.py:150 src/mainwindow.py:152 src/tray.py:197
 msgid "Updates"
 msgstr "Uppdateringar"
 
-#: src/mainwindow.py:150 ui/ui_mainwidget_v3.py:167
+#: src/mainwindow.py:154 ui/ui_mainwidget_v3.py:167
 msgid "Settings"
 msgstr "Inställningar"
 
-#: src/mainwindow.py:153 src/tray.py:193
-msgid "Quit"
+#: src/mainwindow.py:157 ui/ui_settingsdialog.py:453
+msgid "&Help"
+msgstr "&Hjälp"
+
+#: src/mainwindow.py:161
+#, fuzzy
+msgid "&Quit"
 msgstr "Avsluta"
 
-#: src/mainwindow.py:182
+#: src/mainwindow.py:191
 msgid "Calculating dependencies..."
 msgstr "Beräknar beroenden..."
 
-#: src/mainwindow.py:186
+#: src/mainwindow.py:207
 msgid "Currently your basket is empty."
 msgstr "För närvarande är din korg tom."
 
@@ -216,7 +221,7 @@ msgstr "Paketstorlek:"
 msgid "Installed Version:"
 msgstr "Installerad version:"
 
-#: src/packagedelegate.py:338
+#: src/packagedelegate.py:337
 msgid "Details"
 msgstr "Detaljer"
 
@@ -473,6 +478,10 @@ msgstr "Uppdaterar förråd"
 #, fuzzy
 msgid "Update All Repositories"
 msgstr "Uppdaterar förråd"
+
+#: src/tray.py:193
+msgid "Quit"
+msgstr "Avsluta"
 
 #: src/tray.py:197
 msgid "There are %1 updates available!"
@@ -771,10 +780,6 @@ msgstr "<a href=#>Använd den här proxyservern för alla protokoll</a>"
 msgid "&Proxy"
 msgstr "&Proxy"
 
-#: ui/ui_settingsdialog.py:453
-msgid "&Help"
-msgstr "&Hjälp"
-
 #: ui/ui_settingsdialog.py:454
 msgid "&OK"
 msgstr "&OK"
@@ -807,116 +812,72 @@ msgstr ""
 msgid "Package Details"
 msgstr "Paketdetaljer"
 
-#~ msgid "No proxy server"
-#~ msgstr "Ingen proxyserver"
+#~ msgid "(c) 2009-2010 TUBITAK/UEKAE"
+#~ msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
-#~ msgid "Use manual settings"
-#~ msgstr "Använd manuella inställningar"
+#~ msgid "Gökmen Göksel"
+#~ msgstr "Gökmen Göksel"
 
-#~ msgid "Use Desktop Enviorenment's settings"
-#~ msgstr "Använd skrivbordsmiljöns inställningar"
+#~ msgid "Developer"
+#~ msgstr "Utvecklare"
 
-#~ msgid "Search Button"
-#~ msgstr "Sökknapp"
+#~ msgid "Faik Uygur"
+#~ msgstr "Faik Uygur"
 
-#~ msgid "Search"
-#~ msgstr "Sök"
+#~ msgid "First Author"
+#~ msgstr "Ursprunglig utvecklare"
 
-#~ msgid "Action Button for current states action"
-#~ msgstr "Åtgärdsknapp"
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Patrik Karlsson"
 
-#~ msgid "Toggler for selection all packages in Package List"
-#~ msgstr "Växlare för paketval"
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "patrik@trixon.se"
 
-#~ msgid "Operation"
-#~ msgstr "Åtgärd"
+#~ msgid "Show main window"
+#~ msgstr "Visa huvudfönster"
 
-#~ msgid "<h3>Preparing PiSi...</h3>"
-#~ msgstr "<h3>Förbereder PiSi...</h3>"
+#~ msgid "Hide summary screen"
+#~ msgstr "Dölj sammanställning"
 
-#~ msgid "Time remaining:"
-#~ msgstr "Återstående tid:"
+#~ msgid "There are <b>%1</b> updates available!"
+#~ msgstr "Det finns <b>%1</b> tillgängliga uppdateringar!"
 
-#~ msgid "--  / --"
-#~ msgstr "--  / --"
+#~ msgid "Show Updates"
+#~ msgstr "Visa uppdateringar"
 
-#~ msgid "--:--:--"
-#~ msgstr "--:--:--"
+#~ msgid "Ignore"
+#~ msgstr "Ignorera"
 
-#~ msgid "Operation:"
-#~ msgstr "Åtgärd:"
+#~ msgid "Search Bar"
+#~ msgstr "Sökfält"
 
-#~ msgid "Status:"
-#~ msgstr "Status:"
+#~ msgid "Type to filter files"
+#~ msgstr "Skriv för att filtrera filer"
 
-#~ msgid "Close"
-#~ msgstr "Stäng"
+#~ msgid " kb/s"
+#~ msgstr " kb/s"
 
-#~ msgid "Show Installed Packages"
-#~ msgstr "Visa installerade paket"
+#~ msgid "Upgradable Packages"
+#~ msgstr "Uppdaterbara paket"
 
-#~ msgid "padding-left:15px;"
-#~ msgstr "padding-left:15px;"
+#~ msgid "Modify Package(s)"
+#~ msgstr "Ändrade paket"
 
-#~ msgid "Use proxy server"
-#~ msgstr "Använd proxyserver"
+#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgstr "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
 
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Installerade %1 framgångsrikt"
+#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgstr "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Paketinstallation avslutatdes framgångsrikt"
+#~ msgid ""
+#~ "Installed Packages\n"
+#~ "\n"
+#~ msgstr "Installerade paket"
 
-#~ msgid "%p%"
-#~ msgstr "%p%"
-
-#~ msgid "Summary"
-#~ msgstr "Sammanställning"
-
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Maximal nerladdningshastighet:"
-
-#~ msgid "Update check"
-#~ msgstr "Uppdateringskontroll"
-
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(använd 0 för obegränsad)"
-
-#~ msgid "TextLabel"
-#~ msgstr "TextLabel"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
-
-#~ msgid "Delete"
-#~ msgstr "Ta bort"
-
-#~ msgid "Maintainer"
-#~ msgstr "Underhållare"
-
-#~ msgid "Package Installer"
-#~ msgstr "Pakethanteraren"
-
-#~ msgid "Installing %1"
-#~ msgstr "Installerar %1"
-
-#~ msgid "pm-install"
-#~ msgstr "pm-install"
-
-#~ msgid "Package Installer is already started!"
-#~ msgstr "Paketinstalleraren körs redan!"
-
-#~ msgid "Reverse package selections"
-#~ msgstr "Invertera paketmarkering"
-
-#~ msgid "12 new packages are installed  succesfully."
-#~ msgstr "12 nya paket har installerats framgångsrikt."
-
-#~ msgid "Help"
-#~ msgstr "Hjälp"
-
-#~ msgid "File"
-#~ msgstr "Arkiv"
+#~ msgid "-- / --"
+#~ msgstr "-- / --"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -931,69 +892,113 @@ msgstr "Paketdetaljer"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Välj alla paket i den här gruppen</p></body></html>"
 
-#~ msgid "-- / --"
-#~ msgstr "-- / --"
+#~ msgid "File"
+#~ msgstr "Arkiv"
 
-#~ msgid ""
-#~ "Installed Packages\n"
-#~ "\n"
-#~ msgstr "Installerade paket"
+#~ msgid "Help"
+#~ msgstr "Hjälp"
 
-#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-#~ msgstr "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgid "12 new packages are installed  succesfully."
+#~ msgstr "12 nya paket har installerats framgångsrikt."
 
-#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
-#~ msgstr "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgid "Reverse package selections"
+#~ msgstr "Invertera paketmarkering"
 
-#~ msgid "Modify Package(s)"
-#~ msgstr "Ändrade paket"
+#~ msgid "Package Installer is already started!"
+#~ msgstr "Paketinstalleraren körs redan!"
 
-#~ msgid "Upgradable Packages"
-#~ msgstr "Uppdaterbara paket"
+#~ msgid "pm-install"
+#~ msgstr "pm-install"
 
-#~ msgid " kb/s"
-#~ msgstr " kb/s"
+#~ msgid "Installing %1"
+#~ msgstr "Installerar %1"
 
-#~ msgid "Type to filter files"
-#~ msgstr "Skriv för att filtrera filer"
+#~ msgid "Package Installer"
+#~ msgstr "Pakethanteraren"
 
-#~ msgid "Search Bar"
-#~ msgstr "Sökfält"
+#~ msgid "Maintainer"
+#~ msgstr "Underhållare"
 
-#~ msgid "Ignore"
-#~ msgstr "Ignorera"
+#~ msgid "Delete"
+#~ msgstr "Ta bort"
 
-#~ msgid "Show Updates"
-#~ msgstr "Visa uppdateringar"
+#~ msgid "Ok"
+#~ msgstr "Ok"
 
-#~ msgid "There are <b>%1</b> updates available!"
-#~ msgstr "Det finns <b>%1</b> tillgängliga uppdateringar!"
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
 
-#~ msgid "Hide summary screen"
-#~ msgstr "Dölj sammanställning"
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(använd 0 för obegränsad)"
 
-#~ msgid "Show main window"
-#~ msgstr "Visa huvudfönster"
+#~ msgid "Update check"
+#~ msgstr "Uppdateringskontroll"
 
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "patrik@trixon.se"
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Maximal nerladdningshastighet:"
 
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Patrik Karlsson"
+#~ msgid "Summary"
+#~ msgstr "Sammanställning"
 
-#~ msgid "First Author"
-#~ msgstr "Ursprunglig utvecklare"
+#~ msgid "%p%"
+#~ msgstr "%p%"
 
-#~ msgid "Faik Uygur"
-#~ msgstr "Faik Uygur"
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Paketinstallation avslutatdes framgångsrikt"
 
-#~ msgid "Developer"
-#~ msgstr "Utvecklare"
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Installerade %1 framgångsrikt"
 
-#~ msgid "Gökmen Göksel"
-#~ msgstr "Gökmen Göksel"
+#~ msgid "Use proxy server"
+#~ msgstr "Använd proxyserver"
 
-#~ msgid "(c) 2009-2010 TUBITAK/UEKAE"
-#~ msgstr "(c) 2009-2010 TUBITAK/UEKAE"
+#~ msgid "padding-left:15px;"
+#~ msgstr "padding-left:15px;"
+
+#~ msgid "Show Installed Packages"
+#~ msgstr "Visa installerade paket"
+
+#~ msgid "Close"
+#~ msgstr "Stäng"
+
+#~ msgid "Status:"
+#~ msgstr "Status:"
+
+#~ msgid "Operation:"
+#~ msgstr "Åtgärd:"
+
+#~ msgid "--:--:--"
+#~ msgstr "--:--:--"
+
+#~ msgid "--  / --"
+#~ msgstr "--  / --"
+
+#~ msgid "Time remaining:"
+#~ msgstr "Återstående tid:"
+
+#~ msgid "<h3>Preparing PiSi...</h3>"
+#~ msgstr "<h3>Förbereder PiSi...</h3>"
+
+#~ msgid "Operation"
+#~ msgstr "Åtgärd"
+
+#~ msgid "Toggler for selection all packages in Package List"
+#~ msgstr "Växlare för paketval"
+
+#~ msgid "Action Button for current states action"
+#~ msgstr "Åtgärdsknapp"
+
+#~ msgid "Search"
+#~ msgstr "Sök"
+
+#~ msgid "Search Button"
+#~ msgstr "Sökknapp"
+
+#~ msgid "Use Desktop Enviorenment's settings"
+#~ msgstr "Använd skrivbordsmiljöns inställningar"
+
+#~ msgid "Use manual settings"
+#~ msgstr "Använd manuella inställningar"
+
+#~ msgid "No proxy server"
+#~ msgstr "Ingen proxyserver"
