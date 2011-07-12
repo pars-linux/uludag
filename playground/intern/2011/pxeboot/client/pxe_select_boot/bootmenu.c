@@ -3,10 +3,11 @@
 #include  <string.h>
 #include  <malloc.h>
 #include <locale.h>
+
+#include <menu.h>
 #include <libxml/xmlmemory.h>
 #include <libxml/parser.h>
 
-#include <menu.h>
 
 #define ARRAY_SIZE(a) (sizeof(a) / sizeof(a[0]))
 #define CTRLD   4
@@ -15,12 +16,13 @@
 #define COL_MIN 53
 #define MENU_SIZE 5 // 15 max
 
+#define DEBUG(x) printf(x)
 
 typedef struct vers {
-    xmlChar *versionID;
-    xmlChar *name;
-    xmlChar *size;
-    xmlChar *path;
+    char *versionID;
+    char *name;
+    char *size;
+    char *path;
 } vers, *versPtr;
 
 //0000000000000000000000000000000000000000000000000000000000000000000000000000000
@@ -168,11 +170,11 @@ void print_in_middle(WINDOW *win, int starty, int startx, int width,
 
 }
 //-------------------------------------------------------------------------------
-                        
+
 
 
 void screen_size(WINDOW *win, int min_row, int min_col,int *r, int *c)
-{   
+{
     int row,col;
     getmaxyx(win,row,col);
     if ((row<min_row) || (col<min_col))
@@ -181,7 +183,7 @@ void screen_size(WINDOW *win, int min_row, int min_col,int *r, int *c)
          printf("\n\nScreen's too small..bitch!\n1-resize the screen\n2-restart the program.\n\n\n");
          exit(EXIT_SUCCESS);
      }
-    
+
      *r = row;
      *c = col;
 }
@@ -202,17 +204,17 @@ int main(int argc, char **argv)
     xmlKeepBlanksDefault(0);
 
     for (i = 1; i < argc ; i++) {
-	cur = parseGversFile(argv[i]);
-	if ( cur )
-	  for (i = 0; i < cur->nbversions; i++) printVersion(cur->versions[i]);
-	else
-	  fprintf( stderr, "Error parsing file '%s'\n", argv[i]);
-
+        cur = parseGversFile(argv[i]);
+        printf("bibik");
+        if ( cur )
+           for (i = 0; i < cur->nbversions; i++)
+               printVersion(cur->versions[i]);
+        else
+           fprintf( stderr, "Error parsing file '%s'\n", argv[i]);
     }
 
     /* Clean up everything else before quitting. */
     xmlCleanupParser();
-
 
 //******************************
     ITEM **my_items;
@@ -233,7 +235,7 @@ int main(int argc, char **argv)
     init_pair(1, COLOR_RED, COLOR_BLACK);
     init_pair(2, COLOR_CYAN, COLOR_BLACK);
     init_pair(3, COLOR_MAGENTA, COLOR_BLACK);
-    
+
     /* Öğeleri oluştur */
     n_choices = cur->nbversions;
     my_items = (ITEM **)calloc(n_choices, sizeof(ITEM *));
@@ -241,8 +243,11 @@ int main(int argc, char **argv)
 
     i=0;
 
-    for (i = 0; i < cur->nbversions; i++) 
-         my_items[i] = new_item(cur->versions[i]->name, "\t---");
+    for (i = 0; i < cur->nbversions; i++){ 
+        my_items[i] = new_item(cur->versions[i]->name, "\t---");
+        printf("%s\n",cur->versions[i]->name);
+    }
+return 0;
 
     /* Menüyü oluştur */
     my_menu = new_menu((ITEM **)my_items);
@@ -266,7 +271,7 @@ int main(int argc, char **argv)
     mvwaddch(my_menu_win, 2, 0, ACS_LTEE);
     mvwhline(my_menu_win, 2, 1, ACS_HLINE, 58);
     mvwaddch(my_menu_win, 2, 59, ACS_RTEE);
-    
+
     attron(COLOR_PAIR(3));
     mvprintw(LINES - 3, 0, "ABCDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ");
     mvprintw(LINES - 2, 0, "F1 to exit\n,  abcdefgğhıijklmeoöprsştuüvyz");
@@ -277,7 +282,6 @@ int main(int argc, char **argv)
     post_menu(my_menu);
     //wrefresh(my_menu_win);
    // refresh();
-
     while((c = wgetch(my_menu_win)) != KEY_F(1))
     {
         switch(c)
@@ -310,7 +314,7 @@ int main(int argc, char **argv)
                     item_name(current_item(my_menu)),cur->versions[i]->versionID,cur->versions[i]->size);
                     pos_menu_cursor(my_menu);
                     attroff(COLOR_PAIR(2));
-		    limit--;
+                    limit--;
                   }
                 break;
             case 10: /* Enter */

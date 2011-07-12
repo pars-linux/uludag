@@ -1,3 +1,5 @@
+//gcc `pkg-config libxml-2.0 --cflags --libs` testinglibxml.c -o test 
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -9,10 +11,10 @@
 
 
 typedef struct vers {
-    xmlChar *versionID;
-    xmlChar *name;
-    xmlChar *size;
-    xmlChar *path;
+    char *versionID;
+    char *name;
+    char *size;
+    char *path;
 } vers, *versPtr;
 
 
@@ -33,7 +35,6 @@ DEBUG("parseVersion\n");
     /* We don't care what the top level element name is */
     cur = cur->xmlChildrenNode;
     while (cur != NULL) {
-printf("bibiiiiiiiiiiiiiiiiiiik");
         if ((!xmlStrcmp(cur->name, (const xmlChar *) "Version"))) {
 	    ret->versionID = xmlGetProp(cur, (const xmlChar *) "id");
 	    if (ret->versionID == NULL) {
@@ -59,15 +60,15 @@ static void printVersion(versPtr cur) {
     int i;
 
     if (cur == NULL) return;
-   	 printf("=======  Pardus\n");
+        printf("=======  Pardus\n");
     if (cur->versionID != NULL) 
-	printf("versionID: %s\n", cur->versionID);
+        printf("versionID: %s\n", cur->versionID);
     if (cur->name != NULL) 
-	printf("name: %s\n", cur->name);
+        printf("name: %s\n", cur->name);
     if (cur->size != NULL) 
-	printf("size: %s\n", cur->size);
+        printf("size: %s\n", cur->size);
    if (cur->path != NULL) 
-	printf("path: %s\n", cur->path);
+        printf("path: %s\n", cur->path);
 
 }
 
@@ -99,33 +100,32 @@ static gVersPtr parseGversFile(char *filename) {
 
     cur = xmlDocGetRootElement(doc);
 
-   
     ret = (gVersPtr) malloc(sizeof(gVersion));
     if (ret == NULL) {
         fprintf(stderr,"out of memory\n");
-	xmlFreeDoc(doc);
-	return(NULL);
+    xmlFreeDoc(doc);
+    return(NULL);
     }
     memset(ret, 0, sizeof(gVersion));
     cur = cur->xmlChildrenNode;
     while ( cur && xmlIsBlankNode ( cur ) ) {
-	cur = cur -> next;
+    cur = cur -> next;
     }
     if ( cur == 0 ) {
-	xmlFreeDoc(doc);
-	free(ret);
-	return ( NULL );
+    xmlFreeDoc(doc);
+    free(ret);
+    return ( NULL );
     }
 
     cur = cur->xmlChildrenNode;
     while (cur != NULL) {
         if ((!xmlStrcmp(cur->name, (const xmlChar *) "Pardus")))  {
-	    curvers = parseVersion(doc , cur);
-	    if (curvers != NULL)
-	        ret->versions[ret->nbversions++] = curvers;
+        curvers = parseVersion(doc , cur);
+        if (curvers != NULL)
+            ret->versions[ret->nbversions++] = curvers;
             if (ret->nbversions >= 500) break;
-	}
-	cur = cur->next;
+    }
+    cur = cur->next;
     }
 
     return(ret);
@@ -140,13 +140,11 @@ int main(int argc, char **argv) {
     xmlKeepBlanksDefault(0);
 
     for (i = 1; i < argc ; i++) {
-	cur = parseGversFile(argv[i]);
-	printf("bibiiiiiiiiiiiiiiiiiiik");
-	if ( cur )
-	  for (i = 0; i < cur->nbversions; i++) printVersion(cur->versions[i]);
-	else
-	  fprintf( stderr, "Error parsing file '%s'\n", argv[i]);
-
+        cur = parseGversFile(argv[i]);
+        if ( cur )
+            for (i = 0; i < cur->nbversions; i++) printVersion(cur->versions[i]);
+        else
+            fprintf( stderr, "Error parsing file '%s'\n", argv[i]);
     }
 
     /* Clean up everything else before quitting. */
