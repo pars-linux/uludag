@@ -80,12 +80,11 @@ class Widget(QWidget, ScreenWidget):
         if ctx.flags.install_type == ctx.STEP_BASE:
             postInstallOperations.append(yali.postinstall.Operation(_("Setup First-Boot..."), yali.postinstall.setupFirstBoot))
 
-        if ctx.flags.install_type in [ctx.STEP_FIRST_BOOT,ctx.STEP_LIVE]:
-            postInstallOperations.append(yali.postinstall.Operation(_("Teardown First-Boot..."), yali.postinstall.teardownFirstBoot))
-
-
         if ctx.flags.install_type in [ ctx.STEP_LIVE, ctx.STEP_FIRST_BOOT, ctx.STEP_DEFAULT]:
             postInstallOperations.append(yali.postinstall.Operation(_("Adding users..."), yali.postinstall.setupUsers))
+
+        if ctx.flags.install_type in [ctx.STEP_FIRST_BOOT,ctx.STEP_LIVE]:
+            postInstallOperations.append(yali.postinstall.Operation(_("Teardown First-Boot..."), yali.postinstall.teardownFirstBoot))
 
         if (ctx.flags.install_type == ctx.STEP_BASE or ctx.flags.install_type == ctx.STEP_DEFAULT or ctx.flags.install_type == ctx.STEP_LIVE or \
             (ctx.flags.install_type == ctx.STEP_RESCUE and ctx.installData.rescueMode == ctx.RESCUE_GRUB)) and \

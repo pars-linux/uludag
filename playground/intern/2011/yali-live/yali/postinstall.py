@@ -110,13 +110,12 @@ def generateDBusMachineID():
     yali.util.chroot("/usr/bin/dbus-uuidgen --ensure")
 
 def deleteLiveUser():
-    if yali.util.check_link():
-        for user in yali.util.getUsers():
-            if user.username == "pars":
-                pars=yali.users.User("pars")
-                pars.setAutoLogin(False)
-                ctx.link.User.Manager["baselayout"].deleteUser(user.uid, True)
-                ctx.logger.debug("Live system user %s deleted" % user.username)
+    userlist = yali.util.getUsers()
+    for usr in userlist:
+        if usr.username == "pars":
+            usr.setAutoLogin(False)
+            ctx.link.User.Manager["baselayout"].deleteUser(usr.uid, False)
+            ctx.logger.debug("Live system user %s deleted" % usr.username)
 
 def setupUsers():
     if yali.util.check_link() and yali.users.PENDING_USERS:

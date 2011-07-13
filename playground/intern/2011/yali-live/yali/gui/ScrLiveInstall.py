@@ -265,7 +265,7 @@ class SystemCopy(Process):
 
         self.symlink_dirs = ["opt","lib","bin","sbin","boot","usr"]
         self.copy_dirs = ["etc","root","var"]
-        self.empty_dirs = ["mnt","sys","proc","dev","media","home","tmp"]
+        self.empty_dirs = ["mnt","sys","proc","dev","media","tmp","home"]
         self.symlink_basepath = os.readlink("/usr").replace("/usr","")
 
         ctx.logger.debug("System Copy Process started.")
@@ -340,14 +340,23 @@ class SystemCopy(Process):
         errors = []
         if not os.path.exists(dst):
             os.mkdir(dst)
+            st = os.lstat(src)
+            mode = stat.S_IMODE(st.st_mode)
+            os.chmod(dst, mode)
+
         for (path, dirs, files) in os.walk(src):
             #generate relative path from absolute path
             relativedir = os.path.relpath(path,src)
             #for every directory in source folder
             for dir in dirs:
+                newdir = os.path.join(dst,relativedir,dir)
                 #create inner directories
-                if not os.path.exists((os.path.join(dst,relativedir,dir))):
-                    os.mkdir(os.path.join(dst,relativedir,dir))
+                if not os.path.exists(newdir):
+                    os.mkdir(newdir)
+                    st = os.lstat(os.path.join(path,dir))
+                    mode = stat.S_IMODE(st.st_mode)
+                    os.chmod(newdir, mode)
+
             for file in files:
                 #copy inner files
                 srcname = os.path.join(src, path, file)
@@ -375,10 +384,6 @@ class SystemCopy(Process):
                             self.currentbytes -= self.cursorlimit
                     #set chown
                     os.lchown(dstname, st.st_uid, st.st_gid)
-                    print dstname
-                    print mode
-                    print st.st_uid
-                    print "------"
                     #set chmod
                     if not os.path.islink(srcname):
                         os.chmod(dstname, mode)
