@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="dvd" compression="lzo">
-    <Title>Pardus 2011.1 Dama Dama (x86_64)</Title>
+    <Title>Pardus 2011.1 Dama dama (x86_64)</Title>
     <WorkDir>/tmp/pardusman-workdir/64</WorkDir>
     <ReleaseFiles>/home/gokcen/distribution/2011/media-content</ReleaseFiles>
     <ExtraParameters></ExtraParameters>
