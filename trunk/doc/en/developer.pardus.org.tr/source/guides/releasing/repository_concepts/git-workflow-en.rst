@@ -4,13 +4,13 @@ Git Workflow
 Basic principles
 ----------------
 
-*Master is always ready to release*
+Master is always ready to release
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The master branch is the central branch of completed features and improvements.
 It is the origin for development branches as well as release branches. Code in
 master is supposed to be done, tested, and ready for being branched for a
-release. In theory a distribution should be able to take a snapshot of master,
-go through their QA procedures, and then give stable packages to end users.
+release.
 
 All non-trivial commits should be first done in feature branches, being tested
 and reviewed, and only then merged to master, when they are done and stable.
@@ -18,7 +18,8 @@ and reviewed, and only then merged to master, when they are done and stable.
 Master is never frozen for new features or string changes. These freezes happen
 in release branches.
 
-*Development happens in feature branches*
+Development happens in feature branches
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Development of features and bug fixes, which require a significant amount of
 code changes, happens in feature branches. These branches are branched off
@@ -26,7 +27,8 @@ master. Developers are free to handle these branches according to their own
 needs, but when they are merged into master they need to be done, tested and
 reviewed.
 
-*Feature branches are tested and reviewed before being merged to master*
+Feature branches are tested and reviewed before being merged to master
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When feature branches are merged into master, they need to be done, tested, and
 reviewed. The level of review depends on the policies of the module, and the
@@ -40,7 +42,8 @@ facilitate this testing the use of integration branches is recommended, which
 collect changes from feature branches and make them available to a wider
 audience.
 
-*Integration branches are used for wider testing of feature branches*
+Integration branches are used for wider testing of feature branches
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To make the development happening in individual feature branches available to a
 wider audience, the use of integration branches is recommended. Integration
@@ -59,7 +62,8 @@ Integration branches are not merged into master. Rather, the branches that were
 merged into these integration branches are merged directly into master after
 going through any integration and testing.
 
-*Release branches*
+Release branches
+^^^^^^^^^^^^^^^^
 
 Release branches are branched off master for doing releases. The branch is made
 when the release goes into feature and string freeze. No feature development
@@ -71,7 +75,8 @@ Fixes going into the release branches are done in the release branch and then
 merged to master, so master keeps getting all fixes made in release branches,
 which apply to master.
 
-*Local branches are always rebased, remote branches never*
+Local branches are always rebased, remote branches never
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When developing in a local branch, changes should always be rebased before
 pushing them to the remote origin. This keeps a simple linear history. Rebasing
@@ -88,20 +93,36 @@ in a side line.
 Social Workflow
 ---------------
 
-After a developer completed the issue that assinged to him/herself, he/she
-uploads the patch into the issue tracking system. Supervisor of project and
-developers that have right to review, investigate the codes. If they accept the
-solution, *the project leader* applies the patch.
+Contribute for an existed issue
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The contributor that wants to develop a git project, may take on an issue. For
-using efficient time and labor, he or she should send an e-mail to mail list
-that planning to create for each project to inform project members. After the
-contributor completed an issue, he/she should start the review process with
-either issue tracking system or dedicated mail list. If the solutions is
-approved, *the project leader* includes the patch into project.
+If a contributor completed an existed issue or want to change or improve a part of
+the issue, he/she uploads the patch to related issue that is already open on the
+issue tracking system. Supervisor of project and developers that have rights to
+review, revise the codes. If they accept the solution, *the project leader* applies
+the patch.
 
-The contributor wants to add new feature that is not stated on issue tracking
-system. In fact, he or she claims hir or her desire should be a project
-requirement. The demant is discussed on project mail list. If project leader
-agreed to do this demand, new issue would be create on tracker.pardus.org.tr
-and assigne to concerned person.
+Contribute Pardus with a New Project
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The contributor that wants to develop a new project, for using efficient time
+and labor, he or she should send an e-mail to developer_ or gelistirici_
+mail list to inform other contributors. 
+
+After the contributor completed an issue or the project, request a review and
+the releated *team leader* starts the review process on either issue tracking
+system or dedicated mail list. If the solutions is approved, *the team leader*
+send a request to *release team* in order to include the project to official
+Pardus releases.
+
+Contribute for a new feature (for a new issue)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The contributor wants to add a new feature that is not stated on issue tracking
+system and he or she wants to see it as a project requirement. This request is
+discussed on project mail list. If *project leader* agreed to do this demand,
+new issue would be create on issue tracking system and the issuee is assigned
+to the contributor.
+
+.. _gelistirici: http://lists.pardus.org.tr/mailman/listinfo/gelistirici
+.. _developer: http://lists.pardus.org.tr/mailman/listinfo/pardus-devel
