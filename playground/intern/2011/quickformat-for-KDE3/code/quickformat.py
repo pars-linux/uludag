@@ -69,9 +69,6 @@ class QuickFormat(QtGui.QWidget):
         # Initial selection is the first partition found (see next comment)
         self.initial_selection = 0
 
-        # If a partition path is given as argument, intial selection becomes the parition given
-        #self.__process_args__()
-
         # Connect Qt Signals
         self.__init_signals__()
 
@@ -115,12 +112,6 @@ class QuickFormat(QtGui.QWidget):
         self.ui.listWidget = QtGui.QListWidget(self)
         self.ui.volumeName.setModel(self.ui.listWidget.model())
         self.ui.volumeName.setView(self.ui.listWidget)
-
-    def __process_args__(self):
-        self.volumePathArg = ""
-        if len(self.__sysargs) == 2:
-            if not self.__sysargs[1].startswith("-"):
-                self.volumePathArg = self.__sysargs[1]
 
     def __init_signals__(self):
         self.connect(self.ui.volumeName, SIGNAL("activated(int)"), self.set_info)
@@ -187,7 +178,7 @@ class QuickFormat(QtGui.QWidget):
 
     def format_device(self):
         """ Starts the formatting operation """
-        
+
         # Shows a message for confirm format
         if self.format_confirm_message() == ACCEPT:
             selected_file_system = FILE_SYSTEMS[str(self.ui.fileSystem.currentText())]
@@ -309,9 +300,6 @@ class QuickFormat(QtGui.QWidget):
 
         item.setSizeHint(QSize(200,70))
 
-        #if volume.path == self.volumePathArg:
-        #    self.initial_selection = self.ui.listWidget.count() - 1
-
 if __name__ == "__main__":
     args = []
     if len(sys.argv) >= 2:
@@ -327,8 +315,6 @@ if __name__ == "__main__":
         DBusQtMainLoop(set_as_default = True)
 
     quick_format = QuickFormat()
-
-    #KCmdLineArgs.init(sys.argv, aboutData)
 
     quick_format.show()
 
