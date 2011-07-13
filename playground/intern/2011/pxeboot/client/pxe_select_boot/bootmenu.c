@@ -242,10 +242,10 @@ int main(int argc, char **argv)
     /* İtemleri oluştur********************************************************************/
     for (i = 0; i < cur->nbversions; i++){
         my_items[i] = new_item(cur->versions[i]->name, "---");
-        printf("**%s**\n", &my_items[i]);
+        printf("**%s**\n",my_items[i]);
         printf("**%s**\n",cur->versions[i]->name);
     }
-return 0;
+//return 0;
     /* Menüyü oluştur */
     my_menu = new_menu((ITEM **)my_items);
 
