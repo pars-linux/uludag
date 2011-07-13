@@ -241,7 +241,7 @@ int main(int argc, char **argv)
 
     /* İtemleri oluştur*/
     for (i = 0; i < cur->nbversions; i++){
-        my_items[i] = new_item(cur->versions[i]->name, "                          -----");
+        my_items[i] = new_item(cur->versions[i]->name, "      -----");
     }
     /* Menüyü oluştur */
     my_menu = new_menu((ITEM **)my_items);
