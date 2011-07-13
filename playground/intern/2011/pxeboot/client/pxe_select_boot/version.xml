@@ -29,35 +29,35 @@
 	    <Size>1234123</Size>
 	    <Path>home</Path>
     </Pardus>
-    
+
     <Pardus>
 	    <Version id="6"/>
 	    <Name>Pardus 2008.2 Canis aureus</Name>
 	    <Size>1234123</Size>
 	    <Path>home</Path>
     </Pardus>
-    
+
     <Pardus>
 	    <Version id="7"/>
 	    <Name>Pardus 2011 Kurumsal 2</Name>
 	    <Size>141321</Size>
 	    <Path>home</Path>
     </Pardus>
-    
+
     <Pardus>
 	    <Version id="8"/>
 	    <Name>Pardus 2008</Name>
 	    <Size>1234123</Size>
 	    <Path>home</Path>
     </Pardus>
-    
+
     <Pardus>
 	    <Version id="9"/>
 	    <Name>Pardus 2008.2</Name>
 	    <Size>1234123</Size>
 	    <Path>home</Path>
     </Pardus>
-    
+
   </ISO9660>
 </Helping>
 
