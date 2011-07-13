@@ -1,5 +1,5 @@
 [Desktop Entry]
-Exec=xdg-su -c 'dbus-launch --exit-with-session /usr/bin/quickformat'
+Exec=kdesu --ignorenobutton -c 'dbus-launch --exit-with-session /usr/bin/quickformat'
 Icon=draw-eraser-icon
 Type=Application
 Categories=Qt;KDE;System;
