@@ -36,7 +36,7 @@ PROJECT = about.appName
 
 def tr2i18n(filename):
     """Converts QT's translate methods with gettext's i18n method which
-    declared in I18N.py module"""
+    declared in i18n.py module"""
 
     template = '%s.set%s(i18n("%s"))'
     old_file = open(filename)
