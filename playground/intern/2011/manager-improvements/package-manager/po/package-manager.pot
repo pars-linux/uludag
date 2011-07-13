@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-10 17:26+0200\n"
+"POT-Creation-Date: 2011-07-13 11:27+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -84,18 +84,18 @@ msgstr ""
 msgid "Critical Packages"
 msgstr ""
 
-#: src/basketdialog.py:208 src/pmwindow.py:134
+#: src/basketdialog.py:208 src/pmwindow.py:135
 msgid ""
 "Selected packages are already installed.<br>If you continue, the packages "
 "will be reinstalled"
 msgstr ""
 
-#: src/basketdialog.py:210 src/pmwindow.py:136
+#: src/basketdialog.py:210 src/pmwindow.py:137
 msgid "Already Installed Packages"
 msgstr ""
 
-#: src/basketdialog.py:211 src/mainwindow.py:142 src/mainwindow.py:144
-#: src/pmwindow.py:137
+#: src/basketdialog.py:211 src/mainwindow.py:146 src/mainwindow.py:148
+#: src/pmwindow.py:138
 msgid "Installed Packages"
 msgstr ""
 
@@ -119,51 +119,55 @@ msgstr ""
 msgid "No results found."
 msgstr ""
 
-#: src/mainwidget.py:388
+#: src/mainwidget.py:386
 msgid "Select packages"
 msgstr ""
 
-#: src/mainwidget.py:389
+#: src/mainwidget.py:387
 msgid "You must select at least one installed package"
 msgstr ""
 
-#: src/mainwidget.py:401
+#: src/mainwidget.py:399
 msgid "All Updates"
 msgstr ""
 
-#: src/mainwidget.py:402
+#: src/mainwidget.py:400
 msgid "Security Updates"
 msgstr ""
 
-#: src/mainwidget.py:403
+#: src/mainwidget.py:401
 msgid "Critical Updates"
 msgstr ""
 
-#: src/mainwindow.py:134 src/mainwindow.py:136
+#: src/mainwindow.py:138 src/mainwindow.py:140
 msgid "All Packages"
 msgstr ""
 
-#: src/mainwindow.py:138 src/mainwindow.py:140
+#: src/mainwindow.py:142 src/mainwindow.py:144
 msgid "Installable Packages"
 msgstr ""
 
-#: src/mainwindow.py:146 src/mainwindow.py:148 src/tray.py:197
+#: src/mainwindow.py:150 src/mainwindow.py:152 src/tray.py:197
 msgid "Updates"
 msgstr ""
 
-#: src/mainwindow.py:150 ui/ui_mainwidget_v3.py:167
+#: src/mainwindow.py:154 ui/ui_mainwidget_v3.py:167
 msgid "Settings"
 msgstr ""
 
-#: src/mainwindow.py:153 src/tray.py:193
+#: src/mainwindow.py:157
+msgid "Help"
+msgstr ""
+
+#: src/mainwindow.py:161 src/tray.py:193
 msgid "Quit"
 msgstr ""
 
-#: src/mainwindow.py:182
+#: src/mainwindow.py:191
 msgid "Calculating dependencies..."
 msgstr ""
 
-#: src/mainwindow.py:186
+#: src/mainwindow.py:210
 msgid "Currently your basket is empty."
 msgstr ""
 
@@ -217,6 +221,10 @@ msgstr ""
 
 #: src/packagedelegate.py:101
 msgid "Installed Version:"
+msgstr ""
+
+#: src/packagedelegate.py:311
+msgid "Unknown"
 msgstr ""
 
 #: src/packagedelegate.py:338

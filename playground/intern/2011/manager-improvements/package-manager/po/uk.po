@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-10 17:26+0200\n"
+"POT-Creation-Date: 2011-07-13 11:27+0300\n"
 "PO-Revision-Date: 2011-01-25 19:15+0300\n"
 "Last-Translator: Korostil Daniel <ted.korostiled@gmail.com>\n"
 "Language-Team: translation@linux.org.ua\n"
@@ -81,16 +81,16 @@ msgstr "Попередження"
 msgid "Critical Packages"
 msgstr "Критичні пакунки"
 
-#: src/basketdialog.py:208 src/pmwindow.py:134
+#: src/basketdialog.py:208 src/pmwindow.py:135
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
 msgstr "Вибрані пакунки встановлено.<br>Якщо продовжите, пакунки буде перевстановлено"
 
-#: src/basketdialog.py:210 src/pmwindow.py:136
+#: src/basketdialog.py:210 src/pmwindow.py:137
 msgid "Already Installed Packages"
 msgstr "Уже встановлені пакунки"
 
-#: src/basketdialog.py:211 src/mainwindow.py:142 src/mainwindow.py:144
-#: src/pmwindow.py:137
+#: src/basketdialog.py:211 src/mainwindow.py:146 src/mainwindow.py:148
+#: src/pmwindow.py:138
 msgid "Installed Packages"
 msgstr "Установлені пакунки"
 
@@ -114,52 +114,57 @@ msgstr "Пошук…"
 msgid "No results found."
 msgstr "Нічого не знайдено."
 
-#: src/mainwidget.py:388
+#: src/mainwidget.py:386
 #, fuzzy
 msgid "Select packages"
 msgstr "Усі пакунки"
 
-#: src/mainwidget.py:389
+#: src/mainwidget.py:387
 msgid "You must select at least one installed package"
 msgstr ""
 
-#: src/mainwidget.py:401
+#: src/mainwidget.py:399
 msgid "All Updates"
 msgstr "Усі оновлення"
 
-#: src/mainwidget.py:402
+#: src/mainwidget.py:400
 msgid "Security Updates"
 msgstr "Оновлення безпеки"
 
-#: src/mainwidget.py:403
+#: src/mainwidget.py:401
 msgid "Critical Updates"
 msgstr "Критичні оновлення"
 
-#: src/mainwindow.py:134 src/mainwindow.py:136
+#: src/mainwindow.py:138 src/mainwindow.py:140
 msgid "All Packages"
 msgstr "Усі пакунки"
 
-#: src/mainwindow.py:138 src/mainwindow.py:140
+#: src/mainwindow.py:142 src/mainwindow.py:144
 msgid "Installable Packages"
 msgstr "Установчі пакунки"
 
-#: src/mainwindow.py:146 src/mainwindow.py:148 src/tray.py:197
+#: src/mainwindow.py:150 src/mainwindow.py:152 src/tray.py:197
 msgid "Updates"
 msgstr "Оновлення"
 
-#: src/mainwindow.py:150 ui/ui_mainwidget_v3.py:167
+#: src/mainwindow.py:154 ui/ui_mainwidget_v3.py:167
 msgid "Settings"
 msgstr "Налаштування"
 
-#: src/mainwindow.py:153 src/tray.py:193
+#: src/mainwindow.py:157
+#, fuzzy
+msgid "Help"
+msgstr "&Довідка"
+
+#: src/mainwindow.py:161 src/tray.py:193
 msgid "Quit"
 msgstr ""
 
-#: src/mainwindow.py:182
+#: src/mainwindow.py:191
 msgid "Calculating dependencies..."
 msgstr "Розрахунок залежностей…"
 
-#: src/mainwindow.py:186
+#: src/mainwindow.py:210
 msgid "Currently your basket is empty."
 msgstr "Натепер ваш кшик порожній."
 
@@ -214,6 +219,10 @@ msgstr "Розмір пакунка:"
 #: src/packagedelegate.py:101
 msgid "Installed Version:"
 msgstr "Версія встановленої:"
+
+#: src/packagedelegate.py:311
+msgid "Unknown"
+msgstr ""
 
 #: src/packagedelegate.py:338
 msgid "Details"
@@ -807,52 +816,52 @@ msgstr ""
 msgid "Package Details"
 msgstr "Подробиці про пакунок"
 
-#~ msgid "No proxy server"
-#~ msgstr "Без проксі-сервера"
+#~ msgid "(c) 2009-2010 TUBITAK/UEKAE"
+#~ msgstr "© 2009–2010 TUBITAK/UEKAE"
 
-#~ msgid "Use manual settings"
-#~ msgstr "Використовувати ручні налаштування"
+#~ msgid "Gökmen Göksel"
+#~ msgstr "Gökmen Göksel"
 
-#~ msgid "Use Desktop Enviorenment's settings"
-#~ msgstr "Використовувати стільничні налаштування"
+#~ msgid "Developer"
+#~ msgstr "Розробник"
 
-#~ msgid "Type to filter files"
-#~ msgstr "Уведіть для фільтрування файлів"
+#~ msgid "Faik Uygur"
+#~ msgstr "Faik Uygur"
 
-#~ msgid "Search Bar"
-#~ msgstr "Панель пошуку"
-
-#~ msgid "Ignore"
-#~ msgstr "Ігнорувати"
-
-#~ msgid "Show Updates"
-#~ msgstr "Показати оновлення"
-
-#~ msgid "Hide summary screen"
-#~ msgstr "Сховати екран підсумків"
-
-#~ msgid "Show main window"
-#~ msgstr "Показати головне вікно"
-
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "ted.korostiled@gmail.com"
+#~ msgid "First Author"
+#~ msgstr "Засновник"
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"
 #~ msgstr "Daniel Korostil"
 
-#~ msgid "First Author"
-#~ msgstr "Засновник"
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "ted.korostiled@gmail.com"
 
-#~ msgid "Faik Uygur"
-#~ msgstr "Faik Uygur"
+#~ msgid "Show main window"
+#~ msgstr "Показати головне вікно"
 
-#~ msgid "Developer"
-#~ msgstr "Розробник"
+#~ msgid "Hide summary screen"
+#~ msgstr "Сховати екран підсумків"
 
-#~ msgid "Gökmen Göksel"
-#~ msgstr "Gökmen Göksel"
+#~ msgid "Show Updates"
+#~ msgstr "Показати оновлення"
 
-#~ msgid "(c) 2009-2010 TUBITAK/UEKAE"
-#~ msgstr "© 2009–2010 TUBITAK/UEKAE"
+#~ msgid "Ignore"
+#~ msgstr "Ігнорувати"
+
+#~ msgid "Search Bar"
+#~ msgstr "Панель пошуку"
+
+#~ msgid "Type to filter files"
+#~ msgstr "Уведіть для фільтрування файлів"
+
+#~ msgid "Use Desktop Enviorenment's settings"
+#~ msgstr "Використовувати стільничні налаштування"
+
+#~ msgid "Use manual settings"
+#~ msgstr "Використовувати ручні налаштування"
+
+#~ msgid "No proxy server"
+#~ msgstr "Без проксі-сервера"
