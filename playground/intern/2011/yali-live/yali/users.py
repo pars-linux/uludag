@@ -73,7 +73,7 @@ class User:
         conf = ""
         if ctx.flags.install_type == ctx.STEP_FIRST_BOOT:
             conf = os.path.join(ctx.consts.root_dir, 'etc/X11/kdm/kdmrc')
-        elif ctx.flags.install_type == ctx.STEP_DEFAULT:
+        elif ctx.flags.install_type in [ctx.STEP_DEFAULT, ctx.STEP_LIVE]:
             conf = os.path.join(ctx.consts.target_dir, 'etc/X11/kdm/kdmrc')
 
         if not os.path.exists(conf):

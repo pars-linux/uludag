@@ -353,9 +353,6 @@ class SystemCopy(Process):
                 srcname = os.path.join(src, path, file)
                 dstname = os.path.join(dst,relativedir, file)
                 #debug
-                print srcname
-                print dstname
-                print "---"
                 st = os.lstat(srcname)
                 mode = stat.S_IMODE(st.st_mode)
                 try:
@@ -378,6 +375,10 @@ class SystemCopy(Process):
                             self.currentbytes -= self.cursorlimit
                     #set chown
                     os.lchown(dstname, st.st_uid, st.st_gid)
+                    print dstname
+                    print mode
+                    print st.st_uid
+                    print "------"
                     #set chmod
                     if not os.path.islink(srcname):
                         os.chmod(dstname, mode)

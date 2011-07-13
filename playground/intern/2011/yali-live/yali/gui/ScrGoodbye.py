@@ -61,22 +61,9 @@ class Widget(QWidget, ScreenWidget):
     def runOperations(self):
         postInstallOperations = []
         if ctx.flags.install_type == ctx.STEP_LIVE:
-            ctx.logger.debug("Generating dbus machine-id")
-            if os.path.exists(os.path.join(ctx.consts.target_dir,"var/lib/dbus/machine-id")):
-                os.remove(os.path.join(ctx.consts.target_dir,"var/lib/dbus/machine-id"))
-            yali.util.chroot("/usr/bin/dbus-uuidgen --ensure")
-            # run dbus in chroot
-            yali.util.start_dbus()
-            #Remove Autologin for default Live user pars
-            pars=yali.users.User("pars")
-            pars.setAutoLogin(False)
-            print "pars autologin removed"
-            yali.util.chroot("mkinitramfs -o /boot -r /")
-            yali.util.sync()
-            if os.path.exists(os.path.join(ctx.consts.target_dir,"boot","initramfs%s"%os.uname()[2])):
-                print "mkinitramfs created"
-            else:
-                print "failed"
+            postInstallOperations.append(yali.postinstall.Operation(_("Generating D-Bus Machine ID..."), yali.postinstall.generateDBusMachineID))
+            postInstallOperations.append(yali.postinstall.Operation(_("Deleting Live User..."), yali.postinstall.deleteLiveUser))
+            postInstallOperations.append(yali.postinstall.Operation(_("Making Initramfs..."), yali.postinstall.makeInitramfs))
 
         if not (ctx.flags.install_type == ctx.STEP_RESCUE or ctx.flags.install_type == ctx.STEP_FIRST_BOOT):
             postInstallOperations.append(yali.postinstall.Operation(_("Setting timezone..."), yali.postinstall.setupTimeZone))
