@@ -266,6 +266,9 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
             self.__remove_action = menu.addAction(self.state.getActionIcon(self.state.REMOVE),
                                                   self.state.getActionName(self.state.REMOVE),
                                                   self.showBasket)
+            self.__check_action = menu.addAction(self.state.getActionIcon(self.state.REMOVE),
+                                                 self.state.getActionName(self.state.CHECK),
+                                                 self.showBasket)
             self.actionButton.setMenu(menu)
         else:
             self.actionButton.setMenu(None)
