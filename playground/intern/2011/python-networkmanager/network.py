@@ -15,8 +15,8 @@
 import sys
 import uuid
 from optparse import OptionParser
-
-from networkmanager import NetworkManager, WiredSettings, WirelessSettings,WPAWirelessSettings,WEP40128WirelessSettings,WEP128WirelessSettings, DeviceType, DeviceState
+from networkmanager import mobile
+from networkmanager import NetworkManager, WiredSettings, WirelessSettings,WPAWirelessSettings,WEP40128WirelessSettings,WEP128WirelessSettings, DeviceType, DeviceState,GsmSettings
 
 # Color characters
 COLORS = {
@@ -337,7 +337,6 @@ def get_password(stype):
         if is_pass_valid(passw,stype):
             valid=True
     return passw
-        
 
 def is_hex(passw):
     import string
@@ -499,6 +498,52 @@ def wep_security_config(settings):
         settings._settings["802-11-wireless-security"][dbus.String("wep-tx-keyidx")]=inf["wep-key"]
     return settings
 
+def create_gsm_connection(nm_handle,_device):
+    import dbus
+    settings=GsmSettings()
+    cncode=get_input("Country")
+    country=mobile.get_country(cncode)
+    providers=mobile.get_providers(country)
+    providers_names=mobile.get_providers_names(providers)
+    index_=1
+    for name in providers_names:
+        print index_ , name
+        index_+=1
+    procode=get_number("Provider",1,len(providers))
+    gsm=mobile.get_providers_gsm(providers[int(procode)-1])
+    apns=mobile.get_gsm_apn(gsm)
+    apns_values=mobile.get_apns_values(apns)
+    index_=1
+    for value in apns_values:
+        print index_ , value
+        index_+=1
+    apncode=get_number("Apn",1,len(apns_values))
+    settings.uuid=uuid.uuid4()
+    settings.device=_device
+    settings._settings["connection"][dbus.String("autoconnecti")]="false"
+    settings._settings["gsm"][dbus.String("apn")]=apns_values[apncode-1]
+
+    usrpss=mobile.get_user_name_pass(apns[apncode-1])
+    if usrpss[0]!=None:
+        settings._settings["gsm"][dbus.String("username")]=usrpss[0]
+    if usrpss[1]!=None:
+        settings._settings["gsm"][dbus.String("password")]=usrpss[1]
+
+    connection_id = None
+    print
+    while not connection_id:
+        connection_id = get_input("Profile name").strip()
+        if nm_handle.get_connections_by_id(connection_id) is not None:
+            print "There is already a connection named '%s'" % connection_id
+            print
+            connection_id = None
+
+    settings.id = connection_id
+
+    nm_handle.add_connection(settings)
+
+def create_cdma_connection(nm_hadle,_device):
+    pass
 
 def create_wireless_connection(nm_handle, _device):
     """Create a wireless connection."""
@@ -553,6 +598,8 @@ def create_connection(nm_handle):
     functions = {
             DeviceType.ETHERNET : create_ethernet_connection,
             DeviceType.WIFI : create_wireless_connection,
+            DeviceType.CDMA : create_cdma_connection,
+            DeviceType.GSM : create_gsm_connection,
             }
 
     if len(nm_handle.devices) == 0:
@@ -581,6 +628,8 @@ def get_device(nm_handle, device_list = None, type = None, mustSelect = True):
     types = {
                     '802-11-wireless'   : DeviceType.WIFI,
                     '802-3-ethernet'    : DeviceType.ETHERNET,
+                    'cdma'              : DeviceType.CDMA,
+                    'gsm'               : DeviceType.GSM,
         }
     if device_list is None:
         if type is None:
@@ -606,8 +655,8 @@ def get_device_by_mac(nm_handle, mac_address, type = None):
     types = {
                     '802-11-wireless'   : DeviceType.WIFI,
                     '802-3-ethernet'    : DeviceType.ETHERNET,
-#                    'cdma'              : [],
-#                    'gsm'               : [],
+                    'cdma'              : [],
+                    'gsm'               : [],
 #                    'unknown'           : [],
                 }
     devices = None

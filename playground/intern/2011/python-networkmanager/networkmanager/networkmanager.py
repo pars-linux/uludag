@@ -229,6 +229,7 @@ class Device(object):
             DeviceType.ETHERNET : DeviceWired,
             DeviceType.WIFI     : DeviceWireless,
             DeviceType.CDMA     : DeviceCdma,
+            DeviceType.GSM      : DeviceGsm,
         }
         device = bus.get_object(NM_NAME, path)
         _type = DeviceType.from_value(device.Get(NM_DEVICE, 'DeviceType'))
@@ -377,6 +378,25 @@ class DeviceCdma(Device):
     @property
     def password(self):
         return self._proxy_get("Password")
+
+class DeviceGsm(Device):
+    _NM_INTERFACE = NM_DEVICE_CDMA
+
+    def __init__(self,bus,object_path):
+        Device.__init__(self,bus,object_path)
+
+    @property
+    def number(self):
+        return self._proxy_get("Number")
+
+    @property
+    def username(self):
+        return self._proxy_get("Username")
+
+    @property
+    def password(self):
+        return self._proxy_get("Password")
+
 
 class IP4Config(object):
     def __init__(self, bus, path):
@@ -636,9 +656,9 @@ class NetworkManager(object):
         types = {
                         '802-11-wireless'   : DeviceType.WIFI,
                         '802-3-ethernet'    : DeviceType.ETHERNET,
-                    #   'cdma'              : [],
-                    #   'gsm'               : [],
-                    #   'unknown'           : [],
+                        'cdma'              : DeviceType.CDMA,
+                        'gsm'               : DeviceType.GSM,
+                        #'unknown'           : [],
                 }
 
         # Try to find proper device object for given interface
@@ -896,6 +916,26 @@ _default_settings_cdma = dbus.Dictionary({
     }),
 })
 
+
+_default_settings_gsm= dbus.Dictionary({
+    'connection':dbus.Dictionary({
+        'type': 'gsm'
+    }),
+    'gsm' : dbus.Dictionary({
+        'number' : '*99#'
+    }),
+    'ipv4' : dbus.Dictionary({
+        'method' : 'auto'
+    }),
+    'ppp':dbus.Dictionary({}),
+    'serial' :dbus.Dictionary({
+        'baud' : dbus.UInt32(115200L,variant_level=1)
+    }),
+
+})
+
+
+
 def Settings(settings):
     # TODO: Refactor into a class like Device
     try:
@@ -915,6 +955,10 @@ def Settings(settings):
         settings = CdmaSettings(settings)
         if settings.id is None:
             settings.id = 'CDMA Connection'
+    elif conn_type == 'gsm':
+        settings =GsmSettings(settings)
+        if settings.id is None:
+            settings.id = 'GSM Connection'
     else:
         #raise UnsupportedConnectionType("Unknown connection type: '%s'" % conn_type)
         settings = BaseSettings(settings)
@@ -1199,3 +1243,9 @@ class CdmaSettings(BaseSettings):
     def __init__(self, properties=_default_settings_cdma):
         super(CdmaSettings, self).__init__(properties)
 
+class GsmSettings(BaseSettings):
+    def __repr__(self):
+        return "<GsmSettings (%s)>" % ("DHCP" if self.auto else "Static")
+
+    def __init__(self, properties=_default_settings_gsm):
+        super(GsmSettings,self).__init__(properties)
