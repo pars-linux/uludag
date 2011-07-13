@@ -501,21 +501,24 @@ def wep_security_config(settings):
 def create_gsm_connection(nm_handle,_device):
     import dbus
     settings=GsmSettings()
+    print colorize("Select country:","yellow")
     cncode=get_input("Country")
     country=mobile.get_country(cncode)
     providers=mobile.get_providers(country)
     providers_names=mobile.get_providers_names(providers)
+    print colorize("Select provider:","yellow")
     index_=1
     for name in providers_names:
-        print index_ , name
+        print "  [%d] %s"% (index_ , name)
         index_+=1
     procode=get_number("Provider",1,len(providers))
     gsm=mobile.get_providers_gsm(providers[int(procode)-1])
     apns=mobile.get_gsm_apn(gsm)
     apns_values=mobile.get_apns_values(apns)
+    print colorize("Select apn:","yellow")
     index_=1
     for value in apns_values:
-        print index_ , value
+        print "  [%d] %s" % (index_ , value)
         index_+=1
     apncode=get_number("Apn",1,len(apns_values))
     settings.uuid=uuid.uuid4()
@@ -855,7 +858,7 @@ def traffic_monitor(interface):
         x = line.split()
         rec = int(x[0])
         tra = int(x[8])
-    print colorize("Received MB","red") , "%.1f" % (float(rec)/(1024*1024)) , colorize("Sent MB","blue") , "%.1f" % (float(tra)/(1024*1024))
+    print "\t" , colorize("Received MB","red") , "%.1f" % (float(rec)/(1024*1024)) , colorize("Sent MB","blue") , "%.1f" % (float(tra)/(1024*1024))
 
 def get_connection_by_id(nm,id):
     for active in nm.active_connections:
