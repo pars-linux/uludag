@@ -62,7 +62,6 @@ def initbaselayout():
 
     yali.util.touch("var/run/utmp", 0664)
     yali.util.chgrp("var/run/utmp", "utmp")
-
     yali.util.touch("var/log/wtmp", 0664)
     yali.util.chgrp("var/log/wtmp", "utmp")
 
@@ -95,15 +94,35 @@ def setHostName():
         ctx.logger.debug("Setting hostname execution failed.")
         return False
 
+def makeInitramfs()
+    ctx.logger.debug("mkinitramfs running")
+    yali.util.chroot("mkinitramfs -o /boot -r /")
+    yali.util.sync()
+    if os.path.exists(os.path.join(ctx.consts.target_dir,"boot","initramfs%s"%os.uname()[2])):
+        print "mkinitramfs created"
+    else:
+        print "failed"
+
+def generateDBusMachineID()
+    ctx.logger.debug("Generating dbus machine-id")
+    if os.path.exists(os.path.join(ctx.consts.target_dir,"var/lib/dbus/machine-id")):
+        os.remove(os.path.join(ctx.consts.target_dir,"var/lib/dbus/machine-id"))
+    yali.util.chroot("/usr/bin/dbus-uuidgen --ensure")
+
+def deleteLiveUser():
+    if yali.util.check_link():
+        for user in yali.util.getUsers():
+            if user.username == "pars":
+                pars=yali.users.User("pars")
+                pars.setAutoLogin(False)
+                ctx.link.User.Manager["baselayout"].deleteUser(user.uid, True)
+                ctx.logger.debug("Live system user %s deleted" % user.username)
+
 def setupUsers():
     if yali.util.check_link() and yali.users.PENDING_USERS:
         for user in yali.users.PENDING_USERS:
             ctx.logger.info("User %s adding to system" % user.username)
             try:
-                liveUsers = yali.util.getUsers()
-                for user in liveUsers:
-                    if user.username == "pars":
-                        ctx.link.User.Manager["baselayout"].deleteUser(user.uid, True)
                 user_id = ctx.link.User.Manager["baselayout"].addUser(user.uid, user.username, user.realname, "", "",
                                                                       unicode(user.passwd), user.groups, [], [])
             except dbus.DBusException:
