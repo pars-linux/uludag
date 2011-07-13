@@ -203,15 +203,15 @@ int main(int argc, char **argv)
     LIBXML_TEST_VERSION
     xmlKeepBlanksDefault(0);
 
-    for (i = 1; i < argc ; i++) {
-        cur = parseGversFile(argv[i]);
+    cur = parseGversFile(argv[1]);
+/*    for (i = 1; i < argc ; i++) {
         if ( cur )
            for (i = 0; i < cur->nbversions; i++)
                printVersion(cur->versions[i]);
         else
            fprintf( stderr, "Error parsing file '%s'\n", argv[i]);
     }
-
+*/
     /* Clean up everything else before quitting. */
     xmlCleanupParser();
 
