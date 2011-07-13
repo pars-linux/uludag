@@ -1,5 +1,3 @@
-#ifndef ISO_TO_XML.PY
-#define ISO_TO_XML.PY
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
@@ -176,4 +174,3 @@ for files_name in filelist:
 xmlfile = open("ISO Files.xml","w")
 xmlfile.write(treeString)
 xmlfile.close()
-#endif // ISO_TO_XML.PY
