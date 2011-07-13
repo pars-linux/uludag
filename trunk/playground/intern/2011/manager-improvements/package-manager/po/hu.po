@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-10 17:26+0200\n"
+"POT-Creation-Date: 2011-07-13 11:27+0300\n"
 "PO-Revision-Date: 2011-01-11 20:51+0100\n"
 "Last-Translator: Attila Siposs <sipiatti@gmail.com>\n"
 "Language-Team: Hungarian <pardus-translators@pardus.org.tr>\n"
@@ -81,16 +81,16 @@ msgstr "Figyelem"
 msgid "Critical Packages"
 msgstr "Kritikus csomagok"
 
-#: src/basketdialog.py:208 src/pmwindow.py:134
+#: src/basketdialog.py:208 src/pmwindow.py:135
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
 msgstr "A kiválasztott csomagok már telepítve vannak.<br>Ha folytatja, a csomagok újratelepítésre kerülnek"
 
-#: src/basketdialog.py:210 src/pmwindow.py:136
+#: src/basketdialog.py:210 src/pmwindow.py:137
 msgid "Already Installed Packages"
 msgstr "Már telepített csomagok"
 
-#: src/basketdialog.py:211 src/mainwindow.py:142 src/mainwindow.py:144
-#: src/pmwindow.py:137
+#: src/basketdialog.py:211 src/mainwindow.py:146 src/mainwindow.py:148
+#: src/pmwindow.py:138
 msgid "Installed Packages"
 msgstr "Telepített csomagok"
 
@@ -114,52 +114,56 @@ msgstr "Keresés..."
 msgid "No results found."
 msgstr "Nincs találat"
 
-#: src/mainwidget.py:388
+#: src/mainwidget.py:386
 #, fuzzy
 msgid "Select packages"
 msgstr "Minden csomag"
 
-#: src/mainwidget.py:389
+#: src/mainwidget.py:387
 msgid "You must select at least one installed package"
 msgstr ""
 
-#: src/mainwidget.py:401
+#: src/mainwidget.py:399
 msgid "All Updates"
 msgstr "Minden frissítés"
 
-#: src/mainwidget.py:402
+#: src/mainwidget.py:400
 msgid "Security Updates"
 msgstr "Biztonsági frissítések"
 
-#: src/mainwidget.py:403
+#: src/mainwidget.py:401
 msgid "Critical Updates"
 msgstr "Kritikus frissítések"
 
-#: src/mainwindow.py:134 src/mainwindow.py:136
+#: src/mainwindow.py:138 src/mainwindow.py:140
 msgid "All Packages"
 msgstr "Minden csomag"
 
-#: src/mainwindow.py:138 src/mainwindow.py:140
+#: src/mainwindow.py:142 src/mainwindow.py:144
 msgid "Installable Packages"
 msgstr "Telepíthető csomagok"
 
-#: src/mainwindow.py:146 src/mainwindow.py:148 src/tray.py:197
+#: src/mainwindow.py:150 src/mainwindow.py:152 src/tray.py:197
 msgid "Updates"
 msgstr "Frissítések"
 
-#: src/mainwindow.py:150 ui/ui_mainwidget_v3.py:167
+#: src/mainwindow.py:154 ui/ui_mainwidget_v3.py:167
 msgid "Settings"
 msgstr "Beállítások"
 
-#: src/mainwindow.py:153 src/tray.py:193
+#: src/mainwindow.py:157
+msgid "Help"
+msgstr "Segítség"
+
+#: src/mainwindow.py:161 src/tray.py:193
 msgid "Quit"
 msgstr "Kilépés"
 
-#: src/mainwindow.py:182
+#: src/mainwindow.py:191
 msgid "Calculating dependencies..."
 msgstr "Függőségek meghatározása..."
 
-#: src/mainwindow.py:186
+#: src/mainwindow.py:210
 msgid "Currently your basket is empty."
 msgstr "A kosár jelenleg üres."
 
@@ -214,6 +218,10 @@ msgstr "Csomagméret:"
 #: src/packagedelegate.py:101
 msgid "Installed Version:"
 msgstr "Telepített verzió:"
+
+#: src/packagedelegate.py:311
+msgid "Unknown"
+msgstr ""
 
 #: src/packagedelegate.py:338
 msgid "Details"
@@ -810,59 +818,76 @@ msgstr ""
 msgid "Package Details"
 msgstr "Csomag részletei"
 
-#~ msgid "No proxy server"
-#~ msgstr "Nincs proxy szerver"
+#~ msgid "(c) 2009-2010 TUBITAK/UEKAE"
+#~ msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
-#~ msgid "Use manual settings"
-#~ msgstr "Kézi beállítások használata"
+#~ msgid "Developer"
+#~ msgstr "Fejlesztő"
 
-#~ msgid "Use Desktop Enviorenment's settings"
-#~ msgstr "Asztali környezet beállításainak használata"
+#~ msgid "Gökmen Göksel"
+#~ msgstr "Gökmen Göksel"
 
-#~ msgid "Search Button"
-#~ msgstr "Keresés"
+#~ msgid "Faik Uygur"
+#~ msgstr "Faik Uygur"
 
-#~ msgid "Search"
-#~ msgstr "Keresés"
+#~ msgid "First Author"
+#~ msgstr "Első szerző"
 
-#~ msgid "Action Button for current states action"
-#~ msgstr "Művelet gomb az aktuális állapot művelethez"
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Daniel Kovács, Attila Siposs"
 
-#~ msgid "Toggler for selection all packages in Package List"
-#~ msgstr "A csomaglista kijelöléseinek megfordítása"
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "bicskas9323@gmail.com, sipiatti@gmail.com"
 
-#~ msgid "Operation"
-#~ msgstr "Művelet"
+#~ msgid "Show main window"
+#~ msgstr "Főablak megjelenítése"
 
-#~ msgid "<h3>Preparing PiSi...</h3>"
-#~ msgstr "<h3>PiSi előkészítése...</h3>"
+#~ msgid "Hide summary screen"
+#~ msgstr "Összegzés elrejtése"
 
-#~ msgid "Time remaining:"
-#~ msgstr "Hátralévő idő"
+#~ msgid "There are <b>%1</b> updates available!"
+#~ msgstr "<b>%1</b> frissítés elérhető!"
 
-#~ msgid "--  / --"
+#~ msgid "Ignore"
+#~ msgstr "Mellőzés"
+
+#~ msgid "Show Updates"
+#~ msgstr "Frissítések megjelenítése"
+
+#~ msgid "Search Bar"
+#~ msgstr "Keresősáv"
+
+#~ msgid "Type to filter files"
+#~ msgstr "Írjon be szűrőfeltételt"
+
+#~ msgid " kb/s"
+#~ msgstr "kb/s"
+
+#, fuzzy
+#~ msgid "Upgradable Packages"
+#~ msgstr "Mutasd a frissítendő csomagokat"
+
+#, fuzzy
+#~ msgid "Modify Package(s)"
+#~ msgstr "Csomag(ok) eltávolítása"
+
+#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgstr "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+
+#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgstr "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+
+#, fuzzy
+#~ msgid ""
+#~ "Installed Packages\n"
+#~ "\n"
+#~ msgstr "Csomag(ok) telepítése"
+
+#, fuzzy
+#~ msgid "-- / --"
 #~ msgstr "--  / --"
-
-#~ msgid "--:--:--"
-#~ msgstr "--:--:--"
-
-#~ msgid "Operation:"
-#~ msgstr "Művelet:"
-
-#~ msgid "Status:"
-#~ msgstr "Állapot:"
-
-#~ msgid "Close"
-#~ msgstr "Bezárás"
-
-#~ msgid "Show Installed Packages"
-#~ msgstr "Mutasd a telepített csomagokat"
-
-#~ msgid "Help"
-#~ msgstr "Segítség"
-
-#~ msgid "File"
-#~ msgstr "Fájl"
 
 #, fuzzy
 #~ msgid ""
@@ -878,73 +903,53 @@ msgstr "Csomag részletei"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 
-#, fuzzy
-#~ msgid "-- / --"
+#~ msgid "File"
+#~ msgstr "Fájl"
+
+#~ msgid "Show Installed Packages"
+#~ msgstr "Mutasd a telepített csomagokat"
+
+#~ msgid "Close"
+#~ msgstr "Bezárás"
+
+#~ msgid "Status:"
+#~ msgstr "Állapot:"
+
+#~ msgid "Operation:"
+#~ msgstr "Művelet:"
+
+#~ msgid "--:--:--"
+#~ msgstr "--:--:--"
+
+#~ msgid "--  / --"
 #~ msgstr "--  / --"
 
-#, fuzzy
-#~ msgid ""
-#~ "Installed Packages\n"
-#~ "\n"
-#~ msgstr "Csomag(ok) telepítése"
+#~ msgid "Time remaining:"
+#~ msgstr "Hátralévő idő"
 
-#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-#~ msgstr "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgid "<h3>Preparing PiSi...</h3>"
+#~ msgstr "<h3>PiSi előkészítése...</h3>"
 
-#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
-#~ msgstr "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgid "Operation"
+#~ msgstr "Művelet"
 
-#, fuzzy
-#~ msgid "Modify Package(s)"
-#~ msgstr "Csomag(ok) eltávolítása"
+#~ msgid "Toggler for selection all packages in Package List"
+#~ msgstr "A csomaglista kijelöléseinek megfordítása"
 
-#, fuzzy
-#~ msgid "Upgradable Packages"
-#~ msgstr "Mutasd a frissítendő csomagokat"
+#~ msgid "Action Button for current states action"
+#~ msgstr "Művelet gomb az aktuális állapot művelethez"
 
-#~ msgid " kb/s"
-#~ msgstr "kb/s"
+#~ msgid "Search"
+#~ msgstr "Keresés"
 
-#~ msgid "Type to filter files"
-#~ msgstr "Írjon be szűrőfeltételt"
+#~ msgid "Search Button"
+#~ msgstr "Keresés"
 
-#~ msgid "Search Bar"
-#~ msgstr "Keresősáv"
+#~ msgid "Use Desktop Enviorenment's settings"
+#~ msgstr "Asztali környezet beállításainak használata"
 
-#~ msgid "Show Updates"
-#~ msgstr "Frissítések megjelenítése"
+#~ msgid "Use manual settings"
+#~ msgstr "Kézi beállítások használata"
 
-#~ msgid "Ignore"
-#~ msgstr "Mellőzés"
-
-#~ msgid "There are <b>%1</b> updates available!"
-#~ msgstr "<b>%1</b> frissítés elérhető!"
-
-#~ msgid "Hide summary screen"
-#~ msgstr "Összegzés elrejtése"
-
-#~ msgid "Show main window"
-#~ msgstr "Főablak megjelenítése"
-
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "bicskas9323@gmail.com, sipiatti@gmail.com"
-
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Daniel Kovács, Attila Siposs"
-
-#~ msgid "First Author"
-#~ msgstr "Első szerző"
-
-#~ msgid "Faik Uygur"
-#~ msgstr "Faik Uygur"
-
-#~ msgid "Gökmen Göksel"
-#~ msgstr "Gökmen Göksel"
-
-#~ msgid "Developer"
-#~ msgstr "Fejlesztő"
-
-#~ msgid "(c) 2009-2010 TUBITAK/UEKAE"
-#~ msgstr "(c) 2009-2010 TUBITAK/UEKAE"
+#~ msgid "No proxy server"
+#~ msgstr "Nincs proxy szerver"

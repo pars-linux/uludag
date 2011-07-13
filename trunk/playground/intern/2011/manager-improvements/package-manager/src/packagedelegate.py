@@ -308,6 +308,7 @@ class PackageDelegate(QStyledItemDelegate):
             # Package Detail Repository
             repository = index.model().data(index, RepositoryRole).toString()
             if not repository == '':
+                repository = i18n('Unknown')  if repository == 'N/A' else repository
                 position += rect.height()
 
                 p.setFont(self.boldDetailFont)
