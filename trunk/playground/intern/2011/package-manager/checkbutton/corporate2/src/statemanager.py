@@ -27,7 +27,7 @@ from pmlogging import logger
 
 class StateManager(QObject):
 
-    (ALL, INSTALL, REMOVE, UPGRADE, HISTORY) = range(5)
+    (ALL, INSTALL, REMOVE, UPGRADE, HISTORY, CHECK) = range(6)
 
     def __init__(self, parent=None):
         QObject.__init__(self)
@@ -95,6 +95,7 @@ class StateManager(QObject):
         return {self.INSTALL:i18n("installed"),
                 self.REMOVE :i18n("removed"),
                 self.UPGRADE:i18n("upgraded"),
+                self.CHECK  :i18n("checked"),
                 self.ALL    :i18n("modified")}[self.state]
 
     def getActionName(self, state = None):
@@ -102,6 +103,7 @@ class StateManager(QObject):
         return {self.INSTALL:i18n("Install Package(s)"),
                 self.REMOVE :i18n("Remove Package(s)"),
                 self.UPGRADE:i18n("Upgrade Package(s)"),
+                self.CHECK  :i18n("Check Package(s)"),
                 self.ALL    :i18n("Select Operation")}[state]
 
     def getActionIcon(self, state = None):
@@ -109,24 +111,28 @@ class StateManager(QObject):
         return {self.INSTALL:KIcon(("list-add", "add")),
                 self.REMOVE :KIcon(("list-remove", "remove")),
                 self.UPGRADE:KIcon(("system-software-update", "gear")),
+                self.CHECK  :KIcon(("list-remove", "remove")),
                 self.ALL    :KIcon("preferences-other")}[state]
 
     def getSummaryInfo(self, total):
         return {self.INSTALL:i18n("%1 new package(s) have been installed succesfully.", total),
                 self.REMOVE :i18n("%1 package(s) have been removed succesfully.", total),
                 self.UPGRADE:i18n("%1 package(s) have been upgraded succesfully.", total),
+                self.CHECK  :i18n("%1 package(s) have been checked successfully.", total),
                 self.ALL    :i18n("%1 package(s) have been modified succesfully.", total)}[self.state]
 
     def getBasketInfo(self):
         return {self.INSTALL:i18n("You have selected the following package(s) to install:"),
                 self.REMOVE :i18n("You have selected the following package(s) to removal:"),
                 self.UPGRADE:i18n("You have selected the following package(s) to upgrade:"),
+                self.CHECK  :i18n("You have selected the following package(s) to check:"),
                 self.ALL    :i18n("You have selected the following package(s) to modify:")}[self.state]
 
     def getBasketExtrasInfo(self):
         return {self.INSTALL:i18n("Extra dependencies of the selected package(s) that are also going to be installed:"),
                 self.REMOVE :i18n("Reverse dependencies of the selected package(s) that are also going to be removed:"),
                 self.UPGRADE:i18n("Extra dependencies of the selected package(s) that are also going to be upgraded:"),
+                self.CHECK  :i18n("Extra dependencies of the selected package(s) that are also goint to be upgraded:"),
                 self.ALL    :i18n("Extra dependencies of the selected package(s) that are also going to be modified:")}[self.state]
 
     def groups(self):
@@ -195,6 +201,7 @@ class StateManager(QObject):
         return {self.ALL    :self.iface.modifyPackages,
                 self.INSTALL:self.iface.installPackages,
                 self.REMOVE :self.iface.removePackages,
+                self.CHECK  :self.iface.checkPackages,
                 self.UPGRADE:self.iface.upgradePackages}[self.state](packages)
 
     def setActionHandler(self, handler):
@@ -239,6 +246,9 @@ class StateManager(QObject):
 
     def inUpgrade(self):
         return self.state == self.UPGRADE
+
+    def inCheck(self):
+        return self.state == self.CHECK
 
     def showFailMessage(self):
         QMessageBox.critical(None,

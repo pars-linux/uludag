@@ -22,7 +22,7 @@ from pmlogging import logger
 from os import path
 
 # States
-(ALL, INSTALL, REMOVE, UPGRADE, HISTORY) = range(5)
+(ALL, INSTALL, REMOVE, UPGRADE, HISTORY, CHECK) = range(6)
 
 class Singleton(object):
     def __new__(type):
@@ -86,6 +86,9 @@ class Iface(Singleton):
         self.link.System.Manager["pisi"].updatePackage(packages, async=self.handler, timeout=2**16-1)
 
     def modifyPackages(self, packages):
+        pass
+
+    def checkPackages(self, packages):
         pass
 
     # Std Package Actions -------------------------------------------------<<-
