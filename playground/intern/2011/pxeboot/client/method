@@ -9,7 +9,6 @@ pxeboot() {
     # FIXME: busybox mount does not load automatically
     modprobe -q nfs
 
-
     # mount nfs
     if [ -z "/etc/udhcpc.info" ]
     then
@@ -30,7 +29,7 @@ pxeboot() {
     modprobe -q squashfs
 
      # Loop type squashfs
-    mount -t squashfs -o loop,ro /newroot/mnt/cdrom/${LOOPBACKFILE} /newroot/mnt/livecd
+    mount -t squashfs -o loop,ro /newroot/mnt/cdrom/${LOOPBACKFILE} /newroot/mnt/cdrom
 
     if [ "$?" != "0" ]
     then
