@@ -23,6 +23,12 @@ typedef struct vers {
     char *path;
 } vers, *versPtr;
 
+typedef struct gversion {
+    int nbversions;
+    versPtr versions[500]; /* using dynamic alloc is left as an exercise */
+} gVersion, *gVersPtr;
+
+
 //-----   PARSE XML   -----//
 
 static versPtr parseVersion(xmlDocPtr doc, xmlNodePtr cur) {
@@ -43,7 +49,7 @@ static versPtr parseVersion(xmlDocPtr doc, xmlNodePtr cur) {
             if (ret->versionID == NULL) {
                 fprintf(stderr, "Project has no ID\n");
             }
-    }
+         }
         if ((!xmlStrcmp(cur->name, (const xmlChar *) "Name")) )
             ret->name = xmlNodeListGetString(doc, cur->xmlChildrenNode, 1);
         if ((!xmlStrcmp(cur->name, (const xmlChar *) "Size")) )
@@ -56,12 +62,6 @@ static versPtr parseVersion(xmlDocPtr doc, xmlNodePtr cur) {
     return(ret);
 }
 
-//--------------------------------------------------------------------------------------------------------
-
-typedef struct gversion {
-    int nbversions;
-    versPtr versions[500]; /* using dynamic alloc is left as an exercise */
-} gVersion, *gVersPtr;
 
 //------------------------------------------------------------------------------------------------------
 
@@ -101,13 +101,13 @@ static gVersPtr parseGversFile(char *filename) {
     cur = cur->xmlChildrenNode;
     while (cur != NULL) {
         if ((!xmlStrcmp(cur->name , (const xmlChar *) "Pardus")))  {
-        curvers = parseVersion(doc , cur);
-        if (curvers != NULL)
-            ret->versions[ret->nbversions++] = curvers;
+            curvers = parseVersion(doc , cur);
+            if (curvers != NULL)
+                ret->versions[ret->nbversions++] = curvers;
             if (ret->nbversions >= 500)
                 break;
-    }
-    cur = cur->next;
+        }
+        cur = cur->next;
     }
 
     return(ret);
@@ -124,7 +124,7 @@ void print_in_middle(WINDOW *win, int starty, int startx, int width,
 
     if(win == NULL)
         win = stdscr;
-    getyx(win, y, x);
+    getyx( win , y , x );
     if(startx != 0)
         x = startx;
     if(starty != 0)
@@ -135,9 +135,9 @@ void print_in_middle(WINDOW *win, int starty, int startx, int width,
     length = strlen(string);
     temp = (width - length)/ 2;
     x = startx + (int)temp;
-    wattron(win, color);
-    mvwprintw(win, y, x, "%s", string);
-    wattroff(win, color);
+    wattron(win , color);
+    mvwprintw(win , y , x , "%s", string);
+    wattroff(win , color);
     refresh();
 
 }
@@ -159,8 +159,7 @@ void screen_size(WINDOW *win, int min_row, int min_col,int *r, int *c)
      *c = col;
 }
 
-//--------------------------------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------
 
 
 int main(int argc, char **argv)
