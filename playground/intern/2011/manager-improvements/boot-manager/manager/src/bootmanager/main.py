@@ -202,7 +202,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                         self.addItem(entry["index"], entry["title"], root, entry["os_type"], default)
 
                     if self.listItems.count() == 1:
-                        self.listIatems.itemWidget(self.listItems.item(0)).pushDelete.hide()
+                        self.listItems.itemWidget(self.listItems.item(0)).pushDelete.hide()
 
             self.iface.getEntries(func=handleList)
 
