@@ -237,15 +237,12 @@ int main(int argc, char **argv)
 
     /* Öğeleri oluştur */
     n_choices = cur->nbversions;
-    my_items = (ITEM **)calloc(n_choices, sizeof(ITEM *));
+    my_items = (ITEM **)calloc(n_choices + 1, sizeof(ITEM *));
 
-    /* İtemleri oluştur********************************************************************/
+    /* İtemleri oluştur*/
     for (i = 0; i < cur->nbversions; i++){
-        my_items[i] = new_item(cur->versions[i]->name, "---");
-        printf("**%s**\n",my_items[i]);
-        printf("**%s**\n",cur->versions[i]->name);
+        my_items[i] = new_item(cur->versions[i]->name, "                          -----");
     }
-//return 0;
     /* Menüyü oluştur */
     my_menu = new_menu((ITEM **)my_items);
 
@@ -285,34 +282,34 @@ int main(int argc, char **argv)
         {
             int len=0, limit=0;
             case KEY_DOWN:
-                if(cur->nbversions<limit){
-                    len= strlen(cur->versions[i]->name)+strlen(cur->versions[i]->versionID)+ strlen(cur->versions[i]->size)+2*4;
+                if(limit+1 < n_choices){
+                    limit++;
+                    len= strlen(cur->versions[limit]->name)+strlen(cur->versions[limit]->versionID)+ strlen(cur->versions[limit]->size)+2*4;
                     attron(COLOR_PAIR(2));
                     menu_driver(my_menu, REQ_DOWN_ITEM);
                     move(60, 0);
                     clrtoeol();
                     mvprintw(LINES-10, 0, "\n");
                     mvprintw(LINES-10, (*(&col)/2)-len/2, "%s    %s    %s",
-                    item_name(current_item(my_menu)),cur->versions[i]->versionID,cur->versions[i]->size);
+                    item_name(current_item(my_menu)),cur->versions[limit]->versionID,cur->versions[limit]->size);
                     pos_menu_cursor(my_menu);
                     attroff(COLOR_PAIR(2));
-                    limit++;
                 }
                 break;
             case KEY_UP:
-                 if(cur->nbversions<limit){
-                    len= strlen(cur->versions[i]->name)+strlen(cur->versions[i]->versionID)+ strlen(cur->versions[i]->size)+2*4;
+                 if(limit-1 >= 0){
+                    limit--;
+                    len= strlen(cur->versions[limit]->name)+strlen(cur->versions[limit]->versionID)+ strlen(cur->versions[limit]->size)+2*4;
                     attron(COLOR_PAIR(2));
-                    menu_driver(my_menu, REQ_DOWN_ITEM);
+                    menu_driver(my_menu, REQ_UP_ITEM);
                     move(60, 0);
                     clrtoeol();
                     mvprintw(LINES-10, 0, "\n");
                     mvprintw(LINES-10, (*(&col)/2)-len/2, "%s    %s    %s",
-                    item_name(current_item(my_menu)),cur->versions[i]->versionID,cur->versions[i]->size);
+                    item_name(current_item(my_menu)),cur->versions[limit]->versionID,cur->versions[limit]->size);
                     pos_menu_cursor(my_menu);
                     attroff(COLOR_PAIR(2));
-                    limit--;
-                  }
+                 }
                 break;
             case 10: /* Enter */
 
