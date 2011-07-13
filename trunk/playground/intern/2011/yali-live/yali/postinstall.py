@@ -96,11 +96,14 @@ def setHostName():
         return False
 
 def setupUsers():
-    yali.util.run_batch("userdel", ["-r","pars"])
     if yali.util.check_link() and yali.users.PENDING_USERS:
         for user in yali.users.PENDING_USERS:
             ctx.logger.info("User %s adding to system" % user.username)
             try:
+                liveUsers = yali.util.getUsers()
+                for user in liveUsers:
+                    if user.username == "pars":
+                        ctx.link.User.Manager["baselayout"].deleteUser(user.uid, True)
                 user_id = ctx.link.User.Manager["baselayout"].addUser(user.uid, user.username, user.realname, "", "",
                                                                       unicode(user.passwd), user.groups, [], [])
             except dbus.DBusException:

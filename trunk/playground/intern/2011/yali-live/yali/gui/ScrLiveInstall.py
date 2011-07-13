@@ -263,13 +263,9 @@ class SystemCopy(Process):
         self.wait_condition = wait_condition
         self.retry_answer = retry_answer
 
-        self.symlink_dirs = ["opt","lib","bin","sbin","boot","usr","var/lib/dbus"]
-        self.copy_dirs = ["etc","root"]
-        self.empty_dirs = ["mnt","sys","proc","dev","media","home",
-                "var","var/log","var/log/news","var/cache","var/db",
-                "var/games","var/lib","var/lib/misc","var/local",
-                "var/lock","var/lock/subsys","var/opt","var/run","var/run/dbus",
-                "var/run/pardus","var/spool","var/state","var/tmp","var/yp","tmp"]
+        self.symlink_dirs = ["opt","lib","bin","sbin","boot","usr"]
+        self.copy_dirs = ["etc","root","var"]
+        self.empty_dirs = ["mnt","sys","proc","dev","media","home","tmp"]
         self.symlink_basepath = os.readlink("/usr").replace("/usr","")
 
         ctx.logger.debug("System Copy Process started.")
@@ -305,7 +301,9 @@ class SystemCopy(Process):
             while True:
                 try:
                     for dir in self.empty_dirs:
-                        os.system("mkdir %s/%s" %(ctx.consts.target_dir, dir))
+                        absdir = os.path.join(ctx.consts.target_dir, dir)
+                        if not os.path.exists(absdir):
+                            os.mkdir(absdir)
                     for dir in self.copy_dirs:
                         self.copytree(os.path.join("/",dir),os.path.join(ctx.consts.target_dir,dir))
                     for dir in self.symlink_dirs:
