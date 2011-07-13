@@ -94,7 +94,7 @@ def setHostName():
         ctx.logger.debug("Setting hostname execution failed.")
         return False
 
-def makeInitramfs()
+def makeInitramfs():
     ctx.logger.debug("mkinitramfs running")
     yali.util.chroot("mkinitramfs -o /boot -r /")
     yali.util.sync()
