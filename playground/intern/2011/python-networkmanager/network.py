@@ -1016,7 +1016,7 @@ When activating a connection, you should either provide an interface like
     elif options.traffic=="monitor":
         show_traffic(nm_handle)
     else:
-        parser.print_help()
+        print_connections(nm_handle)
         return 1
 
     # FIXME: Do better error handling
