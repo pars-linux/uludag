@@ -1,3 +1,5 @@
+#ifndef ISO_TO_XML.PY
+#define ISO_TO_XML.PY
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
@@ -11,46 +13,51 @@ import urwid.raw_display
 
 def selectionmenu(filelist):
     palette = [
-            ('header','black,underline', 'light gray', 'standout,underline',
+            ('header', 'black,underline', 'light gray', 'standout,underline',
                 'black,underline', '#88a'),
             ('panel', 'light gray', 'dark blue', '',
                 '#ffd', '#00a'),
-            ('focus', 'light gray', 'dark red', 'standout',)
+            ('focus', 'light gray', 'dark red', 'standout')
             ]
+
     screen = urwid.raw_display.Screen()
     screen.register_palette(palette)
 
     lb = urwid.SimpleListWalker([])
 
-    radio_buttons = []
-    editedList=[]
+    editedList = []
+
     def focus(widget):
         return urwid.AttrMap(widget, None, 'focs')
 
-    def selected_item (rb, state, rb_id):
+    def selected_item (rb, state, user_data):
+        print "aaa %s" %editedList
         if state:
-            editedList=rb.label
             return editedList 
 
-    def rb_state(text, rb_id, state=False):
-        rb=urwid.RadioButton(radio_buttons,text,state)
-        urwid.connect_signal(rb,'change',selected_item,rb_id)
+    def rb_state(text,i):
+        rb=urwid.CheckBox(files,False,False)
+        urwid.connect_signal(rb, 'change',selected_item,files)
         return focus(rb)
-        def click_exit(button):
-            raise urwid.ExitMainLoop()
+
     def click_exit(button):
         raise urwid.ExitMainLoop()
 
     lb.extend([
         urwid.AttrMap(urwid.Text("Select Version"),'header')])
-    i=1
+
+    i = 1
     for files in filelist:
         lb.extend([urwid.AttrMap(
             urwid.Columns([
                 urwid.Pile([
-                    rb_state(files,i)]),]),'panel')])
-        i=i+1
+                    rb_state(files,i)
+                    ]),
+                ]),'panel')
+            ])
 
+        i = i + 1
+        print files
     lb.extend([urwid.AttrMap(
         urwid.Columns([
             urwid.Pile([
@@ -58,11 +65,14 @@ def selectionmenu(filelist):
                 ])
             ]),'panel')
         ])
+
     def unhandled_input(key):
         if key in ('Q','q','esc'):
             raise urwid.ExitMainLoop()
+
     urwid.MainLoop(urwid.ListBox(lb), screen=screen,
         unhandled_input = unhandled_input).run()
+    print "editlist",editedList
     return editedList
 
 #get as xml tree from string 
@@ -166,3 +176,4 @@ for files_name in filelist:
 xmlfile = open("ISO Files.xml","w")
 xmlfile.write(treeString)
 xmlfile.close()
+#endif // ISO_TO_XML.PY
