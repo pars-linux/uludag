@@ -10,3 +10,8 @@ all:
 
 clean:
 	rm -f $(TARGETS)
+
+test:
+	./$(TARGETS) version.xml
+
+
