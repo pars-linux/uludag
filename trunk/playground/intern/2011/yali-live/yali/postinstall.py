@@ -103,7 +103,7 @@ def makeInitramfs():
     else:
         print "failed"
 
-def generateDBusMachineID()
+def generateDBusMachineID():
     ctx.logger.debug("Generating dbus machine-id")
     if os.path.exists(os.path.join(ctx.consts.target_dir,"var/lib/dbus/machine-id")):
         os.remove(os.path.join(ctx.consts.target_dir,"var/lib/dbus/machine-id"))
