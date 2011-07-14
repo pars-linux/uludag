@@ -97,7 +97,7 @@ class QuickFormat(QtGui.QWidget):
         self.device_notifier.iface_notifier.connect_to_signal('DeviceRemoved', self.slot_refresh_volume_list)
 
     def root_user_notification(self):
-        root_msgBox = QtGui.QMessageBox(1, i18n("Quick Format"), i18n("You must be root for using Quick Format."))
+        root_msgBox = QtGui.QMessageBox(1, i18n("Quick Format"), i18n("You must be root user to use this application."))
         root_msgBox.exec_()
         sys.exit()
 
