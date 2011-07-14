@@ -540,7 +540,7 @@ def create_gsm_connection(nm_handle,_device):
     apncode=get_number("Apn",1,len(apns_values))
     settings.uuid=uuid.uuid4()
     settings.device=_device
-    settings._settings["connection"][dbus.String("autoconnecti")]="false"
+    settings._settings["connection"][dbus.String("autoconnect")]="false"
     settings._settings["gsm"][dbus.String("apn")]=apns_values[apncode-1]
 
     usrpss=mobile.get_user_name_pass(apns[apncode-1])
@@ -563,7 +563,23 @@ def create_gsm_connection(nm_handle,_device):
     nm_handle.add_connection(settings)
 
 def create_cdma_connection(nm_hadle,_device):
-    pass
+    import dbus
+    settings=CdmaSettings()
+    settings.uuid=uuid.uuid4()
+    settings.device=_device
+    settings._settings["connection"][dbus.String("autoconnect")]="false"
+    connection_id = None
+    print
+    while not connection_id:
+        connection_id = get_input("Profile name").strip()
+        if nm_handle.get_connections_by_id(connection_id) is not None:
+            print "There is already a connection named '%s'" % connection_id
+            print
+            connection_id = None
+
+    settings.id = connection_id
+
+    nm_handle.add_connection(settings)
 
 def create_wireless_connection(nm_handle, _device):
     """Create a wireless connection."""
