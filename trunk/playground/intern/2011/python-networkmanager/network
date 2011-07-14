@@ -870,7 +870,8 @@ def get_connection_by_id(nm,id):
 #####################
 def main():
     """Main entry point to the interactive NetworkManager utility."""
-
+    import os
+    import dbus.exceptions
     if "--no-color" in sys.argv:
         global USE_COLOR
         USE_COLOR = False
@@ -966,60 +967,163 @@ When activating a connection, you should either provide an interface like
     except IndexError:
         arg1 = None
 
+    root=False
+    if os.geteuid()==0 :
+        root=True
     if options.action == "connections":
-        print_connections(nm_handle)
+        try:
+            print_connections(nm_handle)
+        except dbus.exceptions.DBusException as e:
+            if not root :
+                print "You must be root to run python-networkmanager"
+            else:
+                print e
     elif options.action == "devices":
-        print_devices(nm_handle)
+        try:
+            print_devices(nm_handle)
+        except dbus.exceptions.DBusException as e:
+            if not root :
+                print "You must be root to run python-networkmanager"
+            else:
+                print e
+
     elif options.action == "create":
-        create_connection(nm_handle)
+        try:
+            create_connection(nm_handle)
+        except dbus.exceptions.DBusException as e:
+            if not root :
+                print "You must be root to run python-networkmanager"
+            else:
+                print e
+
     elif options.action == "remove":
-        remove_connection(nm_handle)
+        try:
+            remove_connection(nm_handle)
+        except dbus.exceptions.DBusException as e:
+            if not root :
+                print "You must be root to run python-networkmanager"
+            else:
+                print e
+
     elif options.action == "edit":
-        edit_connection(nm_handle)
+        try:
+            edit_connection(nm_handle)
+        except dbus.exceptions.DBusException as e:
+            if not root :
+                print "You must be root to run python-networkmanager"
+            else:
+                print e
+
     elif options.a_connection == "activate":
         if arg0 == None:
-            #list connections
-            con=get_connection(nm_handle,"Activate")
-            #Fix No interface
+
             try:
+                con=get_connection(nm_handle,"Activate") 
                 set_connection_state_up(nm_handle,con.settings.id)
             except AttributeError:
                 print "No connection to activate"
+            except dbus.exceptions.DBusException as e:
+                if not root:
+                    print "You must be root to run python-networkmanager"
+                else:
+                    print e
+
         else:
-            set_connection_state_up(nm_handle,arg0,arg1)
+            try:
+                set_connection_state_up(nm_handle,arg0,arg1) 
+            except dbus.exceptions.DBusException as e:
+                if not root :
+                    print "You must be root to run python-networkmanager"
+                else:
+                    print e
+
     elif options.d_connection == "deactivate":
         if arg0 == None:
-            #list connections
-            con=get_connection(nm_handle,"Deactivate")
             try:
+                con=get_connection(nm_handle,"Deactivate")
                 set_connection_state_down(nm_handle,con)
             except AttributeError:
                 print "No connection to deactivate"
+            except dbus.exceptions.DBusException as e:
+                if not root:
+                    print "You must be root to run python-networkmanager"
+                else:
+                    print e
+
         else:
             try:
                 con=get_connection_by_id(nm_handle,arg0)
                 set_connection_state_down(nm_handle,con.connection)
             except AttributeError:
                 print "This connection is already deactive"
+            except dbus.exceptions.DBusException as e:
+                if not root:
+                    print "You must be root to run python-networkmanager"
+                else:
+                    print e
+
     elif options.wifi == "wifi":
         trues=["1","true","True","yes","Yes"]
         if arg0 in trues:
-            wireless_enabled(nm_handle,True)
+            try:
+                wireless_enabled(nm_handle,True)
+            except dbus.exceptions.DBusException as e:
+                if not root :
+                    print "You must be root to run python-networkmanager"
+                else:
+                    print e
+
         else:
-            wireless_enabled(nm_handle,False)
+            try:
+                wireless_enabled(nm_handle,False)
+            except dbus.exceptions.DBusException as e:
+                if not root :
+                    print "You must be root to run python-networkmanager"
+                else:
+                    print e
+
     elif options.nmanager=="nmanager":
         trues=["1","true","True","yes","Yes"]
         if arg0 in trues:
-            nmanager_enabled(nm_handle,True)
+            try:
+                nmanager_enabled(nm_handle,True)
+            except dbus.exceptions.DBusException as e:
+                if not root :
+                    print "You must be root to run python-networkmanager"
+                else:
+                    print e
+
         else:
-            nmanager_enabled(nm_handle,False)
+            try:
+                nmanager_enabled(nm_handle,False)
+            except dbus.exceptions.DBusException as e:
+                if not root :
+                    print "You must be root to run python-networkmanager"
+                else:
+                    print e
+
     elif options.traffic=="monitor":
-        show_traffic(nm_handle)
+        try:
+            show_traffic(nm_handle)
+        except dbus.exceptions.DBusException as e:
+            if not root :
+                print "You must be root to run python-networkmanager"
+            else:
+                print e
+
     else:
-        print_connections(nm_handle)
+        try:
+            print_connections(nm_handle)
+        except dbus.exceptions.DBusException as e:
+            if not root :
+                print "You must be root to run python-networkmanager"
+            else:
+                print e
+
         return 1
 
     # FIXME: Do better error handling
     return 0
 if __name__ == "__main__":
     sys.exit(main())
+
