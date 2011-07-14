@@ -174,7 +174,7 @@ class QuickFormat(QtGui.QWidget):
         format_message.addButton(REJECT, QtGui.QMessageBox.RejectRole)
         format_message.exec_()
         return format_message.clickedButton().text()
-    
+
     def set_enabled(self, enabled_state):
         self.ui.grpNonArgs.setEnabled(enabled_state)
         self.ui.btn_format.setEnabled(enabled_state)
@@ -207,7 +207,7 @@ class QuickFormat(QtGui.QWidget):
 
     def no_device_notification(self):
         if self.first_run:
-            msgBox = QtGui.QMessageBox(1,i18n("Quick Format"), i18n("There aren't any removable devices."))
+            msgBox = QtGui.QMessageBox(1, i18n("Quick Format"), i18n("There aren't any removable devices."))
             msgBox.exec_()
             sys.exit()
         else:
@@ -304,7 +304,7 @@ class QuickFormat(QtGui.QWidget):
         # Set the item's widget to custom widget and append to list
         self.ui.listWidget.setItemWidget(item, volume_item_widget)
 
-        item.setSizeHint(QSize(200,70))
+        item.setSizeHint(QSize(200, 70))
 
 if __name__ == "__main__":
     args = []

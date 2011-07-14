@@ -24,7 +24,7 @@ import dbus
 
 from PyQt4 import QtGui
 
-BUSES = ["usb","firewire","platform"]
+BUSES = ["usb", "firewire", "platform"]
 
 class Volume:
 
@@ -33,7 +33,7 @@ class Volume:
 
         bus = dbus.SystemBus()
         self.proxy_dbus_properties = bus.get_object("org.freedesktop.UDisks", volume)
-        self.iface_dbus_properties = dbus.Interface(self.proxy_dbus_properties,"org.freedesktop.DBus.Properties")
+        self.iface_dbus_properties = dbus.Interface(self.proxy_dbus_properties, "org.freedesktop.DBus.Properties")
 
         self.icon = self.get_volume_icon()
         self.name = self.get_volume_name()
@@ -45,9 +45,12 @@ class Volume:
         self.device_path = self.get_device_path()
         self.device_name = self.get_device_name()
 
-    def get_property(self,prop):
+    def get_property(self, prop):
         """gets a property of device"""
-        return self.iface_dbus_properties.Get("org.freedesktop.UDisks.Device",prop)
+        try:
+            return self.iface_dbus_properties.Get("org.freedesktop.UDisks.Device", prop)
+        except:
+            return "GET PROPERTY FAILED"
 
     def get_all_properties(self):
         """gets all properties of device"""
