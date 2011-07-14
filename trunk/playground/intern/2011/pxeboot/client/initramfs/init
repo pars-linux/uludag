@@ -25,6 +25,7 @@ WIPEMEM=0
 PXEBOOT=0
 
 HOTPLUG="/sbin/hotplug"
+PXEXMLFILE="iso.xml"
 
 MNTDIR=""
 FS_TYPE=""
@@ -325,12 +326,12 @@ pxeboot() {
     mount -o tcp,nolock,ro $ROOTPATH /newroot/mnt/pxeboot
 
 
-    if [ -f "/newroot/mnt/pxeboot/iso.xml"]
+    if [ -f "/newroot/mnt/pxeboot/$PXEXMLFILE"]
     then
-        fall2sh "/newroot/mnt/pxeboot/iso.xml not found"
+        fall2sh "/newroot/mnt/pxeboot/$PXEXMLFILE not found"
     fi
 
-    . /newroot/mnt/pxeboot/bootmenu
+    bootmenu /newroot/mnt/pxeboot/$PXEXMLFILE
 
 
 #mount cdrom
