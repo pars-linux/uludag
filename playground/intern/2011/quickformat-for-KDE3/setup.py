@@ -49,7 +49,7 @@ def tr2i18n(filename):
             new_file.write(line)
         else:
             new_file.write(template % (ma.group(1), ma.group(2), ma.group(3))+"\n")
-    new_file.write("from quickformat.I18N import i18n")
+    new_file.write("from quickformat.i18n import i18n")
 
 def update_messages():
     # Create empty directory
