@@ -16,6 +16,7 @@ import sys
 import dbus
 import signal
 import traceback
+from optparse import OptionParser
 
 # PyQt4 Imports
 from PyQt4.QtGui import QFont
@@ -63,12 +64,32 @@ if __name__ == '__main__':
     if config.PMConfig().systemTray():
         app.setQuitOnLastWindowClosed(False)
 
-    if not config.PMConfig().systemTray() or "--show-mainwindow" in sys.argv:
+    # Arrange arguments
+    parser = OptionParser()
+    parser.add_option("--show-mainwindow",
+                      action="store_false",
+                      help="Show main window.")
+    parser.add_option("--add-repository",
+                      help="Add repository. Needs argument.")
+
+    opts, args = parser.parse_args()
+
+    if not config.PMConfig().systemTray() or not opts.show_mainwindow is None:
+        # Show the mainwindow if user wants
         manager.show()
+
+    if not opts.add_repository is None:
+        # Check add repo options and then open repository settings dialog
+        repoAddress = checkRepoDirectory(opts.add_repository)
+        if repoAddress:
+            manager.show()
+            manager.showPreferences.trigger()
+            manager.settingsDialog.tabWidget.setCurrentIndex(2)
+            manager.settingsDialog.addRepoButton.click()
+            manager.settingsDialog.repositorySettings.fillRepoDialog(repoAddress)
 
     # Set exception handler
     sys.excepthook = handleException
 
     # Run the Package Manager
     app.exec_()
-
