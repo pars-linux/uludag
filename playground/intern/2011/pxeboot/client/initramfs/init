@@ -331,10 +331,13 @@ pxeboot() {
         fall2sh "/newroot/mnt/pxeboot/$PXEXMLFILE not found"
     fi
 
+    # creates /etc/pxeisofile
     bootmenu /newroot/mnt/pxeboot/$PXEXMLFILE
 
+    # for PXEISOFILE value
+    . /etc/pxeisofile
 
-#mount cdrom
+    mount -o loop /newroot/mnt/pxeboot/$PXEISOFILE /newroot/mnt/cdrom
 
      # These are not loaded automatically
     modprobe -q squashfs
