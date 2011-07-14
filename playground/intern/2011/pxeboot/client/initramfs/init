@@ -299,7 +299,7 @@ mount_cdroot() {
     echo "$MNTDIR" >> /newroot/etc/fstab
 }
 
-pxeboot() {
+mount_pxeboot() {
     FS_LOCATION='mnt/pxeboot'
 
     # Change directory to /newroot
@@ -333,6 +333,11 @@ pxeboot() {
 
     # creates /etc/pxeisofile
     bootmenu /newroot/mnt/pxeboot/$PXEXMLFILE
+
+    if [ "$?" != '0' ]
+    then
+        fall2sh "There was a problem on iso selection"
+    fi
 
     # for PXEISOFILE value
     . /etc/pxeisofile
@@ -632,29 +637,7 @@ then
     run_dhcpc
     manage_tmpfs
 
-    # modprobe filesystems that are not in kernel, for live disks
-    modprobe -qa nls_cp857 nls_utf8 vfat
-
-    for i in `seq 50`
-    do
-        t=`findfs ${LIVEROOT} 2>/dev/null`
-        find_live_mount "$t"
-
-        if [ "${ROOT_DEVICE}" != "" ]
-        then
-           break
-       else
-            probe_devices
-               usleep 200000
-       fi
-    done
-
-    if [ "${ROOT_DEVICE}" == "" ]
-    then
-        fall2sh "Could not find mount media"
-    fi
-
-    pxeboot
+    mount_pxeboot
 
     # set hostname for mudur
     hostname $HOSTNAME
