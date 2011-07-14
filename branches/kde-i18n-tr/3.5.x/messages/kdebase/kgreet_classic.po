@@ -45,4 +45,4 @@ msgstr "Anlaşılamayan girdi: \"%1\""
 
 #: kgreet_classic.cpp:500
 msgid "Username + password (classic)"
-msgstr "Kullanıcı adı + parolası (klasik)"
+msgstr "Kullanıcı adı + Parola"
