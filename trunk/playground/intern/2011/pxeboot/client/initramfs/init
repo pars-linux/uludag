@@ -424,7 +424,7 @@ parse_config() {
             init=*)
                 INIT="${inputline#INIT=}"
             ;;
-            pxeboot=*)
+            pxeboot)
                 PXEBOOT=1
             ;;
         esac
@@ -500,7 +500,7 @@ parse_cmdline() {
             quiet)
                 QUIET=1
             ;;
-            pxeboot=*)
+            pxeboot)
                 PXEBOOT=1
             ;;
             blacklist=*)
