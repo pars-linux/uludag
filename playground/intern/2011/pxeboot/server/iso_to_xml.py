@@ -31,14 +31,20 @@ class getMenu:
             return urwid.AttrMap(widget, None, 'focus')
 
         def selected_item (cb, state):
-            if state==True:
-                editedList.append(cb.get_label().split("          ")[0])
+            if state == True:
+                for fullpath in filelist:
+                    if os.path.split(fullpath)[1] == cb.get_label().split("          ")[0]:
+                        editedList.append(fullpath)
+
             else:
-                editedList.remove(cb.get_label().split("          ")[0])
+                for fullpath in filelist:
+                    if os.path.split(fullpath)[1] == cb.get_label().split("          ")[0]:
+                        editedList.remove(fullpath)
 
         def createCB(text,i):
             kilo = 1024*1024
             size = (os.path.getsize(os.path.join(isoFolder,text)))/kilo
+            text = os.path.split(text)[1]
             text = "%s          Size : %sMB" % (text, size)
             cb = urwid.CheckBox(text, False, has_mixed=False)
             urwid.connect_signal(cb, 'change', selected_item)
@@ -146,7 +152,6 @@ def extractData(local_filename):
         for line in a.split("\n"):
             if line.lstrip().startswith("distro="):
                 data = line.lstrip().split("=", 1)[1]
-
     return data
 
 
@@ -171,16 +176,14 @@ if len(sys.argv) > 2:
 
 treeString = ""
 
-#get .iso file from directory
+#get .iso files from directory
 #filelist=[files for files in os.listdir(isoFolder) if files.lower().endswith(".iso")]
 
 filelist = []
-isonamelist = []
 for root , dirs, files in os.walk(isoFolder):
-    for file in files:
-        if file.endswith('.iso'):
-            filelist.append(os.path.join(root,file))
-            isonamelist.append(file)
+    for filespath in files:
+        if filespath.endswith('.iso'):
+            filelist.append(os.path.join(root,filespath))
 
 if len(filelist) == 0:
     print "There is no ISO image file in '%s'" %isoFolder
@@ -188,11 +191,10 @@ if len(filelist) == 0:
     sys.exit(1)
 
 listObject = getMenu()
+filelist = listObject.selectionmenu(filelist)
 
-isonamelist = listObject.selectionmenu(isonamelist)
-print filelist
 for files_name in filelist:
-    iso = iso9660.ISO9660.IFS ( source = os.path.join( unicode(files_name) ) )
+    iso = iso9660.ISO9660.IFS ( source = files_name )
 
     root = iks.Element("ISO9660")
 
@@ -200,17 +202,17 @@ for files_name in filelist:
     name_tag = iks.SubElement(root, "Name")
     name_tag.text = name
 
-    isopath = os.path.join(isoFolder, files_name)
+    isopath = files_name.split(isoFolder)[1]
     path_tag = iks.SubElement(root, "Path")
-    path_tag.text = unicode(isopath)
+    path_tag.text = isopath
 
     isosize,architecture = parseXml()
+    isosize = "%s" %isosize
     size_tag = iks.SubElement(root, "Size")
     size_tag.text = isosize
 
     architecture_tag = iks.SubElement(root, "Architecture")
     architecture_tag.text = architecture
-
     getTree(root)
     treeString += iks.tostring(root)
     treeString += "\n"
