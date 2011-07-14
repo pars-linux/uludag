@@ -93,12 +93,14 @@ class PM:
         elif "ALREADY RUNNING" in message:
             errorTitle = i18n("Pisi Error")
             errorMessage = i18n("Another instance of PiSi is running. Only one instance is allowed.")
+        elif "SHA1" in message and message.startsWith("/"):
+            errorTitle = i18n("Pisi Error")
+            errorMessage = i18n("Could not found pisi file(s). Please check your repository settings.")
         else:
             errorTitle = i18n("Pisi Error")
             errorMessage = message
 
         self.messageBox = QMessageBox(errorTitle, errorMessage, QMessageBox.Critical, QMessageBox.Ok, 0, 0)
-
         if block:
             self.messageBox.exec_()
             self.runPostExceptionMethods()
@@ -202,6 +204,23 @@ def handleException(exception, value, tb):
     @param tb: traceback log
     """
     logger.error("".join(traceback.format_exception(exception, value, tb)))
+
+def checkRepoDirectory(dirName):
+    ''' finds *.xml or *.xml.xz files in a directory '''
+    repoAddress = None
+    if os.path.exists(os.path.join(dirName, "pisi-index.xml")):
+        repoAddress = os.path.join(dirName, "pisi-index.xml")
+    elif os.path.exists(os.path.join(dirName, "pisi-index.xml.xz")):
+        repoAddress = os.path.join(dirName, "pisi-index.xml.xz")
+    # scan other .xml or .xml.xz files
+    elif os.path.exists(dirName):
+        items = os.listdir(dirName)
+        for item in items:
+            if item.endswith(".xml") or item.endswith(".xml.xz"):
+                repoAddress = os.path.join(dirName, item)
+                break
+
+    return repoAddress
 
 def humanReadableSize(size, precision=".1"):
     if not size:
