@@ -11,7 +11,9 @@
 # Please read the COPYING file
 
 import re
+from string import ascii_letters
 from os import path
+import piksemel
 
 from PyQt4.QtGui import QMessageBox
 from PyQt4.QtGui import QDialog
@@ -237,6 +239,7 @@ class RepositorySettings(SettingsTab):
     def addRepository(self):
         self.repoDialog = repodialog.RepoDialog()
         self.connect(self.repoDialog.buttonBox, SIGNAL("accepted()"), self.__addRepository)
+        self.connect(self.repoDialog.browseButton, SIGNAL("clicked()"), self.browseLocalRepository)
         self.repoDialog.show()
 
     def __addRepository(self):
@@ -258,6 +261,38 @@ class RepositorySettings(SettingsTab):
     def removeRepository(self):
         self.settings.repoListView.removeRow(self.settings.repoListView.currentRow())
         self.markChanged()
+
+    def browseLocalRepository(self):
+        fd = QFileDialog()
+        repoAddress = fd.getOpenFileName(None, "Caption", "/", "Index File (*.xml *.xml.bz2 *.xz)")
+        if repoAddress:
+            if not self.repoDialog.repoName.text():
+                self.repoDialog.repoName.setText(self.generateRepoName(repoAddress))
+            self.repoDialog.repoAddress.setEditText(repoAddress)
+
+    def generateRepoName(self, indexuri):
+        ''' Checks other repo names and generates a version number.'''
+        repos = self.get_repo_names()
+        try:
+            parser = piksemel.parse(str(indexuri))
+            repo = "%s-%s" % (parser.getTag("Distribution").getTagData("SourceName"),\
+                              parser.getTag("Distribution").getTagData("Version"))
+        except:
+            repo = i18n("localrepo")
+
+        version = 1
+        while True:
+            if repo in repos:
+                repo = "%s-%d" % (filter(lambda x: x in ascii_letters, repo), version)
+            else:
+                return repo
+            version+=1
+
+    def fillRepoDialog(self, repoAddress):
+        if repoAddress:
+            if not self.repoDialog.repoName.text():
+                self.repoDialog.repoName.setText(self.generateRepoName(repoAddress))
+            self.repoDialog.repoAddress.setEditText(repoAddress)
 
     def __setRow(self, row, rowItems):
         for col in range(self.settings.repoListView.columnCount()):
