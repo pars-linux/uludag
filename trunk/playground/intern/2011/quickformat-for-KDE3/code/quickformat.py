@@ -174,7 +174,11 @@ class QuickFormat(QtGui.QWidget):
         format_message.addButton(REJECT, QtGui.QMessageBox.RejectRole)
         format_message.exec_()
         return format_message.clickedButton().text()
-
+    
+    def set_enabled(self, enabled_state):
+        self.ui.grpNonArgs.setEnabled(enabled_state)
+        self.ui.btn_format.setEnabled(enabled_state)
+        self.ui.btn_cancel.setEnabled(enabled_state)
 
     def format_device(self):
         """ Starts the formatting operation """
@@ -187,11 +191,13 @@ class QuickFormat(QtGui.QWidget):
             self.formatter.start()
 
     def slot_format_started(self):
+        self.set_enabled(False)
         self.notifier.notify(FORMAT_STARTED)
 
     def slot_format_successful(self):
         self.notifier.notify(FORMAT_SUCCESSFUL)
         self.refresh_volume_list(notify=False)
+        self.set_enabled(True)
 
     def slot_format_failed(self):
         self.notifier.notify(FORMAT_FAILED)
