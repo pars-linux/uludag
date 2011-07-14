@@ -108,8 +108,8 @@ class Formatter(QThread):
             # Commit Changes
             parted_disk.commit()
             print "SUCCCESS"
-        except Exception as e:
-            print "FAILED TO SET FILE SYSTEM", e.message
+        except Exception, e:
+            print "FAILED TO SET FILE SYSTEM", e
             self.error = True
             self.emit(SIGNAL("partition_table_error()"))
 
