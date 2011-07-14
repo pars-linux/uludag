@@ -15,7 +15,6 @@
 from PyQt4 import QtCore
 from PyQt4 import QtGui
 
-
 # UI
 from bootmanager.ui_item import Ui_ItemWidget
 
@@ -64,7 +63,7 @@ class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
         self.pushDelete.setIcon(KIcon("edit-delete"))
 
         # Signals
-        self.connect(self.radioState, QtCore.SIGNAL("stateChanged(int)"), lambda: self.emit(QtCore.SIGNAL("stateChanged(int)"), self.radioState.isChecked()))
+        self.connect(self.radioState, QtCore.SIGNAL("toggled(bool)"),lambda: self.emit(QtCore.SIGNAL("toggled(bool)"), self.radioState.isChecked()))
         self.connect(self.pushEdit, QtCore.SIGNAL("clicked()"), lambda: self.emit(QtCore.SIGNAL("editClicked()")))
         self.connect(self.pushDelete, QtCore.SIGNAL("clicked()"), lambda: self.emit(QtCore.SIGNAL("deleteClicked()")))
 

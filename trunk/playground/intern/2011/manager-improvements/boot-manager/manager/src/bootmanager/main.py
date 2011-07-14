@@ -145,7 +145,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         """
         widget = ItemWidget(self.listItems, id_, title, description, type_, icon, state)
 
-        self.connect(widget, QtCore.SIGNAL("stateChanged(int)"), self.slotItemState)
+        self.connect(widget, QtCore.SIGNAL("toggled(bool)"), self.slotItemState)
         self.connect(widget, QtCore.SIGNAL("editClicked()"), self.slotItemEdit)
         self.connect(widget, QtCore.SIGNAL("deleteClicked()"), self.slotItemDelete)
 
