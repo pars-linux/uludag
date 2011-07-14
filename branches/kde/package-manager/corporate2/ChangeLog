@@ -1,3 +1,26 @@
+2011-07-14 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Update translations 
+
+2011-07-14 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Add filedialog button to find local repository easily 
+
+2011-07-14 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Use OptionParser instead of parsing sys.argv and show settings dialog if user requests to add a local repository 
+
+2011-07-14 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Show proper error message, add repo check method for local repository adding support 
+
+2011-07-12 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Translation update
+
+2011-07-12 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Show a proper help dialog dependent to the environment
+         * (Ugurcan Ergun's patch)
+         * Bug fixed at http://bugs.pardus.org.tr/18194
+
+2011-07-07 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Update ChangeLog 
+
 2011-07-07 Gökmen Göksel <gokmen@pardus.org.tr>
          * - If user adds a new repo and press cancel it raises a pisi.db.repodb IOError exception, this patch fixes this. 
 
@@ -1898,27 +1921,4 @@
 
 2010-05-26 Gökmen Göksel <gokmen@pardus.org.tr>
          * fit to 80's 
-
-2010-05-26 transifex
-         * l10n: Updated German (de) translation to 78% (H. İbrahim Güngör)
-         * New status: 128 messages complete with 15 fuzzies and 21 untranslated.
-         * Transmitted-via: Transifex (translate.pardus.org.tr).
-
-2010-05-25 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Use Rst for help documents yay \o/ 
-
-2010-05-25 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Fix css for Qt's RichTextEngine 
-
-2010-05-25 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Remove Webkit dependency 
-
-2010-05-25 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Show notification in silence mode 
-
-2010-05-25 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Logic error #+??!!,2x'££!--.
-
-2010-05-25 Gökmen Göksel <gokmen@pardus.org.tr>
-         * it should be all not any 
 
