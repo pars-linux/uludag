@@ -7,15 +7,20 @@ import piksemel
 serviceproviders="/usr/share/mobile-broadband-provider-info/serviceproviders.xml"
 
 doc = piksemel.parse(serviceproviders)
-countries = doc.tags('country')
 
+def get_countries():
+    countries = doc.tags('country')
+    coun=[]
+    for co in countries:
+        coun.append(co.getAttribute('code'))
+    return coun
 
 def get_country(code):
+    countries = doc.tags('country')
     #returns country
     for co in countries:
         if co.getAttribute('code') == code:
             return co
-
 def get_providers(country):
     #returns providers
     providers=[]
