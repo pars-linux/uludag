@@ -112,6 +112,7 @@ Release minus 7 days:
 #. Test and fix Final `tracker bugs`_
 #. Testing targets achieved (All features functional and bug free)
 #. Track the production of publicity and promotion materials
+#. Open `stable binary repository`_
 
 Release Minus 3 days:
 
@@ -170,3 +171,4 @@ at the "where we are" meeting.
 .. _Repo freeze: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html#repo-freeze
 .. _RC freeze: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html#rc-freeze
 .. _Kernel freeze: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html#kernel-freeze
+.. _stable binary repository: http://developer.pardus.org.tr/guides/releasing/repository_concepts/software_repository.html#stable-binary-repository
