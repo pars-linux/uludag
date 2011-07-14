@@ -70,7 +70,7 @@ msgid "No"
 msgstr ""
 
 #: quickformat.py:102
-msgid "You must be root for using Quick Format."
+msgid "You must be root user to use this application."
 msgstr ""
 
 #: quickformat.py:180
