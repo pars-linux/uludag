@@ -498,10 +498,27 @@ def wep_security_config(settings):
         settings._settings["802-11-wireless-security"][dbus.String("wep-tx-keyidx")]=inf["wep-key"]
     return settings
 
+def create_column(colist,num):
+    x=0
+    def write(x,t=0):
+        while t<num:
+            print "%4s" % colist[x],
+            x+=1
+            t+=1
+        print
+        if len(colist)-x > num:
+            write(x)
+        elif len(colist)-x >0 and len(colist)-x < num:
+            t=num-(len(colist)-x)
+            write(x,t)
+    if x == 0:
+        write(x)
 def create_gsm_connection(nm_handle,_device):
     import dbus
     settings=GsmSettings()
     print colorize("Select country:","yellow")
+    countries=mobile.get_countries()
+    create_column(countries,7)
     cncode=get_input("Country")
     country=mobile.get_country(cncode)
     providers=mobile.get_providers(country)
