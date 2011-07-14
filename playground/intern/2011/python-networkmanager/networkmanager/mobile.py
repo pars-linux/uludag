@@ -21,13 +21,24 @@ def get_country(code):
     for co in countries:
         if co.getAttribute('code') == code:
             return co
-def get_providers(country):
+def get_providers_for_gsm(country):
     #returns providers
     providers=[]
     provider=country.tags('provider')
     for pro in provider:
-        providers.append(pro)
+        if pro.getTag('gsm')!=None:
+            providers.append(pro)
     return providers
+
+def get_providers_for_cdma(country):
+    #returns providers
+    providers=[]
+    provider=country.tags('provider')
+    for pro in provider:
+        if pro.getTag('cdma')!=None:
+            providers.append(pro)
+    return providers
+
 
 def get_providers_names(providers):
     #returns names
@@ -46,6 +57,10 @@ def list_providers_names(providers):
 def get_providers_gsm(provider):
     #returns gsm
     return provider.getTag('gsm')
+
+def get_provider_cdma(provider):
+    #return cdma
+    return provider.getTag('cdma')
 
 def get_gsm_networkid(gsm):
     #returns network-id
