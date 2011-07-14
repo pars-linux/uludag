@@ -14,7 +14,7 @@ body {
 #banner {
     margin: auto;
     height: 114px;
-    width: 94%;
+    width: 960px;
     background: url("logo.png") 0 7px no-repeat;
 }
 #searchbar {
@@ -34,7 +34,7 @@ div.document {
 #content {
     margin: auto;
     margin-top:20px;
-    width: 94%;
+    width: 960px;
     background-color: #FFFFFF;
     padding:16px;
     padding-top:0px;
@@ -120,6 +120,10 @@ div.related a {
 }
 
 /* ::: TOC :::: */
+div.toc {
+    font-size: 80%;
+}
+
 div.sphinxsidebar h3 {
     font-family: 'Trebuchet MS', sans-serif;
     color: white;
@@ -361,8 +365,8 @@ div.body h4,
 div.body h5,
 div.body h6 {
     font-family: 'Trebuchet MS', sans-serif;
-    background-color: #f2f2f2;
-    font-weight: normal;
+/*    background-color: #f2f2f2;*/
+    font-weight: bold;
     color: #20435c;
     border-bottom: 1px solid #CCCCCC;
     margin: 20px -20px 14px -20px;
@@ -372,16 +376,17 @@ div.body h6 {
 /* TODO: Change colors for different headings */
 div.body h1 {
     margin-top: 0;
-    font-size: 200%;
-    background-color: #F2F2F2;
+    font-size: 250%;
+/*    background-color: #F2F2F2;*/
     border-bottom: 1px solid #999999;
+    text-align: center;
 }
 
 /* TODO: Change colors for different headings */
 div.body h2 {
     margin-top: 0;
-    font-size: 160%;
-    background-color: #F2F2F2;
+    font-size: 200%;
+/*    background-color: #F2F2F2;*/
     border-bottom: 1px solid #999999;
 }
 
@@ -413,8 +418,8 @@ img.section {
     border: 0px;
     margin-top: 4px;
     margin-right: 7px;
-    height:48px;
-    width:48px;
+    height:128px;
+    width:128px;
 }
 
 
@@ -435,7 +440,7 @@ a.headerlink:hover {
 }
 
 div.body p, div.body dd, div.body li {
-    text-align: justify;
+    text-align: left;
     line-height: 130%;
 }
 
