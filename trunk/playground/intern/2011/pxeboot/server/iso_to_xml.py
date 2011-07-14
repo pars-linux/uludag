@@ -142,9 +142,12 @@ def extractData(local_filename):
 
     if local_filename == "repo/pisi-index.xml.bz2":
         data = bz2.decompress(a)
-        return data
-    else :
-        return a.split("distro=")[1].split(" [")[0]
+    else:
+        for line in a.split("\n"):
+            if line.lstrip().startswith("distro="):
+                data = line.lstrip().split("=", 1)[1]
+
+    return data
 
 
 def parseXml():
@@ -179,7 +182,7 @@ listObject = getMenu()
 
 filelist = listObject.selectionmenu(filelist)
 
-for files_name in filelist: 
+for files_name in filelist:
         iso = iso9660.ISO9660.IFS ( source = os.path.join( isoFolder,files_name ) )
 
         root = iks.Element("ISO9660")
