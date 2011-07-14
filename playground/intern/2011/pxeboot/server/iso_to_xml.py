@@ -32,16 +32,19 @@ class getMenu():
 
         def selected_item (cb, state):
             if state==True:
-                editedList.append(cb.get_label())
+                editedList.append(cb.get_label().split("          ")[0])
             else:
-                editedList.remove(cb.get_label())
+                editedList.remove(cb.get_label().split("          ")[0])
 
         def createCB(text,i):
-            cb=urwid.CheckBox(files, False, has_mixed=False)
+            kilo = 1024*1024
+            size = (os.path.getsize(os.path.join(isoFolder,text)))/kilo
+            text = "%s          Size : %sMB" % (text, size)
+            cb = urwid.CheckBox(text, False, has_mixed=False)
             urwid.connect_signal(cb, 'change', selected_item)
             return focus(cb)
 
-        def click_exit(button):
+        def click_ok(button):
             raise urwid.ExitMainLoop()
 
         blank = urwid.Divider()
@@ -65,7 +68,7 @@ class getMenu():
                 urwid.AttrMap(
                     urwid.Columns([
                         urwid.Pile([
-                            createCB(files,i)
+                            createCB(files,i),
                             ]),
                         ]),'panel'),('fixed left',60),('fixed right',60)),
                 blank
@@ -77,7 +80,7 @@ class getMenu():
             urwid.Padding(
                 urwid.GridFlow([
                     urwid.AttrWrap(
-                        urwid.Button("OK", click_exit),
+                        urwid.Button("OK", click_ok),
                                   'panel','focus')
                                ],10, 2, 2, 'center'),
                          ('fixed left',5), ('fixed right',5)),
