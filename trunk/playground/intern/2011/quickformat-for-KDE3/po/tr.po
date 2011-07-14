@@ -104,6 +104,10 @@ msgstr "Evet"
 msgid "No"
 msgstr "Hayır"
 
+#: quickformat.py:102
+msgid "You must be root to use this application."
+msgstr "Uygulamayı kullanmak için yönetici (root) olmalısınız."
+
 #: quickformat.py:280
 msgid "This operation will delete your all data. Are you sure to continue?"
 msgstr "Bu işlem sonunda tüm verilerinizi kaybedeceksiniz. Devam etmek istediğinizden emin misiniz?"
