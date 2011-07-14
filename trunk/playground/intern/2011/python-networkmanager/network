@@ -17,7 +17,7 @@ import uuid
 from optparse import OptionParser
 from networkmanager import mobile
 from networkmanager import NetworkManager, WiredSettings, WirelessSettings,WPAWirelessSettings,WEP40128WirelessSettings,WEP128WirelessSettings, DeviceType, DeviceState,GsmSettings
-
+from networkmanager import CdmaSettings
 # Color characters
 COLORS = {
             'red'        : '\x1b[31;01m',
@@ -521,7 +521,7 @@ def create_gsm_connection(nm_handle,_device):
     create_column(countries,7)
     cncode=get_input("Country")
     country=mobile.get_country(cncode)
-    providers=mobile.get_providers(country)
+    providers=mobile.get_providers_for_gsm(country)
     providers_names=mobile.get_providers_names(providers)
     print colorize("Select provider:","yellow")
     index_=1
@@ -562,9 +562,22 @@ def create_gsm_connection(nm_handle,_device):
 
     nm_handle.add_connection(settings)
 
-def create_cdma_connection(nm_hadle,_device):
+def create_cdma_connection(nm_handle,_device):
     import dbus
     settings=CdmaSettings()
+    print colorize("Select country:","yellow")
+    countries=mobile.get_countries()
+    create_column(countries,7)
+    cncode=get_input("Country")
+    country=mobile.get_country(cncode)
+    providers=mobile.get_providers_for_cdma(country)
+    providers_names=mobile.get_providers_names(providers)
+    print colorize("Select provider:","yellow")
+    index_=1
+    for name in providers_names:
+        print "  [%d] %s"% (index_ , name)
+        index_+=1
+    procode=get_number("Provider",1,len(providers))
     settings.uuid=uuid.uuid4()
     settings.device=_device
     settings._settings["connection"][dbus.String("autoconnect")]="false"
