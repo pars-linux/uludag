@@ -25,6 +25,8 @@ pxeboot() {
     echo "Mounting NFS from $ROOTPATH"
     mount -o tcp,nolock,ro $ROOTPATH /newroot/mnt/thin
 
+#mount cdrom
+
      # These are not loaded automatically
     modprobe -q squashfs
 
@@ -45,7 +47,7 @@ pxeboot() {
     then
        ln -s "${FS_LOCATION}/lib32" "lib32"
     fi
- 
+
      REAL_ROOT_TYPE=`echo "${ROOT_DEVICE}" | sed -e 's/^\/newroot\/dev\///' | grep -qE '^sr[0-9]*|^hd[a-z]|^pcd[0-9]|^xvd    *' && echo "optical" || echo "harddisk"`
     echo "${REAL_ROOT_TYPE}" > /newroot/var/run/pardus/livemedia
 
@@ -67,6 +69,29 @@ then
 
     run_dhcpc
     manage_tmpfs
+
+    # modprobe filesystems that are not in kernel, for live disks
+    modprobe -qa nls_cp857 nls_utf8 vfat
+    
+    for i in `seq 50`
+    do
+        t=`findfs ${LIVEROOT} 2>/dev/null`
+        find_live_mount "$t"
+
+        if [ "${ROOT_DEVICE}" != "" ]
+        then
+            break
+         else
+             probe_devices
+                 usleep 200000
+         fi
+    done
+
+    if [ "${ROOT_DEVICE}" == "" ]
+    then
+        fall2sh "Could not find mount media"
+     fi
+
     pxeboot
 
     # set hostname for mudur
