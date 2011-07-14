@@ -1,7 +1,14 @@
 Release Process
 ===============
 
-Pardus releases occur nearly every 8 months. Each release cycle follow general release plan template. Every  Pardus contributor will track these planned points carefully and be sure that their work is in sync with others. Pardus follow a time based release, thus coordination is very important to finish work on time.
+In Pardus, we follow a time-based release approach, thus we have fixed dates for various steps of development. This means that, if a feature or a bug fix is not finished on time, then we just do not include it.
+
+.. , unless it is one of the exceptional cases defined here. (feature freeze exeptions yazılacak)
+
+Thus, it is important that every contributor is aware of the release process and comply with the process and work in coordination to finish on time. For a discussion about `time-based release management`_.
+
+Pardus releases occur nearly every 8 months. Each release cycle follows the release plan template, which divides development into milestones that are described in `General Milestones`_ section. We also define various freeze times described in `General Freezes`_ section.
+
 
 General Freezes
 ---------------
@@ -203,3 +210,4 @@ See details from `EOL`_
 .. _RC phase: http://developer.pardus.org.tr/guides/releasing/official_releases/release_candidate_phase.html
 .. _Final phase: http://developer.pardus.org.tr/guides/releasing/official_releases/final_phase.html
 .. _EOL: http://developer.pardus.org.tr/guides/releasing/end_of_life.html
+.. _time based release management: http://fnords.wordpress.com/2011/07/01/time-based-good-for-community/
