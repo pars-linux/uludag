@@ -10,7 +10,7 @@ import urwid
 import urwid.raw_display
 
 
-class getMenu():
+class getMenu:
 
     def selectionmenu(self,filelist):
         palette = [
@@ -70,7 +70,7 @@ class getMenu():
                         urwid.Pile([
                             createCB(files,i),
                             ]),
-                        ]),'panel'),('fixed left',60),('fixed right',60)),
+                        ]),'panel'),('fixed left',40),('fixed right',40)),
                 blank
                     ])
 
@@ -157,7 +157,8 @@ def parseXml():
     for tags in doc.tags("Package"):
         size = int(tags.getTagData("InstalledSize"))
         a += int(size)
-    return a
+    architecture = tags.getTagData("Architecture")
+    return a, architecture
 
 
 #if none given
@@ -171,7 +172,15 @@ if len(sys.argv) > 2:
 treeString = ""
 
 #get .iso file from directory
-filelist=[files for files in os.listdir(isoFolder) if files.lower().endswith(".iso")]
+#filelist=[files for files in os.listdir(isoFolder) if files.lower().endswith(".iso")]
+
+filelist = []
+isonamelist = []
+for root , dirs, files in os.walk(isoFolder):
+    for file in files:
+        if file.endswith('.iso'):
+            filelist.append(os.path.join(root,file))
+            isonamelist.append(file)
 
 if len(filelist) == 0:
     print "There is no ISO image file in '%s'" %isoFolder
@@ -180,38 +189,32 @@ if len(filelist) == 0:
 
 listObject = getMenu()
 
-filelist = listObject.selectionmenu(filelist)
-
+isonamelist = listObject.selectionmenu(isonamelist)
+print filelist
 for files_name in filelist:
-        iso = iso9660.ISO9660.IFS ( source = os.path.join( isoFolder,files_name ) )
+    iso = iso9660.ISO9660.IFS ( source = os.path.join( unicode(files_name) ) )
 
-        root = iks.Element("ISO9660")
+    root = iks.Element("ISO9660")
 
-        name = extractData("boot/isolinux/gfxboot.cfg")
-        name_tag = iks.SubElement(root, "Name")
-        name_tag.text = name
+    name = extractData("boot/isolinux/gfxboot.cfg")
+    name_tag = iks.SubElement(root, "Name")
+    name_tag.text = name
 
-        if (name.find("x86_64") > 0):
-            architecture = "x64"
-        else:
-            architecture = "x86"
+    isopath = os.path.join(isoFolder, files_name)
+    path_tag = iks.SubElement(root, "Path")
+    path_tag.text = unicode(isopath)
 
-        architecture_tag = iks.SubElement(root, "Architecture")
-        architecture_tag.text = architecture
+    isosize,architecture = parseXml()
+    size_tag = iks.SubElement(root, "Size")
+    size_tag.text = isosize
 
-        isopath = os.path.join(isoFolder, files_name)
-        path_tag = iks.SubElement(root, "Path")
-        path_tag.text = unicode(isopath)
+    architecture_tag = iks.SubElement(root, "Architecture")
+    architecture_tag.text = architecture
 
-        isosize = parseXml()
-        isosize = "%s" %isosize
-        size_tag = iks.SubElement(root, "Size")
-        size_tag.text = isosize
+    getTree(root)
+    treeString += iks.tostring(root)
+    treeString += "\n"
 
-        getTree(root)
-        treeString += iks.tostring(root)
-        treeString += "\n"
-
-xmlfile = open("pxeboot_iso_files.xml","w")
+xmlfile = open("%s/pxeboot_iso_files.xml"%isoFolder,"w")
 xmlfile.write(treeString)
 xmlfile.close()
