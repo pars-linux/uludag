@@ -19,7 +19,6 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 # (See COPYING)
 
-from kdecore import KAboutData
 from i18n import i18n
 
 # Application Data
@@ -27,7 +26,7 @@ appName     = "quickformat"
 programName = i18n("Quick Format")
 version     = "1.0.0"
 description = i18n("Removable Device Formatting Tool")
-license     = KAboutData.License_GPL
+license     = GPLv2
 copyright   = i18n("(c) 2011 TUBITAK/BILGEM")
 text        = i18n(None)
 homePage    = "http://www.pardus.org.tr/eng/projects"
