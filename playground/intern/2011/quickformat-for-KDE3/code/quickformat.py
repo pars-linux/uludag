@@ -58,7 +58,7 @@ class QuickFormat(QtGui.QWidget):
         QtGui.QWidget.__init__(self, parent)
         self.__sysargs = args
 
-        uid = getuid()
+        uid = os.getuid()
 
         if uid != 0:
             self.root_user_notification()
