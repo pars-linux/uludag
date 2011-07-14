@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-12 09:49+0300\n"
+"POT-Creation-Date: 2011-07-14 16:00+0300\n"
 "PO-Revision-Date: 2011-01-25 19:15+0300\n"
 "Last-Translator: Korostil Daniel <ted.korostiled@gmail.com>\n"
 "Language-Team: translation@linux.org.ua\n"
@@ -44,8 +44,8 @@ msgid "Do you want to clear all selections ?"
 msgstr "Очистити все вибране ?"
 
 #: src/basketdialog.py:68 src/pmutils.py:83 src/pmutils.py:88
-#: src/pmutils.py:91 src/pmutils.py:94 src/pmutils.py:97
-#: src/settingsdialog.py:247 src/settingsdialog.py:252
+#: src/pmutils.py:91 src/pmutils.py:94 src/pmutils.py:97 src/pmutils.py:100
+#: src/settingsdialog.py:250 src/settingsdialog.py:255
 msgid "Pisi Error"
 msgstr "Помилка Pisi"
 
@@ -73,7 +73,7 @@ msgstr "Пакунки потребують перезапуску служб"
 msgid "Selected packages are considered critical for the system. Removing them may cause your system to be unusable."
 msgstr "Вибрані пакунки вважаються критичними для системи. Їхнє вилучення може призвести до її непрацездатності."
 
-#: src/basketdialog.py:196 src/settingsdialog.py:169
+#: src/basketdialog.py:196 src/settingsdialog.py:171
 msgid "Warning"
 msgstr "Попередження"
 
@@ -265,7 +265,11 @@ msgstr "Файл <b>%s</b> не існує."
 msgid "Another instance of PiSi is running. Only one instance is allowed."
 msgstr "PiSi вже запущено деінде. Дозволено лише одну одночасно."
 
-#: src/pmutils.py:129
+#: src/pmutils.py:98
+msgid "Could not found pisi file(s). Please check your repository settings."
+msgstr ""
+
+#: src/pmutils.py:131
 msgid "Do you want to continue ?"
 msgstr "Продовжити?"
 
@@ -302,21 +306,25 @@ msgstr "Підготовлення PiSi…"
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>Скасування дії…</b>"
 
-#: src/settingsdialog.py:160
+#: src/settingsdialog.py:162
 msgid "Open Directory"
 msgstr "Відкрити теку"
 
-#: src/settingsdialog.py:170
+#: src/settingsdialog.py:172
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr "Всі кешовані пакунки буде вилучено. Впевнені?"
 
-#: src/settingsdialog.py:248
+#: src/settingsdialog.py:251
 msgid "Not a valid repository name"
 msgstr "Неправильна назва сховища"
 
-#: src/settingsdialog.py:253
+#: src/settingsdialog.py:256
 msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
 msgstr "<qt>Адреса сховища повинна закінчувати або на суфікс «xml», або «xml.bz2», або «xz» .<p>Спробуйте ще раз.</qt>"
+
+#: src/settingsdialog.py:280
+msgid "localrepo"
+msgstr ""
 
 #: src/statemanager.py:86 src/statemanager.py:87
 msgid "Installing Package(s)"
@@ -580,21 +588,27 @@ msgstr "Перегляд"
 msgid "Alt+C"
 msgstr "Alt+C"
 
-#: ui/ui_repodialog.py:58
+#: ui/ui_repodialog.py:67
 msgid "Add New Repository"
 msgstr "Додати нове сховище"
 
-#: ui/ui_repodialog.py:59
+#: ui/ui_repodialog.py:68
 msgid "Name of the repository, e.g <b>pardus-devel</b>"
 msgstr "Назва сховища, наприклад, <b>pardus-devel</b>"
 
-#: ui/ui_repodialog.py:60 ui/ui_settingsdialog.py:429
+#: ui/ui_repodialog.py:69 ui/ui_settingsdialog.py:429
 msgid "Repository Name"
 msgstr "Назва сховища"
 
-#: ui/ui_repodialog.py:61 ui/ui_settingsdialog.py:430
+#: ui/ui_repodialog.py:70 ui/ui_settingsdialog.py:430
 msgid "Repository Address"
 msgstr "Адреса сховища"
+
+#: ui/ui_repodialog.py:71
+msgid ""
+"Add Local Repository\n"
+"You can use your removable devices."
+msgstr ""
 
 #: ui/ui_settingsdialog.py:402
 msgid "Package Manager Settings"
