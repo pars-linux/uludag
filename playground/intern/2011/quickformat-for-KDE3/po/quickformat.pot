@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-12 09:32+0300\n"
+"POT-Creation-Date: 2011-07-14 15:43+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,7 +35,7 @@ msgid ""
 "Please try again."
 msgstr ""
 
-#: quickformat/notifier.py:166 quickformat.py:313
+#: quickformat/notifier.py:166 quickformat.py:219
 msgid "There aren't any removable devices."
 msgstr ""
 
@@ -49,44 +49,15 @@ msgid ""
 "Please re-partition this device and try again."
 msgstr ""
 
-#: quickformat/ui_quickformat.py:341 quickformat/about.py:27
-#: quickformat.py:313
+#: quickformat/about.py:26 quickformat.py:102 quickformat.py:219
 msgid "Quick Format"
 msgstr ""
 
-#: quickformat/ui_quickformat.py:342
-msgid "Format"
-msgstr ""
-
-#: quickformat/ui_quickformat.py:343
-msgid "Close"
-msgstr ""
-
-#: quickformat/ui_quickformat.py:344
-msgid "Volume Name"
-msgstr ""
-
-#: quickformat/ui_quickformat.py:345
-msgid "File System"
-msgstr ""
-
-#: quickformat/ui_quickformat.py:346
-msgid "Volume Label"
-msgstr ""
-
-#: quickformat/ui_volumeitem.py:291
-msgid ":"
-msgstr ""
-
-#: quickformat/ui_volumeitem.py:292
-msgid "-"
-msgstr ""
-
-#: quickformat/about.py:29
+#: quickformat/about.py:28
 msgid "Removable Device Formatting Tool"
 msgstr ""
 
-#: quickformat/about.py:31
+#: quickformat/about.py:30
 msgid "(c) 2011 TUBITAK/BILGEM"
 msgstr ""
 
@@ -98,6 +69,10 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: quickformat.py:280
+#: quickformat.py:102
+msgid "You must be root for using Quick Format."
+msgstr ""
+
+#: quickformat.py:180
 msgid "This operation will delete your all data. Are you sure to continue?"
 msgstr ""

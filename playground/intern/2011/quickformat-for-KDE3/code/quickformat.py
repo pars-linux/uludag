@@ -58,6 +58,11 @@ class QuickFormat(QtGui.QWidget):
         QtGui.QWidget.__init__(self, parent)
         self.__sysargs = args
 
+        uid = getuid()
+
+        if uid != 0:
+            self.root_user_notification()
+
         self.ui = Ui_QuickFormat()
         self.ui.setupUi(self)
 
@@ -93,6 +98,10 @@ class QuickFormat(QtGui.QWidget):
         self.device_notifier.iface_notifier.connect_to_signal('DeviceAdded', self.slot_refresh_volume_list)
         self.device_notifier.iface_notifier.connect_to_signal('DeviceRemoved', self.slot_refresh_volume_list)
 
+    def root_user_notification(self):
+        root_msgBox = QtGui.QMessageBox(1, i18n("Quick Format"), i18n("You must be root for using Quick Format."))
+        root_msgBox.exec_()
+        sys.exit()
 
     def __make_initial_selection__(self, index):
         self.ui.volumeName.setCurrentIndex(index)
