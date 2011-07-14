@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-12 09:49+0300\n"
+"POT-Creation-Date: 2011-07-14 16:00+0300\n"
 "PO-Revision-Date: 2011-01-11 20:51+0100\n"
 "Last-Translator: Attila Siposs <sipiatti@gmail.com>\n"
 "Language-Team: Hungarian <pardus-translators@pardus.org.tr>\n"
@@ -44,8 +44,8 @@ msgid "Do you want to clear all selections ?"
 msgstr "Az összes kijelölést törli?"
 
 #: src/basketdialog.py:68 src/pmutils.py:83 src/pmutils.py:88
-#: src/pmutils.py:91 src/pmutils.py:94 src/pmutils.py:97
-#: src/settingsdialog.py:247 src/settingsdialog.py:252
+#: src/pmutils.py:91 src/pmutils.py:94 src/pmutils.py:97 src/pmutils.py:100
+#: src/settingsdialog.py:250 src/settingsdialog.py:255
 msgid "Pisi Error"
 msgstr "PiSi hiba"
 
@@ -73,7 +73,7 @@ msgstr "Szolgáltatás újraindítást igénylő csomagok"
 msgid "Selected packages are considered critical for the system. Removing them may cause your system to be unusable."
 msgstr "A kiválasztott csomagok kritikusak a rendszer működése szempontjából. Eltávolításuk a rendszer működésképtelenségét eredményezheti."
 
-#: src/basketdialog.py:196 src/settingsdialog.py:169
+#: src/basketdialog.py:196 src/settingsdialog.py:171
 msgid "Warning"
 msgstr "Figyelem"
 
@@ -266,7 +266,11 @@ msgstr "<b>%s</b> fájl nem található."
 msgid "Another instance of PiSi is running. Only one instance is allowed."
 msgstr "Egy másik PiSi már fut. Csak egy példány indítása megengedett."
 
-#: src/pmutils.py:129
+#: src/pmutils.py:98
+msgid "Could not found pisi file(s). Please check your repository settings."
+msgstr ""
+
+#: src/pmutils.py:131
 msgid "Do you want to continue ?"
 msgstr "Kívánja folytatni?"
 
@@ -303,21 +307,25 @@ msgstr "<h3>PiSi előkészítése...</h3>"
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>Művelet visszavonása...</b>"
 
-#: src/settingsdialog.py:160
+#: src/settingsdialog.py:162
 msgid "Open Directory"
 msgstr "Könyvtár megnyitása"
 
-#: src/settingsdialog.py:170
+#: src/settingsdialog.py:172
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr "Minden gyorsítótárazott csomag törölve lesz. Folytatja?"
 
-#: src/settingsdialog.py:248
+#: src/settingsdialog.py:251
 msgid "Not a valid repository name"
 msgstr "Érvénytelen tárolónév"
 
-#: src/settingsdialog.py:253
+#: src/settingsdialog.py:256
 msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
 msgstr "<qt>A tároló címének xml vagy xml.bz2 kiterjesztésre kell végződnie.<p>Kérem, próbálja újra.</qt>"
+
+#: src/settingsdialog.py:280
+msgid "localrepo"
+msgstr ""
 
 #: src/statemanager.py:86 src/statemanager.py:87
 msgid "Installing Package(s)"
@@ -580,21 +588,27 @@ msgstr ""
 msgid "Alt+C"
 msgstr "Alt+C"
 
-#: ui/ui_repodialog.py:58
+#: ui/ui_repodialog.py:67
 msgid "Add New Repository"
 msgstr "Új tároló hozzáadása"
 
-#: ui/ui_repodialog.py:59
+#: ui/ui_repodialog.py:68
 msgid "Name of the repository, e.g <b>pardus-devel</b>"
 msgstr "A tároló neve, pl. <b>pardus-devel</b>"
 
-#: ui/ui_repodialog.py:60 ui/ui_settingsdialog.py:429
+#: ui/ui_repodialog.py:69 ui/ui_settingsdialog.py:429
 msgid "Repository Name"
 msgstr "Tároló neve"
 
-#: ui/ui_repodialog.py:61 ui/ui_settingsdialog.py:430
+#: ui/ui_repodialog.py:70 ui/ui_settingsdialog.py:430
 msgid "Repository Address"
 msgstr "Tároló címe"
+
+#: ui/ui_repodialog.py:71
+msgid ""
+"Add Local Repository\n"
+"You can use your removable devices."
+msgstr ""
 
 #: ui/ui_settingsdialog.py:402
 msgid "Package Manager Settings"

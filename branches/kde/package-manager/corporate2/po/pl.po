@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-12 09:49+0300\n"
+"POT-Creation-Date: 2011-07-14 16:00+0300\n"
 "PO-Revision-Date: 2011-01-22 18:00+0100\n"
 "Last-Translator: Michał Komasa <bigkoma@gmail.com>\n"
 "Language-Team: BigKoma <bigkoma@gmail.com>\n"
@@ -45,8 +45,8 @@ msgid "Do you want to clear all selections ?"
 msgstr "Czy chcesz wyczyścić wszystkie wybrane?"
 
 #: src/basketdialog.py:68 src/pmutils.py:83 src/pmutils.py:88
-#: src/pmutils.py:91 src/pmutils.py:94 src/pmutils.py:97
-#: src/settingsdialog.py:247 src/settingsdialog.py:252
+#: src/pmutils.py:91 src/pmutils.py:94 src/pmutils.py:97 src/pmutils.py:100
+#: src/settingsdialog.py:250 src/settingsdialog.py:255
 msgid "Pisi Error"
 msgstr "Błąd Pisi"
 
@@ -74,7 +74,7 @@ msgstr "Pakiety wymagające restartu usług systemowych."
 msgid "Selected packages are considered critical for the system. Removing them may cause your system to be unusable."
 msgstr "Wybrane pakiety są kluczowe dla działania systemu. Usunięcie ichmoże spowodować, że twój system będzie bezużyteczny."
 
-#: src/basketdialog.py:196 src/settingsdialog.py:169
+#: src/basketdialog.py:196 src/settingsdialog.py:171
 msgid "Warning"
 msgstr "Ostrzeżenie"
 
@@ -269,7 +269,11 @@ msgstr "Plik <b>%s</b> nie istnieje."
 msgid "Another instance of PiSi is running. Only one instance is allowed."
 msgstr "Inny proces PiSi jest uruchominy. Tylko jeden proces jest dozwolony."
 
-#: src/pmutils.py:129
+#: src/pmutils.py:98
+msgid "Could not found pisi file(s). Please check your repository settings."
+msgstr ""
+
+#: src/pmutils.py:131
 msgid "Do you want to continue ?"
 msgstr "Chcesz kontynuować ?"
 
@@ -306,22 +310,26 @@ msgstr "Przygotowywanie PiSi..."
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>Anulowanie operacji...</b>"
 
-#: src/settingsdialog.py:160
+#: src/settingsdialog.py:162
 #, fuzzy
 msgid "Open Directory"
 msgstr "Open Directory"
 
-#: src/settingsdialog.py:170
+#: src/settingsdialog.py:172
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr "Wszystkie pliki pakietów zostaną usunięte. Czy jesteś pewien? "
 
-#: src/settingsdialog.py:248
+#: src/settingsdialog.py:251
 msgid "Not a valid repository name"
 msgstr "Nieprawidłowa nazwa repozytorium"
 
-#: src/settingsdialog.py:253
+#: src/settingsdialog.py:256
 msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
 msgstr "<qt> Adres repozytorium powinien posiadać rozszerzeni xml, xml.bz2 lub xz.<p> Spróbuj ponownie. </ qt>"
+
+#: src/settingsdialog.py:280
+msgid "localrepo"
+msgstr ""
 
 #: src/statemanager.py:86 src/statemanager.py:87
 msgid "Installing Package(s)"
@@ -590,21 +598,27 @@ msgstr ""
 msgid "Alt+C"
 msgstr "Alt+C"
 
-#: ui/ui_repodialog.py:58
+#: ui/ui_repodialog.py:67
 msgid "Add New Repository"
 msgstr "Dodaj nowe repozytorium"
 
-#: ui/ui_repodialog.py:59
+#: ui/ui_repodialog.py:68
 msgid "Name of the repository, e.g <b>pardus-devel</b>"
 msgstr "Nazwa repozytorium, na przykład <b>pardus-devel</b>"
 
-#: ui/ui_repodialog.py:60 ui/ui_settingsdialog.py:429
+#: ui/ui_repodialog.py:69 ui/ui_settingsdialog.py:429
 msgid "Repository Name"
 msgstr "Nazwa repozytorium"
 
-#: ui/ui_repodialog.py:61 ui/ui_settingsdialog.py:430
+#: ui/ui_repodialog.py:70 ui/ui_settingsdialog.py:430
 msgid "Repository Address"
 msgstr "Adres repozytorium"
+
+#: ui/ui_repodialog.py:71
+msgid ""
+"Add Local Repository\n"
+"You can use your removable devices."
+msgstr ""
 
 #: ui/ui_settingsdialog.py:402
 msgid "Package Manager Settings"
