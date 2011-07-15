@@ -28,6 +28,7 @@ typedef struct gversion {
     versPtr versions[500]; /* using dynamic alloc is left as an exercise */
 } gVersion, *gVersPtr;
 
+FILE *fp;
 
 //-----   PARSE XML   -----//
 
@@ -44,12 +45,8 @@ static versPtr parseVersion(xmlDocPtr doc, xmlNodePtr cur) {
     /* We don't care what the top level element name is */
     cur = cur->xmlChildrenNode;
     while (cur != NULL) {
-        if ((!xmlStrcmp(cur->name, (const xmlChar *) "Version"))) {
-            ret->versionID = xmlGetProp(cur, (const xmlChar *) "id");
-            if (ret->versionID == NULL) {
-                fprintf(stderr, "Project has no ID\n");
-            }
-         }
+        if ((!xmlStrcmp(cur->name, (const xmlChar *) "Architecture")) )
+            ret->versionID = xmlNodeListGetString(doc, cur->xmlChildrenNode, 1);
         if ((!xmlStrcmp(cur->name, (const xmlChar *) "Name")) )
             ret->name = xmlNodeListGetString(doc, cur->xmlChildrenNode, 1);
         if ((!xmlStrcmp(cur->name, (const xmlChar *) "Size")) )
@@ -203,7 +200,7 @@ int main(int argc, char **argv)
 
     /* İtemleri oluştur*/
     for (i = 0; i < cur->nbversions; i++){
-        my_items[i] = new_item(cur->versions[i]->name, "      -----");
+        my_items[i] = new_item(cur->versions[i]->name,  cur->versions[i]->versionID);
     }
     /* Menüyü oluştur */
     my_menu = new_menu((ITEM **)my_items);
@@ -238,6 +235,8 @@ int main(int argc, char **argv)
     post_menu( my_menu );
     wrefresh( my_menu_win );
 
+    int buffer = 200;
+    char path[buffer];
     while( (c = wgetch(my_menu_win) ) != KEY_F(1) )
     {
         switch(c)
@@ -274,8 +273,21 @@ int main(int argc, char **argv)
                  }
                 break;
             case 10: /* Enter */
-
-                break;
+                 strcpy(path,"PXEXMLFILE=");
+                 strcat( path , cur->versions[limit]->path);
+                 fp = fopen("pxexmlfile","wb");
+                 if (!fp)
+                 {
+                     printf("it failed!\n");
+                     printf("path-----------%s",path);
+                 //fgets(path,buffer,stdin);
+                 }
+                 else
+                 {
+                     fputs(path,fp);
+                     fclose(fp);
+                 }
+                 break;
          }
 
         refresh();
