@@ -93,13 +93,13 @@ class getMenu:
                             ]),
                         urwid.Pile([
                             urwid.Text("Size : %sMB" % size,align='left')]),
-                        ]),'panel'),('fixed left',w),('fixed right',w)),
-                blank
+                        ]),'panel'),('fixed left',w),('fixed right',w))
                     ])
 
             i = i + 1
 
         listbox.extend([
+            blank,
             urwid.Padding(
                 urwid.GridFlow([
                     urwid.AttrWrap(
@@ -221,7 +221,7 @@ for files_name in filelist:
     name_tag = iks.SubElement(pardus, "Name")
     name_tag.text = name
 
-    isopath = files_name.split(isoFolder)[1]
+    isopath = (files_name.split(isoFolder)[1]).lstrip("/")
     path_tag = iks.SubElement(pardus, "Path")
     path_tag.text = isopath
 
