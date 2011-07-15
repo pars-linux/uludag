@@ -25,7 +25,7 @@ WIPEMEM=0
 PXEBOOT=0
 
 HOTPLUG="/sbin/hotplug"
-PXEXMLFILE="iso.xml"
+PXEXMLFILE="pxeboot_iso_files.xml"
 
 MNTDIR=""
 FS_TYPE=""
@@ -332,7 +332,7 @@ mount_pxeboot() {
     fi
 
     # creates /etc/pxeisofile
-    bootmenu /newroot/mnt/pxeboot/$PXEXMLFILE
+    pxebootselect /newroot/mnt/pxeboot/$PXEXMLFILE
 
     if [ "$?" != '0' ]
     then
