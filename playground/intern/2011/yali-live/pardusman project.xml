@@ -139,6 +139,8 @@
         <SelectedPackage>lm_sensors</SelectedPackage>
         <SelectedPackage>logrotate</SelectedPackage>
         <SelectedPackage>lsscsi</SelectedPackage>
+        <SelectedPackage>lvm2</SelectedPackage>
+        <SelectedPackage>lvm2-static</SelectedPackage>
         <SelectedPackage>mc</SelectedPackage>
         <SelectedPackage>mdadm</SelectedPackage>
         <SelectedPackage>mdadm-static</SelectedPackage>
