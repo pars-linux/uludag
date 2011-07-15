@@ -212,14 +212,14 @@ filelist = listObject.selectionmenu(filelist)
 for files_name in filelist:
     iso = iso9660.ISO9660.IFS ( source = files_name )
 
-    root = iks.Element("ISO9660")
-
+    root = iks.Element("PXEBOOT")
+    isoimages = iks.SubElement(root, "ISOIMAGES")
     name = extractData("boot/isolinux/gfxboot.cfg")
-    name_tag = iks.SubElement(root, "Name")
+    name_tag = iks.SubElement(isoimages, "Name")
     name_tag.text = name
 
     isopath = files_name.split(isoFolder)[1]
-    path_tag = iks.SubElement(root, "Path")
+    path_tag = iks.SubElement(isoimages, "Path")
     path_tag.text = isopath
 
     for dirs in iso.readdir("/"):
@@ -229,10 +229,10 @@ for files_name in filelist:
             isosize = os.path.getsize(files_name)
             architecture = "LiveCD"
     isosize = "%s" % isosize
-    size_tag = iks.SubElement(root, "Size")
+    size_tag = iks.SubElement(isoimages, "Size")
     size_tag.text = isosize
 
-    architecture_tag = iks.SubElement(root, "Architecture")
+    architecture_tag = iks.SubElement(isoimages, "Architecture")
     architecture_tag.text = architecture
     getTree(root)
     treeString += iks.tostring(root)
