@@ -9,7 +9,7 @@ INITRAMFSCONF="/etc/initramfs.conf"
 
 ROOT_LINKS="bin sbin lib boot usr opt"
 ROOT_TREES="etc root home var"
-TMPFS_DIRS="dev mnt mnt/cdrom mnt/livecd mnt/thin tmp sys proc media"
+TMPFS_DIRS="dev mnt mnt/cdrom mnt/livecd mnt/thin mnt/pxeboot tmp sys proc media"
 LOOPBACKFILE="pardus.img"
 
 NORESUME=0
