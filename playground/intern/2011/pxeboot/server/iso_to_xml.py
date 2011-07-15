@@ -232,7 +232,7 @@ for files_name in filelist:
             isosize = os.path.getsize(files_name)
             architecture = "LiveCD"
 
-    isosize = "%s" % isosize
+    isosize = str(isosize)
     size_tag = iks.SubElement(pardus, "Size")
     size_tag.text = isosize
 
