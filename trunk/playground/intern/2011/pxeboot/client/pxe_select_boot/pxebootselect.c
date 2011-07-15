@@ -10,7 +10,7 @@
 #include <menu.h>
 
 #define ROW    20
-#define COL    60
+#define COL    80
 #define ROW_MIN    17
 #define COL_MIN    53
 #define MENU_SIZE   14
@@ -45,14 +45,14 @@ static versPtr parseVersion(xmlDocPtr doc, xmlNodePtr cur) {
     /* We don't care what the top level element name is */
     cur = cur->xmlChildrenNode;
     while (cur != NULL) {
-        if ((!xmlStrcmp(cur->name, (const xmlChar *) "Architecture")) )
-            ret->versionID = xmlNodeListGetString(doc, cur->xmlChildrenNode, 1);
         if ((!xmlStrcmp(cur->name, (const xmlChar *) "Name")) )
             ret->name = xmlNodeListGetString(doc, cur->xmlChildrenNode, 1);
-        if ((!xmlStrcmp(cur->name, (const xmlChar *) "Size")) )
-            ret->size = xmlNodeListGetString(doc, cur->xmlChildrenNode, 1);
         if ((!xmlStrcmp(cur->name, (const xmlChar *) "Path")) )
             ret->path = xmlNodeListGetString(doc, cur->xmlChildrenNode, 1);
+        if ((!xmlStrcmp(cur->name, (const xmlChar *) "Size")) )
+            ret->size = xmlNodeListGetString(doc, cur->xmlChildrenNode, 1);
+        if ((!xmlStrcmp(cur->name, (const xmlChar *) "Architecture")) )
+            ret->versionID = xmlNodeListGetString(doc, cur->xmlChildrenNode, 1);
         cur = cur->next;
     }
 
@@ -198,9 +198,12 @@ int main(int argc, char **argv)
     n_choices = cur->nbversions;
     my_items = (ITEM **)calloc(n_choices + 1, sizeof(ITEM *));
 
+    //char tab[30]="";
     /* İtemleri oluştur*/
     for (i = 0; i < cur->nbversions; i++){
-        my_items[i] = new_item(cur->versions[i]->name,  cur->versions[i]->versionID);
+    //    strcpy(tab , "    ");
+    //    strcat(tab , cur->versions[i]->versionID);
+        my_items[i] = new_item(cur->versions[i]->name, cur->versions[i]->versionID);
     }
     /* Menüyü oluştur */
     my_menu = new_menu((ITEM **)my_items);
