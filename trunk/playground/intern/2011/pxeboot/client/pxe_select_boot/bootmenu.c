@@ -279,8 +279,6 @@ int main(int argc, char **argv)
                  if (!fp)
                  {
                      printf("it failed!\n");
-                     printf("path-----------%s",path);
-                 //fgets(path,buffer,stdin);
                  }
                  else
                  {
