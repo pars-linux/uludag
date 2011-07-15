@@ -1026,7 +1026,6 @@ When activating a connection, you should either provide an interface like
             print_connections(nm_handle)
         except dbus.exceptions.DBusException as e:
             if not root :
-                print e
                 print _("You must be root to run python-networkmanager")
             else:
                 print e
@@ -1035,7 +1034,6 @@ When activating a connection, you should either provide an interface like
             print_devices(nm_handle)
         except dbus.exceptions.DBusException as e:
             if not root :
-                print e
                 print _("You must be root to run python-networkmanager")
             else:
                 print e
