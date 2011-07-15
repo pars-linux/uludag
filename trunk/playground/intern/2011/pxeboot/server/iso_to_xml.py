@@ -214,12 +214,14 @@ for files_name in filelist:
 
     root = iks.Element("PXEBOOT")
     isoimages = iks.SubElement(root, "ISOIMAGES")
+    pardus = iks.SubElement(isoimages, "Pardus")
+
     name = extractData("boot/isolinux/gfxboot.cfg")
-    name_tag = iks.SubElement(isoimages, "Name")
+    name_tag = iks.SubElement(pardus, "Name")
     name_tag.text = name
 
     isopath = files_name.split(isoFolder)[1]
-    path_tag = iks.SubElement(isoimages, "Path")
+    path_tag = iks.SubElement(pardus, "Path")
     path_tag.text = isopath
 
     for dirs in iso.readdir("/"):
@@ -229,10 +231,10 @@ for files_name in filelist:
             isosize = os.path.getsize(files_name)
             architecture = "LiveCD"
     isosize = "%s" % isosize
-    size_tag = iks.SubElement(isoimages, "Size")
+    size_tag = iks.SubElement(pardus, "Size")
     size_tag.text = isosize
 
-    architecture_tag = iks.SubElement(isoimages, "Architecture")
+    architecture_tag = iks.SubElement(pardus, "Architecture")
     architecture_tag.text = architecture
     getTree(root)
     treeString += iks.tostring(root)
