@@ -3,10 +3,10 @@ CFLAGS = -g -Wall
 
 LIBCURSES := -lncurses -lmenu
 
-TARGETS = bootmenu
+TARGETS = pxebootselect
 
 all:
-	$(CC) `pkg-config libxml-2.0 --cflags --libs` bootmenu.c -o $(TARGETS) $(LIBCURSES)
+	$(CC) `pkg-config libxml-2.0 --cflags --libs` pxebootselect.c -o $(TARGETS) $(LIBCURSES)
 
 clean:
 	rm -f $(TARGETS)
