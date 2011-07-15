@@ -6,7 +6,7 @@ LIBCURSES := -lncurses -lmenu
 TARGETS = pxebootselect
 
 all:
-	$(CC) `pkg-config libxml-2.0 --cflags --libs` pxebootselect.c -o $(TARGETS) $(LIBCURSES)
+	$(CC) $(CFLAGS) `pkg-config libxml-2.0 --cflags --libs` pxebootselect.c -o $(TARGETS) $(LIBCURSES)
 
 clean:
 	rm -f $(TARGETS)
