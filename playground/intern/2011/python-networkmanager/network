@@ -364,12 +364,12 @@ def is_hex(passw):
 
 def is_pass_valid(passw,stype):
     length=len(passw)
-    if stype == "WEP 40/128":
+    if stype == "WEP 128":
         if length>0 and length <=64:
             return True
         else:
             return False
-        """
+    elif stype == "WEP 40/128":
         if length==5:
             #ascii40
             return True
@@ -379,19 +379,6 @@ def is_pass_valid(passw,stype):
                 return True
                 #valid
         elif length==13:
-            #ascii128
-            return True
-        elif length==26:
-            #hex128
-            if is_hex(passw):
-                #valid
-                return True
-        else:
-            #invalid
-            return False
-        """
-    elif stype == "WEP 128":
-        if length==13:
             #ascii128
             return True
         elif length==26:
@@ -506,7 +493,8 @@ def wireless_enabled(nm_handle,interface):
 def nmanager_enabled(nm_handle,state):
     nm_handle.enable(state)
 
-def wep_security_config(settings):
+def wep_security_config(settings,inf):
+    import dbus
     settings._settings["802-11-wireless"][dbus.String("security")]="802-11-wireless-security"
     settings._settings["802-11-wireless-security"][dbus.String("auth-alg")]=inf["auth-alg"]
     wep_index="wep-key"+str(inf["wep-key"])
@@ -623,10 +611,10 @@ def create_wireless_connection(nm_handle, _device):
         settings = WirelessSettings()
     elif inf["secure"]==securities[1]:
         settings = WEP40128WirelessSettings()
-        wep_security_config(settings)
+        wep_security_config(settings,inf)
     elif inf["secure"]==securities[2]:
         settings = WEP128WirelessSettings()
-        wep_security_config(settings)
+        wep_security_config(settings,inf)
     elif inf["secure"]==securities[3]:
         settings=WPAWirelessSettings()
         settings._settings["802-11-wireless"][dbus.String("security")]="802-11-wireless-security"
@@ -838,9 +826,9 @@ def edit_connection(nm_handle):
                 if inf["secure"]==securities[0]:
                     pass
                 elif inf["secure"]==securities[1]:
-                    settings=wep_security_config(settings)
+                    settings=wep_security_config(settings,inf)
                 elif inf["secure"]==securities[2]:
-                    settings=wep_security_config(settings)
+                    settings=wep_security_config(settings,inf)
                 elif inf["secure"]==securities[3]:
                     settings._settings["802-11-wireless"][dbus.String("security")]="802-11-wireless-security"
                     settings._settings["802-11-wireless-security"][dbus.String("psk")]=inf["pass"]
@@ -1038,6 +1026,7 @@ When activating a connection, you should either provide an interface like
             print_connections(nm_handle)
         except dbus.exceptions.DBusException as e:
             if not root :
+                print e
                 print _("You must be root to run python-networkmanager")
             else:
                 print e
@@ -1046,6 +1035,7 @@ When activating a connection, you should either provide an interface like
             print_devices(nm_handle)
         except dbus.exceptions.DBusException as e:
             if not root :
+                print e
                 print _("You must be root to run python-networkmanager")
             else:
                 print e
@@ -1055,6 +1045,7 @@ When activating a connection, you should either provide an interface like
             create_connection(nm_handle)
         except dbus.exceptions.DBusException as e:
             if not root :
+                print e
                 print _("You must be root to run python-networkmanager")
             else:
                 print e
