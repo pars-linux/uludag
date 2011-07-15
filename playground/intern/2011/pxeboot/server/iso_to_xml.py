@@ -11,7 +11,6 @@ import urwid.raw_display
 
 
 class getMenu:
-
     def selectionmenu(self,filelist):
         palette = [
                 ('header', 'black,underline', 'light gray', 'standout,underline',
@@ -27,31 +26,43 @@ class getMenu:
         listbox = urwid.SimpleListWalker([])
         editedList = []
 
+        def getTerminalSize():
+            import fcntl, termios, struct
+            height, width, hp, wp = struct.unpack('HHHH',
+                                                fcntl.ioctl(0, termios.TIOCGWINSZ,
+                                                    struct.pack('HHHH', 0, 0, 0, 0)))
+            return width, height
+
+
         def focus(widget):
             return urwid.AttrMap(widget, None, 'focus')
 
         def selected_item (cb, state):
             if state == True:
                 for fullpath in filelist:
-                    if os.path.split(fullpath)[1] == cb.get_label().split("          ")[0]:
+                    if os.path.split(fullpath)[1] == cb.get_label():
                         editedList.append(fullpath)
 
             else:
                 for fullpath in filelist:
-                    if os.path.split(fullpath)[1] == cb.get_label().split("          ")[0]:
+                    if os.path.split(fullpath)[1] == cb.get_label():
                         editedList.remove(fullpath)
 
         def createCB(text,i):
-            kilo = 1024*1024
-            size = (os.path.getsize(os.path.join(isoFolder,text)))/kilo
             text = os.path.split(text)[1]
-            text = "%s          Size : %sMB" % (text, size)
             cb = urwid.CheckBox(text, False, has_mixed=False)
             urwid.connect_signal(cb, 'change', selected_item)
             return focus(cb)
 
         def click_ok(button):
             raise urwid.ExitMainLoop()
+
+        def bylength(path1, path2):
+            return len(path1) - len(path2)
+
+        width, height = getTerminalSize()
+        filelist.sort(cmp=bylength)
+        w = (width - len(filelist[0]))/4
 
         blank = urwid.Divider()
 
@@ -61,14 +72,18 @@ class getMenu:
                     urwid.Padding(
                         urwid.AttrMap(
                             urwid.Text("Select Version",align='center'),'header'),
-                            ('fixed left',35),('fixed right',35)),
+                            ('fixed left',w-10),('fixed right',w-10)),
                     blank,
                     blank
                  ])
 
         i = 1
+        kilo = 1024*1024
+
+
 
         for files in filelist:
+            size = (os.path.getsize(files))/kilo
             listbox.extend([
                 urwid.Padding(
                 urwid.AttrMap(
@@ -76,7 +91,9 @@ class getMenu:
                         urwid.Pile([
                             createCB(files,i),
                             ]),
-                        ]),'panel'),('fixed left',40),('fixed right',40)),
+                        urwid.Pile([
+                            urwid.Text("Size : %sMB" % size,align='left')]),
+                        ]),'panel'),('fixed left',w),('fixed right',w)),
                 blank
                     ])
 
@@ -130,7 +147,7 @@ def extractData(local_filename):
     statbuf = iso.stat (local_filename,True)
 
     if statbuf is None:
-        print "Couldn't get ISO-9660 file information for file"  %local_filename
+        print "Couldn't get ISO-9660 file information for file"  % local_filename
         iso.close()
         sys.exit(1)
 
@@ -154,16 +171,16 @@ def extractData(local_filename):
                 data = line.lstrip().split("=", 1)[1]
     return data
 
-
+#parsing pisi-index.xml.bz2 file which is in iso image.
 def parseXml():
     xmlStr = extractData("repo/pisi-index.xml.bz2")
     doc = piksemel.parseString(xmlStr)
-    a = 0
+    installedsize = 0
     for tags in doc.tags("Package"):
-        size = int(tags.getTagData("InstalledSize"))
-        a += int(size)
+        sizes = int(tags.getTagData("InstalledSize"))
+        installedsize += int(sizes)
     architecture = tags.getTagData("Architecture")
-    return a, architecture
+    return installedsize, architecture
 
 
 #if none given
@@ -177,17 +194,16 @@ if len(sys.argv) > 2:
 treeString = ""
 
 #get .iso files from directory
-#filelist=[files for files in os.listdir(isoFolder) if files.lower().endswith(".iso")]
-
 filelist = []
+
 for root , dirs, files in os.walk(isoFolder):
     for filespath in files:
         if filespath.endswith('.iso'):
             filelist.append(os.path.join(root,filespath))
 
 if len(filelist) == 0:
-    print "There is no ISO image file in '%s'" %isoFolder
-    print "usage : %s [Path]" %sys.argv[0]
+    print "There is no ISO image file in '%s'" % isoFolder
+    print "usage : %s [Path]" % sys.argv[0]
     sys.exit(1)
 
 listObject = getMenu()
@@ -208,11 +224,11 @@ for files_name in filelist:
 
     for dirs in iso.readdir("/"):
         if dirs[0] == "/repo": 
-            isosize,architecture = parseXml()
+            isosize, architecture = parseXml()
         else:
             isosize = os.path.getsize(files_name)
             architecture = "LiveCD"
-    isosize = "%s" %isosize
+    isosize = "%s" % isosize
     size_tag = iks.SubElement(root, "Size")
     size_tag.text = isosize
 
@@ -222,6 +238,6 @@ for files_name in filelist:
     treeString += iks.tostring(root)
     treeString += "\n"
 
-xmlfile = open("%s/pxeboot_iso_files.xml"%isoFolder,"w")
+xmlfile = open("%s/pxeboot_iso_files.xml" % isoFolder,"w")
 xmlfile.write(treeString)
 xmlfile.close()
