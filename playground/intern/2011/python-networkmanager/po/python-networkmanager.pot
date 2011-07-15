@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-15 14:03+0300\n"
+"POT-Creation-Date: 2011-07-15 14:12+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,6 +69,22 @@ msgstr ""
 msgid "  [2] Automatically obtain an IP address"
 msgstr ""
 
+#: network:243 network:285
+msgid "Type"
+msgstr ""
+
+#: network:253
+msgid "Address"
+msgstr ""
+
+#: network:260
+msgid "Mask"
+msgstr ""
+
+#: network:269
+msgid "Gateway"
+msgstr ""
+
 #: network:282
 msgid "Select Name server (DNS) assignment method:"
 msgstr ""
@@ -89,6 +105,14 @@ msgstr ""
 msgid "Usage example 4.2.2.1,4.2.2.2"
 msgstr ""
 
+#: network:292
+msgid "DNSes"
+msgstr ""
+
+#: network:322 network:572 network:604 network:650 network:822
+msgid "Profile name"
+msgstr ""
+
 #: network:324 network:574 network:606 network:652 network:824
 #, python-format
 msgid "There is already a connection named '%s'"
@@ -98,7 +122,11 @@ msgstr ""
 msgid "Wep index 1-2-3-4 |  Default 1"
 msgstr ""
 
-#: network:343
+#: network:342
+msgid "Index"
+msgstr ""
+
+#: network:343 network:346
 msgid "Authorization"
 msgstr ""
 
@@ -118,8 +146,16 @@ msgstr ""
 msgid "  [1] Unsecured"
 msgstr ""
 
+#: network:433
+msgid "Security Type "
+msgstr ""
+
 #: network:466
 msgid "Select device mode:"
+msgstr ""
+
+#: network:470
+msgid "Device Mode"
 msgstr ""
 
 #: network:477
@@ -140,8 +176,16 @@ msgstr ""
 msgid "Select country:"
 msgstr ""
 
+#: network:539 network:588
+msgid "Country"
+msgstr ""
+
 #: network:543 network:592
 msgid "Select provider:"
+msgstr ""
+
+#: network:548 network:597
+msgid "Provider"
 msgstr ""
 
 #: network:552
@@ -152,12 +196,20 @@ msgstr ""
 msgid "Select device type:"
 msgstr ""
 
+#: network:683
+msgid "Device type"
+msgstr ""
+
 #: network:710
 msgid "Select device:"
 msgstr ""
 
 #: network:712
 msgid "  [0]  Device independent"
+msgstr ""
+
+#: network:715
+msgid "Device"
 msgstr ""
 
 #: network:750
@@ -185,6 +237,10 @@ msgstr ""
 msgid "  [%d] Save and finish editing"
 msgstr ""
 
+#: network:799
+msgid "Option"
+msgstr ""
+
 #: network:872
 msgid "The connection's mac address did not match this device"
 msgstr ""
@@ -196,6 +252,54 @@ msgstr ""
 #: network:907
 #, python-format
 msgid "There is no connection named: %s"
+msgstr ""
+
+#: network:955
+msgid ""
+"usage: %prog [options] <interface>\n"
+"\n"
+"When activating a connection, you should either provide an interface like\n"
+"'eth0', 'wlan0', etc. or select an interface from the list."
+msgstr ""
+
+#: network:967
+msgid "List connections"
+msgstr ""
+
+#: network:973
+msgid "List devices"
+msgstr ""
+
+#: network:979
+msgid "Create a connection"
+msgstr ""
+
+#: network:985
+msgid "Edit a connection"
+msgstr ""
+
+#: network:991
+msgid "Remove a connection"
+msgstr ""
+
+#: network:997
+msgid "Activates the given connection"
+msgstr ""
+
+#: network:1003
+msgid "Deactivates the given connection"
+msgstr ""
+
+#: network:1009
+msgid "Activates or deactivates wifi"
+msgstr ""
+
+#: network:1015
+msgid "Activates or deactivates networkmanager"
+msgstr ""
+
+#: network:1021
+msgid "Traffic monitoring"
 msgstr ""
 
 #: network:1041 network:1049 network:1058 network:1067 network:1076

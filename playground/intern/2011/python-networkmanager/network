@@ -240,7 +240,7 @@ def get_ip_assignment(settings):
     print colorize(_("Select IP assignment method:"), "yellow")
     print _("  [1] Enter an IP address manually")
     print _("  [2] Automatically obtain an IP address")
-    if get_number("Type", 1, 2) == 2:
+    if get_number(_("Type"), 1, 2) == 2:
         ignore_auto_dns = False
         if "ignore-auto-dns" in settings._settings["ipv4"].keys():
             ignore_auto_dns = settings._settings["ipv4"]["ignore-auto-dns"]
@@ -250,14 +250,14 @@ def get_ip_assignment(settings):
         validaddress=False
         while not validaddress:
             try:
-                settings.address = get_input_atleast("Address",4) 
+                settings.address = get_input_atleast(_("Address"),4) 
                 validaddress=True
             except IPv4IpValidationError ,  IPv6IpValidationError:
                 valid=False
         validnetmask=False
         while not validnetmask:
             try:
-                settings.netmask = get_input_atleast("Mask",4)
+                settings.netmask = get_input_atleast(_("Mask"),4)
                 validnetmask=True
             except IPv4IpValidationError ,  IPv6IpValidationError:
                 validnetmask=False
@@ -266,7 +266,7 @@ def get_ip_assignment(settings):
         validgateway=False
         while not validgateway:
             try:
-                settings.gateway = get_input_atleast("Gateway",4)
+                settings.gateway = get_input_atleast(_("Gateway"),4)
                 validgateway=True
             except IPv4IpValidationError ,  IPv6IpValidationError:
                 validgateway=False
@@ -282,14 +282,14 @@ def get_dns_assignment(settings):
     print colorize(_("Select Name server (DNS) assignment method:"), "yellow")
     print _("  [1] Enter an name server address manually")
     print _("  [2] Automatically obtain from DHCP")
-    dns = get_number("Type", 1, 2)
+    dns = get_number(_("Type"), 1, 2)
     if dns == 1:
         print _("Use commas to separate DNSes")
         print _("Usage example 4.2.2.1,4.2.2.2")
         validdnses=False
         while not validdnses:
             try:
-                dnses = get_input_atleast("DNSes",4)
+                dnses = get_input_atleast(_("DNSes"),4)
                 splitted_dnses=split_dnses(dnses)
                 settings._settings["ipv4"]["ignore-auto-dns"] = True
                 settings.dns = splitted_dnses
@@ -319,7 +319,7 @@ def create_ethernet_connection(nm_handle, _device):
     connection_id = None
     print
     while not connection_id:
-        connection_id = get_input("Profile name").strip()
+        connection_id = get_input(_("Profile name")).strip()
         if nm_handle.get_connections_by_id(connection_id) is not None:
             print _("There is already a connection named '%s'") % connection_id
             print
@@ -339,11 +339,11 @@ def get_wep_inf():
     auth=("open","shared")
     index=1
     print colorize(_("Wep index 1-2-3-4 |  Default 1"),"yellow")
-    index=get_number("Index",1,4)
+    index=get_number(_("Index"),1,4)
     print colorize(_("Authorization"),"yellow")
     print _("[1] Open")
     print _("[2] Shared")
-    authindex=get_number("Authorization",1,2)-1
+    authindex=get_number(_("Authorization"),1,2)-1
     return {"index":index-1,"auth":auth[authindex]}
 
 def get_password(stype):
@@ -430,7 +430,7 @@ def get_pass_infs_from_user(inf):
         print "  [3] WEP 128"
         print "  [4] WPA & WPA2"
 
-        secure_index=get_number("Security Type ",1,4)-1
+        secure_index=get_number(_("Security Type "),1,4)-1
         if secure_index == 0:
             secure=secure_type[0]
         elif secure_index==1:
@@ -467,7 +467,7 @@ def get_wireless_infs_from_user(_device):
     for mode_name in device_modes:
         print "  [%s] %s" % (index_,mode_name.upper())
         index_+=1
-    mode_no = get_number("Device Mode",1,len(device_modes))-1
+    mode_no = get_number(_("Device Mode"),1,len(device_modes))-1
     print
     #print mode_no
 
@@ -536,7 +536,7 @@ def create_gsm_connection(nm_handle,_device):
     print colorize(_("Select country:"),"yellow")
     countries=mobile.get_countries()
     create_column(countries,7)
-    cncode=get_input("Country")
+    cncode=get_input(_("Country"))
     country=mobile.get_country(cncode)
     providers=mobile.get_providers_for_gsm(country)
     providers_names=mobile.get_providers_names(providers)
@@ -545,7 +545,7 @@ def create_gsm_connection(nm_handle,_device):
     for name in providers_names:
         print "  [%d] %s"% (index_ , name)
         index_+=1
-    procode=get_number("Provider",1,len(providers))
+    procode=get_number(_("Provider"),1,len(providers))
     gsm=mobile.get_providers_gsm(providers[int(procode)-1])
     apns=mobile.get_gsm_apn(gsm)
     apns_values=mobile.get_apns_values(apns)
@@ -569,7 +569,7 @@ def create_gsm_connection(nm_handle,_device):
     connection_id = None
     print
     while not connection_id:
-        connection_id = get_input("Profile name").strip()
+        connection_id = get_input(_("Profile name")).strip()
         if nm_handle.get_connections_by_id(connection_id) is not None:
             print _("There is already a connection named '%s'") % connection_id
             print
@@ -585,7 +585,7 @@ def create_cdma_connection(nm_handle,_device):
     print colorize(_("Select country:"),"yellow")
     countries=mobile.get_countries()
     create_column(countries,7)
-    cncode=get_input("Country")
+    cncode=get_input(_("Country"))
     country=mobile.get_country(cncode)
     providers=mobile.get_providers_for_cdma(country)
     providers_names=mobile.get_providers_names(providers)
@@ -594,14 +594,14 @@ def create_cdma_connection(nm_handle,_device):
     for name in providers_names:
         print "  [%d] %s"% (index_ , name)
         index_+=1
-    procode=get_number("Provider",1,len(providers))
+    procode=get_number(_("Provider"),1,len(providers))
     settings.uuid=uuid.uuid4()
     settings.device=_device
     settings._settings["connection"][dbus.String("autoconnect")]="false"
     connection_id = None
     print
     while not connection_id:
-        connection_id = get_input("Profile name").strip()
+        connection_id = get_input(_("Profile name")).strip()
         if nm_handle.get_connections_by_id(connection_id) is not None:
             print _("There is already a connection named '%s'") % connection_id
             print
@@ -647,7 +647,7 @@ def create_wireless_connection(nm_handle, _device):
     connection_id = None
     print
     while not connection_id:
-        connection_id = get_input("Profile name").strip()
+        connection_id = get_input(_("Profile name")).strip()
         if nm_handle.get_connections_by_id(connection_id) is not None:
             print _("There is already a connection named '%s'") % connection_id
             print
@@ -680,7 +680,7 @@ def create_connection(nm_handle):
         print "  [%s] %s" % (device_types.index(device_type) + 1,
                                     str(device_type).capitalize())
 
-    device_no = get_number("Device type", 1, len(device_types)) - 1
+    device_no = get_number(_("Device type"), 1, len(device_types)) - 1
 
     filtered_devices = nm_handle.devices_map[device_types[device_no]]
 
@@ -712,7 +712,7 @@ def get_device(nm_handle, device_list = None, type = None, mustSelect = True):
             print _("  [0]  Device independent")
         for (index, device) in enumerate(device_list):
             print_device(device, index + 1)
-        dev_no = get_number("Device", 1, len(device_list)) - 1
+        dev_no = get_number(_("Device"), 1, len(device_list)) - 1
         print
         return device_list[dev_no]
 
@@ -796,7 +796,7 @@ def edit_connection(nm_handle):
 
         print _("  [%d] Save and finish editing") % _index
 
-        option = get_number("Option", 1, _index ) - 1
+        option = get_number(_("Option"), 1, _index ) - 1
         print
         if option == 0:
             device = get_device(nm_handle, type = settings.type, mustSelect = False)
@@ -819,7 +819,7 @@ def edit_connection(nm_handle):
                 connection_ids.append(conn.settings.id)
 
             while not connection_id:
-                connection_id = get_input("Profile name").strip()
+                connection_id = get_input(_("Profile name")).strip()
                 if connection_id in connection_ids:
                     print _("There is already a connection named '%s'")\
                                                         % connection_id
@@ -952,11 +952,11 @@ def main():
         global GUDEV_HANDLE
         GUDEV_HANDLE = gudev.Client("net")
 
-    usage = """\
+    usage = _("""\
 usage: %prog [options] <interface>
 
 When activating a connection, you should either provide an interface like
-'eth0', 'wlan0', etc. or select an interface from the list."""
+'eth0', 'wlan0', etc. or select an interface from the list.""")
 
     parser = OptionParser(usage)
 
@@ -964,61 +964,61 @@ When activating a connection, you should either provide an interface like
                       action="store_const",
                       dest="action",
                       const="connections",
-                      help='List connections')
+                      help=_('List connections'))
 
     parser.add_option("-D", "--devices",
                       action="store_const",
                       dest="action",
                       const="devices",
-                      help='List devices')
+                      help=_('List devices'))
 
     parser.add_option("-c", "--create",
                       action="store_const",
                       dest="action",
                       const="create",
-                      help='Create a connection')
+                      help=_('Create a connection'))
 
     parser.add_option("-e", "--edit",
                       action="store_const",
                       dest="action",
                       const="edit",
-                      help='Edit a connection')
+                      help=_('Edit a connection'))
 
     parser.add_option("-r", "--remove",
                       action="store_const",
                       dest="action",
                       const="remove",
-                      help='Remove a connection')
+                      help=_('Remove a connection'))
 
     parser.add_option("-a", "--activate",
                       action="store_const",
                       dest="a_connection",
                       const="activate",
-                      help='Activates the given connection')
+                      help=_('Activates the given connection'))
 
     parser.add_option("-d", "--deactivate",
                       action="store_const",
                       dest="d_connection",
                       const="deactivate",
-                      help='Deactivates the given connection')
+                      help=_('Deactivates the given connection'))
 
     parser.add_option("-w","--wifi",
                       action="store_const",
                       dest="wifi",
                       const="wifi",
-                      help='Activates or deactivates wifi')
+                      help=_('Activates or deactivates wifi'))
 
     parser.add_option("-n","--nmanager",
                       action="store_const",
                       dest="nmanager",
                       const="nmanager",
-                      help='Activates or deactivates networkmanager')
+                      help=_('Activates or deactivates networkmanager'))
 
     parser.add_option("-t","--traffic",
                       action="store_const",
                       dest="traffic",
                       const="monitor",
-                      help='Traffic monitoring')
+                      help=_('Traffic monitoring'))
 
     (options, args) = parser.parse_args()
     try:
