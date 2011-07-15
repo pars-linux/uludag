@@ -1,0 +1,54 @@
+#!/bin/bash -i
+
+
+LC_ALL=C
+
+pack_list=$(mktemp)
+:> ${pack_list}
+
+update_plist()
+{
+    local ident=$1
+    shift
+
+    for pack in $*; do
+        chk_str="egrep '^${pack} ' $pack_list"
+        if [ -z "`eval $chk_str`" ]; then
+            deps=$(pisi info $pack | grep Dependencies | head -1 | cut -d':' -f2)
+            # pisi info $pack | grep Dependencies | head -1 | cut -d':' -f2
+
+            for ((i=0; i<${ident}; i++)); do
+                echo -n " "
+            done
+            echo "${pack} : ${deps}" | tee -a $pack_list
+
+            update_plist $((ident + 2)) $deps
+        fi
+    done
+}
+
+usage()
+{
+    cat << __EOF
+    usage: $(basename $0) <package list>
+
+    example:
+    $ $(basename $0) bash busybox pisi > min_list
+
+    or
+
+    $ echo -n "min_list=[ "; for p in \`$(basename $0) bash busybox pisi | cut -d: -f1\`; do \\
+        echo -n "\\"\$p\\", " \\
+    done; echo " ]";
+__EOF
+}
+
+[ $# -gt 0 ] || (
+    usage
+    exit 1
+)
+
+update_plist 0 $*
+
+rm $pack_list
+
