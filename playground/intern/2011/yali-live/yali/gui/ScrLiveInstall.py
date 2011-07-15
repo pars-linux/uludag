@@ -12,6 +12,8 @@
 import os
 import shutil
 import stat
+import subprocess
+
 from multiprocessing import Process, Queue
 from Queue import Empty
 
@@ -157,10 +159,9 @@ class Widget(QWidget, ScreenWidget):
             ctx.logger.debug("checkQueueEvent: Processing %s event..." % event)
             # EventCopy
             if event == EventCopy:
-                filename = data[1]
-                self.installProgress.ui.info.setText(_("Copying <b>%s</b>" % filename))
-                ctx.logger.debug("Copying %s" % filename)
-                self.cur += 1
+                self.cur = data[1]
+                self.installProgress.ui.info.setText(_("Copying system"))
+                ctx.logger.debug("Unsquashfs system")
                 self.installProgress.ui.progress.setValue(self.cur)
 
             # EventSetProgress
@@ -262,53 +263,37 @@ class SystemCopy(Process):
         self.mutex = mutex
         self.wait_condition = wait_condition
         self.retry_answer = retry_answer
-
-        self.symlink_dirs = ["opt","lib","bin","sbin","boot","usr"]
-        self.copy_dirs = ["etc","root","var"]
-        self.empty_dirs = ["mnt","sys","proc","dev","media","tmp","home"]
-        self.symlink_basepath = os.readlink("/usr").replace("/usr","")
-
         ctx.logger.debug("System Copy Process started.")
 
     def run(self):
         ctx.logger.debug("System copy process running.")
 
         #Calculate total size to be copied 
-        ctx.logger.debug("Calculating total size")
-        total = 0.0
-        for dir in self.copy_dirs:
-            for (path, dirs, files) in os.walk(dir):
-                for file in files:
-                    filename = os.path.join(path, file)
-                    total += os.stat(filename).st_size
-
-        for dir in self.symlink_dirs:
-            for (path, dirs, files) in os.walk(os.path.join("/",self.symlink_basepath,dir)):
-                for file in files:
-                    filename = os.path.join(path, file)
-                    st = os.lstat(filename)
-                    mode = stat.S_IMODE(st.st_mode)
-                    if stat.S_ISREG(st.st_mode):
-                        total += os.stat(filename).st_size
-
         ctx.logger.debug("Sending EventSetProgress")
-        self.cursorlimit = total/100    #for every limit bytes move progress bar one percent
-        self.currentbytes = 0
         data = [EventSetProgress, 100]
         self.queue.put_nowait(data)
 
         try:
             while True:
                 try:
-                    for dir in self.empty_dirs:
-                        absdir = os.path.join(ctx.consts.target_dir, dir)
-                        if not os.path.exists(absdir):
-                            os.mkdir(absdir)
-                    for dir in self.copy_dirs:
-                        self.copytree(os.path.join("/",dir),os.path.join(ctx.consts.target_dir,dir))
-                    for dir in self.symlink_dirs:
-                        self.copytree(os.path.join("/",self.symlink_basepath,dir),
-                        os.path.join(ctx.consts.target_dir,dir))
+                    proc = subprocess.Popen("unsquashfs -f -d %s %s" %(ctx.consts.target_dir, os.path.join(ctx.consts.source_dir,"pardus.img")),shell=True,stdout=subprocess.PIPE)
+                    first = ''
+                    second = ''
+
+                    while True:
+                        output = proc.stdout.read(1)
+                        if not output:
+                            break
+
+                        if output == '%':
+                            progress = int("%s%s" %(first,second))
+                            data = [EventCopy, progress]
+                            self.queue.put_nowait(data)
+                        else:
+                            first = second
+                            second = output
+
+                    proc.wait()
                     break # while
                 except Exception, msg:
                     # Lock the mutex
@@ -335,64 +320,4 @@ class SystemCopy(Process):
         # Copying finished
         data = [EventCopyFinished]
         self.queue.put_nowait(data)
-
-    def copytree(self, src, dst):
-        errors = []
-        if not os.path.exists(dst):
-            os.mkdir(dst)
-            st = os.lstat(src)
-            mode = stat.S_IMODE(st.st_mode)
-            os.chmod(dst, mode)
-
-        for (path, dirs, files) in os.walk(src):
-            #generate relative path from absolute path
-            relativedir = os.path.relpath(path,src)
-            #for every directory in source folder
-            for dir in dirs:
-                newdir = os.path.join(dst,relativedir,dir)
-                #create inner directories
-                if not os.path.exists(newdir):
-                    os.mkdir(newdir)
-                    st = os.lstat(os.path.join(path,dir))
-                    mode = stat.S_IMODE(st.st_mode)
-                    os.chmod(newdir, mode)
-
-            for file in files:
-                #copy inner files
-                srcname = os.path.join(src, path, file)
-                dstname = os.path.join(dst,relativedir, file)
-                #debug
-                st = os.lstat(srcname)
-                mode = stat.S_IMODE(st.st_mode)
-                try:
-                    #is source file is a link
-                    if os.path.islink(srcname):
-                        if os.path.lexists(dstname):
-                            os.unlink(dstname)
-                        linkto = os.readlink(srcname)
-                        os.symlink(linkto, dstname)
-
-                    #or a regular file
-                    elif os.path.isfile(srcname):
-                        shutil.copy2(srcname, dstname)
-
-                        # Update status
-                        self.currentbytes += os.stat(srcname).st_size
-                        if self.currentbytes >= self.cursorlimit:
-                            data = [EventCopy, "files"]
-                            self.queue.put_nowait(data)
-                            self.currentbytes -= self.cursorlimit
-                    #set chown
-                    os.lchown(dstname, st.st_uid, st.st_gid)
-                    #set chmod
-                    if not os.path.islink(srcname):
-                        os.chmod(dstname, mode)
-                        os.utime(dstname, (st.st_atime, st.st_mtime))
-
-                except (IOError, os.error), why:
-                    errors.append((srcname, dstname, str(why)))
-                # catch the Error from the recursive copytree so that we can
-                # continue with other files
-                except Error, err:
-                    errors.extend(err.args[0])
 
