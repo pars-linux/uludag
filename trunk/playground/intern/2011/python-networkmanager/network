@@ -26,8 +26,10 @@ from networkmanager import WEP128WirelessSettings
 from networkmanager import DeviceType
 from networkmanager import DeviceState
 from networkmanager import GsmSettings
+import gettext
 
-
+__trans = gettext.translation('python-networkmanager', fallback=True)
+_ = __trans.ugettext
 
 
 # Color characters
@@ -73,7 +75,7 @@ def get_input_atleast(label,min_):
 def get_input(label):
     """Get input from the terminal."""
     try:
-        return raw_input(colorize(("%s > " % label), 'light'))
+        return raw_input(colorize((_("%s > ") % label), 'light'))
     except (KeyboardInterrupt, EOFError):
         print
         sys.exit(1)
@@ -83,7 +85,7 @@ def get_number(label, min_, max_):
     index_ = min_ - 1
     while index_ < min_ or index_ > max_:
         try:
-            index_ = int(raw_input(colorize(("%s > " % label), 'light')))
+            index_ = int(raw_input(colorize((_("%s > ") % label), 'light')))
         except ValueError:
             pass
         except (KeyboardInterrupt, EOFError):
@@ -104,10 +106,11 @@ def print_connection(state, nm_settings, devices=[]):
             ip4address = dev.ip4config.addresses[0][0]
             netmask = dev.ip4config.addresses[0][1]
             gateway = dev.ip4config.addresses[0][2]
-            print "\tInterface: %s" % dev.interface
-            print "\tAddress: %s\n\tNetmask: %s\n\tDefault Gateway: %s"\
-                                            % (ip4address, netmask, gateway)
-            print "\tName Servers: %s" % ", ".join(dev.ip4config.name_servers)
+            print "\t" + _("Interface: %s") % dev.interface
+            print "\t" + _("Address: {ipaddress_}") + "\n\t"+ _("Netmask: {netmask_}")+\
+                    "\n\t"+ _("Default Gateway: {gateway_}").\
+                    format(ipaddress=ip4address,netmask_=netmask,gateway_=gateway)
+            print "\t"+ _("Name Servers: %s") % ", ".join(dev.ip4config.name_servers)
     except dbus.exceptions.DBusException:
         pass
 
@@ -130,7 +133,7 @@ def print_connections(nm_handle):
         if len(connections[connection_key]) > 0:
             # Convert ethernet->Ethernet, wireless->Wireless, etc.
             conn_interface = connection_key.split("-")[-1].capitalize()
-            print colorize("%s connections" % conn_interface, 'green')
+            print colorize(_("%s connections") % conn_interface, 'green')
 
             for connection in connections[connection_key]:
                 devices = []
@@ -154,14 +157,15 @@ def print_device(nm_device, index = -1):
             model = udev_device.get_property("ID_MODEL_FROM_DATABASE")
     if index > 0:
         print "  [%s]" % index,
-    print " %6s %s %s [driver: %s]" % (colorize(nm_device.interface, "light"),
-                                       vendor, model,
-                                       colorize(nm_device.driver, "yellow"))
+    print _(" {interface_} {verdor_} {model_} [driver: {driver_}]")\
+            .format(interface_=colorize(nm_device.interface, "light"),verdor_=vendor,\
+            model_=model,\
+            driver_=colorize(nm_device.driver, "yellow"))
 
 def print_devices(nm_handle):
     """Print the device list."""
     for device_type in nm_handle.devices_map:
-        print colorize("%s devices"\
+        print colorize(_("%s devices")\
                 % str(device_type).split("-")[-1].capitalize(), 'green')
         for device in nm_handle.devices_map[device_type]:
             print_device(device)
@@ -212,7 +216,7 @@ def get_connection(nm_handle, text = "connection"):
     for connection_type in connections:
         if len(connections[connection_type]) > 0:
             conn_interface = connection_type.split("-")[-1].capitalize()
-            print colorize("%s connections" % conn_interface, 'green')
+            print colorize(_("%s connections") % conn_interface, 'green')
             for (_index, connection) in enumerate(connections[connection_type]):
                 print "  [%s] %s" % ((index + 1 + _index), connection.settings.id)
                 connection_list.append(connection)
@@ -232,9 +236,9 @@ def remove_connection(nm_handle):
 
 def get_ip_assignment(settings):
     """Get IP assignment method from user"""
-    print colorize("Select IP assignment method:", "yellow")
-    print "  [1] Enter an IP address manually"
-    print "  [2] Automatically obtain an IP address"
+    print colorize(_("Select IP assignment method:"), "yellow")
+    print _("  [1] Enter an IP address manually")
+    print _("  [2] Automatically obtain an IP address")
     if get_number("Type", 1, 2) == 2:
         ignore_auto_dns = False
         if "ignore-auto-dns" in settings._settings["ipv4"].keys():
@@ -274,13 +278,13 @@ def split_dnses(dnses):
 
 def get_dns_assignment(settings):
     """Get DNS assignment method from user"""
-    print colorize("Select Name server (DNS) assignment method:", "yellow")
-    print "  [1] Enter an name server address manually"
-    print "  [2] Automatically obtain from DHCP"
+    print colorize(_("Select Name server (DNS) assignment method:"), "yellow")
+    print _("  [1] Enter an name server address manually")
+    print _("  [2] Automatically obtain from DHCP")
     dns = get_number("Type", 1, 2)
     if dns == 1:
-        print("Use commas to separate DNSes")
-        print("Usage example 4.2.2.1,4.2.2.2")
+        print _("Use commas to separate DNSes")
+        print _("Usage example 4.2.2.1,4.2.2.2")
         validdnses=False
         while not validdnses:
             try:
@@ -293,7 +297,7 @@ def get_dns_assignment(settings):
                 validdnses=False
             except AttributeError:
                 validdnses=False
-        
+
 
     elif dns == 2:
         settings._settings["ipv4"]["ignore-auto-dns"] = False
@@ -316,7 +320,7 @@ def create_ethernet_connection(nm_handle, _device):
     while not connection_id:
         connection_id = get_input("Profile name").strip()
         if nm_handle.get_connections_by_id(connection_id) is not None:
-            print "There is already a connection named '%s'" % connection_id
+            print _("There is already a connection named '%s'") % connection_id
             print
             connection_id = None
 
@@ -333,11 +337,11 @@ def dbus_byte_array_to_string(array):
 def get_wep_inf():
     auth=("open","shared")
     index=1
-    print colorize("Wep index 1-2-3-4 |  Default 1","yellow")
+    print colorize(_("Wep index 1-2-3-4 |  Default 1"),"yellow")
     index=get_number("Index",1,4)
-    print colorize("Authorization","yellow")
-    print "[1] Open"
-    print "[2] Shared"
+    print colorize(_("Authorization"),"yellow")
+    print _("[1] Open")
+    print _("[2] Shared")
     authindex=get_number("Authorization",1,2)-1
     return {"index":index-1,"auth":auth[authindex]}
 
@@ -419,8 +423,8 @@ def get_pass_infs_from_user(inf):
     secure=None
     while not secure:
         secure_type=("Unsecured","WEP 40/128","WEP 128","WPA & WPA2")
-        print colorize("Security","yellow") 
-        print "  [1] Unsecured"
+        print colorize(_("Security"),"yellow") 
+        print _("  [1] Unsecured")
         print "  [2] WEP 40/128"
         print "  [3] WEP 128"
         print "  [4] WPA & WPA2"
@@ -458,7 +462,7 @@ def get_wireless_infs_from_user(_device):
     device_modes=["infrastructure","adhoc"]
     index_=1
     print
-    print colorize("Select device mode:","yellow")
+    print colorize(_("Select device mode:"),"yellow")
     for mode_name in device_modes:
         print "  [%s] %s" % (index_,mode_name.upper())
         index_+=1
@@ -469,7 +473,7 @@ def get_wireless_infs_from_user(_device):
     #Get ssid
     remote=None
     while not remote:
-        print colorize("SSID","yellow")
+        print colorize(_("SSID"),"yellow")
         remotes=[]
 
         index_=1
@@ -479,8 +483,8 @@ def get_wireless_infs_from_user(_device):
             print "  [%s] %s" % (index_,\
                     dbus_byte_array_to_string(remotePoint.ssid))
             index_+=1
-        print "  [%s] Rescan" % index_
-        print "  [%s] Enter SSID maually" % (index_+1)
+        print _("  [%s] Rescan") % index_
+        print _("  [%s] Enter SSID maually") % (index_+1)
         remoteNo = get_number("ESSID", 1 , len(remotes)+2)-1
         if remoteNo < len(remotes) and remoteNo > -1:
             remote = remotes[remoteNo]
@@ -528,14 +532,14 @@ def create_column(colist,num):
 def create_gsm_connection(nm_handle,_device):
     import dbus
     settings=GsmSettings()
-    print colorize("Select country:","yellow")
+    print colorize(_("Select country:"),"yellow")
     countries=mobile.get_countries()
     create_column(countries,7)
     cncode=get_input("Country")
     country=mobile.get_country(cncode)
     providers=mobile.get_providers_for_gsm(country)
     providers_names=mobile.get_providers_names(providers)
-    print colorize("Select provider:","yellow")
+    print colorize(_("Select provider:"),"yellow")
     index_=1
     for name in providers_names:
         print "  [%d] %s"% (index_ , name)
@@ -544,7 +548,7 @@ def create_gsm_connection(nm_handle,_device):
     gsm=mobile.get_providers_gsm(providers[int(procode)-1])
     apns=mobile.get_gsm_apn(gsm)
     apns_values=mobile.get_apns_values(apns)
-    print colorize("Select apn:","yellow")
+    print colorize(_("Select apn:"),"yellow")
     index_=1
     for value in apns_values:
         print "  [%d] %s" % (index_ , value)
@@ -566,7 +570,7 @@ def create_gsm_connection(nm_handle,_device):
     while not connection_id:
         connection_id = get_input("Profile name").strip()
         if nm_handle.get_connections_by_id(connection_id) is not None:
-            print "There is already a connection named '%s'" % connection_id
+            print _("There is already a connection named '%s'") % connection_id
             print
             connection_id = None
 
@@ -577,14 +581,14 @@ def create_gsm_connection(nm_handle,_device):
 def create_cdma_connection(nm_handle,_device):
     import dbus
     settings=CdmaSettings()
-    print colorize("Select country:","yellow")
+    print colorize(_("Select country:"),"yellow")
     countries=mobile.get_countries()
     create_column(countries,7)
     cncode=get_input("Country")
     country=mobile.get_country(cncode)
     providers=mobile.get_providers_for_cdma(country)
     providers_names=mobile.get_providers_names(providers)
-    print colorize("Select provider:","yellow")
+    print colorize(_("Select provider:"),"yellow")
     index_=1
     for name in providers_names:
         print "  [%d] %s"% (index_ , name)
@@ -598,7 +602,7 @@ def create_cdma_connection(nm_handle,_device):
     while not connection_id:
         connection_id = get_input("Profile name").strip()
         if nm_handle.get_connections_by_id(connection_id) is not None:
-            print "There is already a connection named '%s'" % connection_id
+            print _("There is already a connection named '%s'") % connection_id
             print
             connection_id = None
 
@@ -644,7 +648,7 @@ def create_wireless_connection(nm_handle, _device):
     while not connection_id:
         connection_id = get_input("Profile name").strip()
         if nm_handle.get_connections_by_id(connection_id) is not None:
-            print "There is already a connection named '%s'" % connection_id
+            print _("There is already a connection named '%s'") % connection_id
             print
             connection_id = None
 
@@ -669,7 +673,7 @@ def create_connection(nm_handle):
 
     device_types = nm_handle.devices_map.keys()
 
-    print colorize("Select device type:", "yellow")
+    print colorize(_("Select device type:"), "yellow")
 
     for device_type in device_types:
         print "  [%s] %s" % (device_types.index(device_type) + 1,
@@ -702,9 +706,9 @@ def get_device(nm_handle, device_list = None, type = None, mustSelect = True):
         #print device_list
         return device_list[0] 
     elif device_count>1:
-        print colorize("Select device:", "yellow")
+        print colorize(_("Select device:"), "yellow")
         if not mustSelect:
-            print "  [0]  Device independent"
+            print _("  [0]  Device independent")
         for (index, device) in enumerate(device_list):
             print_device(device, index + 1)
         dev_no = get_number("Device", 1, len(device_list)) - 1
@@ -742,7 +746,7 @@ def edit_connection(nm_handle):
     settings = connection.settings
     while changing:
         print
-        print colorize("Select an option:", "yellow")
+        print colorize(_("Select an option:"), "yellow")
         con_mac_address = settings.mac_address
         device_name = ""
         if con_mac_address == None:
@@ -768,13 +772,13 @@ def edit_connection(nm_handle):
                                     vendor, model, colorize(device.driver, "yellow"))
         _index = 1
 
-        print "  [%d] Change device: %s" % (_index, device_name)
+        print _("  [{index_}] Change device: {device_name_}").format(index_=_index, device_name_=device_name)
         _index += 1
 
         method = "Manual"
         if settings.auto:
             method = "Automatic"
-        print "  [%d] Change IP assignment method: %s" % (_index, method)
+        print _("  [{index_}] Change IP assignment method: {method_}").format(index_=_index,method_= method)
         _index += 1
 
         method = "Automatic"
@@ -782,14 +786,14 @@ def edit_connection(nm_handle):
             if "ignore-auto-dns" in settings._settings["ipv4"].keys()\
                     and settings._settings["ipv4"]["ignore-auto-dns"]:
                 method = "Manual"
-        print "  [%d] Change name server (DNS) assignment method: %s"\
-                                                    % (_index, method)
+        print _("  [{index_}] Change name server (DNS) assignment method: {method_}")\
+                .format(index_=_index,method_=method)
         _index += 1
 
-        print "  [%d] Change profile name: %s" % (_index, settings.id)
+        print _("  [{index_}] Change profile name: {id_}").format(index_=_index,id_=settings.id)
         _index += 1
 
-        print "  [%d] Save and finish editing" % _index
+        print _("  [%d] Save and finish editing") % _index
 
         option = get_number("Option", 1, _index ) - 1
         print
@@ -816,7 +820,7 @@ def edit_connection(nm_handle):
             while not connection_id:
                 connection_id = get_input("Profile name").strip()
                 if connection_id in connection_ids:
-                    print "There is already a connection named '%s'"\
+                    print _("There is already a connection named '%s'")\
                                                         % connection_id
                     print
                     connection_id = None
@@ -864,7 +868,7 @@ def set_connection_state_up(nm_handle, connection_id, interface=None):
                             or conn_mac_addr == device.hwaddress:
                         nm_handle.activate_connection(conn, device)
                     else:
-                        print "The connection's mac address did not match this device"
+                        print _("The connection's mac address did not match this device")
                     return
 
         if conn.settings.mac_address:
@@ -897,9 +901,9 @@ def set_connection_state_up(nm_handle, connection_id, interface=None):
                 else:
                     print "Device unavailable"
             else:
-                print "No device or not supported connection type"
+                print _("No device or not supported connection type")
     else:
-        print "There is no connection named: %s" % connection_id
+        print _("There is no connection named: %s") % connection_id
 
 
 def show_traffic(nm):
@@ -1033,7 +1037,7 @@ When activating a connection, you should either provide an interface like
             print_connections(nm_handle)
         except dbus.exceptions.DBusException as e:
             if not root :
-                print "You must be root to run python-networkmanager"
+                print _("You must be root to run python-networkmanager")
             else:
                 print e
     elif options.action == "devices":
@@ -1041,7 +1045,7 @@ When activating a connection, you should either provide an interface like
             print_devices(nm_handle)
         except dbus.exceptions.DBusException as e:
             if not root :
-                print "You must be root to run python-networkmanager"
+                print _("You must be root to run python-networkmanager")
             else:
                 print e
 
@@ -1050,7 +1054,7 @@ When activating a connection, you should either provide an interface like
             create_connection(nm_handle)
         except dbus.exceptions.DBusException as e:
             if not root :
-                print "You must be root to run python-networkmanager"
+                print _("You must be root to run python-networkmanager")
             else:
                 print e
 
@@ -1059,7 +1063,7 @@ When activating a connection, you should either provide an interface like
             remove_connection(nm_handle)
         except dbus.exceptions.DBusException as e:
             if not root :
-                print "You must be root to run python-networkmanager"
+                print _("You must be root to run python-networkmanager")
             else:
                 print e
 
@@ -1068,7 +1072,7 @@ When activating a connection, you should either provide an interface like
             edit_connection(nm_handle)
         except dbus.exceptions.DBusException as e:
             if not root :
-                print "You must be root to run python-networkmanager"
+                print _("You must be root to run python-networkmanager")
             else:
                 print e
 
@@ -1079,10 +1083,10 @@ When activating a connection, you should either provide an interface like
                 con=get_connection(nm_handle,"Activate") 
                 set_connection_state_up(nm_handle,con.settings.id)
             except AttributeError:
-                print "No connection to activate"
+                print _("No connection to activate")
             except dbus.exceptions.DBusException as e:
                 if not root:
-                    print "You must be root to run python-networkmanager"
+                    print _("You must be root to run python-networkmanager")
                 else:
                     print e
 
@@ -1091,7 +1095,7 @@ When activating a connection, you should either provide an interface like
                 set_connection_state_up(nm_handle,arg0,arg1) 
             except dbus.exceptions.DBusException as e:
                 if not root :
-                    print "You must be root to run python-networkmanager"
+                    print _("You must be root to run python-networkmanager")
                 else:
                     print e
 
@@ -1101,10 +1105,10 @@ When activating a connection, you should either provide an interface like
                 con=get_connection(nm_handle,"Deactivate")
                 set_connection_state_down(nm_handle,con)
             except AttributeError:
-                print "No connection to deactivate"
+                print _("No connection to deactivate")
             except dbus.exceptions.DBusException as e:
                 if not root:
-                    print "You must be root to run python-networkmanager"
+                    print _("You must be root to run python-networkmanager")
                 else:
                     print e
 
@@ -1113,10 +1117,10 @@ When activating a connection, you should either provide an interface like
                 con=get_connection_by_id(nm_handle,arg0)
                 set_connection_state_down(nm_handle,con.connection)
             except AttributeError:
-                print "This connection is already deactive"
+                print _("This connection is already deactive")
             except dbus.exceptions.DBusException as e:
                 if not root:
-                    print "You must be root to run python-networkmanager"
+                    print _("You must be root to run python-networkmanager")
                 else:
                     print e
 
@@ -1127,7 +1131,7 @@ When activating a connection, you should either provide an interface like
                 wireless_enabled(nm_handle,True)
             except dbus.exceptions.DBusException as e:
                 if not root :
-                    print "You must be root to run python-networkmanager"
+                    print _("You must be root to run python-networkmanager")
                 else:
                     print e
 
@@ -1136,7 +1140,7 @@ When activating a connection, you should either provide an interface like
                 wireless_enabled(nm_handle,False)
             except dbus.exceptions.DBusException as e:
                 if not root :
-                    print "You must be root to run python-networkmanager"
+                    print _("You must be root to run python-networkmanager")
                 else:
                     print e
 
@@ -1147,7 +1151,7 @@ When activating a connection, you should either provide an interface like
                 nmanager_enabled(nm_handle,True)
             except dbus.exceptions.DBusException as e:
                 if not root :
-                    print "You must be root to run python-networkmanager"
+                    print _("You must be root to run python-networkmanager")
                 else:
                     print e
 
@@ -1156,7 +1160,7 @@ When activating a connection, you should either provide an interface like
                 nmanager_enabled(nm_handle,False)
             except dbus.exceptions.DBusException as e:
                 if not root :
-                    print "You must be root to run python-networkmanager"
+                    print _("You must be root to run python-networkmanager")
                 else:
                     print e
 
@@ -1165,7 +1169,7 @@ When activating a connection, you should either provide an interface like
             show_traffic(nm_handle)
         except dbus.exceptions.DBusException as e:
             if not root :
-                print "You must be root to run python-networkmanager"
+                print _("You must be root to run python-networkmanager")
             else:
                 print e
 
@@ -1174,7 +1178,7 @@ When activating a connection, you should either provide an interface like
             print_connections(nm_handle)
         except dbus.exceptions.DBusException as e:
             if not root :
-                print "You must be root to run python-networkmanager"
+                print _("You must be root to run python-networkmanager")
             else:
                 print e
 

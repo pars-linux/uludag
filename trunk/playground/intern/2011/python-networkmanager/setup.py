@@ -23,6 +23,8 @@
 
 import os, string, sys
 from distutils.core import setup
+from distutils.command.install import install
+import shutil
 
 # Note:
 #  The Distutils included in Python 2.1 don't understand the "license" keyword
@@ -33,6 +35,24 @@ from distutils.core import setup
 
 PACKAGE = "python-networkmanager"
 VERSION = "0.2"
+I18N_DOMAIN = "python-networkmanager"
+I18N_LANGUAGES = ["tr"]
+class I18nInstall(install):
+    def run(self):
+        install.run(self)
+        for lang in I18N_LANGUAGES:
+            print "Installing '%s' translations..." % lang
+            os.popen("msgfmt po/%s.po -o po/%s.mo" % (lang, lang))
+            if not self.root:
+                self.root = "/"
+            destpath = os.path.join(self.root, "usr/share/locale/%s/LC_MESSAGES" % lang)
+            try:
+                os.makedirs(destpath)
+            except:
+                pass
+            shutil.copy("po/%s.mo" % lang, os.path.join(destpath, "%s.mo" % I18N_DOMAIN))
+
+
 
 def main():
     setup(name=PACKAGE,
@@ -53,6 +73,9 @@ tasks""",
           keywords=["network-manager", "DBus"],
           packages=["networkmanager"],
           scripts=['nm-util', 'network'],
-          data_files=[('/etc/bash_completion.d', ['bash_completion/nm-util']),])
+          data_files=[('/etc/bash_completion.d', ['bash_completion/nm-util']),],
+          cmdclass={'install':I18nInstall}
+          )
 
 if __name__ == "__main__": main()
+

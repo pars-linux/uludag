@@ -1,0 +1,221 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: python-networkmanager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-07-15 13:37+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr\n"
+
+
+
+
+#: network:78 network:88
+#, python-format
+msgid "%s > "
+msgstr ""
+
+#: network:109
+#, python-format
+msgid "Interface: %s"
+msgstr ""
+
+#: network:110
+msgid "Address: {ipaddress_}"
+msgstr ""
+
+#: network:110
+msgid "Netmask: {netmask_}"
+msgstr ""
+
+#: network:110
+msgid "Default Gateway: {gateway_}"
+msgstr ""
+
+#: network:111
+#, python-format
+msgid "Name Servers: %s"
+msgstr ""
+
+#: network:134 network:216
+#, python-format
+msgid "%s connections"
+msgstr ""
+
+#: network:158
+msgid " {interface_} {verdor_} {model_} [driver: {driver_}]"
+msgstr ""
+
+#: network:165
+#, python-format
+msgid "%s devices"
+msgstr ""
+
+#: network:236
+msgid "Select IP assignment method:"
+msgstr ""
+
+#: network:237
+msgid "  [1] Enter an IP address manually"
+msgstr "  [1] IP adresini elle gir"
+
+#: network:238
+msgid "  [2] Automatically obtain an IP address"
+msgstr ""
+
+#: network:278
+msgid "Select Name server (DNS) assignment method:"
+msgstr ""
+
+#: network:279
+msgid "  [1] Enter an name server address manually"
+msgstr ""
+
+#: network:280
+msgid "  [2] Automatically obtain from DHCP"
+msgstr ""
+
+#: network:283
+msgid "Use commas to separate DNSes"
+msgstr ""
+
+#: network:284
+msgid "Usage example 4.2.2.1,4.2.2.2"
+msgstr ""
+
+#: network:320 network:570 network:602 network:648 network:820
+#, python-format
+msgid "There is already a connection named '%s'"
+msgstr ""
+
+#: network:337
+msgid "Wep index 1-2-3-4 |  Default 1"
+msgstr ""
+
+#: network:339
+msgid "Authorization"
+msgstr ""
+
+#: network:340
+msgid "[1] Open"
+msgstr ""
+
+#: network:341
+msgid "[2] Shared"
+msgstr ""
+
+#: network:423
+msgid "Security"
+msgstr ""
+
+#: network:424
+msgid "  [1] Unsecured"
+msgstr ""
+
+#: network:462
+msgid "Select device mode:"
+msgstr ""
+
+#: network:473
+msgid "SSID"
+msgstr ""
+
+#: network:483
+#, python-format
+msgid "  [%s] Rescan"
+msgstr ""
+
+#: network:484
+#, python-format
+msgid "  [%s] Enter SSID maually"
+msgstr ""
+
+#: network:532 network:581
+msgid "Select country:"
+msgstr ""
+
+#: network:539 network:588
+msgid "Select provider:"
+msgstr ""
+
+#: network:548
+msgid "Select apn:"
+msgstr ""
+
+#: network:673
+msgid "Select device type:"
+msgstr ""
+
+#: network:706
+msgid "Select device:"
+msgstr ""
+
+#: network:708
+msgid "  [0]  Device independent"
+msgstr ""
+
+#: network:746
+msgid "Select an option:"
+msgstr ""
+
+#: network:772
+msgid "  [{index_}] Change device: {device_name_}"
+msgstr ""
+
+#: network:778
+msgid "  [{index_}] Change IP assignment method: {method_}"
+msgstr ""
+
+#: network:786
+msgid "  [{index_}] Change name server (DNS) assignment method: {method_}"
+msgstr ""
+
+#: network:790
+msgid "  [{index_}] Change profile name: {id_}"
+msgstr ""
+
+#: network:793
+#, python-format
+msgid "  [%d] Save and finish editing"
+msgstr ""
+
+#: network:868
+msgid "The connection's mac address did not match this device"
+msgstr ""
+
+#: network:901
+msgid "No device or not supported connection type"
+msgstr ""
+
+#: network:903
+#, python-format
+msgid "There is no connection named: %s"
+msgstr ""
+
+#: network:1037 network:1045 network:1054 network:1063 network:1072
+#: network:1086 network:1095 network:1108 network:1120 network:1131
+#: network:1140 network:1151 network:1160 network:1169 network:1178
+msgid "You must be root to run python-networkmanager"
+msgstr ""
+
+#: network:1083
+msgid "No connection to activate"
+msgstr ""
+
+#: network:1105
+msgid "No connection to deactivate"
+msgstr ""
+
+#: network:1117
+msgid "This connection is already deactive"
+msgstr ""
