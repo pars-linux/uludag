@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: python-networkmanager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-15 13:37+0300\n"
+"POT-Creation-Date: 2011-07-15 14:03+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,9 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr\n"
-
-
-
 
 #: network:78 network:88
 #, python-format
@@ -34,188 +31,188 @@ msgstr ""
 msgid "Address: {ipaddress_}"
 msgstr ""
 
-#: network:110
+#: network:111
 msgid "Netmask: {netmask_}"
 msgstr ""
 
-#: network:110
+#: network:112
 msgid "Default Gateway: {gateway_}"
 msgstr ""
 
-#: network:111
+#: network:114
 #, python-format
 msgid "Name Servers: %s"
 msgstr ""
 
-#: network:134 network:216
+#: network:137 network:220
 #, python-format
 msgid "%s connections"
 msgstr ""
 
-#: network:158
+#: network:161
 msgid " {interface_} {verdor_} {model_} [driver: {driver_}]"
 msgstr ""
 
-#: network:165
+#: network:169
 #, python-format
 msgid "%s devices"
 msgstr ""
 
-#: network:236
+#: network:240
 msgid "Select IP assignment method:"
 msgstr ""
 
-#: network:237
+#: network:241
 msgid "  [1] Enter an IP address manually"
 msgstr "  [1] IP adresini elle gir"
 
-#: network:238
+#: network:242
 msgid "  [2] Automatically obtain an IP address"
 msgstr ""
 
-#: network:278
+#: network:282
 msgid "Select Name server (DNS) assignment method:"
 msgstr ""
 
-#: network:279
+#: network:283
 msgid "  [1] Enter an name server address manually"
 msgstr ""
 
-#: network:280
+#: network:284
 msgid "  [2] Automatically obtain from DHCP"
 msgstr ""
 
-#: network:283
+#: network:287
 msgid "Use commas to separate DNSes"
 msgstr ""
 
-#: network:284
+#: network:288
 msgid "Usage example 4.2.2.1,4.2.2.2"
 msgstr ""
 
-#: network:320 network:570 network:602 network:648 network:820
+#: network:324 network:574 network:606 network:652 network:824
 #, python-format
 msgid "There is already a connection named '%s'"
 msgstr ""
 
-#: network:337
+#: network:341
 msgid "Wep index 1-2-3-4 |  Default 1"
 msgstr ""
 
-#: network:339
+#: network:343
 msgid "Authorization"
 msgstr ""
 
-#: network:340
+#: network:344
 msgid "[1] Open"
 msgstr ""
 
-#: network:341
+#: network:345
 msgid "[2] Shared"
 msgstr ""
 
-#: network:423
+#: network:427
 msgid "Security"
 msgstr ""
 
-#: network:424
+#: network:428
 msgid "  [1] Unsecured"
 msgstr ""
 
-#: network:462
+#: network:466
 msgid "Select device mode:"
 msgstr ""
 
-#: network:473
+#: network:477
 msgid "SSID"
 msgstr ""
 
-#: network:483
+#: network:487
 #, python-format
 msgid "  [%s] Rescan"
 msgstr ""
 
-#: network:484
+#: network:488
 #, python-format
 msgid "  [%s] Enter SSID maually"
 msgstr ""
 
-#: network:532 network:581
+#: network:536 network:585
 msgid "Select country:"
 msgstr ""
 
-#: network:539 network:588
+#: network:543 network:592
 msgid "Select provider:"
 msgstr ""
 
-#: network:548
+#: network:552
 msgid "Select apn:"
 msgstr ""
 
-#: network:673
+#: network:677
 msgid "Select device type:"
 msgstr ""
 
-#: network:706
+#: network:710
 msgid "Select device:"
 msgstr ""
 
-#: network:708
+#: network:712
 msgid "  [0]  Device independent"
 msgstr ""
 
-#: network:746
+#: network:750
 msgid "Select an option:"
 msgstr ""
 
-#: network:772
+#: network:776
 msgid "  [{index_}] Change device: {device_name_}"
 msgstr ""
 
-#: network:778
+#: network:782
 msgid "  [{index_}] Change IP assignment method: {method_}"
 msgstr ""
 
-#: network:786
+#: network:790
 msgid "  [{index_}] Change name server (DNS) assignment method: {method_}"
 msgstr ""
 
-#: network:790
+#: network:794
 msgid "  [{index_}] Change profile name: {id_}"
 msgstr ""
 
-#: network:793
+#: network:797
 #, python-format
 msgid "  [%d] Save and finish editing"
 msgstr ""
 
-#: network:868
+#: network:872
 msgid "The connection's mac address did not match this device"
 msgstr ""
 
-#: network:901
+#: network:905
 msgid "No device or not supported connection type"
 msgstr ""
 
-#: network:903
+#: network:907
 #, python-format
 msgid "There is no connection named: %s"
 msgstr ""
 
-#: network:1037 network:1045 network:1054 network:1063 network:1072
-#: network:1086 network:1095 network:1108 network:1120 network:1131
-#: network:1140 network:1151 network:1160 network:1169 network:1178
+#: network:1041 network:1049 network:1058 network:1067 network:1076
+#: network:1090 network:1099 network:1112 network:1124 network:1135
+#: network:1144 network:1155 network:1164 network:1173 network:1182
 msgid "You must be root to run python-networkmanager"
 msgstr ""
 
-#: network:1083
+#: network:1087
 msgid "No connection to activate"
 msgstr ""
 
-#: network:1105
+#: network:1109
 msgid "No connection to deactivate"
 msgstr ""
 
-#: network:1117
+#: network:1121
 msgid "This connection is already deactive"
 msgstr ""
