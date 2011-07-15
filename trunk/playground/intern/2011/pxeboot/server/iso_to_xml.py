@@ -209,14 +209,15 @@ if len(filelist) == 0:
 listObject = getMenu()
 filelist = listObject.selectionmenu(filelist)
 
+root = iks.Element("PXEBOOT")
+isoimages = iks.SubElement(root, "ISOIMAGES")
+
 for files_name in filelist:
     iso = iso9660.ISO9660.IFS ( source = files_name )
 
-    root = iks.Element("PXEBOOT")
-    isoimages = iks.SubElement(root, "ISOIMAGES")
     pardus = iks.SubElement(isoimages, "Pardus")
-
     name = extractData("boot/isolinux/gfxboot.cfg")
+
     name_tag = iks.SubElement(pardus, "Name")
     name_tag.text = name
 
@@ -225,20 +226,22 @@ for files_name in filelist:
     path_tag.text = isopath
 
     for dirs in iso.readdir("/"):
-        if dirs[0] == "/repo": 
+        if dirs[0] == "repo": 
             isosize, architecture = parseXml()
         else:
             isosize = os.path.getsize(files_name)
             architecture = "LiveCD"
+
     isosize = "%s" % isosize
     size_tag = iks.SubElement(pardus, "Size")
     size_tag.text = isosize
 
     architecture_tag = iks.SubElement(pardus, "Architecture")
     architecture_tag.text = architecture
-    getTree(root)
-    treeString += iks.tostring(root)
-    treeString += "\n"
+
+getTree(root)
+treeString += iks.tostring(root)
+treeString += "\n"
 
 xmlfile = open("%s/pxeboot_iso_files.xml" % isoFolder,"w")
 xmlfile.write(treeString)
