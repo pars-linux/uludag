@@ -1,0 +1,1120 @@
+#!/bin/bash -i
+#
+#  Copyright (C) 2010, 2011
+#  TUBITAK BILGEM
+#  Pardus Linux Project
+#
+#  Pardus Initramfs Installer
+#
+#  Author: Mehmet Emre Atasever <memre ~ pardus.org.tr>
+#
+#  License: GPL v2.0
+#  For more information you can look at:
+#          http://www.gnu.org/licenses/gpl-2.0.html
+#
+######################################################################
+#
+#  Test environment:
+#   * qemu versatile platform armv5tejl
+#   * Beagleboard armv7l based Cortex-a8
+#   * Pardus Corporate 2
+#
+######################################################################
+
+# Start time for logging and printing
+cur_time() { date +%0s%0N; }
+
+# Backup suffix
+_backup_suffix=$(date +%Y%m%d_%H%M)
+
+# Temp directory
+TMP_DIR=${TMP_DIR:-"$(mktemp -d)"}
+
+# Create a temporary file
+mk_tmp() { mktemp -p ${TMP_DIR}; }
+
+# Some options for this script
+# _b -> boolean value
+_b_enable_colors=true  # colors are enabled by default
+_b_force_yes=false     # if true, then don't ask any questions to user, use defaults.
+# For printing time info in logger
+# Timer starts at installation process
+_b_print_time=false
+_b_start_timer=false
+
+# Log levels, also print levels.
+# If LOG_LEVEL is equal or grater than the level, then it is
+# als/ printed to the screen
+#
+# see log function for details.
+_log_level_any=0   # neccessary stuff titles etc.
+_log_level_err=1   # error messages
+_log_level_warn=2  # add warning messages
+_log_level_info=3  # add info messages
+_log_level_debug=4 # add some debug messages
+
+# Progress bar animation \ | / -
+_prog_bar=( '\\' '|' '/' '-' )
+_prog_bar_index=0
+
+######################################################################
+# Distro options and architecture settings
+
+ARCH=${ARCH:-"armv5t"}
+
+# A log file for testing this script
+LOG_FILE=${LOG_FILE:-"/var/log/pardus-initramfs-installer-${ARCH}.log"}
+
+# Log level for printing logs to the screen
+LOG_LEVEL=${LOG_LEVEL:-${_log_level_info}}
+
+# LSB information of Pardus
+DISTRIB_ID=${DISTRIB_ID:-`lsb_release -i | cut -d: -f2 | tr -d '\t'`}
+DISTRIB_RELEASE=${DISTRIB_RELEASE:-`lsb_release -r | cut -d: -f2 | tr -d '\t'`}
+DISTRIB_DESCRIPTION=${DISTRIB_DESCRIPTION:-`lsb_release -d | cut -d: -f2 | tr -d '\t'`}
+DISTRIB_CODENAME=${DISTRIB_CODENAME:-`lsb_release -c | cut -d: -f2 | tr -d '\t'`}
+
+# dialog ui
+_dialog_back_title="${DISTRIB_ID}${DISTRIB_RELEASE} Initramfs Installer"
+_dialog_window_width=$(( COLUMNS - 10 ))
+_dialog_window_height=$(( LINES - 14 ))
+_dialog_menu_height=$(( _dialog_window_height - 4 ))
+
+# dialog colors
+_dialog_cl_normal="\Zn"
+_dialog_cl_reverse="\Zr"
+_dialog_cl_noreverse="\ZR"
+_dialog_cl_bold="\Zb"
+_dialog_cl_nobold="\ZB"
+_dialog_cl_underline="\Zu"
+_dialog_cl_nounderline="\ZU"
+_dialog_cl_black="\Z0"
+_dialog_cl_red="\Z1"
+_dialog_cl_green="\Z2"
+_dialog_cl_yellow="\Z3"
+_dialog_cl_blue="\Z4"
+_dialog_cl_magenta="\Z5"
+_dialog_cl_cyan="\Z6"
+_dialog_cl_white="\Z7"
+
+# This repo contains pre-built binary packages
+BIN_REPO="http://cekirdek.pardus.org.tr/~memre/parm/${ARCH}/${DISTRIB_ID}${DISTRIB_RELEASE}/repo"
+BIN_REPO_NAME="${DISTRIB_ID}_bin"
+BIN_REPO_INDEX="${BIN_REPO}/pisi-index.xml.xz"
+
+######################################################################
+# Logging and printing options
+
+# gives verbose parameter to all applications `-v'
+# default: "v"
+VERBOSE="v"
+
+# gives debug parameter to pisi, this is not same with _log_level_debug
+# if you dont set log level as debug, debug data will just be logged
+DEBUG="d"
+
+# takes --ignore-check parameter to pisi,
+PISI_IGNORE_CHECK="--ignore-check"
+
+# fifo for logging, this is a workaround of bash pipe operation
+# we often use this fifo for logging
+_log_fifo="${TMP_DIR}/.pardus_${ARCH}_logfifo"
+
+######################################################################
+# Installation variables
+
+ROOT_PARTITION_DIR="/mnt/target"
+ROOT_PARTITION_BLK=
+ROOT_PARTITION_FSTYPE=
+ROOT_PARTITION_UUID=
+
+DEFAULT_ROOT_PASSWD="pardus"
+
+##################################
+# @func: set_colors
+# @desc: sets colors if user wants
+#
+set_colors()
+{
+    export _clNoColor="\e[0m"
+    export _clWhite="\e[1;37m"
+    export _clYellow="\e[1;33m"
+    export _clCyan="\e[0;36m"
+    export _clBlack="\e[0;30m"
+    export _clBlue="\e[0;34m"
+    export _clGreen="\e[0;32m"
+    export _clCyan="\e[0;36m"
+    export _clRed="\e[0;31m"
+    export _clPurple="\e[0;35m"
+    export _clBrown="\e[0;33m"
+    export _clLightGray="\e[0;37m"
+    export _clLightPurple="\e[1;35m"
+    export _clLightRed="\e[1;31m"
+    export _clLightCyan="\e[1;36m"
+    export _clLightGreen="\e[1;32m"
+    export _clLightBlue="\e[1;34m"
+    export _clDarkGray="\e[1;30m"
+
+    export _clInfo=${_clNoColor}
+    export _clError=${_clRed}
+    export _clWarning=${_clYellow}
+    export _clHead=${_clLightPurple}
+    export _clQuestion=${_clCyan}
+    export _clUserAnswer=${_clNoColor}
+    export _clTime=${_clBrown}
+
+    # Title colors
+    export _clTitle1=${_clLightGreen}
+    export _clTitle2=${_clLightCyan}
+    export _clTitle3=${_clLightBlue}
+
+    # Title Numbers
+    export _tn1=0  # Main title [X]
+    export _tn2=0  # 2nd title  [1.X]
+    export _tn3=0  # 3rd title  [1.2.X]
+}
+
+# converts all characters to uppercase
+toupper() { echo "`echo $* | tr '[:lower:]' '[:upper:]'`" }
+
+# Trap all signals for more control
+set -e
+trap sighandler 1 2 3 6 9 15
+
+##################################
+# @func: sighandler
+# @desc: when an exception caught, this function cleans up the
+#        shits we left behind us.
+sighandler()
+{
+    local head="$(toupper ${FUNCNAME})"
+
+    print_err "An exception caught! Terminating..." "${head}"
+    cleanup
+
+    exit 1
+}
+
+##################################
+# @func: cleanup
+# @desc: for cleaning up the temp directories and unneccessary stuffs.
+cleanup()
+{
+    print "Cleaning up"
+
+    # FIXME: kill all working stuff
+
+    ( rm -rf ${TMP_DIR} >> ${LOG_FILE} 2>&1 ) &
+
+    # Wait until all cleaning process done
+    while [ -e ${TMP_DIR} ]; do
+        echo -n '.'
+        sleep 1
+    done
+    echo
+
+    println "Cleaning done."
+}
+
+######################################################################
+# Printing functions
+
+##################################
+# @func: print
+# @desc: prints the message to the console. There is NO newline.
+#        this function does not logs the message.
+#
+# @param*: message
+print()
+{
+    # print something without newline
+    echo -en "$*${_clNoColor}";
+}
+
+##################################
+# @func: println
+# @desc: prints the message to the console.
+#        this function does not logs the message.
+#
+# @param*: message
+println()
+{
+    # print something with newline
+    echo -e "$*${_clNoColor}"
+}
+
+##################################
+# @func: prep_log
+# @desc: prepares logger to get logs from fifo
+#
+# @usage:
+#         prep_log &
+#         <command> > ${_log_fifo} 2>&1
+#         __r=$? # return value of ls
+#         wait
+#         if [ ${__r} -ne 0 ]; then die "öldüm aq.."; fi
+prep_log()
+{
+    # run in background, since the next command will give us log ;)
+    cat ${_log_fifo} | log ${_log_level_debug}
+}
+
+##################################
+# @func: log
+# @desc: logs message to $LOG_FILE.
+#
+# @param1: LOG_LEVEL
+# @param*: message comes from stdin
+#
+# @usage1: echo " [${FUNCNAME}] bu anam icin" | log ${_log_level_warn}
+# @usage2: log ${_log_level_warn} "senin icin dusuncelerim: (O)))"
+log()
+{
+    local CR=$(printf "\n")
+    local log_level=$1
+    shift # other parameters are message
+
+    # if log entered with pipe
+    if [ $# -eq 0 ]; then
+        cat -
+    else
+        # if log entered as parameter
+        printf "%s\n" "$*"
+    fi | (
+        while IFS=${CR} read line; do # just newlines seperates the line
+            local debug_out="/dev/null" # do not print to the console as default
+            local current_time="[${_clTime}$(elapsed_time)${_clNoColor}]"
+            local message=
+
+            # if LOG_LEVEL is equal or grater than the log_level, which
+            # is given from the function, then print this log to the console as well.
+            #
+            # this is good with debugging, but end user needn't to see
+            # all the outputs.
+            [ ${LOG_LEVEL} -ge ${log_level} ] && debug_out="/proc/self/fd/1"
+
+            ${_b_start_timer} && {
+                # if user want to see timer, then print it, otherwise just log it.
+                ${_b_print_time} && \
+                    message="${current_time} " || \
+                    print "${current_time} " >> ${LOG_FILE}
+
+                # if there are just blanks, remove the timer and animation
+                [ -z "$(echo -n ${line})" ] && print "          \r"
+            }
+
+            message="${message}${line}"
+
+            println "${message}" | tee -a ${LOG_FILE} > ${debug_out} 2>&1
+
+            ${_b_start_timer} && {
+                echo -ne "${current_time} ${_prog_bar[$((_prog_bar_index/5))]} \r"
+                _prog_bar_index=$(( (_prog_bar_index + 1) % 20 ))
+            }
+        done
+    ) # END OF LOGGING
+
+    return 0
+}
+
+##################################
+# @func: elapsed_time
+# @desc: prints elapsed time since this script started
+#
+# @param1: start_time (optinal, if $1="" then use global _start_time)
+# @param2: nanosecond level (optinal)
+#
+# @usage: echo "$(elapsed_time)"
+elapsed_time()
+{
+    local current_time=$(cur_time)
+    local start_time=${1:-${_start_time}}
+
+    local nsecs_passed=$(( current_time - start_time ))
+
+    local nsecs=$((  nsecs_passed %    1000000000 ))
+    local secs=$((  (nsecs_passed /    1000000000) % 60 ))
+    local mins=$((   nsecs_passed /   60000000000 ))
+    local hours=$((  nsecs_passed / 3600000000000 ))
+
+    if [ x"$2" != x"fancy" ]; then
+        printf "%02d:%02d" ${mins} ${secs}
+    else
+        printf "%02d mins %02d.%04d secs." ${mins} ${secs} ${nsecs}
+    fi
+}
+
+##################################
+# @func: print_info
+# @desc: prints info message with _clInfo color
+#
+# @param1: message
+# @param2: head
+print_info()
+{
+    # info messages with newline
+    local head=$2
+    local message="${_clHead}${head}${_clInfo} ${1}"
+
+    println "${message}" | log "${_log_level_info}"
+}
+
+##################################
+# @func: print_err
+# @desc: prints error message with _clError color
+#
+# @param1: message
+# @param2: head
+print_err()
+{
+    local head=$2
+    local message="${_clHead}${head}${_clError} E: ${1}"
+
+    println "${message}" | log "${_log_level_err}"
+}
+
+##################################
+# @func: print_warn
+# @desc: prints warning message with _clWarning color
+#
+# @param1: message
+# @param2: head
+print_warn()
+{
+    local head=$2
+    local message="${_clHead}${head}${_clWarning} W: ${1}"
+
+    println "${message}" | log "${_log_level_warn}"
+}
+
+##################################
+# @func: print_t1
+# @desc: prints title
+#        This subtitle prints like this:
+#         1) [output of this function]
+#         ^
+#           1.1) print_t2
+#             1.1.1) print_t3
+#           1.2) print_t2
+#         2) [output of this function]
+#         ^
+#           2.1) print_t2
+#             2.1.1) print_t3
+#             2.1.2) print_t3
+#
+#         Automatically increses _tn1 and sets _tn2 and _tn3 as 0.
+#
+# @param*: title text
+print_t1()
+{
+    # main title message,
+    #  set the subtitle numbers as 0
+    _tn1=$((${_tn1} + 1))
+    _tn2="0"
+    _tn3="0"
+
+    local message=" ${_clTitle1}${_tn1}) $*"
+
+    println "${message}" | log "${_log_level_any}"
+}
+
+##################################
+# @func: print_t2
+# @desc: prints subtitle 2
+#        This subtitle prints like this:
+#         1) print_t1
+#         1.1) [output of this function]
+#           ^
+#         1.1.1) print_t3
+#         1.1.2) print_t3
+#         1.2) [output of this function]
+#           ^
+#         1.2.1) print_t3
+#         1.2.2) print_t3
+#
+#         Increses _tn2 and sets _tn3 as 0.
+#
+# @param*: title text
+print_t2()
+{
+    # title 2 [1.X]
+    _tn2=$((${_tn2} + 1))
+    _tn3="0"
+
+    local message=" ${_clTitle2}${_tn1}.${_tn2}) $*"
+
+    println "${message}" | log "${_log_level_any}"
+}
+
+##################################
+# @func: print_t3
+# @desc: prints subtitle 3
+#        This subtitle prints like this:
+#         1) print_t1
+#         1.1) print_t2
+#         1.1.1) [output of this function]
+#             ^
+#         1.1.2) [output of this function]
+#             ^
+#         Increses _tn3.
+#
+# @param*: title text
+print_t3()
+{
+    # title 3 [1.2.X]
+    _tn3=$(($_tn3 + 1))
+
+    local message=" ${_clTitle3}${_tn1}.${_tn2}.${_tn3}) $*"
+
+    println "${message}" | log "${_log_level_any}"
+}
+
+##################################
+# @func: die
+# @desc: terminates script for an error
+#
+# @param1: message to be printed
+# @param2: head
+die()
+{
+    local head=$2
+
+    print_err "$1" "${head}"
+    print_err "Pardus Initramfs Installer is terminated!
+Removing temporary files and directories.
+See log file \`${LOG_FILE}' for details.
+
+If you think that this is a bug, then file a bug report to
+http://bugs.pardus.org.tr and add \`${LOG_FILE}' as attattachment." "DIE:${head}"
+
+    cleanup
+
+    exit 1 # byby cruel world
+}
+
+##################################
+# @func: dialog_
+# @desc: manages dialog for helping other functions
+#
+# @param1: operation (eg. message-box, yesno dialog etc..)
+# @param2: title
+# @param3: text
+# @param4: extra_param (if any, not mendatory for all operation)
+# @param5: if return value needed, pass a temp-file name to dialog_
+#
+# @usage:
+#        dialog_ msgbox "welcome to parm init."
+#        dialog_ yesno "Would you like to go on?" "really?" "--defaultno"
+#
+dialog_()
+{
+    local dialog_cmd=$(mk_tmp)
+    local operation="$1"
+    local title="$2"
+    local text="$3"
+    local extra_param=$4
+    local user_answer=$5
+
+    local ret_val=0
+
+    # dialog command executes with a temp file
+    chmod o+x ${dialog_cmd}
+
+    # prepare command
+    echo -n "dialog --cr-wrap --colors --backtitle \"${_dialog_back_title}\" " >> ${dialog_cmd}
+
+    # if user run this script with force-yes, then do not show dialog boxes
+    case ${operation} in
+        infobox)
+            echo -ne "--title \"${title}\" \
+                --infobox \"${text}\" \
+                ${_dialog_window_height} \
+                ${_dialog_window_width} " >> ${dialog_cmd}
+
+            # If this script runs with `force-yes', then let script
+            # run without any interrupt, wait about 3 secs and go on..
+            ${_b_force_yes} &&
+                echo " --timeout 3" >> ${dialog_cmd}
+
+            . ${dialog_cmd}
+            ;;
+
+        msgbox)
+            ${_b_force_yes} || (
+                echo -ne " --title \"${title}\" \
+                    ${extra_param} \
+                    --msgbox \"${text}\" \
+                    ${_dialog_window_height} \
+                    ${_dialog_window_width} " >> ${dialog_cmd};
+
+                . ${dialog_cmd}
+
+            ) ###
+            ret_val=$?
+
+            # log the message.
+            echo -e " ==> DIALOG Message Box\n${text}\n\n ==> DIALOG --" | \
+                sed -e 's/\\Z[bBuUrRnN01234567]//g' | log ${_log_level_debug}
+
+            ;;
+
+        yesno)
+            ${_b_force_yes} || (
+                echo -ne "--title \"${title}\" \
+                    ${extra_param} \
+                    --yesno \"${text}\" \
+                    ${_dialog_window_height} \
+                    ${_dialog_window_width} " >> ${dialog_cmd}
+
+                . ${dialog_cmd}
+            ) ###
+            ret_val=$?
+
+            [ ${ret_val} -eq 0 ] && user_answer="Hell yeah!!" || user_answer="Fuck noooo!!"
+
+            # log the message
+            echo -e " ==> DIALOG YesNo Dialog Box\n${text}\n\n ==> DIALOG User answer: \"${user_answer}\"\n ==> DIALOG --" | \
+                sed -e 's/\\Z[bBuUrRnN01234567]//g' | log ${_log_level_debug}
+
+            ;;
+
+        menu)
+            local menu=${extra_param}
+
+            (
+                echo -ne "--title \"${title}\" \
+                    --menu \"${text}\" \
+                    ${_dialog_window_height} \
+                    ${_dialog_window_width} 0 " >> ${dialog_cmd}
+
+                # fill the menu items
+                cat ${menu} | tr '\n' ' '  >> ${dialog_cmd}
+                echo -ne " 2>${user_answer}" >> ${dialog_cmd}
+
+                . ${dialog_cmd}
+            ) ###
+            ret_val=$?
+
+            # log the message
+            echo -e " ==> DIALOG Menu Dialog Box\n${text}\n\n ==> DIALOG User answer: \"$(cat ${user_answer})\"\n ==> DIALOG --" | \
+                sed -e 's/\\Z[bBuUrRnN01234567]//g' | log ${_log_level_debug}
+
+            ;;
+
+    esac
+
+    # after dialog exits, it leaves a dirty blue screen behind of it, grrr.
+    # It's best to go on with a clean page after dialog.
+    # clear
+
+    return $ret_val
+}
+
+##################################
+# @func: ask
+# @desc: asks the question with a dialog and returns the answer
+#
+# @param1: message to be printed
+# @param2: head
+ask()
+{
+    local title=$1
+    local message=$2
+    local extra_param=$3
+
+    dialog_ "yesno" "${title}" "${message}" "${extra_param}"
+    return $?
+}
+
+##################################
+# @func: select_root_partition_fs
+# @desc: makes a list of available partitions to the user
+#        selected filesystem is be saved to the ${ROOT_PARTITION_FSTYPE}
+#        variable
+#
+# NO PARAMETERS
+select_root_partition_fs()
+{
+    local fs_menu=$(mk_tmp)
+    local user_answer=$(mk_tmp)
+    local ret_val=
+
+    :>${fs_menu}
+
+    # lets look at which filesystems can we create
+    # We are not currently support every filesystem at ARM
+    # for fs in /sbin/mkfs.*; do
+    #     echo "${fs##\/*mkfs\.}" ""
+    # done >> ${fs_menu}
+    (
+        echo "\"ext2\"" "\"ext2 filesystem\"" >> ${fs_menu}
+        echo "\"ext3\"" "\"ext3 filesystem\""  >> ${fs_menu}
+        # echo "\"ext4\"" "\"ext4 filesystem (bu cortlak, kullanmayine)\""  >> ${fs_menu}
+        echo "\"reiserfs\"" "\"reiserfs filesystem\"" >> ${fs_menu}
+        # echo "\"fat32\"" "\"fat32 filesystem\"" >> ${fs_menu}
+    )
+
+    dialog_ menu "SUPPORTED FILESYSTEMS" \
+        "Select root filesystem type" \
+        "${fs_menu}" \
+        "${user_answer}"
+    ret_val=$?
+
+    [ "$ret_val" -eq 0 ] && {
+        ROOT_PARTITION_FSTYPE=$(cat ${user_answer})
+    } || {
+        ROOT_PARTITION_FSTYPE=
+    }
+
+    return $ret_val
+}
+
+##################################
+# @func: select_root_partition_blk
+# @desc: gives user a list to select root partition
+#
+# NO PARAMETERS
+select_root_partition_blk()
+{
+    local blks_menu=$(mk_tmp)
+    local user_answer=$(mk_tmp)
+    local ret_val=
+
+    :>${blks_menu}
+
+    blkid -o full | \
+        while IFS=$(printf "\n") read line; do
+            blk_name=$(echo $line | cut -d':' -f1)
+
+            for col in `echo $line`; do
+                if ! [ -z "`echo $col | egrep "^TYPE="`" ]; then
+                    blk_type="${col##TYPE=}";
+                elif ! [ -z "`echo $col | egrep "^TYPE="`" ]; then
+                    blk_type="${col##TYPE=}";
+                fi
+            done
+
+            # blk_name=${blk_name%:}
+            # blk_uuid=${blk_uuid##UUID=}
+            # blk_type=${blk_type##TYPE=}
+
+            echo "\"${blk_name}\"" "${blk_type}" >> ${blks_menu}
+        done
+
+    dialog_ menu "PARTITIONS" \
+        "Select root filesystem. Please know that root filesystem ${_dialog_cl_reverse}will be formatted${_dialog_cl_normal}!" \
+        "${blks_menu}" \
+        "${user_answer}"
+    ret_val=$?
+
+    [ "$ret_val" -eq 0 ] && {
+        ROOT_PARTITION_BLK=$(cat ${user_answer})
+    } || {
+        ROOT_PARTITION_BLK=
+    }
+
+    for col in $(echo $(blkid ${ROOT_PARTITION_BLK})); do
+        if ! [ -z "`echo $col | egrep "^UUID="`" ]; then
+            ROOT_PARTITION_UUID="$(echo ${col##UUID=} | sed -e 's/\"//g')"
+            break
+        fi
+    done
+
+    return $ret_val
+}
+
+
+##################################
+# @func: format_partition
+# @desc: formats the selected partition
+#
+# @param1: file system type: ext2, ext3, ext4, reiserfs
+# @param2: partition
+format_partition()
+{
+    local head="FORMAT"
+
+    local partition=$1
+    local fs_type=$2
+    local ret_val=
+
+    print_info " ==> Checking whether ${partition} is mounted..." ${head}
+    if ! [ -z "$( grep ${partition} /proc/mounts )" ]; then
+        print_info " ==> ${partition} seems mounted, must be unmounted to be formatted..." ${head}
+
+        prep_log &
+        ( umount -f ${partition} > ${_log_fifo} 2>&1 )
+        __r=$?; wait
+
+        [ ${__r} -eq 0 ] || die "Unable to unmount partition \`${partition}' Setup cannot be proceeded without formatting rootfs!" ${head}
+    fi
+
+    print_info " ==> Formatting partition ${partition} with ${fs_type} filesystem..." ${head}
+    case $fs_type in
+        ext[234])
+            mkfs -t ${fs_type} ${partition} 2>&1 | log ${_log_level_debug}
+            ret_val=$?
+            ;;
+
+        reiserfs)
+            echo "y" | mkreiserfs ${partition} 2>&1 | log ${_log_level_debug}
+            ret_val=$?
+            ;;
+        *)
+            die "${fs_type} is not supported!" ${head}
+
+    esac
+
+    print_info " ==> Mounting partition ${partition} to ${ROOT_PARTITION_DIR}..." ${head}
+    # Remove target directory, if any
+    rm_ ${ROOT_PARTITION_DIR}
+
+    # Create target rootfs directory
+    mkdir_ ${ROOT_PARTITION_DIR}
+
+    # Mount rootfs
+    mount ${partition} -t ${fs_type} ${ROOT_PARTITION_DIR} 2>&1 | log ${_log_level_debug}
+}
+
+##################################
+# @func: pisi_
+# @desc: this function helps me logging and default parameters
+#
+# @param1: operation
+#          unpack       ==> unpacks a pisi package
+#          install      ==> installs a pisi package or a collection
+#          
+#          
+#          
+#          
+#          
+#
+#
+#(same as pisi: it, up, ar, ..)
+#
+# @param-: other parameters depends on the operation.
+#
+# @usage:
+#          pisi_ it heyya-hey
+#          pisi_ it -c games
+#          pisi_ ar hede http:://www.pardus.org.tr/packages/armut/pisi.index.xml.xz
+pisi_()
+{
+    local head="PISI"
+
+    local operation=$1              # refers which operation will be performed
+    local pisi_cmd="/usr/bin/pisi"  # refers the pisi command (native or cross)
+    local destination="-D ${ROOT_PARTITION_DIR}"
+
+    # pisi operation
+    case ${operation} in
+        it|install)
+            # @param2 packages
+            # @param3 extra_parameters
+            local packages=$2
+            extra_param=$3
+
+            print_info " ==> Installing \"${packages}\"..." ${head}
+
+            prep_log &
+            ( ${pisi_cmd} it -y${VERBOSE}${DEBUG} ${extra_param} ${destination}  ${packages} > ${_log_fifo} 2>&1 )
+            __r=$?; wait
+
+            [ ${__r} -eq 0 ] || die "Unable to install \"${packages}\"!" ${head}
+
+            ;;
+
+        ar|add-repo)
+            # @param2 Repository name (eg. corp2-test)
+            # @param3 Repository url (eg. http://packages.pardus.org.tr/pardus/corporate2/devel/x86_64/pisi-index.xml.xz)
+            local repo_name=$2
+            local repo_url=$3
+
+            print_info " ==> Adding repo \"${repo_name}\":\"${repo_url}\"..." "${head}"
+            prep_log &
+            ( ${pisi_cmd} ar -y${VERBOSE}${DEBUG} ${repo_name} ${repo_url} ${destination} > ${_log_fifo} 2>&1 )
+            __r=$?; wait
+
+            [ ${__r} -eq 0 ] || (
+                # actually, this should be "die"
+                print_err "Unable to add repo \"${repo_name}\" \"${repo_url}\"" "${head}";
+                return 1;
+            )
+
+            ;;
+
+         *)
+            die "Operation \"${operation}\" is not implemented!" "${head}"
+            ;;
+
+    esac
+}
+
+##################################
+# Some helper functions for logging
+rm_() { rm -rf${VERBOSE} ${*} 2>&1 | log ${_log_level_debug}; }
+cp_() { cp -rf${VERBOSE} ${*} 2>&1 | log ${_log_level_debug}; }
+mkdir_() { mkdir -p${VERBOSE} ${*} 2>&1 | log ${_log_level_debug}; }
+
+##################################
+# @func: prep_rootfs
+# @desc: prepares initial pardus rootfs by installing system.base kernel
+#        and other required packages
+#
+# NO PARAMETERS
+prep_rootfs()
+{
+    local head="INSTALL"
+
+    print_info " ==> Configuring target pisi..." ${head}
+    mkdir_ ${ROOT_PARTITION_DIR}/etc/pisi
+    cp_ /etc/pisi/pisi.conf ${ROOT_PARTITION_DIR}/etc/pisi
+    pisi_ ar ${BIN_REPO_NAME} ${BIN_REPO_INDEX}
+
+    # 1st. baselayout has to be installed and configured first
+    pisi_ it "baselayout" "--ignore-comar --ignore-dep --ignore-safety"
+    cp_ ${ROOT_PARTITION_DIR}/usr/share/baselayout/* ${ROOT_PARTITION_DIR}/etc
+
+    print_info " ==> Making basic initial configurations..." ${head}
+    for conf in ${ROOT_PARTITION_DIR}/usr/share/baselayout/*; do
+        cp_ $conf ${ROOT_PARTITION_DIR}/etc
+    done
+    :> /var/log/lastlog
+    chmod 0600 ${ROOT_PARTITION_DIR}/etc/shadow
+
+    mkdir -m 755 ${ROOT_PARTITION_DIR}/dev/pts
+    mkdir -m 1777 ${ROOT_PARTITION_DIR}/dev/shm
+
+    #     device  type  maj  min
+    ############################
+    echo "console   c     5    1
+          zero      c     1    5
+          null      c     1    3
+          full      c     1    7
+          random    c     1    8
+          urandom   c     1    9
+          tty       c     5    0
+          tty0      c     4    0
+          tty1      c     4    1
+          ttyS0     c     4   64
+          ttyS1     c     4   65
+          ttyS2     c     4   66
+          ttyAMA0   c   204   17
+          " | \
+              while read -r node type major minor; do
+                  mknod ${ROOT_PARTITION_DIR}/dev/${node} ${type} ${major} ${minor}
+              done
+
+    for f in /var/run/utmp /var/log/wtmp; do
+        install -m 0664 -g utmp /dev/null $f
+    done
+
+    return 0 # success.
+}
+
+install_minimum()
+{
+    # install system.base
+    print_info " ==> Installing system.base..." ${head}
+    pisi_ it "-c system.base" "--ignore-comar"
+
+    # rest of the other required packages
+    print_info " ==> Installing default kernel..." ${head}
+    pisi_ it "kernel-versatile" "--ignore-comar" # FIXME: this fix is for qemu-arm versatile platform
+    print_info " ==> Installing other required packages..." ${head}
+    pisi_ it "hal -c hardware.firmware NetworkManager python-networkmanager" "--ignore-comar"
+}
+
+finalize_installation()
+{
+    local head="FINALIZING"
+
+    print_info " ==> Configuring pending processes" ${head}
+    chroot ${ROOT_PARTITION_DIR} service dbus start | log ${_log_level_debug}
+    chroot ${ROOT_PARTITION_DIR} pisi configure-pending | log ${_log_level_devel}
+
+    print_info " ==> Setting root password as \"pardus\"" ${head}
+    chroot  ${ROOT_PARTITION_DIR} \
+        echo "${DEFAULT_ROOT_PASSWD}\n${DEFAULT_ROOT_PASSWD}" | passwd
+
+    print_info " ==> Writing fstab" ${head}
+    cat >> ${ROOT_PARTITION_DIR}/etc/fstab << __EOF
+#
+# Generated by Pardus initramfs installer on `date -u`
+#
+# <fs>         <mountpoint>   <type>     <opts>      <dump/pass>
+UUID=${ROOT_PARTITION_UUID}     /              ${ROOT_PARTITION_FSTYPE}      noatime     1 1
+
+tmpfs          /dev/shm       tmpfs      nodev,nosuid,noexec 0 0
+devpts         /dev/pts       devpts     defaults        0 0
+proc           /proc          proc       defaults        0 0
+sysfs          /sys           sysfs      defaults        0 0
+debugfs        /sys/kernel/debug debugfs debugfs,defaults 0 0
+__EOF
+
+}
+
+prep()
+{
+    # Enable colors for logs, if user wants it
+    ${_b_enable_colors} && set_colors
+
+    # Create fifo for logging
+    mkfifo ${_log_fifo} 2>/dev/null
+
+    # If there is a logfile, then backup. We dont want to lose
+    # old logs, maybe its neccessary for the user.
+    if [ -f "${LOG_FILE}" ]; then
+        cp ${LOG_FILE}{,_${_backup_suffix}}
+        :> ${LOG_FILE}
+    fi
+
+    # Log the start date on top of the ${LOG_FILE}
+    log ${_log_level_debug} "Build date: `date -u`"
+}
+
+usage()
+{
+    cat << __EOF
+${DISTRIB_DESCRIPTION} ${ARCH} Initramfs Installer
+TUBITAK BILGEM
+Pardus Linux Project
+Copyright (C) 2010, 2011
+
+Please do NOT change defaults if you don't know what you do..
+
+usage: $(basename $0) [options]
+__EOF
+}
+
+######################################################################
+###               L E T   T H E   G A M E   B E G I N              ###
+######################################################################
+
+# :: refers the uppest scope
+head="::"
+
+# some functions/commands writes absurd sh*ts to log, this is the best ;)
+export LC_ALL=C
+
+# Parse commandline options
+while [ $# -gt 0 ]; do
+    command=$1
+    shift
+
+    case $command in
+        -l|--log-file)
+            LOG_FILE=$1
+            shift
+            ;;
+
+        -L|--log-level)
+            LOG_LEVEL=$1
+            shift
+            ;;
+
+        -v|--verbose)
+            VERBOSE="v"
+            ;;
+
+        -d|--debug)
+            DEBUG="d"
+            ;;
+
+        -C|--disable-colors)
+            _b_enable_colors=false
+            ;;
+
+        -i|--interactive)
+            _b_wizard=true
+            _b_force_yes=false
+            break;
+            ;;
+
+        -f|--force-yes)
+            _b_force_yes=true
+            ;;
+
+        -r|--rootfs)
+            # default value is ext3
+            ROOT_PARTITION_FSTYPE=$1
+            shift
+            ;;
+
+        -P|--root-partition)
+            # no default value
+            ROOT_PARTITION_BLK=$1
+            shift
+            ;;
+
+        -h|--help|--usage|'?'|*)
+            usage
+            exit 0
+            ;;
+    esac
+done
+
+# in order to build/install pisi packages, we need root privileges
+if [ x"`id -u`" != x"0" ]; then
+    echo "You need root privileges in order to go on!!"
+    exit 1
+fi
+
+prep
+
+# Greetings
+dialog_ "msgbox" "${DISTRIB_DESCRIPTION} Initramfs Installator" "
+TUBITAK BILGEM
+Pardus Linux Project
+Copyright (C) 2010, 2011
+
+${_dialog_cl_bold}${_dialog_cl_red}${DISTRIB_DESCRIPTION}${_dialog_cl_nobold}${_dialog_cl_black} Initramfs Installator.
+${_dialog_cl_normal}
+    ${DISTRIB_DESCRIPTION} minimal installator installs the most basic system to your PC or ARM device.
+
+    If you want to follow the logs during the installation, switch to another console and give this command: \\\`${_dialog_cl_underline}${_dialog_cl_reverse}tail -f ${LOG_FILE}${_dialog_cl_normal}'
+
+    or start this script with DEBUG log level parameter with \\\`${_dialog_cl_underline}${_dialog_cl_reverse}-L 4${_dialog_cl_normal}' parameter.
+
+    Have fun ;)
+"
+
+# prints the current time as nanoseconds
+
+_start_time=$(cur_time)
+_b_start_timer=true
+
+# Set root partition block and filesystem
+select_root_partition_blk
+select_root_partition_fs
+
+# Clear terminal for a beautiful interaction
+clear
+
+print_t1 "Preparing partition(s) to install"
+_cur_time=$(cur_time)
+format_partition "${ROOT_PARTITION_BLK}" "${ROOT_PARTITION_FSTYPE}"
+print_info " ==> Root partition formatted about $(elapsed_time ${_cur_time} fancy)"
+
+print_t1 "Installing rootfs"
+_cur_time=$(cur_time)
+prep_rootfs
+print_info " ==> Minimal Pardus installed about $(elapsed_time ${_cur_time} fancy)"
+
+print_t1 "Installing minimal rootfs"
+_cur_time=$(cur_time)
+install_minimum
+print_info " ==> Minimal Pardus installed about $(elapsed_time ${_cur_time} fancy)"
+
+print_t1 "Installing rootfs"
+_cur_time=$(cur_time)
+finalize_installation
+print_info " ==> Minimal Pardus installed about $(elapsed_time ${_cur_time} fancy)"
+
+# END OF INSTALLATION
+######################################################################
+
+println "${DISTRIB_DESCRIPTION} installation complated." | log ${_log_level_any}
+
+cleanup
+
