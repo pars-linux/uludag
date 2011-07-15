@@ -95,7 +95,7 @@ public:
         GFX_MODEL,
         GFX_DRIVER,
         GFX_3D,
-        SYSINFO_LAST
+        SYSINFO_LAST,
         ARCH
     };
 

@@ -274,7 +274,7 @@ void kio_sysinfoProtocol::get( const KUrl &)
     content = content.arg(diskInfo()); // put the discInfo text into the disk right box
 
     // Static Info
-
+    getArch();
     // Os info
     osInfo();
     staticInfo += startStock( i18n( "Operating System" ) );
@@ -547,18 +547,19 @@ bool kio_sysinfoProtocol::glInfo()
     return true;
 }
 
-bool kio_sysinfoProtocol::getArch()
+void kio_sysinfoProtocol::getArch()
 {
     FILE *fd = popen( "arch", "r" );
-    if ( !fd )
+    if ( !fd ){
         m_info[ARCH] = i18n("Not Available");
-    else {
+    }
+        else {
         QTextStream is( fd, QIODevice::ReadOnly );
 
          while ( !is.atEnd() )
         {
         QString line = is.readLine();
-            if (line != NULL){
+            if (!line.isNull()){
                 m_info[ARCH] = line;
             }
         }
