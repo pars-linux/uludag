@@ -1,63 +1,53 @@
-<?xml version="1.0"?>
-<Helping>
+<Version>
   <ISO9660>
-
     <Pardus>
         <Architecture>x64</Architecture>
         <Name>Pardus Kurumsal</Name>
         <Size>412314</Size>
         <Path>home/pars/workspace</Path>
     </Pardus>
-
     <Pardus>
         <Architecture>x64</Architecture>
         <Name>Pardus 2011</Name>
         <Size>4133412</Size>
         <Path>home</Path>
     </Pardus>
-
     <Pardus>
         <Architecture>x64</Architecture>
         <Name>Pardus 2009</Name>
         <Size>1341423</Size>
         <Path>home</Path>
     </Pardus>
-
     <Pardus>
         <Architecture>x64</Architecture>
         <Name>Pardus 2009.1 Anthropoides virgo</Name>
         <Size>1234123</Size>
         <Path>home</Path>
     </Pardus>
-
     <Pardus>
         <Architecture>x64</Architecture>
         <Name>Pardus 2008.2 Canis aureus</Name>
         <Size>1234123</Size>
         <Path>home</Path>
     </Pardus>
-
     <Pardus>
         <Architecture>x64</Architecture>
         <Name>Pardus 2011 Kurumsal 2</Name>
         <Size>141321</Size>
         <Path>home</Path>
     </Pardus>
-
     <Pardus>
         <Architecture>x64</Architecture>
         <Name>Pardus 2008</Name>
         <Size>1234123</Size>
         <Path>home</Path>
     </Pardus>
-
     <Pardus>
         <Architecture>x64</Architecture>
         <Name>Pardus 2008.2</Name>
         <Size>1234123</Size>
         <Path>home</Path>
     </Pardus>
-
   </ISO9660>
-</Helping>
+</Version>
 
