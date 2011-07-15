@@ -107,9 +107,10 @@ def print_connection(state, nm_settings, devices=[]):
             netmask = dev.ip4config.addresses[0][1]
             gateway = dev.ip4config.addresses[0][2]
             print "\t" + _("Interface: %s") % dev.interface
-            print "\t" + _("Address: {ipaddress_}") + "\n\t"+ _("Netmask: {netmask_}")+\
+            print "\t" + _("Address: {ipaddress_}").format(ipaddress_=ip4address)\
+                    + "\n\t"+ _("Netmask: {netmask_}").format(netmask_=netmask)+\
                     "\n\t"+ _("Default Gateway: {gateway_}").\
-                    format(ipaddress=ip4address,netmask_=netmask,gateway_=gateway)
+                    format(gateway_=gateway)
             print "\t"+ _("Name Servers: %s") % ", ".join(dev.ip4config.name_servers)
     except dbus.exceptions.DBusException:
         pass
