@@ -7,6 +7,8 @@
 #include <libxml/xmlmemory.h>
 #include <libxml/parser.h>
 
+#include <ncurses.h>
+#include <curses.h>
 #include <menu.h>
 
 #define ROW    20
@@ -285,7 +287,7 @@ int main(int argc, char **argv)
                  }
                  else
                  {
-                     fputs(path,fp);
+                     fputs(path , fp);
                      fclose(fp);
                     mvprintw( LINES-7 , 0 , "STARTING BOOT ");
                  }
