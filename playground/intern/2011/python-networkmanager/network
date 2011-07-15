@@ -16,8 +16,20 @@ import sys
 import uuid
 from optparse import OptionParser
 from networkmanager import mobile
-from networkmanager import NetworkManager, WiredSettings, WirelessSettings,WPAWirelessSettings,WEP40128WirelessSettings,WEP128WirelessSettings, DeviceType, DeviceState,GsmSettings
+from networkmanager import NetworkManager
 from networkmanager import CdmaSettings
+from networkmanager import WiredSettings
+from networkmanager import WirelessSettings
+from networkmanager import WPAWirelessSettings
+from networkmanager import WEP40128WirelessSettings
+from networkmanager import WEP128WirelessSettings
+from networkmanager import DeviceType
+from networkmanager import DeviceState
+from networkmanager import GsmSettings
+
+
+
+
 # Color characters
 COLORS = {
             'red'        : '\x1b[31;01m',
