@@ -278,7 +278,7 @@ int main(int argc, char **argv)
             case 10: /* Enter */
                  strcpy(path,"PXEXMLFILE=");
                  strcat( path , cur->versions[limit]->path);
-                 fp = fopen("pxexmlfile","wb");
+                 fp = fopen("/etc/pxeisofile","wb");
                  if (!fp)
                  {
                      printf("it failed!\n");
@@ -287,6 +287,7 @@ int main(int argc, char **argv)
                  {
                      fputs(path,fp);
                      fclose(fp);
+                    mvprintw( LINES-7 , 0 , "STARTING BOOT ");
                  }
                  break;
          }
