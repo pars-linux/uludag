@@ -142,6 +142,11 @@ class BaseSystem:
                                     "/usr/sbin/resume"          : "/bin/",
                                }
 
+        self.includePxeFiles = config["enablePxeBoot"]
+        self.pxeFileList = {
+                             "/lib/initramfs/pxebootselect"     : "/bin/",
+                           }
+
 
     def getNewRoot(self, dir):
         cleandir = dir.lstrip("/")
@@ -205,6 +210,11 @@ class BaseSystem:
         for i in self.suspendFileList:
             copy(i, self.getNewRoot(self.suspendFileList[i]))
 
+    def addPxe(self):
+        if self.includePxeFiles:
+            for i in self.pxeFileList:
+                copy(i, self.getNewRoot(self.pxeFileList[i]))
+
     def addModprobeBlacklists(self):
         for i in self.modprobeBlacklistFileList:
             copy(i, self.getNewRoot(self.modprobeBlacklistFileList[i]))
@@ -219,6 +229,7 @@ class BaseSystem:
         self.addLvm()
         self.addSuspend()
         self.addModprobeBlacklists()
+        self.addPxe()
 
 class KernelModule:
     def __init__(self):
@@ -530,6 +541,9 @@ if __name__ == "__main__":
     parser.add_option("--nodrm", action="store_true", dest="excludeDRM", default=False,
             help="Don't include KMS capable DRM modules")
 
+    parser.add_option("--pxeboot", action="store_true", dest="enablePxeBoot", default=False,
+            help="add pxebootselect family for booting from pxe")
+
     parser.add_option("--network-generic", action="store_true", dest="networkModuleBasic", default=False,
             help="add only generic network modules")
 
@@ -560,6 +574,7 @@ if __name__ == "__main__":
     config["networkModule"] = opts.networkModule
     config["networkModuleBasic"] = opts.networkModuleBasic
     config["excludeDRM"] = opts.excludeDRM
+    config["enablePxeBoot"] = opts.enablePxeBoot
 
     if "," in opts.blackList:
         config["blackList"].extend(opts.blackList.split(","))
