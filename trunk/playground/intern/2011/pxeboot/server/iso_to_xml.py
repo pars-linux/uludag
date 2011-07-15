@@ -206,7 +206,12 @@ for files_name in filelist:
     path_tag = iks.SubElement(root, "Path")
     path_tag.text = isopath
 
-    isosize,architecture = parseXml()
+    for dirs in iso.readdir("/"):
+        if dirs[0] == "/repo": 
+            isosize,architecture = parseXml()
+        else:
+            isosize = os.path.getsize(files_name)
+            architecture = "LiveCD"
     isosize = "%s" %isosize
     size_tag = iks.SubElement(root, "Size")
     size_tag.text = isosize
