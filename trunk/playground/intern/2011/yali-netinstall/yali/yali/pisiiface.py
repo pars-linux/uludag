@@ -20,6 +20,7 @@ import dbus
 import pisi
 import piksemel
 import yali.context as ctx
+import yali.util
 
 repodb = pisi.db.repodb.RepoDB()
 
@@ -68,8 +69,12 @@ def addCdRepo():
 
 def addRemoteRepo(name, uri):
     if not repodb.has_repo(name):
+        ctx.logger.debug(name)
+        ctx.logger.debug(uri)
         addRepo(name, uri)
         updateRepo(name)
+    else:
+        ctx.logger.debug("else")
 
 def switchToPardusRepo(repo):
     removeRepo(repo)
@@ -77,16 +82,45 @@ def switchToPardusRepo(repo):
 
 def updateRepo(name=ctx.consts.cd_repo_name):
     pisi.api.update_repo(name)
+    ctx.logger.debug("update repo : ", name)
 
 def removeRepo(name):
     pisi.api.remove_repo(name)
 
-def fetchUpdateList(updateList, destDir):
-    repoUri = os.path.dirname(ctx.consts.pardus_repo_uri)
+def fetchUpdateList(updateList, destDir, ui):
+    repo_uri = os.path.dirname(ctx.consts.pardus_repo_uri)
 
-    for pkgUri in updateList:
-        pkgUri = os.path.join(repoUri, pkgUri)
-        pisi.fetcher.fetch_url(pkgUri, destDir)
+    for package in updateList:
+        pkg_uri = os.path.join(repo_uri, package)
+        pisi.fetcher.fetch_url(pkg_uri, destDir, progress=ui)
+        ctx.logger.debug("%s package is fetching" % package)
+
+def upgradePackages():
+
+    ctx.logger.debug("repo guncelleniyor..")
+    pisi.api.update_repo(ctx.consts.pardus_repo_name)
+
+    ctx.logger.debug("list repos:")
+    repossss = pisi.api.list_repos(False)
+    ctx.logger.debug(repossss)
+    
+    ctx.logger.debug("pisi lr deneme: ")
+    yali.util.chroot("pisi lr")
+
+    yali.util.chroot("pisi ur")
+
+
+    ctx.logger.debug("upgradable list olusturuluyor..")
+     # dirty hack for COMAR to find scripts.
+    os.symlink("/", ctx.consts.target_dir + ctx.consts.target_dir)
+    upgradableList = pisi.api.list_upgradable()
+
+    ctx.logger.debug(upgradableList)
+    ctx.logger.debug("upgrade yapiliyor..")
+    pisi.api.upgrade(upgradableList)
+    ctx.logger.debug("upgrade bitti..")
+
+    os.unlink(ctx.consts.target_dir + ctx.consts.target_dir)
 
 def regenerateCaches():
     pisi.db.regenerate_caches()
