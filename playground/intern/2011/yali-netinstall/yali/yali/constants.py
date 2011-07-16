@@ -79,11 +79,13 @@ class Constants:
         self.__c.cd_repo_name = "pardus-cd"
         self.__c.collection_repo_name = "pardus-collection"
         self.__c.cd_repo_uri = os.path.join(self.__c.source_dir, "repo/pisi-index.xml.bz2")
-        self.__c.pardus_repo_name = "pardus-2009"
-        self.__c.pardus_repo_uri = "http://packages.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
+        self.__c.pardus_repo_name = "pardus-kurumsal"
+        self.__c.pardus_repo_uri = "http://packages.pardus.org.tr/pardus/kurumsal2/devel/x86_64/pisi-index.xml.xz"
         self.__c.pisi_index_file = os.path.join(self.__c.data_dir,"data/pisi-index.xml.bz2")
         self.__c.pisi_index_file_sum = os.path.join(self.__c.data_dir,"data/pisi-index.xml.bz2.sha1sum")
         self.__c.lang = locale.getdefaultlocale()[0][:2]
+        self.__c.tmp_update_dir = os.path.join(self.__c.target_dir, "yaliupdaterduringinstall")
+        self.__c.cache_update_dir = os.path.join(self.__c.target_dir, "var/cache/pisi/packages")
 
     def __getattr__(self, attr):
         return getattr(self.__c, attr)

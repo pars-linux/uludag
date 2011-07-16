@@ -24,13 +24,15 @@ import yali.util
 import yali.pisiiface
 import yali.postinstall
 import yali.context as ctx
+import yali.updateRepoParser
+
 from yali.gui import ScreenWidget
 from yali.gui.Ui.installwidget import Ui_InstallWidget
 
 from yali.gui.Ui.installprogress import Ui_InstallProgress
 from pds.gui import PAbstractBox, BOTCENTER
 
-EventConfigure, EventInstall, EventSetProgress, EventError, EventAllFinished, EventPackageInstallFinished, EventRetry = range(1001, 1008)
+EventConfigure, EventInstall, EventDownload, EventUpdate, EventSetProgress, EventError, EventAllFinished, EventPackageInstallFinished, EventConfigureFinished, EventPackageDownloadFinished, EventRetry = range(1001, 1012)
 
 class InstallProgressWidget(PAbstractBox):
 
@@ -64,7 +66,19 @@ class InstallProgressWidget(PAbstractBox):
         QTimer.singleShot(1, self.adjustSize)
     """
 
+class DownloadProgressWidget(PAbstractBox):
 
+    def __init__(self, parent):
+        PAbstractBox.__init__(self, parent)
+
+        self.ui = Ui_DownloadProgress()
+        self.ui.setupUi(self)
+
+        self._animation = 2
+        self._duration = 500
+
+    def showDownloadProgress(self):
+        QTimer.singleShot(1, lambda: self.animate(start = TOPCENTER, stop = TOPCENTER))
 
 def iter_slideshows():
     slideshows = []
@@ -90,6 +104,7 @@ class Widget(QWidget, ScreenWidget):
         self.ui.setupUi(self)
 
         self.installProgress = InstallProgressWidget(self)
+        self.downloadprogress = DownloadProgressWidget(self)
 
         self.timer = QTimer(self)
         QObject.connect(self.timer, SIGNAL("timeout()"), self.changeSlideshows)
@@ -99,6 +114,7 @@ class Widget(QWidget, ScreenWidget):
 
         if ctx.consts.lang == "tr":
             self.installProgress.ui.progress.setFormat("%%p")
+            self.downloadprogress.ui.progress.setFormat("%%p")
 
         self.iter_slideshows = iter_slideshows()
 
@@ -107,6 +123,10 @@ class Widget(QWidget, ScreenWidget):
 
         self.total = 0
         self.cur = 0
+        
+        self.totalDownload = 0;
+        self.currentDownload = 0;
+        
         self.has_errors = False
 
         # mutual exclusion
@@ -117,6 +137,8 @@ class Widget(QWidget, ScreenWidget):
         self.retry_answer = False
         self.pkg_configurator = None
         self.pkg_installer = None
+        self.pkg_downloader = None
+        self.pkg_updater = None
 
     def shown(self):
         # Disable mouse handler
@@ -130,13 +152,18 @@ class Widget(QWidget, ScreenWidget):
         self.wait_condition = QWaitCondition()
         self.queue = Queue()
         self.pkg_installer = PkgInstaller(self.queue, self.mutex, self.wait_condition, self.retry_answer)
-
+	
+	ctx.logger.debug("PkgDownloader is creating")
+	self.pkg_downloader = PkgDownloader(self.queue, self.mutex, self.wait_condition, self.retry_answer)
+	
         self.poll_timer.start(500)
 
         # start installer polling
         ctx.logger.debug("Calling PkgInstaller.start...")
         self.pkg_installer.start()
-
+        ctx.logger.debug("Calling PkgDownloader.start...")
+	self.pkg_downloader.start()
+	
         ctx.mainScreen.disableNext()
         ctx.mainScreen.disableBack()
 
@@ -144,6 +171,7 @@ class Widget(QWidget, ScreenWidget):
         self.timer.start(1000 * 30)
 
         self.installProgress.showInstallProgress()
+        self.downloadprogress.showInstallProgress()
 
     def checkQueueEvent(self):
 
@@ -171,7 +199,23 @@ class Widget(QWidget, ScreenWidget):
                 ctx.logger.debug("Pisi: %s configuring" % package.name)
                 self.cur += 1
                 self.installProgress.ui.progress.setValue(self.cur)
+                
+	    # EventDownload
+            elif event == EventDownload:
+                package = data[1]
+                self.downloadprogress.ui.info.setText(_("Downloading <b>%(name)s</b>") % {"name":package})
+                ctx.logger.debug("Pisi: %s downloading" % package)
+                self.currentDownload += 1
+                self.downloadprogress.ui.progress.setValue(self.currentDownload)
 
+            # EventUpdate
+            elif event == EventUpdate:
+                package = data[1]
+                self.downloadprogress.ui.info.setText(_("Updating <b>%(name)s</b>") % {"name":package})
+                ctx.logger.debug("Pisi: %s updating" % package)
+                self.currentDownload += 1
+                self.downloadprogress.ui.progress.setValue(self.currentDownload)
+                
             # EventSetProgress
             elif event == EventSetProgress:
                 total = data[1]
@@ -181,6 +225,23 @@ class Widget(QWidget, ScreenWidget):
             elif event == EventPackageInstallFinished:
                 print "***EventPackageInstallFinished called...."
                 self.packageInstallFinished()
+                
+            # EventPackageDownloadFinished
+            elif event == EventPackageDownloadFinished:
+                self.downloadFinished = True
+
+                if(self.configureFinished == True):
+                    ctx.logger.debug("Update called by downloadFinished")
+                    self.updatePackages()
+
+            # EventConfigureFinished
+            elif event == EventConfigureFinished:
+                print "***EventConfigureFinished called...."
+                self.configureFinished = True
+
+                if(self.downloadFinished == True):
+                    ctx.logger.debug("Update called by configureFinished")
+                    self.updatePackages()
 
             # EventError
             elif event == EventError:
@@ -238,6 +299,10 @@ class Widget(QWidget, ScreenWidget):
         # start configurator thread
         self.pkg_configurator = PkgConfigurator(self.queue, self.mutex)
         self.pkg_configurator.start()
+        
+    def updatePackages(self):
+        self.pkg_updater = PkgUpdater(self.queue, self.mutex, self.wait_condition, self.retry_answer)
+        self.pkg_updater.start()
 
     def execute(self):
         # stop slide show
@@ -351,8 +416,118 @@ class PkgConfigurator(Process):
         else:
             yali.pisiiface.switchToPardusRepo(ctx.consts.cd_repo_name)
 
+        data = [EventConfigureFinished]
+        self.queue.put_nowait(data)
+
+
+class PkgDownloader(Process):
+    def __init__(self, queue, mutex, wait_condition, retry_answer):
+        Process.__init__(self)
+        self.queue = queue
+        self.mutex = mutex
+        self.wait_condition = wait_condition
+        self.retry_answer = retry_answer
+        ctx.logger.debug("PkgDownloader started.")
+
+    def run(self):
+        ctx.logger.debug("PkgDownloader is running.")
+        ui = PisiUI(self.queue)
+        ctx.logger.debug("PisiUI is creating..")
+        ctx.logger.debug(ctx.consts.cd_repo_uri)
+        ctx.logger.debug(ctx.consts.pardus_repo_uri)
+
+        upRepoParser = yali.updateRepoParser.UpdateRepoParser(ctx.consts.cd_repo_uri, ctx.consts.pardus_repo_uri)
+        updateList = upRepoParser.getUpdateList()
+        totalDownload = len(updateList)
+        ctx.logger.debug("Sending EventSetDownloadProgress")
+        data = [EventSetDownloadProgress, totalDownload]
+        self.queue.put_nowait(data)
+        ctx.logger.debug("Found %d packages in update list" % totalDownload)
+
+        try:
+            while True:
+                try:
+                    yali.pisiiface.fetchUpdateList(updateList, ctx.consts.tmp_update_dir, ui)
+                    break # while
+                except Exception, msg:
+                    # Lock the mutex
+                    self.mutex.lock()
+
+                    # Send error message
+                    data = [EventRetry, str(msg)]
+                    self.queue.put_nowait(data)
+
+                    # wait for the result
+                    self.wait_condition.wait(self.mutex)
+                    self.mutex.unlock()
+
+                    if not self.retry_answer:
+                        raise msg
+
+        except Exception, msg:
+            data = [EventError, msg]
+            self.queue.put_nowait(data)
+            # wait for the result
+            self.wait_condition.wait(self.mutex)
+
+        ctx.logger.debug("Packages download finished ...")
+        # Package download finished
+        data = [EventPackageDownloadFinished]
+        self.queue.put_nowait(data)
+
+
+class PkgUpdater(Process):
+    def __init__(self, queue, mutex, wait_condition, retry_answer):
+        Process.__init__(self)
+        self.queue = queue
+        self.mutex = mutex
+        self.wait_condition = wait_condition
+        self.retry_answer = retry_answer
+        ctx.logger.debug("PkgUpdater started.")
+
+    def run(self):
+        ctx.logger.debug("PkgUpdater is running.")
+        shutil.move(ctx.consts.tmp_update_dir, ctx.consts.cache_update_dir)
+
+        ctx.logger.debug("ui baglandi.")
+        ui = PisiUI(self.queue)
+
+        ctx.logger.debug("repo ekleniyor..")
+        ctx.logger.debug(ctx.consts.pardus_repo_name)
+        ctx.logger.debug(ctx.consts.pardus_repo_uri)
+        yali.pisiiface.addRemoteRepo(ctx.consts.pardus_repo_name, ctx.consts.pardus_repo_uri)
+
+        try:
+            while True:
+                try:
+                    yali.pisiiface.upgradePackages()
+                    break # while
+                except Exception, msg:
+                    # Lock the mutex
+                    self.mutex.lock()
+
+                    # Send error message
+                    data = [EventRetry, str(msg)]
+                    self.queue.put_nowait(data)
+
+                    # wait for the result
+                    self.wait_condition.wait(self.mutex)
+                    self.mutex.unlock()
+
+                    if not self.retry_answer:
+                        raise msg
+
+        except Exception, msg:
+            data = [EventError, msg]
+            self.queue.put_nowait(data)
+            # wait for the result
+            self.wait_condition.wait(self.mutex)
+
+        ctx.logger.debug("Packages update finished ...")
+        # Package update finished
         data = [EventAllFinished]
         self.queue.put_nowait(data)
+
 
 class PisiUI(pisi.ui.UI):
 
