@@ -314,7 +314,7 @@ msgstr "Operación - %1%"
 
 #: src/progressdialog.py:82
 msgid "Downloading package list of %1"
-msgstr "Descargando lista de paquetes de %1"
+msgstr "Descargando lista de paquetes %1"
 
 #: src/progressdialog.py:84
 msgid "%1 %2"
