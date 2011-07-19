@@ -551,7 +551,7 @@ msgstr "Форма"
 
 #: ui/ui_mainwidget_v3.py:167
 msgid "Settings"
-msgstr "Налаштування"
+msgstr "Параметри"
 
 #: ui/ui_mainwidget_v3.py:168
 msgid "Search Bar"
