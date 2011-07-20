@@ -104,7 +104,7 @@ msgstr "Ponovno učitaj servis"
 
 #: ui/ui_item.py:132
 msgid "Run on start"
-msgstr ""
+msgstr "Pokreni pri početku"
 
 #: ui/ui_item.py:133
 msgid "Stop service"
