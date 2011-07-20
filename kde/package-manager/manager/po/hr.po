@@ -835,6 +835,8 @@ msgid ""
 "AppInfo Server is not reachable\n"
 "Please check your network connection"
 msgstr ""
+"AppInfo poslužitelj nije dostupan\n"
+"Molimo provjerite svoje mrežne veze"
 
 #: ui/ui_webdialog.py:161 ui/ui_webdialog.py:162
 msgid "Package Details"
