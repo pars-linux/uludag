@@ -102,7 +102,7 @@ msgstr ""
 
 #: .tmp/historymanager/window.py:230
 msgid "Taking back to : %1"
-msgstr ""
+msgstr "Vraćanje natrag na: %1"
 
 #: .tmp/historymanager/window.py:237
 msgid "Start new snapshot"
@@ -151,7 +151,7 @@ msgstr "Snimak"
 
 #: .tmp/historymanager/listitem.py:13
 msgid "Takeback"
-msgstr ""
+msgstr "Vraćanje natrag"
 
 #: .tmp/historymanager/listitem.py:14
 msgid "Repository Update"
@@ -171,7 +171,7 @@ msgstr "Br: Tip:"
 
 #: .tmp/ui_uiitem.py:87 .tmp/ui_mainwindow.py:137
 msgid "Take back to this point"
-msgstr ""
+msgstr "Vraćanje natrag na ovu točku"
 
 #: .tmp/ui_uiitem.py:88
 msgid "Details"
