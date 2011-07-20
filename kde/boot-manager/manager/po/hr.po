@@ -122,7 +122,7 @@ msgstr "..."
 
 #: ui/ui_edit.py:153
 msgid "Ramdisk File"
-msgstr ""
+msgstr "Ramdisk datoteka"
 
 #: ui/ui_edit.py:155
 msgid "Boot Options"
