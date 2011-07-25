@@ -74,15 +74,15 @@ After the Project Leader is determined, a representational code name is determin
 
 The working repository should be opened under "internal" or "projects" repositories together with the specified code name depending on the privacy status of the project.
 
-Secret Projects
-^^^^^^^^^^^^^^^
-All the codes and documents related to the all secret projects appear in the project directory under “internal”.
+Proprietary Projects
+^^^^^^^^^^^^^^^^^^^^
+All the codes and documents related to the proprietary projects appear in a closed project directory.
 
 Open Projects
 ^^^^^^^^^^^^^
 Following the coding process of the project, a Git repository is opened with the project code name under Pardus Git server for the project. All the documentations that are prepared and developed up to this stage are moved to this repository. All the codes and documentations will be developed after this stage are stored/updated in this repository.
 
-If the decision of making the project an open project after the start of the project as a secret project is given; all the information and documentation that are stored in the “internal” up to this stage are moved to git repository presented in open. 
+If the decision of making the project an open project after the start of the project as a secret project is given; all the information and documentation that are stored in the “internal” up to this stage are moved to git repository presented in open.
 
 Establishment of the System Requirements
 ----------------------------------------
@@ -108,7 +108,7 @@ Establishment of the Software Requirements
 Table of Requirements versioning
 --------------------------------
 
-When the system and software requirements reaches a certain maturity (this stage is decided by the cooperation of the developers and the demanders of the project), the requirements table should not be changed except for minor corrections and/or unless there is a very unusual situation. If replacement is necessary, it is needed to get the approval of both he developers and the demanders of the project, and the changes could be only presented with the new version of the requirements table.  
+When the system and software requirements reaches a certain maturity (this stage is decided by the cooperation of the developers and the demanders of the project), the requirements table should not be changed except for minor corrections and/or unless there is a very unusual situation. If replacement is necessary, it is needed to get the approval of both he developers and the demanders of the project, and the changes could be only presented with the new version of the requirements table.
 
 Prioritization of requirements
 ------------------------------
