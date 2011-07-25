@@ -35,11 +35,11 @@ At the end of the `Alpha Phase`_ first branching is done and testing source_ and
 
 Package updates are build automatically every day and directly ship to `testing binary repository`_ users.
 
-For testing source_ repo updates, Maintainers MUST:
+For `testing source repository`_ updates, Maintainers MUST:
 
     * Avoid major version updates and ABI breakage and API changes
     * Avoid new package merges
-    * Wait package for a while in `devel source repository`_ before allowing for merge in testing source_ repository
+    * Wait package for a while in `devel source repository`_ before allowing for merge in `testing source repository`_
 
 RC Phase Updates
 ================
@@ -59,29 +59,134 @@ Many final_ (stable) release users are less experienced with Pardus and Linux, a
 While release is moving towards to end of life, the updates should decrease over time, approaching zero near end of life. This necessarily means that stable releases will not closely track the very latest upstream code for all packages. 
 After release is finalized, the next new release planning_ starts and new `devel source repository`_ is opened, latest upstream codes can be committed here.
 
+For stable phase updates, major version update can probably cause ABI changes and it forces larger package updates on user systems and enforces contributors. Therefore it is discouraged in general. In addition, updates that are difficut to get back (change resources and configuration in one way) should be done carefully. So, working with upstream is crucial in order to keep pace with stable branch releases or patches for older releases.
 
 Special Packages Updates
 ------------------------
 
-Special packages are required to perform the most fundamental actions on a system. Those actions include:
+Special packages should enclose and provide the most fundamental actions on a system. Those actions include:
 
     * desktop base environment
-    * graphical network install
-    * post-install booting
-    * decrypt encrypted filesystems
+    * filesystems
     * graphics
     * login
     * networking
-    * get updates
+    * package update base
     * minimal buildroot
-    * compose new trees
-    * compose live
+    * post-install booting
+    * compose live and install image
 
-The security updates are also are included this special package case.
+The security updates are also included this special package case.
 
-Rebases should be carefully considered with respect to their dependencies. A rebase that required (or provided) a new Python ABI, for example, would almost certainly not be allowed. ABI changes in general are very strongly discouraged, they force larger update sets on users and they make life difficult for third-party packagers. Additionally, updates that convert resources or configuration one way (ie, from older->newer) should be approached with extreme caution as there would be much less chance of backing out an update that did these things. 
+In order to merge special packages from  `devel source repository`_ to `testing source repository`_, package maintainers need an Exceptions_ request and approval by merge resposible group.
 
-Working with upstream is crucial in order to keep pace with stable branch releases or patches for older releases.
+
+All Other Updates
+-----------------
+
+These updates also need an approval by merge resposible group.
+
+Package maintainers MUST:
+
+#. Fix security vulnerability bugs
+#. Fix severe regressions from the previous release. This includes packages which are totally unusable, like being uninstallable or crashing on startup.
+#. Fix bugs that directly cause a loss of user data
+#. Avoid new upstream versions of packages which provide new features, but don't fix critical bugs, a backport should be requested instead.
+#. Avoid ABI breakage or API changes if at all possible.
+#. Avoid changing the user experience if at all possible.
+#. Avoid updates that are trivial or don't affect any Pardus users. 
+#. Avoid adding new packages
+
+Package maintainers SHOULD:
+
+- Push only critical bug fixes and security fixes to previous release (n-1).
+
+Exceptions
+----------
+
+Software packages will not be updated to their new upstream releases, new packages and features could not be added during maintenance phase, unless the below exceptions are requested to merge responsibles via merge bug report. Merge bug
+report should include the reason why it is needed, other bugs that it fixes.
+
+    The following things would be considered in an exception request:
+
+        If the version update or new package adding:
+            #. fixes a security issue that would affect a large number of users.
+            #. fixes critical bugs and doesn't change ABI/API and nothing needs to be rebuilt against the new version.
+            #. fixes critical bugs that many users are encountering.
+
+    The following things should not be considered in an exception request:
+
+        If the update or new package adding:
+            #. converts databases or resources one way to a new format.
+            #. requires user intervention for the service to keep working
+            #. causes authorization and authentication changes
+            #. changes the GUI that end user encounters
+            #. fixes bugs that no Pardus user or customers has reported.
+
+
+Stable Phase Update Process
+---------------------------
+
+
+Update a package on `devel source repository`_:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. For each update a bug report should be exist:
+    #. If its a security related bug, it has already been reported on Security product with the related release is specified.
+    #. If bug is already reported, it should be triaged by developer or by other triager following the `bug triage`_ checklist
+    #. If not, the developer should report a new bug following the `bug triage`_ checklist
+
+#. Security and critical updates should be done in a minimally invasive approach:
+    - If a patch is available for the current version, apply it
+    - If a patch is not available for the current version, attempt to backport it
+    - If it is impossible to backport or the backport is not safe/suitable for the current version, update to the upstream release which fixes the security/critical bug. See `Exceptions`_
+
+#. Do not forget to reference the bug number and mark the upcoming package release as critical or security in package specification file. See `history comments`_ and `package updates type`_ for further details.
+
+#. All changes done to the package during the update should be reflected to the relevant bug report using the following special keywords in the SVN commit messages::
+
+    BUG:COMMENT:#123456     # Inserts a comment into the bug report #123456
+    BUG:FIXED:#123456       # Closes the bug report #123456 as RESOLVED/FIXED
+
+Merging to `testing source repository`_:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following workflow applies when the package maintainer decides to merge the relevant commits into the `testing source repository`_:
+
+#. Give **MERGEREQUEST** keyword and CC merge responsible mail lists to the bug report
+#. The merge responsibles review this merge request:
+    #. If the merge request is not approved, bug takes the one of the `insoluable bug resolutions`_ by merge responsibles.
+    #. If the merge request is approved, the bug marked with **APPROVED** keyword.
+        #. The developer merge it to `testing source repository`_ and reflect it as a comment to merge bug report using the following special keyword in the SVN commit messages and give **MERGED** keyword to the bug::
+
+            BUG:COMMENT:<Bug ID>
+        #. The merge responsible, build the binary packages on buildfarm.
+
+After binary package building, testing starts:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Packages have security update type are tested on daily basis.
+    #. After the package build, the security related bugs take the  **COMPILED** keyword.
+    #. The tester group search them daily and start the `security tests`_.
+    #. If there is not any problem while testing the related bugs are marked as **VERIFIED/FIXED**
+    #. If not, the tester group will reopen the bug, and marks as **REOPENED**
+#. Packages have critical update type are listed by merge responsibles once a month:
+    #. The tester group start the `package update tests`_
+    #. If there is not any problem while testing the related bugs are marked as **VERIFIED/FIXED**
+    #. If not, the tester group will reopen the bug, and marks as **REOPENED**
+#. Technological updates are listed by merge responsibles yearly,
+    #. The tester group start the `package update tests`_
+    #. If there is not any problem while testing the related bugs are marked as **VERIFIED/FIXED**
+    #. If not, the tester group will reopen the bug, and marks as **REOPENED**
+
+Testing finish and merging to `stable binary repository`_:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+By merge responsibles:
+
+#. After testing finish the VERIFIED/FIXED packages are searched on bugzilla.
+#. These packages are taken to stable binary repository.
+#. All package bugs that have taken to `stable binary repository`_ are marked as CLOSED/FIXED.
 
 
 .. _open development: http://developer.pardus.org.tr/guides/releasing/official_releases/release-process.html#open-development
@@ -99,3 +204,11 @@ Working with upstream is crucial in order to keep pace with stable branch releas
 .. _development: http://developer.pardus.org.tr/guides/releasing/official_releases/alpha_phase.html
 .. _stabilzation: http://developer.pardus.org.tr/guides/releasing/official_releases/beta_phase.html
 .. _final: http://developer.pardus.org.tr/guides/releasing/official_releases/final_phase.html
+.. _bug triage: http://developer.pardus.org.tr/guides/bugtracking/howto_bug_triage.html#check-list-for-bugs-have-new-status
+.. _history comments: http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#history-comments
+.. _package updates type: http://developer.pardus.org.tr/guides/packaging/howto_create_pisi_packages.html#different-pspec-xml-file-tags
+.. _testing source repository: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#testing-folder
+.. _insoluable bug resolutions: http://developer.pardus.org.tr/guides/bugtracking/bug_cycle.html
+.. _security tests: http://developer.pardus.org.tr/guides/releasing/testing_process/package_update_tests/security_tests.html
+.. _package update tests: http://developer.pardus.org.tr/guides/releasing/testing_process/package_update_tests/package_update_tests.html
+
