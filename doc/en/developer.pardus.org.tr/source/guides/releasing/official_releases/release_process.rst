@@ -19,8 +19,10 @@ Open developement
 Repo Freeze
 ^^^^^^^^^^^
 - At the end of this phase all packages of previous Pardus release packages merge process should be finished.
-- After this period, new packages and new versions can be merged under some permissions and restrictions.
+- After this period, new packages and new versions can be merged under some permissions and restrictions. (see `freeze exceptions`_)
 - In this freeze time devel branched and testing repository open.
+- See `Repo Freeze`_ for details
+
 
 Feature Acceptence Deadline
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -29,12 +31,14 @@ Feature Acceptence Deadline
 
 Feature freeze
 ^^^^^^^^^^^^^^
-- New features can not be added to the repositories, only bug fixes can be done. (See `feature freeze`_)
+- New features can not be added to the repositories, only bug fixes can be done.
+- See `feature freeze`_ for details
 
 User interface freeze
 ^^^^^^^^^^^^^^^^^^^^^
 - User interface can not be chaged after this time
 - It is needed for documentation and screenshots stabilization.
+- See `user interface freeze`_ for details
 
 Beta freeze
 ^^^^^^^^^^^
@@ -45,6 +49,7 @@ Beta freeze
 String freeze
 ^^^^^^^^^^^^^
 - In order to stabilize translations, strings should be freezed on repositories.
+- See `string freeze`_ for details.
 
 Toolchain freeze
 ^^^^^^^^^^^^^^^^
@@ -198,15 +203,18 @@ EOL
 - The EOL announce of a release is done at second next release beta 1 version.
 - The EOL announce date of a release 2 next release + 1 month (2n +1).
 
-See details from `EOL`_
+See details from `EOL`_.
 
 .. _Planning Phase: http://developer.pardus.org.tr/guides/releasing/official_releases/planning_phase.html
 .. _tracker bugs: http://developer.pardus.org.tr/guides/bugtracking/tracker_bug_process.html
-.. _feature freeze: http://developer.pardus.org.tr/guides/releasing/feature_freeze.html
+.. _feature freeze: http://developer.pardus.org.tr/guides/releasing/freezes/feature_freeze.html
 .. _Alpha phase: http://developer.pardus.org.tr/guides/releasing/official_releases/alpha_phase.html
 .. _Beta phase: http://developer.pardus.org.tr/guides/releasing/official_releases/beta_phase.html
 .. _RC phase: http://developer.pardus.org.tr/guides/releasing/official_releases/release_candidate_phase.html
 .. _Final phase: http://developer.pardus.org.tr/guides/releasing/official_releases/final_phase.html
 .. _EOL: http://developer.pardus.org.tr/guides/releasing/end_of_life.html
 .. _time-based release management: http://fnords.wordpress.com/2011/07/01/time-based-good-for-community/
-.. _freeze exceptions: http://developer.pardus.org.tr/guides/releasing/freeze_exception_process.html
+.. _freeze exceptions: http://developer.pardus.org.tr/guides/releasing/freezes/freeze_exception_process.html
+.. _Repo Freeze: http://developer.pardus.org.tr/guides/releasing/freezes/repo_freeze.html
+.. _user interface freeze: http://developer.pardus.org.tr/guides/releasing/freezes/user_interface_freeze.html
+.. _string freeze: http://developer.pardus.org.tr/guides/releasing/freezes/string_freeze.html
