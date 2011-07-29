@@ -1,9 +1,7 @@
 Release Process
 ===============
 
-In Pardus, we follow a time-based release approach, thus we have fixed dates for various steps of development. This means that, if a feature or a bug fix is not finished on time, then we just do not include it.
-
-.. , unless it is one of the exceptional cases defined here. (feature freeze exeptions yazılacak)
+In Pardus, we follow a time-based release approach, thus we have fixed dates for various steps of development. This means that, if a feature or a bug fix is not finished on time, then we just do not include it, unless it is one of the exceptional cases defined in `freeze exceptions`_ doc.
 
 Thus, it is important that every contributor is aware of the release process and comply with the process and work in coordination to finish on time. For a discussion about `time-based release management`_.
 
@@ -211,3 +209,4 @@ See details from `EOL`_
 .. _Final phase: http://developer.pardus.org.tr/guides/releasing/official_releases/final_phase.html
 .. _EOL: http://developer.pardus.org.tr/guides/releasing/end_of_life.html
 .. _time-based release management: http://fnords.wordpress.com/2011/07/01/time-based-good-for-community/
+.. _freeze exceptions: http://developer.pardus.org.tr/guides/releasing/freeze_exception_process.html
