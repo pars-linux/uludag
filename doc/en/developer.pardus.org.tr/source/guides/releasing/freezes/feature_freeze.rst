@@ -63,8 +63,8 @@ See `freeze exception process`_ for details.
 
 .. _feature request and tracking: http://developer.pardus.org.tr/guides/newfeature/index.html
 .. _version control system commit hooks: http://developer.pardus.org.tr/guides/releasing/repository_concepts/version_control_system_rules.html#enter-the-bug-number-when-solving-a-bug-from-the-bug-tracking-system
-.. _freeze exception process: http://developer.pardus.org.tr/guides/releases/freeze_exception_process.html
+.. _freeze exception process: http://developer.pardus.org.tr/guides/releases/freezes/freeze_exception_process.html
 .. _tracker bugs: http://developer.pardus.org.tr/guides/bugtracking/tracker_bug_process.html
 .. _package review: http://developer.pardus.org.tr/guides/packaging/package-review-process.html
 .. _devel source repository: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#devel-folder
-.. _feature freeze exceptions for new upstream versions: http://developer.pardus.org.tr/guides/releases/freeze_exception_process.html#feature-freeze-exceptions-for-new-upstream-versions
+.. _feature freeze exceptions for new upstream versions: http://developer.pardus.org.tr/guides/releases/freezes/freeze_exception_process.html#feature-freeze-exceptions-for-new-upstream-versions
