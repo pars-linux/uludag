@@ -57,6 +57,7 @@ Such below things can cause a milestone freeze exception:
 #. Insufficient tests
 #. A regression or high severity `tracker bug`_ that have a strong rationale and minimal risk for the release
 
+The exception request will be sent to release group list and after it is approved it should be announced on developer, gelistirici and announce list.
 
 .. release grup mail listesi açılmalı
 .. documentation mail list and group açılmalı
@@ -65,3 +66,6 @@ Such below things can cause a milestone freeze exception:
 .. _new package process: http://developer.pardus.org.tr/guides/newfeature/new_package_requests.html
 .. _translation mail list: http://lists.pardus.org.tr/mailman/listinfo/pardus-translators
 .. _tracker bug: http://developer.pardus.org.tr/guides/bugtracking/tracker_bug_process.html
+.. _announce: http://lists.pardus.org.tr/mailman/listinfo/pardus-announce
+.. _developer: http://lists.pardus.org.tr/mailman/listinfo/pardus-devel
+.. _gelistirici: http://lists.pardus.org.tr/mailman/listinfo/gelistirici
