@@ -15,7 +15,7 @@ Alpha phase updates are done on `devel source repository`_. The `devel source re
 is an area where the `open development`_ activity is done. Package updates are build
 automatically every day and directly ship to `devel binary repository`_ users.
 
-`Package update tests`_ are not used for this repository.
+`package tests`_ are not used for this repository.
 
 For devel repo updates,  Maintainers SHOULD:
 
@@ -171,11 +171,11 @@ After binary package building, testing starts:
     #. If there is not any problem while testing the related bugs are marked as **VERIFIED/FIXED**
     #. If not, the tester group will reopen the bug, and marks as **REOPENED**
 #. Packages have critical update type are listed by merge responsibles once a month:
-    #. The tester group start the `package update tests`_
+    #. The tester group start the `package tests`_
     #. If there is not any problem while testing the related bugs are marked as **VERIFIED/FIXED**
     #. If not, the tester group will reopen the bug, and marks as **REOPENED**
 #. Technological updates are listed by merge responsibles yearly,
-    #. The tester group start the `package update tests`_
+    #. The tester group start the `package tests`_
     #. If there is not any problem while testing the related bugs are marked as **VERIFIED/FIXED**
     #. If not, the tester group will reopen the bug, and marks as **REOPENED**
 
@@ -202,7 +202,7 @@ By merge responsibles:
 .. _package review: http://developer.pardus.org.tr/guides/packaging/package-review-process.html
 .. _planning: http://developer.pardus.org.tr/guides/releasing/official_releases/planning_phase.html
 .. _development: http://developer.pardus.org.tr/guides/releasing/official_releases/alpha_phase.html
-.. _stabilzation: http://developer.pardus.org.tr/guides/releasing/official_releases/beta_phase.html
+.. _stabilization: http://developer.pardus.org.tr/guides/releasing/official_releases/beta_phase.html
 .. _final: http://developer.pardus.org.tr/guides/releasing/official_releases/final_phase.html
 .. _bug triage: http://developer.pardus.org.tr/guides/bugtracking/howto_bug_triage.html#check-list-for-bugs-have-new-status
 .. _history comments: http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#history-comments
@@ -210,5 +210,5 @@ By merge responsibles:
 .. _testing source repository: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#testing-folder
 .. _insoluable bug resolutions: http://developer.pardus.org.tr/guides/bugtracking/bug_cycle.html
 .. _security tests: http://developer.pardus.org.tr/guides/releasing/testing_process/package_update_tests/security_tests.html
-.. _package update tests: http://developer.pardus.org.tr/guides/releasing/testing_process/package_update_tests/package_update_tests.html
+.. _package tests: http://developer.pardus.org.tr/guides/releasing/testing_process/package_update_tests/package_update_tests.html
 

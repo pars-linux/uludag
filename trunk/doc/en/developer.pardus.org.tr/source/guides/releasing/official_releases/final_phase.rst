@@ -103,7 +103,7 @@ Test team has the responsibility of determining whether the criteria for the
 the test team reports on `Pardus Bugzilla`_ will be reviewed and discussed
 at the "where we are" meeting.
 
-.. _RC release requirements: http://developer.pardus.org.tr/guides/releasing/official_releases/release_candidate_phase.html#final-release-requirements
+.. _RC release requirements: http://developer.pardus.org.tr/guides/releasing/official_releases/release_candidate_phase.html#rc-release-requirements
 .. _YALI: http://developer.pardus.org.tr/projects/yali/index.html
 .. _Kaptan: http://developer.pardus.org.tr/projects/kaptan/index.html
 .. _Pardus bugzilla: http://bugs.pardus.org.tr/

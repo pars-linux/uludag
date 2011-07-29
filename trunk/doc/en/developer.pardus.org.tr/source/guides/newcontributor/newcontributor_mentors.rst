@@ -4,7 +4,7 @@ Contributor Candidate Mentoring
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Who are mentors?
-===============
+================
 
 The somponent supervisors and lead developers are the mentors of developer candidates.
 

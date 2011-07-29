@@ -7,9 +7,6 @@ Point Release (Technological updates)
 :Last Modified Date: |today|
 :Version: 0.1
 
-Final Release
--------------
-
 This phase is the continuation of long term support releases and released once a year. 
 
 It takes about 6 months.
@@ -121,7 +118,6 @@ Test team has the responsibility of determining whether the criteria for the
 the test team reports on `Pardus Bugzilla`_ will be reviewed and discussed
 at the "where we are" meeting.
 
-.. _RC release requirements: http://developer.pardus.org.tr/guides/releasing/official_releases/release_candidate_phase.html#final-release-requirements
 .. _YALI: http://developer.pardus.org.tr/projects/yali/index.html
 .. _Kaptan: http://developer.pardus.org.tr/projects/kaptan/index.html
 .. _Pardus bugzilla: http://bugs.pardus.org.tr/
@@ -131,5 +127,5 @@ at the "where we are" meeting.
 .. _severity: http://developer.pardus.org.tr/guides/bugtracking/howto_bug_triage.html#bug-importance
 .. _tracker bugs: http://developer.pardus.org.tr/guides/bugtracking/tracker_bug_process.html
 .. _duyuru list: http://lists.pardus.org.tr/mailman/listinfo/duyuru
+.. _Final release requirements: http://developer.pardus.org.tr/guides/releasing/official_releases/final_phase.html#final-release-requirements
 .. _announce list: http://lists.pardus.org.tr/mailman/listinfo/pardus-announce
-

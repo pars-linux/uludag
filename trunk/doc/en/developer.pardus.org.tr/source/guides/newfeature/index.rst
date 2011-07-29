@@ -7,3 +7,4 @@ New Feature Requests and Tracking
     :maxdepth: 2
 
     newfeature_requests.rst
+    new_package_requests.rst

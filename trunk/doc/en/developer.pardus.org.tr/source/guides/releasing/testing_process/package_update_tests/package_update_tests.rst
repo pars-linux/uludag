@@ -1,4 +1,4 @@
-.. _package-update-tests:
+.. _package-tests:
 
 Package Update Tests
 ====================

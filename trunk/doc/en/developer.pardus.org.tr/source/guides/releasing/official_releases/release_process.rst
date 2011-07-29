@@ -210,4 +210,4 @@ See details from `EOL`_
 .. _RC phase: http://developer.pardus.org.tr/guides/releasing/official_releases/release_candidate_phase.html
 .. _Final phase: http://developer.pardus.org.tr/guides/releasing/official_releases/final_phase.html
 .. _EOL: http://developer.pardus.org.tr/guides/releasing/end_of_life.html
-.. _time based release management: http://fnords.wordpress.com/2011/07/01/time-based-good-for-community/
+.. _time-based release management: http://fnords.wordpress.com/2011/07/01/time-based-good-for-community/

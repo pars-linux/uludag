@@ -83,7 +83,7 @@ Release minus 10 days:
    * High severity bugs
 
 #. Selectively accept package merges to resolve Final tracker bugs
-#. `RC freeze`
+#. `RC freeze`_
 #. Create Final Test Release for Final validation tests
 
    * Installation media

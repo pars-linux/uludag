@@ -3,6 +3,10 @@
 Bug Requests
 ============
 
+:Author: Semen Cirit
+
+**Last Modified Date:** 29-07-2011
+
 Bugzilla is bug tracking system that used for Pardus Linux Distribution. Thanks to this tool feedbacks can be taken from users and developers on bugs and Pardus can be improved more powerfully.
 
 Sometimes new reported bugs has some inadequate and improper informations. While the reporters waste their time file bugs, developers have to spend more time in order to comprehend, analyse and fix the bug. Moreover bugs can be closed or left uninterested beacuse of missing and in accurate information.
@@ -340,5 +344,4 @@ If a graphical user interface bug exist, the best is to add the screenshot of it
 
 **Last Modified Date:** |today|
 
-:Author: Semen Cirit
 .. _bug cycle: http://developer.pardus.org.tr/guides/bugtracking/bug_cycle.html
