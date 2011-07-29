@@ -39,10 +39,10 @@ Additions of new packages for the new Pardus release up until Feature Freeze tim
 #. Follow `new package process`_
 #. File or triage the bug as explained at `Exception Process`_
 
-User Interface Freeze Exceptions
---------------------------------
+User Interface and String Freeze Exceptions
+-------------------------------------------
 
-User interface freeze is important to stabilize documentation and translations, so this exception should be approved also by translation and documentation groups. The bug report should include the reason why it is needed at that point and cause documentation and translation changes.
+User interface and string freezes are important to stabilize documentation and translations, so these exceptions should be approved also by translation and documentation groups. The bug report should include the reason why it is needed at that point and cause documentation and translation changes.
 
 #. File or triage the bug as explained at `Exception Process`_
 #. Add cc of `translation mail list`_ and documentation mail list.
