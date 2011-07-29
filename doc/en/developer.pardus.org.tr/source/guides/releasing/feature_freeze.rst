@@ -67,4 +67,4 @@ See `freeze exception process`_ for details.
 .. _tracker bugs: http://developer.pardus.org.tr/guides/bugtracking/tracker_bug_process.html
 .. _package review: http://developer.pardus.org.tr/guides/packaging/package-review-process.html
 .. _devel source repository: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#devel-folder
-http://developer.pardus.org.tr/guides/releases/freeze_exception_process.html#feature-freeze-exceptions-for-new-upstream-versions
+.. _feature freeze exceptions for new upstream versions: http://developer.pardus.org.tr/guides/releases/freeze_exception_process.html#feature-freeze-exceptions-for-new-upstream-versions

@@ -1,4 +1,4 @@
-.. _new package request:
+.. _new-package-request:
 
 New Package Requests
 ====================
@@ -42,7 +42,7 @@ Feature freeze at milestone Alpha 3 is the last time for package meges to `devel
 .. _feature freeze: http://developer.pardus.org.tr/guides/releasing/feature_freeze.html
 .. _New Package Request: http://bugs.pardus.org.tr/enter_bug.cgi?product=Yeni%20Paket%20%C4%B0ste%C4%9Fi%2F%20New%20Package%20Request
 .. _package creation guidelines: http://developer.pardus.org.tr/guides/packaging/howto_create_pisi_packages.html
-.. _tecknique list: http://liste.pardus.org.tr/mailman/listinfo/teknik
+.. _technique list: http://liste.pardus.org.tr/mailman/listinfo/teknik
 .. _package review process: http://developer.pardus.org.tr/guides/packaging/package-review-process.html
 .. _new contributor: http://developer.pardus.org.tr/guides/newcontributor/index.html
 .. _playground/review source repository: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#review-folder

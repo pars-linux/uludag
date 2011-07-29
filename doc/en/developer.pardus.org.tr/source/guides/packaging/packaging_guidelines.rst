@@ -539,6 +539,7 @@ If a package is renamed without any functional changes or package(s) replace wit
             .
             .
         </Obsoletes>
+
     ::
 
         Example:
