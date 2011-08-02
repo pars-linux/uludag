@@ -185,6 +185,9 @@ class Iface(QObject, Singleton):
         pisi.api.upgrade(upgrade_list)
         self.log("PACKAGE UPGRADE COMPLETED", "PISI")
 
+        # Write down Nof packages has been upgraded
+        file('/tmp/nof_package_upgraded','w').write(str(self._nof_packgages))
+
         # Install Required Packages
         self.log("FETCHING FORCE INSTALL PACKAGE LIST", "BACKEND")
 
@@ -193,6 +196,10 @@ class Iface(QObject, Singleton):
         except:
             self.log("FETCHING FAILED !!", "BACKEND")
             pkgs_to_install = []
+
+        # Filter not available packages from force install list
+        availables = pisi.api.list_available()
+        pkgs_to_install = filter(lambda x: x in availables, pkgs_to_install)
 
         self._nof_packgages += len(pkgs_to_install)
 
@@ -208,7 +215,10 @@ class Iface(QObject, Singleton):
         # Configure Pending !
 
         # Set number of upgraded packages
-        self._nof_packgages = int(file('/tmp/nof_package_upgraded').read())
+        try:
+            self._nof_packgages = int(file('/tmp/nof_package_upgraded').read())
+        except:
+            self._nof_packgages = 0
 
         self.log("I FOUND %d PACKAGES TO CONFIGURE" % self._nof_packgages, "BACKEND")
         self.log("STARTING TO CONFIGURING","PISI")
