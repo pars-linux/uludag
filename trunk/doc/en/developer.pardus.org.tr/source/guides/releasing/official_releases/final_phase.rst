@@ -68,7 +68,7 @@ Release minus 5 days:
 
 Release minus 3 day:
 
-#. Final freeze
+#. `Final freeze`_
 #. Only boot and installation urgent `tracker bugs`_ fixed and needs approval.
 
 Release:
@@ -114,4 +114,5 @@ at the "where we are" meeting.
 .. _tracker bugs: http://developer.pardus.org.tr/guides/bugtracking/tracker_bug_process.html
 .. _duyuru list: http://lists.pardus.org.tr/mailman/listinfo/duyuru
 .. _announce list: http://lists.pardus.org.tr/mailman/listinfo/pardus-announce
+.. _Final freeze: http://developer.pardus.org.tr/guides/releasing/freezes/final_freeze.html
 

@@ -84,7 +84,6 @@ Release minus 2 weeks:
 #. Warn developers about:
 
    * `User interface freeze`_
-   * `Beta freeze`_ (`code complete`_)
    * Package file conflicts or unresolved package dependencies
 
 #. Begin Release Upgrade tests
@@ -141,7 +140,7 @@ Release plus 1 day:
 
 #. Warn about `Translation freeze`_
 #. Warn contributors about packages that are not found on any repositories for contributor `Repo freeze`_
-#. Warn about Final freeze
+#. Warn about `Final freeze`_
 #. Begin the plan of `next new release`_
 
 Beta Tracker Bugs
@@ -181,15 +180,16 @@ at the "where we are" meeting.
 .. _YALI: http://developer.pardus.org.tr/projects/yali/index.html
 .. _Kaptan: http://developer.pardus.org.tr/projects/kaptan/index.html
 .. _Pardus technologies: http://developer.pardus.org.tr/projects/index.html
-.. _code complete: http://developer.pardus.org.tr/guides/releasing/feature_freeze.html
+.. _code complete: http://developer.pardus.org.tr/guides/releasing/freezes/feature_freeze.html
 .. _tracker bugs: http://developer.pardus.org.tr/guides/bugtracking/tracker_bug_process.html#open-tracker-bug-report
 .. _accepted features: http://bugs.pardus.org.tr/buglist.cgi?query_format=advanced&bug_severity=newfeature&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&resolution=REMIND
 .. _testing source repository: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#testing-folder
 .. _duyuru list: http://lists.pardus.org.tr/mailman/listinfo/duyuru
 .. _announce list: http://lists.pardus.org.tr/mailman/listinfo/pardus-announce
-.. _User interface freeze: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html#user-interface-freeze
-.. _Beta freeze: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html#beta-freeze
+.. _User interface freeze: http://developer.pardus.org.tr/guides/releasing/freezes/user_interface_freeze.html
+.. _Beta freeze: http://developer.pardus.org.tr/guides/releasing/freezes/beta_freeze.html
 .. _next new release: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html
-.. _Toolchain freeze: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html#toolchain-freeze
-.. _Translation freeze: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html#translation-freeze
-.. _Repo freeze: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html#repo-freeze
+.. _Toolchain freeze: http://developer.pardus.org.tr/guides/releasing/freezes/toolchain_freeze.html
+.. _Translation freeze: http://developer.pardus.org.tr/guides/releasing/freezes/translation_freeze.html
+.. _Final freeze: http://developer.pardus.org.tr/guides/releasing/freezes/final_freeze.html
+.. _Repo freeze: http://developer.pardus.org.tr/guides/releasing/freezes/repo_freeze.html
