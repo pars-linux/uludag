@@ -83,6 +83,8 @@ Release minus 10 days:
    * High severity bugs
 
 #. Selectively accept package merges to resolve Final tracker bugs
+#. `Translation freeze`_
+#. `Kernel freeze`_
 #. `RC freeze`_
 #. Create Final Test Release for Final validation tests
 
@@ -100,10 +102,8 @@ Release minus 10 days:
 
 Release minus 7 days:
 
-#. `Translation freeze`_
-#. `Kernel freeze`_
 #. `Repo freeze`_ for contributors
-#. Resolve image based problems
+#. Resolve only image based problems
 
    * Package conflicts or unresolved package dependencies
    * Installation bugs
@@ -119,7 +119,7 @@ Release Minus 3 days:
 #. Review Final `tracker bugs`_ and take final decision what to fix or defer
 #. Fixing only urgent release `tracker bugs`_, bug fix needs approval.
 #. Prepare press release from release-notes
-#. Warn about Final freeze
+#. Warn about `Final freeze`_
 
 Release:
 
@@ -167,8 +167,9 @@ at the "where we are" meeting.
 .. _tracker bugs: http://developer.pardus.org.tr/guides/bugtracking/tracker_bug_process.html
 .. _duyuru list: http://lists.pardus.org.tr/mailman/listinfo/duyuru
 .. _announce list: http://lists.pardus.org.tr/mailman/listinfo/pardus-announce
-.. _Translation freeze: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html#translation-freeze
-.. _Repo freeze: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html#repo-freeze
-.. _RC freeze: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html#rc-freeze
-.. _Kernel freeze: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html#kernel-freeze
+.. _Translation freeze: http://developer.pardus.org.tr/guides/releasing/freezes/translation_freeze.html
+.. _Repo freeze: http://developer.pardus.org.tr/guides/releasing/freezes/repo-freeze.html
+.. _RC freeze: http://developer.pardus.org.tr/guides/releasing/freezes/rc_freeze.html
+.. _Final freeze: http://developer.pardus.org.tr/guides/releasing/freezes/final_freeze.html
+.. _Kernel freeze: http://developer.pardus.org.tr/guides/releasing/freezes/kernel-freeze.html
 .. _stable binary repository: http://developer.pardus.org.tr/guides/releasing/repository_concepts/software_repository.html#stable-binary-repository

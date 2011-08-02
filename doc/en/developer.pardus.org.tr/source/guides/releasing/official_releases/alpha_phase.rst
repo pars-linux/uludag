@@ -194,7 +194,7 @@ at the "where we are" meeting.
 .. _devel branch: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#devel-folder
 .. _component based: http://developer.pardus.org.tr/guides/packaging/package_components.html
 .. _accepted features: http://bugs.pardus.org.tr/buglist.cgi?query_format=advanced&bug_severity=newfeature&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&resolution=REMIND
-.. _feature complete: http://developer.pardus.org.tr/guides/releasing/feature_freeze.html
+.. _feature complete: http://developer.pardus.org.tr/guides/releasing/freezes/feature_freeze.html
 .. _supported architectures: http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#architecture-support
 .. _YALI: http://developer.pardus.org.tr/projects/yali/index.html
 .. _Kaptan: http://developer.pardus.org.tr/projects/kaptan/index.html
@@ -210,7 +210,7 @@ at the "where we are" meeting.
 .. _tracker bugs: http://developer.pardus.org.tr/guides/bugtracking/tracker_bug_process.html#open-tracker-bug-report
 .. _feature request: http://developer.pardus.org.tr/guides/newfeature/newfeature_requests.html#how-do-i-propose-a-new-feature-that-i-do-not-contribute
 .. _feature submission: http://developer.pardus.org.tr/guides/newfeature/newfeature_requests.html#how-my-new-feature-request-is-accepted
-.. _Feature freeze: http://developer.pardus.org.tr/guides/releasing/feature_freeze.html
+.. _Feature freeze: http://developer.pardus.org.tr/guides/releasing/freezes/feature_freeze.html
 .. _duyuru list: http://lists.pardus.org.tr/mailman/listinfo/duyuru
 .. _announce list: http://lists.pardus.org.tr/mailman/listinfo/pardus-announce
 .. _developer list: http://lists.pardus.org.tr/mailman/listinfo/pardus-devel
@@ -218,5 +218,5 @@ at the "where we are" meeting.
 .. _binary: http://developer.pardus.org.tr/guides/releasing/repository_concepts/software_repository.html#testing-binary-repository
 .. _source: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#testing-folder
 .. _Pardus technologies: http://developer.pardus.org.tr/projects/index.html
-.. _Repo freeze: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html#repo-freeze
-.. _String freeze: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html#string-freeze
+.. _Repo freeze: http://developer.pardus.org.tr/guides/releasing/freezes/repo-freeze.html
+.. _String freeze: http://developer.pardus.org.tr/guides/releasing/freezes/string-freeze.html

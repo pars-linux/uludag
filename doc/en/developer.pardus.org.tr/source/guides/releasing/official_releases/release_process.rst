@@ -45,6 +45,7 @@ Beta freeze
 
 - The repository is freezed until beta is released, in order to stabilize beta for tests and reach beta to a level similar to final release.
 - Bug fixes taken to repository with release manager approval
+- See `Beta freeze`_ for details
 
 String freeze
 ^^^^^^^^^^^^^
@@ -54,21 +55,28 @@ String freeze
 Toolchain freeze
 ^^^^^^^^^^^^^^^^
 Last date for toolchain changes.
+- See `toolchain freeze`_ for details.
 
 Kernel freeze
 ^^^^^^^^^^^^^
 - No new kernel versions in order to enable last final hardware compatibility checks, deadline for kernel regression fixes
+- See `kernel freeze`_ for details.
 
 Translation freeze
 ^^^^^^^^^^^^^^^^^^
 - No translations permitted after this point in order to enable final stabilization and last final tests.
+- See `translation freeze`_ for details.
 
 RC freeze
 ^^^^^^^^^^
 
 - The repository is freezed until Final is released, in order to stabilize RC for tests and reach RC to a level similar to final release.
 - Bug fixes taken to repository with release manager approval
+- See `RC freeze`_ for details.
 
+Final Freeze
+^^^^^^^^^^^^
+Freeze time before the release is shipped.
 
 General Milestones
 ------------------
@@ -164,6 +172,7 @@ Final
 ^^^^^
 (about 2 weeks)
 
+- `Final freeze`_
 - Only boot and installation urgent release `tracker bugs`_ fixed and needs approval.
 - Start new release cycle for the next release
 
@@ -218,3 +227,8 @@ See details from `EOL`_.
 .. _Repo Freeze: http://developer.pardus.org.tr/guides/releasing/freezes/repo_freeze.html
 .. _user interface freeze: http://developer.pardus.org.tr/guides/releasing/freezes/user_interface_freeze.html
 .. _string freeze: http://developer.pardus.org.tr/guides/releasing/freezes/string_freeze.html
+.. _Beta freeze: http://developer.pardus.org.tr/guides/releasing/freezes/beta_freeze.html
+.. _translation freeze: http://developer.pardus.org.tr/guides/releasing/freezes/translation_freeze.html
+.. _RC freeze: http://developer.pardus.org.tr/guides/releasing/freezes/rc_freeze.html
+.. _kernel freeze: http://developer.pardus.org.tr/guides/releasing/freezes/kernel_freeze.html
+.. _toolchain freeze: http://developer.pardus.org.tr/guides/releasing/freezes/toolchain_freeze.html
