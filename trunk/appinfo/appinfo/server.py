@@ -57,7 +57,8 @@ class AppInfoServer(AppInfo):
         if os.path.exists(db):
             os.rename(db, db+'.backup')
 
-        self.initializeDB(db, force = True)
+        self._db = db
+        self._sq = sqlite3.connect(db)
         self._sq.execute(database.DB_SCHEME)
         self.commitDB()
         return (True, 'DB created sucessfuly.')
