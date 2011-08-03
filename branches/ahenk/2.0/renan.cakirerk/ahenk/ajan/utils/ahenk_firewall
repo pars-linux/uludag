@@ -1,0 +1,81 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+"""
+    Ahenk firewall management tool
+"""
+
+import ConfigParser
+import optparse
+import os
+import sys
+
+
+def main():
+    """
+        Main function.
+    """
+
+    # Command line options
+    parser = optparse.OptionParser()
+    parser.add_option("-c", "--config", dest="conffile",
+                        default="/etc/ahenk/ahenk-agent.conf",
+                      help="Use alternate configuration file", metavar="FILE")
+    parser.add_option("-n", "--dry-run", action="store_true", dest="dryrun",
+                      help="Do nothing, just tell.")
+    #parser.add_option("-v", "--verbose", dest="verbose", action="store_true",
+    #                  help="Verbose mode")
+    (options, args) = parser.parse_args()
+
+    # Only root can run that application
+    if os.getuid() != 0:
+        print "%s must be run as root." % sys.argv[0]
+        sys.exit(1)
+
+    # Normalize configuration file path
+    options.conffile = os.path.realpath(options.conffile)
+
+    # Read configuration file
+    if not os.path.exists(options.conffile):
+        print "%s is missing." % options.conffile
+        sys.exit(1)
+
+    parser = ConfigParser.ConfigParser()
+    try:
+        parser.read(options.conffile)
+    except IOError:
+        print "%s is corrupted." % options.conffile
+        sys.exit(1)
+
+    # Policy cache directory
+    if parser.has_option("general", "policydir"):
+        options.policydir = parser.get("general", "policydir")
+    else:
+        options.policydir = "/var/db/ahenk-agent/"
+
+    # Create required directories
+    if not os.path.exists(options.policydir):
+        os.makedirs(options.policydir)
+
+    print "Firewall Management"
+    print "  [1] Apply latest fetched firewall policy."
+    print "  [2] Remove all firewall rules"
+
+    selection = None
+    while selection not in ("1", "2"):
+        selection = raw_input("> ")
+
+    script = "/usr/bin/ahenk_firewall_reset stop"
+    script_latest = os.path.join(options.policydir, "firewall.sh")
+
+    if selection == "1" and os.path.exists(script_latest):
+        script = script_latest
+
+    if options.dryrun:
+        print "Executing %s ..." % script
+    else:
+        os.system(script)
+
+
+if __name__ == "__main__":
+    sys.exit(main())
