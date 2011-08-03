@@ -49,7 +49,7 @@ if __name__ == '__main__':
         print ' - Trying to initialize Server DB:', server.initializeDB(options.filename)[1]
 
     if options.createdb:
-        print ' - Trying to create db:' , server.createDB(options.filename)[1]
+        print ' - Trying to create db:' , server.createDB(options.filename or 'appinfo.db')[1]
     if options.updatepkgdb:
         print ' - Trying to update packagelist:', server.updatePackageList()[1]
     if options.resetdb:
