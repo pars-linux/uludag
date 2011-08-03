@@ -3,7 +3,7 @@
 Starting Bug Triage
 ===================
 
-**Last Modified Date:** |today|
+**Last Modified Date:** 03-08-2011
 
 :Author: Semen Cirit
 
@@ -189,9 +189,19 @@ General Advice
     * Please read carefully, and think before you click.
     * Use :ref:`stock-responses` as appropriate.
 
+First Steps to Contribute Triaging
+==================================
+
+#. Track closely `bugzilla mail list`_ and read triaged bugs carefully.
+#. Take an account from Pardus bugzilla_
+#. Read this document carefully :)
+#. Write comments to the bugs on bugzilla_ little by little for triaging
+#. When you feel ready for triaging, please send a message to `test list`_ with your triaged bug ids, the experienced triagers will review your triaged bugs and approve you for triaging (At this point, you will take permissions for changing bug status, severity etc. to deeply triage).
+
 .. _bug cycle: http://developer.pardus.org.tr/guides/bugtracking/bug_cycle.html
 .. _bug importances: http://developer.pardus.org.tr/guides/bugtracking/howto_bug_triage.html#bug-importance
 .. _Freeze, panics: http://developer.pardus.org.tr/guides/bugtracking/bug_and_feature_requests.html?highlight=crash#freeze-and-panics
 .. _crashes: http://developer.pardus.org.tr/guides/bugtracking/bug_and_feature_requests.html?highlight=crash#crashes
 .. _crashing: http://developer.pardus.org.tr/guides/bugtracking/bug_and_feature_requests.html?highlight=crash#crashes
-
+.. _bugzilla mail list: http://lists.pardus.org.tr/mailman/listinfo/bugzilla
+.. _bugzilla: http://bugs.pardus.org.tr/
