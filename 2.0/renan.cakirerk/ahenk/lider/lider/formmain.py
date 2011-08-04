@@ -69,13 +69,13 @@ class FormMain(QtGui.QWidget, Ui_Main):
         #self.treeComputers.hide()
 
         # Hide search
-        self.pushSearch.hide()
+        #self.pushSearch.hide()
 
         # Popup for connection management
-        menu = wrappers.Menu(self)
-        menu.newAction("Connect", wrappers.Icon("online48"), self.__slot_connect)
-        menu.newAction("Disconnect", wrappers.Icon("offline48"), self.__slot_disconnect)
-        self.pushConnection.setMenu(menu)
+        #menu = wrappers.Menu(self)
+        #menu.newAction("Connect", wrappers.Icon("online48"), self.__slot_connect)
+        #menu.newAction("Disconnect", wrappers.Icon("offline48"), self.__slot_disconnect)
+        #self.pushConnection.setMenu(menu)
 
         # Popup for items
         self.menu = wrappers.Menu(self)
@@ -121,6 +121,8 @@ class FormMain(QtGui.QWidget, Ui_Main):
         self.connect(self.pushReset, QtCore.SIGNAL("clicked()"), self.__slot_reset)
         self.connect(self.pushApply, QtCore.SIGNAL("clicked()"), self.__slot_apply)
 
+        self.connect(self.pushConnection, QtCore.SIGNAL("clicked()"), self.__slot_disconnect)
+
         # Initialize "talk" backend
         self.talk.start()
 
@@ -144,7 +146,7 @@ class FormMain(QtGui.QWidget, Ui_Main):
         self.__update_toolbar()
         self.__slot_debug(False)
 
-        if not self.__slot_connect():
+        if self.__slot_connect() == False:
             import sys
             sys.exit()
 
@@ -295,6 +297,7 @@ class FormMain(QtGui.QWidget, Ui_Main):
 
     def  __list_items(self, root=None, alternative=False):
         if not root:
+            print "burada"
             """
             if alternative:
                 root_alt = QtGui.QTreeWidgetItem(self.treeComputers)
@@ -314,7 +317,7 @@ class FormMain(QtGui.QWidget, Ui_Main):
             self.nodes_dn[root.dn] = root
 
             return
-
+        print "surada"
         dn = root.dn
 
         results = self.directory.search(dn, ["o", "cn", "description", "objectClass"], "one")
@@ -439,7 +442,6 @@ class FormMain(QtGui.QWidget, Ui_Main):
         if dialog.exec_():
             try:
                 self.directory.connect(dialog.get_host(), dialog.get_domain(), dialog.get_user(), dialog.get_password())
-                return True
             except directory.DirectoryError:
                 traceback.print_exc()
                 #self.__update_status("directory", "error")
@@ -489,10 +491,21 @@ class FormMain(QtGui.QWidget, Ui_Main):
         self.items = []
 
         # Go to first screen
-        self.__slot_main()
+        #self.__slot_main()
 
         # Update toolbar
         self.__update_toolbar()
+
+        # Go back to login screen
+        self.hide()
+
+        if self.__slot_connect() == False:
+            import sys
+            sys.exit()
+
+        self.show()
+
+
 
     def __slot_talk_state(self, state):
         """
@@ -1078,8 +1091,6 @@ class FormMain(QtGui.QWidget, Ui_Main):
         """
             Triggered when user clicks 'save' button.
         """
-        if self.tabPolicy.currentIndex() == 0:
-            return False
 
         msg = QtGui.QMessageBox(self)
         msg.setIcon(QtGui.QMessageBox.Question)

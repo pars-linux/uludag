@@ -133,10 +133,16 @@ class WidgetModule(QtGui.QWidget, Ui_widgetAuthentication, plugins.PluginWidget)
         """
         if self.radioUnix.isChecked():
             self.groupLDAP.hide()
+            self.labelGroupLDAP.hide()
             self.groupAD.hide()
+            self.labelGroupAD.hide()
         elif self.radioLDAP.isChecked():
             self.groupLDAP.show()
+            self.labelGroupLDAP.show()
             self.groupAD.hide()
+            self.labelGroupAD.hide()
         elif self.radioAD.isChecked():
             self.groupLDAP.hide()
+            self.labelGroupLDAP.hide()
             self.groupAD.show()
+            self.labelGroupAD.show()
