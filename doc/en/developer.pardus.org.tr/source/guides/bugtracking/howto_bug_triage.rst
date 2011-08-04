@@ -66,11 +66,11 @@ This checklist is used for bugs which have **NEW** status.
 
 #. Has the bug a duplicate?
 
-    * If so, the less informed bug resolution should be set as **RESOLVED/DUPLICATE** with bug number of the most detailed report and `related stock response <http://developer.pardus.org.tr/guides/bugtracking/stock_responses.html#duplicate-bugs>`_ is gived as a comment.
+    * If so, the less informed bug resolution should be set as **RESOLVED/DUPLICATE** with bug number of the most detailed report and `duplicate bug stock response`_ is gived as a comment.
     * If it is not clear that a bug is a duplicate of another bug, please politeliy convince reporter with your comment.
     * For additional help: :ref:`finding-duplicates`.
     * Also:
-          * Observe `Most frequently reported bugs <http://bugs.pardus.org.tr/duplicates.cgi>`_.
+          * Observe `Most frequently reported bugs`_.
           * Analyse the bugs assigned same component.
           * Use advance search for the bugs assigned different components and try to find similarities.
 
@@ -81,14 +81,14 @@ This checklist is used for bugs which have **NEW** status.
 
 #. Are more then one bug is reported in one report?
 
-    * Please send `related stock response <http://developer.pardus.org.tr/guides/bugtracking/stock_responses.html#more-than-one-issues-reported-in-one-bug>`_ as a comment.
+    * Please send `more than one issues on same bug stock response`_ as a comment.
 
 #. Is there enough information for developer to fix the bug?
 
     * If not,
           * Request for more information from the reporter (please be polite). Leave the bug status as **NEW** and state **NEEDINFO** as a keyword.
           * Please add your own idea to the comment. This idea generally comes into mind, while trying to reproduce the bug. Additionaly you can comment according to attachments.
-    * Look `Gather information from specific Bugs <http://developer.pardus.org.tr/guides/bugtracking/bug_and_feature_requests.html#gather-information-for-specific-bugs>`_ for necessary bug information:
+    * Look `Gather information from specific Bugs`_ for necessary bug information:
           * Are the steps for reproduce explained clearly?
           * Were the relevant log files and outputs added to the report?
           * If a crash occured, did the stack trace is added?
@@ -174,7 +174,7 @@ EOL Bug Triage
 For bugs filed against Pardus releases that have reached their End of Life (EOL):
 
     * If the bug appears to be occurring in a more recent (non-EOL) version, update the version number and leave the bug open,
-    * Otherwise, mark the bug **CLOSED/WONTFIX** and add the `EOL stock response <http://developer.pardus.org.tr/guides/bugtracking/stock_responses.html#end-of-life-eol-product>`_.
+    * Otherwise, mark the bug **CLOSED/WONTFIX** and add the `EOL stock response`_.
 
 
 General Advice
@@ -184,7 +184,7 @@ General Advice
     * Please try to reproduce the bug before requesting additional infor mation. Avoid requesting information and re-testing that isn't really necessary; this is obviously frustrating for them.
     * Avoid marking a bug as a duplicate that isn't really the same. If you don't have the technical expertise to be certain, just add a comment with the other bug number, and say it's a possible duplicate.
     * If the developer has commented on the bug or filed it themselves. Let the bug to developer, if more information was needed, they probably would have requested it themselves.
-    * You can take help from `testing list <http://lists.pardus.org.tr/mailman/listinfo/testci>`_ 
+    * You can take help from `test list`_
     * Add yourself to the CC: list of bugs you triage.
     * Please read carefully, and think before you click.
     * Use :ref:`stock-responses` as appropriate.
@@ -195,8 +195,8 @@ First Steps to Contribute Triaging
 #. Track closely `bugzilla mail list`_ and read triaged bugs carefully.
 #. Take an account from Pardus bugzilla_
 #. Read this document carefully :)
-#. Write comments to the bugs on bugzilla_ little by little for triaging
-#. When you feel ready for triaging, please send a message to `test list`_ with your triaged bug ids, the experienced triagers will review your triaged bugs and approve you for triaging (At this point, you will take permissions for changing bug status, severity etc. to deeply triage).
+#. Write comments little by little to the bugs on bugzilla_ for triaging
+#. When you feel ready for triaging, please send a message to `test list`_ with your triaged bug ids, the experienced triagers will review your triaged bugs and approve you triaging request (At this point, you will take permissions for changing bug status, severity etc. to deeply triage).
 
 .. _bug cycle: http://developer.pardus.org.tr/guides/bugtracking/bug_cycle.html
 .. _bug importances: http://developer.pardus.org.tr/guides/bugtracking/howto_bug_triage.html#bug-importance
@@ -205,3 +205,9 @@ First Steps to Contribute Triaging
 .. _crashing: http://developer.pardus.org.tr/guides/bugtracking/bug_and_feature_requests.html?highlight=crash#crashes
 .. _bugzilla mail list: http://lists.pardus.org.tr/mailman/listinfo/bugzilla
 .. _bugzilla: http://bugs.pardus.org.tr/
+.. _Most frequently reported bugs: http://bugs.pardus.org.tr/duplicates.cgi
+.. _Gather information from specific Bugs: http://developer.pardus.org.tr/guides/bugtracking/bug_and_feature_requests.html#gather-information-for-specific-bugs
+.. _EOL stock response: http://developer.pardus.org.tr/guides/bugtracking/stock_responses.html#end-of-life-eol-product
+.. _test list: http://lists.pardus.org.tr/mailman/listinfo/testci
+.. _duplicate bug stock response: http://developer.pardus.org.tr/guides/bugtracking/stock_responses.html#duplicate-bugs
+.. _more than one issues on same bug stock response: http://developer.pardus.org.tr/guides/bugtracking/stock_responses.html#more-than-one-issues-reported-in-one-bug
