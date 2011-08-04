@@ -62,10 +62,11 @@ class FormMain(QtGui.QWidget, Ui_Main):
         # Attach generated UI
         self.setupUi(self)
 
+
         # Fine tune UI
         self.treeComputers.header().setResizeMode(0, QtGui.QHeaderView.Stretch)
         self.treeComputers.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
-        self.treeComputers.hide()
+        #self.treeComputers.hide()
 
         # Hide search
         self.pushSearch.hide()
@@ -98,18 +99,18 @@ class FormMain(QtGui.QWidget, Ui_Main):
         self.connect(self.talk, QtCore.SIGNAL("stateChanged(int)"), self.__slot_talk_state)
         self.connect(self.talk, QtCore.SIGNAL("messageFetched(QString, QString, QString)"), self.__slot_talk_message)
         self.connect(self.talk, QtCore.SIGNAL("userStatusChanged(QString, int)"), self.__slot_talk_status)
-        self.connect(self.pushMain, QtCore.SIGNAL("clicked()"), self.__slot_main)
+        #self.connect(self.pushMain, QtCore.SIGNAL("clicked()"), self.__slot_main)
         self.connect(self.pushDebug, QtCore.SIGNAL("toggled(bool)"), self.__slot_debug)
         self.connect(self.pushSearch, QtCore.SIGNAL("clicked()"), self.__slot_search)
 
-        self.connect(self.treeComputers, QtCore.SIGNAL("itemClicked(QTreeWidgetItem*, int)"), self.__slot_tree_click)
-        self.connect(self.treeComputers, QtCore.SIGNAL("itemDoubleClicked(QTreeWidgetItem*, int)"), self.__slot_tree_double_click)
+        #self.connect(self.treeComputers, QtCore.SIGNAL("itemClicked(QTreeWidgetItem*, int)"), self.__slot_tree_click)
+        #self.connect(self.treeComputers, QtCore.SIGNAL("itemDoubleClicked(QTreeWidgetItem*, int)"), self.__slot_tree_double_click)
         self.connect(self.treeComputers, QtCore.SIGNAL("itemExpanded(QTreeWidgetItem*)"), self.__slot_tree_expand)
         self.connect(self.treeComputers, QtCore.SIGNAL("itemCollapsed(QTreeWidgetItem*)"), self.__slot_tree_collapse)
         self.connect(self.treeComputers, QtCore.SIGNAL("customContextMenuRequested(QPoint)"), self.__slot_tree_menu)
 
-        self.connect(self.treeComputers, QtCore.SIGNAL("itemExpanded(QTreeWidgetItem*)"), self.__slot_tree2_expand)
-        self.connect(self.treeComputers, QtCore.SIGNAL("itemCollapsed(QTreeWidgetItem*)"), self.__slot_tree2_collapse)
+        #self.connect(self.treeComputers, QtCore.SIGNAL("itemExpanded(QTreeWidgetItem*)"), self.__slot_tree2_expand)
+        #self.connect(self.treeComputers, QtCore.SIGNAL("itemCollapsed(QTreeWidgetItem*)"), self.__slot_tree2_collapse)
         self.connect(self.treeComputers, QtCore.SIGNAL("itemClicked(QTreeWidgetItem*, int)"), self.__slot_tree2_click)
         self.connect(self.treeComputers, QtCore.SIGNAL("itemDoubleClicked(QTreeWidgetItem*, int)"), self.__slot_tree2_double_click)
 
@@ -142,6 +143,10 @@ class FormMain(QtGui.QWidget, Ui_Main):
         # Reset UI
         self.__update_toolbar()
         self.__slot_debug(False)
+
+        if not self.__slot_connect():
+            import sys
+            sys.exit()
 
     def closeEvent(self, event):
         """
@@ -213,14 +218,17 @@ class FormMain(QtGui.QWidget, Ui_Main):
         """
         self.framePolicyInherit.hide()
         self.frameMulti.hide()
+        """
         if self.directory.is_connected:
             self.pushMain.setEnabled(True)
             self.pushSearch.setEnabled(True)
         else:
             self.pushMain.setEnabled(False)
             self.pushSearch.setEnabled(False)
+        """
         if self.tabPolicy.currentIndex() == 0:
             # Disable unnecessary buttons
+            """
             if len(self.items):
                 self.pushPluginGlobal.setEnabled(True)
                 #self.pushPluginItem.setEnabled(True)
@@ -230,6 +238,7 @@ class FormMain(QtGui.QWidget, Ui_Main):
                     self.pushPluginGlobal.setEnabled(True)
                 else:
                     self.pushPluginGlobal.setEnabled(False)
+            """
             # Show network information
             self.pixmapPlugin.setPixmap(self.windowIcon().pixmap(48))
             if self.directory.is_connected:
@@ -244,7 +253,7 @@ class FormMain(QtGui.QWidget, Ui_Main):
                 self.labelPlugin.setText("Lider")
                 self.labelPluginDesc.setText("")
             # Hide button box
-            self.frameButtons.hide()
+            #self.frameButtons.hide()
         else:
             widget = self.tabPolicy.currentWidget()
             # Disable unnecessary buttons
@@ -259,7 +268,7 @@ class FormMain(QtGui.QWidget, Ui_Main):
             self.labelPlugin.setText(widget.windowTitle())
             self.labelPluginDesc.setText(widget.toolTip())
             # Show button box
-            self.frameButtons.show()
+            #self.frameButtons.show()
 
     def __load_plugins(self):
         """
@@ -281,11 +290,12 @@ class FormMain(QtGui.QWidget, Ui_Main):
                 action = menu_single.newAction(widget.windowTitle(), widget.windowIcon(), self.__slot_widget_stack)
             action.widget = widget # __slot_widget_stack method needs this
 
-        self.pushPluginGlobal.setMenu(menu_global)
+        #self.pushPluginGlobal.setMenu(menu_global)
         #self.pushPluginItem.setMenu(menu_single)
 
     def  __list_items(self, root=None, alternative=False):
         if not root:
+            """
             if alternative:
                 root_alt = QtGui.QTreeWidgetItem(self.treeComputers)
                 root_alt.setText(0, unicode(self.directory.get_name()))
@@ -295,12 +305,13 @@ class FormMain(QtGui.QWidget, Ui_Main):
                 root_alt.folder = True
                 self.nodes_alt_dn[root_alt.dn] = root_alt
             else:
-                root = list_item.add_tree_item(self.treeComputers, self.directory.directory_domain, self.directory.get_name(), self.directory.directory_domain, icon=wrappers.Icon("folder48"))
-                root.setChildIndicatorPolicy(QtGui.QTreeWidgetItem.ShowIndicator)
-                root.dn = self.directory.directory_domain
-                root.name = root.dn.split(",")[0].split("=")[1]
-                root.folder = True
-                self.nodes_dn[root.dn] = root
+            """
+            root = list_item.add_tree_item(self.treeComputers, self.directory.directory_domain, self.directory.get_name(), self.directory.directory_domain, icon=wrappers.Icon("folder48"))
+            root.setChildIndicatorPolicy(QtGui.QTreeWidgetItem.ShowIndicator)
+            root.dn = self.directory.directory_domain
+            root.name = root.dn.split(",")[0].split("=")[1]
+            root.folder = True
+            self.nodes_dn[root.dn] = root
 
             return
 
@@ -428,30 +439,31 @@ class FormMain(QtGui.QWidget, Ui_Main):
         if dialog.exec_():
             try:
                 self.directory.connect(dialog.get_host(), dialog.get_domain(), dialog.get_user(), dialog.get_password())
+                return True
             except directory.DirectoryError:
                 traceback.print_exc()
-                self.__update_status("directory", "error")
+                #self.__update_status("directory", "error")
                 # TODO: Disconnect
                 QtGui.QMessageBox.warning(self, "Connection Error", "Unable to connect to %s" % dialog.get_host())
-                return
+                return False
             try:
                 self.directory_label = self.directory.get_name()
             except directory.DirectoryError:
-                self.__update_status("directory", "error")
+                #self.__update_status("directory", "error")
                 # TODO: Disconnect
                 QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
-                return
-            self.__update_status("directory", "online")
+                return False
+            #self.__update_status("directory", "online")
         else:
             # User cancelled
-            return
+            return False
 
         # Connect to XMPP server
         self.talk.connect(self.directory.host, self.directory.domain, self.directory.user, self.directory.password)
 
         # List components
         self.__list_items()
-        self.__list_items(alternative=True)
+        #self.__list_items(alternative=True)
 
         # Update toolbar
         self.__update_toolbar()
@@ -471,7 +483,7 @@ class FormMain(QtGui.QWidget, Ui_Main):
 
         # Clear tree
         self.treeComputers.clear()
-        self.treeComputers.clear()
+        #self.treeComputers.clear()
 
         # Reset selected item
         self.items = []
@@ -545,16 +557,12 @@ class FormMain(QtGui.QWidget, Ui_Main):
                 widget.talk_status(sender, status)
             except AttributeError:
                 pass
-
+    """
     def __slot_main(self):
-        """
-            Triggered when user clicks main button
-            Return to main screen.
-        """
         self.tabPolicy.setCurrentIndex(0)
-        self.treeComputers.hide()
+        #self.treeComputers.hide()
         self.__update_toolbar()
-
+    """
     def __slot_tree_click(self, item, column):
         """
             Triggered when user clicks a node.
@@ -1026,7 +1034,7 @@ class FormMain(QtGui.QWidget, Ui_Main):
         """
             Triggered when user clicks search button.
         """
-        self.__slot_main()
+        #self.__slot_main()
         dialog = DialogSearch()
         if dialog.exec_():
             print "Searching:", dialog.get_query()

@@ -35,7 +35,7 @@ def add_tree_item(parent, uid, title, description="", data=None, icon=None, stat
         Returns:
             TreeWidgetItem objec
     """
-    widget_item = QtGui.QTreeWidgetItem(parent)
+    widget_item = QtGui.QTreeWidgetItem(parent, ["", description])
     tree_widget = widget_item.treeWidget()
     widget = ItemWidget(tree_widget, uid, title, description, data, icon, status_icon, state, edit, delete)
     widget_item.widget = widget
@@ -101,7 +101,7 @@ class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
         self.data = data
 
         self.set_title(title)
-        self.set_description(description)
+        #self.set_description(description)
 
         self.set_state(state)
         self.set_icon(icon)
@@ -133,6 +133,7 @@ class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
     def get_title(self):
         return unicode(self.labelTitle.text())
 
+    """
     def set_description(self, description=""):
         self.labelDescription.setText(unicode(description))
         if len(description):
@@ -142,6 +143,7 @@ class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
 
     def get_description(self):
         return unicode(self.labelDescription.text())
+    """
 
     def set_icon(self, icon=None):
         if icon != None:
