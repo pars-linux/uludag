@@ -102,7 +102,7 @@ border-top-right-radius: 4px;</string>
     </widget>
    </item>
    <item row="1" column="0">
-    <widget class="QGroupBox" name="groupBox_2">
+    <widget class="QGroupBox" name="groupSource">
      <property name="minimumSize">
       <size>
        <width>260</width>
@@ -116,7 +116,7 @@ border-top-right-radius: 4px;</string>
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(30, 43, 51)</string>
+      <string notr="true"/>
      </property>
      <property name="title">
       <string/>
@@ -130,6 +130,11 @@ border-top-right-radius: 4px;</string>
       </property>
       <item>
        <widget class="QRadioButton" name="radioLDAP">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>LDAP server</string>
         </property>
@@ -137,6 +142,11 @@ border-top-right-radius: 4px;</string>
       </item>
       <item>
        <widget class="QRadioButton" name="radioUnix">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>Local user database.</string>
         </property>
@@ -147,6 +157,11 @@ border-top-right-radius: 4px;</string>
       </item>
       <item>
        <widget class="QRadioButton" name="radioAD">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>Active Directory</string>
         </property>
@@ -162,10 +177,21 @@ border-top-right-radius: 4px;</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_8">
       <item row="1" column="0">
-       <widget class="QListWidget" name="listWidget"/>
+       <widget class="QListWidget" name="listWidget">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+       </widget>
       </item>
       <item row="2" column="0">
        <widget class="QPushButton" name="pushButton">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>Refresh List</string>
         </property>
@@ -232,6 +258,11 @@ border-top-right-radius: 4px;</string>
      <layout class="QGridLayout" name="gridLayout_6">
       <item row="0" column="0" colspan="2">
        <widget class="QCheckBox" name="checkBox">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>Password must contain at least 2 digits.</string>
         </property>
@@ -239,6 +270,11 @@ border-top-right-radius: 4px;</string>
       </item>
       <item row="1" column="0" colspan="3">
        <widget class="QCheckBox" name="checkBox_2">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>Password must contain at least 2 upper case characters.</string>
         </property>
@@ -246,6 +282,11 @@ border-top-right-radius: 4px;</string>
       </item>
       <item row="3" column="0">
        <widget class="QLabel" name="label_5">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>Minimum password length:</string>
         </property>
@@ -253,6 +294,11 @@ border-top-right-radius: 4px;</string>
       </item>
       <item row="3" column="1">
        <widget class="QSpinBox" name="spinPassword">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
         <property name="minimum">
          <number>4</number>
         </property>
@@ -273,6 +319,11 @@ border-top-right-radius: 4px;</string>
       </item>
       <item row="2" column="0" colspan="3">
        <widget class="QCheckBox" name="checkBox_3">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>Password must contain at least 2 lower case characters.</string>
         </property>
@@ -325,6 +376,11 @@ border-top-right-radius: 4px;</string>
        <layout class="QGridLayout" name="gridLayout_5">
         <item row="0" column="0">
          <widget class="QLabel" name="label_3">
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
           <property name="text">
            <string>Directory Server:</string>
           </property>
@@ -335,6 +391,11 @@ border-top-right-radius: 4px;</string>
         </item>
         <item row="0" column="2">
          <widget class="QPushButton" name="pushLDAPDiscover">
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
           <property name="text">
            <string>Discover</string>
           </property>
@@ -346,6 +407,11 @@ border-top-right-radius: 4px;</string>
         </item>
         <item row="1" column="0">
          <widget class="QLabel" name="label_4">
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
           <property name="text">
            <string>Domain Name:</string>
           </property>
@@ -403,6 +469,11 @@ border-top-right-radius: 4px;</string>
        <layout class="QGridLayout" name="gridLayout_3">
         <item row="0" column="0">
          <widget class="QLabel" name="label">
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
           <property name="text">
            <string>Directory Server:</string>
           </property>
@@ -413,6 +484,11 @@ border-top-right-radius: 4px;</string>
         </item>
         <item row="0" column="2">
          <widget class="QPushButton" name="pushADDiscover">
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
           <property name="text">
            <string>Discover</string>
           </property>
@@ -424,6 +500,11 @@ border-top-right-radius: 4px;</string>
         </item>
         <item row="1" column="0">
          <widget class="QLabel" name="label_2">
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
           <property name="text">
            <string>Domain Name:</string>
           </property>

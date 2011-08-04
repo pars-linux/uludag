@@ -156,6 +156,9 @@ class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
         else:
             self.labelIcon.hide()
 
+    def get_icon(self):
+        return self.labelIcon
+
     def set_status_icon(self, status_icon=None):
         if status_icon != None:
             if isinstance(status_icon, QtGui.QMovie):
