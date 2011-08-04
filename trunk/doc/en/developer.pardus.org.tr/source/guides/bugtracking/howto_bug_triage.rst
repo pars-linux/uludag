@@ -196,7 +196,7 @@ First Steps to Contribute Triaging
 #. Take an account from Pardus bugzilla_
 #. Read this document carefully :)
 #. Write comments little by little to the bugs on bugzilla_ for triaging
-#. When you feel ready for triaging, please send a message to `test list`_ with your triaged bug ids, the experienced triagers will review your triaged bugs and approve you triaging request (At this point, you will take permissions for changing bug status, severity etc. to deeply triage).
+#. When you feel ready for triaging, please send a message to `test list`_ with your triaged bug ids, the experienced triagers will review your triaged bugs and approve your triaging request (At this point, you will take permissions for changing bug status, severity etc. to deeply triage).
 
 .. _bug cycle: http://developer.pardus.org.tr/guides/bugtracking/bug_cycle.html
 .. _bug importances: http://developer.pardus.org.tr/guides/bugtracking/howto_bug_triage.html#bug-importance
