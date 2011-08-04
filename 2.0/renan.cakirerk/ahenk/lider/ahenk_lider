@@ -20,6 +20,7 @@ def main():
 
     from lider.formmain import FormMain
     win = FormMain(app)
+
     win.show()
 
     app.exec_()

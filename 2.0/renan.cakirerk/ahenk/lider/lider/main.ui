@@ -19,9 +19,9 @@
 	padding:0px;
 }
 
-#frameMultiple {background-color: rgba(237, 207, 56, 255);}
+	#frameMulti {background-color: rgba(200, 200, 200, 255);}
 
-    #MainWindow {
+    #Main {
         background-color: rgb(50, 50, 50);
         background-image: url(:/icons/bg.png);
         padding: 0px;
@@ -41,7 +41,9 @@
 
 	}
 
-	#bottomButtonContainer{
+	#bottomButtonContainer {}
+
+	#frameButtons{
 		background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(132, 132, 132, 255), stop:0.501481 rgba(70, 70, 70, 255), stop:0.503057 rgba(62, 62, 62, 255), stop:1 rgba(16, 16, 16, 255));
 		
 	}
@@ -510,6 +512,7 @@ border-left: 1px solid rgba(255,255,255,0);
 
     QRadioButton::indicator::checked:hover {
         image: url(:/icons/radiobutton_checked_hover.png);
+	image: url(:/icons/radiobutton_unchecked.png);
     }
 
 
@@ -968,7 +971,7 @@ border-left: 0px solid rgba(255,255,255,50);</string>
          </property>
         </widget>
        </item>
-       <item row="0" column="8">
+       <item row="0" column="6">
         <widget class="QPushButton" name="pushConnection">
          <property name="minimumSize">
           <size>
@@ -993,7 +996,7 @@ border-radius: 0px;</string>
           <string>Disconnect</string>
          </property>
          <property name="icon">
-          <iconset>
+          <iconset resource="data.qrc">
            <normaloff>:/icons/arrow-right.png</normaloff>:/icons/arrow-right.png</iconset>
          </property>
          <property name="flat">
@@ -1009,35 +1012,14 @@ border-radius: 0px;</string>
         </widget>
        </item>
        <item row="0" column="3">
-        <widget class="QPushButton" name="pushMain">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="4">
         <widget class="QPushButton" name="pushDebug">
          <property name="text">
           <string>PushButton</string>
          </property>
         </widget>
        </item>
-       <item row="0" column="5">
+       <item row="0" column="4">
         <widget class="QPushButton" name="pushCopyPolicy">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="6">
-        <widget class="QPushButton" name="pushSave">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="7">
-        <widget class="QPushButton" name="pushPluginGlobal">
          <property name="text">
           <string>PushButton</string>
          </property>
@@ -1450,6 +1432,29 @@ border-left: 0px solid rgba(255,255,255,50);</string>
                    </widget>
                   </item>
                   <item>
+                   <widget class="QPushButton" name="pushSave">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Apply</string>
+                    </property>
+                    <property name="icon">
+                     <iconset resource="data.qrc">
+                      <normaloff>:/icons/apply32.png</normaloff>:/icons/apply32.png</iconset>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
                    <widget class="QPushButton" name="pushApply">
                     <property name="minimumSize">
                      <size>
@@ -1505,6 +1510,18 @@ border-left: 0px solid rgba(255,255,255,50);</string>
                <property name="spacing">
                 <number>0</number>
                </property>
+               <property name="leftMargin">
+                <number>10</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>10</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
                <item>
                 <widget class="QLabel" name="label_2">
                  <property name="minimumSize">
@@ -1523,17 +1540,20 @@ border-left: 0px solid rgba(255,255,255,50);</string>
                   <string/>
                  </property>
                  <property name="pixmap">
-                  <pixmap resource="data.qrc">:/icons/hint48.png</pixmap>
+                  <pixmap resource="data.qrc">:/icons/dialog-warning.png</pixmap>
                  </property>
                  <property name="scaledContents">
-                  <bool>true</bool>
+                  <bool>false</bool>
+                 </property>
+                 <property name="indent">
+                  <number>0</number>
                  </property>
                 </widget>
                </item>
                <item>
                 <widget class="QLabel" name="labelMultiple">
                  <property name="styleSheet">
-                  <string notr="true">color: rgb(93, 77, 0);</string>
+                  <string notr="true">color:#333333</string>
                  </property>
                  <property name="text">
                   <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -1957,7 +1977,7 @@ border-radius: 0px;</string>
                   </size>
                  </property>
                  <property name="currentIndex">
-                  <number>0</number>
+                  <number>1</number>
                  </property>
                  <widget class="QWidget" name="pageGroupOld">
                   <layout class="QGridLayout" name="gridLayout_12">
@@ -2131,7 +2151,7 @@ border-radius: 0px;</string>
                      <string/>
                     </property>
                     <property name="icon">
-                     <iconset>
+                     <iconset resource="data.qrc">
                       <normaloff>:/icons/list-add.png</normaloff>:/icons/list-add.png</iconset>
                     </property>
                    </widget>
@@ -2190,7 +2210,7 @@ border-radius: 0px;</string>
             <property name="spacing">
              <number>0</number>
             </property>
-            <item row="1" column="0">
+            <item row="2" column="0">
              <widget class="QTreeWidget" name="treeComputers">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -2213,11 +2233,26 @@ border-radius: 0px;</string>
                 <height>22</height>
                </size>
               </property>
+              <property name="horizontalScrollMode">
+               <enum>QAbstractItemView::ScrollPerItem</enum>
+              </property>
+              <property name="autoExpandDelay">
+               <number>0</number>
+              </property>
+              <property name="sortingEnabled">
+               <bool>true</bool>
+              </property>
+              <property name="animated">
+               <bool>true</bool>
+              </property>
               <property name="allColumnsShowFocus">
                <bool>true</bool>
               </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
               <property name="expandsOnDoubleClick">
-               <bool>false</bool>
+               <bool>true</bool>
               </property>
               <column>
                <property name="text">
@@ -2393,11 +2428,27 @@ border-radius: 0px;</string>
                   <string/>
                  </property>
                  <property name="icon">
-                  <iconset>
+                  <iconset resource="data.qrc">
                    <normaloff>:/icons/arrow-right.png</normaloff>:/icons/arrow-right.png</iconset>
                  </property>
                  <property name="flat">
                   <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QGroupBox" name="groupBox_6">
+              <property name="title">
+               <string/>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_14">
+               <item row="0" column="0">
+                <widget class="QLineEdit" name="lineEdit">
+                 <property name="placeholderText">
+                  <string>Filter Nodes</string>
                  </property>
                 </widget>
                </item>

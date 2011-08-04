@@ -1,5 +1,31 @@
 <RCC>
   <qresource prefix="/">
+    <file>icons/checkbox_checked_hover.png</file>
+    <file>icons/checkbox_checked.png</file>
+    <file>icons/checkbox_unchecked_hover.png</file>
+    <file>icons/checkbox_unchecked.png</file>
+    <file>icons/radiobutton_checked_hover.png</file>
+    <file>icons/radiobutton_checked.png</file>
+    <file>icons/radiobutton_unchecked_hover.png</file>
+    <file>icons/radiobutton_unchecked.png</file>
+    <file>icons/stylesheet-branch-end.png</file>
+    <file>icons/stylesheet-branch-more.png</file>
+    <file>icons/stylesheet-vline.png</file>
+    <file>icons/server-collection-icon.png</file>
+    <file>icons/tick.png</file>
+    <file>icons/view-refresh.png</file>
+    <file>icons/list-add.png</file>
+    <file>icons/arrow-left.png</file>
+    <file>icons/arrow-right.png</file>
+    <file>icons/computer.png</file>
+    <file>icons/dialog-warning.png</file>
+    <file>icons/dialog-error.png</file>
+    <file>icons/dialog-cancel.png</file>
+    <file>icons/favorites.png</file>
+    <file>icons/help-about.png</file>
+    <file>icons/disk-prototype.png</file>
+    <file>icons/system-help.png</file>
+    <file>icons/system-users.png</file>
     <file>icons/expand.png</file>
     <file>icons/collapse.png</file>
     <file>icons/group48.png</file>
