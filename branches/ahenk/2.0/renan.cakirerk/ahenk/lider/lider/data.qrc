@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="/">
+    <file>icons/summary.png</file>
     <file>icons/checkbox_checked_hover.png</file>
     <file>icons/checkbox_checked.png</file>
     <file>icons/checkbox_unchecked_hover.png</file>

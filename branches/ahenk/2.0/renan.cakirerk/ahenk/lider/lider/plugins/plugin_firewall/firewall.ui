@@ -106,7 +106,7 @@ border-top-right-radius: 4px;</string>
      <property name="minimumSize">
       <size>
        <width>260</width>
-       <height>86</height>
+       <height>72</height>
       </size>
      </property>
      <property name="maximumSize">
@@ -116,7 +116,7 @@ border-top-right-radius: 4px;</string>
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(30, 43, 51)</string>
+      <string notr="true"/>
      </property>
      <property name="title">
       <string/>
@@ -135,6 +135,11 @@ border-top-right-radius: 4px;</string>
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
          <widget class="QRadioButton" name="radioEnable">
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
           <property name="text">
            <string>Enable firewall</string>
           </property>
@@ -142,6 +147,11 @@ border-top-right-radius: 4px;</string>
         </item>
         <item>
          <widget class="QRadioButton" name="radioDisable">
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
           <property name="text">
            <string>Disable firewall</string>
           </property>
@@ -156,14 +166,14 @@ border-top-right-radius: 4px;</string>
        <widget class="QLabel" name="pixmapStatus">
         <property name="minimumSize">
          <size>
-          <width>64</width>
-          <height>64</height>
+          <width>48</width>
+          <height>48</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>64</width>
-          <height>64</height>
+          <width>48</width>
+          <height>48</height>
          </size>
         </property>
         <property name="text">
@@ -171,6 +181,9 @@ border-top-right-radius: 4px;</string>
         </property>
         <property name="pixmap">
          <pixmap resource="firewall.qrc">:/icons/insecure64.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
         </property>
         <property name="indent">
          <number>0</number>
@@ -205,7 +218,13 @@ border-top-right-radius: 4px;</string>
        <number>10</number>
       </property>
       <item row="0" column="0">
-       <widget class="QPlainTextEdit" name="plainTextEdit"/>
+       <widget class="QPlainTextEdit" name="plainTextEdit">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -275,7 +294,7 @@ border-top-right-radius: 4px;</string>
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(30, 43, 51)</string>
+      <string notr="true"/>
      </property>
      <property name="title">
       <string/>
@@ -292,6 +311,14 @@ border-top-right-radius: 4px;</string>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
         <property name="text">
          <string>Load Default Rules</string>
         </property>
@@ -301,7 +328,7 @@ border-top-right-radius: 4px;</string>
         </property>
         <property name="iconSize">
          <size>
-          <width>32</width>
+          <width>22</width>
           <height>32</height>
          </size>
         </property>
@@ -318,6 +345,11 @@ border-top-right-radius: 4px;</string>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>Edit Firewall Rules</string>
         </property>
@@ -327,7 +359,7 @@ border-top-right-radius: 4px;</string>
         </property>
         <property name="iconSize">
          <size>
-          <width>32</width>
+          <width>22</width>
           <height>32</height>
          </size>
         </property>

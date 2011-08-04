@@ -101,7 +101,7 @@ class FormMain(QtGui.QWidget, Ui_Main):
         self.connect(self.talk, QtCore.SIGNAL("userStatusChanged(QString, int)"), self.__slot_talk_status)
         #self.connect(self.pushMain, QtCore.SIGNAL("clicked()"), self.__slot_main)
         self.connect(self.pushDebug, QtCore.SIGNAL("toggled(bool)"), self.__slot_debug)
-        self.connect(self.pushSearch, QtCore.SIGNAL("clicked()"), self.__slot_search)
+        #self.connect(self.pushSearch, QtCore.SIGNAL("clicked()"), self.__slot_search)
 
         #self.connect(self.treeComputers, QtCore.SIGNAL("itemClicked(QTreeWidgetItem*, int)"), self.__slot_tree_click)
         #self.connect(self.treeComputers, QtCore.SIGNAL("itemDoubleClicked(QTreeWidgetItem*, int)"), self.__slot_tree_double_click)
@@ -149,6 +149,21 @@ class FormMain(QtGui.QWidget, Ui_Main):
         if self.__slot_connect() == False:
             import sys
             sys.exit()
+
+
+        first_node = self.treeComputers.itemAt(0,0)
+        self.treeComputers.setCurrentItem(first_node)
+        self.treeComputers.expandItem(first_node)
+
+        # Show node information
+        desc = first_node.widget.get_uid()
+        title = first_node.widget.get_title()
+        icon = first_node.widget.get_icon()
+
+        self.labelNodeDesc.setText(desc)
+        self.labelNode.setText(title)
+        self.pixmapNode.setPixmap(icon.pixmap())
+
 
     def closeEvent(self, event):
         """
@@ -242,18 +257,19 @@ class FormMain(QtGui.QWidget, Ui_Main):
                     self.pushPluginGlobal.setEnabled(False)
             """
             # Show network information
-            self.pixmapPlugin.setPixmap(self.windowIcon().pixmap(48))
             if self.directory.is_connected:
                 domain_label = "Network: %s" % self.directory.domain
                 domain_desc = "Connected as %s" % self.directory.user.capitalize()
                 if self.directory_label:
                     domain_label = "Network: %s" % self.directory_label
                     domain_desc = "Connected to %s as %s" % (self.directory.domain, self.directory.user.capitalize())
+                """
                 self.labelPlugin.setText(domain_label)
                 self.labelPluginDesc.setText(domain_desc)
+                """
             else:
-                self.labelPlugin.setText("Lider")
-                self.labelPluginDesc.setText("")
+                self.labelNode.setText("Lider")
+                self.labelNodeDesc.setText("")
             # Hide button box
             #self.frameButtons.hide()
         else:
@@ -265,10 +281,6 @@ class FormMain(QtGui.QWidget, Ui_Main):
             else:
                 pass
                 #self.pushPluginItem.setEnabled(True)
-            # Show plugin information
-            self.pixmapPlugin.setPixmap(widget.windowIcon().pixmap(48))
-            self.labelPlugin.setText(widget.windowTitle())
-            self.labelPluginDesc.setText(widget.toolTip())
             # Show button box
             #self.frameButtons.show()
 
@@ -637,6 +649,17 @@ class FormMain(QtGui.QWidget, Ui_Main):
 
         widget = self.tabPolicy.currentWidget()
         self.__show_widget(widget)
+
+        # Show node information
+        desc = item_alt.widget.get_uid()
+        title = item_alt.widget.get_title()
+        icon = item_alt.widget.get_icon()
+
+        self.labelNodeDesc.setText(desc)
+        self.labelNode.setText(title)
+        self.pixmapNode.setPixmap(icon.pixmap())
+
+
 
     def __slot_tree2_double_click(self, item, column):
         """
@@ -1038,6 +1061,8 @@ class FormMain(QtGui.QWidget, Ui_Main):
         """
             Triggered when user toggles debug button.
         """
+        print "show/hide log"
+
         if state:
             self.textLog.show()
         else:
