@@ -86,26 +86,26 @@ Mentoring Process
 #. Assigned mentor will keep an eye on applicant (see  :ref:`newcontributor-mentors`)
     #. The mentor assign the bug to the applicant and change the status to **ASSIGNED**.
     #. The mentor also depend the `Junior Jobs`_ to the application request bug report.
-    #. The mentor give warnings on `technical mail list`_. 
-        Mail subject format will be::
+    #. When the applicant is ready for junior job review:
+        #. Change the junior job bug status to RESOLVED/FIXED
+        #. Send a message to `technical mail list`_
+            Mail subject format will be::
 
-           <junior job name> - <simple information> pb#<BugID> JUNIORJOB Review
+               <Applicant Name> - <simple junior job information> pb#<BugID> JUNIORJOB Review
 
-        Example::
+            Example::
 
-            mangonel - A simple application launcher for KDE4 pb#17311 JUNIORJOB Review
+                Semen Cirit - mangonel is a simple application launcher for KDE4 pb#17311 JUNIORJOB Review
 
-..    #. The `technical mail list`_ archive link will be added to the junior job bug.
-
-    #. Related to junior jobs difficulty, one more job can be demanded from the applicant. (Mentor can guide applicant to find one more job.)
-    #. The owner of the packages that applicant has done will be his/her mentor.
-#. If the applicant might not have achieved to finish the applicant job until the deadline, his/her bug will be closed with status RESOLVED/INVALID by the mentor and related comment will be given. Mentor can also add the reapply time to the comment. (Reapply time is depended to mentor and related with applicant performance)(The mentor will send and an email to system admin for removing permissions.)
+         #. Add `technical mail list`_ archive link to the junior job bug URL.
+    #. After the message of the applicant, mentor start to review his bug on `technical mail list`_.
+    #. Related to junior jobs difficulty, some additional junior jobs can be demanded from the applicant. (Mentor can guide applicant to find a new job.)
+#. The applicant process finishing time is related to his/her mentor.
+#. The owner of the packages that applicant has done will be his/her mentor.
 #. If applicant has finished his/her jobs in time the applicant enters applicant progress observation period.
 
 Applicant Progress Observation
 ------------------------------
-#. The applicant process finishing time is related to his/her mentor.
-#. The owner of the packages that applicant has done will be his/her mentor.
 #. All svn permissions excluding "stable" will be given to applicant. (The mentor will send and an email to sys. Admin for giving permissions.)
 #. Mentor will keep an eye on applicant, until the applicant reach a good level.
     #. He/she joins the package review process of the packages that the applicant done.
@@ -121,7 +121,6 @@ Guiding Rules
 -------------
 #. Until a mentor has been assigned to applicant, the mentor coordinators will track the process. (Traking the applicant bugs, sending quiz, assign mentor etc.)
 #. After the mentor has assigned, the mentor is responsible for the applicant. (Tracking his/her applicants, sending necessary comments to bug and editing it etc.)
-
 
 
 ***************
