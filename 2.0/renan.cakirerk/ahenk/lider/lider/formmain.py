@@ -122,6 +122,7 @@ class FormMain(QtGui.QWidget, Ui_Main):
         self.connect(self.pushApply, QtCore.SIGNAL("clicked()"), self.__slot_apply)
 
         self.connect(self.pushConnection, QtCore.SIGNAL("clicked()"), self.__slot_disconnect)
+        self.connect(self.pushRefreshNodes, QtCore.SIGNAL("clicked()"), self.__refresh_items)
 
         # Initialize "talk" backend
         self.talk.start()
@@ -150,7 +151,11 @@ class FormMain(QtGui.QWidget, Ui_Main):
             import sys
             sys.exit()
 
+        # Expand first item
+        self.__expand_first_item()
 
+
+    def __expand_first_item(self):
         first_node = self.treeComputers.itemAt(0,0)
         self.treeComputers.setCurrentItem(first_node)
         self.treeComputers.expandItem(first_node)
@@ -307,9 +312,14 @@ class FormMain(QtGui.QWidget, Ui_Main):
         #self.pushPluginGlobal.setMenu(menu_global)
         #self.pushPluginItem.setMenu(menu_single)
 
+    def __refresh_items(self):
+        self.__list_items()
+        self.__expand_first_item()
+
     def  __list_items(self, root=None, alternative=False):
         if not root:
-            print "burada"
+            self.treeComputers.clear()
+
             """
             if alternative:
                 root_alt = QtGui.QTreeWidgetItem(self.treeComputers)
@@ -329,7 +339,9 @@ class FormMain(QtGui.QWidget, Ui_Main):
             self.nodes_dn[root.dn] = root
 
             return
-        print "surada"
+
+        print "HAHAHA"
+
         dn = root.dn
 
         results = self.directory.search(dn, ["o", "cn", "description", "objectClass"], "one")
@@ -615,6 +627,8 @@ class FormMain(QtGui.QWidget, Ui_Main):
             Triggered when user expands a node.
         """
         self.__list_items(item)
+        print "--------"
+        print item.dn
 
         item_alt = self.nodes_alt_dn[item.dn]
         self.treeComputers.expandItem(item_alt)

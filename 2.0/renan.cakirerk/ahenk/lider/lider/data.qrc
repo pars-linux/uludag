@@ -1,5 +1,12 @@
 <RCC>
   <qresource prefix="/">
+    <file>icons/internet256.png</file>
+    <file>icons/arrow-down.png</file>
+    <file>icons/arrow-left2.png</file>
+    <file>icons/treeview-branch-open.png</file>
+    <file>icons/arrow-up.png</file>
+    <file>icons/arrow-right2.png</file>
+    <file>icons/treeview-branch-closed.png</file>
     <file>icons/summary.png</file>
     <file>icons/checkbox_checked_hover.png</file>
     <file>icons/checkbox_checked.png</file>
