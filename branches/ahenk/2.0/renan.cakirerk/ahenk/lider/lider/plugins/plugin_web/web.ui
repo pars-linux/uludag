@@ -96,6 +96,11 @@ border-left: 0px solid rgba(255,255,255,50);
           <height>16777215</height>
          </size>
         </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
         <property name="frameShape">
          <enum>QFrame::NoFrame</enum>
         </property>
@@ -111,6 +116,11 @@ border-left: 0px solid rgba(255,255,255,50);
          </property>
          <item row="0" column="0">
           <widget class="QPushButton" name="pushBack">
+           <property name="font">
+            <font>
+             <pointsize>9</pointsize>
+            </font>
+           </property>
            <property name="text">
             <string>Back</string>
            </property>
@@ -141,6 +151,11 @@ border-left: 0px solid rgba(255,255,255,50);
          </item>
          <item row="0" column="1">
           <widget class="QPushButton" name="pushForward">
+           <property name="font">
+            <font>
+             <pointsize>9</pointsize>
+            </font>
+           </property>
            <property name="text">
             <string>Forward</string>
            </property>
@@ -158,6 +173,11 @@ border-left: 0px solid rgba(255,255,255,50);
          </item>
          <item row="0" column="2">
           <widget class="QPushButton" name="pushReload">
+           <property name="font">
+            <font>
+             <pointsize>9</pointsize>
+            </font>
+           </property>
            <property name="text">
             <string>Reload</string>
            </property>
@@ -175,6 +195,11 @@ border-left: 0px solid rgba(255,255,255,50);
          </item>
          <item row="0" column="3">
           <widget class="QPushButton" name="pushPrint">
+           <property name="font">
+            <font>
+             <pointsize>9</pointsize>
+            </font>
+           </property>
            <property name="text">
             <string>Print</string>
            </property>
@@ -246,6 +271,11 @@ border-left: 0px solid rgba(255,255,255,50);
           <width>16777215</width>
           <height>30</height>
          </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
         </property>
         <property name="styleSheet">
          <string notr="true">padding-left: 10px;</string>
