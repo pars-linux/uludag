@@ -37,6 +37,9 @@ from lider.helpers import wrappers
 from lider.widgets.list_item import list_item
 
 
+UNABLE_TO_CONNECT = 1
+CONNECTION_LOST = 2
+
 #class FormMain(QtGui.QWidget, Ui_FormMain):
 class FormMain(QtGui.QWidget, Ui_Main):
     """
@@ -124,6 +127,8 @@ class FormMain(QtGui.QWidget, Ui_Main):
         self.connect(self.pushConnection, QtCore.SIGNAL("clicked()"), self.__slot_disconnect)
         self.connect(self.pushRefreshNodes, QtCore.SIGNAL("clicked()"), self.__refresh_items)
 
+        self.connect(self.tabPolicy, QtCore.SIGNAL("currentChanged(int)"), self.__slot_tab_clicked)
+
         # Initialize "talk" backend
         self.talk.start()
 
@@ -147,9 +152,10 @@ class FormMain(QtGui.QWidget, Ui_Main):
         self.__update_toolbar()
         self.__slot_debug(False)
 
-        if self.__slot_connect() == False:
-            import sys
-            sys.exit()
+        #if self.__slot_connect() == False:
+        self.__slot_connect()
+        #    import sys
+        #    sys.exit()
 
         # Expand first item
         self.__expand_first_item()
@@ -293,21 +299,23 @@ class FormMain(QtGui.QWidget, Ui_Main):
         """
             Loads plugins
         """
-
+        """
         # Popup for global plugins
         menu_global = wrappers.Menu(self)
 
         # Popup for single object plugins
         menu_single = wrappers.Menu(self)
-
+        """
         for name, widget_class in plugins.load_plugins().iteritems():
             widget = widget_class()
             self.tabPolicy.addTab(widget, widget.windowIcon(), widget.windowTitle())
+            """
             if widget.get_type() == plugins.TYPE_GLOBAL:
                 action = menu_global.newAction(widget.windowTitle(), widget.windowIcon(), self.__slot_widget_stack)
             else:
                 action = menu_single.newAction(widget.windowTitle(), widget.windowIcon(), self.__slot_widget_stack)
             action.widget = widget # __slot_widget_stack method needs this
+            """
 
         #self.pushPluginGlobal.setMenu(menu_global)
         #self.pushPluginItem.setMenu(menu_single)
@@ -339,8 +347,6 @@ class FormMain(QtGui.QWidget, Ui_Main):
             self.nodes_dn[root.dn] = root
 
             return
-
-        print "HAHAHA"
 
         dn = root.dn
 
@@ -456,6 +462,9 @@ class FormMain(QtGui.QWidget, Ui_Main):
         """
             Opens a dialog and tries to connect both backends
         """
+
+        self.logged_in = False
+
         dialog = DialogConnection()
         if self.directory.host:
             # Fill fields if necessary
@@ -463,26 +472,30 @@ class FormMain(QtGui.QWidget, Ui_Main):
             dialog.set_domain(self.directory.domain)
             dialog.set_user(self.directory.user)
             dialog.set_password(self.directory.password)
-        if dialog.exec_():
-            try:
-                self.directory.connect(dialog.get_host(), dialog.get_domain(), dialog.get_user(), dialog.get_password())
-            except directory.DirectoryError:
-                traceback.print_exc()
-                #self.__update_status("directory", "error")
-                # TODO: Disconnect
-                QtGui.QMessageBox.warning(self, "Connection Error", "Unable to connect to %s" % dialog.get_host())
-                return False
-            try:
-                self.directory_label = self.directory.get_name()
-            except directory.DirectoryError:
-                #self.__update_status("directory", "error")
-                # TODO: Disconnect
-                QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
-                return False
-            #self.__update_status("directory", "online")
-        else:
-            # User cancelled
-            return False
+
+        while not self.logged_in:
+            if dialog.exec_():
+                try:
+                    self.directory.connect(dialog.get_host(), dialog.get_domain(), dialog.get_user(), dialog.get_password())
+                    self.logged_in = True
+                except directory.DirectoryError:
+                    traceback.print_exc()
+                    self.__update_status("directory", "error")
+                    # TODO: Disconnect
+                    QtGui.QMessageBox.warning(self, "Connection Error", "Unable to connect to %s" % dialog.get_host())
+                    #return UNABLE_TO_CONNECT
+                try:
+                    self.directory_label = self.directory.get_name()
+                except directory.DirectoryError:
+                    self.__update_status("directory", "error")
+                    # TODO: Disconnect
+                    QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
+                    #return CONNECTION_LOST
+                self.__update_status("directory", "online")
+            else:
+                # User cancelled
+                import sys
+                sys.exit()
 
         # Connect to XMPP server
         self.talk.connect(self.directory.host, self.directory.domain, self.directory.user, self.directory.password)
@@ -523,11 +536,15 @@ class FormMain(QtGui.QWidget, Ui_Main):
         # Go back to login screen
         self.hide()
 
-        if self.__slot_connect() == False:
-            import sys
-            sys.exit()
+        #if self.__slot_connect() == False:
+        self.__slot_connect()
+        #    import sys
+        #    sys.exit()
 
         self.show()
+
+        # Expand first item
+        self.__expand_first_item()
 
 
 
@@ -600,6 +617,7 @@ class FormMain(QtGui.QWidget, Ui_Main):
         #self.treeComputers.hide()
         self.__update_toolbar()
     """
+
     def __slot_tree_click(self, item, column):
         """
             Triggered when user clicks a node.
@@ -630,8 +648,11 @@ class FormMain(QtGui.QWidget, Ui_Main):
         print "--------"
         print item.dn
 
-        item_alt = self.nodes_alt_dn[item.dn]
-        self.treeComputers.expandItem(item_alt)
+        try:
+            item_alt = self.nodes_alt_dn[item.dn]
+            self.treeComputers.expandItem(item_alt)
+        except:
+            pass
 
         if item.childCount() == 0:
             item.setExpanded(False)
@@ -672,6 +693,41 @@ class FormMain(QtGui.QWidget, Ui_Main):
         self.labelNodeDesc.setText(desc)
         self.labelNode.setText(title)
         self.pixmapNode.setPixmap(icon.pixmap())
+
+
+    def __slot_tab_clicked(self):
+        """
+            Triggered when user clicks a node.
+        """
+
+        item = self.treeComputers.currentItem()
+
+        self.items = []
+        for i in self.treeComputers.selectedItems():
+            self.items.append(i)
+
+        self.__update_toolbar()
+
+        self.treeComputers.clearSelection()
+
+        for item in self.items:
+            item_alt = self.nodes_dn[item.dn]
+            self.treeComputers.setItemSelected(item_alt, True)
+
+        widget = self.tabPolicy.currentWidget()
+        self.__show_widget(widget)
+
+        # Show node information
+        try:
+            desc = item_alt.widget.get_uid()
+            title = item_alt.widget.get_title()
+            icon = item_alt.widget.get_icon()
+            self.labelNodeDesc.setText(desc)
+            self.labelNode.setText(title)
+            self.pixmapNode.setPixmap(icon.pixmap())
+        except:
+            pass
+
 
 
 
@@ -982,13 +1038,12 @@ class FormMain(QtGui.QWidget, Ui_Main):
             self.treeComputers.scrollToItem(item)
             self.treeComputers.setCurrentItem(item)
 
-
+    """
     def __slot_widget_stack(self, toggled):
-        """
             Triggered when users activates a policy plugin.
-        """
         widget = self.sender().widget
         self.__show_widget(widget)
+    """
 
     def __show_widget(self, widget):
         """
