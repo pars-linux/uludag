@@ -25,6 +25,29 @@
 	padding:0px;
 }
 
+QSplitter::handle {
+/*image: url(icons/splitter.png);*/
+image: url(:/icons/treeview-branch-closed.png);
+background-color: #222222;
+border-left:1px dashed gray;
+border-bottom:1px dashed gray;
+}
+
+ QSplitter::handle:horizontal {
+ width: 1px;
+background-color: #222222;
+}
+
+ QSplitter::handle:vertical {
+height: 1px;
+background-color: #222222;
+}
+
+QSplitter::handle:pressed {
+image: url(icons/splitter_pressed.png);
+background-color: #999999;
+}
+
 	#frameMulti {background-color: rgba(255, 255, 255, 255);}
 
     #Main {
@@ -53,10 +76,6 @@
 		background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(132, 132, 132, 255), stop:0.501481 rgba(70, 70, 70, 255), stop:0.503057 rgba(62, 62, 62, 255), stop:1 rgba(16, 16, 16, 255));
 		
 	}
-
-#groupBox {
-background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(132, 132, 132, 255), stop:0.501481 rgba(70, 70, 70, 255), stop:0.503057 rgba(62, 62, 62, 255), stop:1 rgba(16, 16, 16, 255));
-}
 
 #labelTitle {
 	color: #222222;
@@ -92,23 +111,17 @@ border-left: 1px solid rgba(255,255,255,0);
  }
 
  QTabBar::tab:selected{
-    background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(132, 132, 132, 255), stop:0.501481 rgba(70, 70, 70, 255), stop:0.503057 rgba(62, 62, 62, 255), stop:1 rgba(16, 16, 16, 255));
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(55, 55, 55, 255), stop:0.475 rgba(116, 116, 116, 255), stop:0.51 rgba(133, 133, 133, 255), stop:0.994975 rgba(166, 166, 166, 255));
  }
 
  QTabBar::tab:hover {
-        background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0,
-            stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255),
-            stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255),
-            stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255));
+        	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(55, 55, 55, 255), stop:0.475 rgba(116, 116, 116, 255), stop:0.51 rgba(133, 133, 133, 255), stop:0.994975 rgba(166, 166, 166, 255));
  }
 
  QTabBar::tab:selected {
      border-color:  rgba(255,255,255,0);
      border-bottom-color: #C2C7CB; /* same as pane color */
- background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0,
-            stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255),
-            stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255),
-            stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255));
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(55, 55, 55, 255), stop:0.475 rgba(116, 116, 116, 255), stop:0.51 rgba(133, 133, 133, 255), stop:0.994975 rgba(166, 166, 166, 255));
  }
 
  QTabBar::tab:!selected {
@@ -132,29 +145,23 @@ border-left: 1px solid rgba(255,255,255,0);
     QPushButton:hover {
         border:1px solid  rgba(34, 49, 60, 100);
         border-radius:2px;
-        background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0,
-            stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255),
-            stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255),
-            stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255));
+
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(55, 55, 55, 255), stop:0.475 rgba(116, 116, 116, 255), stop:0.51 rgba(133, 133, 133, 255), stop:0.994975 rgba(166, 166, 166, 255));
+
+
     }
 
     QPushButton:checked {
         border:1px solid  rgba(34, 49, 60, 100);
         border-radius:2px;
-        background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0,
-            stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255),
-            stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255),
-            stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255));
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(55, 55, 55, 255), stop:0.475 rgba(116, 116, 116, 255), stop:0.51 rgba(133, 133, 133, 255), stop:0.994975 rgba(166, 166, 166, 255));
     }
 
     QPushButton:pressed {
         border:1px solid  rgba(34, 49, 60, 100);
         border-radius:2px;
         padding: 3px 10px 3px 10px;
-        background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0,
-            stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255),
-            stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255),
-            stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255));
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(85, 85, 85, 255), stop:0.475 rgba(136, 136, 136, 255), stop:0.51 rgba(153, 153, 153, 255), stop:0.994975 rgba(196, 196, 196, 255));
     }
 
 
@@ -201,7 +208,7 @@ border-left: 1px solid rgba(255,255,255,0);
     }
 
     QDateEdit::down-arrow {
-        image: url(:/images/arrow-down.png);
+        image: url(:/icons/arrow-down.png);
     }
 
     QDateEdit::down-arrow:on {
@@ -259,19 +266,13 @@ border-left: 1px solid rgba(255,255,255,0);
     QToolButton:hover {
         border:1px solid  rgba(34, 49, 60, 100);
         border-radius:2px;
-        background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0,
-            stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255),
-            stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255),
-            stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255));
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(55, 55, 55, 255), stop:0.475 rgba(116, 116, 116, 255), stop:0.51 rgba(133, 133, 133, 255), stop:0.994975 rgba(166, 166, 166, 255));
     }
 
     QToolButton:pressed {
         border:1px solid  rgba(34, 49, 60, 100);
         border-radius:2px;
-        background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0,
-            stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255),
-            stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255),
-            stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255));
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(85, 85, 85, 255), stop:0.475 rgba(136, 136, 136, 255), stop:0.51 rgba(153, 153, 153, 255), stop:0.994975 rgba(196, 196, 196, 255));
     }
 
     QToolButton::menu-button {
@@ -281,7 +282,7 @@ border-left: 1px solid rgba(255,255,255,0);
     }
 
     QToolButton::menu-arrow {
-        image: url(:/images/treeview-branch-open.png);
+        image: url(:/icons/treeview-branch-open.png);
     }
 
     QToolButton::menu-arrow:open {
@@ -315,26 +316,17 @@ border-left: 1px solid rgba(255,255,255,0);
     }
 
     QListView::item:selected:!active {
-        background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0,
-            stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255),
-            stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255),
-            stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255));
+       	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(55, 55, 55, 255), stop:0.475 rgba(116, 116, 116, 255), stop:0.51 rgba(133, 133, 133, 255), stop:0.994975 rgba(166, 166, 166, 255));
         border: 1px solid rgba(255, 255, 255, 50); border-radius: 3px; color:white
     }
 
     QListView::item:selected:active {
-        background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0,
-            stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255),
-            stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255),
-            stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255));
+        	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(55, 55, 55, 255), stop:0.475 rgba(116, 116, 116, 255), stop:0.51 rgba(133, 133, 133, 255), stop:0.994975 rgba(166, 166, 166, 255));
         border: 1px solid rgba(255, 255, 255, 50); border-radius: 3px; color:white
     }
 
     QListView::item:hover {
-        background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0,
-            stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 200),
-            stop:0.521739 rgba(166, 35, 29, 200), stop:0.531585 rgba(184, 46, 40, 200),
-            stop:0.983696 rgba(168, 78, 74, 200), stop:1 rgba(210, 110, 110, 200));
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(85, 85, 85, 255), stop:0.475 rgba(136, 136, 136, 255), stop:0.51 rgba(153, 153, 153, 255), stop:0.994975 rgba(196, 196, 196, 255));
         border: 1px solid rgba(255, 255, 255, 50); border-radius: 3px; color:white
     }
 
@@ -358,26 +350,17 @@ border-left: 1px solid rgba(255,255,255,0);
     }
 
     QListWidget::item:selected:!active {
-        background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0,
-            stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255),
-            stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255),
-            stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255));
+        	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(55, 55, 55, 255), stop:0.475 rgba(116, 116, 116, 255), stop:0.51 rgba(133, 133, 133, 255), stop:0.994975 rgba(166, 166, 166, 255));
         border: 1px solid rgba(255, 255, 255, 50); border-radius: 3px; color:white
     }
 
     QListWidget::item:selected:active {
-        background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0,
-            stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255),
-            stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255),
-            stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255));
+        	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(55, 55, 55, 255), stop:0.475 rgba(116, 116, 116, 255), stop:0.51 rgba(133, 133, 133, 255), stop:0.994975 rgba(166, 166, 166, 255));
         border: 1px solid rgba(255, 255, 255, 50); border-radius: 3px; color:white
     }
 
     QListWidget::item:hover {
-        background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0,
-            stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 200),
-            stop:0.521739 rgba(166, 35, 29, 200), stop:0.531585 rgba(184, 46, 40, 200),
-            stop:0.983696 rgba(168, 78, 74, 200), stop:1 rgba(210, 110, 110, 200));
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(85, 85, 85, 255), stop:0.475 rgba(136, 136, 136, 255), stop:0.51 rgba(153, 153, 153, 255), stop:0.994975 rgba(196, 196, 196, 255));
         border: 1px solid rgba(255, 255, 255, 50); border-radius: 3px; color:white
     }
 
@@ -407,7 +390,7 @@ border-left: 1px solid rgba(255,255,255,0);
         subcontrol-origin: border;
         subcontrol-position: top right; /* position at the top right corner */
         width: 16px; /* 16 + 2*1px border-width = 15px padding + 3px parent border */
-        border-image: url(:/images/arrow-up.png);
+        border-image: url(:/icons/arrow-up.png);
         background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1,
             stop:0 rgba(132, 132, 132, 255), stop:0.503057 rgba(62, 62, 62, 255));
     }
@@ -417,7 +400,7 @@ border-left: 1px solid rgba(255,255,255,0);
         subcontrol-origin: border;
         subcontrol-position: top right; /* position at the top right corner */
         width: 16px; /* 16 + 2*1px border-width = 15px padding + 3px parent border */
-        border-image: url(:/images/arrow-up.png);
+        border-image: url(:/icons/arrow-up.png);
         background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0,
             stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255),
             stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255),
@@ -429,7 +412,7 @@ border-left: 1px solid rgba(255,255,255,0);
         subcontrol-origin: border;
         subcontrol-position: bottom right; /* position at the top right corner */
         width: 16px; /* 16 + 2*1px border-width = 15px padding + 3px parent border */
-        border-image: url(:/images/arrow-down.png);
+        border-image: url(:/icons/arrow-down.png);
         background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1,
             stop:0.503057 rgba(62, 62, 62, 255), stop:1 rgba(16, 16, 16, 255));
     }
@@ -439,7 +422,7 @@ border-left: 1px solid rgba(255,255,255,0);
         subcontrol-origin: border;
         subcontrol-position: bottom right; /* position at the top right corner */
         width: 16px; /* 16 + 2*1px border-width = 15px padding + 3px parent border */
-        border-image: url(:/images/arrow-down.png);
+        border-image: url(:/icons/arrow-down.png);
         background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0,
             stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255),
             stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255),
@@ -469,21 +452,18 @@ border-left: 1px solid rgba(255,255,255,0);
         subcontrol-origin: border;
         subcontrol-position: top right; /* position at the top right corner */
         width: 16px; /* 16 + 2*1px border-width = 15px padding + 3px parent border */
-        border-image: url(:/images/arrow-up.png);
+        border-image: url(:/icons/arrow-up.png);
         background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1,
             stop:0 rgba(132, 132, 132, 255), stop:0.503057 rgba(62, 62, 62, 255));
     }
 
     QSpinBox::up-button:hover {
-        background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0,
-            stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255),
-            stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255),
-            stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255));
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(85, 85, 85, 255), stop:0.475 rgba(136, 136, 136, 255), stop:0.51 rgba(153, 153, 153, 255), stop:0.994975 rgba(196, 196, 196, 255));
         border-top-right-radius: 3px;
         subcontrol-origin: border;
         subcontrol-position: top right; /* position at the top right corner */
         width: 16px; /* 16 + 2*1px border-width = 15px padding + 3px parent border */
-        border-image: url(:/images/arrow-up.png);
+        border-image: url(:/icons/arrow-up.png);
     }
 
     QSpinBox::down-button {
@@ -493,19 +473,16 @@ border-left: 1px solid rgba(255,255,255,0);
         subcontrol-origin: border;
         subcontrol-position: bottom right; /* position at the top right corner */
         width: 16px; /* 16 + 2*1px border-width = 15px padding + 3px parent border */
-        border-image: url(:/images/arrow-down.png);
+        border-image: url(:/icons/arrow-down.png);
     }
 
     QSpinBox::down-button:hover {
-        background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0,
-            stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255),
-            stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255),
-            stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255));
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(85, 85, 85, 255), stop:0.475 rgba(136, 136, 136, 255), stop:0.51 rgba(153, 153, 153, 255), stop:0.994975 rgba(196, 196, 196, 255));
         border-bottom-right-radius: 3px;
         subcontrol-origin: border;
         subcontrol-position: bottom right; /* position at the top right corner */
         width: 16px; /* 16 + 2*1px border-width = 15px padding + 3px parent border */
-        border-image: url(:/images/arrow-down.png);
+        border-image: url(:/icons/arrow-down.png);
     }
 
 
@@ -521,7 +498,7 @@ border-left: 1px solid rgba(255,255,255,0);
 
     QDialog {
         color: white;
-        background-image: url(:/images/background-dialog.png);
+        background-image: url(:/icons/background-dialog.png);
         background-repeat: no-repeat;
         background-position: bottom center;
         background-color: rgb(50, 50, 50);
@@ -610,11 +587,10 @@ border-left: 1px solid rgba(255,255,255,0);
 /* #QComboBox */
 
     QComboBox {
-        color: #333333;
-        border: 0px solid gray;
-        border-top-right-radius: 3px;
-		border-bottom-right-radius: 3px;
-        font-size: 17px
+        border: 0px;
+        border-radius: 2px;
+        font-size: 13px;
+        color:#222222
     }
 
     QComboBox:editable {
@@ -639,21 +615,15 @@ border-left: 1px solid rgba(255,255,255,0);
         background-color: rgba(160, 160, 160, 160);
     }
 
-    QComboBox:!editable:hover, QComboBox::drop-down:editable:hover {
+    QComboBox:!editable:hover, QComboBox::drop-down:editable:hover, QComboBox:hover{
         border:0px solid  rgba(34, 49, 60, 100);
         border-radius:2px;
-        background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0,
-            stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255),
-            stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255),
-            stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255))
+        	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(55, 55, 55, 255), stop:0.475 rgba(116, 116, 116, 255), stop:0.51 rgba(133, 133, 133, 255), stop:0.994975 rgba(166, 166, 166, 255));
 
     }
 
     QComboBox:on:hover {
-        background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0,
-            stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255),
-            stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255),
-            stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255))
+        	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(85, 85, 85, 255), stop:0.475 rgba(136, 136, 136, 255), stop:0.51 rgba(153, 153, 153, 255), stop:0.994975 rgba(196, 196, 196, 255));
     }
 
     QComboBox:on { /* shift the text when the popup opens */
@@ -678,7 +648,7 @@ border-left: 1px solid rgba(255,255,255,0);
     }
 
     QComboBox::down-arrow {
-        image: url(:/icons/arrow-down.png);
+        image: url(/usr/share/icons/crystalsvg/16x16/actions/1downarrow.png);
     }
 
     QComboBox::down-arrow:on { /* shift the arrow when popup is open */
@@ -709,8 +679,7 @@ border-left: 1px solid rgba(255,255,255,0);
             stop:0 rgba(171, 171, 171, 255), stop:1 rgba(255, 255, 255, 255));
         color: #333333;
         border: 1px solid gray;
-                border-top-right-radius: 3px;
-		border-bottom-right-radius: 3px;
+        border-radius: 3px;
         font-size: 17px
     }
 
@@ -790,11 +759,11 @@ border-left: 1px solid rgba(255,255,255,0);
 
     /* style the sort indicator */
     QHeaderView::down-arrow {
-        image: url(:/images/arrow-down.png);
+        image: url(:/icons/arrow-down.png);
     }
 
     QHeaderView::up-arrow {
-        image: url(:/images/arrow-up.png);
+        image: url(:/icons/arrow-up.png);
     }
 
 
@@ -1057,12 +1026,25 @@ background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0
             <height>30</height>
            </size>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>-1</pointsize>
+           </font>
+          </property>
           <property name="editable">
            <bool>true</bool>
+          </property>
+          <property name="sizeAdjustPolicy">
+           <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
           </property>
           <property name="frame">
            <bool>true</bool>
           </property>
+          <item>
+           <property name="text">
+            <string>aergaergare</string>
+           </property>
+          </item>
          </widget>
         </item>
         <item row="1" column="0">
