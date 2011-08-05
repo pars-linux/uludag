@@ -221,8 +221,21 @@ border-top-right-radius: 4px;</string>
        <widget class="QPlainTextEdit" name="plainTextEdit">
         <property name="font">
          <font>
-          <pointsize>9</pointsize>
+          <pointsize>-1</pointsize>
+          <underline>false</underline>
+          <strikeout>false</strikeout>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#plainTextEdit {
+        show-decoration-selected: 1; /* make the selection span the entire width of the view */
+        color: #444444;
+		border: 0px;
+        font-size: 12px;
+        text-decoration: none;
+        background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.516304,
+            y2:0.653, stop:0 rgba(171, 171, 171, 255), stop:1 rgba(255, 255, 255, 220));
+}</string>
         </property>
        </widget>
       </item>

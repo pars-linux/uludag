@@ -19,7 +19,7 @@
 	padding:0px;
 }
 
-	#frameMulti {background-color: rgba(200, 200, 200, 255);}
+	#frameMulti {background-color: rgba(255, 255, 255, 255);}
 
     #Main {
         background-color: rgb(50, 50, 50);
@@ -191,7 +191,7 @@ border-left: 1px solid rgba(255,255,255,0);
     }
 
     QDateEdit::down-arrow {
-        image: url(:/images/arrow-down.png);
+        image: url(:/icons/arrow-down.png);
     }
 
     QDateEdit::down-arrow:on {
@@ -271,7 +271,7 @@ border-left: 1px solid rgba(255,255,255,0);
     }
 
     QToolButton::menu-arrow {
-        image: url(:/images/treeview-branch-open.png);
+        image: url(:/icons/treeview-branch-open.png);
     }
 
     QToolButton::menu-arrow:open {
@@ -328,6 +328,49 @@ border-left: 1px solid rgba(255,255,255,0);
         border: 1px solid rgba(255, 255, 255, 50); border-radius: 3px; color:white
     }
 
+/* #QlistWidget */
+
+    QListWidget {
+        show-decoration-selected: 1; /* make the selection span the entire width of the view */
+        color: #444444;
+		border: 0px;
+        font-size: 12px;
+        text-decoration: none;
+        background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.516304,
+            y2:0.653, stop:0 rgba(171, 171, 171, 255), stop:1 rgba(255, 255, 255, 220));
+    }
+
+    QListWidget::item:alternate {
+        background: #EEEEEE;
+    }
+
+    QListWidget::item:selected {
+    }
+
+    QListWidget::item:selected:!active {
+        background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0,
+            stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255),
+            stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255),
+            stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255));
+        border: 1px solid rgba(255, 255, 255, 50); border-radius: 3px; color:white
+    }
+
+    QListWidget::item:selected:active {
+        background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0,
+            stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255),
+            stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255),
+            stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255));
+        border: 1px solid rgba(255, 255, 255, 50); border-radius: 3px; color:white
+    }
+
+    QListWidget::item:hover {
+        background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0,
+            stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 200),
+            stop:0.521739 rgba(166, 35, 29, 200), stop:0.531585 rgba(184, 46, 40, 200),
+            stop:0.983696 rgba(168, 78, 74, 200), stop:1 rgba(210, 110, 110, 200));
+        border: 1px solid rgba(255, 255, 255, 50); border-radius: 3px; color:white
+    }
+
 
 /* #QTimeEdit */
 
@@ -354,7 +397,7 @@ border-left: 1px solid rgba(255,255,255,0);
         subcontrol-origin: border;
         subcontrol-position: top right; /* position at the top right corner */
         width: 16px; /* 16 + 2*1px border-width = 15px padding + 3px parent border */
-        border-image: url(:/images/arrow-up.png);
+        border-image: url(:/icons/arrow-up.png);
         background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1,
             stop:0 rgba(132, 132, 132, 255), stop:0.503057 rgba(62, 62, 62, 255));
     }
@@ -364,7 +407,7 @@ border-left: 1px solid rgba(255,255,255,0);
         subcontrol-origin: border;
         subcontrol-position: top right; /* position at the top right corner */
         width: 16px; /* 16 + 2*1px border-width = 15px padding + 3px parent border */
-        border-image: url(:/images/arrow-up.png);
+        border-image: url(:/icons/arrow-up.png);
         background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0,
             stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255),
             stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255),
@@ -376,7 +419,7 @@ border-left: 1px solid rgba(255,255,255,0);
         subcontrol-origin: border;
         subcontrol-position: bottom right; /* position at the top right corner */
         width: 16px; /* 16 + 2*1px border-width = 15px padding + 3px parent border */
-        border-image: url(:/images/arrow-down.png);
+        border-image: url(:/icons/arrow-down.png);
         background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1,
             stop:0.503057 rgba(62, 62, 62, 255), stop:1 rgba(16, 16, 16, 255));
     }
@@ -386,7 +429,7 @@ border-left: 1px solid rgba(255,255,255,0);
         subcontrol-origin: border;
         subcontrol-position: bottom right; /* position at the top right corner */
         width: 16px; /* 16 + 2*1px border-width = 15px padding + 3px parent border */
-        border-image: url(:/images/arrow-down.png);
+        border-image: url(:/icons/arrow-down.png);
         background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0,
             stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255),
             stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255),
@@ -416,7 +459,7 @@ border-left: 1px solid rgba(255,255,255,0);
         subcontrol-origin: border;
         subcontrol-position: top right; /* position at the top right corner */
         width: 16px; /* 16 + 2*1px border-width = 15px padding + 3px parent border */
-        border-image: url(:/images/arrow-up.png);
+        border-image: url(:/icons/arrow-up.png);
         background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1,
             stop:0 rgba(132, 132, 132, 255), stop:0.503057 rgba(62, 62, 62, 255));
     }
@@ -430,7 +473,7 @@ border-left: 1px solid rgba(255,255,255,0);
         subcontrol-origin: border;
         subcontrol-position: top right; /* position at the top right corner */
         width: 16px; /* 16 + 2*1px border-width = 15px padding + 3px parent border */
-        border-image: url(:/images/arrow-up.png);
+        border-image: url(:/icons/arrow-up.png);
     }
 
     QSpinBox::down-button {
@@ -440,7 +483,7 @@ border-left: 1px solid rgba(255,255,255,0);
         subcontrol-origin: border;
         subcontrol-position: bottom right; /* position at the top right corner */
         width: 16px; /* 16 + 2*1px border-width = 15px padding + 3px parent border */
-        border-image: url(:/images/arrow-down.png);
+        border-image: url(:/icons/arrow-down.png);
     }
 
     QSpinBox::down-button:hover {
@@ -452,7 +495,7 @@ border-left: 1px solid rgba(255,255,255,0);
         subcontrol-origin: border;
         subcontrol-position: bottom right; /* position at the top right corner */
         width: 16px; /* 16 + 2*1px border-width = 15px padding + 3px parent border */
-        border-image: url(:/images/arrow-down.png);
+        border-image: url(:/icons/arrow-down.png);
     }
 
 
@@ -468,7 +511,7 @@ border-left: 1px solid rgba(255,255,255,0);
 
     QDialog {
         color: white;
-        background-image: url(:/images/background-dialog.png);
+        background-image: url(:/icons/background-dialog.png);
         background-repeat: no-repeat;
         background-position: bottom center;
         background-color: rgb(50, 50, 50);
@@ -496,7 +539,7 @@ border-left: 1px solid rgba(255,255,255,0);
         spacing: 5px;
     }
 
-    QRadioButton::indicator {
+/*     QRadioButton::indicator {
         width: 16px;
         height: 16px;
     }
@@ -515,7 +558,7 @@ border-left: 1px solid rgba(255,255,255,0);
 
     QRadioButton::indicator::checked:hover {
         image: url(:/icons/radiobutton_checked_hover.png);
-    }
+    } */
 
 
 /* #QListWidget */
@@ -531,7 +574,7 @@ border-left: 1px solid rgba(255,255,255,0);
         color: white;
     }
 
-    QCheckBox::indicator {
+ /*    QCheckBox::indicator {
         width: 20px;
         height: 20px;
     }
@@ -551,7 +594,7 @@ border-left: 1px solid rgba(255,255,255,0);
 
     QCheckBox::indicator:checked:hover {
         image: url(:/icons/checkbox_checked_hover.png);
-    }
+    }  */
 
 
 /* #QComboBox */
@@ -634,7 +677,7 @@ border-left: 1px solid rgba(255,255,255,0);
 
     QComboBox::down-arrow {
         right: 0px;
-        image: url(:/images/arrow-down.png);
+        image: url(:/icons/arrow-down.png);
     }
 
     QComboBox::down-arrow:on {
@@ -735,11 +778,11 @@ border-left: 1px solid rgba(255,255,255,0);
 
     /* style the sort indicator */
     QHeaderView::down-arrow {
-        image: url(:/images/arrow-down.png);
+        image: url(:/icons/arrow-down.png);
     }
 
     QHeaderView::up-arrow {
-        image: url(:/images/arrow-up.png);
+        image: url(:/icons/arrow-up.png);
     }
 
 
@@ -993,6 +1036,7 @@ border-left: 0px solid rgba(255,255,255,50);</string>
          <property name="styleSheet">
           <string notr="true">border-right: 1px solid rgba(255,255,255,50);
 border-top: 1px solid rgba(255,255,255,50);
+border-bottom: 1px solid rgba(255,255,255,50);
 border-radius: 0px;</string>
          </property>
          <property name="text">
@@ -1019,6 +1063,7 @@ border-radius: 0px;</string>
           <string notr="true">border-right: 1px solid rgba(255,255,255,50);
 border-left: 1px solid rgba(255,255,255,50);
 border-top: 1px solid rgba(255,255,255,50);
+border-bottom: 1px solid rgba(255,255,255,50);
 border-radius: 0px;</string>
          </property>
          <property name="text">
@@ -1057,13 +1102,10 @@ border-radius: 0px;</string>
             </sizepolicy>
            </property>
            <layout class="QGridLayout" name="gridLayout_3">
-            <property name="horizontalSpacing">
+            <property name="margin">
              <number>0</number>
             </property>
-            <property name="verticalSpacing">
-             <number>1</number>
-            </property>
-            <property name="margin">
+            <property name="spacing">
              <number>0</number>
             </property>
             <item row="1" column="0">
@@ -1108,12 +1150,25 @@ border-radius: 0px;</string>
                   <item>
                    <widget class="QGroupBox" name="groupNodeInfo">
                     <property name="styleSheet">
-                     <string notr="true"/>
+                     <string notr="true">#groupNodeInfo{
+color:rgb(255,255,255);
+/*qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(183, 100, 124, 255), stop:0.0212465 rgba(91, 33, 50, 255), stop:0.521739 rgba(152, 86, 105, 255), stop:0.527174 rgba(155, 98, 115, 255), stop:0.983696 rgba(184, 141, 153, 255), stop:1 rgba(220, 173, 186, 255));*/
+
+
+background: url(:/icons/internet256.png) no-repeat;
+
+}</string>
                     </property>
                     <property name="title">
                      <string/>
                     </property>
+                    <property name="flat">
+                     <bool>true</bool>
+                    </property>
                     <layout class="QHBoxLayout" name="horizontalLayout_5">
+                     <property name="bottomMargin">
+                      <number>9</number>
+                     </property>
                      <item>
                       <widget class="QLabel" name="pixmapNode">
                        <property name="minimumSize">
@@ -1200,6 +1255,9 @@ border-radius: 0px;</string>
                  <property name="currentIndex">
                   <number>-1</number>
                  </property>
+                 <property name="documentMode">
+                  <bool>false</bool>
+                 </property>
                  <property name="movable">
                   <bool>true</bool>
                  </property>
@@ -1213,6 +1271,20 @@ border-radius: 0px;</string>
                    <height>200</height>
                   </size>
                  </property>
+                 <property name="styleSheet">
+                  <string notr="true">#textLog {
+        show-decoration-selected: 1; /* make the selection span the entire width of the view */
+        color: #444444;
+		border: 0px;
+        font-size: 12px;
+        text-decoration: none;
+        background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.516304,
+            y2:0.653, stop:0 rgba(171, 171, 171, 255), stop:1 rgba(255, 255, 255, 220));
+}</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::NoFrame</enum>
+                 </property>
                 </widget>
                </item>
               </layout>
@@ -1223,7 +1295,7 @@ border-radius: 0px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>70</height>
+                <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -1256,6 +1328,18 @@ border-radius: 0px;</string>
                </property>
                <item>
                 <widget class="QGroupBox" name="framePolicyInherit">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>70</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>70</height>
+                  </size>
+                 </property>
                  <property name="title">
                   <string/>
                  </property>
@@ -1386,10 +1470,19 @@ border-radius: 0px;</string>
                  </property>
                  <layout class="QHBoxLayout" name="horizontalLayout_8">
                   <property name="spacing">
+                   <number>5</number>
+                  </property>
+                  <property name="leftMargin">
                    <number>0</number>
                   </property>
-                  <property name="margin">
+                  <property name="topMargin">
+                   <number>5</number>
+                  </property>
+                  <property name="rightMargin">
                    <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>5</number>
                   </property>
                   <item>
                    <spacer name="horizontalSpacer">
@@ -1560,41 +1653,6 @@ p, li { white-space: pre-wrap; }
                  </property>
                  <property name="wordWrap">
                   <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="pushCloseMessage_3">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>22</width>
-                   <height>22</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>22</width>
-                   <height>22</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="icon">
-                  <iconset resource="data.qrc">
-                   <normaloff>:/icons/edit-delete.png</normaloff>:/icons/edit-delete.png</iconset>
-                 </property>
-                 <property name="flat">
-                  <bool>false</bool>
                  </property>
                 </widget>
                </item>
@@ -1973,7 +2031,7 @@ border-radius: 0px;</string>
                   </size>
                  </property>
                  <property name="currentIndex">
-                  <number>1</number>
+                  <number>0</number>
                  </property>
                  <widget class="QWidget" name="pageGroupOld">
                   <layout class="QGridLayout" name="gridLayout_12">
@@ -2407,42 +2465,6 @@ border-left: 0px solid rgba(255,255,255,50);</string>
                   <bool>false</bool>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">border-top: 1px solid rgba(255,255,255,50);
-border-right: 0px solid rgba(255,255,255,50);
-border-bottom: 1px solid rgba(255,255,255,50);
-border-left: 1px solid rgba(255,255,255,50);
-border-radius: 0px;</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="icon">
-                  <iconset resource="data.qrc">
-                   <normaloff>:/icons/refresh32.png</normaloff>:/icons/refresh32.png</iconset>
-                 </property>
-                 <property name="flat">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="pushHidePolicies">
-                 <property name="minimumSize">
-                  <size>
-                   <width>30</width>
-                   <height>29</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>30</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="autoFillBackground">
-                  <bool>false</bool>
-                 </property>
-                 <property name="styleSheet">
                   <string notr="true">border: 1px solid rgba(255,255,255,50);
 border-radius: 0px;</string>
                  </property>
@@ -2451,7 +2473,7 @@ border-radius: 0px;</string>
                  </property>
                  <property name="icon">
                   <iconset resource="data.qrc">
-                   <normaloff>:/icons/arrow-right.png</normaloff>:/icons/arrow-right.png</iconset>
+                   <normaloff>:/icons/refresh32.png</normaloff>:/icons/refresh32.png</iconset>
                  </property>
                  <property name="flat">
                   <bool>false</bool>
