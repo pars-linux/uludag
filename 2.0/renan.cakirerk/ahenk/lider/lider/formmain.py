@@ -129,6 +129,16 @@ class FormMain(QtGui.QWidget, Ui_Main):
 
         self.connect(self.tabPolicy, QtCore.SIGNAL("currentChanged(int)"), self.__slot_tab_clicked)
 
+        #FILTER
+        self.connect(self.lineFilterNodes, QtCore.SIGNAL("textChanged(QString)"), self.__slot_filter_nodes)
+
+        self.defaultBrush = QtGui.QBrush(QtGui.QColor("black")) #self.treeComputers.itemAt(1,1).foreground(0)
+        self.foundBrush = QtGui.QBrush(QtGui.QColor("green"))
+
+        #collect all items in node tree
+        self.collectItems()
+
+
         # Initialize "talk" backend
         self.talk.start()
 
@@ -1291,3 +1301,64 @@ class FormMain(QtGui.QWidget, Ui_Main):
         item = widget.item.parent()
         policy = self.__load_policy(item)
         widget.load_policy(policy)
+
+    # has text method to check given text is exist in given items index or not
+    def has_text(self, item, index, text):
+        return not unicode(item.text(index)).lower().find(unicode(text).lower()) == -1
+
+    def collectItems(self):
+        # get top-level items
+        self.nodes = map(lambda x: self.treeComputers.topLevelItem(x), \
+                             range(self.treeComputers.topLevelItemCount()))
+
+        self.all_items = []
+
+        # recursive method to add all tree to a list
+        def add_recursive(item):
+            self.all_items.append(item)
+            if item.childCount() > 0:
+                for index in range(item.childCount()):
+                    add_recursive(item.child(index))
+
+        # add all items to the list starting from the top-level items
+        for item in self.nodes:
+            add_recursive(item)
+
+        count = len(self.all_items)
+        print "all items count %d " %count
+
+    def __slot_filter_nodes(self):
+        self.collectItems()
+        key = self.lineFilterNodes.text()
+
+        found_items = []
+
+        # walk in all items
+        for item in self.all_items:
+            # Search each column in every cycle
+            for index in range(self.treeComputers.columnCount()):
+                # if text in given index then add it into the found_items list
+                # and dont forget to colorize the item.
+                hasText = self.has_text(item, index, key)
+                if key and hasText:
+                    item.setForeground(index, self.foundBrush)
+                    found_items.append(item)
+                # Otherwise hide it and set its foreground to defaultBrush
+                else:
+                    item.setForeground(index, self.defaultBrush)
+                    item.setHidden(True)
+
+       # If there are found_items walk in them otherwise use all_items
+        for item in found_items if key else self.all_items:
+            # show the item itself
+            item.setHidden(False)
+            # walk in the item's child and show them also
+            for i in range(item.childCount()):
+                item.child(i).setHidden(False)
+            # starting from the item to the top show all parents too
+            while item.parent():
+                item.parent().setHidden(False)
+                item = item.parent()
+
+
+
