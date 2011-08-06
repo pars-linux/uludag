@@ -34,6 +34,7 @@ Tasks:
 
 Step 0: Welcome !
 ~~~~~~~~~~~~~~~~~
+- Check if we have proper rights, running from console borks
 
 + Ask user which repo to update to (stable/testing/devel) (?)
 
@@ -42,6 +43,7 @@ Step 0: Welcome !
     + check free disk space ???
     + if update will not be healty, warn the user why and do nothing
     + if update is not possible ask to remove packages (??)
+    - Handle exceptions from pisi in case something goes wrong (circular dependency for example)
 
 + Ask user to remove packages which are unsupported by 2011 and installed in 2009
 
