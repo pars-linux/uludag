@@ -256,6 +256,10 @@ class Bugzilla:
             log.debug("Assigned: %s" % args.assigned_to)
             self.browser["assigned_to"] = args.assigned_to
 
+        if args.has("keywords"):
+            log.debug("Keywords: %s" % args.keywords)
+            self.browser["keywords"] = args.keywords
+
         if args.has("dependson"):
             log.debug("Dependson: %s" % args.dependson)
             self.browser["dependson"] = args.dependson

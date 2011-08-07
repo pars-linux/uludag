@@ -45,6 +45,7 @@ CONFIG_FILE = os.path.expanduser("~/.bugspy.conf")
 
 VALID_RESOLUTIONS = ["FIXED", "INVALID", "WONTFIX", "LATER", "REMIND", "DUPLICATE", "WORKSFORME", "NEXTRELEASE"]
 VALID_STATUSES = ["REOPENED", "NEW", "ASSIGNED", "RESOLVED", "CLOSED"]
+VALID_KEYWORDS = ["ANSWERREC", "JUNIORJOBS", "MENTORASSIGNED", "NEEDINFO", "QUIZAPPROVED", "QUIZSENT", "TRIAGED", "UPSTREAM"]
 # valid versions for security
 VALID_VERSIONS = ["2008", "2009", "corporate2"]
 
@@ -103,6 +104,9 @@ def setup_action_parser(action):
 
         p.add_option("--cc",
                 help="optional: add e-mail address to cc")
+
+        p.add_option("-k", "--keywords",
+                help="OPTIONAL: set keyword (%s)" % ','.join(VALID_KEYWORDS))
 
         p.add_option("--blocks",
                 help="optional: the bugs that this bug blocks")
@@ -218,6 +222,12 @@ def main():
         if not opt.status in VALID_STATUSES:
             parser.error("status must be one of: %s" % ','.join(VALID_STATUSES))
 
+    def check_valid_keywords():
+        # make it upper-case for easy-of-use
+        opt.keywords = opt.keywords.upper()
+
+        if not opt.keywords in VALID_KEYWORDS:
+            parser.error("keyword must be one of: %s" % ','.join(VALID_KEYWORDS))
 
     if not os.path.exists(CONFIG_FILE) and action != "generate-config":
         log.error("Configuation file is not found, please generate it first")
@@ -288,6 +298,9 @@ def main():
 
         if opt.security:
             modify["security"] = opt.security
+
+        if opt.keywords:
+            modify["keywords"] = opt.keywords
 
         if opt.blocks:
             modify["blocks"] = opt.blocks
