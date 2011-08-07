@@ -258,7 +258,7 @@ class Bugzilla:
 
         if args.has("keywords"):
             log.debug("Keywords: %s" % args.keywords)
-            self.browser["keywords"] = args.keywords
+            self.browser["keywords"] += ", %s" % args.keywords
 
         if args.has("dependson"):
             log.debug("Dependson: %s" % args.dependson)
