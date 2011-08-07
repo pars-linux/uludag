@@ -10,6 +10,5 @@ void print_hello(){
     cout << "yazmak";
     cout << "Metin was here for testing";
 
-
 }
 
