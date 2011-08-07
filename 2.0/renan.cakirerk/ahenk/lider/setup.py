@@ -4,7 +4,7 @@
 from distutils.core import setup
 
 setup(name='ahenk-lider',
-      version='1.9.26',
+      version='1.9.30',
       description='Agent for Ahenk Remote Management Framework',
       author='Bahadır Kandemir',
       author_email='bahadir@pardus.org.tr',
