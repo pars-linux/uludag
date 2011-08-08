@@ -30,6 +30,11 @@ if __name__ == '__main__':
 
     app = QUniqueApplication(sys.argv, catalog='um')
 
+    if not os.geteuid() == 0:
+        QMessageBox.critical(None, _("Upgrade Manager"),
+                                   _("You must have super user privileges to launch upgrade-manager"))
+        sys.exit()
+
     if '--start-from-step2' in sys.argv:
         step = 2
     elif '--start-from-step3' in sys.argv:
