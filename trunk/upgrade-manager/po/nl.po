@@ -1,0 +1,260 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Antoon Tolboom <atolboo@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-08-09 10:36+0300\n"
+"PO-Revision-Date: 2011-08-09 12:21+0200\n"
+"Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
+"Language-Team: Dutch <kde-i18n-doc@kde.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/backend.py:168
+msgid "Re-building the Package DB..."
+msgstr "Pakket DB opnieuw aanmaken..."
+
+#: src/backend.py:181
+msgid "Calculating dependencies..."
+msgstr "Afhankelijkheden berekenen..."
+
+#: src/gui.py:123
+msgid "Welcome to Upgrade Manager..."
+msgstr "Welkom bij opwaardeerbeheer..."
+
+#: src/gui.py:127
+msgid "Select Upgrade Repository..."
+msgstr "Opwaardeerbron selecteren..."
+
+#: src/gui.py:131 src/gui.py:174
+msgid "Checking your system..."
+msgstr "Systeem controleren..."
+
+#: src/gui.py:138 src/gui.py:143 ui/ui_mainscreen.py:65
+msgid "Next"
+msgstr "Volgende"
+
+#: src/gui.py:139 ui/ui_main.py:61
+msgid "Yes, Upgrade"
+msgstr "Ja, opwaarderen"
+
+#: src/gui.py:140 ui/ui_mainscreen.py:63
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: src/gui.py:144 ui/ui_mainscreen.py:64
+msgid "Previous"
+msgstr "Vorige"
+
+#: src/gui.py:155
+msgid "Upgrading the system..."
+msgstr "Systeem opwaarderen..."
+
+#: src/gui.py:205 src/gui.py:300
+msgid "Critical Error"
+msgstr "Kritieke fout"
+
+#: src/gui.py:206
+msgid ""
+"An error ocurred while planning the upgrade procedure, this is usually "
+"caused by faulty Network Connection or wrong repo address."
+msgstr ""
+"Er is een fout opgetreden tijdens het plannen van de opwaardeerprocedure, "
+"dit wordt hoogstwaarschijnlijk door een fout in de netwerkverbinding of het "
+"bronadres veroorzaakt."
+
+#: src/gui.py:213
+msgid "Not enough free space"
+msgstr "Niet genoeg vrije schijfruimte"
+
+#: src/gui.py:214
+#, python-format
+msgid ""
+"This upgrade requires at least <b>%s MB</b> free space, please use another "
+"repository or remove some files to make a space for upgrade operation."
+msgstr ""
+"Deze opwaardering vereist tenminste <b>%s MB</b> vrije schijfruimte, gebruik "
+"een andere bron of verwijder enkele bestanden om ruimte voor het opwaarderen "
+"te maken."
+
+#: src/gui.py:226
+msgid "Check results..."
+msgstr "Controleren resultaten..."
+
+#: src/gui.py:247
+msgid "Removing unsupported packages..."
+msgstr "Niet-ondersteunde pakketten verwijderen..."
+
+#: src/gui.py:250
+msgid "Installing new package management system..."
+msgstr "Nieuw pakketbeheersysteem installeren..."
+
+#: src/gui.py:258
+msgid "Step 1 Completed"
+msgstr "Stap 1 is voltooid"
+
+#: src/gui.py:288
+msgid "Upgrading to Pardus 2011..."
+msgstr "Opwaarderen naar Pardus 2011..."
+
+#: src/gui.py:301
+msgid ""
+"An error ocurred while upgrading the system, this is usually caused by a "
+"repository problem.\n"
+"Please try again later."
+msgstr ""
+"Er is een fout opgetreden tijdens het opwaarderen, dit wordt meestal "
+"veroorzaakt door een probleem van de bron.\n"
+"Probeer het later opnieuw."
+
+#: src/gui.py:323
+msgid "Configuring for Pardus 2011..."
+msgstr "Configureren voor Pardus 2011..."
+
+#: src/gui.py:336
+msgid "Running Post Upgrade Operations..."
+msgstr "Bezig met post-opwaardeerbewerkingen.."
+
+#: src/gui.py:354
+msgid "Rebooting to the Pardus 2011..."
+msgstr "Herstarten naar Pardus 2011..."
+
+#: src/gui.py:381
+#, python-format
+msgid "Installing: <b>%s</b>"
+msgstr "Installeren van: <b>%s</b>"
+
+#: src/gui.py:383
+#, python-format
+msgid "Installed: <b>%s</b>"
+msgstr "Geïnstalleerd: <b>%s</b>"
+
+#: src/gui.py:385
+#, python-format
+msgid "Upgraded: <b>%s</b>"
+msgstr "Opgewaardeerd: <b>%s</b>"
+
+#: src/gui.py:387
+#, python-format
+msgid "Configuring: <b>%s</b>"
+msgstr "Configureren: <b>%s</b>"
+
+#: src/gui.py:389
+#, python-format
+msgid "Configured: <b>%s</b>"
+msgstr "Geconfigureerd: <b>%s</b>"
+
+#: src/gui.py:391
+#, python-format
+msgid "Removing: <b>%s</b>"
+msgstr "Verwijderen: <b>%s</b>"
+
+#: src/gui.py:393
+#, python-format
+msgid "Removed: <b>%s</b>"
+msgstr "Verwijderd: <b>%s</b>"
+
+#: src/gui.py:414
+#, python-format
+msgid "Downloading: <b>%s</b>"
+msgstr "Downloaden: <b>%s</b>"
+
+#: src/main.py:34 src/main.py:52 ui/ui_main.py:60 ui/ui_mainscreen.py:61
+msgid "Upgrade Manager"
+msgstr "Opwaardeerbeheer"
+
+#: src/main.py:35
+msgid "You must have super user privileges to launch upgrade-manager"
+msgstr "Voor het starten van opwaardeerbeheer zijn systeemrechten vereist"
+
+#: src/main.py:53
+msgid ""
+"There are uncompleted upgrade steps left.\n"
+"Do you want to continue from this step ? (Recommended)"
+msgstr ""
+"Er zijn niet-voltooide opwaardeerstappen over.\n"
+"Doorgaan met deze stap(pen)? (aanbevolen)"
+
+#: ui/ui_main.py:62
+msgid "Are you ready to upgrade your system to Pardus 2011?"
+msgstr "Gereed voor het opwaarderen van het systeem naar Pardus 2011?"
+
+#: ui/ui_main.py:63
+msgid "Exit"
+msgstr "Afsluiten"
+
+#: ui/ui_mainscreen.py:62 ui/ui_screen_1.py:61
+msgid "Welcome to Upgrade Manager"
+msgstr "Welkom bij opwaardeerbeheer"
+
+#: ui/ui_screen_1.py:62
+msgid ""
+"In order to upgrade your Pardus 2009 system to Pardus 2011, Upgrade Manager "
+"needs to check your computer.<br/><br/>This operation includes, installed "
+"package information and available free space on your computer.<br/><br/"
+"><b>Upgrading procedure can be problematic use at your own risk.</b>"
+msgstr ""
+"Voor het opwaarderen van Pardus 2009 naar Pardus 2011 dient opwaardeerbeheer "
+"het systeem te controleren.<br/><br/>Deze bewerking bestaat uit de "
+"geïnstalleerde pakketinformatie en beschikbare vrije schijfruimte op de "
+"computer.<br/><br/><b>De opwaardeerprocedure kan problemen geven en is voor "
+"eigen risico."
+
+#: ui/ui_screen_2.py:65 ui/ui_screen_3.py:56 ui/ui_screen_4.py:40
+#: ui/ui_screen_5.py:81
+msgid "Analyzing your Computer"
+msgstr "Analyseren van computer"
+
+#: ui/ui_screen_2.py:66
+msgid "In order to upgrade your system, you must select an upgrade repository:"
+msgstr ""
+"Selecteren van een opwaardeerbron is noodzakelijk voor het opwaarderen van "
+"het systeem:"
+
+#: ui/ui_screen_2.py:67
+msgid "Stable Repository (Recommended)"
+msgstr "Stabiele bron (aanbevolen)"
+
+#: ui/ui_screen_2.py:68
+msgid "Testing Repository"
+msgstr "Testing-bron"
+
+#: ui/ui_screen_2.py:69
+msgid "Devel Repository"
+msgstr "Devel-bron"
+
+#: ui/ui_screen_2.py:70
+msgid "Manual Repository :"
+msgstr "Handmatige bron :"
+
+#: ui/ui_screen_3.py:57
+msgid "Following packages are not available in selected repository:"
+msgstr "De volgende pakketten zijn niet beschikbaar in de geselecteerde bron:"
+
+#: ui/ui_screen_3.py:58
+msgid ""
+"If you continue with this repository you will no longer use some "
+"applications provided by these packages."
+msgstr ""
+"Indien deze bron gebruikt gaat worden zijn enkele toepassingen van deze "
+"pakketten niet langer beschikbaar."
+
+#: ui/ui_screen_3.py:59
+msgid "Remove unsupported packages"
+msgstr "Verwijderen niet-ondersteunde pakketten"
+
+#: ui/ui_screen_4.py:41
+msgid "Do you want to continue?"
+msgstr "Wilt u doorgaan?"
+
+#: ui/ui_screen_5.py:82
+msgid "Upgrading packages..."
+msgstr "Pakketten opwaarderen..."
+
