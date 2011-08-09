@@ -2,8 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -12,10 +11,10 @@ msgstr ""
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 
 #: src/backend.py:168
 msgid "Re-building the Package DB..."
@@ -43,11 +42,11 @@ msgstr ""
 
 #: src/gui.py:139 ui/ui_main.py:61
 msgid "Yes, Upgrade"
-msgstr ""
+msgstr "Да, обновить"
 
 #: src/gui.py:140 ui/ui_mainscreen.py:63
 msgid "Cancel"
-msgstr ""
+msgstr "Отмена"
 
 #: src/gui.py:144 ui/ui_mainscreen.py:64
 msgid "Previous"
@@ -59,23 +58,19 @@ msgstr ""
 
 #: src/gui.py:205 src/gui.py:300
 msgid "Critical Error"
-msgstr ""
+msgstr "Критическая ошибка"
 
 #: src/gui.py:206
-msgid ""
-"An error ocurred while planning the upgrade procedure, this is usually "
-"caused by faulty Network Connection or wrong repo address."
+msgid "An error ocurred while planning the upgrade procedure, this is usually caused by faulty Network Connection or wrong repo address."
 msgstr ""
 
 #: src/gui.py:213
 msgid "Not enough free space"
-msgstr ""
+msgstr "Недостаточно свободного места"
 
 #: src/gui.py:214
 #, python-format
-msgid ""
-"This upgrade requires at least <b>%s MB</b> free space, please use another "
-"repository or remove some files to make a space for upgrade operation."
+msgid "This upgrade requires at least <b>%s MB</b> free space, please use another repository or remove some files to make a space for upgrade operation."
 msgstr ""
 
 #: src/gui.py:226
@@ -96,12 +91,11 @@ msgstr ""
 
 #: src/gui.py:288
 msgid "Upgrading to Pardus 2011..."
-msgstr ""
+msgstr "Обновление до Pardus 2011..."
 
 #: src/gui.py:301
 msgid ""
-"An error ocurred while upgrading the system, this is usually caused by a "
-"repository problem.\n"
+"An error ocurred while upgrading the system, this is usually caused by a repository problem.\n"
 "Please try again later."
 msgstr ""
 
@@ -184,11 +178,7 @@ msgid "Welcome to Upgrade Manager"
 msgstr ""
 
 #: ui/ui_screen_1.py:62
-msgid ""
-"In order to upgrade your Pardus 2009 system to Pardus 2011, Upgrade Manager "
-"needs to check your computer.<br/><br/>This operation includes, installed "
-"package information and available free space on your computer.<br/><br/"
-"><b>Upgrading procedure can be problematic use at your own risk.</b>"
+msgid "In order to upgrade your Pardus 2009 system to Pardus 2011, Upgrade Manager needs to check your computer.<br/><br/>This operation includes, installed package information and available free space on your computer.<br/><br/><b>Upgrading procedure can be problematic use at your own risk.</b>"
 msgstr ""
 
 #: ui/ui_screen_2.py:65 ui/ui_screen_3.py:56 ui/ui_screen_4.py:40
@@ -221,9 +211,7 @@ msgid "Following packages are not available in selected repository:"
 msgstr ""
 
 #: ui/ui_screen_3.py:58
-msgid ""
-"If you continue with this repository you will no longer use some "
-"applications provided by these packages."
+msgid "If you continue with this repository you will no longer use some applications provided by these packages."
 msgstr ""
 
 #: ui/ui_screen_3.py:59
