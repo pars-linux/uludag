@@ -1,0 +1,239 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-08-09 10:36+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/backend.py:168
+msgid "Re-building the Package DB..."
+msgstr ""
+
+#: src/backend.py:181
+msgid "Calculating dependencies..."
+msgstr ""
+
+#: src/gui.py:123
+msgid "Welcome to Upgrade Manager..."
+msgstr ""
+
+#: src/gui.py:127
+msgid "Select Upgrade Repository..."
+msgstr ""
+
+#: src/gui.py:131 src/gui.py:174
+msgid "Checking your system..."
+msgstr ""
+
+#: src/gui.py:138 src/gui.py:143 ui/ui_mainscreen.py:65
+msgid "Next"
+msgstr ""
+
+#: src/gui.py:139 ui/ui_main.py:61
+msgid "Yes, Upgrade"
+msgstr ""
+
+#: src/gui.py:140 ui/ui_mainscreen.py:63
+msgid "Cancel"
+msgstr ""
+
+#: src/gui.py:144 ui/ui_mainscreen.py:64
+msgid "Previous"
+msgstr ""
+
+#: src/gui.py:155
+msgid "Upgrading the system..."
+msgstr ""
+
+#: src/gui.py:205 src/gui.py:300
+msgid "Critical Error"
+msgstr ""
+
+#: src/gui.py:206
+msgid ""
+"An error ocurred while planning the upgrade procedure, this is usually "
+"caused by faulty Network Connection or wrong repo address."
+msgstr ""
+
+#: src/gui.py:213
+msgid "Not enough free space"
+msgstr ""
+
+#: src/gui.py:214
+#, python-format
+msgid ""
+"This upgrade requires at least <b>%s MB</b> free space, please use another "
+"repository or remove some files to make a space for upgrade operation."
+msgstr ""
+
+#: src/gui.py:226
+msgid "Check results..."
+msgstr ""
+
+#: src/gui.py:247
+msgid "Removing unsupported packages..."
+msgstr ""
+
+#: src/gui.py:250
+msgid "Installing new package management system..."
+msgstr ""
+
+#: src/gui.py:258
+msgid "Step 1 Completed"
+msgstr ""
+
+#: src/gui.py:288
+msgid "Upgrading to Pardus 2011..."
+msgstr ""
+
+#: src/gui.py:301
+msgid ""
+"An error ocurred while upgrading the system, this is usually caused by a "
+"repository problem.\n"
+"Please try again later."
+msgstr ""
+
+#: src/gui.py:323
+msgid "Configuring for Pardus 2011..."
+msgstr ""
+
+#: src/gui.py:336
+msgid "Running Post Upgrade Operations..."
+msgstr ""
+
+#: src/gui.py:354
+msgid "Rebooting to the Pardus 2011..."
+msgstr ""
+
+#: src/gui.py:381
+#, python-format
+msgid "Installing: <b>%s</b>"
+msgstr ""
+
+#: src/gui.py:383
+#, python-format
+msgid "Installed: <b>%s</b>"
+msgstr ""
+
+#: src/gui.py:385
+#, python-format
+msgid "Upgraded: <b>%s</b>"
+msgstr ""
+
+#: src/gui.py:387
+#, python-format
+msgid "Configuring: <b>%s</b>"
+msgstr ""
+
+#: src/gui.py:389
+#, python-format
+msgid "Configured: <b>%s</b>"
+msgstr ""
+
+#: src/gui.py:391
+#, python-format
+msgid "Removing: <b>%s</b>"
+msgstr ""
+
+#: src/gui.py:393
+#, python-format
+msgid "Removed: <b>%s</b>"
+msgstr ""
+
+#: src/gui.py:414
+#, python-format
+msgid "Downloading: <b>%s</b>"
+msgstr ""
+
+#: src/main.py:34 src/main.py:52 ui/ui_main.py:60 ui/ui_mainscreen.py:61
+msgid "Upgrade Manager"
+msgstr ""
+
+#: src/main.py:35
+msgid "You must have super user privileges to launch upgrade-manager"
+msgstr ""
+
+#: src/main.py:53
+msgid ""
+"There are uncompleted upgrade steps left.\n"
+"Do you want to continue from this step ? (Recommended)"
+msgstr ""
+
+#: ui/ui_main.py:62
+msgid "Are you ready to upgrade your system to Pardus 2011?"
+msgstr ""
+
+#: ui/ui_main.py:63
+msgid "Exit"
+msgstr ""
+
+#: ui/ui_mainscreen.py:62 ui/ui_screen_1.py:61
+msgid "Welcome to Upgrade Manager"
+msgstr ""
+
+#: ui/ui_screen_1.py:62
+msgid ""
+"In order to upgrade your Pardus 2009 system to Pardus 2011, Upgrade Manager "
+"needs to check your computer.<br/><br/>This operation includes, installed "
+"package information and available free space on your computer.<br/><br/"
+"><b>Upgrading procedure can be problematic use at your own risk.</b>"
+msgstr ""
+
+#: ui/ui_screen_2.py:65 ui/ui_screen_3.py:56 ui/ui_screen_4.py:40
+#: ui/ui_screen_5.py:81
+msgid "Analyzing your Computer"
+msgstr ""
+
+#: ui/ui_screen_2.py:66
+msgid "In order to upgrade your system, you must select an upgrade repository:"
+msgstr ""
+
+#: ui/ui_screen_2.py:67
+msgid "Stable Repository (Recommended)"
+msgstr ""
+
+#: ui/ui_screen_2.py:68
+msgid "Testing Repository"
+msgstr ""
+
+#: ui/ui_screen_2.py:69
+msgid "Devel Repository"
+msgstr ""
+
+#: ui/ui_screen_2.py:70
+msgid "Manual Repository :"
+msgstr ""
+
+#: ui/ui_screen_3.py:57
+msgid "Following packages are not available in selected repository:"
+msgstr ""
+
+#: ui/ui_screen_3.py:58
+msgid ""
+"If you continue with this repository you will no longer use some "
+"applications provided by these packages."
+msgstr ""
+
+#: ui/ui_screen_3.py:59
+msgid "Remove unsupported packages"
+msgstr ""
+
+#: ui/ui_screen_4.py:41
+msgid "Do you want to continue?"
+msgstr ""
+
+#: ui/ui_screen_5.py:82
+msgid "Upgrading packages..."
+msgstr ""
