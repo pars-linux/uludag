@@ -223,7 +223,7 @@ msgstr "Si vous utilisez ce dépôt, alors vous ne pourrez plus utiliser certain
 
 #: ui/ui_screen_3.py:59
 msgid "Remove unsupported packages"
-msgstr "Désintallation des paquets non gérés"
+msgstr "Désinstallation des paquets non gérés"
 
 #: ui/ui_screen_4.py:41
 msgid "Do you want to continue?"
