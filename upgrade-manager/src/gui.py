@@ -292,10 +292,17 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
     # Step 2 Threaded Method
     def step_2_start(self):
         # Lets Update !
-        self.iface.upgradeSystem()
+        self._step2_success = self.iface.upgradeSystem()
 
     # Step 2 Threaded Method Finalize
     def step_2_end(self):
+        if not self._step2_success:
+            QMessageBox.critical(self, _("Critical Error"),
+                                       _("An error ocurred while upgrading the system, "\
+                                         "this is usually caused by a repository problem.\n"\
+                                         "Please try again later."))
+            sys.exit(1)
+
         self.log("STEP 2 COMPLETED", "GUI")
         # Mark the step
         self.logger.markStep(3)

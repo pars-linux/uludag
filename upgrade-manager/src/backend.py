@@ -171,19 +171,22 @@ class Iface(QObject, Singleton):
         self.log("STARTING TO RE-BUILD PISI DB", "BACKEND")
         os.system('pisi rdb -y')
         self.log("RE-BUILDING PISI DB COMPLETED", "BACKEND")
-        # self.parent.hideMessage()
 
-        self.log("GETTING UPGRADABLE PACKAGES", "PISI")
-        upgrade_list = pisi.api.list_upgradable()
-        self._nof_packgages = len(upgrade_list)
-        self.log("I FOUND %d PACKAGES TO UPGRADE" % self._nof_packgages, "PISI")
+        try:
+            self.log("GETTING UPGRADABLE PACKAGES", "PISI")
+            upgrade_list = pisi.api.list_upgradable()
+            self._nof_packgages = len(upgrade_list)
+            self.log("I FOUND %d PACKAGES TO UPGRADE" % self._nof_packgages, "PISI")
 
-        self.emit(SIGNAL("notify(PyQt_PyObject)"), _("Calculating dependencies..."))
+            self.emit(SIGNAL("notify(PyQt_PyObject)"), _("Calculating dependencies..."))
 
-        # Upgrade the system
-        self.log("STARTING TO UPGRADE", "PISI")
-        pisi.api.upgrade(upgrade_list)
-        self.log("PACKAGE UPGRADE COMPLETED", "PISI")
+            # Upgrade the system
+            self.log("STARTING TO UPGRADE", "PISI")
+            pisi.api.upgrade(upgrade_list)
+            self.log("PACKAGE UPGRADE COMPLETED", "PISI")
+        except:
+            self.log("PACKAGE UPGRADE FAILED SOMETHING WENT WRONG PLEASE TRY AGAIN LATER", "PISI")
+            return False
 
         # Write down Nof packages has been upgraded
         file('/tmp/nof_package_upgraded','w').write(str(self._nof_packgages))
@@ -210,6 +213,8 @@ class Iface(QObject, Singleton):
 
         # Write down Nof packages has been upgraded
         file('/tmp/nof_package_upgraded','w').write(str(self._nof_packgages))
+
+        return True
 
     def configureSystem(self):
         # Configure Pending !
