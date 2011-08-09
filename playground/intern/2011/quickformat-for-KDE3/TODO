@@ -2,3 +2,6 @@
 
 - Need firewire devices test
 
+09 Aug 2011
+
+- Setup script might discover dependencies independently from PiSi
