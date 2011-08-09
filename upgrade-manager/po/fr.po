@@ -199,39 +199,39 @@ msgstr "Vous devez choisir un dépôt de mise à niveau."
 
 #: ui/ui_screen_2.py:67
 msgid "Stable Repository (Recommended)"
-msgstr "Kararlı Depo (Önerilen)"
+msgstr "Dépôt stable (recommandé)"
 
 #: ui/ui_screen_2.py:68
 msgid "Testing Repository"
-msgstr "Test Deposu"
+msgstr "Test du dépôt"
 
 #: ui/ui_screen_2.py:69
 msgid "Devel Repository"
-msgstr "Geliştirme Deposu"
+msgstr "Dépôt de développement"
 
 #: ui/ui_screen_2.py:70
 msgid "Manual Repository :"
-msgstr "Özel Depo Kullan :"
+msgstr "Dépôt manuel :"
 
 #: ui/ui_screen_3.py:57
 msgid "Following packages are not available in selected repository:"
-msgstr "Aşağıdaki paketler seçilen yeni depoda mevcut değiller:"
+msgstr "Les paquets suivants ne sont pas disponibles dans le dépôt choisi :"
 
 #: ui/ui_screen_3.py:58
 msgid "If you continue with this repository you will no longer use some applications provided by these packages."
-msgstr "Bu depo ile devam ederseniz, bu paketler tarafından sağlanan uygulamalara erişemeyeceksiniz."
+msgstr "Si vous utilisez ce dépôt, alors vous ne pourrez plus utiliser certaines applications fournies par ces paquets."
 
 #: ui/ui_screen_3.py:59
 msgid "Remove unsupported packages"
-msgstr "Desteklenmeyen paketleri kaldır"
+msgstr "Désintallation des paquets non gérés"
 
 #: ui/ui_screen_4.py:41
 msgid "Do you want to continue?"
-msgstr "Devam etmek istiyor musunuz?"
+msgstr "Voulez-vous continuer ?"
 
 #: ui/ui_screen_5.py:82
 msgid "Upgrading packages..."
-msgstr "Paketler güncelleniyor..."
+msgstr "Mise à jour des paquets..."
 
 #~ msgid "PIXMAP - 09 to 11 Logo"
 #~ msgstr "LOGO"
