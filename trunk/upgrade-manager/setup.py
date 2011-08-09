@@ -225,7 +225,7 @@ if "update_messages" in sys.argv:
 
 setup(
       name              = PROJECT,
-      version           = 1.0,
+      version           = 1.1,
       description       = unicode("Upgrade Manager"),
       license           = unicode("GPL"),
       author            = "Pardus Developers",
