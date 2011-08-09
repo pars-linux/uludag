@@ -106,96 +106,96 @@ msgstr ""
 
 #: src/gui.py:323
 msgid "Configuring for Pardus 2011..."
-msgstr "Pardus 2011 için yapılandırılıyor..."
+msgstr "Configuration pour Pardus 2011..."
 
 #: src/gui.py:336
 msgid "Running Post Upgrade Operations..."
-msgstr "Güncelleme sonrası işler yapılıyor..."
+msgstr "Lancement des opération d'après mise à niveau..."
 
 #: src/gui.py:354
 msgid "Rebooting to the Pardus 2011..."
-msgstr "Pardus 2011 için yeniden başlatılıyor..."
+msgstr "Redémarrage..."
 
 #: src/gui.py:381
 #, python-format
 msgid "Installing: <b>%s</b>"
-msgstr "Yükleniyor: <b>%s</b>"
+msgstr "Installation de : <b>%s</b>"
 
 #: src/gui.py:383
 #, python-format
 msgid "Installed: <b>%s</b>"
-msgstr "Yüklendi: <b>%s</b>"
+msgstr "Installé : <b>%s</b>"
 
 #: src/gui.py:385
 #, python-format
 msgid "Upgraded: <b>%s</b>"
-msgstr "Güncellendi: <b>%s</b>"
+msgstr "Mis à niveau : <b>%s</b>"
 
 #: src/gui.py:387
 #, python-format
 msgid "Configuring: <b>%s</b>"
-msgstr "Yapılandırılıyor: <b>%s</b>"
+msgstr "Configuration de  : <b>%s</b>"
 
 #: src/gui.py:389
 #, python-format
 msgid "Configured: <b>%s</b>"
-msgstr "Yapılandırıldı: <b>%s</b>"
+msgstr "Configuré : <b>%s</b>"
 
 #: src/gui.py:391
 #, python-format
 msgid "Removing: <b>%s</b>"
-msgstr "Siliniyor: <b>%s</b>"
+msgstr "Désinstallation : <b>%s</b>"
 
 #: src/gui.py:393
 #, python-format
 msgid "Removed: <b>%s</b>"
-msgstr "Silindi: <b>%s</b>"
+msgstr "Désinstallé : <b>%s</b>"
 
 #: src/gui.py:414
 #, python-format
 msgid "Downloading: <b>%s</b>"
-msgstr "İndiriliyor: <b>%s</b>"
+msgstr "Téléchargement de : <b>%s</b>"
 
 #: src/main.py:34 src/main.py:52 ui/ui_main.py:60 ui/ui_mainscreen.py:61
 msgid "Upgrade Manager"
-msgstr "Güncelleme Yöneticisi"
+msgstr "Assistant de mise à niveau"
 
 #: src/main.py:35
 msgid "You must have super user privileges to launch upgrade-manager"
-msgstr "Güncelleme Yöneticisi'ni kullanabilmek için yetkili kullanıcı haklarına sahip olmalısınız"
+msgstr "Vous devez avoir les droits d'administration pour lancer l'assistant de mise à niveau de Pardus"
 
 #: src/main.py:53
 msgid ""
 "There are uncompleted upgrade steps left.\n"
 "Do you want to continue from this step ? (Recommended)"
 msgstr ""
-"Tamamlanmamış güncelleme adımları bulunuyor.\n"
-"En son tamamlanan adımdan başlamak ister misiniz ? (Önerilen)"
+"Il reste des étapes pour finir la mise à niveau.\n"
+"Voulez-vous continuer ? (Recommandé)"
 
 #: ui/ui_main.py:62
 msgid "Are you ready to upgrade your system to Pardus 2011?"
-msgstr "Sisteminizi Pardus 2011'e güncellemeye hazır mısınız?"
+msgstr "Êtes-vous prêt à mettre à niveau votre système vers Pardus 2011 ?"
 
 #: ui/ui_main.py:63
 msgid "Exit"
-msgstr "Çıkış"
+msgstr "Quitter"
 
 #: ui/ui_mainscreen.py:62 ui/ui_screen_1.py:61
 msgid "Welcome to Upgrade Manager"
-msgstr "Güncelleme Yöneticisi'ne Hoş Geldiniz"
+msgstr "Bienvenue dans l'assistant de mise à niveau"
 
 #: ui/ui_screen_1.py:62
 msgid "In order to upgrade your Pardus 2009 system to Pardus 2011, Upgrade Manager needs to check your computer.<br/><br/>This operation includes, installed package information and available free space on your computer.<br/><br/><b>Upgrading procedure can be problematic use at your own risk.</b>"
-msgstr "Sisteminizde kurulu Pardus 2009'u, Pardus 2011'e güncellemeden önce bazı kontrollerin yapılması gerekiyor.<br/><br/>Bu kontroller sisteminizde yüklü paketleri ve kullanılabilecek boş alan hesaplamasını içerir.<br/><br/><b>Güncelleme işlemi bazı sorunlara sebep olabilir, oluşabilecek sorunların sorumluluğu size aittir.</b>"
+msgstr "Pour mettre à niveau votre Pardus 2009 vers Pardus 2011, l'assistant doit vérifier votre ordinateur :<br/><br/>Recueil d'information sur les paquets installés, espace disque disponible.<br/><br/><b>Attention, la procédure de mise à niveau n'est pas sans risques.</b>"
 
 #: ui/ui_screen_2.py:65 ui/ui_screen_3.py:56 ui/ui_screen_4.py:40
 #: ui/ui_screen_5.py:81
 msgid "Analyzing your Computer"
-msgstr "Bilgisayarınız kontrol ediliyor"
+msgstr "Analyse de votre ordinateur"
 
 #: ui/ui_screen_2.py:66
 msgid "In order to upgrade your system, you must select an upgrade repository:"
-msgstr "Güncelleme için bir güncelleme deposu seçmelisiniz:"
+msgstr "Vous devez choisir un dépôt de mise à niveau."
 
 #: ui/ui_screen_2.py:67
 msgid "Stable Repository (Recommended)"
