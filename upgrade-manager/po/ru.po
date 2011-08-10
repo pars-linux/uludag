@@ -38,7 +38,7 @@ msgstr "Проверка вашей системы..."
 
 #: src/gui.py:138 src/gui.py:143 ui/ui_mainscreen.py:65
 msgid "Next"
-msgstr ""
+msgstr "Вперед"
 
 #: src/gui.py:139 ui/ui_main.py:61
 msgid "Yes, Upgrade"
@@ -50,11 +50,11 @@ msgstr "Отмена"
 
 #: src/gui.py:144 ui/ui_mainscreen.py:64
 msgid "Previous"
-msgstr ""
+msgstr "Назад"
 
 #: src/gui.py:155
 msgid "Upgrading the system..."
-msgstr ""
+msgstr "Обновление системы..."
 
 #: src/gui.py:205 src/gui.py:300
 msgid "Critical Error"
@@ -79,11 +79,11 @@ msgstr ""
 
 #: src/gui.py:247
 msgid "Removing unsupported packages..."
-msgstr ""
+msgstr "Удаление неподдерживаемых пакетов..."
 
 #: src/gui.py:250
 msgid "Installing new package management system..."
-msgstr ""
+msgstr "Установка новой системы управления пакетами..."
 
 #: src/gui.py:258
 msgid "Step 1 Completed"
@@ -109,12 +109,12 @@ msgstr ""
 
 #: src/gui.py:354
 msgid "Rebooting to the Pardus 2011..."
-msgstr ""
+msgstr "Перезагрузка в Pardus 2011..."
 
 #: src/gui.py:381
 #, python-format
 msgid "Installing: <b>%s</b>"
-msgstr ""
+msgstr "Установка: <b>%s</b>"
 
 #: src/gui.py:383
 #, python-format
@@ -149,7 +149,7 @@ msgstr ""
 #: src/gui.py:414
 #, python-format
 msgid "Downloading: <b>%s</b>"
-msgstr ""
+msgstr "Загрузка: <b>%s</b>"
 
 #: src/main.py:34 src/main.py:52 ui/ui_main.py:60 ui/ui_mainscreen.py:61
 msgid "Upgrade Manager"
