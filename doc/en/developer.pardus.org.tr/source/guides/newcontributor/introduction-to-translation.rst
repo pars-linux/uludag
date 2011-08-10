@@ -100,8 +100,8 @@ Obtaining and Translating Projects
       lock button. This way, you tell that you are working on the file and going
       to unlock it when the translation is done and commited.
 
-   #. Now you are aware of the workflow and begin translating. Translate the po file to your
-      language in a PO editor such as Lokalize.
+   #. Now you are aware of the workflow and begin translating. Translate the po
+      file to your language in a PO editor such as Lokalize.
 
    #. Check the integrity of your file before you commit it.
 
@@ -111,7 +111,8 @@ Obtaining and Translating Projects
 Committing Projects
 *******************
 
-   Once you finished your translation work, commit the file using the same interface.
+   Once you finished your translation work, commit the file using the same
+   interface.
 
    Use the upload button marked below for your language next to each project,
    then click the browse button to locate your translated file.
@@ -165,6 +166,20 @@ Being Aware of Translation Updates
    project's *Watch* button. See the image:
 
       .. image:: images/watch-project.png
+
+**************************
+Translation Ratio Treshold
+**************************
+
+   There is a treshold of translation ratio of a new locale for us to support
+   it officially. Besides, languages which have translation ratios below these
+   tresholds will not be supported.
+
+   * *YALI* and *yali-branding-pardus* must be >= 90% (each)
+   * *Mudur* >= 75%
+   * *All managers* must be >= 75% (each)
+   * *Overall ratio* >= 65
+
 
 **Last Modified Date:** |today|
 
