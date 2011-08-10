@@ -22,19 +22,19 @@ msgstr ""
 
 #: src/backend.py:181
 msgid "Calculating dependencies..."
-msgstr ""
+msgstr "Расчет зависимостей..."
 
 #: src/gui.py:123
 msgid "Welcome to Upgrade Manager..."
-msgstr ""
+msgstr "Добро пожаловать в менеджер обновлений..."
 
 #: src/gui.py:127
 msgid "Select Upgrade Repository..."
-msgstr ""
+msgstr "Выберите репозиторий для обновлений..."
 
 #: src/gui.py:131 src/gui.py:174
 msgid "Checking your system..."
-msgstr ""
+msgstr "Проверка вашей системы..."
 
 #: src/gui.py:138 src/gui.py:143 ui/ui_mainscreen.py:65
 msgid "Next"
@@ -87,7 +87,7 @@ msgstr ""
 
 #: src/gui.py:258
 msgid "Step 1 Completed"
-msgstr ""
+msgstr "Шаг 1 завершен"
 
 #: src/gui.py:288
 msgid "Upgrading to Pardus 2011..."
@@ -101,7 +101,7 @@ msgstr ""
 
 #: src/gui.py:323
 msgid "Configuring for Pardus 2011..."
-msgstr ""
+msgstr "Настройка Pardus 2011..."
 
 #: src/gui.py:336
 msgid "Running Post Upgrade Operations..."
