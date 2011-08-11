@@ -9,32 +9,29 @@ How to be a Contributor?
 
 :Version: 0.3
 
+Process of Being Pardus Contributor
+***********************************
+
+Pardus needs accurate and continuous contributions. Even if there is no precise period that we look for, it is rare for applications to be accepted from people contributing for less than 6 months. If you are unsure if your contributions constitute as accurate and continuous, ask your mentors_ or the other Pardus community members (They do not need to be Pardus Contributor, just a part of the community). Maybe they can even add some kind of assistance to your application.
+
 ******************************
 Applicant Tracking on Bugzilla
 ******************************
 
-- Developers and testers can follow this process in order to be a contributor.
+- Developers and testers can follow this process in order to be a Pardus contributor.
 - For translators applications can be held from `Pardus translation website`_. (See :ref:`introduction-to-translation`)
 - For bug triagers please see `Bug reporting and triaging`_
 - For content writers please see `Documentation`_
 - For designers please see `Graphical design and multimedia`_
-
-    ..  image:: images/application_process.png
-
-Some Hints :)
-=============
-
-#. If you want to hasten the developer applicant process, you can directly choose bug and work on it. After then request for beeing contributor developer with your ready junior job and wait only for review.
-#. If you are/were an intern at Pardus, you can directly request for beeing contributor developer with your internship project and wait only for review.
 
 ****************
 Tracking Process
 ****************
 
 Application Request
--------------------
-#. The applicant creates a `bugzilla`_ account if he/she has not yet.
-#. The applicant reports a bug for the related component of "Yeni Katkıcı / New Contributor" product.
+--------------------
+
+#. Report a bug for the related component of "Yeni Katkıcı / New Contributor" product.
 #. The summary of the bug likes "Testçi veya Geliştirici Adaylık Ad Soyad" "Tester or Developer Applicant Name Surname".
 #. The bug details part should contains the answers of the following personal questions.
 
@@ -47,80 +44,30 @@ Application Request
     #. Please attach your short background as an attachment or give links.
     #. If the application is for development, the applicant should also attach these informations that you have already done:
         #. The prepared packages for Pardus repositories, or a improvement for Pardus projects.
-        #. The bugs that you have fixed at bugs.pardus.org.tr.
+        #. The bugs that you have fixed at `Pardus bugzilla`_.
         #. The other contributions that you have done for other distributions.
+        #. If you are/were an intern at Pardus, you can directly request for beeing contributor developer with your internship.
+    #. What are your plans and ideas for Pardus in the near and far future.
 
-#. If the application has missing parts or the applicant report his/her bug carelessly, it will be closed with status RESOLVED/INVALID by mentoring coordinators and the `Rejection Stock Response`_ is given.
+#. If the application has missing parts or the applicant report his/her bug carelessly, it will be closed with status RESOLVED/INVALID by application coordinators and the `Rejection Stock Response`_ is given.
 #. If the applicant gets a rejection at that stage, in the case of his/her effort to Pardus, he/she can reapply in 3 months to be tester, 6 months to be developer.
 
-Sending Quiz to Applicant
--------------------------
-#. The mentoring coordinators send quiz as an attachment with `Quiz Sending Stock Response`_ and give the `QUIZSEND`_ keyword to the report.
-#. The applicant sends an approval, that he/she starts the quiz.
-#. After 10 days of the approval, the applicant commits his/her answers as an attachment to the bug.
-#. If the applicant is not responsive in these 10 days, his/her bug will be closed with status RESOLVED/INVALID by mentoring coordinators and the `Rejection Stock Response`_ is given.
-#. If the applicant is responsive and has send the answers in 10 days:
-    #. Mentoring coordinators give `ANSWERREC`_ keyword to the report.
-    #. The answers will be reviewed by mentors and review comments will be given on bugzilla.
-#. If the quiz review is negative, his/her bug will be closed with status RESOLVED/INVALID by mentoring coordinators and the `Rejection Stock Response`_ is given.
-#. If the applicant gets a rejection at that stage, in the case of his/her effort to Pardus, he/she can reapply in 3 months to be tester, 6 months to be developer.
-#. If the quiz review is positive:
-    #. If the applicant applied as a tester, the test team membership will be accepted and tester list permissions will be given. The acceptence anouncement will be done by mentor coordinators as a `Tester Acceptence Stock Response`_ comment to the bug and the bug status will be changed to RESOLVED/FIXED.
-    #. If the applicant applied as a developer, the mentor that controls the quiz give `QUIZAPPROVED`_ keyword to the report and sends `Quiz Approved Stock Response`_ to the quiz is approved..
-
-
-Assigning Mentor
-----------------
-#. The applicant choose a job from `Junior Jobs`_ and give this junior job id on his/her new contributor report as a bug comment.
-    #. The mentor will assign according to this job. `MENTORASSIGNED`_ keyword is added to the report.
-    #. When a mentor is assigned to an applicant, the mentoring coordinators send `Assigning Mentor Stock Response`_ as a comment to the bug. 
-    #. At this stage playground svn permissions will be given to applicant. (The mentor will send and an email to sys. Admin for giving permissions.)
-    #. Send ping mails regularly to mentor@pardus.org.tr in order to assign mentor to an applicant.
-
-But there are some constraints about assigning:
-    #. One mentor has maximum 3 applicants
-    #. If all mentors has 3 applicants, the newest applicant should have to wait in the queue. It will be announced by mentoring coordinators with a `Waiting in the Queue Stock Response`_ comment.
-
-Mentoring Process
------------------
-#. Assigned mentor will keep an eye on applicant (see  :ref:`newcontributor-mentors`)
-    #. The mentor assign the bug to the applicant and change the status to **ASSIGNED**.
-    #. The mentor also depend the `Junior Jobs`_ to the application request bug report.
-    #. When the applicant is ready for junior job review:
-        #. Change the junior job bug status to RESOLVED/FIXED
-        #. Send a message to `technical mail list`_
-            Mail subject format will be::
-
-               <Applicant Name> - <simple junior job information> pb#<BugID> JUNIORJOB Review
-
-            Example::
-
-                Semen Cirit - mangonel is a simple application launcher for KDE4 pb#17311 JUNIORJOB Review
-
-         #. Add `technical mail list`_ archive link to the junior job bug URL.
-    #. After the message of the applicant, mentor start to review his bug on `technical mail list`_.
-    #. Related to junior jobs difficulty, some additional junior jobs can be demanded from the applicant. (Mentor can guide applicant to find a new job.)
-#. The applicant process finishing time is related to his/her mentor.
-#. The owner of the packages that applicant has done will be his/her mentor.
-#. If applicant has finished his/her jobs in time the applicant enters applicant progress observation period.
-
-Applicant Progress Observation
-------------------------------
-#. All svn permissions excluding "stable" will be given to applicant. (The mentor will send and an email to sys. Admin for giving permissions.)
-#. Mentor will keep an eye on applicant, until the applicant reach a good level.
-    #. He/she joins the package review process of the packages that the applicant done.
-    #. He/she controls that the applicant fullfills the `responsibilities of the contributor`_ like continuity, accuracy, determination, communication.
-#. If the applicant can not pass this process, his/her bug will be closed with status RESOLVED/INVALID by the mentor and related comment will be given. (The mentor will send and an email to sys. Admin for removing permissions.)
-#. If the applicant can pass this process:
-    #. When the mentor has been satisfied by applicant, mentor sends a comment as he/she leaves the applicant and changes the bug status as RESOLVED/FIXED
-    #. The applicant is called as developer.
-    #. All svn permissions will be given to new developer. (The mentor will send and an email to sys. Admin for giving permissions)
-    #. All packages and works that the developer has done during his candidacy, are transfered to him/her
+IRC Interview
+-------------
+#. Application coordinators triage **NEW** status bugs weekly on "New Contributor" product and make a interview plan with mentor group and choose an interviewer.
+#. Assign the bug to interviewer
+#. Interviewer write and ask the time of the IRC meeting if the applicant is available at that time.
+#. Besides the interviewer, the mentors that have reviewed  applicants' contributions can also attend to IRC meeting
+#. At some cases some additional jobs can be demanded, and contributor application can be delayed and wait for this jobs.
+    #. The new bugs depend to the applicant bug in order to track easily
+#. According to applicant contributions and the result of the meeting, interviewer give their opinions on applicant bug
+    #. If the opinions are positive, interviewer change the bug status to **RESOLVED/FIXED**
+    #. If not the bug status is taken to **RESOLVED/INVALID** and `Rejection Stock Response`_ will be given
 
 Guiding Rules
 -------------
-#. Until a mentor has been assigned to applicant, the mentor coordinators will track the process. (Traking the applicant bugs, sending quiz, assign mentor etc.)
-#. After the mentor has assigned, the mentor is responsible for the applicant. (Tracking his/her applicants, sending necessary comments to bug and editing it etc.)
+#. Until an interviewer has been assigned to applicant, the mentor coordinators will track the process. (Traking the applicant bugs, assign interviewer etc.)
+#. After the interviewer has assigned, he/she is responsible for the applicant. (Tracking his/her applicants, sending necessary comments to bug and editing it etc.)
 
 
 ***************
@@ -159,45 +106,6 @@ Rejection Stock Response
 
 
 
-Quiz Sending Stock Response
----------------------------
-    ::
-
-       Merhaba (Aday),
-
-       Pardus (Geliştirici / Testçi) Adayı Başvurunuz alınmıştır.
-       Pardus'a göstermiş olduğunuz ilgi için teşekkür ederiz.
-
-       Adayların Pardus ve (Geliştirme / Test) süreci hakkında araştırma yaparken öğrenmelerini
-       hedefleyen sınavımızı ekte bulabilirsiniz.
-
-       Soruları ve altına yanıtları yazarak AD_SOYAD isminde kaydettiğiniz dosyayı ek olarak gönderiniz.
-
-       Bol şanslar.
-
-       Kaynaklar,
-       http://developer.pardus.org.tr
-       http://tr.pardus-wiki.org
-
-    ::
-
-       Hi (Applicant),
-
-       Thank you for your Pardus (Developer / Tester) Candidate application. We appreciate
-       your interest in contributing to Pardus.
-
-       Please take your time to answer the (Developer / Tester) Candidate Quiz given to you as an
-       attachment. The aim of this quiz is to give candidates a general Pardus
-       knowledge while they dig for answers.
-
-       Send the file named NAME_SURNAME that includes the questions and answers as an attachment.
-
-       Good luck.
-
-       Resources:
-       http://developer.pardus.org.tr
-       http://en.pardus-wiki.org
-
 Tester Acceptence Stock Response
 --------------------------------
 
@@ -227,66 +135,6 @@ Waiting in the Queue Stock Response
         uring this period, you can continue to contribute to Pardus, and may shorten your mentoring process.
 
 
-
-Quiz Approved Stock Response
------------------------------
-
-::
-
-    (Quiz'i kontrol eden kişi, sorular ile ilgili yorumlarını yazar ve gerekli istek ve beklentilerini
-    bildirir ve daha sonra aşağıda bulunan bilgileri yoruma ekler)
-
-    Bu aşamadan sonra bugzilla'da bulunan junior job'lardan[1] admins@pardus.org.tr üzerine atanmış
-    olan istediğiniz raporlardan birini seçip bug id'sini
-    yoruma ekleyiniz.
-
-    [1] http://bugs.pardus.org.tr/buglist.cgi?keywords=JUNIORJOBS&query_format=advanced&keywords_type=allwords&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED
-
-::
-
-   (The mentor that had controled the quiz responses, give his/her explanation and declare his/her desire and expectation.
-   Then add the below information to bug comment)
-
-   After this period you have choose a junior job [1] that assigned to admins@pardus.org.tr and send its bug id to this bug report as a comment.
-
-   Regards,
-
-   [1] http://bugs.pardus.org.tr/buglist.cgi?keywords=JUNIORJOBS&query_format=advanced&keywords_type=allwords&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED
-
-
-Assigning Mentor Stock Response
--------------------------------
-
-::
-
-    Seçmiş olduğunuz iş doğrultusunda size x kişisi mentor olarak atanmıştır.
-
-    SVN hesabı açabilmemiz için, aşağıda bulunan bağlantı doğrultusunda elde ettiğiniz çıktıyı bize göndermeniz gerekmektedir [1].
-    Bu çıktıyı gönderdiğinizde http://svn.pardus.org.tr/uludag/trunk/playground/ ve http://svn.pardus.org.tr/pardus/playground/
-    dizinlerine yazma izinleri verilecektir.
-
-    Bu aşamadan sonra seçmiş olduğunuz işi gerçeklemeye başlayabilirsiniz. Gerekli gördüğünüz durumlarda mentor'unuz ile
-     iletişime geçmekten çekinmeyiniz.
-
-    Bu aşamada yapacağınız çalışmalar için şimdiden kolaylıklar dileriz.
-
-    [1] http://developer.pardus.org.tr/guides/newcontributor/creating-svn-account.html
-
-::
-
-    Related to your responses, Gökçen Eraslan is assigned you as a mentor.
-
-    In order to creating an svn account, you have to add the output that is mentioned below link [1] as a comment to this bug.
-
-    When you send this output, the write permissions for http://svn.pardus.org.tr/uludag/trunk/playground/
-    and http://svn.pardus.org.tr/pardus/playground/ directories will be given.
-
-    After this period you can start to implement the chosen junior job. If you need , please do not hesitate to communicate with your mentor.
-
-    Regards,
-
-    [1] http://developer.pardus.org.tr/guides/newcontributor/creating-svn-account.html
-
 .. _Junior Jobs: http://bugs.pardus.org.tr/buglist.cgi?keywords=JUNIORJOBS&query_format=advanced&keywords_type=allwords&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED
 .. _bugzilla: http://bugs.pardus.org.tr
 .. _Pardus translation website: http://translate.pardus.org.tr
@@ -299,3 +147,5 @@ Assigning Mentor Stock Response
 .. _MENTORASSIGNED: http://bugs.pardus.org.tr/describekeywords.cgi
 .. _responsibilities of the contributor: http://developer.pardus.org.tr/guides/newcontributor/new-contributor-guide.html#responsibilities-of-a-contributor
 .. _technical mail list: http://liste.pardus.org.tr/mailman/listinfo/teknik
+.. _Pardus bugzilla: http://bugs.pardus.org.tr
+.. _expected developer: http://developer.pardus.org.tr/guides/newcontributor/developer_roles.html#expected-developer

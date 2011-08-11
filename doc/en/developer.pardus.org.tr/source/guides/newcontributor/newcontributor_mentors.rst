@@ -3,27 +3,30 @@
 Contributor Candidate Mentoring
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+**Last Modified Date:** 11-08-2011
+
+:Author: Semen Cirit
+
 Who are mentors?
 ================
 
-The somponent supervisors and lead developers are the mentors of developer candidates.
-
+The component supervisors and lead developers are the mentors of developer candidates. (See `developer roles`_ for details)
 
 What is the aim of this notion?
 ===============================
 
-Related to :ref:`newcontributor-index` Pardus Project assigns mentors to new contributors. Pardus Mentoring process allows new contributors to work together with experienced developers as mentors. The mentoring process is all related about contributions for test and development.
+Pardus `mentoring process`_ allows expected developers to work together with experienced developers as mentors. The aim is to increase Linux knowledge and Pardus Linux Community with helping contributors profusely.
 
 What are Mentoring Responsibilities?
 ====================================
 
-There are not a specific set of rules for mentoring but we can give a few general hints in order to assist a contributor:
+There are not a specific set of rules for mentoring but we can give a few general hints in order to assist a new contributor:
 
     A mentor may get a large volume of questions from new contributors, therefore they:
         * Should be familiar with the subjects that will be mentoring
         * Should be available and easy to reach
         * Should know how to balance your time and resources
 
-**Last Modified Date:** |today|
 
-:Author: Semen Cirit
+.. _developer roles: http://developer.pardus.org.tr/guides/newcontributor/developer_roles.html
+.. _mentoring process: http://developer.pardus.org.tr/guides/newcontributor/mentoring_process.html

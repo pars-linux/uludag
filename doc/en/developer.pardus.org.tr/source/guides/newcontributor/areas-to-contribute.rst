@@ -9,19 +9,7 @@ In this section, we'll briefly cover the different areas to contribute.
 Development
 *********************
 
-If you want to a developer you must first look :ref:`developer-roles`.
-
-Software Development
---------------------
-
-You can contribute your knowledge and labour on developing new softwares for Pardus or improving already written ones. For achieving this purpose, you should be familiar with different Pardus technologies like COMAR, PiSi, Mudur, Kaptan to understand how things work in Pardus Linux.
-
-Packaging
----------
-
-If you're interested in preparing PiSi packages, but don't have much experience yet, you can read the :ref:`pisi-packaging-guide` to get involved in the packaging process.
-
-For contributor applications: :ref:`how-to-be-contributor`
+If you want to a Pardus developer you can first look :ref:`developer-roles` and :ref:`mentoring-process` and for developer applications: :ref:`how-to-be-contributor`.
 
 ****
 Test
