@@ -11,10 +11,10 @@ msgstr ""
 "PO-Revision-Date: 2011-06-06 12:06+0300\n"
 "Last-Translator: Gökmen Göksel <gokmen@pardus.org.tr>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 
 #: src/backend.py:168
 msgid "Re-building the Package DB..."
@@ -61,8 +61,13 @@ msgid "Critical Error"
 msgstr "Kritik Hata"
 
 #: src/gui.py:206
-msgid "An error ocurred while planning the upgrade procedure, this is usually caused by faulty Network Connection or wrong repo address."
-msgstr "Güncelleme planı yapılırken bir hata meydana geldi, bu tip hatalar genellikle sorunlu Ağ Bağlantıları ya da yanlış depolar kullanıldığında meydana gelir."
+msgid ""
+"An error ocurred while planning the upgrade procedure, this is usually "
+"caused by faulty Network Connection or wrong repo address."
+msgstr ""
+"Güncelleme planı yapılırken bir hata meydana geldi, bu tip hatalar "
+"genellikle sorunlu Ağ Bağlantıları ya da yanlış depolar kullanıldığında "
+"meydana gelir."
 
 #: src/gui.py:213
 msgid "Not enough free space"
@@ -70,8 +75,12 @@ msgstr "Yeterli boş alan yok"
 
 #: src/gui.py:214
 #, python-format
-msgid "This upgrade requires at least <b>%s MB</b> free space, please use another repository or remove some files to make a space for upgrade operation."
-msgstr "Bu güncelleme için en az <b>%s MB</b> boş alan gerekiyor, lütfen başka bir depo seçin ya da bazı dosyaları silerek sisteminizde yer açın. "
+msgid ""
+"This upgrade requires at least <b>%s MB</b> free space, please use another "
+"repository or remove some files to make a space for upgrade operation."
+msgstr ""
+"Bu güncelleme için en az <b>%s MB</b> boş alan gerekiyor, lütfen başka bir "
+"depo seçin ya da bazı dosyaları silerek sisteminizde yer açın. "
 
 #: src/gui.py:226
 msgid "Check results..."
@@ -95,10 +104,12 @@ msgstr "Pardus 2011'e güncelleniyor..."
 
 #: src/gui.py:301
 msgid ""
-"An error ocurred while upgrading the system, this is usually caused by a repository problem.\n"
+"An error ocurred while upgrading the system, this is usually caused by a "
+"repository problem.\n"
 "Please try again later."
 msgstr ""
-"Güncelleme gerçekleştirilirken bir hata meydana geldi, bu tip hatalar genellikle depo hataları ile ilgilidir.\n"
+"Güncelleme gerçekleştirilirken bir hata meydana geldi, bu tip hatalar "
+"genellikle depo hataları ile ilgilidir.\n"
 "Lütfen daha sonra tekrar deneyin."
 
 #: src/gui.py:323
@@ -107,7 +118,7 @@ msgstr "Pardus 2011 için yapılandırılıyor..."
 
 #: src/gui.py:336
 msgid "Running Post Upgrade Operations..."
-msgstr "Güncelleme sonrası işler yapılıyor..."
+msgstr "Güncelleme sonrası işlemler yapılıyor..."
 
 #: src/gui.py:354
 msgid "Rebooting to the Pardus 2011..."
@@ -159,7 +170,9 @@ msgstr "Güncelleme Yöneticisi"
 
 #: src/main.py:35
 msgid "You must have super user privileges to launch upgrade-manager"
-msgstr "Güncelleme Yöneticisi'ni kullanabilmek için yetkili kullanıcı haklarına sahip olmalısınız"
+msgstr ""
+"Güncelleme Yöneticisi'ni kullanabilmek için yetkili kullanıcı haklarına "
+"sahip olmalısınız"
 
 #: src/main.py:53
 msgid ""
@@ -167,7 +180,7 @@ msgid ""
 "Do you want to continue from this step ? (Recommended)"
 msgstr ""
 "Tamamlanmamış güncelleme adımları bulunuyor.\n"
-"En son tamamlanan adımdan başlamak ister misiniz ? (Önerilen)"
+"En son tamamlanan adımdan başlamak ister misiniz? (Önerilen)"
 
 #: ui/ui_main.py:62
 msgid "Are you ready to upgrade your system to Pardus 2011?"
@@ -182,11 +195,17 @@ msgid "Welcome to Upgrade Manager"
 msgstr "Güncelleme Yöneticisi'ne Hoş Geldiniz"
 
 #: ui/ui_screen_1.py:62
-msgid "In order to upgrade your Pardus 2009 system to Pardus 2011, Upgrade Manager needs to check your computer.<br/><br/>This operation includes, installed package information and available free space on your computer.<br/><br/><b>Upgrading procedure can be problematic use at your own risk.</b>"
+msgid ""
+"In order to upgrade your Pardus 2009 system to Pardus 2011, Upgrade Manager "
+"needs to check your computer.<br/><br/>This operation includes, installed "
+"package information and available free space on your computer.<br/><br/"
+"><b>Upgrading procedure can be problematic use at your own risk.</b>"
 msgstr ""
-"Sisteminizde kurulu Pardus 2009'u, Pardus 2011'e güncellemeden önce bazı kontrollerin yapılması gerekiyor.<br/><br/>"
-"Bu kontroller sisteminizde yüklü paketleri ve kullanılabilecek boş alan hesaplamasını içerir.<br/><br/>"
-"<b>Güncelleme işlemi bazı sorunlara sebep olabilir, oluşabilecek sorunların sorumluluğu size aittir.</b>"
+"Sisteminizde kurulu Pardus 2009'u, Pardus 2011'e güncellemeden önce bazı "
+"kontrollerin yapılması gerekiyor.<br/><br/>Bu kontroller sisteminizde yüklü "
+"paketleri ve kullanılabilecek boş alan hesaplamasını içerir.<br/><br/"
+"><b>Güncelleme işlemi bazı sorunlara sebep olabilir, oluşabilecek sorunların "
+"sorumluluğu size aittir.</b>"
 
 #: ui/ui_screen_2.py:65 ui/ui_screen_3.py:56 ui/ui_screen_4.py:40
 #: ui/ui_screen_5.py:81
@@ -218,8 +237,12 @@ msgid "Following packages are not available in selected repository:"
 msgstr "Aşağıdaki paketler seçilen yeni depoda mevcut değiller:"
 
 #: ui/ui_screen_3.py:58
-msgid "If you continue with this repository you will no longer use some applications provided by these packages."
-msgstr "Bu depo ile devam ederseniz, bu paketler tarafından sağlanan uygulamalara erişemeyeceksiniz."
+msgid ""
+"If you continue with this repository you will no longer use some "
+"applications provided by these packages."
+msgstr ""
+"Bu depo ile devam ederseniz, bu paketler tarafından sağlanan uygulamalara "
+"erişemeyeceksiniz."
 
 #: ui/ui_screen_3.py:59
 msgid "Remove unsupported packages"
