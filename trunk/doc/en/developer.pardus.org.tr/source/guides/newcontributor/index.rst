@@ -9,6 +9,7 @@ New Contributors
 
    new-contributor-guide.rst
    areas-to-contribute.rst
+   mentoring_process.rst
    how-to-be-contributor.rst
    creating-svn-account.rst
    introduction-to-translation.rst

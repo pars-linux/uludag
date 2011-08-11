@@ -61,4 +61,13 @@ Email discussions among specific Pardus contributors takes place on the `e-mail 
 
 The ``#pardus-devel`` ``#pardus`` channel on FreeNode IRC network is home to many Pardus contributors for real-time communication.
 
+Process of Being Pardus Contributor
+===================================
+
+Pardus needs accurate and continuous contributions. Even if there is no precise period that we look for, it is rare for applications to be accepted from people contributing for less than 6 months. If you are unsure if your contributions constitute as accurate and continuous, ask your mentors_ or the other Pardus community members (They do not need to be Pardus Contributor, just a part of the community). Maybe they can even add some kind of assistance to your application.
+
+See details for the process of the `contributor application`_.
+
 .. _e-mail lists: http://developer.pardus.org.tr/guides/communication/mailing_lists.html
+.. _mentors: http://developer.pardus.org.tr/newcontributor/mentoring_process.html
+.. _contributor application: http://developer.pardus.org.tr/newcontributor/how-to-be-contributor.html
