@@ -71,7 +71,7 @@ msgstr "Недостаточно свободного места"
 #: src/gui.py:214
 #, python-format
 msgid "This upgrade requires at least <b>%s MB</b> free space, please use another repository or remove some files to make a space for upgrade operation."
-msgstr ""
+msgstr "Для обновления потребуется, по крайней мере <b>%s mb</b> свободного пространства. Используйте другой репозиторий иди удалите некоторые файлы, чтобы освободить пространство для операций обновления."
 
 #: src/gui.py:226
 msgid "Check results..."
@@ -98,6 +98,8 @@ msgid ""
 "An error ocurred while upgrading the system, this is usually caused by a repository problem.\n"
 "Please try again later."
 msgstr ""
+"Произошла ошибка при обновлении системы, обычно это вызвано проблемами в репозитории.\n"
+"Пожалуйста, повторите попытку позже."
 
 #: src/gui.py:323
 msgid "Configuring for Pardus 2011..."
@@ -105,7 +107,7 @@ msgstr "Настройка Pardus 2011..."
 
 #: src/gui.py:336
 msgid "Running Post Upgrade Operations..."
-msgstr ""
+msgstr "Выполнение операций после обновления..."
 
 #: src/gui.py:354
 msgid "Rebooting to the Pardus 2011..."
@@ -164,6 +166,8 @@ msgid ""
 "There are uncompleted upgrade steps left.\n"
 "Do you want to continue from this step ? (Recommended)"
 msgstr ""
+"Есть не завершенные шаги обновления.\n"
+"Вы хотите продолжить с этого шага? (Рекомендуется)"
 
 #: ui/ui_main.py:62
 msgid "Are you ready to upgrade your system to Pardus 2011?"
@@ -179,7 +183,7 @@ msgstr "Добро пожаловать в менеджер обновления
 
 #: ui/ui_screen_1.py:62
 msgid "In order to upgrade your Pardus 2009 system to Pardus 2011, Upgrade Manager needs to check your computer.<br/><br/>This operation includes, installed package information and available free space on your computer.<br/><br/><b>Upgrading procedure can be problematic use at your own risk.</b>"
-msgstr ""
+msgstr "Для того чтобы обновить вашу систему Pardus 2009 до Pardus 2011, менеджеру обновлений необходимо проверить ваш компьютер.<br/><br/>Эта операция включается в себя сбор информации о пакетах и свободном пространстве на вашем жестком диске.<br/><br/><b>Обновление может быть проблематично, используйте её на свой страх и риск.</b> В противном случае, установите чистую систему Pardus 2011."
 
 #: ui/ui_screen_2.py:65 ui/ui_screen_3.py:56 ui/ui_screen_4.py:40
 #: ui/ui_screen_5.py:81
@@ -188,7 +192,7 @@ msgstr "Анализ вашего компьютера"
 
 #: ui/ui_screen_2.py:66
 msgid "In order to upgrade your system, you must select an upgrade repository:"
-msgstr ""
+msgstr "Для того чтобы обновить вашу систему, вам необходимо выбрать репозиторий:"
 
 #: ui/ui_screen_2.py:67
 msgid "Stable Repository (Recommended)"
