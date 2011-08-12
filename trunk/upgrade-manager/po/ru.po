@@ -62,7 +62,7 @@ msgstr "Критическая ошибка"
 
 #: src/gui.py:206
 msgid "An error ocurred while planning the upgrade procedure, this is usually caused by faulty Network Connection or wrong repo address."
-msgstr ""
+msgstr "Произошла ошибка при планировании процедуры обновления, это, как правило, вызвано не рабочим интернет соединением или неверным адресом репозитория."
 
 #: src/gui.py:213
 msgid "Not enough free space"
@@ -212,7 +212,7 @@ msgstr "Следующие пакеты не доступны в выбранн�
 
 #: ui/ui_screen_3.py:58
 msgid "If you continue with this repository you will no longer use some applications provided by these packages."
-msgstr ""
+msgstr "Если вы продолжите обновление с этого репозиторий, вы не сможете пользоваться некоторыми приложениями, предоставляемые этими пакетами."
 
 #: ui/ui_screen_3.py:59
 msgid "Remove unsupported packages"
