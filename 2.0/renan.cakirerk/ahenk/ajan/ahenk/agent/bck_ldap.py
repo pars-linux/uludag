@@ -193,7 +193,7 @@ def ldap_go(options, q_in, q_out, q_force):
             search = conn.search_s("cn=admins, dc=groups, %s" % domain, ldap.SCOPE_BASE, attrlist=['member'])
             if len(search):
                 admins = []
-                for dn, attrs in search:
+                for _dn, attrs in search:
                     admins.extend(attrs['member'])
                 q_out.put({"subscribe": admins})
 
