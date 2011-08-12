@@ -278,7 +278,7 @@ border-left: 0px solid rgba(255,255,255,50);
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">padding-left: 10px;</string>
+         <string notr="true">padding-left: 10px; color: white;</string>
         </property>
         <item>
          <property name="text">
