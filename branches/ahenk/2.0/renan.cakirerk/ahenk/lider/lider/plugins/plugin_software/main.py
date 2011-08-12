@@ -59,6 +59,9 @@ class WidgetModule(QtGui.QWidget, Ui_widgetSoftware, plugins.PluginWidget):
         self.connect(self.listRepositories, QtCore.SIGNAL("customContextMenuRequested(QPoint)"), self.__slot_list_menu)
         self.connect(self.listRepositories, QtCore.SIGNAL("itemDoubleClicked(QListWidgetItem*)"), self.__slot_list_click)
 
+        self.connect(self.pushAddRepo, QtCore.SIGNAL("clicked()"), self.__slot_repo_add)
+        self.connect(self.pushRemoveRepo, QtCore.SIGNAL("clicked()"), self.__slot_repo_remove)
+
     def showEvent(self, event):
         """
             Things to do before widget is shown.

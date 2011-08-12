@@ -713,13 +713,13 @@ border-left: 1px solid rgba(255,255,255,0);
     QTreeView::branch:has-children:!has-siblings:closed,
     QTreeView::branch:closed:has-children:has-siblings {
         border-image: none;
-        image: url(:/icons/expand.png);
+        image: url(:/icons/expand.gif);
     }
 
     QTreeView::branch:open:has-children:!has-siblings,
     QTreeView::branch:open:has-children:has-siblings  {
         border-image: none;
-        image: url(:/icons/collapse.png);
+        image: url(:/icons/collapse.gif);
 	}
 
 	QTreeView::branch:has-siblings:!adjoins-item {
@@ -1113,12 +1113,15 @@ border-radius: 0px;</string>
                     </property>
                     <property name="iconSize">
                      <size>
-                      <width>20</width>
-                      <height>20</height>
+                      <width>15</width>
+                      <height>15</height>
                      </size>
                     </property>
+                    <property name="verticalScrollMode">
+                     <enum>QAbstractItemView::ScrollPerPixel</enum>
+                    </property>
                     <property name="horizontalScrollMode">
-                     <enum>QAbstractItemView::ScrollPerItem</enum>
+                     <enum>QAbstractItemView::ScrollPerPixel</enum>
                     </property>
                     <property name="autoExpandDelay">
                      <number>0</number>
@@ -1139,19 +1142,22 @@ border-radius: 0px;</string>
                      <bool>true</bool>
                     </property>
                     <property name="headerHidden">
-                     <bool>true</bool>
+                     <bool>false</bool>
                     </property>
                     <property name="expandsOnDoubleClick">
                      <bool>true</bool>
                     </property>
                     <attribute name="headerVisible">
-                     <bool>false</bool>
+                     <bool>true</bool>
                     </attribute>
                     <attribute name="headerCascadingSectionResizes">
                      <bool>true</bool>
                     </attribute>
                     <attribute name="headerHighlightSections">
-                     <bool>false</bool>
+                     <bool>true</bool>
+                    </attribute>
+                    <attribute name="headerMinimumSectionSize">
+                     <number>50</number>
                     </attribute>
                     <column>
                      <property name="text">
@@ -2076,7 +2082,7 @@ background: url(:/icons/internet256.png) no-repeat;
              <property name="margin">
               <number>0</number>
              </property>
-             <item row="0" column="2">
+             <item row="1" column="2">
               <spacer name="horizontalSpacer_2">
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
@@ -2089,7 +2095,7 @@ background: url(:/icons/internet256.png) no-repeat;
                </property>
               </spacer>
              </item>
-             <item row="1" column="0" colspan="4">
+             <item row="2" column="0" colspan="4">
               <widget class="QRadioButton" name="radioPolicyInherit">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -2126,7 +2132,7 @@ background: url(:/icons/internet256.png) no-repeat;
                </property>
               </widget>
              </item>
-             <item row="0" column="0">
+             <item row="1" column="0">
               <widget class="QRadioButton" name="radioPolicyNoInherit">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -2163,7 +2169,7 @@ background: url(:/icons/internet256.png) no-repeat;
                </property>
               </widget>
              </item>
-             <item row="0" column="1">
+             <item row="1" column="1">
               <widget class="QPushButton" name="pushCopyPolicy">
                <property name="toolTip">
                 <string>Inherit policies from parent</string>
@@ -2177,113 +2183,113 @@ background: url(:/icons/internet256.png) no-repeat;
                </property>
               </widget>
              </item>
-            </layout>
-           </widget>
-          </item>
-          <item>
-           <widget class="QGroupBox" name="groupBox_7">
-            <property name="title">
-             <string/>
-            </property>
-            <property name="flat">
-             <bool>true</bool>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_8">
-             <property name="spacing">
-              <number>5</number>
-             </property>
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>5</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>5</number>
-             </property>
-             <item>
-              <spacer name="horizontalSpacer">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
+             <item row="0" column="2">
+              <widget class="QGroupBox" name="groupBox_7">
+               <property name="title">
+                <string/>
                </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>0</width>
-                 <height>0</height>
-                </size>
+               <property name="flat">
+                <bool>true</bool>
                </property>
-              </spacer>
-             </item>
-             <item>
-              <widget class="QPushButton" name="pushReset">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>25</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>25</height>
-                </size>
-               </property>
-               <property name="text">
-                <string>Revert</string>
-               </property>
-               <property name="icon">
-                <iconset resource="data.qrc">
-                 <normaloff>:/icons/reset32.png</normaloff>:/icons/reset32.png</iconset>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="pushApply">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>25</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>25</height>
-                </size>
-               </property>
-               <property name="text">
-                <string>Save and Apply</string>
-               </property>
-               <property name="icon">
-                <iconset resource="data.qrc">
-                 <normaloff>:/icons/apply32.png</normaloff>:/icons/apply32.png</iconset>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="pushSave">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>25</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>25</height>
-                </size>
-               </property>
-               <property name="text">
-                <string>Save</string>
-               </property>
-               <property name="icon">
-                <iconset resource="data.qrc">
-                 <normaloff>:/icons/apply32.png</normaloff>:/icons/apply32.png</iconset>
-               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_8">
+                <property name="spacing">
+                 <number>5</number>
+                </property>
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>5</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>5</number>
+                </property>
+                <item>
+                 <spacer name="horizontalSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushReset">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Revert</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="data.qrc">
+                    <normaloff>:/icons/reset32.png</normaloff>:/icons/reset32.png</iconset>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushApply">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Save and Apply</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="data.qrc">
+                    <normaloff>:/icons/apply32.png</normaloff>:/icons/apply32.png</iconset>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushSave">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Save</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="data.qrc">
+                    <normaloff>:/icons/apply32.png</normaloff>:/icons/apply32.png</iconset>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
               </widget>
              </item>
             </layout>
@@ -2608,7 +2614,6 @@ border-radius: 0px;</string>
  </widget>
  <resources>
   <include location="data.qrc"/>
-  <include location="depolar/uludag/branches/ahenk/2.0/renan.cakirerk/ahenk/lider/lider/data.qrc"/>
  </resources>
  <connections/>
 </ui>
