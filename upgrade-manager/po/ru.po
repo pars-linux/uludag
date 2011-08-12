@@ -18,7 +18,7 @@ msgstr ""
 
 #: src/backend.py:168
 msgid "Re-building the Package DB..."
-msgstr ""
+msgstr "Перестройка пакетной базы данных..."
 
 #: src/backend.py:181
 msgid "Calculating dependencies..."
@@ -75,7 +75,7 @@ msgstr ""
 
 #: src/gui.py:226
 msgid "Check results..."
-msgstr ""
+msgstr "Проверка результатов..."
 
 #: src/gui.py:247
 msgid "Removing unsupported packages..."
@@ -119,7 +119,7 @@ msgstr "Установка: <b>%s</b>"
 #: src/gui.py:383
 #, python-format
 msgid "Installed: <b>%s</b>"
-msgstr ""
+msgstr "Установлено: <b>%s</b>"
 
 #: src/gui.py:385
 #, python-format
