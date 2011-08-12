@@ -11,7 +11,9 @@ from PyQt4 import QtCore
 
 # Generated UI module
 from lider.ui_folder import Ui_dialogFolder
+from lider.helpers import i18n
 
+i18n = i18n.i18n
 
 class DialogFolder(QtGui.QDialog, Ui_dialogFolder):
     """
@@ -79,8 +81,8 @@ class DialogFolder(QtGui.QDialog, Ui_dialogFolder):
 
     def accept(self):
         if not len(self.editName.text()):
-            QtGui.QMessageBox.warning(self, "Folder", "Folder name is missing")
+            QtGui.QMessageBox.warning(self, i18n("Folder"), i18n("Folder name is missing"))
         elif not len(self.editLabel.text()):
-            QtGui.QMessageBox.warning(self, "Folder", "Folder label is missing")
+            QtGui.QMessageBox.warning(self, i18n("Folder"), i18n("Folder label is missing"))
         else:
             QtGui.QDialog.accept(self)

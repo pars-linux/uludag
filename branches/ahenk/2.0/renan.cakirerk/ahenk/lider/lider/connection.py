@@ -19,6 +19,9 @@ from lider.ui_connection import Ui_dialogConnection
 from lider.helpers import profile
 from lider.helpers import profilereader
 from lider.helpers import profilewriter
+from lider.helpers import i18n
+
+i18n = i18n.i18n
 
 class DialogConnection(QtGui.QDialog, Ui_dialogConnection):
     """
@@ -152,17 +155,17 @@ class DialogConnection(QtGui.QDialog, Ui_dialogConnection):
         """
         # if self.editDomain.isModified() and not len(self.editDomain.text()):
         if not len(self.comboDomain.currentText()):
-            self.labelWarning.setText("Domain name is required.")
+            self.labelWarning.setText(i18n("Domain name is required."))
             if set_focus:
                 self.comboDomain.setFocus(QtCore.Qt.OtherFocusReason)
             return False
         if self.editHost.isModified() and not len(self.editHost.text()):
-            self.labelWarning.setText("Server address is required.")
+            self.labelWarning.setText(i18n("Server address is required."))
             if set_focus:
                 self.editHost.setFocus(QtCore.Qt.OtherFocusReason)
             return False
         if self.editUser.isModified() and not len(self.editUser.text()):
-            self.labelWarning.setText("User name is required.")
+            self.labelWarning.setText(i18n("User name is required."))
             if set_focus:
                 self.editUser.setFocus(QtCore.Qt.OtherFocusReason)
             return False

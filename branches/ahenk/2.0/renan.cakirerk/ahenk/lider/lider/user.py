@@ -11,7 +11,9 @@ from PyQt4 import QtCore
 
 # Generated UI module
 from lider.ui_user import Ui_dialogUser
+from lider.helpers import i18n
 
+i18n = i18n.i18n
 
 class DialogUser(QtGui.QDialog, Ui_dialogUser):
     """
@@ -104,8 +106,8 @@ class DialogUser(QtGui.QDialog, Ui_dialogUser):
             Checks written passwords are same or not. If not, warn user.
         """
         if not len(self.editName.text()):
-            QtGui.QMessageBox.warning(self, "User", "Username is missing")
+            QtGui.QMessageBox.warning(self, i18n("User"), i18n("Username is missing"))
         elif not (self.editPassword.text() == self.editConfirmPassword.text()):
-            QtGui.QMessageBox.warning(self, "User", "Passwords do not match.")
+            QtGui.QMessageBox.warning(self, i18n("User"), i18n("Passwords do not match."))
         else:
             QtGui.QDialog.accept(self)
