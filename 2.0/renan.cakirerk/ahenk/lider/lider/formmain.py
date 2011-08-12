@@ -1108,8 +1108,9 @@ class FormMain(QtGui.QWidget, Ui_Main):
         if widget.get_type() == plugins.TYPE_SINGLE:
             if item and ((item.name in self.talk.online) or item.folder):
                 self.pushApply.show()
+                self.pushApply.setEnabled(True)
             else:
-                self.pushApply.hide()
+                self.pushApply.setEnabled(False)
             self.policy = self.__load_policy()
             if self.policy != None:
                 widget.policy = self.policy
@@ -1140,8 +1141,6 @@ class FormMain(QtGui.QWidget, Ui_Main):
         """
             Triggered when user toggles debug button.
         """
-        print "show/hide log"
-
         if state:
             self.textLog.show()
         else:
@@ -1325,7 +1324,6 @@ class FormMain(QtGui.QWidget, Ui_Main):
             add_recursive(item)
 
         count = len(self.all_items)
-        print "all items count %d " %count
 
     def __slot_filter_nodes(self):
         self.collectItems()
