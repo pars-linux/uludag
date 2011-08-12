@@ -14,6 +14,7 @@ import sys
 TYPE_SINGLE = 0
 TYPE_GLOBAL = 1
 
+PLUGIN_FILE = "/etc/ahenk/plugins/plugins.conf"
 
 def load_plugins(root="plugins"):
     """
@@ -26,9 +27,19 @@ def load_plugins(root="plugins"):
     """
     root = os.path.realpath(os.path.join(os.path.dirname(__file__), "..", "plugins"))
     plugins = {}
-    for plugin_dir in os.listdir(root):
+
+    if not os.path.exists(PLUGIN_FILE):
+        return {}
+
+    data = open(PLUGIN_FILE, "r")
+    plugin = data.readlines()
+    for line in plugin:
+        print "plugin dir"
+        plugin_dir = line.strip()
+        print plugin_dir
         if not plugin_dir.startswith("plugin_"):
             continue
+
         plugin_file = os.path.join(root, plugin_dir, "main.py")
         name = plugin_dir.split("plugin_")[1]
         locals = import_plugin(plugin_file)
