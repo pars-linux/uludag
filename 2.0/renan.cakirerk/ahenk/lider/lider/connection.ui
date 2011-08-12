@@ -680,7 +680,7 @@ border-left: 1px solid rgba(255,255,255,0);
         color: #333333;
         border: 1px solid gray;
         border-radius: 3px;
-        font-size: 17px
+        font-size: 13px
     }
 
     QLineEdit:hover {
@@ -942,7 +942,7 @@ border-left: 0px solid rgba(255,255,255,50);</string>
      </property>
      <property name="font">
       <font>
-       <family>URW Gothic L</family>
+       <family>Liberation Sans</family>
        <pointsize>17</pointsize>
        <weight>75</weight>
        <bold>true</bold>
@@ -1042,7 +1042,7 @@ background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0
           </property>
           <item>
            <property name="text">
-            <string>aergaergare</string>
+            <string></string>
            </property>
           </item>
          </widget>
