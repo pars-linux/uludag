@@ -32,6 +32,9 @@ from lider.helpers import directory
 from lider.helpers import plugins
 from lider.helpers import talk
 from lider.helpers import wrappers
+from lider.helpers import i18n
+
+i18n = i18n.i18n
 
 # Custom widgets
 from lider.widgets.list_item import list_item
@@ -82,13 +85,13 @@ class FormMain(QtGui.QWidget, Ui_Main):
 
         # Popup for items
         self.menu = wrappers.Menu(self)
-        self.menu.newAction("Add Folder", wrappers.Icon("folder48"), self.__slot_new_folder)
-        self.menu.newAction("Add Computer", wrappers.Icon("computer48"), self.__slot_new_computer)
-        self.menu.newAction("Add User", wrappers.Icon("user48"), self.__slot_new_user)
-        self.menu.newAction("Add Group", wrappers.Icon("group48"), self.__slot_new_group)
+        self.menu.newAction(i18n("Add Folder"), wrappers.Icon("folder48"), self.__slot_new_folder)
+        self.menu.newAction(i18n("Add Computer"), wrappers.Icon("computer48"), self.__slot_new_computer)
+        self.menu.newAction(i18n("Add User"), wrappers.Icon("user48"), self.__slot_new_user)
+        self.menu.newAction(i18n("Add Group"), wrappers.Icon("group48"), self.__slot_new_group)
         self.menu.addSeparator()
-        self.menu.newAction("Modify", wrappers.Icon("preferences32"), self.__slot_modify)
-        self.menu.newAction("Delete", wrappers.Icon("edit-delete"), self.__slot_delete)
+        self.menu.newAction(i18n("Modify"), wrappers.Icon("preferences32"), self.__slot_modify)
+        self.menu.newAction(i18n("Delete"), wrappers.Icon("edit-delete"), self.__slot_delete)
 
         # Backends
         self.talk = talk.Talk()
@@ -225,19 +228,19 @@ class FormMain(QtGui.QWidget, Ui_Main):
         if backend == "directory":
             self.status_directory = status
             if status == "online":
-                self.__log("Directory connection established.", "directory", "info")
+                self.__log(i18n("Directory connection established."), "directory", "info")
             elif status == "offline":
-                self.__log("Directory connection closed.", "directory", "info")
+                self.__log(i18n("Directory connection closed."), "directory", "info")
             elif status == "error":
-                self.__log("Directory connection error.", "directory", "error")
+                self.__log(i18n("Directory connection error."), "directory", "error")
         elif backend == "talk":
             self.status_talk = status
             if status == "online":
-                self.__log("XMPP connection established.", "talk", "info")
+                self.__log(i18n("XMPP connection established."), "talk", "info")
             elif status == "offline":
-                self.__log("XMPP connection closed.", "talk", "info")
+                self.__log(i18n("XMPP connection closed."), "talk", "info")
             elif status == "error":
-                self.__log("XMPP connection error.", "talk", "error")
+                self.__log(i18n("XMPP connection error."), "talk", "error")
 
         if self.status_directory == "offline":
             icon = wrappers.Icon("offline48")
@@ -437,10 +440,10 @@ class FormMain(QtGui.QWidget, Ui_Main):
         except directory.DirectoryConnectionError:
             self.__update_status("directory", "error")
             # TODO: Disconnect
-            QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
+            QtGui.QMessageBox.warning(self, i18n("Connection Error"), i18n("Connection lost. Please re-connect."))
             return None
         except directory.DirectoryError:
-            QtGui.QMessageBox.warning(self, "Connection Error", "Unable to get policy.")
+            QtGui.QMessageBox.warning(self, i18n("Connection Error"), i18n("Unable to get policy."))
             return None
         if len(results):
             dn, attrs = results[0]
@@ -492,14 +495,14 @@ class FormMain(QtGui.QWidget, Ui_Main):
                     traceback.print_exc()
                     self.__update_status("directory", "error")
                     # TODO: Disconnect
-                    QtGui.QMessageBox.warning(self, "Connection Error", "Unable to connect to %s" % dialog.get_host())
+                    QtGui.QMessageBox.warning(self, i18n("Connection Error"), "Unable to connect to %s" % dialog.get_host())
                     #return UNABLE_TO_CONNECT
                 try:
                     self.directory_label = self.directory.get_name()
                 except directory.DirectoryError:
                     self.__update_status("directory", "error")
                     # TODO: Disconnect
-                    QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
+                    QtGui.QMessageBox.warning(self, i18n("Connection Error"), i18n("Connection lost. Please re-connect."))
                     #return CONNECTION_LOST
                 self.__update_status("directory", "online")
             else:
@@ -610,9 +613,9 @@ class FormMain(QtGui.QWidget, Ui_Main):
         """
         sender = str(sender)
         if status == talk.Online and sender not in self.talk.online:
-            self.__log("XMPP user is online: %s" % sender, "talk", "debug")
+            self.__log(i18n("XMPP user is online: %s") % sender, "talk", "debug")
         elif status == talk.Offline and sender in self.talk.online:
-            self.__log("XMPP user is offline: %s" % sender, "talk", "debug")
+            self.__log(i18n("XMPP user is offline: %s") % sender, "talk", "debug")
         self.__update_icon(sender, status)
 
         if self.tabPolicy.currentIndex() != 0:
@@ -783,7 +786,7 @@ class FormMain(QtGui.QWidget, Ui_Main):
             Triggered when user wants to modify an item
         """
         if len(self.items) != 1:
-            QtGui.QMessageBox.warning(self, "Warning", "Only one item at a time can be modified.")
+            QtGui.QMessageBox.warning(self, i18n("Warning", "Only one item at a time can be modified."))
             return
 
         item = self.items[0]
@@ -842,13 +845,13 @@ class FormMain(QtGui.QWidget, Ui_Main):
         except directory.DirectoryConnectionError:
             self.__update_status("directory", "error")
             # TODO: Disconnect
-            QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
+            QtGui.QMessageBox.warning(self, i18n("Connection Error"), i18n("Connection lost. Please re-connect."))
             return
         except directory.DirectoryAccessError:
-            QtGui.QMessageBox.warning(self, "Connection Error", "Insufficient access.")
+            QtGui.QMessageBox.warning(self, i18n("Connection Error"), i18n("Insufficient access."))
             return
         except directory.DirectoryError:
-            QtGui.QMessageBox.warning(self, "Connection Error", "Unable to modify item.")
+            QtGui.QMessageBox.warning(self, i18n("Connection Error"), i18n("Unable to modify item."))
             return
 
         parent = item.parent()
@@ -862,16 +865,16 @@ class FormMain(QtGui.QWidget, Ui_Main):
             Triggered when user wants to delete an item
         """
         if len(self.items) != 1:
-            QtGui.QMessageBox.warning(self, "Warning", "Only one item at a time can be deleted.")
+            QtGui.QMessageBox.warning(self, i18n("Warning"), i18n("Only one item at a time can be deleted."))
             return
 
         item = self.items[0]
 
         if item.folder and len(self.directory.search(item.dn, scope="one", fields=["objectClass"])) > 0:
-            QtGui.QMessageBox.warning(self, "Warning", "The selected item is a non-empty directory. It cannot be deleted.")
+            QtGui.QMessageBox.warning(self, i18n("Warning"), i18n("The selected item is a non-empty directory. It cannot be deleted."))
             return
 
-        reply = QtGui.QMessageBox.question(self, "Warning", "This is not undoable. Are you sure you want to remove?", QtGui.QMessageBox.Yes, QtGui.QMessageBox.No )
+        reply = QtGui.QMessageBox.question(self, i18n("Warning"), i18n("This is not undoable. Are you sure you want to remove?"), QtGui.QMessageBox.Yes, QtGui.QMessageBox.No )
         if reply == QtGui.QMessageBox.Yes:
             try:
                 self.directory.delete_item(item.dn)
@@ -881,13 +884,13 @@ class FormMain(QtGui.QWidget, Ui_Main):
             except directory.DirectoryConnectionError:
                 self.__update_status("directory", "error")
                 # TODO: Disconnect
-                QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
+                QtGui.QMessageBox.warning(self, i18n("Connection Error"), i18n("Connection lost. Please re-connect."))
                 return
             except directory.DirectoryAccessError:
-                QtGui.QMessageBox.warning(self, "Connection Error", "Insufficient access.")
+                QtGui.QMessageBox.warning(self, i18n("Connection Error"), i18n("Insufficient access."))
                 return
             except directory.DirectoryError:
-                QtGui.QMessageBox.warning(self, "Connection Error", "Unable to delete item.")
+                QtGui.QMessageBox.warning(self, i18n("Connection Error"), i18n("Unable to delete item."))
                 return
 
     def __slot_new_computer(self):
@@ -913,13 +916,13 @@ class FormMain(QtGui.QWidget, Ui_Main):
             except directory.DirectoryConnectionError:
                 self.__update_status("directory", "error")
                 # TODO: Disconnect
-                QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
+                QtGui.QMessageBox.warning(self, i18n("Connection Error"), i18n("Connection lost. Please re-connect."))
                 return
             except directory.DirectoryAccessError:
-                QtGui.QMessageBox.warning(self, "Connection Error", "Insufficient access.")
+                QtGui.QMessageBox.warning(self, i18n("Connection Error"), i18n("Insufficient access."))
                 return
             except directory.DirectoryError:
-                QtGui.QMessageBox.warning(self, "Connection Error", "Unable to add computer.")
+                QtGui.QMessageBox.warning(self, i18n("Connection Error"), i18n("Unable to add computer."))
                 return
 
             self.treeComputers.collapseItem(parent_item)
@@ -951,13 +954,13 @@ class FormMain(QtGui.QWidget, Ui_Main):
             except directory.DirectoryConnectionError:
                 self.__update_status("directory", "error")
                 # TODO: Disconnect
-                QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
+                QtGui.QMessageBox.warning(self, i18n("Connection Error"), i18n("Connection lost. Please re-connect."))
                 return
             except directory.DirectoryAccessError:
-                QtGui.QMessageBox.warning(self, "Connection Error", "Insufficient access.")
+                QtGui.QMessageBox.warning(self, i18n("Connection Error"), i18n("Insufficient access."))
                 return
             except directory.DirectoryError:
-                QtGui.QMessageBox.warning(self, "Connection Error", "Unable to add user.")
+                QtGui.QMessageBox.warning(self, i18n("Connection Error"), i18n("Unable to add user."))
                 return
 
             self.treeComputers.collapseItem(parent_item)
@@ -995,13 +998,13 @@ class FormMain(QtGui.QWidget, Ui_Main):
             except directory.DirectoryConnectionError:
                 self.__update_status("directory", "error")
                 # TODO: Disconnect
-                QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
+                QtGui.QMessageBox.warning(self, i18n("Connection Error"), i18n("Connection lost. Please re-connect."))
                 return
             except directory.DirectoryAccessError:
-                QtGui.QMessageBox.warning(self, "Connection Error", "Insufficient access.")
+                QtGui.QMessageBox.warning(self, i18n("Connection Error"), i18n("Insufficient access."))
                 return
             except directory.DirectoryError:
-                QtGui.QMessageBox.warning(self, "Connection Error", "Unable to add group.")
+                QtGui.QMessageBox.warning(self, i18n("Connection Error"), i18n("Unable to add group."))
                 return
 
             self.treeComputers.collapseItem(parent_item)
@@ -1033,13 +1036,13 @@ class FormMain(QtGui.QWidget, Ui_Main):
             except directory.DirectoryConnectionError:
                 self.__update_status("directory", "error")
                 # TODO: Disconnect
-                QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
+                QtGui.QMessageBox.warning(self, i18n("Connection Error"), i18n("Connection lost. Please re-connect."))
                 return
             except directory.DirectoryAccessError:
-                QtGui.QMessageBox.warning(self, "Connection Error", "Insufficient access.")
+                QtGui.QMessageBox.warning(self, i18n("Connection Error"), i18n("Insufficient access."))
                 return
             except directory.DirectoryError:
-                QtGui.QMessageBox.warning(self, "Connection Error", "Unable to add folder.")
+                QtGui.QMessageBox.warning(self, i18n("Connection Error"), i18n("Unable to add folder."))
                 return
 
             self.treeComputers.collapseItem(parent_item)
@@ -1179,10 +1182,10 @@ class FormMain(QtGui.QWidget, Ui_Main):
 
             msg = QtGui.QMessageBox(self)
             msg.setIcon(QtGui.QMessageBox.Question)
-            msg.setText("%d item(s) will be forced to update policy." % len(names))
-            msg.setInformativeText("Do you want to continue?")
-            msg.setStandardButtons(QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
-            msg.setDefaultButton(QtGui.QMessageBox.Yes)
+            msg.setText(i18n("%d item(s) will be forced to update policy.") % len(names))
+            msg.setInformativeText(i18n("Do you want to continue?"))
+            msg.setStandardButtons(i18n(QtGui.QMessageBox.Yes) | i18n(QtGui.QMessageBox.No))
+            msg.setDefaultButton(i18n(QtGui.QMessageBox.Yes))
 
             if msg.exec_() != QtGui.QMessageBox.Yes:
                 return
@@ -1197,10 +1200,10 @@ class FormMain(QtGui.QWidget, Ui_Main):
 
         msg = QtGui.QMessageBox(self)
         msg.setIcon(QtGui.QMessageBox.Question)
-        msg.setText("Policy will be saved.")
-        msg.setInformativeText("Do you want to continue?")
-        msg.setStandardButtons(QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
-        msg.setDefaultButton(QtGui.QMessageBox.No)
+        msg.setText(i18n("Policy will be saved."))
+        msg.setInformativeText(i18n("Do you want to continue?"))
+        msg.setStandardButtons(i18n(QtGui.QMessageBox.Yes) | i18n(QtGui.QMessageBox.No))
+        msg.setDefaultButton(i18n(QtGui.QMessageBox.No))
 
         if msg.exec_() != QtGui.QMessageBox.Yes:
             return
@@ -1243,10 +1246,10 @@ class FormMain(QtGui.QWidget, Ui_Main):
             except directory.DirectoryConnectionError, e:
                 self.__update_status("directory", "error")
                 # TODO: Disconnect
-                QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
+                QtGui.QMessageBox.warning(self, i18n("Connection Error"), i18n("Connection lost. Please re-connect."))
                 return False
             except directory.DirectoryError, e:
-                QtGui.QMessageBox.warning(self, "Connection Error", "Unable to modify node.")
+                QtGui.QMessageBox.warning(self, i18n("Connection Error"), i18n("Unable to modify node."))
                 return False
             widget.policy = self.__load_policy()
             return True
@@ -1258,9 +1261,9 @@ class FormMain(QtGui.QWidget, Ui_Main):
         if self.tabPolicy.currentIndex() != 0:
             msg = QtGui.QMessageBox(self)
             msg.setIcon(QtGui.QMessageBox.Question)
-            msg.setText("All changes will be reverted.")
-            msg.setInformativeText("Do you want to continue?")
-            msg.setStandardButtons(QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
+            msg.setText(i18n("All changes will be reverted."))
+            msg.setInformativeText(i18n("Do you want to continue?"))
+            msg.setStandardButtons(i18n(QtGui.QMessageBox.Yes) | i18n(QtGui.QMessageBox.No))
             msg.setDefaultButton(QtGui.QMessageBox.No)
 
             if msg.exec_() != QtGui.QMessageBox.Yes:
@@ -1288,9 +1291,9 @@ class FormMain(QtGui.QWidget, Ui_Main):
         """
         msg = QtGui.QMessageBox(self)
         msg.setIcon(QtGui.QMessageBox.Question)
-        msg.setText("Policy from parent directory will be copied.")
-        msg.setInformativeText("Do you want to continue?")
-        msg.setStandardButtons(QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
+        msg.setText(i18n("Policy from parent directory will be copied."))
+        msg.setInformativeText(i18n("Do you want to continue?"))
+        msg.setStandardButtons(i18n(QtGui.QMessageBox.Yes) | i18n(QtGui.QMessageBox.No))
         msg.setDefaultButton(QtGui.QMessageBox.Yes)
 
         if msg.exec_() != QtGui.QMessageBox.Yes:

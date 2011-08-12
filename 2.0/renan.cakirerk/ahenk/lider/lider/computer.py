@@ -11,7 +11,9 @@ from PyQt4 import QtCore
 
 # Generated UI module
 from lider.ui_computer import Ui_dialogComputer
+from lider.helpers import i18n
 
+i18n = i18n.i18n
 
 class DialogComputer(QtGui.QDialog, Ui_dialogComputer):
     """
@@ -104,8 +106,8 @@ class DialogComputer(QtGui.QDialog, Ui_dialogComputer):
             Checks written passwords are same or not. If not, warn user.
         """
         if not len(self.editName.text()):
-            QtGui.QMessageBox.warning(self, "Computer", "Computer name is missing")
+            QtGui.QMessageBox.warning(self, i18n("Computer"), i18n("Computer name is missing"))
         elif not (self.editPassword.text() == self.editConfirmPassword.text()):
-            QtGui.QMessageBox.warning(self, "Computer", "Passwords do not match.")
+            QtGui.QMessageBox.warning(self, i18n("Computer"), i18n("Passwords do not match."))
         else:
             QtGui.QDialog.accept(self)

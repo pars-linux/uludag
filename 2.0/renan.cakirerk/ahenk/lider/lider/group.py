@@ -11,7 +11,9 @@ from PyQt4 import QtCore
 
 # Generated UI module
 from lider.ui_group import Ui_dialogGroup
+from lider.helpers import i18n
 
+i18n = i18n.i18n
 
 class DialogGroup(QtGui.QDialog, Ui_dialogGroup):
     """
@@ -132,8 +134,8 @@ class DialogGroup(QtGui.QDialog, Ui_dialogGroup):
 
     def accept(self):
         if not len(self.editName.text()):
-            QtGui.QMessageBox.warning(self, "Group", "Group name is missing")
+            QtGui.QMessageBox.warning(self, i18n("Group"), i18n("Group name is missing"))
         elif len(self.get_members()) < 1:
-            QtGui.QMessageBox.warning(self, "Group", "There has to be at least one member.")
+            QtGui.QMessageBox.warning(self, i18n("Group"), i18n("There has to be at least one member."))
         else:
             QtGui.QDialog.accept(self)
