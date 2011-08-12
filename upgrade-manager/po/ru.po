@@ -79,7 +79,7 @@ msgstr "Проверка результатов..."
 
 #: src/gui.py:247
 msgid "Removing unsupported packages..."
-msgstr "Удаление неподдерживаемых пакетов..."
+msgstr "Удаление не поддерживаемых пакетов..."
 
 #: src/gui.py:250
 msgid "Installing new package management system..."
@@ -124,27 +124,27 @@ msgstr "Установлено: <b>%s</b>"
 #: src/gui.py:385
 #, python-format
 msgid "Upgraded: <b>%s</b>"
-msgstr ""
+msgstr "Обновлено: <b>%s</b>"
 
 #: src/gui.py:387
 #, python-format
 msgid "Configuring: <b>%s</b>"
-msgstr ""
+msgstr "Настройка: <b>%s</b>"
 
 #: src/gui.py:389
 #, python-format
 msgid "Configured: <b>%s</b>"
-msgstr ""
+msgstr "Настроено: <b>%s</b>"
 
 #: src/gui.py:391
 #, python-format
 msgid "Removing: <b>%s</b>"
-msgstr ""
+msgstr "Удаление: <b>%s</b>"
 
 #: src/gui.py:393
 #, python-format
 msgid "Removed: <b>%s</b>"
-msgstr ""
+msgstr "Удалено: <b>%s</b>"
 
 #: src/gui.py:414
 #, python-format
@@ -157,7 +157,7 @@ msgstr "Менеджер обновления"
 
 #: src/main.py:35
 msgid "You must have super user privileges to launch upgrade-manager"
-msgstr ""
+msgstr "Вы должны иметь привилегии суперпользователя для запуска менеджера обновления"
 
 #: src/main.py:53
 msgid ""
@@ -167,7 +167,7 @@ msgstr ""
 
 #: ui/ui_main.py:62
 msgid "Are you ready to upgrade your system to Pardus 2011?"
-msgstr ""
+msgstr "Готовы ли вы обновить систему до Pardus 2011?"
 
 #: ui/ui_main.py:63
 msgid "Exit"
@@ -175,7 +175,7 @@ msgstr "Выход"
 
 #: ui/ui_mainscreen.py:62 ui/ui_screen_1.py:61
 msgid "Welcome to Upgrade Manager"
-msgstr ""
+msgstr "Добро пожаловать в менеджер обновления"
 
 #: ui/ui_screen_1.py:62
 msgid "In order to upgrade your Pardus 2009 system to Pardus 2011, Upgrade Manager needs to check your computer.<br/><br/>This operation includes, installed package information and available free space on your computer.<br/><br/><b>Upgrading procedure can be problematic use at your own risk.</b>"
@@ -184,7 +184,7 @@ msgstr ""
 #: ui/ui_screen_2.py:65 ui/ui_screen_3.py:56 ui/ui_screen_4.py:40
 #: ui/ui_screen_5.py:81
 msgid "Analyzing your Computer"
-msgstr ""
+msgstr "Анализ вашего компьютера"
 
 #: ui/ui_screen_2.py:66
 msgid "In order to upgrade your system, you must select an upgrade repository:"
@@ -204,11 +204,11 @@ msgstr ""
 
 #: ui/ui_screen_2.py:70
 msgid "Manual Repository :"
-msgstr ""
+msgstr "Другой репозиторий:"
 
 #: ui/ui_screen_3.py:57
 msgid "Following packages are not available in selected repository:"
-msgstr ""
+msgstr "Следующие пакеты не доступны в выбранном репозитории:"
 
 #: ui/ui_screen_3.py:58
 msgid "If you continue with this repository you will no longer use some applications provided by these packages."
@@ -216,12 +216,12 @@ msgstr ""
 
 #: ui/ui_screen_3.py:59
 msgid "Remove unsupported packages"
-msgstr ""
+msgstr "Удаление поддерживаемых пакетов"
 
 #: ui/ui_screen_4.py:41
 msgid "Do you want to continue?"
-msgstr ""
+msgstr "Вы хотите продолжить?"
 
 #: ui/ui_screen_5.py:82
 msgid "Upgrading packages..."
-msgstr ""
+msgstr "Обновление пакетов..."
