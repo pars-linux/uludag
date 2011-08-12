@@ -196,15 +196,15 @@ msgstr "Для того чтобы обновить вашу систему, в�
 
 #: ui/ui_screen_2.py:67
 msgid "Stable Repository (Recommended)"
-msgstr ""
+msgstr "Стабильный репозиторий (stable) (Рекомендуется)"
 
 #: ui/ui_screen_2.py:68
 msgid "Testing Repository"
-msgstr ""
+msgstr "Тестируемый репозиторий (testing)"
 
 #: ui/ui_screen_2.py:69
 msgid "Devel Repository"
-msgstr ""
+msgstr "Разрабатываемый репозиторий (devel)"
 
 #: ui/ui_screen_2.py:70
 msgid "Manual Repository :"
