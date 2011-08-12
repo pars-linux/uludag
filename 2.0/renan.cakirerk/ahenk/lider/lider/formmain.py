@@ -39,7 +39,6 @@ i18n = i18n.i18n
 # Custom widgets
 from lider.widgets.list_item import list_item
 
-
 UNABLE_TO_CONNECT = 1
 CONNECTION_LOST = 2
 
@@ -68,9 +67,8 @@ class FormMain(QtGui.QWidget, Ui_Main):
         # Attach generated UI
         self.setupUi(self)
 
-
         # Fine tune UI
-        self.treeComputers.header().setResizeMode(0, QtGui.QHeaderView.Stretch)
+        #self.treeComputers.header().setResizeMode(0, QtGui.QHeaderView.Stretch)
         self.treeComputers.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
         #self.treeComputers.hide()
 

@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="/">
+    <file>icons/collapse.gif</file>
+    <file>icons/expand.gif</file>
     <file>icons/internet256.png</file>
     <file>icons/arrow-down.png</file>
     <file>icons/arrow-left2.png</file>
