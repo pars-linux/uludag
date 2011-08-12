@@ -38,6 +38,10 @@ class WidgetModule(QtGui.QWidget, Ui_widgetWeb, plugins.PluginWidget):
         # Attach generated UI
         self.setupUi(self)
 
+        # reloaded at start
+        self.webView.stop()
+        self.webView.reload()
+
         # Fine tune UI
         self.pushBack.setEnabled(False)
         self.pushForward.setEnabled(False)
