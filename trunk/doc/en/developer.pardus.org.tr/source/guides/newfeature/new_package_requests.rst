@@ -16,14 +16,12 @@ If you are not yet a contributor
 
 #. Choose your package from Pardus Bugzilla `New Package Request`_ component (If it is not filed yet, please create a new bug) and write a comment that you want to create the package.
 #. Follow `package creation guidelines`_ and create the package and attach it to the bug.
-#. After finishing your work, please send a mail to `technique list`_ in order to find an assistant to merge the package to Pardus repositories. Please also add the new package request bug link to mail.
-#. A Pardus contributor will merge the package following `package review process`_.
-#. After the package pass the package review criterias and merge to `devel source repository`_, please change the New Package Request bug to RESOLVED/FIXED.
+#. Follow `mentoring process`_ steps in order to be merged your package to Pardus repositories.
 
-If you want to a Pardus developer contributor, you can follow `new contributor`_ part and merge packages to Paruds repositories with your self :)
+If you want to a Pardus developer you can follow `new contributor`_ part and start to merge packages to Paruds repositories with your self :)
 
-If you are a developer contributor
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If you are a developer
+^^^^^^^^^^^^^^^^^^^^^^
 
 #. Choose your package from Pardus Bugzilla `New Package Request`_ component (If it is not filed yet, please create a new bug) and changed the status of the bug to ASSIGNED
 #. Follow `package creation guidelines`_ and create the package and commit it to `playground/review source repository`_.
@@ -39,7 +37,7 @@ Feature freeze at milestone Alpha 3 is the last time for package meges to `devel
 
 .. _Licensing Criterias: http://developer.pardus.org.tr/guides/licensing/index.html
 .. _devel source repository: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#devel-folder
-.. _feature freeze: http://developer.pardus.org.tr/guides/releasing/feature_freeze.html
+.. _feature freeze: http://developer.pardus.org.tr/guides/releasing/freezes/feature_freeze.html
 .. _New Package Request: http://bugs.pardus.org.tr/enter_bug.cgi?product=Yeni%20Paket%20%C4%B0ste%C4%9Fi%2F%20New%20Package%20Request
 .. _package creation guidelines: http://developer.pardus.org.tr/guides/packaging/howto_create_pisi_packages.html
 .. _technique list: http://liste.pardus.org.tr/mailman/listinfo/teknik
