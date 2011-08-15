@@ -274,7 +274,7 @@ int main(int argc, char **argv)
                  }
                 break;
             case 10: /* Enter */
-                 strcpy(path,"PXEXMLFILE=");
+                 strcpy(path,"PXEISOFILE=");
                  strcat( path , cur->versions[limit]->path);
                  fp = fopen("/etc/pxeisofile","w");
                  if (!fp)
