@@ -29,7 +29,17 @@ def load_plugins(root="plugins"):
     plugins = {}
 
     if not os.path.exists(PLUGIN_FILE):
-        return {}
+        print "No plugins.conf"
+        for plugin_dir in os.listdir(root):
+            if not plugin_dir.startswith("plugin_"):
+                continue
+
+            plugin_file = os.path.join(root, plugin_dir, "main.py")
+            name = plugin_dir.split("plugin_")[1]
+            locals = import_plugin(plugin_file)
+            widget_class = locals["WidgetModule"]
+            plugins[name] = widget_class
+        return plugins
 
     data = open(PLUGIN_FILE, "r")
     plugin = data.readlines()
