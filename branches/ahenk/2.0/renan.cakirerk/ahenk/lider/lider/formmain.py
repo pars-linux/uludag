@@ -68,6 +68,7 @@ class FormMain(QtGui.QWidget, Ui_Main):
         self.setupUi(self)
 
         self.groupGMembers.hide()
+        self.groupGMembership.hide()
 
         # Fine tune UI
         #self.treeComputers.header().setResizeMode(0, QtGui.QHeaderView.Stretch)
@@ -147,6 +148,12 @@ class FormMain(QtGui.QWidget, Ui_Main):
 
         # Selected items
         self.items = []
+
+        # Groups
+        self.groups = []
+
+        # All Nodes
+        self.nodes = []
 
         # Last fetched olicy
         self.policy = {}
@@ -342,7 +349,45 @@ class FormMain(QtGui.QWidget, Ui_Main):
         self.__list_items()
         self.__expand_first_item()
 
+
+    ################################# 
+    def __get_all_nodes(self):
+        self.nodes = self.directory.search(self.directory.directory_domain, scope="sub", fields=["*"])
+        self.__get_all_groups()
+
+    def __get_all_groups(self):
+        self.groups = []
+        for dn, attrs in self.nodes:
+            if "groupOfNames" in attrs["objectClass"]:
+                self.groups.append(dn)
+
+    def get_all_users(self, group):
+
+        dn, old_properties = self.directory.search(group, scope="base", fields=["member"])[0]
+        members = old_properties["member"]
+
+        return members
+
+    def get_groups_of_user(self, user):
+        found_groups = []
+
+        for group in self.groups:
+            users = self.get_all_users(group)
+            if user in users:
+                found_groups.append(group)
+
+        return found_groups
+
+
+
     def  __list_items(self, root=None, alternative=False):
+        self.__get_all_nodes()
+        self.listGMemberships.clear()
+        self.listGroupMembers.clear()
+
+        #self.get_all_users('cn=admins,dc=groups,dc=test,dc=pardus,dc=org,dc=tr')
+        #self.get_groups_of_user('cn=Renan,dc=computers,dc=test,dc=pardus,dc=org,dc=tr')
+
         if not root:
             self.treeComputers.clear()
 
@@ -734,8 +779,7 @@ class FormMain(QtGui.QWidget, Ui_Main):
         self.labelNode.setText(title)
         self.pixmapNode.setPixmap(icon.pixmap())
 
-        # Find group members
-        #self.listGroupMembers.setEnabled(True)
+        # Find group members or find memberships
         self.listGroupMembers.clear()
 
         dn = item_alt.widget.get_uid()
@@ -760,6 +804,21 @@ class FormMain(QtGui.QWidget, Ui_Main):
                 item.setIcon(wrappers.Icon("user48"))
 
         except KeyError:
+            print "****************************************"
+            print "****************************************"
+            print dir(self.treeComputers.currentItem().dn)
+            print "****************************************"
+            print "****************************************"
+            self.listGMemberships.clear()
+            memberships = self.get_groups_of_user(self.treeComputers.currentItem().dn)
+            for membership in memberships:
+                name = membership.split(",")[0].split("=")[1]
+
+                self.listGMemberships.addItem(name)
+
+                item = self.listGMemberships.item(self.listGMemberships.count() - 1)
+                item.setIcon(wrappers.Icon("group48"))
+
             self.listGroupMembers.addItem(i18n("No members found"))
             self.groupGMembers.hide()
             self.groupGMembership.show()
