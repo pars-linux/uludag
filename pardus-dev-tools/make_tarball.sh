@@ -7,7 +7,6 @@ SVR="ibrahim@cekirdek.pardus.org.tr"
 DST="public_html/dist"
 
 EXTRA_DIST="\
-data/ \
 AUTHORS \
 ChangeLog \
 COPYING \
