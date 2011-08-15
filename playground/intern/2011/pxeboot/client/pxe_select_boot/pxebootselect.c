@@ -287,7 +287,7 @@ int main(int argc, char **argv)
                      fclose(fp);
                     mvprintw( LINES-7 , 0 , "STARTING BOOT ");
                  }
-                 break;
+                 goto FINISH;
             default:
                  break;
          }
@@ -295,7 +295,7 @@ int main(int argc, char **argv)
         refresh();
      }
 
-
+    FINISH:
     /* Menüyü ekrandan sil ve tahsis edilen belleği geri ver */
      unpost_menu(my_menu);
      for(i = 0; i < n_choices; ++i)
