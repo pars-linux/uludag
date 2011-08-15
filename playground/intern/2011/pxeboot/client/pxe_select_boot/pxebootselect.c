@@ -199,12 +199,9 @@ int main(int argc, char **argv)
     /* Öğeleri oluştur */
     n_choices = cur->nbversions;
     my_items = (ITEM **)calloc(n_choices + 1, sizeof(ITEM *));
-
-    //char tab[30]="";
+   
     /* İtemleri oluştur*/
     for (i = 0; i < cur->nbversions; i++){
-    //    strcpy(tab , "    ");
-    //    strcat(tab , cur->versions[i]->versionID);
         my_items[i] = new_item(cur->versions[i]->name, cur->versions[i]->versionID);
     }
     /* Menüyü oluştur */
@@ -231,8 +228,7 @@ int main(int argc, char **argv)
     mvwaddch(my_menu_win , 2 , COL-1 , ACS_RTEE);
 
     attron( COLOR_PAIR(3) );
-    mvprintw( LINES - 3 , 0 , "ABCDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ" );
-    mvprintw( LINES - 2 , 0 , "F1 to exit\n,  abcdefgğhıijklmeoöprsştuüvyz" );
+    mvprintw( LINES - 2 , 0 , "F1 to exit\n" );
     attroff( COLOR_PAIR(3) );
     refresh();
 
@@ -242,13 +238,14 @@ int main(int argc, char **argv)
 
     int buffer = 200;
     char path[buffer];
+    int len=0, limit=0;
+    
     while( (c = wgetch(my_menu_win) ) != KEY_F(1) )
     {
         switch(c)
         {
-            int len=0, limit=0;
             case KEY_DOWN:
-                if(limit+1 < n_choices){
+                if(limit < n_choices - 1){
                     limit++;
                     len= strlen(cur->versions[limit]->name)+strlen(cur->versions[limit]->versionID)+ strlen(cur->versions[limit]->size)+2*4;
                     attron( COLOR_PAIR(2) );
@@ -256,14 +253,14 @@ int main(int argc, char **argv)
                     move(60, 0);
                     clrtoeol();
                     mvprintw( LINES-10 , 0 , "\n");
-                    mvprintw( LINES-10 , (*(&col)/2) - len/2 , "%s    %s    %s",
+                    mvprintw( LINES-10 , col/2 - len/2 , "%s    %s    %s",
                     item_name( current_item( my_menu )) , cur->versions[limit]->versionID , cur->versions[limit]->size );
                     pos_menu_cursor( my_menu );
                     attroff( COLOR_PAIR(2) );
                 }
                 break;
             case KEY_UP:
-                 if( limit-1 >= 0 ){
+                 if( limit > 0 ){
                     limit--;
                     len= strlen( cur->versions[limit]->name ) + strlen( cur->versions[limit]->versionID )+ strlen( cur->versions[limit]->size ) + 2*4;
                     attron( COLOR_PAIR(2) );
@@ -271,7 +268,7 @@ int main(int argc, char **argv)
                     move(60, 0);
                     clrtoeol();
                     mvprintw( LINES-10 , 0 , "\n");
-                    mvprintw( LINES-10 , (*(&col)/2) - len/2 , "%s    %s    %s",
+                    mvprintw( LINES-10 , col/2 - len/2 , "%s    %s    %s",
                     item_name( current_item(my_menu)) ,cur->versions[limit]->versionID , cur->versions[limit]->size );
                     pos_menu_cursor( my_menu );
                     attroff( COLOR_PAIR(2) );
@@ -280,7 +277,7 @@ int main(int argc, char **argv)
             case 10: /* Enter */
                  strcpy(path,"PXEXMLFILE=");
                  strcat( path , cur->versions[limit]->path);
-                 fp = fopen("/etc/pxeisofile","wb");
+                 fp = fopen("/etc/pxeisofile","w");
                  if (!fp)
                  {
                      printf("it failed!\n");
@@ -291,6 +288,8 @@ int main(int argc, char **argv)
                      fclose(fp);
                     mvprintw( LINES-7 , 0 , "STARTING BOOT ");
                  }
+                 break;
+            default:
                  break;
          }
 
