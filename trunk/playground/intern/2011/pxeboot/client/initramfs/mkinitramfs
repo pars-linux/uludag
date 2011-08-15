@@ -145,8 +145,12 @@ class BaseSystem:
         self.includePxeFiles = config["enablePxeBoot"]
         self.pxeFileList = {
                              "/lib/initramfs/pxebootselect"     : "/bin/",
-                           }
-
+                             "/usr/local/lib/libxml2.so.2"      : "/lib/",
+                             "/usr/lib/libncursesw.so.5"        : "/lib/",
+                             "/usr/lib/libmenuw.so.5"           : "/lib/",
+                             "/lib/ld-linux-x86-64.so.2"        : "/lib/",
+                             "/etc/terminfo/l/linux"            : "/etc/terminfo/l/",
+                        }
 
     def getNewRoot(self, dir):
         cleandir = dir.lstrip("/")
