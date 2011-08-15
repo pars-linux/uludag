@@ -1,0 +1,25 @@
+{
+  "userParticipation" : "ask",
+  "pardusUserStudyList" : 
+  [
+    {
+      "id" : "s02",
+      "title" : "Kde app launcher user study",
+      "description" : "This study is designed to test our user study tool. Gathered data will be used for evil purposes of Pardus team!",
+      "beginDate" : 20110815,
+      "endDate"   : 20110825,
+      "userParticipation" : true,
+      "collectedDataPath" : "/home/bertan/.surveys/s02.data"
+    },
+    {
+      "id" : "dummy01",
+      "title" : "A dummy user study",
+      "description" : "As the name implies, this is a dummy entry.",
+      "beginDate" : 20110815,
+      "endDate"   : 20110825,
+      "userParticipation": true,
+      "collectedDataPath" : "/home/bertan/.surveys/dummy01.data"
+    }
+  ]
+}
+
