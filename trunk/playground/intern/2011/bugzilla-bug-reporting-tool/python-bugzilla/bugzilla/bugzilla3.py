@@ -194,8 +194,19 @@ class Bugzilla36(Bugzilla34):
         return [f['name'] for f in r['fields']]
         # NOTE: the RHBZ version lists 'comments' and 'groups', and strips
         # the 'cf_' from the beginning of custom fields.
+        
 class Bugzilla4(Bugzilla36):
     version = '0.1'
     user_agent = bugzilla.base.user_agent + ' Bugzilla4/%s' % version
     # Bugzilla 4 class
+
+    def _getbugs(self,idlist):
+        '''Return a list of dicts of full bug info for each given bug id.
+        bug ids that couldn't be found will return None instead of a dict.'''
+        idlist = map(lambda i: int(i), idlist)
+        r = self._proxy.Bug.get_bugs({'ids':idlist, 'permissive': 1})
+       # print(r)
+        bugdict = dict([(b['id'], b) for b in r['bugs']])
+
+        return [bugdict.get(i) for i in idlist]
 
