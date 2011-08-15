@@ -785,44 +785,50 @@ class FormMain(QtGui.QWidget, Ui_Main):
         dn = item_alt.widget.get_uid()
         dn, old_properties = self.directory.search(dn, scope="base", fields=["member", "description"])[0]
 
-        try:
-            members = old_properties['member']
+        if len(self.treeComputers.selectedItems()) == 1:
 
-            self.groupGMembers.show()
-            self.groupGMembership.hide()
+            try:
+                members = old_properties['member']
 
-            for member in members:
-                dn = member
+                self.groupGMembers.show()
+                self.groupGMembership.hide()
 
-                name = dn.split(",")[0].split("=")[1]
-                label = name
-                folder = dn.startswith("dc=")
+                for member in members:
+                    dn = member
 
-                self.listGroupMembers.addItem(label)
+                    name = dn.split(",")[0].split("=")[1]
+                    label = name
+                    folder = dn.startswith("dc=")
 
-                item = self.listGroupMembers.item(self.listGroupMembers.count() - 1)
-                item.setIcon(wrappers.Icon("user48"))
+                    self.listGroupMembers.addItem(label)
 
-        except KeyError:
-            print "****************************************"
-            print "****************************************"
-            print dir(self.treeComputers.currentItem().dn)
-            print "****************************************"
-            print "****************************************"
-            self.listGMemberships.clear()
-            memberships = self.get_groups_of_user(self.treeComputers.currentItem().dn)
-            for membership in memberships:
-                name = membership.split(",")[0].split("=")[1]
+                    item = self.listGroupMembers.item(self.listGroupMembers.count() - 1)
+                    item.setIcon(wrappers.Icon("user48"))
 
-                self.listGMemberships.addItem(name)
+            except KeyError:
+                self.listGMemberships.clear()
+                memberships = self.get_groups_of_user(self.treeComputers.currentItem().dn)
+                for membership in memberships:
+                    name = membership.split(",")[0].split("=")[1]
 
-                item = self.listGMemberships.item(self.listGMemberships.count() - 1)
-                item.setIcon(wrappers.Icon("group48"))
+                    self.listGMemberships.addItem(name)
 
-            self.listGroupMembers.addItem(i18n("No members found"))
+                    item = self.listGMemberships.item(self.listGMemberships.count() - 1)
+                    item.setIcon(wrappers.Icon("group48"))
+
+                self.listGroupMembers.addItem(i18n("No members found"))
+                self.groupGMembers.hide()
+                self.groupGMembership.show()
+
+            if self.listGMemberships.count() == 0:
+                self.groupGMembership.hide()
+
+            if self.listGroupMembers.count() == 0:
+                self.groupGMembers.hide()
+
+        else:
             self.groupGMembers.hide()
-            self.groupGMembership.show()
-            #self.listGroupMembers.setDisabled(True)
+            self.groupGMembership.hide()
 
 
 
