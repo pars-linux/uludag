@@ -1364,8 +1364,15 @@ border-left: 0px solid rgba(255,255,255,50);</string>
                       <verstretch>1</verstretch>
                      </sizepolicy>
                     </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>8</pointsize>
+                      <underline>false</underline>
+                      <strikeout>false</strikeout>
+                     </font>
+                    </property>
                     <property name="styleSheet">
-                     <string notr="true">#listGroupMembers { padding: 5px;}</string>
+                     <string notr="true">#listGroupMembers { padding: 5px; font-size: 8pt}</string>
                     </property>
                     <property name="frameShape">
                      <enum>QFrame::NoFrame</enum>
@@ -1408,7 +1415,7 @@ padding-left: 5px;</string>
                     </property>
                    </widget>
                   </item>
-                  <item row="0" column="1">
+                  <item row="0" column="1" colspan="2">
                    <widget class="QLabel" name="label_9">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -1455,36 +1462,6 @@ border-left: 0px solid rgba(255,255,255,50);</string>
                     </property>
                     <property name="indent">
                      <number>0</number>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="2">
-                   <widget class="QPushButton" name="pushGroupEdit">
-                    <property name="minimumSize">
-                     <size>
-                      <width>30</width>
-                      <height>29</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>30</width>
-                      <height>16777215</height>
-                     </size>
-                    </property>
-                    <property name="autoFillBackground">
-                     <bool>false</bool>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">border: 1px solid rgba(255,255,255,50);
-border-radius: 0px;</string>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="data.qrc">
-                      <normaloff>:/icons/settings32.png</normaloff>:/icons/settings32.png</iconset>
                     </property>
                    </widget>
                   </item>
@@ -1551,37 +1528,7 @@ padding-left: 5px;</string>
                     </property>
                    </widget>
                   </item>
-                  <item row="1" column="0" colspan="4">
-                   <widget class="QLabel" name="labelGroupOld">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>30</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">        show-decoration-selected: 1; /* make the selection span the entire width of the view */
-        color: #444444;
-        font-size: 12px;
-        text-decoration: none;
-        background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.516304,
-            y2:0.653, stop:0 rgba(171, 171, 171, 255), stop:1 rgba(255, 255, 255, 220));</string>
-                    </property>
-                    <property name="text">
-                     <string>These nodes are members of ??? group.</string>
-                    </property>
-                    <property name="indent">
-                     <number>5</number>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="1">
+                  <item row="0" column="1" colspan="2">
                    <widget class="QLabel" name="label_11">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -1631,63 +1578,26 @@ border-left: 0px solid rgba(255,255,255,50);</string>
                     </property>
                    </widget>
                   </item>
-                  <item row="0" column="3">
-                   <widget class="QPushButton" name="pushGroupNew">
-                    <property name="minimumSize">
-                     <size>
-                      <width>30</width>
-                      <height>29</height>
-                     </size>
+                  <item row="1" column="0" colspan="3">
+                   <widget class="QListWidget" name="listGMemberships">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                      <horstretch>0</horstretch>
+                      <verstretch>1</verstretch>
+                     </sizepolicy>
                     </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>30</width>
-                      <height>16777215</height>
-                     </size>
-                    </property>
-                    <property name="autoFillBackground">
-                     <bool>false</bool>
+                    <property name="font">
+                     <font>
+                      <pointsize>8</pointsize>
+                      <underline>false</underline>
+                      <strikeout>false</strikeout>
+                     </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">border: 1px solid rgba(255,255,255,50);
-border-radius: 0px;</string>
+                     <string notr="true">#listGMemberships { padding: 5px; font-size: 8pt}</string>
                     </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="data.qrc">
-                      <normaloff>:/icons/list-add.png</normaloff>:/icons/list-add.png</iconset>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="2">
-                   <widget class="QPushButton" name="pushGroupOld">
-                    <property name="minimumSize">
-                     <size>
-                      <width>30</width>
-                      <height>29</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>30</width>
-                      <height>16777215</height>
-                     </size>
-                    </property>
-                    <property name="autoFillBackground">
-                     <bool>false</bool>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">border: 1px solid rgba(255,255,255,50);
-border-radius: 0px;</string>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="data.qrc">
-                      <normaloff>:/icons/settings32.png</normaloff>:/icons/settings32.png</iconset>
+                    <property name="frameShape">
+                     <enum>QFrame::NoFrame</enum>
                     </property>
                    </widget>
                   </item>
