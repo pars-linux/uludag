@@ -17,7 +17,7 @@ DB_SCHEME = """
 CREATE TABLE "%s" (
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "name" TEXT NOT NULL,
-    "score" INTEGER,
+    "score" FLOAT,
     "nose" INTEGER DEFAULT (' ')
 );
 

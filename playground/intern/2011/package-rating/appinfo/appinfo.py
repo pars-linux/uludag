@@ -55,7 +55,7 @@ if __name__ == '__main__':
     if options.resetdb:
         print ' - Trying to reset scores:', server.resetPackageScores()
     if not options.resetdb and len(args) > 1:
-        print ' - Trying to update package "%s" score:' % args[0], server.updatePackageScore(args[0], int(args[1]))[1]
+        print ' - Trying to update package "%s" score:' % args[0], server.updatePackageScore(args[0], float(args[1]))[1]
 
     if clientonly:
         if not options.server == '':
