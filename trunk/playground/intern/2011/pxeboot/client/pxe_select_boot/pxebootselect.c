@@ -236,8 +236,7 @@ int main(int argc, char **argv)
     post_menu( my_menu );
     wrefresh( my_menu_win );
 
-    int buffer = 200;
-    char path[buffer];
+    char path[256];
     int len=0, limit=0;
     
     while( (c = wgetch(my_menu_win) ) != KEY_F(1) )
