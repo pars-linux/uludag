@@ -67,6 +67,8 @@ class FormMain(QtGui.QWidget, Ui_Main):
         # Attach generated UI
         self.setupUi(self)
 
+        self.groupGMembers.hide()
+
         # Fine tune UI
         #self.treeComputers.header().setResizeMode(0, QtGui.QHeaderView.Stretch)
         self.treeComputers.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
@@ -170,6 +172,11 @@ class FormMain(QtGui.QWidget, Ui_Main):
 
         # Expand first item
         self.__expand_first_item()
+
+        self.splitter_2.setStretchFactor(0,1)
+        self.splitter_2.setStretchFactor(1,0)
+
+        print self.splitter_2.sizes()
 
 
     def __expand_first_item(self):
@@ -351,6 +358,10 @@ class FormMain(QtGui.QWidget, Ui_Main):
             else:
             """
             root = list_item.add_tree_item(self.treeComputers, self.directory.directory_domain, self.directory.get_name(), self.directory.directory_domain, icon=wrappers.Icon("folder48"))
+            print "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+            print self.directory.directory_domain
+            print self.directory.get_name()
+            print "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
             root.setChildIndicatorPolicy(QtGui.QTreeWidgetItem.ShowIndicator)
             root.dn = self.directory.directory_domain
             root.name = root.dn.split(",")[0].split("=")[1]
@@ -681,6 +692,24 @@ class FormMain(QtGui.QWidget, Ui_Main):
         """
             Triggered when user clicks a node.
         """
+
+        """
+        if no multiple selection (if len(items) == 1)
+            if item == group
+               show group members box
+                   list group members
+                   (search pattern)
+            else if item == user
+               show membership box
+               show membership
+            else
+               hide group members box and membership box
+        else
+           hide group members box and membership box
+        """
+
+        self.splitter_2.refresh()
+
         self.items = []
         for i in self.treeComputers.selectedItems():
             self.items.append(i)
@@ -704,6 +733,39 @@ class FormMain(QtGui.QWidget, Ui_Main):
         self.labelNodeDesc.setText(desc)
         self.labelNode.setText(title)
         self.pixmapNode.setPixmap(icon.pixmap())
+
+        # Find group members
+        #self.listGroupMembers.setEnabled(True)
+        self.listGroupMembers.clear()
+
+        dn = item_alt.widget.get_uid()
+        dn, old_properties = self.directory.search(dn, scope="base", fields=["member", "description"])[0]
+
+        try:
+            members = old_properties['member']
+
+            self.groupGMembers.show()
+            self.groupGMembership.hide()
+
+            for member in members:
+                dn = member
+
+                name = dn.split(",")[0].split("=")[1]
+                label = name
+                folder = dn.startswith("dc=")
+
+                self.listGroupMembers.addItem(label)
+
+                item = self.listGroupMembers.item(self.listGroupMembers.count() - 1)
+                item.setIcon(wrappers.Icon("user48"))
+
+        except KeyError:
+            self.listGroupMembers.addItem(i18n("No members found"))
+            self.groupGMembers.hide()
+            self.groupGMembership.show()
+            #self.listGroupMembers.setDisabled(True)
+
+
 
 
     def __slot_tab_clicked(self):
