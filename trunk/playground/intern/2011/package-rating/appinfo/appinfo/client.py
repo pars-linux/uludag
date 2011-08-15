@@ -68,8 +68,7 @@ class AppInfoClient(AppInfo):
         if info:
             if info[0][2] == 0 and info[0][3] == 0:
                 return 0
-            return int(math.ceil(float(max(1,info[0][2])) / \
-                                 float(max(1,info[0][3]))))
+            return float(max(1,info[0][2])) / float(max(1,info[0][3]))))
         return 0
 
     def getPackageId(self, package):

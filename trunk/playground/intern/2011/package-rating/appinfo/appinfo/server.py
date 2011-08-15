@@ -83,7 +83,7 @@ class AppInfoServer(AppInfo):
         """ Update given packages score """
 
         # We accept 1-5
-        score = min(5, max(score, 1))
+        score = min(5, max(score, 0.5))
 
         info = self.getPackagesFromDB(condition = "name = '%s'" % package)
         if info:
