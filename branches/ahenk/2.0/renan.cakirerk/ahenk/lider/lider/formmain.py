@@ -403,10 +403,6 @@ class FormMain(QtGui.QWidget, Ui_Main):
             else:
             """
             root = list_item.add_tree_item(self.treeComputers, self.directory.directory_domain, self.directory.get_name(), self.directory.directory_domain, icon=wrappers.Icon("folder48"))
-            print "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-            print self.directory.directory_domain
-            print self.directory.get_name()
-            print "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
             root.setChildIndicatorPolicy(QtGui.QTreeWidgetItem.ShowIndicator)
             root.dn = self.directory.directory_domain
             root.name = root.dn.split(",")[0].split("=")[1]
@@ -1168,7 +1164,7 @@ class FormMain(QtGui.QWidget, Ui_Main):
                 return
             except directory.DirectoryError:
                 QtGui.QMessageBox.warning(self, i18n("Connection Error"), i18n("Unable to add folder."))
-                return
+                return 
 
             self.treeComputers.collapseItem(parent_item)
             self.treeComputers.expandItem(parent_item)
@@ -1198,27 +1194,64 @@ class FormMain(QtGui.QWidget, Ui_Main):
 
         if item and widget.get_type() == plugins.TYPE_SINGLE:
             paths = self.directory.get_parent_paths(item.dn)
+            print "===== Parent Paths ======="
+            print paths
             self_path = paths[-1]
             classes = {}
             for path in paths:
-                search = self.directory.search(path, ["objectClass"], "base")
+                search = self.directory.search(path, ["*"], "base")
                 if len(search):
                     classes[path] = []
                     for oclass in search[0][1]["objectClass"]:
+                        #print "*****search result*******"
+                        #print search[0][1]["objectClass"]
                         if oclass.endswith("Policy"):
                             classes[path].append(oclass)
+                            print ""
+                            #print "----oclass------------"
+                            #print oclass
+                            print ""
+                            print ""
+                    #print "-------path------"
+                    #print path
+                    #print len(classes[path])
 
             widget_classes = widget.get_classes()
             self_policies = classes[self_path]
+            print "self policies  : "
+            print self_policies
+
+            print "##############################"
+            print item.dn
+            print classes
+            print ""
+
+            self.treeApplied.clear()
 
             for path, policies in classes.iteritems():
                 if self_path == path:
                     continue
+
                 if len(set(widget_classes).intersection(set(policies))) > 0:
                     policy_match = True
                     if len(set(self_policies).intersection(set(widget_classes))) > 0:
                         policy_inherit = False
                     break
+
+                if policy_inherit and classes[path]:
+                    print "------Inherited policies------"
+                    print "path, policy"
+                    print path, classes[path]
+                    name = path.split(",")[0].split("=")[1]
+
+                    node = QtGui.QTreeWidgetItem(self.treeApplied, [name], )
+                    node.setExpanded(True)
+                    node.setIcon(0, wrappers.Icon("star32"))
+
+                    for policy in classes[path]:
+                        p = QtGui.QTreeWidgetItem(node, [policy])
+                        p.setIcon(0, wrappers.Icon("policy32"))
+
 
         try:
             widget.set_item(item)
@@ -1265,6 +1298,7 @@ class FormMain(QtGui.QWidget, Ui_Main):
         else:
             widget.policy_match = False
 
+
     def __slot_debug(self, state):
         """
             Triggered when user toggles debug button.
@@ -1309,8 +1343,8 @@ class FormMain(QtGui.QWidget, Ui_Main):
             msg.setIcon(QtGui.QMessageBox.Question)
             msg.setText(i18n("%d item(s) will be forced to update policy.") % len(names))
             msg.setInformativeText(i18n("Do you want to continue?"))
-            msg.setStandardButtons(i18n(QtGui.QMessageBox.Yes) | i18n(QtGui.QMessageBox.No))
-            msg.setDefaultButton(i18n(QtGui.QMessageBox.Yes))
+            msg.setStandardButtons(QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
+            msg.setDefaultButton(QtGui.QMessageBox.Yes)
 
             if msg.exec_() != QtGui.QMessageBox.Yes:
                 return
@@ -1327,8 +1361,8 @@ class FormMain(QtGui.QWidget, Ui_Main):
         msg.setIcon(QtGui.QMessageBox.Question)
         msg.setText(i18n("Policy will be saved."))
         msg.setInformativeText(i18n("Do you want to continue?"))
-        msg.setStandardButtons(i18n(QtGui.QMessageBox.Yes) | i18n(QtGui.QMessageBox.No))
-        msg.setDefaultButton(i18n(QtGui.QMessageBox.No))
+        msg.setStandardButtons(QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
+        msg.setDefaultButton(QtGui.QMessageBox.No)
 
         if msg.exec_() != QtGui.QMessageBox.Yes:
             return
@@ -1388,7 +1422,7 @@ class FormMain(QtGui.QWidget, Ui_Main):
             msg.setIcon(QtGui.QMessageBox.Question)
             msg.setText(i18n("All changes will be reverted."))
             msg.setInformativeText(i18n("Do you want to continue?"))
-            msg.setStandardButtons(i18n(QtGui.QMessageBox.Yes) | i18n(QtGui.QMessageBox.No))
+            msg.setStandardButtons(QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
             msg.setDefaultButton(QtGui.QMessageBox.No)
 
             if msg.exec_() != QtGui.QMessageBox.Yes:
@@ -1418,7 +1452,7 @@ class FormMain(QtGui.QWidget, Ui_Main):
         msg.setIcon(QtGui.QMessageBox.Question)
         msg.setText(i18n("Policy from parent directory will be copied."))
         msg.setInformativeText(i18n("Do you want to continue?"))
-        msg.setStandardButtons(i18n(QtGui.QMessageBox.Yes) | i18n(QtGui.QMessageBox.No))
+        msg.setStandardButtons(QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
         msg.setDefaultButton(QtGui.QMessageBox.Yes)
 
         if msg.exec_() != QtGui.QMessageBox.Yes:

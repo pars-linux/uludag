@@ -14,7 +14,6 @@ from PyQt4 import QtGui
 # Generated UI module
 from ui_list_item import Ui_ItemWidget
 
-
 def add_tree_item(parent, uid, title, description="", data=None, icon=None, status_icon=None, state=None, edit=None, delete=None):
     """
         Adds a new custom QTreeWidget item.
