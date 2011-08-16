@@ -18,7 +18,7 @@ setup(name='ahenk-lider',
                 'lider.widgets',
                 'lider.widgets.list_item'],
       scripts=['ahenk_lider'],
-      data_files=[('/usr/share/ahenk-lider/', ['data/firewall.fwb']),
+      data_files=[('/usr/share/ahenk-lider/', ['data/firewall.fwb', 'data/firewall-failsafe.fwb']),
                   ('/etc/ahenk/plugins', ['data/plugins.conf'])
                  ]
      )
