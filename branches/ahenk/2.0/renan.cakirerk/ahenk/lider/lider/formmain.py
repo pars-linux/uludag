@@ -79,10 +79,9 @@ class FormMain(QtGui.QWidget, Ui_Main):
         #self.pushSearch.hide()
 
         # Popup for connection management
-        #menu = wrappers.Menu(self)
-        #menu.newAction("Connect", wrappers.Icon("online48"), self.__slot_connect)
-        #menu.newAction("Disconnect", wrappers.Icon("offline48"), self.__slot_disconnect)
-        #self.pushConnection.setMenu(menu)
+        menu = wrappers.Menu(self)
+        menu.newAction("Modify Default Firewall Rules", wrappers.Icon("firewall32"), self.__slot_modify_default_firewall_rules)
+        self.pushSettings.setMenu(menu)
 
         # Popup for items
         self.menu = wrappers.Menu(self)
@@ -520,6 +519,12 @@ class FormMain(QtGui.QWidget, Ui_Main):
         self.textLog.append("<font color='%s'>%s</font>" % (color, text))
 
     # Events
+
+
+    def __slot_modify_default_firewall_rules(self):
+        pass
+
+
 
     def __slot_connect(self):
         """
