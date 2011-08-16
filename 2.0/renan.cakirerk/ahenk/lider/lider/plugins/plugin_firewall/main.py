@@ -130,6 +130,8 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
         self.connect(self.radioDisable, QtCore.SIGNAL("clicked()"), self.__slot_status)
         self.connect(self.pushEdit, QtCore.SIGNAL("clicked()"), self.__slot_edit)
         self.connect(self.pushReset, QtCore.SIGNAL("clicked()"), self.__slot_reset)
+        self.connect(self.pushFailsafe, QtCore.SIGNAL("clicked()"), self.__slot_load_failsafe_rules)
+
 
     def showEvent(self, event):
         """
@@ -274,6 +276,37 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
 
         self.rules_xml = file(name).read()
         self.rules_compiled = file(name + ".sh").read()
+
+    def __slot_load_failsafe_rules(self):
+        """
+            Triggered when user clicks 'Load Failsafe Rules' button.
+        """
+        msg = QtGui.QMessageBox(self)
+        msg.setIcon(QtGui.QMessageBox.Question)
+        msg.setText("Do you want to return initial firewall rules?")
+        msg.setInformativeText("Do you want to continue?")
+        msg.setStandardButtons(QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
+        msg.setDefaultButton(QtGui.QMessageBox.No)
+
+        if msg.exec_() != QtGui.QMessageBox.Yes:
+            return
+
+        fp = tempfile.NamedTemporaryFile(delete=False)
+        name = fp.name
+        fp.write(file("/usr/share/ahenk-lider/firewall-failsafe.fwb").read())
+        fp.close()
+
+        self.plainTextEdit.setPlainText("")
+
+        fw_name = re.findall('Firewall.*iptables.*name="([a-zA-Z0-9\-_]+)"', file(name).read())[0]
+
+        process = subprocess.Popen(["/usr/bin/fwb_ipt", "-q", "-f", name, "-o", "%s.sh" % name, fw_name], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        if process.wait() != 0:
+            return
+
+        self.rules_xml = file(name).read()
+        self.rules_compiled = file(name + ".sh").read()
+
 
     def __slot_status(self):
         """
