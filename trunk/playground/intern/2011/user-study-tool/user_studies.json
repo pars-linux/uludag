@@ -9,7 +9,8 @@
       "beginDate" : 20110815,
       "endDate"   : 20110825,
       "userParticipation" : true,
-      "collectedDataPath" : "/home/bertan/.surveys/s02.data"
+      "collectedDataPath" : "/home/bertan/.surveys/s02.data",
+      "url" : "http://www.google.com"
     },
     {
       "id" : "dummy01",
@@ -18,7 +19,8 @@
       "beginDate" : 20110815,
       "endDate"   : 20110825,
       "userParticipation": true,
-      "collectedDataPath" : "/home/bertan/.surveys/dummy01.data"
+      "collectedDataPath" : "/home/bertan/.surveys/dummy01.data",
+      "url" : "http://www.pardus.org.tr"
     }
   ]
 }
