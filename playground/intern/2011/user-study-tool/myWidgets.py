@@ -4,6 +4,8 @@
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
+from pds.gui import *
+
 from ui_surveyItem import Ui_SurveyItemWidget
 #from ui_detailWidget import Ui_DetailWidget 
 
@@ -18,7 +20,7 @@ class SurveyItem(QtGui.QListWidgetItem):
 
 class SurveyItemWidget(QtGui.QWidget):
 
-    def __init__(self, titleItem, parent, item):
+    def __init__(self, titleItem, parent, item, surveyList):
         QtGui.QWidget.__init__(self, None)
 
         self.ui = Ui_SurveyItemWidget()
@@ -27,5 +29,11 @@ class SurveyItemWidget(QtGui.QWidget):
         self.root = parent
         self.item = item
         self.titleItem = titleItem
+        self.surveyList = surveyList
         self.ui.label.setText(titleItem)
+        
+    def showDescription(self):
+	self.surveyList.setCurrentItem(self.item)
+	self.root.showDescription(self.item.url)
+    
         
