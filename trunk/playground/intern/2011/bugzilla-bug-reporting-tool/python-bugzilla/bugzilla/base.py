@@ -738,13 +738,13 @@ class BugzillaBase(object):
 
         DEFAULTED:
           platform: Hardware type where this bug was experienced.
-            Ex: i386
+            Ex: x86
             See querydefaults['rep_platform_list'] for accepted values.
           severity: Bug severity.
-            Ex: medium
+            Ex: normal
             See querydefaults['bug_severity_list'] for accepted values.
           priority: Bug priority.
-            Ex: medium
+            Ex: P5
             See querydefaults['priority_list'] for accepted values.
           op_sys: Operating system bug occurs on.
             Ex: Linux
