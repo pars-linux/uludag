@@ -300,7 +300,7 @@ mount_cdroot() {
 }
 
 mount_pxeboot() {
-    FS_LOCATION='mnt/pxeboot'
+    FS_LOCATION='mnt/livecd'
 
     # Change directory to /newroot
     cd /newroot
@@ -364,6 +364,12 @@ mount_pxeboot() {
     then
        ln -s "${FS_LOCATION}/lib32" "lib32"
     fi
+
+    # We need this for x86_64
+    ln -s "${FS_LOCATION}/lib" "lib64"
+
+    chmod 1777 tmp
+    (cd /newroot/${FS_LOCATION}; cp -a ${ROOT_TREES} /newroot)
 
      REAL_ROOT_TYPE=`echo "${ROOT_DEVICE}" | sed -e 's/^\/newroot\/dev\///' | grep -qE '^sr[0-9]*|^hd[a-z]|^pcd[0-9]|^xvd    *' && echo "optical" || echo "harddisk"`
     echo "${REAL_ROOT_TYPE}" > /newroot/var/run/pardus/livemedia
