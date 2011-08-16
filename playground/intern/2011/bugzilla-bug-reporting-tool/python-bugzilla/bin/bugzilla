@@ -43,6 +43,8 @@ def to_encoding(ustring):
         return ustring
     return u''
 
+format_field_re = re.compile("%{([a-z0-9_]+)(?::([^}]*))?}")
+
 def setup_parser():
     u =   "%prog [global options] COMMAND [command-options]"
     u +=  "\nCommands: %s" % ', '.join(cmdlist)
@@ -85,16 +87,20 @@ def setup_action_parser(action):
                 help="REQUIRED: bug summary")
         p.add_option('-o','--os',default='Linux',dest='op_sys',
                 help="OPTIONAL: operating system (default: Linux)")
-        p.add_option('-a','--arch',default='x86',dest='rep_platform',
+        p.add_option('-a','--arch',default='All',dest='rep_platform',
                 help="OPTIONAL: arch this bug occurs on (default: All)")
-        p.add_option('--severity',default='normal',dest='bug_severity',
-                help="OPTIONAL: bug severity (default: normal)")
-        p.add_option('--priority',default='P5',dest='priority',
-                help="OPTIONAL: bug priority (default: P5)")
+        p.add_option('--severity',default='medium',dest='bug_severity',
+                help="OPTIONAL: bug severity (default: medium)")
+        p.add_option('--priority',default='medium',dest='priority',
+                help="OPTIONAL: bug priority (default: medium)")
         p.add_option('-u','--url',dest='bug_file_loc',default='http://',
                 help="OPTIONAL: URL for further bug info")
-        p.add_option('--cc',
+        p.add_option('--cc',metavar='CC[,CC,...]',
                 help="OPTIONAL: add emails to initial CC list")
+        p.add_option('--blocked',metavar='BUGID[,BUGID,...]',
+                help="OPTIONAL: add bug_ids blocked by this bug")
+        p.add_option('--dependson',metavar='BUGID[,BUGID,...]',
+                help="OPTIONAL: add bug_ids that this bug depends on")
         # no API to attach files during bug creation, so no --attach :/
 
     elif action == 'query':
@@ -118,7 +124,7 @@ def setup_action_parser(action):
                 help="search bug summaries")
         p.add_option('-t','--bug_status',default="ALL",
                 help="comma-separated list of bug statuses to accept [Default:all] [Available:NEW,ASSIGNED,NEEDINFO,ON_DEV,MODIFIED,POST,ON_QA,FAILS_QA,PASSES_QA,REOPENED,VERIFIED,RELEASE_PENDING,CLOSED]")
-        p.add_option('-x','--severity',
+        p.add_option('-x','--bug_severity','--severity',
                 help="search severities, comma-separated")
         p.add_option('-z','--priority',
                 help="search priorities, comma-separated")
@@ -461,6 +467,9 @@ def main():
                         elif i == 'EOL':
                             # Alias for EndOfLife bug statuses
                             q[a] = 'VERIFIED,RELEASE_PENDING,CLOSED'.split(',')
+                        elif i == 'OPEN':
+                            # non-Closed statuses
+                            q[a] = 'NEW,ASSIGNED,MODIFIED,ON_DEV,ON_QA,VERIFIED,RELEASE_PENDING,POST'.split(',')
                         else:
                             q[a] = i.split(',')
                     elif a in ['cc','assigned_to','reporter','qa_contact','creator']:
@@ -530,7 +539,7 @@ def main():
                                 elif par.find('!') != -1:
                                     q['negate%i' % chart_id] = 1
                                 elif par.find('-') != -1:
-                                    args = par.split('-')
+                                    args = par.split('-',2)
                                     q['field%i-%i-%i' % (chart_id,and_count,or_count)] = args[0]
                                     q['type%i-%i-%i' % (chart_id,and_count,or_count)]  = args[1]
                                     if len(args) == 3:
@@ -551,6 +560,15 @@ def main():
         if opt.output == 'oneline':
             q['column_list'] = [ 'bug_id', 'bug_status', 'assigned_to', 'component',
               'target_milestone', 'short_desc', 'flags', 'keywords', 'blockedby' ]
+        if opt.outputformat:
+            aliases = dict(bz.field_aliases)
+            req_fields = []
+            for fieldname, sub in format_field_re.findall(opt.outputformat):
+                req_fields.append(fieldname)
+                if fieldname in aliases:
+                    req_fields.append(aliases.get(fieldname))
+            q['column_list'] = req_fields
+
         log.debug("bz.query: %s", q)
         if not q:
             parser.error("'query' command requires additional arguments")
@@ -560,7 +578,7 @@ def main():
         data = dict()
         required=['product','component','version','short_desc','comment',
              'rep_platform','bug_severity','op_sys','bug_file_loc','priority']
-        optional=['cc']
+        optional=['cc', 'blocked', 'dependson']
         for a in optional:
             i = getattr(opt,a)
             if i:
@@ -596,6 +614,10 @@ def main():
         if not opt.file and opt.desc:
             parser.error("attaching a file requires --file and --desc")
         if not opt.type:
+            try:
+                import magic
+            except ImportError:
+                parser.error("specify --type or install python-magic")
             mimemagic = magic.open(magic.MAGIC_MIME_TYPE)
             mimemagic.load()
         if sys.stdin.isatty(): # stdin is a tty -> normal CLI
@@ -617,7 +639,7 @@ def main():
                                   filename=opt.file,
                                   contenttype=opt.type,
                                   ispatch=(opt.type == "text/x-patch"))
-            print "Created attachment %i on bug %s" % (attid, bugid)
+            print "Created attachment %s on bug %s" % (attid, bugid)
 
     elif action == 'modify':
         if not (opt.status or opt.close or opt.assignee or opt.flag or opt.cc
@@ -688,19 +710,20 @@ def main():
     # If we're doing new/query/modify, output our results
     if action in ['new','query']:
         if opt.outputformat:
-            format_field_re = re.compile("%{([a-z0-9_]+)(?::([^}]*))?}")
+
             special_fields = {
                 'flag': lambda b,f: b.get_flag_status(f),
                 'whiteboard': lambda b,wb: b.getwhiteboard(wb),
             }
             def bug_field(matchobj):
-                fieldname = matchobj.group(1)
-                rest = matchobj.group(2)
+                (fieldname, rest) = matchobj.groups()
 
                 if special_fields.has_key(fieldname):
                     val = special_fields[fieldname](b, rest)
                 else:
                     val = getattr(b,fieldname)
+                if type(val) is list:
+                    val = ','.join(val)
                 try:
                     return str(val)
                 except UnicodeEncodeError:
@@ -765,6 +788,9 @@ def main():
                         for cb in cvebug.alias:
                             if cb.find("CVE") != -1:
                                 cve += cb + " "
+                # bugzilla.redhat.com has component as a list
+                if type(b.component) == list:
+                    b.component = ','.join(b.component)
                 print to_encoding(u"#%s %8s %22s %s\t[%s] %s %s" %
                         (b.bug_id, b.bug_status, b.assigned_to, b.component,
                             b.target_milestone, flags, cve))
