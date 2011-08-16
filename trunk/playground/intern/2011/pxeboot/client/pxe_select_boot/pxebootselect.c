@@ -178,7 +178,6 @@ int main(int argc, char **argv)
     xmlCleanupParser();
 
     ITEM **my_items;
-    int c;
     MENU *my_menu;
     WINDOW *my_menu_win;
     int n_choices;
@@ -228,7 +227,8 @@ int main(int argc, char **argv)
     mvwaddch(my_menu_win , 2 , COL-1 , ACS_RTEE);
 
     attron( COLOR_PAIR(3) );
-    mvprintw( LINES - 2 , 0 , "F1 to exit\n" );
+    mvprintw( LINES - 3 , 0 , "ABCDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ" );
+    mvprintw( LINES - 2 , 0 , "F1 to exit\n,  abcdefgğhıijklmeoöprsştuüvyz" );
     attroff( COLOR_PAIR(3) );
     refresh();
 
@@ -238,9 +238,11 @@ int main(int argc, char **argv)
 
     char path[256];
     int len=0, limit=0;
+    int c = KEY_UP;
     
-    while( (c = wgetch(my_menu_win) ) != KEY_F(1) )
+    do
     {
+        c = wgetch(my_menu_win);
         switch(c)
         {
             case KEY_DOWN:
@@ -287,15 +289,17 @@ int main(int argc, char **argv)
                      fclose(fp);
                     mvprintw( LINES-7 , 0 , "STARTING BOOT ");
                  }
-                 goto FINISH;
+                 c = KEY_F(1);
+                 break;
             default:
                  break;
-         }
-
+        }
+         
         refresh();
-     }
+    } while (c != KEY_F(1));
 
-    FINISH:
+     
+
     /* Menüyü ekrandan sil ve tahsis edilen belleği geri ver */
      unpost_menu(my_menu);
      for(i = 0; i < n_choices; ++i)
