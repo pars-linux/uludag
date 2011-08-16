@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="/">
+    <file>icons/view-refresh.png</file>
     <file>icons/insecure64.png</file>
     <file>icons/secure64.png</file>
     <file>icons/undo48.png</file>
