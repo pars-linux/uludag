@@ -23,7 +23,8 @@ import magic
 from tempfile import NamedTemporaryFile
 
 version = '0.6.2'
-default_bz = 'https://bugzilla.redhat.com/xmlrpc.cgi'
+#default_bz = 'https://bugzilla.pardus.org.tr/xmlrpc.cgi'
+default_bz = 'http://192.168.4.86/bugzilla/xmlrpc.cgi'
 
 # Initial simple logging stuff
 logging.basicConfig()
@@ -84,12 +85,12 @@ def setup_action_parser(action):
                 help="REQUIRED: bug summary")
         p.add_option('-o','--os',default='Linux',dest='op_sys',
                 help="OPTIONAL: operating system (default: Linux)")
-        p.add_option('-a','--arch',default='All',dest='rep_platform',
+        p.add_option('-a','--arch',default='x86',dest='rep_platform',
                 help="OPTIONAL: arch this bug occurs on (default: All)")
-        p.add_option('--severity',default='medium',dest='bug_severity',
-                help="OPTIONAL: bug severity (default: medium)")
-        p.add_option('--priority',default='medium',dest='priority',
-                help="OPTIONAL: bug priority (default: medium)")
+        p.add_option('--severity',default='normal',dest='bug_severity',
+                help="OPTIONAL: bug severity (default: normal)")
+        p.add_option('--priority',default='P5',dest='priority',
+                help="OPTIONAL: bug priority (default: P5)")
         p.add_option('-u','--url',dest='bug_file_loc',default='http://',
                 help="OPTIONAL: URL for further bug info")
         p.add_option('--cc',
@@ -348,9 +349,9 @@ def main():
     if global_opt.bztype == 'auto':
         log.info('Autodetecting Bugzilla type')
         # Cheat a little, for the sake of speed
-        if 'bugzilla.redhat.com' in global_opt.bugzilla:
-            log.info('Using RHBugzilla3 for URL containing bugzilla.redhat.com')
-            bzclass = bugzilla.RHBugzilla3
+        if 'pardus.org.tr' in global_opt.bugzilla:
+            bzclass = bugzilla.Bugzilla36
+
         else:
             bzclass = bugzilla.Bugzilla
     elif global_opt.bztype in bugzilla.classlist:
@@ -439,14 +440,14 @@ def main():
         email_count = 1
         chart_id = 0
         for a in ['product','component','components_file','version','long_desc','bug_id',
-                  'short_desc','cc','assigned_to','reporter','qa_contact','bug_status',
+                  'short_desc','cc','assigned_to','reporter','qa_contact','creator','bug_status',
                   'blocked','dependson','keywords','keywords_type','url','url_type','status_whiteboard',
                   'status_whiteboard_type','fixed_in','fixed_in_type','flag','alias','qa_whiteboard',
-                  'devel_whiteboard','boolean_query','severity','priority','target_milestone']:
+                  'devel_whiteboard','boolean_query','severity','priority','target_milestone','status']:
             if hasattr(opt,a):
                 i = getattr(opt,a)
                 if i:
-                    if a == 'bug_status': # list args
+                    if a == 'bug_status' or a == 'status': # list args
                         # FIXME: statuses can differ between bugzilla instances..
                         if i == 'ALL':
                             # leaving this out should return bugs of any status
@@ -462,7 +463,8 @@ def main():
                             q[a] = 'VERIFIED,RELEASE_PENDING,CLOSED'.split(',')
                         else:
                             q[a] = i.split(',')
-                    elif a in ['cc','assigned_to','reporter','qa_contact']:
+                    elif a in ['cc','assigned_to','reporter','qa_contact','creator']:
+                        # creator added instead of reporter (4.0)
                         # Emails
                         # ex.: {'email1':'foo@bar.com','emailcc1':True}
                         q['email%i' % email_count] = i
@@ -727,8 +729,11 @@ def main():
                         c['author'], email, c['body']))
         elif opt.output == 'normal':
             for b in buglist:
-                print to_encoding(u'#%s %8s - %s - %s' %
-                        (b.bug_id, b.bug_status, b.assigned_to, b.short_desc))
+                 print to_encoding(u'#%s %8s - %s - %s' %
+                      (b.bug_id, b.bug_status, b.assigned_to, b.short_desc))
+                 # The code below works with Bugzilla 4
+                 # print to_encoding(u'#%s %8s - %s - %s' %
+                 #     (b.bug_id, b.status, b.assigned_to, b.summary))
 
         elif opt.output == 'extra':
             print "Grabbing 'extra' bug information. This could take a moment."
