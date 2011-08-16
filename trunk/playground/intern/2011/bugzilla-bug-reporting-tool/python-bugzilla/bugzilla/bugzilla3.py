@@ -209,4 +209,46 @@ class Bugzilla4(Bugzilla36):
         bugdict = dict([(b['id'], b) for b in r['bugs']])
 
         return [bugdict.get(i) for i in idlist]
+    def _attachfile(self,id,**attachdata):
+        data = {}
+        data['ids'] = id
 
+        if 'data' in attachdata:
+            print 'data var'
+            data['data'] = attachdata['data']
+
+        if 'filename' in attachdata:
+            print 'filename var'
+            data['file_name'] = attachdata['filename']
+
+        if 'description' in attachdata:
+            print 'summary var'
+            data['summary'] = attachdata['description']
+
+        if 'contenttype' in attachdata:
+            print 'contenttype var'
+            data['content_type'] = attachdata['contenttype']
+
+        if 'comment' in attachdata:
+            print 'comment var'
+            data['comment'] = attachdata['comment']
+
+        if 'isprivate' in attachdata:
+            print 'isprivate var'
+            data['is_private'] = attachdata['isprivate']
+
+        if 'ispatch' in attachdata:
+            print 'ispatch var'
+            data['is_patch'] = attachdata['ispatch']
+
+        if 'isurl' in attachdata:
+            print 'is url var'
+            data['is_url'] = attachdata['isurl']
+        r = self._proxy.Bug.add_attachment(data)
+
+        attachids = r['attachments'].keys()
+        for i in attachids :
+            mailresults = r['attachments'][i]
+            attachid = i
+
+        return (attachid,mailresults) 
