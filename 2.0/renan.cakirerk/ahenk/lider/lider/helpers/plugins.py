@@ -29,7 +29,6 @@ def load_plugins(root="plugins"):
     plugins = {}
 
     if not os.path.exists(PLUGIN_FILE):
-        print "No plugins.conf"
         for plugin_dir in os.listdir(root):
             if not plugin_dir.startswith("plugin_"):
                 continue
@@ -44,7 +43,6 @@ def load_plugins(root="plugins"):
     data = open(PLUGIN_FILE, "r")
     plugin = data.readlines()
     for line in plugin:
-        print "plugin dir"
         plugin_dir = line.strip()
         print plugin_dir
         if not plugin_dir.startswith("plugin_"):
