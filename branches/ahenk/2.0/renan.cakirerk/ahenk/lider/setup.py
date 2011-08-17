@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*-
 
 from distutils.core import setup
+import os
+
+os.chmod('data/firewall.fwb', 0666)
 
 setup(name='ahenk-lider',
       version='1.9.30',

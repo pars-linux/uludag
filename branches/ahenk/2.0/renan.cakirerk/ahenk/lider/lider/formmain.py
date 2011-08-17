@@ -34,6 +34,10 @@ from lider.helpers import talk
 from lider.helpers import wrappers
 from lider.helpers import i18n
 
+# Plugin modules 
+from lider.plugins.plugin_firewall import main
+
+
 i18n = i18n.i18n
 
 # Custom widgets
@@ -154,8 +158,11 @@ class FormMain(QtGui.QWidget, Ui_Main):
         # All Nodes
         self.nodes = []
 
-        # Last fetched olicy
+        # Last fetched policy
         self.policy = {}
+
+        # Default firewall rules file 
+        self.rules_xml = file("/usr/share/ahenk-lider/firewall.fwb").read() 
 
         # Directory nodes
         self.nodes_cn = {}
@@ -183,7 +190,6 @@ class FormMain(QtGui.QWidget, Ui_Main):
         self.splitter_2.setStretchFactor(1,0)
 
         print self.splitter_2.sizes()
-
 
     def __expand_first_item(self):
         first_node = self.treeComputers.itemAt(0,0)
@@ -520,10 +526,20 @@ class FormMain(QtGui.QWidget, Ui_Main):
 
     # Events
 
+    def __slot_thread(self):
+
+        if self.thread.isFinished():
+            self.rules_xml = self.thread.rules_xml
+            self.rules_compiled = self.thread.rules_compiled
+
 
     def __slot_modify_default_firewall_rules(self):
-        pass
 
+        name = "Group"
+
+        self.thread = main.ThreadFW(name, self.rules_xml)
+        self.connect(self.thread, QtCore.SIGNAL("finished()"), self.__slot_thread)
+        self.thread.start()
 
 
     def __slot_connect(self):

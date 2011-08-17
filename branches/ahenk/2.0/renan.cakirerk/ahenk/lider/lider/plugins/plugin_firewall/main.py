@@ -99,6 +99,11 @@ class ThreadFW(QtCore.QThread):
                       data)
 
         self.rules_compiled = data
+        
+        # Save changes to default firewall settings file
+        f = open('/usr/share/ahenk-lider/firewall.fwb', 'w+')
+        f.write(data)
+        f.close()
 
 
 class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
