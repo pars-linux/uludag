@@ -14,7 +14,7 @@ Research / Decide :
 + XML parser developed using Python
 + XML parser developed using C
 + Create a sample menu with ncurses/menu
-- When the communication start, decide to which kernel will load to client machine
+/ When the communication start, decide to which kernel will load to client machine
 - Create a network that have server and client machines. Setup PSTP.
 - Research booting 64bit kernel from 32bit kernel
     ? with 'kexec'
