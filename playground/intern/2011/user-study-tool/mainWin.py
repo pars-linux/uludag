@@ -9,6 +9,7 @@ from PyQt4.QtCore import *
 from PyQt4 import QtWebKit
 
 from pds.gui import *
+from pds.qprogressindicator import QProgressIndicator
 
 from myWidgets import SurveyItem,SurveyItemWidget
 from ui_mainMenu import Ui_mainManager
@@ -44,15 +45,16 @@ class MainManager(QtGui.QWidget):
 	    self.widgets[survey["id"]] = w
             self.ui.surveyList.setItemWidget(item, self.widgets[survey["id"]])
             self.connect(w.ui.infoButton, SIGNAL("clicked()"), w.showDescription)
-            
-           
-            
+         
         self.connect(self.ui.alwaysHelp, SIGNAL("clicked()"), self.setGlobalParticipation)
         self.connect(self.ui.askToHelp, SIGNAL("clicked()"), self.setGlobalParticipation)
 	self.connect(self.ui.rejectHelp, SIGNAL("clicked()"), self.setGlobalParticipation)
 	
 	#self.connect(self.ui.surveyList, SIGNAL("itemSelectionChanged()"),self.showDescription)
 	#self.info.clicked.connect(self.hideDescription)
+	
+	
+	self.connect(self.info.ui.hideButton, SIGNAL("clicked()"), self.hideDescription)
 	
 	
             
@@ -68,28 +70,45 @@ class MainManager(QtGui.QWidget):
 	else :
 	    self.data["userParticipation"] = "Do not Join" 
 	
-	f = open('user_studies2.json','w')
+	f = open('uself.r_studies2.json','w')
 	string = json.dump(self.data,f, indent = 2)
 	f.close()
 	
     def showDescription(self, url):
+	
 	self.info.ui.webView.load(url)
+	
 	self.info.resize(self.ui.surveyList.size())
 	self.info.animate(start = MIDLEFT, stop = MIDCENTER)
 	QtGui.qApp.processEvents()
+	self.ui.alwaysHelp.setEnabled(False)
+	self.ui.askToHelp.setEnabled(False)
+	self.ui.rejectHelp.setEnabled(False)
 	
-    
+	#self.busy =QProgressIndicator(self)
+	#self.addWidget(self.busy)
+	#self.busy.startAnimation()
+	#self.setAnimationDelay(100)
+	#self.stopAnimation()
+    def hideDescription(self):
+	if self.info.isVisible():
+	    self.info.animate(start = MIDCENTER,
+			stop  = MIDRIGHT,
+			direction = OUT)
+	self.ui.alwaysHelp.setEnabled(True)
+	self.ui.askToHelp.setEnabled(True)
+	self.ui.rejectHelp.setEnabled(True)
+   
 
 class UserStudyItemInfo(PAbstractBox):
-  
+
     def __init__(self, parent):
 	PAbstractBox.__init__(self, parent)
 	
 	self.ui = Ui_InfoWidget()
 	self.ui.setupUi(self)
 	
-        self.ui.webView = DetailPage(self, self)
-        self.ui.gridLayout.addWidget(self.ui.webView, 0, 0, 1, 1)
+	self.ui.hideButton = QtGui.QPushButton(self.ui.webView)
 	
 	self._animation = 2
 	self._duration = 500
@@ -97,19 +116,11 @@ class UserStudyItemInfo(PAbstractBox):
 	self.enableOverlay()
 	self.hide()
 	
-   
-class DetailPage(QtWebKit.QWebView):
-    def __init__(self, parent,  pdsWidget):
-	QtWebKit.QWebView.__init__(self, parent)
-	self.pdsWidget = pdsWidget
-	
-    def mousePressEvent(self, event):
-	if self.isVisible():
-	    self.pdsWidget.animate(start = MIDCENTER,
-			stop  = MIDRIGHT,
-			direction = OUT)
-	
-	
+    def resizeEvent(self, event):
+	PAbstractBox.resizeEvent(self, event)
+	print event.size().width()
+	self.ui.hideButton.move(event.size().width()-self.ui.hideButton.width(),0)
+
 	
     
 	
