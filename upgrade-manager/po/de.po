@@ -166,6 +166,8 @@ msgid ""
 "There are uncompleted upgrade steps left.\n"
 "Do you want to continue from this step ? (Recommended)"
 msgstr ""
+"Es sind noch nicht alle notwendigen Schritte für das Upgrade durchgeführt worden.\n"
+"Wollen Sie fortfahren? (Empfohlen) "
 
 #: ui/ui_main.py:62
 msgid "Are you ready to upgrade your system to Pardus 2011?"
