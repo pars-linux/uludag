@@ -11,8 +11,8 @@
 #include <curses.h>
 #include <menu.h>
 
-#define ROW    20
-#define COL    80
+#define ROW    20 
+#define COL    70
 #define ROW_MIN    17
 #define COL_MIN    53
 #define MENU_SIZE   14
@@ -160,14 +160,38 @@ void screen_size(WINDOW *win, int min_row, int min_col,int *r, int *c)
 
 //-------------------------------------------------------------------------------
 
+char *getMachType(void)
+{
+    FILE *fP;
+    char *machtype;
+    
+    if ((fP = popen("uname -m", "r")) == NULL) { 
+        printf("Machtype not found\n" );
+        return NULL;
+    }
+    
+    if ((machtype = (char *)calloc(20, 0)) == NULL)
+        return NULL;
+
+    while (fgets(machtype, sizeof(machtype), fP) != NULL) 
+        ;
+
+    *strrchr(machtype, '\n') = '\0';
+    pclose(fP);
+
+    return machtype;
+}
+
+//-------------------------------------------------------------------------------
 
 int main(int argc, char **argv)
 {
     setlocale(LC_ALL , "");
 
-    int i;
+    int i, k;
     gVersPtr cur;
-
+    char *machtype;
+    char programname[50];
     /* COMPAT: Do not genrate nodes for formatting spaces */
     LIBXML_TEST_VERSION
 
@@ -176,11 +200,26 @@ int main(int argc, char **argv)
     cur = parseGversFile(argv[1]);
     /* Clean up everything else before quitting. */
     xmlCleanupParser();
-
+    
     ITEM **my_items;
     MENU *my_menu;
     WINDOW *my_menu_win;
-    int n_choices;
+    int n_choices = 0;
+
+    n_choices = cur->nbversions; 
+    
+    machtype = getMachType();
+    sprintf(programname, "Pardus PXE-Boot - %s", machtype);
+    my_items = (ITEM **)calloc(n_choices, sizeof(ITEM *));
+    /* İtemleri oluştur*/
+    k = 0;
+    for (i = 0; i < n_choices; i++)
+        if (strstr(cur->versions[i]->name, machtype)) {
+            my_items[k] = new_item(cur->versions[i]->name, cur->versions[i]->versionID);
+            k++;
+        }
+    free(machtype);
+    n_choices = k;
 
     /* Curses kipini ilklendir*/
     initscr();
@@ -195,19 +234,11 @@ int main(int argc, char **argv)
     init_pair(2, COLOR_CYAN, COLOR_BLACK);
     init_pair(3, COLOR_MAGENTA, COLOR_BLACK);
 
-    /* Öğeleri oluştur */
-    n_choices = cur->nbversions;
-    my_items = (ITEM **)calloc(n_choices + 1, sizeof(ITEM *));
-   
-    /* İtemleri oluştur*/
-    for (i = 0; i < cur->nbversions; i++){
-        my_items[i] = new_item(cur->versions[i]->name, cur->versions[i]->versionID);
-    }
     /* Menüyü oluştur */
     my_menu = new_menu((ITEM **)my_items);
 
     /* Menü ile ilişiklendirilecek pencereyi oluştur */
-    my_menu_win = newwin( ROW , COL , (*(&row)/2)- ROW/2, (*(&col)/2) - COL/2);
+    my_menu_win = newwin( ROW , COL , row / 2 - ROW/2, col / 2 - COL/2);
     keypad(my_menu_win, TRUE);
 
     /* Ana pencereyi ve alt pencereleri ayarla */
@@ -217,15 +248,14 @@ int main(int argc, char **argv)
 
 
     /* Menü göstericisini " * " olarak ayarla*/
-    set_menu_mark(my_menu, " * ");
+    set_menu_mark(my_menu, " >> ");
 
     /* Ana pencere etrafında bir çerçeve çiz ve bir başlık yaz */
     box(my_menu_win, 0, 0);
-    print_in_middle( my_menu_win, 1 , 0 , COL , "PARDUS" , COLOR_PAIR(1) );
+    print_in_middle( my_menu_win, 1 , 0 , COL , programname , COLOR_PAIR(1) );
     mvwaddch(my_menu_win , 2 , 0 , ACS_LTEE);
     mvwhline(my_menu_win , 2 , 1 , ACS_HLINE, COL-2);
-    mvwaddch(my_menu_win , 2 , COL-1 , ACS_RTEE);
-
+    
     attron( COLOR_PAIR(3) );
     mvprintw( LINES - 3 , 0 , "ABCDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ" );
     mvprintw( LINES - 2 , 0 , "F1 to exit\n,  abcdefgğhıijklmeoöprsştuüvyz" );
@@ -238,7 +268,7 @@ int main(int argc, char **argv)
 
     char path[256];
     int len=0, limit=0;
-    int c = KEY_UP;
+    int c = 0;
     
     do
     {
@@ -247,7 +277,6 @@ int main(int argc, char **argv)
         {
             case KEY_DOWN:
                 if(limit < n_choices - 1){
-                    limit++;
                     len= strlen(cur->versions[limit]->name)+strlen(cur->versions[limit]->versionID)+ strlen(cur->versions[limit]->size)+2*4;
                     attron( COLOR_PAIR(2) );
                     menu_driver( my_menu , REQ_DOWN_ITEM );
@@ -258,11 +287,11 @@ int main(int argc, char **argv)
                     item_name( current_item( my_menu )) , cur->versions[limit]->versionID , cur->versions[limit]->size );
                     pos_menu_cursor( my_menu );
                     attroff( COLOR_PAIR(2) );
+                    limit++;
                 }
                 break;
             case KEY_UP:
                  if( limit > 0 ){
-                    limit--;
                     len= strlen( cur->versions[limit]->name ) + strlen( cur->versions[limit]->versionID )+ strlen( cur->versions[limit]->size ) + 2*4;
                     attron( COLOR_PAIR(2) );
                     menu_driver( my_menu , REQ_UP_ITEM);
@@ -273,6 +302,7 @@ int main(int argc, char **argv)
                     item_name( current_item(my_menu)) ,cur->versions[limit]->versionID , cur->versions[limit]->size );
                     pos_menu_cursor( my_menu );
                     attroff( COLOR_PAIR(2) );
+                    limit--;
                  }
                 break;
             case 10: /* Enter */
@@ -293,8 +323,8 @@ int main(int argc, char **argv)
                  break;
             default:
                  break;
-        }
-         
+        
+        } 
         refresh();
     } while (c != KEY_F(1));
 
@@ -309,4 +339,3 @@ int main(int argc, char **argv)
 
  return 0;
 }
-
