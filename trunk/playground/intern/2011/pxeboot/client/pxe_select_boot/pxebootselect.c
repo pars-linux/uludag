@@ -277,6 +277,7 @@ int main(int argc, char **argv)
         {
             case KEY_DOWN:
                 if(limit < n_choices - 1){
+                    limit++;
                     len= strlen(cur->versions[limit]->name)+strlen(cur->versions[limit]->versionID)+ strlen(cur->versions[limit]->size)+2*4;
                     attron( COLOR_PAIR(2) );
                     menu_driver( my_menu , REQ_DOWN_ITEM );
@@ -287,11 +288,11 @@ int main(int argc, char **argv)
                     item_name( current_item( my_menu )) , cur->versions[limit]->versionID , cur->versions[limit]->size );
                     pos_menu_cursor( my_menu );
                     attroff( COLOR_PAIR(2) );
-                    limit++;
                 }
                 break;
             case KEY_UP:
                  if( limit > 0 ){
+                    limit--;
                     len= strlen( cur->versions[limit]->name ) + strlen( cur->versions[limit]->versionID )+ strlen( cur->versions[limit]->size ) + 2*4;
                     attron( COLOR_PAIR(2) );
                     menu_driver( my_menu , REQ_UP_ITEM);
@@ -302,7 +303,6 @@ int main(int argc, char **argv)
                     item_name( current_item(my_menu)) ,cur->versions[limit]->versionID , cur->versions[limit]->size );
                     pos_menu_cursor( my_menu );
                     attroff( COLOR_PAIR(2) );
-                    limit--;
                  }
                 break;
             case 10: /* Enter */
