@@ -10,26 +10,8 @@ import cPickle
 def downloadRepoXML(repo):
     file_name = repo.split('/')
     file_name = file_name[4]+"_"+file_name[5]+"_"+file_name[6]+".xz"
-    u = urllib2.urlopen(repo)
-    f = open(file_name, 'wb')
-    meta = u.info()
-    file_size = int(meta.getheaders("Content-Length")[0])
-    print "Downloading: %s Bytes: %s" % (file_name, file_size)
     
-    file_size_dl = 0
-    block_sz = 8192
-    while True:
-        buffer = u.read(block_sz)
-        if not buffer:
-            break
-    
-        file_size_dl += len(buffer)
-        f.write(buffer)
-        status = r"%10d  [%3.2f%%]" % (file_size_dl, file_size_dl * 100. / file_size)
-        status = status + chr(8)*(len(status)+1)
-        print status,
-    f.close()
-    
+    download(file_name, repo)
     
     xml_object = open(file_name, 'rb').read()
     a = lzma.LZMADecompressor()
@@ -53,16 +35,24 @@ def findDependency(i):
     #print dep_list
     return dep_list
 
+
 def parsePisiXML(dependency = None):
     repo_packages = {}
     repos = getRepos()
     
     for repo in repos:
         packages = {}
+        obselete_list = []
+        
         pisi_xml = downloadRepoXML(repos[repo]) #XML dosyalarını indir
         pisi_data = open(pisi_xml) #Aç
         package_tree = tree.fromstring(pisi_data.read()) #XML dosyasını tree değişkenine aç
         packages_tree = package_tree.findall("Package") #tree içerisinden tüm Package taglerini çek
+        obseletes = package_tree.find("Distribution").find("Obsoletes").findall("Package")
+
+        for obsolete in obseletes:
+            obselete_list.append(obsolete.text)
+            
         for i in packages_tree:
             dep_list = []
             release_handler = i.find("History") 
@@ -70,6 +60,7 @@ def parsePisiXML(dependency = None):
             release = release_handler.find("Update").get("release")
             #Dependencies
             dep_list = findDependency(i)
+            #obsolete_list = findObsoletes(i)
             #/Dependencies
             packages[name] = (release, repo, dep_list)
             
@@ -85,7 +76,8 @@ def parsePisiXML(dependency = None):
 '''
         print "\n"    
         #print len(dep_list)
-        repo_packages[repo] = (packages) #FIXED
+        repo_packages[repo] = (packages, obselete_list) #FIXED
+    print repo_packages["pardus"][0]["firefox"]
     return repo_packages
 
 
@@ -106,17 +98,17 @@ def getUpdatedPackages(): #CODE: güncel paket listesi ile elimizdeki paket list
     print "\n"
     for ins_package in installed_packages:
         for repo in repo_packages:
-            for package in repo_packages[repo]:
-                if ins_package == package and repo_packages[repo][package][1] == installed_packages[ins_package][1]:
-                    if int(repo_packages[repo][package][0]) > int(installed_packages[ins_package][0]):
-                        if (checkObsoletes()):
-                            print "%d.Paket adi:%s\t repo:%s\t guncelV:%s\t simdikiV:%s"%(cnt, package, repo, repo_packages[repo][package][0],installed_packages[ins_package][0])
+            for package in repo_packages[repo][0]:
+                if ins_package == package and repo_packages[repo][0][package][1] == installed_packages[ins_package][1]:
+                    if int(repo_packages[repo][0][package][0]) > int(installed_packages[ins_package][0]):
+                        if checkObsoletes(repo_packages[repo][1], package):
+                            print "%d.Paket adi:%s\t repo:%s\t guncelV:%s\t simdikiV:%s"%(cnt, package, repo, repo_packages[repo][0][package][0],installed_packages[ins_package][0])
                             cnt += 1
-                        #print type(repo_packages[repo][package][0])
+                        #print type(repo_packages[repo][0][package][0])
                         #package_list[package] = installed_packages[ins_package]
-                        #deplist[package] = repo_packages[repo][package]
-                            for dep in repo_packages[repo][package][2]:
-                                deplist[dep] = repo_packages[repo][package][1]
+                        #deplist[package] = repo_packages[repo][0][package]
+                            for dep in repo_packages[repo][0][package][2]:
+                                deplist[dep] = repo_packages[repo][0][package][1]
         package_list[ins_package] = installed_packages[ins_package][1]
                         
     #print package_list
@@ -168,9 +160,9 @@ def checkRecursiveDeps(deplist, repo_packages):
     deps = {}
     for dep in deplist:
         for repo in repo_packages:
-            for package in repo_packages[repo]:
-                if deplist[dep] == repo_packages[repo][package][1] and dep == package:
-                    for new_dep in repo_packages[repo][package][2]:
+            for package in repo_packages[repo][0]:
+                if deplist[dep] == repo_packages[repo][0][package][1] and dep == package:
+                    for new_dep in repo_packages[repo][0][package][2]:
                         deps[new_dep] = deplist[dep]
                     
     #print deps
@@ -185,8 +177,8 @@ def checkRecursiveDeps(deplist, repo_packages):
         for repo in repo_packages:
             for package in repo_packages[repo]:
                 if dep_name == package:
-                    print package,"-->",repo_packages[repo][package][2],"\t",repo_packages[repo][package][1]
-                    deplist = repo_packages[repo][package][2]
+                    print package,"-->",repo_packages[repo][0][package][2],"\t",repo_packages[repo][0][package][1]
+                    deplist = repo_packages[repo][0][package][2]
             deplist = list(set(deplist))
             for i in package_list:
                 c = 0
@@ -196,16 +188,41 @@ def checkRecursiveDeps(deplist, repo_packages):
                     c += 1
             if not len(deplist) <= 0:
                     checkRecursiveDeps(packages,deplist, repo_packages)
-                    #for dep in repo_packages[repo][package][2]:
+                    #for dep in repo_packages[repo][0][package][2]:
                     #    print dep
     #if not len(deplist) <= 0:
     #    checkRecursiveDeps(deplist, repo_packages)
     '''
     
-def checkObsoletes():
-    return True
+def checkObsoletes(obselete_list, package):
+    for obselete in obselete_list:
+        if package == obselete:
+            return False
+        else:
+            return True
+    
 
-
+def download(file_name, url):
+    u = urllib2.urlopen(url)
+    f = open(file_name, 'wb')
+    meta = u.info()
+    file_size = int(meta.getheaders("Content-Length")[0])
+    print "Downloading: %s Bytes: %s" % (file_name, file_size)
+    
+    file_size_dl = 0
+    block_sz = 8192
+    while True:
+        buffer = u.read(block_sz)
+        if not buffer:
+            break
+    
+        file_size_dl += len(buffer)
+        f.write(buffer)
+        status = r"%10d  [%3.2f%%]" % (file_size_dl, file_size_dl * 100. / file_size)
+        status = status + chr(8)*(len(status)+1)
+        print status,
+    f.close()
+    
 
 
 
