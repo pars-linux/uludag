@@ -463,7 +463,7 @@ class Ui_BugReporter(object):
         self.btnBackPage4.clicked.connect(self.goto_prev_page)
         self.btnBackPage6.clicked.connect(self.goto_prev_page)
         self.btnCancelPage1.clicked.connect(self.quit_window)
-
+    
 
 
 if __name__ == "__main__":
