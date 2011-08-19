@@ -446,25 +446,57 @@ class ProxySettings(SettingsTab):
 
 class RatingSettings(SettingsTab):
     def setupUi(self):
-        self.settings.opendesktop_check.setIcon(KIcon("dialog-ok"))
+        self.initialize()
+
+    def hideAllWidgets(self):
+        # I apologize but we do not provide registering functions right now.
+        self.settings.opendesktop_register.hide()
+    
+        self.settings.opendesktop_login.hide()
+        self.settings.opendesktop_loggedin.hide()
 
     def initialize(self):
-        pass
+        self.hideAllWidgets()
+        if self.config.getOpenDesktopKey():
+            self.settings.opendesktop_loggedin.show()
+        else:
+            self.settings.opendesktop_login.show()
+            self.settings.opendesktop_login_user.setText("")
+            self.settings.opendesktop_login_pass.setText("")
+            self.checkDefault()
     
     def connectSignals(self):
-        self.connect(self.settings.opendesktop_check, SIGNAL("clicked()"), self.checkLogin)
+        self.connect(self.settings.opendesktop_login_user, SIGNAL("textChanged(QString)"), self.enableCheck)
+        self.connect(self.settings.opendesktop_login_pass, SIGNAL("textChanged(QString)"), self.enableCheck)
+        self.connect(self.settings.opendesktop_login_check, SIGNAL("clicked()"), self.checkLogin)
+        self.connect(self.settings.opendesktop_deactivate, SIGNAL("clicked()"), self.deactivateLogin)
 
     def checkLogin(self):
-        self.settings.opendesktop_check.setEnabled(False)
-        self.settings.opendesktop_check.setText('Checking...')
-        params = urllib.urlencode({'username': self.settings.opendesktop_user.text(), 'password': self.settings.opendesktop_pass.text()})
+        self.settings.opendesktop_login_check.setText('Checking...')
+        self.disableCheck()
+        params = urllib.urlencode({'username': self.settings.opendesktop_login_user.text(), 'password': self.settings.opendesktop_login_pass.text()})
         result = urllib.urlopen('http://onurguzel.com/appinfo/auth.php', params).read()
         jobj = json.loads(result)
         if jobj['statuscode'] == 100:
-            self.settings.opendesktop_check.setIcon(KIcon("dialog-ok-apply"))
+            self.settings.opendesktop_login_check.setIcon(KIcon("dialog-ok-apply"))
             self.key = jobj['key']
-            self.settings.opendesktop_check.setText('Successful!')
+            self.settings.opendesktop_login_check.setText('Successful!')
             self.markChanged()
+
+    def deactivateLogin(self):
+        self.config.setOpenDesktopKey("")
+        self.initialize()
+
+    def checkDefault(self):
+        self.settings.opendesktop_login_check.setIcon(KIcon("dialog-ok"))
+        self.settings.opendesktop_login_check.setText('Check')
+        self.disableCheck()
+
+    def enableCheck(self):
+        self.settings.opendesktop_login_check.setEnabled(True)
+
+    def disableCheck(self):
+        self.settings.opendesktop_login_check.setEnabled(False)
 
     def save(self):
         self.config.setOpenDesktopKey(self.key)
