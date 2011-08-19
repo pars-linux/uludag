@@ -97,7 +97,6 @@ def getUpdatedPackages(): #CODE: güncel paket listesi ile elimizdeki paket list
     repo_packages = parsePisiXML()
 
     
-    cnt = 1
     deplist = {}
     package_list = {}
     download_list = []
@@ -113,7 +112,6 @@ def getUpdatedPackages(): #CODE: güncel paket listesi ile elimizdeki paket list
                             if isReplace ==  None:
                                 #print "%d.Paket adi:%s\t repo:%s\t guncelV:%s\t simdikiV:%s"%(cnt, package, repo, repo_packages[repo][0][package][0],installed_packages[ins_package][0])
                                 download_list.append(repo_packages[repo][0][package][5])
-                                cnt += 1
                                 for dep in repo_packages[repo][0][package][2]:
                                     deplist[dep] = repo_packages[repo][0][package][1]
                             else:
@@ -123,9 +121,9 @@ def getUpdatedPackages(): #CODE: güncel paket listesi ile elimizdeki paket list
     for dep in deplist:
         download_list.append(repo_packages[deplist[dep]][0][dep][5])
     
-    print len(download_list)
-    for a in download_list:
-        print a
+    print "%s packages and %s dependencies ready for download" %(int(len(download_list)-len(deplist)), len(deplist))
+    #for a in download_list:
+    #    print a
 
 def checkDependencyUpdate(package_list, deplist, repo_packages):
     
