@@ -70,14 +70,16 @@ def parsePisiXML(dependency = None):
             name = i.find("Name").text
             release = history_handler.find("Update").get("release")
             version = history_handler.find("Update").find("Version").text
-            
+            #url
+            url = repos[repo].strip("pisi-index.xml.xz") + i.find("PackageURI").text
+            #/url
             #Replaces
             rep_list = findReplaces(i)
             #/Replaces
             #Dependencies
             dep_list = findDependency(i)
             #/Dependencies
-            packages[name] = (release, repo, dep_list, version, rep_list)
+            packages[name] = (release, repo, dep_list, version, rep_list, url)
         print "\n"    
         repo_packages[repo] = (packages, obselete_list) #FIXED
         #print repo_packages[repo][0]["texlive-lang-spanish"][4]
@@ -109,14 +111,21 @@ def getUpdatedPackages(): #CODE: güncel paket listesi ile elimizdeki paket list
                         if checkObsoletes(repo_packages[repo][1], package): 
                             isReplace = checkReplaces(repo_packages[repo][0][package][4], package, package_list)
                             if isReplace ==  None:
-                                print "%d.Paket adi:%s\t repo:%s\t guncelV:%s\t simdikiV:%s"%(cnt, package, repo, repo_packages[repo][0][package][0],installed_packages[ins_package][0])
+                                #print "%d.Paket adi:%s\t repo:%s\t guncelV:%s\t simdikiV:%s"%(cnt, package, repo, repo_packages[repo][0][package][0],installed_packages[ins_package][0])
+                                download_list.append(repo_packages[repo][0][package][5])
                                 cnt += 1
                                 for dep in repo_packages[repo][0][package][2]:
                                     deplist[dep] = repo_packages[repo][0][package][1]
                             else:
-                                print isReplace
+                                download_list.append(repo_packages[repo][0][isReplace][5])
         package_list[ins_package] = installed_packages[ins_package][1]
-    checkDependencyUpdate(package_list, deplist, repo_packages)
+    deplist = checkDependencyUpdate(package_list, deplist, repo_packages)
+    for dep in deplist:
+        download_list.append(repo_packages[deplist[dep]][0][dep][5])
+    
+    print len(download_list)
+    for a in download_list:
+        print a
 
 def checkDependencyUpdate(package_list, deplist, repo_packages):
     
@@ -137,7 +146,8 @@ def checkDependencyUpdate(package_list, deplist, repo_packages):
     
     deplist.update(new_deplist)
     
-    print deplist
+    #print deplist
+    return deplist
     
 
 def checkRecursiveDeps(deplist, repo_packages):
