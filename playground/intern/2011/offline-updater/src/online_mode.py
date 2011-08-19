@@ -103,8 +103,7 @@ def getUpdatedPackages(): #CODE: güncel paket listesi ile elimizdeki paket list
         for repo in repo_packages:
             for package in repo_packages[repo][0]:
                 if ins_package == package and repo_packages[repo][0][package][1] == installed_packages[ins_package][1]:
-                    if int(repo_packages[repo][0][package][0]) > int(installed_packages[ins_package][0] 
-                                                                     or 
+                    if int(repo_packages[repo][0][package][0]) > int(installed_packages[ins_package][0] or 
                          repo_packages[repo][0][package][3] > installed_packages[ins_package][3]):
                         if checkObsoletes(repo_packages[repo][1], package): 
                             isReplace = checkReplaces(repo_packages[repo][0][package][4], package, package_list)
@@ -113,8 +112,8 @@ def getUpdatedPackages(): #CODE: güncel paket listesi ile elimizdeki paket list
                                 cnt += 1
                                 for dep in repo_packages[repo][0][package][2]:
                                     deplist[dep] = repo_packages[repo][0][package][1]
-                                else:
-                                    pass
+                            else:
+                                    print isReplace
         package_list[ins_package] = installed_packages[ins_package][1]
     checkDependencyUpdate(package_list, deplist, repo_packages)
 
