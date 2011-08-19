@@ -1,0 +1,101 @@
+diff -Nuar pisi_orig209/pxml/autoxml.py pisi/pxml/autoxml.py
+--- pisi_orig209/pxml/autoxml.py	2011-08-19 08:18:56.835000003 +0300
++++ pisi/pxml/autoxml.py	2011-08-19 13:03:17.650000082 +0300
+@@ -43,6 +43,8 @@
+ class Error(pisi.Error):
+     pass
+ 
++USE_ON_DEMAND_XML = True
++
+ # requirement specs
+ 
+ mandatory, optional = range(2) # poor man's enum
+@@ -172,7 +174,7 @@
+         self.col = self.col + len(data)
+         self.atbreak = 0
+ 
+-class autoxml(oo.autosuper, oo.autoprop):
++class autoxml(oo.autosuper, oo.autoprop, object):
+     """High-level automatic XML transformation interface for xmlfile.
+     The idea is to declare a class for each XML tag. Inside the
+     class the tags and attributes nested in the tag are further
+@@ -333,6 +335,9 @@
+             if xmlfile_support and uri:
+                 self.read(uri, keepDoc, tmpDir)
+ 
++            if USE_ON_DEMAND_XML:
++                self.onDemand_functions = {}
++
+         cls.__init__ = initialize
+ 
+         cls.decoders = decoders
+@@ -360,8 +365,14 @@
+             errs = []
+             for base in cls.autoxml_bases:
+                 errs.extend(base.errors(self, where))
+-            for errors in errorss:#self.__class__.errorss:
+-                errs.extend(errors(self, where))
++
++            if USE_ON_DEMAND_XML:
++                # FIXME: tnr, errors istek yaparak nesnenin altindaki herseyin decode edilmesine sebep oluyor
++                pass
++            else:
++                for errors in errorss:#self.__class__.errorss:
++                    errs.extend(errors(self, where))
++
+             if hasattr(self, 'errors_hook'):
+                 errs.extend(self.errors_hook(where))
+             return errs
+@@ -484,6 +495,40 @@
+             cls.write = write
+             cls.parse = parse
+ 
++        if USE_ON_DEMAND_XML:
++            def __getattribute__(self, y):
++                # print "__getattribute__"
++                if y == '__dict__':
++                    return object.__getattribute__(self, y)
++                elif self.__dict__.has_key(y):
++                    a = self.__dict__[y]
++
++                    # FIXME: OnDemandXmlNode gibi bir nesne olusturulmali.
++                    # tuple ve ilk elemani fonksiyon olan bir eleman gelirse burasi hata verir.
++                    if isinstance(a, tuple) and callable(a[0]):
++                        function, node, errs, where = a
++                        # print "decoding %s" % where # tnr
++                        a = function(node, errs, where)
++                        self.__dict__[y] = a
++                        return a
++                    else:
++                        return a
++                else:
++                    return object.__getattribute__(self, y)
++            cls.__getattribute__ = __getattribute__
++
++            def onDemand_setAttrib(self, key, function, node, errs, where):
++                self.__dict__[key] = (function, node, errs, where)
++            cls.onDemand_setAttrib = onDemand_setAttrib
++
++            def onDemand_decodeAll(self):
++                errs = []
++                for base in cls.autoxml_bases:
++                    errs.extend(base.errors(self, where))
++
++                for errors in errorss:#self.__class__.errorss:
++                    errs.extend(errors(self, where))
++
+     def gen_attr_member(cls, attr):
+         """generate readers and writers for an attribute member"""
+         #print 'attr:', attr
+@@ -554,7 +599,10 @@
+ 
+         def decode(self, node, errs, where):
+             """decode component from DOM node"""
+-            setattr(self, name, decode_a(node, errs, where + '.' + unicode(name)))
++            if USE_ON_DEMAND_XML:
++                self.onDemand_setAttrib(name, decode_a, node, errs, where + '.' + unicode(name))
++            else:
++                setattr(self, name, decode_a(node, errs, where + '.' + unicode(name)))
+ 
+         def encode(self, node, errs):
+             """encode self inside, possibly new, DOM node using xml"""
