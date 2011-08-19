@@ -17,6 +17,7 @@ defaults = {
             "SystemTray" : False,
             "UpdateCheck" : False,
             "InstallUpdatesAutomatically" : False,
+            "OpenDesktopKey": False,
             "UpdateCheckInterval" : 60,
            }
 
