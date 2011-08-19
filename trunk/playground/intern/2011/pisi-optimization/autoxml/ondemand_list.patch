@@ -1,0 +1,189 @@
+diff -Nuar pisi_orig209/operations/install.py pisi/operations/install.py
+--- pisi_orig209/operations/install.py	2011-08-18 19:55:23.305000021 +0300
++++ pisi/operations/install.py	2011-08-18 21:11:42.882000024 +0300
+@@ -271,7 +271,7 @@
+         Bp = set()
+         for x in B:
+             pkg = packagedb.get_package(x)
+-            for dep in pkg.runtimeDependencies():
++            for dep in pkg.runtimeDependencies(): # FIXME: tnr
+                 ctx.ui.debug('checking %s' % str(dep))
+                 # we don't deal with already *satisfied* dependencies
+                 if not dep.satisfied_by_installed():
+diff -Nuar pisi_orig209/pxml/autoxml.py pisi/pxml/autoxml.py
+--- pisi_orig209/pxml/autoxml.py	2011-08-18 19:55:23.309000021 +0300
++++ pisi/pxml/autoxml.py	2011-08-18 21:41:53.337000025 +0300
+@@ -40,6 +40,8 @@
+ import pisi.util as util
+ import pisi.oo as oo
+ 
++import ondemand
++
+ class Error(pisi.Error):
+     pass
+ 
+@@ -456,10 +458,12 @@
+                 if not keepDoc:
+                     self.unlink() # get rid of the tree
+ 
+-                errs = self.errors()
+-                if errs:
+-                    errs.append(_("autoxml.read: File '%s' has errors") % uri)
+-                    raise Error(*errs)
++                # FIXME: --- 
++                if self.__dict__.has_key('errors') :
++                    errs = self.errors()
++                    if errs:
++                        errs.append(_("autoxml.read: File '%s' has errors") % uri)
++                        raise Error(*errs)
+ 
+             def write(self, uri, keepDoc = False, tmpDir = '/tmp',
+                       sha1sum = False, compress = None, sign = None):
+@@ -756,7 +760,8 @@
+             return []
+ 
+         def decode(node, errs, where):
+-            l = []
++
++            l = ondemand.XML_on_demand_list()
+             nodes = xmlext.getAllNodes(node, path)
+             #print node, tag + '/' + comp_tag, nodes
+             if len(nodes)==0 and req==mandatory:
+@@ -765,7 +770,8 @@
+             for node in nodes:
+                 dummy = xmlext.newNode(node, "Dummy")
+                 xmlext.addNode(dummy, '', node)
+-                l.append(decode_item(dummy, errs, where + unicode("[%s]" % ix)))
++                # l.append(decode_item(dummy, errs, where + unicode("[%s]" % ix)))
++                l.onDemand_append(decode_item, (dummy, errs, where + unicode("[%s]" % ix)))
+                 #l.append(decode_item(node, errs, where + unicode("[%s]" % ix)))
+                 ix += 1
+             return l
+@@ -786,9 +792,20 @@
+         def errors(l, where):
+             errs = []
+             ix = 1
+-            for node in l:
++            # print "errors %s" % where
++            # print l # tnr
++            # from traceback import print_stack
++            # for node in l: # tnr
++            #     print "errors_item: %s - %s" % (errors_item(node, where + '[%s]' % ix), where)
++            #     errs.extend(errors_item(node, where + '[%s]' % ix))
++            #     ix += 1
++            # if errs:
++            #     print "errs: %s" % errs
++            for node in l.onDemand_safeIter(): # tnr
++                # print "errors_item: %s - %s" % (errors_item(node, where + '[%s]' % ix), where)
+                 errs.extend(errors_item(node, where + '[%s]' % ix))
+                 ix += 1
++
+             return errs
+ 
+         def format(l, f, errs):
+@@ -803,7 +820,7 @@
+         """generate a class datatype that is highly integrated
+            don't worry if that means nothing to you. this is a silly
+            hack to implement local text quickly. it's not the most
+-           elegant thing in the world. it's basically a copy of
++           elegant thing in the world. it's basically a  of
+            class tag"""
+         name, tag_type, req, path = cls.parse_spec(tag, spec)
+ 
+diff -Nuar pisi_orig209/pxml/ondemand.py pisi/pxml/ondemand.py
+--- pisi_orig209/pxml/ondemand.py	1970-01-01 02:00:00.000000000 +0200
++++ pisi/pxml/ondemand.py	2011-08-18 21:42:57.730000025 +0300
+@@ -0,0 +1,93 @@
++# -*- coding: utf-8 -*-
++
++class XML_on_demand_list(list):
++    # TOOO: override list functions
++
++    def __init__(self):
++        super(XML_on_demand_list, self).__init__()
++        self.functions = []
++        self.undecoded_count = 0
++
++    def __getitem__(self, y):
++        if len(self.functions) > y and self.functions[y]:
++            dummy, errs, where = super(XML_on_demand_list, self).__getitem__(y)
++            # print "%s decoding" % where
++            r = self.functions[y](dummy, errs, where)
++            self.functions[y] = None
++            super(XML_on_demand_list, self).__setitem__(y, r)
++            self.undecoded_count -= 1
++            #print "%s decoded" % where #
++            return r
++        else:
++            return super(XML_on_demand_list, self).__getitem__(y)
++
++    def __iter__(self):
++        # print "__iter__"
++        # from traceback import print_stack #
++        # print_stack() # tnr
++
++        # FIXME: use yield
++        for x in xrange(self.__len__()):
++            self.__getitem__(x)
++        return super(XML_on_demand_list, self).__iter__()
++
++    # FIXME: self ve y decode() baska bir yol var mi
++    def __add__(self, y):
++        self.onDemand_decodeAll()
++        if isinstance(y, XML_on_demand_list):
++            y.onDemand_decodeAll()
++
++        return super(XML_on_demand_list, self).__add__(y)
++
++    def __mul__(self, n):
++        self.onDemand_decodeAll()
++        if isinstance(y, XML_on_demand_list):
++            y.onDemand_decodeAll()
++
++        return super(XML_on_demand_list, self).__mul__(y)
++
++    def __eq__(self, y):
++        self.onDemand_decodeAll()
++        if isinstance(y, XML_on_demand_list):
++            y.onDemand_decodeAll()
++
++        return super(XML_on_demand_list, self).__eq__(y)
++
++    def onDemand_append(self, function, value):
++        super(XML_on_demand_list, self).append(value)
++        self.functions.append(function)
++        self.undecoded_count += 1
++
++    def onDemand_isdecoded(self, y):
++        if len(self.functions) > y and self.functions[y]:
++            return False
++        else:
++            return True
++
++    def onDemand_safeIter(self):
++        class iterator(object):
++            def __init__(self, obj):
++                self.obj = obj
++                self.index = -1
++
++            def __iter__(self):
++                return self
++
++            def next(self):
++                self.index+=1
++                if self.index >= len(self.obj):
++                    raise StopIteration
++                # print len(self.obj), self.index #
++
++                while not self.obj.onDemand_isdecoded(self.index):
++                    self.index += 1
++                    if self.index >= len(self.obj):
++                        raise StopIteration
++
++                return self.obj[self.index]
++
++        return iterator(self)
++
++    def onDemand_decodeAll(self):
++        # FIXME: use decoded count
++        self.__iter__()
