@@ -32,6 +32,30 @@ typedef struct gversion {
 
 FILE *fp;
 
+
+
+char *getMachType(void)
+{
+    FILE *fP;
+    char *machtype;
+    
+    if ((fP = popen("uname -m", "r")) == NULL) { 
+        printf("Machtype not found\n" );
+        return NULL;
+    }
+    
+    if ((machtype = (char *)calloc(20, 0)) == NULL)
+        return NULL;
+
+    while (fgets(machtype, sizeof(machtype), fP) != NULL) 
+        ;
+
+    *strrchr(machtype, '\n') = '\0';
+    pclose(fP);
+
+    return machtype;
+}
+
 //-----   PARSE XML   -----//
 
 static versPtr parseVersion(xmlDocPtr doc, xmlNodePtr cur) {
@@ -102,7 +126,8 @@ static gVersPtr parseGversFile(char *filename) {
         if ((!xmlStrcmp(cur->name , (const xmlChar *) "Pardus")))  {
             curvers = parseVersion(doc , cur);
             if (curvers != NULL)
-                ret->versions[ret->nbversions++] = curvers;
+                if (strstr(curvers->name,  getMachType()))
+                    ret->versions[ret->nbversions++] = curvers;
             if (ret->nbversions >= 500)
                 break;
         }
@@ -158,29 +183,6 @@ void screen_size(WINDOW *win, int min_row, int min_col,int *r, int *c)
      *c = col;
 }
 
-//-------------------------------------------------------------------------------
-
-char *getMachType(void)
-{
-    FILE *fP;
-    char *machtype;
-    
-    if ((fP = popen("uname -m", "r")) == NULL) { 
-        printf("Machtype not found\n" );
-        return NULL;
-    }
-    
-    if ((machtype = (char *)calloc(20, 0)) == NULL)
-        return NULL;
-
-    while (fgets(machtype, sizeof(machtype), fP) != NULL) 
-        ;
-
-    *strrchr(machtype, '\n') = '\0';
-    pclose(fP);
-
-    return machtype;
-}
 
 //-------------------------------------------------------------------------------
 
@@ -220,7 +222,7 @@ int main(int argc, char **argv)
         }
     free(machtype);
     n_choices = k;
-
+    
     /* Curses kipini ilklendir*/
     initscr();
     int row,col;
