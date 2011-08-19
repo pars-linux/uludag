@@ -33,6 +33,10 @@ class Config:
         self.group.writeEntry(option, QVariant(value))
         self.config.sync()
 
+    def getValue(self, option):
+        default = self._initValue(option, "")
+        return self.group.readEntry(option, QVariant(default)).toString()
+
     def getBoolValue(self, option):
         default = self._initValue(option, False)
         return self.group.readEntry(option, QVariant(default)).toBool()
@@ -98,4 +102,10 @@ class PMConfig(Config):
 
     def setShowIsA(self, enabled):
         self.setValue("ShowIsA", enabled)
+
+    def getOpenDesktopKey(self):
+        self.getValue("OpenDesktopKey")
+
+    def setOpenDesktopKey(self, value):
+        self.setValue("OpenDesktopKey", value)
 

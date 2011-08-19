@@ -10,7 +10,9 @@
 #
 # Please read the COPYING file
 
+import json
 import re
+import urllib
 from os import path
 
 from PyQt4.QtGui import QMessageBox
@@ -442,6 +444,31 @@ class ProxySettings(SettingsTab):
         self.iface.setConfig("general", "https_proxy", "None" if not httpsProxy else "https://%s%s:%s" % (auth, httpsProxy, httpsProxyPort))
         self.iface.setConfig("general", "ftp_proxy",   "None" if not ftpProxy   else "ftp://%s%s:%s"   % (auth, ftpProxy,   ftpProxyPort))
 
+class RatingSettings(SettingsTab):
+    def setupUi(self):
+        self.settings.opendesktop_check.setIcon(KIcon("dialog-ok"))
+
+    def initialize(self):
+        pass
+    
+    def connectSignals(self):
+        self.connect(self.settings.opendesktop_check, SIGNAL("clicked()"), self.checkLogin)
+
+    def checkLogin(self):
+        self.settings.opendesktop_check.setEnabled(False)
+        self.settings.opendesktop_check.setText('Checking...')
+        params = urllib.urlencode({'username': self.settings.opendesktop_user.text(), 'password': self.settings.opendesktop_pass.text()})
+        result = urllib.urlopen('http://onurguzel.com/appinfo/auth.php', params).read()
+        jobj = json.loads(result)
+        if jobj['statuscode'] == 100:
+            self.settings.opendesktop_check.setIcon(KIcon("dialog-ok-apply"))
+            self.key = jobj['key']
+            self.settings.opendesktop_check.setText('Successful!')
+            self.markChanged()
+
+    def save(self):
+        self.config.setOpenDesktopKey(self.key)
+
 class SettingsDialog(QDialog, Ui_SettingsDialog):
     def __init__(self, parent=None):
         QDialog.__init__(self, parent)
@@ -453,6 +480,7 @@ class SettingsDialog(QDialog, Ui_SettingsDialog):
         self.cacheSettings = CacheSettings(self)
         self.repositorySettings = RepositorySettings(self)
         self.proxySettings = ProxySettings(self)
+        self.ratingSettings = RatingSettings(self)
 
     def connectSignals(self):
         self.connect(self.buttonOk, SIGNAL("clicked()"), self.saveSettings)
@@ -461,7 +489,7 @@ class SettingsDialog(QDialog, Ui_SettingsDialog):
 
     def cancelSettings(self):
         for tab in (self.generalSettings, self.cacheSettings, \
-                self.repositorySettings, self.proxySettings):
+                self.repositorySettings, self.proxySettings, self.ratingSettings):
             tab.initialize()
         self.reject()
 
