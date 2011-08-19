@@ -58,11 +58,14 @@ def parsePisiXML(dependency = None):
             release_handler = i.find("History") 
             name = i.find("Name").text
             release = release_handler.find("Update").get("release")
+            version = release_handler.find("Update").find("Version").text
+            #print version
+            
             #Dependencies
             dep_list = findDependency(i)
             #obsolete_list = findObsoletes(i)
             #/Dependencies
-            packages[name] = (release, repo, dep_list)
+            packages[name] = (release, repo, dep_list, version)
         print "\n"    
         #print len(dep_list)
         repo_packages[repo] = (packages, obselete_list) #FIXED
@@ -89,7 +92,9 @@ def getUpdatedPackages(): #CODE: güncel paket listesi ile elimizdeki paket list
         for repo in repo_packages:
             for package in repo_packages[repo][0]:
                 if ins_package == package and repo_packages[repo][0][package][1] == installed_packages[ins_package][1]:
-                    if int(repo_packages[repo][0][package][0]) > int(installed_packages[ins_package][0]):
+                    if int(repo_packages[repo][0][package][0]) > int(installed_packages[ins_package][0] 
+                                                                     or 
+                         repo_packages[repo][0][package][3] > installed_packages[ins_package][3]):
                         if checkObsoletes(repo_packages[repo][1], package):
                             print "%d.Paket adi:%s\t repo:%s\t guncelV:%s\t simdikiV:%s"%(cnt, package, repo, repo_packages[repo][0][package][0],installed_packages[ins_package][0])
                             cnt += 1
