@@ -872,26 +872,26 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item>
-           <layout class="QFormLayout" name="opendesktop_form">
+           <layout class="QFormLayout" name="opendesktop_login_form">
             <item row="0" column="0">
-             <widget class="QLabel" name="label_opendesktop_user">
+             <widget class="QLabel" name="label_opendesktop_login_user">
               <property name="text">
                <string>Username:</string>
               </property>
              </widget>
             </item>
             <item row="1" column="0">
-             <widget class="QLabel" name="label_opendesktop_pass">
+             <widget class="QLabel" name="label_opendesktop_login_pass">
               <property name="text">
                <string>Password:</string>
               </property>
              </widget>
             </item>
             <item row="0" column="1">
-             <widget class="QLineEdit" name="opendesktop_user"/>
+             <widget class="QLineEdit" name="opendesktop_login_user"/>
             </item>
             <item row="1" column="1">
-             <widget class="QLineEdit" name="opendesktop_pass">
+             <widget class="QLineEdit" name="opendesktop_login_pass">
               <property name="echoMode">
                <enum>QLineEdit::Password</enum>
               </property>
@@ -900,9 +900,92 @@ p, li { white-space: pre-wrap; }
            </layout>
           </item>
           <item>
-           <widget class="QPushButton" name="opendesktop_check">
+           <widget class="QPushButton" name="opendesktop_login_check">
             <property name="text">
              <string>Check</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="opendesktop_register" native="true">
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <layout class="QFormLayout" name="opendesktop_reg_form">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_opendesktop_reg_firstname">
+              <property name="text">
+               <string>First name:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="opendesktop_reg_firstname"/>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_opendesktop_reg_lastname">
+              <property name="text">
+               <string>Last name:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="opendesktop_reg_lastname"/>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_opendesktop_reg_email">
+              <property name="text">
+               <string>Email:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_opendesktop_reg_username">
+              <property name="text">
+               <string>Username:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="label_opendesktop_reg_password">
+              <property name="text">
+               <string>Password:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="opendesktop_reg_email"/>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="opendesktop_reg_username"/>
+            </item>
+            <item row="4" column="1">
+             <widget class="QLineEdit" name="opendesktop_reg_password"/>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="opendesktop_loggedin" native="true">
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <widget class="QLabel" name="label_12">
+            <property name="text">
+             <string>You have successfully connected to Pardus package rating system. If you want to deactivate connection from this computer, click &quot;Deactivate&quot; button below.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="opendesktop_deactivate">
+            <property name="text">
+             <string>Deactivate</string>
             </property>
            </widget>
           </item>
