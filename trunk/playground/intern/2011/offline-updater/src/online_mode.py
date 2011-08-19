@@ -63,21 +63,10 @@ def parsePisiXML(dependency = None):
             #obsolete_list = findObsoletes(i)
             #/Dependencies
             packages[name] = (release, repo, dep_list)
-            
-        '''    
-        for dep_nodes in packages_tree:
-            dep_handler = dep_nodes.find("RuntimeDependencies")
-            if dep_handler:
-                deps = dep_handler.findall("Dependency")
-                for dep in deps:
-                    print dep.text
-                    #print deps
-                    
-'''
         print "\n"    
         #print len(dep_list)
         repo_packages[repo] = (packages, obselete_list) #FIXED
-    print repo_packages["pardus"][0]["firefox"]
+    #print repo_packages["pardus"][0]["firefox"]
     return repo_packages
 
 
@@ -104,18 +93,11 @@ def getUpdatedPackages(): #CODE: güncel paket listesi ile elimizdeki paket list
                         if checkObsoletes(repo_packages[repo][1], package):
                             print "%d.Paket adi:%s\t repo:%s\t guncelV:%s\t simdikiV:%s"%(cnt, package, repo, repo_packages[repo][0][package][0],installed_packages[ins_package][0])
                             cnt += 1
-                        #print type(repo_packages[repo][0][package][0])
-                        #package_list[package] = installed_packages[ins_package]
-                        #deplist[package] = repo_packages[repo][0][package]
                             for dep in repo_packages[repo][0][package][2]:
                                 deplist[dep] = repo_packages[repo][0][package][1]
         package_list[ins_package] = installed_packages[ins_package][1]
-                        
-    #print package_list
-    #print len(package_list), len(deplist)
-    
     checkDependencyUpdate(package_list, deplist, repo_packages)
-         
+
 def checkDependencyUpdate(package_list, deplist, repo_packages):
     
     for i in package_list.keys():
@@ -123,7 +105,6 @@ def checkDependencyUpdate(package_list, deplist, repo_packages):
             if i==j:
                 deplist.pop(i)
     
-    #print deplist
     
     new_deplist = checkRecursiveDeps(deplist, repo_packages)
     
@@ -132,25 +113,11 @@ def checkDependencyUpdate(package_list, deplist, repo_packages):
             if i==j:
                 new_deplist.pop(i)
     
-    print deplist
+    #print deplist
     
     deplist.update(new_deplist)
     
     print deplist
-    '''
-    deplist = list(set(deplist))
-    print len(package_list), len(deplist)
-    
-    for i in package_list:
-        c = 0
-        for j in deplist:
-            if i == j:
-                deplist.pop(c)
-            c += 1
-    
-    print deplist
-    #checkRecursiveDeps(package_list,deplist, repo_packages)
-    '''
     
 
 def checkRecursiveDeps(deplist, repo_packages):
@@ -169,31 +136,7 @@ def checkRecursiveDeps(deplist, repo_packages):
     if not len(deps) == 0:
         deps.update(checkRecursiveDeps(deps, repo_packages))
     return deps
-    
-    '''
-    deplist = []
-    for dep_name in package_list:
-        print dep_name
-        for repo in repo_packages:
-            for package in repo_packages[repo]:
-                if dep_name == package:
-                    print package,"-->",repo_packages[repo][0][package][2],"\t",repo_packages[repo][0][package][1]
-                    deplist = repo_packages[repo][0][package][2]
-            deplist = list(set(deplist))
-            for i in package_list:
-                c = 0
-                for j in deplist:
-                    if i == j:
-                        deplist.pop(c)
-                    c += 1
-            if not len(deplist) <= 0:
-                    checkRecursiveDeps(packages,deplist, repo_packages)
-                    #for dep in repo_packages[repo][0][package][2]:
-                    #    print dep
-    #if not len(deplist) <= 0:
-    #    checkRecursiveDeps(deplist, repo_packages)
-    '''
-    
+        
 def checkObsoletes(obselete_list, package):
     for obselete in obselete_list:
         if package == obselete:
