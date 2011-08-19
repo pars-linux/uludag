@@ -22,6 +22,7 @@ def downloadRepoXML(repo):
     return file_name+".xml"
 
 def getRepos():
+    
     return cPickle.load(open("repoList.ofu"))
 
 def findDependency(i):
@@ -79,6 +80,7 @@ def parsePisiXML(dependency = None):
             packages[name] = (release, repo, dep_list, version, rep_list)
         print "\n"    
         repo_packages[repo] = (packages, obselete_list) #FIXED
+        #print repo_packages[repo][0]["texlive-lang-spanish"][4]
     return repo_packages
 
 
@@ -104,11 +106,15 @@ def getUpdatedPackages(): #CODE: güncel paket listesi ile elimizdeki paket list
                     if int(repo_packages[repo][0][package][0]) > int(installed_packages[ins_package][0] 
                                                                      or 
                          repo_packages[repo][0][package][3] > installed_packages[ins_package][3]):
-                        if checkObsoletes(repo_packages[repo][1], package):
-                            print "%d.Paket adi:%s\t repo:%s\t guncelV:%s\t simdikiV:%s"%(cnt, package, repo, repo_packages[repo][0][package][0],installed_packages[ins_package][0])
-                            cnt += 1
-                            for dep in repo_packages[repo][0][package][2]:
-                                deplist[dep] = repo_packages[repo][0][package][1]
+                        if checkObsoletes(repo_packages[repo][1], package): 
+                            isReplace = checkReplaces(repo_packages[repo][0][package][4], package, package_list)
+                            if isReplace ==  None:
+                                print "%d.Paket adi:%s\t repo:%s\t guncelV:%s\t simdikiV:%s"%(cnt, package, repo, repo_packages[repo][0][package][0],installed_packages[ins_package][0])
+                                cnt += 1
+                                for dep in repo_packages[repo][0][package][2]:
+                                    deplist[dep] = repo_packages[repo][0][package][1]
+                                else:
+                                    pass
         package_list[ins_package] = installed_packages[ins_package][1]
     checkDependencyUpdate(package_list, deplist, repo_packages)
 
@@ -158,6 +164,18 @@ def checkObsoletes(obselete_list, package):
         else:
             return True
     
+def checkReplaces(rep_list, package, package_list):
+    #print package_list
+    #print "\n"
+    for ins_package in package_list:
+        for rep in rep_list:
+            #print ins_package
+            if ins_package == rep:
+                return package
+            else:
+                return None
+
+    #return True
 
 def download(file_name, url):
     u = urllib2.urlopen(url)
