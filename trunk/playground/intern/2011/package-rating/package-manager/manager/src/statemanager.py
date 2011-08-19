@@ -162,7 +162,7 @@ class StateManager(QObject):
 
         if network_available():
             if not AppInfoClient().checkOutDB()[0]:
-                AppInfoClient().setServer('http://appinfo.pardus.org.tr')
+                AppInfoClient().setServer('http://onurguzel.com/appinfo')
                 AppInfoClient().checkOutDB()
 
         return True
