@@ -98,6 +98,7 @@ def getUpdatedPackages(): #CODE: güncel paket listesi ile elimizdeki paket list
     cnt = 1
     deplist = {}
     package_list = {}
+    download_list = []
     print "\n"
     for ins_package in installed_packages:
         for repo in repo_packages:
@@ -113,7 +114,7 @@ def getUpdatedPackages(): #CODE: güncel paket listesi ile elimizdeki paket list
                                 for dep in repo_packages[repo][0][package][2]:
                                     deplist[dep] = repo_packages[repo][0][package][1]
                             else:
-                                    print isReplace
+                                print isReplace
         package_list[ins_package] = installed_packages[ins_package][1]
     checkDependencyUpdate(package_list, deplist, repo_packages)
 
