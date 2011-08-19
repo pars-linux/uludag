@@ -35,6 +35,16 @@ def findDependency(i):
     #print dep_list
     return dep_list
 
+def findReplaces(i):
+    rep_list = [] #MAYBE: replace packages can be more than one
+    rep_handler = i.find("Replaces")
+    if rep_handler:
+        reps = rep_handler.findall("Package")
+        for rep in reps:
+            rep_list.append(rep.text)
+    #print rep_list
+    return rep_list
+
 
 def parsePisiXML(dependency = None):
     repo_packages = {}
@@ -55,21 +65,20 @@ def parsePisiXML(dependency = None):
             
         for i in packages_tree:
             dep_list = []
-            release_handler = i.find("History") 
+            history_handler = i.find("History") 
             name = i.find("Name").text
-            release = release_handler.find("Update").get("release")
-            version = release_handler.find("Update").find("Version").text
-            #print version
+            release = history_handler.find("Update").get("release")
+            version = history_handler.find("Update").find("Version").text
             
+            #Replaces
+            rep_list = findReplaces(i)
+            #/Replaces
             #Dependencies
             dep_list = findDependency(i)
-            #obsolete_list = findObsoletes(i)
             #/Dependencies
-            packages[name] = (release, repo, dep_list, version)
+            packages[name] = (release, repo, dep_list, version, rep_list)
         print "\n"    
-        #print len(dep_list)
         repo_packages[repo] = (packages, obselete_list) #FIXED
-    #print repo_packages["pardus"][0]["firefox"]
     return repo_packages
 
 
