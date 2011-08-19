@@ -105,7 +105,7 @@ class PMConfig(Config):
         self.setValue("ShowIsA", enabled)
 
     def getOpenDesktopKey(self):
-        self.getValue("OpenDesktopKey")
+        return self.getValue("OpenDesktopKey")
 
     def setOpenDesktopKey(self, value):
         self.setValue("OpenDesktopKey", value)
