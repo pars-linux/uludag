@@ -34,7 +34,7 @@ class Offline(QtGui.QWidget):
         packages = {}
         for i in listPackages:
             packages[installdb.get_package(i).name] = (installdb.get_package(i).release, 
-                                                       packagedb.get_package_repo(installdb.get_package(i).name)[1])
+                                                       packagedb.get_package_repo(installdb.get_package(i).name)[1], installdb.get_package(i).version)
             if cnt == len(listPackages)/100:
                 self.ui.progressBar.setValue(self.ui.progressBar.value()+math.ceil(100/float(len(listPackages))))
                 cnt = 0
@@ -51,7 +51,7 @@ class Offline(QtGui.QWidget):
         repo_list = {}
         i = 0
         cnt = 0
-        print "repo başlar"
+        #print "repo başlar"
         for repo in repos:
             repo_list[repo] = repo_urls[i]
             i += 1
