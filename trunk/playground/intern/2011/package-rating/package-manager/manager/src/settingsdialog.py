@@ -476,11 +476,13 @@ class SettingsDialog(QDialog, Ui_SettingsDialog):
         self.connectSignals()
         self.parent = parent
 
-        self.generalSettings = GeneralSettings(self)
-        self.cacheSettings = CacheSettings(self)
-        self.repositorySettings = RepositorySettings(self)
-        self.proxySettings = ProxySettings(self)
-        self.ratingSettings = RatingSettings(self)
+        self.tabs = {
+            'generalSettings': GeneralSettings(self),
+            'cacheSettings': CacheSettings(self),
+            'repositorySettings': RepositorySettings(self),
+            'proxySettings': ProxySettings(self),
+            'ratingSettings': RatingSettings(self)
+        }
 
     def connectSignals(self):
         self.connect(self.buttonOk, SIGNAL("clicked()"), self.saveSettings)
@@ -488,22 +490,21 @@ class SettingsDialog(QDialog, Ui_SettingsDialog):
         self.connect(self.buttonHelp, SIGNAL("clicked()"), self.showHelp)
 
     def cancelSettings(self):
-        for tab in (self.generalSettings, self.cacheSettings, \
-                self.repositorySettings, self.proxySettings, self.ratingSettings):
-            tab.initialize()
+        for tab in self.tabs:
+            self.tabs[tab].initialize()
         self.reject()
 
     def saveSettings(self):
-        for settings in [self.generalSettings, self.cacheSettings, self.repositorySettings, self.proxySettings]:
+        for settings in self.tabs:
             try:
-                if settings.changed:
-                    settings.save()
+                if self.tabs[settings].changed:
+                    self.tabs[settings].save()
             except Exception, e:
                 self.parent.cw.exceptionCaught(str(e))
             finally:
-                if settings.changed:
-                    settings.initialize()
-                settings.changed = False
+                if self.tabs[settings].changed:
+                    self.tabs[settings].initialize()
+                self.tabs[settings].changed = False
         self.config = config.PMConfig()
 
     def showHelp(self):
