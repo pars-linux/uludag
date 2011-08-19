@@ -84,7 +84,7 @@ class FormMain(QtGui.QWidget, Ui_Main):
 
         # Popup for connection management
         menu = wrappers.Menu(self)
-        menu.newAction("Modify Default Firewall Rules", wrappers.Icon("firewall32"), self.__slot_modify_default_firewall_rules)
+        menu.newAction(i18n("Modify Default Firewall Rules"), wrappers.Icon("firewall32"), self.__slot_modify_default_firewall_rules)
         self.pushSettings.setMenu(menu)
 
         # Popup for items
