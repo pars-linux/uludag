@@ -97,7 +97,7 @@ class Bugs:
         self.bz.logout()
         self.isLoggedin = False
         print "Successfully logged out"
-<F11>
+
 
     def createbug(self,product,component,version,summary,platform=None,severity=None,priority=None,op_sys=None,assigned_to=None,qa_contact=None,cc=None,status=None):
         '''
@@ -193,7 +193,7 @@ class Bugs:
 
 
 class Data:
-    import os
+    import  platform
     def __init__(self):
         data = {}
 
@@ -204,23 +204,23 @@ class Data:
         '''
         #find component
         component = "unspecified"
-        self.data{'component':component}
+        self.data['component'] = component
 
         # find version
-        version = os.system("lsb_release -a | grep Release | awk '{print $2}' ")
-        if " " in os:
+        version = platform.dist()[1]
+        if "Kurumsal" in os or "Corporate" in os:
             substr = version.split(" ")
-            version = "Corporate".add(substr[1])
+            version = "Corporate"+substr[1]
         else :
             substr = version.split(".")
             version = substr[0]
-        self.data{'version':version}
+        self.data['version'] = version
 
         #find platform
-        platform = os.system("uname -m")
-        self.data{'platform',platform}
+        plat = platform.uname()[4]
+        self.data['platform'] = platform
 
-
+        
         return self.data
 
 
