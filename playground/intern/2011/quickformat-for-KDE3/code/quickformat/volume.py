@@ -33,10 +33,11 @@ class Volume:
 
         bus = dbus.SystemBus()
 
-
+        # objects about get_volume_property method 
         self.proxy_dbus_volume_properties = bus.get_object("org.freedesktop.UDisks", volume)
         self.iface_dbus_volume_properties = dbus.Interface(self.proxy_dbus_volume_properties, "org.freedesktop.DBus.Properties")
 
+        # object about get_device_property method
         self.proxy_dbus_device_properties = bus.get_object("org.freedesktop.UDisks", self.get_volume_property("PartitionSlave"))
         self.iface_dbus_device_properties = dbus.Interface(self.proxy_dbus_device_properties, "org.freedesktop.DBus.Properties")
 
