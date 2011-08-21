@@ -40,6 +40,8 @@ import pisi.context as ctx
 import pisi.util as util
 import pisi.oo as oo
 
+import ondemand
+
 class Error(pisi.Error):
     pass
 
@@ -336,11 +338,11 @@ class autoxml(oo.autosuper, oo.autoprop):
         cls.__init__ = initialize
 
         cls.decoders = decoders
-        def decode(self, node, errs, where = unicode(cls.tag)):
+        def decode(self, node, errs, where = unicode(cls.tag), use_ondemand = False):
             for base in cls.autoxml_bases:
-                base.decode(self, node, errs, where)
+                base.decode(self, node, errs, where, use_ondemand)
             for decode_member in decoders:#self.__class__.decoders:
-                decode_member(self, node, errs, where)
+                decode_member(self, node, errs, where, use_ondemand)
             if hasattr(self, 'decode_hook'):
                 self.decode_hook(node, errs, where)
         cls.decode = decode
@@ -418,11 +420,12 @@ class autoxml(oo.autosuper, oo.autoprop):
             cls.__ne__ = notequal
 
         if xmlfile_support:
-            def parse(self, xml, keepDoc = False):
+            def parse(self, xml, keepDoc = False, use_ondemand = False):
                 "parse XML string and decode it into a python object"
+                self.use_ondemand = use_ondemand
                 self.parsexml(xml)
                 errs = []
-                self.decode(self.rootNode(), errs)
+                self.decode(self.rootNode(), errs, use_ondemand=self.use_ondemand)
                 if errs:
                     errs.append(_("autoxml.parse: String '%s' has errors") % xml)
                     raise Error(*errs)
@@ -437,8 +440,11 @@ class autoxml(oo.autosuper, oo.autoprop):
                     errs.append(_("autoxml.parse: String '%s' has errors") % xml)
 
             def read(self, uri, keepDoc = False, tmpDir = '/tmp',
-                     sha1sum = False, compress = None, sign = None, copylocal = False, nodecode = False):
+                     sha1sum = False, compress = None, sign = None, copylocal = False, nodecode = False,
+                     use_ondemand = False):
                 "read XML file and decode it into a python object"
+                self.use_ondemand = use_ondemand
+
                 read_xml = self.readxml(uri, tmpDir, sha1sum=sha1sum, 
                              compress=compress, sign=sign, copylocal=copylocal)
 
@@ -446,7 +452,7 @@ class autoxml(oo.autosuper, oo.autoprop):
                     return read_xml
 
                 errs = []
-                self.decode(self.rootNode(), errs)
+                self.decode(self.rootNode(), errs, use_ondemand=self.use_ondemand)
                 if errs:
                     errs.append(_("autoxml.read: File '%s' has errors") % uri)
                     raise Error(*errs)
@@ -552,9 +558,9 @@ class autoxml(oo.autosuper, oo.autoprop):
             """initialize component"""
             setattr(self, name, init_a())
 
-        def decode(self, node, errs, where):
+        def decode(self, node, errs, where, use_ondemand):
             """decode component from DOM node"""
-            setattr(self, name, decode_a(node, errs, where + '.' + unicode(name)))
+            setattr(self, name, decode_a(node, errs, where + '.' + unicode(name), use_ondemand))
 
         def encode(self, node, errs):
             """encode self inside, possibly new, DOM node using xml"""
@@ -642,7 +648,7 @@ class autoxml(oo.autosuper, oo.autoprop):
             """default value for all basic types is None"""
             return None
 
-        def decode(node, errs, where):
+        def decode(node, errs, where, use_ondemand):
             """decode from DOM node, the value, watching the spec"""
             text = readtext(node, token)
             #print 'read text ', text
@@ -693,12 +699,12 @@ class autoxml(oo.autosuper, oo.autoprop):
         def init():
             return make_object()
 
-        def decode(node, errs, where):
+        def decode(node, errs, where, use_ondemand):
             node = xmlext.getNode(node, tag)
             if node:
                 try:
                     obj = make_object()
-                    obj.decode(node, errs, where)
+                    obj.decode(node, errs, where, use_ondemand)
                     return obj
                 except Error:
                     errs.append(where + ': '+ _('Type mismatch: DOM cannot be decoded'))
@@ -755,8 +761,13 @@ class autoxml(oo.autosuper, oo.autoprop):
         def init():
             return []
 
-        def decode(node, errs, where):
-            l = []
+        def decode(node, errs, where, use_ondemand):
+
+            if use_ondemand:
+                l = ondemand.OnDemandList()
+            else:
+                l = []
+
             nodes = xmlext.getAllNodes(node, path)
             #print node, tag + '/' + comp_tag, nodes
             if len(nodes)==0 and req==mandatory:
@@ -765,7 +776,10 @@ class autoxml(oo.autosuper, oo.autoprop):
             for node in nodes:
                 dummy = xmlext.newNode(node, "Dummy")
                 xmlext.addNode(dummy, '', node)
-                l.append(decode_item(dummy, errs, where + unicode("[%s]" % ix)))
+                if use_ondemand:
+                    l.append(ondemand.OnDemandNode(decode_item, dummy, where + unicode("[%s]" % ix)))
+                else:
+                    l.append(decode_item(dummy, errs, where + unicode("[%s]" % ix), use_ondemand))
                 #l.append(decode_item(node, errs, where + unicode("[%s]" % ix)))
                 ix += 1
             return l
@@ -786,9 +800,14 @@ class autoxml(oo.autosuper, oo.autoprop):
         def errors(l, where):
             errs = []
             ix = 1
-            for node in l:
-                errs.extend(errors_item(node, where + '[%s]' % ix))
-                ix += 1
+            if isinstance(l, ondemand.OnDemandList):
+                # print "pass error check %s[%s]" % (where, ix) # debuginfo
+                l.errors_item_function = errors_item
+            else:
+                for node in l:
+                    errs.extend(errors_item(node, where + '[%s]' % ix))
+                    ix += 1
+
             return errs
 
         def format(l, f, errs):
@@ -815,7 +834,7 @@ class autoxml(oo.autosuper, oo.autoprop):
         def init():
             return make_object()
 
-        def decode(node, errs, where):
+        def decode(node, errs, where, use_ondemand):
             if node:
                 try:
                     obj = make_object()
