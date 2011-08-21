@@ -339,6 +339,7 @@ class autoxml(oo.autosuper, oo.autoprop):
 
         cls.decoders = decoders
         def decode(self, node, errs, where = unicode(cls.tag), use_ondemand = False):
+            self.use_ondemand = use_ondemand
             for base in cls.autoxml_bases:
                 base.decode(self, node, errs, where, use_ondemand)
             for decode_member in decoders:#self.__class__.decoders:
@@ -554,13 +555,50 @@ class autoxml(oo.autosuper, oo.autoprop):
         req = spec[1]
         (init_a, decode_a, encode_a, errors_a, format_a) = anonfuns
 
+        def decodeAll(self):
+            for k, v in self.ondemand_dict.iteritems():
+                self.__dict__[k] = v.decode()
+            self.ondemand_dict.clear()
+        cls.decodeAll = decodeAll
+
+        def __reduce__(self):
+            # print "reduce"
+            self.decodeAll()
+            if hasattr(self, 'use_ondemand'):
+                delattr(self, 'use_ondemand')
+            return super(cls, self).__reduce__()
+        cls.__reduce__ = __reduce__
+
+        def __reduce_ex__(self, protocol):
+            # print "reduce_ex"
+            self.decodeAll()
+            if hasattr(self, 'use_ondemand'):
+                delattr(self, 'use_ondemand')
+            return super(cls, self).__reduce_ex__(protocol)
+        cls.__reduce_ex__ = __reduce_ex__
+
+        def __getattr__(self, y):
+            # print "__getattr__", y
+            if y != 'use_ondemand' and self.use_ondemand and y != 'ondemand_dict' and self.ondemand_dict.has_key(y):
+                node = self.ondemand_dict[y].decode()
+                self.__dict__[y] = node
+                del self.ondemand_dict[y]
+                return node
+            raise AttributeError
+        cls.__getattr__ = __getattr__
+
         def init(self):
             """initialize component"""
+            self.ondemand_dict = {}
             setattr(self, name, init_a())
 
         def decode(self, node, errs, where, use_ondemand):
             """decode component from DOM node"""
-            setattr(self, name, decode_a(node, errs, where + '.' + unicode(name), use_ondemand))
+            if self.use_ondemand:
+                self.ondemand_dict[name] = ondemand.OnDemandNode(decode_a, node, where + '.' + unicode(name))
+                delattr(self, name)
+            else:
+                setattr(self, name, decode_a(node, errs, where + '.' + unicode(name), use_ondemand))
 
         def encode(self, node, errs):
             """encode self inside, possibly new, DOM node using xml"""
@@ -573,7 +611,11 @@ class autoxml(oo.autosuper, oo.autoprop):
         def errors(self, where):
             """return errors in the object"""
             errs = []
-            if hasattr(self, name) and getattr(self, name) != None:
+
+            if hasattr(self, 'use_ondemand') and self.use_ondemand and self.ondemand_dict.has_key(name):
+                # print "pass error check %s.%s" % (where, name) # debuginfo
+                self.ondemand_dict[name].error_function = errors_a
+            elif hasattr(self, name) and getattr(self, name) != None:
                 value = getattr(self,name)
                 errs.extend(errors_a(value, where + '.' + name))
             else:
