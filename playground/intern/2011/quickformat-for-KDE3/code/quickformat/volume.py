@@ -1,5 +1,5 @@
-##!/usr/bin/python
-# -*- coding: utf-8 -*-
+#!/usr/bin/python
+#-*- coding: utf-8 -*-
 #
 #  Copyright (C) 2011 TUBITAK/BILGEM
 #  Renan Çakırerk <renan at pardus.org.tr>
@@ -32,8 +32,20 @@ class Volume:
         self.volume = volume
 
         bus = dbus.SystemBus()
-        self.proxy_dbus_properties = bus.get_object("org.freedesktop.UDisks", volume)
-        self.iface_dbus_properties = dbus.Interface(self.proxy_dbus_properties, "org.freedesktop.DBus.Properties")
+
+
+        self.proxy_dbus_volume_properties = bus.get_object("org.freedesktop.UDisks", volume)
+        self.iface_dbus_volume_properties = dbus.Interface(self.proxy_dbus_volume_properties, "org.freedesktop.DBus.Properties")
+
+        self.proxy_dbus_device_properties = bus.get_object("org.freedesktop.UDisks", self.get_volume_property("PartitionSlave"))
+        self.iface_dbus_device_properties = dbus.Interface(self.proxy_dbus_device_properties, "org.freedesktop.DBus.Properties")
+
+        if self.get_volume_property("PartitionSlave") == "/":
+            raise Exception()
+
+        self.device_bus = self.get_device_bus()
+        self.device_path = self.get_device_path()
+        self.device_name = self.get_device_name()
 
         self.icon = self.get_volume_icon()
         self.name = self.get_volume_name()
@@ -41,16 +53,20 @@ class Volume:
         self.file_system = self.get_volume_file_system()
         self.size = self.get_volume_size()
 
-        self.device_bus = self.get_device_bus()
-        self.device_path = self.get_device_path()
-        self.device_name = self.get_device_name()
 
-    def get_property(self, prop):
-        """gets a property of device"""
+    def get_volume_property(self, prop):
+        """gets a property of the volume"""
         try:
-            return self.iface_dbus_properties.Get("org.freedesktop.UDisks.Device", prop)
-        except:
-            return "GET PROPERTY FAILED"
+            return self.iface_dbus_volume_properties.Get("org.freedesktop.UDisks.Device", prop)
+        except Exception, vol_exception:
+            return "GET VOLUME PROPERTY FAILED: ", vol_exception
+
+    def get_device_property(self, prop):
+        """gets a property of the device"""
+        try:
+            return self.iface_dbus_device_properties.Get("org.freedesktop.UDisks.Device", prop)
+        except Exception, dev_exception:
+            return "GET DEVICE PROPERTY FAILED: ", dev_exception
 
     def get_all_properties(self):
         """gets all properties of device"""
@@ -65,38 +81,37 @@ class Volume:
 
     def get_device_bus(self):
         """ returns the bus of the device """
-        return self.get_property("DriveConnectionInterface")
-
+        return self.get_device_property("DriveConnectionInterface")
 
     def get_device_path(self):
-        return self.get_volume_path()[:-1]
+        return self.get_device_property("DeviceFile")
 
     def get_device_name(self):
         """ returns the device name that the volume resides on """
         # product
-        return self.get_property("DriveVendor") + " " +  self.get_property("DriveModel")
+        return self.get_device_property("DriveVendor") + " " +  self.get_device_property("DriveModel")
 
     # Get Volume Information
 
     def get_volume_icon(self):
-       # icon = str(self.volume.icon())
-        if self.get_property("DriveModel").lower().find("sd/mmc") >= 0:
+        if self.get_device_property("DriveModel").lower().find("sd/mmc") >= 0:
             return QtGui.QPixmap(":/images/images/media-flash-sd-mmc.png")
+        elif self.get_device_property("DriveAtaSmartIsAvailable") > 0:
+            return QtGui.QPixmap(":/images/images/drive-removable-media-usb.png")
         else:
             return QtGui.QPixmap(":/images/images/drive-removable-media-usb-pendrive.png")
 
     def get_volume_name(self):
-        #return str(self.volume.product())
-        return self.get_property("IdLabel")
+        return self.get_volume_property("IdLabel")
 
     def get_volume_path(self):
-        # /dev/sdb1
-        return self.get_property("DeviceFile")
+        # such as /dev/sdb1
+        return self.get_volume_property("DeviceFile")
 
     def get_volume_file_system(self):
-        # vfat
-        return self.get_property("IdType") 
+        # such as vfat
+        return self.get_volume_property("IdType") 
 
     def get_volume_size(self):
-        return self.get_property("PartitionSize")
+        return self.get_volume_property("PartitionSize")
 

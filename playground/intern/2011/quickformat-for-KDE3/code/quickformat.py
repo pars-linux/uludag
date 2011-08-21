@@ -132,7 +132,7 @@ class QuickFormat(QtGui.QWidget):
         self.connect(self.formatter, SIGNAL("partition_table_error()"), self.slot_partition_table_error)
 
     def filter_file_system(self, volume):
-        if volume.get_property("DeviceIsPartition") and volume.has_accepted_bus():
+        if volume.get_volume_property("DeviceIsPartition") and volume.has_accepted_bus():
             return True
 
     def get_volumes(self):
@@ -140,9 +140,12 @@ class QuickFormat(QtGui.QWidget):
         # Get volumes
         for v in self.device_notifier.get_all_storages():
             # Apply filter
-            volume = Volume(v)
-            if self.filter_file_system(volume):
-                volumes.append(volume)
+            try:
+                volume = Volume(v)
+                if self.filter_file_system(volume):
+                    volumes.append(volume)
+            except:
+                pass
         return volumes
 
     def show_volume_list(self):
