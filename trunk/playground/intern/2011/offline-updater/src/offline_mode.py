@@ -4,6 +4,7 @@
 
 import pisi.db
 import cPickle
+import os
 from PyQt4 import QtCore, QtGui
 
 from ui_offline import Ui_Offline 
@@ -19,10 +20,13 @@ class Offline(QtGui.QWidget):
         self.ui.pb_action.clicked.connect(self.createFiles)
         self.ui.pb_close.clicked.connect(self.close)
         
+        self.ui.le_path.setText(os.getenv('USERPROFILE') or os.getenv('HOME'))
+        
     def createFiles(self):
        
         import math
         #print "pisi connection"
+        self.ui.updateListWidget("PiSi baglantisi saglaniyor")
         installdb = pisi.db.installdb.InstallDB()
         repodb = pisi.db.repodb.RepoDB()
         repo_urls = repodb.list_repo_urls()
@@ -31,7 +35,9 @@ class Offline(QtGui.QWidget):
         listPackages = installdb.list_installed()
         #print int((len(listPackages)+len(repos))/100)
         cnt = 0
+        
         packages = {}
+        self.ui.updateListWidget("Paket listesi olusturuluyor")
         for i in listPackages:
             packages[installdb.get_package(i).name] = (installdb.get_package(i).release, 
                                                        packagedb.get_package_repo(installdb.get_package(i).name)[1], 
@@ -44,7 +50,7 @@ class Offline(QtGui.QWidget):
             QtGui.QApplication.processEvents()
            
         #print packages
-        
+        self.ui.updateListWidget("Paket listesi kaydediliyor")
         filePackages = open("packageList.ofu","w")
         cPickle.dump(packages, filePackages, protocol=0)
         filePackages.close()
@@ -52,7 +58,7 @@ class Offline(QtGui.QWidget):
         repo_list = {}
         i = 0
         cnt = 0
-        #print "repo başlar"
+        self.ui.updateListWidget("Depo listesi olusturuluyor")
         for repo in repos:
             repo_list[repo] = repo_urls[i]
             i += 1
@@ -62,13 +68,14 @@ class Offline(QtGui.QWidget):
             cnt += 1
             QtGui.QApplication.processEvents()
         
-        
+        self.ui.updateListWidget("Depo listesi kaydediliyor")
         fileRepos = open("repoList.ofu","w")
         cPickle.dump(repo_list, fileRepos, protocol = 0)
         fileRepos.close()
             
-        print repo_list
+        #print repo_list
         self.ui.progressBar.setValue(100)
+        self.ui.updateListWidget("Islem tamamlandi")
         
             
 
