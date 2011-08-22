@@ -145,12 +145,20 @@ class BaseSystem:
         self.includePxeFiles = config["enablePxeBoot"]
         self.pxeFileList = {
                              "/lib/initramfs/pxebootselect"     : "/bin/",
-                             "/usr/local/lib/libxml2.so.2"      : "/lib/",
+                             "/usr/lib/libxml2.so.2"            : "/lib/",
+                             "/usr/lib/libxml2.so.2.7.8"        : "/usr/lib/",
                              "/usr/lib/libncursesw.so.5"        : "/lib/",
                              "/usr/lib/libmenuw.so.5"           : "/lib/",
                              "/lib/ld-linux-x86-64.so.2"        : "/lib/",
                              "/etc/terminfo/l/linux"            : "/etc/terminfo/l/",
-                        }
+                             }
+        
+        self.includeKexecFiles = config["enableKexecBoot"]
+        self.kexecFileList = {
+                             "/usr/sbin/kexec"                  : "/bin/",
+                             "/usr/lib/liblzma.so.0"            : "/lib/",
+                             "/lib/libc.so.6"                   : "/usr/lib/",
+                             }
 
     def getNewRoot(self, dir):
         cleandir = dir.lstrip("/")
@@ -219,6 +227,11 @@ class BaseSystem:
             for i in self.pxeFileList:
                 copy(i, self.getNewRoot(self.pxeFileList[i]))
 
+    def addKexec(self):
+        if self.includeKexecFiles:
+            for i in self.kexecFileList:
+                copy(i, self.getNewRoot(self.kexecFileList[i]))
+    
     def addModprobeBlacklists(self):
         for i in self.modprobeBlacklistFileList:
             copy(i, self.getNewRoot(self.modprobeBlacklistFileList[i]))
@@ -234,6 +247,7 @@ class BaseSystem:
         self.addSuspend()
         self.addModprobeBlacklists()
         self.addPxe()
+        self.addKexec()
 
 class KernelModule:
     def __init__(self):
@@ -579,7 +593,8 @@ if __name__ == "__main__":
     config["networkModuleBasic"] = opts.networkModuleBasic
     config["excludeDRM"] = opts.excludeDRM
     config["enablePxeBoot"] = opts.enablePxeBoot
-
+    config["enableKexecBoot"] = opts.enablePxeBoot
+    
     if "," in opts.blackList:
         config["blackList"].extend(opts.blackList.split(","))
 
