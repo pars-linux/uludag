@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui_detailWidget.ui'
 #
-# Created: Tue Aug 16 15:56:12 2011
+# Created: Mon Aug 22 08:23:30 2011
 #      by: PyQt4 UI code generator 4.8.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -22,6 +22,10 @@ class Ui_InfoWidget(object):
         self.gridLayout = QtGui.QGridLayout(InfoWidget)
         self.gridLayout.setContentsMargins(8, -1, 8, -1)
         self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
+        self.webView = QtWebKit.QWebView(InfoWidget)
+        self.webView.setUrl(QtCore.QUrl(_fromUtf8("about:blank")))
+        self.webView.setObjectName(_fromUtf8("webView"))
+        self.gridLayout.addWidget(self.webView, 0, 0, 1, 1)
 
         self.retranslateUi(InfoWidget)
         QtCore.QMetaObject.connectSlotsByName(InfoWidget)
@@ -29,3 +33,4 @@ class Ui_InfoWidget(object):
     def retranslateUi(self, InfoWidget):
         InfoWidget.setWindowTitle(QtGui.QApplication.translate("InfoWidget", "Form", None, QtGui.QApplication.UnicodeUTF8))
 
+from PyQt4 import QtWebKit
