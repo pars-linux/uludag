@@ -8,6 +8,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt4 import QtCore, QtGui
+from PyQt4.QtGui import QListWidgetItem
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -53,6 +54,10 @@ class Ui_Offline(object):
         self.pb_help.setText(QtGui.QApplication.translate("Offline", "Yardım", None, QtGui.QApplication.UnicodeUTF8))
         self.pb_close.setText(QtGui.QApplication.translate("Offline", "Kapat", None, QtGui.QApplication.UnicodeUTF8))
         self.pb_path.setText(QtGui.QApplication.translate("Offline", "Dizin Seç", None, QtGui.QApplication.UnicodeUTF8))
+        
+    def updateListWidget(self, message):
+        item = QListWidgetItem(message)
+        self.listWidget.addItem(message)
 
 if __name__ == "__main__":
     import sys

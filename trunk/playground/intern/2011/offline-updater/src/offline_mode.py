@@ -22,7 +22,7 @@ class Offline(QtGui.QWidget):
     def createFiles(self):
        
         import math
-        print "pisi connection"
+        #print "pisi connection"
         installdb = pisi.db.installdb.InstallDB()
         repodb = pisi.db.repodb.RepoDB()
         repo_urls = repodb.list_repo_urls()
