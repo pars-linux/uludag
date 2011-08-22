@@ -859,9 +859,9 @@ p, li { white-space: pre-wrap; }
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QWidget" name="opendesktop_login" native="true">
-         <layout class="QVBoxLayout" name="verticalLayout_2">
-          <item>
+        <widget class="QGroupBox" name="opendesktop_login">
+         <layout class="QGridLayout" name="gridLayout_11">
+          <item row="0" column="0">
            <widget class="QLabel" name="label_11">
             <property name="text">
              <string>You need to enter your OpenDesktop.org username and password to be able to add ratings to the packages.</string>
@@ -871,7 +871,7 @@ p, li { white-space: pre-wrap; }
             </property>
            </widget>
           </item>
-          <item>
+          <item row="1" column="0">
            <layout class="QFormLayout" name="opendesktop_login_form">
             <item row="0" column="0">
              <widget class="QLabel" name="label_opendesktop_login_user">
@@ -899,7 +899,7 @@ p, li { white-space: pre-wrap; }
             </item>
            </layout>
           </item>
-          <item>
+          <item row="2" column="0">
            <widget class="QPushButton" name="opendesktop_login_check">
             <property name="text">
              <string>Check</string>
@@ -910,9 +910,9 @@ p, li { white-space: pre-wrap; }
         </widget>
        </item>
        <item>
-        <widget class="QWidget" name="opendesktop_register" native="true">
-         <layout class="QVBoxLayout" name="verticalLayout_3">
-          <item>
+        <widget class="QGroupBox" name="opendesktop_register">
+         <layout class="QGridLayout" name="gridLayout_13">
+          <item row="0" column="0">
            <layout class="QFormLayout" name="opendesktop_reg_form">
             <item row="0" column="0">
              <widget class="QLabel" name="label_opendesktop_reg_firstname">
@@ -970,9 +970,9 @@ p, li { white-space: pre-wrap; }
         </widget>
        </item>
        <item>
-        <widget class="QWidget" name="opendesktop_loggedin" native="true">
-         <layout class="QVBoxLayout" name="verticalLayout_4">
-          <item>
+        <widget class="QGroupBox" name="opendesktop_loggedin">
+         <layout class="QGridLayout" name="gridLayout_15">
+          <item row="0" column="0">
            <widget class="QLabel" name="label_12">
             <property name="text">
              <string>You have successfully connected to Pardus package rating system. If you want to deactivate connection from this computer, click &quot;Deactivate&quot; button below.</string>
@@ -982,7 +982,7 @@ p, li { white-space: pre-wrap; }
             </property>
            </widget>
           </item>
-          <item>
+          <item row="1" column="0">
            <widget class="QPushButton" name="opendesktop_deactivate">
             <property name="text">
              <string>Deactivate</string>
