@@ -35,7 +35,7 @@ class Online(QtGui.QWidget):
     
     def downloadRepoXML(self, repo):
         repo_ = file_name = repo.split('/')
-        print repo_
+        #print repo_
         file_name = file_name[4]+"_"+file_name[5]+"_"+file_name[6]+".xz"
         
         message = repo_[5]+ " deposu paket bilgileri indiriliyor."
@@ -144,7 +144,8 @@ class Online(QtGui.QWidget):
         
         deplist = {}
         package_list = {}
-        download_list = []
+        self.download_list = {}
+        cnt = 1
         print "\n"
         self.updateListWidget("Paket guncellemeleri belirleniyor.")
         for ins_package in installed_packages:
@@ -158,21 +159,29 @@ class Online(QtGui.QWidget):
                             if self.checkObsoletes(repo_packages[repo][1], package): 
                                 isReplace = self.checkReplaces(repo_packages[repo][0][package][4], package, package_list)
                                 if isReplace ==  None:
+                                    #print cnt, package
                                     #print "%d.Paket adi:%s\t repo:%s\t guncelV:%s\t simdikiV:%s"%(cnt, package, repo, repo_packages[repo][0][package][0],installed_packages[ins_package][0])
-                                    download_list.append(repo_packages[repo][0][package][5])
+                                    cnt += 1
+                                    self.download_list[package] = repo_packages[repo][0][package][5]
                                     for dep in repo_packages[repo][0][package][2]:
                                         deplist[dep] = repo_packages[repo][0][package][1]
                                 else:
-                                    download_list.append(repo_packages[repo][0][isReplace][5])
+                                    self.download_list[package] = repo_packages[repo][0][isReplace][5]
             package_list[ins_package] = installed_packages[ins_package][1]
         deplist = self.checkDependencyUpdate(package_list, deplist, repo_packages)
+        #print deplist
         for dep in deplist:
-            download_list.append(repo_packages[deplist[dep]][0][dep][5])
-        
-        message = "%s paket ve %s bagimlilik bulundu" %(int(len(download_list)-len(deplist)), len(deplist)) 
+            self.download_list[dep] = repo_packages[deplist[dep]][0][dep][5]
+       
+        message = "%s paket ve %s bagimlilik bulundu" %(int(len(self.download_list)-len(deplist)), len(deplist)) 
         self.updateListWidget(message)
-        self.ui.pb_action.setText("İndirme işlemine başla")
-        self.processDownloadList(download_list)
+        
+        self.ui.pb_action.hide()
+        self.pb_action = QtGui.QPushButton(self)
+        self.ui.gridLayout.addWidget(self.pb_action, 1, 1, 1, 3)
+        self.pb_action.setText(QtGui.QApplication.translate("Offline", "İndirme işlemine başla", None, QtGui.QApplication.UnicodeUTF8))
+        self.pb_action.clicked.connect(self.processDownloadList)
+        #self.processDownloadList(download_list)
     
     def checkDependencyUpdate(self, package_list, deplist, repo_packages):
         
@@ -239,12 +248,22 @@ class Online(QtGui.QWidget):
         #return True
         
         
-    def processDownloadList(self, download_list):
-        pass
+    def processDownloadList(self):
+        for package in self.download_list:
+            package_name = self.download_list[package].split('/')[7]
+            QtGui.QApplication.processEvents()
+            self.download(package_name, self.download_list[package], True)
+            message = package+" paketi indiriliyor."
+            self.updateListWidget(message)
+            
     
-    def download(self, file_name, url):
+    def download(self, file_name, url, isPackage=False):
         u = urllib2.urlopen(url)
-        f = open(file_name, 'wb')
+        if (isPackage):
+            #file_name = file_name+".pisi"
+            f = open(self.ui.le_path.text()+"/"+file_name, 'wb')
+        else:
+            f = open(file_name, 'wb')
         meta = u.info()
         file_size = int(meta.getheaders("Content-Length")[0])
         print "Downloading: %s Bytes: %s" % (file_name, file_size)
@@ -261,7 +280,7 @@ class Online(QtGui.QWidget):
             f.write(buffer)
             status = r"%10d  [%3.2f%%]" % (file_size_dl, file_size_dl * 100. / file_size)
             status = status + chr(8)*(len(status)+1)
-            print status,
+            #print status,
         f.close()
         
     def updateListWidget(self, message):
