@@ -58,7 +58,6 @@ class Online(QtGui.QWidget):
             return cPickle.load(open(self.ui.le_path.text()+"/repoList.ofu"))
         except IOError:                     
             self.errorMessage("Hata", "repoList.ofu bulunamadi !")
-            return False
     
     def findDependency(self, i):
         dep_list = []
