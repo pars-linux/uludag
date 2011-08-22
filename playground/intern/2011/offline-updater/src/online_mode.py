@@ -7,6 +7,7 @@ import lzma
 import cPickle
 import os
 from PyQt4 import QtCore, QtGui
+from PyQt4.QtGui import QMessageBox
 
 
 from ui_offline import Ui_Offline 
@@ -53,8 +54,11 @@ class Online(QtGui.QWidget):
         return file_name+".xml"
     
     def getRepos(self):
-        
-        return cPickle.load(open("repoList.ofu"))
+        try:
+            return cPickle.load(open(self.ui.le_path.text()+"/repoList.ofu"))
+        except IOError:                     
+            self.errorMessage("Hata", "repoList.ofu bulunamadi !")
+            return False
     
     def findDependency(self, i):
         dep_list = []
@@ -78,10 +82,12 @@ class Online(QtGui.QWidget):
         return rep_list
     
     
-    def parsePisiXML(self, dependency = None):
+    def parsePisiXML(self):
         repo_packages = {}
         QtGui.QApplication.processEvents()
         repos = self.getRepos()
+        if not repos:
+            return
         item = "Repo bilgileri okunuyor.\n%s adet repo bilgisi alindi."%len(repos)
         
         self.ui.updateListWidget(item)
@@ -128,19 +134,25 @@ class Online(QtGui.QWidget):
     
     
     def getInstalledPackages(self):
-        return cPickle.load(open("packageList.ofu"))
+        try:
+            return cPickle.load(open(self.ui.le_path.text()+"/packageList.ofu"))
+        except IOError:
+            self.errorMessage("Hata", "packageList.ofu bulunamadi !")
     
     
     def getUpdatedPackages(self): #CODE: güncel paket listesi ile elimizdeki paket listesi karşılaştırılacak.
         
-        self.ui.pb_action.setEnabled(False)
+        
         installed_packages = self.getInstalledPackages()
+        if not installed_packages:
+            return
+        repo_packages = self.parsePisiXML()
         self.ui.updateListWidget("Kurulu paketlerin listesi okunuyor")
         
         QtGui.QApplication.processEvents()
-        repo_packages = self.parsePisiXML()
         
         
+        self.ui.pb_action.setEnabled(False)
         deplist = {}
         package_list = {}
         self.download_list = {}
@@ -263,6 +275,12 @@ class Online(QtGui.QWidget):
             status = status + chr(8)*(len(status)+1)
             print status,
         f.close()
+        
+    def errorMessage(self, header, message):
+        QMessageBox.critical(self,
+                                header,
+                                message)
+        return False
 
 if __name__ == "__main__":
     import sys
