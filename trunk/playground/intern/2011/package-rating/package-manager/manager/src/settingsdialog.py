@@ -482,6 +482,8 @@ class RatingSettings(SettingsTab):
             self.key = jobj['key']
             self.settings.opendesktop_login_check.setText('Successful!')
             self.markChanged()
+        else:
+            self.checkDefault()
 
     def deactivateLogin(self):
         self.config.setOpenDesktopKey("")
@@ -490,7 +492,7 @@ class RatingSettings(SettingsTab):
     def checkDefault(self):
         self.settings.opendesktop_login_check.setIcon(KIcon("dialog-ok"))
         self.settings.opendesktop_login_check.setText('Check')
-        self.disableCheck()
+        self.enableCheck()
 
     def enableCheck(self):
         self.settings.opendesktop_login_check.setEnabled(True)
