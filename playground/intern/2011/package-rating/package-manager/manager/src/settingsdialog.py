@@ -451,7 +451,7 @@ class RatingSettings(SettingsTab):
     def hideAllWidgets(self):
         # I apologize but we do not provide registering functions right now.
         self.settings.opendesktop_register.hide()
-    
+
         self.settings.opendesktop_login.hide()
         self.settings.opendesktop_loggedin.hide()
 
@@ -464,7 +464,7 @@ class RatingSettings(SettingsTab):
             self.settings.opendesktop_login_user.setText("")
             self.settings.opendesktop_login_pass.setText("")
             self.checkDefault()
-    
+
     def connectSignals(self):
         self.connect(self.settings.opendesktop_login_user, SIGNAL("textChanged(QString)"), self.enableCheck)
         self.connect(self.settings.opendesktop_login_pass, SIGNAL("textChanged(QString)"), self.enableCheck)
