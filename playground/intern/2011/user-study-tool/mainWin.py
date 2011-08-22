@@ -10,6 +10,7 @@ from PyQt4 import QtWebKit
 
 from pds.gui import *
 from pds.qprogressindicator import QProgressIndicator
+from tray import Tray
 
 from myWidgets import SurveyItem,SurveyItemWidget
 from ui_mainMenu import Ui_mainManager
@@ -26,7 +27,6 @@ class MainManager(QtGui.QWidget):
         else:
             self.ui.setupUi(parent)
 
-       
         self.widgets = {}
 	
 	json_object =  open('user_studies.json','r')
@@ -98,6 +98,9 @@ class MainManager(QtGui.QWidget):
 	self.ui.alwaysHelp.setEnabled(True)
 	self.ui.askToHelp.setEnabled(True)
 	self.ui.rejectHelp.setEnabled(True)
+	
+    def initializeTray(self):
+	self.tray = Tray(self)
    
 
 class UserStudyItemInfo(PAbstractBox):
