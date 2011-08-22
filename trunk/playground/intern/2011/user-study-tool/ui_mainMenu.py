@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui_mainMenu.ui'
 #
-# Created: Mon Aug 15 15:50:50 2011
+# Created: Mon Aug 22 14:32:40 2011
 #      by: PyQt4 UI code generator 4.8.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -18,6 +18,9 @@ class Ui_mainManager(object):
     def setupUi(self, mainManager):
         mainManager.setObjectName(_fromUtf8("mainManager"))
         mainManager.resize(480, 379)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/user_study.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        mainManager.setWindowIcon(icon)
         self.gridLayout_2 = QtGui.QGridLayout(mainManager)
         self.gridLayout_2.setObjectName(_fromUtf8("gridLayout_2"))
         self.gridLayout = QtGui.QGridLayout()
@@ -65,3 +68,4 @@ class Ui_mainManager(object):
         self.askToHelp.setText(QtGui.QApplication.translate("mainManager", "Katılmadan sor", None, QtGui.QApplication.UnicodeUTF8))
         self.rejectHelp.setText(QtGui.QApplication.translate("mainManager", "Hiçbir zaman katılma", None, QtGui.QApplication.UnicodeUTF8))
 
+import data_rc

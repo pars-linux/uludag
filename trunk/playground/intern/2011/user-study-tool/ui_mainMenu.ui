@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="data.qrc">
+    <normaloff>:/user_study.png</normaloff>:/user_study.png</iconset>
+  </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
     <layout class="QGridLayout" name="gridLayout">
@@ -88,6 +92,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="data.qrc"/>
+ </resources>
  <connections/>
 </ui>
