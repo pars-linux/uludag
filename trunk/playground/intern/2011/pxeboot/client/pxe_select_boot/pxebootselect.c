@@ -31,33 +31,31 @@ typedef struct gversion {
 } gVersion, *gVersPtr;
 
 FILE *fp;
+char *machtype;
 
-
-
-char *getMachType(void)
+void getMachType(void)
 {
     FILE *fP;
-    char *machtype;
     
     if ((fP = popen("uname -m", "r")) == NULL) { 
         printf("Machtype not found\n" );
-        return NULL;
+        return;
     }
-    
-    if ((machtype = (char *)calloc(20, 0)) == NULL)
-        return NULL;
+
+    if ((machtype = (char *)calloc(20, 0)) == NULL) {
+        printf("Cannot allocate memory...\n");
+        return;
+    }
 
     while (fgets(machtype, sizeof(machtype), fP) != NULL) 
         ;
 
     *strrchr(machtype, '\n') = '\0';
+    
     pclose(fP);
-
-    return machtype;
 }
 
 //-----   PARSE XML   -----//
-
 static versPtr parseVersion(xmlDocPtr doc, xmlNodePtr cur) {
     versPtr ret = NULL;
 
@@ -126,7 +124,7 @@ static gVersPtr parseGversFile(char *filename) {
         if ((!xmlStrcmp(cur->name , (const xmlChar *) "Pardus")))  {
             curvers = parseVersion(doc , cur);
             if (curvers != NULL)
-                if (strstr(curvers->name,  getMachType()))
+               if (strstr(curvers->name, machtype))
                     ret->versions[ret->nbversions++] = curvers;
             if (ret->nbversions >= 500)
                 break;
@@ -183,22 +181,22 @@ void screen_size(WINDOW *win, int min_row, int min_col,int *r, int *c)
      *c = col;
 }
 
-
 //-------------------------------------------------------------------------------
 
 int main(int argc, char **argv)
 {
     setlocale(LC_ALL , "");
 
-    int i, k;
+    int i;
     gVersPtr cur;
-    char *machtype;
     char programname[50];
     /* COMPAT: Do not genrate nodes for formatting spaces */
     LIBXML_TEST_VERSION
 
     xmlKeepBlanksDefault(0);
-
+    
+    getMachType();
+    
     cur = parseGversFile(argv[1]);
     /* Clean up everything else before quitting. */
     xmlCleanupParser();
@@ -209,19 +207,11 @@ int main(int argc, char **argv)
     int n_choices = 0;
 
     n_choices = cur->nbversions; 
+    my_items = (ITEM **)calloc(n_choices + 1, sizeof(ITEM *));
+    for (i = 0; i < cur->nbversions; i++)
+        my_items[i] = new_item(cur->versions[i]->name, cur->versions[i]->versionID);
     
-    machtype = getMachType();
     sprintf(programname, "Pardus PXE-Boot - %s", machtype);
-    my_items = (ITEM **)calloc(n_choices, sizeof(ITEM *));
-    /* İtemleri oluştur*/
-    k = 0;
-    for (i = 0; i < n_choices; i++)
-        if (strstr(cur->versions[i]->name, machtype)) {
-            my_items[k] = new_item(cur->versions[i]->name, cur->versions[i]->versionID);
-            k++;
-        }
-    free(machtype);
-    n_choices = k;
     
     /* Curses kipini ilklendir*/
     initscr();
@@ -235,14 +225,14 @@ int main(int argc, char **argv)
     init_pair(1, COLOR_RED, COLOR_BLACK);
     init_pair(2, COLOR_CYAN, COLOR_BLACK);
     init_pair(3, COLOR_MAGENTA, COLOR_BLACK);
-
+    
     /* Menüyü oluştur */
     my_menu = new_menu((ITEM **)my_items);
-
+    
     /* Menü ile ilişiklendirilecek pencereyi oluştur */
     my_menu_win = newwin( ROW , COL , row / 2 - ROW/2, col / 2 - COL/2);
     keypad(my_menu_win, TRUE);
-
+    
     /* Ana pencereyi ve alt pencereleri ayarla */
     set_menu_win(my_menu, my_menu_win);
     set_menu_sub(my_menu, derwin(my_menu_win , ROW-4 , COL-2 , 4 , 2 ));
@@ -336,6 +326,7 @@ int main(int argc, char **argv)
      unpost_menu(my_menu);
      for(i = 0; i < n_choices; ++i)
          free_item(my_items[i]);
+     free(machtype);
      free_menu(my_menu);
      endwin();
 
