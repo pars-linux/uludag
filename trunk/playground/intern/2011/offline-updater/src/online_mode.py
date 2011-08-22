@@ -171,6 +171,7 @@ class Online(QtGui.QWidget):
         
         message = "%s paket ve %s bagimlilik bulundu" %(int(len(download_list)-len(deplist)), len(deplist)) 
         self.updateListWidget(message)
+        self.ui.pb_action.setText("İndirme işlemine başla")
         self.processDownloadList(download_list)
     
     def checkDependencyUpdate(self, package_list, deplist, repo_packages):
