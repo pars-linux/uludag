@@ -72,13 +72,13 @@ static versPtr parseVersion(xmlDocPtr doc, xmlNodePtr cur) {
     cur = cur->xmlChildrenNode;
     while (cur != NULL) {
         if ((!xmlStrcmp(cur->name, (const xmlChar *) "Name")) )
-            ret->name = xmlNodeListGetString(doc, cur->xmlChildrenNode, 1);
+            ret->name = (char *)xmlNodeListGetString(doc, cur->xmlChildrenNode, 1);
         if ((!xmlStrcmp(cur->name, (const xmlChar *) "Path")) )
-            ret->path = xmlNodeListGetString(doc, cur->xmlChildrenNode, 1);
+            ret->path = (char *)xmlNodeListGetString(doc, cur->xmlChildrenNode, 1);
         if ((!xmlStrcmp(cur->name, (const xmlChar *) "Size")) )
-            ret->size = xmlNodeListGetString(doc, cur->xmlChildrenNode, 1);
+            ret->size = (char *)xmlNodeListGetString(doc, cur->xmlChildrenNode, 1);
         if ((!xmlStrcmp(cur->name, (const xmlChar *) "Architecture")) )
-            ret->versionID = xmlNodeListGetString(doc, cur->xmlChildrenNode, 1);
+            ret->versionID = (char *)xmlNodeListGetString(doc, cur->xmlChildrenNode, 1);
         cur = cur->next;
     }
 
