@@ -6,7 +6,6 @@ import bugzilla.util
 import xmlrpclib
 import os, sys,logging
 import magic
-
 # Class for reporting bugs. This class will enable to login to
 # bugzilla and simply manage the bugs and enter new bugs
 
@@ -28,7 +27,7 @@ class Bugs:
         '''
         default_version= '0.6.2'
         default_bzclass = bugzilla.Bugzilla4
-        default_bz = 'http://192.168.4.86/bugzilla/xmlrpc.cgi'
+        self.default_bz = 'http://192.168.4.86/bugzilla/xmlrpc.cgi'
         last_added_bug = None
         user = None
         password = None
@@ -50,7 +49,7 @@ class Bugs:
 
         #Initializes the bugzilla server URL that is in use
         if not URL:
-            self.bz = self.bzclass(url=default_bz)
+            self.bz = self.bzclass(url=self.default_bz)
         else:
             self.bz = self.bzclass(url=URL)
 
@@ -98,18 +97,17 @@ class Bugs:
         self.isLoggedin = False
         print "Successfully logged out"
 
-
-    def createbug(self,product,component,version,summary,platform=None,severity=None,priority=None,op_sys=None,assigned_to=None,qa_contact=None,cc=None,status=None):
+    def createbug(self,userInfo,sysInfo,severity=None,priority=None,op_sys=None,assigned_to=None,qa_contact=None,cc=None,status=None):
         '''
         Allows to create a new bug entry by logged in user
         Parameter data contains the followings
         REQUIRED:
-            product:
+            product: bug type
+            summary:
+            description:
+        DEFAULTED:
             component:
             version:
-            summary:
-
-        DEFAULTED:
             platform:
             severity:
             priority:
@@ -120,16 +118,17 @@ class Bugs:
             cc:
             status:
         '''
-        data={}
-        data['product'] = product
-        data['component'] = component
-        data['version'] = version
-        data['summary'] = summary
 
-        if platform is not None:
-            data['rep_platform'] = platform
-        else:
-            data['rep_platform'] = 'All'
+        # get system information
+        sysdata=sysInfo
+
+        data={}
+        data['product'] = userInfo['product']
+        data['component'] = sysdata['component']
+        data['version'] = sysdata['version']
+        data['summary'] = userInfo['summary']
+        data['description'] = userInfo['description']
+        data['rep_platform'] = sysdata['platform']
 
         if severity is not None:
             data['severity'] = severity
@@ -157,6 +156,7 @@ class Bugs:
         self.last_added_bug  =  self.bz.createbug(**data)
         self.last_added_bug.refresh()
 
+        return self.last_added_bug
 
     def attach_file(self,bugid,filepath,desc):
         '''
@@ -188,39 +188,7 @@ class Bugs:
 
         return attid
 
+    def getBuzillaURL(self):
+        return self.default_bz
+
 # End of BugReporter class
-
-
-
-class Data:
-    import  platform
-    def __init__(self):
-        data = {}
-
-    def get_sys_info(self):
-        '''
-        returns a data type of dict containing system information to be sent to the bug
-        platform 
-        '''
-        #find component
-        component = "unspecified"
-        self.data['component'] = component
-
-        # find version
-        version = platform.dist()[1]
-        if "Kurumsal" in os or "Corporate" in os:
-            substr = version.split(" ")
-            version = "Corporate"+substr[1]
-        else :
-            substr = version.split(".")
-            version = substr[0]
-        self.data['version'] = version
-
-        #find platform
-        plat = platform.uname()[4]
-        self.data['platform'] = platform
-
-        
-        return self.data
-
-
