@@ -121,7 +121,6 @@ class Offline(QtGui.QWidget):
         
         
     def startProgress(self):
-        print "bok"
         if self.mode == 1:
             self.createFiles()
         elif self.mode == 2:
