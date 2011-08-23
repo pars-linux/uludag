@@ -32,7 +32,7 @@ Urgent:
 
 High:
 ^^^^^
-Bugs that are reproducible on all type of systems and makes the program unusable (packages which are totally unusable and have missing dependency, like being uninstallable or crashing_ on startup, bugs cause that cause loss of user data). These bugs should be fixed in 1 months.
+Bugs that are reproducible on all type of systems and makes the program unusable (packages which are totally unusable and have missing dependency, like being uninstallable or crashing_ on startup, bugs cause that cause loss of user data). Default desktop application language problems are seemed to be also high. These bugs should be fixed in 1 months.
 
 Normal:
 ^^^^^^^
