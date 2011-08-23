@@ -10,14 +10,14 @@ from PyQt4 import QtCore, QtGui
 from PyQt4.QtGui import QMessageBox
 
 
-from ui_offline import Ui_Offline 
+from ui_online import Ui_Online 
 
 class Online(QtGui.QWidget):
     
     def __init__(self, parent = None):
         QtGui.QWidget.__init__(self, parent)
         
-        self.ui = Ui_Offline()
+        self.ui = Ui_Online()
         self.ui.setupUi(self)
 
         self.ui.pb_action.clicked.connect(self.getUpdatedPackages)
@@ -242,18 +242,52 @@ class Online(QtGui.QWidget):
                     return None
     
     def processDownloadList(self):
-        for package in self.download_list:
+        try:
+            workingDir = QtCore.QDir(self.ui.le_path.text())
+            if not workingDir.mkdir("packages"):
+                self.rmPackagesDir(workingDir.absolutePath()+"/packages")
+            workingDir.mkdir("packages")
+        except:
+            self.errorMessage("Hata", "Packages Klasoru olusturulamadi !")
+            return
+        
+        #disable ui objects
+        self.ui.le_path.setEnabled(False)
+        self.ui.pb_path.setEnabled(False)
+        self.pb_action.setEnabled(False)
+        
+        
+        
+        for package in self.download_list: #FIXME: Progress bar only shows the package count, must shows the download size based info.
             package_name = self.download_list[package].split('/')[7]
             QtGui.QApplication.processEvents()
-            self.download(package_name, self.download_list[package], True)
             message = package+" paketi indiriliyor."
             self.ui.updateListWidget(message)
+            self.download(package_name, self.download_list[package], True)
+            self.ui.progressBar.setValue(self.ui.progressBar.value() + len(self.download_list)/100)
+            
+        self.ui.updateListWidget("Islem tamamlandi.")
+            
+        #after work - enable ui objects
+        self.ui.le_path.setEnabled(True)
+        self.ui.pb_path.setEnabled(True)
+        self.pb_action.setEnabled(True)
+            
+            
+    def rmPackagesDir(self, top):
+        top = str(top)
+        for root, dirs, files in os.walk(top, topdown=False):
+            for name in files:
+                os.remove(os.path.join(root, name))
+            for name in dirs:
+                os.rmdir(os.path.join(root, name))
             
     
     def download(self, file_name, url, isPackage=False):
         u = urllib2.urlopen(url)
         if (isPackage):
-            f = open(self.ui.le_path.text()+"/"+file_name, 'wb')
+            workingDir = QtCore.QDir(self.ui.le_path.text())
+            f = open(workingDir.absolutePath()+"/packages/"+file_name, 'wb')
         else:
             f = open(file_name, 'wb')
         meta = u.info()
