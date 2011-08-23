@@ -26,6 +26,9 @@ from ui_webdialog import Ui_WebDialog
 
 from pds.qprogressindicator import QProgressIndicator
 
+from urllib import urlencode
+import config
+
 class WebDialog(PAbstractBox, Ui_WebDialog):
     def __init__(self, parent):
         PAbstractBox.__init__(self, parent)
@@ -44,6 +47,7 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
         self._as = 'http://onurguzel.com/appinfo'
         self.cancelButton.clicked.connect(self._hide)
         self.cancelButton.setIcon(KIcon("dialog-close"))
+        self.key = config.PMConfig().getOpenDesktopKey()
 
         # Hide Scrollbars and context menu in webview
         self.webView.setContextMenuPolicy(Qt.NoContextMenu)
@@ -119,7 +123,10 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
             self.webWidget.hide()
             self.busy.show()
             self.busy.startAnimation()
-            self.webView.load(QUrl('%s/?p=%s' % (self._as, package)))
+            params = {'p': package}
+            if self.key:
+                params['key'] = self.key
+            self.webView.load(QUrl('%s/?%s' % (self._as, urlencode(params))))
         else:
             self._sync_template(status = False)
 
