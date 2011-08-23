@@ -1,5 +1,10 @@
 # -*- coding: utf-8 -*-
 
+import pisi
+
+class OnDemandError(pisi.Error):
+    pass
+
 class OnDemandNode(object):
     def __init__(self, decode, node, where):
         self.decode_function = decode
@@ -15,10 +20,11 @@ class OnDemandNode(object):
 
         if self.error_function:
             # print "checking", self.where # debuginfo
-            errs.extend(self.error_function(r, self.where))
+            if r:
+                errs.extend(self.error_function(r, self.where))
 
         if errs:
-            raise Error(*errs)
+            raise OnDemandError(*errs)
 
         return r
 
