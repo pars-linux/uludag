@@ -9,7 +9,6 @@
 
 import sys
 from PyQt4 import QtCore, QtGui
-from BugReporter import Bugs 
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -213,14 +212,16 @@ class Ui_BugReporter(object):
         self.treeWidget.setHeaderHidden(True)
         self.treeWidget.setColumnCount(2)
         self.treeWidget.setObjectName(_fromUtf8("treeWidget"))
-        item_0 = QtGui.QTreeWidgetItem(self.treeWidget)
-        item_1 = QtGui.QTreeWidgetItem(item_0)
-        item_1 = QtGui.QTreeWidgetItem(item_0)
-        item_0 = QtGui.QTreeWidgetItem(self.treeWidget)
-        item_1 = QtGui.QTreeWidgetItem(item_0)
-        item_1 = QtGui.QTreeWidgetItem(item_0)
-        item_1 = QtGui.QTreeWidgetItem(item_0)
-        item_0 = QtGui.QTreeWidgetItem(self.treeWidget)
+        item_Arc = QtGui.QTreeWidgetItem(self.treeWidget)
+        item_OS = QtGui.QTreeWidgetItem(item_Arc)
+        item_Platform = QtGui.QTreeWidgetItem(item_Arc)
+        item_UserData = QtGui.QTreeWidgetItem(self.treeWidget)
+        item_ProblemType = QtGui.QTreeWidgetItem(item_UserData)
+        item_Summary = QtGui.QTreeWidgetItem(item_UserData)
+        item_Description = QtGui.QTreeWidgetItem(item_UserData)
+        item_SysData = QtGui.QTreeWidgetItem(self.treeWidget)
+        item_Commands = QtGui.QTreeWidgetItem(item_SysData)
+        item_LogFiles = QtGui.QTreeWidgetItem(item_SysData)
         self.treeWidget.header().setDefaultSectionSize(200)
         self.treeWidget.header().setMinimumSectionSize(50)
         self.gridLayout.addWidget(self.treeWidget, 0, 0, 1, 1)
@@ -373,7 +374,10 @@ class Ui_BugReporter(object):
         self.retranslateUi(BugReporter)
         self.stackedWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(BugReporter)
-        self.create_actions()
+
+
+
+
     def retranslateUi(self, BugReporter):
         BugReporter.setWindowTitle(QtGui.QApplication.translate("BugReporter", "Bug Reporter", None, QtGui.QApplication.UnicodeUTF8))
         self.lblTitlePae1.setText(QtGui.QApplication.translate("BugReporter", "Pardus Bug Reporting Tool", None, QtGui.QApplication.UnicodeUTF8))
@@ -440,37 +444,6 @@ class Ui_BugReporter(object):
         self.btnLogin.setText(QtGui.QApplication.translate("BugReporter", "Login", None, QtGui.QApplication.UnicodeUTF8))
         self.btnQuitPage6.setText(QtGui.QApplication.translate("BugReporter", "Quit", None, QtGui.QApplication.UnicodeUTF8))
         self.btnBackPage6.setText(QtGui.QApplication.translate("BugReporter", "Back", None, QtGui.QApplication.UnicodeUTF8))
-    def goto_next_page(self):
-        index = self.stackedWidget.currentIndex()
-        index = index + 1
-        self.stackedWidget.setCurrentIndex(index)
-
-    def goto_prev_page(self):
-        index = self.stackedWidget.currentIndex()
-        if index==5:
-            index = index-2
-        else:
-            index = index - 1
-        self.stackedWidget.setCurrentIndex(index)
-    def quit_window(self):
-        sys.exit()
-    def create_actions(self):
-        self.btnNextPage1.clicked.connect(self.goto_next_page)
-        self.btnNextPage2.clicked.connect(self.goto_next_page)
-        self.btnNextPage3.clicked.connect(self.goto_next_page)
-        self.btnBackPage2.clicked.connect(self.goto_prev_page)
-        self.btnBackPage3.clicked.connect(self.goto_prev_page)
-        self.btnBackPage4.clicked.connect(self.goto_prev_page)
-        self.btnBackPage6.clicked.connect(self.goto_prev_page)
-        self.btnCancelPage1.clicked.connect(self.quit_window)
-    
 
 
-if __name__ == "__main__":
-    app = QtGui.QApplication(sys.argv)
-    BugReporter = QtGui.QMainWindow()
-    ui = Ui_BugReporter()
-    ui.setupUi(BugReporter)
-    BugReporter.show()
-    sys.exit(app.exec_())
 
