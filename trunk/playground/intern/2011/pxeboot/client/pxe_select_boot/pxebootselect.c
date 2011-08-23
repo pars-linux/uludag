@@ -46,13 +46,12 @@ void getMachType(void)
         printf("Cannot allocate memory...\n");
         return;
     }
-
-    while (fgets(machtype, sizeof(machtype), fP) != NULL) 
-        ;
-
-    *strrchr(machtype, '\n') = '\0';
+    fread(machtype, sizeof(machtype), 1, fP);
     
-    pclose(fP);
+    if (strrchr(machtype, '\n'))
+        *strrchr(machtype, '\n') = '\0';
+    
+    fclose(fP);
 }
 
 //-----   PARSE XML   -----//
