@@ -607,6 +607,10 @@ class autoxml(oo.autosuper, oo.autoprop):
 
         def encode(self, node, errs):
             """encode self inside, possibly new, DOM node using xml"""
+            # FIXME: quick fix, see format method for explanation
+            if self.ondemand_dict.has_key(name):
+                self.ondemand_dict[name].decode()
+
             if hasattr(self, name):
                 value = getattr(self, name)
             else:
@@ -629,6 +633,12 @@ class autoxml(oo.autosuper, oo.autoprop):
             return errs
 
         def format(self, f, errs):
+            # FIXME: this was a quick fix
+            # hasattr function catches exceptions (ondemand.OndemandError) and blocks ondemand error checking
+            # if attribute is undecoded, decode it before hasattr for error checking
+            if self.ondemand_dict.has_key(name):
+                self.ondemand_dict[name].decode()
+
             if hasattr(self, name):
                 value = getattr(self,name)
                 f.add_literal_data(token + ': ')
