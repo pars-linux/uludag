@@ -254,9 +254,19 @@ class Main:
        if os.path.exists(os.getenv('HOME')+'/.bugzillacookies'):
            cookieFile = open(os.getenv('HOME')+'/.bugzillacookies')
            content = cookieFile.read()
+           domain = bz_url.split('/')[2]
+           if content.contains('domain="'+domain+'"') == -1 :
+               #not logged in
+               return False
+           else:
+               return True
+        else:
+            return False
 
     def sendBug(self):
-        
+        if isLoggedIn() == False :
+            #skip to login screen
+
         try:
             r = self.bugs.createbug(self.userInfo,self.sysInfo)
             self.bugid = str(r).split(' ')[0].split('#')[1]
