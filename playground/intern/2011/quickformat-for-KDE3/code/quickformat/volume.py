@@ -24,7 +24,7 @@ import dbus
 
 from PyQt4 import QtGui
 
-BUSES = ["usb", "firewire", "platform"]
+BUSES = ["usb", "firewire", "platform","sdio"]
 
 class Volume:
 
@@ -95,7 +95,7 @@ class Volume:
     # Get Volume Information
 
     def get_volume_icon(self):
-        if self.get_device_property("DriveModel").lower().find("sd/mmc") >= 0:
+        if self.get_device_property("DriveModel").lower().find("sd/mmc") >= 0 or self.get_device_property("DriveConnectionInterface") == "sdio":
             return QtGui.QPixmap(":/images/images/media-flash-sd-mmc.png")
         elif self.get_device_property("DriveAtaSmartIsAvailable") > 0:
             return QtGui.QPixmap(":/images/images/drive-removable-media-usb.png")
