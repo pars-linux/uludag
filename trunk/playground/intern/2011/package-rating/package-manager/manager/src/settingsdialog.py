@@ -462,6 +462,7 @@ class RatingSettings(SettingsTab):
             self.settings.opendesktop_loggedin.show()
         else:
             self.settings.opendesktop_login.show()
+            self.settings.opendesktop_login_check.setIcon(KIcon("dialog-ok"))
             self.settings.opendesktop_login_user.setText("")
             self.settings.opendesktop_login_pass.setText("")
             self.checkDefault()
