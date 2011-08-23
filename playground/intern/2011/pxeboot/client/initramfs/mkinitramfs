@@ -144,21 +144,36 @@ class BaseSystem:
 
         self.includePxeFiles = config["enablePxeBoot"]
         self.pxeFileList = {
-                             "/lib/initramfs/pxebootselect"     : "/bin/",
-                             "/usr/lib/libxml2.so.2"            : "/lib/",
-                             "/usr/lib/libxml2.so.2.7.8"        : "/usr/lib/",
-                             "/usr/lib/libncursesw.so.5"        : "/lib/",
-                             "/usr/lib/libmenuw.so.5"           : "/lib/",
-                             "/lib/ld-linux-x86-64.so.2"        : "/lib/",
-                             "/etc/terminfo/l/linux"            : "/etc/terminfo/l/",
-                             }
+                               "/lib/initramfs/pxebootselect"   : "/bin",
+                               "/etc/terminfo/l/linux"          : "/etc/terminfo/l/",
+                           }
         
         self.includeKexecFiles = config["enableKexecBoot"]
-        self.kexecFileList = {
-                             "/usr/sbin/kexec"                  : "/bin/",
-                             "/usr/lib/liblzma.so.0"            : "/lib/",
-                             "/lib/libc.so.6"                   : "/usr/lib/",
-                             }
+        self.kexecFileList = {}
+    
+
+    def getSharedLibrary(self):
+        f = os.popen("ldd client/pxe_select_boot/pxebootselect", "r")
+        for i in f:
+            if i.find("=>"):
+                self.pxeFileList[i[i.find('/'):i.rfind(' (')]] = "/lib"
+        f.close()
+
+        f = os.popen("which kexec", "r")
+        kexec_path = f.read()
+        if kexec_path.endswith("\n"):
+            self.kexecFileList[kexec_path.replace("\n", "")] = "/bin"
+        f.close()
+        
+        command = "ldd " + kexec_path
+        f = os.popen(command, "r")
+        for i in f:
+            if i.find("=>"):
+                self.kexecFileList[i[i.find('/'):i.rfind(' (')]] = "/lib"
+        f.close()
+
+        for i, v in self.kexecFileList.items():
+            print i, v
 
     def getNewRoot(self, dir):
         cleandir = dir.lstrip("/")
@@ -246,6 +261,7 @@ class BaseSystem:
         self.addLvm()
         self.addSuspend()
         self.addModprobeBlacklists()
+        self.getSharedLibrary()
         self.addPxe()
         self.addKexec()
 
