@@ -88,20 +88,81 @@ def compare_tests(xml_file):
         print "\n"
         print b_values
 
-        
+stack = ""
+printValues = False
+
+def compare_recursive(a, b):
+    global stack
+    if isinstance(a, list):
+        for i in xrange(len(a)):
+            stack += '[%s]' % i
+            assert(len(a) == len(b))
+            # print stack
+            compare_recursive(a[i], b[i])
+            stack = stack[:stack.rfind('[')]
+
+    elif isinstance(a, str):
+        assert str(a) == str(b)
+        if printValues:
+            print "%s = %s" % (stack, a)
+
+    elif hasattr(a, '__metaclass__') and  a.__metaclass__ == pisi.pxml.autoxml.autoxml:
+        for attr in a.__dict__.keys():
+            if attr in ('use_ondemand', 'ondemand_dict'):
+                continue
+
+            stack += "."+attr
+
+            s_b = set(b.__dict__.keys()).union(b.ondemand_dict.keys())
+            assert set(a.__dict__.keys()).difference(s_b) == set()
+            # print stack
+
+            ai = getattr(a, attr)
+            bi = getattr(b, attr)
+
+            compare_recursive(ai, bi)
+            stack = stack[:stack.rfind('.')]
+
+    elif a == None:
+        assert a == b
+        if printValues:
+            print "%s = None" % stack
+
+    elif type(a) in (long, int):
+        assert a == b
+
+    elif type(a) in pisi.specfile.__dict__.values():
+        assert str(a) == str(b)
+
+    elif type(a) == pisi.pxml.autoxml.LocalText:
+        assert a == b
+
+    else:
+        print "unexpected type: %s" % type(a)
+        print stack
+        exit()
+
 def compare_full(xml_file):
     '''
     compare all attributes with use_ondemand and without use_ondemand
     '''
 
-    # TODO: ---
-    pass
+    a = pisi.metadata.MetaData()
+    b = pisi.metadata.MetaData()
 
-test_files = []
-for i in range(5):
-    test_files.append('test_xml/test%s.xml' % i)
-    
+    a.read(xml_file, use_ondemand=False)
+    b.read(xml_file, use_ondemand=True)
+
+    compare_recursive(a, b)
+
 if __name__ == '__main__':
+    test_files = []
+    for i in range(5):
+        test_files.append('test_xml/test%s.xml' % i)
+
+    compare_full(test_files[0])
+    print "compare all attributes ok\n"
+
     for test_file in test_files:
         print test_file
         compare_tests(test_file)
