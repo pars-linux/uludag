@@ -211,9 +211,11 @@ class QuickFormat(QtGui.QWidget):
 
     def slot_format_failed(self):
         self.notifier.notify(FORMAT_FAILED)
+        self.set_enabled(True)
 
     def slot_partition_table_error(self):
         self.notifier.notify(PARTITION_TABLE_ERROR)
+        self.set_enabled(True)
 
     def no_device_notification(self):
         if self.first_run:
