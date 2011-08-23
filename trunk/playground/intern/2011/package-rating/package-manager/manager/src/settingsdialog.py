@@ -31,11 +31,12 @@ import pds
 import config
 import helpdialog
 import repodialog
-import pmutils
 import backend
 
 from ui_settingsdialog import Ui_SettingsDialog
 from pmutils import parse_proxy
+from pmutils import letters
+from pmutils import processEvents
 
 Pds = pds.Pds()
 
@@ -249,7 +250,7 @@ class RepositorySettings(SettingsTab):
     def __addRepository(self):
         repoName = self.repoDialog.repoName.text()
         repoAddress = self.repoDialog.repoAddress.currentText()
-        if not re.match("^[0-9%s\-\\_\\.\s]*$" % str(pmutils.letters()), str(repoName)) or str(repoName) == '':
+        if not re.match("^[0-9%s\-\\_\\.\s]*$" % str(letters()), str(repoName)) or str(repoName) == '':
             QMessageBox.warning(self.settings,
                                 i18n("Pisi Error"),
                                 i18n("Not a valid repository name"))
@@ -466,23 +467,23 @@ class RatingSettings(SettingsTab):
             self.checkDefault()
 
     def connectSignals(self):
-        self.connect(self.settings.opendesktop_login_user, SIGNAL("textChanged(QString)"), self.enableCheck)
-        self.connect(self.settings.opendesktop_login_pass, SIGNAL("textChanged(QString)"), self.enableCheck)
         self.connect(self.settings.opendesktop_login_check, SIGNAL("clicked()"), self.checkLogin)
         self.connect(self.settings.opendesktop_deactivate, SIGNAL("clicked()"), self.deactivateLogin)
 
     def checkLogin(self):
         self.settings.opendesktop_login_check.setText('Checking...')
-        self.disableCheck()
+        self.disableForm()
+        processEvents()
         params = urllib.urlencode({'username': self.settings.opendesktop_login_user.text(), 'password': self.settings.opendesktop_login_pass.text()})
         result = urllib.urlopen('http://onurguzel.com/appinfo/auth.php', params).read()
         jobj = json.loads(result)
         if jobj['statuscode'] == 100:
-            self.settings.opendesktop_login_check.setIcon(KIcon("dialog-ok-apply"))
             self.key = jobj['key']
-            self.settings.opendesktop_login_check.setText('Successful!')
+            QMessageBox.information(self.settings, "Package Manager Ratings", "You have successfully logged in.")
             self.markChanged()
+            self.settings.opendesktop_login_check.setText('Logged in')
         else:
+            QMessageBox.critical(self.settings, "Package Manager Ratings", "Provided information is not valid. #%d" % jobj['statuscode'])
             self.checkDefault()
 
     def deactivateLogin(self):
@@ -490,15 +491,14 @@ class RatingSettings(SettingsTab):
         self.initialize()
 
     def checkDefault(self):
-        self.settings.opendesktop_login_check.setIcon(KIcon("dialog-ok"))
         self.settings.opendesktop_login_check.setText('Check')
-        self.enableCheck()
+        self.enableForm()
 
-    def enableCheck(self):
-        self.settings.opendesktop_login_check.setEnabled(True)
+    def enableForm(self):
+        self.settings.opendesktop_login.setEnabled(True)
 
-    def disableCheck(self):
-        self.settings.opendesktop_login_check.setEnabled(False)
+    def disableForm(self):
+        self.settings.opendesktop_login.setEnabled(False)
 
     def save(self):
         self.config.setOpenDesktopKey(self.key)
