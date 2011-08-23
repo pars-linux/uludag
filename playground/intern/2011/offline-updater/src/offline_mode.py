@@ -17,16 +17,24 @@ class Offline(QtGui.QWidget):
         self.ui = Ui_Offline()
         self.ui.setupUi(self)
         
-        self.ui.pb_action.clicked.connect(self.createFiles)
         self.ui.pb_close.clicked.connect(self.close)
+        self.ui.rb_export.setChecked(True)
+        self.mode = 1 #Program has two modes; 1: Export , 2:Setup 
         
-        self.ui.le_path.setText(os.getenv('USERPROFILE') or os.getenv('HOME'))
+        self.ui.rb_export.clicked.connect(self.rbExportClickedAction)
+        self.ui.rb_setup.clicked.connect(self.rbSetupClickedAction)
+        
+        self.ui.pb_action.clicked.connect(self.startProgress)
+        
+        self.rbExportClickedAction()
+        
+        #self.ui.le_path.setText(os.getenv('USERPROFILE') or os.getenv('HOME'))
         
     def createFiles(self):
        
         import math
         #print "pisi connection"
-        self.ui.updateListWidget("PiSi baglantisi saglaniyor")
+        #self.ui.updateListWidget("PiSi baglantisi saglaniyor")
         installdb = pisi.db.installdb.InstallDB()
         repodb = pisi.db.repodb.RepoDB()
         repo_urls = repodb.list_repo_urls()
@@ -37,7 +45,7 @@ class Offline(QtGui.QWidget):
         cnt = 0
         
         packages = {}
-        self.ui.updateListWidget("Paket listesi olusturuluyor")
+        #self.ui.updateListWidget("Paket listesi olusturuluyor")
         for i in listPackages:
             packages[installdb.get_package(i).name] = (installdb.get_package(i).release, 
                                                        packagedb.get_package_repo(installdb.get_package(i).name)[1], 
@@ -50,7 +58,7 @@ class Offline(QtGui.QWidget):
             QtGui.QApplication.processEvents()
            
         #print packages
-        self.ui.updateListWidget("Paket listesi kaydediliyor")
+        #self.ui.updateListWidget("Paket listesi kaydediliyor")
         filePackages = open("packageList.ofu","w")
         cPickle.dump(packages, filePackages, protocol=0)
         filePackages.close()
@@ -58,7 +66,7 @@ class Offline(QtGui.QWidget):
         repo_list = {}
         i = 0
         cnt = 0
-        self.ui.updateListWidget("Depo listesi olusturuluyor")
+        #self.ui.updateListWidget("Depo listesi olusturuluyor")
         for repo in repos:
             repo_list[repo] = repo_urls[i]
             i += 1
@@ -68,14 +76,57 @@ class Offline(QtGui.QWidget):
             cnt += 1
             QtGui.QApplication.processEvents()
         
-        self.ui.updateListWidget("Depo listesi kaydediliyor")
+        #self.ui.updateListWidget("Depo listesi kaydediliyor")
         fileRepos = open("repoList.ofu","w")
         cPickle.dump(repo_list, fileRepos, protocol = 0)
         fileRepos.close()
             
         #print repo_list
         self.ui.progressBar.setValue(100)
-        self.ui.updateListWidget("Islem tamamlandi")
+        #self.ui.updateListWidget("Islem tamamlandi")
+        
+        
+    def setupPackages(self):
+        packageList = []
+        for dirname, dirnames, filenames in os.walk('packages'):
+            for filename in filenames:
+                if filename.split(".")[-1] == "pisi":
+                    packageList.append("packages/"+filename)
+        
+        command = "pm-install "
+        for i in packageList:
+            command+= i+" " 
+            
+        print command 
+        os.system(command)
+        
+        
+    def rbExportClickedAction(self):
+        print "abidik"
+        self.ui.le_path_setup.setEnabled(False)
+        self.ui.pb_path_setup.setEnabled(False)
+        
+        self.ui.le_path_export.setEnabled(True)
+        self.ui.pb_path_export.setEnabled(True)
+        self.mode = 1
+        
+    def rbSetupClickedAction(self):
+        print "abidik 2"
+        self.ui.le_path_setup.setEnabled(True)
+        self.ui.pb_path_setup.setEnabled(True)
+        
+        self.ui.le_path_export.setEnabled(False)
+        self.ui.pb_path_export.setEnabled(False)
+        self.mode = 2
+        
+        
+    def startProgress(self):
+        print "bok"
+        if self.mode == 1:
+            self.createFiles()
+        elif self.mode == 2:
+            self.setupPackages()
+            
         
             
 
