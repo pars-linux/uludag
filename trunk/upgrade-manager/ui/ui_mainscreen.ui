@@ -7,8 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>494</width>
-    <height>348</height>
+    <height>370</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>370</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Upgrade Manager</string>
