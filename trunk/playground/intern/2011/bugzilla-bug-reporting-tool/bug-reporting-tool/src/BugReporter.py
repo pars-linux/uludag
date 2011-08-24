@@ -54,13 +54,12 @@ class Bugs:
             self.bz = self.bzclass(url=URL)
 
 
-    def login(self,username,password,cookie=False):
+    def login(self,username,password):
         '''
         Login to bugzilla with given username and password
         Parameters
             username : username(e-mail) of the user to login
             password : password of the user to login
-            cookie   : allows to login with bugzilla cookiefile
         '''
         self.user=username
         self.password=password
@@ -68,20 +67,10 @@ class Bugs:
             return False
         if not self.password:
             return False
-        if self.bz.login(self.user,self.password):
-            print "Successfully logged in..."
-            self.isLoggedin = True
-        else:
-            print "Authentication is failed ! Exiting... "
-            self.isLoggedin = False
-        if cookie is True :
-            self.cookiefile = self.bz.cookiefile
-            print self.cookiefile
-        else:
-            self.cookiefile = None
+
+        self.isLoggedin  = self.bz.login(self.user,self.password)
 
         return self.isLoggedin
-
 
     def getcookiefile(self):
         '''

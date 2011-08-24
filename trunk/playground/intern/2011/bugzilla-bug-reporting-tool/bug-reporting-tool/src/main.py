@@ -11,6 +11,7 @@ from BugReporterUI import Ui_BugReporter
 from BugReporter import Bugs
 import sys,os,subprocess
 from PyQt4 import QtCore, QtGui
+from PyQt4.QtGui import QMessageBox
 import tempfile
 
 class Main:
@@ -88,9 +89,23 @@ class Main:
             print cmd
             subprocess.call(cmd[0]+' > '+self.tmpDir+'/'+cmd[1],shell=True)
 
+    def showMessage(self,title,message):
+        msgBox = QMessageBox(self.ui.stackedWidget)
+        msgBox.setWindowTitle(title)
+        msgBox.setText(message)
+        msgBox.show()
 
     def goto_next_page(self):
         index = self.ui.stackedWidget.currentIndex()
+        if index == 2:
+            if len(str(self.ui.txtSummary.toPlainText())) < 8:
+                self.showMessage(i18n("Warning"),i18n("Summary can not be less than 8 characters !"))
+                return
+
+            # TODO Text may contain only space character. Check if the text is acceptable
+            if len(str(self.ui.txtDetails.toPlainText()).split(' ')) < 10:
+                self.showMessage(i18n("Warning"),i18n("Detail can not be less than 10 words !"))
+                return
         index = index + 1
         if index == 3:
             self.previewBug()
@@ -112,11 +127,20 @@ class Main:
         self.ui.btnBackPage3.clicked.connect(self.goto_prev_page)
         self.ui.btnBackPage4.clicked.connect(self.goto_prev_page)
         self.ui.btnBackPage6.clicked.connect(self.goto_prev_page)
+        self.ui.btnLogin.clicked.connect(self.login)
+        self.ui.btnQuitPage5.clicked.connect(self.quit_window)
+        self.ui.btnQuitPage6.clicked.connect(self.quit_window)
         self.ui.btnCancelPage1.clicked.connect(self.quit_window)
         self.ui.btnSendPage4.clicked.connect(self.sendBug)
     def quit_window(self):
         sys.exit()
-
+    def login(self):
+        user = str(self.ui.txtMail.toPlainText())
+        password = str(self.ui.txtPassword.toPlainText())
+        if not self.bugs.login(user,password):
+            self.showMessage(i18n("Error"),i18n("Authentication failed. Check your e-mail and password and try again..."))
+        else:
+            self.goto_prev_page()
     def show(self):
         # Creates actions by assigning signals to slots
         self.app = QtGui.QApplication(sys.argv)
@@ -252,32 +276,29 @@ class Main:
        
        
         self.ui.treeWidget.setSortingEnabled(__sortingEnabled)
-   def isLoggedIn(self):
-       bz_url = self.bugs.getBuzillaURL()
-       if os.path.exists(os.getenv('HOME')+'/.bugzillacookies'):
-           cookieFile = open(os.getenv('HOME')+'/.bugzillacookies')
-           content = cookieFile.read()
-           domain = bz_url.split('/')[2]
-           if content.contains('domain="'+domain+'"') == -1 :
-               #not logged in
-               return False
-           else:
-               return True
-        else:
-            return False
-
+    def getFault(self,fault):
+        return int(str(fault).split(' ')[1].split(':')[0])
     def sendBug(self):
-        if isLoggedIn() == False :
-            #skip to login screen
 
         try:
             r = self.bugs.createbug(self.userInfo,self.sysInfo)
             self.bugid = str(r).split(' ')[0].split('#')[1]
         except xmlrpclib.Fault,e:
-            print str(e)
+            fault = self.getFault(e) 
+            if fault == 410:
+                self.goto_next_page()
+                self.goto_next_page()
             self.bugid=-1
-        self.attachbug()
-
+        if self.bugid > 0:
+            try:
+                self.attachbug()
+            except xmlrpclib.Fault,e:
+                self.showMessage(i18n("Error"),str(e))
+                return
+            self.ui.lblBugID.setText(str(self.bugid))
+            url = self.bugs.getBuzillaURL().rstrip('xmlrpc.cgi')
+            self.ui.lblLinkToBug.setText("<a href='"+ url +"show_bug.cgi?id=" + self.bugid + "'>" +url+"show_bug.cgi?id="+self.bugid+"</a>")
+            self.goto_next_page()
     def run(self, cmd, logfile):
         '''
         Execute given commands and redirect them to a file named as 'commandname' + '.txt'
@@ -298,3 +319,4 @@ class Main:
 if __name__ == "__main__":
     m=Main()
     m.show()
+ 
