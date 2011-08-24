@@ -16,6 +16,7 @@ class Database {
 
     private $dbh = null;
 
+    private $id = null;
     private $username = null;
     private $key = null;
 
@@ -48,6 +49,25 @@ class Database {
     }
 
     /**
+     * Checks if the key exists in DB
+     *
+     * @param string $key
+     *
+     * @return bool
+     */
+    public function checkKey($key) {
+        $this->key = $key;
+        if ($this->keyExists()) {
+            $this->username = $this->getInfo('username', 'key');
+            $this->id = $this->getID();
+            return true;
+        } else {
+            $this->key = null;
+            return false;
+        }
+    }
+
+    /**
      * Checks login info over OpenDesktop.org Public API
      *
      * @param string $username
@@ -75,6 +95,7 @@ class Database {
                 } else {
                     $this->processKey($password);
                 }
+                $this->id = $this->getID();
                 $this->key = $this->getKey();
                 return $this->key;
                 break;
@@ -107,9 +128,9 @@ class Database {
      *
      * @return string|false requested column data on success, false on failure
      */
-    private function getInfo($column, $key, $by = 'username') {
+    private function getInfo($column, $by = 'username') {
         if (in_array($by, array('id', 'username', 'key'))) {
-            $r = $this->dbh->query(sprintf("SELECT `%s` FROM `users` WHERE `%s` = %s;", $column, $by, $this->dbh->quote($key)))->fetch(PDO::FETCH_ASSOC);
+            $r = $this->dbh->query(sprintf("SELECT `%s` FROM `users` WHERE `%s` = %s;", $column, $by, $this->dbh->quote($this->$by)))->fetch(PDO::FETCH_ASSOC);
             return $r[$column];
         } else {
             return false;
@@ -117,12 +138,54 @@ class Database {
     }
 
     /**
+     * Gets user ID from DB
+     *
+     * @return int user ID
+     */
+    public function getID($by = 'username') {
+        return $this->getInfo('id', $by);
+    }
+
+    /**
      * Gets unique user key from DB
      *
      * @return string key hash
      */
-    public function getKey() {
-        return $this->getInfo('key', $this->username);
+    public function getKey($by = 'username') {
+        return $this->getInfo('key', $by);
+    }
+
+    /**
+     * Gets username from DB
+     *
+     * @param string $by
+     *
+     * @return string username
+     */
+    public function getUsername($by = 'key') {
+        return $this->getInfo('username', $by);
+    }
+
+    public function hasVoted($package) {
+        $sql = sprintf("SELECT id FROM `rating` WHERE `user_id` = %d AND `package` = %s;", $this->id, $this->dbh->quote($package));
+        return ($this->dbh->exec($sql)) ? true : false;
+    }
+
+    /**
+     * Searchs the DB with gien key
+     *
+     * @param string $key
+     *
+     * @return bool true if exists, false otherwise
+     */
+    public function keyExists() {
+        return ($this->getID('key')) ? true : false;
+    }
+
+    public static function limitScore($score) {
+        $min = 0;
+        $max = 5;
+        return min($max, min($min, $score));
     }
 
     /**
@@ -151,12 +214,36 @@ class Database {
     }
 
     /**
+     * Inserts or updates user's vote on package
+     *
+     * @param string $package
+     * @param float $score
+     *
+     * @return string|false key hash on success, false on failure
+     */
+    public function processScore($package, $score) {
+        $score = $this->limitScore($score);
+        $action = ($this->hasVoted($package)) ? true : false;
+        switch ($action) {
+            case 'insert':
+                $sql = sprintf("INSERT INTO `ratings` (`user_id`, `package`, `score`) VALUES (%s, %s, %.1f);", $this->dbh->quote($this->id), $this->dbh->quote($package), $score);
+                break;
+            case 'update':
+                $sql = sprintf("UPDATE `ratings` SET `score` = %3$.1f WHERE `username` = %1$s AND `package` = %2$s;", $this->dbh->quote($this->username), $this->dbh->quote($package), $score);
+                break;
+            default:
+                return false;
+        }
+        return ($this->dbh->exec($sql)) ? $key : false;
+    }
+
+    /**
      * Searchs the DB for given username
      *
      * @return bool
      */
     public function userExists() {
-        return ($this->getInfo('id', $this->username)) ? true : false;
+        return ($this->getID()) ? true : false;
     }
 }
 
