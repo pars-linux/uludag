@@ -70,7 +70,7 @@ Special packages should enclose and provide the most fundamental actions on a sy
     * filesystems
     * graphics
     * login
-    * networking
+    * networking / servers
     * package update base
     * minimal buildroot
     * post-install booting
@@ -78,7 +78,7 @@ Special packages should enclose and provide the most fundamental actions on a sy
 
 The security updates are also included this special package case.
 
-In order to merge special packages from  `devel source repository`_ to `testing source repository`_, package maintainers need an Exceptions_ request and approval by merge resposible group.
+In order to merge special packages from  `devel source repository`_ to `testing source repository`_, package maintainers need an `exception request`_ and approval by merge resposible group.
 
 
 All Other Updates
@@ -148,6 +148,8 @@ Update a package on `devel source repository`_:
     BUG:COMMENT:#123456     # Inserts a comment into the bug report #123456
     BUG:FIXED:#123456       # Closes the bug report #123456 as RESOLVED/FIXED
 
+#. If your package needs an exception, please control Exceptions_ list and follow `exception request`_ process.
+
 Merging to `testing source repository`_:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -188,7 +190,6 @@ By merge responsibles:
 #. These packages are taken to stable binary repository.
 #. All package bugs that have taken to `stable binary repository`_ are marked as CLOSED/FIXED.
 
-
 .. _open development: http://developer.pardus.org.tr/guides/releasing/official_releases/release-process.html#open-development
 .. _Package update tests: http://developer.pardus.org.tr/guides/releasing/testing_process/package_update_tests/index.html
 .. _devel source repository: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#devel-folder
@@ -211,4 +212,4 @@ By merge responsibles:
 .. _insoluable bug resolutions: http://developer.pardus.org.tr/guides/bugtracking/bug_cycle.html
 .. _security tests: http://developer.pardus.org.tr/guides/releasing/testing_process/package_update_tests/security_tests.html
 .. _package tests: http://developer.pardus.org.tr/guides/releasing/testing_process/package_update_tests/package_update_tests.html
-
+.. _exception request: http://developer.pardus.org.tr/guides/releasing/freezes/freeze_exception_process.html
