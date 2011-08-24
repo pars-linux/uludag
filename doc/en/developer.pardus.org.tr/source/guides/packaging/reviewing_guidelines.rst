@@ -9,9 +9,9 @@ Things To Check While Reviewing
 
 :Version: 0.2
 
-In order to review a package, there are a lot of things to check. The below
+In order to review a new package, there are a lot of things to check. The below
 list only provides some guidelines for new rewievers in order to identify a way
-to follow. But ofcourse this list is not enough. Reviewers should also use their
+to follow. But of course this list is not enough. Reviewers should also use their
 own experiences when reviewing a package.
 
     #. The package name must be suitable to `package naming`_.
