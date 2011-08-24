@@ -4,7 +4,7 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
     require_once('class.database.php');
 
     $db = new Database();
-    $chk['key'] = $db->check($_POST['username'], $_POST['password']);
+    $chk['key'] = $db->checkLogin($_POST['username'], $_POST['password']);
     $chk['statuscode'] = ($chk['key']) ? 100 : 102;
     print json_encode($chk);
 } else {
