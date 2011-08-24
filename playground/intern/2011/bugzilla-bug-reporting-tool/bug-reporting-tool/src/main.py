@@ -1,5 +1,3 @@
-#ifndef MAIN.PY
-#define MAIN.PY
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
