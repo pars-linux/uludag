@@ -479,10 +479,9 @@ class RatingSettings(SettingsTab):
         result = urllib.urlopen('http://onurguzel.com/appinfo/auth.php', params).read()
         jobj = json.loads(result)
         if jobj['statuscode'] == 100:
-            self.key = jobj['key']
+            self.config.setOpenDesktopKey(jobj['key'])
             QMessageBox.information(self.settings, "Package Manager Ratings", "You have successfully logged in.")
-            self.markChanged()
-            self.settings.opendesktop_login_check.setText('Logged in')
+            self.initialize()
         else:
             QMessageBox.critical(self.settings, "Package Manager Ratings", "Provided information is not valid. #%d" % jobj['statuscode'])
             self.checkDefault()
@@ -500,9 +499,6 @@ class RatingSettings(SettingsTab):
 
     def disableForm(self):
         self.settings.opendesktop_login.setEnabled(False)
-
-    def save(self):
-        self.config.setOpenDesktopKey(self.key)
 
 class SettingsDialog(QDialog, Ui_SettingsDialog):
     def __init__(self, parent=None):

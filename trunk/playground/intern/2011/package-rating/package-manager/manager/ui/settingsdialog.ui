@@ -902,7 +902,7 @@ p, li { white-space: pre-wrap; }
           <item row="2" column="0">
            <widget class="QPushButton" name="opendesktop_login_check">
             <property name="text">
-             <string>Check</string>
+             <string>Check &amp;&amp; Activate</string>
             </property>
            </widget>
           </item>
