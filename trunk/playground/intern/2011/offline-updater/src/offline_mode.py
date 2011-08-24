@@ -36,6 +36,8 @@ class Offline(QtGui.QWidget):
         
     def createFiles(self):
        
+        self.ui.pb_action.setEnabled(False)
+       
         import math
         installdb = pisi.db.installdb.InstallDB()
         repodb = pisi.db.repodb.RepoDB()
@@ -57,7 +59,7 @@ class Offline(QtGui.QWidget):
             cnt +=1
             QtGui.QApplication.processEvents()
            
-        filePackages = open("packageList.ofu","w")
+        filePackages = open(self.ui.le_path_export.text()+"/packageList.ofu","w")
         cPickle.dump(packages, filePackages, protocol=0)
         filePackages.close()
        
@@ -73,20 +75,20 @@ class Offline(QtGui.QWidget):
             cnt += 1
             QtGui.QApplication.processEvents()
         
-        fileRepos = open("repoList.ofu","w")
+        fileRepos = open(self.ui.le_path_export.text()+"/repoList.ofu","w")
         cPickle.dump(repo_list, fileRepos, protocol = 0)
         fileRepos.close()
             
         #print repo_list
         self.ui.progressBar.setValue(100)
-        
+        self.ui.pb_action.setEnabled(True)
         
     def setupPackages(self):
         packageList = []
-        for dirname, dirnames, filenames in os.walk('packages'):
+        for dirname, dirnames, filenames in os.walk(str(self.ui.le_path_setup.text())+'/packages'):
             for filename in filenames:
                 if filename.split(".")[-1] == "pisi":
-                    packageList.append("packages/"+filename)
+                    packageList.append(str(self.ui.le_path_setup.text())+"/packages/"+filename)
                     
         if len(packageList) == 0:
             self.errorMessage(u"Paket Bulunamadı", u"Belirttiğiniz dizinde kurulacak PiSi paketi bulunamadı!")
