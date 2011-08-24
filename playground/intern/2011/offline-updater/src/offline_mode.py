@@ -23,12 +23,14 @@ class Offline(QtGui.QWidget):
         
         self.ui.rb_export.clicked.connect(self.rbExportClickedAction)
         self.ui.rb_setup.clicked.connect(self.rbSetupClickedAction)
-        
+        self.ui.le_path_export.setText(os.getenv('USERPROFILE') or os.getenv('HOME'))
+        self.ui.le_path_setup.setText(os.getenv('USERPROFILE') or os.getenv('HOME'))
+        self.ui.pb_path_export.clicked.connect(self.setExportPath)
+        self.ui.pb_path_setup.clicked.connect(self.setSetupPath)
         self.ui.pb_action.clicked.connect(self.startProgress)
         
         self.rbExportClickedAction()
         
-        #self.ui.le_path.setText(os.getenv('USERPROFILE') or os.getenv('HOME'))
         
     def createFiles(self):
        
@@ -57,8 +59,6 @@ class Offline(QtGui.QWidget):
             cnt +=1
             QtGui.QApplication.processEvents()
            
-        #print packages
-        #self.ui.updateListWidget("Paket listesi kaydediliyor")
         filePackages = open("packageList.ofu","w")
         cPickle.dump(packages, filePackages, protocol=0)
         filePackages.close()
@@ -92,6 +92,10 @@ class Offline(QtGui.QWidget):
             for filename in filenames:
                 if filename.split(".")[-1] == "pisi":
                     packageList.append("packages/"+filename)
+                    
+        if len(packageList) == 0:
+            self.errorMessage("Paket Bulunamadi", "Belirttiginiz dizinde kurulacak PiSi paketi bulunamdi!")
+            return
         
         command = "pm-install "
         for i in packageList:
@@ -124,6 +128,23 @@ class Offline(QtGui.QWidget):
         elif self.mode == 2:
             self.setupPackages()
             
+            
+    def setExportPath(self):
+        fd = QtGui.QFileDialog(self)
+        self.path_export = fd.getExistingDirectory(parent=None, caption="Klasor sec", directory=self.ui.le_path_export.text(), options=QtGui.QFileDialog.ShowDirsOnly)
+        self.ui.le_path_export.setText(self.path_export)
+    
+    def setSetupPath(self):
+        fd = QtGui.QFileDialog(self)
+        self.path_setup = fd.getExistingDirectory(parent=None, caption="Klasor sec", directory=self.ui.le_path_setup.text(), options=QtGui.QFileDialog.ShowDirsOnly)
+        self.ui.le_path_setup.setText(self.path_setup)
+            
+            
+    def errorMessage(self, header, message):
+        QtGui.QMessageBox.critical(self,
+                                        header,
+                                        message)
+        return False
         
             
 
