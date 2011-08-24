@@ -3,6 +3,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+import gettext
+__trans = gettext.translation('bug-reporting-tool', fallback=True)
+i18n = __trans.ugettext
 import xmlrpclib
 from BugReporterUI import Ui_BugReporter
 from BugReporter import Bugs
@@ -192,59 +195,59 @@ class Main:
 
 
 
-        self.ui.treeWidget.headerItem().setText(0, QtGui.QApplication.translate("BugReporter", "Fields", None, QtGui.QApplication.UnicodeUTF8))
-        self.ui.treeWidget.headerItem().setText(1, QtGui.QApplication.translate("BugReporter", "Data", None, QtGui.QApplication.UnicodeUTF8))
+        self.ui.treeWidget.headerItem().setText(0, i18n("Fields"))
+        self.ui.treeWidget.headerItem().setText(1, i18n("Data"))
         __sortingEnabled = self.ui.treeWidget.isSortingEnabled()
         self.ui.treeWidget.setSortingEnabled(False)
-        self.ui.treeWidget.topLevelItem(0).setText(0, QtGui.QApplication.translate("BugReporter", "Architecture", None, QtGui.QApplication.UnicodeUTF8))
+        self.ui.treeWidget.topLevelItem(0).setText(0, i18n("Architecture"))
 
 
-        self.ui.treeWidget.topLevelItem(0).child(0).setText(0, QtGui.QApplication.translate("BugReporter", "OS", None, QtGui.QApplication.UnicodeUTF8))
+        self.ui.treeWidget.topLevelItem(0).child(0).setText(0, i18n("OS"))
 
-        self.ui.treeWidget.topLevelItem(0).child(0).setText(1, QtGui.QApplication.translate("BugReporter", "Pardus " + self.sysInfo['version'], None, QtGui.QApplication.UnicodeUTF8))
+        self.ui.treeWidget.topLevelItem(0).child(0).setText(1, i18n("Pardus " + self.sysInfo['version']))
        
        
        
-        self.ui.treeWidget.topLevelItem(0).child(1).setText(0, QtGui.QApplication.translate("BugReporter", "Platform", None , QtGui.QApplication.UnicodeUTF8))
+        self.ui.treeWidget.topLevelItem(0).child(1).setText(0, i18n("Platform"))
         
-        self.ui.treeWidget.topLevelItem(0).child(1).setText(1, QtGui.QApplication.translate("BugReporter", self.sysInfo['platform'], None , QtGui.QApplication.UnicodeUTF8))
+        self.ui.treeWidget.topLevelItem(0).child(1).setText(1, i18n(self.sysInfo['platform']))
 
 
 
-        self.ui.treeWidget.topLevelItem(1).setText(0, QtGui.QApplication.translate("BugReporter", "User Data", None, QtGui.QApplication.UnicodeUTF8))
+        self.ui.treeWidget.topLevelItem(1).setText(0, i18n("User Data"))
 
 
-        self.ui.treeWidget.topLevelItem(1).child(0).setText(0, QtGui.QApplication.translate("BugReporter", "Problem Type", None, QtGui.QApplication.UnicodeUTF8))
+        self.ui.treeWidget.topLevelItem(1).child(0).setText(0, i18n("Problem Type"))
 
-        self.ui.treeWidget.topLevelItem(1).child(0).setText(1, QtGui.QApplication.translate("BugReporter", self.userInfo['product'], None, QtGui.QApplication.UnicodeUTF8))
+        self.ui.treeWidget.topLevelItem(1).child(0).setText(1, i18n(self.userInfo['product']))
 
 
-        self.ui.treeWidget.topLevelItem(1).child(1).setText(0, QtGui.QApplication.translate("BugReporter", "Summary", None, QtGui.QApplication.UnicodeUTF8)) 
+        self.ui.treeWidget.topLevelItem(1).child(1).setText(0, i18n("Summary")) 
 
-        self.ui.treeWidget.topLevelItem(1).child(1).setText(1, QtGui.QApplication.translate("BugReporter", self.userInfo['summary'], None, QtGui.QApplication.UnicodeUTF8))
+        self.ui.treeWidget.topLevelItem(1).child(1).setText(1, i18n(self.userInfo['summary']))
 
         
-        self.ui.treeWidget.topLevelItem(1).child(2).setText(0, QtGui.QApplication.translate("BugReporter", "Description", None, QtGui.QApplication.UnicodeUTF8))
+        self.ui.treeWidget.topLevelItem(1).child(2).setText(0, i18n("Description"))
 
-        self.ui.treeWidget.topLevelItem(1).child(2).setText(1, QtGui.QApplication.translate("BugReporter", self.userInfo['description'], None, QtGui.QApplication.UnicodeUTF8))
+        self.ui.treeWidget.topLevelItem(1).child(2).setText(1, i18n(self.userInfo['description']))
        
-        self.ui.treeWidget.topLevelItem(2).setText(0, QtGui.QApplication.translate("BugReporter", "System Data", None, QtGui.QApplication.UnicodeUTF8))
-	self.ui.treeWidget.topLevelItem(2).child(0).setText(0, QtGui.QApplication.translate("BugReporter", "Command Outputs", None, QtGui.QApplication.UnicodeUTF8))    
+        self.ui.treeWidget.topLevelItem(2).setText(0, i18n("System Data"))
+	self.ui.treeWidget.topLevelItem(2).child(0).setText(0, i18n("Command Outputs"))    
 	
 	i=0
 	for elem in self.buginfo[self.selectedindex]['commandlist']:
 	    item_0 = QtGui.QTreeWidgetItem(self.ui.treeWidget.topLevelItem(2).child(0))
-	    item_0.setText(0, QtGui.QApplication.translate("BugReporter", elem[0] , None, QtGui.QApplication.UnicodeUTF8))
-	    item_0.setText(1, QtGui.QApplication.translate("BugReporter", self.tmpDir + '/' + elem[1], None, QtGui.QApplication.UnicodeUTF8))
+	    item_0.setText(0, i18n(elem[0]))
+	    item_0.setText(1, i18n(self.tmpDir + '/' + elem[1]))
         i += 1
 
 
-	self.ui.treeWidget.topLevelItem(2).child(1).setText(0, QtGui.QApplication.translate("BugReporter", "Log Files", None, QtGui.QApplication.UnicodeUTF8))    
+	self.ui.treeWidget.topLevelItem(2).child(1).setText(0, i18n("Log Files"))    
 	i=0
 	for elem in self.buginfo[self.selectedindex]['loglist']:
 	    item_1 = QtGui.QTreeWidgetItem(self.ui.treeWidget.topLevelItem(2).child(1))
-	    item_1.setText(0, QtGui.QApplication.translate("BugReporter", elem[0] , None, QtGui.QApplication.UnicodeUTF8))    
-	    item_1.setText(1, QtGui.QApplication.translate("BugReporter", self.tmpDir + '/' + elem[1], None, QtGui.QApplication.UnicodeUTF8))
+	    item_1.setText(0, i18n(elem[0] ))    
+	    item_1.setText(1, i18n(self.tmpDir + '/' + elem[1]))
         i += 1
        
        
