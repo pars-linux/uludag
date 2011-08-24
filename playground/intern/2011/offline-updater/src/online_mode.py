@@ -99,9 +99,6 @@ class Online(QtGui.QWidget):
             packages = {}
             obselete_list = []
             
-            
-            
-            
             pisi_xml = self.downloadRepoXML(repos[repo]) #XML dosyalarını indir
             pisi_data = open(pisi_xml) #Aç
             message = repo+u" reposunun bilgileri çözümleniyor."
@@ -185,6 +182,15 @@ class Online(QtGui.QWidget):
        
         message = u"%s paket ve %s bagimlılık bulundu" %(int(len(self.download_list)-len(deplist)), len(deplist)) 
         self.ui.updateListWidget(message)
+        
+        if len(self.download_list) == 0:
+            message = u"Güncellenecek Paket Bulunamadı!"
+            self.ui.updateListWidget(message)
+            self.cleaningJobs()
+            return
+        
+            
+        
         
         self.ui.pb_action.hide()
         self.pb_action = QtGui.QPushButton(self)

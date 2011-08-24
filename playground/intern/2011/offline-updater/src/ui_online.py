@@ -70,3 +70,4 @@ class Ui_Online(object):
     def updateListWidget(self, message):
         item = QtGui.QListWidgetItem(message)
         self.listWidget.addItem(message)
+        self.listWidget.setCurrentItem(item)
