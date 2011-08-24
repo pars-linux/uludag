@@ -33,6 +33,7 @@ Deadline for new package merges to new Pardus release
 -----------------------------------------------------
 
 Feature freeze at milestone Alpha 3 is the last time for package meges to `devel source repository`_. It is recommended that to get things done a few weeks earlier, because package review may take some time.
+After this time the `exception process`_ is in progress.
 
 
 .. _Licensing Criterias: http://developer.pardus.org.tr/guides/licensing/index.html
@@ -45,3 +46,5 @@ Feature freeze at milestone Alpha 3 is the last time for package meges to `devel
 .. _new contributor: http://developer.pardus.org.tr/guides/newcontributor/index.html
 .. _playground/review source repository: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#review-folder
 .. _Alpha 3: http://developer.pardus.org.tr/guides/releasing/official_releases/alpha_phase.html#alpha-3
+.. _mentoring pprocess: http://developer.pardus.org.tr/guides/newcontributor/mentoring-process.html
+.. _exception process: http://developer.pardus.org.tr/guides/releasing/freezes/freeze_exception_process.html#feature-freeze-exceptions-for-new-packages
