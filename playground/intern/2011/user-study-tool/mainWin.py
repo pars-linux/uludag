@@ -26,6 +26,11 @@ class MainManager(QtGui.QWidget):
             self.ui.setupUi(self)
         else:
             self.ui.setupUi(parent)
+            
+        self.setDefaultOptions()
+        
+        #if self.setDefaultOptions() in [self.ui.alwaysHelp.setChecked(True), self.ui.askToHelp.setChecked(True)]:
+	self.initializeTray()
 
         self.widgets = {}
 	
@@ -50,16 +55,12 @@ class MainManager(QtGui.QWidget):
         self.connect(self.ui.askToHelp, SIGNAL("clicked()"), self.setGlobalParticipation)
 	self.connect(self.ui.rejectHelp, SIGNAL("clicked()"), self.setGlobalParticipation)
 	
-	#self.connect(self.ui.surveyList, SIGNAL("itemSelectionChanged()"),self.showDescription)
-	#self.info.clicked.connect(self.hideDescription)
-	
-	
 	self.connect(self.info.ui.hideButton, SIGNAL("clicked()"), self.hideDescription)
+
 	
-	
-            
+	 
     def setGlobalParticipation(self):
-	json_data =  open('user_studies.json','r')
+	json_data =  open('user_participation_info.json','r')
 	self.data = json.load(json_data)
 	json_data.close()
 	
@@ -70,10 +71,22 @@ class MainManager(QtGui.QWidget):
 	else :
 	    self.data["userParticipation"] = "Do not Join" 
 	
-	f = open('uself.r_studies2.json','w')
+	f = open('user_participation_info.json','w')
 	string = json.dump(self.data,f, indent = 2)
 	f.close()
+    
+    def setDefaultOptions(self):
+	json_data =  open('user_participation_info.json','r')
+	self.data = json.load(json_data)
+	json_data.close()
 	
+	if self.data["userParticipation"] == "Always Join":
+	    self.ui.alwaysHelp.setChecked(True)
+	elif self.data["userParticipation"] == "Ask Before Join":
+	    self.ui.askToHelp.setChecked(True)
+	else:
+	    self.ui.rejectHelp.setChecked(True)
+	    
     def showDescription(self, url):
 	
 	self.info.ui.webView.load(url)
@@ -101,8 +114,7 @@ class MainManager(QtGui.QWidget):
 	
     def initializeTray(self):
 	self.tray = Tray(self)
-   
-
+	
 class UserStudyItemInfo(PAbstractBox):
 
     def __init__(self, parent):
