@@ -28,6 +28,8 @@ class Offline(QtGui.QWidget):
         self.ui.pb_path_export.clicked.connect(self.setExportPath)
         self.ui.pb_path_setup.clicked.connect(self.setSetupPath)
         self.ui.pb_action.clicked.connect(self.startProgress)
+        self.ui.pb_help.clicked.connect(self.showHelp)
+        self.setWindowTitle("Pardus Offline-Updater")
         
         self.rbExportClickedAction()
         
@@ -35,19 +37,15 @@ class Offline(QtGui.QWidget):
     def createFiles(self):
        
         import math
-        #print "pisi connection"
-        #self.ui.updateListWidget("PiSi baglantisi saglaniyor")
         installdb = pisi.db.installdb.InstallDB()
         repodb = pisi.db.repodb.RepoDB()
         repo_urls = repodb.list_repo_urls()
         repos = repodb.list_repos()
         packagedb = pisi.db.packagedb.PackageDB()
         listPackages = installdb.list_installed()
-        #print int((len(listPackages)+len(repos))/100)
         cnt = 0
         
         packages = {}
-        #self.ui.updateListWidget("Paket listesi olusturuluyor")
         for i in listPackages:
             packages[installdb.get_package(i).name] = (installdb.get_package(i).release, 
                                                        packagedb.get_package_repo(installdb.get_package(i).name)[1], 
@@ -66,7 +64,6 @@ class Offline(QtGui.QWidget):
         repo_list = {}
         i = 0
         cnt = 0
-        #self.ui.updateListWidget("Depo listesi olusturuluyor")
         for repo in repos:
             repo_list[repo] = repo_urls[i]
             i += 1
@@ -76,14 +73,12 @@ class Offline(QtGui.QWidget):
             cnt += 1
             QtGui.QApplication.processEvents()
         
-        #self.ui.updateListWidget("Depo listesi kaydediliyor")
         fileRepos = open("repoList.ofu","w")
         cPickle.dump(repo_list, fileRepos, protocol = 0)
         fileRepos.close()
             
         #print repo_list
         self.ui.progressBar.setValue(100)
-        #self.ui.updateListWidget("Islem tamamlandi")
         
         
     def setupPackages(self):
@@ -94,7 +89,7 @@ class Offline(QtGui.QWidget):
                     packageList.append("packages/"+filename)
                     
         if len(packageList) == 0:
-            self.errorMessage("Paket Bulunamadi", "Belirttiginiz dizinde kurulacak PiSi paketi bulunamdi!")
+            self.errorMessage(u"Paket Bulunamadı", u"Belirttiğiniz dizinde kurulacak PiSi paketi bulunamadı!")
             return
         
         command = "pm-install "
@@ -127,16 +122,19 @@ class Offline(QtGui.QWidget):
             self.createFiles()
         elif self.mode == 2:
             self.setupPackages()
+        else:
+            self.errorMessage("Hata", u"Bu hatayı gördüğünüze göre en yakın sığınağa koşunuz!")
+            return
             
             
     def setExportPath(self):
         fd = QtGui.QFileDialog(self)
-        self.path_export = fd.getExistingDirectory(parent=None, caption="Klasor sec", directory=self.ui.le_path_export.text(), options=QtGui.QFileDialog.ShowDirsOnly)
+        self.path_export = fd.getExistingDirectory(parent=None, caption=u"Klasör seç", directory=self.ui.le_path_export.text(), options=QtGui.QFileDialog.ShowDirsOnly)
         self.ui.le_path_export.setText(self.path_export)
     
     def setSetupPath(self):
         fd = QtGui.QFileDialog(self)
-        self.path_setup = fd.getExistingDirectory(parent=None, caption="Klasor sec", directory=self.ui.le_path_setup.text(), options=QtGui.QFileDialog.ShowDirsOnly)
+        self.path_setup = fd.getExistingDirectory(parent=None, caption=u"Klasör seç", directory=self.ui.le_path_setup.text(), options=QtGui.QFileDialog.ShowDirsOnly)
         self.ui.le_path_setup.setText(self.path_setup)
             
             
@@ -145,6 +143,9 @@ class Offline(QtGui.QWidget):
                                         header,
                                         message)
         return False
+    
+    def showHelp(self):
+        pass
         
             
 

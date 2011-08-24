@@ -23,6 +23,7 @@ class Online(QtGui.QWidget):
         self.ui.pb_action.clicked.connect(self.getUpdatedPackages)
         self.ui.pb_close.clicked.connect(self.close)
         self.ui.pb_path.clicked.connect(self.getDir)
+        self.ui.pb_help.clicked.connect(self.showHelp)
         
         self.ui.le_path.setText(os.getenv('USERPROFILE') or os.getenv('HOME'))
         self.ui.lbl_file.setText("0/0")
@@ -33,7 +34,7 @@ class Online(QtGui.QWidget):
     
     def getDir(self):
         fd = QtGui.QFileDialog(self)
-        self.path = fd.getExistingDirectory(parent=None, caption="Klasor sec", directory=self.ui.le_path.text(), options=QtGui.QFileDialog.ShowDirsOnly)
+        self.path = fd.getExistingDirectory(parent=None, caption=u"Klasör seç", directory=self.ui.le_path.text(), options=QtGui.QFileDialog.ShowDirsOnly)
         self.ui.le_path.setText(self.path)
     
     def downloadRepoXML(self, repo):
@@ -89,7 +90,7 @@ class Online(QtGui.QWidget):
         repos = self.getRepos()
         if not repos:
             return
-        item = "Repo bilgileri okunuyor.\n%s adet repo bilgisi alindi."%len(repos)
+        item = u"Repo bilgileri okunuyor.\n%s adet repo bilgisi alındı."%len(repos)
         
         self.ui.updateListWidget(item)
         
@@ -103,7 +104,7 @@ class Online(QtGui.QWidget):
             
             pisi_xml = self.downloadRepoXML(repos[repo]) #XML dosyalarını indir
             pisi_data = open(pisi_xml) #Aç
-            message = repo+" reposunun bilgileri parse ediliyor."
+            message = repo+u" reposunun bilgileri çözümleniyor."
             self.ui.updateListWidget(message)
             package_tree = tree.fromstring(pisi_data.read()) #XML dosyasını tree değişkenine aç
             packages_tree = package_tree.findall("Package") #tree içerisinden tüm Package taglerini çek
@@ -138,10 +139,10 @@ class Online(QtGui.QWidget):
         try:
             return cPickle.load(open(self.ui.le_path.text()+"/packageList.ofu"))
         except IOError:
-            self.errorMessage("Hata", "packageList.ofu bulunamadi !")
+            self.errorMessage("Hata", u"packageList.ofu bulunamadı !")
     
     
-    def getUpdatedPackages(self): #CODE: güncel paket listesi ile elimizdeki paket listesi karşılaştırılacak.
+    def getUpdatedPackages(self):
         
         
         installed_packages = self.getInstalledPackages()
@@ -158,7 +159,7 @@ class Online(QtGui.QWidget):
         package_list = {}
         self.download_list = {}
         print "\n"
-        self.ui.updateListWidget("Paket guncellemeleri belirleniyor.")
+        self.ui.updateListWidget(u"Paket güncellemeleri belirleniyor.")
         for ins_package in installed_packages:
             QtGui.QApplication.processEvents()
             
@@ -182,7 +183,7 @@ class Online(QtGui.QWidget):
         for dep in deplist:
             self.download_list[dep] = repo_packages[deplist[dep]][0][dep][5]
        
-        message = "%s paket ve %s bagimlilik bulundu" %(int(len(self.download_list)-len(deplist)), len(deplist)) 
+        message = u"%s paket ve %s bagimlılık bulundu" %(int(len(self.download_list)-len(deplist)), len(deplist)) 
         self.ui.updateListWidget(message)
         
         self.ui.pb_action.hide()
@@ -194,7 +195,7 @@ class Online(QtGui.QWidget):
     def checkDependencyUpdate(self, package_list, deplist, repo_packages):
         
         
-        self.ui.updateListWidget("Bagimliliklar belirleniyor.")
+        self.ui.updateListWidget(u"Bağımlılıklar belirleniyor.")
         for i in package_list.keys():
             for j in deplist.keys():
                 if i==j:
@@ -250,7 +251,7 @@ class Online(QtGui.QWidget):
                 self.rmPackagesDir(workingDir.absolutePath()+"/packages")
             workingDir.mkdir("packages")
         except:
-            self.errorMessage("Hata", "Packages Klasoru olusturulamadi !")
+            self.errorMessage("Hata", u"Packages Klasorü oluşturulamadı !")
             return
         
         #disable ui objects
@@ -260,11 +261,10 @@ class Online(QtGui.QWidget):
         
         sum = len(self.download_list)
         cnt = 1
-        #change label info
         
         
         
-        for package in self.download_list: #FIXME: Progress bar only shows the package count, must shows the download size based info.
+        for package in self.download_list: #FIXED: Progress bar only shows the package count, must shows the download size based info.
             self.ui.lbl_file.setText(str(cnt)+"/"+str(sum))
             package_name = self.download_list[package].split('/')[7]
             QtGui.QApplication.processEvents()
@@ -272,17 +272,16 @@ class Online(QtGui.QWidget):
             self.ui.updateListWidget(message)
             self.download(package_name, self.download_list[package], True)
             cnt += 1
-            #self.ui.progressBar.setValue(self.ui.progressBar.value() + len(self.download_list)/100)
             
-        self.ui.updateListWidget("Islem tamamlandi.")
+        self.ui.updateListWidget(u"Paketlerin indirilmesi tamamlandı.")
             
         #after work - enable ui objects
         self.ui.le_path.setEnabled(True)
         self.ui.pb_path.setEnabled(True)
         self.pb_action.setEnabled(True)
-        
+        self.ui.updateListWidget(u"Temizlik işlemleri yapılıyor.")
         self.cleaningJobs()
-            
+        self.ui.updateListWidget(u"İşlem tamamlandı.")    
             
     def rmPackagesDir(self, top):
         top = str(top)
@@ -331,6 +330,9 @@ class Online(QtGui.QWidget):
             for filename in filenames:
                 if filename.split(".")[-1] == "xz" or filename.split(".")[-1] == "xml":
                     os.remove(filename)
+                    
+    def showHelp(self):
+        pass
 
 if __name__ == "__main__":
     import sys
