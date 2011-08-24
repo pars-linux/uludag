@@ -102,7 +102,6 @@ class Offline(QtGui.QWidget):
         
         
     def rbExportClickedAction(self):
-        print "abidik"
         self.ui.le_path_setup.setEnabled(False)
         self.ui.pb_path_setup.setEnabled(False)
         
@@ -111,7 +110,6 @@ class Offline(QtGui.QWidget):
         self.mode = 1
         
     def rbSetupClickedAction(self):
-        print "abidik 2"
         self.ui.le_path_setup.setEnabled(True)
         self.ui.pb_path_setup.setEnabled(True)
         
