@@ -125,7 +125,7 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
             self.busy.startAnimation()
             params = {'p': package}
             if self.key:
-                params['key'] = self.key
+                params['k'] = self.key
             self.webView.load(QUrl('%s/?%s' % (self._as, urlencode(params))))
         else:
             self._sync_template(status = False)
