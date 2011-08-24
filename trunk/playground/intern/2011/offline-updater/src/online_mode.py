@@ -25,6 +25,8 @@ class Online(QtGui.QWidget):
         self.ui.pb_path.clicked.connect(self.getDir)
         
         self.ui.le_path.setText(os.getenv('USERPROFILE') or os.getenv('HOME'))
+        self.ui.lbl_file.setText("0/0")
+        self.ui.lbl_progress.setText("%0")
         self.setWindowTitle("Pardus Offline-Updater")
         
         QtGui.QApplication.processEvents()
@@ -256,15 +258,21 @@ class Online(QtGui.QWidget):
         self.ui.pb_path.setEnabled(False)
         self.pb_action.setEnabled(False)
         
+        sum = len(self.download_list)
+        cnt = 1
+        #change label info
+        
         
         
         for package in self.download_list: #FIXME: Progress bar only shows the package count, must shows the download size based info.
+            self.ui.lbl_file.setText(str(cnt)+"/"+str(sum))
             package_name = self.download_list[package].split('/')[7]
             QtGui.QApplication.processEvents()
             message = package+" paketi indiriliyor."
             self.ui.updateListWidget(message)
             self.download(package_name, self.download_list[package], True)
-            self.ui.progressBar.setValue(self.ui.progressBar.value() + len(self.download_list)/100)
+            cnt += 1
+            #self.ui.progressBar.setValue(self.ui.progressBar.value() + len(self.download_list)/100)
             
         self.ui.updateListWidget("Islem tamamlandi.")
             
@@ -272,6 +280,8 @@ class Online(QtGui.QWidget):
         self.ui.le_path.setEnabled(True)
         self.ui.pb_path.setEnabled(True)
         self.pb_action.setEnabled(True)
+        
+        self.cleaningJobs()
             
             
     def rmPackagesDir(self, top):
@@ -305,8 +315,9 @@ class Online(QtGui.QWidget):
             file_size_dl += len(buffer)
             f.write(buffer)
             status = r"%10d  [%3.2f%%]" % (file_size_dl, file_size_dl * 100. / file_size)
-            status = status + chr(8)*(len(status)+1)
-            print status,
+            #status = status + chr(8)*(len(status)+1)
+            #print status,
+            self.ui.lbl_progress.setText(status)
         f.close()
         
     def errorMessage(self, header, message):
@@ -314,6 +325,12 @@ class Online(QtGui.QWidget):
                                 header,
                                 message)
         return False
+    
+    def cleaningJobs(self):
+        for dirname, dirnames, filenames in os.walk('.'):
+            for filename in filenames:
+                if filename.split(".")[-1] == "xz" or filename.split(".")[-1] == "xml":
+                    os.remove(filename)
 
 if __name__ == "__main__":
     import sys

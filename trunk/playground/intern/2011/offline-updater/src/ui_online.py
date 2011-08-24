@@ -1,14 +1,13 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'ui_Online.ui'
+# Form implementation generated from reading ui file 'ui_offline.ui'
 #
-# Created: Wed Aug 17 10:48:30 2011
+# Created: Wed Aug 24 10:00:36 2011
 #      by: PyQt4 UI code generator 4.8.1
 #
 # WARNING! All changes made in this file will be lost!
 
 from PyQt4 import QtCore, QtGui
-from PyQt4.QtGui import QListWidgetItem
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -24,10 +23,6 @@ class Ui_Online(object):
         self.pb_action = QtGui.QPushButton(Online)
         self.pb_action.setObjectName(_fromUtf8("pb_action"))
         self.gridLayout.addWidget(self.pb_action, 1, 1, 1, 3)
-        self.progressBar = QtGui.QProgressBar(Online)
-        self.progressBar.setProperty(_fromUtf8("value"), 0)
-        self.progressBar.setObjectName(_fromUtf8("progressBar"))
-        self.gridLayout.addWidget(self.progressBar, 3, 1, 1, 3)
         self.le_path = QtGui.QLineEdit(Online)
         self.le_path.setObjectName(_fromUtf8("le_path"))
         self.gridLayout.addWidget(self.le_path, 0, 1, 1, 2)
@@ -43,6 +38,18 @@ class Ui_Online(object):
         self.pb_path = QtGui.QPushButton(Online)
         self.pb_path.setObjectName(_fromUtf8("pb_path"))
         self.gridLayout.addWidget(self.pb_path, 0, 3, 1, 1)
+        self.horizontalLayout = QtGui.QHBoxLayout()
+        self.horizontalLayout.setObjectName(_fromUtf8("horizontalLayout"))
+        self.label = QtGui.QLabel(Online)
+        self.label.setObjectName(_fromUtf8("label"))
+        self.horizontalLayout.addWidget(self.label)
+        self.lbl_file = QtGui.QLabel(Online)
+        self.lbl_file.setObjectName(_fromUtf8("lbl_file"))
+        self.horizontalLayout.addWidget(self.lbl_file)
+        self.lbl_progress = QtGui.QLabel(Online)
+        self.lbl_progress.setObjectName(_fromUtf8("lbl_progress"))
+        self.horizontalLayout.addWidget(self.lbl_progress)
+        self.gridLayout.addLayout(self.horizontalLayout, 3, 1, 1, 3)
 
         self.retranslateUi(Online)
         QtCore.QMetaObject.connectSlotsByName(Online)
@@ -54,8 +61,12 @@ class Ui_Online(object):
         self.pb_help.setText(QtGui.QApplication.translate("Online", "Yardım", None, QtGui.QApplication.UnicodeUTF8))
         self.pb_close.setText(QtGui.QApplication.translate("Online", "Kapat", None, QtGui.QApplication.UnicodeUTF8))
         self.pb_path.setText(QtGui.QApplication.translate("Online", "Dizin Seç", None, QtGui.QApplication.UnicodeUTF8))
+        self.label.setText(QtGui.QApplication.translate("Online", "İndirme İşlemi:", None, QtGui.QApplication.UnicodeUTF8))
+        self.lbl_file.setText(QtGui.QApplication.translate("Online", "TextLabel", None, QtGui.QApplication.UnicodeUTF8))
+        self.lbl_progress.setText(QtGui.QApplication.translate("Online", "TextLabel", None, QtGui.QApplication.UnicodeUTF8))
+        
+        
         
     def updateListWidget(self, message):
-        item = QListWidgetItem(message)
+        item = QtGui.QListWidgetItem(message)
         self.listWidget.addItem(message)
-
