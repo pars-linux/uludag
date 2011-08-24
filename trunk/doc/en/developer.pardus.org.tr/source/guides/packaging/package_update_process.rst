@@ -127,7 +127,6 @@ report should include the reason why it is needed, other bugs that it fixes.
 Stable Phase Update Process
 ---------------------------
 
-
 Update a package on `devel source repository`_:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -149,6 +148,7 @@ Update a package on `devel source repository`_:
     BUG:FIXED:#123456       # Closes the bug report #123456 as RESOLVED/FIXED
 
 #. If your package needs an exception, please control Exceptions_ list and follow `exception request`_ process.
+#. If your package is a new package exception request please also request for `package review`_ for new packages.
 
 Merging to `testing source repository`_:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -213,3 +213,4 @@ By merge responsibles:
 .. _security tests: http://developer.pardus.org.tr/guides/releasing/testing_process/package_update_tests/security_tests.html
 .. _package tests: http://developer.pardus.org.tr/guides/releasing/testing_process/package_update_tests/package_update_tests.html
 .. _exception request: http://developer.pardus.org.tr/guides/releasing/freezes/freeze_exception_process.html
+.. _new package inclusion: http://developer.pardus.org.tr/guides/packaging/new_package_inclusion.rst
