@@ -1,0 +1,9 @@
+INSTALL
+=======
+
+1 - ptsp-server paketi pardus depolarıdan kurulur.
+2 - Bu adresdeki dökümandaki yönergelerle sunucu ayarları yapılır (http://tr.pardus-wiki.org/NASIL:PTSP)
+3 - ISO dosyaları /opt/ptsp klasörü altında toplanır
+4 - setup.sh root yetkisi ile çalıştırılır. (sudo ./setup.sh)
+
+Artık client tarafında network boot seçeneği ile kurulum yapılabilir.
