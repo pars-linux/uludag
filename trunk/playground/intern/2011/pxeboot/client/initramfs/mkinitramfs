@@ -172,9 +172,6 @@ class BaseSystem:
                 self.kexecFileList[i[i.find('/'):i.rfind(' (')]] = "/lib"
         f.close()
 
-        for i, v in self.kexecFileList.items():
-            print i, v
-
     def getNewRoot(self, dir):
         cleandir = dir.lstrip("/")
         return os.path.join(self.tmpDir, cleandir)
