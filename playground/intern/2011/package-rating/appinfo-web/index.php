@@ -2,6 +2,7 @@
 
 require_once('class.packimage.php');
 require_once('class.appinfo.php');
+require_once('class.database.php');
 
 if (!isset($_GET['p'])) {
     echo 'Appinfo server, up and running.';
@@ -10,8 +11,12 @@ if (!isset($_GET['p'])) {
 
 $p = $_GET['p'];
 
-if (isset($_GET['key'])) {
-    $key = $_GET['key'];
+if (isset($_GET['k'])) {
+    $k = $_GET['k'];
+    $db = new Database();
+    if (!$db->checkKey($k)) {
+        unset($k);
+    }
 }
 
 $appinfo = new AppInfo($p, 'appinfo.db');
@@ -20,8 +25,8 @@ if (!$appinfo->package) {
     exit();
 }
 
-if (isset($_GET['s'])) {
-    $s = max(1, min(5, ((float) $_GET['s'])));
+if (isset($_GET['s']) && isset($k)) {
+    $s = Database::limitScore((float) $_GET['s']);
     $appinfo->setScore($s);
     echo json_encode(array('p'=>$p, 'score'=>$appinfo->getScore()));
     exit();
@@ -39,20 +44,27 @@ $pi = new PackImage($p);
 <script type="text/javascript" src="min/?g=js"></script>
 <script type="text/javascript">
 var pack = '<?php echo $p; ?>';
+<?php
+
+if (isset($k)) {
+    printf("var key='%s';\n", $k);
+}
+
+?>
 $(document).ready(function() {
     $('.rating').raty({
         hintList: ['', '', '', '', ''],
         half: true,
 <?php
 
-if (!isset($key)) {
-    echo '        readOnly: true,';
+if (!isset($k)) {
+    echo "        readOnly: true,\n";
 }
 
 ?>
         start: <?php echo $appinfo->getScore(); ?>,
         click: function(score, evt) {
-            $.getJSON('', { p: pack, s: score }, function(json) {
+            $.getJSON('', { p: pack, k: key, s: score }, function(json) {
                 $.fn.raty.start(json.score, '.rating');
                 $.fn.raty.readOnly(true, '.rating');
                 showMessage('success');
