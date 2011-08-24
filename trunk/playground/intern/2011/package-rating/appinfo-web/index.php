@@ -10,6 +10,10 @@ if (!isset($_GET['p'])) {
 
 $p = $_GET['p'];
 
+if (isset($_GET['key'])) {
+    $key = $_GET['key'];
+}
+
 $appinfo = new AppInfo($p, 'appinfo.db');
 if (!$appinfo->package) {
     echo 'Package name is not valid.';
@@ -39,6 +43,13 @@ $(document).ready(function() {
     $('.rating').raty({
         hintList: ['', '', '', '', ''],
         half: true,
+<?php
+
+if (!isset($key)) {
+    echo '        readOnly: true,';
+}
+
+?>
         start: <?php echo $appinfo->getScore(); ?>,
         click: function(score, evt) {
             $.getJSON('', { p: pack, s: score }, function(json) {
