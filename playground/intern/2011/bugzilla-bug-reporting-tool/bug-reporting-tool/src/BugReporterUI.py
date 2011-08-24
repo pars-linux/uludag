@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '../ui/bug_reporter.ui'
 #
-# Created: Wed Aug 24 15:09:18 2011
+# Created: Wed Aug 24 16:20:08 2011
 #      by: PyQt4 UI code generator 4.8.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -224,11 +224,7 @@ class Ui_BugReporter(object):
         item_1 = QtGui.QTreeWidgetItem(item_0)
         item_0 = QtGui.QTreeWidgetItem(self.treeWidget)
         item_1 = QtGui.QTreeWidgetItem(item_0)
-        item_2 = QtGui.QTreeWidgetItem(item_1)
-        item_2 = QtGui.QTreeWidgetItem(item_1)
         item_1 = QtGui.QTreeWidgetItem(item_0)
-        item_2 = QtGui.QTreeWidgetItem(item_1)
-        item_2 = QtGui.QTreeWidgetItem(item_1)
         self.treeWidget.header().setDefaultSectionSize(200)
         self.treeWidget.header().setMinimumSectionSize(50)
         self.gridLayout.addWidget(self.treeWidget, 0, 0, 1, 1)
