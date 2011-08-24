@@ -677,43 +677,11 @@ aslklajsnhdkljaaabsskldjabsd</string>
            <property name="text">
             <string>Commands</string>
            </property>
-           <item>
-            <property name="text">
-             <string>hyhhh</string>
-            </property>
-            <property name="text">
-             <string>hhhhh</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>jjjj</string>
-            </property>
-            <property name="text">
-             <string>jjjj</string>
-            </property>
-           </item>
           </item>
           <item>
            <property name="text">
             <string>Log Files</string>
            </property>
-           <item>
-            <property name="text">
-             <string>hhh</string>
-            </property>
-            <property name="text">
-             <string>hhhhh</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>jjjjjii</string>
-            </property>
-            <property name="text">
-             <string>ijijijjij</string>
-            </property>
-           </item>
           </item>
          </item>
         </widget>
