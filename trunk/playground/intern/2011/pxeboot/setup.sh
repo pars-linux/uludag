@@ -22,7 +22,6 @@ ln -s "$VERSION-ptsp" $TFTPBOOT_PATH
 
 echo "5 - Ilk yuklenecek initramfs olusturuluyor..."
 python client/initramfs/mkinitramfs -o $TFTPBOOT_PATH --pxeboot --network -k $VERSION
-python client/initramfs/mkinitramfs -o /opt/ptsp/ --pxeboot --network -k 2.6.35.11
 
 echo "6 - Ilk yuklenecek kernel olusturuluyor..."
 cp /boot/$KERNEL $TFTPBOOT_PATH
