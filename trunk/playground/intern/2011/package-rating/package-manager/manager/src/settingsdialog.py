@@ -447,6 +447,7 @@ class ProxySettings(SettingsTab):
 
 class RatingSettings(SettingsTab):
     def setupUi(self):
+        self.checkButton_default = self.settings.opendesktop_login_check.text()
         self.initialize()
 
     def hideAllWidgets(self):
@@ -491,7 +492,7 @@ class RatingSettings(SettingsTab):
         self.initialize()
 
     def checkDefault(self):
-        self.settings.opendesktop_login_check.setText('Check')
+        self.settings.opendesktop_login_check.setText(self.checkButton_default)
         self.enableForm()
 
     def enableForm(self):
