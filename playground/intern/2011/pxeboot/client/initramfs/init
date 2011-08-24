@@ -348,7 +348,7 @@ mount_pxeboot() {
     
         # loading new kernel
         KERNEL="/newroot/mnt/cdrom/boot/kernel"
-        INITRD="/newroot/mnt/cdrom/initrd"
+        INITRD="/newroot/mnt/cdrom/boot/initrd"
         PARAMS="pxeboot pxeisofile=$PXEISOFILE `grep -m 1 "append" /newroot/mnt/cdrom/boot/isolinux/isolinux.cfg | cut -c32-`"
 
         KEXEC_LOADED=`cat /sys/kernel/kexec_loaded`
