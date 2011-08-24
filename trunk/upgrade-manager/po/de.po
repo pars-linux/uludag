@@ -183,7 +183,7 @@ msgstr "Willkommen beim Upgrade-Manager"
 
 #: ui/ui_screen_1.py:62
 msgid "In order to upgrade your Pardus 2009 system to Pardus 2011, Upgrade Manager needs to check your computer.<br/><br/>This operation includes, installed package information and available free space on your computer.<br/><br/><b>Upgrading procedure can be problematic use at your own risk.</b>"
-msgstr "Um das System von Pardus 2009 auf Pardus 2011 upgraden zu können, muß der Computer überprüft werden. <br/><br/>Diese Aktion This operation includes, installed package information and available free space on your computer.<br/><br/><b>Upgrading procedure can be problematic use at your own risk.</b>"
+msgstr "Um das System von Pardus 2009 auf Pardus 2011 upgraden zu können, muß der Computer überprüft werden. <br/><br/>Dies umfasst z.B. die installierten Pakete und den verfügbaren freien Speicherplatz.<br/><br/><b>Die Upgrade-Prozedur kann fehlerhaft sein. Benutzung auf eigene Gefahr!</b>"
 
 #: ui/ui_screen_2.py:65 ui/ui_screen_3.py:56 ui/ui_screen_4.py:40
 #: ui/ui_screen_5.py:81
@@ -192,7 +192,7 @@ msgstr "Analysiere Ihren Computer"
 
 #: ui/ui_screen_2.py:66
 msgid "In order to upgrade your system, you must select an upgrade repository:"
-msgstr "Um Ihr System upgraden zu können, müssen Sie ein Upgrade-Depot auswählen"
+msgstr "Bitte ein Upgrade-Depot auswählen:"
 
 #: ui/ui_screen_2.py:67
 msgid "Stable Repository (Recommended)"
