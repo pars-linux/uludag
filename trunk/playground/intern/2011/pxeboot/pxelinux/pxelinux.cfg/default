@@ -4,3 +4,4 @@ default Pardus
 label Pardus
   kernel latestkernel
   append rw initrd=latestinitramfs video=vesafb:off pxeboot kexec
+  
