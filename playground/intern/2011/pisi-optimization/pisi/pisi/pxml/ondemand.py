@@ -47,17 +47,16 @@ class OnDemandList(list):
         return item
 
     def decodeall_run_f(self, y, f):
-        print "decodeall: ", f
         self.decodeAll()
         if isinstance(y, OnDemandList):
             y.decodeAll()
 
-        return super(OnDemandList, self).__getattribute__(f)(y)
+        function = getattr(super(OnDemandList, self), f)
+        return function(y)
 
     def append(self, y):
         if isinstance(y, OnDemandNode):
             self.undecoded_count += 1
-
         return super(OnDemandList, self).append(y)
 
     def count(self, y):
@@ -69,7 +68,7 @@ class OnDemandList(list):
 
     def index(self, value, start = None, stop = None):
         # FIXME : ???
-        print "index", value, start, stop
+        # print "index", value, start, stop #debuginfo
         self.decodeAll()
         return super(OnDemandList, self).index(value, start, stop)
 
@@ -90,7 +89,7 @@ class OnDemandList(list):
         return super(OnDemandList, self).sort(cmp, key, reverse)
 
     def __add__(self, y):
-        self.decodeall_run_f(y, '__add__')
+        return self.decodeall_run_f(y, '__add__')
 
     def __contains__(self, y):
         if self.undecoded_count > 0:
@@ -112,11 +111,13 @@ class OnDemandList(list):
 
     def __eq__(self, y):
         if isinstance(y, list):
+            # print "__eq__" # debuginfo
             return self.decodeall_run_f(y, '__eq__')
 
         return False
 
     def __ge__(self, y):
+        # print "__ge__" # debuginfo
         return self.decodeall_run_f(y, '__ge__')
 
     def __getslice__(self, i, j):
@@ -127,12 +128,15 @@ class OnDemandList(list):
         return super(OnDemandList, self).__getslice__(i, j)
 
     def __gt__(self, y):
+        # print "__gt__" # debuginfo
         return self.decodeall_run_f(y, '__gt__')
 
     def __iadd__(self, y):
+        # print "__iadd__" # debuginfo
         return self.decodeall_run_f(y, '__iadd__')
 
     def __imul__(self, y):
+        # print "__imul__" # debuginfo
         return self.decodeall_run_f(y, '__imul__')
 
     def __iter__(self):
@@ -140,16 +144,20 @@ class OnDemandList(list):
             yield self.__getitem__(i)
 
     def __le__(self, y):
+        # print "__le__" # debuginfo
         return self.decodeall_run_f(y, '__le__')
 
     def __lt__(self, y):
+        # print "__lt__" # debuginfo
         return self.decodeall_run_f(y, '__lt__')
 
     def __mul__(self, y):
+        # print "__mul__" # debuginfo
         return self.decodeall_run_f(y, '__mul__')
 
     def __ne__(self, y):
         if isinstance(y, list):
+            # print "__ne__" # debuginfo
             return self.decodeall_run_f(y, '__ne__')
 
         return True
@@ -175,6 +183,7 @@ class OnDemandList(list):
             yield self.__getitem__(i)
 
     def __rmul__(self, y):
+        # print "__rmul__" # debuginfo
         return self.decodeall_run_f(y, '__rmul')
 
     def __setitem__(self, i, y):

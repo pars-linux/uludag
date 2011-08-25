@@ -12,6 +12,7 @@ test4 -> history not exist
 '''
 
 import pisi
+import sys
 
 tests = [
     (str, 'source'),
@@ -31,10 +32,10 @@ def autoxml_test(xml_file, use_ondemand):
             a = pisi.metadata.MetaData()
             a.read(xml_file, use_ondemand=use_ondemand)
         except Exception, e:
+            error_types[-1] = e.args
             for arg in e.args:
                 if arg.find(xml_file) < 0:
                     errors.add(arg)
-                    error_types[-1] = e.args
             continue
 
         test_function, test_attr = tests[i]
@@ -130,6 +131,8 @@ def compare_recursive(a, b):
 
     elif type(a) in (long, int):
         assert a == b
+        if printValues:
+            print "%s = %s" % (stack, a)
 
     elif type(a) in pisi.specfile.__dict__.values():
         assert str(a) == str(b)
@@ -137,18 +140,21 @@ def compare_recursive(a, b):
     elif type(a) == pisi.pxml.autoxml.LocalText:
         assert a == b
 
+    elif type(a) == unicode:
+        assert a == b
+
     else:
         print "unexpected type: %s" % type(a)
         print stack
         exit()
 
-def compare_full(xml_file):
+def compare_full(xml_file, compare_type):
     '''
     compare all attributes with use_ondemand and without use_ondemand
     '''
 
-    a = pisi.metadata.MetaData()
-    b = pisi.metadata.MetaData()
+    a = compare_type()
+    b = compare_type()
 
     a.read(xml_file, use_ondemand=False)
     b.read(xml_file, use_ondemand=True)
@@ -160,10 +166,31 @@ if __name__ == '__main__':
     for i in range(5):
         test_files.append('test_xml/test%s.xml' % i)
 
-    compare_full(test_files[0])
-    print "compare all attributes ok\n"
+    # parse args
+    # TODO: ---
+    arg_compare = False
+    arg_compare_type = 'metadata'
+    if len(sys.argv)==4 and sys.argv[1] == 'compare':
+        arg_compare = True
+        arg_compare_type = sys.argv[2]
+        arg_compare_file = sys.argv[3]
+    #
 
-    for test_file in test_files:
-        print test_file
-        compare_tests(test_file)
-        print ""
+    if arg_compare_type == None or arg_compare_type == 'metadata':
+        compare_type = pisi.metadata.MetaData
+    elif arg_compare_type == 'index':
+        compare_type = pisi.index.Index
+    else:
+        print "unexpected compare type: %s" % arg_compare_type
+        exit()
+
+
+    if arg_compare:
+        compare_full(arg_compare_file, compare_type)
+        print "compare all attributes ok\n"
+    else:
+        for test_file in test_files:
+            print test_file
+            compare_tests(test_file)
+            print ""
+    
