@@ -3,6 +3,51 @@
     padding: 0;
 }
 
+body {
+    color:white;
+    font-family: 'Droid Sans', 'Dejavu Sans', Helvetica, sans-serif;
+    font-size: 10pt;
+}
+
+.container {
+    padding: 20px;
+    width: 650px;
+}
+
+.gallery {
+    height:250px;
+    float: left;
+    margin-right:20px;
+}
+.gallery .image {
+    width: 250px;
+    height:250px;
+    padding: 5px;
+}
+
+.info {
+    width: 350px;
+    height:300px;
+    float: right;
+}
+
+.info .title {
+    text-shadow: 1px 1px 1px #000;
+    font-size: 16pt;
+    margin-bottom: 5px;
+}
+
+.info .summary {
+    margin-bottom: 20px;
+}
+
+.info .description {
+    margin-bottom: 20px;
+}
+
+.info .rating {
+}
+
 .message {
     -webkit-background-size: 40px 40px;
     -moz-background-size: 40px 40px;

@@ -36,6 +36,7 @@ class Database {
         }
         try {
             $this->dbh = new PDO(sprintf('mysql:host=%s;dbname=%s', $this->db_host, $this->db_base), $this->db_user, $this->db_pass);
+            $this->dbh->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true);
         } catch(PDOException $e) {
             echo $e->getMessage();
         }
@@ -130,7 +131,9 @@ class Database {
      */
     private function getInfo($column, $by = 'username') {
         if (in_array($by, array('id', 'username', 'key'))) {
-            $r = $this->dbh->query(sprintf("SELECT `%s` FROM `users` WHERE `%s` = %s;", $column, $by, $this->dbh->quote($this->$by)))->fetch(PDO::FETCH_ASSOC);
+            $q = $this->dbh->query(sprintf("SELECT `%s` FROM `users` WHERE `%s` = %s;", $column, $by, $this->dbh->quote($this->$by)));
+            $r = $q->fetch(PDO::FETCH_ASSOC);
+            $q->closeCursor();
             return $r[$column];
         } else {
             return false;
@@ -166,9 +169,21 @@ class Database {
         return $this->getInfo('username', $by);
     }
 
+    public function getScore($package) {
+        $sql = sprintf("SELECT SUM(score) as score, COUNT(score) as count FROM `ratings` WHERE `package` = %s;", $this->dbh->quote($package));
+        $q = $this->dbh->query($sql);
+        $r = $q->fetch(PDO::FETCH_ASSOC);
+        $q->closeCursor();
+        return ($r['score']) ? $r['score']/$r['count'] : 0;
+    }
+
     public function hasVoted($package) {
-        $sql = sprintf("SELECT id FROM `rating` WHERE `user_id` = %d AND `package` = %s;", $this->id, $this->dbh->quote($package));
-        return ($this->dbh->exec($sql)) ? true : false;
+        $sql = sprintf("SELECT id FROM `ratings` WHERE `user_id` = %d AND `package` = %s;", $this->id, $this->dbh->quote($package));
+        $sqt = $this->dbh->prepare($sql);
+        $sqt->execute();
+        $r = $sqt->rowCount();
+        $sqt->closeCursor();
+        return $r;
     }
 
     /**
@@ -183,9 +198,9 @@ class Database {
     }
 
     public static function limitScore($score) {
-        $min = 0;
-        $max = 5;
-        return min($max, min($min, $score));
+        $min = 0.0;
+        $max = 5.0;
+        return min($max, max($min, $score));
     }
 
     /**
@@ -223,18 +238,18 @@ class Database {
      */
     public function processScore($package, $score) {
         $score = $this->limitScore($score);
-        $action = ($this->hasVoted($package)) ? true : false;
+        $action = ($this->hasVoted($package)) ? 'update' : 'insert';
         switch ($action) {
             case 'insert':
-                $sql = sprintf("INSERT INTO `ratings` (`user_id`, `package`, `score`) VALUES (%s, %s, %.1f);", $this->dbh->quote($this->id), $this->dbh->quote($package), $score);
+                $sql = sprintf("INSERT INTO `ratings` (`user_id`, `package`, `score`) VALUES (%d, %s, %.1f);", $this->id, $this->dbh->quote($package), $score);
                 break;
             case 'update':
-                $sql = sprintf("UPDATE `ratings` SET `score` = %3$.1f WHERE `username` = %1$s AND `package` = %2$s;", $this->dbh->quote($this->username), $this->dbh->quote($package), $score);
+                $sql = sprintf('UPDATE `ratings` SET `score` = %3$.1f WHERE `user_id` = %1$d AND `package` = %2$s;', $this->id, $this->dbh->quote($package), $score);
                 break;
             default:
                 return false;
         }
-        return ($this->dbh->exec($sql)) ? $key : false;
+        return ($this->dbh->exec($sql)) ? $this->getScore($package) : false;
     }
 
     /**

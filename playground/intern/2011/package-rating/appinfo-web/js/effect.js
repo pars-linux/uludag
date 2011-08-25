@@ -1,22 +1,35 @@
-var myMessages = ['info','warning','error','success'];
-
-function hideAllMessages() {
-    var messagesHeights = new Array(); // this array will store height for each
-
-    for (i=0; i<myMessages.length; i++) {
-        messagesHeights[i] = $('.' + myMessages[i]).outerHeight(); // fill array
-        $('.' + myMessages[i]).css('bottom', -messagesHeights[i]); //move element outside viewport
-    }
+// Rating
+function initRating() {
+    $('.rating').raty({
+        hintList: ['', '', '', '', ''],
+        half: true,
+        start: score,
+        click: raty_click
+    });
 }
 
-function showMessage(type) {
-    hideAllMessages();
-    $('.'+type).animate({bottom:"0"}, 500).delay(500).queue(hideAllMessages());
+// Message
+function hideMessage() {
+    messageHeight = $('.message').outerHeight(); // fill array
+    $('.message').css('bottom', -messageHeight); //move element outside viewport
+}
+
+function showMessage(type, message) {
+    messageHeight = $('.message').outerHeight(); // fill array
+    hideMessage();
+    $('.message').addClass(type).text(message).animate({bottom:"0"}, 500);
+    // Hide message after 5s
+    setTimeout(function() {
+        $('.message').animate({bottom: -messageHeight}).removeClass(type).text('');
+    }, 5000);
 }
 
 $(document).ready(function() {
-    // Initially, hide them all
-    hideAllMessages();
+    // Initially, hide the message
+    hideMessage();
+
+    // Show rating
+    initRating();
 
     // When message is clicked, hide it
     $('.message').click(function() {

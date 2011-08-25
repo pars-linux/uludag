@@ -10,26 +10,61 @@ if (!isset($_GET['p'])) {
 }
 
 $p = $_GET['p'];
+$db = new Database();
 
 if (isset($_GET['k'])) {
     $k = $_GET['k'];
-    $db = new Database();
     if (!$db->checkKey($k)) {
         unset($k);
     }
 }
 
-$appinfo = new AppInfo($p, 'appinfo.db');
-if (!$appinfo->package) {
-    echo 'Package name is not valid.';
+if (isset($_GET['s']) && isset($k)) {
+    $s = $db->limitScore((float) $_GET['s']);
+    $s = $db->processScore($p, $s);
+    echo json_encode(array('p' => $p, 'score' => $s));
     exit();
+} else {
+    $s = $db->getScore($p);
 }
 
-if (isset($_GET['s']) && isset($k)) {
-    $s = Database::limitScore((float) $_GET['s']);
-    $appinfo->setScore($s);
-    echo json_encode(array('p'=>$p, 'score'=>$appinfo->getScore()));
-    exit();
+$messages = array(
+    'not_logged_in' => array(
+        'class' => 'warning',
+        'text' => 'You need to login before voting.'
+    ),
+    'invalid_key' => array(
+        'class' => 'error',
+        'text' => 'Your account could not be identified. Please re-activate your account.'
+    ),
+    'vote_saved' => array(
+        'class' => 'success',
+        'text' => 'Your vote has been saved. Thank you!'
+    ),
+    'already_voted' => array(
+        'class' => 'info',
+        'text' => 'You\\\'ve voted for this package.'
+    ),
+    'vote_changed' => array(
+        'class' => 'success',
+        'text' => 'Your vote has been changed.'
+    )
+);
+
+$voted = false;
+if (isset($k)) {
+    if ($db->hasVoted($p)) {
+        $voted = true;
+        $status = 'vote_changed';
+    } else {
+        $status = 'vote_saved';
+    }
+} else {
+    if (isset($_GET['k'])) {
+        $status = 'invalid_key';
+    } else {
+        $status = 'not_logged_in';
+    }
 }
 
 $pi = new PackImage($p);
@@ -41,91 +76,34 @@ $pi = new PackImage($p);
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 <meta http-equiv="Content-language" content="en" />
 <link href="min/?g=css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="min/?g=js"></script>
 <script type="text/javascript">
 var pack = '<?php echo $p; ?>';
+var score = '<?php echo $s; ?>';
 <?php
 
 if (isset($k)) {
     printf("var key='%s';\n", $k);
-}
-
 ?>
-$(document).ready(function() {
-    $('.rating').raty({
-        hintList: ['', '', '', '', ''],
-        half: true,
+function raty_click(score, evt) {
+    $.getJSON('', { p: pack, k: key, s: score }, function(json) {
+        $.fn.raty.start(json.score, '.rating');
+        $.fn.raty.readOnly(true, '.rating');
+        <?php printf("showMessage('%s', '%s');\n", $messages[$status]['class'], $messages[$status]['text']); ?>
+    });
+}
 <?php
 
-if (!isset($k)) {
-    echo "        readOnly: true,\n";
+} else {
+    printf("function raty_click() {
+    showMessage('%s', '%s');
+}
+", $messages[$status]['class'], $messages[$status]['text']);
 }
 
 ?>
-        start: <?php echo $appinfo->getScore(); ?>,
-        click: function(score, evt) {
-            $.getJSON('', { p: pack, k: key, s: score }, function(json) {
-                $.fn.raty.start(json.score, '.rating');
-                $.fn.raty.readOnly(true, '.rating');
-                showMessage('success');
-            });
-        }
-    });
-});
 </script>
-<head>
-    <title>AppInfo Server</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            color:white;
-            font-family: 'Droid Sans', 'Dejavu Sans', Helvetica, sans-serif;
-            font-size: 10pt;
-        }
-
-        .container {
-            padding: 20px;
-            width: 650px;
-        }
-
-        .gallery {
-            height:250px;
-            float: left;
-            margin-right:20px;
-        }
-        .gallery .image {
-            width: 250px;
-            height:250px;
-            padding: 5px;
-        }
-
-        .info {
-            width: 350px;
-            height:300px;
-            float: right;
-        }
-
-        .info .title {
-            text-shadow: 1px 1px 1px #000;
-            font-size: 16pt;
-            margin-bottom: 5px;
-        }
-
-        .info .summary {
-            margin-bottom: 20px;
-        }
-
-        .info .description {
-            margin-bottom: 20px;
-        }
-
-        .info .rating {
-        }
-    </style>
+<script type="text/javascript" src="min/?g=js"></script>
+<title>AppInfo Server</title>
 </head>
 <body>
 <div class="container">
@@ -139,6 +117,13 @@ if (!isset($k)) {
         <div class="rating"></div>
     </div>
 </div>
-<div class="message success">Teşekkürler!</div>
+<div class="message"><div>
+<?php if ($voted): ?>
+<script type="text/javascript">
+$(document).ready(function(){
+    <?php printf("    showMessage('%s', '%s');\n", $messages['already_voted']['class'], $messages['already_voted']['text']); ?>
+});
+</script>
+<?php endif; ?>
 </body>
 </html>
