@@ -7,3 +7,8 @@
 - Setup script might discover dependencies independently from PiSi
 - Need more locale files. To do that, we can update 'Quick Format for KDE4' locale file.
 
+25 Aug 2011
+
+- Konqueror integration in KDE3
+- Dolphin integration in KDE4
+
