@@ -9,16 +9,6 @@
       "beginDate": 20110815, 
       "id": 1, 
       "collectedDataPath": "~/.user_studies/s01.data"
-    }, 
-    {
-      "endDate": 20110826, 
-      "description": "This study is designed to test our user study tool. Gathered data will be used for evil purposes of Pardus team!", 
-      "title": "Kde app launcher user study", 
-      "url": "http://www.google.com", 
-      "userParticipation": true, 
-      "beginDate": 20110815, 
-      "id": 2, 
-      "collectedDataPath": "~/.user_studies/s02.data"
     }
   ]
 }
