@@ -47,8 +47,11 @@ class Online(QtGui.QWidget):
         QtGui.QApplication.processEvents()
         
         self.download(file_name, repo)
-        
-        xml_object = open(file_name, 'rb').read()
+        try:
+            xml_object = open(file_name, 'rb').read()
+        except:
+            self.errorMessage("Hata", u"Repo XML'i açılamadı. Lütfen tekrar deneyiniz.")
+            return
         a = lzma.LZMADecompressor()
         str_object2 = a.decompress(xml_object)
         f = open(file_name+".xml", 'wb')
@@ -299,7 +302,11 @@ class Online(QtGui.QWidget):
             
     
     def download(self, file_name, url, isPackage=False):
-        u = urllib2.urlopen(url)
+        try:
+            u = urllib2.urlopen(url)
+        except:
+            self.errorMessage("Hata", u"İnternet bağlantınızı kontrol ediniz !")
+            return
         if (isPackage):
             workingDir = QtCore.QDir(self.ui.le_path.text())
             f = open(workingDir.absolutePath()+"/packages/"+file_name, 'wb')

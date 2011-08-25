@@ -147,7 +147,10 @@ class Offline(QtGui.QWidget):
         return False
     
     def showHelp(self):
-        pass
+        return
+        help_window = QtGui.QDialog(self)
+        help_window.setWindowTitle("Pardus Offline-Updater Yardım")
+        
         
             
 
