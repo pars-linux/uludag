@@ -14,7 +14,10 @@ all:
 	$(CC) $(CFLAGS) `xml2-config --cflags` client/pxe_select_boot/pxebootselect.c -o $(TARGETS) $(LIBCURSES) `xml2-config --libs`
 
 clean:
-	rm -f $(TARGETS)
+	rm -f /lib/initramfs/$(TARGETS)
+	rm -f /opt/ptsp/pxeboot_iso_files.xml
+	rm -rf $(TFTPBOOT_PATH)
+	rm -rf /tftpboot/pts/$(VERSION)-ptsp
 	
 install:
 	python server/iso_to_xml.py /opt/ptsp
