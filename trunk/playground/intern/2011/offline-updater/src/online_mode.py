@@ -43,7 +43,7 @@ class Online(QtGui.QWidget):
         file_name = file_name[4]+"_"+file_name[5]+"_"+file_name[6]+".xz"
         
         message = repo_[5]+ " deposu paket bilgileri indiriliyor."
-        self.ui.updateListWidget(message)
+        self.updateListWidget(message)
         QtGui.QApplication.processEvents()
         
         self.download(file_name, repo)
@@ -95,7 +95,7 @@ class Online(QtGui.QWidget):
             return
         item = u"Repo bilgileri okunuyor.\n%s adet repo bilgisi alındı."%len(repos)
         
-        self.ui.updateListWidget(item)
+        self.updateListWidget(item)
         
         for repo in repos:
             QtGui.QApplication.processEvents()
@@ -105,7 +105,7 @@ class Online(QtGui.QWidget):
             pisi_xml = self.downloadRepoXML(repos[repo]) #XML dosyalarını indir
             pisi_data = open(pisi_xml) #Aç
             message = repo+u" reposunun bilgileri çözümleniyor."
-            self.ui.updateListWidget(message)
+            self.updateListWidget(message)
             package_tree = tree.fromstring(pisi_data.read()) #XML dosyasını tree değişkenine aç
             packages_tree = package_tree.findall("Package") #tree içerisinden tüm Package taglerini çek
             obseletes = package_tree.find("Distribution").find("Obsoletes").findall("Package")
@@ -149,7 +149,7 @@ class Online(QtGui.QWidget):
         if not installed_packages:
             return
         repo_packages = self.parsePisiXML()
-        self.ui.updateListWidget("Kurulu paketlerin listesi okunuyor")
+        self.updateListWidget("Kurulu paketlerin listesi okunuyor")
         
         QtGui.QApplication.processEvents()
         
@@ -159,7 +159,7 @@ class Online(QtGui.QWidget):
         package_list = {}
         self.download_list = {}
         print "\n"
-        self.ui.updateListWidget(u"Paket güncellemeleri belirleniyor.")
+        self.updateListWidget(u"Paket güncellemeleri belirleniyor.")
         for ins_package in installed_packages:
             QtGui.QApplication.processEvents()
             
@@ -184,7 +184,7 @@ class Online(QtGui.QWidget):
             self.download_list[dep] = repo_packages[deplist[dep]][0][dep][5]
        
         message = u"%s paket ve %s bagimlılık bulundu" %(int(len(self.download_list)-len(deplist)), len(deplist)) 
-        self.ui.updateListWidget(message)
+        self.updateListWidget(message)
         
         if len(self.download_list) == 0:
             message = u"Güncellenecek Paket Bulunamadı!"
@@ -204,7 +204,7 @@ class Online(QtGui.QWidget):
     def checkDependencyUpdate(self, package_list, deplist, repo_packages):
         
         
-        self.ui.updateListWidget(u"Bağımlılıklar belirleniyor.")
+        self.updateListWidget(u"Bağımlılıklar belirleniyor.")
         for i in package_list.keys():
             for j in deplist.keys():
                 if i==j:
@@ -278,11 +278,11 @@ class Online(QtGui.QWidget):
             package_name = self.download_list[package].split('/')[7]
             QtGui.QApplication.processEvents()
             message = package+" paketi indiriliyor."
-            self.ui.updateListWidget(message)
+            self.updateListWidget(message)
             self.download(package_name, self.download_list[package], True)
             cnt += 1
             
-        self.ui.updateListWidget(u"Paketlerin indirilmesi tamamlandı.")
+        self.updateListWidget(u"Paketlerin indirilmesi tamamlandı.")
             
         #after work - enable ui objects
         self.ui.le_path.setEnabled(True)
@@ -344,8 +344,15 @@ class Online(QtGui.QWidget):
                 if filename.split(".")[-1] == "xz" or filename.split(".")[-1] == "xml":
                     os.remove(filename)
                     
+    def updateListWidget(self, message):
+        item = QtGui.QListWidgetItem(message)
+        self.ui.listWidget.addItem(message)
+        self.ui.listWidget.setCurrentItem(item)
+    
     def showHelp(self):
         pass
+    
+    
 
 if __name__ == "__main__":
     import sys
