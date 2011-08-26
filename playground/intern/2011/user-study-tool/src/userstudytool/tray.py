@@ -18,8 +18,8 @@ class Tray(QtGui.QWidget):
 	self.appWindow = parent 
 	
 	
-	self.action_quit = QtGui.QAction(QtGui.QIcon("gtk-quit.png"),u'Çık', self)
-	self.action_options = QtGui.QAction(QtGui.QIcon("options.png"),u'Seçenekler', self)
+	self.action_quit = QtGui.QAction(QtGui.QIcon("../../data/gtk-quit.png"),u'Çık', self)
+	self.action_options = QtGui.QAction(QtGui.QIcon("../../data/options.png"),u'Seçenekler', self)
 	self.action_alwaysJoin = QtGui.QAction(u'Her Zaman', self)
 	self.action_alwaysJoin.setCheckable(True)
 	self.action_askToJoin = QtGui.QAction(u'Katılmadan Sor', self)
@@ -49,7 +49,7 @@ class Tray(QtGui.QWidget):
 	self.connect(self.action_rejectJoin, SIGNAL("triggered()"), self.setGlobalParticipation)
   
 
-	self.defaultIcon = QtGui.QIcon("user_study.png")
+	self.defaultIcon = QtGui.QIcon("../data/user_study.png")
 	self.countIcon = QtGui.QIcon("")
 	self.lastIcon = self.defaultIcon
 	self.tray.setIcon(self.defaultIcon)
@@ -78,7 +78,7 @@ class Tray(QtGui.QWidget):
 	pass
     
     def setDefaultOptions(self):
-	json_data =  open('user_participation_info.json','r')
+	json_data =  open('../../data/user_participation_info.json','r')
 	self.data = json.load(json_data)
 	json_data.close()
 	
@@ -88,10 +88,10 @@ class Tray(QtGui.QWidget):
 	    self.action_askToJoin.setChecked(True)
 	else:
 	    self.action_rejectJoin.setChecked(True)
-	    
+
     
     def checkUpdates(self):
-	json_data =  open('user_studies.json','r')
+	json_data =  open('../../data/user_studies.json','r')
 	self.data = json.load(json_data)
 	json_data.close()
 	
@@ -113,23 +113,26 @@ class Tray(QtGui.QWidget):
 		self.tray.showMessage(u"New User Studies", u"There are %s new user studies" %(diff), QtGui.QSystemTrayIcon.Information, 8000)
 	    else:
 		self.tray.showMessage(u"New User Study", u"There is a new user study", QtGui.QSystemTrayIcon.Information, 8000)
-	    f = open('user_studies.json','w')
+	    f = open('../../data/user_studies.json','w')
 	    string = json.dump(self.local_data,f, indent = 2)
 	    f.close()
 	
     def setGlobalParticipation(self):
-	json_data =  open('user_participation_info.json','r')
+	json_data =  open('../../data/user_participation_info.json','r')
 	self.data = json.load(json_data)
 	json_data.close()
 	
 	if self.action_alwaysJoin.isChecked() == True:
-	    self.data["userParticipation"] = "Always Join"   
+	    self.data["userParticipation"] = "Always Join"
+	    self.appWindow.ui.alwaysHelp.setChecked(True)
 	elif self.action_askToJoin.isChecked() == True:
-	    self.data["userParticipation"] = "Ask Before Join"    
+	    self.data["userParticipation"] = "Ask Before Join" 
+	    self.appWindow.ui.askToHelp.setChecked(True)
 	else :
 	    self.data["userParticipation"] = "Do not Join"
+	    self.appWindow.ui.rejectHelp.setChecked(True)
 	
-	f = open('user_participation_info.json','w')
+	f = open('../../data/user_participation_info.json','w')
 	string = json.dump(self.data,f, indent = 2)
 	f.close()
  

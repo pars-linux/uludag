@@ -26,15 +26,14 @@ class MainManager(QtGui.QWidget):
             self.ui.setupUi(self)
         else:
             self.ui.setupUi(parent)
-            
-        self.setDefaultOptions()
-        
-        #if self.setDefaultOptions() in [self.ui.alwaysHelp.setChecked(True), self.ui.askToHelp.setChecked(True)]:
+	
+	self.setDefaultOptions()
+	
 	self.initializeTray()
 
         self.widgets = {}
 	
-	json_object =  open('user_studies.json','r')
+	json_object =  open('../../data/user_studies.json','r')
 	self.data = json.load(json_object)
 	json_object.close()
 	
@@ -60,23 +59,26 @@ class MainManager(QtGui.QWidget):
 	
 	 
     def setGlobalParticipation(self):
-	json_data =  open('user_participation_info.json','r')
+	json_data =  open('../../data/user_participation_info.json','r')
 	self.data = json.load(json_data)
 	json_data.close()
 	
 	if self.ui.alwaysHelp.isChecked() == True:
 	    self.data["userParticipation"] = "Always Join" 
+	    self.tray.action_alwaysJoin.setChecked(True)
 	elif self.ui.askToHelp.isChecked() == True:
 	    self.data["userParticipation"] = "Ask Before Join" 
+	    self.tray.action_askToJoin.setChecked(True)
 	else :
-	    self.data["userParticipation"] = "Do not Join" 
+	    self.data["userParticipation"] = "Do not Join"
+	    self.tray.action_rejectJoin.setChecked(True)
 	
-	f = open('user_participation_info.json','w')
+	f = open('../../data/user_participation_info.json','w')
 	string = json.dump(self.data,f, indent = 2)
 	f.close()
     
     def setDefaultOptions(self):
-	json_data =  open('user_participation_info.json','r')
+	json_data =  open('../../data/user_participation_info.json','r')
 	self.data = json.load(json_data)
 	json_data.close()
 	
@@ -96,7 +98,7 @@ class MainManager(QtGui.QWidget):
 	QtGui.qApp.processEvents()
 	self.ui.alwaysHelp.setEnabled(False)
 	self.ui.askToHelp.setEnabled(False)
-	self.ui.rejectHelp.setEnabled(False)
+	self.ui.rejectHelp.setEnabled(FalsQWidgete)
 	
 	#self.busy =QProgressIndicator(self)
 	#self.addWidget(self.busy)

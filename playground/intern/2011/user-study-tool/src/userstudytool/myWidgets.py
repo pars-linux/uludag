@@ -7,7 +7,6 @@ from PyQt4.QtCore import *
 from pds.gui import *
 
 from ui_surveyItem import Ui_SurveyItemWidget
-#from ui_detailWidget import Ui_DetailWidget 
 
 import sys
 
