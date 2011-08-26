@@ -54,7 +54,7 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
         self.webView.page().mainFrame().setScrollBarPolicy(Qt.Horizontal, Qt.ScrollBarAlwaysOff)
 
         self.webView.page().setLinkDelegationPolicy(QtWebKit.QWebPage.DelegateAllLinks)
-        self.webView.page().linkClicked.connect(self.showFullImage)
+        self.webView.page().linkClicked.connect(self.redirectLinks)
 
         self.tabWidget.removeTab(0)
 
@@ -68,8 +68,17 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
         self.noconnection.hide()
         self.parent = parent
 
-    def showFullImage(self, url):
-        PreviewDialog(self, url)
+    def redirectLinks(self, url):
+        if url.hasFragment():
+            if url.fragment() == 'login':
+                self.showLogin()
+        else:
+            PreviewDialog(self, url)
+
+    def showLogin(self):
+        self._hide()
+        self.parent.settingsDialog.show()
+        self.parent.settingsDialog.tabWidget.setCurrentIndex(4)
 
     def showPage(self, addr):
         if network_available():
