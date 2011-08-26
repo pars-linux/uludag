@@ -47,7 +47,6 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
         self._as = 'http://onurguzel.com/appinfo'
         self.cancelButton.clicked.connect(self._hide)
         self.cancelButton.setIcon(KIcon("dialog-close"))
-        self.key = config.PMConfig().getOpenDesktopKey()
 
         # Hide Scrollbars and context menu in webview
         self.webView.setContextMenuPolicy(Qt.NoContextMenu)
@@ -113,6 +112,7 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
 
     def showPackageDetails(self, package, installed, summary='', description=''):
         self.packageName.setText(package)
+        self.key = config.PMConfig().getOpenDesktopKey()
 
         self.filesList.clear()
         self.webView.loadFinished.connect(lambda x: \
