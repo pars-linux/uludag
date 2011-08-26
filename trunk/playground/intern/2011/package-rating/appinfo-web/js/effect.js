@@ -15,13 +15,14 @@ function hideMessage() {
 }
 
 function showMessage(type, message) {
-    messageHeight = $('.message').outerHeight(); // fill array
+    m = $('.message');
     hideMessage();
-    $('.message').addClass(type).text(message).animate({bottom:"0"}, 500);
-    // Hide message after 5s
-    setTimeout(function() {
-        $('.message').animate({bottom: -messageHeight}).removeClass(type).text('');
-    }, 5000);
+    m.addClass(type).html(message);
+    messageHeight = m.outerHeight();
+    console.log(messageHeight);
+    m.animate({bottom:"0"}, 500).delay(5000).animate({bottom: -messageHeight}, 500, function () {
+        m.attr('class', 'message');
+    });
 }
 
 $(document).ready(function() {
@@ -30,9 +31,4 @@ $(document).ready(function() {
 
     // Show rating
     initRating();
-
-    // When message is clicked, hide it
-    $('.message').click(function() {
-        $(this).animate({bottom: -$(this).outerHeight()}, 500);
-    });
 });

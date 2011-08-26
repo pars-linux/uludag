@@ -88,7 +88,11 @@ body {
     font-size: 12pt;
 }
 
-.message.info {
+.message a {
+    color: #fff;
+}
+
+.message.information {
     background-color: #4ea5cd;
     border-color: #3b8eb5;
 }

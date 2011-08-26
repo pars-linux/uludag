@@ -31,18 +31,18 @@ if (isset($_GET['s']) && isset($k)) {
 $messages = array(
     'not_logged_in' => array(
         'class' => 'warning',
-        'text' => 'You need to login before voting.'
+        'text' => 'You need to login before voting. Click <a href="#login">here</a> to login.'
     ),
     'invalid_key' => array(
         'class' => 'error',
-        'text' => 'Your account could not be identified. Please re-activate your account.'
+        'text' => 'Your account could not be activated. Click <a href="#login">here</a> to re-activate.'
     ),
     'vote_saved' => array(
         'class' => 'success',
         'text' => 'Your vote has been saved. Thank you!'
     ),
     'already_voted' => array(
-        'class' => 'info',
+        'class' => 'information',
         'text' => 'You\\\'ve voted for this package.'
     ),
     'vote_changed' => array(
@@ -87,7 +87,6 @@ if (isset($k)) {
 function raty_click(score, evt) {
     $.getJSON('', { p: pack, k: key, s: score }, function(json) {
         $.fn.raty.start(json.score, '.rating');
-        $.fn.raty.readOnly(true, '.rating');
         <?php printf("showMessage('%s', '%s');\n", $messages[$status]['class'], $messages[$status]['text']); ?>
     });
 }
