@@ -64,10 +64,3 @@ class Ui_Online(object):
         self.label.setText(QtGui.QApplication.translate("Online", "İndirme İşlemi:", None, QtGui.QApplication.UnicodeUTF8))
         self.lbl_file.setText(QtGui.QApplication.translate("Online", "TextLabel", None, QtGui.QApplication.UnicodeUTF8))
         self.lbl_progress.setText(QtGui.QApplication.translate("Online", "TextLabel", None, QtGui.QApplication.UnicodeUTF8))
-        
-        
-        
-    def updateListWidget(self, message):
-        item = QtGui.QListWidgetItem(message)
-        self.listWidget.addItem(message)
-        self.listWidget.setCurrentItem(item)
