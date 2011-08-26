@@ -531,6 +531,7 @@ parse_cmdline() {
             ;;
             pxeboot)
                 PXEBOOT=1
+                LIVE=0
             ;;
             kexec)
                 KEXEC=1
