@@ -64,17 +64,25 @@ class OnDemandList(list):
         return super(OnDemandList, self).count(y)
 
     def extend(self, i):
-        return decodeall_run_f(i, 'extend')
+        if isinstance(i, OnDemandList):
+            self.undecoded_count += i.undecoded_count
+        else:
+            for x in i:
+                if isinstance(x, OnDemandNode):
+                    self.undecoded_count += 1
 
-    def index(self, value, start = None, stop = None):
-        # FIXME : ???
-        # print "index", value, start, stop #debuginfo
+        return super(OnDemandList, self).extend(i)
+
+    def index(self, value, start = 0, stop = -1):
         self.decodeAll()
         return super(OnDemandList, self).index(value, start, stop)
 
-    # def insert(self, index, o):
+    def insert(self, index, o):
+        if isinstance(y, OnDemandNode):
+            self.undecoded_count += 1
+        return super(OnDemandList, self).insert(index, o)
 
-    def pop(self, index = None):
+    def pop(self, index = -1):
         a = super(OnDemandList, self).pop(index)
         if isinstance(a, OnDemandNode):
             a = a.decode()
@@ -97,13 +105,17 @@ class OnDemandList(list):
         return super(OnDemandList, self).__contains__(y)
 
     def __delitem__(self, y):
+        # print "delitem", y
         if not self.isDecoded(y):
             self.undecoded_count -= 1
         return super(OnDemandList, self).__delitem__(y)
 
     def __delslice__(self, i, j):
-        # TODO: test yap, bu fonksiyon __delitem__ i kullanıyor olabilir.
-        for x in range(i, j):
+        # print "delslice", i, j
+        if j > len(self):
+            j = len(self)
+
+        for x in xrange(i, j):
             if not self.isDecoded(x):
                 self.undecoded_count -= 1
 
@@ -121,10 +133,13 @@ class OnDemandList(list):
         return self.decodeall_run_f(y, '__ge__')
 
     def __getslice__(self, i, j):
-        # TODO: test yap, ...
+        if j > len(self):
+            j = len(self)
+
         # Decode slice
-        for x in range(i, j):
+        for x in xrange(i, j):
             self.__getitem__(x)
+
         return super(OnDemandList, self).__getslice__(i, j)
 
     def __gt__(self, y):
@@ -196,7 +211,8 @@ class OnDemandList(list):
         return super(OnDemandList, self).__setitem__(i, y)
 
     def isDecoded(self, y):
-        return not isinstance(y, OnDemandNode)
+        item = super(OnDemandList, self).__getitem__(y)
+        return not isinstance(item, OnDemandNode)
 
     def safeIter(self):
         class iterator(object):
