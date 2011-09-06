@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="dvd" compression="lzo">
-    <Title>Pardus 2011.1 Dama dama (i686)</Title>
+    <Title>Pardus 2011.2 Cervus elaphus (i686)</Title>
     <WorkDir>/tmp/pardusman-workdir/32</WorkDir>
     <ReleaseFiles>/home/gokcen/distribution/2011/media-content</ReleaseFiles>
     <ExtraParameters></ExtraParameters>
