@@ -1,0 +1,238 @@
+#
+# AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: What_is_new\n"
+"POT-Creation-Date: 2011-07-11T21:41:06\n"
+"PO-Revision-Date: 2011-06-14 01:57+0100\n"
+"Last-Translator: Ivica Kolić <ikoli@yahoo.com>\n"
+"Language-Team: Croatian <ikoli@yahoo.com>\n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Croatian\n"
+"X-Poedit-Country: CROATIA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#. Tag: title
+#, no-c-format
+msgid "What is New?"
+msgstr "Što je novo?"
+
+#. Tag: title
+#, no-c-format
+msgid "Updates in Pardus Technologies"
+msgstr "Dopune u Pardus tehnologiji"
+
+#. Tag: title
+#, no-c-format
+msgid "YALI"
+msgstr "YALI"
+
+#. Tag: para
+#, fuzzy, no-c-format
+msgid "<emphasis>YALI</emphasis>, the installer of Pardus, gained system rescue menu that provides easy bootloader and password recovery."
+msgstr "<emphasis>YALI</emphasis>, Pardus instalacijaki program,dobio je LVM/RAID i UUID podršku."
+
+#. Tag: title
+#, no-c-format
+msgid "Pisi"
+msgstr "Pisi"
+
+#. Tag: para
+#, no-c-format
+msgid "Some of the core components are now parallellized to increase the utilization of multi-core machines which means faster package operations and better package management experience."
+msgstr ""
+
+#. Tag: title
+#, no-c-format
+msgid "QuickFormat"
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "<emphasis>QuickFormat</emphasis> is a removable device formatting tool that can integrate to Dolphin. Now, it's very easy to format USB flash drives and card readers."
+msgstr ""
+
+#. Tag: title
+#, no-c-format
+msgid "Updates in Core Components"
+msgstr "Dopune u komponentama jezgre"
+
+#. Tag: para
+#, fuzzy, no-c-format
+msgid "<application>Kernel</application> - The Linux kernel shipped with Pardus &PRODVER; is &KERNELVER;."
+msgstr "<application>Perl</application> - Perl je dopunjen na &PERLVER;."
+
+#. Tag: para
+#, no-c-format
+msgid "<application>Plymouth</application> - The bootsplash technology used in Pardus &PREVVER; is updated to its latest version for a much stable experience."
+msgstr ""
+
+#. Tag: para
+#, fuzzy, no-c-format
+msgid "<application>X.org</application> - xorg-server is updated to &XORGVER;."
+msgstr "<application>Perl</application> - Perl je dopunjen na &PERLVER;."
+
+#. Tag: para
+#, fuzzy, no-c-format
+msgid "<application>TeX Live</application> - TeX Live documentation stack is updated to latest &TEXLIVEVER; version."
+msgstr "<application>Perl</application> - Perl je dopunjen na &PERLVER;."
+
+#. Tag: title
+#, no-c-format
+msgid "Desktop Experience"
+msgstr "Iskustvo radne površine"
+
+#. Tag: title
+#, no-c-format
+msgid "Changes in KDE Desktop Environment"
+msgstr "Promjene u KDE radnom okruženju"
+
+#. Tag: para
+#, no-c-format
+msgid "Pardus &PRODVER; comes with the latest KDE Software Compilation, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "KDE Software Compilation, versioned &KDEVER;, provide many new features in each of KDE's components including Plasma, Solid, Nepomuk, KWin and also introduces a brand new Bluetooth framework called BlueDevil allows easy device pairing and management."
+msgstr ""
+
+#. Tag: title
+#, no-c-format
+msgid "Default Applications"
+msgstr "Zadani programi"
+
+#. Tag: title
+#, no-c-format
+msgid "Mozilla Firefox"
+msgstr "Mozilla Firefox"
+
+#. Tag: para
+#, no-c-format
+msgid "Pardus &PRODVER; comes with <emphasis>Mozilla Firefox &FIREFOXVER;</emphasis> as the default web browser application. This version of Firefox introduces CSS animations, Do-Not-Track, improved support for HTML5, MathML, and SMIL, improved network, memory and JavaScript performance and fixes for several stability and security issues."
+msgstr ""
+
+#. Tag: title
+#, no-c-format
+msgid "Clementine"
+msgstr "Clementine"
+
+#. Tag: para
+#, no-c-format
+msgid "<emphasis>Clementine</emphasis>, a cross-platform music player based on Amarok 1.4 is updated to latest stability and maintenance version &CLEMENTINEVER;."
+msgstr ""
+
+#. Tag: title
+#, no-c-format
+msgid "SMPlayer"
+msgstr "SMPlayer"
+
+#. Tag: para
+#, no-c-format
+msgid "<emphasis>SMplayer</emphasis>, a Qt based frontend for MPlayer is set as the default Video/VCD/DVD playing application as it is well integrated with KDE desktop environment in terms of usability and graphical user interface and supports playing a wide range of video file types thanks to the MPlayer backend."
+msgstr ""
+
+#. Tag: title
+#, no-c-format
+msgid "KsCD"
+msgstr "KsCD"
+
+#. Tag: para
+#, no-c-format
+msgid "<emphasis>KsCD</emphasis>, is set as the default Audio CD playing application."
+msgstr ""
+
+#. Tag: title
+#, no-c-format
+msgid "Web Browsers"
+msgstr "Web preglednici"
+
+#. Tag: para
+#, no-c-format
+msgid "Although not included in the installation images, a wide range of web browsers including Chromium browser, rekonq, Arora and Opera are available for installation through the package manager."
+msgstr "Iako nisu uključeni u insatalacijske slike,širok raspon web preglednika uključujući Chromium preglednik,Arora i Opera dostupni su za instalaciju kroz upravitelja paketa."
+
+#. Tag: title
+#, no-c-format
+msgid "System Settings"
+msgstr "Postavke sustava"
+
+#. Tag: para
+#, no-c-format
+msgid "The display configuration tool of the graphics card manufacturer is now recommended in the <emphasis>Display and Monitor</emphasis> module of the System Settings, if it suits better to your graphics card driver."
+msgstr ""
+
+#. Tag: title
+#, no-c-format
+msgid "Office Suite"
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "<emphasis>LibreOffice</emphasis>, an Open Source personal productivity suite sponsored by the Document Foundation, is the default Office Suite in Pardus &PRODVER;. &LIBREOFFICEVER; version of LibreOffice introduces; improved text rendering, configurable color charts, improved thumbnailed HTML export of presentations, faster Flat ODF import/export and better desktop theme integration."
+msgstr ""
+
+#. Tag: title
+#, no-c-format
+msgid "Other"
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "Most wanted packages like <emphasis>Skype</emphasis>, a P2P VoIP client that allows you to make voice calls, and <emphasis>Wine</emphasis>, a software that allows you to run Microsoft Windows applications, are now included in Pardus &PRODVER; package repopsitories."
+msgstr ""
+
+#~ msgid "The user interface is completely redesigned to improve the usability."
+#~ msgstr "Grafičko sučelje je potpuno redizajnirano zbog poboljšanja upotrebljivosti."
+
+#~ msgid "Users are now able to select between Open Source and proprietary drivers for their NVIDIA video adapters."
+#~ msgstr "Korisnici sada mogu odabrati između upravljačkih programa otvorenog koda te vlasničkih upravljačkih programa za svoje NVIDIAgrafičke kartice."
+
+#~ msgid "First Boot"
+#~ msgstr "Prvo podizanje"
+
+#~ msgid "Some of the settings which were asked during the installation in Pardus &PREVVER; are now moved into a different application which shows up once during the first boot after the installation."
+#~ msgstr "Neke od postavki za koje se pitalo tijekom instalacije u Pardusu &PREVVER; sada su premještene u drugi program koji se pokazuje jednom tijekom prvog podizanja nakon instalacije."
+
+#~ msgid "Kaptan"
+#~ msgstr "Kaptan"
+
+#~ msgid "<emphasis>Kaptan</emphasis>, the desktop customization tool of Pardus, now optionally captures your picture and sets it as your avatar in KDE."
+#~ msgstr "<emphasis>Kaptan</emphasis>, Pardus alat za prilagodbu radne površine, sada može dodati vaši fotografiju i postaviti je kaop avatar u KDE."
+
+#~ msgid "Users are now able to select their preferred icon theme which will be used in their KDE desktop environment."
+#~ msgstr "Korisnici sada mogu odabrati željene teme ikona koje će biti korištene u njihovom KDE radnom okruženju."
+
+#~ msgid "<emphasis>Pisi</emphasis> now internally uses XZ as the default compression algorithm."
+#~ msgstr "<emphasis>Pisi</emphasis> sada iznutra korisiti XZ kao zadani algoritam kompresije."
+
+#~ msgid "Binary package names now reflects the architecture and the distribution release for which the package is built."
+#~ msgstr "Imena binarnih pakete sada odražavaju arhitekturu i izdanje distribucije za koju je paket napravljen."
+
+#~ msgid "Various speed enhancements has been done in the core components for a better package management experience."
+#~ msgstr "Učinjena su razna poboljšanja brzine u komponentama jezgre z bolje iskutvo upravljanja paketima."
+
+#~ msgid "Package Manager"
+#~ msgstr "Upravitelj paketa"
+
+#~ msgid "<application>Python</application> - Python is updated to &PYTHONVER;."
+#~ msgstr "<application>Python</application> - Python je dopunjen na &PYTHONVER;."
+
+#~ msgid "Visual Enhancements"
+#~ msgstr "Vizualna poboljšanja"
+
+#~ msgid "Network Management"
+#~ msgstr "Upravljanje mrežom"
+
+#~ msgid "The default language used throughout the whole system can now be changed through the locale settings section."
+#~ msgstr "Zadani jezik koji se koristi u cijelom sustavu sada se može promijeniti kroz sekciju postavki jezika."
+
+#~ msgid "Games"
+#~ msgstr "Igre"
+
+#~ msgid "Other Changes"
+#~ msgstr "Ostale promjene"

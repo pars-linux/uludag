@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "Release_Notes.ent">
+%BOOK_ENTITIES;
+]>
+
+<section id="sect-Release_Notes-What_is_New">
+    <title>What is New?</title>
+
+    <section id="sect-Release_Notes-Updates_in_Pardus_Technologies">
+        <title>Updates in Pardus Technologies</title>
+
+        <section id="sect-Release_Notes-What_is_New_Installation">
+            <title>YALI</title>
+            <itemizedlist>
+                <listitem>
+                    <para>
+                        <emphasis>YALI</emphasis>, the installer of Pardus, gained system rescue menu that provides easy bootloader and password recovery.
+                    </para>
+                </listitem>
+            </itemizedlist>
+        </section>
+
+        <section id="sect-Release_Notes-What_is_New_Pisi">
+            <title>Pisi</title>
+            <itemizedlist>
+                <listitem>
+                    <para>
+                        Some of the core components are now parallellized to increase the utilization of multi-core machines which means faster package operations and better package management experience.
+                    </para>
+                </listitem>
+            </itemizedlist>
+        </section>
+
+        <section id="sect-Release_Notes-QuickFormat">
+            <title>QuickFormat</title>
+            <itemizedlist>
+                <listitem>
+                    <para>
+                        <emphasis>QuickFormat</emphasis> is a removable device formatting tool that can integrate to Dolphin. Now, it's very easy to format USB flash drives and card readers.
+                    </para>
+                </listitem>
+            </itemizedlist>
+        </section>
+    </section>
+
+    <section id="sect-Release_Notes-Updates_in_Core_Components">
+        <title>Updates in Core Components</title>
+        <itemizedlist>
+            <listitem>
+                <para>
+                    <application>Kernel</application> - The Linux kernel shipped with Pardus &PRODVER; is &KERNELVER;.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    <application>Plymouth</application> - The bootsplash technology used in Pardus &PREVVER; is updated to its latest version for a much stable experience.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    <application>X.org</application> - xorg-server is updated to &XORGVER;.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    <application>TeX Live</application> - TeX Live documentation stack is updated to latest &TEXLIVEVER; version.
+                </para>
+            </listitem>
+        </itemizedlist>
+    </section>
+
+    <section id="sect-Release_Notes-What_is_New_Desktop_Experience">
+        <title>Desktop Experience</title>
+        <section id="sect-Release_Notes-What_is_New_KDE">
+            <title>Changes in KDE Desktop Environment</title>
+            <para>
+                Pardus &PRODVER; comes with the latest KDE Software Compilation, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly.
+            </para>
+            <para>
+                KDE Software Compilation, versioned &KDEVER;, provide many new features in each of KDE's components including Plasma, Solid, Nepomuk, KWin and also introduces a brand new Bluetooth framework called BlueDevil allows easy device pairing and management.
+            </para>
+        </section>
+
+        <section id="sect-Release_Notes-What_is_New_Default_Applications">
+            <title>Default Applications</title>
+            <section id="sect-Release_Notes-What_is_New_Default_Applications_Mozilla_Firefox">
+                <title>Mozilla Firefox</title>
+                <para>
+                    Pardus &PRODVER; comes with <emphasis>Mozilla Firefox &FIREFOXVER;</emphasis> as the default web browser application.
+                    This version of Firefox introduces CSS animations, Do-Not-Track, improved support for HTML5, MathML, and SMIL, improved network, memory and JavaScript performance and fixes for several stability and security issues.</para>
+            </section>
+            <section id="sect-Release_Notes-What_is_New_Default_Applications_Clementine">
+                <title>Clementine</title>
+                <para>
+                    <emphasis>Clementine</emphasis>, a cross-platform music player based on Amarok 1.4 is updated to latest stability and maintenance version &CLEMENTINEVER;.
+                </para>
+            </section>
+            <section id="sect-Release_Notes-What_is_New_Default_Applications_SMplayer">
+                <title>SMPlayer</title>
+                <para>
+                    <emphasis>SMplayer</emphasis>, a Qt based frontend for MPlayer is set as the default Video/VCD/DVD playing application as it is well integrated
+                    with KDE desktop environment in terms of usability and graphical user interface and supports playing a wide range of video file
+                    types thanks to the MPlayer backend.
+                </para>
+            </section>
+            <section id="sect-Release_Notes-What_is_New_Default_Applications_KsCD">
+                <title>KsCD</title>
+                <para>
+                    <emphasis>KsCD</emphasis>, is set as the default Audio CD playing application.
+                </para>
+            </section>
+        </section>
+
+        <section id="sect-Release_Notes-What_is_New_Browsers">
+            <title>Web Browsers</title>
+            <para>
+                Although not included in the installation images, a wide range of web browsers including Chromium browser, rekonq, Arora and Opera are
+                available for installation through the package manager.
+            </para>
+        </section>
+
+        <section id="sect-Release_Notes-What_is_New_System_Settings">
+            <title>System Settings</title>
+            <para>
+                The display configuration tool of the graphics card manufacturer is now recommended in the <emphasis>Display and Monitor</emphasis> module of the System Settings, if it suits better to your graphics card driver.
+            </para>
+        </section>
+
+        <section id="sect-Release_Notes-What_is_New_Office">
+            <title>Office Suite</title>
+            <para>
+                <emphasis>LibreOffice</emphasis>, an Open Source personal productivity suite sponsored by the Document Foundation, is the default Office Suite in Pardus &PRODVER;. &LIBREOFFICEVER; version of LibreOffice introduces; improved text rendering, configurable color charts, improved thumbnailed HTML export of presentations, faster Flat ODF import/export and better desktop theme integration.
+            </para>
+        </section>
+
+        <section id="sect-Release_Notes-What_is_New_Others">
+            <title>Other</title>
+            <para>
+                Most wanted packages like <emphasis>Skype</emphasis>, a P2P VoIP client that allows you to make voice calls, and <emphasis>Wine</emphasis>, a software that allows you to run Microsoft Windows applications, are now included in Pardus &PRODVER; package repopsitories.
+            </para>
+        </section>
+
+    </section>
+</section>
