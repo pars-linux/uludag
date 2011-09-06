@@ -158,7 +158,7 @@ label rescue
 prompt 1
 timeout 200
 
-ui gfxboot.com /boot/isolinux/init
+ui gfxboot.c32 /boot/isolinux/init
 
 label pardus
     kernel /boot/kernel
@@ -255,7 +255,7 @@ def setup_isolinux(project):
     # we don't use debug anymore for the sake of hybrid
     copy(os.path.join(image_dir, "usr/lib/syslinux/isolinux.bin"), "%s/isolinux.bin" % dest)
     copy(os.path.join(image_dir, "usr/lib/syslinux/hdt.c32"), dest)
-    copy(os.path.join(image_dir, "usr/lib/syslinux/gfxboot.com"), dest)
+    copy(os.path.join(image_dir, "usr/lib/syslinux/gfxboot.c32"), dest)
     copy(os.path.join(image_dir, "usr/share/misc/pci.ids"), dest)
 
     kernel_version = open(os.path.join(image_dir, "etc/kernel/kernel")).read()
