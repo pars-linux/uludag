@@ -3,6 +3,7 @@
 
 import os
 import sys
+import locale
 import multiprocessing
 
 import pisi
@@ -158,9 +159,12 @@ def main():
 
     print LEGEND
 
+    # Get collate locale to sort updater names starts with unicode letters correctly
+    locale.setlocale(locale.LC_COLLATE, "")
+
     # Dump updates.txt
     with open("updates.txt", "w") as f:
-        for updater in sorted(updaters):
+        for updater in sorted(updaters, cmp=locale.strcoll):
             sources = updaters[updater]
             f.write("%s:\n" % updater)
             for source in sorted(sources):
