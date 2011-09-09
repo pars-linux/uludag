@@ -1,0 +1,454 @@
+# translation of artsbuilder.po to
+# Copyright (C) 2000,2003, 2004, 2005, 2007 Free Software Foundation, Inc.
+#
+# YILDIZ KARDESLER <mehmet@gelecek.com.tr>, 2000.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+# YILDIZ KARDESLER <turkishprogram@xposta.com>, 2004.
+# Onur Küçük <onur@uludag.org.tr>, 2005.
+# Server Acim <sacim@inonu.edu.tr>, 2005.
+# Engin Çağatay <engincagatay@yahoo.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: artsbuilder\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-07-24 01:37+0200\n"
+"PO-Revision-Date: 2007-05-15 00:13+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Onur Küçük"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "onur@uludag.org.tr"
+
+#: createtool.cpp:322
+msgid ""
+"You can only connect an IN-port with an OUT-port,\n"
+"not two ports with the same direction."
+msgstr ""
+"Çıkış kapısına sadece giriş kapısı bağlayabilirsiniz, \n"
+"aynı yönde iki kapıyı değil"
+
+#: dirmanager.cpp:41
+msgid "instrument map files"
+msgstr "Aygıtsal harita dosyaları"
+
+#: dirmanager.cpp:50
+msgid "sessions (save files of the positions of all sliders/buttons)"
+msgstr "Oturumlar (tum düğme ve kaydırıcıların yerlerinin dosyalarını saklar)"
+
+#: dirmanager.cpp:59
+msgid "structures (signal flow graphs)"
+msgstr "yapılar (sinyal akış grafikler)"
+
+#: dirmanager.cpp:67
+msgid "all aRts files/folders"
+msgstr "bütün aRts dosyaları/dizinleri"
+
+#: dirmanager.cpp:84
+msgid ""
+"You need the folder %1.\n"
+"It will be used to store %2.\n"
+"Should I create it now?"
+msgstr ""
+"%1 dizininizin olması gerekiyor.\n"
+"%2 saklamak için kullanılacaktır.\n"
+"Şimdi oluşturayım mı?"
+
+#: dirmanager.cpp:88
+msgid "aRts Folder Missing"
+msgstr "aRts Dizini Eksik"
+
+#: dirmanager.cpp:88
+msgid "Create Folder"
+msgstr "Dizin Oluştur"
+
+#: dirmanager.cpp:88
+msgid "Do Not Create"
+msgstr "Oluşturma"
+
+#: execdlg.cpp:54
+msgid "aRts Module Execution"
+msgstr "Arts Modülü Çalıştırılması"
+
+#: execdlg.cpp:65
+msgid "Synthesis running..."
+msgstr "Sentezleyici çalışıyor..."
+
+#: execdlg.cpp:71
+msgid "CPU usage: unknown"
+msgstr "CPU kullanımı: bilinmiyor"
+
+#: execdlg.cpp:159
+msgid "Your synthesis has been interrupted due to excessive CPU load."
+msgstr ""
+"İşlemcinin fazla yüklenmesinden dolayı sentezleme işlemi kesintiye uğradı."
+
+#: execdlg.cpp:169
+msgid "CPU usage: "
+msgstr "CPU kullanımı: "
+
+#: interfacedlg.cpp:46 portposdlg.cpp:47
+msgid "aRts: Structureport View"
+msgstr "aRts:Yapı Görünümü"
+
+#: main.cpp:160
+msgid "Port Properties"
+msgstr "Port Özellikleri"
+
+#: main.cpp:192
+msgid "Modules"
+msgstr "Modüller"
+
+#: main.cpp:194
+msgid "&Synthesis"
+msgstr "&Sentez"
+
+#: main.cpp:195 main.cpp:196 main.cpp:197 main.cpp:198 main.cpp:199
+#: main.cpp:200
+msgid "&Synthesis/&Arithmetic + Mixing"
+msgstr "&Sentezleme/&Aritmetik + Karıştırma"
+
+#: main.cpp:201
+msgid "&Synthesis/&Busses"
+msgstr "&Sentezleme/&Yollar"
+
+#: main.cpp:202 main.cpp:203
+msgid "&Synthesis/&Delays"
+msgstr "&Sentezleme/&Gecikmeler"
+
+#: main.cpp:204 main.cpp:205
+msgid "&Synthesis/&Envelopes"
+msgstr "&Sentezleme/&Zarflar"
+
+#: main.cpp:206 main.cpp:207 main.cpp:208 main.cpp:209
+msgid "&Synthesis/Effe&cts"
+msgstr "&Sentezleme/&Efektler"
+
+#: main.cpp:210 main.cpp:211 main.cpp:212 main.cpp:213 main.cpp:214
+#: main.cpp:215
+msgid "&Synthesis/&Filters"
+msgstr "&Sentezleme/&Filtreler"
+
+#: main.cpp:216 main.cpp:217 main.cpp:218 main.cpp:219 main.cpp:220
+msgid "&Synthesis/&Midi + Sequencing"
+msgstr "&Sentezleme/&Midi"
+
+#: main.cpp:221
+msgid "&Synthesis/Sam&ples "
+msgstr "&Sentezleme/Ör&neklendirme "
+
+#: main.cpp:222 main.cpp:223 main.cpp:224 main.cpp:225 main.cpp:226
+#: main.cpp:227
+msgid "&Synthesis/&Sound IO"
+msgstr "&Sentezleme/Ses &G/Ç"
+
+#: main.cpp:228 main.cpp:229 main.cpp:230 main.cpp:231
+msgid "&Synthesis/&Tests"
+msgstr "&Sentezleme/&Denemeler"
+
+#: main.cpp:232 main.cpp:233 main.cpp:234
+msgid "&Synthesis/&Oscillation && Modulation"
+msgstr "&Sentezleme/&Osilasyon ve Modülasyon"
+
+#: main.cpp:235 main.cpp:236
+msgid "&Synthesis/&WaveForms"
+msgstr "&Sentezleme/D&alga Formları"
+
+#: main.cpp:237
+msgid "&Synthesis/&Internal"
+msgstr "&Sentezleme/&Dahili"
+
+#: main.cpp:239
+msgid "&Examples"
+msgstr "Ö&rnekler"
+
+#: main.cpp:240
+msgid "&Instruments"
+msgstr "&Aletler"
+
+#: main.cpp:241
+msgid "&Mixer-Elements"
+msgstr "&Karıştırıcı-Elemanlar"
+
+#: main.cpp:242
+msgid "&Templates"
+msgstr "Ş&ablonlar"
+
+#: main.cpp:243
+msgid "&Other"
+msgstr "&Diğer"
+
+#: main.cpp:297
+msgid "Open Session..."
+msgstr "Oturum aç..."
+
+#: main.cpp:300
+msgid "Open E&xample..."
+msgstr "Ö&rnek Aç..."
+
+#: main.cpp:304
+msgid "&Retrieve From Server..."
+msgstr "&Ana Makineden Al..."
+
+#: main.cpp:306
+msgid "&Execute Structure"
+msgstr "&Yapıyı Çalıştır..."
+
+#: main.cpp:308
+msgid "&Rename Structure..."
+msgstr "&Yapıyı yeniden adlandır..."
+
+#: main.cpp:310
+msgid "&Publish Structure"
+msgstr "&Yapıyı Yayınla!"
+
+#: main.cpp:320
+msgid "&Property Panel"
+msgstr "Ö&zellik Paneli"
+
+#: main.cpp:323
+#, c-format
+msgid "200%"
+msgstr "200%"
+
+#: main.cpp:325
+#, c-format
+msgid "150%"
+msgstr "150%"
+
+#: main.cpp:327
+#, c-format
+msgid "100%"
+msgstr "100%"
+
+#: main.cpp:329
+#, c-format
+msgid "50%"
+msgstr "50%"
+
+#: main.cpp:333
+msgid "Create IN Audio Signal"
+msgstr "Ses Giriş Sinyali Oluştur"
+
+#: main.cpp:335
+msgid "Create OUT Audio Signal"
+msgstr "Ses Çıkış Sinyali Oluştur"
+
+#: main.cpp:337
+msgid "Create IN String Property"
+msgstr "String Giriş Özelliği Oluştur"
+
+#: main.cpp:339
+msgid "Create IN Audio Property"
+msgstr "Ses Giriş Özelliği Oluştur"
+
+#: main.cpp:341
+msgid "Implement Interface..."
+msgstr "Arayüz Düzenle..."
+
+#: main.cpp:343
+msgid "Change Positions/Names..."
+msgstr "Konumları/İsimleri Değiştir..."
+
+#: main.cpp:444
+msgid "The structure has been published as: '%1' on the server."
+msgstr "Yapı şu şekilde yayınlandı: '%1' sunucuda."
+
+#: main.cpp:501
+msgid ""
+"The structure could not be loaded correctly. Maybe some of\n"
+"the modules used in the file are not available in this\n"
+"version of aRts."
+msgstr ""
+"Yapı düzgün olarak yüklenemedi. Belki kullanılan bazı\n"
+"modüller aRts'ın bu versiyonunda mevcut değildir."
+
+#: main.cpp:504
+msgid "Arts Warning"
+msgstr "Üreti uyarısı"
+
+#: main.cpp:552
+msgid ""
+"Unable to find the examples folder.\n"
+"Using the current folder instead."
+msgstr ""
+"Örnekler dizini bulunamadı. \n"
+"Mevcut dizin kullanılıyor."
+
+#: main.cpp:553 main.cpp:591 main.cpp:601 main.cpp:688 main.cpp:876
+msgid "aRts Warning"
+msgstr "aRts·Uyarısı"
+
+#: main.cpp:589
+msgid "The file '%1' could not be opened for writing: %2"
+msgstr "%1 Dosyası yazılmak için açılamadı: %2"
+
+#: main.cpp:599
+msgid "Saving to file '%1' could not be finished correctly: %2"
+msgstr "%1 dosyasına kayıt tamamlanamadı: %2"
+
+#: main.cpp:632
+msgid "Rename Structure"
+msgstr "Yapıyı yeniden isimlendir."
+
+#: main.cpp:633
+msgid "Enter structure name:"
+msgstr "Yapı adını girin:"
+
+#: main.cpp:687
+msgid ""
+"Could not execute your structure. Make sure that the\n"
+"sound server (artsd) is running.\n"
+msgstr ""
+"Yapınız oluşturulamıyor. Ses sunucusunun (artsd)\n"
+"çalıştığına emin olun.\n"
+
+#: main.cpp:841
+msgid ""
+"The current structure has been modified.\n"
+"Would you like to save it?"
+msgstr ""
+"Geçerli yapı değiştirildi.\n"
+"Kaydetmek ister misiniz?"
+
+#: main.cpp:875
+msgid "The specified file '%1' does not exist."
+msgstr "Belirtilen %1 dosyası bulunamadı."
+
+#: main.cpp:908
+msgid "Optional .arts file to be loaded"
+msgstr "Yüklenecek olan seçmeli arts dosyası"
+
+#: main.cpp:919
+msgid "artsbuilder"
+msgstr "artsbuilder"
+
+#: main.cpp:921
+msgid "aRts synthesizer designer"
+msgstr "Arts sentezleyici dizayncısı"
+
+#: main.cpp:924
+msgid "The analog real-time synthesizer graphical design tool."
+msgstr "Analog gerçek zamanlı sentezleyici grafiksel dizayn aracı."
+
+#: main.cpp:928
+msgid "Author"
+msgstr "Yazar"
+
+#: mwidget.cpp:596
+#, c-format
+msgid ""
+"_n: Delete %n selected module, port or connection? (No undo possible.)\n"
+"Delete %n selected modules, ports and connections? (No undo possible.)"
+msgstr "%n seçili modül, port veya bağlantılar silinsin mi? (Geri alınamaz.)"
+
+#: portposdlg.cpp:118
+msgid "&Raise"
+msgstr "&Büyült"
+
+#: portposdlg.cpp:122
+msgid "&Lower"
+msgstr "&Küçült"
+
+#: portposdlg.cpp:126
+msgid "R&ename..."
+msgstr "&Yeniden adlandır..."
+
+#: portposdlg.cpp:191
+msgid "Rename Port"
+msgstr "Portu yeniden adlandır"
+
+#: portposdlg.cpp:192
+msgid "Enter port name:"
+msgstr "Port numarasını verin:"
+
+#: propertypanel.cpp:132
+msgid "OUTPUT"
+msgstr "ÇIKIŞ"
+
+#: propertypanel.cpp:132
+msgid "INPUT"
+msgstr "GİRİŞ"
+
+#: propertypanel.cpp:152
+msgid ""
+"Tip: Just typing numbers or alphabetic characters starts entering constant "
+"values."
+msgstr ""
+"İpucu: Sabit değerleri girerken yanlızca rakamları ve alfabetik harfleri "
+"kullanın."
+
+#. i18n: file artsbuilderui.rc line 27
+#: rc.cpp:12
+#, no-c-format
+msgid "&Modules"
+msgstr "&Modüller"
+
+#. i18n: file artsbuilderui.rc line 32
+#: rc.cpp:15
+#, no-c-format
+msgid "&Ports"
+msgstr "&Kapılar"
+
+#. i18n: file propertypanelbase.ui line 57
+#: rc.cpp:21
+#, no-c-format
+msgid "Properties of selected module/port:"
+msgstr "Seçili modülün/portun özellikleri"
+
+#. i18n: file propertypanelbase.ui line 165
+#: rc.cpp:24
+#, no-c-format
+msgid "&Port:"
+msgstr "&Port:"
+
+#. i18n: file propertypanelbase.ui line 206
+#: rc.cpp:27
+#, no-c-format
+msgid "Port Value"
+msgstr "Port Değeri"
+
+#. i18n: file propertypanelbase.ui line 223
+#: rc.cpp:30
+#, no-c-format
+msgid "&Not set"
+msgstr "Ku&rulmamış"
+
+#. i18n: file propertypanelbase.ui line 245
+#: rc.cpp:33
+#, no-c-format
+msgid "Constant &value:"
+msgstr "&Sabit değer:"
+
+#. i18n: file propertypanelbase.ui line 285
+#: rc.cpp:36
+#, no-c-format
+msgid "From connection"
+msgstr "Bağlantıdan"
+
+#. i18n: file propertypanelbase.ui line 304
+#: rc.cpp:39
+#, no-c-format
+msgid "&Connect"
+msgstr "&Bağlan"
+
+#: retrievedlg.cpp:45
+msgid "Retrieve Structure From Server"
+msgstr "Yapıyı sunucudan al"
+
+#: retrievedlg.cpp:56
+msgid "Published structures"
+msgstr "Yayınlanmış yapılar"

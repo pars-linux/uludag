@@ -1,0 +1,1105 @@
+# translation of kpackage.po to
+# Translation of kpackage.po to Turkish
+# Copyright (C) 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
+#
+# Oğuz YILMAZ <o.yilmaz@ieee.org>, 2000.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# RIDVAN CAN <ridvan@geleceklinux.org>, 2003.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Ozan Eren BILGEN <oebilgen@uekae.tubitak.gov.tr>, 2005.
+# Cemil MUTLU <mawilos@gmail.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kpackage\n"
+"POT-Creation-Date: 2006-08-29 02:38+0200\n"
+"PO-Revision-Date: 2007-05-16 21:05+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=1; plural=0;\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Ömer Fadıl USTA, Ozan Eren BİLGEN"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "omer_fad@hotmail.com, oebilgen@uekae.tubitak.gov.tr"
+
+#: cache.cpp:63 cache.cpp:84
+#, c-format
+msgid "Cannot create folder %1"
+msgstr "%1 dizini oluşturulamıyor"
+
+#: cache.cpp:98 kpackage.cpp:588
+#, c-format
+msgid "Malformed URL: %1"
+msgstr "Bozuk URL: %1"
+
+#: debAptInterface.cpp:49
+msgid "APT: Debian"
+msgstr "APT: Debian"
+
+#: debAptInterface.cpp:51
+msgid "Querying DEB APT package list: "
+msgstr "DEB APT paket listesini sorgula: "
+
+#: debAptInterface.cpp:52
+msgid "KPackage: Waiting on APT-GET"
+msgstr "Kpackage: APT-GET bekleniyor"
+
+#: debAptInterface.cpp:56
+msgid "Location of Debian Packages"
+msgstr "Debian Paketlerinin Konumu"
+
+#: debAptInterface.cpp:58
+msgid ""
+"_: APT sources\n"
+"A"
+msgstr "A"
+
+#: debAptInterface.cpp:59
+msgid "APT Sources Entries"
+msgstr "APT Kaynak Girdileri"
+
+#: debAptInterface.cpp:60 debDpkgInterface.cpp:77 kissInterface.cpp:73
+#: slackInterface.cpp:91
+msgid ""
+"_: Folders\n"
+"F"
+msgstr "D"
+
+#: debAptInterface.cpp:62 debDpkgInterface.cpp:79
+msgid "Location of Folders Containing Debian Packages"
+msgstr "Debian Paketlerini İçeren Dizinler"
+
+#: debAptInterface.cpp:67
+msgid "Download only"
+msgstr "Sadece indir"
+
+#: debAptInterface.cpp:68
+msgid "No download"
+msgstr "İndirme yok"
+
+#: debAptInterface.cpp:69
+msgid "Ignore missing"
+msgstr "Olmayanları önemseme"
+
+#: debAptInterface.cpp:70
+msgid "Ignore hold"
+msgstr "Tutulanları önemseme"
+
+#: debAptInterface.cpp:71
+msgid "Allow Unauthenticated"
+msgstr "Onaylanmayanı Kabul Et"
+
+#: debAptInterface.cpp:72 debAptInterface.cpp:76
+msgid "Assume yes"
+msgstr "'Evet' kabul et"
+
+#: debAptInterface.cpp:73 debAptInterface.cpp:77 debDpkgInterface.cpp:92
+#: fbsdInterface.cpp:86 rpmInterface.cpp:75 slackInterface.cpp:101
+msgid "Test (do not uninstall)"
+msgstr "Test (silme)"
+
+#: debAptInterface.cpp:75 debDpkgInterface.cpp:89
+msgid "Purge Config Files"
+msgstr "Ayar Dosyalarını Temizle"
+
+#: debAptInterface.cpp:107
+msgid "U&pgrade"
+msgstr "&Güncelle"
+
+#: debAptInterface.cpp:111
+msgid "&Fixup"
+msgstr "&Tamir Et"
+
+#: debAptInterface.cpp:115
+msgid "&Apt-File Update"
+msgstr "&Apt-File Güncellemesi"
+
+#: debAptInterface.cpp:159 debAptInterface.cpp:368
+msgid "The %1 program needs to be installed"
+msgstr "%1 programının yüklenmesi gerekiyor"
+
+#: debAptInterface.cpp:188
+#, c-format
+msgid "Querying DEB APT remote package list: %1"
+msgstr "DEB APT uzak paket listesi sorgulanıyor: %1"
+
+#: debAptInterface.cpp:194
+#, c-format
+msgid "Processing DEB APT remote package list: %1"
+msgstr "DEB APT uzak paket listesi işleniyor: %1"
+
+#: debAptInterface.cpp:231 debAptInterface.cpp:287 rpmInterface.cpp:200
+msgid "DEB APT"
+msgstr "DEB APT"
+
+#: debAptInterface.cpp:244
+msgid "Querying DEB APT available list"
+msgstr "DEB APT kullanılabilirler listesi sorgulanıyor"
+
+#: debAptInterface.cpp:246
+#, c-format
+msgid "Querying DEB APT available list: %1"
+msgstr "DEB APT kullanılabilirler listesi sorgulanıyor: %1"
+
+#: debAptInterface.cpp:251
+msgid "Processing DEB APT available list"
+msgstr "DEB APT kullanılabilirler listesi işleniyor"
+
+#: debAptInterface.cpp:253
+#, c-format
+msgid "Processing DEB APT available list: %1"
+msgstr "DEB APT kullanılabilirler listesi işleniyor: %1"
+
+#: debDpkgInterface.cpp:61
+msgid "DPKG: Debian"
+msgstr "DPKG: Debian"
+
+#: debDpkgInterface.cpp:64 debInterface.cpp:151
+msgid "Querying DEB package list: "
+msgstr "DEB paket listesi sorgulanıyor: "
+
+#: debDpkgInterface.cpp:65
+msgid "Kpackage: Waiting on DPKG"
+msgstr "Kpackage: DPKG üzerinde bekleniyor"
+
+#: debDpkgInterface.cpp:67
+msgid "Location of Debian Package Archives"
+msgstr "Debian Paket Arşivlerinin Konumu"
+
+#: debDpkgInterface.cpp:68
+msgid ""
+"_: Location\n"
+"L"
+msgstr "K"
+
+#: debDpkgInterface.cpp:70
+msgid ""
+"Version\n"
+"Architecture"
+msgstr ""
+"Sürüm\n"
+"Mimari"
+
+#: debDpkgInterface.cpp:71 debDpkgInterface.cpp:76
+msgid "Location of Base Folder of Debian Distribution"
+msgstr "Debian Dağıtımının Ana Dizininin Yeri"
+
+#: debDpkgInterface.cpp:73
+msgid ""
+"_: Packages\n"
+"P"
+msgstr "P"
+
+#: debDpkgInterface.cpp:75
+msgid "Location of 'Packages' Files for Sections of Debian Distributions"
+msgstr "Debian Dağıtımının Bölümleri İçin 'Packages' Dosyalarının Yerleri"
+
+#: debDpkgInterface.cpp:84
+msgid "Allow Downgrade"
+msgstr "Eski Sürüme İzin Ver"
+
+#: debDpkgInterface.cpp:85
+msgid "Check Conflicts"
+msgstr "Çakışmaları Kontrol Et"
+
+#: debDpkgInterface.cpp:86 debDpkgInterface.cpp:91 fbsdInterface.cpp:81
+#: fbsdInterface.cpp:85 rpmInterface.cpp:69 rpmInterface.cpp:74
+msgid "Check Dependencies"
+msgstr "Bağımlılıkları Kontrol Et"
+
+#: debDpkgInterface.cpp:87 fbsdInterface.cpp:82 rpmInterface.cpp:70
+#: slackInterface.cpp:99
+msgid "Test (do not install)"
+msgstr "Test (kurulum yapma)"
+
+#: fbsdInterface.cpp:59
+msgid "BSD"
+msgstr "BSD"
+
+#: fbsdInterface.cpp:70
+msgid "Querying package list: "
+msgstr "Paket listesi sorgulanıyor: "
+
+#: fbsdInterface.cpp:72
+msgid "Location of BSD Packages and Ports"
+msgstr "BSD Paket ve Portlarının Yeri"
+
+#: fbsdInterface.cpp:73
+msgid "Ports"
+msgstr "Portlar"
+
+#: fbsdInterface.cpp:74
+msgid "Location of Ports Tree (e.g. /usr/ports or /usr/opt)"
+msgstr "Port Ağacının Yeri (/usr/ports ya da /usr/opt gibi)"
+
+#: fbsdInterface.cpp:75
+msgid "Packages"
+msgstr "Paketler"
+
+#: fbsdInterface.cpp:76
+msgid "Location of Folders Containing BSD Packages or Package Trees"
+msgstr "BSD Paketlerini ya da Paket Ağaçlarını İçeren Dizinler"
+
+#: fbsdInterface.cpp:80 fbsdInterface.cpp:84
+msgid "Ignore Scripts"
+msgstr "Betikleri Önemseme"
+
+#: fbsdInterface.cpp:131
+msgid "Getting package info"
+msgstr "Paket bilgisi alınıyor"
+
+#: fbsdInterface.cpp:203 fbsdInterface.cpp:409 fbsdInterface.cpp:410
+#: fbsdInterface.cpp:559 fbsdInterface.cpp:561 packageProperties.cpp:175
+msgid "none"
+msgstr "hiçbiri"
+
+#: fbsdInterface.cpp:204 fbsdInterface.cpp:411 fbsdInterface.cpp:562
+msgid "binary package and source port"
+msgstr "derlenmiş ve kaynak portu"
+
+#: fbsdInterface.cpp:204 fbsdInterface.cpp:411 fbsdInterface.cpp:562
+msgid "binary package"
+msgstr "derlenmiş paket"
+
+#: fbsdInterface.cpp:204 fbsdInterface.cpp:411 fbsdInterface.cpp:562
+msgid "source port"
+msgstr "kaynak paketi"
+
+#: fbsdInterface.cpp:237
+msgid "Getting file list"
+msgstr "Dosya listesi alınıyor"
+
+#: fbsdInterface.cpp:251
+msgid "Can't find package name!"
+msgstr "Paket ismi bulunamıyor!"
+
+#: fbsdInterface.cpp:501
+msgid "Querying BSD packages database for installed packages"
+msgstr "Kurulu paketler için BSD paket veritabanı sorgulanıyor"
+
+#: fbsdInterface.cpp:530
+#, c-format
+msgid "Unexpected output from pkg_info (looking for package name): %1"
+msgstr "pkg_info dan beklenmeyen çıktı (paket ismine bakıyordu): %1"
+
+#: findf.cpp:48
+msgid "Find File"
+msgstr "Dosya Bul"
+
+#: findf.cpp:50 search.cpp:42
+msgid "&Find"
+msgstr "&Bul"
+
+#: findf.cpp:59 search.cpp:40 search.cpp:50
+msgid "Find Package"
+msgstr "Paket Bul"
+
+#: findf.cpp:70
+msgid "Find:"
+msgstr "Bul:"
+
+#: findf.cpp:76 managementWidget.cpp:83
+msgid "Installed"
+msgstr "Kurulu"
+
+#: findf.cpp:77
+msgid "Type"
+msgstr "Tip"
+
+#: findf.cpp:79 kplview.cpp:58
+msgid "Package"
+msgstr "Paket"
+
+#: findf.cpp:80
+msgid "File Name"
+msgstr "Dosya İsmi"
+
+#: findf.cpp:85
+msgid "Also search uninstalled packages"
+msgstr "Kaldırılmış paketleri de ara"
+
+#: findf.cpp:87
+msgid "Also search uninstalled packages (apt-file needs to be installed)"
+msgstr "Kaldırılmış paketleri de ara (apt-file yüklenmiş olmalı)"
+
+#: findf.cpp:174
+msgid "--Nothing found--"
+msgstr "--Hiçbir şey bulunamadı--"
+
+#: findf.cpp:224
+msgid "Incorrect URL type"
+msgstr "Yanlış URL tipi"
+
+#: gentooInterface.cpp:58
+msgid "Gentoo"
+msgstr "Gentoo"
+
+#: gentooInterface.cpp:68
+msgid "Querying Gentoo package list: "
+msgstr "Gentoo paket listesi sorgulanıyor: "
+
+#: gentooInterface.cpp:125
+msgid "Looking for Gentoo packages: "
+msgstr "Gentoo paketlerine bakılıyor: "
+
+#: kissInterface.cpp:62
+msgid "KISS"
+msgstr "KISS"
+
+#: kissInterface.cpp:72
+msgid "Location of KISS Packages"
+msgstr "KISS Paketlerinin Yeri"
+
+#: kissInterface.cpp:75
+msgid "Location of Folders Containing KISS Packages"
+msgstr "KISS Paketleri İçeren Dizinlerin Yeri"
+
+#: kissInterface.cpp:81 kissInterface.cpp:139
+msgid "Querying KISS package list: "
+msgstr "KISS paket listesi sorgulanıyor: "
+
+#: kissInterface.cpp:82
+msgid "KPackage: Waiting on KISS"
+msgstr "Kpackage: KISS için bekleniyor"
+
+#: kpPty.cpp:160
+msgid ""
+"The action you requested uses ssh. Please enter the password or pass phrase.\n"
+msgstr ""
+"Bu eylem ssh kullanımı gerektiriyor. Lütfen parolayı veya parola tümcesini "
+"girin.\n"
+
+#: kpPty.cpp:163
+msgid ""
+"The action you requested needs root privileges. Please enter root's password.\n"
+msgstr ""
+"Bu eylem için root yetkileri gerekiyor. Lütfen root parola girin.\n"
+
+#: kpPty.cpp:166
+msgid ""
+"The action you requested needs root privileges. Please enter your SUDO "
+"password.\n"
+msgstr ""
+"Bu eylem için root yetkileri gerekiyor. Lütfen SUDO parolanızı girin.\n"
+
+#: kpPty.cpp:182
+msgid "Login Problem: Please login manually"
+msgstr "Oturum Açma Sorunu: Litfen kendiniz oturumu açın."
+
+#: kpackage.cpp:103
+msgid "Find &Package..."
+msgstr "&Paket Bul..."
+
+#: kpackage.cpp:107
+msgid "Find &File..."
+msgstr "&Dosya Bul..."
+
+#: kpackage.cpp:124
+msgid "&Expand Tree"
+msgstr "&Ağacı Genişlet"
+
+#: kpackage.cpp:128
+msgid "&Collapse Tree"
+msgstr "Ağa&cı Daralt"
+
+#: kpackage.cpp:132
+msgid "Clear &Marked"
+msgstr "İşa&retlenenleri Temizle"
+
+#: kpackage.cpp:136
+msgid "Mark &All"
+msgstr "&Hepsini İşaretle"
+
+#: kpackage.cpp:140
+msgid "&Install"
+msgstr "&Kur"
+
+#: kpackage.cpp:148
+msgid "&Uninstall"
+msgstr "&Sil"
+
+#: kpackage.cpp:156
+msgid "&Install Marked"
+msgstr "İş&aretlileri Kur"
+
+#: kpackage.cpp:160
+msgid "&Uninstall Marked"
+msgstr "İşa&retlileri Sil"
+
+#: kpackage.cpp:173
+msgid "Configure &KPackage..."
+msgstr "&Kpackage'ı Yapılandır..."
+
+#: kpackage.cpp:177
+msgid "Clear Package &Folder Cache"
+msgstr "Pa&ket Dizin Önbelleğini Temizle"
+
+#: kpackage.cpp:181
+msgid "Clear &Package Cache"
+msgstr "Pa&ket Önbelleğini Temizle"
+
+#: kpackage.cpp:372
+msgid "Management Mode"
+msgstr "Yönetici Modu"
+
+#: kpackage.cpp:427
+msgid "Select Package"
+msgstr "Paketi Seç"
+
+#: kpackage.cpp:488
+#, c-format
+msgid "Unknown package type: %1"
+msgstr "Bilinmeyen paket tipi: %1"
+
+#: kpackage.cpp:490
+#, c-format
+msgid "File not found: %1"
+msgstr "Dosya bulunamadı: %1"
+
+#: kpackage.cpp:646
+msgid "Starting KIO"
+msgstr "KIO başlatılıyor"
+
+#: kpackage.cpp:651
+msgid "KIO finished"
+msgstr "KIO bitti"
+
+#: kpackage.cpp:663
+msgid "KIO failed"
+msgstr "KIO başarısız"
+
+#: kpackage.cpp:676
+msgid "Open location:"
+msgstr "Konum aç:"
+
+#: kplview.cpp:60
+msgid "Mark"
+msgstr "İşaretle"
+
+#: kplview.cpp:62
+msgid "Summary"
+msgstr "Özet"
+
+#: kplview.cpp:64
+msgid "Size"
+msgstr "Boyut"
+
+#: kplview.cpp:66
+msgid "Version"
+msgstr "Sürüm"
+
+#: kplview.cpp:68
+msgid "Old Version"
+msgstr "Eski Sürüm"
+
+#: main.cpp:59
+msgid "KDE Package installer"
+msgstr "KDE Paket kurucusu"
+
+#: main.cpp:63
+msgid "Remote host for Debian APT, via SSH"
+msgstr "Debian APT için uzak makine (SSH)"
+
+#: main.cpp:65
+msgid "Package to install"
+msgstr "Kurulacak paket"
+
+#: main.cpp:83
+msgid "KPackage"
+msgstr "KPackage"
+
+#: managementWidget.cpp:84
+msgid "Updated"
+msgstr "Güncellenmiş"
+
+#: managementWidget.cpp:85
+msgid "New"
+msgstr "Yeni"
+
+#: managementWidget.cpp:86
+msgid "All"
+msgstr "Hepsi"
+
+#: managementWidget.cpp:138
+msgid "Clear Search"
+msgstr "Aramayı Temizle"
+
+#: managementWidget.cpp:141
+msgid "Search: "
+msgstr "Ara: "
+
+#: managementWidget.cpp:164
+msgid "Uninstall Marked"
+msgstr "İşaretlileri Sil"
+
+#: managementWidget.cpp:168
+msgid "Install Marked"
+msgstr "İşaretlileri Kur"
+
+#: managementWidget.cpp:193 pkgOptions.cpp:361 pkgOptions.cpp:363
+msgid "Uninstall"
+msgstr "Kaldır"
+
+#: managementWidget.cpp:197 managementWidget.cpp:268 pkgOptions.cpp:346
+#: pkgOptions.cpp:348
+msgid "Install"
+msgstr "Kur"
+
+#: managementWidget.cpp:270
+msgid "Fetch"
+msgstr "Al"
+
+#: managementWidget.cpp:355
+msgid "Building package tree"
+msgstr "Paket dizini oluşturuluyor"
+
+#: managementWidget.cpp:444
+msgid ""
+"Filename not available\n"
+msgstr ""
+"Dosya adı mevcut değil\n"
+
+#: options.cpp:73
+msgid "&Types"
+msgstr "&Türler"
+
+#: options.cpp:75
+msgid "Handle Package Type"
+msgstr "Paket Türünü Belirle"
+
+#: options.cpp:77
+msgid "Remote Host"
+msgstr "Uzak Makine"
+
+#: options.cpp:78
+msgid "Use remote host (Debian APT only):"
+msgstr "Uzaktaki Makineyi Kullan (Sadece Debian APT):"
+
+#: options.cpp:98
+msgid "%1: %2 not found"
+msgstr "%1:%2 bulunamadı"
+
+#: options.cpp:103
+msgid "Enable"
+msgstr "Etkinleştir"
+
+#: options.cpp:105
+msgid "Location of Packages"
+msgstr "Paketlerin Yeri"
+
+#: options.cpp:114
+msgid "Cac&he"
+msgstr "Ö&nbellek"
+
+#: options.cpp:117
+msgid "Cache Remote Package Folders"
+msgstr "Uzak Paket Dizinlerini Önbellekle"
+
+#: options.cpp:123 options.cpp:139
+msgid "Always"
+msgstr "Daima"
+
+#: options.cpp:126 options.cpp:142
+msgid "During a session"
+msgstr "Oturum sırasında"
+
+#: options.cpp:129 options.cpp:145
+msgid "Never"
+msgstr "Asla"
+
+#: options.cpp:133
+msgid "Cache Remote Package Files"
+msgstr "Uzak Paket Dosyalarını Yedekle"
+
+#: options.cpp:148
+msgid "Cache Folder"
+msgstr "Önbellek Dizini"
+
+#: options.cpp:155
+msgid "&Misc"
+msgstr "Çeşit&li"
+
+#: options.cpp:162
+msgid "Execute Privileged Commands Using"
+msgstr "Ayrıcalıklı Komutları Yürütmek için Kullan"
+
+#: options.cpp:168
+msgid "su command"
+msgstr "su komutu"
+
+#: options.cpp:171
+msgid "sudo command"
+msgstr "sudo komutu"
+
+#: options.cpp:174
+msgid "ssh command"
+msgstr "ssh komutu"
+
+#: options.cpp:177
+msgid "Verify file list"
+msgstr "Dosya ismini doğrula"
+
+#: options.cpp:180
+msgid "Read information from all local package files"
+msgstr "Tüm paket dosyalarından bilgileri oku"
+
+#: packageDisplay.cpp:98
+msgid "File List"
+msgstr "Dosya Listesi"
+
+#: packageDisplay.cpp:99
+msgid "Change Log"
+msgstr "Değiştirme Günlüğü"
+
+#: packageDisplay.cpp:265
+msgid " - No change log -"
+msgstr " - Değiştirme günlüğü yok -"
+
+#: packageDisplay.cpp:283 packageDisplay.cpp:309
+msgid "Updating File List"
+msgstr "Dosya Listesi Güncelleştiriliyor"
+
+#: packageDisplay.cpp:316
+msgid " Files"
+msgstr " dosya"
+
+#: packageDisplay.cpp:375
+msgid "&Open With..."
+msgstr "&Birlikte Aç..."
+
+#: packageInfo.cpp:114 slackInterface.cpp:344
+msgid "OTHER"
+msgstr "DİĞER"
+
+#: packageProperties.cpp:68
+msgid "name"
+msgstr "isim"
+
+#: packageProperties.cpp:69
+msgid "summary"
+msgstr "özet"
+
+#: packageProperties.cpp:70
+msgid "version"
+msgstr "sürüm"
+
+#: packageProperties.cpp:71
+msgid "old-version"
+msgstr "eski-sürüm"
+
+#: packageProperties.cpp:72
+msgid "status"
+msgstr "durum"
+
+#: packageProperties.cpp:73
+msgid "group"
+msgstr "grup"
+
+#: packageProperties.cpp:74
+msgid "size"
+msgstr "boyut"
+
+#: packageProperties.cpp:75
+msgid "file-size"
+msgstr "dosya-boyutu"
+
+#: packageProperties.cpp:76
+msgid "description"
+msgstr "tanım"
+
+#: packageProperties.cpp:77
+msgid "url"
+msgstr "adres"
+
+#: packageProperties.cpp:78
+msgid "architecture"
+msgstr "yapı"
+
+#: packageProperties.cpp:80
+msgid "unsatisfied dependencies"
+msgstr "yetersiz bağımlılıklar"
+
+#: packageProperties.cpp:81
+msgid "pre-depends"
+msgstr "önceden-bağlı"
+
+#: packageProperties.cpp:82
+msgid "dependencies"
+msgstr "bağımlılıklar"
+
+#: packageProperties.cpp:83
+msgid "depends"
+msgstr "bağımlı"
+
+#: packageProperties.cpp:84
+msgid "conflicts"
+msgstr "çakışıyor"
+
+#: packageProperties.cpp:85
+msgid "provides"
+msgstr "sağlıyor"
+
+#: packageProperties.cpp:86
+msgid "recommends"
+msgstr "öneriyor"
+
+#: packageProperties.cpp:87
+msgid "replaces"
+msgstr "değiştiriyor"
+
+#: packageProperties.cpp:88
+msgid "suggests"
+msgstr "öneriyor"
+
+#: packageProperties.cpp:89
+msgid "priority"
+msgstr "öncelik"
+
+#: packageProperties.cpp:91
+msgid "essential"
+msgstr "temel"
+
+#: packageProperties.cpp:92
+msgid "install time"
+msgstr "kurulum zamanı"
+
+#: packageProperties.cpp:93
+msgid "config-version"
+msgstr "ayar-sürümü"
+
+#: packageProperties.cpp:94
+msgid "distribution"
+msgstr "dağıtım"
+
+#: packageProperties.cpp:95
+msgid "vendor"
+msgstr "dağıtıcı"
+
+#: packageProperties.cpp:96
+msgid "maintainer"
+msgstr "sürdüren"
+
+#: packageProperties.cpp:97
+msgid "packager"
+msgstr "paketleyen"
+
+#: packageProperties.cpp:98
+msgid "source"
+msgstr "kaynak"
+
+#: packageProperties.cpp:99
+msgid "build-time"
+msgstr "paketleme-zamanı"
+
+#: packageProperties.cpp:100
+msgid "build-host"
+msgstr "paketlenen adres"
+
+#: packageProperties.cpp:101
+msgid "base"
+msgstr "temel"
+
+#: packageProperties.cpp:102
+msgid "filename"
+msgstr "isim"
+
+#: packageProperties.cpp:103
+msgid "serial"
+msgstr "seri"
+
+#: packageProperties.cpp:105
+msgid "also in"
+msgstr "ayrıca"
+
+#: packageProperties.cpp:106
+msgid "run depends"
+msgstr "çalışma bağımlı"
+
+#: packageProperties.cpp:107
+msgid "build depends"
+msgstr "paketleme bağımlı"
+
+#: packageProperties.cpp:108
+msgid "available as"
+msgstr "bulunuyor"
+
+#: pkgInterface.cpp:71
+msgid "'Delete this window to continue'"
+msgstr "'Devam etmek için bu pencereyi sil'"
+
+#: pkgInterface.cpp:260
+msgid "Starting Kio"
+msgstr "Kio başlatılıyor"
+
+#: pkgInterface.cpp:265
+msgid "Kio finished"
+msgstr "Kio bitti"
+
+#: pkgInterface.cpp:275
+msgid "Kio failed"
+msgstr "Kio başarısız"
+
+#: pkgInterface.cpp:300
+#, c-format
+msgid "Cannot read folder %1"
+msgstr "%1 dizini okunamıyor"
+
+#: pkgInterface.cpp:330
+msgid "Verifying"
+msgstr "Doğruluyor"
+
+#: pkgOptions.cpp:98
+msgid "Keep this window"
+msgstr "Bu pencereyi tut"
+
+#: pkgOptions.cpp:117
+msgid "PACKAGES"
+msgstr "PAKET"
+
+#: pkgOptions.cpp:205
+msgid ""
+"_n: %1: 1 %2 Package\n"
+"%1: %n %2 Packages"
+msgstr "%1: %n %2 Paket"
+
+#: pkgOptions.cpp:271
+msgid "Done"
+msgstr "Tamamlandı"
+
+#: procbuf.cpp:121
+msgid "Kprocess Failure"
+msgstr "Kprocess Hatası"
+
+#: procbuf.cpp:139
+#, c-format
+msgid "Timeout: %1"
+msgstr "Zaman aşımı: %1"
+
+#: procbuf.cpp:145
+#, c-format
+msgid "Kprocess error:%1"
+msgstr "Kprocess hatası:%1"
+
+#. i18n: file kpackageui.rc line 13
+#: rc.cpp:6
+#, no-c-format
+msgid "&Packages"
+msgstr "&Paket"
+
+#. i18n: file kpackageui.rc line 30
+#: rc.cpp:9
+#, no-c-format
+msgid "&Cache"
+msgstr "&Arabellek"
+
+#. i18n: file kpackageui.rc line 36
+#: rc.cpp:12
+#, no-c-format
+msgid "Spe&cial"
+msgstr "Ö&zel"
+
+#. i18n: file kpackageui.rc line 38
+#: rc.cpp:15
+#, no-c-format
+msgid "&APT: Debian"
+msgstr "&APT: Debian"
+
+#: rpmInterface.cpp:48
+msgid "RPM"
+msgstr "RPM"
+
+#: rpmInterface.cpp:58
+msgid "Location of RPM Package Archives"
+msgstr "RPM Paket Arşivlerinin Yeri"
+
+#: rpmInterface.cpp:59
+msgid ""
+"_: Folder\n"
+"F"
+msgstr "D"
+
+#: rpmInterface.cpp:60
+msgid "Location of Folders Containing RPM Packages"
+msgstr "RPM Paketleri İçeren Dizinlerin Yeri"
+
+#: rpmInterface.cpp:66
+msgid "Upgrade"
+msgstr "Güncelle"
+
+#: rpmInterface.cpp:67
+msgid "Replace Files"
+msgstr "Dosyaları Değiştir"
+
+#: rpmInterface.cpp:68
+msgid "Replace Packages"
+msgstr "Paketleri Değiştir"
+
+#: rpmInterface.cpp:72
+msgid "Remove all versions"
+msgstr "Tüm sürümleri kaldır"
+
+#: rpmInterface.cpp:73
+msgid "Use Scripts"
+msgstr "Betikleri Kullan"
+
+#: rpmInterface.cpp:78
+msgid "Querying RPM package list: "
+msgstr "RPM paket listesi sorgulanıyor: "
+
+#: rpmInterface.cpp:163
+msgid "Querying RPM package list"
+msgstr "RPM paket listesi sorgulanıyor"
+
+#: rpmInterface.cpp:167
+msgid "Processing RPM package list"
+msgstr "RPM paket listesi işleniyor"
+
+#: search.cpp:64
+msgid "Sub string"
+msgstr "Ara kelime"
+
+#: search.cpp:70
+msgid "Wrap search"
+msgstr "Aramayı alta at"
+
+#: search.cpp:106
+msgid "Note"
+msgstr "Not"
+
+#: search.cpp:107
+msgid "%1 was not found."
+msgstr "%1 bulunamadı."
+
+#: slackInterface.cpp:68
+msgid "Slackware"
+msgstr "Slackware"
+
+#: slackInterface.cpp:80 slackInterface.cpp:208 slackInterface.cpp:260
+#: slackInterface.cpp:621
+msgid "Querying SLACK package list: "
+msgstr "SLACK paket listesi sorgulanıyor: "
+
+#: slackInterface.cpp:81
+msgid "KPackage: Waiting on SLACK"
+msgstr "Kpackage: SLACK için bekleniyor"
+
+#: slackInterface.cpp:83
+msgid "Location of Slackware Package Archives"
+msgstr "Slackware Paket Arşivlerinin Yeri"
+
+#: slackInterface.cpp:84
+msgid ""
+"_: Install location\n"
+"I"
+msgstr "K"
+
+#: slackInterface.cpp:86
+msgid "Location of a 'PACKAGES.TXT' File for Extended Information"
+msgstr "Ayrıntılı Bilgi İçin 'PACKAGES.TXT' Dosyasının Yeri"
+
+#: slackInterface.cpp:87
+msgid ""
+"_: Packages file\n"
+"P"
+msgstr "P"
+
+#: slackInterface.cpp:89
+msgid "Location of 'PACKAGES.TXT' File for Slackware Distribution"
+msgstr "Slackware Dağıtımı İçin 'PACKAGES.TXT' Dosyasının Yeri"
+
+#: slackInterface.cpp:90
+msgid "Location of Base Folder of Slackware Distribution"
+msgstr "Slackware Dağıtımı İçin Ana Dizin Yeri"
+
+#: slackInterface.cpp:93
+msgid "Location of Folders Containing Slackware Packages"
+msgstr "Slackware Paketlerini İçeren Dizinin Yeri"
+
+#: slackInterface.cpp:119
+msgid "Base System"
+msgstr "Temel Sistem"
+
+#: slackInterface.cpp:120
+msgid "Linux Applications"
+msgstr "Linux Uygulamaları"
+
+#: slackInterface.cpp:121
+msgid "Program Development"
+msgstr "Program Geliştirme"
+
+#: slackInterface.cpp:122
+msgid "GNU EMacs"
+msgstr "GNU EMacs"
+
+#: slackInterface.cpp:123
+msgid "FAQs"
+msgstr "SSS"
+
+#: slackInterface.cpp:124
+msgid "Kernel Source"
+msgstr "Çekirdek Kaynak Kodu"
+
+#: slackInterface.cpp:125
+msgid "Networking"
+msgstr "Ağ"
+
+#: slackInterface.cpp:126
+msgid "TeX Distribution"
+msgstr "TeX Dağıtımları"
+
+#: slackInterface.cpp:127
+msgid "TCL Script Language"
+msgstr "TCL Betik Dili"
+
+#: slackInterface.cpp:128
+msgid "X Window System"
+msgstr "X Wİndows Sistemi"
+
+#: slackInterface.cpp:129
+msgid "X Applications"
+msgstr "X Uygulamaları"
+
+#: slackInterface.cpp:130
+msgid "X Development Tools"
+msgstr "X Geliştirme Araçları"
+
+#: slackInterface.cpp:131
+msgid "XView and OpenLook"
+msgstr "XView ve OpenLook"
+
+#: slackInterface.cpp:132
+msgid "Games"
+msgstr "Oyunlar"
+
+#: updateLoc.cpp:51 updateLoc.cpp:134
+msgid "Use"
+msgstr "Kullan"
+
+#: updateLoc.cpp:142
+msgid "Subfolders"
+msgstr "Alt dizinler"
+
+#: updateLoc.cpp:224
+msgid "Package File"
+msgstr "Paket Dosyası"
+
+#: updateLoc.cpp:243
+msgid "Package Archive"
+msgstr "Paket Arşivi"
+
+#: updateLoc.cpp:344
+msgid "File truncated..."
+msgstr "Dosya kısaltıldı..."

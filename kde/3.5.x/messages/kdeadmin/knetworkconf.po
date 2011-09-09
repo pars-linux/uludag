@@ -1,0 +1,1005 @@
+# translation of knetworkconf.po to
+# Görkem Çetin <gorkem@gorkemcetin.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: knetworkconf\n"
+"POT-Creation-Date: 2008-07-08 01:20+0200\n"
+"PO-Revision-Date: 2005-08-28 11:12+0300\n"
+"Last-Translator: Görkem Çetin <gorkem@gorkemcetin.com>\n"
+"Language-Team:  <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.2\n"
+
+#: kadddevicecontainer.cpp:129 kadddnsserverdlg.ui.h:42
+#: kaddknownhostdlg.ui.h:25
+msgid "The format of the specified IP address is not valid."
+msgstr ""
+
+#: kadddevicecontainer.cpp:129 kadddevicecontainer.cpp:132
+#: kadddevicecontainer.cpp:135 kadddevicecontainer.cpp:138
+#: kadddnsserverdlg.ui.h:42 kaddknownhostdlg.ui.h:25 knetworkconf.cpp:589
+msgid "Invalid IP Address"
+msgstr ""
+
+#: kadddnsserverdlg.ui.h:54
+msgid "You have to type an alias first."
+msgstr ""
+
+#: kadddnsserverdlg.ui.h:54
+msgid "Invalid Text"
+msgstr ""
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr ""
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr ""
+
+#: kaddknownhostdlg.ui.h:29
+msgid "You must add at least one alias for the specified IP address."
+msgstr ""
+
+#: kaddknownhostdlg.ui.h:29
+msgid "Insufficient Aliases"
+msgstr ""
+
+#: kaddknownhostdlg.ui.h:63
+msgid "Edit Alias"
+msgstr ""
+
+#: kaddknownhostdlg.ui.h:64 kaddknownhostdlg.ui.h:92
+msgid "Alias:"
+msgstr ""
+
+#: kaddknownhostdlg.ui.h:91
+msgid "Add New Alias"
+msgstr ""
+
+#: knetworkconf.cpp:66
+msgid "Could not load network configuration information."
+msgstr ""
+
+#: knetworkconf.cpp:67
+msgid "Error Reading Configuration File"
+msgstr ""
+
+#: knetworkconf.cpp:118 knetworkconf.cpp:755
+msgid "Enabled"
+msgstr ""
+
+#: knetworkconf.cpp:128 knetworkconf.cpp:769
+msgid "Disabled"
+msgstr ""
+
+#: knetworkconf.cpp:137 knetworkconf.cpp:304
+msgid "Manual"
+msgstr ""
+
+#: knetworkconf.cpp:158
+msgid ""
+"The new configuration has not been saved.\n"
+"Do you want to apply changes before quitting?"
+msgstr ""
+
+#: knetworkconf.cpp:159 knetworkconf.cpp:830 knetworkconf.cpp:849
+msgid "New Configuration Not Saved"
+msgstr ""
+
+#: knetworkconf.cpp:206
+msgid "Edit Server"
+msgstr ""
+
+#: knetworkconf.cpp:233
+#, c-format
+msgid "Configure Device %1"
+msgstr ""
+
+#: knetworkconf.cpp:442
+msgid "Could not open file '/etc/resolv.conf' for reading."
+msgstr ""
+
+#: knetworkconf.cpp:443
+msgid "Error Loading Config Files"
+msgstr ""
+
+#: knetworkconf.cpp:589
+msgid "The default Gateway IP address is invalid."
+msgstr ""
+
+#: knetworkconf.cpp:680
+msgid "Enabling interface <b>%1</b>"
+msgstr ""
+
+#: knetworkconf.cpp:682
+msgid "Disabling interface <b>%1</b>"
+msgstr ""
+
+#: knetworkconf.cpp:716
+msgid ""
+"Could not launch backend to change network device state. You will have to do it "
+"manually."
+msgstr ""
+
+#: knetworkconf.cpp:737
+msgid ""
+"There was an error changing the device's state. You will have to do it "
+"manually."
+msgstr ""
+
+#: knetworkconf.cpp:738
+msgid "Could Not Change Device State"
+msgstr ""
+
+#: knetworkconf.cpp:829 knetworkconf.cpp:848
+msgid ""
+"The new configuration has not been saved.\n"
+"Apply changes?"
+msgstr ""
+
+#. i18n: file kaddknownhostdlg.ui line 16
+#: knetworkconf.cpp:866 rc.cpp:199
+#, no-c-format
+msgid "Add New Static Host"
+msgstr ""
+
+#: knetworkconf.cpp:899
+msgid "Edit Static Host"
+msgstr ""
+
+#: knetworkconf.cpp:1034
+msgid "Could not load the selected Network Profile."
+msgstr ""
+
+#: knetworkconf.cpp:1035
+msgid "Error Reading Profile"
+msgstr ""
+
+#: knetworkconf.cpp:1058
+msgid "Create New Network Profile"
+msgstr ""
+
+#: knetworkconf.cpp:1059
+msgid "Name of new profile:"
+msgstr ""
+
+#: knetworkconf.cpp:1088
+msgid "There is already another profile with that name."
+msgstr ""
+
+#: kadddevicecontainer.cpp:53
+msgid "&Advanced Settings"
+msgstr ""
+
+#: kadddevicecontainer.cpp:54 kadddevicecontainer.cpp:55
+msgid "Toggle between advanced and basic settings"
+msgstr ""
+
+#: kadddevicecontainer.cpp:57
+msgid "Apply changes"
+msgstr ""
+
+#: kadddevicecontainer.cpp:59
+msgid "Forget changes"
+msgstr ""
+
+#: kadddevicecontainer.cpp:132
+msgid "The format of the specified netmask is not valid."
+msgstr ""
+
+#: kadddevicecontainer.cpp:135
+msgid "The format of the specified broadcast is not valid."
+msgstr ""
+
+#: kadddevicecontainer.cpp:138
+msgid "The format of the specified Gateway is not valid."
+msgstr ""
+
+#: kadddevicecontainer.cpp:174
+msgid "Basic Settings"
+msgstr ""
+
+#: kadddevicecontainer.cpp:179
+msgid "Advanced Settings"
+msgstr ""
+
+#: kprofileslistviewtooltip.h:84
+msgid "<b>Network Configuration of this Profile:</b>"
+msgstr ""
+
+#: kprofileslistviewtooltip.h:94
+#, c-format
+msgid "<p><b>Interface:</b> %1"
+msgstr ""
+
+#: kprofileslistviewtooltip.h:95
+#, c-format
+msgid "<br><b>Type:</b> %1"
+msgstr ""
+
+#: kprofileslistviewtooltip.h:101
+#, c-format
+msgid "<br><b>Boot Protocol:</b> %1"
+msgstr ""
+
+#: kprofileslistviewtooltip.h:104
+#, c-format
+msgid "<br><b>IP Address:</b>   %1"
+msgstr ""
+
+#: kprofileslistviewtooltip.h:105
+#, c-format
+msgid "<br><b>Broadcast Address:</b> %1"
+msgstr ""
+
+#: kprofileslistviewtooltip.h:107
+#, c-format
+msgid "<br><b>On Boot:</b> %1"
+msgstr ""
+
+#: kprofileslistviewtooltip.h:111
+#, c-format
+msgid "</p><p><b>Default Gateway:</b>   %1"
+msgstr ""
+
+#: kprofileslistviewtooltip.h:113
+#, c-format
+msgid "<br><b>Domain Name:</b> %1"
+msgstr ""
+
+#: kprofileslistviewtooltip.h:114
+#, c-format
+msgid "<br><b>Machine Name:</b> %1"
+msgstr ""
+
+#: kprofileslistviewtooltip.h:118
+#, c-format
+msgid "<br><b>DNS Name Server:</b> %1"
+msgstr ""
+
+#. i18n: file kadddevicedlg.ui line 44
+#: rc.cpp:3
+#, no-c-format
+msgid "Configure Interface"
+msgstr ""
+
+#. i18n: file kadddevicedlg.ui line 64
+#: rc.cpp:6
+#, no-c-format
+msgid "TCP/IP Address"
+msgstr ""
+
+#. i18n: file kadddevicedlg.ui line 93
+#: rc.cpp:9
+#, no-c-format
+msgid "dhcp"
+msgstr ""
+
+#. i18n: file kadddevicedlg.ui line 98
+#: rc.cpp:12
+#, no-c-format
+msgid "bootp"
+msgstr ""
+
+#. i18n: file kadddevicedlg.ui line 105
+#: rc.cpp:15 rc.cpp:18
+#, no-c-format
+msgid "The boot protocol this network device should use"
+msgstr ""
+
+#. i18n: file kadddevicedlg.ui line 133
+#: rc.cpp:21
+#, no-c-format
+msgid "Manual:"
+msgstr ""
+
+#. i18n: file kadddevicedlg.ui line 136
+#: rc.cpp:24
+#, no-c-format
+msgid "Use a static IP address. Use the fields below to enter the values"
+msgstr ""
+
+#. i18n: file kadddevicedlg.ui line 140
+#: rc.cpp:27
+#, no-c-format
+msgid ""
+"<p>Sets this interface to use static IP settings.</p>\n"
+"<p>In this case, please use the fields below to enter the desired values "
+"manually.</p>"
+msgstr ""
+
+#. i18n: file kadddevicedlg.ui line 148
+#: rc.cpp:31
+#, no-c-format
+msgid "Automatic:"
+msgstr ""
+
+#. i18n: file kadddevicedlg.ui line 151
+#: rc.cpp:34
+#, no-c-format
+msgid "Use a dynamic IP address"
+msgstr ""
+
+#. i18n: file kadddevicedlg.ui line 156
+#: rc.cpp:37
+#, no-c-format
+msgid ""
+"<p>Using an dynamic IP address causes this device to get a free IP address "
+"automatically.</p>\n"
+"<p>The interface will try to contact an DHCP- or BOOTP-Server during the boot "
+"process.</p>\n"
+"<p>Rendevouz is not supported yet.</p>"
+msgstr ""
+
+#. i18n: file kadddevicedlg.ui line 184
+#: rc.cpp:42
+#, no-c-format
+msgid "Activate when the computer starts"
+msgstr ""
+
+#. i18n: file kadddevicedlg.ui line 187
+#: rc.cpp:45
+#, no-c-format
+msgid "Ensures that this interface gets activated during boot time"
+msgstr ""
+
+#. i18n: file kadddevicedlg.ui line 191
+#: rc.cpp:48
+#, no-c-format
+msgid ""
+"<p>Ensures that this interface gets activated during boot time.</p>\n"
+"<p>Otherwise, you will have to active the interface manually after you have "
+"logged in after the boot process.</p>"
+msgstr ""
+
+#. i18n: file kadddevicedlg.ui line 197
+#: rc.cpp:52
+#, no-c-format
+msgid "255.255.255.0"
+msgstr ""
+
+#. i18n: file kadddevicedlg.ui line 202
+#: rc.cpp:55
+#, no-c-format
+msgid "255.255.0.0"
+msgstr ""
+
+#. i18n: file kadddevicedlg.ui line 207
+#: rc.cpp:58
+#, no-c-format
+msgid "255.0.0.0"
+msgstr ""
+
+#. i18n: file kadddevicedlg.ui line 212
+#: rc.cpp:61
+#, no-c-format
+msgid "255.255.255.128"
+msgstr ""
+
+#. i18n: file kadddevicedlg.ui line 217
+#: rc.cpp:64
+#, no-c-format
+msgid "255.255.255.192"
+msgstr ""
+
+#. i18n: file kadddevicedlg.ui line 222
+#: rc.cpp:67
+#, no-c-format
+msgid "255.255.255.240"
+msgstr ""
+
+#. i18n: file kadddevicedlg.ui line 227
+#: rc.cpp:70
+#, no-c-format
+msgid "255.255.255.248"
+msgstr ""
+
+#. i18n: file kadddevicedlg.ui line 237
+#: rc.cpp:73
+#, no-c-format
+msgid "Subnetmask of the network device"
+msgstr ""
+
+#. i18n: file kadddevicedlg.ui line 242
+#: rc.cpp:76
+#, no-c-format
+msgid ""
+"<p>Please enter the desired subnetmask for the interface here.</p>\n"
+"<p>For small private networks, 255.255.255.0 will most often be a reasonable "
+"default value.</p>\n"
+"<p>This field will change from a popup box to a combo box as soon as you enable "
+"the advanced settings below.</p>"
+msgstr ""
+
+#. i18n: file kadddevicedlg.ui line 284
+#: rc.cpp:81
+#, no-c-format
+msgid "Netmask:"
+msgstr ""
+
+#. i18n: file kadddevicedlg.ui line 287
+#: rc.cpp:84 rc.cpp:87
+#, no-c-format
+msgid ""
+"The netmask defines a range of IP numbers which will build a subnet inside the "
+"network."
+msgstr ""
+
+#. i18n: file kadddevicedlg.ui line 301
+#: rc.cpp:90
+#, no-c-format
+msgid "IP address for the network device"
+msgstr ""
+
+#. i18n: file kadddevicedlg.ui line 311
+#: rc.cpp:93
+#, no-c-format
+msgid ""
+"<p>Here you should enter the IP address for the network interface.</p>\n"
+"<p>Please note: If your network is connected to the internet, you should only "
+"enter IP addresses you have been given by your provider.</p>\n"
+"<p>Otherwise, you should enter one of the IP addresses which are explicitly "
+"reserved for private use.</p>\n"
+"<p>Most small private networks use class C networks, which allow up to 255 "
+"computers in your network. So simply use addresses like 192.168.1.1, "
+"192.168.1.2, 192.168.1.171 and so on for your computers.</p>\n"
+"<p>Cass C networks: 192.168.0.0 to 192.168.255.25, for example 192.168.0.13.</p>"
+"\n"
+"<p>Class B networks: 172.16.0.0 to 172.31.255.255, for example 172.28.2.5</p>\n"
+"<p>Class A networks: 10.0.0.0 to 10.255.255.255, for example 10.5.12.14</p>\n"
+"<p>Please ensure that all IP addresses you give to your computers are unique; "
+"you will have many problems if the same address is assigned to more than one "
+"network device.</p>"
+msgstr ""
+
+#. i18n: file kadddevicedlg.ui line 336
+#: rc.cpp:103 rc.cpp:184 rc.cpp:202 rc.cpp:286
+#, no-c-format
+msgid "IP address:"
+msgstr ""
+
+#. i18n: file kadddevicedlg.ui line 339
+#: rc.cpp:106 rc.cpp:109 rc.cpp:142 rc.cpp:145
+#, no-c-format
+msgid ""
+"An IP address is an unique identifier of a networking device in an TCP/IP "
+"network"
+msgstr ""
+
+#. i18n: file kadddevicedlgextension.ui line 16
+#: rc.cpp:112
+#, no-c-format
+msgid "Advanced Options"
+msgstr ""
+
+#. i18n: file kadddevicedlgextension.ui line 27
+#: rc.cpp:115
+#, no-c-format
+msgid "Advanced Device Information"
+msgstr ""
+
+#. i18n: file kadddevicedlgextension.ui line 30
+#: rc.cpp:118
+#, no-c-format
+msgid "Set advanced setting for the network device"
+msgstr ""
+
+#. i18n: file kadddevicedlgextension.ui line 41
+#: rc.cpp:121
+#, no-c-format
+msgid "Description:"
+msgstr ""
+
+#. i18n: file kadddevicedlgextension.ui line 44
+#: rc.cpp:124 rc.cpp:133
+#, no-c-format
+msgid "IP address of the network device"
+msgstr ""
+
+#. i18n: file kadddevicedlgextension.ui line 55
+#: rc.cpp:127 rc.cpp:130
+#, no-c-format
+msgid "Simply enter a short human-readable description for this device"
+msgstr ""
+
+#. i18n: file kadddevicedlgextension.ui line 72
+#: rc.cpp:136
+#, no-c-format
+msgid ""
+"The Broadcast is a special address. All devices of a network respond if "
+"packages are sent to this address."
+msgstr ""
+
+#. i18n: file kadddevicedlgextension.ui line 80
+#: rc.cpp:139
+#, no-c-format
+msgid "Gateway:"
+msgstr ""
+
+#. i18n: file kadddevicedlgextension.ui line 100
+#: rc.cpp:148
+#, no-c-format
+msgid "Default gateway for the network device"
+msgstr ""
+
+#. i18n: file kadddevicedlgextension.ui line 103
+#: rc.cpp:151
+#, no-c-format
+msgid ""
+"<p>Here you should enter the default gateway for the network device.</p>"
+msgstr ""
+
+#. i18n: file kadddevicedlgextension.ui line 111
+#: rc.cpp:154
+#, no-c-format
+msgid "Broadcast:"
+msgstr ""
+
+#. i18n: file kadddevicewifiext.ui line 18
+#: rc.cpp:157 rc.cpp:160
+#, no-c-format
+msgid "Wireless Settings"
+msgstr ""
+
+#. i18n: file kadddevicewifiext.ui line 43
+#: rc.cpp:163
+#, no-c-format
+msgid "WEP key:"
+msgstr ""
+
+#. i18n: file kadddevicewifiext.ui line 61
+#: rc.cpp:166
+#, no-c-format
+msgid "ESSID:"
+msgstr ""
+
+#. i18n: file kadddevicewifiext.ui line 69
+#: rc.cpp:169
+#, no-c-format
+msgid "Key type:"
+msgstr ""
+
+#. i18n: file kadddevicewifiext.ui line 75
+#: rc.cpp:172
+#, no-c-format
+msgid "ASCII"
+msgstr ""
+
+#. i18n: file kadddevicewifiext.ui line 80
+#: rc.cpp:175
+#, no-c-format
+msgid "Hexadecimal"
+msgstr ""
+
+#. i18n: file kadddnsserverdlg.ui line 28
+#: rc.cpp:178
+#, no-c-format
+msgid "Add New DNS Server"
+msgstr ""
+
+#. i18n: file kadddnsserverdlg.ui line 59
+#: rc.cpp:181
+#, no-c-format
+msgid "IP address of the new DNS server"
+msgstr ""
+
+#. i18n: file kadddnsserverdlg.ui line 92
+#: rc.cpp:187
+#, no-c-format
+msgid "&Add"
+msgstr ""
+
+#. i18n: file kadddnsserverdlg.ui line 95
+#: rc.cpp:190
+#, no-c-format
+msgid "Add the server to the list"
+msgstr ""
+
+#. i18n: file kadddnsserverdlg.ui line 106
+#: rc.cpp:196
+#, no-c-format
+msgid "Forget it"
+msgstr ""
+
+#. i18n: file kaddknownhostdlg.ui line 154
+#: rc.cpp:211 rc.cpp:325
+#, no-c-format
+msgid "Aliases"
+msgstr ""
+
+#. i18n: file kaddknownhostdlg.ui line 184
+#: rc.cpp:214 rc.cpp:310 rc.cpp:328
+#, no-c-format
+msgid "&Add..."
+msgstr ""
+
+#. i18n: file kaddknownhostdlg.ui line 201
+#: rc.cpp:217 rc.cpp:313 rc.cpp:331
+#, no-c-format
+msgid "&Edit..."
+msgstr ""
+
+#. i18n: file kdetectdistrodlg.ui line 16
+#: rc.cpp:223
+#, no-c-format
+msgid "Detecting Your Current Platform"
+msgstr ""
+
+#. i18n: file kdetectdistrodlg.ui line 60
+#: rc.cpp:226
+#, no-c-format
+msgid "Please wait while detecting your current platform..."
+msgstr ""
+
+#. i18n: file kinterfaceupdowndlg.ui line 16
+#: rc.cpp:229
+#, no-c-format
+msgid "Changing Interface State"
+msgstr ""
+
+#. i18n: file kinterfaceupdowndlg.ui line 64
+#: rc.cpp:232
+#, no-c-format
+msgid "Bringing up interface <b>eth0</b>..."
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 36
+#: rc.cpp:235
+#, no-c-format
+msgid "Network Settings"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 42
+#: rc.cpp:238
+#, no-c-format
+msgid "Configure your TCP/IP settings"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 45
+#: rc.cpp:241
+#, no-c-format
+msgid "Change TCP/IP settings"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 66
+#: rc.cpp:244
+#, no-c-format
+msgid "Network Interfaces"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 85
+#: rc.cpp:247
+#, no-c-format
+msgid "Available Network Interfaces"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 110
+#: rc.cpp:250
+#, no-c-format
+msgid "Interface"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 121
+#: rc.cpp:253 rc.cpp:322
+#, no-c-format
+msgid "IP Address"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 132
+#: rc.cpp:256
+#, no-c-format
+msgid "Protocol"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 143
+#: rc.cpp:259
+#, no-c-format
+msgid "State"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 154
+#: rc.cpp:262
+#, no-c-format
+msgid "Comment"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 175
+#: rc.cpp:265
+#, no-c-format
+msgid "List of configured network devices"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 194
+#: rc.cpp:268
+#, no-c-format
+msgid "Configure Interface..."
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 197
+#: rc.cpp:271
+#, no-c-format
+msgid "Change the settings of the selected device"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 208
+#: rc.cpp:274
+#, no-c-format
+msgid "Enable Interface"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 219
+#: rc.cpp:277
+#, no-c-format
+msgid "Disable Interface"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 248
+#: rc.cpp:280
+#, no-c-format
+msgid "Routes"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 265
+#: rc.cpp:283
+#, no-c-format
+msgid "Default Gateway"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 348
+#: rc.cpp:289
+#, no-c-format
+msgid "Default Gateway IP address"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 373
+#: rc.cpp:292
+#, no-c-format
+msgid "Device:"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 401
+#: rc.cpp:295
+#, no-c-format
+msgid "Network device where to send packets"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 432
+#: rc.cpp:298
+#, no-c-format
+msgid "Domain Name System"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 443
+#: rc.cpp:301
+#, no-c-format
+msgid "Domain Name Servers"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 499
+#: rc.cpp:304
+#, no-c-format
+msgid "Move up the selected server on the list (higher priority)"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 513
+#: rc.cpp:307
+#, no-c-format
+msgid "Move down the selected server on the list (less priority)"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 637
+#: rc.cpp:319
+#, no-c-format
+msgid "Static Hosts"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 738
+#: rc.cpp:337
+#, no-c-format
+msgid "Host name:"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 762
+#: rc.cpp:340
+#, no-c-format
+msgid "Domain name:"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 772
+#: rc.cpp:343
+#, no-c-format
+msgid "Network Profiles"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 783
+#: rc.cpp:346
+#, no-c-format
+msgid "Available Network Profiles"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 792
+#: rc.cpp:349
+#, no-c-format
+msgid "Name"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 821
+#: rc.cpp:352
+#, no-c-format
+msgid "&Load Selected"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 829
+#: rc.cpp:355
+#, no-c-format
+msgid "&Save Selected"
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 837
+#: rc.cpp:358
+#, no-c-format
+msgid "&Create New..."
+msgstr ""
+
+#. i18n: file knetworkconfdlg.ui line 845
+#: rc.cpp:361
+#, no-c-format
+msgid "&Delete Selected"
+msgstr ""
+
+#. i18n: file kreloadnetworkdlg.ui line 28
+#: knetworkconfigparser.cpp:303 rc.cpp:364
+#, no-c-format
+msgid "Reloading Network"
+msgstr ""
+
+#. i18n: file kreloadnetworkdlg.ui line 112
+#: rc.cpp:370
+#, no-c-format
+msgid ""
+"Please wait while the network is reloaded so\n"
+"the changes can take effect."
+msgstr ""
+
+#. i18n: file kselectdistrodlg.ui line 16
+#: rc.cpp:374
+#, no-c-format
+msgid "Unsupported Platform"
+msgstr ""
+
+#. i18n: file kselectdistrodlg.ui line 69
+#: rc.cpp:383
+#, no-c-format
+msgid "Do not ask again"
+msgstr ""
+
+#. i18n: file kselectdistrodlg.ui line 94
+#: rc.cpp:386
+#, no-c-format
+msgid ""
+"<font size=\"+1\"><p align=\"center\"><b>Your Platform is Not Supported</b></p>"
+"</font>"
+msgstr ""
+
+#. i18n: file kselectdistrodlg.ui line 102
+#: rc.cpp:389
+#, no-c-format
+msgid ""
+"You may choose one of the following supported platforms if you are <b>sure</b> "
+"your platform behaves the same as the chosen one. Please be sure, because your "
+"current network configuration could be damaged."
+msgstr ""
+
+#: knetworkconfmodule.cpp:94
+msgid "KNetworkConf"
+msgstr ""
+
+#: knetworkconfmodule.cpp:97
+msgid "Lead Developer"
+msgstr ""
+
+#: knetworkconfmodule.cpp:99
+msgid "Provided the Network backend which KNetworkConf relies on."
+msgstr ""
+
+#: knetworkconfmodule.cpp:101
+msgid "Conectiva Linux Support"
+msgstr ""
+
+#: knetworkconfmodule.cpp:103
+msgid "Documentation maintainer, and German translator"
+msgstr ""
+
+#: knetworkconfmodule.cpp:105
+msgid "Various bugfixes and features"
+msgstr ""
+
+#: knetworkconfmodule.cpp:107
+msgid "Various bugfixes and Brazilian Portuguese translator"
+msgstr ""
+
+#: knetworkconfmodule.cpp:113
+msgid ""
+"%1Network configuration%2This module allows you to configure your TCP/IP "
+"settings.%3"
+msgstr ""
+
+#: knetworkconfigparser.cpp:41
+msgid ""
+"Could not find the backend script for the network configuration detection. "
+"Something is wrong with your installation.\n"
+" Please check that  \n"
+"{KDE_PATH}/%1 \n"
+"file is present."
+msgstr ""
+
+#: knetworkconfigparser.cpp:42
+msgid "Could Not Find Network Configuration Backend Script"
+msgstr ""
+
+#: knetworkconfigparser.cpp:65 knetworkconfigparser.cpp:95
+#: knetworkconfigparser.cpp:320 knetworkconfigparser.cpp:1016
+msgid ""
+"Could not execute backend script for the network configuration detection. "
+"Something is wrong with your installation."
+msgstr ""
+
+#: knetworkconfigparser.cpp:66 knetworkconfigparser.cpp:96
+#: knetworkconfigparser.cpp:321 knetworkconfigparser.cpp:1017
+msgid "Could Not Launch Network Configuration Backend Script"
+msgstr ""
+
+#: knetworkconfigparser.cpp:113 knetworkconfigparser.cpp:837
+msgid "Could not parse the XML output from the network configuration backend."
+msgstr ""
+
+#: knetworkconfigparser.cpp:114
+msgid "Error While Listing Network Interfaces"
+msgstr ""
+
+#: knetworkconfigparser.cpp:191
+msgid "Could not open file /proc/net/route."
+msgstr ""
+
+#: knetworkconfigparser.cpp:192
+msgid "Could Not Open File"
+msgstr ""
+
+#: knetworkconfigparser.cpp:304
+msgid "%1Please wait while saving the network settings...%2"
+msgstr ""
+
+#: knetworkconfigparser.cpp:762
+msgid "Ethernet Network Device"
+msgstr ""
+
+#: knetworkconfigparser.cpp:764
+msgid "Wireless Network Device"
+msgstr ""
+
+#: knetworkconfigparser.cpp:838
+msgid "Error Loading The Network Configuration"
+msgstr ""
+
+#: knetworkconfigparser.cpp:1030
+msgid ""
+"Could not parse the list of supported platforms from the network configuration "
+"backend."
+msgstr ""
+
+#: knetworkconfigparser.cpp:1031
+msgid "Error Obtaining Supported Platforms List"
+msgstr ""
+
+#: version.h:5
+msgid ""
+"KNetworkConf - A KDE Control Center module to configure TCP/IP settings."
+msgstr ""

@@ -1,0 +1,895 @@
+# translation of klatin.po to Türkçe
+# translation of klatin.po to Turkish
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Engin Çağatay <engincagatay@yahoo.com>, 2004, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: klatin\n"
+"POT-Creation-Date: 2008-07-08 01:24+0200\n"
+"PO-Revision-Date: 2005-07-16 01:10+0300\n"
+"Last-Translator: Engin Çağatay <engincagatay@yahoo.com>\n"
+"Language-Team: Türkçe <yerelleştirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Engin Çağatay"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "engincagatay@yahoo.com"
+
+#: klatin.cpp:57
+msgid "Load &Vocabulary"
+msgstr "&Sözlüğü Yükle"
+
+#: klatin.cpp:58
+msgid "Load &Grammar"
+msgstr "&Dilbilgisini Yükle"
+
+#: klatin.cpp:59
+msgid "Load V&erbs"
+msgstr "&Fiilleri Yükle"
+
+#: klatin.cpp:60
+msgid "Load &Revision"
+msgstr "Gözden Geçi&rme Yükle"
+
+#: klatin.cpp:85 klatin.cpp:205
+msgid "Ready"
+msgstr "Hazır"
+
+#: klatin.cpp:107 klatingrammar.cpp:144
+msgid "Grammar"
+msgstr "Dilbilgisi"
+
+#: klatin.cpp:135 klatinverbs.cpp:127
+msgid "Verbs"
+msgstr "Fiiller"
+
+#: klatin.cpp:167
+msgid "Load Vocabulary File"
+msgstr "Sözlük Dosyası Yükle"
+
+#: klatin.cpp:168
+msgid "Vocabulary"
+msgstr "Sözlük"
+
+#: klatingrammar.cpp:51
+msgid "All Declensions"
+msgstr ""
+
+#: klatingrammar.cpp:52
+msgid "1st Feminine"
+msgstr ""
+
+#: klatingrammar.cpp:53
+msgid "2nd Masculine"
+msgstr ""
+
+#: klatingrammar.cpp:54
+msgid "2nd Neuter"
+msgstr ""
+
+#: klatingrammar.cpp:55
+msgid "3rd Masc/Fem"
+msgstr ""
+
+#: klatingrammar.cpp:56
+msgid "3rd Neuter"
+msgstr ""
+
+#: klatingrammar.cpp:57
+msgid "4th Masc/Fem"
+msgstr ""
+
+#: klatingrammar.cpp:58
+msgid "4th Neuter"
+msgstr ""
+
+#: klatingrammar.cpp:59
+msgid "5th Feminine"
+msgstr ""
+
+#: klatingrammar.cpp:119
+msgid "Could not load grammar-definition file, check KLatin installation."
+msgstr ""
+"Dilbilgisi tanımlama dosyası yüklenemedi, KLatin kurulumunuzu kontrol edin."
+
+#: klatingrammar.cpp:119 klatinverbs.cpp:109 klatinvocab.cpp:110
+msgid "Error with KLatin"
+msgstr "KLatin'de hata"
+
+#: klatingrammar.cpp:120
+msgid "Error."
+msgstr "Hata."
+
+#: klatingrammar.cpp:156
+msgid "What is the nominative singular of %1?"
+msgstr ""
+
+#: klatingrammar.cpp:159
+msgid "What is the vocative singular of %1?"
+msgstr ""
+
+#: klatingrammar.cpp:162
+msgid "What is the accusative singular of %1?"
+msgstr ""
+
+#: klatingrammar.cpp:165
+msgid "What is the genitive singular of %1?"
+msgstr ""
+
+#: klatingrammar.cpp:168
+msgid "What is the dative singular of %1?"
+msgstr ""
+
+#: klatingrammar.cpp:171
+msgid "What is the ablative singular of %1?"
+msgstr ""
+
+#: klatingrammar.cpp:174
+msgid "What is the nominative plural of %1?"
+msgstr ""
+
+#: klatingrammar.cpp:177
+msgid "What is the vocative plural of %1?"
+msgstr ""
+
+#: klatingrammar.cpp:180
+msgid "What is the accusative plural of %1?"
+msgstr ""
+
+#: klatingrammar.cpp:183
+msgid "What is the genitive plural of %1?"
+msgstr ""
+
+#: klatingrammar.cpp:186
+msgid "What is the dative plural of %1?"
+msgstr ""
+
+#: klatingrammar.cpp:189
+msgid "What is the ablative plural of %1?"
+msgstr ""
+
+#: klatingrammar.cpp:205 klatinverbs.cpp:229
+#, c-format
+msgid "The correct answer was %1."
+msgstr "Doğru yanıt: %1."
+
+#: klatingrammar.cpp:205 klatinverbs.cpp:229
+msgid "Wrong"
+msgstr "Yanlış"
+
+#: klatingrammar.cpp:212 klatinverbs.cpp:218
+msgid "Please enter an answer"
+msgstr ""
+
+#: klatinverbs.cpp:40
+msgid "1st"
+msgstr "1'inci"
+
+#: klatinverbs.cpp:41
+msgid "2nd"
+msgstr "2'nci"
+
+#: klatinverbs.cpp:42
+msgid "3rd"
+msgstr "3'üncü"
+
+#: klatinverbs.cpp:43
+msgid "4th"
+msgstr "4'üncü"
+
+#: klatinverbs.cpp:46 klatinverbs.cpp:132 klatinverbs.cpp:173
+#: klatinverbs.cpp:179 klatinverbs.cpp:185
+msgid "Indicative"
+msgstr ""
+
+#: klatinverbs.cpp:47 klatinverbs.cpp:134
+msgid "Subjunctive"
+msgstr ""
+
+#: klatinverbs.cpp:49
+msgid "Active"
+msgstr ""
+
+#: klatinverbs.cpp:50 klatinverbs.cpp:253
+msgid "Passive"
+msgstr ""
+
+#: klatinverbs.cpp:64
+msgid "indicative"
+msgstr ""
+
+#: klatinverbs.cpp:65
+msgid "subjunctive"
+msgstr ""
+
+#: klatinverbs.cpp:67
+msgid "active"
+msgstr ""
+
+#: klatinverbs.cpp:68
+msgid "passive"
+msgstr ""
+
+#: klatinverbs.cpp:70
+msgid "first"
+msgstr "birinci"
+
+#: klatinverbs.cpp:71
+msgid "second"
+msgstr "ikinci"
+
+#: klatinverbs.cpp:72
+msgid "third"
+msgstr "üçüncü"
+
+#: klatinverbs.cpp:74
+msgid "singular"
+msgstr "tekil"
+
+#: klatinverbs.cpp:75
+msgid "plural"
+msgstr "çoğul"
+
+#: klatinverbs.cpp:77
+msgid "present"
+msgstr ""
+
+#: klatinverbs.cpp:78
+msgid "future"
+msgstr ""
+
+#: klatinverbs.cpp:79
+msgid "imperfect"
+msgstr ""
+
+#: klatinverbs.cpp:80
+msgid "perfect"
+msgstr ""
+
+#: klatinverbs.cpp:81
+msgid "pluperfect"
+msgstr ""
+
+#: klatinverbs.cpp:82
+msgid "future perfect"
+msgstr ""
+
+#: klatinverbs.cpp:109
+msgid "Could not load verb-definition file, check KLatin installation."
+msgstr "Fiil tanımlama dosyası yüklenemedi, KLatin kurulumunuzu kontrol edin."
+
+#: klatinverbs.cpp:205
+msgid ""
+"_: Note: ARGUMENT %1 is an ordinal number (1st, 2nd, 3rd). ARGUMENT %2 "
+"indicates whether the person is singular or plural. ARGUMENT %3 is the tense of "
+"the verb (Present, Imperfect, Perfect). ARGUMENT %4 is the mood of the verb "
+"(Indicative, Subjunctive). ARGUMENT %5 is the voice of the verb (Active, "
+"Passive). ARGUMENT %6 is the verb name (amo, moneo etc). This is in Latin and "
+"should not be translated. The output string in English is something like: What "
+"is the first person singular present indicative active of amo?\n"
+"What is the %1 person %2 %3 %4 %5 of %6?"
+msgstr ""
+
+#: klatinvocab.cpp:110
+msgid ""
+"Could not load vocabulary file; there is a problem with your KLatin "
+"installation."
+msgstr "Sözlük dosyası yüklenemedi, KLatin kurulumunuzla ilgili bir hata var."
+
+#: main.cpp:23
+msgid "KLatin - a program to help revise Latin"
+msgstr "KLatin - Latince çalışmalarınız için bir uygulama"
+
+#. i18n: file klatingrammarwidget.ui line 22
+#: main.cpp:35 rc.cpp:68 rc.cpp:230 rc.cpp:308
+#, no-c-format
+msgid "KLatin"
+msgstr "KLatin"
+
+#: main.cpp:39
+msgid "Author and Maintainer"
+msgstr "Yazar ve Sağlayıcı"
+
+#: main.cpp:40
+msgid "Bug fixes, documentation"
+msgstr "Hata düzeltmeleri, belgelendirme"
+
+#: main.cpp:41
+msgid "Vocabulary shuffling code"
+msgstr ""
+
+#: main.cpp:43
+msgid "SVG icon"
+msgstr "SVG simgesi"
+
+#: main.cpp:44
+msgid "Bug fixes and code improvement, Italian Vocabulary Data Translation"
+msgstr ""
+"Hata düzeltmeleri ve kod geliştirilmesi, İtalyanca Sözlük Verisi Çevirisi"
+
+#: main.cpp:45
+msgid "Polish Vocabulary Data Translation"
+msgstr ""
+
+#. i18n: file klatinui.rc line 5
+#: rc.cpp:3
+#, no-c-format
+msgid "S&ection"
+msgstr "&Bölüm"
+
+#. i18n: file klatinchoose.ui line 47
+#: rc.cpp:6
+#, fuzzy, no-c-format
+msgid ""
+"Welcome to KLatin\n"
+"Please Choose Section of Revision"
+msgstr ""
+"KLatin'e hoşgeldiniz\n"
+"Lütfen gözden geçirmenin bir bölümünü seçin"
+
+#. i18n: file klatinchoose.ui line 74
+#: rc.cpp:10
+#, no-c-format
+msgid "Revision Sections"
+msgstr "Gözden Geçirme Bölümleri"
+
+#. i18n: file klatinchoose.ui line 102
+#: rc.cpp:13
+#, no-c-format
+msgid "&Vocabulary"
+msgstr "&Sözlük"
+
+#. i18n: file klatinchoose.ui line 108
+#: rc.cpp:16
+#, no-c-format
+msgid "Test on Vocabulary"
+msgstr "Sözcük Testi"
+
+#. i18n: file klatinchoose.ui line 111
+#: rc.cpp:19
+#, no-c-format
+msgid "Multiple choice vocabulary test"
+msgstr "Çoktan seçmeli sözcük testi"
+
+#. i18n: file klatinchoose.ui line 119
+#: rc.cpp:22
+#, no-c-format
+msgid "&Grammar"
+msgstr "&Dilbilgisi"
+
+#. i18n: file klatinchoose.ui line 125
+#: rc.cpp:25
+#, no-c-format
+msgid "Test on noun grammar"
+msgstr ""
+
+#. i18n: file klatinchoose.ui line 128
+#: rc.cpp:28
+#, no-c-format
+msgid "Test on common nouns and endings"
+msgstr ""
+
+#. i18n: file klatinchoose.ui line 136
+#: rc.cpp:31
+#, no-c-format
+msgid "Ver&bs"
+msgstr "F&iiller"
+
+#. i18n: file klatinchoose.ui line 139
+#: rc.cpp:34
+#, no-c-format
+msgid "Test on verb forms"
+msgstr ""
+
+#. i18n: file klatinchoose.ui line 142
+#: rc.cpp:37
+#, no-c-format
+msgid "Test on common verbs and endings"
+msgstr ""
+
+#. i18n: file klatinchoose.ui line 150
+#: rc.cpp:40
+#, no-c-format
+msgid "&Revision notes"
+msgstr "Gözden Geçi&rme notları"
+
+#. i18n: file klatinchoose.ui line 153
+#: rc.cpp:43
+#, no-c-format
+msgid "Load revision notes"
+msgstr "Gözden geçirme notlarını yükle"
+
+#. i18n: file klatinchoose.ui line 157
+#: rc.cpp:46
+#, no-c-format
+msgid ""
+"The KLatin revision notes with\n"
+"verb and noun tables"
+msgstr ""
+
+#. i18n: file klatinchoose.ui line 209
+#: rc.cpp:50
+#, fuzzy, no-c-format
+msgid "S&tart"
+msgstr "&Başla!"
+
+#. i18n: file klatinchoose.ui line 212
+#: rc.cpp:53
+#, no-c-format
+msgid "Start chosen area of revision"
+msgstr "Seçilen bölüme başla"
+
+#. i18n: file klatinchoose.ui line 215
+#: rc.cpp:56
+#, no-c-format
+msgid "Start the section you have chosen"
+msgstr "Seçtiğiniz bölüme başlayın"
+
+#. i18n: file klatinchoose.ui line 226
+#: rc.cpp:62
+#, no-c-format
+msgid "Quits"
+msgstr "Çıkar"
+
+#. i18n: file klatinchoose.ui line 229
+#: rc.cpp:65
+#, no-c-format
+msgid "Quit KLatin"
+msgstr "KLatin'den çıkar"
+
+#. i18n: file klatingrammarwidget.ui line 44
+#: rc.cpp:71
+#, no-c-format
+msgid "Grammar Section"
+msgstr "Dilbilgisi Bölümü"
+
+#. i18n: file klatingrammarwidget.ui line 65
+#: rc.cpp:74
+#, no-c-format
+msgid "Choice of nouns for testing"
+msgstr ""
+
+#. i18n: file klatingrammarwidget.ui line 111
+#: rc.cpp:77 rc.cpp:263
+#, no-c-format
+msgid ""
+"Question Word\n"
+"Line 2\n"
+"Line 3\n"
+"Line 4"
+msgstr ""
+"Soru Kelimesi\n"
+"Satır 2\n"
+"Satır 3\n"
+"Satır 4 "
+
+#. i18n: file klatingrammarwidget.ui line 119
+#: rc.cpp:83 rc.cpp:269
+#, no-c-format
+msgid "The question will appear here"
+msgstr "Soru burada gözükecek"
+
+#. i18n: file klatingrammarwidget.ui line 188
+#: rc.cpp:86 rc.cpp:272 rc.cpp:326
+#, no-c-format
+msgid "Score"
+msgstr "Puan"
+
+#. i18n: file klatingrammarwidget.ui line 229
+#: rc.cpp:89 rc.cpp:95 rc.cpp:275 rc.cpp:281 rc.cpp:329 rc.cpp:335
+#, no-c-format
+msgid "0"
+msgstr "0"
+
+#. i18n: file klatingrammarwidget.ui line 242
+#: rc.cpp:92 rc.cpp:278 rc.cpp:332
+#, no-c-format
+msgid "/"
+msgstr "/"
+
+#. i18n: file klatingrammarwidget.ui line 270
+#: rc.cpp:98 rc.cpp:284 rc.cpp:338
+#, no-c-format
+msgid "Your test percentage so far"
+msgstr "Şimdiye kadarki test yüzdeniz"
+
+#. i18n: file klatingrammarwidget.ui line 294
+#: rc.cpp:101 rc.cpp:287
+#, no-c-format
+msgid "Answer:"
+msgstr "Cevap:"
+
+#. i18n: file klatingrammarwidget.ui line 302
+#: rc.cpp:104
+#, no-c-format
+msgid "Your answer goes here"
+msgstr "Cevabınız buraya yazılır"
+
+#. i18n: file klatingrammarwidget.ui line 305
+#: rc.cpp:107 rc.cpp:290
+#, no-c-format
+msgid "Enter your answer here"
+msgstr "Cevabınızı buraya yazın"
+
+#. i18n: file klatingrammarwidget.ui line 322
+#: rc.cpp:113
+#, no-c-format
+msgid "Check answer"
+msgstr "Cevabı kontrol et"
+
+#. i18n: file klatingrammarwidget.ui line 357
+#: rc.cpp:116 rc.cpp:299 rc.cpp:365
+#, no-c-format
+msgid "&Back"
+msgstr "&Geri"
+
+#. i18n: file klatingrammarwidget.ui line 360
+#: rc.cpp:119 rc.cpp:302 rc.cpp:368
+#, no-c-format
+msgid "Go back to the selection screen"
+msgstr "Bölüm ekranına geri dön"
+
+#. i18n: file klatingrammarwidget.ui line 363
+#: rc.cpp:122 rc.cpp:305
+#, no-c-format
+msgid "Return to selection screen"
+msgstr "Bölüm ekranına geri dön"
+
+#. i18n: file klatinresultsdialog.ui line 16
+#: rc.cpp:125
+#, no-c-format
+msgid "Results"
+msgstr "Sonuçlar"
+
+#. i18n: file klatinresultsdialog.ui line 32
+#: rc.cpp:128
+#, no-c-format
+msgid "<b>Your Results</b>"
+msgstr "<b>Sonuçlarınız</b>"
+
+#. i18n: file klatinresultsdialog.ui line 41
+#: rc.cpp:131
+#, no-c-format
+msgid "Question"
+msgstr "Soru"
+
+#. i18n: file klatinresultsdialog.ui line 52
+#: rc.cpp:134
+#, no-c-format
+msgid "Your Answer"
+msgstr "Cevabınız"
+
+#. i18n: file klatinresultsdialog.ui line 63
+#: rc.cpp:137
+#, no-c-format
+msgid "Correct Answer"
+msgstr "Doğru Cevap"
+
+#. i18n: file klatinresultsdialog.ui line 90
+#: rc.cpp:140
+#, no-c-format
+msgid "Table of results"
+msgstr "Sonuç tablosu"
+
+#. i18n: file klatinresultsdialog.ui line 106
+#: rc.cpp:143
+#, no-c-format
+msgid "Percentage:"
+msgstr "Yüzde:"
+
+#. i18n: file klatinresultsdialog.ui line 109
+#: rc.cpp:146 rc.cpp:152
+#, no-c-format
+msgid "Percentage of correct answers"
+msgstr "Doğru yanıt yüzdesi"
+
+#. i18n: file klatinresultsdialog.ui line 112
+#: rc.cpp:149 rc.cpp:155
+#, no-c-format
+msgid ""
+"This shows the percentage of the questions you answered correctly out of those "
+"attempted."
+msgstr ""
+
+#. i18n: file klatinresultsdialog.ui line 137
+#: rc.cpp:158
+#, no-c-format
+msgid "Number attempted:"
+msgstr "Deneme sayısı:"
+
+#. i18n: file klatinresultsdialog.ui line 140
+#: rc.cpp:161 rc.cpp:167
+#, no-c-format
+msgid "Number of questions attempted"
+msgstr ""
+
+#. i18n: file klatinresultsdialog.ui line 143
+#: rc.cpp:164 rc.cpp:170
+#, no-c-format
+msgid "This shows the number of questions you answered."
+msgstr "Cevapladığınız soru sayısını gösterir."
+
+#. i18n: file klatinresultsdialog.ui line 201
+#: rc.cpp:176
+#, no-c-format
+msgid "Close this dialog"
+msgstr "Bu iletişim kutusunu kapat"
+
+#. i18n: file klatinresultsdialog.ui line 204
+#: rc.cpp:179
+#, no-c-format
+msgid "Close this dialog and return to KLatin's main window."
+msgstr ""
+
+#. i18n: file klatinsettings_vocabpage.ui line 16
+#: rc.cpp:182
+#, no-c-format
+msgid "Configure Vocabulary"
+msgstr "Sözlüğü Yapılandır"
+
+#. i18n: file klatinsettings_vocabpage.ui line 27
+#: rc.cpp:185
+#, no-c-format
+msgid "Testing Style"
+msgstr "Test Tarzı"
+
+#. i18n: file klatinsettings_vocabpage.ui line 54
+#: rc.cpp:188
+#, no-c-format
+msgid "To Latin"
+msgstr "Latince'ye"
+
+#. i18n: file klatinsettings_vocabpage.ui line 60
+#: rc.cpp:191
+#, no-c-format
+msgid "Question in your language and answers in Latin"
+msgstr "Sorular sizin dilinizde ve cevaplar Latince olur"
+
+#. i18n: file klatinsettings_vocabpage.ui line 63
+#: rc.cpp:194
+#, no-c-format
+msgid ""
+"Choose to be tested from your language to Latin, which means the word will be "
+"displayed in your language and you will have to choose from 4 Latin "
+"translations."
+msgstr ""
+
+#. i18n: file klatinsettings_vocabpage.ui line 71
+#: rc.cpp:197
+#, no-c-format
+msgid "From Latin"
+msgstr "Latince'den"
+
+#. i18n: file klatinsettings_vocabpage.ui line 74
+#: rc.cpp:200
+#, no-c-format
+msgid "Question in Latin and answers in your language"
+msgstr "Sorular Latince ve cevaplar sizin dilinizde olur"
+
+#. i18n: file klatinsettings_vocabpage.ui line 77
+#: rc.cpp:203
+#, no-c-format
+msgid ""
+"Choose  to be tested from Latin to your language, which means the word will be "
+"displayed in Latin and you will have to choose from 4 translations in your "
+"language."
+msgstr ""
+
+#. i18n: file klatinsettings_vocabpage.ui line 110
+#: rc.cpp:209
+#, no-c-format
+msgid "The file you are tested on in vocabulary"
+msgstr "Sözlükte üzerinde test edildiğiniz dosya"
+
+#. i18n: file klatinsettings_vocabpage.ui line 113
+#: rc.cpp:212
+#, no-c-format
+msgid "You can change the file you are tested on for the vocabulary section"
+msgstr "Sözlükte üzerinde test edildiğiniz dosyayı değiştirebilirsiniz"
+
+#. i18n: file klatinsettings_vocabpage.ui line 129
+#: rc.cpp:215
+#, no-c-format
+msgid "Number of questions:"
+msgstr "Soru sayısı:"
+
+#. i18n: file klatinsettings_vocabpage.ui line 135
+#: rc.cpp:218
+#, no-c-format
+msgid "Set the number of questions you want to be tested on"
+msgstr "Testteki soru sayısını ayarlayın"
+
+#. i18n: file klatinsettings_vocabpage.ui line 138
+#: rc.cpp:221
+#, no-c-format
+msgid ""
+"Here you can set the number of questions you want to be tested on. When this "
+"number is reached, a result dialog appears."
+msgstr ""
+
+#. i18n: file klatinsettings_vocabpage.ui line 160
+#: rc.cpp:224
+#, no-c-format
+msgid "Number of questions to be asked before ending"
+msgstr ""
+
+#. i18n: file klatinsettings_vocabpage.ui line 163
+#: rc.cpp:227
+#, no-c-format
+msgid "Numbers of questions to ask at a time"
+msgstr ""
+
+#. i18n: file klatinverbswidget.ui line 40
+#: rc.cpp:233
+#, no-c-format
+msgid "Verbs Section"
+msgstr "Fiil Bölümü"
+
+#. i18n: file klatinverbswidget.ui line 61
+#: rc.cpp:236
+#, no-c-format
+msgid "Choice of verb conjugation"
+msgstr ""
+
+#. i18n: file klatinverbswidget.ui line 65
+#: rc.cpp:239
+#, no-c-format
+msgid ""
+"Conjugation of verb to be\n"
+"tested on"
+msgstr ""
+
+#. i18n: file klatinverbswidget.ui line 79
+#: rc.cpp:243
+#, no-c-format
+msgid "Choice of verb voice"
+msgstr ""
+
+#. i18n: file klatinverbswidget.ui line 83
+#: rc.cpp:246
+#, no-c-format
+msgid ""
+"Voice of verb to be\n"
+"tested on"
+msgstr ""
+
+#. i18n: file klatinverbswidget.ui line 91
+#: rc.cpp:250
+#, no-c-format
+msgid "Choice of verb mood"
+msgstr ""
+
+#. i18n: file klatinverbswidget.ui line 95
+#: rc.cpp:253
+#, no-c-format
+msgid ""
+"Mood of verb to be\n"
+"tested on"
+msgstr ""
+
+#. i18n: file klatinverbswidget.ui line 115
+#: rc.cpp:260
+#, no-c-format
+msgid "Change test to new type"
+msgstr "Yeni test türü seçin"
+
+#. i18n: file klatinverbswidget.ui line 363
+#: rc.cpp:296
+#, no-c-format
+msgid "Check your answer"
+msgstr "Cevabınızı kontrol edin"
+
+#. i18n: file klatinvocabwidget.ui line 38
+#: rc.cpp:311
+#, no-c-format
+msgid "Vocabulary Section"
+msgstr "Sözlük Bölümü"
+
+#. i18n: file klatinvocabwidget.ui line 78
+#: rc.cpp:314
+#, no-c-format
+msgid "Question Word"
+msgstr "Soru Kelimesi"
+
+#. i18n: file klatinvocabwidget.ui line 86
+#: rc.cpp:317
+#, no-c-format
+msgid "The question word will appear here"
+msgstr "Soru kelimesi burada görüntülenecek"
+
+#. i18n: file klatinvocabwidget.ui line 114
+#: rc.cpp:320
+#, no-c-format
+msgid "Your current score"
+msgstr "Mevcut puanınız"
+
+#. i18n: file klatinvocabwidget.ui line 117
+#: rc.cpp:323
+#, no-c-format
+msgid ""
+"Your score appears on this display. Number of correct answers/total number of "
+"answers."
+msgstr ""
+
+#. i18n: file klatinvocabwidget.ui line 265
+#: rc.cpp:341
+#, no-c-format
+msgid "Answer 1"
+msgstr "Cevap 1"
+
+#. i18n: file klatinvocabwidget.ui line 268
+#: rc.cpp:344 rc.cpp:350 rc.cpp:356 rc.cpp:362
+#, no-c-format
+msgid "Click this if you think it is the right answer."
+msgstr "Doğru cevabın bu olduğunu düşünüyorsanız bunu işaretleyin."
+
+#. i18n: file klatinvocabwidget.ui line 282
+#: rc.cpp:347
+#, no-c-format
+msgid "Answer 2"
+msgstr "Cevap 2"
+
+#. i18n: file klatinvocabwidget.ui line 309
+#: rc.cpp:353
+#, no-c-format
+msgid "Answer 3"
+msgstr "Cevap 3"
+
+#. i18n: file klatinvocabwidget.ui line 326
+#: rc.cpp:359
+#, no-c-format
+msgid "Answer 4"
+msgstr "Cevap 4"
+
+#. i18n: file klatinvocabwidget.ui line 370
+#: rc.cpp:371
+#, no-c-format
+msgid "Return to the selection screen"
+msgstr "Seçim ekranına dön"
+
+#. i18n: file klatin.kcfg line 9
+#: rc.cpp:374
+#, no-c-format
+msgid "The language selected by the user"
+msgstr "Kullanıcının seçtiği dil"
+
+#. i18n: file klatin.kcfg line 30
+#: rc.cpp:377
+#, no-c-format
+msgid "how many questions are asked in one session."
+msgstr "bir oturumda kaç sorunun sorulacağı."
+
+#. i18n: file klatin.kcfg line 34
+#: rc.cpp:380
+#, no-c-format
+msgid "whether KLatin should ask unlimited questions."
+msgstr "KLatin'in sınırsız soru sorup sormayacağı."
+
+#. i18n: file klatin.kcfg line 38
+#: rc.cpp:383
+#, no-c-format
+msgid "the default vocabulary file."
+msgstr "öntanımlı sözlük dosyası."
+
+#. i18n: file klatin.kcfg line 51
+#: rc.cpp:386
+#, no-c-format
+msgid "whether the questions should be Latin to the user's language."
+msgstr "soruların Latince'den kullanıcının diline olup olmayacağı."
+
+#. i18n: file klatin.kcfg line 55
+#: rc.cpp:389
+#, no-c-format
+msgid "whether the questions should be the user's language to Latin."
+msgstr "soruların kullanıcının dilinden Latince'ye  olup olmayacağı."

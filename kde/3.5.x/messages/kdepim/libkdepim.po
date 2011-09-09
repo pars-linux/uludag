@@ -1,0 +1,1825 @@
+# translation of libkdepim.po to
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004.
+# Barış Metin <baris@uludag.org.tr>, 2004.
+# Ozan Eren BILGEN <oebilgen@uekae.tubitak.gov.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+# Translation of libkdepim.po to Turkish
+# Copyright (C) 2004, 2005, 2007 Free Software Foundation, Inc.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkdepim\n"
+"POT-Creation-Date: 2008-07-14 01:18+0200\n"
+"PO-Revision-Date: 2007-10-01 07:19+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: ../libkpimidentities/identity.cpp:104
+msgid "<qt>Failed to execute signature script<br><b>%1</b>:<br>%2</qt>"
+msgstr "<qt>İmza betiği işletilemedi<br><b>%1</b>:<br>%2</qt>"
+
+#: ../libkpimidentities/identitycombo.cpp:96
+msgid "%1 (Default)"
+msgstr "%1 (Öntanımlı)"
+
+#: ../libkpimidentities/identitymanager.cpp:342
+msgid "Unnamed"
+msgstr "İsimsiz"
+
+#: ../libemailfunctions/email.cpp:457
+msgid ""
+"The email address you entered is not valid because it contains more than one @. "
+"You will not create valid messages if you do not change your address."
+msgstr ""
+"Girdiğiniz e-posta adresi geçerli değil çünkü birden fazla @ karakteri "
+"içeriyor. Eğer adresinizi değiştirmezseniz geçerli iletiler "
+"oluşturamayacaksınız."
+
+#: ../libemailfunctions/email.cpp:462
+msgid ""
+"The email address you entered is not valid because it does not contain a @.You "
+"will not create valid messages if you do not change your address."
+msgstr ""
+"Girdiğiniz e-posta adresi geçerli değil çünkü @ karakteri içermiyor. Eğer "
+"adresinizi değiştirmezseniz geçerli iletiler oluşturamayacaksınız."
+
+#: ../libemailfunctions/email.cpp:467
+msgid "You have to enter something in the email address field."
+msgstr "E-posta adresi alanına birşeyler girmelisiniz."
+
+#: ../libemailfunctions/email.cpp:469
+msgid ""
+"The email address you entered is not valid because it does not contain a local "
+"part."
+msgstr ""
+"Girdiğiniz e-posta adresi geçerli değil çünkü bir yerel bölüm içermiyor."
+
+#: ../libemailfunctions/email.cpp:472
+msgid ""
+"The email address you entered is not valid because it does not contain a domain "
+"part."
+msgstr ""
+"Girdiğiniz e-posta adresi geçerli değil çünkü bir alan adı kısmı içermiyor."
+
+#: ../libemailfunctions/email.cpp:475
+msgid ""
+"The email address you entered is not valid because it contains unclosed "
+"comments/brackets."
+msgstr ""
+"Girdiğiniz e-posta adresi geçerli değil çünkü kapatılmamış köşeli parantezler "
+"veya açıklamalar içeriyor."
+
+#: ../libemailfunctions/email.cpp:478
+msgid "The email address you entered is valid."
+msgstr "Girdiğiniz e-posta adresi geçerli değil."
+
+#: ../libemailfunctions/email.cpp:480
+msgid ""
+"The email address you entered is not valid because it contains an unclosed "
+"anglebracket."
+msgstr ""
+"Girdiğiniz e-posta adresi geçerli değil çünkü kapatılmamış açılı parantez "
+"içeriyor."
+
+#: ../libemailfunctions/email.cpp:483
+msgid ""
+"The email address you entered is not valid because it contains an unopened "
+"anglebracket."
+msgstr ""
+"Girdiğiniz e-posta adresi geçerli değil çünkü açılmamış açılı parantez "
+"içeriyor."
+
+#: ../libemailfunctions/email.cpp:486
+msgid ""
+"The email address you have entered is not valid because it contains an "
+"unexpected comma."
+msgstr ""
+"Girdiğiniz e-posta adresi geçerli değil çünkü beklenmeyen bir virgül içeriyor."
+
+#: ../libemailfunctions/email.cpp:489
+msgid ""
+"The email address you entered is not valid because it ended unexpectedly, this "
+"probably means you have used an escaping type character like an \\  as the last "
+"character in your email address."
+msgstr ""
+"Girdiğiniz e-posta adresi geçerli değil çünkü beklenmedik şekilde bitiyor, bu "
+"e-posta adresinizin sonunda muhtemelen \\  gibi bir kaçış karakteri "
+"kullandığınız anlamına geliyor."
+
+#: ../libemailfunctions/email.cpp:494
+msgid ""
+"The email address you entered is not valid because it contains quoted text "
+"which does not end."
+msgstr ""
+"Girdiğiniz e-posta adresi geçerli değil çünkü bitirilmemiş bir alıntılanmış bir "
+"metin içeriyor."
+
+#: ../libemailfunctions/email.cpp:497 ../libemailfunctions/email.cpp:558
+msgid ""
+"The email address you entered is not valid because it does not seem to contain "
+"an actual email address, i.e. something of the form joe@kde.org."
+msgstr ""
+"Girdiğiniz e-posta adresi geçerli değil çünkü güncel bir e-posta adresi gibi "
+"görünmüyor, örneğin joe@kde.org gibi."
+
+#: ../libemailfunctions/email.cpp:501
+msgid ""
+"The email address you entered is not valid because it contains an illegal "
+"character."
+msgstr ""
+"Girdiğiniz e-posta adresi geçerli değil çünkü kullanılmaması gereken bir "
+"karakter içeriyor."
+
+#: ../libemailfunctions/email.cpp:504
+msgid ""
+"The email address you have entered is not valid because it contains an invalid "
+"displayname."
+msgstr ""
+"Girdiğiniz e-posta adresi geçerli değil çünkü geçersiz bir görüntülenecek ad "
+"içeriyor."
+
+#: ../libemailfunctions/email.cpp:507
+msgid "Unknown problem with email address"
+msgstr "E-posta adresinde bilinmeyen hata"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Engin Çağatay, Barış Metin, Ozan Eren BİLGEN"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr ""
+"engincagatay@yahoo.com, baris@uludag.org.tr, oebilgen@uekae.tubitak.gov.tr"
+
+#: addresseeemailselection.cpp:47 addressesdialog.cpp:238
+#: addressesdialog.cpp:719
+msgid "To"
+msgstr "Kime"
+
+#: addresseeemailselection.cpp:50
+msgid "Cc"
+msgstr "Cc"
+
+#: addresseeemailselection.cpp:53
+msgid "Bcc"
+msgstr "Bcc"
+
+#: addresseeemailselection.cpp:196 addressesdialog.cpp:319
+#: recentaddresses.cpp:167
+msgid "Recent Addresses"
+msgstr "Kullanılan Son Adresler"
+
+#: addresseelineedit.cpp:553 addressesdialog.cpp:1088
+#: completionordereditor.cpp:204
+msgid "Distribution Lists"
+msgstr "Dağıtım Listeleri"
+
+#: addresseelineedit.cpp:873
+msgid "Configure Completion Order..."
+msgstr "Tamamlama Sırasını Yapılandır..."
+
+#: addresseeselector.cpp:67
+msgid "All"
+msgstr "Tümü"
+
+#: addresseeselector.cpp:273
+msgid "Address book:"
+msgstr "Adres defteri:"
+
+#: addresseeselector.cpp:279
+msgid "Search:"
+msgstr "Ara:"
+
+#: addresseeview.cpp:76
+msgid "Show Birthday"
+msgstr "Doğumgününü Göster"
+
+#: addresseeview.cpp:77
+msgid "Hide Birthday"
+msgstr "Doğumgününü Sakla"
+
+#: addresseeview.cpp:78
+msgid "Show Postal Addresses"
+msgstr "Posta Adreslerini Göster"
+
+#: addresseeview.cpp:79
+msgid "Hide Postal Addresses"
+msgstr "Posta Adreslerini Sakla"
+
+#: addresseeview.cpp:80
+msgid "Show Email Addresses"
+msgstr "E-Posta Adreslerini Göster"
+
+#: addresseeview.cpp:81
+msgid "Hide Email Addresses"
+msgstr "E-Posta Adreslerini Sakla"
+
+#: addresseeview.cpp:82
+msgid "Show Telephone Numbers"
+msgstr "Telefon Numaralarını Göster"
+
+#: addresseeview.cpp:83
+msgid "Hide Telephone Numbers"
+msgstr "Telefon Numaralarını Sakla"
+
+#: addresseeview.cpp:84
+msgid "Show Web Pages (URLs)"
+msgstr "Web Sayfalarını (URL'ler) Göster"
+
+#: addresseeview.cpp:85
+msgid "Hide Web Pages (URLs)"
+msgstr "Web Sayfalarını (URL'ler) Sakla"
+
+#: addresseeview.cpp:86
+msgid "Show Instant Messaging Addresses"
+msgstr "Hızlı Mesajlaşma Adreslerini Göster"
+
+#: addresseeview.cpp:87
+msgid "Hide Instant Messaging Addresses"
+msgstr "Hızlı Mesajlaşma Adreslerini Sakla"
+
+#: addresseeview.cpp:88
+msgid "Show Custom Fields"
+msgstr "Özel Alanları Göster"
+
+#: addresseeview.cpp:89
+msgid "Hide Custom Fields"
+msgstr "Özel Alanları Gizle"
+
+#: addresseeview.cpp:238
+msgid "SMS"
+msgstr "Kısa Mesaj"
+
+#: addresseeview.cpp:254 ldapsearchdialog.cpp:76 ldapsearchdialog.cpp:144
+#: ldapsearchdialog.cpp:275 ldapsearchdialog.cpp:346
+msgid "Email"
+msgstr "E-posta"
+
+#: addresseeview.cpp:279
+msgid "Homepage"
+msgstr "Web Sayfası"
+
+#: addresseeview.cpp:287
+msgid "Blog Feed"
+msgstr "Web Günlüğü (RSS) Bağlantısı"
+
+#: addresseeview.cpp:336
+msgid "Notes"
+msgstr "Notlar"
+
+#: addresseeview.cpp:343 ldapsearchdialog.cpp:88 ldapsearchdialog.cpp:288
+msgid "Department"
+msgstr "Bölümü"
+
+#: addresseeview.cpp:344
+msgid "Profession"
+msgstr "Uzamanlığı"
+
+#: addresseeview.cpp:345
+msgid "Assistant's Name"
+msgstr "Asistanının Adı"
+
+#: addresseeview.cpp:346
+msgid "Manager's Name"
+msgstr "Müdürünün Adı"
+
+#: addresseeview.cpp:347
+msgid "Partner's Name"
+msgstr "Partnerinin Adı"
+
+#: addresseeview.cpp:348
+msgid "Office"
+msgstr "Ofis"
+
+#: addresseeview.cpp:349
+msgid "Anniversary"
+msgstr "Yıldönümü"
+
+#: addresseeview.cpp:388
+msgid "IM Address"
+msgstr "Hızlı Mesajlaşma Adresi"
+
+#: addresseeview.cpp:410
+msgid "Presence"
+msgstr "Varlık"
+
+#: addresseeview.cpp:479
+msgid "<p><b>Address book</b>: %1</p>"
+msgstr "<p><b>Adres defteri</b>: %1</p>"
+
+#: addresseeview.cpp:590 addresseeview.cpp:605 addresseeview.cpp:639
+msgid ""
+"There is no application set which could be executed. Please go to the settings "
+"dialog and configure one."
+msgstr ""
+"Çalıştırılabilecek bir uygulama ayarlanmadı. Lütfen ayarlar iletişim kutusuna "
+"gidin ve bir tane ayarlayın."
+
+#: addresseeview.cpp:693
+msgid "Send mail to '%1'"
+msgstr "'%1' kişisine e-posta gönder"
+
+#: addresseeview.cpp:698
+#, c-format
+msgid "Call number %1"
+msgstr "%1 numarasını ara"
+
+#: addresseeview.cpp:703
+#, c-format
+msgid "Send fax to %1"
+msgstr "%1 kişisine faks gönder"
+
+#: addresseeview.cpp:705
+msgid "Show address on map"
+msgstr "Adresleri haritada göster"
+
+#: addresseeview.cpp:708
+#, c-format
+msgid "Send SMS to %1"
+msgstr "%1 kişisine kısa mesaj gönder"
+
+#: addresseeview.cpp:711
+#, c-format
+msgid "Open URL %1"
+msgstr "%1 URL'sini aç"
+
+#: addresseeview.cpp:713
+#, c-format
+msgid "Chat with %1"
+msgstr "%1 ile sohbet et"
+
+#: addressesdialog.cpp:123 addressesdialog.cpp:131
+msgid "<group>"
+msgstr "<grup>"
+
+#. i18n: file addresspicker.ui line 16
+#: addressesdialog.cpp:214 rc.cpp:3
+#, no-c-format
+msgid "Address Selection"
+msgstr "Adres Seçimi"
+
+#: addressesdialog.cpp:249 addressesdialog.cpp:741
+msgid "CC"
+msgstr "CC"
+
+#: addressesdialog.cpp:260 addressesdialog.cpp:763
+msgid "BCC"
+msgstr "BCC"
+
+#: addressesdialog.cpp:458
+msgid "Other Addresses"
+msgstr "Diğer Adresler"
+
+#: addressesdialog.cpp:883
+msgid ""
+"There are no addresses in your list. First add some addresses from your address "
+"book, then try again."
+msgstr ""
+"Listenizde hiçbir adres yok. Önce adres defterinize adres ekleyin, sonra tekrar "
+"deneyin."
+
+#: addressesdialog.cpp:890
+msgid "New Distribution List"
+msgstr "Yeni Dağıtım Listesi"
+
+#: addressesdialog.cpp:891
+msgid "Please enter name:"
+msgstr "Lütfen isim girin:"
+
+#: addressesdialog.cpp:908
+msgid ""
+"<qt>Distribution list with the given name <b>%1</b> already exists. Please "
+"select a different name.</qt>"
+msgstr ""
+"<qt><b>%1</b> ismiyle verilen dağıtım listesi zaten var. Lütfen farklı bir isim "
+"seçin. </qt>"
+
+#: broadcaststatus.cpp:59
+msgid ""
+"_: %1 is a time, %2 is a status message\n"
+"[%1] %2"
+msgstr "[%1] %2"
+
+#: broadcaststatus.cpp:78
+msgid ""
+"_n: Transmission complete. %n new message in %1 KB (%2 KB remaining on the "
+"server).\n"
+"Transmission complete. %n new messages in %1 KB (%2 KB remaining on the "
+"server)."
+msgstr ""
+"İndirme işlemi tamamlandı. %1 KB büyüklüğündeki %n ileti (%2 KB veri sunucudan "
+"bekleniyor)."
+
+#: broadcaststatus.cpp:85
+msgid ""
+"_n: Transmission complete. %n message in %1 KB.\n"
+"Transmission complete. %n messages in %1 KB."
+msgstr "İndirme işlemi tamamlandı. %1 KB büyüklüğünde %n ileti."
+
+#: broadcaststatus.cpp:91
+#, c-format
+msgid ""
+"_n: Transmission complete. %n new message.\n"
+"Transmission complete. %n new messages."
+msgstr "İndirme işlemi tamamlandı. %n yeni ileti."
+
+#: broadcaststatus.cpp:95
+msgid "Transmission complete. No new messages."
+msgstr "İndirme işlemi tamamlandı. Yeni ileti yok."
+
+#: broadcaststatus.cpp:117
+msgid ""
+"_n: Transmission for account %3 complete. %n new message in %1 KB (%2 KB "
+"remaining on the server).\n"
+"Transmission for account %3 complete. %n new messages in %1 KB (%2 KB remaining "
+"on the server)."
+msgstr ""
+"%3 hesabı için indirme işlemi tamamlandı. %1 KB büyüklüğünde %n ileti (%2 KB "
+"veri sunucudan bekleniyor)."
+
+#: broadcaststatus.cpp:127
+msgid ""
+"_n: Transmission for account %2 complete. %n message in %1 KB.\n"
+"Transmission for account %2 complete. %n messages in %1 KB."
+msgstr "%2 hesabı için indirme işlemi tamamlandı. %1 KB büyüklüğünde %n ileti."
+
+#: broadcaststatus.cpp:136
+msgid ""
+"_n: Transmission for account %1 complete. %n new message.\n"
+"Transmission for account %1 complete. %n new messages."
+msgstr "%1 hesabı için indirme işlemi tamamlandı. %n yeni ileti."
+
+#: broadcaststatus.cpp:142
+msgid "Transmission for account %1 complete. No new messages."
+msgstr "%1 hesabı için indirme işlemi tamamlandı. Yeni ileti yok."
+
+#: calendardiffalgo.cpp:111
+msgid "Attendees"
+msgstr "Katılımcılar"
+
+#: calendardiffalgo.cpp:114
+msgid "Start time"
+msgstr "Başlama zamanı"
+
+#: calendardiffalgo.cpp:117
+msgid "Organizer"
+msgstr "Organizatör"
+
+#: calendardiffalgo.cpp:120
+msgid "UID"
+msgstr "Kullanıcı No"
+
+#: calendardiffalgo.cpp:123
+msgid "Is floating"
+msgstr "Hareketli"
+
+#: calendardiffalgo.cpp:126
+msgid "Has duration"
+msgstr "Sürekliliği var"
+
+#: calendardiffalgo.cpp:129
+msgid "Duration"
+msgstr "Süreklilik"
+
+#: calendardiffalgo.cpp:135 ksubscription.cpp:270 ldapsearchdialog.cpp:91
+#: ldapsearchdialog.cpp:289
+msgid "Description"
+msgstr "Tanım"
+
+#: calendardiffalgo.cpp:138
+msgid "Summary"
+msgstr "Özet"
+
+#: calendardiffalgo.cpp:141
+msgid "Status"
+msgstr "Durum"
+
+#: calendardiffalgo.cpp:144
+msgid "Secrecy"
+msgstr "Gizlilik"
+
+#: calendardiffalgo.cpp:147
+msgid "Priority"
+msgstr "Önem"
+
+#: calendardiffalgo.cpp:150
+msgid "Location"
+msgstr "Yer"
+
+#: calendardiffalgo.cpp:152
+msgid "Categories"
+msgstr "Kategoriler"
+
+#: calendardiffalgo.cpp:153
+msgid "Alarms"
+msgstr "Alarmlar"
+
+#: calendardiffalgo.cpp:154
+msgid "Resources"
+msgstr "Kaynaklar"
+
+#: calendardiffalgo.cpp:155
+msgid "Relations"
+msgstr "İlişkiler"
+
+#: calendardiffalgo.cpp:156
+msgid "Attachments"
+msgstr "Eklentiler"
+
+#: calendardiffalgo.cpp:157
+msgid "Exception Dates"
+msgstr "İstisna Tarihler"
+
+#: calendardiffalgo.cpp:158
+msgid "Exception Times"
+msgstr "İstisna Zamanlar"
+
+#: calendardiffalgo.cpp:162
+msgid "Created"
+msgstr "Oluşturuldu"
+
+#: calendardiffalgo.cpp:165
+msgid "Related Uid"
+msgstr "İlgili Kullanıcı No"
+
+#: calendardiffalgo.cpp:171
+msgid "Has End Date"
+msgstr "Sonlandırma Zamanı Var"
+
+#: calendardiffalgo.cpp:174
+msgid "End Date"
+msgstr "Sonlandırma Zamanı"
+
+#: calendardiffalgo.cpp:182
+msgid "Has Start Date"
+msgstr "Başlama Zamanı Var"
+
+#: calendardiffalgo.cpp:185
+msgid "Has Due Date"
+msgstr "Yeterli Zamanı Var"
+
+#: calendardiffalgo.cpp:188
+msgid "Due Date"
+msgstr "Yeterli Zaman"
+
+#: calendardiffalgo.cpp:191
+msgid "Has Complete Date"
+msgstr "Tamamlanma Zamanı Var"
+
+#: calendardiffalgo.cpp:194
+msgid "Complete"
+msgstr "Tamamlanma"
+
+#: calendardiffalgo.cpp:197
+msgid "Completed"
+msgstr "Tamamlandı"
+
+#. i18n: file categoryeditdialog_base.ui line 16
+#: categoryeditdialog.cpp:63 rc.cpp:48
+#, no-c-format
+msgid "Edit Categories"
+msgstr "Kategori Düzenle"
+
+#: categoryeditdialog.cpp:127
+msgid "New category"
+msgstr "Yeni kategori"
+
+#. i18n: file categoryselectdialog_base.ui line 16
+#: categoryselectdialog.cpp:38 rc.cpp:60
+#, no-c-format
+msgid "Select Categories"
+msgstr "Kategori Seç"
+
+#: completionordereditor.cpp:90
+#, c-format
+msgid "LDAP server %1"
+msgstr "LDAP sunucu %1"
+
+#: completionordereditor.cpp:176
+msgid "Edit Completion Order"
+msgstr "Tamamlama Sırasını Düzenle"
+
+#: embeddedurlpage.cpp:46
+#, c-format
+msgid "Showing URL %1"
+msgstr "%1 adresi gösteriliyor"
+
+#: kaddrbook.cpp:76
+msgid ""
+"<qt>The email address <b>%1</b> cannot be found in your addressbook.</qt>"
+msgstr "<qt><b>%1</b> e-posta adresi adres defterinizde bulunamadı.</qt>"
+
+#: kaddrbook.cpp:79
+msgid "is not in address book"
+msgstr "adres defterinde yok"
+
+#: kaddrbook.cpp:151
+msgid ""
+"<qt>The email address <b>%1</b> was added to your addressbook; you can add more "
+"information to this entry by opening the addressbook.</qt>"
+msgstr ""
+"<qt><b>%1</b> e-posta adresi zaten adres defterinize eklenmişti; bu giriş ile "
+"ilgiyi daha fazla bilgiyi adres defterini açarak ekleyebilirsiniz.</qt>"
+
+#: kaddrbook.cpp:157
+msgid "<qt>The email address <b>%1</b> is already in your addressbook.</qt>"
+msgstr "<qt><b>%1</b> e-posta adresi zaten adres defterinizde var.</qt>"
+
+#: kaddrbook.cpp:188
+msgid ""
+"The VCard was added to your addressbook; you can add more information to this "
+"entry by opening the addressbook."
+msgstr ""
+"VCard adres defterinize eklenmişti; bu giriş ile ilgili daha fazla bilgiyi "
+"adres defterini açarak ekleyebilirsiniz."
+
+#: kaddrbook.cpp:195
+msgid ""
+"The VCard's primary email address is already in your addressbook; however, you "
+"may save the VCard into a file and import it into the addressbook manually."
+msgstr ""
+"VCard'ın öntanımlı e-posta adresi zaten adres defterinizde var; buna rağmen, "
+"VCard'ı bir dosyaya kaydedip el ile adres defterine aktarabilirsiniz."
+
+#: kcmdesignerfields.cpp:77 kcmdesignerfields.cpp:78 kcmdesignerfields.cpp:83
+msgid "Text"
+msgstr "Metin"
+
+#: kcmdesignerfields.cpp:79
+msgid "Numeric Value"
+msgstr "Rakamsal Değer"
+
+#: kcmdesignerfields.cpp:80
+msgid "Boolean"
+msgstr "Doğru/Yanlış"
+
+#: kcmdesignerfields.cpp:81
+msgid "Selection"
+msgstr "Seçim"
+
+#: kcmdesignerfields.cpp:82 kcmdesignerfields.cpp:84
+msgid "Date & Time"
+msgstr "Tarih ve Zaman"
+
+#: kcmdesignerfields.cpp:85
+msgid "Date"
+msgstr "Tarih"
+
+#: kcmdesignerfields.cpp:134
+msgid "KCMDesignerfields"
+msgstr "KCMDesignerfields"
+
+#: kcmdesignerfields.cpp:135
+msgid "Qt Designer Fields Dialog"
+msgstr "Qt Designer Alanları İletişim Kutusu"
+
+#: kcmdesignerfields.cpp:137
+msgid "(c), 2004 Tobias Koenig"
+msgstr "(c), 2004 Tobias Koening"
+
+#: kcmdesignerfields.cpp:178
+msgid "<qt>Do you really want to delete '<b>%1</b>'?</qt>"
+msgstr "<qt>'<b>%1</b>'i gerçekten silmek istiyor musunuz?</qt>"
+
+#: kcmdesignerfields.cpp:187
+msgid "*.ui|Designer Files"
+msgstr "*.ui|Designer Dosyaları"
+
+#: kcmdesignerfields.cpp:188
+msgid "Import Page"
+msgstr "Aktarım Sayfası"
+
+#: kcmdesignerfields.cpp:271
+msgid ""
+"<qt><b>Warning:</b> Qt Designer could not be found. It is probably not "
+"installed. You will only be able to import existing designer files.</qt>"
+msgstr ""
+"<qt><b>Uyarı</b>: Qt Designer bulunamadı. Yüklenmemiş olabilir. Yalnızca mevcut "
+"Designer dosyalarını alabileceksiniz.</qt>"
+
+#: kcmdesignerfields.cpp:280
+msgid "Available Pages"
+msgstr "Kullanılabilir Sayfalar"
+
+#: kcmdesignerfields.cpp:286
+msgid "Preview of Selected Page"
+msgstr "Seçilen Sayfanın Önizlemesi"
+
+#: kcmdesignerfields.cpp:299
+msgid ""
+"<qt>"
+"<p>This section allows you to add your own GUI  Elements ('<i>Widgets</i>"
+"') to store your own values into %1. Proceed as described below:</p>"
+"<ol>"
+"<li>Click on '<i>Edit with Qt Designer</i>'"
+"<li>In the dialog, select '<i>Widget</i>', then click <i>OK</i>"
+"<li>Add your widgets to the form"
+"<li>Save the file in the directory proposed by Qt Designer"
+"<li>Close Qt Designer</ol>"
+"<p>In case you already have a designer file (*.ui) located somewhere on your "
+"hard disk, simply choose '<i>Import Page</i>'</p>"
+"<p><b>Important:</b> The name of each input widget you place within the form "
+"must start with '<i>X_</i>'; so if you want the widget to correspond to your "
+"custom entry '<i>X-Foo</i>', set the widget's <i>name</i> property to '<i>"
+"X_Foo</i>'.</p>"
+"<p><b>Important:</b> The widget will edit custom fields with an application "
+"name of %2.  To change the application name to be edited, set the widget name "
+"in Qt Designer.</p></qt>"
+msgstr ""
+"<qt> "
+"<p>Bu bölüm %1 alanına kendi değerlerinizi kaydetmeniz için, kendi GUI "
+"Bileşenlerinizi (<i>Widget</i>) eklemenize olanak tanır. Aşağıdaki yönergeyi "
+"takip edin:</p> "
+"<ol> "
+"<li>'Qt Designer ile Düzenle'yi tıklayın"
+"<li>İletişim penceresinde, 'Widget'i seçin ve Tamam'a basın"
+"<li>Dosyayı Qt Designer'in önerdiği klasöre kaydedin"
+"<li>Qt Designer'ı kapatın</ol> "
+"<p>Eğer diskinizde halihazırda bir designer dosyası (*.ui) varsa, '<i>"
+"Sayfayı Aktar</i>'ı seçiniz.</p> "
+"<p><b>Önemli:</b> Formla eklediğiniz tüm widget'lerin ismi '<i>X_</i>"
+"' ile başlamalıdır. Eğer '<i>X-Foo</i>' özel girdisine karşılık gelecek widget "
+"arıyorsanız, widget'in <i>isim</i> özniteliğini '<i>X_Foo</i>' yapınız.</p> "
+"<p><b>Önemli:</b> Widget özel alanları %2 adlı bir uygulamayla düzenleyecektir. "
+"Düzenlenecek uygulamanın adını değiştirmek için, Qt Designer'da widget'in "
+"ismini yapılandırınız.</p></qt>"
+
+#: kcmdesignerfields.cpp:321
+msgid "<a href=\"whatsthis:%1\">How does this work?</a>"
+msgstr "<a href=\"whatsthis:%1\">Bu nasıl çalışıyor?</a>"
+
+#: kcmdesignerfields.cpp:329
+msgid "Delete Page"
+msgstr "Sayfayı Sil"
+
+#: kcmdesignerfields.cpp:332
+msgid "Import Page..."
+msgstr "Aktarım Sayfası..."
+
+#: kcmdesignerfields.cpp:334
+msgid "Edit with Qt Designer..."
+msgstr "Qt Designer ile Düzenle..."
+
+#: kcmdesignerfields.cpp:362
+msgid "Key:"
+msgstr "Anahtar:"
+
+#: kcmdesignerfields.cpp:364
+msgid "Type:"
+msgstr "Tip:"
+
+#: kcmdesignerfields.cpp:366
+msgid "Classname:"
+msgstr "Sınıf Adı:"
+
+#: kcmdesignerfields.cpp:368
+msgid "Description:"
+msgstr "Tanım:"
+
+#: kconfigpropagator.cpp:39
+msgid "Change Config Value"
+msgstr "Yapılandırma Değerini Değiştir"
+
+#: kconfigwizard.cpp:36 kconfigwizard.cpp:45
+msgid "Configuration Wizard"
+msgstr "Yapılandırma Sihirbazı"
+
+#: kconfigwizard.cpp:84
+msgid "Rules"
+msgstr "Kurallar"
+
+#: kconfigwizard.cpp:90
+msgid "Source"
+msgstr "Kaynak"
+
+#: kconfigwizard.cpp:91
+msgid "Target"
+msgstr "Hedef"
+
+#: kconfigwizard.cpp:92
+msgid "Condition"
+msgstr "Koşul"
+
+#: kconfigwizard.cpp:125
+msgid "Changes"
+msgstr "Değişiklikler"
+
+#: kconfigwizard.cpp:131
+msgid "Action"
+msgstr "Eylem"
+
+#: kconfigwizard.cpp:132
+msgid "Option"
+msgstr "Seçenek"
+
+#: kconfigwizard.cpp:133
+msgid "Value"
+msgstr "Deüer"
+
+#: kconfigwizard.cpp:166
+msgid ""
+"Please make sure that the programs which are configured by the wizard do not "
+"run in parallel to the wizard; otherwise, changes done by the wizard could be "
+"lost."
+msgstr ""
+"Lütfen sihirbaz tarafından yapılandırılan uygulamaların bu sırada çalışmadığına "
+"emin olun; yoksa sihirbazın yaptığı değişiklikler kaybedilebilir."
+
+#: kconfigwizard.cpp:169
+msgid "Run Wizard Now"
+msgstr "Sihirbazı Şimdi Çalıştır"
+
+#: kdateedit.cpp:332
+msgid "tomorrow"
+msgstr "yarın"
+
+#: kdateedit.cpp:333
+msgid "today"
+msgstr "bugün"
+
+#: kdateedit.cpp:334
+msgid "yesterday"
+msgstr "dün"
+
+#: kdatepickerpopup.cpp:61
+msgid "&Today"
+msgstr "&Bugün"
+
+#: kdatepickerpopup.cpp:62
+msgid "To&morrow"
+msgstr "&Yarın"
+
+#: kdatepickerpopup.cpp:63
+msgid "Next &Week"
+msgstr "Sonraki &Hafta"
+
+#: kdatepickerpopup.cpp:64
+msgid "Next M&onth"
+msgstr "Sonraki &Ay"
+
+#: kdatepickerpopup.cpp:71
+msgid "No Date"
+msgstr "Tarih Yok"
+
+#: kfileio.cpp:31
+msgid "File I/O Error"
+msgstr "Dosya G/Ç Hatası"
+
+#: kfileio.cpp:51 kfileio.cpp:122
+#, c-format
+msgid ""
+"The specified file does not exist:\n"
+"%1"
+msgstr ""
+"Belirtilen dosya bulunamıyor:\n"
+"%1"
+
+#: kfileio.cpp:57 kfileio.cpp:129
+#, c-format
+msgid ""
+"This is a folder and not a file:\n"
+"%1"
+msgstr ""
+"Bu bir dosya değil, klasör:\n"
+"%1"
+
+#: kfileio.cpp:63 kfileio.cpp:136
+#, c-format
+msgid ""
+"You do not have read permissions to the file:\n"
+"%1"
+msgstr ""
+"Dosyadan okuma hakkınız yok:\n"
+"%1"
+
+#: kfileio.cpp:74 kfileio.cpp:147
+#, c-format
+msgid ""
+"Could not read file:\n"
+"%1"
+msgstr ""
+"Dosya okunamıyor:\n"
+"%1"
+
+#: kfileio.cpp:77 kfileio.cpp:150
+#, c-format
+msgid ""
+"Could not open file:\n"
+"%1"
+msgstr ""
+"Dosya açılamıyor:\n"
+"%1"
+
+#: kfileio.cpp:80 kfileio.cpp:153
+#, c-format
+msgid ""
+"Error while reading file:\n"
+"%1"
+msgstr ""
+"Dosya okunurken hata oluştu:\n"
+"%1"
+
+#: kfileio.cpp:96 kfileio.cpp:165
+msgid "Could only read %1 bytes of %2."
+msgstr "%2 dosyasından yalnızca %1 bayt okunabildi."
+
+#: kfileio.cpp:193
+msgid ""
+"File %1 exists.\n"
+"Do you want to replace it?"
+msgstr ""
+"%1 dosyası zaten var.\n"
+"Bunu değiştirmek istiyor musunuz?"
+
+#: kfileio.cpp:196 kfileio.cpp:213
+msgid "Save to File"
+msgstr "Dosyaya Kaydet"
+
+#: kfileio.cpp:196
+msgid "&Replace"
+msgstr "&Değiştir"
+
+#: kfileio.cpp:211
+msgid ""
+"Failed to make a backup copy of %1.\n"
+"Continue anyway?"
+msgstr ""
+"%1 dosyasının bir yedeği oluşturulamadı.\n"
+"Yinede devam etmek ister misiniz?"
+
+#: kfileio.cpp:224 kfileio.cpp:241
+#, c-format
+msgid ""
+"Could not write to file:\n"
+"%1"
+msgstr ""
+"Dosyaya yazılamadı:\n"
+"%1"
+
+#: kfileio.cpp:227
+#, c-format
+msgid ""
+"Could not open file for writing:\n"
+"%1"
+msgstr ""
+"Dosya yazılmak için açılamadı:\n"
+"%1"
+
+#: kfileio.cpp:231
+#, c-format
+msgid ""
+"Error while writing file:\n"
+"%1"
+msgstr ""
+"Dosyaya yazılırken hata oluştu:\n"
+"%1"
+
+#: kfileio.cpp:246
+msgid "Could only write %1 bytes of %2."
+msgstr "%2 dosyasına yalnızca %1 bayt yazılabildi."
+
+#: kfileio.cpp:285
+msgid "%1 does not exist"
+msgstr "%1 yok"
+
+#: kfileio.cpp:297
+msgid "%1 is not accessible and that is unchangeable."
+msgstr "%1 erişilebilir değil, değiştirilemez."
+
+#: kfileio.cpp:318
+msgid "%1 is not readable and that is unchangeable."
+msgstr "%1 okunabilir değil, değiştirilemez."
+
+#: kfileio.cpp:334
+msgid "%1 is not writable and that is unchangeable."
+msgstr "%1 yazılabilir değil, değiştirilemez."
+
+#: kfileio.cpp:349
+msgid "Folder %1 is inaccessible."
+msgstr "%1 dizini erişilebilir değil."
+
+#: kfileio.cpp:380
+msgid ""
+"Some files or folders do not have the right permissions, please correct them "
+"manually."
+msgstr "Bazı dizinlerin izinleri yanlış, lütfen bu izinleri elle düzeltin."
+
+#: kfileio.cpp:383
+msgid "Permissions Check"
+msgstr "İzin Kontrolleri"
+
+#: kimportdialog.cpp:78
+msgid "Plain"
+msgstr "Düz"
+
+#: kimportdialog.cpp:80
+msgid "Unquoted"
+msgstr "Aktarılmamış"
+
+#: kimportdialog.cpp:82
+msgid "Bracketed"
+msgstr "Belirtildi"
+
+#: kimportdialog.cpp:84
+msgid "Undefined"
+msgstr "Tanımlanmamış"
+
+#: kimportdialog.cpp:152
+msgid "Import Text File"
+msgstr "Metin Dosyası Aktar"
+
+#: kimportdialog.cpp:164
+msgid "File to import:"
+msgstr "Aktarılacak dosya:"
+
+#: kimportdialog.cpp:180
+msgid "Separator:"
+msgstr "Ayırıcı:"
+
+#: kimportdialog.cpp:184
+msgid "Tab"
+msgstr "Sekme"
+
+#: kimportdialog.cpp:185
+msgid "Space"
+msgstr "Boşluk"
+
+#: kimportdialog.cpp:195
+msgid "Import starts at row:"
+msgstr "Başlangıçta aktarılacak sıra:"
+
+#: kimportdialog.cpp:210
+msgid "Header"
+msgstr "Başlık"
+
+#: kimportdialog.cpp:219
+msgid "Assign to Selected Column"
+msgstr "Seçilmiş Sütuna Atayın"
+
+#: kimportdialog.cpp:223
+msgid "Remove Assignment From Selected Column"
+msgstr "Seçilmiş Sütundan Atamayı Kaldırın"
+
+#: kimportdialog.cpp:227
+msgid "Assign with Template..."
+msgstr "Şablonla Atayın..."
+
+#: kimportdialog.cpp:231
+msgid "Save Current Template"
+msgstr "Güncel Şablonu Sakla"
+
+#: kimportdialog.cpp:319
+msgid "Loading Progress"
+msgstr "Yükleme İşlemi Sürüyor"
+
+#: kimportdialog.cpp:320
+msgid "Please wait while the file is loaded."
+msgstr "Dosya yüklenirken lütfen bekleyiniz."
+
+#: kimportdialog.cpp:593
+msgid "Template Selection"
+msgstr "Şablon Seç"
+
+#: kimportdialog.cpp:594
+msgid "Please select a template, that matches the CSV file:"
+msgstr "Lütfen CSV dosyasına uyan bir şablon seçin:"
+
+#: kimportdialog.cpp:652
+msgid "Importing Progress"
+msgstr "Aktarım İşlemi Sürüyor"
+
+#: kimportdialog.cpp:653
+msgid "Please wait while the data is imported."
+msgstr "Veri aktarılırken lütfen bekleyiniz."
+
+#: kimportdialog.cpp:740
+msgid "Template Name"
+msgstr "Şablon ismi"
+
+#: kimportdialog.cpp:740
+msgid "Please enter a name for the template:"
+msgstr "Şablon için lütfen bir isim girin:"
+
+#: kincidencechooser.cpp:53
+msgid "Conflict Detected"
+msgstr "Çakışma Gözlemlendi"
+
+#: kincidencechooser.cpp:56
+msgid ""
+"<qt>A conflict was detected. This probably means someone edited the same entry "
+"on the server while you changed it locally."
+"<br/>NOTE: You have to check mail again to apply your changes to the "
+"server.</qt>"
+msgstr ""
+"<qt>Çakışma belirlendi. Muhtemelen Sizin yerel olarak değiştirdiğiniz bir "
+"girdiyi başka biri sunucu tarafında düzenledi. "
+"<br/>NOT: Değişikliklerinizi sunucuya uygulamak için yeniden e-postalarınızı "
+"denetleyin.</qt>"
+
+#: kincidencechooser.cpp:63
+msgid "Take Local"
+msgstr "Yerelden Al"
+
+#: kincidencechooser.cpp:65
+msgid "Take New"
+msgstr "Yeni Al"
+
+#: kincidencechooser.cpp:67
+msgid "Take Both"
+msgstr "Her İkisini de Al"
+
+#: kincidencechooser.cpp:72
+msgid "Local incidence"
+msgstr "Yerel özel durum"
+
+#: kincidencechooser.cpp:74
+msgid "Local incidence summary"
+msgstr "Yerel özel durum özeti"
+
+#: kincidencechooser.cpp:77 kincidencechooser.cpp:90
+msgid "Last modified:"
+msgstr "Son düzenlenme tarihi:"
+
+#: kincidencechooser.cpp:80 kincidencechooser.cpp:93 kincidencechooser.cpp:229
+#: kincidencechooser.cpp:285
+msgid "Show Details"
+msgstr "Ayrıntıları Göster"
+
+#: kincidencechooser.cpp:100
+msgid "Show Differences"
+msgstr "Farkları Göster"
+
+#: kincidencechooser.cpp:107
+msgid "Sync Preferences"
+msgstr "Tercihleri Eşzamanla"
+
+#: kincidencechooser.cpp:110
+msgid "Take local entry on conflict"
+msgstr "Çakışma durumunda yerel olanı al"
+
+#: kincidencechooser.cpp:111
+msgid "Take new (remote) entry on conflict"
+msgstr "Çakışma durumunda yeni (uzak) olanı al"
+
+#: kincidencechooser.cpp:112
+msgid "Take newest entry on conflict"
+msgstr "Çakışma durumunda en yeni girişi al"
+
+#: kincidencechooser.cpp:113
+msgid "Ask for every entry on conflict"
+msgstr "Çakışma durumundaki her giriş için sor"
+
+#: kincidencechooser.cpp:114
+msgid "Take both on conflict"
+msgstr "Çakışma durumunda her ikisini de al"
+
+#: kincidencechooser.cpp:120
+msgid "Apply This to All Conflicts of This Sync"
+msgstr "Bu Eşzamanlamadaki Her Çakışma İçin Uygula "
+
+#: kincidencechooser.cpp:186
+msgid "Local Event"
+msgstr "Yerel Olay"
+
+#: kincidencechooser.cpp:192
+msgid "Local Todo"
+msgstr "Yerel Yapılacaklar"
+
+#: kincidencechooser.cpp:199
+msgid "Local Journal"
+msgstr "Yerel Günlük"
+
+#: kincidencechooser.cpp:209
+msgid "New Event"
+msgstr "Yeni Olay"
+
+#: kincidencechooser.cpp:213
+msgid "New Todo"
+msgstr "Yeni Yapılacaklar"
+
+#: kincidencechooser.cpp:218
+msgid "New Journal"
+msgstr "Yeni Günlük"
+
+#: kincidencechooser.cpp:232 kincidencechooser.cpp:245
+#: kincidencechooser.cpp:288 kincidencechooser.cpp:301
+msgid "Hide Details"
+msgstr "Ayrıntıları Gizle"
+
+#: kincidencechooser.cpp:254 kincidencechooser.cpp:256
+msgid "Show details..."
+msgstr "Ayrıntıları göster..."
+
+#: kincidencechooser.cpp:268
+msgid "Differences of %1 and %2"
+msgstr "%1 ve %2 arasındaki farklar"
+
+#: kincidencechooser.cpp:270
+#, c-format
+msgid "Differences of %1"
+msgstr "%1'in farkları"
+
+#: kincidencechooser.cpp:273
+msgid "Local entry"
+msgstr "Yerel giriş"
+
+#: kincidencechooser.cpp:274
+msgid "New (remote) entry"
+msgstr "Yeni (uzak) giriş"
+
+#: kpixmapregionselectordialog.cpp:32
+msgid "Select Region of Image"
+msgstr "Resmin Bir Alanını Seçin"
+
+#: kpixmapregionselectordialog.cpp:35
+msgid "Please click and drag on the image to select the region of interest:"
+msgstr ""
+"Lütfen ilgi duyduğunuz alanı seçmek için resmin üstüne tıklayıp sürükleyerek "
+"seçin:"
+
+#: kpixmapregionselectorwidget.cpp:144
+msgid "Image Operations"
+msgstr "Resim İşlemleri"
+
+#: kpixmapregionselectorwidget.cpp:146
+msgid "&Rotate Clockwise"
+msgstr "Saat &Yönünde Döndür"
+
+#: kpixmapregionselectorwidget.cpp:151
+msgid "Rotate &Counterclockwise"
+msgstr "Saat Yönünün &Tersine Döndür"
+
+#: kprefsdialog.cpp:234
+msgid "Choose..."
+msgstr "Seç..."
+
+#: kprefsdialog.cpp:738
+msgid "Preferences"
+msgstr "Tercihler"
+
+#: kprefsdialog.cpp:853
+msgid ""
+"You are about to set all preferences to default values. All custom "
+"modifications will be lost."
+msgstr ""
+"Tüm tercihleri öndeğerlere döndürmektesiniz. Yaptığınız tüm özel değişiklikler "
+"kaybolacaktır."
+
+#: kprefsdialog.cpp:854
+msgid "Setting Default Preferences"
+msgstr "Öntanımlı Tercihler Ayarlanıyor"
+
+#: kprefsdialog.cpp:855
+msgid "Reset to Defaults"
+msgstr "Öntanımlılara Geri Dön"
+
+#: kscoring.cpp:106
+msgid ""
+"Article\n"
+"<b>%1</b>"
+"<br><b>%2</b>"
+"<br>caused the following note to appear:"
+"<br>%3"
+msgstr ""
+"Makale\n"
+"<b>%1</b>"
+"<br><b>%2</b>"
+"<br>aşağıdaki notun oluşmasına neden oldu:"
+"<br>%3"
+
+#: kscoring.cpp:172
+msgid "Adjust Score"
+msgstr "Skoru Ayarla"
+
+#: kscoring.cpp:173
+msgid "Display Message"
+msgstr "İletiyi Göster"
+
+#: kscoring.cpp:174
+msgid "Colorize Header"
+msgstr "Başlığı Renklendir"
+
+#: kscoring.cpp:175
+msgid "Mark As Read"
+msgstr "Okunmuş olarak İşaretle"
+
+#: kscoring.cpp:364
+msgid "<h1>List of collected notes</h1>"
+msgstr "<h1>Toplanan notların listesi</h1>"
+
+#: kscoring.cpp:387
+msgid "Collected Notes"
+msgstr "Toplanan Notlar"
+
+#: kscoring.cpp:452
+msgid "Contains Substring"
+msgstr "Altdizge İçeriyor"
+
+#: kscoring.cpp:453
+msgid "Matches Regular Expression"
+msgstr "Düzenli İfadelere Uyuyor"
+
+#: kscoring.cpp:454
+msgid "Matches Regular Expression (Case Sensitive)"
+msgstr "Düzenli İfadelere Uyar (Büyük Küçük Harflere Duyarlı)"
+
+#: kscoring.cpp:455
+msgid "Is Exactly the Same As"
+msgstr "Tam Olarak Aynı"
+
+#: kscoring.cpp:456
+msgid "Less Than"
+msgstr "Daha Küçük"
+
+#: kscoring.cpp:457
+msgid "Greater Than"
+msgstr "Daha Büyük"
+
+#: kscoring.cpp:989
+msgid "Choose Another Rule Name"
+msgstr "Başka Bir Kural Adı Seçin"
+
+#: kscoring.cpp:990
+msgid "The rule name is already assigned, please choose another name:"
+msgstr "Kural adı zaten kullanılıyor, lütfen başka bir tane seçin:"
+
+#: kscoring.cpp:1140
+#, c-format
+msgid "rule %1"
+msgstr "kural %1"
+
+#: kscoringeditor.cpp:69
+msgid "Not"
+msgstr "Değil"
+
+#: kscoringeditor.cpp:70
+msgid "Negate this condition"
+msgstr "Bu koşulu olumsuz yap"
+
+#: kscoringeditor.cpp:75
+msgid "Select the header to match this condition against"
+msgstr "Bu koşula uyan başlığı seç"
+
+#: kscoringeditor.cpp:79
+msgid "Select the type of match"
+msgstr "Eşleme türünü seç"
+
+#: kscoringeditor.cpp:85
+msgid "The condition for the match"
+msgstr "Eşleme kuralını seç"
+
+#: kscoringeditor.cpp:89
+msgid "Edit..."
+msgstr "Düzenle..."
+
+#: kscoringeditor.cpp:224
+msgid "Select an action."
+msgstr "Bir eylem seçin."
+
+#: kscoringeditor.cpp:408
+msgid "&Name:"
+msgstr "İsi&m:"
+
+#: kscoringeditor.cpp:414
+msgid "&Groups:"
+msgstr "&Gruplar:"
+
+#: kscoringeditor.cpp:417
+msgid "A&dd Group"
+msgstr "Grup &Ekle"
+
+#: kscoringeditor.cpp:428
+msgid "&Expire rule automatically"
+msgstr "Kuralın süresini otomatik olarak &doldur"
+
+#: kscoringeditor.cpp:435
+msgid "&Rule is valid for:"
+msgstr "&Kural bunlar için geçerli:"
+
+#: kscoringeditor.cpp:444
+msgid "Conditions"
+msgstr "Durumlar"
+
+#: kscoringeditor.cpp:452
+msgid "Match a&ll conditions"
+msgstr "Tüm durum&ları eşleştir"
+
+#: kscoringeditor.cpp:455
+msgid "Matc&h any condition"
+msgstr "&Herhangi bir durumu eşleştir"
+
+#: kscoringeditor.cpp:465
+msgid "Actions"
+msgstr "Eylemler"
+
+#: kscoringeditor.cpp:589
+msgid ""
+"_n:  day\n"
+" days"
+msgstr " gün"
+
+#: kscoringeditor.cpp:617
+msgid "Move rule up"
+msgstr "Kuralı yukarı taşı"
+
+#: kscoringeditor.cpp:622
+msgid "Move rule down"
+msgstr "Kuralı aşağı taşı"
+
+#: kscoringeditor.cpp:630
+msgid "New rule"
+msgstr "Yeni kural"
+
+#: kscoringeditor.cpp:637
+msgid "Edit rule"
+msgstr "Kuralı düzenle"
+
+#: kscoringeditor.cpp:643
+msgid "Remove rule"
+msgstr "Kuralı sil"
+
+#: kscoringeditor.cpp:648
+msgid "Copy rule"
+msgstr "Kuralı kopyala"
+
+#: kscoringeditor.cpp:656 kscoringeditor.cpp:661 kscoringeditor.cpp:700
+msgid "<all groups>"
+msgstr "<tüm grup>"
+
+#: kscoringeditor.cpp:662
+msgid "Sho&w only rules for group:"
+msgstr "Yalnızca bu grup için kuralları &göster:"
+
+#: kscoringeditor.cpp:862
+msgid "Rule Editor"
+msgstr "Kural Düzenleyicisi"
+
+#: kscoringeditor.cpp:961
+msgid "Edit Rule"
+msgstr "Kuralı Düzenle"
+
+#: ksubscription.cpp:212
+msgid "Reload &List"
+msgstr "&Listeyi Yeniden Yükle"
+
+#: ksubscription.cpp:223
+msgid "Manage which mail folders you want to see in your folder view"
+msgstr "Dizin görünümünde hangi dizinleri görmek istediğinizi ayarlayın"
+
+#: ksubscription.cpp:229
+msgid "S&earch:"
+msgstr "A&ra:"
+
+#: ksubscription.cpp:233
+msgid "Disable &tree view"
+msgstr "Ağaç görünümünü iptal e&t"
+
+#: ksubscription.cpp:235
+msgid "&Subscribed only"
+msgstr "Yalnızca üy&e olunanlar"
+
+#: ksubscription.cpp:237
+msgid "&New only"
+msgstr "Yalnızca &yeniler"
+
+#: ksubscription.cpp:246
+msgid "Loading..."
+msgstr "Yükleniyor..."
+
+#: ksubscription.cpp:247
+msgid "Current changes:"
+msgstr "Şimdiki değişiklikler:"
+
+#. i18n: file addresspicker.ui line 25
+#: ksubscription.cpp:267 ldapsearchdialog.cpp:143 ldapsearchdialog.cpp:341
+#: rc.cpp:6 rc.cpp:33
+#, no-c-format
+msgid "Name"
+msgstr "İsim"
+
+#: ksubscription.cpp:305
+msgid "Subscribe To"
+msgstr "Üye Ol"
+
+#: ksubscription.cpp:308
+msgid "Unsubscribe From"
+msgstr "Üyelikten Ayrıl"
+
+#: ksubscription.cpp:774
+#, c-format
+msgid ""
+"_n: Loading... (1 matching)\n"
+"Loading... (%n matching)"
+msgstr "Yükleniyor... (%n eşlendi)"
+
+#: ksubscription.cpp:777
+msgid ""
+"_n: %1: (1 matching)\n"
+"%1: (%n matching)"
+msgstr "%1: (%n eşlendi)"
+
+#: kwidgetlister.cpp:60
+msgid ""
+"_: more widgets\n"
+"More"
+msgstr "Daha fazla"
+
+#: kwidgetlister.cpp:63
+msgid ""
+"_: fewer widgets\n"
+"Fewer"
+msgstr "Daha az"
+
+#: kwidgetlister.cpp:70
+msgid ""
+"_: clear widgets\n"
+"Clear"
+msgstr "Temizle"
+
+#: ldapsearchdialog.cpp:74 ldapsearchdialog.cpp:291
+msgid "Title"
+msgstr ""
+
+#: ldapsearchdialog.cpp:75 ldapsearchdialog.cpp:274
+#, fuzzy
+msgid "Full Name"
+msgstr "İsim"
+
+#: ldapsearchdialog.cpp:77 ldapsearchdialog.cpp:145 ldapsearchdialog.cpp:276
+#: ldapsearchdialog.cpp:348
+#, fuzzy
+msgid "Home Number"
+msgstr "Telefon Numaralarını Sakla"
+
+#: ldapsearchdialog.cpp:78 ldapsearchdialog.cpp:146 ldapsearchdialog.cpp:277
+#: ldapsearchdialog.cpp:350
+msgid "Work Number"
+msgstr ""
+
+#: ldapsearchdialog.cpp:79 ldapsearchdialog.cpp:278
+msgid "Mobile Number"
+msgstr ""
+
+#: ldapsearchdialog.cpp:80 ldapsearchdialog.cpp:279
+msgid "Fax Number"
+msgstr ""
+
+#: ldapsearchdialog.cpp:81
+msgid "Pager"
+msgstr ""
+
+#: ldapsearchdialog.cpp:82 ldapsearchdialog.cpp:282
+msgid "Street"
+msgstr ""
+
+#: ldapsearchdialog.cpp:83 ldapsearchdialog.cpp:283
+#, fuzzy
+msgid "State"
+msgstr "Durum"
+
+#: ldapsearchdialog.cpp:84 ldapsearchdialog.cpp:284
+msgid "Country"
+msgstr ""
+
+#: ldapsearchdialog.cpp:85 ldapsearchdialog.cpp:287
+msgid "City"
+msgstr ""
+
+#: ldapsearchdialog.cpp:86 ldapsearchdialog.cpp:281
+#, fuzzy
+msgid "Organization"
+msgstr "Organizatör"
+
+#: ldapsearchdialog.cpp:87 ldapsearchdialog.cpp:280
+msgid "Company"
+msgstr ""
+
+#: ldapsearchdialog.cpp:89 ldapsearchdialog.cpp:285
+msgid "Zip Code"
+msgstr ""
+
+#: ldapsearchdialog.cpp:90 ldapsearchdialog.cpp:286
+#, fuzzy
+msgid "Postal Address"
+msgstr "Posta Adreslerini Göster"
+
+#: ldapsearchdialog.cpp:92 ldapsearchdialog.cpp:290
+#, fuzzy
+msgid "User ID"
+msgstr "Kullanıcı No"
+
+#: ldapsearchdialog.cpp:116 ldapsearchdialog.cpp:123
+msgid "Search for Addresses in Directory"
+msgstr ""
+
+#: ldapsearchdialog.cpp:132
+#, fuzzy
+msgid "Search for:"
+msgstr "Ara:"
+
+#: ldapsearchdialog.cpp:139
+msgid "in"
+msgstr ""
+
+#: ldapsearchdialog.cpp:152 ldapsearchdialog.cpp:406
+#, fuzzy
+msgid "Search"
+msgstr "Ara:"
+
+#: ldapsearchdialog.cpp:160
+msgid "Recursive search"
+msgstr ""
+
+#: ldapsearchdialog.cpp:165
+#, fuzzy
+msgid "Contains"
+msgstr "Durumlar"
+
+#: ldapsearchdialog.cpp:166
+#, fuzzy
+msgid "Starts With"
+msgstr "Başlama zamanı"
+
+#: ldapsearchdialog.cpp:179
+msgid "Unselect All"
+msgstr ""
+
+#: ldapsearchdialog.cpp:181
+#, fuzzy
+msgid "Add Selected"
+msgstr "Adres Seçimi"
+
+#: ldapsearchdialog.cpp:222
+msgid ""
+"You must select a LDAP server before searching.\n"
+"You can do this from the menu Settings/Configure KAddressBook."
+msgstr ""
+
+#: maillistdrag.cpp:236
+msgid "Retrieving and storing messages..."
+msgstr "İletiler alınıyor ve depolanıyor..."
+
+#: pluginloaderbase.cpp:96
+msgid "Unnamed plugin"
+msgstr "İsimsiz eklenti"
+
+#: pluginloaderbase.cpp:103
+msgid "No description available"
+msgstr "Tanım mevcut değil"
+
+#: progressdialog.cpp:171
+msgid "Cancel this operation."
+msgstr "Bu işlemi iptal et."
+
+#: progressmanager.cpp:96
+msgid "Aborting..."
+msgstr "İptal ediliyor..."
+
+#. i18n: file addresspicker.ui line 36
+#: rc.cpp:9 rc.cpp:36
+#, no-c-format
+msgid "Email Address"
+msgstr "E-posta Adresi"
+
+#. i18n: file addresspicker.ui line 100
+#: rc.cpp:12
+#, no-c-format
+msgid "&To >>"
+msgstr "&Alıcı >>"
+
+#. i18n: file addresspicker.ui line 111
+#: rc.cpp:15
+#, no-c-format
+msgid "&CC >>"
+msgstr "&CC >>"
+
+#. i18n: file addresspicker.ui line 122
+#: rc.cpp:18
+#, no-c-format
+msgid "&BCC >>"
+msgstr "&BCC >>"
+
+#. i18n: file addresspicker.ui line 150
+#: rc.cpp:21
+#, no-c-format
+msgid "<< &Remove"
+msgstr "<< &Sil"
+
+#. i18n: file addresspicker.ui line 182
+#: rc.cpp:24
+#, no-c-format
+msgid "&Selected Addresses"
+msgstr "&Seçili Adresler"
+
+#. i18n: file addresspicker.ui line 201
+#: rc.cpp:27
+#, no-c-format
+msgid "&Address Book"
+msgstr "&Adres Defteri"
+
+#. i18n: file addresspicker.ui line 223
+#: rc.cpp:30
+#, no-c-format
+msgid "&Filter on:"
+msgstr "&Filtrele:"
+
+#. i18n: file addresspicker.ui line 300
+#: rc.cpp:39
+#, no-c-format
+msgid "Save as &Distribution List..."
+msgstr "&Dağıtım Listesi Olarak Kaydet..."
+
+#. i18n: file addresspicker.ui line 303
+#: rc.cpp:42
+#, no-c-format
+msgid "Alt+D"
+msgstr ""
+
+#. i18n: file addresspicker.ui line 311
+#: rc.cpp:45
+#, no-c-format
+msgid "&Search Directory Service"
+msgstr ""
+
+#. i18n: file categoryeditdialog_base.ui line 36
+#: rc.cpp:51 rc.cpp:63
+#, no-c-format
+msgid "Category"
+msgstr "Kategori"
+
+#. i18n: file categoryeditdialog_base.ui line 68
+#: rc.cpp:54
+#, no-c-format
+msgid "A&dd"
+msgstr "&Ekle"
+
+#. i18n: file categoryselectdialog_base.ui line 63
+#: rc.cpp:66
+#, no-c-format
+msgid "&Clear Selection"
+msgstr "&Seçimi Temizle"
+
+#. i18n: file categoryselectdialog_base.ui line 88
+#: rc.cpp:69
+#, no-c-format
+msgid "&Edit Categories..."
+msgstr "&Kategorileri Düzenle..."
+
+#. i18n: file pimemoticons.kcfg line 8
+#: rc.cpp:72
+#, no-c-format
+msgid "Emoticon theme"
+msgstr "Gülenyüz teması"
+
+#. i18n: file pimemoticons.kcfg line 9
+#: rc.cpp:75
+#, no-c-format
+msgid "This allows you to change the emoticon theme that should be used."
+msgstr "Bu kullanılacak gülenyüz temasını değiştirmenize izin verir."
+
+#: recentaddresses.cpp:161
+msgid "Edit Recent Addresses"
+msgstr "Son Kullanılan Adresleri Düzenle"
+
+#: sendsmsdialog.cpp:31
+msgid "Send SMS"
+msgstr "Kısa Mesaj Gönder"
+
+#: sendsmsdialog.cpp:37
+msgid "Message"
+msgstr "İleti"
+
+#: sendsmsdialog.cpp:46
+msgid "Recipient:"
+msgstr "Alıcı:"
+
+#: sendsmsdialog.cpp:49
+msgid "Send"
+msgstr "Gönder"
+
+#: ssllabel.cpp:69
+msgid "Connection is encrypted"
+msgstr "Bağlantı şifreli"
+
+#: ssllabel.cpp:75
+msgid "Connection is unencrypted"
+msgstr "Bağlantı şifresiz"
+
+#: statusbarprogresswidget.cpp:81
+msgid "Open detailed progress dialog"
+msgstr "Detaylı işlem iletişim kutusunu aç"
+
+#: statusbarprogresswidget.cpp:278
+msgid "Hide detailed progress window"
+msgstr "Detaylı işlem penceresini sakla"
+
+#: statusbarprogresswidget.cpp:283
+msgid "Show detailed progress window"
+msgstr "Detaylı işlem penceresini göster"

@@ -1,0 +1,740 @@
+# translation of kverbos.po to Türkçe
+# Copyright (C) 2004, 2005 Free Software Foundation, Inc.
+# Engin Çağatay <engincagatay@yahoo.com>, 2004, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kverbos\n"
+"POT-Creation-Date: 2008-07-08 01:24+0200\n"
+"PO-Revision-Date: 2005-07-16 01:12+0300\n"
+"Last-Translator: Engin Çağatay <engincagatay@yahoo.com>\n"
+"Language-Team: Türkçe <yerelleştirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: kverbosdoc.cpp:106
+msgid ""
+"The current file has been modified.\n"
+"Do you want to save it?"
+msgstr ""
+"Güncel dosya değiştirildi. \n"
+"Bunu kaydetmek istiyor musunuz?"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: main.cpp:24 main.cpp:38
+msgid "KVerbos"
+msgstr "KVerbos"
+
+#: main.cpp:28
+msgid "File to open"
+msgstr "Açılacak dosya"
+
+#: main.cpp:42
+msgid "svg icon"
+msgstr "svg simgesi"
+
+#: kerfassen.cpp:276
+msgid ""
+"The current verb is not in the list yet.\n"
+"Do you want to add it?"
+msgstr ""
+"Güncel fiil, henüz listede değil.\n"
+"Bunu eklemek istiyor musunuz?"
+
+#: kerfassen.cpp:277
+msgid "Do Not Add"
+msgstr ""
+
+#: kerfassen.cpp:423
+msgid ""
+"The current verb is already in the list.\n"
+"Do you want to replace it?\n"
+"If you do not want to change the list press 'Cancel'."
+msgstr ""
+"Güncel fiil, listede var.\n"
+"Bunun üzerine yazmak istiyor musunuz? Eğer değiştirmek istemiyorsanız, İptal "
+"düğmesine tıklayın."
+
+#: kerfassen.cpp:424
+msgid "Do Not Replace"
+msgstr ""
+
+#: kverbos.cpp:119
+msgid "New &Window"
+msgstr "Yeni &Pencere"
+
+#: kverbos.cpp:123
+msgid "Open &Standard Verb File"
+msgstr "&Standart Fiil Dosyasını Aç"
+
+#: kverbos.cpp:132
+msgid "E&nter New Verb..."
+msgstr "&Yeni Fiil Gir..."
+
+#: kverbos.cpp:133
+msgid "&Edit Verb List..."
+msgstr "&Fiil Listesini Düzenle..."
+
+#: kverbos.cpp:135
+msgid "&Configure KVerbos..."
+msgstr "KVerbos'u &Yapılandır..."
+
+#: kverbos.cpp:136
+msgid "&Username..."
+msgstr "&Kullanıcı Adı..."
+
+#: kverbos.cpp:137
+msgid "&Results"
+msgstr "&Sonuçlar"
+
+#: kverbos.cpp:139
+msgid "Opens a new application window"
+msgstr "Yeni bir uygulama penceresi açar"
+
+#: kverbos.cpp:140
+msgid "Opens the standard KVerbos verb file"
+msgstr "Standart KVerbos fiil dosyasını açar"
+
+#: kverbos.cpp:141
+msgid "Creates a new document"
+msgstr "Yeni bir belge açar"
+
+#: kverbos.cpp:142
+msgid "Opens an existing document"
+msgstr "Mevcut bir belgeyi açar"
+
+#: kverbos.cpp:143
+msgid "Opens a recently used file"
+msgstr "Son kullanılan dosyalardan açar"
+
+#: kverbos.cpp:144
+msgid "Saves the actual document"
+msgstr "Güncel belgeyi kaydeder"
+
+#: kverbos.cpp:145
+msgid "Saves the actual document as..."
+msgstr "Güncel belgeyi farklı kaydeder..."
+
+#: kverbos.cpp:146
+msgid "Closes the actual document"
+msgstr "Güncel belgeyi kapatır"
+
+#: kverbos.cpp:147
+msgid "Prints out the actual document"
+msgstr "Güncel belgeyi yazdırır"
+
+#: kverbos.cpp:148
+msgid "Quits the application"
+msgstr "Uygulamadan çıkar"
+
+#: kverbos.cpp:149
+msgid "Cuts the selected section and puts it to the clipboard"
+msgstr "7"
+
+#: kverbos.cpp:150
+msgid "Copies the selected section to the clipboard"
+msgstr "Seçilen alanı panoya kopyalar"
+
+#: kverbos.cpp:151
+msgid "Pastes the clipboard contents to actual position"
+msgstr "Pano içeriğini mevcut pozisyona yapıştırır"
+
+#: kverbos.cpp:152
+msgid "Add new verbs."
+msgstr "Yeni fiil ekle."
+
+#: kverbos.cpp:153
+msgid "Edit the list of verbs."
+msgstr "Fiil listesini düzenle."
+
+#: kverbos.cpp:154
+msgid "Change some options of the program"
+msgstr "Programdaki bazı seçenekleri değiştir"
+
+#: kverbos.cpp:155
+msgid "Enter your name as the username"
+msgstr "Kullanıcı adı olarak adınızı girin"
+
+#: kverbos.cpp:156
+msgid "These are your latest results."
+msgstr "Bu sizin aldığınız son sonuçlar."
+
+#: kverbos.cpp:174 kverbos.cpp:211 kverbos.cpp:356 kverbos.cpp:374
+#: kverbos.cpp:399 kverbos.cpp:417 kverbos.cpp:441 kverbos.cpp:456
+#: kverbos.cpp:472 kverbos.cpp:481 kverbos.cpp:494 kverbos.cpp:515
+#: kverbos.cpp:522 kverbos.cpp:529 kverbos.cpp:536
+msgid "Ready."
+msgstr "Hazır."
+
+#: kverbos.cpp:175
+msgid "Trained: 0"
+msgstr "Çalışıldı: 0"
+
+#: kverbos.cpp:176
+msgid "Correct: 0"
+msgstr "Doğru: 0"
+
+#: kverbos.cpp:177
+msgid "Number of verbs: 0"
+msgstr "Fiil sayısı: 0"
+
+#: kverbos.cpp:178
+msgid "User: nobody"
+msgstr "Kullanıcı: birisi"
+
+#: kverbos.cpp:207 kverbos.cpp:379 kverbos.cpp:404 kverbos.cpp:422
+msgid "Opening file..."
+msgstr "Dosya açılıyor..."
+
+#: kverbos.cpp:351
+msgid "Opening a new application window..."
+msgstr "Yeni bir uygulama penceresi açılıyor..."
+
+#: kverbos.cpp:361
+msgid "Creating new document..."
+msgstr "Yeni belge oluşturuluyor..."
+
+#: kverbos.cpp:389 kverbos.cpp:464
+msgid "*|All Files"
+msgstr "*|Tüm Dosyalar"
+
+#: kverbos.cpp:389
+msgid "Open File"
+msgstr "Dosya Aç"
+
+#: kverbos.cpp:446
+msgid "Saving file..."
+msgstr "Dosya kaydediliyor..."
+
+#: kverbos.cpp:461
+msgid "Saving file with a new filename..."
+msgstr "Dosya yeni bir isimle kaydediliyor..."
+
+#: kverbos.cpp:477
+msgid "Closing file..."
+msgstr "Dosya kapatılıyor..."
+
+#: kverbos.cpp:486
+msgid "Printing..."
+msgstr "Yazdırılıyor..."
+
+#: kverbos.cpp:499
+msgid "Exiting..."
+msgstr "Çıkılıyor..."
+
+#: kverbos.cpp:520
+msgid "Cutting selection..."
+msgstr "Seçim kesiliyor..."
+
+#: kverbos.cpp:527
+msgid "Copying selection to clipboard..."
+msgstr "Seçim panoya kopyalanıyor..."
+
+#: kverbos.cpp:534
+msgid "Inserting clipboard contents..."
+msgstr "Pano içeriği yerleştiriliyor..."
+
+#: kverbos.cpp:552
+msgid "Number of verbs: "
+msgstr "Fiillerin sayısı: "
+
+#: kverbos.cpp:561
+msgid "Trained: "
+msgstr "Çalışıldı: "
+
+#: kverbos.cpp:570
+msgid "Correct: "
+msgstr "Doğru: "
+
+#: kverbos.cpp:733
+msgid "Enter User Name"
+msgstr "Kullanıcı Adını Girin"
+
+#: kverbos.cpp:733
+msgid "Please enter your name:"
+msgstr "Lütfen adınızı girin:"
+
+#: kverbos.cpp:737
+msgid "user: "
+msgstr "kullanıcı: "
+
+#. i18n: file kverbosui.rc line 15
+#: rc.cpp:12
+#, no-c-format
+msgid "&User"
+msgstr "&Kullanıcı"
+
+#. i18n: file qerfassen.ui line 21
+#: rc.cpp:18
+#, no-c-format
+msgid "Enter New Verb or Edit Existing Verb"
+msgstr "Yeni Fiil Gir ya da Mevcut Fiili Düzenle"
+
+#. i18n: file qerfassen.ui line 66
+#: rc.cpp:21 rc.cpp:309
+#, no-c-format
+msgid "Verb:"
+msgstr "Fiil:"
+
+#. i18n: file qerfassen.ui line 84
+#: rc.cpp:24 rc.cpp:312
+#, no-c-format
+msgid "In the foreign language:"
+msgstr "Yabancı dilde:"
+
+#. i18n: file qerfassen.ui line 116
+#: rc.cpp:27
+#, no-c-format
+msgid "regular"
+msgstr "düzenli"
+
+#. i18n: file qerfassen.ui line 121
+#: rc.cpp:30
+#, no-c-format
+msgid "irregular"
+msgstr "düzensiz"
+
+#. i18n: file qerfassen.ui line 126
+#: rc.cpp:33
+#, no-c-format
+msgid "e > ie"
+msgstr "e > ie"
+
+#. i18n: file qerfassen.ui line 131
+#: rc.cpp:36
+#, no-c-format
+msgid "o > ue"
+msgstr "o > ue"
+
+#. i18n: file qerfassen.ui line 136
+#: rc.cpp:39
+#, no-c-format
+msgid "u > ue"
+msgstr "u > ue"
+
+#. i18n: file qerfassen.ui line 141
+#: rc.cpp:42
+#, no-c-format
+msgid "e > i"
+msgstr "e > i"
+
+#. i18n: file qerfassen.ui line 146
+#: rc.cpp:45
+#, no-c-format
+msgid "c > qu"
+msgstr "c > qu"
+
+#. i18n: file qerfassen.ui line 151
+#: rc.cpp:48
+#, no-c-format
+msgid "g > gu"
+msgstr "g > gu"
+
+#. i18n: file qerfassen.ui line 156
+#: rc.cpp:51
+#, no-c-format
+msgid "z > c"
+msgstr "z > c"
+
+#. i18n: file qerfassen.ui line 161
+#: rc.cpp:54
+#, no-c-format
+msgid "gu > gu"
+msgstr "gu > gu"
+
+#. i18n: file qerfassen.ui line 166
+#: rc.cpp:57
+#, no-c-format
+msgid "c > z"
+msgstr "c > z"
+
+#. i18n: file qerfassen.ui line 171
+#: rc.cpp:60
+#, no-c-format
+msgid "g > j"
+msgstr "g > j"
+
+#. i18n: file qerfassen.ui line 176
+#: rc.cpp:63
+#, no-c-format
+msgid "gu > g"
+msgstr "gu > g"
+
+#. i18n: file qerfassen.ui line 181
+#: rc.cpp:66
+#, no-c-format
+msgid "qu > c"
+msgstr "qu > c"
+
+#. i18n: file qerfassen.ui line 186
+#: rc.cpp:69
+#, no-c-format
+msgid "accent like 'enviar'"
+msgstr ""
+
+#. i18n: file qerfassen.ui line 191
+#: rc.cpp:72
+#, no-c-format
+msgid "accent like 'continuar'"
+msgstr ""
+
+#. i18n: file qerfassen.ui line 196
+#: rc.cpp:75
+#, no-c-format
+msgid "missing i"
+msgstr "eksik i"
+
+#. i18n: file qerfassen.ui line 241
+#: rc.cpp:78
+#, no-c-format
+msgid "gerundio:"
+msgstr ""
+
+#. i18n: file qerfassen.ui line 259
+#: rc.cpp:81
+#, no-c-format
+msgid "participio:"
+msgstr ""
+
+#. i18n: file qerfassen.ui line 286
+#: rc.cpp:84 rc.cpp:318 rc.cpp:426
+#, no-c-format
+msgid "presente"
+msgstr ""
+
+#. i18n: file qerfassen.ui line 351
+#: rc.cpp:87 rc.cpp:111 rc.cpp:135 rc.cpp:159 rc.cpp:183 rc.cpp:207 rc.cpp:231
+#: rc.cpp:255 rc.cpp:321
+#, no-c-format
+msgid "yo:"
+msgstr "yo:"
+
+#. i18n: file qerfassen.ui line 365
+#: rc.cpp:90 rc.cpp:114 rc.cpp:138 rc.cpp:162 rc.cpp:186 rc.cpp:210 rc.cpp:234
+#: rc.cpp:258 rc.cpp:324
+#, no-c-format
+msgid "tu:"
+msgstr "tu:"
+
+#. i18n: file qerfassen.ui line 379
+#: rc.cpp:93 rc.cpp:117 rc.cpp:141 rc.cpp:165 rc.cpp:189 rc.cpp:213 rc.cpp:237
+#: rc.cpp:261 rc.cpp:327
+#, no-c-format
+msgid "el/ella/usted:"
+msgstr "el/ella/usted:"
+
+#. i18n: file qerfassen.ui line 393
+#: rc.cpp:96 rc.cpp:120 rc.cpp:144 rc.cpp:168 rc.cpp:192 rc.cpp:216 rc.cpp:240
+#: rc.cpp:264 rc.cpp:330
+#, no-c-format
+msgid "nosotros:"
+msgstr "nosotros:"
+
+#. i18n: file qerfassen.ui line 407
+#: rc.cpp:99 rc.cpp:123 rc.cpp:147 rc.cpp:171 rc.cpp:195 rc.cpp:219 rc.cpp:243
+#: rc.cpp:267 rc.cpp:333
+#, no-c-format
+msgid "vosotros:"
+msgstr "vosotros:"
+
+#. i18n: file qerfassen.ui line 421
+#: rc.cpp:102 rc.cpp:126 rc.cpp:150 rc.cpp:174 rc.cpp:198 rc.cpp:222
+#: rc.cpp:246 rc.cpp:336
+#, no-c-format
+msgid "ellos/ellas/ustedes:"
+msgstr "ellos/ellas/ustedes:"
+
+#. i18n: file qerfassen.ui line 529
+#: rc.cpp:105 rc.cpp:129 rc.cpp:153 rc.cpp:177 rc.cpp:201 rc.cpp:225
+#: rc.cpp:249 rc.cpp:273
+#, no-c-format
+msgid "Clear Page"
+msgstr "Sayfayı Temizle"
+
+#. i18n: file qerfassen.ui line 554
+#: rc.cpp:108 rc.cpp:429
+#, no-c-format
+msgid "imperfecto"
+msgstr ""
+
+#. i18n: file qerfassen.ui line 822
+#: rc.cpp:132 rc.cpp:432
+#, no-c-format
+msgid "indefinido"
+msgstr ""
+
+#. i18n: file qerfassen.ui line 1090
+#: rc.cpp:156 rc.cpp:435
+#, no-c-format
+msgid "futuro"
+msgstr ""
+
+#. i18n: file qerfassen.ui line 1358
+#: rc.cpp:180 rc.cpp:438
+#, no-c-format
+msgid "condicional"
+msgstr "condicional"
+
+#. i18n: file qerfassen.ui line 1626
+#: rc.cpp:204 rc.cpp:441
+#, no-c-format
+msgid "subjuntivo presente"
+msgstr "subjuntivo presente"
+
+#. i18n: file qerfassen.ui line 1894
+#: rc.cpp:228 rc.cpp:444
+#, no-c-format
+msgid "subjuntivo pasado"
+msgstr "subjuntivo pasado"
+
+#. i18n: file qerfassen.ui line 2162
+#: rc.cpp:252 rc.cpp:450
+#, no-c-format
+msgid "imperativo"
+msgstr "imperativo"
+
+#. i18n: file qerfassen.ui line 2305
+#: rc.cpp:270
+#, no-c-format
+msgid "ellos:"
+msgstr "ellos:"
+
+#. i18n: file qerfassen.ui line 2472
+#: rc.cpp:276 rc.cpp:339
+#, no-c-format
+msgid "n"
+msgstr "n"
+
+#. i18n: file qerfassen.ui line 2486
+#: rc.cpp:279 rc.cpp:342
+#, no-c-format
+msgid "a"
+msgstr "a"
+
+#. i18n: file qerfassen.ui line 2500
+#: rc.cpp:282 rc.cpp:345
+#, no-c-format
+msgid "e"
+msgstr "e"
+
+#. i18n: file qerfassen.ui line 2514
+#: rc.cpp:285 rc.cpp:348
+#, no-c-format
+msgid "i"
+msgstr "i"
+
+#. i18n: file qerfassen.ui line 2528
+#: rc.cpp:288 rc.cpp:351
+#, no-c-format
+msgid "o"
+msgstr "o"
+
+#. i18n: file qerfassen.ui line 2542
+#: rc.cpp:291 rc.cpp:354
+#, no-c-format
+msgid "u"
+msgstr "u"
+
+#. i18n: file qerfassen.ui line 2611
+#: rc.cpp:300
+#, no-c-format
+msgid "Next"
+msgstr "İleri"
+
+#. i18n: file qerfassen.ui line 2625
+#: rc.cpp:303
+#, no-c-format
+msgid "New"
+msgstr "Yeni"
+
+#. i18n: file qlernen.ui line 148
+#: rc.cpp:315
+#, no-c-format
+msgid "Time"
+msgstr "Zaman"
+
+#. i18n: file qlernen.ui line 651
+#: rc.cpp:357
+#, no-c-format
+msgid "Result:"
+msgstr "Sonuç:"
+
+#. i18n: file qlernen.ui line 756
+#: rc.cpp:363
+#, no-c-format
+msgid "Correct"
+msgstr "Doğru"
+
+#. i18n: file qlernen.ui line 764
+#: rc.cpp:366
+#, no-c-format
+msgid "Solution"
+msgstr "Çözüm"
+
+#. i18n: file qresult.ui line 24
+#: rc.cpp:372
+#, no-c-format
+msgid "Results of Training Sessions"
+msgstr "Alıştırma Oturumlarının Sonuçları"
+
+#. i18n: file qresult.ui line 93
+#: rc.cpp:375
+#, no-c-format
+msgid "User:"
+msgstr "Kullanıcı:"
+
+#. i18n: file qresult.ui line 117
+#: rc.cpp:378
+#, no-c-format
+msgid "nobody"
+msgstr "hiç kimse"
+
+#. i18n: file qresult.ui line 130
+#: rc.cpp:381
+#, no-c-format
+msgid "Number of training sessions:"
+msgstr "Alıştırma oturumlarının sayısı:"
+
+#. i18n: file qresult.ui line 154
+#: rc.cpp:384
+#, no-c-format
+msgid "5"
+msgstr "5"
+
+#. i18n: file qresult.ui line 209
+#: rc.cpp:390
+#, no-c-format
+msgid "Wrong"
+msgstr "Yanlış"
+
+#. i18n: file qverbedit.ui line 21
+#: rc.cpp:396
+#, no-c-format
+msgid "Edit Verb List"
+msgstr "Fiil Listesini Düzenle"
+
+#. i18n: file qverbedit.ui line 115
+#: rc.cpp:411
+#, no-c-format
+msgid "Spanish Verb"
+msgstr "İspanyolca Fiil"
+
+#. i18n: file qverbedit.ui line 129
+#: rc.cpp:414
+#, no-c-format
+msgid "Foreign Language"
+msgstr "Yabancı Dil"
+
+#. i18n: file qverbosoptions.ui line 52
+#: rc.cpp:420
+#, no-c-format
+msgid "Select Times"
+msgstr ""
+
+#. i18n: file qverbosoptions.ui line 103
+#: rc.cpp:423
+#, no-c-format
+msgid "tiempos"
+msgstr ""
+
+#. i18n: file qverbosoptions.ui line 224
+#: rc.cpp:447
+#, no-c-format
+msgid "subjuntivo futuro"
+msgstr ""
+
+#. i18n: file qverbosoptions.ui line 288
+#: rc.cpp:453
+#, no-c-format
+msgid "normal"
+msgstr ""
+
+#. i18n: file qverbosoptions.ui line 545
+#: rc.cpp:456
+#, no-c-format
+msgid "progresivo"
+msgstr ""
+
+#. i18n: file qverbosoptions.ui line 794
+#: rc.cpp:459
+#, no-c-format
+msgid "perfecto"
+msgstr ""
+
+#. i18n: file qverbosoptions.ui line 1019
+#: rc.cpp:462
+#, no-c-format
+msgid "Select Correction Mode"
+msgstr "Düzeltme Kipini Seç"
+
+#. i18n: file qverbosoptions.ui line 1050
+#: rc.cpp:465
+#, no-c-format
+msgid "Correct strictly"
+msgstr ""
+
+#. i18n: file qverbosoptions.ui line 1061
+#: rc.cpp:468
+#, no-c-format
+msgid "Ignore accents"
+msgstr ""
+
+#. i18n: file qverbosoptions.ui line 1073
+#: rc.cpp:471
+#, no-c-format
+msgid "Control of KFeeder"
+msgstr "KFeeder'ın Kontrolü"
+
+#. i18n: file qverbosoptions.ui line 1121
+#: rc.cpp:474
+#, no-c-format
+msgid "Show splash screen"
+msgstr "Açılış ekranını göster"
+
+#. i18n: file qverbosoptions.ui line 1129
+#: rc.cpp:477
+#, no-c-format
+msgid "Using KFeeder"
+msgstr "KFeeder kullanılıyor"
+
+#. i18n: file qverbosoptions.ui line 1137
+#: rc.cpp:480
+#, no-c-format
+msgid "Move food automatically"
+msgstr ""
+
+#. i18n: file kverbos.kcfg line 9
+#: rc.cpp:489
+#, no-c-format
+msgid "The language selected by the user"
+msgstr "Kullanıcının seçtiği dil"
+
+#: kresult.cpp:37
+msgid "trained"
+msgstr "çalışıldı"
+
+#: kresult.cpp:38
+#, c-format
+msgid "correct in %"
+msgstr "% olarak doğru"
+
+#: kresult.cpp:39
+msgid "date"
+msgstr "tarih"
+
+#: kresult.cpp:43
+msgid " verbs"
+msgstr " fiiller"

@@ -1,0 +1,126 @@
+# translation of kio_help.po to 
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kio_help\n"
+"POT-Creation-Date: 2006-05-03 03:51+0200\n"
+"PO-Revision-Date: 2003-12-11 12:15+0200\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team:  <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.2\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: kio_help.cpp:115
+#, c-format
+msgid "There is no documentation available for %1."
+msgstr "%1 için kullanılabilir bir belge yok."
+
+#: kio_help.cpp:158
+msgid "Looking up correct file"
+msgstr "Doğru dosyaya bakılıyor"
+
+#: kio_help.cpp:209
+msgid "Preparing document"
+msgstr "Belge hazırlanıyor"
+
+#: kio_help.cpp:218 kio_help.cpp:251
+#, c-format
+msgid "The requested help file could not be parsed:<br>%1"
+msgstr "İstenen yardım dosyası okunamadı:<br>%1"
+
+#: kio_help.cpp:240
+msgid "Saving to cache"
+msgstr "Önbelleğe kaydediliyor"
+
+#: kio_help.cpp:246
+msgid "Using cached version"
+msgstr "Önbellekteki dosya kullanılıyor"
+
+#: kio_help.cpp:308
+msgid "Looking up section"
+msgstr "Bölüme bakılıyor"
+
+#: kio_help.cpp:319
+msgid "Could not find filename %1 in %2."
+msgstr "%1 dosyası %2 içerisinde bulunamadı."
+
+#: meinproc.cpp:74
+msgid "Stylesheet to use"
+msgstr "Kullanılacak biçem kağıdı"
+
+#: meinproc.cpp:75
+msgid "Output whole document to stdout"
+msgstr "Tüm belgeyi standart çıkışa (stdout) yaz"
+
+#: meinproc.cpp:77
+msgid "Output whole document to file"
+msgstr "Tüm belgeyi bir dosyaya yaz"
+
+#: meinproc.cpp:78
+msgid "Create a ht://dig compatible index"
+msgstr "ht://dig uyumlu bir indeks oluştur"
+
+#: meinproc.cpp:79
+msgid "Check the document for validity"
+msgstr "Geçerlilik için belgeyi kontrol et"
+
+#: meinproc.cpp:80
+msgid "Create a cache file for the document"
+msgstr "Belge için bir önbellek dosyası oluştur"
+
+#: meinproc.cpp:81
+msgid "Set the srcdir, for kdelibs"
+msgstr "Kdelibs için bir kaynak dizini(srcdir) oluştur"
+
+#: meinproc.cpp:82
+msgid "Parameters to pass to the stylesheet"
+msgstr "Biçem dosyasına verilecek parametreler"
+
+#: meinproc.cpp:83
+msgid "The file to transform"
+msgstr "Dönüştürülecek olan dosya"
+
+#: meinproc.cpp:94
+msgid "XML-Translator"
+msgstr "XML Çevirici"
+
+#: meinproc.cpp:96
+msgid "KDE Translator for XML"
+msgstr "XML için KDE Çevirici"
+
+#: meinproc.cpp:264
+#, c-format
+msgid "Could not write to cache file %1."
+msgstr "%1 önbellek dosyasına yazılamadı."
+
+#: xslt.cpp:55
+msgid "Parsing stylesheet"
+msgstr "Biçem dosyası okunuyor"
+
+#: xslt.cpp:69
+msgid "Parsing document"
+msgstr "Belge okunuyor"
+
+#: xslt.cpp:78
+msgid "Applying stylesheet"
+msgstr "Biçem dosyası uygulanıyor"
+
+#: xslt.cpp:86
+msgid "Writing document"
+msgstr "Belgeye yazılıyor"

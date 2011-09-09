@@ -1,0 +1,304 @@
+# translation of kwifimanager.po to
+# Copyright (C) 2003, 2004, 2007 Free Software Foundation, Inc.
+#
+# root, 2004.
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# Rıdvan CAN <ridvancan@linux-sevenler.org>, 2004.
+# S.Çağlar Onur <caglar@uludag.org.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kwifimanager\n"
+"POT-Creation-Date: 2006-11-26 03:33+0100\n"
+"PO-Revision-Date: 2007-07-09 05:58+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "YILDIZ KARDEŞLER S.Çağlar Onur"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "turkishprogram@xposta.com caglar@uludag.org.tr"
+
+#: interface_wireless.cpp:207
+msgid "UNKNOWN"
+msgstr "BİLİNMEYEN"
+
+#: interface_wireless_wirelessextensions.cpp:524
+msgid "Network Name"
+msgstr "Ağ İsmi"
+
+#: interface_wireless_wirelessextensions.cpp:525
+msgid "Mode"
+msgstr "Kip"
+
+#: interface_wireless_wirelessextensions.cpp:526
+msgid "Quality"
+msgstr "Kalite"
+
+#: interface_wireless_wirelessextensions.cpp:527
+msgid "WEP"
+msgstr "WEP"
+
+#: interface_wireless_wirelessextensions.cpp:541
+msgid ""
+"Unable to perform the scan. Please make sure the executable \"iwlist\" is in "
+"your $PATH."
+msgstr ""
+"Tarama işlemi yapılamadı. Lütfen \"iwlist\" çalıştırılabilir dosyasının $PATH "
+"yapılandırmanız içerisinde olduğundan emin olun."
+
+#: interface_wireless_wirelessextensions.cpp:542
+#: interface_wireless_wirelessextensions.cpp:567
+msgid "Scanning not possible"
+msgstr "Tarama mümkün değil"
+
+#: interface_wireless_wirelessextensions.cpp:566
+msgid ""
+"Your card does not support scanning. The results window will not contain any "
+"results."
+msgstr ""
+"Kartınız taramayı desteklemiyor. Sonuç penceresinde hiç sonuç olmayacak."
+
+#: interface_wireless_wirelessextensions.cpp:584 networkscanning.cpp:130
+msgid "Managed"
+msgstr "Managed"
+
+#: interface_wireless_wirelessextensions.cpp:586
+msgid "Ad-Hoc"
+msgstr "Ad-Hoc"
+
+#: kwifimanager.cpp:125
+msgid "No Interface"
+msgstr "Arayüz Yok"
+
+#: kwifimanager.cpp:129
+#, c-format
+msgid "Interface %1"
+msgstr "Arayüz %1"
+
+#: kwifimanager.cpp:207 strength.cpp:89 strength.cpp:157
+msgid "N/A"
+msgstr "YOK"
+
+#: kwifimanager.cpp:307
+msgid "&Disable Radio"
+msgstr "Ra&dyoyu kapat"
+
+#: kwifimanager.cpp:312
+msgid "&Use Alternate Strength Calculation"
+msgstr "&Alternatif Kuvvet Toplamını Kullan"
+
+#: kwifimanager.cpp:319
+msgid "Show &Noise Graph in Statistics Window"
+msgstr "İstatistik Pe&nceresinde Gürültü Grafiğini Göster"
+
+#: kwifimanager.cpp:325
+msgid "&Show Strength Number in System Tray"
+msgstr "&Sistem Çekmecesinde Dayanım Sayısını Göster"
+
+#: kwifimanager.cpp:332
+msgid "Configuration &Editor..."
+msgstr "Ayar Düz&enleyicisi"
+
+#: kwifimanager.cpp:334
+msgid "Connection &Statistics"
+msgstr "Bağlantı İ&statistikleri"
+
+#: kwifimanager.cpp:336
+msgid "&Acoustic Scanning"
+msgstr "Y&ankı Taranıyor"
+
+#: kwifimanager.cpp:343
+msgid "Stay in System &Tray on Close"
+msgstr "&Kapatma da Sistem Çekmecesine Yerleş"
+
+#: kwifimanager.cpp:370 kwifimanager.cpp:419
+msgid "Scan for &Networks..."
+msgstr "&Ağları Tara..."
+
+#: kwifimanager.cpp:372
+msgid "The current signal strength"
+msgstr "Mevcut sinyal gücü"
+
+#: kwifimanager.cpp:373
+msgid "The speed at which the wireless LAN card is operating"
+msgstr "Kablosuz LAN kartının çalışma hızı"
+
+#: kwifimanager.cpp:374
+msgid "Detailed connection status"
+msgstr "Detaylı bağlantı durumu"
+
+#: kwifimanager.cpp:375
+msgid "Performs a scan to discover the networks you can log into"
+msgstr "Bağlanabileceğiniz ağları saptamak için tarama yapar"
+
+#: kwifimanager.cpp:416
+msgid "Scan in progress..."
+msgstr "Tarama devrede..."
+
+#: locator.cpp:36
+msgid "AccessPoint: "
+msgstr "GirişNoktası:"
+
+#: main.cpp:29
+msgid "KWiFiManager - Wireless LAN Manager for KDE"
+msgstr "KWiFiManager - KDE için Wireless LAN Yöneticisi"
+
+#: main.cpp:39
+msgid "KWiFiManager"
+msgstr "KWiFiManager"
+
+#: main.cpp:42
+msgid "Original Author and Maintainer"
+msgstr "Gerçek Editör ve Sürdürücü"
+
+#: main.cpp:43
+msgid "Lots of Fixes and Optimizations, added Session Management"
+msgstr "Oturum Yöneticisi, birçok düzeltme ve optimizasyon"
+
+#: networkscanning.cpp:52 networkscanning.cpp:96 status.cpp:359
+msgid "off"
+msgstr "kapalı"
+
+#: networkscanning.cpp:58
+msgid "Scan Results"
+msgstr "Tarama Sonuçları"
+
+#: networkscanning.cpp:61
+msgid "Switch to Network..."
+msgstr "Ağı Seç..."
+
+#: networkscanning.cpp:82
+msgid "The scan is complete, but no networks have been found."
+msgstr "Tarama tamamlandı, fakat herhangi bir ağ saptanamadı."
+
+#: networkscanning.cpp:82
+msgid "No Network Available"
+msgstr "Uygun ağ bulunamadı"
+
+#: networkscanning.cpp:88
+msgid "(hidden cell)"
+msgstr "(saklı hücre)"
+
+#: networkscanning.cpp:112
+msgid "Aborting network switching due to invalid WEP key specification."
+msgstr "Geçersiz WEP anahtarı sebebi ile ağa geçiş iptal edildi."
+
+#: networkscanning.cpp:112
+msgid "Invalid WEP Key"
+msgstr "Geçersiz WEP Anahtarı"
+
+#: speed.cpp:42
+msgid "Connection speed [MBit/s]:"
+msgstr "Bağlantı Hızı [MBit/s]:"
+
+#: statistics.cpp:27
+msgid "Statistics - KWiFiManager"
+msgstr "İstatistik - KWiFiManager"
+
+#: statistics.cpp:37
+msgid "Noise/Signal Level Statistics"
+msgstr "Gürültü/Sinyal Seviyesi İstatistikleri"
+
+#: statistics.cpp:39
+msgid "BLUE = signal level, RED = noise level"
+msgstr "MAVİ = sinyal seviyesi, KIRMIZI = gürültü seviyesi"
+
+#: statistics.cpp:42
+msgid "-240 s"
+msgstr "-240 s"
+
+#: statistics.cpp:43
+msgid "now"
+msgstr "şimdi"
+
+#: status.cpp:41
+msgid "Status of Active Connection"
+msgstr "Aktif Bağlantı Durumu"
+
+#: status.cpp:46
+msgid "Searching for network: "
+msgstr "Ağda aranıyor:"
+
+#: status.cpp:49
+msgid "Connected to network: "
+msgstr "Bağlı ağ:"
+
+#: status.cpp:51
+msgid "Access point: "
+msgstr "Giriş noktası:"
+
+#: status.cpp:59
+msgid "- no access point -"
+msgstr "- giriş noktası yok -"
+
+#: status.cpp:61
+msgid "Local IP: "
+msgstr "Yerel IP:"
+
+#: status.cpp:63
+msgid "Frequency [channel]: "
+msgstr "Frekans [kanal]:"
+
+#: status.cpp:348
+msgid "Encryption: "
+msgstr "Şifreleme:"
+
+#: status.cpp:362
+msgid "active"
+msgstr "kullanılıyor"
+
+#: strength.cpp:100
+msgid "DISABLED"
+msgstr "KAPALI"
+
+#: strength.cpp:105
+msgid "NOT CONNECTED"
+msgstr "BAĞLANILAMADI"
+
+#: strength.cpp:110
+msgid "AD-HOC MODE"
+msgstr "AD_HOC MODU"
+
+#: strength.cpp:115
+msgid "ULTIMATE"
+msgstr "SON"
+
+#: strength.cpp:121
+msgid "TOP"
+msgstr "ÜST"
+
+#: strength.cpp:127
+msgid "EXCELLENT"
+msgstr "MÜKEMMEL"
+
+#: strength.cpp:133
+msgid "GOOD"
+msgstr "İYİ"
+
+#: strength.cpp:139
+msgid "WEAK"
+msgstr "ZAYIF"
+
+#: strength.cpp:145
+msgid "MINIMUM"
+msgstr "EN AZ"
+
+#: strength.cpp:151
+msgid "OUT OF RANGE"
+msgstr "SIRA DIŞI"
+
+#: strength.cpp:160
+msgid "Signal strength: "
+msgstr "Sinyal şiddeti:"

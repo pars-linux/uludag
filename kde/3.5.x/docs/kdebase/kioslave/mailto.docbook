@@ -1,0 +1,15 @@
+<article lang="&language;" id="mailto">
+<title
+>mailto</title>
+
+<para
+>mailto kioslave sistemi bir <acronym
+>HTML</acronym
+> sayfasının &konqueror; programı içinde görüntülendiği sırada mailto linkine tıklanması halinde çalışır. Bu durumda istenen e-posta istemci sunucusu (genellikle KMail) başlatılacaktır.</para>
+
+<para
+> See the manual: <ulink url="man:/mailto"
+>mailto</ulink
+>. </para>
+</article>
+

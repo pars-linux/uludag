@@ -1,0 +1,185 @@
+# translation of kdesu.po to
+# Görkem Çetin <gorkem@gelecek.com.tr> , 2000.
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# serdar soytetir <tulliana@gmail.com>, 2007.
+# Copyright (C) 2003, 2004, 2007 Free Software Foundation, Inc.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdesu\n"
+"POT-Creation-Date: 2007-11-14 01:15+0100\n"
+"PO-Revision-Date: 2007-06-12 23:52+0300\n"
+"Last-Translator: serdar soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=1; plural=0;\n"
+
+#: kdesu.cpp:56 kdesu.cpp:57
+msgid "Specifies the command to run"
+msgstr "Çalıştırılacak komutu belirtir"
+
+#: kdesu.cpp:58
+msgid "Run command under target uid if <file> is not writable"
+msgstr ""
+"<dosya> yazılabilir değilse komutu hedef kullanıcı numarası altında çalıştır."
+
+#: kdesu.cpp:59
+msgid "Specifies the target uid"
+msgstr "Hedef uid'i belirtir"
+
+#: kdesu.cpp:60
+msgid "Do not keep password"
+msgstr "Parolayı kaydetme"
+
+#: kdesu.cpp:61
+msgid "Stop the daemon (forgets all passwords)"
+msgstr "Deamon'ı durdur (tüm parolaları unutur)"
+
+#: kdesu.cpp:62
+msgid "Enable terminal output (no password keeping)"
+msgstr "Terminal çıktısını etkin kıl (parola kaydedilmez)"
+
+#: kdesu.cpp:63
+msgid "Set priority value: 0 <= prio <= 100, 0 is lowest"
+msgstr "Öncelik değeri belirle: 0 <= öncelik 100, 0 en küçük"
+
+#: kdesu.cpp:64
+msgid "Use realtime scheduling"
+msgstr "Gerçek zaman takvimlemesi kullan"
+
+#: kdesu.cpp:65
+msgid "Let command use existing dcopserver"
+msgstr "Komutun mevcut dcopserver'ı kullanmasını sağlayın"
+
+#: kdesu.cpp:66
+msgid "Do not display ignore button"
+msgstr "Yoksay düğmesini gösterme"
+
+#: kdesu.cpp:67
+msgid "Specify icon to use in the password dialog"
+msgstr "Parola penceresinde gösterilecek simgeyi belirtin"
+
+#: kdesu.cpp:68
+msgid "Do not show the command to be run in the dialog"
+msgstr "Çalıştırılacak komutu pencerede gösterme"
+
+#: kdesu.cpp:99
+msgid "KDE su"
+msgstr "KDE su"
+
+#: kdesu.cpp:100
+msgid "Runs a program with elevated privileges."
+msgstr "Yüksek izin gerektiren programları çalıştırır."
+
+#: kdesu.cpp:103
+msgid "Maintainer"
+msgstr "Sorumlu"
+
+#: kdesu.cpp:105
+msgid "Original author"
+msgstr "İlk yazar"
+
+#: kdesu.cpp:131
+msgid "Command '%1' not found."
+msgstr "'%1' isimli komut bulunamadı."
+
+#: kdesu.cpp:207
+#, c-format
+msgid "Illegal priority: %1"
+msgstr "Geçersiz öncelik: %1"
+
+#: kdesu.cpp:235
+msgid "No command specified."
+msgstr "Hiç komut belirtilmedi."
+
+#: kdesu.cpp:344
+msgid ""
+"Su returned with an error.\n"
+msgstr ""
+"Su bir hata ile geri döndü.\n"
+
+#: kdesu.cpp:365
+msgid "Command:"
+msgstr "Komut:"
+
+#: kdesu.cpp:370
+msgid "realtime: "
+msgstr "gerçek zaman: "
+
+#: kdesu.cpp:373
+msgid "Priority:"
+msgstr "Öncelik:"
+
+#: sudlg.cpp:29
+#, c-format
+msgid "Run as %1"
+msgstr "%1 olarak çalıştır"
+
+#: sudlg.cpp:33
+msgid "Please enter your password."
+msgstr "Lütfen parolanızı girin."
+
+#: sudlg.cpp:36
+msgid ""
+"The action you requested needs root privileges. Please enter root's password "
+"below or click Ignore to continue with your current privileges."
+msgstr ""
+"Yapmak istediğiniz işlem root yetkilerini gerektiriyor. Lütfen root parolasını "
+"girin, ya da mevcut yetkilerle devam etmek için 'Yoksay'ı tıklayın."
+
+#: sudlg.cpp:40
+msgid ""
+"The action you requested needs additional privileges. Please enter the password "
+"for \"%1\" below or click Ignore to continue with your current privileges."
+msgstr ""
+"Yapmak istediğiniz işlem için ek yetkilere ihtiyacınız var. Lütfen \"%1\" "
+"kullanıcısının parolasını giriniz ya da mevcut yetkilerinizle işleme devam "
+"etmek için 'Yoksay'a tıklayınız."
+
+#: sudlg.cpp:48
+msgid "&Ignore"
+msgstr "&Yoksay"
+
+#: sudlg.cpp:64
+msgid "Conversation with su failed."
+msgstr "su ile çevirim başarısız."
+
+#: sudlg.cpp:73
+msgid ""
+"The program 'su' is not found;\n"
+"make sure your PATH is set correctly."
+msgstr ""
+"'su' programı bulunamıyor;\n"
+"PATH tanımlamanızın doğru olduğundan emin olun."
+
+#: sudlg.cpp:80
+msgid ""
+"You are not allowed to use 'su';\n"
+"on some systems, you need to be in a special group (often: wheel) to use this "
+"program."
+msgstr ""
+"'su' yu kullanmaya izniniz yok;\n"
+"bazı sistemlerde bu programı kullanmak için özel bir gruba dahil olmanız "
+"gerekir (genellikle: wheel)."
+
+#: sudlg.cpp:87
+msgid "Incorrect password; please try again."
+msgstr "Yanlış parola; lütfen tekrar deneyin."
+
+#: sudlg.cpp:91
+msgid "Internal error: illegal return from SuProcess::checkInstall()"
+msgstr "İç hata: SuProcess::checkInstall() 'dan uygulanamaz dönüş"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Mehmet Tarımcı"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "mehmet@gelecek.com.tr"

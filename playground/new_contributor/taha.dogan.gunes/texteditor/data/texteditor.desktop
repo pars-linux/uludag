@@ -1,9 +1,0 @@
-[Desktop Entry]
-Categories=Qt;Application;TextEditor;
-Encoding=UTF-8
-GenericName=TextEditor
-Icon=texteditor
-Name=TextEditor
-Exec=texteditor
-Type=Application
-Terminal=False

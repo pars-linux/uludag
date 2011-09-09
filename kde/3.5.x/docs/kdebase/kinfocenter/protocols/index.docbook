@@ -1,0 +1,78 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.1.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Turkish "INCLUDE" 
+> <!-- change language only here -->
+]>
+
+<article lang="&language;">
+<title
+>Protokoller</title>
+
+<articleinfo>
+<authorgroup>
+<author
+> <firstname
+>Lauri</firstname
+> <surname
+>Watts</surname
+> </author>
+
+<othercredit role="translator"
+> <firstname
+>Görkem</firstname
+><surname
+>Çetin</surname
+> <affiliation
+><address
+><email
+>gorkem@kde.org</email
+></address
+></affiliation
+> <contrib
+>Translation to Turkish</contrib
+>  </othercredit>
+</authorgroup>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Protokoller</keyword>
+<keyword
+>IOSlaves</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1 id="protocols">
+<title
+>Protokoller</title>
+
+<para
+>Panelin sol tarafında sistemde kurulu IOSlave'ler görüntülenir. IOSlave, &kde; uygulamaların diğer bilgisayarlarla ve uygulamalarla nasıl konuştuğunu belirler.</para>
+
+<para
+>Bir IOSlave üzerine tıklandığı zaman nasıl kullanıldığını ve ne işe yaradığını belirten bir bilgi çıkar.</para>
+
+<para
+>Bu protokol verisi sadece bilgi aktarmak içindir. Buradaki değerleri değiştiremezsiniz.</para>
+
+<sect2>
+<title
+>Bölüm Yazarları</title>
+
+<para
+>Bu bölüm Lauri Watts <email
+>lauri@kde.org</email
+> tarafından yazılmıştır.</para>
+
+<para
+>Turkish translation done by: Görkem Çetin <email
+>gorkem@kde.org</email
+>.</para>
+
+</sect2>
+
+</sect1>
+</article>

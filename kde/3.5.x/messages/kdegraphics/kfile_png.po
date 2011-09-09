@@ -1,0 +1,115 @@
+# translation of kfile_png.po to Türkçe
+# translation of kfile_png.po to Turkish
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2002.
+# Tuncay YENİAY <tuncayyeniay@mynet.com>,2002.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kfile_png\n"
+"POT-Creation-Date: 2004-12-16 01:20+0100\n"
+"PO-Revision-Date: 2004-06-28 15:43+0300\n"
+"Last-Translator: Adem Alp YILDIZ <ademalp@linux-sevenler.org>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.3\n"
+
+#: kfile_png.cpp:51
+msgid "Title"
+msgstr "Başlık"
+
+#: kfile_png.cpp:52
+msgid "Author"
+msgstr "Yazar"
+
+#: kfile_png.cpp:53
+msgid "Description"
+msgstr "Açıklama"
+
+#: kfile_png.cpp:54
+msgid "Copyright"
+msgstr "Telif hakkı"
+
+#: kfile_png.cpp:55
+msgid "Creation Time"
+msgstr "Oluşturulma Tarihi"
+
+#: kfile_png.cpp:56
+msgid "Software"
+msgstr "Yazılım"
+
+#: kfile_png.cpp:57
+msgid "Disclaimer"
+msgstr "Açıklama"
+
+#: kfile_png.cpp:59
+msgid "Source"
+msgstr "Kaynak"
+
+#: kfile_png.cpp:60 kfile_png.cpp:103
+msgid "Comment"
+msgstr "Açıklama"
+
+#: kfile_png.cpp:65
+msgid "Grayscale"
+msgstr "Gri tonlama"
+
+#: kfile_png.cpp:66 kfile_png.cpp:70 kfile_png.cpp:183 kfile_png.cpp:187
+#: kfile_png.cpp:191
+msgid "Unknown"
+msgstr "Bilinmeyen"
+
+#: kfile_png.cpp:67
+msgid "RGB"
+msgstr "RGB"
+
+#: kfile_png.cpp:68
+msgid "Palette"
+msgstr "Palet"
+
+#: kfile_png.cpp:69
+msgid "Grayscale/Alpha"
+msgstr "Gri tonlama/Alpha"
+
+#: kfile_png.cpp:71
+msgid "RGB/Alpha"
+msgstr "RGB/Alpha"
+
+#: kfile_png.cpp:77
+msgid "Deflate"
+msgstr "Boşalma"
+
+#: kfile_png.cpp:82
+msgid "None"
+msgstr "Hiçbiri"
+
+#: kfile_png.cpp:83
+msgid "Adam7"
+msgstr "Adam7"
+
+#: kfile_png.cpp:107
+msgid "Technical Details"
+msgstr "Teknik Detaylar"
+
+#: kfile_png.cpp:109
+msgid "Dimensions"
+msgstr "Boyutlar"
+
+#: kfile_png.cpp:113
+msgid "Bit Depth"
+msgstr "Bit Derinliği"
+
+#: kfile_png.cpp:116
+msgid "Color Mode"
+msgstr "Renk Kipi"
+
+#: kfile_png.cpp:117
+msgid "Compression"
+msgstr "Sıkıştırma"
+
+#: kfile_png.cpp:118
+msgid "Interlace Mode"
+msgstr "Interlace Kipi"

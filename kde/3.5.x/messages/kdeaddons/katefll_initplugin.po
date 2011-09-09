@@ -1,0 +1,53 @@
+# translation of katefll_initplugin.po to
+# Copyright (C) 2004, 2005, 2007 Free Software Foundation, Inc.
+#
+# Durmuş Celep <durmusc_tr@yahoo.com>,2002.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>,2002.
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Cemil MUTLU <mawilos@gmail.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: katefll_initplugin\n"
+"POT-Creation-Date: 2005-07-24 01:39+0200\n"
+"PO-Revision-Date: 2007-05-16 20:18+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: katefll_plugin.cpp:77
+msgid "Open File List..."
+msgstr "Dosya Listesini Aç..."
+
+#: katefll_plugin.cpp:86
+msgid "Save File List"
+msgstr "Dosya Listesini Kaydet"
+
+#: katefll_plugin.cpp:90
+msgid "Save File List As..."
+msgstr "Dosya Listesini Farklı Kaydet..."
+
+#: katefll_plugin.cpp:148
+msgid "Do you want to close all other files first?"
+msgstr "Öncelikle tüm diğer dosyaları kapatmak istiyor musunuz?"
+
+#: katefll_plugin.cpp:149
+msgid "Kate Filelist Loader"
+msgstr "Kate Dosya Liste Yükleyicisi"
+
+#: katefll_plugin.cpp:150
+msgid "Do Not Close"
+msgstr "Kapatma"
+
+#: katefll_plugin.cpp:179
+msgid "The selected filelist does not exist or is invalid."
+msgstr "Seçili dosya listesi bulunamadı ya da geçersiz."
+
+#. i18n: file ui.rc line 5
+#: rc.cpp:6
+#, no-c-format
+msgid "&Filelist"
+msgstr "&Dosya Listesi"

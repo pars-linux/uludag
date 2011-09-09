@@ -1,0 +1,312 @@
+# translation of kfmclient.po to
+# Copyright (C) 2003, 2007 Free Software Foundation, Inc.
+#
+# Görkem Çetin, 2001.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kfmclient\n"
+"POT-Creation-Date: 2006-08-04 03:58+0200\n"
+"PO-Revision-Date: 2007-07-08 19:29+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: kfmclient.cc:52
+msgid "kfmclient"
+msgstr "kfmclient"
+
+#: kfmclient.cc:54
+msgid "KDE tool for opening URLs from the command line"
+msgstr "Komut satırından URL açmak için KDE aracı"
+
+#: kfmclient.cc:64
+msgid "Non interactive use: no message boxes"
+msgstr "Etkileşimsiz kulan: ileti kutusu kullanma"
+
+#: kfmclient.cc:65
+msgid "Show available commands"
+msgstr "Kullanılabilir komutları göster"
+
+#: kfmclient.cc:66
+msgid "Command (see --commands)"
+msgstr "Komut (--commands seçeneğini dene)"
+
+#: kfmclient.cc:67
+msgid "Arguments for command"
+msgstr "Komut için argümanlar"
+
+#: kfmclient.cc:83
+msgid ""
+"\n"
+"Syntax:\n"
+msgstr ""
+"\n"
+"Sözdizimi:\n"
+
+#: kfmclient.cc:84
+msgid ""
+"  kfmclient openURL 'url' ['mimetype']\n"
+"            # Opens a window showing 'url'.\n"
+"            #  'url' may be a relative path\n"
+"            #   or file name, such as . or subdir/\n"
+"            #   If 'url' is omitted, $HOME is used instead.\n"
+"\n"
+msgstr ""
+"  kfmclient openURL 'url'\n"
+"            # 'url'yi göstererek bir pencere açar.\n"
+"            #  'url' nispi bir yol ya da\n"
+"            #   dosya adı, ör, . ya da alt dizin/ olabilir\n"
+"            #   'url' boş bırakılmışsa, bunun yerine $HOME kullanılır.\n"
+"\n"
+
+#: kfmclient.cc:89
+msgid ""
+"            # If 'mimetype' is specified, it will be used to determine the\n"
+"            #   component that Konqueror should use. For instance, set it to\n"
+"            #   text/html for a web page, to make it appear faster\n"
+"\n"
+msgstr ""
+"            # Eğer mimetype belirtilmişse, Konqueror uygulamasının kullanacağı "
+"\n"
+"            #   bileşeni belirtir. Örneğin, bunu  bir web sayfası için "
+"text/html olarak \n"
+"            #   belirlemek daha hızlı açılmasını sağlar\n"
+"\n"
+
+#: kfmclient.cc:93
+msgid ""
+"  kfmclient newTab 'url' ['mimetype']\n"
+"            # Same as above but opens a new tab with 'url' in an existing "
+"Konqueror\n"
+"            #   window on the current active desktop if possible.\n"
+"\n"
+msgstr ""
+
+#: kfmclient.cc:97
+msgid ""
+"  kfmclient openProfile 'profile' ['url']\n"
+"            # Opens a window using the given profile.\n"
+"            #   'profile' is a file under "
+"~/.kde/share/apps/konqueror/profiles.\n"
+"            #   'url' is an optional URL to open.\n"
+"\n"
+msgstr ""
+"  kfmclient openProfile 'profil' ['url']\n"
+"            # Belli bir profili kullanarak oturum açar.\n"
+"            #   'profil' aşağıdaki konumda yer alan bir dosyadır: "
+"~/.kde/share/apps/konqueror/profiles.\n"
+"            #   'url' açılacak olan URL adresidir.\n"
+"\n"
+
+#: kfmclient.cc:102
+msgid ""
+"  kfmclient openProperties 'url'\n"
+"            # Opens a properties menu\n"
+"\n"
+msgstr ""
+"  kfmclient openProperties 'url'\n"
+"            # Bir özellikler menüsü açar\n"
+"\n"
+
+#: kfmclient.cc:104
+msgid ""
+"  kfmclient exec ['url' ['binding']]\n"
+"            # Tries to execute 'url'. 'url' may be a usual\n"
+"            #   URL, this URL will be opened. You may omit\n"
+"            #   'binding'. In this case the default binding\n"
+msgstr ""
+"  kfmclient exec ['url' ['bağıl']]\n"
+"            # 'url'yi çalıştırmayı dener. 'url' normal bir\n"
+"            #   URL olabilir, bu URL açılacaktır. 'bağıl'i\n"
+"            #   boş bırakabilirsiniz. Bu durumda öntanılmı bağıl\n"
+
+#: kfmclient.cc:108
+msgid ""
+"            #   is tried. Of course URL may be the URL of a\n"
+"            #   document, or it may be a *.desktop file.\n"
+msgstr ""
+"            #   denenir. Elbette URL bir belgenin URL'si\n"
+"            #   ya da bir *.desktop dosyası olabilir.\n"
+
+#: kfmclient.cc:110
+msgid ""
+"            #   This way you could for example mount a device\n"
+"            #   by passing 'Mount default' as binding to \n"
+"            #   'cdrom.desktop'\n"
+"\n"
+msgstr ""
+"            #   Bu yolla, örneğin 'cdrom.desktop'a öntanımlı\n"
+"            #   bağıl olarak 'Öntanımlıyı bağla'yı geçirerek\n"
+"            #   bir aygıtı bağlayabilirsiniz\n"
+"\n"
+
+#: kfmclient.cc:113
+msgid ""
+"  kfmclient move 'src' 'dest'\n"
+"            # Moves the URL 'src' to 'dest'.\n"
+"            #   'src' may be a list of URLs.\n"
+msgstr ""
+"  kfmclient move 'kaynak' 'hedef'\n"
+"            # 'kaynak' URL'yi 'hedef'e taşır.\n"
+"            #  'kaynak' URL listesi olabilir.\n"
+
+#: kfmclient.cc:118
+msgid ""
+"  kfmclient download ['src']\n"
+"            # Copies the URL 'src' to a user specified location'.\n"
+"            #   'src' may be a list of URLs, if not present then\n"
+"            #   a URL will be requested.\n"
+"\n"
+msgstr ""
+"  kfmclient download ['kaynak']\n"
+"            # 'kaynak' URL'yi 'hedef'e kopyalar.\n"
+"            #  'kaynak' bir URL listesi olabilir.\n"
+"            #   eğer zaten bir URL değilse bir URL istenecektir.\n"
+"\n"
+
+#: kfmclient.cc:122
+msgid ""
+"  kfmclient copy 'src' 'dest'\n"
+"            # Copies the URL 'src' to 'dest'.\n"
+"            #   'src' may be a list of URLs.\n"
+"\n"
+msgstr ""
+"  kfmclient copy 'kaynak' 'hedef'\n"
+"            # 'kaynak' URL'yi 'hedef'e kopyalar.\n"
+"            #  'kaynak' URL listesi olabilir.\n"
+"\n"
+
+#: kfmclient.cc:125
+msgid ""
+"  kfmclient sortDesktop\n"
+"            # Rearranges all icons on the desktop.\n"
+"\n"
+msgstr ""
+"  kfmclient sortDesktop\n"
+"            # Masaüstündeki tüm simgeleri yeniden düzenler.\n"
+"\n"
+
+#: kfmclient.cc:127
+msgid ""
+"  kfmclient configure\n"
+"            # Re-read Konqueror's configuration.\n"
+"\n"
+msgstr ""
+"  kfmclient configure\n"
+"            # Konqueror yapılandırmasını yeniden okur.\n"
+"\n"
+
+#: kfmclient.cc:129
+msgid ""
+"  kfmclient configureDesktop\n"
+"            # Re-read kdesktop's configuration.\n"
+"\n"
+msgstr ""
+"  kfmclient configureDesktop\n"
+"            # kdesktop'un yapılandırmasını yeniden okur.\n"
+"\n"
+
+#: kfmclient.cc:132
+msgid ""
+"*** Examples:\n"
+"  kfmclient exec file:/root/Desktop/cdrom.desktop \"Mount default\"\n"
+"             // Mounts the CD-ROM\n"
+"\n"
+msgstr ""
+"*** Örnekler:\n"
+"  kfmclient exec file:/root/Desktop/cdrom.desktop \"Mount default\"\n"
+"             // CDROM'u bağlar\n"
+"\n"
+
+#: kfmclient.cc:135
+msgid ""
+"  kfmclient exec file:/home/weis/data/test.html\n"
+"             // Opens the file with default binding\n"
+"\n"
+msgstr ""
+"  kfmclient exec file:/home/weis/data/test.html\n"
+"             // Dosyayı öntanımlı bağılla açar\n"
+"\n"
+
+#: kfmclient.cc:137
+msgid ""
+"  kfmclient exec file:/home/weis/data/test.html Netscape\n"
+"             // Opens the file with netscape\n"
+"\n"
+msgstr ""
+"  kfmclient exec file:/home/weis/data/test.html Netscape\n"
+"             // Dosyayı netscape'le açar\n"
+"\n"
+
+#: kfmclient.cc:139
+msgid ""
+"  kfmclient exec ftp://localhost/\n"
+"             // Opens new window with URL\n"
+"\n"
+msgstr ""
+"  kfmclient exec ftp://localhost/\n"
+"             // URL ile yeni pencere açar\n"
+"\n"
+
+#: kfmclient.cc:141
+msgid ""
+"  kfmclient exec file:/root/Desktop/emacs.desktop\n"
+"             // Starts emacs\n"
+"\n"
+msgstr ""
+"  kfmclient exec file:/root/Desktop/emacs.desktop\n"
+"             // emacs'ı başlatır\n"
+"\n"
+
+#: kfmclient.cc:143
+msgid ""
+"  kfmclient exec file:/root/Desktop/cdrom.desktop\n"
+"             // Opens the CD-ROM's mount directory\n"
+"\n"
+msgstr ""
+"  kfmclient exec file:/root/Desktop/cdrom.desktop\n"
+"             // CD-ROM'un bağlama dizinini açar\n"
+"\n"
+
+#: kfmclient.cc:145
+msgid ""
+"  kfmclient exec .\n"
+"             // Opens the current directory. Very convenient.\n"
+"\n"
+msgstr ""
+"  kfmclient exec .\n"
+"             // O anki dizini açar. Çok kullanışlı.\n"
+"\n"
+
+#: kfmclient.cc:405
+msgid ""
+"Profile %1 not found\n"
+msgstr ""
+"%1 profili bulunamadı\n"
+
+#: kfmclient.cc:434
+msgid ""
+"Syntax Error: Not enough arguments\n"
+msgstr ""
+"Sözdizimi Hatası: Yeterli argüman yok\n"
+
+#: kfmclient.cc:439
+msgid ""
+"Syntax Error: Too many arguments\n"
+msgstr ""
+"Sözdizimi Hatası: Çok fazla argüman\n"
+
+#: kfmclient.cc:559
+msgid "Unable to download from an invalid URL."
+msgstr "Geçerli bir URL adresinden indirme yapılamıyor."
+
+#: kfmclient.cc:623
+msgid ""
+"Syntax Error: Unknown command '%1'\n"
+msgstr ""
+"Sözdizimi Hatası: Bilinmeyen komut: '%1'\n"

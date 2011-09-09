@@ -1,0 +1,104 @@
+# translation of kfile_diff.po to Turkish
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Cemil MUTLU <mawilos@gmail.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kfile_diff\n"
+"POT-Creation-Date: 2005-05-18 21:25+0200\n"
+"PO-Revision-Date: 2005-07-15 02:59+0300\n"
+"Last-Translator: Cemil MUTLU <mawilos@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: kfile_diff.cpp:56
+msgid "General"
+msgstr "Genel"
+
+#: kfile_diff.cpp:58
+msgid "First File"
+msgstr "İlk Dosya"
+
+#: kfile_diff.cpp:59
+msgid "Format"
+msgstr "Biçim"
+
+#: kfile_diff.cpp:60
+msgid "Diff Program"
+msgstr "Diff Uygulama"
+
+#: kfile_diff.cpp:61
+msgid "Hunks"
+msgstr "Hunks"
+
+#: kfile_diff.cpp:62
+msgid "Statistics"
+msgstr "İstatistikler"
+
+#: kfile_diff.cpp:63
+msgid "Insertions"
+msgstr "Eklentiler"
+
+#: kfile_diff.cpp:64
+msgid "Changes"
+msgstr "Değişiklikler"
+
+#: kfile_diff.cpp:65
+msgid "Deletions"
+msgstr "Silinenler"
+
+#: kfile_diff.cpp:280
+msgid "Context"
+msgstr "İçerik"
+
+#: kfile_diff.cpp:283
+msgid "Ed"
+msgstr "Ed"
+
+#: kfile_diff.cpp:286
+msgid "Normal"
+msgstr "Normal"
+
+#: kfile_diff.cpp:289
+msgid "RCS"
+msgstr "RCS"
+
+#: kfile_diff.cpp:292
+msgid "Unified"
+msgstr "Birleşmiş"
+
+#: kfile_diff.cpp:295
+msgid "Not Available (file empty)"
+msgstr "Erişilemez (dosya boş)"
+
+#: kfile_diff.cpp:298 kfile_diff.cpp:328
+msgid "Unknown"
+msgstr "Bilinmeyen"
+
+#: kfile_diff.cpp:301
+msgid "Side by Side"
+msgstr "Yan Yana"
+
+#: kfile_diff.cpp:313
+msgid "CVSDiff"
+msgstr "CVSDiff"
+
+#: kfile_diff.cpp:316
+msgid "Diff"
+msgstr "Diff"
+
+#: kfile_diff.cpp:319
+msgid "Diff3"
+msgstr "Diff3"
+
+#: kfile_diff.cpp:322
+msgid "Perforce"
+msgstr "Zorla"
+
+#: kfile_diff.cpp:325
+msgid "SubVersion"
+msgstr "SubVersion"

@@ -1,0 +1,31 @@
+# translation of mf_konqplugin.po to Turkish
+# translation of mf_konqplugin.po to
+# Görkem Çetin <gorkem@gorkemcetin.com>, 2005.
+# Cemil MUTLU <mawilos@gmail.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mf_konqplugin\n"
+"POT-Creation-Date: 2005-06-13 01:32+0200\n"
+"PO-Revision-Date: 2005-07-11 22:23+0300\n"
+"Last-Translator: Cemil MUTLU <mawilos@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: konqmficon.cpp:249
+msgid "Microformats"
+msgstr "Microformatlar"
+
+#: konqmficon.cpp:261
+msgid "Import All Microformats"
+msgstr "Bütün Microformatları İçe Aktar"
+
+#: konqmficon.cpp:284
+#, c-format
+msgid ""
+"_n: This site has a microformat entry\n"
+"This site has %n microformat entries"
+msgstr "Bu site %n microformat girişine sahip"

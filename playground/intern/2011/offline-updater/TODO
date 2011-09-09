@@ -1,6 +1,0 @@
-
-*Please write a help file :)
-*Check for "delta packages"
-*Check for versionTo, versionFrom etc. conditions
-*Add multi-language support
-*Edit setup.py for /usr/bin/ symlink

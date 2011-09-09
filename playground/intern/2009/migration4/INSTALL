@@ -1,6 +1,0 @@
-INSTALL
--------
-To install Migration Tool, you only need to type the following commands:
-
-$ cd migration4
-$ sudo python setup.py install

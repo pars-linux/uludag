@@ -1,0 +1,81 @@
+# translation of kwin_lib.po to
+#
+# Görkem Çetin <gorkem@gorkemcetin.com>, 2005.
+# Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kwin_lib\n"
+"POT-Creation-Date: 2005-10-08 02:42+0200\n"
+"PO-Revision-Date: 2007-07-06 16:34+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=1; plural=0;\n"
+
+#: kcommondecoration.cpp:265
+msgid ""
+"_: %1 is the name of window decoration style\n"
+"<center><b>%1 preview</b></center>"
+msgstr "<center><b>%1 önizleme</b></center>"
+
+#: kcommondecoration.cpp:329
+msgid "Menu"
+msgstr "Menü"
+
+#: kcommondecoration.cpp:342 kcommondecoration.cpp:529
+msgid "Not on all desktops"
+msgstr "Tüm masaüstlerinde değil"
+
+#: kcommondecoration.cpp:342 kcommondecoration.cpp:530
+msgid "On all desktops"
+msgstr "Tüm masaüstlerinde"
+
+#: kcommondecoration.cpp:364
+msgid "Minimize"
+msgstr "Küçült"
+
+#: kcommondecoration.cpp:376 kcommondecoration.cpp:516
+msgid "Maximize"
+msgstr "Büyüt"
+
+#: kcommondecoration.cpp:399 kcommondecoration.cpp:572
+msgid "Do not keep above others"
+msgstr "Diğerlerinin üzerinde tutma"
+
+#: kcommondecoration.cpp:399 kcommondecoration.cpp:572
+#: kcommondecoration.cpp:596
+msgid "Keep above others"
+msgstr "Diğerlerinin üzerinde tut"
+
+#: kcommondecoration.cpp:412 kcommondecoration.cpp:589
+msgid "Do not keep below others"
+msgstr "Diğerlerinin altında tutma"
+
+#: kcommondecoration.cpp:412 kcommondecoration.cpp:579
+#: kcommondecoration.cpp:589
+msgid "Keep below others"
+msgstr "Diğerlerinin altında tut"
+
+#: kcommondecoration.cpp:425 kcommondecoration.cpp:541
+msgid "Unshade"
+msgstr "Genişlet"
+
+#: kcommondecoration.cpp:425 kcommondecoration.cpp:542
+msgid "Shade"
+msgstr "Perdele"
+
+#: kdecoration_plugins_p.cpp:120
+msgid "No window decoration plugin library was found."
+msgstr "Hiç pencere dekorasyonu eklenti kitaplığı bulunamadı."
+
+#: kdecoration_plugins_p.cpp:145
+msgid "The default decoration plugin is corrupt and could not be loaded."
+msgstr "Öntanımlı dekorasyon eklentisi bozulduğundan yüklenemedi."
+
+#: kdecoration_plugins_p.cpp:159
+msgid "The library %1 is not a KWin plugin."
+msgstr "%1 kitaplığı geçerli bir KWin eklentisi değil."

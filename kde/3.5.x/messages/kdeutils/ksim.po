@@ -1,0 +1,957 @@
+# translation of ksim.po to 
+# translation of ksim.po to Turkish
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2003.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ksim\n"
+"POT-Creation-Date: 2007-05-28 02:15+0200\n"
+"PO-Revision-Date: 2003-12-08 01:42+0200\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team:  <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.2\n"
+
+#: monitorprefs.cpp:35
+msgid "Monitor"
+msgstr "İzleyici"
+
+#: monitorprefs.cpp:36
+msgid "Description"
+msgstr "Açıklama"
+
+#: monitorprefs.cpp:37
+msgid "LMB Command"
+msgstr "LMB Komutu"
+
+#: library/chart.cpp:120 themeprefs.cpp:96
+msgid "None"
+msgstr "Hiçbiri"
+
+#: library/pluginloader.cpp:93
+msgid ""
+"KSim was unable to load the plugin %1 due to the X-KSIM-LIBRARY property being "
+"empty in the plugins desktop file"
+msgstr "Ksim %1 eklentisini yükleyemedi."
+
+#: library/pluginloader.cpp:99
+msgid ""
+"KSim was unable to load the plugin %1 due to not being able to find the plugin, "
+"check that the plugin is installed and is in your $KDEDIR/lib path"
+msgstr "Ksim %1 eklentisini yükleyemedi."
+
+#: library/pluginloader.cpp:105
+msgid ""
+"<qt>An error occurred while trying \n"
+"to load the plugin '%1'. \n"
+"This could be caused by the following:"
+"<ul>\n"
+"<li>The plugin doesn't have the %2 macro</li>\n"
+"<li>The plugin has been damaged or has some unresolved symbols</li>\n"
+"</ul> \n"
+"Last error message that occurred: \n"
+"%3</qt>"
+msgstr ""
+"<qt>'%1' eklentisinin yüklenmesi sırasında\n"
+"bir hata oluştu.\n"
+"Bu durum genellikle şu sebeble oluşur:"
+"<ul>\n"
+"<li>%2 makrosunun bulunmaması nedeniyle</li>\n"
+"<li>Eklentinin hasar almış veya çözülemeyen\n"
+"sembollerden oluşur.</li>\n"
+"</ul>\n"
+"Oluşan son hata mesajı: \n"
+"%3</qt>"
+
+#: library/pluginloader.cpp:315
+msgid "Unable to get last error message"
+msgstr "Son hata mesajı alınamadı"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: ksimsysinfo.cpp:197
+#, fuzzy
+msgid "Current system time"
+msgstr "Geçerli sistem tarihi"
+
+#: ksimsysinfo.cpp:211
+msgid "Current system date"
+msgstr "Geçerli sistem tarihi"
+
+#: ksimsysinfo.cpp:227
+#, fuzzy
+msgid "System uptime"
+msgstr "Açık Kalma"
+
+#: ksimsysinfo.cpp:308
+msgid "Uptime display disabled"
+msgstr "Sistemin toplam çalışma süresi etkisiz"
+
+#: ksimsysinfo.cpp:316
+msgid "Memory display disabled"
+msgstr "Bellek gösterimi etkisiz"
+
+#: ksimsysinfo.cpp:324
+msgid "Swap display disabled"
+msgstr "Takas alanı gösterimi etkisiz"
+
+#: ksimpref.cpp:50 ksimpref.cpp:158
+msgid "Plugins"
+msgstr "Eklentiler"
+
+#: ksimpref.cpp:55
+msgid "Monitors"
+msgstr "İzleyiciler"
+
+#: ksimpref.cpp:56
+msgid "Monitors Installed"
+msgstr "İzleyiciler Kuruldu"
+
+#: ksimpref.cpp:60 monitors/net/netdialog.cpp:123
+msgid "General"
+msgstr "Genel"
+
+#: ksimpref.cpp:61
+msgid "General Options"
+msgstr "Genel Seçenekler"
+
+#: ksimpref.cpp:66
+msgid "Clock"
+msgstr "Saat"
+
+#: ksimpref.cpp:67
+msgid "Clock Options"
+msgstr "Saat Seçenekleri"
+
+#: ksimpref.cpp:72
+msgid "Uptime"
+msgstr "Açık Kalma"
+
+#: ksimpref.cpp:73
+msgid "Uptime Options"
+msgstr "Açık Kalma Süresi Seçenekleri"
+
+#: ksimpref.cpp:78
+msgid "Memory"
+msgstr "Bellek"
+
+#: ksimpref.cpp:79
+msgid "Memory Options"
+msgstr "Bellek Seçenekleri"
+
+#: ksimpref.cpp:84
+msgid "Swap"
+msgstr "Takas Alanı"
+
+#: ksimpref.cpp:85
+msgid "Swap Options"
+msgstr "Takas Alanı Seçenekleri"
+
+#: ksimpref.cpp:89
+msgid "Themes"
+msgstr "Temalar"
+
+#: ksimpref.cpp:90
+msgid "Theme Selector"
+msgstr "Tema Seçici"
+
+#: ksimpref.cpp:124
+msgid ""
+"Failed to remove %1's config page due to the plugin not being loaded or the "
+"config page has not been created"
+msgstr ""
+"%1 Ayar sayfası silinemedi, çünkü eklenti yüklenmedi veya ayar sayfası "
+"oluşturulamadı."
+
+#: ksimpref.cpp:149
+msgid ""
+"Failed to add %1's config page due to the plugin not being loaded or the config "
+"page has not been created"
+msgstr ""
+"%1 Ayar sayfası eklenemedi, çünkü eklenti yüklenmedi veya ayar sayfası "
+"oluşturulamadı."
+
+#: ksimpref.cpp:159
+msgid "%1 Options"
+msgstr "%1 Seçenekleri"
+
+#: monitors/cpu/ksimcpu.cpp:100
+#, fuzzy
+msgid "KSim CPU Plugin"
+msgstr "KSim İşlemci Eklentisi"
+
+#: monitors/cpu/ksimcpu.cpp:101
+msgid "A cpu monitor plugin for KSim"
+msgstr "KSim için işlemci izleyici eklentisi"
+
+#: monitors/cpu/ksimcpu.cpp:104 monitors/disk/ksimdisk.cpp:100
+#: monitors/filesystem/ksimfsystem.cpp:74 monitors/i8k/ksimi8k.cpp:69
+#: monitors/lm_sensors/ksimsensors.cpp:68 monitors/mail/ksimmail.cpp:64
+#: monitors/net/ksimnet.cpp:94
+msgid "Author"
+msgstr "Yazar"
+
+#: monitors/cpu/ksimcpu.cpp:204
+msgid "%1%"
+msgstr "%1%"
+
+#: monitors/cpu/ksimcpu.cpp:371
+msgid "Available CPUs"
+msgstr "Kullanılabilir İşlemciler"
+
+#: monitors/cpu/ksimcpu.cpp:372
+msgid "Chart Format"
+msgstr "Çizelge Biçimi"
+
+#: monitors/cpu/ksimcpu.cpp:388 monitors/lm_sensors/sensorsconfig.cpp:80
+#: monitors/net/netconfig.cpp:72
+msgid "Modify..."
+msgstr "Düzenle..."
+
+#: monitors/cpu/ksimcpu.cpp:395
+msgid "Chart Legend"
+msgstr "Çizelge Başlığı"
+
+#: monitors/cpu/ksimcpu.cpp:404
+msgid "%T - Total CPU time (sys + user + nice)"
+msgstr "%T - Toplam  CPU süresi (sys + user + nice)"
+
+#: monitors/cpu/ksimcpu.cpp:407
+msgid "%t - Total CPU time (sys + user)"
+msgstr "%t - Toplam CPU süresi (sys + user)"
+
+#: monitors/cpu/ksimcpu.cpp:410
+#, c-format
+msgid "%s - Total sys time"
+msgstr "%s - Toplam  sys süresi"
+
+#: monitors/cpu/ksimcpu.cpp:413
+#, c-format
+msgid "%u - Total user time"
+msgstr "%u - Toplam user süresi"
+
+#: monitors/cpu/ksimcpu.cpp:416
+#, c-format
+msgid "%n - Total nice time"
+msgstr "%n - Toplam nice süresi"
+
+#: monitors/cpu/ksimcpu.cpp:423
+#, c-format
+msgid "cpu %1"
+msgstr "cpu %1"
+
+#: monitors/cpu/ksimcpu.cpp:504
+msgid "Modify CPU Format"
+msgstr "CPU Biçimini Düzenle"
+
+#: monitors/cpu/ksimcpu.cpp:504
+msgid "Chart format:"
+msgstr "Çizelge biçimi:"
+
+#: monitors/i8k/ksimi8k.cpp:65
+msgid "KSim I8K Plugin"
+msgstr "KSim I8K Eklentisi"
+
+#: monitors/i8k/ksimi8k.cpp:66
+msgid "Dell I8K Hardware Monitor plugin"
+msgstr "Dell I8K Donanım İzleyici Eklentisi"
+
+#: monitors/i8k/ksimi8k.cpp:198
+msgid "Right fan: %1 RPM"
+msgstr "Sağ fan: %1 devir/dakika"
+
+#: monitors/i8k/ksimi8k.cpp:200
+msgid "Right fan: Off"
+msgstr "Sağ fan: Kapalı"
+
+#: monitors/i8k/ksimi8k.cpp:203
+msgid "Left fan: %1 RPM"
+msgstr "Sol fan: %1 devir/dakika"
+
+#: monitors/i8k/ksimi8k.cpp:205
+msgid "Left fan: Off"
+msgstr "Sol fan: Kapalı"
+
+#: monitors/i8k/ksimi8k.cpp:207
+#, fuzzy
+msgid "CPU temp: %1°%2"
+msgstr "İşl. sıcaklığı: %1°%2"
+
+#: monitors/i8k/ksimi8k.cpp:214
+msgid "Show temperature in Fahrenheit"
+msgstr "Sıcaklığı Fahrenheit cinsinden göster"
+
+#: monitors/filesystem/fsystemconfig.cpp:73 monitors/i8k/ksimi8k.cpp:216
+#: monitors/lm_sensors/sensorsconfig.cpp:88
+msgid "Update interval:"
+msgstr "Güncelleme aralığı:"
+
+#: monitors/i8k/ksimi8k.cpp:219
+msgid " sec"
+msgstr " sn"
+
+#: monitors/net/ksimnet.cpp:90
+msgid "KSim Net Plugin"
+msgstr "KSim Ağ Eklentisi"
+
+#: monitors/net/ksimnet.cpp:91
+msgid "A net plugin for KSim"
+msgstr "KSim için ağ eklentisi"
+
+#: monitors/filesystem/ksimfsystem.cpp:78 monitors/net/ksimnet.cpp:96
+msgid "FreeBSD ports"
+msgstr "FreeBSD aktarımları"
+
+#: monitors/disk/ksimdisk.cpp:218 monitors/net/ksimnet.cpp:397
+#: monitors/net/ksimnet.cpp:405
+msgid "in: %1k"
+msgstr "giriş: %1k"
+
+#: monitors/disk/ksimdisk.cpp:220 monitors/net/ksimnet.cpp:398
+#: monitors/net/ksimnet.cpp:406
+msgid "out: %1k"
+msgstr "çıkış: %1k"
+
+#: monitors/net/ksimnet.cpp:409
+msgid "offline"
+msgstr "çevrimdışı"
+
+#: monitors/net/ksimnet.cpp:446 monitors/net/ksimnet.cpp:659
+msgid "Connect"
+msgstr "Bağlan"
+
+#: monitors/net/ksimnet.cpp:449 monitors/net/ksimnet.cpp:660
+msgid "Disconnect"
+msgstr "Bağlantıyı Kes"
+
+#: monitors/net/netconfig.cpp:40
+msgid "yes"
+msgstr "evet"
+
+#: monitors/net/netconfig.cpp:41
+msgid "no"
+msgstr "hayır"
+
+#: monitors/net/netconfig.cpp:47
+msgid "Interface"
+msgstr "Arayüz"
+
+#: monitors/net/netconfig.cpp:48 monitors/net/netdialog.cpp:87
+msgid "Timer"
+msgstr "Zamanlayıcı"
+
+#: monitors/net/netconfig.cpp:49 monitors/net/netdialog.cpp:159
+msgid "Commands"
+msgstr "Komutlar"
+
+#: monitors/disk/ksimdisk.cpp:493 monitors/net/netconfig.cpp:67
+msgid "Add..."
+msgstr "Ekle..."
+
+#: monitors/net/netconfig.cpp:146 monitors/net/netconfig.cpp:151
+msgid "&Add Net Device"
+msgstr "&Ağ Aygıtı Ekle"
+
+#: monitors/net/netconfig.cpp:147
+msgid "&Modify '%1'"
+msgstr "'%1'i &Düzenle"
+
+#: monitors/net/netconfig.cpp:148
+msgid "&Remove '%1'"
+msgstr "'%1'i &Sil"
+
+#: monitors/net/netconfig.cpp:152
+msgid "&Modify..."
+msgstr "Dü&zenle..."
+
+#: monitors/net/netconfig.cpp:153
+msgid "&Remove..."
+msgstr "&Sil..."
+
+#: monitors/net/netconfig.cpp:219
+#, fuzzy
+msgid "Are you sure you want to remove the net interface '%1'?"
+msgstr "'%1' ağ aygıtını gerçekten silmek istiyormusunuz ?"
+
+#: monitors/net/netconfig.cpp:270
+#, fuzzy
+msgid ""
+"You already have a network interface by this name. Please select a different "
+"interface"
+msgstr ""
+"Önceden bu isimde bir ağ arayüzü ayarlanmış. Lütfen farklı bir isim verin."
+
+#: monitors/net/netdialog.cpp:56
+msgid "Network Interface"
+msgstr "Ağ Arayüzü"
+
+#: monitors/net/netdialog.cpp:64
+msgid "Interface:"
+msgstr "Arayüz:"
+
+#: monitors/net/netdialog.cpp:101
+msgid "Show timer"
+msgstr "Zamanlayıcıyı göster"
+
+#: monitors/net/netdialog.cpp:108
+msgid "hh - Total hours online"
+msgstr "hh - Toplam çevirimiçi saat"
+
+#: monitors/net/netdialog.cpp:112
+msgid "mm - Total minutes online"
+msgstr "mm - Toplam çevirimiçi dakika"
+
+#: monitors/net/netdialog.cpp:116
+msgid "ss - Total seconds online"
+msgstr "ss - Toplam çevirimiçi saniye"
+
+#: monitors/net/netdialog.cpp:131
+msgid "Enable connect/disconnect"
+msgstr "Bağlan/Kes etkinleştir"
+
+#: monitors/net/netdialog.cpp:135
+msgid "Connect command:"
+msgstr "Bağlantı komutu:"
+
+#: monitors/net/netdialog.cpp:146
+msgid "Disconnect command:"
+msgstr "Bağlantıyı kesme komutu:"
+
+#: monitors/disk/ksimdisk.cpp:96
+msgid "KSim Disk Plugin"
+msgstr "KSim Disk Eklentisi"
+
+#: monitors/disk/ksimdisk.cpp:97
+msgid "A disk monitor plugin for KSim"
+msgstr "KSim için disk izleme eklentisi"
+
+#: monitors/disk/ksimdisk.cpp:171 monitors/disk/ksimdisk.cpp:194
+#: monitors/disk/ksimdisk.cpp:529 monitors/disk/ksimdisk.cpp:539
+msgid "All Disks"
+msgstr "Tüm Diskler"
+
+#: monitors/disk/ksimdisk.cpp:224
+msgid "%1k"
+msgstr "%1k"
+
+#: monitors/disk/ksimdisk.cpp:482
+msgid "Disks"
+msgstr "Diskler"
+
+#: monitors/disk/ksimdisk.cpp:503
+msgid "Disk Styles"
+msgstr "Disk Stilleri"
+
+#: monitors/disk/ksimdisk.cpp:507
+msgid "Display the read and write data as one"
+msgstr "Okunan ve yazılan verileri birlikte göster"
+
+#: monitors/disk/ksimdisk.cpp:509
+msgid ""
+"Display the read and write data\n"
+"separately as in/out data"
+msgstr ""
+"Yazma ve okuma verilerini \n"
+"girdi/çıktı olarak ayırıp göster"
+
+#: monitors/disk/ksimdisk.cpp:553
+msgid "Add Disk Device"
+msgstr "Disk Aygıtı Ekle"
+
+#: monitors/disk/ksimdisk.cpp:553
+msgid "Disk name:"
+msgstr "Disk adı:"
+
+#: monitors/mail/ksimmail.cpp:61
+msgid "KSim Mail Plugin"
+msgstr "KSim E-posta Eklentisi"
+
+#: monitors/mail/ksimmail.cpp:62
+msgid "A mail monitor plugin for KSim"
+msgstr "KSim için e-posta izleme eklentisi"
+
+#: monitors/snmp/proberesultdialog.cpp:33
+msgid "Results of scanning host %1:"
+msgstr "%1 Makinesinin tarama sonuçları:"
+
+#: monitors/snmp/probedialog.cpp:42
+msgid "SNMP Host Probe"
+msgstr "SNMP Alan Araştırması"
+
+#: monitors/snmp/probedialog.cpp:45
+msgid "Probing for common object identifiers..."
+msgstr "Genel nesne tanımlayıcıları araştırılıyor..."
+
+#: monitors/snmp/monitordialog.cpp:92
+msgid "Please enter a name for this monitor"
+msgstr "Lütfen bu izleyici için bir isim giriniz"
+
+#: monitors/snmp/monitordialog.cpp:95
+msgid "Please enter a valid name for the object identifier"
+msgstr "Lütfen nesne tanımlayıcı için bir ad giriniz"
+
+#: monitors/snmp/configpage.cpp:159
+#, c-format
+msgid ""
+"_n: This host has the following monitor associated. Do you really want to "
+"delete this host entry?\n"
+"This host has the following %n monitors associated. Do you really want to "
+"delete this host entry?"
+msgstr ""
+"Bu alan aşağıdaki %n ekrana bağlı. Bu alan girdisini silmek istediğinizden emin "
+"misiniz?"
+
+#: monitors/snmp/configpage.cpp:162
+msgid "Delete Host Entry"
+msgstr "Makine Girdisini Sil"
+
+#: monitors/snmp/browsedialog.cpp:35
+msgid "&Stop"
+msgstr "&Dur"
+
+#: monitors/lm_sensors/sensorsconfig.cpp:62
+msgid "No."
+msgstr "Hayır."
+
+#: monitors/lm_sensors/sensorsconfig.cpp:63
+msgid "Label"
+msgstr "Etiket"
+
+#: monitors/lm_sensors/sensorsconfig.cpp:64
+msgid "Sensors"
+msgstr "Algılayıcılar"
+
+#: monitors/lm_sensors/sensorsconfig.cpp:65
+msgid "Value"
+msgstr "Değer"
+
+#: monitors/lm_sensors/sensorsconfig.cpp:84
+msgid "Display Fahrenheit"
+msgstr "Fahrenheit Göster"
+
+#: monitors/filesystem/fsystemconfig.cpp:84
+#: monitors/lm_sensors/sensorsconfig.cpp:97
+msgid "seconds"
+msgstr "saniye"
+
+#: monitors/lm_sensors/sensorsconfig.cpp:142
+msgid "Unselect All"
+msgstr "Seçimi Kaldır"
+
+#: monitors/lm_sensors/sensorsconfig.cpp:143
+msgid "Invert Selection"
+msgstr "Seçimi Tersine Çevir"
+
+#: monitors/lm_sensors/sensorsconfig.cpp:214
+msgid "Modify Sensor Label"
+msgstr "Algılayıcı Etiketini Düzenle"
+
+#: monitors/lm_sensors/sensorsconfig.cpp:214
+msgid "Sensor label:"
+msgstr "Algılayıcı etiketi:"
+
+#: monitors/lm_sensors/ksimsensors.cpp:64
+msgid "KSim Sensors Plugin"
+msgstr "KSim Algılayıcı Eklentisi"
+
+#: monitors/lm_sensors/ksimsensors.cpp:65
+msgid "An lm_sensors plugin for KSim"
+msgstr "KSim için bir lm_sensors eklentisi"
+
+#: monitors/lm_sensors/ksimsensors.cpp:179
+#: monitors/lm_sensors/ksimsensors.cpp:188
+msgid "Sensor specified not found."
+msgstr "Belirtilen sensor bulunamadı."
+
+#: monitors/lm_sensors/sensorbase.cpp:216
+msgid ""
+"_: Rounds per minute\n"
+" RPM"
+msgstr ""
+
+#: monitors/lm_sensors/sensorbase.cpp:225
+msgid ""
+"_: Volt\n"
+"V"
+msgstr ""
+
+#: monitors/filesystem/fsystemconfig.cpp:56
+#, fuzzy
+msgid "Mounted Partition"
+msgstr "Bağlı Disk Bölümleri"
+
+#: monitors/filesystem/fsystemconfig.cpp:57
+msgid "Device"
+msgstr "Aygıt"
+
+#: monitors/filesystem/fsystemconfig.cpp:58
+msgid "Type"
+msgstr "Tür"
+
+#: monitors/filesystem/fsystemconfig.cpp:62
+msgid "Show percentage"
+msgstr "Yüzde göster"
+
+#: monitors/filesystem/fsystemconfig.cpp:66
+msgid "Display short mount point names"
+msgstr "Kısa bağlanma noktası isimlerini göster"
+
+#: monitors/filesystem/fsystemconfig.cpp:67
+msgid ""
+"This option shortens the text to shrink down a mount point. E.G: a mount point "
+"/home/myuser would become myuser."
+msgstr ""
+"Bu ayar bağlanma noktalarının ismini kısaltır. Böylece mesela /home/myuser "
+"bağlanma noktasından myuser olur."
+
+#: monitors/filesystem/fsystemconfig.cpp:80
+msgid "0 means no update"
+msgstr "0: güncelleme yok"
+
+#: monitors/filesystem/ksimfsystem.cpp:70
+msgid "KSim FileSystem Plugin"
+msgstr "KSim Dosya Sistemi Eklentisi"
+
+#: monitors/filesystem/ksimfsystem.cpp:71
+msgid "A filesystem plugin for KSim"
+msgstr "KSim için dosya sistemi eklentisi"
+
+#: monitors/filesystem/ksimfsystem.cpp:76
+msgid "Some Fixes"
+msgstr "Bazı Düzeltmeler"
+
+#: monitors/filesystem/filesystemwidget.cpp:187
+msgid "<qt>The following errors occurred:<ul>"
+msgstr "<qt>Şu hatalar oluştu:<ul>"
+
+#: monitors/filesystem/filesystemwidget.cpp:219
+msgid "&Mount Device"
+msgstr "&Aygıtı Bağla"
+
+#: monitors/filesystem/filesystemwidget.cpp:220
+msgid "&Unmount Device"
+msgstr "A&ygıtı Ayır"
+
+#: themeprefs.cpp:68
+msgid ""
+"GKrellm theme support. To use gkrellm themes just untar the themes into the "
+"folder below"
+msgstr ""
+"GKrellm tema desteği. gkrellm temalarını kullanmak için temaları aşağıdaki "
+"klasöre untar komutuyla açın"
+
+#: themeprefs.cpp:78
+msgid "Open Konqueror in KSim's theme folder"
+msgstr "Konqueror'u Ksim tema dizininde aç"
+
+#: themeprefs.cpp:90
+msgid "Author:"
+msgstr "Yazar:"
+
+#: themeprefs.cpp:100
+msgid "Theme"
+msgstr "Tema"
+
+#: themeprefs.cpp:107
+msgid "Alternate themes:"
+msgstr "Alternatif temalar:"
+
+#: themeprefs.cpp:115
+msgid "Font:"
+msgstr "Yazıtipi:"
+
+#: themeprefs.cpp:122
+msgid "Small"
+msgstr "Küçük"
+
+#: themeprefs.cpp:123
+msgid "Normal"
+msgstr "Normal"
+
+#: themeprefs.cpp:124
+msgid "Large"
+msgstr "Büyük"
+
+#: themeprefs.cpp:125
+msgid "Custom"
+msgstr "Özel"
+
+#: themeprefs.cpp:238
+msgid "None Specified"
+msgstr "Hiçbiri"
+
+#: themeprefs.cpp:239
+msgid "None specified"
+msgstr "Hiçbiri"
+
+#: ksimview.cpp:119
+msgid "Unknown"
+msgstr "Bilinmiyor"
+
+#: ksimview.cpp:198
+msgid ""
+"There was an error while trying to create the local folders. This could be "
+"caused by permission problems."
+msgstr ""
+"Yerel dizinlerin oluşumunda hata meydana geldi. Bu erişim haklarından dolayı "
+"olabilir."
+
+#: ksim.cpp:58
+msgid "KSim"
+msgstr "KSim"
+
+#: ksim.cpp:59
+msgid "A plugin based system monitor for KDE"
+msgstr "KDE için eklenti temelli bir sistem izleyici"
+
+#: ksim.cpp:60
+#, fuzzy
+msgid ""
+"(C) 2001-2003 Robbie Ward\n"
+"(C) 2005 Reuben Sutton"
+msgstr "(C) 2001-2003 Robbie Ward"
+
+#: ksim.cpp:61
+msgid "Maintainer"
+msgstr ""
+
+#: ksim.cpp:62
+msgid "Original Author"
+msgstr ""
+
+#: ksim.cpp:64
+msgid "Developer"
+msgstr "Geliştirici"
+
+#: ksim.cpp:66
+msgid "Some FreeBSD ports"
+msgstr "FreeBSD aktarımı"
+
+#: ksim.cpp:68
+msgid "Testing, Bug fixing and some help"
+msgstr "Denemeler ve hata gidermeler"
+
+#: generalprefs.cpp:50
+msgid "Graph Size"
+msgstr "Grafik Boyu"
+
+#: generalprefs.cpp:57
+msgid "Graph height:"
+msgstr "Grafik yüksekliği"
+
+#: generalprefs.cpp:73
+msgid "Graph width:"
+msgstr "Grafik genişliği"
+
+#: generalprefs.cpp:93
+msgid "Display fully qualified domain name"
+msgstr "Tam alan adını görüntüle"
+
+#: generalprefs.cpp:97
+msgid "Recolor themes to the current color scheme"
+msgstr "Güncel renk şemasına göre temayı yeniden renklendir"
+
+#: generalprefs.cpp:131
+msgid "Show time"
+msgstr "Saati göster"
+
+#: generalprefs.cpp:135
+msgid "Show date"
+msgstr "Tarihi göster"
+
+#: generalprefs.cpp:173
+msgid "%hh:%mm:%ss"
+msgstr "%hh:%mm:%ss"
+
+#: generalprefs.cpp:174
+msgid "%dd %h:%m"
+msgstr "%dd %h:%m"
+
+#: generalprefs.cpp:175
+msgid "Uptime: %h:%m:%s"
+msgstr "Çalışma süresi: %h:%m:%s"
+
+#: generalprefs.cpp:183 generalprefs.cpp:319 generalprefs.cpp:473
+msgid "Insert item"
+msgstr "Öğe ekle"
+
+#: generalprefs.cpp:186
+msgid "Show uptime"
+msgstr "Çalışma süresini göster"
+
+#: generalprefs.cpp:198
+msgid "Uptime format:"
+msgstr "Süre biçimi:"
+
+#: generalprefs.cpp:206
+#, c-format
+msgid ""
+"The text in the edit box will be what is displayed as \n"
+"the uptime except the % items will be replaced with \n"
+"the legend"
+msgstr ""
+"Verilen metin toplam süre olarak gösterilir.\n"
+"Sadece % ile belirtilmiş alan \n"
+"hariç."
+
+#: generalprefs.cpp:212
+msgid "Uptime Legend"
+msgstr "Çalışma Süresi Başlığı"
+
+#: generalprefs.cpp:222
+#, c-format
+msgid "%d - Total days uptime"
+msgstr "%d - Toplam gün"
+
+#: generalprefs.cpp:226
+msgid "%h - Total hours uptime"
+msgstr "%h - Toplam saat"
+
+#: generalprefs.cpp:230
+#, c-format
+msgid "%m - Total minutes uptime"
+msgstr "%m - Toplam dakika"
+
+#: generalprefs.cpp:234
+#, c-format
+msgid "%s - Total seconds uptime"
+msgstr "%s - Toplam saniye"
+
+#: generalprefs.cpp:275 generalprefs.cpp:423 generalprefs.cpp:556
+msgid "Insert Item"
+msgstr "Öğeyi Ekle"
+
+#: generalprefs.cpp:277 generalprefs.cpp:425 generalprefs.cpp:557
+msgid "Remove Item"
+msgstr "Öğeyi Sil"
+
+#: generalprefs.cpp:322
+msgid "Show memory and free memory"
+msgstr "Belleği ve boş alanı göster"
+
+#: generalprefs.cpp:334
+msgid "Mem format:"
+msgstr "Bellek biçimi:"
+
+#: generalprefs.cpp:342
+#, c-format
+msgid ""
+"The text in the edit box will be what is displayed as \n"
+"the memory & free memory except the % items will be \n"
+"replaced with the legend"
+msgstr ""
+"Verilen düzenleme metni  bellek ve \n"
+"boş alan olarak gösterilir.\n"
+"Sadece % ile etiketlenen bölüm hariç."
+
+#: generalprefs.cpp:348
+msgid "Memory Legend"
+msgstr "Bellek göstergesi"
+
+#: generalprefs.cpp:358
+msgid "%t - Total memory"
+msgstr "%t - Toplam bellek"
+
+#: generalprefs.cpp:362
+msgid "%F - Total free memory including cached and buffered"
+msgstr "%F - Ayrılmış ve tamponlanmış bellek dahil toplam boş bellek"
+
+#: generalprefs.cpp:366
+#, c-format
+msgid "%f - Total free memory"
+msgstr "%f - Toplam boş bellek"
+
+#: generalprefs.cpp:370
+#, c-format
+msgid "%u - Total used memory"
+msgstr "%u - Toplam kullanılan bellek"
+
+#: generalprefs.cpp:374
+#, c-format
+msgid "%c - Total cached memory"
+msgstr "%c - Toplam önbellek"
+
+#: generalprefs.cpp:378
+msgid "%b - Total buffered memory"
+msgstr "%b - Toplam arabellek"
+
+#: generalprefs.cpp:382
+#, c-format
+msgid "%s - Total shared memory"
+msgstr "%s - Toplam ortak kullanılan bellek"
+
+#: generalprefs.cpp:455
+msgid "Show swap and free swap"
+msgstr "Takas bölgesini ve boş takas alanını göster"
+
+#: generalprefs.cpp:483
+msgid "Swap format:"
+msgstr "Takas biçimi:"
+
+#: generalprefs.cpp:491
+#, c-format
+msgid ""
+"The text in the edit box will be what is displayed as \n"
+"the swap & free swap except the % items will be \n"
+"replaced with the legend"
+msgstr ""
+"Verilen metin takas ve boş alan olarak\n"
+"gösterilir. Sadece % ile etiketli alan \n"
+"hariç."
+
+#: generalprefs.cpp:497
+msgid "Swap Legend"
+msgstr "Takas arabelleği"
+
+#: generalprefs.cpp:507
+msgid "%t - Total swap"
+msgstr "%t - Toplam takas"
+
+#: generalprefs.cpp:511
+#, c-format
+msgid "%f - Total free swap"
+msgstr "%f - Toplam boş takas alanı"
+
+#: generalprefs.cpp:515
+#, c-format
+msgid "%u - Total used swap"
+msgstr "%u - Toplam kullanılan takas alanı"
+
+#, fuzzy
+#~ msgid "Free Memory / Total Memory"
+#~ msgstr "%t - Toplam bellek"
+
+#~ msgid "Time of the pc"
+#~ msgstr "PC'nin saati"
+
+#~ msgid "Uptime of the system"
+#~ msgstr "Sistemin açık kalma süresi"
+
+#~ msgid "Total memory - Free memory"
+#~ msgstr "Toplam bellek - Boş bellek"
+
+#~ msgid "Total swap - Free swap"
+#~ msgstr "Toplam takas alanı - Boş takas alanı"
+
+#~ msgid "Author and Developer"
+#~ msgstr "Yazar ve Geliştirici"
+
+#~ msgid "%tM - %fM free"
+#~ msgstr "%tM - %fM boş"
+
+#~ msgid "%tM - %uM used"
+#~ msgstr "%tM - %uM kullanımda"

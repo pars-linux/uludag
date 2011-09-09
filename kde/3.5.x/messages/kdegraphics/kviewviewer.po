@@ -1,0 +1,225 @@
+# translation of kviewviewer.po to Türkçe
+# Copyright (C) 2004, 2005 Free Software Foundation, Inc.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Alper Sen <aalpersen@gmail.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kviewviewer\n"
+"POT-Creation-Date: 2005-07-24 01:35+0200\n"
+"PO-Revision-Date: 2005-07-15 13:59+0300\n"
+"Last-Translator: Alper Sen <aalpersen@gmail.com>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: imagesettings.cpp:31
+msgid "Image Settings"
+msgstr "Resim Ayarları"
+
+#: imagesettings.cpp:34
+msgid "Fit image to page size"
+msgstr "Resmi sayfa boyuna uydur"
+
+#: imagesettings.cpp:37
+msgid "Center image on page"
+msgstr "Resmi sayfada ortala"
+
+#: kviewkonqextension.cpp:71
+#, c-format
+msgid "Print %1"
+msgstr "Yazdır: %1"
+
+#: kviewviewer.cpp:78
+msgid ""
+"Unable to find a suitable Image Canvas. This probably means that KView was not "
+"installed properly."
+msgstr ""
+"Uygun Resim Alanı bulunamadı. Bu KView'in tam olarak kurulmadığını gösterir."
+
+#: kviewviewer.cpp:80
+msgid ""
+"Accessing the KImageViewer interface of the Image Canvas failed. Something in "
+"your setup is broken (a component claims to be a KImageViewer::Canvas but it is "
+"not)."
+msgstr ""
+"Resim Alan'ının KImageViewer arayüzüne ulaşılması başarısız oldu. Kurulumun "
+"esnasında birşeyler hata vermiş (bir eklenti KImageViewer::Canvas olduğunu "
+"söylüyor fakat değil)."
+
+#: kviewviewer.cpp:92 kviewviewer.cpp:530
+msgid ""
+"_: Title caption when no image loaded\n"
+"no image loaded"
+msgstr "hiç resim yüklenmedi"
+
+#: kviewviewer.cpp:172
+msgid "KView"
+msgstr "KView"
+
+#: kviewviewer.cpp:173
+msgid "KDE Image Viewer Part"
+msgstr "KDE Resim Gösterme Parçası"
+
+#: kviewviewer.cpp:175
+msgid "(c) 1997-2002, The KView Developers"
+msgstr "(c) 1997-2002, KView Geliştiricileri"
+
+#: kviewviewer.cpp:176
+msgid "Maintainer"
+msgstr "Yönetici"
+
+#: kviewviewer.cpp:177
+msgid "started it all"
+msgstr "tümü başlatıldı"
+
+#: kviewviewer.cpp:213 kviewviewer.cpp:607
+msgid ""
+"The image could not be saved to disk. A possible causes is that you don't have "
+"permission to write to that file."
+msgstr ""
+"Resim diske kaydedilemedi. Büyük ihtimalle dosyayı yazmaya hakkınız yok."
+
+#: kviewviewer.cpp:298
+msgid ""
+"_: Title caption when new image selected\n"
+"new image"
+msgstr "yeni resim"
+
+#: kviewviewer.cpp:400 kviewviewer.cpp:414
+#, c-format
+msgid "Unknown image format: %1"
+msgstr "Bilinmeyen resim biçimi: %1"
+
+#: kviewviewer.cpp:409
+#, c-format
+msgid "No such file: %1"
+msgstr "Bu isimde bir dosya yok: %1"
+
+#: kviewviewer.cpp:468
+msgid "Zoom In"
+msgstr "Yakınlaştır"
+
+#: kviewviewer.cpp:470
+msgid "Zoom Out"
+msgstr "Uzaklaştır"
+
+#: kviewviewer.cpp:480
+msgid "&Flip"
+msgstr "&Ters Çevir"
+
+#: kviewviewer.cpp:481
+msgid "&Vertical"
+msgstr "&Dikey"
+
+#: kviewviewer.cpp:482
+msgid "&Horizontal"
+msgstr "&Yatay"
+
+#: kviewviewer.cpp:486
+msgid "Ro&tate Counter-Clockwise"
+msgstr "Saat Yönünün &Tersinde Çevir"
+
+#: kviewviewer.cpp:488
+msgid "Rotate Clockwise"
+msgstr "Saat Yönünde Çevir"
+
+#: kviewviewer.cpp:494
+msgid "Fit Image to Window"
+msgstr "Resmi Pencereye Uydur"
+
+#: kviewviewer.cpp:517
+msgid "Show Scrollbars"
+msgstr "Kaydırma Çubuğunu Göster"
+
+#: kviewviewer.cpp:519
+msgid "Hide Scrollbars"
+msgstr "Kaydırma Çubuğunu Gizle"
+
+#: kviewviewer.cpp:757
+msgid "Save Image As..."
+msgstr "Resmi Farklı Kaydet..."
+
+#: kviewviewer.cpp:806
+#, c-format
+msgid "Load changed image? - %1"
+msgstr "Değişen resim yüklensin mi? - %1"
+
+#: kviewviewer.cpp:808
+#, fuzzy
+msgid ""
+"The image %1 which you have modified has changed on disk.\n"
+"Do you want to reload the file and lose your changes?\n"
+"If you don't and subsequently save the image, you will lose the\n"
+"changes that have already been saved."
+msgstr ""
+"Üzerinde çalıştığınız %1 resmi disk üzerinde değişikliğe uğramış\n"
+"Dosyayı yeniden yükleyip değişikliklerinizi kaybetmek istiyormusunuz?\n"
+"Hayır'ı seçerseniz üzerinde yaptığınız değişiklikler kaydedilir, disk üzerinde\n"
+"yapılan değişiklikler ise kaybedilir."
+
+#: kviewviewer.cpp:818
+msgid "Do Not Reload"
+msgstr ""
+
+#: kviewviewer.cpp:875
+msgid ""
+"_: Title caption when no image loaded\n"
+"No Image Loaded"
+msgstr "Hiç Resim Yüklenmedi"
+
+#. i18n: file printimagesettings.ui line 56
+#: rc.cpp:30
+#, no-c-format
+msgid "Image Size"
+msgstr "Resim Boyutu"
+
+#. i18n: file printimagesettings.ui line 67
+#: rc.cpp:33
+#, no-c-format
+msgid "Fit to page size"
+msgstr "Sayfa boyutuna uydur"
+
+#. i18n: file printimagesettings.ui line 75
+#: rc.cpp:36
+#, no-c-format
+msgid "9x13"
+msgstr "9x13"
+
+#. i18n: file printimagesettings.ui line 83
+#: rc.cpp:39
+#, no-c-format
+msgid "10x15"
+msgstr "10x15 "
+
+#. i18n: file printimagesettings.ui line 91
+#: rc.cpp:42
+#, no-c-format
+msgid "Manual"
+msgstr "Elle"
+
+#. i18n: file printimagesettings.ui line 120
+#: rc.cpp:45
+#, no-c-format
+msgid "x"
+msgstr "x"
+
+#. i18n: file printimagesettings.ui line 137
+#: rc.cpp:48
+#, no-c-format
+msgid "Center on page"
+msgstr "Sayafaya ortala"

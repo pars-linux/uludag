@@ -1,0 +1,802 @@
+# translation of kscd.po to
+# Ömer Fadıl USTA <omer_fad@hotmail.com>,2001.
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# YILDIZ KARDESLER <turkishprogram@xposta.com>, 2004.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Onur Küçük <onur@uludag.org.tr>, 2005.
+# Engin Çağatay <engincagatay@yahoo.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kscd\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-08 01:20+0200\n"
+"PO-Revision-Date: 2007-05-15 00:40+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Onur Küçük"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "onur@uludag.org.tr"
+
+#: cddbdlg.cpp:37
+msgid "CD Editor"
+msgstr "CD Veritabanı Düzenleyicisi"
+
+#: cddbdlg.cpp:46
+msgid "Upload"
+msgstr "Gönder"
+
+#: cddbdlg.cpp:47
+msgid "Fetch Info"
+msgstr "Bilgi Al"
+
+#: cddbdlg.cpp:87
+msgid "Record submitted successfully."
+msgstr "Kayıt başarıyla gönderildi."
+
+#: cddbdlg.cpp:88 cddbdlg.cpp:94
+msgid "Record Submission"
+msgstr "Kayıt Gönderme"
+
+#: cddbdlg.cpp:92
+#, c-format
+msgid ""
+"Error sending record.\n"
+"\n"
+"%1"
+msgstr ""
+"Kayıt gönderme hatası.\n"
+"\n"
+"%1"
+
+#: cddbdlg.cpp:127
+msgid ""
+"The artist name of the disc has to be entered.\n"
+"Please correct the entry and try again."
+msgstr ""
+"Sanatçı alanı doldurulmamış.\n"
+"Bilgiyi düzeltip yeniden deneyin."
+
+#: cddbdlg.cpp:129 cddbdlg.cpp:138 cddbdlg.cpp:157
+msgid "Invalid Database Entry"
+msgstr "Geçersiz Veritabanı Girişi"
+
+#: cddbdlg.cpp:136
+msgid ""
+"The title of the disc has to be entered.\n"
+"Please correct the entry and try again."
+msgstr ""
+"Sanatçı alanı doldurulmamış.\n"
+"Bilgiyi düzeltip yeniden deneyin."
+
+#: cddbdlg.cpp:155
+msgid ""
+"At least one track title must be entered.\n"
+"Please correct the entry and try again."
+msgstr ""
+"Tüm parça isimleri boş olamaz.\n"
+"Lütfen düzeltip tekrar deneyin."
+
+#: cddbdlg.cpp:191
+msgid ""
+"Invalid Playlist\n"
+"Please use valid track numbers, separated by commas."
+msgstr ""
+"Geçersiz çalma listesi\n"
+"Lütfen parça numaralarını virgul ile ayırarak verin."
+
+#: docking.cpp:56 kscd.cpp:173 kscd.cpp:239
+msgid "Play/Pause"
+msgstr "Çal/Duraklat"
+
+#: docking.cpp:58 kscd.cpp:176 kscd.cpp:234
+msgid "Next"
+msgstr "Sonraki"
+
+#: docking.cpp:59 kscd.cpp:175 kscd.cpp:237
+msgid "Previous"
+msgstr "Önceki"
+
+#: docking.cpp:60 kscd.cpp:182
+msgid "Eject"
+msgstr "Çıkar"
+
+#: kcompactdisc.cpp:153
+msgid "Back/Track Done"
+msgstr "Geri /Parça Tamamlandı"
+
+#: kcompactdisc.cpp:156
+msgid "Playing"
+msgstr "Çalıyor"
+
+#: kcompactdisc.cpp:159
+msgid "Forward"
+msgstr "İleri"
+
+#: kcompactdisc.cpp:162
+msgid "Paused"
+msgstr "Duraklatıldı"
+
+#: kcompactdisc.cpp:165 kscd.cpp:1042
+msgid "Stopped"
+msgstr "Durdu"
+
+#: kcompactdisc.cpp:168 kscd.cpp:1297
+msgid "Ejected"
+msgstr "Çıkarıldı"
+
+#: kcompactdisc.cpp:171
+msgid "No Disc"
+msgstr "Disk yok"
+
+#: kcompactdisc.cpp:174
+msgid "Unknown"
+msgstr "Bilinmeyen"
+
+#: kcompactdisc.cpp:177
+msgid "CDDA Error"
+msgstr "CD Veritabanı Düzenleyicisi Hatası"
+
+#: kcompactdisc.cpp:180
+msgid "CDDA Ack"
+msgstr "CDDA Ack"
+
+#: kcompactdisc.cpp:412 kcompactdisc.cpp:430
+msgid "Unknown Artist"
+msgstr "Bilinmeyen Sanatçı"
+
+#: kcompactdisc.cpp:413
+msgid "Unknown Title"
+msgstr "Bilinmeyen Başlık"
+
+#: kcompactdisc.cpp:431
+#, c-format
+msgid "Track %1"
+msgstr "Parça %1"
+
+#: kscd.cpp:83
+msgid "KDE CD player"
+msgstr "KDE CD çalıcısı"
+
+#: kscd.cpp:136 kscd.cpp:863 kscd.cpp:1402
+msgid "Vol: %02d%%"
+msgstr "Ses: %02d%%"
+
+#: kscd.cpp:166
+msgid "Track list"
+msgstr "Parça listesi"
+
+#. i18n: file panel.ui line 374
+#: kscd.cpp:181 rc.cpp:171
+#, no-c-format
+msgid "Loop"
+msgstr "Döngü"
+
+#: kscd.cpp:183 kscd.cpp:243
+msgid "Increase Volume"
+msgstr "Sesi Yükselt"
+
+#: kscd.cpp:187 kscd.cpp:245
+msgid "Decrease Volume"
+msgstr "Sesi Alçalt"
+
+#: kscd.cpp:189 kscd.cpp:247
+msgid "Shuffle"
+msgstr "Karıştır"
+
+#: kscd.cpp:190
+msgid "CDDB"
+msgstr "CDDB"
+
+#: kscd.cpp:194
+msgid "Configure &Global Shortcuts..."
+msgstr "&Genel Kısayolları Ayarla..."
+
+#: kscd.cpp:370
+msgid "Artist Information"
+msgstr "Sanatçı hakkında bilgi"
+
+#: kscd.cpp:416 kscd.cpp:427 kscd.cpp:693 kscd.cpp:1043
+msgid "Play"
+msgstr "Çal"
+
+#: kscd.cpp:418 kscd.cpp:425
+msgid "Pause"
+msgstr "Duraklat"
+
+#: kscd.cpp:553
+#, c-format
+msgid "Current track: %1"
+msgstr "Çalan parça: %1"
+
+#: kscd.cpp:693
+msgid "Random"
+msgstr "Rastgele"
+
+#: kscd.cpp:719
+msgid "CD Drive (you must stop playing to change this)"
+msgstr "CD Sürücüsü (Değiştirirken CD çalma işlemini durdurmanız gereklidir)"
+
+#: kscd.cpp:742
+msgid "CD Player"
+msgstr "CD Çalıcı"
+
+#: kscd.cpp:742
+msgid "Settings & Behavior"
+msgstr "Ayarlar"
+
+#: kscd.cpp:757
+msgid "Configure Fetching Items"
+msgstr "CDDB/freedb yapılandır"
+
+#: kscd.cpp:802
+#, c-format
+msgid ""
+"CD-ROM read or access error (or no audio disc in drive).\n"
+"Please make sure you have access permissions to:\n"
+"%1"
+msgstr ""
+"CDROM okuma veya erişim hatası (veya sürücüde ses diski yok).\n"
+"Lütfen %1'e erişim izniniz olup olmadığını kontrol edin. "
+
+#: kscd.cpp:961
+msgid "No disc"
+msgstr "Disk yok"
+
+#: kscd.cpp:1181
+msgid "Start freedb lookup."
+msgstr "Freedb aramayı başlat."
+
+#: kscd.cpp:1198
+msgid "No matching freedb entry found."
+msgstr "freedb veritabanında bir eşleşme bulunamadı."
+
+#: kscd.cpp:1198
+msgid "Error getting freedb entry."
+msgstr "freedb girişini almada hata."
+
+#: kscd.cpp:1220
+msgid "Select CDDB Entry"
+msgstr "CDDB Girdisi Seç"
+
+#: kscd.cpp:1221
+msgid "Select a CDDB entry:"
+msgstr "CDDB Gridisi Seç:"
+
+#: kscd.cpp:1378
+msgid "Tra Rem"
+msgstr "Şar Kal"
+
+#: kscd.cpp:1382
+msgid "Tot Sec"
+msgstr "Top San"
+
+#: kscd.cpp:1386
+msgid "Tot Rem"
+msgstr "Top Kal"
+
+#: kscd.cpp:1391
+msgid "Tra Sec"
+msgstr "Şar San"
+
+#: kscd.cpp:1597
+msgid "Start playing"
+msgstr "Çalmaya başla"
+
+#: kscd.cpp:1598
+msgid "CD device, can be a path or a media:/ URL"
+msgstr "CD aygıtı, bir yol ya da media:/ adresi olabilir"
+
+#. i18n: file panel.ui line 16
+#: kscd.cpp:1608 rc.cpp:120
+#, no-c-format
+msgid "KsCD"
+msgstr "KsCD"
+
+#: kscd.cpp:1612
+msgid "Current maintainer"
+msgstr "Güncel E-Posta Profili "
+
+#: kscd.cpp:1613
+msgid "Workman library update, CDTEXT, CDDA"
+msgstr "İşçi  kütüphane güncellenmesi, CDTEXT, CDDA"
+
+#: kscd.cpp:1615
+msgid "Workman library, previous maintainer"
+msgstr "Workman kütüphanesi "
+
+#: kscd.cpp:1616
+msgid "Patches galore"
+msgstr "Yamalar"
+
+#: kscd.cpp:1617
+msgid "Workman library"
+msgstr "Workman kütüphanesi"
+
+#: kscd.cpp:1618
+msgid "UI Work"
+msgstr "Grafiksel çalışmalar"
+
+#: kscd.cpp:1619
+msgid "Special thanks to freedb.org for providing a free CDDB-like CD database"
+msgstr ""
+"freedb.org ve onun gibi serbest  veri bankalarına özellikle teşekkür ederiz"
+
+#. i18n: file configWidgetUI.ui line 27
+#: rc.cpp:3
+#, no-c-format
+msgid "Interface"
+msgstr "Arayüz"
+
+#. i18n: file configWidgetUI.ui line 38
+#: rc.cpp:6
+#, no-c-format
+msgid "&Background color:"
+msgstr "&Arkaplan rengi:"
+
+#. i18n: file configWidgetUI.ui line 52
+#: rc.cpp:9 rc.cpp:247
+#, no-c-format
+msgid "The background color that will be used for the LCD display."
+msgstr "LCD ekranında görüntülenecek arkaplan rengi."
+
+#. i18n: file configWidgetUI.ui line 60
+#: rc.cpp:12
+#, no-c-format
+msgid "Show icon in &system tray"
+msgstr "Kontrol &çubuğunda ikonları göster"
+
+#. i18n: file configWidgetUI.ui line 63
+#: rc.cpp:15 rc.cpp:193
+#, no-c-format
+msgid ""
+"When this option is selected an icon will appear in the system tray. Note that "
+"KsCD will <i>not</i> quit when the window is closed if a system tray icon is "
+"displayed. You may quit KsCD by clicking the Quit button or right-clicking on "
+"the system tray icon and selecting the appropriate entry."
+msgstr ""
+"Bu seçenek seçildiğinde sistem çubuğunda bir simge belirir. Eğer sistem "
+"çubuğunda simge görünüyorsa KsCD penceresini kapattığınızda program <i>"
+"kapanmaz</i>. Çıkma eylemini ÇIK düğmesine veya sistem çubuğundaki simgeye sağ "
+"tuşla tıklayarak açılan menüden gerekli girdiyi basarak yapabilirsiniz."
+
+#. i18n: file configWidgetUI.ui line 74
+#: rc.cpp:18
+#, no-c-format
+msgid "Show &track announcement"
+msgstr "&Parça bilgisini göster"
+
+#. i18n: file configWidgetUI.ui line 99
+#: rc.cpp:21
+#, no-c-format
+msgid "&LCD color:"
+msgstr "&LCD rengi:"
+
+#. i18n: file configWidgetUI.ui line 113
+#: rc.cpp:24 rc.cpp:241
+#, no-c-format
+msgid "The foreground color that will be used in the LCD display."
+msgstr "LCD ekranında görüntülenecek önplan rengi."
+
+#. i18n: file configWidgetUI.ui line 131
+#: rc.cpp:27
+#, no-c-format
+msgid "LCD &font:"
+msgstr "LCD &yazıtipi:"
+
+#. i18n: file configWidgetUI.ui line 144
+#: rc.cpp:30
+#, no-c-format
+msgid "Play Options"
+msgstr "Çalma Seçenekleri"
+
+#. i18n: file configWidgetUI.ui line 161
+#: rc.cpp:33
+#, no-c-format
+msgid " seconds"
+msgstr " saniye"
+
+#. i18n: file configWidgetUI.ui line 164
+#: rc.cpp:36
+#, no-c-format
+msgid "1 second"
+msgstr "1 saniye"
+
+#. i18n: file configWidgetUI.ui line 167
+#: rc.cpp:39 rc.cpp:220
+#, no-c-format
+msgid ""
+"This option controls the number of seconds KsCD will skip when the skip "
+"forwards or backwards buttons are pressed."
+msgstr ""
+"Bu seçenek KsCD'nin ileri veya geri düğmelerine basıldığında kaç saniye "
+"atlayacağını denetler."
+
+#. i18n: file configWidgetUI.ui line 175
+#: rc.cpp:42
+#, no-c-format
+msgid "Skip &interval:"
+msgstr "Atlama zaman &aralığı:"
+
+#. i18n: file configWidgetUI.ui line 186
+#: rc.cpp:45
+#, no-c-format
+msgid "Auto&play when CD inserted"
+msgstr "&CD sürücüye yerleştirilince otomatik çal"
+
+#. i18n: file configWidgetUI.ui line 189
+#: rc.cpp:48 rc.cpp:199
+#, no-c-format
+msgid ""
+"When this option is selected the CD will start playing automatically upon being "
+"inserted into the CD-ROM."
+msgstr "Bu seçenek seçildiğinde CD CD-ROM'a takıldığı anda çalmaya başlar."
+
+#. i18n: file configWidgetUI.ui line 197
+#: rc.cpp:51
+#, no-c-format
+msgid "&Eject CD when finished playing"
+msgstr "Ç&alma bitince CD'yi çıkart"
+
+#. i18n: file configWidgetUI.ui line 200
+#: rc.cpp:54 rc.cpp:211
+#, no-c-format
+msgid ""
+"When this option is selected the CD will automatically eject when it is "
+"finished."
+msgstr ""
+"Bu seçenek seçildiğinde CD çalma işlemi bittikten sonra otomatik olarak "
+"CD-ROM'dan dışarı atılır."
+
+#. i18n: file configWidgetUI.ui line 208
+#: rc.cpp:57
+#, no-c-format
+msgid "Stop playing CD on e&xit"
+msgstr "Program kapatılınca CD çalmayı bitir"
+
+#. i18n: file configWidgetUI.ui line 211
+#: rc.cpp:60 rc.cpp:205
+#, no-c-format
+msgid ""
+"When this option is selected the CD will automatically stop playing when "
+"quitting KsCD."
+msgstr "Bu seçenek seçildiğinde CD çalma işlemi KsCD kapandığında durdurulur."
+
+#. i18n: file configWidgetUI.ui line 238
+#: rc.cpp:63
+#, no-c-format
+msgid "CD-ROM &Device"
+msgstr "CDROM &Aygıtı"
+
+#. i18n: file configWidgetUI.ui line 249
+#: rc.cpp:66 rc.cpp:226
+#, no-c-format
+msgid ""
+"The CD-ROM device to use when playing CDs. This will typically look something "
+"like \"/dev/cdrom\". To have KsCD autodetect your CD-ROM, leave this field "
+"empty."
+msgstr ""
+"CD'ler çalınırken kullanılacak CD-ROM aygıtı. Bu genellikler\"/dev/cdrom\" "
+"şeklindedir. KsCD'nin CD-ROM otomatik olarak tanıması için bu alanı boş "
+"bırakın."
+
+#. i18n: file configWidgetUI.ui line 257
+#: rc.cpp:69
+#, no-c-format
+msgid "Select audio de&vice:"
+msgstr "&Ses aygıtını seç:"
+
+#. i18n: file configWidgetUI.ui line 271
+#: rc.cpp:72
+#, no-c-format
+msgid "&Use direct digital playback"
+msgstr "Direkt sayısal çalma k&ullan"
+
+#. i18n: file configWidgetUI.ui line 277
+#: rc.cpp:75
+#, no-c-format
+msgid ""
+"When this option is selected KsCD will attempt to play the CD using direct "
+"digital playback. This option is useful if the CD-ROM is not connected directly "
+"to the sound output on the computer. Note that digital playback consumes more "
+"system resources than the normal method of playback."
+msgstr ""
+"Bu seçenek seçildiğinde KsCD CD'yi direkt sayısal çalma kullanarak çalmayı "
+"deneyecek. Bu seçenek CD-ROM bilgisayarın ses kartı çıkışına direkt olarak "
+"bağlı değilse kullanılabilir. Sayısal çalma normal çalmadan daha fazla sistem "
+"kaynağı kullanmaktadır."
+
+#. i18n: file configWidgetUI.ui line 285
+#: rc.cpp:78
+#, no-c-format
+msgid "Select &audio backend:"
+msgstr "Ses &arka ucunu seç:"
+
+#. i18n: file configWidgetUI.ui line 314
+#: rc.cpp:81
+#, no-c-format
+msgid " Music Information Services "
+msgstr " Müzik Bilgilendirme Servisleri "
+
+#. i18n: file configWidgetUI.ui line 325
+#: rc.cpp:84
+#, no-c-format
+msgid "Allow en&coding selection:"
+msgstr "Kodlam&a seçimine izin ver:"
+
+#. i18n: file configWidgetUI.ui line 328
+#: rc.cpp:87 rc.cpp:253
+#, no-c-format
+msgid ""
+"When this option is selected, you have the ability to select encoding for the "
+"results of a CDDB request. The standard describes CDDB results as being "
+"strictly Latin1. This is not true, as non-English speaking users often use "
+"other 8-bit encodings."
+msgstr ""
+"Bu seçilirse, CDDB sorgulamarının sonucunda kodlama seçimi seçme "
+"imkanınızvardır. Varsayılan olarak Latin 1 kullanılır. Eğer ingilizce harici "
+"bir dil konuşuyor ve kullanıyorsanız tercihen 8 bit kodlama kullanın."
+
+#. i18n: file configWidgetUI.ui line 334
+#: rc.cpp:90
+#, no-c-format
+msgid "AUTO"
+msgstr "AUTO"
+
+#. i18n: file configWidgetUI.ui line 339
+#: rc.cpp:93
+#, no-c-format
+msgid "UTF-8"
+msgstr "UTF-8"
+
+#. i18n: file configWidgetUI.ui line 344
+#: rc.cpp:96
+#, no-c-format
+msgid "CP1250"
+msgstr "CP1250"
+
+#. i18n: file configWidgetUI.ui line 349
+#: rc.cpp:99
+#, no-c-format
+msgid "CP1251"
+msgstr "CP1251"
+
+#. i18n: file configWidgetUI.ui line 354
+#: rc.cpp:102
+#, no-c-format
+msgid "CP1252"
+msgstr "CP1252"
+
+#. i18n: file configWidgetUI.ui line 359
+#: rc.cpp:105
+#, no-c-format
+msgid "CP1253"
+msgstr "CP1253"
+
+#. i18n: file configWidgetUI.ui line 364
+#: rc.cpp:108
+#, no-c-format
+msgid "CP1254"
+msgstr "CP1254"
+
+#. i18n: file configWidgetUI.ui line 369
+#: rc.cpp:111
+#, no-c-format
+msgid "CP1255"
+msgstr "CP1255"
+
+#. i18n: file configWidgetUI.ui line 374
+#: rc.cpp:114
+#, no-c-format
+msgid "CP1256"
+msgstr "CP1256"
+
+#. i18n: file configWidgetUI.ui line 379
+#: rc.cpp:117
+#, no-c-format
+msgid "CP1257"
+msgstr "CP1257"
+
+#. i18n: file panel.ui line 57
+#: rc.cpp:123 rc.cpp:126
+#, no-c-format
+msgid "Track progress"
+msgstr "Parça ilerlemesi"
+
+#. i18n: file panel.ui line 110
+#: rc.cpp:129 rc.cpp:132
+#, no-c-format
+msgid "Volume control"
+msgstr "Ses denetimi"
+
+#. i18n: file panel.ui line 145
+#: rc.cpp:135
+#, no-c-format
+msgid "E&ject"
+msgstr "Çıka&r"
+
+#. i18n: file panel.ui line 242
+#: rc.cpp:138
+#, no-c-format
+msgid "Status"
+msgstr "Durum"
+
+#. i18n: file panel.ui line 250
+#: rc.cpp:141 rc.cpp:147
+#, no-c-format
+msgid "Vol: --"
+msgstr "Ses: --"
+
+#. i18n: file panel.ui line 263
+#: rc.cpp:144
+#, no-c-format
+msgid "--/--"
+msgstr "--/--"
+
+#. i18n: file panel.ui line 293
+#: rc.cpp:150
+#, no-c-format
+msgid "Artist"
+msgstr "Sanatçı"
+
+#. i18n: file panel.ui line 301
+#: rc.cpp:153
+#, no-c-format
+msgid "Title"
+msgstr "Başlık"
+
+#. i18n: file panel.ui line 313
+#: rc.cpp:156
+#, no-c-format
+msgid "R&andom"
+msgstr "Rastgel&e"
+
+#. i18n: file panel.ui line 327
+#: rc.cpp:159
+#, no-c-format
+msgid "E&xtras"
+msgstr "Ekle&r"
+
+#. i18n: file panel.ui line 338
+#: rc.cpp:162
+#, no-c-format
+msgid "Pla&y"
+msgstr "Ç&al"
+
+#. i18n: file panel.ui line 363
+#: rc.cpp:168
+#, no-c-format
+msgid "&CDDB"
+msgstr "CDD&B"
+
+#. i18n: file panel.ui line 391
+#: rc.cpp:174
+#, no-c-format
+msgid "&Next"
+msgstr "So&nraki"
+
+#. i18n: file panel.ui line 402
+#: rc.cpp:177
+#, no-c-format
+msgid "Pre&vious"
+msgstr "Öncek&i"
+
+#. i18n: file kscd.kcfg line 9
+#: rc.cpp:180
+#, no-c-format
+msgid "Output Volume"
+msgstr "Çıktı Sesi"
+
+#. i18n: file kscd.kcfg line 13
+#: rc.cpp:183
+#, no-c-format
+msgid "Play random tracks."
+msgstr "Rastgele parça çal."
+
+#. i18n: file kscd.kcfg line 15
+#: rc.cpp:186
+#, no-c-format
+msgid ""
+"When this option is selected the playing order\n"
+"            of the CD tracks is chosen at random."
+msgstr ""
+"Bu seçenek seçildiğinde CD parçalarının çalma\n"
+"sırası rastgele olarak seçilmiş olur."
+
+#. i18n: file kscd.kcfg line 19
+#: rc.cpp:190
+#, no-c-format
+msgid "Show an icon in the system tray."
+msgstr "Kontrol çubuğunda bir simge olarak göster."
+
+#. i18n: file kscd.kcfg line 27
+#: rc.cpp:196
+#, no-c-format
+msgid "Start playing when a CD is inserted."
+msgstr "CD sürücüye yerleştirilince otomatik çal."
+
+#. i18n: file kscd.kcfg line 32
+#: rc.cpp:202
+#, no-c-format
+msgid "Stop playing the CD on program exit."
+msgstr "Programdan çıkınca çalmayı durdur."
+
+#. i18n: file kscd.kcfg line 37
+#: rc.cpp:208
+#, no-c-format
+msgid "Eject CD when playing is finished."
+msgstr "Çalma bitince CD'yi çıkart."
+
+#. i18n: file kscd.kcfg line 42
+#: rc.cpp:214
+#, no-c-format
+msgid "Loop tracks."
+msgstr "Parçaları döndür."
+
+#. i18n: file kscd.kcfg line 46
+#: rc.cpp:217
+#, no-c-format
+msgid "Skip interval."
+msgstr "Atlama zaman aralığı."
+
+#. i18n: file kscd.kcfg line 60
+#: rc.cpp:223
+#, no-c-format
+msgid "Name of the CD-ROM device."
+msgstr "CDROM aygıtının adı."
+
+#. i18n: file kscd.kcfg line 64
+#: rc.cpp:229
+#, no-c-format
+msgid "The audio backend KsCD uses."
+msgstr "KsCD'nin kullandığı ses arka ucunu seç."
+
+#. i18n: file kscd.kcfg line 67
+#: rc.cpp:232
+#, no-c-format
+msgid "The audio device KsCD uses."
+msgstr "KsCD'nin kullandığı ses aracını seç."
+
+#. i18n: file kscd.kcfg line 70
+#: rc.cpp:235
+#, no-c-format
+msgid "Use direct digital playback."
+msgstr "Direkt sayısal çalma kullan."
+
+#. i18n: file kscd.kcfg line 71
+#: rc.cpp:238
+#, no-c-format
+msgid ""
+"When this option is selected KsCD will attempt to play the CD using direct "
+"digital playback. This option is useful if the CD-ROM is not connected directly "
+"to the sound output on the computer. Note that digital playback is slower than "
+"the normal method of playback."
+msgstr ""
+"Bu seçenek seçildiğinde KsCD CD'yi direkt sayısal çalma kullanarak çalmayı "
+"deneyecek. Bu seçenek CD-ROM bilgisayarın ses kartına bağlı değilse "
+"kullanılabilir. Sayısal çalma normal çalmadan yavaştır."
+
+#. i18n: file kscd.kcfg line 79
+#: rc.cpp:244
+#, no-c-format
+msgid "The font that will be used for the LCD display."
+msgstr "LCD ekranında görüntülenecek yazıtipi."
+
+#. i18n: file kscd.kcfg line 87
+#: rc.cpp:250
+#, no-c-format
+msgid "Allow encoding selection."
+msgstr "Kodlama seçimine izin ver"

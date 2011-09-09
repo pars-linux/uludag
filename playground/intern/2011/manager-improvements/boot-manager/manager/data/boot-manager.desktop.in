@@ -1,9 +1,0 @@
-[Desktop Entry]
-_Name=Boot Manager
-_GenericName=Boot Manager
-_Comment=An application for managing boot loader.
-Exec=boot-manager
-Icon=computer
-Type=Application
-Categories=Qt;KDE;System;
-NotShowIn=KDE;

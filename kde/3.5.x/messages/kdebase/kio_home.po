@@ -1,0 +1,22 @@
+# translation of kio_home.po to
+# Görkem Çetin <gorkem@gorkemcetin.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kio_home\n"
+"POT-Creation-Date: 2006-04-28 03:54+0200\n"
+"PO-Revision-Date: 2005-06-27 18:50+0300\n"
+"Last-Translator: Görkem Çetin <gorkem@gorkemcetin.com>\n"
+"Language-Team:  <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: kio_home.cpp:34
+msgid "Protocol name"
+msgstr "Protokol adı"
+
+#: kio_home.cpp:35 kio_home.cpp:36
+msgid "Socket name"
+msgstr "Soket adı"

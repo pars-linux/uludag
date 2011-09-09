@@ -1,0 +1,609 @@
+# translation of kmailcvt.po to
+# Copyright (C) 2003,2004, 2005, 2007 Free Software Foundation, Inc.
+#
+# Görkem Çetin, 2001.
+# Görkem Çetin <gorkem@kde.org>, 2002,2003.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004.
+# Barış Metin <baris@uludag.org.tr>, 2004.
+# Yaşar ŞENTÜRK <yasar@kde.org.tr>, 2005.
+# Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kmailcvt\n"
+"POT-Creation-Date: 2007-12-11 01:17+0100\n"
+"PO-Revision-Date: 2008-02-28 20:27+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@lists.kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: LoKalize 0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: filter_mailapp.cxx:32
+msgid "Import From OS X Mail"
+msgstr "OS X Mail'dan Al"
+
+#: filter_mailapp.cxx:34
+msgid ""
+"<p><b>OS X Mail Import Filter</b></p>"
+"<p>This filter imports e-mails from the Mail client in Apple Mac OS X.</p>"
+msgstr ""
+"<p><b>OS X Mail Alım Filtresi</b></p>"
+"<p>Bu filtre Apple Mac OS X e-posta istemcisinden e-postaları alır.</p>"
+
+#: filter_evolution.cxx:58 filter_evolution_v2.cxx:66
+#: filter_kmail_maildir.cxx:57 filter_mailapp.cxx:53 filter_oe.cxx:61
+#: filter_opera.cxx:60 filter_outlook.cxx:45 filter_plain.cxx:45
+#: filter_pmail.cxx:56 filter_sylpheed.cxx:56 filter_thebat.cxx:62
+#: filter_thunderbird.cxx:65
+msgid "No directory selected."
+msgstr "Hiçbir dizin seçilmedi."
+
+#: filter_evolution.cxx:65 filter_evolution_v2.cxx:73
+#: filter_kmail_maildir.cxx:64 filter_mailapp.cxx:54 filter_opera.cxx:67
+#: filter_opera.cxx:152 filter_outlook.cxx:51 filter_sylpheed.cxx:63
+#: filter_thebat.cxx:69 filter_thunderbird.cxx:72
+msgid "No files found for import."
+msgstr "Alma işlemi için dosya bulunamadı."
+
+#: filter_evolution.cxx:125 filter_evolution_v2.cxx:160
+#: filter_kmail_maildir.cxx:128 filter_lnotes.cxx:89 filter_mailapp.cxx:63
+#: filter_mbox.cxx:55 filter_opera.cxx:87 filter_outlook.cxx:60
+#: filter_pmail.cxx:165 filter_pmail.cxx:235 filter_pmail.cxx:253
+#: filter_pmail.cxx:294 filter_thebat.cxx:151 filter_thunderbird.cxx:161
+msgid "Unable to open %1, skipping"
+msgstr "%1 açılamadı, atlanıyor"
+
+#: filter_evolution.cxx:146 filter_mailapp.cxx:71 filter_mbox.cxx:61
+#: filter_opera.cxx:89 filter_outlook.cxx:58
+msgid "Importing emails from %1..."
+msgstr "%1 konumundan e-postalar alınıyor..."
+
+#: filter_evolution.cxx:77 filter_evolution_v2.cxx:90
+#: filter_kmail_maildir.cxx:83 filter_mailapp.cxx:127 filter_mbox.cxx:133
+#: filter_opera.cxx:141 filter_plain.cxx:81 filter_pmail.cxx:79
+#: filter_sylpheed.cxx:78 filter_thebat.cxx:84 filter_thunderbird.cxx:99
+#, c-format
+msgid "Finished importing emails from %1"
+msgstr "%1 konumundan e-postaların alınması tamamlandı"
+
+#: filter_mailapp.cxx:130 filter_mbox.cxx:136
+msgid ""
+"_n: 1 duplicate message not imported to folder %1 in KMail\n"
+"%n duplicate messages not imported to folder %1 in KMail"
+msgstr "%n tekrar eden mesaj KMail' deki %1 klasörüne alınamadı"
+
+#: filter_evolution_v2.cxx:94 filter_kmail_maildir.cxx:87
+#: filter_mailapp.cxx:138 filter_mbox.cxx:139 filter_oe.cxx:103
+#: filter_opera.cxx:155 filter_plain.cxx:85 filter_sylpheed.cxx:82
+#: filter_thebat.cxx:88 filter_thunderbird.cxx:104
+msgid "Finished import, canceled by user."
+msgstr "İçeriye aktarma işlemi bitti, kullanıcı tarafından iptal edildi."
+
+#: filter_thunderbird.cxx:28
+msgid "Import Thunderbird/Mozilla Local Mails and Folder Structure"
+msgstr "Thunderbird/Mozilla Yerel Postalarını ve Dizin Yapısını Al"
+
+#: filter_thunderbird.cxx:30
+msgid ""
+"<p><b>Thunderbird/Mozilla import filter</b></p>"
+"<p>Select your base Thunderbird/Mozilla mailfolder (usually "
+"~/.thunderbird/*.default/Mail/Local Folders/).</p>"
+"<p><b>Note:</b> Never choose a Folder which <u>does not</u> "
+"contain mbox-files (for example, a maildir): if you do, you will get many new "
+"folders.</p>"
+"<p>Since it is possible to recreate the folder structure, the folders will be "
+"stored under: \"Thunderbird-Import\".</p>"
+msgstr ""
+
+#: filter_evolution_v2.cxx:124 filter_thunderbird.cxx:94
+#: filter_thunderbird.cxx:129
+msgid "Start import file %1..."
+msgstr "%1 dosyasını almayı başlat..."
+
+#: filter_evolution.cxx:196 filter_evolution_v2.cxx:92
+#: filter_kmail_maildir.cxx:85 filter_opera.cxx:143 filter_outlook.cxx:59
+#: filter_plain.cxx:83 filter_sylpheed.cxx:80 filter_thebat.cxx:86
+#: filter_thunderbird.cxx:101
+#, c-format
+msgid ""
+"_n: 1 duplicate message not imported\n"
+"%n duplicate messages not imported"
+msgstr "%n tekrarlanan mesaj alınmadı"
+
+#: filters.cxx:145 filters.cxx:180
+msgid ""
+"<b>Fatal:</b> Unable to start KMail for DCOP communication. Make sure <i>"
+"kmail</i> is installed."
+msgstr ""
+"<b>Ölümcül Hata</b>DROP iletişimi için KMail başlatılamadı.\n"
+"<i>kmail</i> uygulamasının sisteme kurulu olduğundan emin olun."
+
+#: filters.cxx:153 filters.cxx:188
+msgid "Cannot make folder %1 in KMail"
+msgstr "KMail içinde %1 klasörü oluşturulamadı"
+
+#: filters.cxx:156 filters.cxx:191
+msgid "Cannot add message to folder %1 in KMail"
+msgstr "KMail içinde %1 klasörüne mesaj eklenemedi"
+
+#: filters.cxx:162 filters.cxx:194
+msgid "Error while adding message to folder %1 in KMail"
+msgstr "kMail'deki %1 klasörüne mesaj eklerken hata oluştu"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Tolga YAMAN"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "tolgayaman@isnet.net.tr"
+
+#: filter_sylpheed.cxx:27
+msgid "Import Sylpheed Maildirs and Folder Structure"
+msgstr "Sylpheed İleti Dizinlerini ve Dizin Yapısını İçeriye Aktar"
+
+#: filter_sylpheed.cxx:29
+msgid ""
+"<p><b>Sylpheed import filter</b></p>"
+"<p>Select the base directory of the Sylpheed mailfolder you want to import "
+"(usually: ~/Mail ).</p>"
+"<p>Since it is possible to recreate the folder structure, the folders will be "
+"stored under: \"Sylpheed-Import\" in your local folder.</p>"
+"<p>This filter also recreates the status of message, e.g. new or forwarded."
+msgstr ""
+
+#: filter_kmail_maildir.cxx:196 filter_sylpheed.cxx:140 filter_thebat.cxx:199
+msgid "Import folder %1..."
+msgstr "%1 dizinini içeriye aktar..."
+
+#: filter_kmail_maildir.cxx:206 filter_kmail_maildir.cxx:211
+#: filter_plain.cxx:68 filter_plain.cxx:72 filter_sylpheed.cxx:153
+#: filter_sylpheed.cxx:158
+#, c-format
+msgid "Could not import %1"
+msgstr "%1 alınamadı"
+
+#: main.cpp:33
+msgid "KMailCVT"
+msgstr "KMailCVT"
+
+#: main.cpp:34
+msgid "KMail Import Filters"
+msgstr "KMail Alma Filtreleri"
+
+#: main.cpp:35
+msgid "(c) 2000-2005, The KMailCVT developers"
+msgstr "(c) 2000-2005, KMailCVT geliştiricileri"
+
+#: main.cpp:36
+msgid "Original author"
+msgstr "Asıl yazar"
+
+#: main.cpp:37
+msgid "Maintainer & New filters"
+msgstr "Projeyi Yürüten & Yeni Filtreler"
+
+#: main.cpp:38 main.cpp:39
+msgid "New GUI & cleanups"
+msgstr "Yeni Arayüz & temizlemeler"
+
+#: filter_evolution.cxx:31
+msgid "Import Evolution 1.x Local Mails and Folder Structure"
+msgstr "Evolution 1.x Yerel E-postalarını ve Dizin Yapısını Al"
+
+#: filter_evolution.cxx:33
+msgid ""
+"<p><b>Evolution 1.x import filter</b></p>"
+"<p>Select the base directory of Evolution's mails (usually "
+"~/evolution/local).</p>"
+"<p>Since it is possible to recreate the folder structure, the folders will be "
+"stored under: \"Evolution-Import\".</p>"
+msgstr ""
+
+#: filter_opera.cxx:28
+msgid "Import Opera Emails"
+msgstr "Opera E-postalarını Al"
+
+#: filter_opera.cxx:30
+msgid ""
+"<p><b>Opera email import filter</b></p>"
+"<p>This filter will import mails from Opera mail folder. Use this filter if you "
+"want to import all mails within a account in the Opera maildir.</p>"
+"<p>Select the directory of the account (usually "
+"~/.opera/mail/store/account*).</p>"
+"<p><b>Note:</b> Emails will be imported into a folder named after the account "
+"they came from, prefixed with OPERA-</p>"
+msgstr ""
+"<p><b>Opera e-posta alma filtresi</b></p> "
+"<p>Bu filtre iletileri Opera posta dizininden alacak. Opera posta dizinindeki "
+"bir hesabınızdan bütün iletileri almak istiyorsanız bu filtreyi kullanın</p> "
+"<p>Hesap dizinini seçiniz (genellikle ~/.opera/mail/store/account*).</p>"
+"<p><b>Not:</b>E-postalar, OPERA- önekinden sonra gelen hesap isimleriyle "
+"adlandırılan dizinlere alınacaktır.</p>"
+
+#: filter_opera.cxx:75 filter_outlook.cxx:46 filter_plain.cxx:52
+#: filter_pmail.cxx:61
+msgid "Counting files..."
+msgstr "Dosyalar sayılıyor..."
+
+#: filter_opera.cxx:82 filter_outlook.cxx:50 filter_plain.cxx:56
+msgid "Importing new mail files..."
+msgstr "Yeni e-posta dosyaları alınıyor..."
+
+#: kmailcvt.cpp:26
+msgid "KMailCVT Import Tool"
+msgstr "KMailCVT Alma Aracı"
+
+#: kmailcvt.cpp:29
+msgid "Step 1: Select Filter"
+msgstr "1. Adım: Filtreyi seçin"
+
+#: kmailcvt.cpp:32
+msgid "Step 2: Importing..."
+msgstr "2. Adım: Dosya Alınıyor..."
+
+#: kmailcvt.cpp:53
+msgid "Import in progress"
+msgstr "Dosya alımı devam ediyor"
+
+#: kmailcvt.cpp:56
+msgid "Import finished"
+msgstr "Dosya alımı tamamlandı"
+
+#: filter_pmail.cxx:31
+msgid "Import Folders From Pegasus-Mail"
+msgstr "Dizinleri Pegasus Mail Uygulamasından Al"
+
+#: filter_pmail.cxx:33
+msgid ""
+"<p>Select the Pegasus-Mail directory on your system (containing *.CNM, *.PMM "
+"and *.MBX files). On many systems this is stored in C:\\pmail\\mail or "
+"C:\\pmail\\mail\\admin</p>"
+"<p><b>Note:</b> Since it is possible to recreate the folder structure, the "
+"folders will be stored under: \"PegasusMail-Import\".</p>"
+msgstr ""
+"<p> Sisteminizdeki Pegasus-Posta dizinini seçin (CNM, PMM ve MBX dosyalarını "
+"barındıran). Birçok sistemde bu C:\\PMail\\mail ya da  C:\\pmail\\mail\\admin "
+"dizininde saklanır.</p>"
+"<p><b>Not:</b> Ancak dizin yapısını yeniden oluşturmanız mümkündür. Eğer bunu "
+"yaparsanız dizinler \"PegasusMail-Import\" dizini altında saklanacaktır.</p>"
+
+#: filter_pmail.cxx:69
+msgid ""
+"Cannot parse the folder structure; continuing import without subfolder support."
+msgstr ""
+"Dizin yapısı ayrıştırılamadı; alt dizin desteği olmadan içeriye aktarma "
+"işleminde devam ediliyor."
+
+#: filter_pmail.cxx:72
+msgid "Importing new mail files ('.cnm')..."
+msgstr "Yeni e-posta dosyaları alınıyor ('.cnm')..."
+
+#: filter_pmail.cxx:74
+msgid "Importing mail folders ('.pmm')..."
+msgstr "E-posta klasörleri alınıyor ('.pmm')..."
+
+#: filter_pmail.cxx:76
+msgid "Importing 'UNIX' mail folders ('.mbx')..."
+msgstr "'UNIX' e-posta klasörleri alınıyor ('.mbx')..."
+
+#: filter_pmail.cxx:175 filter_pmail.cxx:255
+#, c-format
+msgid "Importing %1"
+msgstr "%1 Alınıyor"
+
+#: filter_lnotes.cxx:110 filter_pmail.cxx:279
+#, c-format
+msgid "Message %1"
+msgstr "Mesaj %1"
+
+#: filter_pmail.cxx:290
+msgid "Parsing the folder structure..."
+msgstr "Dizin yapısı ayrıştırılıyor..."
+
+#. i18n: file kimportpagedlg.ui line 91
+#: rc.cpp:3
+#, no-c-format
+msgid "From:"
+msgstr "Kimden:"
+
+#. i18n: file kimportpagedlg.ui line 99
+#: rc.cpp:6
+#, no-c-format
+msgid "To:"
+msgstr "Kime:"
+
+#. i18n: file kimportpagedlg.ui line 107
+#: rc.cpp:9
+#, no-c-format
+msgid "Current:"
+msgstr "Güncel:"
+
+#. i18n: file kimportpagedlg.ui line 115
+#: rc.cpp:12
+#, no-c-format
+msgid "Importing in progress..."
+msgstr "İçeriye aktarma işlemi devam ediyor..."
+
+#. i18n: file kimportpagedlg.ui line 134
+#: rc.cpp:15 rc.cpp:18 rc.cpp:24
+#, no-c-format
+msgid "..."
+msgstr "..."
+
+#. i18n: file kimportpagedlg.ui line 158
+#: rc.cpp:21
+#, no-c-format
+msgid "Total:"
+msgstr "Toplam:"
+
+#. i18n: file kimportpagedlg.ui line 199
+#: rc.cpp:27
+#, no-c-format
+msgid "Click 'Back' to import more emails or contacts"
+msgstr ""
+"Lütfen daha çok e-posta ya da bağlantı almak için 'Geri' düğmesine tıklayın"
+
+#. i18n: file kselfilterpagedlg.ui line 94
+#: rc.cpp:30
+#, no-c-format
+msgid ""
+"<b>Welcome to KMailCVT - The KMail Import Tool</b>\n"
+"<br>"
+"<br>\n"
+"This program will help you import your email from your previous email program "
+"into KMail."
+"<br>"
+"<br>"
+"<br>"
+"<br>\n"
+" Please select the program you would like to import from, then click 'Next'."
+msgstr ""
+"<b>KMailCVT - KMail Alma Aracı'na hoşgeldiniz</b>\n"
+" "
+"<br>"
+"<br>\n"
+"Bu uygulama, e-postalarınızı daha önce kullandığınız e-posta uygulamsından "
+"KMail'e almanıza yardımcı olacak."
+"<br>"
+"<br>"
+"<br>"
+"<br>\n"
+"Lütfen dosyaları almak istediğiniz uygulamayı seçin ve 'İleri'ye tıklayın."
+
+#. i18n: file kselfilterpagedlg.ui line 133
+#: rc.cpp:36
+#, no-c-format
+msgid "Remove &duplicate messages during import"
+msgstr "Alma esnasında tekrarlanan iletileri &sil"
+
+#: filter_mbox.cxx:28
+msgid "Import mbox Files (UNIX, Evolution)"
+msgstr "mbox Dosyalarını Al (UNIX, Evolution)"
+
+#: filter_mbox.cxx:30
+msgid ""
+"<p><b>mbox import filter</b></p>"
+"<p>This filter will import mbox files into KMail. Use this filter if you want "
+"to import mails from Ximian Evolution or other mailers that use this "
+"traditional UNIX format.</p>"
+"<p><b>Note:</b> Emails will be imported into folders named after the file they "
+"came from, prefixed with MBOX-</p>"
+msgstr ""
+"<p><b>mbox alma filtresi</b></p> "
+"<p>Bu filtre mbox dosyalarınızı KMail'e alacak. E-postalarınızı, Ximian "
+"Evolution ya da geleneksel UNIX biçimini kullanan diğer uygulamalardan almak "
+"için bu filtreyi kullanın.</p> "
+"<p><b>Not:</b>E-postalar, MBOX- önekinden sonra gelen dosya isimleriyle "
+"adlandırılan dizinlere alınacaktır.</p>"
+
+#: filter_mbox.cxx:49
+msgid "mbox Files (*)"
+msgstr "mbox Dosyaları (*)"
+
+#: filter_kmail_maildir.cxx:26
+msgid "Import KMail Maildirs and Folder Structure"
+msgstr "KMail E-Posta Dizinlerini ve Dizin Yapısını Al"
+
+#: filter_kmail_maildir.cxx:28
+msgid ""
+"<p><b>KMail import filter</b></p>"
+"<p>Select the base directory of the KMail mailfolder you want to import.</p>"
+"<p><b>Note:</b> Never select your current local KMail maildir (usually ~/Mail "
+"or ~/.kde/share/apps/kmail/mail ): in this case, KMailCVT may become stuck in a "
+"continuous loop. </p>"
+"<p>This filter does not import KMail mailfolders with mbox files.</p>"
+"<p>Since it is possible to recreate the folder structure, the folders will be "
+"stored under: \"KMail-Import\" in your local folder.</p>"
+msgstr ""
+
+#: filter_evolution_v2.cxx:29
+msgid "Import Evolution 2.x Local Mails and Folder Structure"
+msgstr "Evolution 2.x Yerel E-postalarını ve Dizin Yapısını Al"
+
+#: filter_evolution_v2.cxx:31
+msgid ""
+"<p><b>Evolution 2.x import filter</b></p>"
+"<p>Select the base directory of your local Evolution mailfolder (usually "
+"~/.evolution/mail/local/).</p>"
+"<p><b>Note:</b> Never choose a Folder which <u>does not</u> "
+"contain mbox-files (for example a maildir): if you do, you will get many new "
+"folders.</p>"
+"<p>Since it is possible to recreate the folder structure, the folders will be "
+"stored under: \"Evolution-Import\".</p>"
+msgstr ""
+"<p><b>Evolution 2.x ileti alma filtresi</b></p>"
+"<p>Evolution ana posta dizininizi seçin (genellikle ~/.evolution/mail/local/) "
+"dizinidir.</p>"
+"<p><b>Not:</b> Mmbox-dosyalarını <u>içermeyen</u> bir dizini asla seçmeyin "
+"(örneğin bir maildir): Eğer yine de bunu yaparsanız, birçok yeni dizin "
+"oluşacaktır.</p>"
+"<p> Ancak dizin yapısını yeniden oluşturmanız mümkündür. Eğer bunu yaparsanız "
+"dizinler \"Evolution-Import\" dizini altında saklanacaktır.</p>"
+
+#: filter_oe.cxx:40
+msgid "Import Outlook Express Emails"
+msgstr "Outlook Express E-postalarını Al"
+
+#: filter_oe.cxx:42
+msgid ""
+"<p><b>Outlook Express 4/5/6 import filter</b></p>"
+"<p>You will need to locate the folder where the mailbox has been stored by "
+"searching for .dbx or .mbx files under "
+"<ul>"
+"<li><i>C:\\Windows\\Application Data</i> in Windows 9x"
+"<li><i>Documents and Settings</i> in Windows 2000 or later</ul></p>"
+"<p><b>Note:</b> Since it is possible to recreate the folder structure, the "
+"folders from Outlook Express 5 and 6 will be stored under: \"OE-Import\" in "
+"your local folder.</p>"
+msgstr ""
+"<p><b>Outlook Express 4/5/6 alım filtresi</b></p> "
+"<p>E-posta dosyalarının saklandığı dizini belirtmelisiniz. E-postaların nerede "
+"saklandığını bulmak için .dbx ya da .mbx uzantılı dosyaları aşağıdaki "
+"dizinlerde arayabilirsiniz."
+"<ul>"
+"<li><i>C:\\Windows\\Application Data</i> Windows 9x sürümünde"
+"<li><i>Documents and Settings</i> Windows 2000 veya daha yukarısında."
+"<ul></p>"
+"<p></b> Ancak dizin yapısını yeniden oluşturmanız mümkündür. Eğer bunu "
+"yaparsanız dizinler \"OE-Import\" dizini altında saklanacaktır.</p>"
+
+#: filter_oe.cxx:68
+#, c-format
+msgid "No Outlook Express mailboxes found in directory %1."
+msgstr "%1 dizininde Outlook Express posta kutusu bulunamadı."
+
+#: filter_oe.cxx:83
+msgid "Import folder structure..."
+msgstr "Dizin yapısını içeriye aktar..."
+
+#: filter_oe.cxx:102
+msgid "Finished importing Outlook Express emails"
+msgstr "Outlook Express e-postalarının alınması tamamlandı"
+
+#: filter_oe.cxx:120
+#, c-format
+msgid "Unable to open mailbox %1"
+msgstr "%1 posta kutusu açılamadı"
+
+#: filter_oe.cxx:131
+#, c-format
+msgid "Importing OE4 Mailbox %1"
+msgstr "OE4 Posta Kutusu %1 alınıyor"
+
+#: filter_oe.cxx:145
+#, c-format
+msgid "Importing OE5+ Mailbox %1"
+msgstr "OE5+ Posta Kutusu %1 alınıyor"
+
+#: filter_oe.cxx:151
+#, c-format
+msgid "Importing OE5+ Folder file %1"
+msgstr "OE5+ Dizin dosyası %1 içeriye aktarılıyor"
+
+#: filter_lnotes.cxx:30
+msgid "Import Lotus Notes Emails"
+msgstr "Lotus Notları E-postalarını Al"
+
+#: filter_lnotes.cxx:32
+msgid ""
+"<p><b>Lotus Notes Structured Text mail import filter</b></p>"
+"<p>This filter will import Structured Text files from an exported Lotus Notes "
+"email client into KMail. Use this filter if you want to import mails from Lotus "
+"or other mailers that use the Lotus Notes Structured Text format.</p>"
+"<p><b>Note:</b> Since it is possible to recreate the folder structure, the "
+"imported messages will be stored in subfolders under: \"LNotes-Import\", in "
+"your local folder, named using the names of the files the messages came "
+"from.</p>"
+msgstr ""
+
+#: filter_lnotes.cxx:56
+msgid "All Files (*)"
+msgstr "Tüm Dosyalar (*)"
+
+#: filter_lnotes.cxx:65
+#, c-format
+msgid "Importing emails from %1"
+msgstr "%1 konumundan e-postalar alınıyor..."
+
+#: filter_thebat.cxx:33
+msgid "Import The Bat! Mails and Folder Structure"
+msgstr "Tümünü içeri aktar! İletileri ve Dizin Yapısını Al"
+
+#: filter_thebat.cxx:35
+msgid ""
+"<p><b>The Bat! import filter</b></p>"
+"<p>Select the base directory of the 'The Bat!' local mailfolder you want to "
+"import.</p>"
+"<p><b>Note:</b> This filter imports the *.tbb-files from 'The Bat!' local "
+"folder, e.g. from POP accounts, and not from IMAP/DIMAP accounts.</p>"
+"<p>Since it is possible to recreate the folder structure, the folders will be "
+"stored under: \"TheBat-Import\" in your local account.</p>"
+msgstr ""
+"<p><b>Evolution 2.x alma filtresi</b></p> "
+"<p>Evolution ana posta dizininizi seçiniz (genellikle "
+"~/.evolution/mail/local/).</p> "
+"<p><b>Not:</b>mbox-dosyalarını <u>içermeyen</u> bir dizini asla seçmeyin "
+"(örneğin bir maildir). Eğer yine de bunu yaparsanız, birçok yeni dizininiz "
+"oluşacaktır.</p>"
+"<p>Ancak dizin yapısını yeniden oluşturmanız mümkündür. Eğer bunu yaparsanız "
+"dizinler \"TheBat-Import\" dizini altında saklanacaktır.</p>"
+
+#: kselfilterpage.cpp:76
+msgid "<p><i>Written by %1.</i></p>"
+msgstr "<p><i>%1 tarafından yazılmıştır.</i></p>"
+
+#: filter_outlook.cxx:28
+msgid "Import Outlook Emails"
+msgstr "Outlook E-postalarını Al"
+
+#: filter_outlook.cxx:30
+msgid ""
+"<p><b>Outlook email import filter</b></p>"
+"<p>This filter will import mails from a Outlook pst-file. You will need to "
+"locate the folder where the pst-file has been stored by searching for .pst "
+"files under: <i>C:\\Documents and Settings</i> in Windows 2000 or later</p>"
+"<p><b>Note:</b> Emails will be imported into a folder named after the account "
+"they came from, prefixed with OUTLOOK-</p>"
+msgstr ""
+"<p><b>Outlook e-posta alma filtresi</b></p> "
+"<p>Bu filtre iletileri bir Outlook pst dosyasından alır. Windows 2000 veya "
+"sonrasında <i>C:\\Documents and Settings</i> altında .pst uzantısını aratarak "
+"pst-dosyasının bulundugu dizinin yerini belirtmeniz gerekiyor. </p>"
+"<p><b>Not:</b>E-postalar, OUTLOOK- önekinden sonra gelen hesap isimleriyle "
+"adlandırılan dizinlere alınacaktır.</p>"
+
+#: filter_outlook.cxx:47
+msgid "Counting mail..."
+msgstr "Posta sayılıyor..."
+
+#: filter_outlook.cxx:48
+msgid "Counting directories..."
+msgstr "Dizinler sayılıyor..."
+
+#: filter_outlook.cxx:49
+msgid "Counting folders..."
+msgstr "Klasörler sayılıyor..."
+
+#: filter_plain.cxx:27
+msgid "Import Plain Text Emails"
+msgstr "Düz Metin E-postalarını Al"
+
+#: filter_plain.cxx:29
+msgid ""
+"<p>Select the directory containing the emails on your system. The emails are "
+"placed in a folder with the same name as the directory they were in, prefixed "
+"by PLAIN-</p>"
+"<p>This filter will import all .msg, .eml and .txt emails.</p>"
+msgstr ""
+"<p> Sisteminizdeki e-postaları içeren klasörü seçin. E-postalar, daha önce "
+"oldukları klasör adının önüne PLAIN- öneki getirilerek oluşturulan dizinde "
+"saklanır. "
+"<p>Bu filtre tüm .msg, .eml, .txt e-postalarını alacak.</p>"

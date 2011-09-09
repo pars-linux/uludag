@@ -1,0 +1,307 @@
+# translation of kcmaudiocd.po to
+# Copyright (C) 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2002, 2003.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+# YILDIZ KARDESLER <turkishprogram@xposta.com>, 2004.
+# Engin Çağatay <engincagatay@yahoo.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmaudiocd\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-03-26 02:15+0200\n"
+"PO-Revision-Date: 2007-05-14 23:43+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "erkaN kaplaN"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "erkaN@linux-sevenler.org"
+
+#: kcmaudiocd.cpp:40
+msgid "Report errors found on the cd."
+msgstr "Cd'de bulunan sorunları bildir."
+
+#: kcmaudiocd.cpp:54
+msgid "%1 Encoder"
+msgstr "%1 Kodlayıcı"
+
+#: kcmaudiocd.cpp:86
+msgid "kcmaudiocd"
+msgstr "kcmaudiocd"
+
+#: kcmaudiocd.cpp:86
+msgid "KDE Audio CD IO Slave"
+msgstr "KDE Audio-CD Slave Kontrol Modulu"
+
+#: kcmaudiocd.cpp:88
+msgid "(c) 2000 - 2005 Audio CD developers"
+msgstr "(c) 2000 - 2001 Audio CD geliştiricileri"
+
+#: kcmaudiocd.cpp:90
+msgid "Current Maintainer"
+msgstr "Şimdiki Geliştirici"
+
+#. i18n: file audiocdconfig.ui line 408
+#: kcmaudiocd.cpp:208 rc.cpp:103 rc.cpp:106
+#, no-c-format
+msgid "Cool artist - example audio file.wav"
+msgstr "Cool·sanatcı - örnek ses dosyası file.wav"
+
+#: kcmaudiocd.cpp:251
+msgid ""
+"<h1>Audio CDs</h1> The Audio CD IO-Slave enables you to easily create wav, MP3 "
+"or Ogg Vorbis files from your audio CD-ROMs or DVDs. The slave is invoked by "
+"typing <i>\"audiocd:/\"</i> in Konqueror's location bar. In this module, you "
+"can configure encoding, and device settings. Note that MP3 and Ogg Vorbis "
+"encoding are only available if KDE was built with a recent version of the LAME "
+"or Ogg Vorbis libraries."
+msgstr ""
+"<h1>Audio CD</h1> Audio CD modülü sizin CD-ROM veya DVD lerden kolay bir "
+"şekilde wav, MP3 veya Ogg gibi formatları oluştuımanızı sağlar. Programı "
+"çalıştırmak için konqueror içinden <i>\"audiocd:/\"</i> "
+"komutunu vermeniz yeterlidir. Bu kontrol modülü sayesinde programların "
+"kodlamasını yapabilir ve aynı zamanda CDDB taleplerini ve aygıt ayarlarını "
+"yapabilirsiniz. Yalnız, MP3 ve OggVorbis kodlamasının sadece KDE yeni "
+"sürümlerinde Lame veya OggVorbis kütüphaneri ile mümkün olduğunu unutmayın."
+
+#. i18n: file audiocdconfig.ui line 50
+#: rc.cpp:3
+#, no-c-format
+msgid "&General"
+msgstr "&Genel"
+
+#. i18n: file audiocdconfig.ui line 78
+#: rc.cpp:6
+#, no-c-format
+msgid "Encoder Priority"
+msgstr "Kodlayıcı Önceliği"
+
+#. i18n: file audiocdconfig.ui line 109
+#: rc.cpp:9
+#, no-c-format
+msgid "Highest"
+msgstr "Yüksek"
+
+#. i18n: file audiocdconfig.ui line 117
+#: rc.cpp:12
+#, no-c-format
+msgid "Lowest"
+msgstr "Düşük"
+
+#. i18n: file audiocdconfig.ui line 128
+#: rc.cpp:15
+#, no-c-format
+msgid "Normal"
+msgstr "Normal"
+
+#. i18n: file audiocdconfig.ui line 144
+#: rc.cpp:18
+#, no-c-format
+msgid "/dev/cdrom"
+msgstr "/dev/cdrom"
+
+#. i18n: file audiocdconfig.ui line 147
+#: rc.cpp:21
+#, no-c-format
+msgid ""
+"Specify a location for the drive you want to use. Normally, this is a file "
+"inside the /dev folder representing your CD or DVD drive."
+msgstr ""
+"Kullanmak istediğiniz sürücününü adresini verin. Normal olarak bu /dev dizini "
+"altında olan sizin CD veya DVD sürücünüzü içeren dosyadır."
+
+#. i18n: file audiocdconfig.ui line 155
+#: rc.cpp:24
+#, no-c-format
+msgid "&Specify CD device:"
+msgstr "CD Aygıtını &belirtin:"
+
+#. i18n: file audiocdconfig.ui line 158
+#: rc.cpp:27
+#, no-c-format
+msgid ""
+"Check this to specify a CD device different from the one which is detected "
+"automatically"
+msgstr ""
+"Uygulamanın otomatik olarak bulduğu dışında bir CD-aygıtı tanımlamak isterseniz "
+"bunu seçin."
+
+#. i18n: file audiocdconfig.ui line 166
+#: rc.cpp:30
+#, no-c-format
+msgid "Use &error correction when reading the CD"
+msgstr "CD okunurken &hata düzeltme kullan"
+
+#. i18n: file audiocdconfig.ui line 172
+#: rc.cpp:33
+#, no-c-format
+msgid ""
+"If you uncheck this option, the slave will not try to use error correction "
+"which can be useful for reading damaged CDs. However, this feature can be "
+"problematic in some cases, so you can switch it off here."
+msgstr ""
+"Eğer bu ayarı pasifleştirirseniz aygıt hata düzeltmeyi kullanamaz, ki bu "
+"fonksiyon hatalı CD'ler okunurken çok işinize yarayabilir. Bununla birlikte bu "
+"fonksiyon bazen problemlidir, kapatmak istediğinizde buradan kapatabilirsiniz."
+
+#. i18n: file audiocdconfig.ui line 180
+#: rc.cpp:36
+#, no-c-format
+msgid "&Skip on errors"
+msgstr "Ha&taları yoksay"
+
+#. i18n: file audiocdconfig.ui line 210
+#: rc.cpp:39
+#, no-c-format
+msgid "&Names"
+msgstr "&Dosya isimleri"
+
+#. i18n: file audiocdconfig.ui line 221
+#: rc.cpp:42
+#, no-c-format
+msgid "File Name (without extension)"
+msgstr "Dosya ismi (uzantısız)"
+
+#. i18n: file audiocdconfig.ui line 232
+#: rc.cpp:45 rc.cpp:115
+#, no-c-format
+msgid "The following macros will be expanded:"
+msgstr "Bu makrolar genişletilecek:"
+
+#. i18n: file audiocdconfig.ui line 248
+#: rc.cpp:48 rc.cpp:127
+#, no-c-format
+msgid "Genre"
+msgstr "Tür"
+
+#. i18n: file audiocdconfig.ui line 256
+#: rc.cpp:51
+#, no-c-format
+msgid "Track Number"
+msgstr "Parça Numarası"
+
+#. i18n: file audiocdconfig.ui line 264
+#: rc.cpp:54
+#, no-c-format
+msgid "%{title}"
+msgstr "%{başlık}"
+
+#. i18n: file audiocdconfig.ui line 272
+#: rc.cpp:57 rc.cpp:118
+#, no-c-format
+msgid "Year"
+msgstr "Yıl"
+
+#. i18n: file audiocdconfig.ui line 280
+#: rc.cpp:60
+#, no-c-format
+msgid "Track Title"
+msgstr "Parça Başlığı"
+
+#. i18n: file audiocdconfig.ui line 288
+#: rc.cpp:63 rc.cpp:130
+#, no-c-format
+msgid "Album Artist"
+msgstr "Albüm Sanatçısı"
+
+#. i18n: file audiocdconfig.ui line 296
+#: rc.cpp:66 rc.cpp:124
+#, no-c-format
+msgid "%{year}"
+msgstr "%{yıl}"
+
+#. i18n: file audiocdconfig.ui line 304
+#: rc.cpp:69 rc.cpp:139
+#, no-c-format
+msgid "%{albumtitle}"
+msgstr "%{albümbaşlığı}"
+
+#. i18n: file audiocdconfig.ui line 312
+#: rc.cpp:72 rc.cpp:133
+#, no-c-format
+msgid "Album Title"
+msgstr "Albüm Başlığı"
+
+#. i18n: file audiocdconfig.ui line 320
+#: rc.cpp:75 rc.cpp:136
+#, no-c-format
+msgid "%{genre}"
+msgstr "%{tarz}"
+
+#. i18n: file audiocdconfig.ui line 328
+#: rc.cpp:78 rc.cpp:121
+#, no-c-format
+msgid "%{albumartist}"
+msgstr "%{albümsanatçısı}"
+
+#. i18n: file audiocdconfig.ui line 336
+#: rc.cpp:81
+#, no-c-format
+msgid "%{number}"
+msgstr "%{numara}"
+
+#. i18n: file audiocdconfig.ui line 353
+#: rc.cpp:84
+#, no-c-format
+msgid "Name Regular Expression Replacement"
+msgstr "Düzenli İfadeleri Değiştirme İsmi"
+
+#. i18n: file audiocdconfig.ui line 364
+#: rc.cpp:87
+#, no-c-format
+msgid "Selection:"
+msgstr "Seçim:"
+
+#. i18n: file audiocdconfig.ui line 373
+#: rc.cpp:90
+#, no-c-format
+msgid ""
+"Regular expression used on all file names. For example using selection \" \" "
+"and replace with \"_\" would replace all the spaces with underlines.\n"
+msgstr ""
+"Düzenli ifadeler bütün dosya isimlerinde kullanılabilir. Mesela "
+"\"·\"·kullanılarak\"_\" alt çizgili dosya isimler ile değiştirelebilir.\n"
+
+#. i18n: file audiocdconfig.ui line 384
+#: rc.cpp:94
+#, no-c-format
+msgid "Input:"
+msgstr "Giriş:"
+
+#. i18n: file audiocdconfig.ui line 392
+#: rc.cpp:97
+#, no-c-format
+msgid "Output:"
+msgstr "Çıkış:"
+
+#. i18n: file audiocdconfig.ui line 400
+#: rc.cpp:100
+#, no-c-format
+msgid "Example"
+msgstr "Örnek"
+
+#. i18n: file audiocdconfig.ui line 434
+#: rc.cpp:109
+#, no-c-format
+msgid "Replace with:"
+msgstr "Bununla değiştir:"
+
+#. i18n: file audiocdconfig.ui line 475
+#: rc.cpp:112
+#, no-c-format
+msgid "Album Name"
+msgstr "Albüm İsmi"

@@ -1,0 +1,368 @@
+# translation of privacy.po to Türkçe
+# translation of privacy.po to
+# Türkçe translation of PACKAGE.
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+#
+#
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# Serdar Soytetir <tulliana@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: privacy\n"
+"POT-Creation-Date: 2008-07-08 01:18+0200\n"
+"PO-Revision-Date: 2008-05-26 18:42+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@lists.kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: LoKalize 0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: privacy.cpp:43
+msgid ""
+"The privacy module allows a user to erase traces which KDE leaves on the "
+"system, such as command histories or browser caches."
+msgstr ""
+"Bu modül kullanıcının KDE ile çalışırken oluşturduğu bazı izleri (örn: komut "
+"geçmişleri ve web tarayıcı önbelleği gibi) siler."
+
+#: privacy.cpp:49
+msgid "kcm_privacy"
+msgstr "kcm_privacy"
+
+#: privacy.cpp:49
+msgid "KDE Privacy Control Module"
+msgstr "KDE Gizlilik Kontrol Modülü"
+
+#: privacy.cpp:51
+msgid "(c) 2003 Ralf Hoelzer"
+msgstr "(c) 2003 Ralf Hoelzer"
+
+#: privacy.cpp:54 privacy.cpp:92
+msgid "Thumbnail Cache"
+msgstr "Küçük Resim Belleği"
+
+#. i18n: file kprivacysettings.ui line 21
+#: privacy.cpp:76 rc.cpp:15
+#, no-c-format
+msgid "Privacy Settings"
+msgstr "Gizlilik Seçenekleri"
+
+#: privacy.cpp:77
+msgid "Description"
+msgstr "Açıklama"
+
+#: privacy.cpp:85
+msgid "General"
+msgstr "Genel"
+
+#: privacy.cpp:86
+msgid "Web Browsing"
+msgstr "Web Tarama"
+
+#: privacy.cpp:94
+msgid "Run Command History"
+msgstr "Çalıştırılan Komut Geçmişi"
+
+#: privacy.cpp:96
+msgid "Cookies"
+msgstr "Çerezler"
+
+#: privacy.cpp:98
+msgid "Saved Clipboard Contents"
+msgstr "Kaydedilmiş Pano İçeriği"
+
+#: privacy.cpp:100
+msgid "Web History"
+msgstr "Web Geçmişi"
+
+#: privacy.cpp:102
+msgid "Web Cache"
+msgstr "Web Önbelleği"
+
+#: privacy.cpp:104
+msgid "Form Completion Entries"
+msgstr "Form Tamamlama Girdileri"
+
+#: privacy.cpp:106
+msgid "Recent Documents"
+msgstr "Son Kullanılan Dosyalar"
+
+#: privacy.cpp:108
+msgid "Quick Start Menu"
+msgstr "Hızlı Başlangıç Menüsü"
+
+#: privacy.cpp:110
+msgid "Favorite Icons"
+msgstr "Sık Kullanılan Simgeler"
+
+#: privacy.cpp:112
+msgid ""
+"Check all cleanup actions you would like to perform. These will be executed by "
+"pressing the button below"
+msgstr ""
+"Yapılmasını istediğiniz tüm temizlik işlemlerini onaylayın. Aşağıdaki düğmeye "
+"tıklayarak bu işlemi gerçekleştirebilirsiiz."
+
+#: privacy.cpp:113
+msgid "Immediately performs the cleanup actions selected above"
+msgstr "Yukarıdaki eylemlerin temizliğini anında gerçekleştirir"
+
+#: privacy.cpp:115
+msgid "Clears all cached thumbnails"
+msgstr "Tüm belleklenen küçük resimleri temizler"
+
+#: privacy.cpp:116
+msgid ""
+"Clears the history of commands run through the Run Command tool on the desktop"
+msgstr ""
+"Masaüstü Komut Çalıştır aracı ile çalıştırılan komutların geçmişini temizler"
+
+#: privacy.cpp:117
+msgid "Clears all stored cookies set by websites"
+msgstr "Web sayfalarının kullandığı tüm çerezleri temizler."
+
+#: privacy.cpp:118
+msgid "Clears the history of visited websites"
+msgstr "Ziyaret edilen web sayfalarının geçmişini temizler"
+
+#: privacy.cpp:119
+msgid "Clears the clipboard contents stored by Klipper"
+msgstr "Klipper tarafından depolanan tüm pano içeriğini temizler"
+
+#: privacy.cpp:120
+msgid "Clears the temporary cache of websites visited"
+msgstr "Ziyaret edilen web sayfalarının geçici önbelleğini temizler"
+
+#: privacy.cpp:121
+msgid "Clears values which were entered into forms on websites"
+msgstr "Web sayfalarında doldurulan form bilgilerini temizler"
+
+#: privacy.cpp:122
+msgid ""
+"Clears the list of recently used documents from the KDE applications menu"
+msgstr ""
+"KDE uygulamaları menüsünde son kullanılan dökümanların listesini temizler"
+
+#: privacy.cpp:123
+msgid "Clears the entries from the list of recently started applications"
+msgstr "Son çalıştırılan uygulamaların listesini siler"
+
+#: privacy.cpp:124
+msgid "Clears the FavIcons cached from visited websites"
+msgstr "Ziyaret edilen web sayfalarındaki FavIcon simgelerini temizler"
+
+#: privacy.cpp:251
+msgid ""
+"You are deleting data that is potentially valuable to you. Are you sure?"
+msgstr ""
+"Sizin için önemli olabilecek bazı verileri silmek üzeresiniz. Emin misiniz?"
+
+#: privacy.cpp:254
+msgid "Starting cleanup..."
+msgstr "Temizleme işlemi başlatılıyor..."
+
+#: privacy.cpp:263
+msgid "Clearing %1..."
+msgstr "%1 temizleniyor..."
+
+#: privacy.cpp:298
+msgid "Clearing of %1 failed"
+msgstr "%1 temizleme işlemi başarısız oldu"
+
+#: privacy.cpp:305
+msgid "Clean up finished."
+msgstr "Temizleme işlemi tamamlandı."
+
+#. i18n: file kcmprivacydialog.ui line 37
+#: rc.cpp:3
+#, no-c-format
+msgid "Privacy"
+msgstr "Gizlilik"
+
+#. i18n: file kcmprivacydialog.ui line 150
+#: rc.cpp:9
+#, no-c-format
+msgid "Select None"
+msgstr "Hiçbirisini Seçme"
+
+#. i18n: file kcmprivacydialog.ui line 189
+#: rc.cpp:12
+#, no-c-format
+msgid "Clean Up"
+msgstr "Temizle"
+
+#. i18n: file kprivacysettings.ui line 46
+#: rc.cpp:18
+#, no-c-format
+msgid "Network privacy level:"
+msgstr "Ağ gizlilik seviyesi:"
+
+#. i18n: file kprivacysettings.ui line 55
+#: rc.cpp:21
+#, no-c-format
+msgid "Low"
+msgstr "Düşük"
+
+#. i18n: file kprivacysettings.ui line 60
+#: rc.cpp:24
+#, no-c-format
+msgid "Medium"
+msgstr "Orta"
+
+#. i18n: file kprivacysettings.ui line 65
+#: rc.cpp:27
+#, no-c-format
+msgid "High"
+msgstr "Yüksek"
+
+#. i18n: file kprivacysettings.ui line 70
+#: rc.cpp:30
+#, no-c-format
+msgid "Custom"
+msgstr "Özel"
+
+#. i18n: file kprivacysettings.ui line 90
+#: rc.cpp:33
+#, no-c-format
+msgid "Financial Information"
+msgstr "Finansal Bilgi"
+
+#. i18n: file kprivacysettings.ui line 101
+#: rc.cpp:36
+#, no-c-format
+msgid ""
+"Warn me when I visit a site that uses my financial or purchase information:"
+msgstr "Benim finans bilgilerimi kullanan bir sayfaya girdiğim zaman uyar"
+
+#. i18n: file kprivacysettings.ui line 109
+#: rc.cpp:39 rc.cpp:51
+#, no-c-format
+msgid "For marketing or advertising purposes"
+msgstr "Pazarlama ve tanıtım amaçlı"
+
+#. i18n: file kprivacysettings.ui line 117
+#: rc.cpp:42 rc.cpp:54 rc.cpp:66
+#, no-c-format
+msgid "To share with other companies"
+msgstr "Diğer firmalarla paylaşmak için"
+
+#. i18n: file kprivacysettings.ui line 127
+#: rc.cpp:45
+#, no-c-format
+msgid "Health Information"
+msgstr "Sağlık Bilgisi"
+
+#. i18n: file kprivacysettings.ui line 138
+#: rc.cpp:48
+#, no-c-format
+msgid ""
+"Warn me when I visit a site that uses my health or medical information: "
+msgstr "Benim sağlık bilgilerimi kullanan bir sayfaya girdiğim zaman uyar"
+
+#. i18n: file kprivacysettings.ui line 164
+#: rc.cpp:57
+#, no-c-format
+msgid "Demographics"
+msgstr "Demografik Bilgi"
+
+#. i18n: file kprivacysettings.ui line 175
+#: rc.cpp:60
+#, no-c-format
+msgid ""
+"Warn me when I visit a site that uses my non-personally identifiable "
+"information:"
+msgstr ""
+"Bu kişisel olmayan kimlik bilgilerimi kullanan bir siteye girdiğim zaman uyar:"
+
+#. i18n: file kprivacysettings.ui line 183
+#: rc.cpp:63
+#, no-c-format
+msgid "To determine my interests, habits or general behavior"
+msgstr ""
+"Alışkanlıklarımı, ilgi alanlarımı, genel davranışlarımı belirlemek için"
+
+#. i18n: file kprivacysettings.ui line 201
+#: rc.cpp:69
+#, no-c-format
+msgid ""
+"Warn me when I visit a site that shares my personal information with other "
+"companies"
+msgstr ""
+"Benim kişisel bilgilerimi diğer firmalarla paylaşan bir siteye girdiğim zaman "
+"uyar"
+
+#. i18n: file kprivacysettings.ui line 209
+#: rc.cpp:72
+#, no-c-format
+msgid ""
+"Warn me when I visit a site that does not let me know what information they "
+"have about me"
+msgstr ""
+"Benim hakkımda ne tür bilgileri olduğunu benim bilmeme izin vermeyen bir siteye "
+"girdiğim zaman uyar"
+
+#. i18n: file kprivacysettings.ui line 217
+#: rc.cpp:75
+#, no-c-format
+msgid "Personal Information"
+msgstr "Kişisel Bilgi"
+
+#. i18n: file kprivacysettings.ui line 228
+#: rc.cpp:78
+#, no-c-format
+msgid ""
+"Warn me when I visit a site that may contact me about other products or "
+"services:"
+msgstr ""
+"Diğer ürün ve hizmetlerle ilgili benimle iletişime geçebilecek bir sayfaya "
+"girdiğim zaman uyar:"
+
+#. i18n: file kprivacysettings.ui line 236
+#: rc.cpp:81
+#, no-c-format
+msgid "Warn me when I visit a site that may use my personal information to:"
+msgstr "Bu kişisel bilgilerimi kullanan bir siteye girdiğim zaman uyar:"
+
+#. i18n: file kprivacysettings.ui line 244
+#: rc.cpp:84
+#, no-c-format
+msgid "Determine my habits, interests or general behavior"
+msgstr "Alışkanlıklarımı, ilgi alanlarımı, genel davranışlarımı belirle"
+
+#. i18n: file kprivacysettings.ui line 260
+#: rc.cpp:87
+#, no-c-format
+msgid "Via telephone"
+msgstr "Telefon ile"
+
+#. i18n: file kprivacysettings.ui line 268
+#: rc.cpp:90
+#, no-c-format
+msgid "Via mail"
+msgstr "Posta ile"
+
+#. i18n: file kprivacysettings.ui line 286
+#: rc.cpp:93
+#, no-c-format
+msgid "Via email"
+msgstr "E-posta ile"
+
+#. i18n: file kprivacysettings.ui line 294
+#: rc.cpp:96
+#, no-c-format
+msgid "And do not allow me to remove my contact information"
+msgstr "Bağlantı bilgilerimi silmeme izin verme"

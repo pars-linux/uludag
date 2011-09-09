@@ -1,0 +1,1107 @@
+# translation of kfilereplace.po to Türkçe
+# translation of kfilereplace.po to Turkish
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004.
+# Cemil MUTLU <mawilos@gmail.com>, 2005.
+# Cemil MUTLU <cemilmutlu@gmail.com>, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: kfilereplace\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-08 01:25+0200\n"
+"PO-Revision-Date: 2005-07-09 03:38+0300\n"
+"Last-Translator: Cemil MUTLU <mawilos@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Cemil MUTLU"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "mawilos@gmail.com"
+
+#: configurationclasses.cpp:168
+msgid " Line:%3,Col:%4 - \"%1\" -> \"%2\""
+msgstr " Satır:%3, Sütun:%4 - \"%1\" -> \"%2\""
+
+#: kfilereplace.cpp:49
+msgid "Could not find the KFileReplace part."
+msgstr "KFileReplace bölümü bulunamadı"
+
+#: kfilereplacelib.cpp:99
+#, c-format
+msgid ""
+"_n: 1 byte\n"
+"%n bytes"
+msgstr "%n byte"
+
+#: kfilereplacelib.cpp:105
+msgid "%1 KB"
+msgstr "%1 KB"
+
+#: kfilereplacelib.cpp:111
+msgid "%1 MB"
+msgstr "%1 MB"
+
+#: kfilereplacelib.cpp:117
+msgid "%1 GB"
+msgstr "%1 GB"
+
+#: kfilereplacelib.cpp:140
+msgid ""
+"<qt>Cannot open the file <b>%1</b> and load the string list. This file seems "
+"not to be a valid old kfr file or it is broken.</qt>"
+msgstr ""
+"<qt><b>%1</b> dosyası açılamadı ve dizgi listesi yüklenemedi. Bu dosya geçerli "
+"bir eski kfr dosyası değil gibi görünüyor.</qt>"
+
+#: kfilereplacelib.cpp:158 kfilereplacelib.cpp:171 kfilereplacelib.cpp:177
+msgid "Cannot read data."
+msgstr "Veri okunamıyor."
+
+#: kfilereplacelib.cpp:167
+msgid "Out of memory."
+msgstr "Hafıza dışı."
+
+#: kfilereplacepart.cpp:102
+msgid "Ready."
+msgstr "Hazır."
+
+#: kfilereplacepart.cpp:151
+msgid "Search completed."
+msgstr "Arama tamamlandı."
+
+#: kfilereplacepart.cpp:164
+msgid ""
+"<qt>You have selected <b>%1</b> as the encoding of the files."
+"<br>Selecting the correct encoding is very important as if you have files that "
+"have some other encoding than the selected one, after a replace you may damage "
+"those files."
+"<br>"
+"<br>In case you do not know the encoding of your files, select <i>utf8</i> "
+"and <b>enable</b> the creation of backup files. This setting will autodetect <i>"
+"utf8</i> and <i>utf16</i> files, but the changed files will be converted to <i>"
+"utf8</i>.</qt>"
+msgstr ""
+
+#: kfilereplacepart.cpp:164
+msgid "File Encoding Warning"
+msgstr "Dosya Şifreleme Uyarısı"
+
+#: kfilereplacepart.cpp:173
+msgid "Replacing files (simulation)..."
+msgstr "Dosyalar değiştiriliyor (taklit)..."
+
+#: kfilereplacepart.cpp:174
+msgid "Replaced strings (simulation)"
+msgstr "Dizgiler değiştiriliyor (taklit)"
+
+#: kfilereplacepart.cpp:178
+msgid "Replacing files..."
+msgstr "Dosyalar değiştiriliyor..."
+
+#: kfilereplacepart.cpp:179
+msgid "Replaced strings"
+msgstr "Değiştirilmiş dizgiler"
+
+#: kfilereplacepart.cpp:233
+msgid "Stopping..."
+msgstr "Durduruluyor..."
+
+#: kfilereplacepart.cpp:247
+msgid "There are no results to save: the result list is empty."
+msgstr "Kaydedilecek sonuç yok: sonuç listesi boş."
+
+#: kfilereplacepart.cpp:251
+msgid "Save Report"
+msgstr "Raporu Kaydet"
+
+#: kfilereplacepart.cpp:261
+msgid "<qt>A folder or a file named <b>%1</b> already exists.</qt>"
+msgstr ""
+"<qt><b>%1</b> olarak adlandırılan bir dizin veya bir dosya zaten mevcut.</qt>"
+
+#: kfilereplacepart.cpp:269
+msgid "<qt>Cannot create the <b>%1</b> folder.</qt>"
+msgstr "<qt><b>%1<b> dizini oluşturulamıyor.</qt>"
+
+#: kfilereplacepart.cpp:347
+msgid "KFileReplace strings"
+msgstr "KFileReplace dizgileri"
+
+#: kfilereplacepart.cpp:347 kfilereplaceview.cpp:425
+msgid "All Files"
+msgstr "Bütün Dosyalar"
+
+#: kfilereplacepart.cpp:348
+msgid "Load Strings From File"
+msgstr "Dosyadan Dizgileri Yükle"
+
+#: kfilereplacepart.cpp:381
+msgid "Cannot open folders."
+msgstr "Klasörler açılamadı."
+
+#: kfilereplacepart.cpp:513
+msgid "KFileReplacePart"
+msgstr "KFileReplacePart"
+
+#: kfilereplacepart.cpp:515
+msgid "Batch search and replace tool."
+msgstr "Yığın arama ve değiştirme aracı."
+
+#: kfilereplacepart.cpp:517 main.cpp:38
+msgid "Part of the KDEWebDev module."
+msgstr "KDEWebDev modülünün bölümü."
+
+#: kfilereplacepart.cpp:519 main.cpp:44
+msgid "Original author of the KFileReplace tool"
+msgstr "KFileReplace aracının gerçek yazarı"
+
+#: kfilereplacepart.cpp:522 main.cpp:42
+msgid "Current maintainer, code cleaner and rewriter"
+msgstr "Güncel yazar, kod temizleyicisi ve yeniden yazan"
+
+#: kfilereplacepart.cpp:525
+msgid "Co-maintainer, KPart creator"
+msgstr "Yardımcı yazar, KPart yaratıcısı"
+
+#: kfilereplacepart.cpp:528
+msgid "Original german translator"
+msgstr "Gerçek alman çevirmen"
+
+#: kfilereplacepart.cpp:538
+msgid "Sorry, currently the KFileReplace part works only for local files."
+msgstr "Üzgünüm, KFileReplace bölümü sadece yerel dosyalar için çalışıyor."
+
+#: kfilereplacepart.cpp:538
+msgid "Non Local File"
+msgstr "Yerel Olmayan Dosya"
+
+#: kfilereplacepart.cpp:570
+msgid "Customize Search/Replace Session..."
+msgstr "Ara/Değiştir Oturumunu Özelleştir..."
+
+#: kfilereplacepart.cpp:571
+msgid "&Search"
+msgstr "&Ara"
+
+#: kfilereplacepart.cpp:572
+msgid "S&imulate"
+msgstr "&Taklit et"
+
+#: kfilereplacepart.cpp:573
+msgid "&Replace"
+msgstr "&Değiştir"
+
+#: kfilereplacepart.cpp:574
+msgid "Sto&p"
+msgstr "D&ur"
+
+#: kfilereplacepart.cpp:575
+msgid "Cre&ate Report File..."
+msgstr "H&ata Raporu Oluştur..."
+
+#: kfilereplacepart.cpp:578
+msgid "&Add String..."
+msgstr "&Dizgi Ekle..."
+
+#: kfilereplacepart.cpp:580
+msgid "&Delete String"
+msgstr "Diz&gi Sil..."
+
+#: kfilereplacepart.cpp:581
+msgid "&Empty Strings List"
+msgstr "Dizgi List&esini boşalt"
+
+#: kfilereplacepart.cpp:582
+msgid "Edit Selected String..."
+msgstr "Se&çili Dizgiyi Düzenle..."
+
+#: kfilereplacepart.cpp:583
+msgid "&Save Strings List to File..."
+msgstr "Dizgi Listesini Dosyaya &Kaydet..."
+
+#: kfilereplacepart.cpp:584
+msgid "&Load Strings List From File..."
+msgstr "Dizgi Listesini Dosyadan &Yükle..."
+
+#: kfilereplacepart.cpp:585
+msgid "&Load Recent Strings Files"
+msgstr "En Son Dizgi Dosyalarını &Yükle"
+
+#: kfilereplacepart.cpp:586
+msgid "&Invert Current String (search <--> replace)"
+msgstr "Mevcut D&izgiyi Ters Çevir (ara <--> değiştir)"
+
+#: kfilereplacepart.cpp:587
+msgid "&Invert All Strings (search <--> replace)"
+msgstr "Bütün Dizgileri Ters Çevir (ara <--> değiştir)"
+
+#: kfilereplacepart.cpp:590
+msgid "&Include Sub-Folders"
+msgstr "Alt Dizinleri Dah&il Et"
+
+#: kfilereplacepart.cpp:591
+msgid "Create &Backup Files"
+msgstr "Yedek Dosya Oluştu&r"
+
+#: kfilereplacepart.cpp:592
+msgid "Case &Sensitive"
+msgstr "Büyük Küçük Harf Duyarlı"
+
+#: kfilereplacepart.cpp:593
+msgid "Enable Commands &in Replace String: [$command:option$]"
+msgstr "Değiştirme Dizgisinde Komutları Mümkün Kıl: [$command:option$]"
+
+#: kfilereplacepart.cpp:594
+msgid "Enable &Regular Expressions"
+msgstr "Dü&zgün Anlatımı Etkinleştir"
+
+#: kfilereplacepart.cpp:595
+msgid "Configure &KFileReplace..."
+msgstr "&KFileReplace'i Yapılandır..."
+
+#: kfilereplacepart.cpp:598 kfilereplaceview.cpp:530
+msgid "&Properties"
+msgstr "&Özellikler"
+
+#: kfilereplacepart.cpp:599 kfilereplaceview.cpp:502
+msgid "&Open"
+msgstr "&Aç"
+
+#: kfilereplacepart.cpp:603 kfilereplaceview.cpp:515
+msgid "&Edit in Quanta"
+msgstr "Quanta ile &Düzenle"
+
+#: kfilereplacepart.cpp:605 kfilereplaceview.cpp:521
+msgid "Open Parent &Folder"
+msgstr "Ana &Klasörü Aç"
+
+#: kfilereplacepart.cpp:607
+msgid "E&xpand Tree"
+msgstr "Ağacı &Genişlet"
+
+#: kfilereplacepart.cpp:608
+msgid "&Reduce Tree"
+msgstr "Ağacı D&aralt"
+
+#: kfilereplacepart.cpp:609
+msgid "&About KFileReplace"
+msgstr "KFileReplace &Hakkında"
+
+#: kfilereplacepart.cpp:610
+msgid "KFileReplace &Handbook"
+msgstr "KFileReplace &El Kitabı"
+
+#: kfilereplacepart.cpp:611
+msgid "&Report Bug"
+msgstr "Hata &Bildir"
+
+#: kfilereplacepart.cpp:1025 kfilereplacepart.cpp:1113
+#: kfilereplacepart.cpp:1335
+msgid "<qt>Cannot open file <b>%1</b> for reading.</qt>"
+msgstr "<qt>Okumak için <b>%1</b> dosyası açılamıyor.</qt>"
+
+#: kfilereplacepart.cpp:1064 kfilereplacepart.cpp:1142
+msgid "<qt>Cannot open file <b>%1</b> for writing.</qt>"
+msgstr "<qt>Yazmak için <b>%1</b> dosyası açılamıyor.</qt>"
+
+#: kfilereplacepart.cpp:1199
+msgid ""
+"<qt>Do you want to replace the string <b>%1</b> with the string <b>%2</b>?</qt>"
+msgstr ""
+"<qt><b>%1</b> dizgisini <b>%2</b> dizgisi ile değiştirmek istiyor musunuz?</qt>"
+
+#: kfilereplacepart.cpp:1200
+msgid "Confirm Replace"
+msgstr "Değiştirme Onayı"
+
+#: kfilereplacepart.cpp:1202
+#, fuzzy
+msgid "Do Not Replace"
+msgstr "Değiştir:"
+
+#: kfilereplacepart.cpp:1406 kfilereplacepart.cpp:1446
+msgid " Line:%2, Col:%3 - \"%1\""
+msgstr " Satır:%2, Sütun:%3 - \"%1\""
+
+#: kfilereplacepart.cpp:1512
+msgid "<qt>Cannot open the file <b>%1</b> and load the string list.</qt>"
+msgstr "<qt><b>%1</b> dosyası açılamıyor ve satır listesi yüklenemiyor.</qt>"
+
+#: kfilereplacepart.cpp:1520
+msgid ""
+"<qt>File <b>%1</b> seems not to be written in new kfr format. Remember that the "
+"old kfr format will be soon abandoned. You can convert your old rules files by "
+"simply saving them with kfilereplace.</qt>"
+msgstr ""
+"<qt><b>%1</b> dosyası yeni kfr biçiminde kaydedilmemiş gibi görünüyor. Eski kfr "
+"biçiminin yakında kullanılmayacağını unutmayın! Eski kural dosyalarınızı "
+"basitçe kfilereplace ile kaydederek dönüştürebilirsiniz.</qt>"
+
+#: kfilereplacepart.cpp:1540
+msgid ""
+"<qt>The format of kfr files has been changed; attempting to load <b>%1</b>"
+". Please see the KFilereplace manual for details. Do you want to load a "
+"search-and-replace list of strings?</qt>"
+msgstr ""
+"<qt>kfr dosyalarının formatı değiştirildi; <b>%1</b> "
+"yüklenmeye çalışılıyor. Ayrıntılar için lütfen KFilereplace el kitabına göz "
+"atın. Dizgilerde bir Ara-ve-Bul listesini yüklemek istiyor musunuz?</qt>"
+
+#: kfilereplacepart.cpp:1540
+msgid "Load"
+msgstr ""
+
+#: kfilereplacepart.cpp:1540
+msgid "Do Not Load"
+msgstr ""
+
+#: kfilereplacepart.cpp:1629
+msgid "There are no strings to search and replace."
+msgstr "Aranacak ve değiştirilecek hiç dizgi yok."
+
+#: kfilereplacepart.cpp:1642
+msgid "<qt>The main folder of the project <b>%1</b> does not exist.</qt>"
+msgstr "<qt>Projenin ana klasörü <b>%1</b> mevcut değil.</qt>"
+
+#: kfilereplacepart.cpp:1650
+msgid "<qt>Access denied in the main folder of the project:<br><b>%1</b></qt>"
+msgstr "<qt>Projenin ana klasörüne erişim engellendi:<br><b>%1</b></qt>"
+
+#: kfilereplaceview.cpp:120
+msgid ""
+"<qt>Cannot invert string <b>%1</b>, because the search string would be "
+"empty.</qt>"
+msgstr ""
+"<qt><b>%1</b> dizgisi ters çevrilemiyor, çünkü arama satırı boş olabilir.</qt>"
+
+#: kfilereplaceview.cpp:259
+msgid "File %1 cannot be opened. Might be a DCOP problem."
+msgstr "<qt><b>%1</b> dosyası açılamadı. Bir DCOP sorunu olabilir.</qt>"
+
+#: kfilereplaceview.cpp:281
+msgid "Do you really want to delete %1?"
+msgstr "<qt><b>%1</b> gerçekten silinsin mi?</qt>"
+
+#: kfilereplaceview.cpp:401
+msgid "No strings to save as the list is empty."
+msgstr "Farklı kaydedilecek dizgi yok, liste boş."
+
+#: kfilereplaceview.cpp:425
+msgid "KFileReplace Strings"
+msgstr "KFileReplace Dizgileri"
+
+#: kfilereplaceview.cpp:426
+msgid "Save Strings to File"
+msgstr "Dizgileri Dosyaya Kaydet"
+
+#: kfilereplaceview.cpp:437
+msgid "File %1 cannot be saved."
+msgstr "%1 dosyası kaydedilemedi."
+
+#: kfilereplaceview.cpp:507
+msgid "Open &With..."
+msgstr "Birlikte &Aç..."
+
+#: knewprojectdlg.cpp:97
+msgid "Project Directory"
+msgstr "Proje Dizini"
+
+#: knewprojectdlg.cpp:119
+msgid "You must fill the combo boxes (location and filter) before continuing."
+msgstr "Devam etmeden önce açılan kutuları (konum ve filtre) doldurmalısınız."
+
+#: knewprojectdlg.cpp:127
+msgid "Some edit boxes are empty in the <b>Owner</b> page."
+msgstr "<b>Sahip</b> sayfasındaki bazı düzenleme kutuları boş."
+
+#: knewprojectdlg.cpp:137
+msgid "The minimum size is greater than the maximum size."
+msgstr "En düşük boyut, en büyük boyuttan büyük"
+
+#: main.cpp:25
+msgid "Batch search and replace tool"
+msgstr "Yığın arama ve değiştirme aracı"
+
+#: main.cpp:31
+msgid "Starting folder"
+msgstr "Dizin Başlatılıyor"
+
+#: main.cpp:37
+msgid "KFileReplace"
+msgstr "KFileReplace"
+
+#: main.cpp:41
+msgid "Shell author, KPart creator, co-maintainer"
+msgstr "Kabuk yazarı, KPart yaratıcısı, yardımcı yazar"
+
+#. i18n: file kfilereplacepartui.rc line 4
+#: rc.cpp:3 rc.cpp:27
+#, no-c-format
+msgid "Search/&Replace"
+msgstr "A&ra/Değiştir"
+
+#. i18n: file kfilereplacepartui.rc line 11
+#: rc.cpp:6
+#, no-c-format
+msgid "&Strings"
+msgstr "&Dizgiler"
+
+#. i18n: file kfilereplacepartui.rc line 24
+#: rc.cpp:9
+#, no-c-format
+msgid "&Results"
+msgstr "S&onuçlar"
+
+#. i18n: file kfilereplacepartui.rc line 55
+#: rc.cpp:21
+#, no-c-format
+msgid "KFileReplace Main Toolbar"
+msgstr "KFileReplace Ana Araç Çubuğu"
+
+#. i18n: file kaddstringdlgs.ui line 16
+#: rc.cpp:30
+#, no-c-format
+msgid "Insert Searching/Replacing Strings"
+msgstr "Aranıyor/Değiştiriliyo Dizgileri Ekle"
+
+#. i18n: file kaddstringdlgs.ui line 38
+#: rc.cpp:33
+#, no-c-format
+msgid "Choose String Adding Mode"
+msgstr "Ekleme Modu Dizgisi Seç"
+
+#. i18n: file kaddstringdlgs.ui line 52
+#: rc.cpp:36
+#, no-c-format
+msgid "Search and replace mode"
+msgstr "Arama ve değiştirme modu"
+
+#. i18n: file kaddstringdlgs.ui line 63
+#: rc.cpp:39
+#, no-c-format
+msgid "Search only mode"
+msgstr "Sadece arama modu"
+
+#. i18n: file kaddstringdlgs.ui line 106
+#: rc.cpp:42
+#, no-c-format
+msgid "Search for:"
+msgstr "Bunun için ara:"
+
+#. i18n: file kaddstringdlgs.ui line 135
+#: rc.cpp:45
+#, no-c-format
+msgid "Replace with:"
+msgstr "Bununla değiştir:"
+
+#. i18n: file kaddstringdlgs.ui line 270
+#: rc.cpp:48 rc.cpp:51 rc.cpp:105 rc.cpp:111
+#, no-c-format
+msgid "Search For"
+msgstr "Bunun için ara"
+
+#. i18n: file kaddstringdlgs.ui line 322
+#: rc.cpp:54 rc.cpp:108
+#, no-c-format
+msgid "Replace With"
+msgstr "Bununla Değiştir"
+
+#. i18n: file kfilereplaceviewwdg.ui line 58
+#: rc.cpp:66 rc.cpp:87 rc.cpp:204 rc.cpp:222 report.cpp:114
+#, no-c-format
+msgid "Name"
+msgstr "İsim"
+
+#. i18n: file kfilereplaceviewwdg.ui line 69
+#: rc.cpp:69 rc.cpp:90 report.cpp:115
+#, no-c-format
+msgid "Folder"
+msgstr "Dizin"
+
+#. i18n: file kfilereplaceviewwdg.ui line 80
+#: rc.cpp:72 report.cpp:122
+#, no-c-format
+msgid "Old Size"
+msgstr "Eski Boyut"
+
+#. i18n: file kfilereplaceviewwdg.ui line 91
+#: rc.cpp:75 report.cpp:123
+#, no-c-format
+msgid "New Size"
+msgstr "Yeni Boyut"
+
+#. i18n: file kfilereplaceviewwdg.ui line 102
+#: rc.cpp:78 report.cpp:54
+#, no-c-format
+msgid "Replaced Strings"
+msgstr "Değiştirilmiş Dizgiler"
+
+#. i18n: file kfilereplaceviewwdg.ui line 113
+#: rc.cpp:81 rc.cpp:99 report.cpp:126
+#, no-c-format
+msgid "Owner User"
+msgstr "Sahip Kullanıcı"
+
+#. i18n: file kfilereplaceviewwdg.ui line 124
+#: rc.cpp:84 rc.cpp:102 report.cpp:127
+#, no-c-format
+msgid "Owner Group"
+msgstr "Sahip Grup"
+
+#. i18n: file kfilereplaceviewwdg.ui line 203
+#: rc.cpp:93 report.cpp:118
+#, no-c-format
+msgid "Size"
+msgstr "Boyut"
+
+#. i18n: file kfilereplaceviewwdg.ui line 214
+#: rc.cpp:96
+#, no-c-format
+msgid "Found Strings"
+msgstr "Bulunan Dizgiler"
+
+#. i18n: file kfilereplaceviewwdg.ui line 427
+#: rc.cpp:114
+#, no-c-format
+msgid "Green means ready"
+msgstr "Yeşil, hazır anlamına gelir"
+
+#. i18n: file kfilereplaceviewwdg.ui line 430
+#: rc.cpp:117
+#, no-c-format
+msgid "Ready"
+msgstr "Hazır"
+
+#. i18n: file kfilereplaceviewwdg.ui line 454
+#: rc.cpp:120
+#, no-c-format
+msgid "Yellow means wait while sorting list"
+msgstr "Sarı, liste sıralanırken bekleyin anlamına gelir"
+
+#. i18n: file kfilereplaceviewwdg.ui line 457
+#: rc.cpp:123
+#, no-c-format
+msgid "Please wait while sorting list"
+msgstr "Liste sıralanırken lütfen bekleyin"
+
+#. i18n: file kfilereplaceviewwdg.ui line 478
+#: rc.cpp:126
+#, no-c-format
+msgid "Red means scanning files"
+msgstr "Kırmızı, dosyalar taranıyor anlamına gelir"
+
+#. i18n: file kfilereplaceviewwdg.ui line 513
+#: rc.cpp:129
+#, no-c-format
+msgid "Scanned files:"
+msgstr "Taranan dosyalar:"
+
+#. i18n: file knewprojectdlgs.ui line 16
+#: rc.cpp:132
+#, no-c-format
+msgid "Search & Replace in Files"
+msgstr "Dosyalarda Ara & Bul"
+
+#. i18n: file knewprojectdlgs.ui line 89
+#: rc.cpp:138
+#, no-c-format
+msgid "Search Now"
+msgstr "Şimdi Ara"
+
+#. i18n: file knewprojectdlgs.ui line 103
+#: rc.cpp:141
+#, no-c-format
+msgid "Search Later"
+msgstr "Sonra Ara"
+
+#. i18n: file knewprojectdlgs.ui line 142
+#: rc.cpp:147
+#, no-c-format
+msgid "&General"
+msgstr "&Genel"
+
+#. i18n: file knewprojectdlgs.ui line 153
+#: rc.cpp:150
+#, no-c-format
+msgid "Startup Folder Options"
+msgstr "Başlangıç Dizini Seçenekleri"
+
+#. i18n: file knewprojectdlgs.ui line 164
+#: rc.cpp:153
+#, no-c-format
+msgid "Filter:"
+msgstr "Filtre:"
+
+#. i18n: file knewprojectdlgs.ui line 175
+#: rc.cpp:156
+#, no-c-format
+msgid "Location:"
+msgstr "Konum:"
+
+#. i18n: file knewprojectdlgs.ui line 212
+#: rc.cpp:159
+#, no-c-format
+msgid "Insert a search path here. You can use the search path button."
+msgstr "Buraya bir arama yolu ekleyin. Arama yolu düğmesini kullanın."
+
+#. i18n: file knewprojectdlgs.ui line 262
+#: rc.cpp:162
+#, no-c-format
+msgid "&Include subfolders"
+msgstr "&Alt dizinleri dahil et"
+
+#. i18n: file knewprojectdlgs.ui line 275
+#: rc.cpp:165
+#, no-c-format
+msgid "Search/Replace Strings"
+msgstr "Ara/Değiştir Dizgileri:"
+
+#. i18n: file knewprojectdlgs.ui line 296
+#: rc.cpp:168
+#, no-c-format
+msgid "Search:"
+msgstr "Ara:"
+
+#. i18n: file knewprojectdlgs.ui line 304
+#: rc.cpp:171
+#, no-c-format
+msgid "Replace:"
+msgstr "Değiştir:"
+
+#. i18n: file knewprojectdlgs.ui line 314
+#: rc.cpp:174 rc.cpp:270
+#, no-c-format
+msgid "General Options"
+msgstr "Genel Seçenekler"
+
+#. i18n: file knewprojectdlgs.ui line 328
+#: rc.cpp:177
+#, no-c-format
+msgid "Enable &regular expressions"
+msgstr "Öz&gün anlatıma imkan tanı"
+
+#. i18n: file knewprojectdlgs.ui line 336
+#: rc.cpp:180
+#, no-c-format
+msgid "Do &backup copy instead of overwrite"
+msgstr "Yedek alırken eklenenleri üzerine yaz"
+
+#. i18n: file knewprojectdlgs.ui line 344
+#: rc.cpp:183
+#, no-c-format
+msgid "&Case sensitive"
+msgstr "&Büyük küçük harf duyarlı"
+
+#. i18n: file knewprojectdlgs.ui line 352
+#: rc.cpp:186
+#, no-c-format
+msgid "Enable co&mmands in the replace string"
+msgstr "Değiştirme dizgisinde ko&mutları etkin kıl"
+
+#. i18n: file knewprojectdlgs.ui line 360
+#: rc.cpp:189 rc.cpp:276
+#, no-c-format
+msgid "Backup copy suffix:"
+msgstr "Yedek kopya soneki:"
+
+#. i18n: file knewprojectdlgs.ui line 389
+#: rc.cpp:192 rc.cpp:294
+#, no-c-format
+msgid "Encoding of the files:"
+msgstr "Dosyaların şifrelemesi:"
+
+#. i18n: file knewprojectdlgs.ui line 401
+#: rc.cpp:195 rc.cpp:297
+#, no-c-format
+msgid "&Advanced"
+msgstr "&Gelişmiş"
+
+#. i18n: file knewprojectdlgs.ui line 412
+#: rc.cpp:198
+#, no-c-format
+msgid "Ownership Filtering"
+msgstr "Sahip Filtrelemesi"
+
+#. i18n: file knewprojectdlgs.ui line 423
+#: rc.cpp:201
+#, no-c-format
+msgid "User: "
+msgstr "Kullanıcı:"
+
+#. i18n: file knewprojectdlgs.ui line 434
+#: rc.cpp:207 rc.cpp:225
+#, no-c-format
+msgid "ID (Number)"
+msgstr "Kimlik (Numara)"
+
+#. i18n: file knewprojectdlgs.ui line 456
+#: rc.cpp:210 rc.cpp:216
+#, no-c-format
+msgid "Equals To"
+msgstr "Eşittir"
+
+#. i18n: file knewprojectdlgs.ui line 461
+#: rc.cpp:213 rc.cpp:219
+#, no-c-format
+msgid "Is Not"
+msgstr "Eşit Değildir"
+
+#. i18n: file knewprojectdlgs.ui line 539
+#: rc.cpp:228
+#, no-c-format
+msgid "Group:"
+msgstr "Grup:"
+
+#. i18n: file knewprojectdlgs.ui line 565
+#: rc.cpp:231
+#, no-c-format
+msgid "Access Date Filtering"
+msgstr "Erişim Tarihi Filtrelemesi"
+
+#. i18n: file knewprojectdlgs.ui line 592
+#: rc.cpp:234
+#, no-c-format
+msgid "Dates valid for:"
+msgstr "Geçerli tarihler:"
+
+#. i18n: file knewprojectdlgs.ui line 600
+#: rc.cpp:237
+#, no-c-format
+msgid "Accessed after:"
+msgstr "Sonradan erişilen:"
+
+#. i18n: file knewprojectdlgs.ui line 608
+#: rc.cpp:240
+#, no-c-format
+msgid "Accessed before: "
+msgstr "Önceden erişilen:"
+
+#. i18n: file knewprojectdlgs.ui line 624
+#: rc.cpp:243
+#, no-c-format
+msgid "Last Writing Access"
+msgstr "Son Yazma Erişimi"
+
+#. i18n: file knewprojectdlgs.ui line 629
+#: rc.cpp:246
+#, no-c-format
+msgid "Last Reading Access"
+msgstr "Son Okuma Erişimi"
+
+#. i18n: file knewprojectdlgs.ui line 737
+#: rc.cpp:249
+#, no-c-format
+msgid "Size Filtering"
+msgstr "Boyut Filtreleme"
+
+#. i18n: file knewprojectdlgs.ui line 764
+#: rc.cpp:252
+#, no-c-format
+msgid "Minimum si&ze:"
+msgstr "En düşük boyut:"
+
+#. i18n: file knewprojectdlgs.ui line 772
+#: rc.cpp:255
+#, no-c-format
+msgid "Maximum size:"
+msgstr "En yüksek boyut:"
+
+#. i18n: file knewprojectdlgs.ui line 822
+#: rc.cpp:258 rc.cpp:261
+#, no-c-format
+msgid "KB"
+msgstr "KB"
+
+#. i18n: file koptionsdlgs.ui line 34
+#: rc.cpp:267
+#, no-c-format
+msgid "General"
+msgstr "Genel"
+
+#. i18n: file koptionsdlgs.ui line 56
+#: rc.cpp:273
+#, no-c-format
+msgid "Enable commands in replace strings"
+msgstr "Değiştirme dizgilerinde komutları etkin kıl"
+
+#. i18n: file koptionsdlgs.ui line 83
+#: rc.cpp:279
+#, no-c-format
+msgid "Notif&y on errors"
+msgstr "Hata olunca bildir"
+
+#. i18n: file koptionsdlgs.ui line 91
+#: rc.cpp:282
+#, no-c-format
+msgid "Case sensitive"
+msgstr "Büyük küçük harf duyarlı"
+
+#. i18n: file koptionsdlgs.ui line 102
+#: rc.cpp:285
+#, no-c-format
+msgid "Recursive (search/replace in all sub folders)"
+msgstr "Özyinelemeli (bütün alt dizinlerde ara/değiştir)"
+
+#. i18n: file koptionsdlgs.ui line 116
+#: rc.cpp:288
+#, no-c-format
+msgid "Enable regular e&xpressions"
+msgstr "Özgün anlatı%mlara imkan tanı"
+
+#. i18n: file koptionsdlgs.ui line 124
+#: rc.cpp:291
+#, no-c-format
+msgid "Do &backup copy"
+msgstr "Ye&dek kopya al"
+
+#. i18n: file koptionsdlgs.ui line 168
+#: rc.cpp:300
+#, no-c-format
+msgid "Advanced Options"
+msgstr "&Gelişmiş Seçenekler"
+
+#. i18n: file koptionsdlgs.ui line 179
+#: rc.cpp:303
+#, no-c-format
+msgid "Ignore hidden files and folders"
+msgstr "Gizli dosya ve dizinleri yok say"
+
+#. i18n: file koptionsdlgs.ui line 187
+#: rc.cpp:306
+#, no-c-format
+msgid "Follow s&ymbolic links"
+msgstr "Sembolik bağlantıları takip et"
+
+#. i18n: file koptionsdlgs.ui line 195
+#: rc.cpp:309
+#, no-c-format
+msgid "When searching, stop on first string found (faster but no details)"
+msgstr "Arama yaparken, bulunan ilk dizgide dur (hızlı fakat detay yok)"
+
+#. i18n: file koptionsdlgs.ui line 206
+#: rc.cpp:312
+#, no-c-format
+msgid "Do not show file if no strings are found or replaced"
+msgstr "Eğer dizgi bulunamadıysa veya değiştirilmediyse dosyaları gösterme"
+
+#. i18n: file koptionsdlgs.ui line 242
+#: rc.cpp:315
+#, no-c-format
+msgid "Show confirmation dialog"
+msgstr "Onay penceresi göster"
+
+#. i18n: file koptionsdlgs.ui line 255
+#: rc.cpp:318
+#, no-c-format
+msgid "Confirm before replace each string"
+msgstr "Her dizgiyi değiştirmeden önce sor"
+
+#. i18n: file koptionsdlgs.ui line 296
+#: rc.cpp:324
+#, no-c-format
+msgid "&Default Values"
+msgstr "&Öntanımlı Değerler"
+
+#: report.cpp:41 report.cpp:194
+msgid "<qt>Cannot open the file <b>%1</b>.</qt>"
+msgstr "<qt><b>%1<b> dosyası açılamıyor.</qt>"
+
+#: report.cpp:55
+msgid "Replace with"
+msgstr "Bununla değiştir"
+
+#: report.cpp:59
+msgid "Total number occurrences"
+msgstr "Toplam olay sayısı"
+
+#: report.cpp:60
+msgid "-"
+msgstr "-"
+
+#: report.cpp:68
+msgid "KFileReplace Report"
+msgstr "KFileReplace Raporu"
+
+#: report.cpp:73
+msgid "Searching/Replacing Strings Table"
+msgstr "Ara/Değiştir Dizgileri Tablosu"
+
+#: report.cpp:76
+msgid "Search for"
+msgstr "Bunun için ara"
+
+#: report.cpp:111
+msgid "Results Table"
+msgstr "S&onuç Tablosu"
+
+#: report.cpp:201
+msgid "Created by"
+msgstr "Oluşturan"
+
+#: report.cpp:203
+msgid "date"
+msgstr "tarih"
+
+#: report.cpp:205
+msgid "Total occurrences"
+msgstr "Toplam olay"
+
+#: whatthis.h:29
+msgid ""
+"Shows the statistics of your operations. Note that the columns content changes "
+"depending on what kind of operation you are performing."
+msgstr ""
+
+#: whatthis.h:31
+msgid ""
+"Shows a list of strings to search for (and if you specified it, a list of "
+"strings to replace with). Use the \"add strings\" dialog to edit your string "
+"list or double click on a string."
+msgstr ""
+
+#: whatthis.h:34
+msgid ""
+"Base folder for operations of search/replace. Insert path string here by hand "
+"or use the search button."
+msgstr ""
+
+#: whatthis.h:36
+msgid "Shell-like wildcards. Example: \"*.html;*.txt;*.xml\"."
+msgstr ""
+
+#: whatthis.h:38
+msgid ""
+"Insert the minimum file size you want to search, or leave it unchecked if you "
+"don't want minimum size limit."
+msgstr ""
+
+#: whatthis.h:40
+msgid ""
+"Insert the maximum file size you want to search, or leave it unchecked if you "
+"don't want maximum size limit."
+msgstr ""
+
+#: whatthis.h:42
+msgid ""
+"Insert the minimum value for file access date that you want to search, or leave "
+"it unchecked if you don't a minimum limit."
+msgstr ""
+
+#: whatthis.h:44
+msgid ""
+"Insert the maximum value for file access date that you want to search, or leave "
+"it unchecked if you don't a maximum limit."
+msgstr ""
+
+#: whatthis.h:46
+msgid ""
+"Select  \"writing\" if you want to use the date of the last modification, or  "
+"\"reading\" to use the the date of the last access."
+msgstr ""
+
+#: whatthis.h:48
+msgid "Minimum value for access date."
+msgstr ""
+
+#: whatthis.h:50
+msgid "Maximum value for access date."
+msgstr ""
+
+#: whatthis.h:52
+#, fuzzy
+msgid "Insert here the string to search for."
+msgstr "Aranacak ve değiştirilecek hiç dizgi yok."
+
+#: whatthis.h:54
+#, fuzzy
+msgid "Insert here the string to replace with."
+msgstr "Aranacak ve değiştirilecek hiç dizgi yok."
+
+#: whatthis.h:57
+msgid "Enable this option if your search is case sensitive."
+msgstr ""
+
+#: whatthis.h:59
+msgid "Enable this option to search in sub folders too."
+msgstr ""
+
+#: whatthis.h:61
+msgid ""
+"Enable this option when you are searching for a string and you are only "
+"interested to know if the string is present or not in the current file."
+msgstr ""
+
+#: whatthis.h:65
+msgid ""
+"If kfilereplace encounters a symbolic link treats it like a normal folder or "
+"file."
+msgstr ""
+
+#: whatthis.h:67
+#, fuzzy
+msgid "Enable this option to ignore hidden files or folders."
+msgstr "Gizli dosya ve dizinleri yok say"
+
+#: whatthis.h:69
+msgid ""
+"If this option is enabled, KFR will show even the names of the files in which "
+"no string has been found or replaced."
+msgstr ""
+
+#: whatthis.h:71
+msgid ""
+"Allows you to apply QT-like regular expressions on the search string. Note that "
+"a complex regular expression could affect speed performance"
+msgstr ""
+
+#: whatthis.h:73
+msgid ""
+"Enable \"commands\". For example: if search string is \"user\" and replace "
+"string is the command \"[$user:uid$]\", KFR will substitute \"user\" with the "
+"uid of the user."
+msgstr ""
+
+#: whatthis.h:75
+msgid "Enable this option if you want leave original files untouched."
+msgstr ""
+
+#: whatthis.h:77
+msgid ""
+"Enable this option if you want to be asked for single string replacement "
+"confirmation."
+msgstr ""
+
+#: whatthis.h:80
+msgid ""
+"Enable this option to perform replacing as a simulation, i.e. without make any "
+"changes in files."
+msgstr ""
+
+#: whatthis.h:93
+#, fuzzy
+msgid "Select search-only mode."
+msgstr "Sadece arama modu"
+
+#: whatthis.h:95
+#, fuzzy
+msgid "Select search-and-replace mode."
+msgstr "Arama ve değiştirme modu"
+
+#: whatthis.h:97
+msgid "Insert here a string you want search for."
+msgstr ""
+
+#: whatthis.h:99
+msgid "Insert here the string that KFR will use to replace the search string."
+msgstr ""

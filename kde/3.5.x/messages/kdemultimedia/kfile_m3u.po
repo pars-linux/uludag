@@ -1,0 +1,24 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: x\n"
+"POT-Creation-Date: 2004-10-12 01:17+0200\n"
+"PO-Revision-Date: 2002-10-20 20:02+0300\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org.tr>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.6\n"
+
+#: kfile_m3u.cpp:51
+msgid "Tracks"
+msgstr "Parçalar"
+
+#: kfile_m3u.cpp:78
+#, c-format
+msgid "Track %1"
+msgstr "Parça %1"

@@ -1,0 +1,42 @@
+# Translation of libksync.po to Turkish
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# Görkem �etin <gorkem@kde.org>, 2002.
+# Ozan Eren BILGEN <oebilgen@uekae.tubitak.gov.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: libksync\n"
+"POT-Creation-Date: 2007-02-04 02:34+0100\n"
+"PO-Revision-Date: 2008-02-29 00:07+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@lists.kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: LoKalize 0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ksyncuikde.cpp:41
+msgid "Which entry do you want to take precedence?\n"
+msgstr "Hangi girdiye öncelik vermek istiyorsunuz?\n"
+
+#: ksyncuikde.cpp:42
+msgid "Entry 1: '%1'\n"
+msgstr "1. Girdi: '%1'\n"
+
+#: ksyncuikde.cpp:43
+msgid "Entry 2: '%1'\n"
+msgstr "2. Girdi: '%1'\n"
+
+#: ksyncuikde.cpp:46
+msgid "Resolve Conflict"
+msgstr "Çakışmayı Çöz"
+
+#: ksyncuikde.cpp:46
+msgid "Entry 1"
+msgstr "1. Girdi"
+
+#: ksyncuikde.cpp:46
+msgid "Entry 2"
+msgstr "2. Girdi"
+

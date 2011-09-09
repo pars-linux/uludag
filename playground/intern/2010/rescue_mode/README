@@ -1,9 +1,0 @@
-recue_mode
-----------
-
-This is the rescue mode which rescue Windows Bootloader and Pardus.
-
-The program is completely written in Python and used urwid framework.
-It can rescue Pardus GRUB, undo PISI history, update user password 
-and rescue Windows bootloader.
-

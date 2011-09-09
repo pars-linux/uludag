@@ -1,0 +1,40 @@
+# translation of libkholidays.po to
+#
+# Görkem Çetin <gorkem@kde.org.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkholidays\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-02-19 01:28+0100\n"
+"PO-Revision-Date: 2007-10-01 05:13+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: lunarphase.cpp:71
+msgid "Northern"
+msgstr "Kuzeyli"
+
+#: lunarphase.cpp:74
+msgid "Southern"
+msgstr "Güneyli"
+
+#: lunarphase.cpp:88
+msgid "New Moon"
+msgstr "Yeni Ay"
+
+#: lunarphase.cpp:91
+msgid "Full Moon"
+msgstr "Dolunay"
+
+#: lunarphase.cpp:94
+msgid "First Quarter Moon"
+msgstr "İlkdördün"
+
+#: lunarphase.cpp:97
+msgid "Last Quarter Moon"
+msgstr "Sondördün"

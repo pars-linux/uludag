@@ -1,6 +1,0 @@
-[$Version]
-update_info=kioslave.upd:kde2.2/r1,kioslave.upd:kde2.2/r2,kioslave.upd:kde2.2/r3
-httpProxy=212.21.212.121:3223
-ftpProxy=212.21.212.121:3223
-ProxyType=1
-httpsProxy=212.21.212.121:3223

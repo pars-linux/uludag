@@ -1,0 +1,180 @@
+# translation of kateinsertcommand.po to
+# Copyright (C) 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
+#
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Durmuş Celep <durmusc_tr@yahoo.com>,2002.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
+# Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kateinsertcommand\n"
+"POT-Creation-Date: 2006-03-06 03:57+0100\n"
+"PO-Revision-Date: 2007-05-16 20:55+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: plugin_kateinsertcommand.cpp:86
+msgid "Insert Command..."
+msgstr "Komut Ekle..."
+
+#: plugin_kateinsertcommand.cpp:113
+msgid ""
+"You are not allowed to execute arbitrary external applications. If you want to "
+"be able to do this, contact your system administrator."
+msgstr ""
+"Kural dışı bir uygulamayı çalıştırma yetkiniz yok. Bu tür programları "
+"çalıştırmak istiyorsanız, sistem yönetici ile irtibata geçin."
+
+#: plugin_kateinsertcommand.cpp:113
+msgid "Access Restrictions"
+msgstr "Erişim Hakları"
+
+#: plugin_kateinsertcommand.cpp:117
+msgid "A process is currently being executed."
+msgstr "Şu anda bir süreç yürütülmekte."
+
+#: plugin_kateinsertcommand.cpp:204
+msgid "Could not kill command."
+msgstr "Komut sonlandırılamadı."
+
+#: plugin_kateinsertcommand.cpp:204
+msgid "Kill Failed"
+msgstr "Sonlandırma Başarısız"
+
+#: plugin_kateinsertcommand.cpp:211
+msgid ""
+"Executing command:\n"
+"%1\n"
+"\n"
+"Press 'Cancel' to abort."
+msgstr ""
+"Yürütülen komut:\n"
+"%1\n"
+"\n"
+"Vazgeçmek için 'İptal' tuşuna tıklayın."
+
+#: plugin_kateinsertcommand.cpp:245
+#, c-format
+msgid "Command exited with status %1"
+msgstr "Komut %1 çıkış değeri ile sonlandı"
+
+#: plugin_kateinsertcommand.cpp:246
+msgid "Oops!"
+msgstr "Pardon!"
+
+#: plugin_kateinsertcommand.cpp:286 plugin_kateinsertcommand.h:73
+msgid "Insert Command"
+msgstr "Komut Ekle"
+
+#: plugin_kateinsertcommand.cpp:293
+msgid "Enter &command:"
+msgstr "Komut &gir:"
+
+#: plugin_kateinsertcommand.cpp:305
+msgid "Choose &working folder:"
+msgstr "Ça&lışma dizini seçin:"
+
+#: plugin_kateinsertcommand.cpp:315
+msgid "Insert Std&Err messages"
+msgstr "&Standart hata mesajlarını ekle"
+
+#: plugin_kateinsertcommand.cpp:318
+msgid "&Print command name"
+msgstr "Komut adını &yazdır"
+
+#: plugin_kateinsertcommand.cpp:323
+msgid ""
+"Enter the shell command, the output of which you want inserted into your "
+"document. Feel free to use a pipe or two if you wish."
+msgstr ""
+"Çıktısının belgenize eklenmesini istediğiniz kabuk komutunu girin. Eğer "
+"gerekliyse birden fazla iletme simgesi (|) kullanabilirsiniz."
+
+#: plugin_kateinsertcommand.cpp:326
+msgid ""
+"Sets the working folder of the command. The command executed is 'cd <dir> "
+"&& <command>'"
+msgstr ""
+"Komutun işletileceği dizini ayarlar. İşletilen komut 'cd <dizin> ve <komut>'"
+
+#: plugin_kateinsertcommand.cpp:329
+msgid ""
+"Check this if you want the error output from <command> inserted as well.\n"
+"Some commands, such as locate, print everything to STDERR"
+msgstr ""
+"Eğer <komut> sonucunda oluşacak hata çıktısını da eklemek istiyorsanız seçin.\n"
+"locate, print gibi komutlar bütün çıktılarını STDERR'a yazarlar"
+
+#: plugin_kateinsertcommand.cpp:332
+msgid ""
+"If you check this, the command string will be printed followed by a newline "
+"before the output."
+msgstr "Bunu seçerseniz, komut dizisi çıktıdan önceki satır olarak yazılır."
+
+#: plugin_kateinsertcommand.cpp:379
+msgid "Remember"
+msgstr "Hatırla"
+
+#: plugin_kateinsertcommand.cpp:381
+msgid "Co&mmands"
+msgstr "Ko&mutlar"
+
+#: plugin_kateinsertcommand.cpp:388
+msgid "Start In"
+msgstr "İçinde Başla"
+
+#: plugin_kateinsertcommand.cpp:390
+msgid "Application &working folder"
+msgstr "U&ygulama çalışma dizini"
+
+#: plugin_kateinsertcommand.cpp:391
+msgid "&Document folder"
+msgstr "&Belgeler dizini"
+
+#: plugin_kateinsertcommand.cpp:392
+msgid "&Latest used working folder"
+msgstr "Son kullanılan çalış&ma dizini"
+
+#: plugin_kateinsertcommand.cpp:400
+msgid ""
+"Sets the number of commands to remember. The command history is saved over "
+"sessions."
+msgstr "Hatırlanacak komut sayısını belirtir."
+
+#: plugin_kateinsertcommand.cpp:403
+msgid ""
+"<qt>"
+"<p>Decides what is suggested as <em>working folder</em> for the command.</p>"
+"<p><strong>Application Working Folder (default):</strong> "
+"The folder from which you launched the application hosting the plugin, usually "
+"your home folder.</p>"
+"<p><strong>Document Folder:</strong> The folder of the document. Used only for "
+"local documents.</p>"
+"<p><strong>Latest Working Folder:</strong> The folder used last time you used "
+"this plugin.</p></qt>"
+msgstr ""
+"<qt>"
+"<p>Komutun <em>işletilme dizini</em> olarak neyin tavsiye edileceğine karar "
+"verir.</p>"
+"<p><strong>Uygulama İşletilme Dizini (öntanımlı):</strong> "
+"Eklentiyi barındıran uygulamayı işlettiğiniz dizin, genelde ev dizininizdir.</p>"
+"<p><strong>Belge Dizini:</strong> Belgenin bulunduğu dizin. Sadece yerel "
+"belgeler için kullanılır.</p>"
+"<p><strong>Son İşletilme Dizini:</strong> Eklentinin son kullanıldığı zaman "
+"kullanılan dizin.</p></qt>"
+
+#: plugin_kateinsertcommand.h:75
+msgid "Configure Insert Command Plugin"
+msgstr "Komut Ekle Eklentisini Yapılandır"
+
+#: plugin_kateinsertcommand.h:135
+msgid "Please Wait"
+msgstr "Lütfen Bekleyin"

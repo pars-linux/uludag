@@ -1,0 +1,231 @@
+# translation of artsmodules.po to Türkçe
+# translation of artsmodules.po to turkish
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+# YILDIZ KARDESLER <turkishprogram@xposta.com>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: artsmodules\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-10-24 01:15+0200\n"
+"PO-Revision-Date: 2004-10-01 01:26+0200\n"
+"Last-Translator: YILDIZ KARDESLER <turkishprogram@xposta.com>\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: modules/common/env_mixeritem_impl.cc:52
+msgid "Mixer (\"%1\")"
+msgstr "Mikser (\"%1\")"
+
+#: modules/common/env_mixeritem_impl.cc:190
+#: modules/common/env_mixeritem_impl.cc:327
+#: modules/effects/synth_stereo_fir_equalizer_impl.cc:211
+msgid "channels"
+msgstr "kanallar"
+
+#: modules/common/env_mixeritem_impl.cc:198
+#: modules/common/env_mixeritem_impl.cc:336
+msgid "name"
+msgstr "isim"
+
+#: modules/common/env_mixeritem_impl.cc:205
+msgid "type"
+msgstr "tür"
+
+#: modules/effects/fivebandmonocomplexeq_impl.cc:115
+msgid "Low Gain"
+msgstr "Düşük Kazanç"
+
+#: modules/effects/fivebandmonocomplexeq_impl.cc:123
+msgid "Low Freq"
+msgstr "Düşük Frekans"
+
+#: modules/effects/fivebandmonocomplexeq_impl.cc:127
+msgid "Low Q"
+msgstr "Düşük Q"
+
+#: modules/effects/fivebandmonocomplexeq_impl.cc:132
+msgid "Mid1 Gain"
+msgstr "Orta1 Kazanç"
+
+#: modules/effects/fivebandmonocomplexeq_impl.cc:140
+msgid "Mid1 Freq"
+msgstr "Orta1 Frekans"
+
+#: modules/effects/fivebandmonocomplexeq_impl.cc:144
+msgid "Mid1 Q"
+msgstr "Orta1 Q"
+
+#: modules/effects/fivebandmonocomplexeq_impl.cc:149
+msgid "Mid2 Gain"
+msgstr "Orta2 Kazanç"
+
+#: modules/effects/fivebandmonocomplexeq_impl.cc:157
+msgid "Mid2 Freq"
+msgstr "Orta2 Frekans"
+
+#: modules/effects/fivebandmonocomplexeq_impl.cc:161
+msgid "Mid2 Q"
+msgstr "Orta2 Q"
+
+#: modules/effects/fivebandmonocomplexeq_impl.cc:166
+msgid "Mid3 Gain"
+msgstr "Orta3 Kazanç"
+
+#: modules/effects/fivebandmonocomplexeq_impl.cc:174
+msgid "Mid3 Freq"
+msgstr "Orta3 Frekans"
+
+#: modules/effects/fivebandmonocomplexeq_impl.cc:178
+msgid "Mid3 Q"
+msgstr "Orta3 Q"
+
+#: modules/effects/fivebandmonocomplexeq_impl.cc:183
+msgid "High Gain"
+msgstr "Yüksek kazanç"
+
+#: modules/effects/fivebandmonocomplexeq_impl.cc:191
+msgid "High Freq"
+msgstr "Yüksek Frekans"
+
+#: modules/effects/fivebandmonocomplexeq_impl.cc:195
+msgid "High Q"
+msgstr "Yüksek Q"
+
+#: modules/effects/freeverbguifactory_impl.cc:57
+msgid "roomsize"
+msgstr "odaboyutu"
+
+#: modules/effects/freeverbguifactory_impl.cc:67
+msgid "damp"
+msgstr "nemli"
+
+#: modules/effects/freeverbguifactory_impl.cc:77
+msgid "wet"
+msgstr "ıslak"
+
+#: modules/effects/freeverbguifactory_impl.cc:87
+msgid "dry"
+msgstr "kuru"
+
+#: modules/effects/freeverbguifactory_impl.cc:97
+msgid "width"
+msgstr "genişlik"
+
+#: modules/effects/monostereoconversion_impl.cc:149
+msgid "Balance"
+msgstr "Denge"
+
+#: modules/effects/stereocompressorguifactory_impl.cc:44
+msgid "attack"
+msgstr "saldırı"
+
+#: modules/effects/stereocompressorguifactory_impl.cc:52
+msgid "release"
+msgstr "sürüm"
+
+#: modules/effects/stereocompressorguifactory_impl.cc:60
+msgid "thresh."
+msgstr "eşik."
+
+#: modules/effects/stereocompressorguifactory_impl.cc:68
+msgid "ratio"
+msgstr "oran"
+
+#: modules/effects/stereocompressorguifactory_impl.cc:75
+msgid "output"
+msgstr "çıkış"
+
+#: modules/effects/stereocompressorguifactory_impl.cc:83
+msgid "Bypass"
+msgstr "Yangeçiş"
+
+#: modules/effects/synth_stereo_fir_equalizer_impl.cc:192
+msgid "a graph"
+msgstr "çizge"
+
+#: modules/mixers/littlestereomixerchannel_impl.cc:114
+#: modules/mixers/monosimplemixerchannelguifactory_impl.cc:77
+#: modules/mixers/simplemixerchannelguifactory_impl.cc:64
+msgid "pan"
+msgstr "Süzgeçten geçir"
+
+#: modules/mixers/littlestereomixerchannel_impl.cc:121
+#: modules/mixers/monosimplemixerchannelguifactory_impl.cc:84
+#: modules/mixers/simplemixerchannelguifactory_impl.cc:71
+msgid "volume"
+msgstr "ses"
+
+#: modules/mixers/monosimplemixerchannelguifactory_impl.cc:24
+msgid "gain"
+msgstr "kazanç"
+
+#: modules/mixers/monosimplemixerchannelguifactory_impl.cc:31
+msgid "EQ"
+msgstr "EQ"
+
+#: modules/mixers/monosimplemixerchannelguifactory_impl.cc:40
+#: modules/mixers/simplemixerchannelguifactory_impl.cc:22
+msgid ""
+"_: volume\n"
+"high"
+msgstr "yüksek"
+
+#: modules/mixers/monosimplemixerchannelguifactory_impl.cc:47
+#: modules/mixers/simplemixerchannelguifactory_impl.cc:30
+msgid ""
+"_: volume\n"
+"mid"
+msgstr "orta"
+
+#: modules/mixers/monosimplemixerchannelguifactory_impl.cc:54
+#: modules/mixers/simplemixerchannelguifactory_impl.cc:38
+msgid ""
+"_: volume\n"
+"low"
+msgstr "düşük"
+
+#: modules/mixers/monosimplemixerchannelguifactory_impl.cc:61
+#: modules/mixers/simplemixerchannelguifactory_impl.cc:46
+msgid "frequency"
+msgstr "sıklık"
+
+#: modules/mixers/monosimplemixerchannelguifactory_impl.cc:69
+#: modules/mixers/simplemixerchannelguifactory_impl.cc:55
+msgid "q"
+msgstr "q"
+
+#: gui/kde/dbtest.cpp:29
+msgid "dBTest"
+msgstr "dbdeneme"
+
+#: gui/kde/dbtest.cpp:32
+msgid "Creator"
+msgstr "Yapımcı"
+
+#: gui/kde/kvolumefader_impl.cpp:124
+msgid "Set Exact Value..."
+msgstr "Kesin Değeri Yerleştir..."
+
+#: gui/kde/kvolumefader_impl.cpp:236
+msgid "Set Exact Volume Value"
+msgstr "Kesin ses değerini belirle"
+
+#: gui/kde/kvolumefader_impl.cpp:236
+msgid "Exact volume (dB):"
+msgstr "Kesin Ses (dB):"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "erkaN kaplaN"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "erkan@linux-sevenler.org"

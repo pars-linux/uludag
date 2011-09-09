@@ -1,0 +1,495 @@
+# translation of kanagram.po to
+#
+# Görkem Çetin <gorkem@gorkemcetin.com>, 2005.
+# İlker Kesen <ikesen92@gmail.com>, 2007.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kanagram\n"
+"POT-Creation-Date: 2008-07-08 01:24+0200\n"
+"PO-Revision-Date: 2007-05-20 17:46+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "İlker Kesen"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "ikesen92@gmail.com"
+
+#: grammarmanager.cpp:33
+msgid "Simple Present"
+msgstr "Geniş Zaman"
+
+#: grammarmanager.cpp:34
+msgid "Present Progressive"
+msgstr "Şimdiki Zaman"
+
+#: grammarmanager.cpp:35
+msgid "Present Perfect"
+msgstr "Yakın Geçmiş Zaman"
+
+#: grammarmanager.cpp:37
+msgid "Simple Past"
+msgstr "Geçmiş Zaman"
+
+#: grammarmanager.cpp:38
+msgid "Past Progressive"
+msgstr "Geçmişte Gerçekleşmekte olan Zaman"
+
+#: grammarmanager.cpp:39
+msgid "Past Participle"
+msgstr "Edilgen Yapı"
+
+#: grammarmanager.cpp:41
+msgid "Future"
+msgstr "Gelecek Zaman"
+
+#: kanagram.cpp:55
+msgid "reveal word"
+msgstr "sözcüğü göster"
+
+#: kanagram.cpp:56
+msgid "hint"
+msgstr "ipucu"
+
+#: kanagram.cpp:263
+msgid "About Kanagram"
+msgstr "Kanagram Hakkında"
+
+#: kanagram.cpp:270
+msgid "About KDE"
+msgstr "KDE Hakkında"
+
+#: kanagram.cpp:277
+msgid "Kanagram Handbook"
+msgstr "Kanagram El Kitabı"
+
+#: kanagram.cpp:285
+msgid "Next Word"
+msgstr "Sıradaki Sözcük"
+
+#: kanagram.cpp:290
+msgid "Configure Kanagram"
+msgstr "Kanagram'ı Yapılandır"
+
+#: kanagram.cpp:295
+msgid "Quit Kanagram"
+msgstr "Kanagram'dan Çık"
+
+#. i18n: file ./mainsettingswidget.ui line 16
+#: kanagram.cpp:743 rc.cpp:51
+#, no-c-format
+msgid "General"
+msgstr "Genel"
+
+#. i18n: file ./vocabsettingswidget.ui line 16
+#: kanagram.cpp:745 rc.cpp:99
+#, no-c-format
+msgid "Vocabularies"
+msgstr "Sözlükler"
+
+#. i18n: file ./newstuffwidget.ui line 16
+#: kanagram.cpp:746 rc.cpp:129
+#, no-c-format
+msgid "New Stuff"
+msgstr "Yeni Madde"
+
+#: kanagramgame.cpp:50
+msgid ""
+"File %1 cannot be found.\n"
+" Please ensure that Kanagram is properly installed."
+msgstr ""
+"%1 dosyası bulunamadı.\n"
+" Lütfen Kanagram'ın düzgün bir şekilde yüklendiğinden emin olun."
+
+#: keduvocdocument.cpp:110
+msgid "<qt>Cannot open file<br><b>%1</b></qt>"
+msgstr "<qt>Açılmayan dosya<br><b>%1</b></qt>"
+
+#: keduvocdocument.cpp:165
+msgid ""
+"Could not load \"%1\"\n"
+"Do you want to try again?"
+msgstr ""
+"\"%1\" yüklenemedi.\n"
+"Tekrar denemek ister misiniz?"
+
+#: keduvocdocument.cpp:168 keduvocdocument.cpp:258
+msgid "I/O Failure"
+msgstr "I/O Hatası"
+
+#: keduvocdocument.cpp:169 keduvocdocument.cpp:259
+msgid "&Retry"
+msgstr "&Yeniden Dene"
+
+#: keduvocdocument.cpp:214
+msgid "<qt>Cannot write to file<br><b>%1</b></qt>"
+msgstr "<qt>Yazılamayan dosya<br><b>%1</b></qt>"
+
+#: keduvocdocument.cpp:255
+msgid ""
+"Could not save \"%1\"\n"
+"Do you want to try again?"
+msgstr ""
+"\"%1\" kaydedilemedi.\n"
+"Tekrar denemek istiyor musunuz?"
+
+#: keduvocdocument.cpp:798
+msgid "<no lesson>"
+msgstr "<ders yok>"
+
+#: keduvockvtmlreader.cpp:134
+msgid "expected tag <%1>"
+msgstr "beklenen etiket <%1>"
+
+#: keduvockvtmlreader.cpp:158 keduvockvtmlreader.cpp:317
+#: keduvockvtmlreader.cpp:1122 keduvockvtmlreader.cpp:1301
+msgid "ambiguous definition of language code"
+msgstr "dil kodunun tanımlaması belirsiz"
+
+#: keduvockvtmlreader.cpp:1062 keduvockvtmlreader.cpp:1239
+msgid "starting tag <%1> is missing"
+msgstr "başlangıç etiketi <%1> bulunmuyor"
+
+#: keduvockvtmlreader.cpp:1142 keduvockvtmlreader.cpp:1155
+#: keduvockvtmlreader.cpp:1168 keduvockvtmlreader.cpp:1320
+#: keduvockvtmlreader.cpp:1333 keduvockvtmlreader.cpp:1346
+#: keduvockvtmlreader.cpp:1459 keduvockvtmlreader.cpp:1471
+#: keduvockvtmlreader.cpp:1483 keduvockvtmlreader.cpp:1495
+#: keduvockvtmlreader.cpp:1507 keduvockvtmlreader.cpp:1519
+#: keduvockvtmlreader.cpp:1531
+msgid "repeated occurrence of tag <%1>"
+msgstr "etiketin tekrarlanması olayı <%1>"
+
+#: keduvockvtmlreader.cpp:1592
+msgid "Tag <%1> was expected but tag <%2> was read."
+msgstr "<%1> etiketi bekleniliyordu fakat <%2> etiketi okundu."
+
+#: keduvockvtmlreader.cpp:1670 keduvockvtmlreader.cpp:1690
+msgid ""
+"File:\t%1\n"
+msgstr ""
+"Dosya:\t%1\n"
+
+#: keduvockvtmlreader.cpp:1673
+msgid ""
+"Your document contains an unknown tag <%1>.  Maybe your version of KVocTrain is "
+"too old, or the document is damaged.\n"
+"Loading is aborted because KVocTrain cannot read documents with unknown "
+"elements.\n"
+msgstr ""
+"Dökümanınız bilinmeyen <%1> etiketini kapsıyor. KVocTrain sürümünüz çok eski "
+"veya dökümanınız zarar görmüş olabilir.\n"
+"Yükleme iptal edildi; çünkü KVocTrain dökümanları okuyamadı.\n"
+
+#: keduvockvtmlreader.cpp:1681
+msgid "Unknown Element"
+msgstr "Bilinmeyen Öge"
+
+#: main.cpp:32
+msgid "Kanagram"
+msgstr "Kanagram"
+
+#: main.cpp:32
+msgid "An anagram game"
+msgstr "Bir anagram oyunu"
+
+#: main.cpp:33
+msgid "Coding"
+msgstr "Kodlama"
+
+#: main.cpp:34
+msgid "Design, Graphics and many Vocabularies"
+msgstr "Tasarım, Grafikler ve daha fazla Sözlük"
+
+#: main.cpp:35
+msgid "Sound effects"
+msgstr "Ses efektleri"
+
+#: mainsettings.cpp:56 mainsettings.cpp:125
+msgid "Cyrillic"
+msgstr "Islavca"
+
+#: mainsettings.cpp:60 mainsettings.cpp:129
+msgid "Latin"
+msgstr "Latince"
+
+#: mainsettings.cpp:142
+msgid "Please restart Kanagram to activate the new font."
+msgstr "Yeni yazı tipini aktifleştirmek için Kanagram'ı yeniden başlatın."
+
+#: mainsettings.cpp:150
+msgid ""
+"The font could not be installed. Please check that you are properly connected "
+"to the Internet."
+msgstr ""
+"Yazı tipi yüklenemedi. Lütfen internete bağlı olup olmadığınızı kontrol ediniz."
+
+#. i18n: file ./vocabeditwidget.ui line 16
+#: rc.cpp:3
+#, no-c-format
+msgid "Vocabulary Editor"
+msgstr "Sözlük Düzenleyicisi"
+
+#. i18n: file ./vocabeditwidget.ui line 77
+#: rc.cpp:12
+#, no-c-format
+msgid "Description:"
+msgstr "Açıklama:"
+
+#. i18n: file ./vocabeditwidget.ui line 83
+#: rc.cpp:15
+#, no-c-format
+msgid ""
+"The description of the vocabulary. If you're creating a new vocabulary, add a "
+"description so that users of your vocabulary will know what kinds of words it "
+"contains."
+msgstr ""
+"Sözlüğün açıklaması. Eğer yeni bir sözlük yaratıyorsanız, bir açıklama ekleyin "
+"böylece kullanıcılar sizin sözlüğünüzün ne tür sözcükleri kapsadığını "
+"bilecektir."
+
+#. i18n: file ./vocabeditwidget.ui line 96
+#: rc.cpp:18
+#, no-c-format
+msgid "Vocabulary name:"
+msgstr "Sözlük adı:"
+
+#. i18n: file ./vocabeditwidget.ui line 102
+#: rc.cpp:21
+#, no-c-format
+msgid "The name of the vocabulary you are editing."
+msgstr "Düzenlediğiniz sözlüğün adı."
+
+#. i18n: file ./vocabeditwidget.ui line 133
+#: rc.cpp:24
+#, no-c-format
+msgid "Remove Word"
+msgstr "Sözcüğü Sil"
+
+#. i18n: file ./vocabeditwidget.ui line 136
+#: rc.cpp:27
+#, no-c-format
+msgid "Removes the selected word."
+msgstr "Seçilen sözcükleri siler."
+
+#. i18n: file ./vocabeditwidget.ui line 144
+#: rc.cpp:30
+#, no-c-format
+msgid "New Word"
+msgstr "Yeni Sözcük"
+
+#. i18n: file ./vocabeditwidget.ui line 147
+#: rc.cpp:33
+#, no-c-format
+msgid "Creates a new word."
+msgstr "Yeni bir sözcük yaratır."
+
+#. i18n: file ./vocabeditwidget.ui line 157
+#: rc.cpp:36
+#, no-c-format
+msgid "The list of words in the vocabulary."
+msgstr "Sözlükteki sözcüklerin listesi."
+
+#. i18n: file ./vocabeditwidget.ui line 175
+#: rc.cpp:39
+#, no-c-format
+msgid "Word:"
+msgstr "Sözcük:"
+
+#. i18n: file ./vocabeditwidget.ui line 181
+#: rc.cpp:42
+#, no-c-format
+msgid "The selected word. This box allows you to edit the selected word."
+msgstr ""
+"Seçilmiş sözcük. Bu kutu size seçilmiş kelimeleri düzenlemeniz için izin verir."
+
+#. i18n: file ./vocabeditwidget.ui line 199
+#: rc.cpp:45
+#, no-c-format
+msgid "Hint:"
+msgstr "İpucu:"
+
+#. i18n: file ./vocabeditwidget.ui line 205
+#: rc.cpp:48
+#, no-c-format
+msgid "The selected hint. Add a hint to aid in guessing the word."
+msgstr ""
+"Seçilmiş ipucu. Sözcüğün tahmin edilmesine yardımcı olmak için ipucu ekleyin."
+
+#. i18n: file ./mainsettingswidget.ui line 19
+#: rc.cpp:54
+#, no-c-format
+msgid ""
+"This setting allows you to set the length of time that Kanagram's hint bubble "
+"is shown."
+msgstr ""
+"Bu ayar sizin Kanagram'ın ipucu balonunun gösterilme süresini ayarlayabilmenizi "
+"sağlar."
+
+#. i18n: file ./mainsettingswidget.ui line 30
+#: rc.cpp:57
+#, no-c-format
+msgid "Hints"
+msgstr "İpuçları"
+
+#. i18n: file ./mainsettingswidget.ui line 41
+#: rc.cpp:60
+#, no-c-format
+msgid "Auto-hide hints after:"
+msgstr "İpuçlarını otomatik gizle:"
+
+#. i18n: file ./mainsettingswidget.ui line 47
+#: rc.cpp:63
+#, no-c-format
+msgid "Do Not Auto-Hide Hints"
+msgstr "İpuçlarını otomatik gizleme"
+
+#. i18n: file ./mainsettingswidget.ui line 52
+#: rc.cpp:66
+#, no-c-format
+msgid "3 Seconds"
+msgstr "3 Saniye"
+
+#. i18n: file ./mainsettingswidget.ui line 57
+#: rc.cpp:69
+#, no-c-format
+msgid "5 Seconds"
+msgstr "5 Saniye"
+
+#. i18n: file ./mainsettingswidget.ui line 62
+#: rc.cpp:72
+#, no-c-format
+msgid "7 Seconds"
+msgstr "7 Saniye"
+
+#. i18n: file ./mainsettingswidget.ui line 67
+#: rc.cpp:75
+#, no-c-format
+msgid "9 Seconds"
+msgstr "9 Saniye"
+
+#. i18n: file ./mainsettingswidget.ui line 81
+#: rc.cpp:78
+#, no-c-format
+msgid "Vocabulary Options"
+msgstr "Sözlük Seçenekleri"
+
+#. i18n: file ./mainsettingswidget.ui line 100
+#: rc.cpp:81
+#, no-c-format
+msgid "Play using:"
+msgstr "Dil Seçimi:"
+
+#. i18n: file ./mainsettingswidget.ui line 128
+#: rc.cpp:84
+#, no-c-format
+msgid "Use standard fonts"
+msgstr "Standart yazı tipini kullan"
+
+#. i18n: file ./mainsettingswidget.ui line 134
+#: rc.cpp:87
+#, no-c-format
+msgid "Uses a standard font for the chalkboard/interface."
+msgstr "Arayüz için standart bir yazı tipi kullanır."
+
+#. i18n: file ./mainsettingswidget.ui line 142
+#: rc.cpp:90
+#, no-c-format
+msgid "Get Chalk Font"
+msgstr "Tebeşir yazı tipini al"
+
+#. i18n: file ./mainsettingswidget.ui line 152
+#: rc.cpp:93
+#, no-c-format
+msgid "Use sou&nds"
+msgstr "&Sesleri Kullan"
+
+#. i18n: file ./mainsettingswidget.ui line 155
+#: rc.cpp:96
+#, no-c-format
+msgid "Turns sounds on/off."
+msgstr "Sesleri aç/kapa."
+
+#. i18n: file ./vocabsettingswidget.ui line 43
+#: rc.cpp:102
+#, no-c-format
+msgid "Create New"
+msgstr "Yeni Oluştur"
+
+#. i18n: file ./vocabsettingswidget.ui line 46
+#: rc.cpp:105
+#, no-c-format
+msgid "Creates a new vocabulary."
+msgstr "Yeni bir sözlük yaratır."
+
+#. i18n: file ./vocabsettingswidget.ui line 57
+#: rc.cpp:111
+#, no-c-format
+msgid "Edits the selected vocabulary."
+msgstr "Seçilmiş sözlüğü düzenler."
+
+#. i18n: file ./vocabsettingswidget.ui line 68
+#: rc.cpp:117
+#, no-c-format
+msgid "Deletes the selected vocabulary."
+msgstr "Seçilmiş sözlüğü siler."
+
+#. i18n: file ./vocabsettingswidget.ui line 76
+#: rc.cpp:120
+#, no-c-format
+msgid "Title"
+msgstr "Başlık"
+
+#. i18n: file ./vocabsettingswidget.ui line 87
+#: rc.cpp:123
+#, no-c-format
+msgid "Description"
+msgstr "Açıklama"
+
+#. i18n: file ./vocabsettingswidget.ui line 106
+#: rc.cpp:126
+#, no-c-format
+msgid "The list of installed vocabularies."
+msgstr "Yüklenmiş sözlüklerin listesi."
+
+#. i18n: file ./newstuffwidget.ui line 31
+#: rc.cpp:132
+#, no-c-format
+msgid ""
+"Kanagram allows you to download\n"
+"new data from the Internet.\n"
+"\n"
+"If you are connected to the Internet, press \n"
+"the button to get new vocabulary files."
+msgstr ""
+"Kanagram size internetten yeni\n"
+"veriler indirmenize izin verir.\n"
+"\n"
+"Eğer internete bağlıysanız, yeni sözlükler\n"
+"indirmek için düğmeye basınız."
+
+#. i18n: file ./newstuffwidget.ui line 56
+#: rc.cpp:139
+#, no-c-format
+msgid "Download New Vocabularies"
+msgstr "Yeni Sözlükler İndir"
+
+#: vocabedit.cpp:117
+msgid "Would you like to save your changes?"
+msgstr "Bu ayarları korumak istiyor musunuz?"
+
+#: vocabedit.cpp:117
+msgid "Save Changes Dialog"
+msgstr "Değişiklikleri Kaydet Penceresi"

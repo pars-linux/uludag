@@ -1,0 +1,360 @@
+# translation of artscontrol.po to
+# Copyright (C) 2003, 2004, 2007 Free Software Foundation, Inc.
+#
+# Mehmet TARIMCI <mehmet@gelecek.com.tr>, 2000.
+# Görkem Çetin <gorkem@kde.org>, 2002, 2003.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+# YILDIZ KARDESLER <turkishprogram@xposta.com>, 2004.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: artscontrol\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-01-08 01:21+0100\n"
+"PO-Revision-Date: 2007-05-16 17:41+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: artscontrolapplet_private.h:85
+msgid "Toggle &Inline FFT Scope"
+msgstr "Satıriçi &FFT Sahasını Seç"
+
+#: artscontrolapplet_private.h:98 fftscopeview.cpp:89
+msgid "VU-Style"
+msgstr "VU-Stili"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "erkaN kaplaN"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "erkaN@linux-sevenler.de"
+
+#: artsactions.cpp:65
+msgid "&FFT Scope"
+msgstr "&FFT Sahası"
+
+#: artsactions.cpp:69
+msgid "&Audio Manager"
+msgstr "&Ses Yöneticisi"
+
+#: artsactions.cpp:73
+msgid "aRts &Status"
+msgstr "aRts &Durumu"
+
+#: artsactions.cpp:77
+msgid "&MIDI Manager"
+msgstr "&MIDI Yöneticisi"
+
+#: artsactions.cpp:81
+msgid "&Environment"
+msgstr "Ç&evre"
+
+#: artsactions.cpp:85
+msgid "Available Media &Types"
+msgstr "Kullanılabilir Medya &Türleri"
+
+#: artsactions.cpp:90
+msgid "Style: NormalBars"
+msgstr "Biçim: Normal Çubuklar"
+
+#: artsactions.cpp:94
+msgid "Style: FireBars"
+msgstr "Biçim: Alevli Çubuklar"
+
+#: artsactions.cpp:98
+msgid "Style: LineBars"
+msgstr "Biçim: Düz Çubuklar"
+
+#: artsactions.cpp:102
+msgid "Style: LEDs"
+msgstr "Biçim: Işıklı LED"
+
+#: artsactions.cpp:106
+msgid "Style: Analog"
+msgstr "Biçim: Analog"
+
+#: artsactions.cpp:110
+msgid "Style: Small"
+msgstr "Biçim: Küçük"
+
+#: artsactions.cpp:128
+msgid "More Bars in VU-Meters"
+msgstr "VU-Metrede Daha Fazla Çubuk"
+
+#: artsactions.cpp:132
+msgid "Less Bars in VU-Meters"
+msgstr "VU-Metrede Daha Az Çubuklar"
+
+#: artscontrolapplet.cpp:48
+msgid ""
+"Something with the ArtsServer went wrong. You probably need to restart aRts and "
+"then reload this applet."
+msgstr ""
+"ArtsSunucusu ile ilgili birşeyler yanlış gitti· aRts'ı yeniden başlatıp bu "
+"apleti yeniden yüklemelisiniz."
+
+#: artscontrolapplet.cpp:77
+msgid "aRts Control Applet"
+msgstr "aRts Kontrol Programı"
+
+#: artscontrolapplet.cpp:78
+msgid "A kickerapplet to control aRts."
+msgstr "aRts denetimi için kickerapleti"
+
+#: artscontrolapplet.cpp:79
+msgid "(c) 2003 by Arnold Krille"
+msgstr "(c) 2003 Arnold Krille"
+
+#: artscontrolapplet.cpp:80
+msgid "Author of the Applet"
+msgstr "Programcığın Yazarı"
+
+#: artscontrolapplet.cpp:81
+msgid "Thanks for creating aRts!"
+msgstr "aRts oluşturduğunuz için teşekkürler!"
+
+#: audiomanager.cpp:42
+msgid "Audio Manager"
+msgstr "Ses Yöneticisi"
+
+#: audiomanager.cpp:100
+msgid "Title"
+msgstr "Başlık"
+
+#: audiomanager.cpp:101
+msgid "Type"
+msgstr "Tip"
+
+#: audiomanager.cpp:102
+msgid "Bus"
+msgstr "Veriyolu"
+
+#: audiomanager.cpp:134
+msgid "play"
+msgstr "çal"
+
+#: audiomanager.cpp:136
+msgid "record"
+msgstr "kaydet"
+
+#: choosebusdlg.cpp:49
+msgid "Choose Bus"
+msgstr "Taşıyıcıyı Seç"
+
+#: choosebusdlg.cpp:60
+msgid "Available busses:"
+msgstr "Mevcut taşıyıcılar"
+
+#: choosebusdlg.cpp:105
+msgid "New bus:"
+msgstr "Yeni taşıyıcı:"
+
+#: environmentview.cpp:66
+msgid "Environment"
+msgstr "Çevre"
+
+#: environmentview.cpp:77
+msgid "Add Mixer"
+msgstr "Karıştırıcı Ekle"
+
+#: environmentview.cpp:80
+msgid "Add Effect Rack"
+msgstr "Etki Askısı Ekle"
+
+#: environmentview.cpp:83
+msgid "Delete Item"
+msgstr "Öğeyi Sil"
+
+#: environmentview.cpp:87
+#, c-format
+msgid "Load %1"
+msgstr "Yükle: %1"
+
+#: environmentview.cpp:91
+#, c-format
+msgid "Save %1"
+msgstr "Kaydet: %1"
+
+#: fftscopeview.cpp:46
+msgid "FFT Scope View"
+msgstr "FFT Sahası Görünümü"
+
+#: fftscopeview.cpp:87 fftscopeview.cpp:156
+msgid "Substyle"
+msgstr "Altstil"
+
+#: fftscopeview.cpp:156
+msgid "Please enter substyle:"
+msgstr "Lütfen altsili girin:"
+
+#: main.cpp:74
+msgid "No GUI found for this effect."
+msgstr "Bu efekt için grafiksel arayüz bulunamadı."
+
+#: main.cpp:150
+msgid "aRts Master Volume"
+msgstr "aRts Ana Sesi"
+
+#: main.cpp:175
+msgid "Toggle Free&Verb"
+msgstr "Serbest&Verb Seç"
+
+#: main.cpp:177
+msgid "Old aRts-Control-Style for VU-Meter"
+msgstr "VU-Metre için eski aRts-Denetim-Stili"
+
+#: main.cpp:192
+msgid "aRts control"
+msgstr "aRts kontrol"
+
+#: main.cpp:193
+msgid "Control tool for the aRts server"
+msgstr "aRts sunucusu için denetim aracı"
+
+#: main.cpp:194
+msgid ""
+"(c) 2000 Stefan Westerfeld\n"
+"(c) 2003 Arnold Krille"
+msgstr ""
+"(c) 2000 Stefan Westerfeld\n"
+"(c) 2003 Arnold Krille"
+
+#: main.cpp:195
+msgid "Author and aRts maintainer"
+msgstr "Yazar ve aRts geliştirici"
+
+#: main.cpp:196
+msgid "Some improvements"
+msgstr "Bazı gelişmeler"
+
+#: mediatypesview.cpp:38
+msgid "Available Media Types"
+msgstr "Kullanılabilir Medya Türleri"
+
+#: mediatypesview.cpp:44
+msgid "Media Type"
+msgstr "Ses Aygıt Türü"
+
+#: midiinstdlg.cpp:78
+msgid "Instrument"
+msgstr "Enstruman"
+
+#. i18n: file midimanagerdlg.ui line 16
+#: midimanagerview.cpp:122 midimanagerview.cpp:141 rc.cpp:9 rc.cpp:30
+#, no-c-format
+msgid "MIDI Manager"
+msgstr "MIDI Yöneticisi"
+
+#: midimanagerview.cpp:125
+msgid "&System MIDI Port (OSS)"
+msgstr "&Sistem MIDI Portu (OSS)"
+
+#: midimanagerview.cpp:127
+msgid "&aRts Synthesis MIDI Output"
+msgstr "&aRts Sentez MIDI Çıktısı"
+
+#: midiportdlg.cpp:46
+msgid "OSS MIDI Port"
+msgstr "OSS MIDI Portu"
+
+#. i18n: file artsmidimanagerview.rc line 4
+#: rc.cpp:6
+#, no-c-format
+msgid "&Add"
+msgstr "&Ekle "
+
+#. i18n: file midimanagerdlg.ui line 33
+#: rc.cpp:12 rc.cpp:33
+#, no-c-format
+msgid "MIDI inputs:"
+msgstr "MIDI Girdileri:"
+
+#. i18n: file midimanagerdlg.ui line 41
+#: rc.cpp:15 rc.cpp:36
+#, no-c-format
+msgid "MIDI outputs:"
+msgstr "MIDI Çıktıları:"
+
+#. i18n: file midimanagerdlg.ui line 86
+#: rc.cpp:18
+#, no-c-format
+msgid "&Add..."
+msgstr "&Ekle..."
+
+#. i18n: file midimanagerdlg.ui line 102
+#: rc.cpp:24 rc.cpp:39
+#, no-c-format
+msgid "&Connect"
+msgstr "&Bağlan"
+
+#. i18n: file midimanagerdlg.ui line 110
+#: rc.cpp:27 rc.cpp:42
+#, no-c-format
+msgid "&Disconnect"
+msgstr "&Ayrıl"
+
+#: statusview.cpp:40
+msgid "aRts Status"
+msgstr "aRts Durumu"
+
+#: statusview.cpp:46
+msgid "Artsd is running with realtime scheduling."
+msgstr "Artsd gerçek zamanlı olarak çalışıyor."
+
+#: statusview.cpp:48
+msgid "Your system does not support realtime scheduling."
+msgstr "Sisteminiz gerçek zamanlı çalışmayı desteklemiyor."
+
+#: statusview.cpp:50
+msgid ""
+"Artsd is not configured for realtime scheduling\n"
+" or was manually started without artswrapper."
+msgstr ""
+"Artsd gerçek zamanlı çalışma için ayarlanmamış \n"
+"veya artswrapper kullanılmadan elle başlatılmış."
+
+#: statusview.cpp:52
+msgid ""
+"Artsd should run with realtime scheduling,\n"
+" but it does not (Is artswrapper suid root?)."
+msgstr ""
+"Artsd gerçek zamanlı olarak çalışmalı,\n"
+"ancak öyle değil (artswrapper, suid root haklarında mı ?)."
+
+#: statusview.cpp:57
+msgid "Determining suspend status..."
+msgstr "Durdurulma durumunu belirliyor ..."
+
+#: statusview.cpp:64
+msgid "&Suspend Now"
+msgstr "Şimdi &Durdur"
+
+#: statusview.cpp:84
+msgid ""
+"The aRts sound daemon will not autosuspend right\n"
+"now since there are active modules."
+msgstr ""
+"Etkin modüller olduğu için aRts ses sistemi\n"
+"otomatik olarak durmayacaktır."
+
+#: statusview.cpp:87
+msgid ""
+"The aRts sound daemon is suspended. Legacy\n"
+" applications can use the sound card now."
+msgstr ""
+"aRts ses sistemi durduruldu.\n"
+"Uygulamalar ses kartını kullanabilir."
+
+#: statusview.cpp:90
+msgid "Autosuspend will happen in %1 seconds."
+msgstr "Otomatik durma %1 saniye içinde gerçekleşecek."

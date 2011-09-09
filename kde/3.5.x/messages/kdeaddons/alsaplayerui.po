@@ -1,0 +1,133 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Durmuş Celep <durmusc_tr@yahoo.com>,2002.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>,2002.
+msgid ""
+msgstr ""
+"Project-Id-Version: alsaplayerui\n"
+"POT-Creation-Date: 2008-07-08 01:23+0200\n"
+"PO-Revision-Date: 2005-02-17 15:32+0200\n"
+"Last-Translator: Adil YILDIZ <adil@kde.org.tr>\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.6\n"
+
+#: configmodule.cpp:36
+msgid "AlsaPlayer"
+msgstr "Alsa Çalıcı"
+
+#: configmodule.cpp:37
+msgid "AlsaPlayer Interface Settings"
+msgstr "Alsa Çalıcı Arayüz Ayarları"
+
+#: configmodule.cpp:42
+msgid "Scroll song title"
+msgstr "Şarkı başlığını kaydır"
+
+#. i18n: file AlsaPlayer.ui line 16
+#: rc.cpp:3
+#, no-c-format
+msgid "Noaplayer"
+msgstr "Noaplayer"
+
+#. i18n: file AlsaPlayer.ui line 575
+#: rc.cpp:6
+#, no-c-format
+msgid "Speed:"
+msgstr "Hız:"
+
+#. i18n: file AlsaPlayer.ui line 849
+#: rc.cpp:9
+#, no-c-format
+msgid "No time data"
+msgstr "Zaman verisi yok"
+
+#. i18n: file AlsaPlayer.ui line 1118
+#: rc.cpp:12 rc.cpp:18
+#, no-c-format
+msgid "100%"
+msgstr "% 100"
+
+#. i18n: file AlsaPlayer.ui line 1387
+#: rc.cpp:15
+#, no-c-format
+msgid "No stream"
+msgstr "Akım yok"
+
+#. i18n: file AlsaPlayer.ui line 1925
+#: rc.cpp:21
+#, no-c-format
+msgid "Volume:"
+msgstr "Ses:"
+
+#. i18n: file AlsaPlayer.ui line 2199
+#: rc.cpp:24
+#, no-c-format
+msgid "..."
+msgstr "..."
+
+#. i18n: file AlsaPlayer.ui line 2297
+#: rc.cpp:27
+#, no-c-format
+msgid "Menu"
+msgstr "Menü"
+
+#. i18n: file AlsaPlayer.ui line 2314
+#: rc.cpp:30
+#, no-c-format
+msgid "Skip to previous track"
+msgstr "Önceki ize atla"
+
+#. i18n: file AlsaPlayer.ui line 2331
+#: rc.cpp:33
+#, no-c-format
+msgid "Play"
+msgstr "Çal"
+
+#. i18n: file AlsaPlayer.ui line 2348
+#: rc.cpp:36
+#, no-c-format
+msgid "Skip to next track"
+msgstr "Sonraki ize atla"
+
+#. i18n: file AlsaPlayer.ui line 2382
+#: rc.cpp:42
+#, no-c-format
+msgid "Show playlist"
+msgstr "Çalma listesini göster"
+
+#. i18n: file AlsaPlayer.ui line 2455
+#: rc.cpp:45
+#, no-c-format
+msgid "Pause"
+msgstr "Beklet"
+
+#. i18n: file AlsaPlayer.ui line 2475
+#: rc.cpp:48
+#, no-c-format
+msgid "Forwards, normal speed"
+msgstr "İleri, normal hız"
+
+#. i18n: file AlsaPlayer.ui line 2495
+#: rc.cpp:51
+#, no-c-format
+msgid "Playback speed and direction"
+msgstr "Oynatma hızı ve yönü"
+
+#. i18n: file AlsaPlayer.ui line 2530
+#: rc.cpp:54 rc.cpp:57
+#, no-c-format
+msgid "Balance"
+msgstr "Denge"
+
+#. i18n: file AlsaPlayer.ui line 2561
+#: rc.cpp:60 rc.cpp:63
+#, no-c-format
+msgid "Volume"
+msgstr "Ses"
+
+#: userinterface.cpp:207
+msgid "No File Loaded"
+msgstr "Yüklenen Dosya Yok"

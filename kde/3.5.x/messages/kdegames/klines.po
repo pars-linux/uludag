@@ -1,0 +1,262 @@
+# translation of klines.po to Türkçe
+# translation of klines.po to
+# translation of klines.po to Turkish
+# kde
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2001,2002, 2003, 2004.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Ömer Fadıl USTA <omer_fad@yahoo.com>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: klines\n"
+"POT-Creation-Date: 2005-07-03 01:31+0200\n"
+"PO-Revision-Date: 2004-10-17 21:27+0300\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Ömer Fadıl USTA"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "omer_fad@hotmail.com"
+
+#: ballpainter.cpp:69
+msgid "Unable to find graphics. Check your installation."
+msgstr "Grafik dosyaları bulunamadı."
+
+#: klines.cpp:52
+msgid "Very Easy"
+msgstr "Çok Kolay"
+
+#: klines.cpp:52
+msgid "Easy"
+msgstr "Kolay"
+
+#: klines.cpp:52
+msgid "Normal"
+msgstr "Normal"
+
+#: klines.cpp:52
+msgid "Hard"
+msgstr "Zor"
+
+#: klines.cpp:53
+msgid "Very Hard"
+msgstr "Çok Zor"
+
+#: klines.cpp:78
+msgid " Score:"
+msgstr " Puan:"
+
+#: klines.cpp:80
+msgid " Level: "
+msgstr " Seviye: "
+
+#: klines.cpp:109 klines.cpp:206 klines.cpp:377
+msgid "Start &Tutorial"
+msgstr "Öğreti&ciyi Başlat"
+
+#: klines.cpp:113
+msgid "&Show Next"
+msgstr "Sonrakini &Göster"
+
+#: klines.cpp:115
+msgid "Hide Next"
+msgstr "Sonrakini Gizle"
+
+#: klines.cpp:116
+msgid "&Use Numbered Balls"
+msgstr "&Numaralı Toplar Kullan"
+
+#: klines.cpp:131
+msgid "Move Left"
+msgstr "Sola Taşı"
+
+#: klines.cpp:132
+msgid "Move Right"
+msgstr "Sağa Taşı"
+
+#: klines.cpp:133
+msgid "Move Up"
+msgstr "Yukarı Taşı"
+
+#: klines.cpp:134
+msgid "Move Down"
+msgstr "Aşağı Taşı"
+
+#: klines.cpp:135
+msgid "Move Ball"
+msgstr "Topu Taşı"
+
+#: klines.cpp:167 klines.cpp:186 klines.cpp:205 klines.cpp:422 klines.cpp:431
+#, c-format
+msgid " Level: %1"
+msgstr " Seviye: %1"
+
+#: klines.cpp:182
+msgid "Stop &Tutorial"
+msgstr "Öğretmeni &Durdur"
+
+#: klines.cpp:185
+msgid "Tutorial"
+msgstr "Öğretmen"
+
+#: klines.cpp:205
+msgid "Tutorial - Stopped"
+msgstr "Öğretim - Durduruldu"
+
+#: klines.cpp:225
+msgid ""
+"The goal of the game is to put\n"
+"5 balls of the same color in line."
+msgstr ""
+"Oyunun amacı 5 aynı renk topu\n"
+"bir satırda bir araya getirmektir."
+
+#: klines.cpp:234
+msgid ""
+"You can make horizontal, vertical\n"
+"and diagonal lines."
+msgstr ""
+"Dikey, yatay veya çapraz\n"
+"çizgiler oluşturabilirsiniz."
+
+#: klines.cpp:243
+msgid "Each turn, three new balls are placed on the board."
+msgstr "Her adımda, ekrana üç yeni top yerleştirilecektir."
+
+#: klines.cpp:251
+msgid "Every turn, you can move one ball."
+msgstr "Ancak siz sadece bir topu hareket ettirebilirsiniz."
+
+#: klines.cpp:260
+msgid ""
+"To move a ball, click on it with the mouse,\n"
+"then click where you want the ball to go."
+msgstr ""
+"Bir topu hareket ettirmek için, üzerine bir kez\n"
+"fare ile tıklayın, sonra gideceği yeri tıklayın."
+
+#: klines.cpp:275
+msgid "You just moved the blue ball!"
+msgstr "Mavi topu hareket ettirdiniz!"
+
+#: klines.cpp:283
+msgid ""
+"Balls can be moved to every position on the board,\n"
+"as long as there are no other balls in their way."
+msgstr ""
+"Bir top, yolunda başka bir top yok ise ekran\n"
+"üzerinde her yere taşınabilir."
+
+#: klines.cpp:299
+msgid "Now we only need one more blue ball."
+msgstr "Şimdi bir mavi topa daha ihtiyacımız var."
+
+#: klines.cpp:307
+msgid "It seems to be our lucky day!"
+msgstr "Bugün şanslı günümüz!"
+
+#: klines.cpp:322
+msgid ""
+"Hurray! And away they go!\n"
+"Now lets try the green balls."
+msgstr ""
+"İşte başardık! Toplar kayboldu!\n"
+"Şimdi yeşil toplara bakalım..."
+
+#: klines.cpp:343
+msgid ""
+"Now you try!\n"
+"Click on the green ball and move it to the others!"
+msgstr ""
+"Şimdide Siz deneyin!\n"
+"Yeşil topa tıklayın ve onu diğerlerinin yanına taşıyın!"
+
+#: klines.cpp:355
+msgid "Almost, try again!"
+msgstr "Neredeyse olmuştu, yeniden deneyin!"
+
+#: klines.cpp:360
+msgid "Very good!"
+msgstr "Çok güzel!"
+
+#: klines.cpp:364
+msgid "Whenever you complete a line you get an extra turn."
+msgstr "Bir satırı tamamladığın zaman, sıra yeniden senin olur."
+
+#: klines.cpp:368
+msgid ""
+"This is the end of this tutorial.\n"
+"Feel free to finish the game!"
+msgstr ""
+"Artık eğitimin sonuna geldik.\n"
+"Oyunu bitirmeye çalışın."
+
+#: klines.cpp:422
+msgid "Tutorial - Paused"
+msgstr "Öğretmen - Bekletiliyor"
+
+#: klines.cpp:531
+#, c-format
+msgid " Score: %1"
+msgstr " Puan: %1 "
+
+#: linesboard.cpp:229
+msgid "Game Over"
+msgstr "Oyun Bitti"
+
+#: main.cpp:30
+msgid "Kolor Lines - a little game about balls and how to get rid of them"
+msgstr "Renkli Çizgiler - Renkli toplarla oynanan zevkli bir oyun"
+
+#: main.cpp:35
+msgid ""
+"_: Menu title\n"
+"&Move"
+msgstr ""
+
+#: main.cpp:39
+msgid "Kolor Lines"
+msgstr "Renkli Çizgiler"
+
+#: main.cpp:41
+msgid "Original author"
+msgstr "Asıl yazar"
+
+#: main.cpp:42
+msgid "Rewrite and Extension"
+msgstr "Yeniden yazan ve geliştiren"
+
+#: mwidget.cpp:37
+msgid "Next balls:"
+msgstr "Sonraki toplar:"
+
+#. i18n: file klines.kcfg line 9
+#: rc.cpp:6
+#, no-c-format
+msgid "Difficulty level"
+msgstr "Zorluk seviyesi"
+
+#. i18n: file klines.kcfg line 15
+#: rc.cpp:9
+#, no-c-format
+msgid "Whether to show the next set of balls."
+msgstr "Sonraki toplar gösterilsin mi?"
+
+#. i18n: file klines.kcfg line 19
+#: rc.cpp:12
+#, no-c-format
+msgid "Whether to use numbered balls."
+msgstr "Numaralı toplar kullanılsın mı?"

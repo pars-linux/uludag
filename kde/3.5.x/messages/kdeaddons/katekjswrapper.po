@@ -1,0 +1,42 @@
+# translation of katekjswrapper.po to Türkçe
+# translation of katekjswrapper.po to Turkish
+# Görkem Çetin <gorkem@kde.org>, 2004.
+msgid ""
+msgstr ""
+"Project-Id-Version: katekjswrapper\n"
+"POT-Creation-Date: 2004-10-30 01:25+0200\n"
+"PO-Revision-Date: 2004-10-30 19:44+0300\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9\n"
+
+#: bindings.cpp:93
+msgid "Call of DocumentManager member on destroyed object"
+msgstr "Yokedilmiş nesne üstünde Döküman Yöneticisi çağrısı"
+
+#: bindings.cpp:181 bindings.cpp:313 bindings.cpp:461
+msgid "Method %1 called with wrong signature"
+msgstr "%1 metodu yanlış imza ile çağrıldı"
+
+#: bindings.cpp:197
+msgid "One parameter expected"
+msgstr "Bir parametre beklendi"
+
+#: bindings.cpp:207
+msgid "One or no parameter expected"
+msgstr "Sıfır ya da bir sayıda parametre beklendi"
+
+#: bindings.cpp:215
+msgid "A maximum of three parameters expected"
+msgstr "En fazla üç parametre beklendi"
+
+#: bindings.cpp:280
+msgid "Call of KATE  member on destroyed object"
+msgstr "Yokedilmiş nesne üstünde KATE üyesi çağrısı"
+
+#: bindings.cpp:445
+msgid "Call of MainWindow  member on destroyed object"
+msgstr "Yokedilmiş nesne üstünde Ana Pencere üyesi çağrısı"

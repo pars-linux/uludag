@@ -1,0 +1,50 @@
+# translation of khtmlkttsd.po to Türkçe
+# Görkem Çetin <gorkem@kde.org>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: khtmlkttsd\n"
+"POT-Creation-Date: 2006-01-04 03:13+0100\n"
+"PO-Revision-Date: 2005-06-14 01:34+0200\n"
+"Last-Translator: Adil YILDIZ <adil@kde.org.tr>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: khtmlkttsd.cpp:43
+msgid "&Speak Text"
+msgstr ""
+
+#: khtmlkttsd.cpp:60
+msgid "Cannot Read source"
+msgstr "Kaynaktan okunamadı"
+
+#: khtmlkttsd.cpp:61
+msgid ""
+"You cannot read anything except web pages with\n"
+"this plugin, sorry."
+msgstr ""
+"Bu eklenti ile web siteleri dışında hiçbirşey\n"
+"okuyamazsınız, üzgünüm."
+
+#: khtmlkttsd.cpp:71
+msgid "Starting KTTSD Failed"
+msgstr "KTTDS Başlatımı Başarısız"
+
+#: khtmlkttsd.cpp:86 khtmlkttsd.cpp:125 khtmlkttsd.cpp:131
+msgid "DCOP Call Failed"
+msgstr "DCOP Çağrısı Başarısız"
+
+#: khtmlkttsd.cpp:87
+#, fuzzy
+msgid "The DCOP call supportsMarkup failed."
+msgstr "DCOP çağrısı startText başarısız."
+
+#: khtmlkttsd.cpp:126
+msgid "The DCOP call setText failed."
+msgstr "DCOP çağrısı setText başarısız."
+
+#: khtmlkttsd.cpp:132
+msgid "The DCOP call startText failed."
+msgstr "DCOP çağrısı startText başarısız."

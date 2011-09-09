@@ -1,0 +1,68 @@
+<!--
+<?xml version="1.0" ?>
+<!DOCTYPE chapter PUBLIC "-//KDE//DTD DocBook XML V4.1-Based Variant V1.0//EN"
+ "dtd/kdex.dtd">
+-->
+ 
+<chapter id="about">
+<title
+>Bu <acronym
+>SSS</acronym
+> hakkında</title>
+
+<qandaset>
+<qandaentry>
+<question>
+<para
+>Bu <acronym
+>SSS</acronym
+> ile ne yapabilirim?</para>
+</question>
+
+<answer>
+
+<para
+>Öncelikle burada bulduğunuz tüm hataları bize bildirebilirsiniz. Ayrıca yapacağınız tüm öneriler dikkate alınacaktır. Belki de bunlardan daha önemlisi, belirsiz olan konular hakkında yapacağınız yorumlardır. Eğer daha iyi bir fikriniz varsa <email
+>kde-faq@kde.org</email
+> adresine göndermenizi bekliyoruz. </para>
+
+<para
+>İkinci olarak, bu <acronym
+>SSS</acronym
+> içinde bulunmayan sıkça sorulan sorular konusundaki çözümlerinizi bize gönderebilirsiniz.</para>
+
+<para
+>Ve son olarak, bu <acronym
+>SSS<acronym
+> belgesini bol bol okuyarak. &kde; e-posta listelerinde soru sormadan önce bu belgeye göz atmanız pek çok kişinin zaman kaybına uğramasını da önleyecektir.</para>
+
+<note
+><para
+> Ayrıca <acronym
+>SSS</acronym
+> belgesini de yönetebilirsiniz. Bu konu için lütfen xref linkend="FAQ-maintainer-HOWTO"/> bağlantısına göz atın. </para
+></note>
+
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question id="FAQ-maintainer-HOWTO">
+<para
+>Nasıl <acronym
+>SSS</acronym
+> yöneticisi olurum?</para>
+</question>
+
+<answer>
+<para
+>Aslında bir <acronym
+>SSS</acronym
+> yöneticisi olmak oldukça kolaydır. Tek yapmanız gereken email
+>kde-faq@kde.org</email
+> adresine isteğinizi bildiren bir e-posta göndermektir. </para>
+</answer>
+</qandaentry>
+</qandaset>
+</chapter>
+

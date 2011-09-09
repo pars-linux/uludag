@@ -1,0 +1,191 @@
+# translation of knetattach.po to Türkçe
+# Görkem Çetin <gorkem@kde.org>, 2005.
+# Görkem Çetin <gorkem@kde.org.tr>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: knetattach\n"
+"POT-Creation-Date: 2008-07-08 01:18+0200\n"
+"PO-Revision-Date: 2005-01-03 21:54+0000\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org.tr>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org.tr"
+
+#: main.cpp:29 main.cpp:30
+msgid "KDE Network Wizard"
+msgstr "KDE Ağ Sihirbazı"
+
+#: main.cpp:32
+msgid "(c) 2004 George Staikos"
+msgstr "(c) 2004 George Staikos"
+
+#: main.cpp:35
+msgid "Primary author and maintainer"
+msgstr "Yazan ve geliştiren"
+
+#. i18n: file knetattach.ui line 16
+#: rc.cpp:3
+#, no-c-format
+msgid "Network Folder Wizard"
+msgstr "Ağ Kaynağı Sihirbazı"
+
+#. i18n: file knetattach.ui line 28
+#: rc.cpp:6
+#, no-c-format
+msgid "Add Network Folder"
+msgstr "Ağ Kaynağı Ekle"
+
+#. i18n: file knetattach.ui line 59
+#: rc.cpp:9
+#, no-c-format
+msgid "&Recent connection:"
+msgstr "&Son bağlantı:"
+
+#. i18n: file knetattach.ui line 67
+#: rc.cpp:12
+#, no-c-format
+msgid "&WebFolder (webdav)"
+msgstr ""
+
+#. i18n: file knetattach.ui line 78
+#: rc.cpp:15
+#, no-c-format
+msgid "&Secure shell (ssh)"
+msgstr "&Güvenli kabuk (ssh)"
+
+#. i18n: file knetattach.ui line 111
+#: rc.cpp:18
+#, no-c-format
+msgid "FT&P"
+msgstr "&FTP"
+
+#. i18n: file knetattach.ui line 119
+#: rc.cpp:21
+#, no-c-format
+msgid "&Microsoft® Windows® network drive"
+msgstr "&Microsoft® Windows® ağ sürücüsü"
+
+#. i18n: file knetattach.ui line 146
+#: rc.cpp:24
+#, no-c-format
+msgid ""
+"Select the type of network folder you wish to connect to and press the Next "
+"button."
+msgstr "Bağlantı kurulacak ağ servisini seçin ve İleri düğmesine tıklayın."
+
+#. i18n: file knetattach.ui line 176
+#: rc.cpp:27
+#, no-c-format
+msgid "Network Folder Information"
+msgstr "Ağ Kaynağı Bilgisi"
+
+#. i18n: file knetattach.ui line 187
+#: rc.cpp:30
+#, no-c-format
+msgid ""
+"Enter a name for this <i>%1</i> as well as the server address, port and folder "
+"path to use and press the Next button."
+msgstr ""
+"Bu <i>%1</i> için bir sunucu adı, port numarası ve yolu girerek İleri düğmesine "
+"tıklayın."
+
+#. i18n: file knetattach.ui line 215
+#: rc.cpp:33
+#, no-c-format
+msgid "&Name:"
+msgstr "İ&sim:"
+
+#. i18n: file knetattach.ui line 255
+#: rc.cpp:36
+#, no-c-format
+msgid "&User:"
+msgstr "&Kullanıcı:"
+
+#. i18n: file knetattach.ui line 266
+#: rc.cpp:39
+#, no-c-format
+msgid "Se&rver:"
+msgstr "&Sunucu:"
+
+#. i18n: file knetattach.ui line 277
+#: rc.cpp:42
+#, no-c-format
+msgid "&Port:"
+msgstr "&Port:"
+
+#. i18n: file knetattach.ui line 314
+#: rc.cpp:45
+#, no-c-format
+msgid "&Folder:"
+msgstr "&Dizin:"
+
+#. i18n: file knetattach.ui line 342
+#: rc.cpp:48
+#, no-c-format
+msgid "Cr&eate an icon for this remote folder"
+msgstr "&Bu uzak dizin için bir simge oluştur"
+
+#. i18n: file knetattach.ui line 353
+#: rc.cpp:51
+#, no-c-format
+msgid "&Use encryption"
+msgstr "Ş&ifreleme kullan"
+
+#: knetattach.ui.h:18 knetattach.ui.h:282
+msgid "Save && C&onnect"
+msgstr "&Kaydet ve Bağlan"
+
+#: knetattach.ui.h:40
+msgid ""
+"Enter a name for this <i>WebFolder</i> as well as a server address, port and "
+"folder path to use and press the <b>Save & Connect</b> button."
+msgstr ""
+
+#: knetattach.ui.h:42
+msgid ""
+"Enter a name for this <i>Secure shell connection</i> "
+"as well as a server address, port and folder path to use and press the <b>"
+"Save & Connect</b> button."
+msgstr ""
+
+#: knetattach.ui.h:44
+msgid ""
+"Enter a name for this <i>File Transfer Protocol connection</i> "
+"as well as a server address and folder path to use and press the <b>"
+"Save & Connect</b> button."
+msgstr ""
+
+#: knetattach.ui.h:46
+msgid ""
+"Enter a name for this <i>Microsoft Windows network drive</i> "
+"as well as a server address and folder path to use and press the <b>"
+"Save & Connect</b> button."
+msgstr ""
+
+#: knetattach.ui.h:161
+msgid "Unable to connect to server.  Please check your settings and try again."
+msgstr ""
+"Sunucuya bağlantı kurulamıyor. Lütfen ayarlarınızı kontrol ederek yeniden "
+"deneyin."
+
+#: knetattach.ui.h:284
+msgid "C&onnect"
+msgstr "&Bağlan"
+
+#~ msgid "Alt+E"
+#~ msgstr "Alt+E"

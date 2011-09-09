@@ -1,0 +1,184 @@
+# translation of ksmserver.po to Türkçe
+# translation of ksmserver.po to Turkish
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ksmserver\n"
+"POT-Creation-Date: 2007-03-07 02:42+0100\n"
+"PO-Revision-Date: 2005-06-14 01:38+0200\n"
+"Last-Translator: Adil YILDIZ <adil@kde.org.tr>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: main.cpp:30
+msgid ""
+"The reliable KDE session manager that talks the standard X11R6 \n"
+"session management protocol (XSMP)."
+msgstr ""
+"Standart X11R6 oturum yönetim protokolünü (XSMP) kullanan\n"
+"güvenilir KDE oturum yöneticisi."
+
+#: main.cpp:35
+msgid "Restores the saved user session if available"
+msgstr "Mümkünse kaydedilen oturumu yeniden yükler"
+
+#: main.cpp:37
+msgid ""
+"Starts 'wm' in case no other window manager is \n"
+"participating in the session. Default is 'kwin'"
+msgstr ""
+"Oturumda yeralan başka bir pencere yöneticisi yoksa \n"
+"'wm'i başlatır. Öntanımlı 'kwin'."
+
+#: main.cpp:38
+msgid "Also allow remote connections"
+msgstr "Uzaktan bağlantılara izin ver"
+
+#: main.cpp:182
+msgid "The KDE Session Manager"
+msgstr "KDE Oturum Yöneticisi"
+
+#: main.cpp:186
+msgid "Maintainer"
+msgstr "Sağlayıcı"
+
+#: shutdown.cpp:349
+msgid "Logout canceled by '%1'"
+msgstr ""
+
+#: shutdowndlg.cpp:102
+msgid "End Session for \"%1\""
+msgstr "\"%1\" için oturumu kapat"
+
+#: shutdowndlg.cpp:128
+msgid "&End Current Session"
+msgstr "&Güncel Oturumu Kapat"
+
+#: shutdowndlg.cpp:136
+msgid "&Turn Off Computer"
+msgstr "&Bilgisayarı Kapat"
+
+#: shutdowndlg.cpp:144
+msgid "&Restart Computer"
+msgstr "&Bilgisayarı Yeniden Başlat"
+
+#: shutdowndlg.cpp:164
+msgid ""
+"_: current option in boot loader\n"
+" (current)"
+msgstr " (seçili)"
+
+#: shutdowndlg.cpp:198
+msgid ""
+"<qt><h3>End Current Session</h3><p>Log out of the current session to login "
+"with a different user</p></qt>"
+msgstr "<qt><h3>Oturumu Kapat </h3><p>Farklı bir kullanıcı ile giriş yapmak için güncel oturumdan çık</p></qt>"
+
+msgid ""
+"<qt><h3>Turn Off Computer</h3><p>Log out of the current session and turn off "
+"the computer</p></qt>"
+msgstr "<qt><h3>Bilgisayarı Kapat </h3><p>Güncel oturumdan çık ve bilgisayarı kapat</p></qt>"
+
+msgid ""
+"<qt><h3>Restart Computer</h3><p>Log out of the current session and restart "
+"the computer</p><p>Hold the mouse button or the space bar for a short while "
+"to get a list of options what to boot</p></qt>"
+msgstr "<qt><h3>Yeniden Başlat </h3><p>Güncel oturumdan çık ve bilgisayarı yeniden başlat</p><p>Açılış seçeneklerinin listesini görmek için fare düğmesini veya boşluk çubuğunu kısa bir süre basılı tutun</qt>"
+
+#: shutdowndlg.cpp:242
+msgid ""
+"<qt><h3>Restart Computer</h3><p>Log out of the current session and restart "
+"the computer</p></qt>"
+msgstr "<qt><h3>Yeniden Başlat </h3><p>Güncel oturumdan çık ve bilgisayarı yeniden başlat</p></qt>"
+
+#: shutdowndlg.cpp:272 shutdowndlg.cpp:283
+msgid "&Suspend Computer"
+msgstr "&Askıya Al"
+
+#: shutdowndlg.cpp:275
+msgid "Suspend to Disk"
+msgstr "Sabit Disk ile Askıya Al"
+
+#: shutdowndlg.cpp:277
+msgid "Suspend to RAM"
+msgstr "RAM ile Askıya Al"
+
+#: shutdowndlg.cpp:279
+msgid "Standby"
+msgstr "Hazırda Beklet"
+
+#: shutdowndlg.cpp:333 shutdowndlg.cpp:371
+msgid "Suspend failed"
+msgstr "Askıya alma işlemi başarısız oldu"
+
+#: shutdowndlg.cpp:475
+msgid "Would you like to turn off your computer?"
+msgstr "Bilgisayarınızı kapatmak istiyor musunuz?"
+
+#: shutdowndlg.cpp:476
+msgid ""
+"This computer will turn off automatically\n"
+"after %1 seconds."
+msgstr "Bilgisayarınız %1 saniye sonra kapanacak."
+
+#: shutdowndlg.cpp:483
+msgid "Would you like to reboot your computer?"
+msgstr "Bilgisayarınızı yeniden başlatmak istiyor musunuz?"
+
+#: shutdowndlg.cpp:485
+msgid "Would you like to reboot to \"%1\"?"
+msgstr "Bilgisayarınızı yeniden başlatarak \"%1\" sistemine geçiş yapmak istiyor musunuz?"
+
+#: shutdowndlg.cpp:486
+msgid ""
+"This computer will reboot automatically\n"
+"after %1 seconds."
+msgstr "Bilgisayarınız %1 saniye sonra yeniden başlayacak."
+
+#: shutdowndlg.cpp:491
+msgid "Would you like to end your current session?"
+msgstr "Güncel oturumu sona erdirmek istiyor musunuz?"
+
+#: shutdowndlg.cpp:492
+msgid ""
+"This session will end\n"
+"after %1 seconds automatically."
+msgstr "Bu oturum %1 saniye sonra sona erecek."
+
+#: rc.cpp:3 rc.cpp:3
+#, no-c-format
+msgid "Confirmation"
+msgstr "Onaylama"
+
+#: rc.cpp:6 rc.cpp:6
+#, no-c-format
+msgid "Would you like to shutdown your computer?"
+msgstr "Bilgisayarınızı kapatmak istiyor musunuz?"
+
+#: rc.cpp:9 rc.cpp:9
+#, no-c-format
+msgid ""
+"If you do not act, your computer will shutdown\n"
+"after X automatically."
+msgstr "İşlemi iptal etmezseniz bilgisayarınız X sonra kapanacak."
+
+#: rc.cpp:13 rc.cpp:13
+#, no-c-format
+msgid "Confirm"
+msgstr "Onayla"

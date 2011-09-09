@@ -1,0 +1,739 @@
+# translation of kdict.po to Turkish
+# kde
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2001.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Rıdvan CAN <ridvancan@linux-sevenler.org>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdict\n"
+"POT-Creation-Date: 2005-05-16 01:23+0200\n"
+"PO-Revision-Date: 2004-10-02 01:04+0300\n"
+"Last-Translator: Rıdvan CAN <ridvancan@linux-sevenler.org>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.3.1\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Ömer Fadıl USTA"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "omer_fad@hotmail.com"
+
+#: dict.cpp:207
+msgid "No definitions found for '%1'."
+msgstr "'%1' için karşılık bulunamadı."
+
+#: dict.cpp:212
+msgid "No definitions found for '%1'. Perhaps you mean:"
+msgstr "'%1' için karşılık bulunamadı, belki de şunu arıyordunuz:"
+
+#: dict.cpp:535
+msgid "Available Databases:"
+msgstr "Kullanılabilir Veritabanları:"
+
+#: dict.cpp:594
+msgid "Database Information [%1]:"
+msgstr "Veritabanı Bilgisi [%1]:"
+
+#: dict.cpp:635
+msgid "Available Strategies:"
+msgstr "Kullanılabilir Stratejiler"
+
+#: dict.cpp:690
+msgid "Server Information:"
+msgstr "Sunucu Bilgisi:"
+
+#: dict.cpp:922 dict.cpp:985 dict.cpp:1081
+msgid "The connection is broken."
+msgstr "Bağlantı kesikl."
+
+#: dict.cpp:1185 dict.cpp:1190 dict.cpp:1196 dict.cpp:1202
+msgid ""
+"Internal error:\n"
+"Failed to open pipes for internal communication."
+msgstr ""
+"İç hata:\n"
+"İç iletişim için borulamalar açılamadı."
+
+#: dict.cpp:1215
+msgid ""
+"Internal error:\n"
+"Unable to create thread."
+msgstr ""
+"İç hata:\n"
+"Dizilim oluşturulamadı."
+
+#: dict.cpp:1387 options.cpp:177
+msgid "All Databases"
+msgstr "Tüm Veritabanları"
+
+#: dict.cpp:1393 options.cpp:145 options.cpp:150
+msgid "Spell Check"
+msgstr "imla Denetimi"
+
+#: dict.cpp:1395
+msgid " Received database/strategy list "
+msgstr " Veritabanı listesi alındı "
+
+#: dict.cpp:1404
+msgid "No definitions found"
+msgstr "Karşılık bulunamadı"
+
+#: dict.cpp:1407
+msgid "One definition found"
+msgstr "Bir karşılık bulundu"
+
+#: dict.cpp:1410
+msgid "%1 definitions found"
+msgstr "%1 karşılık bulundu"
+
+#: dict.cpp:1415
+msgid " No definitions fetched "
+msgstr " Hiç karşılık alınamadı "
+
+#: dict.cpp:1418
+msgid " One definition fetched "
+msgstr " Bir karşılık alındı "
+
+#: dict.cpp:1421
+msgid " %1 definitions fetched "
+msgstr " %1 karşılık alındı "
+
+#: dict.cpp:1430
+msgid " No matching definitions found "
+msgstr " Eşleşen karşılık bulunamadı "
+
+#: dict.cpp:1433
+msgid " One matching definition found "
+msgstr " Eşleşen bir karşılık bulundu "
+
+#: dict.cpp:1436
+msgid " %1 matching definitions found "
+msgstr " Eşleşen %1 karşılık bulundu "
+
+#: dict.cpp:1442
+msgid " Received information "
+msgstr " Bilgi alındı "
+
+#: dict.cpp:1450
+msgid ""
+"Communication error:\n"
+"\n"
+msgstr ""
+"İletişim hatası:\n"
+"\n"
+
+#: dict.cpp:1454
+msgid ""
+"A delay occurred which exceeded the\n"
+"current timeout limit of %1 seconds.\n"
+"You can modify this limit in the Preferences Dialog."
+msgstr ""
+"Mevcut %1 saniye zaman aşımı sınırı aşıldığından bir bekleme oluştu.\n"
+"Bu sınırı Tercihler Diyaloğundan değiştirebilirsiniz."
+
+#: dict.cpp:1457
+msgid ""
+"Unable to connect to:\n"
+"%1:%2\n"
+"\n"
+"Cannot resolve hostname."
+msgstr ""
+"Bağlanılamayan adres:\n"
+"%1:%2\n"
+"\n"
+"Alan adı çözülemedi."
+
+#: dict.cpp:1460
+msgid ""
+"Unable to connect to:\n"
+"%1:%2\n"
+"\n"
+msgstr ""
+"Bağlanılamayan adres:\n"
+"%1:%2\n"
+"\n"
+
+#: dict.cpp:1464
+msgid ""
+"Unable to connect to:\n"
+"%1:%2\n"
+"\n"
+"The server refused the connection."
+msgstr ""
+"Bağlanılamayan adres:\n"
+"%1:%2\n"
+"\n"
+"Sunucu bağlantıyı reddediyor."
+
+#: dict.cpp:1467
+msgid "The server is temporarily unavailable."
+msgstr "Sunucu geçici olarak servis dışı."
+
+#: dict.cpp:1470
+msgid ""
+"The server reported a syntax error.\n"
+"This shouldn't happen -- please consider\n"
+"writing a bug report."
+msgstr ""
+"Sunucu bir imla hatası rapor ediyor.\n"
+"Bu olmaması gereken bir durum -- lütfen\n"
+"bir hata raporlaması yapınız."
+
+#: dict.cpp:1473
+msgid ""
+"A command that Kdict needs isn't\n"
+"implemented on the server."
+msgstr "Kdict'in ihtiyacı olan bir komut sunucuda yorumlanamadı."
+
+#: dict.cpp:1476
+msgid ""
+"Access denied.\n"
+"This host is not allowed to connect."
+msgstr ""
+"Erişim reddedildi.\n"
+"Bağlantıya izin verilmiyor."
+
+#: dict.cpp:1479
+msgid ""
+"Authentication failed.\n"
+"Please enter a valid username and password."
+msgstr ""
+"Doğrulama başarısız.\n"
+"Geçerli bir kullanıcı adı ve parola giriniz."
+
+#: dict.cpp:1482
+msgid ""
+"Invalid database/strategy.\n"
+"You probably need to use Server->Get Capabilities."
+msgstr ""
+"Geçersiz veritabanı/strateji.\n"
+"Sunucu->Yetenekleri al kullanmalısınız."
+
+#: dict.cpp:1485
+msgid ""
+"No databases available.\n"
+"It is possible that you need to authenticate\n"
+"with a valid username/password combination to\n"
+"gain access to any databases."
+msgstr ""
+"Veri tabanı yok.\n"
+"Bir kullanıcı adı ve\n"
+" parola ile giriş yapmanız\n"
+"gerekiyor olabilir."
+
+#: dict.cpp:1488
+msgid "No strategies available."
+msgstr "Strateji yok"
+
+#: dict.cpp:1491
+msgid ""
+"The server sent an unexpected reply:\n"
+"\"%1\"\n"
+"This shouldn't happen, please consider\n"
+"writing a bug report"
+msgstr ""
+"Sunucu beklenmeyen bir yanıt yolladı:\n"
+"\"%1\""
+
+#: dict.cpp:1494
+msgid ""
+"The server sent a response with a text line\n"
+"that was too long.\n"
+"(RFC 2229: max. 1024 characters/6144 octets)"
+msgstr ""
+"Sunucu çok uzun tek satırlık bir metin ile cevap verdi.\n"
+"(RFC 2229: max. 1024 karakter/6144 oktet)"
+
+#: dict.cpp:1497
+msgid "No Errors"
+msgstr "Hata Yok"
+
+#: dict.cpp:1499
+msgid " Error "
+msgstr " Hata "
+
+#: dict.cpp:1504
+msgid " Stopped "
+msgstr " Durdu "
+
+#: dict.cpp:1543
+msgid "Please select at least one database."
+msgstr "Lütfen en az bir veritabanı seçin."
+
+#: dict.cpp:1587
+msgid " Querying server... "
+msgstr " Sunucuya bağlantı kuruluyor... "
+
+#: dict.cpp:1593
+msgid " Fetching information... "
+msgstr " Gerekli bilgiler alınıyor... "
+
+#: dict.cpp:1596
+msgid " Updating server information... "
+msgstr " Sunucu bilgisi güncelleniyor... "
+
+#: main.cpp:26
+msgid "Define X11-clipboard content (selected text)"
+msgstr "X11-pano içeriği tanımla (seçilen metin)"
+
+#: main.cpp:27
+msgid "Lookup the given word/phrase"
+msgstr "Verilen kelimede/öbekte ara"
+
+#: main.cpp:35
+msgid "Dictionary"
+msgstr "Sözlük"
+
+#: main.cpp:37
+msgid "The KDE Dictionary Client"
+msgstr "KDE Sözlük Programı"
+
+#: main.cpp:43
+msgid "Maintainer"
+msgstr "Yazar"
+
+#: main.cpp:44
+msgid "Original Author"
+msgstr "İlk Yazar"
+
+#: matchview.cpp:116
+msgid "Match List"
+msgstr "Eşlenen listesi"
+
+#: matchview.cpp:146
+msgid "&Get Selected"
+msgstr "&Seçilenleri Al"
+
+#: matchview.cpp:153 matchview.cpp:406
+msgid "Get &All"
+msgstr "&Tümünü Al"
+
+#: matchview.cpp:312
+msgid ""
+"You have selected %1 definitions,\n"
+"but Kdict will fetch only the first %2 definitions.\n"
+"You can modify this limit in the Preferences Dialog."
+msgstr ""
+"%1 tanımlama seçtiniz,\n"
+"ancak Kdict ilk %2 tanımlamayı alır."
+
+#: matchview.cpp:340
+msgid " No Hits"
+msgstr " Hiç Eşleşme Bulunamadı"
+
+#: matchview.cpp:383
+msgid "&Get"
+msgstr "A&l"
+
+#: matchview.cpp:385 toplevel.cpp:384
+msgid "&Match"
+msgstr "&Eşleştir"
+
+#: matchview.cpp:386 toplevel.cpp:383
+msgid "&Define"
+msgstr "&Tanımla"
+
+#: matchview.cpp:399
+msgid "Match &Clipboard Content"
+msgstr "&Pano içeriği ile eşleştir"
+
+#: matchview.cpp:400
+msgid "D&efine Clipboard Content"
+msgstr "Pano i&çeriği tanımla"
+
+#: matchview.cpp:404
+msgid "Get &Selected"
+msgstr "&Seçilenleri Al"
+
+#: matchview.cpp:411
+msgid "E&xpand List"
+msgstr "Listeyi &Genişlet"
+
+#: matchview.cpp:412
+msgid "C&ollapse List"
+msgstr "Listeyi &Topla"
+
+#: options.cpp:72 options.cpp:100
+msgid "Text"
+msgstr "Metin"
+
+#: options.cpp:76
+msgid "Background"
+msgstr "Arkaplan"
+
+#: options.cpp:80
+msgid "Heading Text"
+msgstr "Başlık Metni"
+
+#: options.cpp:84
+msgid "Heading Background"
+msgstr "Başlık Arkaplanı"
+
+#: options.cpp:88
+msgid "Link"
+msgstr "Bağlantı"
+
+#: options.cpp:92
+msgid "Followed Link"
+msgstr "İzlenen Bağlantı"
+
+#: options.cpp:105 options.cpp:648
+msgid "Headings"
+msgstr "Başlıklar"
+
+#: options.cpp:146
+msgid "Exact"
+msgstr "Tam"
+
+#: options.cpp:147
+msgid "Prefix"
+msgstr "Önek"
+
+#: options.cpp:496
+msgid "Server"
+msgstr "Sunucu"
+
+#: options.cpp:496
+msgid "DICT Server Configuration"
+msgstr "DICT Sunucu Yapılandırması"
+
+#: options.cpp:501
+msgid "Host&name:"
+msgstr "&Makine adı:"
+
+#: options.cpp:509
+msgid "&Port:"
+msgstr "&Port:"
+
+#: options.cpp:515 options.cpp:523
+msgid " sec"
+msgstr " sn"
+
+#: options.cpp:517
+msgid "Hold conn&ection for:"
+msgstr "Bunlar için bağlantıyı &tut:"
+
+#: options.cpp:525
+msgid "T&imeout:"
+msgstr "&Zaman aşımı:"
+
+#: options.cpp:531
+msgid " bytes"
+msgstr " bayt"
+
+#: options.cpp:533
+msgid "Command &buffer:"
+msgstr "Komut &tamponu:"
+
+#: options.cpp:550
+msgid "Encod&ing:"
+msgstr "Şi&freleniyor:"
+
+#: options.cpp:555
+msgid "Server requires a&uthentication"
+msgstr "Sunucu kullanıcı &doğrulama gerektiriyor"
+
+#: options.cpp:563
+msgid "U&ser:"
+msgstr "&Kullanıcı:"
+
+#: options.cpp:571
+msgid "Pass&word:"
+msgstr "&Parola:"
+
+#: options.cpp:582
+msgid "Customize Visual Appearance"
+msgstr "Görünümü Özelleştir"
+
+#: options.cpp:592
+msgid "&Use custom colors"
+msgstr "Özel &renkler kullan"
+
+#: options.cpp:597
+msgid "Cha&nge..."
+msgstr "&Değiştir..."
+
+#: options.cpp:601
+msgid "Default&s"
+msgstr "Ö&ntanımlılar"
+
+#: options.cpp:612
+msgid "Use custom &fonts"
+msgstr "Özel &yazıtipleri kullan"
+
+#: options.cpp:617
+msgid "Chang&e..."
+msgstr "&Değiştir..."
+
+#: options.cpp:621
+msgid "Defaul&ts"
+msgstr "Ö&ntanımlılar"
+
+#: options.cpp:644
+msgid "Layout"
+msgstr "Düzen"
+
+#: options.cpp:644
+msgid "Customize Output Format"
+msgstr "Çıktı Görünümünü Özelleştir"
+
+#: options.cpp:652
+msgid "O&ne heading for each database"
+msgstr "&Her veritabanı için bir başlık"
+
+#: options.cpp:655
+msgid "A&s above, with separators between the definitions"
+msgstr "&Yukarıdaki gibi, karşılıklar arasında ayraç olacak şekilde"
+
+#: options.cpp:658
+msgid "A separate heading for &each definition"
+msgstr "Her &karşılık için ayrı bir başlık"
+
+#: options.cpp:669
+msgid "Various Settings"
+msgstr "Çeşitli Ayarlar"
+
+#: options.cpp:673
+msgid "Limits"
+msgstr "Sınıflar"
+
+#: options.cpp:680
+msgid "De&finitions:"
+msgstr "&Karşılıklar:"
+
+#: options.cpp:687
+msgid "Cached &results:"
+msgstr "Saklanan &sonuçlar"
+
+#: options.cpp:694
+msgid "Hi&story entries:"
+msgstr "Geçmiş &girdileri:"
+
+#: options.cpp:703
+msgid "Other"
+msgstr "Diğer"
+
+#: options.cpp:709
+msgid "Sa&ve history on exit"
+msgstr "Çıkışta &geçmişi kaydet"
+
+#: options.cpp:714
+msgid "D&efine selected text on start"
+msgstr "Başlangıçta seçilen metnin içeriği &tanımla"
+
+#: queryview.cpp:57
+msgid "Unable to save remote file."
+msgstr "Uzak dosyaya kaydedilemiyor."
+
+#: queryview.cpp:77
+msgid ""
+"A file named %1 already exists.\n"
+"Do you want to replace it?"
+msgstr ""
+"%1 adında bir dosya zaten var.\n"
+"Değiştirmek ister misiniz?"
+
+#: queryview.cpp:78
+msgid "&Replace"
+msgstr "&Değiştir"
+
+#: queryview.cpp:84
+msgid "Unable to save file."
+msgstr "Dosyaya kaydedilemiyor."
+
+#: queryview.cpp:92
+msgid "Unable to create temporary file."
+msgstr "Geçici dizin oluşturulamıyor."
+
+#: queryview.cpp:409
+msgid "Define &Synonym"
+msgstr "&Synonym tanımla"
+
+#: queryview.cpp:411
+msgid "M&atch Synonym"
+msgstr "Synonym &eşleştir"
+
+#: queryview.cpp:416
+msgid "D&atabase Information"
+msgstr "Veri tabanı &bilgileri"
+
+#: queryview.cpp:422 queryview.cpp:429
+msgid "&Open Link"
+msgstr "&link aç"
+
+#: queryview.cpp:438
+msgid "&Define Selection"
+msgstr "&seçim tanımla"
+
+#: queryview.cpp:440
+msgid "&Match Selection"
+msgstr "Se&cim eşleştir"
+
+#: queryview.cpp:453 toplevel.cpp:327
+msgid "&Define Clipboard Content"
+msgstr "P&ano içeriği tanımla"
+
+#: queryview.cpp:455 toplevel.cpp:329
+msgid "&Match Clipboard Content"
+msgstr "Pa&no içeriği eşleştir"
+
+#: queryview.cpp:466 queryview.cpp:570
+msgid "&Back: Information"
+msgstr "&Geri: Bilgi"
+
+#: queryview.cpp:470 queryview.cpp:572
+msgid "&Back: '%1'"
+msgstr "&Geri: '%1'"
+
+#: queryview.cpp:473 queryview.cpp:587 toplevel.cpp:334
+msgid "&Back"
+msgstr "&Geri"
+
+#: queryview.cpp:480 queryview.cpp:594
+msgid "&Forward: Information"
+msgstr "&İleri: Bilgi"
+
+#: queryview.cpp:484 queryview.cpp:596
+msgid "&Forward: '%1'"
+msgstr "İ&leri: '%1'"
+
+#: queryview.cpp:487 queryview.cpp:611 toplevel.cpp:339
+msgid "&Forward"
+msgstr "İ&leri"
+
+#. i18n: file kdictui.rc line 23
+#: rc.cpp:9
+#, no-c-format
+msgid "Hist&ory"
+msgstr "&Geçmiş"
+
+#. i18n: file kdictui.rc line 31
+#: rc.cpp:12
+#, no-c-format
+msgid "Ser&ver"
+msgstr "&Sunucu"
+
+#. i18n: file kdictui.rc line 35
+#: rc.cpp:15
+#, no-c-format
+msgid "Database &Information"
+msgstr "Veritabanı B&ilgisi"
+
+#: sets.cpp:33
+msgid "Database Sets"
+msgstr "Veritabanı Kümeleri"
+
+#: sets.cpp:51
+msgid "&Set:"
+msgstr "&Küme:"
+
+#: sets.cpp:58
+msgid "S&ave"
+msgstr "K&aydet"
+
+#: sets.cpp:62
+msgid "&New"
+msgstr "&Yeni"
+
+#: sets.cpp:85
+msgid "S&elected databases:"
+msgstr "&Seçili veritabanları:"
+
+#: sets.cpp:113
+msgid "A&vailable databases:"
+msgstr "&Kullanılabilir veritabanları:"
+
+#: sets.cpp:148 sets.cpp:150
+msgid "New Set"
+msgstr "Yeni Küme"
+
+#: toplevel.cpp:312
+msgid "&Save As..."
+msgstr "Farklı K&aydet..."
+
+#: toplevel.cpp:316
+msgid "St&art Query"
+msgstr "&Aramayı Başlat"
+
+#: toplevel.cpp:318
+msgid "St&op Query"
+msgstr "Aramayı &Durdur"
+
+#: toplevel.cpp:344
+msgid "&Clear History"
+msgstr "&Geçmişi Temizle"
+
+#: toplevel.cpp:348
+msgid "&Get Capabilities"
+msgstr "&Becerileri Al"
+
+#: toplevel.cpp:350
+msgid "Edit &Database Sets..."
+msgstr "&Veritabanı Kümesini Düzenle..."
+
+#: toplevel.cpp:352
+msgid "&Summary"
+msgstr "Ö&zet"
+
+#: toplevel.cpp:354
+msgid "S&trategy Information"
+msgstr "S&trateji bilgileri"
+
+#: toplevel.cpp:356
+msgid "&Server Information"
+msgstr "&Sunucu Bilgisi"
+
+#: toplevel.cpp:363
+msgid "Show &Match List"
+msgstr "&Eşleşme Listesini Göster"
+
+#: toplevel.cpp:365
+msgid "Hide &Match List"
+msgstr "Eşleş&me Listesi Gizle"
+
+#: toplevel.cpp:373
+msgid "Clear Input Field"
+msgstr "Giriş Alanını Temizle"
+
+#: toplevel.cpp:376
+msgid "&Look for:"
+msgstr "&Bak:"
+
+#: toplevel.cpp:377
+msgid "Query"
+msgstr "Sorgu"
+
+#: toplevel.cpp:380
+msgid "&in"
+msgstr "&içinde"
+
+#: toplevel.cpp:381
+msgid "Databases"
+msgstr "Veritabanları"
+
+#: toplevel.cpp:392 toplevel.cpp:603
+msgid " Ready "
+msgstr " Hazır "
+
+#~ msgid "Swallow Match &List"
+#~ msgstr "Eşleşme Listesini &Gizle"
+
+#~ msgid "Kdict"
+#~ msgstr "Kdict"
+
+#~ msgid "Query Toolbar"
+#~ msgstr "Arama Araç Çubuğu"
+
+#~ msgid "The KDE Dict(ionary) Client"
+#~ msgstr "KDE Sözlük Programı"

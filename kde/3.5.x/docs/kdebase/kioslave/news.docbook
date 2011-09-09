@@ -1,0 +1,17 @@
+<article lang="&language;" id="news">
+<title
+>news</title>
+
+<para
+>news kioslave, bir web sayfasındaki news bağlantısına tıklandığı anda kullanılır. &knode; programını çalıştırır ve &knode; içinde yapılandırılan kullanıcı için gerekli gruplara üyeliği yapar.</para>
+
+<para
+>&knode; içinde gruplardan üyeliğinizi iptal edebilirsiniz. Eğer bir grubu artık okumak istemediğinizi düşünüyorsanız, <mousebutton
+>sağ</mousebutton
+> fare düğmesiyle <guimenuitem
+>Üyelikten çık</guimenuitem
+> seçeneğini işaretleyin.</para>
+
+</article>
+
+

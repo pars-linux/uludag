@@ -1,0 +1,1563 @@
+# translation of kcmkicker.po to
+# translation of kcmkicker.po to Turkish
+# Copyright (C) 2003, 2004, 2007 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
+# Adil YILDIZ <adil@linux-sevenler.org>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkicker\n"
+"POT-Creation-Date: 2008-07-08 01:18+0200\n"
+"PO-Revision-Date: 2007-07-05 15:21+0300\n"
+"Last-Translator: Serdar Soytetir\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: advancedDialog.cpp:36
+msgid "Advanced Options"
+msgstr "Gelişmiş Seçenekler"
+
+#: applettab_impl.cpp:59
+msgid ""
+"Panel applets can be started in two different ways: internally or externally. "
+"While 'internally' is the preferred way to load applets, this can raise "
+"stability or security problems when you are using poorly-programmed third-party "
+"applets. To address these problems, applets can be marked 'trusted'. You might "
+"want to configure Kicker to treat trusted applets differently to untrusted "
+"ones; your options are: "
+"<ul>"
+"<li><em>Load only trusted applets internally:</em> All applets but the ones "
+"marked 'trusted' will be loaded using an external wrapper application.</li> "
+"<li><em>Load startup config applets internally:</em> "
+"The applets shown on KDE startup will be loaded internally, others will be "
+"loaded using an external wrapper application.</li> "
+"<li><em>Load all applets internally</em></li></ul>"
+msgstr ""
+"Panel programcıkları iki değişik yöntem kullanılarak başlatılabilir: içsel ya "
+"da dışsal. 'İçsel' programcıkları yüklemek için tercih edilen yol olurken, bu "
+"kötü programlanmış programcıklar kullanırken kararlılık ya da güvenlik "
+"problemleri yaratabilir. Bu problemleri adreslemek için, programcık 'güvenilir' "
+"olarak işaretlenir. Kicker'ı güvenilir programcıkları güvenilir olmayanlardan "
+"farklı görmesi için yapılandırabilirsiniz. Seçenekleriniz: "
+"<ul>"
+"<li><em>Sadece güvenilir programcıkları içsel yükle:</em> "
+"Güvenilir olarak işaretlenmiş programcıklar dışındaki tüm programcıklar dışsal "
+"uygulama kullanılarak yüklenecekler.</li> "
+"<li><em>Başlama yapılandırma programcıklarını içsel olarak yükle:</em> "
+"KDE başlangıcında gösterilen programcıklar içsel, diğerleri dışsal uygulama "
+"kullanılarak yüklenecekler.</li> "
+"<li><em>Tüm programcıkları içsel yükle</em></li></ul>"
+
+#: applettab_impl.cpp:70
+msgid ""
+"Here you can see a list of applets that are marked 'trusted', i.e. will be "
+"loaded internally by Kicker in any case. To move an applet from the list of "
+"available applets to the trusted ones, or vice versa, select it and press the "
+"left or right buttons."
+msgstr ""
+"Burada 'güvenilir' olarak işaretlenmiş programcıkların listesini göreceksiniz "
+",örn. kicker tarafından ker koşulda yüklenecekler. Bir programcığı "
+"kullanılabilirler listesinden güvenilirler listesine taşımak ya da tersi için, "
+"programcığı seçin ve sol ya da sağ düğmeye basın."
+
+#: applettab_impl.cpp:75
+msgid ""
+"Click here to add the selected applet from the list of available, untrusted "
+"applets to the list of trusted applets."
+msgstr ""
+"Seçili programcığı kullanılabilir programcıklar listesinden güvenilir "
+"programcıklar listesine taşımak için buraya tıklayın."
+
+#: applettab_impl.cpp:78
+msgid ""
+"Click here to remove the selected applet from the list of trusted applets to "
+"the list of available, untrusted applets."
+msgstr ""
+"Güvenilir programcıklar listesinden seçili programcığı silmek ve bunu "
+"güvenilmeyen, kullanılabilir programcıklar listesine taşımak için buraya "
+"tıklayın."
+
+#: applettab_impl.cpp:81
+msgid ""
+"Here you can see a list of available applets that you currently do not trust. "
+"This does not mean you cannot use those applets, but rather that the panel's "
+"policy using them depends on your applet security level. To move an applet from "
+"the list of available applets to the trusted ones or vice versa, select it and "
+"press the left or right buttons."
+msgstr ""
+"Buradan güvenmediğiniz programcıkların bir listesini görebilirsiniz. Bu durumo "
+"programcıkları kullanamazsınız anlamına gelmiyor, fakat panel politikası "
+"programcık güvenlik seviyenize bağlı olarak değişir. Bir programcığı "
+"kullanılabilir programcıklar listesinden güvenilirler arasına götürmek ya da "
+"tersi için, programcığı seçin ve sol ya da sağ düğmelere basın."
+
+#: extensionInfo.cpp:45
+msgid "Main Panel"
+msgstr "Ana Panel"
+
+#. i18n: file hidingtab.ui line 371
+#: hidingtab_impl.cpp:216 rc.cpp:197
+#, no-c-format
+msgid "Show left panel-hiding bu&tton"
+msgstr "Sol panel &saklama düğmesini göster"
+
+#: hidingtab_impl.cpp:217
+msgid "Show right panel-hiding bu&tton"
+msgstr "Sağ panel &saklama düğmesini göster"
+
+#: hidingtab_impl.cpp:221
+msgid "Show top panel-hiding bu&tton"
+msgstr "Üst &panel saklama düğmesini göster"
+
+#: hidingtab_impl.cpp:222
+msgid "Show bottom panel-hiding bu&tton"
+msgstr "&Alt panel saklama düğmesini göster"
+
+#: lookandfeeltab_impl.cpp:67
+msgid "Select Image File"
+msgstr "Resim Dosyası Seç"
+
+#: lookandfeeltab_impl.cpp:144
+msgid ""
+"Error loading theme image file.\n"
+"\n"
+"%1\n"
+"%2"
+msgstr ""
+"Tema resim dosyası yüklenirken bir hata oluştu.\n"
+"\n"
+"%1\n"
+"%2"
+
+#: lookandfeeltab_kcm.cpp:36 main.cpp:346
+msgid "kcmkicker"
+msgstr "kcmkicker"
+
+#: lookandfeeltab_kcm.cpp:36 main.cpp:347
+msgid "KDE Panel Control Module"
+msgstr "KDE Paneli Kontrol Menüsü"
+
+#: lookandfeeltab_kcm.cpp:38
+msgid ""
+"(c) 1999 - 2001 Matthias Elter\n"
+"(c) 2002 Aaron J. Seigo"
+msgstr ""
+"(c) 1999 - 2001 Matthias Elter\n"
+"(c) 2002 Aaron J. Seigo"
+
+#: lookandfeeltab_kcm.cpp:86 main.cpp:333
+msgid ""
+"<h1>Panel</h1> Here you can configure the KDE panel (also referred to as "
+"'kicker'). This includes options like the position and size of the panel, as "
+"well as its hiding behavior and its looks."
+"<p> Note that you can also access some of these options directly by clicking on "
+"the panel, e.g. dragging it with the left mouse button or using the context "
+"menu on right mouse button click. This context menu also offers you "
+"manipulation of the panel's buttons and applets."
+msgstr ""
+"<h1>Panel</h1> Buradan KDE panelini ('kicker' olarak da anılmaktadır) "
+"yapılandırabilirsiniz. Buna, gizleme davranışı ve görünümünün yanısıra panelin "
+"konumu ve boyutu gibi seçenekler de dahildir."
+"<p> Ayrıca bu seçeneklere doğrudan doğruya panele tıklayarak da "
+"ulaşabilirsiniz, örneğin  sol fare tuşuyla sürükleyerek ya da sağ fare tuşuyla "
+"ulaşılan bağlam menüsünü kullanarak. Bu içerikmenüsü, size panelin düğme ve "
+"programcıkları üzerinde değişiklik yapma fırsatı da tanır."
+
+#: main.cpp:349
+msgid ""
+"(c) 1999 - 2001 Matthias Elter\n"
+"(c) 2002 - 2003 Aaron J. Seigo"
+msgstr ""
+"(c) 1999 - 2001 Matthias Elter\n"
+"(c) 2002 - 2003 Aaron J. Seigo"
+
+#: menutab_impl.cpp:99
+msgid "Quick Browser"
+msgstr "Hızlı Tarayıcı"
+
+#: menutab_impl.cpp:177
+msgid ""
+"The KDE menu editor (kmenuedit) could not be launched.\n"
+"Perhaps it is not installed or not in your path."
+msgstr "KDE menü düzenleyici (kmenuedit) başlatılamadı."
+
+#: menutab_impl.cpp:179
+msgid "Application Missing"
+msgstr "Kayıp Uygulama"
+
+#: positiontab_impl.cpp:77 positiontab_impl.cpp:92
+msgid "Top left"
+msgstr "Üst sol"
+
+#: positiontab_impl.cpp:78 positiontab_impl.cpp:93
+msgid "Top center"
+msgstr "Üst orta"
+
+#: positiontab_impl.cpp:79 positiontab_impl.cpp:94
+msgid "Top right"
+msgstr "Üst sağ"
+
+#: positiontab_impl.cpp:80 positiontab_impl.cpp:95
+msgid "Left top"
+msgstr "Sol üst"
+
+#: positiontab_impl.cpp:81 positiontab_impl.cpp:96
+msgid "Left center"
+msgstr "Sol orta"
+
+#: positiontab_impl.cpp:82 positiontab_impl.cpp:97
+msgid "Left bottom"
+msgstr "Sol alt"
+
+#: positiontab_impl.cpp:83 positiontab_impl.cpp:98
+msgid "Bottom left"
+msgstr "Alt sol"
+
+#: positiontab_impl.cpp:84 positiontab_impl.cpp:99
+msgid "Bottom center"
+msgstr "Alt orta"
+
+#: positiontab_impl.cpp:85 positiontab_impl.cpp:100
+msgid "Bottom right"
+msgstr "Alt sağ"
+
+#: positiontab_impl.cpp:86 positiontab_impl.cpp:101
+msgid "Right top"
+msgstr "Sağ üst"
+
+#: positiontab_impl.cpp:87 positiontab_impl.cpp:102
+msgid "Right center"
+msgstr "Sağ orta"
+
+#: positiontab_impl.cpp:88 positiontab_impl.cpp:103
+msgid "Right bottom"
+msgstr "Sağ alt"
+
+#: positiontab_impl.cpp:116
+msgid "All Screens"
+msgstr "Tüm Ekranlar"
+
+#. i18n: file positiontab.ui line 412
+#: positiontab_impl.cpp:535 rc.cpp:528
+#, no-c-format
+msgid "Custom"
+msgstr "Özel"
+
+#. i18n: file advancedOptions.ui line 27
+#: rc.cpp:3
+#, no-c-format
+msgid "Panel Dimensions"
+msgstr "Panel Boyutu"
+
+#. i18n: file advancedOptions.ui line 38
+#: rc.cpp:6
+#, no-c-format
+msgid "&Hide button size:"
+msgstr "&Düğme büyüklüğünü gizle:"
+
+#. i18n: file advancedOptions.ui line 44
+#: rc.cpp:9 rc.cpp:15
+#, no-c-format
+msgid ""
+"This setting defines how large the panel hide buttons will be if they are "
+"visible."
+msgstr ""
+"Bu ayarlar, panel gizleme düğmesinin görüntülenmesi halinde bunların ne kadar "
+"büyük olacağını belirler."
+
+#. i18n: file advancedOptions.ui line 52
+#: rc.cpp:12 rc.cpp:534
+#, no-c-format
+msgid " pixels"
+msgstr " benek"
+
+#. i18n: file advancedOptions.ui line 88
+#: rc.cpp:18
+#, no-c-format
+msgid "Applet Handles"
+msgstr "Programcık Tutamaçları"
+
+#. i18n: file advancedOptions.ui line 99
+#: rc.cpp:21
+#, no-c-format
+msgid "&Visible"
+msgstr "&Görünür"
+
+#. i18n: file advancedOptions.ui line 108
+#: rc.cpp:24
+#, no-c-format
+msgid ""
+"<qt>\n"
+"<p>Select this option to always show the Applet Handles.</p>\n"
+"<p>Applet Handles let you move, remove and configure applets in the panel.</p>\n"
+"</qt>"
+msgstr ""
+"<qt>\n"
+"<p>Uygulamacık Tutamaçlarını herzaman göstermek iiçn bu seçeneği seçin.</p>\n"
+"<p>Uygulamacık Tutamaçları paneldeki uygulamacıkları hareket ettirmenize, "
+"kaldırmanıza ve yapılandırmanıza yarar.</p>\n"
+"</qt>"
+
+#. i18n: file advancedOptions.ui line 116
+#: rc.cpp:30
+#, no-c-format
+msgid "&Fade out"
+msgstr "&Kaybolmayı etkinleştir"
+
+#. i18n: file advancedOptions.ui line 122
+#: rc.cpp:33
+#, no-c-format
+msgid ""
+"<qt>\n"
+"<p>Select this option to make Applet Handles visible only on mouse hover.</p>\n"
+"<p>Applet Handles let you move, remove and configure applets in the panel.</p>\n"
+"</qt>"
+msgstr ""
+"<qt>\n"
+"<p>Uygulamacık Tutamaçlarının fare ile üzerine gelince görünür olması için bu "
+"seçeneği seçin.</p>\n"
+"<p>Uygulamacık Tutamaçları paneldeki uygulamacıkları hareket ettirmenize, "
+"kaldırmanıza ve yapılandırmanıza yarar.</p>\n"
+"</qt>"
+
+#. i18n: file advancedOptions.ui line 130
+#: rc.cpp:39
+#, no-c-format
+msgid "&Hide"
+msgstr "&Gizle"
+
+#. i18n: file advancedOptions.ui line 135
+#: rc.cpp:42
+#, no-c-format
+msgid ""
+"<qt>\n"
+"<p>"
+"<p>Select this option to always hide the Applet Handles. Beware that this "
+"option can disable removing, moving or configuring some applets.</p>\n"
+"</qt>"
+msgstr ""
+"<qt>\n"
+"<p>"
+"<p>Uygulamacık Tutamaçlarını herzaman gizlemek iiçn bu seçeneği seçin. Bazı "
+"uygulamacıkları hareket ettirmez, kaldırmaz ve yapılandırmazsınız.</p>\n"
+"</qt>"
+
+#. i18n: file advancedOptions.ui line 162
+#: rc.cpp:47
+#, no-c-format
+msgid "Transparency"
+msgstr "Şeffaflık"
+
+#. i18n: file advancedOptions.ui line 184
+#: rc.cpp:50 rc.cpp:77
+#, no-c-format
+msgid ""
+"Click on this button to set the color to use when tinting transparent panels."
+msgstr ""
+"Şeffaf panelleri gölgelemek için kullanacağınız rengi seçmek için bu düğmeye "
+"tıklayın."
+
+#. i18n: file advancedOptions.ui line 209
+#: rc.cpp:53
+#, no-c-format
+msgid "Min"
+msgstr "Asgari"
+
+#. i18n: file advancedOptions.ui line 215
+#: rc.cpp:56 rc.cpp:59 rc.cpp:65 rc.cpp:71
+#, no-c-format
+msgid ""
+"Use this slider to set how much transparent panels should be tinted using the "
+"tint color."
+msgstr ""
+"Şeffaf panellerin gölge rengi ile ne kadar gölgeleneceğini ayarlamak için bu "
+"kaydırma çubuğunu kullanın."
+
+#. i18n: file advancedOptions.ui line 251
+#: rc.cpp:62
+#, no-c-format
+msgid "Max"
+msgstr "Azami"
+
+#. i18n: file advancedOptions.ui line 265
+#: rc.cpp:68
+#, no-c-format
+msgid "Ti&nt amount:"
+msgstr "&Katıştırma miktarı:"
+
+#. i18n: file advancedOptions.ui line 279
+#: rc.cpp:74
+#, no-c-format
+msgid "Tint c&olor:"
+msgstr "K&atıştırma rengi:"
+
+#. i18n: file advancedOptions.ui line 293
+#: rc.cpp:80
+#, no-c-format
+msgid "Also apply to panel with menu bar"
+msgstr "Menü çubuğu bulunan panele de uygula"
+
+#. i18n: file advancedOptions.ui line 296
+#: rc.cpp:83
+#, no-c-format
+msgid ""
+"Normally if you have the desktop's or current application's menu bar displayed "
+"in a panel at the top of the screen (MacOS-style), transparency is disabled for "
+"this panel to avoid the desktop background clashing with the menu bar. Set this "
+"option to make it transparent anyways."
+msgstr ""
+"Normalde masaüstünün veya mevcut uygulamanın menü çubuğun ekranın üst "
+"tarafındaki bir panelde (MacOs Stili) gösteriliyorsa, şeffaflık arkaplan menü "
+"çubuğu ile çakışmasın diye kapatılmıştır. Yine de şeffaf hale getirmek "
+"isterseniz bu seçeneği ayarlayın."
+
+#. i18n: file applettab.ui line 24
+#: rc.cpp:86
+#, no-c-format
+msgid "Security Level"
+msgstr "Güvenlik Derecesi"
+
+#. i18n: file applettab.ui line 35
+#: rc.cpp:89
+#, no-c-format
+msgid "Load only trusted applets internal"
+msgstr "Sadece içerdeki güvenilir programcıkları yükle"
+
+#. i18n: file applettab.ui line 43
+#: rc.cpp:92
+#, no-c-format
+msgid "Load startup config applets internal"
+msgstr "İçerdeki başlangıç konfigürasyon programcıklarını yükler"
+
+#. i18n: file applettab.ui line 51
+#: rc.cpp:95
+#, no-c-format
+msgid "Load all applets internal"
+msgstr "Bütün içerdeki programcıkları yükle"
+
+#. i18n: file applettab.ui line 67
+#: rc.cpp:98
+#, no-c-format
+msgid "List of Trusted Applets"
+msgstr "Güvenilir Programcıkların Listesi"
+
+#. i18n: file applettab.ui line 84
+#: rc.cpp:101
+#, no-c-format
+msgid "Available Applets"
+msgstr "Kullanılabilir Programcıklar"
+
+#. i18n: file applettab.ui line 133
+#: rc.cpp:104
+#, no-c-format
+msgid ">>"
+msgstr ">>"
+
+#. i18n: file applettab.ui line 172
+#: rc.cpp:107
+#, no-c-format
+msgid "<<"
+msgstr "<<"
+
+#. i18n: file applettab.ui line 197
+#: rc.cpp:110
+#, no-c-format
+msgid "Trusted Applets"
+msgstr "Güvenilir Programcıklar"
+
+#. i18n: file hidingtab.ui line 44
+#: rc.cpp:113 rc.cpp:467
+#, no-c-format
+msgid "S&ettings for:"
+msgstr "&Ayarlar:"
+
+#. i18n: file hidingtab.ui line 79
+#: rc.cpp:116
+#, no-c-format
+msgid "Hide Mode"
+msgstr "Gizleme Kipi"
+
+#. i18n: file hidingtab.ui line 107
+#: rc.cpp:119
+#, no-c-format
+msgid "On&ly hide when a panel-hiding button is clicked"
+msgstr "Sadece pane&l saklama düğmesi tıklandığında sakla"
+
+#. i18n: file hidingtab.ui line 113
+#: rc.cpp:122
+#, no-c-format
+msgid ""
+"If this option is selected, the only way to hide the panel will be to click on "
+"the hide buttons that appear on either end of it."
+msgstr ""
+"Bu opsiyon seçiliyse, paneli saklamanın tek yolu panelin her iki son tarafında "
+"beliren saklama düğmelerini tıklamak olacaktır."
+
+#. i18n: file hidingtab.ui line 138
+#: rc.cpp:125
+#, no-c-format
+msgid " sec"
+msgstr " sn"
+
+#. i18n: file hidingtab.ui line 141
+#: rc.cpp:128
+#, no-c-format
+msgid "Immediately"
+msgstr "Hemen"
+
+#. i18n: file hidingtab.ui line 144
+#: rc.cpp:131 rc.cpp:137
+#, no-c-format
+msgid ""
+"Here you can change the delay after which the panel will disappear if not used."
+msgstr ""
+"Buradan, panelin ne kadar süre boyunca kullanılmayınca gizleneceğini "
+"belirleyebilirsiniz."
+
+#. i18n: file hidingtab.ui line 163
+#: rc.cpp:134
+#, no-c-format
+msgid "after the &cursor leaves the panel"
+msgstr "&imleç paneli terkettikten sonra"
+
+#. i18n: file hidingtab.ui line 199
+#: rc.cpp:140
+#, no-c-format
+msgid "Allow other &windows to cover the panel"
+msgstr "Diğer &pencerelerin paneli kaplamasına izin ver"
+
+#. i18n: file hidingtab.ui line 202
+#: rc.cpp:143
+#, no-c-format
+msgid ""
+"If this option is selected, the panel will allow itself to be covered by other "
+"windows."
+msgstr ""
+"Bu opsiyon seçildiyse, panel kendisinin diğer pencereler tarafından "
+"kaplanmasına izin verecektir."
+
+#. i18n: file hidingtab.ui line 213
+#: rc.cpp:146
+#, no-c-format
+msgid "Hide a&utomatically"
+msgstr "&Otomatik gizle"
+
+#. i18n: file hidingtab.ui line 216
+#: rc.cpp:149
+#, no-c-format
+msgid ""
+"If this option is selected, the panel will automatically hide after a period of "
+"time and reappear when you move the mouse to the screen edge where the panel is "
+"hidden. This is particularly useful for small screen resolutions, such as on "
+"laptops."
+msgstr ""
+"Eğer bu seçenek seçili ise panel bir süre sonra kendiliğinden gizlenecek ve "
+"fareyi ekranın panelin olduğu köşesine hareket ettirdiğinizde tekrar "
+"görünecektir. Bu özellik düşük ekran çözünürlüklerinde (ör. Dizüstü "
+"bilgisayarlar) kullanışlı olabilir."
+
+#. i18n: file hidingtab.ui line 235
+#: rc.cpp:152
+#, no-c-format
+msgid "&Raise when the pointer touches the screen's:"
+msgstr "&İmleç ekranınkine vurduğunda yüksel:"
+
+#. i18n: file hidingtab.ui line 238
+#: rc.cpp:155
+#, no-c-format
+msgid ""
+"When this option is selected, moving the pointer to the specified edge of the "
+"screen will cause the panel to appear on top of any windows that may be "
+"covering it."
+msgstr ""
+"Bu seçenek seçili olduğu zaman, imleçi ekranın belirtilen kenarına doğru "
+"hareket ettirmek, panelin onu kaplayan herhangi pencerenin üzerinde görünmesine "
+"sebep olacaktır."
+
+#. i18n: file hidingtab.ui line 244
+#: rc.cpp:158
+#, no-c-format
+msgid "Top Left Corner"
+msgstr "Üst Sol Köşe"
+
+#. i18n: file hidingtab.ui line 249
+#: rc.cpp:161
+#, no-c-format
+msgid "Top Edge"
+msgstr "Üst Kenar"
+
+#. i18n: file hidingtab.ui line 254
+#: rc.cpp:164
+#, no-c-format
+msgid "Top Right Corner"
+msgstr "Üst Sağ Köşe"
+
+#. i18n: file hidingtab.ui line 259
+#: rc.cpp:167
+#, no-c-format
+msgid "Right Edge"
+msgstr "Sağ Kenar"
+
+#. i18n: file hidingtab.ui line 264
+#: rc.cpp:170
+#, no-c-format
+msgid "Bottom Right Corner"
+msgstr "Alt Sağ Köşe"
+
+#. i18n: file hidingtab.ui line 269
+#: rc.cpp:173
+#, no-c-format
+msgid "Bottom Edge"
+msgstr "Alt Kenar"
+
+#. i18n: file hidingtab.ui line 274
+#: rc.cpp:176
+#, no-c-format
+msgid "Bottom Left Corner"
+msgstr "Alt Sol Köşe"
+
+#. i18n: file hidingtab.ui line 279
+#: rc.cpp:179
+#, no-c-format
+msgid "Left Edge"
+msgstr "Sol Kenar"
+
+#. i18n: file hidingtab.ui line 289
+#: rc.cpp:182
+#, no-c-format
+msgid ""
+"Here you can set the location on the screen's edge that will bring the panel to "
+"the front."
+msgstr ""
+"Burada, paneli öne getirecek olan yeri, ekranın kenarı üzerinde "
+"ayarlayabilirsiniz."
+
+#. i18n: file hidingtab.ui line 319
+#: rc.cpp:185
+#, no-c-format
+msgid "Show panel when switching &desktops"
+msgstr "&Masaüstlerini değiştirirken paneli göster"
+
+#. i18n: file hidingtab.ui line 322
+#: rc.cpp:188
+#, no-c-format
+msgid ""
+"If this option is enabled, the panel will automatically show itself for a brief "
+"period of time when the desktop is switched so you can see which desktop you "
+"are on."
+msgstr ""
+"Eğer bu seçenek etkinleştirilirse, masaüstü değiştiği anda panel kendisi çok "
+"kısa bir zaman içinde ekranda gösterecektir. Böylece hangi masaüstüne "
+"geçtiğinizi kolaylıkla anlayabileceksiniz."
+
+#. i18n: file hidingtab.ui line 357
+#: rc.cpp:191
+#, no-c-format
+msgid "Panel-Hiding Buttons"
+msgstr "Panel Saklama Düğmeleri"
+
+#. i18n: file hidingtab.ui line 360
+#: rc.cpp:194
+#, no-c-format
+msgid ""
+"This option controls the panel-hiding buttons, which are buttons with a small "
+"triangle found at the ends of the panel. You can place a button at either end "
+"of the panel, or both. Clicking on one of these buttons will hide the panel."
+msgstr ""
+"Bu seçenek, panelin altında küçük üçgenlerle bulunan panel saklama düğmelerini "
+"kontrol eder. Düğmeyi panelin her iki alt tarafından birine ya da ikisine "
+"birden yerleştirebilirsiniz. Bu düğmelerden birine tıklamak paneli saklar."
+
+#. i18n: file hidingtab.ui line 377
+#: rc.cpp:200
+#, no-c-format
+msgid ""
+"When this option is selected, a panel-hiding button appears on the left end of "
+"the panel."
+msgstr ""
+"Bu seçenek seçili iken, panelin sol altında bir panel saklama düğmesi görünür."
+
+#. i18n: file hidingtab.ui line 385
+#: rc.cpp:203
+#, no-c-format
+msgid "Show right panel-hiding &button"
+msgstr "Sağ panel &saklama düğmesini göster"
+
+#. i18n: file hidingtab.ui line 391
+#: rc.cpp:206
+#, no-c-format
+msgid ""
+"When this option is selected, a panel-hiding button appears on the right end of "
+"the panel."
+msgstr ""
+"Bu seçenek seçili iken, panelin sağ altında bir panel saklama düğmesi görünür."
+
+#. i18n: file hidingtab.ui line 426
+#: rc.cpp:209
+#, no-c-format
+msgid "Panel Animation"
+msgstr "Panel Canlandırması"
+
+#. i18n: file hidingtab.ui line 454
+#: rc.cpp:212
+#, no-c-format
+msgid "A&nimate panel hiding"
+msgstr "P&anel saklamayı canlandır"
+
+#. i18n: file hidingtab.ui line 457
+#: rc.cpp:215
+#, no-c-format
+msgid ""
+"When this option is selected the panel will \"slide\" off the screen when "
+"hiding. The speed of the animation is controlled by the slider directly below."
+msgstr ""
+"Bu seçenek seçili iken panel saklanma esnasında \"kayma\" yapacaktır. "
+"Canlandırmanın hızı doğrudan aşağıdaki kaydırıcı tarafından kontrol edilir."
+
+#. i18n: file hidingtab.ui line 522
+#: rc.cpp:218
+#, no-c-format
+msgid "Determines how quickly the panel hides if hiding animation is enabled."
+msgstr ""
+"Saklama canlandırması etkinleştirilmişse panelin ne kadar hızlı saklanacağına "
+"karar verir."
+
+#. i18n: file hidingtab.ui line 558
+#: rc.cpp:221
+#, no-c-format
+msgid "Fast"
+msgstr "Hızlı"
+
+#. i18n: file hidingtab.ui line 599
+#: rc.cpp:224
+#, no-c-format
+msgid "Medium"
+msgstr "Orta"
+
+#. i18n: file hidingtab.ui line 623
+#: rc.cpp:227
+#, no-c-format
+msgid "Slow"
+msgstr "Yavaş"
+
+#. i18n: file lookandfeeltab.ui line 16
+#: rc.cpp:230
+#, no-c-format
+msgid ""
+"If this option is selected, informational tooltips will appear when the mouse "
+"cursor moves over the icons, buttons and applets in the panel."
+msgstr ""
+"Eğer bu seçenek seçili ise, fare imleci paneldeki ikonların, düğmelerin, ve "
+"apletlerin üzerinde hareket ettikçe bilgilendirici araç ipuçları görünecektir."
+
+#. i18n: file lookandfeeltab.ui line 30
+#: rc.cpp:233
+#, no-c-format
+msgid "General"
+msgstr "Genel"
+
+#. i18n: file lookandfeeltab.ui line 41
+#: rc.cpp:236
+#, no-c-format
+msgid "Enable icon &mouseover effects"
+msgstr "&Simge odaklamasını etkinleştir"
+
+#. i18n: file lookandfeeltab.ui line 44
+#: rc.cpp:239
+#, no-c-format
+msgid ""
+"When this option is selected a mouseover effect appears when the mouse cursor "
+"is moved over panel buttons"
+msgstr ""
+"Bu seçenek işaretliyse, fare imleci düğmeler üzerine geldiği zaman simgeler "
+"büyüyecektir."
+
+#. i18n: file lookandfeeltab.ui line 52
+#: rc.cpp:242
+#, no-c-format
+msgid "Show too&ltips"
+msgstr "İpuçlarını &göster"
+
+#. i18n: file lookandfeeltab.ui line 55
+#: rc.cpp:245
+#, no-c-format
+msgid ""
+"When this option is selected informational tooltips will appear when the mouse "
+"cursor moves over the icons, buttons and applets in the panel."
+msgstr ""
+"Bu seçenek etkin ise, fare simgeler üzerine geldiği zaman ipuçları "
+"gösterilecektir."
+
+#. i18n: file lookandfeeltab.ui line 65
+#: rc.cpp:248
+#, no-c-format
+msgid "Button Backgrounds"
+msgstr "Düğme Arkaplanı"
+
+#. i18n: file lookandfeeltab.ui line 76
+#: rc.cpp:251
+#, no-c-format
+msgid "&K menu:"
+msgstr "&KDE menüsü:"
+
+#. i18n: file lookandfeeltab.ui line 82
+#: rc.cpp:254 rc.cpp:278
+#, no-c-format
+msgid "Choose a tile image for the K menu."
+msgstr "KDE menüsü için bir döşene resimi seç."
+
+#. i18n: file lookandfeeltab.ui line 90
+#: rc.cpp:257
+#, no-c-format
+msgid "&QuickBrowser menus:"
+msgstr "&Hızlı Tarayıcı menüleri:"
+
+#. i18n: file lookandfeeltab.ui line 96
+#: rc.cpp:260 rc.cpp:269
+#, no-c-format
+msgid "Choose a tile image for Quick Browser buttons."
+msgstr "Hızlı tarayıcı düğmeleri için bir döşeme resimi seç."
+
+#. i18n: file lookandfeeltab.ui line 107
+#: rc.cpp:266 rc.cpp:275 rc.cpp:290 rc.cpp:308 rc.cpp:335
+#, no-c-format
+msgid "Custom Color"
+msgstr "Özel Renk"
+
+#. i18n: file lookandfeeltab.ui line 165
+#: rc.cpp:281
+#, no-c-format
+msgid ""
+"When the Custom Color option is selected, use this button to pick a color for "
+"quick browser tile backgrounds"
+msgstr ""
+"Özel Renk seçeneği seçildiğinde, bu düğmeyi hızlı tarayıcı arkaplanlarda renk "
+"seçimi yapmak için kullanın"
+
+#. i18n: file lookandfeeltab.ui line 176
+#: rc.cpp:284
+#, no-c-format
+msgid ""
+"When the Custom Color option is selected, use this button to pick a color for "
+"the K menu tile background"
+msgstr ""
+"Özel Renk seçeneği seçildiğinde, bu düğmeyi K menüsü arkaplanlarında renk "
+"seçimi yapmak için kullanın"
+
+#. i18n: file lookandfeeltab.ui line 205
+#: rc.cpp:293 rc.cpp:302
+#, no-c-format
+msgid "Choose a tile image for window list buttons."
+msgstr "Pencere liste düğmeleri için bir döşeme resmi seç."
+
+#. i18n: file lookandfeeltab.ui line 216
+#: rc.cpp:296
+#, no-c-format
+msgid ""
+"When the Custom Color option is selected, use this button to pick a color for "
+"window list tile backgrounds"
+msgstr ""
+"Özel Renk seçeneği seçildiğinde, bu düğmeyi pencere listesi arkaplanlarında "
+"renk seçimi yapmak için kullanın"
+
+#. i18n: file lookandfeeltab.ui line 224
+#: rc.cpp:299
+#, no-c-format
+msgid "&Window list:"
+msgstr "&Pencere Listesi:"
+
+#. i18n: file lookandfeeltab.ui line 259
+#: rc.cpp:311 rc.cpp:320
+#, no-c-format
+msgid "Choose a tile image for desktop access buttons."
+msgstr "Masaüstü erişim düğmeleri için bir resim seç."
+
+#. i18n: file lookandfeeltab.ui line 270
+#: rc.cpp:314
+#, no-c-format
+msgid ""
+"When the Custom Color option is selected, use this button to pick a color for "
+"the desktop tile background"
+msgstr ""
+"Özel Renk seçeneği seçildiğinde, bu düğmeyi masaüstü arkaplanlarında renk "
+"seçimi yapmak için kullanın"
+
+#. i18n: file lookandfeeltab.ui line 278
+#: rc.cpp:317
+#, no-c-format
+msgid "De&sktop access:"
+msgstr "&Masaüstü erişimi:"
+
+#. i18n: file lookandfeeltab.ui line 295
+#: rc.cpp:323
+#, no-c-format
+msgid ""
+"When the Custom Color option is selected, use this button to pick a color for "
+"application tile backgrounds"
+msgstr ""
+"Özel Renk seçeneği seçildiğinde, bu düğmeyi uygulama arkaplanlarında renk "
+"seçimi yapmak için kullanın"
+
+#. i18n: file lookandfeeltab.ui line 303
+#: rc.cpp:326
+#, no-c-format
+msgid "Applicatio&ns:"
+msgstr "Uy&gulamalar:"
+
+#. i18n: file lookandfeeltab.ui line 309
+#: rc.cpp:329 rc.cpp:338
+#, no-c-format
+msgid "Choose a tile image for buttons that launch applications."
+msgstr "Uygulamaları başlatan düğmeler için bir döşeme resimi seç."
+
+#. i18n: file lookandfeeltab.ui line 365
+#: rc.cpp:341
+#, no-c-format
+msgid "Panel Background"
+msgstr "Panel Arkaplanı"
+
+#. i18n: file lookandfeeltab.ui line 396
+#: rc.cpp:344
+#, no-c-format
+msgid "Colorize to &match the desktop color scheme"
+msgstr "&Masaüstü renk şemasına uyması için renklendir"
+
+#. i18n: file lookandfeeltab.ui line 402
+#: rc.cpp:347
+#, no-c-format
+msgid ""
+"If this option is selected, the panel background image will be colored to match "
+"the default colors. To change the default colors, go to the 'Colors' control "
+"module."
+msgstr ""
+"Bu seçenek işaretliyse, panele uygulanacak bir arkaplan seçmeniz mümkün "
+"olacaktır. Öntanımlı renkler değiştirmek için 'Renkler' denetim modülü "
+"kullanın."
+
+#. i18n: file lookandfeeltab.ui line 449
+#: rc.cpp:350
+#, no-c-format
+msgid "This is a preview for the selected background image."
+msgstr "Bu seçilen arkaplan resminin bir önizlemesidir."
+
+#. i18n: file lookandfeeltab.ui line 469
+#: rc.cpp:353
+#, no-c-format
+msgid ""
+"Here you can choose a theme to be displayed by the panel. Press the 'Browse' "
+"button to choose a theme using the file dialog.\n"
+"This option is only active if 'Enable background image' is selected."
+msgstr ""
+"Buradan, panelde görüntülenecek bir tema seçebilirsiniz. Dosya iletişim "
+"kutusunu kullanarak bir tema seçmek için 'Gözat' düğmesine basınız.\n"
+"Bu seçenek, 'Arkaplan resmini etkinleştir' seçiliyse etkin durumda olur."
+
+#. i18n: file lookandfeeltab.ui line 477
+#: rc.cpp:357
+#, no-c-format
+msgid "Enable &background image"
+msgstr "Arkaplan &resmini etkinleştir"
+
+#. i18n: file lookandfeeltab.ui line 485
+#: rc.cpp:360
+#, no-c-format
+msgid "Enable &transparency"
+msgstr "Ş&effaflık etkin"
+
+#. i18n: file lookandfeeltab.ui line 503
+#: rc.cpp:363
+#, no-c-format
+msgid "Advanc&ed Options"
+msgstr "G&elişmiş Seçenekler"
+
+#. i18n: file lookandfeeltab.ui line 506
+#: rc.cpp:366
+#, no-c-format
+msgid ""
+"Click here to open the Advanced Options dialog. You can configure the applet "
+"handles look and feel, the tint transparency color and more."
+msgstr "Gelişmiş Seçenekler penceresini açmak için buraya tıklayın."
+
+#. i18n: file menutab.ui line 27
+#: rc.cpp:369
+#, no-c-format
+msgid "K Menu"
+msgstr "K Menüsü"
+
+#. i18n: file menutab.ui line 49
+#: rc.cpp:372
+#, no-c-format
+msgid "Menu item format:"
+msgstr "Menü öğesi biçimi:"
+
+#. i18n: file menutab.ui line 55
+#: rc.cpp:375
+#, no-c-format
+msgid "Here you can choose how menu entries are shown."
+msgstr "Buradan menü girdilerinin nasıl göründüğünü seçebilirsiniz."
+
+#. i18n: file menutab.ui line 66
+#: rc.cpp:378
+#, no-c-format
+msgid "&Name only"
+msgstr "&Sadece isim"
+
+#. i18n: file menutab.ui line 69
+#: rc.cpp:381
+#, no-c-format
+msgid ""
+"When this option is selected, items in the K Menu will appear with the "
+"application's name next to the icon."
+msgstr ""
+"Bu seçenek etkin ise, K menüsündeki öğeler simgenin yanında uygulama adı "
+"ilegörüntüleneceklerdir."
+
+#. i18n: file menutab.ui line 77
+#: rc.cpp:384
+#, no-c-format
+msgid "Name - &Description"
+msgstr "İsim - Aç&ıklama"
+
+#. i18n: file menutab.ui line 83
+#: rc.cpp:387
+#, no-c-format
+msgid ""
+"When this option is selected, items in the K Menu will appear with the "
+"application's name and a brief description next to the icon."
+msgstr ""
+"Bu seçenek seçili iken, K Menüsündeki ögeler, uygulamanın adı ve ikonun "
+"yanında, parantez içindeki kısa açıklaması ile birlikte görünür."
+
+#. i18n: file menutab.ui line 91
+#: rc.cpp:390
+#, no-c-format
+msgid "D&escription only"
+msgstr "&Sadece açıklama"
+
+#. i18n: file menutab.ui line 94
+#: rc.cpp:393
+#, no-c-format
+msgid ""
+"When this option is selected, items in the K Menu will appear with the "
+"application's brief description next to the icon."
+msgstr ""
+"Bu seçenek etkin ise, KDE menüsündeki öğeler simgenin yanında uygulama adı "
+"ilegörüntüleneceklerdir."
+
+#. i18n: file menutab.ui line 105
+#: rc.cpp:396
+#, no-c-format
+msgid "Des&cription (Name)"
+msgstr "&Açıklama (İsim)"
+
+#. i18n: file menutab.ui line 108
+#: rc.cpp:399
+#, no-c-format
+msgid ""
+"When this option is selected, items in the K Menu will appear with a brief "
+"description and the application's name in brackets next to the icon."
+msgstr ""
+"Bu seçenek seçili iken, K Menü'deki öğeler, kısa açıklaması ve ikonun yanında, "
+"parantez içindeki uygulamanın adı ile birlikte görünür."
+
+#. i18n: file menutab.ui line 118
+#: rc.cpp:402
+#, no-c-format
+msgid "Show side ima&ge"
+msgstr "&Yan resmi göster"
+
+#. i18n: file menutab.ui line 126
+#: rc.cpp:405
+#, no-c-format
+msgid ""
+"<qt>When this option is selected an image will appear down the left-hand side "
+"of the K Menu. The image will be tinted according to your color settings.\n"
+"                                    \n"
+"                                    "
+"<p><b>Tip</b>: You can customize the image that appears in the K Menu by "
+"putting an image file called kside.png and a tileable image file called "
+"kside_tile.png in $KDEHOME/share/apps/kicker/pics.</qt>"
+msgstr ""
+"<qt>Bu seçenek seçili iken, K Menü'nün alt sağ tarafında bir resim görünür. Bu "
+"resmin rengi, renk ayarlarınıza göre düzenlenebilir.\n"
+"                                    \n"
+"                                    "
+"<p><b>İpucu</b>: K Menüde görüntülenen resmi değiştirmek istiyorsanız normal "
+"bir resim için kside.png, genişleyebilir resim için kside_tile.png dosyalarını "
+"$KDEHOME/share/apps/kicker/pics dizinine koymanız yeterli olacaktır.</qt>"
+
+#. i18n: file menutab.ui line 151
+#: rc.cpp:410
+#, no-c-format
+msgid "Edit &K Menu"
+msgstr "&KDE Menüsünü Düzenle"
+
+#. i18n: file menutab.ui line 154
+#: rc.cpp:413
+#, no-c-format
+msgid ""
+"Start the editor for the K menu. Here you can add, edit, remove and hide "
+"applications."
+msgstr ""
+"KDE menüleri üzerinde ekleme, silme ve düzenleme yapmak için KDE menü "
+"düzenleyicisini başlat."
+
+#. i18n: file menutab.ui line 162
+#: rc.cpp:416
+#, no-c-format
+msgid "Optional Menus"
+msgstr "Seçimlik Menüler"
+
+#. i18n: file menutab.ui line 192
+#: rc.cpp:419
+#, no-c-format
+msgid ""
+"This is a list of the dynamic menus that can be displayed in the KDE menu in "
+"addition to the normal applications. Use the checkboxes to add or remove menus."
+msgstr ""
+"Bu, KDE menüsündeki normal uygulamalara ek olarak KDE menüsünde görüntülenecek "
+"dinamik menülerin listesidir. Menü eklemek veya çıkartmak için işaret "
+"kutularını kullanın."
+
+#. i18n: file menutab.ui line 202
+#: rc.cpp:422
+#, no-c-format
+msgid "QuickBrowser Menus"
+msgstr "Hızlı Tarayıcı Menüleri"
+
+#. i18n: file menutab.ui line 221
+#: rc.cpp:425
+#, no-c-format
+msgid "Ma&ximum number of entries:"
+msgstr "&Azami menü öğesi sayısı:"
+
+#. i18n: file menutab.ui line 227
+#: rc.cpp:428 rc.cpp:431
+#, no-c-format
+msgid ""
+"When browsing directories that contain a lot of files, the QuickBrowser can "
+"sometimes hide your whole desktop. Here you can limit the number of entries "
+"shown at a time in the QuickBrowser. This is particularly useful for low screen "
+"resolutions."
+msgstr ""
+"Çok sayıda dosya içeren dizinlere göz atılırken, HIzlıGözatıcı bazen tüm masa "
+"üstünüzü gizleyebilir. Buradan HızlıGözatıcı'da bir kerede gösterilecek dosya "
+"sayısını belirleyebilirsiniz. Bu düşük ekran çözünürlükleri için kullanışlı "
+"olabilir."
+
+#. i18n: file menutab.ui line 254
+#: rc.cpp:434
+#, no-c-format
+msgid "Show hidden fi&les"
+msgstr "&Gizli dosyaları göster"
+
+#. i18n: file menutab.ui line 260
+#: rc.cpp:437
+#, no-c-format
+msgid ""
+"If this option is enabled, hidden files (i.e. files beginning with a dot) will "
+"be shown in the QuickBrowser menus."
+msgstr ""
+"Bu seçenek aktif ise, gizli dosyalar (örn. nokta ile başlayan dosyalar) Hızlı "
+"tarayıcı menülerinde gösterilecektir."
+
+#. i18n: file menutab.ui line 287
+#: rc.cpp:440
+#, no-c-format
+msgid "QuickStart Menu Items"
+msgstr "Hızlı Başlangıç Menü Öğeleri"
+
+#. i18n: file menutab.ui line 306
+#: rc.cpp:443
+#, no-c-format
+msgid "Maxim&um number of entries:"
+msgstr "&Azami öğe sayısı:"
+
+#. i18n: file menutab.ui line 312
+#: rc.cpp:446
+#, no-c-format
+msgid ""
+"This option allows you to define the maximum number of applications that should "
+"be displayed in the QuickStart menu area."
+msgstr ""
+"Bu seçenek QuickStart (Hızlı Başlat) alanında gösterilecek olan azami uygulama "
+"sayısını tanımlamanıza izin verir."
+
+#. i18n: file menutab.ui line 329
+#: rc.cpp:449
+#, no-c-format
+msgid ""
+"This option allows you to define how many applications should be displayed at "
+"most in the QuickStart menu area."
+msgstr ""
+"Bu seçenek QuickStart (Hızlı Başlat) alanında en fazla ne kadar uygulama "
+"gösterilebileceğini tanımlamanıza izin verir."
+
+#. i18n: file menutab.ui line 339
+#: rc.cpp:452
+#, no-c-format
+msgid "Show the &applications most recently used"
+msgstr "&En son kullanılan uygulamaları göster"
+
+#. i18n: file menutab.ui line 345
+#: rc.cpp:455
+#, no-c-format
+msgid ""
+"When this option is selected the QuickStart menu area will be filled with the "
+"applications you have used most recently."
+msgstr ""
+"Bu seçenek seçili iken, QuickStart (Hızlı Başlat) menü alanı en son "
+"kullandığınız uygulamalarla doldurulacaktır."
+
+#. i18n: file menutab.ui line 353
+#: rc.cpp:458
+#, no-c-format
+msgid "Show the applications most fre&quently used"
+msgstr "E&n çok kullanılan uygulamaları göster"
+
+#. i18n: file menutab.ui line 356
+#: rc.cpp:461
+#, no-c-format
+msgid ""
+"When this option is selected the QuickStart menu area will be filled with the "
+"applications you use most frequently."
+msgstr ""
+"Bu seçenek seçili iken, QuickStart (Hızlı Başlat) menü alanı en sık "
+"kullandığınız uygulamalarla doldurulacaktır."
+
+#. i18n: file positiontab.ui line 17
+#: rc.cpp:464
+#, no-c-format
+msgid ""
+"This is a list of all the panels currently active on your desktop. Select one "
+"to configure."
+msgstr ""
+"Masaüstünde etkin olan tüm panellerin listesini görüyorsunuz. Yapılandırmak "
+"için bir tanesini tıklayın."
+
+#. i18n: file positiontab.ui line 83
+#: rc.cpp:470
+#, no-c-format
+msgid "Screen"
+msgstr "Ekran"
+
+#. i18n: file positiontab.ui line 139
+#: rc.cpp:473
+#, no-c-format
+msgid ""
+"This preview image shows how the panel will appear on your screen with the "
+"settings you have chosen. Clicking the buttons around the image will move the "
+"position of the panel, while moving the length slider and choosing different "
+"sizes will change the dimensions of the panel."
+msgstr ""
+"Bu önizleme resmi seçtiğiniz ayarlar ile panelin nasıl görüneceğini gösterir. "
+"Resmin etrafındaki düğmelere tıklamakla panelin yerini hareket "
+"ettirebilirsiniz. Kaydırma düğmesini hareket ettirirken seçerken panelin "
+"boyutlarını da değiştirecektir."
+
+#. i18n: file positiontab.ui line 191
+#: rc.cpp:476
+#, no-c-format
+msgid "Identify"
+msgstr "Kimlik"
+
+#. i18n: file positiontab.ui line 194
+#: rc.cpp:479
+#, no-c-format
+msgid "This button displays each monitor's identifying number"
+msgstr "Bu düğme her monitörün kimlik numarasını gösterir"
+
+#. i18n: file positiontab.ui line 212
+#: rc.cpp:482
+#, no-c-format
+msgid "&Xinerama screen:"
+msgstr "&Xinerama ekranı:"
+
+#. i18n: file positiontab.ui line 223
+#: rc.cpp:485
+#, no-c-format
+msgid ""
+"This menu selects which screen the Panel will be displayed on in a "
+"multiple-monitor system"
+msgstr ""
+"Bu menü, çoklu monitör sistemine sahip bir ekranda panelin hangi ekranda "
+"görüntüleneceğini gösterir"
+
+#. i18n: file positiontab.ui line 260
+#: rc.cpp:488
+#, no-c-format
+msgid "Len&gth"
+msgstr "Uzu&nluk"
+
+#. i18n: file positiontab.ui line 264
+#: rc.cpp:491
+#, no-c-format
+msgid ""
+"This group of settings determines how the panel is aligned, including\n"
+"how it is positioned on the screen and how much of the screen it should use."
+msgstr "Bu ayarlar grubu panelin ekranda nasıl yerleşeceğini belirler."
+
+#. i18n: file positiontab.ui line 312
+#: rc.cpp:495
+#, no-c-format
+msgid ""
+"This slider defines how much of the screen's edge will be occupied by the "
+"panel."
+msgstr ""
+"Bu kaydırıcı ekranın kenarının ne kadarının panel tarafından kaplanacağını "
+"tanımlar."
+
+#. i18n: file positiontab.ui line 329
+#: rc.cpp:498
+#, no-c-format
+msgid "%"
+msgstr "%"
+
+#. i18n: file positiontab.ui line 332
+#: rc.cpp:501
+#, no-c-format
+msgid ""
+"This spinbox defines how much of the screen's edge will be occupied by the "
+"panel."
+msgstr ""
+"Bu dönme kutusu ekranın kenarının ne kadarının panel tarafından kaplanacağını "
+"tanımlar."
+
+#. i18n: file positiontab.ui line 342
+#: rc.cpp:504
+#, no-c-format
+msgid "&Expand as required to fit contents"
+msgstr "&İçeriğe uyması için gerektiği kadar genişlet"
+
+#. i18n: file positiontab.ui line 345
+#: rc.cpp:507
+#, no-c-format
+msgid ""
+"When this option is selected, the panel will grow as necessary to accommodate "
+"the buttons and applets on it."
+msgstr ""
+"Bu seçenek işaretliyse, panel, üzerindeki düğmelere ve apletlere uyması için "
+"gerektiği kadar büyüyecektir."
+
+#. i18n: file positiontab.ui line 380
+#: rc.cpp:510
+#, no-c-format
+msgid "Si&ze"
+msgstr "&Boyut"
+
+#. i18n: file positiontab.ui line 383
+#: rc.cpp:513
+#, no-c-format
+msgid "This sets the size of the panel."
+msgstr "Bu panelin boyutunu ayarlar."
+
+#. i18n: file positiontab.ui line 392
+#: rc.cpp:516
+#, no-c-format
+msgid "Tiny"
+msgstr "İnce"
+
+#. i18n: file positiontab.ui line 397
+#: rc.cpp:519
+#, no-c-format
+msgid "Small"
+msgstr "Küçük"
+
+#. i18n: file positiontab.ui line 402
+#: rc.cpp:522
+#, no-c-format
+msgid "Normal"
+msgstr "Normal"
+
+#. i18n: file positiontab.ui line 407
+#: rc.cpp:525
+#, no-c-format
+msgid "Large"
+msgstr "Kalın"
+
+#. i18n: file positiontab.ui line 484
+#: rc.cpp:531
+#, no-c-format
+msgid "This slider defines the panel size when the Custom option is selected."
+msgstr "Özel seçeneği seçili iken, panel büyüklüğünü kaydırıcı tanımlar."
+
+#. i18n: file positiontab.ui line 507
+#: rc.cpp:537
+#, no-c-format
+msgid "This spinbox defines the panel size when the Custom option is selected."
+msgstr "Özel seçeneği seçili iken, panel büyüklüğünü dönme kutusu tanımlar."
+
+#. i18n: file positiontab.ui line 519
+#: rc.cpp:540
+#, no-c-format
+msgid "Position"
+msgstr "Konum"
+
+#. i18n: file positiontab.ui line 525
+#: rc.cpp:543
+#, no-c-format
+msgid ""
+"Here you can set the position of the panel highlighted on the left side. You "
+"can put any panel on top or bottom of the screen and on the left or right side "
+"of the screen. There you can put it into the center or into either corner of "
+"the screen."
+msgstr ""
+"Solda belirtilecek olan panelin yerini buradan belirleyebilirsiniz. İstediğiniz "
+"paneli ekranın sağına, soluna, üstüne veya altına koyabilrsiniz.İsterseniz "
+"ortasına veya köşesine de koyabilirsiniz."
+
+#. i18n: file positiontab.ui line 609
+#: rc.cpp:546
+#, no-c-format
+msgid "Alt+1"
+msgstr "Alt+1"
+
+#. i18n: file positiontab.ui line 643
+#: rc.cpp:549
+#, no-c-format
+msgid "Alt+2"
+msgstr "Alt+2"
+
+#. i18n: file positiontab.ui line 677
+#: rc.cpp:552
+#, no-c-format
+msgid "Alt+3"
+msgstr "Alt+3"
+
+#. i18n: file positiontab.ui line 721
+#: rc.cpp:555
+#, no-c-format
+msgid "Alt+="
+msgstr "Alt+="
+
+#. i18n: file positiontab.ui line 755
+#: rc.cpp:558
+#, no-c-format
+msgid "Alt+-"
+msgstr "Alt+-"
+
+#. i18n: file positiontab.ui line 789
+#: rc.cpp:561
+#, no-c-format
+msgid "Alt+0"
+msgstr "Alt+0"
+
+#. i18n: file positiontab.ui line 833
+#: rc.cpp:564
+#, no-c-format
+msgid "Alt+9"
+msgstr "Alt+9"
+
+#. i18n: file positiontab.ui line 867
+#: rc.cpp:567
+#, no-c-format
+msgid "Alt+8"
+msgstr "Alt+8"
+
+#. i18n: file positiontab.ui line 901
+#: rc.cpp:570
+#, no-c-format
+msgid "Alt+7"
+msgstr "Alt+7"
+
+#. i18n: file positiontab.ui line 945
+#: rc.cpp:573
+#, no-c-format
+msgid "Alt+4"
+msgstr "Alt+4"
+
+#. i18n: file positiontab.ui line 979
+#: rc.cpp:576
+#, no-c-format
+msgid "Alt+5"
+msgstr "Alt+5"
+
+#. i18n: file positiontab.ui line 1013
+#: rc.cpp:579
+#, no-c-format
+msgid "Alt+6"
+msgstr "Alt+6"
+
+#: rc.cpp:580
+msgid "KDE Button"
+msgstr "KDE Düğmesi"
+
+#: rc.cpp:581
+msgid "Blue Wood"
+msgstr "Mavi Tahta"
+
+#: rc.cpp:582
+msgid "Green Wood"
+msgstr "Yeşil Tahta"
+
+#: rc.cpp:583
+msgid "Light Gray"
+msgstr "Açık Gri"
+
+#: rc.cpp:584
+msgid "Light Green"
+msgstr "Açık Yeşil"
+
+#: rc.cpp:585
+msgid "Light Pastel"
+msgstr "Açık Pastel"
+
+#: rc.cpp:586
+msgid "Light Purple"
+msgstr "Açık Mor"
+
+#: rc.cpp:587
+msgid "Nuts And Bolts"
+msgstr "Vida"
+
+#: rc.cpp:588
+msgid "Red Wood"
+msgstr "Kırmızı Tahta"
+
+#: rc.cpp:589
+msgid "Solid Blue"
+msgstr "Mavi"
+
+#: rc.cpp:590
+msgid "Solid Gray"
+msgstr "Gri"
+
+#: rc.cpp:591
+msgid "Solid Green"
+msgstr "Yeşil"
+
+#: rc.cpp:592
+msgid "Solid Orange"
+msgstr "Portakal"
+
+#: rc.cpp:593
+msgid "Solid Pastel"
+msgstr "Pastel"
+
+#: rc.cpp:594
+msgid "Solid Purple"
+msgstr "Mor"
+
+#: rc.cpp:595
+msgid "Solid Red"
+msgstr "Kırmızı"
+
+#: rc.cpp:596
+msgid "Solid Tigereye"
+msgstr "Kaplan Gözü"

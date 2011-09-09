@@ -1,0 +1,4497 @@
+# translation of katepart.po to turkish
+# translation of katepart.po to Türkçe
+# translation of katepart.po to
+# translation of katepart.po to Turkish
+# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Görkem Çetin <gorkem@kde.org>, 2002,2003, 2004.
+# Görkem Çetin <gorkem@kde.org.tr>, 2005.
+# Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
+# Bekir SONAT <cortexbs@yahoo.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: katepart\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-05-21 01:17+0200\n"
+"PO-Revision-Date: 2005-07-18 09:58+0300\n"
+"Last-Translator: Bekir SONAT <cortexbs@yahoo.com>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: part/kateprinter.cpp:72
+#, c-format
+msgid "Print %1"
+msgstr "Yazdır: %1"
+
+#: part/kateprinter.cpp:202
+msgid "(Selection of) "
+msgstr "(Seçim) "
+
+#: part/kateprinter.cpp:309 part/kateprinter.cpp:528
+#, fuzzy, c-format
+msgid "Typographical Conventions for %1"
+msgstr "%1 için baskı düzeni anlaşmaları"
+
+#: part/kateprinter.cpp:639
+msgid "Te&xt Settings"
+msgstr "&Metin Ayarları"
+
+#: part/kateprinter.cpp:644
+msgid "Print &selected text only"
+msgstr "&Sadece seçili metni yazdır"
+
+#: part/kateprinter.cpp:647
+msgid "Print &line numbers"
+msgstr "Satır &numaralarını yazdır"
+
+#: part/kateprinter.cpp:650
+msgid "Print syntax &guide"
+msgstr "Sözdizimi &ullanım kılavuzunu yazdır"
+
+#: part/kateprinter.cpp:659
+msgid ""
+"<p>This option is only available if some text is selected in the document.</p>"
+"<p>If available and enabled, only the selected text is printed.</p>"
+msgstr ""
+"<p>Bu seçenek, sadece Belge içindeki yazının bir kısmı seçilmişse "
+"geçerlidir.</p>"
+"<p>Böyleyse ve etkinleştirilmise, sadece seçilen metin yazdırılacak.</p>"
+
+#: part/kateprinter.cpp:662
+msgid ""
+"<p>If enabled, line numbers will be printed on the left side of the page(s).</p>"
+msgstr ""
+"<p>Etkinleştirilmişse, Sayfa(lar)ın sol kenarındaki satır numaraları da "
+"yazdırılacak.</p>"
+
+#: part/kateprinter.cpp:664
+#, fuzzy
+msgid ""
+"<p>Print a box displaying typographical conventions for the document type, as "
+"defined by the syntax highlighting being used."
+msgstr ""
+"<p>Belge türü için baskı düzeni anlaşmaları'nı gösteren bir kutu yazdırır, "
+"--kullanılan sözdizimi renklendirm kuralları ile tanımlandığı gibi."
+
+#: part/kateprinter.cpp:700
+msgid "Hea&der && Footer"
+msgstr "&Başlık ve Dipnot"
+
+#: part/kateprinter.cpp:708
+msgid "Pr&int header"
+msgstr "&Başlığı yazdır"
+
+#: part/kateprinter.cpp:710
+msgid "Pri&nt footer"
+msgstr "&Dipnotu Yazdır"
+
+#: part/kateprinter.cpp:715
+msgid "Header/footer font:"
+msgstr "Başlık/dipnot yazıtipi:"
+
+#: part/kateprinter.cpp:720
+msgid "Choo&se Font..."
+msgstr "&Yazıtipini Seç..."
+
+#: part/kateprinter.cpp:724
+msgid "Header Properties"
+msgstr "Başlık Özellikleri"
+
+#: part/kateprinter.cpp:727
+msgid "&Format:"
+msgstr "&Biçim:"
+
+#: part/kateprinter.cpp:734 part/kateprinter.cpp:755
+msgid "Colors:"
+msgstr "Renkler:"
+
+#: part/kateprinter.cpp:737 part/kateprinter.cpp:758
+msgid "Foreground:"
+msgstr "Önplan:"
+
+#: part/kateprinter.cpp:740
+msgid "Bac&kground"
+msgstr "&Arkaplan"
+
+#: part/kateprinter.cpp:743
+msgid "Footer Properties"
+msgstr "Dipnot Özellikleri"
+
+#: part/kateprinter.cpp:747
+msgid "For&mat:"
+msgstr "&Biçim:"
+
+#: part/kateprinter.cpp:761
+msgid "&Background"
+msgstr "&Arkaplan"
+
+#: part/kateprinter.cpp:788
+msgid "<p>Format of the page header. The following tags are supported:</p>"
+msgstr "<p>Sayfa başlığını biçimlendirir. Aşağıdaki etiketler desteklenir:</p>"
+
+#: part/kateprinter.cpp:790
+msgid ""
+"<ul>"
+"<li><tt>%u</tt>: current user name</li>"
+"<li><tt>%d</tt>: complete date/time in short format</li>"
+"<li><tt>%D</tt>: complete date/time in long format</li>"
+"<li><tt>%h</tt>: current time</li>"
+"<li><tt>%y</tt>: current date in short format</li>"
+"<li><tt>%Y</tt>: current date in long format</li>"
+"<li><tt>%f</tt>: file name</li>"
+"<li><tt>%U</tt>: full URL of the document</li>"
+"<li><tt>%p</tt>: page number</li></ul>"
+"<br><u>Note:</u> Do <b>not</b> use the '|' (vertical bar) character."
+msgstr ""
+"<ul>"
+"<li><tt>%u</tt>: güncel kullanıcı adı</li>"
+"<li><tt>%d</tt>: tam tarih/zaman -kısa biçimiyle</li>"
+"<li><tt>%D</tt>: tam tarih/zaman -uzun biçimiyle</li>"
+"<li><tt>%h</tt>: güncel zaman</li>"
+"<li><tt>%y</tt>: güncel tarih -kısa biçimiyle</li>"
+"<li><tt>%Y</tt>: güncel tarih -uzun biçimiyle</li>"
+"<li><tt>%f</tt>: dosya adı</li>"
+"<li><tt>%U</tt>: belgenin tam yolu (URL)</li>"
+"<li><tt>%p</tt>: sayfa numarası</li></ul>"
+"<br><u>Not:</u>  '|' işaretini kullanmayın."
+
+#: part/kateprinter.cpp:804
+msgid "<p>Format of the page footer. The following tags are supported:</p>"
+msgstr "<p>Sayfa Dipnotunu biçimlendirir. Aşağıdaki etiketler desteklenir:</p>"
+
+#: part/kateprinter.cpp:908
+msgid "L&ayout"
+msgstr "&Düzen"
+
+#: part/kateprinter.cpp:915 part/kateschema.cpp:834
+msgid "&Schema:"
+msgstr "T&ema:"
+
+#: part/kateprinter.cpp:919
+msgid "Draw bac&kground color"
+msgstr "&Arkaplan rengini kullan"
+
+#: part/kateprinter.cpp:922
+msgid "Draw &boxes"
+msgstr "&Kutucukları çiz"
+
+#: part/kateprinter.cpp:925
+msgid "Box Properties"
+msgstr "Kutu Özellikleri"
+
+#: part/kateprinter.cpp:928
+msgid "W&idth:"
+msgstr "&Genişlik:"
+
+#: part/kateprinter.cpp:932
+msgid "&Margin:"
+msgstr "&Aralık:"
+
+#: part/kateprinter.cpp:936
+msgid "Co&lor:"
+msgstr "&Renk:"
+
+#: part/kateprinter.cpp:954
+msgid ""
+"<p>If enabled, the background color of the editor will be used.</p>"
+"<p>This may be useful if your color scheme is designed for a dark "
+"background.</p>"
+msgstr ""
+"<p>Etkinleştirildiğinde düzenleyicinin arkaplan rengi kullanılacak.</p>"
+"<p>Eğer renk şemanız koyu bir arkaplan için tasarlandıysa yararlı olabilir.</p>"
+
+#: part/kateprinter.cpp:957
+msgid ""
+"<p>If enabled, a box as defined in the properties below will be drawn around "
+"the contents of each page. The Header and Footer will be separated from the "
+"contents with a line as well.</p>"
+msgstr ""
+"<p>Etkinleştirildiğinde, her sayfanın içeriğinin etrafında, özelliklerini "
+"tanımladığınız bir kutu çizilecek. Başlık ve Dipnot, sayfa içeriğinden ince "
+"birer çizgi ile ayrılacaktır. </p>"
+
+#: part/kateprinter.cpp:961
+msgid "The width of the box outline"
+msgstr "Kutunun ana çizgisinin kalınlığı"
+
+#: part/kateprinter.cpp:963
+msgid "The margin inside boxes, in pixels"
+msgstr "Kutuların içinden bırakılacak pay,-pixel cinsinden"
+
+#: part/kateprinter.cpp:965
+msgid "The line color to use for boxes"
+msgstr "Kutular için kullanılacak çizgi rengi"
+
+#: part/katebookmarks.cpp:77
+msgid "Set &Bookmark"
+msgstr "&Yer imi koy"
+
+#: part/katebookmarks.cpp:80
+msgid "If a line has no bookmark then add one, otherwise remove it."
+msgstr "Satır'da yer imi yoksa koy,-varsa temizle."
+
+#: part/katebookmarks.cpp:81
+msgid "Clear &Bookmark"
+msgstr "&Yer İmini Temizle"
+
+#: part/katebookmarks.cpp:84
+msgid "Clear &All Bookmarks"
+msgstr "Tüm Y&er İmlerini Temizle"
+
+#: part/katebookmarks.cpp:87
+msgid "Remove all bookmarks of the current document."
+msgstr "Geçerli belgede bulunan tüm yer imlerini temizle"
+
+#: part/katebookmarks.cpp:90 part/katebookmarks.cpp:242
+msgid "Next Bookmark"
+msgstr "Sonraki Yer İmi"
+
+#: part/katebookmarks.cpp:93
+msgid "Go to the next bookmark."
+msgstr "Sonraki yer imine git."
+
+#: part/katebookmarks.cpp:96 part/katebookmarks.cpp:244
+msgid "Previous Bookmark"
+msgstr "Önceki Yer İmi"
+
+#: part/katebookmarks.cpp:99
+msgid "Go to the previous bookmark."
+msgstr "Önceki yer imine git."
+
+#: part/katebookmarks.cpp:203
+msgid "&Next: %1 - \"%2\""
+msgstr "&Önceki: %1 - \"%2\""
+
+#: part/katebookmarks.cpp:210
+msgid "&Previous: %1 - \"%2\""
+msgstr "&Sonraki: %1 - \"%2\""
+
+#: part/katefactory.cpp:70
+msgid "Kate Part"
+msgstr "Kate Parçaçığı"
+
+#: part/katefactory.cpp:71
+msgid "Embeddable editor component"
+msgstr "Gömülebilir düzenleyici bileşeni"
+
+#: part/katefactory.cpp:72
+#, fuzzy
+msgid "(c) 2000-2004 The Kate Authors"
+msgstr "(c) 2000-2003 Kate Yazarları"
+
+#: part/katefactory.cpp:83
+msgid "Maintainer"
+msgstr "Sorumlu"
+
+#: part/katefactory.cpp:84 part/katefactory.cpp:85 part/katefactory.cpp:86
+#: part/katefactory.cpp:91
+msgid "Core Developer"
+msgstr "Ana Geliştirici"
+
+#: part/katefactory.cpp:87
+#, fuzzy
+msgid "The cool buffersystem"
+msgstr "Kurnaz tampon sistemi"
+
+#: part/katefactory.cpp:88
+msgid "The Editing Commands"
+msgstr "Düzenleme Komutları"
+
+#: part/katefactory.cpp:89
+#, fuzzy
+msgid "Testing, ..."
+msgstr "Denemeler..."
+
+#: part/katefactory.cpp:90
+msgid "Former Core Developer"
+msgstr "Önceki Ana Geliştirici"
+
+#: part/katefactory.cpp:92
+msgid "KWrite Author"
+msgstr "KWrite Yazarı"
+
+#: part/katefactory.cpp:93
+msgid "KWrite port to KParts"
+msgstr "KWrite ile KParts bütünleşmesi"
+
+#: part/katefactory.cpp:96
+msgid "KWrite Undo History, Kspell integration"
+msgstr "KWrite Geçmiş GeriAl, KSpell katılımı"
+
+#: part/katefactory.cpp:97
+msgid "KWrite XML Syntax highlighting support"
+msgstr "KWrite XML renklendirme desteği"
+
+#: part/katefactory.cpp:98
+msgid "Patches and more"
+msgstr "Yamalar ve diğerleri"
+
+#: part/katefactory.cpp:99
+msgid "Developer & Highlight wizard"
+msgstr "Geliştirici & Renklendirme sihirbazı"
+
+#: part/katefactory.cpp:101
+msgid "Highlighting for RPM Spec-Files, Perl, Diff and more"
+msgstr "RPM Spec dosyaları, Perl, Diff ve diğerleri için renklendirme"
+
+#: part/katefactory.cpp:102
+msgid "Highlighting for VHDL"
+msgstr "VHDL için renklendirme"
+
+#: part/katefactory.cpp:103
+msgid "Highlighting for SQL"
+msgstr "SQL için renklendirme"
+
+#: part/katefactory.cpp:104
+msgid "Highlighting for Ferite"
+msgstr "Ferite için renklendirme"
+
+#: part/katefactory.cpp:105
+msgid "Highlighting for ILERPG"
+msgstr "ILERPG için renklendirme"
+
+#: part/katefactory.cpp:106
+msgid "Highlighting for LaTeX"
+msgstr "LaTeX için renklendirme"
+
+#: part/katefactory.cpp:107
+msgid "Highlighting for Makefiles, Python"
+msgstr "Makefile ve Python için renklendirme"
+
+#: part/katefactory.cpp:108
+msgid "Highlighting for Python"
+msgstr "Python için renklendirme"
+
+#: part/katefactory.cpp:110
+msgid "Highlighting for Scheme"
+msgstr "Scheme için renklendirme"
+
+#: part/katefactory.cpp:111
+msgid "PHP Keyword/Datatype list"
+msgstr "PHP AnahtarKelime/VeriTipi listesi"
+
+#: part/katefactory.cpp:112
+msgid "Very nice help"
+msgstr "Güzel bir yardım"
+
+#: part/katefactory.cpp:113
+msgid "All people who have contributed and I have forgotten to mention"
+msgstr "Katkıda bulunan ve anmayı unuttuğum tüm insanlar"
+
+#: _translatorinfo.cpp:1 part/katefactory.cpp:115
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Ömer Fadıl USTA, Bekir SONAT"
+
+#: _translatorinfo.cpp:3 part/katefactory.cpp:115
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "omer_fad@hotmail.com, bekirsonat@cortex.com.tr"
+
+#: part/katesearch.cpp:72
+msgid "Look up the first occurrence of a piece of text or regular expression."
+msgstr "Girilen bir kelime ya da düzenli ifadenin ilk geçtiği yeri bul."
+
+#: part/katesearch.cpp:74
+msgid "Look up the next occurrence of the search phrase."
+msgstr "Aranan ifadenin bir sonraki yerini bul."
+
+#: part/katesearch.cpp:76
+msgid "Look up the previous occurrence of the search phrase."
+msgstr "Aranan ifadenin bir önceki yerini bul."
+
+#: part/katesearch.cpp:78
+msgid ""
+"Look up a piece of text or regular expression and replace the result with some "
+"given text."
+msgstr ""
+"Girilen bir kelime ya da düzenli ifadeyi bul ve bulunanı, verilen metin ile "
+"değiştir."
+
+#: part/katesearch.cpp:331
+msgid "Search string '%1' not found!"
+msgstr "'%1' arama dizgesi bulunamadı!"
+
+#: part/katesearch.cpp:333 part/katesearch.cpp:498
+msgid "Find"
+msgstr "Bul"
+
+#: part/katesearch.cpp:353 part/katesearch.cpp:371 part/katesearch.cpp:475
+#, c-format
+msgid ""
+"_n: %n replacement made.\n"
+"%n replacements made."
+msgstr "%n yer değiştirme yapıldı."
+
+#: part/katesearch.cpp:479
+msgid "End of document reached."
+msgstr "Belgenin sonuna ulaşıldı."
+
+#: part/katesearch.cpp:480
+msgid "Beginning of document reached."
+msgstr "Belgenin başına ulaşıldı"
+
+#: part/katesearch.cpp:485
+msgid "End of selection reached."
+msgstr "Seçimin sonuna ulaşıldı."
+
+#: part/katesearch.cpp:486
+msgid "Beginning of selection reached."
+msgstr "Seçimin başına ulaşıldı."
+
+#: part/katesearch.cpp:490
+msgid "Continue from the beginning?"
+msgstr "Başlangıçtan devam edilsin mi?"
+
+#: part/katesearch.cpp:491
+msgid "Continue from the end?"
+msgstr "Sondan devam edilsin mi?"
+
+#: part/katesearch.cpp:499
+msgid "&Stop"
+msgstr "&Dur"
+
+#: part/katesearch.cpp:753
+#, fuzzy
+msgid "Replace Confirmation"
+msgstr "Değiştirme Onayı"
+
+#: part/katesearch.cpp:755
+#, fuzzy
+msgid "Replace &All"
+msgstr "Tümünü &Değiştir"
+
+#: part/katesearch.cpp:755
+msgid "Re&place && Close"
+msgstr "Değişti&r ve Kapat"
+
+#: part/katesearch.cpp:755
+msgid "&Replace"
+msgstr "&Değiştir"
+
+#: part/katesearch.cpp:757
+#, fuzzy
+msgid "&Find Next"
+msgstr "So&nrakini Bul"
+
+#: part/katesearch.cpp:762
+msgid "Found an occurrence of your search term. What do you want to do?"
+msgstr "Aranan ifade bulundu. Ne yapmak istersiniz?"
+
+#: part/katesearch.cpp:814
+msgid "Usage: find[:[bcersw]] PATTERN"
+msgstr "Kullanım: find[:[bcersw]] DESEN"
+
+#: part/katesearch.cpp:826
+msgid "Usage: ifind[:[bcrs]] PATTERN"
+msgstr "Kullanım: ifind[:[bcrs]] DESEN"
+
+#: part/katesearch.cpp:880
+#, fuzzy
+msgid "Usage: replace[:[bceprsw]] PATTERN [REPLACEMENT]"
+msgstr "Kullanım: replace[:[bceprsw]] DESEN [YERİNEKONACAK]"
+
+#: part/katesearch.cpp:914
+#, fuzzy
+msgid "<p>Usage: <code>find[:bcersw] PATTERN</code></p>"
+msgstr "<p>Kullanım: <code>find[:bcersw]DESEN</code></p>"
+
+#: part/katesearch.cpp:917
+msgid ""
+"<p>Usage: <code>ifind:[:bcrs] PATTERN</code>"
+"<br>ifind does incremental or 'as-you-type' search</p>"
+msgstr ""
+"<p>Kullanım: <code>ifind:[:bcrs] DESEN</code>"
+"<br>ifind artımsal veya 'yazarken' arama</p>"
+
+#: part/katesearch.cpp:921
+msgid "<p>Usage: <code>replace[:bceprsw] PATTERN REPLACEMENT</code></p>"
+msgstr "<p>Kullanım: <code>replace[:bceprsw] DESEN YERİNEKONACAK</code></p>"
+
+#: part/katesearch.cpp:924
+msgid ""
+"<h4><caption>Options</h4>"
+"<p><b>b</b> - Search backward"
+"<br><b>c</b> - Search from cursor"
+"<br><b>r</b> - Pattern is a regular expression"
+"<br><b>s</b> - Case sensitive search"
+msgstr ""
+"<h4><caption>Seçimler</h4>"
+"<p><b>b</b> - GeriyeDoğru Ara"
+"<br><b>c</b> - İmleçten sonra ara"
+"<br><b>r</b> - Kalıp, bir düzenli ifade"
+"<br><b>s</b> - küçük/BÜYÜK harf duyarlı"
+
+#: part/katesearch.cpp:933
+msgid ""
+"<br><b>e</b> - Search in selected text only"
+"<br><b>w</b> - Search whole words only"
+msgstr ""
+"<br><b>e</b> - Sadece seçilen metin içinde ara"
+"<br><b>w</b> - Sadece tam sözcükleri ara"
+
+#: part/katesearch.cpp:939
+msgid ""
+"<br><b>p</b> - Prompt for replace</p>"
+"<p>If REPLACEMENT is not present, an empty string is used.</p>"
+"<p>If you want to have whitespace in your PATTERN, you need to quote both "
+"PATTERN and REPLACEMENT with either single or double quotes. To have the quote "
+"characters in the strings, prepend them with a backslash."
+msgstr ""
+"<br><b>p</b> - Değiştirme için rehber</p>"
+"<p>Eğer YERİNEKONACAK belirtilmemişse, boş bir dizge kullanılacaktır.</p>"
+"<p>Eğer DESEN'iniz içinde ayırma boşlukları yeralsın istiyorsanız, hem DESEN'de "
+"hem YERİNEKONACAK'ta, onları -tek veya çift- tırnak içine almalısınız. Dizge "
+"içinde, tırnak işaretlerinin bizzat kendisini kullanmak için başlarına TersBölü "
+"(backslash) eklemelisiniz."
+
+#: part/kateluaindentscript.cpp:86
+msgid "indenter.register requires 2 parameters (event id, function to call)"
+msgstr ""
+"indenter.register  2 parametre gerektirir  (event id, function to call)"
+
+#: part/kateluaindentscript.cpp:94
+msgid ""
+"indenter.register requires 2 parameters (event id (number), function to call "
+"(function))"
+msgstr ""
+"indenter.register 2 parametre gerektirir (event id (number), function to call "
+"(function))"
+
+#: part/kateluaindentscript.cpp:108
+#, fuzzy
+msgid "indenter.register:invalid event id"
+msgstr "indenter.register:invalid event id"
+
+#: part/kateluaindentscript.cpp:113
+#, fuzzy
+msgid "indenter.register:there is already a function set for given"
+msgstr "indenter.register:verilmiş bir fonksiyon seti zaten var"
+
+#: part/kateluaindentscript.cpp:126
+msgid "document.textLine:One parameter (line number) required"
+msgstr "document.textLine:Tek parametre gerektirir (line number)"
+
+#: part/kateluaindentscript.cpp:130
+#, fuzzy
+msgid "document.textLine:One parameter (line number) required (number)"
+msgstr ""
+"document.textLine:Tek parametre gerektirir (line number) required (number)"
+
+#: part/kateluaindentscript.cpp:139
+msgid ""
+"document.removeText:Four parameters needed (start line, start col,end line, end "
+"col)"
+msgstr ""
+"document.removeText:Dört parametre gerektirir  (start line, start col,end line, "
+"end col)"
+
+#: part/kateluaindentscript.cpp:143
+msgid ""
+"document.removeText:Four parameters needed (start line, start col,end line, end "
+"col) (4x number)"
+msgstr ""
+"document.removeText:Dört parametre gerektirir (start line, start col,end line, "
+"end col) (4x number)"
+
+#: part/kateluaindentscript.cpp:152
+msgid "document.insertText:Three parameters needed (line,col,text)"
+msgstr "document.insertText:Üç parametre gerektirir (line,col,text)"
+
+#: part/kateluaindentscript.cpp:156
+msgid ""
+"document.removeText:Three parameters needed (line,col,text) "
+"(number,number,string)"
+msgstr ""
+"document.removeText:Üç parametre gerektirir (line,col,text) "
+"(number,number,string)"
+
+#: part/kateluaindentscript.cpp:253
+msgid "LUA interpreter could not be initialized"
+msgstr "LUA yorumlayıcı tanımlanmamış"
+
+#: part/kateluaindentscript.cpp:293 part/kateluaindentscript.cpp:316
+#: part/kateluaindentscript.cpp:344
+#, c-format
+msgid "Lua indenting script had errors: %1"
+msgstr "Lua girintileme betiği hataları: %1"
+
+#: part/katejscript.cpp:1058 part/katejscript.cpp:1076
+#: part/kateluaindentscript.cpp:413 part/kateluaindentscript.cpp:431
+msgid "(Unknown)"
+msgstr "(bilinmeyen)"
+
+#: part/katedocument.cpp:434
+msgid "Fonts & Colors"
+msgstr "Yazıtipleri ve Renkler"
+
+#: part/katedocument.cpp:437
+#, fuzzy
+msgid "Cursor & Selection"
+msgstr "Seçim"
+
+#: part/katedocument.cpp:440
+msgid "Editing"
+msgstr "Düzenleme"
+
+#: part/katedocument.cpp:443
+msgid "Indentation"
+msgstr "Girinti"
+
+#: part/katedocument.cpp:446
+msgid "Open/Save"
+msgstr "Aç/Kaydet"
+
+#: part/katedocument.cpp:449
+msgid "Highlighting"
+msgstr "Renklendirme"
+
+#: part/katedocument.cpp:452
+msgid "Filetypes"
+msgstr "Dosya Türleri"
+
+#: part/katedocument.cpp:455
+msgid "Shortcuts"
+msgstr "Kısayollar"
+
+#: part/katedocument.cpp:458
+msgid "Plugins"
+msgstr "Eklentiler"
+
+#: part/katedocument.cpp:475
+#, fuzzy
+msgid "Font & Color Schemas"
+msgstr "Renk ve Yazıtipi Temaları"
+
+#: part/katedocument.cpp:478
+#, fuzzy
+msgid "Cursor & Selection Behavior"
+msgstr "Seçim Davranışı"
+
+#: part/katedocument.cpp:481
+msgid "Editing Options"
+msgstr "Düzenleme Seçenekleri"
+
+#: part/katedocument.cpp:484
+msgid "Indentation Rules"
+msgstr "Girinti Kuralları"
+
+#: part/katedocument.cpp:487
+msgid "File Opening & Saving"
+msgstr "Dosya Açma ve Kaydetme"
+
+#: part/katedocument.cpp:490
+msgid "Highlighting Rules"
+msgstr "Renklendirme Kuralları"
+
+#: part/katedocument.cpp:493
+msgid "Filetype Specific Settings"
+msgstr "Dosya Türü Ayarları"
+
+#: part/katedocument.cpp:496
+msgid "Shortcuts Configuration"
+msgstr "Kısayol Bilgisi"
+
+#: part/katedocument.cpp:499
+msgid "Plugin Manager"
+msgstr "Eklenti  Yöneticisi"
+
+#: part/katedocument.cpp:2482
+msgid ""
+"The file %1 could not be loaded completely, as there is not enough temporary "
+"disk storage for it."
+msgstr ""
+"%1 dosyası tümüyle yüklenemedi. Diskinizde geçici dosyalar için gereken "
+"yeterince boş yer mevcut olmayabilir."
+
+#: part/katedocument.cpp:2484
+msgid ""
+"The file %1 could not be loaded, as it was not possible to read from it.\n"
+"\n"
+"Check if you have read access to this file."
+msgstr ""
+"%1 dosyası yüklenemedi. Dosyadan okuma yapmak mümkün olmuyor.\n"
+"\n"
+"Bu dosyayı okuma izniniz olduğuna gerçekten emin misiniz?"
+
+#: part/katedocument.cpp:2494 part/katedocument.cpp:2560
+msgid "The file %1 is a binary, saving it will result in a corrupt file."
+msgstr ""
+"%1 ikili düzende (binary) bir dosya,-kaydetmeniz halinde hasar görebilir."
+
+#: part/katedocument.cpp:2495
+msgid "Binary File Opened"
+msgstr "Bir İkiliDüzen Dosyası Açıldı."
+
+#: part/katedocument.cpp:2553
+msgid ""
+"This file could not be loaded correctly due to lack of temporary disk space. "
+"Saving it could cause data loss.\n"
+"\n"
+"Do you really want to save it?"
+msgstr ""
+"Bu dosya, geçici dosyalar için yeterli disk boşluğu olmadığı için doğru olarak "
+"yüklenemedi. Kaydetmek, veri kaybına yol açabilir.\n"
+"\n"
+"Kaydetmek istediğinize gerçekten emin misiniz?"
+
+#: part/katedocument.cpp:2553 part/katedocument.cpp:2580
+#: part/katedocument.cpp:2591 part/katedocument.cpp:2756
+msgid "Possible Data Loss"
+msgstr "Olası Veri Kaybı"
+
+#: part/katedocument.cpp:2553 part/katedocument.cpp:2562
+#: part/katedocument.cpp:2574 part/katedocument.cpp:2580
+#: part/katedocument.cpp:2591
+msgid "Save Nevertheless"
+msgstr ""
+
+#: part/katedocument.cpp:2561
+msgid "Trying to Save Binary File"
+msgstr "İkiliDüzen Dosyasını Kaydetmeye Çalışıyor"
+
+#: part/katedocument.cpp:2574
+msgid ""
+"Do you really want to save this unmodified file? You could overwrite changed "
+"data in the file on disk."
+msgstr ""
+"Düzenlenmemiş bu dosyayı kaydetmeyi gerçekten istiyor musunuz? Diskinizdeki "
+"değiştirilmiş dosyanın üzerine yazacaksınız!"
+
+#: part/katedocument.cpp:2574
+msgid "Trying to Save Unmodified File"
+msgstr "Düzenlenmemiş Dosyayı Kaydetmeye çalışıyor"
+
+#: part/katedocument.cpp:2580
+msgid ""
+"Do you really want to save this file? Both your open file and the file on disk "
+"were changed. There could be some data lost."
+msgstr ""
+"Bu dosyayı kaydetmeyi gerçekten istiyor musunuz? Hem açık olan dosya, hem de "
+"diskinizdeki dosya değiştirilmiş durumda. Bazı verileri kaybedeceksiniz!"
+
+#: part/katedocument.cpp:2591
+msgid ""
+"The selected encoding cannot encode every unicode character in this document. "
+"Do you really want to save it? There could be some data lost."
+msgstr ""
+"Seçilen kodlama yöntemi, belgeniz içindeki tüm unicode karakterleri "
+"kodlayamayacak.Kaydetmeyi gerçekten istiyor musunuz? Bazı verileri "
+"kaybedebilirsiniz."
+
+#: part/katedocument.cpp:2642
+msgid ""
+"The document could not be saved, as it was not possible to write to %1.\n"
+"\n"
+"Check that you have write access to this file or that enough disk space is "
+"available."
+msgstr ""
+"%1 dosyasına yazmak mümkün olmadığından,-belge kaydedilemeyecek.\n"
+"\n"
+"Bu dosyaya yazma erişiminiz olduğuna veya yeterli disk boşluğuna sahip "
+"olduğunuza emin misiniz?"
+
+#: part/katedocument.cpp:2755
+msgid "Do you really want to continue to close this file? Data loss may occur."
+msgstr ""
+"Gerçekten bu dosyayı kapatmaya devam etmek istiyor musunuz? Veri kaybı "
+"oluşabilir. "
+
+#: part/katedocument.cpp:2756
+msgid "Close Nevertheless"
+msgstr ""
+
+#: part/katedocument.cpp:4330 part/katedocument.cpp:5063 part/kateview.cpp:863
+msgid "Save File"
+msgstr "Dosyayı Kaydet"
+
+#: part/katedocument.cpp:4339
+#, fuzzy
+msgid "Save failed"
+msgstr "Kaydetme Başarısız"
+
+#: part/katedialogs.cpp:1615 part/katedocument.cpp:4401
+msgid "What do you want to do?"
+msgstr "Ne yapmak istersiniz?"
+
+#: part/katedocument.cpp:4402
+msgid "File Was Changed on Disk"
+msgstr "Disk'teki dosya değiştirildi."
+
+#: part/katedialogs.cpp:1593 part/katedocument.cpp:4402
+#, fuzzy
+msgid "&Reload File"
+msgstr "Dosyayı &Yeniden Yükle"
+
+#: part/katedocument.cpp:4402
+msgid "&Ignore Changes"
+msgstr "Değ&işiklikleri Yoksay"
+
+#: part/katedocument.cpp:4980
+msgid "The file '%1' was modified by another program."
+msgstr "'%1' dosyası başka bir program tarafından değiştirildi."
+
+#: part/katedocument.cpp:4983
+msgid "The file '%1' was created by another program."
+msgstr "'%1' dosyası başka bir program tarafından yaratıldı."
+
+#: part/katedocument.cpp:4986
+msgid "The file '%1' was deleted by another program."
+msgstr "'%1' dosyası başka bir program tarafından silindi."
+
+#: part/katedocument.cpp:5091 part/kateview.cpp:890
+msgid ""
+"A file named \"%1\" already exists. Are you sure you want to overwrite it?"
+msgstr ""
+"\"%1\" isimli bir dosya zaten var. Bu dosyanın üzerine yazmak ister misiniz?"
+
+#: part/katedocument.cpp:5093 part/kateview.cpp:891
+msgid "Overwrite File?"
+msgstr "Dosya Üzerine Yazılsın mı?"
+
+#: part/katedocument.cpp:5094 part/kateview.cpp:892
+msgid "&Overwrite"
+msgstr "Ü&zerine Yaz"
+
+#: part/katefiletype.cpp:273
+msgid "&Filetype:"
+msgstr "&Dosya türü:"
+
+#: part/katefiletype.cpp:279
+msgid "&New"
+msgstr "&Yeni"
+
+#: part/katefiletype.cpp:289
+msgid "N&ame:"
+msgstr "İ&sim:"
+
+#: part/katefiletype.cpp:294
+msgid "&Section:"
+msgstr "&Seçim:"
+
+#: part/katefiletype.cpp:299
+msgid "&Variables:"
+msgstr "&Değişkenler:"
+
+#: part/katedialogs.cpp:1299 part/katefiletype.cpp:304
+msgid "File e&xtensions:"
+msgstr "Dosya u&zantıları:"
+
+#: part/katedialogs.cpp:1304 part/katefiletype.cpp:308
+#: plugins/autobookmarker/autobookmarker.cpp:324
+msgid "MIME &types:"
+msgstr "Mime &türleri:"
+
+#: part/katedialogs.cpp:1309 part/katefiletype.cpp:317
+msgid "Prio&rity:"
+msgstr "Ö&ncelik:"
+
+#: part/katefiletype.cpp:332
+#, fuzzy
+msgid "Create a new file type."
+msgstr "Geçerli belgeyi kaydet"
+
+#: part/katefiletype.cpp:333
+#, fuzzy
+msgid "Delete the current file type."
+msgstr "Geçerli belgeyi kaydet"
+
+#: part/katefiletype.cpp:335
+msgid ""
+"The name of the filetype will be the text of the corresponding menu item."
+msgstr "DosyaTipi'nin adı, karşılık gelen menü seçeneğinin metni olacak."
+
+#: part/katefiletype.cpp:337
+msgid "The section name is used to organize the file types in menus."
+msgstr "Bölüm adı, menülerdeki dosya tiplerini yönetmek için kullanılacaktır"
+
+#: part/katefiletype.cpp:339
+msgid ""
+"<p>This string allows you to configure Kate's settings for the files selected "
+"by this mimetype using Kate variables. You can set almost any configuration "
+"option, such as highlight, indent-mode, encoding, etc.</p>"
+"<p>For a full list of known variables, see the manual.</p>"
+msgstr ""
+"<p>Bu dizge, bu mime tipini kullanarak seçilmiş dosyalar için Kate'in "
+"ayarlarını yapılandırmanıza izin verir. Metin renklendirme, girintileme, "
+"kodlama vs. gibi birçok yapılandırma seçeneklerini ayarlayabilirsiniz.</p>"
+"<p>Bilinen değişkenlerin tümünü listelemek için elkitabına bakınız.</p>"
+
+#: part/katefiletype.cpp:344
+msgid ""
+"The wildcards mask allows you to select files by filename. A typical mask uses "
+"an asterisk and the file extension, for example <code>*.txt; *.text</code>"
+". The string is a semicolon-separated list of masks."
+msgstr ""
+"Genel arama karakterleri maskesi, dosyaları isimlerine göre seçmenize izin "
+"verir. Tipik bir maske, yıldız işareti ve dosya uzantısı kullanır, örnek: <code>"
+"*.txt; *.text</code>. Dizgisi, noktalı-virgül ile ayrılmış bir maske listesi "
+"şeklindedir."
+
+#: part/katefiletype.cpp:349
+msgid ""
+"The mime type mask allows you to select files by mimetype. The string is a "
+"semicolon-separated list of mimetypes, for example <code>"
+"text/plain; text/english</code>."
+msgstr ""
+"MIME tipi maske, dosyaları mime tiplerine göre seçmenize izin verir. Dizgisi, "
+"noktalı-virgül ile ayrılmış bir maske listesi şeklindedir. Örnek : <code>"
+"text/plain; text/english</code>."
+
+#: part/katefiletype.cpp:353
+msgid "Displays a wizard that helps you easily select mimetypes."
+msgstr ""
+"Mime-tip'lerini kolayca seçmenize yardım edecek bir sihirbaz görüntüler."
+
+#: part/katefiletype.cpp:355
+msgid ""
+"Sets a priority for this file type. If more than one file type selects the same "
+"file, the one with the highest priority will be used."
+msgstr ""
+"Bu dosya tipi için bir öncelik sırası ayarlar. Eğer bir dosya tipinden fazlası "
+"aynı dosyayı seçerse, içlerinden en yüksek önceliğe sahip olanı "
+"kullanılacaktır."
+
+#: part/katefiletype.cpp:427
+msgid "New Filetype"
+msgstr "Yeni Dosya Türü"
+
+#: part/katefiletype.cpp:471
+#, c-format
+msgid "Properties of %1"
+msgstr "%1 Özellikleri"
+
+#: part/katefiletype.cpp:504
+msgid ""
+"Select the MimeTypes you want for this file type.\n"
+"Please note that this will automatically edit the associated file extensions as "
+"well."
+msgstr ""
+"Bu dosya tipi için istediğiniz Mime-tipini seçin.\n"
+"Bunun ilişkilendirilmiş dosya uzantılarını otomatik olarak değiştireceğini "
+"unutmayın."
+
+#: part/katedialogs.cpp:1426 part/katefiletype.cpp:506
+#: plugins/autobookmarker/autobookmarker.cpp:367
+msgid "Select Mime Types"
+msgstr "Mime Türlerini Seç"
+
+#: part/kateautoindent.cpp:111 part/katefiletype.cpp:522
+#: part/katehighlight.cpp:1193
+msgid "None"
+msgstr "Hiçbiri"
+
+#: part/kateviewhelpers.cpp:237
+msgid "Available Commands"
+msgstr "Uygun komutlar"
+
+#: part/kateviewhelpers.cpp:239
+msgid ""
+"<p>For help on individual commands, do <code>'help &lt;command&gt;'</code></p>"
+msgstr ""
+"<p>Kişiye özel komutlar hakkında yardım için: <code>"
+"'help &lt;command&gt;'</code></p>"
+
+#: part/kateviewhelpers.cpp:250
+msgid "No help for '%1'"
+msgstr "'%1' için yardım yok."
+
+#: part/kateviewhelpers.cpp:253
+#, fuzzy
+msgid "No such command <b>%1</b>"
+msgstr "Bu isimde bir komut yok: \"%1\""
+
+#: part/kateviewhelpers.cpp:258
+msgid ""
+"<p>This is the Katepart <b>command line</b>."
+"<br>Syntax: <code><b>command [ arguments ]</b></code>"
+"<br>For a list of available commands, enter <code><b>help list</b></code>"
+"<br>For help for individual commands, enter <code><b>help &lt;command&gt;</b>"
+"</code></p>"
+msgstr ""
+"<p>Katepart <b>command line</b>."
+"<br>Sözdizimi: <code><b>command [ arguments ]</b></code>"
+"<br>Kullanılabilecek komutların listesi için: <code><b>help list</b></code>"
+"<br>Kişiye özel komutlar hakkında yardım için: <code><b>help &lt;command&gt;</b>"
+"</code></p>"
+
+#: part/kateviewhelpers.cpp:345
+msgid "Success: "
+msgstr "Başarılı: "
+
+#: part/kateviewhelpers.cpp:347
+msgid "Success"
+msgstr "Başarılı"
+
+#: part/kateviewhelpers.cpp:352
+msgid "Error: "
+msgstr "Hata:"
+
+#: part/kateviewhelpers.cpp:354
+msgid "Command \"%1\" failed."
+msgstr "\"%1\" komutunun işletilmesinde hata."
+
+#: part/kateviewhelpers.cpp:360
+msgid "No such command: \"%1\""
+msgstr "Bu isimde bir komut yok: \"%1\""
+
+#: part/kateschema.cpp:304 part/kateviewhelpers.cpp:704
+msgid "Bookmark"
+msgstr "Yer imi"
+
+#: part/kateviewhelpers.cpp:1127 part/kateviewhelpers.cpp:1128
+#, fuzzy, c-format
+msgid "Mark Type %1"
+msgstr "%1 Öğe Stili"
+
+#: part/kateviewhelpers.cpp:1144
+msgid "Set Default Mark Type"
+msgstr "Öntanımlı Öğe Stilini kullan"
+
+#: part/kateschema.cpp:279
+msgid "Text Area Background"
+msgstr "Metin Bölgesi Arkaplanı"
+
+#: part/kateschema.cpp:283
+msgid "Normal text:"
+msgstr "Normal metin:"
+
+#: part/kateschema.cpp:289
+msgid "Selected text:"
+msgstr "Seçili metin:"
+
+#: part/kateschema.cpp:295
+msgid "Current line:"
+msgstr "Şimdiki satır:"
+
+#: part/kateschema.cpp:305
+msgid "Active Breakpoint"
+msgstr "Etkin Kesme"
+
+#: part/kateschema.cpp:306
+msgid "Reached Breakpoint"
+msgstr "Varılan Kesme"
+
+#: part/kateschema.cpp:307
+msgid "Disabled Breakpoint"
+msgstr "Etkisiz Kesme"
+
+#: part/kateschema.cpp:308
+#, fuzzy
+msgid "Execution"
+msgstr "Yürütme"
+
+#: part/kateschema.cpp:317
+msgid "Additional Elements"
+msgstr "Ek Öğeler"
+
+#: part/kateschema.cpp:321
+msgid "Left border background:"
+msgstr "Sol kenarlık arkaplanı:"
+
+#: part/kateschema.cpp:327
+#, fuzzy
+msgid "Line numbers:"
+msgstr "&Satır numaralarını göster"
+
+#: part/kateschema.cpp:333
+msgid "Bracket highlight:"
+msgstr "Köşeli parantez renklendirmesi:"
+
+#: part/kateschema.cpp:339
+msgid "Word wrap markers:"
+msgstr "Sözcük kaydırma işaretcileri:"
+
+#: part/kateschema.cpp:345
+msgid "Tab markers:"
+msgstr "Sekme işaretleri:"
+
+#: part/kateschema.cpp:357
+msgid "<p>Sets the background color of the editing area.</p>"
+msgstr "<p>Düzenleme alanının arkaplan rengini ayarlar.</p>"
+
+#: part/kateschema.cpp:358
+msgid ""
+"<p>Sets the background color of the selection.</p>"
+"<p>To set the text color for selected text, use the \"<b>"
+"Configure Highlighting</b>\" dialog.</p>"
+msgstr ""
+"<p>Seçilen alanın arkaplan rengini ayarlar.</p>"
+"<p>Seçilen metin için metin rengini ayarlamak için \"<b>"
+"Renklendirmeyi Yapılandır</b>\" iletişimini kullanın.</p>"
+
+#: part/kateschema.cpp:361
+msgid ""
+"<p>Sets the background color of the selected marker type.</p>"
+"<p><b>Note</b>: The marker color is displayed lightly because of "
+"transparency.</p>"
+msgstr ""
+"<p>Seçilen işaret tipinin arkaplan rengini ayarlar.</p>"
+"<p><b>Not</b>: İşaret rengi, şeffaflık nedeniyle hafif açık gösterilir.</p>"
+
+#: part/kateschema.cpp:364
+msgid "<p>Select the marker type you want to change.</p>"
+msgstr "<p>Değiştirmek istediğiniz işaret tipini seçin.</p>"
+
+#: part/kateschema.cpp:365
+msgid ""
+"<p>Sets the background color of the currently active line, which means the line "
+"where your cursor is positioned.</p>"
+msgstr ""
+"<p>Etkin satırın ( imleçinizin o an üzerinde durduğu satır) arkaplan rengini "
+"ayarlar.</p>"
+
+#: part/kateschema.cpp:368
+msgid ""
+"<p>This color will be used to draw the line numbers (if enabled) and the lines "
+"in the code-folding pane.</p>"
+msgstr ""
+"<p>Bu renk; Kod-Gizleme panosundaki çizgiler ve satır numaraları (-eğer "
+"gösterilmeleri için etkinleştirilmiş iseler-) için kullanılacak.</p>"
+
+#: part/kateschema.cpp:370
+msgid ""
+"<p>Sets the bracket matching color. This means, if you place the cursor e.g. at "
+"a <b>(</b>, the matching <b>)</b> will be highlighted with this color.</p>"
+msgstr ""
+"<p>Parantez yakalama rengini ayarlar. Yani, imlecinizi örneğin bir <b>(</b> "
+"üzerine koyarsanız, ona uyan <b>)</b> bu renkle aydınlatılacaktır.</p>"
+
+#: part/kateschema.cpp:374
+msgid ""
+"<p>Sets the color of Word Wrap-related markers:</p><dl><dt>Static Word Wrap</dt>"
+"<dd>A vertical line which shows the column where text is going to be "
+"wrapped</dd><dt>Dynamic Word Wrap</dt><dd>An arrow shown to the left of "
+"visually-wrapped lines</dd></dl>"
+msgstr ""
+"<p>Sözcük kaydırma ile ilgili işaretcilerin rengini ayarlar:</p><dl><dt>"
+"Durağan Sözcük Kaydırma</dt><dd>Dikey çizgi, metnin kaydırılacağı sütunu "
+"gösterir. </dd><dt>Devingen Sözcük Kaydırma</dt><dd>"
+"Görsel olarak kaydırılmış satırların solunda bir ok işareti gösterilir</dd></dl>"
+
+#: part/kateschema.cpp:380
+msgid "<p>Sets the color of the tabulator marks:</p>"
+msgstr "<p>Gönye işaretlerinin rengini ayarlar:</p>"
+
+#: part/kateschema.cpp:605
+msgid ""
+"This list displays the default styles for the current schema and offers the "
+"means to edit them. The style name reflects the current style settings."
+"<p>To edit the colors, click the colored squares, or select the color to edit "
+"from the popup menu."
+"<p>You can unset the Background and Selected Background colors from the popup "
+"menu when appropriate."
+msgstr ""
+"Bu liste, mevcut tema için öntanımlı biçemleri gösterir ve düzenlemeniz için "
+"seçenekler sağlar. Biçem adı, güncel biçim ayarlarını yansıtır."
+"<p>Renkleri düzenlemek için, renkli dikdörtgen kutulara tıklayın veya açılır "
+"menü'den seçin."
+"<p>Açılır menüden, Arkaplan ve Seçilen Alan Arkaplanı renklerinin ayarlarını "
+"kaldırabilirsiniz."
+
+#: part/katedialogs.cpp:1267 part/kateschema.cpp:689
+msgid "H&ighlight:"
+msgstr "&Renklendirme:"
+
+#: part/kateschema.cpp:711
+msgid ""
+"This list displays the contexts of the current syntax highlight mode and offers "
+"the means to edit them. The context name reflects the current style settings."
+"<p>To edit using the keyboard, press <strong>&lt;SPACE&gt;</strong> "
+"and choose a property from the popup menu."
+"<p>To edit the colors, click the colored squares, or select the color to edit "
+"from the popup menu."
+"<p>You can unset the Background and Selected Background colors from the context "
+"menu when appropriate."
+msgstr ""
+"Bu liste, mevcut sözdizimi renklendirme kipinin kapsamının gösterir ve "
+"düzenlemeniz için seçenekler sağlar. Bağlam adı, güncel biçim ayarlarını "
+"yansıtır."
+"<p>Tuştakımını kullanarak düzenleme yapmak için <strong>"
+"&lt;BOŞLUK TUŞU&gt;</strong> 'na basın ve açılır menüden bir özellik seçin. "
+"<p>Renkleri düzenlemek için, renkli dikdörtgen kutulara tıklayın veya açılır "
+"menü'den seçin."
+"<p>Bağlam menüsünden Arkaplan ve Seçilen Alan Arkaplanı renklerinin ayarlarını "
+"kaldırabilirsiniz."
+
+#: part/kateschema.cpp:840 plugins/autobookmarker/autobookmarker.cpp:406
+msgid "&New..."
+msgstr "&Yeni"
+
+#: part/kateschema.cpp:853
+msgid "Colors"
+msgstr "Renkler"
+
+#: part/kateschema.cpp:859
+msgid "Normal Text Styles"
+msgstr "Normal Metin Biçemleri"
+
+#: part/kateschema.cpp:863
+msgid "Highlighting Text Styles"
+msgstr "Renklendirilmiş Metin Biçemleri"
+
+#: part/kateschema.cpp:868
+msgid "&Default schema for %1:"
+msgstr "&%1 için öntanımlı tema:"
+
+#: part/kateschema.cpp:966
+msgid "Name for New Schema"
+msgstr "Yeni Temanın Adı"
+
+#: part/kateschema.cpp:966
+msgid "Name:"
+msgstr "İsim:"
+
+#: part/kateschema.cpp:966
+msgid "New Schema"
+msgstr "Yeni Tema"
+
+#: part/kateschema.cpp:1053
+msgid "Context"
+msgstr "İçerik"
+
+#: part/kateautoindent.cpp:97 part/katehighlight.cpp:3166
+#: part/kateschema.cpp:1058
+msgid "Normal"
+msgstr "Normal"
+
+#: part/kateschema.cpp:1059
+msgid "Selected"
+msgstr "Seçili"
+
+#: part/kateschema.cpp:1060
+msgid "Background"
+msgstr "Arkaplan"
+
+#: part/kateschema.cpp:1061
+msgid "Background Selected"
+msgstr "Arkaplan Seçimi"
+
+#: part/kateschema.cpp:1063
+#, fuzzy
+msgid "Use Default Style"
+msgstr "Öntanımlı Öğe Stilini kullan"
+
+#: part/kateschema.cpp:1097
+msgid "&Bold"
+msgstr "&Kalın"
+
+#: part/kateschema.cpp:1099
+msgid "&Italic"
+msgstr "Yatı&k"
+
+#: part/kateschema.cpp:1101
+msgid "&Underline"
+msgstr "Alt&çizgi"
+
+#: part/kateschema.cpp:1103
+msgid "S&trikeout"
+msgstr "&Çıkartma"
+
+#: part/kateschema.cpp:1108
+msgid "Normal &Color..."
+msgstr "Normal &Renk..."
+
+#: part/kateschema.cpp:1109
+msgid "&Selected Color..."
+msgstr "&Seçili Renk..."
+
+#: part/kateschema.cpp:1110
+#, fuzzy
+msgid "&Background Color..."
+msgstr "&Arkaplan"
+
+#: part/kateschema.cpp:1111
+#, fuzzy
+msgid "S&elected Background Color..."
+msgstr "&Seçili Arkaplan Rengi..."
+
+#: part/kateschema.cpp:1122
+#, fuzzy
+msgid "Unset Background Color"
+msgstr "&Arkaplan Rengini Kaldır"
+
+#: part/kateschema.cpp:1124
+msgid "Unset Selected Background Color"
+msgstr "Seçili Arkaplan Rengini Kaldır"
+
+#: part/kateschema.cpp:1129
+#, fuzzy
+msgid "Use &Default Style"
+msgstr "&Öntanımlı Biçemi Kullan"
+
+#: part/kateschema.cpp:1352
+msgid ""
+"\"Use Default Style\" will be automatically unset when you change any style "
+"properties."
+msgstr ""
+"\"Öntanımlı Biçemi Kullan\" seçeneği değiştirmiş olduğunuz biçem özelliklerini "
+"otomatik olarak yürürlükten kaldıracaktır."
+
+#: part/kateschema.cpp:1353
+msgid "Kate Styles"
+msgstr "Kate Biçemleri"
+
+#: part/katesyntaxdocument.cpp:76
+msgid ""
+"<qt>The error <b>%4</b>"
+"<br> has been detected in the file %1 at %2/%3</qt>"
+msgstr ""
+"<qt> %2/%3 konumundaki %1 dosyası içinde"
+"<br> saptanan hata <b>%4</b></qt>"
+
+#: part/katesyntaxdocument.cpp:84
+#, c-format
+msgid "Unable to open %1"
+msgstr "%1 Açılamıyor"
+
+#: part/katesyntaxdocument.cpp:457
+msgid "Errors!"
+msgstr "Hata"
+
+#: part/katesyntaxdocument.cpp:462
+#, c-format
+msgid "Error: %1"
+msgstr "Hata: %1"
+
+#: part/katedialogs.cpp:153
+msgid "Automatic Indentation"
+msgstr "Otomatik Girinti"
+
+#: part/katedialogs.cpp:157
+msgid "&Indentation mode:"
+msgstr "&Girinti Kipi:"
+
+#: part/katedialogs.cpp:161 part/katedialogs.cpp:1132
+msgid "Configure..."
+msgstr "Yapılandır..."
+
+#: part/katedialogs.cpp:163
+#, fuzzy
+msgid "Insert leading Doxygen \"*\" when typing"
+msgstr "Yazarken Doxygen \"*\" ekler"
+
+#: part/katedialogs.cpp:164
+msgid "Adjust indentation of code pasted from the clipboard"
+msgstr ""
+
+#: part/katedialogs.cpp:166
+msgid "Indentation with Spaces"
+msgstr "Boşluklar ile Girinti"
+
+#: part/katedialogs.cpp:168
+msgid "Use &spaces instead of tabs to indent"
+msgstr "&Girinti için tab yerine boşluk kullan"
+
+#: part/katedialogs.cpp:169
+msgid "Emacs style mixed mode"
+msgstr "Emacs stili karma kip"
+
+#: part/katedialogs.cpp:173
+msgid "Number of spaces:"
+msgstr "Boşluk sayısı:"
+
+#: part/katedialogs.cpp:175
+msgid "Keep indent &profile"
+msgstr "&Girinti profilini koru"
+
+#: part/katedialogs.cpp:176
+msgid "&Keep extra spaces"
+msgstr "&Ek boşlukları tut"
+
+#: part/katedialogs.cpp:178
+msgid "Keys to Use"
+msgstr "Kullanılacak Düğmeler"
+
+#: part/katedialogs.cpp:179
+#, fuzzy
+msgid "&Tab key indents"
+msgstr "&Sekme tuşu girintiler"
+
+#: part/katedialogs.cpp:180
+msgid "&Backspace key indents"
+msgstr "&Geri silme tuşuyla girinti"
+
+#: part/katedialogs.cpp:183
+msgid "Tab Key Mode if Nothing Selected"
+msgstr "Hiçbiri Seçilmemişse Sekme Tuşu Kipi"
+
+#: part/katedialogs.cpp:185
+msgid "Insert indent &characters"
+msgstr "&Girinti karakterleri yerleştir"
+
+#: part/katedialogs.cpp:186
+msgid "I&nsert tab character"
+msgstr "&Sekme karakteri yerleştir"
+
+#: part/katedialogs.cpp:187
+msgid "Indent current &line"
+msgstr "Ü&zerindeki satırı girintile"
+
+#: part/katedialogs.cpp:209
+msgid "Check this if you want to indent with spaces rather than tabs."
+msgstr ""
+"Girintilemenin Sekme tuşu yerine boşluk ile yapılmasını "
+"istiyorsanız,-işaretleyin. "
+
+#: part/katedialogs.cpp:211
+#, fuzzy
+msgid ""
+"Indentations of more than the selected number of spaces will not be shortened."
+msgstr ""
+"Belirlenen miktardan daha fazla olan boşlukların girintileri kırpılmayacak. "
+
+#: part/katedialogs.cpp:214
+msgid ""
+"This allows the <b>Tab</b> key to be used to increase the indentation level."
+msgstr ""
+"Girintileme seviyesinin <b>Sekme tuşu</b> ile artırılmasına izin verir."
+
+#: part/katedialogs.cpp:217
+msgid ""
+"This allows the <b>Backspace</b> key to be used to decrease the indentation "
+"level."
+msgstr ""
+"Girintileme seviyesinin <b>GeriSilme tuşu/b> ile artırılmasına izin verir."
+
+#: part/katedialogs.cpp:220
+msgid ""
+"Automatically inserts a leading \"*\" while typing within a Doxygen style "
+"comment."
+msgstr "Doxygen biçeminde yorum yazarken,  \"*\"  otomatik olarak eklenir."
+
+#: part/katedialogs.cpp:223
+msgid "Use a mix of tab and space characters for indentation."
+msgstr ""
+"Girintileme için sekme tuşu ve boşluk karakterinin bir karışımını kullan."
+
+#: part/katedialogs.cpp:225
+msgid ""
+"If this option is selected, pasted code from the clipboard is indented. "
+"Triggering the <b>undo</b>-action removes the indentation."
+msgstr ""
+
+#: part/katedialogs.cpp:227
+msgid "The number of spaces to indent with."
+msgstr "Girintilemenin kaç adet boşluk ile yapılacağı"
+
+#: part/katedialogs.cpp:230
+msgid ""
+"If this button is enabled, additional indenter specific options are available "
+"and can be configured in an extra dialog."
+msgstr ""
+"Bu düğme etkinleştirildiğinde, ilaveten, girintileyiciye özel seçenekler "
+"erişilebilir olur ve bunlar, ek diyaloglar ile yapılandırılabilirler."
+
+#: part/katedialogs.cpp:282
+#, fuzzy
+msgid "Configure Indenter"
+msgstr "Girintilen&diriciyi Yapılandır..."
+
+#: part/katedialogs.cpp:357
+msgid "Text Cursor Movement"
+msgstr "Metin İmleci Hareketi"
+
+#: part/katedialogs.cpp:359
+#, fuzzy
+msgid "Smart ho&me and smart end"
+msgstr "Zeki Konu&mlanma"
+
+#: part/katedialogs.cpp:363
+msgid "Wrap c&ursor"
+msgstr "İmleçi Kon&umlandır"
+
+#: part/katedialogs.cpp:367
+msgid "&PageUp/PageDown moves cursor"
+msgstr "&PageUp/PageDown ile imleç taşıma"
+
+#: part/katedialogs.cpp:373
+#, fuzzy
+msgid "Autocenter cursor (lines):"
+msgstr "Otomatik olarak ortalı imleç (satırlar):"
+
+#: part/katedialogs.cpp:380
+msgid "Selection Mode"
+msgstr "Seçim Kipi"
+
+#: part/katedialogs.cpp:384
+msgid "&Normal"
+msgstr "&Normal"
+
+#: part/katedialogs.cpp:385
+msgid "&Persistent"
+msgstr "&Kalıcı"
+
+#: part/katedialogs.cpp:390
+msgid ""
+"Selections will be overwritten by typed text and will be lost on cursor "
+"movement."
+msgstr ""
+"Seçilenler, girilen yazı ile üzerine-yazılacak ve imleç hareketiyle "
+"kaybolacaklar."
+
+#: part/katedialogs.cpp:393
+msgid "Selections will stay even after cursor movement and typing."
+msgstr "Seçilenler korunacak,-hatta imleç hareketinden ve yazmadan sonra bile."
+
+#: part/katedialogs.cpp:396
+msgid ""
+"Sets the number of lines to maintain visible above and below the cursor when "
+"possible."
+msgstr ""
+"İmleçin altında ve üstünde görünebilir olacak satırların sayısını ayarlar."
+
+#: part/katedialogs.cpp:400
+#, fuzzy
+msgid ""
+"When selected, pressing the home key will cause the cursor to skip whitespace "
+"and go to the start of a line's text. The same applies for the end key."
+msgstr ""
+"Seçildiğinde, Home tuşuna basılması halinde, imleçin ayırma boşluklarını "
+"atlaması ve satırın başındaki yazıya konumlanmasını sağlar."
+
+#: part/katedialogs.cpp:405
+msgid ""
+"When on, moving the insertion cursor using the <b>Left</b> and <b>Right</b> "
+"keys will go on to previous/next line at beginning/end of the line, similar to "
+"most editors."
+"<p>When off, the insertion cursor cannot be moved left of the line start, but "
+"it can be moved off the line end, which can be very handy for programmers."
+msgstr ""
+"Açık olduğunda, metin imleç konumu <b>Sol Ok</b> ve <b>Sağ Ok</b> "
+"tuşları ile önceki/sonraki satırın başına/sonuna konumlanır,-çoğu düzenleyicide "
+"olduğu gibi."
+"<p>Kapalı kaydırma kipinde ise, imlecin yukarıda tarif edilen davranışları "
+"geçersiz olacaktır. Bu özellik, kaynak kod yazan programcılar için çok şık bir "
+"çözüm oluşturacaktır. Tadını çıkarın."
+
+#: part/katedialogs.cpp:411
+msgid ""
+"Selects whether the PageUp and PageDown keys should alter the vertical position "
+"of the cursor relative to the top of the view."
+msgstr ""
+"PageUp ve PageDown tuşlarına basıldığında, imlecin bulunduğu dikey ( sütun ) "
+"konumunun değiştirilip - değiştirilmeyeceğini belirler."
+
+#: part/katedialogs.cpp:473
+#, fuzzy
+msgid "Tabulators"
+msgstr "Sekmeleyiciler"
+
+#: part/katedialogs.cpp:475
+#, fuzzy
+msgid "&Insert spaces instead of tabulators"
+msgstr "&Girinti için sekmeleyici yerine boşluk kullan"
+
+#: part/katedialogs.cpp:479
+#, fuzzy
+msgid "&Show tabulators"
+msgstr "&Sekmeleyicileri Göster"
+
+#: part/katedialogs.cpp:485
+msgid "Tab width:"
+msgstr "Sekme genişliği:"
+
+#: part/katedialogs.cpp:490
+msgid "Static Word Wrap"
+msgstr "Durağan Sözcük Kaydırma"
+
+#: part/katedialogs.cpp:492
+msgid "Enable static &word wrap"
+msgstr "Durağan sözcük kaydırmayı etkinleştir "
+
+#: part/katedialogs.cpp:496
+#, fuzzy
+msgid "&Show static word wrap marker (if applicable)"
+msgstr "Durağan &sözcük kaydırma işaretini göster (uygulanabilirse)"
+
+#: part/katedialogs.cpp:502
+msgid "Wrap words at:"
+msgstr "Kelimeleri bu sütunda kaydır:"
+
+#: part/katedialogs.cpp:507
+#, fuzzy
+msgid "Remove &trailing spaces"
+msgstr "Sa&tır sonundaki boşlukları sil"
+
+#: part/katedialogs.cpp:512
+msgid "Auto &brackets"
+msgstr "Otomatik &Parantezler"
+
+#: part/katedialogs.cpp:519
+msgid "Unlimited"
+msgstr "Sınırsız"
+
+#: part/katedialogs.cpp:520
+msgid "Maximum undo steps:"
+msgstr "Azami GeriAl adımı:"
+
+#: part/katedialogs.cpp:525
+#, fuzzy
+msgid "Smart search t&ext from:"
+msgstr "Akıllı m&etin arama başı:"
+
+#: part/katedialogs.cpp:528
+msgid "Nowhere"
+msgstr "Hiç bir yer"
+
+#: part/katedialogs.cpp:529
+msgid "Selection Only"
+msgstr "Sadece Seçim"
+
+#: part/katedialogs.cpp:530
+msgid "Selection, then Current Word"
+msgstr "Seçim, sonra Güncel Sözcük"
+
+#: part/katedialogs.cpp:531
+msgid "Current Word Only"
+msgstr "Sadece Güncel Sözcük"
+
+#: part/katedialogs.cpp:532
+msgid "Current Word, then Selection"
+msgstr "Güncel Sözcük, sonra Seçim"
+
+#: part/katedialogs.cpp:542
+msgid ""
+"Automatically start a new line of text when the current line exceeds the length "
+"specified by the <b>Wrap words at:</b> option."
+"<p>This option does not wrap existing lines of text - use the <b>"
+"Apply Static Word Wrap</b> option in the <b>Tools</b> menu for that purpose."
+"<p>If you want lines to be <i>visually wrapped</i> instead, according to the "
+"width of the view, enable <b>Dynamic Word Wrap</b> in the <b>View Defaults</b> "
+"config page."
+msgstr ""
+"Bulunulan satır <b>Kelimeleri bu sütunda kaydır:</b>  "
+"seçeneğine verilmiş değeri aştığında, otomatik olarak yeni bir metin satırı "
+"başlatır. "
+"<p>Bu seçenek metnin varolan satırlarını kaydırmaz,-amacınız buysa <b>"
+"Araçlar</b> menüsündeki <b>Durağan Sözcük Kaydırma</b> "
+"seçeneğini uygulamalısınız. "
+"<p>Eğer satırların, <i>Görsel olarak kaydırılması</i> "
+"yerine, görüntünün genişliğine göre kaydırılmasını dilerseniz, <b>"
+"Öntanımlıları Göster</b> menüsü içindeki <b>Devingen Sözcük Kaydırma</b> "
+"özelliğini etkinleştirmelisiniz."
+
+#: part/katedialogs.cpp:550
+msgid ""
+"If the Word Wrap option is selected this entry determines the length (in "
+"characters) at which the editor will automatically start a new line."
+msgstr ""
+"Eğer Sözcük Kaydır seçeneği etkin ise, bu girdi, düzenleyicinin otomatik olarak "
+"yeni bir bir satır başlatacağı uzunluğu (sütun sayısını) belirleyecektir. "
+
+#: part/katedialogs.cpp:553
+msgid ""
+"When the user types a left bracket ([,(, or {) KateView automatically enters "
+"the right bracket (}, ), or ]) to the right of the cursor."
+msgstr ""
+"Eğer kullanıcı bir sol parantez ([,(, veya  {) yazarsa, KateView, otomatik "
+"olarak imleçin hemen sağına, sağ parantez  (}, ), veya ]) ilave edecektir."
+
+#: part/katedialogs.cpp:556
+msgid ""
+"The editor will display a symbol to indicate the presence of a tab in the text."
+msgstr ""
+"Düzenleyici, metin içinde sekme'lerin varlığını gösteren bir simge "
+"görüntüleyecektir."
+
+#: part/katedialogs.cpp:560
+msgid ""
+"Sets the number of undo/redo steps to record. More steps uses more memory."
+msgstr ""
+"Kaydedilecek GeriAl/Yinele adımlarının sayısı. Fazla adım,-fazla bellek "
+"tüketir."
+
+#: part/katedialogs.cpp:563
+msgid ""
+"This determines where KateView will get the search text from (this will be "
+"automatically entered into the Find Text dialog): "
+"<br>"
+"<ul>"
+"<li><b>Nowhere:</b> Don't guess the search text.</li>"
+"<li><b>Selection Only:</b> Use the current text selection, if available.</li>"
+"<li><b>Selection, then Current Word:</b> Use the current selection if "
+"available, otherwise use the current word.</li>"
+"<li><b>Current Word Only:</b> Use the word that the cursor is currently resting "
+"on, if available.</li>"
+"<li><b>Current Word, then Selection:</b> Use the current word if available, "
+"otherwise use the current selection.</li></ul>Note that, in all the above "
+"modes, if a search string has not been or cannot be determined, then the Find "
+"Text Dialog will fall back to the last search text."
+msgstr ""
+"KateView, Metin Bul penceresine otomatik olarak girilecek arama metninin "
+"nerelerden sağlanacağına karar vermenizi sağlar:"
+"<br>"
+"<ul>"
+"<li><b>Hiçbir yer:</b>Arama metniyle ilgilenme</li>"
+"<li><b>Sadece Seçilen:</b> Seçilen şimdiki metin,-eğer seçilmişse tabii.</li>"
+"<li><b>Seçilen, sonra Şimdiki Sözcük:</b> Varsa şimdiki seçilen metni, yoksa "
+"şimdiki sözcüğü kullan.</li>"
+"<li><b>Sadece Şimdiki Sözcük:</b> İmleçin hemen ucunda duran sözcüğü "
+"kullan,-eğer varsa tabii.</li>"
+"<li><b>Şimdiki Sözcük, sonra Seçilen:</b>Eğer varsa, şimdiki sözcüğü, yoksa "
+"şimdiki seçimi kullan.</li></ul>Unutmayın ki, yukarıdaki bütün kiplerde, eğer "
+"bir arama ifadesi yok ise veya algılanamıyorsa, Metin Bul Diyalogu en son "
+"aranmış olan ifadeyi gösterecektir."
+
+#: part/katedialogs.cpp:588
+msgid ""
+"If this is enabled, the editor will calculate the number of spaces up to the "
+"next tab position as defined by the tab width, and insert that number of spaces "
+"instead of a TAB character."
+msgstr ""
+"Bu etkinleştirildiğinde, düzenleyici, sekme genişliği ile tarif edilen, iki tab "
+"arasındaki karakter sayısını hesaplar ve tab yerine bu miktarda boşluk "
+"karakteri yerleştirir. "
+
+#: part/katedialogs.cpp:592
+#, fuzzy
+msgid ""
+"If this is enabled, the editor will remove any trailing whitespace on lines "
+"when they are left by the insertion cursor."
+msgstr ""
+"Bu etkinleştirildiğinde, düzenleyici, metin imleci tarafından bırakılmış satır "
+"sonlarını izleyen ayırma boşlukları satırlardan temizler."
+
+#: part/katedialogs.cpp:595
+msgid ""
+"<p>If this option is checked, a vertical line will be drawn at the word wrap "
+"column as defined in the <strong>Editing</strong> properties."
+"<p>Note that the word wrap marker is only drawn if you use a fixed pitch font."
+msgstr ""
+"<p>Bu seçenek işaretlendiğinde,  <strong>Düzenleme</strong> "
+"özelliklerinde tanımlanan sözcük kaydırma sütununda dikey bir çizgi "
+"görüntülenecektir."
+"<p>Unutmayın ki bu işaretleyici, sadece fixed pitch font kullanıyorsanız "
+"çizilecektir."
+
+#: part/katedialogs.cpp:651
+msgid "Word Wrap"
+msgstr "Kelime Kaydırma"
+
+#: part/katedialogs.cpp:653
+msgid "&Dynamic word wrap"
+msgstr "&Devingen Sözcük Kaydırma"
+
+#: part/katedialogs.cpp:656
+msgid "Dynamic word wrap indicators (if applicable):"
+msgstr "Devingen sözcük kaydırma belirteçleri (uygulanabilirse)"
+
+#: part/katedialogs.cpp:659
+msgid "Follow Line Numbers"
+msgstr "Satır Numaralarını Takip Et"
+
+#: part/katedialogs.cpp:660
+msgid "Always On"
+msgstr "Her Zaman Açık"
+
+#: part/katedialogs.cpp:664
+msgid "Vertically align dynamically wrapped lines to indentation depth:"
+msgstr ""
+"Devingen olarak kaydırılmış satırların, dikey olarak yerleştirileceği girinti "
+"derinliği:"
+
+#: part/katedialogs.cpp:667
+#, no-c-format
+msgid "% of View Width"
+msgstr "Görünüm Genişliği % si"
+
+#: part/katedialogs.cpp:668
+msgid "Disabled"
+msgstr "Etkisizleştirilmiş"
+
+#: part/katedialogs.cpp:672
+msgid "Code Folding"
+msgstr "Kod Gizleme"
+
+#: part/katedialogs.cpp:674
+msgid "Show &folding markers (if available)"
+msgstr "Kod &gizleme işaretlerini göster (varsa)"
+
+#: part/katedialogs.cpp:675
+msgid "Collapse toplevel folding nodes"
+msgstr "Enüstteki Gizleme düğümlerini Daralt"
+
+#: part/katedialogs.cpp:680
+msgid "Borders"
+msgstr "Kenarlıklar"
+
+#: part/katedialogs.cpp:682
+msgid "Show &icon border"
+msgstr "S&imge kenarlığını göster"
+
+#: part/katedialogs.cpp:683
+msgid "Show &line numbers"
+msgstr "&Satır numaralarını göster"
+
+#: part/katedialogs.cpp:684
+msgid "Show &scrollbar marks"
+msgstr "Kaydır&ma çubuğu işaretlerini göster"
+
+#: part/katedialogs.cpp:688
+msgid "Sort Bookmarks Menu"
+msgstr "Yer İmleri Menüsünü Sırala"
+
+#: part/katedialogs.cpp:690
+msgid "By &position"
+msgstr "&Konuma göre"
+
+#: part/katedialogs.cpp:691
+msgid "By c&reation"
+msgstr "&Oluşturulma tarihine göre"
+
+#: part/katedialogs.cpp:695
+msgid "Show indentation lines"
+msgstr "Girinti Satırlarını Göster"
+
+#: part/katedialogs.cpp:702 part/kateview.cpp:360
+msgid ""
+"If this option is checked, the text lines will be wrapped at the view border on "
+"the screen."
+msgstr ""
+"Eğer bu seçenek işaretlenmişse, metin satırları, ekrandaki izleme "
+"kenarlıklarında kaydırılacak."
+
+#: part/katedialogs.cpp:704 part/kateview.cpp:363
+msgid "Choose when the Dynamic Word Wrap Indicators should be displayed"
+msgstr "Devingen Sözcük Kaydırma Belirteçleri görüntülenecekse,-Seçin."
+
+#: part/katedialogs.cpp:709
+#, fuzzy
+msgid ""
+"<p>Enables the start of dynamically wrapped lines to be aligned vertically to "
+"the indentation level of the first line.  This can help to make code and markup "
+"more readable.</p>"
+"<p>Additionally, this allows you to set a maximum width of the screen, as a "
+"percentage, after which dynamically wrapped lines will no longer be vertically "
+"aligned.  For example, at 50%, lines whose indentation levels are deeper than "
+"50% of the width of the screen will not have vertical alignment applied to "
+"subsequent wrapped lines.</p>"
+msgstr ""
+"<p> Devingen olarak kaydırılan satırların başının, dikey olarak, ilk satırın "
+"girinti seviyesine göre yerleştirilmesini etkinleştirir. Bu, kod yazmanızı "
+"kolaylaştırır ve okunabilirliğini artırır.</p>"
+"<p> Ek olarak, ekranınızın azami genişliğini, yüzde cinsinden ayarlamanıza izin "
+"verir, böylece devingen olarak kaydırılan satırlar, bundan sonra dikey olarak "
+"yerleştirilmeyeceklerdir. Örneğin %50'de; girintileme seviyeleri ekranın "
+"%50'sinden daha derin olan satırlar; izleyen (kendilerinden sonra gelen) "
+"kaydırılmış  satırlara uygulanan dikey yerleştirmeye tabi "
+"tutulmayacaklardır.</p>"
+
+#: part/katedialogs.cpp:718
+msgid ""
+"If this option is checked, every new view will display line numbers on the left "
+"hand side."
+msgstr ""
+"Bu seçenek işaretlendiğinde, her yeni  izlemde,  sol yan tartafta satır "
+"numaraları görüntülenecektir."
+
+#: part/katedialogs.cpp:721
+msgid ""
+"If this option is checked, every new view will display an icon border on the "
+"left hand side."
+"<br>"
+"<br>The icon border shows bookmark signs, for instance."
+msgstr ""
+"Bu seçenek işaretlendiğinde, her yeni  izlemde,  sol yan tarafta bir simge "
+"kenarlığı görüntülenecektir. "
+"<br>"
+"<br>Örneğin,-Yer imi işaretlerini gösteren Simge kenarlığı."
+
+#: part/katedialogs.cpp:725
+msgid ""
+"If this option is checked, every new view will show marks on the vertical "
+"scrollbar."
+"<br>"
+"<br>These marks will, for instance, show bookmarks."
+msgstr ""
+"Bu seçenek işaretlendiğinde, her yeni  izlemde,  dikey kaydırma çubuğunda "
+"işaretçiler görüntülenecektir. "
+"<br>"
+"<br>Bu işaretçiler,-örneğin yer imlerini gösterir."
+
+#: part/katedialogs.cpp:729
+msgid ""
+"If this option is checked, every new view will display marks for code folding, "
+"if code folding is available."
+msgstr ""
+"Bu seçenek işaretlendiğinde, her yeni  izlemde,  kod gizlemeyi gösteren "
+"işaretler görüntülenecektir,-eğer kod gizleme etkinleştirilmise tabi."
+
+#: part/katedialogs.cpp:732
+msgid ""
+"Choose how the bookmarks should be ordered in the <b>Bookmarks</b> menu."
+msgstr "<b>Yer imleri</b> menüsünde, yer imlerinin nasıl sıralanacağını seçin."
+
+#: part/katedialogs.cpp:734
+msgid "The bookmarks will be ordered by the line numbers they are placed at."
+msgstr ""
+"Yer imleri, yerleştirildikleri satırların numarasıyla sıralı olarak "
+"gösterilecek."
+
+#: part/katedialogs.cpp:736
+msgid ""
+"Each new bookmark will be added to the bottom, independently from where it is "
+"placed in the document."
+msgstr ""
+"Her yeni yer imi, belge içinde nereye yerleştirildiğinden bağımsız olarak, "
+"listenin en sonuna eklenecek."
+
+#: part/katedialogs.cpp:739
+#, fuzzy
+msgid ""
+"If this is enabled, the editor will display vertical lines to help identify "
+"indent lines."
+msgstr ""
+"Etkinleştirildiğinde, düzenleyici, girinti satırlarını tanımlamaya yardım eden "
+"dikey bir çizgi görüntüleyecektir."
+
+#: part/katedialogs.cpp:855
+msgid "File Format"
+msgstr "Dosya Biçimi"
+
+#: part/katedialogs.cpp:859
+msgid "&Encoding:"
+msgstr "&Kodlama:"
+
+#: part/katedialogs.cpp:864
+msgid "End &of line:"
+msgstr "Sa&tır sonu:"
+
+#: part/katedialogs.cpp:868
+msgid "&Automatic end of line detection"
+msgstr "Otomatik dosya sonu &algılanması"
+
+#: part/katedialogs.cpp:870
+msgid "UNIX"
+msgstr "UNIX"
+
+#: part/katedialogs.cpp:871
+msgid "DOS/Windows"
+msgstr "Dos/Windows"
+
+#: part/katedialogs.cpp:872
+msgid "Macintosh"
+msgstr "Macintosh"
+
+#: part/katedialogs.cpp:874
+msgid "Memory Usage"
+msgstr "Bellek Kullanımı"
+
+#: part/katedialogs.cpp:879
+msgid "Maximum loaded &blocks per file:"
+msgstr "Her-bir-Dosya-başına azami yüklenen &blok:"
+
+#: part/katedialogs.cpp:885
+msgid "Automatic Cleanups on Load/Save"
+msgstr "Yükle/kaydet işlemlerinde Otomatik Temizlenme"
+
+#: part/katedialogs.cpp:888
+msgid "Re&move trailing spaces"
+msgstr "&Satır sonundaki -ve gereksiz- boşlukları sil"
+
+#: part/katedialogs.cpp:891
+msgid "Folder Config File"
+msgstr "Ayar Dosyası (config file) Klasörü"
+
+#: part/katedialogs.cpp:896
+msgid "Do not use config file"
+msgstr "ayar dosyası kullanma"
+
+#: part/katedialogs.cpp:897
+msgid "Se&arch depth for config file:"
+msgstr "Ayar dosyası için &Arama derinliği:"
+
+#: part/katedialogs.cpp:899
+msgid "Backup on Save"
+msgstr "Kaydederken yedekle"
+
+#: part/katedialogs.cpp:901
+msgid "&Local files"
+msgstr "&Yerel dosyalar"
+
+#: part/katedialogs.cpp:902
+msgid "&Remote files"
+msgstr "&Uzak dosyalar"
+
+#: part/katedialogs.cpp:905
+#, fuzzy
+msgid "&Prefix:"
+msgstr "&Önek:"
+
+#: part/katedialogs.cpp:910
+msgid "&Suffix:"
+msgstr "&Sonek:"
+
+#: part/katedialogs.cpp:917
+msgid ""
+"The editor will automatically eliminate extra spaces at the ends of lines of "
+"text while loading/saving the file."
+msgstr ""
+"Düzenleyici, dosya yüklenip-kaydedilirken, metin satırlarının sonlarında kalan "
+"ilave boşluk karakterlerini otomatik olarak kaldırarak-temizler."
+
+#: part/katedialogs.cpp:920
+msgid ""
+"<p>Backing up on save will cause Kate to copy the disk file to "
+"'&lt;prefix&gt;&lt;filename&gt;&lt;suffix&gt;' before saving changes."
+"<p>The suffix defaults to <strong>~</strong> and prefix is empty by default"
+msgstr ""
+"<p>Kaydederken yedekle seçeneği ile Kate, değişiklikleri disk'e kaydetmeden "
+"önce  '&lt;önek&gt;&lt;dosyaadı&gt;&lt;sonek&gt;' olarak aslını yedekler."
+"<p>Sonek <strong>~</strong> olarak tanımlıdır ve Önek boş bırakılmıştır."
+
+#: part/katedialogs.cpp:924
+msgid ""
+"Check this if you want the editor to autodetect the end of line type.The first "
+"found end of line type will be used for the whole file."
+msgstr ""
+"Düzenleyicinin, Satır-Sonu-Tipi'ni otomatik olarak algılamasını isterseniz, "
+"-bunu işaretleyin. İlk bulunan tip, dosyanın tümü için kullanılacaktır."
+
+#: part/katedialogs.cpp:927
+msgid "Check this if you want backups of local files when saving"
+msgstr ""
+"Yerel dosyaların, kaydedilirken yedeğinin alınmasını istiyorsanız,-işaretleyin. "
+
+#: part/katedialogs.cpp:929
+msgid "Check this if you want backups of remote files when saving"
+msgstr ""
+"Uzak dosyaların, kaydedilirken yedeğinin alınmasını istiyorsanız,-işaretleyin. "
+
+#: part/katedialogs.cpp:931
+#, fuzzy
+msgid "Enter the prefix to prepend to the backup file names"
+msgstr "Yedek dosyalarının isimlerinin Önek'lerini girin"
+
+#: part/katedialogs.cpp:933
+msgid "Enter the suffix to add to the backup file names"
+msgstr "Yedek dosyalarının isimlerine eklenecek Sonek'lerini girin"
+
+#: part/katedialogs.cpp:935
+msgid ""
+"The editor will search the given number of folder levels upwards for "
+".kateconfig file and load the settings line from it."
+msgstr ""
+"Düzenleyici, ayarları yükleyerek kendini yapılandıracağı .kateconfig dosyasını, "
+"belirteceğiniz sayıdaki dizin seviyelerinde arayacak. "
+
+#: part/katedialogs.cpp:938
+msgid ""
+"The editor will load given number of blocks (of around 2048 lines) of text into "
+"memory; if the filesize is bigger than this the other blocks are swapped  to "
+"disk and loaded transparently as-needed."
+"<br> This can cause little delays while navigating in the document; a larger "
+"block count increases the editing speed at the cost of memory. "
+"<br>For normal usage, just choose the highest possible block count: limit it "
+"only if you have problems with the memory usage."
+msgstr ""
+"Düzenleyici, vereceğiniz sayı kadar metin bloğu'nu ( 2048 satır civarında ) "
+"belleğe yükleyecek. Eğer dosya büyüklüğü bundan fazla ise, diğer bloklar disk'e "
+"takaslanacak ve gerektiğinde yüklenecek. "
+"<br> Bu işleyiş, belge içinde işlem yaparken ufak gecikmelere yol açabilir. "
+"Daha büyük blok sayısı belirtmek, hızınızı ve harcanacak belleği artırır. "
+"<br> Normal kullanımda, basitçe mümkün olan en yüksek blok sayısını seçin ve "
+"sadece sorun çıkarsa bellek kullanımını kısıtlamayı düşünün.  "
+
+#: part/katedialogs.cpp:977
+msgid ""
+"You did not provide a backup suffix or prefix. Using default suffix: '~'"
+msgstr ""
+"Dosya yedekleme için bir sonek belirlemediniz,-öntanımlı kullanılacak: '~'"
+
+#: part/katedialogs.cpp:978
+msgid "No Backup Suffix or Prefix"
+msgstr "Sonek ya da Önek Yedeklemesi Yapma"
+
+#: part/katedialogs.cpp:1014
+msgid "KDE Default"
+msgstr "KDE Öntanımlısı"
+
+#: part/katedialogs.cpp:1116 part/katedialogs.cpp:1447
+msgid "Name"
+msgstr "İsim"
+
+#: part/katedialogs.cpp:1117 part/katehighlight.cpp:3174
+msgid "Comment"
+msgstr "Yorum"
+
+#: part/katedialogs.cpp:1213
+#, c-format
+msgid "Configure %1"
+msgstr "%1 Yapılandır..."
+
+#: part/katedialogs.cpp:1285
+msgid "Author:"
+msgstr "Yazar:"
+
+#: part/katedialogs.cpp:1291
+msgid "License:"
+msgstr "Lisans:"
+
+#: part/katedialogs.cpp:1324
+msgid "Do&wnload..."
+msgstr "İ&ndir..."
+
+#: part/katedialogs.cpp:1332
+msgid ""
+"Choose a <em>Syntax Highlight mode</em> from this list to view its properties "
+"below."
+msgstr ""
+"Bu listeden <em>Sözdizim Renklendirme Kipi</em> seçerek, aşağıda gösterilecek "
+"özelliklerini inceleyebilirsiniz."
+
+#: part/katedialogs.cpp:1335
+msgid ""
+"The list of file extensions used to determine which files to highlight using "
+"the current syntax highlight mode."
+msgstr ""
+"Hangi dosyaların şimdiki sözdizim renklendirme kipi ile renklendirileceğini "
+"kararlaştırmak için kullanılacak dosya uzantılarının listesi."
+
+#: part/katedialogs.cpp:1338
+msgid ""
+"The list of Mime Types used to determine which files to highlight using the "
+"current highlight mode."
+"<p>Click the wizard button on the left of the entry field to display the "
+"MimeType selection dialog."
+msgstr ""
+"Hangi dosyaların şimdiki sözdizim renklendirme kipi ile renklendirileceğini "
+"kararlaştırmak için kullanılacak MIME-tip'lerini listesi. "
+"<p>Giriş alanlarının solundaki sihiirbaz düğmesine tıklayarak, Mime-Tipi seçme "
+"diyaloğuna ulaşabilirsiniz."
+
+#: part/katedialogs.cpp:1342
+msgid ""
+"Display a dialog with a list of all available mime types to choose from."
+"<p>The <strong>File Extensions</strong> entry will automatically be edited as "
+"well."
+msgstr ""
+"Seçim yapabilmeniz için, tüm mime-tiplerini listeleyen bir diyalog gösterir. "
+"<p> <strong>Dosya Uzantıları</strong> girişi otomatik olarak değiştirilecektir."
+
+#: part/katedialogs.cpp:1346
+msgid ""
+"Click this button to download new or updated syntax highlight descriptions from "
+"the Kate website."
+msgstr ""
+"Kate web sitesinden yeni veya güncellenmiş sözdizim renklendirme açıklamalarını "
+"indirmek için bu düğmeye tıklayın."
+
+#: part/katedialogs.cpp:1424
+msgid ""
+"Select the MimeTypes you want highlighted using the '%1' syntax highlight "
+"rules.\n"
+"Please note that this will automatically edit the associated file extensions as "
+"well."
+msgstr ""
+" '%1' sözdizim renklendirme kurallarını uygulamak istediğiniz Mime-Tipler'ni "
+"seçin.\n"
+"İlişkilendirilmiş dosya uzantılarını otomatik olarak değiştireceğini unutmayın."
+
+#: part/katedialogs.cpp:1439
+msgid "Highlight Download"
+msgstr "Renklendirme Düzeni İndirme"
+
+#: part/katedialogs.cpp:1439
+msgid "&Install"
+msgstr "&Kur"
+
+#: part/katedialogs.cpp:1444
+msgid "Select the syntax highlighting files you want to update:"
+msgstr "Güncellemek istediğiniz renklendirme dosyalarını seçin:"
+
+#: part/katedialogs.cpp:1448
+msgid "Installed"
+msgstr "Kurulu"
+
+#: part/katedialogs.cpp:1449
+msgid "Latest"
+msgstr "Sonuncu"
+
+#: part/katedialogs.cpp:1453
+msgid "<b>Note:</b> New versions are selected automatically."
+msgstr "<b>Not:</b> Yeni sürümler otomatik olarak seçildi."
+
+#: part/katedialogs.cpp:1552
+msgid "Go to Line"
+msgstr "Satıra Git"
+
+#: part/katedialogs.cpp:1562
+msgid "&Go to line:"
+msgstr "&Satıra git:"
+
+#: part/katedialogs.cpp:1588
+msgid "File Was Deleted on Disk"
+msgstr "Dosya Diskten Silinmiş"
+
+#: part/katedialogs.cpp:1589
+msgid "&Save File As..."
+msgstr "Fa&rklı Kaydet"
+
+#: part/katedialogs.cpp:1590
+msgid "Lets you select a location and save the file again."
+msgstr "Bir yer seç ve yeniden kaydet."
+
+#: part/katedialogs.cpp:1592
+msgid "File Changed on Disk"
+msgstr "Dosya Diskte Değiştirilmiş"
+
+#: part/katedialogs.cpp:1594
+msgid ""
+"Reload the file from disk. If you have unsaved changes, they will be lost."
+msgstr ""
+"Dosyayı disk'ten yeniden yükler. Kaydedilmemiş değişiklikler kaybolacak."
+
+#: part/katedialogs.cpp:1599
+msgid "&Ignore"
+msgstr "&Yoksay"
+
+#: part/katedialogs.cpp:1602
+msgid "Ignore the changes. You will not be prompted again."
+msgstr "Değişiklikleri yok sayar. Tekrar uyarılmayacaksınız."
+
+#: part/katedialogs.cpp:1603
+msgid ""
+"Do nothing. Next time you focus the file, or try to save it or close it, you "
+"will be prompted again."
+msgstr ""
+"Hiçbirşey yapma. Başka bir zaman dosyaya odaklandığınızda veya kaydetmeye, "
+"kapatmaya çalıştığınızda yeniden uyarılacaksınız."
+
+#: part/katedialogs.cpp:1621
+msgid "&View Difference"
+msgstr "Farkları Görüntüle"
+
+#: part/katedialogs.cpp:1626
+msgid ""
+"Calculates the difference between the editor contents and the disk file using "
+"diff(1) and opens the diff file with the default application for that."
+msgstr ""
+"diff(1) kullanarak diskteki dosya ile düzenleyici içinde açık olan dosya "
+"arasındaki farklılıkları hesaplar ve .diff dosyasını ait olduğu öntanımlı "
+"uygulama ile açar. "
+
+#: part/katedialogs.cpp:1630
+msgid "Overwrite"
+msgstr "Ü&zerine Yaz"
+
+#: part/katedialogs.cpp:1631
+msgid "Overwrite the disk file with the editor content."
+msgstr "Düzenleyici içindekileri Diskteki dosyanın üzerine yazar."
+
+#: part/katedialogs.cpp:1699
+msgid ""
+"The diff command failed. Please make sure that diff(1) is installed and in your "
+"PATH."
+msgstr ""
+"diff komutu başarısız oldu. Lütfen şunlar için emin olun:  diff(1) sisteminizde "
+"kurulu mu ya da PATH çevreseli içinde mi? "
+
+#: part/katedialogs.cpp:1701
+msgid "Error Creating Diff"
+msgstr ".diff dosyası oluşturmada hata"
+
+#: part/katedialogs.cpp:1716
+msgid ""
+"Ignoring means that you will not be warned again (unless the disk file changes "
+"once more): if you save the document, you will overwrite the file on disk; if "
+"you do not save then the disk file (if present) is what you have."
+msgstr ""
+"YokSayma, bir daha bu konuda uyarılmayacağınız anlamına gelir (diskteki dosya "
+"bir kez daha değişmediği takdirde). Eğer belgeyi kaydederseniz, disktekinin "
+"üzerine yazılacak; Kaydetmezseniz, diskteki dosya ne ise,-o'na sahip "
+"olacaksınız."
+
+#: part/katedialogs.cpp:1720
+#, fuzzy
+msgid "You Are on Your Own"
+msgstr "Kendi Başınasınız"
+
+#: part/katecmds.cpp:98 part/katejscript.cpp:275 part/katejscript.cpp:741
+#: part/katejscript.cpp:944
+#, fuzzy
+msgid "Could not access view"
+msgstr "Görünüme ulaşılamıyor"
+
+#: part/katejscript.cpp:304 part/katejscript.cpp:928
+#, fuzzy
+msgid "Exception, line %1: %2"
+msgstr "Exception, line %1: %2"
+
+#: part/katejscript.cpp:754
+msgid "Command not found"
+msgstr "Komut bulunamadı"
+
+#: part/katejscript.cpp:762 part/katejscript.cpp:897
+msgid "JavaScript file not found"
+msgstr "JavaScript dosyası bulunamadı"
+
+#: part/katespell.cpp:57
+msgid "Spelling (from cursor)..."
+msgstr "Sözdizim (imleçten)..."
+
+#: part/katespell.cpp:58
+msgid "Check the document's spelling from the cursor and forward"
+msgstr "Belgenin sözdizim denetiminin imleçten ve ileriye doğru yapılacağı "
+
+#: part/katespell.cpp:60
+msgid "Spellcheck Selection..."
+msgstr "Sözdizim Denetimi Seçimi.."
+
+#: part/katespell.cpp:61
+msgid "Check spelling of the selected text"
+msgstr "Seçilen metnin sözdizim denetimi"
+
+#: part/katespell.cpp:125
+msgid "Spellcheck"
+msgstr "İmla Denetimi"
+
+#: part/katespell.cpp:205
+msgid ""
+"The spelling program could not be started. Please make sure you have set the "
+"correct spelling program and that it is properly configured and in your PATH."
+msgstr ""
+"Sözdizim denetim programı başlatılamıyor. Programı doğru kurmuş ve uygun "
+"şekilde yapılandırmış olduğunuza veya PATH içinde bulunduğuna emin olun. "
+
+#: part/katespell.cpp:210
+msgid "The spelling program seems to have crashed."
+msgstr "Sözdizim denetim programı çökmüş gibi görünüyor."
+
+#: part/kateview.cpp:216
+msgid "Cut the selected text and move it to the clipboard"
+msgstr "Seçilen metni kes ve panoya yerleştir."
+
+#: part/kateview.cpp:219
+msgid "Paste previously copied or cut clipboard contents"
+msgstr "Önceden kesilip-kopyalanmış pano içeriğini yapıştır."
+
+#: part/kateview.cpp:222
+msgid ""
+"Use this command to copy the currently selected text to the system clipboard."
+msgstr ""
+" Seçili-bulunan metni sistem panosuna kopyalamak için bu komutu kullanın."
+
+#: part/kateview.cpp:224
+msgid "Copy as &HTML"
+msgstr "&HTML olarak kopyala"
+
+#: part/kateview.cpp:225
+msgid ""
+"Use this command to copy the currently selected text as HTML to the system "
+"clipboard."
+msgstr ""
+"Seçili-bulunan metni sistem panosuna HTML olarak kopyalamak için bu komutu "
+"kullanın."
+
+#: part/kateview.cpp:230
+msgid "Save the current document"
+msgstr "Çalışılan belgeyi kaydet"
+
+#: part/kateview.cpp:233
+msgid "Revert the most recent editing actions"
+msgstr "En son yapılan düzenleme eylemlerini geri alır."
+
+#: part/kateview.cpp:236
+msgid "Revert the most recent undo operation"
+msgstr "En son yapılan Geri-Al işlemlerini geri al"
+
+#: part/kateview.cpp:238
+msgid "&Word Wrap Document"
+msgstr "&Kelime Kaydır"
+
+#: part/kateview.cpp:239
+msgid ""
+"Use this command to wrap all lines of the current document which are longer "
+"than the width of the current view, to fit into this view."
+"<br>"
+"<br> This is a static word wrap, meaning it is not updated when the view is "
+"resized."
+msgstr ""
+"Mevcut belgenin, şimdiki görünümün genişliğinden daha uzun olan satırlarını, "
+"kaydırarak  sığdırmak için bu komutu kullanın. "
+"<br>"
+"<br>Bu durağan sözcük kaydırmada, görünüm yeniden boyutlandırıldığında, "
+"içindekiler kımıldamayacaktır."
+
+#: part/kateview.cpp:244
+msgid "&Indent"
+msgstr "&Girinti"
+
+#: part/kateview.cpp:245
+msgid ""
+"Use this to indent a selected block of text."
+"<br>"
+"<br>You can configure whether tabs should be honored and used or replaced with "
+"spaces, in the configuration dialog."
+msgstr ""
+"Seçilen metin bloğunu girintilemek için bunu kullanın."
+"<br> "
+"<br> Yapılandırma dialoglarında, sekmeler veya boşluklar ile girintileme "
+"özelliklerini ve biribirlerinin yerlerine kullanımlarını yapılandırabilirsiniz."
+
+#: part/kateview.cpp:247
+msgid "&Unindent"
+msgstr "&Girintiyi Temizle"
+
+#: part/kateview.cpp:248
+msgid "Use this to unindent a selected block of text."
+msgstr "Seçilen metin bloğunun girintisini temizlemek için bunu kullanın."
+
+#: part/kateview.cpp:250
+msgid "&Clean Indentation"
+msgstr "&Girintiyi Temizle"
+
+#: part/kateview.cpp:251
+msgid ""
+"Use this to clean the indentation of a selected block of text (only tabs/only "
+"spaces)"
+"<br>"
+"<br>You can configure whether tabs should be honored and used or replaced with "
+"spaces, in the configuration dialog."
+msgstr ""
+"Seçilen metin bloğunun girintilemesini temizlemek için bunu kullanın."
+"<br> "
+"<br> Yapılandırma dialoglarında, sekmeler veya boşluklar ile girintileme "
+"özelliklerini ve biribirlerinin yerlerine kullanımlarını yapılandırabilirsiniz."
+
+#: part/kateview.cpp:254
+msgid "&Align"
+msgstr "Yerle&şim"
+
+#: part/kateview.cpp:255
+msgid ""
+"Use this to align the current line or block of text to its proper indent level."
+msgstr ""
+"Mevcut satırı veya metin bloğunu uygun girinti seviyesine yerleştirmek için "
+"bunu kullanın."
+
+#: part/kateview.cpp:257
+msgid "C&omment"
+msgstr "Y&orum Haline getir"
+
+#: part/kateview.cpp:259
+msgid ""
+"This command comments out the current line or a selected block of text.<BR><BR>"
+"The characters for single/multiple line comments are defined within the "
+"language's highlighting."
+msgstr ""
+"Bu komut, bulunulan satır veya seçilmiş metin bloğunu yorum haline getirir.<BR>"
+"<BR> Tek/çoklu satır yorumları için kullanılan karakterler, ait olduğu dil'in "
+"renklendirme kuralları içinde tanımlanmıştır."
+
+#: part/kateview.cpp:262
+msgid "Unco&mment"
+msgstr "Yoru&mu Kaldır"
+
+#: part/kateview.cpp:264
+msgid ""
+"This command removes comments from the current line or a selected block of "
+"text.<BR><BR>The characters for single/multiple line comments are defined "
+"within the language's highlighting."
+msgstr ""
+"Bu komut, bulunulan satır veya seçilmiş metin bloğunu yorum halinden "
+"çıkarır.<BR><BR> Tek/çoklu satır yorumları için kullanılan karakterler, ait "
+"olduğu dil'in renklendirme kuralları içinde tanımlanmıştır."
+
+#: part/kateview.cpp:267
+msgid "&Read Only Mode"
+msgstr "&Salt Okuma Kipi"
+
+#: part/kateview.cpp:270
+msgid "Lock/unlock the document for writing"
+msgstr "Belgeyi yazmaya karşı kilitle/kilidi aç"
+
+#: part/kateview.cpp:272
+msgid "Uppercase"
+msgstr "Büyük Harf"
+
+#: part/kateview.cpp:274
+msgid ""
+"Convert the selection to uppercase, or the character to the right of the cursor "
+"if no text is selected."
+msgstr ""
+"Seçili metin alanını veya hiç metin seçilmemişse imlecin hemen sağındaki harfi "
+"BÜYÜK HARFLER haline çevir."
+
+#: part/kateview.cpp:277
+msgid "Lowercase"
+msgstr "Küçük Harf"
+
+#: part/kateview.cpp:279
+msgid ""
+"Convert the selection to lowercase, or the character to the right of the cursor "
+"if no text is selected."
+msgstr ""
+"Seçili metin alanını veya hiç metin seçilmemişse imlecin hemen sağındaki harfi "
+"küçük harfler haline çevir."
+
+#: part/kateview.cpp:282
+msgid "Capitalize"
+msgstr "Karakterleri Büyüt"
+
+#: part/kateview.cpp:284
+msgid ""
+"Capitalize the selection, or the word under the cursor if no text is selected."
+msgstr ""
+"Seçili metin alanını veya hiç metin seçilmemişse imlecin hemen sağındaki "
+"sözcüğü Baş-harf-büyük ( Capitalize ) haline çevir."
+
+#: part/kateview.cpp:287
+msgid "Join Lines"
+msgstr "Satırları Birleştir"
+
+#: part/kateview.cpp:299
+msgid "Print the current document."
+msgstr "Çalışılan belgeyi yazdır."
+
+#: part/kateview.cpp:301
+msgid "Reloa&d"
+msgstr "Yeni&den Yükle"
+
+#: part/kateview.cpp:302
+msgid "Reload the current document from disk."
+msgstr "Çalışılan belgeyi diskten yeniden oku."
+
+#: part/kateview.cpp:305
+msgid "Save the current document to disk, with a name of your choice."
+msgstr "Çalışılan belgeyi seçtiğiniz bir isimle diske kaydet."
+
+#: part/kateview.cpp:308
+msgid ""
+"This command opens a dialog and lets you choose a line that you want the cursor "
+"to move to."
+msgstr ""
+"Bu komut, bir iletişim penceresi açarak, imleci taşımak istediğiniz ( gitmek "
+"istediğiniz ) satırı seçmenize izin verir."
+
+#: part/kateview.cpp:310
+msgid "&Configure Editor..."
+msgstr "Düzenleyi&ciyi Yapılandır..."
+
+#: part/kateview.cpp:311
+msgid "Configure various aspects of this editor."
+msgstr "Düzenleyicinin çeşitli görünümlerini yapılandırır."
+
+#: part/kateview.cpp:313
+msgid "&Highlighting"
+msgstr "&Renklendirme"
+
+#: part/kateview.cpp:314
+msgid "Here you can choose how the current document should be highlighted."
+msgstr "Burada çalışılan belgenin nasıl renklendirileceğini seçebilirsiniz."
+
+#: part/kateview.cpp:317
+msgid "&Filetype"
+msgstr "&Dosya türü:"
+
+#: part/kateview.cpp:320
+msgid "&Schema"
+msgstr "T&ema"
+
+#: part/kateview.cpp:324
+msgid "&Indentation"
+msgstr "G&irintileme"
+
+#: part/kateview.cpp:327
+msgid "E&xport as HTML..."
+msgstr "HTML olarak &Aktar"
+
+#: part/kateview.cpp:328
+msgid ""
+"This command allows you to export the current document with all highlighting "
+"information into a HTML document."
+msgstr ""
+"Bu komut, güncel belgeyi, tüm renklendirme bilgisiyle beraber bir HTML belge "
+"içine aktarmanıza olanak tanır."
+
+#: part/kateview.cpp:332
+msgid "Select the entire text of the current document."
+msgstr "Çalışılan belgedeki metnin tümünü seçer."
+
+#: part/kateview.cpp:335
+msgid ""
+"If you have selected something within the current document, this will no longer "
+"be selected."
+msgstr ""
+"Eğer güncel belge içinde birşeyleri seçmisseniz, bundan sonra seçili olmayacak."
+
+#: part/kateview.cpp:337
+msgid "Enlarge Font"
+msgstr "Yazıtipini büyült"
+
+#: part/kateview.cpp:338
+msgid "This increases the display font size."
+msgstr "Yazı tipi görünüm büyüklüğünü artırır."
+
+#: part/kateview.cpp:340
+msgid "Shrink Font"
+msgstr "Yazıtipini küçült"
+
+#: part/kateview.cpp:341
+msgid "This decreases the display font size."
+msgstr "Yazı tipi görünüm büyüklüğünü azaltır."
+
+#: part/kateview.cpp:344
+msgid "Bl&ock Selection Mode"
+msgstr "Bl&ok Seçim Kipi"
+
+#: part/kateview.cpp:347
+msgid ""
+"This command allows switching between the normal (line based) selection mode "
+"and the block selection mode."
+msgstr ""
+"Bu komut, normal ( satır temelli ) seçim kipi ile blok seçim kipi arasında "
+"geçiş yapmanıza izin verir."
+
+#: part/kateview.cpp:350
+msgid "Overwr&ite Mode"
+msgstr "Üzer&ine Yazma Kipi"
+
+#: part/kateview.cpp:353
+msgid ""
+"Choose whether you want the text you type to be inserted or to overwrite "
+"existing text."
+msgstr ""
+"Yazdığınız metnin, mevcut metnin arasına eklenerek mi yoksa üzerine yazarak mı "
+"yazılacağını seçin."
+
+#: part/kateview.cpp:357
+msgid "&Dynamic Word Wrap"
+msgstr "&Devingen Sözcük Kaydırma"
+
+#: part/kateview.cpp:362
+msgid "Dynamic Word Wrap Indicators"
+msgstr "Devingen Sözcük Kaydırma Belirteçleri"
+
+#: part/kateview.cpp:367
+msgid "&Off"
+msgstr "Ka&palı"
+
+#: part/kateview.cpp:368
+msgid "Follow &Line Numbers"
+msgstr "Satır Numara&larını Takip Et"
+
+#: part/kateview.cpp:369
+msgid "&Always On"
+msgstr "&Her Zaman Açık"
+
+#: part/kateview.cpp:373
+msgid "Show Folding &Markers"
+msgstr "&Gizleme İşaretlerini Göster"
+
+#: part/kateview.cpp:376
+msgid ""
+"You can choose if the codefolding marks should be shown, if codefolding is "
+"possible."
+msgstr ""
+"Kod gizleme işaretlerinin gösterileceğini seçebilirsiniz,-tabii KodGizleme "
+"mümkünse."
+
+#: part/kateview.cpp:377
+msgid "Hide Folding &Markers"
+msgstr "KodGizle&me İşaretlerini Sakla "
+
+#: part/kateview.cpp:380
+msgid "Show &Icon Border"
+msgstr "S&imge Kenarlığını Göster"
+
+#: part/kateview.cpp:384
+msgid ""
+"Show/hide the icon border.<BR><BR> The icon border shows bookmark symbols, for "
+"instance."
+msgstr ""
+"Simge kenarlığını gösterir-gizler. <BR><BR> Örneğin, Yer imi sembollerini "
+"gösteren Simge kenarlığı."
+
+#: part/kateview.cpp:385
+msgid "Hide &Icon Border"
+msgstr "Simge Kenarlığını Gizle"
+
+#: part/kateview.cpp:388
+msgid "Show &Line Numbers"
+msgstr "S&atır Numaralarını Göster"
+
+#: part/kateview.cpp:391
+msgid "Show/hide the line numbers on the left hand side of the view."
+msgstr "Görünümün sol yanında satır numararlarının görünüp/gizleneceği."
+
+#: part/kateview.cpp:392
+msgid "Hide &Line Numbers"
+msgstr "Satır Numara&larını Göster"
+
+#: part/kateview.cpp:395
+msgid "Show Scroll&bar Marks"
+msgstr "Göster -Kaydırma Çu&buğu İşaretleri"
+
+#: part/kateview.cpp:398
+msgid ""
+"Show/hide the marks on the vertical scrollbar.<BR><BR>"
+"The marks, for instance, show bookmarks."
+msgstr ""
+"Dikey kaydırma-çubuğu işaretlerini gösterir-gizler. <BR><BR> "
+"Örneğin, Yer imlerini gösteren işaretler."
+
+#: part/kateview.cpp:399
+msgid "Hide Scroll&bar Marks"
+msgstr "Kaydırma Çu&buğu İşaretlerini  Gizle"
+
+#: part/kateview.cpp:402
+msgid "Show Static &Word Wrap Marker"
+msgstr "Durağan Sö&zcük Kaydırma İşaretçisini Göster"
+
+#: part/kateview.cpp:406
+msgid ""
+"Show/hide the Word Wrap Marker, a vertical line drawn at the word wrap column "
+"as defined in the editing properties"
+msgstr ""
+"Sözcük Kaydırma İşaretlerinin gösterilip-gizlenmesi, Düzenleme özellikleri "
+"içinde tanımlanan sözcük kaydırma sütununda dikey bir çizginin çizilmesidir."
+
+#: part/kateview.cpp:408
+msgid "Hide Static &Word Wrap Marker"
+msgstr "Durağan Sö&zcük Kaydırma İşaretçisini Gizle"
+
+#: part/kateview.cpp:411
+msgid "Switch to Command Line"
+msgstr "Komut Satırına Geç"
+
+#: part/kateview.cpp:414
+msgid "Show/hide the command line on the bottom of the view."
+msgstr "Komut satırını aç/kapat"
+
+#: part/kateview.cpp:416
+msgid "&End of Line"
+msgstr "Sa&tır Sonu"
+
+#: part/kateview.cpp:417
+msgid "Choose which line endings should be used, when you save the document"
+msgstr "Belge kaydedilirken hangi satır sonlandırmanın seçileceği"
+
+#: part/kateview.cpp:427
+msgid "E&ncoding"
+msgstr "&Kodlama:"
+
+#: part/kateview.cpp:444
+msgid "Move Word Left"
+msgstr "Sözcüğün Soluna Geç"
+
+#: part/kateview.cpp:448
+msgid "Select Character Left"
+msgstr "Soldaki Karakteri Seç"
+
+#: part/kateview.cpp:452
+msgid "Select Word Left"
+msgstr "Soldaki Kelimeyi Seç"
+
+#: part/kateview.cpp:457
+msgid "Move Word Right"
+msgstr "Sözcüğün Sağına Geç"
+
+#: part/kateview.cpp:461
+msgid "Select Character Right"
+msgstr "Sağdaki Harfi Seç"
+
+#: part/kateview.cpp:465
+msgid "Select Word Right"
+msgstr "Sağdaki Sözcüğü Seç"
+
+#: part/kateview.cpp:470
+msgid "Move to Beginning of Line"
+msgstr "Satırın Başına Git"
+
+#: part/kateview.cpp:474
+msgid "Move to Beginning of Document"
+msgstr "Belgenin Başına Git"
+
+#: part/kateview.cpp:478
+msgid "Select to Beginning of Line"
+msgstr "Satırın Başına Kadar Seç"
+
+#: part/kateview.cpp:482
+msgid "Select to Beginning of Document"
+msgstr "Belgenin Başına Kadar Seç"
+
+#: part/kateview.cpp:487
+msgid "Move to End of Line"
+msgstr "Satırın Sonuna Git"
+
+#: part/kateview.cpp:491
+msgid "Move to End of Document"
+msgstr "Belgenin Sonuna Git"
+
+#: part/kateview.cpp:495
+msgid "Select to End of Line"
+msgstr "Satırın Sonuna Kadar Seç"
+
+#: part/kateview.cpp:499
+msgid "Select to End of Document"
+msgstr "Belgenin Sonuna Kadar Seç"
+
+#: part/kateview.cpp:504
+msgid "Select to Previous Line"
+msgstr "Önceki Satıra Kadar Seç"
+
+#: part/kateview.cpp:508
+msgid "Scroll Line Up"
+msgstr "Satırı Yukarı Kaydır"
+
+#: part/kateview.cpp:512
+msgid "Move to Next Line"
+msgstr "Sonraki Satıra Geç"
+
+#: part/kateview.cpp:515
+msgid "Move to Previous Line"
+msgstr "Önceki Satıra Geç"
+
+#: part/kateview.cpp:518
+msgid "Move Character Right"
+msgstr "Sağa Git"
+
+#: part/kateview.cpp:521
+msgid "Move Character Left"
+msgstr "Sola Git"
+
+#: part/kateview.cpp:525
+msgid "Select to Next Line"
+msgstr "Sonraki Satıra Kadar Seç"
+
+#: part/kateview.cpp:529
+msgid "Scroll Line Down"
+msgstr "Satırı Aşağı Kaydır"
+
+#: part/kateview.cpp:534
+msgid "Scroll Page Up"
+msgstr "Sayfayı Yukarı Kaydır"
+
+#: part/kateview.cpp:538
+msgid "Select Page Up"
+msgstr "Sayfa Başına Kadar Seç"
+
+#: part/kateview.cpp:542
+msgid "Move to Top of View"
+msgstr "Görünümün En Üstüne Git"
+
+#: part/kateview.cpp:546
+msgid "Select to Top of View"
+msgstr "Görünümün Başına Kadar Seç"
+
+#: part/kateview.cpp:551
+msgid "Scroll Page Down"
+msgstr "Sayfayı Aşağı Kaydır"
+
+#: part/kateview.cpp:555
+msgid "Select Page Down"
+msgstr "Sayfa Sonuna Kadar Seç"
+
+#: part/kateview.cpp:559
+msgid "Move to Bottom of View"
+msgstr "Görünümün En Altına Git"
+
+#: part/kateview.cpp:563
+msgid "Select to Bottom of View"
+msgstr "Görünümün Sonuna Kadar Seç"
+
+#: part/kateview.cpp:567
+msgid "Move to Matching Bracket"
+msgstr "Parantezin Eşine Git"
+
+#: part/kateview.cpp:571
+msgid "Select to Matching Bracket"
+msgstr "Parantezin Eşine Kadar Seç"
+
+#: part/kateview.cpp:579
+msgid "Transpose Characters"
+msgstr "Harflerin Yerini Değiştir"
+
+#: part/kateview.cpp:584
+msgid "Delete Line"
+msgstr "Satırı Sil"
+
+#: part/kateview.cpp:589
+msgid "Delete Word Left"
+msgstr "Soldaki Kelimeyi Sil"
+
+#: part/kateview.cpp:594
+msgid "Delete Word Right"
+msgstr "Sağdaki Kelimeyi Sil"
+
+#: part/kateview.cpp:598
+msgid "Delete Next Character"
+msgstr "Sonraki Karakteri Sil"
+
+#: part/kateview.cpp:602
+msgid "Backspace"
+msgstr "Backspace"
+
+#: part/kateview.cpp:628
+msgid "Collapse Toplevel"
+msgstr "Enüst Düzeyi Daralt"
+
+#: part/kateview.cpp:630
+msgid "Expand Toplevel"
+msgstr "Enüst Düzeyi Genişlet"
+
+#: part/kateview.cpp:632
+msgid "Collapse One Local Level"
+msgstr "1 Yerel Seviye Daralt"
+
+#: part/kateview.cpp:634
+msgid "Expand One Local Level"
+msgstr "1 Yerel Seviye Genişlet"
+
+#: part/kateview.cpp:639
+msgid "Show the code folding region tree"
+msgstr "Kod gizleme bölgesi ağacını göster"
+
+#: part/kateview.cpp:640
+#, fuzzy
+msgid "Basic template code test"
+msgstr "Basic şablon kod testi"
+
+#: part/kateview.cpp:702
+msgid " OVR "
+msgstr "OVR"
+
+#: part/kateview.cpp:704
+msgid " INS "
+msgstr " INS "
+
+#: part/kateview.cpp:707
+msgid " R/O "
+msgstr " R/O "
+
+#: part/kateview.cpp:712
+#, c-format
+msgid " Line: %1"
+msgstr " Satır: %1"
+
+#: part/kateview.cpp:713
+#, c-format
+msgid " Col: %1"
+msgstr " Süt: %1"
+
+#: part/kateview.cpp:716
+msgid " BLK "
+msgstr " BLK "
+
+#: part/kateview.cpp:716
+msgid " NORM "
+msgstr " NORM "
+
+#: part/kateview.cpp:892
+msgid "Overwrite the file"
+msgstr "Dosyanın Üzerine Yaz"
+
+#: part/kateview.cpp:1794
+msgid "Export File as HTML"
+msgstr "Dosyayı HTML olarak Aktar"
+
+#: part/katehighlight.cpp:1824
+msgid "Normal Text"
+msgstr "Normal Metin"
+
+#: part/katehighlight.cpp:1972
+msgid ""
+"<B>%1</B>: Deprecated syntax. Attribute (%2) not addressed by symbolic name<BR>"
+msgstr ""
+"<B>%1</B>: Terkedilmiş Sözdizini. Öznitelik (%2) sembolik ismi ile "
+"adreslenmemiş<BR>"
+
+#: part/katehighlight.cpp:2339
+#, fuzzy
+msgid "<B>%1</B>: Deprecated syntax. Context %2 has no symbolic name<BR>"
+msgstr ""
+"<B>%1</B>: Terkedilmiş Sözdizini. Kapsam %2 sembolik isim taşımıyor <BR>"
+
+#: part/katehighlight.cpp:2386
+msgid ""
+"<B>%1</B>:Deprecated syntax. Context %2 not addressed by a symbolic name"
+msgstr ""
+"<B>%1</B>: Terkedilmiş Sözdizini. Kapsam (%2) sembolik ismi ile "
+"adreslenmemiş<BR>"
+
+#: part/katehighlight.cpp:2501
+msgid ""
+"There were warning(s) and/or error(s) while parsing the syntax highlighting "
+"configuration."
+msgstr ""
+"Sözdizimi renklendirme ayrıştırması sırasında bir veya daha fazla uyarı ve/veya "
+"hata çıktı."
+
+#: part/katehighlight.cpp:2503
+msgid "Kate Syntax Highlighting Parser"
+msgstr "Kate Sözdizimi Renklendirme Ayrıştırması"
+
+#: part/katehighlight.cpp:2654
+msgid ""
+"Since there has been an error parsing the highlighting description, this "
+"highlighting will be disabled"
+msgstr ""
+"Renklendirme tanımının ayrıştırmasında bir hata oluştuğundan, bu renklendirme "
+"etkisizleştirilecek."
+
+#: part/katehighlight.cpp:2856
+msgid ""
+"<B>%1</B>: Specified multiline comment region (%2) could not be resolved<BR>"
+msgstr "<B>%1</B>: Tanımlanan çoksatırlı yorum bölgesi (%2) çözümlenemedi<BR>"
+
+#: part/katehighlight.cpp:3167
+msgid "Keyword"
+msgstr "Anahtar Sözcük"
+
+#: part/katehighlight.cpp:3168
+msgid "Data Type"
+msgstr "Veri Tipi"
+
+#: part/katehighlight.cpp:3169
+#, fuzzy
+msgid "Decimal/Value"
+msgstr "Decimal/Value"
+
+#: part/katehighlight.cpp:3170
+msgid "Base-N Integer"
+msgstr "Base-N Integer"
+
+#: part/katehighlight.cpp:3171
+msgid "Floating Point"
+msgstr "Floating Point"
+
+#: part/katehighlight.cpp:3172
+msgid "Character"
+msgstr "Character"
+
+#: part/katehighlight.cpp:3173
+msgid "String"
+msgstr "String"
+
+#: part/katehighlight.cpp:3175
+msgid "Others"
+msgstr "Diğerleri"
+
+#: part/katehighlight.cpp:3176
+msgid "Alert"
+msgstr "Alert"
+
+#: part/katehighlight.cpp:3177
+msgid "Function"
+msgstr "Function"
+
+#: part/katehighlight.cpp:3179
+msgid "Region Marker"
+msgstr "Bölge İşaretçisi"
+
+#: part/kateautoindent.cpp:99
+msgid "C Style"
+msgstr "C Biçemi"
+
+#: part/kateautoindent.cpp:101
+msgid "Python Style"
+msgstr "Python Biçemi"
+
+#: part/kateautoindent.cpp:103
+msgid "XML Style"
+msgstr "XML Biçemi"
+
+#: part/kateautoindent.cpp:105
+msgid "S&S C Style"
+msgstr "S&S C Biçemi"
+
+#: part/kateautoindent.cpp:107
+msgid "Variable Based Indenter"
+msgstr "Değişken Temelli Girintileyici"
+
+#: part/katecmds.cpp:151
+#, fuzzy
+msgid "Mode must be at least 0."
+msgstr "Mod en az 0 olmalı."
+
+#: part/katecmds.cpp:169
+msgid "No such highlight '%1'"
+msgstr "Böyle bir renklendirme yok: '%1'"
+
+#: part/katecmds.cpp:180
+msgid "Missing argument. Usage: %1 <value>"
+msgstr "Kayıp argüman. Kullanım: %1 <value>"
+
+#: part/katecmds.cpp:184
+msgid "Failed to convert argument '%1' to integer."
+msgstr "Argüman '%1', tamsayıya dönüştürülerken hata oluştu"
+
+#: part/katecmds.cpp:190 part/katecmds.cpp:196
+msgid "Width must be at least 1."
+msgstr "Genişlik en az 1 olmalıdır"
+
+#: part/katecmds.cpp:202
+msgid "Column must be at least 1."
+msgstr "Sütun en az 1 olmalıdır."
+
+#: part/katecmds.cpp:208
+msgid "Line must be at least 1"
+msgstr "Satır en az 1 olmalı"
+
+#: part/katecmds.cpp:210
+msgid "There is not that many lines in this document"
+msgstr "Bu belgede birden çok satır yok"
+
+#: part/katecmds.cpp:232
+msgid "Usage: %1 on|off|1|0|true|false"
+msgstr "Kullanım: %1 on|off|1|0|true|false"
+
+#: part/katecmds.cpp:274
+msgid "Bad argument '%1'. Usage: %2 on|off|1|0|true|false"
+msgstr "Bozuk argüman '%1'. Kullanım: %2 on|off|1|0|true|false"
+
+#: part/katecmds.cpp:279
+msgid "Unknown command '%1'"
+msgstr "Bilinmeyen komut: '%1'"
+
+#: part/katecmds.cpp:498
+msgid "Sorry, but Kate is not able to replace newlines, yet"
+msgstr ""
+
+#: part/katecmds.cpp:540
+#, c-format
+msgid ""
+"_n: 1 replacement done\n"
+"%n replacements done"
+msgstr "%n değiştirme yapıldı."
+
+#. i18n: file ./data/katepartreadonlyui.rc line 39
+#: rc.cpp:12 rc.cpp:33
+#, no-c-format
+msgid "&Code Folding"
+msgstr "Kod &Gizleme"
+
+#. i18n: file data/abc.xml line 5
+#: rc.cpp:44
+msgid ""
+"_: Language\n"
+"ABC"
+msgstr "ABC"
+
+#. i18n: file data/abc.xml line 5
+#: rc.cpp:46 rc.cpp:62 rc.cpp:110 rc.cpp:122 rc.cpp:150 rc.cpp:158 rc.cpp:162
+#: rc.cpp:170 rc.cpp:186 rc.cpp:290 rc.cpp:310 rc.cpp:318 rc.cpp:342
+#: rc.cpp:386 rc.cpp:418 rc.cpp:422
+msgid ""
+"_: Language Section\n"
+"Other"
+msgstr "Diğer"
+
+#. i18n: file data/actionscript.xml line 3
+#: rc.cpp:48
+#, fuzzy
+msgid ""
+"_: Language\n"
+"ActionScript 2.0"
+msgstr "Betikler"
+
+#. i18n: file data/actionscript.xml line 3
+#: rc.cpp:50 rc.cpp:54 rc.cpp:66 rc.cpp:98 rc.cpp:102 rc.cpp:106 rc.cpp:118
+#: rc.cpp:134 rc.cpp:138 rc.cpp:142 rc.cpp:154 rc.cpp:178 rc.cpp:182
+#: rc.cpp:206 rc.cpp:222 rc.cpp:230 rc.cpp:242 rc.cpp:246 rc.cpp:250
+#: rc.cpp:258 rc.cpp:274 rc.cpp:286 rc.cpp:294 rc.cpp:298 rc.cpp:302
+#: rc.cpp:338 rc.cpp:350 rc.cpp:354 rc.cpp:362 rc.cpp:394 rc.cpp:398
+#: rc.cpp:426 rc.cpp:434 rc.cpp:454 rc.cpp:474 rc.cpp:514 rc.cpp:530
+#: rc.cpp:534
+msgid ""
+"_: Language Section\n"
+"Sources"
+msgstr "Kaynak Kodlar"
+
+#. i18n: file data/ada.xml line 3
+#: rc.cpp:52
+msgid ""
+"_: Language\n"
+"Ada"
+msgstr "Ada"
+
+#. i18n: file data/ahdl.xml line 3
+#: rc.cpp:56
+msgid ""
+"_: Language\n"
+"AHDL"
+msgstr "AHDL"
+
+#. i18n: file data/ahdl.xml line 3
+#: rc.cpp:58 rc.cpp:458 rc.cpp:498 rc.cpp:502
+msgid ""
+"_: Language Section\n"
+"Hardware"
+msgstr "Donanım"
+
+#. i18n: file data/alert.xml line 29
+#: rc.cpp:60
+msgid ""
+"_: Language\n"
+"Alerts"
+msgstr "Alerts"
+
+#. i18n: file data/ansic89.xml line 27
+#: rc.cpp:64
+msgid ""
+"_: Language\n"
+"ANSI C89"
+msgstr "ANSI C89"
+
+#. i18n: file data/apache.xml line 15
+#: rc.cpp:68
+#, fuzzy
+msgid ""
+"_: Language\n"
+"Apache Configuration"
+msgstr "Yapılandırma"
+
+#. i18n: file data/apache.xml line 15
+#: rc.cpp:70 rc.cpp:114 rc.cpp:166 rc.cpp:210 rc.cpp:254 rc.cpp:510
+msgid ""
+"_: Language Section\n"
+"Configuration"
+msgstr "Yapılandırma"
+
+#. i18n: file data/asm-avr.xml line 36
+#: rc.cpp:72
+msgid ""
+"_: Language\n"
+"AVR Assembler"
+msgstr "AVR Assembler"
+
+#. i18n: file data/asm-avr.xml line 36
+#: rc.cpp:74 rc.cpp:78 rc.cpp:226 rc.cpp:334 rc.cpp:346 rc.cpp:374
+msgid ""
+"_: Language Section\n"
+"Assembler"
+msgstr "Assembler"
+
+#. i18n: file data/asm6502.xml line 3
+#: rc.cpp:76
+msgid ""
+"_: Language\n"
+"Asm6502"
+msgstr "Asm6502"
+
+#. i18n: file data/asp.xml line 3
+#: rc.cpp:80
+msgid ""
+"_: Language\n"
+"ASP"
+msgstr "ASP"
+
+#. i18n: file data/asp.xml line 3
+#: rc.cpp:82 rc.cpp:94 rc.cpp:126 rc.cpp:146 rc.cpp:174 rc.cpp:218 rc.cpp:234
+#: rc.cpp:262 rc.cpp:270 rc.cpp:278 rc.cpp:314 rc.cpp:330 rc.cpp:382
+#: rc.cpp:414 rc.cpp:446 rc.cpp:486 rc.cpp:506 rc.cpp:518 rc.cpp:522
+#: rc.cpp:526
+msgid ""
+"_: Language Section\n"
+"Markup"
+msgstr "Markup"
+
+#. i18n: file data/awk.xml line 3
+#: rc.cpp:84
+msgid ""
+"_: Language\n"
+"AWK"
+msgstr "AWK"
+
+#. i18n: file data/awk.xml line 3
+#: rc.cpp:86 rc.cpp:90 rc.cpp:130 rc.cpp:190 rc.cpp:194 rc.cpp:238 rc.cpp:266
+#: rc.cpp:306 rc.cpp:322 rc.cpp:366 rc.cpp:370 rc.cpp:378 rc.cpp:402
+#: rc.cpp:406 rc.cpp:410 rc.cpp:430 rc.cpp:438 rc.cpp:450 rc.cpp:478
+#: rc.cpp:490 rc.cpp:494
+msgid ""
+"_: Language Section\n"
+"Scripts"
+msgstr "Betikler"
+
+#. i18n: file data/bash.xml line 10
+#: rc.cpp:88
+msgid ""
+"_: Language\n"
+"Bash"
+msgstr "Bash"
+
+#. i18n: file data/bibtex.xml line 3
+#: rc.cpp:92
+msgid ""
+"_: Language\n"
+"BibTeX"
+msgstr "BibTeX"
+
+#. i18n: file data/c.xml line 3
+#: rc.cpp:96
+msgid ""
+"_: Language\n"
+"C"
+msgstr "C"
+
+#. i18n: file data/cg.xml line 23
+#: rc.cpp:100
+msgid ""
+"_: Language\n"
+"Cg"
+msgstr "Cg"
+
+#. i18n: file data/cgis.xml line 3
+#: rc.cpp:104
+msgid ""
+"_: Language\n"
+"CGiS"
+msgstr "CGiS"
+
+#. i18n: file data/changelog.xml line 3
+#: rc.cpp:108
+msgid ""
+"_: Language\n"
+"ChangeLog"
+msgstr "DeğişimGünlüğü"
+
+#. i18n: file data/cisco.xml line 3
+#: rc.cpp:112
+msgid ""
+"_: Language\n"
+"Cisco"
+msgstr "Cisco"
+
+#. i18n: file data/clipper.xml line 3
+#: rc.cpp:116
+msgid ""
+"_: Language\n"
+"Clipper"
+msgstr "Clipper"
+
+#. i18n: file data/cmake.xml line 6
+#: rc.cpp:120
+msgid ""
+"_: Language\n"
+"CMake"
+msgstr "CMake"
+
+#. i18n: file data/coldfusion.xml line 3
+#: rc.cpp:124
+msgid ""
+"_: Language\n"
+"ColdFusion"
+msgstr "ColdFusion"
+
+#. i18n: file data/commonlisp.xml line 28
+#: rc.cpp:128
+msgid ""
+"_: Language\n"
+"Common Lisp"
+msgstr "Common Lisp"
+
+#. i18n: file data/component-pascal.xml line 13
+#: rc.cpp:132
+msgid ""
+"_: Language\n"
+"Component-Pascal"
+msgstr "Component-Pascal"
+
+#. i18n: file data/cpp.xml line 3
+#: rc.cpp:136
+msgid ""
+"_: Language\n"
+"C++"
+msgstr "C++"
+
+#. i18n: file data/cs.xml line 2
+#: rc.cpp:140
+msgid ""
+"_: Language\n"
+"C#"
+msgstr "C#"
+
+#. i18n: file data/css.xml line 3
+#: rc.cpp:144
+msgid ""
+"_: Language\n"
+"CSS"
+msgstr "CSS"
+
+#. i18n: file data/cue.xml line 3
+#: rc.cpp:148
+msgid ""
+"_: Language\n"
+"CUE Sheet"
+msgstr "CUE Sheet"
+
+#. i18n: file data/d.xml line 41
+#: rc.cpp:152
+msgid ""
+"_: Language\n"
+"D"
+msgstr "D"
+
+#. i18n: file data/debianchangelog.xml line 3
+#: rc.cpp:156
+msgid ""
+"_: Language\n"
+"Debian Changelog"
+msgstr "Debian DeğişimGünlüğü"
+
+#. i18n: file data/debiancontrol.xml line 3
+#: rc.cpp:160
+msgid ""
+"_: Language\n"
+"Debian Control"
+msgstr "Debian Denetim"
+
+#. i18n: file data/desktop.xml line 3
+#: rc.cpp:164
+msgid ""
+"_: Language\n"
+".desktop"
+msgstr ".desktop"
+
+#. i18n: file data/diff.xml line 15
+#: rc.cpp:168
+msgid ""
+"_: Language\n"
+"Diff"
+msgstr "Diff"
+
+#. i18n: file data/doxygen.xml line 26
+#: rc.cpp:172
+msgid ""
+"_: Language\n"
+"Doxygen"
+msgstr "Doxygen"
+
+#. i18n: file data/e.xml line 3
+#: rc.cpp:176
+msgid ""
+"_: Language\n"
+"E Language"
+msgstr "E Dil'i"
+
+#. i18n: file data/eiffel.xml line 13
+#: rc.cpp:180
+msgid ""
+"_: Language\n"
+"Eiffel"
+msgstr "Eiffel"
+
+#. i18n: file data/email.xml line 6
+#: rc.cpp:184
+msgid ""
+"_: Language\n"
+"Email"
+msgstr "Email"
+
+#. i18n: file data/euphoria.xml line 32
+#: rc.cpp:188
+msgid ""
+"_: Language\n"
+"Euphoria"
+msgstr "Euphoria"
+
+#. i18n: file data/ferite.xml line 3
+#: rc.cpp:192
+msgid ""
+"_: Language\n"
+"ferite"
+msgstr "ferite"
+
+#. i18n: file data/fgl-4gl.xml line 3
+#: rc.cpp:196
+msgid ""
+"_: Language\n"
+"4GL"
+msgstr "4GL"
+
+#. i18n: file data/fgl-4gl.xml line 3
+#: rc.cpp:198 rc.cpp:202 rc.cpp:282 rc.cpp:390 rc.cpp:462 rc.cpp:466
+#: rc.cpp:470
+msgid ""
+"_: Language Section\n"
+"Database"
+msgstr "Veritabanı"
+
+#. i18n: file data/fgl-per.xml line 3
+#: rc.cpp:200
+msgid ""
+"_: Language\n"
+"4GL-PER"
+msgstr "4GL-PER"
+
+#. i18n: file data/fortran.xml line 3
+#: rc.cpp:204
+msgid ""
+"_: Language\n"
+"Fortran"
+msgstr "Fortran"
+
+#. i18n: file data/fstab.xml line 4
+#: rc.cpp:208
+#, fuzzy
+msgid ""
+"_: Language\n"
+"fstab"
+msgstr "scilab"
+
+#. i18n: file data/gdl.xml line 3
+#: rc.cpp:212
+msgid ""
+"_: Language\n"
+"GDL"
+msgstr "GDL"
+
+#. i18n: file data/gdl.xml line 3
+#: rc.cpp:214 rc.cpp:326 rc.cpp:358 rc.cpp:442 rc.cpp:482
+msgid ""
+"_: Language Section\n"
+"Scientific"
+msgstr "Scientific"
+
+#. i18n: file data/gettext.xml line 24
+#: rc.cpp:216
+msgid ""
+"_: Language\n"
+"GNU Gettext"
+msgstr "GNU Gettext"
+
+#. i18n: file data/glsl.xml line 3
+#: rc.cpp:220
+msgid ""
+"_: Language\n"
+"GLSL"
+msgstr "GLSL"
+
+#. i18n: file data/gnuassembler.xml line 42
+#: rc.cpp:224
+msgid ""
+"_: Language\n"
+"GNU Assembler"
+msgstr "GNU Assembler"
+
+#. i18n: file data/haskell.xml line 4
+#: rc.cpp:228
+msgid ""
+"_: Language\n"
+"Haskell"
+msgstr "Haskell"
+
+#. i18n: file data/html.xml line 7
+#: rc.cpp:232
+msgid ""
+"_: Language\n"
+"HTML"
+msgstr "HTML"
+
+#. i18n: file data/idconsole.xml line 3
+#: rc.cpp:236
+msgid ""
+"_: Language\n"
+"Quake Script"
+msgstr "Quake Script"
+
+#. i18n: file data/idl.xml line 3
+#: rc.cpp:240
+msgid ""
+"_: Language\n"
+"IDL"
+msgstr "IDL"
+
+#. i18n: file data/ilerpg.xml line 48
+#: rc.cpp:244
+msgid ""
+"_: Language\n"
+"ILERPG"
+msgstr "ILERPG"
+
+#. i18n: file data/inform.xml line 6
+#: rc.cpp:248
+msgid ""
+"_: Language\n"
+"Inform"
+msgstr "Inform"
+
+#. i18n: file data/ini.xml line 3
+#: rc.cpp:252
+#, fuzzy
+msgid ""
+"_: Language\n"
+"INI Files"
+msgstr "Alerts"
+
+#. i18n: file data/java.xml line 3
+#: rc.cpp:256
+msgid ""
+"_: Language\n"
+"Java"
+msgstr "Java"
+
+#. i18n: file data/javadoc.xml line 3
+#: rc.cpp:260
+msgid ""
+"_: Language\n"
+"Javadoc"
+msgstr "Javadoc"
+
+#. i18n: file data/javascript.xml line 6
+#: rc.cpp:264
+msgid ""
+"_: Language\n"
+"JavaScript"
+msgstr "JavaScript"
+
+#. i18n: file data/jsp.xml line 3
+#: rc.cpp:268
+msgid ""
+"_: Language\n"
+"JSP"
+msgstr "JSP"
+
+#. i18n: file data/kbasic.xml line 3
+#: rc.cpp:272
+msgid ""
+"_: Language\n"
+"KBasic"
+msgstr "KBasic"
+
+#. i18n: file data/latex.xml line 3
+#: rc.cpp:276
+msgid ""
+"_: Language\n"
+"LaTeX"
+msgstr "LaTeX"
+
+#. i18n: file data/ldif.xml line 3
+#: rc.cpp:280
+msgid ""
+"_: Language\n"
+"LDIF"
+msgstr "LDIF"
+
+#. i18n: file data/lex.xml line 23
+#: rc.cpp:284
+msgid ""
+"_: Language\n"
+"Lex/Flex"
+msgstr "Lex/Flex"
+
+#. i18n: file data/lilypond.xml line 27
+#: rc.cpp:288
+msgid ""
+"_: Language\n"
+"LilyPond"
+msgstr "LilyPond"
+
+#. i18n: file data/literate-haskell.xml line 3
+#: rc.cpp:292
+msgid ""
+"_: Language\n"
+"Literate Haskell"
+msgstr "Literate Haskell"
+
+#. i18n: file data/logtalk.xml line 4
+#: rc.cpp:296
+msgid ""
+"_: Language\n"
+"Logtalk"
+msgstr "Logtalk"
+
+#. i18n: file data/lpc.xml line 19
+#: rc.cpp:300
+msgid ""
+"_: Language\n"
+"LPC"
+msgstr "LPC"
+
+#. i18n: file data/lua.xml line 3
+#: rc.cpp:304
+msgid ""
+"_: Language\n"
+"Lua"
+msgstr "Lua"
+
+#. i18n: file data/m3u.xml line 14
+#: rc.cpp:308
+#, fuzzy
+msgid ""
+"_: Language\n"
+"M3U"
+msgstr "SML"
+
+#. i18n: file data/mab.xml line 3
+#: rc.cpp:312
+msgid ""
+"_: Language\n"
+"MAB-DB"
+msgstr "MAB-DB"
+
+#. i18n: file data/makefile.xml line 5
+#: rc.cpp:316
+msgid ""
+"_: Language\n"
+"Makefile"
+msgstr "Makefile"
+
+#. i18n: file data/mason.xml line 3
+#: rc.cpp:320
+msgid ""
+"_: Language\n"
+"Mason"
+msgstr "Mason"
+
+#. i18n: file data/matlab.xml line 58
+#: rc.cpp:324
+msgid ""
+"_: Language\n"
+"Matlab"
+msgstr "Matlab"
+
+#. i18n: file data/mediawiki.xml line 3
+#: rc.cpp:328
+#, fuzzy
+msgid ""
+"_: Language\n"
+"MediaWiki"
+msgstr "CMake"
+
+#. i18n: file data/mips.xml line 3
+#: rc.cpp:332
+msgid ""
+"_: Language\n"
+"MIPS Assembler"
+msgstr "MIPS Assembler"
+
+#. i18n: file data/modula-2.xml line 3
+#: rc.cpp:336
+msgid ""
+"_: Language\n"
+"Modula-2"
+msgstr "Modula-2"
+
+#. i18n: file data/mup.xml line 3
+#: rc.cpp:340
+msgid ""
+"_: Language\n"
+"Music Publisher"
+msgstr "Music Publisher"
+
+#. i18n: file data/nasm.xml line 31
+#: rc.cpp:344
+msgid ""
+"_: Language\n"
+"Intel x86 (NASM)"
+msgstr "Intel x86 (NASM)"
+
+#. i18n: file data/objectivec.xml line 3
+#: rc.cpp:348
+msgid ""
+"_: Language\n"
+"Objective-C"
+msgstr "Objective-C"
+
+#. i18n: file data/ocaml.xml line 11
+#: rc.cpp:352
+msgid ""
+"_: Language\n"
+"Objective Caml"
+msgstr "Objective Caml"
+
+#. i18n: file data/octave.xml line 18
+#: rc.cpp:356
+msgid ""
+"_: Language\n"
+"Octave"
+msgstr "Octave"
+
+#. i18n: file data/pascal.xml line 3
+#: rc.cpp:360
+msgid ""
+"_: Language\n"
+"Pascal"
+msgstr "Pascal"
+
+#. i18n: file data/perl.xml line 42
+#: rc.cpp:364
+msgid ""
+"_: Language\n"
+"Perl"
+msgstr "Perl"
+
+#. i18n: file data/php.xml line 21
+#: rc.cpp:368
+msgid ""
+"_: Language\n"
+"PHP/PHP"
+msgstr "PHP/PHP"
+
+#. i18n: file data/picsrc.xml line 11
+#: rc.cpp:372
+msgid ""
+"_: Language\n"
+"PicAsm"
+msgstr "PicAsm"
+
+#. i18n: file data/pike.xml line 4
+#: rc.cpp:376
+msgid ""
+"_: Language\n"
+"Pike"
+msgstr "Pike"
+
+#. i18n: file data/postscript.xml line 3
+#: rc.cpp:380
+msgid ""
+"_: Language\n"
+"PostScript"
+msgstr "PostScript"
+
+#. i18n: file data/povray.xml line 7
+#: rc.cpp:384
+msgid ""
+"_: Language\n"
+"POV-Ray"
+msgstr "POV-Ray"
+
+#. i18n: file data/progress.xml line 3
+#: rc.cpp:388
+msgid ""
+"_: Language\n"
+"progress"
+msgstr "progress"
+
+#. i18n: file data/prolog.xml line 3
+#: rc.cpp:392
+msgid ""
+"_: Language\n"
+"Prolog"
+msgstr "Prolog"
+
+#. i18n: file data/purebasic.xml line 3
+#: rc.cpp:396
+msgid ""
+"_: Language\n"
+"PureBasic"
+msgstr "PureBasic"
+
+#. i18n: file data/python.xml line 4
+#: rc.cpp:400
+msgid ""
+"_: Language\n"
+"Python"
+msgstr "Python"
+
+#. i18n: file data/r.xml line 11
+#: rc.cpp:404
+msgid ""
+"_: Language\n"
+"R Script"
+msgstr "R Script"
+
+#. i18n: file data/rexx.xml line 3
+#: rc.cpp:408
+msgid ""
+"_: Language\n"
+"REXX"
+msgstr "REXX"
+
+#. i18n: file data/rhtml.xml line 47
+#: rc.cpp:412
+#, fuzzy
+msgid ""
+"_: Language\n"
+"Ruby/Rails/RHTML"
+msgstr "HTML"
+
+#. i18n: file data/rib.xml line 8
+#: rc.cpp:416
+msgid ""
+"_: Language\n"
+"RenderMan RIB"
+msgstr "RenderMan RIB"
+
+#. i18n: file data/rpmspec.xml line 3
+#: rc.cpp:420
+msgid ""
+"_: Language\n"
+"RPM Spec"
+msgstr "RPM Spec"
+
+#. i18n: file data/rsiidl.xml line 3
+#: rc.cpp:424
+msgid ""
+"_: Language\n"
+"RSI IDL"
+msgstr "RSI IDL"
+
+#. i18n: file data/ruby.xml line 33
+#: rc.cpp:428
+msgid ""
+"_: Language\n"
+"Ruby"
+msgstr "Ruby"
+
+#. i18n: file data/sather.xml line 3
+#: rc.cpp:432
+msgid ""
+"_: Language\n"
+"Sather"
+msgstr "Sather"
+
+#. i18n: file data/scheme.xml line 43
+#: rc.cpp:436
+msgid ""
+"_: Language\n"
+"Scheme"
+msgstr "Scheme"
+
+#. i18n: file data/sci.xml line 3
+#: rc.cpp:440
+msgid ""
+"_: Language\n"
+"scilab"
+msgstr "scilab"
+
+#. i18n: file data/sgml.xml line 3
+#: rc.cpp:444
+msgid ""
+"_: Language\n"
+"SGML"
+msgstr "SGML"
+
+#. i18n: file data/sieve.xml line 4
+#: rc.cpp:448
+msgid ""
+"_: Language\n"
+"Sieve"
+msgstr "Sieve"
+
+#. i18n: file data/sml.xml line 3
+#: rc.cpp:452
+msgid ""
+"_: Language\n"
+"SML"
+msgstr "SML"
+
+#. i18n: file data/spice.xml line 4
+#: rc.cpp:456
+msgid ""
+"_: Language\n"
+"Spice"
+msgstr "Spice"
+
+#. i18n: file data/sql-mysql.xml line 8
+#: rc.cpp:460
+msgid ""
+"_: Language\n"
+"SQL (MySQL)"
+msgstr "SQL (MySQL)"
+
+#. i18n: file data/sql-postgresql.xml line 4
+#: rc.cpp:464
+msgid ""
+"_: Language\n"
+"SQL (PostgreSQL)"
+msgstr "SQL (PostgreSQL)"
+
+#. i18n: file data/sql.xml line 6
+#: rc.cpp:468
+msgid ""
+"_: Language\n"
+"SQL"
+msgstr "SQL"
+
+#. i18n: file data/stata.xml line 3
+#: rc.cpp:472
+msgid ""
+"_: Language\n"
+"Stata"
+msgstr "Stata"
+
+#. i18n: file data/tcl.xml line 8
+#: rc.cpp:476
+msgid ""
+"_: Language\n"
+"Tcl/Tk"
+msgstr "Tcl/Tk"
+
+#. i18n: file data/tibasic.xml line 3
+#: rc.cpp:480
+msgid ""
+"_: Language\n"
+"TI Basic"
+msgstr "TI Basic"
+
+#. i18n: file data/txt2tags.xml line 5
+#: rc.cpp:484
+msgid ""
+"_: Language\n"
+"txt2tags"
+msgstr "txt2tags"
+
+#. i18n: file data/uscript.xml line 3
+#: rc.cpp:488
+msgid ""
+"_: Language\n"
+"UnrealScript"
+msgstr "UnrealScript"
+
+#. i18n: file data/velocity.xml line 3
+#: rc.cpp:492
+msgid ""
+"_: Language\n"
+"Velocity"
+msgstr "Velocity"
+
+#. i18n: file data/verilog.xml line 3
+#: rc.cpp:496
+msgid ""
+"_: Language\n"
+"Verilog"
+msgstr "Verilog"
+
+#. i18n: file data/vhdl.xml line 3
+#: rc.cpp:500
+msgid ""
+"_: Language\n"
+"VHDL"
+msgstr "VHDL"
+
+#. i18n: file data/vrml.xml line 3
+#: rc.cpp:504
+msgid ""
+"_: Language\n"
+"VRML"
+msgstr "VRML"
+
+#. i18n: file data/winehq.xml line 3
+#: rc.cpp:508
+msgid ""
+"_: Language\n"
+"WINE Config"
+msgstr "WINE Config"
+
+#. i18n: file data/xharbour.xml line 3
+#: rc.cpp:512
+msgid ""
+"_: Language\n"
+"xHarbour"
+msgstr "xHarbour"
+
+#. i18n: file data/xml.xml line 7
+#: rc.cpp:516
+msgid ""
+"_: Language\n"
+"XML"
+msgstr "XML"
+
+#. i18n: file data/xmldebug.xml line 3
+#: rc.cpp:520
+msgid ""
+"_: Language\n"
+"XML (Debug)"
+msgstr "XML (Debug)"
+
+#. i18n: file data/xslt.xml line 53
+#: rc.cpp:524
+msgid ""
+"_: Language\n"
+"xslt"
+msgstr "xslt"
+
+#. i18n: file data/yacas.xml line 3
+#: rc.cpp:528
+msgid ""
+"_: Language\n"
+"yacas"
+msgstr "yacas"
+
+#. i18n: file data/yacc.xml line 23
+#: rc.cpp:532
+msgid ""
+"_: Language\n"
+"Yacc/Bison"
+msgstr "Yacc/Bison"
+
+#: plugins/wordcompletion/docwordcompletion.cpp:109
+msgid "Word Completion Plugin"
+msgstr "Sözcük Tamamlama Eklentisi"
+
+#: plugins/wordcompletion/docwordcompletion.cpp:114
+msgid "Configure the Word Completion Plugin"
+msgstr "Sözcük Tamamlama Eklentisini Yapılandır."
+
+#: plugins/wordcompletion/docwordcompletion.cpp:148
+msgid "Reuse Word Above"
+msgstr "Yukarıdaki Sözcüğü Yeniden Kullan"
+
+#: plugins/wordcompletion/docwordcompletion.cpp:150
+msgid "Reuse Word Below"
+msgstr "Aşağıdaki Sözcüğü Yeniden Kullan"
+
+#: plugins/wordcompletion/docwordcompletion.cpp:152
+msgid "Pop Up Completion List"
+msgstr "AçılırMenü Tamamlama Listesi"
+
+#: plugins/wordcompletion/docwordcompletion.cpp:154
+msgid "Shell Completion"
+msgstr "Kabuk Tamamlama"
+
+#: plugins/wordcompletion/docwordcompletion.cpp:156
+msgid "Automatic Completion Popup"
+msgstr "Otomatik Tamamlama Açılır Menüsü"
+
+#: plugins/wordcompletion/docwordcompletion.cpp:498
+msgid "Automatically &show completion list"
+msgstr "Tamamlama Li&stesini Otomatik Göster"
+
+#: plugins/wordcompletion/docwordcompletion.cpp:511
+msgid ""
+"_: Translators: This is the first part of two strings wich will comprise the "
+"sentence 'Show completions when a word is at least N characters'. The first "
+"part is on the right side of the N, which is represented by a spinbox widget, "
+"followed by the second part: 'characters long'. Characters is a ingeger number "
+"between and including 1 and 30. Feel free to leave the second part of the "
+"sentence blank if it suits your language better. \n"
+"Show completions &when a word is at least"
+msgstr "Tamamlama gösterimi, sözcük en azından"
+
+#: plugins/wordcompletion/docwordcompletion.cpp:517
+msgid ""
+"_: This is the second part of two strings that will comprise teh sentence 'Show "
+"completions when a word is at least N characters'\n"
+"characters long."
+msgstr "harf olunca."
+
+#: plugins/wordcompletion/docwordcompletion.cpp:520
+msgid ""
+"Enable the automatic completion list popup as default. The popup can be "
+"disabled on a view basis from the 'Tools' menu."
+msgstr ""
+"Otomatik tamamlama listesi açılır-menüsü öntanımlı olarak etkin durumdadır. "
+"Araçlar menüsü altından etkisizleştirilebilir."
+
+#: plugins/wordcompletion/docwordcompletion.cpp:523
+msgid ""
+"Define the length a word should have before the completion list is displayed."
+msgstr ""
+"Sözcüğün kaçıncı harfinden itibaren Tamamlama listesinin görüntüleneceğini."
+
+#: plugins/insertfile/insertfileplugin.cpp:79
+msgid "Insert File..."
+msgstr "Dosyayı Araya Ekle..."
+
+#: plugins/insertfile/insertfileplugin.cpp:88
+msgid "Choose File to Insert"
+msgstr "Araya Eklenecek Dosyayı Seçin"
+
+#: plugins/insertfile/insertfileplugin.cpp:116
+msgid ""
+"Failed to load file:\n"
+"\n"
+msgstr ""
+"Dosya yüklenemedi:\n"
+"\n"
+
+#: plugins/insertfile/insertfileplugin.cpp:116
+#: plugins/insertfile/insertfileplugin.cpp:137
+#: plugins/insertfile/insertfileplugin.cpp:159
+msgid "Insert File Error"
+msgstr "Dosya Alınması Sırasında Hata"
+
+#: plugins/insertfile/insertfileplugin.cpp:130
+msgid ""
+"<p>The file <strong>%1</strong> does not exist or is not readable, aborting."
+msgstr ""
+"<p><strong>%1</strong> isimli dosya bulunamadı ya da okunamadı. İşlem "
+"sonlandırılıyor."
+
+#: plugins/insertfile/insertfileplugin.cpp:134
+msgid "<p>Unable to open file <strong>%1</strong>, aborting."
+msgstr "<p> <strong>%1</strong> dosyası açılamıyor. Kesiliyor."
+
+#: plugins/insertfile/insertfileplugin.cpp:157
+msgid "<p>File <strong>%1</strong> had no contents."
+msgstr "<p><strong>%1</strong> dosyasının içeriği yok."
+
+#: plugins/kdatatool/kate_kdatatool.cpp:78
+msgid "Data Tools"
+msgstr "Veri Araçları"
+
+#: plugins/kdatatool/kate_kdatatool.cpp:153
+#: plugins/kdatatool/kate_kdatatool.cpp:175
+msgid "(not available)"
+msgstr "(mümkün değil)"
+
+#: plugins/kdatatool/kate_kdatatool.cpp:183
+msgid ""
+"Data tools are only available when text is selected, or when the right mouse "
+"button is clicked over a word. If no data tools are offered even when text is "
+"selected, you need to install them. Some data tools are part of the KOffice "
+"package."
+msgstr ""
+"Veri araçları sadece metin seçildiğinde veya bir sözcük üzerinde sağ tıklama "
+"yapıldığında kullanıma geçer. Eğer geçmiyorsa, veri araçları'nı kurmanız "
+"gerekecektir. Bazı veri araçları Koffice paketinin parçaları arasındadır."
+
+#: plugins/isearch/ISearchPlugin.cpp:68 plugins/isearch/ISearchPlugin.cpp:371
+msgid "Search Incrementally"
+msgstr "Artımsal Arama"
+
+#: plugins/isearch/ISearchPlugin.cpp:72 plugins/isearch/ISearchPlugin.cpp:372
+msgid "Search Incrementally Backwards"
+msgstr "Geriye Artımsal Arama"
+
+#: plugins/isearch/ISearchPlugin.cpp:76 plugins/isearch/ISearchPlugin.cpp:79
+msgid "I-Search:"
+msgstr "A+Ara:"
+
+#: plugins/isearch/ISearchPlugin.cpp:95
+msgid "Search"
+msgstr "Ara"
+
+#: plugins/isearch/ISearchPlugin.cpp:101
+msgid "Search Options"
+msgstr "Arama Seçenekleri"
+
+#: plugins/isearch/ISearchPlugin.cpp:106 plugins/isearch/ISearchPlugin.cpp:412
+msgid "Case Sensitive"
+msgstr "küçük/BÜYÜK Harfe Duyarlı"
+
+#: plugins/isearch/ISearchPlugin.cpp:115 plugins/isearch/ISearchPlugin.cpp:414
+msgid "From Beginning"
+msgstr "Başından İtibaren"
+
+#: plugins/isearch/ISearchPlugin.cpp:124 plugins/isearch/ISearchPlugin.cpp:416
+msgid "Regular Expression"
+msgstr "Düzenli İfade"
+
+#: plugins/isearch/ISearchPlugin.cpp:244
+msgid ""
+"_: Incremental Search\n"
+"I-Search:"
+msgstr "A+Ara:"
+
+#: plugins/isearch/ISearchPlugin.cpp:247
+msgid ""
+"_: Incremental Search found no match\n"
+"Failing I-Search:"
+msgstr "A+Ara Başarısız:"
+
+#: plugins/isearch/ISearchPlugin.cpp:250
+msgid ""
+"_: Incremental Search in the reverse direction\n"
+"I-Search Backward:"
+msgstr "Geriye A+Ara"
+
+#: plugins/isearch/ISearchPlugin.cpp:253
+msgid "Failing I-Search Backward:"
+msgstr "Geriye A+Ara Başarısız:"
+
+#: plugins/isearch/ISearchPlugin.cpp:256
+msgid ""
+"_: Incremental Search has passed the end of the document\n"
+"Wrapped I-Search:"
+msgstr "A+Ara Sardırıldı:"
+
+#: plugins/isearch/ISearchPlugin.cpp:259
+msgid "Failing Wrapped I-Search:"
+msgstr "Sardırılan A+Ara Başarısız:"
+
+#: plugins/isearch/ISearchPlugin.cpp:262
+msgid "Wrapped I-Search Backward:"
+msgstr "Geriye A+Ara Sardırıldı :"
+
+#: plugins/isearch/ISearchPlugin.cpp:265
+msgid "Failing Wrapped I-Search Backward:"
+msgstr "Sardırılan Geriye  A+Ara Başarısız:"
+
+#: plugins/isearch/ISearchPlugin.cpp:269
+msgid ""
+"_: Incremental Search has passed both the end of the document and the original "
+"starting position\n"
+"Overwrapped I-Search:"
+msgstr "A+Ara Turlandı:"
+
+#: plugins/isearch/ISearchPlugin.cpp:272
+msgid "Failing Overwrapped I-Search:"
+msgstr "Turlanan A+Ara Başarısız:"
+
+#: plugins/isearch/ISearchPlugin.cpp:275
+msgid "Overwrapped I-Search Backwards:"
+msgstr "Geriye Turlanan A+Ara:"
+
+#: plugins/isearch/ISearchPlugin.cpp:278
+msgid "Failing Overwrapped I-Search Backward:"
+msgstr "Geriye Turlanan A+Ara Başarısız:"
+
+#: plugins/isearch/ISearchPlugin.cpp:280
+msgid "Error: unknown i-search state!"
+msgstr "Hata: bilinmeyen artımsal arama durumu!"
+
+#: plugins/isearch/ISearchPlugin.cpp:341
+msgid "Next Incremental Search Match"
+msgstr "Sonraki Artımsal Arama Eşlemesi"
+
+#: plugins/isearch/ISearchPlugin.cpp:342
+msgid "Previous Incremental Search Match"
+msgstr "Önceki Artımsal Arama Eşlemesi"
+
+#: plugins/autobookmarker/autobookmarker.cpp:90
+msgid "AutoBookmarks"
+msgstr "Otomatik Yer imleri"
+
+#: plugins/autobookmarker/autobookmarker.cpp:101
+msgid "Configure AutoBookmarks"
+msgstr "Otomatik Yer İmlerini Yapılandır"
+
+#: plugins/autobookmarker/autobookmarker.cpp:280
+msgid "Edit Entry"
+msgstr "Girdiyi Düzenle"
+
+#: plugins/autobookmarker/autobookmarker.cpp:288
+msgid "&Pattern:"
+msgstr "&Desen"
+
+#: plugins/autobookmarker/autobookmarker.cpp:294
+msgid "<p>A regular expression. Matching lines will be bookmarked.</p>"
+msgstr "<p>Bir düzenli ifade. Uyuşan satırlar yer imi yapılacak.</p>"
+
+#: plugins/autobookmarker/autobookmarker.cpp:298
+msgid "Case &sensitive"
+msgstr "küçük/BÜYÜK Harfe Duyarlı"
+
+#: plugins/autobookmarker/autobookmarker.cpp:302
+msgid ""
+"<p>If enabled, the pattern matching will be case sensitive, otherwise not.</p>"
+msgstr ""
+"<p>Etkinleştirilirse, desen uyuşması küçük/BÜYÜK harf duyarlı olarak "
+"yapılacak.</p>"
+
+#: plugins/autobookmarker/autobookmarker.cpp:305
+msgid "&Minimal matching"
+msgstr "Enaz Eşleş&me"
+
+#: plugins/autobookmarker/autobookmarker.cpp:309
+msgid ""
+"<p>If enabled, the pattern matching will use minimal matching; if you do not "
+"know what that is, please read the appendix on regular expressions in the kate "
+"manual.</p>"
+msgstr ""
+"<p>Etkinleştirilirse, desen eşleşmesi için Enaz Eşleşme özelliği kullanılacak. "
+"( Bunun ne olduğunu tam olarak bilmiyorsanız, Kate el kitabındaki Düzenli "
+"İfadeler bölümünü lütfen okuyun.)</p>"
+
+#: plugins/autobookmarker/autobookmarker.cpp:313
+msgid "&File mask:"
+msgstr "Dosya Maskesi:"
+
+#: plugins/autobookmarker/autobookmarker.cpp:319
+msgid ""
+"<p>A list of filename masks, separated by semicolons. This can be used to limit "
+"the usage of this entity to files with matching names.</p>"
+"<p>Use the wizard button to the right of the mimetype entry below to easily "
+"fill out both lists.</p>"
+msgstr ""
+"<p>Dosyaadı maskeleri, noktalı-virgül ile ayrılmış bir listedir. Bu liste, "
+"dosyalara yapılacak girişleri, maskeye uyan dosyalar ile sınırlamak için "
+"kullanılabilir.</p>"
+"<p>Mime tipi girdisinin sağını kolayca doldurabilmek için sihirbaz düğmesini "
+"kullanın.</p> "
+
+#: plugins/autobookmarker/autobookmarker.cpp:330
+msgid ""
+"<p>A list of mime types, separated by semicolon. This can be used to limit the "
+"usage of this entity to files with matching mime types.</p>"
+"<p>Use the wizard button on the right to get a list of existing file types to "
+"choose from, using it will fill in the file masks as well.</p>"
+msgstr ""
+"<p>Mime tiplerinin noktalı-virgül ile ayrılmış bir listedir. Bu liste, "
+"dosyalara yapılacak girişleri, mime tiplerine uyan dosyalar ile sınırlamak için "
+"kullanılabilir.</p>"
+"<p>Mevcut dosya tiplerinin listesini almak ve oradan seçim yapmak için sağdaki "
+"sihirbaz düğmesini kullanın.</p> "
+
+#: plugins/autobookmarker/autobookmarker.cpp:340
+msgid ""
+"<p>Click this button to display a checkable list of mimetypes available on your "
+"system. When used, the file masks entry above will be filled in with the "
+"corresponding masks.</p>"
+msgstr ""
+"<p>Sisteminizde mevcut olan tüm mime-tiplerinin işaretlenerek seçilebilir bir "
+"listesini görmek için bu düğmeye tıklayın. Kullanıldığında, dosya maskesi "
+"girişi, seçime denk düşen maskeler ile doldurulacaktır.</p>"
+
+#: plugins/autobookmarker/autobookmarker.cpp:365
+msgid ""
+"Select the MimeTypes for this pattern.\n"
+"Please note that this will automatically edit the associated file extensions as "
+"well."
+msgstr ""
+"Bu desen için MIME tiplerini seçin.\n"
+"Bunun ilişkilendirilmiş dosya uzantılarını otomatik olarak değiştireceğini "
+"unutmayın."
+
+#: plugins/autobookmarker/autobookmarker.cpp:385
+msgid "&Patterns"
+msgstr "Desenler"
+
+#: plugins/autobookmarker/autobookmarker.cpp:388
+msgid "Pattern"
+msgstr "Desen"
+
+#: plugins/autobookmarker/autobookmarker.cpp:389
+msgid "Mime Types"
+msgstr "Mime Türleri"
+
+#: plugins/autobookmarker/autobookmarker.cpp:390
+msgid "File Masks"
+msgstr "Dosya Maskeleri"
+
+#: plugins/autobookmarker/autobookmarker.cpp:394
+#, fuzzy
+msgid ""
+"<p>This list shows your configured autobookmark entities. When a document is "
+"opened, each entity is used in the following way: "
+"<ol>"
+"<li>The entity is dismissed, if a mime and/or filename mask is defined, and "
+"neither matches the document.</li>"
+"<li>Otherwise each line of the document is tried against the pattern, and a "
+"bookmark is set on matching lines.</li></ul>"
+"<p>Use the buttons below to manage your collection of entities.</p>"
+msgstr ""
+"<p>Bu liste yapılandırılmış otomatik yer imi girdilerinizi gösterir. Bir belge "
+"açıldığında,  herbir  varlık aşağıdaki yollardan kullanılır : "
+"<ol>"
+"<li> Eğer bir MIME ve/veya dosyaadı maskesi tanımlanmış ve hiçbir uyar belge "
+"bulunamamışsa,-Girdi reddedilir.</li> "
+"<li>Diğer yandan, belgenin herbir satırı, desen'e karşı denenir ve eşleşen "
+"satırlara bir yer imi atanır.</li></ul>"
+"<p>Girdi birikiminizi yönetmek için aşağıdaki düğmeleri kullanın.</p>"
+
+#: plugins/autobookmarker/autobookmarker.cpp:409
+msgid "Press this button to create a new autobookmark entity."
+msgstr "Yeni bir otomatik yer imi girdisi yaratmak için bu düğmeye basın."
+
+#: plugins/autobookmarker/autobookmarker.cpp:414
+msgid "Press this button to delete the currently selected entity."
+msgstr "Seçili bulunan girdiyi silmek için bu düğmeye basın."
+
+#: plugins/autobookmarker/autobookmarker.cpp:416
+msgid "&Edit..."
+msgstr "&Düzenle..."
+
+#: plugins/autobookmarker/autobookmarker.cpp:419
+msgid "Press this button to edit the currently selected entity."
+msgstr "Seçili bulunan girdiyi düzenlemek için bu düğmeye basın."
+
+#~ msgid ""
+#~ "_: Language\n"
+#~ "Wikimedia"
+#~ msgstr "Wikimedia"
+
+#~ msgid "JavaScript Indenter"
+#~ msgstr "JavaScript Girintileyici"

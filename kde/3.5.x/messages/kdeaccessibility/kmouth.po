@@ -1,0 +1,1211 @@
+# translation of kmouth.po to
+# Türkçe translation of PACKAGE.
+# Copyright (C) 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
+#
+#
+# YILDIZ KARDEŞLER <turkishprogram@xposta.com>, 2003.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
+# Osman Yüksel <yuxel@sonsuzdongu.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kmouth\n"
+"POT-Creation-Date: 2005-07-24 01:41+0200\n"
+"PO-Revision-Date: 2007-05-16 16:17+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: texttospeechconfigurationwidget.cpp:47
+#: wordcompletion/dictionarycreationwizard.cpp:101
+msgid "Local"
+msgstr "Yerel"
+
+#: texttospeechconfigurationwidget.cpp:51
+#: wordcompletion/dictionarycreationwizard.cpp:105
+msgid "Latin1"
+msgstr "Latin1"
+
+#: texttospeechconfigurationwidget.cpp:52
+#: wordcompletion/dictionarycreationwizard.cpp:106
+msgid "Unicode"
+msgstr "Unicode"
+
+#: wordcompletion/creationsourcedetailsui.ui.h:31
+#: wordcompletion/klanguagebuttonhelper.cpp:38
+#: wordcompletion/klanguagebuttonhelper.cpp:56
+#: wordcompletion/wordcompletionui.ui.h:31
+#: wordcompletion/wordcompletionwidget.cpp:78
+#: wordcompletion/wordcompletionwidget.cpp:139
+#: wordcompletion/wordcompletionwidget.cpp:203
+msgid "without name"
+msgstr "isimsiz"
+
+#: wordcompletion/wordcompletionwidget.cpp:249
+msgid "Export Dictionary"
+msgstr "Sözlüğü Aktar"
+
+#: phrasebook/phrasebook.cpp:277 wordcompletion/wordcompletionwidget.cpp:254
+msgid "The file %1 already exists. Do you want to overwrite it?"
+msgstr "%1 isimli bir dosya var. Üzerine yazmak istiyor musunuz?"
+
+#: phrasebook/phrasebook.cpp:278 wordcompletion/wordcompletionwidget.cpp:255
+msgid "File Exists"
+msgstr "Dosya Mevcut"
+
+#: phrasebook/phrasebook.cpp:278 wordcompletion/wordcompletionwidget.cpp:255
+msgid "&Overwrite"
+msgstr "Ü&zerine yaz"
+
+#: wordcompletion/wordlist.cpp:109
+msgid "Creating Word List"
+msgstr "Kelime listesi oluşturuluyor"
+
+#: wordcompletion/wordlist.cpp:109 wordcompletion/wordlist.cpp:291
+msgid "Parsing the KDE documentation..."
+msgstr "KDE belgeleri ayrıştırılıyor..."
+
+#: wordcompletion/wordlist.cpp:238
+msgid "Merging dictionaries..."
+msgstr "Sözlükler birleştiriliyor..."
+
+#: wordcompletion/wordlist.cpp:305
+msgid "Parsing file..."
+msgstr "Dosya ayrıştırılıyor..."
+
+#: wordcompletion/wordlist.cpp:315
+msgid "Parsing directory..."
+msgstr "Dizin ayrıştırılıyor..."
+
+#: wordcompletion/wordlist.cpp:504
+msgid "Performing spell check..."
+msgstr "İmla denetimi yapılıyor..."
+
+#. i18n: file wordcompletion/kdedocsourceui.ui line 68
+#: rc.cpp:292 wordcompletion/kdedocsourceui.ui.h:14
+#, no-c-format
+msgid ""
+"With this combo box you select which of the installed languages is used for "
+"creating the new dictionary. KMouth will only parse documentation files of this "
+"language."
+msgstr ""
+"Bu açılır kutu ile yani sözlük oluşturulurken hangi yüklü dili kullanacağınızı "
+"seçebilirsiniz. KMouth sadece bu dilin belge dosyalarını ayrıştıracaktır."
+
+#. i18n: file wordcompletion/creationsourcedetailsui.ui line 144
+#: rc.cpp:241 wordcompletion/creationsourcedetailsui.ui.h:15
+#, no-c-format
+msgid ""
+"With this combo box you decide which language should be associated with the new "
+"dictionary."
+msgstr ""
+"Bu açılır kutu ile, yeni sözlük ile hangi dili ilişkilendireceğinize karar "
+"verebilirsiniz."
+
+#: wordcompletion/creationsourcedetailsui.ui.h:18
+#: wordcompletion/wordcompletionui.ui.h:18
+msgid "Other"
+msgstr "Diğer"
+
+#: wordcompletion/creationsourcedetailsui.ui.h:25
+#: wordcompletion/wordcompletionui.ui.h:25
+msgid "Create Custom Language"
+msgstr "Özel Bir Dil Oluştur"
+
+#: wordcompletion/creationsourcedetailsui.ui.h:25
+#: wordcompletion/wordcompletionui.ui.h:25
+msgid "Please enter the code for the custom language:"
+msgstr "Özel dili için lütfen bir kod giriniz:"
+
+#: wordcompletion/dictionarycreationwizard.cpp:53
+msgid "Source of New Dictionary (1)"
+msgstr "Yeni Sözlüğün Kaynağı (1)"
+
+#: wordcompletion/dictionarycreationwizard.cpp:58
+#: wordcompletion/dictionarycreationwizard.cpp:62
+#: wordcompletion/dictionarycreationwizard.cpp:70
+#: wordcompletion/dictionarycreationwizard.cpp:73
+#: wordcompletion/dictionarycreationwizard.cpp:117
+#: wordcompletion/dictionarycreationwizard.cpp:133
+#: wordcompletion/dictionarycreationwizard.cpp:142
+#: wordcompletion/dictionarycreationwizard.cpp:151
+msgid "Source of New Dictionary (2)"
+msgstr "Yeni Sözlüğün Kaynağı (2)"
+
+#: wordcompletion/dictionarycreationwizard.cpp:63
+msgid "&Directory:"
+msgstr "&Dizin:"
+
+#: wordcompletion/dictionarycreationwizard.cpp:64
+#: wordcompletion/dictionarycreationwizard.cpp:66
+msgid ""
+"With this input field you specify which directory you want to load for creating "
+"the new dictionary."
+msgstr ""
+"Bu girdi alanı ile yeni sözlük için hangi dizini yüklemek istediğinizi "
+"belirtebilirsiniz."
+
+#: wordcompletion/dictionarycreationwizard.cpp:238
+msgid "Merge result"
+msgstr "Birleştirme sonucu"
+
+#: wordcompletion/dictionarycreationwizard.cpp:241
+msgid ""
+"_: In the sense of a blank word list\n"
+"Empty list"
+msgstr "Boş liste"
+
+#: wordcompletion/dictionarycreationwizard.cpp:250
+msgid "KDE Documentation"
+msgstr "KDE Belgeleri"
+
+#. i18n: file wordcompletion/wordcompletionui.ui line 224
+#: rc.cpp:340 wordcompletion/wordcompletionui.ui.h:15
+#, no-c-format
+msgid ""
+"With this combo box you select the language associated with the selected "
+"dictionary."
+msgstr ""
+"Bu açılır kutu ile seçili sözlük ile hangi dili ilişkilendireceğinizi "
+"seçebilirsiniz."
+
+#: optionsdialog.cpp:123
+msgid "General Options"
+msgstr "Genel Seçenekler"
+
+#: optionsdialog.cpp:129
+msgid "&Preferences"
+msgstr "Te&rcihler"
+
+#: optionsdialog.cpp:133
+msgid "&Text-to-Speech"
+msgstr "Me&tinden Konuşmaya"
+
+#: configwizard.cpp:103 optionsdialog.cpp:136
+msgid "Word Completion"
+msgstr "Kelime Tamamlama"
+
+#: optionsdialog.cpp:142
+msgid "KTTSD Speech Service"
+msgstr "KTTSD Konuşma Servisi"
+
+#: optionsdialog.cpp:143
+msgid "KDE Text-to-Speech Daemon Configuration"
+msgstr "KDE Metinden-Konuşmaya Daemon Ayarları"
+
+#: kmouth.cpp:98
+msgid "&Open as History..."
+msgstr "&Geçmiş Olarak Aç..."
+
+#: kmouth.cpp:99 kmouth.cpp:100
+msgid "Opens an existing file as history"
+msgstr "Mevcut bir dosyayı geçmiş olarak açar"
+
+#: kmouth.cpp:102
+msgid "Save &History As..."
+msgstr "&Geçmişi Farklı Kaydet..."
+
+#: kmouth.cpp:103 kmouth.cpp:104
+msgid "Saves the actual history as..."
+msgstr "Gerçek geçmişi farklı kaydet..."
+
+#: kmouth.cpp:106
+msgid "&Print History..."
+msgstr "&Geçmişi Kaydet..."
+
+#: kmouth.cpp:107 kmouth.cpp:108
+msgid "Prints out the actual history"
+msgstr "Gerçek geçmişi yazdırır"
+
+#: kmouth.cpp:111 kmouth.cpp:112
+msgid "Quits the application"
+msgstr "Uygulamadan çıkar"
+
+#: kmouth.cpp:116
+msgid "Cuts the selected section and puts it to the clipboard"
+msgstr "Seçilen bölümü keser ve bunu panoya ekler"
+
+#: kmouth.cpp:117
+msgid ""
+"Cuts the selected section and puts it to the clipboard. If there is some text "
+"selected in the edit field it is placed it on the clipboard. Otherwise the "
+"selected sentences in the history (if any) are placed on the clipboard."
+msgstr ""
+"Seçili bölümü keser ve panoya yapıştırır. Eğer metin alanından bir metin "
+"seçilmiş ise panoya yerleştirilir. Diğer yandan geçmişten seçilen "
+"cümleler(varsa) panoya yerleştirilir."
+
+#: kmouth.cpp:120
+msgid "Copies the selected section to the clipboard"
+msgstr "Seçili bölümü panoya kopyalar"
+
+#: kmouth.cpp:121
+msgid ""
+"Copies the selected section to the clipboard. If there is some text selected in "
+"the edit field it is copied to the clipboard. Otherwise the selected sentences "
+"in the history (if any) are copied to the clipboard."
+msgstr ""
+"Seçili bölümü kopyalar ve panoya yapıştırır. Eğer metin alanından bir metin "
+"seçilmiş ise panoya kopyalar. Diğer yandan geçmişten seçilen cümleler(varsa) "
+"panoya kopyalar."
+
+#: kmouth.cpp:124 phrasebook/phrasebookdialog.cpp:371
+#: phrasebook/phrasebookdialog.cpp:372
+msgid "Pastes the clipboard contents to actual position"
+msgstr "Pano içeriğini gerçek yerine yapıştırır"
+
+#: kmouth.cpp:125
+msgid ""
+"Pastes the clipboard contents at the current cursor position into the edit "
+"field."
+msgstr "Pano içeriğini metin alanındaki imleç pozisyonuna yapıştırır."
+
+#: kmouth.cpp:127 kmouth.cpp:156 phraselist.cpp:79
+msgid "&Speak"
+msgstr "&Konuş"
+
+#: kmouth.cpp:128
+msgid "Speaks the currently active sentence(s)"
+msgstr "Şu anda etkin olan cümleleri konuşur"
+
+#: kmouth.cpp:129 phraselist.cpp:82
+msgid ""
+"Speaks the currently active sentence(s). If there is some text in the edit "
+"field it is spoken. Otherwise the selected sentences in the history (if any) "
+"are spoken."
+msgstr ""
+"Mevcut aktif cümleleri konuşur. Eğer metin alanında metin varsa konuşur. "
+"Değilse geçmişten seçilen cümleleri(varsa) konuşur."
+
+#: kmouth.cpp:132
+msgid "&Edit..."
+msgstr "Dü&zenle..."
+
+#: kmouth.cpp:137 kmouth.cpp:138
+msgid "Enables/disables the toolbar"
+msgstr "Araç çubuğu açar/kapatır"
+
+#: kmouth.cpp:140
+msgid "Show P&hrasebook Bar"
+msgstr "Söz Kitabı Çubuğunu &Göster"
+
+#: kmouth.cpp:141 kmouth.cpp:142
+msgid "Enables/disables the phrasebook bar"
+msgstr "Söz kitabı araç çubuğu açar/kapatır"
+
+#: kmouth.cpp:145 kmouth.cpp:146
+msgid "Enables/disables the statusbar"
+msgstr "Durum çubuğu açar/kapatır"
+
+#: kmouth.cpp:148
+msgid "&Configure KMouth..."
+msgstr "KMouth'u &Yapılandır..."
+
+#: kmouth.cpp:149 kmouth.cpp:150
+msgid "Opens the configuration dialog"
+msgstr "Yapılandırma penceresini açar"
+
+#: kmouth.cpp:157 kmouth.cpp:158
+msgid "Speaks the currently selected phrases in the history"
+msgstr "Geçmişteki mevcut seçili sözleri konuşur"
+
+#: kmouth.cpp:161 kmouth.cpp:162
+msgid "Deletes the currently selected phrases from the history"
+msgstr "Mevcut seçili sözleri geçmişten siler"
+
+#: kmouth.cpp:164
+msgid "Cu&t"
+msgstr "&Kes"
+
+#: kmouth.cpp:165 kmouth.cpp:166
+msgid ""
+"Cuts the currently selected phrases from the history and puts them to the "
+"clipboard"
+msgstr "Mevcut seçili sözleri geçmişten keser ve panoya koyar"
+
+#: kmouth.cpp:169 kmouth.cpp:170
+msgid "Copies the currently selected phrases from the history to the clipboard"
+msgstr "Mevcut seçili sözleri geçmişten panoya kopyalar"
+
+#: kmouth.cpp:172
+msgid "Select &All Entries"
+msgstr "&Tüm Girdileri Seç"
+
+#: kmouth.cpp:173 kmouth.cpp:174
+msgid "Selects all phrases in the history"
+msgstr "Geçmişteki tüm cümleleri seçer"
+
+#: kmouth.cpp:176
+msgid "D&eselect All Entries"
+msgstr "Gi&rdilerin Seçimini Kaldır"
+
+#: kmouth.cpp:177 kmouth.cpp:178
+msgid "Deselects all phrases in the history"
+msgstr "Geçmişteki tüm cümlelerin seçimini siler"
+
+#: kmouth.cpp:192 kmouth.cpp:210 kmouth.cpp:313 kmouth.cpp:321 kmouth.cpp:334
+#: kmouth.cpp:380 kmouth.cpp:397 kmouth.cpp:414 kmouth.cpp:431
+msgid "Ready."
+msgstr "Hazır."
+
+#: kmouth.cpp:207 kmouth.cpp:309
+msgid "Opening file..."
+msgstr "Dosya açılıyor..."
+
+#: kmouth.cpp:317
+msgid "Saving history with a new filename..."
+msgstr "Geçmiş dosyası yeni bir isimle kaydediliyor..."
+
+#: kmouth.cpp:326
+msgid "Printing..."
+msgstr "Yazdırılıyor..."
+
+#: kmouth.cpp:339
+msgid "Exiting..."
+msgstr "Çıkılıyor..."
+
+#: kmouth.cpp:373
+msgid "Toggling menubar..."
+msgstr "Araç çubuğu açılıyor/kapatılıyor..."
+
+#: kmouth.cpp:385
+msgid "Toggling toolbar..."
+msgstr "Araç çubuğu açılıyor/kapatılıyor..."
+
+#: kmouth.cpp:402
+msgid "Toggling phrasebook bar..."
+msgstr "Söz Kitabı araç çubuğu değiştiriliyor..."
+
+#: kmouth.cpp:419
+msgid "Toggle the statusbar..."
+msgstr "Durum çubuğu açılıyor/kapatılıyor..."
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "YILDIZ KARDEŞLER"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "turkishprogram@xposta.com"
+
+#: main.cpp:28
+msgid "A type-and-say front end for speech synthesizers"
+msgstr "Ses sentezleyiciler için arayüz"
+
+#: main.cpp:34
+msgid "History file to open"
+msgstr "Açılacak olan geçmiş dosyası"
+
+#: main.cpp:42
+msgid "KMouth"
+msgstr "KMouth"
+
+#: main.cpp:49
+msgid "Tips, extended phrase books"
+msgstr "İpuçları"
+
+#. i18n: file kmouthui.rc line 14
+#: rc.cpp:9 rc.cpp:98
+#, no-c-format
+msgid "&Phrase Books"
+msgstr "&Konuşma Kılavuzları"
+
+#. i18n: file preferencesui.ui line 24
+#: rc.cpp:15 rc.cpp:104
+#, no-c-format
+msgid "Preferences"
+msgstr "Tercihler"
+
+#. i18n: file preferencesui.ui line 63
+#: rc.cpp:18 rc.cpp:107
+#, no-c-format
+msgid "&Selection of phrases in the phrase book:"
+msgstr "&Söz kitabından söz seçimi:"
+
+#. i18n: file preferencesui.ui line 69
+#: rc.cpp:21 rc.cpp:30 rc.cpp:110 rc.cpp:119
+#, no-c-format
+msgid ""
+"This combo box specifies whether selected phrases of the phrase book are "
+"immediately spoken or just inserted into the edit field."
+msgstr ""
+"Bu açılır menü, söz kitabından seçilen sözlerin hızlı bir şekilde okunmasını "
+"veya sadece düzenleme alanına eklenmesini belirler."
+
+#. i18n: file preferencesui.ui line 75
+#: rc.cpp:24 rc.cpp:113
+#, no-c-format
+msgid "Speak Immediately"
+msgstr "Hemen Konuş"
+
+#. i18n: file preferencesui.ui line 80
+#: rc.cpp:27 rc.cpp:116
+#, no-c-format
+msgid "Insert Into Edit Field"
+msgstr "Düzenleme Alanına Ekle"
+
+#. i18n: file preferencesui.ui line 122
+#: rc.cpp:33 rc.cpp:122
+#, no-c-format
+msgid "Closing the phrase &book edit window:"
+msgstr "Söz kita&bı düzenleme penceresini kapatmak:"
+
+#. i18n: file preferencesui.ui line 128
+#: rc.cpp:36 rc.cpp:48 rc.cpp:125 rc.cpp:137
+#, no-c-format
+msgid ""
+"This combo box specifies whether the phrase book is automatically saved when "
+"the edit window is closed."
+msgstr ""
+"Bu açılır menü, düzenleme penceresi kapatıldığında söz kitabının otomatik "
+"olarak kaydedilip kaydeilmeyeceğini belirler."
+
+#. i18n: file preferencesui.ui line 134
+#: rc.cpp:39 rc.cpp:128
+#, no-c-format
+msgid "Save Phrase Book"
+msgstr "Söz Kitabını Kaydet"
+
+#. i18n: file preferencesui.ui line 139
+#: rc.cpp:42 rc.cpp:131
+#, no-c-format
+msgid "Discard Changes"
+msgstr "Değişiklikleri Sil"
+
+#. i18n: file preferencesui.ui line 144
+#: rc.cpp:45 rc.cpp:134
+#, no-c-format
+msgid "Ask Whether to Save"
+msgstr "Kaydetmeyi Sor"
+
+#. i18n: file texttospeechconfigurationui.ui line 16
+#: rc.cpp:51 rc.cpp:140
+#, no-c-format
+msgid "Text-to-Speech"
+msgstr "Metinden Konuşmaya"
+
+#. i18n: file texttospeechconfigurationui.ui line 55
+#: rc.cpp:54 rc.cpp:143
+#, no-c-format
+msgid "C&ommand for speaking texts:"
+msgstr "K&onuşma metinleri için komut:"
+
+#. i18n: file texttospeechconfigurationui.ui line 65
+#: rc.cpp:57 rc.cpp:64 rc.cpp:146 rc.cpp:153
+#, no-c-format
+msgid ""
+"This field specifies both the command used for speaking texts and its "
+"parameters. KMouth knows the following placeholders:\n"
+"%t -- the text that should be spoken\n"
+"%f -- the name of a file containing the text\n"
+"%l -- the language code\n"
+"%% -- a percent sign"
+msgstr ""
+"Bu alan konuşma metinleri ve parametrelerinde kullanılan komutları belirler. "
+"KMouth aşağıdaki yer tutucuları anlayabilir:\n"
+"%t -- konuşulacak metin\n"
+"%f -- metin içeren dosyanın adı\n"
+"%l -- dil kodu\n"
+"%% -- yüzde işareti"
+
+#. i18n: file texttospeechconfigurationui.ui line 117
+#: rc.cpp:71 rc.cpp:160 rc.cpp:217
+#, no-c-format
+msgid "Character &encoding:"
+msgstr "&Karakter kodlama:"
+
+#. i18n: file texttospeechconfigurationui.ui line 123
+#: rc.cpp:74 rc.cpp:77 rc.cpp:163 rc.cpp:166
+#, no-c-format
+msgid ""
+"This combo box specifies which character encoding is used for passing the text."
+msgstr "Bu açılır menü gönderilen metnin karakter kodlamasını belirler."
+
+#. i18n: file texttospeechconfigurationui.ui line 141
+#: rc.cpp:80 rc.cpp:169
+#, no-c-format
+msgid "Send the data as standard &input"
+msgstr "Ver&iyi standart girdi olarak gönder"
+
+#. i18n: file texttospeechconfigurationui.ui line 144
+#: rc.cpp:83 rc.cpp:172
+#, no-c-format
+msgid ""
+"This check box specifies whether the text is sent as standard input to the "
+"speech synthesizer."
+msgstr ""
+"Bu seçim kutusu metinin konuşma sentezleyicisine standart girdi olarak "
+"gönderilip gönderilmeyeceğini belirler."
+
+#. i18n: file texttospeechconfigurationui.ui line 152
+#: rc.cpp:86 rc.cpp:175
+#, no-c-format
+msgid "&Use KTTSD speech service if possible"
+msgstr "Mevcutsa KTTSD kon&uşma hizmetini kullan"
+
+#. i18n: file texttospeechconfigurationui.ui line 155
+#: rc.cpp:89 rc.cpp:178
+#, no-c-format
+msgid ""
+"This check box specifies KMouth tries to use the KTTSD speech service prior to "
+"calling the speech synthesizer directly. The KTTSD speech service is a KDE "
+"daemon which gives KDE applications a standardized interface for speech "
+"synthesis and is currently developed in CVS."
+msgstr ""
+"Bu seçenek kutusu KMouth'un konuşma sentezleycisini doğrudan çağırması için "
+"KTTSD konuşma hizmetini kullanmaya çalışmasını sağlar. KTTSD konuşma hizmeti "
+"KDE uygulamalarına standartlaştırılmış bir arayüz ile konuşma sentezleme veren "
+"bir KDE aracıdır ve CVS'de tasarlanmaya devam etmektedir."
+
+#. i18n: file phrasebook/buttonboxui.ui line 16
+#: rc.cpp:181
+#, no-c-format
+msgid "Currently Selected Phrase or Phrase Book"
+msgstr "Mevcut Seçili Söz veya Söz Kitabı"
+
+#. i18n: file phrasebook/buttonboxui.ui line 33
+#: rc.cpp:184
+#, no-c-format
+msgid "&Currently Selected Phrase or Phrase Book"
+msgstr "Mev&cut Seçili Söz veya Söz Kitabı"
+
+#. i18n: file phrasebook/buttonboxui.ui line 55
+#: rc.cpp:187 rc.cpp:208
+#, no-c-format
+msgid ""
+"With this line edit you define the name of a sub-phrasebook or the contents of "
+"a phrase."
+msgstr ""
+"Bu satır düzenleyici ile bir alt-sözkitabının adını veya içeriğini "
+"belirtebilirsiniz."
+
+#. i18n: file phrasebook/buttonboxui.ui line 63
+#: rc.cpp:190
+#, no-c-format
+msgid "&None"
+msgstr "&Yok"
+
+#. i18n: file phrasebook/buttonboxui.ui line 66
+#: rc.cpp:193
+#, no-c-format
+msgid ""
+"If you select this option then the selected phrase will not be reachable by a "
+"keyboard shortcut."
+msgstr ""
+"Bu seçeneği seçerseniz seçili söz bir klavye kısayolu ile ulaşılamaz hale "
+"gelir."
+
+#. i18n: file phrasebook/buttonboxui.ui line 74
+#: rc.cpp:196
+#, no-c-format
+msgid "C&ustom"
+msgstr "Ö&zel"
+
+#. i18n: file phrasebook/buttonboxui.ui line 77
+#: rc.cpp:199
+#, no-c-format
+msgid ""
+"If you select this option then the selected phrase will be reachable by a "
+"keyboard shortcut. You can change the shortcut with the button next to this "
+"option."
+msgstr ""
+"Bu seçeneği seçerseniz seçili söz bir klavye kısayolu ile ulaşılabilir hale "
+"gelir. Bu seçeneğin yanındaki düğme ile kısayolu değiştirebilirsiniz."
+
+#. i18n: file phrasebook/buttonboxui.ui line 85
+#: rc.cpp:202
+#, no-c-format
+msgid "Shortcut for the phrase:"
+msgstr "Cümleye kısayol:"
+
+#. i18n: file phrasebook/buttonboxui.ui line 93
+#: phrasebook/phrasebookdialog.cpp:491 phrasebook/phrasebookdialog.cpp:505
+#: rc.cpp:205
+#, no-c-format
+msgid "Text of the &phrase:"
+msgstr "&Cümle metni:"
+
+#. i18n: file wordcompletion/creationsourcedetailsui.ui line 24
+#: rc.cpp:211 rc.cpp:280
+#, no-c-format
+msgid "&Compare to OpenOffice.org dictionary:"
+msgstr "OpenOffi&ce.org sözlüğü ile karşılaştır:"
+
+#. i18n: file wordcompletion/creationsourcedetailsui.ui line 30
+#: rc.cpp:214
+#, no-c-format
+msgid ""
+"If you select this check box the words are spell-checked before they are "
+"inserted into the new dictionary."
+msgstr ""
+"Bu seçim kutusunu seçerseniz kelimeler yeni sözlüğe eklenmeden önce "
+"kelime-kontrol yapılacaktır."
+
+#. i18n: file wordcompletion/creationsourcedetailsui.ui line 52
+#: rc.cpp:220 rc.cpp:232
+#, no-c-format
+msgid ""
+"With this combo box you select the character encoding used to load text files. "
+"This combo box is not used for XML files or for dictionary files."
+msgstr ""
+"Bu açılır kutu ile yüklenen metin dosyalarında kullanılacak olan karakter "
+"kodlamasını seçersiniz. Bu açılır kutu XML veya sözlük dosyaları için "
+"kullanılmaz."
+
+#. i18n: file wordcompletion/creationsourcedetailsui.ui line 68
+#: rc.cpp:223
+#, no-c-format
+msgid "&Filename:"
+msgstr "&Dosyaadı:"
+
+#. i18n: file wordcompletion/creationsourcedetailsui.ui line 74
+#: rc.cpp:226 rc.cpp:229
+#, no-c-format
+msgid ""
+"With this input field you specify which file you want to load for creating the "
+"new dictionary."
+msgstr ""
+"Bu girdi alanı ile yeni sözlük oluşturmak için yükleyeceğiniz dosyayı "
+"belirtebilirsiniz."
+
+#. i18n: file wordcompletion/creationsourcedetailsui.ui line 125
+#: rc.cpp:235 rc.cpp:286
+#, no-c-format
+msgid ""
+"With this input field you select the OpenOffice.org directory that will be used "
+"to spellcheck the words of the new dictionary."
+msgstr ""
+"Bu girdi alanı ile yeni sözlüğün kelime-kontrolü için gerekli OpenOffice.org "
+"klasörünü belirtebilirsiniz."
+
+#. i18n: file wordcompletion/creationsourcedetailsui.ui line 141
+#: rc.cpp:238 rc.cpp:289 rc.cpp:337
+#, no-c-format
+msgid "&Language:"
+msgstr "D&il:"
+
+#. i18n: file wordcompletion/creationsourceui.ui line 24
+#: rc.cpp:244
+#, no-c-format
+msgid "C&reate new dictionary:"
+msgstr "&Yeni sözlük oluştur:"
+
+#. i18n: file wordcompletion/creationsourceui.ui line 30
+#: rc.cpp:247
+#, no-c-format
+msgid ""
+"If you select this box a new dictionary is created by either loading a "
+"dictionary file or by counting the individual words in a text."
+msgstr ""
+"Bu kutuyu seçerseniz sözlük dosyası yükelemektense veya metindeki kelimeleri "
+"saymaktansa yeni bir dosya oluşturulur."
+
+#. i18n: file wordcompletion/creationsourceui.ui line 38
+#: rc.cpp:250
+#, no-c-format
+msgid "&Merge dictionaries"
+msgstr "Söz&lükleri birleştirir"
+
+#. i18n: file wordcompletion/creationsourceui.ui line 41
+#: rc.cpp:253
+#, no-c-format
+msgid ""
+"If you select this box a new dictionary is created by merging existing "
+"dictionaries."
+msgstr ""
+"Bu kutuyu seçtiğinizde mevcut sözlükler birleştirilerek yeni bir sözlük "
+"oluşturulur."
+
+#. i18n: file wordcompletion/creationsourceui.ui line 60
+#: rc.cpp:256
+#, no-c-format
+msgid "From &file"
+msgstr "Do&syadan"
+
+#. i18n: file wordcompletion/creationsourceui.ui line 63
+#: rc.cpp:259
+#, no-c-format
+msgid ""
+"If you select this box a new dictionary is created by loading a file. You may "
+"either select an XML file, a standard text file or a file containing a word "
+"completion dictionary. If you select a standard text file or an XML file the "
+"frequentness of the individual words is detected by simply counting the "
+"occurrences of each word."
+msgstr ""
+"Eğer bu kutuyu seçerseniz dosya yükleyerek yyeni bir sözlük oluşturulur. XML "
+"dosyası, normal metin dosyası veya kelime tamamlama sözlüğü içeren bir dosyayı "
+"da seçebilirsiniz. XML dosyası veya normal metin dosyası seçtiğinizde ayrık "
+"kelimelerin sıklığı kelimeleri basitçe sayılması ile hesaplanır."
+
+#. i18n: file wordcompletion/creationsourceui.ui line 82
+#: rc.cpp:262
+#, no-c-format
+msgid "From &KDE documentation"
+msgstr "&KDE belgelerinden"
+
+#. i18n: file wordcompletion/creationsourceui.ui line 88
+#: rc.cpp:265
+#, no-c-format
+msgid ""
+"If you select this box a new dictionary is created by parsing the KDE "
+"documentation. The frequentness of the individual words is detect by simply "
+"counting the occurrences of each word."
+msgstr ""
+"Bu kutuyu seçerseniz KDE Dökümanları incelenerek yeni bir sözlük oluşturulur. "
+"Ayrı kelimelerin sıklığı her kelimeyi tek tek sayarak hesaplanır."
+
+#. i18n: file wordcompletion/creationsourceui.ui line 107
+#: rc.cpp:268
+#, no-c-format
+msgid "From f&older"
+msgstr "&Dizinden"
+
+#. i18n: file wordcompletion/creationsourceui.ui line 110
+#: rc.cpp:271
+#, no-c-format
+msgid ""
+"If you select this box a new dictionary is created by loading all files in a "
+"folder and its subdirectories."
+msgstr ""
+"Bu kutuyu seçerseniz bir dizin ve alt klasörlerindeki tüm dosyalar kullanılarak "
+"yeni bir sözlük oluşturulur."
+
+#. i18n: file wordcompletion/creationsourceui.ui line 135
+#: rc.cpp:274
+#, no-c-format
+msgid "Create an &empty wordlist"
+msgstr "Boş k&elime listesi oluştur"
+
+#. i18n: file wordcompletion/creationsourceui.ui line 138
+#: rc.cpp:277
+#, no-c-format
+msgid ""
+"If you select this box a blank dictionary without any entries is created. As "
+"KMouth automatically adds newly typed words to the dictionaries it will learn "
+"your vocabulary with the time."
+msgstr ""
+"Eğer bu kutuyu seçerseniz içinde girdi olmayan boş bir sözlük oluşturulacaktır. "
+"KMouth yeni yazdığınız kelimeleri otomatik olarak bu sözlüğe ekleyecektir "
+"böylece kelime dağarcığınızı zamanla öğrenecektir."
+
+#. i18n: file wordcompletion/kdedocsourceui.ui line 30
+#: rc.cpp:283
+#, no-c-format
+msgid ""
+"If you select this check box the words from the KDE documentation are "
+"spell-checked before they are inserted into the new dictionary."
+msgstr ""
+"Bu seçim kutusunu seçerseniz KDE dökümanlarındaki kelimeler yeni sözlüğe "
+"eklenmeden önce kelime-kontrol edilir."
+
+#. i18n: file wordcompletion/wordcompletionui.ui line 40
+#: rc.cpp:295
+#, no-c-format
+msgid "Add D&ictionary..."
+msgstr "&Sözlük Ekle..."
+
+#. i18n: file wordcompletion/wordcompletionui.ui line 43
+#: rc.cpp:298
+#, no-c-format
+msgid ""
+"With this button you can add a new dictionary to the list of available "
+"dictionaries."
+msgstr "Bu düğme ile sözlük listesine yeni sözlük ekleyebilirsiniz."
+
+#. i18n: file wordcompletion/wordcompletionui.ui line 62
+#: rc.cpp:301
+#, no-c-format
+msgid "&Delete Dictionary"
+msgstr "Sö&zlüğü Sil"
+
+#. i18n: file wordcompletion/wordcompletionui.ui line 65
+#: rc.cpp:304
+#, no-c-format
+msgid "With this button you delete the selected dictionary."
+msgstr "Bu düğme ile seçili sözlük silinir."
+
+#. i18n: file wordcompletion/wordcompletionui.ui line 84
+#: rc.cpp:307
+#, no-c-format
+msgid "Move &Up"
+msgstr "&Yukarı Taşı"
+
+#. i18n: file wordcompletion/wordcompletionui.ui line 87
+#: rc.cpp:310
+#, no-c-format
+msgid "With this button you move the selected dictionary up."
+msgstr "Bu düğme ile seçili sözlük yuları taşınır."
+
+#. i18n: file wordcompletion/wordcompletionui.ui line 106
+#: rc.cpp:313
+#, no-c-format
+msgid "&Move Down"
+msgstr "&Aşağı Taşı"
+
+#. i18n: file wordcompletion/wordcompletionui.ui line 109
+#: rc.cpp:316
+#, no-c-format
+msgid "With this button you move the selected dictionary down."
+msgstr "Bu düğme ile seçili sözlük aşağı taşınır."
+
+#. i18n: file wordcompletion/wordcompletionui.ui line 128
+#: rc.cpp:319
+#, no-c-format
+msgid "&Export Dictionary..."
+msgstr "&Sözlüğü Aktar..."
+
+#. i18n: file wordcompletion/wordcompletionui.ui line 131
+#: rc.cpp:322
+#, no-c-format
+msgid "With this button you export the selected dictionary to a file."
+msgstr "Bu düğme ile seçili sözlük bir dosyaya aktarılır."
+
+#. i18n: file wordcompletion/wordcompletionui.ui line 164
+#: rc.cpp:325
+#, no-c-format
+msgid "Dictionary"
+msgstr "Sözlük"
+
+#. i18n: file wordcompletion/wordcompletionui.ui line 175
+#: rc.cpp:328
+#, no-c-format
+msgid "Language"
+msgstr "Dil"
+
+#. i18n: file wordcompletion/wordcompletionui.ui line 191
+#: rc.cpp:331
+#, no-c-format
+msgid ""
+"This list contains all available dictionaries for the word completion. KMouth "
+"will display a combo box next to the edit field in the main window if this list "
+"contains more than one dictionary. You can use this combo box in order to "
+"select the dictionary that actually gets used for the word completion."
+msgstr ""
+"Bu liste kelime tamamlama için kullanılabilinecek sözlükleri içerir. KMouth ana "
+"pencerede liste eğer birden fazla sözlük içeriyorsa metin alanının yanında bir "
+"açılır kutu gösterecektir. Hangi sözlüğü kelime tamamlama için kullanmak "
+"istiyorsanız buradan seçebilirsiniz."
+
+#. i18n: file wordcompletion/wordcompletionui.ui line 210
+#: rc.cpp:334
+#, no-c-format
+msgid "&Selected Dictionary"
+msgstr "&Seçili Sözlük"
+
+#. i18n: file wordcompletion/wordcompletionui.ui line 232
+#: rc.cpp:343
+#, no-c-format
+msgid "&Name:"
+msgstr "İ&sim:"
+
+#. i18n: file wordcompletion/wordcompletionui.ui line 238
+#: rc.cpp:346 rc.cpp:349
+#, no-c-format
+msgid "With this input field you specify the name of the selected dictionary."
+msgstr "Bu girdi alanı ile seçili sözlüğün adını belirtirsiniz."
+
+#: phrasebook/phrasebookdialog.cpp:134
+msgid " (%1 of %2 books selected)"
+msgstr "(%1 / %2  kitap seçili)"
+
+#: phrasebook/phrasebookdialog.cpp:145
+msgid "Please decide which phrase books you need:"
+msgstr "Lütfen hangi söz kitablarını istediğinizi seçin:"
+
+#: phrasebook/phrasebookdialog.cpp:153
+msgid "Book"
+msgstr "Kitap"
+
+#: phrasebook/phrasebookdialog.cpp:242
+msgid ""
+"By clicking on this button you can select the keyboard shortcut associated with "
+"the selected phrase."
+msgstr ""
+"Bu düğmeye tıklayarak seçili söz ile ilişkili klavye kısayolunu seçebilirsiniz."
+
+#: phrasebook/phrasebookdialog.cpp:263
+msgid "Phrase Book"
+msgstr "Söz Kitabı"
+
+#: phrasebook/phrasebookdialog.cpp:300
+msgid "Phrase"
+msgstr "Söz"
+
+#: phrasebook/phrasebookdialog.cpp:301
+msgid "Shortcut"
+msgstr "Kısayol"
+
+#: phrasebook/phrasebookdialog.cpp:305
+msgid ""
+"This list contains the current phrase book in a tree structure. You can select "
+"and modify individual phrases and sub phrase books"
+msgstr ""
+"Bu liste mevcut söz kitabını ağaç yapısı halinde içerir. Ayrı sözleri ve alt "
+"söz kitaplarını seçebilir ve değiştirebilirsiniz"
+
+#: phrasebook/phrasebookdialog.cpp:325
+msgid "&New Phrase"
+msgstr "&Yeni Söz"
+
+#: phrasebook/phrasebookdialog.cpp:326 phrasebook/phrasebookdialog.cpp:327
+msgid "Adds a new phrase"
+msgstr "Yeni söz ekle"
+
+#: phrasebook/phrasebookdialog.cpp:329
+msgid "New Phrase &Book"
+msgstr "Yeni &Söz Kitabı"
+
+#: phrasebook/phrasebookdialog.cpp:330 phrasebook/phrasebookdialog.cpp:331
+msgid "Adds a new phrase book into which other books and phrases can be placed"
+msgstr ""
+"İçine diğer söz kitaplarının ve sözlerin eklenebileceği bir söz kitabı ekler"
+
+#: phrasebook/phrasebookdialog.cpp:334 phrasebook/phrasebookdialog.cpp:335
+msgid "Saves the phrase book onto the hard disk"
+msgstr "Söz kitabını sabit diske kayıt eder"
+
+#: phrasebook/phrasebookdialog.cpp:337 phrasebook/phrasebookdialog.cpp:341
+msgid "&Import..."
+msgstr "&Al..."
+
+#: phrasebook/phrasebookdialog.cpp:338 phrasebook/phrasebookdialog.cpp:339
+#: phrasebook/phrasebookdialog.cpp:342 phrasebook/phrasebookdialog.cpp:343
+msgid "Imports a file and adds its contents to the phrase book"
+msgstr "Bir dosyayı ithal eder ve içeriğini söz kitabına ekler"
+
+#: phrasebook/phrasebookdialog.cpp:345
+msgid "I&mport Standard Phrase Book"
+msgstr "Standart Söz Kitabı&nı İthal Eder"
+
+#: phrasebook/phrasebookdialog.cpp:346 phrasebook/phrasebookdialog.cpp:347
+msgid "Imports a standard phrase book and adds its contents to the phrase book"
+msgstr "Standart bir söz kitabı ithal edip, içeriğini söz kitabına ekler"
+
+#: phrasebook/phrasebookdialog.cpp:349
+msgid "&Export..."
+msgstr "&Aktar..."
+
+#: phrasebook/phrasebookdialog.cpp:350 phrasebook/phrasebookdialog.cpp:351
+msgid "Exports the currently selected phrase(s) or phrase book(s) into a file"
+msgstr "Seçili söz(ler)ini veya söz kitap(lar)ını dosyaya ihrac eder"
+
+#: phrasebook/phrasebookdialog.cpp:354 phrasebook/phrasebookdialog.cpp:355
+msgid "Prints the currently selected phrase(s) or phrase book(s)"
+msgstr "Seçili söz(ler)ini veya söz kitap(lar)ını yazdırır"
+
+#: phrasebook/phrasebookdialog.cpp:358 phrasebook/phrasebookdialog.cpp:359
+msgid "Closes the window"
+msgstr "Pencereyi kapatır"
+
+#: phrasebook/phrasebookdialog.cpp:363 phrasebook/phrasebookdialog.cpp:364
+msgid ""
+"Cuts the currently selected entries from the phrase book and puts it to the "
+"clipboard"
+msgstr "Seçili girdileri söz kitabından kesip panoya yapıştırır"
+
+#: phrasebook/phrasebookdialog.cpp:367 phrasebook/phrasebookdialog.cpp:368
+msgid ""
+"Copies the currently selected entry from the phrase book to the clipboard"
+msgstr "Seçili girdiyi söz kitabından panoya kopyalar"
+
+#: phrasebook/phrasebookdialog.cpp:375 phrasebook/phrasebookdialog.cpp:376
+msgid "Deletes the selected entries from the phrase book"
+msgstr "Seçili girdiyi söz kitabından siler"
+
+#: phrasebook/phrasebookdialog.cpp:526
+msgid "Name of the &phrase book:"
+msgstr "Sö&z kitabının adı:"
+
+#: phrasebook/phrasebookdialog.cpp:545
+msgid ""
+"<qt>There are unsaved changes."
+"<br>Do you want to apply the changes before closing the \"phrase book\" window "
+"or discard the changes?</qt>"
+msgstr ""
+"<qt>Kayıt edilmemiş değişiklikler var."
+"<br>\"Söz kitabı\" penceresini kapatmadan önce değişiklikleri kaydetmek mi, "
+"yoksa yapılan tüm değişiklikleri silmek mi istersiniz?</qt>"
+
+#: phrasebook/phrasebookdialog.cpp:546
+msgid "Closing \"Phrase Book\" Window"
+msgstr "\"Söz Kitabı\" Penceresi Kapatılıyor"
+
+#: phrasebook/phrasebookdialog.cpp:598
+msgid ""
+"In order to use the '%1' key as a shortcut, it must be combined with the Win, "
+"Alt, Ctrl, and/or Shift keys."
+msgstr ""
+"'%1' tuşunu kısayol olarak kullanabilmek için Win, Alt, Ctrl, ve/veya Shift "
+"tuşlarının birleşimini kullanın."
+
+#: phrasebook/phrasebookdialog.cpp:601
+msgid "Invalid Shortcut Key"
+msgstr "Geçersiz Kısayol Anahtarı"
+
+#: phrasebook/phrasebookdialog.cpp:695
+msgid "(New Phrase Book)"
+msgstr "(Yeni Söz Kitabı)"
+
+#: phrasebook/phrasebookdialog.cpp:706
+msgid "(New Phrase)"
+msgstr "(Yeni söz)"
+
+#: phrasebook/phrasebook.cpp:258 phrasebook/phrasebookdialog.cpp:723
+msgid ""
+"*.phrasebook|Phrase Books (*.phrasebook)\n"
+"*.txt|Plain Text Files (*.txt)\n"
+"*|All Files"
+msgstr ""
+"*.phrasebook|Söz Kitapları (*.phrasebook)\n"
+"*.txt|Salt Metin Dosyaları (*.txt)\n"
+"*|Tüm Dosyalar"
+
+#: phrasebook/phrasebookdialog.cpp:723
+msgid "Import Phrasebook"
+msgstr "Söz Kitabı Al"
+
+#: phrasebook/phrasebookdialog.cpp:734 phraselist.cpp:475
+#, c-format
+msgid ""
+"There was an error loading file\n"
+"%1"
+msgstr ""
+"Dosya yüklenirken hatayla karşılaşıldı\n"
+"%1"
+
+#: phrasebook/phrasebookdialog.cpp:743
+msgid "Export Phrase Book"
+msgstr "Söz Kitabı İhrac et"
+
+#: phrasebook/phrasebookdialog.cpp:744 phraselist.cpp:449
+#, c-format
+msgid ""
+"There was an error saving file\n"
+"%1"
+msgstr ""
+"Dosyayı kaydederken bir hata oluştu\n"
+"%1"
+
+#: phrasebook/phrasebook.cpp:260
+msgid ""
+"*.txt|Plain Text Files (*.txt)\n"
+"*.phrasebook|Phrase Books (*.phrasebook)\n"
+"*|All Files"
+msgstr ""
+"*.txt|Salt Metin Dosyaları (*.txt)\n"
+"*.phrasebook|Söz Kitapları (*.phrasebook)\n"
+"*|Tüm Dosyalar"
+
+#: phrasebook/phrasebook.cpp:289
+msgid ""
+"Your chosen filename <i>%1</i> has a different extension than <i>.phrasebook</i>"
+". Do you wish to add <i>.phrasebook</i> to the filename?"
+msgstr ""
+"Seçili dosyanız <i>%1</i> <i>.phrasebook</i>'tan başka bir uzantıya sahip. "
+"Dosya adına <i>.phrasebook</i> eklemek ister misiniz?"
+
+#: phrasebook/phrasebook.cpp:290 phrasebook/phrasebook.cpp:306
+msgid "File Extension"
+msgstr "Dosya Uzantısı"
+
+#: phrasebook/phrasebook.cpp:290
+msgid "Do Not Add"
+msgstr "Ekleme"
+
+#: phrasebook/phrasebook.cpp:305
+msgid ""
+"Your chosen filename <i>%1</i> has the extension <i>.phrasebook</i>"
+". Do you wish to save in phrasebook format?"
+msgstr ""
+"Seçili dosya adınız <i>%1</i> <i>.phrasebook</i> uzantısına sahip. Phrasebook "
+"biçiminde kaydetmek ister misiniz?"
+
+#: phrasebook/phrasebook.cpp:306
+msgid "As Phrasebook"
+msgstr "Söz kitabı olarak"
+
+#: phrasebook/phrasebook.cpp:306
+msgid "As Plain Text"
+msgstr "Düz metin olarak"
+
+#: phrasebook/phrasetree.cpp:470
+msgid ""
+"The '%1' key combination has already been allocated to %2.\n"
+"Please choose a unique key combination."
+msgstr ""
+"'%1' tuş birleşimi %2 için ayırılmış.\n"
+"Lütfen farklı bir tuş birleşimi seçin."
+
+#: phrasebook/phrasetree.cpp:488
+msgid "the standard \"%1\" action"
+msgstr "standart \"%1\" olayı"
+
+#: phrasebook/phrasetree.cpp:489
+msgid "Conflict with Standard Application Shortcut"
+msgstr "Standart Uyguluma Kısayolu Çakışması"
+
+#: phrasebook/phrasetree.cpp:504
+msgid "the global \"%1\" action"
+msgstr "küresel \"%1\" olayı"
+
+#: phrasebook/phrasetree.cpp:505
+msgid "Conflict with Global Shortcuts"
+msgstr "Küresel Kısayollarla Çakışma"
+
+#: phrasebook/phrasetree.cpp:520
+msgid "an other phrase"
+msgstr "bir diğer söz"
+
+#: phrasebook/phrasetree.cpp:521
+msgid "Key Conflict"
+msgstr "Tuş Çakışması"
+
+#: configwizard.cpp:37
+msgid "Initial Configuration - KMouth"
+msgstr "İlk Ayarlar - KMouth"
+
+#: configwizard.cpp:57
+msgid "Text-to-Speech Configuration"
+msgstr "Metinden Konuşmaya Ayarları"
+
+#: configwizard.cpp:71
+msgid "Initial Phrase Book"
+msgstr "İlk Söz Kitabı"
+
+#: phraselist.cpp:56
+msgid ""
+"This list contains the history of spoken sentences. You can select sentences "
+"and press the speak button for re-speaking."
+msgstr ""
+"Bu liste konuşulan cümlelerin geçmişini tutar. Tekrar okutmak için cümleyi "
+"seçip konuş düğmesine basın."
+
+#: phraselist.cpp:74
+msgid ""
+"Into this edit field you can type a phrase. Click on the speak button in order "
+"to speak the entered phrase."
+msgstr ""
+"Bu düzenleme alanına bir söz yazabilirsiniz. Girilen sözü okutmak için konuş "
+"düğmesine tıklayın."
+
+#: phraselist.cpp:454
+msgid ""
+"*|All Files\n"
+"*.phrasebook|Phrase Books (*.phrasebook)\n"
+"*.txt|Plain Text Files (*.txt)"
+msgstr ""
+"*|Tüm Dosyalar\n"
+"*.phrasebook|Konuşma Kılavuzları (*.phrasebook)\n"
+"*.txt|Salt Metin Dosyaları (*.txt)"
+
+#: phraselist.cpp:454
+msgid "Open File as History"
+msgstr "Dosyayı Geçmiş Olarak Aç"

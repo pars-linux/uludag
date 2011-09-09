@@ -1,0 +1,77 @@
+# translation of kfile_pdf.po to Türkçe
+# translation of kfile_pdf.po to
+# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+# Tuncay YENİAY <tuncayyeniay@mynet.com>,2002.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Görkem Çetin <gorkem@gorkemcetin.com>, 2005.
+# Alper Sen <aalpersen@gmail.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kfile_pdf\n"
+"POT-Creation-Date: 2005-04-20 15:05+0200\n"
+"PO-Revision-Date: 2005-07-15 13:55+0300\n"
+"Last-Translator: Alper Sen <aalpersen@gmail.com>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: kfile_pdf.cpp:39
+msgid "General"
+msgstr "Genel"
+
+#: kfile_pdf.cpp:43
+msgid "Title"
+msgstr "Başlık"
+
+#: kfile_pdf.cpp:45
+msgid "Subject"
+msgstr "Konu"
+
+#: kfile_pdf.cpp:47
+msgid "Author"
+msgstr "Yazar"
+
+#: kfile_pdf.cpp:49
+msgid "Key Words"
+msgstr "Anahtar Kelimeler"
+
+#: kfile_pdf.cpp:50
+msgid "Creator"
+msgstr "Oluşturan"
+
+#: kfile_pdf.cpp:51
+msgid "Producer"
+msgstr "Üretici"
+
+#: kfile_pdf.cpp:52
+msgid "Creation Date"
+msgstr "Oluşturulma Tarihi"
+
+#: kfile_pdf.cpp:53
+msgid "Modified"
+msgstr "Düzenleme"
+
+#: kfile_pdf.cpp:54
+msgid "Pages"
+msgstr "Sayfa"
+
+#: kfile_pdf.cpp:55
+msgid "Protected"
+msgstr "Korumalı"
+
+#: kfile_pdf.cpp:56
+msgid "Linearized"
+msgstr "Düzleştirilmiş"
+
+#: kfile_pdf.cpp:57
+msgid "Version"
+msgstr "Sürüm"
+
+#: kfile_pdf.cpp:85
+msgid "Yes (Can Print:%1 Can Copy:%2 Can Change:%3 Can Add notes:%4)"
+msgstr ""
+"Evet (Yazdırabilme:%1 Kopyalayabilme:%2 Değiştirebilme:%3 Not Ekleyebilme:%4)"

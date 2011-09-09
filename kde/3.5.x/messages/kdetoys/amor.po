@@ -1,0 +1,229 @@
+# translation of amor.po to Turkish
+# Mehmet TARIMCI <mehmet@gelecek.com.tr>, 2000.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>,2002.
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Engin Çağatay <engincagatay@yahoo.com>, 2004.
+# Ahmet AYGÜN <ahmet@zion.gen.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+# Copyright (C) 2004, 2005, 2007 Free Software Foundation, Inc.
+msgid ""
+msgstr ""
+"Project-Id-Version: amor\n"
+"POT-Creation-Date: 2005-11-30 03:24+0100\n"
+"PO-Revision-Date: 2007-09-11 19:38+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=1; plural=0;\n"
+
+#: tips.cpp:2
+msgid "Don't run with scissors."
+msgstr "Makas ile çalıştırmayın."
+
+#: tips.cpp:5
+msgid "Never trust car salesmen or politicians."
+msgstr "Hiçbir zaman araba satıcılarına veya politikacılara güvenme."
+
+#: tips.cpp:8
+msgid ""
+"Real programmers don't comment their code. It was hard to write, it should be "
+"hard to understand."
+msgstr ""
+"Gerçek programcılar kodlarına yorum koymazlar. Çünkü Yazmak zordur, anlamakda "
+"zor olmalıdır."
+
+#: tips.cpp:11
+msgid ""
+"It is much easier to suggest solutions when you know nothing about the problem."
+msgstr ""
+"Problem hakkında hiçbir bilginiz olmadığı zaman çözüm önerisi getirmek çok daha "
+"kolay olur."
+
+#: tips.cpp:14
+msgid "You can never have too much memory or disk space."
+msgstr "Hiçbir zaman yeterli belleğe ya da disk alanına sahip olamazsınız."
+
+#: tips.cpp:17
+msgid "The answer is 42."
+msgstr "Cevap 42."
+
+#: tips.cpp:20
+msgid "It's not a bug. It's a misfeature."
+msgstr "Bu bir hata değil. Daha eklenmemiş bir özellik."
+
+#: tips.cpp:23
+msgid "Help stamp out and abolish redundancy."
+msgstr "Fazlalığı ortadan kaldırmaya yardım et."
+
+#: tips.cpp:26
+msgid ""
+"To maximize a window vertically, click the maximize button with the middle "
+"mouse button."
+msgstr ""
+"Bir pencereyi dikey olarak büyütmek için, farenin orta tuşu ile büyüt düğmesine "
+"tıklayın."
+
+#: tips.cpp:29
+msgid "You can use Alt+Tab to switch between applications."
+msgstr ""
+"Uygulamalar arasında dolaşmak için Alt+Tab tuşlarını kullanabilirsiniz."
+
+#: tips.cpp:32
+msgid ""
+"Press Ctrl+Esc to show the applications running in your current session."
+msgstr ""
+"Geçerli oturumda çalışan uygulamalarınızı görmek için Ctrl+Esc tuşlarına basın."
+
+#: tips.cpp:35
+msgid "Alt+F2 displays a small window that you can type a command into."
+msgstr "Alt-F2 komut girebileceğiniz küçük bir pencere görüntüler."
+
+#: tips.cpp:38
+msgid "Ctrl+F1 to Ctrl+F8 can be used to switch virtual desktops."
+msgstr ""
+"Ctrl+F1 - Ctrl+F8 arası tuşlar sanal masaüstlerinde dolaşmanızı sağlar."
+
+#: tips.cpp:41
+msgid "You can move buttons on the panel using the middle mouse button."
+msgstr ""
+"Paneldeki düğmeleri hareket ettirmek için orta fare tuşunu kullanabilirsiniz."
+
+#: tips.cpp:44
+msgid "Alt+F1 pops-up the system menu."
+msgstr "Alt+F1 sistem menüsünü çıkartır."
+
+#: tips.cpp:47
+msgid ""
+"Ctrl+Alt+Esc can be used to kill an application that has stopped responding."
+msgstr ""
+"Ctrl+Alt+Esc yanıt vermeyen (kilitlenmiş) bir uygulamayı sonlandırmak için "
+"kullanılabilir."
+
+#: tips.cpp:50
+msgid ""
+"If you leave KDE applications open when you logout, they will be restarted "
+"automatically when you log back in."
+msgstr ""
+"Çıkışta kapatmadığınız KDE uygulamaları, bir sonraki açılışta otomatik olarak "
+"başlatılacaklardır."
+
+#: tips.cpp:53
+msgid "The KDE file manager is also a web browser and an FTP client."
+msgstr ""
+"KDE dosya yöneticisi aynı zamanda bir internet gözatıcı ve FTP istemcisidir."
+
+#: tips.cpp:56
+msgid ""
+"Applications can display messages and tips in an Amor bubble using the "
+"showMessage() and\n"
+"showTip() DCOP calls"
+msgstr ""
+"Uygulamalar, showMessage() ve showTip() DCOP çağrılarını kullanarak Amor "
+"baloncuğu içerisinde mesajlar ve ipuçları gösterebilirler"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Ömer Fadıl USTA"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "omer_fad@hotmail.com"
+
+#: amor.cpp:325
+msgid "Error reading theme: "
+msgstr "Tema okunurken bir hata oluştu: "
+
+#: amor.cpp:339 amor.cpp:348
+msgid "Error reading group: "
+msgstr "Grup okunurken bir hata oluştu: "
+
+#: amor.cpp:613
+msgid "&Configure..."
+msgstr "&Yapılandır..."
+
+#: amor.cpp:751
+msgid ""
+"Amor Version %1\n"
+"\n"
+msgstr ""
+"Amor Sürüm %1\n"
+"\n"
+
+#: amor.cpp:752
+msgid ""
+"Amusing Misuse Of Resources\n"
+"\n"
+msgstr ""
+"Eğlenceli Kaynak Savurganı\n"
+"\n"
+
+#: amor.cpp:753
+msgid ""
+"Copyright (c) 1999 Martin R. Jones <mjones@kde.org>\n"
+"\n"
+msgstr ""
+"Telif hakkı (c) 1999 Martin R. Jones <mjones@kde.org>\n"
+"\n"
+
+#: amor.cpp:754
+msgid ""
+"Original Author: Martin R. Jones <mjones@kde.org>\n"
+msgstr ""
+"Asıl yazar: Martin R. Jones <mjones@kde.org>\n"
+
+#: amor.cpp:755
+msgid ""
+"Current Maintainer: Gerardo Puga <gpuga@gioia.ing.unlp.edu.ar>\n"
+msgstr ""
+"Şimdiki yazar: Gerardo Puga <gpuga@gioia.ing.unlp.edu.ar>\n"
+
+#: amor.cpp:757
+msgid "About Amor"
+msgstr "Amor Hakkında"
+
+#: amordialog.cpp:57
+msgid "Theme:"
+msgstr "Tema:"
+
+#: amordialog.cpp:74
+msgid "Offset:"
+msgstr "Denge:"
+
+#: amordialog.cpp:81
+msgid "Always on top"
+msgstr "Her zaman üstte"
+
+#: amordialog.cpp:85
+msgid "Show random tips"
+msgstr "İpuçlarını rastgele göster"
+
+#: amordialog.cpp:89
+msgid "Use a random character"
+msgstr "Rastgele bir karakter kullan"
+
+#: amordialog.cpp:93
+msgid "Allow application tips"
+msgstr "Uygulama ipuçlarını göster"
+
+#: amortips.cpp:82
+msgid "No tip"
+msgstr "İpucu yok"
+
+#: main.cpp:43
+msgid "KDE creature for your desktop"
+msgstr "Masaüstünüz için KDE yaratığı"
+
+#: main.cpp:47
+msgid "amor"
+msgstr "amor"
+
+#: main.cpp:51
+msgid "Current maintainer"
+msgstr "Şimdiki yazar"

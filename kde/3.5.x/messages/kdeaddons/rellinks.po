@@ -1,0 +1,212 @@
+# translation of rellinks.po to
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: rellinks\n"
+"POT-Creation-Date: 2005-09-05 02:42+0200\n"
+"PO-Revision-Date: 2007-05-16 19:45+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Adil YILDIZ"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "adil_yildiztr@yahoo.com"
+
+#: plugin_rellinks.cpp:57
+msgid "Rellinks"
+msgstr "Rellinks"
+
+#: plugin_rellinks.cpp:73
+msgid "&Top"
+msgstr "Üs&t"
+
+#: plugin_rellinks.cpp:74
+msgid "<p>This link references a home page or the top of some hierarchy.</p>"
+msgstr "<p>Bu link bir ana sayfaya veya bir listenin en üstünü belirtiyor.</p>"
+
+#: plugin_rellinks.cpp:76
+msgid "&Up"
+msgstr "Y&ukarı"
+
+#: plugin_rellinks.cpp:77
+msgid ""
+"<p>This link references the immediate parent of the current document.</p>"
+msgstr "<p>Bu link mevcut dökümanın taşıyıcısını (parent) belirtiyor.</p>"
+
+#: plugin_rellinks.cpp:81
+msgid "&First"
+msgstr "İ&lk"
+
+#: plugin_rellinks.cpp:82
+msgid ""
+"<p>This link type tells search engines which document is considered by the "
+"author to be the starting point of the collection.</p>"
+msgstr ""
+"<p>Bu link tipi arama motorlarına yazar tarafından tanımlanan kolleksiyonun "
+"başlangıcını belirtir.</p>"
+
+#: plugin_rellinks.cpp:85
+msgid ""
+"<p>This link references the previous document in an ordered series of "
+"documents.</p>"
+msgstr "<p>Bu link sıralı döküman listesinde bir önceki dökümanı gösterir.</p>"
+
+#: plugin_rellinks.cpp:87
+msgid "&Next"
+msgstr "&Sonraki"
+
+#: plugin_rellinks.cpp:88
+msgid ""
+"<p>This link references the next document in an ordered series of documents.</p>"
+msgstr ""
+"<p>Bu link sıralı döküman listesinde bir sonraki dökümanı gösterir.</p>"
+
+#: plugin_rellinks.cpp:90
+msgid "&Last"
+msgstr "So&n"
+
+#: plugin_rellinks.cpp:91
+msgid "<p>This link references the end of a sequence of documents.</p>"
+msgstr "<p>Bu link bir döküman grubunun sonunu belirtiyor.</p>"
+
+#: plugin_rellinks.cpp:94
+msgid "&Search"
+msgstr "A&rama"
+
+#: plugin_rellinks.cpp:95
+msgid "<p>This link references the search.</p>"
+msgstr "<p>Bu link aramayı belirtiyor.</p>"
+
+#: plugin_rellinks.cpp:98
+msgid "Document"
+msgstr "Döküman"
+
+#: plugin_rellinks.cpp:99
+msgid "<p>This menu contains the links referring the document information.</p>"
+msgstr "<p>Bu menü döküman bilgisini belirten linkler içeriyor.</p>"
+
+#: plugin_rellinks.cpp:102
+msgid "Table of &Contents"
+msgstr "İç&erik Tablosu"
+
+#: plugin_rellinks.cpp:104
+msgid "<p>This link references the table of contents.</p>"
+msgstr "<p>Bu link içerik tablosunu belirtir.</p>"
+
+#: plugin_rellinks.cpp:106
+msgid "Chapters"
+msgstr "Başlıklar"
+
+#: plugin_rellinks.cpp:109
+msgid "<p>This menu references the chapters of the document.</p>"
+msgstr "<p>Bu menü dökümanın başlıklarını belirtir.</p>"
+
+#: plugin_rellinks.cpp:112
+msgid "Sections"
+msgstr "Bölümler"
+
+#: plugin_rellinks.cpp:115
+msgid "<p>This menu references the sections of the document.</p>"
+msgstr "<p>Bu menü dökümanın bölümlerini belirtir.</p>"
+
+#: plugin_rellinks.cpp:118
+msgid "Subsections"
+msgstr "Alt Bölümler"
+
+#: plugin_rellinks.cpp:121
+msgid "<p>This menu references the subsections of the document.</p>"
+msgstr "<p>Bu menü dökümanın alt bölümlerini belirtir.</p>"
+
+#: plugin_rellinks.cpp:124
+msgid "Appendix"
+msgstr "Ek Bölüm"
+
+#: plugin_rellinks.cpp:127
+msgid "<p>This link references the appendix.</p>"
+msgstr "<p>Bu link ek bölümü belirtir.</p>"
+
+#: plugin_rellinks.cpp:130
+msgid "&Glossary"
+msgstr "Söz&lük"
+
+#: plugin_rellinks.cpp:132
+msgid "<p>This link references the glossary.</p>"
+msgstr "<p>Bu link sözlüğü belirtir.</p>"
+
+#: plugin_rellinks.cpp:134
+msgid "&Index"
+msgstr "&Indeks"
+
+#: plugin_rellinks.cpp:136
+msgid "<p>This link references the index.</p>"
+msgstr "<p>Bu link indeksi belirtir.</p>"
+
+#: plugin_rellinks.cpp:139
+msgid "More"
+msgstr "Daha Fazla"
+
+#: plugin_rellinks.cpp:140
+msgid "<p>This menu contains other important links.</p>"
+msgstr "<p>Bu menü diğer önemli linkleri içerir.</p>"
+
+#: plugin_rellinks.cpp:145
+msgid "<p>This link references the help.</p>"
+msgstr "<p>Bu link yardımı belirtir.</p>"
+
+#: plugin_rellinks.cpp:147
+msgid "&Authors"
+msgstr "Y&azarlar"
+
+#: plugin_rellinks.cpp:149
+msgid "<p>This link references the author.</p>"
+msgstr "<p>Bu link yazarı belirtir.</p>"
+
+#: plugin_rellinks.cpp:151
+msgid "Copy&right"
+msgstr "Ko&pya Hakkı"
+
+#: plugin_rellinks.cpp:153
+msgid "<p>This link references the copyright.</p>"
+msgstr "<p>Bu link kopya hakkını belirtir.</p>"
+
+#: plugin_rellinks.cpp:157
+msgid "<p>This menu references the bookmarks.</p>"
+msgstr "<p>Bu menü sık kullanılanları belirtir.</p>"
+
+#: plugin_rellinks.cpp:161
+msgid "Other Versions"
+msgstr "Diğer Sürümler"
+
+#: plugin_rellinks.cpp:163
+msgid "<p>This link references the alternate versions of this document.</p>"
+msgstr "<p>Bu link bu dökümanın başka sürümlerini belirtir.</p>"
+
+#: plugin_rellinks.cpp:170
+msgid "<p>Miscellaneous links.</p>"
+msgstr "<p>Diğer Linkler.</p>"
+
+#: plugin_rellinks.cpp:397 plugin_rellinks.cpp:411
+#, c-format
+msgid "[Autodetected] %1"
+msgstr "[Otomatik olarak algılandı] %1"
+
+#. i18n: file plugin_rellinks.rc line 5
+#: rc.cpp:6 rc.cpp:9
+#, no-c-format
+msgid "Document Relations"
+msgstr "Döküman Bağlantıları"

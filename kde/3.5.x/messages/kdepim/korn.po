@@ -1,0 +1,826 @@
+# Copyright (C) 1999 Free Software Foundation, Inc.
+#
+# Levent Bayındır <bayindir@bilmuh.ege.edu.tr> , 1999.
+# Serdar Soytetir <tulliana@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: korn 1.1\n"
+"POT-Creation-Date: 2008-07-08 01:22+0200\n"
+"PO-Revision-Date: 2008-02-29 00:50+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@lists.kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: LoKalize 0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: kio_proto.h:97
+msgid "Server:"
+msgstr "Sunucu:"
+
+#: kio_proto.h:98
+msgid "Port:"
+msgstr "Port:"
+
+#: kio_proto.h:99
+msgid "Username:"
+msgstr "Kullanıcı adı:"
+
+#: kio_proto.h:100
+msgid "Mailbox:"
+msgstr "Posta kutusu:"
+
+#: kio_proto.h:101
+msgid "Password:"
+msgstr "Parola:"
+
+#: imap_proto.cpp:59 kio_proto.h:102 nntp_proto.cpp:43 pop3_proto.cpp:58
+msgid "Save password"
+msgstr "Parolayı kaydet:"
+
+#: kio_proto.h:103
+msgid "Authentication:"
+msgstr "Kimlik doğrulama::"
+
+#: maildir_proto.h:47 qmail_proto.cpp:38 qmail_proto.h:50
+msgid "Path:"
+msgstr "Yol:"
+
+#: mbox_proto.cpp:37 mbox_proto.h:44
+msgid "File:"
+msgstr "Dosya:"
+
+#: process_proto.h:40
+msgid "Program: "
+msgstr "Program:"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Serdar Soytetir, Ömer Fadıl USTA"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "tulliana@gmail.com, omer_fad@hotmail.com"
+
+#: boxcontaineritem.cpp:204
+msgid "&Recheck"
+msgstr "Yeniden &Denetle"
+
+#: boxcontaineritem.cpp:205
+msgid "R&eset Counter"
+msgstr "&Sayacı Sıfırla"
+
+#: boxcontaineritem.cpp:206
+msgid "&View Emails"
+msgstr "E-postaları &Göster"
+
+#: boxcontaineritem.cpp:207
+msgid "R&un Command"
+msgstr "&Komut Çalıştır"
+
+#: boxcontaineritem.cpp:219
+msgid "KOrn - %1/%2 (total: %3)"
+msgstr "KOrn - %1/%2 (toplam: %3)"
+
+#: boxcontaineritem.cpp:223 subjectsdlg.cpp:86
+msgid "From"
+msgstr "Kimden"
+
+#: boxcontaineritem.cpp:228 subjectsdlg.cpp:87
+msgid "Subject"
+msgstr "Konu"
+
+#: boxcontaineritem.cpp:235 subjectsdlg.cpp:88
+msgid "Date"
+msgstr "Tarih"
+
+#: dcop_proto.cpp:53
+msgid "DCOP name"
+msgstr "DCOP adı"
+
+#: dockeditem.cpp:84
+msgid "Korn - %1/%2"
+msgstr "Korn - %1/%2"
+
+#: imap_proto.cpp:39 pop3_proto.cpp:41
+msgid "SSL"
+msgstr "SSL"
+
+#: imap_proto.cpp:40 pop3_proto.cpp:42
+msgid "TLS if possible"
+msgstr "mümkünse TLS"
+
+#: imap_proto.cpp:41 pop3_proto.cpp:43
+msgid "Always TLS"
+msgstr "Her zaman TLS"
+
+#: imap_proto.cpp:42 pop3_proto.cpp:44
+msgid "Never TLS"
+msgstr "Asla TLS"
+
+#: imap_proto.cpp:46
+msgid "LOGIN"
+msgstr "GİRİŞ"
+
+#: imap_proto.cpp:47
+msgid "Anonymous"
+msgstr "Anonim"
+
+#: imap_proto.cpp:48
+msgid "CRAM-MD5"
+msgstr "CRAM-MD5"
+
+#: imap_proto.cpp:50 nntp_proto.cpp:38 pop3_proto.cpp:50
+msgid "Server"
+msgstr "Sunucu"
+
+#: imap_proto.cpp:51 nntp_proto.cpp:39 pop3_proto.cpp:51
+msgid "Port"
+msgstr "Port"
+
+#: imap_proto.cpp:52 pop3_proto.cpp:52
+msgid "Encryption"
+msgstr "Şifreleme"
+
+#: imap_proto.cpp:56 nntp_proto.cpp:41 pop3_proto.cpp:56
+msgid "Username"
+msgstr "Kullanıcı adı"
+
+#: imap_proto.cpp:57
+msgid "Mailbox"
+msgstr "Posta Kutusu"
+
+#: imap_proto.cpp:58 nntp_proto.cpp:42 pop3_proto.cpp:57
+msgid "Password"
+msgstr "Parola"
+
+#: imap_proto.cpp:63 pop3_proto.cpp:62
+msgid "Authentication"
+msgstr "Kimlik Doğrulama"
+
+#: kio.cpp:211
+msgid "url is not valid"
+msgstr "adres geçersiz"
+
+#: kio_count.cpp:89 kio_count.cpp:90
+#, c-format
+msgid "Not able to open a kio slave for %1."
+msgstr "%1 için bir kioslave açılamadı."
+
+#: kio_count.cpp:204 kio_count.cpp:254
+msgid "Got unknown job; something must be wrong..."
+msgstr ""
+
+#: kio_count.cpp:210 kio_count.cpp:211
+#, c-format
+msgid "The next KIO-error occurred by counting: %1"
+msgstr ""
+
+#: kio_delete.cpp:110
+msgid "Could not get a connected slave; I cannot delete this way..."
+msgstr ""
+
+#: kio_delete.cpp:185
+#, c-format
+msgid "An error occurred when deleting email: %1."
+msgstr ""
+
+#: kio_read.cpp:77 kio_read.cpp:91
+msgid "Unknown job returned; I will try if this one will do... "
+msgstr ""
+
+#: kio_read.cpp:80
+#, c-format
+msgid "An error occurred when fetching the requested email: %1."
+msgstr ""
+
+#: kio_single_subject.cpp:128 kio_single_subject.cpp:137
+msgid "Got invalid job; something strange happened?"
+msgstr ""
+
+#: kio_single_subject.cpp:141
+msgid "Error when fetching %1: %2"
+msgstr ""
+
+#: kio_subjects.cpp:66
+msgid "Already a slave pending."
+msgstr "Zaten bir slave beklemede."
+
+#: kio_subjects.cpp:104 kio_subjects.cpp:105
+#, c-format
+msgid "Not able to open a kio-slave for %1."
+msgstr "%1 için bir kioslave açılamadı."
+
+#: kmail_proto.cpp:199
+msgid "KMail name"
+msgstr "KMail adı"
+
+#: kornboxcfgimpl.cpp:52
+msgid ""
+"_: Left mousebutton\n"
+"Left"
+msgstr "Sol"
+
+#: kornboxcfgimpl.cpp:55
+msgid ""
+"_: Right mousebutton\n"
+"Right"
+msgstr "Sağ:"
+
+#: kornboxcfgimpl.cpp:62
+msgid "Accounts"
+msgstr "Hesaplar"
+
+#: kornboxcfgimpl.cpp:244
+msgid "Box Configuration"
+msgstr "Kutu Yapılandırması"
+
+#: kornboxcfgimpl.cpp:294 kornboxcfgimpl.cpp:299
+msgid "Normal animation"
+msgstr "Normal canlandırma"
+
+#: korncfgimpl.cpp:48
+msgid "Boxes"
+msgstr "Kutular"
+
+#. i18n: file korncfg.ui line 16
+#: kornshell.cpp:81 rc.cpp:135
+#, no-c-format
+msgid "Korn Configuration"
+msgstr "Korn Yapılandırması"
+
+#: maildlg.cpp:11
+msgid "Mail Details"
+msgstr "Posta Ayrıntıları"
+
+#: maildlg.cpp:11
+msgid "&Full Message"
+msgstr "&Tam İleti"
+
+#: maildlg.cpp:41
+msgid "Loading full mail. Please wait..."
+msgstr "İletinin tamamı yükleniyor. Lütfen bekleyin..."
+
+#: mailsubject.cpp:55
+msgid "Subject:"
+msgstr "Konu:"
+
+#: mailsubject.cpp:56
+msgid "Sender:"
+msgstr "Gönderen:"
+
+#: mailsubject.cpp:56
+msgid "Size:"
+msgstr "Boyut:"
+
+#: mailsubject.cpp:57
+msgid "Date:"
+msgstr "Tarih:"
+
+#: main.cpp:13
+msgid "KDE mail checker"
+msgstr "KDE posta denetleyicisi"
+
+#: main.cpp:19
+msgid "Korn"
+msgstr "Korn"
+
+#: main.cpp:21
+msgid "(c) 1999-2004, The Korn Developers"
+msgstr "(c) 1999-2004, Korn Geliştiricileri"
+
+#: pop3_proto.cpp:47
+msgid "Plain"
+msgstr "Düz"
+
+#: pop3_proto.cpp:48
+msgid "APOP"
+msgstr "APOP"
+
+#: process_proto.cpp:37
+msgid "Program:"
+msgstr "Program"
+
+#. i18n: file kornaccountcfg.ui line 28
+#: rc.cpp:3
+#, no-c-format
+msgid "&Server"
+msgstr "&Sunucu"
+
+#. i18n: file kornaccountcfg.ui line 43
+#: rc.cpp:6
+#, no-c-format
+msgid "&Protocol:"
+msgstr "&Protokol:"
+
+#. i18n: file kornaccountcfg.ui line 68
+#: rc.cpp:9
+#, no-c-format
+msgid "&Account"
+msgstr "&Hesap:"
+
+#. i18n: file kornaccountcfg.ui line 87
+#: rc.cpp:12
+#, no-c-format
+msgid "C&heck every (sec):"
+msgstr "&Kontrol aralığı (san):"
+
+#. i18n: file kornaccountcfg.ui line 107
+#: rc.cpp:15 rc.cpp:72
+#, no-c-format
+msgid "&Events"
+msgstr "&Olaylar"
+
+#. i18n: file kornaccountcfg.ui line 118
+#: rc.cpp:18
+#, no-c-format
+msgid "&Use settings of box"
+msgstr "Kutunun ayarlarını kulla&n"
+
+#. i18n: file kornaccountcfg.ui line 132
+#: rc.cpp:21
+#, no-c-format
+msgid "On New Mail"
+msgstr "Yeni Posta Geldiğinde"
+
+#. i18n: file kornaccountcfg.ui line 156
+#: rc.cpp:24
+#, no-c-format
+msgid "Run &command:"
+msgstr "&Komut çalıştır:"
+
+#. i18n: file kornaccountcfg.ui line 172
+#: rc.cpp:27
+#, no-c-format
+msgid "Play sou&nd:"
+msgstr "&Ses çal:"
+
+#. i18n: file kornaccountcfg.ui line 185
+#: rc.cpp:30 rc.cpp:114
+#, no-c-format
+msgid "Show &passive popup"
+msgstr ""
+
+#. i18n: file kornaccountcfg.ui line 196
+#: rc.cpp:33
+#, no-c-format
+msgid "Add &date to passive popup"
+msgstr ""
+
+#. i18n: file kornboxcfg.ui line 114
+#: rc.cpp:39
+#, no-c-format
+msgid "Icon:"
+msgstr "Simge:"
+
+#. i18n: file kornboxcfg.ui line 122
+#: rc.cpp:42
+#, no-c-format
+msgid "Background:"
+msgstr "Arkaplan:"
+
+#. i18n: file kornboxcfg.ui line 162
+#: rc.cpp:45
+#, no-c-format
+msgid "Normal"
+msgstr "Normal"
+
+#. i18n: file kornboxcfg.ui line 202
+#: rc.cpp:48
+#, no-c-format
+msgid "New Mail"
+msgstr "Yeni Posta"
+
+#. i18n: file kornboxcfg.ui line 213
+#: rc.cpp:51
+#, no-c-format
+msgid "Text:"
+msgstr "Metin:"
+
+#. i18n: file kornboxcfg.ui line 361
+#: rc.cpp:60
+#, no-c-format
+msgid "Animation:"
+msgstr "Canlandırma:"
+
+#. i18n: file kornboxcfg.ui line 369
+#: rc.cpp:63
+#, no-c-format
+msgid "Font:"
+msgstr "Yazı Tipi:"
+
+#. i18n: file kornboxcfg.ui line 738
+#: rc.cpp:81
+#, no-c-format
+msgid "Reset counter:"
+msgstr "Sayacı sıfırla:"
+
+#. i18n: file kornboxcfg.ui line 746
+#: rc.cpp:84
+#, no-c-format
+msgid "Mousebutton"
+msgstr "Fare Düğmesi"
+
+#. i18n: file kornboxcfg.ui line 861
+#: rc.cpp:87
+#, no-c-format
+msgid "Middle"
+msgstr "Orta"
+
+#. i18n: file kornboxcfg.ui line 924
+#: rc.cpp:90
+#, no-c-format
+msgid "Popup:"
+msgstr "Açılır pencere:"
+
+#. i18n: file kornboxcfg.ui line 984
+#: rc.cpp:93
+#, no-c-format
+msgid "View emails:"
+msgstr "E-postaları göster:"
+
+#. i18n: file kornboxcfg.ui line 1044
+#: rc.cpp:96
+#, no-c-format
+msgid "Recheck:"
+msgstr "Yeniden Denetle:"
+
+#. i18n: file kornboxcfg.ui line 1260
+#: rc.cpp:99
+#, no-c-format
+msgid "Run command:"
+msgstr "Komut çalıştır:"
+
+#. i18n: file kornboxcfg.ui line 1330
+#: rc.cpp:102
+#, no-c-format
+msgid "Co&mmand:"
+msgstr "&Komut:"
+
+#. i18n: file kornboxcfg.ui line 1351
+#: rc.cpp:105
+#, no-c-format
+msgid "On &New Mail"
+msgstr "&Yeni Posta Geldiğinde"
+
+#. i18n: file kornboxcfg.ui line 1375
+#: rc.cpp:108
+#, no-c-format
+msgid "&Run command:"
+msgstr "&Komut çalıştır:"
+
+#. i18n: file kornboxcfg.ui line 1391
+#: rc.cpp:111
+#, no-c-format
+msgid "Play &sound:"
+msgstr "&Ses çal:"
+
+#. i18n: file kornboxcfg.ui line 1415
+#: rc.cpp:117
+#, no-c-format
+msgid "Add da&te to passive popup"
+msgstr ""
+
+#. i18n: file kornboxcfg.ui line 1427
+#: rc.cpp:120
+#, no-c-format
+msgid "Acco&unts"
+msgstr "&Hesaplar"
+
+#. i18n: file kornboxcfg.ui line 1443
+#: rc.cpp:123
+#, no-c-format
+msgid "E&dit"
+msgstr "&Düzenle"
+
+#. i18n: file kornboxcfg.ui line 1453
+#: rc.cpp:126
+#, no-c-format
+msgid "&DCOP"
+msgstr "&DCOP"
+
+#. i18n: file kornboxcfg.ui line 1464
+#: rc.cpp:129
+#, no-c-format
+msgid "DCO&Objects"
+msgstr "DCO&Objects"
+
+#. i18n: file kornboxcfg.ui line 1467
+#: rc.cpp:132
+#, no-c-format
+msgid ""
+"The names of DCOP-objects by this box. DCOP-objects let other programs add "
+"'virtual' emails to the box."
+msgstr ""
+
+#. i18n: file korncfg.ui line 31
+#: rc.cpp:138
+#, no-c-format
+msgid "&Boxes"
+msgstr "K&utular"
+
+#. i18n: file korncfg.ui line 55
+#: rc.cpp:144
+#, no-c-format
+msgid "Use &KWallet if possible"
+msgstr "Mümkünse KWallet K&ullan"
+
+#. i18n: file korncfg.ui line 93
+#: rc.cpp:150
+#, no-c-format
+msgid "&Horizontal"
+msgstr "&Yatay"
+
+#. i18n: file korncfg.ui line 101
+#: rc.cpp:153
+#, no-c-format
+msgid "&Vertical"
+msgstr "&Dikey"
+
+#. i18n: file korncfg.ui line 109
+#: rc.cpp:156
+#, no-c-format
+msgid "&Docked"
+msgstr "&Yerleşik"
+
+#. i18n: file progress_dialog.ui line 16
+#: rc.cpp:159
+#, no-c-format
+msgid "Progress"
+msgstr "İlerleme"
+
+#: subjectsdlg.cpp:67
+msgid "&Invert Selection"
+msgstr "Seçimi &Tersine Çevir"
+
+#: subjectsdlg.cpp:68
+msgid "&Remove Selection"
+msgstr "Seçimi &Kaldır"
+
+#: subjectsdlg.cpp:70
+msgid "&Show"
+msgstr "&Göster"
+
+#: subjectsdlg.cpp:89
+msgid "Size (Bytes)"
+msgstr "Boyut (Bayt)"
+
+#: subjectsdlg.cpp:207
+#, c-format
+msgid "Mails in Box: %1"
+msgstr "Kutudaki Posta: %1"
+
+#: subjectsdlg.cpp:251
+msgid "Rechecking box..."
+msgstr "Kutu yeniden denetleniyor..."
+
+#: subjectsdlg.cpp:267
+msgid "Fetching messages..."
+msgstr "İletiler getiriliyor..."
+
+#: subjectsdlg.cpp:325
+msgid "Downloading subjects..."
+msgstr "Konular indiriliyor..."
+
+#: subjectsdlg.cpp:419
+#, c-format
+msgid ""
+"_n: Do you really want to delete %n message?\n"
+"Do you really want to delete %n messages?"
+msgstr "Gerçekten bu %n iletiyiu silmek istiyor musunuz?"
+
+#: subjectsdlg.cpp:421
+msgid "Confirmation"
+msgstr "Doğrulama"
+
+#: subjectsdlg.cpp:427
+msgid "Deleting mail; please wait...."
+msgstr "İleti siliniyor, lütfen bekleyin..."
+
+#, fuzzy
+#~ msgid "No protocol specified"
+#~ msgstr "<belirlenmemiş>"
+
+#, fuzzy
+#~ msgid "No server specified"
+#~ msgstr "<belirlenmemiş>"
+
+#, fuzzy
+#~ msgid "No username specified"
+#~ msgstr "<belirlenmemiş>"
+
+#, fuzzy
+#~ msgid "No mailbox specified"
+#~ msgstr "<belirlenmemiş>"
+
+#, fuzzy
+#~ msgid "Por&t:"
+#~ msgstr "Port:"
+
+#, fuzzy
+#~ msgid "Se&rver:"
+#~ msgstr "Sunucu:"
+
+#~ msgid "Identity"
+#~ msgstr "Kimlik"
+
+#, fuzzy
+#~ msgid "&Username:"
+#~ msgstr "Kullanıcı adı:"
+
+#, fuzzy
+#~ msgid "&Mailbox:"
+#~ msgstr "&Posta kutusu"
+
+#, fuzzy
+#~ msgid "Aut&hentication:"
+#~ msgstr "APOP kimlik denetimi kullan"
+
+#, fuzzy
+#~ msgid "Passwor&d:"
+#~ msgstr "Parola:"
+
+#, fuzzy
+#~ msgid "Sa&ve password"
+#~ msgstr "Parolayı kaydet:"
+
+#, fuzzy
+#~ msgid "Se&rver"
+#~ msgstr "Sunucu"
+
+#, fuzzy
+#~ msgid "Aut&hentication"
+#~ msgstr "APOP kimlik denetimi kullan"
+
+#, fuzzy
+#~ msgid "Icon"
+#~ msgstr "Simge:"
+
+#, fuzzy
+#~ msgid "Background"
+#~ msgstr "&Arkaplan:"
+
+#, fuzzy
+#~ msgid "Text"
+#~ msgstr "Metin:"
+
+#, fuzzy
+#~ msgid "Commands"
+#~ msgstr "&Komutlar"
+
+#~ msgid "&New mail:"
+#~ msgstr "&Yeni posta:"
+
+#~ msgid "C&lick:"
+#~ msgstr "&Tıkla:"
+
+#~ msgid "MBOX Monitor"
+#~ msgstr "MBOX Gözlemcisi"
+
+#~ msgid "Inbox"
+#~ msgstr "Gelen"
+
+#, fuzzy
+#~ msgid ""
+#~ "Mail Monitor was unable to automatically detect\n"
+#~ "your email settings. You need to configure mail\n"
+#~ "monitor for your email accounts. To do that,\n"
+#~ "right click on the applet in the panel tray and\n"
+#~ "select 'Configure Korn...'."
+#~ msgstr ""
+#~ "Posta Gözlemcisi e-posta ayarlarınızı otomatikmen\n"
+#~ "yapamamaktadır. Ayarlama için panel tepsisinde bulunan\n"
+#~ "programcığın üzerine sağ fare tuşu ile tıklayınız.\n"
+#~ "Ve gelecek menüden Korn'u Yapılandır'ı seçiniz...\n"
+
+#~ msgid "Mail Monitor"
+#~ msgstr "Posta Gözlemcisi"
+
+#~ msgid " (clone)"
+#~ msgstr " (klon)"
+
+#~ msgid "&Process"
+#~ msgstr "&Süreç"
+
+#~ msgid "Process"
+#~ msgstr "Süreç"
+
+#~ msgid "Shell command:"
+#~ msgstr "Kabuk komutu:"
+
+#~ msgid "Use color"
+#~ msgstr "Kullanım Rengi"
+
+#~ msgid "Use icon"
+#~ msgstr "Simge kullan"
+
+#~ msgid "Caption:"
+#~ msgstr "Başlık:"
+
+#~ msgid "Normal:"
+#~ msgstr "Normal:"
+
+#~ msgid "New mail:"
+#~ msgstr "Yeni posta:"
+
+#~ msgid "&Text:"
+#~ msgstr "&Metin:"
+
+#~ msgid "&Icon:"
+#~ msgstr "&Simge:"
+
+#~ msgid "&IMAP 4"
+#~ msgstr "&IMAP 4"
+
+#~ msgid "&News"
+#~ msgstr "&Haber Grubu"
+
+#~ msgid "&Display"
+#~ msgstr "&Görünüm"
+
+#~ msgid "&Modify..."
+#~ msgstr "&Değiştir"
+
+#~ msgid "&New..."
+#~ msgstr "&Yeni"
+
+#~ msgid "Co&py"
+#~ msgstr "&Kopyala"
+
+#~ msgid "<not specified>"
+#~ msgstr "<belirlenmemiş>"
+
+#~ msgid "New Monitor"
+#~ msgstr "Yeni Gözlemci"
+
+#~ msgid "&Poll"
+#~ msgstr "Y&oklama"
+
+#~ msgid "Check frequency (sec):"
+#~ msgstr "Kontrol aralığı (san):"
+
+#~ msgid "Use APOP authentication"
+#~ msgstr "APOP kimlik denetimi kullan"
+
+#~ msgid "&Maildir"
+#~ msgstr "Po&sta dizini"
+
+#~ msgid "Maildir path:"
+#~ msgstr "Posta dizini yolu:"
+
+#~ msgid ""
+#~ "You do not appear to have used KOrn before.\n"
+#~ "Would you like a basic configuration created for you?"
+#~ msgstr ""
+#~ "Daha önce KOrn'u hiç kullanmamış görünüyorsunuz.\n"
+#~ "Sizin için temel bir yapılandırma oluşturmamı ister misiniz?"
+
+#~ msgid "Welcome to KOrn"
+#~ msgstr "KOrn'a hoşgeldiniz"
+
+#~ msgid "No, Exit"
+#~ msgstr "Hayır, Çık"
+
+#~ msgid "Korn: Select Mailbox Type"
+#~ msgstr "Korn: Posta Kutusu Türünü Seçin"
+
+#~ msgid "Mailbox Type"
+#~ msgstr "Posta Kutusu Türü"
+
+#~ msgid "Mbox path:"
+#~ msgstr "Posta kutusu yolu:"
+
+#, fuzzy
+#~ msgid "Korn configuration"
+#~ msgstr "Başlık:"
+
+#, fuzzy
+#~ msgid "User name:"
+#~ msgstr "Kullanıcı adı:"
+
+#, fuzzy
+#~ msgid "Save Password:"
+#~ msgstr "Parolayı kaydet:"
+
+#~ msgid "Identity:"
+#~ msgstr "Kimlik:"
+
+#~ msgid "Browse"
+#~ msgstr "Gözat"
+
+#~ msgid "O&K"
+#~ msgstr "&Tamam"
+
+#~ msgid "Unable to find $MAIL environment variable. You'll have to configure the mailboxes yourself."
+#~ msgstr ""
+#~ "$MAIL çevre değişkeni bulunamıyor. Posta kutularını kendiniz\n"
+#~ "yapılandırmak zorunda kalacaksınız."
+
+#, fuzzy
+#~ msgid "Can't Find Mailbox"
+#~ msgstr "Posta kutusu bulunamıyor"

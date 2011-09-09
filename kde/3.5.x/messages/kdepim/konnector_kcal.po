@@ -1,0 +1,26 @@
+# translation of konnector_kcal.po to Türkçe
+# Görkem Çetin <gorkem@kde.org.tr>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: konnector_kcal\n"
+"POT-Creation-Date: 2005-01-24 01:35+0100\n"
+"PO-Revision-Date: 2005-05-02 12:51+0000\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org.tr>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: kcalkonnector.cpp:68
+msgid "Calendar"
+msgstr "Takvim"
+
+#: kcalkonnector.cpp:112
+msgid "Calendar Konnector"
+msgstr "Takvim Bağlantısı"
+
+#: kcalkonnectorconfig.cpp:76
+msgid "Select the calendar you want to sync with:"
+msgstr "Eşzamanlama yapmak istediğiniz takvimi seçin:"

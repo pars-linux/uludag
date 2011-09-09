@@ -1,0 +1,4531 @@
+# translation of kalzium.po to
+# Copyright (C) 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# Halil Erensu <halil@superonline.com>, 2003.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004.
+# Engin Çağatay <engincagatay@yahoo.com>, 2004, 2005.
+# Ayşe Genç <ayse@uludag.org.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kalzium\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-08 01:24+0200\n"
+"PO-Revision-Date: 2007-05-20 17:32+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Halil Erensu, Engin ÇAĞATAY, Ayşe GENÇ"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "halilerensu@yahoo.com, engincagatay@yahoo.com, ayse@uludag.org.tr"
+
+#: detailedgraphicaloverview.cpp:67
+msgid "No element selected"
+msgstr "Bir element seçilmedi"
+
+#: detailinfodlg.cpp:51
+msgid ""
+"_: Next element\n"
+"Next"
+msgstr "Sonraki"
+
+#: detailinfodlg.cpp:52
+msgid ""
+"_: Previous element\n"
+"Previous"
+msgstr "Önceki"
+
+#: detailinfodlg.cpp:71
+msgid "Goes to the previous element"
+msgstr "Bir önceki elemente gider"
+
+#: detailinfodlg.cpp:72
+msgid "Goes to the next element"
+msgstr "Bir sonraki elemente gider"
+
+#: detailinfodlg.cpp:125
+#, c-format
+msgid "Block: %1"
+msgstr "Blok: %1"
+
+#: detailinfodlg.cpp:132
+#, fuzzy, c-format
+msgid "Electronic configuration: %1"
+msgstr "Elektronegatiflik: %1"
+
+#: detailinfodlg.cpp:135
+#, c-format
+msgid "Density: %1"
+msgstr "Yoğunluk: %1"
+
+#: detailinfodlg.cpp:138
+#, c-format
+msgid "Covalent Radius: %1"
+msgstr "Kolavent Yarıçapı: %1"
+
+#: detailinfodlg.cpp:143
+msgid "<b>Ionic Radius (Charge): %1</b> (%2)"
+msgstr ""
+
+#: detailinfodlg.cpp:149
+#, c-format
+msgid "van der Waals Radius: %1"
+msgstr "van der Waals Yarıçapı: %1"
+
+#: detailinfodlg.cpp:156
+#, c-format
+msgid "Atomic Radius: %1"
+msgstr "Atom Yarıçapı: %1"
+
+#: detailinfodlg.cpp:161 kalziumtip.cpp:133
+#, c-format
+msgid "Mass: %1"
+msgstr "Kütle: %1"
+
+#: detailinfodlg.cpp:174
+#, c-format
+msgid "It was discovered by %1"
+msgstr "Bu element %1 tarafından keşfedildi"
+
+#: detailinfodlg.cpp:179
+msgid "Abundance in crustal rocks: %1 ppm"
+msgstr ""
+
+#: detailinfodlg.cpp:184
+msgid "Mean mass: %1 u"
+msgstr "Ortalama kütle: %1 u"
+
+#: detailinfodlg.cpp:189
+#, c-format
+msgid "Origin of the name: %1"
+msgstr "İsmin kökeni: %1"
+
+#: detailinfodlg.cpp:196
+msgid "This element is artificial"
+msgstr "Bu element yapaydır"
+
+#: detailinfodlg.cpp:198
+msgid "This element is radioactive"
+msgstr "Bu element radyoaktiftir"
+
+#: detailinfodlg.cpp:200
+msgid "This element is radioactive and artificial"
+msgstr "Bu element yapay ve radyoaktiftir"
+
+#: detailinfodlg.cpp:206
+#, c-format
+msgid "Melting Point: %1"
+msgstr "Erime Noktası: %1"
+
+#: detailinfodlg.cpp:209
+#, c-format
+msgid "Boiling Point: %1"
+msgstr "Kaynama Noktası: %1"
+
+#: detailinfodlg.cpp:212
+#, c-format
+msgid "Electronegativity: %1"
+msgstr "Elektronegatiflik: %1"
+
+#: detailinfodlg.cpp:215
+msgid "Electron affinity: %1 "
+msgstr ""
+
+#: detailinfodlg.cpp:224
+msgid ""
+"_: the first variable is a number. The result is for example '1.' or '5.', the "
+"second is the value of the ionisation energy\n"
+"%1. Ionization energy: %2"
+msgstr "%1. İyonlaşma enerjisi: %2"
+
+#: detailinfodlg.cpp:243
+msgid "Isotope-Table"
+msgstr "İzotop-Tablosu"
+
+#. i18n: file plotsetupwidget.ui line 200
+#: detailinfodlg.cpp:245 rc.cpp:60 rc.cpp:1229 rc.cpp:1331
+#, no-c-format
+msgid "Mass"
+msgstr "Kütle"
+
+#: detailinfodlg.cpp:247
+msgid "Neutrons"
+msgstr "Nötronlar"
+
+#: detailinfodlg.cpp:249
+msgid "Percentage"
+msgstr "Yüzde"
+
+#: detailinfodlg.cpp:251
+msgid "Half-life period"
+msgstr "Yarı-ömür süresi"
+
+#: detailinfodlg.cpp:253
+#, fuzzy
+msgid "Energy and Mode of Decay"
+msgstr "Bozulmadan Kalanın türü ve Enerjisi"
+
+#: detailinfodlg.cpp:255
+msgid "Spin and Parity"
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 153
+#: detailinfodlg.cpp:257 rc.cpp:1352
+#, no-c-format
+msgid "Magnetic Moment"
+msgstr ""
+
+#: detailinfodlg.cpp:267 element.cpp:204
+msgid "%1 u"
+msgstr "%1 u"
+
+#: detailinfodlg.cpp:273
+msgid ""
+"_: this can for example be '24%'\n"
+"%1%"
+msgstr "%%1"
+
+#: detailinfodlg.cpp:281 detailinfodlg.cpp:290 detailinfodlg.cpp:299
+#: detailinfodlg.cpp:303 detailinfodlg.cpp:313
+#, fuzzy
+msgid "%1 MeV"
+msgstr "%1 eV"
+
+#: detailinfodlg.cpp:282
+#, c-format
+msgid " %1"
+msgstr " %1"
+
+#: detailinfodlg.cpp:284 detailinfodlg.cpp:293 detailinfodlg.cpp:308
+#: detailinfodlg.cpp:316
+msgid "(%1%)"
+msgstr "(%1%)"
+
+#: detailinfodlg.cpp:286 detailinfodlg.cpp:295
+msgid ", "
+msgstr ","
+
+#: detailinfodlg.cpp:291
+#, fuzzy
+msgid " %1<sup>-</sup>"
+msgstr "%1 kg/m<sup>3</sup>"
+
+#: detailinfodlg.cpp:300
+#, fuzzy
+msgid " %1<sup>+</sup>"
+msgstr "%1 kg/m<sup>3</sup>"
+
+#: detailinfodlg.cpp:305 detailinfodlg.cpp:314
+msgid ""
+"_: Acronym of Electron Capture\n"
+" EC"
+msgstr ""
+
+#: detailinfodlg.cpp:323
+#, fuzzy
+msgid "%1 %2<sub>n</sub>"
+msgstr "%1<sub>%2</sub>"
+
+#: detailinfodlg.cpp:337 kalzium.cpp:219
+msgid "Overview"
+msgstr "Genel Bakış"
+
+#: detailinfodlg.cpp:344
+msgid "Picture"
+msgstr "Resim"
+
+#: detailinfodlg.cpp:344
+msgid "What does this element look like?"
+msgstr "Bu element neye benziyor?"
+
+#: detailinfodlg.cpp:352
+msgid "Atom Model"
+msgstr "Atom Modeli"
+
+#: detailinfodlg.cpp:359
+msgid "Chemical Data"
+msgstr "Kimyasal Veri"
+
+#: detailinfodlg.cpp:360
+msgid "Energies"
+msgstr "Enerjiler"
+
+#: detailinfodlg.cpp:360
+msgid "Energy Information"
+msgstr "Enerji Bilgisi"
+
+#: detailinfodlg.cpp:364
+msgid "Spectrum"
+msgstr ""
+
+#: detailinfodlg.cpp:382
+msgid ""
+"_: For example Carbon (6)\n"
+"%1 (%2)"
+msgstr "%1 (%2)"
+
+#: detailinfodlg.cpp:398
+msgid "No picture of %1 found."
+msgstr "%1 için resim bulunamadı."
+
+#: detailinfodlg.cpp:403
+msgid "Here you can see the atomic hull of %1. %2 has the configuration %3."
+msgstr "Burada %1 atom kabuğunu göreblirisiniz. %2, %3 biçimindedir."
+
+#: detailinfodlg.cpp:425
+#, fuzzy
+msgid "No spectrum of %1 found."
+msgstr "%1 için resim bulunamadı."
+
+#: element.cpp:64
+msgid ""
+"_: structure means orbital configuration in this case\n"
+"Unknown structure"
+msgstr "Bilinmeyen yapı"
+
+#: element.cpp:107 element.cpp:147 element.cpp:202 element.cpp:211
+msgid "Value unknown"
+msgstr "Değer bilinmiyor"
+
+#: element.cpp:109
+msgid ""
+"_: %1 is a length, eg: 12.3 pm\n"
+"%1 pm"
+msgstr "%1 pm"
+
+#: element.cpp:154
+msgid ""
+"_: %1 is the temperature in Kelvin\n"
+"%1 K"
+msgstr "%1 K"
+
+#: element.cpp:157
+#, fuzzy
+msgid ""
+"_: %1 is the temperature in Celsius\n"
+"%1 %2C"
+msgstr "%1 C"
+
+#: element.cpp:160
+#, fuzzy
+msgid ""
+"_: %1 is the temperature in Fahrenheit\n"
+"%1 %2F"
+msgstr "%1 F"
+
+#: element.cpp:163
+#, fuzzy
+msgid ""
+"_: %1 is the temperature in Rankine\n"
+"%1 %2Ra"
+msgstr "%1 F"
+
+#: element.cpp:166
+#, fuzzy
+msgid ""
+"_: %1 is the temperature in Reaumur\n"
+"%1 %2R"
+msgstr "%1 C"
+
+#: element.cpp:175 element.cpp:184
+msgid "Value not defined"
+msgstr "Değer tanımlanmamış"
+
+#: element.cpp:189
+msgid "%1 kJ/mol"
+msgstr "%1 kJ/mol"
+
+#: element.cpp:194
+msgid "%1 eV"
+msgstr "%1 eV"
+
+#: element.cpp:216
+msgid "%1 g/L"
+msgstr "%1 g/L"
+
+#: element.cpp:220
+msgid "%1 g/cm<sup>3</sup>"
+msgstr "%1 g/cm<sup>3</sup>"
+
+#: element.cpp:229
+msgid "This element was known to ancient cultures"
+msgstr "Bu element eski uygarlıklar tarafından bilinmekteydi"
+
+#: element.cpp:233
+#, c-format
+msgid "This element was discovered in the year %1"
+msgstr "Bu element %1 yılında keşfedildi"
+
+#: element.cpp:434
+msgid ""
+"_: this means, the element has its 'own' structur\n"
+"own"
+msgstr ""
+
+#: element.cpp:436
+msgid ""
+"_: Crystalsystem body centered cubic\n"
+"bcc"
+msgstr ""
+
+#: element.cpp:438
+msgid ""
+"_: Crystalsystem hexagonal dense packed\n"
+"hdp"
+msgstr ""
+
+#: element.cpp:440
+msgid ""
+"_: Crystalsystem cubic close packed\n"
+"ccp"
+msgstr ""
+
+#: elementdataviewer.cpp:35
+msgid "Plot Data"
+msgstr "Veriyi Çiz"
+
+#: elementdataviewer.cpp:69
+msgid "&Plot"
+msgstr "&Çiz"
+
+#: elementdataviewer.cpp:178
+msgid "Atomic Mass [u]"
+msgstr "Atom Kütlesi [u]"
+
+#: elementdataviewer.cpp:188
+msgid "Mean Mass [u]"
+msgstr "Ortalama Kütle [u]"
+
+#. i18n: file plotsetupwidget.ui line 210
+#: elementdataviewer.cpp:198 kalzium.cpp:125 rc.cpp:66
+#, no-c-format
+msgid "Density"
+msgstr "Yoğunluk"
+
+#. i18n: file plotsetupwidget.ui line 215
+#: elementdataviewer.cpp:208 kalzium.cpp:128 rc.cpp:69
+#, no-c-format
+msgid "Electronegativity"
+msgstr "Eksiçekerlik (ing. electronegativity)"
+
+#: elementdataviewer.cpp:218
+msgid "Melting Point [K]"
+msgstr "Erime Sıcaklığı [K]"
+
+#: elementdataviewer.cpp:228
+msgid "Boiling Point [K]"
+msgstr "Kaynama Sıcaklığı [K]"
+
+#: elementdataviewer.cpp:238
+msgid "Atomic Radius [pm]"
+msgstr "Atom Yarıçapı [pm]"
+
+#: elementdataviewer.cpp:248
+msgid "Covalent Radius [pm]"
+msgstr "Kovalent Yarıçapı [pm]"
+
+#: eqchemview.cpp:77
+msgid "Settings changed"
+msgstr "Ayarlar değişti"
+
+#: eqchemview.cpp:108
+msgid "Solve Chemical Equations"
+msgstr ""
+
+#: isotope.cpp:55
+msgid "%1 million years"
+msgstr "%1 milyon yıl"
+
+#: isotope.cpp:57
+msgid "%1 billion years"
+msgstr "%1 milyar yıl"
+
+#: isotope.cpp:59 isotope.cpp:72
+msgid "%1 years"
+msgstr "%1 yıl"
+
+#: isotope.cpp:64
+msgid "%1 seconds"
+msgstr "%1 saniye"
+
+#: isotope.cpp:66
+msgid "%1 minutes"
+msgstr "%1 dakika"
+
+#: isotope.cpp:68
+msgid "%1 hours"
+msgstr "%1 saat"
+
+#: isotope.cpp:70
+msgid "%1 days"
+msgstr "%1 gün"
+
+#: kalzium.cpp:96
+msgid "Knowledge"
+msgstr ""
+
+#: kalzium.cpp:101
+msgid "Tools"
+msgstr "Araçlar"
+
+#. i18n: file settings_colors.ui line 877
+#: kalzium.cpp:110 rc.cpp:189
+#, no-c-format
+msgid "&No Color Scheme"
+msgstr "&Renk Şeması Yok"
+
+#: kalzium.cpp:113
+msgid "Show &Groups"
+msgstr "Grupları &Göster"
+
+#: kalzium.cpp:114
+msgid "Show &Blocks"
+msgstr "&Blokları Göster"
+
+#: kalzium.cpp:115
+msgid "Show &Acid Behavior"
+msgstr "&Asit Davranışını Göster"
+
+#: kalzium.cpp:116
+msgid "Show &Family"
+msgstr ""
+
+#: kalzium.cpp:117
+msgid "Show &Crystal Structures"
+msgstr "&Kristal Yapıları Göster"
+
+#. i18n: file plotsetupwidget.ui line 230
+#: kalzium.cpp:121 rc.cpp:78 rc.cpp:1506 rc.cpp:1521 rc.cpp:1527 rc.cpp:1548
+#, no-c-format
+msgid "Atomic Radius"
+msgstr "Atom Yarıçapı"
+
+#. i18n: file plotsetupwidget.ui line 235
+#: kalzium.cpp:122 rc.cpp:81 rc.cpp:1503 rc.cpp:1518 rc.cpp:1533 rc.cpp:1542
+#, no-c-format
+msgid "Covalent Radius"
+msgstr "Kovalent Yarıçapı"
+
+#: kalzium.cpp:123
+msgid "van der Waals Radius"
+msgstr "van der Waals Yarıçapı"
+
+#. i18n: file data/knowledge.xml line 131
+#: kalzium.cpp:124 rc.cpp:1322
+#, no-c-format
+msgid "Atomic Mass"
+msgstr "Atom Kütlesi"
+
+#. i18n: file plotsetupwidget.ui line 225
+#: kalzium.cpp:126 rc.cpp:75
+#, no-c-format
+msgid "Boiling Point"
+msgstr "Kaynama Noktası"
+
+#. i18n: file plotsetupwidget.ui line 220
+#: kalzium.cpp:127 rc.cpp:72
+#, no-c-format
+msgid "Melting Point"
+msgstr "Erime Noktası"
+
+#: kalzium.cpp:129
+msgid "Electron Affinity"
+msgstr "Elektron İlgis"
+
+#: kalzium.cpp:130
+msgid "&Gradient"
+msgstr ""
+
+#: kalzium.cpp:136
+msgid "No N&umeration"
+msgstr "&Numaralandırma Yok"
+
+#: kalzium.cpp:137
+msgid "Show &IUPAC"
+msgstr "&IUPAC Göster"
+
+#: kalzium.cpp:138
+msgid "Show &CAS"
+msgstr "&CAS Göster"
+
+#: kalzium.cpp:139
+msgid "Show &Old IUPAC"
+msgstr "&Eski IUPAC Göster"
+
+#: kalzium.cpp:140
+msgid "&Numeration"
+msgstr "&Numaralandırma"
+
+#: kalzium.cpp:145 kalzium.cpp:172 kalzium.cpp:321
+msgid "Show &Sidebar"
+msgstr "Yan Çubuğu Gö&ster"
+
+#: kalzium.cpp:148
+msgid "&Equation Solver..."
+msgstr ""
+
+#: kalzium.cpp:152
+msgid "&Plot Data..."
+msgstr "Veriyi Ç&iz..."
+
+#: kalzium.cpp:153
+msgid "&Glossary..."
+msgstr ""
+
+#: kalzium.cpp:156 kalzium.cpp:181 kalzium.cpp:298
+msgid "Show &Legend"
+msgstr "&Göstergeyi Görüntüle"
+
+#: kalzium.cpp:157
+msgid "Show &Tooltip"
+msgstr "İpuçlarını Gös&ter"
+
+#: kalzium.cpp:168 kalzium.cpp:327
+msgid "Hide &Sidebar"
+msgstr "Yan Çubuğu Gi&zle"
+
+#: kalzium.cpp:177 kalzium.cpp:303
+#, fuzzy
+msgid "Hide &Legend"
+msgstr "&Göstergeyi Görüntüle"
+
+#: kalzium.cpp:186 kalzium.cpp:283
+#, fuzzy
+msgid "Hide &Tooltips"
+msgstr "İpuçlarını Gös&ter"
+
+#: kalzium.cpp:190 kalzium.cpp:285
+#, fuzzy
+msgid "Show &Tooltips"
+msgstr "İpuçlarını Gös&ter"
+
+#: kalzium.cpp:205
+msgid "Sidebar"
+msgstr "Yan Çubuk"
+
+#: kalzium.cpp:222
+msgid "Calculate"
+msgstr "Hesapla"
+
+#: kalzium.cpp:231
+msgid "Timeline"
+msgstr "Zaman çizelgesi"
+
+#: kalzium.cpp:236
+msgid "State of Matter"
+msgstr "Maddenin Hali"
+
+#: kalzium.cpp:403
+msgid "Colors"
+msgstr "Renkler"
+
+#: kalzium.cpp:404
+msgid "Units"
+msgstr "Birimler"
+
+#: kalzium.cpp:425
+msgid ""
+"_: For example: \"Carbon (6), Mass: 12.0107 u\"\n"
+"%1 (%2), Mass: %3 u"
+msgstr "%1 (%2), Kütle: %3 u"
+
+#: kalziumtip.cpp:130
+#, c-format
+msgid "Number: %1"
+msgstr "Numara: %1"
+
+#: main.cpp:30
+msgid "A periodic table of the elements"
+msgstr "Elementleri gösteren periyodik cetvel"
+
+#: main.cpp:52
+msgid "Kalzium"
+msgstr "Kalzium"
+
+#: main.cpp:55
+msgid "Code contributions"
+msgstr "Kod katkıları"
+
+#: main.cpp:56
+msgid "Tooltip, some other small things"
+msgstr "İpucu bölümleri, diğer küçük şeyler"
+
+#: main.cpp:57
+msgid "Contributed EqChem, the equation solver"
+msgstr ""
+
+#: main.cpp:58
+msgid "Contributed most isotope information"
+msgstr ""
+
+#: main.cpp:59
+msgid "Thank you for some icons and inspiration for others"
+msgstr "Bazı simgeler için teşekkür ederim"
+
+#: main.cpp:60
+#, fuzzy
+msgid "SVG icon"
+msgstr "Silikon"
+
+#: main.cpp:61
+msgid "A lot of small things and the documentation"
+msgstr "Pek çok küçük detay ve belgelendirme"
+
+#: main.cpp:62
+msgid "The pictures of the elements iodine and bromine"
+msgstr "İyot ve brom elementlerinin resimleri"
+
+#: main.cpp:63
+msgid "Almost all pictures of the elements"
+msgstr "Elementlerin hemen hemen tüm resimleri"
+
+#: main.cpp:64
+msgid "The design of the information dialog"
+msgstr "Bilgi iletişim kutusunun tasarımı"
+
+#: main.cpp:65
+msgid "The orbits-icon"
+msgstr ""
+
+#: main.cpp:66
+msgid "Several icons in the information dialog"
+msgstr "Bilgi iletişim kutusundaki bazı simgeler"
+
+#: main.cpp:67
+msgid "Code cleaning, the molecule parser and a lot of smaller improvements"
+msgstr ""
+
+#: molcalcwidget.cpp:61
+msgid ""
+"To start, enter\n"
+"a formula in the\n"
+"widget above and\n"
+"click on 'Calc'."
+msgstr ""
+
+#: molcalcwidget.cpp:84
+#, fuzzy
+msgid ""
+"_: For example: \"1 Carbon\" or \"3 Oxygen\"\n"
+"%1 %2\n"
+msgstr "%1 %2."
+
+#: molcalcwidget.cpp:90
+msgid ""
+"_: For example: 1 Seaborgium. Cumulative Mass: 263.119 u (39.25%)\n"
+"%1 %2. Cumulative Mass: %3 u (%4%)\n"
+msgstr ""
+
+#: molcalcwidget.cpp:103
+#, fuzzy
+msgid "Molecular mass: %1 u"
+msgstr "Molekül Kütlesi: %1 u"
+
+#: molcalcwidget.cpp:110 molcalcwidget.cpp:114 molcalcwidget.cpp:115
+#: molcalcwidget.cpp:116
+msgid "Invalid input"
+msgstr ""
+
+#: molcalcwidget.cpp:128
+#, fuzzy
+msgid "%1<sub>%2</sub> "
+msgstr "%1<sub>%2</sub>"
+
+#: periodictableview.cpp:446
+msgid ""
+"The periodic table can be split up into four areas:\n"
+" the s-, p-, d- and f-Block. The name indicates which orbit\n"
+" is being filled last. For example, all elements in the s-block\n"
+" fill up the s-orbits."
+msgstr ""
+"Periyodik cetvel dört alana bölünebilir:\n"
+"s-, p-, d- ve f- blokları. Blok adı, hangi orbitalin en son dolduğunu\n"
+"belirtir. Örneğin, s-bloğundaki tüm elementlerde s-orbitalleri en son\n"
+"dolmuştur."
+
+#: periodictableview.cpp:449
+msgid ""
+"The periodic table can be split up into groups:\n"
+" All elements in a group show similar behaviour"
+msgstr ""
+"Periyodik cetvel gruplara bölünebilir:\n"
+"Bir gruptaki tüm elementler benzer davranış gösterirler"
+
+#: periodictableview.cpp:452
+msgid ""
+"The periodic table can be split up in groups of \n"
+"elements with different acidic behaviour."
+msgstr ""
+"Periyodik cetvel, değişik asidik davranışlı elementler \n"
+"olarak gruplara bölünebilir."
+
+#: periodictableview.cpp:455
+msgid "The periodic table can be split up into several families."
+msgstr ""
+
+#: periodictableview.cpp:585
+msgid "Solid"
+msgstr "Katı"
+
+#: periodictableview.cpp:586
+msgid "Liquid"
+msgstr "Sıvı"
+
+#: periodictableview.cpp:587
+msgid "Vaporous"
+msgstr "Gaz"
+
+#: periodictableview.cpp:604
+msgid "Group 1"
+msgstr "1. Grup"
+
+#: periodictableview.cpp:605
+msgid "Group 2"
+msgstr "2. Grup"
+
+#: periodictableview.cpp:606
+msgid "Group 3"
+msgstr "3. Grup"
+
+#: periodictableview.cpp:607
+msgid "Group 4"
+msgstr "4. Grup"
+
+#: periodictableview.cpp:608
+msgid "Group 5"
+msgstr "5. Grup"
+
+#: periodictableview.cpp:609
+msgid "Group 6"
+msgstr "6. Grup"
+
+#: periodictableview.cpp:610
+msgid "Group 7"
+msgstr "7. Grup"
+
+#: periodictableview.cpp:611
+msgid "Group 8"
+msgstr "8. Grup"
+
+#: periodictableview.cpp:619
+msgid "s-Block"
+msgstr "s-Bloğu"
+
+#: periodictableview.cpp:620
+msgid "p-Block"
+msgstr "p-Bloğu"
+
+#: periodictableview.cpp:621
+msgid "d-Block"
+msgstr "d-Bloğu"
+
+#: periodictableview.cpp:622
+msgid "f-Block"
+msgstr "f-Bloğu"
+
+#: periodictableview.cpp:630
+msgid "Basic"
+msgstr "Bazik"
+
+#: periodictableview.cpp:631
+msgid "Neutral"
+msgstr "Nötr"
+
+#: periodictableview.cpp:632
+msgid "Acidic"
+msgstr "Asidik"
+
+#: periodictableview.cpp:633
+msgid ""
+"_: both acidic and basic behaviour\n"
+"Amphoteric"
+msgstr "Amfoter"
+
+#: periodictableview.cpp:646
+msgid "Alkaline"
+msgstr "Alkali"
+
+#: periodictableview.cpp:647
+msgid "Rare Earth"
+msgstr ""
+
+#: periodictableview.cpp:648
+msgid "Non-Metals"
+msgstr "Ametaller"
+
+#: periodictableview.cpp:649
+msgid "Alkalie-Metals"
+msgstr "Alkali-Metaller"
+
+#: periodictableview.cpp:650
+msgid "Other Metal"
+msgstr ""
+
+#: periodictableview.cpp:651
+msgid "Halogene"
+msgstr "Halojen"
+
+#: periodictableview.cpp:652
+msgid "Transition Metal"
+msgstr "Geçiş Metali"
+
+#: periodictableview.cpp:653
+msgid "Noble Gas"
+msgstr "Soy Gaz"
+
+#: periodictableview.cpp:654
+msgid "Metalloid"
+msgstr ""
+
+#: periodictableview.cpp:663
+msgid "Own"
+msgstr ""
+
+#: periodictableview.cpp:664
+msgid "bcc, body centered cubic"
+msgstr ""
+
+#: periodictableview.cpp:665
+msgid "hdp, hexagonal"
+msgstr ""
+
+#: periodictableview.cpp:666
+msgid "ccp, cubic close packed"
+msgstr ""
+
+#: periodictableview.cpp:667
+msgid "Unknown"
+msgstr "Bilinmeyen"
+
+#: periodictableview.cpp:995
+msgid "Gradient: Atomic Radius"
+msgstr ""
+
+#: periodictableview.cpp:1007 periodictableview.cpp:1117
+msgid "Gradient: van der Waals Radius"
+msgstr ""
+
+#: periodictableview.cpp:1019
+msgid "Gradient: Covalent Radius"
+msgstr ""
+
+#: periodictableview.cpp:1031
+msgid "Gradient: Atomic Mass"
+msgstr ""
+
+#: periodictableview.cpp:1041
+msgid "Gradient: Atomic Density"
+msgstr ""
+
+#: periodictableview.cpp:1051
+msgid "Gradient: Boiling point"
+msgstr ""
+
+#: periodictableview.cpp:1061
+msgid "Gradient: Melting point"
+msgstr ""
+
+#: periodictableview.cpp:1071
+msgid "Gradient: Electronegativity"
+msgstr ""
+
+#: periodictableview.cpp:1081
+msgid "Gradient: Electron affinity"
+msgstr ""
+
+#: periodictableview.cpp:1181
+msgid ""
+"_: It means: Not Available. Translators: keep it as short as you can!\n"
+"N/A"
+msgstr "YOK"
+
+#. i18n: file kalziumui.rc line 9
+#: rc.cpp:9
+#, no-c-format
+msgid "&Look"
+msgstr "&Görünüm"
+
+#. i18n: file molcalcwidgetbase.ui line 40
+#: rc.cpp:21
+#, fuzzy, no-c-format
+msgid "Calc"
+msgstr "Kalsiyum"
+
+#. i18n: file plotsetupwidget.ui line 24
+#: rc.cpp:24
+#, no-c-format
+msgid "First element:"
+msgstr "İlk element:"
+
+#. i18n: file plotsetupwidget.ui line 40
+#: rc.cpp:27
+#, fuzzy, no-c-format
+msgid "Average value:"
+msgstr "Ortalama Değer:"
+
+#. i18n: file plotsetupwidget.ui line 67
+#: rc.cpp:30
+#, no-c-format
+msgid "Define the last element whose value should be plotted"
+msgstr "Değeri gösterilecek son elementi belirtin"
+
+#. i18n: file plotsetupwidget.ui line 83
+#: rc.cpp:33
+#, fuzzy, no-c-format
+msgid "Minimum value:"
+msgstr "En Küçük Değer:"
+
+#. i18n: file plotsetupwidget.ui line 101
+#: rc.cpp:36
+#, no-c-format
+msgid "&Show element names"
+msgstr "Element isimlerini &göster"
+
+#. i18n: file plotsetupwidget.ui line 104
+#: rc.cpp:39
+#, no-c-format
+msgid "Define whether the names of the plotted element should be displayed"
+msgstr ""
+"Gösterilen elementin isimlerinin gösterilip gösterilmeyeceğini tanımlayın"
+
+#. i18n: file plotsetupwidget.ui line 112
+#: rc.cpp:42
+#, no-c-format
+msgid "Last element:"
+msgstr "Son element:"
+
+#. i18n: file plotsetupwidget.ui line 128
+#: rc.cpp:45
+#, fuzzy, no-c-format
+msgid "Maximum value:"
+msgstr "En Büyük Değer:"
+
+#. i18n: file plotsetupwidget.ui line 146
+#: rc.cpp:48
+#, no-c-format
+msgid "&Connect points"
+msgstr "&Bağlantı noktaları"
+
+#. i18n: file plotsetupwidget.ui line 149
+#: rc.cpp:51
+#, no-c-format
+msgid "Define whether the plotted points should be connected or not"
+msgstr "Gösterilen noktaların birleştirilip birleştirilmeyeceğini tanımlayın"
+
+#. i18n: file plotsetupwidget.ui line 166
+#: rc.cpp:54
+#, no-c-format
+msgid "Define the first element whose value should be plotted"
+msgstr "Değeri gösterilecek ilk elementi belirtin"
+
+#. i18n: file plotsetupwidget.ui line 191
+#: rc.cpp:57
+#, fuzzy, no-c-format
+msgid "Y-axis"
+msgstr "Y ekseni:"
+
+#. i18n: file plotsetupwidget.ui line 205
+#: rc.cpp:63
+#, no-c-format
+msgid "Mean Mass"
+msgstr "Ortalama Kütle"
+
+#. i18n: file plotsetupwidget.ui line 242
+#: rc.cpp:84
+#, no-c-format
+msgid "Here you can define what you want to plot"
+msgstr "Burada neyi çizmek istediğinizi belirleyebilirsiniz"
+
+#. i18n: file settings_colors.ui line 16
+#: rc.cpp:87
+#, no-c-format
+msgid "Set Colors"
+msgstr "Renkleri Tanımla"
+
+#. i18n: file settings_colors.ui line 31
+#: rc.cpp:90
+#, no-c-format
+msgid "&Blocks"
+msgstr "Bloklar"
+
+#. i18n: file settings_colors.ui line 58
+#: rc.cpp:93
+#, no-c-format
+msgid "s-Block:"
+msgstr "s-Bloğu:"
+
+#. i18n: file settings_colors.ui line 84
+#: rc.cpp:96
+#, no-c-format
+msgid "p-Block:"
+msgstr "p-Bloğu:"
+
+#. i18n: file settings_colors.ui line 110
+#: rc.cpp:99
+#, no-c-format
+msgid "d-Block:"
+msgstr "d-Bloğu:"
+
+#. i18n: file settings_colors.ui line 136
+#: rc.cpp:102
+#, no-c-format
+msgid "f-Block:"
+msgstr "f-Bloğu:"
+
+#. i18n: file settings_colors.ui line 158
+#: rc.cpp:105
+#, no-c-format
+msgid "Ac&id Behavior"
+msgstr "Asit Davranışı"
+
+#. i18n: file settings_colors.ui line 185
+#: rc.cpp:108
+#, no-c-format
+msgid "Acidic:"
+msgstr "Asidik:"
+
+#. i18n: file settings_colors.ui line 211
+#: rc.cpp:111
+#, no-c-format
+msgid "Amphoteric:"
+msgstr "Amfoterik:"
+
+#. i18n: file settings_colors.ui line 237
+#: rc.cpp:114
+#, no-c-format
+msgid "Neutral:"
+msgstr "Nötr:"
+
+#. i18n: file settings_colors.ui line 263
+#: rc.cpp:117
+#, no-c-format
+msgid "Basic:"
+msgstr "Bazik:"
+
+#. i18n: file settings_colors.ui line 285
+#: rc.cpp:120
+#, no-c-format
+msgid "&Groups"
+msgstr "Gruplar"
+
+#. i18n: file settings_colors.ui line 312
+#: rc.cpp:123
+#, no-c-format
+msgid "Group 1:"
+msgstr "1. Grup:"
+
+#. i18n: file settings_colors.ui line 338
+#: rc.cpp:126
+#, no-c-format
+msgid "Group 2:"
+msgstr "2. Grup:"
+
+#. i18n: file settings_colors.ui line 364
+#: rc.cpp:129
+#, no-c-format
+msgid "Group 3:"
+msgstr "3. Grup:"
+
+#. i18n: file settings_colors.ui line 390
+#: rc.cpp:132
+#, no-c-format
+msgid "Group 4:"
+msgstr "4. Grup:"
+
+#. i18n: file settings_colors.ui line 416
+#: rc.cpp:135
+#, no-c-format
+msgid "Group 5:"
+msgstr "5. Grup:"
+
+#. i18n: file settings_colors.ui line 442
+#: rc.cpp:138
+#, no-c-format
+msgid "Group 6:"
+msgstr "6. Grup:"
+
+#. i18n: file settings_colors.ui line 468
+#: rc.cpp:141
+#, no-c-format
+msgid "Group 7:"
+msgstr "7. Grup:"
+
+#. i18n: file settings_colors.ui line 494
+#: rc.cpp:144
+#, no-c-format
+msgid "Group 8:"
+msgstr "8. Grup:"
+
+#. i18n: file settings_colors.ui line 516
+#: rc.cpp:147
+#, no-c-format
+msgid "&State of Matter"
+msgstr "Maddenin Hali"
+
+#. i18n: file settings_colors.ui line 543
+#: rc.cpp:150
+#, no-c-format
+msgid "Solid:"
+msgstr "Katı:"
+
+#. i18n: file settings_colors.ui line 572
+#: rc.cpp:153
+#, no-c-format
+msgid "Liquid:"
+msgstr "Sıvı:"
+
+#. i18n: file settings_colors.ui line 598
+#: rc.cpp:156
+#, no-c-format
+msgid "Vaporous:"
+msgstr "Buharlı:"
+
+#. i18n: file settings_colors.ui line 620
+#: rc.cpp:159
+#, no-c-format
+msgid "Family"
+msgstr ""
+
+#. i18n: file settings_colors.ui line 647
+#: rc.cpp:162
+#, fuzzy, no-c-format
+msgid "Alkali metals:"
+msgstr "Alkali Metaller:"
+
+#. i18n: file settings_colors.ui line 673
+#: rc.cpp:165
+#, no-c-format
+msgid "Rare earth:"
+msgstr ""
+
+#. i18n: file settings_colors.ui line 699
+#: rc.cpp:168
+#, fuzzy, no-c-format
+msgid "Non-metals:"
+msgstr "Ametaller"
+
+#. i18n: file settings_colors.ui line 725
+#: rc.cpp:171
+#, fuzzy, no-c-format
+msgid "Alkaline earth metals:"
+msgstr "Toprak Alkali Metaller:"
+
+#. i18n: file settings_colors.ui line 751
+#: rc.cpp:174
+#, fuzzy, no-c-format
+msgid "Other metals:"
+msgstr "Diğer Metaller:"
+
+#. i18n: file settings_colors.ui line 777
+#: rc.cpp:177
+#, no-c-format
+msgid "Halogens:"
+msgstr "Halojenler:"
+
+#. i18n: file settings_colors.ui line 803
+#: rc.cpp:180
+#, fuzzy, no-c-format
+msgid "Transition metals:"
+msgstr "Geçiş Elementleri:"
+
+#. i18n: file settings_colors.ui line 829
+#: rc.cpp:183
+#, fuzzy, no-c-format
+msgid "Noble gases:"
+msgstr "Soy Gazlar:"
+
+#. i18n: file settings_colors.ui line 855
+#: rc.cpp:186
+#, no-c-format
+msgid "Metalloids:"
+msgstr ""
+
+#. i18n: file settings_colors.ui line 891
+#: rc.cpp:192 rc.cpp:195
+#, no-c-format
+msgid "This color will be used if no other scheme is selected"
+msgstr "Eğer başka bir renk şablonu seçilmezse bu renk kullanılacak"
+
+#. i18n: file settings_misc.ui line 24
+#: rc.cpp:198
+#, no-c-format
+msgid "PSE-Look"
+msgstr ""
+
+#. i18n: file settings_misc.ui line 38
+#: rc.cpp:201
+#, no-c-format
+msgid "Display atomic &mass in the PSE"
+msgstr ""
+
+#. i18n: file settings_misc.ui line 46
+#: rc.cpp:204
+#, no-c-format
+msgid "Display &only the number of the element"
+msgstr "&Sadece elementin numarasını göster"
+
+#. i18n: file settings_units.ui line 24
+#: rc.cpp:207
+#, no-c-format
+msgid "&Temperatures"
+msgstr "Sıcaklıklar"
+
+#. i18n: file settings_units.ui line 27
+#: rc.cpp:210
+#, no-c-format
+msgid "Kalzium can show you the temperature in three different scales"
+msgstr "Kalzium sıcaklığı size üç değişik ölçüde gösterebilir"
+
+#. i18n: file settings_units.ui line 38
+#: rc.cpp:213
+#, no-c-format
+msgid "&Use Kelvin"
+msgstr "Kelvin k&ullan"
+
+#. i18n: file settings_units.ui line 44
+#: rc.cpp:216
+#, no-c-format
+msgid "If selected, the temperatures will be displayed in Kelvin"
+msgstr "Seçilirse, sıcaklıklar Kelvin cinsinden gösterilecek"
+
+#. i18n: file settings_units.ui line 47
+#: rc.cpp:219
+#, no-c-format
+msgid ""
+"If selected, the temperatures will be displayed in Kelvin. This is then saved "
+"in configuration and restored next time you start Kalzium."
+msgstr ""
+"Seçilirse, sıcaklıklar Kelvin cinsinden gösterilecek. Bu ayarlama, yapılandırma "
+"içine kaydedilecek ve Kalzium'u bir daha çalıştırdığınızda yine yüklenecek."
+
+#. i18n: file settings_units.ui line 55
+#: rc.cpp:222
+#, no-c-format
+msgid "Use degrees &Fahrenheit"
+msgstr "Fahrenhayt Derece kullan"
+
+#. i18n: file settings_units.ui line 61
+#: rc.cpp:225
+#, no-c-format
+msgid "If selected, the temperatures will be displayed in Degrees Fahrenheit"
+msgstr "Seçilirse, sıcaklıklar Fahrenhayt Derece cinsinden gösterilecek"
+
+#. i18n: file settings_units.ui line 64
+#: rc.cpp:228
+#, no-c-format
+msgid ""
+"If selected, the temperatures will be displayed in Degrees Fahrenheit. This is "
+"then saved in configuration and restored next time you start Kalzium."
+msgstr ""
+"Seçilirse, sıcaklıklar Fahrenhayt Derece cinsinden gösterilecek. Bu ayarlama "
+"Yapılandırma içine kaydedilecek ve Kalziumu bir daha çalıştırdığınızda yine "
+"yüklenecek."
+
+#. i18n: file settings_units.ui line 72
+#: rc.cpp:231
+#, fuzzy, no-c-format
+msgid "Use degrees R&ankine"
+msgstr "Fahrenhayt Derece kullan"
+
+#. i18n: file settings_units.ui line 78
+#: rc.cpp:234
+#, fuzzy, no-c-format
+msgid "If selected, the temperatures will be displayed in Degrees Rankine"
+msgstr "Seçilirse, sıcaklıklar Fahrenhayt Derece cinsinden gösterilecek"
+
+#. i18n: file settings_units.ui line 81
+#: rc.cpp:237
+#, fuzzy, no-c-format
+msgid ""
+"If selected, the temperatures will be displayed in Degrees Rankine. This is "
+"then saved in configuration and restored next time you start Kalzium."
+msgstr ""
+"Seçilirse, sıcaklıklar Fahrenhayt Derece cinsinden gösterilecek. Bu ayarlama "
+"Yapılandırma içine kaydedilecek ve Kalziumu bir daha çalıştırdığınızda yine "
+"yüklenecek."
+
+#. i18n: file settings_units.ui line 89
+#: rc.cpp:240
+#, fuzzy, no-c-format
+msgid "Use degrees &Réaumur"
+msgstr "Fahrenhayt Derece kullan"
+
+#. i18n: file settings_units.ui line 95
+#: rc.cpp:243
+#, fuzzy, no-c-format
+msgid "If selected, the temperatures will be displayed in Degrees Réaumur."
+msgstr "Seçilirse, sıcaklıklar Santigrat Derece cinsinden gösterilecek"
+
+#. i18n: file settings_units.ui line 98
+#: rc.cpp:246
+#, fuzzy, no-c-format
+msgid ""
+"If selected, the temperatures will be displayed in Degrees Réaumur. This is "
+"then saved in configuration and restored next time you start Kalzium."
+msgstr ""
+"Seçilirse, sıcaklıklar Santigrat Derece cinsinden gösterilecek. Bu ayarlama "
+"Yapılandırma içine kaydedilecek ve Kalziumu bir daha çalıştırdığınızda yine "
+"yüklenecek."
+
+#. i18n: file settings_units.ui line 106
+#: rc.cpp:249
+#, no-c-format
+msgid "Use de&grees Celsius"
+msgstr "Santigrat Derece kullan"
+
+#. i18n: file settings_units.ui line 112
+#: rc.cpp:252
+#, no-c-format
+msgid "If selected, the temperatures will be displayed in Degrees Celsius"
+msgstr "Seçilirse, sıcaklıklar Santigrat Derece cinsinden gösterilecek"
+
+#. i18n: file settings_units.ui line 115
+#: rc.cpp:255
+#, no-c-format
+msgid ""
+"If selected, the temperatures will be displayed in Degrees Celsius. This is "
+"then saved in configuration and restored next time you start Kalzium."
+msgstr ""
+"Seçilirse, sıcaklıklar Santigrat Derece cinsinden gösterilecek. Bu ayarlama "
+"Yapılandırma içine kaydedilecek ve Kalziumu bir daha çalıştırdığınızda yine "
+"yüklenecek."
+
+#. i18n: file settings_units.ui line 125
+#: rc.cpp:258
+#, no-c-format
+msgid "Units of &Energies"
+msgstr "&Enerjilerin Birimleri"
+
+#. i18n: file settings_units.ui line 139
+#: rc.cpp:261
+#, no-c-format
+msgid "&Show energies in kJ/mol (kilojoule per mol)"
+msgstr "Enerjileri kJ/mol (mol başına kilojoule) cinsinden göster"
+
+#. i18n: file settings_units.ui line 142
+#: rc.cpp:264
+#, no-c-format
+msgid "Chose the energy unit as kJ/mol (kilojoule per mol)"
+msgstr "Enerji ünitesini kj/mol (mol başına kilojoule) cinsinden seç"
+
+#. i18n: file settings_units.ui line 145
+#: rc.cpp:267
+#, no-c-format
+msgid ""
+"Check this if you prefer the energy unit in  kJ/mol (kilojoule per mol). The "
+"other choice you have is eV (electronvolt)."
+msgstr ""
+"Enerji ünitesini kj/mol cinsinden tercih ediyorsanız bunu seçin. Diğer "
+"seçeneğiniz ise eV'dir (elektronvolt)."
+
+#. i18n: file settings_units.ui line 153
+#: rc.cpp:270
+#, no-c-format
+msgid "Show energies &in eV (electronvolt)"
+msgstr "Enerjiler&i eV (elektronvolt) cinsinden göster"
+
+#. i18n: file settings_units.ui line 156
+#: rc.cpp:273
+#, no-c-format
+msgid "Choose the energy unit as eV (electronvolt)"
+msgstr "Enerji ünitesini eV (elektronvolt) cinsinden seç"
+
+#. i18n: file settings_units.ui line 159
+#: rc.cpp:276
+#, no-c-format
+msgid ""
+"Check this if you prefer the energy unit in eV (electronvolt). The other choice "
+"you have is kJ/mol (kilojoule per mol)."
+msgstr ""
+"Enerji ünitesini eV cinsinden tercih ediyorsanız bunu seçin. Diğer seçeneğiniz "
+"ise kj/mol'dür (mol başına kilojoule)"
+
+#. i18n: file somwidget.ui line 48
+#: rc.cpp:279
+#, no-c-format
+msgid ""
+"Move the slider\n"
+"to find out about\n"
+"the state of matter"
+msgstr ""
+
+#. i18n: file somwidget.ui line 81
+#: rc.cpp:284
+#, no-c-format
+msgid "Temperature:"
+msgstr "Sıcaklık:"
+
+#. i18n: file spectrumview.ui line 16
+#: rc.cpp:287
+#, no-c-format
+msgid ""
+"This page gives an overview about the spectrum this element. With the mouse you "
+"can zoom into the spectrum."
+msgstr ""
+
+#. i18n: file spectrumview.ui line 19
+#: rc.cpp:290
+#, no-c-format
+msgid "This page gives an overview about the spectrum this element"
+msgstr ""
+
+#. i18n: file spectrumview.ui line 33
+#: rc.cpp:293 rc.cpp:296
+#, fuzzy, no-c-format
+msgid "This is the spectrum of the element"
+msgstr "&Sadece elementin numarasını göster"
+
+#. i18n: file spectrumview.ui line 52
+#: rc.cpp:299
+#, fuzzy, no-c-format
+msgid "&Minimum value:"
+msgstr "En Küçük Değer:"
+
+#. i18n: file spectrumview.ui line 72
+#: rc.cpp:302 rc.cpp:305
+#, no-c-format
+msgid "This sets the leftmost wavelength of the spectrum"
+msgstr ""
+
+#. i18n: file spectrumview.ui line 83
+#: rc.cpp:308
+#, fuzzy, no-c-format
+msgid "Maximum &value:"
+msgstr "En Büyük Değer:"
+
+#. i18n: file spectrumview.ui line 103
+#: rc.cpp:311 rc.cpp:314
+#, no-c-format
+msgid "This sets the rightmost wavelength of the spectrum"
+msgstr ""
+
+#. i18n: file spectrumview.ui line 144
+#: rc.cpp:317 rc.cpp:320
+#, no-c-format
+msgid "Using this button you can export the spectrum as a graphic"
+msgstr ""
+
+#. i18n: file timewidget.ui line 57
+#: rc.cpp:323
+#, no-c-format
+msgid "Year:"
+msgstr "Yıl:"
+
+#. i18n: file timewidget.ui line 173
+#: rc.cpp:326
+#, no-c-format
+msgid ""
+"Move the slider\n"
+"to find out about\n"
+"the discovery dates\n"
+"of the elements"
+msgstr ""
+
+#. i18n: file kalzium.kcfg line 9
+#: rc.cpp:332
+#, no-c-format
+msgid "Selects the PSE"
+msgstr ""
+
+#. i18n: file kalzium.kcfg line 10
+#: rc.cpp:335
+#, no-c-format
+msgid "Select the PSE you want"
+msgstr "İstediğiniz PSE 'yi  seçin"
+
+#. i18n: file kalzium.kcfg line 14
+#: rc.cpp:338
+#, no-c-format
+msgid "Selects the default color scheme"
+msgstr "Öntanımlı renk şablonunu seçer"
+
+#. i18n: file kalzium.kcfg line 15
+#: rc.cpp:341
+#, no-c-format
+msgid ""
+"Select the color scheme you prefer by clicking on the corresponding radio "
+"button"
+msgstr "Tercih ettiğiniz renk şablonunu uygun radyo düğmesine tıklayarak seçin"
+
+#. i18n: file kalzium.kcfg line 19
+#: rc.cpp:344
+#, no-c-format
+msgid "Selects the default gradient"
+msgstr ""
+
+#. i18n: file kalzium.kcfg line 20
+#: rc.cpp:347
+#, no-c-format
+msgid "Select the gradient you want by clicking on the menu entry"
+msgstr ""
+
+#. i18n: file kalzium.kcfg line 24
+#: rc.cpp:350
+#, no-c-format
+msgid "Selects the default numeration (IUPAC)"
+msgstr "Öntanımlı numaralandırmayı (IUPAC) seçer"
+
+#. i18n: file kalzium.kcfg line 25
+#: rc.cpp:353
+#, no-c-format
+msgid "Select the numeration you want"
+msgstr "İstediğiniz numaralandırmayı seçin"
+
+#. i18n: file kalzium.kcfg line 29
+#: rc.cpp:356 rc.cpp:359
+#, no-c-format
+msgid "Show or hide the legend"
+msgstr "Göstergeyi göster ya da gizle"
+
+#. i18n: file kalzium.kcfg line 34
+#: rc.cpp:362 rc.cpp:365
+#, no-c-format
+msgid "Show or hide the tooltips"
+msgstr "İpuçlarını göster ya da gizle"
+
+#. i18n: file kalzium.kcfg line 39
+#: rc.cpp:368
+#, no-c-format
+msgid "whether the atomic mass will be displayed in the PSE-Table"
+msgstr ""
+
+#. i18n: file kalzium.kcfg line 40
+#: rc.cpp:371
+#, no-c-format
+msgid "Display the atomic mass in the PSE"
+msgstr ""
+
+#. i18n: file kalzium.kcfg line 46
+#: rc.cpp:374
+#, no-c-format
+msgid "Selects the color if no scheme is selected"
+msgstr "Eğer  bir şablon seçilmemişse rengi seçer"
+
+#. i18n: file kalzium.kcfg line 47
+#: rc.cpp:377
+#, no-c-format
+msgid "Selects the color of the elements if no scheme is selected"
+msgstr "Eğer bir şablon seçilmemişse elementlerin rengini seçer"
+
+#. i18n: file kalzium.kcfg line 51
+#: rc.cpp:380 rc.cpp:383
+#, no-c-format
+msgid "Selects the color of liquid elements"
+msgstr "Sıvı elementlerin rengi seçer"
+
+#. i18n: file kalzium.kcfg line 56
+#: rc.cpp:386 rc.cpp:389
+#, no-c-format
+msgid "Selects the color of solid elements"
+msgstr "Katı elementlerin rengini seçer"
+
+#. i18n: file kalzium.kcfg line 61
+#: rc.cpp:392 rc.cpp:395
+#, no-c-format
+msgid "Selects the color of vaporous elements"
+msgstr "Gaz elementlerin rengini seçer"
+
+#. i18n: file kalzium.kcfg line 66
+#: rc.cpp:398 rc.cpp:401
+#, no-c-format
+msgid "Selects the color of radioactive elements"
+msgstr "Radyoaktif elementlerin rengini seçer"
+
+#. i18n: file kalzium.kcfg line 71
+#: rc.cpp:404 rc.cpp:407
+#, no-c-format
+msgid "Selects the color of artificial elements"
+msgstr "Yapay elementlerin rengini seçer"
+
+#. i18n: file kalzium.kcfg line 76
+#: rc.cpp:410 rc.cpp:413
+#, no-c-format
+msgid "Selects the color of the elements in block s"
+msgstr "s bloğundaki elementlerin rengini seçer"
+
+#. i18n: file kalzium.kcfg line 81
+#: rc.cpp:416 rc.cpp:419
+#, no-c-format
+msgid "Selects the color of the elements in block p"
+msgstr "p bloğundaki elementlerin rengini seçer"
+
+#. i18n: file kalzium.kcfg line 86
+#: rc.cpp:422 rc.cpp:425
+#, no-c-format
+msgid "Selects the color of the elements in block d"
+msgstr "d bloğundaki elementlerin rengini seçer"
+
+#. i18n: file kalzium.kcfg line 91
+#: rc.cpp:428 rc.cpp:431
+#, no-c-format
+msgid "Selects the color of the elements in block f"
+msgstr "f bloğundaki elementlerin rengini seçer"
+
+#. i18n: file kalzium.kcfg line 96
+#: rc.cpp:434 rc.cpp:437
+#, no-c-format
+msgid "Selects the color of the elements in group 1"
+msgstr "1. gruptaki elementlerin rengini seçer"
+
+#. i18n: file kalzium.kcfg line 101
+#: rc.cpp:440 rc.cpp:443
+#, no-c-format
+msgid "Selects the color of the elements in group 2"
+msgstr "2. gruptaki elementlerin rengini seçer"
+
+#. i18n: file kalzium.kcfg line 106
+#: rc.cpp:446 rc.cpp:449
+#, no-c-format
+msgid "Selects the color of the elements in group 3"
+msgstr "3. gruptaki elementlerin rengini seçer"
+
+#. i18n: file kalzium.kcfg line 111
+#: rc.cpp:452 rc.cpp:455
+#, no-c-format
+msgid "Selects the color of the elements in group 4"
+msgstr "4. gruptaki elementlerin rengini seçer"
+
+#. i18n: file kalzium.kcfg line 116
+#: rc.cpp:458 rc.cpp:461
+#, no-c-format
+msgid "Selects the color of the elements in group 5"
+msgstr "5. gruptaki elementlerin rengini seçer"
+
+#. i18n: file kalzium.kcfg line 121
+#: rc.cpp:464 rc.cpp:467
+#, no-c-format
+msgid "Selects the color of the elements in group 6"
+msgstr "6. gruptaki elementlerin rengini seçer"
+
+#. i18n: file kalzium.kcfg line 126
+#: rc.cpp:470 rc.cpp:473
+#, no-c-format
+msgid "Selects the color of the elements in group 7"
+msgstr "7. gruptaki elementlerin rengini seçer"
+
+#. i18n: file kalzium.kcfg line 131
+#: rc.cpp:476 rc.cpp:479
+#, no-c-format
+msgid "Selects the color of the elements in group 8"
+msgstr "8. gruptaki elementlerin rengini seçer"
+
+#. i18n: file kalzium.kcfg line 136
+#: rc.cpp:482 rc.cpp:485
+#, no-c-format
+msgid "Selects the color of the elements with acidic behaviour"
+msgstr "Asidik davranış gösteren elementlerin rengini seçer"
+
+#. i18n: file kalzium.kcfg line 141
+#: rc.cpp:488 rc.cpp:491
+#, no-c-format
+msgid "Selects the color of the elements with basic behaviour"
+msgstr "Temel davranış gösteren elementlerin rengini seçer"
+
+#. i18n: file kalzium.kcfg line 146
+#: rc.cpp:494 rc.cpp:497
+#, no-c-format
+msgid "Selects the color of the elements with amphoteric behaviour"
+msgstr "Amfoter davranış gösteren elementlerin rengini seçer"
+
+#. i18n: file kalzium.kcfg line 151
+#: rc.cpp:500 rc.cpp:503
+#, no-c-format
+msgid "Selects the color of the elements with neutral behaviour"
+msgstr "Nötr davranış gösteren elementlerin rengini seçer"
+
+#. i18n: file kalzium.kcfg line 156
+#: rc.cpp:506 rc.cpp:509
+#, no-c-format
+msgid "Selects the color of the alkali metals"
+msgstr "Alkali metallerin rengini seçer"
+
+#. i18n: file kalzium.kcfg line 161
+#: rc.cpp:512 rc.cpp:515
+#, no-c-format
+msgid "Selects the color of the rare-earth elements"
+msgstr ""
+
+#. i18n: file kalzium.kcfg line 166
+#: rc.cpp:518 rc.cpp:521
+#, no-c-format
+msgid "Selects the color of the non-metal elements"
+msgstr "Ametal elementlerin rengini seçer"
+
+#. i18n: file kalzium.kcfg line 171
+#: rc.cpp:524 rc.cpp:527
+#, no-c-format
+msgid "Selects the color of the alkaline earth metals"
+msgstr "Toprak alkali metallerin rengini seçer"
+
+#. i18n: file kalzium.kcfg line 176
+#: rc.cpp:530 rc.cpp:533
+#, no-c-format
+msgid ""
+"Selects the color of the metals which do not fit into the other categories"
+msgstr "Diğer kategorilere koyamadığınız metallerin rengini seçer"
+
+#. i18n: file kalzium.kcfg line 181
+#: rc.cpp:536 rc.cpp:539
+#, no-c-format
+msgid "Selects the color of the halogen elements"
+msgstr "Holojen elementlerin rengini seçer"
+
+#. i18n: file kalzium.kcfg line 186
+#: rc.cpp:542 rc.cpp:545
+#, no-c-format
+msgid "Selects the color of the transition elements"
+msgstr "Geçiş elementlerinin rengini seçer"
+
+#. i18n: file kalzium.kcfg line 191
+#: rc.cpp:548 rc.cpp:551
+#, no-c-format
+msgid "Selects the color of the noble gases"
+msgstr "Soy gazların rengini seçer"
+
+#. i18n: file kalzium.kcfg line 196
+#: rc.cpp:554 rc.cpp:557
+#, no-c-format
+msgid "Selects the color of the metalloid elements"
+msgstr ""
+
+#. i18n: file kalzium.kcfg line 203
+#: rc.cpp:560
+#, no-c-format
+msgid "This value defines whether eV or kJ/mol should be used within Kalzium"
+msgstr ""
+"Bu değer, Kalzium ile eV'nin mi yoksa kj/mol'ün mü kullanacağını tanımlar"
+
+#. i18n: file kalzium.kcfg line 204
+#: rc.cpp:563
+#, no-c-format
+msgid "Use eV or kJ/mol"
+msgstr "eV'yi ya da kj/mol'ü kulan"
+
+#. i18n: file kalzium.kcfg line 208
+#: rc.cpp:566
+#, no-c-format
+msgid ""
+"This value defines which temperature scale should be used within Kalzium"
+msgstr "Bu değer, Kalzium ile kullanılacak sıcaklık ölçüsünü tanımlar"
+
+#. i18n: file kalzium.kcfg line 209
+#: rc.cpp:569
+#, no-c-format
+msgid "Select the scale for the temperature"
+msgstr "Sıcaklık için ölçüyü seçin"
+
+#. i18n: file kalzium.kcfg line 215
+#: rc.cpp:572 rc.cpp:575
+#, no-c-format
+msgid "Show or hide the sidebar"
+msgstr "Yan Çubuğu göster ya da gizle"
+
+#. i18n: file data/data.xml line 11
+#: rc.cpp:577
+msgid "Greek 'hydro' and 'gennao' for 'forms water'"
+msgstr ""
+
+#. i18n: file data/data.xml line 59
+#: rc.cpp:579
+msgid "The Greek word for the sun was 'helios'"
+msgstr ""
+
+#. i18n: file data/data.xml line 114
+#: rc.cpp:581
+msgid "Greek 'lithos' means 'stone'"
+msgstr ""
+
+#. i18n: file data/data.xml line 163
+#: rc.cpp:583
+msgid "Greek 'beryllos' for 'light-green stone'"
+msgstr ""
+
+#. i18n: file data/data.xml line 214
+#: rc.cpp:585
+msgid ""
+"Boron means 'Bor(ax) + (carb)on'. It is found in borax and behaves a lot like "
+"carbon"
+msgstr ""
+
+#. i18n: file data/data.xml line 260
+#: rc.cpp:587
+msgid "Latin 'carboneum' for carbon"
+msgstr ""
+
+#. i18n: file data/data.xml line 321
+#: rc.cpp:589
+msgid "Latin 'nitrogenium' ('forms saltpeter')"
+msgstr ""
+
+#. i18n: file data/data.xml line 374
+#: rc.cpp:591
+msgid "Latin 'oxygenium' (forms acids)"
+msgstr ""
+
+#. i18n: file data/data.xml line 426
+#: rc.cpp:593
+msgid "Latin 'fluere' ('floats')"
+msgstr ""
+
+#. i18n: file data/data.xml line 479
+#: rc.cpp:595
+msgid "Greek 'neo'. meaning 'new'"
+msgstr ""
+
+#. i18n: file data/data.xml line 544
+#: rc.cpp:597
+msgid "Arabic 'natrun' for 'soda'"
+msgstr ""
+
+#. i18n: file data/data.xml line 595
+#: rc.cpp:599
+msgid "Named after the city of Magnesia"
+msgstr ""
+
+#. i18n: file data/data.xml line 648
+#: rc.cpp:601
+msgid "Latin 'alumen'"
+msgstr ""
+
+#. i18n: file data/data.xml line 697
+#: rc.cpp:603
+msgid "Latin 'silex'"
+msgstr ""
+
+#. i18n: file data/data.xml line 759
+#: rc.cpp:605
+msgid "Greek 'phosphoros' for 'carries light'"
+msgstr ""
+
+#. i18n: file data/data.xml line 816
+#: rc.cpp:607
+msgid "In sankskrit 'sweb' means 'to sleep'"
+msgstr ""
+
+#. i18n: file data/data.xml line 874
+#: rc.cpp:609
+msgid "Greek 'chloros' for 'yellow-green'"
+msgstr ""
+
+#. i18n: file data/data.xml line 924
+#: rc.cpp:611
+msgid "Greek 'aergon' for 'inactive'"
+msgstr ""
+
+#. i18n: file data/data.xml line 982
+#: rc.cpp:613
+msgid "Arabic 'al qaliy' for potash"
+msgstr ""
+
+#. i18n: file data/data.xml line 1025
+#: rc.cpp:615
+msgid "Latin 'calx' for 'lime'"
+msgstr ""
+
+#. i18n: file data/data.xml line 1079
+#: rc.cpp:617
+msgid "Named because it was found in Scandinavia"
+msgstr ""
+
+#. i18n: file data/data.xml line 1126
+#: rc.cpp:619
+msgid "The Titans were giants in Greek mythology"
+msgstr ""
+
+#. i18n: file data/data.xml line 1181
+#: rc.cpp:621
+msgid "'Vanadis' is another name for the Nordic goddess Freyja"
+msgstr ""
+
+#. i18n: file data/data.xml line 1233
+#: rc.cpp:623
+msgid "Greek 'chroma' means 'color'"
+msgstr ""
+
+#. i18n: file data/data.xml line 1279
+#: rc.cpp:625
+msgid ""
+"It was discovered near a town named Magnesia in a black earth. Thus. it was "
+"named 'magnesia nigra'. short: Manganese"
+msgstr ""
+
+#. i18n: file data/data.xml line 1325
+#: rc.cpp:627
+msgid "Latin 'ferrum'"
+msgstr ""
+
+#. i18n: file data/data.xml line 1382
+#: rc.cpp:629
+msgid "Named after the German word 'Kobold' for 'goblin'"
+msgstr ""
+
+#. i18n: file data/data.xml line 1433
+#: rc.cpp:631
+msgid "'Nickel' was the name of a mountain goblin"
+msgstr ""
+
+#. i18n: file data/data.xml line 1489
+#: rc.cpp:633
+msgid "Greek 'cuprum' for Cypres"
+msgstr ""
+
+#. i18n: file data/data.xml line 1540
+#: rc.cpp:635
+msgid "German 'zinking' for 'rough'. because zinc ore is very rough"
+msgstr ""
+
+#. i18n: file data/data.xml line 1592
+#: rc.cpp:637
+msgid "'Gallia' is an old name for France"
+msgstr ""
+
+#. i18n: file data/data.xml line 1634
+#: rc.cpp:639
+msgid "Latin 'germania' is an old name for Germany"
+msgstr ""
+
+#. i18n: file data/data.xml line 1688
+#: rc.cpp:641
+msgid "Greek 'arsenikos' for 'male' or 'bold'"
+msgstr ""
+
+#. i18n: file data/data.xml line 1733
+#: rc.cpp:643
+msgid "Greek 'selena' for 'moon'"
+msgstr ""
+
+#. i18n: file data/data.xml line 1784
+#: rc.cpp:645
+msgid "Greek 'bromos' for 'smells badly'"
+msgstr ""
+
+#. i18n: file data/data.xml line 1830
+#: rc.cpp:647
+msgid "Greek 'kryptos' for 'hidden'"
+msgstr ""
+
+#. i18n: file data/data.xml line 1884
+#: rc.cpp:649
+msgid "Latin 'rubidus' for 'dark red'"
+msgstr ""
+
+#. i18n: file data/data.xml line 1926
+#: rc.cpp:651
+msgid "Named after the mineral Strontianit"
+msgstr ""
+
+#. i18n: file data/data.xml line 1978
+#: rc.cpp:653
+msgid ""
+"Named after the small town of Ytterby near Stockholm in Sweden. Terbium. "
+"Ytterbium and Gadolinium are also named after this town."
+msgstr ""
+
+#. i18n: file data/data.xml line 2023
+#: rc.cpp:655
+msgid "Named after the mineral zircon"
+msgstr ""
+
+#. i18n: file data/data.xml line 2082
+#: rc.cpp:657
+msgid "Named after Niobe. the daughter of the Greek god Tantalus"
+msgstr ""
+
+#. i18n: file data/data.xml line 2133
+#: rc.cpp:659
+msgid ""
+"This name has Greek roots. It means 'like Platinum' - it was difficult to "
+"distinguish Molybdenum from Platinum."
+msgstr ""
+
+#. i18n: file data/data.xml line 2190
+#: rc.cpp:661
+msgid "Greek 'technetos' for artificial"
+msgstr ""
+
+#. i18n: file data/data.xml line 2240
+#: rc.cpp:663
+msgid "Ruthenia is the old name of Russia"
+msgstr ""
+
+#. i18n: file data/data.xml line 2293
+#: rc.cpp:665
+msgid "Greek 'rhodeos' means 'red like a rose'"
+msgstr ""
+
+#. i18n: file data/data.xml line 2337
+#: rc.cpp:667
+msgid "Named after the planetoid Pallas"
+msgstr ""
+
+#. i18n: file data/data.xml line 2391
+#: rc.cpp:669
+msgid "Latin 'argentum' for silver"
+msgstr ""
+
+#. i18n: file data/data.xml line 2432
+#: rc.cpp:671
+msgid "Greek 'kadmia' ('Galmei' = Zinc carbonate)"
+msgstr ""
+
+#. i18n: file data/data.xml line 2486
+#: rc.cpp:673
+msgid "Named after 'Indigo' because of its blue spectrum"
+msgstr ""
+
+#. i18n: file data/data.xml line 2536
+#: rc.cpp:675
+msgid "Latin 'stannum' for tin"
+msgstr ""
+
+#. i18n: file data/data.xml line 2599
+#: rc.cpp:677
+msgid "Arabic 'anthos ammonos' for 'blossom of the god Ammon'"
+msgstr ""
+
+#. i18n: file data/data.xml line 2649
+#: rc.cpp:679
+msgid "Latin 'tellus' or 'telluris' for 'Planet Earth'"
+msgstr ""
+
+#. i18n: file data/data.xml line 2707
+#: rc.cpp:681
+msgid "Greek 'ioeides' for 'violett'"
+msgstr ""
+
+#. i18n: file data/data.xml line 2752
+#: rc.cpp:683
+msgid "Greek 'xenos' for 'foreigner'"
+msgstr ""
+
+#. i18n: file data/data.xml line 2809
+#: rc.cpp:685
+msgid "Latin 'caesius' for 'heavenblue'"
+msgstr ""
+
+#. i18n: file data/data.xml line 2854
+#: rc.cpp:687
+msgid "Greek 'barys' for 'heavy'"
+msgstr ""
+
+#. i18n: file data/data.xml line 2910
+#: rc.cpp:689
+msgid ""
+"Greek 'lanthanein' for 'hidden'. The Lanthanoids are also called the 'rare "
+"earth'"
+msgstr ""
+
+#. i18n: file data/data.xml line 2965
+#: rc.cpp:691
+msgid "Named after the planetoid Ceres"
+msgstr ""
+
+#. i18n: file data/data.xml line 3007
+#: rc.cpp:693
+msgid "Greek 'prasinos didymos' for 'green twin'"
+msgstr ""
+
+#. i18n: file data/data.xml line 3041
+#: rc.cpp:695
+msgid "Greek 'neos didymos' for 'new twin'"
+msgstr ""
+
+#. i18n: file data/data.xml line 3080
+#: rc.cpp:697
+msgid ""
+"Named after the greek Prometheus. Prometheus stole the fire from the gods and "
+"gave it to mankind."
+msgstr ""
+
+#. i18n: file data/data.xml line 3115
+#: rc.cpp:699
+msgid "Named after the mineral Samarskit"
+msgstr ""
+
+#. i18n: file data/data.xml line 3156
+#: rc.cpp:701
+msgid "Named after Europe"
+msgstr ""
+
+#. i18n: file data/data.xml line 3189
+#: rc.cpp:703
+msgid "Named after the Finnish chemist Johan Gadolin"
+msgstr ""
+
+#. i18n: file data/data.xml line 3229
+#: rc.cpp:705
+msgid "Named after the Swedish town of Ytterby"
+msgstr ""
+
+#. i18n: file data/data.xml line 3262
+#: rc.cpp:707
+msgid "Greek 'dysprositor' for 'difficult to reach'"
+msgstr ""
+
+#. i18n: file data/data.xml line 3301
+#: rc.cpp:709
+msgid "Latin 'holmia' for the old name of Stockholm"
+msgstr ""
+
+#. i18n: file data/data.xml line 3335
+#: rc.cpp:711
+msgid ""
+"Named ofter the Swedish town of Ytterby. Terbium and Ytterbium are also named "
+"after this town."
+msgstr ""
+
+#. i18n: file data/data.xml line 3374
+#: rc.cpp:713
+msgid "Named after the old name of Scandinavia. 'Thule'"
+msgstr ""
+
+#. i18n: file data/data.xml line 3408
+#: rc.cpp:715
+msgid ""
+"Like Terbium and Gadolinium. this is named after the Swedish town of Ytterby"
+msgstr ""
+
+#. i18n: file data/data.xml line 3449
+#: rc.cpp:717
+msgid "Named after the Roman name 'Lutetia' for Paris"
+msgstr ""
+
+#. i18n: file data/data.xml line 3485
+#: rc.cpp:719
+msgid "'Hafnia' is the old name of Kopenhagen (Denmark)"
+msgstr ""
+
+#. i18n: file data/data.xml line 3525
+#: rc.cpp:721
+msgid "Named after the Greek myth of Tantalos"
+msgstr ""
+
+#. i18n: file data/data.xml line 3561
+#: rc.cpp:723
+msgid ""
+"'tung sten' means 'heavy stone' in Swedish. The old name (and thus the symbol "
+"'W') was Wolfram. named after a mineral"
+msgstr ""
+
+#. i18n: file data/data.xml line 3602
+#: rc.cpp:725
+msgid "Named after the German river Rhine (latin 'Rhenium')"
+msgstr ""
+
+#. i18n: file data/data.xml line 3640
+#: rc.cpp:727
+msgid "Greek for 'smell'. Its oxides smell strongly like radishes"
+msgstr ""
+
+#. i18n: file data/data.xml line 3683
+#: rc.cpp:729
+msgid "Greek 'iris' for 'rainbow'"
+msgstr ""
+
+#. i18n: file data/data.xml line 3720
+#: rc.cpp:731
+msgid "Spanish 'platina' means 'small silver'"
+msgstr ""
+
+#. i18n: file data/data.xml line 3761
+#: rc.cpp:733
+msgid "Latin 'aurum'. named after Aurora. the goddess of sunrise"
+msgstr ""
+
+#. i18n: file data/data.xml line 3799
+#: rc.cpp:735
+msgid "Graeco-Latin 'hydrargyrum' for 'liquid silver'"
+msgstr ""
+
+#. i18n: file data/data.xml line 3842
+#: rc.cpp:737
+msgid "Greek 'tallos' for 'young twig'"
+msgstr ""
+
+#. i18n: file data/data.xml line 3881
+#: rc.cpp:739
+msgid "Latin 'plumbum' for Lead"
+msgstr ""
+
+#. i18n: file data/data.xml line 3919
+#: rc.cpp:741
+msgid "The old name of Bismuth is 'Wismut'. This stood for 'white mass'"
+msgstr ""
+
+#. i18n: file data/data.xml line 3956
+#: rc.cpp:743
+msgid "Named after Poland to honor Marie Curie"
+msgstr ""
+
+#. i18n: file data/data.xml line 3999
+#: rc.cpp:745
+msgid "Greek 'astator' for 'changing'"
+msgstr ""
+
+#. i18n: file data/data.xml line 4038
+#: rc.cpp:747
+msgid ""
+"Named after Radium. It ends with 'on' to make it clear that it is a noble gas"
+msgstr ""
+
+#. i18n: file data/data.xml line 4070
+#: rc.cpp:749
+msgid "Named after France to honor Marguerite Perey"
+msgstr ""
+
+#. i18n: file data/data.xml line 4102
+#: rc.cpp:751
+msgid "Latin 'radius' for 'beam', as it is radioactive"
+msgstr ""
+
+#. i18n: file data/data.xml line 4135
+#: rc.cpp:753
+msgid "Greek 'aktis' for 'beam' - actinium is radioactive"
+msgstr ""
+
+#. i18n: file data/data.xml line 4168
+#: rc.cpp:755
+msgid "Named after the German god of thunder: Thor"
+msgstr ""
+
+#. i18n: file data/data.xml line 4210
+#: rc.cpp:757
+msgid ""
+"Greek 'protos' for 'ancester'. Protactinium is before Actinium in the periodic "
+"table."
+msgstr ""
+
+#. i18n: file data/data.xml line 4247
+#: rc.cpp:759
+msgid "Greek 'ouranos' for 'heaven'. Named after the planet Uranus"
+msgstr ""
+
+#. i18n: file data/data.xml line 4292
+#: rc.cpp:761
+msgid "Named after the planet Neptune."
+msgstr ""
+
+#. i18n: file data/data.xml line 4329
+#: rc.cpp:763
+msgid "Named after the planet Pluto."
+msgstr ""
+
+#. i18n: file data/data.xml line 4371
+#: rc.cpp:765
+msgid "Named after America."
+msgstr ""
+
+#. i18n: file data/data.xml line 4409
+#: rc.cpp:767
+msgid "Named after Marie Curie."
+msgstr ""
+
+#. i18n: file data/data.xml line 4439
+#: rc.cpp:769
+#, fuzzy
+msgid "Named after the town Berkeley where it was discovered."
+msgstr "Keşfedildiği yer olan Berkely kasabasının adını almıştır."
+
+#. i18n: file data/data.xml line 4469
+#: rc.cpp:771
+msgid "Named after the US-State of California."
+msgstr ""
+
+#. i18n: file data/data.xml line 4499
+#: rc.cpp:773
+msgid "Named after the scientist Albert Einstein."
+msgstr ""
+
+#. i18n: file data/data.xml line 4530
+#: rc.cpp:775
+msgid "Named after the scientist Enrico Fermi."
+msgstr ""
+
+#. i18n: file data/data.xml line 4561
+#: rc.cpp:777
+msgid "Named after the scientist D.I. Mendeleev."
+msgstr ""
+
+#. i18n: file data/data.xml line 4592
+#: rc.cpp:779
+msgid "Named after the scientist Alfred Nobel."
+msgstr ""
+
+#. i18n: file data/data.xml line 4623
+#: rc.cpp:781
+msgid "Named after the scientist Ernest Orlando Lawrence."
+msgstr ""
+
+#. i18n: file data/data.xml line 4658
+#: rc.cpp:783
+msgid "Named after the scientist Ernest Rutherford"
+msgstr ""
+
+#. i18n: file data/data.xml line 4692
+#: rc.cpp:785
+msgid "Named after the science-town Dubna in Russia"
+msgstr ""
+
+#. i18n: file data/data.xml line 4725
+#: rc.cpp:787
+msgid "Named after the scientist G. Theodore Seaborg."
+msgstr ""
+
+#. i18n: file data/data.xml line 4751
+#: rc.cpp:789
+msgid "Named after the scientist Niels Bohr."
+msgstr ""
+
+#. i18n: file data/data.xml line 4777
+#: rc.cpp:791
+msgid ""
+"Latin 'hassia' for the German county Hessen. In Hessen. a lot elements have "
+"been discovered."
+msgstr ""
+
+#. i18n: file data/data.xml line 4803
+#: rc.cpp:793
+msgid "Named after the scientist Lise Meitner."
+msgstr ""
+
+#. i18n: file data/data.xml line 4829
+#: rc.cpp:795
+msgid ""
+"Named after the German city Darmstadt where many elements have been discovered."
+msgstr ""
+
+#. i18n: file data/data.xml line 4855
+#: rc.cpp:797
+msgid "Named after Wilhelm Conrad Röntgen."
+msgstr ""
+
+#. i18n: file data/data.xml line 11
+#: rc.cpp:800
+#, no-c-format
+msgid "Hydrogen"
+msgstr "Hidrojen"
+
+#. i18n: file data/data.xml line 59
+#: rc.cpp:803
+#, no-c-format
+msgid "Helium"
+msgstr "Helyum"
+
+#. i18n: file data/data.xml line 114
+#: rc.cpp:806
+#, no-c-format
+msgid "Lithium"
+msgstr "Lityum"
+
+#. i18n: file data/data.xml line 163
+#: rc.cpp:809
+#, no-c-format
+msgid "Beryllium"
+msgstr "Berilyum"
+
+#. i18n: file data/data.xml line 214
+#: rc.cpp:812
+#, no-c-format
+msgid "Boron"
+msgstr "Bor"
+
+#. i18n: file data/data.xml line 260
+#: rc.cpp:815
+#, no-c-format
+msgid "Carbon"
+msgstr "Karbon"
+
+#. i18n: file data/data.xml line 321
+#: rc.cpp:818
+#, no-c-format
+msgid "Nitrogen"
+msgstr "Azot"
+
+#. i18n: file data/data.xml line 374
+#: rc.cpp:821
+#, no-c-format
+msgid "Oxygen"
+msgstr "Oksijen"
+
+#. i18n: file data/data.xml line 426
+#: rc.cpp:824
+#, no-c-format
+msgid "Fluorine"
+msgstr "Flor"
+
+#. i18n: file data/data.xml line 479
+#: rc.cpp:827
+#, no-c-format
+msgid "Neon"
+msgstr "Neon"
+
+#. i18n: file data/data.xml line 544
+#: rc.cpp:830
+#, no-c-format
+msgid "Sodium"
+msgstr "Sodyum"
+
+#. i18n: file data/data.xml line 595
+#: rc.cpp:833
+#, no-c-format
+msgid "Magnesium"
+msgstr "Magnezyum"
+
+#. i18n: file data/data.xml line 648
+#: rc.cpp:836
+#, no-c-format
+msgid "Aluminum"
+msgstr "Aluminyum"
+
+#. i18n: file data/data.xml line 697
+#: rc.cpp:839
+#, no-c-format
+msgid "Silicon"
+msgstr "Silikon"
+
+#. i18n: file data/data.xml line 759
+#: rc.cpp:842
+#, no-c-format
+msgid "Phosphorus"
+msgstr "Fosfor"
+
+#. i18n: file data/data.xml line 816
+#: rc.cpp:845
+#, no-c-format
+msgid "Sulfur"
+msgstr "Kükürt"
+
+#. i18n: file data/data.xml line 874
+#: rc.cpp:848
+#, no-c-format
+msgid "Chlorine"
+msgstr "Klor"
+
+#. i18n: file data/data.xml line 924
+#: rc.cpp:851
+#, no-c-format
+msgid "Argon"
+msgstr "Argon"
+
+#. i18n: file data/data.xml line 982
+#: rc.cpp:854
+#, no-c-format
+msgid "Potassium"
+msgstr "Potasyum"
+
+#. i18n: file data/data.xml line 1025
+#: rc.cpp:857
+#, no-c-format
+msgid "Calcium"
+msgstr "Kalsiyum"
+
+#. i18n: file data/data.xml line 1079
+#: rc.cpp:860
+#, no-c-format
+msgid "Scandium"
+msgstr "Skandiyum"
+
+#. i18n: file data/data.xml line 1126
+#: rc.cpp:863
+#, no-c-format
+msgid "Titanium"
+msgstr "Titanyum"
+
+#. i18n: file data/data.xml line 1181
+#: rc.cpp:866
+#, no-c-format
+msgid "Vanadium"
+msgstr "Vanadyum"
+
+#. i18n: file data/data.xml line 1233
+#: rc.cpp:869
+#, no-c-format
+msgid "Chromium"
+msgstr "Krom"
+
+#. i18n: file data/data.xml line 1279
+#: rc.cpp:872
+#, no-c-format
+msgid "Manganese"
+msgstr "Manganez"
+
+#. i18n: file data/data.xml line 1325
+#: rc.cpp:875
+#, no-c-format
+msgid "Iron"
+msgstr "Demir"
+
+#. i18n: file data/data.xml line 1382
+#: rc.cpp:878
+#, no-c-format
+msgid "Cobalt"
+msgstr "Kobalt"
+
+#. i18n: file data/data.xml line 1433
+#: rc.cpp:881
+#, no-c-format
+msgid "Nickel"
+msgstr "Nikel"
+
+#. i18n: file data/data.xml line 1489
+#: rc.cpp:884
+#, no-c-format
+msgid "Copper"
+msgstr "Bakır"
+
+#. i18n: file data/data.xml line 1540
+#: rc.cpp:887
+#, no-c-format
+msgid "Zinc"
+msgstr "Çinko"
+
+#. i18n: file data/data.xml line 1592
+#: rc.cpp:890
+#, no-c-format
+msgid "Gallium"
+msgstr "Galyum"
+
+#. i18n: file data/data.xml line 1634
+#: rc.cpp:893
+#, no-c-format
+msgid "Germanium"
+msgstr "Germanyum"
+
+#. i18n: file data/data.xml line 1688
+#: rc.cpp:896
+#, no-c-format
+msgid "Arsenic"
+msgstr "Arsenik"
+
+#. i18n: file data/data.xml line 1733
+#: rc.cpp:899
+#, no-c-format
+msgid "Selenium"
+msgstr "Selenyum"
+
+#. i18n: file data/data.xml line 1784
+#: rc.cpp:902
+#, no-c-format
+msgid "Bromine"
+msgstr "Brom"
+
+#. i18n: file data/data.xml line 1830
+#: rc.cpp:905
+#, no-c-format
+msgid "Krypton"
+msgstr "Kripton"
+
+#. i18n: file data/data.xml line 1884
+#: rc.cpp:908
+#, no-c-format
+msgid "Rubidium"
+msgstr "Rubidyum"
+
+#. i18n: file data/data.xml line 1926
+#: rc.cpp:911
+#, no-c-format
+msgid "Strontium"
+msgstr "Stronsiyum"
+
+#. i18n: file data/data.xml line 1978
+#: rc.cpp:914
+#, no-c-format
+msgid "Yttrium"
+msgstr "İtriyum"
+
+#. i18n: file data/data.xml line 2023
+#: rc.cpp:917
+#, no-c-format
+msgid "Zirconium"
+msgstr "Zirkonyum"
+
+#. i18n: file data/data.xml line 2082
+#: rc.cpp:920
+#, no-c-format
+msgid "Niobium"
+msgstr "Niyobiyum"
+
+#. i18n: file data/data.xml line 2133
+#: rc.cpp:923
+#, no-c-format
+msgid "Molybdenum"
+msgstr "Mobilden"
+
+#. i18n: file data/data.xml line 2190
+#: rc.cpp:926
+#, no-c-format
+msgid "Technetium"
+msgstr "Teknetyum"
+
+#. i18n: file data/data.xml line 2240
+#: rc.cpp:929
+#, no-c-format
+msgid "Ruthenium"
+msgstr "Rutenyum"
+
+#. i18n: file data/data.xml line 2293
+#: rc.cpp:932
+#, no-c-format
+msgid "Rhodium"
+msgstr "Rodyum"
+
+#. i18n: file data/data.xml line 2337
+#: rc.cpp:935
+#, no-c-format
+msgid "Palladium"
+msgstr "Paladyum"
+
+#. i18n: file data/data.xml line 2391
+#: rc.cpp:938
+#, no-c-format
+msgid "Silver"
+msgstr "Gümüş"
+
+#. i18n: file data/data.xml line 2432
+#: rc.cpp:941
+#, no-c-format
+msgid "Cadmium"
+msgstr "Kadmiyum"
+
+#. i18n: file data/data.xml line 2486
+#: rc.cpp:944
+#, no-c-format
+msgid "Indium"
+msgstr "İndiyum"
+
+#. i18n: file data/data.xml line 2536
+#: rc.cpp:947
+#, no-c-format
+msgid "Tin"
+msgstr "Kalay"
+
+#. i18n: file data/data.xml line 2599
+#: rc.cpp:950
+#, no-c-format
+msgid "Antimony"
+msgstr "Antimon"
+
+#. i18n: file data/data.xml line 2649
+#: rc.cpp:953
+#, no-c-format
+msgid "Tellurium"
+msgstr "Tellür"
+
+#. i18n: file data/data.xml line 2707
+#: rc.cpp:956
+#, no-c-format
+msgid "Iodine"
+msgstr "İyot"
+
+#. i18n: file data/data.xml line 2752
+#: rc.cpp:959
+#, no-c-format
+msgid "Xenon"
+msgstr "Ksenon"
+
+#. i18n: file data/data.xml line 2809
+#: rc.cpp:962
+#, no-c-format
+msgid "Caesium"
+msgstr "Sezyum"
+
+#. i18n: file data/data.xml line 2854
+#: rc.cpp:965
+#, no-c-format
+msgid "Barium"
+msgstr "Baryum"
+
+#. i18n: file data/data.xml line 2910
+#: rc.cpp:968
+#, no-c-format
+msgid "Lanthanum"
+msgstr "Lantan"
+
+#. i18n: file data/data.xml line 2965
+#: rc.cpp:971
+#, no-c-format
+msgid "Cerium"
+msgstr "Seryum"
+
+#. i18n: file data/data.xml line 3007
+#: rc.cpp:974
+#, no-c-format
+msgid "Praseodymium"
+msgstr "Praseodiyum"
+
+#. i18n: file data/data.xml line 3041
+#: rc.cpp:977
+#, no-c-format
+msgid "Neodymium"
+msgstr "Neodimyum"
+
+#. i18n: file data/data.xml line 3080
+#: rc.cpp:980
+#, no-c-format
+msgid "Promethium"
+msgstr "Prometyum"
+
+#. i18n: file data/data.xml line 3115
+#: rc.cpp:983
+#, no-c-format
+msgid "Samarium"
+msgstr "Samaryum"
+
+#. i18n: file data/data.xml line 3156
+#: rc.cpp:986
+#, no-c-format
+msgid "Europium"
+msgstr "Europyum"
+
+#. i18n: file data/data.xml line 3189
+#: rc.cpp:989
+#, no-c-format
+msgid "Gadolinium"
+msgstr "Gadolonyum"
+
+#. i18n: file data/data.xml line 3229
+#: rc.cpp:992
+#, no-c-format
+msgid "Terbium"
+msgstr "Terbiyum"
+
+#. i18n: file data/data.xml line 3262
+#: rc.cpp:995
+#, no-c-format
+msgid "Dysprosium"
+msgstr "Disprosyum"
+
+#. i18n: file data/data.xml line 3301
+#: rc.cpp:998
+#, no-c-format
+msgid "Holmium"
+msgstr "Holmiyum"
+
+#. i18n: file data/data.xml line 3335
+#: rc.cpp:1001
+#, no-c-format
+msgid "Erbium"
+msgstr "Erbiyum"
+
+#. i18n: file data/data.xml line 3374
+#: rc.cpp:1004
+#, no-c-format
+msgid "Thulium"
+msgstr "Tulyum"
+
+#. i18n: file data/data.xml line 3408
+#: rc.cpp:1007
+#, no-c-format
+msgid "Ytterbium"
+msgstr "İterbiyum"
+
+#. i18n: file data/data.xml line 3449
+#: rc.cpp:1010
+#, no-c-format
+msgid "Lutetium"
+msgstr "Lutesyum"
+
+#. i18n: file data/data.xml line 3485
+#: rc.cpp:1013
+#, no-c-format
+msgid "Hafnium"
+msgstr "Hafniyum"
+
+#. i18n: file data/data.xml line 3525
+#: rc.cpp:1016
+#, no-c-format
+msgid "Tantalum"
+msgstr "Tantal"
+
+#. i18n: file data/data.xml line 3561
+#: rc.cpp:1019
+#, no-c-format
+msgid "Tungsten"
+msgstr "Tungsten"
+
+#. i18n: file data/data.xml line 3602
+#: rc.cpp:1022
+#, no-c-format
+msgid "Rhenium"
+msgstr "Renyum"
+
+#. i18n: file data/data.xml line 3640
+#: rc.cpp:1025
+#, no-c-format
+msgid "Osmium"
+msgstr "Osmiyum"
+
+#. i18n: file data/data.xml line 3683
+#: rc.cpp:1028
+#, no-c-format
+msgid "Iridium"
+msgstr "İridyum"
+
+#. i18n: file data/data.xml line 3720
+#: rc.cpp:1031
+#, no-c-format
+msgid "Platinum"
+msgstr "Platin"
+
+#. i18n: file data/data.xml line 3761
+#: rc.cpp:1034
+#, no-c-format
+msgid "Gold"
+msgstr "Altın"
+
+#. i18n: file data/data.xml line 3799
+#: rc.cpp:1037
+#, no-c-format
+msgid "Mercury"
+msgstr "Civa"
+
+#. i18n: file data/data.xml line 3842
+#: rc.cpp:1040
+#, no-c-format
+msgid "Thallium"
+msgstr "Talyum"
+
+#. i18n: file data/data.xml line 3881
+#: rc.cpp:1043
+#, no-c-format
+msgid "Lead"
+msgstr "Kurşun"
+
+#. i18n: file data/data.xml line 3919
+#: rc.cpp:1046
+#, no-c-format
+msgid "Bismuth"
+msgstr "Bizmut"
+
+#. i18n: file data/data.xml line 3956
+#: rc.cpp:1049
+#, no-c-format
+msgid "Polonium"
+msgstr "Polonyum"
+
+#. i18n: file data/data.xml line 3999
+#: rc.cpp:1052
+#, no-c-format
+msgid "Astatine"
+msgstr "Astanin"
+
+#. i18n: file data/data.xml line 4038
+#: rc.cpp:1055
+#, no-c-format
+msgid "Radon"
+msgstr "Radon"
+
+#. i18n: file data/data.xml line 4070
+#: rc.cpp:1058
+#, no-c-format
+msgid "Francium"
+msgstr "Fransiyum"
+
+#. i18n: file data/data.xml line 4102
+#: rc.cpp:1061
+#, no-c-format
+msgid "Radium"
+msgstr "Radyum"
+
+#. i18n: file data/data.xml line 4135
+#: rc.cpp:1064
+#, no-c-format
+msgid "Actinium"
+msgstr "Aktinyum"
+
+#. i18n: file data/data.xml line 4168
+#: rc.cpp:1067
+#, no-c-format
+msgid "Thorium"
+msgstr "Toryum"
+
+#. i18n: file data/data.xml line 4210
+#: rc.cpp:1070
+#, no-c-format
+msgid "Protactinium"
+msgstr "Protoaktinyum"
+
+#. i18n: file data/data.xml line 4247
+#: rc.cpp:1073
+#, no-c-format
+msgid "Uranium"
+msgstr "Uranyum"
+
+#. i18n: file data/data.xml line 4292
+#: rc.cpp:1076
+#, no-c-format
+msgid "Neptunium"
+msgstr "Neptünyum"
+
+#. i18n: file data/data.xml line 4329
+#: rc.cpp:1079
+#, no-c-format
+msgid "Plutonium"
+msgstr "Plutonyum"
+
+#. i18n: file data/data.xml line 4371
+#: rc.cpp:1082
+#, no-c-format
+msgid "Americium"
+msgstr "Amerikyum"
+
+#. i18n: file data/data.xml line 4409
+#: rc.cpp:1085
+#, no-c-format
+msgid "Curium"
+msgstr "Küriyum"
+
+#. i18n: file data/data.xml line 4439
+#: rc.cpp:1088
+#, no-c-format
+msgid "Berkelium"
+msgstr "Berkelyum"
+
+#. i18n: file data/data.xml line 4469
+#: rc.cpp:1091
+#, no-c-format
+msgid "Californium"
+msgstr "Kaliforniyum"
+
+#. i18n: file data/data.xml line 4499
+#: rc.cpp:1094
+#, no-c-format
+msgid "Einsteinium"
+msgstr "Einsteinyum"
+
+#. i18n: file data/data.xml line 4530
+#: rc.cpp:1097
+#, no-c-format
+msgid "Fermium"
+msgstr "Fermiyum"
+
+#. i18n: file data/data.xml line 4561
+#: rc.cpp:1100
+#, no-c-format
+msgid "Mendelevium"
+msgstr "Mendelevyum"
+
+#. i18n: file data/data.xml line 4592
+#: rc.cpp:1103
+#, no-c-format
+msgid "Nobelium"
+msgstr "Nobelyum"
+
+#. i18n: file data/data.xml line 4623
+#: rc.cpp:1106
+#, no-c-format
+msgid "Lawrencium"
+msgstr "Lawrensiyum"
+
+#. i18n: file data/data.xml line 4658
+#: rc.cpp:1109
+#, no-c-format
+msgid "Rutherfordium"
+msgstr "Rutherfordiyum"
+
+#. i18n: file data/data.xml line 4692
+#: rc.cpp:1112
+#, no-c-format
+msgid "Dubnium"
+msgstr "Dubniyum"
+
+#. i18n: file data/data.xml line 4725
+#: rc.cpp:1115
+#, no-c-format
+msgid "Seaborgium"
+msgstr "Seaborgiyum"
+
+#. i18n: file data/data.xml line 4751
+#: rc.cpp:1118
+#, no-c-format
+msgid "Bohrium"
+msgstr "Bohriyum"
+
+#. i18n: file data/data.xml line 4777
+#: rc.cpp:1121
+#, no-c-format
+msgid "Hassium"
+msgstr "Hassiyum"
+
+#. i18n: file data/data.xml line 4803
+#: rc.cpp:1124
+#, no-c-format
+msgid "Meitnerium"
+msgstr "Meitneriyum"
+
+#. i18n: file data/data.xml line 4829
+#: rc.cpp:1127
+#, no-c-format
+msgid "Darmstadtium"
+msgstr "Darmstadium"
+
+#. i18n: file data/data.xml line 4855
+#: rc.cpp:1130
+#, no-c-format
+msgid "Roentgenium"
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 4
+#: rc.cpp:1133
+#, no-c-format
+msgid "State of matter"
+msgstr "Maddenin hali"
+
+#. i18n: file data/knowledge.xml line 5
+#: rc.cpp:1136
+#, no-c-format
+msgid ""
+"Form of a substance; dependant on form stability and whether it takes up a "
+"definite volume: solid, liquid or gaseous."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 7
+#: rc.cpp:1139
+#, no-c-format
+msgid "Boiling point"
+msgstr "Kaynama noktası"
+
+#. i18n: file data/knowledge.xml line 8
+#: rc.cpp:1142
+#, no-c-format
+msgid "Melting point"
+msgstr "Erime noktası"
+
+#. i18n: file data/knowledge.xml line 12
+#: rc.cpp:1145
+#, no-c-format
+msgid "Chemical Symbol"
+msgstr "Kimyasal Sembol"
+
+#. i18n: file data/knowledge.xml line 13
+#: rc.cpp:1148
+#, no-c-format
+msgid ""
+"One, two, or three letter abbreviation; set through international convention."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 15
+#: rc.cpp:1151 rc.cpp:1166 rc.cpp:1301
+#, no-c-format
+msgid "Element"
+msgstr "Element"
+
+#. i18n: file data/knowledge.xml line 19
+#: rc.cpp:1154
+#, no-c-format
+msgid "Chromatography"
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 20
+#: rc.cpp:1157
+#, no-c-format
+msgid ""
+"Matter separation in a moving medium (mobile phase) through differentiated "
+"absorption on a static medium (stationary phase)."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 23
+#: rc.cpp:1160
+#, fuzzy, no-c-format
+msgid "Distillation"
+msgstr "Kristallendirme"
+
+#. i18n: file data/knowledge.xml line 24
+#: rc.cpp:1163
+#, no-c-format
+msgid ""
+"Separation of a liquid solution (homogeneous mix) into its components through "
+"evaporation and condensation. In a fractionary distillation the process is "
+"repeated several times in a column."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 28
+#: rc.cpp:1169
+#, no-c-format
+msgid ""
+"Matter that cannot be broken down into simpler matter. Chemical elements are "
+"cornerstones of Materials. Elements consist of atoms that consist of a nucleus "
+"of positive protons, neutral neutrons, and a shell of electrons."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 31
+#: rc.cpp:1172
+#, no-c-format
+msgid "Emulsion"
+msgstr "Emülsiyon"
+
+#. i18n: file data/knowledge.xml line 32
+#: rc.cpp:1175
+#, no-c-format
+msgid "Heterogeneous mix of two liquids."
+msgstr "İki sıvının heterojen karışımı."
+
+#. i18n: file data/knowledge.xml line 35
+#: rc.cpp:1178
+#, no-c-format
+msgid "Extraction"
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 36
+#: rc.cpp:1181
+#, no-c-format
+msgid "Processing a homogeneous or heterogeneous mix to get pure matter."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 38
+#: rc.cpp:1184 rc.cpp:1193
+#, no-c-format
+msgid "Mix"
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 42
+#: rc.cpp:1187
+#, no-c-format
+msgid "Filtering"
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 43
+#: rc.cpp:1190
+#, no-c-format
+msgid ""
+"Separation of a solid matter from a liquid matter or gaseous matter with a "
+"filter (porous separation wall)."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 47
+#: rc.cpp:1196
+#, no-c-format
+msgid ""
+"Matter consisting of differentiated matter, combined in non-set ratios. "
+"[i]Homogeneous mixes[/i] have a coherent look, [i]heterogeneous mixes[/i] "
+"consist of multiple phases."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 50
+#: rc.cpp:1199
+#, no-c-format
+msgid "Accuracy"
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 51
+#: rc.cpp:1202
+#, no-c-format
+msgid "Consisting of accidental and systematic errors."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 54
+#: rc.cpp:1205
+#, no-c-format
+msgid "Law of Conservation of Mass"
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 55
+#: rc.cpp:1208
+#, no-c-format
+msgid ""
+"During a chemical reaction mass is neither lost nor gained. The sum mass of the "
+"material going into the reaction equals the sum of the mass of the products of "
+"the reaction."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 58
+#: rc.cpp:1211
+#, no-c-format
+msgid "Law of multiple proportions"
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 59
+#: rc.cpp:1214
+#, no-c-format
+msgid ""
+"An alloy always contains the same elements in the same mass ratio. Should two "
+"or more elements bind together then the mass ratio is constant."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 62
+#: rc.cpp:1217
+#, no-c-format
+msgid "Crystallization"
+msgstr "Kristallendirme"
+
+#. i18n: file data/knowledge.xml line 63
+#: rc.cpp:1220
+#, no-c-format
+msgid ""
+"Separation of solid, crystalline matter from a solution, or the liquid or "
+"gaseous phases."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 66
+#: rc.cpp:1223
+#, no-c-format
+msgid "Solution"
+msgstr "Çözelti"
+
+#. i18n: file data/knowledge.xml line 67
+#: rc.cpp:1226
+#, no-c-format
+msgid "Homogeneous mix of multiple pure materials"
+msgstr "Birden çok saf metalin homojen karışımı"
+
+#. i18n: file data/knowledge.xml line 71
+#: rc.cpp:1232
+#, no-c-format
+msgid "Measurement of an amount of matter."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 74
+#: rc.cpp:1235
+#, no-c-format
+msgid "Matter"
+msgstr "Madde"
+
+#. i18n: file data/knowledge.xml line 75
+#: rc.cpp:1238
+#, no-c-format
+msgid "All that takes up space and has mass."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 78
+#: rc.cpp:1241
+#, no-c-format
+msgid "Phase"
+msgstr "Hal"
+
+#. i18n: file data/knowledge.xml line 79
+#: rc.cpp:1244
+#, no-c-format
+msgid ""
+"Through chemical composition and physical attributes, homogeneous portion of "
+"matter that separated from its environment in its expansion through a surface."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 82
+#: rc.cpp:1247
+#, no-c-format
+msgid "Accuracy and precision"
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 83
+#: rc.cpp:1250
+#, no-c-format
+msgid ""
+"Expressed through standard deviation: Values given over accidental errors."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 86
+#: rc.cpp:1253
+#, no-c-format
+msgid "Correctness"
+msgstr "Doğruluk"
+
+#. i18n: file data/knowledge.xml line 87
+#: rc.cpp:1256
+#, no-c-format
+msgid "Values given over accidental errors."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 90
+#: rc.cpp:1259
+#, no-c-format
+msgid "SI-Unit"
+msgstr "SI-Birimi"
+
+#. i18n: file data/knowledge.xml line 91
+#: rc.cpp:1262
+#, no-c-format
+msgid "Measurement unit using International Symbols."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 94
+#: rc.cpp:1265
+#, no-c-format
+msgid "Significant figures"
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 95
+#: rc.cpp:1268
+#, no-c-format
+msgid "The number of digits which are meaningful in a number."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 98
+#: rc.cpp:1271
+#, no-c-format
+msgid "Standard deviation"
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 99
+#: rc.cpp:1274
+#, no-c-format
+msgid "An amount with which the precision of a measurement can be estimates."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 102
+#: rc.cpp:1277
+#, no-c-format
+msgid "Suspension"
+msgstr "Süspansiyon"
+
+#. i18n: file data/knowledge.xml line 103
+#: rc.cpp:1280
+#, fuzzy, no-c-format
+msgid "Heterogeneous mix consisting of a liquid and solid matter."
+msgstr "İki sıvının heterojen karışımı."
+
+#. i18n: file data/knowledge.xml line 106
+#: rc.cpp:1283
+#, no-c-format
+msgid "Alloys"
+msgstr "Alaşımlar"
+
+#. i18n: file data/knowledge.xml line 107
+#: rc.cpp:1286
+#, no-c-format
+msgid "Pure matter consisting of multiple elements in a set ratio."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 110
+#: rc.cpp:1289
+#, no-c-format
+msgid "Alpha rays"
+msgstr "Alfa ışınları"
+
+#. i18n: file data/knowledge.xml line 111
+#: rc.cpp:1292
+#, fuzzy, no-c-format
+msgid ""
+"Rays consisting of alpha particles, consisting of two protons and two neutrons "
+"that are emitted from the Atoms of certain radioactive elements."
+msgstr ""
+"Radyoaktif elemenlerin atomlarından yayılan elektronlardan oluşan ışınlar."
+
+#. i18n: file data/knowledge.xml line 114
+#: rc.cpp:1295 rc.cpp:1319 rc.cpp:1328 rc.cpp:1340 rc.cpp:1455 rc.cpp:1464
+#: rc.cpp:1479
+#, no-c-format
+msgid "Atom"
+msgstr "Atom"
+
+#. i18n: file data/knowledge.xml line 115
+#: rc.cpp:1298
+#, no-c-format
+msgid ""
+"Atoms are chemically inseparable and building blocks of matter. Atoms of one "
+"kind are called an Element."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 118
+#: rc.cpp:1304 rc.cpp:1448 rc.cpp:1467 rc.cpp:1482 rc.cpp:1494
+#, fuzzy, no-c-format
+msgid "Electron"
+msgstr "Eksiçekerlik (ing. electronegativity)"
+
+#. i18n: file data/knowledge.xml line 119
+#: rc.cpp:1307 rc.cpp:1458 rc.cpp:1485
+#, fuzzy, no-c-format
+msgid "Proton"
+msgstr "Kripton"
+
+#. i18n: file data/knowledge.xml line 120
+#: rc.cpp:1310 rc.cpp:1470 rc.cpp:1473
+#, fuzzy, no-c-format
+msgid "Neutron"
+msgstr "Nötronlar"
+
+#. i18n: file data/knowledge.xml line 124
+#: rc.cpp:1313
+#, no-c-format
+msgid "Atomic nucleus"
+msgstr "Atom çekirdeği"
+
+#. i18n: file data/knowledge.xml line 125
+#: rc.cpp:1316
+#, no-c-format
+msgid ""
+"The small, positively-charged center of an Atom, in which Protons and Neutrons "
+"are found."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 132
+#: rc.cpp:1325
+#, no-c-format
+msgid ""
+"Mass of an atom, taken on a scale where the the mass of a carbon atom is 12u. "
+"In elements that consist of different isotopes the mid-range mass of the "
+"isotope mix is given."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 139
+#: rc.cpp:1334 rc.cpp:1349 rc.cpp:1358 rc.cpp:1367 rc.cpp:1376 rc.cpp:1385
+#: rc.cpp:1403 rc.cpp:1418 rc.cpp:1433
+#, fuzzy, no-c-format
+msgid "Isotope"
+msgstr "İzotop-Tablosu"
+
+#. i18n: file data/knowledge.xml line 140
+#: rc.cpp:1337
+#, no-c-format
+msgid ""
+"Isotopes are forms of a chemical element whose nuclei have the same atomic "
+"number, Z, but different atomic masses, A. The word isotope, meaning at the "
+"same place, comes from the fact that all isotopes of an element are located at "
+"the same place on the periodic table."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 146
+#: rc.cpp:1343
+#, no-c-format
+msgid "Spin"
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 147
+#: rc.cpp:1346
+#, no-c-format
+msgid ""
+"The spin is an intrinsic angular momentum associated with microscopic "
+"particles. It is a purely quantum mechanical phenomenon without any analogy in "
+"classical mechanics. Whereas classical angular momentum arises from the "
+"rotation of an extended object, spin is not associated with any rotating "
+"internal masses, but is intrinsic to the particle itself."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 154
+#: rc.cpp:1355
+#, no-c-format
+msgid ""
+"The magnetic moment of an object is a vector relating the aligning torque in a "
+"magnetic field experienced by the object to the field vector itself. It's "
+"measured in units of the nuclear magneton &#956;[sub]n[/sub]=(5.0507866 &#177; "
+"0.0000017) 10[sup]-27[/sup] JT[sup]-1[/sup]"
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 160
+#: rc.cpp:1361
+#, no-c-format
+msgid "Decay Mode"
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 161
+#: rc.cpp:1364
+#, no-c-format
+msgid ""
+"The decay mode describes a particular way a particle decays. For radioactive "
+"decay (the decay of nuclides) the decay modes are:[br] -> "
+"alpha decay (emission of a Helium-4 nucleus).[br] -> "
+"&#946;[sup]-[/sup] decay (emission of an electron)[br] -> "
+"&#946;[sup]+[/sup] decay (emission of a positron) [br] -> "
+"electron capture (EC) [br] -> proton emission [br] -> "
+"spontaneous fission [br] Typically one decay mode predominates for a particular "
+"nuclide."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 167
+#: rc.cpp:1370
+#, no-c-format
+msgid "Decay Energy"
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 168
+#: rc.cpp:1373
+#, no-c-format
+msgid "The decay energy is the energy released by a nuclear decay."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 174
+#: rc.cpp:1379
+#, no-c-format
+msgid "Nuclides"
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 175
+#: rc.cpp:1382
+#, no-c-format
+msgid "[i]see isotopes[/i]"
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 178
+#: rc.cpp:1388 rc.cpp:1397 rc.cpp:1421 rc.cpp:1439
+#, fuzzy, no-c-format
+msgid "Isotone"
+msgstr "İzotop-Tablosu"
+
+#. i18n: file data/knowledge.xml line 179
+#: rc.cpp:1391 rc.cpp:1406 rc.cpp:1424 rc.cpp:1427
+#, no-c-format
+msgid "Nuclear Isomer"
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 180
+#: rc.cpp:1394
+#, no-c-format
+msgid "Isobars"
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 185
+#: rc.cpp:1400
+#, no-c-format
+msgid "Two nuclides are isotones if they have the same number N of neutrons."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 189
+#: rc.cpp:1409 rc.cpp:1412 rc.cpp:1436
+#, no-c-format
+msgid "Isobar"
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 194
+#: rc.cpp:1415
+#, no-c-format
+msgid ""
+"Isobars are nuclides having the same mass number, i.e. sum of protons plus "
+"neutrons."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 203
+#: rc.cpp:1430
+#, no-c-format
+msgid ""
+"A nuclear isomer is a metastable or isomeric state of an atom caused by the "
+"excitation of a proton or neutron in its nucleus so that it requires a change "
+"in spin before it can release its extra energy. They decay to lower energy "
+"states of the nuclide through two isomeric transitions:[br] -> "
+"&#947;- emission (emission of a high-energy photon)[br] -> "
+"internal conversion (the energy is used to ionize the atom)[br] Contrast this "
+"with the definition of a chemical isomer, the more common use of the word. Also "
+"contrast with the meaning of isotope, in which the difference is the number of "
+"neutrons in the nucleus. Metastable isomers of a particular atom are usually "
+"designated with an \"m\" (or, in the case of atoms with more than one isomer, "
+"2m, 3m, and so on). This designation is usually placed after the atomic symbol "
+"and number of the atom (e.g., Co-58m), but is sometimes placed as a superscript "
+"before (e.g., [sup]m[/sup]Co-58 or [sup]58m[/sup]Co)."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 211
+#: rc.cpp:1442
+#, no-c-format
+msgid "Beta rays"
+msgstr "Beta ışınları"
+
+#. i18n: file data/knowledge.xml line 212
+#: rc.cpp:1445
+#, no-c-format
+msgid ""
+"Rays consisting of electrons that are emitted from Atoms of radioactive "
+"elements."
+msgstr ""
+"Radyoaktif elemenlerin atomlarından yayılan elektronlardan oluşan ışınlar."
+
+#. i18n: file data/knowledge.xml line 217
+#: rc.cpp:1451
+#, no-c-format
+msgid ""
+"The electron is a subatomic particle with a mass of m[sub]e[/sub]=(9.1093897 "
+"&#177; 0.0000054)e-31 kg and a negative charge of [i]e[/i]=(1.60217733 &#177; "
+"0.00000049)e-19 C\n"
+"\t\t"
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 224
+#: rc.cpp:1461
+#, no-c-format
+msgid ""
+"The proton is a subatomic particle with a mass of m[sub]e[/sub]=(1.6726231 "
+"&#177; 0.0000010) 10[sup]-27[/sup] kg and a positive charge of "
+"[i]e[/i]=(1.60217733 &#177; 0.00000049) 10[sup]-19[/sup] C which occurs in the "
+"nucleus of an atom."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 233
+#: rc.cpp:1476
+#, no-c-format
+msgid ""
+"The neutron is a subatomic particle with a mass of m[sub]e[/sub]=(1.6749286 "
+"&#177; 0.0000010) 10[sup]-27[/sup] kg which occurs in the nucleus of an atom."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 241
+#: rc.cpp:1488
+#, no-c-format
+msgid "Cathode Rays"
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 242
+#: rc.cpp:1491
+#, no-c-format
+msgid ""
+"Cathode rays are streams of electrons observed in vacuum tubes, i.e. evacuated "
+"glass tubes that are equipped with at least two electrodes, a cathode (negative "
+"electrode) and an anode (positive electrode) in a configuration known as a "
+"diode."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 248
+#: rc.cpp:1497 rc.cpp:1524 rc.cpp:1539 rc.cpp:1551
+#, fuzzy, no-c-format
+msgid "Ionic Radius"
+msgstr "Atom Yarıçapı"
+
+#. i18n: file data/knowledge.xml line 249
+#: rc.cpp:1500
+#, no-c-format
+msgid ""
+"The Ionic Radius is the radius of a charged atom, a so called ion. The ion can "
+"have a positive or a negative charge. The charge of the ion which radius you "
+"see is also displayed in Kalzium. A positive ion has less electrons in its "
+"shell then the atom, a negative ion has more electrons. Therefore, a postive "
+"ion has a smaller radius than its atom and vice versa."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 253
+#: rc.cpp:1509 rc.cpp:1512 rc.cpp:1536 rc.cpp:1554
+#, fuzzy, no-c-format
+msgid "Van der Waals Radius"
+msgstr "van der Waals Yarıçapı"
+
+#. i18n: file data/knowledge.xml line 258
+#: rc.cpp:1515
+#, no-c-format
+msgid ""
+"The van der Waals radius of an atom is the radius of an imaginary hard sphere "
+"which can be used to model the atom for many purposes. Van der Waals radii are "
+"determined from measurements of atomic spacing between pairs of unbonded atoms "
+"in crystals."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 267
+#: rc.cpp:1530
+#, no-c-format
+msgid ""
+"The atomic radius is the distance from the atomic nucleus to the outmost stable "
+"electron orbital in a atom that is at equilibrium."
+msgstr ""
+
+#. i18n: file data/knowledge.xml line 276
+#: rc.cpp:1545
+#, no-c-format
+msgid ""
+"Covalent radius in chemistry corresponds to half of the distance between two "
+"identical atomic nuclei, bound by a covalent bond."
+msgstr ""
+
+#. i18n: file data/tools.xml line 5
+#: rc.cpp:1557
+#, no-c-format
+msgid "Watchglass"
+msgstr ""
+
+#. i18n: file data/tools.xml line 6
+#: rc.cpp:1560
+#, no-c-format
+msgid ""
+"Watchglasses are round glass panes with a diameter of around 5 - 10 cm which "
+"are used in the various experimental techniques. The border is bent upwards to "
+"allow the watchglass to hold small amounts of liquids in order to let them "
+"evaporate. The evaporation can be accelerated by heating the watchglass with a "
+"Bunsen burner. Watchglasses can also be used to cover petri dishes or beakers. "
+"Moreover watchglasses are suited to weighing small amounts of matter or "
+"alternatively drying them in the airing cupboard. The term watchglass is "
+"derived from the former pocket watches' protection glass which was often domed."
+msgstr ""
+
+#. i18n: file data/tools.xml line 10
+#: rc.cpp:1563
+#, no-c-format
+msgid "Dehydrator"
+msgstr ""
+
+#. i18n: file data/tools.xml line 13
+#: rc.cpp:1566
+#, no-c-format
+msgid ""
+"A dehydrator is a laboratory apparatus which is often made of glass and serves "
+"to dry chemical matters, that is, to remove water or liquid from a sample.\n"
+"\t\t\tIn principle it is a glass bowl with cap which has a planar grinding so "
+"that the bowl is air tight closeable. The dehydrator's lower part is ordinarily "
+"filled with a drying agent e.g. calcium chloride, silica gel, phosphoric "
+"anhydride or sulphuric acid. The sample to be dried is placed on a diaphanous "
+"cartridge of plastic or ceramics above the drying agent.\n"
+"\t\t\tThe drying agent is hygroscopic, which means that it dehumidifies its "
+"environment by absorbing water vapor. The dry atmosphere then takes up water "
+"from the sample to be dried."
+msgstr ""
+
+#. i18n: file data/tools.xml line 17
+#: rc.cpp:1571
+#, fuzzy, no-c-format
+msgid "Spatula"
+msgstr "Madde"
+
+#. i18n: file data/tools.xml line 18
+#: rc.cpp:1574
+#, no-c-format
+msgid ""
+" The spatula is a laboratory tool to scrape off, grind and transport chemicals. "
+"The material they are made of (e.g. iron, titanium, platinum) and their design "
+"(e.g. flat spatula or spoon spatula) can be different."
+msgstr ""
+
+#. i18n: file data/tools.xml line 22
+#: rc.cpp:1577
+#, no-c-format
+msgid "Water Jet Pump"
+msgstr ""
+
+#. i18n: file data/tools.xml line 23
+#: rc.cpp:1580
+#, no-c-format
+msgid ""
+"The water jet pump has two entry pipes and one exit and consists in principle "
+"of two pipes one inside the other. At the water entry a water jet shoots under "
+"full pressure out of a nozzle into a slightly larger pipe. Thereby the water "
+"jet carries away air or fluid from the second entry. "
+"<br> this is caused by the negative pressure in a drifting fluid. Thus it is an "
+"application of the hydrodynamic paradox. This says that objects close to "
+"drifting fluids are aspirated instead of being pushed away."
+msgstr ""
+
+#. i18n: file data/tools.xml line 27
+#: rc.cpp:1583
+#, fuzzy, no-c-format
+msgid "Refractometer"
+msgstr "Termometre"
+
+#. i18n: file data/tools.xml line 28
+#: rc.cpp:1586
+#, no-c-format
+msgid ""
+"With a refractometer the refractive index of optical media is determined. If "
+"the refractive index of a chemical is known it can be used after a synthesis to "
+"determine the sample's purity or to audit the synthesis' success."
+msgstr ""
+
+#. i18n: file data/tools.xml line 32
+#: rc.cpp:1589
+#, no-c-format
+msgid "Mortar"
+msgstr ""
+
+#. i18n: file data/tools.xml line 33
+#: rc.cpp:1592
+#, no-c-format
+msgid ""
+"A mortar is used for  manually grinding solids. It can also be used to "
+"homogenize a mixture of powders by grinding. A club-shaped tool known as a "
+"pestle is used with the mortar for grinding."
+msgstr ""
+
+#. i18n: file data/tools.xml line 37
+#: rc.cpp:1595
+#, fuzzy, no-c-format
+msgid "Heating Coil"
+msgstr "Erime Noktası"
+
+#. i18n: file data/tools.xml line 38
+#: rc.cpp:1598
+#, no-c-format
+msgid ""
+"Heating coils are used to heat flasks and other containers. Multiple heating "
+"coils can be connected with a thermometer so that the heat will not exceed a "
+"specified temperature. It is possible to use a magnetic field inside the "
+"heating coil to stir fluids with a magnetic stirrer. This will homogenize the "
+"fluid in terms of temperature and composition."
+msgstr ""
+
+#. i18n: file data/tools.xml line 42
+#: rc.cpp:1601
+#, no-c-format
+msgid "Cork Ring"
+msgstr ""
+
+#. i18n: file data/tools.xml line 43
+#: rc.cpp:1604
+#, no-c-format
+msgid ""
+"Large containers like round-bottomed flasks are placed on rings made of cork, a "
+"special soft lightweight wood with good insulating qualities to protect fragile "
+"instruments."
+msgstr ""
+
+#. i18n: file data/tools.xml line 47
+#: rc.cpp:1607
+#, no-c-format
+msgid "Dropping Funnel"
+msgstr ""
+
+#. i18n: file data/tools.xml line 48
+#: rc.cpp:1610
+#, no-c-format
+msgid ""
+"A dropping funnel can be used to drop precise amounts of fluid. You can control "
+"the dropping speed with a valve."
+msgstr ""
+
+#. i18n: file data/tools.xml line 52
+#: rc.cpp:1613
+#, no-c-format
+msgid "Separating Funnel"
+msgstr ""
+
+#. i18n: file data/tools.xml line 53
+#: rc.cpp:1616
+#, no-c-format
+msgid ""
+"A separating funnel can be used to separate a mixture of fluids by differing "
+"density. A valve at the bottom allows you to drain the more dense fluid for "
+"transfer to another container."
+msgstr ""
+
+#. i18n: file data/tools.xml line 57
+#: rc.cpp:1619
+#, fuzzy, no-c-format
+msgid "Test Tube Rack"
+msgstr "Test Tübü"
+
+#. i18n: file data/tools.xml line 58
+#: rc.cpp:1622
+#, no-c-format
+msgid ""
+"This rack comes in handy when you want to test many small amounts of chemicals "
+"in a row, or if you want to dry test tubes."
+msgstr ""
+
+#. i18n: file data/tools.xml line 62
+#: rc.cpp:1625
+#, no-c-format
+msgid "Vortexer"
+msgstr ""
+
+#. i18n: file data/tools.xml line 63
+#: rc.cpp:1628
+#, no-c-format
+msgid ""
+"A vortexer serves to homogenize reagents found in laboratories. The container "
+"containing liquid to be homogenized is put on a platform. The platform shakes "
+"by rotary agitation up to 3000RPM at which point a contact sensor is activated. "
+"In this way extremely small volumes of fluid can be homogenized quickly as "
+"well. It is the opposite of a centrifuge, used to separate fluids."
+msgstr ""
+
+#. i18n: file data/tools.xml line 67
+#: rc.cpp:1631
+#, no-c-format
+msgid "Wash Bottle"
+msgstr ""
+
+#. i18n: file data/tools.xml line 68
+#: rc.cpp:1634
+#, no-c-format
+msgid ""
+"These bottles are used for many purposes. In most laboratories they are usually "
+"filled with water, salt, acid or other commonly used fluids. They make it easy "
+"to apply the fluid if you do not need to measure a precise amount."
+msgstr ""
+
+#. i18n: file data/tools.xml line 72
+#: rc.cpp:1637
+#, no-c-format
+msgid "Rotary Evaporator"
+msgstr ""
+
+#. i18n: file data/tools.xml line 73
+#: rc.cpp:1640
+#, no-c-format
+msgid ""
+"A rotary evaporator consists of a round flask in a bath of hot water that is "
+"designed to evaporate solvents. The flask is rotated and the solvent collects "
+"under a vacuum onto a condenser and drips into a condensate collecting flask. "
+"in this way solutions can be concentrated or purified. By attaching a vacuum "
+"pump, the air pressure and therefore  the boiling point of the fluid can be "
+"decreased."
+msgstr ""
+
+#. i18n: file data/tools.xml line 77
+#: rc.cpp:1643
+#, no-c-format
+msgid "Reflux Condenser"
+msgstr ""
+
+#. i18n: file data/tools.xml line 78
+#: rc.cpp:1646
+#, no-c-format
+msgid ""
+"A reflux condenser subjects fluid to a process where a gas produced by heating "
+"is collected on the reflux condenser. The fluid is cooled until it condenses "
+"and runs back into the original fluid. Usually it is put on a round-bottomed "
+"flask or several neck flasks."
+msgstr ""
+
+#. i18n: file data/tools.xml line 82
+#: rc.cpp:1649
+#, no-c-format
+msgid "Pipette Bulb"
+msgstr ""
+
+#. i18n: file data/tools.xml line 83
+#: rc.cpp:1652
+#, no-c-format
+msgid ""
+"A pipette bulb is used to fill pipettes. It produces a negative pressure which "
+"makes the fluid go into the pipette. If one lets air back into the ball the "
+"fluid will run out of the pipette."
+msgstr ""
+
+#. i18n: file data/tools.xml line 87
+#: rc.cpp:1655
+#, no-c-format
+msgid "Test Tube"
+msgstr "Test Tübü"
+
+#. i18n: file data/tools.xml line 88
+#: rc.cpp:1658
+#, no-c-format
+msgid ""
+"In a test tube  small reactions or experiements are performed. There are many "
+"different types of tubes. For example some have connectors, some are etched for "
+"measurements, some are hardened for durability."
+msgstr ""
+
+#. i18n: file data/tools.xml line 92
+#: rc.cpp:1661
+#, no-c-format
+msgid "Protective Goggles"
+msgstr ""
+
+#. i18n: file data/tools.xml line 93
+#: rc.cpp:1664
+#, no-c-format
+msgid ""
+"Most laboratories insist that everyone wears protective goggles. Without them, "
+"it is too risky to work with most chemicals. Usually, the lens is a special "
+"type of plastic which protects you from both mechanical impacts and acid and "
+"base chemicals."
+msgstr ""
+
+#. i18n: file data/tools.xml line 97
+#: rc.cpp:1667
+#, no-c-format
+msgid "Round-bottomed Flask"
+msgstr ""
+
+#. i18n: file data/tools.xml line 98
+#: rc.cpp:1670
+#, no-c-format
+msgid ""
+"A round-bottomed flask is used for a lot of reactions. Some can be connected to "
+"other items, as the frosting on the neck shows. With cork rings they can be "
+"placed on a table."
+msgstr ""
+
+#. i18n: file data/tools.xml line 102
+#: rc.cpp:1673
+#, no-c-format
+msgid "Full Pipette"
+msgstr ""
+
+#. i18n: file data/tools.xml line 103
+#: rc.cpp:1676
+#, no-c-format
+msgid ""
+"Unlike a regular pipette, a full pipette only has one marking for a specific "
+"volume."
+msgstr ""
+
+#. i18n: file data/tools.xml line 107
+#: rc.cpp:1679
+#, no-c-format
+msgid "Drying Tube"
+msgstr ""
+
+#. i18n: file data/tools.xml line 108
+#: rc.cpp:1682
+#, no-c-format
+msgid ""
+"There are reactions which need to be kept free of water. To make this possible "
+"one uses a drying tube, which contains a hygroscopic chemical to absorb water "
+"in the atmosphere."
+msgstr ""
+
+#. i18n: file data/tools.xml line 112
+#: rc.cpp:1685
+#, no-c-format
+msgid "Test tube fastener"
+msgstr ""
+
+#. i18n: file data/tools.xml line 113
+#: rc.cpp:1688
+#, no-c-format
+msgid ""
+"With a test tube fastener you can easily hold test tubes. If you use a fastener "
+"there is a safe distance between the hand and the test tube when the tube is "
+"hot. In particular, it is used when you hold a test tube over an open flame."
+msgstr ""
+
+#. i18n: file data/tools.xml line 117
+#: rc.cpp:1691
+#, no-c-format
+msgid "Measuring Cylinder"
+msgstr ""
+
+#. i18n: file data/tools.xml line 118
+#: rc.cpp:1694
+#, no-c-format
+msgid ""
+"In a measuring cylinder you can fill amounts of liquids relatively precisely. "
+"Furthermore, the cylinder allows particulate matter to sink. Following this, "
+"you can separate particulates from the fluid by decanting."
+msgstr ""
+
+#. i18n: file data/tools.xml line 122
+#: rc.cpp:1697
+#, no-c-format
+msgid "Thermometer"
+msgstr "Termometre"
+
+#. i18n: file data/tools.xml line 123
+#: rc.cpp:1700
+#, no-c-format
+msgid ""
+"With a thermometer you can determine the temperature of a sample. In a "
+"laboratory special thermometers are used, which can also be used within acids "
+"or bases."
+msgstr ""
+
+#. i18n: file data/tools.xml line 127
+#: rc.cpp:1703
+#, no-c-format
+msgid "Magnetic stir bar"
+msgstr ""
+
+#. i18n: file data/tools.xml line 128
+#: rc.cpp:1706
+#, no-c-format
+msgid ""
+"Magnetic stir bars are highly chemically inert, small magnetic bars. Most "
+"heaters have a built-in magnet which can rotate. This causes the stir bar to "
+"rotate and the mixture to be homogenized."
+msgstr ""
+
+#. i18n: file data/tools.xml line 132
+#: rc.cpp:1709
+#, no-c-format
+msgid "Magnetic Stir Bar Retriever"
+msgstr ""
+
+#. i18n: file data/tools.xml line 133
+#: rc.cpp:1712
+#, no-c-format
+msgid ""
+"With a magnetic stir bar retriever you can remove magnetic stir bars from a "
+"container. The retriever is a bar with a magnet at the end which attracts the "
+"stir bars."
+msgstr ""
+
+#. i18n: file data/tools.xml line 137
+#: rc.cpp:1715
+#, no-c-format
+msgid "Pipette"
+msgstr ""
+
+#. i18n: file data/tools.xml line 138
+#: rc.cpp:1718
+#, no-c-format
+msgid ""
+"Pipettes are used to introduce small quantities of liquids in laboratories. A "
+"pipette has a volume scale and as a rule pileusballs are used as droppers for "
+"liquids. Both sorts of pipettes are calibrated for fluids with a temperature of "
+"20°C and for time of outflow (signified by \"Ex.\"). If needed times of outflow "
+"are indicated on the pipettes."
+msgstr ""
+
+#. i18n: file data/tools.xml line 142
+#: rc.cpp:1721
+#, no-c-format
+msgid "Erlenmeyer Flask"
+msgstr ""
+
+#. i18n: file data/tools.xml line 148
+#: rc.cpp:1724
+#, no-c-format
+msgid ""
+"This flask named after the chemist Emil Erlenmeyer (1825-1909) comes - unlike "
+"the beaker - with an inverted conical base and a cylindrical neck. There are "
+"different types of Erlenmeyer flasks for laboratory applications, the narrow "
+"and wide neck form. Depending on the application the flask may have precision "
+"grinding to allow good connection to other containers.\n"
+"\t\t\t"
+"<br>\n"
+"\t\t\tThe narrow neck reduces the risk of fluid escaping, especially when "
+"boiling or during reactions which agitate the contents.\n"
+"\t\t\t"
+"<br>\n"
+"\t\t\tAn Erlenmeyer flask is useful for mixing fluids or accelerating reactions "
+"by stirring or shaking, for example. The Erlenmeyer flask is particularly "
+"suited for a magnetic stirrer, since it can be placed directly on the stirring "
+"platform. A round-bottomed flask, by contrast, must be placed on a cork ring on "
+"the stirring platform.\n"
+msgstr ""
+
+#. i18n: file data/tools.xml line 153
+#: rc.cpp:1732
+#, no-c-format
+msgid "Ultrasonic Bath"
+msgstr ""
+
+#. i18n: file data/tools.xml line 154
+#: rc.cpp:1735
+#, no-c-format
+msgid ""
+"For some chemical reactions it is important that the solvent is gas free. To "
+"achieve this the reaction vessel is put for some time into a ultrasonic bath. "
+"Through the high sound frequency the vapor locks peel away and ascend. This "
+"procedure is called outgassing."
+msgstr ""
+
+#. i18n: file data/tools.xml line 158
+#: rc.cpp:1738
+#, no-c-format
+msgid "Scales"
+msgstr ""
+
+#. i18n: file data/tools.xml line 159
+#: rc.cpp:1741
+#, no-c-format
+msgid ""
+"In a laboratory you often have to weigh out very precise amounts of reagents. "
+"High precise scales can measure masses down to 1/10000 gram.Therefor they stand "
+"on granite blocks to avoid vibrancies and are protected against blasts by a "
+"dome."
+msgstr ""
+
+#. i18n: file data/tools.xml line 163
+#: rc.cpp:1744
+#, no-c-format
+msgid "Distillation bridge"
+msgstr ""
+
+#. i18n: file data/tools.xml line 164
+#: rc.cpp:1747
+#, no-c-format
+msgid ""
+"To separate a mixture you can use distillation amongst others. The distillation "
+"bridge is thereby the way between the two pots. In the one pot there is the "
+"mixture to be separated. Through heating, a gas forms which is lead through the "
+"bridge. At the end of the bridge the gas phase is condensed again and drips in "
+"a round flask. As a rule, the bridge is cooled by return flow. In addition, "
+"there is often a thermometer for controlling the temperature on the "
+"distillation bridge."
+msgstr ""
+
+#. i18n: file data/tools.xml line 169
+#: rc.cpp:1750
+#, no-c-format
+msgid "Syringe"
+msgstr ""
+
+#. i18n: file data/tools.xml line 170
+#: rc.cpp:1753
+#, no-c-format
+msgid ""
+"A syringe consists of two parts: A glass tube and a punch. Both are normally "
+"made of glass. A gas floats into the glass tube. As the syringe is a closed "
+"system the punch has to give way. This can be used measuring the volume of an "
+"reaction."
+msgstr ""
+
+#. i18n: file data/tools.xml line 174
+#: rc.cpp:1756
+#, no-c-format
+msgid "Separation Beaker"
+msgstr ""
+
+#. i18n: file data/tools.xml line 175
+#: rc.cpp:1759
+#, no-c-format
+msgid ""
+"At the four ends of this separation beaker you put four small caps. While "
+"distilling, you can turn the beaker by 60 degree after a certain temperate has "
+"been reached. This way, at the end of the distillation all four caps have a "
+"specific liquid in it, depending on the boiling points of the liquid distilled."
+msgstr ""
+
+#. i18n: file data/tools.xml line 179
+#: rc.cpp:1762
+#, fuzzy, no-c-format
+msgid "Burner"
+msgstr "Brom"
+
+#. i18n: file data/tools.xml line 180
+#: rc.cpp:1765
+#, no-c-format
+msgid ""
+"There are several types of burners. The picture shows a Teclu-Burner. Each type "
+"has specific uses. They vary in the peak temperature and overall heating "
+"capability."
+msgstr ""
+
+#. i18n: file data/tools.xml line 184
+#: rc.cpp:1768
+#, no-c-format
+msgid "Extractor Hood"
+msgstr ""
+
+#. i18n: file data/tools.xml line 185
+#: rc.cpp:1771
+#, no-c-format
+msgid ""
+"Most laboratories use extractor hoods. They filter the gasses from chemical "
+"reactions and pump the cleaned air outside of the building."
+msgstr ""
+
+#. i18n: file data/tools.xml line 189
+#: rc.cpp:1774
+#, fuzzy, no-c-format
+msgid "Contact Thermometer"
+msgstr "Termometre"
+
+#. i18n: file data/tools.xml line 190
+#: rc.cpp:1777
+#, no-c-format
+msgid ""
+"A contact thermometer is different from a regular thermometer because of its "
+"sensor for the current temperature. Such a thermometer is connected with a "
+"heating coild. If the sensor notices that the aimed temperature has been "
+"reached the contact thermometer will make the heating coild stop heating. "
+"Therefore in an experiment it is possible to have a constant temperature."
+msgstr ""
+
+#. i18n: file data/tools.xml line 194
+#: rc.cpp:1780
+#, no-c-format
+msgid "Clamps"
+msgstr ""
+
+#. i18n: file data/tools.xml line 195
+#: rc.cpp:1783
+#, no-c-format
+msgid ""
+"With clamps as used in a laboratory you can easily hold all kinds of tools."
+msgstr ""
+
+#. i18n: file data/tools.xml line 199
+#: rc.cpp:1786
+#, no-c-format
+msgid "Litmus Paper"
+msgstr ""
+
+#. i18n: file data/tools.xml line 200
+#: rc.cpp:1789
+#, no-c-format
+msgid ""
+"There are multiple way to measure the pH-Value of an solution. With a litmus "
+"paper it is easy to get a pretty precise pH-Value. The color indicates the "
+"value. If you need a more precise value you can for example use a pH-Meter "
+"which is using the conductivity of a solution."
+msgstr ""
+
+#. i18n: file data/tools.xml line 204
+#: rc.cpp:1792
+#, no-c-format
+msgid "Short-stem Funnel"
+msgstr ""
+
+#. i18n: file data/tools.xml line 205
+#: rc.cpp:1795
+#, no-c-format
+msgid "A funnel is used in the laboratory to fill powder into something."
+msgstr ""
+
+#. i18n: file data/tools.xml line 209
+#: rc.cpp:1798
+#, no-c-format
+msgid "Buret"
+msgstr ""
+
+#. i18n: file data/tools.xml line 210
+#: rc.cpp:1801
+#, no-c-format
+msgid ""
+"A buret is used to titrate liquids. The buret is filled with a specified volume "
+"of a liquid. Below it a container like an Erlenmeyer flask is placed. By "
+"opening the valve the liquid in the container will be titrated. High-quality "
+"buret have a venting-mechanism with which they can be very easily refilled with "
+"the exact volume for which the buret is calibrated."
+msgstr ""
+
+#. i18n: file data/tools.xml line 214
+#: rc.cpp:1804
+#, no-c-format
+msgid "Beaker"
+msgstr ""
+
+#. i18n: file data/tools.xml line 215
+#: rc.cpp:1807
+#, no-c-format
+msgid ""
+"Beakers are used in many places for a lot of tasks. They are used to store "
+"chemicals are to perform chemical reactions. They are also often used for "
+"titrations."
+msgstr ""
+
+#. i18n: file data/tools.xml line 219
+#: rc.cpp:1810
+#, no-c-format
+msgid "DSC (Differencial Scanning Calorimetry)"
+msgstr ""
+
+#. i18n: file data/tools.xml line 220
+#: rc.cpp:1813
+#, no-c-format
+msgid ""
+"The DSC measures the heat flow volume of a compound. This value is very "
+"specific for every kind of matter. Thus, the DSC is used to identify chemicals "
+"or to describe them."
+msgstr ""
+
+#. i18n: file data/tools.xml line 224
+#: rc.cpp:1816
+#, no-c-format
+msgid "Dewar vessel"
+msgstr ""
+
+#. i18n: file data/tools.xml line 225
+#: rc.cpp:1819
+#, no-c-format
+msgid ""
+"A dewar vessel (or dewar flask) is designed for a good thermal insulation. Its "
+"hull is a double-layer construction with vacuum between the two layers. Because "
+"of this they are appropriote for keeping liquids cold or warm. A thermos flawsk "
+"is an example of a dewar vessel."
+msgstr ""
+
+#: somwidget_impl.cpp:139
+msgid "Elements with melting point around this temperature:"
+msgstr "Bu sıcaklık yakınlarında erime noktası olan elementler:"
+
+#: somwidget_impl.cpp:142 somwidget_impl.cpp:156
+msgid ""
+"_: For example: Carbon (300K)\n"
+"%1 (%2)"
+msgstr "%1 (%2)"
+
+#: somwidget_impl.cpp:148
+msgid "No elements with a melting point around this temperature"
+msgstr "Bu sıcaklık yakınlarında erime noktası olan bir element yok"
+
+#: somwidget_impl.cpp:153
+msgid "Elements with boiling point around this temperature:"
+msgstr "Bu sıcaklık yakınlarında kaynama noktası olan elementler:"
+
+#: somwidget_impl.cpp:162
+msgid "No elements with a boiling point around this temperature"
+msgstr "Bu sıcaklık yakınlarında kaynama noktası olan bir element yok"
+
+#: spectrum.cpp:133
+msgid "Wavelength: %1 nm"
+msgstr ""
+
+#: spectrum.cpp:134 spectrumwidget.cpp:383
+#, fuzzy, c-format
+msgid "Intensity: %1"
+msgstr "Yoğunluk: %1"
+
+#: spectrum.cpp:135
+msgid "Probability: %1 10<sup>8</sup>s<sup>-1</sup>"
+msgstr ""
+
+#: spectrum.cpp:136
+#, c-format
+msgid "Energy 1: %1"
+msgstr ""
+
+#: spectrum.cpp:137
+#, c-format
+msgid "Energy 2: %1"
+msgstr ""
+
+#: spectrum.cpp:138
+#, fuzzy, c-format
+msgid "Electron Configuration 1: %1"
+msgstr "Elektronegatiflik: %1"
+
+#: spectrum.cpp:139
+#, fuzzy, c-format
+msgid "Electron Configuration 2: %1"
+msgstr "Elektronegatiflik: %1"
+
+#: spectrum.cpp:140
+#, fuzzy, c-format
+msgid "Term 1: %1"
+msgstr "Numara: %1"
+
+#: spectrum.cpp:141
+#, fuzzy, c-format
+msgid "Term 2: %1"
+msgstr "Numara: %1"
+
+#: spectrum.cpp:142
+#, c-format
+msgid "J 1: %1"
+msgstr ""
+
+#: spectrum.cpp:143
+#, c-format
+msgid "J 2: %1"
+msgstr ""
+
+#: spectrumviewimpl.cpp:31
+msgid "&Export Spectrum as Image"
+msgstr ""
+
+#: spectrumviewimpl.cpp:39
+msgid "Save Spectrum"
+msgstr ""
+
+#: spectrumviewimpl.cpp:43
+msgid "The spectrum could not be saved"
+msgstr ""
+
+#: spectrumviewimpl.cpp:43
+msgid "Image Could Not Be Saved"
+msgstr ""
+
+#: spectrumwidget.cpp:381
+#, c-format
+msgid "Wavelength: %1"
+msgstr ""
+
+#: spectrumwidget.cpp:385
+msgid "Energy 1, Energy 2: %1, %2"
+msgstr ""
+
+#: spectrumwidget.cpp:387
+msgid "Term 1, Term 2: %1, %2"
+msgstr ""
+
+#: spectrumwidget.cpp:389
+msgid "J 1, J 2: %1, %2"
+msgstr ""
+
+#: spectrumwidget.cpp:418
+#, c-format
+msgid "Emission spectrum of %1"
+msgstr ""
+
+#: spectrumwidget.cpp:420
+#, c-format
+msgid "Absorption spectrum of %1"
+msgstr ""

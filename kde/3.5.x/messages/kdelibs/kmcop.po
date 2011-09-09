@@ -1,0 +1,45 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com> , 2002.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2005-05-18 21:23+0200\n"
+"PO-Revision-Date: 2002-02-16 02:55+0200\n"
+"Last-Translator: Ömer Fadıl USTA <omer_fad@hotmail.com>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.5\n"
+
+#: kmcop.cpp:51
+msgid "KMCOP"
+msgstr "KMCOP"
+
+#: kmcop.cpp:52
+msgid "KDE MCOP-DCOP Bridge"
+msgstr "KDE MCOP-DCOP Köprüsü"
+
+#: kmcop.cpp:54
+msgid "Author"
+msgstr "Yazar"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr ""
+"Çevirmenlerin İsimleri : \n"
+"Görkem Çetin \n"
+"Ömer Fadıl USTA"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr ""
+"Çevirmenlerin E-posta Adresi :\n"
+"gorkem@kde.org \n"
+"omer_fad@hotmail.com"

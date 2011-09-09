@@ -1,0 +1,531 @@
+# translation of kpf.po to
+# Copyright (C) 2004, 2005, 2007 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2002.
+# Rıdvan CAN <ridvancan@linux-sevenler.org>, 2004.
+# Kaya Oğuz <kaya@kuzeykutbu.org>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kpf\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-08-12 01:17+0200\n"
+"PO-Revision-Date: 2007-07-09 05:38+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: ActiveMonitor.cpp:52
+msgid "Status"
+msgstr "Durum"
+
+#: ActiveMonitor.cpp:53
+msgid "Progress"
+msgstr "Süreç"
+
+#: ActiveMonitor.cpp:54
+msgid "File Size"
+msgstr "Dosya Boyu"
+
+#: ActiveMonitor.cpp:55
+msgid "Bytes Sent"
+msgstr "Gönderilen Bayt"
+
+#: ActiveMonitor.cpp:56
+msgid "Response"
+msgstr "Cevap"
+
+#: ActiveMonitor.cpp:57
+msgid "Resource"
+msgstr "Kaynak"
+
+#: ActiveMonitor.cpp:58
+msgid "Host"
+msgstr "Makine"
+
+#: ActiveMonitorWindow.cpp:42
+msgid "Monitoring %1 - kpf"
+msgstr "%1 İzleniyor - kpf"
+
+#: ActiveMonitorWindow.cpp:51
+msgid "&Cancel Selected Transfers"
+msgstr "&Seçilen Aktarımları İptal Et"
+
+#: Applet.cpp:64
+msgid "You cannot run KPF as root."
+msgstr "KPF'yi root olarak çalıştıramazsınız."
+
+#: Applet.cpp:65
+msgid "Running as root exposes the whole system to external attackers."
+msgstr "Bu programı root haklarıyla çalıştırmak güvenlik riskleri getirebilir."
+
+#: Applet.cpp:67
+msgid "Running as root."
+msgstr "Root olarak çalışıyor."
+
+#: Applet.cpp:128 AppletItem.cpp:73
+msgid "New Server..."
+msgstr "Yeni Sunucu..."
+
+#: Applet.cpp:183
+msgid "kpf"
+msgstr "kpf"
+
+#: Applet.cpp:185
+msgid "KDE public fileserver"
+msgstr "KDE genel dosya sunucusu"
+
+#: Applet.cpp:189
+msgid ""
+"File sharing applet, using the HTTP (Hyper Text Transfer Protocol) standard to "
+"serve files."
+msgstr "HTTP standardı kullanarak dosya paylaştıran bir program"
+
+#: Applet.cpp:199
+msgid ""
+"Permission is hereby granted, free of charge, to any person obtaining a copy\n"
+"of this software and associated documentation files (the \"Software\"), to\n"
+"deal in the Software without restriction, including without limitation the\n"
+"rights to use, copy, modify, merge, publish, distribute, sublicense, and/or\n"
+"sell copies of the Software, and to permit persons to whom the Software is\n"
+"furnished to do so, subject to the following conditions:\n"
+"\n"
+"The above copyright notice and this permission notice shall be included in\n"
+"all copies or substantial portions of the Software.\n"
+"\n"
+"THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n"
+"IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n"
+"FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n"
+"AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN\n"
+"ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\n"
+"WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+msgstr ""
+
+#: AppletItem.cpp:65
+#, c-format
+msgid "kpf - %1"
+msgstr "kpf - %1"
+
+#: AppletItem.cpp:78
+msgid "Monitor"
+msgstr "İzle"
+
+#: AppletItem.cpp:81
+msgid "Preferences..."
+msgstr "Tercihler..."
+
+#: AppletItem.cpp:87
+msgid "Restart"
+msgstr "Yeniden başlat"
+
+#: AppletItem.cpp:90 AppletItem.cpp:179
+msgid "Pause"
+msgstr "Duraklat"
+
+#: AppletItem.cpp:176
+msgid "Unpause"
+msgstr "Başlat"
+
+#: BandwidthGraph.cpp:90
+msgid "%1 on port %2"
+msgstr "%2 portu üzerinde %1"
+
+#: BandwidthGraph.cpp:248
+msgid "%1 b/s"
+msgstr "%1 b/s"
+
+#: BandwidthGraph.cpp:249
+msgid "%1 kb/s"
+msgstr "%1 kb/s"
+
+#: BandwidthGraph.cpp:250
+msgid "%1 Mb/s"
+msgstr "%1 Mb/s"
+
+#: BandwidthGraph.cpp:260
+msgid "Idle"
+msgstr "Boş"
+
+#: ConfigDialogPage.cpp:51 PropertiesDialogPlugin.cpp:326 ServerWizard.cpp:132
+msgid "&Listen port:"
+msgstr "&Portu dinle:"
+
+#: ConfigDialogPage.cpp:52 PropertiesDialogPlugin.cpp:327 ServerWizard.cpp:135
+msgid "&Bandwidth limit:"
+msgstr "&Bant genişliği sınırı:"
+
+#: ConfigDialogPage.cpp:59 PropertiesDialogPlugin.cpp:329 ServerWizard.cpp:141
+msgid "&Server name:"
+msgstr "&Sunucu adı:"
+
+#: ConfigDialogPage.cpp:66 PropertiesDialogPlugin.cpp:340
+msgid "&Follow symbolic links"
+msgstr "&Sembolik bağlantıları izle"
+
+#: ConfigDialogPage.cpp:84 ServerWizard.cpp:171
+msgid " kB/s"
+msgstr " kB/s"
+
+#: ConfigDialogPage.cpp:133 PropertiesDialogPlugin.cpp:403 ServerWizard.cpp:82
+msgid ""
+"<p>Specify the network `port' on which the server should listen for "
+"connections.</p>"
+msgstr "<p>Sunucunun bağlantıyı dinleyeceği portu belirtin.</p>"
+
+#: ConfigDialogPage.cpp:142 PropertiesDialogPlugin.cpp:412 ServerWizard.cpp:95
+msgid ""
+"<p>Specify the maximum amount of data (in kilobytes) that will be sent out per "
+"second.</p>"
+"<p>This allows you to keep some bandwidth for yourself instead of allowing "
+"connections with kpf to hog your connection.</p>"
+msgstr ""
+"<p>Saniyede gönderilecek verinin azami boyunu (Kb cinsinden) belirtin. </p>"
+"<p>Böylece tek kullanıcının tüm bağlantınızı kullanması engellenebilir.</p>"
+
+#: ConfigDialogPage.cpp:155 PropertiesDialogPlugin.cpp:425
+msgid ""
+"<p>Specify the maximum number of connections allowed at any one time.</p>"
+msgstr "<p>Herhangi bir anda kurulacak azami bağlantı sayısını belirtin.</p>"
+
+#: ConfigDialogPage.cpp:164
+msgid ""
+"<p>Allow serving of files which have a symbolic link in the path from / to the "
+"file, or are a symbolic link themselves.</p>"
+"<p><strong>Warning !</strong> This could be a security risk. Use only if you "
+"understand the issues involved.</p>"
+msgstr ""
+"<p>/ den dosyaya bir sembolik bağı olan ya da kendileri bir sembolik bağ olan "
+"dosyaları paylaşıma aç.</p> "
+"<p><strong>Uyarı!</strong> Bu bir güvenlik riski olabilir. Lütfen konuların "
+"neler içerdiğini biliyorsanız kullanın.</p>"
+
+#: ConfigDialogPage.cpp:178
+msgid ""
+"<p>Specify the text that will be sent upon an error, such as a request for a "
+"page that does not exist on this server.</p>"
+msgstr ""
+"<p>Hatada gönderilecek metni belirtir, bu sayfanın sunucu üzerinde olması "
+"gereklidir.</p>"
+
+#: DirectoryLister.cpp:188
+msgid " MB"
+msgstr " MB"
+
+#: DirectoryLister.cpp:193
+msgid " KB"
+msgstr " KB"
+
+#: DirectoryLister.cpp:199
+msgid " bytes"
+msgstr " bayt"
+
+#: DirectoryLister.cpp:251
+msgid "Directory does not exist: %1 %2"
+msgstr "Dizin bulunamadı: %1 %2"
+
+#: DirectoryLister.cpp:263
+msgid "Directory unreadable: %1 %2"
+msgstr "Dizin okunamadı: %1 %2"
+
+#: DirectoryLister.cpp:315
+msgid "Parent Directory"
+msgstr "Ana Dizin"
+
+#: DirectoryLister.cpp:338
+#, c-format
+msgid "Directory listing for %1"
+msgstr "%1 dizin listesi"
+
+#: ErrorMessageConfigDialog.cpp:52
+msgid "Configure error messages"
+msgstr "Hata mesajlarını yapılandır"
+
+#: ErrorMessageConfigDialog.cpp:73
+msgid ""
+"<p>Here you may select files to use instead of the default error messages "
+"passed to a client.</p>"
+"<p>The files may contain anything you wish, but by convention you should report "
+"the error code and the English version of the error message (e.g. \"Bad "
+"request\"). Your file should also be valid HTML.</p>"
+"<p>The strings ERROR_MESSAGE, ERROR_CODE and RESOURCE, if they exist in the "
+"file, will be replaced with the English error message, the numeric error code "
+"and the path of the requested resource, respectively.</p>"
+msgstr ""
+"<p>Burada istemciye gönderilen öntanımlı hata mesajları yerine kullanacağınız "
+"dosyaları seçebilirsiniz.</p> "
+"<p>Dosyalar istediğiniz herhangi bir şeyi içerebilir, ama genelde hata kodu ve "
+"hatanın İngilizcesi yazılır (örn: \"Bad request\"). Dosyanız geçerli bir HTML "
+"sayfası olmalıdır.</p> "
+"<p>ERROR_MESSAGE, ERROR_CODE ve RESOURCE dizgeleri, eğer dosyada varsalar, "
+"bunların yerine sırasıyla İngilizce hata mesajı, sayısal hata kodu ve istenen "
+"kaynağın tam yolu konulacaktır.</p>"
+
+#: ErrorMessageConfigDialog.cpp:91
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: Help.cpp:38
+msgid ""
+"<p>Specify the name that will be used when announcing this server on "
+"network.</p>"
+msgstr "<p>Bu sunucuyu ağ üzerinde bildirirken kullanılacak ismi belirtin.</p>"
+
+#: Help.cpp:41
+msgid ""
+"<p>The Zeroconf daemon is not running. See the Handbook for more information."
+"<br/>Other users will not see this system when browsing the network via "
+"zeroconf, but sharing will still work.</p>"
+msgstr ""
+"<p>Zeroconf hizmeti çalışmıyor. Daha fazla bilgi için Elkitabına bakın. \n"
+"Diğer kullanıcılar ağa zeroconf ile göz atarken bu sistemi görmeyecekler, ama "
+"paylaşma çalışmaya devam edecek.</p>"
+
+#: Help.cpp:46
+msgid ""
+"<p>Zeroconf support is not available in this version of KDE. See the Handbook "
+"for more information."
+"<br/>Other users will not see this system when browsing the network via "
+"zeroconf, but sharing will still work.</p>"
+msgstr ""
+"Zeroconf desteği KDE'nin bu sürümünde kullanılabilir değil. Daha fazla bilgi "
+"için Elkitabına bakın.\n"
+"Diğer kullanıcılar ağa zeroconf ile göz atarken bu sistemi görmeyecekler, ama "
+"paylaşma çalışmaya devam edecek.</p>"
+
+#: Help.cpp:51
+msgid ""
+"<p>Unknown error with Zeroconf."
+"<br/>Other users will not see this system when browsing the network via "
+"zeroconf, but sharing will still work.</p>"
+msgstr ""
+"<p>Zeroconf'ta bilinmeyen bir hata.\n"
+"Diğer kullanıcılar ağa zeroconf ile göz atarken bu sistemi görmeyecekler, ama "
+"paylaşma çalışmaya devam edecek.</p>"
+
+#: PropertiesDialogPlugin.cpp:186
+msgid "&Sharing"
+msgstr "&Paylaşım"
+
+#: PropertiesDialogPlugin.cpp:285
+msgid ""
+"<p>To share files via the web, you need to be running an 'applet' in your KDE "
+"panel. This 'applet' is a small program which provides file sharing "
+"capabilities.</p>"
+msgstr ""
+"<p>Web üzerinden dosyaları paylaşabilmeniz için, KDE panelinde küçük bir "
+"programı çalıştırmanız gereklidir. Bu programcık KDE'ye dosya paylaşım yeteneği "
+"verir.</p>"
+
+#: PropertiesDialogPlugin.cpp:295
+msgid "Start Applet"
+msgstr "Programı Başlat"
+
+#: PropertiesDialogPlugin.cpp:302 PropertiesDialogPlugin.cpp:558
+msgid "Applet status: <strong>not running</strong>"
+msgstr "Durum: <strong>çalışmıyor</strong>"
+
+#: PropertiesDialogPlugin.cpp:324
+msgid "Share this directory on the &Web"
+msgstr "Bu dizini W&eb'de paylaştır"
+
+#: PropertiesDialogPlugin.cpp:349
+msgid "kB/s"
+msgstr "kB/s"
+
+#: PropertiesDialogPlugin.cpp:378
+msgid ""
+"<p>Setting this option makes all files in this directory and any subdirectories "
+"available for reading to anyone who wishes to view them.</p>"
+"<p>To view your files, a web browser or similar program may be used.</p>"
+"<p><strong>Warning!</strong> Before sharing a directory, you should be sure "
+"that it does not contain sensitive information, such as passwords, company "
+"secrets, your addressbook, etc.</p>"
+"<p>Note that you cannot share your home directory (%1)</p>"
+msgstr ""
+"<p>Bu seçeneği ayarlamak bu dizindeki bütün dosyaları ve her alt dizini, onları "
+"görmek isteyen herkese okunabilir kılar.</p> "
+"<p>Dosyalarınızı görmek için, bir web tarayıcı ya da benzer bir program "
+"kullanılabilir.</p> "
+"<p><strong>Uyarı!</strong> Bir dizini paylaşmadan önce, parola, şirket gizli "
+"bilgileri, adres defteriniz vb. hassas bilgileri içermediğinden emin olun.</p> "
+"<p>Ev dizininizi (%1) paylaşıma açamazsınız. </p>"
+
+#: PropertiesDialogPlugin.cpp:434
+msgid ""
+"<p>Allow serving of files which have a symbolic link in the path from / to the "
+"file, or are a symbolic link themselves.</p>"
+"<p><strong>Warning!</strong> This could be a security risk. Use only if you "
+"understand the issues involved.</p>"
+msgstr ""
+"<p>/ den dosyaya bir sembolik bağı olan ya da kendileri bir sembolik bağ olan "
+"dosyaları paylaşıma aç.</p> "
+"<p><strong>Uyarı!</strong> Bu bir güvenlik riski olabilir. Lütfen konuların "
+"neler içerdiğini biliyorsanız kullanın.</p>"
+
+#: PropertiesDialogPlugin.cpp:511
+msgid "Applet status: <strong>starting...</strong>"
+msgstr "Durum: <strong>başlatılıyor...</strong>"
+
+#: PropertiesDialogPlugin.cpp:523
+msgid "Applet status: <strong>failed to start</strong>"
+msgstr "Durum: <strong>başlatılamadı</strong>"
+
+#: PropertiesDialogPlugin.cpp:536
+msgid "Applet status: <strong>running</strong>"
+msgstr "Durum: <strong>çalışıyor</strong>"
+
+#: PropertiesDialogPlugin.cpp:678
+msgid ""
+"<p>Before you share a directory, be <strong>absolutely certain</strong> "
+"that it does not contain sensitive information.</p>"
+"<p>Sharing a directory makes all information in that directory <strong>"
+"and all subdirectories</strong> available to <strong>anyone</strong> "
+"who wishes to read it.</p>"
+"<p>If you have a system administrator, please ask for permission before sharing "
+"a directory in this way.</p>"
+msgstr ""
+"<p>Bir dizin paylaşmadan önce hassas bilgi içermediğinden <strong>"
+"kesinlikle emin</strong> olun. </p> "
+"<p>Bir dizini paylaşmak, o dizindeki <strong>ve bütün alt "
+"dizinlerindeki</strong> bütün bilgileri okumak isteyen <strong>herkese</strong> "
+"erişebilir kılar.</p> "
+"<p>Eğer bir sistem yöneticiniz varsa, lütfen bu şekilde bir dizin paylaşmadan "
+"önce izin isteyiniz.</p>"
+
+#: PropertiesDialogPlugin.cpp:693
+msgid "Warning - Sharing Sensitive Information?"
+msgstr "Uyarı: Gizli bilgileri paylaşıyor musunuz?"
+
+#: PropertiesDialogPlugin.cpp:694
+msgid "&Share Directory"
+msgstr "&Dizini Paylaştır"
+
+#: ServerWizard.cpp:52
+#, c-format
+msgid "New Server - %1"
+msgstr "Yeni Sunucu - %1"
+
+#: ServerWizard.cpp:65
+msgid ""
+"<p>Specify the directory which contains the files you wish to share.</p>"
+"<p><em>Warning</em>: Do not share any directories that contain sensitive "
+"information!</p>"
+msgstr ""
+"<p>Paylaştırılacak dosyaların bulunduğu dizini belirleyin.</p>"
+"<p><em>Uyarı:</em> Önemli bilgilerin bulunduğu dizinleri paylaşıma açmayın!"
+
+#: ServerWizard.cpp:129
+msgid "&Root directory:"
+msgstr "&Kök dizini:"
+
+#: ServerWizard.cpp:228
+msgid "Root Directory"
+msgstr "Kök Dizini"
+
+#: ServerWizard.cpp:229
+msgid "Listen Port"
+msgstr "Portu Dinle"
+
+#: ServerWizard.cpp:230
+msgid "Bandwidth Limit"
+msgstr "Bant Genişliği Sınırı"
+
+#: ServerWizard.cpp:232
+msgid "Server Name"
+msgstr "Sunucu Adı"
+
+#: ServerWizard.cpp:399
+#, c-format
+msgid "Choose Directory to Share - %1"
+msgstr "Paylaştırılacak Dizini Seçin - %1"
+
+#: SingleServerConfigDialog.cpp:43
+msgid "Configuring Server %1 - kpf"
+msgstr "%1 Sunucusu Yapılandırılıyor - kpf"
+
+#: StartingKPFDialog.cpp:57
+msgid "Starting KDE public fileserver applet"
+msgstr "KDE genel dosya sunucu sistemi başlatılıyor"
+
+#: StartingKPFDialog.cpp:70
+msgid "Starting kpf..."
+msgstr "Kpf başlatılıyor..."
+
+#: Utils.cpp:325
+msgid "Partial content"
+msgstr "Kısmi içerik"
+
+#: Utils.cpp:328
+msgid "Not modified"
+msgstr "Düzenlenmedi"
+
+#: Utils.cpp:331
+msgid "Bad request"
+msgstr "Hatalı istek"
+
+#: Utils.cpp:334
+msgid "Forbidden"
+msgstr "Yasak"
+
+#: Utils.cpp:337
+msgid "Not found"
+msgstr "Bulunamadı"
+
+#: Utils.cpp:340
+msgid "Precondition failed"
+msgstr "Durum hatası"
+
+#: Utils.cpp:343
+msgid "Bad range"
+msgstr "Hatalı aralık"
+
+#: Utils.cpp:346
+msgid "Internal error"
+msgstr "İç hata"
+
+#: Utils.cpp:349
+msgid "Not implemented"
+msgstr "Henüz hazırlanmadı"
+
+#: Utils.cpp:352
+msgid "HTTP version not supported"
+msgstr "HTTP sürümü desteklenmiyor"
+
+#: Utils.cpp:355
+msgid "Unknown"
+msgstr "Bilinmeyen"
+
+#: WebServer.cpp:174
+msgid "Successfully published this new service to the network (ZeroConf)."
+msgstr "Bu yeni hizmet ağa başarıyla yayımlandı (ZeroConf)."
+
+#: WebServer.cpp:174
+msgid "Successfully Published the Service"
+msgstr "Hizmet başarıyla yayımlandı."
+
+#: WebServer.cpp:178
+msgid ""
+"Failed to publish this new service to the network (ZeroConf).  The server will "
+"work fine without this, however."
+msgstr ""
+"Bu hizmet ağa yayımlanamadı (ZeroConf). Ama, sunucu bu olmadan da düzgün "
+"çalışacaktır."
+
+#: WebServer.cpp:178
+msgid "Failed to Publish the Service"
+msgstr "Hizmet yayımlanması başarısız oldu."
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin, Kaya Oğuz"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org, kaya@kuzeykutbu.org"

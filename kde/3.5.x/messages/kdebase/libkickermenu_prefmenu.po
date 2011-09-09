@@ -1,0 +1,26 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2006-03-18 04:02+0100\n"
+"PO-Revision-Date: 2005-06-14 01:41+0200\n"
+"Last-Translator: Adil YILDIZ <adil@kde.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: prefmenu.cpp:49
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: prefmenu.cpp:248
+msgid "Control Center"
+msgstr "Kontrol Merkezi"
+
+#: prefmenu.cpp:266
+msgid "No Entries"
+msgstr "Girdi Yok"

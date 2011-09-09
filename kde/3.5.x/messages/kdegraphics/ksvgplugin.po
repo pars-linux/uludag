@@ -1,0 +1,75 @@
+# translation of ksvgplugin.po to Türkçe
+# translation of ksvgplugin.po to Turkish
+# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+# RIDVAN CAN <ridvan@geleceklinux.org>, 2003.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Alper Sen <aalpersen@gmail.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ksvgplugin\n"
+"POT-Creation-Date: 2005-05-18 21:25+0200\n"
+"PO-Revision-Date: 2005-07-15 13:58+0300\n"
+"Last-Translator: Alper Sen <aalpersen@gmail.com>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Rıdvan CAN"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "ridvan@linuxdeneyimi.com"
+
+#: ksvg_factory.cpp:82
+msgid "KSVG"
+msgstr "KSVG"
+
+#: ksvg_plugin.cpp:117
+msgid "Zoom &Reset"
+msgstr "Odaklanmayı Sıfı&rla"
+
+#: ksvg_plugin.cpp:118
+msgid "&Stop Animations"
+msgstr "Anima&syonu Durdur"
+
+#: ksvg_plugin.cpp:119
+msgid "View &Source"
+msgstr "Ka&ynağı Görüntüle"
+
+#: ksvg_plugin.cpp:120
+msgid "View &Memory"
+msgstr "Bellek Görü&ntüle"
+
+#: ksvg_plugin.cpp:121
+msgid "Save to PNG..."
+msgstr "PNG Kaydet..."
+
+#: ksvg_plugin.cpp:123
+msgid "About KSVG"
+msgstr "KSVG Hakkında"
+
+#: ksvg_plugin.cpp:124
+msgid "Use Font &Kerning"
+msgstr "&Karakter Çiftlerini Sıkıştıran Yazıtipini Kullan"
+
+#: ksvg_plugin.cpp:125
+msgid "Use &Progressive Rendering"
+msgstr "Aşamalı &Verme Kullan"
+
+#: ksvg_plugin.cpp:132
+msgid "Rendering &Backend"
+msgstr "Derleme &Aracı"
+
+#: ksvg_plugin.cpp:401 ksvg_plugin.cpp:412
+#, c-format
+msgid "Description: %1"
+msgstr "Tanımlama: %1"

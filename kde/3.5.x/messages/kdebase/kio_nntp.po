@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2001
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kde \n"
+"POT-Creation-Date: 2005-06-20 01:29+0200\n"
+"PO-Revision-Date: 2001-05-10 01:35+0200\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: utf8\n"
+
+#: nntp.cpp:196
+#, c-format
+msgid "Invalid special command %1"
+msgstr "Geçersiz özel komut: %1"
+
+#: nntp.cpp:449
+#, c-format
+msgid ""
+"Could not extract first message number from server response:\n"
+"%1"
+msgstr ""
+"Sunucudan alınan yanıttaki ilk mesaj numarası anlaşılamadı:\n"
+"%1"
+
+#: nntp.cpp:489
+#, c-format
+msgid ""
+"Could not extract first message id from server response:\n"
+"%1"
+msgstr ""
+"Sunucudan alınan yanıttaki ilk mesaj numarası anlaşılamadı:\n"
+"%1"
+
+#: nntp.cpp:518
+#, c-format
+msgid ""
+"Could not extract message id from server response:\n"
+"%1"
+msgstr ""
+"Sunucudan alınan yanıttaki mesaj numarası anlaşılamadı:\n"
+"%1"
+
+#: nntp.cpp:728
+msgid "This server does not support TLS"
+msgstr ""
+
+#: nntp.cpp:733
+msgid "TLS negotiation failed"
+msgstr ""
+
+#: nntp.cpp:817
+msgid ""
+"Unexpected server response to %1 command:\n"
+"%2"
+msgstr ""
+"%1 komutuna beklenmeyen sunucu cevabı:\n"
+"%2"

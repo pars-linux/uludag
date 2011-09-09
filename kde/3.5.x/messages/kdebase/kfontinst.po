@@ -1,0 +1,604 @@
+# translation of kfontinst.po to Türkçe
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kfontinst\n"
+"POT-Creation-Date: 2008-06-16 02:37+0200\n"
+"PO-Revision-Date: 2005-06-14 01:32+0200\n"
+"Last-Translator: Adil YILDIZ <adil@kde.org.tr>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: kcmfontinst/KCmFontInst.cpp:87
+msgid "KDE Font Installer"
+msgstr "KDE Yazıtipi Kurucusu"
+
+#: kcmfontinst/KCmFontInst.cpp:90
+msgid ""
+"GUI front end to the fonts:/ ioslave.\n"
+"(c) Craig Drummond, 2000 - 2004"
+msgstr ""
+"Yazıtipleri kurmak için grafiksel arayüz\n"
+"(c) Craig Drummond, 2000 - 2004"
+
+#: kcmfontinst/KCmFontInst.cpp:92
+msgid "Developer and maintainer"
+msgstr "Geliştirici"
+
+#: kcmfontinst/KCmFontInst.cpp:157 kcmfontinst/KCmFontInst.cpp:220
+msgid "Add Fonts..."
+msgstr "Yazıtiplerini Ekle..."
+
+#: kcmfontinst/KCmFontInst.cpp:172
+msgid ""
+"<b>The fonts shown are your personal fonts.</b>"
+"<br>To see (and install) system-wide fonts, click on the \"Administrator Mode\" "
+"button below."
+msgstr ""
+
+#: kcmfontinst/KCmFontInst.cpp:213
+msgid "Show Bitmap Fonts"
+msgstr "Bitmap Yazıtiplerini Göster"
+
+#: kcmfontinst/KCmFontInst.cpp:234
+msgid "Configure..."
+msgstr "Yapılandır..."
+
+#: kcmfontinst/KCmFontInst.cpp:238
+msgid "Print..."
+msgstr "Yazdır..."
+
+#: kcmfontinst/KCmFontInst.cpp:317
+#, fuzzy
+msgid ""
+"<h1>Font Installer</h1>"
+"<p> This module allows you to install TrueType, Type1, and Bitmap fonts.</p>"
+"<p>You may also install fonts using Konqueror: type fonts:/ into Konqueror's "
+"location bar and this will display your installed fonts. To install a font, "
+"simply copy one into the folder.</p>"
+msgstr ""
+"<h1>Yazıtipi Kurucusu</h1> "
+"<p>Bu modül TrueType, Type1, Speedo ve biteşlem yazıtiplerinin kurulmasını "
+"sağlar. </p> "
+"<p>Sisteme yazıtiplerini aynı zamanda Konqueror yardımıyla da kurabilirsiniz. "
+"Sadece Konqueror'daki adres çubuğuna fonts:// yazmak yeterlidir. Böylece "
+"sistemde kurulu yazıtiplerinin bir listesi görüntülenir. Bir yazıtipini kurmak "
+"için yazıtipi dosyasını uygun bir dizine taşımak yeterlidir. </p>"
+
+#: kcmfontinst/KCmFontInst.cpp:324
+#, fuzzy
+msgid ""
+"<h1>Font Installer</h1>"
+"<p> This module allows you to install TrueType, Type1, and Bitmap fonts.</p>"
+"<p>You may also install fonts using Konqueror: type fonts:/ into Konqueror's "
+"location bar and this will display your installed fonts. To install a font, "
+"simply copy it into the appropriate folder -  \"Personal\" for fonts available "
+"to just yourself, or  \"System\" for system-wide fonts (available to all).</p>"
+"<p><b>NOTE:</b> As you are not logged in as \"root\", any fonts installed will "
+"only be available to you. To install fonts system-wide, use the \"Administrator "
+"Mode\" button to run this module as \"root\".</p>"
+msgstr ""
+"<h1>Yazıtipi Kurucusu</h1> "
+"<p>Bu modül TrueType, Type1, Speedo ve biteşlem yazıtiplerinin kurulmasını "
+"sağlar. </p> "
+"<p>Sisteme yazıtiplerini aynı zamanda Konqueror yardımıyla da kurabilirsiniz. "
+"Sadece Konqueror'daki adres çubuğuna fonts:// yazmak yeterlidir. Böylece "
+"sistemde kurulu yazıtiplerinin bir listesi görüntülenir. Bir yazıtipini kurmak "
+"için yazıtipi dosyasını uygun bir dizine taşımak yeterlidir. </p>"
+
+#: kcmfontinst/KCmFontInst.cpp:421
+msgid "Add Fonts"
+msgstr "Yazıtiplerini Ekle"
+
+#: kcmfontinst/KCmFontInst.cpp:430
+msgid "You did not select anything to delete."
+msgstr "Silmek için hiç bir şey yapmadınız."
+
+#: kcmfontinst/KCmFontInst.cpp:430
+msgid "Nothing to Delete"
+msgstr "Silinecek Öğe Yok"
+
+#: kcmfontinst/KCmFontInst.cpp:454
+msgid ""
+"<qt>Do you really want to delete\n"
+" <b>'%1'</b>?</qt>"
+msgstr ""
+"<qt>Gerçekten <b>'%1'</b> isimli\n"
+"dosyayı silmek istiyor musunuz?</qt>"
+
+#: kcmfontinst/KCmFontInst.cpp:455
+msgid "Delete Font"
+msgstr "Yazıtipini Sil"
+
+#: kcmfontinst/KCmFontInst.cpp:459
+#, c-format
+msgid ""
+"_n: Do you really want to delete this font?\n"
+"Do you really want to delete these %n fonts?"
+msgstr "Gerçekten bu %n yazıtiplerini silmek istiyor musunuz?"
+
+#: kcmfontinst/KCmFontInst.cpp:461
+msgid "Delete Fonts"
+msgstr "Yazıtiplerini Sil"
+
+#: kcmfontinst/KCmFontInst.cpp:535
+msgid ""
+"There are no printable fonts.\n"
+"You can only print non-bitmap fonts."
+msgstr ""
+"Yazdıralabilir yazıtipi mevcut değil.\n"
+"Sadece bitmap olmayan yazıtiplerini yazdırabilirsiniz."
+
+#: kcmfontinst/KCmFontInst.cpp:536
+msgid "Cannot Print"
+msgstr "Yazdırılamıyor"
+
+#: kcmfontinst/KCmFontInst.cpp:561
+#, c-format
+msgid ""
+"_n: One Font\n"
+"%n Fonts"
+msgstr "%n Yazıtipi"
+
+#: kcmfontinst/KCmFontInst.cpp:581
+msgid "(%1 Total)"
+msgstr "(Toplam: %1)"
+
+#: kcmfontinst/KCmFontInst.cpp:584
+#, c-format
+msgid ""
+"_n: One Family\n"
+"%n Families"
+msgstr "%n Aile"
+
+#: kcmfontinst/KCmFontInst.cpp:611
+msgid ""
+"<p>Please note that any open applications will need to be restarted in order "
+"for any changes to be noticed."
+"<p>"
+"<p>(You will also have to restart this application in order to use its print "
+"function on any newly installed fonts.)</p>"
+msgstr ""
+
+#: kcmfontinst/KCmFontInst.cpp:615
+msgid ""
+"Please note that any open applications will need to be restarted in order for "
+"any changes to be noticed."
+msgstr ""
+
+#: kcmfontinst/KCmFontInst.cpp:618 viewpart/FontViewPart.cpp:244
+msgid "Success"
+msgstr "Başarılı"
+
+#: kcmfontinst/KFileFontView.cpp:73
+msgid "Detailed View"
+msgstr "Ayrıntılı Görünüm"
+
+#: kcmfontinst/KFileFontView.cpp:75
+msgid "Name"
+msgstr "İsim"
+
+#: kcmfontinst/KFileFontView.cpp:76
+msgid "Size"
+msgstr "Boyut"
+
+#: kcmfontinst/KFileFontView.cpp:77
+msgid "Type"
+msgstr "Biçim"
+
+#: kcmfontinst/PrintDialog.cpp:39
+msgid "Print Font Samples"
+msgstr "Yazıtipi Örneklerini Yazdır"
+
+#: kcmfontinst/PrintDialog.cpp:44
+msgid "Output:"
+msgstr "Çıktı:"
+
+#: kcmfontinst/PrintDialog.cpp:46
+#, fuzzy
+msgid "All Fonts"
+msgstr "Tüm yazıtipleri"
+
+#: kcmfontinst/PrintDialog.cpp:47
+#, fuzzy
+msgid "Selected Fonts"
+msgstr "Seçili yazıtipleri"
+
+#: kcmfontinst/PrintDialog.cpp:49
+msgid "Font size:"
+msgstr "Yazıtipi boyutu:"
+
+#: kcmfontinst/PrintDialog.cpp:51
+msgid "Waterfall"
+msgstr "Şelale"
+
+#: kcmfontinst/PrintDialog.cpp:52
+msgid "12pt"
+msgstr "12pt"
+
+#: kcmfontinst/PrintDialog.cpp:53
+msgid "18pt"
+msgstr "18pt"
+
+#: kcmfontinst/PrintDialog.cpp:54
+msgid "24pt"
+msgstr "24pt"
+
+#: kcmfontinst/PrintDialog.cpp:55
+msgid "36pt"
+msgstr "36pt"
+
+#: kcmfontinst/PrintDialog.cpp:56
+msgid "48pt"
+msgstr "48pt"
+
+#: kcmfontinst/SettingsDialog.cpp:46
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: kcmfontinst/SettingsDialog.cpp:51
+msgid "Configure fonts for legacy X applications"
+msgstr ""
+
+#: kcmfontinst/SettingsDialog.cpp:52
+msgid ""
+"<p>Modern applications use a system called \"FontConfig\" to obtain the list of "
+"fonts. Older applications, such as OpenOffice 1.x, GIMP 1.x, etc. use the "
+"previous \"core X fonts\" mechanism for this.</p>"
+"<p>Selecting this option will inform the installer to create the necessary "
+"files so that these older applications can use the fonts you install.</p>"
+"<p>Please note, however, that this will slow down the installation process."
+"<p>"
+msgstr ""
+
+#: kcmfontinst/SettingsDialog.cpp:57
+msgid "Configure fonts for Ghostscript"
+msgstr "Ghostscript için olan yazıtiplerini yapılandır"
+
+#: kcmfontinst/SettingsDialog.cpp:58
+msgid ""
+"<p>When printing, most applications create what is know as PostScript. This is "
+"then sent to a special application, named Ghostscript, which can interpret the "
+"PostScript and send the appropriate instructions to your printer. If your "
+"application does not embed whatever fonts it uses into the PostScript, then "
+"Ghostscript needs to be informed as to which fonts you have installed, and "
+"where they are located.</p>"
+"<p>Selecting this option will create the necessary Ghostscript config files.</p>"
+"<p>Please note, however, that this will also slow down the installation "
+"process.</p>"
+"<p>As most applications can, and do, embed the fonts into the PostScript before "
+"sending this to Ghostscript, this option can safely be disabled."
+msgstr ""
+
+#: kcmfontinst/SettingsDialog.cpp:84
+msgid ""
+"You have enabled a previously disabled option. Would you like the config files "
+"updated now? (Normally they are only updated upon installing, or removing, a "
+"font.)"
+msgstr ""
+
+#: kcmfontinst/SettingsDialog.cpp:86
+msgid "Update"
+msgstr ""
+
+#: kcmfontinst/SettingsDialog.cpp:86
+msgid "Do Not Update"
+msgstr ""
+
+#: kfile-plugin/KFileFont.cpp:287
+msgid "General"
+msgstr "Genel"
+
+#: kfile-plugin/KFileFont.cpp:289
+msgid "Full Name"
+msgstr "Tam Adı"
+
+#: kfile-plugin/KFileFont.cpp:290
+msgid "Family"
+msgstr "Aile"
+
+#: kfile-plugin/KFileFont.cpp:291
+msgid "Foundry"
+msgstr "Döküm"
+
+#: kfile-plugin/KFileFont.cpp:292
+msgid "Weight"
+msgstr "Ağırlık"
+
+#: kfile-plugin/KFileFont.cpp:297
+msgid "Slant"
+msgstr "Aksan"
+
+#: kio/KioFonts.cpp:905 kio/KioFonts.cpp:2371
+msgid "Please specify \"%1\" or \"%2\"."
+msgstr "Lütfen \"%1\" veya \"%2\"'yi belirtin."
+
+#: kio/KioFonts.cpp:1101 kio/KioFonts.cpp:1153 kio/KioFonts.cpp:1168
+#: kio/KioFonts.cpp:1393 kio/KioFonts.cpp:1598 kio/KioFonts.cpp:1659
+msgid "Could not access \"%1\" folder."
+msgstr "\"%1\" klasörüne erişelemiyor."
+
+#: kio/KioFonts.cpp:1515
+msgid "Sorry, fonts cannot be renamed."
+msgstr "Üzgünüm, yazıtiplerini yeniden adlandırılamaz."
+
+#: kio/KioFonts.cpp:1920
+msgid ""
+"Incorrect password.\n"
+msgstr ""
+"Yanlış parola.\n"
+
+#: kio/KioFonts.cpp:1963
+msgid ""
+"Do you wish to install the font into \"%1\" (in which case the font will only "
+"be usable by you), or \"%2\" (the font will be usable by all users - but you "
+"will need to know the administrator's password)?"
+msgstr ""
+
+#: kio/KioFonts.cpp:1968
+msgid "Where to Install"
+msgstr "Kurulacak Yer"
+
+#: kio/KioFonts.cpp:2067
+msgid "Internal fontconfig error."
+msgstr "İç yazıtipi yapılandırma hatası."
+
+#: kio/KioFonts.cpp:2102
+msgid "Could not access \"%1\"."
+msgstr "\"%1\"'e erişilemedi."
+
+#: kio/KioFonts.cpp:2146
+msgid ""
+"<p>Only fonts may be installed.</p>"
+"<p>If installing a fonts package (*%1), then extract the components, and "
+"install individually.</p>"
+msgstr ""
+
+#: kio/KioFonts.cpp:2309
+msgid ""
+"<p>This font is located in a file alongside other fonts; in order to proceed "
+"with the moving they will all have to be moved. The other affected fonts "
+"are:</p>"
+"<ul>%1</ul>"
+"<p>\n"
+" Do you wish to move all of these?</p>"
+msgstr ""
+
+#: kio/KioFonts.cpp:2314
+msgid ""
+"<p>This font is located in a file alongside other fonts; in order to proceed "
+"with the copying they will all have to be copied. The other affected fonts "
+"are:</p>"
+"<ul>%1</ul>"
+"<p>\n"
+" Do you wish to copy all of these?</p>"
+msgstr ""
+
+#: kio/KioFonts.cpp:2318
+msgid ""
+"<p>This font is located in a file alongside other fonts; in order to proceed "
+"with the deleting they will all have to be deleted. The other affected fonts "
+"are:</p>"
+"<ul>%1</ul>"
+"<p>\n"
+" Do you wish to delete all of these?</p>"
+msgstr ""
+
+#: kio/KioFonts.cpp:2391
+msgid ""
+"Sorry, you cannot rename, move, copy, or delete either \"%1\" or \"%2\"."
+msgstr ""
+
+#: lib/FcEngine.cpp:522
+msgid "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789"
+msgstr "AaBbCcÇçDdEeFfGgĞğHhIıİiJjKkLlMmNnOoÖöPpRrSsŞşTtUuÜüVvYyZz0123456789"
+
+#: lib/FcEngine.cpp:576
+msgid "ERROR: Could not determine font's name."
+msgstr "HATA: Yazıtipi adı okunamadı."
+
+#: lib/FcEngine.cpp:580
+msgid ""
+"_n: %1 [1 pixel]\n"
+"%1 [%n pixels]"
+msgstr "%1 [%n piksel]"
+
+#: lib/FcEngine.cpp:697
+msgid ""
+"_: A sentence that uses all of the letters of the alphabet\n"
+"The quick brown fox jumps over the lazy dog"
+msgstr "The quick brown fox jumps over the lazy dog (ü ğ ş İ ı ç ö)"
+
+#: lib/FcEngine.cpp:711
+msgid ""
+"_: All of the letters of the alphabet, uppercase\n"
+"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+msgstr "ABCÇDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZ"
+
+#: lib/FcEngine.cpp:716
+msgid ""
+"_: All of the letters of the alphabet, lowercase\n"
+"abcdefghijklmnopqrstuvwxyz"
+msgstr "abcçdefgğhıijklmnoöpqrsştuüvwxyz"
+
+#: lib/FcEngine.cpp:721
+msgid ""
+"_: Numbers and characters\n"
+"0123456789.:,;(*!?'/\\\")£$€%^&-+@~#<>{}[]"
+msgstr "0123456789.:,;(*!?'/\\\")£$€%^&-+@~#<>{}[]"
+
+#: viewpart/FontPreview.cpp:92
+msgid " No preview available"
+msgstr " Önizleme yok"
+
+#: viewpart/FontViewPart.cpp:92
+msgid "Face:"
+msgstr "Yüz:"
+
+#: viewpart/FontViewPart.cpp:94
+msgid "Install..."
+msgstr "Kur..."
+
+#: viewpart/FontViewPart.cpp:110
+msgid "Change Text..."
+msgstr "Metni Değiştir..."
+
+#: viewpart/FontViewPart.cpp:208
+msgid ""
+"Where do you wish to install \"%1\" (%2)?\n"
+"\"%3\" - only accessible to you, or\n"
+"\"%4\" - accessible to all (requires administrator password)"
+msgstr ""
+
+#: viewpart/FontViewPart.cpp:216
+msgid "Install"
+msgstr "Kur"
+
+#: viewpart/FontViewPart.cpp:243
+msgid "%1:%2 successfully installed."
+msgstr "%1:%2 başarıyla kuruldu."
+
+#: viewpart/FontViewPart.cpp:250
+msgid "Could not install %1:%2"
+msgstr "%1 kurulamadı: %2"
+
+#: viewpart/FontViewPart.cpp:260
+msgid "Preview String"
+msgstr "Satırı Önizle"
+
+#: viewpart/FontViewPart.cpp:260
+msgid "Please enter new string:"
+msgstr "Yeni bir satır girin:"
+
+#: viewpart/FontViewPartFactory.cpp:78
+msgid "CFontViewPart"
+msgstr ""
+
+#: viewpart/FontViewerApp.cpp:96
+msgid "Select Font to View"
+msgstr "Görüntülenecek Yazıtipini Seçin"
+
+#: viewpart/FontViewerApp.cpp:111
+msgid "URL to open"
+msgstr "Açılacak URL"
+
+#: viewpart/FontViewerApp.cpp:115
+msgid "Font Viewer"
+msgstr "Yazıtipi Gösterici"
+
+#: viewpart/FontViewerApp.cpp:115
+msgid "Simple font viewer"
+msgstr "Basit yazıtipi gösterici"
+
+#: viewpart/FontViewerApp.cpp:117
+msgid "(c) Craig Drummond, 2004"
+msgstr "(c) Craig Drummond, 2004"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Adil YILDIZ"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "adil@kde.org.tr"
+
+#~ msgid "PostScript Name"
+#~ msgstr "PostScript Adı"
+
+#~ msgid "Monospaced"
+#~ msgstr "Eşaralıklı"
+
+#~ msgid "Proportional"
+#~ msgstr "Orantısal"
+
+#~ msgid "Charcell"
+#~ msgstr "Karakter hücresi"
+
+#~ msgid "<ERROR>"
+#~ msgstr "<HATA>"
+
+#~ msgid "Oblique"
+#~ msgstr "Eğri"
+
+#~ msgid "Thin"
+#~ msgstr "İnce"
+
+#~ msgid "Ultra Light"
+#~ msgstr "Çok İnce"
+
+#~ msgid "Extra Light"
+#~ msgstr "Ekstra Işık"
+
+#~ msgid "Demi"
+#~ msgstr "Yarım"
+
+#~ msgid "Light"
+#~ msgstr "Işık"
+
+#~ msgid "Book"
+#~ msgstr "Kitap"
+
+#~ msgid "Medium"
+#~ msgstr "Orta"
+
+#~ msgid "Regular"
+#~ msgstr "Düzenli"
+
+#~ msgid "Semi Bold"
+#~ msgstr "Yarı Kalın"
+
+#~ msgid "Demi Bold"
+#~ msgstr "Yarım Kalın"
+
+#~ msgid "Bold"
+#~ msgstr "Kalın"
+
+#~ msgid "Extra Bold"
+#~ msgstr "Ekstra Kalın"
+
+#~ msgid "Ultra Bold"
+#~ msgstr "Çok Kalın"
+
+#~ msgid "Heavy"
+#~ msgstr "Ağır"
+
+#~ msgid "Black"
+#~ msgstr "Siyah"
+
+#~ msgid "Ultra Condensed"
+#~ msgstr "Çok Yoğunluk"
+
+#~ msgid "Extra Condensed"
+#~ msgstr "Ekstra Yoğunluk"
+
+#~ msgid "Condensed"
+#~ msgstr "Yoğunluk"
+
+#~ msgid "Semi Condensed"
+#~ msgstr "Yarı Yoğunluk"
+
+#~ msgid "Semi Expanded"
+#~ msgstr "Yarı Genişlik"
+
+#~ msgid "Expanded"
+#~ msgstr "Genişlik"
+
+#~ msgid "Extra Expanded"
+#~ msgstr "Ekstra Genişlik"
+
+#~ msgid "Ultra Expanded"
+#~ msgstr "Çok Genişlik"
+
+#~ msgid "Normal"
+#~ msgstr "Normal"
+
+#~ msgid "Not Applicable"
+#~ msgstr "Uygulanamaz"

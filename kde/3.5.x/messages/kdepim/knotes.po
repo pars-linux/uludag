@@ -1,0 +1,452 @@
+# translation of knotes.po to
+# Copyright (C) 2003, 2004, 2007 Free Software Foundation, Inc.
+#
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# Barış Metin <baris@uludag.org.tr>, 2004.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: knotes\n"
+"POT-Creation-Date: 2008-01-26 01:19+0100\n"
+"PO-Revision-Date: 2007-06-28 15:52+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=1; plural=0;\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: knote.cpp:107
+msgid "New"
+msgstr "Yeni"
+
+#: knote.cpp:109
+msgid "Rename..."
+msgstr "Yeniden adlandır..."
+
+#: knote.cpp:111
+msgid "Lock"
+msgstr "Kilitle"
+
+#: knote.cpp:113
+msgid "Unlock"
+msgstr "Kilidi Aç"
+
+#: knote.cpp:114
+msgid "Hide"
+msgstr "Gizle"
+
+#: knote.cpp:119
+msgid "Insert Date"
+msgstr "Tarih Ekle"
+
+#: knote.cpp:121
+msgid "Set Alarm..."
+msgstr "Alarmı Ayarla..."
+
+#: knote.cpp:124
+msgid "Send..."
+msgstr "Gönder..."
+
+#: knote.cpp:126
+msgid "Mail..."
+msgstr "Postala..."
+
+#: knote.cpp:131
+msgid "Preferences..."
+msgstr "Tercihler..."
+
+#: knote.cpp:134
+msgid "Keep Above Others"
+msgstr "Diğerlerinin Üzerinde Tut"
+
+#: knote.cpp:138
+msgid "Keep Below Others"
+msgstr "Diğerlerinin Altında Tut"
+
+#: knote.cpp:142
+msgid "To Desktop"
+msgstr "Masaüstüne"
+
+#: knote.cpp:147
+msgid "Walk Through Notes"
+msgstr "Notlar Arasında Gezin"
+
+#: knote.cpp:379
+msgid "<qt>Do you really want to delete note <b>%1</b>?</qt>"
+msgstr "<qt><b>%1</b> notunu silmek istediğinize emin misiniz ?</qt>"
+
+#: knote.cpp:380
+msgid "Confirm Delete"
+msgstr "Silmeyi Onayla"
+
+#: knote.cpp:690
+msgid "Please enter the new name:"
+msgstr "Lütfen yeni ismi girin:"
+
+#: knote.cpp:762
+msgid "Send \"%1\""
+msgstr "Gönder: \"%1\""
+
+#: knote.cpp:771
+msgid "The host cannot be empty."
+msgstr "Makine adı boş olamaz."
+
+#: knote.cpp:800
+msgid "Unable to start the mail process."
+msgstr "Posta işlemi başlatılamıyor."
+
+#: knote.cpp:829
+msgid "Save note as plain text"
+msgstr "Notu düz metin olarak kaydet"
+
+#: knote.cpp:844
+msgid ""
+"<qt>A file named <b>%1</b> already exists."
+"<br>Are you sure you want to overwrite it?</qt>"
+msgstr ""
+"<qt><b>%1</b> isimli bir dosya zaten var."
+"<br>Bu dosyanın üzerine yazmak ister misiniz?</qt>"
+
+#: knote.cpp:933
+msgid "&All Desktops"
+msgstr "&Tüm Masaüstleri"
+
+#: knotealarmdlg.cpp:52
+msgid "Scheduled Alarm"
+msgstr "Zamanlanmış Alarm"
+
+#: knotealarmdlg.cpp:56
+msgid "&No alarm"
+msgstr "Alarm y&ok"
+
+#: knotealarmdlg.cpp:60
+msgid "Alarm &at:"
+msgstr "Alarm &zamanı:"
+
+#: knotealarmdlg.cpp:67
+msgid "Alarm &in:"
+msgstr "Alarm &sıklığı:"
+
+#: knotealarmdlg.cpp:70
+msgid "hours/minutes"
+msgstr "saat/dakika"
+
+#: knoteconfigdlg.cpp:57
+msgid "Display"
+msgstr "Ekran"
+
+#: knoteconfigdlg.cpp:58
+msgid "Display Settings"
+msgstr "Ekran Ayarları"
+
+#: knoteconfigdlg.cpp:59
+msgid "Editor"
+msgstr "Düzenleyici"
+
+#: knoteconfigdlg.cpp:60
+msgid "Editor Settings"
+msgstr "Düzenleyici Ayarları"
+
+#: knoteconfigdlg.cpp:65
+msgid "Defaults"
+msgstr "Öntanımlılar"
+
+#: knoteconfigdlg.cpp:66
+msgid "Default Settings for New Notes"
+msgstr "Yeni Notlar için Öntanımlı Ayarlar"
+
+#: knoteconfigdlg.cpp:67
+msgid "Actions"
+msgstr "İşlemler"
+
+#: knoteconfigdlg.cpp:68
+msgid "Action Settings"
+msgstr "İşlem Ayarları"
+
+#: knoteconfigdlg.cpp:69
+msgid "Network"
+msgstr "Ağ"
+
+#: knoteconfigdlg.cpp:70
+msgid "Network Settings"
+msgstr "Ağ Ayarları"
+
+#: knoteconfigdlg.cpp:71
+msgid "Style"
+msgstr "Stil"
+
+#: knoteconfigdlg.cpp:72
+msgid "Style Settings"
+msgstr "Stil Ayarları"
+
+#: knoteconfigdlg.cpp:95
+msgid "&Text color:"
+msgstr "&Yazı rengi:"
+
+#: knoteconfigdlg.cpp:102
+msgid "&Background color:"
+msgstr "&Arkaplan rengi:"
+
+#: knoteconfigdlg.cpp:109
+msgid "&Show note in taskbar"
+msgstr "&Notu görev çubuğunda göster"
+
+#: knoteconfigdlg.cpp:114
+msgid "Default &width:"
+msgstr "Ö&ntanımlı genişlik:"
+
+#: knoteconfigdlg.cpp:122
+msgid "Default &height:"
+msgstr "Ön&tanımlı yükseklik:"
+
+#: knoteconfigdlg.cpp:144
+msgid "&Tab size:"
+msgstr "Sek&me boyutu:"
+
+#: knoteconfigdlg.cpp:152
+msgid "Auto &indent"
+msgstr "Otomatik &girinti"
+
+#: knoteconfigdlg.cpp:155
+msgid "&Rich text"
+msgstr "&Zengin metin biçimi"
+
+#: knoteconfigdlg.cpp:158
+msgid "Text font:"
+msgstr "Metin yazıtipi:"
+
+#: knoteconfigdlg.cpp:165
+msgid "Title font:"
+msgstr "Başlık yazıtipi:"
+
+#: knoteconfigdlg.cpp:178
+msgid "Displa&y"
+msgstr "&Görüntü"
+
+#: knoteconfigdlg.cpp:179
+msgid "&Editor"
+msgstr "&Düzenleyici"
+
+#: knoteconfigdlg.cpp:189
+msgid "&Mail action:"
+msgstr "&E-posta işlemi:"
+
+#: knoteconfigdlg.cpp:204
+msgid "Incoming Notes"
+msgstr "Gelen Notlar"
+
+#: knoteconfigdlg.cpp:207
+msgid "Accept incoming notes"
+msgstr "Gelen notları kabul et"
+
+#: knoteconfigdlg.cpp:209
+msgid "Outgoing Notes"
+msgstr "Giden Notlar"
+
+#: knoteconfigdlg.cpp:212
+msgid "&Sender ID:"
+msgstr "&Gönderen No:"
+
+#: knoteconfigdlg.cpp:216
+msgid "&Port:"
+msgstr "&Port:"
+
+#: knoteconfigdlg.cpp:232
+msgid "&Style:"
+msgstr "&Stil:"
+
+#: knoteedit.cpp:69
+msgid "Bold"
+msgstr "Kalın"
+
+#: knoteedit.cpp:73
+msgid "Underline"
+msgstr "Altı Çizili"
+
+#: knoteedit.cpp:75
+msgid "Strike Out"
+msgstr "Üzeri Çizili"
+
+#: knoteedit.cpp:83
+msgid "Align Left"
+msgstr "Sola Hizala"
+
+#: knoteedit.cpp:87
+msgid "Align Center"
+msgstr "Merkeze Hizala"
+
+#: knoteedit.cpp:90
+msgid "Align Right"
+msgstr "Sağa Hizala"
+
+#: knoteedit.cpp:93
+msgid "Align Block"
+msgstr "Bloğu Hizala"
+
+#: knoteedit.cpp:102
+msgid "List"
+msgstr "Liste"
+
+#: knoteedit.cpp:108
+msgid "Superscript"
+msgstr "Üst Yazı"
+
+#: knoteedit.cpp:111
+msgid "Subscript"
+msgstr "Alt Yazı"
+
+#: knoteedit.cpp:130
+msgid "Text Color..."
+msgstr "Metin Rengi..."
+
+#: knoteedit.cpp:133
+msgid "Text Font"
+msgstr "Metin Yazıtipi"
+
+#: knoteedit.cpp:138
+msgid "Text Size"
+msgstr "Metin Boyutu"
+
+#: knotehostdlg.cpp:53
+msgid "Hostname or IP address:"
+msgstr "Makine adı ya da IP adresi:"
+
+#: knoteprinter.cpp:117
+#, c-format
+msgid "Print %1"
+msgstr "Yazdır: %1"
+
+#: knoteprinter.cpp:133
+#, c-format
+msgid ""
+"_n: Print Note\n"
+"Print %n notes"
+msgstr ""
+
+#: knotesalarm.cpp:74
+msgid "The following notes triggered alarms:"
+msgstr "Alarmı şu notlar tetikledi:"
+
+#: knotesalarm.cpp:74
+msgid "Alarm"
+msgstr "Alarm"
+
+#: knotesapp.cpp:64
+msgid "Configure Shortcuts"
+msgstr "Kısayolları Yapılandır"
+
+#: knotesapp.cpp:73
+msgid "Note Actions"
+msgstr "Not Eylemleri"
+
+#: knotesapp.cpp:106
+msgid "KNotes: Sticky notes for KDE"
+msgstr "KNotes: KDE için not defteri"
+
+#: knotesapp.cpp:114 knotesapp.cpp:151
+msgid "New Note"
+msgstr "Yeni Not"
+
+#: knotesapp.cpp:116 knotesapp.cpp:154
+msgid "New Note From Clipboard"
+msgstr "Panodan Yeni Not"
+
+#: knotesapp.cpp:118 knotesapp.cpp:160
+msgid "Show All Notes"
+msgstr "Tüm Notları Göster"
+
+#: knotesapp.cpp:120 knotesapp.cpp:157
+msgid "Hide All Notes"
+msgstr "Tüm Notları Gizle"
+
+#: knotesapp.cpp:544
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: knotesapp.cpp:686
+msgid "No Notes"
+msgstr "Not Yok"
+
+#: knotesnetsend.cpp:93
+#, c-format
+msgid "Communication error: %1"
+msgstr "İletişim hatası: %1"
+
+#. i18n: file knotesappui.rc line 5
+#: main.cpp:95 rc.cpp:3 rc.cpp:6
+#, no-c-format
+msgid "KNotes"
+msgstr "Knotes"
+
+#: main.cpp:97
+msgid "KDE Notes"
+msgstr "KDE Notları"
+
+#: main.cpp:99
+msgid "(c) 1997-2006, The KNotes Developers"
+msgstr "(c) 1997-2006, KNotes Geliştiricileri"
+
+#: main.cpp:102
+msgid "Maintainer"
+msgstr "Yazar"
+
+#: main.cpp:103
+msgid "Original KNotes Author"
+msgstr "KNotes Yazarı"
+
+#: main.cpp:104
+msgid "Ported KNotes to KDE 2"
+msgstr "KNotes'u KDE 2'ye taşıdı"
+
+#: main.cpp:105
+msgid "Network Interface"
+msgstr "Ağ Arayüzü"
+
+#: main.cpp:106
+msgid "Started KDE Resource Framework Integration"
+msgstr "KDE Kaynak Alyapısı Bütünleştirmesi Başladı"
+
+#: main.cpp:108
+msgid "Idea and initial code for the new look&feel"
+msgstr "Yeni görünüm için fikir ve &uygulama kodları"
+
+#. i18n: file knotesappui.rc line 30
+#: rc.cpp:12 rc.cpp:15
+#, no-c-format
+msgid "Notes"
+msgstr "Notlar"
+
+#. i18n: file knotesglobalconfig.kcfg line 26
+#: rc.cpp:18
+#, no-c-format
+msgid "The port KNotes will listen on and send notes to."
+msgstr "KNotes'un dinleyeceği ve notları göndereceği port numarası."
+
+#: resourcelocal.cpp:89
+msgid ""
+"<qt>Unable to save the notes to <b>%1</b>. Check that there is sufficient disk "
+"space."
+"<br>There should be a backup in the same directory though.</qt>"
+msgstr ""
+"<qt>Notlar <b>%1</b>'e kaydedilemiyor. Yeterli disk alanı olup olmadığını "
+"kontrol edin."
+"<br>Aynı dizin içerisinde bir yedek dosyası bulunuyor olmalı.</qt>"
+
+#: resourcelocalconfig.cpp:37
+msgid "Location:"
+msgstr "Konum:"

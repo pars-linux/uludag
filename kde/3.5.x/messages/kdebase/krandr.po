@@ -1,0 +1,292 @@
+# translation of krandr.po to Türkçe
+# translation of krandr.po to
+# Turkish translation of krandr.
+# Copyright (C) 2003, 2005 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Zerrin Cakmakkaya <zerrin@uludag.org.tr>, 2005.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: krandr\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-08 02:34+0100\n"
+"PO-Revision-Date: 2005-01-28 13:47+0200\n"
+"Last-Translator: Zerrin Cakmakkaya <zerrin@uludag.org.tr>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: krandrmodule.cpp:82
+msgid ""
+"<qt>Your X server does not support resizing and rotating the display. Please "
+"update to version 4.3 or greater. You need the X Resize And Rotate extension "
+"(RANDR) version 1.1 or greater to use this feature.</qt>"
+msgstr ""
+"<qt>X sunucunuz ekranı yeniden boyutlandırmayı ve çevirmeyi desteklemiyor. "
+"Lütfen 4.3 veya daha üst bir sürüme yükseltin. Bu özelliği kullanmak için, X "
+"Yeniden Boyutlandır ve Çevir uzantısının (RANDR) 1.1 veya daha üst sürümüne "
+"ihtiyacınız var.</qt>"
+
+#: krandrmodule.cpp:91
+msgid "Settings for screen:"
+msgstr "Ekran ayarları:"
+
+#: krandrmodule.cpp:95 krandrtray.cpp:83
+#, c-format
+msgid "Screen %1"
+msgstr "Ekran %1"
+
+#: krandrmodule.cpp:100
+msgid ""
+"The screen whose settings you would like to change can be selected using this "
+"drop-down list."
+msgstr ""
+"Ayarlarını değiştirmek istediğiniz ekran bu açılan listeyi kullanarak "
+"seçilebilir."
+
+#: krandrmodule.cpp:109
+msgid "Screen size:"
+msgstr "Ekran boyutu:"
+
+#: krandrmodule.cpp:111
+msgid ""
+"The size, otherwise known as the resolution, of your screen can be selected "
+"from this drop-down list."
+msgstr ""
+"Ekranınızın boyutu, diğer adıyla çözünürlüğü, bu açılan listeyi kullanarak "
+"seçilebilir. "
+
+#: krandrmodule.cpp:117
+msgid "Refresh rate:"
+msgstr "Tazeleme oranı:"
+
+#: krandrmodule.cpp:119
+msgid ""
+"The refresh rate of your screen can be selected from this drop-down list."
+msgstr "Ekranınızın tazeleme oranı bu açılan listeyi kullanarak seçilebilir."
+
+#: krandrmodule.cpp:123
+msgid "Orientation (degrees counterclockwise)"
+msgstr "Hizalama (saat yönünün tersi)"
+
+#: krandrmodule.cpp:126
+msgid ""
+"The options in this section allow you to change the rotation of your screen."
+msgstr ""
+"Bu bölümdeki seçenekler ekranınızın dönüşünü değiştirmenize izin verir."
+
+#: krandrmodule.cpp:128
+msgid "Apply settings on KDE startup"
+msgstr "KDE başlatıldığı zaman ayarları uygula"
+
+#: krandrmodule.cpp:130
+msgid ""
+"If this option is enabled the size and orientation settings will be used when "
+"KDE starts."
+msgstr ""
+"Bu seçenekler seçili ise, KDE başladığında boyut ve hizalama ayarları "
+"kullanılabilir olacak."
+
+#: krandrmodule.cpp:135
+msgid "Allow tray application to change startup settings"
+msgstr "Açılıştaki ayarları değiştirmek için panele yerleş"
+
+#: krandrmodule.cpp:137
+msgid ""
+"If this option is enabled, options set by the system tray applet will be saved "
+"and loaded when KDE starts instead of being temporary."
+msgstr ""
+"Bu seçenekler seçili ise, sistem tepsi uygulaması tarafından ayarlanan "
+"seçenekler geçici olmayıp kaydedilecek ve KDE başladığında yüklenecek."
+
+#: krandrmodule.cpp:174 krandrtray.cpp:149
+msgid "%1 x %2"
+msgstr "%1 x %2"
+
+#: krandrtray.cpp:45
+msgid "Screen resize & rotate"
+msgstr "Yeniden boyutlandır ve çevir"
+
+#: krandrtray.cpp:69
+msgid "Required X Extension Not Available"
+msgstr "Gerekli X Window Özelliği Bulunamadı"
+
+#: krandrtray.cpp:94
+msgid "Configure Display..."
+msgstr "Ekranı Yapılandır..."
+
+#: krandrtray.cpp:117
+msgid "Screen configuration has changed"
+msgstr "Ekran ayarları değiştirildi"
+
+#: krandrtray.cpp:128
+msgid "Screen Size"
+msgstr "Ekran Boyutu"
+
+#: krandrtray.cpp:181
+msgid "Refresh Rate"
+msgstr "Tazeleme Hızı"
+
+#: krandrtray.cpp:251
+msgid "Configure Display"
+msgstr "Ekranı Yapılandır"
+
+#: ktimerdialog.cpp:154
+#, c-format
+msgid ""
+"_n: 1 second remaining:\n"
+"%n seconds remaining:"
+msgstr "%n saniye kaldı:"
+
+#: main.cpp:32
+msgid "Application is being auto-started at KDE session start"
+msgstr "KDE başlatıldığı zaman uygulama otomatik çalıştırılacak"
+
+#: main.cpp:38
+msgid "Resize and Rotate"
+msgstr "Yeniden Boyutlandır ve Çevir"
+
+#: main.cpp:38
+msgid "Resize and Rotate System Tray App"
+msgstr "Sistem Tepsi Uygulamasını Yeniden Boyutlandır ve Çevir"
+
+#: main.cpp:39
+msgid "Maintainer"
+msgstr "Geliştirici"
+
+#: main.cpp:40
+msgid "Many fixes"
+msgstr "Düzeltmeler"
+
+#: randr.cpp:159
+msgid "Confirm Display Setting Change"
+msgstr "Ekran Ayarları Değişikliği Onayı"
+
+#: randr.cpp:163
+msgid "&Accept Configuration"
+msgstr "&Ayarları Kabul Et"
+
+#: randr.cpp:164
+msgid "&Return to Previous Configuration"
+msgstr "&Önceki Yapılandırmaya Geri Dön"
+
+#: randr.cpp:166
+msgid ""
+"Your screen orientation, size and refresh rate have been changed to the "
+"requested settings. Please indicate whether you wish to keep this "
+"configuration. In 15 seconds the display will revert to your previous settings."
+msgstr ""
+"Ekranınızın yerleşimi, boyutu ve tazeleme hızı istenen ayarlara uygun olarak "
+"değiştirildi. Lütfen bu ayarları tutup tutmayacağınızı belirleyin. 15 saniye "
+"içinde eski ayarlara geri dönecektir."
+
+#: randr.cpp:197
+msgid ""
+"New configuration:\n"
+"Resolution: %1 x %2\n"
+"Orientation: %3"
+msgstr ""
+"Yeni ayarlar:\n"
+"Çözünürlük: %1 x %2\n"
+"Yerleşim: %3"
+
+#: randr.cpp:202
+msgid ""
+"New configuration:\n"
+"Resolution: %1 x %2\n"
+"Orientation: %3\n"
+"Refresh rate: %4"
+msgstr ""
+"Yeni ayarlar:\n"
+"Çözünürlük: %1 x %2\n"
+"Yerleşim: %3\n"
+"Tazeleme sıklığı: %4"
+
+#: randr.cpp:231 randr.cpp:248
+msgid "Normal"
+msgstr "Normal"
+
+#: randr.cpp:233
+msgid "Left (90 degrees)"
+msgstr "Sol (90 derece)"
+
+#: randr.cpp:235
+msgid "Upside-down (180 degrees)"
+msgstr "Başaşağı (180 derece)"
+
+#: randr.cpp:237
+msgid "Right (270 degrees)"
+msgstr "Sağ (270 derece)"
+
+#: randr.cpp:239
+msgid "Mirror horizontally"
+msgstr "Yatay yansıt"
+
+#: randr.cpp:241
+msgid "Mirror vertically"
+msgstr "Dikey yansıt"
+
+#: randr.cpp:243 randr.cpp:274
+msgid "Unknown orientation"
+msgstr "Bilinmeyen yerleşim"
+
+#: randr.cpp:250
+msgid "Rotated 90 degrees counterclockwise"
+msgstr "Saat yönünün tersinde 90 derece çevrilmiş"
+
+#: randr.cpp:252
+msgid "Rotated 180 degrees counterclockwise"
+msgstr "Saat yönünün tersinde 180 derece çevrilmiş"
+
+#: randr.cpp:254
+msgid "Rotated 270 degrees counterclockwise"
+msgstr "Saat yönünün tersinde 270 derece çevrilmiş"
+
+#: randr.cpp:259
+msgid "Mirrored horizontally and vertically"
+msgstr "Yatay ve düşey olarak yansıtılmış"
+
+#: randr.cpp:261
+msgid "mirrored horizontally and vertically"
+msgstr "yatay ve düşey olarak yansıtılmış"
+
+#: randr.cpp:264
+msgid "Mirrored horizontally"
+msgstr "Yatay olarak yansıtılmış"
+
+#: randr.cpp:266
+msgid "mirrored horizontally"
+msgstr "yatay olarak yansıtılmış"
+
+#: randr.cpp:269
+msgid "Mirrored vertically"
+msgstr "Düşey olarak yansıtılmış"
+
+#: randr.cpp:271
+msgid "mirrored vertically"
+msgstr "düşey olarak yansıtılmış"
+
+#: randr.cpp:276
+msgid "unknown orientation"
+msgstr "bilinmeyen yerleşim"
+
+#: randr.cpp:400 randr.cpp:405
+msgid ""
+"_: Refresh rate in Hertz (Hz)\n"
+"%1 Hz"
+msgstr "%1 Hz"

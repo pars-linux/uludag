@@ -1,0 +1,508 @@
+# translation of kfloppy.po to
+# Ömer Fadıl USTA <omer_fad@hotmail.com>,2002.
+# Murat Sisman <muratsisman@mailcity.com>, 2000.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Engin Çağatay <engincagatay@yahoo.com>, 2004.
+# Bekir SONAT <cortexbs@yahoo.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+# Copyright (C) 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
+msgid ""
+msgstr ""
+"Project-Id-Version: kfloppy\n"
+"POT-Creation-Date: 2007-06-02 02:16+0200\n"
+"PO-Revision-Date: 2007-06-28 16:46+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=1; plural=0;\n"
+
+#: main.cpp:34
+msgid "KDE Floppy Disk Utility"
+msgstr "KDE Disket Yardımcı Programı "
+
+#: main.cpp:38
+msgid "Default device"
+msgstr "Öntanımlı Aygıt"
+
+#: main.cpp:45
+msgid "KFloppy"
+msgstr "KFloppy"
+
+#: main.cpp:51
+msgid "KFloppy helps you format floppies with the filesystem of your choice."
+msgstr ""
+"KFloppy, taşınabilir ortamları (disketler, Zip veya LS120 diskler gibi) "
+"istediğiniz dosya yapısında biçimlendirmenize yardım eder."
+
+#: main.cpp:54
+msgid "Author and former maintainer"
+msgstr "Yazar ve önceki sağlayıcı"
+
+#: main.cpp:55
+msgid "User interface re-design"
+msgstr "Kullanıcı Arayüzü Yeniden Tasarımı"
+
+#: main.cpp:56
+msgid "Add BSD support"
+msgstr "BSD desteği ekle "
+
+#: main.cpp:57
+msgid "Make KFloppy work again for KDE 3.4"
+msgstr "KFloppy'yi KDE 3.4 için tekrar çalışabilir yap"
+
+#: format.cpp:269
+#, c-format
+msgid "Unexpected drive number %1."
+msgstr "Beklenmeyen sürücü numarası: %1"
+
+#: format.cpp:281
+#, c-format
+msgid "Unexpected density number %1."
+msgstr "Beklenmeyen yoğunluk numarası: %1"
+
+#: format.cpp:296
+msgid "Cannot find a device for drive %1 and density %2."
+msgstr "%1 sürücüde ve %2 yoğunlukta için aygıt bulunamadı."
+
+#: format.cpp:315
+msgid ""
+"Cannot access %1\n"
+"Make sure that the device exists and that you have write permission to it."
+msgstr ""
+"%1'e ulaşılamıyor\n"
+"Aygıtın mevcut olduğundan ve yazma hakkına sahip olduğunuza emin olunuz."
+
+#: format.cpp:346
+msgid "The program %1 terminated with an error."
+msgstr "%1 programı hatayla sonlandırıldı."
+
+#: format.cpp:352
+msgid "The program %1 terminated abnormally."
+msgstr "%1 programı olağandışı sonlandırıldı."
+
+#: format.cpp:415 format.cpp:576 format.cpp:675 format.cpp:776 format.cpp:855
+#: format.cpp:949
+msgid "Internal error: device not correctly defined."
+msgstr "İçsel Hata: Cihaz doğru tanımlanmamış."
+
+#: format.cpp:422
+msgid "Cannot find fdformat."
+msgstr "fdformat bulunamıyor."
+
+#: format.cpp:454
+msgid "Could not start fdformat."
+msgstr "fdformat başlatılamadı. "
+
+#: format.cpp:481
+#, c-format
+msgid "Error formatting track %1."
+msgstr "%1 numaralı iz biçimlendirilmesinde hata. "
+
+#: format.cpp:489 format.cpp:522
+msgid ""
+"Cannot access floppy or floppy drive.\n"
+"Please insert a floppy and make sure that you have selected a valid floppy "
+"drive."
+msgstr ""
+"Diskete ya da disket sürücüsüne erişilemiyor.\n"
+"Lütfen bir disket takın ve geçerli bir disket sürücüsü seçtiğinizden emin olun."
+
+#: format.cpp:510
+#, c-format
+msgid "Low-level formatting error at track %1."
+msgstr "%1 numaralı iz Düşük-Seviye ile biçimlendirilirken bir hata oluştu."
+
+#: format.cpp:515
+#, c-format
+msgid "Low-level formatting error: %1"
+msgstr "Düşük-Seviye ile iz biçimlendirme hatası: %1"
+
+#: format.cpp:529 format.cpp:732 format.cpp:898 format.cpp:989
+msgid ""
+"Device busy.\n"
+"Perhaps you need to unmount the floppy first."
+msgstr ""
+"Cihaz meşgul.\n"
+"Belki önce disket sürücüyü ayırmayı denemelisiniz."
+
+#: format.cpp:535
+#, c-format
+msgid "Low-level format error: %1"
+msgstr "Düşük seviye format hatası:%1"
+
+#: format.cpp:583
+msgid "Cannot find dd."
+msgstr "dd bulunamadı."
+
+#: format.cpp:598
+msgid "Could not start dd."
+msgstr "dd başlatılamadı."
+
+#: format.cpp:682
+msgid "Cannot find a program to create FAT filesystems."
+msgstr "FAT dosya sistemi oluşturma programı başlatılamadı."
+
+#: format.cpp:713
+msgid "Cannot start FAT format program."
+msgstr "FAT biçimlendirme programı başlatılamadı."
+
+#: format.cpp:727 format.cpp:893 format.cpp:984
+msgid ""
+"Floppy is mounted.\n"
+"You need to unmount the floppy first."
+msgstr ""
+"Disket sürücü bağlı.\n"
+"Önce disket sürücüyü ayırın."
+
+#: format.cpp:783
+msgid ""
+"_: BSD\n"
+"Cannot find a program to create UFS filesystems."
+msgstr "UFS dosya sistemi oluşturmak için bir uygulama bulunamadı."
+
+#: format.cpp:801
+msgid ""
+"_: BSD\n"
+"Cannot start UFS format program."
+msgstr "UFS biçimlendirme programı başlatılamadı."
+
+#: format.cpp:862
+msgid "Cannot find a program to create ext2 filesystems."
+msgstr "ext2 dosya sistemi oluşturma programı bulunamadı."
+
+#: format.cpp:879
+msgid "Cannot start ext2 format program."
+msgstr "ext2 biçimlendirme programı başlatılamadı."
+
+#: format.cpp:956
+msgid "Cannot find a program to create Minix filesystems."
+msgstr "Minix dosya sistemi oluşturma programı bulunamadı."
+
+#: format.cpp:973
+msgid "Cannot start Minix format program."
+msgstr "Minix biçimlendirme programı başlatılamadı."
+
+#: floppy.cpp:70
+msgid "Floppy &drive:"
+msgstr "Disket &sürücü:"
+
+#: floppy.cpp:77 floppy.cpp:356 floppy.cpp:704
+msgid "Primary"
+msgstr "Birincil"
+
+#: floppy.cpp:78 floppy.cpp:360
+msgid "Secondary"
+msgstr "İkincil"
+
+#: floppy.cpp:80
+msgid "<qt>Select the floppy drive.</qt>"
+msgstr "<qt>Disket sürücüyü seçin.</qt>"
+
+#: floppy.cpp:87
+msgid "&Size:"
+msgstr "&Boyut:"
+
+#: floppy.cpp:92 floppy.cpp:706
+msgid "Auto-Detect"
+msgstr "Otomatik Algıla"
+
+#: floppy.cpp:94 floppy.cpp:367 floppy.cpp:708
+msgid "3.5\" 1.44MB"
+msgstr "3.5\" 1.44MB"
+
+#: floppy.cpp:95 floppy.cpp:371
+msgid "3.5\" 720KB"
+msgstr "3.5\" 720KB"
+
+#: floppy.cpp:96 floppy.cpp:375
+msgid "5.25\" 1.2MB"
+msgstr "5.25\" 1.2MB"
+
+#: floppy.cpp:97 floppy.cpp:379
+msgid "5.25\" 360KB"
+msgstr "5.25\" 360KB"
+
+#: floppy.cpp:100
+msgid "<qt>This allows you to select the floppy disk's size and density.</qt>"
+msgstr "<qt>Bu,Disketlerin büyüklük ve yoğunluklarını seçmenizi sağlar.</qt>"
+
+#: floppy.cpp:108
+msgid "F&ile system:"
+msgstr "&Dosya sistemi:"
+
+#: floppy.cpp:115 floppy.cpp:127
+msgid ""
+"_: Linux\n"
+"KFloppy supports three file formats under Linux: MS-DOS, Ext2, and Minix"
+msgstr ""
+"KFloppy, Linux altında üç dosya formatını destekler: MS-DOS, Ext2 ve Minix"
+
+#: floppy.cpp:118
+msgid ""
+"_: BSD\n"
+"KFloppy supports three file formats under BSD: MS-DOS, UFS, and Ext2"
+msgstr "KFloppy, BSD altında üç dosya formatını destekler: MS-DOS, UFS ve Ext2"
+
+#: floppy.cpp:129 floppy.cpp:158 floppy.cpp:578 floppy.cpp:710
+msgid "DOS"
+msgstr "DOS"
+
+#: floppy.cpp:131
+msgid ""
+"_: Linux\n"
+"Program mkdosfs found."
+msgstr "mkdosfs uygulaması bulundu."
+
+#: floppy.cpp:134
+msgid ""
+"_: Linux\n"
+"Program mkdosfs <b>not found</b>. MSDOS formatting <b>not available</b>."
+msgstr ""
+"mkdosfs uygulaması <b>bulunamadı</b>. MSDOS biçimlendirmesi <b>mümkün değil</b>"
+"."
+
+#: floppy.cpp:138 floppy.cpp:176 floppy.cpp:595
+msgid "ext2"
+msgstr "ext2"
+
+#: floppy.cpp:140 floppy.cpp:178
+msgid "Program mke2fs found."
+msgstr "mke2fs uygulaması bulundu."
+
+#: floppy.cpp:143 floppy.cpp:181
+msgid "Program mke2fs <b>not found</b>. Ext2 formatting <b>not available</b>"
+msgstr ""
+"mke2fs uygulaması <b>bulunamadı</b>. Ext2 biçimlendirmesi <b>mümkün değil</b>"
+
+#: floppy.cpp:147 floppy.cpp:622
+msgid "Minix"
+msgstr "Minix"
+
+#: floppy.cpp:149
+msgid ""
+"_: Linux\n"
+"Program mkfs.minix found."
+msgstr "mkfs.minix uygulaması bulundu."
+
+#: floppy.cpp:152
+msgid ""
+"_: Linux\n"
+"Program mkfs.minix <b>not found</b>. Minix formatting <b>not available</b>"
+msgstr ""
+"mkfs.minix uygulaması <b>bulunamadı</b>. Minix biçimlendirmesi <b>"
+"mümkün değil</b>."
+
+#: floppy.cpp:156
+msgid ""
+"_: BSD\n"
+"KFloppy supports two file formats under BSD: MS-DOS and UFS"
+msgstr "KFloppy, BSD altında iki dosya formatını destekler: MS-DOS ve UFS"
+
+#: floppy.cpp:160
+msgid ""
+"_: BSD\n"
+"Program newfs_msdos found."
+msgstr "newfs_msdos uygulaması bulundu."
+
+#: floppy.cpp:163
+msgid ""
+"_: BSD\n"
+"Program newfs_msdos <b>not found</b>. MSDOS formatting <b>not available</b>."
+msgstr ""
+"newfs_msdos uygulaması <b>bulunamadı</b>. MSDOS biçimlendirmesi <b>"
+"mümkün değil</b>."
+
+#: floppy.cpp:167 floppy.cpp:488 floppy.cpp:613
+msgid "UFS"
+msgstr "UFS"
+
+#: floppy.cpp:169
+msgid ""
+"_: BSD\n"
+"Program newfs found."
+msgstr "newfs uygulaması bulundu."
+
+#: floppy.cpp:172
+msgid ""
+"_: BSD\n"
+"Program newfs <b>not found</b>. UFS formatting <b>not available</b>."
+msgstr ""
+"newfs uygulaması <b>bulunamadı</b>. UFS biçimlendirmesi <b>mümkün değil</b>."
+
+#: floppy.cpp:187
+msgid "&Formatting"
+msgstr "&Biçimlendiriliyor"
+
+#: floppy.cpp:190
+msgid "Q&uick format"
+msgstr "&Hızlı biçimlendir"
+
+#: floppy.cpp:192
+msgid ""
+"<qt>Quick format is only a high-level format: it creates only a file "
+"system.</qt>"
+msgstr ""
+"<qt>Hızlı Biçimlendirme sadece yüksek-seviyeli biçimlendirmedir: Sadece bir "
+"dosya sistemi oluşturur.</qt>"
+
+#: floppy.cpp:195
+msgid "&Zero out and quick format"
+msgstr "&Hızlı biçimlendir"
+
+#: floppy.cpp:197
+msgid ""
+"<qt>This first erases the floppy by writing zeros and then it creates the file "
+"system.</qt>"
+msgstr ""
+"<qt>Bu, önce disket'i Sıfır'lar yazmak suretiyle siler, sonra dosya sistemini "
+"yaratır.</qt>"
+
+#: floppy.cpp:199
+msgid "Fu&ll format"
+msgstr "&Tam biçimlendir"
+
+#: floppy.cpp:201
+msgid ""
+"Full format is a low-level and high-level format. It erases everything on the "
+"disk."
+msgstr ""
+"Tam biçimleme düşük seviyeli ve yüksek seviyeli bir biçimlendirmedir. Diskteki "
+"herşeyi siler."
+
+#: floppy.cpp:210
+msgid "Program fdformat found."
+msgstr "fdformat uygulaması bulunamadı."
+
+#: floppy.cpp:215
+msgid "Program fdformat <b>not found</b>. Full formatting <b>disabled</b>."
+msgstr ""
+"fdformat uygulaması <b>bulunamadı</b>. Tam biçimlendirme <b>kapatıldı</b>."
+
+#: floppy.cpp:222
+msgid "Program dd found."
+msgstr "dd uygulaması bulundu."
+
+#: floppy.cpp:226
+msgid "Program dd <b>not found</b>. Zeroing-out <b>disabled</b>."
+msgstr "dd uygulaması <b>bulunamadı</b>. Tam biçimlendirme <b>kapatıldı</b>."
+
+#: floppy.cpp:230
+msgid "&Verify integrity"
+msgstr "İçeriği &doğrula"
+
+#: floppy.cpp:234
+msgid ""
+"<qt>Check this if you want the floppy disk to be checked after formatting. "
+"Please note that the floppy will be checked twice if you have selected full "
+"formatting.</qt>"
+msgstr ""
+"<qt> Eğer biçimlendirmeden sonra disket'in denetlenmesini istiyorsanız burayı "
+"işaretleyin. Eğer Tam Biçimlendirmeyi seçmişseniz, disket'in iki kez "
+"denetleneceğini unutmayın.</qt>"
+
+#: floppy.cpp:238
+msgid "Volume la&bel:"
+msgstr "Bölüm &etiketi:"
+
+#: floppy.cpp:242
+msgid ""
+"<qt>Check this if you want a volume label for your floppy. Please note that "
+"Minix does not support labels at all.</qt>"
+msgstr ""
+"<qt>Disketinize bir sürücü etiketi vermek istiyorsanız burayı işaretleyin. "
+"Minix'in etiketleri tümüyle desteklemediğini unutmayın. </qt>"
+
+#: floppy.cpp:250 floppy.cpp:702
+msgid ""
+"_: Volume label, maximal 11 characters\n"
+"KDE Floppy"
+msgstr "KDE Disketi"
+
+#: floppy.cpp:254
+msgid ""
+"<qt>This is for the volume label. Due to a limitation of MS-DOS the label can "
+"only be 11 characters long. Please note that Minix does not support labels, "
+"whatever you enter here.</qt>"
+msgstr ""
+"<qt>Bu sürücü etiketi. MS-DOS'a ait bir kısıtlama nedeniyle sadece 11 karakter "
+"uzunluğunda olabilir. Minix'in, -buraya ne girerseniz girin, etiketleri "
+"desteklemeyeceğini unutmayın, </qt>"
+
+#: floppy.cpp:263 floppy.cpp:470
+msgid "&Format"
+msgstr "&Biçimlendir"
+
+#: floppy.cpp:270
+msgid "<qt>Click here to start formatting.</qt>"
+msgstr "<qt>Biçimlendirmeye başlamak için tıklayın.</qt>"
+
+#: floppy.cpp:293
+msgid "<qt>This is the status window, where error messages are displayed.</qt>"
+msgstr ""
+"<qt>Burası, hata iletileri görüntülenebileceği durum penceresidir.</qt>"
+
+#: floppy.cpp:307
+msgid "<qt>Shows progress of the format.</qt>"
+msgstr "<qt>Biçimlendirme'nin gidişatını gösterir.</qt>"
+
+#: floppy.cpp:315
+msgid ""
+"KFloppy cannot find any of the needed programs for creating file systems; "
+"please check your installation."
+"<br>"
+"<br>Log:"
+msgstr ""
+"KFloppy, dosya sistemleri oluşturmak için gerekli uygulamaların hiçbirini "
+"bulamadı, lütfen kurulumunuzu gözden geçirin. "
+"<br>"
+"<br>Günlük:"
+
+#: floppy.cpp:347
+msgid "KDE Floppy Formatter"
+msgstr "KDE Disket Biçimlendirici"
+
+#: floppy.cpp:490
+msgid ""
+"_: BSD\n"
+"Formatting with BSD on a user-given device is only possible with UFS"
+msgstr ""
+"BSD ile biçimlendirme, kullanıcıya verilmiş cihazla ve sadece UFS ile mümkündür"
+
+#: floppy.cpp:498
+msgid ""
+"<qt>Formatting will erase all data on the device:"
+"<br/><b>%1</b>"
+"<br/>(Please check the correctness of the device name.)"
+"<br/>Are you sure you wish to proceed?</qt>"
+msgstr ""
+"<qt>Biçimlendirme disk üzerindeki bütün verileri silecek:"
+"<br/><b>%1</b> "
+"<br/>(Lütfen aygıt adının doğru olup olmadığını kontrol edin.)"
+"<br/>Devam etmek istediğinizden emin misiniz?</qt>"
+
+#: floppy.cpp:501 floppy.cpp:516
+msgid "Proceed?"
+msgstr "Devam?"
+
+#: floppy.cpp:515
+msgid ""
+"Formatting will erase all data on the disk.\n"
+"Are you sure you wish to proceed?"
+msgstr ""
+"Biçimlendirme disk üzerindeki bütün verileri silecek.\n"
+"Devam etmek istediğinizden emin misiniz?"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Ömer Fadıl USTA"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "omer_fad@hotmail.com"

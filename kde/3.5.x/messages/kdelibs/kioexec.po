@@ -1,0 +1,119 @@
+# translation of kioexec.po to
+# Turkish translation of kfmexec.
+# Copyright (C) 2003, 2005, 2007 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Görkem Çetin <gorkem@kde.org.tr>, 2005.
+# Bekir SONAT <cortexbs@yahoo.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kioexec\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-04-13 02:13+0200\n"
+"PO-Revision-Date: 2007-06-22 04:17+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=1; plural=0;\n"
+
+#: main.cpp:50
+msgid "KIO Exec - Opens remote files, watches modifications, asks for upload"
+msgstr ""
+"KIO Exec -Uzaktaki dosyaları açar,değişiklikleri izler,yüklemeleri sorar"
+
+#: main.cpp:54
+msgid "Treat URLs as local files and delete them afterwards"
+msgstr "URL'leri yerel dosyalar gibi ele alır ve sonrasında siler"
+
+#: main.cpp:55
+msgid "Suggested file name for the downloaded file"
+msgstr "İndirilecek dosya için önerilen isim"
+
+#: main.cpp:56
+msgid "Command to execute"
+msgstr "Çalıştırılacak komut"
+
+#: main.cpp:57
+msgid "URL(s) or local file(s) used for 'command'"
+msgstr "'Komut' için yerel dosya(lar) veya adres(ler)"
+
+#: main.cpp:73
+msgid ""
+"'command' expected.\n"
+msgstr ""
+"'komut' beklenmekte.\n"
+
+#: main.cpp:102
+msgid ""
+"The URL %1\n"
+"is malformed"
+msgstr ""
+"%1 URL'si\n"
+"bozuk"
+
+#: main.cpp:104
+msgid ""
+"Remote URL %1\n"
+"not allowed with --tempfiles switch"
+msgstr ""
+"Uzaktaki Adres %1\n"
+"--tempfiles anahtarına izin verilmiyor"
+
+#: main.cpp:237
+msgid ""
+"The supposedly temporary file\n"
+"%1\n"
+"has been modified.\n"
+"Do you still want to delete it?"
+msgstr ""
+"Görünüşe bakılırsa\n"
+"%1\n"
+"dosyası değiştirilmiş.\n"
+"Hala değişiklikleri silmek istiyor musunuz?"
+
+#: main.cpp:238 main.cpp:245
+msgid "File Changed"
+msgstr "Dosya Değiştirildi"
+
+#: main.cpp:238
+msgid "Do Not Delete"
+msgstr "Silme"
+
+#: main.cpp:244
+msgid ""
+"The file\n"
+"%1\n"
+"has been modified.\n"
+"Do you want to upload the changes?"
+msgstr ""
+"%1\n"
+"dosyası değiştirildi\n"
+"Değişiklikleri yüklemek istiyor musunuz?"
+
+#: main.cpp:245
+msgid "Upload"
+msgstr "Yükle"
+
+#: main.cpp:245
+msgid "Do Not Upload"
+msgstr "Yükleme"
+
+#: main.cpp:274
+msgid "KIOExec"
+msgstr "KIOExec"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Murat Gezer"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "murat.gezer@superposta.com"

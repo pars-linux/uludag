@@ -1,0 +1,547 @@
+# translation of krfb.po to 
+# translation of krfb.po to
+# translation of krfb.po to Turkish
+# translation of krfb.po to
+# Turkish translation of krfb.
+# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@gelecek.com.tr>, 2003.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Rıdvan CAN <ridvancan@linux-sevenler.org>, 2004.
+#  <ridvancan@linux-sevenler.org>, 2004.
+# Ayşe Genç <ayse@uludag.org.tr>, 2005.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: krfb\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-08 01:20+0200\n"
+"PO-Revision-Date: 2005-01-28 13:15+0200\n"
+"Last-Translator: Ayşe Genç <ayse@uludag.org.tr>\n"
+"Language-Team:  <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+
+#. i18n: file connectionwidget.ui line 41
+#: rc.cpp:3
+#, no-c-format
+msgid "Attention"
+msgstr "Uyarı"
+
+#. i18n: file connectionwidget.ui line 69
+#: rc.cpp:6
+#, no-c-format
+msgid ""
+"Somebody is requesting a connection to your computer. Granting this will allow "
+"the remote user to watch your desktop. "
+msgstr ""
+"Birisi bilgisayarınıza bağlantı kurmak istiyor. Bu izni vermekle kullanıcının "
+"şu an çalıştığınız masaüstünü görmesini sağlayacaksınız."
+
+#. i18n: file connectionwidget.ui line 136
+#: rc.cpp:9
+#, no-c-format
+msgid "123.234.123.234"
+msgstr "123.234.123.234"
+
+#. i18n: file connectionwidget.ui line 152
+#: rc.cpp:12
+#, no-c-format
+msgid "Allow remote user to &control keyboard and mouse"
+msgstr "&Uzaktaki bilgisayarın klavye ve fareyi yönetmesine izin ver"
+
+#. i18n: file connectionwidget.ui line 155
+#: rc.cpp:15
+#, no-c-format
+msgid ""
+"If you turn this option on, the remote user can enter keystrokes and use your "
+"mouse pointer. This gives them full control over your computer, so be careful. "
+"When the option is disabled the remote user can only watch your screen."
+msgstr ""
+"Eğer bu seçenek açık ise, uzaktan bağlanan kullanıcı klavyeyi ve fareyi "
+"kullanabilir. Bu onlara bilgisayarınız üstünde tam kontrol verir, bu yüzden "
+"dikkatli olun. Sadece seyredebilen kullanıcılar için bu seçenek kapalı "
+"olmalıdır."
+
+#. i18n: file connectionwidget.ui line 168
+#: rc.cpp:18
+#, no-c-format
+msgid "Remote system:"
+msgstr "Uzak sistem:"
+
+#. i18n: file invitewidget.ui line 35
+#: rc.cpp:21
+#, no-c-format
+msgid "Welcome to KDE Desktop Sharing"
+msgstr "KDE Masaüstü Paylaşımına Hoş Geldiniz"
+
+#. i18n: file invitewidget.ui line 47
+#: rc.cpp:24
+#, no-c-format
+msgid ""
+"KDE Desktop Sharing allows you to invite somebody at a remote location to watch "
+"and possibly control your desktop.\n"
+"<a href=\"whatsthis:"
+"<p>An invitation creates a one-time password that allows the receiver to "
+"connect to your desktop. It is valid for only one successful connection and "
+"will expire after an hour if it has not been used. When somebody connects to "
+"your computer a dialog will appear and ask you for permission. The connection "
+"will not be established before you accept it. In this dialog you can also "
+"restrict the other person to view your desktop only, without the ability to "
+"move your mouse pointer or press keys.</p>"
+"<p>If you want to create a permanent password for Desktop Sharing, allow "
+"'Uninvited Connections' in the configuration.</p>\">"
+"More about invitations...</a>"
+msgstr ""
+"KDE Masaüstü Paylaşımı uzaktandan birini masaüstünüzü görmek ve belki de "
+"denetlemek için davet etmenize izin verir.\n"
+"<a href=\"whatsthis:"
+"<p>Davet alıcısının sizi masaüstünüze bağlanması için bir seferlik bir parola "
+"üretir. Bu parola bir başarılı bağlantı için geçerlidir ve kullanılmadığı "
+"takdirde 1 saat sonra geçersiz olacaktır. Birisi bilgisayarınıza bağlandığında "
+"bie iletişim penceresi açılacak ve size izin için soracaktır. Siz izin vermeden "
+"bağlantı kurulmayacaktır.Bu iletişim penceresini kullanarak bilgisayarınıza "
+"bağlanan kişiye sadece masaüstünüzü görmek gibi bir sınır koyabilirsiniz, "
+"farenize ya da tuşlara müdahalesini engelleyebilirsiniz.</p>"
+"<p>Masaüstü Paylaşımı için kalıcı bir parola oluşturmak isterseniz, "
+"yapılandırma da'Davetsiz Bağlantılara' izin vermelisiniz.</p>\">"
+"Davetler hakkında daha fazla bilgi...</a>"
+
+#. i18n: file invitewidget.ui line 109
+#: rc.cpp:28
+#, no-c-format
+msgid "Create &Personal Invitation..."
+msgstr "&Kişisel Davet Oluştur"
+
+#. i18n: file invitewidget.ui line 115
+#: rc.cpp:31
+#, no-c-format
+msgid ""
+"Create a new invitation and display the connection data. Use this option if you "
+"want to invite somebody personally, for example, to give the connection data "
+"over the phone."
+msgstr ""
+"Yeni bir davet oluşturur ya da bağlantı verisini gösterir. Bu seçeğini kişisel "
+"olarak birini davet etmek isterseniz kullanın, örneğin, o bağlantıya telefon "
+"üstünde veriyi verirken."
+
+#. i18n: file invitewidget.ui line 157
+#: invitedialog.cc:62 rc.cpp:34
+#, no-c-format
+msgid "&Manage Invitations (%1)..."
+msgstr "Davetleri &Düzenle (%1)..."
+
+#. i18n: file invitewidget.ui line 165
+#: rc.cpp:37
+#, no-c-format
+msgid "Invite via &Email..."
+msgstr "&E-posta ile Davet et..."
+
+#. i18n: file invitewidget.ui line 168
+#: rc.cpp:40
+#, no-c-format
+msgid ""
+"This button will start your email application with a pre-configured text that "
+"explains to the recipient how to connect to your computer. "
+msgstr ""
+"Bilgisayarınıza bağlanmak için alıcıya neler yapması gerektiğini açıklayan bir "
+"ön-yapılandırma metinini göndermek için bu düğmeyle e-posta uygulamasını "
+"başlatabilirsiniz."
+
+#. i18n: file manageinvitations.ui line 16
+#: rc.cpp:43
+#, no-c-format
+msgid "Manage Invitations - Desktop Sharing"
+msgstr "Davetleri Düzenle - Masaüstü Paylaşımı"
+
+#. i18n: file manageinvitations.ui line 68
+#: rc.cpp:46
+#, no-c-format
+msgid "Created"
+msgstr "Oluşturulma"
+
+#. i18n: file manageinvitations.ui line 79
+#: rc.cpp:49
+#, no-c-format
+msgid "Expiration"
+msgstr "Bitiş"
+
+#. i18n: file manageinvitations.ui line 104
+#: rc.cpp:52
+#, no-c-format
+msgid ""
+"Displays the open invitations. Use the buttons on the right to delete them or "
+"create a new invitation."
+msgstr "Açık davetleri göster. "
+
+#. i18n: file manageinvitations.ui line 112
+#: rc.cpp:55
+#, no-c-format
+msgid "New &Personal Invitation..."
+msgstr "&Yeni Kişisel Davet"
+
+#. i18n: file manageinvitations.ui line 115
+#: rc.cpp:58
+#, no-c-format
+msgid "Create a new personal invitation..."
+msgstr "Yeni bir kişisel davet oluştur..."
+
+#. i18n: file manageinvitations.ui line 118
+#: rc.cpp:61
+#, no-c-format
+msgid "Click this button to create a new personal invitation."
+msgstr "Yeni bir kişisel davet oluşturmak için bu düğmeyi tıklayınız."
+
+#. i18n: file manageinvitations.ui line 126
+#: rc.cpp:64
+#, no-c-format
+msgid "&New Email Invitation..."
+msgstr "&Yeni E-posta Daveti..."
+
+#. i18n: file manageinvitations.ui line 129
+#: rc.cpp:67
+#, no-c-format
+msgid "Send a new invitation via email..."
+msgstr "Yeni daveti e-posta ile gönder..."
+
+#. i18n: file manageinvitations.ui line 132
+#: rc.cpp:70
+#, no-c-format
+msgid "Click this button to send a new invitation via email."
+msgstr "Yeni bir daveti e-posta ile göndermek için bu düğmeyi kullanın."
+
+#. i18n: file manageinvitations.ui line 146
+#: rc.cpp:76
+#, no-c-format
+msgid "Delete all invitations"
+msgstr "Tüm davetleri sil"
+
+#. i18n: file manageinvitations.ui line 149
+#: rc.cpp:79
+#, no-c-format
+msgid "Deletes all open invitations."
+msgstr "Tüm açık davetleri siler"
+
+#. i18n: file manageinvitations.ui line 163
+#: rc.cpp:85
+#, no-c-format
+msgid "Delete the selected invitation"
+msgstr "Seçili daveti sil"
+
+#. i18n: file manageinvitations.ui line 166
+#: rc.cpp:88
+#, no-c-format
+msgid ""
+"Delete the selected invitation. The invited person will not be able to connect "
+"using this invitation anymore."
+msgstr "Seçilen daveti sil"
+
+#. i18n: file manageinvitations.ui line 177
+#: rc.cpp:94 rc.cpp:97
+#, no-c-format
+msgid "Closes this window."
+msgstr "Bu pencereyi kapatır."
+
+#. i18n: file personalinvitewidget.ui line 45
+#: rc.cpp:100
+#, no-c-format
+msgid ""
+"<h2>Personal Invitation</h2>\n"
+"Give the information below to the person that you want to invite (<a "
+"href=\"whatsthis:Desktop Sharing uses the VNC protocol. You can use any VNC "
+"client to connect. In KDE the client is called 'Remote Desktop Connection'. "
+"Enter the host information into the client and it will connect..\">"
+"how to connect</a>). Note that everybody who gets the password can connect, so "
+"be careful."
+msgstr ""
+"<h2>Kişisel Davet</h2>"
+"<br>\n"
+"Aşağıdaki bilgileri davet ettiğiniz kişiye (<a·href=\"whatsthis:Masaüstü "
+"Paylaşımı VNC protokolünü kullanır. Bağlantıyı kurmak için herhangi bir VNC "
+"istemcisinden faydalanabilirsiniz. KDE'de bu istemcinin adı 'Uzak Masaüstü "
+"Bağlantısı'dır. İstemciye makine bilgisini verdiğiniz anda bağlantı "
+"sağlanacaktır.\">nasıl bağlanırım?</a>) verin. Bu parolayı alan herkes "
+"bilgisayarınıza bağlantı kurabilecektir, bu nedenle dikkatli olmanızı öneririz."
+
+#. i18n: file personalinvitewidget.ui line 132
+#: rc.cpp:104
+#, no-c-format
+msgid "cookie.tjansen.de:0"
+msgstr "cookie.tjansen.de:0"
+
+#. i18n: file personalinvitewidget.ui line 148
+#: rc.cpp:107
+#, no-c-format
+msgid "<b>Password:</b>"
+msgstr "<b>Parola:</b>"
+
+#. i18n: file personalinvitewidget.ui line 164
+#: rc.cpp:110
+#, no-c-format
+msgid "<b>Expiration time:</b>"
+msgstr "<b>Bitiş zamanı:</b>"
+
+#. i18n: file personalinvitewidget.ui line 183
+#: rc.cpp:113
+#, no-c-format
+msgid "12345"
+msgstr "12345"
+
+#. i18n: file personalinvitewidget.ui line 202
+#: rc.cpp:116
+#, no-c-format
+msgid "17:12"
+msgstr "17:12"
+
+#. i18n: file personalinvitewidget.ui line 218
+#: rc.cpp:119
+#, no-c-format
+msgid "<b>Host:</b>"
+msgstr "<b>Makine:</b>"
+
+#. i18n: file personalinvitewidget.ui line 234
+#: rc.cpp:122
+#, no-c-format
+msgid ""
+"(<a href=\"whatsthis:This field contains the address of your computer and the "
+"display number, separated by a colon. The address is just a hint - you can use "
+"any address that can reach your computer. Desktop Sharing tries to guess your "
+"address from your network configuration, but does not always succeed in doing "
+"so. If your computer is behind a firewall it may have a different address or be "
+"unreachable for other computers.\">Help</a>)"
+msgstr ""
+"(<a href=\"whatsthis:Bu alanda aralarında iki nokta üstüste karakteri olacak "
+"şekilde bilgisayarın adını ve ekran numarasını göreceksiniz. Adres sadece bir "
+"ipucu niteliği taşır. Bilgisayarınıza erişmek için herhangi bir IP adresini "
+"kullanabilirsiniz. Masaüstü Paylaşımı ağ ayarlarınıza bakarak adresinizi tahmin "
+"etmeye çalışacaktır. Bu işlem her zaman başarılı olmayabilir. Eğer "
+"bilgisayarınızı bir güvenlik duvarı arkasından çalıştırıyorsanız diğer "
+"bilgisayarlar tarafından erişilmez bir konumda olmanız da mümkündür.\">"
+"Yardım</a>)"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin "
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: main.cpp:45
+msgid "VNC-compatible server to share KDE desktops"
+msgstr "KDE masaüstü paylaşımı için VNC uyumlu sunucu"
+
+#: main.cpp:52
+msgid "Used for calling from kinetd"
+msgstr "Kinetd'den çağırarak kullanılmış"
+
+#: main.cpp:73 trayicon.cpp:100 trayicon.cpp:113
+msgid "Desktop Sharing"
+msgstr "Masaüstü Paylaşımı"
+
+#: main.cpp:85
+msgid "libvncserver"
+msgstr "libvncserver"
+
+#: main.cpp:87
+msgid "TightVNC encoder"
+msgstr "TightVNC kodlayıcı"
+
+#: main.cpp:89
+msgid "ZLib encoder"
+msgstr "ZLib kodlayıcı"
+
+#: main.cpp:91
+msgid "original VNC encoders and protocol design"
+msgstr "VNC kodlayıcılar ve tasarım"
+
+#: main.cpp:94
+msgid "X11 update scanner, original code base"
+msgstr "Asıl kod tabanı"
+
+#: main.cpp:97
+msgid "Connection side image"
+msgstr "Bağlantı kenar görüntüsü"
+
+#: main.cpp:100
+msgid "KDesktop background deactivation"
+msgstr "KDesktop arkaplan etkisizleştirmesi"
+
+#: main.cpp:114
+msgid ""
+"Cannot find KInetD. The KDE daemon (kded) may have crashed or has not been "
+"started at all, or the installation failed."
+msgstr "KInetD bulunamadı. KDE programı (kded) çalışmıyor olabilir."
+
+#: main.cpp:116 main.cpp:123 rfbcontroller.cc:885
+msgid "Desktop Sharing Error"
+msgstr "Masaüstü Paylaşım Hatası"
+
+#: main.cpp:121
+msgid ""
+"Cannot find KInetD service for Desktop Sharing (krfb). The installation is "
+"incomplete or failed."
+msgstr ""
+"Masaüstü paylaşımı (krfb) için KInetD servisi bulunamadı. Kurulum tam olarak "
+"tamamlanmamış."
+
+#: trayicon.cpp:61
+msgid "Desktop Sharing - connecting"
+msgstr "Masaüstü Paylaşımı - bağlantı kuruluyor"
+
+#: trayicon.cpp:63
+msgid "Manage &Invitations"
+msgstr "Davetleri &Düzenle"
+
+#: trayicon.cpp:70
+msgid "Enable Remote Control"
+msgstr "Uzaktan Erişimi Etkinleştir"
+
+#: trayicon.cpp:71
+msgid "Disable Remote Control"
+msgstr "Uzaktan Denetimi Kapat"
+
+#: trayicon.cpp:101
+msgid "The remote user has been authenticated and is now connected."
+msgstr "Uzaktaki kullanıcının kimlik sınaması tamamlandı ve bağlantı kuruldu."
+
+#: trayicon.cpp:104
+#, c-format
+msgid "Desktop Sharing - connected with %1"
+msgstr "Masaüstü Paylaşımı - %1 ile bağlantı kuruldu"
+
+#: trayicon.cpp:111
+msgid "Desktop Sharing - disconnected"
+msgstr "Masaüstü Paylaşımı - bağlantı kesildi"
+
+#: trayicon.cpp:114
+msgid "The remote user has closed the connection."
+msgstr "Uzaktaki kullanıcı bağlantıyı kapattı."
+
+#: configuration.cc:425
+msgid ""
+"When sending an invitation by email, note that everybody who reads this email "
+"will be able to connect to your computer for one hour, or until the first "
+"successful connection took place, whichever comes first. \n"
+"You should either encrypt the email or at least send it only in a secure "
+"network, but not over the Internet."
+msgstr ""
+"Bir daveti e-posta ile gönderirken bu e-postayı okuyan herkesin bilgisayarınıza "
+"bir saat boyunca, ya da ilk başarılı bağlantı olana kadar bağlanabileceğini de "
+"gözönünde bulundurmanızı öneririz.\n"
+"E-postanızı şifrelemeniz ya da güvenli bir ağ ortamında iletmeniz, bu sırada "
+"İnternet'i kullanmamanız tavsiye edilir."
+
+#: configuration.cc:430
+msgid "Send Invitation via Email"
+msgstr "Daveti e-posta ile gönder"
+
+#: configuration.cc:443
+msgid "Desktop Sharing (VNC) invitation"
+msgstr "Masaüstü Paylaşımı (VNC) daveti"
+
+#: configuration.cc:444
+msgid ""
+"You have been invited to a VNC session. If you have the KDE Remote Desktop "
+"Connection installed, just click on the link below.\n"
+"\n"
+"vnc://invitation:%1@%2:%3\n"
+"\n"
+"Otherwise you can use any VNC client with the following parameters:\n"
+"\n"
+"Host: %4:%5\n"
+"Password: %6\n"
+"\n"
+"Alternatively you can click on the link below to start the VNC session\n"
+"within your web browser.\n"
+"\n"
+"\thttp://%7:%8/\n"
+"\n"
+"For security reasons this invitation will expire at %9."
+msgstr ""
+"Bir VNC oturumuna davet edildiniz. Eğer bir KDE Uzak Masaüstü Bağlantısı "
+"sistemine sahipseniz, sadece aşağıdaki bağlantıyı tıklamanız yeterlidir.\n"
+"\n"
+"vnc://invitation:%1@%2:%3\n"
+"\n"
+"Bir başka seçenek, herhangi bir VNC istemcisi kullanarak aşağıdaki "
+"parametrelerle bağlantı kurmaktır:\n"
+"\n"
+"Makine: %4:%5\n"
+"Parola: %6\n"
+"Alternatif olarak aşağıdaki bağlantıyı tıklayarak da bir VNC oturumunu web \n"
+"tarayıcınızdan görüntüleyebilirsiniz.\n"
+"\n"
+"\thttp://%7:%8/\n"
+"\n"
+"Güvenlik nedenleri dolayısıyla bu davet %9 tarihinde sonlandırılacaktır."
+
+#: connectiondialog.cc:30
+msgid "New Connection"
+msgstr "Yeni Bağlantı"
+
+#: connectiondialog.cc:38
+msgid "Accept Connection"
+msgstr "Bağlantıyı Kabul Et"
+
+#: connectiondialog.cc:42
+msgid "Refuse Connection"
+msgstr "Bağlantıyı Reddet"
+
+#: invitedialog.cc:31
+msgid "Invitation"
+msgstr "Davet"
+
+#: personalinvitedialog.cc:30
+msgid "Personal Invitation"
+msgstr "Kişisel Davet"
+
+#: rfbcontroller.cc:376
+msgid "%1@%2 (shared desktop)"
+msgstr "%1@%2·(paylaşılmış masaüstü)"
+
+#: rfbcontroller.cc:510
+#, c-format
+msgid "User accepts connection from %1"
+msgstr "Kullanıcı %1 bilgisayarından bağlantı isteğine onay verdi"
+
+#: rfbcontroller.cc:523
+#, c-format
+msgid "User refuses connection from %1"
+msgstr "Kullanıcı %1 bilgisayarından bağlantı isteğini reddetti"
+
+#: rfbcontroller.cc:571
+#, c-format
+msgid "Closed connection: %1."
+msgstr "Bağlantı kapatıldı: %1."
+
+#: rfbcontroller.cc:700 rfbcontroller.cc:705
+msgid "Failed login attempt from %1: wrong password"
+msgstr "%1 makinesinden bir giriş hatası alındı: yanlış parola"
+
+#: rfbcontroller.cc:741
+msgid "Connection refused from %1, already connected."
+msgstr "%1 makinesinden bağlantı reddedildi - sistem önceden bağlı."
+
+#: rfbcontroller.cc:751
+#, c-format
+msgid "Accepted uninvited connection from %1"
+msgstr "%1 makinesinden gelen davetsiz bağlantı kabul edildi"
+
+#: rfbcontroller.cc:759
+msgid "Received connection from %1, on hold (waiting for confirmation)"
+msgstr "%1 adresinden bir bağlantı alındı, bekleniyor (onaylama gerekiyor)"
+
+#: rfbcontroller.cc:884
+msgid ""
+"Your X11 Server does not support the required XTest extension version 2.2. "
+"Sharing your desktop is not possible."
+msgstr ""
+"X Window sunucunuz XTest sürüm 2.2 uzantısını desteklemiyor. Paylaşım "
+"yapılamaz."

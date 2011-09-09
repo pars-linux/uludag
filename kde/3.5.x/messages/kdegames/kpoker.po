@@ -1,0 +1,329 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kpoker\n"
+"POT-Creation-Date: 2005-05-18 21:24+0200\n"
+"PO-Revision-Date: 2003-08-08 04:04+0200\n"
+"Last-Translator: Ömer Fadıl USTA <omer_fad@hotmail.com>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.5\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Ömer Fadıl USTA"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "omer_fad@hotmail.com"
+
+#: betbox.cpp:53
+msgid "Adjust Bet"
+msgstr "Bet Ayarla"
+
+#: betbox.cpp:54
+msgid "Fold"
+msgstr "Çevir"
+
+#: kpoker.cpp:177 newgamedlg.cpp:127
+msgid "You"
+msgstr "Sen"
+
+#: kpoker.cpp:257 kpoker.cpp:374
+#, fuzzy
+msgid "&Deal"
+msgstr "Çi&z"
+
+#: kpoker.cpp:272 kpoker.cpp:808
+#, c-format
+msgid "You won %1"
+msgstr "%1 kazandın!"
+
+#: kpoker.cpp:310
+msgid "Continue the round"
+msgstr ""
+
+#: kpoker.cpp:311
+msgid "The current pot"
+msgstr "Mevcut pot"
+
+#: kpoker.cpp:531
+msgid "Clicking on draw means you adjust your bet"
+msgstr "Çık üzerine tıkladığınızda koyduğunuz parayı ayarlarsınız."
+
+#: kpoker.cpp:533
+msgid "Clicking on draw means you are out"
+msgstr "Çık üzerine tıkladığınızda oyundan çıkmış olursunuz."
+
+#: kpoker.cpp:656 kpoker.cpp:698
+msgid "Nobody"
+msgstr "Hiçkimse"
+
+#: kpoker.cpp:662 kpoker.cpp:700 kpoker.cpp:923 kpoker.cpp:963 kpoker.cpp:1200
+msgid "Nothing"
+msgstr "Hiç"
+
+#: kpoker.cpp:689
+#, c-format
+msgid "Pot: %1"
+msgstr "Pot: %1"
+
+#: kpoker.cpp:810
+msgid "%1 won %2"
+msgstr "%1 %2 kazandı"
+
+#: kpoker.cpp:841 kpoker.cpp:1089
+#, fuzzy
+msgid "&Deal New Round"
+msgstr "Yeni kartlar çek"
+
+#: kpoker.cpp:891
+msgid "&See!"
+msgstr "&Gördüm!"
+
+#: kpoker.cpp:901
+#, fuzzy
+msgid "&Draw New Cards"
+msgstr "Yeni kartlar çek"
+
+#: kpoker.cpp:927
+msgid "One Pair"
+msgstr "Per"
+
+#: kpoker.cpp:931
+msgid "Two Pairs"
+msgstr "Döper"
+
+#: kpoker.cpp:935
+#, fuzzy
+msgid "3 of a Kind"
+msgstr "Üçlü"
+
+#: kpoker.cpp:939
+msgid "Straight"
+msgstr "Renk"
+
+#: kpoker.cpp:943
+msgid "Flush"
+msgstr "Kent"
+
+#: kpoker.cpp:947
+msgid "Full House"
+msgstr "Full"
+
+#: kpoker.cpp:951
+#, fuzzy
+msgid "4 of a Kind"
+msgstr "Kare"
+
+#: kpoker.cpp:955
+msgid "Straight Flush"
+msgstr "Floş"
+
+#: kpoker.cpp:959
+msgid "Royal Flush"
+msgstr "Floş Royal"
+
+#: kpoker.cpp:1000
+msgid "You Lost"
+msgstr "Kaybettin"
+
+#: kpoker.cpp:1000
+msgid ""
+"Oops, you went bankrupt.\n"
+"Starting a new game.\n"
+msgstr ""
+"Hoppaa - beş parasız kaldın.\n"
+"Yeni oyuna başlanıyor.\n"
+
+#: kpoker.cpp:1075
+msgid "You won %1!"
+msgstr "%1 kazandın!"
+
+#: kpoker.cpp:1078
+msgid "Game Over"
+msgstr "Oyun Bitti"
+
+#: kpoker.cpp:1186
+msgid ""
+"You are the only player with money!\n"
+"Switching to one player rules..."
+msgstr ""
+"Sen cebinde parası olan tek oyuncusun!\n"
+"Bir oyuncu kurallarına geçiliyor..."
+
+#: kpoker.cpp:1188
+msgid "You Won"
+msgstr "Kazandın"
+
+#: main.cpp:25
+msgid "KDE Poker Game"
+msgstr "KDE Poker oyunu"
+
+#: main.cpp:29
+msgid "KPoker"
+msgstr "KPoker"
+
+#: main.cpp:33
+msgid ""
+"For a full list of credits see helpfile\n"
+"Any suggestions, bug reports etc. are welcome"
+msgstr "Öneriler, arıza bildirimleri kabul edilir."
+
+#: main.cpp:36
+msgid "Code for poker rules"
+msgstr ""
+
+#: main.cpp:38
+msgid "Current maintainer"
+msgstr "Mevcut programcılar"
+
+#: main.cpp:40
+msgid "Original author"
+msgstr "Ana programcı"
+
+#: newgamedlg.cpp:53
+msgid "Try loading a game"
+msgstr "Bir oyun yüklemeyi dene"
+
+#: newgamedlg.cpp:58
+msgid "The following values are used if loading from config fails"
+msgstr "Eğer dosyadan yükleme başarısız olursa aşağıdaki değerler kullanılır"
+
+#: newgamedlg.cpp:68
+msgid "How many players do you want?"
+msgstr "Kaç oyuncu istersiniz?"
+
+#: newgamedlg.cpp:72
+msgid "Your name:"
+msgstr "Adınız:"
+
+#: newgamedlg.cpp:77
+msgid "Players' starting money:"
+msgstr "Oyuncuların başlangıç bakiyesi:"
+
+#: newgamedlg.cpp:84
+msgid "The names of your opponents:"
+msgstr "Düşmanlarının isimleri:"
+
+#: newgamedlg.cpp:90
+msgid "Show this dialog every time on startup"
+msgstr "Açılışta bu pencereyi göster"
+
+#: newgamedlg.cpp:130
+#, c-format
+msgid "Computer %1"
+msgstr "Bilgisayar %1"
+
+#: newgamedlg.cpp:192
+msgid "Player"
+msgstr "Oyuncu"
+
+#: optionsdlg.cpp:44
+msgid "All changes will be activated in the next round."
+msgstr "Tüm değişiklikler sonraki elde etkinleştirilecektir."
+
+#: optionsdlg.cpp:47
+msgid "Draw delay:"
+msgstr "Çizim hızı:"
+
+#: optionsdlg.cpp:52
+msgid "Maximal bet:"
+msgstr "En çok bet:"
+
+#: optionsdlg.cpp:56
+msgid "Minimal bet:"
+msgstr "En az bet:"
+
+#: playerbox.cpp:61
+msgid "Held"
+msgstr "Tutuldu"
+
+#: playerbox.cpp:94 playerbox.cpp:148
+#, c-format
+msgid "Money of %1"
+msgstr "%1'in parası"
+
+#: playerbox.cpp:124
+#, c-format
+msgid "Cash: %1"
+msgstr "Nakit: %1"
+
+#: playerbox.cpp:129
+msgid "Out"
+msgstr "Dışarı"
+
+#: playerbox.cpp:132
+#, c-format
+msgid "Cash per round: %1"
+msgstr "Oyun başına para: %1"
+
+#: playerbox.cpp:135
+#, c-format
+msgid "Bet: %1"
+msgstr "Görme: %1"
+
+#: top.cpp:90
+msgid "Soun&d"
+msgstr "&Ses"
+
+#: top.cpp:94
+msgid "&Blinking Cards"
+msgstr "&Yanıp Sönen kartlar"
+
+#: top.cpp:98
+msgid "&Adjust Bet is Default"
+msgstr "&Görülen öntanımlı"
+
+#: top.cpp:111
+msgid "Draw"
+msgstr "Çık"
+
+#: top.cpp:113
+msgid "Exchange Card 1"
+msgstr "1. Kartı Değiştir"
+
+#: top.cpp:115
+msgid "Exchange Card 2"
+msgstr "2. Kartı Değiştir"
+
+#: top.cpp:117
+msgid "Exchange Card 3"
+msgstr "3. Kartı Değiştir"
+
+#: top.cpp:119
+msgid "Exchange Card 4"
+msgstr "4. Kartı Değiştir"
+
+#: top.cpp:121
+msgid "Exchange Card 5"
+msgstr "5. Kartı Değiştir"
+
+#: top.cpp:180
+msgid "Do you want to save this game?"
+msgstr "Bu oyunu kaydetmek istiyor musunuz?"
+
+#: top.cpp:201
+msgid "Last hand: "
+msgstr "Son el: "
+
+#: top.cpp:203
+msgid "Last winner: "
+msgstr "Son kazanan: "
+
+#: top.cpp:212
+msgid "Click a card to hold it"
+msgstr "Kartı tutmak için üzerine tıklayın"
+
+#, fuzzy
+#~ msgid "Cash per round:"
+#~ msgstr "Oyun başına para: %1"

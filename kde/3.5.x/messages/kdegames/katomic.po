@@ -1,0 +1,444 @@
+# translation of katomic.po to Turkish
+# Katomic 2.0 ,KDE oyunu.
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002,2003.
+# Görkem Çetin <gorkem@kde.org>, 2002,2003
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: katomic\n"
+"POT-Creation-Date: 2008-06-25 01:36+0200\n"
+"PO-Revision-Date: 2003-08-08 03:10+0200\n"
+"Last-Translator: Ömer Fadıl USTA <omer_fad@hotmail.com>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.5\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Ömer Fadıl USTA"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "omer_fad@hotmail.com"
+
+#: configbox.cpp:30
+msgid "Animation speed:"
+msgstr "Canlandırma hızı:"
+
+#: gamewidget.cpp:98
+msgid "You solved level %1 with %2 moves!"
+msgstr "%1 . seviyeyi %2 harekette çözdünüz!"
+
+#: gamewidget.cpp:98
+msgid "Congratulations"
+msgstr "Tebrikler"
+
+#: gamewidget.cpp:101 gamewidget.cpp:225
+#, fuzzy
+msgid "Level %1 Highscores"
+msgstr "%1 . Seviyenin En Yüksek Puanları"
+
+#: gamewidget.cpp:183
+msgid "Score"
+msgstr "Puan"
+
+#: gamewidget.cpp:188
+msgid "Highscore:"
+msgstr ""
+
+#: gamewidget.cpp:200
+msgid "Your score so far:"
+msgstr "Şu ana kadar ki puanınız:"
+
+#: levelnames.cpp:1
+msgid "Water"
+msgstr "Su"
+
+#: levelnames.cpp:2
+msgid "Formic Acid"
+msgstr "Formik Asit"
+
+#: levelnames.cpp:3
+msgid "Acetic Acid"
+msgstr "Asidik Asit"
+
+#: levelnames.cpp:4
+msgid "trans-Butene"
+msgstr "trans-Butene"
+
+#: levelnames.cpp:5
+msgid "cis-Butene"
+msgstr "cis-Butene"
+
+#: levelnames.cpp:6
+msgid "Dimethyl ether"
+msgstr "Dimethyl ether"
+
+#: levelnames.cpp:7
+msgid "Butanol"
+msgstr "Butanol"
+
+#: levelnames.cpp:8
+msgid "2-Methyl-2-Propanol"
+msgstr "2-Methyl-2-Propanol"
+
+#: levelnames.cpp:9
+msgid "Glycerin"
+msgstr "Glycerin"
+
+#: levelnames.cpp:10
+#, fuzzy
+msgid "Poly-Tetra-Fluoro-Ethene"
+msgstr "Poly-Tetra-Flor-Etan"
+
+#: levelnames.cpp:11
+#, fuzzy
+msgid "Oxalic Acid"
+msgstr "Maleik Asit"
+
+#: levelnames.cpp:12
+msgid "Methane"
+msgstr "Metan"
+
+#: levelnames.cpp:13
+msgid "Formaldehyde"
+msgstr "Formaldehit"
+
+#: levelnames.cpp:14
+msgid "Crystal 1"
+msgstr "Kristal 1"
+
+#: levelnames.cpp:15
+msgid "Acetic acid ethyl ester"
+msgstr "Acetic acid ethyl ester"
+
+#: levelnames.cpp:16
+msgid "Ammonia"
+msgstr "Amonyak"
+
+#: levelnames.cpp:17
+msgid "3-Methyl-Pentane"
+msgstr "Metil-Pentan"
+
+#: levelnames.cpp:18
+msgid "Propanal"
+msgstr "Propanal"
+
+#: levelnames.cpp:19 levelnames.cpp:41
+msgid "Propyne"
+msgstr "Propyne"
+
+#: levelnames.cpp:20
+msgid "Furanal"
+msgstr "Furanal"
+
+#: levelnames.cpp:21
+msgid "Pyran"
+msgstr "Pyran"
+
+#: levelnames.cpp:22
+msgid "Cyclo-Pentane"
+msgstr "Siklo Pentan"
+
+#: levelnames.cpp:23
+msgid "Methanol"
+msgstr "Metan"
+
+#: levelnames.cpp:24
+msgid "Nitro-Glycerin"
+msgstr "Nitrogliserin"
+
+#: levelnames.cpp:25
+msgid "Ethane"
+msgstr "Etan"
+
+#: levelnames.cpp:26
+msgid "Crystal 2"
+msgstr "Kristal 2"
+
+#: levelnames.cpp:27
+msgid "Ethylene-Glycol"
+msgstr "Etilen-Glikol"
+
+#: levelnames.cpp:28
+msgid "L-Alanine"
+msgstr "L-Alanine"
+
+#: levelnames.cpp:29
+msgid "Cyanoguanidine"
+msgstr "Cyanoguanidine"
+
+#: levelnames.cpp:30
+msgid "Prussic Acid (Cyanic Acid)"
+msgstr "Prussic Asit (Cyanit Asit)"
+
+#: levelnames.cpp:31
+msgid "Anthracene"
+msgstr "Antrasin"
+
+#: levelnames.cpp:32
+msgid "Thiazole"
+msgstr "Thiazole"
+
+#: levelnames.cpp:33
+msgid "Saccharin"
+msgstr "Saccharin"
+
+#: levelnames.cpp:34
+msgid "Ethylene"
+msgstr "Etilen"
+
+#: levelnames.cpp:35
+msgid "Styrene"
+msgstr "Styrene"
+
+#: levelnames.cpp:36
+msgid "Melamine"
+msgstr "Melamin"
+
+#: levelnames.cpp:37
+msgid "Cyclobutane"
+msgstr "Cyclobutane"
+
+#: levelnames.cpp:38
+msgid "Nicotine"
+msgstr "Nicotine"
+
+#: levelnames.cpp:39
+msgid "Acetyle salicylic acid"
+msgstr "Acetyle salicylic acid"
+
+#: levelnames.cpp:40
+msgid "Meta-Di-Nitro-Benzene"
+msgstr "Meta-Di-Nitro-Benzen"
+
+#: levelnames.cpp:42 levelnames.cpp:80
+msgid "Malonic Acid"
+msgstr "Malonik Asit"
+
+#: levelnames.cpp:43
+msgid "2,2-Dimethylpropane"
+msgstr "2,2-Dimethylpropane"
+
+#: levelnames.cpp:44
+msgid "Ethyl-Benzene"
+msgstr "Etilen"
+
+#: levelnames.cpp:45
+msgid "Propene"
+msgstr "Propene"
+
+#: levelnames.cpp:46
+msgid "L-Asparagine"
+msgstr "L-Asparagine"
+
+#: levelnames.cpp:47
+msgid "1,3,5,7-Cyclooctatetraene"
+msgstr "1,3,5,7-Cyclooctatetraene"
+
+#: levelnames.cpp:48
+msgid "Vanillin"
+msgstr "Vanillin"
+
+#: levelnames.cpp:49
+msgid "Crystal 3"
+msgstr "Kristal 3"
+
+#: levelnames.cpp:50
+msgid "Uric Acid"
+msgstr "Uric Acid"
+
+#: levelnames.cpp:51
+msgid "Thymine"
+msgstr "Timin"
+
+#: levelnames.cpp:52
+msgid "Aniline"
+msgstr "Aniline"
+
+#: levelnames.cpp:53
+msgid "Chloroform"
+msgstr "Kloroform"
+
+#: levelnames.cpp:54
+msgid "Carbonic acid"
+msgstr "Karbonik Asit"
+
+#: levelnames.cpp:55
+msgid "Crystal 4"
+msgstr "Kristal 4"
+
+#: levelnames.cpp:56
+msgid "Ethanol"
+msgstr "Ethanol"
+
+#: levelnames.cpp:57
+msgid "Acrylo-Nitril"
+msgstr "Akrilo-Nitril"
+
+#: levelnames.cpp:58
+msgid "Furan"
+msgstr "Furan"
+
+#: levelnames.cpp:59
+msgid "l-Lactic acid"
+msgstr "l-Lactic acid"
+
+#: levelnames.cpp:60
+msgid "Maleic Acid"
+msgstr "Maleik Asit"
+
+#: levelnames.cpp:61
+msgid "meso-Tartaric acid"
+msgstr "meso-Tartaric acid"
+
+#: levelnames.cpp:62
+msgid "Crystal 5"
+msgstr "Kristal 5"
+
+#: levelnames.cpp:63
+msgid "Formic acid ethyl ester"
+msgstr "Formic acid ethyl ester"
+
+#: levelnames.cpp:64
+msgid "1,4-Cyclohexadiene"
+msgstr "1,4-Cyclohexadiene"
+
+#: levelnames.cpp:65
+msgid "Squaric acid"
+msgstr "Squarik asit"
+
+#: levelnames.cpp:66
+msgid "Ascorbic acid"
+msgstr "Askorbik asit"
+
+#: levelnames.cpp:67
+msgid "Iso-Propanol"
+msgstr "Iso-Propanol"
+
+#: levelnames.cpp:68
+msgid "Phosgene"
+msgstr "Fosgen"
+
+#: levelnames.cpp:69
+msgid "Thiophene"
+msgstr "Tiofen"
+
+#: levelnames.cpp:70
+msgid "Urea"
+msgstr "Üre"
+
+#: levelnames.cpp:71
+msgid "Pyruvic Acid"
+msgstr "Pürifik Asit"
+
+#: levelnames.cpp:72
+msgid "Ethylene oxide"
+msgstr "Etilen oksit"
+
+#: levelnames.cpp:73
+msgid "Phosphoric Acid"
+msgstr "Fosforik Asit"
+
+#: levelnames.cpp:74
+msgid "Diacetyl"
+msgstr "Diasetil"
+
+#: levelnames.cpp:75
+msgid "trans-Dichloroethene"
+msgstr "trans-dikloreten"
+
+#: levelnames.cpp:76
+msgid "Allylisothiocyanate"
+msgstr "Allylisothiocyanate"
+
+#: levelnames.cpp:77
+msgid "Diketene"
+msgstr "Diketene"
+
+#: levelnames.cpp:78
+msgid "Ethanal"
+msgstr "Ethanal"
+
+#: levelnames.cpp:79
+msgid "Acroleine"
+msgstr "Acroleine"
+
+#: levelnames.cpp:81
+msgid "Uracil"
+msgstr "Uracil"
+
+#: levelnames.cpp:82
+msgid "Caffeine"
+msgstr "Kafein"
+
+#: levelnames.cpp:83
+msgid "Acetone"
+msgstr "Aseton"
+
+#: main.cpp:31
+msgid "KDE Atomic Entertainment Game"
+msgstr "KDE Atomik Eğlence Oyunu"
+
+#: main.cpp:42
+msgid "KAtomic"
+msgstr "KAtomic"
+
+#: main.cpp:50
+msgid "6 new levels"
+msgstr "6 yeni seviye"
+
+#: main.cpp:51
+msgid "Game graphics and application icon"
+msgstr ""
+
+#: molek.cpp:88
+msgid "Noname"
+msgstr "İsimsiz"
+
+#: molek.cpp:111
+#, c-format
+msgid "Level: %1"
+msgstr "Seviye: %1"
+
+#: toplevel.cpp:44
+#, fuzzy
+msgid "Show &Highscores"
+msgstr "En Yüksek Puanları &Göster"
+
+#: toplevel.cpp:57
+msgid "Atom Up"
+msgstr "Atom Yukarı"
+
+#: toplevel.cpp:58
+msgid "Atom Down"
+msgstr "Atom Aşağı"
+
+#: toplevel.cpp:59
+msgid "Atom Left"
+msgstr "Atom Sola"
+
+#: toplevel.cpp:60
+msgid "Atom Right"
+msgstr "Atom Sağa"
+
+#: toplevel.cpp:62
+msgid "Next Atom"
+msgstr "Sonraki Atom"
+
+#: toplevel.cpp:63
+msgid "Previous Atom"
+msgstr "Önceki Atom"
+
+#~ msgid "Best score:"
+#~ msgstr "En yüksek puan:"
+
+#~ msgid "Capsaicin"
+#~ msgstr "Kapsaisin"

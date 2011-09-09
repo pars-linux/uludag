@@ -1,0 +1,178 @@
+# translation of ktexteditor_autobookmarker.po to Türkçe
+# translation of ktexteditor_autobookmarker.po to
+# translation of ktexteditor_autobookmarker.po to Turkish
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Görkem Çetin <gorkem@gorkemcetin.com>, 2005.
+# Bekir SONAT <cortexbs@yahoo.com>, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: ktexteditor_autobookmarker\n"
+"POT-Creation-Date: 2005-06-14 01:24+0200\n"
+"PO-Revision-Date: 2005-07-17 13:48+0300\n"
+"Last-Translator: Bekir SONAT <cortexbs@yahoo.com>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: autobookmarker.cpp:90
+msgid "AutoBookmarks"
+msgstr "Otomatik Yer İmleri"
+
+#: autobookmarker.cpp:101
+msgid "Configure AutoBookmarks"
+msgstr "Otomatik Yer İmlerini Yapılandır"
+
+#: autobookmarker.cpp:280
+msgid "Edit Entry"
+msgstr "Girdiyi Düzenle"
+
+#: autobookmarker.cpp:288
+msgid "&Pattern:"
+msgstr "&Desen:"
+
+#: autobookmarker.cpp:294
+msgid "<p>A regular expression. Matching lines will be bookmarked.</p>"
+msgstr "<p>Bir düzenli ifade. Uyuşan satırlar yer imi yapılacak.</p>"
+
+#: autobookmarker.cpp:298
+msgid "Case &sensitive"
+msgstr "küçük/BÜYÜK harf duyarlı"
+
+#: autobookmarker.cpp:302
+msgid ""
+"<p>If enabled, the pattern matching will be case sensitive, otherwise not.</p>"
+msgstr ""
+"<p>Eğer etkinleştirilmişse, desen eşleştirme küçük/BÜYÜK harf duyarlı olacak. "
+"Aksi halde,-olmayacak.</p>"
+
+#: autobookmarker.cpp:305
+msgid "&Minimal matching"
+msgstr "Enaz Eşleş&me"
+
+#: autobookmarker.cpp:309
+msgid ""
+"<p>If enabled, the pattern matching will use minimal matching; if you do not "
+"know what that is, please read the appendix on regular expressions in the kate "
+"manual.</p>"
+msgstr ""
+"<p>Etkinleştirilirse, desen eşleşmesi için Enaz Eşleşme özelliği kullanılacak. "
+"( Bunun ne olduğunu tam olarak bilmiyorsanız, Kate el kitabındaki Düzenli "
+"İfadeler bölümünü lütfen okuyun.)</p>"
+
+#: autobookmarker.cpp:313
+msgid "&File mask:"
+msgstr "&Dosya maskesi:"
+
+#: autobookmarker.cpp:319
+#, fuzzy
+msgid ""
+"<p>A list of filename masks, separated by semicolons. This can be used to limit "
+"the usage of this entity to files with matching names.</p>"
+"<p>Use the wizard button to the right of the mimetype entry below to easily "
+"fill out both lists.</p>"
+msgstr ""
+"<p>Dosyaadı maskeleri, noktalı-virgül ile ayrılmış bir listedir. Bu liste, "
+"dosyalara yapılacak girişleri, maskeye uyan dosyalar ile sınırlamak için "
+"kullanılabilir.</p>"
+"<p>Mime tipi girdisinin sağını kolayca doldurabilmek için sihirbaz düğmesini "
+"kullanın.</p> "
+
+#: autobookmarker.cpp:324
+msgid "MIME &types:"
+msgstr "MIME &tipleri:"
+
+#: autobookmarker.cpp:330
+msgid ""
+"<p>A list of mime types, separated by semicolon. This can be used to limit the "
+"usage of this entity to files with matching mime types.</p>"
+"<p>Use the wizard button on the right to get a list of existing file types to "
+"choose from, using it will fill in the file masks as well.</p>"
+msgstr ""
+"<p>Mime tiplerinin noktalı-virgül ile ayrılmış bir listedir. Bu liste, "
+"dosyalara yapılacak girişleri, mime tiplerine uyan dosyalar ile sınırlamak için "
+"kullanılabilir.</p>"
+"<p>Mevcut dosya tiplerinin listesini almak ve oradan seçim yapmak için sağdaki "
+"sihirbaz düğmesini kullanın.</p> "
+
+#: autobookmarker.cpp:340
+msgid ""
+"<p>Click this button to display a checkable list of mimetypes available on your "
+"system. When used, the file masks entry above will be filled in with the "
+"corresponding masks.</p>"
+msgstr ""
+"<p>Sisteminizde mevcut olan tüm mime-tiplerinin işaretlenerek seçilebilir bir "
+"listesini görmek için bu düğmeye tıklayın. Kullanıldığında, dosya maskesi "
+"girişi, seçime denk düşen maskeler ile doldurulacaktır.</p>"
+
+#: autobookmarker.cpp:365
+msgid ""
+"Select the MimeTypes for this pattern.\n"
+"Please note that this will automatically edit the associated file extensions as "
+"well."
+msgstr ""
+"Bu desen için MIME tiplerini seçin.\n"
+"Bunun ilişkilendirilmiş dosya uzantılarını otomatik olarak değiştireceğini "
+"unutmayın."
+
+#: autobookmarker.cpp:367
+msgid "Select Mime Types"
+msgstr "MIME tiplerini seçin"
+
+#: autobookmarker.cpp:385
+msgid "&Patterns"
+msgstr "&Desenler"
+
+#: autobookmarker.cpp:388
+msgid "Pattern"
+msgstr "Desen"
+
+#: autobookmarker.cpp:389
+msgid "Mime Types"
+msgstr "Mime Tipleri"
+
+#: autobookmarker.cpp:390
+msgid "File Masks"
+msgstr "Dosya Maskeleri"
+
+#: autobookmarker.cpp:394
+#, fuzzy
+msgid ""
+"<p>This list shows your configured autobookmark entities. When a document is "
+"opened, each entity is used in the following way: "
+"<ol>"
+"<li>The entity is dismissed, if a mime and/or filename mask is defined, and "
+"neither matches the document.</li>"
+"<li>Otherwise each line of the document is tried against the pattern, and a "
+"bookmark is set on matching lines.</li></ul>"
+"<p>Use the buttons below to manage your collection of entities.</p>"
+msgstr ""
+"<p>Bu liste yapılandırılmış otomatik yer imi girdilerinizi gösterir. Bir belge "
+"açıldığında,  herbir  varlık aşağıdaki yollardan kullanılır : "
+"<ol>"
+"<li> Eğer bir MIME ve/veya dosyaadı maskesi tanımlanmış ve hiçbir uyar belge "
+"bulunamamışsa,-Girdi reddedilir.</li> "
+"<li>Diğer yandan, belgenin herbir satırı, desen'e karşı denenir ve eşleşen "
+"satırlara bir yer imi atanır.</li></ul>"
+"<p>Girdi birikiminizi yönetmek için aşağıdaki düğmeleri kullanın.</p>"
+
+#: autobookmarker.cpp:406
+msgid "&New..."
+msgstr "&Yeni..."
+
+#: autobookmarker.cpp:409
+msgid "Press this button to create a new autobookmark entity."
+msgstr "Yeni bir otomatik yer imi girdisi yaratmak için bu düğmeye basın."
+
+#: autobookmarker.cpp:414
+msgid "Press this button to delete the currently selected entity."
+msgstr "Seçili bulunan girdiyi silmek için bu düğmeye basın."
+
+#: autobookmarker.cpp:416
+msgid "&Edit..."
+msgstr "&Düzenle..."
+
+#: autobookmarker.cpp:419
+msgid "Press this button to edit the currently selected entity."
+msgstr "Seçili bulunan girdiyi düzenlemek için bu düğmeye basın."

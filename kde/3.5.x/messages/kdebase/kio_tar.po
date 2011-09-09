@@ -1,0 +1,32 @@
+# translation of kio_tar.po to
+# Görkem Çetin <gorkem@gorkemcetin.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kio_tar\n"
+"POT-Creation-Date: 2007-09-22 01:12+0200\n"
+"PO-Revision-Date: 2005-07-07 01:36+0200\n"
+"Last-Translator: Adil YILDIZ <adil@kde.org.tr>\n"
+"Language-Team:  <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: tar.cc:227 tar.cc:320 tar.cc:394
+#, c-format
+msgid ""
+"Could not open the file, probably due to an unsupported file format.\n"
+"%1"
+msgstr ""
+"Dosya açılamadı, yüksek ihtimalle desteklenmeyen bir dosya türü.\n"
+"%1"
+
+#: tar.cc:471
+#, c-format
+msgid ""
+"The archive file could not be opened, perhaps because the format is "
+"unsupported.\n"
+"%1"
+msgstr ""
+"Arşiv dosyası açılamadı, yüksek ihtimalle arşiv türü deteklenmiyor.\n"
+"%1"

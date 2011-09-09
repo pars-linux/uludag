@@ -1,0 +1,37 @@
+# translation of akregator_konqplugin.po to
+#
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# S.Çağlar Onur <caglar@uludag.org.tr>, 2005.
+# Cemil MUTLU <mawilos@gmail.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: akregator_konqplugin\n"
+"POT-Creation-Date: 2006-11-11 02:39+0100\n"
+"PO-Revision-Date: 2007-05-16 16:56+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: akregatorplugin.cpp:87 konqfeedicon.cpp:129
+msgid "Add Feed to Akregator"
+msgstr "Haber Kaynağını Akregator'e Ekle"
+
+#: konqfeedicon.cpp:132
+msgid "Add Feeds to Akregator"
+msgstr "Haber Kaynaklarını Akregator'e Ekle"
+
+#: konqfeedicon.cpp:141
+msgid "Add All Found Feeds to Akregator"
+msgstr "Bulunan Bütün Haber Kaynaklarını Akregator'a Ekle"
+
+#: konqfeedicon.cpp:165
+msgid "Monitor this site for updates (using news feed)"
+msgstr "Site güncellemelerini takip et (haber kaynağı kullanarak)"
+
+#: konqfeedicon.cpp:209 pluginbase.cpp:56 pluginbase.cpp:66
+msgid "Imported Feeds"
+msgstr "İçeri Aktarılmış Haber Kaynakları"

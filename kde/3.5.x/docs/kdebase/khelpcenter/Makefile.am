@@ -1,0 +1,4 @@
+KDE_LANG = tr
+SUBDIRS = $(AUTODIRS)
+KDE_DOCS = khelpcenter
+KDE_MANS = AUTO

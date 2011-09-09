@@ -1,0 +1,459 @@
+# translation of kview.po to 
+# translation of kview.po to Turkish
+# Türkçe. "ğüşöçıĞÜŞÖÇ"
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# Mehmet TARIMCI <mehmet@gelecek.com.tr>, 2000.
+# Serdar Cevher <scevher@anet.com.tr>, 2001.
+# Görkem Çetin <gorkem@kde.org>, 2002, 2003.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kview\n"
+"POT-Creation-Date: 2005-03-07 01:42+0100\n"
+"PO-Revision-Date: 2003-12-07 02:37+0200\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team:  <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.2\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: kview.cpp:123 kview.cpp:469
+msgid "%1/s"
+msgstr "%1/s"
+
+#: kview.cpp:147
+msgid ""
+"An error occurred while loading the KViewViewer KPart. Check your installation."
+msgstr ""
+"KView KPart yüklenirken bir hata oluştu. Lütfen kurulumu kontrol ediniz."
+
+#: kview.cpp:471
+msgid "Stalled"
+msgstr "Durakladı"
+
+#: kview.cpp:517
+msgid "Cr&op"
+msgstr "&Kırp"
+
+#: main.cpp:26
+msgid "KDE Image Viewer"
+msgstr "KDE Resim Görüntüleyici"
+
+#: main.cpp:30
+msgid "Image to open"
+msgstr "Açılacak resim"
+
+#: main.cpp:36
+msgid "KView"
+msgstr "KView"
+
+#: main.cpp:39
+msgid "(c) 1997-2002, The KView Developers"
+msgstr "(c) 1997-2002, The KView Geliştiricileri"
+
+#: main.cpp:40
+msgid "Maintainer"
+msgstr "Düzenleyen"
+
+#: main.cpp:41
+msgid "started it all"
+msgstr "programı başlattı"
+
+#~ msgid "General KView Configuration"
+#~ msgstr "Genel KView Yapılandırması"
+
+#, fuzzy
+#~ msgid "Application"
+#~ msgstr "Uygulama Eklentileri"
+
+#~ msgid "Resizing"
+#~ msgstr "Yeniden Boyutlanıyor"
+
+#~ msgid "Only resize window"
+#~ msgstr "Sadece pencereyi boyutlandır"
+
+#~ msgid "Resize image to fit window"
+#~ msgstr "Resmi pencereye uydur"
+
+#~ msgid "Don't resize anything"
+#~ msgstr "Hiç bir şeyi boyutlandırma"
+
+#~ msgid "General KViewViewer Configuration"
+#~ msgstr "Genel KView Yapılandırması"
+
+#, fuzzy
+#~ msgid "Viewer"
+#~ msgstr "KView"
+
+#~ msgid "Plugins"
+#~ msgstr "Eklentiler"
+
+#~ msgid "Select Which Plugins to Use"
+#~ msgstr "Kullanılacak Eklentileri Seçin"
+
+#, fuzzy
+#~ msgid "Image Settings"
+#~ msgstr "Görüntü Bilgileri"
+
+#, fuzzy
+#~ msgid "Fit image to page size"
+#~ msgstr "Resmi Pencereye Uydur"
+
+#, fuzzy
+#~ msgid "Center image on page"
+#~ msgstr "Görüntü&yü Boyutlandır"
+
+#~ msgid "KDE Image Viewer Part"
+#~ msgstr "KDE Resim Gösterici Eklentisi"
+
+#, fuzzy
+#~ msgid "Unknown image format: %1"
+#~ msgstr ""
+#~ "Geçersiz biçim\n"
+#~ "%1"
+
+#, fuzzy
+#~ msgid "Zoom In 10%"
+#~ msgstr "10% büyüt"
+
+#, fuzzy
+#~ msgid "Zoom Out 10%"
+#~ msgstr "10% küçült"
+
+#~ msgid "&Flip"
+#~ msgstr "&Ters çevir"
+
+#~ msgid "&Vertical"
+#~ msgstr "&Dikey"
+
+#~ msgid "&Horizontal"
+#~ msgstr "&Yatay"
+
+#, fuzzy
+#~ msgid "Ro&tate Counter-Clockwise"
+#~ msgstr "Saatin Aksi Yönünde Döndür"
+
+#, fuzzy
+#~ msgid "Rotate Clockwise"
+#~ msgstr "Saatin Aksi Yönünde Döndür"
+
+#~ msgid "Fit Image to Window"
+#~ msgstr "Resmi Pencereye Uydur"
+
+#~ msgid "Show Scrollbars"
+#~ msgstr "Kaydırma Çubuğunu Göster"
+
+#~ msgid "Save Image As..."
+#~ msgstr "Resmi Farklı Kaydet..."
+
+#, fuzzy
+#~ msgid "Load changed image? - %1"
+#~ msgstr "<b>KView</b> Değişen resim yüklensin mi?"
+
+#, fuzzy
+#~ msgid "Center image"
+#~ msgstr "Görüntü&yü Boyutlandır"
+
+#, fuzzy
+#~ msgid "Image Size"
+#~ msgstr "Görüntü Bilgileri"
+
+#, fuzzy
+#~ msgid "Fit to page size"
+#~ msgstr "Resmi Pencereye Uydur"
+
+#, fuzzy
+#~ msgid "Center on page"
+#~ msgstr "Görüntü&yü Boyutlandır"
+
+#~ msgid "Show FullScreen"
+#~ msgstr "Tam Ekran Göster"
+
+#~ msgid "Name"
+#~ msgstr "İsim"
+
+#~ msgid "Description"
+#~ msgstr "Açıklama"
+
+#~ msgid "Author"
+#~ msgstr "Yazar"
+
+#~ msgid "Preferences"
+#~ msgstr "Tercihler"
+
+#~ msgid "Save Image As ..."
+#~ msgstr "Resmi Farklı Kaydet..."
+
+#~ msgid "General"
+#~ msgstr "Genel"
+
+#~ msgid "Reset"
+#~ msgstr "Sıfırla"
+
+#~ msgid "Save Image As"
+#~ msgstr "Resmi Farklı Kaydet"
+
+#~ msgid "no image loaded"
+#~ msgstr "hiçbir resim yüklenmemiş."
+
+#, fuzzy
+#~ msgid "Viewer Plugins"
+#~ msgstr "Eklentiler"
+
+#, fuzzy
+#~ msgid "Filter"
+#~ msgstr "F&iltre"
+
+#~ msgid "&Image"
+#~ msgstr "Gö&rüntü"
+
+#~ msgid "KView: Image List"
+#~ msgstr "Görüntü Listesi"
+
+#~ msgid "Shu&ffle"
+#~ msgstr "&Karıştır"
+
+#~ msgid "S&ort"
+#~ msgstr "Ç&eşit"
+
+#~ msgid "Start &Slideshow"
+#~ msgstr "Sıralı &Gösterimi &Başlat"
+
+#~ msgid "Sa&ve List"
+#~ msgstr "&Farklı kaydet"
+
+#~ msgid "&Load List"
+#~ msgstr "&Farklı kaydet"
+
+#~ msgid "Size:"
+#~ msgstr "Boyut:"
+
+#~ msgid "Last Modified:"
+#~ msgstr "Son Değişim:"
+
+#~ msgid "Writeable:"
+#~ msgstr "Yazılabilir:"
+
+#~ msgid "Dimensions:"
+#~ msgstr "Boyutlar:"
+
+#~ msgid "Color Depth:"
+#~ msgstr "Renk Derinliği:"
+
+#~ msgid "kview"
+#~ msgstr "KView"
+
+#~ msgid "Enter Zoom factor (100 = 1x):"
+#~ msgstr "Yakınlaşma ölçeğini girin (100 = 1x):"
+
+#~ msgid "100"
+#~ msgstr "100"
+
+#~ msgid "Resize &Image"
+#~ msgstr "Görüntü&yü Boyutlandır"
+
+#~ msgid "Slideshow"
+#~ msgstr "Sır&alı Gösterim"
+
+#~ msgid "&Loop"
+#~ msgstr "Döngü"
+
+#~ msgid "Slide Interval (sec)"
+#~ msgstr "Göterim aralığı (saniye)"
+
+#~ msgid "5"
+#~ msgstr "5"
+
+#~ msgid "Background Color"
+#~ msgstr "Arkaplan Rengi"
+
+#~ msgid "&Default"
+#~ msgstr "Ö&ntanımlı"
+
+#~ msgid "Enter brightness factor (%):"
+#~ msgstr "Parlaklık çarpanını giriniz (%):"
+
+#~ msgid "Brightness factor must be positive"
+#~ msgstr "Parlaklık çarpanı pozitif olmalı!"
+
+#~ msgid "Changing brightness..."
+#~ msgstr "Parlaklık ayarı değiştiriliyor..."
+
+#~ msgid "&Intensity:&Brightness"
+#~ msgstr "Koyuluk:Açıklık"
+
+#~ msgid "Converting to Greyscale..."
+#~ msgstr "Gri skalaya dönüştürülüyor..."
+
+#~ msgid "&Greyscale"
+#~ msgstr "Gri skala"
+
+#~ msgid "Smoothing..."
+#~ msgstr "Düzeltiliyor..."
+
+#~ msgid "&Smooth"
+#~ msgstr "Düzelt"
+
+#~ msgid "Enter gamma value ( >0 ):"
+#~ msgstr "Gamma değerini girin ( >0 ):"
+
+#~ msgid "Bad Gamma value"
+#~ msgstr "Geçersiz Gamma değeri"
+
+#~ msgid "Gamma-correcting..."
+#~ msgstr "Gamma-düzeltme..."
+
+#~ msgid "&Intensity:Gamma &Correct..."
+#~ msgstr "Koyuluk: Gamma Düzeltmesi..."
+
+#~ msgid "External.."
+#~ msgstr "Harici.."
+
+#~ msgid ""
+#~ "Could not load\n"
+#~ "%1"
+#~ msgstr ""
+#~ "%1 dosyası\n"
+#~ "yüklenemedi"
+
+#~ msgid "Stop &Slideshow"
+#~ msgstr "&Sıralı Gösterimi Durdur"
+
+#~ msgid "Bytes"
+#~ msgstr "Bayt"
+
+#~ msgid "yes"
+#~ msgstr "evet"
+
+#~ msgid "no"
+#~ msgstr "hayır"
+
+#~ msgid "Bit"
+#~ msgstr "Bit"
+
+#~ msgid "File(s) or URL(s) to open"
+#~ msgstr "Açılacak olan dosya(lar) ya da URL(ler)"
+
+#~ msgid "No Image Loaded"
+#~ msgstr "Hiç resim yüklenmemiş."
+
+#~ msgid " Ready "
+#~ msgstr "Hazır"
+
+#~ msgid "Malformed URL."
+#~ msgstr "Hatalı URL."
+
+#~ msgid "the file wasn't saved"
+#~ msgstr "dosya kaydedilmedi"
+
+#~ msgid "%1: written"
+#~ msgstr "%1 : yazıldı"
+
+#~ msgid "Illegal zoom factor"
+#~ msgstr "Geçersiz yakınlaşma ölçeği"
+
+#~ msgid "Loading..."
+#~ msgstr "Yükleniyor..."
+
+#~ msgid "Could not load %1"
+#~ msgstr "%1 dosyası yüklenemedi"
+
+#~ msgid "Fullscreen Mode"
+#~ msgstr "&Tam Ekran"
+
+#~ msgid "Printing..."
+#~ msgstr "Yazdırılıyor..."
+
+#~ msgid "Close &Window"
+#~ msgstr "Pencereyi &Kapat"
+
+#~ msgid "&Reset"
+#~ msgstr "Sı&fırla"
+
+#~ msgid "Z&oom"
+#~ msgstr "&Yakınlaş"
+
+#~ msgid "&Half Size"
+#~ msgstr "&Yarı yarıya küçült"
+
+#~ msgid "&Normal Size"
+#~ msgstr "Bo&yutlandırma Yapma"
+
+#~ msgid "&Double Size"
+#~ msgstr "İ&ki kat büyüt"
+
+#~ msgid "&Fill Screen"
+#~ msgstr "&Tam Ekran"
+
+#~ msgid "Fill &whole Screen"
+#~ msgstr "Bütün &ekranı doldur"
+
+#~ msgid "&Double size"
+#~ msgstr "İ&ki kat büyüt"
+
+#~ msgid "&Half size"
+#~ msgstr "&Yarı yarıya küçült"
+
+#~ msgid "Fullscreen &Mode"
+#~ msgstr "&Tam Ekran"
+
+#~ msgid "&Slideshow On/Off"
+#~ msgstr "&Sıralı Gösterim Açık/Kapalı"
+
+#~ msgid "Previous Image"
+#~ msgstr "Önceki Görüntü"
+
+#~ msgid "Last Image"
+#~ msgstr "Son Görüntü"
+
+#~ msgid "&Image List..."
+#~ msgstr "Görüntü &Listesi..."
+
+#~ msgid "&Rotate"
+#~ msgstr "&Döndür"
+
+#~ msgid "&90 Degrees"
+#~ msgstr "&90 Derece"
+
+#~ msgid "1&80 Degrees"
+#~ msgstr "1&80 Derece"
+
+#~ msgid "2&70 Degrees"
+#~ msgstr "2&70 Derece"
+
+#~ msgid "To &Desktop"
+#~ msgstr "&Masaüstüne"
+
+#~ msgid "Desktop &Tile"
+#~ msgstr "Masaüstünü döşe"
+
+#~ msgid "Desktop &Max"
+#~ msgstr "Masaüstüne büyüt"
+
+#~ msgid "Desktop Max&pect"
+#~ msgstr "Masaüstüne sığacak şekilde ayarla"
+
+#~ msgid "&Info"
+#~ msgstr "&Bilgi"
+
+#~ msgid "&Scan Image..."
+#~ msgstr "&Resmi Tara..."
+
+#~ msgid "No Scan-Service available"
+#~ msgstr "Tarama Servisi kullanılabilir değil"
+
+#~ msgid "You do not seem to have SANE support or your scanner is not attached properly. Please check these items before scanning again."
+#~ msgstr "Sistemde SANE desteği yok, ya da tarayıcınız sisteme düzgün takılmamış. Lütfen tarama işleminden önce gerekli kontrolleri yapınız."

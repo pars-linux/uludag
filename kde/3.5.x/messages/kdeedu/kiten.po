@@ -1,0 +1,687 @@
+# translation of kiten.po to Türkçe
+# translation of kiten.po to Turkish
+# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Engin Çağatay <engincagatay@yahoo.com>, 2004, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kiten\n"
+"POT-Creation-Date: 2005-04-20 15:09+0200\n"
+"PO-Revision-Date: 2005-07-16 01:10+0300\n"
+"Last-Translator: Engin Çağatay <engincagatay@yahoo.com>\n"
+"Language-Team: Türkçe <yerelleştirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin, Engin Çağatay"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: asyndeta.cpp:84
+msgid "Personal"
+msgstr "Kişisel"
+
+#: deinf.cpp:44
+msgid ""
+"Verb deinflection information not found, so verb deinflection cannot be used."
+msgstr ""
+
+#: deinf.cpp:52
+msgid ""
+"Verb deinflection information could not be loaded, so verb deinflection cannot "
+"be used."
+msgstr ""
+
+#: dict.cpp:115
+#, c-format
+msgid "Could not open dictionary %1."
+msgstr "%1 dizini açılamadı."
+
+#: dict.cpp:122
+#, c-format
+msgid "Memory error when loading dictionary %1."
+msgstr "%1 sözlüğü yüklenirken bellek hatası oluştu."
+
+#: dict.cpp:128
+#, c-format
+msgid "Could not open index for dictionary %1."
+msgstr "%1 sözlüğü için indis açılamadı."
+
+#: dict.cpp:135
+msgid "Memory error when loading dictionary %1's index file."
+msgstr "%1 sözlüğünün indis dosyası açılırken bir bellek hatası oluştu."
+
+#: dict.cpp:239
+msgid "No dictionaries in list!"
+msgstr "Listede sözlük yok!"
+
+#: dict.cpp:730
+msgid "In names: "
+msgstr "İsimlerde: "
+
+#: dict.cpp:734
+msgid "As radical: "
+msgstr ""
+
+#: kiten.cpp:58
+msgid "Lookup Kanji (Kanjidic)"
+msgstr "Kanji Ara"
+
+#: kiten.cpp:58
+msgid "Gives detailed information about Kanji currently on clipboard."
+msgstr ""
+
+#: kiten.cpp:59
+msgid "Lookup English/Japanese Word"
+msgstr "İngilizce/Japonca Kelimeyi Ara"
+
+#: kiten.cpp:59
+msgid ""
+"Looks up current text on clipboard in the same way as if you used Kiten's "
+"regular search."
+msgstr ""
+
+#: kiten.cpp:70
+msgid "&Learn"
+msgstr "Öğ&ren"
+
+#: kiten.cpp:71
+msgid "&Dictionary Editor..."
+msgstr "&Sözlük Düzenleyici...."
+
+#: kiten.cpp:72
+msgid "Ra&dical Search..."
+msgstr ""
+
+#: kiten.cpp:73
+msgid "Search Edit"
+msgstr "Arama Düzenleme"
+
+#: kiten.cpp:74
+msgid "&Clear Search Bar"
+msgstr "&Arama Çubuğunu Temizle"
+
+#. i18n: file kitenui.rc line 17
+#: kiten.cpp:75 rc.cpp:12
+#, no-c-format
+msgid "S&earch"
+msgstr "&Ara"
+
+#: kiten.cpp:76
+msgid "Search with &Beginning of Word"
+msgstr ""
+
+#: kiten.cpp:77
+msgid "Search &Anywhere"
+msgstr "&Herhangi Bir Yerde Ara"
+
+#: kiten.cpp:78
+msgid "Stro&kes"
+msgstr ""
+
+#: kiten.cpp:79
+msgid "&Grade"
+msgstr ""
+
+#. i18n: file configdictionariesbase.ui line 172
+#: kiten.cpp:80 rc.cpp:45
+#, no-c-format
+msgid "&Kanjidic"
+msgstr "&Kanjidic"
+
+#: kiten.cpp:81
+msgid "&Deinflect Verbs in Regular Search"
+msgstr ""
+
+#: kiten.cpp:82
+msgid "&Filter Rare"
+msgstr ""
+
+#: kiten.cpp:83
+msgid "&Automatically Search Clipboard Selections"
+msgstr "&Pano Seçimlerini Otomatik Ara"
+
+#: kiten.cpp:84
+msgid "Search &in Results"
+msgstr "&Sonuçlarda Ara"
+
+#: kiten.cpp:86
+msgid "Add &Kanji to Learning List"
+msgstr "Öğre&nme Listesine Kanji'yi Ekle"
+
+#: kiten.cpp:88
+msgid "Configure &Global Shortcuts..."
+msgstr ""
+
+#: kiten.cpp:90
+msgid "&History"
+msgstr "&Geçmiş"
+
+#: kiten.cpp:144
+msgid "Welcome to Kiten"
+msgstr "Kiten'e Hoş geldiniz"
+
+#: kiten.cpp:175
+msgid "%1 added to learn list of all open learn windows"
+msgstr "%1, tüm açık öğrenim pencerelerinin öğrenim listesine eklendi."
+
+#: kiten.cpp:184 kiten.cpp:222
+msgid "Empty search items"
+msgstr "Boş arama öğeleri"
+
+#: kiten.cpp:188 kiten.cpp:226
+msgid "Searching..."
+msgstr "Arıyor..."
+
+#: kiten.cpp:260
+#, c-format
+msgid "HTML Entity: %1"
+msgstr "HTML Girdisi: %1"
+
+#: kiten.cpp:265 learn.cpp:302
+msgid "%1 in compounds"
+msgstr ""
+
+#: kiten.cpp:272
+msgid "(No common compounds)"
+msgstr ""
+
+#: kiten.cpp:394
+msgid "No deinflection"
+msgstr ""
+
+#: kiten.cpp:482
+msgid "Unparseable number"
+msgstr ""
+
+#: kiten.cpp:487
+msgid "Invalid stroke count"
+msgstr ""
+
+#: kiten.cpp:518
+msgid "Invalid grade"
+msgstr ""
+
+#: kiten.cpp:585
+#, c-format
+msgid ""
+"_n: %n result\n"
+"%n results"
+msgstr "%n sonuç"
+
+#: kiten.cpp:588
+#, c-format
+msgid " out of %1"
+msgstr ""
+
+#: kiten.cpp:775
+#, c-format
+msgid "Radical(s): %1"
+msgstr ""
+
+#: kiten.cpp:778
+msgid "Kanji with radical(s) %1 and %2 strokes"
+msgstr ""
+
+#: kiten.cpp:780
+#, c-format
+msgid "Kanji with radical(s) %1"
+msgstr ""
+
+#: kloader.cpp:82 kloader.cpp:90 kloader.cpp:97
+#, c-format
+msgid "Could not read from %1."
+msgstr "%1 konumundan okunamadı."
+
+#: kromajiedit.cpp:40
+msgid ""
+"Romaji information file not installed, so Romaji conversion cannot be used."
+msgstr ""
+
+#: kromajiedit.cpp:48
+msgid ""
+"Romaji information could not be loaded, so Romaji conversion cannot be used."
+msgstr ""
+
+#: kromajiedit.cpp:260
+msgid "English"
+msgstr "İngilizce"
+
+#: kromajiedit.cpp:261
+msgid "Kana"
+msgstr "Kana"
+
+#: ksaver.cpp:88
+#, c-format
+msgid "Could not write to %1."
+msgstr "%1 konumuna yazılamadı."
+
+#: learn.cpp:79
+msgid "&List"
+msgstr "&Liste"
+
+#: learn.cpp:80
+msgid "&Quiz"
+msgstr "&Sınav"
+
+#. i18n: file configlearn.ui line 85
+#: learn.cpp:88 rc.cpp:78 rc.cpp:90 widgets.cpp:302
+#, no-c-format
+msgid "Kanji"
+msgstr "Kanji"
+
+#: learn.cpp:89 widgets.cpp:304
+msgid "Meanings"
+msgstr "Anlamlar"
+
+#: learn.cpp:90
+msgid "Readings"
+msgstr "Okumalar"
+
+#: learn.cpp:91 learn.cpp:124
+msgid "Grade"
+msgstr "Notlandırma"
+
+#: learn.cpp:92
+msgid "Your Score"
+msgstr "Puanınız"
+
+#: learn.cpp:107
+msgid "Grade 1"
+msgstr "1. Not"
+
+#: learn.cpp:108
+msgid "Grade 2"
+msgstr "2. Not"
+
+#: learn.cpp:109
+msgid "Grade 3"
+msgstr "3. Not"
+
+#: learn.cpp:110
+msgid "Grade 4"
+msgstr "4. Not"
+
+#: learn.cpp:111
+msgid "Grade 5"
+msgstr "5. Not"
+
+#: learn.cpp:112
+msgid "Grade 6"
+msgstr "6. Not"
+
+#: learn.cpp:113
+msgid "Others in Jouyou"
+msgstr ""
+
+#: learn.cpp:114
+msgid "Jinmeiyou"
+msgstr ""
+
+#: learn.cpp:122
+msgid "&Cheat"
+msgstr "&Hile"
+
+#: learn.cpp:123
+msgid "&Random"
+msgstr "&Rastgele"
+
+#: learn.cpp:128 widgets.cpp:323
+msgid "&Add"
+msgstr "&Ekle"
+
+#: learn.cpp:129
+msgid "Add A&ll"
+msgstr "Hepsini E&kle"
+
+#: learn.cpp:162
+msgid "Put on your thinking cap!"
+msgstr ""
+
+#: learn.cpp:208
+msgid "There are unsaved changes to learning list. Save them?"
+msgstr ""
+"Öğrenme listesinde kaydedilmemiş değişilikler var. Bunlar kaydedilsin mi?"
+
+#: learn.cpp:208
+msgid "Unsaved Changes"
+msgstr "Kaydedilmemiş Değişiklikler"
+
+#: learn.cpp:292
+msgid "Grade not loaded"
+msgstr "Notlar yüklenmedi"
+
+#: learn.cpp:323
+msgid "%1 entries in grade %2"
+msgstr ""
+
+#: learn.cpp:459
+msgid "%1 written"
+msgstr "%1 yazıldı"
+
+#: learn.cpp:488
+msgid "%1 already on your list"
+msgstr "%1 zaten listende var"
+
+#: learn.cpp:494
+msgid "%1 added to your list"
+msgstr "%1 listene eklendi"
+
+#: learn.cpp:610
+msgid "Learning List"
+msgstr "Öğrenme Listesi"
+
+#: learn.cpp:642
+msgid "Good!"
+msgstr "Güzel!"
+
+#: learn.cpp:656
+msgid "Wrong"
+msgstr "Yanlış"
+
+#: learn.cpp:838
+msgid "Better luck next time"
+msgstr "Gelecek sefere bol şans"
+
+#: main.cpp:43
+msgid "Kiten"
+msgstr "Kiten"
+
+#: main.cpp:44
+msgid "Japanese Reference Tool"
+msgstr "Japonca Referans Aracı"
+
+#: main.cpp:47
+msgid "Original author"
+msgstr "Asıl yazar"
+
+#: main.cpp:48
+msgid ""
+"Wrote xjdic, of which Kiten borrows code, and the xjdic index file generator.\n"
+"Also is main author of edict and kanjidic, which Kiten essentially require."
+msgstr ""
+
+#: main.cpp:49
+msgid "Code simplification, UI suggestions."
+msgstr "Kod genişletmeleri"
+
+#: main.cpp:50
+msgid "svg icon"
+msgstr "svg simgesi"
+
+#: main.cpp:51
+msgid "Porting to KConfig XT, bug fixing"
+msgstr ""
+
+#. i18n: file configdictionariesbase.ui line 16
+#: optiondialog.cpp:47 rc.cpp:24
+#, no-c-format
+msgid "Dictionaries"
+msgstr "Sözlükler"
+
+#. i18n: file configsearching.ui line 16
+#: optiondialog.cpp:48 rc.cpp:99
+#, no-c-format
+msgid "Searching"
+msgstr "Arama"
+
+#. i18n: file configlearn.ui line 16
+#: optiondialog.cpp:49 rc.cpp:66
+#, no-c-format
+msgid "Learn"
+msgstr "Öğren"
+
+#: optiondialog.cpp:51
+msgid "Result View Font"
+msgstr "Sonuç Görünümü Yazıtipi"
+
+#: rad.cpp:58
+msgid ""
+"Kanji radical information file not installed, so radical searching cannot be "
+"used."
+msgstr ""
+
+#: rad.cpp:66
+msgid ""
+"Kanji radical information could not be loaded, so radical searching cannot be "
+"used."
+msgstr ""
+
+#: rad.cpp:229
+msgid "Hotlist"
+msgstr ""
+
+#. i18n: file kiten.kcfg line 40
+#: rad.cpp:251 rc.cpp:129
+#, no-c-format
+msgid "Search by total strokes"
+msgstr ""
+
+#: rad.cpp:259
+msgid "+/-"
+msgstr "+/-"
+
+#: rad.cpp:264
+msgid "&Look Up"
+msgstr "&Ara"
+
+#: rad.cpp:276
+msgid "Show radicals having this number of strokes"
+msgstr ""
+
+#: rad.cpp:299
+msgid "Radical Selector"
+msgstr ""
+
+#. i18n: file kitenui.rc line 38
+#: rc.cpp:15
+#, no-c-format
+msgid "&Search Toolbar"
+msgstr "A&rama Araç Çubuğu"
+
+#. i18n: file configdictionariesbase.ui line 31
+#: rc.cpp:27
+#, no-c-format
+msgid "&Edict"
+msgstr ""
+
+#. i18n: file configdictionariesbase.ui line 61
+#: rc.cpp:30 rc.cpp:111
+#, no-c-format
+msgid "Use preinstalled edict"
+msgstr ""
+
+#. i18n: file configdictionariesbase.ui line 94
+#: rc.cpp:33 rc.cpp:51
+#, no-c-format
+msgid "Name"
+msgstr "İsim"
+
+#. i18n: file configdictionariesbase.ui line 131
+#: rc.cpp:39 rc.cpp:57
+#, no-c-format
+msgid "Add..."
+msgstr "Ekle..."
+
+#. i18n: file configdictionariesbase.ui line 199
+#: rc.cpp:48 rc.cpp:117
+#, no-c-format
+msgid "Use preinstalled kanjidic"
+msgstr ""
+
+#. i18n: file configlearn.ui line 35
+#: rc.cpp:69 rc.cpp:132
+#, no-c-format
+msgid "Start \"learn\" on Kiten startup"
+msgstr "\"Öğrenme\"'yi Kiten başlangıcında başlat"
+
+#. i18n: file configlearn.ui line 60
+#: rc.cpp:72
+#, no-c-format
+msgid "Quizzing"
+msgstr "Sınav"
+
+#. i18n: file configlearn.ui line 79
+#: rc.cpp:75
+#, no-c-format
+msgid "Clue:"
+msgstr "İpucu:"
+
+#. i18n: file configlearn.ui line 90
+#: rc.cpp:81 rc.cpp:93
+#, no-c-format
+msgid "Meaning"
+msgstr "Anlam"
+
+#. i18n: file configlearn.ui line 95
+#: rc.cpp:84 rc.cpp:96 widgets.cpp:303
+#, no-c-format
+msgid "Reading"
+msgstr "Okuma"
+
+#. i18n: file configlearn.ui line 107
+#: rc.cpp:87
+#, no-c-format
+msgid "Possible answers:"
+msgstr "Olası cevaplar:"
+
+#. i18n: file configsearching.ui line 35
+#: rc.cpp:102 rc.cpp:123
+#, no-c-format
+msgid "Case sensitive searches"
+msgstr "Küçük/büyük harf duyarlı arama"
+
+#. i18n: file configsearching.ui line 43
+#: rc.cpp:105
+#, no-c-format
+msgid "Match only whole english word"
+msgstr "Sadece tam İngilizce kelimeleri eşleştir"
+
+#. i18n: file kiten.kcfg line 9
+#: rc.cpp:108
+#, no-c-format
+msgid "Edict dictionary files"
+msgstr ""
+
+#. i18n: file kiten.kcfg line 18
+#: rc.cpp:114
+#, no-c-format
+msgid "Kanjidic dictionary files"
+msgstr "Kanjidic sözlük dosyaları"
+
+#. i18n: file kiten.kcfg line 27
+#: rc.cpp:120
+#, no-c-format
+msgid "Match only whole English word"
+msgstr "Sadece tam İngilizce kelimeleri eşleştir"
+
+#. i18n: file kiten.kcfg line 37
+#: rc.cpp:126
+#, no-c-format
+msgid "Recent used radicals"
+msgstr ""
+
+#: widgets.cpp:62 widgets.cpp:106
+#, c-format
+msgid "Common results from %1"
+msgstr ""
+
+#: widgets.cpp:62 widgets.cpp:106
+#, c-format
+msgid "Results from %1"
+msgstr ""
+
+#: widgets.cpp:87 widgets.cpp:305
+msgid "Common"
+msgstr "Genel"
+
+#: widgets.cpp:120
+msgid "Rare"
+msgstr "Nadir"
+
+#: widgets.cpp:124
+#, c-format
+msgid "Probability rank #%1"
+msgstr ""
+
+#: widgets.cpp:138
+msgid "<br />In names: "
+msgstr ""
+
+#: widgets.cpp:148
+msgid "<br />As radical: "
+msgstr ""
+
+#: widgets.cpp:169
+msgid "Grade Level: %1. Strokes: %2."
+msgstr ""
+
+#: widgets.cpp:174
+msgid "None"
+msgstr "Hiçbiri"
+
+#: widgets.cpp:177
+msgid "In Jouyou"
+msgstr ""
+
+#: widgets.cpp:180
+msgid "In Jinmeiyou"
+msgstr ""
+
+#: widgets.cpp:189
+#, c-format
+msgid " Common Miscount: %1."
+msgstr ""
+
+#: widgets.cpp:192
+msgid " Largest radical: %1, with %2 strokes."
+msgstr ""
+
+#: widgets.cpp:244
+msgid "Print Japanese Reference"
+msgstr "Japonca Referans Yazdır"
+
+#: widgets.cpp:254
+msgid "<h1>Search for \"%1\"</h1>"
+msgstr "<h1> \"%1\" aransın</h1>"
+
+#: widgets.cpp:322
+msgid "&Disable Dictionary"
+msgstr "&Sözlüğü Kapat"
+
+#: widgets.cpp:363
+msgid "yes"
+msgstr "evet"
+
+#: widgets.cpp:363
+msgid "no"
+msgstr "hayır"
+
+#: widgets.cpp:411
+msgid "Saved"
+msgstr "Kaydedildi"
+
+#: widgets.cpp:417
+msgid ""
+"Disabling your personal dictionary will delete its contents.\n"
+"\n"
+"(You can however always create your dictionary again.)"
+msgstr ""
+"Kişisel sözlüğünüzü kapatmak sözlüğü içeriğini siler. \n"
+"\n"
+"(Yine de sözlüğünüzü her zaman yeniden oluşturabilirsiniz.)"
+
+#: widgets.cpp:417
+msgid "Disable"
+msgstr "Kapat"

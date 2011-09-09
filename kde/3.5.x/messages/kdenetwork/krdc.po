@@ -1,0 +1,1029 @@
+# translation of krdc.po to
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Rıdvan CAN <ridvancan@linux-sevenler.org>, 2004.
+# S.Çağlar Onur <caglar@uludag.org.tr>, 2005.
+# Ahmet AYGUN <ahmet@zion.gen.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+# Copyright (C) 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
+msgid ""
+msgstr ""
+"Project-Id-Version: krdc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-08 01:20+0200\n"
+"PO-Revision-Date: 2007-07-10 06:12+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "S.Çağlar Onur"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "caglar@uludag.org.tr"
+
+#: keycapturedialog.cpp:50
+msgid "Enter Key Combination"
+msgstr "Anahtar Kombinasyonu Gir"
+
+#: krdc.cpp:133 krdc.cpp:156
+msgid "The entered host does not have the required form."
+msgstr "Girilen makinanın gerekli biçim bilgisi bulunmuyor."
+
+#: krdc.cpp:134 krdc.cpp:157
+msgid "Malformed URL or Host"
+msgstr "Geçersiz makine ya da adres"
+
+#: krdc.cpp:163
+msgid "%1 - Remote Desktop Connection"
+msgstr "%1 - Uzak Masaüstü Bağlantısı"
+
+#: krdc.cpp:192
+msgid ""
+"Here you can see the remote desktop. If the other side allows you to control "
+"it, you can also move the mouse, click or enter keystrokes. If the content does "
+"not fit your screen, click on the toolbar's full screen button or scale button. "
+"To end the connection, just close the window."
+msgstr ""
+"Buradan uzak masaüstü izlenebilir. Eğer karşı taraf izin vermiş ise klavye ve "
+"fareyi kullanabilirsiniz. Eğer içerik ekrana sığmaz ise Tam Ekran düğmesine "
+"basabilir veya pencereyi boyutlandırabilirsiniz. Bağlantıyı kapatmak için, "
+"sadece pencereyi kapatmak yeterlidir."
+
+#: krdc.cpp:225
+msgid "Establishing connection..."
+msgstr "Bağlantı kuruluyor..."
+
+#: krdc.cpp:231
+msgid "Authenticating..."
+msgstr "Kimlik denetimi yapılıyor..."
+
+#: krdc.cpp:236
+msgid "Preparing desktop..."
+msgstr "Masaüstü hazırlanıyor..."
+
+#: krdc.cpp:383
+msgid "View Only"
+msgstr "Sadece Görüntüle"
+
+#: krdc.cpp:387
+msgid "Always Show Local Cursor"
+msgstr "Yerel İmleci Her Zaman Göster"
+
+#: krdc.cpp:472
+msgid "Autohide on/off"
+msgstr "Otomatik gizleme açık/kapalı"
+
+#: krdc.cpp:479 krdc.cpp:573 krdc.cpp:575
+msgid "Fullscreen"
+msgstr "Tam ekran"
+
+#: krdc.cpp:485 krdc.cpp:487 krdc.cpp:605
+msgid "Advanced options"
+msgstr "Gelişmiş seçenekler"
+
+#: krdc.cpp:500 krdc.cpp:584
+msgid "Scale view"
+msgstr "Görüntüyü boyutlandır"
+
+#: krdc.cpp:508
+msgid "Minimize"
+msgstr "Küçült"
+
+#: krdc.cpp:576
+msgid ""
+"Switches to full screen. If the remote desktop has a different screen "
+"resolution, Remote Desktop Connection will automatically switch to the nearest "
+"resolution."
+msgstr ""
+"Tam ekran kipine geçer. Eğer uzaktaki masaüstü farklı çözünürlüğe sahipse, Uzak "
+"masaüstü Bağlantısı otomatik olarak en yakın çözünürlüğe geçer"
+
+#: krdc.cpp:582
+msgid "Scale"
+msgstr "Boyutlandır"
+
+#: krdc.cpp:585
+msgid "This option scales the remote screen to fit your window size."
+msgstr "Bu seçenek uzak masaüstünü sizin pencere boyutunuza sığdırır."
+
+#: krdc.cpp:591
+msgid "Special Keys"
+msgstr "Özel Tuşlar"
+
+#: krdc.cpp:593
+msgid "Enter special keys."
+msgstr "Özel tuşları girin."
+
+#: krdc.cpp:594
+msgid ""
+"This option allows you to send special key combinations like Ctrl-Alt-Del to "
+"the remote host."
+msgstr ""
+"Bu seçenek özel tuş vuruşlarını [ Ctrl-Alt-Del gibi ] uzak masaüstüne "
+"göndermenize olanak verir "
+
+#: krdc.cpp:603
+msgid "Advanced"
+msgstr "Gelişmiş"
+
+#: main.cpp:46
+msgid "Remote desktop connection"
+msgstr "Uzak masaüstü bağlantısı"
+
+#: main.cpp:51
+msgid "Start in fullscreen mode"
+msgstr "Tam ekran kipinde başla"
+
+#: main.cpp:53
+msgid "Start in regular window"
+msgstr "Pencerede başla"
+
+#: main.cpp:55
+msgid "Low quality mode (Tight Encoding, 8 bit color)"
+msgstr "Düşük kaliteli kip (8 bit)"
+
+#: main.cpp:57
+msgid "Medium quality mode (Tight Encoding, lossy)"
+msgstr "Orta kaliteli kip"
+
+#: main.cpp:59
+msgid "High quality mode, default (Hextile Encoding)"
+msgstr "Yüksek kaliteli kip."
+
+#: main.cpp:61
+msgid "Start VNC in scaled mode"
+msgstr "VNC boyutlandırma kipinde başla."
+
+#: main.cpp:63
+msgid "Show local cursor (VNC only)"
+msgstr "Yerel imleci göster (Sadece VNC)"
+
+#: main.cpp:65
+msgid "Override VNC encoding list (e.g. 'hextile raw')"
+msgstr "VNC kodlama listesinin üzerine yaz"
+
+#: main.cpp:67
+msgid "Provide the password in a file"
+msgstr "Parolayı dosyadan al"
+
+#: main.cpp:68
+msgid "The name of the host, e.g. 'localhost:1'"
+msgstr "Makine adı, örnek: 'localhost:1'"
+
+#: main.cpp:75 maindialog.cpp:29
+msgid "Remote Desktop Connection"
+msgstr "Masaüstü Bağlantısı"
+
+#: main.cpp:86
+msgid "RDP backend"
+msgstr "RDP arkayüzü"
+
+#: main.cpp:88
+msgid "Original VNC viewer and protocol design"
+msgstr "Orjinal VNC izleyici ve protokol geliştirici"
+
+#: main.cpp:90
+msgid "TightVNC encoding"
+msgstr "TightVNC kodlama"
+
+#: main.cpp:92
+msgid "ZLib encoding"
+msgstr "ZLib kodlama"
+
+#: main.cpp:136
+msgid "The password file '%1' does not exist."
+msgstr "'%1' parola dosyası bulunamadı."
+
+#: main.cpp:150
+msgid "Wrong geometry format, must be widthXheight"
+msgstr "Yanlış geometri, genişlikXyükseklik tipinde olmalı"
+
+#: maindialog.cpp:30
+msgid "&Preferences"
+msgstr "&Tercihler"
+
+#: maindialog.cpp:36
+msgid "Connect"
+msgstr "&Bağlan"
+
+#: maindialogwidget.cpp:44
+msgid "unknown"
+msgstr "bilinmeyen "
+
+#: maindialogwidget.cpp:51
+msgid "Shared Desktop"
+msgstr "Paylaşılmış Masaüstü"
+
+#: maindialogwidget.cpp:54
+msgid "Standalone Desktop"
+msgstr "Tek Başına Masaüstü"
+
+#: maindialogwidget.cpp:207 maindialogwidget.cpp:349
+msgid "default"
+msgstr "öntanımlı"
+
+#: maindialogwidget.cpp:255
+msgid ""
+"Browsing the network is not possible. You probably did not install SLP support "
+"correctly."
+msgstr ""
+"Ağ tarama işlemi gerçekleştirilemiyor. Büyük ihtimal ile sisteminize SLP paketi "
+"kurulmamış"
+
+#: maindialogwidget.cpp:257
+msgid "Browsing Not Possible"
+msgstr "Tarama Yapılamıyor"
+
+#: maindialogwidget.cpp:274
+msgid "An error occurred while scanning the network."
+msgstr "Ağ taranırken bir hata oluştu"
+
+#: maindialogwidget.cpp:275
+msgid "Error While Scanning"
+msgstr "Tarama Sırasında Hata Oluştu"
+
+#: preferencesdialog.cpp:36
+msgid "Preferences"
+msgstr "Tercihler"
+
+#: preferencesdialog.cpp:42
+msgid "&Host Profiles"
+msgstr "&Makine Profili"
+
+#: preferencesdialog.cpp:47
+msgid "&VNC Defaults"
+msgstr "&VNC Öntanımlı Değerleri"
+
+#: preferencesdialog.cpp:52 preferencesdialog.cpp:60
+msgid "Do not &show the preferences dialog on new connections"
+msgstr "&Yeni bağlantılarda tercihler penceresini gösterme"
+
+#: preferencesdialog.cpp:55
+msgid "RD&P Defaults"
+msgstr "RD&P Öntanımlı Değerleri"
+
+#. i18n: file hostprofiles.ui line 25
+#: rc.cpp:3 rc.cpp:88
+#, no-c-format
+msgid "Host"
+msgstr "Makine"
+
+#. i18n: file hostprofiles.ui line 36
+#: rc.cpp:6 rc.cpp:76 rc.cpp:91 rc.cpp:161
+#, no-c-format
+msgid "Type"
+msgstr "Tür"
+
+#. i18n: file hostprofiles.ui line 47
+#: rc.cpp:9 rc.cpp:94
+#, no-c-format
+msgid "Settings"
+msgstr "Ayarlar"
+
+#. i18n: file hostprofiles.ui line 72
+#: rc.cpp:12 rc.cpp:97
+#, no-c-format
+msgid ""
+"This list shows all hosts that you have visited and a summary of your settings "
+"for them. If you want to reset the setting for a host, you can delete it using "
+"the buttons below. When you connect again you can then re-configure them."
+msgstr ""
+"Bu liste daha önce bağlandığınız sunucuları ve bu sunucular için ayarlarınızı "
+"göstermektedir. Eğer bir sunucunun ayarlarını sıfırlamak istiyorsanız aşağıdaki "
+"düğmeleri kullanabilirsiniz. Sunucuya tekrar bağlandığınızda ayarları yeniden "
+"yapabilirsiniz."
+
+#. i18n: file hostprofiles.ui line 97
+#: rc.cpp:15 rc.cpp:100
+#, no-c-format
+msgid "&Remove Selected Host"
+msgstr "&Seçili Makineyi Sil"
+
+#. i18n: file hostprofiles.ui line 100
+#: rc.cpp:18 rc.cpp:103
+#, no-c-format
+msgid "Deletes the hosts that you have selected in the list above."
+msgstr "Yukardaki listeden seçilen makinayı siler"
+
+#. i18n: file hostprofiles.ui line 108
+#: rc.cpp:21 rc.cpp:106
+#, no-c-format
+msgid "Remove &All Hosts"
+msgstr "&Tüm Makineleri Sil"
+
+#. i18n: file hostprofiles.ui line 111
+#: rc.cpp:24 rc.cpp:109
+#, no-c-format
+msgid "Removes all hosts from the list."
+msgstr "Tüm makinaları listeden siler"
+
+#. i18n: file keycapturewidget.ui line 27
+#: rc.cpp:27 rc.cpp:112
+#, no-c-format
+msgid "Enter a special key or key combination to send to the remote side:"
+msgstr ""
+"Uzak masaüstüne gönderilecek özel bir tuş ya da tuş kombinasyonu girin:"
+
+#. i18n: file keycapturewidget.ui line 92
+#: rc.cpp:30 rc.cpp:115
+#, no-c-format
+msgid ""
+"This function allows you to send a key combination like Ctrl+Alt+Del to the "
+"remote side. Press Esc to cancel."
+msgstr ""
+"Bu seçenek özel tuş vuruşlarını [ Ctrl+Alt+Del gibi ] uzak masaüstüne "
+"göndermenize olanak verir. Vazgeçmek için Esc tuşuna basın. "
+
+#. i18n: file maindialogbase.ui line 41
+#: rc.cpp:33 rc.cpp:118
+#, no-c-format
+msgid "Remote &desktop:"
+msgstr "&Uzaktaki masaüstü:"
+
+#. i18n: file maindialogbase.ui line 64
+#: rc.cpp:36 rc.cpp:121
+#, no-c-format
+msgid "Enter the hostname and display number"
+msgstr "Makina adı ve görüntü numarasını girin"
+
+#. i18n: file maindialogbase.ui line 68
+#: rc.cpp:39 rc.cpp:124
+#, no-c-format
+msgid ""
+"Enter the name and display number of the computer that you want to connect to, "
+"separated by a colon, e.g. 'mycomputer:1'. The address can be any valid "
+"Internet address. The display numbers usually start at 0. If you do not have a "
+"display number, try 0 or 1.\n"
+"Remote Desktop Connection only supports systems that use VNC."
+msgstr ""
+"Bağlanmak istediğiniz bilgisayarın adını ve görüntü numarasını sütunlara "
+"ayrılmış olarak yazın, örneğin 'bilgisayar:1'. Adres herhangi bir geçerli "
+"internet adresi olabilir. Görüntü numaraları genelde 0'dan başlar. Eğer görüntü "
+"numaranız yoksa; 0 ya da 1'i deneyin.\n"
+" Uzak Masaüstü Bağlantısı sadece VNC kullanan sistemleri destekler."
+
+#. i18n: file maindialogbase.ui line 84
+#: rc.cpp:43 rc.cpp:128
+#, no-c-format
+msgid "&Browse <<"
+msgstr "&Gözat<<"
+
+#. i18n: file maindialogbase.ui line 87
+#: rc.cpp:46 rc.cpp:131
+#, no-c-format
+msgid "Turn on/off the network browsing panel."
+msgstr "Ağ İzleme panelini kapat/aç"
+
+#. i18n: file maindialogbase.ui line 103
+#: rc.cpp:49 rc.cpp:134
+#, no-c-format
+msgid ""
+"Enter the address of the computer to connect to, or browse the network and "
+"select one. VNC and RDP compatible servers will be supported. <a "
+"href=\"whatsthis:"
+"<h3>Examples</h3>for a computer called 'megan':"
+"<p>"
+"<table>"
+"<tr>"
+"<td>megan:1</td>"
+"<td>connect to the VNC server on 'megan' with display number 1</td></tr>"
+"<tr>"
+"<td>vnc:/megan:1</td>"
+"<td>longer form for the same thing</td></tr>"
+"<tr>"
+"<td>rdp:/megan</td>"
+"<td>connect to the RDP server on 'megan'</td></tr></table>\">Examples</a>"
+msgstr ""
+"Bağlantı kurulacak bilgisayarın adresini girin ya da ağı tarayarak bir tanesini "
+"seçin. VNC ya da RDP destekli sunucular desteklenecektir. <a href=\"whatsthis:"
+"<h3>Örnek</h3>'192.168.1.1' IP numaralı bir bilgisayar için:"
+"<p>"
+"<table>"
+"<tr>"
+"<td>192.168.1.1:1</td>"
+"<td>1 görüntü numarasıyla '192.168.1.1' IP numaralı VNC sunucusuna bağlantı "
+"kurar.</td></tr>"
+"<tr>"
+"<td>vnc:/192.168.1.1:1</td>"
+"<td>Aynı işin biraz daha uzun bir şekilde gösterimi</td></tr>"
+"<tr>"
+"<td>rdp:/192.168.1.1</td>"
+"<td>'192.168.1.1' üzerindeki RDP sunucusuna bağlantı kurar.</td></tr></table>\">"
+"Örnekler</a>"
+
+#. i18n: file maindialogbase.ui line 136
+#: rc.cpp:52 rc.cpp:137
+#, no-c-format
+msgid "&Rescan"
+msgstr "&Yeniden Tara"
+
+#. i18n: file maindialogbase.ui line 139
+#: rc.cpp:55 rc.cpp:140
+#, no-c-format
+msgid ""
+"Rescans the network. Depending on the network configuration this may take a few "
+"seconds until all systems have responded."
+msgstr ""
+"Ağı tekrar tarar. Ağ ayarlarına göre tüm sistemlerin algılanması birkaç saniye "
+"sürebilir"
+
+#. i18n: file maindialogbase.ui line 164
+#: rc.cpp:58 rc.cpp:143
+#, no-c-format
+msgid "&Search:"
+msgstr "&Ara:"
+
+#. i18n: file maindialogbase.ui line 175
+#: rc.cpp:61 rc.cpp:146
+#, no-c-format
+msgid "Enter a search term"
+msgstr "Bir arama kelimesi girin"
+
+#. i18n: file maindialogbase.ui line 178
+#: rc.cpp:64 rc.cpp:149
+#, no-c-format
+msgid ""
+"Enter a search term here if you want to search for a specific system, then "
+"press Enter or click Rescan. All systems, whose description matches the search "
+"term, will be displayed. The search is not case sensitive. If you leave the "
+"field empty all systems will be displayed."
+msgstr ""
+"Belirli bir sistemi aramak için bu kısma arama satırını girin, ardından "
+"'Yeniden Tara' düğmesine tıklayın. Arama kriterlerine uyan tüm bilgisayarlar "
+"ekranda görüntülenecektir. Bu arama küçük/büyük harflere karşı duyarlı "
+"değildir. Eğer bu kısmı boş bırakırsanız tüm bilgisayarlar görüntülenecektir."
+
+#. i18n: file maindialogbase.ui line 211
+#: rc.cpp:67 rc.cpp:152
+#, no-c-format
+msgid "Scop&e:"
+msgstr "Kap&sam:"
+
+#. i18n: file maindialogbase.ui line 236
+#: rc.cpp:70 rc.cpp:155
+#, no-c-format
+msgid ""
+"An administrator can configure the network to have several scopes. If this is "
+"the case, you can select the scope to scan here."
+msgstr ""
+"Yönetici ağı çeşitli kapsamlara sahip olacak şekilde yapılandırabilir. Eğer "
+"böyle bir durum sözkonusu ise; taramak üzere kapsam seçebilirsiniz."
+
+#. i18n: file maindialogbase.ui line 242
+#: rc.cpp:73 rc.cpp:158
+#, no-c-format
+msgid "Name"
+msgstr "İsim"
+
+#. i18n: file maindialogbase.ui line 264
+#: rc.cpp:79 rc.cpp:164
+#, no-c-format
+msgid "Address"
+msgstr "Adres"
+
+#. i18n: file maindialogbase.ui line 275
+#: rc.cpp:82 rc.cpp:167
+#, no-c-format
+msgid "Protocol"
+msgstr "Protokol"
+
+#. i18n: file maindialogbase.ui line 297
+#: rc.cpp:85 rc.cpp:170
+#, no-c-format
+msgid ""
+"Here you can see the systems on the network that allow you to connect. Note "
+"that an administrator can hide systems, so the list is not always complete. "
+"Click on an item to select it, double-click it to connect immediately."
+msgstr ""
+"Burada ağda bulunan ve bağlanmanıza izin veren sistemleri görebilirsiniz. "
+"Yöneticileri sistemleri gizleyebilecekleri için liste her zaman tam değildir. "
+"Sistemleri seçmek için bir kez, hemen bağlanmak için iki kez tıklayın."
+
+#. i18n: file rdp/rdpprefs.ui line 27
+#: rc.cpp:173 rc.cpp:335
+#, no-c-format
+msgid "Connection"
+msgstr "Bağlantı"
+
+#. i18n: file rdp/rdpprefs.ui line 53
+#: rc.cpp:176
+#, no-c-format
+msgid "Small (640x480)"
+msgstr "Küçük (640x480)"
+
+#. i18n: file rdp/rdpprefs.ui line 58
+#: rc.cpp:179
+#, no-c-format
+msgid "Medium (800x600)"
+msgstr "Orta (800x600)"
+
+#. i18n: file rdp/rdpprefs.ui line 63
+#: rc.cpp:182
+#, no-c-format
+msgid "Big (1024x768)"
+msgstr "Büyük (1024x768)"
+
+#. i18n: file rdp/rdpprefs.ui line 68
+#: rc.cpp:185
+#, no-c-format
+msgid "Custom (...)"
+msgstr "Özel (...)"
+
+#. i18n: file rdp/rdpprefs.ui line 92
+#: rc.cpp:188
+#, no-c-format
+msgid ""
+"Here you can specify the resolution of the remote desktop. This resolution "
+"determines the size of the desktop that will be presented to you."
+msgstr ""
+"Burada uzak masaüstünün çözünürlüğünü belirleyebilirsiniz. Bu çözünürlük size "
+"gösterilecek görüntünün boyutunu belirtir."
+
+#. i18n: file rdp/rdpprefs.ui line 109
+#: rc.cpp:191
+#, no-c-format
+msgid ""
+"This is the width of the remote desktop. You can only change this value "
+"manually if you select Custom as desktop resolution above."
+msgstr ""
+"Bu uzak değer uzak masaüstünün ekran genişliğini gösterir. Bu değeri el ile "
+"sadece yukardaki Özel seçeneğini seçerek değiştirebilirsiniz."
+
+#. i18n: file rdp/rdpprefs.ui line 120
+#: rc.cpp:194
+#, no-c-format
+msgid "H&eight:"
+msgstr "&Yükseklik"
+
+#. i18n: file rdp/rdpprefs.ui line 143
+#: rc.cpp:197
+#, no-c-format
+msgid ""
+"This is the height of the remote desktop. You can only change this value "
+"manually if you select Custom as desktop resolution above."
+msgstr ""
+"Bu değer uzak masaüstünün ekran yüksekliğini gösterir. Bu değeri el ile sadece "
+"yukardaki Özel seçeneğini seçerek değiştirebilirsiniz."
+
+#. i18n: file rdp/rdpprefs.ui line 149
+#: rc.cpp:200
+#, no-c-format
+msgid "Arabic (ar)"
+msgstr "Arapça (ar)"
+
+#. i18n: file rdp/rdpprefs.ui line 154
+#: rc.cpp:203
+#, no-c-format
+msgid "Czech (cs)"
+msgstr "Çekçe (cs)"
+
+#. i18n: file rdp/rdpprefs.ui line 159
+#: rc.cpp:206
+#, no-c-format
+msgid "Danish (da)"
+msgstr "Danca (da)"
+
+#. i18n: file rdp/rdpprefs.ui line 164
+#: rc.cpp:209
+#, no-c-format
+msgid "German (de)"
+msgstr "Almanca (de)"
+
+#. i18n: file rdp/rdpprefs.ui line 169
+#: rc.cpp:212
+#, no-c-format
+msgid "Swiss German (de-ch)"
+msgstr "İsviçre Almancası (de-ch)"
+
+#. i18n: file rdp/rdpprefs.ui line 174
+#: rc.cpp:215
+#, no-c-format
+msgid "British English (en-gb)"
+msgstr "İngiliz İngilizcesi (en-gb)"
+
+#. i18n: file rdp/rdpprefs.ui line 179
+#: rc.cpp:218
+#, no-c-format
+msgid "US English (en-us)"
+msgstr "Amerikan İngilizcesi (en-us)"
+
+#. i18n: file rdp/rdpprefs.ui line 184
+#: rc.cpp:221
+#, no-c-format
+msgid "Spanish (es)"
+msgstr "İspanyolca (es)"
+
+#. i18n: file rdp/rdpprefs.ui line 189
+#: rc.cpp:224
+#, no-c-format
+msgid "Estonian (et)"
+msgstr "Estonya Dili (et)"
+
+#. i18n: file rdp/rdpprefs.ui line 194
+#: rc.cpp:227
+#, no-c-format
+msgid "Finnish (fi)"
+msgstr "Fince (fi)"
+
+#. i18n: file rdp/rdpprefs.ui line 199
+#: rc.cpp:230
+#, no-c-format
+msgid "French (fr)"
+msgstr "Fransızca (fr)"
+
+#. i18n: file rdp/rdpprefs.ui line 204
+#: rc.cpp:233
+#, no-c-format
+msgid "Belgium (fr-be)"
+msgstr "Belçika dili (fr-be)"
+
+#. i18n: file rdp/rdpprefs.ui line 209
+#: rc.cpp:236
+#, no-c-format
+msgid "French Canadian (fr-ca)"
+msgstr "Kanada Fransızcası (fr-ca)"
+
+#. i18n: file rdp/rdpprefs.ui line 214
+#: rc.cpp:239
+#, no-c-format
+msgid "Swiss French (fr-ch)"
+msgstr "İsviçre Fransızcası (fr-ch)"
+
+#. i18n: file rdp/rdpprefs.ui line 219
+#: rc.cpp:242
+#, no-c-format
+msgid "Croatian (hr)"
+msgstr "Hırvatça (hr)"
+
+#. i18n: file rdp/rdpprefs.ui line 224
+#: rc.cpp:245
+#, no-c-format
+msgid "Hungarian (hu)"
+msgstr "Macarca (hu)"
+
+#. i18n: file rdp/rdpprefs.ui line 229
+#: rc.cpp:248
+#, no-c-format
+msgid "Icelandic (is)"
+msgstr "İzlandaca (is)"
+
+#. i18n: file rdp/rdpprefs.ui line 234
+#: rc.cpp:251
+#, no-c-format
+msgid "Italian (it)"
+msgstr "İtalyanca (it)"
+
+#. i18n: file rdp/rdpprefs.ui line 239
+#: rc.cpp:254
+#, no-c-format
+msgid "Japanese (ja)"
+msgstr "Japonca (ja)"
+
+#. i18n: file rdp/rdpprefs.ui line 244
+#: rc.cpp:257
+#, no-c-format
+msgid "Lithuanian (lt)"
+msgstr "Litvanyaca (lt)"
+
+#. i18n: file rdp/rdpprefs.ui line 249
+#: rc.cpp:260
+#, no-c-format
+msgid "Latvian (lv)"
+msgstr "Latviaca (lv)"
+
+#. i18n: file rdp/rdpprefs.ui line 254
+#: rc.cpp:263
+#, no-c-format
+msgid "Macedonian (mk)"
+msgstr "Makedonca (mk)"
+
+#. i18n: file rdp/rdpprefs.ui line 259
+#: rc.cpp:266
+#, no-c-format
+msgid "Dutch (nl)"
+msgstr "Flamanca (nl)"
+
+#. i18n: file rdp/rdpprefs.ui line 264
+#: rc.cpp:269
+#, no-c-format
+msgid "Belgian Dutch (nl-be)"
+msgstr "Belçika Flamancası (nl-be)"
+
+#. i18n: file rdp/rdpprefs.ui line 269
+#: rc.cpp:272
+#, no-c-format
+msgid "Norwegian (no)"
+msgstr "Norveççe (no)"
+
+#. i18n: file rdp/rdpprefs.ui line 274
+#: rc.cpp:275
+#, no-c-format
+msgid "Polish (pl)"
+msgstr "Lehçe (pl)"
+
+#. i18n: file rdp/rdpprefs.ui line 279
+#: rc.cpp:278
+#, no-c-format
+msgid "Portuguese (pt)"
+msgstr "Portekizce (pt)"
+
+#. i18n: file rdp/rdpprefs.ui line 284
+#: rc.cpp:281
+#, no-c-format
+msgid "Brazilian (pt-br)"
+msgstr "Brezilyaca (pt-br)"
+
+#. i18n: file rdp/rdpprefs.ui line 289
+#: rc.cpp:284
+#, no-c-format
+msgid "Russian (ru)"
+msgstr "Rusça (ru)"
+
+#. i18n: file rdp/rdpprefs.ui line 294
+#: rc.cpp:287
+#, no-c-format
+msgid "Slovenian (sl)"
+msgstr "Slovence (sl)"
+
+#. i18n: file rdp/rdpprefs.ui line 299
+#: rc.cpp:290
+#, no-c-format
+msgid "Swedish (sv)"
+msgstr "İsveççe (sv)"
+
+#. i18n: file rdp/rdpprefs.ui line 304
+#: rc.cpp:293
+#, no-c-format
+msgid "Thai (th)"
+msgstr "Tayca (th)"
+
+#. i18n: file rdp/rdpprefs.ui line 309
+#: rc.cpp:296
+#, no-c-format
+msgid "Turkish (tr)"
+msgstr "Türkçe (tr)"
+
+#. i18n: file rdp/rdpprefs.ui line 336
+#: rc.cpp:299
+#, no-c-format
+msgid ""
+"Use this to specify your keyboard layout. This layout setting is used to send "
+"the correct keyboard codes to the server."
+msgstr ""
+"Klavye düzenini belirtmek için bunu kullanın. Bu düzen ayarı sunucuya doğru "
+"klavye kodlarını göndermek için kullanılmaktadır."
+
+#. i18n: file rdp/rdpprefs.ui line 352
+#: rc.cpp:302
+#, no-c-format
+msgid "&Keyboard layout:"
+msgstr "&Klavye dizilimi:"
+
+#. i18n: file rdp/rdpprefs.ui line 366
+#: rc.cpp:305 rc.cpp:344
+#, no-c-format
+msgid "Use K&Wallet for passwords"
+msgstr "Parolalar için K&Wallet kullan"
+
+#. i18n: file rdp/rdpprefs.ui line 369
+#: rc.cpp:308 rc.cpp:347
+#, no-c-format
+msgid "Enable this option to store your passwords with KWallet."
+msgstr "KWallet ile parolarınızı saklamak için bu seçeneği aktif hale getirin."
+
+#. i18n: file rdp/rdpprefs.ui line 385
+#: rc.cpp:311
+#, no-c-format
+msgid "Desktop &resolution:"
+msgstr "&Masaüstü çözünürlüğü:"
+
+#. i18n: file rdp/rdpprefs.ui line 404
+#: rc.cpp:314
+#, no-c-format
+msgid "Color &depth:"
+msgstr "Renk &derinliği:"
+
+#. i18n: file rdp/rdpprefs.ui line 418
+#: rc.cpp:317
+#, no-c-format
+msgid "&Width:"
+msgstr "&Genişlik:"
+
+#. i18n: file rdp/rdpprefs.ui line 430
+#: rc.cpp:320
+#, no-c-format
+msgid "Low Color (8 Bit)"
+msgstr "Düşük Renk (8 Bit)"
+
+#. i18n: file rdp/rdpprefs.ui line 435
+#: rc.cpp:323
+#, no-c-format
+msgid "High Color (16 Bit)"
+msgstr "Yüksek Renk (16 Bit)"
+
+#. i18n: file rdp/rdpprefs.ui line 440
+#: rc.cpp:326
+#, no-c-format
+msgid "True Color (24 Bit)"
+msgstr "Gerçek Renk (24 Bit)"
+
+#. i18n: file rdp/rdpprefs.ui line 454
+#: rc.cpp:329 rc.cpp:365
+#, no-c-format
+msgid "&Show this dialog again for this host"
+msgstr "Bu makina için görüntü diyaloğunu tekrar gö&ster"
+
+#. i18n: file rdp/rdpprefs.ui line 457
+#: rc.cpp:332 rc.cpp:368
+#, no-c-format
+msgid ""
+"Select this option if you do not want to be asked for the settings when "
+"connecting to a host. For hosts with existing profiles these profiles will be "
+"taken. New hosts will be configured with the defaults."
+msgstr ""
+"Bir sunucuya bağlanırken ayarlar için soru sorulmasını istemiyorsanız bu "
+"seçeneği seçin. Ayarları önceden yapılmış sunucular için mevcut yapılandırma "
+"kullanılacaktır. Yeni sunucular ise öntanımlı ayarlara göre "
+"yapılandırılacaktır."
+
+#. i18n: file vnc/vncprefs.ui line 41
+#: rc.cpp:338
+#, no-c-format
+msgid "&Enable encryption (secure, but slow and not always possible)"
+msgstr "Ş&ifrelemeyi etkinleştir (güvenli, fakat yavaş)"
+
+#. i18n: file vnc/vncprefs.ui line 44
+#: rc.cpp:341
+#, no-c-format
+msgid ""
+"Enable this option to encrypt the connection. Only newer servers support this "
+"option. Encrypting prevents others from eavesdropping, but can slow down the "
+"connection considerably."
+msgstr ""
+"Bağlantıyı şifrelemek için bu seçeneği etkinleştirin. Sadece yeni nesil "
+"sunucular bu seçeneği destekler. Bağlantıyı şifreleme başkalarının bağlantıyı "
+"gizlice dinlemesini engeller fakat "
+
+#. i18n: file vnc/vncprefs.ui line 74
+#: rc.cpp:350
+#, no-c-format
+msgid "Connection &type:"
+msgstr "&Bağlantı türü:"
+
+#. i18n: file vnc/vncprefs.ui line 83
+#: rc.cpp:353
+#, no-c-format
+msgid "High Quality (LAN, direct connection)"
+msgstr "Yüksek Kalite (yerel ağ, doğrudan bağlantı)"
+
+#. i18n: file vnc/vncprefs.ui line 88
+#: rc.cpp:356
+#, no-c-format
+msgid "Medium Quality (DSL, Cable, fast Internet)"
+msgstr "Orta Kaliteli (DSL, kablo ağ, hızlı İnternet)"
+
+#. i18n: file vnc/vncprefs.ui line 93
+#: rc.cpp:359
+#, no-c-format
+msgid "Low Quality (Modem, ISDN, slow Internet)"
+msgstr "Düşük Kalite (Modem, ISDN veya yavaş İnternet)"
+
+#. i18n: file vnc/vncprefs.ui line 114
+#: rc.cpp:362
+#, no-c-format
+msgid ""
+"Use this to specify the performance of your connection. Note that you should "
+"select the speed of the weakest link - even if you have a high speed "
+"connection, it will not help you if the remote computer uses a slow modem. "
+"Choosing a level of quality that is too high on a slow link will cause slower "
+"response times. Choosing a lower quality will increase latencies in high speed "
+"connections and results in lower image quality, especially in 'Low Quality' "
+"mode."
+msgstr ""
+"Bağlantınızın performansını belirtmek için bunu kullanın. En zayıf bağlantı "
+"hızını seçmenizin iyi olacağını unutmayın - yüksek hızda bağlantıya sahip "
+"olsanız bile uzak bilgisayarın düşük hızlı bağlantı olması durumunda size bir "
+"yararı olmayacaktır. Düşük bağlantı hızlarında yüksek kalite seçmek uzak "
+"bilgisayarın daha yavaş cevap vermesine sebep olacaktır. Yüksek hızda "
+"bağlantılarda düşük kalite seçmek gecikme sürelerini artıracak ve düşük görüntü "
+"kalitesiyle sonuçlanacaktır, özellikle de 'Düşük Kalite' kipinde."
+
+#: rdp/krdpview.cpp:170
+#, c-format
+msgid "RDP Host Preferences for %1"
+msgstr "%1 için RDP Sunucu Tercihleri"
+
+#: rdp/krdpview.cpp:262
+msgid "Please enter the password."
+msgstr "Lütfen parola giriniz."
+
+#: rdp/krdpview.cpp:284
+msgid "Could not start rdesktop; make sure rdesktop is properly installed."
+msgstr ""
+"rdesktop başlatılamıyot; lütfen rdesktop'ın sistemde kurulu olduğundan emin "
+"olun."
+
+#: rdp/krdpview.cpp:285
+msgid "rdesktop Failure"
+msgstr "rdesktop hatası"
+
+#: rdp/krdpview.cpp:345 vnc/kvncview.cpp:458
+msgid "Connection attempt to host failed."
+msgstr "Makineye yapılan bağlantı başarısız oldu."
+
+#: rdp/krdpview.cpp:346 vnc/kvncview.cpp:223 vnc/kvncview.cpp:459
+#: vnc/kvncview.cpp:464 vnc/kvncview.cpp:469 vnc/kvncview.cpp:474
+#: vnc/kvncview.cpp:479 vnc/kvncview.cpp:484
+msgid "Connection Failure"
+msgstr "Bağlantı Hatası"
+
+#: rdp/rdphostpref.cpp:112
+msgid ""
+"Show Preferences: %1, Resolution: %2x%3, Color Depth: %4, Keymap: %5, KWallet: "
+"%6"
+msgstr ""
+"Seçenekleri Göster: %1, Çözünürlük: %2x%3, Renk Derinliği: %4, Klavye Haritası: "
+"%5,KWallet: %6"
+
+#: rdp/rdphostpref.cpp:113 rdp/rdphostpref.cpp:114 vnc/vnchostpref.cpp:99
+msgid "yes"
+msgstr "evet"
+
+#: rdp/rdphostpref.cpp:113 rdp/rdphostpref.cpp:114 vnc/vnchostpref.cpp:99
+msgid "no"
+msgstr "hayır"
+
+#: vnc/kvncview.cpp:222
+msgid "It is not possible to connect to a local desktop sharing service."
+msgstr ""
+"Kendi makinanızda çalışan masaüstü paylaşım servisine bağlantı kurulamaz."
+
+#: vnc/kvncview.cpp:237
+#, c-format
+msgid "VNC Host Preferences for %1"
+msgstr "%1 için VNC Makina Özellikleri"
+
+#: vnc/kvncview.cpp:407
+msgid "Access to the system requires a password."
+msgstr "Bu sisteme erişim bir parola gerektiriyor."
+
+#: vnc/kvncview.cpp:463
+msgid "Remote host is using an incompatible protocol."
+msgstr "Bağlantı kurulacak makine uyumsuz bir protokol kullanıyor."
+
+#: vnc/kvncview.cpp:468
+msgid "The connection to the host has been interrupted."
+msgstr "Makineye yapılan bağlantı kesintiye uğradı."
+
+#: vnc/kvncview.cpp:473
+msgid "Connection failed. The server does not accept new connections."
+msgstr "Bağlantı kurulamadı. Sunucu yeni bağlantıları kabul etmiyor."
+
+#: vnc/kvncview.cpp:478
+msgid "Connection failed. A server with the given name cannot be found."
+msgstr "Bağlantı kurulamadı. Bu isimde bir sunucu bulunamadı."
+
+#: vnc/kvncview.cpp:483
+msgid "Connection failed. No server running at the given address and port."
+msgstr "Bağlantı kurulamadı. Verilen adres ve portta sunucu çalışmıyor."
+
+#: vnc/kvncview.cpp:492
+msgid "Authentication failed. Connection aborted."
+msgstr "Kimlik denetiminde hata. Bağlantı kesildi."
+
+#: vnc/kvncview.cpp:493
+msgid "Authentication Failure"
+msgstr "Kimlik Denetimi Hatası"
+
+#: vnc/kvncview.cpp:497
+msgid "Unknown error."
+msgstr "Bilinmeyen hata."
+
+#: vnc/kvncview.cpp:498
+msgid "Unknown Error"
+msgstr "Bilinmeyen Hata"
+
+#: vnc/vnchostpref.cpp:87
+msgid "High"
+msgstr "Yüksek"
+
+#: vnc/vnchostpref.cpp:90
+msgid "Medium"
+msgstr "Orta"
+
+#: vnc/vnchostpref.cpp:93
+msgid "Low"
+msgstr "Düşük"
+
+#: vnc/vnchostpref.cpp:98
+msgid "Show Preferences: %1, Quality: %2, KWallet: %3"
+msgstr "Seçenekleri Göster: %1, Kalite: %2, KWallet: %3"

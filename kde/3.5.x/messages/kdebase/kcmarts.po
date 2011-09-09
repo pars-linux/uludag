@@ -1,0 +1,472 @@
+# translation of kcmarts.po to turkish
+# translation of kcmarts.po to Türkçe
+# Copyright (C) 2004, 2005 Free Software Foundation, Inc.
+# Mehmet TARIMCI <mehmet@gelecek.com.tr>, YEAR.
+# Serdar Cevher <scevher@anet.com.tr>, 2001.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>,2002.
+# Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmarts\n"
+"POT-Creation-Date: 2007-07-28 01:12+0200\n"
+"PO-Revision-Date: 2005-06-28 21:43+0000\n"
+"Last-Translator: Adem Alp YILDIZ <ademalp@kde.org.tr>\n"
+"Language-Team: turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.1\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: arts.cpp:109
+msgid ""
+"Unable to start the sound server to retrieve possible sound I/O methods.\n"
+"Only automatic detection will be available."
+msgstr ""
+"Olası ses giriş ve çıkış yöntemlerini almak için ses sunucusu başlatılamadı.\n"
+"Sadece otomatik tanıma kullanılabilecek."
+
+#: arts.cpp:146
+msgid ""
+"<h1>Sound System</h1> Here you can configure aRts, KDE's sound server. This "
+"program not only allows you to hear your system sounds while simultaneously "
+"listening to an MP3 file or playing a game with background music. It also "
+"allows you to apply different effects to your system sounds and provides "
+"programmers with an easy way to achieve sound support."
+msgstr ""
+"<h1>Ses Sistemi</h1> Buradan KDE ses sunucusu, aRts'ı yapılandırabilirsiniz.Bu "
+"program size sadece MP3 dinlerken sistem seslerini duymanızı sağlamıyor, aynı "
+"zamanda sistem seslerine farklı efektler uygulamanıza ve programcıların kolay "
+"bir şekilde ses desteği sağlamalarına da izin veriyor."
+
+#: arts.cpp:167
+msgid "&General"
+msgstr "&Genel"
+
+#: arts.cpp:168
+msgid "&Hardware"
+msgstr "&Donanım"
+
+#: arts.cpp:182
+msgid ""
+"Normally, the sound server defaults to using the device called <b>/dev/dsp</b> "
+"for sound output. That should work in most cases. On some systems where devfs "
+"is used, however, you may need to use <b>/dev/sound/dsp</b> "
+"instead. Other alternatives are things like <b>/dev/dsp0</b> or <b>/dev/dsp1</b>"
+", if you have a soundcard that supports multiple outputs, or you have multiple "
+"soundcards."
+msgstr ""
+"Normal olarak ses kartı <b>/dev/dsp</b> üzerinden haberleşir. Bu aygıt pek çok "
+"durumda kullanılabilir. Eğer devfs kullanılıyorsa bunun yerine <b>"
+"/dev/sound/dsp</p> kullanılmalıdır. Diğer alternatifler ise <b>/dev/dsp0</b> "
+"ya da <b>/dev/dsp1</b> olabilir."
+
+#: arts.cpp:184
+msgid ""
+"Normally, the sound server defaults to using a sampling rate of 44100 Hz (CD "
+"quality), which is supported on almost any hardware. If you are using certain "
+"<b>Yamaha soundcards</b>, you might need to configure this to 48000 Hz here, if "
+"you are using <b>old SoundBlaster cards</b>, like SoundBlaster Pro, you might "
+"need to change this to 22050 Hz. All other values are possible, too, and may "
+"make sense in certain contexts (i.e. professional studio equipment)."
+msgstr ""
+"Normal olarak ses sunucusu 44100 Hz'lik bir örnekleme hızına sahiptir (CD "
+"kalitesi). Bu hızı da pek çok donanım destekler. Bazı <b>Yamaha</b> "
+"ses kartı türlerine sahipseniz, bu hızı 48000 Hz olarak tanımlamanız "
+"gerekebilir. Benzer şekilde SoundBlaster Pro için de 22050 değerini girmeniz "
+"gerekebilir."
+
+#: arts.cpp:186
+msgid ""
+"This configuration module is intended to cover almost every aspect of the aRts "
+"sound server that you can configure. However, there are some things which may "
+"not be available here, so you can add <b>command line options</b> "
+"here which will be passed directly to <b>artsd</b>. The command line options "
+"will override the choices made in the GUI. To see the possible choices, open a "
+"Konsole window, and type <b>artsd -h</b>."
+msgstr ""
+"Bu yapılandırma modülü aRts ses sunucusunda yapabileceğiniz hemen hemen tüm "
+"ayarları gerçekleştirmenize izin verir. Ancak komut satırından <b>artsd</b>"
+"'yi yönetebileceğiniz bazı parametreler buradan erişilemeyebilir. Tüm "
+"seçenekleri görmek için <b>konsole</b> programını çalıştırıp <b>artsd -h</b> "
+"komutunu girin."
+
+#: arts.cpp:195
+msgid "Autodetect"
+msgstr "Otomatik tanıma"
+
+#: arts.cpp:245
+msgid "kcmarts"
+msgstr "kcmarts"
+
+#: arts.cpp:246
+msgid "The Sound Server Control Module"
+msgstr "Ses Sunucu Kontrol Modülü"
+
+#: arts.cpp:248
+msgid "(c) 1999 - 2001, Stefan Westerfeld"
+msgstr "(c) 1999 - 2001, Stefan Westerfeld"
+
+#: arts.cpp:249
+msgid "aRts Author"
+msgstr "aRts Yazarı"
+
+#: arts.cpp:422
+msgid ""
+"The settings have changed since the last time you restarted the sound server.\n"
+"Do you want to save them?"
+msgstr ""
+"Ses sunucusunu son çalıştırmanızdan bu yana ayarlar değişti.\n"
+"Bunları kaydetmek istiyor musunuz?"
+
+#: arts.cpp:425
+msgid "Save Sound Server Settings?"
+msgstr "Ses Sunucu Ayarları Değiştirilsin mi?"
+
+#: arts.cpp:476
+msgid "%1 milliseconds (%2 fragments with %3 bytes)"
+msgstr "%1 milisaniye (%2 parça, %3 bayt)"
+
+#: arts.cpp:483
+msgid "as large as possible"
+msgstr "mümkün olduğunca büyük"
+
+#: arts.cpp:492
+msgid ""
+"Impossible to start aRts with realtime priority because artswrapper is missing "
+"or disabled"
+msgstr ""
+"aRts programı gerçek öncelikle başlatılamadı, çünkü artswrapper eksik ya da "
+"kapalı"
+
+#: arts.cpp:586
+msgid "Restarting Sound System"
+msgstr "Ses Sistemi Yeniden Başlatılıyor"
+
+#: arts.cpp:586
+msgid "Starting Sound System"
+msgstr "Ses Sistemi Başlatılıyor"
+
+#: arts.cpp:587
+msgid "Restarting sound system."
+msgstr "Ses sistemi yeniden başlatılıyor."
+
+#: arts.cpp:587
+msgid "Starting sound system."
+msgstr "Ses sistemi başlatılıyor."
+
+#: arts.cpp:716
+msgid "No Audio Input/Output"
+msgstr "Ses Giriş/Çıkış Yok"
+
+#: arts.cpp:717
+msgid "Advanced Linux Sound Architecture"
+msgstr "Gelişmiş Linux Ses Mimarisi (ALSA)"
+
+#: arts.cpp:718
+msgid "Open Sound System"
+msgstr "Açık Ses Sistemi"
+
+#: arts.cpp:719
+msgid "Threaded Open Sound System"
+msgstr "Açık Ses Sistemi"
+
+#: arts.cpp:720
+msgid "Network Audio System"
+msgstr "Ağ Ses Sistemi"
+
+#: arts.cpp:721
+msgid "Personal Audio Device"
+msgstr "Kişisel Ses Aygıtı"
+
+#: arts.cpp:722
+msgid "SGI dmedia Audio I/O"
+msgstr "SGI dmedia Ses G/Ç"
+
+#: arts.cpp:723
+msgid "Sun Audio Input/Output"
+msgstr "Sun Ses G/Ç"
+
+#: arts.cpp:724
+msgid "Portable Audio Library"
+msgstr "Taşınabilir Ses Kütüphanesi"
+
+#: arts.cpp:725
+msgid "Enlightened Sound Daemon"
+msgstr "Enlightened Sound Daemon"
+
+#: arts.cpp:726
+msgid "MAS Audio Input/Output"
+msgstr "MAS Ses Giriş/Çıkış"
+
+#: arts.cpp:727
+msgid "Jack Audio Connection Kit"
+msgstr "Jack Ses Bağlantı Takımı"
+
+#. i18n: file generaltab.ui line 35
+#: rc.cpp:3
+#, no-c-format
+msgid "&Enable the sound system"
+msgstr "&Ses sistemini etkinleştir"
+
+#. i18n: file generaltab.ui line 42
+#: rc.cpp:6
+#, no-c-format
+msgid ""
+"If this option is enabled, the sound system will be loaded on KDE startup.\n"
+"Recommended if you want sound."
+msgstr ""
+"Eğer bu seçenek etkin hale getirilirse arts ses sunucusu KDE açıldığı zaman "
+"başlatılacaktır. Çalışmanız sırasında ses duymak istiyorsanız önerilir."
+
+#. i18n: file generaltab.ui line 64
+#: rc.cpp:10
+#, no-c-format
+msgid "Networked Sound"
+msgstr "Ağ Destekli Ses"
+
+#. i18n: file generaltab.ui line 75
+#: rc.cpp:13
+#, no-c-format
+msgid ""
+"<i>Enable this option if you want to play sound on a remote computer or you "
+"want to be able to control sound on this system from another computer.</i>"
+msgstr ""
+"<i>Başka bir bilgisayar üzerinde ses çalmak ya da bu sistemdeki sesleri başka "
+"bir bilgisayardan kontrol etmek istiyorsanız bu seçeneği tıklayın.</i>"
+
+#. i18n: file generaltab.ui line 83
+#: rc.cpp:16
+#, no-c-format
+msgid "Enable &networked sound"
+msgstr "&Ağ destekli sesi etkinleştir"
+
+#. i18n: file generaltab.ui line 86
+#: rc.cpp:19
+#, no-c-format
+msgid ""
+"This option allows sound requests coming in from over the network to be "
+"accepted, instead of just limiting the server to the local computer."
+msgstr ""
+"Bu seçenek, sunucuyu sadece yerel bilgisayarla sınırlamak yerine, ağ üzerinden "
+"gelen ses isteklerinin kabul edilmesine olanak tanır."
+
+#. i18n: file generaltab.ui line 96
+#: rc.cpp:22
+#, no-c-format
+msgid "Skip Prevention"
+msgstr "Ön Sunumu Atla"
+
+#. i18n: file generaltab.ui line 107
+#: rc.cpp:25
+#, no-c-format
+msgid ""
+"<i>If your sound is skipping during playback, enable running with highest "
+"possible priority. Increasing your sound buffer might also help.</i>"
+msgstr ""
+"<i>Çalma esnasında sesiniz atlama yapıyorsa, en yüksek önceliği etkinleştirin. "
+"Ses önbelleğinizi arttırmakta yardımcı olacaktır.</i>"
+
+#. i18n: file generaltab.ui line 115
+#: rc.cpp:28
+#, no-c-format
+msgid "&Run with the highest possible priority (realtime priority)"
+msgstr "&Ses sunucusunu en yüksek öncelikte çalıştır"
+
+#. i18n: file generaltab.ui line 121
+#: rc.cpp:31
+#, no-c-format
+msgid ""
+"On systems which support realtime scheduling, if you have sufficient "
+"permissions, this option will enable a very high priority for processing sound "
+"requests."
+msgstr ""
+"Gerçek zaman desteğine sahip sistemlerde, yeterli izinlere sahipseniz, bu "
+"seçenek ses isteklerinin işlenmesi için çok yüksek bir önceliği etkin hale "
+"getirecektir."
+
+#. i18n: file generaltab.ui line 152
+#: rc.cpp:34
+#, no-c-format
+msgid "Sound &buffer:"
+msgstr "Ses &tamponu:"
+
+#. i18n: file generaltab.ui line 163
+#: rc.cpp:37
+#, no-c-format
+msgid ""
+"<p align=\"right\"><b>Huge</b> buffer, for <b>low-end</b> machines, <b>"
+"less skipping</b></p>"
+msgstr ""
+"<p align=\"right\"><b>Düşük-sonlu</b> makineler için <b>büyük</b> önbellek, <b>"
+"atlamayı azaltır</b></p>"
+
+#. i18n: file generaltab.ui line 173
+#: rc.cpp:40
+#, no-c-format
+msgid "Auto-Suspend"
+msgstr "Otomatik Askıya Alma"
+
+#. i18n: file generaltab.ui line 184
+#: rc.cpp:43
+#, no-c-format
+msgid ""
+"<i>The KDE sound system takes exclusive control over your audio hardware, "
+"blocking programs that may wish to use it directly. If the KDE sound system "
+"sits idle it can give up this exclusive control.</i>"
+msgstr ""
+"<i>KDE ses sistemi ses donanımınızın gelişmiş denetimini sağlar, direkt olarak "
+"kullanmak isteyen programları bloklar. Eğer KDE ses sistemi boşta kalırsa "
+"gelişmiş denetimini kaldırabilir.</i>"
+
+#. i18n: file generaltab.ui line 203
+#: rc.cpp:46
+#, no-c-format
+msgid "&Auto-suspend if idle after:"
+msgstr "&Belirli bir süre boş kaldığında beklemeye al:"
+
+#. i18n: file generaltab.ui line 209
+#: rc.cpp:49
+#, no-c-format
+msgid "The sound server will suspend itself if idle for this period of time."
+msgstr "Ses sunucusu eğer boşsa o zaman için kendini askıya alacaktır."
+
+#. i18n: file generaltab.ui line 217
+#: rc.cpp:52
+#, no-c-format
+msgid " seconds"
+msgstr " saniye"
+
+#. i18n: file generaltab.ui line 279
+#: rc.cpp:55
+#, no-c-format
+msgid "Test &Sound"
+msgstr "&Sesi Dene"
+
+#. i18n: file hardwaretab.ui line 30
+#: rc.cpp:58
+#, no-c-format
+msgid "Select && Configure your Audio Device"
+msgstr "Ses Aygıtını Seç ve Yapılandır"
+
+#. i18n: file hardwaretab.ui line 57
+#: rc.cpp:61
+#, no-c-format
+msgid "&Select the audio device:"
+msgstr "Ses &aygıtını kullan:"
+
+#. i18n: file hardwaretab.ui line 91
+#: rc.cpp:64
+#, no-c-format
+msgid "&Full duplex"
+msgstr "İ&ki yönlü"
+
+#. i18n: file hardwaretab.ui line 97
+#: rc.cpp:67
+#, no-c-format
+msgid ""
+"This enables the soundserver to record and play sound at the same time. If you "
+"use applications like Internet telephony, voice recognition or similar, you "
+"probably want this."
+msgstr ""
+"Bu, ses sunucunun aynı zamanda kayıt etmesini ve ses çalmasını etkinleştirir."
+
+#. i18n: file hardwaretab.ui line 107
+#: rc.cpp:70
+#, no-c-format
+msgid "Use other custom &options:"
+msgstr "&Diğer özel seçenekler:"
+
+#. i18n: file hardwaretab.ui line 115
+#: rc.cpp:73
+#, no-c-format
+msgid "Override &device location:"
+msgstr "&Aygıt konumunun yerine kullan:"
+
+#. i18n: file hardwaretab.ui line 148
+#: rc.cpp:76
+#, no-c-format
+msgid "&Quality:"
+msgstr "&Kalite:"
+
+#. i18n: file hardwaretab.ui line 162
+#: rc.cpp:82
+#, no-c-format
+msgid "16 Bits (high)"
+msgstr "16 Bit (yüksek)"
+
+#. i18n: file hardwaretab.ui line 167
+#: rc.cpp:85
+#, no-c-format
+msgid "8 Bits (low)"
+msgstr "8 Bit (düşük)"
+
+#. i18n: file hardwaretab.ui line 206
+#: rc.cpp:88
+#, no-c-format
+msgid "Use &custom sampling rate:"
+msgstr "Ö&zel örnekleme hızı kullan:"
+
+#. i18n: file hardwaretab.ui line 233
+#: rc.cpp:91
+#, no-c-format
+msgid " Hz "
+msgstr " Hz "
+
+#. i18n: file hardwaretab.ui line 280
+#: rc.cpp:94
+#, no-c-format
+msgid "/dev/dsp"
+msgstr "T/dev/dsp"
+
+#. i18n: file hardwaretab.ui line 290
+#: rc.cpp:97
+#, no-c-format
+msgid "Select your MIDI Device"
+msgstr "Kullanacağınız MIDI aygıtını seçin"
+
+#. i18n: file hardwaretab.ui line 301
+#: rc.cpp:100
+#, no-c-format
+msgid "Use MIDI ma&pper:"
+msgstr "&MIDI eşleyicisi kullan:"
+
+#. i18n: file hardwaretab.ui line 309
+#: rc.cpp:103
+#, no-c-format
+msgid "Select the &MIDI device:"
+msgstr "&Kullanacağınız MIDI aygıtını seçin:"
+
+#~ msgid "Test &MIDI"
+#~ msgstr "&MIDI'yi Dene"
+
+#~ msgid "generalTab"
+#~ msgstr "Genel sekme"
+
+#~ msgid "Alt+S"
+#~ msgstr "Alt+S"
+
+#~ msgid "Alt+M"
+#~ msgstr "Alt+M"
+
+#~ msgid "hardwareTab"
+#~ msgstr "Donanım sekmesi"
+
+#~ msgid "Alt+O"
+#~ msgstr "Alt+O"
+
+#~ msgid "Alt+C"
+#~ msgstr "Alt+C"

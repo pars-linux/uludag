@@ -1,0 +1,359 @@
+# translation of kdjview.po to Türkçe
+# translation of kdjview.po to Turkish
+# Görkem Çetin <gorkem@gorkemcetin.com>, 2005.
+# Alper Sen <aalpersen@gmail.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdjview\n"
+"POT-Creation-Date: 2006-02-10 04:00+0100\n"
+"PO-Revision-Date: 2005-07-18 13:14+0300\n"
+"Last-Translator: Alper Sen <aalpersen@gmail.com>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Alper Şen"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "aalpersen@gmail.com"
+
+#: djvumultipage.cpp:61
+msgid "Color"
+msgstr "Renk"
+
+#: djvumultipage.cpp:62
+msgid "Black and White"
+msgstr "Siyah Beyaz"
+
+#: djvumultipage.cpp:63
+msgid "Show foreground only"
+msgstr "Sadece ön alanı göster"
+
+#: djvumultipage.cpp:64
+msgid "Show background only"
+msgstr "Sadece arka alanı göster"
+
+#: djvumultipage.cpp:65
+msgid "Render Mode"
+msgstr "Gerçekleme Kipi"
+
+#: djvumultipage.cpp:70
+msgid "Delete Pages..."
+msgstr "Sayfaları Sil..."
+
+#: djvumultipage.cpp:95
+msgid "KDjView"
+msgstr "KDjView"
+
+#: djvumultipage.cpp:96
+msgid "KViewshell DjVu Plugin."
+msgstr "KViewShell DjVu Eklentisi"
+
+#: djvumultipage.cpp:99
+msgid "This program displays DjVu files."
+msgstr "Bu program DjVu dosyalarını gösterir."
+
+#: djvumultipage.cpp:102
+msgid "KViewShell plugin"
+msgstr "KViewShell eklentisi"
+
+#: djvumultipage.cpp:107
+msgid "DjVu file loading"
+msgstr "DjVu dosyası yükleniyor"
+
+#: djvumultipage.cpp:130
+msgid "*.djvu|DjVu file (*.djvu)"
+msgstr "*.djvu|DjVu dosyası (*.djvu)"
+
+#: djvumultipage.cpp:165 djvumultipage.cpp:168
+msgid "Delete Pages"
+msgstr "Sayfaları Sil"
+
+#: djvumultipage.cpp:167
+msgid "Select the pages you wish to delete."
+msgstr "Silmek istediğiniz sayfaları seçiniz."
+
+#: djvumultipage.cpp:223
+#, c-format
+msgid "Print %1"
+msgstr "%1 Yazdır"
+
+#: djvumultipage.cpp:326
+msgid "Save File As"
+msgstr ""
+
+#: djvumultipage.cpp:337
+msgid ""
+"The file %1\n"
+"already exists. Do you want to overwrite it?"
+msgstr ""
+
+#: djvumultipage.cpp:338
+msgid "Overwrite File"
+msgstr ""
+
+#: djvumultipage.cpp:338
+msgid "Overwrite"
+msgstr ""
+
+#: djvurenderer.cpp:274
+msgid ""
+"<qt><strong>File error.</strong> The specified file '%1' does not exist.</qt>"
+msgstr "<qt><strong>Dosya hatası.</strong> Belirtilen '%1' dosyası yok.</qt>"
+
+#: djvurenderer.cpp:275 djvurenderer.cpp:297
+msgid "File Error"
+msgstr "Dosya Hatası"
+
+#: djvurenderer.cpp:296
+msgid ""
+"<qt><strong>File error.</strong> The specified file '%1' could not be "
+"loaded.</qt>"
+msgstr ""
+"<qt><strong>Dosya hatası.</strong> Belirtilen '%1' dosyası yüklenemiyor.</qt>"
+
+#: djvurenderer.cpp:402
+msgid "Loading file. Computing page sizes..."
+msgstr "Dosya yükleniyor. Sayfa büyüklükleri hesaplanıyor..."
+
+#: djvurenderer.cpp:580
+msgid "Printing..."
+msgstr "Yazdırılıyor..."
+
+#: djvurenderer.cpp:580
+msgid "Preparing pages for printing..."
+msgstr "Yazdırılacak sayfalar hazırlanıyor..."
+
+#: djvurenderer.cpp:581
+msgid "Abort"
+msgstr "İptal Et"
+
+#: djvurenderer.cpp:637
+msgid "Deleting pages..."
+msgstr "Sayfalar siliniyor..."
+
+#: djvurenderer.cpp:637
+msgid "Please wait while pages are removed..."
+msgstr "Sayfalar kaldırılırken lütfen bekleyin..."
+
+#: djvurenderer.cpp:660
+#, c-format
+msgid "deleting page %1"
+msgstr "%1 sayfası siliniyor"
+
+#: djvurenderer.cpp:708
+#, c-format
+msgid "processing page %1"
+msgstr "%1 sayfası işleniyor"
+
+#: kprintDialogPage_DJVUconversionoptions.cpp:35
+#, fuzzy
+msgid "DJVU to PS Conversion"
+msgstr "DJVU'dan PS'ye çevirim"
+
+#: kprintDialogPage_DJVUpageoptions.cpp:34
+#, fuzzy
+msgid "Page Size & Placement"
+msgstr "Sayfa Boyutu ve Yerleşimi"
+
+#: kprintDialogPage_DJVUpageoptions.cpp:49
+msgid "Automatically choose landscape or portrait orientation"
+msgstr "Otomatik olarak yatay veya düşey yönelimi seç"
+
+#: kprintDialogPage_DJVUpageoptions.cpp:50
+msgid ""
+"If this option is enabled, some pages might be rotated to better fit the paper "
+"size."
+msgstr ""
+"Eğer seçenek etkin ise kağıt boyutuna uydurulmak için bazı sayfalar "
+"çevirilebilir."
+
+#: kprintDialogPage_DJVUpageoptions.cpp:51
+msgid ""
+"<qt>"
+"<p>If this option is enabled, landscape or portrait orientation are "
+"automatically chosen on a page-by-page basis. This makes better use of the "
+"paper and gives more visually-appealing printouts.</p>"
+"<p><b>Note:</b> This option overrides the Portrait/Landscape option chosen in "
+"the printer properties. If this option is enabled, and if the pages in your "
+"document have different sizes, then some pages might be rotated while others "
+"are not.</p></qt>"
+msgstr ""
+"<qt> "
+"<p>Eğer seçenek etkin ise yatay veya düşey yönlendirme her sayfa için otomatik "
+"olarak seçilir. Bu kağıdın daha iyi kullanımını ve daha görsel çıktı almayı "
+"sağlar.</p> "
+"<p><b>Not:</b>Bu seçenek yazıcı seçeneklerindeki Düşey/Yatay seçeneğini etkisiz "
+"kılar. Eğer bu seçenek açıksa ve eğer belgeleriniz farklı büyükteler ise o "
+"zaman bazı sayfalar çevrilmiş bazıları ise çevrilmemiş olacaktır.</p<</qt>"
+
+#: kprintDialogPage_DJVUpageoptions.cpp:62
+msgid "Scale pages to fit paper size"
+msgstr "Kağıt büyüklüğüne göre sığdır"
+
+#: kprintDialogPage_DJVUpageoptions.cpp:63
+msgid ""
+"If this option is enabled, all pages will be scaled to optimally fit the "
+"printer's paper size."
+msgstr ""
+"Eğer bu seçenek etkin ise tüm sayfalar yazıcının kağıdına optimal olarak "
+"sığacak şekilde ölçeklenir."
+
+#: kprintDialogPage_DJVUpageoptions.cpp:64
+msgid ""
+"<qt>"
+"<p>If this option is enabled, all pages will be scaled to optimally fit the "
+"printer's paper size.</p>"
+"<p><b>Note:</b> If this option is enabled, and if the pages in your document "
+"have different sizes, then different pages might be scaled by different scaling "
+"factors.</p></qt>"
+msgstr ""
+"<qt> "
+"<p>Eğer bu seçenek etkinse tüm sayfalar yazıcının kağıdına sığacak şekilde "
+"ölçeklenir.</p> "
+"<p><b>Not:</b> Eğer bu seçenek etkinse ve belgeleriniz farkı boyutlarda ise o "
+"zaman farklı sayfalar farklı ölçeklere sahip olacaklardır.</p></qt>"
+
+#. i18n: file kprintDialogPage_DJVUconversionoptions_basewidget.ui line 32
+#: rc.cpp:9
+#, no-c-format
+msgid "PostScript language level:"
+msgstr "PostScript dil seviyesi:"
+
+#. i18n: file kprintDialogPage_DJVUconversionoptions_basewidget.ui line 48
+#: rc.cpp:12
+#, fuzzy, no-c-format
+msgid "Render mode:"
+msgstr "Gerçekleme Kipi:"
+
+#. i18n: file kprintDialogPage_DJVUconversionoptions_basewidget.ui line 54
+#: rc.cpp:15
+#, no-c-format
+msgid "Level 1 (almost obsolete)"
+msgstr "Seviye 1 (neredeyse terk edilmiş)"
+
+#. i18n: file kprintDialogPage_DJVUconversionoptions_basewidget.ui line 59
+#: rc.cpp:18
+#, no-c-format
+msgid "Level 2 (default)"
+msgstr "Seviye 2 (öntanımlı)"
+
+#. i18n: file kprintDialogPage_DJVUconversionoptions_basewidget.ui line 64
+#: rc.cpp:21
+#, no-c-format
+msgid "Level 3 (might print faster)"
+msgstr "Seviye 3 (daha hızlı yazdırabilir)"
+
+#. i18n: file kprintDialogPage_DJVUconversionoptions_basewidget.ui line 82
+#: rc.cpp:24
+#, no-c-format
+msgid ""
+"<p>With this dialog you can choose the PostScript language level used by "
+"KViewShell. The choice of a language level can dramatically affect printing "
+"speed, but has no impact on the quality of the printout.</p>\n"
+"<p><b>Level 1:</b> This is the most conservative option, because PostScript "
+"Level 1 files can be printed on all printers. The files produced are, however, "
+"extremely long, and printing can be very slow.</p>\n"
+"<p><b>Level 2:</b> Level 2 PostScript files are much smaller and print much "
+"faster than Level 1 files. Level 2 files are supported by almost all "
+"printers.</p>\n"
+"<p><b>Level 3:</b> Level 3 PostScript files are much smaller and print even "
+"faster than Level 2 files. However, Level 3 files are supported only by some "
+"modern printers. If Level 3 works for you, this is the best option.</p>"
+msgstr ""
+"<p>Bu diyalog sayesinde KViewShell tarafından kullanılacak PostScript "
+"dilseviyesini seçebilirsiniz. Bir dil seviyesi seçimi yazdırma hızını önemli "
+"miktarda etkileyebilir ama çıktı kalitesini etkilemez.</p>\n"
+"<p><b>Seviye 1:</b> Bu en uygun seçenektir çünkü tüm PostScript Seviye 1 "
+"dosyaları tüm yazıcılarda basılabilir. Bununla birlikte bu dosyalar çok uzun "
+"sürede yaratılırlar ve çıktı almak uzun sürebilir.</p>\n"
+"<p><b>Seviye 2:</b> Seviye 2 PostScript dosyaları daha küçüktürler ve basımları "
+"Seviye 1 dosyalarından çok daha hızlı olur. Seviye2 dosyaları neredeyse tüm "
+"ayzıcılar tarafından desteklenir.</p>\n"
+"<p><b>Seviye 3:</b> Seviye 3 PostScript dosyaları Seviye 2 dosyalarından daha "
+"küçüktürler ve daha hızlı basılırlar. Ama Seviye 3 dosyaları bazı modern "
+"yazıcılar tarafından desteklenir. Eğer Seviye 3 destekleniyorsa bu en iyi "
+"seçenektir.</p>"
+
+#. i18n: file kprintDialogPage_DJVUconversionoptions_basewidget.ui line 88
+#: rc.cpp:30
+#, fuzzy, no-c-format
+msgid "Print Full Page (default)"
+msgstr "Tüm sayfayı yazdır (ön tanımlı)"
+
+#. i18n: file kprintDialogPage_DJVUconversionoptions_basewidget.ui line 93
+#: rc.cpp:33
+#, fuzzy, no-c-format
+msgid "Black & White"
+msgstr "Siyah Beyaz"
+
+#. i18n: file kprintDialogPage_DJVUconversionoptions_basewidget.ui line 98
+#: rc.cpp:36
+#, fuzzy, no-c-format
+msgid "Foreground Only"
+msgstr "Sadece ön alan"
+
+#. i18n: file kprintDialogPage_DJVUconversionoptions_basewidget.ui line 103
+#: rc.cpp:39
+#, fuzzy, no-c-format
+msgid "Background Only"
+msgstr "Sadece arka alan"
+
+#. i18n: file kprintDialogPage_DJVUconversionoptions_basewidget.ui line 122
+#: rc.cpp:42
+#, fuzzy, no-c-format
+msgid ""
+"<p>Good DJVU files are separated into foreground and background images. The "
+"foreground mostly contains the text. With the render mode you can decide what "
+"part of your page will be printed.</p>\n"
+"<p><b>Print Full Page:</b> The full page, including foreground and background "
+"will be printed, either in color or in grayscale.</p>\n"
+"<p><b>Black & White:</b> Foreground and background are printed, but only in "
+"black-and-white. If this option is chosen, the files generated will print much "
+"faster, but quality will not be as good.</p>\n"
+"<p><b>Foreground Only:</b> This option is useful if the background of the page "
+"is disturbing and affects the readability of the text.</p>\n"
+"<p><b>Background Only:</b> Print only the background of the page.</p>"
+msgstr ""
+"<p>İyi DJVU dosyaları ön alan ve arka alan resimlerine ayrılırmışlardır.Ön alan "
+"genelde metin barındırır. Gerçekleme kipi ile sayfanın hangi bölümünün "
+"basılacağına karar verebilirsiniz.</p>\n"
+"<p><b>Tüm sayfayı yazdır:</b> Tüm sayfa; renkli ya da gri tonda ön alan ve arka "
+"alan dahil olacak şekilde basılır.</p>\n"
+"<p><b>Siyah Beyaz:</b> Ön alan ve arka alan siyah beyaz olarak basılır. Bu "
+"seçenek seçildiğinde basım çok daha hızlı olacak fakat kalite iyi "
+"olmayacaktır.</p>\n"
+"<p><b>Sadece Ön alan:</b> Bu seçenek arka plan metnin okunabilirliğini "
+"etkiliyorsa kullanışlıdır.</p>\n"
+"<p><b>Sadece Arka alan:</b> Sayfanın sadece arka alanını basar.</p>"
+
+#. i18n: file pageRangeWidget_base.ui line 16
+#: rc.cpp:49
+#, no-c-format
+msgid "fromToWidget_base"
+msgstr "fromToWidget_base"
+
+#. i18n: file pageRangeWidget_base.ui line 35
+#: rc.cpp:52
+#, fuzzy, no-c-format
+msgid "From page:"
+msgstr "Şu Sayfadan:"
+
+#. i18n: file pageRangeWidget_base.ui line 56
+#: rc.cpp:55
+#, fuzzy, no-c-format
+msgid "To page:"
+msgstr "Şu Sayfaya:"
+
+#~ msgid "Form1"
+#~ msgstr "Form1"

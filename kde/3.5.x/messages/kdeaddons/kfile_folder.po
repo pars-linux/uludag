@@ -1,0 +1,42 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2004-10-12 01:18+0200\n"
+"PO-Revision-Date: 2002-07-09 21:20+0300\n"
+"Last-Translator: Görkem Çetin <gorkem@gelecek.com.tr>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.6\n"
+
+#: kfile_folder.cpp:42
+msgid "Folder Information"
+msgstr "Dizin Bilgisi"
+
+#: kfile_folder.cpp:46
+msgid "Items"
+msgstr "Öğe"
+
+#: kfile_folder.cpp:47
+msgid "Size"
+msgstr "Boyut"
+
+#~ msgid "%1 bytes"
+#~ msgstr "%1 bayt"
+
+#~ msgid "%1 kB"
+#~ msgstr "%1 kB"
+
+#~ msgid "%1 MB"
+#~ msgstr "%1 MB"
+
+#~ msgid "%1 GB"
+#~ msgstr "%1 GB"
+
+#~ msgid "%1 TB"
+#~ msgstr "%1 TB"

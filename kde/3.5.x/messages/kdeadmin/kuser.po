@@ -1,0 +1,2029 @@
+# translation of kuser.po to
+# Görkem Çetin <gorkem@kde.org>, 2001,2003, 2004.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 1999-2002.
+# Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Ozan Eren BILGEN <oebilgen@uekae.tubitak.gov.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+# Translation of kuser.po to Turkish
+# Copyright (C) 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
+msgid ""
+msgstr ""
+"Project-Id-Version: kuser\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-08 01:20+0200\n"
+"PO-Revision-Date: 2007-05-16 21:09+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=1; plural=0;\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Adil YILDIZ, Ozan Eren BİLGEN"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "adil_yildiztr@yahoo.com, oebilgen@uekae.tubitak.gov.tr"
+
+#: addUser.cpp:45
+msgid "New Account Options"
+msgstr "Yeni Hesap Seçenekleri"
+
+#. i18n: file generalsettings.ui line 142
+#: addUser.cpp:49 rc.cpp:72 rc.cpp:264
+#, no-c-format
+msgid "Create home folder"
+msgstr "Ev dizini oluştur"
+
+#: addUser.cpp:51
+msgid "Copy skeleton"
+msgstr "Temel dosyaları kopyala"
+
+#: addUser.cpp:68
+msgid "User with UID %1 already exists."
+msgstr "%1 numaralı kullanıcı zaten var."
+
+#: addUser.cpp:75
+msgid "User with RID %1 already exists."
+msgstr "%1 numaralı kullanıcı zaten var."
+
+#: addUser.cpp:117
+msgid ""
+"Folder %1 already exists!\n"
+"%2 may become owner and permissions may change.\n"
+"Do you really want to use %3?"
+msgstr ""
+"%1 dizini zaten var!\n"
+"%2 sahibi olabilir ve izin hakları değişebilir.\n"
+"Gerçekten %3 kullanmak istiyor musunuz?"
+
+#: addUser.cpp:124
+msgid "%1 is not a folder."
+msgstr "%1 bir dizin değildir."
+
+#: addUser.cpp:126 addUser.cpp:154
+#, c-format
+msgid "stat() failed on %1."
+msgstr "stat() %1 de başarısız oldu."
+
+#: addUser.cpp:147
+msgid "Mailbox %1 already exists (uid=%2)."
+msgstr "%1 posta kutusu zaten var (uid=%2)."
+
+#: addUser.cpp:151
+msgid "%1 exists but is not a regular file."
+msgstr "%1 mevcut, ancak normal bir dosya değil."
+
+#: delUser.cpp:28
+msgid "Delete User"
+msgstr "Kullanıcı Sil"
+
+#: delUser.cpp:32
+msgid "<p>Deleting user <b>%1</b><p>Also perform the following actions:"
+msgstr "<p><b>%1</b>kullanıcısı siliniyor<p>Ayrıca şu işlemler de yapılacak:"
+
+#: delUser.cpp:35
+#, c-format
+msgid "Delete &home folder: %1"
+msgstr "&Ev dizinini sil: %1"
+
+#: delUser.cpp:37
+#, c-format
+msgid "Delete &mailbox: %1"
+msgstr "E-&posta kutusunu sil: %1"
+
+#: editDefaults.cpp:48 propdlg.cpp:151
+msgid "<Empty>"
+msgstr "<Boş>"
+
+#: editDefaults.cpp:50 editDefaults.cpp:73
+msgid "Connection"
+msgstr "Bağlantı"
+
+#: editDefaults.cpp:52
+msgid "Password Policy"
+msgstr "Parola Poliçesi"
+
+#: editDefaults.cpp:53
+msgid "General"
+msgstr "Genel"
+
+#: editDefaults.cpp:53
+msgid "General Settings"
+msgstr "Genel Ayarlar"
+
+#: editDefaults.cpp:56
+msgid "File Source Settings"
+msgstr "Dosya Kaynak Ayarları"
+
+#: editDefaults.cpp:76
+msgid "Settings"
+msgstr "Ayarlar"
+
+#. i18n: file ldapsamba.ui line 24
+#: editDefaults.cpp:80 propdlg.cpp:267 rc.cpp:84
+#, no-c-format
+msgid "Samba"
+msgstr "Samba"
+
+#. i18n: file generalsettings.ui line 46
+#: editDefaults.cpp:81 rc.cpp:54
+#, no-c-format
+msgid "LDAP"
+msgstr "LDAP"
+
+#: editDefaults.cpp:81
+msgid "LDAP Source Settings"
+msgstr "LDAP Kaynak Ayarları"
+
+#: editDefaults.cpp:115
+msgid "LDAP Query"
+msgstr "LDAP Sorgusu"
+
+#: editGroup.cpp:39
+msgid "Group Properties"
+msgstr "Grup Özellikleri"
+
+#: editGroup.cpp:49
+msgid "Domain Admins"
+msgstr "Alan Yöneticileri"
+
+#: editGroup.cpp:49
+msgid "Admins"
+msgstr "Yöneticiler"
+
+#: editGroup.cpp:50
+msgid "Domain Users"
+msgstr "Alan Kullanıcıları"
+
+#: editGroup.cpp:50 mainView.cpp:50
+msgid "Users"
+msgstr "Kullanıcılar"
+
+#: editGroup.cpp:51
+msgid "Domain Guests"
+msgstr "Alan Ziyaretçileri"
+
+#: editGroup.cpp:51
+msgid "Guests"
+msgstr "Ziyaretçiler"
+
+#: editGroup.cpp:58
+msgid "Group number:"
+msgstr "Grup numarası:"
+
+#: editGroup.cpp:72
+msgid "Group rid:"
+msgstr "Grup rid:"
+
+#: editGroup.cpp:90
+msgid "Group name:"
+msgstr "Grup adı:"
+
+#: editGroup.cpp:104
+msgid "Description:"
+msgstr "Açıklama:"
+
+#: editGroup.cpp:113
+msgid "Display name:"
+msgstr "Görünüm adı:"
+
+#: editGroup.cpp:122
+msgid "Type:"
+msgstr "Tipi:"
+
+#: editGroup.cpp:124 kgroupvw.cpp:69
+msgid "Domain"
+msgstr "Alan"
+
+#: editGroup.cpp:125 kgroupvw.cpp:70
+msgid "Local"
+msgstr "Yerel"
+
+#: editGroup.cpp:126 kgroupvw.cpp:71
+msgid "Builtin"
+msgstr "Yapım"
+
+#: editGroup.cpp:143 propdlg.cpp:309
+msgid "Domain SID:"
+msgstr "Alan SID:"
+
+#: editGroup.cpp:151
+msgid "Disable Samba group information"
+msgstr "Samba grup bilgisini kapat"
+
+#: editGroup.cpp:163
+msgid "Users in Group"
+msgstr "Gruptaki Kullanıcılar"
+
+#: editGroup.cpp:168
+msgid "Add <-"
+msgstr "Ekle <-"
+
+#: editGroup.cpp:169
+msgid "Remove ->"
+msgstr "Kaldır ->"
+
+#: editGroup.cpp:174
+msgid "Users NOT in Group"
+msgstr "Grupta OLMAYAN Kullanıcılar"
+
+#: editGroup.cpp:269
+msgid "You need to type a group name."
+msgstr "Bir grup adı girmelisiniz."
+
+#: editGroup.cpp:277
+msgid "Group with name %1 already exists."
+msgstr "%1 isimli grup zaten var."
+
+#: editGroup.cpp:284
+msgid "Group with SID %1 already exists."
+msgstr "SID %1 olan grup zaten var."
+
+#: editGroup.cpp:289
+msgid "Group with gid %1 already exists."
+msgstr "%1 numaralı grup zaten var."
+
+#: kgroupfiles.cpp:97
+msgid ""
+"stat call on file %1 failed: %2\n"
+"Check KUser settings."
+msgstr ""
+"%1 üzerindeki stat çağrısında hata: %2\n"
+"KUser ayarlarını yeniden denetleyin."
+
+#: kgroupfiles.cpp:124 kuserfiles.cpp:158 kuserfiles.cpp:241
+msgid "Error opening %1 for reading."
+msgstr "%1 okuma için açılırken hata oluştu."
+
+#: kgroupfiles.cpp:236 kgroupfiles.cpp:243 kgroupfiles.cpp:251
+#: kuserfiles.cpp:346 kuserfiles.cpp:352 kuserfiles.cpp:526
+msgid "Error opening %1 for writing."
+msgstr "%1 yazmak için açılırken hata oluştu."
+
+#: kgroupfiles.cpp:357
+msgid ""
+"Unable to process NIS group file without a minimum GID specified.\n"
+"Please update KUser settings (File Source Settings)."
+msgstr ""
+"Minimum GID belirtmeden NIS grup dosyası işlenemez.\n"
+"Lütfen KUser ayarlarını (kaynaklarını) güncelleyin."
+
+#: kgroupfiles.cpp:361
+msgid ""
+"Specifying NIS minimum GID requires NIS file(s).\n"
+"Please update KUser settings (File Source Settings)."
+msgstr ""
+"Belirtilen NIS minimum GID NIS dosyası(ları) gerektiriyor.\n"
+"Lütfen KUser ayarlarını (kaynaklarını) güncelleyin."
+
+#: kgroupfiles.cpp:367
+msgid "Unable to build NIS group databases."
+msgstr "NIS grup veritabanı oluşturulamıyor."
+
+#: kgroupldap.cpp:164
+msgid "Loading Groups From LDAP"
+msgstr "Gruplar LDAP'tan Yükleniyor"
+
+#: kgroupldap.cpp:194 kuserldap.cpp:611
+msgid "LDAP Operation"
+msgstr "LDAP İşlemi"
+
+#: kgroupvw.cpp:72
+msgid "Unknown"
+msgstr "Bilinmeyen"
+
+#: kgroupvw.cpp:124
+msgid "GID"
+msgstr "GID"
+
+#: kgroupvw.cpp:126
+msgid "Group Name"
+msgstr "Grup Adı"
+
+#: kgroupvw.cpp:129 kuservw.cpp:129
+msgid "Domain SID"
+msgstr "Alan SID"
+
+#: kgroupvw.cpp:130 kuservw.cpp:130
+msgid "RID"
+msgstr "RID"
+
+#: kgroupvw.cpp:131
+msgid "Type"
+msgstr "Tipi"
+
+#: kgroupvw.cpp:132
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#: kgroupvw.cpp:133
+msgid "Description"
+msgstr "Açıklama"
+
+#: kuser.cpp:551
+msgid "Cannot create home folder for %1: it is null or empty."
+msgstr "%1 için ev dizini oluşturulamıyor. Bu dizin boş."
+
+#: kuser.cpp:557
+msgid ""
+"Cannot create home folder %1.\n"
+"Error: %2"
+msgstr ""
+"%1 ev dizini oluşturulamıyor.\n"
+"Hata: %2"
+
+#: kuser.cpp:563
+msgid ""
+"Cannot change owner of home folder %1.\n"
+"Error: %2"
+msgstr ""
+"%1 dizininin sahibi değiştirilemiyor.\n"
+"Hata: %2"
+
+#: kuser.cpp:568
+msgid ""
+"Cannot change permissions on home folder %1.\n"
+"Error: %2"
+msgstr ""
+"%1 dizini üzerindeki izinler değiştirilemiyor.\n"
+"Hata: %2"
+
+#: kuser.cpp:583
+msgid ""
+"Folder %1 already exists!\n"
+"Will make %2 owner and change permissions.\n"
+"Do you want to continue?"
+msgstr ""
+"%1 dizini zaten var!\n"
+"Sahibi %2 olarak değişecek ve izinlerinde ayarlamalar yapılacak.\n"
+"Devam etmek istiyor musunuz?"
+
+#: kuser.cpp:587 kuser.cpp:605
+msgid ""
+"Cannot change owner of %1 folder.\n"
+"Error: %2"
+msgstr ""
+"%1 dizininin sahibi değiştirilemiyor.\n"
+"Hata: %2"
+
+#: kuser.cpp:591
+msgid ""
+"Folder %1 left 'as is'.\n"
+"Verify ownership and permissions for user %2 who may not be able to log in!"
+msgstr ""
+"%1 dizini olduğu gibi bırakılıyor.\n"
+"Lütfen %2 kullanıcısının dizin haklarını gözden geçirin. Bu kullanıcı giriş "
+"yapamayabilir!"
+
+#: kuser.cpp:595
+msgid "%1 exists and is not a folder. User %2 will not be able to log in!"
+msgstr "%1 var, ancak bir dizin değil. %2 kullanıcısı giriş yapamayacaktır!"
+
+#: kuser.cpp:601
+msgid ""
+"Cannot create %1 folder.\n"
+"Error: %2"
+msgstr ""
+"%1 dizini oluşturulamıyor.\n"
+"Hata: %2"
+
+#: kuser.cpp:609
+msgid ""
+"stat call on %1 failed.\n"
+"Error: %2"
+msgstr ""
+"%1 üzerinde stat çağrısı başarısız.\n"
+"Hata: %2"
+
+#: kuser.cpp:624
+msgid "Cannot create %1: %2"
+msgstr "%1 oluşturulamıyor : %2"
+
+#: kuser.cpp:634
+msgid ""
+"Cannot change owner on mailbox: %1\n"
+"Error: %2"
+msgstr ""
+"Posta kutusunun sahibi değiştirilemiyor: %1\n"
+"Hata: %2"
+
+#: kuser.cpp:640
+msgid ""
+"Cannot change permissions on mailbox: %1\n"
+"Error: %2"
+msgstr ""
+"Posta kutusunun izinleri değiştirilemiyor: %1\n"
+"Hata: %2"
+
+#: kuser.cpp:685
+msgid ""
+"Error creating symlink %1.\n"
+"Error: %2"
+msgstr ""
+"%1 sembolik bağlantısı oluşturulamıyor.\n"
+"Hata: %2"
+
+#: kuser.cpp:695
+msgid ""
+"Cannot change owner of folder %1.\n"
+"Error: %2"
+msgstr ""
+"%1 dizininin sahibi değiştirilemiyor.\n"
+"Hata: %2"
+
+#: kuser.cpp:700
+msgid ""
+"Cannot change permissions on folder %1.\n"
+"Error: %2"
+msgstr ""
+"%1 dizin izinleri değiştirilemiyor.\n"
+"Hata: %2"
+
+#: kuser.cpp:710
+msgid ""
+"Cannot change owner of file %1.\n"
+"Error: %2"
+msgstr ""
+"%1 dosyasının sahibi değiştirilemiyor.\n"
+"Hata: %2"
+
+#: kuser.cpp:715
+msgid ""
+"Cannot change permissions on file %1.\n"
+"Error: %2"
+msgstr ""
+"%1 dosyasının izinleri değiştirilemiyor.\n"
+"Hata: %2"
+
+#: kuser.cpp:729
+msgid "Folder %1 does not exist, cannot copy skeleton for %2."
+msgstr "%1 dizini bulunamadı, %2 için başlangıç dosyaları kopyalanamıyor."
+
+#: kuser.cpp:734
+msgid "Folder %1 does not exist, cannot copy skeleton."
+msgstr "%1 dizini bulunamadı, iskelet kopyalanamıyor."
+
+#: kuser.cpp:752
+msgid ""
+"Cannot remove home folder %1.\n"
+"Error: %2"
+msgstr ""
+"%1 ev dizini silinemiyor.\n"
+"Hata: %2"
+
+#: kuser.cpp:756
+msgid "Removal of home folder %1 failed (uid = %2, gid = %3)."
+msgstr "%1 ev dizininin silinmesinde bir hata oluştu (uid = %2, gid = %3)."
+
+#: kuser.cpp:759
+msgid ""
+"stat call on file %1 failed.\n"
+"Error: %2"
+msgstr ""
+"%1 üzerindeki stat çağrısında hata.\n"
+"Hata: %2"
+
+#: kuser.cpp:777
+msgid ""
+"Cannot remove crontab %1.\n"
+"Error: %2"
+msgstr ""
+"%1 crontab görevi silinemiyor.\n"
+"Hata: %2"
+
+#: kuser.cpp:791
+msgid ""
+"Cannot remove mailbox %1.\n"
+"Error: %2"
+msgstr ""
+"%1 posta kutusu silinemiyor.\n"
+"Hata: %2"
+
+#: kuser.cpp:811
+#, c-format
+msgid "Cannot fork while trying to kill processes for uid %1."
+msgstr "UID %1 için işlemler kapatılırken kaldırılamıyor."
+
+#: kuserfiles.cpp:118
+msgid ""
+"KUser sources were not configured.\n"
+"Local passwd source set to %1\n"
+"Local group source set to %2."
+msgstr ""
+"Kuser kaynakları yapılandırılmadı.\n"
+"Yerel parola kaynakları %1 olarak tanımlandı\n"
+"Yerel grup kaynakları %2 olarak tanımlandı."
+
+#: kuserfiles.cpp:131
+msgid ""
+"Stat call on file %1 failed: %2\n"
+"Check KUser settings."
+msgstr ""
+"%1 üzerindeki stat çağrısında hata: %2\n"
+"KUser ayarlarını kontrol edin."
+
+#: kuserfiles.cpp:253
+msgid ""
+"No /etc/passwd entry for %1.\n"
+"Entry will be removed at the next `Save'-operation."
+msgstr ""
+"%1 için /etc/passwd girişi bulunamadı.\n"
+"Giriş bir sonraki 'Kaydet' işleminde silinecek."
+
+#: kuserfiles.cpp:475
+msgid ""
+"Unable to process NIS passwd file without a minimum UID specified.\n"
+"Please update KUser settings (Files)."
+msgstr ""
+"NIS parola dosyası en düşük UID bilgisi olmadan işlenemiyor.\n"
+"Lütfen KUser ayar(dosya)larınızı güncelleyin."
+
+#: kuserfiles.cpp:479
+msgid ""
+"Specifying NIS minimum UID requires NIS file(s).\n"
+"Please update KUser settings (Files)."
+msgstr ""
+"Belirtilen NIS minimum UID NIS dosyası(ları) gerektiriyor.\n"
+"Lütfen KUser ayarlarını (Dosyalarını) güncelleyin."
+
+#: kuserfiles.cpp:486
+msgid "Unable to build password database."
+msgstr "Parola veritabanı oluşturulamıyor."
+
+#: kuserfiles.cpp:492
+msgid "Unable to build password databases."
+msgstr "Parola veritabanları oluşturulamıyor."
+
+#: kuserldap.cpp:243
+msgid "Loading Users From LDAP"
+msgstr "Kullanıcılar LDAP'tan Yükleniyor"
+
+#: kuservw.cpp:120
+msgid "UID"
+msgstr "UID"
+
+#: kuservw.cpp:122
+msgid "User Login"
+msgstr "Kullanıcı Girişi"
+
+#: kuservw.cpp:123
+msgid "Full Name"
+msgstr "Tam İsim"
+
+#: kuservw.cpp:124
+msgid "Home Directory"
+msgstr "Ev Dizini"
+
+#: kuservw.cpp:125
+msgid "Login Shell"
+msgstr "Giriş Kabuğu"
+
+#: kuservw.cpp:131
+msgid "Samba Login Script"
+msgstr "Samba Giriş Kodu"
+
+#: kuservw.cpp:132
+msgid "Samba Profile Path"
+msgstr "Samba Profil Yolu"
+
+#: kuservw.cpp:133
+msgid "Samba Home Drive"
+msgstr "Samba Ev Sürücüsü"
+
+#: kuservw.cpp:134
+msgid "Samba Home Path"
+msgstr "Samba Ev Yolu"
+
+#: main.cpp:36
+msgid "KDE User Editor"
+msgstr "KDE Kullanıcı Düzenleyicisi"
+
+#: main.cpp:43
+msgid "KUser"
+msgstr "KUser"
+
+#: main.cpp:46 main.cpp:48
+msgid "kuser author"
+msgstr "kuser yazarı"
+
+#: main.cpp:61
+msgid "KDE User Manager"
+msgstr "KDE Kullanıcı Yöneticisi"
+
+#: mainView.cpp:53 propdlg.cpp:320 propdlg.cpp:325
+msgid "Groups"
+msgstr "Gruplar"
+
+#: mainView.cpp:166
+msgid ""
+"You are using private groups.\n"
+"Do you want to delete the user's private group '%1'?"
+msgstr ""
+"Özel gruplar kullanıyorsunuz.\n"
+"Kullanıcının özel grubunu da (%1) silmek istiyor musunuz ?"
+
+#: mainView.cpp:169
+msgid "Do Not Delete"
+msgstr "Silme"
+
+#: mainView.cpp:188
+msgid "You have run out of uid space."
+msgstr "UID alanınız kalmadı."
+
+#: mainView.cpp:200
+msgid "Please type the name of the new user:"
+msgstr "Yeni kullanıcının adını girin:"
+
+#: mainView.cpp:206
+msgid "User with name %1 already exists."
+msgstr "%1 isimli kullanıcı zaten var."
+
+#: mainView.cpp:307
+msgid ""
+"You have selected %1 users. Do you really want to change the password for all "
+"the selected users?"
+msgstr ""
+"%1 kullanıcı seçtiniz. Tüm seçili kullanıcıların parolalarını değiştirmek "
+"istediğinizden emin misiniz?"
+
+#: mainView.cpp:308 propdlg.cpp:510
+msgid "Do Not Change"
+msgstr "Değiştirme"
+
+#: mainView.cpp:396
+msgid "You have run out of gid space."
+msgstr "GID alanınız kalmadı."
+
+#: mainView.cpp:447
+msgid ""
+"The group '%1' is the primary group of one or more users (such as '%2'); it "
+"cannot be deleted."
+msgstr ""
+"'%1' grubu bir veya daha fazla kullanıcının (örneğin '%2') birincil grubu; "
+"silinemez."
+
+#: mainView.cpp:460
+msgid "Do you really want to delete the group '%1'?"
+msgstr "'%1' grubunu gerçekten silmek istiyor musunuz?"
+
+#: mainView.cpp:465
+msgid "Do you really want to delete the %1 selected groups?"
+msgstr "%1 seçili gruplarını gerçekten silmek istiyor musunuz?"
+
+#: mainWidget.cpp:50
+msgid "Reading configuration"
+msgstr "Yapılandırma okunuyor"
+
+#: mainWidget.cpp:56
+msgid "Ready"
+msgstr "Hazır"
+
+#: mainWidget.cpp:78 mainWidget.cpp:90
+msgid "&Add..."
+msgstr "&Ekle..."
+
+#: mainWidget.cpp:81 mainWidget.cpp:93
+msgid "&Edit..."
+msgstr "&Düzenle..."
+
+#: mainWidget.cpp:84
+msgid "&Delete..."
+msgstr "&Sil..."
+
+#: mainWidget.cpp:87
+msgid "&Set Password..."
+msgstr "&Parola Tanımla..."
+
+#: mainWidget.cpp:104
+msgid "&Select Connection..."
+msgstr "Bağlantı &Seç..."
+
+#: mainWidget.cpp:108
+msgid "Show System Users/Groups"
+msgstr "Sistem Kullanıcı/Gruplarını Göster"
+
+#: mainWidget.cpp:111
+msgid "Hide System Users/Groups"
+msgstr "Sistem Kullanıcı/Gruplarını Gizle"
+
+#: misc.cpp:46
+#, c-format
+msgid "Can't create backup file for %1"
+msgstr "%1 için yedekleme dosyası oluşturulamıyor"
+
+#: misc.cpp:71
+msgid "File %1 does not exist."
+msgstr "%1 dosyası mevcut değil."
+
+#: misc.cpp:76
+msgid "Cannot open file %1 for reading."
+msgstr "%1 dosyası okumak için açılamıyor."
+
+#: misc.cpp:81
+msgid "Cannot open file %1 for writing."
+msgstr "%1 dosyası yazmak için açılamıyor."
+
+#: propdlg.cpp:60 propdlg.cpp:91
+msgid "Do not change"
+msgstr "Değiştirme"
+
+#. i18n: file passwordpolicy.ui line 82
+#: propdlg.cpp:76 rc.cpp:198 rc.cpp:204 rc.cpp:213 rc.cpp:219
+#, no-c-format
+msgid " days"
+msgstr " gün"
+
+#. i18n: file passwordpolicy.ui line 85
+#: propdlg.cpp:81 propdlg.cpp:257 rc.cpp:201 rc.cpp:207 rc.cpp:216 rc.cpp:225
+#, no-c-format
+msgid "Never"
+msgstr "Hiç bir zaman"
+
+#: propdlg.cpp:107
+msgid "User Info"
+msgstr "Kullanıcı Bilgisi"
+
+#: propdlg.cpp:116
+msgid "User login:"
+msgstr "Kullanıcı Girişi:"
+
+#: propdlg.cpp:121
+msgid "&User ID:"
+msgstr "&Kullanıcı No:"
+
+#: propdlg.cpp:125
+msgid "Set &Password..."
+msgstr "&Parola Tanımla..."
+
+#: propdlg.cpp:133
+msgid "Full &name:"
+msgstr "&Tam isim:"
+
+#: propdlg.cpp:140
+msgid "Surname:"
+msgstr "Soyadı:"
+
+#: propdlg.cpp:145
+msgid "Email address:"
+msgstr "Email adresi:"
+
+#: propdlg.cpp:159
+msgid "&Login shell:"
+msgstr "&Giriş kabuğu:"
+
+#: propdlg.cpp:164
+msgid "&Home folder:"
+msgstr "&Ev dizini:"
+
+#: propdlg.cpp:172
+msgid "&Office:"
+msgstr "İş&yeri:"
+
+#: propdlg.cpp:177
+msgid "Offi&ce Phone:"
+msgstr "İşyeri &telefonu:"
+
+#: propdlg.cpp:182
+msgid "Ho&me Phone:"
+msgstr "Ev t&elefonu:"
+
+#: propdlg.cpp:187
+msgid "Login class:"
+msgstr "Giriş sınıfı:"
+
+#: propdlg.cpp:192
+msgid "&Office #1:"
+msgstr "&1. işyeri:"
+
+#: propdlg.cpp:197
+msgid "O&ffice #2:"
+msgstr "&2. işyeri:"
+
+#: propdlg.cpp:202
+msgid "&Address:"
+msgstr "&Adres:"
+
+#: propdlg.cpp:206
+msgid "Account &disabled"
+msgstr "Hesap kapatıl&dı"
+
+#: propdlg.cpp:212
+msgid "Disable &POSIX account information"
+msgstr "&POSIX hesap bilgisini kapat"
+
+#: propdlg.cpp:224
+msgid "Password Management"
+msgstr "Parola Yönetimi"
+
+#: propdlg.cpp:230
+msgid "Last password change:"
+msgstr "Son Parola Değişimi:"
+
+#: propdlg.cpp:236
+msgid "POSIX parameters:"
+msgstr "POSIX parametreleri:"
+
+#: propdlg.cpp:237
+msgid "Time before password may &not be changed after last password change:"
+msgstr "So&n şifre değişikliğinden sonra şifrenin değiştirilemeyeceği süre:"
+
+#: propdlg.cpp:238
+msgid "Time when password &expires after last password change:"
+msgstr ""
+"Son parola d&eğişikliğinden sonra şifrenin zaman aşımına uğrama süresi:"
+
+#: propdlg.cpp:239
+msgid "Time before password expires to &issue an expire warning:"
+msgstr "Ş&ifrenin zaman aşımına uğramadan önce gelecek olan uyarının süresi:"
+
+#: propdlg.cpp:240
+msgid "Time when account will be &disabled after expiration of password:"
+msgstr "Parolanın zaman aşımına uğramasın&dan sonra hesabın kapatılacağı süre:"
+
+#: propdlg.cpp:251
+msgid "&Account will expire on:"
+msgstr "&Hesap bu tarihte kapatılacak:"
+
+#: propdlg.cpp:274
+msgid "RID:"
+msgstr "RID:"
+
+#: propdlg.cpp:279
+msgid "Login script:"
+msgstr "Giriş kodu:"
+
+#: propdlg.cpp:284
+msgid "Profile path:"
+msgstr "Profil yolu:"
+
+#. i18n: file ldapsamba.ui line 79
+#: propdlg.cpp:289 rc.cpp:93
+#, no-c-format
+msgid "Home drive:"
+msgstr "Ev sürücüsü:"
+
+#: propdlg.cpp:294
+msgid "Home path:"
+msgstr "Ev yolu:"
+
+#: propdlg.cpp:299
+msgid "User workstations:"
+msgstr "Kullanıcı iş istasyonları:"
+
+#. i18n: file ldapsamba.ui line 169
+#: propdlg.cpp:304 rc.cpp:105
+#, no-c-format
+msgid "Domain name:"
+msgstr "Alan adı:"
+
+#: propdlg.cpp:315
+msgid "Disable &Samba account information"
+msgstr "&Samba hesap bilgisini kapat"
+
+#: propdlg.cpp:330 propdlg.cpp:638 propdlg.cpp:673
+msgid "Primary group: "
+msgstr "Birincil Grup: "
+
+#: propdlg.cpp:333
+msgid "Set as Primary"
+msgstr "Birincil olarak Ata"
+
+#: propdlg.cpp:344 propdlg.cpp:359
+msgid "User Properties"
+msgstr "Kullanıcı Özellikleri"
+
+#: propdlg.cpp:349
+msgid "User Properties - %1 Selected Users"
+msgstr "Kullanıcı Özellikleri - %1 Seçili Kullanıcı"
+
+#: propdlg.cpp:882
+msgid "You need to specify an UID."
+msgstr "Bir UID belirtmelisiniz."
+
+#: propdlg.cpp:887
+msgid "You must specify a home directory."
+msgstr "Ev dizini belirtmelisiniz."
+
+#: propdlg.cpp:893
+msgid "You must fill the surname field."
+msgstr "Soyadı alanını doldurmalısınız."
+
+#: propdlg.cpp:900
+msgid "You need to specify a samba RID."
+msgstr "Bir samba RID belirtmelisiniz."
+
+#: propdlg.cpp:944
+msgid "User with UID %1 already exists"
+msgstr "%1 numaralı kullanıcı zaten var"
+
+#: propdlg.cpp:954
+msgid "User with RID %1 already exists"
+msgstr "RID %1 olan kullanıcı zaten var"
+
+#: propdlg.cpp:968
+msgid ""
+"<p>The shell %1 is not yet listed in the file %2. In order to use this shell "
+"you must add it to this file first."
+"<p>Do you want to add it now?"
+msgstr ""
+"<p>%1 kabuğu %2 dosyasında listelenmiyor. Bu kabuğu kullanmak için öncelikle bu "
+"dosyaya eklemelisiniz."
+"<p>Bunu şimdi eklemek istiyor musunuz?"
+
+#: propdlg.cpp:972
+msgid "Unlisted Shell"
+msgstr "Listelenmeyen Kabuk"
+
+#: propdlg.cpp:973
+msgid "&Add Shell"
+msgstr "Kabuk &Ekle"
+
+#: propdlg.cpp:974
+msgid "Do &Not Add"
+msgstr "Ekle&me"
+
+#: pwddlg.cpp:29
+msgid "Enter Password"
+msgstr "Parolayı Girin"
+
+#: pwddlg.cpp:34
+msgid "Password:"
+msgstr "Parola:"
+
+#: pwddlg.cpp:50
+msgid "Verify:"
+msgstr "Doğrulama:"
+
+#: pwddlg.cpp:74
+msgid ""
+"Passwords are not identical.\n"
+"Try again."
+msgstr ""
+"Girdiğiniz parolalar birbirinden farklı.\n"
+"Lütfen tekrar deneyin."
+
+#. i18n: file kuserui.rc line 8
+#: rc.cpp:6
+#, no-c-format
+msgid "&User"
+msgstr "&Kullanıcı"
+
+#. i18n: file kuserui.rc line 14
+#: rc.cpp:9
+#, no-c-format
+msgid "&Group"
+msgstr "&Grup"
+
+#. i18n: file filessettings.ui line 40
+#: rc.cpp:15
+#, no-c-format
+msgid "Local User Database Files"
+msgstr "Yerel Kullanıcı Veritabanı Dosyaları"
+
+#. i18n: file filessettings.ui line 51
+#: rc.cpp:18
+#, no-c-format
+msgid "Group file:"
+msgstr "Grup dosyası:"
+
+#. i18n: file filessettings.ui line 62
+#: rc.cpp:21
+#, no-c-format
+msgid "Password file:"
+msgstr "Parola dosyası:"
+
+#. i18n: file filessettings.ui line 83
+#: rc.cpp:24
+#, no-c-format
+msgid "Shadow password file:"
+msgstr "Gölge parola dosyası:"
+
+#. i18n: file filessettings.ui line 104
+#: rc.cpp:27
+#, no-c-format
+msgid "Shadow group file:"
+msgstr "Gölge grup dosyası:"
+
+#. i18n: file filessettings.ui line 115
+#: rc.cpp:30
+#, no-c-format
+msgid "MD5 shadow passwords"
+msgstr "MD5 gölge parolaları"
+
+#. i18n: file filessettings.ui line 133
+#: rc.cpp:33
+#, no-c-format
+msgid "NIS Settings"
+msgstr "NIS Ayarları"
+
+#. i18n: file filessettings.ui line 144
+#: rc.cpp:36
+#, no-c-format
+msgid "NIS password source:"
+msgstr "NIS parola kaynağı:"
+
+#. i18n: file filessettings.ui line 155
+#: rc.cpp:39
+#, no-c-format
+msgid "NIS group source:"
+msgstr "NIS grup kaynağı:"
+
+#. i18n: file filessettings.ui line 166
+#: rc.cpp:42
+#, no-c-format
+msgid "NIS minimum UID:"
+msgstr "NIS asgari UID:"
+
+#. i18n: file filessettings.ui line 177
+#: rc.cpp:45
+#, no-c-format
+msgid "NIS minimum GID:"
+msgstr "NIS asgari GID:"
+
+#. i18n: file generalsettings.ui line 32
+#: rc.cpp:48
+#, no-c-format
+msgid "Source of user/group database:"
+msgstr "Kullanıcı/grup veritabanı kaynağı:"
+
+#. i18n: file generalsettings.ui line 51
+#: rc.cpp:57
+#, no-c-format
+msgid "System"
+msgstr "Sistem"
+
+#. i18n: file generalsettings.ui line 78
+#: rc.cpp:60
+#, no-c-format
+msgid "First normal GID:"
+msgstr "Birinci normal GID:"
+
+#. i18n: file generalsettings.ui line 89
+#: rc.cpp:63 rc.cpp:99
+#, no-c-format
+msgid "Home path template:"
+msgstr "Ev dizini şablonu:"
+
+#. i18n: file generalsettings.ui line 100
+#: rc.cpp:66
+#, no-c-format
+msgid "Shell:"
+msgstr "Kabuk:"
+
+#. i18n: file generalsettings.ui line 119
+#: rc.cpp:69
+#, no-c-format
+msgid "First normal UID:"
+msgstr "Birinci normal UID:"
+
+#. i18n: file generalsettings.ui line 153
+#: rc.cpp:75 rc.cpp:270
+#, no-c-format
+msgid "Copy skeleton to home folder"
+msgstr "Temel dosyaları ev dizinine kopyala"
+
+#. i18n: file generalsettings.ui line 169
+#: rc.cpp:78 rc.cpp:276
+#, no-c-format
+msgid "User private groups"
+msgstr "Kullanıcı özel grupları"
+
+#. i18n: file generalsettings.ui line 177
+#: rc.cpp:81
+#, no-c-format
+msgid "Default group:"
+msgstr "Öntanımlı grup:"
+
+#. i18n: file ldapsamba.ui line 38
+#: rc.cpp:87
+#, no-c-format
+msgid "Manage Samba user accounts/groups"
+msgstr "Samba kullanıcı hesabı/gruplarını yönet"
+
+#. i18n: file ldapsamba.ui line 65
+#: rc.cpp:90
+#, no-c-format
+msgid "Default login script:"
+msgstr "Varsayılan giriş kodu:"
+
+#. i18n: file ldapsamba.ui line 93
+#: rc.cpp:96
+#, no-c-format
+msgid "Profile path template:"
+msgstr "Profil yol şablonu:"
+
+#. i18n: file ldapsamba.ui line 150
+#: rc.cpp:102 rc.cpp:522
+#, no-c-format
+msgid "Store LanManager hashed password"
+msgstr "Öz alınmış LanManager parolasını sakla"
+
+#. i18n: file ldapsamba.ui line 191
+#: rc.cpp:108
+#, no-c-format
+msgid "&Query Server"
+msgstr "&Sunucuyu Sorgula"
+
+#. i18n: file ldapsamba.ui line 204
+#: rc.cpp:111
+#, no-c-format
+msgid "Domain SID (you can obtain with 'net getlocalsid domain_name'):"
+msgstr "Alan SID ('net getlocalsid alan_adi' ile elde edebilrsiniz):"
+
+#. i18n: file ldapsamba.ui line 234
+#: rc.cpp:114
+#, no-c-format
+msgid "Algorithmic RID base:"
+msgstr ""
+
+#. i18n: file ldapsettings.ui line 35
+#: rc.cpp:117 rc.cpp:168
+#, no-c-format
+msgid "cn"
+msgstr "cn"
+
+#. i18n: file ldapsettings.ui line 40
+#: rc.cpp:120
+#, no-c-format
+msgid "gidNumber"
+msgstr "gidNumarası"
+
+#. i18n: file ldapsettings.ui line 55
+#: rc.cpp:123
+#, no-c-format
+msgid "Plain Text"
+msgstr "Salt Metin"
+
+#. i18n: file ldapsettings.ui line 60
+#: rc.cpp:126
+#, no-c-format
+msgid "CRYPT"
+msgstr "CRYPT"
+
+#. i18n: file ldapsettings.ui line 65
+#: rc.cpp:129
+#, no-c-format
+msgid "MD5"
+msgstr "MD5"
+
+#. i18n: file ldapsettings.ui line 70
+#: rc.cpp:132
+#, no-c-format
+msgid "SMD5"
+msgstr "SMD5"
+
+#. i18n: file ldapsettings.ui line 75
+#: rc.cpp:135
+#, no-c-format
+msgid "SHA"
+msgstr "SHA"
+
+#. i18n: file ldapsettings.ui line 80
+#: rc.cpp:138
+#, no-c-format
+msgid "SSHA"
+msgstr "SSHA"
+
+#. i18n: file ldapsettings.ui line 92
+#: rc.cpp:141
+#, no-c-format
+msgid "User base:"
+msgstr "Kullanıcı tabanı:"
+
+#. i18n: file ldapsettings.ui line 103
+#: rc.cpp:144
+#, no-c-format
+msgid "Group filter:"
+msgstr "Grup filtresi:"
+
+#. i18n: file ldapsettings.ui line 114
+#: rc.cpp:147
+#, no-c-format
+msgid "Structural objectclass:"
+msgstr "Yapısal nesne sınıfı:"
+
+#. i18n: file ldapsettings.ui line 125
+#: rc.cpp:150
+#, no-c-format
+msgid "User filter:"
+msgstr "Kullanıcı filtresi:tabanı:"
+
+#. i18n: file ldapsettings.ui line 144
+#: rc.cpp:153
+#, no-c-format
+msgid "account"
+msgstr "hesap"
+
+#. i18n: file ldapsettings.ui line 149
+#: rc.cpp:156
+#, no-c-format
+msgid "inetOrgPerson"
+msgstr "inetOrgPerson"
+
+#. i18n: file ldapsettings.ui line 161
+#: rc.cpp:159
+#, no-c-format
+msgid "Group RDN prefix:"
+msgstr "Grup RDN önadı:"
+
+#. i18n: file ldapsettings.ui line 170
+#: rc.cpp:162
+#, no-c-format
+msgid "uid"
+msgstr "uid"
+
+#. i18n: file ldapsettings.ui line 175
+#: rc.cpp:165
+#, no-c-format
+msgid "uidNumber"
+msgstr "uidNumarası"
+
+#. i18n: file ldapsettings.ui line 192
+#: rc.cpp:171
+#, no-c-format
+msgid "Group base:"
+msgstr "Grup tabanı:"
+
+#. i18n: file ldapsettings.ui line 203
+#: rc.cpp:174
+#, no-c-format
+msgid "User RDN prefix:"
+msgstr "Kullanıcı RDN önadı:"
+
+#. i18n: file ldapsettings.ui line 214
+#: rc.cpp:177
+#, no-c-format
+msgid "Password hash:"
+msgstr "Parola karıştırma:"
+
+#. i18n: file ldapsettings.ui line 227
+#: rc.cpp:180
+#, no-c-format
+msgid "Manage shadowAccount objectclass"
+msgstr "GölgeHesap nesne sınıfını yönet"
+
+#. i18n: file ldapsettings.ui line 235
+#: rc.cpp:183 rc.cpp:438
+#, no-c-format
+msgid "Store the user's full name in the cn attribute"
+msgstr "Kullanıcının tam adını cn özniteliğinde sakla"
+
+#. i18n: file ldapsettings.ui line 243
+#: rc.cpp:186
+#, no-c-format
+msgid "Update the gecos attribute"
+msgstr "Kullanıcı isim bilgisini güncelle"
+
+#. i18n: file passwordpolicy.ui line 40
+#: rc.cpp:189
+#, no-c-format
+msgid "Time before password expires to issue an expire warning:"
+msgstr "Şifrenin zaman aşımına uğramadan önce gelecek olan uyarının süresi:"
+
+#. i18n: file passwordpolicy.ui line 54
+#: rc.cpp:192
+#, no-c-format
+msgid "Time when password expires after last password change:"
+msgstr ""
+"Son şifre değişikliğinden sonra şifrenin zaman aşımına uğrayacağı süre:"
+
+#. i18n: file passwordpolicy.ui line 68
+#: rc.cpp:195
+#, no-c-format
+msgid "Time when account will be disabled after expiration of password:"
+msgstr "Şifrenin zaman aşımından sonra hesabın kapatılacağı süre:"
+
+#. i18n: file passwordpolicy.ui line 116
+#: rc.cpp:210
+#, no-c-format
+msgid "Time before password may not be changed after last password change:"
+msgstr "Son şifre değişikliğinden sonra şifrenin değiştirilemeyeceği süre:"
+
+#. i18n: file passwordpolicy.ui line 171
+#: rc.cpp:222
+#, no-c-format
+msgid "Account will expire on:"
+msgstr "Hesap bu tarihte kapatılacak:"
+
+#. i18n: file kuser.kcfg line 16
+#: rc.cpp:228
+#, no-c-format
+msgid "Default connection"
+msgstr "Varsayılan bağlantı"
+
+#. i18n: file kuser.kcfg line 20
+#: rc.cpp:231
+#, no-c-format
+msgid "Show system users"
+msgstr "Sistem Kullanıcılarını Göster"
+
+#. i18n: file kuser.kcfg line 26
+#: rc.cpp:234
+#, no-c-format
+msgid "The source of the user and group database"
+msgstr "Kullanıcı ve grubun veritabanı kaynağı"
+
+#. i18n: file kuser.kcfg line 27
+#: rc.cpp:237
+#, no-c-format
+msgid ""
+"This option allows you to select where the user/group data stored. Currently "
+"three storage backends are supported. <BR><B>Files</B> "
+"stores user/group data in traditional /etc/passwd and /etc/group flat files. "
+"<BR><B>LDAP</B> stores data in a directory server using the posixAccount and "
+"posixGroup object classes; this backend allows the management of Samba "
+"users/groups via the sambaSamAccount object class.<BR><B>System</B> "
+"provides a read-only access to all users and groups which your installation "
+"knows about."
+msgstr ""
+"Bu seçenek kullanıcı/grup dosyalarının nerede saklanacağını seçmenize izin "
+"verir. Mevcut üç eklenti desteklenir.<BR><B>Dosyalar</B> "
+"kullanıcı/grup verilerini geleneksel /etc/password ve /etc/grup yassı "
+"dosyalarında saklar. <BR><B>LDAP</B>posixAccount ve posixGroup nesne "
+"sınıflarını kullanarak veriyi dizin sunucusunda saklar. Ayrıca bu program Samba "
+"kullanıcı/gruplarını sambaSamAccount nesne sınıfını kullanarak yönetebilir.<BR>"
+"<B>Sistem</B> kurulumunuz tarafından tanınan kullanıcı ve gruplara salt-okuma "
+"hakkı tanır."
+
+#. i18n: file kuser.kcfg line 36
+#: rc.cpp:240
+#, no-c-format
+msgid "Shell"
+msgstr "Kabuk"
+
+#. i18n: file kuser.kcfg line 37
+#: rc.cpp:243
+#, no-c-format
+msgid ""
+"This option allows you to select the shell which will be the default for new "
+"users."
+msgstr ""
+"Bu seçenek yeni kullanıcılar için varsayılan olacak kabuğu seçmenize izin "
+"verir."
+
+#. i18n: file kuser.kcfg line 40
+#: rc.cpp:246
+#, no-c-format
+msgid "Home path template"
+msgstr "Ev dizini şablonu"
+
+#. i18n: file kuser.kcfg line 41
+#: rc.cpp:249
+#, no-c-format
+msgid ""
+"This option specifies the UNIX home path template for new users. The '%U' macro "
+"will replaced with the actual user name."
+msgstr ""
+"Bu seçenek yeni kullanıcılar için UNIX ev dizini şablonunu belirler. '%U' "
+"makrosu geçerli kullanıcı adı ile değiştirilecektir."
+
+#. i18n: file kuser.kcfg line 45
+#: rc.cpp:252
+#, no-c-format
+msgid "First UID"
+msgstr "Birinci UID"
+
+#. i18n: file kuser.kcfg line 46
+#: rc.cpp:255
+#, no-c-format
+msgid ""
+"This options specifies the first user ID where searching for an available UID "
+"starts."
+msgstr ""
+"Bu seçenek birinci kullanıcın ID sini belirler böylece UID'nin nereden "
+"başladığını bilebilirsiniz."
+
+#. i18n: file kuser.kcfg line 50
+#: rc.cpp:258
+#, no-c-format
+msgid "First GID"
+msgstr "Birinci GID"
+
+#. i18n: file kuser.kcfg line 51
+#: rc.cpp:261
+#, no-c-format
+msgid ""
+"This options specifies the first group ID where searching for an available GID "
+"starts."
+msgstr ""
+"Bu seçenek birinci grubun ID sini belirler böylece GID'nin nereden başladığını "
+"bilebilirsiniz."
+
+#. i18n: file kuser.kcfg line 56
+#: rc.cpp:267
+#, no-c-format
+msgid ""
+"If this option is checked then a home directory will created for the new user."
+msgstr "Bu seçenek seçili ise yeni kullanıcı için bir ev dizini ouşturulur."
+
+#. i18n: file kuser.kcfg line 61
+#: rc.cpp:273
+#, no-c-format
+msgid ""
+"If this option is checked then the contents of the skeleton folder will copied "
+"to the new user's home directory"
+msgstr ""
+"Bu seçenek seçili ise iskelet klasörünün içeriği yeni kullanıcının ev dizinine "
+"kopyalanır"
+
+#. i18n: file kuser.kcfg line 66
+#: rc.cpp:279
+#, no-c-format
+msgid ""
+"If this option is enabled, new user creation will create a private group named "
+"as the user, and the primary group of the user will assigned to this private "
+"group."
+msgstr ""
+"Bu seçenek etkinleştirilmişse, yeni kullanıcı oluşturulumu kullanıcı tarafından "
+"adlandırılan özel bir grup oluşturur, ve kullanıcının birincil grubu bu özel "
+"grup olarak atanır."
+
+#. i18n: file kuser.kcfg line 70
+#: rc.cpp:282
+#, no-c-format
+msgid "Default primary group"
+msgstr "Öntanımlı birincil grup"
+
+#. i18n: file kuser.kcfg line 71
+#: rc.cpp:285
+#, no-c-format
+msgid ""
+"This is the default primary group which will be assigned to a newly created "
+"user."
+msgstr "Bu yeni yaratılan kullanıcının atanacağı birincil öntanımlı gruptur."
+
+#. i18n: file kuser.kcfg line 76
+#: rc.cpp:288
+#, no-c-format
+msgid "smin"
+msgstr "smin"
+
+#. i18n: file kuser.kcfg line 80
+#: rc.cpp:291
+#, no-c-format
+msgid "smax"
+msgstr "smax"
+
+#. i18n: file kuser.kcfg line 84
+#: rc.cpp:294
+#, no-c-format
+msgid "swarn"
+msgstr "swarn"
+
+#. i18n: file kuser.kcfg line 88
+#: rc.cpp:297
+#, no-c-format
+msgid "sinact"
+msgstr "sinact"
+
+#. i18n: file kuser.kcfg line 92
+#: rc.cpp:300
+#, no-c-format
+msgid "sexpire"
+msgstr "sexpire"
+
+#. i18n: file kuser.kcfg line 93
+#: rc.cpp:303
+#, no-c-format
+msgid "This setting is for specifying a date when user accounts will expire."
+msgstr "Bu ayar kullanıcı hesabının zaman aşımına uğrayacağı süreyi belirler."
+
+#. i18n: file kuser.kcfg line 97
+#: rc.cpp:306
+#, no-c-format
+msgid "sneverexpire"
+msgstr "sneverexpire"
+
+#. i18n: file kuser.kcfg line 98
+#: rc.cpp:309
+#, no-c-format
+msgid "Check this if you want to user accounts never expire."
+msgstr ""
+"Kullanıcının hesabının zaman aşımına uğramasını istemiyorsanız bunu seçin."
+
+#. i18n: file kuser.kcfg line 103
+#: rc.cpp:312
+#, no-c-format
+msgid "Password file"
+msgstr "Parola dosyası"
+
+#. i18n: file kuser.kcfg line 104
+#: rc.cpp:315
+#, no-c-format
+msgid "This specifies the users database file (usually /etc/passwd)."
+msgstr ""
+"Bu kullanıcıların veritabanı dosyasını belirler (genellikle /etc/password)."
+
+#. i18n: file kuser.kcfg line 108
+#: rc.cpp:318
+#, no-c-format
+msgid "Group file"
+msgstr "Grup dosyası"
+
+#. i18n: file kuser.kcfg line 109
+#: rc.cpp:321
+#, no-c-format
+msgid "This specifies the groups database file (usually /etc/group)."
+msgstr "Bu grupların veritabanı dosyasını belirler (genellikle /etc/group)."
+
+#. i18n: file kuser.kcfg line 113
+#: rc.cpp:324
+#, no-c-format
+msgid "MD5 Shadow passwords"
+msgstr "MD5 Gölge parolaları"
+
+#. i18n: file kuser.kcfg line 114
+#: rc.cpp:327
+#, no-c-format
+msgid ""
+"Check this if you want the passwords in the shadow file MD5 hashed. Leave this "
+"unchecked if DES encryption should be used."
+msgstr ""
+"Gölge dosyasındaki şifrelerin MD5 ile karıştırılmasını istiyorsanız seçin. DES "
+"kodlaması kullanılmayacaksa seçilmemiş bırakın."
+
+#. i18n: file kuser.kcfg line 117
+#: rc.cpp:330
+#, no-c-format
+msgid "Shadow password file"
+msgstr "Gölge parola dosyası"
+
+#. i18n: file kuser.kcfg line 118
+#: rc.cpp:333
+#, no-c-format
+msgid ""
+"Specifies the shadow password file (usually /etc/shadow). Leave this empty if "
+"your system does not use a shadow password file."
+msgstr ""
+"Gölge şifre dosyasını belirler (genellikle /etc/shadow). Eğer sisteminiz gölge "
+"şifre dosyası kullanmıyosa boş bırakın."
+
+#. i18n: file kuser.kcfg line 122
+#: rc.cpp:336
+#, no-c-format
+msgid "Group shadow file"
+msgstr "Grup gölge dosyası"
+
+#. i18n: file kuser.kcfg line 123
+#: rc.cpp:339
+#, no-c-format
+msgid ""
+"Specifies the shadow group file (usually /etc/gshadow). Leave this empty if "
+"your system does not use a shadow group file."
+msgstr ""
+"Gölge grup dosyasını belirler (genellikle /etc/gshadow). Eğer sisteminiz gölge "
+"grup dosyası kullanmıyorsa boş bırakın."
+
+#. i18n: file kuser.kcfg line 127
+#: rc.cpp:342
+#, no-c-format
+msgid "NIS password source"
+msgstr "NIS parola kaynağı"
+
+#. i18n: file kuser.kcfg line 130
+#: rc.cpp:345
+#, no-c-format
+msgid "NIS minimum UID"
+msgstr "NIS asgari UID"
+
+#. i18n: file kuser.kcfg line 133
+#: rc.cpp:348
+#, no-c-format
+msgid "NIS group source"
+msgstr "NIS grup kaynağı"
+
+#. i18n: file kuser.kcfg line 136
+#: rc.cpp:351
+#, no-c-format
+msgid "NIS minimum GID"
+msgstr "NIS asgari GID"
+
+#. i18n: file kuser.kcfg line 140
+#: rc.cpp:354
+#, no-c-format
+msgid "LDAP User"
+msgstr "LDAP Kullanıcı"
+
+#. i18n: file kuser.kcfg line 143
+#: rc.cpp:357
+#, no-c-format
+msgid "LDAP Password"
+msgstr "LDAP Parola"
+
+#. i18n: file kuser.kcfg line 146
+#: rc.cpp:360
+#, no-c-format
+msgid "LDAP SASL Realm"
+msgstr "LDAP SASL Realm"
+
+#. i18n: file kuser.kcfg line 149
+#: rc.cpp:363
+#, no-c-format
+msgid "LDAP Bind DN"
+msgstr "LDAP Bağlı DN"
+
+#. i18n: file kuser.kcfg line 152
+#: rc.cpp:366
+#, no-c-format
+msgid "LDAP Host"
+msgstr "LDAP Sağlayıcı"
+
+#. i18n: file kuser.kcfg line 155
+#: rc.cpp:369
+#, no-c-format
+msgid "LDAP Port"
+msgstr "LDAP Portu"
+
+#. i18n: file kuser.kcfg line 159
+#: rc.cpp:372
+#, no-c-format
+msgid "LDAP version"
+msgstr "LDAP sürümü"
+
+#. i18n: file kuser.kcfg line 163
+#: rc.cpp:375
+#, no-c-format
+msgid "LDAP Size limit"
+msgstr "LDAP Boyut sınırı"
+
+#. i18n: file kuser.kcfg line 167
+#: rc.cpp:378
+#, no-c-format
+msgid "LDAP Time limit"
+msgstr "LDAP Zaman sınırı"
+
+#. i18n: file kuser.kcfg line 171
+#: rc.cpp:381
+#, no-c-format
+msgid "LDAP Base DN"
+msgstr "LDAP Taban DN"
+
+#. i18n: file kuser.kcfg line 174
+#: rc.cpp:384
+#, no-c-format
+msgid "LDAP Filter"
+msgstr "LDAP süzgeci"
+
+#. i18n: file kuser.kcfg line 177
+#: rc.cpp:387
+#, no-c-format
+msgid "LDAP no encryption"
+msgstr "LDAP kodlamasız"
+
+#. i18n: file kuser.kcfg line 181
+#: rc.cpp:390
+#, no-c-format
+msgid "LDAP TLS"
+msgstr "LDAP TLS"
+
+#. i18n: file kuser.kcfg line 185
+#: rc.cpp:393
+#, no-c-format
+msgid "LDAP SSL"
+msgstr "LDAP SSL"
+
+#. i18n: file kuser.kcfg line 189
+#: rc.cpp:396
+#, no-c-format
+msgid "LDAP Anonymous"
+msgstr "LDAP Kimliksiz"
+
+#. i18n: file kuser.kcfg line 193
+#: rc.cpp:399
+#, no-c-format
+msgid "LDAP Simple auth"
+msgstr "LDAP Basit kimlik"
+
+#. i18n: file kuser.kcfg line 197
+#: rc.cpp:402
+#, no-c-format
+msgid "LDAP SASL auth"
+msgstr "LDAP SASL kimlik"
+
+#. i18n: file kuser.kcfg line 201
+#: rc.cpp:405
+#, no-c-format
+msgid "LDAP SASL mechanism"
+msgstr "LDAP SASL mekanizması"
+
+#. i18n: file kuser.kcfg line 205
+#: rc.cpp:408
+#, no-c-format
+msgid "LDAP User container"
+msgstr "LDAP Kullanıcı taşıyıcı"
+
+#. i18n: file kuser.kcfg line 206
+#: rc.cpp:411
+#, no-c-format
+msgid ""
+"This specifies where to store users' entries relative to the LDAP base DN."
+msgstr ""
+"Bu LDAP taban DN ile ilişkili kullancıların girdilerinin nerede saklanacağını "
+"belirler."
+
+#. i18n: file kuser.kcfg line 210
+#: rc.cpp:414
+#, no-c-format
+msgid "LDAP User filter"
+msgstr "LDAP Kullanıcı filtresi"
+
+#. i18n: file kuser.kcfg line 211
+#: rc.cpp:417
+#, no-c-format
+msgid "This specifies the filter used for user entries."
+msgstr "Bu kullanıcı girdilerinde kullanılacak filtreyi belirtir."
+
+#. i18n: file kuser.kcfg line 214
+#: rc.cpp:420
+#, no-c-format
+msgid "LDAP Group container"
+msgstr "LDAP Grup taşıyıcı"
+
+#. i18n: file kuser.kcfg line 215
+#: rc.cpp:423
+#, no-c-format
+msgid ""
+"This specifies where to store groups' entries relative to the LDAP base DN."
+msgstr ""
+"Bu LDAP taban DN ile ilişkili grupların girdilerinin nerede saklanacağını "
+"belirler."
+
+#. i18n: file kuser.kcfg line 219
+#: rc.cpp:426
+#, no-c-format
+msgid "LDAP Group filter"
+msgstr "LDAP Grup filtresi"
+
+#. i18n: file kuser.kcfg line 220
+#: rc.cpp:429
+#, no-c-format
+msgid "This specifies the filter used for group entries."
+msgstr "Bu grup girdilerinde kullanılacak filtreyi belirtir."
+
+#. i18n: file kuser.kcfg line 223
+#: rc.cpp:432
+#, no-c-format
+msgid "LDAP User RDN prefix"
+msgstr "LDAP Kullanıcı RDN önadı"
+
+#. i18n: file kuser.kcfg line 224
+#: rc.cpp:435
+#, no-c-format
+msgid "This specifies what prefix will used for user entries."
+msgstr "Bu kullanıcı girdilerinde kullanılacak önadı belirler."
+
+#. i18n: file kuser.kcfg line 234
+#: rc.cpp:441
+#, no-c-format
+msgid ""
+"Check this if the user's full name should be stored in the cn (Canonical Name) "
+"attribute."
+msgstr ""
+"Eğer kullanıcının tam adı cn (Geçerli İsim) özniteliğinde saklanacaksa bunu "
+"seçiniz."
+
+#. i18n: file kuser.kcfg line 238
+#: rc.cpp:444
+#, no-c-format
+msgid "Update the gecos field"
+msgstr "gecos alanını güncelle"
+
+#. i18n: file kuser.kcfg line 239
+#: rc.cpp:447
+#, no-c-format
+msgid "Check this if the gecos attribute should be updated."
+msgstr "gecos özniteliği güncellenecekse bunu seçiniz."
+
+#. i18n: file kuser.kcfg line 243
+#: rc.cpp:450
+#, no-c-format
+msgid "Manage LDAP shadowAccount objectclass"
+msgstr "LDAP gölgeHesap nesne sınıfını yönet"
+
+#. i18n: file kuser.kcfg line 244
+#: rc.cpp:453
+#, no-c-format
+msgid ""
+"Check this if the shadowAccount object should be used in the users' entries. It "
+"allows to enforce password change/expiration policies."
+msgstr ""
+"Kullanıcı girdilerinde gölgeHesabı kullanılacaksa bunu seçebilirsiniz. Bu "
+"parola değişikliği/zaman aşımı poliçelerini zorlamaya izin verir."
+
+#. i18n: file kuser.kcfg line 248
+#: rc.cpp:456
+#, no-c-format
+msgid "LDAP Structural objectclass"
+msgstr "LDAP Yapısal nesne sınıfı"
+
+#. i18n: file kuser.kcfg line 249
+#: rc.cpp:459
+#, no-c-format
+msgid ""
+"This option allows to specify the structural objectclass used with users' "
+"entries. If you want to use these entries not just for authentication, but for "
+"an addressbook, too, then choose inetOrgPerson."
+msgstr ""
+"Bu seçenek kullanıcı girdileri ile kullanılan yapısal nesne sınıflarını "
+"belirlemeye izin verir. Eğer bu girdileri sadece kimlikleme için kullanak "
+"istemiyorsanız, örneğin adres defterinde de kullanmak istiyorsanız, "
+"inetOrgPerson'ı seçin."
+
+#. i18n: file kuser.kcfg line 257
+#: rc.cpp:462
+#, no-c-format
+msgid "LDAP Group RDN prefix"
+msgstr "LDAP Grup RDN önadı"
+
+#. i18n: file kuser.kcfg line 258
+#: rc.cpp:465
+#, no-c-format
+msgid "This specifies what prefix will used for group entries."
+msgstr "Bu grup girdilerinde kullanılacak olan önadı belirler."
+
+#. i18n: file kuser.kcfg line 266
+#: rc.cpp:468
+#, no-c-format
+msgid "LDAP Password hash method"
+msgstr "LDAP Parola karıştırma metodu"
+
+#. i18n: file kuser.kcfg line 267
+#: rc.cpp:471
+#, no-c-format
+msgid "This specifies the password hashing method. The most secure is SSHA."
+msgstr "Bu parola karıştırma metodunu belirler. En güvenlisi SSHA'dır."
+
+#. i18n: file kuser.kcfg line 279
+#: rc.cpp:474
+#, no-c-format
+msgid "Enable samba account management"
+msgstr "Samba hesap yönetimini etkinleştir"
+
+#. i18n: file kuser.kcfg line 280
+#: rc.cpp:477
+#, no-c-format
+msgid ""
+"Check this if you want to use the user/group entries in a Samba domain. KUser "
+"will create sambaSamAccount objectclass for each entry which is usable with the "
+"ldapsam passdb backend with Samba version greater than 3.0."
+msgstr ""
+"Eğer kullanıcı/grup girdilerini bir Samba alanında kullanmak istiyorsanız bunu "
+"seçin. KUser her girdi için sambaSamHesabı nesne sınıfı oluşturacaktır. Bunun "
+"için Samba sürümün 3.0'dan büyük ve ldapsam passdb eklentisinin olması "
+"gerekmektedir."
+
+#. i18n: file kuser.kcfg line 283
+#: rc.cpp:480
+#, no-c-format
+msgid "Samba domain name"
+msgstr "Samba alan adı"
+
+#. i18n: file kuser.kcfg line 284
+#: rc.cpp:483
+#, no-c-format
+msgid "This specifies the samba domain name."
+msgstr "Samba alan adını belirtir."
+
+#. i18n: file kuser.kcfg line 287
+#: rc.cpp:486
+#, no-c-format
+msgid "Samba domain SID"
+msgstr "Samba alan SID"
+
+#. i18n: file kuser.kcfg line 288
+#: rc.cpp:489
+#, no-c-format
+msgid ""
+"This specifies the domain Security IDentifier. It is unique in a single domain. "
+"You can query the value of the domain SID with 'net getlocalsid domain_name'."
+msgstr ""
+"Bu alan Güvenlik Kimliğini (Security IDentifier) belirler. Tek bir alanda "
+"eşsizdir. 'net getlocalsid alan_adi' komutu ile alanın SID sini "
+"sorgulayabilirsiniz."
+
+#. i18n: file kuser.kcfg line 291
+#: rc.cpp:492
+#, no-c-format
+msgid "Algorithmic RID base"
+msgstr ""
+
+#. i18n: file kuser.kcfg line 292
+#: rc.cpp:495
+#, no-c-format
+msgid ""
+"This value is an offset for the algorithmic mapping from uids and gids to rids. "
+"The default (and minimum) value is 1000, it must be even, and the LDAP database "
+"and smb.conf must store the same values."
+msgstr ""
+
+#. i18n: file kuser.kcfg line 296
+#: rc.cpp:498
+#, no-c-format
+msgid "Samba login script"
+msgstr "Samba giriş kodu"
+
+#. i18n: file kuser.kcfg line 297
+#: rc.cpp:501
+#, no-c-format
+msgid ""
+"This specifies a name of a login script (in the `Netlogon` share) which will be "
+"executed as the user logs in to a Windows machine."
+msgstr ""
+"Bu giriş kodunun ('Netlogon' paylaşımında) adını belirler bu bir Windows "
+"makinede kullanıcın kayıtları olarak çalıştırılacaktır."
+
+#. i18n: file kuser.kcfg line 300
+#: rc.cpp:504
+#, no-c-format
+msgid "Samba home drive"
+msgstr "Samba ev sürücüsü"
+
+#. i18n: file kuser.kcfg line 301
+#: rc.cpp:507
+#, no-c-format
+msgid ""
+"Specifies a drive letter where the user's home directory will automatically "
+"mapped when he/she logs into a Windows machine."
+msgstr ""
+"Kullanıcı bir Windows makineye giriş yaptığında otomatik olarak haritalanacak "
+"kullanıcı ev dizinini belirleyen sürücü harfi."
+
+#. i18n: file kuser.kcfg line 304
+#: rc.cpp:510
+#, no-c-format
+msgid "Samba profile path template"
+msgstr "Samba profil yolu şablonu"
+
+#. i18n: file kuser.kcfg line 305
+#: rc.cpp:513
+#, no-c-format
+msgid ""
+"This specifies the location of the roaming profile of the user. The '%U' macro "
+"will be replaced with the actual user name."
+msgstr ""
+"Bu kullanıcının dolaşım profilinin yerini belirler. '%U' makrosu geçerli "
+"kullanıcı adı ile değiştirilecektir."
+
+#. i18n: file kuser.kcfg line 308
+#: rc.cpp:516
+#, no-c-format
+msgid "Samba home path template"
+msgstr "Samba ev dizini şablonu"
+
+#. i18n: file kuser.kcfg line 309
+#: rc.cpp:519
+#, no-c-format
+msgid ""
+"This specifies the location of the home directory of the user. This field is "
+"meaningful only for Windows machines. The '%U' macro will be replaced with the "
+"actual user name."
+msgstr ""
+"Bu kullanıcının ev dizinin yerini belirler. Bu alan sadece Windows makinelerde "
+"anlamlıdır. '%U' makrosu geçerli kullanıcı adı ile değiştirilecektir."
+
+#. i18n: file kuser.kcfg line 313
+#: rc.cpp:525
+#, no-c-format
+msgid ""
+"Store the LanManager hashed password in the sambaLMPassword attribute. Check "
+"this if you have older clients (Win9x series and before) on your network."
+msgstr ""
+"Öz alınmış LanManager parolalarını sambaLMPassword özniteliğinde sakla. "
+"Ağınızda eski istemciler (Win9x serisi ve öncesi) varsa bunu seçiniz."
+
+#: selectconn.cpp:38
+msgid "Connection Selection"
+msgstr "Bağlantı Seçimi"
+
+#: selectconn.cpp:42
+msgid "&New..."
+msgstr "Ye&ni..."
+
+#: selectconn.cpp:48
+msgid "Defined connections:"
+msgstr "Tanımlı bağlantılar:"
+
+#: selectconn.cpp:81
+msgid "Please type the name of the new connection:"
+msgstr "Yeni bağlantının adını belirtiniz:"
+
+#: selectconn.cpp:84
+msgid "A connection with this name already exists."
+msgstr "Bu isimli bağlantı zaten var."
+
+#: selectconn.cpp:122
+msgid "Do you really want to delete the connection '%1'?"
+msgstr "'%1' bağlantısını gerçekten silmek istiyor musunuz?"
+
+#: selectconn.cpp:123
+msgid "Delete Connection"
+msgstr "Bağlantıyı Sil"

@@ -1,0 +1,237 @@
+# translation of kio_sftp.po to 
+# translation of kio_sftp.po to Türkçe
+# translation of kio_sftp.po to turkish
+# translation of kio_sftp.po to Turkish
+# Copyright (C) 2002,2003, 2004, 2005 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2002, 2004.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+# Görkem Çetin <gorkem@kde.org.tr>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kio_sftp\n"
+"POT-Creation-Date: 2005-05-18 21:24+0200\n"
+"PO-Revision-Date: 2005-03-08 08:24+0000\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org.tr>\n"
+"Language-Team:  <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+
+#: kio_sftp.cpp:427
+msgid "An internal error occurred. Please retry the request again."
+msgstr "Bir hata oluştu. Lütfen isteğinizi yenileyin."
+
+#: kio_sftp.cpp:510
+msgid "Opening SFTP connection to host <b>%1:%2</b>"
+msgstr "<b>%1:%2</b> makinesine SFTP bağlantısı kuruluyor"
+
+#: kio_sftp.cpp:514
+msgid "No hostname specified"
+msgstr "Makine adı belirtilmedi"
+
+#: kio_sftp.cpp:526
+msgid "SFTP Login"
+msgstr "SFTP Girişi"
+
+#: kio_sftp.cpp:528
+msgid "site:"
+msgstr "makine:"
+
+#: kio_sftp.cpp:629
+msgid "Please enter your username and key passphrase."
+msgstr "Lütfen kullanıcı adı ve parolanızı girin."
+
+#: kio_sftp.cpp:631
+msgid "Please enter your username and password."
+msgstr "Lütfen kullanıcı adı ve parolanızı girin."
+
+#: kio_sftp.cpp:639
+msgid "Incorrect username or password"
+msgstr "Geçersiz kullanıcı adı veya parolası"
+
+#: kio_sftp.cpp:644
+msgid "Please enter a username and password"
+msgstr "Lütfen bir kullanıcı adı ve parola girin"
+
+#: kio_sftp.cpp:703
+msgid "Warning: Cannot verify host's identity."
+msgstr "Uyarı: Makinenin kimliği saptanamadı."
+
+#: kio_sftp.cpp:714
+msgid "Warning: Host's identity changed."
+msgstr "Uyarı: Makinenin kimliği değişti."
+
+#: kio_sftp.cpp:725 kio_sftp.cpp:726
+msgid "Authentication failed."
+msgstr "Kimlik sınaması başarısız oldu."
+
+#: kio_sftp.cpp:740 kio_sftp.cpp:755
+msgid "Connection failed."
+msgstr "Bağlantıda yapılamadı."
+
+#: kio_sftp.cpp:741 ksshprocess.cpp:810 ksshprocess.cpp:957
+msgid "Connection closed by remote host."
+msgstr "Bağlantı karşıdaki makine tarafından sonlandırıldı!"
+
+#: kio_sftp.cpp:756
+#, c-format
+msgid "Unexpected SFTP error: %1"
+msgstr "Beklenmeyen SFTP hatası: %1"
+
+#: kio_sftp.cpp:800
+#, c-format
+msgid "SFTP version %1"
+msgstr "SFTP sürüm: %1"
+
+#: kio_sftp.cpp:806
+msgid "Protocol error."
+msgstr "Protokol hatası."
+
+#: kio_sftp.cpp:812
+#, c-format
+msgid "Successfully connected to %1"
+msgstr "%1 adresine başarıyla bağlantı kuruldu"
+
+#: kio_sftp.cpp:1047
+msgid "An internal error occurred. Please try again."
+msgstr "Bir hata oluştu. Lütfen yeniden deneyin."
+
+#: kio_sftp.cpp:1068
+msgid ""
+"Unknown error was encountered while copying the file to '%1'. Please try again."
+msgstr ""
+"Dosyayı '%1' dizinine kopyalarken bir hata oluştu. Lütfen tekrar deneyin."
+
+#: kio_sftp.cpp:1318
+msgid "The remote host does not support renaming files."
+msgstr "Uzak makine dosyaların yeniden adlandırılmasını desteklemiyor"
+
+#: kio_sftp.cpp:1367
+msgid "The remote host does not support creating symbolic links."
+msgstr "Uzak makine sembolik bağ oluşturulmasını desteklemiyor."
+
+#: kio_sftp.cpp:1492
+msgid "Connection closed"
+msgstr "Bağlantı kesildi"
+
+#: kio_sftp.cpp:1494
+msgid "Could not read SFTP packet"
+msgstr "SFTP paketi okunamadı"
+
+#: kio_sftp.cpp:1611
+msgid "SFTP command failed for an unknown reason."
+msgstr "SFTP komutunda bir hata oluştu"
+
+#: kio_sftp.cpp:1615
+msgid "The SFTP server received a bad message."
+msgstr "SFTP sunucusu hatalı bir yanıt aldı."
+
+#: kio_sftp.cpp:1619
+msgid "You attempted an operation unsupported by the SFTP server."
+msgstr "SFTP sunucusunun desteklemediği bir işlem gerçekleştirdiniz."
+
+#: kio_sftp.cpp:1623
+#, c-format
+msgid "Error code: %1"
+msgstr "Hata kodu: %1"
+
+#: ksshprocess.cpp:408
+msgid "Cannot specify a subsystem and command at the same time."
+msgstr "Aynı anda hem bir alt sistem, hem de komut belirtemezsiniz."
+
+#: ksshprocess.cpp:743
+msgid "No options provided for ssh execution."
+msgstr "ssh çalıştırmak için bir komut girilmedi."
+
+#: ksshprocess.cpp:751
+msgid "Failed to execute ssh process."
+msgstr "ssh sürecinin çalıştırılmasında hata."
+
+#: ksshprocess.cpp:776 ksshprocess.cpp:805 ksshprocess.cpp:924
+#: ksshprocess.cpp:996
+msgid "Error encountered while talking to ssh."
+msgstr "Ssh ile konuşurken bir hata oluştu."
+
+#: ksshprocess.cpp:856
+msgid "Please supply a password."
+msgstr "Lütfen bir parola girin."
+
+#: ksshprocess.cpp:895
+msgid "Please supply the passphrase for your SSH private key."
+msgstr "Lütfen SSH özel anahtarı için bir parola girin."
+
+#: ksshprocess.cpp:909
+msgid "Authentication to %1 failed"
+msgstr "%1 makinesi için yapılan kimlik sınaması başarısız oldu"
+
+#: ksshprocess.cpp:932
+msgid ""
+"The identity of the remote host '%1' could not be verified because the host's "
+"key is not in the \"known hosts\" file."
+msgstr "'%1' makinesinin kimliği onaylanamadı. "
+
+#: ksshprocess.cpp:938
+msgid ""
+" Manually, add the host's key to the \"known hosts\" file or contact your "
+"administrator."
+msgstr "Sistem yöneticinizle bağlantıya geçin."
+
+#: ksshprocess.cpp:944
+msgid " Manually, add the host's key to %1 or contact your administrator."
+msgstr ""
+
+#: ksshprocess.cpp:976
+msgid ""
+"The identity of the remote host '%1' could not be verified. The host's key "
+"fingerprint is:\n"
+"%2\n"
+"You should verify the fingerprint with the host's administrator before "
+"connecting.\n"
+"\n"
+"Would you like to accept the host's key and connect anyway? "
+msgstr ""
+"%1 doğrulanmayan uzak host sahibi kimliği. Host sahibi anahtar parmak izi:\n"
+"%2\n"
+"Host sahibine bağlanarak yöneticisine anahtar parmak izini doğrulatmalısınız.\n"
+"\n"
+"Kabuk edilmiş host parmak iziyle ve yine bağlanmaktan hoşlanırmıydınız?"
+
+#: ksshprocess.cpp:1004
+msgid ""
+"WARNING: The identity of the remote host '%1' has changed!\n"
+"\n"
+"Someone could be eavesdropping on your connection, or the administrator may "
+"have just changed the host's key. Either way, you should verify the host's key "
+"fingerprint with the host's administrator. The key fingerprint is:\n"
+"%2\n"
+"Add the correct host key to \"%3\" to get rid of this message."
+msgstr ""
+"TEHLİKE : Uzak host kimliği '%1' değişitirildi!\n"
+"\n"
+"Birileri açıkları gözletliyor olabilir.Host yöneticisi anahtar kimliğini "
+"değiştirmiş olabilir.Doğrulanan yol host  yöneticisinin anahtarı "
+"olabilir.Anahtar parmak izi:\n"
+"%2\n"
+"Bu mesajdan kurtulmak için \"%3\" doğru anahtar parmak izini ekleyin."
+
+#: ksshprocess.cpp:1039
+msgid ""
+"WARNING: The identity of the remote host '%1' has changed!\n"
+"\n"
+"Someone could be eavesdropping on your connection, or the administrator may "
+"have just changed the host's key. Either way, you should verify the host's key "
+"fingerprint with the host's administrator before connecting. The key "
+"fingerprint is:\n"
+"%2\n"
+"\n"
+"Would you like to accept the host's new key and connect anyway?"
+msgstr ""
+
+#: ksshprocess.cpp:1063
+msgid "Host key was rejected."
+msgstr "Makine anahtarı kabul edilmedi."
+
+#~ msgid "Could not allocate memory for SFTP packet."
+#~ msgstr "SFTP paketi için yetersiz bellek."

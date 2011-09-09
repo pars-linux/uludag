@@ -1,0 +1,74 @@
+# translation of mediaapplet.po to Türkçe
+# Görkem Çetin <gorkem@kde.org>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mediaapplet\n"
+"POT-Creation-Date: 2008-07-31 01:15+0200\n"
+"PO-Revision-Date: 2005-07-17 22:11+0200\n"
+"Last-Translator: Adil YILDIZ <adil@kde.org.tr>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Adil YILDIZ"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "adil@kde.org.tr"
+
+#: mediaapplet.cpp:93
+msgid "Media Applet"
+msgstr "Ortam Programcığı"
+
+#: mediaapplet.cpp:95
+msgid "\"media:/\" ioslave frontend applet"
+msgstr "\"media:/\" ioslave arayüz programcığı"
+
+#: mediaapplet.cpp:100
+msgid "Maintainer"
+msgstr "Sorumlu"
+
+#: mediaapplet.cpp:105
+msgid "Good mentor, patient and helpful. Thanks for all!"
+msgstr "Çok yardımsever bir arkadaş. Herşey için Teeşkkürler!"
+
+#: mediaapplet.cpp:432 preferencesdialog.cpp:74
+msgid "Media"
+msgstr "Ortam"
+
+#: mediaapplet.cpp:433
+msgid "&Configure..."
+msgstr "&Yapılandır..."
+
+#: preferencesdialog.cpp:61
+msgid "Media Applet Preferences"
+msgstr "Ortam Programcığı Tercihleri"
+
+#: preferencesdialog.cpp:65
+msgid "Medium Types"
+msgstr "Ortam Biçimleri"
+
+#: preferencesdialog.cpp:69
+msgid "Types to Display"
+msgstr "Görüntülenecek Biçimler"
+
+#: preferencesdialog.cpp:70
+msgid "Deselect the medium types which you do not want to see in the applet"
+msgstr ""
+"Programcıkta görmek istemediğiniz ortam biçimlerinin seçimlerini kaldırın"
+
+#: preferencesdialog.cpp:78
+msgid "Media to Display"
+msgstr "Görüntülenecek Ortam"
+
+#: preferencesdialog.cpp:79
+msgid "Deselect the media which you do not want to see in the applet"
+msgstr "Programcıktagörmek istemediğiniz ortamların seçimlerini kaldırın"

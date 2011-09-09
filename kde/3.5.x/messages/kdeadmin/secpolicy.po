@@ -1,0 +1,49 @@
+# translation of secpolicy.po to Turkish
+# translation of secpolicy.po to Türkçe
+# TURKISH translation of KDE.
+# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+# Oğuz YILMAZ <o.yilmaz@ieee.org>, 2000.
+# Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
+# Cemil MUTLU <mawilos@gmail.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: secpolicy\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-02-06 01:20+0100\n"
+"PO-Revision-Date: 2005-07-15 02:13+0300\n"
+"Last-Translator: Cemil MUTLU <mawilos@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: main.cpp:33
+msgid "Display PAM security policies"
+msgstr "PAM güvenlik poliçelerini göster"
+
+#: pamview.cpp:51
+msgid "Available services:"
+msgstr "Bulunan servisler:"
+
+#: pamview.cpp:58
+msgid "Category"
+msgstr "Sınıf"
+
+#: pamview.cpp:59
+msgid "Level"
+msgstr "Seviye"
+
+#: pamview.cpp:60
+msgid "Module"
+msgstr "Modül"
+
+#: pamview.cpp:82
+msgid ""
+"/etc/pam.d folder does not exist.\n"
+"Either your system does not have PAM support or there is some other "
+"configuration problem."
+msgstr ""
+"/etc/pam.d dizini bulunamadı.\n"
+"Ya sisteminizde PAM desteği bulunmuyor, ya da başka bir ayar problemi var."

@@ -1,0 +1,169 @@
+# translation of kcmsmserver.po to Turkish
+# kde
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2001.
+# Adil YILDIZ <adil@linux-sevenler.org>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmsmserver\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-05-18 21:24+0200\n"
+"PO-Revision-Date: 2005-03-23 10:21+0200\n"
+"Last-Translator: Adil YILDIZ <adil@kde.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.3.1\n"
+
+#: kcmsmserver.cpp:42
+msgid ""
+"<h1>Session Manager</h1> You can configure the session manager here. This "
+"includes options such as whether or not the session exit (logout) should be "
+"confirmed, whether the session should be restored again when logging in and "
+"whether the computer should be automatically shut down after session exit by "
+"default."
+msgstr ""
+"<h1>Oturum Yöneticisi</h2> Buradan oturum yöneticisi ile ilgili temel ayarlar "
+"yapılabilir. "
+
+#. i18n: file smserverconfigdlg.ui line 16
+#: rc.cpp:3
+#, no-c-format
+msgid "Session Manager"
+msgstr "Oturum Yöneticisi"
+
+#. i18n: file smserverconfigdlg.ui line 40
+#: rc.cpp:6
+#, no-c-format
+msgid "General"
+msgstr "Genel"
+
+#. i18n: file smserverconfigdlg.ui line 51
+#: rc.cpp:9
+#, no-c-format
+msgid "Conf&irm logout"
+msgstr "Ç&ıkmadan önce sor"
+
+#. i18n: file smserverconfigdlg.ui line 54
+#: rc.cpp:12
+#, no-c-format
+msgid ""
+"Check this option if you want the session manager to display a logout "
+"confirmation dialog box."
+msgstr ""
+"Oturum yöneticisinin KDE kapanışı sırasında onay kutusu "
+"göstermesiniistiyorsanız bu seçeneği işaretleyin."
+
+#. i18n: file smserverconfigdlg.ui line 62
+#: rc.cpp:15
+#, no-c-format
+msgid "O&ffer shutdown options"
+msgstr "Kapatma tavsiye &etme ayarları"
+
+#. i18n: file smserverconfigdlg.ui line 72
+#: rc.cpp:18
+#, no-c-format
+msgid "On Login"
+msgstr "Girişte"
+
+#. i18n: file smserverconfigdlg.ui line 79
+#: rc.cpp:21
+#, no-c-format
+msgid ""
+"<ul>\n"
+"<li><b>Restore previous session:</b> Will save all applications running on exit "
+"and restore them when they next start up</li>\n"
+"<li><b>Restore manually saved session: </b> Allows the session to be saved at "
+"any time via \"Save Session\" in the K-Menu. This means the currently started "
+"applications will reappear when they next start up.</li>\n"
+"<li><b>Start with an empty session:</b> Do not save anything. Will come up with "
+"an empty desktop on next start.</li>\n"
+"</ul>"
+msgstr ""
+"<ul>\n"
+"<li><b>Önceki oturumu yükle:</b> Tüm çalışan uygulamaları oturumu kapatırken "
+"kaydeder ve bir sonraki açılışta geri yükler</li>\n"
+"<li><b>Elle kaydedilmiş oturumu geri yükle: </b> İstenen zamanda K-Menüsündeki "
+"\"Oturumu Kaydet\" kullanılarak oturum kaydedilebilir. Böylece bir sonraki "
+"açılışta sistem oturumu kaydedilen yerden geri yükler.</li>\n"
+"<li><b>Boş bir oturum başlat:</b> Hiçbir şey kaydetmez. Bir sonraki açılışta "
+"boş bir masaüstü ile açılır.</li>\n"
+"</ul>"
+
+#. i18n: file smserverconfigdlg.ui line 90
+#: rc.cpp:28
+#, no-c-format
+msgid "Restore &previous session"
+msgstr "Ö&nceki oturumu etkinleştir"
+
+#. i18n: file smserverconfigdlg.ui line 98
+#: rc.cpp:31
+#, no-c-format
+msgid "Restore &manually saved session"
+msgstr "&Elle kaydedilmiş oturumu etkinleştir"
+
+#. i18n: file smserverconfigdlg.ui line 106
+#: rc.cpp:34
+#, no-c-format
+msgid "Start with an empty &session"
+msgstr "&Boş bir oturum ile başla"
+
+#. i18n: file smserverconfigdlg.ui line 116
+#: rc.cpp:37
+#, no-c-format
+msgid "Default Shutdown Option"
+msgstr "Öntanımlı Kapatma Ayarı"
+
+#. i18n: file smserverconfigdlg.ui line 119
+#: rc.cpp:40
+#, no-c-format
+msgid ""
+"Here you can choose what should happen by default when you log out. This only "
+"has meaning, if you logged in through KDM."
+msgstr ""
+"Sistemden çıkış yaptığınız zaman ne yapılması gerektiğine buradan karar "
+"verebilirsiniz. Bu işlem sadece KDM üzerinden çalıştığınız zaman geçerlidir."
+
+#. i18n: file smserverconfigdlg.ui line 130
+#: rc.cpp:43
+#, no-c-format
+msgid "&End current session"
+msgstr "M&evcut oturumu sonlandır"
+
+#. i18n: file smserverconfigdlg.ui line 138
+#: rc.cpp:46
+#, no-c-format
+msgid "&Turn off computer"
+msgstr "&Bilgisayarı kapat"
+
+#. i18n: file smserverconfigdlg.ui line 146
+#: rc.cpp:49
+#, no-c-format
+msgid "&Restart computer"
+msgstr "B&ilgisayarı yeniden başlat"
+
+#. i18n: file smserverconfigdlg.ui line 156
+#: rc.cpp:52
+#, no-c-format
+msgid "Advanced"
+msgstr "Gelişmiş"
+
+#. i18n: file smserverconfigdlg.ui line 167
+#: rc.cpp:55
+#, no-c-format
+msgid "Applications to be e&xcluded from sessions:"
+msgstr "Oturumlardan ayrı tutulacak u&ygulamalar:"
+
+#. i18n: file smserverconfigdlg.ui line 178
+#: rc.cpp:58
+#, no-c-format
+msgid ""
+"Here you can enter a comma-separated list of applications that should not be "
+"saved in sessions, and therefore will not be started when restoring a session. "
+"For example 'xterm,xconsole'."
+msgstr ""
+"Oturumlarda kaydedilmesini istemediğiniz uygulamaları burada iki nokta üstüste "
+"ile ayırarak liste şeklinde yazabilirsiniz. Oturumu tekrar açtığınızda bu "
+"programlar başlatılmayacaklardır. Örneğin 'xterm:xconsole' gibi."

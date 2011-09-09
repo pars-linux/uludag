@@ -1,0 +1,5328 @@
+# translation of kommander.po to turkish
+# translation of kommander.po to
+# translation of kommander.po to Türkçe
+# translation of kommander.po to Turkish
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
+# Aydın Demirel <aydin@kde.org.tr>, 2005.
+# Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
+# Bekir SONAT <cortexbs@yahoo.com>, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: kommander\n"
+"POT-Creation-Date: 2008-07-08 01:25+0200\n"
+"PO-Revision-Date: 2005-07-18 10:54+0300\n"
+"Last-Translator: Bekir SONAT <cortexbs@yahoo.com>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: part/kommander_part.cpp:30
+#, fuzzy
+msgid ""
+"Executor Part is a component of the Kommander dialog system that executes .kmdr "
+"files inside a KDE KPart"
+msgstr ""
+"Executor (çalıştırıcı) Kommander diyalog sisteminin, argüman olarak ya da stdin "
+"(standart girdi) yoluyla verilen .kmdr dosyalarını çalıştıran bir bileşenidir"
+
+#: part/kommander_part.cpp:54
+#, fuzzy
+msgid "Kommander Executor Part"
+msgstr "Kommander Çalıştırıcısı"
+
+#: part/kommander_part.cpp:56
+msgid "Part of the KDEWebDev module."
+msgstr ""
+
+#: editor/main.cpp:47 executor/main.cpp:61 part/kommander_part.cpp:58
+#, fuzzy
+msgid "Current maintainer"
+msgstr "Bulunulan satırı kopyala"
+
+#: editor/main.cpp:48 executor/main.cpp:62 part/kommander_part.cpp:59
+msgid "Previous maintainer"
+msgstr ""
+
+#: editor/main.cpp:49 executor/main.cpp:63 part/kommander_part.cpp:60
+msgid "Original author"
+msgstr ""
+
+#: pluginmanager/main.cpp:39
+msgid ""
+"kmdr-plugins is a component of the Kommander dialog system that manages "
+"installed plugins."
+msgstr ""
+"kmdr-eklentileri Kommander diyalog sisteminin kurulu eklentileri yöneten bir "
+"bileşenidir."
+
+#: pluginmanager/main.cpp:46
+#, fuzzy
+msgid "Register given library"
+msgstr "Verili kütüphaneyi Kayıtla"
+
+#: pluginmanager/main.cpp:48
+#, fuzzy
+msgid "Remove given library"
+msgstr "Verili kütüphaneyi Ayır"
+
+#: pluginmanager/main.cpp:50
+#, fuzzy
+msgid "Check all installed plugins and remove those missing"
+msgstr "Kurulu bütün eklentileri denetle ve kayıp olanları ayır"
+
+#: pluginmanager/main.cpp:52
+msgid "List all installed plugins"
+msgstr "Kurulu eklentileri listele"
+
+#: pluginmanager/main.cpp:59
+msgid "Kommander Plugin Manager"
+msgstr "Kommander Eklenti Yöneticisi"
+
+#: pluginmanager/main.cpp:80
+msgid "Error adding plugin '%1'"
+msgstr "'%1' eklentisini eklemede hata"
+
+#: pluginmanager/main.cpp:85
+msgid "Error removing plugin '%1'"
+msgstr "'%1' eklentisini ayırmada hata"
+
+#: pluginmanager/mainwindow.cpp:37
+msgid "Refresh"
+msgstr "Tazele"
+
+#: pluginmanager/mainwindow.cpp:72
+msgid "Add Kommander Plugin"
+msgstr "Kommander Eklentisi Ekle"
+
+#: pluginmanager/mainwindow.cpp:80
+msgid "<qt>Unable to load Kommander plugin<br><b>%1</b></qt>"
+msgstr "<qt><br>Kommander eklentisi<b>%1</b> yüklenemedi</qt>"
+
+#: pluginmanager/mainwindow.cpp:81
+msgid "Cannot add plugin"
+msgstr "Eklenti eklenemiyor"
+
+#: _translatorinfo.cpp:1 editor/main.cpp:50
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Aydın Demirel"
+
+#: _translatorinfo.cpp:3 editor/main.cpp:51
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "aydin@kde.org.tr"
+
+#. i18n: file ./editor/templates/Configuration_Dialog.ui line 31
+#: editor/iconvieweditorimpl.cpp:57 editor/listboxeditorimpl.cpp:61
+#: editor/widgetfactory.cpp:891 editor/widgetfactory.cpp:924
+#: editor/widgetfactory.cpp:935 editor/widgetfactory.cpp:1126
+#: editor/widgetfactory.cpp:1236 rc.cpp:1379
+#, no-c-format
+msgid "New Item"
+msgstr "Yeni Nesne"
+
+#: editor/iconvieweditorimpl.cpp:124 editor/listboxeditorimpl.cpp:134
+msgid "Edit Items of '%1'"
+msgstr "'%1' öğe düzenle"
+
+#: editor/formfile.cpp:121
+msgid ""
+"Failed to save file '%1'.\n"
+"Do you want to use another file name?"
+msgstr ""
+"'%1' dosya kaydetmesi başarısız.\n"
+"Başka dosya adı kullanmak istiyor musunuz?"
+
+#: editor/formfile.cpp:122
+msgid "Try Another"
+msgstr ""
+
+#: editor/formfile.cpp:122
+msgid "Do Not Try"
+msgstr ""
+
+#: editor/formfile.cpp:127
+msgid "'%1' saved."
+msgstr "'%1' kaydedildi."
+
+#: editor/formfile.cpp:141 editor/mainwindowactions.cpp:626
+msgid "*.kmdr|Kommander Files"
+msgstr "*.kmdr|Kommander Dosyaları"
+
+#: editor/formfile.cpp:142
+msgid "Save Form '%1' As"
+msgstr "'%1' Formunu Farklı Kaydet"
+
+#: editor/formfile.cpp:154
+msgid "The file already exists. Do you wish to overwrite it?"
+msgstr "Dosya zaten var. Üstüne yazmak ister misiniz?"
+
+#: editor/formfile.cpp:155
+msgid "Overwrite File?"
+msgstr "Dosyanın Üzerine Yazılsın mı?"
+
+#: editor/formfile.cpp:155 editor/messagelog.cpp:128
+#, fuzzy
+msgid "Overwrite"
+msgstr "Dosyanın Üzerine Yazılsın mı?"
+
+#: editor/formfile.cpp:184
+msgid "Dialog '%1' was modified.Do you want to save it?"
+msgstr "'%1' pencere değiştirilmiş. Kaydetmek istiyor musunuz?"
+
+#: editor/formfile.cpp:185
+msgid "Save File?"
+msgstr "Dosyayı Kaydet?"
+
+#: editor/formfile.cpp:244
+msgid "unnamed"
+msgstr "isimsiz"
+
+#: editor/propertyeditor.cpp:406
+msgid "Reset the property to its default value"
+msgstr "Özelliği öntanımlı değerine sıfırla"
+
+#: editor/propertyeditor.cpp:407
+msgid "Click this button to reset the property to its default value"
+msgstr "Özelliği öntanımlı değerine sıfırlamak için bu düğmeye basın"
+
+#. i18n: file ./editor/iconvieweditor.ui line 254
+#: editor/propertyeditor.cpp:595 rc.cpp:377 rc.cpp:446 rc.cpp:578 rc.cpp:674
+#: rc.cpp:746 rc.cpp:1016 rc.cpp:1181 rc.cpp:1238
+#, no-c-format
+msgid "..."
+msgstr "..."
+
+#: editor/propertyeditor.cpp:1071 editor/propertyeditor.cpp:1132
+msgid "False"
+msgstr "Yanlış"
+
+#: editor/propertyeditor.cpp:1072 editor/propertyeditor.cpp:1130
+msgid "True"
+msgstr "Doğru"
+
+#: editor/propertyeditor.cpp:1410 editor/propertyeditor.cpp:1428
+#: editor/propertyeditor.cpp:1507 editor/propertyeditor.cpp:1518
+msgid "x"
+msgstr "x"
+
+#: editor/propertyeditor.cpp:1412 editor/propertyeditor.cpp:1433
+#: editor/propertyeditor.cpp:1509 editor/propertyeditor.cpp:1520
+msgid "y"
+msgstr "y"
+
+#: editor/propertyeditor.cpp:1416 editor/propertyeditor.cpp:1438
+#: editor/propertyeditor.cpp:1511 editor/propertyeditor.cpp:1525
+msgid "width"
+msgstr "genişlik"
+
+#: editor/propertyeditor.cpp:1418 editor/propertyeditor.cpp:1443
+#: editor/propertyeditor.cpp:1513 editor/propertyeditor.cpp:1527
+msgid "height"
+msgstr "yükseklik"
+
+#: editor/propertyeditor.cpp:1647 editor/propertyeditor.cpp:1660
+#: editor/propertyeditor.cpp:1710
+msgid "Red"
+msgstr "Kırmızı"
+
+#: editor/propertyeditor.cpp:1649 editor/propertyeditor.cpp:1662
+#: editor/propertyeditor.cpp:1712
+msgid "Green"
+msgstr "Yeşil"
+
+#: editor/propertyeditor.cpp:1651 editor/propertyeditor.cpp:1664
+#: editor/propertyeditor.cpp:1714
+msgid "Blue"
+msgstr "Mavi"
+
+#: editor/propertyeditor.cpp:1768 editor/propertyeditor.cpp:1787
+#: editor/propertyeditor.cpp:1852
+msgid "Family"
+msgstr "Aile"
+
+#: editor/propertyeditor.cpp:1770 editor/propertyeditor.cpp:1790
+#: editor/propertyeditor.cpp:1854
+msgid "Point Size"
+msgstr "Nokta Boyutu"
+
+#: editor/propertyeditor.cpp:1772 editor/propertyeditor.cpp:1792
+#: editor/propertyeditor.cpp:1856
+msgid "Bold"
+msgstr "Koyu"
+
+#: editor/propertyeditor.cpp:1776 editor/propertyeditor.cpp:1796
+#: editor/propertyeditor.cpp:1860
+msgid "Underline"
+msgstr "Altçizgi"
+
+#: editor/propertyeditor.cpp:1778 editor/propertyeditor.cpp:1798
+#: editor/propertyeditor.cpp:1862
+msgid "Strikeout"
+msgstr "Üstçizgi"
+
+#: editor/propertyeditor.cpp:1892 editor/propertyeditor.cpp:1910
+msgid "Connection"
+msgstr "Bağlantı"
+
+#: editor/propertyeditor.cpp:1894 editor/propertyeditor.cpp:1928
+#: editor/widgetdatabase.cpp:223
+msgid "Table"
+msgstr "Tablo"
+
+#: editor/propertyeditor.cpp:1897 editor/propertyeditor.cpp:1951
+msgid "Field"
+msgstr "Alan"
+
+#: editor/propertyeditor.cpp:2059 editor/propertyeditor.cpp:2077
+#: editor/propertyeditor.cpp:2127
+msgid "hSizeType"
+msgstr "yatayBoyutTürü"
+
+#: editor/propertyeditor.cpp:2062 editor/propertyeditor.cpp:2079
+#: editor/propertyeditor.cpp:2129
+msgid "vSizeType"
+msgstr "düşeyBoyutTürü"
+
+#: editor/propertyeditor.cpp:2065 editor/propertyeditor.cpp:2081
+#: editor/propertyeditor.cpp:2131
+msgid "horizontalStretch"
+msgstr "Yatay uzat"
+
+#: editor/propertyeditor.cpp:2067 editor/propertyeditor.cpp:2083
+#: editor/propertyeditor.cpp:2133
+msgid "verticalStretch"
+msgstr "Dikey uzat"
+
+#: editor/propertyeditor.cpp:2254
+msgid "Arrow"
+msgstr "Ok"
+
+#: editor/propertyeditor.cpp:2258
+msgid "Up-Arrow"
+msgstr "Yukarı-Ok"
+
+#: editor/propertyeditor.cpp:2262
+msgid "Cross"
+msgstr "Çarpı"
+
+#: editor/propertyeditor.cpp:2266
+msgid "Waiting"
+msgstr "Bekliyor"
+
+#: editor/propertyeditor.cpp:2270
+msgid "iBeam"
+msgstr "i-İmleci"
+
+#: editor/propertyeditor.cpp:2274
+msgid "Size Vertical"
+msgstr "Düşey Boyut"
+
+#: editor/propertyeditor.cpp:2278
+msgid "Size Horizontal"
+msgstr "Yatay Boyut"
+
+#: editor/propertyeditor.cpp:2282
+msgid "Size Slash"
+msgstr "Kesik Boyut"
+
+#: editor/propertyeditor.cpp:2286
+msgid "Size Backslash"
+msgstr "Ters Eğik Çizgi Boyutu"
+
+#: editor/propertyeditor.cpp:2290
+msgid "Size All"
+msgstr "Tümünü Boyutlandır"
+
+#: editor/propertyeditor.cpp:2294
+msgid "Blank"
+msgstr "Boş"
+
+#: editor/propertyeditor.cpp:2298
+msgid "Split Vertical"
+msgstr "Dikey Böl"
+
+#: editor/propertyeditor.cpp:2302
+msgid "Split Horizontal"
+msgstr "Yatay Böl"
+
+#: editor/propertyeditor.cpp:2306
+msgid "Pointing Hand"
+msgstr "İşaret Eli"
+
+#: editor/propertyeditor.cpp:2310
+msgid "Forbidden"
+msgstr "Yasak"
+
+#: editor/propertyeditor.cpp:2402
+msgid "Property"
+msgstr "Özellik"
+
+#: editor/propertyeditor.cpp:2403
+msgid "Value"
+msgstr "Değer"
+
+#: editor/propertyeditor.cpp:2885
+msgid "Set '%1' of '%2'"
+msgstr "'%2' nin '%1' Ayarı"
+
+#: editor/propertyeditor.cpp:3006
+msgid "Sort &Categorized"
+msgstr "&Kategoriye göre Sırala"
+
+#: editor/propertyeditor.cpp:3007
+msgid "Sort &Alphabetically"
+msgstr "&Alfabetik olarak Sırala"
+
+#: editor/propertyeditor.cpp:3137
+msgid "Reset '%1' of '%2'"
+msgstr "'%2' nin '%1' Tekrar Başlat"
+
+#: editor/propertyeditor.cpp:3244
+msgid ""
+"<p><b>QWidget::%1</b></p>"
+"<p>There is no documentation available for this property.</p>"
+msgstr "<p><b>QWidget::%1</b></p> <p>Bu özellik için mevcut belge yok.</p>"
+
+#: editor/propertyeditor.cpp:3395
+msgid "New Signal Handler"
+msgstr "Yeni Sinyal Yöneticisi"
+
+#: editor/propertyeditor.cpp:3396
+msgid "Delete Signal Handler"
+msgstr "Sinyal Yöneticisi Sil"
+
+#: editor/connectioneditorimpl.cpp:236 editor/propertyeditor.cpp:3430
+msgid "Remove Connection"
+msgstr "Bağlantı Kaldır"
+
+#: editor/connectioneditorimpl.cpp:246 editor/propertyeditor.cpp:3480
+msgid "Add Connection"
+msgstr "Bağlantı Ekle"
+
+#: editor/mainwindow.cpp:243 editor/propertyeditor.cpp:3542
+#: editor/propertyeditor.cpp:3582
+msgid "Property Editor"
+msgstr "Özellik Düzenleyicisi"
+
+#: editor/propertyeditor.cpp:3547
+msgid "P&roperties"
+msgstr "Ö&zellikler"
+
+#: editor/propertyeditor.cpp:3550
+msgid "S&ignal Handlers"
+msgstr "S&inyal İşleyicileri"
+
+#: editor/propertyeditor.cpp:3591
+msgid "Property Editor (%1)"
+msgstr "Özellik Düzenleyicisi (%1)"
+
+#: editor/actioneditorimpl.cpp:43 editor/mainwindow.cpp:301
+msgid "Actions"
+msgstr "Eylemler"
+
+#: editor/actioneditorimpl.cpp:48 editor/actionlistview.cpp:90
+msgid "New &Action"
+msgstr "Yeni &Eylem"
+
+#: editor/actioneditorimpl.cpp:49 editor/actionlistview.cpp:91
+msgid "New Action &Group"
+msgstr "Yeni Eylem &Grubu"
+
+#: editor/actioneditorimpl.cpp:50 editor/actionlistview.cpp:92
+msgid "New &Dropdown Action Group"
+msgstr "Yeni Açılır &Liste Eylem Grubu"
+
+#: editor/messagelog.cpp:34
+#, fuzzy
+msgid "Copy Current &Line"
+msgstr "Bulunulan satırı kopyala"
+
+#: editor/messagelog.cpp:35
+#, fuzzy
+msgid "&Copy Content"
+msgstr "İçindekileri Kopyala"
+
+#: editor/messagelog.cpp:36
+#, fuzzy
+msgid "&Save As..."
+msgstr "Hepsini Kaydet"
+
+#: editor/messagelog.cpp:122
+msgid ""
+"*.log|Log Files (*.log)\n"
+"*|All Files"
+msgstr ""
+"*.log|Log Dosyaları (*.log)\n"
+"*|Tüm Dosyalar"
+
+#: editor/messagelog.cpp:122
+msgid "Save Log File"
+msgstr "Log Dosyasını Kaydet?"
+
+#: editor/messagelog.cpp:127
+msgid "<qt>File<br><b>%1</b><br>already exists. Overwrite it?</qt>"
+msgstr "<qt><br><b>%1</b><br> dosyası zaten mevcut. Üstüne yazılsın mı?</qt>"
+
+#: editor/messagelog.cpp:132
+msgid "<qt>Cannot save log file<br><b>%1</b></qt>"
+msgstr "<qt><b>%1</b> log dosyası kaydedilemiyor</qt>"
+
+#: editor/messagelog.cpp:146
+msgid "Stdout"
+msgstr "Stdout"
+
+#: editor/messagelog.cpp:146
+msgid "Stderr"
+msgstr "Stderr"
+
+#: editor/tableeditorimpl.cpp:55
+msgid "<no field>"
+msgstr "<alan yok>"
+
+#: editor/tableeditorimpl.cpp:315
+msgid "Edit Rows and Columns of '%1' "
+msgstr "'%1' in Satır ve Sütunlarını Düzenle"
+
+#: editor/widgetfactory.cpp:291 editor/widgetfactory.cpp:571
+msgid "Move Tab Page"
+msgstr "Sekme Sayfasını Taşı "
+
+#. i18n: file ./editor/listeditor.ui line 31
+#: editor/widgetfactory.cpp:934 editor/widgetfactory.cpp:1125
+#: editor/widgetfactory.cpp:1235 rc.cpp:890
+#, no-c-format
+msgid "Column 1"
+msgstr "Sütun 1"
+
+#: editor/widgetfactory.cpp:967 editor/widgetfactory.cpp:1169
+msgid "Tab 1"
+msgstr "Sekme 1"
+
+#: editor/widgetfactory.cpp:970 editor/widgetfactory.cpp:1172
+msgid "Tab 2"
+msgstr "Sekme 2"
+
+#: editor/widgetfactory.cpp:1156 editor/widgetfactory.cpp:1184
+msgid "Page 1"
+msgstr "Sayfa 1"
+
+#: editor/widgetfactory.cpp:1157 editor/widgetfactory.cpp:1187
+msgid "Page 2"
+msgstr "Sayfa 2"
+
+#: editor/mainwindow.cpp:893 editor/mainwindowactions.cpp:96
+msgid "&Undo: Not Available"
+msgstr "Ge&ri al: Mümkün Değil"
+
+#: editor/mainwindowactions.cpp:97
+msgid "Undoes the last action"
+msgstr "Son eylemi geri alır"
+
+#: editor/mainwindow.cpp:897 editor/mainwindowactions.cpp:102
+msgid "&Redo: Not Available"
+msgstr "Y&inele: Mümkün Değil"
+
+#: editor/mainwindowactions.cpp:103
+msgid "Redoes the last undone operation"
+msgstr "Son işlemi yineler"
+
+#: editor/mainwindowactions.cpp:108
+msgid "Cuts the selected widgets and puts them on the clipboard"
+msgstr "Seçili bileşenleri keser ve onları panoya taşır"
+
+#: editor/mainwindowactions.cpp:113
+msgid "Copies the selected widgets to the clipboard"
+msgstr "Seçili bileşenleri panoya kopyalar"
+
+#: editor/mainwindowactions.cpp:118
+msgid "Pastes the clipboard's contents"
+msgstr "Panonun içindekilerini yapıştırır"
+
+#: editor/mainwindowactions.cpp:124
+msgid "Deletes the selected widgets"
+msgstr "Seçili bileşenleri siler"
+
+#: editor/mainwindowactions.cpp:129
+msgid "Selects all widgets"
+msgstr "Tüm bileşenleri seçer"
+
+#: editor/mainwindowactions.cpp:132
+msgid "Bring to Front"
+msgstr "Öne Al"
+
+#: editor/mainwindowactions.cpp:134
+msgid "Raises the selected widgets"
+msgstr "Seçili bileşenleri yükseltir"
+
+#: editor/mainwindowactions.cpp:137
+msgid "Send to Back"
+msgstr "Arkaya At"
+
+#: editor/mainwindowactions.cpp:139 editor/mainwindowactions.cpp:140
+msgid "Lowers the selected widgets"
+msgstr "Seçili bileşenleri alçaltır"
+
+#: editor/mainwindowactions.cpp:143
+#, fuzzy
+msgid "Find in Form..."
+msgstr "Form &Aç..."
+
+#: editor/mainwindowactions.cpp:144
+msgid "Search for a text in the whole form."
+msgstr ""
+
+#: editor/formwindow.cpp:1848 editor/formwindow.cpp:1860
+#: editor/mainwindowactions.cpp:148
+msgid "Check Accelerators"
+msgstr "Hızlandırıcıları Kontrol Et"
+
+#: editor/mainwindowactions.cpp:150
+msgid "Checks if the accelerators used in the form are unique"
+msgstr "Form'da kullanılan hızlandırıcılar'ın eşsiz olup-olmadığını denetler"
+
+#: editor/mainwindowactions.cpp:154
+msgid "Connections"
+msgstr "Bağlantılar"
+
+#: editor/mainwindowactions.cpp:157
+msgid "Opens a dialog for editing connections"
+msgstr "Bağlantıları düzenlemek için bir iletişim kutusu açar"
+
+#: editor/mainwindowactions.cpp:161
+msgid "Form Settings..."
+msgstr "Form Ayarları..."
+
+#: editor/mainwindowactions.cpp:163
+msgid "Opens a dialog to change the form's settings"
+msgstr "Form'un ayarlarını değiştirmek için bir iletişim kutusu açar"
+
+#: editor/mainwindowactions.cpp:169
+#, c-format
+msgid "<b>The Edit toolbar</b>%1"
+msgstr "<b>Düzenleme araç çubuğu</b>%1"
+
+#: editor/formwindow.cpp:1443 editor/formwindow.cpp:1457
+#: editor/formwindow.cpp:1465 editor/mainwindowactions.cpp:200
+msgid "Adjust Size"
+msgstr "Boyutu Ayarla"
+
+#: editor/mainwindowactions.cpp:202
+msgid "Adjusts the size of the selected widget"
+msgstr "Seçili bileşenenin boyutunu ayarlar"
+
+#: editor/formwindow.cpp:1909 editor/mainwindowactions.cpp:206
+msgid "Lay Out Horizontally"
+msgstr "Yatay Olarak Düzenle"
+
+#: editor/mainwindowactions.cpp:208
+msgid "Lays out the selected widgets horizontally"
+msgstr "Seçili bileşenleri yatay olarak düzenler"
+
+#: editor/formwindow.cpp:1919 editor/mainwindowactions.cpp:212
+msgid "Lay Out Vertically"
+msgstr "Düşey Olarak Düzenle"
+
+#: editor/mainwindowactions.cpp:214
+msgid "Lays out the selected widgets vertically"
+msgstr "Seçili Bileşenleri Düşey Olarak Düzenler"
+
+#: editor/formwindow.cpp:1954 editor/mainwindowactions.cpp:218
+msgid "Lay Out in a Grid"
+msgstr "Izgara içinde Düzenle"
+
+#: editor/mainwindowactions.cpp:220
+msgid "Lays out the selected widgets in a grid"
+msgstr "Seçili bileşenleri ızgara içinde düzenler"
+
+#: editor/mainwindowactions.cpp:224
+msgid "Lay Out Horizontally in Splitter"
+msgstr "Dallandırıcı içinde Yatay Olarak Düzenle"
+
+#: editor/mainwindowactions.cpp:227
+msgid "Lays out the selected widgets horizontally in a splitter"
+msgstr "Seçili bileşenleri bir dallandırıcı içinde yatay olarak düzenler"
+
+#: editor/mainwindowactions.cpp:231
+msgid "Lay Out Vertically in Splitter"
+msgstr "Dallandırıcı içinde Düşey Olarak Düzenle"
+
+#: editor/mainwindowactions.cpp:234
+msgid "Lays out the selected widgets vertically in a splitter"
+msgstr "Seçili bileşenleri bir dallandırıcı içinde düşey olarak düzenler"
+
+#: editor/formwindow.cpp:2054 editor/formwindow.cpp:2073
+#: editor/mainwindowactions.cpp:238
+msgid "Break Layout"
+msgstr "Düzeni Kes"
+
+#: editor/mainwindowactions.cpp:240
+msgid "Breaks the selected layout"
+msgstr "Seçili düzeni keser"
+
+#: editor/mainwindowactions.cpp:244 editor/widgetdatabase.cpp:356
+msgid "Spacer"
+msgstr "Yer Tutucu"
+
+#: editor/mainwindowactions.cpp:247
+msgid "Add "
+msgstr "Ekle"
+
+#: editor/mainwindowactions.cpp:248 editor/mainwindowactions.cpp:362
+#, c-format
+msgid "Insert a %1"
+msgstr "%1 ekle"
+
+#: editor/mainwindowactions.cpp:249
+msgid ""
+"<b>A %1</b>"
+"<p>%2</p>"
+"<p>Click to insert a single %3,or double click to keep the tool selected."
+msgstr ""
+"<b>Bir %1</b>"
+"<p>%2</p>"
+"<p>Tek bir %3 eklemek için tıklayın, ya da aracı seçili tutmak için çift "
+"tıklayın."
+
+#: editor/mainwindowactions.cpp:254
+#, c-format
+msgid "<b>The Layout toolbar</b>%1"
+msgstr "<b>Düzen araç çubuğu</b>%1"
+
+#: editor/mainwindowactions.cpp:267
+msgid "&Layout"
+msgstr "&Düzen"
+
+#: editor/mainwindowactions.cpp:282
+msgid "Pointer"
+msgstr "İşaretleyici"
+
+#: editor/mainwindowactions.cpp:285
+msgid "Selects the pointer tool"
+msgstr "İşaretleyici aracını seçer"
+
+#: editor/mainwindowactions.cpp:289
+msgid "Connect Signal/Slots"
+msgstr "Sinyal/Slot Bağla"
+
+#: editor/mainwindowactions.cpp:292
+msgid "Selects the connection tool"
+msgstr "Bağlantı aracını seçer"
+
+#: editor/mainwindowactions.cpp:296
+msgid "Tab Order"
+msgstr "Sekme Sırası"
+
+#: editor/mainwindowactions.cpp:299
+msgid "Selects the tab order tool"
+msgstr "Sekme sırası aracını seçer"
+
+#: editor/mainwindowactions.cpp:305
+#, c-format
+msgid "<b>The Tools toolbar</b>%1"
+msgstr "<b>Araçlar araç çubuğu</b>%1"
+
+#: editor/mainwindowactions.cpp:307
+msgid "Tools"
+msgstr "Araçlar"
+
+#: editor/mainwindowactions.cpp:329
+msgid "<b>The %1</b>%2"
+msgstr "<b>%1</b>%2"
+
+#: editor/mainwindowactions.cpp:330
+#, c-format
+msgid ""
+" Click on a button to insert a single widget, or double click to insert "
+"multiple %1."
+msgstr ""
+"Tekli bileşen eklemek için bu düğmeye basın ya da %1 çoklu eklemek için çift "
+"tıklayın."
+
+#: editor/mainwindowactions.cpp:334
+msgid "<b>The %1 Widgets</b>%2"
+msgstr "<b>%1 Bileşenler</b>%2"
+
+#: editor/mainwindowactions.cpp:335
+msgid ""
+" Click on a button to insert a single %1 widget, or double click to insert "
+"multiple widgets."
+msgstr ""
+"%1 tekli bileşen eklemek için düğme üzerine tıklayın ya da çoklu bileşenler "
+"eklemek için çift tıklayın."
+
+#: editor/mainwindowactions.cpp:364
+msgid "<b>A %1</b>"
+msgstr "<b>%1</b>"
+
+#: editor/mainwindowactions.cpp:367
+msgid "<p>Double click on this tool to keep it selected.</p>"
+msgstr "<p>Seçili tutmak için bu araca çift tıklayın.</p>"
+
+#: editor/mainwindowactions.cpp:398
+msgid "Editor"
+msgstr "Düzenleyici"
+
+#: editor/mainwindowactions.cpp:408
+#, c-format
+msgid "<b>The File toolbar</b>%1"
+msgstr "<b>Dosya araç çubuğu</b>%1"
+
+#: editor/mainwindowactions.cpp:414
+msgid "Creates a new dialog"
+msgstr "Yeni bir iletişim kutusu oluşturur"
+
+#: editor/mainwindowactions.cpp:420
+msgid "Opens an existing dialog"
+msgstr "Mevcut bir diyalog açar"
+
+#: editor/mainwindowactions.cpp:426
+msgid "Opens recently open file"
+msgstr "En son açık dosyayı açar"
+
+#: editor/mainwindowactions.cpp:431
+msgid "Closes the current dialog"
+msgstr "Mevcut iletişim kutusunu kapatır"
+
+#: editor/mainwindowactions.cpp:439
+msgid "Saves the current dialog"
+msgstr "Mevcut iletişim kutusunu kaydeder"
+
+#: editor/mainwindowactions.cpp:446
+msgid "Saves the current dialog with a new filename"
+msgstr "Şu anki pencereyi yeni dosya adıyla kaydeder"
+
+#: editor/mainwindowactions.cpp:451
+msgid "Save All"
+msgstr "Hepsini Kaydet"
+
+#: editor/mainwindowactions.cpp:453
+msgid "Saves all open dialogs"
+msgstr "Açık tüm iletişim kutularını kaydeder"
+
+#: editor/mainwindowactions.cpp:461
+msgid "Quits the application and prompts to save any changed dialogs"
+msgstr ""
+"Uygulamadan çıkar ve değiştirilmiş herhangi bir iletişim kutusunu kaydetmeyi "
+"sorar"
+
+#: editor/mainwindowactions.cpp:470
+msgid "&Run"
+msgstr "Çalıştı&r"
+
+#: editor/mainwindowactions.cpp:472
+msgid "Run Dialog"
+msgstr "Çalıştır Penceresi"
+
+#: editor/mainwindowactions.cpp:474
+msgid "Executes dialog"
+msgstr "Çalışan pencere"
+
+#: editor/mainwindowactions.cpp:488
+msgid "Tile"
+msgstr "Döşe"
+
+#: editor/mainwindowactions.cpp:490
+msgid "Tiles the windows so that they are all visible"
+msgstr "Görünür tüm penceleri döşer"
+
+#: editor/mainwindowactions.cpp:493 editor/mainwindowactions.cpp:498
+msgid "Cascade"
+msgstr "Basamakla"
+
+#: editor/mainwindowactions.cpp:495
+msgid "Cascades the windows so that all their title bars are visible"
+msgstr "Görünür tüm başlık çubukların pencerelerini basamaklar"
+
+#: editor/mainwindowactions.cpp:500
+msgid "Closes the active window"
+msgstr "Aktif pencereyi kapatır"
+
+#: editor/mainwindowactions.cpp:503
+msgid "Close All"
+msgstr "Hepsini Kapat"
+
+#: editor/mainwindowactions.cpp:505
+msgid "Closes all form windows"
+msgstr "Tüm form pencerelerini kapat"
+
+#: editor/mainwindowactions.cpp:508
+msgid "Next"
+msgstr "Sonraki"
+
+#: editor/mainwindowactions.cpp:510
+msgid "Activates the next window"
+msgstr "Bir sonraki pencereyi aktif duruma getirir"
+
+#: editor/mainwindowactions.cpp:513
+msgid "Previous"
+msgstr "Önceki"
+
+#: editor/mainwindowactions.cpp:515
+msgid "Activates the previous window"
+msgstr "Bir önceki pencereyi aktif duruma getirir"
+
+#: editor/mainwindowactions.cpp:519
+msgid "&Window"
+msgstr "&Pencere"
+
+#: editor/mainwindowactions.cpp:531
+msgid "Vie&ws"
+msgstr "&Görünümler"
+
+#: editor/mainwindowactions.cpp:532
+msgid "Tool&bars"
+msgstr "A&raç Çubukları"
+
+#: editor/mainwindowactions.cpp:568
+msgid "Opens a dialog to change shortcuts"
+msgstr "Kısayolları değiştirmek için bir diyalog açar"
+
+#: editor/mainwindowactions.cpp:571
+#, fuzzy
+msgid "Configure &Plugins..."
+msgstr "&Eklentileri Yapılandır"
+
+#: editor/mainwindowactions.cpp:573
+msgid "Opens a dialog to configure plugins"
+msgstr "Eklentileri Yapılandırmak için bir iletişim kutusu açar"
+
+#: editor/mainwindowactions.cpp:576
+#, fuzzy
+msgid "&Configure Editor..."
+msgstr "&Eklentileri Yapılandır"
+
+#: editor/mainwindowactions.cpp:578
+msgid "Configure various aspects of this editor."
+msgstr ""
+
+#: editor/mainwindowactions.cpp:582
+msgid "Opens a dialog to change preferences"
+msgstr "Seçenekleri değiştirmek için bir iletişim kutusu açar"
+
+#: editor/mainwindowactions.cpp:598
+msgid "Create a new dialog..."
+msgstr "Yeni bir diyalog oluştur..."
+
+#: editor/mainwindowactions.cpp:621
+msgid "Open a file..."
+msgstr "Bir dosya aç..."
+
+#: editor/mainwindowactions.cpp:626
+msgid "Open Files"
+msgstr "Dosyaları Aç"
+
+#: editor/mainwindowactions.cpp:662
+msgid "Reading file '%1'..."
+msgstr "'%1' dosyası okunuyor..."
+
+#: editor/mainwindowactions.cpp:675
+msgid "Loaded file '%1'"
+msgstr "'%1' dosyası yüklendi"
+
+#: editor/mainwindowactions.cpp:681 editor/mainwindowactions.cpp:682
+msgid "Could not load file '%1'"
+msgstr "'%1' dosyası yüklendi"
+
+#: editor/mainwindowactions.cpp:682
+msgid "Load File"
+msgstr "Dosya Yükle"
+
+#: editor/mainwindowactions.cpp:717
+msgid "Enter a filename..."
+msgstr "Bir dosya adı girin..."
+
+#: editor/mainwindowactions.cpp:745
+msgid "Qt Designer is crashing. Attempting to save files..."
+msgstr "Qt Designer çöküyor.. Dosyalar kaydedilmeye çalışılıyor..."
+
+#: editor/mainwindowactions.cpp:782 editor/mainwindowactions.cpp:845
+msgid "NewTemplate"
+msgstr "Yeni Şablon"
+
+#: editor/mainwindowactions.cpp:794 editor/mainwindowactions.cpp:823
+msgid "Could not create the template"
+msgstr "Şablon oluşturulamadı"
+
+#. i18n: file ./editor/createtemplate.ui line 38
+#: editor/mainwindowactions.cpp:794 editor/mainwindowactions.cpp:823
+#: rc.cpp:407
+#, no-c-format
+msgid "Create Template"
+msgstr "Şablon Oluştur"
+
+#: editor/mainwindowactions.cpp:897
+msgid ""
+"Cannot paste widgets. Designer could not find a container\n"
+"to paste into which does not contain a layout. Break the layout\n"
+"of the container you want to paste into and select this container\n"
+"and then paste again."
+msgstr ""
+"Bileşenler yapıştırılamadı. Designer bir düzen içermeyen yapıştırma kabı "
+"bulamadı\n"
+"Bu kabı seçin Bu kabı seçin ve içine yapıştırmak istediğiniz kabın düzenini "
+"kesin\n"
+"ve sonra tekrar\n"
+"yapıştırın."
+
+#: editor/mainwindowactions.cpp:900
+msgid "Paste Error"
+msgstr "Yapıştırma Hatası"
+
+#: editor/formwindow.cpp:2135 editor/mainwindowactions.cpp:1063
+msgid "Edit connections..."
+msgstr "Bağlantıları düzenle..."
+
+#: editor/mainwindowactions.cpp:1082
+msgid "Edit the current form's settings..."
+msgstr "Mevcut formun ayarlarını düzenle..."
+
+#: editor/mainwindowactions.cpp:1090
+msgid "Edit preferences..."
+msgstr "Seçenekleri düzenle..."
+
+#: editor/command.cpp:499 editor/command.cpp:511
+msgid "Set 'name' Property"
+msgstr "'isim' Özelliğini Ayarla"
+
+#: editor/command.cpp:500
+msgid ""
+"The name of a widget must be unique.\n"
+"'%1' is already used in form '%2',\n"
+"so the name has been reverted to '%3'."
+msgstr ""
+"Bileşenin ismi tek olmalı.\n"
+"'%1' zaten '%2' form içinde kullanılıyor,\n"
+"bu yüzden isim '%3' e döndürülmelidir."
+
+#: editor/command.cpp:512
+msgid ""
+"The name of a widget must not be null.\n"
+"The name has been reverted to '%1'."
+msgstr ""
+"Bileşenin ismi boş olmamalıdır.\n"
+"İsmi '%1' e döndürülmelidir."
+
+#: editor/newformimpl.cpp:123
+msgid "Load Template"
+msgstr "Şablon Yükle"
+
+#: editor/newformimpl.cpp:124
+msgid "Could not load form description from template '%1'"
+msgstr "'%1' şablonundan form açıklaması yüklenemedi"
+
+#: editor/newformimpl.cpp:144
+msgid "Dialog"
+msgstr "Diyalog"
+
+#: editor/newformimpl.cpp:150
+msgid "Wizard"
+msgstr "Sihirbaz"
+
+#: editor/multilineeditorimpl.cpp:56
+msgid "Set Text of '%1'"
+msgstr "'%1' in Metnini Ayarla"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 198
+#: editor/mainwindow.cpp:1089 editor/mainwindow.cpp:1575
+#: editor/multilineeditorimpl.cpp:68 rc.cpp:143
+#, no-c-format
+msgid "Text"
+msgstr "Metin"
+
+#: editor/main.cpp:31
+msgid "Kommander is a graphical editor of scripted dialogs."
+msgstr "Kommander, betik diyalogları için görsel bir düzenleyicidir."
+
+#: editor/main.cpp:33
+msgid "Based on Qt Designer, (C) 2000 Trolltech AS."
+msgstr "Qt Designer Temelli, (C) 2000 Trolltech AS."
+
+#: editor/main.cpp:37 executor/main.cpp:52
+msgid "Dialog to open"
+msgstr "Açılacak diyalog"
+
+#: editor/main.cpp:43
+msgid "Kommander"
+msgstr "Kommander"
+
+#: editor/main.cpp:46
+msgid "Project manager"
+msgstr ""
+
+#: editor/main.cpp:71
+msgid "Kommander Dialog Editor"
+msgstr "Kommander Diyalog Düzenleyicisi"
+
+#: editor/wizardeditorimpl.cpp:62
+msgid "Edit Wizard Pages"
+msgstr "Sihirbaz Sayfalarını Düzenle"
+
+#: editor/hierarchyview.cpp:519 editor/hierarchyview.cpp:525
+#: editor/mainwindow.cpp:1153 editor/mainwindow.cpp:1171
+#: editor/mainwindow.cpp:1206 editor/wizardeditorimpl.cpp:112
+#, c-format
+msgid "Add Page to %1"
+msgstr "%1'e Sayfa Ekle"
+
+#: editor/hierarchyview.cpp:541 editor/hierarchyview.cpp:551
+#: editor/mainwindow.cpp:1160 editor/mainwindow.cpp:1178
+#: editor/mainwindow.cpp:1213 editor/wizardeditorimpl.cpp:130
+msgid "Delete Page %1 of %2"
+msgstr "%2 nin %1 Sayfasını Sil"
+
+#: editor/wizardeditorimpl.cpp:151 editor/wizardeditorimpl.cpp:171
+msgid "Swap Pages %1 and %2 of %3"
+msgstr "%3 ün %2 ve %1 Sayfalarını Takas Yap"
+
+#: editor/mainwindow.cpp:1114 editor/mainwindow.cpp:1227
+#: editor/wizardeditorimpl.cpp:200
+msgid "Page Title"
+msgstr "Sayfa Başlığı"
+
+#: editor/mainwindow.cpp:1114 editor/mainwindow.cpp:1227
+#: editor/wizardeditorimpl.cpp:200
+msgid "New page title:"
+msgstr "Yeni sayfa başlığı:"
+
+#: editor/mainwindow.cpp:1229 editor/wizardeditorimpl.cpp:202
+msgid "Rename page %1 of %2"
+msgstr "%2 nin %1 sayfasını yeniden adlandır"
+
+#: editor/sizehandle.cpp:230
+msgid "Resize"
+msgstr "Yeniden boyutlandır"
+
+#: editor/actionlistview.cpp:95
+msgid "&Connect Action..."
+msgstr "&Eylem Bağla..."
+
+#: editor/actionlistview.cpp:97
+msgid "Delete Action"
+msgstr "Eylemi &Sil"
+
+#: editor/workspace.cpp:226
+msgid "<No Project>"
+msgstr "<Proje Yok>"
+
+#: editor/workspace.cpp:661
+msgid "&Open Source File..."
+msgstr "Kaynak Dosyası &Aç..."
+
+#: editor/workspace.cpp:664
+msgid "&Remove Source File From Project"
+msgstr "Kaynak Dosyasını Projeden &Kaldır"
+
+#: editor/workspace.cpp:668
+msgid "&Open Form..."
+msgstr "Form &Aç..."
+
+#: editor/workspace.cpp:672 editor/workspace.cpp:682
+msgid "&Remove Form From Project"
+msgstr "Formu Projeden &Kaldır"
+
+#: editor/workspace.cpp:674 editor/workspace.cpp:684
+msgid "&Remove Form"
+msgstr "Formu &Kaldır"
+
+#: editor/workspace.cpp:678
+msgid "&Open Form Source..."
+msgstr "Form'un Kaynağı'nı &Aç..."
+
+#: editor/widgetdatabase.cpp:139
+msgid "Push Button"
+msgstr "Basma Düğmesi"
+
+#: editor/widgetdatabase.cpp:146
+msgid "Tool Button"
+msgstr "Araç Düğmesi"
+
+#: editor/widgetdatabase.cpp:153
+msgid "Radio Button"
+msgstr "Radyo Düğmesi"
+
+#: editor/widgetdatabase.cpp:160
+msgid "Check Box"
+msgstr "Onay Kutusu"
+
+#: editor/widgetdatabase.cpp:167
+msgid "Group Box"
+msgstr "Grub Kutusu"
+
+#: editor/widgetdatabase.cpp:175
+msgid "Button Group"
+msgstr "Düğme Grubu"
+
+#: editor/widgetdatabase.cpp:183
+msgid "Frame"
+msgstr "Çerçeve"
+
+#: editor/widgetdatabase.cpp:191
+msgid "Tabwidget"
+msgstr "Sekme Bileşeni"
+
+#: editor/widgetdatabase.cpp:199 editor/widgetdatabase.cpp:531
+msgid "List Box"
+msgstr "Liste Kutusu"
+
+#: editor/widgetdatabase.cpp:206
+msgid "List View"
+msgstr "Liste Görünümü"
+
+#: editor/widgetdatabase.cpp:214
+msgid "Icon View"
+msgstr "Simge Görünümü"
+
+#: editor/widgetdatabase.cpp:233
+msgid "Data Table"
+msgstr "Veri Tablosu"
+
+#: editor/widgetdatabase.cpp:241
+msgid "Line Edit"
+msgstr "Çizgi Düzenleyici"
+
+#: editor/widgetdatabase.cpp:248
+msgid "Spin Box"
+msgstr "Sayaç Kutusu"
+
+#: editor/widgetdatabase.cpp:255
+msgid "Date Edit"
+msgstr "Tarihi Düzenle"
+
+#: editor/widgetdatabase.cpp:263
+msgid "Time Edit"
+msgstr "Zamanı Düzenle"
+
+#: editor/widgetdatabase.cpp:271
+msgid "Date-Time Edit"
+msgstr "Tarih-Zaman Düzenle"
+
+#: editor/widgetdatabase.cpp:279
+msgid "Multi Line Edit"
+msgstr "Çoklu Satır Düzenle"
+
+#: editor/widgetdatabase.cpp:286
+msgid "Rich Text Edit"
+msgstr "Zengin Metin Düzenle"
+
+#: editor/widgetdatabase.cpp:293
+msgid "Combo Box"
+msgstr "Açılır Kutu"
+
+#: editor/widgetdatabase.cpp:300 editor/widgetdatabase.cpp:641
+msgid "Slider"
+msgstr "Kaydırıcı"
+
+#: editor/widgetdatabase.cpp:307
+msgid "Scrollbar"
+msgstr "Kaydırma Çubuğu"
+
+#: editor/widgetdatabase.cpp:314
+msgid "Dial"
+msgstr "Numara Çevir"
+
+#: editor/widgetdatabase.cpp:321
+msgid "Label"
+msgstr "Etiket"
+
+#: editor/widgetdatabase.cpp:328
+msgid "LCD Number"
+msgstr "LCD Numarası"
+
+#: editor/widgetdatabase.cpp:335
+msgid "Progress Bar"
+msgstr "İlerleme Çubuğu"
+
+#: editor/widgetdatabase.cpp:342
+msgid "Text View"
+msgstr "Metin Görünümü"
+
+#: editor/widgetdatabase.cpp:349 editor/widgetdatabase.cpp:524
+msgid "Text Browser"
+msgstr "Metin Gözatıcısı"
+
+#: editor/widgetdatabase.cpp:358
+msgid ""
+"The Spacer provides horizontal and vertical spacing to be able to manipulate "
+"the behaviour of layouts."
+msgstr ""
+"Yer Tutucu, yerleşim düzenine müdahale edebilmeyi olanaklı kılanyatay ve düşey "
+"boşluklar sağlar. "
+
+#: editor/widgetdatabase.cpp:494
+msgid "Text Label"
+msgstr "Metin Etiketi"
+
+#: editor/widgetdatabase.cpp:495
+msgid "The Text Label provides a widget to display static text."
+msgstr "Metin Etiketi durgun metin göstermek için bir bileşen sağlar."
+
+#: editor/widgetdatabase.cpp:502
+msgid "Pixmap Label"
+msgstr "Benek Etiketi"
+
+#: editor/widgetdatabase.cpp:503
+msgid "The Pixmap Label provides a widget to display pixmaps."
+msgstr "Benek Etiketi benekleri göstermek için bir bileşen sağlar."
+
+#: editor/widgetdatabase.cpp:510
+msgid "A line edit"
+msgstr "Bir satır düzenle"
+
+#: editor/widgetdatabase.cpp:517
+msgid "A rich text edit"
+msgstr "Bir zengin metin düzenle"
+
+#: editor/widgetdatabase.cpp:538
+msgid "A combo box"
+msgstr "Bir açılır kutu"
+
+#: editor/widgetdatabase.cpp:545
+msgid "A tree widget"
+msgstr "Bir ağaç bileşeni"
+
+#: editor/widgetdatabase.cpp:552
+msgid "A table widget"
+msgstr "Bir tablo bileşeni"
+
+#: editor/widgetdatabase.cpp:559
+msgid "A button that when clicked, execute a command"
+msgstr "Tıklandığında bir komut gerçekleştiren düğme"
+
+#: editor/widgetdatabase.cpp:566
+msgid "A button that closes the dialog it is in"
+msgstr "İçinde bulunduğu diyalog'u kapatan düğme"
+
+#: editor/widgetdatabase.cpp:573
+msgid "A listbox showing output of a script"
+msgstr "Bir betiğin çıktısı gösteren liste kutusu"
+
+#: editor/widgetdatabase.cpp:580
+msgid ""
+"A widget made up of a line edit and push button, for selecting files and "
+"folders"
+msgstr ""
+"Dizin ve dosyaları seçme bileşeni,-bir basma düğmesi ve düzenleme satırından "
+"oluşturulmuştur."
+
+#: editor/widgetdatabase.cpp:587
+msgid "A check box"
+msgstr "Onay kutusu"
+
+#: editor/widgetdatabase.cpp:594
+msgid "A radio button"
+msgstr "Radyo kutusu"
+
+#: editor/widgetdatabase.cpp:601
+msgid "A widget for grouping buttons together"
+msgstr "Düğmeleri birlikte gruplama için bir bileşen"
+
+#: editor/widgetdatabase.cpp:609
+msgid "A widget for grouping other widgets together"
+msgstr "Diğer bileşenleri birlikte gruplama için bir bileşen"
+
+#: editor/widgetdatabase.cpp:617
+msgid "A widget with tabs"
+msgstr "Sekmeli Bileşen"
+
+#: editor/widgetdatabase.cpp:634
+msgid "A spin box"
+msgstr "Sayaç kutusu"
+
+#: editor/widgetdatabase.cpp:648
+msgid "A small rich text editor"
+msgstr "Küçük bir zengin metin düzenleyicisi"
+
+#: editor/widgetdatabase.cpp:655
+msgid "A status bar"
+msgstr "Durum çubuğu"
+
+#: editor/widgetdatabase.cpp:662
+msgid "A progress bar"
+msgstr "İlerleme çubuğu"
+
+#: editor/widgetdatabase.cpp:669
+msgid "A hidden script container"
+msgstr "Gizli betik sandığı"
+
+#: editor/widgetdatabase.cpp:676
+msgid "A timer for running scripts periodically"
+msgstr "Betikleri belirli aralıklarla çalıştırmak için bir zamanlayıcı"
+
+#: editor/widgetdatabase.cpp:683
+#, fuzzy
+msgid "A date selection widget"
+msgstr "Seçili bileşenleri yükseltir"
+
+#: editor/pixmapchooser.cpp:947
+msgid "All Pixmaps"
+msgstr "Tüm Benekler"
+
+#: editor/pixmapchooser.cpp:950
+msgid ""
+"%1-Pixmaps (%2)\n"
+msgstr ""
+"%1-Benekler (%2)\n"
+
+#: editor/pixmapchooser.cpp:956
+msgid "All Files (*)"
+msgstr "Tüm Dosyalar (*)"
+
+#. i18n: file ./editor/pixmapfunction.ui line 38
+#: editor/pixmapchooser.cpp:964 rc.cpp:1097
+#, no-c-format
+msgid "Choose Pixmap"
+msgstr "Benek Seç"
+
+#: editor/actiondnd.cpp:294 editor/actiondnd.cpp:353
+msgid "Delete Toolbar"
+msgstr "Araç Çubuğunu Sil"
+
+#: editor/actiondnd.cpp:297 editor/actiondnd.cpp:383
+msgid "Delete Toolbar '%1'"
+msgstr "'%1' Araç Çubuğunu Sil"
+
+#: editor/actiondnd.cpp:348 editor/actiondnd.cpp:1020
+msgid "Delete Separator"
+msgstr "Ayıracı Sil"
+
+#. i18n: file ./editor/listboxeditor.ui line 147
+#: editor/actiondnd.cpp:350 editor/actiondnd.cpp:735 editor/actiondnd.cpp:1022
+#: rc.cpp:995 rc.cpp:1046
+#, no-c-format
+msgid "Delete Item"
+msgstr "Nesneyi Sil"
+
+#: editor/actiondnd.cpp:351 editor/actiondnd.cpp:1023
+msgid "Insert Separator"
+msgstr "Ayıraç Yerleştir"
+
+#: editor/actiondnd.cpp:362 editor/actiondnd.cpp:422 editor/actiondnd.cpp:445
+msgid "Delete Action '%1' From Toolbar '%2'"
+msgstr "'%1' Eylemini '%2' Araç Çubuğundan Sil"
+
+#: editor/actiondnd.cpp:377
+msgid "Add Separator to Toolbar '%1'"
+msgstr "'%1' Araç Çubuğuna Ayıraç Ekle"
+
+#: editor/actiondnd.cpp:464 editor/actiondnd.cpp:545
+msgid "Add Action '%1' to Toolbar '%2'"
+msgstr "'%2' Araç Çubuğuna '%1' Eylemi Ekle"
+
+#: editor/actiondnd.cpp:538 editor/actiondnd.cpp:1157
+msgid "Insert/Move Action"
+msgstr "Ekle/Taşı Eylemi"
+
+#: editor/actiondnd.cpp:539
+msgid ""
+"Action '%1' has already been added to this toolbar.\n"
+"An Action may only occur once in a given toolbar."
+msgstr ""
+"'%1' eylemi zaten bu araç çubuğuna eklenmiş.\n"
+"Bir Eylem sözkonusu araç çubuğunda sadece bir kez yer alabilir."
+
+#: editor/actiondnd.cpp:671
+msgid "Add Widget '%1' to Toolbar '%2'"
+msgstr "'%2' Araç çubuğuna '%1' Bileşen Ekle"
+
+#: editor/actiondnd.cpp:736
+msgid "Rename Item..."
+msgstr "Nesneyi yeniden isimlendir..."
+
+#: editor/actiondnd.cpp:740
+msgid "Delete Menu '%1'"
+msgstr "'%1' Menüsünü Sil"
+
+#: editor/actiondnd.cpp:753
+msgid "Rename Menu Item"
+msgstr "Menü Nesnesini Yeniden İsimlendir"
+
+#: editor/actiondnd.cpp:753
+msgid "Menu text:"
+msgstr "Menü metni:"
+
+#: editor/actiondnd.cpp:757
+msgid "Rename Menu '%1' to '%2'"
+msgstr "'%1' menüsünü %2 olarak Adlandır"
+
+#: editor/actiondnd.cpp:881
+msgid "Move Menu '%1'"
+msgstr "%1 Menüsünü Taşı"
+
+#: editor/actiondnd.cpp:1030 editor/actiondnd.cpp:1069
+msgid "Delete Action '%1' From Popup Menu '%2'"
+msgstr "'%2' Açılır Menüden '%1' Eylem'ini Sil"
+
+#: editor/actiondnd.cpp:1040
+msgid "Add Separator to Popup Menu '%1'"
+msgstr "'%1' Açılır Menüsüne Ayıraç Ekle"
+
+#: editor/actiondnd.cpp:1082 editor/actiondnd.cpp:1164
+msgid "Add Action '%1' to Popup Menu '%2'"
+msgstr "'%2' Açılır Menüsene '%1' Eylem'ini Ekle"
+
+#: editor/actiondnd.cpp:1158
+msgid ""
+"Action '%1' has already been added to this menu.\n"
+"An Action may only occur once in a given menu."
+msgstr ""
+"'%1' eylemi zaten bu menüye eklenmiş.\n"
+"Bir Eylem sözkonusu menüde sadece bir kez yer alabilir."
+
+#: editor/connectioneditorimpl.cpp:229
+msgid "Connect/Disconnect the signals and slots of '%1' and '%2'"
+msgstr "'%1' ve '%2''nin  sinyallerini ve slotlarını Bağla/Bağlama"
+
+#: editor/connectioneditorimpl.cpp:237
+msgid "Remove Connections"
+msgstr "Bağlantıları Kaldır"
+
+#: editor/connectioneditorimpl.cpp:248
+msgid "Add Connections"
+msgstr "Bağlantılar Ekle"
+
+#: editor/hierarchyview.cpp:100
+msgid "(Constructor)"
+msgstr "(Kurucu)"
+
+#: editor/hierarchyview.cpp:102
+msgid "(Destructor)"
+msgstr "(Yıkıcı)"
+
+#: editor/hierarchyview.cpp:190
+msgid "Name"
+msgstr "İsim"
+
+#: editor/hierarchyview.cpp:191
+msgid "Class"
+msgstr "Sınıf"
+
+#: editor/hierarchyview.cpp:335
+msgid "Database"
+msgstr "Veritabanı"
+
+#: editor/choosewidgetimpl.cpp:38 editor/hierarchyview.cpp:608
+#: editor/mainwindow.cpp:268
+msgid "Widgets"
+msgstr "Bileşenler"
+
+#: editor/assoctexteditorimpl.cpp:143
+#, fuzzy
+msgid "&Highlighting"
+msgstr "Vurgu"
+
+#: editor/assoctexteditorimpl.cpp:187
+#, fuzzy
+msgid "Edit text"
+msgstr "Metin Düzenle"
+
+#: editor/assoctexteditorimpl.cpp:253
+msgid "Edit text - read only mode"
+msgstr ""
+
+#: editor/assoctexteditorimpl.cpp:271
+msgid "Set the 'text association' of '%1'"
+msgstr "'%1' in 'metin birlikteliğini' ayarla"
+
+#: editor/assoctexteditorimpl.cpp:281
+msgid "Set the 'population text' of '%1'"
+msgstr "'%1' in 'nüfus metnini' ayarla"
+
+#: editor/assoctexteditorimpl.cpp:430
+msgid "<qt>Cannot open file<br><b>%1</b></qt"
+msgstr "<qt><br><b>%1</b> dosyası açılamıyor</qt>"
+
+#: editor/listvieweditorimpl.cpp:66
+msgid "Edit Items and Columns of '%1'"
+msgstr "'%1' in Sütunlarını ve Nesnelerini Düzenle"
+
+#: editor/listvieweditorimpl.cpp:225
+msgid "New Column"
+msgstr "Yeni Sütun"
+
+#. i18n: file ./editor/listvieweditor.ui line 62
+#: editor/listvieweditorimpl.cpp:570 rc.cpp:629
+#, no-c-format
+msgid "&Items"
+msgstr "&Nesneler"
+
+#: editor/mainwindow.cpp:141
+msgid "Welcome to the Kommander Editor"
+msgstr "Kommander Düzenleyicisi'ne Hoş Geldiniz"
+
+#: editor/mainwindow.cpp:148
+msgid "Layout"
+msgstr "Düzen"
+
+#: editor/mainwindow.cpp:245
+msgid ""
+"<h2>The Property Editor</h2>"
+"<p>You can change the appearance and behavior of the selected widget in the "
+"property editor.</p>"
+"<p>You can set properties for components and forms at design time and see the "
+"immediately see the effects of the changes. Each property has its own editor "
+"which (depending on the property) can be used to enter new values, open a "
+"special dialog, or to select values from a predefined list. Click <b>F1</b> "
+"to get detailed help for the selected property.</p>"
+"<p>You can resize the columns of the editor by dragging the separators in the "
+"list's header.</p>"
+"<p><b>Signal Handlers</b></p>"
+"<p>In the Signal Handlers tab you can define connections between the signals "
+"emitted by widgets and the slots in the form. (These connections can also be "
+"made using the connection tool.)"
+msgstr ""
+"<h2>Özellik Düzenleyici</h2> "
+"<p>Özellik düzenleyicisi içinde seçili bileşenlerin özniteliğini ve davranışını "
+"değiştirebilirsiniz.</p> "
+"<p>Değişikliklerin etkilerini hemen görebilir ve tasarım zamanında formlar ve "
+"bileşenler için özellikleri ayarlayabilirsiniz. Her özellik öntanımlı bir "
+"listeden değerleri seçmek, özel bir diyalog açmak, ya da yeni değerleri girmek "
+"için kullanılabilen (özelliğe bağlı) kendi düzenleyicisine sahiptir. Seçili "
+"özellik için detaylı yardım almak için <b>F1</b>'e tıklayın.</p> "
+"<p> Listelerin başlığı içinde ayıraçları sürükleme yoluyla düzenleyicinin "
+"sütunlarını yeniden boyutlandırabilirsiniz. "
+"<p><b>Sinyal Yönlendiricileri</b></p> "
+"<p> Sinyal Yönlendiricileri sekmesi içinde form içindeki slotlar ve bileşenler "
+"yardımıyla yayıcı sinyaller arasındaki bağlantıları tanımlayabilirsiniz. (Bu "
+"bağlantılar aynı zamanda bağlantı aracı kullanarak yapılabilir.)"
+
+#: editor/mainwindow.cpp:271
+msgid "Object Explorer"
+msgstr "Nesne Tarayıcısı"
+
+#: editor/mainwindow.cpp:273
+msgid ""
+"<h2>The Object Explorer</h2>"
+"<p>The Object Explorer provides an overview of the relationships between the "
+"widgets in a form. You can use the clipboard functions using a context menu for "
+"each item in the view. It is also useful for selecting widgets in forms that "
+"have complex layouts.</p>"
+"<p>The columns can be resized by dragging the separator in the list's "
+"header.</p>"
+"<p>The second tab shows all the form's slots, class variables, includes, "
+"etc.</p>"
+msgstr ""
+"<h2>Nesne Tarayıcısı</h2> "
+"<p> Nesne Tarayıcısı bir form içinde bileşenler arasındaki ilişkilerin gözden "
+"geçirilmesini sağlar. Görünüm içinde her öğe için bir içerik menüsü kullanarak "
+"pano fonksiyonlarını kullanabilirsiniz. Bu aynı zamanda karmaşık düzenlere "
+"sahip formlar içindeki bileşenleri seçme için yararlıdır.</p> "
+"<p>Sütunlar listenin başlığı içindeki ayıracı sürükleme yoluyla yeniden "
+"boyutlandırılabilir.</p> "
+"<p>İkinci sekme tüm formun slotlarını, sınıf değişkenlerini, eklemeleri vb. "
+"gösterir.</p>"
+
+#: editor/mainwindow.cpp:284 editor/mainwindow.cpp:293
+msgid "Dialogs"
+msgstr "Diyaloglar"
+
+#: editor/mainwindow.cpp:287
+msgid "Start typing the buffer you want to switch to here (ALT+B)"
+msgstr "Burada başlatmak istediğiniz tampon türünü başlatın (ALT+B)"
+
+#: editor/mainwindow.cpp:294
+msgid ""
+"<h2>The File Overview Window</h2>"
+"<p>The File Overview Window displays all open dialogs.</p>"
+msgstr ""
+"<h2>Dosya Gözden Geçirme Penceresi</h2> "
+"<p>Dosya Gözden Geçirme Penceresi tüm açık diyalogları görüntüler.</p>"
+
+#: editor/mainwindow.cpp:305
+msgid "Action Editor"
+msgstr "Eylem Düzenleyicisi"
+
+#: editor/mainwindow.cpp:306
+msgid ""
+"<b>The Action Editor</b>"
+"<p>The Action Editor is used to add actions and action groups to a form, and to "
+"connect actions to slots. Actions and action groups can be dragged into menus "
+"and into toolbars, and may feature keyboard shortcuts and tooltips. If actions "
+"have pixmaps these are displayed on toolbar buttons and beside their names in "
+"menus.</p>"
+msgstr ""
+"<b>Eylem Düzenleyicisi</b> "
+"<p> Eylem Düzenleyicisi slotlara eylemleri bağlamak ve bir forma eylem "
+"gruplarını ve eylemleri eklemek için kullanılır. Eylemler ve eylem grupları "
+"araç çubukları ve menüler içerisinde sürüklenebilir ve araç bilgileri ve klavye "
+"kısayolları özelliği mümkün olabilir. Eğer eylemler beneklere sahipse bunlar "
+"menüler içinde onların isimleri yanında ve araç çubuğu düğmeleri üzerinde "
+"görüntülenir.</p>"
+
+#: editor/mainwindow.cpp:316 editor/mainwindow.cpp:319
+msgid "Message Log"
+msgstr "İleti Günlüğü"
+
+#: editor/mainwindow.cpp:395 editor/mainwindow.cpp:449
+#, fuzzy
+msgid "<qt>Cannot create backup file <i>%1</i>.</qt>"
+msgstr "<qt><b>%1</b> log dosyası kaydedilemiyor</qt>"
+
+#: editor/mainwindow.cpp:406
+msgid "There is a dialog already running."
+msgstr "Zaten çalışan bir diyalog var."
+
+#: editor/mainwindow.cpp:406
+msgid "Run"
+msgstr "Çalıştır"
+
+#: editor/mainwindow.cpp:439
+#, fuzzy
+msgid "<qt>Cannot create temporary file <i>%1</i>.</qt>"
+msgstr "<qt><b>%1</b> log dosyası kaydedilemiyor</qt>"
+
+#: editor/mainwindow.cpp:786
+msgid ""
+"<b>The Form Window</b>"
+"<p>Use the various tools to add widgets or to change the layout and behavior of "
+"the components in the form. Select one or multiple widgets to move them or lay "
+"them out. If a single widget is chosen it can be resized using the resize "
+"handles.</p>"
+"<p>Changes in the <b>Property Editor</b> are visible at design time, and you "
+"can preview the form in different styles.</p>"
+"<p>You can change the grid resolution, or turn the grid off in the <b>"
+"Preferences</b> dialog from the <b>Edit</b> menu."
+"<p>You can have several forms open, and all open forms are listed in the <b>"
+"Form List</b>."
+msgstr ""
+"<b>Form Penceresi</b> "
+"<p> Form içinde bileşenlerin davranış düzenini değiştirmek için ya da bileşen "
+"eklemek için çeşitli araçlar kullanın. Onları düzenlemek ya da taşımak için tek "
+"ya da çoklu bileşenler seçin. Eğer tekli bir bileşen seçilirse, o yeniden "
+"boyutlandırma yönetmelerini kullanarak yeniden boyutlandırabilir.</p> "
+"<p><b>Özellikler Penceresi</b> içindeki Değişiklikler tasarım zamanda görünür "
+"ve farklı stiller içinde formu önizleyebilirsiniz.</p> "
+"<p>Izgara çözünürlüğünü değiştirebilirsiniz ya da <b>Düzen</b> menüsünden <b>"
+"Tercihler</b> diyaloğu içinde formu önizleyebilirsiniz. "
+"<p>Farklı formları açabilirsiniz ve tüm açık formları <b>Form Listesi</b> "
+"içinde listeleyebilirsiniz."
+
+#: editor/mainwindow.cpp:891
+#, c-format
+msgid "&Undo: %1"
+msgstr "&Geri-al: %1"
+
+#: editor/mainwindow.cpp:895
+#, c-format
+msgid "&Redo: %1"
+msgstr "&Yinele: %1"
+
+#: editor/mainwindow.cpp:974
+msgid "Choose Pixmap..."
+msgstr "Benek Seç..."
+
+#: editor/mainwindow.cpp:978
+msgid "Edit Text..."
+msgstr "Metin Düzenle..."
+
+#: editor/mainwindow.cpp:982
+msgid "Edit Title..."
+msgstr "Başlık Düzenle..."
+
+#: editor/mainwindow.cpp:986 editor/mainwindow.cpp:1064
+msgid "Edit Page Title..."
+msgstr "Sayfa Başlığı Düzenle..."
+
+#: editor/mainwindow.cpp:1002 editor/mainwindow.cpp:1047
+msgid "Edit Kommander Text..."
+msgstr "Kommander Metni Düzenle..."
+
+#: editor/mainwindow.cpp:1011 editor/mainwindow.cpp:1021
+#: editor/mainwindow.cpp:1057 editor/mainwindow.cpp:1497
+msgid "Delete Page"
+msgstr "Sayfa Sil"
+
+#: editor/mainwindow.cpp:1014 editor/mainwindow.cpp:1024
+#: editor/mainwindow.cpp:1061 editor/mainwindow.cpp:1496
+msgid "Add Page"
+msgstr "Sayfa Ekle"
+
+#: editor/mainwindow.cpp:1031
+msgid "Edit..."
+msgstr "Düzenle..."
+
+#: editor/mainwindow.cpp:1067
+msgid "Edit Pages..."
+msgstr "Sayfa Düzenle..."
+
+#: editor/mainwindow.cpp:1073
+msgid "Add Menu Item"
+msgstr "Menü Nesnesi Ekle"
+
+#: editor/mainwindow.cpp:1075
+msgid "Add Toolbar"
+msgstr "Araç Çubuğu Ekle"
+
+#: editor/mainwindow.cpp:1089 editor/mainwindow.cpp:1575
+msgid "New text:"
+msgstr "Yeni metin:"
+
+#: editor/mainwindow.cpp:1092
+msgid "Set the 'text' of '%1'"
+msgstr "'%1' in 'metnini' ayarla"
+
+#: editor/mainwindow.cpp:1102 editor/mainwindow.cpp:1591
+msgid "Title"
+msgstr "Başlık"
+
+#: editor/mainwindow.cpp:1102 editor/mainwindow.cpp:1591
+msgid "New title:"
+msgstr "Yeni başlık:"
+
+#: editor/mainwindow.cpp:1104
+msgid "Set the 'title' of '%1'"
+msgstr "'%1' in 'başlığını' ayarla"
+
+#: editor/mainwindow.cpp:1116
+msgid "Set the 'pageTitle' of '%1'"
+msgstr "'%1' in 'sayfaBaşlığını' ayarla"
+
+#: editor/mainwindow.cpp:1128
+msgid "Set the 'pixmap' of '%1'"
+msgstr "'%1' in 'beneğini' ayarla"
+
+#: editor/mainwindow.cpp:1239
+msgid "Add Toolbar to '%1'"
+msgstr "'%1' e Araççubuğu Ekle"
+
+#: editor/mainwindow.cpp:1243
+msgid "Add Menu to '%1'"
+msgstr "'%1' e Menü Ekle"
+
+#: editor/mainwindow.cpp:1560
+msgid "Edit %1..."
+msgstr "%1 Düzenle..."
+
+#: editor/mainwindow.cpp:1578
+msgid "Set the 'text' of '%2'"
+msgstr "'%2' nin 'metnini' ayarla"
+
+#: editor/mainwindow.cpp:1593
+msgid "Set the 'title' of '%2'"
+msgstr "'%2' nin 'başlığını' ayarla"
+
+#: editor/mainwindow.cpp:1681
+msgid ""
+"Kommander found some temporary saved files, which were\n"
+"written when Kommander crashed last time. Do you want to\n"
+"load these files?"
+msgstr ""
+"Kommander, son kilitlendiğinde geçici olarak kaydedilmiş \n"
+"bazı dosyalar buldu. Bu dosyaları \n"
+"yüklemek istiyor musunuz?"
+
+#: editor/mainwindow.cpp:1683
+#, fuzzy
+msgid "Restoring Last Session"
+msgstr "Son Oturum Geri Alınıyor"
+
+#: editor/mainwindow.cpp:1683
+#, fuzzy
+msgid "Load"
+msgstr "Dosya Yükle"
+
+#: editor/mainwindow.cpp:1683
+msgid "Do Not Load"
+msgstr ""
+
+#: editor/mainwindow.cpp:1736
+msgid "There is no help available for this dialog at the moment."
+msgstr "Şu anda bu diyalog için yardım mümkün değil."
+
+#: editor/mainwindow.cpp:1750
+msgid "<qt>Could not open file:<br><b>%1</b><br>File does not exist.</qt>"
+msgstr "<qt>Dosya açılmadı:<br><b>%1</b><br>Dosya mevcut değil.</qt>"
+
+#: editor/mainwindow.cpp:1751
+msgid "Open File"
+msgstr "Dosya Aç"
+
+#: editor/formwindow.cpp:302
+msgid "&Horizontal"
+msgstr "&Yatay"
+
+#: editor/formwindow.cpp:303
+msgid "&Vertical"
+msgstr "&Dikey"
+
+#: editor/formwindow.cpp:317 editor/formwindow.cpp:425
+msgid ""
+"<b>A %1 (custom widget)</b> "
+"<p>Click <b>Edit Custom Widgets...</b> in the <b>Tools|Custom</b> "
+"menu to add and change custom widgets. You can add properties as well as "
+"signals and slots to integrate custom widgets into <i>Qt Designer</i>"
+", and provide a pixmap which will be used to represent the widget on the "
+"form.</p>"
+msgstr ""
+"<b>%1 (özel bileşen)</b> "
+"<p>Özel menüleri değiştirmek ve eklemek için <b>Araçlar|Özel</b> "
+"menüsü içindeki <b>Özel Bileşenleri Düzenle...</b> tıklayın. <i>Qt Designer</i> "
+"ile bütünleşecek özelleştirilmiş bileşenlere, sinyaller ve slotların yanı sıra "
+"özellikler de ekleyebilir, ve bileşeni form üzerinde temsil etmek için "
+"kullanılacak bir benek sağlayabilirsiniz."
+
+#: editor/formwindow.cpp:324 editor/formwindow.cpp:432
+msgid "A %1 (custom widget)"
+msgstr "Bir %1 (özel bileşen)"
+
+#: editor/formwindow.cpp:331 editor/formwindow.cpp:439
+msgid "<b>A %1</b><p>%2</p>"
+msgstr "<b>Bir %1</b><p>%2</b>"
+
+#: editor/formwindow.cpp:384
+#, fuzzy
+msgid "Reparent Widgets"
+msgstr "Reparent Bileşenler"
+
+#: editor/formwindow.cpp:390 editor/formwindow.cpp:396
+#: editor/formwindow.cpp:407
+#, c-format
+msgid "Insert %1"
+msgstr "%1 ekle"
+
+#: editor/formwindow.cpp:597
+msgid "Connect '%1' with..."
+msgstr "...ile birlikte '%1' bağla"
+
+#: editor/formwindow.cpp:620 editor/formwindow.cpp:676
+msgid "Change Tab Order"
+msgstr "Sekme Sıralamasını Değiştir"
+
+#: editor/formwindow.cpp:806
+msgid "Connect '%1' to '%2'"
+msgstr "'%2' ye '%1' bağla"
+
+#: editor/formwindow.cpp:868 editor/formwindow.cpp:957
+msgid ""
+"You tried to insert a widget into the layout Container Widget '%1'.\n"
+"This is not possible. In order to insert the widget, the layout of '%1'\n"
+"must first be broken.\n"
+"Break the layout or cancel the operation?"
+msgstr ""
+"'%1' Kap Bileşeni düzenine bir bileşen eklemeyi denediniz.\n"
+"Bu mümkün değildir. Bileşen eklemek için, önce '%1' in düzeni\n"
+"bozulmuş olmalıdır.\n"
+"İşlem iptal edilsin mi ya da düzen bozulsun mu?"
+
+#: editor/formwindow.cpp:874 editor/formwindow.cpp:964
+msgid "Inserting Widget"
+msgstr "Bileşen Ekleniyor"
+
+#: editor/formwindow.cpp:875 editor/formwindow.cpp:965
+msgid "&Break Layout"
+msgstr "&Düzen Kes"
+
+#: editor/formwindow.cpp:1224 editor/formwindow.cpp:1267
+msgid "Use Size Hint"
+msgstr "Boyut İpucunu Kullan"
+
+#: editor/formwindow.cpp:1661
+msgid "Click widgets to change the tab order..."
+msgstr "Sekme sırasını değiştirmek için bileşenlere tıklayın..."
+
+#: editor/formwindow.cpp:1670
+msgid "Drag a line to create a connection..."
+msgstr "Bir bağlantı oluşturmak için bir satır sürükleyin..."
+
+#: editor/formwindow.cpp:1676
+msgid "Click on the form to insert a %1..."
+msgstr "%1 eklemek için forma tıklayın..."
+
+#: editor/formwindow.cpp:1784
+msgid "Lower"
+msgstr "Küçük harf"
+
+#: editor/formwindow.cpp:1847
+msgid "Accelerator '%1' is used %2 times."
+msgstr "'%1' hızlandırıcı %2 zamanlarında kullanılır."
+
+#: editor/formwindow.cpp:1848
+msgid "&Select"
+msgstr "&Seç"
+
+#: editor/formwindow.cpp:1859
+msgid "No accelerator is used more than once."
+msgstr "Birden daha fazla kullanılan hızlandırıcı yok."
+
+#: editor/formwindow.cpp:1870
+msgid "Raise"
+msgstr "Yükselt"
+
+#: editor/formwindow.cpp:1930
+msgid "Lay Out Horizontally (in splitter)"
+msgstr "Yatay Olarak Yerleştir (dallandırıcı içinde)"
+
+#: editor/formwindow.cpp:1941
+msgid "Lay Out Vertically (in splitter)"
+msgstr "Düşey Olarak Yerleştir (dallandırıcı içinde)"
+
+#: editor/formwindow.cpp:1975
+msgid "Lay Out Children Horizontally"
+msgstr "Ürünleri Yatay Olarak Yerleştir"
+
+#: editor/formwindow.cpp:1996
+msgid "Lay Out Children Vertically"
+msgstr "Ürünleri Düşey Olarak Yerleştir"
+
+#: editor/formwindow.cpp:2020
+msgid "Lay Out Children in a Grid"
+msgstr "Ürünleri Izgara İçinde Yerleştir"
+
+#: editor/functionsimpl.cpp:83 plugin/specialinformation.cpp:383
+#, fuzzy
+msgid "Slots"
+msgstr "Slot"
+
+#: editor/functionsimpl.cpp:102
+#, fuzzy
+msgid "Functions"
+msgstr "&Fonksiyon"
+
+#: editor/functionsimpl.cpp:198
+msgid ""
+"To learn more about the slot, look at the documentation of the base Qt/KDE "
+"class, most probably <i>%1</i>."
+msgstr ""
+
+#: editor/functionsimpl.cpp:202 editor/functionsimpl.cpp:225
+msgid ""
+"<qt>"
+"<h3>%1</h3>"
+"<p><b>Description:</b> %2\n"
+"<p><b>Syntax:</b> <i>%3</i>%4</qt>"
+msgstr ""
+"<qt>"
+"<h3>%1</h3>"
+"<p><b>Açıklama:</b> %2\n"
+"<p><b>Sözdizimi:</b> <i>%3</i>%4</qt>"
+
+#: editor/functionsimpl.cpp:214
+msgid "<p>Parameters are not obligatory."
+msgstr "<p>Parametreler zorunlu değil."
+
+#: editor/functionsimpl.cpp:217
+#, c-format
+msgid ""
+"_n: "
+"<p>Only first argument is obligatory.\n"
+"<p>Only first %n arguments are obligatory."
+msgstr "<p>%n parametreler sadece bir bir kez zorunlu."
+
+#: plugin/specialinformation.cpp:286
+msgid "Inserts the item if it will not create a duplicate."
+msgstr "Eğer o çift kopya oluşturmayacaksa nesne ekler"
+
+#: plugin/specialinformation.cpp:288
+msgid ""
+"Returns scripts associated with widget. This is an advanced feature that would "
+"not be commonly used."
+msgstr ""
+"Bileşenle ilişkilendirilmiş betikleri geri döndürür. Bu yaygın olarak "
+"kullanılmayan gelişmiş bir özelliktir."
+
+#: plugin/specialinformation.cpp:289
+msgid "Stops execution of the script associated with the widget."
+msgstr "Bileşenle ilişkilendirilmiş betiğin işleyişini durdurur."
+
+#: plugin/specialinformation.cpp:291
+msgid "Returns text of a cell in a table."
+msgstr "Bir tablo içinde bir hücrenin metnini geri döndürür."
+
+#: plugin/specialinformation.cpp:293
+msgid "Returns 1 for checked boxes, 0 for unchecked."
+msgstr "İşaretli kutular için 1, işaretlenmemişler için 0 döndürür."
+
+#: plugin/specialinformation.cpp:295
+msgid ""
+"Returns the list of child widgets contained in the parent widget. Set the <i>"
+"recursive</i> parameter to <i>true</i> to include widgets contained by child "
+"widgets."
+msgstr ""
+"Üst bileşen içinde içerilen çocuk bileşenlerin listesini geri döndürür. Çocuk "
+"bileşenler tarafından içerilen bileşenler eklemek için<i>özyinelemeli</i>  "
+"parametresini  <i>doğru</i> olarak ayarlayın."
+
+#: plugin/specialinformation.cpp:297
+msgid "Removes all content from the widget."
+msgstr "Bileşenden tüm içeriği kaldırır."
+
+#: plugin/specialinformation.cpp:300
+#, fuzzy
+msgid "Get the column count"
+msgstr "Sütun sil"
+
+#: plugin/specialinformation.cpp:302
+msgid "Returns number of items in a widget such as combobox or listbox."
+msgstr ""
+"Açılır kutu ya da liste kutusu gibi bir bileşen içindeki nesnelerin sayısını "
+"döndürür."
+
+#: plugin/specialinformation.cpp:304
+msgid "Returns index of current column."
+msgstr "Mevcut sütunun dizinini döndürür."
+
+#: plugin/specialinformation.cpp:306
+msgid "Returns index of current item."
+msgstr "Mevcut nesnenin dizinini döndürür."
+
+#: plugin/specialinformation.cpp:308
+msgid "Returns index of current row."
+msgstr "Mevcut satırın dizinini döndürür."
+
+#: plugin/specialinformation.cpp:310
+msgid ""
+"Executes the script associated with the widget. With the new parser the execute "
+"method can take one or more arguments."
+msgstr ""
+
+#: plugin/specialinformation.cpp:312
+msgid ""
+"Returns the index of an item with the given text. Defaults to case sensitive. "
+"Matching can be an exact match or match if it contains the string. Only the "
+"first argument is requred. If no column is given it will search the first by "
+"default."
+msgstr ""
+
+#: plugin/specialinformation.cpp:314
+msgid "Inserts new column (or <i>count</i> columns) at <i>column</i> position."
+msgstr "<i>Sütun</i> konumunda (ya da sütunları <i>say</i>) yeni sütun ekler"
+
+#: plugin/specialinformation.cpp:316
+msgid "Inserts item at <i>index</i> position."
+msgstr "<i>Dizin</i> konumunda nesne ekler."
+
+#: plugin/specialinformation.cpp:319
+msgid "Inserts multiple items (EOL-separated) at <i>index</i> position."
+msgstr "<i>Dizin</i> konumunda (ayrılmış-EOL) çoklu nesneler ekler."
+
+#: plugin/specialinformation.cpp:322
+msgid "Inserts new row (or <i>count</i> rows) at <i>row</i> position."
+msgstr "<i>Satır</i>konumunda (ya da satırları </i>say</i>) yeni satır ekler."
+
+#: plugin/specialinformation.cpp:324
+msgid "Returns the text of the item at the given index."
+msgstr "Verilen dizinde nesnenin metnini döndürür."
+
+#: plugin/specialinformation.cpp:326
+msgid ""
+"Returns the depth of the current item in the tree. Root items have depth 0."
+msgstr ""
+"Ağaçta mevcut nesnenin derinliğini döndürürç Kök derinlikleri 0 derinliğe "
+"sahiptir."
+
+#: plugin/specialinformation.cpp:328
+msgid "Returns the slash-separated path to the given item in the tree."
+msgstr "Ağaç içinde verilen nesne'ye slash-ile-ayrılmış yolu döndürür."
+
+#: plugin/specialinformation.cpp:330
+msgid ""
+"Removes the column (or <i>count</i> consecutive columns) with the given index."
+msgstr ""
+"Verilen dizinde (ya da ardışık sütunları <i>say</i>) sütununu kaldırır."
+
+#: plugin/specialinformation.cpp:332
+msgid "Removes the item with the given index."
+msgstr "Verilen dizinle birlikte nesneyi kaldırır."
+
+#: plugin/specialinformation.cpp:335
+msgid ""
+"Removes the row (or <i>count</i> consecutive rows) with the given index."
+msgstr ""
+"Verilen dizin ile birlikte (ya da ardışık satırları <i>say</i>"
+") satırı kaldırır."
+
+#: plugin/specialinformation.cpp:338
+msgid ""
+"Returns selected text or text of current item.\n"
+"In case of Table widgets, returns the selection coordinates, separated by "
+"commas in TopRow,LeftColumn,BottomRow,RightColumn form. "
+msgstr ""
+
+#: plugin/specialinformation.cpp:340
+msgid ""
+"Sets scripts associated with widget. This is an advanced feature that would not "
+"be commonly used."
+msgstr ""
+"Bileşenle ilişkilendirilmiş betikleri ayarlar. Bu ortak olarak kullanılmayan "
+"gelişmiş bir özelliktir."
+
+#: plugin/specialinformation.cpp:342
+msgid "Enables or disables widget."
+msgstr "Bileşeni etkinleştirir ya da etkisiz kılar."
+
+#: plugin/specialinformation.cpp:345
+msgid "Sets text of a cell in a table."
+msgstr "Bir tablo içindeki bir hücrenin metnini ayarlar."
+
+#: plugin/specialinformation.cpp:347
+#, fuzzy
+msgid "Inserts a widget into a cell of a table."
+msgstr "Bir tablo içindeki bir hücrenin metnini ayarlar."
+
+#: plugin/specialinformation.cpp:349
+msgid ""
+"Returns the name of a widget inserted into a cell, or an empty string if the "
+"cell contains no widget or an unknown widget type."
+msgstr ""
+
+#: plugin/specialinformation.cpp:351
+msgid "Sets/unsets checkbox."
+msgstr "Onay kutularını ayarlar/ayarlamaz."
+
+#: plugin/specialinformation.cpp:353
+msgid "Sets caption of the column <i>column</i>."
+msgstr "<i>Sütun</i> sütununun başlığını ayarlar."
+
+#: plugin/specialinformation.cpp:355
+msgid "Selects the item at the specified index. Indexes are zero based."
+msgstr "Belirtilmiş dizinde nesne seçer. Dizinler sıfır temellidir."
+
+#: plugin/specialinformation.cpp:358
+#, fuzzy
+msgid ""
+"Inserts a tab to the tabwidget with the specified label at the given index. "
+"Indexes are zero based."
+msgstr "Belirtilmiş dizinde nesne seçer. Dizinler sıfır temellidir."
+
+#: plugin/specialinformation.cpp:360
+msgid "Sets maximum numeric value"
+msgstr "Azami sayısal değeri ayarlar."
+
+#: plugin/specialinformation.cpp:362
+msgid ""
+"Sets pixmap at the given index to the specified icon. Use <i>index = -1</i> "
+"to set the pixmap for all items."
+msgstr ""
+"Belirtilen simgede verilen dizindeki beneği ayarlar. Tüm nesneler için benek "
+"ayarlamak için <i>dizin = -1</i> kullan."
+
+#: plugin/specialinformation.cpp:364
+msgid "Sets caption of the row <i>row</i>."
+msgstr "<i>Satır</i> satırının başlığını ayarlar."
+
+#: plugin/specialinformation.cpp:366
+msgid "Selects given text or select item containing given text."
+msgstr "Nesne içeren verilen metni seç ya da verilen metni seçer."
+
+#: plugin/specialinformation.cpp:369
+msgid "Sets widget's content."
+msgstr "Bileşenin içeriğini ayarlar."
+
+#: plugin/specialinformation.cpp:372
+msgid "Shows/hides widget."
+msgstr "Bileşeni gizler/gösterir."
+
+#: plugin/specialinformation.cpp:373
+msgid "Returns content of widget."
+msgstr "Bileşenin içeriğini döndürür."
+
+#: plugin/specialinformation.cpp:375
+msgid "Returns type(class) of widget."
+msgstr "Bileşenin türünü(sınıfını) döndürür."
+
+#: plugin/specialinformation.cpp:377
+msgid ""
+"Makes the widget editable or read only, depending on the editable argument."
+msgstr ""
+
+#: plugin/specialinformation.cpp:379
+msgid ""
+"Return the widget's geometry as <i>x y w h</i>. This is useful for positioning "
+"a created widget."
+msgstr ""
+
+#: plugin/specialinformation.cpp:381
+#, fuzzy
+msgid "Returns true if the widget has focus."
+msgstr "Verilen dizinde nesnenin metnini döndürür."
+
+#: plugin/specialinformation.cpp:387
+msgid ""
+"Returns current widget's content. This was required inside widget A to return "
+"widget A content when requested by widget B. The new method is to use @A.text "
+"inside B instead of just @A if you just want the unaltered text."
+msgstr ""
+"Mevcut bileşenin içeriğini döndürür. Bu bileşen B tarafından istendiği zaman "
+"bileşen A içeriğini döndürmek için bileşen A eklemeyi gerektirmiştir. Yeni "
+"yöntem eğer sadece değiştirilmemiş metin istiyorsanız sadece @A yerine B "
+"içerisinde @A.metin kullanmak içindir."
+
+#: plugin/specialinformation.cpp:389
+msgid ""
+"Returns selected text or text of current item. This is deprecated for <i>"
+"@mywidget.selected</i>."
+msgstr ""
+"Mevcut nesnenin metnini ya da seçili metni döndürür. Buna<i>"
+"seçili.@bileşenim</i> için karşı çıkılır."
+
+#: plugin/specialinformation.cpp:391
+msgid ""
+"Does nothing. This is useful if you request a CheckBox or RadioButton to return "
+"a value where a state, typically the unchecked state, has no value. The @null "
+"prevents an error indicating it is empty."
+msgstr ""
+"Hiçbirşey yapma. Bu eğer bir durum olduğu yerdeki bir değeri döndürmek için "
+"RadyoDüğmesi ya da bir OnayKutusu için gerekliyse yararlıdır, tipik olarak "
+"durum işaretsizdir, değeri yoktur. @boş o boş olduğunda gösterge hatasını "
+"önler."
+
+#: plugin/specialinformation.cpp:393
+msgid "Returns the pid (process ID) of the current process."
+msgstr "Mevcut işlemin pid (işlem kimliğini) döndürür."
+
+#: plugin/specialinformation.cpp:395
+msgid ""
+"Returns DCOP identifier of current process. This is shorthand for <i>"
+"kmdr-executor-@pid</i>."
+msgstr ""
+"Mevcut işlemin DCOP kimliğini döndürür. Bu <i>kmdr-executor-@pid</i> "
+"için stenograftır."
+
+#: plugin/specialinformation.cpp:398
+msgid "Returns the pid of the parent Kommander window."
+msgstr "Üst Kommander penceresinin işlem kimliğini döndürür."
+
+#: plugin/specialinformation.cpp:400
+msgid "Writes <i>text</i> on stderr."
+msgstr "stderr üzerindeki <i>metni</i> yazar."
+
+#: plugin/specialinformation.cpp:402
+msgid "Writes <i>text</i> on standard output."
+msgstr "Standart çıktı üzerindeki <i>metni</i> yazar."
+
+#: plugin/specialinformation.cpp:404
+msgid ""
+"Executes a script block. Bash is used if no shell is given. It is primarily for "
+"use in non-button widgets where script actions are not expected. Full path is "
+"not required for the shell which may be useful for portability. "
+"<p><i>If this is used inside a button it allows alternate script languages to "
+"be used and will return a value to the main script, which may be unexpected.</i>"
+msgstr ""
+"Bir betik bloğu'nu işletir. Eğer bir kabuk tanımlanmamışsa bash kullanılır.Bu "
+"esas olarak, betik eylemlerinin beklenmediği düğmesiz bileşenler kullanmak "
+"içindir.Kabuğun tam yol'unu belirtmek gerekli olmasa da, taşınabilirlik "
+"açısından yararlı olabilir."
+"<p><i> Eğer bu bir düğme içerisinde kullanılırsa, alternatif betik dillerinin "
+"kullanıla- bilmesine izin verir ve ana betiğe belki de beklemediği bir değeri "
+"geri döndürür.</i></p>"
+
+#: plugin/specialinformation.cpp:406
+msgid ""
+"Returns value of an environment (shell) variable. Do not use <i>$</i> "
+"in the name. For example, <i>@env(PATH)</i>."
+msgstr ""
+"Bir ortam değişkeninin (kabuk) değerini döndürür. İsim içinde <i>$</i> "
+"kullanmayın. Örneğin, <i>@env(PATH)</i>."
+
+#: plugin/specialinformation.cpp:408 plugin/specialinformation.cpp:410
+msgid "Executes an external shell command."
+msgstr "Harici bir kabuk komutu yürütür."
+
+#: plugin/specialinformation.cpp:412
+msgid "Parses an expression and returns computed value."
+msgstr "Bir ifadeyi parçalar ve işlenmiş değer'i geri döndürür"
+
+#: plugin/specialinformation.cpp:414
+#, fuzzy
+msgid ""
+"Executes loop: values from <i>items</i> list (passed as EOL-separated string) "
+"are assigned to the variable. "
+"<br><b>Old</b>"
+"<br> <i>@forEach(i,A\\nB\\nC\\n)"
+"<br>  @# @i=A"
+"<br>@end</i>"
+"<br><b>New</b>"
+"<br><i>foreach i in MyArray do"
+"<br>  //i = key, MyArray[i] = val"
+"<br>end "
+msgstr ""
+"Döngü yürütür: <i>nesneler</i> listesinden (SatırSonuKarakteri ile ayrılmış "
+"String olarak geçirilmiş ) değerler, değişkenlere atanır."
+"<br> <i>@forEach(i,A\\nB\\nC\\n)"
+"<br>  @# @i=A"
+"<br>@endif</i> "
+
+#: plugin/specialinformation.cpp:416
+#, fuzzy
+msgid ""
+"Executes loop: variable is set to <i>start</i> and is increased by <i>step</i> "
+"each time loop is executed. Execution stops when variable becomes larger then "
+"<i>end</i>. "
+"<br><b>Old</b>"
+"<br><i>@for(i,1,10,1)"
+"<br>  @# @i=1"
+"<br>@endif</i>"
+"<br><b>New</b>"
+"<br><i>for i=0 to 20 step 5 do"
+"<br>  debug(i)"
+"<br>end</i>."
+msgstr ""
+"Döngü yürütür: değişken <i>başla</i>ma değeri ile ayarlanır ve döngü her "
+"işletildiğinde <i>adım</i> kadar artırılır. Değişken <i>son</i>"
+".da daha büyük olduğunda döngü durur. "
+"<br><i>@for(i,1,10,1)"
+"<br>  @# @i=1"
+"<br>@endif</i>"
+
+#: plugin/specialinformation.cpp:418
+msgid "Returns the value of a global variable."
+msgstr "Küresel bir değişkenin değerini döndürür."
+
+#: plugin/specialinformation.cpp:420
+msgid ""
+"Translates the string into the current language. Texts in GUI would be "
+"automatically extracted for translation."
+msgstr ""
+"Mevcut dil içindeki karakteri çevirir. Grafiksel Kullanıcı Arayüzü içindeki "
+"metinler çevirme için otomatik olarak açılmış olurdu."
+
+#: plugin/specialinformation.cpp:422
+#, fuzzy
+msgid ""
+"Executes block if expression is true (non-zero number or non-empty string.) "
+"<p><b>Old</b>Close with <b>@endif</b></p>"
+"<p><b>New</b>"
+"<br>if val == true then"
+"<br>//  do op"
+"<br>elseif cond"
+"<br>//  second chance"
+"<br>else"
+"<br>//  cond failed"
+"<br>endif</p>"
+msgstr ""
+"Eğer açıklama doğru ise blok yürütür (sıfırsız sayı ya da boş olmayan "
+"karakter.) "
+"<p><b>@endif</b> ile birlikte kapat</p>"
+
+#: plugin/specialinformation.cpp:424
+msgid ""
+"Executes another Kommander dialog. Current dialog directory is used if no path "
+"is given. Arguments may be given as named arguments which will become global "
+"variables in the new dialog. For instance: <i>var=val</i>"
+msgstr ""
+"Başka Kommander diyaloğu yürütür. Mevcut diyalog dizini eğer yol verilmemişse "
+"kullanılır. Değişkenler yeni diyalog içinde küresel değişkenler verecek isimli "
+"değişkenler olarak verilebilir. Örneğin: <i>var=val</i>"
+
+#: plugin/specialinformation.cpp:426
+msgid "Reads setting from configration file for this dialog."
+msgstr "Bu diyalog için yapılandırma dosyasından ayar okur."
+
+#: plugin/specialinformation.cpp:428
+msgid ""
+"Sets the value of a global variable. Global variables exist for the life of the "
+"Kommander window."
+msgstr ""
+"Bir küresel değişkenin değerini ayarlar. Küresel değişkenler Kommander "
+"penceresinin yaşamı için vardır."
+
+#: plugin/specialinformation.cpp:430
+msgid "Stores setting in configuration file for this dialog."
+msgstr "Bu diyalog için yapılandırma dosyası içinde ayar kaydeder."
+
+#: plugin/specialinformation.cpp:432
+msgid ""
+"Begin of <b>switch</b> block. Following <b>case</b> values are compared to <i>"
+"expression</i>."
+"<p>@switch()"
+"<br>@case()"
+"<br>@end"
+msgstr ""
+"<b>Anahtar</b> bloğunu başlat. <b>Durum</b> değişkenlerini takip ederek <i>"
+"açıklama</i> karşılaştırılır. "
+"<p>@anahtar()"
+"<br>@durum()"
+"<br>@son"
+
+#: plugin/specialinformation.cpp:434
+msgid "Executes an external DCOP call."
+msgstr "Harici bir DCOP araması yürütür."
+
+#: plugin/specialinformation.cpp:436
+#, fuzzy
+msgid "Adds a comment to EOL that Kommander will not parse"
+msgstr "SatırSonu'na (EOL) Kommander'in ayrıştıramayacağı bir yorum ekler "
+
+#: plugin/specialinformation.cpp:438
+msgid ""
+"Creates a new widget with the specified type and as the child of parent."
+msgstr ""
+
+#: plugin/specialinformation.cpp:440
+msgid ""
+"Returns true if there is a widget with the passed name, false otherwise."
+msgstr ""
+
+#: plugin/specialinformation.cpp:442
+msgid "Connects the signal of sender with the slot of the receiver"
+msgstr ""
+
+#: plugin/specialinformation.cpp:444
+#, fuzzy
+msgid "Disconnects the signal of sender from the slot of the receiver"
+msgstr "Gönderici ve alıcı arasındaki bağlantıları gösterir."
+
+#: plugin/specialinformation.cpp:447
+msgid "Exits script execution and returns"
+msgstr ""
+
+#: plugin/specialinformation.cpp:449
+msgid "Exits the current block of a while, for or foreach loop"
+msgstr ""
+
+#: plugin/specialinformation.cpp:451
+msgid "Exit a step and return to the beginning of a loop"
+msgstr ""
+
+#: plugin/specialinformation.cpp:453
+msgid ""
+"Return from a script, optionaly with a value from the script to the caller"
+msgstr ""
+
+#: plugin/specialinformation.cpp:457
+msgid "Returns an EOL-separated list of all values in the array."
+msgstr "Dizi içindeki tüm değerlerin EOL-ile-Ayrılmış listesini geri döndürür."
+
+#: plugin/specialinformation.cpp:459
+msgid "Returns an EOL-separated list of all keys in the array."
+msgstr ""
+"Dizi içindeki tüm anahtarların EOL-ile-Ayrılmış listesini geri döndürür. "
+
+#: plugin/specialinformation.cpp:461
+msgid "Removes all elements from the array."
+msgstr "Diziden tüm öğeleri kaldırır."
+
+#: plugin/specialinformation.cpp:463
+msgid "Returns the number of elements in the array."
+msgstr "Dizi içindeki öğelerin sayısını döndürür."
+
+#: plugin/specialinformation.cpp:465
+msgid "Returns the value associated with the given key."
+msgstr "Verilen anahtar ile ilişkilendirilmiş değer döndürür."
+
+#: plugin/specialinformation.cpp:467
+msgid "Removes element with the given key from the array."
+msgstr "Diziden verilen anahtar ile birlikte öğe kaldırır."
+
+#: plugin/specialinformation.cpp:469
+msgid "Adds element with the given key and value to the array"
+msgstr "Dizide verilen değer ve anahtar ile birlikte öğe ekler."
+
+#: plugin/specialinformation.cpp:471
+msgid ""
+"Adds all elements in the string to the array. String should have <i>"
+"key\\tvalue\\n</i> format."
+msgstr ""
+"Diziye dizilim içindeki tüm öğeleri ekler. Dizilim <i>anahtar\\tdeğeri\\n</i> "
+"biçimine sahip olmalıdır."
+
+#: plugin/specialinformation.cpp:474
+msgid ""
+"Returns all elements in the array in "
+"<pre>key\\tvalue\\n</pre> format."
+msgstr ""
+"<pre>anahtar\\tdeğeri\\n</pre> biçimi içindeki dizi içinde tüm öğeleri "
+"döndürür."
+
+#: plugin/specialinformation.cpp:476
+msgid ""
+"Create an integer indexed array - starting from 0 - from a string. Use the "
+"separator character to split the string. The separator's default value is "
+"'\\t'."
+msgstr ""
+
+#: plugin/specialinformation.cpp:478
+msgid ""
+"Create a string from an integer indexed array. Concatenate the elements with "
+"the separator character. The separator's default value is '\\t'."
+msgstr ""
+
+#: plugin/specialinformation.cpp:480
+#, fuzzy
+msgid ""
+"Remove keyNum elements starting with keyStart from an indexed array and reindex "
+"the array. If keyNum is not specified, remove only the keyStart element."
+msgstr "Diziden verilen anahtarla birlikte öğeyi kaldır."
+
+#: plugin/specialinformation.cpp:482
+msgid ""
+"Insert the elements from string starting at key and reindex the array. Use the "
+"separator to separate the elements from the string. The separator's default "
+"value is '\\t'."
+msgstr ""
+
+#: plugin/specialinformation.cpp:487
+msgid "Returns number of chars in the string."
+msgstr "Dizilim içindeki karakterlerin sayısını döndürür."
+
+#: plugin/specialinformation.cpp:489
+msgid "Checks if the the string contains the given substring."
+msgstr "Eğer dizilim verilen altdizilimleri içeriyorsa kontrol eder."
+
+#: plugin/specialinformation.cpp:491
+msgid ""
+"Returns the position of a substring in the string, or -1 if it is not found."
+msgstr ""
+"Dizilim içindeki bir altdizilimin konumunu döndürür ya da bulunamazsa -1."
+
+#: plugin/specialinformation.cpp:493
+msgid ""
+"Returns the position of a substring in the string, or -1 if it is not found. "
+"String is searched backwards"
+msgstr ""
+"Dizilim içindeki bir altdizilimin konumunu döndürür ya da bulunamazsa -1. "
+"Dizilim geriye dönük aranır."
+
+#: plugin/specialinformation.cpp:495
+msgid "Returns the first <i>n</i> chars of the string."
+msgstr "Dizilimin ilk<i>n</i> karakterlerini döndürür."
+
+#: plugin/specialinformation.cpp:497
+msgid "Returns the last <i>n</i> chars of the string."
+msgstr "Dizilimin son <i>n</i> karakterlerini döndürür."
+
+#: plugin/specialinformation.cpp:499
+msgid "Returns <i>n</i> chars of the string, starting from <i>start</i>."
+msgstr ""
+"<i>Başla</i>dan başlayarak, dizilimin <i>n</i> karakterlerini döndürür."
+
+#: plugin/specialinformation.cpp:501
+msgid "Removes all occurrences of given substring."
+msgstr "Verilen altdizilimin tüm olaylarını kaldırır."
+
+#: plugin/specialinformation.cpp:503
+msgid ""
+"Replaces all occurrences of the given substring with the given replacement."
+msgstr ""
+"Verilen değiştirmeler ile birlikte verilen altdizilimlerin tüm olaylarını "
+"değiştirir."
+
+#: plugin/specialinformation.cpp:505
+msgid "Converts the string to uppercase."
+msgstr "Büyük harfteki dizilimi dönüştürür."
+
+#: plugin/specialinformation.cpp:507
+msgid "Converts the string to lowercase."
+msgstr "Küçük harfteki dizilimi dönüştürür."
+
+#: plugin/specialinformation.cpp:509
+msgid ""
+"Compares two strings. Returns 0 if they are equal, -1 if the first one is "
+"lower, 1 if the first one is higher"
+msgstr ""
+"İki karakteri karşılaştırır. Eğer eşitlerse 0, eğer birincisi daha küçükse -1, "
+"eğer birincisi daha büyükse 1 döndürür."
+
+#: plugin/specialinformation.cpp:512
+msgid "Checks if the string is empty."
+msgstr "Eğer dizilim boşsa kontrol eder."
+
+#: plugin/specialinformation.cpp:514
+msgid "Checks if the string is a valid number."
+msgstr "Eğer dizilim geçerli bir sayıysa kontrol eder."
+
+#: plugin/specialinformation.cpp:516
+msgid "Returns given section of a string."
+msgstr "Bir dizilimin verilen kısmını döndürür."
+
+#: plugin/specialinformation.cpp:518
+msgid ""
+"Returns the given string with %1, %2, %3 replaced with <i>arg1</i>, <i>arg2</i>"
+", <i>arg3</i> accordingly."
+msgstr ""
+"<i>değ1</i>, <i>değ2</i>, <i>değ3</i>'e göre değiştirilmiş %1, %2, %3 ile "
+"birlikte verilen dizilimi döndürür."
+
+#: plugin/specialinformation.cpp:520
+msgid "Round a floating point number by x digits."
+msgstr ""
+
+#: plugin/specialinformation.cpp:523
+msgid "Convert a string to an integer. If not possible use the default value"
+msgstr ""
+
+#: plugin/specialinformation.cpp:525
+msgid ""
+"Convert a string to a double precision floating point value. If not possible "
+"use the default value"
+msgstr ""
+
+#: plugin/specialinformation.cpp:529
+msgid "Returns content of given file."
+msgstr "Verilen dosyanın içeriğini döndürür."
+
+#: plugin/specialinformation.cpp:531
+msgid "Writes given string to a file."
+msgstr "Bir dosyaya verilen dizilimi yazar."
+
+#: plugin/specialinformation.cpp:533
+msgid "Appends given string to the end of a file."
+msgstr "Bir dosyanın sonunda verilen dizilimi ekler."
+
+#: plugin/specialinformation.cpp:535
+msgid "Checks to see if file exists."
+msgstr ""
+
+#: plugin/specialinformation.cpp:538
+#, fuzzy
+msgid ""
+"Shows color dialog. Returns color in #RRGGBB format. Defaults to the parameter, "
+"if specified."
+msgstr "Renk diyaloğunu gösterir. @RRGGBB biçimi içindeki rengi döndürür."
+
+#: plugin/specialinformation.cpp:540
+msgid "Shows text selection dialog. Returns entered text."
+msgstr "Metin seçme diyaloğunu gösterir. Girilen metni döndürür."
+
+#: plugin/specialinformation.cpp:542
+msgid "Shows a dialog asking user for password and returns it."
+msgstr ""
+"Kullanıcıya şifre sorma diyalogu gösterir. Girilen şifreyi geri döndürür."
+
+#: plugin/specialinformation.cpp:544
+msgid "Shows value selection dialog. Returns entered value."
+msgstr "Değer seçim diyaloğunu gösterir. Girilen değeri döndürür."
+
+#: plugin/specialinformation.cpp:546
+#, fuzzy
+msgid "Shows float value selection dialog. Returns entered value."
+msgstr "Değer seçim diyaloğunu gösterir. Girilen değeri döndürür."
+
+#: plugin/specialinformation.cpp:548
+msgid "Shows existing file selection dialog. Returns selected file."
+msgstr "Mevcut dosya seçim diyaloğunu gösterir. Seçili dosyayı döndürür."
+
+#: plugin/specialinformation.cpp:550
+msgid "Shows save file selection dialog. Returns selected file."
+msgstr "Dosya kaydetme seçim diyaloğunu gösterir. Seçili dosyayı döndürür."
+
+#: plugin/specialinformation.cpp:552
+msgid "Shows directory selection dialog. Returns selected directory."
+msgstr "Dizin seçim diyaloğunu gösterir. Seçili dizini döndürür."
+
+#: plugin/specialinformation.cpp:554
+msgid ""
+"Shows multiple files selection dialog. Returns EOL-separated list of selected "
+"files."
+msgstr ""
+"Çoklu dosyalar seçim diyaloğunu gösterir. Seçili dosyaların ayrılmış-EOL "
+"listesini döndürür."
+
+#: plugin/specialinformation.cpp:558
+msgid "Shows an information dialog."
+msgstr "Bir bilgilendirme diyaloğu gösterir."
+
+#: plugin/specialinformation.cpp:560
+msgid "Shows an error dialog."
+msgstr "Bir hata diyaloğu gösterir."
+
+#: plugin/specialinformation.cpp:562
+msgid ""
+"Shows a warning dialog with up to three buttons. Returns number of selected "
+"button."
+msgstr ""
+"Uygun üç düğme ile birlikte bir uyarı diyaloğu gösterir. Seçili düğmenin "
+"sayısını döndürür."
+
+#: plugin/specialinformation.cpp:564
+msgid ""
+"Shows a question dialog with up to three buttons. Returns number of selected "
+"button."
+msgstr ""
+"Uygun üç düğme ile birlikte bir soru gösterir. Seçili düğmenin sayısını "
+"döndürür."
+
+#. i18n: file ./editor/wizardeditor.ui line 16
+#: rc.cpp:3
+#, no-c-format
+msgid "Wizard Page Editor"
+msgstr "Sihirbaz Sayfaları Düzenleyicisi"
+
+#. i18n: file ./editor/wizardeditor.ui line 61
+#: rc.cpp:6
+#, no-c-format
+msgid "Wizard pages:"
+msgstr "Sihirbaz Sayfaları:"
+
+#. i18n: file ./editor/wizardeditor.ui line 90
+#: rc.cpp:9 rc.cpp:893
+#, no-c-format
+msgid "&Add"
+msgstr "&Ekle"
+
+#. i18n: file ./editor/wizardeditor.ui line 200
+#: rc.cpp:21 rc.cpp:236 rc.cpp:392 rc.cpp:614 rc.cpp:815 rc.cpp:878 rc.cpp:914
+#: rc.cpp:980 rc.cpp:1082 rc.cpp:1133 rc.cpp:1310
+#, no-c-format
+msgid "Close the dialog and apply all the changes."
+msgstr "Tüm değişiklikleri uygula ve diyaloğu kapat."
+
+#. i18n: file ./editor/wizardeditor.ui line 214
+#: rc.cpp:27 rc.cpp:398 rc.cpp:821 rc.cpp:986 rc.cpp:1088 rc.cpp:1139
+#, no-c-format
+msgid "Apply all changes."
+msgstr "Tüm değişiklikleri uygula."
+
+#. i18n: file ./editor/wizardeditor.ui line 228
+#: rc.cpp:33 rc.cpp:242 rc.cpp:404 rc.cpp:620 rc.cpp:827 rc.cpp:884 rc.cpp:920
+#: rc.cpp:992 rc.cpp:1094 rc.cpp:1145 rc.cpp:1319
+#, no-c-format
+msgid "Close the dialog and discard any changes."
+msgstr "Herhangi değişiklikleri at ve diyaloğu kapat."
+
+#. i18n: file ./editor/previewwidget.ui line 22
+#: rc.cpp:36
+#, no-c-format
+msgid "Preview Window"
+msgstr "Önizleme Penceresi"
+
+#. i18n: file ./editor/previewwidget.ui line 67
+#: rc.cpp:39
+#, no-c-format
+msgid "ButtonGroup"
+msgstr "DüğmeGrubu"
+
+#. i18n: file ./editor/previewwidget.ui line 84
+#: rc.cpp:42
+#, no-c-format
+msgid "RadioButton1"
+msgstr "RadyoDüğmesi1"
+
+#. i18n: file ./editor/previewwidget.ui line 95
+#: rc.cpp:45
+#, no-c-format
+msgid "RadioButton2"
+msgstr "RadyoDüğmesi2"
+
+#. i18n: file ./editor/previewwidget.ui line 103
+#: rc.cpp:48
+#, no-c-format
+msgid "RadioButton3"
+msgstr "RadyoDüğmesi3"
+
+#. i18n: file ./editor/previewwidget.ui line 113
+#: rc.cpp:51
+#, no-c-format
+msgid "ButtonGroup2"
+msgstr "DüğmeGrubu2"
+
+#. i18n: file ./editor/previewwidget.ui line 130
+#: rc.cpp:54
+#, no-c-format
+msgid "CheckBox1"
+msgstr "OnayKutusu1"
+
+#. i18n: file ./editor/previewwidget.ui line 141
+#: rc.cpp:57
+#, no-c-format
+msgid "CheckBox2"
+msgstr "OnayKutusu2"
+
+#. i18n: file ./editor/previewwidget.ui line 175
+#: rc.cpp:60
+#, no-c-format
+msgid "LineEdit"
+msgstr "HatDüzenleyici"
+
+#. i18n: file ./editor/previewwidget.ui line 181
+#: rc.cpp:63
+#, no-c-format
+msgid "ComboBox"
+msgstr "AçılırKutu"
+
+#. i18n: file ./editor/previewwidget.ui line 212
+#: rc.cpp:66
+#, no-c-format
+msgid "PushButton"
+msgstr "Basma Düğmesi"
+
+#. i18n: file ./editor/previewwidget.ui line 249
+#: rc.cpp:69
+#, no-c-format
+msgid ""
+"<p>\n"
+"<a href=\"http://www.trolltech.com\"> http://www.trolltech.com </a>\n"
+"</p>\n"
+"<p>\n"
+"<a href=\"http://www.kde.org\"> http://www.kde.org </a>\n"
+"</p>"
+msgstr ""
+"<p>\n"
+"<a href=\"http://www.trolltech.com\"> http://www.trolltech.com </a>\n"
+"</p>\n"
+"<p>\n"
+"<a href=\"http://www.kde.org\"> http://www.kde.org </a>\n"
+"</p>"
+
+#. i18n: file ./editor/newform.ui line 35
+#: rc.cpp:77
+#, no-c-format
+msgid "New File"
+msgstr "Yeni Dosya"
+
+#. i18n: file ./editor/newform.ui line 41
+#: rc.cpp:80
+#, no-c-format
+msgid ""
+"<b>New Form</b>"
+"<p>Select a template for the new form and click the <b>OK</b>"
+"-button to create it.</p>"
+msgstr ""
+"<b>Yeni Form</b> "
+"<p>Oluşturmak için <b>TAMAM</b>düğmesine tıklayın ve yeni form için bir şablon "
+"seçin.</p>"
+
+#. i18n: file ./editor/newform.ui line 109
+#: rc.cpp:89
+#, no-c-format
+msgid "Create a new form using the selected template."
+msgstr "Seçili şablon kullanarak yeni bir form oluştur."
+
+#. i18n: file ./editor/newform.ui line 123
+#: rc.cpp:95
+#, no-c-format
+msgid "Close the dialog without creating a new form."
+msgstr "Yeni bir form yaratmaksızın diyaloğu kapat."
+
+#. i18n: file ./editor/newform.ui line 145
+#: rc.cpp:98
+#, no-c-format
+msgid "Displays a list of the available templates."
+msgstr "Mevcut şablonların bir listesini gösterir."
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 38
+#: rc.cpp:101
+#, no-c-format
+msgid "Tune Palette"
+msgstr "Uyumlama Paleti"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 44
+#: rc.cpp:104
+#, no-c-format
+msgid ""
+"<b>Edit Palette</b>"
+"<p>Change the current widget or form's palette.</p>"
+"<p>Use a generated palette or select colors for each color group and each color "
+"role.</p>"
+"<p>The palette can be tested with different widget layouts in the preview "
+"section.</p>"
+msgstr ""
+"<b>Palet Düzenle</p> "
+"<p>Formun paletini ya da mevcut bileşenini değiştir.</p> "
+"<p>Her renk rolü ve her renk grubu için renkleri seç ya da üretilmiş bir palet "
+"kullan.</p> "
+"<p>Palet önizleme kısmı içindeki farklı bileşen düzenleri ile birlikte test "
+"edilebilir.</p>"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 81
+#: rc.cpp:107 rc.cpp:860
+#, no-c-format
+msgid "Select &palette:"
+msgstr "&Palet seç:"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 90
+#: rc.cpp:110 rc.cpp:863
+#, no-c-format
+msgid "Active Palette"
+msgstr "Etkin Palet"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 95
+#: rc.cpp:113 rc.cpp:866
+#, no-c-format
+msgid "Inactive Palette"
+msgstr "Etkin olmayan Palet"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 100
+#: rc.cpp:116 rc.cpp:869
+#, no-c-format
+msgid "Disabled Palette"
+msgstr "Devre Dışı Palet "
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 122
+#: rc.cpp:119
+#, no-c-format
+msgid "Auto"
+msgstr "Oto"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 139
+#: rc.cpp:122
+#, no-c-format
+msgid "Build the inactive palette from the active palette."
+msgstr "Etkin paletten etkin olmayan palet oluştur."
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 150
+#: rc.cpp:125
+#, no-c-format
+msgid "Build the disabled palette from the active palette."
+msgstr "Etkin paletten devre dışı palet oluştur."
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 163
+#: rc.cpp:128
+#, no-c-format
+msgid "Central Color &Roles"
+msgstr "Merkezi Renk &Rolleri"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 178
+#: rc.cpp:131
+#, no-c-format
+msgid "Background"
+msgstr "Arkaplan"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 183
+#: rc.cpp:134
+#, no-c-format
+msgid "Foreground"
+msgstr "Önplan"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 188
+#: rc.cpp:137
+#, no-c-format
+msgid "Button"
+msgstr "Düğme"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 193
+#: rc.cpp:140
+#, no-c-format
+msgid "Base"
+msgstr "Taban"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 203
+#: rc.cpp:146
+#, no-c-format
+msgid "BrightText"
+msgstr "Parlak Metin"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 208
+#: rc.cpp:149
+#, no-c-format
+msgid "ButtonText"
+msgstr "Düğme Metni"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 213
+#: rc.cpp:152
+#, no-c-format
+msgid "Highlight"
+msgstr "Vurgu"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 218
+#: rc.cpp:155
+#, no-c-format
+msgid "HighlightText"
+msgstr "Vurgu Metni"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 223
+#: rc.cpp:158
+#, no-c-format
+msgid "Link"
+msgstr "Bağlantı"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 228
+#: rc.cpp:161
+#, no-c-format
+msgid "LinkVisited"
+msgstr "Ziyaret Edilmiş Bağlantı"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 235
+#: rc.cpp:164
+#, no-c-format
+msgid "Choose the central color role"
+msgstr "Merkezi renk rolünü seç"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 238
+#: rc.cpp:167
+#, no-c-format
+msgid ""
+"<b>Select a color role.</b>"
+"<p>Available central color roles are: "
+"<ul> "
+"<li>Background - general background color.</li> "
+"<li>Foreground - general foreground color. </li> "
+"<li>Base - used as the background color for example, for text entry widgets; it "
+"is usually white or another light color. </li> "
+"<li>Text - the forground color used with Base. Usually this is the same as the "
+"Foreground, in which case it must provide good contrast both with the "
+"Background and with the Base. </li> "
+"<li>Button - general button background color; useful where buttons need a "
+"background different from Background, as in the Macintosh style. </li> "
+"<li>ButtonText - a foreground color used with the Button color. </li> "
+"<li>Highlight - a color used to indicate a selected or highlighted item. </li> "
+"<li>HighlightedText - a text color that contrasts to Highlight. </li> "
+"<li>BrightText - a text color that is very different from Foreground and "
+"contrasts well with, for example, black. </li> </ul> </p>"
+msgstr ""
+"<b>Bir renk rolü seç.</b> "
+"<p>Mevcut merkezi renk rolleri: "
+"<ul> "
+"<li>Arkaplan - genel arkaplan rengi.</li> "
+"<li>Önplan - genel önplan rengi.</li> Taban - arkaplan rengi olarak kullanılır "
+"örneğin, metin giriş bileşenleri için; Bu genellikle başka açık renk ya da "
+"beyaz kullanır.</li> Metin - önplan rengi Tabanla birlikte kullanılır. "
+"Genellikle bu önplan rengiyle aynıdır, Bu Tabanla ve Arkaplan ile birlikte iyi "
+"karşıtlık sağlamalıdır.</li> "
+"<li>Düğme - genel düğme arkaplan rengi, Macintosh stilindeki gibi, Arkaplandan "
+"farklı bir arkaplan ihtiyaç duyan düğmelerin olduğu yerde yararlıdır.</li> "
+"<li>DüğmeMetni - Düğme rengi ile birlikte kullanılan bir önplan rengi.</li> "
+"<li>Vurgu - seçilmiş ya da vurgulanmış nesneyi imlemek için kullanılan bir "
+"renk. </li> "
+"<li>VurgulanmışMetin - Vurgu yapmak için karşıtlıklardaki bir metin rengi.</li> "
+"<li>ParlakMetin - karşıtlıklar ve Önplandan çok farklı bir metin rengidir, "
+"örneğin, siyah.</li></ul></p>"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 285
+#: rc.cpp:170
+#, no-c-format
+msgid "Choose pi&xmap:"
+msgstr "Benek &seç:"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 310
+#: rc.cpp:173 rc.cpp:500
+#, no-c-format
+msgid "Select a pixmap"
+msgstr "Bir benek seç"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 313
+#: rc.cpp:176
+#, no-c-format
+msgid "Choose a pixmap file for the selected central color role."
+msgstr "Seçili merkezi renk rolü için bir benek dosyası seç."
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 335
+#: rc.cpp:179
+#, no-c-format
+msgid "&Select color:"
+msgstr "Renk &seç:"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 360
+#: rc.cpp:182 rc.cpp:224 rc.cpp:476 rc.cpp:839 rc.cpp:848
+#, no-c-format
+msgid "Choose a color"
+msgstr "Bir renk seç"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 363
+#: rc.cpp:185
+#, no-c-format
+msgid "Choose a color for the selected central color role."
+msgstr "Seçili merkezi renk rolü için bir renk seç."
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 375
+#: rc.cpp:188
+#, no-c-format
+msgid "3D Shadow &Effects"
+msgstr "3 Boyut Gölge ve Etkiler"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 406
+#: rc.cpp:191
+#, no-c-format
+msgid "Build &from button color:"
+msgstr "&Düğme renginden oluştur:"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 412
+#: rc.cpp:194
+#, no-c-format
+msgid "Generate shadings"
+msgstr "Genel gölgelemeler"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 415
+#: rc.cpp:197
+#, no-c-format
+msgid "Check to let 3D-effect colors be calculated from the button-color."
+msgstr ""
+"Düğme-renginden hesaplanmış olan 3 Boyut-etki renklerine izin vermek için "
+"tıklayın."
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 421
+#: rc.cpp:200
+#, no-c-format
+msgid "Light"
+msgstr "Açık"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 426
+#: rc.cpp:203
+#, no-c-format
+msgid "Midlight"
+msgstr "Orta Açık"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 431
+#: rc.cpp:206
+#, no-c-format
+msgid "Mid"
+msgstr "Orta"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 436
+#: rc.cpp:209
+#, no-c-format
+msgid "Dark"
+msgstr "Koyu"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 441
+#: rc.cpp:212
+#, no-c-format
+msgid "Shadow"
+msgstr "Gölgeleme"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 448
+#: rc.cpp:215
+#, no-c-format
+msgid "Choose 3D-effect color role"
+msgstr "3 Boyut-etki rengi rolü seçin"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 451
+#: rc.cpp:218
+#, no-c-format
+msgid ""
+"<b>Select a color effect role.</b>"
+"<p>Available effect roles are: "
+"<ul> "
+"<li>Light - lighter than Button color. </li> "
+"<li>Midlight - between Button and Light. </li> "
+"<li>Mid - between Button and Dark. </li> "
+"<li>Dark - darker than Button. </li> "
+"<li>Shadow - a very dark color. </li> </ul>"
+msgstr ""
+"<b>Bir renk etki rolü seçin.</b> "
+"<p>Mevcut etki rolleri: "
+"<ul> "
+"<li>Açık - Düğme renginden daha açıktır. </li> "
+"<li>Ortaaçık - Düğme ve Açık arasındadır. </li> "
+"<li>Orta - Düğme ve Koyu arasındadır. </li> "
+"<li>Koyu - Düğmeden daha koyudur. </li> "
+"<li>Gölgeleme - çok koyu bir renk. </li></ul>"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 506
+#: rc.cpp:221
+#, no-c-format
+msgid "Select co&lor:"
+msgstr "&Renk seç:"
+
+#. i18n: file ./editor/paletteeditoradvanced.ui line 534
+#: rc.cpp:227
+#, no-c-format
+msgid "Choose a color for the selected effect color role."
+msgstr "Seçili etki rengi için bir renk seç."
+
+#. i18n: file ./editor/functions.ui line 16
+#: rc.cpp:245
+#, no-c-format
+msgid "Function Browser"
+msgstr "Fonksiyon Gözatıcısı"
+
+#. i18n: file ./editor/functions.ui line 38
+#: rc.cpp:248
+#, no-c-format
+msgid "Description:"
+msgstr "Açıklama:"
+
+#. i18n: file ./editor/functions.ui line 67
+#: rc.cpp:251
+#, no-c-format
+msgid "&Group:"
+msgstr "&Grup"
+
+#. i18n: file ./editor/functions.ui line 97
+#: rc.cpp:254
+#, no-c-format
+msgid "&Function:"
+msgstr "&Fonksiyon"
+
+#. i18n: file ./editor/functions.ui line 129
+#: rc.cpp:257
+#, no-c-format
+msgid "&Parameters"
+msgstr "&Parametreler:"
+
+#. i18n: file ./editor/functions.ui line 140
+#: rc.cpp:260
+#, no-c-format
+msgid "Arg3"
+msgstr "Değ3"
+
+#. i18n: file ./editor/functions.ui line 148
+#: rc.cpp:263
+#, no-c-format
+msgid "Arg5"
+msgstr "Değ5"
+
+#. i18n: file ./editor/functions.ui line 190
+#: rc.cpp:266
+#, no-c-format
+msgid "Insert function"
+msgstr "Fonksiyon Ekle"
+
+#. i18n: file ./editor/functions.ui line 198
+#: rc.cpp:269
+#, no-c-format
+msgid "Arg4"
+msgstr "Değ4"
+
+#. i18n: file ./editor/functions.ui line 240
+#: rc.cpp:272 rc.cpp:278 rc.cpp:281 rc.cpp:287 rc.cpp:290 rc.cpp:293
+#, no-c-format
+msgid "Quote"
+msgstr ""
+
+#. i18n: file ./editor/functions.ui line 263
+#: rc.cpp:275
+#, no-c-format
+msgid "Arg1"
+msgstr "Değ1"
+
+#. i18n: file ./editor/functions.ui line 362
+#: rc.cpp:284
+#, no-c-format
+msgid "Widget:"
+msgstr "Bileşen:"
+
+#. i18n: file ./editor/functions.ui line 502
+#: rc.cpp:296
+#, no-c-format
+msgid "Arg6"
+msgstr "Değ6"
+
+#. i18n: file ./editor/functions.ui line 510
+#: rc.cpp:299
+#, no-c-format
+msgid "Arg2"
+msgstr "Değ2"
+
+#. i18n: file ./editor/functions.ui line 623
+#: rc.cpp:308
+#, no-c-format
+msgid "Clear edited text"
+msgstr "Düzenlenmiş metni temizle"
+
+#. i18n: file ./editor/functions.ui line 631
+#: rc.cpp:311
+#, no-c-format
+msgid "Inserted &text:"
+msgstr "Eklenmiş me&tin:"
+
+#. i18n: file ./editor/actioneditor.ui line 19
+#: rc.cpp:314
+#, no-c-format
+msgid "Edit Actions"
+msgstr "Eylemleri Düzenle"
+
+#. i18n: file ./editor/actioneditor.ui line 61
+#: rc.cpp:317
+#, no-c-format
+msgid "Create new Action"
+msgstr "Yeni Eylem oluştur"
+
+#. i18n: file ./editor/actioneditor.ui line 78
+#: rc.cpp:320
+#, no-c-format
+msgid "Delete current Action"
+msgstr "Mevcut Eylemi Sil"
+
+#. i18n: file ./editor/actioneditor.ui line 95
+#: rc.cpp:323
+#, no-c-format
+msgid "Connect current Action"
+msgstr "Mevcut Eylemi Bağla"
+
+#. i18n: file ./editor/iconvieweditor.ui line 35
+#: rc.cpp:326
+#, no-c-format
+msgid "Edit Iconview"
+msgstr "Simge görünümünü düzenle"
+
+#. i18n: file ./editor/iconvieweditor.ui line 41
+#: rc.cpp:329
+#, no-c-format
+msgid ""
+"<b>Edit Iconview</b>"
+"<p>Add, edit or delete items in the icon view.</p>"
+"<p>Click the <b>New Item</b>-button to create a new item, then enter text and "
+"choose a pixmap.</p>"
+"<p>Select an item from the view and click the <b>Delete Item</b>"
+"-button to remove the item from the iconview.</p>"
+msgstr ""
+"<b>Simge görünümünü düzenle</b> "
+"<p>Simge görünümü içinde nesneleri ekle, düzenle ya da sil.</p> "
+"<p>Yeni bir nesne oluşturmak için <b>Yeni Nesne</b>-düğmesine tıklayın, sonra "
+"metin girin ve bir benek seçin.</p> "
+"<p>Simge görünümünden nesne kaldırmak için <b>Nesne Sil</b>"
+"-düğmesine tıklayın ve görünümden bir nesne seçin.</p>"
+
+#. i18n: file ./editor/iconvieweditor.ui line 72
+#: rc.cpp:332
+#, no-c-format
+msgid "All items in the iconview."
+msgstr "Simge görünümü içindeki tüm nesneler."
+
+#. i18n: file ./editor/iconvieweditor.ui line 94
+#: rc.cpp:335 rc.cpp:683 rc.cpp:1034
+#, no-c-format
+msgid "&New Item"
+msgstr "Yeni &Nesne"
+
+#. i18n: file ./editor/iconvieweditor.ui line 97
+#: rc.cpp:338 rc.cpp:686 rc.cpp:1037
+#, no-c-format
+msgid "Add an item"
+msgstr "Bİr nesne ekle"
+
+#. i18n: file ./editor/iconvieweditor.ui line 100
+#: rc.cpp:341
+#, no-c-format
+msgid "Create a new item for the iconview."
+msgstr "Simge görünümü için yeni bir nesne oluştur"
+
+#. i18n: file ./editor/iconvieweditor.ui line 108
+#: rc.cpp:344 rc.cpp:632 rc.cpp:1043
+#, no-c-format
+msgid "&Delete Item"
+msgstr "Nesneyi &Sil"
+
+#. i18n: file ./editor/iconvieweditor.ui line 111
+#: rc.cpp:347 rc.cpp:635
+#, no-c-format
+msgid "Delete item"
+msgstr "Nesneyi sil"
+
+#. i18n: file ./editor/iconvieweditor.ui line 114
+#: rc.cpp:350
+#, no-c-format
+msgid "Delete the selected item."
+msgstr "Seçili nesneyi sil."
+
+#. i18n: file ./editor/iconvieweditor.ui line 147
+#: rc.cpp:353 rc.cpp:1001
+#, no-c-format
+msgid "&Item Properties"
+msgstr "Nesne &Özellikler"
+
+#. i18n: file ./editor/iconvieweditor.ui line 164
+#: rc.cpp:356 rc.cpp:647 rc.cpp:755 rc.cpp:1025 rc.cpp:1070
+#, no-c-format
+msgid "&Text:"
+msgstr "Me&tin:"
+
+#. i18n: file ./editor/iconvieweditor.ui line 181
+#: rc.cpp:359 rc.cpp:650 rc.cpp:1028
+#, no-c-format
+msgid "Change text"
+msgstr "Metin değiştir"
+
+#. i18n: file ./editor/iconvieweditor.ui line 184
+#: rc.cpp:362
+#, no-c-format
+msgid "Change the text for the selected item."
+msgstr "Seçili nesne için metin değiştir"
+
+#. i18n: file ./editor/iconvieweditor.ui line 192
+#: rc.cpp:365 rc.cpp:734 rc.cpp:1004
+#, no-c-format
+msgid "&Pixmap:"
+msgstr "&Benek:"
+
+#. i18n: file ./editor/iconvieweditor.ui line 217
+#: rc.cpp:368 rc.cpp:665 rc.cpp:737 rc.cpp:1007 rc.cpp:1172 rc.cpp:1229
+#, no-c-format
+msgid "Label4"
+msgstr "Etiket4"
+
+#. i18n: file ./editor/iconvieweditor.ui line 237
+#: rc.cpp:371 rc.cpp:668 rc.cpp:740 rc.cpp:1010 rc.cpp:1175 rc.cpp:1232
+#, no-c-format
+msgid "Delete Pixmap"
+msgstr "Benek Sil"
+
+#. i18n: file ./editor/iconvieweditor.ui line 240
+#: rc.cpp:374 rc.cpp:1013
+#, no-c-format
+msgid "Delete the selected item's pixmap."
+msgstr "Seçili nesneni beneğini sil."
+
+#. i18n: file ./editor/iconvieweditor.ui line 257
+#: rc.cpp:380 rc.cpp:677 rc.cpp:749 rc.cpp:1019 rc.cpp:1184 rc.cpp:1241
+#, no-c-format
+msgid "Select a Pixmap"
+msgstr "Bir Benek seç"
+
+#. i18n: file ./editor/iconvieweditor.ui line 260
+#: rc.cpp:383
+#, no-c-format
+msgid "Select a pixmap file for the current item."
+msgstr "Mevcut nesne için bir benek dosyası seç."
+
+#. i18n: file ./editor/createtemplate.ui line 61
+#: rc.cpp:410
+#, no-c-format
+msgid "Template &name:"
+msgstr "Şablon &ismi:"
+
+#. i18n: file ./editor/createtemplate.ui line 76
+#: rc.cpp:413
+#, no-c-format
+msgid "Name of the new template"
+msgstr "Yeni şablonun ismi"
+
+#. i18n: file ./editor/createtemplate.ui line 80
+#: rc.cpp:416
+#, no-c-format
+msgid "Enter the name of the new template"
+msgstr "Yeni şablonun ismini girin"
+
+#. i18n: file ./editor/createtemplate.ui line 91
+#: rc.cpp:419
+#, no-c-format
+msgid "Class of the new template"
+msgstr "Yeni şablonun sınıfı"
+
+#. i18n: file ./editor/createtemplate.ui line 95
+#: rc.cpp:422
+#, no-c-format
+msgid ""
+"Enter the name of the class which should be used as the template's base class"
+msgstr "Şablonun temel sınıfı olarak kullanılması gereken sınıfın adını girin"
+
+#. i18n: file ./editor/createtemplate.ui line 142
+#: rc.cpp:425
+#, no-c-format
+msgid "C&reate"
+msgstr "Oluştu&r"
+
+#. i18n: file ./editor/createtemplate.ui line 150
+#: rc.cpp:428
+#, no-c-format
+msgid "Creates the new template"
+msgstr "Yeni şablon oluştur"
+
+#. i18n: file ./editor/createtemplate.ui line 165
+#: rc.cpp:434
+#, no-c-format
+msgid "Closes the Dialog"
+msgstr "Diyaloğu kapatır"
+
+#. i18n: file ./editor/createtemplate.ui line 178
+#: rc.cpp:437
+#, no-c-format
+msgid "&Baseclass for template:"
+msgstr "Şa&blon için temelsınıf:"
+
+#. i18n: file ./editor/assoctexteditor.ui line 16
+#: rc.cpp:440
+#, no-c-format
+msgid "Edit Text"
+msgstr "Metin Düzenle"
+
+#. i18n: file ./editor/assoctexteditor.ui line 35
+#: rc.cpp:443
+#, no-c-format
+msgid "&Widget:"
+msgstr "&Bileşen:"
+
+#. i18n: file ./editor/assoctexteditor.ui line 67
+#: rc.cpp:449
+#, no-c-format
+msgid "&Text for:"
+msgstr "İçin Me&tin:"
+
+#. i18n: file ./editor/assoctexteditor.ui line 104
+#: rc.cpp:455
+#, no-c-format
+msgid "&Function..."
+msgstr "&Fonksiyon..."
+
+#. i18n: file ./editor/assoctexteditor.ui line 137
+#: rc.cpp:458
+#, no-c-format
+msgid "Wi&dget:"
+msgstr "&Bileşen:"
+
+#. i18n: file ./editor/assoctexteditor.ui line 184
+#: rc.cpp:461
+#, no-c-format
+msgid "Fi&le..."
+msgstr "&Dosya..."
+
+#. i18n: file ./editor/preferences.ui line 35
+#: rc.cpp:464
+#, no-c-format
+msgid "Preferences"
+msgstr "Tercihler"
+
+#. i18n: file ./editor/preferences.ui line 41
+#: rc.cpp:467
+#, no-c-format
+msgid ""
+"<b>Preferences</b>"
+"<p>Change the preferences of Qt Designer. There is always one tab with general "
+"preferences. There may be additional tabs, depending on which plugins are "
+"installed.</p>"
+msgstr ""
+"<b>Tercihler</b> "
+"<p>Qt Designer.tercihlerini değiştir. Her zaman genel tercihlerle birlikte bir "
+"sekme vardır. Yüklenmiş eklentilere bağlı olarak ilave sekmeler olabilir.</p>"
+
+#. i18n: file ./editor/preferences.ui line 62
+#: rc.cpp:470
+#, no-c-format
+msgid "General"
+msgstr "Genel"
+
+#. i18n: file ./editor/preferences.ui line 79
+#: rc.cpp:473
+#, no-c-format
+msgid "Backgro&und"
+msgstr "&Arkaplan"
+
+#. i18n: file ./editor/preferences.ui line 114
+#: rc.cpp:479
+#, no-c-format
+msgid "Select a color in the color dialog."
+msgstr "Renk diyaloğu içinde bir renk seç."
+
+#. i18n: file ./editor/preferences.ui line 125
+#: rc.cpp:482
+#, no-c-format
+msgid "Co&lor"
+msgstr "&Renk"
+
+#. i18n: file ./editor/preferences.ui line 128
+#: rc.cpp:485
+#, no-c-format
+msgid "Use a background color"
+msgstr "Bir arkaplan rengi kullan"
+
+#. i18n: file ./editor/preferences.ui line 131
+#: rc.cpp:488
+#, no-c-format
+msgid "Use a background color."
+msgstr "Bir arkaplan rengi kullan."
+
+#. i18n: file ./editor/preferences.ui line 139
+#: rc.cpp:491
+#, no-c-format
+msgid "&Pixmap"
+msgstr "&Benek"
+
+#. i18n: file ./editor/preferences.ui line 145
+#: rc.cpp:494
+#, no-c-format
+msgid "Use a background pixmap"
+msgstr "Bir arkaplan beneği kullan"
+
+#. i18n: file ./editor/preferences.ui line 148
+#: rc.cpp:497
+#, no-c-format
+msgid "Use a background pixmap."
+msgstr "Bir arkaplan beneği kullan."
+
+#. i18n: file ./editor/preferences.ui line 171
+#: rc.cpp:503
+#, no-c-format
+msgid "Choose a pixmap file."
+msgstr "Bir benek dosyası seç."
+
+#. i18n: file ./editor/preferences.ui line 181
+#: rc.cpp:506
+#, no-c-format
+msgid "Show &grid"
+msgstr "Izgara &göster"
+
+#. i18n: file ./editor/preferences.ui line 187
+#: rc.cpp:509
+#, no-c-format
+msgid "Show Grid"
+msgstr "Izgara göster"
+
+#. i18n: file ./editor/preferences.ui line 190
+#: rc.cpp:512
+#, no-c-format
+msgid ""
+"<b>Customize the grid appearance for all forms.</b>"
+"<p>When <b>Show Grid</b> is checked, all forms show a grid.</p>"
+msgstr ""
+"<b>Tüm formlar için ızgara görünümünü özelleştir.</b> "
+"<p><b>Izgara Göster</b> işaretlendiği zaman, tüm formlar bir ızgara "
+"gösterir.</p>"
+
+#. i18n: file ./editor/preferences.ui line 198
+#: rc.cpp:515
+#, no-c-format
+msgid "Gr&id"
+msgstr "&Izgara"
+
+#. i18n: file ./editor/preferences.ui line 218
+#: rc.cpp:518
+#, no-c-format
+msgid "Sn&ap to grid"
+msgstr "Izg&araya Yasla"
+
+#. i18n: file ./editor/preferences.ui line 224
+#: rc.cpp:521
+#, no-c-format
+msgid "Snap to the grid"
+msgstr "Izgaraya Yasla"
+
+#. i18n: file ./editor/preferences.ui line 227
+#: rc.cpp:524
+#, no-c-format
+msgid ""
+"<b>Customize the grid-settings for all forms.</b>"
+"<p>When <b>Snap to Grid</b> is checked, the widgets snap to the grid using the "
+"the X/Y resolution.</p>"
+msgstr ""
+"<b>Tüm formlar için ızgara-ayarlarını özelleştir.</b> "
+"<p><b>Izgaraya Yasla</b> işaretlendiğinde, bileşenler X/Y çözünürlüğünü "
+"kullanarak ızgaraya yaslar.</p>"
+
+#. i18n: file ./editor/preferences.ui line 258
+#: rc.cpp:527 rc.cpp:533
+#, no-c-format
+msgid "Grid resolution"
+msgstr "Izgara çözünürlüğü"
+
+#. i18n: file ./editor/preferences.ui line 261
+#: rc.cpp:530 rc.cpp:536
+#, no-c-format
+msgid ""
+"<b>Customize the grid-settings for all forms.</b>"
+"<p>When <b>Show Grid</b> is checked, a grid is shown on all forms using the X/Y "
+"resolution.</p>"
+msgstr ""
+"<b>Tüm formlar için ızgara-ayarlarını özelleştir.</b> "
+"<p><b>Izgara Göster</b> işaretlendiğinde, bir ızgara X/Y çözünürlüğünü "
+"kullanarak tüm formlar üzerinde gösterilir.</p>"
+
+#. i18n: file ./editor/preferences.ui line 289
+#: rc.cpp:539
+#, no-c-format
+msgid "Grid-&X:"
+msgstr "&X-Izgarası:"
+
+#. i18n: file ./editor/preferences.ui line 300
+#: rc.cpp:542
+#, no-c-format
+msgid "Grid-&Y:"
+msgstr "&Y-Izgarası:"
+
+#. i18n: file ./editor/preferences.ui line 327
+#: rc.cpp:545 rc.cpp:566
+#, no-c-format
+msgid ""
+"A splash screen is displayed when starting Qt Designer if this option is "
+"checked."
+msgstr ""
+"Eğer bu seçenek işaretlenirse Qt Designer.başladığı zaman bir karşılama ekranı "
+"gösterilir."
+
+#. i18n: file ./editor/preferences.ui line 335
+#: rc.cpp:548
+#, no-c-format
+msgid "Ge&neral"
+msgstr "Ge&nel"
+
+#. i18n: file ./editor/preferences.ui line 352
+#: rc.cpp:551
+#, no-c-format
+msgid "Restore last &workspace on startup"
+msgstr "Başlangıçta son çalışma alanını geri yükle"
+
+#. i18n: file ./editor/preferences.ui line 358
+#: rc.cpp:554
+#, no-c-format
+msgid "Restore last workspace"
+msgstr "Son çalışma alanını geri yükle"
+
+#. i18n: file ./editor/preferences.ui line 361
+#: rc.cpp:557
+#, no-c-format
+msgid ""
+"The current workspace settings will be restored the next time you start Qt "
+"Designer if this option is checked."
+msgstr ""
+"Eğer bu seçenek işaretlenirse mevcut çalışma alanı ayarları başlattığınız Qt "
+"Designer. sonraki zamanda geri yüklecektir."
+
+#. i18n: file ./editor/preferences.ui line 369
+#: rc.cpp:560
+#, no-c-format
+msgid "Show &splash screen on startup"
+msgstr "Başlangıçta yakalama ekranını gö&ster"
+
+#. i18n: file ./editor/preferences.ui line 375
+#: rc.cpp:563
+#, no-c-format
+msgid "Show Splashscreen"
+msgstr "Yakalama ekranını göster"
+
+#. i18n: file ./editor/preferences.ui line 386
+#: rc.cpp:569
+#, no-c-format
+msgid "Disable data&base auto-edit in preview"
+msgstr "Önizlemede veritabanı oto-düzenleyi etkisiz kıl"
+
+#. i18n: file ./editor/preferences.ui line 397
+#: rc.cpp:572
+#, no-c-format
+msgid "&Documentation path:"
+msgstr "&Belgeleme yolu:"
+
+#. i18n: file ./editor/preferences.ui line 422
+#: rc.cpp:575
+#, no-c-format
+msgid ""
+"<b>Enter the path to the documentation.</b>"
+"<p>You may provide an $environment variable as the first part of the "
+"pathname.</p>"
+msgstr ""
+"<b>Belgelenecek yolu girin.</b> "
+"<p>Yol isminin ilk parçası olarak bir $ortam değişkeni sağlayabilirsiniz.</p>"
+
+#. i18n: file ./editor/preferences.ui line 436
+#: rc.cpp:581
+#, no-c-format
+msgid "Select path"
+msgstr "Yol seç"
+
+#. i18n: file ./editor/preferences.ui line 439
+#: rc.cpp:584
+#, no-c-format
+msgid "Look for the documentation path."
+msgstr "Belgeleme yolu için bak."
+
+#. i18n: file ./editor/preferences.ui line 451
+#: rc.cpp:587
+#, no-c-format
+msgid "&Toolbars"
+msgstr "A&raççubukları"
+
+#. i18n: file ./editor/preferences.ui line 468
+#: rc.cpp:590
+#, no-c-format
+msgid "Show &big icons"
+msgstr "&Büyük simgeleri göster"
+
+#. i18n: file ./editor/preferences.ui line 471
+#: rc.cpp:593
+#, no-c-format
+msgid "Big Icons"
+msgstr "Büyük Simgeler"
+
+#. i18n: file ./editor/preferences.ui line 474
+#: rc.cpp:596
+#, no-c-format
+msgid "Big icons will be used in the toolbars if this is checked."
+msgstr ""
+"Eğer bu işaretlenirse Büyük Simgeler araç çubukları içinde kullanılmış "
+"olacaktır."
+
+#. i18n: file ./editor/preferences.ui line 482
+#: rc.cpp:599
+#, no-c-format
+msgid "Show text lab&els"
+msgstr "Metin etiketlerini göst&er"
+
+#. i18n: file ./editor/preferences.ui line 485
+#: rc.cpp:602
+#, no-c-format
+msgid "Text Labels"
+msgstr "Metin Etiketleri"
+
+#. i18n: file ./editor/preferences.ui line 488
+#: rc.cpp:605
+#, no-c-format
+msgid "Text labels will be usin in the toolbars if this is checked."
+msgstr ""
+"Eğer bu işaretlenirse metin etiketleri araç çubukları içinde kullanılmış "
+"olacaktır."
+
+#. i18n: file ./editor/listvieweditor.ui line 35
+#: rc.cpp:623
+#, no-c-format
+msgid "Edit Listview"
+msgstr "Liste görünümünü düzenle"
+
+#. i18n: file ./editor/listvieweditor.ui line 41
+#: rc.cpp:626
+#, no-c-format
+msgid ""
+"<b>Edit Listview</b>"
+"<p>Use the controls on the <b>Items</b>-tab to add, edit or delete items in the "
+"listview. Change the column configuration of the listview using the controls on "
+"the <b>Columns</b>-tab.</p>Click the <b>New Item</b>"
+"-button to create a new item, then enter text and add a pixmap.</p>"
+"<p>Select an item from the list and click the <b>Delete Item</b>"
+"-button to remove the item from the list.</p>"
+msgstr ""
+"<b>Liste görünümünü düzenle</b> "
+"<p>Liste görünümü içindeki nesneleri silmek, eklemek ya da düzenlemek için <b>"
+"Nesneler</b>-sekmesi üzerindeki kontrolleri kullanın. <b>Sütunlar</b>"
+"-sekmesi üzerindeki kontrolleri kullanarak liste görünümünün sütun "
+"yapılandırmasını değiştirin.</p>Yeni bir nesne oluşturmak için <b>Yeni Nesne</b>"
+"-düğmesine tıklayın, sonra metin girin ve bir benek ekleyin.</p> "
+"<p>Listeden nesne kaldırmak için <b>Nesne Sil</b>-düğmesine tıklayın ve "
+"listeden bir nesne seçin.</p>"
+
+#. i18n: file ./editor/listvieweditor.ui line 85
+#: rc.cpp:638
+#, no-c-format
+msgid "<b>Deletes the selected item.</b><p>Any sub-items are also deleted.</p>"
+msgstr ""
+"<b>Seçili nesneyi siler.</b>"
+"<p>Herhangi alt-nesneler aynı zamanda silinir.</p>"
+
+#. i18n: file ./editor/listvieweditor.ui line 99
+#: rc.cpp:641
+#, no-c-format
+msgid "Item &Properties"
+msgstr "Nesne &Özellikleri"
+
+#. i18n: file ./editor/listvieweditor.ui line 116
+#: rc.cpp:644
+#, no-c-format
+msgid "Pi&xmap:"
+msgstr "&Benek:"
+
+#. i18n: file ./editor/listvieweditor.ui line 147
+#: rc.cpp:653
+#, no-c-format
+msgid ""
+"<b>Change the text of the item.</b>"
+"<p>The text will be changed in the current column of the selected item.</p>"
+msgstr ""
+"<b>Nesnenin metnini değiştir.</b> "
+"<p>Metin seçili nesnenin mevcut sütunu içinde değiştirilecektir.</p>"
+
+#. i18n: file ./editor/listvieweditor.ui line 155
+#: rc.cpp:656
+#, no-c-format
+msgid "Change column"
+msgstr "Sütun değiştir"
+
+#. i18n: file ./editor/listvieweditor.ui line 158
+#: rc.cpp:659
+#, no-c-format
+msgid ""
+"<b>Select the current column.</b>"
+"<p>The item's text and pixmap will be changed for the current column</p>"
+msgstr ""
+"<b>Mevcut sütunu seçin:</b> "
+"<p>Nesnelerin metin ve beneği mevcut sütun için değiştirilecektir</p<"
+
+#. i18n: file ./editor/listvieweditor.ui line 166
+#: rc.cpp:662
+#, no-c-format
+msgid "Colu&mn:"
+msgstr "&Sütun:"
+
+#. i18n: file ./editor/listvieweditor.ui line 214
+#: rc.cpp:671 rc.cpp:1178 rc.cpp:1235
+#, no-c-format
+msgid ""
+"<b>Delete the selected item's pixmap.</b>"
+"<p>The pixmap in the current column of the selected item will be deleted.</p>"
+msgstr ""
+"<b>Seçili nesnenin beneğini sil.</b> "
+"<p>Seçili nesnenin mevcut sütunu içindeki benek silinecektir.</p>"
+
+#. i18n: file ./editor/listvieweditor.ui line 234
+#: rc.cpp:680 rc.cpp:1187 rc.cpp:1244
+#, no-c-format
+msgid ""
+"<b>Select a pixmap file for the item.</b>"
+"<p>The pixmap will be changed in the current column of the selected item.</p>"
+msgstr ""
+"<b>Nesne için bir benek dosyası seç.</b> "
+"<p>Benek seçili nesnenin mevcut sütunu içinde değiştirilecektir.</p>"
+
+#. i18n: file ./editor/listvieweditor.ui line 252
+#: rc.cpp:689
+#, no-c-format
+msgid ""
+"<b>Adds a new item to the list.</b>"
+"<p>The item will be inserted at the top of the list and can be moved using the "
+"up- and down-buttons.</p>"
+msgstr ""
+"<b>Listeye yeni bir nesne ekler.</b> "
+"<p>Nesne listenin üstüne eklenecektir ve aşağı- ve yukarı-düğmeleri kullanarak "
+"kaldırılacaktır.</p>"
+
+#. i18n: file ./editor/listvieweditor.ui line 260
+#: rc.cpp:692 rc.cpp:998
+#, no-c-format
+msgid "The list of items."
+msgstr "Nesnelerin listesi."
+
+#. i18n: file ./editor/listvieweditor.ui line 268
+#: rc.cpp:695
+#, no-c-format
+msgid "New &Subitem"
+msgstr "Yeni Altne&sne"
+
+#. i18n: file ./editor/listvieweditor.ui line 271
+#: rc.cpp:698
+#, no-c-format
+msgid "Add a subitem"
+msgstr "Bir altnesne ekle"
+
+#. i18n: file ./editor/listvieweditor.ui line 274
+#: rc.cpp:701
+#, no-c-format
+msgid ""
+"<b>Create a new sub-item for the selected item.</b>"
+"<p>New sub-items are inserted at the top of the list of sub-items, and new "
+"levels are created automatically.</p>"
+msgstr ""
+"<b<Seçili nesne için bir alt-nesne oluştur.</b> "
+"<p>Yeni alt-nesneler alt-nesnelerin listesinin üzerine eklenir ve yeni "
+"seviyeler otomatik olarak oluşturulur.</p>"
+
+#. i18n: file ./editor/listvieweditor.ui line 305
+#: rc.cpp:704 rc.cpp:800 rc.cpp:1052 rc.cpp:1151 rc.cpp:1205
+#, no-c-format
+msgid "Move up"
+msgstr "Yukarı taşı"
+
+#. i18n: file ./editor/listvieweditor.ui line 308
+#: rc.cpp:707
+#, no-c-format
+msgid ""
+"<b>Move the selected item up.</b>"
+"<p>The item will be moved within its level in the hierarchy.</p>"
+msgstr ""
+"<b>Seçili nesneyi yukarı taşı.</b> "
+"<p>Nesne bir sıradüzeni içinde onun seviyesi ile birlikte taşınacaktır.</p>"
+
+#. i18n: file ./editor/listvieweditor.ui line 322
+#: rc.cpp:710 rc.cpp:785 rc.cpp:1058 rc.cpp:1157 rc.cpp:1211
+#, no-c-format
+msgid "Move down"
+msgstr "Aşağı taşı"
+
+#. i18n: file ./editor/listvieweditor.ui line 325
+#: rc.cpp:713
+#, no-c-format
+msgid ""
+"<b>Move the selected item down.</b>"
+"<p>The item will be moved within its level in the hierarchy.</p>"
+msgstr ""
+"<b>Seçili nesneyi aşağı taşı.</b> "
+"<p>Nesne bir sıradüzeni içinde onun seviyesi ile birlikte taşınacaktır.</p>"
+
+#. i18n: file ./editor/listvieweditor.ui line 339
+#: rc.cpp:716
+#, no-c-format
+msgid "Move left"
+msgstr "Sola taşı"
+
+#. i18n: file ./editor/listvieweditor.ui line 342
+#: rc.cpp:719
+#, no-c-format
+msgid ""
+"<b>Move the selected item one level up.</b>"
+"<p>This will also change the level of the item's sub-items.</p>"
+msgstr ""
+"<b>Seçili nesne bir seviye yukarı taşınır.</b> "
+"<p>Bu aynı zamanda nesnelerin alt-nesnelerinin seviyesini değiştirecektir.</p>"
+
+#. i18n: file ./editor/listvieweditor.ui line 356
+#: rc.cpp:722
+#, no-c-format
+msgid "Move right"
+msgstr "Sağa taşı"
+
+#. i18n: file ./editor/listvieweditor.ui line 359
+#: rc.cpp:725
+#, no-c-format
+msgid ""
+"<b>Move the selected item one level down.</b>"
+"<p>This will also change the level of the item's sub-items.</p>"
+msgstr ""
+"<b>Seçili nesneyi bir seviye aşağı taşır.</b> "
+"<p>Bu aynı zamanda nesnelerin alt-nesnelerinin seviyesini değiştirecektir.</p>"
+
+#. i18n: file ./editor/listvieweditor.ui line 369
+#: rc.cpp:728 rc.cpp:1148
+#, no-c-format
+msgid "Co&lumns"
+msgstr "Sütun&lar"
+
+#. i18n: file ./editor/listvieweditor.ui line 386
+#: rc.cpp:731
+#, no-c-format
+msgid "Column Properties"
+msgstr "Sütun Özellikleri"
+
+#. i18n: file ./editor/listvieweditor.ui line 437
+#: rc.cpp:743
+#, no-c-format
+msgid "Delete the pixmap of the selected column."
+msgstr "Seçili listenin beneğini sil."
+
+#. i18n: file ./editor/listvieweditor.ui line 457
+#: rc.cpp:752
+#, no-c-format
+msgid ""
+"<b>Select a pixmap file for the selected column.</b>"
+"<p>The pixmap will be displayed in the header of the listview.</p>"
+msgstr ""
+"<b>Seçili sütun için bir benek dosyası seç.</b> "
+"<p>Benek liste görünümünün başlığı içinde gösterilecektir.</p>"
+
+#. i18n: file ./editor/listvieweditor.ui line 482
+#: rc.cpp:758
+#, no-c-format
+msgid "Enter column text"
+msgstr "Sütun metni gir"
+
+#. i18n: file ./editor/listvieweditor.ui line 485
+#: rc.cpp:761
+#, no-c-format
+msgid ""
+"<b>Enter the text for the selected column.</b>"
+"<p>The text will be displayed in the header of the listview.</p>"
+msgstr ""
+"<b>Seçili sütun için metin gir.</b> "
+"<p>Metin liste görünümünün başlığı içinde gösterilecektir.</p>"
+
+#. i18n: file ./editor/listvieweditor.ui line 493
+#: rc.cpp:764
+#, no-c-format
+msgid "Clicka&ble"
+msgstr "Tıklana&bilir"
+
+#. i18n: file ./editor/listvieweditor.ui line 496
+#: rc.cpp:767
+#, no-c-format
+msgid ""
+"If this option is checked, the selected column will react to mouse clicks on "
+"the header."
+msgstr ""
+"Eğer bu seçenek işaretlenirse, seçili sütun başlık üzerindeki tıklamaları "
+"fareye tepkiyecektir."
+
+#. i18n: file ./editor/listvieweditor.ui line 504
+#: rc.cpp:770
+#, no-c-format
+msgid "Re&sizable"
+msgstr "Yeniden &boyutlandırılabilir"
+
+#. i18n: file ./editor/listvieweditor.ui line 507
+#: rc.cpp:773
+#, no-c-format
+msgid "The column's width will be resizeable if this option is checked."
+msgstr ""
+"Eğer bu seçenek işaretlenirse sütunların genişliği yeniden "
+"boyutlandırılabilecektir."
+
+#. i18n: file ./editor/listvieweditor.ui line 517
+#: rc.cpp:776 rc.cpp:1163
+#, no-c-format
+msgid "&Delete Column"
+msgstr "Sütun &Sil"
+
+#. i18n: file ./editor/listvieweditor.ui line 520
+#: rc.cpp:779
+#, no-c-format
+msgid "Delete column"
+msgstr "Sütun sil"
+
+#. i18n: file ./editor/listvieweditor.ui line 523
+#: rc.cpp:782
+#, no-c-format
+msgid "Deletes the selected Column."
+msgstr "Seçili Sütunu siler."
+
+#. i18n: file ./editor/listvieweditor.ui line 540
+#: rc.cpp:788
+#, no-c-format
+msgid ""
+"<b>Move the selected item down.</b>"
+"<p>The top-most column will be the first column in the list.</p>"
+msgstr ""
+"<b>Seçili nesneyi aşağı taşı.</b> "
+"<p>En çok-üst sütun listede ilk sütun olacaktır.</p>"
+
+#. i18n: file ./editor/listvieweditor.ui line 548
+#: rc.cpp:791 rc.cpp:1166
+#, no-c-format
+msgid "&New Column"
+msgstr "&Yeni Sütun"
+
+#. i18n: file ./editor/listvieweditor.ui line 551
+#: rc.cpp:794
+#, no-c-format
+msgid "Add a Column"
+msgstr "Sütun Ekle"
+
+#. i18n: file ./editor/listvieweditor.ui line 554
+#: rc.cpp:797
+#, no-c-format
+msgid ""
+"<b>Create a new column.</b>"
+"<p>New columns are appended at the end of (right of) the list and may be moved "
+"using the up- and down-buttons.</p>"
+msgstr ""
+"<b>Yeni bir sütun oluştur.</b> "
+"<p>Yeni sütunlar listenin (sağı) sonuna eklenir ve aşağı- ve yukarı-düğmeler "
+"kullanarak taşınabilir.</p>"
+
+#. i18n: file ./editor/listvieweditor.ui line 571
+#: rc.cpp:803
+#, no-c-format
+msgid ""
+"<b>Move the selected item up.</b>"
+"<p>The top-most column will be the first column in the list.</p>"
+msgstr ""
+"<b>Seçili nesneyi aşağı taşı.</b> "
+"<p>En çok-üst sütun listede ilk sütun olacaktır.</p>"
+
+#. i18n: file ./editor/listvieweditor.ui line 579
+#: rc.cpp:806
+#, no-c-format
+msgid "The list of columns."
+msgstr "Sütunların listesi."
+
+#. i18n: file ./editor/paletteeditor.ui line 43
+#: rc.cpp:830
+#, no-c-format
+msgid "Edit Palette"
+msgstr "Paleti Düzenle"
+
+#. i18n: file ./editor/paletteeditor.ui line 68
+#: rc.cpp:833
+#, no-c-format
+msgid "Build Palette"
+msgstr "Palet Oluştur"
+
+#. i18n: file ./editor/paletteeditor.ui line 111
+#: rc.cpp:836
+#, no-c-format
+msgid "&3D effects:"
+msgstr "&3 Boyut Etkileri"
+
+#. i18n: file ./editor/paletteeditor.ui line 142
+#: rc.cpp:842
+#, no-c-format
+msgid "Choose the effect-color for the generated palette."
+msgstr "Üretilmiş palet için etki-rengi seçin."
+
+#. i18n: file ./editor/paletteeditor.ui line 173
+#: rc.cpp:845
+#, no-c-format
+msgid "Back&ground:"
+msgstr "&Arkaplan:"
+
+#. i18n: file ./editor/paletteeditor.ui line 204
+#: rc.cpp:851
+#, no-c-format
+msgid "Choose the background color for the generated palette."
+msgstr "Üretilmiş palet için arkaplan rengi seçin."
+
+#. i18n: file ./editor/paletteeditor.ui line 229
+#: rc.cpp:854
+#, no-c-format
+msgid "&Tune Palette..."
+msgstr "Pale&ti Uyumla..."
+
+#. i18n: file ./editor/paletteeditor.ui line 247
+#: rc.cpp:857
+#, no-c-format
+msgid "Preview"
+msgstr "Önizleme"
+
+#. i18n: file ./editor/listeditor.ui line 71
+#: rc.cpp:899
+#, no-c-format
+msgid "Re&name"
+msgstr "Ye&niden adlandır"
+
+#. i18n: file ./editor/formsettings.ui line 35
+#: rc.cpp:905
+#, no-c-format
+msgid "Form Settings"
+msgstr "Form Ayarları"
+
+#. i18n: file ./editor/formsettings.ui line 41
+#: rc.cpp:908
+#, no-c-format
+msgid ""
+"<b>Form Settings</b>"
+"<p>Change settings for the form. Settings like <b>Comment</b> and <b>Author</b> "
+"are for your own use and are not required.</p>"
+msgstr ""
+"<b>Form Ayarları</b> "
+"<p>Form için ayarları değiştir. <b>Yazar</b> ve <b>Yorum</b> "
+"gibi ayarlar kendi kullanımınız içindir ve gerekmez.</p>"
+
+#. i18n: file ./editor/formsettings.ui line 122
+#: rc.cpp:923
+#, no-c-format
+msgid "La&youts"
+msgstr "&Yerleşimler"
+
+#. i18n: file ./editor/formsettings.ui line 155
+#: rc.cpp:926
+#, no-c-format
+msgid "Default mar&gin:"
+msgstr "Öntanımlı &boşluk:"
+
+#. i18n: file ./editor/formsettings.ui line 166
+#: rc.cpp:929
+#, no-c-format
+msgid "D&efault spacing:"
+msgstr "Öntanımlı &aralık:"
+
+#. i18n: file ./editor/formsettings.ui line 202
+#: rc.cpp:935
+#, no-c-format
+msgid "Enter a comment about the form."
+msgstr "Form hakkında bir yorum girin."
+
+#. i18n: file ./editor/formsettings.ui line 227
+#: rc.cpp:938
+#, no-c-format
+msgid "Co&mment:"
+msgstr "Yorum:"
+
+#. i18n: file ./editor/formsettings.ui line 238
+#: rc.cpp:941
+#, no-c-format
+msgid "&License:"
+msgstr "&Lisans:"
+
+#. i18n: file ./editor/formsettings.ui line 249
+#: rc.cpp:944 rc.cpp:956 rc.cpp:962
+#, no-c-format
+msgid "Enter your name"
+msgstr "İsminizi girin"
+
+#. i18n: file ./editor/formsettings.ui line 252
+#: rc.cpp:947 rc.cpp:959 rc.cpp:965
+#, no-c-format
+msgid "Enter your name."
+msgstr "İsminizi girin."
+
+#. i18n: file ./editor/formsettings.ui line 260
+#: rc.cpp:950
+#, no-c-format
+msgid "&Version:"
+msgstr "&Sürüm:"
+
+#. i18n: file ./editor/formsettings.ui line 271
+#: rc.cpp:953
+#, no-c-format
+msgid "A&uthor:"
+msgstr "Y&azar:"
+
+#. i18n: file ./editor/listboxeditor.ui line 35
+#: rc.cpp:968
+#, no-c-format
+msgid "Edit Listbox"
+msgstr "Liste kutusunu düzenle"
+
+#. i18n: file ./editor/listboxeditor.ui line 41
+#: rc.cpp:971
+#, no-c-format
+msgid ""
+"<b>Edit Listbox</b>"
+"<p>Add, edit or delete items in the listbox.</p>"
+"<p>Click the <b>New Item</b>-button to create a new listbox entry, then enter "
+"text and choose a pixmap.</p>"
+"<p>Select an item from the list and click the <b>Delete Item</b>"
+"-button to remove the item from the list.</p>"
+msgstr ""
+"<b>Liste kutusunu düzenle</b> "
+"<p>Liste kutusu içindeki nesneleri ekleyin, düzenleyin ya da silin.</p> "
+"<p><b>Yeni bir liste kutusu girişi oluşturmak için <b>Yeni Nesne</b>"
+"-düğmesine tıklayın, sonra metin girin ve bir benek seçin.</p> "
+"<p>Listeden nesne kaldırmak için <b>Nesne Sil</b>-düğmesine tıklayın ve "
+"listeden bir nesne seçin.</p>"
+
+#. i18n: file ./editor/listboxeditor.ui line 229
+#: rc.cpp:1022
+#, no-c-format
+msgid "Choose a pixmap file for the selected item."
+msgstr "Seçili nesne için bir benek dosyası seç."
+
+#. i18n: file ./editor/listboxeditor.ui line 257
+#: rc.cpp:1031
+#, no-c-format
+msgid "Change the selected item's text."
+msgstr "Seçili nesneni metnini değiştir."
+
+#. i18n: file ./editor/listboxeditor.ui line 273
+#: rc.cpp:1040
+#, no-c-format
+msgid "<b>Add a new item.</b><p>New items are appended to the list.</p>"
+msgstr "<b>Yeni bir nesne ekle.</b><p>Yeni nesneler listede görünür.</p>"
+
+#. i18n: file ./editor/listboxeditor.ui line 287
+#: rc.cpp:1049
+#, no-c-format
+msgid "Delete the selected item"
+msgstr "Seçili nesneyi sil"
+
+#. i18n: file ./editor/listboxeditor.ui line 321
+#: rc.cpp:1055
+#, no-c-format
+msgid "Moves the selected item up."
+msgstr "Seçili nesneyi yukarı taşır."
+
+#. i18n: file ./editor/listboxeditor.ui line 338
+#: rc.cpp:1061
+#, no-c-format
+msgid "Move the selected item down."
+msgstr "Seçili nesneyi aşağı taşır."
+
+#. i18n: file ./editor/multilineeditor.ui line 38
+#: rc.cpp:1064
+#, no-c-format
+msgid "Edit Multiline Edit"
+msgstr "Çoklusatır Düzenini Düzenle"
+
+#. i18n: file ./editor/multilineeditor.ui line 46
+#: rc.cpp:1067
+#, no-c-format
+msgid ""
+"<b>Edit Multiline Edit</b>"
+"<p>Enter the text and click the <b>OK</b>-Button to apply the changes.</p>"
+msgstr ""
+"<b>Çoklusatır Düzenini Düzenle</b> "
+"<p>Metin girin ve değişiklikleri uygulamak için <b>TAMAM</b>"
+"-düğmesine tıklayın.</p>"
+
+#. i18n: file ./editor/multilineeditor.ui line 84
+#: rc.cpp:1073
+#, no-c-format
+msgid "Enter your text here."
+msgstr "Buraya metninizi girin."
+
+#. i18n: file ./editor/pixmapfunction.ui line 61
+#: rc.cpp:1100
+#, no-c-format
+msgid "&Enter arguments for loading the pixmap:"
+msgstr "B&enek yükleme için değişkenleri girin:"
+
+#. i18n: file ./editor/pixmapfunction.ui line 109
+#: rc.cpp:1103
+#, no-c-format
+msgid "QPixmap("
+msgstr "QPixmap("
+
+#. i18n: file ./editor/pixmapfunction.ui line 573
+#: rc.cpp:1106
+#, no-c-format
+msgid ")"
+msgstr ")"
+
+#. i18n: file ./editor/tableeditor.ui line 16
+#: rc.cpp:1118
+#, no-c-format
+msgid "Edit Table"
+msgstr "Tablo Düzenle"
+
+#. i18n: file ./editor/tableeditor.ui line 34
+#: rc.cpp:1121 rc.cpp:1124
+#, no-c-format
+msgid "1"
+msgstr "2"
+
+#. i18n: file ./editor/tableeditor.ui line 218
+#: rc.cpp:1154 rc.cpp:1208
+#, no-c-format
+msgid ""
+"<b>Move the selected item up.</b>"
+"<p>The top-most column will be the first column of the list.</p>"
+msgstr ""
+"<b>Seçili nesneyi yukarı taşı.</b> "
+"<p>En çok-üst sütun listenin ilk sütunu olacaktır.</p<"
+
+#. i18n: file ./editor/tableeditor.ui line 235
+#: rc.cpp:1160 rc.cpp:1214
+#, no-c-format
+msgid ""
+"<b>Move the selected item down.</b>"
+"<p>The top-most column will be the first column of the list.</p>"
+msgstr ""
+"<b>Seçili nesneyi aşağı taşı.</b> "
+"<p>En çok-üst sütun listenin ilk sütunu olacaktır.</p>"
+
+#. i18n: file ./editor/tableeditor.ui line 273
+#: rc.cpp:1169
+#, no-c-format
+msgid "Table:"
+msgstr "Tablo:"
+
+#. i18n: file ./editor/tableeditor.ui line 348
+#: rc.cpp:1190 rc.cpp:1223
+#, no-c-format
+msgid "&Label:"
+msgstr "&Etiket:"
+
+#. i18n: file ./editor/tableeditor.ui line 359
+#: rc.cpp:1193 rc.cpp:1226
+#, no-c-format
+msgid "Pixmap:"
+msgstr "Benek:"
+
+#. i18n: file ./editor/tableeditor.ui line 370
+#: rc.cpp:1196
+#, no-c-format
+msgid "&Field:"
+msgstr "&Alan:"
+
+#. i18n: file ./editor/tableeditor.ui line 394
+#: rc.cpp:1199
+#, no-c-format
+msgid "<no table>"
+msgstr "<tablo yok>"
+
+#. i18n: file ./editor/tableeditor.ui line 406
+#: rc.cpp:1202
+#, no-c-format
+msgid "&Rows"
+msgstr "Satı&rlar"
+
+#. i18n: file ./editor/tableeditor.ui line 496
+#: rc.cpp:1217
+#, no-c-format
+msgid "&New Row"
+msgstr "Ye&ni Satır"
+
+#. i18n: file ./editor/tableeditor.ui line 504
+#: rc.cpp:1220
+#, no-c-format
+msgid "&Delete Row"
+msgstr "Satır &Sil"
+
+#. i18n: file ./editor/choosewidget.ui line 16
+#: rc.cpp:1247
+#, no-c-format
+msgid "Choose Widget"
+msgstr "Bileşen Seç"
+
+#. i18n: file ./editor/choosewidget.ui line 118
+#: rc.cpp:1256
+#, no-c-format
+msgid "Find:"
+msgstr "Ara:"
+
+#. i18n: file ./editor/connectioneditor.ui line 35
+#: rc.cpp:1259
+#, no-c-format
+msgid "Edit Connections"
+msgstr "Bağlantıları Düzenle"
+
+#. i18n: file ./editor/connectioneditor.ui line 41
+#: rc.cpp:1262
+#, no-c-format
+msgid ""
+"<b>Edit Connections</b>"
+"<p>Add and remove connections in the current form .</p>"
+"<p>Select a signal and a corresponding slot then press the <b>Connect</b>"
+"-button to create a connection.</p>"
+"<p>Select a connection from the list then press the <b>Disconnect</b>"
+"-button to delete the connection.</p>"
+msgstr ""
+"<b>Bağlantıları Düzenle</b> "
+"<p>Mevcut form içindeki bağlantıları ekle ve kaldır.</p> "
+"<p>Bir sinyal ve ilişkin slot seç sonra bir bağlantı oluşturmak için <b>"
+"Bağlan</b>'a bas</p> "
+"<p>Listeden bir bağlantı seç sonra bağlantıyı silmek için <b>Bağlanma</b>"
+"-düğmesine bas.</p>"
+
+#. i18n: file ./editor/connectioneditor.ui line 56
+#: rc.cpp:1265
+#, no-c-format
+msgid "Sender"
+msgstr "Gönderici"
+
+#. i18n: file ./editor/connectioneditor.ui line 67
+#: rc.cpp:1268
+#, no-c-format
+msgid "Signal"
+msgstr "Sinyal"
+
+#. i18n: file ./editor/connectioneditor.ui line 78
+#: rc.cpp:1271
+#, no-c-format
+msgid "Receiver"
+msgstr "Alıcı"
+
+#. i18n: file ./editor/connectioneditor.ui line 89
+#: rc.cpp:1274
+#, fuzzy, no-c-format
+msgid "Slot"
+msgstr "Slot"
+
+#. i18n: file ./editor/connectioneditor.ui line 111
+#: rc.cpp:1277
+#, no-c-format
+msgid "Displays the connections between the sender and the receiver."
+msgstr "Gönderici ve alıcı arasındaki bağlantıları gösterir."
+
+#. i18n: file ./editor/connectioneditor.ui line 119
+#: rc.cpp:1280
+#, no-c-format
+msgid ""
+"<b>A list of slots for the receiver.</b>"
+"<p>The slots that are displayed are only those which have arguments that "
+"correspond with the arguments of the signal that is currently selected in the "
+"Signal-list.</b>"
+msgstr ""
+"<b>Alıcı için yuvaların bir listesidir.</b> "
+"<p>Görüntülenen slotlar sadece şu anda seçili Sinyal-listesi içindeki sinyalin "
+"değişkenleri ile birlikte ilişkilendiği değişkenlere sahip olanlardır.</b>"
+
+#. i18n: file ./editor/connectioneditor.ui line 127
+#: rc.cpp:1283
+#, no-c-format
+msgid "Displays the list of signals that the widget emits."
+msgstr "Bileşen yayınımları sinyallerin listesini gösterir."
+
+#. i18n: file ./editor/connectioneditor.ui line 143
+#: rc.cpp:1286
+#, no-c-format
+msgid "Si&gnals:"
+msgstr "&Sinyaller:"
+
+#. i18n: file ./editor/connectioneditor.ui line 183
+#: rc.cpp:1289
+#, no-c-format
+msgid "&Slots:"
+msgstr "&Slots:"
+
+#. i18n: file ./editor/connectioneditor.ui line 217
+#: rc.cpp:1292
+#, no-c-format
+msgid "&Disconnect"
+msgstr "&Ayır"
+
+#. i18n: file ./editor/connectioneditor.ui line 220
+#: rc.cpp:1295
+#, no-c-format
+msgid "Alt+D"
+msgstr ""
+
+#. i18n: file ./editor/connectioneditor.ui line 226
+#: rc.cpp:1298
+#, no-c-format
+msgid "Remove the selected connection"
+msgstr "Seçili bağlantıyı kaldır"
+
+#. i18n: file ./editor/connectioneditor.ui line 229
+#: rc.cpp:1301
+#, no-c-format
+msgid "Remove the selected connection."
+msgstr "Seçili bağlantıyı kaldır."
+
+#. i18n: file ./editor/connectioneditor.ui line 257
+#: rc.cpp:1307
+#, no-c-format
+msgid "Alt+O"
+msgstr ""
+
+#. i18n: file ./editor/connectioneditor.ui line 277
+#: rc.cpp:1316
+#, no-c-format
+msgid "Alt+C"
+msgstr ""
+
+#. i18n: file ./editor/connectioneditor.ui line 318
+#: rc.cpp:1322
+#, no-c-format
+msgid "Connec&tions:"
+msgstr "Bağlan&tılar:"
+
+#. i18n: file ./editor/connectioneditor.ui line 346
+#: rc.cpp:1325
+#, no-c-format
+msgid "Co&nnect"
+msgstr "&Bağla"
+
+#. i18n: file ./editor/connectioneditor.ui line 349
+#: rc.cpp:1328
+#, no-c-format
+msgid "Alt+N"
+msgstr ""
+
+#. i18n: file ./editor/connectioneditor.ui line 355
+#: rc.cpp:1331
+#, no-c-format
+msgid "Create connection"
+msgstr "Bağlantı oluştur"
+
+#. i18n: file ./editor/connectioneditor.ui line 358
+#: rc.cpp:1334
+#, no-c-format
+msgid "Create a connection between a signal and a slot."
+msgstr "Bir sinyal ve slot arasında bir bağlantı oluştur."
+
+#. i18n: file ./editor/templates/Tab_Dialog.ui line 37
+#: rc.cpp:1337 rc.cpp:1340 rc.cpp:1382 rc.cpp:1385
+#, no-c-format
+msgid "Tab"
+msgstr "Sekme"
+
+#. i18n: file ./editor/templates/Tab_Dialog.ui line 71
+#: rc.cpp:1346 rc.cpp:1364 rc.cpp:1370 rc.cpp:1391
+#, no-c-format
+msgid "F1"
+msgstr "F1"
+
+#: widget/parser.cpp:116
+msgid "Invalid character: '%1'"
+msgstr "Geçersiz karakter: '%1'"
+
+#: widget/parser.cpp:192
+msgid "Constant value expected"
+msgstr ""
+
+#: widget/parser.cpp:223
+#, fuzzy
+msgid "'%1' (%2) is not a widget"
+msgstr " %1 bir özel bileşen değil"
+
+#: widget/parser.cpp:235 widget/parser.cpp:520
+msgid "'%1' is not a function"
+msgstr " %1 bir fonksiyon değil"
+
+#: widget/parser.cpp:246
+msgid "Expected value"
+msgstr "Beklenen değer"
+
+#: widget/parser.cpp:271 widget/parser.cpp:281
+msgid "Divide by zero"
+msgstr ""
+
+#: widget/parser.cpp:426 widget/parser.cpp:428 widget/parser.cpp:434
+msgid "in function '%1': %2"
+msgstr "'%1' fonksiyonu içinde: %2"
+
+#: widget/parser.cpp:426
+msgid "too few parameters"
+msgstr "eksik parametre"
+
+#: widget/parser.cpp:428
+msgid "too many parameters"
+msgstr "fazla parametre"
+
+#: widget/parser.cpp:474
+msgid "in widget function '%1.%2': %3"
+msgstr "'%1.%2' bileşen fonksiyonunda: %3"
+
+#: widget/parser.cpp:517
+msgid "'%1' is not a widget"
+msgstr " %1 bir özel bileşen değil"
+
+#: widget/parser.cpp:522
+msgid "Unexpected symbol after variable '%1'"
+msgstr "'%1' değişkeninden sonra beklenmeyen sembol"
+
+#: widget/parser.cpp:741
+msgid ""
+"Expected '%1'"
+"<br>"
+"<br>Possible cause of the error is having a variable with the same name as a "
+"widget"
+msgstr ""
+
+#: widget/parser.cpp:743
+msgid "Expected '%1'"
+msgstr "Beklenen '%1' "
+
+#: widget/parser.cpp:757 widget/parser.cpp:770
+msgid "Expected variable"
+msgstr "Beklenen değişken"
+
+#: widget/myprocess.cpp:94
+msgid "<qt>Failed to start shell process<br><b>%1</b></qt>"
+msgstr "<qt>Kabuk işlemi <br><b>%1</b> başlatılamadı</qt>"
+
+#: widget/expression.cpp:199 widget/expression.cpp:208
+#, fuzzy
+msgid "error"
+msgstr "Yapıştırma Hatası"
+
+#: widget/kommanderfunctions.cpp:120
+msgid "Unterminated @execBegin ... @execEnd block."
+msgstr "Sonlandırılmamış @execBegin ... @execEnd bloğu."
+
+#: widget/kommanderfunctions.cpp:138 widget/kommanderfunctions.cpp:164
+msgid "Unterminated @forEach ... @end block."
+msgstr "Sonlandırılmamış @forEach ... için @end bloğu."
+
+#: widget/kommanderfunctions.cpp:201
+msgid "Unterminated @if ... @endif block."
+msgstr "Sonlandırılmamış @if ... @endif bloğu"
+
+#: widget/kommanderfunctions.cpp:221
+msgid "Unterminated @switch ... @end block."
+msgstr "Sonlandırılmamış @switch ... @end bloğu."
+
+#: widget/kommanderfunctions.cpp:320
+#, c-format
+msgid "Unknown widget: @%1."
+msgstr "Bilinmeyen bileşen: @%1."
+
+#: widget/kommanderfunctions.cpp:338
+msgid "Infinite loop: @%1 called inside @%2."
+msgstr "Sonsuz döngü: @%2 içinde @%1 çağrılıyor."
+
+#: widget/kommanderfunctions.cpp:344
+msgid "Script for @%1 is empty."
+msgstr "@%1 için betik boş."
+
+#: widget/kommanderwidget.cpp:119 widgets/scriptobject.cpp:99
+msgid "Invalid state for associated text."
+msgstr "İlişkili metin için geçersiz durum."
+
+#: widget/kommanderwidget.cpp:134
+msgid ""
+"Line %1: %2.\n"
+msgstr ""
+"%1 Satır: hata: %2.\n"
+
+#: widget/kommanderwidget.cpp:244
+msgid "Unknown special: '%1'."
+msgstr "Bilinmeyen özel: '%1'."
+
+#: widget/kommanderwidget.cpp:274
+msgid "Unmatched parenthesis in DCOP call '%1'."
+msgstr "'%1' DCOP çağrısı içinde uyumsuz parantez."
+
+#: widget/kommanderwidget.cpp:280
+msgid "Incorrect arguments in DCOP call '%1'."
+msgstr "'%1' DCOP çağrısı içinde yanlış değişkenler."
+
+#: widget/kommanderwidget.cpp:310
+msgid "Tried to perform DCOP query, but failed."
+msgstr "DCOP sorgusunu gerçekleştirmeyi denediniz, fakat başarısız oldu."
+
+#: widget/kommanderwidget.cpp:341
+msgid "DCOP return type %1 is not yet implemented."
+msgstr "DCOP dönüş türü %1 henüz sağlanmıyor."
+
+#: widget/kommanderwidget.cpp:406
+msgid "Continue && Ignore Next Errors"
+msgstr "Sonraki Hataları Önemseme ve Devam Et"
+
+#: widget/kommanderwidget.cpp:408
+msgid "<qt>Error in widget <b>%1</b>:<p><i>%2</i></qt>"
+msgstr "<qt><b>%1</b>bileşeni içinde hata: <p><i>%2</i></qt>"
+
+#: widget/kommanderwidget.cpp:427
+msgid ""
+"Error in widget %1:\n"
+"  %2\n"
+msgstr ""
+"%1 bileşeni içinde hata:\n"
+"  %2\n"
+
+#: widget/kommanderwidget.cpp:582
+msgid "Unmatched parenthesis after '%1'."
+msgstr "'%1' den sonra uyuşumsuz parantez."
+
+#: widget/kommanderwidget.cpp:591
+msgid "Unmatched quotes in argument of '%1'."
+msgstr "'%1' in değişkeni içinde uyumsuz tırnaklar."
+
+#: widget/kommanderwidget.cpp:593
+msgid "Unknown function group: '%1'."
+msgstr "Bilinmeyen fonksiyon grubu:'%1'."
+
+#: widget/kommanderwidget.cpp:595
+msgid "Unknown function: '%1' in group '%2'."
+msgstr "Bilinmeyen fonksiyon: '%2' grup içinde '%1' "
+
+#: widget/kommanderwidget.cpp:597
+msgid "Unknown widget function: '%1'."
+msgstr "Bilinmeyen bileşen fonksiyonu:'%1'."
+
+#: widget/kommanderwidget.cpp:599
+msgid ""
+"Not enough arguments for '%1' (%2 instead of %3)."
+"<p>Correct syntax is: %4"
+msgstr "(%3 yerine %2) '%1' içinde yetersiz değişkenler.<p>Doğru sözdizimi: %4"
+
+#: widget/kommanderwidget.cpp:604
+msgid "Too many arguments for '%1' (%2 instead of %3).<p>Correct syntax is: %4"
+msgstr "'%1' için çok fazla değişne (%3 yerine %2). <p>Doğru sözdizimi: %4"
+
+#: executor/main.cpp:45
+msgid ""
+"Executor is a component of the Kommander dialog system that executes .kmdr "
+"files given as arguments or via stdin"
+msgstr ""
+"Executor (çalıştırıcı) Kommander diyalog sisteminin, argüman olarak ya da stdin "
+"(standart girdi) yoluyla verilen .kmdr dosyalarını çalıştıran bir bileşenidir"
+
+#: executor/main.cpp:50
+msgid "Read dialog from standard input"
+msgstr "Standart girdiden diyalog oku"
+
+#: executor/main.cpp:51
+msgid "Use given catalog for translation"
+msgstr "Çeviri için verilen rehberi kullan"
+
+#: executor/main.cpp:58
+msgid "Kommander Executor"
+msgstr "Kommander Çalıştırıcısı"
+
+#: executor/main.cpp:87
+msgid ""
+"Error: no dialog given. Use --stdin option to read dialog from standard input.\n"
+msgstr ""
+"Hata: verilen diyalog yok. Standart girdiden diyalog okumak için --stdin "
+"seçeneğini kullan.\n"
+
+#: executor/instance.cpp:115
+#, fuzzy
+msgid "<qt>Unable to create dialog.</qt>"
+msgstr "<qt><br><b>%1</b> dosyasından diyalog oluşturulamadı</qt>"
+
+#: executor/instance.cpp:187
+msgid "<qt>Kommander file<br><b>%1</b><br>does not exist.</qt>"
+msgstr "<qt>Kommander dosyası <br><b>%1</b><br> mevcut değil..</qt>"
+
+#: executor/instance.cpp:195
+msgid ""
+"<qt>This file does not have a <b>.kmdr</b> extension. As a security precaution "
+"Kommander will only run Kommander scripts with a clear identity.</qt>"
+msgstr ""
+"<qt>Bu dosya bir <b>.kmdr</b> uzantısına sahip değil. Çünkü Kommander güvenlik "
+"önlemi temiz bir kimlik ile birlikte sadece Kommander betiklerini "
+"çalıştıracaktır.</qt>"
+
+#: executor/instance.cpp:197
+msgid "Wrong Extension"
+msgstr "Yanlış Uzantı"
+
+#: executor/instance.cpp:214
+msgid ""
+"<qt>This dialog is running from your <i>/tmp</i> directory.  This may mean that "
+"it was run from a KMail attachment or from a webpage. "
+"<p>Any script contained in this dialog will have write access to all of your "
+"home directory; <b>running such dialogs may be dangerous: </b>"
+"<p>are you sure you want to continue?</qt>"
+msgstr ""
+"<qt>Bu diyalog sizin <i>/tmp</i> dizininizden çalışıyor. Bu bir web sayfasından "
+"ya da bir KMail ekinden çalışmış olabileceği anlamına gelebilir. "
+"<p> Bu diyalogta içerilen herhangi betik sizin ev dizininizin tümüne yazma "
+"erişimine sahip olacaktır; <b>bu tür diyaloglarla çalışma tehlikeli "
+"olabilir:</b> "
+"<p>devam etmek istediğinize emin misiniz?</qt>"
+
+#: executor/instance.cpp:218 executor/instance.cpp:223
+msgid "Run Nevertheless"
+msgstr ""
+
+#: executor/instance.cpp:223
+msgid ""
+"<qt>The Kommander file <i>%1</i> does not have the <b>executable attribute</b> "
+"set and could possibly contain dangerous exploits."
+"<p>If you trust the scripting (viewable in kmdr-editor) in this program, make "
+"it executable to get rid of this warning."
+"<p>Are you sure you want to continue?</qt>"
+msgstr ""
+
+#: executor/register.cpp:66
+msgid "Return EOL-separated list of all values in the array."
+msgstr "Dizi içindeki tüm değerlerin EOL-ayrılmış listesini döndür."
+
+#: executor/register.cpp:67
+msgid "Return EOL-separated list of all keys in the array."
+msgstr "Dizi içindeki tüm anahtarların EOL-ayrılmış listesini döndür."
+
+#: executor/register.cpp:68
+msgid "Remove all elements from the array."
+msgstr "Diziden tüm öğeleri kaldır."
+
+#: executor/register.cpp:69
+msgid "Return number of elements in the array."
+msgstr "Dizi içindeki öğelerin sayısını döndür."
+
+#: executor/register.cpp:70
+msgid "Return the value associated with given key."
+msgstr "Verilen anahtarla ilişkilendirilmiş değeri döndür."
+
+#: executor/register.cpp:71
+msgid "Remove element with given key from the array."
+msgstr "Diziden verilen anahtarla birlikte öğeyi kaldır."
+
+#: executor/register.cpp:72
+msgid "Add element with given key and value to the array"
+msgstr "Dizide verilen anahtar ve değerle birlikte öğe ekle."
+
+#: executor/register.cpp:73
+msgid ""
+"Add all elements in the string to the array. String should have <i>key>"
+"\\tvalue\\n</i> format."
+msgstr ""
+"Dizideki dizilimler içindeki tüm öğeleri ekle. Dizilim <i>anahtar>"
+"\\tdeğeri\\n</i> biçimine sahip olmalıdır."
+
+#: executor/register.cpp:75
+msgid ""
+"Return all elements in the array in <i>key>\\tvalue\\n</i> format."
+msgstr ""
+"<i>anahtar>\\tdeğeri\\n</i>biçimi içindeki dizi içindeki tüm öğeleri döndür."
+
+#: executor/register.cpp:77
+msgid ""
+"Create an integer indexed array - starting from 0 - from a string. Use the "
+"separator character to split the string."
+msgstr ""
+
+#: executor/register.cpp:78
+msgid ""
+"Create a string from an integer indexed array. Concatenate the elements with "
+"the separator character."
+msgstr ""
+
+#: executor/register.cpp:79
+#, fuzzy
+msgid ""
+"Remove the element specified by the key from an indexed array and reindex the "
+"array."
+msgstr "Diziden verilen anahtarla birlikte öğeyi kaldır."
+
+#: executor/register.cpp:82
+msgid "Return number of chars in the string."
+msgstr "Dizilim içindeki karakterlerin sayısını döndür."
+
+#: executor/register.cpp:83
+msgid "Check if the string contains given substring."
+msgstr "Eğer dizilim verilen karakter dizilerini içeriyorsa kontrol et."
+
+#: executor/register.cpp:84
+msgid "Return position of a substring in the string, or -1 if it isn't found."
+msgstr ""
+"Dizilim içindeki karakter dizisinin konumunu döndür ya da bulunumazsa -1."
+
+#: executor/register.cpp:86
+msgid "Return first n chars of the string."
+msgstr "Dizilimin ilk n karakterini döndür."
+
+#: executor/register.cpp:87
+msgid "Return last n chars of the string."
+msgstr "Dizilimin son n karakterini döndür."
+
+#: executor/register.cpp:88
+msgid "Return substring of the string, starting from given position."
+msgstr "Verilen konumdan başlayarak dizilimin karakter dizisini döndür."
+
+#: executor/register.cpp:90
+msgid "Replace all occurencies of given substring."
+msgstr "Verilen karakter dizisinin tüm olaylarını değiştir."
+
+#: executor/register.cpp:91
+msgid "Replace all occurencies of given substring with given replacement."
+msgstr ""
+"Verilen değiştirme ile birlikte verilem karakter dizisini tüm olaylarını "
+"değiştir."
+
+#: executor/register.cpp:93
+msgid "Convert the string to uppercase."
+msgstr "Dizilimi büyük harfe dönüştür."
+
+#: executor/register.cpp:94
+msgid "Convert the string to lowercase."
+msgstr "Dizilimi küçük harfe dönüştür."
+
+#: executor/register.cpp:95
+msgid ""
+"Compare two strings. Return 0 if they are equal, -1 if the first one is lower, "
+"1 if the first one is higher"
+msgstr ""
+"İki dizilimi karşılaştır. Eğer eşitlerse 0, birincisi küçükse -1, birincisi "
+"büyükse 1 döndürür."
+
+#: executor/register.cpp:97
+msgid "Check if string is empty."
+msgstr "Eğer dizilim boşsa kontrol et."
+
+#: executor/register.cpp:98
+msgid "Check if string is a valid number."
+msgstr "Eğer dizilim geçerli bir sayıysa kontol et."
+
+#: executor/register.cpp:101
+msgid "Return content of given file."
+msgstr "Verilen dosyanın içeriğini döndür."
+
+#: executor/register.cpp:102
+msgid "Write given string to a file."
+msgstr "Bir dosyaya verilen dizilimi yaz."
+
+#: executor/register.cpp:103
+msgid "Append given string to the end of a file."
+msgstr "Bir dosyanın sonuna verilen dizilimi ekle."
+
+#: widgets/popupmenu.cpp:56
+msgid ""
+"Insert an item into the popup menu. The executeWidget's execute method will be "
+"run when this item is selected. Returns the id of the inserted item. Use -1 for "
+"index to insert to the end. The icon is optional."
+msgstr ""
+
+#: widgets/popupmenu.cpp:57
+msgid ""
+"Insert a separator item into the popup menu. Use -1 for index to insert to the "
+"end."
+msgstr ""
+
+#: widgets/popupmenu.cpp:58
+msgid ""
+"Change an item specified by id in the popup menu. The executeWidget's execute "
+"method will be run when this item is selected."
+msgstr ""
+
+#: widgets/popupmenu.cpp:59
+msgid "Enable the item specified by id in the popup menu."
+msgstr ""
+
+#: widgets/popupmenu.cpp:60
+msgid "Check if the item specified by id is enabled."
+msgstr ""
+
+#: widgets/popupmenu.cpp:61
+msgid "Make the item specified by id visible."
+msgstr ""
+
+#: widgets/popupmenu.cpp:62
+msgid "Apply checked status for the item specified by id."
+msgstr ""
+
+#: widgets/popupmenu.cpp:63
+msgid "Check if the item specified by id is visible."
+msgstr ""
+
+#: widgets/popupmenu.cpp:64
+msgid "Verify if the item specified by id is checked."
+msgstr ""
+
+#: widgets/popupmenu.cpp:65
+msgid ""
+"Insert submenu widget into the popup menu. Use -1 for index to insert to the "
+"end. The icon is optional."
+msgstr ""
+
+#: widgets/timer.cpp:63
+msgid "Set the timer timeout interval in ms."
+msgstr ""
+
+#: widgets/treewidget.cpp:64
+msgid "Add column at end with column header"
+msgstr ""
+
+#: widgets/treewidget.cpp:65
+msgid "Set sorting for a column"
+msgstr ""
+
+#: widgets/treewidget.cpp:68
+msgid "Get the column caption for column index"
+msgstr ""
+
+#: widgets/treewidget.cpp:69
+msgid "Set the pixel width for column index - use 0 to hide"
+msgstr ""
+
+#: widgets/treewidget.cpp:70
+msgid "Set to <i>left</i>, <i>right</i> or <i>center</i>, case insensitive "
+msgstr ""
+
+#: widgets/toolbox.cpp:39
+msgid "Adds a widget to the toolbox. Returns the index of the widget."
+msgstr ""
+
+#: widgets/toolbox.cpp:41
+#, fuzzy
+msgid "Returns the name of the active widget."
+msgstr "Verilen dizinde nesnenin metnini döndürür."
+
+#: widgets/toolbox.cpp:42
+msgid ""
+"Remove the selected widget, returns the index of the removed widget or -1 if no "
+"such widget was found."
+msgstr ""
+
+#: widgets/toolbox.cpp:43
+msgid ""
+"Remove the widget from the index position, returns the index of the removed "
+"widget or -1 if no widget was found."
+msgstr ""
+
+#: widgets/toolbox.cpp:45
+#, fuzzy
+msgid "Activates the selected widget."
+msgstr "Seçili bileşenleri yükseltir"
+
+#: widgets/toolbox.cpp:47
+#, fuzzy
+msgid "Returns the index of the active widget."
+msgstr "Verilen dizinde nesnenin metnini döndürür."
+
+#: widgets/toolbox.cpp:49
+#, fuzzy
+msgid "Returns the widget having the supplied index."
+msgstr "Verilen dizinde nesnenin metnini döndürür."
+
+#: widgets/toolbox.cpp:51
+#, fuzzy
+msgid ""
+"Returns the index of the widget, -1 if the widget is not part of the toolbox."
+msgstr "Verilen metin ile birlikte bir nesnenin dizinini döndürür."
+
+#: widgets/tabwidget.cpp:48
+#, fuzzy
+msgid "Sets an icon on the specified tab. Index is zero based."
+msgstr "Belirtilmiş dizinde nesne seçer. Dizinler sıfır temellidir."
+
+#: widgets/closebutton.cpp:116
+msgid "Failed to start shell process."
+msgstr "Kabuk işlemi başlatılması başarısız oldu."
+
+#: widgets/combobox.cpp:50
+msgid "Make the ComboBox expose it's list without mousing around."
+msgstr ""
+
+#: widgets/fontdialog.cpp:49
+msgid ""
+"Sets the default font for the dialog, by specifying the family, the size and "
+"other style options."
+msgstr ""
+
+#: widgets/fontdialog.cpp:51
+#, fuzzy
+msgid "Returns the font family."
+msgstr "Verilen dosyanın içeriğini döndürür."
+
+#: widgets/fontdialog.cpp:53
+#, fuzzy
+msgid "Returns the font size in point."
+msgstr "Bileşenin içeriğini döndürür."
+
+#: widgets/fontdialog.cpp:55
+#, fuzzy
+msgid "Returns true, if the font is bold."
+msgstr "Verilen dizinde nesnenin metnini döndürür."
+
+#: widgets/fontdialog.cpp:57
+#, fuzzy
+msgid "Returns true, if the font is italic."
+msgstr "Verilen dizinde nesnenin metnini döndürür."
+
+#: widgets/aboutdialog.cpp:59
+msgid ""
+"Sets information about the application. This is the first method that must me "
+"called, any addition to the dialog done before initialization will be ignored."
+msgstr ""
+
+#: widgets/aboutdialog.cpp:61
+msgid "Add an author. Only the author name is required."
+msgstr ""
+
+#: widgets/aboutdialog.cpp:63
+msgid "Add a translator. Only the name is required."
+msgstr ""
+
+#: widgets/aboutdialog.cpp:65
+msgid "Set a short description text."
+msgstr ""
+
+#: widgets/aboutdialog.cpp:67
+msgid "Set a homepage address."
+msgstr ""
+
+#: widgets/aboutdialog.cpp:69
+msgid "Set an email address, where bugs can be reported."
+msgstr ""
+
+#: widgets/aboutdialog.cpp:71
+msgid ""
+"Sets license information of the application. The parameter can be one of the "
+"license keys - GPL_V2, LGPL_V2, BSD, ARTISTIC -, or a freely specified text."
+msgstr ""
+
+#: widgets/aboutdialog.cpp:73
+#, fuzzy
+msgid "Returns the set version string."
+msgstr "Bir dizilimin verilen kısmını döndürür."
+
+#: widgets/table.cpp:56
+msgid ""
+"Sets a column to sort ascending or descending. Optionally can sort with rows "
+"intact for database use."
+msgstr ""
+
+#: widgets/table.cpp:57
+msgid "Scrolls the table so the cell indicated is visible."
+msgstr ""
+
+#: widgets/table.cpp:58
+msgid ""
+"Select cells using the upper left and lower right cell addresses<br /><b>"
+"Not guaranteed to have KDE4 compatiblility</b>"
+msgstr ""
+
+#: widgets/table.cpp:59
+#, fuzzy
+msgid "Select the row with the zero based index."
+msgstr "Verilen dizinle birlikte nesneyi kaldırır."
+
+#: widgets/table.cpp:60
+msgid ""
+"Select the column with the zero based index.<br /><b>"
+"Not guaranteed to have KDE4 compatiblility</b>"
+msgstr ""
+
+#: widgets/table.cpp:61
+msgid ""
+"Set the column read only using zero based index.<br /><b>"
+"Not guaranteed to have KDE4 compatiblility</b>"
+msgstr ""
+
+#: widgets/table.cpp:62
+msgid ""
+"Set the row read only using zero based index.<br /><b>"
+"Not guaranteed to have KDE4 compatiblility</b>"
+msgstr ""
+
+#: widgets/table.cpp:63
+#, fuzzy
+msgid "Returns the number of rows of the table"
+msgstr "Dizi içindeki öğelerin sayısını döndürür."
+
+#: widgets/textedit.cpp:47
+msgid "see if widget has been modified."
+msgstr ""
+
+#: working/plugintemplate/widget.cpp:43
+msgid "Call function1 with two arguments, second is optional."
+msgstr ""
+
+#: working/plugintemplate/widget.cpp:44
+msgid "Get a QString as a result of function2."
+msgstr ""
+
+#: working/plugintemplate/plugin.cpp:19
+#, fuzzy
+msgid "Kommander %{APPNAME} plugin."
+msgstr "Kommander Eklentisi Ekle"
+
+#~ msgid "Returns the index of an item with the given text."
+#~ msgstr "Verilen metin ile birlikte bir nesnenin dizinini döndürür."
+
+#~ msgid "Text to be inserted"
+#~ msgstr "Eklenecek Metin"
+
+#~ msgid "Executes the script associated with the widget."
+#~ msgstr "Bileşenle ilişkilendirilmiş betiği yürütür."
+
+#~ msgid "Returns selected text or text of current item."
+#~ msgstr "Seçili metin ya da mevcut nesnenin metnini döndürür."
+
+#~ msgid "Unable to create dialog from input."
+#~ msgstr "Girdiden diyalog oluşturulamadı."

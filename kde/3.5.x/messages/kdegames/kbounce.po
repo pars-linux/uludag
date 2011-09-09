@@ -1,0 +1,149 @@
+# translation of kbounce.po to Turkish
+# translation of kbounce.po to
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Ömer Fadıl USTA <omer_fad@yahoo.com>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kbounce\n"
+"POT-Creation-Date: 2005-07-01 01:32+0200\n"
+"PO-Revision-Date: 2004-06-26 03:14+0300\n"
+"Last-Translator: Ömer Fadıl USTA <omer_fad@yahoo.com>\n"
+"Language-Team: Turkish <ceviri@bilisimlab.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.2\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Ömer Fadıl USTA"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "omer_fad@hotmail.com"
+
+#: highscores.cpp:9
+#, fuzzy
+msgid "Level"
+msgstr "Seviye:"
+
+#: kbounce.cpp:63
+msgid "Level:"
+msgstr "Seviye:"
+
+#: kbounce.cpp:68
+msgid "Score:"
+msgstr "Puan:"
+
+#: kbounce.cpp:75
+msgid "Filled area:"
+msgstr "Dolu bölge:"
+
+#: kbounce.cpp:80
+msgid "Lives:"
+msgstr "Yaşam:"
+
+#: kbounce.cpp:85
+msgid "Time:"
+msgstr "Zaman:"
+
+#: kbounce.cpp:102
+msgid "Press %1 to start a game!"
+msgstr "Bir oyuna başlamak için %1 tuşuna basın!"
+
+#: kbounce.cpp:135
+msgid "&Select Background Folder..."
+msgstr "A&rkaplan Dizinini Seç..."
+
+#: kbounce.cpp:138
+msgid "Show &Backgrounds"
+msgstr "&Arkaplanı Göster"
+
+#: kbounce.cpp:140
+msgid "Hide &Backgrounds"
+msgstr "Ar&kaplanı Gizle"
+
+#: kbounce.cpp:144
+msgid "&Play Sounds"
+msgstr "&Sesleri Çal"
+
+#: kbounce.cpp:180
+msgid "Do you really want to close the running game?"
+msgstr "Gerçekten çalışan oyunu kapatmak istiyor musunuz?"
+
+#: kbounce.cpp:200
+msgid "Game paused."
+msgstr "Oyun askıya alındı."
+
+#: kbounce.cpp:231
+#, c-format
+msgid "Game Over! Score: %1"
+msgstr "Oyun Bitti! Puan: %1"
+
+#: kbounce.cpp:232
+msgid "Game over. Press <Space> for a new game"
+msgstr "Oyun Bitti! Yeni oyuna başlamak için boşluk tuşuna basın!"
+
+#: kbounce.cpp:259
+msgid "Select Background Image Folder"
+msgstr "Arkaplan Resim Dizinini Seç"
+
+#: kbounce.cpp:279
+msgid "You may now turn on background images."
+msgstr "Şimdi arkaplan renklerini açabilirsiniz."
+
+#: kbounce.cpp:335
+msgid "Game suspended"
+msgstr "Oyun askıya alındı"
+
+#: kbounce.cpp:463
+#, c-format
+msgid ""
+"You have successfully cleared more than 75% of the board.\n"
+msgstr ""
+"Tahtanın % 75'inden fazlasını temizlediniz.\n"
+
+#: kbounce.cpp:464
+msgid ""
+"%1 points: 15 points per remaining life\n"
+msgstr ""
+"%1 puan: Kalan her yaşam için 15 puan\n"
+
+#: kbounce.cpp:465
+msgid ""
+"%1 points: Bonus\n"
+msgstr ""
+"%1 puan: Bonus\n"
+
+#: kbounce.cpp:466
+msgid ""
+"%1 points: Total score for this level\n"
+msgstr ""
+"%1 puan: Bu seviye için toplam puan\n"
+
+#: kbounce.cpp:467
+msgid "On to level %1. Remember you get %2 lives this time!"
+msgstr "%1 numaralı seviyeye girerken bu sefer %2 yaşamınız var!"
+
+#: main.cpp:38
+msgid "KDE Bounce Ball Game"
+msgstr "KDE Sıçramalı Top Oyunu"
+
+#: main.cpp:45
+msgid "KBounce"
+msgstr "KBounce"
+
+#: main.cpp:49
+msgid "Original author"
+msgstr "Asıl yazar"
+
+#: main.cpp:51
+msgid "Contributions"
+msgstr "Destekleyenler"

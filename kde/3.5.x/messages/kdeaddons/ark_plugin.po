@@ -1,0 +1,66 @@
+# translation of ark_plugin.po to Turkish
+# translation of ark_plugin.po to Türkçe
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Cemil MUTLU <mawilos@gmail.com>, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: ark_plugin\n"
+"POT-Creation-Date: 2006-10-17 02:38+0200\n"
+"PO-Revision-Date: 2005-07-09 04:32+0300\n"
+"Last-Translator: Cemil MUTLU <mawilos@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: arkplugin.cpp:95
+msgid "Compress"
+msgstr "Sıkıştır"
+
+#: arkplugin.cpp:101
+#, c-format
+msgid "Compress as %1"
+msgstr "%1 olarak sıkıştır"
+
+#: arkplugin.cpp:112
+msgid "Compress As"
+msgstr "Farklı Sıkıştır"
+
+#: arkplugin.cpp:116
+msgid "Add To"
+msgstr "Ekle"
+
+#: arkplugin.cpp:126
+msgid "Add to Archive..."
+msgstr "Arşive Ekle..."
+
+#: arkplugin.cpp:136
+msgid "Extract"
+msgstr "Aç"
+
+#: arkplugin.cpp:138
+msgid "Extract Here"
+msgstr "Buraya Aç"
+
+#: arkplugin.cpp:146
+#, c-format
+msgid "Extract to %1"
+msgstr "%1 Dizinine Aç"
+
+#: arkplugin.cpp:151
+msgid "Extract to Subfolders"
+msgstr "Alt Dizinlere Aç"
+
+#: arkplugin.cpp:155 arkplugin.cpp:162
+msgid "Extract To..."
+msgstr "Farklı Konuma Aç..."
+
+#: arkplugin.cpp:435 arkplugin.cpp:479
+msgid "Archive"
+msgstr "Arşiv"
+
+#: arkplugin.cpp:439 arkplugin.cpp:483
+#, c-format
+msgid "Archive %1"
+msgstr "%1 Arşivi"

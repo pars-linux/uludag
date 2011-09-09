@@ -1,0 +1,816 @@
+# translation of kdmconfig.po to
+# Copyright (C) 2002,2003, 2004, 2007 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2002, 2003, 2004.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+# serdar soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdmconfig\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-11-17 01:14+0100\n"
+"PO-Revision-Date: 2007-06-13 20:30+0300\n"
+"Last-Translator: serdar soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=1; plural=0;\n"
+
+#: background.cpp:47
+msgid "E&nable background"
+msgstr "&Arkaplanı etkinleştir"
+
+#: background.cpp:49
+msgid ""
+"If this is checked, KDM will use the settings below for the background. If it "
+"is disabled, you have to look after the background yourself. This is done by "
+"running some program (possibly xsetroot) in the script specified in the Setup= "
+"option in kdmrc (usually Xsetup)."
+msgstr ""
+"Eğer bu kısım seçili olursa, arkaplan için yapılan ayarlar kullanılacaktır. "
+
+#: kdm-appear.cpp:71
+msgid "&Greeting:"
+msgstr "&Karşılama:"
+
+#: kdm-appear.cpp:76
+msgid ""
+"This is the \"headline\" for KDM's login window. You may want to put some nice "
+"greeting or information about the operating system here."
+"<p>KDM will substitute the following character pairs with the respective "
+"contents:"
+"<br>"
+"<ul>"
+"<li>%d -> current display</li>"
+"<li>%h -> host name, possibly with domain name</li>"
+"<li>%n -> node name, most probably the host name without domain name</li>"
+"<li>%s -> the operating system</li>"
+"<li>%r -> the operating system's version</li>"
+"<li>%m -> the machine (hardware) type</li>"
+"<li>%% -> a single %</li></ul>"
+msgstr ""
+
+#: kdm-appear.cpp:95
+msgid "Logo area:"
+msgstr "Logo alanı:"
+
+#: kdm-appear.cpp:99
+msgid ""
+"_: logo area\n"
+"&None"
+msgstr ""
+
+#: kdm-appear.cpp:100
+msgid "Show cloc&k"
+msgstr "&Saati göster"
+
+#: kdm-appear.cpp:101
+msgid "Sho&w logo"
+msgstr "&Logoyu göster"
+
+#: kdm-appear.cpp:113
+msgid ""
+"You can choose to display a custom logo (see below), a clock or no logo at all."
+msgstr "Gösterilmesi için özel bir logo ya da saat seçebilirsiniz."
+
+#: kdm-appear.cpp:119
+msgid "&Logo:"
+msgstr "&Logo:"
+
+#: kdm-appear.cpp:129
+msgid ""
+"Click here to choose an image that KDM will display. You can also drag and drop "
+"an image onto this button (e.g. from Konqueror)."
+msgstr ""
+"KDM'nin göstereceği logoyu seçmek için buraya tıklayın. Aynı zamanda bir resmi "
+"bu düğme üstüne sürükleyip bırakabilirsiniz (örn. Konqueror'dan)."
+
+#: kdm-appear.cpp:141
+msgid "Position:"
+msgstr "Konum:"
+
+#: kdm-appear.cpp:144
+msgid "&X:"
+msgstr "&X:"
+
+#: kdm-appear.cpp:151
+msgid "&Y:"
+msgstr "&Y:"
+
+#: kdm-appear.cpp:158
+#, fuzzy
+msgid ""
+"Here you specify the relative coordinates (in percent) of the login dialog's "
+"<em>center</em>."
+msgstr ""
+"Burada giriş penceresinin <em>merkezinin</em> koordinatları verilebilir."
+
+#: kdm-appear.cpp:173 kdm-appear.cpp:186 kdm-users.cpp:84
+msgid "<default>"
+msgstr "<öntanımlı>"
+
+#: kdm-appear.cpp:176
+msgid "GUI s&tyle:"
+msgstr "&GUI stili:"
+
+#: kdm-appear.cpp:180
+msgid "You can choose a basic GUI style here that will be used by KDM only."
+msgstr "Sadece KDM tarafından kullanılacak bir GUI 'yi buradan seçebilirsiniz."
+
+#: kdm-appear.cpp:189
+msgid "&Color scheme:"
+msgstr "&Renk şeması:"
+
+#: kdm-appear.cpp:193
+msgid "You can choose a basic Color Scheme here that will be used by KDM only."
+msgstr ""
+"Sadece KDM tarafından kullanılacak bir renk düzenini buradan seçebilirsiniz."
+
+#: kdm-appear.cpp:199
+msgid "No Echo"
+msgstr "Gösterim Yok"
+
+#: kdm-appear.cpp:200
+msgid "One Star"
+msgstr "Tek Yıldız"
+
+#: kdm-appear.cpp:201
+msgid "Three Stars"
+msgstr "Üç Yıldız"
+
+#: kdm-appear.cpp:202
+msgid "Echo &mode:"
+msgstr "&Gösterim yöntemi:"
+
+#: kdm-appear.cpp:206
+msgid ""
+"You can choose whether and how KDM shows your password when you type it."
+msgstr ""
+"KDM'nin parolanızı yazdığınızda göstermesini ya da nasıl göstereceğini "
+"seçebilirsiniz."
+
+#: kdm-appear.cpp:212
+msgid "Locale"
+msgstr "Yerel ayarlar"
+
+#: kdm-appear.cpp:218
+msgid "Languag&e:"
+msgstr "&Dil:"
+
+#: kdm-appear.cpp:223
+msgid ""
+"Here you can choose the language used by KDM. This setting does not affect a "
+"user's personal settings; that will take effect after login."
+msgstr ""
+"Buradan KDM tarafından kullanılacak dili seçebilirsiniz. Bu bir kullanıc�nın "
+"sisteme giriş yaptıktan sonraki özel ayarlarını etkilemeyecektir."
+
+#: kdm-appear.cpp:264
+msgid "without name"
+msgstr "isimsiz"
+
+#: kdm-appear.cpp:405
+msgid ""
+"There was an error loading the image:\n"
+"%1\n"
+"It will not be saved."
+msgstr ""
+"Resim yüklenirken hata oluştu:\n"
+"%1\n"
+"Kayıt edilmeyecek."
+
+#: kdm-appear.cpp:445 kdm-appear.cpp:488
+#, c-format
+msgid "Welcome to %s at %n"
+msgstr "Hoşgeldiniz (%s - %n)"
+
+#: kdm-appear.cpp:504
+msgid ""
+"<h1>KDM - Appearance</h1> Here you can configure the basic appearance of the "
+"KDM login manager, i.e. a greeting string, an icon etc."
+"<p> For further refinement of KDM's appearance, see the \"Font\" and "
+"\"Background\"  tabs."
+msgstr ""
+"<h1>KDM - Görünüm</h1> Buradan KDM sistem giriş yöneticisinin basit görünümünü "
+"yapılandırabilirsiniz, örn. karşılama mesajı, simge."
+"<p> Daha fazla iyileştirme için, \"Yazıtipi\" \"Arka Alan\" bölümlerine bak�n."
+
+#: kdm-font.cpp:46
+msgid "&General:"
+msgstr "&Genel:"
+
+#: kdm-font.cpp:49
+msgid ""
+"This changes the font which is used for all the text in the login manager "
+"except for the greeting and failure messages."
+msgstr ""
+
+#: kdm-font.cpp:54
+msgid "&Failures:"
+msgstr "&Hatalar:"
+
+#: kdm-font.cpp:57
+msgid ""
+"This changes the font which is used for failure messages in the login manager."
+msgstr ""
+
+#: kdm-font.cpp:62
+msgid "Gree&ting:"
+msgstr "&Karşılama:"
+
+#: kdm-font.cpp:65
+msgid "This changes the font which is used for the login manager's greeting."
+msgstr ""
+
+#: kdm-font.cpp:70
+msgid "Use anti-aliasing for fonts"
+msgstr "Yazıtipleri için yumuşatma kullan"
+
+#: kdm-font.cpp:71
+msgid ""
+"If you check this box and your X-Server has the Xft extension, fonts will be "
+"antialiased (smoothed) in the login dialog."
+msgstr ""
+"Eğer burayı seçerseniz, KDM altındaki yazıtipleri yumuşak gösterilecektir."
+
+#: kdm-shut.cpp:49
+msgid "Allow Shutdown"
+msgstr "Kapatmaya İzin Ver"
+
+#: kdm-shut.cpp:52
+msgid "&Local:"
+msgstr "&Yerel:"
+
+#: kdm-shut.cpp:53 kdm-shut.cpp:59
+msgid "Everybody"
+msgstr "Herkes"
+
+#: kdm-shut.cpp:54 kdm-shut.cpp:60
+msgid "Only Root"
+msgstr "Sadece Root"
+
+#: kdm-shut.cpp:55 kdm-shut.cpp:61
+msgid "Nobody"
+msgstr "Hiç kimse"
+
+#: kdm-shut.cpp:58
+msgid "&Remote:"
+msgstr "&Uzak:"
+
+#: kdm-shut.cpp:63
+msgid ""
+"Here you can select who is allowed to shutdown the computer using KDM. You can "
+"specify different values for local (console) and remote displays. Possible "
+"values are:"
+"<ul> "
+"<li><em>Everybody:</em> everybody can shutdown the computer using KDM</li> "
+"<li><em>Only root:</em> KDM will only allow shutdown after the user has entered "
+"the root password</li> "
+"<li><em>Nobody:</em> nobody can shutdown the computer using KDM</li></ul>"
+msgstr ""
+"Buradan KDM kullanarak bilgisayarı kapatabilecek kullanıcıları seçebilirsiniz. "
+"Kullanılabilir değerler:"
+"<ul> "
+"<li><em>Herkes:</em> Herkes KDM kullanarak bilgisayarı kapatabilir</li> "
+"<li><em>Sadece root:</em> KDM sadece root parolası girdikten sonra kapanışa "
+"izin verecektir.</li> "
+"<li><em>Hiçkimse:</em> Bilgisayarı hiç bir kullanıcı KDM kullanarak kapatamaz. "
+"</li></ul>"
+
+#: kdm-shut.cpp:71
+msgid "Commands"
+msgstr "Komutlar"
+
+#: kdm-shut.cpp:74
+msgid "H&alt:"
+msgstr "&Durdur:"
+
+#: kdm-shut.cpp:77
+msgid "Command to initiate the system halt. Typical value: /sbin/halt"
+msgstr "Durdurma işlemini gerçekleştirecek komut. Tipik değer: /sbin/halt"
+
+#: kdm-shut.cpp:82
+msgid "Reb&oot:"
+msgstr "&Yeniden başlat:"
+
+#: kdm-shut.cpp:85
+msgid "Command to initiate the system reboot. Typical value: /sbin/reboot"
+msgstr ""
+"Yeniden başlatma işlemini gerçekleştirecek komut. Tipik değer: /sbin/reboot"
+
+#: kdm-shut.cpp:93
+msgid ""
+"_: boot manager\n"
+"None"
+msgstr "Hiçbiri"
+
+#: kdm-shut.cpp:94
+msgid "Grub"
+msgstr "Grub"
+
+#: kdm-shut.cpp:96
+msgid "Lilo"
+msgstr "Lilo"
+
+#: kdm-shut.cpp:98
+msgid "Boot manager:"
+msgstr "Önyükleyici yöneticisi:"
+
+#: kdm-shut.cpp:100
+#, fuzzy
+msgid "Enable boot options in the \"Shutdown...\" dialog."
+msgstr "\"Kapat...\" penceresinde LILO açılış seçeneklerini etkinleştir."
+
+#: kdm-users.cpp:81
+#, c-format
+msgid "Unable to create folder %1"
+msgstr "%1 dizini oluşturulamadı"
+
+#: kdm-users.cpp:88
+msgid "System U&IDs"
+msgstr "&Sistem Kullanıcı Numaraları"
+
+#: kdm-users.cpp:89
+msgid ""
+"Users with a UID (numerical user identification) outside this range will not be "
+"listed by KDM and this setup dialog. Note that users with the UID 0 (typically "
+"root) are not affected by this and must be explicitly hidden in \"Not hidden\" "
+"mode."
+msgstr ""
+"Bu aralığın dışında bir numaraya sahip kullanıcılar bu ayar penceresi ve KDM "
+"tarafından görüntülenmeyecektir. Ancak root kullanıcısı bu işleme istisnadır ve "
+"\"Gizli değil\" kipinde ayrıca gizlenmelidir."
+
+#: kdm-users.cpp:94
+msgid "Below:"
+msgstr "Aşağıda:"
+
+#: kdm-users.cpp:101
+msgid "Above:"
+msgstr "Yukarıda:"
+
+#: kdm-users.cpp:109
+msgid "Users"
+msgstr "Kullanıcılar"
+
+#: kdm-users.cpp:112
+msgid "Show list"
+msgstr "Listeyi göster"
+
+#: kdm-users.cpp:113
+#, fuzzy
+msgid ""
+"If this option is checked, KDM will show a list of users, so users can click on "
+"their name or image rather than typing in their login."
+msgstr ""
+"Bu seçenek etkin ise, KDM herhangi bir kullanıcıyı göstermeyecektir. Eğer "
+"herhangi bir alternatif radyo düğmesi seçili olursa KDM kullanıcı listesini "
+"gösterecek ve kullanıcılar isterlerse kendi resimleri üzerine tıklayarak "
+"sisteme girebileceklerdir."
+
+#: kdm-users.cpp:115
+msgid "Autocompletion"
+msgstr "Otomatik tamamlama"
+
+#: kdm-users.cpp:116
+#, fuzzy
+msgid ""
+"If this option is checked, KDM will automatically complete user names while "
+"they are typed in the line edit."
+msgstr ""
+"Bu özellik seçili ise, giriş penceresinde adı yazılan kullanıcıların isimleri "
+"otomatik olarak tamamlanacaktır."
+
+#: kdm-users.cpp:118
+msgid "Inverse selection"
+msgstr "Ters seçim"
+
+#: kdm-users.cpp:119
+msgid ""
+"This option specifies how the users for \"Show list\" and \"Autocompletion\" "
+"are selected in the \"Select users and groups\" list: If not checked, select "
+"only the checked users. If checked, select all non-system users, except the "
+"checked ones."
+msgstr ""
+
+#: kdm-users.cpp:123
+msgid "Sor&t users"
+msgstr "Kullanıcıları &sırala"
+
+#: kdm-users.cpp:125
+msgid ""
+"If this is checked, KDM will alphabetically sort the user list. Otherwise users "
+"are listed in the order they appear in the password file."
+msgstr ""
+"Eğer bu seçenek etkin ise, KDM tüm kullanıcı listesini alfabetik olarak "
+"sıralayacaktır. Seçili değilse, parola dosyasında sıralama geçerli olacaktır."
+
+#: kdm-users.cpp:129
+msgid "S&elect users and groups:"
+msgstr "&Kullanıcı ve grupları seçin:"
+
+#: kdm-users.cpp:131
+msgid "Selected Users"
+msgstr "Seçili Kullanıcılar:"
+
+#: kdm-users.cpp:133
+msgid ""
+"KDM will show all checked users. Entries denoted with '@' are user groups. "
+"Checking a group is like checking all users in that group."
+msgstr ""
+
+#: kdm-users.cpp:140
+msgid "Hidden Users"
+msgstr "Gizli Kullanıcılar"
+
+#: kdm-users.cpp:142
+msgid ""
+"KDM will show all non-checked non-system users. Entries denoted with '@' are "
+"user groups. Checking a group is like checking all users in that group."
+msgstr ""
+
+#: kdm-users.cpp:149
+msgid "User Image Source"
+msgstr "Kullanıcı Resim Kaynağı"
+
+#: kdm-users.cpp:150
+msgid ""
+"Here you can specify where KDM will obtain the images that represent users. "
+"\"Admin\" represents the global folder; these are the pictures you can set "
+"below. \"User\" means that KDM should read the user's $HOME/.face.icon file. "
+"The two selections in the middle define the order of preference if both sources "
+"are available."
+msgstr ""
+"KDM kullanıcılarını temsil eden şekillerin temin edildiği yeri burada "
+"belirtebilirsiniz. \"Yönetici\" genel dizini temsil eder; buradaki resmleri "
+"kurabilirsiniz. \"Kullanıcı\" için $HOME/.face.icon dosyası okunur. Her ikisi "
+"de mevcutta ortadaki seçimler tercih düzenini tanımlar."
+
+#: kdm-users.cpp:156
+msgid "Admin"
+msgstr "Yönetici"
+
+#: kdm-users.cpp:157
+msgid "Admin, user"
+msgstr "Yönetici, kullanıcılar"
+
+#: kdm-users.cpp:158
+msgid "User, admin"
+msgstr "Kullanıcılar, yönetici"
+
+#: kdm-users.cpp:159
+msgid "User"
+msgstr "Kullanıcı"
+
+#: kdm-users.cpp:161
+msgid "User Images"
+msgstr "Kullanıcı Resimleri"
+
+#: kdm-users.cpp:164
+msgid "The user the image below belongs to."
+msgstr "Aşağıdaki kullanıcının resminin sahibi."
+
+#: kdm-users.cpp:167
+msgid "User:"
+msgstr "Kullanıcı:"
+
+#: kdm-users.cpp:175
+msgid "Click or drop an image here"
+msgstr "Tıklayınız ya da buraya bir resim sürükleyiniz"
+
+#: kdm-users.cpp:176
+msgid ""
+"Here you can see the image assigned to the user selected in the combo box "
+"above. Click on the image button to select from a list of images or drag and "
+"drop your own image on to the button (e.g. from Konqueror)."
+msgstr ""
+"Buradan seçili olan kullanıcının kullanıcı adını ve ona atanmış resmi "
+"görebilirsiniz. Resimler listesinden bir resim seçmek için buraya t�klayın ya "
+"da kendi resminizi sürükleyip bırakın (örn. Konqueror'dan)."
+
+#: kdm-users.cpp:178
+msgid "Unset"
+msgstr "Seçimi kaldır"
+
+#: kdm-users.cpp:179
+msgid ""
+"Click this button to make KDM use the default image for the selected user."
+msgstr "Seçili kullanıcı için KDM'nin kendi resmini kullanmasını onayla."
+
+#: kdm-users.cpp:276
+msgid "Save image as default image?"
+msgstr "Resmi öntanımlı resim olarak kaydedeyim mi?"
+
+#: kdm-users.cpp:284
+#, c-format
+msgid ""
+"There was an error loading the image\n"
+"%1"
+msgstr ""
+"Resim yüklenirken bir hata oluştu\n"
+"%1"
+
+#: kdm-users.cpp:293
+#, c-format
+msgid ""
+"There was an error saving the image:\n"
+"%1"
+msgstr ""
+"Resim kaydedilirken hata oluştu:\n"
+"%1"
+
+#: kdm-users.cpp:308
+msgid "Choose Image"
+msgstr "Resmi Seçin"
+
+#: kdm-conv.cpp:47
+msgid ""
+"<qt>"
+"<center><font color=red><big><b>Attention!"
+"<br>Read help!</b></big></font></center></qt>"
+msgstr ""
+"<qt>"
+"<center><font·color=red><big><b>Dikkat!"
+"<br>Yardım dosyasını okuyun!</b></big></font></center></qt>"
+
+#: kdm-conv.cpp:51
+msgid "Enable Au&to-Login"
+msgstr "&Otomatik girişi etkinleştir"
+
+#: kdm-conv.cpp:55
+msgid ""
+"Turn on the auto-login feature. This applies only to KDM's graphical login. "
+"Think twice before enabling this!"
+msgstr ""
+"Otomatik giriş özelliğini aç. Bu işlem sadece KDM grafik girişi için "
+"geçerlidir. Yapmadan önce iki kez düşünmenizi öneririz!"
+
+#: kdm-conv.cpp:62
+msgid "Use&r:"
+msgstr "&Kullanıcı:"
+
+#: kdm-conv.cpp:68
+msgid "Select the user to be logged in automatically."
+msgstr "Otomatik giriş yapılacak kullanıcıyı listeden seçin."
+
+#: kdm-conv.cpp:72
+msgid ""
+"_: delay\n"
+"none"
+msgstr "hiçbiri"
+
+#: kdm-conv.cpp:73
+msgid ""
+"_: seconds\n"
+" s"
+msgstr " sn"
+
+#: kdm-conv.cpp:74
+msgid "D&elay:"
+msgstr "&Gecikme:"
+
+#: kdm-conv.cpp:78
+msgid ""
+"The delay (in seconds) before the automatic login kicks in. This feature is "
+"also known as \"timed login\"."
+msgstr ""
+
+#: kdm-conv.cpp:82
+msgid "P&ersistent"
+msgstr "&Kalıcı"
+
+#: kdm-conv.cpp:84
+msgid ""
+"Normally, automatic login is performed only when KDM starts up. If this is "
+"checked, automatic login will kick in after finishing a session as well."
+msgstr ""
+
+#: kdm-conv.cpp:87
+msgid "Loc&k session"
+msgstr "Oturumu &Kilitle"
+
+#: kdm-conv.cpp:89
+msgid ""
+"If checked, the automatically started session will be locked immediately "
+"(provided it is a KDE session). This can be used to obtain a super-fast login "
+"restricted to one user."
+msgstr ""
+
+#: kdm-conv.cpp:94
+msgid "Preselect User"
+msgstr "&Kullanıcı Seç"
+
+#: kdm-conv.cpp:99
+msgid ""
+"_: preselected user\n"
+"&None"
+msgstr "&Hiçbiri"
+
+#: kdm-conv.cpp:100
+msgid "Prev&ious"
+msgstr "Ö&nceki"
+
+#: kdm-conv.cpp:101
+msgid ""
+"Preselect the user that logged in previously. Use this if this computer is "
+"usually used several consecutive times by one user."
+msgstr ""
+"Önce oturum açılacak kullanıcıyı seçiniz.Bu bilgisayarda sık kullanım için bunu "
+"kullanın."
+
+#: kdm-conv.cpp:103
+msgid "Specif&y"
+msgstr "&Belirle"
+
+#: kdm-conv.cpp:104
+msgid ""
+"Preselect the user specified in the combo box below. Use this if this computer "
+"is predominantly used by a certain user."
+msgstr ""
+"Açılır listeden belirgin kullanıcıyı seç.Bu sürekli bu bilgisayarı kullanan "
+"kullanıcı olabilir."
+
+#: kdm-conv.cpp:108
+msgid "Us&er:"
+msgstr "&Kullanıcı:"
+
+#: kdm-conv.cpp:110
+msgid ""
+"Select the user to be preselected for login. This box is editable, so you can "
+"specify an arbitrary non-existent user to mislead possible attackers."
+msgstr ""
+"Giriş için kullanıcıyı seçin.Bu saldırıları yanıltmak için mevcut olmayan bir "
+"kullanıcıda olabilir Bunu burada düzenleyebilirsiniz.."
+
+#: kdm-conv.cpp:119
+msgid "Focus pass&word"
+msgstr "Parolayı &odakla"
+
+#: kdm-conv.cpp:120
+msgid ""
+"When this option is on, KDM will place the cursor in the password field instead "
+"of the user field after preselecting a user. Use this to save one key press per "
+"login, if the preselection usually does not need to be changed."
+msgstr ""
+"Bu seçim açıkken, KDM bir kullanıcıyı önceden seçerek kullanıcı alanı yerine "
+"parola alanına imleci yerleştirecektir. Kullanıcı genelde değişmiyorsa bunu "
+"kullanabilirsiniz."
+
+#: kdm-conv.cpp:126
+msgid "Enable Password-&Less Logins"
+msgstr "&Parolasız Girişi Etkinleştir"
+
+#: kdm-conv.cpp:129
+msgid ""
+"When this option is checked, the checked users from the list below will be "
+"allowed to log in without entering their password. This applies only to KDM's "
+"graphical login. Think twice before enabling this!"
+msgstr ""
+"Bu seçenek seçili iken, listedeki kullanıcılar parola girmeden giriş "
+"yapabileceklerdir. Bu sadece KDM'nin grafik girişinde kullanılabilir. Bunu "
+"etkinleştirmeden önce iki defa düşünün!"
+
+#: kdm-conv.cpp:136
+msgid "No password re&quired for:"
+msgstr "Bu kullanıcılar için &parola gerekmiyor:"
+
+#: kdm-conv.cpp:142
+msgid ""
+"Check all users you want to allow a password-less login for. Entries denoted "
+"with '@' are user groups. Checking a group is like checking all users in that "
+"group."
+msgstr ""
+
+#: kdm-conv.cpp:149
+msgid "Automatically log in again after &X server crash"
+msgstr "Grafiksel &sunucu kapandığında otomatik giriş yap"
+
+#: kdm-conv.cpp:150
+msgid ""
+"When this option is on, a user will be logged in again automatically when their "
+"session is interrupted by an X server crash; note that this can open a security "
+"hole: if you use a screen locker than KDE's integrated one, this will make "
+"circumventing a password-secured screen lock possible."
+msgstr ""
+"Bu seçenek etkin ise, X Window çökmesi ya da kapatılması yaşandığı zaman bir "
+"kullanıcı sisteme otomatik girecektir. Ancak bu işlemin potansiyel güvenlik "
+"açıklarına neden olabileceğini de unutmamak gerkir."
+
+#: main.cpp:67
+msgid ""
+"%1 does not appear to be an image file.\n"
+"Please use files with these extensions:\n"
+"%2"
+msgstr ""
+"%1 bir resim dosyasına benzemiyor.\n"
+"Lütfen bu uzantılara sahip dosyaları kullanın:\n"
+"%2"
+
+#: main.cpp:88
+msgid "kcmkdm"
+msgstr "kcmkdm"
+
+#: main.cpp:88
+msgid "KDE Login Manager Config Module"
+msgstr "KDE Giriş Yöneticisi Yapılandırma Modülü"
+
+#: main.cpp:90
+msgid "(c) 1996 - 2005 The KDM Authors"
+msgstr "(c) 1996 - 2005 KDM Yazarları"
+
+#: main.cpp:92
+msgid "Original author"
+msgstr "Asıl yazar"
+
+#: main.cpp:94
+msgid "Current maintainer"
+msgstr "Güncel yazar"
+
+#: main.cpp:96
+msgid ""
+"<h1>Login Manager</h1> In this module you can configure the various aspects of "
+"the KDE Login Manager. This includes the look and feel as well as the users "
+"that can be selected for login. Note that you can only make changes if you run "
+"the module with superuser rights. If you have not started the KDE Control "
+"Center with superuser rights (which is absolutely the right thing to do, by the "
+"way), click on the <em>Modify</em> button to acquire superuser rights. You will "
+"be asked for the superuser password."
+"<h2>Appearance</h2> On this tab page, you can configure how the Login Manager "
+"should look, which language it should use, and which GUI style it should use. "
+"The language settings made here have no influence on the user's language "
+"settings."
+"<h2>Font</h2>Here you can choose the fonts that the Login Manager should use "
+"for various purposes like greetings and user names. "
+"<h2>Background</h2>If you want to set a special background for the login "
+"screen, this is where to do it."
+"<h2>Shutdown</h2> Here you can specify who is allowed to shutdown/reboot the "
+"machine and whether a boot manager should be used."
+"<h2>Users</h2>On this tab page, you can select which users the Login Manager "
+"will offer you for logging in."
+"<h2>Convenience</h2> Here you can specify a user to be logged in automatically, "
+"users not needing to provide a password to log in, and other convenience "
+"features."
+"<br>Note, that these settings are security holes by their nature, so use them "
+"very carefully."
+msgstr ""
+"<h1>Sistem Giriş Yöneticisi</h1> Bu modülde KDE Sistem Giriş Yöneticisinin "
+"çeşitli özelliklerini yapılandırabilirsiniz. Bu giriş için seçilecek "
+"kullanıcıların yanında görünüm özelliklerini de içermektedir. Modülü sadece "
+"süper kullanıcı hakları ile çalıştırırsanız üzerinde değişiklik "
+"yapabileceğinizi unutmayın. Eğer KDE Kontrol Merkezi'ni süper kullanıcı hakları "
+"ile başlatmadıysanız <em>Düzenle</em> düğmesine tıklayın. Size sistem "
+"yöneticisinin parolası sorulacaktır."
+"<h2>Görünüm</h2> Bu bölümde, Sistem Giriş Yöneticisinin nasıl görüneceğini, "
+"hangi dili kullanacağını ve hangi grafik stilini kullanacağını "
+"belirleyebilirsiniz. Burada yapılan dil ayarlarının kullanıcı dil ayarlarına "
+"etkisi yoktur."
+"<h2>Yazıtipi</h2>Buradan Sistem Giriş Yöneticisinin karşılama ve kullanıcı "
+"isimleri gibi çeşitli yerlerde kullanacağı yazı tiplerini seçebilirsiniz. "
+"<h2>Arkaplan</h2>Eğer giriş ekranı için özel bir arkaplan seçmek isterseniz, "
+"buradan yapabilirsiniz."
+"<h2>Kapat</h2>Bilgisayarı kimin kapatabileceğini buradan seçebilirsiniz. "
+"<h2>Kullanıcılar</h2>Bu bölümde, Sistem Giriş Yöneticisinin size girişte hangi "
+"kullanıcıları sunacağını belirleyebilirsiniz."
+"<h2>Otomatik giriş</h2> Buradan bir kullanıcının otomatik giriş yapmasını, bazı "
+"kullanıcılara parola sorulmadan giriş yapılmasını ve tembel insanlar için olan "
+"diğer seçenekleri yapılandırabilirsiniz."
+"<br>Bu seçeneklerin bazıları sistemde güvenlik açıklarına neden olabileceği "
+"için dikkatli kullanılmaları önerilir."
+
+#: main.cpp:186
+msgid "A&ppearance"
+msgstr "&Görünüm"
+
+#: main.cpp:190
+msgid "&Font"
+msgstr "&Yazıtipi"
+
+#: main.cpp:194
+msgid "&Background"
+msgstr "&Arkaplan"
+
+#: main.cpp:198
+msgid "&Shutdown"
+msgstr "&Kapat"
+
+#: main.cpp:202
+msgid "&Users"
+msgstr "&Kullanıcılar"
+
+#: main.cpp:210
+msgid "Con&venience"
+msgstr "&Erişilebilirlik"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"

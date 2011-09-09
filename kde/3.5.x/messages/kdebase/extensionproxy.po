@@ -1,0 +1,48 @@
+# translation of extensionproxy.po to Türkçe
+# Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
+msgid ""
+msgstr ""
+"Project-Id-Version: extensionproxy\n"
+"POT-Creation-Date: 2005-05-18 21:24+0200\n"
+"PO-Revision-Date: 2005-06-07 00:26+0200\n"
+"Last-Translator: Adil YILDIZ <adil@kde.org.tr>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: extensionproxy.cpp:51
+msgid "The extension's desktop file"
+msgstr "Uzantılar masaüstü dosyası"
+
+#: extensionproxy.cpp:52
+msgid "The config file to be used"
+msgstr "Kullanılacak yapılandırma dosyası"
+
+#: extensionproxy.cpp:53
+msgid "DCOP callback id of the extension container"
+msgstr "Uzantıyı tutanın DCOP geri çağırma numarası"
+
+#: extensionproxy.cpp:59
+msgid "Panel Extension Proxy"
+msgstr "Panel Uzantı Vekili"
+
+#: extensionproxy.cpp:61
+msgid "Panel extension proxy"
+msgstr "Panel uzantı vekili"
+
+#: extensionproxy.cpp:84
+msgid "No desktop file specified"
+msgstr "Hiç masaüstü dosyası belirtilmedi"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Adil YILDIZ"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "adil@kde.org.tr"

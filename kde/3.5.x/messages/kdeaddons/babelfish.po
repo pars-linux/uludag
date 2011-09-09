@@ -1,0 +1,175 @@
+# translation of babelfish.po to Türkçe
+# translation of babelfish.po to Turkish
+# translation of babelfish.po to turkish
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# Görkem Çetin, <gorkem@kde.org>, 2001, 2004.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: babelfish\n"
+"POT-Creation-Date: 2008-04-08 02:02+0200\n"
+"PO-Revision-Date: 2004-07-06 15:25+0300\n"
+"Last-Translator: Adem Alp YILDIZ <ademalp@linux-sevenler.org>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.3\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: plugin_babelfish.cpp:34
+msgid "Translate Web Page"
+msgstr "Web Sayfasını Çevir"
+
+#: plugin_babelfish.cpp:43
+msgid "Translate Web &Page"
+msgstr "&Web Sayfasını Çevir"
+
+#: plugin_babelfish.cpp:47
+msgid "&English To"
+msgstr "İngilizc&e den"
+
+#: plugin_babelfish.cpp:49
+msgid "&French To"
+msgstr "&Fransızca Dan"
+
+#: plugin_babelfish.cpp:51
+msgid "&German To"
+msgstr "&Almanca Dan"
+
+#: plugin_babelfish.cpp:53
+msgid "&Spanish To"
+msgstr "İ&spanyolca Dan"
+
+#: plugin_babelfish.cpp:55
+msgid "&Portuguese To"
+msgstr "&Portekizce Den"
+
+#: plugin_babelfish.cpp:57
+msgid "&Italian To"
+msgstr "İ&talyanca Dan"
+
+#: plugin_babelfish.cpp:59
+msgid "&Dutch To"
+msgstr "&Hollandaca Dan"
+
+#: plugin_babelfish.cpp:62
+msgid "&Chinese (Simplified)"
+msgstr "&Basitleştirilmiş Çince"
+
+#: plugin_babelfish.cpp:65
+msgid "Chinese (&Traditional)"
+msgstr "&Geleneksel Çince"
+
+#: plugin_babelfish.cpp:68 plugin_babelfish.cpp:102
+msgid "&Dutch"
+msgstr "Hollan&daca"
+
+#: plugin_babelfish.cpp:71 plugin_babelfish.cpp:124 plugin_babelfish.cpp:131
+#: plugin_babelfish.cpp:138 plugin_babelfish.cpp:145 plugin_babelfish.cpp:152
+msgid "&French"
+msgstr "&Fransızca"
+
+#: plugin_babelfish.cpp:74 plugin_babelfish.cpp:108
+msgid "&German"
+msgstr "&Almanca"
+
+#: plugin_babelfish.cpp:77 plugin_babelfish.cpp:111
+msgid "&Italian"
+msgstr "İ&talyancadan"
+
+#: plugin_babelfish.cpp:80
+msgid "&Japanese"
+msgstr "&Japoncadan"
+
+#: plugin_babelfish.cpp:83
+msgid "&Korean"
+msgstr "&Korece"
+
+#: plugin_babelfish.cpp:86
+msgid "&Norwegian"
+msgstr "&Norveççe"
+
+#: plugin_babelfish.cpp:89 plugin_babelfish.cpp:114
+msgid "&Portuguese"
+msgstr "&Portekizce"
+
+#: plugin_babelfish.cpp:92
+msgid "&Russian"
+msgstr "&Rusça"
+
+#: plugin_babelfish.cpp:95 plugin_babelfish.cpp:117
+msgid "&Spanish"
+msgstr "İ&spanyolca"
+
+#: plugin_babelfish.cpp:98
+msgid "T&hai"
+msgstr "&Tayca"
+
+#: plugin_babelfish.cpp:105 plugin_babelfish.cpp:121 plugin_babelfish.cpp:128
+#: plugin_babelfish.cpp:135 plugin_babelfish.cpp:142 plugin_babelfish.cpp:149
+msgid "&English"
+msgstr "İ&ngilizce"
+
+#: plugin_babelfish.cpp:156
+msgid "&Chinese (Simplified) to English"
+msgstr "B&asitleştirilmiş Çinceden İngilizceye"
+
+#: plugin_babelfish.cpp:159
+msgid "Chinese (&Traditional) to English"
+msgstr "&Geleneksel Çinceden İngilizceye"
+
+#: plugin_babelfish.cpp:167
+msgid "&Japanese to English"
+msgstr "&Japoncadan İngilizceye"
+
+#: plugin_babelfish.cpp:170
+msgid "&Korean to English"
+msgstr "&Koreceden İngilizceye"
+
+#: plugin_babelfish.cpp:174
+msgid "&Russian to English"
+msgstr "&Rusçadan İngilizceye"
+
+#: plugin_babelfish.cpp:217
+msgid "Cannot Translate Source"
+msgstr "Kaynak Çevrilemedi"
+
+#: plugin_babelfish.cpp:218
+msgid "Only web pages can be translated using this plugin."
+msgstr "Bu eklenti ile sadece web sayfaları çevrilebilir."
+
+#: plugin_babelfish.cpp:242
+msgid "Only full webpages can be translated for this language pair."
+msgstr "Bu diller ile sadece tam web sayfaları çevrilebilir."
+
+#: plugin_babelfish.cpp:242
+msgid "Translation Error"
+msgstr "Çeviri Hatası"
+
+#: plugin_babelfish.cpp:252
+msgid "The URL you entered is not valid, please correct it and try again."
+msgstr "Girilen URL sayfası geçerli değil; lütfen düzeltip yeniden deneyiniz."
+
+#. i18n: file plugin_babelfish.rc line 8
+#: rc.cpp:6
+#, no-c-format
+msgid "Extra Toolbar"
+msgstr "Ek Araç Çubuğu"
+
+#~ msgid "&Arabic"
+#~ msgstr "&Arapça"

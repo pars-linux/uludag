@@ -1,6 +1,0 @@
-INSTALL
--------
-To install Kaptan, you only need to type the following commands:
-
-$ cd kaptan
-$ sudo python setup.py install

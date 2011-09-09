@@ -1,0 +1,51 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2005-01-08 01:24+0100\n"
+"PO-Revision-Date: 2002-05-07 00:29+0300\n"
+"Last-Translator: Görkem Çetin <gorkem@gelecek.com.tr>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.6\n"
+
+#: kfile_txt.cpp:45
+msgid "General"
+msgstr "Genel"
+
+#: kfile_txt.cpp:48
+msgid "Lines"
+msgstr "Satır"
+
+#: kfile_txt.cpp:50
+msgid "Words"
+msgstr "Kelime"
+
+#: kfile_txt.cpp:52
+msgid "Characters"
+msgstr "Karakter"
+
+#: kfile_txt.cpp:54
+msgid "Format"
+msgstr "Biçim"
+
+#: kfile_txt.cpp:95
+msgid "DOS"
+msgstr "DOS"
+
+#: kfile_txt.cpp:97
+msgid "UNIX"
+msgstr "UNIX"
+
+#: kfile_txt.cpp:100
+msgid "Macintosh"
+msgstr "Macintosh"
+
+#: kfile_txt.cpp:110
+msgid "Unknown"
+msgstr "Bilinmeyen"

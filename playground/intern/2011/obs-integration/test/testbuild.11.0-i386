@@ -1,9 +1,0 @@
-#!/bin/bash
-. ${0%/*}/common
-
-arch32bit
-
-repo 11_0_i386
-
-run_build --dist 11.0-i386 \
-	"$@"

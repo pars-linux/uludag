@@ -1,0 +1,176 @@
+# Translation of kio_imap4.po to Turkish
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Barış Metin <baris@uludag.org.tr>, 2004.
+# Ozan Eren BILGEN <oebilgen@uekae.tubitak.gov.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kio_imap4\n"
+"POT-Creation-Date: 2008-01-26 01:19+0100\n"
+"PO-Revision-Date: 2008-02-29 00:13+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@lists.kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: LoKalize 0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: imap4.cc:613
+msgid "Message from %1 while processing '%2': %3"
+msgstr "'%2' işlenirken %1'den mesaj geldi: %3"
+
+#: imap4.cc:615
+msgid "Message from %1: %2"
+msgstr "%1'den mesaj: %2"
+
+#: imap4.cc:936
+msgid ""
+"The following folder will be created on the server: %1 What do you want to "
+"store in this folder?"
+msgstr ""
+
+#: imap4.cc:938
+msgid "Create Folder"
+msgstr "Dizin Oluştur"
+
+#: imap4.cc:939
+msgid "&Messages"
+msgstr "İ&letiler"
+
+#: imap4.cc:939
+msgid "&Subfolders"
+msgstr "Alt &dizinler"
+
+#: imap4.cc:1273
+msgid "Unsubscribe of folder %1 failed. The server returned: %2"
+msgstr "%1 üyeliğinden çıkma işleminde hata. Sunucudan gelen yanıt: %2"
+
+#: imap4.cc:1294
+msgid "Subscribe of folder %1 failed. The server returned: %2"
+msgstr "%1 üyeliğine girme sırasında hata. Sunucudan gelen yanıt: %2"
+
+#: imap4.cc:1363 imap4.cc:1375 imap4.cc:1406
+msgid "Changing the flags of message %1 failed."
+msgstr "%1 iletisinin bayraklarını değiştirme sırasında hata."
+
+#: imap4.cc:1452
+msgid ""
+"Setting the Access Control List on folder %1 for user %2 failed. The server "
+"returned: %3"
+msgstr ""
+"%2 kullanıcısı için %1 dizinine Erişim Kontrol Listesi (ACL) tanımlanamadı. "
+"Sunucu şu mesajı verdi : %3"
+
+#: imap4.cc:1471
+msgid ""
+"Deleting the Access Control List on folder %1 for user %2 failed. The server "
+"returned: %3"
+msgstr ""
+"%2 kullanıcısının %1 dizini için Erişim Kontrol Listesi (ACL) silinemedi. "
+"Sunucu şu mesajı verdi: %3"
+
+#: imap4.cc:1488 imap4.cc:1515
+msgid ""
+"Retrieving the Access Control List on folder %1 failed. The server returned: %2"
+msgstr ""
+"%1 dizini için Erişim Kontrol Listesi (ACL) alınamadı. Sunucu şu mesajı verdi: "
+"%2"
+
+#: imap4.cc:1549
+msgid "Searching of folder %1 failed. The server returned: %2"
+msgstr "%1 dizini aranırken hata oluştu. Sunucu şu mesajı verdi %2"
+
+#: imap4.cc:1583
+msgid "Custom command %1:%2 failed. The server returned: %3"
+msgstr "Özel komut %1:%2 başarısız oldu. Sunucu şu yanıtı verdi: %3"
+
+#: imap4.cc:1666
+msgid "Setting the annotation %1 on folder %2  failed. The server returned: %3"
+msgstr ""
+"%1 açıklamasını %2 klasörüne kurma eylemi başarısızlıkla sonuçlandı. Sunucu "
+"yanıtı: %3"
+
+#: imap4.cc:1690
+msgid ""
+"Retrieving the annotation %1 on folder %2 failed. The server returned: %3"
+msgstr ""
+"%2 klasöründeki %1 açıklamasını alma eylemi başarısızlıkla sonuçlandı. Sunucu "
+"yanıtı: %3"
+
+#: imap4.cc:1727
+msgid ""
+"Retrieving the quota root information on folder %1 failed. The server returned: "
+"%2"
+msgstr ""
+
+#: imap4.cc:1783
+msgid "Unable to close mailbox."
+msgstr "Posta kutusu kapatılamadı."
+
+#: imap4.cc:2051
+msgid ""
+"The server %1 supports neither IMAP4 nor IMAP4rev1.\n"
+"It identified itself with: %2"
+msgstr ""
+"%1 sunucusu IMAP4 ya da IMAP4rev1 desteklemiyor.\n"
+"Sunucu kendisini bu şekilde tanımladı: %2"
+
+#: imap4.cc:2062
+msgid ""
+"The server does not support TLS.\n"
+"Disable this security feature to connect unencrypted."
+msgstr ""
+"Sunucu TLS desteklemiyor.\n"
+"Şifrelenmemiş olarak bağlanmak için güvenlik seçeneğini iptal edin."
+
+#: imap4.cc:2087
+msgid "Starting TLS failed."
+msgstr "TLS başlatılamadı."
+
+#: imap4.cc:2096
+msgid "LOGIN is disabled by the server."
+msgstr "GİRİŞ sunucu tarafından pasifleştirildi."
+
+#: imap4.cc:2103
+msgid "The authentication method %1 is not supported by the server."
+msgstr "%1 kullanıcı doğrulama yöntemi sunucu tarafından desteklenmiyor."
+
+#: imap4.cc:2119
+msgid "Username and password for your IMAP account:"
+msgstr "IMAP hesabınız için kullanıcı adı ve parola:"
+
+#: imap4.cc:2133
+msgid ""
+"Unable to login. Probably the password is wrong.\n"
+"The server %1 replied:\n"
+"%2"
+msgstr ""
+"Giriş yapılamadı. Parolanız yanlış olabilir.\n"
+"%1 isimli sunucu aşağıdaki mesajı verdi:\n"
+"%2"
+
+#: imap4.cc:2140
+msgid ""
+"Unable to authenticate via %1.\n"
+"The server %2 replied:\n"
+"%3"
+msgstr ""
+"%1 ile kullanıcı doğrulaması yapılamadı.\n"
+"%2 isimli sunucu aşağıdaki mesajı verdi:\n"
+"%3"
+
+#: imap4.cc:2147
+msgid "SASL authentication is not compiled into kio_imap4."
+msgstr "SASL kullanıcı doğrulaması kio_imap4 içerisine derlenmemiş."
+
+#: imap4.cc:2691
+msgid "Unable to open folder %1. The server replied: %2"
+msgstr "%1 dizini açılamadı. Sunucu şu mesajı verdi: %2"
+
+#~ msgid "Unable to get information about folder %1. The server replied: %2"
+#~ msgstr "%1 dizini hakkında bilgi alınamadı. Sunucudan gelen yanıt: %2"
+
+#~ msgid "What do you want to store in this folder?"
+#~ msgstr "Bu dizinde ne saklamak istiyorsunuz?"

@@ -1,0 +1,906 @@
+# translation of karm.po to Türkçe
+# translation of karm.po to turkish
+# Translation of karm.po to Turkish
+# Copyright (C) 2003, 2005 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Mevlüt KOÇAK <mevlut_kocak@milliemlak.gov.tr>, 2003.
+# Mevlüt Koçak <mevlutkocak@hotmail.com>, 2003.
+# Ozan Eren BILGEN <oebilgen@uekae.tubitak.gov.tr>, 2005.
+# Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
+# Engin Çağatay <engincagatay@yahoo.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: karm\n"
+"POT-Creation-Date: 2008-04-21 01:46+0200\n"
+"PO-Revision-Date: 2008-02-29 00:19+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@lists.kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: LoKalize 0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Mevlüt Koçak, Ozan Eren BİLGEN, Engin Çağatay"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "mevlutkocak@hotmail.com, oebilgen@uekae.tubitak.gov.tr"
+
+#: csvexportdialog.cpp:87
+msgid "radioDecimal"
+msgstr ""
+
+#: edittaskdialog.cpp:58
+msgid "Task &name:"
+msgstr "Görev &adı:"
+
+#: edittaskdialog.cpp:72
+msgid "Edit &absolute"
+msgstr "&Düzenle"
+
+#: edittaskdialog.cpp:85
+msgid "&Session time: "
+msgstr "&Oturum süresi: "
+
+#: edittaskdialog.cpp:88
+msgid "&Time:"
+msgstr "&Süre:"
+
+#: edittaskdialog.cpp:124
+msgid "Edit &relative (apply to both time and session time)"
+msgstr "&Bağıntılı Düzenle (toplam süre ve oturum süresine uygula)"
+
+#: edittaskdialog.cpp:168
+msgid "A&uto tracking"
+msgstr "&Otomatik izleme"
+
+#: edittaskdialog.cpp:177
+msgid "In Desktop"
+msgstr "Masaüstünde"
+
+#: edittaskdialog.cpp:228
+msgid "Enter the name of the task here. This name is for your eyes only."
+msgstr "Görevin adını buraya girin. Bu isim yanlızca görevi izlemeniz içindir."
+
+#: edittaskdialog.cpp:231
+msgid ""
+"Use this option to set the time spent on this task to an absolute value.\n"
+"\n"
+"For example, if you have worked exactly four hours on this task during the "
+"current session, you would set the Session time to 4 hr."
+msgstr ""
+"Bu özelliği bu görev için geçen zamana mutlak bir değer atamak için kullanın.\n"
+"\n"
+"Örneğin, eğer bu oturumda bu görev için tam olarak 4 saat harcadıyanız, oturum "
+"süresine 4 saat yazabilirsiniz."
+
+#: edittaskdialog.cpp:236
+msgid ""
+"Use this option to change the time spent on this task relative to its current "
+"value.\n"
+"\n"
+"For example, if you worked on this task for one hour without the timer running, "
+"you would add 1 hr."
+msgstr ""
+"Bu özelliği bu görev için geçen zamana göreceli bir değer atamak için "
+"kullanın.\n"
+"\n"
+"Örneğin, eğer bu görev için zamanlayıcıyı çalıştırmadan 1 saat harcadıyanız,  "
+"oturum süresine 1 saat ekleyebilirsiniz."
+
+#: edittaskdialog.cpp:241
+msgid "This is the time the task has been running since all times were reset."
+msgstr "Tüm zamanlayıcıların sıfırlanmasından beri bu görevin çalıştığı süre."
+
+#: edittaskdialog.cpp:244
+msgid "This is the time the task has been running this session."
+msgstr "Görevin bu oturumun başından beri geçirdiği süre."
+
+#: edittaskdialog.cpp:246
+msgid ""
+"Specify how much time to add or subtract to the overall and session time"
+msgstr ""
+"Toplam süreye ve oturum süresine ne kadar zaman ekleyip çıkaracağımızı "
+"belirtiniz."
+
+#: edittaskdialog.cpp:250
+msgid ""
+"Use this option to automatically start the timer on this task when you switch "
+"to the specified desktop(s)."
+msgstr ""
+"Belirtilen masaüstlerine geçildiğinde bu görevin zamanlayıcısının kendiliğinden "
+"başlaması için bu özelliği kullanınız."
+
+#: edittaskdialog.cpp:253
+msgid ""
+"Select the desktop(s) that will automatically start the timer on this task."
+msgstr ""
+"Bu görevin zamanlayıcısını kendiliğinden başlatacak masaüstlerini seçiniz."
+
+#: idletimedetector.cpp:73
+msgid "Idle Detection"
+msgstr "Boşluk Bulucu"
+
+#: idletimedetector.cpp:74
+msgid "Desktop has been idle since %1. What should we do?"
+msgstr "Masaüstü %1'den beri boş duruyor. Ne yapalım?"
+
+#: idletimedetector.cpp:76
+msgid "Revert && Stop"
+msgstr "Geriye Al ve Dur"
+
+#: idletimedetector.cpp:77
+msgid "Revert && Continue"
+msgstr "Geriye Al ve Devam Et"
+
+#: idletimedetector.cpp:78
+msgid "Continue Timing"
+msgstr "Zamanlamaya Devam Et"
+
+#: karm_part.cpp:124 mainwindow.cpp:262
+msgid "Start &New Session"
+msgstr "Yeni Oturum &Başlat"
+
+#: karm_part.cpp:130 mainwindow.cpp:268
+msgid "&Reset All Times"
+msgstr "&Tüm Süreyi Sıfırla"
+
+#: karm_part.cpp:141 mainwindow.cpp:279
+msgid "S&top"
+msgstr "&Dur"
+
+#: karm_part.cpp:146 mainwindow.cpp:284
+msgid "Stop &All Timers"
+msgstr "&Zaman Sayaçlarını Durdur"
+
+#: karm_part.cpp:153 mainwindow.cpp:291
+msgid "&New..."
+msgstr "&Yeni..."
+
+#: karm_part.cpp:158 mainwindow.cpp:296
+msgid "New &Subtask..."
+msgstr "Yeni Alt &Görev..."
+
+#: karm_part.cpp:168 mainwindow.cpp:306
+msgid "&Edit..."
+msgstr "Dü&zenle..."
+
+#: karm_part.cpp:180 mainwindow.cpp:318
+msgid "&Mark as Complete"
+msgstr "Bit&miş Olarak İşaretle"
+
+#: karm_part.cpp:187 mainwindow.cpp:325
+msgid "&Mark as Incomplete"
+msgstr "Bit&memiş Olarak İşaretle"
+
+#: karm_part.cpp:194 mainwindow.cpp:332
+msgid "&Copy Totals to Clipboard"
+msgstr "&Toplamları Panoya Ekle"
+
+#: karm_part.cpp:201 mainwindow.cpp:347
+msgid "Copy &History to Clipboard"
+msgstr "&Geçmişi Panoya Kopyala"
+
+#: karm_part.cpp:209 mainwindow.cpp:355
+msgid "Import &Legacy Flat File..."
+msgstr "&Legacy Flat Dosyası Al..."
+
+#: karm_part.cpp:212 mainwindow.cpp:358
+msgid "&Export to CSV File..."
+msgstr "&CSV Dosyasına Aktar..."
+
+#: karm_part.cpp:215 mainwindow.cpp:361
+msgid "Export &History to CSV File..."
+msgstr "G&eçmişi CVS Dosyasına Aktar..."
+
+#: karm_part.cpp:218 mainwindow.cpp:364
+msgid "Import Tasks From &Planner..."
+msgstr "Planner'dan Görevleri &Al..."
+
+#: karm_part.cpp:221
+msgid "Configure KArm..."
+msgstr "KArm Uygulamasını Yapılandır..."
+
+#: karm_part.cpp:233 mainwindow.cpp:379
+msgid "Configure key bindings"
+msgstr "Tuş bağıntılarını yapılandır"
+
+#: karm_part.cpp:234 mainwindow.cpp:380
+msgid "This will let you configure keybindings which is specific to karm"
+msgstr "Karm için özel tuş bağıntıları ayarlamanıza izin verir."
+
+#: karm_part.cpp:237 mainwindow.cpp:383
+msgid "Start a new session"
+msgstr "Yeni bir oturum başlat"
+
+#: karm_part.cpp:238 mainwindow.cpp:384
+msgid ""
+"This will reset the session time to 0 for all tasks, to start a new session, "
+"without affecting the totals."
+msgstr ""
+"Tüm görevler için oturum süresini sıfırlar, toplamları etkilemeden yeni bir "
+"oturum başlatır."
+
+#: karm_part.cpp:242 mainwindow.cpp:388
+msgid "Reset all times"
+msgstr "Tüm süreleri sıfırla"
+
+#: karm_part.cpp:243 mainwindow.cpp:389
+msgid ""
+"This will reset the session and total time to 0 for all tasks, to restart from "
+"scratch."
+msgstr ""
+"Tüm görevler için oturum süresini ve toplam süreyi sıfırlar, yeniden başlatır."
+
+#: karm_part.cpp:247 mainwindow.cpp:393
+msgid "Start timing for selected task"
+msgstr "Seçili görevin zamanlayıcısını başlat"
+
+#: karm_part.cpp:248 mainwindow.cpp:394
+msgid ""
+"This will start timing for the selected task.\n"
+"It is even possible to time several tasks simultaneously.\n"
+"\n"
+"You may also start timing of a tasks by double clicking the left mouse button "
+"on a given task. This will, however, stop timing of other tasks."
+msgstr ""
+"Bu işlem seçili görev için zamanlayıcıyı başlatacaktır.\n"
+"Aynı anda bir kaç görev de başlatılabilir.\n"
+"\n"
+"Ayrıca belirli bir görevin üzerine çift tıklamakla da bu işlem \n"
+"yapılabilir. Ancak bu durum diğer görevlerin zamanlayıcılarını\n"
+"durduracaktır."
+
+#: karm_part.cpp:257 karm_part.cpp:258 mainwindow.cpp:403 mainwindow.cpp:404
+msgid "Stop timing of the selected task"
+msgstr "Seçili görevin zamanlayıcısını durdur"
+
+#: karm_part.cpp:260 karm_part.cpp:261 mainwindow.cpp:406 mainwindow.cpp:407
+msgid "Stop all of the active timers"
+msgstr "Tüm aktif zamanlayıcıları durdur"
+
+#: karm_part.cpp:263 mainwindow.cpp:409
+msgid "Create new top level task"
+msgstr "Yeni bir üst seviye görev oluştur"
+
+#: karm_part.cpp:264 mainwindow.cpp:410
+msgid "This will create a new top level task."
+msgstr "Bu yeni bir üst seviye görev oluşturacaktır."
+
+#: karm_part.cpp:266 mainwindow.cpp:412
+msgid "Delete selected task"
+msgstr "Seçili görevi sil"
+
+#: karm_part.cpp:267 mainwindow.cpp:413
+msgid "This will delete the selected task and all its subtasks."
+msgstr "Bu seçilen bir görevi ve tüm alt görevlerini silecektir."
+
+#: karm_part.cpp:270 mainwindow.cpp:416
+msgid "Edit name or times for selected task"
+msgstr "Seçilen görev için isim veya zamanları düzenle"
+
+#: karm_part.cpp:271 mainwindow.cpp:417
+msgid ""
+"This will bring up a dialog box where you may edit the parameters for the "
+"selected task."
+msgstr ""
+"Karşınıza gelecek olan bir pencereden seçilen görev için isimleri ya da "
+"zamanları düzenleyebilirsiniz."
+
+#: karm_part.cpp:280 mainwindow.cpp:426
+msgid "Copy task totals to clipboard"
+msgstr "Görev toplamlarını panoya kopyala"
+
+#: karm_part.cpp:281 mainwindow.cpp:427
+msgid "Copy time card history to clipboard."
+msgstr "Zaman kartı geçmişini panoya kopyala"
+
+#: karm_part.cpp:408
+msgid "karmPart"
+msgstr "karmPart"
+
+#: karm_part.cpp:427 mainwindow.cpp:476
+msgid "task_popup"
+msgstr "açılan_görevmenüsü"
+
+#: karm_part.cpp:579 mainwindow.cpp:613
+#, c-format
+msgid "Invalid error number: %1"
+msgstr "Geçersiz hata numarası: %1"
+
+#: karmstorage.cpp:201 karmstorage.cpp:270
+msgid "Error loading \"%1\": could not find parent (uid=%2)"
+msgstr "\"%1\" yüklemesinde hata oluştu: Ebeveyn (uid=%2) bulunamadı"
+
+#: karmstorage.cpp:394
+msgid "File \"%1\" not found."
+msgstr "\"%1\" dosyası bulunamadı."
+
+#: karmstorage.cpp:399 karmstorage.cpp:670 karmstorage.cpp:1024
+msgid "Could not open \"%1\"."
+msgstr "\"%1\" açılamadı."
+
+#: karmstorage.cpp:590
+msgid "Export Progress"
+msgstr "Kayıt Süreci"
+
+#: karmstorage.cpp:918
+msgid ""
+"Task History\n"
+msgstr ""
+"Görev Geçmişi\n"
+
+#: karmstorage.cpp:919 timekard.cpp:315
+msgid "From %1 to %2"
+msgstr "%1 -> %2"
+
+#: karmstorage.cpp:923 timekard.cpp:319
+#, c-format
+msgid "Printed on: %1"
+msgstr "Yazdırılma tarihi: %1"
+
+#: karmstorage.cpp:960
+msgid "Sum"
+msgstr "Toplam"
+
+#: karmstorage.cpp:960
+msgid "Total Sum"
+msgstr "Genel Toplam"
+
+#: karmstorage.cpp:960
+msgid "Task Hierarchy"
+msgstr "Görev Sıradüzeni"
+
+#: karmstorage.cpp:970
+msgid "  No hours logged."
+msgstr "  Hiçbir saat kaydedilmedi."
+
+#: karmstorage.cpp:1011 mainwindow.cpp:214 print.cpp:50 print.cpp:88
+#: timekard.cpp:98 timekard.cpp:303
+msgid "Total"
+msgstr "Toplam"
+
+#: karmstorage.cpp:1135 main.cpp:30
+msgid "KArm"
+msgstr "KArm"
+
+#: ktimewidget.cpp:80
+msgid ""
+"_: abbreviation for hours\n"
+" hr. "
+msgstr " s"
+
+#: ktimewidget.cpp:94
+msgid ""
+"_: abbreviation for minutes\n"
+" min. "
+msgstr " d"
+
+#: main.cpp:13
+msgid "KDE Time tracker tool"
+msgstr "KDE Zaman izleme aracı"
+
+#: main.cpp:17
+msgid "Just caught a software interrupt."
+msgstr "Şu anda program kesme isteği algılandı."
+
+#: main.cpp:24
+msgid "The iCalendar file to open"
+msgstr "Açılacak iCalendar dosyası"
+
+#: main.cpp:34
+msgid "Current Maintainer"
+msgstr "Güncel Bakımcı"
+
+#: main.cpp:36
+msgid "Original Author"
+msgstr "Asıl Yazar"
+
+#: mainwindow.cpp:104
+msgid "Save failed, most likely because the file could not be locked."
+msgstr "Dosya muhtemelen kitlenemediği için kaydetme başarısız oldu."
+
+#: mainwindow.cpp:106
+msgid "Could not modify calendar resource."
+msgstr "Takvim kaynağı değiştirilemedi."
+
+#: mainwindow.cpp:108
+msgid "Out of memory--could not create object."
+msgstr ""
+
+#: mainwindow.cpp:110
+msgid "UID not found."
+msgstr ""
+
+#: mainwindow.cpp:112
+msgid "Invalidate date--format is YYYY-MM-DD."
+msgstr "Geçersiz tarih--biçem YYYY-MM-DD'dir."
+
+#: mainwindow.cpp:114
+msgid "Invalid time--format is YYYY-MM-DDTHH:MM:SS."
+msgstr "Geçersiz zaman--biçem YYYY-MM-DDTHH:MM:SS'dir."
+
+#: mainwindow.cpp:116
+msgid "Invalid task duration--must be greater than zero."
+msgstr ""
+
+#: mainwindow.cpp:146
+msgid "Successfully saved tasks and history"
+msgstr "Görevler ve geçmiş başarıyla aktarıldı"
+
+#: mainwindow.cpp:156
+msgid "Successfully exported History to CSV-file"
+msgstr "Geçmiş, CVS dosyasına başarıyla aktarıldı"
+
+#: mainwindow.cpp:205
+#, c-format
+msgid "Session: %1"
+msgstr "Oturum: %1"
+
+#: mainwindow.cpp:208
+#, c-format
+msgid "Total: %1"
+msgstr "Toplam: %1"
+
+#: mainwindow.cpp:213 print.cpp:52 print.cpp:88
+msgid "Session"
+msgstr "Oturum"
+
+#: mainwindow.cpp:242
+msgid "Do you really want to reset the time to zero for all tasks?"
+msgstr "Tüm görevler için zamanı sıfırlamak istediğinizden emin misiniz?"
+
+#: mainwindow.cpp:243
+msgid "Confirmation Required"
+msgstr "Onaylama Gerekli"
+
+#: mainwindow.cpp:243
+msgid "Reset All Times"
+msgstr "&Tüm Sayaçları Sıfırla"
+
+#: mainwindow.cpp:340
+msgid "&Copy Session Time to Clipboard"
+msgstr "&Oturum Süresini Panoya Kopyala"
+
+#: preferences.cpp:23
+msgid "Preferences"
+msgstr "Tercihler"
+
+#: preferences.cpp:50
+msgid "Behavior"
+msgstr "Davranış"
+
+#: preferences.cpp:50
+msgid "Behavior Settings"
+msgstr "Davranış Özellikleri"
+
+#: preferences.cpp:58
+msgid "Detect desktop as idle after"
+msgstr "Masaüstünü "
+
+#: preferences.cpp:61 preferences.cpp:119
+msgid " min"
+msgstr " dakika sonra boş olarak tanımla"
+
+#: preferences.cpp:63
+msgid "Prompt before deleting tasks"
+msgstr "Görevleri silmeden önce sor"
+
+#: preferences.cpp:78
+msgid "Display"
+msgstr "Görünüm"
+
+#: preferences.cpp:78
+msgid "Display Settings"
+msgstr "Görünüm Ayarları"
+
+#: preferences.cpp:85
+msgid "Columns displayed:"
+msgstr "Görüntülenen sütunlar:"
+
+#: preferences.cpp:87
+msgid "Session time"
+msgstr "Oturum süresi"
+
+#: preferences.cpp:89
+msgid "Cumulative task time"
+msgstr "Toplam görev süresi"
+
+#: preferences.cpp:91
+msgid "Total session time"
+msgstr "Toplam oturum süresi"
+
+#: preferences.cpp:93
+msgid "Total task time"
+msgstr "Toplam Görev Süresi"
+
+#: preferences.cpp:108
+msgid "Storage"
+msgstr "Depo"
+
+#: preferences.cpp:108
+msgid "Storage Settings"
+msgstr "Depo Ayarları"
+
+#: preferences.cpp:117
+msgid "Save tasks every"
+msgstr "Görev kayıt aralığı"
+
+#: preferences.cpp:122
+msgid "iCalendar file:"
+msgstr "iCalendar dosyası:"
+
+#: preferences.cpp:129
+msgid "Log history"
+msgstr "Kayıt Geçmişi"
+
+#: print.cpp:25
+msgid "Print Times"
+msgstr "Süreyi Yaz"
+
+#: print.cpp:57
+msgid "Task Name "
+msgstr "Görev Adı "
+
+#: print.cpp:82
+#, c-format
+msgid "KArm - %1"
+msgstr "KArm - %1"
+
+#: print.cpp:88 taskview.cpp:54
+msgid "Task Name"
+msgstr "Görev Adı"
+
+#: printdialog.cpp:44
+msgid "Print Dialog"
+msgstr "Pencereyi Yaz"
+
+#. i18n: file csvexportdialog_base.ui line 150
+#: printdialog.cpp:56 rc.cpp:48
+#, no-c-format
+msgid "Date Range"
+msgstr "Tarih Aralığı"
+
+#. i18n: file csvexportdialog_base.ui line 164
+#: printdialog.cpp:63 rc.cpp:54
+#, no-c-format
+msgid "From:"
+msgstr "Başlangıç:"
+
+#. i18n: file csvexportdialog_base.ui line 188
+#: printdialog.cpp:71 rc.cpp:57
+#, no-c-format
+msgid "To:"
+msgstr "Bitiş:"
+
+#: printdialog.cpp:79
+msgid "Selected Task"
+msgstr "Seçili Görev"
+
+#: printdialog.cpp:80
+msgid "All Tasks"
+msgstr "Tüm Görevler"
+
+#: printdialog.cpp:83
+msgid "Summarize per week"
+msgstr "Haftalık olarak özetle"
+
+#: printdialog.cpp:85
+msgid "Totals only"
+msgstr "Sadece toplamlar"
+
+#. i18n: file karmui.rc line 9
+#: rc.cpp:6
+#, no-c-format
+msgid "&Import/Export"
+msgstr "&Al/Aktar"
+
+#. i18n: file karmui.rc line 19
+#: rc.cpp:9
+#, no-c-format
+msgid "&Clock"
+msgstr "Saa&t"
+
+#. i18n: file karmui.rc line 25
+#: rc.cpp:12
+#, no-c-format
+msgid "&Task"
+msgstr "&Görev"
+
+#. i18n: file csvexportdialog_base.ui line 16
+#: rc.cpp:21
+#, no-c-format
+msgid "CSV Export"
+msgstr "CVS'e Aktar"
+
+#. i18n: file csvexportdialog_base.ui line 64
+#: rc.cpp:24
+#, no-c-format
+msgid "&Export"
+msgstr "&Aktar"
+
+#. i18n: file csvexportdialog_base.ui line 83
+#: rc.cpp:30
+#, no-c-format
+msgid "Export to:"
+msgstr "Aktarılacak konum:"
+
+#. i18n: file csvexportdialog_base.ui line 91
+#: rc.cpp:33
+#, no-c-format
+msgid "The file where Karm will write the data."
+msgstr "Karm'ın veriyi yazacağı dosya."
+
+#. i18n: file csvexportdialog_base.ui line 110
+#: rc.cpp:36
+#, no-c-format
+msgid "Quotes:"
+msgstr "Tırnak araları:"
+
+#. i18n: file csvexportdialog_base.ui line 116
+#: rc.cpp:39
+#, no-c-format
+msgid "\""
+msgstr "\""
+
+#. i18n: file csvexportdialog_base.ui line 121
+#: rc.cpp:42
+#, no-c-format
+msgid "'"
+msgstr "'"
+
+#. i18n: file csvexportdialog_base.ui line 139
+#: rc.cpp:45
+#, no-c-format
+msgid "All fields are quoted in the output."
+msgstr "Çıkıştaki tüm alanlar tırnak içindedir."
+
+#. i18n: file csvexportdialog_base.ui line 153
+#: rc.cpp:51
+#, no-c-format
+msgid ""
+"<p>An inclusive date range for reporting on time card history.  Not enabled "
+"when reporting on totals.</p>"
+msgstr ""
+
+#. i18n: file csvexportdialog_base.ui line 214
+#: rc.cpp:60
+#, no-c-format
+msgid "Time Format"
+msgstr "Zaman biçemi"
+
+#. i18n: file csvexportdialog_base.ui line 218
+#: rc.cpp:63
+#, no-c-format
+msgid ""
+"<p>You can choose to output time values in fractions of an hour or in "
+"minutes.</p>\n"
+"<p>For example, if the value is 5 hours and 45 minutes, then the Decimal option "
+"would output <tt>5.75</tt>, and the Hours:Minutes option would output <tt>"
+"5:45</tt></p>"
+msgstr ""
+"<p>Çıkış zamanını bir saatin veya dakikanın parçaları olarak seçebilirsiniz.</p>"
+"\n"
+"<p>Örneğin, eğer değer 5 saat 45 dakika ise ondalıklı çıktı <tt>5.75</tt>"
+", Saat:Dakika çıktısı <tt>5:45</tt> olacaktır</p>"
+
+#. i18n: file csvexportdialog_base.ui line 232
+#: rc.cpp:67
+#, no-c-format
+msgid "Hours:Minutes"
+msgstr "Saat:Dakika"
+
+#. i18n: file csvexportdialog_base.ui line 240
+#: rc.cpp:70
+#, no-c-format
+msgid "Decimal"
+msgstr "Ondalık"
+
+#. i18n: file csvexportdialog_base.ui line 261
+#: rc.cpp:73
+#, no-c-format
+msgid "Delimiter"
+msgstr "Ayraç"
+
+#. i18n: file csvexportdialog_base.ui line 264
+#: rc.cpp:76
+#, no-c-format
+msgid "The character used to seperate one field from another in the output."
+msgstr "Çıkışta bir alanı diğerinden ayıracak karakter."
+
+#. i18n: file csvexportdialog_base.ui line 275
+#: rc.cpp:79
+#, no-c-format
+msgid "Tab"
+msgstr "Tab"
+
+#. i18n: file csvexportdialog_base.ui line 283
+#: rc.cpp:82
+#, no-c-format
+msgid "Other:"
+msgstr "Diğer:"
+
+#. i18n: file csvexportdialog_base.ui line 291
+#: rc.cpp:85
+#, no-c-format
+msgid "Space"
+msgstr "Boşluk"
+
+#. i18n: file csvexportdialog_base.ui line 299
+#: rc.cpp:88
+#, no-c-format
+msgid "Comma"
+msgstr "Virgül"
+
+#. i18n: file csvexportdialog_base.ui line 338
+#: rc.cpp:91
+#, no-c-format
+msgid "Semicolon"
+msgstr "Noktalı virgül"
+
+#: taskview.cpp:55
+msgid "Session Time"
+msgstr "Oturum Süresi"
+
+#: taskview.cpp:56 timekard.cpp:65
+msgid "Time"
+msgstr "Süre"
+
+#: taskview.cpp:57
+msgid "Total Session Time"
+msgstr "Toplam Oturum Süresi"
+
+#: taskview.cpp:58
+msgid "Total Time"
+msgstr "Toplam Süre"
+
+#: taskview.cpp:211 taskview.cpp:304
+msgid "You are on a too high logical desktop, desktop tracking will not work"
+msgstr ""
+
+#: taskview.cpp:405
+msgid ""
+"Saving is impossible, so timing is useless. \n"
+"Saving problems may result from a full harddisk, a directory name instead of a "
+"file name, or stale locks. Check that your harddisk has enough space, that your "
+"calendar file exists and is a file and remove stale locks, typically from "
+"~/.kde/share/apps/kabc/lock."
+msgstr ""
+
+#: taskview.cpp:495
+msgid "New Task"
+msgstr "Yeni Görev"
+
+#: taskview.cpp:506 taskview.cpp:578
+msgid "Unnamed Task"
+msgstr "İsimsiz Görev"
+
+#: taskview.cpp:521
+msgid ""
+"Error storing new task. Your changes were not saved. Make sure you can edit "
+"your iCalendar file. Also quit all applications using this file and remove any "
+"lock file related to its name from ~/.kde/share/apps/kabc/lock/ "
+msgstr ""
+
+#: taskview.cpp:560
+msgid "New Sub Task"
+msgstr "Yeni Alt Görev"
+
+#: taskview.cpp:572
+msgid "Edit Task"
+msgstr "Görevi Düzenle"
+
+#: taskview.cpp:626 taskview.cpp:644
+msgid "No task selected."
+msgstr "Seçili görev yok."
+
+#: taskview.cpp:652
+msgid ""
+"Are you sure you want to delete the task named\n"
+"\"%1\" and its entire history?"
+msgstr ""
+"\"%1\" isimli görevi ve tüm geçmişini\n"
+"tamamen silmek istiyor musunuz?"
+
+#: taskview.cpp:655 taskview.cpp:663
+msgid "Deleting Task"
+msgstr "Görev Siliniyor"
+
+#: taskview.cpp:659
+msgid ""
+"Are you sure you want to delete the task named\n"
+"\"%1\" and its entire history?\n"
+"NOTE: all its subtasks and their history will also be deleted."
+msgstr ""
+"\"%1\" isimli görevi ve tüm geçmişini\n"
+"tamamen silmek istiyor musunuz?\n"
+"NOT: Tüm alt görevler ve geçmiş de silinecektir."
+
+#: taskview.cpp:818
+msgid ""
+"Copy totals for just this task and its subtasks, or copy totals for all tasks?"
+msgstr ""
+"Sadece bu görev ve alt görevlerin toplamını mı, yoksa tüm görevlerin toplamını "
+"mı kaydedeceksiniz?"
+
+#: taskview.cpp:819
+msgid "Copy Totals to Clipboard"
+msgstr "&Toplamları Panoya Ekle"
+
+#: taskview.cpp:820 taskview.cpp:844
+msgid "Copy This Task"
+msgstr "Bu Görevi Kopyala"
+
+#: taskview.cpp:820 taskview.cpp:844
+msgid "Copy All Tasks"
+msgstr "&Tüm Görevleri Kopyala"
+
+#: taskview.cpp:842
+msgid ""
+"Copy session time for just this task and its subtasks, or copy session time for "
+"all tasks?"
+msgstr ""
+"Sadece bu görev ve alt görevlerin oturum süresini mi, yoksa tüm görevlerin "
+"toplam oturum süresini mi kaydedeceksiniz?"
+
+#: taskview.cpp:843
+msgid "Copy Session Time to Clipboard"
+msgstr "Oturum Süresini Panoya Kopyala"
+
+#: taskviewwhatsthis.cpp:34
+msgid "Task Name shows the name of a task or subtask you are working on."
+msgstr ""
+
+#: taskviewwhatsthis.cpp:38
+msgid ""
+"Session time: Time for this task since you chose \"Start New Session\".\n"
+"Total Session time: Time for this task and all its subtasks since you chose "
+"\"Start New Session\".\n"
+"Time: Overall time for this task.\n"
+"Total Time: Overall time for this task and all its subtasks."
+msgstr ""
+
+#: timekard.cpp:61 timekard.cpp:313
+msgid "Task Totals"
+msgstr "Görev Toplamları"
+
+#: timekard.cpp:66
+msgid "Task"
+msgstr "Görev"
+
+#: timekard.cpp:101
+msgid "No tasks."
+msgstr "Görev yok."
+
+#: timekard.cpp:259
+msgid "No hours logged."
+msgstr "Hiçbir saat kaydedilmedi."
+
+#: timekard.cpp:313
+msgid "Task History"
+msgstr "Görev Geçmişi"
+
+#: timekard.cpp:356
+#, c-format
+msgid "Week of %1"
+msgstr "%1 haftası"
+
+#: tray.cpp:134
+msgid "No active tasks"
+msgstr "Aktif görev yok"
+
+#: tray.cpp:139
+msgid ", ..."
+msgstr ", ..."
+
+#: tray.cpp:154
+msgid ", "
+msgstr ", "

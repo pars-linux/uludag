@@ -1,0 +1,98 @@
+# translation of khtmlsettingsplugin.po to turkish
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# Görkem Çetin, <gorkem@kde.org>, 2001
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: khtmlsettingsplugin\n"
+"POT-Creation-Date: 2005-02-10 01:34+0100\n"
+"PO-Revision-Date: 2004-05-28 12:23+0200\n"
+"Last-Translator: YILDIZ KARDEŞLER <turkishprogram@xposta.com>\n"
+"Language-Team: turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "YILDIZ KARDEŞLER"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "turkishprogram@xposta.com"
+
+#. i18n: file khtmlsettingsplugin.rc line 8
+#: rc.cpp:6
+#, no-c-format
+msgid "Extra Toolbar"
+msgstr "Ek Araççubuğu"
+
+#: settingsplugin.cpp:38 settingsplugin.cpp:52
+msgid "HTML Settings"
+msgstr "HTML Ayarları"
+
+#: settingsplugin.cpp:59
+msgid "Java&Script"
+msgstr "Java&Script"
+
+#: settingsplugin.cpp:64
+msgid "&Java"
+msgstr "&Java"
+
+#: settingsplugin.cpp:69
+msgid "&Cookies"
+msgstr "Ç&erezler"
+
+#: settingsplugin.cpp:74
+msgid "&Plugins"
+msgstr "&Eklentiler"
+
+#: settingsplugin.cpp:79
+msgid "Autoload &Images"
+msgstr "&Resimleri Otomatik Yükle"
+
+#: settingsplugin.cpp:86
+msgid "Enable Pro&xy"
+msgstr "&Vekil Sunucuyu Etkinleştir"
+
+#: settingsplugin.cpp:89
+msgid "Disable Pro&xy"
+msgstr "&Vekil Sunucuyu İptal Et"
+
+#: settingsplugin.cpp:92
+msgid "Enable Cac&he"
+msgstr "Ön&belleği Etkinleştir"
+
+#: settingsplugin.cpp:95
+msgid "Disable Cac&he"
+msgstr "Ön&belleği İptal Et"
+
+#: settingsplugin.cpp:99
+msgid "Cache Po&licy"
+msgstr "Önbellek K&ullanımı"
+
+#: settingsplugin.cpp:103
+msgid "&Keep Cache in Sync"
+msgstr "Ö&nbelleği Her Zaman Eşzamanla"
+
+#: settingsplugin.cpp:104
+msgid "&Use Cache if Possible"
+msgstr "Mümkünse Önbe&llek Kullan"
+
+#: settingsplugin.cpp:105
+msgid "&Offline Browsing Mode"
+msgstr "&Çevrimdışı Çalışma Kipi"
+
+#: settingsplugin.cpp:199
+msgid "I can't enable cookies, because the cookie daemon could not be started."
+msgstr "Çerezler etkin hale getirilemiyor, çünkü çerez programı çalışmıyor."
+
+#: settingsplugin.cpp:201
+msgid "Cookies Disabled"
+msgstr "Çerezler Pasif"

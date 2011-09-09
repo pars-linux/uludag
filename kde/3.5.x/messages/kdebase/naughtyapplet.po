@@ -1,0 +1,81 @@
+# translation of naughtyapplet.po to
+# Copyright (C) 2007 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2001.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: naughtyapplet\n"
+"POT-Creation-Date: 2008-08-19 01:16+0200\n"
+"PO-Revision-Date: 2007-07-06 16:21+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=1; plural=0;\n"
+
+#: NaughtyApplet.cpp:111
+msgid ""
+"A program called '%1' is slowing down the others on your machine. It may have a "
+"bug that is causing this, or it may just be busy.\n"
+"Would you like to try to stop the program?"
+msgstr ""
+"'%1' programı diğer programların çalışmasını engelliyor ya da yavaşlatıyor. Bu "
+"programda bir hata bulunabilir, ya da çok yoğun çalışıyor olabilir.\n"
+"Programın çalışmasını durdurmak ister misiniz?"
+
+#: NaughtyApplet.cpp:116
+msgid "Keep Running"
+msgstr "Çalışır Durumda Bırak"
+
+#: NaughtyApplet.cpp:122
+msgid "In future, should busy programs called '%1' be ignored?"
+msgstr ""
+"Gelecekte '%1' isimli meşgul programların\n"
+"gözardı edilmesini istiyor musunuz?"
+
+#: NaughtyApplet.cpp:124
+msgid "Ignore"
+msgstr "Yoksay"
+
+#: NaughtyApplet.cpp:124
+msgid "Do Not Ignore"
+msgstr "Yoksayma"
+
+#: NaughtyApplet.cpp:162
+msgid "Naughty applet"
+msgstr "Huysuz program"
+
+#: NaughtyApplet.cpp:164
+msgid "Runaway process catcher"
+msgstr "Problemli süreç yakalayıcı"
+
+#: NaughtyConfigDialog.cpp:55
+msgid "&Update interval:"
+msgstr "&Güncelleme aralığı:"
+
+#: NaughtyConfigDialog.cpp:56
+msgid "CPU &load threshold:"
+msgstr "İşlemci &yük sınırı:"
+
+#: NaughtyConfigDialog.cpp:62
+msgid "&Programs to Ignore"
+msgstr "Gö&zardı edilecek programlar"
+
+#: NaughtyProcessMonitor.cpp:242 NaughtyProcessMonitor.cpp:279
+msgid "Unknown"
+msgstr "Bilinmiyor"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"

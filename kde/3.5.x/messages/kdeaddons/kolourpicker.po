@@ -1,0 +1,60 @@
+# translation of kolourpicker.po to turkish
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# Görkem Çetin, <gorkem@kde.org>, 2001
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kolourpicker\n"
+"POT-Creation-Date: 2008-08-12 01:19+0200\n"
+"PO-Revision-Date: 2003-06-03 23:27+0300\n"
+"Last-Translator: Rıdvan CAN <ridvan@geleceklinux.org>\n"
+"Language-Team: turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: kolourpicker.cpp:66
+msgid "Color Picker"
+msgstr "Renk Seçici"
+
+#: kolourpicker.cpp:68
+msgid "An applet to pick color values from anywhere on the screen"
+msgstr ""
+"Ekranın herhangi bir yerindeki renk değerini almak için kullanışlı bir eklenti"
+
+#: kolourpicker.cpp:71
+msgid "Original Author"
+msgstr "Asıl Yazar"
+
+#: kolourpicker.cpp:85
+msgid "Pick a color"
+msgstr "Bir renk seçin"
+
+#: kolourpicker.cpp:97 kolourpicker.cpp:133
+msgid "History"
+msgstr "Geçmiş"
+
+#: kolourpicker.cpp:147
+msgid "&Clear History"
+msgstr "&Geçmişi Temizle"
+
+#: kolourpicker.cpp:289
+msgid "Copy Color Value"
+msgstr "Renk Değerini Kopyala"
+
+#~ msgid "Unimplemented help system."
+#~ msgstr "Yardım sistemi henüz oluşturulmamış."

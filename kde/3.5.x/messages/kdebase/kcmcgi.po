@@ -1,0 +1,57 @@
+# translation of kcmcgi.po to Turkish
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2003
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmcgi\n"
+"POT-Creation-Date: 2005-05-18 21:24+0200\n"
+"PO-Revision-Date: 2003-03-23 13:50+0000\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: kcmcgi.cpp:51
+msgid "Paths to Local CGI Programs"
+msgstr "CGI Programlarının Yolu"
+
+#: kcmcgi.cpp:59
+msgid "Add..."
+msgstr "Ekle..."
+
+#: kcmcgi.cpp:71
+msgid "kcmcgi"
+msgstr "kcmcgi"
+
+#: kcmcgi.cpp:72
+msgid "CGI KIO Slave Control Module"
+msgstr "CGI KIO Kontrol Modülü"
+
+#: kcmcgi.cpp:74
+msgid "(c) 2002 Cornelius Schumacher"
+msgstr "(c) 2002 Cornelius Schumacher"
+
+#: kcmcgi.cpp:147
+msgid ""
+"<h1>CGI Scripts</h1> The CGI KIO slave lets you execute local CGI programs "
+"without the need to run a web server. In this control module you can configure "
+"the paths that are searched for CGI scripts."
+msgstr ""
+"<h1>CGI Programları</h1> CGI KIO sistemi, yerel CGI programlarınızı herhangi "
+"bir web sunucu kullanmadan çalıştırmanıza olanak verir. Bu modülde CGI "
+"betiklerinin araştırılacağı yolları belirtebilirsiniz."

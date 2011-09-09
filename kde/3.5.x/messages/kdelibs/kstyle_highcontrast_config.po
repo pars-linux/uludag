@@ -1,0 +1,18 @@
+# translation of kstyle_highcontrast_config.po to Turkish
+# Görkem Çetin <gorkem@gorkemcetin.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kstyle_highcontrast_config\n"
+"POT-Creation-Date: 2005-05-18 21:23+0200\n"
+"PO-Revision-Date: 2005-05-12 12:40+0000\n"
+"Last-Translator: Görkem Çetin <gorkem@gorkemcetin.com>\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: highcontrastconfig.cpp:49
+msgid "Use wider lines"
+msgstr "Daha geniş satır kullan"

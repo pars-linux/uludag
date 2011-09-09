@@ -1,0 +1,59 @@
+# translation of kdelirc.po to Türkçe
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelirc\n"
+"POT-Creation-Date: 2004-10-12 01:17+0200\n"
+"PO-Revision-Date: 2003-11-16 19:36+0200\n"
+"Last-Translator: YILDIZ KARDEŞLER <turkishprogram@xposta.com>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: iraction.cpp:98
+msgid "Exit mode"
+msgstr "Çıkış kipi"
+
+#: iraction.cpp:100
+#, c-format
+msgid "Switch to %1"
+msgstr "%1'e Geç"
+
+#: iraction.cpp:103
+msgid "Just start"
+msgstr "Sadece başla"
+
+#: iraction.cpp:118
+msgid "Do actions before. "
+msgstr "Önce bu işlemleri yap. "
+
+#: iraction.cpp:119
+msgid "Do actions after. "
+msgstr "Sonra bu işlemleri yap. "
+
+#: iraction.cpp:123
+msgid "Auto-start. "
+msgstr "Otomatik başla. "
+
+#: iraction.cpp:124
+msgid "Repeatable. "
+msgstr "Tekrarlanabilir. "
+
+#: iraction.cpp:125
+msgid "Do nothing if many instances. "
+msgstr "Çok örnek varsa bi şey yapma."
+
+#: iraction.cpp:126
+msgid "Send to top instance. "
+msgstr "Üst örneğe gönder."
+
+#: iraction.cpp:127
+msgid "Send to bottom instance. "
+msgstr "Alt örneğe gönder"
+
+#: iraction.cpp:127
+msgid "Send to all instances. "
+msgstr "Tüm örneklere gönder."

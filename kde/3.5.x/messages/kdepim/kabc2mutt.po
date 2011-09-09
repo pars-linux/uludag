@@ -1,0 +1,57 @@
+# translation of kabc2mutt.po to Türkçe
+# Translation of kabc2mutt.po to Turkish
+# Copyright (C) 2002,2003, 2005 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Ozan Eren BILGEN <oebilgen@uekae.tubitak.gov.tr>, 2005.
+# Engin Çağatay <engincagatay@yahoo.com>, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: kabc2mutt\n"
+"POT-Creation-Date: 2005-04-12 18:18+0200\n"
+"PO-Revision-Date: 2005-07-17 00:48+0300\n"
+"Last-Translator: Engin Çağatay <engincagatay@yahoo.com>\n"
+"Language-Team: Türkçe <yerelleştirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: kabc2mutt.cpp:115
+msgid "preferred"
+msgstr "tercih edilen"
+
+#: main.cpp:30
+msgid "kabc2mutt"
+msgstr "kabc2mutt"
+
+#: main.cpp:31
+msgid "kabc - mutt converter"
+msgstr "kabc - mutt dönüştürücüsü"
+
+#: main.cpp:35
+msgid "Only show contacts where name or address matches <substring>"
+msgstr "Sadece adı ve adresi <altdizi> ile benzeşen bağlantıları göster"
+
+#: main.cpp:36
+msgid ""
+"Default format is 'alias'. 'query' returns email<tab>name<tab>"
+", as needed by mutt's query_command"
+msgstr ""
+"Öntanımlı biçem 'takma isim'dir. 'query' mutt'un sorgu komutundagerektiği gibi "
+"e-posta<tab>ad<tab> döndürür."
+
+#: main.cpp:37
+msgid "Default key format is 'JohDoe', this option turns it into 'jdoe'"
+msgstr "Öntanımlı tuş biçemi 'JohDoe'dir, bu seçenek onu 'jdoe'ye dönüştürür"
+
+#: main.cpp:38
+msgid "Make queries case insensitive"
+msgstr "Sorguları büyük/küçük harfe duyarsız yap"
+
+#: main.cpp:39
+msgid "Return all mail addresses, not just the preferred one"
+msgstr "Sadece tercih edileni değil tüm e-posta adreslerini döndür"
+
+#: main.cpp:70
+msgid "Searching KDE addressbook"
+msgstr "KDE adres defteri taranıyor..."

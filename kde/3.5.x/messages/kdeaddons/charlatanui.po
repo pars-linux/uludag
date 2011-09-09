@@ -1,0 +1,40 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Durmuş Celep <durmusc_tr@yahoo.com>,2002.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>,2002.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2004-10-12 01:18+0200\n"
+"PO-Revision-Date: 2002-09-26 01:34+0300\n"
+"Last-Translator: Ömer Fadıl USTA <omer_fad@hotmail.com>\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.6\n"
+
+#: configmodule.cpp:36
+msgid "Charlatan"
+msgstr "Charlatan"
+
+#: configmodule.cpp:37
+msgid "Charlatan Interface Settings"
+msgstr "Charlatan Arayüz Ayarları"
+
+#: configmodule.cpp:42
+msgid "Scroll song title"
+msgstr "Şarkı ismini kaydır"
+
+#: userinterface.cpp:86 userinterface.cpp:303
+msgid "No File Loaded"
+msgstr "Dosya Yüklenmedi"
+
+#: userinterface.cpp:197
+msgid "Noatun"
+msgstr "Noatun"
+
+#: userinterface.cpp:369
+#, c-format
+msgid "Volume: %1"
+msgstr "Ses: %1"

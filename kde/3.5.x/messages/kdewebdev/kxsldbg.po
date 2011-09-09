@@ -1,0 +1,2221 @@
+# translation of kxsldbg.po to 
+# translation of kxsldbg.po to
+# translation of kxsldbg.po to
+# translation of kxsldbg.po to
+# translation of kxsldbg.po to
+# translation of kxsldbg.po to
+# translation of kxsldbg.po to
+# translation of kxsldbg.po to
+# translation of kxsldbg.po to Türkçe
+# translation of kxsldbg.po to Turkish
+# Copyright (C) 2004, 2005 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004.
+# Aydın Demirel <aydin@kde.org.tr>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kxsldbg\n"
+"POT-Creation-Date: 2008-07-08 01:25+0200\n"
+"PO-Revision-Date: 2005-05-28 21:38+0000\n"
+"Last-Translator: Aydın Demirel <aydin@kde.org.tr>\n"
+"Language-Team:  <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Engin ÇAĞATAY, Aydın Demirel"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "engincagatay@yahoo.com, aydin@kde.org.tr"
+
+#: main.cpp:9
+msgid "A KDE KPart Application for xsldbg, an XSLT debugger"
+msgstr "xsldbg için bir KDE KPart uygulaması, bir XSLT hata ayıklayıcısı"
+
+#: main.cpp:14 xsldbgmain.cpp:97
+msgid "XSL script to run"
+msgstr "Çalıştırılacak XSL betiği"
+
+#: main.cpp:15 xsldbgmain.cpp:98
+msgid "XML data to be transformed"
+msgstr "Dönüştürülecek olan XML verisi"
+
+#: main.cpp:16
+msgid "File to save results to"
+msgstr "Sonuçları kaydetmek için dosya"
+
+#: main.cpp:22
+msgid "KXSLDbg"
+msgstr "KXSLDbg"
+
+#: kxsldbg.cpp:64
+msgid "Could not find our part."
+msgstr "Parçamız bulunamadı."
+
+#: kxsldbg.cpp:164
+msgid "File: %1  Line: %2  Col: %3"
+msgstr "Dosya: %1  Satır: %2  Sütun: %3"
+
+#: kxsldbgpart/xsldbglocallistitem.cpp:32
+#: kxsldbgpart/xsldbglocalvariablesimpl.cpp:71
+msgid "Local"
+msgstr "Yerel"
+
+#: kxsldbgpart/xsldbglocallistitem.cpp:34
+#: kxsldbgpart/xsldbglocalvariablesimpl.cpp:73
+msgid "Global"
+msgstr "Genel"
+
+#: kxsldbgpart/xsldbgbreakpointsimpl.cpp:83
+#: kxsldbgpart/xsldbgbreakpointsimpl.cpp:92
+#: kxsldbgpart/xsldbgbreakpointsimpl.cpp:115
+#: kxsldbgpart/xsldbgbreakpointsimpl.cpp:120
+#: kxsldbgpart/xsldbgbreakpointsimpl.cpp:143
+#: kxsldbgpart/xsldbgbreakpointsimpl.cpp:148
+#: kxsldbgpart/xsldbgdebugger.cpp:297 kxsldbgpart/xsldbgdebugger.cpp:317
+#: kxsldbgpart/xsldbgdebugger.cpp:335 kxsldbgpart/xsldbgdebugger.cpp:355
+#: kxsldbgpart/xsldbgdebugger.cpp:375 kxsldbgpart/xsldbgdebugger.cpp:394
+msgid "Operation Failed"
+msgstr "İşlem Başarısız Oldu"
+
+#: kxsldbgpart/xsldbgbreakpointsimpl.cpp:84
+#: kxsldbgpart/xsldbgbreakpointsimpl.cpp:116
+#: kxsldbgpart/xsldbgbreakpointsimpl.cpp:144
+msgid "A line number was provided without a file name."
+msgstr "Dosya adı olmadan bir satır numarası girildi."
+
+#: kxsldbgpart/xsldbgbreakpointsimpl.cpp:93
+msgid "No details provided or an invalid line number was supplied."
+msgstr "Hiç detay verilmedi ya da geçersiz satır numarası girildi."
+
+#: kxsldbgpart/xsldbgbreakpointsimpl.cpp:121
+msgid "No details provided or an invalid line or ID was supplied."
+msgstr ""
+"Hiç detay verilmedi ya da geçersiz satır numarası ya da kimlik (ID) girildi."
+
+#: kxsldbgpart/xsldbgbreakpointsimpl.cpp:149
+msgid "No details provided."
+msgstr "Hiç detay verilmedi."
+
+#: kxsldbgpart/xsldbginspector.cpp:68
+msgid "Xsldbg Inspector"
+msgstr "Xsldbg Kontrolcüsü"
+
+#: kxsldbgpart/xsldbginspector.cpp:77
+msgid "Breakpoints"
+msgstr "Durma noktaları"
+
+#: kxsldbgpart/xsldbginspector.cpp:83
+msgid "Variables"
+msgstr "Değişkenler"
+
+#: kxsldbgpart/xsldbginspector.cpp:89
+msgid "CallStack"
+msgstr "ÇağrıYığını"
+
+#: kxsldbgpart/xsldbginspector.cpp:95
+msgid "Templates"
+msgstr "Şablonlar"
+
+#: kxsldbgpart/xsldbginspector.cpp:101
+msgid "Sources"
+msgstr "Kaynaklar"
+
+#: kxsldbgpart/xsldbginspector.cpp:107
+msgid "Entities"
+msgstr "Varlıklar"
+
+#: kxsldbgpart/xsldbginspector.cpp:126
+msgid "Apply changes to xsldbg after restarting execution"
+msgstr "Değişiklikleri çalıştırma yeniden başladıktan sonra uygula"
+
+#: kxsldbgpart/xsldbginspector.cpp:133
+msgid "&Refresh"
+msgstr "&Tazele"
+
+#: kxsldbgpart/xsldbginspector.cpp:134
+msgid "Refresh values in inspectors from xsldbg"
+msgstr "xsldbg'dan denetleyiciler içindeki tazeleme değerleri"
+
+#: kxsldbgpart/libxsldbg/files.cpp:192 kxsldbgpart/libxsldbg/files.cpp:215
+msgid ""
+"Error: Unable to open terminal %1.\n"
+msgstr ""
+"Hata: %1 uçbirim açılamadı.\n"
+
+#: kxsldbgpart/libxsldbg/files.cpp:195
+msgid ""
+"Error: Did not previously open terminal.\n"
+msgstr ""
+"Hata: Uçbirim önceden açılmadı.\n"
+
+#: kxsldbgpart/libxsldbg/files.cpp:497
+msgid ""
+"Error: The file name \"%1\" is too long.\n"
+msgstr ""
+"Hata: \"%1\" dosya ismi çok uzun.\n"
+
+#: kxsldbgpart/libxsldbg/files.cpp:521
+msgid ""
+"Error: Unable to change to directory %1.\n"
+msgstr ""
+"Hata: %1 dizinde değiştirilemiyor.\n"
+
+#: kxsldbgpart/libxsldbg/files.cpp:524
+msgid ""
+"Changed to directory %1.\n"
+msgstr ""
+"%1 dizinde değiştirildi.\n"
+
+#: kxsldbgpart/libxsldbg/files.cpp:552
+msgid ""
+"Setting XML Data file name to %1.\n"
+msgstr ""
+"%1 de XML Veri dosya ismi ayarı.\n"
+
+#: kxsldbgpart/libxsldbg/files.cpp:564
+msgid ""
+"Setting stylesheet file name to %1.\n"
+msgstr ""
+"%1 de biçemsayfası dosya ismi ayarı.\n"
+
+#: kxsldbgpart/libxsldbg/files.cpp:581
+msgid ""
+"Setting stylesheet base path to %1.\n"
+msgstr ""
+"%1 de biçemsayfası temel yolu ayarı.\n"
+
+#: kxsldbgpart/libxsldbg/files.cpp:598
+msgid ""
+"Missing file name.\n"
+msgstr ""
+"Kayıp dosya ismi.\n"
+
+#: kxsldbgpart/libxsldbg/files.cpp:1108 kxsldbgpart/libxsldbg/files.cpp:1143
+msgid ""
+"Encoding of text failed.\n"
+msgstr ""
+"Metin kodlaması başarısız.\n"
+
+#: kxsldbgpart/libxsldbg/files.cpp:1179
+#, c-format
+msgid "Unable to initialize encoding %1."
+msgstr "%1 kodlamaya başlanamıyor."
+
+#: kxsldbgpart/libxsldbg/files.cpp:1184
+msgid ""
+"Invalid encoding %1.\n"
+msgstr ""
+"%1 geçersiz kodlama.\n"
+
+#: kxsldbgpart/libxsldbg/files.cpp:1245
+msgid ""
+" ----- more ---- \n"
+msgstr ""
+" ---- daha fazla ---- \n"
+
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:223
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:318
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:1031
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:679
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:713
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1237
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1340
+#: kxsldbgpart/libxsldbg/files.cpp:1353
+#: kxsldbgpart/libxsldbg/files_unix.cpp:61
+#: kxsldbgpart/libxsldbg/files_unix.cpp:153
+#: kxsldbgpart/libxsldbg/search.cpp:106 kxsldbgpart/libxsldbg/search.cpp:1191
+#: kxsldbgpart/libxsldbg/search.cpp:1254 kxsldbgpart/libxsldbg/search.cpp:1315
+#: kxsldbgpart/libxsldbg/search.cpp:1367 kxsldbgpart/libxsldbg/search.cpp:1415
+#: kxsldbgpart/libxsldbg/search.cpp:1469 kxsldbgpart/libxsldbg/search.cpp:1515
+#: kxsldbgpart/libxsldbg/variable_cmds.cpp:105
+#: kxsldbgpart/libxsldbg/xsldbg.cpp:512 kxsldbgpart/libxsldbg/xsldbg.cpp:1061
+msgid ""
+"Error: Out of memory.\n"
+msgstr ""
+"Hata: Yetersiz bellek.\n"
+
+#: kxsldbgpart/libxsldbg/files.cpp:1363
+msgid ""
+"Error: Unable to convert %1 to local file name.\n"
+msgstr ""
+"Hata: Yerel dosya isminde %1 donüştürülemiyor.\n"
+
+#: kxsldbgpart/libxsldbg/param_cmds.cpp:48
+msgid "Failed to add parameter"
+msgstr "Parametre eklemesi başarısız"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1888
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1901
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:2061
+#: kxsldbgpart/libxsldbg/file_cmds.cpp:248
+#: kxsldbgpart/libxsldbg/file_cmds.cpp:265
+#: kxsldbgpart/libxsldbg/param_cmds.cpp:52
+#: kxsldbgpart/libxsldbg/param_cmds.cpp:71
+#: kxsldbgpart/libxsldbg/param_cmds.cpp:101
+#: kxsldbgpart/libxsldbg/param_cmds.cpp:115
+msgid ""
+"Error: Invalid arguments for the command %1.\n"
+msgstr ""
+"Hata: %1 komut için geçersiz değişkenler.\n"
+
+#: kxsldbgpart/libxsldbg/param_cmds.cpp:96
+msgid "Failed to delete parameter"
+msgstr "Parametre silinmesi başarısız"
+
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:375
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:695
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:821
+#: kxsldbgpart/libxsldbg/param_cmds.cpp:107
+msgid ""
+"Error: Unable to parse %1 as a line number.\n"
+msgstr ""
+"Hata: Bir satır numarası olarak %1 ayrıştırılamıyor.\n"
+
+#: kxsldbgpart/libxsldbg/param_cmds.cpp:112
+msgid ""
+"Error: Unable to find parameter %1.\n"
+msgstr ""
+"Hata: %1 parametre bulunamıyor.\n"
+
+#: kxsldbgpart/libxsldbg/param_cmds.cpp:146
+msgid "Unable to print parameters"
+msgstr "Parametreler yazılamıyor"
+
+#: kxsldbgpart/libxsldbg/option_cmds.cpp:73
+#: kxsldbgpart/libxsldbg/option_cmds.cpp:107
+msgid ""
+"Error: Unable to parse %1 as an option value.\n"
+msgstr ""
+"Hata: Bir seçenek değeri olarak %1 ayrıştırılamıyor.\n"
+
+#: kxsldbgpart/libxsldbg/option_cmds.cpp:110
+msgid ""
+"Error: Unknown option name %1.\n"
+msgstr ""
+"Hata: %1 bilinmeyen seçenek ismi.\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:2012
+#: kxsldbgpart/libxsldbg/file_cmds.cpp:213
+#: kxsldbgpart/libxsldbg/file_cmds.cpp:269
+#: kxsldbgpart/libxsldbg/option_cmds.cpp:113
+#: kxsldbgpart/libxsldbg/option_cmds.cpp:116
+#: kxsldbgpart/libxsldbg/os_cmds.cpp:48
+msgid ""
+"Error: Missing arguments for the command %1.\n"
+msgstr ""
+"Hata: %1 komut için kayıp parametreler.\n"
+
+#: kxsldbgpart/libxsldbg/option_cmds.cpp:146
+msgid ""
+"Option %1 = %2\n"
+msgstr ""
+"%1 Seçenek = %2\n"
+
+#: kxsldbgpart/libxsldbg/option_cmds.cpp:157
+msgid ""
+"Option %1 = \"%2\"\n"
+msgstr ""
+"%1 Seçenek = \"%2\"\n"
+
+#: kxsldbgpart/libxsldbg/option_cmds.cpp:159
+msgid ""
+"Option %1 = \"\"\n"
+msgstr ""
+"%1 Seçenek = \"\"\n"
+
+#: kxsldbgpart/libxsldbg/option_cmds.cpp:230
+msgid ""
+"\tNo expression watches set.\n"
+msgstr ""
+"\tKüme izlemeleri ifadesi yok.\n"
+
+#: kxsldbgpart/libxsldbg/option_cmds.cpp:237
+msgid " WatchExpression %1 "
+msgstr " %1 İzlemeİfadesi"
+
+#: kxsldbgpart/libxsldbg/option_cmds.cpp:263
+msgid ""
+"Error: Unable to add watch expression \"%1\". It already has been added or it "
+"cannot be watched.\n"
+msgstr ""
+"Hata: \"%1\" izleme ifadesi eklenemiyor. Bu zaten eklenebiliyordur ya da "
+"eklenemeyebilir.\n"
+
+#: kxsldbgpart/libxsldbg/option_cmds.cpp:287
+msgid ""
+"Error: Unable to parse %1 as a watchID.\n"
+msgstr ""
+"Hata: Bir izleme kimliği (ID) olarak %1 ayrıştırılamıyor.\n"
+
+#: kxsldbgpart/libxsldbg/option_cmds.cpp:292
+msgid ""
+"Error: Watch expression %1 does not exist.\n"
+msgstr ""
+"Hata: %1 izleme ifadesi mevcut değil.\n"
+
+#: kxsldbgpart/libxsldbg/options.cpp:296 kxsldbgpart/libxsldbg/options.cpp:326
+msgid ""
+"Error: Option %1 is not a valid boolean/integer option.\n"
+msgstr ""
+"Hata: %1 seçenek boolean/tamsayı seçeneği geçerli değil.\n"
+
+#: kxsldbgpart/libxsldbg/options.cpp:368 kxsldbgpart/libxsldbg/options.cpp:399
+msgid ""
+"Error: Option %1 is not a valid string xsldbg option.\n"
+msgstr ""
+"Hata: %1 seçenek xsldbg seçeneği dizi değil.\n"
+
+#: kxsldbgpart/libxsldbg/options.cpp:511
+msgid ""
+" Parameter %1 %2=\"%3\"\n"
+msgstr ""
+" %1 %2 seçeneği=\"%3\"\n"
+
+#: kxsldbgpart/libxsldbg/options.cpp:546
+msgid ""
+"\n"
+"No parameters present.\n"
+msgstr ""
+"\n"
+"Mevcut parametreler yok.\n"
+
+#: kxsldbgpart/libxsldbg/template_cmds.cpp:184
+#: kxsldbgpart/libxsldbg/variable_cmds.cpp:36
+msgid ""
+"Error: Stylesheet is not valid.\n"
+msgstr ""
+"Hata: Biçemkağıdı geçerli değil.\n"
+
+#: kxsldbgpart/libxsldbg/variable_cmds.cpp:99
+msgid ""
+"Error: Cannot change a variable that does not use the select attribute.\n"
+msgstr ""
+"Hata: Değişken değiştirilemedi o seçkin öznitelik kullanmıyor.\n"
+
+#: kxsldbgpart/libxsldbg/variable_cmds.cpp:102
+msgid ""
+"Error: Variable %1 was not found.\n"
+msgstr ""
+"Hata: %1 değişken bulunamadı.\n"
+
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:425
+#: kxsldbgpart/libxsldbg/search.cpp:484
+#: kxsldbgpart/libxsldbg/trace_cmds.cpp:68
+#: kxsldbgpart/libxsldbg/variable_cmds.cpp:111
+msgid ""
+"Error: Invalid arguments to command %1.\n"
+msgstr ""
+"Hata: %1 komutta geçersiz parametreler.\n"
+
+#: kxsldbgpart/libxsldbg/breakpoint.cpp:619
+msgid "disabled"
+msgstr "etkisizleştirildi"
+
+#: kxsldbgpart/libxsldbg/breakpoint.cpp:620
+msgid "enabled"
+msgstr "etkinleştirildi"
+
+#: kxsldbgpart/libxsldbg/breakpoint.cpp:639
+#, fuzzy
+msgid ""
+"Breakpoint %1 %2 for template: \"%3\" mode: \"%4\" in file \"%5\" at line %6"
+msgstr ""
+"Şablon için %1 %2 durma noktası: \"%3\" kip: %6 satırında \"%5\" dosyasında"
+
+#: kxsldbgpart/libxsldbg/breakpoint.cpp:641
+msgid "Breakpoint %1 %2 for template: \"%3\" mode: \"%4\""
+msgstr "Şablon için %1 %2 durma noktası: \"%3\" kip: \"%4\""
+
+#: kxsldbgpart/libxsldbg/help_unix.cpp:51
+#: kxsldbgpart/libxsldbg/help_unix.cpp:56
+msgid "xsldbg version"
+msgstr "xsldbg sürümü"
+
+#: kxsldbgpart/libxsldbg/help_unix.cpp:52
+#: kxsldbgpart/libxsldbg/help_unix.cpp:57
+msgid "Help document version"
+msgstr "Yardım belgesi sürümü"
+
+#: kxsldbgpart/libxsldbg/help_unix.cpp:53
+#: kxsldbgpart/libxsldbg/help_unix.cpp:58
+msgid "Help not found for command"
+msgstr "Komut için yardım bulunamadı"
+
+#: kxsldbgpart/libxsldbg/help_unix.cpp:90
+msgid ""
+"Error: Unable to display help. Help files not found in %1 or xsldbg not found "
+"in path.\n"
+msgstr ""
+"Hata: Yardım gösterilemiyor. %1 içindeki yardım dosyaları ya da xsldbg yol "
+"içinde bulunamadı.\n"
+
+#: kxsldbgpart/libxsldbg/help_unix.cpp:92
+msgid ""
+"Error: Unable to find xsldbg or help files.\n"
+msgstr ""
+"Hata: Yardım dosyaları ya da xsldbg bulunamıyor.\n"
+
+#: kxsldbgpart/libxsldbg/help_unix.cpp:97
+msgid ""
+"Error: Unable to print help file.\n"
+msgstr ""
+"Hata: Yardım dosyası yazdırılamıyor.\n"
+
+#: kxsldbgpart/libxsldbg/help_unix.cpp:102
+msgid ""
+"Error: No path to documentation; aborting help.\n"
+msgstr ""
+"Hata: Belgeleme yolu yok; yardım yarıda kaldı.\n"
+
+#: kxsldbgpart/libxsldbg/trace_cmds.cpp:69
+msgid ""
+"Warning: Assuming normal speed.\n"
+msgstr ""
+"Uyarı: Varsayılan normal hız.\n"
+
+#: kxsldbgpart/libxsldbg/debug.cpp:135
+msgid ""
+"Error: XSLT source and XML data are empty. Cannot enter the debugger.\n"
+msgstr ""
+"Hata: XSLT kaynağı ve XML verisi boş. Hata ayıklayıcı girilemedi.\n"
+
+#: kxsldbgpart/libxsldbg/files_unix.cpp:67
+msgid ""
+"Error: USER environment variable is not set.\n"
+msgstr ""
+"Hata: KULLANICI ortam değişkeni ayarlı değil.\n"
+
+#: kxsldbgpart/libxsldbg/files_unix.cpp:199
+msgid ""
+"Error: The value of the option docspath or searchresultspath is empty. See help "
+"on setoption or options command for more information.\n"
+msgstr ""
+"Hata: Arama sonuçları yolu ya da belgeler yolu seçeneğinin değeri boş. Daha "
+"fazla bilgi için seçenekler komutu ya da ayar seçeneği üzerindeki yardıma "
+"bakın.\n"
+
+#: kxsldbgpart/libxsldbg/file_cmds.cpp:71
+msgid "Entity %1 "
+msgstr "%1 varlık "
+
+#: kxsldbgpart/libxsldbg/file_cmds.cpp:78
+msgid ""
+"No external General Parsed entities present.\n"
+msgstr ""
+"Mevcut harici Genel Ayrıştırma varlıkları yok.\n"
+
+#: kxsldbgpart/libxsldbg/file_cmds.cpp:80
+#, c-format
+msgid ""
+"_n: \tTotal of %n entity found.\n"
+"\tTotal of %n entities found."
+msgstr "\t %n'in toplam varlıkları bulundu."
+
+#: kxsldbgpart/libxsldbg/file_cmds.cpp:121
+#: kxsldbgpart/libxsldbg/file_cmds.cpp:129
+msgid ""
+"SystemID \"%1\" was not found in current catalog.\n"
+msgstr ""
+"\"%1\" Sistem Kimliği (ID) mevcut rehber içinde bulunamadı.\n"
+
+#: kxsldbgpart/libxsldbg/file_cmds.cpp:125
+msgid ""
+"SystemID \"%1\" maps to: \"%2\"\n"
+msgstr ""
+"\"%1\" Sistem Kimliği (ID) haritalaması:\"%2\"\n"
+
+#: kxsldbgpart/libxsldbg/file_cmds.cpp:168
+#: kxsldbgpart/libxsldbg/file_cmds.cpp:176
+msgid ""
+"PublicID \"%1\" was not found in current catalog.\n"
+msgstr ""
+"\"%1\" Kamusal Kimlik (ID) mevcut rehber içinde bulunamadı.\n"
+
+#: kxsldbgpart/libxsldbg/file_cmds.cpp:172
+msgid ""
+"PublicID \"%1\" maps to: \"%2\"\n"
+msgstr ""
+"\"%1\" Kamusal Kimlik (ID) haritalaması:\"%2\"\n"
+
+#: kxsldbgpart/libxsldbg/template_cmds.cpp:135
+msgid ""
+" template: \"%1\" mode: \"%2\" in file \"%3\" at line %4\n"
+msgstr ""
+" şablon: \"%1\" kip:\"%2\" dosyada \"%3\" satırda %4\n"
+
+#: kxsldbgpart/libxsldbg/template_cmds.cpp:226
+msgid ""
+"\tNo XSLT templates found.\n"
+msgstr ""
+"\t XSLT şablonları bulunamadı.\n"
+
+#: kxsldbgpart/libxsldbg/template_cmds.cpp:228
+#, c-format
+msgid ""
+"_n: \tTotal of %n XSLT template found\n"
+"\tTotal of %n XSLT templates found"
+msgstr "\t %n XSLT şablonlarının toplamı bulundu"
+
+#: kxsldbgpart/libxsldbg/template_cmds.cpp:229
+#, c-format
+msgid ""
+"_n: \tTotal of %n XSLT template printed\n"
+"\tTotal of %n XSLT templates printed"
+msgstr "\t %n şablonlarının toplamı yazdırıldı"
+
+#: kxsldbgpart/libxsldbg/template_cmds.cpp:261
+#: kxsldbgpart/libxsldbg/template_cmds.cpp:290
+msgid ""
+" Stylesheet %1\n"
+msgstr ""
+" %1 biçemsayfası\n"
+
+#: kxsldbgpart/libxsldbg/template_cmds.cpp:325
+#, c-format
+msgid ""
+"_n: \tTotal of %n XSLT stylesheet found.\n"
+"\tTotal of %n XSLT stylesheets found."
+msgstr "\t %n XSLT biçemsayfalarının toplamı bulundu."
+
+#: kxsldbgpart/libxsldbg/template_cmds.cpp:328
+msgid ""
+"\tNo XSLT stylesheets found.\n"
+msgstr ""
+"\tXSLT biçemsayfaları bulunamadı.\n"
+
+#: kxsldbgpart/libxsldbg/xsldbg.cpp:270 kxsldbgpart/libxsldbg/xsldbg.cpp:298
+#: kxsldbgpart/libxsldbg/xsldbg.cpp:320
+msgid ""
+"%1 took %2 ms to complete.\n"
+msgstr ""
+
+#: kxsldbgpart/libxsldbg/xsldbg.cpp:361
+#, c-format
+msgid "XInclude processing %1."
+msgstr "%1 XInclude işleniyor."
+
+#: kxsldbgpart/libxsldbg/xsldbg.cpp:399 kxsldbgpart/libxsldbg/xsldbg.cpp:446
+msgid ""
+"Error: Unable to write temporary results to %1.\n"
+msgstr ""
+"Hata: %1'e şablon sonuçları yazılamıyor.\n"
+
+#: kxsldbgpart/libxsldbg/xsldbg.cpp:409
+#, c-format
+msgid ""
+"_n: Applying stylesheet %n time\n"
+"Applying stylesheet %n times"
+msgstr "%n kez biçemşayfaları uygulanıyor."
+
+#: kxsldbgpart/libxsldbg/xsldbg.cpp:412
+msgid "Applying stylesheet"
+msgstr "Biçemsayfaları uygulanıyor"
+
+#: kxsldbgpart/libxsldbg/xsldbg.cpp:473 kxsldbgpart/libxsldbg/xsldbg.cpp:491
+msgid "Saving result"
+msgstr "Sonuç kaydediliyor"
+
+#: kxsldbgpart/libxsldbg/xsldbg.cpp:476
+msgid ""
+"Warning: Generating non-standard output XHTML.\n"
+msgstr ""
+"Uyarı: Standart olmayan XHTML çıktısı oluşturuluyor.\n"
+
+#: kxsldbgpart/libxsldbg/xsldbg.cpp:493
+msgid ""
+"Warning: Unsupported, non-standard output method %1.\n"
+msgstr ""
+"Uyarı: Desteklenmeyen, standart olmayan %1 yöntem çıktısı.\n"
+
+#: kxsldbgpart/libxsldbg/xsldbg.cpp:509
+msgid "Running stylesheet and saving result"
+msgstr "Sonuç kaydediliyor ve biçemsayfası çalışıyor"
+
+#: kxsldbgpart/libxsldbg/xsldbg.cpp:516
+msgid ""
+"Error: Unable to save results of transformation to file %1.\n"
+msgstr ""
+"Hata: %1 dosyada dönüşümün sonuçları kaydedilemiyor.\n"
+
+#: kxsldbgpart/libxsldbg/xsldbg.cpp:558 kxsldbgpart/libxsldbg/xsldbg.cpp:887
+#: kxsldbgpart/libxsldbg/xsldbg.cpp:919 kxsldbgpart/libxsldbg/xsldbg.cpp:993
+msgid ""
+"Fatal error: Aborting debugger due to an unrecoverable error.\n"
+msgstr ""
+"Ölümcül hata: Kurtarılabilir bir hata yüzünden hata ayıklayıcı durduruluyor.\n"
+
+#: kxsldbgpart/kxsldbg_part.cpp:738 kxsldbgpart/libxsldbg/xsldbg.cpp:591
+msgid ""
+"Error: Too many file names supplied via command line.\n"
+msgstr ""
+"Hata: Komut satırı üzerinden desteklenmiş çok fazla dosya adı.\n"
+
+#: kxsldbgpart/libxsldbg/xsldbg.cpp:683
+msgid ""
+"Warning: Too many libxslt parameters provided via the command line option "
+"--param.\n"
+msgstr ""
+"Uyarı: Komut satırı seçeneği üzerinden sağlanmış çok fazla libxslt parametresi "
+"--param.\n"
+
+#: kxsldbgpart/libxsldbg/xsldbg.cpp:692
+msgid ""
+"Error: Argument \"%1\" to --param is not in the format <name>:<value>.\n"
+msgstr ""
+"Hata: Parametrede \"%1\" değişken <name>:<value> biçiminde değil.\n"
+
+#: kxsldbgpart/libxsldbg/xsldbg.cpp:744
+msgid ""
+"\n"
+"Starting stylesheet\n"
+"\n"
+msgstr ""
+"\n"
+"Biçemsayfaları başlıyor\n"
+"\n"
+
+#: kxsldbgpart/libxsldbg/xsldbg.cpp:755
+msgid ""
+"Error: No XSLT source file supplied.\n"
+msgstr ""
+"Hata: XSLT kaynak dosyası desteklemesi yok.\n"
+
+#: kxsldbgpart/libxsldbg/xsldbg.cpp:758
+msgid ""
+"Error: No XML data file supplied.\n"
+msgstr ""
+"Hata: XML veri dosyası desteklemesi yok.\n"
+
+#: kxsldbgpart/libxsldbg/xsldbg.cpp:795
+msgid ""
+"\n"
+"Debugger never received control.\n"
+msgstr ""
+"\n"
+"Hata ayıklayıcı asla denetim alamadı.\n"
+
+#: kxsldbgpart/libxsldbg/xsldbg.cpp:800
+msgid ""
+"\n"
+"Finished stylesheet\n"
+"\n"
+msgstr ""
+"\n"
+"Biçemsayfası sonlandırıldı\n"
+"\n"
+
+#: kxsldbgpart/libxsldbg/xsldbg.cpp:857
+msgid ""
+"Going to the command shell; not all xsldbg commands will work as not all needed "
+"have been loaded.\n"
+msgstr ""
+
+#: kxsldbgpart/libxsldbg/xsldbg.cpp:914
+#, c-format
+msgid "Parsing stylesheet %1"
+msgstr "%1 Biçemsayfası ayrıştırılıyor"
+
+#: kxsldbgpart/libxsldbg/xsldbg.cpp:916
+msgid ""
+"Error: Cannot parse file %1.\n"
+msgstr ""
+"Hata: %1 dosya ayrıştırılamayabilir.\n"
+
+#: kxsldbgpart/libxsldbg/xsldbg.cpp:991 kxsldbgpart/libxsldbg/xsldbg.cpp:1035
+msgid ""
+"Error: Unable to parse file %1.\n"
+msgstr ""
+"Hata: %1 dosya ayrıştırılamıyor.\n"
+
+#: kxsldbgpart/libxsldbg/nodeview_cmds.cpp:140
+#: kxsldbgpart/libxsldbg/nodeview_cmds.cpp:243
+#: kxsldbgpart/libxsldbg/nodeview_cmds.cpp:383
+msgid ""
+"Error: XPath %1 results in an empty Node Set.\n"
+msgstr ""
+"Hata: %1 XPath boş bir Düğüm Ayarı içindeki sonuçtur.\n"
+
+#: kxsldbgpart/libxsldbg/nodeview_cmds.cpp:175
+msgid ""
+"Information: Temporarily setting document's encoding to UTF-8. Previously was "
+"%1.\n"
+msgstr ""
+"Bilgi: Geçici olarak UTF-8'deki ayarlama belgelerinin kodlaması %1 dir.\n"
+
+#: kxsldbgpart/libxsldbg/nodeview_cmds.cpp:229
+msgid ""
+"Error: Unable to save temporary results to %1.\n"
+msgstr ""
+"Hata: %1 de geçici sonuçlar kaydedilemiyor.\n"
+
+#: kxsldbgpart/libxsldbg/nodeview_cmds.cpp:251
+msgid "NULL string value supplied."
+msgstr "NULL karakteri değeri beslendi."
+
+#: kxsldbgpart/libxsldbg/nodeview_cmds.cpp:262
+msgid "Unable to convert XPath to string."
+msgstr "XPath karakterine dönüştürülemiyor."
+
+#: kxsldbgpart/libxsldbg/nodeview_cmds.cpp:358
+msgid ""
+"Warning: Unable to print expression. No stylesheet was properly loaded.\n"
+msgstr ""
+"Uyarı: İfade yazılamadı. Önceden yüklenmiş biçemsayfası yok.\n"
+
+#: kxsldbgpart/libxsldbg/nodeview_cmds.cpp:418
+msgid ""
+" Global %1\n"
+msgstr ""
+" %1 Genel\n"
+
+#: kxsldbgpart/libxsldbg/nodeview_cmds.cpp:421
+msgid " Global "
+msgstr " Genel "
+
+#: kxsldbgpart/libxsldbg/nodeview_cmds.cpp:424
+msgid ""
+" Global = %1\n"
+msgstr ""
+" Genel = %1\n"
+
+#: kxsldbgpart/libxsldbg/nodeview_cmds.cpp:427
+#: kxsldbgpart/libxsldbg/nodeview_cmds.cpp:430
+msgid ""
+" Global = %1\n"
+"%2"
+msgstr ""
+" Genel = %1\n"
+"%2"
+
+#: kxsldbgpart/libxsldbg/nodeview_cmds.cpp:430
+#: kxsldbgpart/libxsldbg/nodeview_cmds.cpp:568
+msgid ""
+"Warning: No value assigned to variable.\n"
+msgstr ""
+"Uyarı: Değişkene atanmış değer yok.\n"
+
+#: kxsldbgpart/libxsldbg/nodeview_cmds.cpp:483
+msgid ""
+"Error: Debugger has no files loaded or libxslt has not reached a template.\n"
+"Try reloading files or taking more steps.\n"
+msgstr ""
+"Hata: Hata Ayıklayıcı yüklenmiş dosyalara sahip değil ya da libxslt ulaşılmış "
+"bir şablona sahip değil.\n"
+"Dosyaları yeniden yüklemeyi ya da daha fazla adım yürütmeyi deneyin.\n"
+
+#: kxsldbgpart/libxsldbg/nodeview_cmds.cpp:520
+msgid ""
+"Error: Libxslt has not initialized variables yet; try stepping to a template.\n"
+msgstr ""
+"Hata: Libxslt değişkenleri henüz başlatmadı; bir şablona atlamayı deneyin.\n"
+
+#: kxsldbgpart/libxsldbg/nodeview_cmds.cpp:556
+#, c-format
+msgid " Local %1"
+msgstr " %1 Yerel"
+
+#: kxsldbgpart/libxsldbg/nodeview_cmds.cpp:559
+msgid " Local "
+msgstr " Yerel "
+
+#: kxsldbgpart/libxsldbg/nodeview_cmds.cpp:562
+msgid ""
+" Local = %1\n"
+msgstr ""
+" Yerel = %1\n"
+
+#: kxsldbgpart/libxsldbg/nodeview_cmds.cpp:565
+#: kxsldbgpart/libxsldbg/nodeview_cmds.cpp:568
+msgid ""
+" Local = %1\n"
+"%2"
+msgstr ""
+" Yerel = %1\n"
+"%2"
+
+#: kxsldbgpart/libxsldbg/nodeview_cmds.cpp:583
+msgid ""
+"Error: Libxslt has not initialized variables yet; try stepping past the "
+"xsl:param elements in the template.\n"
+msgstr ""
+"Hata: Libxslt henüz değişkenleri başlatmadı, şablonda geçmiş xsl: parametre "
+"öğelerini atlamayı deneyin.\n"
+
+#: kxsldbgpart/libxsldbg/search.cpp:407
+msgid ""
+"Error: Unable to write search Database to file %1. Try setting the "
+"\"searchresultspath\" option to a writable path.\n"
+msgstr ""
+"Hata: %1 dosyasına arama Veritabanı yazılamadı. Yazılabilir bir yolda "
+"\"aramasonuçyolu\" seçeneğine atlamayı deneyin.\n"
+
+#: kxsldbgpart/libxsldbg/search.cpp:482
+msgid ""
+"Information: Transformed %1 using %2 and saved to %3.\n"
+msgstr ""
+"Bilgi: %2 kullanarak %1 dönüştürüldü ve %3'e kaydedildi.\n"
+
+#: kxsldbgpart/libxsldbg/search.cpp:723
+msgid ""
+"Error: XSLT template named \"%1\" was not found.\n"
+msgstr ""
+"Hata: \"%1\" adlandırılan XSLT şablonu bulunamadı.\n"
+
+#: kxsldbgpart/libxsldbg/os_cmds.cpp:72
+msgid ""
+"Error: No command processor available for shell command \"%1\".\n"
+msgstr ""
+"Hata: \"%1\" kabuk komutu için kullanılabilir komut işlemcisi yok.\n"
+
+#: kxsldbgpart/libxsldbg/os_cmds.cpp:77
+msgid ""
+"Information: Starting shell command \"%1\".\n"
+msgstr ""
+"Bilgi: \"%1\" kabuk komutu başlıyor.\n"
+
+#: kxsldbgpart/libxsldbg/os_cmds.cpp:92
+msgid ""
+"Information: Finished shell command.\n"
+msgstr ""
+"Bilgi: Kabuk komutu sonlandırıldı.\n"
+
+#: kxsldbgpart/libxsldbg/os_cmds.cpp:96
+msgid ""
+"Error: Unable to run command. System error %1.\n"
+msgstr ""
+"Hata: Komut çalıştırılamıyor. %1 sistem hatası.\n"
+
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:97
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:352
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:800
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:510
+msgid ""
+"Error: Debugger has no files loaded. Try reloading files.\n"
+msgstr ""
+"Hata: Hata ayıklayıcı yüklenmiş dosyalara sahip değil. Dosyaları yeniden "
+"yüklemeyi deneyin.\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:532
+msgid ""
+"Error: The XSLT template named \"%1\" was not found.\n"
+msgstr ""
+"Hata: \"%1\" adlandırılan XSLT şablonu bulunamadı.\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:535
+msgid ""
+" template: \"%1\"\n"
+msgstr ""
+" şablon: \"%1\"\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:560
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:566
+msgid ""
+"Error: Unable to cd. No stylesheet loaded.\n"
+msgstr ""
+"Hata: cd'ye erişilemedi. Yüklenmiş bçiemsayfası yok.\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:563
+msgid ""
+"Error: Unknown arguments to the command %1.\n"
+msgstr ""
+"Hata: %1 komutta bilinmeyen değişkenler.\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:585
+msgid ""
+"Error: Invalid arguments to the command %1.\n"
+msgstr ""
+"Hata: %1 komutta geçersiz değişkenler.\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:606
+msgid ""
+"_n: Warning: XPath %1 is a Node Set with %n child.\n"
+"Warning: XPath %1 is a Node Set with %n children."
+msgstr "Uyarı: %1 XPath %n ürünle birlikte Düğüm Ayarıdır."
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:608
+msgid ""
+"Warning: XPath %1 is an empty Node Set.\n"
+msgstr ""
+"Uyarı: %1 XPath boş bir Düğüm Ayarı.\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:617
+msgid ""
+"Error: XPath %1 was not found.\n"
+msgstr ""
+"Hata: %1 XYolu bulunamadı.\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:672
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:675
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:706
+msgid "#%1 template: \"%2\" mode: \"%3\""
+msgstr "#%1 şablon: \"%2\" kip: \"%3\""
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:677
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:694
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:709
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:762
+msgid ""
+" in file \"%1\" at line %2\n"
+msgstr ""
+"\"%1\" dosyada %2 satırda\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:692
+msgid "#%1 template: \"LIBXSLT_DEFAULT\" mode: \"\""
+msgstr "#%1 şablon: \"LIBXSLT_ÖNTANIMLI\" kip: \"\""
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:735
+msgid ""
+"\tNo items in call stack.\n"
+msgstr ""
+"\"Çağrı yığını içinde öğeler yok.\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:758
+msgid "#%1 template: \"%2\""
+msgstr "#%1 şablon: \"%2\""
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1025
+msgid ""
+"Information: Updating search database. This may take a while...\n"
+msgstr ""
+"Bilgi: Arama veritabanı güncelleniyor. Bu biraz zaman alabilir...\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1028
+msgid ""
+"Information: Looking for breakpoints.\n"
+msgstr ""
+"Bilgi: Kesme noktaları için bakılıyor.\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1030
+msgid ""
+"Information: Looking for imports and top-level stylesheets.\n"
+msgstr ""
+"Bilgi: Üst-seviye biçemsayfaları ve aktarımlar için bakılıyor.\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1032
+msgid ""
+"Information: Looking for xsl:includes.\n"
+msgstr ""
+"Bilgi: xsl için bakılıyor:içerir.\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1034
+msgid ""
+"Information: Looking for templates.\n"
+msgstr ""
+"Bilgi: Şablonlar için bakılıyor.\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1036
+msgid ""
+"Information: Looking for global variables.\n"
+msgstr ""
+"Bilgi: Genel değişkenler için bakılıyor.\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1038
+msgid ""
+"Information: Looking for local variables.\n"
+msgstr ""
+"Bilgi: Yerel değişkenler için bakılıyor.\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1040
+msgid ""
+"Information: Formatting output.\n"
+msgstr ""
+"Bilgi: Biçimlendirme çıktısı.\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1108
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1118
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1136
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1138
+msgid ""
+"\n"
+"Reached template: \"%1\" mode: \"%2\"\n"
+msgstr ""
+"\n"
+"Erişilen şablon: \"%1\" kip: \"%2\"\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1295
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:2091
+msgid ""
+"Breakpoint for file \"%1\" at line %2.\n"
+msgstr ""
+"\"%1\" dosya için %2 satırda durma noktası.\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1297
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:2093
+msgid ""
+"Breakpoint at text node in file \"%1\".\n"
+msgstr ""
+"\"%1\" dosyada bir metin düğümü durma noktası.\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1460
+msgid ""
+"Unable to print local help. Online help can be found at "
+"http://xsldbg.sourceforge.net/docs/index.html.\n"
+msgstr ""
+"Yerel yardım yazdırılamadı. Çevrim içi yardım "
+"http://xsldbg.sourceforge.net/docs/index.html'de bulunabilir.\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1613
+msgid ""
+"\n"
+"No breakpoints are set for the file.\n"
+msgstr ""
+"\n"
+"Dosya için durma noktaları ayarı yok.\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1615
+#, c-format
+msgid ""
+"_n: \tTotal of %n breakpoint present.\n"
+"\tTotal of %n breakpoints present."
+msgstr "\t%n durma noktalarının toplamı mevcut."
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1634
+msgid ""
+"Error: Unable to delete breakpoint.\n"
+msgstr ""
+"Hata: Durma noktası silinemiyor.\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1656
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1676
+msgid ""
+"Error: Unable to enable/disable breakpoint.\n"
+msgstr ""
+"Hata: Durma noktası etkinleştiriliyor/etkinleştirilemiyor.\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1709
+msgid " in file \"%1\" at line %2"
+msgstr "\"%1\" dosyada %2 satırda"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1717
+msgid ""
+"Error: Unable to print working directory.\n"
+msgstr ""
+"Hata: Çalışma dizini yazdırılamıyor.\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1737
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1759
+msgid ""
+"Error: Need to use the run command first.\n"
+msgstr ""
+"Hata: İlk önce komut çalıştırmayı kullanmaya ihtiyaç var.\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1794
+msgid ""
+"Load of source deferred. Use the run command.\n"
+msgstr ""
+"Kaynağın yüklenmesi ertelendi. Komut çalıştırmayı kullanın.\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1834
+msgid ""
+"Load of data file deferred. Use the run command.\n"
+msgstr ""
+"Veri dosyasının yüklenmesi ertelendi. Komut çalıştırmayı kullanın.\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1911
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1932
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1940
+msgid ""
+"Warning: The %1 command is disabled.\n"
+msgstr ""
+"Uyarı: %1 komut etkisizleştirildi.\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:1996
+msgid ""
+"Opening terminal %1.\n"
+msgstr ""
+"%1 uçbirim açılıyor.\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:2016
+#, fuzzy
+msgid ""
+"Warning: The %1 command is disabled\n"
+msgstr ""
+"Uyarı: %1 komut etkisizleştirildi.\n"
+
+#: kxsldbgpart/libxsldbg/debugXSL.cpp:2080
+msgid ""
+"Error: Unknown command %1. Try help.\n"
+msgstr ""
+"Hata: %1 bilinmeyen komut. Yardımı deneyin.\n"
+
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:94
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:345
+msgid "Failed to add breakpoint."
+msgstr "Tüm durma noktaları başarısız."
+
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:113
+msgid ""
+"Error: Unable to parse %1 as a number of frames.\n"
+msgstr ""
+"Hata: Çerçevelerin bir sayı olarak %1'i ayrıştırılamıyor.\n"
+
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:151
+msgid ""
+"Error: Stylesheet is not valid or file is not loaded.\n"
+msgstr ""
+"Hata: Biçemsayfası geçerli değil ya da dosya yüklenmemiş.\n"
+
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:191
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:215
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:302
+msgid ""
+"Warning: Breakpoint for file \"%1\" at line %2 does not seem to be valid.\n"
+msgstr ""
+"Uyarı: \"%1\" dosya için %2 satırda kesmenoktası geçerli gibi görünmüyor.\n"
+
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:213
+msgid ""
+"Error: Unable to find a stylesheet file whose name contains %1.\n"
+msgstr ""
+"Hata: %1 isim içeren biçemsayfası dosyası bulunamıyor.\n"
+
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:249
+msgid ""
+"Error: Data file is invalid. Try the run command first.\n"
+msgstr ""
+"Hata: Veri dosyası geçersiz. İlk önce komut çalıştırmayı deneyin.\n"
+
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:304
+msgid ""
+"Error: Unable to find a data file whose name contains %1.\n"
+msgstr ""
+"Hata: %1 isim içeren veri dosyası bulunamıyor.\n"
+
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:419
+msgid "Error: Unable to find the added breakpoint."
+msgstr "Hata: Eklenmiş kesmenoktası bulunamıyor."
+
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:527
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:722
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:848
+msgid ""
+"Error: Invalid arguments for command %1.\n"
+msgstr ""
+"Hata: %1 komut için geçersiz değişkenler.\n"
+
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:596
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:952
+msgid ""
+"Information: Breakpoint validation has caused breakpoint %1 to be re-created.\n"
+msgstr ""
+"Bilgi: Kesmenoktası sağlaması tekrar yaratılmış %1 kesmenoktasına yol açtı.\n"
+
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:603
+msgid ""
+"Warning: Breakpoint exits for file \"%1\" at line %2.\n"
+msgstr ""
+"Uyarı: \"%1\" dosya için %2 satırda durma noktası çıkışı.\n"
+
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:626
+msgid ""
+"Error: No templates found or unable to add breakpoint.\n"
+msgstr ""
+"Hata: Bulunmuş şablon yok ya da durma noktası eklenemedi.\n"
+
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:631
+#, c-format
+msgid ""
+"_n: Information: Added %n new breakpoint.\n"
+"Information: Added %n new breakpoints."
+msgstr "Bilgi: Eklenmiş %n yeni durma noktaları."
+
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:651
+msgid ""
+"Error: Failed to add breakpoint for file \"%1\" at line %2.\n"
+msgstr ""
+"Hata: \"%1\" dosya için %2 satırda durma noktası eklenmesi başarısız.\n"
+
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:653
+msgid ""
+"Error: Failed to add breakpoint.\n"
+msgstr ""
+"Hata: Durma noktası eklenmesi başarısız.\n"
+
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:677
+msgid "Failed to delete breakpoint."
+msgstr "Durma noktası silinmesi başarısız."
+
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:714
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:842
+msgid ""
+"Error: Breakpoint does not exist for file \"%1\" at line %2.\n"
+msgstr ""
+"Hata: Durma noktası \"%1\" dosya için %2 satırda mevcut değil.\n"
+
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:735
+msgid ""
+"Error: Unable to delete breakpoint %1.\n"
+msgstr ""
+"Hata: %1 durma noktası silinemedi.\n"
+
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:738
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:864
+msgid ""
+"Error: Breakpoint %1 does not exist.\n"
+msgstr ""
+"Hata: %1 durma noktası mevcut değil.\n"
+
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:745
+msgid ""
+"Error: Unable to delete breakpoint at template %1.\n"
+msgstr ""
+"Hata: %1 şablonda durma noktası silinemedi.\n"
+
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:748
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:871
+msgid ""
+"Error: Breakpoint at template \"%1\" does not exist.\n"
+msgstr ""
+"Hata: \"%1\" şablonda durma noktası mevcut değil.\n"
+
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:797
+msgid "Failed to enable/disable breakpoint."
+msgstr "Durma noktası etkinleştirmesi/etkisizleştirmesi başarısız."
+
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:861
+msgid ""
+"Error: Unable to enable/disable breakpoint %1.\n"
+msgstr ""
+"Hata: %1 durma noktası etkinleştirildi/etkinleştirilemedi.\n"
+
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:956
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:995
+msgid ""
+"Warning: Validation of breakpoint %1 failed.\n"
+msgstr ""
+"Uyarı: %1 durma noktasının sağlaması başarısız.\n"
+
+#: kxsldbgpart/libxsldbg/breakpoint_cmds.cpp:984
+msgid ""
+"Information: Breakpoint validation has caused one or more breakpoints to be "
+"re-created.\n"
+msgstr ""
+"Bilgi: Durma noktası sağlaması tekrar yaratılmış bir ya da daha fazla durma "
+"noktasına yol açtı.\n"
+
+#: kxsldbgpart/libxsldbg/utils.cpp:111
+msgid ""
+"Error: Unmatched quotes in input.\n"
+msgstr ""
+"Hata: Girdi içinde eşleştirilmemiş tırnaklar.\n"
+
+#: kxsldbgpart/libxsldbg/search_cmds.cpp:52
+msgid ""
+"Error: No path to documentation; aborting searching.\n"
+msgstr ""
+"Hata: Belgeleme yolu yok; Arama iptal ediliyor.\n"
+
+#: kxsldbgpart/libxsldbg/search_cmds.cpp:54
+msgid ""
+"Error: Error in value of USE_DOCS_MACRO; look at Makefile.am.\n"
+msgstr ""
+"Hata: USE_DOCS_MACRO nun değerinde hata; Makefile.am'ye bak.\n"
+
+#: kxsldbgpart/libxsldbg/search_cmds.cpp:56
+msgid ""
+"Error: Required environment variable %1 not set to the directory of xsldbg "
+"documentation.\n"
+msgstr ""
+"Hata: %1 gerekli ortam değişkeni xsldbg belgesinin dizininde ayarlı değil.\n"
+
+#: kxsldbgpart/libxsldbg/search_cmds.cpp:62
+msgid ""
+"Error: Stylesheet not valid, files not loaded yet?\n"
+msgstr ""
+"Hata: Biçemsayfası geçerli değil, dosyalar henüz yüklenmedi mi?\n"
+
+#. i18n: file ./kxsldbgpart/xsldbgbreakpoints.ui line 81
+#: kxsldbgpart/xsldbgbreakpointlistitem.cpp:38 rc.cpp:213
+#, no-c-format
+msgid "Enabled"
+msgstr "Etkinleştirildi"
+
+#: kxsldbgpart/xsldbgbreakpointlistitem.cpp:40
+msgid "Disabled"
+msgstr "Etkisizleştirildi"
+
+#: kxsldbgpart/xsldbgconfigimpl.cpp:191
+msgid ""
+"\t\"XSL source\" \n"
+msgstr ""
+"\t\"XSL kaynağı\" \n"
+
+#: kxsldbgpart/xsldbgconfigimpl.cpp:193
+msgid ""
+"\t\"XML data\" \n"
+msgstr ""
+"\t\"XML verisi\" \n"
+
+#: kxsldbgpart/xsldbgconfigimpl.cpp:195
+msgid ""
+"\t\"Output file\" \n"
+msgstr ""
+"\t\"Çıktı dosyası\" \n"
+
+#: kxsldbgpart/xsldbgconfigimpl.cpp:197
+msgid ""
+"Missing values for \n"
+msgstr ""
+"Kayıp değerler\n"
+
+#: kxsldbgpart/xsldbgconfigimpl.cpp:201
+msgid ""
+"Output file is the same as either XSL Source or XML Data file\n"
+msgstr ""
+"Çıktı dosyası XSL Kaynağı ya da XML Veri dosyasıyla aynı\n"
+
+#: kxsldbgpart/xsldbgconfigimpl.cpp:220
+msgid ""
+"The following libxslt parameters are empty\n"
+"\t"
+msgstr ""
+"Takip eden libxslt parametreleri boş\n"
+"\t"
+
+#: kxsldbgpart/xsldbgconfigimpl.cpp:370
+msgid "Choose XSL Source to Debug"
+msgstr "Hata Ayıklamak için XSL Verisi Seçin"
+
+#: kxsldbgpart/xsldbgconfigimpl.cpp:382
+msgid "Choose XML Data to Debug"
+msgstr "Hata Ayıklamak için XML Verisi Seçin"
+
+#: kxsldbgpart/xsldbgconfigimpl.cpp:393
+msgid "Choose Output File for XSL Transformation"
+msgstr "XSL Dönüşümü için Çıktı Dosyası Seçin"
+
+#: kxsldbgpart/xsldbgconfigimpl.cpp:484
+msgid "Suspect Configuration"
+msgstr "Şüpheli Yapılandırma"
+
+#: kxsldbgpart/xsldbgconfigimpl.cpp:488
+msgid "Incomplete or Invalid Configuration"
+msgstr "Tamamlanmamış ya da Geçersiz Yapılandırma"
+
+#: kxsldbgpart/xsldbgdebugger.cpp:298 kxsldbgpart/xsldbgdebugger.cpp:318
+#: kxsldbgpart/xsldbgdebugger.cpp:336 kxsldbgpart/xsldbgdebugger.cpp:356
+#: kxsldbgpart/xsldbgdebugger.cpp:376 kxsldbgpart/xsldbgdebugger.cpp:395
+msgid "Cannot set/edit breakpoints on the output file."
+msgstr "Çıktı dosyasında durma noktaları ayarlanamıyor/düzenlenemiyor."
+
+#: kxsldbgpart/xsldbgoutputview.cpp:71 kxsldbgpart/xsldbgoutputview.cpp:88
+msgid "xsldbg Output"
+msgstr "xsldbg Çıktısı"
+
+#: kxsldbgpart/xsldbgoutputview.cpp:72 kxsldbgpart/xsldbgoutputview.cpp:89
+msgid ""
+"\t\txsldbg output capture ready\n"
+"\n"
+msgstr ""
+"\t\txsldbg çıktı yakalaması hazır\n"
+"\n"
+
+#: kxsldbgpart/xsldbgoutputview.cpp:103
+msgid "Result of evaluation"
+msgstr "Hesaplamanın sonucu"
+
+#: kxsldbgpart/xsldbgoutputview.cpp:120
+msgid "Request Failed "
+msgstr "Talepler Başarısız Oldu"
+
+#: kxsldbgpart/kxsldbg_part.cpp:87 kxsldbgpart/kxsldbg_part.cpp:634
+#: kxsldbgpart/kxsldbg_part.cpp:636
+msgid "Goto XPath"
+msgstr "XPath'e Git"
+
+#. i18n: file ./kxsldbgpart/xsldbgglobalvariables.ui line 185
+#: kxsldbgpart/kxsldbg_part.cpp:95 rc.cpp:33 rc.cpp:339
+#, no-c-format
+msgid "Evaluate"
+msgstr "Hesapla"
+
+#: kxsldbgpart/kxsldbg_part.cpp:109
+msgid "Configure Editor..."
+msgstr "Yapılandırma Düzenleyici..."
+
+#: kxsldbgpart/kxsldbg_part.cpp:113
+msgid "Configure..."
+msgstr "Yapılandır..."
+
+#: kxsldbgpart/kxsldbg_part.cpp:118
+msgid "Inspect..."
+msgstr "Denetle..."
+
+#: kxsldbgpart/kxsldbg_part.cpp:125
+msgid "Run"
+msgstr "Çalıştır"
+
+#: kxsldbgpart/kxsldbg_part.cpp:135
+msgid "Step"
+msgstr "Adım"
+
+#. i18n: file ./kxsldbgpart/xsldbgconfig.ui line 261
+#: kxsldbgpart/kxsldbg_part.cpp:140 rc.cpp:108
+#, no-c-format
+msgid "Next"
+msgstr "İleri"
+
+#: kxsldbgpart/kxsldbg_part.cpp:145
+msgid "Step Up"
+msgstr "Bir Adım Yukarı"
+
+#: kxsldbgpart/kxsldbg_part.cpp:150
+msgid "Step Down"
+msgstr "Bir Adım Aşağı"
+
+#: kxsldbgpart/kxsldbg_part.cpp:156
+msgid "Break"
+msgstr "Kes"
+
+#: kxsldbgpart/kxsldbg_part.cpp:161
+msgid "Enable/Disable"
+msgstr "Etkinleştir/Etkisizleştir"
+
+#: kxsldbgpart/kxsldbg_part.cpp:171
+msgid "&Source"
+msgstr "&Kaynak"
+
+#: kxsldbgpart/kxsldbg_part.cpp:176
+msgid "&Data"
+msgstr "&Veri"
+
+#: kxsldbgpart/kxsldbg_part.cpp:181
+msgid "&Output"
+msgstr "&Çıktı"
+
+#: kxsldbgpart/kxsldbg_part.cpp:186
+msgid "Reload Current File From Disk"
+msgstr "Mevcut Dosyayı Diskten Yeniden Yükle"
+
+#: kxsldbgpart/kxsldbg_part.cpp:192
+msgid "Walk Through Stylesheet..."
+msgstr "Biçemsayfasını Gözden Geçir..."
+
+#: kxsldbgpart/kxsldbg_part.cpp:196
+msgid "Stop Wal&king Through Stylesheet"
+msgstr "&Biçemsayfasını Gözden Geçirmeyi Durdur"
+
+#: kxsldbgpart/kxsldbg_part.cpp:200
+msgid "Tr&ace Execution of Stylesheet"
+msgstr "Biçemsayfasının Yürü&tüm İzi"
+
+#: kxsldbgpart/kxsldbg_part.cpp:204
+msgid "Stop Tracing of Stylesheet"
+msgstr "Biçemsayfasını İzlemeyi Durdur"
+
+#: kxsldbgpart/kxsldbg_part.cpp:209
+msgid "&Evaluate Expression..."
+msgstr "&İfade Hesapla..."
+
+#: kxsldbgpart/kxsldbg_part.cpp:214
+msgid "Goto &XPath..."
+msgstr "&XPath'e Git..."
+
+#: kxsldbgpart/kxsldbg_part.cpp:219
+msgid "Lookup SystemID..."
+msgstr "Sistem Kimliği(ID) Ara..."
+
+#: kxsldbgpart/kxsldbg_part.cpp:224
+msgid "Lookup PublicID..."
+msgstr "Halk Kimliği(ID) Ara..."
+
+#: kxsldbgpart/kxsldbg_part.cpp:277
+msgid "KXsldbgPart"
+msgstr "KXsldbgParçası"
+
+#: kxsldbgpart/kxsldbg_part.cpp:358
+msgid "Debugger Not Ready"
+msgstr "Hata Ayıklayıcı Hazır Değil"
+
+#: kxsldbgpart/kxsldbg_part.cpp:359
+msgid "Configure and start the debugger first."
+msgstr "Önce hata ayıklayıcıyı yapılandırın ve çalıştırın."
+
+#: kxsldbgpart/kxsldbg_part.cpp:376 kxsldbgpart/kxsldbg_part.cpp:382
+msgid "Lookup SystemID"
+msgstr "Sistem Kimliği(ID) Ara"
+
+#: kxsldbgpart/kxsldbg_part.cpp:377 kxsldbgpart/kxsldbg_part.cpp:383
+msgid "Please enter SystemID to find:"
+msgstr "Lütfen aranacak Sistem Kimliğini (ID) girin:"
+
+#: kxsldbgpart/kxsldbg_part.cpp:408 kxsldbgpart/kxsldbg_part.cpp:413
+msgid "Lookup PublicID"
+msgstr "Halk Kimliği(ID) Ara"
+
+#: kxsldbgpart/kxsldbg_part.cpp:409 kxsldbgpart/kxsldbg_part.cpp:414
+msgid "Please enter PublicID to find:"
+msgstr "Lütfen aranacak Halk Kİmliğini(ID) girin:"
+
+#: kxsldbgpart/kxsldbg_part.cpp:622 kxsldbgpart/kxsldbg_part.cpp:624
+msgid "Evalute Expression"
+msgstr "İfade Hesapla"
+
+#: kxsldbgpart/kxsldbg_part.cpp:622 kxsldbgpart/kxsldbg_part.cpp:624
+#: kxsldbgpart/kxsldbg_part.cpp:634 kxsldbgpart/kxsldbg_part.cpp:636
+msgid "XPath:"
+msgstr "XYolu:"
+
+#: kxsldbgpart/kxsldbg_part.cpp:802
+msgid "SystemID or PublicID Resolution Result"
+msgstr ""
+
+#: kxsldbgpart/kxsldbg_part.cpp:803
+#, c-format
+msgid ""
+"SystemID or PublicID has been resolved to\n"
+".%1"
+msgstr ""
+
+#. i18n: file kxsldbg_shell.rc line 9
+#: rc.cpp:6 rc.cpp:312 rc.cpp:381
+#, no-c-format
+msgid "Debug"
+msgstr "Hata Ayıklama"
+
+#. i18n: file ./kxsldbgpart/xsldbgglobalvariables.ui line 25
+#: rc.cpp:15
+#, no-c-format
+msgid "Xsldbg Global Variables"
+msgstr "Xsldbg Genel Değerleri"
+
+#. i18n: file ./kxsldbgpart/xsldbgglobalvariables.ui line 40
+#: rc.cpp:18 rc.cpp:63 rc.cpp:201 rc.cpp:345
+#, no-c-format
+msgid "Name"
+msgstr "İsim"
+
+#. i18n: file ./kxsldbgpart/xsldbgglobalvariables.ui line 51
+#: rc.cpp:21 rc.cpp:78 rc.cpp:354
+#, no-c-format
+msgid "Source File"
+msgstr "Kaynak Dosyası"
+
+#. i18n: file ./kxsldbgpart/xsldbgglobalvariables.ui line 62
+#: rc.cpp:24 rc.cpp:357
+#, no-c-format
+msgid "Source Line Number"
+msgstr "Kaynak Satır Numarası"
+
+#. i18n: file ./kxsldbgpart/xsldbgglobalvariables.ui line 150
+#: rc.cpp:27 rc.cpp:333
+#, no-c-format
+msgid "Expression:"
+msgstr "İfade:"
+
+#. i18n: file ./kxsldbgpart/xsldbgglobalvariables.ui line 158
+#: rc.cpp:30 rc.cpp:336
+#, no-c-format
+msgid "Enter a valid XPath expression"
+msgstr "Geçerli bir XPath ifadesi girin"
+
+#. i18n: file ./kxsldbgpart/xsldbgglobalvariables.ui line 188
+#: rc.cpp:36 rc.cpp:342
+#, no-c-format
+msgid "Result of evaluation will appear in message window"
+msgstr "Hesaplamanın sonucu mesaj penceresinde görünecek"
+
+#. i18n: file ./kxsldbgpart/xsldbgglobalvariables.ui line 229
+#: rc.cpp:39 rc.cpp:57 rc.cpp:87 rc.cpp:282 rc.cpp:327 rc.cpp:375
+#, no-c-format
+msgid "Refresh"
+msgstr "Tazele"
+
+#. i18n: file ./kxsldbgpart/xsldbgcallstack.ui line 17
+#: rc.cpp:42
+#, no-c-format
+msgid "Xsldbg Callstack"
+msgstr "Xsldbg Çağrıyığını"
+
+#. i18n: file ./kxsldbgpart/xsldbgcallstack.ui line 32
+#: rc.cpp:45
+#, no-c-format
+msgid "Frame# Template Name"
+msgstr "Çerçeve# Şablon İsmi"
+
+#. i18n: file ./kxsldbgpart/xsldbgcallstack.ui line 43
+#: rc.cpp:48 rc.cpp:69
+#, no-c-format
+msgid "Source File Name"
+msgstr "Kaynak Dosyası Adı"
+
+#. i18n: file ./kxsldbgpart/xsldbgcallstack.ui line 54
+#: rc.cpp:51 rc.cpp:72 rc.cpp:210
+#, no-c-format
+msgid "Line Number"
+msgstr "Satır Numarası"
+
+#. i18n: file ./kxsldbgpart/xsldbgcallstack.ui line 75
+#: rc.cpp:54
+#, no-c-format
+msgid "Oldest Frame # is 0, Frame # has been added to the first column"
+msgstr "En eski Çerçeve numarası 0'dır, Çerçeve numarası ilk sütuna eklendi"
+
+#. i18n: file ./kxsldbgpart/xsldbgtemplates.ui line 17
+#: rc.cpp:60
+#, no-c-format
+msgid "Xsldbg Templates"
+msgstr "Xsldbg Şablonları"
+
+#. i18n: file ./kxsldbgpart/xsldbgtemplates.ui line 43
+#: rc.cpp:66 rc.cpp:204
+#, no-c-format
+msgid "Mode"
+msgstr "Kip"
+
+#. i18n: file ./kxsldbgpart/xsldbgsources.ui line 17
+#: rc.cpp:75
+#, no-c-format
+msgid "Xsldbg Source Files"
+msgstr "Xsldbg Kaynak Dosyaları"
+
+#. i18n: file ./kxsldbgpart/xsldbgsources.ui line 43
+#: rc.cpp:81
+#, no-c-format
+msgid "Parent File"
+msgstr "İlgili Dosya"
+
+#. i18n: file ./kxsldbgpart/xsldbgsources.ui line 54
+#: rc.cpp:84
+#, no-c-format
+msgid "Parent Line Number"
+msgstr "İlgili Satır Numarası"
+
+#. i18n: file ./kxsldbgpart/xsldbgconfig.ui line 31
+#: rc.cpp:90
+#, no-c-format
+msgid "KXsldbg Configuration"
+msgstr "KXsldbg Yapılandırması"
+
+#. i18n: file ./kxsldbgpart/xsldbgconfig.ui line 75
+#: rc.cpp:93
+#, no-c-format
+msgid "LibXSLT Parameters"
+msgstr "LibXSLT Parametreleri"
+
+#. i18n: file ./kxsldbgpart/xsldbgconfig.ui line 108
+#: rc.cpp:96
+#, no-c-format
+msgid "Parameter value:"
+msgstr "Parametre değeri:"
+
+#. i18n: file ./kxsldbgpart/xsldbgconfig.ui line 148
+#: rc.cpp:99
+#, no-c-format
+msgid "Parameter name:"
+msgstr "Parametre adı:"
+
+#. i18n: file ./kxsldbgpart/xsldbgconfig.ui line 229
+#: rc.cpp:102
+#, no-c-format
+msgid "Prev"
+msgstr "Önceki"
+
+#. i18n: file ./kxsldbgpart/xsldbgconfig.ui line 464
+#: rc.cpp:120
+#, no-c-format
+msgid "Output file:"
+msgstr "Çıktı dosyası:"
+
+#. i18n: file ./kxsldbgpart/xsldbgconfig.ui line 488
+#: rc.cpp:123 rc.cpp:129 rc.cpp:135
+#, no-c-format
+msgid "..."
+msgstr "..."
+
+#. i18n: file ./kxsldbgpart/xsldbgconfig.ui line 512
+#: rc.cpp:126
+#, no-c-format
+msgid "XML data:"
+msgstr "XML verisi:"
+
+#. i18n: file ./kxsldbgpart/xsldbgconfig.ui line 560
+#: rc.cpp:132
+#, no-c-format
+msgid "XSL source:"
+msgstr "XSL kaynağı:"
+
+#. i18n: file ./kxsldbgpart/xsldbgconfig.ui line 621
+#: rc.cpp:141
+#, no-c-format
+msgid "catalogs"
+msgstr "kataloglar"
+
+#. i18n: file ./kxsldbgpart/xsldbgconfig.ui line 624
+#: rc.cpp:144
+#, no-c-format
+msgid "use catalogs from $SGML_CATALOGS_FILES"
+msgstr "$SGML_CATALOGS_FILES'tan katalogları kullan"
+
+#. i18n: file ./kxsldbgpart/xsldbgconfig.ui line 632
+#: rc.cpp:147
+#, no-c-format
+msgid "novalid"
+msgstr "geçerli değil"
+
+#. i18n: file ./kxsldbgpart/xsldbgconfig.ui line 635
+#: rc.cpp:150
+#, no-c-format
+msgid "skip the DTD loading phase"
+msgstr "DTD yükleme bölümünü atla"
+
+#. i18n: file ./kxsldbgpart/xsldbgconfig.ui line 643
+#: rc.cpp:153
+#, no-c-format
+msgid "html"
+msgstr "html"
+
+#. i18n: file ./kxsldbgpart/xsldbgconfig.ui line 646
+#: rc.cpp:156
+#, no-c-format
+msgid "the input document is(are) an HTML file(s)"
+msgstr "girdi belgesi/belgeleri HTML dosyası(ları)dır"
+
+#. i18n: file ./kxsldbgpart/xsldbgconfig.ui line 654
+#: rc.cpp:159
+#, no-c-format
+msgid "docbook"
+msgstr "docbook"
+
+#. i18n: file ./kxsldbgpart/xsldbgconfig.ui line 657
+#: rc.cpp:162
+#, no-c-format
+msgid "the input document is SGML docbook"
+msgstr "giriş belgesi SGML docbook'tur."
+
+#. i18n: file ./kxsldbgpart/xsldbgconfig.ui line 665
+#: rc.cpp:165
+#, no-c-format
+msgid "debug"
+msgstr "hata ayıkla"
+
+#. i18n: file ./kxsldbgpart/xsldbgconfig.ui line 668
+#: rc.cpp:168
+#, no-c-format
+msgid "dump the tree of the result instead"
+msgstr "sonuç yerine ağaç dökümü"
+
+#. i18n: file ./kxsldbgpart/xsldbgconfig.ui line 676
+#: rc.cpp:171
+#, no-c-format
+msgid "noout"
+msgstr "çıkışyok"
+
+#. i18n: file ./kxsldbgpart/xsldbgconfig.ui line 679
+#: rc.cpp:174
+#, no-c-format
+msgid "do not dump the result"
+msgstr "sonuç dökülmedi"
+
+#. i18n: file ./kxsldbgpart/xsldbgconfig.ui line 687
+#: rc.cpp:177
+#, no-c-format
+msgid "profile"
+msgstr "profil"
+
+#. i18n: file ./kxsldbgpart/xsldbgconfig.ui line 690
+#: rc.cpp:180
+#, no-c-format
+msgid "print profiling information"
+msgstr "profil bilgisini yazdır"
+
+#. i18n: file ./kxsldbgpart/xsldbgconfig.ui line 698
+#: rc.cpp:183
+#, no-c-format
+msgid "timing"
+msgstr "zamanlama"
+
+#. i18n: file ./kxsldbgpart/xsldbgconfig.ui line 701
+#: rc.cpp:186
+#, no-c-format
+msgid "display the time used"
+msgstr "kullanılan zamanı göster"
+
+#. i18n: file ./kxsldbgpart/xsldbgconfig.ui line 709
+#: rc.cpp:189
+#, no-c-format
+msgid "nonet"
+msgstr ""
+
+#. i18n: file ./kxsldbgpart/xsldbgconfig.ui line 712
+#: rc.cpp:192
+#, no-c-format
+msgid "refuse to fetch DTDs or entities over network"
+msgstr "ağ üzerinde getirilecek varlıkları ya da DTDs reddet"
+
+#. i18n: file ./kxsldbgpart/xsldbgbreakpoints.ui line 17
+#: rc.cpp:195
+#, no-c-format
+msgid "Xsldbg Breakpoints"
+msgstr "Xsldbg Durma noktaları"
+
+#. i18n: file ./kxsldbgpart/xsldbgbreakpoints.ui line 26
+#: rc.cpp:198
+#, no-c-format
+msgid "ID"
+msgstr "Kimlik"
+
+#. i18n: file ./kxsldbgpart/xsldbgbreakpoints.ui line 59
+#: rc.cpp:207
+#, no-c-format
+msgid "File Name"
+msgstr "Dosya Adı"
+
+#. i18n: file ./kxsldbgpart/xsldbgbreakpoints.ui line 102
+#: rc.cpp:216
+#, no-c-format
+msgid "Click breakpoint in list to modify or delete it"
+msgstr "Silmek ya da değiştirmek için listede bir durma noktasına tıklayın"
+
+#. i18n: file ./kxsldbgpart/xsldbgbreakpoints.ui line 138
+#: rc.cpp:219
+#, no-c-format
+msgid "ID:"
+msgstr "Kimlik:"
+
+#. i18n: file ./kxsldbgpart/xsldbgbreakpoints.ui line 146
+#: rc.cpp:222
+#, no-c-format
+msgid "Line number:"
+msgstr "Satır numarası:"
+
+#. i18n: file ./kxsldbgpart/xsldbgbreakpoints.ui line 154
+#: rc.cpp:225
+#, no-c-format
+msgid "You don't need to specify directory for file name"
+msgstr "Dosya adı için klasör belirtmenize gerek yok"
+
+#. i18n: file ./kxsldbgpart/xsldbgbreakpoints.ui line 162
+#: rc.cpp:228
+#, no-c-format
+msgid "Template name or match name to look for"
+msgstr "Arama için eşleştirme ismi ya da şablon ismi"
+
+#. i18n: file ./kxsldbgpart/xsldbgbreakpoints.ui line 198
+#: rc.cpp:231 rc.cpp:234
+#, no-c-format
+msgid "Must be positive"
+msgstr "Pozitif olmalı"
+
+#. i18n: file ./kxsldbgpart/xsldbgbreakpoints.ui line 285
+#: rc.cpp:237
+#, no-c-format
+msgid "Mode:"
+msgstr "Kip:"
+
+#. i18n: file ./kxsldbgpart/xsldbgbreakpoints.ui line 293
+#: rc.cpp:240
+#, no-c-format
+msgid "Name:"
+msgstr "İsim:"
+
+#. i18n: file ./kxsldbgpart/xsldbgbreakpoints.ui line 301
+#: rc.cpp:243
+#, no-c-format
+msgid "File name:"
+msgstr "Dosya adı:"
+
+#. i18n: file ./kxsldbgpart/xsldbgbreakpoints.ui line 375
+#: rc.cpp:249
+#, no-c-format
+msgid "Delete breakpoint using ID"
+msgstr "Kimlik kullanarak durma noktası sil"
+
+#. i18n: file ./kxsldbgpart/xsldbgbreakpoints.ui line 386
+#: rc.cpp:255
+#, no-c-format
+msgid "Clear entered text"
+msgstr "Girilen metni temizle"
+
+#. i18n: file ./kxsldbgpart/xsldbgbreakpoints.ui line 394
+#: rc.cpp:258
+#, no-c-format
+msgid "Add All"
+msgstr "Hepsini Ekle"
+
+#. i18n: file ./kxsldbgpart/xsldbgbreakpoints.ui line 397
+#: rc.cpp:261
+#, no-c-format
+msgid "Add breakpoint on all templates found"
+msgstr "Bulunan tüm şablonlara durma noktası ekle"
+
+#. i18n: file ./kxsldbgpart/xsldbgbreakpoints.ui line 408
+#: rc.cpp:267
+#, no-c-format
+msgid "Delete all breakpoints"
+msgstr "Tüm durma noktalarını sil"
+
+#. i18n: file ./kxsldbgpart/xsldbgbreakpoints.ui line 416
+#: rc.cpp:270
+#, no-c-format
+msgid "Enable"
+msgstr "Etkinleştir"
+
+#. i18n: file ./kxsldbgpart/xsldbgbreakpoints.ui line 419
+#: rc.cpp:273
+#, no-c-format
+msgid "Enable breakpoint using ID"
+msgstr "Kimlik kullanarak durma noktasını etkin kıl"
+
+#. i18n: file ./kxsldbgpart/xsldbgbreakpoints.ui line 430
+#: rc.cpp:279
+#, no-c-format
+msgid "Add breakpoint using file name with line number or a template name"
+msgstr ""
+"Satır numarasıyla beraber dosya adı ya da şablon adı kullanarak durma noktası "
+"ekle"
+
+#. i18n: file ./kxsldbgpart/xsldbgwalkspeed.ui line 17
+#: rc.cpp:285
+#, no-c-format
+msgid "Configure xsldbg's Walk Speed"
+msgstr "xsldbg'nin Yürüme Hızını Ayarla"
+
+#. i18n: file ./kxsldbgpart/xsldbgwalkspeed.ui line 51
+#: rc.cpp:288
+#, no-c-format
+msgid ""
+"Change the speed at which xsldbg walks through execution of the stylesheet."
+msgstr "Biçemsayfasının yürütümünü gözden geçiren xsldbg hızını değiştir."
+
+#. i18n: file ./kxsldbgpart/xsldbgwalkspeed.ui line 95
+#: rc.cpp:291
+#, no-c-format
+msgid "Slow"
+msgstr "Yavaş"
+
+#. i18n: file ./kxsldbgpart/xsldbgwalkspeed.ui line 117
+#: rc.cpp:294
+#, no-c-format
+msgid "Fast"
+msgstr "Hızlı"
+
+#. i18n: file ./kxsldbgpart/xsldbgmsgdialog.ui line 26
+#: rc.cpp:303
+#, no-c-format
+msgid "qxsldbg Message"
+msgstr "qxsldbg Mesajı"
+
+#. i18n: file ./kxsldbgpart/xsldbgmsgdialog.ui line 71
+#: rc.cpp:306
+#, no-c-format
+msgid "TextLabel1"
+msgstr "MetinEtiketi 1"
+
+#. i18n: file ./kxsldbgpart/xsldbgentities.ui line 25
+#: rc.cpp:318
+#, no-c-format
+msgid "Xsldbg Entities"
+msgstr "Xsldbg Varlıkları"
+
+#. i18n: file ./kxsldbgpart/xsldbgentities.ui line 40
+#: rc.cpp:321
+#, no-c-format
+msgid "PublicID"
+msgstr "Halk Kimliği(ID)"
+
+#. i18n: file ./kxsldbgpart/xsldbgentities.ui line 51
+#: rc.cpp:324
+#, no-c-format
+msgid "SystemID"
+msgstr "Sistem Kimiliği (ID)"
+
+#. i18n: file ./kxsldbgpart/xsldbglocalvariables.ui line 25
+#: rc.cpp:330
+#, no-c-format
+msgid "Xsldbg Local Variables"
+msgstr "Xsldbg Yerel Değişkenler"
+
+#. i18n: file ./kxsldbgpart/xsldbglocalvariables.ui line 161
+#: rc.cpp:348
+#, no-c-format
+msgid "Template Context"
+msgstr "Şablon İçeriği"
+
+#. i18n: file ./kxsldbgpart/xsldbglocalvariables.ui line 172
+#: rc.cpp:351
+#, no-c-format
+msgid "Type"
+msgstr "Tür"
+
+#. i18n: file ./kxsldbgpart/xsldbglocalvariables.ui line 228
+#: rc.cpp:360
+#, no-c-format
+msgid "Variable expression:"
+msgstr "Değişken ifadesi:"
+
+#. i18n: file ./kxsldbgpart/xsldbglocalvariables.ui line 249
+#: rc.cpp:363
+#, no-c-format
+msgid "Variable type:"
+msgstr "Değişken türüı:"
+
+#. i18n: file ./kxsldbgpart/xsldbglocalvariables.ui line 270
+#: rc.cpp:366
+#, no-c-format
+msgid "Set Expression"
+msgstr "İfade Ayarla"
+
+#. i18n: file ./kxsldbgpart/xsldbglocalvariables.ui line 273
+#: rc.cpp:369
+#, no-c-format
+msgid "Set the selection for variable "
+msgstr "Değişken için Ayar Seçimi"
+
+#. i18n: file ./kxsldbgpart/xsldbglocalvariables.ui line 283
+#: rc.cpp:372
+#, no-c-format
+msgid "Variable name:"
+msgstr "Değişken adı:"
+
+#: xsldbgmain.cpp:51
+msgid "A KDE console application for xsldbg, an XSLT debugger"
+msgstr "xsldbg için bir KDE konsol uygulması, bir XSLT hata ayıklayıcı"
+
+#: xsldbgmain.cpp:57
+msgid "Start a shell"
+msgstr "Kabuk başlat"
+
+#: xsldbgmain.cpp:58
+msgid "Path to change into before loading files"
+msgstr "Dosyalar yüklenmeden önce değişecek yol"
+
+#: xsldbgmain.cpp:59
+msgid "Add a parameter named <name> and value <value> to XSL environment"
+msgstr "XSL ortamına değer <value> ve adlandırılmış <name> parametre ekle"
+
+#: xsldbgmain.cpp:60
+msgid "Use ISO 639 language code specified; for example en_US"
+msgstr "Belirtilmiş ISO 639 dil kodu kullan; örneğin en_US"
+
+#: xsldbgmain.cpp:60
+msgid "Save to a given file. See output command documentation"
+msgstr "Verilen dosyayı kaydet. Komut belgesi çıktısını gör"
+
+#: xsldbgmain.cpp:61
+msgid "Show the version of libxml and libxslt used"
+msgstr "Kullanılan libxml ve libxslt'nin sürümünü göster"
+
+#: xsldbgmain.cpp:62
+msgid "Show logs of what is happening"
+msgstr "Günlük bilgilerini göster"
+
+#: xsldbgmain.cpp:63
+msgid "Display the time used"
+msgstr "Kullanılan zamanı göster"
+
+#: xsldbgmain.cpp:64
+msgid "Run the transformation 20 times"
+msgstr "20 kez dönüşümü çalıştır"
+
+#: xsldbgmain.cpp:66
+msgid "Dump the tree of the result instead"
+msgstr "Sonucun yerine ağaç dökümü"
+
+#: xsldbgmain.cpp:68
+msgid "Disable the DTD loading phase"
+msgstr "DTD yükleme bölümünü etkisizleştir"
+
+#: xsldbgmain.cpp:69
+msgid "Disable the output of the result"
+msgstr "Sonucun çıktısını etkisizleştir"
+
+#: xsldbgmain.cpp:70
+msgid "Increase the maximum depth"
+msgstr "Azami derinliği artır"
+
+#: xsldbgmain.cpp:73
+msgid "The input document is(are) an HTML file(s)"
+msgstr "Girdi belgesi(leri) bir HTML dosyası(ları)dır."
+
+#: xsldbgmain.cpp:77
+msgid "The input document is SGML docbook"
+msgstr "Girdi belgesi(leri) SGML belgekitabıdır."
+
+#: xsldbgmain.cpp:80
+msgid "Disable the fetching DTDs or entities over network"
+msgstr "Ağ üzerindeki varlıkları ya da DTDs getirmeyi etkisizleştir"
+
+#: xsldbgmain.cpp:83
+msgid "Use the catalogs from $SGML_CATALOG_FILES"
+msgstr "$SGML_CATALOG_FILES daki katalogları kullan"
+
+#: xsldbgmain.cpp:87
+msgid "Disable XInclude processing on document input"
+msgstr "Belge girişi üzerindeki XInclude işlemesini etkisizleştir"
+
+#: xsldbgmain.cpp:90
+msgid "Print profiling informations"
+msgstr "Profil bilgilerini yazdır"
+
+#: xsldbgmain.cpp:91
+msgid "Do not run gdb compatability mode and print less information"
+msgstr "Az bilgiyi yazdır ve gdb uygunluk kipini çalıştırma"
+
+#: xsldbgmain.cpp:92
+msgid "Detect and use encodings in the stylesheet"
+msgstr "Biçemsayfasındaki kodlamaları algıla ve kullan"
+
+#: xsldbgmain.cpp:93
+msgid "Treat command line input as encoded in UTF-8"
+msgstr "Komut satırı girişini UTF-8 içinde kodlanmış olarak düşün"
+
+#: xsldbgmain.cpp:94
+msgid "Use HTML output when generating search reports"
+msgstr "Arama sonuçları oluşturulduğunda HTML çıktısı kullan"
+
+#: xsldbgmain.cpp:95
+msgid ""
+"Print all error messages to stdout, normally error messages go to stderr"
+msgstr ""
+"Stdout'ta tüm hata mesajlarını yazdır, normal olarak hata mesajları stderr'a "
+"gider"
+
+#: xsldbgmain.cpp:96
+msgid ""
+"Disable the automatic restarting of execution when current processing pass is "
+"complete"
+msgstr ""
+"Mevcut işlem geçişi tamamlandığı zaman ifadenin otomatik yeniden başlatmasını "
+"etkisizleştir"
+
+#: xsldbgmain.cpp:124
+msgid ""
+"Using libxml %1, libxslt %2 and libexslt %3\n"
+msgstr ""
+"%1 libxml, %2 libxslt ve %3 libexslt kullanma\n"
+
+#: xsldbgmain.cpp:125
+msgid ""
+"xsldbg was compiled against libxml %1, libxslt %2 and libexslt %3\n"
+msgstr ""
+"%1 libxml, %2 libxslt ve %3 libexslt'e rağmen xsldbg derlenmiştir.\n"
+
+#: xsldbgmain.cpp:126
+msgid ""
+"libxslt %1 was compiled against libxml %2\n"
+msgstr ""
+"%1 libxslt %2 libxml'e rağmen derlenmiştir\n"
+
+#: xsldbgmain.cpp:127
+msgid ""
+"libexslt %1 was compiled against libxml %2\n"
+msgstr ""
+"%1 libexslt %2 libxml'e rağmen derlenmiştir\n"
+
+#: xsldbgmain.cpp:130
+msgid "Xsldbg"
+msgstr "Xsldbg"
+
+#~ msgid "Warning: The %1 command is disbled\n"
+#~ msgstr "Uyarı: %1 komut etkisizleştirildi\n"

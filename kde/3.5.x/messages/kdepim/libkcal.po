@@ -1,0 +1,1654 @@
+# Translation of libkcal.po to Turkish
+# Copyright (C).
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2003.
+# Barış Metin <baris@uludag.org.tr>, 2004.
+# Ozan Eren BİLGEN <oebilgen@uekae.tubitak.gov.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkcal\n"
+"POT-Creation-Date: 2008-08-19 01:18+0200\n"
+"PO-Revision-Date: 2008-02-29 16:02+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@lists.kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: LoKalize 0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Serdar Soytetir, Ömer Fadıl USTA, Ozan Eren BİLGEN"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr ""
+"tulliana@gmail.com, omer_fad@hotmail.com, oebilgen@uekae.tubitak.gov.tr"
+
+#: attendee.cpp:76
+msgid "Needs Action"
+msgstr "Eylem Gerektirir"
+
+#: attendee.cpp:79
+msgid "Accepted"
+msgstr "Kabul edildi"
+
+#: attendee.cpp:82
+msgid "Declined"
+msgstr "Reddedildi"
+
+#: attendee.cpp:85
+msgid ""
+"_: attendee status\n"
+"Tentative"
+msgstr "Geçici Olarak"
+
+#: attendee.cpp:88
+msgid "Delegated"
+msgstr "Yetki aktarıldı"
+
+#: attendee.cpp:91 htmlexport.cpp:358 incidence.cpp:718
+#: incidenceformatter.cpp:435
+msgid "Completed"
+msgstr "Bitirildi"
+
+#: attendee.cpp:94
+msgid "In Process"
+msgstr "İşlem sürüyor"
+
+#: attendee.cpp:143
+msgid "Chair"
+msgstr "Sandalye"
+
+#: attendee.cpp:147
+msgid "Participant"
+msgstr "Katılımcı"
+
+#: attendee.cpp:150
+msgid "Optional Participant"
+msgstr "Seçmeli Katılımcı"
+
+#: attendee.cpp:153
+msgid "Observer"
+msgstr "Gözlemci"
+
+#: calendar.cpp:64
+msgid "Unknown Name"
+msgstr "Bilinmeyen İsim"
+
+#: calendar.cpp:64
+msgid "unknown@nowhere"
+msgstr "bilinmeyen@hiçbiryer"
+
+#: calendarlocal.cpp:581
+msgid ""
+"The timezone setting was changed. In order to display the calendar you are "
+"looking at in the new timezone, it needs to be saved. Do you want to save the "
+"pending changes or rather wait and apply the new timezone on the next reload?"
+msgstr ""
+
+#: calendarlocal.cpp:587
+msgid "Save before applying timezones?"
+msgstr ""
+
+#: calendarlocal.cpp:589
+msgid "Apply Timezone Change on Next Reload"
+msgstr ""
+
+#: confirmsavedialog.cpp:34
+msgid "Confirm Save"
+msgstr "Kaydetmeyi Onayla"
+
+#: confirmsavedialog.cpp:42
+msgid "You have requested to save the following objects to '%1':"
+msgstr "Şu bileşenleri '%1'e kaydetmeyi talep ettiniz:"
+
+#: confirmsavedialog.cpp:47
+msgid "Operation"
+msgstr "İşlem"
+
+#: confirmsavedialog.cpp:48
+msgid "Type"
+msgstr "Tip"
+
+#: confirmsavedialog.cpp:49
+msgid "Summary"
+msgstr "Özet"
+
+#: confirmsavedialog.cpp:50
+msgid "UID"
+msgstr "Kullanıcı No"
+
+#: convertqtopia.cpp:42
+msgid "Convert Qtopia calendar file to iCalendar"
+msgstr "Qtopia takvim dosyasını iCalendar'a dönüştür"
+
+#: convertqtopia.cpp:44
+msgid "Convert iCalendar to iCalendar"
+msgstr "iCalendar'ı iCalendar'a dönüştür"
+
+#: convertqtopia.cpp:46
+msgid "Output file"
+msgstr "Çıktı dosyası"
+
+#: convertqtopia.cpp:47
+msgid "Input file"
+msgstr "Girdi dosyası"
+
+#: convertqtopia.cpp:53
+msgid "Qtopia calendar file converter"
+msgstr "Qtopia takvim dosyası dönüştürücü"
+
+#: convertqtopia.cpp:76
+msgid "Please specify only one of the conversion options."
+msgstr "Lütfen, dünüştürme seçeneklerinden birini seçin."
+
+#: convertqtopia.cpp:80
+msgid "You have to specify one conversion option."
+msgstr "Bir dönüştürme seçeneği seçmelisiniz."
+
+#: convertqtopia.cpp:84
+msgid "Error: No input file."
+msgstr "Hata: Girdi dosyası yok."
+
+#: convertqtopia.cpp:108 icalformat.cpp:120
+msgid "Error saving to '%1'."
+msgstr "'%1' dosyasına kayıt sırasında hata."
+
+#: exceptions.cpp:40
+msgid "%1 Error"
+msgstr "%1 Hatası"
+
+#: exceptions.cpp:57
+msgid "Load Error"
+msgstr "Yükleme Hatası"
+
+#: exceptions.cpp:60
+msgid "Save Error"
+msgstr "Kaydetme Hatası"
+
+#: exceptions.cpp:63
+msgid "Parse Error in libical"
+msgstr "Libical ayrıştırma hatası"
+
+#: exceptions.cpp:66
+msgid "Parse Error in libkcal"
+msgstr "Libkcal ayrıştırma hatası"
+
+#: exceptions.cpp:69
+msgid "No calendar component found."
+msgstr "Bileşen takvimi bulunamıyor."
+
+#: exceptions.cpp:72
+msgid "vCalendar Version 1.0 detected."
+msgstr "vCalendar sürüm 1.0 bulundu."
+
+#: exceptions.cpp:75
+msgid "iCalendar Version 2.0 detected."
+msgstr "iCalendar sürüm 2.0 bulundu."
+
+#: exceptions.cpp:78
+msgid "Restriction violation"
+msgstr "Kısıtlama ihlali"
+
+#: htmlexport.cpp:149
+msgid ""
+"_: month_year\n"
+"%1 %2"
+msgstr "%1 %2"
+
+#: htmlexport.cpp:224
+msgid "Start Time"
+msgstr "Başlama Zamanı"
+
+#: htmlexport.cpp:225
+msgid "End Time"
+msgstr "Bitiş Zamanı"
+
+#: htmlexport.cpp:226
+msgid "Event"
+msgstr "Olay"
+
+#: htmlexport.cpp:228 htmlexport.cpp:364 incidenceformatter.cpp:334
+#: incidenceformatter.cpp:413
+msgid "Location"
+msgstr "Konum"
+
+#: htmlexport.cpp:232 htmlexport.cpp:368
+msgid "Categories"
+msgstr "Sınıflamalar"
+
+#: htmlexport.cpp:236 htmlexport.cpp:372 incidenceformatter.cpp:158
+msgid "Attendees"
+msgstr "Katılımcılar"
+
+#: htmlexport.cpp:356
+msgid "Task"
+msgstr "Görev"
+
+#: htmlexport.cpp:357 incidenceformatter.cpp:426
+msgid "Priority"
+msgstr "Öncelik"
+
+#: htmlexport.cpp:360
+msgid "Due Date"
+msgstr "Bitiş Tarihi"
+
+#: htmlexport.cpp:391
+msgid "Sub-Tasks of: "
+msgstr "Alt Görevin Dahil Olduğu Görev: "
+
+#: htmlexport.cpp:441
+msgid "Sub-Tasks"
+msgstr "Alt Görevler"
+
+#: htmlexport.cpp:454 incidenceformatter.cpp:436
+msgid "%1 %"
+msgstr "%1 %"
+
+#: htmlexport.cpp:605
+msgid "This page was created "
+msgstr "Bu sayfa <a href=\"http://korganizer.kde.org\">KOrganizer</a> "
+
+#: htmlexport.cpp:613 htmlexport.cpp:615
+msgid "by <a href=\"mailto:%1\">%2</a> "
+msgstr "uygulaması kullanılarak <a href=\"mailto:%1\">%2</a> "
+
+#: htmlexport.cpp:618
+msgid "by %1 "
+msgstr "%1 tarafından "
+
+#: htmlexport.cpp:622
+msgid "with <a href=\"%1\">%2</a>"
+msgstr "<a href=\"%1\">%2</a> ile"
+
+#: htmlexport.cpp:626
+#, c-format
+msgid "with %1"
+msgstr "%1 ile"
+
+#: htmlexport.cpp:701
+msgid ""
+"_: list of holidays\n"
+"%1, %2"
+msgstr "%1, %2"
+
+#: icalformat.cpp:131
+msgid "Could not save '%1'"
+msgstr "'%1' kaydedilemedi"
+
+#: icalformat.cpp:269
+msgid "libical error"
+msgstr "libical hatası"
+
+#: icalformatimpl.cpp:1990
+msgid "Expected iCalendar format"
+msgstr "Beklenen iCalendar biçimi"
+
+#: incidence.cpp:716
+msgid ""
+"_: incidence status\n"
+"Tentative"
+msgstr "Geçici Olarak"
+
+#: incidence.cpp:717
+msgid "Confirmed"
+msgstr "Onaylandı"
+
+#: incidence.cpp:719
+msgid "Needs-Action"
+msgstr "Eylem-Gerektirir"
+
+#: incidence.cpp:720
+msgid "Canceled"
+msgstr "İptal edildi"
+
+#: incidence.cpp:721
+msgid "In-Process"
+msgstr "İşlem-sürüyor"
+
+#: incidence.cpp:722
+msgid "Draft"
+msgstr "Taslak"
+
+#: incidence.cpp:723
+msgid "Final"
+msgstr "Son"
+
+#: incidence.cpp:751
+msgid "Public"
+msgstr "Genel"
+
+#: incidence.cpp:753
+msgid "Private"
+msgstr "Özel"
+
+#: incidence.cpp:755
+msgid "Confidential"
+msgstr "Gizli"
+
+#: incidence.cpp:757
+msgid "Undefined"
+msgstr "Tanımsız"
+
+#: incidenceformatter.cpp:151
+msgid "Organizer"
+msgstr "Düzenleyici"
+
+#: incidenceformatter.cpp:165
+msgid " (delegated by %1)"
+msgstr "(%1 tarafından temsil edildi)"
+
+#: incidenceformatter.cpp:168
+msgid " (delegated to %1)"
+msgstr ""
+
+#: incidenceformatter.cpp:186
+msgid "Show mail"
+msgstr "İletiyi göster"
+
+#: incidenceformatter.cpp:285 incidenceformatter.cpp:295
+#: incidenceformatter.cpp:300
+msgid "Time"
+msgstr "Zaman"
+
+#: incidenceformatter.cpp:286 incidenceformatter.cpp:296
+#: incidenceformatter.cpp:302
+msgid ""
+"_: <beginTime> - <endTime>\n"
+"%1 - %2"
+msgstr "%1 - %2"
+
+#: incidenceformatter.cpp:290 incidenceformatter.cpp:309
+msgid "Date"
+msgstr "Tarih"
+
+#: incidenceformatter.cpp:291 incidenceformatter.cpp:310
+#, c-format
+msgid ""
+"_: date as string\n"
+"%1"
+msgstr "%1"
+
+#: incidenceformatter.cpp:318
+msgid "Birthday"
+msgstr "Doğum Günü"
+
+#: incidenceformatter.cpp:327 incidenceformatter.cpp:406
+msgid "Description"
+msgstr "Açıklama"
+
+#: incidenceformatter.cpp:341 incidenceformatter.cpp:420
+#, c-format
+msgid ""
+"_n: 1 Category\n"
+"%n Categories"
+msgstr "%n Kategori"
+
+#: incidenceformatter.cpp:350 incidenceformatter.cpp:443
+msgid "Next on"
+msgstr ""
+
+#: incidenceformatter.cpp:371 incidenceformatter.cpp:464
+#, c-format
+msgid ""
+"_n: 1 attachment\n"
+"%n attachments"
+msgstr "%n eklenti"
+
+#: incidenceformatter.cpp:377 incidenceformatter.cpp:470
+#, c-format
+msgid "Creation date: %1."
+msgstr "Oluşturulma tarihi: %1."
+
+#: incidenceformatter.cpp:391
+msgid "Due on"
+msgstr ""
+
+#: incidenceformatter.cpp:430 incidenceformatter.cpp:623
+msgid "Unspecified"
+msgstr "Tanımsız"
+
+#: incidenceformatter.cpp:484
+#, c-format
+msgid "Journal for %1"
+msgstr "%1 için Günlük"
+
+#: incidenceformatter.cpp:496 incidenceformatter.cpp:1976
+#, c-format
+msgid "Free/Busy information for %1"
+msgstr "%1 için Boş/Dolu bilgisi"
+
+#: incidenceformatter.cpp:498
+msgid "Busy times in date range %1 - %2:"
+msgstr "%1 - %2 tarihleri arasındaki dolu zamanlar:"
+
+#: incidenceformatter.cpp:504
+msgid "Busy:"
+msgstr "Dolu:"
+
+#: incidenceformatter.cpp:512 incidenceformatter.cpp:694
+#: incidenceformatter.cpp:778
+#, c-format
+msgid ""
+"_n: 1 hour \n"
+"%n hours "
+msgstr "%n saat"
+
+#: incidenceformatter.cpp:516 incidenceformatter.cpp:697
+#, c-format
+msgid ""
+"_n: 1 minute \n"
+"%n minutes "
+msgstr "%n dakika"
+
+#: incidenceformatter.cpp:520 incidenceformatter.cpp:786
+#, c-format
+msgid ""
+"_n: 1 second\n"
+"%n seconds"
+msgstr "%n saniye"
+
+#: incidenceformatter.cpp:522 incidenceformatter.cpp:788
+msgid ""
+"_: startDate for duration\n"
+"%1 for %2"
+msgstr "%2 için %1"
+
+#: incidenceformatter.cpp:528 incidenceformatter.cpp:794
+msgid ""
+"_: date, fromTime - toTime \n"
+"%1, %2 - %3"
+msgstr "%1, %2 - %3"
+
+#: incidenceformatter.cpp:533 incidenceformatter.cpp:799
+msgid ""
+"_: fromDateTime - toDateTime\n"
+"%1 - %2"
+msgstr "%1 - %2"
+
+#: incidenceformatter.cpp:602
+msgid ""
+"_: %1: Start Date, %2: Start Time\n"
+"%1 %2"
+msgstr "%1 %2"
+
+#: incidenceformatter.cpp:605
+msgid ""
+"_: %1: Start Date\n"
+"%1 (time unspecified)"
+msgstr "%1 (saat belirtilmemiş)"
+
+#: incidenceformatter.cpp:616
+msgid ""
+"_: %1: End Date, %2: End Time\n"
+"%1 %2"
+msgstr "%1 %2"
+
+#: incidenceformatter.cpp:619
+msgid ""
+"_: %1: End Date\n"
+"%1 (time unspecified)"
+msgstr "%1 (saat belirtilmemiş)"
+
+#: incidenceformatter.cpp:638 incidenceformatter.cpp:726
+#: incidenceformatter.cpp:749
+msgid "Description:"
+msgstr "Tanım:"
+
+#: incidenceformatter.cpp:644
+msgid "Comments:"
+msgstr "Açıklamalar::"
+
+#: incidenceformatter.cpp:662 incidenceformatter.cpp:716
+#: incidenceformatter.cpp:738
+msgid "Summary unspecified"
+msgstr "Özet belirtilmemiş"
+
+#: incidenceformatter.cpp:667
+msgid "Location unspecified"
+msgstr "Konum belirtilmemiş"
+
+#: incidenceformatter.cpp:678
+msgid "What:"
+msgstr "Ne:"
+
+#: incidenceformatter.cpp:679
+msgid "Where:"
+msgstr "Nerede:"
+
+#: incidenceformatter.cpp:682
+msgid "Start Time:"
+msgstr "Başlama Zamanı:"
+
+#: incidenceformatter.cpp:685
+msgid "End Time:"
+msgstr "Bitiş Zamanı:"
+
+#: incidenceformatter.cpp:700
+msgid "Duration:"
+msgstr "Süre:"
+
+#: incidenceformatter.cpp:717 incidenceformatter.cpp:739
+msgid "Description unspecified"
+msgstr "Tanımlama belirtilmemiş"
+
+#: incidenceformatter.cpp:725 incidenceformatter.cpp:747
+msgid "Summary:"
+msgstr "Özet:"
+
+#: incidenceformatter.cpp:748
+msgid "Date:"
+msgstr "Tarih:"
+
+#: incidenceformatter.cpp:762
+msgid "Person:"
+msgstr "Kişi:"
+
+#: incidenceformatter.cpp:763
+msgid "Start date:"
+msgstr "Başlama tarihi:"
+
+#: incidenceformatter.cpp:764
+msgid "End date:"
+msgstr "Bitiş tarihi:"
+
+#: incidenceformatter.cpp:782
+#, c-format
+msgid ""
+"_n: 1 minute\n"
+"%n minutes "
+msgstr "%n dakika "
+
+#: incidenceformatter.cpp:818
+msgid "This event has been published"
+msgstr "Bu olay duyuruldu"
+
+#: incidenceformatter.cpp:821
+msgid "This meeting has been updated"
+msgstr "Bu toplantı güncellendi"
+
+#: incidenceformatter.cpp:822
+msgid "You have been invited to this meeting"
+msgstr "Bu toplantıya davet edildiniz"
+
+#: incidenceformatter.cpp:824
+msgid "This invitation was refreshed"
+msgstr "Bu davet yenilendi"
+
+#: incidenceformatter.cpp:826
+msgid "This meeting has been canceled"
+msgstr "Bu toplantı iptal edildi"
+
+#: incidenceformatter.cpp:828
+msgid "Addition to the meeting invitation"
+msgstr "Toplantı davetine ekleme"
+
+#: incidenceformatter.cpp:843
+msgid "Sender"
+msgstr "Gönderen"
+
+#: incidenceformatter.cpp:852
+msgid "%1 indicates this invitation still needs some action"
+msgstr "%1 bu davetin halen eylem gerektirdiğini gösteriyor"
+
+#: incidenceformatter.cpp:855
+msgid "%1 accepts this meeting invitation"
+msgstr "%1 bu toplantı devetini kabul ediyor"
+
+#: incidenceformatter.cpp:856
+msgid "%1 accepts this meeting invitation on behalf of %2"
+msgstr "%1 bu toplantı devetini %2 adına kabul ediyor"
+
+#: incidenceformatter.cpp:860
+msgid "%1 tentatively accepts this meeting invitation"
+msgstr "%1 toplantı davetini geçici olarak kabul ediyor"
+
+#: incidenceformatter.cpp:861
+msgid "%1 tentatively accepts this meeting invitation on behalf of %2"
+msgstr "%1 toplantı davetini %2 adına geçici olarak kabul ediyor"
+
+#: incidenceformatter.cpp:865
+msgid "%1 declines this meeting invitation"
+msgstr "%1 toplantı davetini reddediyor"
+
+#: incidenceformatter.cpp:866
+msgid "%1 declines this meeting invitation on behalf of %2"
+msgstr "%1 toplantı davetini %2 adına reddediyor"
+
+#: incidenceformatter.cpp:874
+msgid "%1 has delegated this meeting invitation to %2"
+msgstr "%1 toplantı için temsilci gönderiyor %2"
+
+#: incidenceformatter.cpp:876
+msgid "%1 has delegated this meeting invitation"
+msgstr "%1 toplantı için temsilci gönderiyor"
+
+#: incidenceformatter.cpp:879
+msgid "This meeting invitation is now completed"
+msgstr "Bu toplantı daveti şu anda tamamlandı"
+
+#: incidenceformatter.cpp:881
+msgid "%1 is still processing the invitation"
+msgstr "%1 halen toplantı davetini gözden geçiriyor"
+
+#: incidenceformatter.cpp:883
+msgid "Unknown response to this meeting invitation"
+msgstr "Bu toplantı daveti için bilinmeyen cevap"
+
+#: incidenceformatter.cpp:887 incidenceformatter.cpp:952
+#: incidenceformatter.cpp:1009
+msgid "Sender makes this counter proposal"
+msgstr "Gönderen bu karşı teklifi yapıyor"
+
+#: incidenceformatter.cpp:889 incidenceformatter.cpp:954
+#: incidenceformatter.cpp:1011
+msgid "Sender declines the counter proposal"
+msgstr "Gönderen karşı teklifi reddediyor"
+
+#: incidenceformatter.cpp:891 incidenceformatter.cpp:956
+#: incidenceformatter.cpp:1013
+msgid "Error: iMIP message with unknown method: '%1'"
+msgstr "Hata: Bilinmeyen yöntemli iMIP iletisi: '%1'"
+
+#: incidenceformatter.cpp:903
+msgid "This task has been published"
+msgstr "Bu görev duyuruldu"
+
+#: incidenceformatter.cpp:906
+msgid "This task has been updated"
+msgstr "Bu görev güncellendi"
+
+#: incidenceformatter.cpp:907
+msgid "You have been assigned this task"
+msgstr "Bu göreve atandınız"
+
+#: incidenceformatter.cpp:909
+msgid "This task was refreshed"
+msgstr "Bu görev yenilendi"
+
+#: incidenceformatter.cpp:911
+msgid "This task was canceled"
+msgstr "Bu görev iptal edildi"
+
+#: incidenceformatter.cpp:913
+msgid "Addition to the task"
+msgstr "Göreve ek yapıldı"
+
+#: incidenceformatter.cpp:927
+msgid "Sender indicates this task assignment still needs some action"
+msgstr "Gönderen bu görev atamasının halen eylem gerektirdiğini belirtiyor"
+
+#: incidenceformatter.cpp:929
+msgid "Sender accepts this task"
+msgstr "Gönderen görevi kabul ediyor"
+
+#: incidenceformatter.cpp:931
+msgid "Sender tentatively accepts this task"
+msgstr "Gönderen görevi geçici olarak kabul ediyor"
+
+#: incidenceformatter.cpp:933
+msgid "Sender declines this task"
+msgstr "Gönderen görevi reddediyor"
+
+#: incidenceformatter.cpp:940
+#, c-format
+msgid "Sender has delegated this request for the task to %1"
+msgstr ""
+
+#: incidenceformatter.cpp:941
+msgid "Sender has delegated this request for the task "
+msgstr "Gönderen görev için başkasını yetkilendiriyor "
+
+#: incidenceformatter.cpp:944
+msgid "The request for this task is now completed"
+msgstr "Bu görev isteği tamamlandı"
+
+#: incidenceformatter.cpp:946 incidenceformatter.cpp:1003
+msgid "Sender is still processing the invitation"
+msgstr "Gönderen halen toplantı davetini gözden geçiriyor"
+
+#: incidenceformatter.cpp:948
+msgid "Unknown response to this task"
+msgstr "Bu görev için bilinmeyen yanıt"
+
+#: incidenceformatter.cpp:969
+msgid "This journal has been published"
+msgstr "Bu bildiri yayınlandı"
+
+#: incidenceformatter.cpp:971
+msgid "You have been assigned this journal"
+msgstr "Bu bildiriye atandınız"
+
+#: incidenceformatter.cpp:973
+msgid "This journal was refreshed"
+msgstr "Bu bildiri tazelendi"
+
+#: incidenceformatter.cpp:975
+msgid "This journal was canceled"
+msgstr "Bu bildiri iptal edildi"
+
+#: incidenceformatter.cpp:977
+msgid "Addition to the journal"
+msgstr "Göreve ek yapıldı"
+
+#: incidenceformatter.cpp:991
+msgid "Sender indicates this journal assignment still needs some action"
+msgstr "Gönderen bu görev atamasının halen eylem gerektirdiğini belirtiyor"
+
+#: incidenceformatter.cpp:993
+msgid "Sender accepts this journal"
+msgstr "Gönderen bu bildiriyi kabul ediyor"
+
+#: incidenceformatter.cpp:995
+msgid "Sender tentatively accepts this journal"
+msgstr "Gönderen bu bildiriyi geçici olarak kabul ediyor"
+
+#: incidenceformatter.cpp:997
+msgid "Sender declines this journal"
+msgstr "Gönderen bu bildiriyi reddediyor"
+
+#: incidenceformatter.cpp:999
+msgid "Sender has delegated this request for the journal"
+msgstr ""
+
+#: incidenceformatter.cpp:1001
+msgid "The request for this journal is now completed"
+msgstr "Bu bildiri isteği şimdi tamamlandı"
+
+#: incidenceformatter.cpp:1005
+msgid "Unknown response to this journal"
+msgstr "Bu bildiri için bilinmeyen yanıt"
+
+#: incidenceformatter.cpp:1025
+msgid "This free/busy list has been published"
+msgstr "Bu boş/dolu listesi duyuruldu"
+
+#: incidenceformatter.cpp:1027
+msgid "The free/busy list has been requested"
+msgstr "Boş/dolu listesi isteniyor"
+
+#: incidenceformatter.cpp:1029
+msgid "This free/busy list was refreshed"
+msgstr "Boş/dolu listesi yenilendi"
+
+#: incidenceformatter.cpp:1031
+msgid "This free/busy list was canceled"
+msgstr "Boş/dolu listesi iptal edildi"
+
+#: incidenceformatter.cpp:1033
+msgid "Addition to the free/busy list"
+msgstr "Boş/dolu listesine ek yapıldı"
+
+#: incidenceformatter.cpp:1036
+msgid "Error: Free/Busy iMIP message with unknown method: '%1'"
+msgstr "Hata: Bilinmeyen yöntemli Boş/Dolu iMIP iletisi: '%1'"
+
+#: incidenceformatter.cpp:1155
+msgid "The begin of the meeting has been changed from %1 to %2"
+msgstr ""
+
+#: incidenceformatter.cpp:1158
+msgid "The end of the meeting has been changed from %1 to %2"
+msgstr ""
+
+#: incidenceformatter.cpp:1167
+msgid "The summary has been changed to: \"%1\""
+msgstr "Özet şu şekilde değiştirildi: \"%1\""
+
+#: incidenceformatter.cpp:1169
+msgid "The location has been changed to: \"%1\""
+msgstr "Konum şu şekilde değiştirldi: \"%1\""
+
+#: incidenceformatter.cpp:1171
+msgid "The description has been changed to: \"%1\""
+msgstr "Açıklama şu şekilde değiştirildi: \"%1\""
+
+#: incidenceformatter.cpp:1177
+msgid "Attendee %1 has been added"
+msgstr ""
+
+#: incidenceformatter.cpp:1180
+msgid "The status of attendee %1 has been changed to: %2"
+msgstr ""
+
+#: incidenceformatter.cpp:1187
+msgid "Attendee %1 has been removed"
+msgstr ""
+
+#: incidenceformatter.cpp:1279
+msgid ""
+"<p align=\"left\">The following changes have been made by the organizer:</p>"
+msgstr ""
+
+#: incidenceformatter.cpp:1288 incidenceformatter.cpp:1307
+#: incidenceformatter.cpp:1352
+msgid "[Enter this into my calendar]"
+msgstr "[Bunu takvimime ekle]"
+
+#: incidenceformatter.cpp:1304 incidenceformatter.cpp:1350
+msgid "[Enter this into my task list]"
+msgstr "[Bunu görev listeme ekle]"
+
+#: incidenceformatter.cpp:1315 incidenceformatter.cpp:1357
+msgid "[Accept]"
+msgstr "[Kabul Et]"
+
+#: incidenceformatter.cpp:1318
+msgid ""
+"_: Accept conditionally\n"
+"[Accept cond.]"
+msgstr "[Koşullu Kabul Et]"
+
+#: incidenceformatter.cpp:1321
+msgid "[Counter proposal]"
+msgstr ""
+
+#: incidenceformatter.cpp:1324 incidenceformatter.cpp:1359
+msgid "[Decline]"
+msgstr "[Reddet]"
+
+#: incidenceformatter.cpp:1328
+msgid "[Delegate]"
+msgstr "[Temsilci Gönder]"
+
+#: incidenceformatter.cpp:1332
+msgid "[Forward]"
+msgstr "[Yönlendir]"
+
+#: incidenceformatter.cpp:1336 incidenceformatter.cpp:1361
+msgid "[Check my calendar]"
+msgstr "[Takvimimi kontrol et]"
+
+#: incidenceformatter.cpp:1344
+msgid "[Remove this from my calendar]"
+msgstr "[Bunu takvimimden sil]"
+
+#: incidenceformatter.cpp:1707
+msgid "Reminder"
+msgstr "Hatırlatıcı"
+
+#: incidenceformatter.cpp:1876
+#, c-format
+msgid ""
+"_: Event start\n"
+"<i>From:</i>&nbsp;%1"
+msgstr "<i>Başlama:</i>&nbsp;%1"
+
+#: incidenceformatter.cpp:1882
+#, c-format
+msgid ""
+"_: Event end\n"
+"<i>To:</i>&nbsp;%1"
+msgstr "<i>Kime:</i>&nbsp;%1"
+
+#: incidenceformatter.cpp:1890 incidenceformatter.cpp:1940
+#, c-format
+msgid "<i>Date:</i>&nbsp;%1"
+msgstr "<i>Tarih:</i>&nbsp;%1"
+
+#: incidenceformatter.cpp:1897
+#, c-format
+msgid ""
+"_: time for event, &nbsp; to prevent ugly line breaks\n"
+"<i>Time:</i>&nbsp;%1"
+msgstr "<i>Saat:</i>&nbsp;%1"
+
+#: incidenceformatter.cpp:1901
+msgid ""
+"_: time range for event, &nbsp; to prevent ugly line breaks\n"
+"<i>Time:</i>&nbsp;%1&nbsp;-&nbsp;%2"
+msgstr "<i>Saat Aralığı:</i>&nbsp;%1&nbsp;-&nbsp;%2"
+
+#: incidenceformatter.cpp:1919
+#, c-format
+msgid "<i>Start:</i>&nbsp;%1"
+msgstr "<i>Başlangıç:</i>&nbsp;%1"
+
+#: incidenceformatter.cpp:1924
+#, c-format
+msgid "<i>Due:</i>&nbsp;%1"
+msgstr "<i>Vade:</i>&nbsp;%1"
+
+#: incidenceformatter.cpp:1929
+#, c-format
+msgid "<i>Completed:</i>&nbsp;%1"
+msgstr "<i>Tamamlandı:</i>&nbsp;%1"
+
+#: incidenceformatter.cpp:1931
+msgid "%1 % completed"
+msgstr "% %1 tamamlandı"
+
+#: incidenceformatter.cpp:1947 incidenceformatter.cpp:1949
+#, c-format
+msgid "<i>Period start:</i>&nbsp;%1"
+msgstr "<i>Dönem başlangıcı:</i>&nbsp;%1"
+
+#: incidenceformatter.cpp:1994
+#, c-format
+msgid "<i>Location:</i>&nbsp;%1"
+msgstr "<i>Konum:</i>&nbsp;%1"
+
+#: incidenceformatter.cpp:2002
+msgid "<i>Description:</i><br>"
+msgstr "<i>Tanım:</i><br>"
+
+#: incidenceformatter.cpp:2040
+msgid "This is a Free Busy Object"
+msgstr "Bu bir Boş Dolu Nesnesi"
+
+#: incidenceformatter.cpp:2050
+msgid ""
+"Summary: %1\n"
+msgstr ""
+"Özet: %1\n"
+
+#: incidenceformatter.cpp:2053
+msgid ""
+"Organizer: %1\n"
+msgstr ""
+"Düzenleyici: %1\n"
+
+#: incidenceformatter.cpp:2056
+msgid ""
+"Location: %1\n"
+msgstr ""
+"Konum: %1\n"
+
+#: incidenceformatter.cpp:2063
+msgid ""
+"_: no recurrence\n"
+"None"
+msgstr "Hiçbiri"
+
+#: incidenceformatter.cpp:2064
+msgid "Minutely"
+msgstr "Dakikalık"
+
+#: incidenceformatter.cpp:2064
+msgid "Hourly"
+msgstr "Saatlik"
+
+#: incidenceformatter.cpp:2064
+msgid "Daily"
+msgstr "Günlük"
+
+#: incidenceformatter.cpp:2065
+msgid "Weekly"
+msgstr "Haftalık"
+
+#: incidenceformatter.cpp:2065
+msgid "Monthly Same Day"
+msgstr "Aylık Aynı Gün"
+
+#: incidenceformatter.cpp:2065
+msgid "Monthly Same Position"
+msgstr "Aylık Aynı Konum"
+
+#: incidenceformatter.cpp:2066
+msgid "Yearly"
+msgstr "Yıllık"
+
+#: incidenceformatter.cpp:2069 incidenceformatter.cpp:2117
+msgid ""
+"Start Date: %1\n"
+msgstr ""
+"Başlama Tarihi: %1\n"
+
+#: incidenceformatter.cpp:2071 incidenceformatter.cpp:2119
+msgid ""
+"Start Time: %1\n"
+msgstr ""
+"Başlama Saati: %1\n"
+
+#: incidenceformatter.cpp:2074
+msgid ""
+"End Date: %1\n"
+msgstr ""
+"Bitiş Tarihi: %1\n"
+
+#: incidenceformatter.cpp:2077
+msgid ""
+"End Time: %1\n"
+msgstr ""
+"Bitiş Saati: %1\n"
+
+#: incidenceformatter.cpp:2082
+msgid ""
+"Recurs: %1\n"
+msgstr ""
+"Tekrarlama: %1\n"
+
+#: incidenceformatter.cpp:2084
+msgid ""
+"Frequency: %1\n"
+msgstr ""
+"Sıklık: %1\n"
+
+#: incidenceformatter.cpp:2088
+#, c-format
+msgid ""
+"_n: Repeats once\n"
+"Repeats %n times"
+msgstr "%n kere tekrar ediyor"
+
+#: incidenceformatter.cpp:2099
+msgid ""
+"Repeat until: %1\n"
+msgstr ""
+"Buna kadar tekrarla: %1\n"
+
+#: incidenceformatter.cpp:2101
+msgid ""
+"Repeats forever\n"
+msgstr ""
+"Sürekli tekrar ediyor\n"
+
+#: incidenceformatter.cpp:2107 incidenceformatter.cpp:2130
+msgid ""
+"Details:\n"
+"%1\n"
+msgstr ""
+"Ayrıntılar:\n"
+"%1\n"
+
+#: incidenceformatter.cpp:2123
+msgid ""
+"Due Date: %1\n"
+msgstr ""
+"Bitiş Tarihi: %1\n"
+
+#: incidenceformatter.cpp:2125
+msgid ""
+"Due Time: %1\n"
+msgstr ""
+"Bitiş zamanı %1\n"
+
+#: incidenceformatter.cpp:2138
+msgid ""
+"Date: %1\n"
+msgstr ""
+"Tarih: %1\n"
+
+#: incidenceformatter.cpp:2140
+msgid ""
+"Time: %1\n"
+msgstr ""
+"Saat: %1\n"
+
+#: incidenceformatter.cpp:2143
+msgid ""
+"Text of the journal:\n"
+"%1\n"
+msgstr ""
+"Günlüğün metni:\n"
+"%1\n"
+
+#: incidenceformatter.cpp:2175 incidenceformatter.cpp:2180
+msgid "No recurrence"
+msgstr "Tekrar yok"
+
+#: incidenceformatter.cpp:2183
+msgid ""
+"_n: Recurs every minute until %1\n"
+"Recurs every %n minutes until %1"
+msgstr ""
+
+#: incidenceformatter.cpp:2185
+#, c-format
+msgid ""
+"_n: Recurs every minute\n"
+"Recurs every %n minutes"
+msgstr "%n dakikada bir tekrarlar"
+
+#: incidenceformatter.cpp:2188
+msgid ""
+"_n: Recurs hourly until %1\n"
+"Recurs every %n hours until %1"
+msgstr ""
+
+#: incidenceformatter.cpp:2190
+#, c-format
+msgid ""
+"_n: Recurs hourly\n"
+"Recurs every %n hours"
+msgstr "%n saatte bir tekrarlar"
+
+#: incidenceformatter.cpp:2193
+msgid ""
+"_n: Recurs daily until %1\n"
+"Recurs every %n days until %1"
+msgstr ""
+
+#: incidenceformatter.cpp:2195
+#, c-format
+msgid ""
+"_n: Recurs daily\n"
+"Recurs every %n days"
+msgstr "%n günde bir tekrarlar"
+
+#: incidenceformatter.cpp:2198
+msgid ""
+"_n: Recurs weekly until %1\n"
+"Recurs every %n weeks until %1"
+msgstr ""
+
+#: incidenceformatter.cpp:2200
+#, c-format
+msgid ""
+"_n: Recurs weekly\n"
+"Recurs every %n weeks"
+msgstr "%n haftada bir tekrarlar"
+
+#: incidenceformatter.cpp:2204
+#, c-format
+msgid "Recurs monthly until %1"
+msgstr ""
+
+#: incidenceformatter.cpp:2205
+msgid "Recurs monthly"
+msgstr "Aylık olarak tekrar ediyor"
+
+#: incidenceformatter.cpp:2210
+#, c-format
+msgid "Recurs yearly until %1"
+msgstr ""
+
+#: incidenceformatter.cpp:2211
+msgid "Recurs yearly"
+msgstr ""
+
+#: incidenceformatter.cpp:2213
+msgid "Incidence recurs"
+msgstr ""
+
+#: qtopiaformat.cpp:297
+msgid "Could not open file '%1'"
+msgstr "'%1' dosyası açılamadı"
+
+#. i18n: file htmlexportsettings.kcfg line 12
+#: rc.cpp:3
+#, no-c-format
+msgid "Full name of the calendar owner"
+msgstr "Takvim sahibinin tam adı"
+
+#. i18n: file htmlexportsettings.kcfg line 13
+#: rc.cpp:6
+#, no-c-format
+msgid "WhatsThis text for FullName setting"
+msgstr "Tamİsim için BuNedir metni yapılandırması"
+
+#. i18n: file htmlexportsettings.kcfg line 16
+#: rc.cpp:9
+#, no-c-format
+msgid "Email of the calendar owner"
+msgstr "Takvim sahibinin e-postası"
+
+#. i18n: file htmlexportsettings.kcfg line 17
+#: rc.cpp:12
+#, no-c-format
+msgid "WhatsThis text for Email setting"
+msgstr "E-Posta için BuNedir metni yapılandırması"
+
+#. i18n: file htmlexportsettings.kcfg line 20
+#: rc.cpp:15
+#, no-c-format
+msgid "Creator application"
+msgstr "Oluşturan uygulama"
+
+#. i18n: file htmlexportsettings.kcfg line 21
+#: rc.cpp:18
+#, no-c-format
+msgid "Creator application of the calendar"
+msgstr "Takvimi oluşturan uygulama"
+
+#. i18n: file htmlexportsettings.kcfg line 24
+#: rc.cpp:21
+#, no-c-format
+msgid "Creator URL"
+msgstr "Oluşturanın URL'si"
+
+#. i18n: file htmlexportsettings.kcfg line 25
+#: rc.cpp:24
+#, no-c-format
+msgid "URL of the creator application of the calendar."
+msgstr "Takvimi oluşturan uygulamanın URL'si."
+
+#. i18n: file htmlexportsettings.kcfg line 29
+#: rc.cpp:27
+#, no-c-format
+msgid "Page Title"
+msgstr "Sayfa Başlığı"
+
+#. i18n: file htmlexportsettings.kcfg line 34
+#: rc.cpp:30
+#, no-c-format
+msgid "Date start"
+msgstr "Başlama tarihi"
+
+#. i18n: file htmlexportsettings.kcfg line 35
+#: rc.cpp:33
+#, no-c-format
+msgid "First day of the range that shall be exported to HTML."
+msgstr "HTML'ye aktarılacak aralığın ilk günü."
+
+#. i18n: file htmlexportsettings.kcfg line 38
+#: rc.cpp:36
+#, no-c-format
+msgid "Date end"
+msgstr "Bitiş tarihi"
+
+#. i18n: file htmlexportsettings.kcfg line 39
+#: rc.cpp:39
+#, no-c-format
+msgid "Last day of the range that shall be exported to HTML."
+msgstr "HTML'ye aktarılacak aralığın son günü."
+
+#. i18n: file htmlexportsettings.kcfg line 43
+#: rc.cpp:42
+#, no-c-format
+msgid "Output filename"
+msgstr "Çıktı dosyasının adı"
+
+#. i18n: file htmlexportsettings.kcfg line 44
+#: rc.cpp:45
+#, no-c-format
+msgid "The output file name for the HTML export."
+msgstr "HTML aktarımı için çıktı dosyasınn adı."
+
+#. i18n: file htmlexportsettings.kcfg line 48
+#: rc.cpp:48
+#, no-c-format
+msgid "Style sheet"
+msgstr "Biçem sayfası"
+
+#. i18n: file htmlexportsettings.kcfg line 49
+#: rc.cpp:51
+#, no-c-format
+msgid ""
+"CSS style sheet to be used by the final HTML page. This string contains the "
+"actual contents of the CSS, not a path to the style sheet."
+msgstr ""
+"Sonuç HTML sayfası için kullanılacak CSS biçem sayfası. Bu yazı CSS'in gerçek "
+"içeriğidir, biçem sayfasının yolu değil."
+
+#. i18n: file htmlexportsettings.kcfg line 53
+#: rc.cpp:54
+#, no-c-format
+msgid "Exclude private incidences from the export"
+msgstr "Kayıta özel bölümleri sokma"
+
+#. i18n: file htmlexportsettings.kcfg line 57
+#: rc.cpp:57
+#, no-c-format
+msgid "Exclude confidential incidences from the export"
+msgstr "Kayıta gizli bölümleri sokma"
+
+#. i18n: file htmlexportsettings.kcfg line 65
+#: rc.cpp:60
+#, no-c-format
+msgid "Export events as list"
+msgstr "Olay listesini aktar"
+
+#. i18n: file htmlexportsettings.kcfg line 69
+#: rc.cpp:63
+#, no-c-format
+msgid "Export in month view"
+msgstr "Aylık görünümü aktar"
+
+#. i18n: file htmlexportsettings.kcfg line 73
+#: rc.cpp:66
+#, no-c-format
+msgid "Export in week view"
+msgstr "Haftalı görünümü aktar"
+
+#. i18n: file htmlexportsettings.kcfg line 77
+#: rc.cpp:69
+#, no-c-format
+msgid "Title of the calendar"
+msgstr "Takvimin başlığı"
+
+#. i18n: file htmlexportsettings.kcfg line 82
+#: rc.cpp:72
+#, no-c-format
+msgid "Export location of the events"
+msgstr "Olayların konumlarını aktar"
+
+#. i18n: file htmlexportsettings.kcfg line 86
+#: rc.cpp:75
+#, no-c-format
+msgid "Export categories of the events"
+msgstr "Olayların sınıflandırmalarını aktar"
+
+#. i18n: file htmlexportsettings.kcfg line 90
+#: rc.cpp:78
+#, no-c-format
+msgid "Export attendees of the events"
+msgstr "Olayların katılımcılarını aktar"
+
+#. i18n: file htmlexportsettings.kcfg line 98
+#: rc.cpp:81
+#, no-c-format
+msgid "Export to-do list"
+msgstr "Yapılacaklar listesini aktar"
+
+#. i18n: file htmlexportsettings.kcfg line 102
+#: rc.cpp:84
+#, no-c-format
+msgid "Title of the to-do list"
+msgstr "Yapılacaklar listesinin başlığı"
+
+#. i18n: file htmlexportsettings.kcfg line 107
+#: rc.cpp:87
+#, no-c-format
+msgid "Export due dates of the to-dos"
+msgstr "Yapılacak işlerin son teslim tarihlerini aktar"
+
+#. i18n: file htmlexportsettings.kcfg line 111
+#: rc.cpp:90
+#, no-c-format
+msgid "Export location of the to-dos"
+msgstr "Yapılacakların konumlarını aktar"
+
+#. i18n: file htmlexportsettings.kcfg line 115
+#: rc.cpp:93
+#, no-c-format
+msgid "Export categories of the to-dos"
+msgstr "Yapılacakların sınıflandırmalarını aktar"
+
+#. i18n: file htmlexportsettings.kcfg line 119
+#: rc.cpp:96
+#, no-c-format
+msgid "Export attendees of the to-dos"
+msgstr "Yapılacakların katılımcılarını aktar"
+
+#. i18n: file htmlexportsettings.kcfg line 127
+#: rc.cpp:99 rc.cpp:105
+#, no-c-format
+msgid "Export journals"
+msgstr "Günlükleri aktar"
+
+#. i18n: file htmlexportsettings.kcfg line 131
+#: rc.cpp:102
+#, no-c-format
+msgid "Title of the journal list"
+msgstr "Günlüklerin başlığı"
+
+#. i18n: file htmlexportsettings.kcfg line 142
+#: rc.cpp:108
+#, no-c-format
+msgid "Title of the free/busy list"
+msgstr "Boş/dolu listesinin başlığı"
+
+#: resourcecached.cpp:630
+#, c-format
+msgid "Last loaded: %1"
+msgstr "Son yüklenen: %1"
+
+#: resourcecached.cpp:635
+#, c-format
+msgid "Last saved: %1"
+msgstr "Son kaydedilen: %1"
+
+#: resourcecachedconfig.cpp:44
+msgid "Automatic Reload"
+msgstr "Otomatik Yeniden Yükleme"
+
+#: resourcecachedconfig.cpp:46 resourcecachedconfig.cpp:86
+msgid "Never"
+msgstr "Hiçbir zaman"
+
+#: resourcecachedconfig.cpp:47
+msgid "On startup"
+msgstr "Her açılışta"
+
+#: resourcecachedconfig.cpp:49 resourcecachedconfig.cpp:89
+msgid "Regular interval"
+msgstr "Düzenli aralıklarla"
+
+#: resourcecachedconfig.cpp:54 resourcecachedconfig.cpp:94
+msgid "Interval in minutes"
+msgstr "Dakikalık aralıklar ile"
+
+#: resourcecachedconfig.cpp:84
+msgid "Automatic Save"
+msgstr "Kendiliğinden Kaydet"
+
+#: resourcecachedconfig.cpp:87
+msgid "On exit"
+msgstr "Her çıkışta"
+
+#: resourcecachedconfig.cpp:98
+msgid "Delayed after changes"
+msgstr "Değişikliklerden sonra ertelendi"
+
+#: resourcecachedconfig.cpp:99
+msgid "On every change"
+msgstr "Her değişiklikte"
+
+#: resourcecalendar.cpp:57
+#, c-format
+msgid "Type: %1"
+msgstr "Tip: %1"
+
+#: resourcecalendar.cpp:149
+msgid ""
+"Error while loading %1.\n"
+msgstr ""
+"%1 yüklenirken hata oluştu.\n"
+
+#: resourcecalendar.cpp:186
+msgid ""
+"Error while saving %1.\n"
+msgstr ""
+"%1 kaydedilirken hata oluştu.\n"
+
+#: resourcelocalconfig.cpp:49 resourcelocaldirconfig.cpp:47
+msgid "Location:"
+msgstr "Konum:"
+
+#: resourcelocalconfig.cpp:54
+msgid "Calendar Format"
+msgstr "Takvim biçimi"
+
+#: resourcelocalconfig.cpp:56
+msgid "iCalendar"
+msgstr "iCalendar"
+
+#: resourcelocalconfig.cpp:57
+msgid "vCalendar"
+msgstr "vCalendar"
+
+#: resourcelocalconfig.cpp:91
+msgid ""
+"You did not specify a URL for this resource. Therefore, the resource will be "
+"saved in %1. It is still possible to change this location by editing the "
+"resource properties."
+msgstr ""
+
+#: scheduler.cpp:50
+msgid "Updated Publish"
+msgstr "Güncellenmiş Duyuru"
+
+#: scheduler.cpp:52 scheduler.cpp:154
+msgid "Publish"
+msgstr "Duyuru"
+
+#: scheduler.cpp:54
+msgid "Obsolete"
+msgstr "Günü geçmiş"
+
+#: scheduler.cpp:56
+msgid "New Request"
+msgstr "Yeni İstek"
+
+#: scheduler.cpp:58
+msgid "Updated Request"
+msgstr "Güncellenmiş İstek"
+
+#: scheduler.cpp:60
+#, c-format
+msgid "Unknown Status: %1"
+msgstr "Bilinmeyen Durum: %1"
+
+#: scheduler.cpp:156
+msgid "Request"
+msgstr "İstek"
+
+#: scheduler.cpp:158
+msgid "Refresh"
+msgstr "Yenile"
+
+#: scheduler.cpp:164
+msgid "Reply"
+msgstr "Yanıtla"
+
+#: scheduler.cpp:166
+msgid ""
+"_: counter proposal\n"
+"Counter"
+msgstr "Karşı"
+
+#: scheduler.cpp:168
+msgid ""
+"_: decline counter proposal\n"
+"Decline Counter"
+msgstr "Karşıtın İptali"
+
+#: scheduler.cpp:170
+msgid "Unknown"
+msgstr "Bilinmeyen"
+
+#: scheduler.cpp:341
+msgid "%1 wants to attend %2 but was not invited."
+msgstr ""
+
+#: scheduler.cpp:344
+msgid "%1 wants to attend %2 on behalf of %3."
+msgstr ""
+
+#: scheduler.cpp:347
+msgid "Uninvited attendee"
+msgstr "Davet edilmemiş katılımcı"
+
+#: scheduler.cpp:348
+msgid "Accept Attendance"
+msgstr "Katılımı Kabul Et"
+
+#: scheduler.cpp:348
+msgid "Reject Attendance"
+msgstr "Katılımı Reddet"
+
+#: scheduler.cpp:353
+msgid "The organizer rejected your attendance at this meeting."
+msgstr ""
+
+#~ msgid "Category"
+#~ msgstr "Sınıflandırma"
+
+#~ msgid "<b>Due on:</b> %1"
+#~ msgstr "<b>Vadesi:</b> %1"
+
+#~ msgid "<p><b>Priority:</b> %2</p>"
+#~ msgstr "<p><b>Öncelik:</b> %2</p>"
+
+#~ msgid "<p><i>%1 % completed</i></p>"
+#~ msgstr "<p><i>% %1 tamamlandı</i></p>"
+
+#~ msgid "This is a recurring to-do. The next occurrence will be on %1."
+#~ msgstr "Bu tekrarlanan bir 'Yapılacak İş'. %1 tarihinde tekrar yapılacak."
+
+#~ msgid "Tentative"
+#~ msgstr "Geçici"
+
+#~ msgid "read-only"
+#~ msgstr "salt-okunur"
+
+#~ msgid "Journal entry"
+#~ msgstr "Günlük girişi"
+
+#~ msgid "%1's birthday"
+#~ msgstr "%1 kişisinin doğum günü"
+
+#~ msgid "%1's anniversary"
+#~ msgstr "%1 kişisinin yıldönümü"
+
+#~ msgid "Anniversary"
+#~ msgstr "Yıldönümü"
+
+#~ msgid "Set alarm"
+#~ msgstr "Alarmı Kur"
+
+#~ msgid "Alarm before (in days):"
+#~ msgstr "Bu kadar (gün) önce alarm ver"
+
+#~ msgid "This calendar is an iTIP transaction of type \"%1\"."
+#~ msgstr "Bu takvim türü iTIP hareketi \"%1\"."
+
+#~ msgid "%1: iTIP Transaction"
+#~ msgstr "%1: iTIP Aktarımı"
+
+#~ msgid "This vCalendar file was not created by KOrganizer or any other product we support. Loading anyway..."
+#~ msgstr "Bu vCalendar dosyası KOrganizer veya desteklediğimiz diğer ürünlerle oluşturulmamış.Yüklemeye devam ediliyor..."
+
+#~ msgid "%1: Unknown vCalendar Vendor"
+#~ msgstr "%1: Bilinmeyen vCalendar Sağlayıcı"
+
+#~ msgid ""
+#~ "This vCalendar file has version %1.\n"
+#~ "We only support %2."
+#~ msgstr ""
+#~ "Bu vCalendar dosyasının sürümü %1.\n"
+#~ "Biz sadece sürüm %2 desteği vermekteyiz."
+
+#~ msgid "%1: Unknown vCalendar Version"
+#~ msgstr "%1: Bilinmeyen vCalendar Sürümü"
+
+#~ msgid "Location: "
+#~ msgstr "Konum: "
+
+#~ msgid "<b>From:</b> %1 <b>To:</b> %2"
+#~ msgstr "<b>Başlangıç:</b> %1 <b>Bitiş:</b> %2"
+
+#~ msgid "<b>On:</b> %1"
+#~ msgstr "<b>Tarih:</b> %1"
+
+#~ msgid "<b>On:</b> %1 <b>From:</b> %2 <b>To:</b> %3"
+#~ msgstr "<b>Tarih:</b> %1 <b>Başlama:</b> %2 <b>Bitiş:</b> %3"
+
+#~ msgid "This is a recurring event. The next occurrence will be on %1."
+#~ msgstr "Bu tekrarlanan bir olay. %1 tarihinde yeniden gerçekleşecek."
+
+#~ msgid "<i>To:</i>&nbsp;%1"
+#~ msgstr "<i>Bitiş:</i>&nbsp;%1"
+
+#, fuzzy
+#~ msgid "Calendar"
+#~ msgstr "vCalendar"
+
+#, fuzzy
+#~ msgid "To-do List"
+#~ msgstr "KOrganizer Yapılacaklar Listesi"
+
+#, fuzzy
+#~ msgid "Downloading Calendar"
+#~ msgstr "İndirme URL'i:"
+
+#, fuzzy
+#~ msgid "Download from:"
+#~ msgstr "İndirme URL'i:"
+
+#, fuzzy
+#~ msgid "Upload to:"
+#~ msgstr "Yollama URL'i:"
+
+#~ msgid "with <a href=\"http://korganizer.kde.org\">KOrganizer</a>"
+#~ msgstr "oluşturulmuştur"
+
+#~ msgid "Counter"
+#~ msgstr "Sayaç"

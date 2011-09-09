@@ -1,0 +1,506 @@
+# translation of libksirtet.po to Türkçe
+# translation of libksirtet.po to
+# translation of libksirtet.po to Turkish
+# Görkem Çetin <gorkem@kde.org>, 2002, 2003.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>,2003.
+# YILDIZ KARDEŞLER <turkishprogram@xposta.com>, 2004.
+# Ömer Fadıl USTA <omer_fad@yahoo.com>, 2004.
+# Bülent ŞENER <bulent@kde.org.tr>, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: libksirtet\n"
+"POT-Creation-Date: 2005-11-30 03:21+0100\n"
+"PO-Revision-Date: 2005-08-10 11:17+0300\n"
+"Last-Translator: Bülent ŞENER <bulent@kde.org.tr>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.1\n"
+
+#: base/board.cpp:216
+msgid "Blocks removed"
+msgstr "Bloklar kaldırıldı"
+
+#: base/factory.cpp:25
+msgid "Core engine"
+msgstr "Ana motor"
+
+#: base/field.cpp:19
+msgid "Start"
+msgstr "Başla"
+
+#: base/field.cpp:19
+msgid "Resume"
+msgstr "Devam"
+
+#: base/field.cpp:19
+msgid "Proceed"
+msgstr "Devam"
+
+#: base/field.cpp:44
+msgid ""
+"%1\n"
+"(AI player)"
+msgstr ""
+"%1\n"
+"(Yapay zeka oyuncusu)"
+
+#: base/field.cpp:45
+msgid ""
+"%1\n"
+"(Human player)"
+msgstr ""
+"%1\n"
+"(İnsan oyuncu)"
+
+#: base/field.cpp:47
+msgid ""
+"\n"
+"Waiting for server"
+msgstr ""
+"\n"
+"Sunucudan cevap bekleniyor"
+
+#: base/field.cpp:56
+msgid "Stage #1"
+msgstr "1. Adım"
+
+#: base/field.cpp:81
+msgid "Arcade game"
+msgstr "Arcade oyun"
+
+#: base/field.cpp:115
+msgid "Game paused"
+msgstr "Oyun bekletiliyor"
+
+#: base/field.cpp:126
+msgid "Game over"
+msgstr "Oyun bitti"
+
+#: base/field.cpp:129
+msgid "The End"
+msgstr "Oyun Bitti"
+
+#: base/field.cpp:131
+msgid "Stage #%1 done"
+msgstr "#%1. adım tamamlandı"
+
+#: base/field.cpp:140
+msgid "Game Over"
+msgstr "Oyun Bitti"
+
+#: base/main.cpp:85
+msgid "Game"
+msgstr "Oyun"
+
+#: base/main.cpp:89
+msgid "Colors"
+msgstr "Renkler"
+
+#: base/settings.cpp:33
+msgid "Enable animations"
+msgstr "Canlandırmayı etkinleştir"
+
+#: base/settings.cpp:39
+msgid "Background"
+msgstr "Arkaplan"
+
+#: base/settings.cpp:45
+msgid "Color:"
+msgstr "Renk:"
+
+#: base/settings.cpp:50
+msgid "Opacity:"
+msgstr "Matlık:"
+
+#: lib/defines.cpp:9
+msgid ""
+"%1:\n"
+"%2"
+msgstr ""
+"%1:\n"
+"%2"
+
+#: lib/internal.cpp:131
+msgid "Unable to read socket"
+msgstr "Soket okunamıyor"
+
+#: lib/internal.cpp:136
+msgid "Unable to write to socket"
+msgstr "Sokete yazılamıyor"
+
+#: lib/internal.cpp:141
+msgid "Link broken"
+msgstr "Kırık bağ"
+
+#: lib/internal.cpp:239
+msgid "Client has not answered in time"
+msgstr "Karşı taraf zamanında cevap vermedi"
+
+#: lib/keys.cpp:81
+msgid "Shortcuts for player #%1/%2"
+msgstr "#%1/%2 oyuncusu için kısayollar"
+
+#: lib/meeting.cpp:18
+msgid "Network Meeting"
+msgstr "Ağ Buluşması"
+
+#: lib/meeting.cpp:39
+msgid "Waiting for clients"
+msgstr "Karşı taraf bekleniyor"
+
+#: lib/meeting.cpp:54
+msgid "Start Game"
+msgstr "Oyuna Başla"
+
+#: lib/meeting.cpp:57
+msgid "Abort"
+msgstr "Vazgeç"
+
+#: lib/meeting.cpp:70
+msgid "A new client has just arrived (#%1)"
+msgstr "Yeni bir oyuncu katıldı (#%1)"
+
+#: lib/meeting.cpp:172
+msgid "Error reading data from"
+msgstr "Veri okunurken hata oluştu"
+
+#: lib/meeting.cpp:174
+msgid "Unknown data from"
+msgstr "Gelen veri bilinmiyor"
+
+#: lib/meeting.cpp:176
+msgid "Error writing to"
+msgstr "Yazarken hata oluştu:"
+
+#: lib/meeting.cpp:178
+msgid "Link broken or empty data from"
+msgstr "Kırık bağlantı ya da boş veri:"
+
+#: lib/meeting.cpp:244
+msgid "%1 client #%2: disconnect it"
+msgstr "%1 oyuncu #%2 : bağlantısını kes"
+
+#: lib/meeting.cpp:267
+#, c-format
+msgid ""
+"Failed to accept incoming client:\n"
+"%1"
+msgstr ""
+"Gelen oyuncuya cevap verirken hata oluştu:\n"
+"%1"
+
+#: lib/meeting.cpp:299
+msgid "Client rejected for incompatible ID"
+msgstr "Geçersiz kimlik yüzünden oyuncu reddedildi"
+
+#: lib/meeting.cpp:304
+msgid "Client #%1 has left"
+msgstr "Oyuncu #%1 çıktı"
+
+#: lib/meeting.cpp:428
+msgid "Unable to write to client #%1 at game beginning."
+msgstr "Oyunun başlangıcında istemci #%1'e yazılamadı."
+
+#: lib/meeting.cpp:465
+msgid "%1 server: aborting connection."
+msgstr "%1 sunucu : Bağlantı kapatılıyor"
+
+#: lib/meeting.cpp:532
+msgid "Client %1 has left"
+msgstr "Oyuncu %1 çıktı"
+
+#: lib/meeting.cpp:559
+msgid ""
+"The game has begun without you\n"
+"(You have been excluded by the server)."
+msgstr ""
+"Oyun siz olmaksızın başladı\n"
+"(sunucu tarafından oyun dışında bırakıldınız)"
+
+#: lib/meeting.cpp:573
+msgid "The server has aborted the game."
+msgstr "Sunucu oyunu iptal etti."
+
+#: lib/miscui.cpp:16
+msgid "Ready"
+msgstr "Hazır"
+
+#: lib/miscui.cpp:21
+msgid "Excluded"
+msgstr "Hariç"
+
+#: lib/miscui.cpp:52
+msgid "Human"
+msgstr "İnsan"
+
+#: lib/miscui.cpp:53
+msgid "AI"
+msgstr "AI"
+
+#: lib/miscui.cpp:54
+msgid "None"
+msgstr "Hiçbiri"
+
+#: lib/mp_interface.cpp:109
+#, c-format
+msgid "Human %1"
+msgstr "İnsan %1"
+
+#: lib/mp_interface.cpp:110
+#, c-format
+msgid "AI %1"
+msgstr "YZ %1"
+
+#: lib/mp_simple_interface.cpp:75
+msgid "Server has left game!"
+msgstr "Sunucu oyundan çıktı!"
+
+#: lib/pline.cpp:69
+#, c-format
+msgid "Hu=%1"
+msgstr "Hu=%1"
+
+#: lib/pline.cpp:70
+#, c-format
+msgid "AI=%1"
+msgstr "AI=%1"
+
+#: lib/pline.cpp:109
+msgid "Settings"
+msgstr "Ayarlar..."
+
+#: lib/types.cpp:20
+msgid ""
+"\n"
+"Server: \"%1\"\n"
+"Client: \"%2\""
+msgstr ""
+"\n"
+"Sunucu : \"%1\"\n"
+"Oyuncu : \"%2\""
+
+#: lib/types.cpp:25
+msgid "The MultiPlayer library of the server is incompatible"
+msgstr "Sunucunun çok oyuncu kütüphanesi uyumsuz"
+
+#: lib/types.cpp:28
+msgid "Trying to connect a server for another game type"
+msgstr "Başka bir oyun türü için sunucuya bağlanmaya çalışıyorsunuz"
+
+#: lib/types.cpp:31
+msgid "The server game version is incompatible"
+msgstr "Uyumsuz sunucu oyun sürümü"
+
+#: lib/wizard.cpp:54
+msgid "Create a local game"
+msgstr "Yerel bir oyun oluştur"
+
+#: lib/wizard.cpp:55
+msgid "Create a network game"
+msgstr "Yeni ağ oyunu oluştur"
+
+#: lib/wizard.cpp:56
+msgid "Join a network game"
+msgstr "Bir ağ oyununa katıl"
+
+#: lib/wizard.cpp:62
+msgid "Network Settings"
+msgstr "Ağ Ayarları"
+
+#: lib/wizard.cpp:67
+msgid "Port:"
+msgstr "Port:"
+
+#: lib/wizard.cpp:72
+msgid "Choose Game Type"
+msgstr "Oyun Türünü Seçin"
+
+#: lib/wizard.cpp:100 lib/wizard.cpp:125
+#, c-format
+msgid "Player #%1"
+msgstr "Oyuncu #%1"
+
+#: lib/wizard.cpp:117
+msgid "Local Player's Settings"
+msgstr "Yerel Oyuncunun Ayarları"
+
+#: lib/wizard.cpp:136
+msgid "Hostname:"
+msgstr "Makina adı:"
+
+#: lib/wizard.cpp:140
+msgid "the.server.address"
+msgstr "sunucu.adresi"
+
+#: lib/wizard.cpp:141
+msgid "Server address:"
+msgstr "Sunucu adresi:"
+
+#: lib/wizard.cpp:179
+msgid "Error looking up for \"%1\""
+msgstr "\"%1\" adresine bakarken hata"
+
+#: lib/wizard.cpp:187
+msgid "Error opening socket"
+msgstr "Soket açılırken hata"
+
+#: common/ai.cpp:304
+msgid "Thinking depth:"
+msgstr "Düşünme derinliği:"
+
+#: common/board.cpp:172
+msgid "Piece glued"
+msgstr "Parça yapıştırıldı"
+
+#: common/field.cpp:47
+msgid "Display the progress to complete the current level or stage."
+msgstr "Bulunulan seviye veya bölümü tamamlama yüzdesi göster"
+
+#: common/field.cpp:54
+msgid "Previous player's height"
+msgstr "Önceki oyuncuyunun boyu"
+
+#: common/field.cpp:64
+msgid "Shadow of the current piece"
+msgstr "Mevcut parçanın gölgesi"
+
+#: common/field.cpp:70
+msgid "Next player's height"
+msgstr "Sonraki oyuncunun yüksekliği"
+
+#: common/field.cpp:79
+msgid "Next Tile"
+msgstr "Sonraki Çini"
+
+#: common/field.cpp:173
+msgid "Elapsed time"
+msgstr "Geçen süre"
+
+#: common/field.cpp:176
+msgid "Display the elapsed time."
+msgstr "Geçen süreyi göster."
+
+#: common/field.cpp:177
+msgid "Stage"
+msgstr "Derece"
+
+#: common/field.cpp:180
+msgid "Score"
+msgstr "Puan"
+
+#: common/field.cpp:183
+msgid ""
+"<qt>Display the current score."
+"<br/>It turns <font color=\"blue\">blue</font> if it is a highscore and <font "
+"color=\"red\">red</font> if it is the best local score.</qt>"
+msgstr ""
+"<qt>Geçerli Skorları Gösterir."
+"<br/>Eğer Skor yüksek ise <font color=\"blue\">mavi</font> "
+"renkle gösterir Eğer yerel skorlar arasında en iyisi ise <font color=\"red\">"
+"kırmızı</font> ile gösterir.</qt>"
+
+#: common/field.cpp:184 common/highscores.cpp:14
+msgid "Level"
+msgstr "Seviye"
+
+#: common/highscores.cpp:28
+msgid "anonymous"
+msgstr "anonim"
+
+#: common/inter.cpp:15
+msgid "Move Left"
+msgstr "Sola Taşı"
+
+#: common/inter.cpp:16
+msgid "Move Right"
+msgstr "Sağa Taşı"
+
+#: common/inter.cpp:17
+msgid "Drop Down"
+msgstr "Aşağı Bırak"
+
+#: common/inter.cpp:19
+msgid "One Line Down"
+msgstr "Bir Satır Aşağı"
+
+#: common/inter.cpp:20
+msgid "Rotate Left"
+msgstr "Sola Döndür"
+
+#: common/inter.cpp:21
+msgid "Rotate Right"
+msgstr "Sağa Döndür"
+
+#: common/inter.cpp:22
+msgid "Move to Left Column"
+msgstr "Sol Sütuna Taşıma"
+
+#: common/inter.cpp:24
+msgid "Move to Right Column"
+msgstr "Sağ Sütuna Taşıma"
+
+#: common/main.cpp:16
+msgid "A.I."
+msgstr "A.I."
+
+#: common/main.cpp:27
+msgid "&Single Human (Normal)"
+msgstr "Tek Kişilik (&Normal)"
+
+#: common/main.cpp:27
+msgid "&Single Human"
+msgstr "Tek &Kişilik"
+
+#: common/main.cpp:30
+msgid "&Single Human (Arcade)"
+msgstr "Tek Kişilik (a&rcade)"
+
+#: common/main.cpp:33
+msgid "Human vs &Human"
+msgstr "İnsan - İ&nsan"
+
+#: common/main.cpp:35
+msgid "Human vs &Computer"
+msgstr "İnsan - &Bilgisayar"
+
+#: common/main.cpp:38
+msgid "&More..."
+msgstr "&Daha Fazla..."
+
+#: common/settings.cpp:21
+msgid "Show piece's shadow"
+msgstr "Parçaların gölgesini göster"
+
+#: common/settings.cpp:24
+msgid "Show next piece"
+msgstr "Sonraki parçayı göster"
+
+#: common/settings.cpp:27
+msgid "Show detailed \"removed lines\" field"
+msgstr "\"Kaldırılan satırlar\" alanını daha detaylı göster"
+
+#: common/settings.cpp:40
+msgid "Initial level:"
+msgstr "Başlangıç seviyesi:"
+
+#: common/settings.cpp:48
+msgid "Direct drop down"
+msgstr "Direk aşağı düşürme"
+
+#: common/settings.cpp:49
+msgid "Drop down is not stopped when drop down key is released."
+msgstr "Aşağı bırakma eylemi aşağı atma tuşunu bıraktığınızda sonlanmaz."
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Bülent ŞENER"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "bulent@kde.org.tr"

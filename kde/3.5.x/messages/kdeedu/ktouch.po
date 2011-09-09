@@ -1,0 +1,1801 @@
+# translation of ktouch.po to Türkçe
+# translation of ktouch.po to Turkish
+# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Görkem Çetin <gorkem@kde.org>, 2002.
+# Engin Çağatay <engincagatay@yahoo.com>, 2004, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ktouch\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-08 01:24+0200\n"
+"PO-Revision-Date: 2005-07-16 01:12+0300\n"
+"Last-Translator: Engin Çağatay <engincagatay@yahoo.com>\n"
+"Language-Team: Türkçe <yerelleştirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin, Engin Çağatay"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org, engincagatay@yahoo.com"
+
+#: ktouch.cpp:288 ktouchopenrequest.cpp:116
+msgid "Select Training Lecture File"
+msgstr "Çalışma Dersi Dosyası'nı Seçin"
+
+#: ktouch.cpp:384
+msgid "Would you like to keep the current level for the new training session?"
+msgstr "Yeni çalışma oturumu için mevcut seviyeyi korumak ister misiniz?"
+
+#: ktouch.cpp:385
+#, fuzzy
+msgid "Start New Training Session"
+msgstr "Yeni bir eğitim çalışmasına başla"
+
+#: ktouch.cpp:385
+#, fuzzy
+msgid "Keep Current Level"
+msgstr "Şimdiki seviye"
+
+#: ktouch.cpp:385
+msgid "Do Not Keep"
+msgstr ""
+
+#. i18n: file ktouchprefgenerallayout.ui line 16
+#: ktouch.cpp:427 rc.cpp:318
+#, no-c-format
+msgid "General Options"
+msgstr "Genel Seçenekler"
+
+#. i18n: file ktouchpreftraininglayout.ui line 16
+#: ktouch.cpp:429 rc.cpp:405
+#, no-c-format
+msgid "Training Options"
+msgstr "Eğitim Seçenekleri"
+
+#. i18n: file ktouchprefkeyboardlayout.ui line 16
+#: ktouch.cpp:431 rc.cpp:378
+#, no-c-format
+msgid "Keyboard Settings"
+msgstr "Klavye Ayarları"
+
+#. i18n: file ktouchprefcolorslayout.ui line 16
+#: ktouch.cpp:433 rc.cpp:228
+#, no-c-format
+msgid "Color Settings"
+msgstr "Renk Ayarları"
+
+#: ktouch.cpp:461
+#, fuzzy
+msgid "Level:  Correct/Total chars: %1/%2  Words: %3"
+msgstr "Seviye:  Doğru karakter: %1   Toplam karakter: %1   Kelime: %1   "
+
+#: ktouch.cpp:463
+#, fuzzy
+msgid "Session: Correct/Total chars: %1/%2  Words: %3"
+msgstr "Oturumlar:  Doğru karakter: %1   Toplam karakter: %1   Kelime: %1   "
+
+#: ktouch.cpp:492
+msgid "Could not find/open the lecture file '%1'."
+msgstr "Ders dosyası %1 açılamıyor/bulunamıyor."
+
+#: ktouch.cpp:686
+#, fuzzy
+msgid "&Open lecture..."
+msgstr "&Ders Aç..."
+
+#: ktouch.cpp:688
+#, fuzzy
+msgid "&Edit lecture..."
+msgstr "D&ers Düzenle..."
+
+#: ktouch.cpp:690
+#, fuzzy
+msgid "&Edit color scheme..."
+msgstr "Renk şemasını seç:"
+
+#: ktouch.cpp:697
+msgid "&Start New Session"
+msgstr "Yen&i Oturum Aç"
+
+#: ktouch.cpp:699
+msgid "&Pause Session"
+msgstr "&Oturumu Duraklat"
+
+#: ktouch.cpp:701
+#, fuzzy
+msgid "&Lecture Statistics"
+msgstr "Ders istatistik&leri"
+
+#: ktouch.cpp:705
+msgid "Default &Lectures"
+msgstr "Öntanımlı Ders&ler"
+
+#: ktouch.cpp:714
+msgid "&Keyboard Layouts"
+msgstr "&Klavye Dizilimleri"
+
+#: ktouch.cpp:720
+#, fuzzy
+msgid "&Color Schemes"
+msgstr "Kla&vye Renk Şablonları"
+
+#: ktouch.cpp:791
+msgid "Keypad/Number block"
+msgstr ""
+
+#: ktouch.cpp:810 ktouchlecture.cpp:184 ktouchlecture.cpp:216
+msgid "untitled lecture"
+msgstr "isimsiz ders"
+
+#: ktouchchartwidget.cpp:30
+msgid "Progress"
+msgstr ""
+
+#: ktouchchartwidget.cpp:31
+msgid "Words per second"
+msgstr "Dakikada kelime"
+
+#: ktouchcoloreditor.cpp:82 ktouchcoloreditor.cpp:131
+#, fuzzy
+msgid "New color scheme"
+msgstr "Renk şemasını seç:"
+
+#: ktouchcoloreditor.cpp:141
+#, fuzzy
+msgid "Save modified color schemes?"
+msgstr "Renk şablonunu seçin"
+
+#: ktouchcolorscheme.cpp:63 ktouchcolorscheme.cpp:104
+#, fuzzy
+msgid "untitled color scheme"
+msgstr "Renk şemasını seç:"
+
+#. i18n: file ktouchprefcolorslayout.ui line 72
+#: ktouchcolorscheme.cpp:226 rc.cpp:237
+#, no-c-format
+msgid "Black & White"
+msgstr "Siyah - Beyaz"
+
+#. i18n: file ktouchprefcolorslayout.ui line 77
+#: ktouchcolorscheme.cpp:245 rc.cpp:240
+#, no-c-format
+msgid "Classic"
+msgstr "Klasik"
+
+#. i18n: file ktouchprefcolorslayout.ui line 82
+#: ktouchcolorscheme.cpp:266 rc.cpp:243
+#, no-c-format
+msgid "Deep Blue"
+msgstr "Derin Mavi"
+
+#. i18n: file ktouchprefcolorslayout.ui line 87
+#: ktouchcolorscheme.cpp:287 rc.cpp:246
+#, no-c-format
+msgid "Stripy"
+msgstr ""
+
+#: ktouchkeyboard.cpp:186 ktouchkeyboard.cpp:238 ktouchkeyboardeditor.cpp:136
+#: ktouchkeyboardeditor.cpp:176
+msgid "untitled keyboard layout"
+msgstr "isimsiz klavye dizilimi"
+
+#: ktouchkeyboard.cpp:289
+msgid ""
+"_: Num-lock\n"
+"Num"
+msgstr "Num"
+
+#: ktouchkeyboardeditor.cpp:93
+msgid ""
+"*.keyboard.xml|KTouch Keyboard Files (*.keyboard.xml)\n"
+"*.*|All Files"
+msgstr ""
+
+#: ktouchkeyboardeditor.cpp:93
+#, fuzzy
+msgid "Save Keyboard Layout"
+msgstr "&Klavye Dizilimleri"
+
+#: ktouchkeyboardeditor.cpp:170
+msgid "Keyboard dimensions: %1 x %2"
+msgstr "Klavye boyutları: %1 x %2"
+
+#: ktouchkeyboardeditor.cpp:188
+msgid "Open keyboard file ..."
+msgstr "Klavye dosyası aç ..."
+
+#: ktouchkeyboardeditor.cpp:189
+msgid "Which keyboard file would you like to edit?"
+msgstr "Hangi klavye dosyasını düzenlemek istersiniz?"
+
+#: ktouchkeyboardeditor.cpp:190
+msgid "Edit current keyboard:"
+msgstr "Şimdiki klavyeyi düzenle:"
+
+#: ktouchkeyboardeditor.cpp:191
+msgid "Open a default keyboard:"
+msgstr "Öntanımlı bir klavye aç:"
+
+#: ktouchkeyboardeditor.cpp:192
+msgid "Open a keyboard file:"
+msgstr "Bir klavye dosyası aç:"
+
+#: ktouchkeyboardeditor.cpp:193
+msgid "Create new keyboard!"
+msgstr "Yeni klavye oluştur!"
+
+#: ktouchkeyboardeditor.cpp:194
+msgid "<no keyboard files available>"
+msgstr "<bir klavye dosyası mevcut değil>"
+
+#: ktouchkeyboardeditor.cpp:203
+msgid "Could not open the keyboard file, creating a new one instead!"
+msgstr "Klavye dosyası açılamadı, yerine yeni bir tane oluşturuluyor!"
+
+#: ktouchkeyboardeditor.cpp:225 ktouchlectureeditor.cpp:404
+msgid " (modified)"
+msgstr " (değiştirildi)"
+
+#: ktouchkeyboardeditor.cpp:229
+msgid "<unnamed keyboard file>"
+msgstr "<isimsiz klavye dosyası>"
+
+#: ktouchkeyboardeditor.cpp:237
+msgid "The keyboard has been changed. Do you want to save the changes?"
+msgstr "Klavyede değişiklik yapıldı. Değişiklikleri kaydetmek ister misiniz?"
+
+#: ktouchkeyboardwidget.cpp:54
+msgid "Could not read the keyboard layout file '%1'. "
+msgstr "Klavye dizilim dosyası '%1' okunamadı. "
+
+#: ktouchkeyboardwidget.cpp:59
+msgid "Could not download/open keyboard layout file from '%1'."
+msgstr "'%1' konumundan klavye dizilim dosyası indirilemedi/açılamadı."
+
+#: ktouchkeyboardwidget.cpp:135
+msgid ""
+"Error reading the keyboard layout; the default number keypad will be created "
+"instead. You can choose another keyboard layout in the preferences dialog."
+msgstr ""
+
+#: ktouchkeyboardwidget.cpp:368
+msgid "Could not open file."
+msgstr "Dosya açılamadı."
+
+#: ktouchkeyboardwidget.cpp:424
+msgid "Missing key type in line '%1'."
+msgstr ""
+
+#: ktouchlecture.cpp:104
+#, fuzzy
+msgid "A default lecture..."
+msgstr "Yeni bir ders..."
+
+#: ktouchlectureeditor.cpp:115
+msgid "Save Training Lecture"
+msgstr "Çalışma Dersi'ni Kaydet"
+
+#: ktouchlectureeditor.cpp:257 ktouchlectureeditor.cpp:258
+#: ktouchlectureeditor.cpp:404 ktouchlectureeditor.cpp:405
+msgid "KTouch Lecture Editor - "
+msgstr "KTouch Ders Düzenleyicisi - "
+
+#: ktouchlectureeditor.cpp:257
+msgid "<new unnamed lecture file>"
+msgstr "<yeni isimsiz ders dosyası>"
+
+#: ktouchlectureeditor.cpp:310
+#, c-format
+msgid "Data of Level %1"
+msgstr ""
+
+#: ktouchlectureeditor.cpp:351
+msgid "abcdefghijklmnopqrstuvwxyz"
+msgstr "abcdefghijklmnopqrstuvwxyz"
+
+#: ktouchlectureeditor.cpp:354
+msgid "Enter your lines here..."
+msgstr "Satırlarınızı buraya girin..."
+
+#: ktouchlectureeditor.cpp:365
+msgid "Open Lecture File"
+msgstr "Ders Dosyası Aç"
+
+#: ktouchlectureeditor.cpp:366
+msgid "Which Lecture File Would You Like to Edit?"
+msgstr "Hangi Ders Dosyasını Düzenlemek İstersiniz?"
+
+#: ktouchlectureeditor.cpp:367
+msgid "Edit current lecture:"
+msgstr "Mevcut dersi düzenle:"
+
+#: ktouchlectureeditor.cpp:368
+msgid "Open a default lecture:"
+msgstr "Öntanımlı bir ders aç:"
+
+#: ktouchlectureeditor.cpp:369
+msgid "Open a lecture file:"
+msgstr "Bir ders dosyası aç:"
+
+#: ktouchlectureeditor.cpp:370
+msgid "Create new lecture"
+msgstr "Yeni bir ders oluştur"
+
+#: ktouchlectureeditor.cpp:371
+msgid "<no lecture files available>"
+msgstr "<bir ders dosyası mevcut değil>"
+
+#: ktouchlectureeditor.cpp:381
+msgid "Could not open the lecture file, creating a new one instead."
+msgstr "Ders dosyası açılamıyor, yerine yeni bir tane oluşturuluyor."
+
+#: ktouchlectureeditor.cpp:414
+msgid "The lecture has been changed. Do you want to save the changes?"
+msgstr "Ders değiştirildi. Değişiklikleri kaydetmek ister misiniz?"
+
+#: ktouchleveldata.cpp:27
+msgid "Quite a lot"
+msgstr ""
+
+#: ktouchleveldata.cpp:29
+msgid ""
+"This is a small default text. If you want\n"
+"to start practicing touch typing, open\n"
+"a lecture/training file from the main menu.\n"
+"If you press enter after the next line you have\n"
+"successfully completed the default lecture. Hurray!!!"
+msgstr ""
+
+#: ktouchleveldata.cpp:67 ktouchleveldata.cpp:107
+msgid ""
+"_: basically all characters on the keyboard\n"
+"abcdefghijklmnopqrstuvwxyz"
+msgstr "abcçdefgğhıijklmnoöpqrsştuüvwxyz"
+
+#: ktouchopenrequest.cpp:58
+msgid "<no default files available>"
+msgstr "<bir öntanımlı dosya mevcut değil>"
+
+#: ktouchopenrequest.cpp:85
+msgid "Please select or enter a file name."
+msgstr "Lütfen bir dosya adı seçin ya da girin."
+
+#: ktouchopenrequest.cpp:90
+msgid "The URL seems to be malformed; please correct it."
+msgstr "URL geçersiz gibi görünüyor, lütfen düzeltin."
+
+#: ktouchstatistics.cpp:75
+#, fuzzy
+msgid "Default level..."
+msgstr "Yeni bir ders..."
+
+#: ktouchstatistics.cpp:78
+msgid "***current***  "
+msgstr "***mevcut***  "
+
+#: ktouchstatistics.cpp:85
+msgid "No statistics data available yet!"
+msgstr "Henüz istatistik verisi mevcut değil!"
+
+#: ktouchstatistics.cpp:125
+msgid "Erase all statistics data for the current user?"
+msgstr "Mevcut kullanıcı için tüm istatistik verisi silinsin mi?"
+
+#. i18n: file ktouchstatistics_dlg.ui line 1107
+#: ktouchstatistics.cpp:334 rc.cpp:651
+#, no-c-format
+msgid "Words per minute"
+msgstr "Dakikada kelime"
+
+#. i18n: file ktouchstatistics_dlg.ui line 1115
+#: ktouchstatistics.cpp:358 rc.cpp:654
+#, no-c-format
+msgid "Characters per minute"
+msgstr "Dakikada karakter sayısı"
+
+#. i18n: file ktouchstatistics_dlg.ui line 1123
+#: ktouchstatistics.cpp:382 rc.cpp:657 rc.cpp:705
+#, no-c-format
+msgid "Correctness"
+msgstr "Doğruluk"
+
+#. i18n: file ktouchstatistics_dlg.ui line 1131
+#: ktouchstatistics.cpp:413 rc.cpp:660
+#, no-c-format
+msgid "Skill"
+msgstr "Yetenek"
+
+#: ktouchstatistics.cpp:432
+msgid "Time since first practice session in days"
+msgstr "İlk çalışma oturumundan itibaren gün sayısı"
+
+#: ktouchstatistics.cpp:436
+msgid "Sessions"
+msgstr "Oturumlar"
+
+#: ktouchtrainer.cpp:271
+msgid "Starting training session: Waiting for first keypress..."
+msgstr "Eğitim çalışması başlatılıyor: İlk tuşa basınız..."
+
+#: ktouchtrainer.cpp:290
+msgid "Training session paused. Training continues on next keypress..."
+msgstr ""
+"Çalışma oturumu duraklatıldı. Bir tuşa bastığınızda çalışma devam eder..."
+
+#: ktouchtrainer.cpp:303
+msgid "Training session! The time is running..."
+msgstr "Eğitim çalışması başladı. Zaman geçiyor..."
+
+#: ktouchtrainer.cpp:391
+msgid "You rock!"
+msgstr ""
+
+#: ktouchtrainer.cpp:392
+msgid ""
+"You have finished this training exercise.\n"
+"This training session will start from the beginning."
+msgstr ""
+
+#: main.cpp:20
+msgid "A program that helps you to learn and practice touch typing"
+msgstr ""
+
+#: main.cpp:25
+msgid "Training file to open"
+msgstr "Açılacak eğitim dosyası"
+
+#: main.cpp:32
+msgid "KTouch"
+msgstr "KTouch"
+
+#: main.cpp:40
+msgid "Current maintainer and programmer"
+msgstr "Şimdiki sorumlu ve geliştirici"
+
+#: main.cpp:41
+msgid "Original author, project admin"
+msgstr "Asıl yazar, proje yöneticisi"
+
+#: main.cpp:42
+msgid "Creator of the SVG icon"
+msgstr "SVG simgesinin yaratıcısı"
+
+#: main.cpp:43
+msgid "Lots of patches, fixes, updates"
+msgstr "Bir sürü yama, düzeltme ve güncelleme"
+
+#. i18n: file ktouchui.rc line 4
+#: rc.cpp:3
+#, no-c-format
+msgid "F&ile"
+msgstr "D&osya"
+
+#. i18n: file ktouchui.rc line 11
+#: rc.cpp:6
+#, no-c-format
+msgid "T&raining"
+msgstr "&Eğitim"
+
+#. i18n: file ktouchcoloreditor_dlg.ui line 16
+#: rc.cpp:15
+#, fuzzy, no-c-format
+msgid "Color Scheme Editor"
+msgstr "Klavye Renk Şeması"
+
+#. i18n: file ktouchcoloreditor_dlg.ui line 41
+#: rc.cpp:18
+#, fuzzy, no-c-format
+msgid "User defined color schemes"
+msgstr "Renk şablonunu seçin"
+
+#. i18n: file ktouchcoloreditor_dlg.ui line 124
+#: rc.cpp:27
+#, fuzzy, no-c-format
+msgid "Edit color scheme:"
+msgstr "Renk şemasını seç:"
+
+#. i18n: file ktouchcoloreditor_dlg.ui line 143
+#: rc.cpp:30
+#, fuzzy, no-c-format
+msgid "Name of color scheme:"
+msgstr "Renk şemasını seç:"
+
+#. i18n: file ktouchcoloreditor_dlg.ui line 156
+#: rc.cpp:33
+#, no-c-format
+msgid "&Store data"
+msgstr ""
+
+#. i18n: file ktouchcoloreditor_dlg.ui line 174
+#: rc.cpp:36
+#, fuzzy, no-c-format
+msgid "Slide line colors"
+msgstr "Yazma Satırı Renkleri"
+
+#. i18n: file ktouchcoloreditor_dlg.ui line 201
+#: rc.cpp:39
+#, fuzzy, no-c-format
+msgid "Teacher background"
+msgstr "Arkaplan:"
+
+#. i18n: file ktouchcoloreditor_dlg.ui line 234
+#: rc.cpp:42
+#, fuzzy, no-c-format
+msgid "Teacher text"
+msgstr "Öğretmen satırı"
+
+#. i18n: file ktouchcoloreditor_dlg.ui line 269
+#: rc.cpp:45
+#, fuzzy, no-c-format
+msgid "Student text on error"
+msgstr "Hatada &biple"
+
+#. i18n: file ktouchcoloreditor_dlg.ui line 277
+#: rc.cpp:48
+#, fuzzy, no-c-format
+msgid "Student background"
+msgstr "Arkaplan:"
+
+#. i18n: file ktouchcoloreditor_dlg.ui line 301
+#: rc.cpp:51
+#, no-c-format
+msgid "Student text"
+msgstr ""
+
+#. i18n: file ktouchcoloreditor_dlg.ui line 325
+#: rc.cpp:54
+#, no-c-format
+msgid "Student background on error"
+msgstr ""
+
+#. i18n: file ktouchcoloreditor_dlg.ui line 362
+#: rc.cpp:57
+#, fuzzy, no-c-format
+msgid "Keyboard colors"
+msgstr "Klavye dizilimi"
+
+#. i18n: file ktouchcoloreditor_dlg.ui line 440
+#: rc.cpp:60 rc.cpp:78
+#, fuzzy, no-c-format
+msgid "Highlighted text color"
+msgstr "&Klavyedeki düğmeleri ışıklandır"
+
+#. i18n: file ktouchcoloreditor_dlg.ui line 448
+#: rc.cpp:63 rc.cpp:75
+#, no-c-format
+msgid "Text color"
+msgstr ""
+
+#. i18n: file ktouchcoloreditor_dlg.ui line 464
+#: rc.cpp:66
+#, no-c-format
+msgid "Key frame"
+msgstr ""
+
+#. i18n: file ktouchcoloreditor_dlg.ui line 472
+#: rc.cpp:69
+#, no-c-format
+msgid "Normal key colors:"
+msgstr ""
+
+#. i18n: file ktouchcoloreditor_dlg.ui line 504
+#: rc.cpp:72 rc.cpp:81
+#, fuzzy, no-c-format
+msgid "Highlighted background"
+msgstr "&Klavyedeki düğmeleri ışıklandır"
+
+#. i18n: file ktouchcoloreditor_dlg.ui line 595
+#: rc.cpp:84
+#, no-c-format
+msgid "Modifier/other keys:"
+msgstr ""
+
+#. i18n: file ktouchcoloreditor_dlg.ui line 603
+#: rc.cpp:87
+#, fuzzy, no-c-format
+msgid "Background"
+msgstr "Arkaplan:"
+
+#. i18n: file ktouchcoloreditor_dlg.ui line 615
+#: rc.cpp:90
+#, no-c-format
+msgid "Background colors for normal keys:"
+msgstr ""
+
+#. i18n: file ktouchkeyboardeditor_dlg.ui line 16
+#: rc.cpp:93
+#, fuzzy, no-c-format
+msgid "Keyboard Layout Editor"
+msgstr "KTouch Klavye Dizilimleri Düzenleyicisi"
+
+#. i18n: file ktouchkeyboardeditor_dlg.ui line 35
+#: rc.cpp:96 rc.cpp:183
+#, no-c-format
+msgid "Change Font..."
+msgstr "Yazıtipini değiştir..."
+
+#. i18n: file ktouchkeyboardeditor_dlg.ui line 105
+#: rc.cpp:111
+#, fuzzy, no-c-format
+msgid "Keyboard Layout"
+msgstr "&Klavye Dizilimleri"
+
+#. i18n: file ktouchkeyboardeditor_dlg.ui line 116
+#: rc.cpp:114
+#, no-c-format
+msgid "Keyboard dimensions:"
+msgstr "Klavye boyutları:"
+
+#. i18n: file ktouchkeyboardeditor_dlg.ui line 151
+#: rc.cpp:117
+#, fuzzy, no-c-format
+msgid "Key Definitions"
+msgstr "Tuş tanımlamaları"
+
+#. i18n: file ktouchkeyboardeditor_dlg.ui line 191
+#: rc.cpp:120
+#, no-c-format
+msgid "Add..."
+msgstr "Ekle..."
+
+#. i18n: file ktouchkeyboardeditor_dlg.ui line 207
+#: rc.cpp:123
+#, no-c-format
+msgid "Edit..."
+msgstr "Düzenle..."
+
+#. i18n: file ktouchkeyboardeditor_dlg.ui line 233
+#: rc.cpp:129
+#, fuzzy, no-c-format
+msgid "Key definition data:"
+msgstr "Tuş tanımlama verisi"
+
+#. i18n: file ktouchkeyboardeditor_dlg.ui line 256
+#: rc.cpp:132
+#, fuzzy, no-c-format
+msgid "Keyboard Identification Data"
+msgstr "Klavye tanımlama verisi"
+
+#. i18n: file ktouchkeyboardeditor_dlg.ui line 273
+#: rc.cpp:135
+#, no-c-format
+msgid "Keyboard title:"
+msgstr "Klavye başlığı:"
+
+#. i18n: file ktouchkeyboardeditor_dlg.ui line 305
+#: rc.cpp:138
+#, no-c-format
+msgid "Comments:"
+msgstr "Yorumlar:"
+
+#. i18n: file ktouchkeyboardeditor_dlg.ui line 313
+#: rc.cpp:141
+#, no-c-format
+msgid "Language id:"
+msgstr "Dil kimliği:"
+
+#. i18n: file ktouchlectureeditor_dlg.ui line 16
+#: rc.cpp:144
+#, no-c-format
+msgid "KTouch Lecture Editor"
+msgstr "KTouch Ders Düzenleyicisi"
+
+#. i18n: file ktouchlectureeditor_dlg.ui line 27
+#: rc.cpp:147
+#, fuzzy, no-c-format
+msgid "Lecture Properties"
+msgstr "Ders özellikleri"
+
+#. i18n: file ktouchlectureeditor_dlg.ui line 52
+#: rc.cpp:150
+#, no-c-format
+msgid "Title:"
+msgstr "Başlık"
+
+#. i18n: file ktouchlectureeditor_dlg.ui line 75
+#: rc.cpp:153
+#, no-c-format
+msgid "Comment:"
+msgstr "Yorum:"
+
+#. i18n: file ktouchlectureeditor_dlg.ui line 104
+#: rc.cpp:156
+#, fuzzy, no-c-format
+msgid "Level Editor"
+msgstr "Seviye düzenleyicisi"
+
+#. i18n: file ktouchlectureeditor_dlg.ui line 121
+#: rc.cpp:159
+#, no-c-format
+msgid "Levels"
+msgstr "Seviyeler"
+
+#. i18n: file ktouchlectureeditor_dlg.ui line 332
+#: rc.cpp:162
+#, no-c-format
+msgid "Level comment (optional):"
+msgstr "Seviye yorumu (isteğe bağlı):"
+
+#. i18n: file ktouchlectureeditor_dlg.ui line 348
+#: rc.cpp:165
+#, no-c-format
+msgid "Words: "
+msgstr "Kelimeler: "
+
+#. i18n: file ktouchlectureeditor_dlg.ui line 373
+#: rc.cpp:168
+#, no-c-format
+msgid "Characters: "
+msgstr "Karakterler: "
+
+#. i18n: file ktouchlectureeditor_dlg.ui line 398
+#: rc.cpp:171
+#, no-c-format
+msgid "Time needed (beg/adv/pro): "
+msgstr "Gerekli zaman (baş/gel/pro): "
+
+#. i18n: file ktouchlectureeditor_dlg.ui line 422
+#: rc.cpp:174
+#, fuzzy, no-c-format
+msgid "Level Data of Level 10"
+msgstr "Seviye 10'un seviye verisi"
+
+#. i18n: file ktouchlectureeditor_dlg.ui line 438
+#: rc.cpp:177
+#, no-c-format
+msgid "New characters in this level:"
+msgstr "Bu seviyedeki yeni karakterler:"
+
+#. i18n: file ktouchlectureeditor_dlg.ui line 475
+#: rc.cpp:180
+#, no-c-format
+msgid "Level data:"
+msgstr "Seviye verisi:"
+
+#. i18n: file ktouchlectureeditor_dlg.ui line 550
+#: rc.cpp:192
+#, no-c-format
+msgid "Save &As..."
+msgstr "F&arklı Kaydet..."
+
+#. i18n: file ktouchopenrequest_dlg.ui line 16
+#: rc.cpp:198
+#, no-c-format
+msgid "Open Something in Editor"
+msgstr "Düzenleyicide Bir Şey Açın"
+
+#. i18n: file ktouchopenrequest_dlg.ui line 35
+#: rc.cpp:201
+#, no-c-format
+msgid "Select File to Open"
+msgstr "Açıklacak Dosyayı Seçin"
+
+#. i18n: file ktouchopenrequest_dlg.ui line 52
+#: rc.cpp:204
+#, no-c-format
+msgid "Current something"
+msgstr ""
+
+#. i18n: file ktouchopenrequest_dlg.ui line 66
+#: rc.cpp:207
+#, no-c-format
+msgid "Preset something:"
+msgstr ""
+
+#. i18n: file ktouchopenrequest_dlg.ui line 79
+#: rc.cpp:210
+#, no-c-format
+msgid "New something"
+msgstr ""
+
+#. i18n: file ktouchopenrequest_dlg.ui line 147
+#: rc.cpp:216
+#, no-c-format
+msgid "Current something file"
+msgstr ""
+
+#. i18n: file ktouchopenrequest_dlg.ui line 161
+#: rc.cpp:219
+#, no-c-format
+msgid "Open file:"
+msgstr "Dosya aç:"
+
+#. i18n: file ktouchprefcolorslayout.ui line 30
+#: rc.cpp:231
+#, fuzzy, no-c-format
+msgid "Color Scheme"
+msgstr "Klavye Renk Şeması"
+
+#. i18n: file ktouchprefcolorslayout.ui line 49
+#: rc.cpp:234
+#, no-c-format
+msgid "Select color scheme:"
+msgstr "Renk şemasını seç:"
+
+#. i18n: file ktouchprefcolorslayout.ui line 94
+#: rc.cpp:249
+#, no-c-format
+msgid "Color scheme for displaying the keyboard"
+msgstr "Klavye göstermek için renk şablonu"
+
+#. i18n: file ktouchprefcolorslayout.ui line 97
+#: rc.cpp:252
+#, no-c-format
+msgid ""
+"You can choose here the color scheme for displaying the keyboard. <i>"
+"Black & White</i> will display all keyboard letters black on white, <i>"
+"Classic</i> will colorize the same color for each finger, <i>Deep Blue</i> "
+"will display the keyboard in different deep blue colors and <i>Stripy</i> "
+"will alternate blue and gray for letters corresponding to same finger."
+msgstr ""
+
+#. i18n: file ktouchprefcolorslayout.ui line 107
+#: rc.cpp:255
+#, no-c-format
+msgid "Use common typing line colors independent of color scheme"
+msgstr ""
+
+#. i18n: file ktouchprefcolorslayout.ui line 115
+#: rc.cpp:258
+#, no-c-format
+msgid "Typing Line Colors"
+msgstr "Yazma Satırı Renkleri"
+
+#. i18n: file ktouchprefcolorslayout.ui line 143
+#: rc.cpp:261
+#, no-c-format
+msgid "The background for the teacher's line"
+msgstr "Öğretmen satırı için arkaplan"
+
+#. i18n: file ktouchprefcolorslayout.ui line 146
+#: rc.cpp:264
+#, no-c-format
+msgid ""
+"You can change here the background color for the teacher's line (the line of "
+"letters you have to type.)"
+msgstr ""
+"Burada öğretmen satırının (yazmanız gereken harfler satırı) arkaplan rengini "
+"değiştirebilirisiniz"
+
+#. i18n: file ktouchprefcolorslayout.ui line 154
+#: rc.cpp:267
+#, no-c-format
+msgid "Typing line"
+msgstr "Yazma Satırı"
+
+#. i18n: file ktouchprefcolorslayout.ui line 179
+#: rc.cpp:270
+#, no-c-format
+msgid "The color for the teacher's line"
+msgstr "Öğretmen satırının rengi"
+
+#. i18n: file ktouchprefcolorslayout.ui line 230
+#: rc.cpp:273
+#, no-c-format
+msgid "Change the text color for the student line"
+msgstr "Öğrenci satırının metin rengini değiştir"
+
+#. i18n: file ktouchprefcolorslayout.ui line 233
+#: rc.cpp:276
+#, no-c-format
+msgid "Here you can change the color of the text you type in the student line."
+msgstr ""
+"Burada öğrenci satırına yazdığınız metnin rengini değiştirebilirisiniz."
+
+#. i18n: file ktouchprefcolorslayout.ui line 241
+#: rc.cpp:279 rc.cpp:291 rc.cpp:309
+#, no-c-format
+msgid "Background:"
+msgstr "Arkaplan:"
+
+#. i18n: file ktouchprefcolorslayout.ui line 263
+#: rc.cpp:282 rc.cpp:285 rc.cpp:300
+#, no-c-format
+msgid "Text:"
+msgstr "Metin:"
+
+#. i18n: file ktouchprefcolorslayout.ui line 296
+#: rc.cpp:288
+#, no-c-format
+msgid "Teacher's line"
+msgstr "Öğretmen satırı"
+
+#. i18n: file ktouchprefcolorslayout.ui line 348
+#: rc.cpp:294
+#, no-c-format
+msgid "Use different color on error in typing line"
+msgstr "Hata olduğund, yazma satırında değişik renk kullan"
+
+#. i18n: file ktouchprefcolorslayout.ui line 351
+#: rc.cpp:297
+#, no-c-format
+msgid ""
+"If checked this shows your error using the colors below on the typing line"
+msgstr ""
+
+#. i18n: file ktouchprefcolorslayout.ui line 411
+#: rc.cpp:303
+#, no-c-format
+msgid "Choose the text color for error in typing line"
+msgstr ""
+
+#. i18n: file ktouchprefcolorslayout.ui line 414
+#: rc.cpp:306
+#, no-c-format
+msgid ""
+"When you have checked 'Use different color on error in the typing line', you "
+"can then choose a color for the text of errors. You make an error when you type "
+"a wrong letter in the student line. This is a way to make your errors more "
+"visible."
+msgstr ""
+
+#. i18n: file ktouchprefcolorslayout.ui line 466
+#: rc.cpp:312
+#, no-c-format
+msgid "Choose the background color for error in typing line"
+msgstr ""
+
+#. i18n: file ktouchprefcolorslayout.ui line 469
+#: rc.cpp:315
+#, no-c-format
+msgid ""
+"When you have checked 'Use different color on error in the typing line', you "
+"can then choose a color for the background of errors. You make an error when "
+"you type a wrong letter in the student line. This is a way to make your errors "
+"more visible."
+msgstr ""
+
+#. i18n: file ktouchprefgenerallayout.ui line 36
+#: rc.cpp:321
+#, no-c-format
+msgid "Sound"
+msgstr "Ses"
+
+#. i18n: file ktouchprefgenerallayout.ui line 47
+#: rc.cpp:324
+#, no-c-format
+msgid "&Beep on error"
+msgstr "Hatada &biple"
+
+#. i18n: file ktouchprefgenerallayout.ui line 50
+#: rc.cpp:327 rc.cpp:747
+#, no-c-format
+msgid "Emit a beep on each typing error"
+msgstr "Her yazma hatasında bip sesi çıkar"
+
+#. i18n: file ktouchprefgenerallayout.ui line 53
+#: rc.cpp:330
+#, no-c-format
+msgid ""
+"If checked (default) this will emit a beep each time you make a typing error."
+msgstr ""
+
+#. i18n: file ktouchprefgenerallayout.ui line 61
+#: rc.cpp:333
+#, no-c-format
+msgid "&Sound on automatic level change"
+msgstr "Otomatik seviye değişiminde &ses çıkar"
+
+#. i18n: file ktouchprefgenerallayout.ui line 64
+#: rc.cpp:336
+#, no-c-format
+msgid "Play a sound when the level automatically changes."
+msgstr "Otomatik seviye değişiminde ses çıkar."
+
+#. i18n: file ktouchprefgenerallayout.ui line 67
+#: rc.cpp:339
+#, no-c-format
+msgid ""
+"If this is checked (default) a sound will be played each time you automatically "
+"change of level."
+msgstr ""
+
+#. i18n: file ktouchprefgenerallayout.ui line 77
+#: rc.cpp:342
+#, no-c-format
+msgid "Text Line Settings"
+msgstr "Metin Çizgisi Ayarları"
+
+#. i18n: file ktouchprefgenerallayout.ui line 96
+#: rc.cpp:345
+#, no-c-format
+msgid "20: Fast"
+msgstr "20: Hızlı"
+
+#. i18n: file ktouchprefgenerallayout.ui line 164
+#: rc.cpp:348
+#, no-c-format
+msgid "Slow: 1"
+msgstr "Yavaş: 1"
+
+#. i18n: file ktouchprefgenerallayout.ui line 172
+#: rc.cpp:351
+#, no-c-format
+msgid "Sliding speed:"
+msgstr "Geçiş hızı:"
+
+#. i18n: file ktouchprefgenerallayout.ui line 207
+#: rc.cpp:354
+#, no-c-format
+msgid "Maximum height of sliding line widget:"
+msgstr ""
+
+#. i18n: file ktouchprefgenerallayout.ui line 226
+#: rc.cpp:357
+#, no-c-format
+msgid "in pixels"
+msgstr ""
+
+#. i18n: file ktouchprefgenerallayout.ui line 261
+#: rc.cpp:360
+#, no-c-format
+msgid "Font for displayed/typed text:"
+msgstr "Görüntülenen karakter rengi:"
+
+#. i18n: file ktouchprefgenerallayout.ui line 292
+#: rc.cpp:363
+#, no-c-format
+msgid "Change the font for the student and teacher lines"
+msgstr "Öğretmen ve öğrenci satırlarının yazıtipini değiştir"
+
+#. i18n: file ktouchprefgenerallayout.ui line 295
+#: rc.cpp:366
+#, no-c-format
+msgid ""
+"This button will display a font dialog where you can change the font for the "
+"student and the teacher lines. When you leave the font dialog, the new font is "
+"previewed in the line below and only applied when you click the Apply button "
+"below."
+msgstr ""
+
+#. i18n: file ktouchprefgenerallayout.ui line 303
+#: rc.cpp:369
+#, no-c-format
+msgid "Override lecture font"
+msgstr "Ders yazıtipinin üstüne yaz"
+
+#. i18n: file ktouchprefgenerallayout.ui line 306
+#: rc.cpp:372
+#, no-c-format
+msgid ""
+"If you want to override the font of the training lecture check this box and set "
+"your own font."
+msgstr ""
+
+#. i18n: file ktouchprefgenerallayout.ui line 309
+#: rc.cpp:375
+#, no-c-format
+msgid ""
+"Most lectures suggest a font to use. This is necessary for not so common "
+"languages where characters may be displayed in a strange way and distort the "
+"sliding line. If you check this button you can choose your own font and "
+"override the lecture font."
+msgstr ""
+
+#. i18n: file ktouchprefkeyboardlayout.ui line 41
+#: rc.cpp:381
+#, no-c-format
+msgid "Highlight &keys on keyboard"
+msgstr "&Klavyedeki düğmeleri ışıklandır"
+
+#. i18n: file ktouchprefkeyboardlayout.ui line 44
+#: rc.cpp:384
+#, no-c-format
+msgid "Show on the keyboards the keys you have to type"
+msgstr "Basmanız gereken tuşları klavyelerde gösterir"
+
+#. i18n: file ktouchprefkeyboardlayout.ui line 47
+#: rc.cpp:387
+#, no-c-format
+msgid ""
+"This highlights on the keyboard the key you have to type next. It is easier to "
+"type when this is checked."
+msgstr ""
+
+#. i18n: file ktouchprefkeyboardlayout.ui line 55
+#: rc.cpp:390
+#, fuzzy, no-c-format
+msgid "Hide keyboard"
+msgstr "Klavye yazıtiplerinin üstüne yaz"
+
+#. i18n: file ktouchprefkeyboardlayout.ui line 88
+#: rc.cpp:393
+#, no-c-format
+msgid "Override keyboard fonts"
+msgstr "Klavye yazıtiplerinin üstüne yaz"
+
+#. i18n: file ktouchprefkeyboardlayout.ui line 91
+#: rc.cpp:396
+#, no-c-format
+msgid ""
+"If checked you can specify your own keyboard font instead of the predefined one "
+"of the keyboard layout."
+msgstr ""
+
+#. i18n: file ktouchprefkeyboardlayout.ui line 94
+#: rc.cpp:399
+#, no-c-format
+msgid ""
+"Every keyboard layout may specify its own font. If the predefined font of a "
+"certain keyboard layout does not work or you would like to have your own, check "
+"this button. You may then choose your own font that will be used to draw the "
+"characters on the keys."
+msgstr ""
+
+#. i18n: file ktouchprefkeyboardlayout.ui line 102
+#: rc.cpp:402
+#, no-c-format
+msgid "Font for keys on keyboard:"
+msgstr "Klavyedeki tuşların yazıtipi:"
+
+#. i18n: file ktouchpreftraininglayout.ui line 30
+#: rc.cpp:408
+#, no-c-format
+msgid "Level Up/Down Limits"
+msgstr "Seviye Yukarı/Aşağı Sınırı"
+
+#. i18n: file ktouchpreftraininglayout.ui line 41
+#: rc.cpp:411
+#, no-c-format
+msgid "A&utomatic level adjustment"
+msgstr "Ot&omatik seviye ayarlama"
+
+#. i18n: file ktouchpreftraininglayout.ui line 74
+#: rc.cpp:414 rc.cpp:441
+#, no-c-format
+msgid "Correctness:"
+msgstr "Doğruluk:"
+
+#. i18n: file ktouchpreftraininglayout.ui line 90
+#: rc.cpp:417 rc.cpp:435
+#, no-c-format
+msgid "Typing speed:"
+msgstr "Yazım hızı:"
+
+#. i18n: file ktouchpreftraininglayout.ui line 98
+#: rc.cpp:420 rc.cpp:432
+#, no-c-format
+msgid "%"
+msgstr "%"
+
+#. i18n: file ktouchpreftraininglayout.ui line 106
+#: rc.cpp:423
+#, no-c-format
+msgid "Limits to increase a level"
+msgstr "Bir seviye yükselmek için sınırlar"
+
+#. i18n: file ktouchpreftraininglayout.ui line 136
+#: rc.cpp:426 rc.cpp:438
+#, no-c-format
+msgid "chars/minute"
+msgstr "karakter/dakika"
+
+#. i18n: file ktouchpreftraininglayout.ui line 188
+#: rc.cpp:429
+#, no-c-format
+msgid "Limits to decrease a level"
+msgstr "Bir seviye düşmek için sınırlar"
+
+#. i18n: file ktouchpreftraininglayout.ui line 277
+#: rc.cpp:444
+#, no-c-format
+msgid "Disable manual level change buttons"
+msgstr ""
+
+#. i18n: file ktouchpreftraininglayout.ui line 298
+#: rc.cpp:447
+#, no-c-format
+msgid "&Remember level for next program start"
+msgstr "Son&raki program başlangıcında bu seviyeyi hatırla"
+
+#. i18n: file ktouchstatistics_dlg.ui line 24
+#: rc.cpp:450
+#, no-c-format
+msgid "Training Statistics"
+msgstr "Eğitim İstatistikleri"
+
+#. i18n: file ktouchstatistics_dlg.ui line 50
+#: rc.cpp:453
+#, no-c-format
+msgid "Current Training Session"
+msgstr "Güncel Eğitim Çalışması"
+
+#. i18n: file ktouchstatistics_dlg.ui line 67
+#: rc.cpp:456
+#, no-c-format
+msgid "Current Training Session Statistics"
+msgstr "Mevcut Eğitim Oturumu İstatistikleri"
+
+#. i18n: file ktouchstatistics_dlg.ui line 83
+#: rc.cpp:459
+#, no-c-format
+msgid "Levels in this session:"
+msgstr ""
+
+#. i18n: file ktouchstatistics_dlg.ui line 99
+#: rc.cpp:462
+#, no-c-format
+msgid "levelLabel1"
+msgstr ""
+
+#. i18n: file ktouchstatistics_dlg.ui line 107
+#: rc.cpp:465 rc.cpp:561
+#, fuzzy, no-c-format
+msgid "Lecture:"
+msgstr "Ders Seçin"
+
+#. i18n: file ktouchstatistics_dlg.ui line 123
+#: rc.cpp:468
+#, no-c-format
+msgid "lectureLabel1"
+msgstr ""
+
+#. i18n: file ktouchstatistics_dlg.ui line 141
+#: rc.cpp:471 rc.cpp:567
+#, no-c-format
+msgid "General Statistics"
+msgstr "Genel İstatistikler"
+
+#. i18n: file ktouchstatistics_dlg.ui line 152
+#: rc.cpp:474 rc.cpp:570
+#, no-c-format
+msgid "Words typed:"
+msgstr "Yazılan kelimeler:"
+
+#. i18n: file ktouchstatistics_dlg.ui line 160
+#: rc.cpp:477 rc.cpp:573
+#, no-c-format
+msgid "Mistyped characters:"
+msgstr "Hatalı yazılan karakterler:"
+
+#. i18n: file ktouchstatistics_dlg.ui line 168
+#: rc.cpp:480 rc.cpp:576
+#, no-c-format
+msgid "Time (seconds) elapsed:"
+msgstr "Geçen süre (saniye):"
+
+#. i18n: file ktouchstatistics_dlg.ui line 185
+#: rc.cpp:483
+#, no-c-format
+msgid ""
+"This shows the number of seconds you have typed in this training session."
+msgstr "Bu çalışma oturumunda kaç saniye yazı yazdığınız."
+
+#. i18n: file ktouchstatistics_dlg.ui line 202
+#: rc.cpp:486
+#, fuzzy, no-c-format
+msgid ""
+"The number of characters (correct and wrong) that you have typed so far."
+msgstr "Şimdiye kadar yazdığınız (yanlış ya da doğru) karakter sayısı."
+
+#. i18n: file ktouchstatistics_dlg.ui line 219
+#: rc.cpp:489
+#, no-c-format
+msgid "Shows how many wrong characters you did type."
+msgstr "Kaç tane yanlış karakter yazdığınızı gösterir."
+
+#. i18n: file ktouchstatistics_dlg.ui line 236
+#: rc.cpp:492
+#, no-c-format
+msgid "The number of words typed so far."
+msgstr "Şimdiye kadar yazılan kelime sayısı."
+
+#. i18n: file ktouchstatistics_dlg.ui line 244
+#: rc.cpp:495 rc.cpp:579
+#, no-c-format
+msgid "Characters typed:"
+msgstr "Yazılan karakterler:"
+
+#. i18n: file ktouchstatistics_dlg.ui line 254
+#: rc.cpp:498 rc.cpp:582
+#, no-c-format
+msgid "Character Statistics (characters you need to focus on)"
+msgstr "Karakter İstatistikleri (dikkat etmeniz gereken karakterler)"
+
+#. i18n: file ktouchstatistics_dlg.ui line 257
+#: rc.cpp:501
+#, no-c-format
+msgid ""
+"Here the characters are listed that you have missed during the typing test. The "
+"percentage shows the ratio of how often a key was missed versus how often the "
+"key was pressed in total. Large numbers indicate that the key was missed a lot."
+msgstr ""
+
+#. i18n: file ktouchstatistics_dlg.ui line 295
+#: rc.cpp:504 rc.cpp:588
+#, no-c-format
+msgid "a:"
+msgstr "a:"
+
+#. i18n: file ktouchstatistics_dlg.ui line 303
+#: rc.cpp:507 rc.cpp:591
+#, no-c-format
+msgid "e:"
+msgstr "e:"
+
+#. i18n: file ktouchstatistics_dlg.ui line 311
+#: rc.cpp:510 rc.cpp:594
+#, no-c-format
+msgid "b:"
+msgstr "b:"
+
+#. i18n: file ktouchstatistics_dlg.ui line 324
+#: rc.cpp:513 rc.cpp:597
+#, no-c-format
+msgid "f:"
+msgstr "f:"
+
+#. i18n: file ktouchstatistics_dlg.ui line 342
+#: rc.cpp:516 rc.cpp:600
+#, no-c-format
+msgid "g:"
+msgstr "g:"
+
+#. i18n: file ktouchstatistics_dlg.ui line 350
+#: rc.cpp:519 rc.cpp:603
+#, no-c-format
+msgid "c:"
+msgstr "c:"
+
+#. i18n: file ktouchstatistics_dlg.ui line 373
+#: rc.cpp:522 rc.cpp:606
+#, no-c-format
+msgid "h:"
+msgstr "h:"
+
+#. i18n: file ktouchstatistics_dlg.ui line 381
+#: rc.cpp:525 rc.cpp:609
+#, no-c-format
+msgid "d:"
+msgstr "d:"
+
+#. i18n: file ktouchstatistics_dlg.ui line 391
+#: rc.cpp:528 rc.cpp:612
+#, no-c-format
+msgid "Typing Rate"
+msgstr "Yazım Hızı"
+
+#. i18n: file ktouchstatistics_dlg.ui line 402
+#: rc.cpp:531 rc.cpp:615
+#, no-c-format
+msgid "Characters per minute:"
+msgstr "Dakikada karakter sayısı:"
+
+#. i18n: file ktouchstatistics_dlg.ui line 410
+#: rc.cpp:534 rc.cpp:618
+#, no-c-format
+msgid "Words per minute:"
+msgstr "Dakikada kelime:"
+
+#. i18n: file ktouchstatistics_dlg.ui line 427
+#: rc.cpp:537
+#, no-c-format
+msgid "The number of correct characters you typed per minute."
+msgstr "Dakikada yazdığınız doğru kelime sayısı."
+
+#. i18n: file ktouchstatistics_dlg.ui line 444
+#: rc.cpp:540
+#, no-c-format
+msgid "The number of words you typed per minute."
+msgstr "Dakikada yazdığınız kelime sayısı."
+
+#. i18n: file ktouchstatistics_dlg.ui line 454
+#: rc.cpp:543 rc.cpp:621
+#, no-c-format
+msgid "Accuracy"
+msgstr "Doğruluk"
+
+#. i18n: file ktouchstatistics_dlg.ui line 465
+#: rc.cpp:546
+#, no-c-format
+msgid ""
+"The ratio of correctly typed characters versus total number of characters "
+"typed."
+msgstr ""
+
+#. i18n: file ktouchstatistics_dlg.ui line 496
+#: rc.cpp:549 rc.cpp:552
+#, no-c-format
+msgid "Current Level Statistics"
+msgstr "Mevcut Seviye İstatistikleri"
+
+#. i18n: file ktouchstatistics_dlg.ui line 537
+#: rc.cpp:555
+#, no-c-format
+msgid "lectureLabel2"
+msgstr ""
+
+#. i18n: file ktouchstatistics_dlg.ui line 545
+#: rc.cpp:558
+#, fuzzy, no-c-format
+msgid "Level:"
+msgstr "Seviye"
+
+#. i18n: file ktouchstatistics_dlg.ui line 569
+#: rc.cpp:564
+#, no-c-format
+msgid "levelLabel2"
+msgstr ""
+
+#. i18n: file ktouchstatistics_dlg.ui line 691
+#: rc.cpp:585
+#, no-c-format
+msgid ""
+"Here the characters are listed that you have missed during the typing test. The "
+"percentage shows the ratio of how often a key was missed versus how often the "
+"key was pressed correctly. Large numbers indicate that the key was missed a "
+"lot."
+msgstr ""
+
+#. i18n: file ktouchstatistics_dlg.ui line 921
+#: rc.cpp:624
+#, no-c-format
+msgid "Monitor Progress"
+msgstr ""
+
+#. i18n: file ktouchstatistics_dlg.ui line 938
+#: rc.cpp:627
+#, no-c-format
+msgid "Your Typing Progress"
+msgstr ""
+
+#. i18n: file ktouchstatistics_dlg.ui line 954
+#: rc.cpp:630
+#, fuzzy, no-c-format
+msgid "Show progress in lecture:"
+msgstr "Mevcut dersi düzenle:"
+
+#. i18n: file ktouchstatistics_dlg.ui line 970
+#: rc.cpp:633
+#, no-c-format
+msgid "Here you can select the lecture you want to obtain statistics for."
+msgstr "Burada, istatistiklerini görmek istediğiniz dersi seçebilirisiniz."
+
+#. i18n: file ktouchstatistics_dlg.ui line 1001
+#: rc.cpp:636
+#, no-c-format
+msgid "Progress Chart Options"
+msgstr ""
+
+#. i18n: file ktouchstatistics_dlg.ui line 1034
+#: rc.cpp:639
+#, fuzzy, no-c-format
+msgid "Chart Data"
+msgstr "Çizelge Verisi"
+
+#. i18n: file ktouchstatistics_dlg.ui line 1042
+#: rc.cpp:642
+#, no-c-format
+msgid "Level stats"
+msgstr "Seviye istatistikleri"
+
+#. i18n: file ktouchstatistics_dlg.ui line 1050
+#: rc.cpp:645
+#, no-c-format
+msgid "Session stats"
+msgstr "Oturum istatistikleri"
+
+#. i18n: file ktouchstatistics_dlg.ui line 1099
+#: rc.cpp:648
+#, fuzzy, no-c-format
+msgid "Chart Type"
+msgstr "Karakter türü"
+
+#. i18n: file ktouchstatistics_dlg.ui line 1163
+#: rc.cpp:663
+#, no-c-format
+msgid "Time Axis Scaling"
+msgstr ""
+
+#. i18n: file ktouchstatistics_dlg.ui line 1171
+#: rc.cpp:666
+#, no-c-format
+msgid "Time scaled"
+msgstr ""
+
+#. i18n: file ktouchstatistics_dlg.ui line 1179
+#: rc.cpp:669
+#, no-c-format
+msgid "Constant spacing"
+msgstr ""
+
+#. i18n: file ktouchstatistics_dlg.ui line 1219
+#: rc.cpp:672
+#, no-c-format
+msgid "Clear History"
+msgstr "Geçmişi Sil"
+
+#. i18n: file ktouchstatistics_dlg.ui line 1222
+#: rc.cpp:675
+#, no-c-format
+msgid ""
+"Pressing this button will erase the whole training statistics for the current "
+"user."
+msgstr ""
+"Bu düğmeye basarak mevcut kullanıcının tüm çalışma istatistiklerini "
+"silebilirsiniz."
+
+#. i18n: file ktouchstatuslayout.ui line 32
+#: rc.cpp:681
+#, no-c-format
+msgid "Level"
+msgstr "Seviye"
+
+#. i18n: file ktouchstatuslayout.ui line 80
+#: rc.cpp:684
+#, no-c-format
+msgid "Current level"
+msgstr "Şimdiki seviye"
+
+#. i18n: file ktouchstatuslayout.ui line 83
+#: rc.cpp:687
+#, no-c-format
+msgid "This shows which level you are at."
+msgstr "Şu anda hangi seviyede olduğunuzu gösterir."
+
+#. i18n: file ktouchstatuslayout.ui line 108
+#: rc.cpp:690
+#, no-c-format
+msgid "+"
+msgstr "+"
+
+#. i18n: file ktouchstatuslayout.ui line 125
+#: rc.cpp:693
+#, no-c-format
+msgid "-"
+msgstr "-"
+
+#. i18n: file ktouchstatuslayout.ui line 147
+#: rc.cpp:696
+#, no-c-format
+msgid "Speed"
+msgstr "Hız"
+
+#. i18n: file ktouchstatuslayout.ui line 190
+#: rc.cpp:699
+#, no-c-format
+msgid "Characters/Minute"
+msgstr "Karakter/Dakika"
+
+#. i18n: file ktouchstatuslayout.ui line 193
+#: rc.cpp:702
+#, no-c-format
+msgid ""
+"This shows how fast you are typing. It measures the typing speed in characters "
+"per minute."
+msgstr ""
+"Ne kadar hızlı yazdığınızı gösterir. Bu hız bir dakika içinde yazılan karakter "
+"sayısıdır."
+
+#. i18n: file ktouchstatuslayout.ui line 248
+#: rc.cpp:708
+#, no-c-format
+msgid "How much are you typing correctly?"
+msgstr "Ne kadar doğru yazabiliyorsunuz?"
+
+#. i18n: file ktouchstatuslayout.ui line 251
+#: rc.cpp:711
+#, no-c-format
+msgid "This shows how correctly you are typing."
+msgstr "Ne kadar doğru yazdığınızı gösterir."
+
+#. i18n: file ktouchstatuslayout.ui line 278
+#: rc.cpp:714
+#, fuzzy, no-c-format
+msgid "New Characters in This Level"
+msgstr "Bu seviyedeki yeni karakterler"
+
+#. i18n: file ktouchstatuslayout.ui line 319
+#: rc.cpp:717
+#, no-c-format
+msgid "new characters"
+msgstr "yeni karakterler"
+
+#. i18n: file ktouch.kcfg line 9
+#: rc.cpp:720
+#, no-c-format
+msgid "The number of the current color scheme."
+msgstr ""
+
+#. i18n: file ktouch.kcfg line 13
+#: rc.cpp:723
+#, no-c-format
+msgid "Use the same typing line colors independent of color scheme."
+msgstr ""
+
+#. i18n: file ktouch.kcfg line 17
+#: rc.cpp:726
+#, no-c-format
+msgid "The background color for the teacher's line."
+msgstr "Öğretmen satırı için arkaplan rengi."
+
+#. i18n: file ktouch.kcfg line 21
+#: rc.cpp:729
+#, no-c-format
+msgid "The text color for the teacher's line"
+msgstr "Öğretmen satırı için metin rengi"
+
+#. i18n: file ktouch.kcfg line 25
+#: rc.cpp:732
+#, no-c-format
+msgid "The background color for the student's line."
+msgstr "Öğrenci satırı için arkaplan rengi."
+
+#. i18n: file ktouch.kcfg line 29
+#: rc.cpp:735
+#, no-c-format
+msgid "The text color for the student's line"
+msgstr "Öğrenci satırı için metin rengi"
+
+#. i18n: file ktouch.kcfg line 33
+#: rc.cpp:738
+#, no-c-format
+msgid "Whether to use a different background for wrong text or not."
+msgstr "Yanlış metin için değişik bir arkaplanın kullanılıp kullanılmayacağı."
+
+#. i18n: file ktouch.kcfg line 37
+#: rc.cpp:741
+#, no-c-format
+msgid "The background color for wrong text (students line)."
+msgstr "Yanlış metin için arkaplan resmi (öğrenci satırı)"
+
+#. i18n: file ktouch.kcfg line 41
+#: rc.cpp:744
+#, no-c-format
+msgid "The text color for wrong text (students line)."
+msgstr "Yanlış metin için metin rengi (öğrenci satırı)"
+
+#. i18n: file ktouch.kcfg line 51
+#: rc.cpp:750
+#, no-c-format
+msgid "Play a sound on automatic level change"
+msgstr "Otomatik seviye değişiminde ses çıkar"
+
+#. i18n: file ktouch.kcfg line 55
+#: rc.cpp:753
+#, no-c-format
+msgid "The sliding speed"
+msgstr "Geçiş hızı"
+
+#. i18n: file ktouch.kcfg line 59
+#: rc.cpp:756
+#, no-c-format
+msgid "The maximum height of the sliding widget"
+msgstr ""
+
+#. i18n: file ktouch.kcfg line 63
+#: rc.cpp:759
+#, no-c-format
+msgid "Override the default/predefined lecture fonts."
+msgstr ""
+
+#. i18n: file ktouch.kcfg line 67
+#: rc.cpp:762
+#, no-c-format
+msgid "The font for the student and teacher lines"
+msgstr "Öğrenci ve öğretmen satırları için yazıtipi"
+
+#. i18n: file ktouch.kcfg line 71
+#: rc.cpp:765
+#, no-c-format
+msgid "The currently loaded lecture file"
+msgstr "Mevcut yüklü ders dosyası"
+
+#. i18n: file ktouch.kcfg line 75
+#: rc.cpp:768
+#, no-c-format
+msgid "Whether we use right-to-left typing."
+msgstr ""
+
+#. i18n: file ktouch.kcfg line 81
+#: rc.cpp:771
+#, no-c-format
+msgid "Whether to use colors on the keys or not."
+msgstr ""
+
+#. i18n: file ktouch.kcfg line 85
+#: rc.cpp:774
+#, no-c-format
+msgid "Whether to hide the keyboard display."
+msgstr ""
+
+#. i18n: file ktouch.kcfg line 89
+#: rc.cpp:777
+#, no-c-format
+msgid "Whether to override the default/predefined keyboard fonts."
+msgstr ""
+
+#. i18n: file ktouch.kcfg line 93
+#: rc.cpp:780
+#, no-c-format
+msgid "The font for the keys on the keyboard"
+msgstr "Klavyedeki tuşların yazıtipi"
+
+#. i18n: file ktouch.kcfg line 97
+#: rc.cpp:783
+#, no-c-format
+msgid "The currently loaded keyboard file"
+msgstr "Mevcut yüklü klavye dosyası"
+
+#. i18n: file ktouch.kcfg line 103
+#: rc.cpp:786
+#, no-c-format
+msgid "Allow automatic level adjustments"
+msgstr "Otomatik seviye ayarlamaya izin ver"
+
+#. i18n: file ktouch.kcfg line 107
+#: rc.cpp:789
+#, no-c-format
+msgid "Disable manual level adjustments when auto-level change is enabled"
+msgstr ""
+
+#. i18n: file ktouch.kcfg line 111
+#: rc.cpp:792
+#, no-c-format
+msgid "Remember the current level for the next KTouch start"
+msgstr "Sonraki program başlangıcında bu seviyeyi hatırla"
+
+#. i18n: file ktouch.kcfg line 115
+#: rc.cpp:795
+#, no-c-format
+msgid "The current training level"
+msgstr "Şimdiki çalışma seviyesi"
+
+#. i18n: file ktouch.kcfg line 119
+#: rc.cpp:798
+#, no-c-format
+msgid "Number of chars per minute to increase a level"
+msgstr "Bir seviye yükselmek için gerekli, dakikadaki karakter sayısı"
+
+#. i18n: file ktouch.kcfg line 123
+#: rc.cpp:801
+#, no-c-format
+msgid "Percentage of correctness to increase a level"
+msgstr "Bir seviye yükselmek için gerekli doğruluk yüzdesi"
+
+#. i18n: file ktouch.kcfg line 127
+#: rc.cpp:804
+#, no-c-format
+msgid "Number of chars per minute to decrease a level"
+msgstr "Bir seviye düşmek için gerekli, dakikadaki karakter sayısı"
+
+#. i18n: file ktouch.kcfg line 131
+#: rc.cpp:807
+#, no-c-format
+msgid "Percentage of correctness to decrease a level"
+msgstr "Bir seviye düşmek için gerekli doğruluk yüzdesi"
+
+#, fuzzy
+#~ msgid "Black && White"
+#~ msgstr "Siyah - Beyaz"
+
+#, fuzzy
+#~ msgid "Detailed Statistics"
+#~ msgstr "Ayrıntılı istatistikler"
+
+#~ msgid "Detailed Training Statistics"
+#~ msgstr "Ayrıntılı Çalışma İstatistikleri"
+
+#~ msgid "No training lecture loaded."
+#~ msgstr "Bir çalışma dersi yüklenmedi."
+
+#~ msgid "Save keyboard layout ..."
+#~ msgstr "Klavye dizilimini kaydet..."
+
+#~ msgid "Change font..."
+#~ msgstr "Yazıtipini değiştir..."
+
+#~ msgid "Save as..."
+#~ msgstr "Farklı kaydet..."

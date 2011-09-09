@@ -1,0 +1,476 @@
+# translation of kfindpart.po to Turkish
+# kde
+# Copyright (C) 2002 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2001,2002
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kfindpart\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-10-10 02:32+0200\n"
+"PO-Revision-Date: 2003-11-02 18:17+0000\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Ömer Fadıl USTA"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "omer_fad@hotmail.com"
+
+#: kfind.cpp:72 kfinddlg.cpp:40
+msgid "&Find"
+msgstr "&Bul"
+
+#: kfinddlg.cpp:33
+msgid "Find Files/Folders"
+msgstr "Dosya ve Dizinleri Bul"
+
+#: kfinddlg.cpp:54
+msgid "AMiddleLengthText..."
+msgstr "Orta uzunlukta bir metin...."
+
+#: kfinddlg.cpp:55 kfinddlg.cpp:177
+msgid "Ready."
+msgstr "Hazır."
+
+#: kfinddlg.cpp:112 kfinddlg.cpp:217
+#, c-format
+msgid ""
+"_n: one file found\n"
+"%n files found"
+msgstr "%n dosya bulundu"
+
+#: kfinddlg.cpp:152
+msgid "Searching..."
+msgstr "Arıyor..."
+
+#: kfinddlg.cpp:179
+msgid "Aborted."
+msgstr "İptal Edildi."
+
+#: kfinddlg.cpp:182 kfinddlg.cpp:187 kfinddlg.cpp:193
+msgid "Error."
+msgstr "Hata."
+
+#: kfinddlg.cpp:183
+msgid "Please specify an absolute path in the \"Look in\" box."
+msgstr ""
+
+#: kfinddlg.cpp:188
+msgid "Could not find the specified folder."
+msgstr "Belirtilen dizin bulunamadı."
+
+#: kfindpart.cpp:81
+msgid "Find Component"
+msgstr "Bileşen Bul"
+
+#: kftabdlg.cpp:64
+msgid "&Named:"
+msgstr "&İsim:"
+
+#: kftabdlg.cpp:65
+msgid "You can use wildcard matching and \";\" for separating multiple names"
+msgstr ""
+"Birden fazla dosya adını ayırmak için \";\" karakterini kullanabilirsiniz."
+
+#: kftabdlg.cpp:68
+msgid "Look &in:"
+msgstr "İçin&e bak:"
+
+#: kftabdlg.cpp:69
+msgid "Include &subfolders"
+msgstr "&Alt dizinleri de kapsa"
+
+#: kftabdlg.cpp:70
+msgid "Case s&ensitive search"
+msgstr "&Küçük/büyük harfe duyarlı arama"
+
+#: kftabdlg.cpp:71
+msgid "&Browse..."
+msgstr "&Gözat..."
+
+#: kftabdlg.cpp:72
+msgid "&Use files index"
+msgstr "&Dosya indisini kullan"
+
+#: kftabdlg.cpp:90
+msgid ""
+"<qt>Enter the filename you are looking for. "
+"<br>Alternatives may be separated by a semicolon \";\"."
+"<br>"
+"<br>The filename may contain the following special characters:"
+"<ul>"
+"<li><b>?</b> matches any single character</li>"
+"<li><b>*</b> matches zero or more of any characters</li>"
+"<li><b>[...]</b> matches any of the characters in braces</li></ul>"
+"<br>Example searches:"
+"<ul>"
+"<li><b>*.kwd;*.txt</b> finds all files ending with .kwd or .txt</li>"
+"<li><b>go[dt]</b> finds god and got</li>"
+"<li><b>Hel?o</b> finds all files that start with \"Hel\" and end with \"o\", "
+"having one character in between</li>"
+"<li><b>My Document.kwd</b> finds a file of exactly that name</li></ul></qt>"
+msgstr ""
+
+#: kftabdlg.cpp:111
+msgid ""
+"<qt>This lets you use the files' index created by the <i>slocate</i> "
+"package to speed-up the search; remember to update the index from time to time "
+"(using <i>updatedb</i>).</qt>"
+msgstr ""
+
+#: kftabdlg.cpp:147
+msgid "Find all files created or &modified:"
+msgstr "Oluşturulan ya da değiştirilen &tüm dosyaları bul:"
+
+#: kftabdlg.cpp:149
+msgid "&between"
+msgstr "&arasında"
+
+#: kftabdlg.cpp:150
+msgid "&during the previous"
+msgstr "önce&ki sırasında"
+
+#: kftabdlg.cpp:151
+msgid "and"
+msgstr "ve"
+
+#: kftabdlg.cpp:153
+msgid "minute(s)"
+msgstr "dakika(lar)"
+
+#: kftabdlg.cpp:154
+msgid "hour(s)"
+msgstr "saat(ler)"
+
+#: kftabdlg.cpp:155
+msgid "day(s)"
+msgstr "gün(ler)"
+
+#: kftabdlg.cpp:156
+msgid "month(s)"
+msgstr "ay(lar)"
+
+#: kftabdlg.cpp:157
+msgid "year(s)"
+msgstr "yıl(lar)"
+
+#: kftabdlg.cpp:168
+msgid "File &size is:"
+msgstr "Dosya b&oyutu:"
+
+#: kftabdlg.cpp:174
+msgid "Files owned by &user:"
+msgstr "&Sahibi olan dosyalar:"
+
+#: kftabdlg.cpp:176
+msgid "Owned by &group:"
+msgstr "&Grubu olan dosyalar:"
+
+#: kftabdlg.cpp:178
+msgid "(none)"
+msgstr "(hiçbiri)"
+
+#: kftabdlg.cpp:179
+msgid "At Least"
+msgstr "En Az"
+
+#: kftabdlg.cpp:180
+msgid "At Most"
+msgstr "En Çok"
+
+#: kftabdlg.cpp:181
+msgid "Equal To"
+msgstr "Eşit"
+
+#: kftabdlg.cpp:183
+msgid "Bytes"
+msgstr "Bayt"
+
+#: kftabdlg.cpp:184
+msgid "KB"
+msgstr "KB"
+
+#: kftabdlg.cpp:185
+msgid "MB"
+msgstr "MB"
+
+#: kftabdlg.cpp:186
+msgid "GB"
+msgstr ""
+
+#: kftabdlg.cpp:249
+msgid "File &type:"
+msgstr "Dosya &türü:"
+
+#: kftabdlg.cpp:251
+msgid "C&ontaining text:"
+msgstr "İçerdiği me&tne göre:"
+
+#: kftabdlg.cpp:256
+msgid ""
+"<qt>If specified, only files that contain this text are found. Note that not "
+"all file types from the list above are supported. Please refer to the "
+"documentation for a list of supported file types.</qt>"
+msgstr ""
+"<qt> Eğer belirtilirse, sadece bu metni içeren dosyalar bulunur. Listedeki tüm "
+"dosya türleri desteklenmeyebilir. Desteklenen dosya türleri için KDE yardım "
+"belgesine bakınız.</qt>"
+
+#: kftabdlg.cpp:264
+msgid "Case s&ensitive"
+msgstr "Büyük/Küçük &harfe duyarlı "
+
+#: kftabdlg.cpp:265
+msgid "Include &binary files"
+msgstr "&Çalıştırılabilen (ikili) dosyaları da kapsa"
+
+#: kftabdlg.cpp:266
+msgid "Regular e&xpression"
+msgstr "&Düzenli ifade"
+
+#: kftabdlg.cpp:269
+msgid ""
+"<qt>This lets you search in any type of file, even those that usually do not "
+"contain text (for example program files and images).</qt>"
+msgstr ""
+"<qt> Bu işlem hemen her türlü dosya üzerinde (program dosyaları ya da resimler "
+"dahil) arama yapmanıza olanak sağlar.</qt>"
+
+#: kftabdlg.cpp:277
+msgid "&Edit..."
+msgstr "&Düzenle"
+
+#: kftabdlg.cpp:282
+msgid "fo&r:"
+msgstr ""
+
+#: kftabdlg.cpp:283
+msgid "Search &metainfo sections:"
+msgstr ""
+
+#: kftabdlg.cpp:286
+msgid "All Files & Folders"
+msgstr "Tüm Dosya ve Dizinler"
+
+#: kftabdlg.cpp:288
+msgid "Folders"
+msgstr "Dizinler"
+
+#: kftabdlg.cpp:289
+msgid "Symbolic Links"
+msgstr "Sembolik Bağlantılar"
+
+#: kftabdlg.cpp:290
+msgid "Special Files (Sockets, Device Files, ...)"
+msgstr "Özel Dosyalar (Soketler, Aygıt Dosyaları, ...)"
+
+#: kftabdlg.cpp:291
+msgid "Executable Files"
+msgstr "Çalıştırılabilir Dosyalar"
+
+#: kftabdlg.cpp:292
+msgid "SUID Executable Files"
+msgstr "SUID Çalıştırılabilir Dosyalar"
+
+#: kftabdlg.cpp:293
+msgid "All Images"
+msgstr "Tüm Resimler"
+
+#: kftabdlg.cpp:294
+msgid "All Video"
+msgstr "Tüm Videolar"
+
+#: kftabdlg.cpp:295
+msgid "All Sounds"
+msgstr "Tüm Sesler"
+
+#: kftabdlg.cpp:343
+msgid "Name/&Location"
+msgstr " İsim/&Konum "
+
+#: kftabdlg.cpp:344
+msgid "C&ontents"
+msgstr "İç&erik"
+
+#: kftabdlg.cpp:345
+msgid "&Properties"
+msgstr "Ö&zellikler"
+
+#: kftabdlg.cpp:350
+msgid ""
+"<qt>Search within files' specific comments/metainfo"
+"<br>These are some examples:"
+"<br>"
+"<ul>"
+"<li><b>Audio files (mp3...)</b> Search in id3 tag for a title, an album</li>"
+"<li><b>Images (png...)</b> Search images with a special resolution, "
+"comment...</li></ul></qt>"
+msgstr ""
+
+#: kftabdlg.cpp:358
+msgid ""
+"<qt>If specified, search only in this field"
+"<br>"
+"<ul>"
+"<li><b>Audio files (mp3...)</b> This can be Title, Album...</li>"
+"<li><b>Images (png...)</b> Search only in Resolution, Bitdepth...</li></ul></qt>"
+msgstr ""
+
+#: kftabdlg.cpp:552
+msgid "Unable to search within a period which is less than a minute."
+msgstr "1 Dakikadan daha sık bir periyotta arama tekrarlanamaz."
+
+#: kftabdlg.cpp:563
+msgid "The date is not valid."
+msgstr "Bu tarih geçerli değil."
+
+#: kftabdlg.cpp:565
+msgid "Invalid date range."
+msgstr "Geçersiz tarih aralığı."
+
+#: kftabdlg.cpp:567
+msgid "Unable to search dates in the future."
+msgstr "Geleceğe ait bir tarih ile arama yapılamaz."
+
+#: kftabdlg.cpp:628
+#, fuzzy
+msgid "Size is too big. Set maximum size value?"
+msgstr "Boyut Aşırı büyük... Azami boyut değerini belirlediniz mi?"
+
+#: kftabdlg.cpp:628
+msgid "Set"
+msgstr ""
+
+#: kftabdlg.cpp:628
+msgid "Do Not Set"
+msgstr ""
+
+#: kfwin.cpp:49
+msgid "Read-write"
+msgstr "Oku-Yaz"
+
+#: kfwin.cpp:50
+msgid "Read-only"
+msgstr "Sadece oku"
+
+#: kfwin.cpp:51
+msgid "Write-only"
+msgstr "Sadece yaz"
+
+#: kfwin.cpp:52
+msgid "Inaccessible"
+msgstr "Erişilemez"
+
+#: kfwin.cpp:115
+msgid "Name"
+msgstr "İsim"
+
+#: kfwin.cpp:116
+msgid "In Subfolder"
+msgstr "Alt Dizinlerde"
+
+#: kfwin.cpp:117
+msgid "Size"
+msgstr "Boyut"
+
+#: kfwin.cpp:119
+msgid "Modified"
+msgstr "Değiştirilmiş"
+
+#: kfwin.cpp:121
+msgid "Permissions"
+msgstr "İzinler"
+
+#: kfwin.cpp:124
+msgid "First Matching Line"
+msgstr "İlk Karşılaştırılan Satır"
+
+#: kfwin.cpp:194
+msgid "Save Results As"
+msgstr "Sonucu Farklı Kaydet"
+
+#: kfwin.cpp:219
+msgid "Unable to save results."
+msgstr "Sonuçlar kaydedilemedi."
+
+#: kfwin.cpp:230 kfwin.cpp:231 kfwin.cpp:232
+msgid "KFind Results File"
+msgstr "KFind Sonuç Dosyası"
+
+#: kfwin.cpp:259
+msgid ""
+"Results were saved to file\n"
+msgstr ""
+"Sonuçlar dosyaya kaydedildi\n"
+
+#: kfwin.cpp:289
+#, c-format
+msgid ""
+"_n: Do you really want to delete the selected file?\n"
+"Do you really want to delete the %n selected files?"
+msgstr "Seçili %n dosyayı silmek istiyor musunuz?"
+
+#: kfwin.cpp:412
+msgid ""
+"_: Menu item\n"
+"Open"
+msgstr ""
+
+#: kfwin.cpp:413
+msgid "Open Folder"
+msgstr "Dizin Aç"
+
+#: kfwin.cpp:418
+msgid "Open With..."
+msgstr "Birlikte Aç..."
+
+#: kfwin.cpp:424
+msgid "Selected Files"
+msgstr "Seçilmiş Dosyalar"
+
+#: kquery.cpp:478
+msgid "Error while using locate"
+msgstr "Locate komutu kullanılırken bir hata oluştu"
+
+#: main.cpp:14
+msgid "KDE file find utility"
+msgstr "KDE dosya bulma aracı"
+
+#: main.cpp:18
+msgid "Path(s) to search"
+msgstr "Arama yolları"
+
+#: main.cpp:25
+msgid "KFind"
+msgstr "KFind"
+
+#: main.cpp:27
+msgid "(c) 1998-2003, The KDE Developers"
+msgstr "(c) 1998-2003, KDE Geliştiricileri"
+
+#: main.cpp:29
+msgid "Current Maintainer"
+msgstr "Geçerli Programcı"
+
+#: main.cpp:30
+msgid "Developer"
+msgstr "Geliştirici"
+
+#: main.cpp:31
+msgid "UI Design & more search options"
+msgstr "Grafik tasarım ve diğer arama ayarları"
+
+#: main.cpp:41
+msgid "UI Design"
+msgstr "UI tasarım"

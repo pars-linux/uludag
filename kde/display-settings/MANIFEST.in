@@ -1,6 +1,0 @@
-include *.py
-recursive-include src *.py *.sh
-recursive-include data *.desktop.in *.png *.qrc
-recursive-include xcb *.py *.xml
-recursive-include ui *.ui
-recursive-include po *.po *.pot

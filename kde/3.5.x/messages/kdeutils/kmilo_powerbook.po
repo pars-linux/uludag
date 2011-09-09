@@ -1,0 +1,50 @@
+# translation of kmilo_powerbook.po to Türkçe
+# translation of kmilo_powerbook.po to Turkish
+# Copyright (C) 2004, 2005 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Engin Çağatay <engincagatay@yahoo.com>, 2004.
+# Bekir SONAT <cortexbs@yahoo.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kmilo_powerbook\n"
+"POT-Creation-Date: 2005-11-30 03:22+0100\n"
+"PO-Revision-Date: 2005-07-11 17:21+0300\n"
+"Last-Translator: Bekir SONAT <cortexbs@yahoo.com>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+
+#: pb_monitor.cpp:48
+msgid "No Tap"
+msgstr "Tık yok"
+
+#: pb_monitor.cpp:48
+msgid "Tap"
+msgstr "Tık"
+
+#: pb_monitor.cpp:48
+msgid "Drag"
+msgstr "Taşı"
+
+#: pb_monitor.cpp:48
+msgid "Lock"
+msgstr "Kilitle"
+
+#: pb_monitor.cpp:101
+#, c-format
+msgid "Operating mode set to: %1."
+msgstr "İşlem kipi %1 olarak ayarlandı."
+
+#: pb_monitor.cpp:147
+msgid "The computer will sleep now."
+msgstr "Bilgisayar şimdi uyuyacak."
+
+#: pb_monitor.cpp:150
+#, c-format
+msgid ""
+"_n: The computer will sleep in %n second.\n"
+"The computer will sleep in %n seconds."
+msgstr "Bilgisayar %n saniye içinde uyuyacak."

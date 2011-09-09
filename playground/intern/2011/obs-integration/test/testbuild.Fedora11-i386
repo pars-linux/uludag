@@ -1,9 +1,0 @@
-#!/bin/bash
-. ${0%/*}/common
-
-arch32bit
-
-repo fedora11_i386
-
-run_build --dist $PWD/Fedora_11.conf --arch i686 \
-	"$@"

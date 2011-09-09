@@ -1,0 +1,94 @@
+# translation of nsplugin.po to Türkçe
+# translation of nsplugin.po to Turkish
+# translation of nsplugin.po to
+# translation of nsplugin.po to turkish
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nsplugin\n"
+"POT-Creation-Date: 2007-12-22 01:14+0100\n"
+"PO-Revision-Date: 2005-06-14 01:42+0200\n"
+"Last-Translator: Adil YILDIZ <adil@kde.org.tr>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Yıldırım Karslıoğlu"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "ykarslioglu@superonline.com"
+
+#: nspluginloader.cpp:70
+msgid "Start Plugin"
+msgstr "Eklentiyi Başlat"
+
+#: plugin_part.cpp:196
+msgid "plugin"
+msgstr "eklenti"
+
+#: plugin_part.cpp:220
+msgid "&Save As..."
+msgstr "&Farklı Kaydet..."
+
+#: plugin_part.cpp:301
+#, c-format
+msgid "Loading Netscape plugin for %1"
+msgstr "%1 için Netscape eklentileri yükleniyor"
+
+#: plugin_part.cpp:309
+#, c-format
+msgid "Unable to load Netscape plugin for %1"
+msgstr "%1 için Netscape eklentileri yüklenemedi"
+
+#: pluginscan.cpp:200
+msgid "Netscape plugin mimeinfo"
+msgstr "Netscape eklenti mime bilgisi"
+
+#: pluginscan.cpp:235
+msgid "Unnamed plugin"
+msgstr "İsimsiz eklenti"
+
+#: pluginscan.cpp:461 pluginscan.cpp:464
+msgid "Netscape plugin viewer"
+msgstr "Netscape eklenti izleyici"
+
+#: pluginscan.cpp:514
+msgid "Show progress output for GUI"
+msgstr "Grafiksel arayüz için ilerlemeyi göster"
+
+#: pluginscan.cpp:521
+msgid "nspluginscan"
+msgstr "nspluginscan"
+
+#: viewer/nsplugin.cpp:819
+#, c-format
+msgid "Submitting data to %1"
+msgstr "%1 verisi gönderiliyor"
+
+#: viewer/nsplugin.cpp:838
+#, c-format
+msgid "Requesting %1"
+msgstr "%1 isteniyor"
+
+#: viewer/viewer.cpp:280
+msgid ""
+"There was an error connecting to the Desktop communications server. Please make "
+"sure that the 'dcopserver' process has been started, and then try again."
+msgstr ""
+"Masaüstü iletişim sunucusuna bağlantı sırasında bir hata oluştu. Lütfen "
+"'dcopserver' programının çalışıp çalışmadığını denetleyerek yeniden deneyiniz."
+
+#: viewer/viewer.cpp:284
+msgid "Error Connecting to DCOP Server"
+msgstr "DCOP sunucuya bağlantı sırasında hata oluştu"

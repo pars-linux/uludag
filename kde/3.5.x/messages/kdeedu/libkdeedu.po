@@ -1,0 +1,321 @@
+# translation of libkdeedu.po to Turkish
+# translation of libkdeedu.po to
+# Görkem Çetin <gorkem@gorkemcetin.com>, 2005.
+# Engin Çağatay <engincagatay@yahoo.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: libkdeedu\n"
+"POT-Creation-Date: 2007-02-14 02:46+0100\n"
+"PO-Revision-Date: 2007-07-10 02:47+0300\n"
+"Last-Translator: Serdar Soytetir\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Serdar Soytetir, Engin Çağatay"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "tulliana@gmail.com, engincagatay@yahoo.com"
+
+#: extdate/extdatetime.cpp:49
+msgid ""
+"_: Short month name\n"
+"Jan"
+msgstr "Oca"
+
+#: extdate/extdatetime.cpp:49
+msgid ""
+"_: Short month name\n"
+"Feb"
+msgstr "Şub"
+
+#: extdate/extdatetime.cpp:50
+msgid ""
+"_: Short month name\n"
+"Mar"
+msgstr "Mar"
+
+#: extdate/extdatetime.cpp:50
+msgid ""
+"_: Short month name\n"
+"Apr"
+msgstr "Nis"
+
+#: extdate/extdatetime.cpp:51
+msgid ""
+"_: Short month name\n"
+"May"
+msgstr "May"
+
+#: extdate/extdatetime.cpp:51
+msgid ""
+"_: Short month name\n"
+"Jun"
+msgstr "Haz"
+
+#: extdate/extdatetime.cpp:52
+msgid ""
+"_: Short month name\n"
+"Jul"
+msgstr "Tem"
+
+#: extdate/extdatetime.cpp:52
+msgid ""
+"_: Short month name\n"
+"Aug"
+msgstr "Ağu"
+
+#: extdate/extdatetime.cpp:53
+msgid ""
+"_: Short month name\n"
+"Sep"
+msgstr "Eyl"
+
+#: extdate/extdatetime.cpp:53
+msgid ""
+"_: Short month name\n"
+"Oct"
+msgstr "Eki"
+
+#: extdate/extdatetime.cpp:54
+msgid ""
+"_: Short month name\n"
+"Nov"
+msgstr "Kas"
+
+#: extdate/extdatetime.cpp:54
+msgid ""
+"_: Short month name\n"
+"Dec"
+msgstr "Ara"
+
+#: extdate/extdatetime.cpp:57
+msgid ""
+"_: Short day name\n"
+"Mon"
+msgstr "Ptesi"
+
+#: extdate/extdatetime.cpp:57
+msgid ""
+"_: Short day name\n"
+"Tue"
+msgstr "Sal"
+
+#: extdate/extdatetime.cpp:58
+msgid ""
+"_: Short day name\n"
+"Wed"
+msgstr "Çar"
+
+#: extdate/extdatetime.cpp:58
+msgid ""
+"_: Short day name\n"
+"Thu"
+msgstr "Per"
+
+#: extdate/extdatetime.cpp:59
+msgid ""
+"_: Short day name\n"
+"Fri"
+msgstr "Cum"
+
+#: extdate/extdatetime.cpp:59
+msgid ""
+"_: Short day name\n"
+"Sat"
+msgstr "Ctesi"
+
+#: extdate/extdatetime.cpp:60
+msgid ""
+"_: Short day name\n"
+"Sun"
+msgstr "Paz"
+
+#: extdate/extdatetime.cpp:63
+msgid ""
+"_: Long month name\n"
+"January"
+msgstr "Ocak"
+
+#: extdate/extdatetime.cpp:63
+msgid ""
+"_: Long month name\n"
+"February"
+msgstr "Şubat"
+
+#: extdate/extdatetime.cpp:64
+msgid ""
+"_: Long month name\n"
+"March"
+msgstr "Mart"
+
+#: extdate/extdatetime.cpp:64
+msgid ""
+"_: Long month name\n"
+"April"
+msgstr "Nisan"
+
+#: extdate/extdatetime.cpp:65
+msgid ""
+"_: Long month name\n"
+"May"
+msgstr "Mayıs"
+
+#: extdate/extdatetime.cpp:65
+msgid ""
+"_: Long month name\n"
+"June"
+msgstr "Haziran"
+
+#: extdate/extdatetime.cpp:66
+msgid ""
+"_: Long month name\n"
+"July"
+msgstr "Temmuz"
+
+#: extdate/extdatetime.cpp:66
+msgid ""
+"_: Long month name\n"
+"August"
+msgstr "Ağustos"
+
+#: extdate/extdatetime.cpp:67
+msgid ""
+"_: Long month name\n"
+"September"
+msgstr "Eylül"
+
+#: extdate/extdatetime.cpp:67
+msgid ""
+"_: Long month name\n"
+"October"
+msgstr "Ekim"
+
+#: extdate/extdatetime.cpp:68
+msgid ""
+"_: Long month name\n"
+"November"
+msgstr "Kasım"
+
+#: extdate/extdatetime.cpp:68
+msgid ""
+"_: Long month name\n"
+"December"
+msgstr "Aralık"
+
+#: extdate/extdatetime.cpp:71
+msgid ""
+"_: Long day name\n"
+"Monday"
+msgstr "Pazartesi"
+
+#: extdate/extdatetime.cpp:71
+msgid ""
+"_: Long day name\n"
+"Tuesday"
+msgstr "Salı"
+
+#: extdate/extdatetime.cpp:72
+msgid ""
+"_: Long day name\n"
+"Wednesday"
+msgstr "Çarşamba"
+
+#: extdate/extdatetime.cpp:72
+msgid ""
+"_: Long day name\n"
+"Thursday"
+msgstr "Perşembe"
+
+#: extdate/extdatetime.cpp:73
+msgid ""
+"_: Long day name\n"
+"Friday"
+msgstr "Cuma"
+
+#: extdate/extdatetime.cpp:73
+msgid ""
+"_: Long day name\n"
+"Saturday"
+msgstr "Cumartesi"
+
+#: extdate/extdatetime.cpp:74
+msgid ""
+"_: Long day name\n"
+"Sunday"
+msgstr "Pazar"
+
+#: extdate/main.cpp:6
+msgid "ExtDatePicker test program"
+msgstr ""
+
+#: extdate/main.cpp:7
+msgid "Compares KDatePicker and ExtDatePicker"
+msgstr ""
+
+#: extdate/main.cpp:16
+msgid "Test ExtDatePicker"
+msgstr ""
+
+#: extdate/main.cpp:18
+msgid "(c) 2004, Jason Harris"
+msgstr "(c) 2004, Jason Harris"
+
+#: extdate/extdatepicker.cpp:80
+#, c-format
+msgid "Week %1"
+msgstr "Hafta %1"
+
+#: extdate/extdatepicker.cpp:152
+msgid "Next year"
+msgstr "Sonraki yıl"
+
+#: extdate/extdatepicker.cpp:153
+msgid "Previous year"
+msgstr "Önceki yıl"
+
+#: extdate/extdatepicker.cpp:154
+msgid "Next month"
+msgstr "Sonraki ay"
+
+#: extdate/extdatepicker.cpp:155
+msgid "Previous month"
+msgstr "Önceki ay"
+
+#: extdate/extdatepicker.cpp:156
+msgid "Select a week"
+msgstr "Bir hafta seçin"
+
+#: extdate/extdatepicker.cpp:157
+msgid "Select a month"
+msgstr "Bir ay seçin"
+
+#: extdate/extdatepicker.cpp:158
+msgid "Select a year"
+msgstr "Bir yıl seçin"
+
+#: extdate/extdatepicker.cpp:159
+msgid "Select the current day"
+msgstr "Mevcut günü seçin"
+
+#: kdeeduui/kdeeduglossary.cpp:35 kdeeduui/kdeeduglossary.cpp:166
+msgid "Glossary"
+msgstr "Sözlük"
+
+#: kdeeduui/kdeeduglossary.cpp:185
+msgid "Search:"
+msgstr "Ara:"
+
+#: kdeeduui/kdeeduglossary.cpp:390
+msgid "References"
+msgstr "Kaynaklar"

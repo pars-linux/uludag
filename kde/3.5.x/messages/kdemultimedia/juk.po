@@ -1,0 +1,1643 @@
+# translation of juk.po to
+# Copyright (C) 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
+#
+# Salih Giray <salih.giray@gelecek.com.tr>, 2003.
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+# YILDIZ KARDESLER <turkishprogram@xposta.com>, 2004.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004.
+# Aydın Demirel <aydndemirel@yahoo.com>, 2004.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Zerrin Cakmakkaya <zerrin@uludag.org.tr>, 2004.
+# Onur Küçük <onur@uludag.org.tr>, 2005.
+# Engin Çağatay <engincagatay@yahoo.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: juk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-08 01:20+0200\n"
+"PO-Revision-Date: 2007-05-15 23:52+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Onur Küçük"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "onur@uludag.org.tr"
+
+#: advancedsearchdialog.cpp:41
+msgid "Create Search Playlist"
+msgstr "Parça Listesi Arama Veritabanı Oluştur"
+
+#: advancedsearchdialog.cpp:48
+msgid "Playlist name:"
+msgstr "Parça listesi adı:"
+
+#: advancedsearchdialog.cpp:51
+msgid "Search Criteria"
+msgstr "Arama Kriteri"
+
+#: advancedsearchdialog.cpp:55
+msgid "Match any of the following"
+msgstr "Herhangi birisini eşleştir"
+
+#: advancedsearchdialog.cpp:56
+msgid "Match all of the following"
+msgstr "Tümünü eşleştir"
+
+#: advancedsearchdialog.cpp:90
+msgid "More"
+msgstr "Daha çok"
+
+#: advancedsearchdialog.cpp:94
+msgid "Fewer"
+msgstr "Daha az"
+
+#: artsplayer.cpp:76
+msgid "Cannot find the aRts soundserver."
+msgstr "aRts ses sunucusu bulunamadı."
+
+#: artsplayer.cpp:232
+msgid ""
+"Connecting/starting aRts soundserver failed. Make sure that artsd is configured "
+"properly."
+msgstr ""
+"aRts ses sunucusuna bağlantı/başlatma başarısız oldu. artsd'nin doğru "
+"ayarlandığından emin olun."
+
+#: artsplayer.cpp:237 exampleoptions.cpp:50 main.cpp:52 systemtray.cpp:519
+#: systemtray.cpp:535
+msgid "JuK"
+msgstr "JuK"
+
+#: cache.cpp:301
+msgid ""
+"The music data cache has been corrupted. JuK needs to rescan it now. This may "
+"take some time."
+msgstr ""
+"Müzik veritabanı önbelleği bozulmuş. JuK tüm bilgileri yeniden tarayacak. Bu "
+"işlem biraz zaman alabilir."
+
+#: collectionlist.cpp:60
+msgid "Collection List"
+msgstr "Arşiv Listesi"
+
+#: collectionlist.cpp:188
+msgid ""
+"Removing an item from the collection will also remove it from all of your "
+"playlists. Are you sure you want to continue?\n"
+"\n"
+"Note, however, that if the directory that these files are in is in your \"scan "
+"on startup\" list, they will be readded on startup."
+msgstr ""
+"Arşivden kaldırılan bir eleman tüm parça listelerinden de kaldırılacaktır. "
+"Devam etmek istiyor musunuz?\n"
+"\n"
+"Unutmayın ki eğer bu dosyalarınızın bulunduğu dizin, açılışta taranacaklar "
+"listenizdeyse açılışta tekrar eklenecektir."
+
+#: collectionlist.cpp:231
+msgid "Show Playing"
+msgstr "Çalınanı Göster"
+
+#: coverdialog.cpp:38
+msgid "<All Artists>"
+msgstr "<Tüm Sanatçılar>"
+
+#: coverdialog.cpp:145
+msgid "Remove Cover"
+msgstr "Kapağı Sil"
+
+#: deletedialog.cpp:50
+#, c-format
+msgid ""
+"_n: <b>1</b> file selected.\n"
+"<b>%n</b> files selected."
+msgstr "<b>%n</b> dosya seçildi."
+
+#: deletedialog.cpp:56
+msgid ""
+"<qt>These items will be <b>permanently deleted</b> from your hard disk.</qt>"
+msgstr "<qt>Bu öğeler sabit diskinizden <b>silinecektir</b>.</qt>"
+
+#: deletedialog.cpp:62
+msgid "<qt>These items will be moved to the Trash Bin.</qt>"
+msgstr "<qt>Bu öğeler çöp kutusuna gönderilecektir.</qt>"
+
+#: deletedialog.cpp:74
+msgid "About to delete selected files"
+msgstr "Seçili dosyalar silinmek üzere"
+
+#: deletedialog.cpp:76
+msgid "&Send to Trash"
+msgstr "&Çöpe Gönder"
+
+#: directorylist.cpp:32
+msgid "Folder List"
+msgstr "Dizin Listesi"
+
+#: filerenamer.cpp:72
+msgid ""
+"You are about to rename the following files. Are you sure you want to continue?"
+msgstr ""
+"Aşağıdaki dosya isimlerini değiştirmek üzeresiniz. Devam etmek istiyor musunuz?"
+
+#: filerenamer.cpp:78
+msgid "Original Name"
+msgstr "Asıl Adı"
+
+#: filerenamer.cpp:79
+msgid "New Name"
+msgstr "Yeni Adı"
+
+#: filerenamer.cpp:87
+msgid "No Change"
+msgstr "Değişiklik Yok"
+
+#: filerenamer.cpp:460
+msgid "Insert folder separator"
+msgstr "Dizin ayracı ekle"
+
+#: filerenamer.cpp:549
+msgid "No file selected, or selected file has no tags."
+msgstr "Hiçbir dosya seçilmemiş ya da seçili dosyanın imleri yok."
+
+#: filerenamer.cpp:791
+msgid "Hide Renamer Test Dialog"
+msgstr "Yeniden İsimlendiriciTest Diyaloğunu Sakla"
+
+#. i18n: file filerenamerbase.ui line 247
+#: filerenamer.cpp:796 rc.cpp:200
+#, no-c-format
+msgid "Show Renamer Test Dialog"
+msgstr "Yeniden İsimlendirici Test Diyaloğunu Göster"
+
+#: filerenamer.cpp:878
+msgid "%1 to %2"
+msgstr "%1 den %2 e"
+
+#: filerenamer.cpp:885
+msgid ""
+"The following rename operations failed:\n"
+msgstr ""
+"Aşağıdaki yeniden isimlendirme işlemleri başarısız oldu:\n"
+
+#: filerenamerconfigdlg.cpp:24
+msgid "File Renamer Options"
+msgstr "Dosya Adı Değiştirici Seçenekleri"
+
+#: filerenameroptions.cpp:121
+msgid "File Renamer"
+msgstr "Dosya Adı Değiştirici"
+
+#: historyplaylist.cpp:63
+msgid "Time"
+msgstr "Zaman"
+
+#: juk.cpp:123
+msgid "Remove From Playlist"
+msgstr "Parça Listesinden Çıkart"
+
+#: juk.cpp:125 systemtray.cpp:184
+msgid "&Random Play"
+msgstr "Ra&stgele Çal"
+
+#: juk.cpp:128
+msgid "&Disable Random Play"
+msgstr "Ra&stgele Çalmayı Kapat"
+
+#: juk.cpp:132
+msgid "Use &Random Play"
+msgstr "Ra&stgele Çal"
+
+#: juk.cpp:136
+msgid "Use &Album Random Play"
+msgstr "&Albümü Rastgele Çal"
+
+#: juk.cpp:141
+msgid "&Play"
+msgstr "Ç&al"
+
+#: juk.cpp:142
+msgid "P&ause"
+msgstr "&Duraklat"
+
+#: juk.cpp:143
+msgid "&Stop"
+msgstr "D&urdur"
+
+#: juk.cpp:145
+msgid ""
+"_: previous track\n"
+"Previous"
+msgstr "Önceki"
+
+#: juk.cpp:146
+msgid ""
+"_: next track\n"
+"&Next"
+msgstr "&Sonraki"
+
+#: juk.cpp:147
+msgid "&Loop Playlist"
+msgstr "Parça Listesini &Tekrarla"
+
+#: juk.cpp:149
+msgid "&Resize Playlist Columns Manually"
+msgstr "Parça Listesi &Sütunlarını Elle Boyutlandır"
+
+#: juk.cpp:151
+msgid "&Resize Column Headers Automatically"
+msgstr "Sütun &Başlıklarını Otomatik Olarak Boyutlandır"
+
+#: juk.cpp:155 juk.cpp:238
+msgid "Mute"
+msgstr "Sessiz"
+
+#: juk.cpp:156 juk.cpp:236
+msgid "Volume Up"
+msgstr "Ses Artır"
+
+#: juk.cpp:157 juk.cpp:237
+msgid "Volume Down"
+msgstr "Ses Azalt"
+
+#: juk.cpp:158 juk.cpp:230
+msgid "Play / Pause"
+msgstr "Çal / Durdur"
+
+#: juk.cpp:159 juk.cpp:235
+msgid "Seek Forward"
+msgstr "İleri Tara"
+
+#: juk.cpp:160 juk.cpp:234
+msgid "Seek Back"
+msgstr "Geri Tara"
+
+#: juk.cpp:167
+msgid "Show Splash Screen on Startup"
+msgstr "Açılışta Başlangıç Resmini Göster"
+
+#: juk.cpp:169
+msgid "Hide Splash Screen on Startup"
+msgstr "Açılışta Başlangıç Resmini Gizle"
+
+#: juk.cpp:171
+msgid "&Dock in System Tray"
+msgstr "Sistem Çubuğuna &Yerleş"
+
+#: juk.cpp:174
+msgid "&Stay in System Tray on Close"
+msgstr "&Kapanınca Sistem Çubuğunda Kal"
+
+#: juk.cpp:177
+msgid "Popup &Track Announcement"
+msgstr "Parça Duyuru &Penceresi"
+
+#: juk.cpp:179
+msgid "Save &Play Queue on Exit"
+msgstr "Çı&kışta Çalma Kuyruğunu Kaydet"
+
+#: juk.cpp:191
+msgid "&Tag Guesser..."
+msgstr "&Başlık Tahmincisi..."
+
+#: juk.cpp:194
+msgid "&File Renamer..."
+msgstr "&Dosya Adı Değiştirici..."
+
+#: juk.cpp:203
+msgid "Track Position"
+msgstr "Parça Konumu"
+
+#: juk.cpp:229
+msgid "Play"
+msgstr "Çal"
+
+#: juk.cpp:231
+msgid "Stop Playing"
+msgstr "Çalmayı Durdur"
+
+#: juk.cpp:233
+msgid "Forward"
+msgstr "İleri"
+
+#: juk.cpp:239
+msgid "Show / Hide"
+msgstr "Göster / Gizle"
+
+#: juk.cpp:240 playlistcollection.cpp:869
+msgid "Play Next Album"
+msgstr "Sonraki Albümü Çal"
+
+#: juk.cpp:399
+msgid ""
+"<qt>Closing the main window will keep JuK running in the system tray. Use Quit "
+"from the File menu to quit the application.</qt>"
+msgstr ""
+"<qt>Ana pencereyi kapattığınızda JuK sistem çubuğunda çalışmaya devam "
+"edecektir. Programı kapatmak için Dosya menüsünden Çık'ı seçin.</qt>"
+
+#: juk.cpp:401
+msgid "Docking in System Tray"
+msgstr "Sistem Çubuğuna Yerleş"
+
+#: k3bexporter.cpp:109
+msgid "Add Selected Items to Audio or Data CD"
+msgstr "Seçilen Tüm Ögeleri Bir Ses ya da Veri CD'sine Ekle"
+
+#: k3bexporter.cpp:177
+msgid "Unable to start K3b."
+msgstr "K3b başlatılamadı."
+
+#: k3bexporter.cpp:211
+msgid "There was a DCOP communication error with K3b."
+msgstr "K3b ile birlikte bir DCOP iletişim hatası vardı."
+
+#: k3bexporter.cpp:244
+msgid ""
+"Create an audio mode CD suitable for CD players, or a data mode CD suitable for "
+"computers and other digital music players?"
+msgstr ""
+"Diğer dijital müzik oynatıcıları ve bilgisayarlar için uygun bir data CD modu "
+"yaratmak mı ya da CD oynatıcılar için uygun bir müzik CD modu yaratmak mı?"
+
+#: k3bexporter.cpp:247
+msgid "Create K3b Project"
+msgstr "K3b Projesi yarat"
+
+#: k3bexporter.cpp:248
+msgid "Audio Mode"
+msgstr "Modu Göster"
+
+#: k3bexporter.cpp:249
+msgid "Data Mode"
+msgstr "Data Modu"
+
+#: k3bexporter.cpp:275
+msgid "Add Playlist to Audio or Data CD"
+msgstr "Parça Listesini Bir Ses ya da Veri CD'sine Ekle"
+
+#: keydialog.cpp:79
+msgid "Configure Shortcuts"
+msgstr "Kısayolları Düzenle"
+
+#: keydialog.cpp:98
+msgid "Global Shortcuts"
+msgstr "Genel Kısayollar"
+
+#: keydialog.cpp:99
+msgid "&No keys"
+msgstr "&Tuş Yok"
+
+#: keydialog.cpp:100
+msgid "&Standard keys"
+msgstr "&Standart tuşlar"
+
+#: keydialog.cpp:101
+msgid "&Multimedia keys"
+msgstr "&Çokluortam tuşları"
+
+#: keydialog.cpp:104
+msgid ""
+"Here you can select the keys used as global shortcuts to control the player"
+msgstr ""
+"Oynatıcıyı kontrol etmek için genel kısayollar olarak kullanılan tuşları "
+"buradan seçebilirsiniz"
+
+#: main.cpp:27
+msgid "Jukebox and music manager for KDE"
+msgstr "KDE için müzik yöneticisi"
+
+#: main.cpp:28
+msgid "Author, chief dork and keeper of the funk"
+msgstr "Yazar"
+
+#: main.cpp:29
+msgid "Assistant super-hero, fixer of many things"
+msgstr "Yardımcı"
+
+#: main.cpp:30
+msgid ""
+"System tray docking, \"inline\" tag editing,\n"
+"bug fixes, evangelism, moral support"
+msgstr "Çeşitli hata gidermeler ve destek"
+
+#: main.cpp:31
+msgid "GStreamer port"
+msgstr "GStreamer aktarımı"
+
+#: main.cpp:32
+msgid "Global keybindings support"
+msgstr "Genel tuştakımı desteği"
+
+#: main.cpp:33
+msgid "Track announcement popups"
+msgstr "Parça duyuru pencereleri"
+
+#: main.cpp:34
+msgid "Automagic track data guessing, bugfixes"
+msgstr "Sihirli parça veri tahmini, hata düzeltimleri"
+
+#: main.cpp:35
+msgid "More automagical things, now using MusicBrainz"
+msgstr "Daha otomatik ve sihirli şeyler, şimdi MusicBrainz kullanılıyor"
+
+#: main.cpp:36
+msgid "Co-conspirator in MusicBrainz wizardry"
+msgstr "MusicBrainz sihirbazı komplocuları"
+
+#: main.cpp:37
+msgid "Friendly, neighborhood aRts guru"
+msgstr "Dostça, aRts çevresi"
+
+#: main.cpp:38
+msgid ""
+"Making JuK friendlier to people with\n"
+"terabytes of music"
+msgstr ""
+"Terabytelarca müzikle birlikte insanlara\n"
+"daha dostça JuK yapma"
+
+#: main.cpp:39
+msgid "DCOP interface"
+msgstr "DCOP arayüzü"
+
+#: main.cpp:40
+msgid "FLAC and MPC support"
+msgstr "FLAC ve MPC desteği"
+
+#: main.cpp:41
+msgid "Album cover manager"
+msgstr "Albüm kapağı yöneticisi"
+
+#: main.cpp:42
+msgid "Gimper of splash screen"
+msgstr "Açılış resmini yapan"
+
+#: main.cpp:46
+msgid "File(s) to open"
+msgstr "Açılacak dosya(lar)"
+
+#: mediafiles.cpp:68
+msgid "Playlists"
+msgstr "Parça Listesi"
+
+#: musicbrainzquery.cpp:37
+msgid "Querying MusicBrainz server..."
+msgstr "MusicBrainz sunucusu sorgulanıyor..."
+
+#: musicbrainzquery.cpp:50
+msgid "No matches found."
+msgstr "Eşleştirme bulunamadı."
+
+#: musicbrainzquery.cpp:64
+msgid "Error connecting to MusicBrainz server."
+msgstr "MusicBrainz sunucusuna bağlantıda hata"
+
+#: nowplaying.cpp:273
+msgid "back to playlist"
+msgstr "parça listesine geri dön"
+
+#: nowplaying.cpp:297 nowplaying.cpp:312 playlistcollection.cpp:552
+msgid "History"
+msgstr "Geçmiş"
+
+#: playermanager.cpp:245
+msgid "&Output To"
+msgstr "&Çıktı Sunucusu"
+
+#: playermanager.cpp:249 playermanager.cpp:552
+msgid "aRts"
+msgstr "aRts"
+
+#: playermanager.cpp:252 playermanager.cpp:554
+msgid "GStreamer"
+msgstr "GStreamer"
+
+#: playermanager.cpp:255 playermanager.cpp:260 playermanager.cpp:556
+msgid "aKode"
+msgstr "aKode"
+
+#: playlist.cpp:546
+#, c-format
+msgid "Could not save to file %1."
+msgstr "%1 dosyası kaydedilemedi."
+
+#: playlist.cpp:802
+msgid "Are you sure you want to delete these covers?"
+msgstr "Bu kapakları silmek istediğinize emin misiniz?"
+
+#: playlist.cpp:804
+msgid "&Delete Covers"
+msgstr "Kapakları &Sil"
+
+#: playlist.cpp:841
+msgid ""
+"None of the items you have selected can be assigned a cover.  A track must have "
+"both the Artist and Album tags set to be assigned a cover."
+msgstr ">"
+
+#: playlist.cpp:852
+msgid "Select Cover Image File"
+msgstr "Kapak Resim Dosyası Seç"
+
+#: playlist.cpp:1006
+msgid "Could not delete these files"
+msgstr "Bu dosyalar silinemedi."
+
+#: playlist.cpp:1007
+msgid "Could not move these files to the Trash"
+msgstr "Bu dosyalar Çöp Kutusuna taşınamadı"
+
+#. i18n: file trackpickerdialogbase.ui line 89
+#: playlist.cpp:1517 rc.cpp:319
+#, no-c-format
+msgid "Track Name"
+msgstr "Parça Adı"
+
+#. i18n: file coverdialogbase.ui line 25
+#: playlist.cpp:1518 rc.cpp:48 rc.cpp:122 rc.cpp:322 tagrenameroptions.cpp:95
+#, no-c-format
+msgid "Artist"
+msgstr "Sanatçı"
+
+#. i18n: file exampleoptionsbase.ui line 109
+#: playlist.cpp:1519 rc.cpp:128 rc.cpp:325 tagrenameroptions.cpp:95
+#, no-c-format
+msgid "Album"
+msgstr "Albüm"
+
+#: playlist.cpp:1520
+msgid "Cover"
+msgstr "Kapak"
+
+#. i18n: file trackpickerdialogbase.ui line 122
+#: playlist.cpp:1521 rc.cpp:328 tagrenameroptions.cpp:96
+#, no-c-format
+msgid "Track"
+msgstr "Parça"
+
+#. i18n: file exampleoptionsbase.ui line 179
+#: playlist.cpp:1522 rc.cpp:146 tagrenameroptions.cpp:96
+#, no-c-format
+msgid "Genre"
+msgstr "Tür"
+
+#. i18n: file trackpickerdialogbase.ui line 133
+#: playlist.cpp:1523 rc.cpp:331 tagrenameroptions.cpp:96
+#, no-c-format
+msgid "Year"
+msgstr "Yıl"
+
+#: playlist.cpp:1524
+msgid "Length"
+msgstr "Uzunluk"
+
+#: playlist.cpp:1525
+msgid "Bitrate"
+msgstr "Bitoranı"
+
+#: playlist.cpp:1526
+msgid "Comment"
+msgstr "Açıklama"
+
+#. i18n: file trackpickerdialogbase.ui line 32
+#: playlist.cpp:1527 rc.cpp:313
+#, no-c-format
+msgid "File Name"
+msgstr "Dosya Adı"
+
+#: playlist.cpp:1528
+msgid "File Name (full path)"
+msgstr "Dosya Adı (tam yol)"
+
+#: playlist.cpp:1548
+msgid "&Show Columns"
+msgstr "S&ütunları Göster"
+
+#: playlist.cpp:1551
+msgid "Show"
+msgstr "Göster"
+
+#: playlist.cpp:2079
+msgid "Add to Play Queue"
+msgstr "Parça listesine ekle"
+
+#: playlist.cpp:2108
+msgid "Create Playlist From Selected Items..."
+msgstr "Seçilen Öğelerden Parça Listesi Oluştur..."
+
+#: playlist.cpp:2130
+msgid "Edit '%1'"
+msgstr "Düzenle: '%1'"
+
+#: playlist.cpp:2241
+msgid "This will edit multiple files. Are you sure?"
+msgstr "Bu işlem çoklu dosyaları düzenleyecek. Emin misiniz?"
+
+#: playlist.cpp:2295 playlistcollection.h:168
+msgid "Create New Playlist"
+msgstr "Yeni Parça Listesi Oluştur"
+
+#: playlist.cpp:2304
+msgid ""
+"Manual column widths have been enabled.  You can switch back to automatic "
+"column sizes in the view menu."
+msgstr ""
+"Elle sütun boyutlandırma etkinleştirildi. Görünüm menüsünden kendiliğinden "
+"değişen sütun genişliğini yeniden etkinleştirebilirsiniz."
+
+#: playlist.cpp:2307
+msgid "Manual Column Widths Enabled"
+msgstr "Elle Sütun Boyutlandırma Etkin"
+
+#: playlistbox.cpp:94
+msgid "View Modes"
+msgstr "Modları Göster"
+
+#: playlistbox.cpp:195 playlistcollection.cpp:396
+msgid "Duplicate"
+msgstr "Kopyala"
+
+#: playlistbox.cpp:292
+msgid "Do you want to delete these files from the disk as well?"
+msgstr "Bu dosyaları diskinizden de silmek istiyor musunuz?"
+
+#: playlistbox.cpp:292
+msgid "Keep"
+msgstr "Koru"
+
+#: playlistbox.cpp:302
+msgid "Could not delete these files."
+msgstr "Bu dosyalar silinemedi."
+
+#: playlistbox.cpp:309
+msgid "Are you sure you want to remove these playlists from your collection?"
+msgstr "Bu parça listesini koleksiyonunuzdan silmek istediğinize emin misiniz?"
+
+#: playlistbox.cpp:312
+msgid "Remove Items?"
+msgstr "Parçaları Kaldır?"
+
+#: playlistbox.cpp:633
+msgid "Hid&e"
+msgstr "&Gizle"
+
+#: playlistbox.cpp:635 playlistcollection.cpp:877
+msgid "R&emove"
+msgstr "&Kaldır"
+
+#: playlistcollection.cpp:180
+msgid "Dynamic List"
+msgstr "Değişken Liste"
+
+#: playlistcollection.cpp:220
+msgid "Now Playing"
+msgstr "Şu Anda Çalan"
+
+#: playlistcollection.cpp:322
+msgid ""
+"Do you want to add these items to the current list or to the collection list?"
+msgstr ""
+"Bu öğeleri mevcut listeye veya arşiv listesine eklemek istiyor musunuz?"
+
+#: playlistcollection.cpp:324
+msgid "Current"
+msgstr "Mevcut"
+
+#: playlistcollection.cpp:325
+msgid "Collection"
+msgstr "Arşiv"
+
+#: playlistcollection.cpp:384
+msgid "Rename"
+msgstr "Yeniden Adlandır"
+
+#: playlistcollection.cpp:496
+msgid "Search Playlist"
+msgstr "Parça Listesinde Ara"
+
+#: playlistcollection.cpp:513
+msgid "Create Folder Playlist"
+msgstr "Yeni Parça Listesi Oluştur"
+
+#: playlistcollection.cpp:730
+msgid "Please enter a name for this playlist:"
+msgstr "Bu parça listesi için isim girin:"
+
+#: playlistcollection.cpp:843
+msgid "&New"
+msgstr "&Yeni"
+
+#: playlistcollection.cpp:845
+msgid "&Empty Playlist..."
+msgstr "&Boş Parça Listesi..."
+
+#: playlistcollection.cpp:847
+msgid "&Search Playlist..."
+msgstr "&Parça Listesinde Ara..."
+
+#: playlistcollection.cpp:849
+msgid "Playlist From &Folder..."
+msgstr "&Dizinden Parça Listesi..."
+
+#: playlistcollection.cpp:855
+msgid "&Guess Tag Information"
+msgstr "Başlık Bi&lgisini Tahmin Et"
+
+#: playlistcollection.cpp:858
+msgid "From &File Name"
+msgstr "Dosya A&dından"
+
+#: playlistcollection.cpp:860
+msgid "From &Internet"
+msgstr "İnternette&n"
+
+#: playlistcollection.cpp:863
+msgid "Guess Tag Information From &File Name"
+msgstr "Dosya A&dından Başlık Bilgisini Tahmin Et"
+
+#: playlistcollection.cpp:868
+msgid "Play First Track"
+msgstr "İlk Parçayı Çal"
+
+#: playlistcollection.cpp:872
+msgid "Add &Folder..."
+msgstr "&Dizin Ekle..."
+
+#: playlistcollection.cpp:873
+msgid "&Rename..."
+msgstr "&Yeniden adlandır..."
+
+#: playlistcollection.cpp:874
+msgid "D&uplicate..."
+msgstr "Ko&pyala..."
+
+#: playlistcollection.cpp:879
+msgid "Edit Search..."
+msgstr "Aramayı Düzenle..."
+
+#: playlistcollection.cpp:882
+msgid "Refresh"
+msgstr "Yenile"
+
+#: playlistcollection.cpp:883
+msgid "&Rename File"
+msgstr "&Dosyayı Yeniden Adlandır"
+
+#. i18n: file coverdialogbase.ui line 16
+#: playlistcollection.cpp:885 rc.cpp:45 viewmode.h:155
+#, no-c-format
+msgid "Cover Manager"
+msgstr "Kapak Yöneticisi"
+
+#: playlistcollection.cpp:887
+msgid "&View Cover"
+msgstr "Kapağı &Görüntüle"
+
+#: playlistcollection.cpp:889
+msgid "Get Cover From &File..."
+msgstr "Kapağı &Dosyadan Al..."
+
+#: playlistcollection.cpp:893
+msgid "Get Cover From &Internet..."
+msgstr "Kapağı &İnternetten Al..."
+
+#: playlistcollection.cpp:895
+msgid "&Delete Cover"
+msgstr "Kapağı Si&l"
+
+#: playlistcollection.cpp:897
+msgid "Show Cover &Manager"
+msgstr "Kapak Yöneticisi&ni Göster"
+
+#: playlistcollection.cpp:901
+msgid "Show &History"
+msgstr "&Geçmişi Göster"
+
+#: playlistcollection.cpp:902
+msgid "Hide &History"
+msgstr "G&eçmişi Gizle"
+
+#: playlistcollection.cpp:905
+msgid "Show &Play Queue"
+msgstr "Ç&alma Kuyruğunu Göster"
+
+#: playlistcollection.cpp:906
+msgid "Hide &Play Queue"
+msgstr "Ça&lma Kuyruğunu Gizle"
+
+#: playlistsplitter.cpp:121
+msgid "Show &Search Bar"
+msgstr "Arama &Çubuğunu Göster"
+
+#: playlistsplitter.cpp:122
+msgid "Hide &Search Bar"
+msgstr "Arama &Çubuğunu Gizle"
+
+#: playlistsplitter.cpp:124
+msgid "Edit Track Search"
+msgstr "Parça Aramasını Düzenle"
+
+#. i18n: file jukui-rtl.rc line 38
+#: rc.cpp:9 rc.cpp:30 rc.cpp:340 rc.cpp:361
+#, no-c-format
+msgid "&Player"
+msgstr "&Oynatıcı"
+
+#. i18n: file jukui-rtl.rc line 55
+#: rc.cpp:12 rc.cpp:33 rc.cpp:343 rc.cpp:364
+#, no-c-format
+msgid "&Tagger"
+msgstr "&Başlıkçı"
+
+#. i18n: file jukui-rtl.rc line 96
+#: rc.cpp:21 rc.cpp:42 rc.cpp:352 rc.cpp:373
+#, no-c-format
+msgid "Play Toolbar"
+msgstr "Oynatıcı Araç Çubuğu"
+
+#. i18n: file coverdialogbase.ui line 36
+#: rc.cpp:51
+#, no-c-format
+msgid "<All>"
+msgstr "<Tümü>"
+
+#. i18n: file coverdialogbase.ui line 87
+#: rc.cpp:54 rc.cpp:57 searchwidget.cpp:267
+#, no-c-format
+msgid "Clear Search"
+msgstr "Aramayı Temizle"
+
+#. i18n: file coverdialogbase.ui line 93
+#: rc.cpp:60
+#, no-c-format
+msgid "Clear the current cover search."
+msgstr "Mevcut kapak aramasını temizle."
+
+#. i18n: file deletedialogbase.ui line 46
+#: rc.cpp:63
+#, no-c-format
+msgid "Icon Placeholder, not in GUI"
+msgstr "Simge Tutucu GUI içinde değil"
+
+#. i18n: file deletedialogbase.ui line 62
+#: rc.cpp:66
+#, no-c-format
+msgid "Are you sure that you want to remove these items?"
+msgstr "Bu öğeleri silmek istiyor musunuz?"
+
+#. i18n: file deletedialogbase.ui line 73
+#: rc.cpp:69
+#, no-c-format
+msgid "Deletion method placeholder, never shown to user."
+msgstr "Silme metodu tutucu, kullanıcıya gösterilmiyor."
+
+#. i18n: file deletedialogbase.ui line 91
+#: rc.cpp:72
+#, no-c-format
+msgid "List of files that are about to be deleted."
+msgstr "Silinecek dosyaların listesi."
+
+#. i18n: file deletedialogbase.ui line 94
+#: rc.cpp:75
+#, no-c-format
+msgid "This is the list of items that are about to be deleted."
+msgstr "Bu silinecek dosyaların listesidir."
+
+#. i18n: file deletedialogbase.ui line 102
+#: rc.cpp:78
+#, no-c-format
+msgid "Placeholder for number of files, not in GUI"
+msgstr "Dosya adedi tutucusu, KGA'da yok"
+
+#. i18n: file deletedialogbase.ui line 113
+#: rc.cpp:81
+#, no-c-format
+msgid "&Delete files instead of moving them to the trash"
+msgstr "&Dosyalarıçöpe taşıma, doğrudan sil"
+
+#. i18n: file deletedialogbase.ui line 116
+#: rc.cpp:84
+#, no-c-format
+msgid ""
+"If checked, files will be permanently removed instead of being placed in the "
+"Trash Bin"
+msgstr "Seçilmesi halinde reriyodik olarak çöplükteki dosyalar silinir"
+
+#. i18n: file deletedialogbase.ui line 121
+#: rc.cpp:87
+#, no-c-format
+msgid ""
+"<qt>"
+"<p>If this box is checked, files will be <b>permanently removed</b> "
+"instead of being placed in the Trash Bin.</p>\n"
+"\n"
+"<p><em>Use this option with caution</em>: Most filesystems are unable to "
+"reliably undelete deleted files.</p></qt>"
+msgstr ""
+"<qt>"
+"<p>Bu kutunun seçilmesi halinde, çöplükteki dosyalar <b>düzenli olarak </b>"
+"·silinir..</p>\n"
+"\n"
+"<p><em>Bu seçimi çok dikkatli yapın:</em>:·Bazı dosya sistemleri silinen "
+"dosyaları·tekrar geri oluşturma desteği vermeyebilir.</p></qt>"
+
+#. i18n: file directorylistbase.ui line 22
+#: rc.cpp:92
+#, no-c-format
+msgid "Folders"
+msgstr "Dizinler"
+
+#. i18n: file directorylistbase.ui line 48
+#: rc.cpp:95
+#, no-c-format
+msgid "Add Folder..."
+msgstr "Dizin Ekle..."
+
+#. i18n: file directorylistbase.ui line 56
+#: rc.cpp:98
+#, no-c-format
+msgid "Remove Folder"
+msgstr "Dizini Sil"
+
+#. i18n: file directorylistbase.ui line 64
+#: rc.cpp:101
+#, no-c-format
+msgid "These folders will be scanned on startup for new files."
+msgstr "Bu dizinler başlangıçta yeni dosyalar için taranacak."
+
+#. i18n: file directorylistbase.ui line 92
+#: rc.cpp:104
+#, no-c-format
+msgid "Import playlists"
+msgstr "Parça listelerini al"
+
+#. i18n: file exampleoptionsbase.ui line 16
+#: rc.cpp:107 rc.cpp:197
+#, no-c-format
+msgid "Example"
+msgstr "Örnek"
+
+#. i18n: file exampleoptionsbase.ui line 27
+#: rc.cpp:110
+#, no-c-format
+msgid "Example Tag Selection"
+msgstr "Örnek İm Seçimi"
+
+#. i18n: file exampleoptionsbase.ui line 38
+#: rc.cpp:113
+#, no-c-format
+msgid "Get example tags from this file:"
+msgstr "Örnek imleri bu dosyadan al:"
+
+#. i18n: file exampleoptionsbase.ui line 68
+#: rc.cpp:116
+#, no-c-format
+msgid "Enter example tags manually:"
+msgstr "Örnek imleri elle gir:"
+
+#. i18n: file exampleoptionsbase.ui line 79
+#: rc.cpp:119
+#, no-c-format
+msgid "Example Tags"
+msgstr "Örnek İmler"
+
+#. i18n: file exampleoptionsbase.ui line 101
+#: rc.cpp:125 tagrenameroptions.cpp:95
+#, no-c-format
+msgid "Title"
+msgstr "Başlık"
+
+#. i18n: file exampleoptionsbase.ui line 117
+#: rc.cpp:131
+#, no-c-format
+msgid "Title:"
+msgstr "Başlık:"
+
+#. i18n: file exampleoptionsbase.ui line 125
+#: rc.cpp:134
+#, no-c-format
+msgid "Artist:"
+msgstr "Sanatçı:"
+
+#. i18n: file exampleoptionsbase.ui line 147
+#: rc.cpp:137
+#, no-c-format
+msgid "Album:"
+msgstr "Albüm:"
+
+#. i18n: file exampleoptionsbase.ui line 155
+#: rc.cpp:140
+#, no-c-format
+msgid "Genre:"
+msgstr "Tür:"
+
+#. i18n: file exampleoptionsbase.ui line 163
+#: rc.cpp:143
+#, no-c-format
+msgid "Track number:"
+msgstr "Parça numarası:"
+
+#. i18n: file exampleoptionsbase.ui line 187
+#: rc.cpp:149
+#, no-c-format
+msgid "Year:"
+msgstr "Yıl:"
+
+#. i18n: file filerenamerbase.ui line 24
+#: rc.cpp:152
+#, no-c-format
+msgid "File Renamer Configuration"
+msgstr "Dosya Adı Değiştirici Yapılandırması"
+
+#. i18n: file filerenamerbase.ui line 41
+#: rc.cpp:155
+#, no-c-format
+msgid " - "
+msgstr " - "
+
+#. i18n: file filerenamerbase.ui line 46
+#: rc.cpp:158
+#, no-c-format
+msgid "_"
+msgstr "_"
+
+#. i18n: file filerenamerbase.ui line 51
+#: rc.cpp:161
+#, no-c-format
+msgid "-"
+msgstr "-"
+
+#. i18n: file filerenamerbase.ui line 66
+#: rc.cpp:164
+#, no-c-format
+msgid "Music folder:"
+msgstr "Müzik dizini:"
+
+#. i18n: file filerenamerbase.ui line 80
+#: rc.cpp:167
+#, no-c-format
+msgid "Album Tag"
+msgstr "Albüm Etiketi"
+
+#. i18n: file filerenamerbase.ui line 85
+#: rc.cpp:170
+#, no-c-format
+msgid "Artist Tag"
+msgstr "Sanatçı Etiketi"
+
+#. i18n: file filerenamerbase.ui line 90
+#: rc.cpp:173
+#, no-c-format
+msgid "Genre Tag"
+msgstr "Tür Etiketi"
+
+#. i18n: file filerenamerbase.ui line 95
+#: rc.cpp:176
+#, no-c-format
+msgid "Title Tag"
+msgstr "Başlık Etiketi"
+
+#. i18n: file filerenamerbase.ui line 100
+#: rc.cpp:179
+#, no-c-format
+msgid "Track Tag"
+msgstr "Parça Etiketi"
+
+#. i18n: file filerenamerbase.ui line 105
+#: rc.cpp:182
+#, no-c-format
+msgid "Year Tag"
+msgstr "Yıl Etiketi"
+
+#. i18n: file filerenamerbase.ui line 117
+#: rc.cpp:185
+#, no-c-format
+msgid "Insert Category"
+msgstr "Kategori Ekle"
+
+#. i18n: file filerenamerbase.ui line 127
+#: rc.cpp:188
+#, no-c-format
+msgid "/home/kde-cvs/music"
+msgstr "/home/kde-cvs/music"
+
+#. i18n: file filerenamerbase.ui line 141
+#: rc.cpp:191
+#, no-c-format
+msgid "Add category:"
+msgstr "Kategori ekle:"
+
+#. i18n: file filerenamerbase.ui line 152
+#: rc.cpp:194
+#, no-c-format
+msgid "Separator:"
+msgstr "Ayraç:"
+
+#. i18n: file filerenameroptionsbase.ui line 16
+#: rc.cpp:203
+#, no-c-format
+msgid "%1 Options"
+msgstr "%1 Seçenekleri"
+
+#. i18n: file filerenameroptionsbase.ui line 27
+#: rc.cpp:206
+#, no-c-format
+msgid "%1 Format"
+msgstr "%1 Formatı"
+
+#. i18n: file filerenameroptionsbase.ui line 38
+#: rc.cpp:209
+#, no-c-format
+msgid ""
+"When using the file renamer your files will be renamed to the values that you "
+"have in your track's %1 tag, plus any additional text that you specify below."
+msgstr ""
+"Dosya adı değiştirici kullanırken dosyalarınızın yeni adı parçanın %1 bilgisi "
+"ve aşağıda belirttiğiniz metin birleştirilerek belirlenir."
+
+#. i18n: file filerenameroptionsbase.ui line 88
+#: rc.cpp:212
+#, no-c-format
+msgid "%1"
+msgstr "%1"
+
+#. i18n: file filerenameroptionsbase.ui line 128
+#: rc.cpp:215
+#, no-c-format
+msgid "Substitution Example"
+msgstr "Yerine Koyma Örneği"
+
+#. i18n: file filerenameroptionsbase.ui line 141
+#: rc.cpp:218
+#, no-c-format
+msgid "When the Track's %1 is Empty"
+msgstr "Parça için %1 boş olduğunda"
+
+#. i18n: file filerenameroptionsbase.ui line 152
+#: rc.cpp:221
+#, no-c-format
+msgid "Include in the &filename anyways"
+msgstr "Dosya adında yine de içer"
+
+#. i18n: file filerenameroptionsbase.ui line 160
+#: rc.cpp:224
+#, no-c-format
+msgid "&Ignore this tag when renaming the file"
+msgstr "Dosyayı yeniden adlandırırken bu imi &yoksay"
+
+#. i18n: file filerenameroptionsbase.ui line 182
+#: rc.cpp:227
+#, no-c-format
+msgid "Use &this value:"
+msgstr "Bu değeri &kullan:"
+
+#. i18n: file filerenameroptionsbase.ui line 193
+#: rc.cpp:230
+#, no-c-format
+msgid "Empty"
+msgstr "Boş"
+
+#. i18n: file filerenameroptionsbase.ui line 205
+#: rc.cpp:233
+#, no-c-format
+msgid "Track Width Options"
+msgstr "Parça Genişlik Seçenekleri"
+
+#. i18n: file filerenameroptionsbase.ui line 216
+#: rc.cpp:236
+#, no-c-format
+msgid ""
+"JuK can force the track used in a file name to have a minimum number of digits. "
+" You may want to do this for better sorting in file managers."
+msgstr ""
+"JuK dosya ismi oluşturulurken kullanılan izin sahip olması gereken minimum "
+"basamak sayısı değerini zorlayabilir. Bu özelliği dosya yöneticilerinde daha "
+"rahat sıralama yapabilmek için kullanabilirsiniz."
+
+#. i18n: file filerenameroptionsbase.ui line 252
+#: rc.cpp:239
+#, no-c-format
+msgid "Minimum track &width:"
+msgstr "&En küçük parça genişliği:"
+
+#. i18n: file filerenameroptionsbase.ui line 263
+#: rc.cpp:242
+#, no-c-format
+msgid "None"
+msgstr "Hiçbiri"
+
+#. i18n: file filerenameroptionsbase.ui line 295
+#: rc.cpp:245
+#, no-c-format
+msgid "014"
+msgstr "014"
+
+#. i18n: file filerenameroptionsbase.ui line 308
+#: rc.cpp:248
+#, no-c-format
+msgid "003"
+msgstr "003"
+
+#. i18n: file filerenameroptionsbase.ui line 316
+#: rc.cpp:251
+#, no-c-format
+msgid "3 ->"
+msgstr "3 ->"
+
+#. i18n: file filerenameroptionsbase.ui line 327
+#: rc.cpp:254
+#, no-c-format
+msgid "14 ->"
+msgstr "14 ->"
+
+#. i18n: file tagguesserconfigdlgwidget.ui line 23
+#: rc.cpp:257
+#, no-c-format
+msgid "File Name Scheme"
+msgstr "Dosya İsmi Şeması"
+
+#. i18n: file tagguesserconfigdlgwidget.ui line 45
+#: rc.cpp:260
+#, no-c-format
+msgid "Currently used file name schemes"
+msgstr "Şu anda kullanılan dosya adı şemaları"
+
+#. i18n: file tagguesserconfigdlgwidget.ui line 56
+#: rc.cpp:263
+#, no-c-format
+msgid ""
+"Here you can see the currently configured file name schemes which the "
+"\"Suggest\" button in the tag editor uses to extract tag information from a "
+"file name. Each string may contain one of the following placeholders:"
+"<ul>\n"
+"<li>%t: Title</li>\n"
+"<li>%a: Artist</li>\n"
+"<li>%A: Album</li>\n"
+"<li>%T: Track</li>\n"
+"<li>%c: Comment</li>\n"
+"</ul>\n"
+"For example, the file name scheme \"[%T] %a - %t\" would match \"[01] Deep "
+"Purple - Smoke on the water\" but not \"(Deep Purple) Smoke on the water\". For "
+"that second name, you would use the scheme \"(%a) %t\".<p/>\n"
+"Note that the order in which the schemes appear in the list is relevant, since "
+"the tag guesser will go through the list from the top to the bottom, and use "
+"the first matching scheme."
+msgstr ""
+"Burada bir dosya isminden başlık bilgisini açmada kullanılan başlık editörü "
+"içinde \"Önerilen\" buton olan ayarlanmış dosya ismi şablonlarını şu anda "
+"görebilirsiniz. Her karakter aşağıdaki paketyerlerinden birini içerebilir:"
+"<ul>\n"
+"<li>%t: Başlık</li>\n"
+"<li>%a: Sanatçı</li>\n"
+"<li>%A: Albüm</li>\n"
+"<li>%T: Parça</li>\n"
+"<li>%c: Yorum</li>\n"
+"</ul>\n"
+"Örneğin, dosya adı şablonuna \"[%T] %a - %t\" Su üzerinde sigara içmek - Derin "
+"Mor\" uyardı \"fakat değil\"(Derin Mor) Su üzerinde sigara içmek\". İkinci isim "
+"için, şema kullanırdınız \"(%a) %t\".<p/>\n"
+"Bu listede görünen şemalar geçerlidir, çünkü başlık tahmincisi ilk eşleşen "
+"şemayı kullanacak ve üstten alta liste boyunca gidecektir."
+
+#. i18n: file tagguesserconfigdlgwidget.ui line 64
+#: rc.cpp:274
+#, no-c-format
+msgid "&Add"
+msgstr "&Ekle"
+
+#. i18n: file tagguesserconfigdlgwidget.ui line 67
+#: rc.cpp:277
+#, no-c-format
+msgid "Add a new scheme"
+msgstr "Yeni şema ekle"
+
+#. i18n: file tagguesserconfigdlgwidget.ui line 70
+#: rc.cpp:280
+#, no-c-format
+msgid "Press this button to add a new file name scheme to the end of the list."
+msgstr ""
+"Listenin sonuna kadar yeni bir dosya ismi şeması eklemek için bu düğmeye basın."
+
+#. i18n: file tagguesserconfigdlgwidget.ui line 81
+#: rc.cpp:283
+#, no-c-format
+msgid "Move scheme up"
+msgstr "Şemayı yukarı kaydır"
+
+#. i18n: file tagguesserconfigdlgwidget.ui line 84
+#: rc.cpp:286
+#, no-c-format
+msgid ""
+"Press this button to move the currently selected scheme one step upwards."
+msgstr "Seçili şemayı bir basamak yukarı kaydırmak için bu tuşa basın."
+
+#. i18n: file tagguesserconfigdlgwidget.ui line 95
+#: rc.cpp:289
+#, no-c-format
+msgid "Move scheme down"
+msgstr "Şemayı aşağı kaydır"
+
+#. i18n: file tagguesserconfigdlgwidget.ui line 98
+#: rc.cpp:292
+#, no-c-format
+msgid ""
+"Press this button to move the currently selected scheme one step downwards."
+msgstr "Seçili şemayı bir basamak aşağı kaydırmak için bu tuşa basın."
+
+#. i18n: file tagguesserconfigdlgwidget.ui line 109
+#: rc.cpp:298
+#, no-c-format
+msgid "Modify scheme"
+msgstr "Şemayı düzenle"
+
+#. i18n: file tagguesserconfigdlgwidget.ui line 112
+#: rc.cpp:301
+#, no-c-format
+msgid "Press this button to modify the currently selected scheme."
+msgstr "Seçili şemayı düzenlemek için bu düğmeye basın."
+
+#. i18n: file tagguesserconfigdlgwidget.ui line 123
+#: rc.cpp:307
+#, no-c-format
+msgid "Remove scheme"
+msgstr "Şemayı sil"
+
+#. i18n: file tagguesserconfigdlgwidget.ui line 126
+#: rc.cpp:310
+#, no-c-format
+msgid ""
+"Press this button to remove the currently selected scheme from the list."
+msgstr "Seçili şemayı silmek için bu düğmeye basın."
+
+#. i18n: file trackpickerdialogbase.ui line 77
+#: rc.cpp:316
+#, no-c-format
+msgid "Select Best Possible Match"
+msgstr "En İyi Uyanı Seç"
+
+#: searchwidget.cpp:64
+msgid "Normal Matching"
+msgstr "Normal Eşleştiriliyor"
+
+#: searchwidget.cpp:65
+msgid "Case Sensitive"
+msgstr "Büyük ve Küçük Harf Duyarlı"
+
+#: searchwidget.cpp:66
+msgid "Pattern Matching"
+msgstr "Biçim Eşleştiriliyor"
+
+#: searchwidget.cpp:166
+msgid "All Visible"
+msgstr "Hepsi Görünür"
+
+#: searchwidget.cpp:270
+msgid "Search:"
+msgstr "Ara:"
+
+#: slideraction.cpp:250 slideraction.cpp:255
+msgid "Track position"
+msgstr "Parça konumu"
+
+#: slideraction.cpp:265 slideraction.cpp:270
+msgid "Volume"
+msgstr "Ses"
+
+#: splashscreen.cpp:32
+msgid "Loading"
+msgstr "Yükleniyor"
+
+#: statuslabel.cpp:87
+msgid "Jump to the currently playing item"
+msgstr "Şu anda çalan öğeye atla"
+
+#: statuslabel.cpp:133
+#, c-format
+msgid ""
+"_n: 1 day\n"
+"%n days"
+msgstr "%n gün"
+
+#: statuslabel.cpp:143
+#, c-format
+msgid ""
+"_n: 1 item\n"
+"%n items"
+msgstr "%n öğe"
+
+#: systemtray.cpp:165
+msgid "Redisplay Popup"
+msgstr "Popup tekrar göster"
+
+#: systemtray.cpp:532
+msgid ""
+"_: %1 is Cover Art, %2 is the playing track, %3 is the appname\n"
+"<center><table cellspacing=\"2\">"
+"<tr><td valign=\"middle\">%1</td><td valign=\"middle\">%2</td></tr></table><em>"
+"%3</em></center>"
+msgstr ""
+"<center><table cellspacing=\"2\">"
+"<tr><td valign=\"middle\">%1</td><td valign=\"middle\">%2</td></tr></table><em>"
+"%3</em></center>"
+
+#: tageditor.cpp:472
+msgid "Show &Tag Editor"
+msgstr "B&aşlık Düzenleyiciyi Göster"
+
+#: tageditor.cpp:473
+msgid "Hide &Tag Editor"
+msgstr "B&aşlık Düzenleyiciyi Gizle"
+
+#: tageditor.cpp:502
+msgid "&Artist name:"
+msgstr "&Sanatçı adı:"
+
+#: tageditor.cpp:505
+msgid "&Track name:"
+msgstr "İ&z adı:"
+
+#: tageditor.cpp:509
+msgid "Album &name:"
+msgstr "A&lbüm adı:"
+
+#: tageditor.cpp:512
+msgid "&Genre:"
+msgstr "&Tür:"
+
+#: tageditor.cpp:531
+msgid "&File name:"
+msgstr "&Dosya adı:"
+
+#: tageditor.cpp:545
+msgid "T&rack:"
+msgstr "İ&z"
+
+#: tageditor.cpp:552
+msgid "&Year:"
+msgstr "&Yıl:"
+
+#: tageditor.cpp:558
+msgid "Length:"
+msgstr "Uzunluk:"
+
+#: tageditor.cpp:570
+msgid "Bitrate:"
+msgstr "Bitoranı:"
+
+#: tageditor.cpp:584
+msgid "&Comment:"
+msgstr "&Açıklama:"
+
+#: tageditor.cpp:703
+msgid ""
+"Do you want to save your changes to:\n"
+msgstr ""
+"Değişiklikler buraya kaydedilsin mi? :\n"
+
+#: tageditor.cpp:705
+msgid "Save Changes"
+msgstr "Değişiklikleri Kaydet"
+
+#: tageditor.cpp:725
+msgid "Enable"
+msgstr "Etkinleştir"
+
+#: tagguesserconfigdlg.cpp:24
+msgid "Tag Guesser Configuration"
+msgstr "Başlık Tahmincisi Ayarları"
+
+#: tagrenameroptions.cpp:102
+msgid "Unknown"
+msgstr "Bilinmeyen"
+
+#: tagtransactionmanager.cpp:139
+msgid ""
+"This file already exists.\n"
+"Do you want to replace it?"
+msgstr ""
+"Bu dosya zaten mevcut. \n"
+"Değiştirmek ister misiniz?"
+
+#: tagtransactionmanager.cpp:140
+msgid "File Exists"
+msgstr "Dosya Mevcut"
+
+#: tagtransactionmanager.cpp:204
+msgid "The following files were unable to be changed."
+msgstr "Bu dosyaların değişimi olanaksız."
+
+#: trackpickerdialog.cpp:51
+msgid "Internet Tag Guesser"
+msgstr "İnternet Başlık Tahmincisi"
+
+#: treeviewitemplaylist.cpp:47
+msgid "artist"
+msgstr "sanatçı"
+
+#: treeviewitemplaylist.cpp:49
+msgid "genre"
+msgstr "tür"
+
+#: treeviewitemplaylist.cpp:51
+msgid "album"
+msgstr "albüm"
+
+#: treeviewitemplaylist.cpp:55
+msgid "You are about to change the %1 on these files."
+msgstr "Bu dosyalar üzerinde %1 değiştirmek üzeresiniz."
+
+#: treeviewitemplaylist.cpp:57
+msgid "Changing Track Tags"
+msgstr "Parça Başlıklarını Değiştirme"
+
+#: upcomingplaylist.cpp:35
+msgid "Play Queue"
+msgstr "Kuyruğu Çal"
+
+#: viewmode.cpp:406
+msgid "Artists"
+msgstr "Sanatçılar"
+
+#: viewmode.cpp:409
+msgid "Albums"
+msgstr "Albümler"
+
+#: viewmode.cpp:412
+msgid "Genres"
+msgstr "Türler"
+
+#: webimagefetcher.cpp:205
+msgid "Searching for Images. Please Wait..."
+msgstr "Resimler Aranıyor. Lütfen Bekleyin..."
+
+#: webimagefetcher.cpp:213
+msgid "Cover Downloader"
+msgstr "Kapak İndirici"
+
+#: webimagefetcher.cpp:215
+msgid "No matching images found, please enter new search terms:"
+msgstr "Eşlenen bir resim bulunamadı, lütfen yeni bir sözcük girin:"
+
+#: webimagefetcher.cpp:216
+msgid "Enter new search terms:"
+msgstr "Yeni arama terimleri girin:"
+
+#: webimagefetcherdialog.cpp:78
+msgid "New Search"
+msgstr "Yeni Arama"
+
+#: webimagefetcherdialog.cpp:139
+msgid "The cover you have selected is unavailable. Please select another."
+msgstr "Seçtiğiniz kapak mevcut değil. Lütfen başka bir tane seçin."
+
+#: webimagefetcherdialog.cpp:140
+msgid "Cover Unavailable"
+msgstr "Kapak Mevcut Değil"
+
+#: playlistcollection.h:171
+msgid "Playlist"
+msgstr "Parça Listesi"
+
+#: viewmode.h:103
+msgid "Compact"
+msgstr "Yoğun"
+
+#: viewmode.h:128
+msgid "Tree"
+msgstr "Ağaç"
+
+#~ msgid "Image size:"
+#~ msgstr "Resim boyutu:"
+
+#~ msgid "All Sizes"
+#~ msgstr "Tüm Boyutlar"
+
+#~ msgid "Very Small"
+#~ msgstr "Çok Küçük"
+
+#~ msgid "Small"
+#~ msgstr "Küçük"
+
+#~ msgid "Medium"
+#~ msgstr "Orta"
+
+#~ msgid "Large"
+#~ msgstr "Büyük"
+
+#~ msgid "Very Large"
+#~ msgstr "Çok Büyük"

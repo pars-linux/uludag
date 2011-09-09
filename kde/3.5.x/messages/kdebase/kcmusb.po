@@ -1,0 +1,329 @@
+# translation of kcmusb.po to turkish
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# Görkem Çetin, <gorkem@kde.org>, 2000
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmusb\n"
+"POT-Creation-Date: 2006-06-21 03:58+0200\n"
+"PO-Revision-Date: 2003-05-10 01:23+0300\n"
+"Last-Translator: Rıdvan CAN <ridvan@geleceklinux.org>\n"
+"Language-Team: turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: kcmusb.cpp:34
+msgid ""
+"<h1>USB Devices</h1> This module allows you to see the devices attached to your "
+"USB bus(es)."
+msgstr ""
+"<h1>USB Aygıtları</h1>Bu modül USB veriyoluna bağlı aygıtları görüntülemenize "
+"olanak verir."
+
+#: kcmusb.cpp:38
+msgid "USB Devices"
+msgstr "USB Aygıtları"
+
+#: kcmusb.cpp:48
+msgid "Device"
+msgstr "Aygıt"
+
+#: kcmusb.cpp:71
+msgid "kcmusb"
+msgstr "kcmusb"
+
+#: kcmusb.cpp:71
+msgid "KDE USB Viewer"
+msgstr "KDE USB İzleyici"
+
+#: kcmusb.cpp:73
+msgid "(c) 2001 Matthias Hoelzer-Kluepfel"
+msgstr "(c) 2001 Matthias Hoelzer-Kluepfel"
+
+#: usbdevices.cpp:168
+msgid "Unknown"
+msgstr "Bilinmeyen"
+
+#: usbdevices.cpp:179
+msgid "<b>Manufacturer:</b> "
+msgstr "<b>Üretici:</b> "
+
+#: usbdevices.cpp:181
+msgid "<b>Serial #:</b> "
+msgstr "<b>Seri #:</b> "
+
+#: usbdevices.cpp:189
+msgid "<tr><td><i>Class</i></td>%1</tr>"
+msgstr "<tr><td><i>Sınıf</i></td>%1</tr>"
+
+#: usbdevices.cpp:194
+msgid "<tr><td><i>Subclass</i></td>%1</tr>"
+msgstr "<tr><td><i>Alt sınıf</i></td>%1</tr>"
+
+#: usbdevices.cpp:199
+msgid "<tr><td><i>Protocol</i></td>%1</tr>"
+msgstr "<tr><td><i>Protokol</i></td>%1</tr>"
+
+#: usbdevices.cpp:201
+msgid "<tr><td><i>USB Version</i></td><td>%1.%2</td></tr>"
+msgstr "<tr><td><i>USB Sürümü</i></td><td>%1.%2</td></tr>"
+
+#: usbdevices.cpp:211
+msgid "<tr><td><i>Vendor ID</i></td><td>0x%1</td></tr>"
+msgstr "<tr><td><i>Üretici No</i></td><td>0x%1</td></tr>"
+
+#: usbdevices.cpp:216
+msgid "<tr><td><i>Product ID</i></td><td>0x%1</td></tr>"
+msgstr "<tr><td><i>Ürün No</i></td><td>0x%1</td></tr>"
+
+#: usbdevices.cpp:217
+msgid "<tr><td><i>Revision</i></td><td>%1.%2</td></tr>"
+msgstr "<tr><td><i>Sürüm</i></td><td>%1.%2</td></tr>"
+
+#: usbdevices.cpp:222
+msgid "<tr><td><i>Speed</i></td><td>%1 Mbit/s</td></tr>"
+msgstr "<tr><td><i>Hız</i></td><td>%1 Mbit/s</td></tr>"
+
+#: usbdevices.cpp:223
+msgid "<tr><td><i>Channels</i></td><td>%1</td></tr>"
+msgstr "<tr><td><i>Kanallar</i></td><td>%1</td></tr>"
+
+#: usbdevices.cpp:226
+msgid "<tr><td><i>Power Consumption</i></td><td>%1 mA</td></tr>"
+msgstr "<tr><td><i>Güç Tüketimi</i></td><td>%1 mA</td></tr>"
+
+#: usbdevices.cpp:228
+msgid "<tr><td><i>Power Consumption</i></td><td>self powered</td></tr>"
+msgstr "<tr><td><i>Güç Tüketimi</i></td><td>kendi kendine çalışıyor</td></tr>"
+
+#: usbdevices.cpp:229
+msgid "<tr><td><i>Attached Devicenodes</i></td><td>%1</td></tr>"
+msgstr "<tr><td><i>Bağlı Aygıt Düğümleri</i></td><td>%1</td></tr>"
+
+#: usbdevices.cpp:234
+msgid "<tr><td><i>Max. Packet Size</i></td><td>%1</td></tr>"
+msgstr "<tr><td><i>Azami Paket Boyu</i></td><td>%1</td></tr>"
+
+#: usbdevices.cpp:240
+msgid "<tr><td><i>Bandwidth</i></td><td>%1 of %2 (%3%)</td></tr>"
+msgstr "<tr><td><i>Band genişliği</i></td><td>%1 / %2 (%3%)</td></tr>"
+
+#: usbdevices.cpp:241
+msgid "<tr><td><i>Intr. requests</i></td><td>%1</td></tr>"
+msgstr "<tr><td><i>Kesinti istekler</i></td><td>%1</td></tr>"
+
+#: usbdevices.cpp:242
+msgid "<tr><td><i>Isochr. requests</i></td><td>%1</td></tr>"
+msgstr "<tr><td><i>Asenkron istekler</i></td><td>%1</td></tr>"
+
+#: usbdevices.cpp:426
+msgid ""
+"Could not open one or more USB controller. Make sure, you have read access to "
+"all USB controllers that should be listed here."
+msgstr ""
+
+#: classes.i18n:1
+msgid "AT-commands"
+msgstr "AT komutları"
+
+#: classes.i18n:2
+msgid "ATM Networking"
+msgstr "ATM Ağı"
+
+#: classes.i18n:3
+msgid "Abstract (modem)"
+msgstr "Modem"
+
+#: classes.i18n:4
+msgid "Audio"
+msgstr "Ses"
+
+#: classes.i18n:5
+msgid "Bidirectional"
+msgstr "Çift yönlü"
+
+#: classes.i18n:6
+msgid "Boot Interface Subclass"
+msgstr "Açılış Arayüz Alt Sınıfı"
+
+#: classes.i18n:7
+msgid "Bulk (Zip)"
+msgstr "Yığın (Zip)"
+
+#: classes.i18n:8
+msgid "CAPI 2.0"
+msgstr "CAPI 2.0"
+
+#: classes.i18n:9
+msgid "CAPI Control"
+msgstr "CAPI Kontrolü"
+
+#: classes.i18n:10
+msgid "CDC PUF"
+msgstr "CDC PUF"
+
+#: classes.i18n:11
+msgid "Communications"
+msgstr "İletişim"
+
+#: classes.i18n:12
+msgid "Control Device"
+msgstr "Kontrol Aygıtı"
+
+#: classes.i18n:13
+msgid "Control/Bulk"
+msgstr "Kontrol/Yığın"
+
+#: classes.i18n:14
+msgid "Control/Bulk/Interrupt"
+msgstr "Kontrol/Yığın/Kesme"
+
+#: classes.i18n:15
+msgid "Data"
+msgstr "Veri"
+
+#: classes.i18n:16
+msgid "Direct Line"
+msgstr "Doğrudan Hat"
+
+#: classes.i18n:17
+msgid "Ethernet Networking"
+msgstr "Ethernet Ağı"
+
+#: classes.i18n:18
+msgid "Floppy"
+msgstr "Disket"
+
+#: classes.i18n:19
+msgid "HDLC"
+msgstr "HDLC"
+
+#: classes.i18n:20
+msgid "Host Based Driver"
+msgstr "Host Tabanlı Sürücü"
+
+#: classes.i18n:21
+msgid "Hub"
+msgstr "Hub"
+
+#: classes.i18n:22
+msgid "Human Interface Devices"
+msgstr "İnsan Arabirim Aygıtları"
+
+#: classes.i18n:23
+msgid "I.430 ISDN BRI"
+msgstr "I.430 ISDN BRI"
+
+#: classes.i18n:24
+msgid "Interface"
+msgstr "Arayüz"
+
+#: classes.i18n:25
+msgid "Keyboard"
+msgstr "Klavye"
+
+#: classes.i18n:26
+msgid "Mass Storage"
+msgstr "Depolama Aygıtı"
+
+#: classes.i18n:27
+msgid "Mouse"
+msgstr "Fare"
+
+#: classes.i18n:28
+msgid "Multi-Channel"
+msgstr "Çoklu Kanal"
+
+#: classes.i18n:29
+msgid "No Subclass"
+msgstr "Altsınıf Yok"
+
+#: classes.i18n:30
+msgid "Non Streaming"
+msgstr "Duraksız"
+
+#: classes.i18n:31
+msgid "None"
+msgstr "Hiçbiri"
+
+#: classes.i18n:32
+msgid "Printer"
+msgstr "Yazıcı"
+
+#: classes.i18n:33
+msgid "Q.921"
+msgstr "Q.921"
+
+#: classes.i18n:34
+msgid "Q.921M"
+msgstr "Q.921M"
+
+#: classes.i18n:35
+msgid "Q.921TM"
+msgstr "Q.921TM"
+
+#: classes.i18n:36
+msgid "Q.932 EuroISDN"
+msgstr "Q.932 EuroISDN"
+
+#: classes.i18n:37
+msgid "SCSI"
+msgstr "SCSI"
+
+#: classes.i18n:38
+msgid "Streaming"
+msgstr "Duraksız"
+
+#: classes.i18n:39
+msgid "Telephone"
+msgstr "Telefon"
+
+#: classes.i18n:40
+msgid "Transparent"
+msgstr "Şeffaf"
+
+#: classes.i18n:41
+msgid "Unidirectional"
+msgstr "Tek yönlü"
+
+#: classes.i18n:42
+msgid "V.120 V.24 rate ISDN"
+msgstr "V.120 V.24 rate ISDN"
+
+#: classes.i18n:43
+msgid "V.42bis"
+msgstr "V.42bis"
+
+#: classes.i18n:44
+msgid "Vendor Specific"
+msgstr "Firmaya Özel"
+
+#: classes.i18n:45
+msgid "Vendor Specific Class"
+msgstr "Firmaya Özel Sınıf"
+
+#: classes.i18n:46
+msgid "Vendor Specific Protocol"
+msgstr "Firmaya Özel Protokol"
+
+#: classes.i18n:47
+msgid "Vendor Specific Subclass"
+msgstr "Firmaya Özel Alt Sınıf"
+
+#: classes.i18n:48
+msgid "Vendor specific"
+msgstr "Firmaya özel"

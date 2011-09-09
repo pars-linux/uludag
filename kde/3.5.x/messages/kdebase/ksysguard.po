@@ -1,0 +1,1709 @@
+# translation of ksysguard.po to Turkish
+# translation of ksysguard.po to
+# Copyright (C) 2003, 2004, 2007 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@gelecek.com.tr>, 2000.
+# Serdar Cevher <scevher@anet.com.tr>, 2001.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: ksysguard\n"
+"POT-Creation-Date: 2008-07-08 01:18+0200\n"
+"PO-Revision-Date: 2007-09-11 19:36+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=1; plural=0;\n"
+
+#: KSysGuardApplet.cc:318 WorkSheet.cc:94
+#, c-format
+msgid "Cannot open the file %1."
+msgstr "%1 dosyası açılamıyor."
+
+#: KSysGuardApplet.cc:327 WorkSheet.cc:102
+msgid "The file %1 does not contain valid XML."
+msgstr "%1 dosyası uygun XML içermiyor."
+
+#: WorkSheet.cc:109
+msgid ""
+"The file %1 does not contain a valid worksheet definition, which must have a "
+"document type 'KSysGuardWorkSheet'."
+msgstr "%1 dosyası geçersiz bir çalışma kağıdı tanımı içeriyor."
+
+#: WorkSheet.cc:125
+msgid "The file %1 has an invalid worksheet size."
+msgstr "%1 dosyası geçersiz bir çalışma kağıdı boyutuna sahip."
+
+#: KSysGuardApplet.cc:476 WorkSheet.cc:225
+#, c-format
+msgid "Cannot save file %1"
+msgstr "%1 dosyası kaydedilemiyor"
+
+#: WorkSheet.cc:273
+msgid "The clipboard does not contain a valid display description."
+msgstr "Pano gösterilebilecek geçerli bir bilgi içermiyor."
+
+#: SensorDisplayLib/SensorDisplay.cc:104 WorkSheet.cc:315
+msgid "It is impossible to connect to '%1'."
+msgstr "'%1 adresine bağlanmak imkansız."
+
+#: KSysGuardApplet.cc:209 WorkSheet.cc:331
+msgid "Select Display Type"
+msgstr "Görünüm Türü Seçin"
+
+#: KSysGuardApplet.cc:210 WorkSheet.cc:332
+msgid "&Signal Plotter"
+msgstr "&Sinyal Çizici"
+
+#: KSysGuardApplet.cc:211 WorkSheet.cc:333
+msgid "&Multimeter"
+msgstr "&Çoklumetre"
+
+#: WorkSheet.cc:334
+msgid "&BarGraph"
+msgstr "&BarGraph"
+
+#: WorkSheet.cc:335
+msgid "S&ensorLogger"
+msgstr "&Algılayıcı Kayıtçısı"
+
+#: ksgrd/SensorAgent.cc:88
+msgid ""
+"Message from %1:\n"
+"%2"
+msgstr ""
+"%1 den Mesaj :\n"
+"%2"
+
+#: ksgrd/TimerSettings.cc:36
+msgid "Timer Settings"
+msgstr "Zamanlayıcı Ayarları"
+
+#: ksgrd/TimerSettings.cc:43
+msgid "Use update interval of worksheet"
+msgstr "Çalışma kağıdının güncelleme aralığını kullan"
+
+#: KSGAppletSettings.cc:59 WorkSheetSettings.cc:85 ksgrd/TimerSettings.cc:46
+msgid "Update interval:"
+msgstr "Güncelleme aralığı:"
+
+#. i18n: file ./SensorDisplayLib/SensorLoggerDlgWidget.ui line 68
+#: KSGAppletSettings.cc:64 WorkSheetSettings.cc:91 ksgrd/TimerSettings.cc:51
+#: rc.cpp:21
+#, no-c-format
+msgid " sec"
+msgstr " sn"
+
+#: WorkSheetSettings.cc:99 ksgrd/TimerSettings.cc:54
+msgid "All displays of the sheet are updated at the rate specified here."
+msgstr "Tüm Ekrandaki belgeler özgül olarak güncellendiler."
+
+#: ksgrd/HostConnector.cc:37
+msgid "Connect Host"
+msgstr "Sunucuya Bağlan"
+
+#: ksgrd/HostConnector.cc:44
+msgid "Host:"
+msgstr "Makine:"
+
+#: ksgrd/HostConnector.cc:54
+msgid "Enter the name of the host you want to connect to."
+msgstr "Bağlanmak istediğiniz makinenin adını girin."
+
+#: ksgrd/HostConnector.cc:61
+msgid "Connection Type"
+msgstr "Bağlantı Türü"
+
+#: ksgrd/HostConnector.cc:66
+msgid "ssh"
+msgstr "ssh"
+
+#: ksgrd/HostConnector.cc:69
+msgid "Select this to use the secure shell to login to the remote host."
+msgstr "Uzak host sahibine giriş için shell kabuğunu seçiniz."
+
+#: ksgrd/HostConnector.cc:72
+msgid "rsh"
+msgstr "rsh"
+
+#: ksgrd/HostConnector.cc:73
+msgid "Select this to use the remote shell to login to the remote host."
+msgstr "Uzak host sahibine giriş için shell kabuğunu seçiniz."
+
+#: ksgrd/HostConnector.cc:76
+msgid "Daemon"
+msgstr "Sunucu servisi"
+
+#: ksgrd/HostConnector.cc:77
+msgid ""
+"Select this if you want to connect to a ksysguard daemon that is running on the "
+"machine you want to connect to, and is listening for client requests."
+msgstr ""
+"Bağlanmayı istediğiniz makinede ksysguard daemon'u çalıştırmak ve istemci "
+"isteklerini dinlemek isterseniz bunu seçin."
+
+#: ksgrd/HostConnector.cc:80
+msgid "Custom command"
+msgstr "Özel komut"
+
+#: ksgrd/HostConnector.cc:81
+msgid ""
+"Select this to use the command you entered below to start ksysguardd on the "
+"remote host."
+msgstr ""
+"Uzak makinede ksysguard uygulamasını başlatmak için aşağıya girilen komutu "
+"kullan."
+
+#: ksgrd/HostConnector.cc:84
+msgid "Port:"
+msgstr "Port:"
+
+#: ksgrd/HostConnector.cc:90
+msgid ""
+"Enter the port number on which the ksysguard daemon is listening for "
+"connections."
+msgstr "Ksysguard daemon bağlantıları için dinlenecek port numaralarını girin."
+
+#: ksgrd/HostConnector.cc:93
+msgid "e.g.  3112"
+msgstr "örn. 3112"
+
+#: ksgrd/HostConnector.cc:96
+msgid "Command:"
+msgstr "Komut:"
+
+#: ksgrd/HostConnector.cc:105
+msgid "Enter the command that runs ksysguardd on the host you want to monitor."
+msgstr ""
+"Bilgisayarınızda ksysguardd'yi çalıştırması istenen komutu buraya yazın."
+
+#: ksgrd/HostConnector.cc:109
+msgid "e.g. ssh -l root remote.host.org ksysguardd"
+msgstr "örnek :  ssh -l root uzak.makina.org ksysguardd"
+
+#: ksgrd/StyleSettings.cc:41
+msgid "Global Style Settings"
+msgstr "Genel Stil Ayarları"
+
+#: ksgrd/StyleSettings.cc:44
+msgid "Display Style"
+msgstr "Gösterim Stili"
+
+#: ksgrd/StyleSettings.cc:47
+msgid "First foreground color:"
+msgstr "Birinci önplan rengi:"
+
+#: ksgrd/StyleSettings.cc:54
+msgid "Second foreground color:"
+msgstr "İkinci önplan rengi:"
+
+#. i18n: file ./SensorDisplayLib/SensorLoggerSettingsWidget.ui line 107
+#: ksgrd/StyleSettings.cc:61 rc.cpp:126
+#, no-c-format
+msgid "Alarm color:"
+msgstr "Alarm rengi:"
+
+#. i18n: file ./SensorDisplayLib/MultiMeterSettingsWidget.ui line 241
+#: SensorDisplayLib/DancingBarsSettings.cc:143 SensorDisplayLib/LogFile.cc:90
+#: ksgrd/StyleSettings.cc:68 rc.cpp:96 rc.cpp:111 rc.cpp:123 rc.cpp:144
+#, no-c-format
+msgid "Background color:"
+msgstr "Arkaplan rengi:"
+
+#: SensorDisplayLib/DancingBarsSettings.cc:150
+#: SensorDisplayLib/FancyPlotterSettings.cc:176 ksgrd/StyleSettings.cc:75
+msgid "Font size:"
+msgstr "Yazıtipi büyüklüğü:"
+
+#: ksgrd/StyleSettings.cc:85
+msgid "Sensor Colors"
+msgstr "Algılayıcı Renkleri"
+
+#: ksgrd/StyleSettings.cc:91
+msgid "Change Color..."
+msgstr "Rengi Değiştir..."
+
+#: ksgrd/StyleSettings.cc:166
+#, c-format
+msgid "Color %1"
+msgstr "Renk: %1"
+
+#. i18n: file SystemLoad.sgrd line 5
+#: ksgrd/SensorManager.cc:50 rc.cpp:173
+msgid "CPU Load"
+msgstr "İşlemci Yükü"
+
+#: ksgrd/SensorManager.cc:51
+msgid "Idle Load"
+msgstr "Boş Yük"
+
+#: Workspace.cc:100 Workspace.cc:109 ksgrd/SensorManager.cc:52
+#: ksysguard.cc:171
+msgid "System Load"
+msgstr "MİB Sistem Yükü"
+
+#: ksgrd/SensorManager.cc:53
+msgid "Nice Load"
+msgstr "İyileştirilmiş Yük"
+
+#: ksgrd/SensorManager.cc:54
+msgid "User Load"
+msgstr "Kullanıcı Yükü"
+
+#: ksgrd/SensorManager.cc:55
+msgid "Memory"
+msgstr "Bellek"
+
+#. i18n: file SystemLoad.sgrd line 13
+#: ksgrd/SensorManager.cc:56 rc.cpp:177
+msgid "Physical Memory"
+msgstr "Fiziksel Bellek"
+
+#. i18n: file SystemLoad.sgrd line 21
+#: ksgrd/SensorManager.cc:57 rc.cpp:179
+msgid "Swap Memory"
+msgstr "Takas Belleği"
+
+#: ksgrd/SensorManager.cc:58
+msgid "Cached Memory"
+msgstr "Önbellek"
+
+#: ksgrd/SensorManager.cc:59
+msgid "Buffered Memory"
+msgstr "Tampon Bellek"
+
+#: ksgrd/SensorManager.cc:60
+msgid "Used Memory"
+msgstr "Kullanılan Bellek"
+
+#: ksgrd/SensorManager.cc:61
+msgid "Application Memory"
+msgstr "Uygulama Belleği"
+
+#: ksgrd/SensorManager.cc:62
+msgid "Free Memory"
+msgstr "Boş Bellek"
+
+#: ksgrd/SensorManager.cc:63
+msgid "Process Count"
+msgstr "Süreç Sayısı"
+
+#: ksgrd/SensorManager.cc:64 ksgrd/SensorManager.cc:148
+msgid "Process Controller"
+msgstr "Süreç Denetleyici"
+
+#: ksgrd/SensorManager.cc:65
+msgid "Disk Throughput"
+msgstr "Disk Çıkışı"
+
+#: ksgrd/SensorManager.cc:66
+msgid ""
+"_: CPU Load\n"
+"Load"
+msgstr "Yük"
+
+#: ksgrd/SensorManager.cc:67
+msgid "Total Accesses"
+msgstr "Toplam Erişim"
+
+#: ksgrd/SensorManager.cc:68
+msgid "Read Accesses"
+msgstr "Okuma Erişimi"
+
+#: ksgrd/SensorManager.cc:69
+msgid "Write Accesses"
+msgstr "Yazma Erişimi"
+
+#: ksgrd/SensorManager.cc:70
+msgid "Read Data"
+msgstr "Okuma Verisi"
+
+#: ksgrd/SensorManager.cc:71
+msgid "Write Data"
+msgstr "Yazma Verisi"
+
+#: ksgrd/SensorManager.cc:72
+msgid "Pages In"
+msgstr "Giren Sayfalar"
+
+#: ksgrd/SensorManager.cc:73
+msgid "Pages Out"
+msgstr "Çıkan Sayfalar"
+
+#: ksgrd/SensorManager.cc:74
+msgid "Context Switches"
+msgstr "İçerik Değiş-Tokuş"
+
+#: ksgrd/SensorManager.cc:75
+msgid "Network"
+msgstr "Ağ"
+
+#: ksgrd/SensorManager.cc:76
+msgid "Interfaces"
+msgstr "Arayüzler"
+
+#: ksgrd/SensorManager.cc:77
+msgid "Receiver"
+msgstr "Alıcı"
+
+#: ksgrd/SensorManager.cc:78
+msgid "Transmitter"
+msgstr "Verici"
+
+#: ksgrd/SensorManager.cc:79
+msgid "Data"
+msgstr "Veri"
+
+#: ksgrd/SensorManager.cc:80
+msgid "Compressed Packets"
+msgstr "Sıkıştırılmış Paketler"
+
+#: ksgrd/SensorManager.cc:81
+msgid "Dropped Packets"
+msgstr "Bırakılan Paketler"
+
+#: ksgrd/SensorManager.cc:82
+msgid "Errors"
+msgstr "Hata"
+
+#: ksgrd/SensorManager.cc:83
+msgid "FIFO Overruns"
+msgstr "FIFO Aşırı işletilenler"
+
+#: ksgrd/SensorManager.cc:84
+msgid "Frame Errors"
+msgstr "Çerçeve Hataları"
+
+#: ksgrd/SensorManager.cc:85
+msgid "Multicast"
+msgstr "Çoklu kullanım"
+
+#: ksgrd/SensorManager.cc:86
+msgid "Packets"
+msgstr "Paket"
+
+#: ksgrd/SensorManager.cc:87
+msgid "Carrier"
+msgstr "Taşıyıcı"
+
+#: ksgrd/SensorManager.cc:88
+msgid "Collisions"
+msgstr "Çarpışma"
+
+#: ksgrd/SensorManager.cc:89
+msgid "Sockets"
+msgstr "Soketler"
+
+#: ksgrd/SensorManager.cc:90
+msgid "Total Number"
+msgstr "Toplam Sayı"
+
+#: ksgrd/SensorManager.cc:91 ksgrd/SensorManager.cc:149
+msgid "Table"
+msgstr "Tablo"
+
+#: ksgrd/SensorManager.cc:92
+msgid "Advanced Power Management"
+msgstr "Gelişmiş Güç Yönetimi"
+
+#: ksgrd/SensorManager.cc:93
+msgid "ACPI"
+msgstr "ACPI"
+
+#: ksgrd/SensorManager.cc:94
+msgid "Thermal Zone"
+msgstr "Sıcaklık Kuşağı"
+
+#: ksgrd/SensorManager.cc:95
+msgid "Temperature"
+msgstr "Sıcaklık"
+
+#: ksgrd/SensorManager.cc:96
+msgid "Fan"
+msgstr "Fan"
+
+#: ksgrd/SensorManager.cc:97
+msgid "State"
+msgstr "Durum"
+
+#: ksgrd/SensorManager.cc:98
+msgid "Battery"
+msgstr "Pil"
+
+#: ksgrd/SensorManager.cc:99
+msgid "Battery Charge"
+msgstr "Pil Şarj"
+
+#: ksgrd/SensorManager.cc:100
+msgid "Battery Usage"
+msgstr "Pil Kullanımı"
+
+#: ksgrd/SensorManager.cc:101
+msgid "Remaining Time"
+msgstr "Kalan Zaman"
+
+#: ksgrd/SensorManager.cc:102
+msgid "Interrupts"
+msgstr "Kesmeler"
+
+#. i18n: file SystemLoad.sgrd line 10
+#: ksgrd/SensorManager.cc:103 rc.cpp:175
+msgid "Load Average (1 min)"
+msgstr "Yük Ortalaması (1 dk)"
+
+#: ksgrd/SensorManager.cc:104
+msgid "Load Average (5 min)"
+msgstr "Yük Ortalaması (5 dk)"
+
+#: ksgrd/SensorManager.cc:105
+msgid "Load Average (15 min)"
+msgstr "Yük Ortalaması (15 dk)"
+
+#: ksgrd/SensorManager.cc:106
+msgid "Clock Frequency"
+msgstr "Saat Frekansı"
+
+#: ksgrd/SensorManager.cc:107
+msgid "Hardware Sensors"
+msgstr "Donanım Algılayıcıları"
+
+#: ksgrd/SensorManager.cc:108
+msgid "Partition Usage"
+msgstr "Disk Bölümü Kullanımı"
+
+#: ksgrd/SensorManager.cc:109
+msgid "Used Space"
+msgstr "Kullanılan Alan"
+
+#: ksgrd/SensorManager.cc:110
+msgid "Free Space"
+msgstr "Boş Alan"
+
+#: ksgrd/SensorManager.cc:111
+msgid "Fill Level"
+msgstr "Doluluk Seviyesi"
+
+#: ksgrd/SensorManager.cc:115
+#, c-format
+msgid "CPU%1"
+msgstr "İşlemci%1"
+
+#: ksgrd/SensorManager.cc:117
+#, c-format
+msgid "Disk%1"
+msgstr "Depolama Ortamı%1"
+
+#: ksgrd/SensorManager.cc:122
+#, c-format
+msgid "Fan%1"
+msgstr "Fan%1"
+
+#: ksgrd/SensorManager.cc:124
+#, c-format
+msgid "Temperature%1"
+msgstr "Sıcaklık%1"
+
+#: ksgrd/SensorManager.cc:127
+msgid "Total"
+msgstr "Toplam"
+
+#: ksgrd/SensorManager.cc:133
+#, c-format
+msgid "Int%1"
+msgstr "Int%1"
+
+#: ksgrd/SensorManager.cc:140
+msgid ""
+"_: the unit 1 per second\n"
+"1/s"
+msgstr "1/s"
+
+#: ksgrd/SensorManager.cc:141
+msgid "kBytes"
+msgstr "kBayt"
+
+#: ksgrd/SensorManager.cc:142
+msgid ""
+"_: the unit minutes\n"
+"min"
+msgstr "dk"
+
+#: ksgrd/SensorManager.cc:143
+msgid ""
+"_: the frequency unit\n"
+"MHz"
+msgstr "MHz"
+
+#: ksgrd/SensorManager.cc:146
+msgid "Integer Value"
+msgstr "Tam Sayı Değeri"
+
+#: ksgrd/SensorManager.cc:147
+msgid "Floating Point Value"
+msgstr "Kayan Nokta Değeri"
+
+#: ksgrd/SensorManager.cc:289
+msgid "Connection to %1 has been lost."
+msgstr "%1 adresine bağlantı kesildi."
+
+#: ksgrd/SensorSocketAgent.cc:104
+msgid "Connection to %1 refused"
+msgstr "%1 adresine bağlantı reddedildi"
+
+#: ksgrd/SensorSocketAgent.cc:108
+msgid "Host %1 not found"
+msgstr "%1 makinesi bulunamadı"
+
+#: ksgrd/SensorSocketAgent.cc:112
+#, c-format
+msgid "Timeout at host %1"
+msgstr "%1 makinesinde zamanaşımı"
+
+#: ksgrd/SensorSocketAgent.cc:116
+#, c-format
+msgid "Network failure host %1"
+msgstr "Ağ bağlantısı olmayan makine %1"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Ömer Fadıl USTA"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "omer_fad@hotmail.com"
+
+#: Workspace.cc:53
+msgid ""
+"This is your work space. It holds your worksheets. You need to create a new "
+"worksheet (Menu File->New) before you can drag sensors here."
+msgstr ""
+"Bu sizin çalışma alanınızdır. Çalışma sayfalarınızı tutar. Algılayıcıları "
+"buraya sürükleyip bırakmadan önce yeni bir çalışma sayfası (Dosya->"
+"Yeni) oluşturmalısınız."
+
+#: Workspace.cc:105 ksysguard.cc:176
+msgid "Process Table"
+msgstr "Süreç Tablosu"
+
+#: Workspace.cc:135
+#, c-format
+msgid "Sheet %1"
+msgstr "Kağıt %1"
+
+#: Workspace.cc:165 Workspace.cc:305
+msgid ""
+"The worksheet '%1' contains unsaved data.\n"
+"Do you want to save the worksheet?"
+msgstr ""
+"Çalışma kağıdı '%1' kayıt edilmemiş veri içeriyor\n"
+"Çalışma kağıdını kaydetmek istiyor musunuz?"
+
+#: Workspace.cc:181 Workspace.cc:235
+msgid "*.sgrd|Sensor Files"
+msgstr "*.sgrd|Algılayıcı Dosyaları"
+
+#: Workspace.cc:184
+msgid "Select Worksheet to Load"
+msgstr "Yüklemek İçin Çalışma Sayfası Seçin"
+
+#: Workspace.cc:229 Workspace.cc:269
+msgid "You do not have a worksheet that could be saved."
+msgstr "Kaydedilebilecek başka bir çalışma kağıdınız yok."
+
+#: Workspace.cc:239
+msgid "Save Current Worksheet As"
+msgstr "Geçerli Çalışma Sayfasını Farklı Kaydet"
+
+#: Workspace.cc:320
+msgid "There are no worksheets that could be deleted."
+msgstr "Silinebilecek Başka Bir Çalışma Sayfası Yok."
+
+#: Workspace.cc:448
+msgid "Cannot find file ProcessTable.sgrd."
+msgstr "ProcessTable.sgrd dosyası bulunamıyor."
+
+#: KSGAppletSettings.cc:34
+msgid "System Guard Settings"
+msgstr "Sistem İzleyicisi Ayarları"
+
+#: KSGAppletSettings.cc:42
+msgid "Number of displays:"
+msgstr "Gösterge sayısı:"
+
+#: KSGAppletSettings.cc:50
+msgid "Size ratio:"
+msgstr "Büyüklük oranı:"
+
+#: KSGAppletSettings.cc:54
+#, c-format
+msgid "%"
+msgstr "%"
+
+#: SensorDisplayLib/ProcessList.cc:110
+msgid ""
+"_: process status\n"
+"running"
+msgstr "çalışıyor"
+
+#: SensorDisplayLib/ProcessList.cc:112
+msgid ""
+"_: process status\n"
+"sleeping"
+msgstr "uykuda"
+
+#: SensorDisplayLib/ProcessList.cc:114
+msgid ""
+"_: process status\n"
+"disk sleep"
+msgstr "disk uykusu"
+
+#: SensorDisplayLib/ProcessList.cc:115
+msgid ""
+"_: process status\n"
+"zombie"
+msgstr "zombi"
+
+#: SensorDisplayLib/ProcessList.cc:117
+msgid ""
+"_: process status\n"
+"stopped"
+msgstr "durmuş"
+
+#: SensorDisplayLib/ProcessList.cc:118
+msgid ""
+"_: process status\n"
+"paging"
+msgstr "sayfalanıyor"
+
+#: SensorDisplayLib/ProcessList.cc:119
+msgid ""
+"_: process status\n"
+"idle"
+msgstr "boşta"
+
+#: SensorDisplayLib/ProcessList.cc:250
+msgid "Remove Column"
+msgstr "Sütunu Kaldır"
+
+#: SensorDisplayLib/ProcessList.cc:251
+msgid "Add Column"
+msgstr "Sütun Ekle"
+
+#: SensorDisplayLib/ProcessList.cc:252
+msgid "Help on Column"
+msgstr "Sütunda Yardım Et"
+
+#: SensorDisplayLib/ProcessController.cc:62
+#: SensorDisplayLib/ProcessList.cc:771
+msgid "Nice"
+msgstr "İyileştirme"
+
+#: SensorDisplayLib/ProcessList.cc:776
+msgid "Hide Column"
+msgstr "Sütun Sakla"
+
+#: SensorDisplayLib/ProcessList.cc:782
+msgid "Show Column"
+msgstr "Sütunu Göster"
+
+#: SensorDisplayLib/ProcessList.cc:786
+msgid "Select All Processes"
+msgstr "Tüm Süreçleri Seç"
+
+#: SensorDisplayLib/ProcessList.cc:787
+msgid "Unselect All Processes"
+msgstr "Hiçbir Süreci Seçme"
+
+#: SensorDisplayLib/ProcessList.cc:793
+msgid "Select All Child Processes"
+msgstr "Tüm Çocuk Süreçleri Seç"
+
+#: SensorDisplayLib/ProcessList.cc:794
+msgid "Unselect All Child Processes"
+msgstr "Hiçbir Çocuk Süreci Seçme"
+
+#: SensorDisplayLib/ProcessList.cc:796
+msgid "SIGABRT"
+msgstr "SIGABRT"
+
+#: SensorDisplayLib/ProcessList.cc:797
+msgid "SIGALRM"
+msgstr "SIGALRM"
+
+#: SensorDisplayLib/ProcessList.cc:798
+msgid "SIGCHLD"
+msgstr "SIGCHLD"
+
+#: SensorDisplayLib/ProcessList.cc:799
+msgid "SIGCONT"
+msgstr "SIGCONT"
+
+#: SensorDisplayLib/ProcessList.cc:800
+msgid "SIGFPE"
+msgstr "SIGFPE"
+
+#: SensorDisplayLib/ProcessList.cc:801
+msgid "SIGHUP"
+msgstr "SIGHUP"
+
+#: SensorDisplayLib/ProcessList.cc:802
+msgid "SIGILL"
+msgstr "SIGILL"
+
+#: SensorDisplayLib/ProcessList.cc:803
+msgid "SIGINT"
+msgstr "SIGINT"
+
+#: SensorDisplayLib/ProcessList.cc:804
+msgid "SIGKILL"
+msgstr "SIGKILL "
+
+#: SensorDisplayLib/ProcessList.cc:805
+msgid "SIGPIPE"
+msgstr "SIGPIPE"
+
+#: SensorDisplayLib/ProcessList.cc:806
+msgid "SIGQUIT"
+msgstr "SIGQUIT"
+
+#: SensorDisplayLib/ProcessList.cc:807
+msgid "SIGSEGV"
+msgstr "SIGSEGV"
+
+#: SensorDisplayLib/ProcessList.cc:808
+msgid "SIGSTOP"
+msgstr "SIGSTOP"
+
+#: SensorDisplayLib/ProcessList.cc:809
+msgid "SIGTERM"
+msgstr "SIGTERM"
+
+#: SensorDisplayLib/ProcessList.cc:810
+msgid "SIGTSTP"
+msgstr "SIGTSTP"
+
+#: SensorDisplayLib/ProcessList.cc:811
+msgid "SIGTTIN"
+msgstr "SIGTTIN"
+
+#: SensorDisplayLib/ProcessList.cc:812
+msgid "SIGTTOU"
+msgstr "SIGTTOU"
+
+#: SensorDisplayLib/ProcessList.cc:813
+msgid "SIGUSR1"
+msgstr "SIGUSR1"
+
+#: SensorDisplayLib/ProcessList.cc:814
+msgid "SIGUSR2"
+msgstr "SIGUSR2"
+
+#: SensorDisplayLib/ProcessList.cc:817
+msgid "Send Signal"
+msgstr "Sinyal Yolla"
+
+#: SensorDisplayLib/ProcessList.cc:825
+msgid "Renice Process..."
+msgstr "Süreci İyileştir..."
+
+#: SensorDisplayLib/ProcessList.cc:873
+msgid ""
+"_n: Do you really want to send signal %1 to the selected process?\n"
+"Do you really want to send signal %1 to the %n selected processes?"
+msgstr "Seçili %n sürece %1 sinyali yollamak istiyor musunuz?"
+
+#: SensorDisplayLib/ProcessList.cc:877
+msgid "Send"
+msgstr "Gönder"
+
+#: SensorDisplayLib/DancingBarsSettings.cc:43
+msgid "Edit BarGraph Preferences"
+msgstr "BarGraph Özelliklerini Düzenle"
+
+#: SensorDisplayLib/DancingBarsSettings.cc:47
+msgid "Range"
+msgstr "Sıra"
+
+#. i18n: file ./SensorDisplayLib/MultiMeterSettingsWidget.ui line 25
+#: SensorDisplayLib/DancingBarsSettings.cc:50 WorkSheetSettings.cc:48
+#: rc.cpp:48 rc.cpp:99 rc.cpp:114 rc.cpp:135
+#, no-c-format
+msgid "Title"
+msgstr "Başlık"
+
+#. i18n: file ./SensorDisplayLib/MultiMeterSettingsWidget.ui line 36
+#: SensorDisplayLib/DancingBarsSettings.cc:54
+#: SensorDisplayLib/FancyPlotterSettings.cc:64 rc.cpp:51
+#, no-c-format
+msgid "Enter the title of the display here."
+msgstr "Gösterge başlığını buraya girin."
+
+#: SensorDisplayLib/DancingBarsSettings.cc:59
+msgid "Display Range"
+msgstr "Aralığı Göster"
+
+#: SensorDisplayLib/DancingBarsSettings.cc:63
+#: SensorDisplayLib/FancyPlotterSettings.cc:89
+msgid "Minimum value:"
+msgstr "En düşük değer:"
+
+#: SensorDisplayLib/DancingBarsSettings.cc:67
+#: SensorDisplayLib/FancyPlotterSettings.cc:95
+msgid ""
+"Enter the minimum value for the display here. If both values are 0, automatic "
+"range detection is enabled."
+msgstr ""
+"Gösterge için en düşük değeri buraya girin. Eğer iki değer de 0 ise otomatik "
+"oran belirleme etkinleştirilecek."
+
+#: SensorDisplayLib/DancingBarsSettings.cc:71
+#: SensorDisplayLib/FancyPlotterSettings.cc:99
+msgid "Maximum value:"
+msgstr "En yüksek değer:"
+
+#: SensorDisplayLib/DancingBarsSettings.cc:75
+#: SensorDisplayLib/FancyPlotterSettings.cc:105
+msgid ""
+"Enter the maximum value for the display here. If both values are 0, automatic "
+"range detection is enabled."
+msgstr ""
+"Gösterge için en yüksek değeri girin. Eğer iki değer de 0 ise otomatik oran "
+"belirleme etkinleştirilecek."
+
+#. i18n: file ./SensorDisplayLib/MultiMeterSettingsWidget.ui line 61
+#: SensorDisplayLib/DancingBarsSettings.cc:84 rc.cpp:60
+#, no-c-format
+msgid "Alarms"
+msgstr "Alarmlar"
+
+#. i18n: file ./SensorDisplayLib/SensorLoggerDlgWidget.ui line 78
+#: SensorDisplayLib/DancingBarsSettings.cc:87 rc.cpp:24 rc.cpp:75
+#, no-c-format
+msgid "Alarm for Minimum Value"
+msgstr "En Düşük Değer İçin Alarm"
+
+#: SensorDisplayLib/DancingBarsSettings.cc:91
+#: SensorDisplayLib/DancingBarsSettings.cc:109
+msgid "Enable alarm"
+msgstr "Alarmı etkinleştir"
+
+#. i18n: file ./SensorDisplayLib/SensorLoggerDlgWidget.ui line 92
+#: SensorDisplayLib/DancingBarsSettings.cc:92 rc.cpp:30 rc.cpp:81
+#, no-c-format
+msgid "Enable the minimum value alarm."
+msgstr "Asgari değer alarmını etkinleştir."
+
+#. i18n: file ./SensorDisplayLib/SensorLoggerDlgWidget.ui line 120
+#: SensorDisplayLib/DancingBarsSettings.cc:95 rc.cpp:33 rc.cpp:84
+#, no-c-format
+msgid "Lower limit:"
+msgstr "Alt sınır:"
+
+#. i18n: file ./SensorDisplayLib/SensorLoggerDlgWidget.ui line 144
+#: SensorDisplayLib/DancingBarsSettings.cc:105 rc.cpp:36 rc.cpp:63
+#, no-c-format
+msgid "Alarm for Maximum Value"
+msgstr "Alarm için Azami Değer"
+
+#. i18n: file ./SensorDisplayLib/SensorLoggerDlgWidget.ui line 158
+#: SensorDisplayLib/DancingBarsSettings.cc:110 rc.cpp:42 rc.cpp:69
+#, no-c-format
+msgid "Enable the maximum value alarm."
+msgstr "Azami değer alarmını etkinleştir."
+
+#. i18n: file ./SensorDisplayLib/SensorLoggerDlgWidget.ui line 186
+#: SensorDisplayLib/DancingBarsSettings.cc:113 rc.cpp:45 rc.cpp:72
+#, no-c-format
+msgid "Upper limit:"
+msgstr "Üst limit:"
+
+#: SensorDisplayLib/DancingBarsSettings.cc:126
+msgid "Look"
+msgstr "Bak"
+
+#: SensorDisplayLib/DancingBarsSettings.cc:129
+msgid "Normal bar color:"
+msgstr "Normal çubuk rengi:"
+
+#: SensorDisplayLib/DancingBarsSettings.cc:136
+msgid "Out-of-range color:"
+msgstr "Sınır dışında rengi:"
+
+#: SensorDisplayLib/DancingBarsSettings.cc:154
+msgid ""
+"This determines the size of the font used to print a label underneath the bars. "
+"Bars are automatically suppressed if text becomes too large, so it is advisable "
+"to use a small font size here."
+msgstr ""
+"Bu barların altında kullanılan yazıtipi büyüklüğünü belirler. Eğer bir metin "
+"fazla geniş gelirse barlar otomatik olarak genişler. O yüzden burada küçük "
+"yazıtipi kullanmak daha uygundur."
+
+#: SensorDisplayLib/DancingBarsSettings.cc:161
+#: SensorDisplayLib/FancyPlotterSettings.cc:224
+msgid "Sensors"
+msgstr "Algılayıcılar"
+
+#: SensorDisplayLib/DancingBarsSettings.cc:166
+#: SensorDisplayLib/FancyPlotterSettings.cc:231
+msgid "Host"
+msgstr "Sunucu"
+
+#: SensorDisplayLib/DancingBarsSettings.cc:167
+#: SensorDisplayLib/FancyPlotterSettings.cc:232
+msgid "Sensor"
+msgstr "Algılayıcı"
+
+#: SensorDisplayLib/DancingBarsSettings.cc:168
+msgid "Label"
+msgstr "Etiket"
+
+#: SensorDisplayLib/DancingBarsSettings.cc:169
+#: SensorDisplayLib/FancyPlotterSettings.cc:233
+msgid "Unit"
+msgstr "Unit"
+
+#: SensorDisplayLib/DancingBarsSettings.cc:170
+#: SensorDisplayLib/FancyPlotterSettings.cc:234
+#: SensorDisplayLib/ProcessController.cc:59
+msgid "Status"
+msgstr "Durum"
+
+#: SensorDisplayLib/DancingBarsSettings.cc:174
+msgid "Edit..."
+msgstr "Düzenle..."
+
+#: SensorDisplayLib/DancingBarsSettings.cc:176
+msgid "Push this button to configure the label."
+msgstr "Algılayıcıyı silmek için bu tuşa tıklayın."
+
+#: SensorDisplayLib/DancingBarsSettings.cc:181
+#: SensorDisplayLib/FancyPlotterSettings.cc:249
+msgid "Push this button to delete the sensor."
+msgstr "Algılayıcıyı silmek için bu tuşa tıklayın."
+
+#: SensorDisplayLib/DancingBarsSettings.cc:356
+msgid "Label of Bar Graph"
+msgstr "Çubuk Grafik Etiketi"
+
+#: SensorDisplayLib/DancingBarsSettings.cc:357
+msgid "Enter new label:"
+msgstr "Yeni etiketi girin:"
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:47
+msgid "Signal Plotter Settings"
+msgstr "Sinyal Çizici Ayarları"
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:57
+msgid "Style"
+msgstr "Stil"
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:60
+msgid "Title:"
+msgstr "Başlık:"
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:69
+msgid "Graph Drawing Style"
+msgstr "Grafik Çizim Stili"
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:71
+msgid "Basic polygons"
+msgstr "Temel Poligonlar"
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:73
+msgid "Original - single line per data point"
+msgstr "Orjinal - Her veri noktası için tek çizgi"
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:78
+msgid "Scales"
+msgstr "Ölçüler"
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:81
+msgid "Vertical Scale"
+msgstr "Dikey Değer"
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:85
+msgid "Automatic range detection"
+msgstr "Otomatik aralık algılaması"
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:86
+msgid ""
+"Check this box if you want the display range to adapt dynamically to the "
+"currently displayed values; if you do not check this, you have to specify the "
+"range you want in the fields below."
+msgstr ""
+"Eğer ekran aralığının otomatik olarak ekran değerlerine göre ayarlanmasını "
+"istiyorsanız bunu işaretleyin. Eğer bunu işaretlemezseniz, aşağıdaki "
+"boşluklarda istediğiniz değerleri belirlemeniz gerekir."
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:111
+msgid "Horizontal Scale"
+msgstr "Yatay Değer"
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:120
+msgid "pixel(s) per time period"
+msgstr "zaman periyodundaki benek sayısı"
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:126
+msgid "Grid"
+msgstr "Kılavuz"
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:129
+msgid "Lines"
+msgstr "Satırlar"
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:133
+msgid "Vertical lines"
+msgstr "Dikey çizgiler"
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:134
+msgid "Check this to activate the vertical lines if display is large enough."
+msgstr "Dikey Satırları etkinleştirmek için Ekranın genişliğini kontrol et."
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:137
+msgid "Distance:"
+msgstr "Uzaklık:"
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:143
+msgid "Enter the distance between two vertical lines here."
+msgstr "İki dikey satır arasındaki uzaklığı girin."
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:147
+msgid "Vertical lines scroll"
+msgstr "Dikey çizgi kaydırması"
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:150
+msgid "Horizontal lines"
+msgstr "Yatay çizgiler"
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:151
+msgid "Check this to enable horizontal lines if display is large enough."
+msgstr ""
+"Görüntü yeteri kadar büyükse yatay çizgileri etkinleştirmek için bu düğmeye "
+"tıklayın."
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:154
+msgid "Count:"
+msgstr "Tekrar:"
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:160
+msgid "Enter the number of horizontal lines here."
+msgstr "Yatay çizgi sayısını girin."
+
+#. i18n: file ./SensorDisplayLib/LogFileSettings.ui line 35
+#: SensorDisplayLib/FancyPlotterSettings.cc:168 rc.cpp:132
+#, no-c-format
+msgid "Text"
+msgstr "Metin"
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:172
+msgid "Labels"
+msgstr "Etiketler"
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:173
+msgid ""
+"Check this box if horizontal lines should be decorated with the values they "
+"mark."
+msgstr ""
+"Yatay çizgilerin tanımladığı değerleri göstermek için bu düğmeye t�klayın."
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:185
+msgid "Top bar"
+msgstr "Tepe Çubuğu"
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:186
+msgid ""
+"Check this to active the display title bar. This is probably only useful for "
+"applet displays. The bar is only visible if the display is large enough."
+msgstr ""
+"Başlık çubuğunu görüntülemek için bu düğmeye tıklayın. Bu applet ekranlar için "
+"kullanışlıdır. Bar sadece ekran yeteri derecede büyük olduğunda görünür olur."
+
+#. i18n: file ./SensorDisplayLib/MultiMeterSettingsWidget.ui line 206
+#: SensorDisplayLib/FancyPlotterSettings.cc:193 rc.cpp:87 rc.cpp:102
+#: rc.cpp:117 rc.cpp:138
+#, no-c-format
+msgid "Colors"
+msgstr "Renkler"
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:196
+msgid "Vertical lines:"
+msgstr "Dikey çizgiler:"
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:203
+msgid "Horizontal lines:"
+msgstr "Yatay çizgiler:"
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:210
+msgid "Background:"
+msgstr "Arkaplan:"
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:242
+msgid "Set Color..."
+msgstr "Rengi Ayarla..."
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:244
+msgid "Push this button to configure the color of the sensor in the diagram."
+msgstr ""
+"Diyagramdaki algılayıcıların rengini değiştirmek için bu düğmeye bas�n."
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:252
+msgid "Move Up"
+msgstr "Yukarı Taşı"
+
+#: SensorDisplayLib/FancyPlotterSettings.cc:256
+msgid "Move Down"
+msgstr "Aşağı Taşı"
+
+#: SensorDisplayLib/SensorLogger.cc:151 SensorDisplayLib/SensorLoggerDlg.cc:28
+msgid "Sensor Logger"
+msgstr "Algılayıcı Kayıtçısı"
+
+#: SensorDisplayLib/SensorDisplay.cc:162
+msgid "Launch &System Guard"
+msgstr "&Sistem İzleyiciyi Başlat"
+
+#: SensorDisplayLib/SensorDisplay.cc:166 SensorDisplayLib/SensorLogger.cc:380
+msgid "&Properties"
+msgstr "Ö&zellikler"
+
+#: SensorDisplayLib/SensorDisplay.cc:167 SensorDisplayLib/SensorLogger.cc:381
+msgid "&Remove Display"
+msgstr "Ekranı &Kaldır"
+
+#: SensorDisplayLib/SensorDisplay.cc:169
+msgid "&Setup Update Interval..."
+msgstr "&Güncelleme Aralığını Düzenle..."
+
+#: SensorDisplayLib/SensorDisplay.cc:171
+msgid "&Continue Update"
+msgstr "&Güncellemeye Devam Et"
+
+#: SensorDisplayLib/SensorDisplay.cc:173
+msgid "P&ause Update"
+msgstr "Gü&ncellemeyi Duraklat"
+
+#: SensorDisplayLib/SensorDisplay.cc:240
+msgid ""
+"<qt>"
+"<p>This is a sensor display. To customize a sensor display click and hold the "
+"right mouse button on either the frame or the display box and select the <i>"
+"Properties</i> entry from the popup menu. Select <i>Remove</i> "
+"to delete the display from the worksheet.</p>%1</qt>"
+msgstr ""
+"<qt> "
+"<p>Bu bir algılayıcı penceresidir. Bir algılayıcıyı düzenlemek için "
+"farenizinsağ düğmesini kullanarak menüden <i>Özellikler</i> "
+"girdisini seçiniz.  Daha sonra çalışma kağıdından <i>Kaldır</i> "
+"menüsüne tıklayınız.</p> %1</qt>"
+
+#: SensorDisplayLib/SensorLogger.cc:136
+msgid "Logging"
+msgstr "Günlük Kaydı"
+
+#. i18n: file ./SensorDisplayLib/SensorLoggerDlgWidget.ui line 48
+#: SensorDisplayLib/SensorLogger.cc:137 rc.cpp:18
+#, no-c-format
+msgid "Timer Interval"
+msgstr "Zamanlayıcı Aralığı"
+
+#: SensorDisplayLib/SensorLogger.cc:138
+msgid "Sensor Name"
+msgstr "Algılayıcı Adı"
+
+#: SensorDisplayLib/SensorLogger.cc:139
+msgid "Host Name"
+msgstr "Makine Adı"
+
+#: SensorDisplayLib/SensorLogger.cc:140
+msgid "Log File"
+msgstr "Kayıt Dosyası"
+
+#: SensorDisplayLib/SensorLogger.cc:383
+msgid "&Remove Sensor"
+msgstr "Algılayıcıyı &Kaldır"
+
+#: SensorDisplayLib/SensorLogger.cc:384
+msgid "&Edit Sensor..."
+msgstr "Algılayıcıyı &Düzenle..."
+
+#: SensorDisplayLib/SensorLogger.cc:396
+msgid "St&op Logging"
+msgstr "Kayıt İşlemini &Durdur"
+
+#: SensorDisplayLib/SensorLogger.cc:398
+msgid "S&tart Logging"
+msgstr "Kayıt İşlemine &Başla"
+
+#. i18n: file ./SensorDisplayLib/LogFileSettings.ui line 94
+#: SensorDisplayLib/LogFile.cc:88 rc.cpp:141
+#, no-c-format
+msgid "Foreground color:"
+msgstr "Önplan rengi:"
+
+#: SensorDisplayLib/MultiMeterSettings.cc:26
+msgid "Multimeter Settings"
+msgstr "Ölçü Aygıtı Ayarları"
+
+#: SensorDisplayLib/ListViewSettings.cc:26
+msgid "List View Settings"
+msgstr "Liste Görünümü Ayarları"
+
+#: SensorDisplayLib/ReniceDlg.cc:32
+msgid "Renice Process"
+msgstr "Süreci İyileştir"
+
+#: SensorDisplayLib/ReniceDlg.cc:40
+msgid ""
+"You are about to change the scheduling priority of\n"
+"process %1. Be aware that only the Superuser (root)\n"
+"can decrease the nice level of a process. The lower\n"
+"the number is the higher the priority.\n"
+"\n"
+"Please enter the desired nice level:"
+msgstr ""
+"%1 sürecinin öncelik sırasını değiştirmek üzeresiniz\n"
+"Bir sürecin iyileştirme seviyesini sadece\n"
+"üst kullanıcı (root) düşürebilir. Sayı küçüldükçe, öncelik\n"
+"artar.\n"
+"\n"
+"Lütfen, istenen iyileştirme seviyesini giriniz:"
+
+#: SensorDisplayLib/SensorLoggerSettings.cc:26
+msgid "Sensor Logger Settings"
+msgstr "Algılayıcı Kayıtçı Ayarları"
+
+#: SensorDisplayLib/DummyDisplay.cc:33
+msgid "Drop Sensor Here"
+msgstr "Algılayıcıyı Buraya Taşıyın"
+
+#: SensorDisplayLib/DummyDisplay.cc:38
+msgid ""
+"This is an empty space in a worksheet. Drag a sensor from the Sensor Browser "
+"and drop it here. A sensor display will appear that allows you to monitor the "
+"values of the sensor over time."
+msgstr ""
+"Burası bir çalışma kağıdındaki boş alandır. Algılayıcı menüsündeki bir "
+"algılayıcıyı buraya taşıyabilirsiniz."
+
+#: SensorDisplayLib/ProcessController.cc:54
+msgid "Name"
+msgstr "İsim"
+
+#: SensorDisplayLib/ProcessController.cc:55
+msgid "PID"
+msgstr "PID"
+
+#: SensorDisplayLib/ProcessController.cc:56
+msgid "PPID"
+msgstr "PPID"
+
+#: SensorDisplayLib/ProcessController.cc:57
+msgid "UID"
+msgstr "UID"
+
+#: SensorDisplayLib/ProcessController.cc:58
+msgid "GID"
+msgstr "GID"
+
+#: SensorDisplayLib/ProcessController.cc:60
+#, c-format
+msgid "User%"
+msgstr "Kullanıcı%"
+
+#: SensorDisplayLib/ProcessController.cc:61
+#, c-format
+msgid "System%"
+msgstr "Sistem%"
+
+#: SensorDisplayLib/ProcessController.cc:63
+msgid "VmSize"
+msgstr "VmBoyutu"
+
+#: SensorDisplayLib/ProcessController.cc:64
+msgid "VmRss"
+msgstr "VmRss"
+
+#: SensorDisplayLib/ProcessController.cc:65
+msgid "Login"
+msgstr "Başlatan Kullanıcı"
+
+#: SensorDisplayLib/ProcessController.cc:66
+msgid "Command"
+msgstr "Komut"
+
+#: SensorDisplayLib/ProcessController.cc:97
+msgid "All Processes"
+msgstr "Tüm Süreçler"
+
+#: SensorDisplayLib/ProcessController.cc:98
+msgid "System Processes"
+msgstr "Sistem Süreçleri"
+
+#: SensorDisplayLib/ProcessController.cc:99
+msgid "User Processes"
+msgstr "Kullanıcı Süreçleri"
+
+#: SensorDisplayLib/ProcessController.cc:100
+msgid "Own Processes"
+msgstr "Kişisel Süreçler"
+
+#: SensorDisplayLib/ProcessController.cc:103
+msgid "&Tree"
+msgstr "&Ağaç"
+
+#: SensorDisplayLib/ProcessController.cc:116
+msgid "&Refresh"
+msgstr "&Tazele"
+
+#: SensorDisplayLib/ProcessController.cc:123
+msgid "&Kill"
+msgstr "&Sonlandır"
+
+#: SensorDisplayLib/ProcessController.cc:206
+msgid "%1: Running Processes"
+msgstr "%1: Çalışan Süreçler"
+
+#: SensorDisplayLib/ProcessController.cc:239
+msgid "You need to select a process first."
+msgstr "Önce bir süreç seçmeniz gerekiyor."
+
+#: SensorDisplayLib/ProcessController.cc:245
+#, c-format
+msgid ""
+"_n: Do you want to kill the selected process?\n"
+"Do you want to kill the %n selected processes?"
+msgstr "Seçili %n süreci sonlandırmak istiyor musunuz?"
+
+#: SensorDisplayLib/ProcessController.cc:248
+msgid "Kill Process"
+msgstr "Süreci Sonlandır"
+
+#: SensorDisplayLib/ProcessController.cc:252
+msgid "Kill"
+msgstr "Sonlandır"
+
+#: SensorDisplayLib/ProcessController.cc:258
+msgid "Do not ask again"
+msgstr "Tekrar sorma"
+
+#: SensorDisplayLib/ProcessController.cc:344
+#, c-format
+msgid "Error while attempting to kill process %1."
+msgstr "%1 sürecinin sonlandırılması sırasında hata."
+
+#: SensorDisplayLib/ProcessController.cc:349
+#, c-format
+msgid "Insufficient permissions to kill process %1."
+msgstr "%1 sürecini sonlandırmak için izniniz geçersiz."
+
+#: SensorDisplayLib/ProcessController.cc:354
+#: SensorDisplayLib/ProcessController.cc:389
+msgid "Process %1 has already disappeared."
+msgstr "%1 süreci zaten kapatılmış durumda."
+
+#: SensorDisplayLib/ProcessController.cc:358
+msgid "Invalid Signal."
+msgstr "Geçersiz Sinyal."
+
+#: SensorDisplayLib/ProcessController.cc:379
+#, c-format
+msgid "Error while attempting to renice process %1."
+msgstr "%1 sürecininin yeniden iyileştirilmesi işleminde hata."
+
+#: SensorDisplayLib/ProcessController.cc:384
+#, c-format
+msgid "Insufficient permissions to renice process %1."
+msgstr "%1 i iyileştirmek için izniniz geçersiz."
+
+#: SensorDisplayLib/ProcessController.cc:393
+msgid "Invalid argument."
+msgstr "Geçersiz argüman."
+
+#. i18n: file ./SensorDisplayLib/SensorLoggerDlgWidget.ui line 89
+#: rc.cpp:27 rc.cpp:78
+#, no-c-format
+msgid "&Enable alarm"
+msgstr "Alarmı &Etkinleştir"
+
+#. i18n: file ./SensorDisplayLib/SensorLoggerDlgWidget.ui line 155
+#: rc.cpp:39 rc.cpp:66
+#, no-c-format
+msgid "E&nable alarm"
+msgstr "Alarmı E&tkinleştir"
+
+#. i18n: file ./SensorDisplayLib/MultiMeterSettingsWidget.ui line 44
+#: rc.cpp:54
+#, no-c-format
+msgid "&Show unit"
+msgstr "Biri&mi göster"
+
+#. i18n: file ./SensorDisplayLib/MultiMeterSettingsWidget.ui line 47
+#: rc.cpp:57
+#, no-c-format
+msgid "Enable this to append the unit to the title of the display."
+msgstr "Birimi göstergenin başlığına eklemek için bunu seçiniz."
+
+#. i18n: file ./SensorDisplayLib/MultiMeterSettingsWidget.ui line 225
+#: rc.cpp:90
+#, no-c-format
+msgid "Normal digit color:"
+msgstr "Normal hane rengi:"
+
+#. i18n: file ./SensorDisplayLib/MultiMeterSettingsWidget.ui line 233
+#: rc.cpp:93
+#, no-c-format
+msgid "Alarm digit color:"
+msgstr "Alarm hane rengi:"
+
+#. i18n: file ./SensorDisplayLib/ListViewSettingsWidget.ui line 82
+#: rc.cpp:105 rc.cpp:120
+#, no-c-format
+msgid "Text color:"
+msgstr "Metin rengi:"
+
+#. i18n: file ./SensorDisplayLib/ListViewSettingsWidget.ui line 90
+#: rc.cpp:108
+#, no-c-format
+msgid "Grid color:"
+msgstr "Kılavuz rengi:"
+
+#. i18n: file ./SensorDisplayLib/LogFileSettings.ui line 17
+#: rc.cpp:129
+#, no-c-format
+msgid "Log File Settings"
+msgstr "Günlük Dosyası Ayarları"
+
+#. i18n: file ./SensorDisplayLib/LogFileSettings.ui line 187
+#: rc.cpp:150
+#, no-c-format
+msgid "Select Font..."
+msgstr "Yazıtipini Seç..."
+
+#. i18n: file ./SensorDisplayLib/LogFileSettings.ui line 199
+#: rc.cpp:153
+#, no-c-format
+msgid "Filter"
+msgstr "Filtre"
+
+#. i18n: file ./SensorDisplayLib/LogFileSettings.ui line 238
+#: rc.cpp:156
+#, no-c-format
+msgid "&Add"
+msgstr "&Ekle"
+
+#. i18n: file ./SensorDisplayLib/LogFileSettings.ui line 254
+#: rc.cpp:162
+#, no-c-format
+msgid "&Change"
+msgstr "&Değiştir"
+
+#. i18n: file KSysGuardApplet.xml line 5
+#: rc.cpp:181
+msgid "CPU"
+msgstr "İşlemci"
+
+#. i18n: file KSysGuardApplet.xml line 10
+#: rc.cpp:183
+msgid "Mem"
+msgstr "Bellek"
+
+#: WorkSheetSettings.cc:41
+msgid "Worksheet Properties"
+msgstr "Pencere Özellikleri"
+
+#: WorkSheetSettings.cc:67
+msgid "Rows:"
+msgstr "Satır:"
+
+#: WorkSheetSettings.cc:76
+msgid "Columns:"
+msgstr "Sütun:"
+
+#: WorkSheetSettings.cc:97
+msgid "Enter the number of rows the sheet should have."
+msgstr "Belgede kaç tane sütun olmasını istediğinizi giriniz."
+
+#: WorkSheetSettings.cc:98
+msgid "Enter the number of columns the sheet should have."
+msgstr "Dökümanın kaç tane sütuna sahip olmasını istediğinizi girin."
+
+#: WorkSheetSettings.cc:100
+msgid "Enter the title of the worksheet here."
+msgstr "Çalışma kağıdının başlığını buraya yazın."
+
+#: KSysGuardApplet.cc:212
+msgid "&Dancing Bars"
+msgstr "&Dans Eden Çubuklar"
+
+#: KSysGuardApplet.cc:242 KSysGuardApplet.cc:394
+msgid ""
+"The KSysGuard applet does not support displaying of this type of sensor. Please "
+"choose another sensor."
+msgstr ""
+"KSysGuard çalışma kağıdı bu tür algılayıcıları desteklememektedir. Lütfen başka "
+"bir algılayıcı seçin."
+
+#: KSysGuardApplet.cc:334
+msgid ""
+"The file %1 does not contain a valid applet definition, which must have a "
+"document type 'KSysGuardApplet'."
+msgstr ""
+"%1 dosyası 'KSysGuardApplet' döküman türüne sahip olması gereken, uygun bir "
+"çalışma kağıdı açıklaması değil."
+
+#: KSysGuardApplet.cc:488
+msgid "Drag sensors from the KDE System Guard into this cell."
+msgstr "Algılayıcıları KDE sistem izleyicisinden bu hücreye sürükle."
+
+#: SensorBrowser.cc:77
+msgid "Sensor Browser"
+msgstr "Algılayıcı Tarayıcısı"
+
+#: SensorBrowser.cc:78
+msgid "Sensor Type"
+msgstr "Tür"
+
+#: SensorBrowser.cc:81
+msgid "Drag sensors to empty cells of a worksheet or the panel applet."
+msgstr "Algılayıcıları bir çalışma dosyasının boş bir hücreesine sürükleyin."
+
+#: SensorBrowser.cc:88
+msgid ""
+"The sensor browser lists the connected hosts and the sensors that they provide. "
+"Click and drag sensors into drop zones of a worksheet or the panel applet. A "
+"display will appear that visualizes the values provided by the sensor. Some "
+"sensor displays can display values of multiple sensors. Simply drag other "
+"sensors on to the display to add more sensors."
+msgstr ""
+"Algılayıcı tarayıcısı bağlı host sahiplerini listeler ve sensorlar temin eder. "
+"Tıklama ve sürükleme sensörleri. Değerler sensörlerden temin edilir ve "
+"sergilenir.Bazı algıyacılar çoğul sensör değerlerini gösterebilir.Daha fazla "
+"sensör eklemek sürükleyiniz."
+
+#: SensorBrowser.cc:148
+msgid "Drag sensors to empty fields in a worksheet."
+msgstr "Algılayıcıları çalışma alanlarındaki boş bölgelere sürükleyin."
+
+#: ksysguard.cc:64
+msgid "KDE system guard"
+msgstr "KDE sistem izleyici"
+
+#: ksysguard.cc:74 ksysguard.cc:556
+msgid "KDE System Guard"
+msgstr "KDE Sistem İzleyici"
+
+#: ksysguard.cc:100
+msgid "88888 Processes"
+msgstr "88888 Süreç"
+
+#: ksysguard.cc:101
+msgid "Memory: 88888888888 kB used, 88888888888 kB free"
+msgstr "Kullanılan bellek: 88888888888 kB, boş bellek: 88888888888 kB"
+
+#: ksysguard.cc:103
+msgid "Swap: 888888888 kB used, 888888888 kB free"
+msgstr "Kullanılan takas: 888888888 kB, boş takas: 888888888 kB"
+
+#: ksysguard.cc:108
+msgid "&New Worksheet..."
+msgstr "&Yeni Çalışma Alanı..."
+
+#: ksysguard.cc:111
+msgid "Import Worksheet..."
+msgstr "Çalışma Alanını İçeriye Aktar..."
+
+#: ksysguard.cc:114
+msgid "&Import Recent Worksheet"
+msgstr "&Geçerli Çalışma Alanını İçeri Aktar"
+
+#: ksysguard.cc:117
+msgid "&Remove Worksheet"
+msgstr "Çalışma Alanını &Sil"
+
+#: ksysguard.cc:120
+msgid "&Export Worksheet..."
+msgstr "Geçerli Çalışma Alanını &Dışarı Aktar..."
+
+#: ksysguard.cc:125
+msgid "C&onnect Host..."
+msgstr "Sunucuya Bağla&n..."
+
+#: ksysguard.cc:127
+msgid "D&isconnect Host"
+msgstr "&Sunucu Bağlantısını Kes"
+
+#: ksysguard.cc:133
+msgid "&Worksheet Properties"
+msgstr "Ç&alışma Kağıdı Özellikleri"
+
+#: ksysguard.cc:136
+msgid "Load Standard Sheets"
+msgstr "Standart Çalışma Kağıtlarını Yükle"
+
+#: ksysguard.cc:140
+msgid "Configure &Style..."
+msgstr "&Biçemi Yapılandır..."
+
+#: ksysguard.cc:157
+msgid "Do you really want to restore the default worksheets?"
+msgstr "Gerçekten öntanımlı çalışma kağıtlarını kullanmak istiyor musunuz?"
+
+#: ksysguard.cc:158
+msgid "Reset All Worksheets"
+msgstr "Tüm Çalışma Alanlarını Sıfırla"
+
+#: ksysguard.cc:159
+msgid "Reset"
+msgstr "Sıfırla"
+
+#: ksysguard.cc:436
+#, c-format
+msgid ""
+"_n: 1 Process\n"
+"%n Processes"
+msgstr "%n Süreç"
+
+#: ksysguard.cc:446
+msgid "Memory: %1 %2 used, %3 %4 free"
+msgstr "Bellek: %1 %2 kullanılan, %3 %4 boş"
+
+#: ksysguard.cc:504
+msgid "No swap space available"
+msgstr "Kullanılabilir takas alanı yok"
+
+#: ksysguard.cc:506
+msgid "Swap: %1 %2 used, %3 %4 free"
+msgstr "Takas: %1 %2 kullanılan, %3 %4 boş"
+
+#: ksysguard.cc:515
+msgid "Show only process list of local host"
+msgstr "sadece yerel makinaların işlem listesini göster"
+
+#: ksysguard.cc:516
+msgid "Optional worksheet files to load"
+msgstr "Yüklemek için bir çalışma sayfası seçiniz"
+
+#: ksysguard.cc:558
+msgid "(c) 1996-2002 The KSysGuard Developers"
+msgstr "(c) 1996-2004, KSysGuard Geliştiricileri"
+
+#: ksysguard.cc:566
+msgid ""
+"Solaris Support\n"
+"Parts derived (by permission) from the sunos5\n"
+"module of William LeFebvre's \"top\" utility."
+msgstr ""
+"Solaris Desteği\n"
+"Parçalar sunos5'ten (izin alınarak) alınan parçalar\n"
+"William LeFebvre'nin \"top\" aracı."

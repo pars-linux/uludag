@@ -1,0 +1,51 @@
+# kde
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2001
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kde\n"
+"POT-Creation-Date: 2006-02-20 03:45+0100\n"
+"PO-Revision-Date: 2002-11-16 12:56+0000\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.6\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: kcmioslaveinfo.cpp:56
+msgid "<h1>IO slaves</h1> Gives you an overview of the installed ioslaves."
+msgstr "<h1>IO slaves</h1> Kurulu ioslave'ler hakkında bilgi verir."
+
+#: kcmioslaveinfo.cpp:59
+msgid "Available IO slaves:"
+msgstr "Kullanılabilir IO aracıları:"
+
+#: kcmioslaveinfo.cpp:86
+msgid "kcmioslaveinfo"
+msgstr "kcmioslaveinfo"
+
+#: kcmioslaveinfo.cpp:87
+msgid "KDE Panel System Information Control Module"
+msgstr "KDE Paneli Sistem Bilgisi Kontrol Modülü"
+
+#: kcmioslaveinfo.cpp:89
+msgid "(c) 2001 - 2002 Alexander Neundorf"
+msgstr "(c) 2001 - 2002 Alexander Neundorf"
+
+#: kcmioslaveinfo.cpp:137
+msgid "Some info about protocol %1:/ ..."
+msgstr "%1:/ protokolü hakkında bazı bilgiler..."

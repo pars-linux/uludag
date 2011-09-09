@@ -1,0 +1,422 @@
+# Translation of kgantt.po to Turkish
+# Copyright (C).
+# Ozan Eren BILGEN <oebilgen@uekae.tubitak.gov.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kgantt\n"
+"POT-Creation-Date: 2008-01-26 01:18+0100\n"
+"PO-Revision-Date: 2008-02-29 15:54+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@lists.kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: LoKalize 0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: KDGanttViewSubwidgets.cpp:728
+#, c-format
+msgid "Zoom to 100%"
+msgstr "100% Büyüt"
+
+#: KDGanttViewSubwidgets.cpp:729
+msgid "Zoom to Fit"
+msgstr "Ekrana Sığdır"
+
+#: KDGanttViewSubwidgets.cpp:730
+msgid "Zoom In (x 2)"
+msgstr "Büyüt (x 2)"
+
+#: KDGanttViewSubwidgets.cpp:731
+msgid "Zoom In (x 6)"
+msgstr "Büyüt (x 6)"
+
+#: KDGanttViewSubwidgets.cpp:732
+msgid "Zoom In (x 12)"
+msgstr "Büyüt (x 12)"
+
+#: KDGanttViewSubwidgets.cpp:733
+msgid "Zoom Out (x 1/2)"
+msgstr "Küçült (x 1/2)"
+
+#: KDGanttViewSubwidgets.cpp:734
+msgid "Zoom Out (x 1/6)"
+msgstr "Küçült (x 1/6)"
+
+#: KDGanttViewSubwidgets.cpp:735
+msgid "Zoom Out (x 1/12)"
+msgstr "Küçült (x 1/12)"
+
+#: KDGanttViewSubwidgets.cpp:737
+msgid "Scale"
+msgstr "Ölçeklendir"
+
+#: KDGanttViewSubwidgets.cpp:738
+msgid "Minute"
+msgstr "Dakika"
+
+#: KDGanttViewSubwidgets.cpp:739
+msgid "Hour"
+msgstr "Saat"
+
+#: KDGanttViewSubwidgets.cpp:740
+msgid "Day"
+msgstr "Gün"
+
+#: KDGanttViewSubwidgets.cpp:741
+msgid "Week"
+msgstr "Hafta"
+
+#: KDGanttViewSubwidgets.cpp:742
+msgid "Month"
+msgstr "Ay"
+
+#: KDGanttViewSubwidgets.cpp:743
+msgid "Auto"
+msgstr "Otomatik"
+
+#: KDGanttViewSubwidgets.cpp:746
+msgid "Time Format"
+msgstr "Saat Biçimi"
+
+#: KDGanttViewSubwidgets.cpp:747
+msgid "24 Hour"
+msgstr "24 Saat"
+
+#: KDGanttViewSubwidgets.cpp:748
+msgid "12 PM Hour"
+msgstr "12 ÖÖ Saati"
+
+#: KDGanttViewSubwidgets.cpp:749
+msgid "24:00 Hour"
+msgstr "24:00 Saat"
+
+#: KDGanttViewSubwidgets.cpp:751
+msgid "Year Format"
+msgstr "Yıl Biçimi"
+
+#: KDGanttViewSubwidgets.cpp:752
+msgid "Four Digit"
+msgstr "Dört Rakam"
+
+#: KDGanttViewSubwidgets.cpp:753
+msgid "Two Digit"
+msgstr "İki Rakam"
+
+#: KDGanttViewSubwidgets.cpp:754
+msgid "Two Digit Apostrophe"
+msgstr "İki Rakam Kesme İşareti"
+
+#: KDGanttViewSubwidgets.cpp:755
+msgid "No Date on Minute/Hour Scale"
+msgstr "Dakika/Saat Ölçümünde Gün Kullanma"
+
+#: KDGanttViewSubwidgets.cpp:758
+msgid "Grid"
+msgstr "Izgara"
+
+#: KDGanttViewSubwidgets.cpp:759
+msgid "Show Minor Grid"
+msgstr "Küçük Izgarayı Göster"
+
+#: KDGanttViewSubwidgets.cpp:760
+msgid "Show Major Grid"
+msgstr "Büyük Izgarayı Göster"
+
+#: KDGanttViewSubwidgets.cpp:761
+msgid "Show No Grid"
+msgstr "Izgara Gösterme"
+
+#: KDGanttViewSubwidgets.cpp:793
+msgid "Zoom (Fit)"
+msgstr "Büyüt (Sığdır)"
+
+#: KDGanttViewSubwidgets.cpp:795
+msgid "Zoom (%1)"
+msgstr "Büyüt (%1)"
+
+#: KDGanttViewSubwidgets.cpp:2550
+msgid " Legend is hidden"
+msgstr "Alan gizli"
+
+#: KDGanttViewSubwidgets.cpp:2569
+msgid "Legend: "
+msgstr "Alan: "
+
+#: KDGanttViewSubwidgets.cpp:2650
+msgid "Legend"
+msgstr "Alan"
+
+#: KDGanttViewSubwidgets.cpp:2698
+msgid "Task Name"
+msgstr "Görev Adı"
+
+#: KDGanttViewSubwidgets.cpp:2719
+msgid "No item Found"
+msgstr "Hiç öğe yok"
+
+#: KDGanttViewSubwidgets.cpp:3179 KDGanttViewSubwidgets.cpp:3187
+#: KDGanttViewSubwidgets.cpp:3196
+msgid "Summary"
+msgstr "Özet"
+
+#: KDGanttViewSubwidgets.cpp:3181 KDGanttViewSubwidgets.cpp:3189
+#: KDGanttViewSubwidgets.cpp:3198
+msgid "Event"
+msgstr "Olay"
+
+#: KDGanttViewSubwidgets.cpp:3183 KDGanttViewSubwidgets.cpp:3191
+#: KDGanttViewSubwidgets.cpp:3200
+msgid "Task"
+msgstr "Görev"
+
+#: KDGanttViewSubwidgets.cpp:3186
+msgid "New Root"
+msgstr "Yeni Kök"
+
+#: KDGanttViewSubwidgets.cpp:3194
+msgid "New Child"
+msgstr "Yeni Çocuk"
+
+#: KDGanttViewSubwidgets.cpp:3202
+msgid "New After"
+msgstr "Yeni Sonraki"
+
+#: KDGanttViewSubwidgets.cpp:3204
+msgid "As Root"
+msgstr "Kök Olarak"
+
+#: KDGanttViewSubwidgets.cpp:3206
+msgid "As Child"
+msgstr "Çocuk Olarak"
+
+#: KDGanttViewSubwidgets.cpp:3208
+msgid "After"
+msgstr "Sonra"
+
+#: KDGanttViewSubwidgets.cpp:3211
+msgid "Cut Item"
+msgstr "Öğeyi Kes"
+
+#: KDGanttViewSubwidgets.cpp:3392 KDGanttViewSubwidgets.cpp:3412
+#: KDGanttViewSubwidgets.cpp:3422 KDGanttViewSubwidgets.cpp:3424
+msgid "New Event"
+msgstr "Yeni Olay"
+
+#: KDGanttViewSubwidgets.cpp:3395 KDGanttViewSubwidgets.cpp:3415
+#: KDGanttViewSubwidgets.cpp:3428 KDGanttViewSubwidgets.cpp:3430
+msgid "New Summary"
+msgstr "Yeni Özet"
+
+#: KDGanttViewSubwidgets.cpp:3398 KDGanttViewSubwidgets.cpp:3418
+#: KDGanttViewSubwidgets.cpp:3434 KDGanttViewSubwidgets.cpp:3436
+msgid "New Task"
+msgstr "Yeni Görev"
+
+#. i18n: file itemAttributeDialog.ui line 16
+#: rc.cpp:3
+#, no-c-format
+msgid "Edit Item Attributes"
+msgstr "Öğe Özniteliklerini Düzenle"
+
+#. i18n: file itemAttributeDialog.ui line 47
+#: rc.cpp:6
+#, no-c-format
+msgid "Item name:"
+msgstr "Öğe adı:"
+
+#. i18n: file itemAttributeDialog.ui line 93
+#: rc.cpp:9
+#, no-c-format
+msgid "ShapeType:"
+msgstr "Kenarlık Tipi:"
+
+#. i18n: file itemAttributeDialog.ui line 101
+#: rc.cpp:12
+#, no-c-format
+msgid "Highlight color:"
+msgstr "Seçilmiş rengi:"
+
+#. i18n: file itemAttributeDialog.ui line 114
+#: rc.cpp:15
+#, no-c-format
+msgid "Lead"
+msgstr "Kurşun"
+
+#. i18n: file itemAttributeDialog.ui line 122
+#: rc.cpp:18
+#, no-c-format
+msgid "ShapeColor:"
+msgstr "Kenarlık rengi"
+
+#. i18n: file itemAttributeDialog.ui line 136
+#: rc.cpp:21 rc.cpp:45 rc.cpp:84
+#, no-c-format
+msgid "TriangleDown"
+msgstr "Aşağı üçgen"
+
+#. i18n: file itemAttributeDialog.ui line 141
+#: rc.cpp:24 rc.cpp:48 rc.cpp:87
+#, no-c-format
+msgid "TriangleUp"
+msgstr "Yukarı üçgen"
+
+#. i18n: file itemAttributeDialog.ui line 146
+#: rc.cpp:27 rc.cpp:51 rc.cpp:90
+#, no-c-format
+msgid "Diamond"
+msgstr "Elmas"
+
+#. i18n: file itemAttributeDialog.ui line 151
+#: rc.cpp:30 rc.cpp:54 rc.cpp:93
+#, no-c-format
+msgid "Square"
+msgstr "Kare"
+
+#. i18n: file itemAttributeDialog.ui line 156
+#: rc.cpp:33 rc.cpp:57 rc.cpp:96
+#, no-c-format
+msgid "Circle"
+msgstr "Çember"
+
+#. i18n: file itemAttributeDialog.ui line 176
+#: rc.cpp:36
+#, no-c-format
+msgid "Start"
+msgstr "Başlangıç"
+
+#. i18n: file itemAttributeDialog.ui line 192
+#: rc.cpp:42
+#, no-c-format
+msgid "Middle"
+msgstr "Orta"
+
+#. i18n: file itemAttributeDialog.ui line 230
+#: rc.cpp:60
+#, no-c-format
+msgid "End"
+msgstr "Bitiş"
+
+#. i18n: file itemAttributeDialog.ui line 251
+#: rc.cpp:63
+#, no-c-format
+msgid "Actual End"
+msgstr "Gerçek Son"
+
+#. i18n: file itemAttributeDialog.ui line 299
+#: rc.cpp:78
+#, no-c-format
+msgid "Date:"
+msgstr "Tarih:"
+
+#. i18n: file itemAttributeDialog.ui line 371
+#: rc.cpp:99
+#, no-c-format
+msgid "Time:"
+msgstr "Saat:"
+
+#. i18n: file itemAttributeDialog.ui line 426
+#: rc.cpp:102
+#, no-c-format
+msgid "Displayed text:"
+msgstr "Görüntülenen metin:"
+
+#. i18n: file itemAttributeDialog.ui line 463
+#: rc.cpp:105
+#, no-c-format
+msgid "Text color:"
+msgstr "Metin rengi:"
+
+#. i18n: file itemAttributeDialog.ui line 500
+#: rc.cpp:111
+#, no-c-format
+msgid "Priority:"
+msgstr "Öncelik"
+
+#. i18n: file itemAttributeDialog.ui line 533
+#: rc.cpp:114
+#, no-c-format
+msgid "Display subitems as group"
+msgstr "Alt öğeleri grup olarak göster"
+
+#~ msgid "Form1"
+#~ msgstr "Form1"
+
+#~ msgid "Minimum Start"
+#~ msgstr "Asgari Başlangıç"
+
+#~ msgid ":"
+#~ msgstr ":"
+
+#~ msgid "Maximum Start"
+#~ msgstr "Azami Başlangıç"
+
+#~ msgid "mode1"
+#~ msgstr "1.kip"
+
+#~ msgid "mode2"
+#~ msgstr "2.kip"
+
+#~ msgid "mode3"
+#~ msgstr "3.kip"
+
+#~ msgid "style1"
+#~ msgstr "1.stil"
+
+#~ msgid "style2"
+#~ msgstr "2.stil"
+
+#~ msgid "style3"
+#~ msgstr "3.stil"
+
+#~ msgid "Style:"
+#~ msgstr "Stil:"
+
+#~ msgid "Mode:"
+#~ msgstr "Kip:"
+
+#~ msgid "Height:"
+#~ msgstr "Yükseklik:"
+
+#~ msgid "Date/Time"
+#~ msgstr "Tarih/Zaman"
+
+#~ msgid "Min Start"
+#~ msgstr "Asg. Başlangıç"
+
+#~ msgid "Max Start"
+#~ msgstr "Azami Başlangıç"
+
+#~ msgid "Edit:"
+#~ msgstr "Düzenle:"
+
+#~ msgid "Select"
+#~ msgstr "Seç"
+
+#~ msgid "Unselect All"
+#~ msgstr "Hepsinin Seçimini Kaldır"
+
+#~ msgid "Zoom In +"
+#~ msgstr "Yakınlaş +"
+
+#~ msgid "Zoom Out -"
+#~ msgstr "Uzaklaş -"
+
+#~ msgid "Select Mode"
+#~ msgstr "Seçim Kipi"
+
+#~ msgid "Zoom Mode"
+#~ msgstr "Odaklama Kipi"
+
+#~ msgid "Move Mode"
+#~ msgstr "Hareket Kipi"
+
+#~ msgid "Configure Gantt..."
+#~ msgstr "Gantt'ı Yapılandır..."
+
+#~ msgid "Zoom all"
+#~ msgstr "Hepsine odaklan"
+
+#~ msgid "Select All"
+#~ msgstr "Hepsini Seç"

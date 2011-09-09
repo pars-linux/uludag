@@ -1,0 +1,311 @@
+# translation of katefiletemplates.po to
+# Copyright (C) 2004, 2005, 2007 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
+# Cemil MUTLU <mawilos@gmail.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: katefiletemplates\n"
+"POT-Creation-Date: 2007-10-02 01:15+0200\n"
+"PO-Revision-Date: 2007-05-16 20:01+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: filetemplates.cpp:135
+msgid "Any File..."
+msgstr "Herhangi Bir Dosya..."
+
+#: filetemplates.cpp:139
+msgid "&Use Recent"
+msgstr "Mevc&ut Olanı Kullan"
+
+#: filetemplates.cpp:251
+msgid "&Manage Templates..."
+msgstr "Şablo&nları Yönet..."
+
+#: filetemplates.cpp:255
+msgid "New From &Template"
+msgstr "Şablondan &Yeni"
+
+#: filetemplates.cpp:353
+msgid "Open as Template"
+msgstr "Şablon olarak Aç"
+
+#: filetemplates.cpp:384
+msgid ""
+"<qt>Error opening the file"
+"<br><strong>%1</strong>"
+"<br>for reading. The document will not be created.</qt>"
+msgstr ""
+"<qt>Dosya"
+"<br><strong>%1</strong>"
+"<br>okuma için açılamdı. Döküman oluşturulmayacak.</qt>"
+
+#: filetemplates.cpp:385 filetemplates.cpp:980
+msgid "Template Plugin"
+msgstr "Şablon Eklentisi"
+
+#: filetemplates.cpp:462
+#, c-format
+msgid "Untitled %1"
+msgstr "Adsız %1"
+
+#: filetemplates.cpp:539
+msgid "Manage File Templates"
+msgstr "Dosya Şablonlarını Yönet"
+
+#: filetemplates.cpp:556
+msgid "&Template:"
+msgstr "Şa&blon:"
+
+#: filetemplates.cpp:561
+msgid ""
+"<p>This string is used as the template's name and is displayed, for example, in "
+"the Template menu. It should describe the meaning of the template, for example "
+"'HTML Document'.</p>"
+msgstr ""
+"<p> Bu satır şablonun adını gösterir, örneğin Şablon menüsünde. Şablonun "
+"açıklaması olabilir örneğin 'HTML Dökümanı'.</p>"
+
+#: filetemplates.cpp:566
+msgid "Press to select or change the icon for this template"
+msgstr "Bu şablonun simgesini seçmek veya değiştirmek için tıklayın"
+
+#: filetemplates.cpp:568
+msgid "&Group:"
+msgstr "&Grup:"
+
+#: filetemplates.cpp:572
+msgid ""
+"<p>The group is used for chosing a submenu for the plugin. If it is empty, "
+"'Other' is used.</p>"
+"<p>You can type any string to add a new group to your menu.</p>"
+msgstr ""
+"<p>Grup eklenti için bir altmenü seçmek için kullanılır. Boş olursa, 'Diğer' "
+"kullanılır.</p>"
+"<p>Menünüze yeni bir grup eklemek için istediğiniz satırı girebilirsiniz.</p>"
+
+#: filetemplates.cpp:576
+msgid "Document &name:"
+msgstr "Döküma&n adı:"
+
+#: filetemplates.cpp:579
+msgid ""
+"<p>This string will be used to set a name for the new document, to display in "
+"the title bar and file list.</p>"
+"<p>If the string contains '%N', that will be replaced with a number increasing "
+"with each similarly named file.</p>"
+"<p> For example, if the Document Name is 'New shellscript (%N).sh', the first "
+"document will be named 'New shellscript (1).sh', the second 'New shellscipt "
+"(2).sh', and so on.</p>"
+msgstr ""
+"<p>Bu satır yeni döküman için kullanılacak ve başlık çubuğu ve dosya listesinde "
+"gösterilecek adını belirtir.</p>"
+"<p>Eğer bu satır '%N' içeriyorsa dosya adı aynı ismi taşıyan dosyadan bir "
+"numara büyük olarak adlandırılacaktır.</p>"
+"<p>Örneğin, eğer Döküman Adı 'Yeni kabuk komutu (%N).sh' ise, ilk döküman 'Yeni "
+"kabuk komutu (1).sh', ikinci 'Yeni kabuk komutu (2).sh' ve sonrası şeklinde "
+"adlandırılır.</p>"
+
+#: filetemplates.cpp:587
+msgid "&Highlight:"
+msgstr "Renklend&irme:"
+
+#: filetemplates.cpp:588
+msgid "None"
+msgstr "Yok"
+
+#: filetemplates.cpp:590
+msgid ""
+"<p>Select the highlight to use for the template. If 'None' is chosen, the "
+"property will not be set.</p>"
+msgstr ""
+"<p>Bu şablon için kullanılacak renklendirmeyi seçin. 'Yok' seçilirse özellik "
+"kapatılır.</p>"
+
+#: filetemplates.cpp:593
+msgid "&Description:"
+msgstr "A&çıklama:"
+
+#: filetemplates.cpp:596
+msgid ""
+"<p>This string is used, for example, as context help for this template (such as "
+"the 'whatsthis' help for the menu item.)</p>"
+msgstr ""
+"<p>Bu satır bu şablon için yardım olarak kullanılabilir (örneğin menü "
+"öğelerinde bulunan 'bunedir' yardımı.)</p>"
+
+#: filetemplates.cpp:600
+msgid "&Author:"
+msgstr "Y&azar:"
+
+#: filetemplates.cpp:603
+msgid ""
+"<p>You can set this if you want to share your template with other users.</p>"
+"<p>the recommended form is like an Email address: 'Anders Lund "
+"&lt;anders@alweb.dk&gt;'</p>"
+msgstr ""
+"<p>Bu şablonu diğer kullanıcılarla paylaşmak için bunu ayarlayabilirsiniz.</p> "
+"<p>tavsiye edilen biçim email adresi gibidir. 'Adil YILDIZ "
+"&lt;adil_yildiztr@yahoo.com&gt;'</p>"
+
+#: filetemplates.cpp:675
+msgid ""
+"<p>If you want to base this template on an existing file or template, select "
+"the appropriate option below.</p>"
+msgstr ""
+"<p> Eğer bu şablonun mevcut bir dosya ve şablondan temel alacaksanız, alttaki "
+"ilgili seçeneği seçin.</p>"
+
+#: filetemplates.cpp:682
+msgid "Start with an &empty document"
+msgstr "Boş bir döküman il&e başla"
+
+#: filetemplates.cpp:687
+msgid "Use an existing file:"
+msgstr "Mevcut bir dosya kullan:"
+
+#: filetemplates.cpp:695
+msgid "Use an existing template:"
+msgstr "Mevcut bir şablon kullan:"
+
+#: filetemplates.cpp:725
+msgid "Choose Template Origin"
+msgstr "Şablon Kaynağını Seç"
+
+#: filetemplates.cpp:730
+msgid "Edit Template Properties"
+msgstr "Şablon Özelliklerini Düzenle"
+
+#: filetemplates.cpp:750
+msgid ""
+"<p>Choose a location for the template. If you store it in the template "
+"directory, it will automatically be added to the template menu.</p>"
+msgstr ""
+"<p>Şablon için bir konum seçin. Eğer şablon dizinine saklarsanız, şablon "
+"menüsüne otomatik olarak eklenecektir.</p>"
+
+#: filetemplates.cpp:758
+msgid "Template directory"
+msgstr "Şablon dizini"
+
+#: filetemplates.cpp:765
+msgid "Template &file name:"
+msgstr "Şablon d&osya adı:"
+
+#: filetemplates.cpp:770
+msgid "Custom location:"
+msgstr "Özel yer:"
+
+#: filetemplates.cpp:784
+msgid "Choose Location"
+msgstr "Yer Seç"
+
+#: filetemplates.cpp:793
+msgid ""
+"<p>You can replace certain strings in the text with template macros."
+"<p>If any of the data below is incorrect or missing, edit the data in the KDE "
+"email information."
+msgstr ""
+"<p>Metindeki sabit satırları şablon makroları ile değiştirebilirsiniz. "
+"<p>Alttaki verilerden herhangi bir eksikse veya yanlışsa, KDE email bilgisinde "
+"veriyi düzenleyin."
+
+#: filetemplates.cpp:797
+msgid "Replace full name '%1' with the '%{fullname}' macro"
+msgstr "'%1' tam adını %{fullname} makrosu ile değiştir"
+
+#: filetemplates.cpp:802
+msgid "Replace email address '%1' with the '%email' macro"
+msgstr "Email adresi '%1' i '%email' makrosu ile değiştir"
+
+#: filetemplates.cpp:809
+msgid "Autoreplace Macros"
+msgstr "Makroları Otomatik Değiştir"
+
+#: filetemplates.cpp:816
+msgid ""
+"<p>The template will now be created and saved to the chosen location. To "
+"position the cursor put a caret ('^') character where you want it in files "
+"created from the template.</p>"
+msgstr ""
+"<p>Şablon şimdi oluşturulup seçili yere kaydediliecek. Şablondan oluşturulacak "
+"dosyalarda imlecin yerini belirmek için üs ('^') karakteri kullanın.</p>"
+
+#: filetemplates.cpp:822
+msgid "Open the template for editing"
+msgstr "Şablonu düzenlemek için aç"
+
+#: filetemplates.cpp:828
+msgid "Create Template"
+msgstr "Şablon Oluştur"
+
+#: filetemplates.cpp:923
+msgid ""
+"<p>The file "
+"<br><strong>'%1'</strong>"
+"<br> already exists; if you do not want to overwrite it, change the template "
+"file name to something else."
+msgstr ""
+"<p>Dosya "
+"<br><strong>'%1'</strong>"
+"<br> mevcut, üstüne yazmak istemiyorsanız, şablon dosya adını başka birşeyle "
+"değiştirin."
+
+#: filetemplates.cpp:926
+msgid "File Exists"
+msgstr "Dosya Mevcut"
+
+#: filetemplates.cpp:926
+msgid "Overwrite"
+msgstr "Üstüne yaz"
+
+#: filetemplates.cpp:978
+msgid ""
+"<qt>Error opening the file"
+"<br><strong>%1</strong>"
+"<br>for reading. The document will not be created</qt>"
+msgstr ""
+"<qt>Dosya"
+"<br><strong>%1</strong> "
+"<br>okumak için açılamıyor. Döküman oluşturulmayacak</qt>"
+
+#: filetemplates.cpp:1057
+msgid ""
+"Unable to save the template to '%1'.\n"
+"\n"
+"The template will be opened, so you can save it from the editor."
+msgstr ""
+"Şablon '%1'e kaydedilemiyor.\n"
+"\n"
+"Şablon açılabilir, dolayısıyla düzenleyiciyi kullanarak kaydedebilirsiniz."
+
+#: filetemplates.cpp:1059
+msgid "Save Failed"
+msgstr "Kaydetme Başarısız"
+
+#: filetemplates.cpp:1109
+msgid "Template"
+msgstr "Şablon"
+
+#: filetemplates.cpp:1113
+msgid "New..."
+msgstr "Yeni..."
+
+#: filetemplates.cpp:1117
+msgid "Edit..."
+msgstr "Düzenle..."
+
+#: filetemplates.cpp:1125
+msgid "Upload..."
+msgstr "Yükleniyor..."
+
+#: filetemplates.cpp:1129
+msgid "Download..."
+msgstr "İndiriliyor..."

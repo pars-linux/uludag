@@ -1,0 +1,893 @@
+# translation of kcmbackground.po to Turkish
+# Copyright (C) 2003, 2004, 2007 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2002,2003, 2004.
+# Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmbackground\n"
+"POT-Creation-Date: 2008-07-08 01:18+0200\n"
+"PO-Revision-Date: 2007-07-05 12:07+0300\n"
+"Last-Translator: Serdar Soytetir\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Görkem Çetin"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "gorkem@kde.org"
+
+#: bgadvanced.cpp:70
+msgid "Advanced Background Settings"
+msgstr "Gelişmiş Arkaplan Ayarları"
+
+#: bgadvanced.cpp:100
+msgid "Unlimited"
+msgstr "Sınırsız"
+
+#: bgadvanced.cpp:101
+msgid " KB"
+msgstr " KB"
+
+#: bgadvanced.cpp:261
+msgid "%1 min."
+msgstr "min %1."
+
+#: bgadvanced.cpp:298
+msgid ""
+"Unable to remove the program: the program is global and can only be removed by "
+"the system administrator."
+msgstr ""
+"Bu program silinemedi. Program evrensel ve sadece sistem yöneticisi tarafından "
+"silinebilir."
+
+#: bgadvanced.cpp:300
+msgid "Cannot Remove Program"
+msgstr "Program Kaldırılamıyor"
+
+#: bgadvanced.cpp:304
+msgid "Are you sure you want to remove the program `%1'?"
+msgstr "'%1' programını kaldırmak istediğinize emin misiniz?"
+
+#: bgadvanced.cpp:306
+msgid "Remove Background Program"
+msgstr "Arkaplan Programını Sil"
+
+#: bgadvanced.cpp:391
+msgid "Configure Background Program"
+msgstr "Arkaplan Programını Yapılandır"
+
+#: bgadvanced.cpp:399
+msgid "&Name:"
+msgstr "İ&sim:"
+
+#: bgadvanced.cpp:405
+msgid "Co&mment:"
+msgstr "&Açıklama:"
+
+#: bgadvanced.cpp:411
+msgid "Comman&d:"
+msgstr "&Komut:"
+
+#: bgadvanced.cpp:417
+msgid "&Preview cmd:"
+msgstr "Ö&nizleme komutu:"
+
+#: bgadvanced.cpp:423
+msgid "&Executable:"
+msgstr "Ç&alıştırılabilir:"
+
+#: bgadvanced.cpp:429
+msgid "&Refresh time:"
+msgstr "&Tazeleme aralığı:"
+
+#: bgadvanced.cpp:434 bgwallpaper.cpp:107
+msgid " min"
+msgstr " dak"
+
+#: bgadvanced.cpp:441
+msgid "New Command"
+msgstr "Yeni Komut"
+
+#: bgadvanced.cpp:444
+msgid "New Command <%1>"
+msgstr "Yeni Komut <%1>"
+
+#: bgadvanced.cpp:471
+msgid ""
+"You did not fill in the `Name' field.\n"
+"This is a required field."
+msgstr ""
+"'İsim' alanını doldurmadınız.\n"
+"Bu gerekli bir alan."
+
+#: bgadvanced.cpp:479
+msgid ""
+"There is already a program with the name `%1'.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"'%1' isimli bir program zaten mevcut.\n"
+"Üstüne yazmak ister misiniz?"
+
+#: bgadvanced.cpp:480
+msgid "Overwrite"
+msgstr "Üzerine Yaz"
+
+#: bgadvanced.cpp:486
+msgid ""
+"You did not fill in the `Executable' field.\n"
+"This is a required field."
+msgstr ""
+"'Çalıştırılabilir' alanını doldurmadınız.\n"
+"Bu gerekli bir alan."
+
+#: bgadvanced.cpp:491
+msgid ""
+"You did not fill in the `Command' field.\n"
+"This is a required field."
+msgstr ""
+"'Komut' alanını doldurmadınız.\n"
+"Bu gerekli bir alan."
+
+#: bgdialog.cpp:131
+msgid "Open file dialog"
+msgstr "Dosya aç penceresi"
+
+#: bgdialog.cpp:368
+msgid ""
+"<h1>Background</h1> This module allows you to control the appearance of the "
+"virtual desktops. KDE offers a variety of options for customization, including "
+"the ability to specify different settings for each virtual desktop, or a common "
+"background for all of them."
+"<p> The appearance of the desktop results from the combination of its "
+"background colors and patterns, and optionally, wallpaper, which is based on "
+"the image from a graphic file."
+"<p> The background can be made up of a single color, or a pair of colors which "
+"can be blended in a variety of patterns. Wallpaper is also customizable, with "
+"options for tiling and stretching images. The wallpaper can be overlaid "
+"opaquely, or blended in different ways with the background colors and patterns."
+"<p> KDE allows you to have the wallpaper change automatically at specified "
+"intervals of time. You can also replace the background with a program that "
+"updates the desktop dynamically. For example, the \"kdeworld\" program shows a "
+"day/night map of the world which is updated periodically."
+msgstr ""
+"<h1>Arkaplan</h1> Bu modül sanal masaüstlerinin görünümünü kontrol etmenize "
+"olanak tanır. KDE özelleştime için birçok seçenek sunar, seçeneklere her "
+"masaüstü için farklı ayarlar kullanılması, ya da tümü için aynı arkaplanın "
+"kullanılması dahildir."
+"<p> Masaüstünün görünümü arkaplan renkleri ve desenlerin ve seçimli olarak "
+"duvar kağıdının kombinasyonu olarak ortaya çıkar."
+"<p> Arkaplan tek bir renkten ya da birçok desen içerisinden bir desenle "
+"karıştırılmış iki renkten oluşabilir. Duvar kağıdı da aynı şekilde resimlerin "
+"kaplanması ya da büyütülmesi gibi seçenekler ile özelleştirilebilir. Duvar "
+"kağıdı normal olarak , ya da farklı yollarla arkaplan renkleri ve desenleri ile "
+"karıştırılarak uygulanabilir."
+"<p> KDE duvar kağıdının otomatik olarak belirli aralıklarla değiştirilebilmesi "
+"olanağını verir. Aynı zamanda arkaplan olarak masaüstünü güncelleyen bir "
+"program kullanabilirsiniz. Örneğin \"kdeworld\" programı dünya haritasını "
+"gece/gündüz olarak gösterir."
+
+#: bgdialog.cpp:424
+#, c-format
+msgid "Screen %1"
+msgstr "Ekran %1"
+
+#: bgdialog.cpp:427
+msgid "Single Color"
+msgstr "Tek Renk"
+
+#: bgdialog.cpp:428
+msgid "Horizontal Gradient"
+msgstr "Yatay Eğim"
+
+#: bgdialog.cpp:429
+msgid "Vertical Gradient"
+msgstr "Dikey Eğim"
+
+#: bgdialog.cpp:430
+msgid "Pyramid Gradient"
+msgstr "Piramit Karışım"
+
+#: bgdialog.cpp:431
+msgid "Pipecross Gradient"
+msgstr "Çapraz Gradyan Eğim"
+
+#: bgdialog.cpp:432
+msgid "Elliptic Gradient"
+msgstr "Eliptik Eğim"
+
+#: bgdialog.cpp:447
+msgid "Centered"
+msgstr "Ortala"
+
+#: bgdialog.cpp:448
+msgid "Tiled"
+msgstr "Kapla"
+
+#: bgdialog.cpp:449
+msgid "Center Tiled"
+msgstr "Kaplayarak Ortala"
+
+#: bgdialog.cpp:450
+msgid "Centered Maxpect"
+msgstr "Uygun Ortala"
+
+#: bgdialog.cpp:451
+msgid "Tiled Maxpect"
+msgstr "Uygun Ortala"
+
+#: bgdialog.cpp:452
+msgid "Scaled"
+msgstr "Ölçeklendirilmiş"
+
+#: bgdialog.cpp:453
+msgid "Centered Auto Fit"
+msgstr "Ortalı Otomatik Döşeli"
+
+#: bgdialog.cpp:454
+msgid "Scale & Crop"
+msgstr "Boyutlandır ve Kırp"
+
+#: bgdialog.cpp:457
+msgid "No Blending"
+msgstr "Karıştırma Yok"
+
+#: bgdialog.cpp:458
+msgid "Flat"
+msgstr "Düz"
+
+#: bgdialog.cpp:461
+msgid "Pyramid"
+msgstr "Piramit"
+
+#: bgdialog.cpp:462
+msgid "Pipecross"
+msgstr "Çapraz Çizgi"
+
+#: bgdialog.cpp:463
+msgid "Elliptic"
+msgstr "Eliptik"
+
+#: bgdialog.cpp:464
+msgid "Intensity"
+msgstr "Yoğunluk"
+
+#: bgdialog.cpp:465
+msgid "Saturation"
+msgstr "Doygunluk"
+
+#: bgdialog.cpp:466
+msgid "Contrast"
+msgstr "Zıtlık"
+
+#: bgdialog.cpp:467
+msgid "Hue Shift"
+msgstr "Çapraz Karışım"
+
+#: bgdialog.cpp:616
+msgid "Select Wallpaper"
+msgstr "Duvar Kağıdını Seçin"
+
+#. i18n: file bgdialog_ui.ui line 300
+#: bgdialog.cpp:1218 rc.cpp:152
+#, no-c-format
+msgid "Get New Wallpapers"
+msgstr "Yeni Duvar Kağıdı Al"
+
+#: bgmonitor.cpp:165
+msgid ""
+"This picture of a monitor contains a preview of what the current settings will "
+"look like on your desktop."
+msgstr ""
+"Bu ekran resmi güncel ayarların masaüstünde nasıl görüntüleneceğini gösterir."
+
+#: bgwallpaper.cpp:99
+msgid "Setup Slide Show"
+msgstr "Slayt Gösterisini Ayarla"
+
+#: bgwallpaper.cpp:156
+msgid "Select Image"
+msgstr "Resmi Seç"
+
+#: main.cpp:71
+msgid "kcmbackground"
+msgstr "kcmbackground"
+
+#: main.cpp:71
+msgid "KDE Background Control Module"
+msgstr "KDE Arkaplan Kontrol Modülü"
+
+#: main.cpp:73
+msgid "(c) 1997-2002 Martin R. Jones"
+msgstr "(c) 1997-2002 Martin R. Jones"
+
+#. i18n: file bgadvanced_ui.ui line 27
+#: rc.cpp:3
+#, no-c-format
+msgid "Background Program"
+msgstr "Arkaplan Programı"
+
+#. i18n: file bgadvanced_ui.ui line 44
+#: rc.cpp:6 rc.cpp:245
+#, no-c-format
+msgid "&Add..."
+msgstr "&Ekle..."
+
+#. i18n: file bgadvanced_ui.ui line 50
+#: rc.cpp:9
+#, no-c-format
+msgid ""
+"<qt>\n"
+"<p>Click here if you want to add a program to the listbox. This button opens a "
+"dialog where you are asked to give details about the program you want to run. "
+"To successfully add a program, you must know if it is compatible, the name of "
+"the executable file and, if necessary, its options.</p>\n"
+"<p>You usually can get the available options to a suitable program by typing in "
+"a terminal emulator the name of the executable file plus --help (foobar "
+"--help).</p>\n"
+"</qt>"
+msgstr ""
+"<qt>\n"
+"<p>Listekutusuna bir program eklemek istiyorsanız buraya tıklayın. Bu düğme "
+"çalıştırmak istediğiniz program hakkında detayları isteyen bir pencere açar. "
+"Düzgün biçimde bir program eklemek için uygunluğunu, çalıştırılabilir dosya "
+"adını ve gerekirse seçeneklerini bilmelisiniz.</p>\n"
+"<p> Genellikle birçok program hakkındaki yardımı terminalde çalıştırılabilir "
+"dosya adı artı --help yazdığınızda elde edebilirsiniz (foobar --help).</p>\n"
+"</qt>"
+
+#. i18n: file bgadvanced_ui.ui line 64
+#: rc.cpp:18
+#, no-c-format
+msgid ""
+"Click here to remove programs from this list. Please note that it does not "
+"remove the program from your system, it only removes it from the available "
+"options in the background drawing programs list."
+msgstr ""
+"Listeden programları silmek için buraya tıklayın. Bu program sistemden "
+"silinmeyecek, sadece kullanılabilir programlar listesinden kaldırılacaktır."
+
+#. i18n: file bgadvanced_ui.ui line 75
+#: rc.cpp:21
+#, no-c-format
+msgid "&Modify..."
+msgstr "&Değiştir..."
+
+#. i18n: file bgadvanced_ui.ui line 81
+#: rc.cpp:24
+#, no-c-format
+msgid ""
+"<qt>\n"
+"<p>Click here to modify the programs options. You usually can get the available "
+"options to a suitable program by typing in a terminal emulator the name of the "
+"executable file plus --help. (example: kwebdesktop --help).</p>\n"
+"<p>One useful example is the program kwebdesktop. It draws a web page on the "
+"background of your desktop.  You can use this program by selecting it on the "
+"listbox on the right, but it will draw a predefined web page. To change the web "
+"page it renders, select the kwebdesktop program on the listbox, then click "
+"here. A dialog will appear, allowing you to change the web page by replacing "
+"the old address (URL) with a new one.</p>\n"
+"</qt>"
+msgstr ""
+"<qt>\n"
+"<p>Programların seçeneklerini değiştirmek için buraya tıklayın. Gerekli "
+"seçenekleri almak için terminalde çalıştırılabilir dosya adı artı --help "
+"yazabilirsiniz.</p>\n"
+"<p>Kullanılabilir örnek olarak kwebdesktop'ı alalım. Masaüstünüzde bir web "
+"sayfasını gösteriri. Bu programı sağdaki listeden seçerek kullanabilrisiniz, "
+"fakat ön tanımlı bir web sayfası gösterir. Göstereceği sayfayı değiştirmek için "
+"kwebdesktop programını listeden seçin ve buraya tıklayın. Bir pencere görünür "
+"ve eski adresi yenisi ile değiştirmemize izin verir.</p>\n"
+"</qt>"
+
+#. i18n: file bgadvanced_ui.ui line 104
+#: rc.cpp:30
+#, no-c-format
+msgid "Program"
+msgstr "Program"
+
+#. i18n: file bgadvanced_ui.ui line 115
+#: rc.cpp:33
+#, no-c-format
+msgid "Comment"
+msgstr "Açıklama"
+
+#. i18n: file bgadvanced_ui.ui line 126
+#: rc.cpp:36
+#, no-c-format
+msgid "Refresh"
+msgstr "Tazeleme"
+
+#. i18n: file bgadvanced_ui.ui line 156
+#: rc.cpp:39
+#, no-c-format
+msgid ""
+"<qt>\n"
+"<p>Select from this listbox the program you want to use to draw your desktop "
+"background.</p>\n"
+"<p>The <b>Program</b> column shows the name of the program."
+"<br>\n"
+"The <b>Comment</b> column brings a short description."
+"<br>\n"
+"The <b>Refresh</b> column indicates the time interval between redraws of the "
+"desktop.</p>\n"
+"<p>The <b>K Web Desktop</b> program (kwebdesktop) is worth noting: it draws a "
+"specified page of the web in your desktop. You can modify it, and the webpage "
+"it draws by selecting it here, then clicking on the <b>Modify</b> button."
+"<br>\n"
+"You can also add new compliant programs. To do that, click on the <b>Add</b> "
+"button."
+"<br>\n"
+"You can also remove programs from this list clicking on the <b>Remove</b> "
+"button. Please note that it does not remove the program from your system, it "
+"only removes it from the available options in this listbox.</p>\n"
+"</qt>"
+msgstr ""
+"<qt>\n"
+"<p>Bu listeden masaüstü arkaplanını boyamak istediğiniz programı seçin</p>\n"
+"<p><b>Program</b> sütunu programın adını belirtir."
+"<br>\n"
+"The <b>Tanım</b> sütunu kısa tanımını belirtir."
+"<br>\n"
+"The <b>Yenileme</b> sütunu masaüstünün yeniden boyanma zamanlanmasını "
+"belirtir.</p>\n"
+"<p><b>K Web Masaüstü</b> programı (kwebdesktop) : seçili web sayfasını ekrana "
+"getirmek dışında birşey yapmaz. <b>Değiştir</b> düğmesine basarak kolaylık web "
+"sayfasını değiştirebilrisiniz."
+"<br>\n"
+"<b>Ekle</b> düğmesine basarak yeni uyumlu programlar ekleyebilirsiniz."
+"<br>\n"
+"Ayrıca programları listeden <b>Kaldır</b> düğmesini kullanarak "
+"kaldırabilirsiniz. Bu işlem programı sisteminizden kaldırmaz sadece bu "
+"listekutusundan kaldırır.</p>\n"
+"</qt>"
+
+#. i18n: file bgadvanced_ui.ui line 164
+#: rc.cpp:50
+#, no-c-format
+msgid "Use the following program for drawing the background:"
+msgstr "Arkaplan resmini çizmek için aşağıdaki programı kullan:"
+
+#. i18n: file bgadvanced_ui.ui line 167
+#: rc.cpp:53
+#, no-c-format
+msgid ""
+"Check here if you want to allow a program to draw your desktop background. "
+"Below you can find the list of programs currently available for drawing the "
+"background. You may use one of the available programs, add new ones or modify "
+"the existing ones to fit your needs."
+msgstr ""
+"Bir programın masaüstünü çizmesini istiyorsanız burayı tıklayın. Aşağıda halen "
+"sistemde bu amaçla kullanılabilecek programların bir listesini bulabilirsiniz. "
+"Mevcut bir programı kullanabilir, yeni program ekleyebilir ya da listedeki "
+"programlardan bir tanesini ihtiyaçlarınızı karşılayacak şekilde "
+"değiştirebilirsiniz."
+
+#. i18n: file bgadvanced_ui.ui line 177
+#: rc.cpp:56
+#, no-c-format
+msgid "Background Icon Text"
+msgstr "Arkaplan Simge Yazısı"
+
+#. i18n: file bgadvanced_ui.ui line 199
+#: rc.cpp:59 rc.cpp:65
+#, no-c-format
+msgid "Click here to change the color of the desktop font."
+msgstr "Masaüstü yazıtipinin rengini değiştirmek için burayı tıklayın."
+
+#. i18n: file bgadvanced_ui.ui line 207
+#: rc.cpp:62
+#, no-c-format
+msgid "&Text color:"
+msgstr "&Metin rengi:"
+
+#. i18n: file bgadvanced_ui.ui line 244
+#: rc.cpp:68
+#, no-c-format
+msgid ""
+"Click here to select the solid background color. Choose a different color from "
+"the background text color to assure readability."
+msgstr ""
+"Arkaplan rengini değiştirmek için burayı tıklayın. Okunabilirliği artırmak için "
+"masaüstünde kullanılan yazıtipi renginden farklı bir renk kullanmanızı "
+"öneriyoruz."
+
+#. i18n: file bgadvanced_ui.ui line 252
+#: rc.cpp:71
+#, no-c-format
+msgid "&Use solid color behind text:"
+msgstr "&Metnin arkasında renk kullan:"
+
+#. i18n: file bgadvanced_ui.ui line 255
+#: rc.cpp:74
+#, no-c-format
+msgid ""
+"Check here if you want to use a solid background color. This is useful to "
+"ensure that the desktop text will be identifiable against all background colors "
+"and wallpapers, or in other words, that a background or wallpaper will not make "
+"a desktop text of a similar color difficult to read."
+msgstr ""
+"Eğer sabit bir arkaplan rengi kullanmak istiyorsanız burayı tıklayın. Bu sayede "
+"masaüstü metin rengi her durumda okunabilir olacaktır."
+
+#. i18n: file bgadvanced_ui.ui line 263
+#: rc.cpp:77
+#, no-c-format
+msgid "&Enable shadow"
+msgstr "&Gölge kullan"
+
+#. i18n: file bgadvanced_ui.ui line 266
+#: rc.cpp:80
+#, no-c-format
+msgid ""
+"Check here to enable a shadow outline around the desktop font. This also "
+"improves the readability of the desktop text against backgrounds of a similar "
+"color."
+msgstr ""
+"Masaüstü yazıtipi etrafında gölgeleme oluşturmak için burayı tıklayın. Bu "
+"sayede masaüstündeki tüm metinler farklı arkaplan renklerine karşı daha "
+"okunaklı olacaktır."
+
+#. i18n: file bgadvanced_ui.ui line 274
+#: rc.cpp:83
+#, no-c-format
+msgid "&Lines for icon text:"
+msgstr "Simge metni için satır&lar:"
+
+#. i18n: file bgadvanced_ui.ui line 280
+#: rc.cpp:86 rc.cpp:89
+#, no-c-format
+msgid ""
+"Choose here the maximum number of text lines below an icon on the desktop. "
+"Longer text will be truncated at the end of the last line."
+msgstr ""
+"Masaüstündeki simgelerin altında görüntülenecek azami metin satır miktarını "
+"buradan seçin. Uzun metinler son satırın sonunda gövdelenecektir."
+
+#. i18n: file bgadvanced_ui.ui line 305
+#: rc.cpp:92
+#, no-c-format
+msgid "Auto"
+msgstr "Otomatik"
+
+#. i18n: file bgadvanced_ui.ui line 314
+#: rc.cpp:95 rc.cpp:101
+#, no-c-format
+msgid ""
+"Choose here the maximum width of text lines (in pixel) below an icon on the "
+"desktop. If set to 'Auto' a default width based on the current font is used."
+msgstr ""
+"Masaüstündeki simgelerin altında görüntülenecek azami metin satır miktarını "
+"buradan seçin. Otomatik seçili ise mevcut yazıtipine göre öntanımlı genişlik "
+"kullanılacaktır."
+
+#. i18n: file bgadvanced_ui.ui line 322
+#: rc.cpp:98
+#, no-c-format
+msgid "&Width for icon text:"
+msgstr "Simge me&tni için genişlik:"
+
+#. i18n: file bgadvanced_ui.ui line 338
+#: rc.cpp:104
+#, no-c-format
+msgid "Memory Usage"
+msgstr "Bellek Kullanımı"
+
+#. i18n: file bgadvanced_ui.ui line 352
+#: rc.cpp:107
+#, no-c-format
+msgid "Size of background cache:"
+msgstr "Arkaplan önbelleği boyu:"
+
+#. i18n: file bgadvanced_ui.ui line 355
+#: rc.cpp:110 rc.cpp:116
+#, no-c-format
+msgid ""
+"In this box you can enter how much memory KDE should use for caching the "
+"background(s). If you have different backgrounds for the different desktops "
+"caching can make switching desktops smoother at the expense of higher memory "
+"use."
+msgstr ""
+"Bu kutuda KDE'nin arkaplanlar için ne kadar ön bellek kullanacağını "
+"belirtebilirsiniz. Farklı masaüstleri için farklı arkaplan seçenekleriniz varsa "
+"ön belleğe alma yüksek hafıza kullanımında masaüstü geçişlerini daha "
+"hızlandırır."
+
+#. i18n: file bgadvanced_ui.ui line 363
+#: rc.cpp:113
+#, no-c-format
+msgid " k"
+msgstr " k"
+
+#. i18n: file bgdialog_ui.ui line 36
+#: rc.cpp:119
+#, no-c-format
+msgid "Setting for &desktop:"
+msgstr "&Masaüstü için ayarlar:"
+
+#. i18n: file bgdialog_ui.ui line 42
+#: rc.cpp:122 rc.cpp:128
+#, no-c-format
+msgid ""
+"Choose the desktop you wish to configure the background for from this list. If "
+"you want the same background settings to be applied to all desktops select the "
+"\"All Desktops\" option."
+msgstr ""
+"Arkaplanını düzenlemek istediğiniz masaüstünü seçiniz. Eğer aynı arkaplanın "
+"bütün masaüstlerine uygulanmasını istiyorsanız, \"Ortak Arkaplan\" seçeneğini "
+"işaretleyin."
+
+#. i18n: file bgdialog_ui.ui line 48
+#: rc.cpp:125
+#, no-c-format
+msgid "All Desktops"
+msgstr "Tüm Masaüstleri"
+
+#. i18n: file bgdialog_ui.ui line 72
+#: rc.cpp:131
+#, no-c-format
+msgid "Across All Screens"
+msgstr "Tüm Ekranlara"
+
+#. i18n: file bgdialog_ui.ui line 77
+#: rc.cpp:134
+#, no-c-format
+msgid "On Each Screen"
+msgstr "Her Ekran Üzerinde"
+
+#. i18n: file bgdialog_ui.ui line 95
+#: rc.cpp:137
+#, no-c-format
+msgid ""
+"Choose the screen you wish to configure the background for from this list."
+msgstr ""
+"Listedekilerden birini seçerek arkaplanını değiştirmek istediğiniz ekranı "
+"seçin."
+
+#. i18n: file bgdialog_ui.ui line 184
+#: rc.cpp:140
+#, no-c-format
+msgid "Identify Screens"
+msgstr "Ekranları Tanımla"
+
+#. i18n: file bgdialog_ui.ui line 187
+#: rc.cpp:143
+#, no-c-format
+msgid "Click this button to show the identifying number for each screen."
+msgstr ""
+"Her bir ekran için tanımlama numarasını göstermek için bu düğmeye tıklayın."
+
+#. i18n: file bgdialog_ui.ui line 242
+#: rc.cpp:146
+#, no-c-format
+msgid "Advanced Options"
+msgstr "Gelişmiş Seçenekler"
+
+#. i18n: file bgdialog_ui.ui line 245
+#: rc.cpp:149
+#, no-c-format
+msgid ""
+"Click this button to set the icon text colors and shadow, set up a program to "
+"run for the background picture or control the size of the background cache."
+msgstr ""
+"Simge metinlerinin rengini ve gölgesini, masaüstü resimlerini ve masaüstü "
+"önbellek ayarlarını yapmak için bu düğmeyi tıklayın."
+
+#. i18n: file bgdialog_ui.ui line 303
+#: rc.cpp:155
+#, no-c-format
+msgid ""
+"Click this button to give you a list of new wallpapers to download from the "
+"Internet."
+msgstr ""
+"Bu düğmeye basılınca Internetten indirilmek üzere yeni duvar kağıtlarının "
+"listesini gösterir."
+
+#. i18n: file bgdialog_ui.ui line 361
+#: rc.cpp:161
+#, no-c-format
+msgid "Posi&tion:"
+msgstr "&Konum:"
+
+#. i18n: file bgdialog_ui.ui line 376
+#: rc.cpp:164 rc.cpp:206
+#, no-c-format
+msgid ""
+"<qt>You can choose here how a background picture is shown on the desktop:\n"
+"<ul>\n"
+"<li><em>Centered:</em> Center the picture on the desktop.</li>\n"
+" "
+"<li><em>Tiled:</em> Tile the picture beginning at the top left of the desktop, "
+"so the desktop is totally covered up.</li>\n"
+"<li><em>Center Tiled:</em> Center the picture on the desktop and then tile "
+"around it so that the background is totally covered up.</li>\n"
+"<li><em>Centered Maxpect:</em> Magnify the picture without distorting it until "
+"it fills either the width or height of the desktop, and then center it on the "
+"desktop.</li>\n"
+"<li><em>Scaled:</em> Magnify the picture, until the entire desktop is covered. "
+"This may result in some distortion of the picture.</li>\n"
+"<li><em>Centered Auto Fit:</em> If the picture fits the desktop this mode works "
+"like the Centered option. If the picture is larger than the desktop it is "
+"scaled down to fit while keeping the aspect ratio.</li>\n"
+"<li><em>Scale and Crop:</em> Magnify the picture without distorting it until it "
+"fills both the width and height of the desktop (cropping the picture if "
+"necessary), and then center it on the desktop.</li>\n"
+"</ul></qt>"
+msgstr ""
+"<qt>Duvar kağıdını görüntülemek için aşağıdaki yöntemlerden birini "
+"kullanabilirsiniz:\n"
+"<ul>\n"
+"<li><em>Ortala:</em> Duvar kağıdını masaüstünde ortala.</li>\n"
+" "
+"<li><em>Kapla:</em> Sol üstten başlayarak grafiği masaüstüne kapla, böylelikle "
+"masaüstü tümüyle kaplanmış olacaktır.</li>\n"
+"<li><em> Ortalayarak kapla:</em> Grafiği masaüstünde ortala, ve diğer kısımları "
+"kapla.</li>\n"
+"<li><em> Uygun Ortala: </em> Grafiği doldurduğu alanı yok etmeden büyüt, ve "
+"masaüstünde ortala.</li>\n"
+"<li><em>Ölçeklendir: Eğer gerekli ise grafiği bozarak da olsa, masaüstünü "
+"kaplayıncaya kadar büyüt.</li>\n"
+"<li><em>Ortalı otomatik döşe</em>: Duvar kağıdı masaüstüne uyarsa, Ortala "
+"benzeri bir görünüm oluşur. Eğer duvar kağıdı masaüstünden büyükse masaüstüne "
+"uygun şekilde boyutlandırılır.</li>\n"
+"<li><em>Boyutlandır ve Kırp</em>:Resmin ölçeğini bozmadan masaüstünü "
+"ortalayacak ve tüm ekranı kaplayacak şekilde büyütür, gerekirse kenarlardan "
+"kırpar.</li>\n"
+"</ul></qt>"
+
+#. i18n: file bgdialog_ui.ui line 384
+#: rc.cpp:176
+#, no-c-format
+msgid ""
+"If you have selected to use a background picture you can choose various methods "
+"of blending the background colors with the picture. The default option of \"No "
+"Blending\" means that the picture simply obscures the background colors below."
+msgstr ""
+"Eğer duvar kağıdını seçtiyseniz, duvar kağıdı ile arkaplan renklerinin ve "
+"desenlerin karıştırılması için birçok yöntem kullanabilirsiniz. Öntanımlı "
+"seçenek, \"Karışım Yok\"'tur, bu da duvar kağıdının basitçe arkaplanı örtmesi "
+"demektir."
+
+#. i18n: file bgdialog_ui.ui line 403
+#: rc.cpp:179
+#, no-c-format
+msgid "Click to choose the primary background color."
+msgstr "Birincil arkaplan rengini seçmek için tıklayın."
+
+#. i18n: file bgdialog_ui.ui line 414
+#: rc.cpp:182
+#, no-c-format
+msgid ""
+"Click to choose the secondary background color. If no secondary color is "
+"required by the pattern selected this button will be disabled."
+msgstr ""
+"İkincil arkaplan rengini seçmek için tıklayın. Eğer desen için ikini renk "
+"gerekli değilse bu düğme kapanır."
+
+#. i18n: file bgdialog_ui.ui line 424
+#: rc.cpp:185
+#, no-c-format
+msgid "Co&lors:"
+msgstr "&Renkler:"
+
+#. i18n: file bgdialog_ui.ui line 435
+#: rc.cpp:188
+#, no-c-format
+msgid "&Blending:"
+msgstr "&Karışım:"
+
+#. i18n: file bgdialog_ui.ui line 454
+#: rc.cpp:191
+#, no-c-format
+msgid "Balance:"
+msgstr "Denge:"
+
+#. i18n: file bgdialog_ui.ui line 460
+#: rc.cpp:194 rc.cpp:197
+#, no-c-format
+msgid ""
+"You can use this slider to control the degree of blending. You can experiment "
+"by moving the slider and looking at the effects in the preview image."
+msgstr ""
+"Karışım derecesini kontrol etmek için bu çubuğu kullanabilirsiniz. Yukarıdaki "
+"ön izleme resmine bakarak ve çubuğu hareket ettirerek değişimi "
+"gözlemleyebilirsiniz."
+
+#. i18n: file bgdialog_ui.ui line 496
+#: rc.cpp:200
+#, no-c-format
+msgid "Reverse roles"
+msgstr "Ters çevir"
+
+#. i18n: file bgdialog_ui.ui line 499
+#: rc.cpp:203
+#, no-c-format
+msgid ""
+"For some types of blending, you can reverse the role of the background and the "
+"picture by checking this option."
+msgstr ""
+"Bazı karıştırma tiplerinde arkaplan ile resmin rollerini bu seçeneği seçerek "
+"geri alabilirsiniz."
+
+#. i18n: file bgdialog_ui.ui line 573
+#: rc.cpp:218
+#, no-c-format
+msgid "Background"
+msgstr "Arkaplan"
+
+#. i18n: file bgdialog_ui.ui line 584
+#: rc.cpp:221
+#, no-c-format
+msgid "&No picture"
+msgstr "&Resim yok"
+
+#. i18n: file bgdialog_ui.ui line 592
+#: rc.cpp:224
+#, no-c-format
+msgid "&Slide show:"
+msgstr "&Slayt gösterisi:"
+
+#. i18n: file bgdialog_ui.ui line 600
+#: rc.cpp:227
+#, no-c-format
+msgid "&Picture:"
+msgstr "&Resim:"
+
+#. i18n: file bgdialog_ui.ui line 628
+#: rc.cpp:230
+#, no-c-format
+msgid "Set&up..."
+msgstr "&Ayarlar..."
+
+#. i18n: file bgdialog_ui.ui line 631
+#: rc.cpp:233
+#, no-c-format
+msgid ""
+"Click this button to select a set of images to be used as background pictures. "
+"One picture at a time will be shown for a specified amount of time, after which "
+"another image from the set will be shown. Images can be shown at random or in "
+"the order you specify them."
+msgstr ""
+"Bir resim seti arkaplan resimleri olarak kullanmak için bu düğmeye tıklayın. "
+"Resimler belirtilen gösterim aralıkları ile gösterilecektir. Resimler sıralı "
+"veya rasgele gösterilebilir."
+
+#. i18n: file bgwallpaper_ui.ui line 27
+#: rc.cpp:236
+#, no-c-format
+msgid "Show the following pictures:"
+msgstr "Aşağıdaki resimleri göster:"
+
+#. i18n: file bgwallpaper_ui.ui line 35
+#: rc.cpp:239
+#, no-c-format
+msgid "&Show pictures in random order"
+msgstr "&Resimleri rastgele sırayla göster"
+
+#. i18n: file bgwallpaper_ui.ui line 51
+#: rc.cpp:242
+#, no-c-format
+msgid "Change &picture after:"
+msgstr "&Resmi bu süre sonunda değiştir:"
+
+#. i18n: file bgwallpaper_ui.ui line 146
+#: rc.cpp:251
+#, no-c-format
+msgid "Move &Down"
+msgstr "&Aşağı Taşı"
+
+#. i18n: file bgwallpaper_ui.ui line 154
+#: rc.cpp:254
+#, no-c-format
+msgid "Move &Up"
+msgstr "&Yukarı Taşı"

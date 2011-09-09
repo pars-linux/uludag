@@ -1,0 +1,180 @@
+# translation of libksieve.po to Türkçe
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: libksieve\n"
+"POT-Creation-Date: 2004-10-12 01:17+0200\n"
+"PO-Revision-Date: 2004-01-20 15:44+0200\n"
+"Last-Translator: Engin ÇAĞATAY <engincagatay@yahoo.com>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.1\n"
+
+#: shared/error.cpp:112
+msgid "Parse error: Carriage Return (CR) without Line Feed (LF)"
+msgstr ""
+
+#: shared/error.cpp:115
+msgid ""
+"Parse error: Unquoted Slash ('/') without Asterisk ('*'). Broken Comment?"
+msgstr ""
+
+#: shared/error.cpp:119
+msgid "Parse error: Illegal Character"
+msgstr ""
+
+#: shared/error.cpp:122
+msgid "Parse error: Unexpected Character, probably a missing space?"
+msgstr ""
+
+#: shared/error.cpp:125
+msgid "Parse error: Tag Name has leading Digits"
+msgstr ""
+
+#: shared/error.cpp:128
+msgid ""
+"Parse error: Only whitespace and #comments may follow \"text:\" on the same "
+"line"
+msgstr ""
+
+#: shared/error.cpp:132
+msgid "Parse error: Number out of Range (must be smaller than %1)"
+msgstr ""
+
+#: shared/error.cpp:135
+msgid "Parse error: Invalid UTF-8 sequence"
+msgstr ""
+
+#: shared/error.cpp:138
+msgid ""
+"Parse error: Premature end of Multiline String (did you forget the '.'?)"
+msgstr ""
+
+#: shared/error.cpp:141
+msgid "Parse error: Premature end of Quoted String (missing closing '\"')"
+msgstr ""
+
+#: shared/error.cpp:144
+msgid "Parse error: Premature end of String List (missing closing ']')"
+msgstr ""
+
+#: shared/error.cpp:147
+msgid "Parse error: Premature end of Test List (missing closing ')')"
+msgstr ""
+
+#: shared/error.cpp:150
+msgid "Parse error: Premature end of Block (missing closing '}')"
+msgstr ""
+
+#: shared/error.cpp:153
+msgid "Parse error: Missing Whitespace"
+msgstr ""
+
+#: shared/error.cpp:156
+msgid "Parse error: Missing ';' or Block"
+msgstr ""
+
+#: shared/error.cpp:159
+msgid "Parse error: Expected ';' or '{', got something else"
+msgstr ""
+
+#: shared/error.cpp:162 shared/error.cpp:177
+msgid "Parse error: Expected Command, got something else"
+msgstr ""
+
+#: shared/error.cpp:165
+msgid "Parse error: Trailing, Leading or Duplicate Commas in String List"
+msgstr ""
+
+#: shared/error.cpp:168
+msgid "Parse error: Trailing, Leading or Duplicate Commas in Test List"
+msgstr ""
+
+#: shared/error.cpp:171
+msgid "Parse error: Missing ',' between Strings in String List"
+msgstr ""
+
+#: shared/error.cpp:174
+msgid "Parse error: Missing ',' between Tests in Test List"
+msgstr ""
+
+#: shared/error.cpp:180
+msgid "Parse error: Only Strings allowed in String Lists"
+msgstr ""
+
+#: shared/error.cpp:183
+msgid "Parse error: Only Tests allowed in Test Lists"
+msgstr ""
+
+#: shared/error.cpp:188
+msgid "\"require\" must be first command"
+msgstr ""
+
+#: shared/error.cpp:191
+msgid "\"require\" missing for command \"%1\""
+msgstr ""
+
+#: shared/error.cpp:194
+msgid "\"require\" missing for test \"%1\""
+msgstr ""
+
+#: shared/error.cpp:197
+msgid "\"require\" missing for comparator \"%1\""
+msgstr ""
+
+#: shared/error.cpp:200
+msgid "Command \"%1\" not supported"
+msgstr ""
+
+#: shared/error.cpp:203
+msgid "Test \"%1\" not supported"
+msgstr ""
+
+#: shared/error.cpp:206
+msgid "Comparator \"%1\" not supported"
+msgstr ""
+
+#: shared/error.cpp:209
+msgid "Site Policy Limit Violation: Test nesting too deep (max. %1)"
+msgstr ""
+
+#: shared/error.cpp:212
+msgid "Site Policy Limit Violation: Block nesting too deep (max. %1)"
+msgstr ""
+
+#: shared/error.cpp:215
+msgid "Invalid Argument \"%1\" to \"%2\""
+msgstr ""
+
+#: shared/error.cpp:218
+msgid "Conflicting Arguments: \"%1\" and \"%2\""
+msgstr ""
+
+#: shared/error.cpp:221
+msgid "Argument \"%1\" Repeated"
+msgstr ""
+
+#: shared/error.cpp:224
+msgid "Command \"%1\" violates command ordering constraints"
+msgstr ""
+
+#: shared/error.cpp:229
+msgid "Incompatible Actions \"%1\" and \"%2\" requested"
+msgstr "Uygunsuz \"%1\" ve \"%2\" eylemleri talep edildi"
+
+#: shared/error.cpp:232
+msgid "Mail Loop detected"
+msgstr ""
+
+#: shared/error.cpp:235
+msgid "Site Policy Limit Violation: Too many Actions requested (max. %1)"
+msgstr ""
+"Site Politikası Limiti İhlali. Çok fazla eylem talep edildi (en fazla %1)"
+
+#: shared/error.cpp:238
+msgid "Unknown error"
+msgstr "Bilinmeyen hata"

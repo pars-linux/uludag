@@ -1,0 +1,82 @@
+# translation of kfile_rgb.po to Türkçe
+# translation of ktexteditor_autobookmarker.po to Turkish
+# translation of kfile_rgb.po to Turkish
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+msgid ""
+msgstr ""
+"Project-Id-Version: kfile_rgb\n"
+"POT-Creation-Date: 2004-10-12 01:17+0200\n"
+"PO-Revision-Date: 2004-06-28 15:44+0300\n"
+"Last-Translator: Adem Alp YILDIZ <ademalp@linux-sevenler.org>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.3\n"
+
+#: kfile_rgb.cpp:44
+msgid "Comment"
+msgstr "Açıklama"
+
+#: kfile_rgb.cpp:46
+msgid "Name"
+msgstr "İsim"
+
+#: kfile_rgb.cpp:51
+msgid "Technical Details"
+msgstr "Teknik Detaylar"
+
+#: kfile_rgb.cpp:53
+msgid "Dimensions"
+msgstr "Boyutlar"
+
+#: kfile_rgb.cpp:57
+msgid "Bit Depth"
+msgstr "Bit Derinliği"
+
+#: kfile_rgb.cpp:60
+msgid "Color Mode"
+msgstr "Renk Kipi"
+
+#: kfile_rgb.cpp:61
+msgid "Compression"
+msgstr "Sıkıştırma"
+
+#: kfile_rgb.cpp:64
+msgid ""
+"_: percentage of avoided vertical redundancy (the higher the better)\n"
+"Shared Rows"
+msgstr "Paylaşılan Satırlar"
+
+#: kfile_rgb.cpp:123
+msgid "Grayscale"
+msgstr "Siyah-beyaz"
+
+#: kfile_rgb.cpp:125
+msgid "Grayscale/Alpha"
+msgstr "Siyah-beyaz/Alfa"
+
+#: kfile_rgb.cpp:127
+msgid "RGB"
+msgstr "RGB"
+
+#: kfile_rgb.cpp:129
+msgid "RGB/Alpha"
+msgstr "RGB/Alpha"
+
+#: kfile_rgb.cpp:132
+msgid "Uncompressed"
+msgstr "Sıkıştırılmamış"
+
+#: kfile_rgb.cpp:136
+msgid "Runlength Encoded"
+msgstr "Kodlanmış Çalışmauzunluğu"
+
+#: kfile_rgb.cpp:158
+msgid "None"
+msgstr "Yok"
+
+#: kfile_rgb.cpp:160
+msgid "Unknown"
+msgstr "Bilinmeyen"
