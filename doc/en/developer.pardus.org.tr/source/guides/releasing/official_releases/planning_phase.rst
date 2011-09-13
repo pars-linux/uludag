@@ -20,74 +20,68 @@ specifications freeze and reported on `Pardus Bugzilla`_.
 Planning Phase Goals
 --------------------
 
-#. Toolchain organized
-#. Features proposed, discussed on developer meeting, technical group review them and select relevant packages and technologies that fits (Feature Acceptence Deadline)
-#. Planned feature list announced
-#. Release plan announced
-#. New branch officially announce and open for merging packages (Ready for all developers)
+#. Proposed features are discussed by developers, reviewed by technical group and the final feature list is determined. (Feature Acceptence Deadline)
+#. The planned feature list and the release plan/schedule should be announced
+#. Pre-alpha should be released
 
 Planning Phase Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-In order to do Pardus Developer Release official, the following criterias must be meet:
+In order to release the pre-alpha, the following criteria should be met:
 
-* There must be no file conflicts or unresolved package dependencies in developer release iso images
-* The iso image must boot.
-* The installation manager (YALI_) must be able to complete the installation using the install options use all space or use free space.
-* PiSi_ must have the correct repository and be able to download and install updates
+* There must be no unhandled file conflicts and missing package dependencies in the repository
+* Pre-alpha image should boot correctly into a working development environment
 
-Planning Phase (Developer Release) Tickets
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Prepare and plan start meeting
-#. Open `devel source`_ and  `devel binary`_ repositories
-#. Add new devel repository to http://packages.pardus.org.tr
-#. Open `tracker bugs`_ for Alpha, Beta, Final
-#. Warn users and developers about `feature request`_ deadline one week before
-#. Warn developers about `feature submission`_ deadline one week before
-#. Prepare buildfarm servers
-#. State toolchain versions
-#. State compiler flags
-#. Prepare toolchain
-#. Bootstrap_
-#. Compile developer tools
-#. Install and build buildfarm_ systems
-#. Enable `nightly builds`_
-#. Enable automatic mails about nightly build changes to `tester list`_.
-#. Review package components for orphan and dead packages
-#. Warn developers about their orphan and dead packages and developer release
-#. Plan for artwork pardus
-   * Final Wallpapers
-   * Final Icon theme
-   * Final Splash screens
+Planning Phase (Pre-alpha) Schedule
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Release minus 1 month:
+8-4 weeks before the Pre-alpha release:
+---------------------------------------
+
+#. Prepare and schedule kickoff meeting
+#. Open empty `tracker bugs`_ for Alpha, Beta, RC and Final releases
+#. Warn the community about the upcoming `feature request`_ and `feature submission`_ deadlines
+#. Inform the developers about the toolchain components and compiler/linker flags that will be used
+#. Prepare, patch, build recursively (Bootstrap_ if necessary) and test the toolchain components (gcc, glibc, binutils, llvm, etc.)
+#. Update, prepare, patch, build and test the system.* packages
+#. Prepare the additional packages that can ease the development process (vim, strace, svn, git, etc.)
+#. Plan for Pardus artwork
+   * Wallpapers
+   * Icon Theme
+   * Splash Screens/Plymouth
+
+4 weeks before the Pre-alpha release:
+-------------------------------------
 
 #. `feature request`_ deadline
+#. Start evaluating `feature request`_
 
-Release minus 3 week:
+3 weeks before the Pre-alpha release:
+-------------------------------------
 
 #. `feature submission`_ deadline
-#. Create accepted feature list
-#. Put feature list to developer.pardus.org.tr
-#. Create detailed release schedule (priotirize feaute list, give other details for development, artwork, documentation etc.)
-#. Update schedule on developer.pardus.org.tr
+#. Announce feature list on developer.pardus.org.tr
+#. Create detailed release schedule (prioritize feature list, give other details for development, artwork, documentation etc.) and announce on developer.pardus.org.tr
 
-Release minus 1 week:
+1 week before the Pre-alpha release:
+------------------------------------
 
-#. Warn mirrors and ULAKBIM one week before
+#. Warn mirrors and ULAKBİM (hosting agency)
 
-Release minus 2 day:
+2 days before the Pre-alpha release:
+------------------------------------
 
 #. Plan and announce a developer meeting on IRC
-#. Prepare and plan Alpha start meeting
+#. Prepare and plan Alpha kick-off meeting
 
-Release:
+Pre-alpha release day:
+----------------------
 
 #. Publish the image
 
-    * Upload iso to FTP servers
-    * Upload iso to torrents
+    * Upload to FTP servers
+    * Upload to torrents
 
-#. Announce pre-alpha (developer) release on `developer list`_ and `gelistirici list`_
+#. Announce pre-alpha release on `developer list`_ and `gelistirici list`_
 
 .. _requested features: http://developer.pardus.org.tr/guides/newfeature/index.html
 .. _Pardus Bugzilla: http://bugs.pardus.org.tr/
