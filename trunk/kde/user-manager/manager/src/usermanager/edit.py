@@ -305,9 +305,8 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         elif self.radioAuthYes.isChecked():
             type_ = 1
         else:
-            # If the radio buttons are all unchecked it raises an UnboundLocalError
-            # to avoid that i assigned type_ to None
-            type_ = None
+            # if parent's type None then don't try to set children's type to None
+            return
         category = self.treeAuthorizations.currentItem()
         index = self.treeAuthorizations.indexOfTopLevelItem(category)
         tl_item = self.treeAuthorizations.topLevelItem(index)
@@ -356,15 +355,16 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         if not item:
             return
         self.authGroup.setEnabled(True)
-        self.pushAuth.setEnabled(True)
         # If selected item is a parent (category) unchecks all radio buttons
         # because a parent has no idea of its childs status
         try:
             if hasattr(item, "setType"):
+                self.pushAuth.setEnabled(True)
                 self.radioAuthNo.setChecked(item.getType() == -1)
                 self.radioAuthDefault.setChecked(item.getType() == 0)
                 self.radioAuthYes.setChecked(item.getType() == 1)
             else:
+                self.pushAuth.setEnabled(False)
                 self.radioAuthNo.setAutoExclusive(False)
                 self.radioAuthDefault.setAutoExclusive(False)
                 self.radioAuthYes.setAutoExclusive(False)
