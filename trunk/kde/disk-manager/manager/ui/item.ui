@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>418</width>
-    <height>52</height>
+    <width>451</width>
+    <height>60</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -90,7 +90,7 @@
      </item>
     </layout>
    </item>
-   <item row="0" column="3">
+   <item row="0" column="4">
     <widget class="QPushButton" name="pushEdit">
      <property name="toolTip">
       <string>Edit</string>
@@ -100,12 +100,34 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="4">
+   <item row="0" column="5">
     <widget class="QPushButton" name="pushDelete">
      <property name="toolTip">
       <string>Delete</string>
      </property>
      <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3">
+    <widget class="QProgressBar" name="progressBar">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>150</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="value">
+      <number>24</number>
+     </property>
+     <property name="format">
       <string/>
      </property>
     </widget>

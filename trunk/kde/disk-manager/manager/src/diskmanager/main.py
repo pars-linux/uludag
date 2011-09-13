@@ -80,11 +80,11 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         """ Clears item list. """
         self.listItems.clear()
 
-    def makeItemWidget(self, id_, title="", description="",
+    def makeItemWidget(self, id_, title="", description="",diskUsage="",
                        type_=None, icon=None, state=None):
         """ Makes an item widget having given properties. """
         widget = ItemWidget(self.listItems, id_, title, \
-                            description, type_, icon, state)
+                            description, diskUsage, type_, icon, state)
 
         self.connect(widget, QtCore.SIGNAL("stateChanged(int)"), \
                              self.slotItemState)
@@ -95,7 +95,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
         return widget
 
-    def addItem(self, id_, name="", description="", mounted=False):
+    def addItem(self, id_, name="", description="", diskUsage="", mounted=False):
         """ Adds an item to list. """
         if mounted:
             if ctx.Pds.session == ctx.pds.Kde4:
@@ -109,7 +109,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
         # Build widget and widget item
         widget = self.makeItemWidget(id_, name, description, \
-                                     type_, icon, mounted)
+                                     diskUsage, type_, icon, mounted)
         widgetItem = ItemListWidgetItem(self.listItems, widget)
 
         # Delete is unnecessary
@@ -144,7 +144,11 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                     for part in parts:
                         if part in self.mounted_devices:
                             description = i18n("Mounted at %1", self.mounted_devices[part])
-                            self.addItem(part, part, description, True)
+                            diskUsage = self.iface.calculateDiskUsage(self.mounted_devices[part].decode("string_escape"))
+                            if diskUsage:
+                                self.addItem(part, part, description, diskUsage, True)
+                            else:
+                                self.addItem(part, part, description, True)
                         else:
                             self.addItem(part, part, "")
 
