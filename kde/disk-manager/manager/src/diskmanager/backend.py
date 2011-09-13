@@ -13,6 +13,8 @@
 
 # Comar
 import comar
+# Statvfs method for disk usage
+from os import statvfs
 
 class Interface:
 
@@ -99,3 +101,15 @@ class Interface:
     def umount(self, device):
         self.link.Disk.Manager[self.package].umount(device)
 
+    def calculateDiskUsage(self, mountp):
+        """Calculates disk usage data return values in Gigabytes  """
+        try:
+            disk = statvfs(mountp)
+        #If an statvfs gets an invalid path it throws an OSError
+        except OSError:
+            return None
+        #Statvfs gets disk data by blocks
+        capacity = (disk.f_bsize * disk.f_blocks) / 1024.0 / 1024.0 / 1024.0
+        used =  (disk.f_bsize * disk.f_blocks - disk.f_bsize * disk.f_bavail) / 1024.0 / 1024.0 / 1024.0
+        percentage = used * 100 / capacity
+        return capacity, used, percentage

@@ -25,6 +25,36 @@ else:
 
 # UI
 from diskmanager.ui_item import Ui_ItemWidget
+#Qt styles for progress bar
+DEFAULT = """
+QProgressBar{
+border: 1px solid grey;
+border-radius: 3px;
+font: Aerial;
+font-size: 12px;
+text-align: center;
+}
+QProgressBar::chunk {
+background-color: #4286CF;
+text-align: center;
+}
+
+"""
+
+FULL = """
+QProgressBar{
+border: 1px solid grey;
+border-radius: 3px;
+font: Aerial;
+font-size: 12px;
+text-align: center;
+}
+QProgressBar::chunk {
+background-color: red;
+text-align: center;
+}
+
+"""
 
 class ItemListWidgetItem(QtGui.QListWidgetItem):
 
@@ -41,7 +71,7 @@ class ItemListWidgetItem(QtGui.QListWidgetItem):
 
 class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
 
-    def __init__(self, parent, id_, title="", description="", type_=None, icon=None, state=None):
+    def __init__(self, parent, id_, title="", description="", diskUsage=None, type_=None, icon=None, state=None):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
 
@@ -57,7 +87,22 @@ class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
             self.labelIcon.hide()
 
         self.setState(state)
-
+        # Progress Bar
+        if diskUsage:
+            try:
+                capacity, used, percentage = diskUsage
+                #If disk usage is above 85 percent progress bar gets red
+                if percentage < 85:
+                     self.setStyleSheet(DEFAULT)
+                else:
+                    self.setStyleSheet(FULL)
+                self.progressBar.setValue(percentage)
+                self.progressBar.setFormat("%.2f/%.2f GB" %(used, capacity))
+            except TypeError:
+                self.progressBar.setVisible(0)
+        else:
+            #If device is not mounted hide progress bar
+            self.progressBar.setVisible(0)
         # Buttons
         self.pushEdit.setIcon(KIcon("preferences-other"))
         self.pushDelete.setIcon(KIcon("edit-delete"))
@@ -95,7 +140,6 @@ class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
         return self.checkState.checkState()
 
     def setState(self, state):
-        
         return self.checkState.setCheckState(QtCore.Qt.Checked if state else QtCore.Qt.Unchecked)
 
     def hideEdit(self):
