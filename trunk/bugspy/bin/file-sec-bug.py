@@ -92,7 +92,7 @@ def main(filename):
 
     component = "guvenlik/security"
     new_bug["component"] = component
-
+    new_bug["version"]="---"
     print ''
     print "Which Pardus versions are affected?"
     print "1- Pardus 2009"
