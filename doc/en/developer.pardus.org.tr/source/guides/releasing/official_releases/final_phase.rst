@@ -55,7 +55,8 @@ In order to do Pardus Final official, the following criterias must be met:
 
 Final Tickets
 ^^^^^^^^^^^^^
-Release minus 2 weeks:
+2 weeks before Final:
+---------------------
 
 #. Create release-notes
 #. Prepare press release from release-notes
@@ -66,12 +67,14 @@ Release minus 5 days:
 
 #. Get ready the publicity and promotion materials and start to deliver them
 
-Release minus 3 day:
+3 days before Final:
+--------------------
 
 #. `Final freeze`_
 #. Only boot and installation urgent `tracker bugs`_ fixed and needs approval.
 
-Release:
+Final release date:
+-------------------
 
 #. Upload release-notes to developer.pardus.org.tr
 #. Upload press-release to pardus.org.tr
@@ -82,7 +85,8 @@ Release:
 
 #. Announcement for Final release on `duyuru list`_ and `announce list`_
 
-Release plus 1 day:
+1 day after Final release day:
+------------------------------
 
 #. Continue new next release process
 

@@ -16,6 +16,8 @@ that no more features will be added to the software. A feature complete version
 of a software is not yet final, (it has lots of bugs) but contains all intended
 functionality of the final version.
 
+All new package additions should be finish before feature freeze time.
+
 According to this feature completeness, string freeze is also realized..
 
 During this phase Alpha release `tracker bugs`_ should also be fixed.
@@ -24,6 +26,7 @@ For the packages, `urgent package list`_ is created periodically and put as text
 file under the related releases' `package source repository`_ `devel branch`_.
 These packages are updated and merged to new `package source repository`_ at given
 period and time.
+
 
 As we can see during alpha phase rapid changes occur and so the software can be
 unstable and could cause crashes or data loss.
@@ -45,7 +48,7 @@ For each Pardus Alpha releases (Alpha 1, 2, 3), the following criterias must be 
 * The installation manager (YALI_) must be able to complete the installation using the install options use all space or use free space
 * The installation manager (YALI_) must be able to complete an installation using IDE, SATA and SCSI storage devices, with the default file system (ext4) and LVM, standart partitioning
 * The rescue mode of (YALI_) must start successfully and be able to detect and mount an existing default installation
-* The installed system must boot to th default desktop environment without user intervention
+* The installed system must boot to the default desktop environment without user intervention
 * The desktop greeter (Kaptan_) should start when the system boot.
 * All `Pardus technologies`_ must be able to work with new features (they may have bugs)
 * All strings of `Pardus technologies`_ should be finished before Alpha released.
@@ -61,6 +64,9 @@ Alpha Tickets
 Alpha 1
 #######
 
+8-4 week before the Alpha 1:
+----------------------------
+
 #. Intrusive changes phase completed (All high priority features and tasks finished)
 #. Create default applications list for desktop menu
 #. Send weekly emails about `urgent package list`_
@@ -70,11 +76,13 @@ Alpha 1
    * Icon theme
    * Splash screens
 
-Release minus 1 week:
+1 week before Alpha 1:
+----------------------
 
 #. Warn mirrors and ULAKBIM one week before
 
-Release:
+Alpha 1 release day:
+--------------------
 
 #. Release Alpha
 
@@ -87,14 +95,19 @@ Release:
 Alpha 2
 #######
 
+3-2 week before Alpha 2:
+------------------------
+
 #. Medium priority tasks and features finished
 #. At the end of this period, all remained features reviewed and reprioritized or ignored if needed.
 
-Release minus 1 week:
+1 week before Alpha 2:
+----------------------
 
 #. Warn mirrors and ULAKBIM one week before
 
-Release:
+Alpha 2 release day:
+--------------------
 
 #. Release Alpha
 
@@ -107,13 +120,17 @@ Release:
 Alpha 3
 #######
 
-#. Where we are meeting to review bugs and possibility to prolonge release.
+2-1 week before Alpha 3:
+------------------------
+
+#. "Where we are meeting" to review bugs and possibility to prolonge release.
 #. Low priority tasks and features finished
 #. Warn about `Feature freeze`_ one week before
 #. Warn about `Repo branching`_ one week before
 #. Warn about `String freeze`_
 
-Release minus 1 week:
+1 week before Alpha 3:
+----------------------
 
 #. `Feature freeze`_
 #. `String freeze`_
@@ -121,7 +138,8 @@ Release minus 1 week:
 #. Create release-notes
 #. Warn mirrors and ULAKBIM one week before
 
-Release minus 4 days:
+4 days before Alpha 3:
+----------------------
 
 #. `Repo branching`_ for main/base repo
 
@@ -143,12 +161,14 @@ Release minus 4 days:
 #. Selectively accept package merges to resolve Alpha tracker bugs
 #. Prepare and plan Beta start meeting
 
-Release minus 1 day:
+1 day before Alpha 3:
+---------------------
 
 #. Resolve any remaining Alpha `tracker bugs`_
 #. Begin Release Upgrade tests (all new package merges and features completed and from now on repo is consistent.)
 
-Release:
+Alpa 3 release day:
+-------------------
 
 #. Upload release-notes to developer.pardus.org.tr
 #. Release Alpha

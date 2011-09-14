@@ -58,7 +58,9 @@ In order to do Pardus RC official, the following criterias must be met:
 
 RC Tickets
 ^^^^^^^^^^
-Release minus 2 weeks:
+
+2 weeks before RC:
+------------------
 
 #. All Final `tracker bugs`_ fixed
 #. Kernel freeze start
@@ -73,7 +75,8 @@ Release minus 2 weeks:
 #. Begin Release Upgrade tests
 #. Plan the date of product publicity (launching)
 
-Release minus 10 days:
+10 days before RC:
+------------------
 
 #. Review problems and mark as RC tracker bug which need resolution before release
 
@@ -100,7 +103,8 @@ Release minus 10 days:
 #. Last check for update feature list according to completed features
 #. Warn mirrors and ULAKBIM one week before
 
-Release minus 7 days:
+7 days before RC:
+-----------------
 
 #. `Repo branching`_ for contributors
 #. Resolve only image based problems
@@ -114,14 +118,16 @@ Release minus 7 days:
 #. Track the production of publicity and promotion materials
 #. Open `stable binary repository`_
 
-Release Minus 3 days:
+3 days before RC:
+-----------------
 
 #. Review Final `tracker bugs`_ and take final decision what to fix or defer
 #. Fixing only urgent release `tracker bugs`_, bug fix needs approval.
 #. Prepare press release from release-notes
 #. Warn about `Final freeze`_
 
-Release:
+RC release day:
+---------------
 
 #. Upload release-notes to developer.pardus.org.tr
 #. Upload press-release to pardus.org.tr

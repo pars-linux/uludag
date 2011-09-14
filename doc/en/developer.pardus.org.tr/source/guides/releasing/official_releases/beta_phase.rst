@@ -53,6 +53,10 @@ Beta Tickets
 
 Beta 1
 ######
+
+2 week before Beta 1:
+-----------------------
+
 #. Review `tracker bugs`_ and no urgent and high bugs present
 #. Fix high priority `tracker bugs`_
 #. Create a list for promotion and publicity materials
@@ -64,7 +68,8 @@ Beta 1
    * Promotion products design
 #. Translation and user documentation check
 
-Release:
+Beta 1 release day:
+-------------------
 
 #. Release Beta
 
@@ -77,7 +82,8 @@ Release:
 Beta 2
 ######
 
-Release minus 2 weeks:
+2 week before Beta 2:
+---------------------
 
 #. All normal, low priority `tracker bugs`_ fixed
 #. `Toolchain freeze`_ start
@@ -89,7 +95,8 @@ Release minus 2 weeks:
 #. Begin Release Upgrade tests
 #. Announce EOL of 2 previous release
 
-Release minus 1 week:
+1 week before Beta 2:
+---------------------
 
 #. `User interface freeze`_ (artwork)
 #. `Beta freeze`_ (`code complete`_) on (`testing source repository`_)
@@ -111,7 +118,8 @@ Release minus 1 week:
 #. Warn mirrors and ULAKBIM one week before
 #. Preperation for final release announcement and marketing materials
 
-Release minus 3 days:
+3 days before Beta 2:
+---------------------
 
 #. Resolve image based problems
 
@@ -121,12 +129,14 @@ Release minus 3 days:
 
 #. Test and fix Beta `tracker bugs`_
 
-Release minus 1 day:
+1 day before Beta 2:
+--------------------
 
 #. Review Beta `tracker bugs`_ and take final decision what to fix or defer
 #. Prepare and plan RC start meeting
 
-Release:
+Beta 2 release day:
+-------------------
 
 #. Upload release-notes to developer.pardus.org.tr
 #. Release Beta
@@ -136,7 +146,8 @@ Release:
 
 #. Announcement for Beta release on `duyuru list`_ and `announce list`_
 
-Release plus 1 day:
+1 day after Beta 2 release day:
+-------------------------------
 
 #. Warn about `Translation freeze`_
 #. Warn contributors about packages that are not found on any repositories for contributor `Repo branching`_
