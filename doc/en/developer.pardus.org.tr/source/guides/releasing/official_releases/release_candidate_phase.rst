@@ -66,7 +66,7 @@ Release minus 2 weeks:
 
    * `Translation freeze`_
    * `Kernel freeze`_
-   * `Repo freeze`_ for contributors
+   * `Repo branching`_ for contributors
    * `RC freeze`_
    * Package file conflicts or unresolved package dependencies
 
@@ -102,7 +102,7 @@ Release minus 10 days:
 
 Release minus 7 days:
 
-#. `Repo freeze`_ for contributors
+#. `Repo branching`_ for contributors
 #. Resolve only image based problems
 
    * Package conflicts or unresolved package dependencies
@@ -168,7 +168,7 @@ at the "where we are" meeting.
 .. _duyuru list: http://lists.pardus.org.tr/mailman/listinfo/duyuru
 .. _announce list: http://lists.pardus.org.tr/mailman/listinfo/pardus-announce
 .. _Translation freeze: http://developer.pardus.org.tr/guides/releasing/freezes/translation_freeze.html
-.. _Repo freeze: http://developer.pardus.org.tr/guides/releasing/freezes/repo-freeze.html
+.. _Repo branching: http://developer.pardus.org.tr/guides/releasing/freezes/repo-freeze.html
 .. _RC freeze: http://developer.pardus.org.tr/guides/releasing/freezes/rc_freeze.html
 .. _Final freeze: http://developer.pardus.org.tr/guides/releasing/freezes/final_freeze.html
 .. _Kernel freeze: http://developer.pardus.org.tr/guides/releasing/freezes/kernel-freeze.html

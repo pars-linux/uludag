@@ -45,6 +45,7 @@ Planning Phase (Pre-alpha) Schedule
 #. Update, prepare, patch, build and test the system.* packages
 #. Prepare the additional packages that can ease the development process (vim, strace, svn, git, etc.)
 #. Plan for Pardus artwork
+
    * Wallpapers
    * Icon Theme
    * Splash Screens/Plymouth

@@ -110,7 +110,7 @@ Alpha 3
 #. Where we are meeting to review bugs and possibility to prolonge release.
 #. Low priority tasks and features finished
 #. Warn about `Feature freeze`_ one week before
-#. Warn about `Repo freeze`_ one week before
+#. Warn about `Repo branching`_ one week before
 #. Warn about `String freeze`_
 
 Release minus 1 week:
@@ -123,7 +123,7 @@ Release minus 1 week:
 
 Release minus 4 days:
 
-#. `Repo freeze`_ for main/base repo
+#. `Repo branching`_ for main/base repo
 
    * Open testing source_ and binary_ repositories
    * Add new testing repository to packages.pardus.org.tr
@@ -218,5 +218,5 @@ at the "where we are" meeting.
 .. _binary: http://developer.pardus.org.tr/guides/releasing/repository_concepts/software_repository.html#testing-binary-repository
 .. _source: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#testing-folder
 .. _Pardus technologies: http://developer.pardus.org.tr/projects/index.html
-.. _Repo freeze: http://developer.pardus.org.tr/guides/releasing/freezes/repo-freeze.html
+.. _Repo branching: http://developer.pardus.org.tr/guides/releasing/freezes/repo-freeze.html
 .. _String freeze: http://developer.pardus.org.tr/guides/releasing/freezes/string-freeze.html

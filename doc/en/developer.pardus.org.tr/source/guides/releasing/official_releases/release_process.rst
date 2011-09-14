@@ -3,7 +3,7 @@ Release Process
 
 In Pardus, we follow a time-based release approach, thus we have fixed dates for various steps of development. This means that, if a feature or a bug fix is not finished on time, then we just do not include it, unless it is one of the exceptional cases defined in `freeze exceptions`_ doc.
 
-Thus, it is important that every contributor is aware of the release process and comply with the process and work in coordination to finish on time. For a discussion about `time-based release management`_.
+Thus, it is important that every contributor is aware of the release process and comply with the process and work in coordination to finish on time. You can see a discussion about `time-based release management`_.
 
 Pardus releases occur nearly every 8 months. Each release cycle follows the release plan template, which divides development into milestones that are described in `General Milestones`_ section. We also define various freeze times described in `General Freezes`_ section.
 
@@ -16,12 +16,13 @@ Open developement
 
 - Unrestrained general development activity, new packages and versions are automatically taken and merge without any permission.
 
-Repo Freeze
-^^^^^^^^^^^
+Repo Branching
+^^^^^^^^^^^^^^
 - At the end of this phase all packages of previous Pardus release packages merge process should be finished.
+- New package creations should be also finish
 - After this period, new packages and new versions can be merged under some permissions and restrictions. (see `freeze exceptions`_)
 - In this freeze time devel branched and testing repository open.
-- See `Repo Freeze`_ for details
+- See `Repo Branching`_ for details
 
 
 Feature Acceptence Deadline
@@ -43,8 +44,8 @@ User interface freeze
 Beta freeze
 ^^^^^^^^^^^
 
-- The repository is freezed until beta is released, in order to stabilize beta for tests and reach beta to a level similar to final release.
-- Bug fixes taken to repository with release manager approval
+- The repository is freezed until beta is released, in order to stabilize beta for tests and reach beta to a level similar to final release
+- Bug fixes taken to repository with release team approval
 - See `Beta freeze`_ for details
 
 String freeze
@@ -59,7 +60,7 @@ Last date for toolchain changes.
 
 Kernel freeze
 ^^^^^^^^^^^^^
-- No new kernel versions in order to enable last final hardware compatibility checks, deadline for kernel regression fixes
+- No new kernel versions are allowable  in order to enable last final hardware compatibility checks, deadline for kernel regression fixes
 - See `kernel freeze`_ for details.
 
 Translation freeze
@@ -71,7 +72,7 @@ RC freeze
 ^^^^^^^^^^
 
 - The repository is freezed until Final is released, in order to stabilize RC for tests and reach RC to a level similar to final release.
-- Bug fixes taken to repository with release manager approval
+- Bug fixes taken to repository with release team approval
 - See `RC freeze`_ for details.
 
 Final Freeze
@@ -122,7 +123,7 @@ Feature development phase completed (about 2 weeks)
 - Where we are meeting to review bugs and possibility to prolonge release.
 - Low priority tasks and features finished
 - `Feature freeze`_
-- `Repo freeze`_ for main/base repo
+- `Repo branching`_ for main/base repo
 - `String freeze`_
 
 See details from `Alpha phase`_
@@ -134,8 +135,6 @@ Stabilization phase (about 3 week)
 - Review Beta `tracker bugs`_
 - No urgent and high bugs present
 - Fix high priority `tracker bugs`_
-- `Toolchain freeze`_ ?
-- `User interface freeze`_
 - Announce EOL of 2 previous release
 - Translation and user documentation check
 
@@ -147,7 +146,9 @@ Stabilization phase completed (about 2 week)
 
 - Where we are meeting to review bugs and possibility to prolonge release.
 - All normal, low priority `tracker bugs`_ fixed
-- `Beta freeze`
+- `Toolchain freeze`_ ?
+- `User interface freeze`_
+- `Beta freeze`_
 - Preperation for final release announcement and marketing materials
 
 See details from `Beta phase`_
@@ -156,7 +157,7 @@ RC
 ^^
 (about 2 weeks)
 
-- Where we are meeting to review bugs and possibility to prolonge release.
+- "Where we are meeting" to review bugs and possibility to prolonge release.
 - Fixing only urgent release tracker bugs, bug fix needs approval.
 - `Kernel freeze`_
 - `Translation freeze`_
@@ -206,6 +207,8 @@ Package maintainers SHOULD:
 
 - Push only major bug fixes and security fixes to previous release (n-1).
 
+See also `exception process`_.
+
 EOL
 ^^^
 
@@ -224,7 +227,7 @@ See details from `EOL`_.
 .. _EOL: http://developer.pardus.org.tr/guides/releasing/end_of_life.html
 .. _time-based release management: http://fnords.wordpress.com/2011/07/01/time-based-good-for-community/
 .. _freeze exceptions: http://developer.pardus.org.tr/guides/releasing/freezes/freeze_exception_process.html
-.. _Repo Freeze: http://developer.pardus.org.tr/guides/releasing/freezes/repo_freeze.html
+.. _Repo Branching: http://developer.pardus.org.tr/guides/releasing/freezes/repo_freeze.html
 .. _user interface freeze: http://developer.pardus.org.tr/guides/releasing/freezes/user_interface_freeze.html
 .. _string freeze: http://developer.pardus.org.tr/guides/releasing/freezes/string_freeze.html
 .. _Beta freeze: http://developer.pardus.org.tr/guides/releasing/freezes/beta_freeze.html
@@ -232,3 +235,4 @@ See details from `EOL`_.
 .. _RC freeze: http://developer.pardus.org.tr/guides/releasing/freezes/rc_freeze.html
 .. _kernel freeze: http://developer.pardus.org.tr/guides/releasing/freezes/kernel_freeze.html
 .. _toolchain freeze: http://developer.pardus.org.tr/guides/releasing/freezes/toolchain_freeze.html
+.. _exception process: http://developer.pardus.org.tr/guides/releasing/freezes/freeze_exception_process.html
