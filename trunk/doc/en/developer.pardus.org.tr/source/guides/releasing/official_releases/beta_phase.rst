@@ -139,7 +139,7 @@ Release:
 Release plus 1 day:
 
 #. Warn about `Translation freeze`_
-#. Warn contributors about packages that are not found on any repositories for contributor `Repo freeze`_
+#. Warn contributors about packages that are not found on any repositories for contributor `Repo branching`_
 #. Warn about `Final freeze`_
 #. Begin the plan of `next new release`_
 
@@ -192,4 +192,4 @@ at the "where we are" meeting.
 .. _Toolchain freeze: http://developer.pardus.org.tr/guides/releasing/freezes/toolchain_freeze.html
 .. _Translation freeze: http://developer.pardus.org.tr/guides/releasing/freezes/translation_freeze.html
 .. _Final freeze: http://developer.pardus.org.tr/guides/releasing/freezes/final_freeze.html
-.. _Repo freeze: http://developer.pardus.org.tr/guides/releasing/freezes/repo_freeze.html
+.. _Repo branching: http://developer.pardus.org.tr/guides/releasing/freezes/repo_freeze.html
