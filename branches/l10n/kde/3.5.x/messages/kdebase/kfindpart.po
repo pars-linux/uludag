@@ -1,31 +1,37 @@
-# translation of kfindpart.po to Turkish
+# translation of kfindpart.po to T
 # kde
-# Copyright (C) 2002 Free Software Foundation, Inc.
-# Görkem Çetin <gorkem@kde.org>, 2001,2002
+# Copyright (C) 2002, 2011 Free Software Foundation, Inc.
 #
+# Görkem Çetin <gorkem@kde.org>, 2001,2002.
+# Koray Löker <loker@pardus.org.tr>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: kfindpart\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-10-10 02:32+0200\n"
-"PO-Revision-Date: 2003-11-02 18:17+0000\n"
-"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
-"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"PO-Revision-Date: 2011-09-15 14:36+0300\n"
+"Last-Translator: Koray Löker <loker@pardus.org.tr>\n"
+"Language-Team: T <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: _translatorinfo.cpp:1
 msgid ""
 "_: NAME OF TRANSLATORS\n"
 "Your names"
-msgstr "Ömer Fadıl USTA"
+msgstr ""
+"Ömer Fadıl USTA\n"
+"Koray Löker"
 
 #: _translatorinfo.cpp:3
 msgid ""
 "_: EMAIL OF TRANSLATORS\n"
 "Your emails"
-msgstr "omer_fad@hotmail.com"
+msgstr ""
+"omer_fad@hotmail.com "
+"loker@pardus.org.tr"
 
 #: kfind.cpp:72 kfinddlg.cpp:40
 msgid "&Find"
@@ -64,7 +70,7 @@ msgstr "Hata."
 
 #: kfinddlg.cpp:183
 msgid "Please specify an absolute path in the \"Look in\" box."
-msgstr ""
+msgstr "Lütfen \"İçine bak\" kutucuğunda geçerli ve tam bir konum belirleyin."
 
 #: kfinddlg.cpp:188
 msgid "Could not find the specified folder."
@@ -80,8 +86,7 @@ msgstr "&İsim:"
 
 #: kftabdlg.cpp:65
 msgid "You can use wildcard matching and \";\" for separating multiple names"
-msgstr ""
-"Birden fazla dosya adını ayırmak için \";\" karakterini kullanabilirsiniz."
+msgstr "Birden fazla dosya adını ayırmak için \";\" karakterini kullanabilirsiniz."
 
 #: kftabdlg.cpp:68
 msgid "Look &in:"
@@ -121,13 +126,27 @@ msgid ""
 "having one character in between</li>"
 "<li><b>My Document.kwd</b> finds a file of exactly that name</li></ul></qt>"
 msgstr ""
+"<qt>Aradığınız dosya ismini girin. "
+"<br>Alternatif isimleri noktalı virgül \";\"ile ayırarak girebilirsiniz. "
+"<br>"
+"<br>Dosya ismi aşağıdaki özel karakterleri kullanabilir:"
+"<ul>"
+"<li><b>?</b> herhangi bir karakter ile eşleşme için</li>"
+"<li><b>*</b> kullanıldığı yerde bir karakter olmasa ya da birden çok olsa bile eşleşme için</li>"
+"<li><b>[...]</b> köşeli parantez içindeki herhangi bir karakterle eşleşme için</li>"
+"<br>Örnek aramalar:"
+"<ul>"
+"<li><b>*.kwd;*.txt</b> .kwd ya da .txt ile biten tüm dosyaları bulur</li> "
+"<li><b>şa[hl]</b> hem şah hem şal sözcüklerini bulur</li>"
+"<li><b>ka?ak</b> ka ile başlayıp ak ile biten tüm sözcükleri (kabak, kayak gibi) bulur</li>"
+"<li><b>Belge1.txt</b> Belge1.txt isimli dosyayı bulur</li></ul></qt>"
 
 #: kftabdlg.cpp:111
 msgid ""
 "<qt>This lets you use the files' index created by the <i>slocate</i> "
 "package to speed-up the search; remember to update the index from time to time "
 "(using <i>updatedb</i>).</qt>"
-msgstr ""
+msgstr "<qt><i>slocate</i> servisi dosya dizini yaratıyorsa, bunu kullanarak daha hızlı arama yapılmasını sağlar. Zaman zaman <i>updatedb</i> komutuyla dizini güncellemek gerekebilir.</qt>"
 
 #: kftabdlg.cpp:147
 msgid "Find all files created or &modified:"
@@ -207,7 +226,7 @@ msgstr "MB"
 
 #: kftabdlg.cpp:186
 msgid "GB"
-msgstr ""
+msgstr "GB"
 
 #: kftabdlg.cpp:249
 msgid "File &type:"
@@ -253,11 +272,11 @@ msgstr "&Düzenle"
 
 #: kftabdlg.cpp:282
 msgid "fo&r:"
-msgstr ""
+msgstr "he&r:"
 
 #: kftabdlg.cpp:283
 msgid "Search &metainfo sections:"
-msgstr ""
+msgstr "&metabilgi bölümünde ara:"
 
 #: kftabdlg.cpp:286
 msgid "All Files & Folders"
@@ -317,6 +336,12 @@ msgid ""
 "<li><b>Images (png...)</b> Search images with a special resolution, "
 "comment...</li></ul></qt>"
 msgstr ""
+"<qt> Dosyalara özgü yorum/metabilgi alanında ara"
+"<br>Örnekler:"
+"<br>"
+"<ul>"
+"<li><b>Ses dosyaları (mp3...)</b> şarkı ya da albüm ismi için id3 etiketlerini ara</li>"
+"<li><b>Resimler (png...)</b> Belirli bir yorum ya da çözünürlükteki resimleri ara...</li></ul></qt>"
 
 #: kftabdlg.cpp:358
 msgid ""
@@ -326,6 +351,11 @@ msgid ""
 "<li><b>Audio files (mp3...)</b> This can be Title, Album...</li>"
 "<li><b>Images (png...)</b> Search only in Resolution, Bitdepth...</li></ul></qt>"
 msgstr ""
+"<qt>Seçiliyse sadece bu alanda ara"
+"<br>"
+"<ul>"
+"<li><b>Ses dosyaları (mp3...)</b> Başlık, Albüm gibi alanlar...</li>"
+"<li><b>Resimler (png...)</b> Sadece bit derinliği, çözünürlük gibi alanları seç...</li></ul></qt>"
 
 #: kftabdlg.cpp:552
 msgid "Unable to search within a period which is less than a minute."
@@ -344,17 +374,16 @@ msgid "Unable to search dates in the future."
 msgstr "Geleceğe ait bir tarih ile arama yapılamaz."
 
 #: kftabdlg.cpp:628
-#, fuzzy
 msgid "Size is too big. Set maximum size value?"
 msgstr "Boyut Aşırı büyük... Azami boyut değerini belirlediniz mi?"
 
 #: kftabdlg.cpp:628
 msgid "Set"
-msgstr ""
+msgstr "Belirle"
 
 #: kftabdlg.cpp:628
 msgid "Do Not Set"
-msgstr ""
+msgstr "Belirleme"
 
 #: kfwin.cpp:49
 msgid "Read-write"
@@ -409,10 +438,8 @@ msgid "KFind Results File"
 msgstr "KFind Sonuç Dosyası"
 
 #: kfwin.cpp:259
-msgid ""
-"Results were saved to file\n"
-msgstr ""
-"Sonuçlar dosyaya kaydedildi\n"
+msgid "Results were saved to file\n"
+msgstr "Sonuçlar dosyaya kaydedildi\n"
 
 #: kfwin.cpp:289
 #, c-format
@@ -426,6 +453,8 @@ msgid ""
 "_: Menu item\n"
 "Open"
 msgstr ""
+"_: Menü bileşeni\n"
+"Aç"
 
 #: kfwin.cpp:413
 msgid "Open Folder"
@@ -474,3 +503,4 @@ msgstr "Grafik tasarım ve diğer arama ayarları"
 #: main.cpp:41
 msgid "UI Design"
 msgstr "UI tasarım"
+

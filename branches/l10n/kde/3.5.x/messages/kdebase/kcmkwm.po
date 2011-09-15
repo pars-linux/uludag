@@ -1,23 +1,22 @@
-# translation of kcmkwm.po to turkish
-# translation of kcmkwm.po to Türkçe
-# translation of kcmkwm.po to Turkish
-# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+# translation of kcmkwm.po to T
 # Serdar Cevher <scevher@anet.com.tr>, 2001.
 # Görkem Çetin <gorkem@kde.org>, 2002, 2003, 2004.
 # Adil YILDIZ <adil@linux-sevenler.org>, 2004.
 # Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
+# Koray Löker <loker@pardus.org.tr>, 2011.
+# Copyright (C) 2003, 2004, 2005, 2011 Free Software Foundation, Inc.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-04-11 03:54+0200\n"
-"PO-Revision-Date: 2005-06-28 21:45+0000\n"
-"Last-Translator: Adem Alp YILDIZ <ademalp@kde.org.tr>\n"
-"Language-Team: turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2011-09-15 14:44+0300\n"
+"Last-Translator: Koray Löker <loker@pardus.org.tr>\n"
+"Language-Team: T <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10.1\n"
+"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: _translatorinfo.cpp:1
@@ -135,11 +134,11 @@ msgstr "Başlık çubuğuna <em>çift</em> tıklamalardaki davranış."
 
 #: mouse.cpp:176
 msgid "Titlebar wheel event:"
-msgstr ""
+msgstr "Fare tekerinin eylemi başlık çubuğunda:"
 
 #: mouse.cpp:179
 msgid "Handle mouse wheel events"
-msgstr ""
+msgstr "Fare tekerleğinden gelen eylemleri kullan"
 
 #: mouse.cpp:184 mouse.cpp:756
 msgid "Raise/Lower"
@@ -155,11 +154,11 @@ msgstr "Büyüt/Geri Al"
 
 #: mouse.cpp:187 mouse.cpp:759
 msgid "Keep Above/Below"
-msgstr ""
+msgstr "Altta/üstte tut"
 
 #: mouse.cpp:188 mouse.cpp:760
 msgid "Move to Previous/Next Desktop"
-msgstr ""
+msgstr "Önceki/Sonraki Masaüstüne taşı"
 
 #: mouse.cpp:189 mouse.cpp:761
 msgid "Change Opacity"
@@ -174,7 +173,7 @@ msgid ""
 "Here you can customize mouse click behavior when clicking on the titlebar or "
 "the frame of a window."
 msgstr ""
-"Burada başlık barındaki ya da pencerelerin çerçevesindeki fare t�klamalarını "
+"Burada başlık çubuğundaki ya da pencerelerin çerçevesindeki fare tıklamalarını"
 "özelleştirebilirsiniz."
 
 #: mouse.cpp:212 mouse.cpp:337 mouse.cpp:611
@@ -316,8 +315,7 @@ msgstr "Büyütme Düğmesi"
 
 #: mouse.cpp:334
 msgid "Here you can customize behavior when clicking on the maximize button."
-msgstr ""
-"Burada büyüt düğmesine basıldığında oluşacak davranışı özelleştirebilirsiniz."
+msgstr "Burada büyüt düğmesine basıldığında oluşacak davranışı özelleştirebilirsiniz."
 
 #: mouse.cpp:342
 msgid "Behavior on <em>left</em> click onto the maximize button."
@@ -384,7 +382,7 @@ msgid ""
 "Here you can customize KDE's behavior when clicking somewhere into a window "
 "while pressing a modifier key."
 msgstr ""
-"Buradan bir pencerenin içerisinde meta tuşlarına (CTRL, ALT) bastığın�zda ve "
+"Buradan bir pencerenin içerisinde meta tuşlarına (CTRL, ALT) bastığınızda ve "
 "fareye tıkladığınızda işlenecek KDE olaylarını özelleştirebilirsiniz."
 
 #: mouse.cpp:682
@@ -417,19 +415,18 @@ msgid ""
 "pressing the modifier key."
 msgstr ""
 "Burada pencerenin içerisinde ALT tuşuyla birlikte farenin orta tuşuna "
-"t�kladığınızda işlenecek olayları özelleştirebilirsiniz."
+"tıkladığınızda işlenecek olayları özelleştirebilirsiniz."
 
 #: mouse.cpp:714
 msgid "Modifier key + mouse wheel:"
 msgstr "Değiştirici tuş + orta tuş:"
 
 #: mouse.cpp:715
-#, fuzzy
 msgid ""
 "Here you can customize KDE's behavior when scrolling with the mouse wheel  in a "
 "window while pressing the modifier key."
 msgstr ""
-"Buradan bir pencerenin içerisinde meta tuşlarına (CTRL, ALT) bastığın�zda ve "
+"Buradan bir pencerenin içerisinde meta tuşlarına (CTRL, ALT) bastığınızda ve "
 "fareye tıkladığınızda işlenecek KDE olaylarını özelleştirebilirsiniz."
 
 #: mouse.cpp:721
@@ -632,7 +629,7 @@ msgstr "&Bir masaüstünden diğerine geçerken ismini göster"
 msgid ""
 "Enable this option if you wish to see the current desktop name popup whenever "
 "the current desktop is changed."
-msgstr ""
+msgstr "Masaüstünü değiştirdiğinizde isminin belirmesini istiyorsanız bu seçeneği kullanın."
 
 #: windows.cpp:535
 msgid "Shading"
@@ -660,7 +657,7 @@ msgid ""
 "mouse pointer has been over the title bar for some time."
 msgstr ""
 "Eğer 'Otomatik Açıl' etkin ise, fare işaretçisi başlık çubuğunun üzerinde bir "
-"süre kaldığında gizlenmiş pencere kendiliğinden açılacakt�r."
+"süre kaldığında gizlenmiş pencere kendiliğinden açılacaktır."
 
 #: windows.cpp:554
 msgid ""
@@ -681,7 +678,7 @@ msgid ""
 "the other."
 msgstr ""
 "Bu seçenek etkin ise, farenizi ekranın kenarına getirdiğiniz anda diğer "
-"ekrandan çıkarsınız."
+"ekrandan çıkarsınız. Özellikle pencereleri taşımak için kullanışlıdır."
 
 #: windows.cpp:571
 msgid "D&isabled"
@@ -849,8 +846,7 @@ msgstr ""
 
 #: windows.cpp:842
 msgid "Allow moving and resizing o&f maximized windows"
-msgstr ""
-"&Büyültülmüş pencerelerin taşınmasına ve yeniden boyutlandırılmasına izin ver."
+msgstr "&Büyültülmüş pencerelerin taşınmasına ve yeniden boyutlandırılmasına izin ver."
 
 #: windows.cpp:844
 msgid ""
@@ -939,8 +935,7 @@ msgid ""
 "Here you can set the snap zone for windows, i.e. the 'strength' of the magnetic "
 "field which will make windows snap to each other when they're moved near "
 "another window."
-msgstr ""
-"Buradan pencerelerin yapışma bölgelerinin genişliğini ayarlayabilirsiniz. "
+msgstr "Buradan pencerelerin yapışma bölgelerinin genişliğini ayarlayabilirsiniz. "
 
 #: windows.cpp:925
 msgid "Snap windows onl&y when overlapping"
@@ -1084,5 +1079,3 @@ msgstr ""
 "<qt>Şeffaflık desteği deneme aşamasındadır ve grafiksel arayüzün "
 "<br>kapanması gibi bazı sorunlar yaşamanıza neden olabilir. </qt>"
 
-#~ msgid " pixels"
-#~ msgstr " benek"
