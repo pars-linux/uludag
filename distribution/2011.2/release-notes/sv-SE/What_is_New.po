@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-09-19T10:49:36\n"
+"POT-Creation-Date: 2011-09-19T11:46:58\n"
 "PO-Revision-Date: 2011-01-19 23:40+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@trixon.se>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -23,7 +23,7 @@ msgstr "Vad är nytt?"
 
 #. Tag: para
 #, no-c-format
-msgid "You can find some changes on core components of Pardus &PRODVER;, for other addtional changes please see <ulink url=\"cd-stats.html\">here</ulink>."
+msgid "You can find some changes on core components of Pardus &PRODVER;, for other addtional changes please see <ulink url=\"stats.html\">here</ulink>."
 msgstr ""
 
 #. Tag: title
