@@ -121,7 +121,7 @@ msgstr "Уже установленные пакеты"
 #: src/basketdialog.py:214 src/mainwindow.py:147 src/mainwindow.py:150
 #: src/pmwindow.py:147
 msgid "Installed Packages"
-msgstr "Установленные пакеты"
+msgstr "Удалить"
 
 #: src/grouplist.py:49 src/tray.py:69 src/tray.py:201
 msgid "All"
@@ -173,7 +173,7 @@ msgstr "Все пакеты"
 
 #: src/mainwindow.py:141 src/mainwindow.py:144
 msgid "Installable Packages"
-msgstr "Устанавливаемые пакеты"
+msgstr "Установить"
 
 #: src/mainwindow.py:153 src/mainwindow.py:156
 msgid "Updates"
@@ -606,7 +606,7 @@ msgstr "Alt+С"
 
 #: ui/ui_repodialog.py:54
 msgid "Add New Repository"
-msgstr "Добавить новый репозиторий"
+msgstr "Добавить репозиторий"
 
 #: ui/ui_repodialog.py:55
 msgid "Name of the repository, e.g <b>pardus-devel</b>"
@@ -730,19 +730,19 @@ msgstr "Кэш"
 
 #: ui/ui_settingsdialog.py:427
 msgid "&Add New Repository"
-msgstr "Добавить новый репозиторий"
+msgstr "&Добавить репозиторий"
 
 #: ui/ui_settingsdialog.py:428
 msgid "Remove Repository"
-msgstr "Удалить репозиторий"
+msgstr "Удалить"
 
 #: ui/ui_settingsdialog.py:429
 msgid "Move &Up"
-msgstr "Передвинуть &выше"
+msgstr "Приоритет &выше"
 
 #: ui/ui_settingsdialog.py:430
 msgid "Move &Down"
-msgstr "Передвинуть &ниже"
+msgstr "Приоритет &ниже"
 
 #: ui/ui_settingsdialog.py:431
 msgid "&Repositories"
