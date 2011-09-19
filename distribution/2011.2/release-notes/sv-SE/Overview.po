@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-07-11T21:49:58\n"
+"POT-Creation-Date: 2011-09-19T10:47:03\n"
 "PO-Revision-Date: 2011-01-19 18:17+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@trixon.se>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -22,34 +22,25 @@ msgid "Overview"
 msgstr "Översikt"
 
 #. Tag: para
-#, no-c-format
-msgid "Pardus &PRODVER; contains major improvements over the previous Pardus release &PREVVER;. The following sections provide a brief overview of those changes."
+#, fuzzy, no-c-format
+msgid "Pardus &PRODVER; contains security, critical fixes and some translation and other improvements over the previous Pardus release &PREVVER;."
 msgstr "Pardus &PRODVER; innehåller stora förbättringar jämfört med föregående Pardusutgåva &PREVVER;. Här följer en kort sammanfattning över dessa förbättringar."
 
-#. Tag: para
-#, fuzzy, no-c-format
-msgid "<application>Kernel</application> - &KERNELVER; Linux kernel provides updated hardware support together with a hundred of bug fixes."
-msgstr "<application>Kärnan</application> - Den senaste Linuxkärnan &KERNELVER; tillhandahåller det senaste hårdvarustödet tillsammans med tusentals felrättningar."
+#, fuzzy
+#~ msgid "<application>Kernel</application> - &KERNELVER; Linux kernel provides updated hardware support together with a hundred of bug fixes."
+#~ msgstr "<application>Kärnan</application> - Den senaste Linuxkärnan &KERNELVER; tillhandahåller det senaste hårdvarustödet tillsammans med tusentals felrättningar."
 
-#. Tag: para
-#, fuzzy, no-c-format
-msgid "<application>YALI</application> - YALI, the installer of Pardus, gained Rescue Mode which provides easy password and bootloader recovery."
-msgstr "<application>YALI</application> - YALI, installationsprogrammet för Pardus, har fått stöd för LVM/RAID och UUID."
+#, fuzzy
+#~ msgid "<application>YALI</application> - YALI, the installer of Pardus, gained Rescue Mode which provides easy password and bootloader recovery."
+#~ msgstr "<application>YALI</application> - YALI, installationsprogrammet för Pardus, har fått stöd för LVM/RAID och UUID."
 
-#. Tag: para
-#, fuzzy, no-c-format
-msgid "<application>KDE SC</application> - Pardus &PRODVER; comes with the latest KDE Software Compilation, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
-msgstr "<application>KDE SC</application> - Pardus &PRODVER; har den senaste KDE Software Component, KDE SC &KDEVER;. Baspaketet innehåller också ett antal bakåtporteringar och rättningar vilket ökar stabiliteten på skrivbordet avsevärt."
+#, fuzzy
+#~ msgid "<application>KDE SC</application> - Pardus &PRODVER; comes with the latest KDE Software Compilation, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
+#~ msgstr "<application>KDE SC</application> - Pardus &PRODVER; har den senaste KDE Software Component, KDE SC &KDEVER;. Baspaketet innehåller också ett antal bakåtporteringar och rättningar vilket ökar stabiliteten på skrivbordet avsevärt."
 
-#. Tag: para
-#, fuzzy, no-c-format
-msgid "<application>LibreOffice</application> - LibreOffice, an Open Source personal productivity suite sponsored by the Document Foundation, is updated to the much-awaited &LIBREOFFICEVER; version which brings huge improvements over the older version."
-msgstr "<application>LibreOffice</application> - LibreOffice, en kontorssvit baserad på öppen källkod sponsrad av Document Foundation, är nu standard i Pardus &PRODVER;."
-
-#. Tag: para
-#, no-c-format
-msgid "<application>Firefox</application> - Firefox &FIREFOXVER;, the latest stable version of the most popular Open Source web browser, is now shipped with Pardus &PRODVER;."
-msgstr ""
+#, fuzzy
+#~ msgid "<application>LibreOffice</application> - LibreOffice, an Open Source personal productivity suite sponsored by the Document Foundation, is updated to the much-awaited &LIBREOFFICEVER; version which brings huge improvements over the older version."
+#~ msgstr "<application>LibreOffice</application> - LibreOffice, en kontorssvit baserad på öppen källkod sponsrad av Document Foundation, är nu standard i Pardus &PRODVER;."
 
 #~ msgid "Hardware Overview"
 #~ msgstr "Hårdvara"

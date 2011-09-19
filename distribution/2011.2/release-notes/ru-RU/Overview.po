@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-07-11T21:49:58\n"
+"POT-Creation-Date: 2011-09-19T10:47:03\n"
 "PO-Revision-Date: 2011-01-20 19:14+0300\n"
 "Last-Translator: Alexey Ivanov <alexey.ivanes@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -20,34 +20,24 @@ msgid "Overview"
 msgstr "Обзор"
 
 #. Tag: para
-#, no-c-format
-msgid "Pardus &PRODVER; contains major improvements over the previous Pardus release &PREVVER;. The following sections provide a brief overview of those changes."
+#, fuzzy, no-c-format
+msgid "Pardus &PRODVER; contains security, critical fixes and some translation and other improvements over the previous Pardus release &PREVVER;."
 msgstr "Pardus &PRODVER; содержит важные улучшения со времен предыдущего выпуска Pardus &PREVVER;. В следующих разделах приведен краткий обзор этих изменений."
 
-#. Tag: para
-#, fuzzy, no-c-format
-msgid "<application>Kernel</application> - &KERNELVER; Linux kernel provides updated hardware support together with a hundred of bug fixes."
-msgstr "<application>Ядро</application> - Последнее Linux ядро &KERNELVER; обеспечивает поддержку современного оборудования, а так же содержит тысячи исправленных ошибок."
+#, fuzzy
+#~ msgid "<application>Kernel</application> - &KERNELVER; Linux kernel provides updated hardware support together with a hundred of bug fixes."
+#~ msgstr "<application>Ядро</application> - Последнее Linux ядро &KERNELVER; обеспечивает поддержку современного оборудования, а так же содержит тысячи исправленных ошибок."
 
-#. Tag: para
-#, fuzzy, no-c-format
-msgid "<application>YALI</application> - YALI, the installer of Pardus, gained Rescue Mode which provides easy password and bootloader recovery."
-msgstr "<application>YALI</application> - YALI, установщик Pardus, предоставляет поддержку LVM/RAID и UUID."
+#, fuzzy
+#~ msgid "<application>YALI</application> - YALI, the installer of Pardus, gained Rescue Mode which provides easy password and bootloader recovery."
+#~ msgstr "<application>YALI</application> - YALI, установщик Pardus, предоставляет поддержку LVM/RAID и UUID."
 
-#. Tag: para
-#, no-c-format
-msgid "<application>KDE SC</application> - Pardus &PRODVER; comes with the latest KDE Software Compilation, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
-msgstr "<application>KDE SC</application> - Pardus &PRODVER; поставляется с последней версией KDE Software Compilation, KDE SC &KDEVER;. Базовые пакеты так же содержат многочисленные исправления и улучшения, что значительно увеличивает стабильность вашей системы."
+#~ msgid "<application>KDE SC</application> - Pardus &PRODVER; comes with the latest KDE Software Compilation, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
+#~ msgstr "<application>KDE SC</application> - Pardus &PRODVER; поставляется с последней версией KDE Software Compilation, KDE SC &KDEVER;. Базовые пакеты так же содержат многочисленные исправления и улучшения, что значительно увеличивает стабильность вашей системы."
 
-#. Tag: para
-#, fuzzy, no-c-format
-msgid "<application>LibreOffice</application> - LibreOffice, an Open Source personal productivity suite sponsored by the Document Foundation, is updated to the much-awaited &LIBREOFFICEVER; version which brings huge improvements over the older version."
-msgstr "<application>LibreOffice</application> - LibreOffice, открытый и свободный офисный пакет, спонсируемый Document Foundation, используется как набор офисных приложений по умолчанию в Pardus &PRODVER;."
-
-#. Tag: para
-#, no-c-format
-msgid "<application>Firefox</application> - Firefox &FIREFOXVER;, the latest stable version of the most popular Open Source web browser, is now shipped with Pardus &PRODVER;."
-msgstr ""
+#, fuzzy
+#~ msgid "<application>LibreOffice</application> - LibreOffice, an Open Source personal productivity suite sponsored by the Document Foundation, is updated to the much-awaited &LIBREOFFICEVER; version which brings huge improvements over the older version."
+#~ msgstr "<application>LibreOffice</application> - LibreOffice, открытый и свободный офисный пакет, спонсируемый Document Foundation, используется как набор офисных приложений по умолчанию в Pardus &PRODVER;."
 
 #~ msgid "Hardware Overview"
 #~ msgstr "Обзор оборудования"
