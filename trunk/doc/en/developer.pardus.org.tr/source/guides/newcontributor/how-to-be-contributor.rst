@@ -149,3 +149,5 @@ Waiting in the Queue Stock Response
 .. _technical mail list: http://liste.pardus.org.tr/mailman/listinfo/teknik
 .. _Pardus bugzilla: http://bugs.pardus.org.tr
 .. _expected developer: http://developer.pardus.org.tr/guides/newcontributor/developer_roles.html#expected-developer
+.. _mentors: http://developer.pardus.org.tr/guides/newcontributor/newcontributor_mentors.html
+
