@@ -674,11 +674,11 @@ msgstr "Основные"
 
 #: ui/ui_settingsdialog.py:411
 msgid "Cache Limit"
-msgstr "Ограничение кэша"
+msgstr "Кеш пакетов"
 
 #: ui/ui_settingsdialog.py:412
 msgid "&Use hard disk cache for downloaded software"
-msgstr "Использовать жесткий диск для создания кэша загруженного ПО"
+msgstr "Создавать на жестком диске кэш загруженных пакетов"
 
 #: ui/ui_settingsdialog.py:413
 msgid "Maximum cache size:"
@@ -714,11 +714,11 @@ msgstr "Очистить кэш на диске."
 
 #: ui/ui_settingsdialog.py:421
 msgid "Bandwidth limit"
-msgstr "Ограничение на загрузку интернет соединения"
+msgstr "Ограничение нагрузки интернет соединения"
 
 #: ui/ui_settingsdialog.py:422
 msgid "Use bandwidth limit :"
-msgstr "Использовать ограничение:"
+msgstr "Использовать ограничение скорости:"
 
 #: ui/ui_settingsdialog.py:423
 msgid " kB/s"
