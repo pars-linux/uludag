@@ -17,16 +17,17 @@ If you trying to find out how to take part in development of Pardus, then you ma
 What kind of works a developer interested in?
 =============================================
 
-Pardus Linux Distribution developers have an important role in creation of Pardus. They have a direct impact on the software and it meets the the needs of users. In order to meet the needs of users and ensure that Pardus absolutely work , they have different roles in the project. A developer has one of these roles or more at the same time. A developer also can take a new role according to his experience.
+Pardus Linux Distribution developers have an important role in creation of Pardus. They have a direct impact on the software and it meets the needs of users. In order to meet the needs of users and ensure that Pardus absolutely work , they have different roles in the project. A developer has one of these roles or more at the same time. A developer also can take a new role according to his experience.
 
-Everybody can work on any package they want to improve and Pardus value these contributions. If you do not have permissions for Pardus repositories yet, mentors can review your work and merge it for you. (See `mentoring process`_ for details).
+Everybody can work on any package they want to improve. Pardus value all these contributions. If you do not have permissions for Pardus repositories yet, mentors can review your work and merge it for you. (See `mentoring process`_ for details).
 
 
 Expected Developer
 ------------------
 #. Gain experience on bug fixing and creating new packages
 #. Request mentor review for their works,
-    Mentors will:
+    Mentors_ will:
+
     * Review their works
     * Give constructive feedback
     * Merge the package to related repository if it is ready
@@ -104,3 +105,4 @@ Lead Developer:
 .. _mentoring process: http://developer.pardus.org.tr/guides/newcontributor/mentoring_process.html
 .. _new contributor process: http://developer.pardus.org.tr/guides/newcontributor/how-to-be-contributor.html
 .. _Bugzilla: http://bugs.pardus.org.tr
+.. _Mentors: http://developer.pardus.org.tr/guides/newcontributor/newcontributor_mentors.html
