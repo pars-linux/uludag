@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-08-17T09:13:43\n"
-"PO-Revision-Date: 2011-08-17T09:13:43\n"
+"POT-Creation-Date: 2011-09-19T10:49:36\n"
+"PO-Revision-Date: 2011-09-19T10:49:36\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
 "MIME-Version: 1.0\n"
@@ -19,31 +19,6 @@ msgstr ""
 
 #. Tag: para
 #, no-c-format
-msgid "Pardus &PRODVER; contains major improvements over the previous Pardus release &PREVVER;. The following sections provide a brief overview of those changes."
-msgstr ""
-
-#. Tag: para
-#, no-c-format
-msgid "<application>Kernel</application> - &KERNELVER; Linux kernel provides updated hardware support together with a hundred of bug fixes."
-msgstr ""
-
-#. Tag: para
-#, no-c-format
-msgid "<application>YALI</application> - YALI, the installer of Pardus, gained Rescue Mode which provides easy password and bootloader recovery."
-msgstr ""
-
-#. Tag: para
-#, no-c-format
-msgid "<application>KDE SC</application> - Pardus &PRODVER; comes with the latest KDE Software Compilation, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
-msgstr ""
-
-#. Tag: para
-#, no-c-format
-msgid "<application>LibreOffice</application> - LibreOffice, an Open Source personal productivity suite sponsored by the Document Foundation, is updated to the much-awaited &LIBREOFFICEVER; version which brings huge improvements over the older version."
-msgstr ""
-
-#. Tag: para
-#, no-c-format
-msgid "<application>Firefox</application> - Firefox &FIREFOXVER;, the latest stable version of the most popular Open Source web browser, is now shipped with Pardus &PRODVER;."
+msgid "Pardus &PRODVER; contains security, critical fixes and some translation and other improvements over the previous Pardus release &PREVVER;."
 msgstr ""
 

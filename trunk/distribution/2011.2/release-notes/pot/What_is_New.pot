@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-08-17T09:13:43\n"
-"PO-Revision-Date: 2011-08-17T09:13:43\n"
+"POT-Creation-Date: 2011-09-19T10:49:36\n"
+"PO-Revision-Date: 2011-09-19T10:49:36\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
 "MIME-Version: 1.0\n"
@@ -14,42 +14,12 @@ msgstr ""
 
 #. Tag: title
 #, no-c-format
-msgid "What is New?"
-msgstr ""
-
-#. Tag: title
-#, no-c-format
-msgid "Updates in Pardus Technologies"
-msgstr ""
-
-#. Tag: title
-#, no-c-format
-msgid "YALI"
+msgid "What is new?"
 msgstr ""
 
 #. Tag: para
 #, no-c-format
-msgid "<emphasis>YALI</emphasis>, the installer of Pardus, gained system rescue menu that provides easy bootloader and password recovery."
-msgstr ""
-
-#. Tag: title
-#, no-c-format
-msgid "Pisi"
-msgstr ""
-
-#. Tag: para
-#, no-c-format
-msgid "Some of the core components are now parallellized to increase the utilization of multi-core machines which means faster package operations and better package management experience."
-msgstr ""
-
-#. Tag: title
-#, no-c-format
-msgid "QuickFormat"
-msgstr ""
-
-#. Tag: para
-#, no-c-format
-msgid "<emphasis>QuickFormat</emphasis> is a removable device formatting tool that can integrate to Dolphin. Now, it's very easy to format USB flash drives and card readers."
+msgid "You can find some changes on core components of Pardus &PRODVER;, for other addtional changes please see <ulink url=\"cd-stats.html\">here</ulink>."
 msgstr ""
 
 #. Tag: title
@@ -59,126 +29,136 @@ msgstr ""
 
 #. Tag: para
 #, no-c-format
-msgid "<application>Kernel</application> - The Linux kernel shipped with Pardus &PRODVER; is &KERNELVER;."
+msgid "<application>NetworkManager</application>"
 msgstr ""
 
 #. Tag: para
 #, no-c-format
-msgid "<application>Plymouth</application> - The bootsplash technology used in Pardus &PREVVER; is updated to its latest version for a much stable experience."
+msgid "NetworkManager is updated to &NMVER;."
 msgstr ""
 
 #. Tag: para
 #, no-c-format
-msgid "<application>X.org</application> - xorg-server is updated to &XORGVER;."
+msgid "Problems about adding VPN connections have been fixed."
 msgstr ""
 
 #. Tag: para
 #, no-c-format
-msgid "<application>TeX Live</application> - TeX Live documentation stack is updated to latest &TEXLIVEVER; version."
-msgstr ""
-
-#. Tag: title
-#, no-c-format
-msgid "Desktop Experience"
-msgstr ""
-
-#. Tag: title
-#, no-c-format
-msgid "Changes in KDE Desktop Environment"
+msgid "Handle WLAN security passwords gracefully while upgrading distribution."
 msgstr ""
 
 #. Tag: para
 #, no-c-format
-msgid "Pardus &PRODVER; comes with the latest KDE Software Compilation, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
+msgid "<application>ModemManager</application>"
 msgstr ""
 
 #. Tag: para
 #, no-c-format
-msgid "KDE Software Compilation, versioned &KDEVER;, provide many new features in each of KDE's components including Plasma, Solid, Nepomuk, KWin and also introduces a brand new Bluetooth framework called BlueDevil allows easy device pairing and management."
-msgstr ""
-
-#. Tag: title
-#, no-c-format
-msgid "Default Applications"
-msgstr ""
-
-#. Tag: title
-#, no-c-format
-msgid "Mozilla Firefox"
+msgid "ModemManager is updated to &MMVER;."
 msgstr ""
 
 #. Tag: para
 #, no-c-format
-msgid "Pardus &PRODVER; comes with <emphasis>Mozilla Firefox &FIREFOXVER;</emphasis> as the default web browser application. This version of Firefox introduces CSS animations, Do-Not-Track, improved support for HTML5, MathML, and SMIL, improved network, memory and JavaScript performance and fixes for several stability and security issues."
-msgstr ""
-
-#. Tag: title
-#, no-c-format
-msgid "Clementine"
+msgid "Improvements for Samsung modems"
 msgstr ""
 
 #. Tag: para
 #, no-c-format
-msgid "<emphasis>Clementine</emphasis>, a cross-platform music player based on Amarok 1.4 is updated to latest stability and maintenance version &CLEMENTINEVER;."
-msgstr ""
-
-#. Tag: title
-#, no-c-format
-msgid "SMPlayer"
+msgid "Support access technology reporting for Qualcomm Gobi modems"
 msgstr ""
 
 #. Tag: para
 #, no-c-format
-msgid "<emphasis>SMplayer</emphasis>, a Qt based frontend for MPlayer is set as the default Video/VCD/DVD playing application as it is well integrated with KDE desktop environment in terms of usability and graphical user interface and supports playing a wide range of video file types thanks to the MPlayer backend."
-msgstr ""
-
-#. Tag: title
-#, no-c-format
-msgid "KsCD"
+msgid "Fix communication with Nokia N900 devices"
 msgstr ""
 
 #. Tag: para
 #, no-c-format
-msgid "<emphasis>KsCD</emphasis>, is set as the default Audio CD playing application."
-msgstr ""
-
-#. Tag: title
-#, no-c-format
-msgid "Web Browsers"
+msgid "Support multiple CDMA Rm protocols"
 msgstr ""
 
 #. Tag: para
 #, no-c-format
-msgid "Although not included in the installation images, a wide range of web browsers including Chromium browser, rekonq, Arora and Opera are available for installation through the package manager."
-msgstr ""
-
-#. Tag: title
-#, no-c-format
-msgid "System Settings"
+msgid "Fix handling of Option access technology reporting"
 msgstr ""
 
 #. Tag: para
 #, no-c-format
-msgid "The display configuration tool of the graphics card manufacturer is now recommended in the <emphasis>Display and Monitor</emphasis> module of the System Settings, if it suits better to your graphics card driver."
-msgstr ""
-
-#. Tag: title
-#, no-c-format
-msgid "Office Suite"
+msgid "Fix handling of CDMA EVDO registration states"
 msgstr ""
 
 #. Tag: para
 #, no-c-format
-msgid "<emphasis>LibreOffice</emphasis>, an Open Source personal productivity suite sponsored by the Document Foundation, is the default Office Suite in Pardus &PRODVER;. &LIBREOFFICEVER; version of LibreOffice introduces; improved text rendering, configurable color charts, improved thumbnailed HTML export of presentations, faster Flat ODF import/export and better desktop theme integration."
-msgstr ""
-
-#. Tag: title
-#, no-c-format
-msgid "Other"
+msgid "Fix problems reconnecting Ericsson F5521gw modems"
 msgstr ""
 
 #. Tag: para
 #, no-c-format
-msgid "Most wanted packages like <emphasis>Skype</emphasis>, a P2P VoIP client that allows you to make voice calls, and <emphasis>Wine</emphasis>, a software that allows you to run Microsoft Windows applications, are now included in Pardus &PRODVER; package repopsitories."
+msgid "Better handling of some Android handset modem"
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "<application>cups</application> - cups is updated to &CUPSVER;."
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "<application>LibreOffice</application>"
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "LibreOffice is updated to &LIBREVER;"
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "Fixed crash closing document with footnotes"
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "Allow multi-range copy from VBA (Calc)"
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "Fix for crash with hidden column in Data-&gt;Form (Calc)"
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "Prevent crash at column row boundaries (Calc)"
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "Enable l10n of presenter screen (Presenter Screen Extension)"
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "Correctly detect documents with xlk extension as Excel binary"
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "Missing icon in Styles and Formatting dialog (Impress)"
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "Set correct mimetype for draw documents on xml export (Draw)"
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "You can check out LibreOffice web page for more information."
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "<application>MPlayer/libass</application>: Fixed crash playing subtitled videos which was triggered by freetype 2.4.6 security update."
 msgstr ""
 
