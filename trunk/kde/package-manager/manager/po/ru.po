@@ -121,7 +121,7 @@ msgstr "Уже установленные пакеты"
 #: src/basketdialog.py:214 src/mainwindow.py:147 src/mainwindow.py:150
 #: src/pmwindow.py:147
 msgid "Installed Packages"
-msgstr "Удалить"
+msgstr "Удалить пакеты"
 
 #: src/grouplist.py:49 src/tray.py:69 src/tray.py:201
 msgid "All"
@@ -173,7 +173,7 @@ msgstr "Все пакеты"
 
 #: src/mainwindow.py:141 src/mainwindow.py:144
 msgid "Installable Packages"
-msgstr "Установить"
+msgstr "Установить пакеты"
 
 #: src/mainwindow.py:153 src/mainwindow.py:156
 msgid "Updates"
