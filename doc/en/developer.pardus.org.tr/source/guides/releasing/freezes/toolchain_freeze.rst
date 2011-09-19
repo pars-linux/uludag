@@ -2,6 +2,7 @@
 
 Toolchain Freeze
 ================
+
 TEMPLATE: Needs to be evaluated.
 
 The toolchain is freezed at milestone `Beta 2`_  and the building structure of the release is fixed and can not been changed without release management group approval.
