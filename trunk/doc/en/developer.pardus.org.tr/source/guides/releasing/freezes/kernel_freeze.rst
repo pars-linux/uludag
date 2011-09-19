@@ -1,4 +1,4 @@
-.. _kernel-freeze
+.. _kernel-freeze:
 
 Kernel Freeze
 =============
