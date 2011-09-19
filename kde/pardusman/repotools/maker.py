@@ -17,6 +17,7 @@ import stat
 import time
 import dbus
 import glob
+import shutil
 import hashlib
 import tempfile
 
@@ -595,8 +596,12 @@ def make_iso(project):
         os.link(image_file, os.path.join(iso_dir, "pardus.img"))
 
         def copy(src, dest):
-            run('cp -PR "%s" "%s"' % (src, os.path.join(iso_dir, dest)))
-            run('rm -rf "%s/.svn"' % os.path.join(iso_dir, dest))
+            dest = os.path.join(iso_dir, dest)
+
+            if os.path.isdir(src):
+                shutil.copytree(src, dest, ignore=shutil.ignore_patterns(".svn"))
+            else:
+                shutil.copy2(src, dest)
 
         if project.release_files:
             # Allow ~ usage in project xml files
