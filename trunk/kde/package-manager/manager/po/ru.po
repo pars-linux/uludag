@@ -610,11 +610,11 @@ msgstr "Добавить репозиторий"
 
 #: ui/ui_repodialog.py:55
 msgid "Name of the repository, e.g <b>pardus-devel</b>"
-msgstr "Имя репозитория, например <b>pardus-devel</b>"
+msgstr "Название репозитория, например <b>pardus-devel</b>"
 
 #: ui/ui_repodialog.py:56 ui/ui_settingsdialog.py:425
 msgid "Repository Name"
-msgstr "Имя репозитория"
+msgstr "Название"
 
 #: ui/ui_repodialog.py:57 ui/ui_settingsdialog.py:426
 msgid "Repository Address"
