@@ -88,10 +88,9 @@ Planning
 
 - Package build system up
 - Toolchain organized
-- Features proposed, discussed on developer meeting, technical group review them and select relevant packages and technologies that fits (`Feature Acceptence Deadline`_)
-- Planned feature list announced
-- Release plan announced
-- New branch officially announce and open for merging packages
+- Proposed features are discussed by developers, reviewed by technical group and the final feature list is determined. (`Feature Acceptence Deadline`_)
+- The planned feature list and the release plan/schedule should be announced
+- Pre-alpha should be released
 
 See details from `Planning Phase`_.
 
