@@ -106,7 +106,7 @@ msgstr "Naslov"
 
 #: ui/ui_edit.py:149
 msgid "Name of the boot entry to be shown at the boot menu."
-msgstr ""
+msgstr "Naziv unosa podizanja koji će biti prikazan u izborniku podizanja."
 
 #: ui/ui_edit.py:150
 msgid "Disk"
