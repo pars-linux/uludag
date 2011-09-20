@@ -93,7 +93,7 @@ Final release date:
 Final Tracker Bugs
 ^^^^^^^^^^^^^^^^^^
 
-A bug is considered an final tracker bug if one of the following criterias is met:
+A bug is considered a final tracker bug if one of the following criterias is met:
 
 #. If a package in the urgent package list of alpha, beta or final has a bug that can not be fixed with a future update or has a severity_ rating of high or urgent.
 #. Bugs that are a blocks the testing and test process. (Bugs related to untestable products)
