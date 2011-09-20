@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: yali-branding-pardus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-07 22:01+0000\n"
+"POT-Creation-Date: 2011-09-20 00:03+0000\n"
 "PO-Revision-Date: 2011-06-24 00:36+0100\n"
 "Last-Translator: Ivica Kolić <ikoli@yahoo.com>\n"
 "Language-Team: Croatian <ikoli[@yahoo.com>\n"
@@ -130,7 +130,7 @@ msgstr ""
 
 #: ../release.xml.in.h:29
 msgid "Pardus Corporate 2 offers different installation scenarios upon your needs. So you may able to choose to install a fully desktop workspace or server applications or even a base system where you can install your choice of softwares manually."
-msgstr ""
+msgstr "Pardus Corporate 2 nudi različite scenarije instalacije prema vašom potrebama. Dakle, možda ćete moći odabrati instalirati potpuni desktop radni prostor ili poslužiteljske aplikacije ili čak osnovni sustav u kojem možete instalirati vaš izbor softvera ručno."
 
 #: ../release.xml.in.h:30
 msgid "Pardus experience may be summarized as a bright and powerful parade of free and open source softwares. You will meet some of the old friends, such as Mozilla Firefox or LibreOffice. They might be changed a bit with Pardus developers&apos; choices to tailor them for your system. While the installation goes on, you may see some of these features..."
@@ -186,7 +186,7 @@ msgstr "Korisnički računi uspješno su konfigurirani. Kliknite Dalje da biste 
 
 #: ../release.xml.in.h:43
 msgid "Validation is comparing the packages in the medium with the original ones by file verification method. A failed validation usually is a sign of a badly mastered installation medium (CD, DVD or USB storage).&lt;br&gt;&lt;br&gt;If you are using an optical medium (i.e. CD/DVD), try burning the installation image using DAO (Disc-at-once) mode, at a lower speed (4x for DVD, 8-12x for CD)."
-msgstr ""
+msgstr "Provjera valjanosti je usporedba paketa u mediju s izvornim paketima putem metode valjanosti. Neuspjela valjanost je obično znak lošeg  nstalacijskog medija (CD, DVD ili USB).&lt;br&gt;&lt;br&gt; Ako koristite optički medij (npr. CD / DVD), pokušajte snimiti instalacijsku sliku pomoću DAO (Disc-at-once) načina, pri nižim brzinama (4x za DVD, 8-12x za CD)."
 
 #: ../release.xml.in.h:44
 msgid "Welcome back..."
@@ -214,7 +214,7 @@ msgstr "Možete ponovo instalirati boot loader ili obnoviti bilo koju lozinku ko
 
 #: ../release.xml.in.h:50
 msgid "You have successfully installed Pardus on your computer. After restarting your computer, you can finally enjoy the full benefits of Pardus.&lt;br&gt;&lt;br&gt;Please be sure that you remember your password and unmount the installation medium (remove the usb disk, eject the dvd or release the image in virtual machies)."
-msgstr ""
+msgstr "Uspješno ste instalirali Pardus na vaše računalo. Nakon ponovnog pokretanja računala, te napokon može uživati ​​u prednostima Pardusa.&lt;br&gt;&lt;br&gt;Molimo budite sigurni da ćete zapamtiti lozinku i odmontirati instalacijski medij (uklonite USB disk, izbaciti DVD-a ili pustite sliku u virtualnim strojevima)."
 
 #: ../release.xml.in.h:51
 msgid "You have successfully installed Pardus on your computer. After restarting your computer, you will able to add new user accounts and use Pardus. Please be sure that you unmount the installation medium (remove the usb disk, eject the dvd or release the image in virtual machies)."
