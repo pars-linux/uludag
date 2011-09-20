@@ -23,10 +23,9 @@ According to this feature completeness, string freeze is also realized..
 During this phase Alpha release `tracker bugs`_ should also be fixed.
 
 For the packages, `urgent package list`_ is created periodically and put as text
-file under the related releases' `package source repository`_ `devel branch`_.
-These packages are updated and merged to new `package source repository`_ at given
-period and time.
-
+file under `package source repository`_ `devel branch`_.
+These packages are updated to required versions and merged to `package source
+repository`_ at given period and time.
 
 As we can see during alpha phase rapid changes occur and so the software can be
 unstable and could cause crashes or data loss.
@@ -51,6 +50,7 @@ For each Pardus Alpha releases (Alpha 1, 2, 3), the following criterias must be 
 * The installed system must boot to the default desktop environment without user intervention
 * The desktop greeter (Kaptan_) should start when the system boot.
 * All `Pardus technologies`_ must be able to work with new features (they may have bugs)
+* All urgent packages should be updated to required versions
 * All strings of `Pardus technologies`_ should be finished before Alpha released.
 * The default web browser must run and be able to download files and load extensions
 * Default applications that exist on desktop menu must be listed.
@@ -79,7 +79,7 @@ Alpha 1
 1 week before Alpha 1:
 ----------------------
 
-#. Warn mirrors and ULAKBIM one week before
+#. Warn mirrors and ULAKBIM
 
 Alpha 1 release day:
 --------------------
@@ -134,9 +134,9 @@ Alpha 3
 
 #. `Feature freeze`_
 #. `String freeze`_
-#. Prepare and make "where we are meeting" after validation tests
+#. Prepare and make "where we are meeting" after validation tests, in order to review bugs and possibility to prolonge release.
 #. Create release-notes
-#. Warn mirrors and ULAKBIM one week before
+#. Warn mirrors and ULAKBIM
 
 4 days before Alpha 3:
 ----------------------
