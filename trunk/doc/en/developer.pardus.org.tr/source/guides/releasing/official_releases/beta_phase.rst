@@ -48,8 +48,8 @@ In order to do Pardus Beta official, the following criterias must be meet:
 * Release Upgrade should be stabilized and get almost ready to Final Release.
 * The upgrade manager should complete the upgrade from a clean updated previous Pardus release.
 
-Beta Tickets
-^^^^^^^^^^^^
+Beta Schedule
+^^^^^^^^^^^^^
 
 Beta 1
 ######

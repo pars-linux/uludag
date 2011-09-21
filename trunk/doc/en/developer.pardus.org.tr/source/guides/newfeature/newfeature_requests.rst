@@ -16,9 +16,9 @@ This kind of process for new features, is very important for following the statu
 
 Pardus Linux Distiribution intend to use a predictable release schedule. Related to this, the new feature policy has also a timeline. Periodically reviewed of new features is increase the predictability of the release schedule.
 
-Defined Features has many advantages:
+Defining Features on Bugzilla has many advantages:
 
-   #. The reported features from bugzilla can be followed simply and enable everyone in order give suggestions, comments and feedback.
+   #. The reported features from bugzilla can be followed simply and enable everyone in order to give suggestions, comments and feedback.
    #. The volunteers can simply deal with these features.
    #. Testers can get some idea from the report status and can build up experience and knowledge about the feature area.
    #. It creates an excitement what's being worked on.
@@ -63,7 +63,7 @@ How do I propose a new feature that I do not contribute?
 --------------------------------------------------------
 #. Have an account on http://bugs.pardus.org.tr
 #. Click "File a New Bug" button on bugs.pardus.org.tr
-#. Choose the product that you want to request the new feature.
+#. Choose the product that you want to request the new feature. If it is a new package request, follow `new package request`_ process.
 #. A report interface will exist:
     #. The "Summary" part should include a title like "New feature X". (X is the new feature that you want.)
     #. In "Details" part you should give the answers of the following questions:
@@ -80,7 +80,7 @@ How I can propose a new feature that I want to contribute?
 
 How can I cancel proposed feature?
 ----------------------------------
-    #. If you report your new feature `How do I propose a new feature that I do not contribute?`_, you can cancel your feature with selecting status of the report as "RESOLVED/INVALID".
+    #. You can cancel your feature with selecting status of the report as "RESOLVED/INVALID".
 
 How my new feature request is accepted?
 ---------------------------------------
@@ -95,7 +95,7 @@ Process
 -------
 
 #. New feature requests should be reported from `Pardus Bugzilla`_.  See `How do I propose a new feature that I do not contribute?`_
-#. New feature requests are reviewed by Release management group after feature request deadline.
+#. New feature requests are reviewed by Release team after feature request deadline.
 
 
 New Feature reported from Bugzilla
@@ -103,10 +103,10 @@ New Feature reported from Bugzilla
 
        ..  image:: images/feature_bugzilla.png
 
-The requests is came from bugzilla can be reviewed by release managger, assigned developer or Release and Community Delegate group. Some bugs reported by user may have a new feature or enhancement nature, but users generally let the severity part as "Normal". The aim  is to review these type of bugs regularly and change their severity as needed.
+The requests that came from bugzilla are reviewed by release team, assigned developer or Release and Community Delegate group. Some bugs reported by user may have a new feature or enhancement nature, but users generally let the severity part as "Normal". The aim  is to review these type of bugs regularly and change their severity as needed.
 
     #. This feature review can be done once a week. If the report is suitable for `What is a Feature?`_ description, and reported completely and clearly, their severities can be changed as "low" for enhancements and "newfeature" for new features.
-    #. If the report is not very clear and not suitable for `What is a Feature?`_ description, the report status is marked with "RESOLVED/INVALID".
+    #. If the report is not very clear and not suitable for `What is a Feature?`_ description, the report status is marked with **RESOLVED/INVALID**.
 
 
 Acceptance of New Feature Request
@@ -115,13 +115,13 @@ Acceptance of New Feature Request
 There exist also another deadline that is the new feature submission deadline. Before this deadline, all "newfeature" and "low" severity bugs reviewed by release manager and assigned developer during one week. The aim of this review is to decide whether the feature is accepted for new Pardus Release.
 
 #. Release manager group assigned developer review "low" and "newfeature" severity bugs.
-    #. If the new feature request is not suitable for `What is a Feature?`_ description, the report status is marked with "RESOLVED/INVALID".
-    #. If this new feature can not be done for this new release but may be done for the next new release, the report status is marked with "RESOLVED/LATER".
+    #. If the new feature request is not suitable for `What is a Feature?`_ description, the report status is marked with **RESOLVED/INVALID**.
+    #. If this new feature can not be done for this new release but may be done for the next new release, the report status is marked with **RESOLVED/LATER**.
     #. If this new feaure is suitable for `What is a Feature?`_ description, and can be accepted for this new release:
-        #. The report status is marked with "RESOLVED/REMIND".
+        #. One of the developers will start to deal with this feature and the report status is marked with **ASSIGNED**.
         #. If necessary the product and component can be changed.
         #. The bug report is marked as the tracker bug of the related release.
-        #. When the bug is became a task in the project maangement tool, it will be given in the URL part of the bug report.
+        #. When the bug is became a task in the project management tool, the task is assigned to relevant developer and the task url is given to URL part of the bug report.
         #. The SVN commit messages should be traceable in order to enable users to follow changes via bugzilla and issue tracking tool.
 
 Accomplishment of New Feature
@@ -139,9 +139,9 @@ How I can follow the new feature progress?
 
 If the bug status is marked as:
 
-#. "RESOLVED/INVALID", your new feature request is unfortunately not accepted.
-#. "RESOLVED/LATER", your new feature request is left to next release.
-#. "RESOLVED/REMIND", your new feature request is accepted as a new feature of this new release.
+#. **RESOLVED/INVALID**, your new feature request is unfortunately not accepted.
+#. **RESOLVED/LATER**, your new feature request is left to next release.
+#. **ASSIGNED**, your new feature request is accepted as a new feature of this new release.
     #. The implementation progress is reflected to comments as SVN commits. 
     #. The implementation can also be followed via related task of the project management tool URL given in the bug report.
     #. When the new feauture is accomplished, the bug status is marked as "RESOLVED/FIXED".
@@ -149,3 +149,5 @@ If the bug status is marked as:
 .. _Pardus Bugzilla: http://bugs.pardus.org.tr
 .. _feature freeze time: http://developer.pardus.org.tr/guides/releasing/freezes/feature_freeze.html
 .. _exceptional circumstances: http://developer.pardus.org.tr/guides/releasing/freezes/freeze_exception_process.html
+.. _new package request:  http://developer.pardus.org.tr/guides/newfeature/new_package_request.html
+.. _mentoring process: http://developer.pardus.org.tr/guides/newcontributor/mentoring_process.html

@@ -3,14 +3,14 @@
 Freeze Exceptions
 =================
 
-There may exist some exceptions at some points of the Pardus Releases. These exceptions are controlled by release group based on the information gived by the developer who proposes the exception.
+There may exist some exceptions at some points of Pardus Releases. These exceptions are controlled by release group, based on the information gived by the developer who proposes the exception.
 
 Exception Process
 -----------------
 
-Each freeze exception should have a bug report for the relevant package (if the package does not exist yet, file a bug about the exception).
+Each freeze exception should have a bug report for the relevant package (If it is a new package exception, and has not been reported yet, file a `new package request`_ bug).
 
-All exception bugs should be marked as **EXCEPTION** and cc'ed to release group mail list.
+All exception bugs should be marked with **EXCEPTION** keyword and cc'ed to release group mail list.
 
 All freeze exception bugs must include the following information, in order to provide enough information to decrease the risk of regressions against the benefit of the changes:
 
@@ -19,7 +19,7 @@ All freeze exception bugs must include the following information, in order to pr
 
 We expect that the requested exceptions have already been prepared.
 
-When the release manager group approves the exception, the bug keyword is changed to **APPROVED**, otherwise the bug report remains in **EXCEPTION** keyword state and wait for the nxt new Pardus release.
+When the release manager group approves the exception, the bug keyword is changed to **APPROVED**, otherwise the bug report remains in **EXCEPTION** keyword state and wait for the next new Pardus release.
 
 Feature Freeze Exceptions for new upstream versions
 ---------------------------------------------------
@@ -28,13 +28,13 @@ If you want to update a package to a new upstream version with new features or A
 
 #. File or triage the bug as explained at `Exception Process`_
 #. Attach diff of upstream **ChangeLog** and **NEWS** if you think is needed
-#. Mention what testing is needed in order to show that it works
 #. Depend all related bugs to exception bug
+
 
 Feature Freeze Exceptions for new packages
 -------------------------------------------
 
-Additions of new packages for the new Pardus release up until Feature Freeze time at milestone `Alpha 3`_ stage. You should follow `new package process`_ before asking for an exception.
+Additions of new packages for the new Pardus release is up until `Feature Freeze`_ time at milestone `Alpha 3`_ stage. You should follow `new package process`_ before asking for an exception.
 
 #. Follow `new package process`_
 #. File or triage the bug as explained at `Exception Process`_
@@ -69,3 +69,5 @@ The exception request will be sent to release group list and after it is approve
 .. _announce: http://lists.pardus.org.tr/mailman/listinfo/pardus-announce
 .. _developer: http://lists.pardus.org.tr/mailman/listinfo/pardus-devel
 .. _gelistirici: http://lists.pardus.org.tr/mailman/listinfo/gelistirici
+.. _new package request: http://developer.pardus.org.tr/guides/newfeature/new_package_requests.html
+.. _Feature Freeze: http://developer.pardus.org.tr/guides/releasing/official_releases/freezes/feature_freeze.html

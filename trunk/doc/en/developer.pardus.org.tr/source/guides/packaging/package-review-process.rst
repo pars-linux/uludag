@@ -30,6 +30,7 @@ The requirements below should be checked by reviewers:
     - GUI applications should not have turkish language problems
     - GUI applications must have a standart dektop file
     - Package security vulnerabilities must be checked
+
       - Search package name on http://cve.mitre.org/cve/cve.html and http://secunia.com/advisories/search/
       - Check Pardus `security website`_.
 

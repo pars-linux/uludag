@@ -12,14 +12,7 @@ Once the feature freeze time is reached, all new features for the release should
 be complete and ready for testing.
 
 New features are completed by feature freeze and tested during the test releases
-Alpha and Beta of Pardus.
-
-
-Some cases about features:
-
-    * Upstream microreleases are usually normal after feature freeze if they only fix bugs. The upstream change log and diff between the version in the Pardus development release and the new upstream version should be reviewed and verified that it only fix bugs. In any doubt please ask release managment team.
-    * If a library breaks backward compatibility (changes existing API/ABI and introduces a new SONAME), then this always needs approval from the release management group after feature freeze, since all reverse dependencies need to be adjusted and rebuilt.
-    * New packages need `package review`_ before they merge to `devel source repository`_. This process can take several days up to a few weeks. This time should be considered because, the merge date is important for the feature freeze, the new packages should be merged before feature freeze. If they are left after feature freeze they need an exception.
+Alpha_ and Beta_ of Pardus.
 
 Expectations of Feature Freeze
 ------------------------------
@@ -46,12 +39,12 @@ A release is called code complete when the development team agrees that no entir
 Exceptions
 ==========
 
-Exceptions have to be approved by the release management group for all packages.
+Exceptions have to be approved by the release team for all packages.
 
 They can be approved if the merge:
 
     * contributes to high severity `tracker bugs`_,
-    * is warranted due to other exceptional circumstances, as judged by the release management group.
+    * is warranted due to other exceptional circumstances, as judged by the release team.
 
 Some cases about features:
 
@@ -68,3 +61,5 @@ See `freeze exception process`_ for details.
 .. _package review: http://developer.pardus.org.tr/guides/packaging/package-review-process.html
 .. _devel source repository: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#devel-folder
 .. _feature freeze exceptions for new upstream versions: http://developer.pardus.org.tr/guides/releases/freezes/freeze_exception_process.html#feature-freeze-exceptions-for-new-upstream-versions
+.. _Alpha: http://developer.pardus.org.tr/guides/releasing/official_releases/alpha_phase.html
+.. _Beta: http://developer.pardus.org.tr/guides/releasing/official_releases/beta_phase.html
