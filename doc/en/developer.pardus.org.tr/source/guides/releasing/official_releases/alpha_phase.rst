@@ -1,7 +1,7 @@
 .. _alpha-release:
 
 Alpha Release
--------------
+=============
 
 :Author: Semen Cirit
 :Last Modified Date: |today|

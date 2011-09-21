@@ -7,6 +7,7 @@ Releasing
    :maxdepth: 2
 
    official_releases/index.rst
+   freezes/index.rst
    repository_concepts/index.rst
    bootstrapping.rst
    preparing_buildfarm.rst

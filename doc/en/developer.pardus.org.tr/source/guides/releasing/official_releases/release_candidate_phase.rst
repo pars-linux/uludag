@@ -8,9 +8,6 @@ Release Candidate Phase
 :Version: 0.1
 
 
-Relase Canditate
-----------------
-
 The term release candidate (RC) refers to a version with potential to be a
 final product, ready to release unless fatal bugs emerge.
 
