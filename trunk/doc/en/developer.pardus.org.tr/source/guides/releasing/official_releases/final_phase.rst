@@ -7,9 +7,6 @@ Final Release
 :Last Modified Date: |today|
 :Version: 0.2
 
-Final Release
--------------
-
 This phase indicates that the software has reached a point that it is ready to and
 has been delivered and provided to the users.
 

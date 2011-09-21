@@ -18,7 +18,7 @@ The roadmap of the release is planned during this phase. Requirements and
 specifications freeze and reported on `Pardus Bugzilla`_.
 
 Planning Phase Goals
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 #. Proposed features are discussed by developers, reviewed by technical group and the final feature list is determined. (Feature Acceptence Deadline)
 #. The planned feature list and the release plan/schedule should be announced
