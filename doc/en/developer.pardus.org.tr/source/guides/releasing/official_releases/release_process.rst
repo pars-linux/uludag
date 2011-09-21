@@ -189,7 +189,7 @@ LTS technological updates (point releases)
 Maintainance
 ^^^^^^^^^^^^
 
-The maintenance time of a release is about 2 previous release + 1 month (~13 months) (2n +1).
+The maintenance time of a release is about previous release + 2 month (~8 months) (n +2).
 
 Package maintainers MUST:
 
@@ -204,15 +204,15 @@ Package maintainers MUST:
 
 Package maintainers SHOULD:
 
-- Push only major bug fixes and security fixes to previous release (n-1).
+- Push only major bug fixes and security fixes to previous release (n-2).
 
 See also `exception process`_.
 
 EOL
 ^^^
 
-- The EOL announce of a release is done at second next release beta 1 version.
-- The EOL announce date of a release 2 next release + 1 month (2n +1).
+- The EOL warning announce of a release is done at next release Beta 2 version.
+- The EOL announce date of a release is next release + 2 month (n +2).
 
 See details from `EOL`_.
 

@@ -4,32 +4,46 @@ End of Life
 ============
 
 Releases for which updates are no longer provided are considered to be
-unmaintained and thus end of life or commonly referred to as EOL.
+unmaintained and thus end of life or commonly referred to as EOL. It is
+recommended to upgrade a recent version of Pardus at this point.
 
-Each release of Pardus is maintained as written in `release life cycle`_ document.
+Each short term support Pardus release is maintained about 1 year and
+during this time there will be security and critical fixes. The EOL announce
+date of a release is next release + 2 month (n + 2).
+
+For long term support releases, the maintainence is about 4 years, the last
+one year only security fixes are held.
 
 At the end of this maintenance period, Pardus reaches its end of life.
 
 This document explains the steps for which a release has reached EOL status.
 
-Setting EOL date
-----------------
+EOL Goals
+*********
 
-The EOL date will be determined according to followings:
+Warn users and contributors about the ending time of the maintained release
+and give a recommendation for the upgrade to the new release of Pardus.
 
-* The `release life cycle`_ stages should be taken to account.
-* The relational projects with the EOL release should be taken to account.
+EOL Schedule
+************
+
+4 weeks before EOL:
+-------------------
+
+- Warn users and contributors on announce_, duyuru_, gelistirici_, developer_ lists about:
+    * Last update date
+    * Last security update date
+    * Actual end of life date
+
+EOL day:
+########
 
 Anouncement
 -----------
 
-The following anouncement will be made before 30 days of each step on Pardus devel, gelistirici, pardus-announce, duyuru lists:
+- Announce EOL of the current release on announce_, duyuru_, gelistirici_, developer_ lists.
 
-* Last update date
-* Last security update date
-* Actual end of life date
-
-See `an example anouncement has made for Pardus EOL <http://liste.pardus.org.tr/pardus-devel/2010-August/001908.html>`_.
+See `an example anouncement has made for Pardus EOL <http://liste.pardus.org.tr/pardus-devel/2010-August/001908.html>`_.    * Actual end of life date
 
 Subversion Tasks
 ----------------
@@ -78,9 +92,9 @@ All opened issues should be closed or moved to new release issues on `Pardus tra
 
 .. _tracker bugs: http://developer.pardus.org.tr/guides/bugtracking/tracker_bug_process.html
 .. _duyuru: http://lists.pardus.org.tr/mailman/listinfo/duyuru
-.. _pardus-announce: http://lists.pardus.org.tr/mailman/listinfo/pardus-announce
+.. _announce: http://lists.pardus.org.tr/mailman/listinfo/pardus-announce
 .. _gelistirici: http://lists.pardus.org.tr/mailman/listinfo/gelistirici
-.. _pardus-devel: http://lists.pardus.org.tr/mailman/listinfo/pardus-devel
+.. _devel: http://lists.pardus.org.tr/mailman/listinfo/pardus-devel
 .. _Pardus tracker: http://tracker.pardus.org.tr/
 .. _release life cycle: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html
 

@@ -93,7 +93,7 @@ Beta 2
    * Package file conflicts or unresolved package dependencies
 
 #. Begin Release Upgrade tests
-#. Announce EOL of 2 previous release
+#. Warn aout EOL of previous release
 
 1 week before Beta 2:
 ---------------------

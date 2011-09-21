@@ -90,6 +90,11 @@ Final release date:
 
 #. Continue new next release process
 
+2 month after Final release day:
+--------------------------------
+
+#. EOL_ of the previous release
+
 Final Tracker Bugs
 ^^^^^^^^^^^^^^^^^^
 
