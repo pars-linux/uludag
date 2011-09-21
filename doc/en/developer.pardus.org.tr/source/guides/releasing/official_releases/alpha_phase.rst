@@ -58,8 +58,8 @@ For each Pardus Alpha releases (Alpha 1, 2, 3), the following criterias must be 
 * The new release artwork must either refer to the current release under maintainance, or reference to a temporary test release. This artwork should be for the installer, firstboot, graphical boot, graphical login·
 * Release Upgrade tests should start and upgrade can be possible with some existed bugs.
 
-Alpha Tickets
-^^^^^^^^^^^^^
+Alpha Schedule
+^^^^^^^^^^^^^^
 
 Alpha 1
 #######

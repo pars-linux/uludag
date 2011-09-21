@@ -53,8 +53,8 @@ In order to do Pardus Final official, the following criterias must be met:
 * Pardus icon theme must be supported by the desktop greeter (Kaptan_) and should load successfully if selected.
 * Upgrade manager should be ready for upgrade.
 
-Final Tickets
-^^^^^^^^^^^^^
+Final Schedule
+^^^^^^^^^^^^^^
 2 weeks before Final:
 ---------------------
 

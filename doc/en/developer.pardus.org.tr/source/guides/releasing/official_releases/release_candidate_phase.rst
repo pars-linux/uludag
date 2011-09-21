@@ -56,8 +56,8 @@ In order to do Pardus RC official, the following criterias must be met:
 * All supported languages should be announced on mail lists and the translations of these supported languages should be finished and tested before RC released.
 * Upgrade manager should be ready for upgrade
 
-RC Tickets
-^^^^^^^^^^
+RC Schedule
+^^^^^^^^^^^
 
 2 weeks before RC:
 ------------------
