@@ -36,6 +36,11 @@ Feature freeze at milestone Alpha 3 is the last time for package meges to `devel
 After this time the `exception process`_ is in progress.
 
 
+New Package Inclusion
+---------------------
+
+New packages are accepted to official Pardus repositories under `some circumstances`_. These circumstances are controlled at `package review`_ by related component supervisor and team leader.
+
 .. _Licensing Criteria: http://developer.pardus.org.tr/guides/licensing/index.html
 .. _devel source repository: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#devel-folder
 .. _feature freeze: http://developer.pardus.org.tr/guides/releasing/freezes/feature_freeze.html
@@ -50,3 +55,4 @@ After this time the `exception process`_ is in progress.
 .. _exception process: http://developer.pardus.org.tr/guides/releasing/freezes/freeze_exception_process.html#feature-freeze-exceptions-for-new-packages
 .. _package review: http://developer.pardus.org.tr/guides/packaging/package-review-process.html
 .. _package review criteria: http://developer.pardus.org.tr/guides/packaging/reviewing_guidelines.html
+.. _some circumstances: http://developer.pardus.org.tr/guides/packaging/package-review-process.html#aim-of-review

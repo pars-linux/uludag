@@ -35,6 +35,16 @@ Expected Developer
 
 If you are already a `expected developer`_ and want to be a Pardus developer, please apply to `new contributor process`_.
 
+Team Members
+************
+
+All main work under a team is executed by related team members.
+  Example::
+
+    For destop environment team, the kde base packages must be maintained by a desktop
+    environment team member, but xfce can be maintained by another people in an other
+    team
+
 Package Maintainers
 -------------------
 #. Maintain the package according to repository and package rules.
@@ -96,6 +106,12 @@ Lead Developer:
 #. Organize and coordinate the developers under the project.
 #. Review bugs related to the project and give related severity and priority levels.
 
+Team Leaders
+************
+
+- Team leaders review and control all team work, with related component supervisors.
+- All component supervisor roles is also applies to team leaders.
+- `New package`_ and `new feature`_ inclusions are approved and planned by team leaders.
 
 .. _package review: http://developer.pardus.org.tr/guides/packaging/package-review-process.html
 .. _Contribute to Pardus: http://developer.pardus.org.tr/guides/newcontributor/areas-to-contribute.html
@@ -106,3 +122,5 @@ Lead Developer:
 .. _new contributor process: http://developer.pardus.org.tr/guides/newcontributor/how-to-be-contributor.html
 .. _Bugzilla: http://bugs.pardus.org.tr
 .. _Mentors: http://developer.pardus.org.tr/guides/newcontributor/newcontributor_mentors.html
+.. _New package: http://developer.pardus.org.tr/guides/newfeature/new_package_requests.html
+.. _new feature: http://developer.pardus.org.tr/guides/newfeature/newfeature_requests.html
