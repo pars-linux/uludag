@@ -103,7 +103,7 @@ New Feature reported from Bugzilla
 
        ..  image:: images/feature_bugzilla.png
 
-The requests that came from bugzilla are reviewed by release team, assigned developer or Release and Community Delegate group. Some bugs reported by user may have a new feature or enhancement nature, but users generally let the severity part as "Normal". The aim  is to review these type of bugs regularly and change their severity as needed.
+The requests that came from bugzilla are reviewed by release team, related team leader, assigned developer or Release and Community Delegate group. Some bugs reported by user may have a new feature or enhancement nature, but users generally let the severity part as "Normal". The aim  is to review these type of bugs regularly and change their severity as needed.
 
     #. This feature review can be done once a week. If the report is suitable for `What is a Feature?`_ description, and reported completely and clearly, their severities can be changed as "low" for enhancements and "newfeature" for new features.
     #. If the report is not very clear and not suitable for `What is a Feature?`_ description, the report status is marked with **RESOLVED/INVALID**.
