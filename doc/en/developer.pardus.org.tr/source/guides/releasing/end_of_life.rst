@@ -28,7 +28,7 @@ EOL Schedule
 ************
 
 4 weeks before EOL:
--------------------
+###################
 
 - Warn users and contributors on announce_, duyuru_, gelistirici_, developer_ lists about:
     * Last update date
@@ -52,6 +52,34 @@ The unmaintained release is moved from main package repository
 (http://svn.pardus.org.tr/pardus/) to package tags repository
 (http://svn.pardus.org.tr/pardus/tags/).
 
+
+Bugzilla Tasks
+--------------
+
+Pardus does not track or review bugs for releases where there will be no more
+updates, that means which reaches its EOL.
+
+All open bugs about the EOL release is controlled. If they are not reproducible
+on the current release, they will be closed with the below message:
+
+::
+
+    Thank you for your bug report. Unfortunately, Pardus X has reached its end-of-life
+    and the current bug reports concerning Pardus X will become invalid. If you can
+    still reproduce the bug on Pardus Y, you can reopen the bug and update the version
+    information. Thanks.
+
+Also the `tracker bugs`_ related to release will be closed. (alfa, beta, RC, final release blockers.)
+
+Redmine Tasks
+-------------
+
+All opened issues should be closed or moved to new release issues on `Pardus tracker`_.
+
+
+About 6 months after EOL
+########################
+
 Packages Web Site Tasks
 -----------------------
 
@@ -66,29 +94,6 @@ The example rsync.conf that changed in servers::
 
 The EOL release information in rsync.conf file is removed, and the packages web
 site directly sync and its information is disappeared.
-
-Bugzilla Tasks
---------------
-
-Pardus does not track or review bugs for releases where there will be no more
-updates, that means which reaches its EOL.
-
-All open bugs about the EOL release is controlled. If they are not reproducible
-on the actual release, they will be closed with the below message:
-
-::
-
-    With the upcoming Pardus X release, Pardus Y which was in security-only
-    mode for a while will soon reach its end-of-life and the current bug reports
-    concerning Pardus Y will become invalid. If you can still reproduce the bug
-    on Pardus X, you can reopen the bug and update the version information. Thanks.
-
-Also the `tracker bugs`_ related to release will be closed. (alfa, beta, RC, final release blockers.)
-
-Redmine Tasks
--------------
-
-All opened issues should be closed or moved to new release issues on `Pardus tracker`_.
 
 .. _tracker bugs: http://developer.pardus.org.tr/guides/bugtracking/tracker_bug_process.html
 .. _duyuru: http://lists.pardus.org.tr/mailman/listinfo/duyuru
