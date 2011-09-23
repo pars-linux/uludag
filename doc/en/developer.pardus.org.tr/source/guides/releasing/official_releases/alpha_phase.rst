@@ -89,7 +89,8 @@ Alpha 1 release day:
    * Upload iso to FTP servers
    * Upload iso to torrents
 
-#. Announcement for Alpha release on `duyuru list`_ and `announce list`_
+
+#. Announcement for Alpha release on `gelistirici list`, `developer list`_ and `duyuru list`_, `announce list`_
 
 
 Alpha 2
@@ -114,8 +115,7 @@ Alpha 2 release day:
    * Upload iso to FTP servers
    * Upload iso to torrents
 
-#. Announcement for Alpha release on `duyuru list`_ and `announce list`_
-
+#. Announcement for Alpha release on `gelistirici list`, `developer list`_
 
 Alpha 3
 #######
@@ -176,7 +176,8 @@ Alpa 3 release day:
    * Upload iso to FTP servers
    * Upload iso to torrents
 
-#. Announcement for Alpha release on `duyuru list`_ and `announce list`_
+
+#. Announcement for Alpha release on `gelistirici list`, `developer list`_
 
 Release plus 1 week:
 
