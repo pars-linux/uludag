@@ -65,15 +65,14 @@ RC Schedule
 
    * `Translation freeze`_
    * `Kernel freeze`_
-   * `Repo branching`_ for contributors
    * `RC freeze`_
    * Package file conflicts or unresolved package dependencies
 
 #. Begin Release Upgrade tests
 #. Plan the date of product publicity (launching)
 
-10 days before RC:
-------------------
+7 days before RC:
+-----------------
 
 #. Review problems and mark as RC tracker bug which need resolution before release
 
@@ -93,16 +92,11 @@ RC Schedule
 
 #. Prepare and make "where we are meeting" after validation tests in order to review bugs possibility to prolonge release.
 #. Decide for RC code name and its Wallpaper
-#. Request contributor release notes
 #. Create release-notes
 #. Make stock plan for publicity and promotion materials
 #. Preperation for final release announcement and marketing materials
 #. Last check for update feature list according to completed features
 #. Warn mirrors and ULAKBIM one week before
-
-7 days before RC:
------------------
-
 #. Test and fix Final `tracker bugs`_
 #. Testing targets achieved (All features functional and bug free)
 #. Track the production of publicity and promotion materials
