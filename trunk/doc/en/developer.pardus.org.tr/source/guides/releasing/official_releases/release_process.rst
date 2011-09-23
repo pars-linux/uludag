@@ -84,11 +84,9 @@ General Milestones
 
 Planning
 ^^^^^^^^
-(about 2 months)
+(about 1 months)
 
-- Package build system up
-- Toolchain organized
-- Proposed features are discussed by developers, reviewed by technical group and the final feature list is determined. (`Feature Acceptence Deadline`_)
+- Proposed features are discussed by developers, reviewed by technical group and release team and the final feature list is determined.
 - The planned feature list and the release plan/schedule should be announced
 - Pre-alpha should be released
 
@@ -132,8 +130,7 @@ Beta 1
 Stabilization phase (about 3 week)
 
 - Review Beta `tracker bugs`_
-- No urgent and high bugs present
-- Fix high priority `tracker bugs`_
+- Finish urgent and high priority `tracker bugs`_
 - Announce EOL of 2 previous release
 - Translation and user documentation check
 
@@ -144,7 +141,7 @@ Beta 2
 Stabilization phase completed (about 2 week)
 
 - Where we are meeting to review bugs and possibility to prolonge release.
-- All normal, low priority `tracker bugs`_ fixed
+- Finish all normal, low priority `tracker bugs`_
 - `Toolchain freeze`_ ?
 - `User interface freeze`_
 - `Beta freeze`_
@@ -157,11 +154,9 @@ RC
 (about 2 weeks)
 
 - "Where we are meeting" to review bugs and possibility to prolonge release.
-- Fixing only urgent release tracker bugs, bug fix needs approval.
+- Fix only urgent release tracker bugs, bug fix needs approval. (See `testing source repository merge process`_)
 - `Kernel freeze`_
 - `Translation freeze`_
-- Repo freeze for contributors
-- Request contributor release notes
 - Testing targets achieved (All features functional and bug free)
 - `RC freeze`_
 - Final Marketing and announcement ready
@@ -173,7 +168,7 @@ Final
 (about 2 weeks)
 
 - `Final freeze`_
-- Only boot and installation urgent release `tracker bugs`_ fixed and needs approval.
+- Fix only boot and installation urgent release `tracker bugs`_ and bug fix needs approval. (See `testing source repository merge process`_)
 - Start new release cycle for the next release
 
 See details from `Final phase`_
@@ -235,3 +230,4 @@ See details from `EOL`_.
 .. _kernel freeze: http://developer.pardus.org.tr/guides/releasing/freezes/kernel_freeze.html
 .. _toolchain freeze: http://developer.pardus.org.tr/guides/releasing/freezes/toolchain_freeze.html
 .. _exception process: http://developer.pardus.org.tr/guides/releasing/freezes/freeze_exception_process.html
+.. _testing source repository merge process: tp://developer.pardus.org.tr/guides/packaging/package_update_process.html#merging-to-testing-source-repository:

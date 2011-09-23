@@ -68,7 +68,7 @@ Release minus 5 days:
 --------------------
 
 #. `Final freeze`_
-#. Only boot and installation urgent `tracker bugs`_ fixed and needs approval.
+#. Only boot and installation urgent `tracker bugs`_ fixed and needs approval. (See `testing source repository merge process`_)
 
 Final release date:
 -------------------
@@ -121,4 +121,4 @@ at the "where we are" meeting.
 .. _duyuru list: http://lists.pardus.org.tr/mailman/listinfo/duyuru
 .. _announce list: http://lists.pardus.org.tr/mailman/listinfo/pardus-announce
 .. _Final freeze: http://developer.pardus.org.tr/guides/releasing/freezes/final_freeze.html
-
+.. _testing source repository merge process: tp://developer.pardus.org.tr/guides/packaging/package_update_process.html#merging-to-testing-source-repository:

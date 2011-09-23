@@ -11,7 +11,7 @@ Beta phase is bug fixing and detailed test phase in order to stabilize new
 release and takes about 1 month.
 
 At the end of the beta phase, software should be `code complete`_, indicating
-that there only left major bug fixes left. Code complete version of a software
+that there only left critical bug fixes left. Code complete version of a software
 is almost similar to final.
 
 During this phase Beta `tracker bugs`_ should also be fixed.
@@ -58,7 +58,7 @@ Beta 1
 -----------------------
 
 #. Review `tracker bugs`_ and no urgent and high bugs present
-#. Fix high priority `tracker bugs`_
+#. Finish high priority `tracker bugs`_
 #. Create a list for promotion and publicity materials
 #. Plan and start for artwork pardus
 
@@ -76,8 +76,8 @@ Beta 1 release day:
    * Upload iso to FTP servers
    * Upload iso to torrents
 
+#. Announcement for Beta release on `gelistirici list`_ and `developer list`_
 #. Announcement for Beta release on `duyuru list`_ and `announce list`_
-
 
 Beta 2
 ######
@@ -85,7 +85,7 @@ Beta 2
 2 week before Beta 2:
 ---------------------
 
-#. All normal, low priority `tracker bugs`_ fixed
+#. Finish all normal, low priority `tracker bugs`_
 #. `Toolchain freeze`_ start
 #. Warn developers about:
 
@@ -144,7 +144,7 @@ Beta 2 release day:
    * Upload iso to FTP servers
    * Upload iso to torrents
 
-#. Announcement for Beta release on `duyuru list`_ and `announce list`_
+#. Announcement for Beta release on `gelistirici list`_ and `developer list`_
 
 1 day after Beta 2 release day:
 -------------------------------
@@ -204,3 +204,5 @@ at the "where we are" meeting.
 .. _Translation freeze: http://developer.pardus.org.tr/guides/releasing/freezes/translation_freeze.html
 .. _Final freeze: http://developer.pardus.org.tr/guides/releasing/freezes/final_freeze.html
 .. _Repo branching: http://developer.pardus.org.tr/guides/releasing/freezes/repo_freeze.html
+.. _developer list: http://lists.pardus.org.tr/mailman/listinfo/pardus-devel
+.. _gelistirici list: http://lists.pardus.org.tr/mailman/listinfo/gelistirici

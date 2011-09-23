@@ -103,13 +103,6 @@ RC Schedule
 7 days before RC:
 -----------------
 
-#. `Repo branching`_ for contributors
-#. Resolve only image based problems
-
-   * Package conflicts or unresolved package dependencies
-   * Installation bugs
-   * High severity bugs
-
 #. Test and fix Final `tracker bugs`_
 #. Testing targets achieved (All features functional and bug free)
 #. Track the production of publicity and promotion materials
@@ -119,7 +112,7 @@ RC Schedule
 -----------------
 
 #. Review Final `tracker bugs`_ and take final decision what to fix or defer
-#. Fixing only urgent release `tracker bugs`_, bug fix needs approval.
+#. Fixing only urgent release `tracker bugs`_, bug fix needs approval. (See `testing source repository merge process`_)
 #. Prepare press release from release-notes
 #. Warn about `Final freeze`_
 
@@ -150,7 +143,6 @@ Final Postponement
 #. One week before the release day, if all of the `RC Release Requirements`_ are not achieved, the release will be delayed one week that the `RC Release Requirements`_ can be achieved.
 #. This delay will be added all remaining tasks and final release date.
 #. The decision for the delay will be made on "where we are" meeting that be held 2 weeks prior to the shipping date of the releases.
-
 Validation of Final Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -176,3 +168,5 @@ at the "where we are" meeting.
 .. _Final freeze: http://developer.pardus.org.tr/guides/releasing/freezes/final_freeze.html
 .. _Kernel freeze: http://developer.pardus.org.tr/guides/releasing/freezes/kernel-freeze.html
 .. _stable binary repository: http://developer.pardus.org.tr/guides/releasing/repository_concepts/software_repository.html#stable-binary-repository
+.. _testing source repository merge process: tp://developer.pardus.org.tr/guides/packaging/package_update_process.html#merging-to-testing-source-repository:
+
