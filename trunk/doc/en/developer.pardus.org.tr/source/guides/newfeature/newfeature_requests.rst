@@ -112,9 +112,9 @@ The requests that came from bugzilla are reviewed by release team, related team 
 Acceptance of New Feature Request
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-There exist also another deadline that is the new feature submission deadline. Before this deadline, all "newfeature" and "low" severity bugs reviewed by release manager and assigned developer during one week. The aim of this review is to decide whether the feature is accepted for new Pardus Release.
+There exist also another deadline that is the new feature acceptence deadline. Before this deadline, all "newfeature" and "low" severity bugs reviewed by release manager and assigned developer during one week. The aim of this review is to decide whether the feature is accepted for new Pardus Release.
 
-#. Release manager group assigned developer review "low" and "newfeature" severity bugs.
+#. Release team, related team leader and assigned developer review "low" and "newfeature" severity bugs.
     #. If the new feature request is not suitable for `What is a Feature?`_ description, the report status is marked with **RESOLVED/INVALID**.
     #. If this new feature can not be done for this new release but may be done for the next new release, the report status is marked with **RESOLVED/LATER**.
     #. If this new feaure is suitable for `What is a Feature?`_ description, and can be accepted for this new release:
