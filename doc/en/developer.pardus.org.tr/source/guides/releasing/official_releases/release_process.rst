@@ -14,7 +14,7 @@ General Freezes
 Open developement
 ^^^^^^^^^^^^^^^^^
 
-- Unrestrained general development activity, new packages and versions are automatically taken and merge without any permission.
+- Unrestrained general development activity, new packages, new features and versions are automatically taken and merge without any permission.
 
 Repo Branching
 ^^^^^^^^^^^^^^

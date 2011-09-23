@@ -54,11 +54,11 @@ Beta Schedule
 Beta 1
 ######
 
-2 week before Beta 1:
+1 week before Beta 1:
 -----------------------
 
 #. Review `tracker bugs`_ and no urgent and high bugs present
-#. Finish high priority `tracker bugs`_
+#. Finish urgent and high priority `tracker bugs`_
 #. Create a list for promotion and publicity materials
 #. Plan and start for artwork pardus
 
@@ -82,7 +82,7 @@ Beta 1 release day:
 Beta 2
 ######
 
-2 week before Beta 2:
+1 week before Beta 2:
 ---------------------
 
 #. Finish all normal, low priority `tracker bugs`_
@@ -111,7 +111,7 @@ Beta 2
 #. Create Beta Test Release for Beta validation tests
 
    * Installation media
-   * Live media
+    Live media
 
 #. Prepare and make "where we are meeting" after validation tests, in order to review bugs and possibility to prolonge release.
 #. Create release-notes
