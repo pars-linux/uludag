@@ -189,7 +189,6 @@ class FormMain(QtGui.QWidget, Ui_Main):
         self.splitter_2.setStretchFactor(0,1)
         self.splitter_2.setStretchFactor(1,0)
 
-        print self.splitter_2.sizes()
 
     def __expand_first_item(self):
         first_node = self.treeComputers.itemAt(0,0)
@@ -284,7 +283,9 @@ class FormMain(QtGui.QWidget, Ui_Main):
             self.pushMain.setEnabled(False)
             self.pushSearch.setEnabled(False)
         """
-        if self.tabPolicy.currentIndex() == 0:
+
+        # currentIndex == 0 changed to -1
+        if self.tabPolicy.currentIndex() == -1:
             # Disable unnecessary buttons
             """
             if len(self.items):
@@ -312,7 +313,7 @@ class FormMain(QtGui.QWidget, Ui_Main):
                 self.labelNode.setText("Lider")
                 self.labelNodeDesc.setText("")
             # Hide button box
-            #self.frameButtons.hide()
+            self.frameButtons.hide()
         else:
             widget = self.tabPolicy.currentWidget()
             # Disable unnecessary buttons
@@ -323,7 +324,7 @@ class FormMain(QtGui.QWidget, Ui_Main):
                 pass
                 #self.pushPluginItem.setEnabled(True)
             # Show button box
-            #self.frameButtons.show()
+            self.frameButtons.show()
 
     def __load_plugins(self):
         """
@@ -729,8 +730,6 @@ class FormMain(QtGui.QWidget, Ui_Main):
             Triggered when user expands a node.
         """
         self.__list_items(item)
-        print "--------"
-        print item.dn
 
         try:
             item_alt = self.nodes_alt_dn[item.dn]
@@ -1185,7 +1184,7 @@ class FormMain(QtGui.QWidget, Ui_Main):
                 return
             except directory.DirectoryError:
                 QtGui.QMessageBox.warning(self, i18n("Connection Error"), i18n("Unable to add folder."))
-                return 
+                return
 
             self.treeComputers.collapseItem(parent_item)
             self.treeComputers.expandItem(parent_item)
@@ -1215,64 +1214,52 @@ class FormMain(QtGui.QWidget, Ui_Main):
 
         if item and widget.get_type() == plugins.TYPE_SINGLE:
             paths = self.directory.get_parent_paths(item.dn)
-            print "===== Parent Paths ======="
-            print paths
             self_path = paths[-1]
+
             classes = {}
             for path in paths:
                 search = self.directory.search(path, ["*"], "base")
                 if len(search):
                     classes[path] = []
                     for oclass in search[0][1]["objectClass"]:
-                        #print "*****search result*******"
-                        #print search[0][1]["objectClass"]
                         if oclass.endswith("Policy"):
                             classes[path].append(oclass)
-                            print ""
-                            #print "----oclass------------"
-                            #print oclass
-                            print ""
-                            print ""
-                    #print "-------path------"
-                    #print path
-                    #print len(classes[path])
+
 
             widget_classes = widget.get_classes()
-            self_policies = classes[self_path]
-            print "self policies  : "
-            print self_policies
-
-            print "##############################"
-            print item.dn
-            print classes
+            print "~~~~ widget classes ~~~~~"
+            print widget_classes
             print ""
+            self_policies = classes[self_path]
 
             self.treeApplied.clear()
 
+            print classes
+
             for path, policies in classes.iteritems():
+
                 if self_path == path:
                     continue
 
                 if len(set(widget_classes).intersection(set(policies))) > 0:
                     policy_match = True
+
                     if len(set(self_policies).intersection(set(widget_classes))) > 0:
                         policy_inherit = False
-                    break
+                        # Indentation of this break was one of the problems
+                        break
 
-                if policy_inherit and classes[path]:
-                    print "------Inherited policies------"
-                    print "path, policy"
-                    print path, classes[path]
+                if policy_inherit and classes[path] or len(set(widget_classes).intersection(set(policies))) > 0:
+
                     name = path.split(",")[0].split("=")[1]
-
                     node = QtGui.QTreeWidgetItem(self.treeApplied, [name], )
                     node.setExpanded(True)
                     node.setIcon(0, wrappers.Icon("star32"))
 
+
                     for policy in classes[path]:
                         p = QtGui.QTreeWidgetItem(node, [policy])
                         p.setIcon(0, wrappers.Icon("policy32"))
-
 
         try:
             widget.set_item(item)
