@@ -12,10 +12,8 @@ Alpha Phase Updates
 ===================
 
 Alpha phase updates are done on `devel source repository`_. The `devel source repository`_
-is an area where the `open development`_ activity is done. Package updates are build
-automatically every day and directly ship to `devel binary repository`_ users.
-
-`package tests`_ are not used for this repository.
+is an area where the `open development`_ activity is done. Package updates are
+build automatically every day and directly ship to `devel binary repository`_ users.
 
 For devel repo updates,  Maintainers SHOULD:
 
@@ -27,8 +25,6 @@ For devel repo updates,  Maintainers SHOULD:
 Maintainers can merge the newest version of packages as long as they don't cause breakage. The next Pardus release also will be branched off this repository, therefore it is best to only push development releases to devel if you are fairly confident that there will be a stable enough release in time for the next Pardus release, otherwise you may have to back down to an older, stable version before branching.
 
 Just before branching, we try to stabilize the major versions of software that will be exist in final release. Major updates can be done, but package breakage should be avoided if possible before branching.
-
-Latest upstream codes can be commited to `devel source repository`_  after branching time.
 
 Beta Phase Updates
 ==================
@@ -49,6 +45,34 @@ Package updates are build automatically every day and directly ship to `testing 
 
 At the end of RC phase `stable binary repository`_ is opened. Just before this release package conflicts or unresolved package dependencies, installation and high severity bugs must be fixed. Until final is released, only high and urgent `tracker bugs`_ should be fixed.
 
+
+
+Shipping Phase Update Process
+-----------------------------
+
+This update process enloses alpha, beta and rc phases and there are different process for different type of updates.
+
+#. `New package inclusion process`_
+#. `New feature inclusion process`_
+#. Bug fix inclusion process:
+
+    #. Before `beta freeze time`_ all updates are done on devel and testing source repositories without any approval but a bug report should be exist:
+        #. If its a security related bug, it has already been reported on `Security product`_ with the related release is specified.
+        #. If bug is already reported, it should be triaged by developer or by other triager following the `bug triage`_ checklist
+        #. If not, the developer should report a new bug following the `bug triage`_ checklist
+        #. If a developer starts to deal with the bug and to implement, the bug status should be changed to **ASSIGNED**.
+
+    #. Do not forget to reference the bug number and mark the upcoming package release as critical or security in package specification file. See `history comments`_ and `package updates type`_ for further details.
+
+    #. All changes done to the package during the update should be reflected to the relevant bug report using the following special keywords in the SVN commit messages::
+
+        BUG:COMMENT:#123456     # Inserts a comment into the bug report #123456
+    #. If you fixed the bug change the bug status as **RESOLVED/FIXED**::
+
+        BUG:FIXED:#123456       # Closes the bug report #123456 as RESOLVED/FIXED
+    #. If your package needs an exception, please control Exceptions_ list and follow `exception request`_ process.
+    #. If your package has a new package exception request and accepted please also request for `package review`_ for new packages.
+    #. The bug fix inclusions needs approval after `beta freeze time`_ and stable phase update process is used.
 
 Stable Phase Updates
 ====================
@@ -134,6 +158,7 @@ Update a package on `devel source repository`_:
     #. If its a security related bug, it has already been reported on `Security product`_ with the related release is specified.
     #. If bug is already reported, it should be triaged by developer or by other triager following the `bug triage`_ checklist
     #. If not, the developer should report a new bug following the `bug triage`_ checklist
+    #. If a developer starts to deal with the bug and to implement, the bug status should be changed to **ASSIGNED**.
 
 #. Security and critical updates should be done in a minimally invasive approach:
     - If a patch is available for the current version, apply it
@@ -214,6 +239,10 @@ By merge responsibles:
 .. _security tests: http://developer.pardus.org.tr/guides/releasing/testing_process/package_update_tests/security_tests.html
 .. _package tests: http://developer.pardus.org.tr/guides/releasing/testing_process/package_update_tests/package_update_tests.html
 .. _exception request: http://developer.pardus.org.tr/guides/releasing/freezes/freeze_exception_process.html
-.. _new package inclusion: http://developer.pardus.org.tr/guides/packaging/new_package_inclusion.html
 .. _exception process: http://developer.pardus.org.tr/guides/releasing/freezes/freeze_exception_process.html
 .. _Security product: http://bugs.pardus.org.tr/enter_bug.cgi?product=G%C3%BCvenlik%20%2F%20Security
+.. _Shipping release test process: http://developer.pardus.org.tr/guides/releasing/testing_process/shipping_release_test_process.html
+.. _New package inclusion process: http://developer.pardus.org.tr/guides/newfeature/new_package_requests.html#creating-a-new-package-and-merging-it-to-pardus-repositories
+.. _New feature inclusion process: http://developer.pardus.org.tr/guides/newfeature/newfeature_requests.html#how-my-new-feature-request-is-accepted?
+.. _Bug fix inclusion process: http://developer.pardus.org.tr/guides/packaging/package_update_process.html#update*a-package-on-`devel-source-repository`_:
+.. _beta freeze time: http://developer.pardus.org.tr/guides/releasing/freezes/beta_freeze.html

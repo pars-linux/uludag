@@ -7,8 +7,8 @@ The already existed packages are updated to required versions and new packages a
 
 For the new packages, please file a bug to Pardus bugzilla `New Package Request`_ component. Please also give information about licence and main page of the package (The requested new packages must meet the `Licensing Criteria`_). Make sure that this package is not requested before, because we want many free software to reach as many people as possible and do not want to have too much duplication of packaging effort.
 
-Packaging a new package and merging it to Pardus repositories
---------------------------------------------------------------
+Creating a new package and merging it to Pardus repositories
+------------------------------------------------------------
 
 
 If you are not yet a contributor

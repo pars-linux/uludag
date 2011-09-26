@@ -100,6 +100,7 @@ Beta 2
 
 #. `User interface freeze`_ (artwork)
 #. `Beta freeze`_ (`code complete`_) on (`testing source repository`_)
+#. From this point bug fixes taken to repository with release team approval
 #. Review problems and mark as Beta tracker bug which need resolution before release
 
    * Package conflicts or unresolved package dependencies
@@ -150,7 +151,6 @@ Beta 2 release day:
 -------------------------------
 
 #. Warn about `Translation freeze`_
-#. Warn contributors about packages that are not found on any repositories for contributor `Repo branching`_
 #. Warn about `Final freeze`_
 #. Begin the plan of `next new release`_
 
