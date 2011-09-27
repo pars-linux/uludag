@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-    Software magement module
+    Service magement module
 """
 
 # Standard modules
@@ -22,7 +22,7 @@ from lider.helpers import wrappers
 
 class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
     """
-        Software management UI.
+        Service management UI.
     """
     def __init__(self, parent=None):
         """
@@ -60,8 +60,10 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
             Things to do before widget is shown.
         """
         if self.item:
+            print "item name %s , item domain %s" %(self.item.name, self.talk.domain)
             jid = "%s@%s" % (self.item.name, self.talk.domain)
             self.talk.send_command(jid, "service.info")
+            print "----  SERVICE-INFO  ----"
 
     def get_type(self):
         """
@@ -97,9 +99,12 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         """
             Main window calls this method when an XMPP message is received.
         """
+        print "-----  Service Plugin Command  ----- "
+        print command
+
         if command == "service.info":
             self.tableWidget.setRowCount(len(arguments))
-
+            print "----- INFO ------"
             index = 0
 
             for name, desc, status in arguments:
