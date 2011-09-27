@@ -658,7 +658,10 @@ class FormMain(QtGui.QWidget, Ui_Main):
         """
         self.__log("XMPP message from: %s" % sender, "talk", "debug")
 
-        if self.tabPolicy.currentIndex() != 0:
+        print "talk message current index %d" %self.tabPolicy.currentIndex()
+
+        #if self.tabPolicy.currentIndex() != 0:
+        if self.tabPolicy.currentIndex() != -1:
             sender = unicode(sender)
             widget = self.tabPolicy.currentWidget()
             try:
@@ -690,7 +693,8 @@ class FormMain(QtGui.QWidget, Ui_Main):
             self.__log(i18n("XMPP user is offline: %s") % sender, "talk", "debug")
         self.__update_icon(sender, status)
 
-        if self.tabPolicy.currentIndex() != 0:
+        #if self.tabPolicy.currentIndex() != 0:
+        if self.tabPolicy.currentIndex() != -1:
             widget = self.tabPolicy.currentWidget()
             try:
                 widget.talk_status(sender, status)
@@ -1420,7 +1424,9 @@ class FormMain(QtGui.QWidget, Ui_Main):
         """
             Triggered when user clicks reset button.
         """
-        if self.tabPolicy.currentIndex() != 0:
+
+        #if self.tabPolicy.currentIndex() != 0:
+        if self.tabPolicy.currentIndex() != -1:
             msg = QtGui.QMessageBox(self)
             msg.setIcon(QtGui.QMessageBox.Question)
             msg.setText(i18n("All changes will be reverted."))
