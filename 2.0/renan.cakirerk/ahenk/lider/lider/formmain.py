@@ -1227,14 +1227,9 @@ class FormMain(QtGui.QWidget, Ui_Main):
 
 
             widget_classes = widget.get_classes()
-            print "~~~~ widget classes ~~~~~"
-            print widget_classes
-            print ""
             self_policies = classes[self_path]
 
             self.treeApplied.clear()
-
-            print classes
 
             for path, policies in classes.iteritems():
 
