@@ -28,7 +28,7 @@ The requirements below should be checked by reviewers:
     - The existed upstream bugs of the package and upstream support should be considered
     - GUI applications must be translatable and produce a proper PO template
     - GUI applications should not have turkish language problems
-    - GUI applications must have a standart dektop file
+    - GUI applications must have a standart desktop file
     - Package security vulnerabilities must be checked
 
       - Search package name on http://cve.mitre.org/cve/cve.html and http://secunia.com/advisories/search/
@@ -37,7 +37,7 @@ The requirements below should be checked by reviewers:
 One of the following retionale can be a reason for inclusion of the package:
     - The package is useful for large part of our users
     - The package is a new built or runtime dependency of a package that already in Pardus `stable repository`_
-    - The package replaces another package that already in Pardus `stable repository`_ and promise higher quality and functionality. (The old package should be obsolete_)
+    - The package replaces another package that already exists in Pardus `stable repository`_ and promise higher quality and functionality. (The old package should be obsolete_)
 
 
 Package Review Guidelines
