@@ -1,0 +1,686 @@
+# Ahenk Lider Translation.
+# Copyright (C) 2011
+# This file is distributed under the same license as the PACKAGE package.
+# Gökhan Özbulak <gozbulak@pardus.org.tr>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-08-19 15:59+0300\n"
+"PO-Revision-Date: 2011-08-19 16:05+0300\n"
+"Last-Translator: Gökhan Özbulak <gozbulak@pardus.org.tr>\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: lider/computer.py:109 lider/computer.py:111 lider/ui_computer.py:77
+msgid "Computer"
+msgstr "Bilgisayar"
+
+#: lider/computer.py:109
+msgid "Computer name is missing"
+msgstr "Bilgisayar adı eksik"
+
+#: lider/computer.py:111 lider/ui_user.py:75 lider/user.py:111
+msgid "Passwords do not match."
+msgstr "Parolalar eşleşmiyor."
+
+#: lider/connection.py:158
+msgid "Domain name is required."
+msgstr "Alan adı gerekli."
+
+#: lider/connection.py:163
+msgid "Server address is required."
+msgstr "Sunucu adresi gerekli."
+
+#: lider/connection.py:168
+msgid "User name is required."
+msgstr "Kullanıcı adı gerekli."
+
+#: lider/folder.py:84 lider/folder.py:86 lider/ui_folder.py:59
+msgid "Folder"
+msgstr "Klasör"
+
+#: lider/folder.py:84
+msgid "Folder name is missing"
+msgstr "Klasör adı eksik"
+
+#: lider/folder.py:86
+msgid "Folder label is missing"
+msgstr "Klasör etiketi eksik"
+
+#: lider/formmain.py:87
+#, fuzzy
+msgid "Modify Default Firewall Rules"
+msgstr "Güvenlik duvarı kurallarını değiştir"
+
+#: lider/formmain.py:92
+msgid "Add Folder"
+msgstr "Klasör Ekle"
+
+#: lider/formmain.py:93
+msgid "Add Computer"
+msgstr "Bilgisayar Ekle"
+
+#: lider/formmain.py:94
+msgid "Add User"
+msgstr "Kullanıcı Ekle"
+
+#: lider/formmain.py:95
+msgid "Add Group"
+msgstr "Grup Ekle"
+
+#: lider/formmain.py:97
+msgid "Modify"
+msgstr "Güncelle"
+
+#: lider/formmain.py:98 lider/widgets/list_item/ui_list_item.py:85
+msgid "Delete"
+msgstr "Sil"
+
+#: lider/formmain.py:248
+msgid "Directory connection established."
+msgstr "Dizin bağlantısı kuruldu."
+
+#: lider/formmain.py:250
+msgid "Directory connection closed."
+msgstr "Dizin bağlantısı kapatıldı."
+
+#: lider/formmain.py:252
+msgid "Directory connection error."
+msgstr "Dizin bağlantı hatası."
+
+#: lider/formmain.py:256
+msgid "XMPP connection established."
+msgstr "XMPP bağlantısı kuruldu."
+
+#: lider/formmain.py:258
+msgid "XMPP connection closed."
+msgstr "XMPP bağlantısı kapatıldı."
+
+#: lider/formmain.py:260
+msgid "XMPP connection error."
+msgstr "XMPP bağlantı hatası."
+
+#: lider/formmain.py:498 lider/formmain.py:501 lider/formmain.py:569
+#: lider/formmain.py:576 lider/formmain.py:990 lider/formmain.py:993
+#: lider/formmain.py:996 lider/formmain.py:1029 lider/formmain.py:1032
+#: lider/formmain.py:1035 lider/formmain.py:1061 lider/formmain.py:1064
+#: lider/formmain.py:1067 lider/formmain.py:1099 lider/formmain.py:1102
+#: lider/formmain.py:1105 lider/formmain.py:1143 lider/formmain.py:1146
+#: lider/formmain.py:1149 lider/formmain.py:1181 lider/formmain.py:1184
+#: lider/formmain.py:1187 lider/formmain.py:1429 lider/formmain.py:1432
+msgid "Connection Error"
+msgstr "Bağlantı Hatası"
+
+#: lider/formmain.py:498 lider/formmain.py:576 lider/formmain.py:990
+#: lider/formmain.py:1029 lider/formmain.py:1061 lider/formmain.py:1099
+#: lider/formmain.py:1143 lider/formmain.py:1181 lider/formmain.py:1429
+msgid "Connection lost. Please re-connect."
+msgstr "Bağlantı kesildi. Lütfen takrar bağlanın."
+
+#: lider/formmain.py:501
+msgid "Unable to get policy."
+msgstr "Politika alınamıyor."
+
+#: lider/formmain.py:687
+#, python-format
+msgid "XMPP user is online: %s"
+msgstr "XMPP kullanıcı aktif: %s"
+
+#: lider/formmain.py:689
+#, python-format
+msgid "XMPP user is offline: %s"
+msgstr "XMPP kullanıcısı pasif: %s"
+
+#: lider/formmain.py:836
+msgid "No members found"
+msgstr "Üye bulunamadı"
+
+#: lider/formmain.py:931 lider/formmain.py:1010 lider/formmain.py:1016
+#: lider/formmain.py:1019
+msgid "Warning"
+msgstr "Uyarı"
+
+#: lider/formmain.py:993 lider/formmain.py:1032 lider/formmain.py:1064
+#: lider/formmain.py:1102 lider/formmain.py:1146 lider/formmain.py:1184
+msgid "Insufficient access."
+msgstr "Yetersiz erişim."
+
+#: lider/formmain.py:996
+msgid "Unable to modify item."
+msgstr "Öğe güncellenemedi."
+
+#: lider/formmain.py:1010
+msgid "Only one item at a time can be deleted."
+msgstr "Bir kerede sadece bir öğe silinebilir."
+
+#: lider/formmain.py:1016
+msgid "The selected item is a non-empty directory. It cannot be deleted."
+msgstr "Seçili öğe boş bir dizin olmadığı için silinemez."
+
+#: lider/formmain.py:1019
+msgid "This is not undoable. Are you sure you want to remove?"
+msgstr "Bu işlem geri alınamaz. Silmek istediğinize emin misiniz?"
+
+#: lider/formmain.py:1035
+msgid "Unable to delete item."
+msgstr "Öğe silinemedi."
+
+#: lider/formmain.py:1067
+msgid "Unable to add computer."
+msgstr "Bilgisayar eklenemedi."
+
+#: lider/formmain.py:1105
+msgid "Unable to add user."
+msgstr "Kullanıcı eklenemedi."
+
+#: lider/formmain.py:1149
+msgid "Unable to add group."
+msgstr "Grup eklenemedi."
+
+#: lider/formmain.py:1187
+msgid "Unable to add folder."
+msgstr "Klasör eklenemedi."
+
+#: lider/formmain.py:1365
+#, python-format
+msgid "%d item(s) will be forced to update policy."
+msgstr "%d öğesi politika güncellemesi için zorlanacak."
+
+#: lider/formmain.py:1366 lider/formmain.py:1384 lider/formmain.py:1445
+#: lider/formmain.py:1475
+msgid "Do you want to continue?"
+msgstr "Devam etmek istiyor musunuz?"
+
+#: lider/formmain.py:1383
+msgid "Policy will be saved."
+msgstr "Politika kaydedilecek."
+
+#: lider/formmain.py:1432
+msgid "Unable to modify node."
+msgstr "Düğüm güncellenemedi."
+
+#: lider/formmain.py:1444
+msgid "All changes will be reverted."
+msgstr "Tüm değişiklikler geri alınacak."
+
+#: lider/formmain.py:1474
+msgid "Policy from parent directory will be copied."
+msgstr "Üst dizindeki politika kopyalanacak."
+
+#: lider/group.py:137 lider/group.py:139 lider/ui_group.py:70
+msgid "Group"
+msgstr "Grup"
+
+#: lider/group.py:137
+msgid "Group name is missing"
+msgstr "Grup ismi eksik"
+
+#: lider/group.py:139
+msgid "There has to be at least one member."
+msgstr "En az bir üye olmalı."
+
+#: lider/main.py:1646
+msgid "Lider - Ahenk Management Console"
+msgstr "Lider - Ahenk Yönetim Aracı"
+
+#: lider/main.py:1647
+msgid "Node Browser"
+msgstr "Tarayıcı"
+
+#: lider/main.py:1649
+msgid "Node"
+msgstr "Nesne"
+
+#: lider/main.py:1650
+msgid "Description"
+msgstr "Tanım"
+
+#: lider/main.py:1651
+msgid "Filter Nodes"
+msgstr "Nesneleri filtrele"
+
+#: lider/main.py:1652
+msgid "Inherited Policies"
+msgstr "Kalıtlanmış Politikalar"
+
+#: lider/main.py:1654
+msgid "Group Members"
+msgstr "Grup Üyeleri"
+
+#: lider/main.py:1655
+msgid "Group Membership"
+msgstr "Grup Üyeliği"
+
+#: lider/main.py:1656 lider/main.py:1657 lider/main.py:1658
+msgid "TextLabel"
+msgstr "Metin Etiketi"
+
+#: lider/main.py:1659
+msgid "Revert"
+msgstr "Geri al"
+
+#: lider/main.py:1660
+msgid "Save and Apply"
+msgstr "Kaydet ve Uygula"
+
+#: lider/main.py:1661
+msgid "Save"
+msgstr "Kaydet"
+
+#: lider/main.py:1662
+msgid "Inherit this policy directly"
+msgstr "Bu politikayı doğrudan uygula"
+
+#: lider/main.py:1663
+msgid "Define new policy"
+msgstr "Yeni politika tanımla"
+
+#: lider/main.py:1664
+msgid "Inherit policies from parent"
+msgstr "Üstten politikaları kalıtla"
+
+#: lider/main.py:1665
+msgid "<b>Warning:</b> You are editing multiple nodes. Policies defined specificly for these nodes will be overwritten."
+msgstr "<b>Uyarı:</b> Birden fazla düğümü değiştiriyorsunuz. Bu düğümler için tanımlanmış politikaların üzerine yazılacak."
+
+#: lider/main.py:1666 lider/ui_connection.py:1055 lider/ui_formmain.py:419
+msgid "Lider"
+msgstr "Lider"
+
+#: lider/main.py:1667
+msgid "Disconnect"
+msgstr "Bağlantıyı kes"
+
+#: lider/main.py:1668
+msgid "Log"
+msgstr "Log"
+
+#: lider/main.py:1669
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: lider/main.py:1670
+msgid "Network View"
+msgstr "Ağ Görünümü"
+
+#: lider/main.py:1671
+msgid "Show network members."
+msgstr "Ağ üyelerini göster."
+
+#: lider/main.py:1672 lider/ui_formmain.py:431 lider/ui_formmain.py:432
+msgid "Policies"
+msgstr "Politikalar"
+
+#: lider/main.py:1673
+msgid "Edit policies."
+msgstr "Politikaları değiştir."
+
+#: lider/main.py:1674 lider/plugins/plugin_web/ui_web.py:151
+msgid "Refresh"
+msgstr "Tazele"
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:301
+msgid "Authentication"
+msgstr "Kimlik denetimi"
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:302
+msgid "Authentication Source"
+msgstr "Kimlik denetim kaynağı"
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:303
+msgid "Users & Groups"
+msgstr "Kullanıcılar & Gruplar"
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:304
+msgid "LDAP server"
+msgstr "LDAP sunucusu"
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:305
+msgid "Local user database."
+msgstr "Yerel kullanıcı veritabanı"
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:306
+msgid "Active Directory"
+msgstr "Aktif Dizin"
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:307
+msgid "Refresh List"
+msgstr "Tazeleme Listesi"
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:308
+msgid "Password Policies"
+msgstr "Parola Politikaları"
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:309
+msgid "Password must contain at least 2 digits."
+msgstr "Parola en az iki rakam içermeli."
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:310
+msgid "Password must contain at least 2 upper case characters."
+msgstr "Parola en az iki büyük harf içermeli."
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:311
+msgid "Minimum password length:"
+msgstr "Minimum şifre uzunluğu:"
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:312
+msgid "Password must contain at least 2 lower case characters."
+msgstr "Parola en az iki küçük karakter içermeli."
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:313
+msgid "LDAP Server Settings"
+msgstr "LDAP Sunucu Ayarları"
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:314
+#: lider/plugins/plugin_authentication/ui_authentication.py:318
+msgid "Directory Server:"
+msgstr "Dizin Sunucusu:"
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:315
+#: lider/plugins/plugin_authentication/ui_authentication.py:319
+msgid "Discover"
+msgstr "Keşfet"
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:316
+#: lider/plugins/plugin_authentication/ui_authentication.py:320
+msgid "Domain Name:"
+msgstr "Alan Adı:"
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:317
+msgid "Active Directory Settings"
+msgstr "Aktif Dizin Ayarları"
+
+#: lider/plugins/plugin_firewall/ui_firewall.py:228
+msgid "Firewall"
+msgstr "Güvenlik Duvarı"
+
+#: lider/plugins/plugin_firewall/ui_firewall.py:229
+msgid "Firewall State"
+msgstr "Güvenlik Duvarı Durumu"
+
+#: lider/plugins/plugin_firewall/ui_firewall.py:230
+#: lider/plugins/plugin_services/ui_services.py:120
+msgid "Status"
+msgstr "Durum"
+
+#: lider/plugins/plugin_firewall/ui_firewall.py:231
+msgid "Enable firewall"
+msgstr "Güvenlik duvarını aç"
+
+#: lider/plugins/plugin_firewall/ui_firewall.py:232
+msgid "Disable firewall"
+msgstr "Güvenlik duvarını kapat"
+
+#: lider/plugins/plugin_firewall/ui_firewall.py:233
+msgid "Firewall Rules"
+msgstr "Güvenlik duvarı kuralları"
+
+#: lider/plugins/plugin_firewall/ui_firewall.py:234
+msgid "Load Default Rules"
+msgstr "Varsayılan Kuralları Yükle"
+
+#: lider/plugins/plugin_firewall/ui_firewall.py:235
+msgid "Edit Firewall Rules"
+msgstr "Güvenlik duvarı kurallarını değiştir"
+
+#: lider/plugins/plugin_firewall/ui_firewall.py:236
+msgid "Load Fail Safe Rules"
+msgstr "Güvenli Kit Kuralları Yükle"
+
+#: lider/plugins/plugin_services/ui_services.py:116
+msgid "Services"
+msgstr "Servisler"
+
+#: lider/plugins/plugin_services/ui_services.py:117
+#: lider/plugins/plugin_web/ui_web.py:152
+msgid "Service List"
+msgstr "Servis Listesi"
+
+#: lider/plugins/plugin_services/ui_services.py:119
+msgid "Service"
+msgstr "Servis"
+
+#: lider/plugins/plugin_services/ui_services.py:121
+msgid "Auto-start"
+msgstr "Otomatik başlat"
+
+#: lider/plugins/plugin_services/ui_services.py:122
+msgid "Package Name"
+msgstr "Paket Adı"
+
+#: lider/plugins/plugin_services/ui_services.py:123
+msgid "Start"
+msgstr "Başlat"
+
+#: lider/plugins/plugin_services/ui_services.py:124
+msgid "Stop"
+msgstr "Durdur"
+
+#: lider/plugins/plugin_software/ui_repository.py:93
+msgid "Repository"
+msgstr "Depo"
+
+#: lider/plugins/plugin_software/ui_repository.py:94 lider/ui_computer.py:78
+#: lider/ui_folder.py:60 lider/ui_group.py:71 lider/ui_user.py:72
+msgid "Name:"
+msgstr "İsim:"
+
+#: lider/plugins/plugin_software/ui_repository.py:95
+msgid "URL:"
+msgstr "Adres:"
+
+#: lider/plugins/plugin_software/ui_repository.py:96
+msgid "Check URL"
+msgstr "Adresi kontrol et"
+
+#: lider/plugins/plugin_software/ui_software.py:194
+msgid "Software Update"
+msgstr "Yazılım Güncellemesi"
+
+#: lider/plugins/plugin_software/ui_software.py:195
+msgid "Monday"
+msgstr "Pazartesi"
+
+#: lider/plugins/plugin_software/ui_software.py:196
+msgid "Tuesday"
+msgstr "Salı"
+
+#: lider/plugins/plugin_software/ui_software.py:197
+msgid "Wednesday"
+msgstr "Çarşamba"
+
+#: lider/plugins/plugin_software/ui_software.py:198
+msgid "Thursday"
+msgstr "Perşembe"
+
+#: lider/plugins/plugin_software/ui_software.py:199
+msgid "Friday"
+msgstr "Cuma"
+
+#: lider/plugins/plugin_software/ui_software.py:200
+msgid "Saturday"
+msgstr "Cumartesi"
+
+#: lider/plugins/plugin_software/ui_software.py:201
+msgid "Sunday"
+msgstr "Pazar"
+
+#: lider/plugins/plugin_software/ui_software.py:202
+msgid "Install updates at:"
+msgstr "Buradaki güncellemeleri yükle:"
+
+#: lider/plugins/plugin_software/ui_software.py:203
+msgid "Install security updates only."
+msgstr "Yalnız güvenlik güncellemeleri."
+
+#: lider/plugins/plugin_software/ui_software.py:204
+msgid "Update system automatically"
+msgstr "Sistemi otomatik güncelle"
+
+#: lider/plugins/plugin_software/ui_software.py:205
+msgid "Software Repositories"
+msgstr "Yazılım Depoları"
+
+#: lider/plugins/plugin_web/ui_web.py:145
+msgid "Remote Web Services"
+msgstr "Uzak Web Servisleri"
+
+#: lider/plugins/plugin_web/ui_web.py:146
+msgid "Back"
+msgstr "Geri"
+
+#: lider/plugins/plugin_web/ui_web.py:147
+msgid "Forward"
+msgstr "İleri"
+
+#: lider/plugins/plugin_web/ui_web.py:148
+msgid "Reload"
+msgstr "Yeniden yükle"
+
+#: lider/plugins/plugin_web/ui_web.py:149
+msgid "Print"
+msgstr "Yazdır"
+
+#: lider/plugins/plugin_web/ui_web.py:150
+msgid "View In Browser"
+msgstr "Tarayıcıda Görüntüle"
+
+#: lider/ui_computer.py:79 lider/ui_user.py:73
+msgid "Password:"
+msgstr "Parola"
+
+#: lider/ui_computer.py:80
+msgid "Confirm Password: "
+msgstr "Parolayı onayla:"
+
+#: lider/ui_computer.py:81 lider/ui_group.py:75 lider/ui_user.py:76
+msgid "Description:"
+msgstr "Tanım:"
+
+#: lider/ui_computer.py:82
+msgid "Passwords do not match"
+msgstr "Parolalar eşleşmiyor"
+
+#: lider/ui_connection.py:1054 lider/ui_formmain.py:436
+msgid "Connection"
+msgstr "Bağlantı"
+
+#: lider/ui_connection.py:1056
+msgid "Server Address"
+msgstr "Sunucu Adresi"
+
+#: lider/ui_connection.py:1057
+msgid "Username"
+msgstr "Kullanıcı"
+
+#: lider/ui_connection.py:1058
+msgid "Password"
+msgstr "Parola"
+
+#: lider/ui_connection.py:1059
+msgid "Domain"
+msgstr "Alan adı"
+
+#: lider/ui_folder.py:61
+msgid "Label:"
+msgstr "Etiket:"
+
+#: lider/ui_folder.py:62
+msgid "Description: "
+msgstr "Tanım:"
+
+#: lider/ui_formmain.py:420
+msgid "Computers"
+msgstr "Bilgisayarlar"
+
+#: lider/ui_formmain.py:421
+msgid "Warning: This policy is already defined in one of parent directories."
+msgstr "Uyarı: Bu politika zaten üst dizinlerin birinde tanımlanmış."
+
+#: lider/ui_formmain.py:422
+msgid "Inherit this policy directly."
+msgstr "Bu politikayı doğrudan kalıtla."
+
+#: lider/ui_formmain.py:423
+msgid "(All settings in this screen are ignored.)"
+msgstr "(Bu penceredeki tüm ayarlar yoksayılacak.)"
+
+#: lider/ui_formmain.py:424
+msgid "Define a new policy."
+msgstr "Yeni bir politika tanımla."
+
+#: lider/ui_formmain.py:425
+msgid "Get Policy From Parent"
+msgstr "Üstten Politika Al"
+
+#: lider/ui_formmain.py:426
+msgid "You are editing multiple note items. Previous settings will be overwritten."
+msgstr "Çok sayıda not öğesi değiştiriyorsunuz. Önceki ayarların üzerine yazılacak."
+
+#: lider/ui_formmain.py:427 lider/ui_formmain.py:428
+msgid "Network Map"
+msgstr "Ağ Haritası"
+
+#: lider/ui_formmain.py:429 lider/ui_formmain.py:430
+msgid "Utilities"
+msgstr "Araçlar"
+
+#: lider/ui_formmain.py:433 lider/ui_search.py:45
+msgid "Search"
+msgstr "Ara"
+
+#: lider/ui_formmain.py:434 lider/ui_formmain.py:435
+msgid "Debug Console"
+msgstr "Ayıklama Penceresi"
+
+#: lider/ui_formmain.py:437
+msgid "Reset Changes"
+msgstr "Değişiklikleri Sıfırla"
+
+#: lider/ui_formmain.py:438
+msgid "Save Changes"
+msgstr "Değişikleri Kaydet"
+
+#: lider/ui_formmain.py:439
+msgid "Save && Apply"
+msgstr "Kaydet && Uygula"
+
+#: lider/ui_group.py:72
+msgid "Members:"
+msgstr "Üyeler:"
+
+#: lider/ui_group.py:73
+msgid "< Add"
+msgstr "< Ekle"
+
+#: lider/ui_group.py:74
+msgid "Delete >"
+msgstr "Sil >"
+
+#: lider/ui_search.py:46
+msgid "Query:"
+msgstr "Sorgula:"
+
+#: lider/ui_user.py:71 lider/user.py:109 lider/user.py:111
+msgid "User"
+msgstr "Kullanıcı"
+
+#: lider/ui_user.py:74
+msgid "Confirm Password:"
+msgstr "Parolayı Onayla:"
+
+#: lider/user.py:109
+msgid "Username is missing"
+msgstr "Kullanıcı eksik"
+
+#: lider/widgets/list_item/ui_list_item.py:83
+msgid "Active or deactivate module."
+msgstr "Aktif veya pasif modül."
+
+#: lider/widgets/list_item/ui_list_item.py:84
+msgid "Edit"
+msgstr "Değiştir"

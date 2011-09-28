@@ -1,0 +1,685 @@
+# Ahenk Lider Translation.
+# Copyright (C) 2011
+# This file is distributed under the same license as the PACKAGE package.
+# Gökhan Özbulak <gozbulak@pardus.org.tr>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-08-19 15:59+0300\n"
+"PO-Revision-Date: 2011-08-19 11:36+0300\n"
+"Last-Translator: Gökhan Özbulak <gozbulak@pardus.org.tr>\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: lider/computer.py:109 lider/computer.py:111 lider/ui_computer.py:77
+msgid "Computer"
+msgstr ""
+
+#: lider/computer.py:109
+msgid "Computer name is missing"
+msgstr ""
+
+#: lider/computer.py:111 lider/ui_user.py:75 lider/user.py:111
+msgid "Passwords do not match."
+msgstr ""
+
+#: lider/connection.py:158
+msgid "Domain name is required."
+msgstr ""
+
+#: lider/connection.py:163
+msgid "Server address is required."
+msgstr ""
+
+#: lider/connection.py:168
+msgid "User name is required."
+msgstr ""
+
+#: lider/folder.py:84 lider/folder.py:86 lider/ui_folder.py:59
+msgid "Folder"
+msgstr ""
+
+#: lider/folder.py:84
+msgid "Folder name is missing"
+msgstr ""
+
+#: lider/folder.py:86
+msgid "Folder label is missing"
+msgstr ""
+
+#: lider/formmain.py:87
+msgid "Modify Default Firewall Rules"
+msgstr ""
+
+#: lider/formmain.py:92
+msgid "Add Folder"
+msgstr ""
+
+#: lider/formmain.py:93
+msgid "Add Computer"
+msgstr ""
+
+#: lider/formmain.py:94
+msgid "Add User"
+msgstr ""
+
+#: lider/formmain.py:95
+msgid "Add Group"
+msgstr ""
+
+#: lider/formmain.py:97
+msgid "Modify"
+msgstr ""
+
+#: lider/formmain.py:98 lider/widgets/list_item/ui_list_item.py:85
+msgid "Delete"
+msgstr ""
+
+#: lider/formmain.py:248
+msgid "Directory connection established."
+msgstr ""
+
+#: lider/formmain.py:250
+msgid "Directory connection closed."
+msgstr ""
+
+#: lider/formmain.py:252
+msgid "Directory connection error."
+msgstr ""
+
+#: lider/formmain.py:256
+msgid "XMPP connection established."
+msgstr ""
+
+#: lider/formmain.py:258
+msgid "XMPP connection closed."
+msgstr ""
+
+#: lider/formmain.py:260
+msgid "XMPP connection error."
+msgstr ""
+
+#: lider/formmain.py:498 lider/formmain.py:501 lider/formmain.py:569
+#: lider/formmain.py:576 lider/formmain.py:990 lider/formmain.py:993
+#: lider/formmain.py:996 lider/formmain.py:1029 lider/formmain.py:1032
+#: lider/formmain.py:1035 lider/formmain.py:1061 lider/formmain.py:1064
+#: lider/formmain.py:1067 lider/formmain.py:1099 lider/formmain.py:1102
+#: lider/formmain.py:1105 lider/formmain.py:1143 lider/formmain.py:1146
+#: lider/formmain.py:1149 lider/formmain.py:1181 lider/formmain.py:1184
+#: lider/formmain.py:1187 lider/formmain.py:1429 lider/formmain.py:1432
+msgid "Connection Error"
+msgstr ""
+
+#: lider/formmain.py:498 lider/formmain.py:576 lider/formmain.py:990
+#: lider/formmain.py:1029 lider/formmain.py:1061 lider/formmain.py:1099
+#: lider/formmain.py:1143 lider/formmain.py:1181 lider/formmain.py:1429
+msgid "Connection lost. Please re-connect."
+msgstr ""
+
+#: lider/formmain.py:501
+msgid "Unable to get policy."
+msgstr ""
+
+#: lider/formmain.py:687
+#, python-format
+msgid "XMPP user is online: %s"
+msgstr ""
+
+#: lider/formmain.py:689
+#, python-format
+msgid "XMPP user is offline: %s"
+msgstr ""
+
+#: lider/formmain.py:836
+msgid "No members found"
+msgstr ""
+
+#: lider/formmain.py:931 lider/formmain.py:1010 lider/formmain.py:1016
+#: lider/formmain.py:1019
+msgid "Warning"
+msgstr ""
+
+#: lider/formmain.py:993 lider/formmain.py:1032 lider/formmain.py:1064
+#: lider/formmain.py:1102 lider/formmain.py:1146 lider/formmain.py:1184
+msgid "Insufficient access."
+msgstr ""
+
+#: lider/formmain.py:996
+msgid "Unable to modify item."
+msgstr ""
+
+#: lider/formmain.py:1010
+msgid "Only one item at a time can be deleted."
+msgstr ""
+
+#: lider/formmain.py:1016
+msgid "The selected item is a non-empty directory. It cannot be deleted."
+msgstr ""
+
+#: lider/formmain.py:1019
+msgid "This is not undoable. Are you sure you want to remove?"
+msgstr ""
+
+#: lider/formmain.py:1035
+msgid "Unable to delete item."
+msgstr ""
+
+#: lider/formmain.py:1067
+msgid "Unable to add computer."
+msgstr ""
+
+#: lider/formmain.py:1105
+msgid "Unable to add user."
+msgstr ""
+
+#: lider/formmain.py:1149
+msgid "Unable to add group."
+msgstr ""
+
+#: lider/formmain.py:1187
+msgid "Unable to add folder."
+msgstr ""
+
+#: lider/formmain.py:1365
+#, python-format
+msgid "%d item(s) will be forced to update policy."
+msgstr ""
+
+#: lider/formmain.py:1366 lider/formmain.py:1384 lider/formmain.py:1445
+#: lider/formmain.py:1475
+msgid "Do you want to continue?"
+msgstr ""
+
+#: lider/formmain.py:1383
+msgid "Policy will be saved."
+msgstr ""
+
+#: lider/formmain.py:1432
+msgid "Unable to modify node."
+msgstr ""
+
+#: lider/formmain.py:1444
+msgid "All changes will be reverted."
+msgstr ""
+
+#: lider/formmain.py:1474
+msgid "Policy from parent directory will be copied."
+msgstr ""
+
+#: lider/group.py:137 lider/group.py:139 lider/ui_group.py:70
+msgid "Group"
+msgstr ""
+
+#: lider/group.py:137
+msgid "Group name is missing"
+msgstr ""
+
+#: lider/group.py:139
+msgid "There has to be at least one member."
+msgstr ""
+
+#: lider/main.py:1646
+msgid "Lider - Ahenk Management Console"
+msgstr ""
+
+#: lider/main.py:1647
+msgid "Node Browser"
+msgstr ""
+
+#: lider/main.py:1649
+msgid "Node"
+msgstr ""
+
+#: lider/main.py:1650
+msgid "Description"
+msgstr ""
+
+#: lider/main.py:1651
+msgid "Filter Nodes"
+msgstr ""
+
+#: lider/main.py:1652
+msgid "Inherited Policies"
+msgstr ""
+
+#: lider/main.py:1654
+msgid "Group Members"
+msgstr ""
+
+#: lider/main.py:1655
+msgid "Group Membership"
+msgstr ""
+
+#: lider/main.py:1656 lider/main.py:1657 lider/main.py:1658
+msgid "TextLabel"
+msgstr ""
+
+#: lider/main.py:1659
+msgid "Revert"
+msgstr ""
+
+#: lider/main.py:1660
+msgid "Save and Apply"
+msgstr ""
+
+#: lider/main.py:1661
+msgid "Save"
+msgstr ""
+
+#: lider/main.py:1662
+msgid "Inherit this policy directly"
+msgstr ""
+
+#: lider/main.py:1663
+msgid "Define new policy"
+msgstr ""
+
+#: lider/main.py:1664
+msgid "Inherit policies from parent"
+msgstr ""
+
+#: lider/main.py:1665
+msgid "<b>Warning:</b> You are editing multiple nodes. Policies defined specificly for these nodes will be overwritten."
+msgstr ""
+
+#: lider/main.py:1666 lider/ui_connection.py:1055 lider/ui_formmain.py:419
+msgid "Lider"
+msgstr ""
+
+#: lider/main.py:1667
+msgid "Disconnect"
+msgstr ""
+
+#: lider/main.py:1668
+msgid "Log"
+msgstr ""
+
+#: lider/main.py:1669
+msgid "Settings"
+msgstr ""
+
+#: lider/main.py:1670
+msgid "Network View"
+msgstr ""
+
+#: lider/main.py:1671
+msgid "Show network members."
+msgstr ""
+
+#: lider/main.py:1672 lider/ui_formmain.py:431 lider/ui_formmain.py:432
+msgid "Policies"
+msgstr ""
+
+#: lider/main.py:1673
+msgid "Edit policies."
+msgstr ""
+
+#: lider/main.py:1674 lider/plugins/plugin_web/ui_web.py:151
+msgid "Refresh"
+msgstr ""
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:301
+msgid "Authentication"
+msgstr ""
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:302
+msgid "Authentication Source"
+msgstr ""
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:303
+msgid "Users & Groups"
+msgstr ""
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:304
+msgid "LDAP server"
+msgstr ""
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:305
+msgid "Local user database."
+msgstr ""
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:306
+msgid "Active Directory"
+msgstr ""
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:307
+msgid "Refresh List"
+msgstr ""
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:308
+msgid "Password Policies"
+msgstr ""
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:309
+msgid "Password must contain at least 2 digits."
+msgstr ""
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:310
+msgid "Password must contain at least 2 upper case characters."
+msgstr ""
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:311
+msgid "Minimum password length:"
+msgstr ""
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:312
+msgid "Password must contain at least 2 lower case characters."
+msgstr ""
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:313
+msgid "LDAP Server Settings"
+msgstr ""
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:314
+#: lider/plugins/plugin_authentication/ui_authentication.py:318
+msgid "Directory Server:"
+msgstr ""
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:315
+#: lider/plugins/plugin_authentication/ui_authentication.py:319
+msgid "Discover"
+msgstr ""
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:316
+#: lider/plugins/plugin_authentication/ui_authentication.py:320
+msgid "Domain Name:"
+msgstr ""
+
+#: lider/plugins/plugin_authentication/ui_authentication.py:317
+msgid "Active Directory Settings"
+msgstr ""
+
+#: lider/plugins/plugin_firewall/ui_firewall.py:228
+msgid "Firewall"
+msgstr ""
+
+#: lider/plugins/plugin_firewall/ui_firewall.py:229
+msgid "Firewall State"
+msgstr ""
+
+#: lider/plugins/plugin_firewall/ui_firewall.py:230
+#: lider/plugins/plugin_services/ui_services.py:120
+msgid "Status"
+msgstr ""
+
+#: lider/plugins/plugin_firewall/ui_firewall.py:231
+msgid "Enable firewall"
+msgstr ""
+
+#: lider/plugins/plugin_firewall/ui_firewall.py:232
+msgid "Disable firewall"
+msgstr ""
+
+#: lider/plugins/plugin_firewall/ui_firewall.py:233
+msgid "Firewall Rules"
+msgstr ""
+
+#: lider/plugins/plugin_firewall/ui_firewall.py:234
+msgid "Load Default Rules"
+msgstr ""
+
+#: lider/plugins/plugin_firewall/ui_firewall.py:235
+msgid "Edit Firewall Rules"
+msgstr ""
+
+#: lider/plugins/plugin_firewall/ui_firewall.py:236
+msgid "Load Fail Safe Rules"
+msgstr ""
+
+#: lider/plugins/plugin_services/ui_services.py:116
+msgid "Services"
+msgstr ""
+
+#: lider/plugins/plugin_services/ui_services.py:117
+#: lider/plugins/plugin_web/ui_web.py:152
+msgid "Service List"
+msgstr ""
+
+#: lider/plugins/plugin_services/ui_services.py:119
+msgid "Service"
+msgstr ""
+
+#: lider/plugins/plugin_services/ui_services.py:121
+msgid "Auto-start"
+msgstr ""
+
+#: lider/plugins/plugin_services/ui_services.py:122
+msgid "Package Name"
+msgstr ""
+
+#: lider/plugins/plugin_services/ui_services.py:123
+msgid "Start"
+msgstr ""
+
+#: lider/plugins/plugin_services/ui_services.py:124
+msgid "Stop"
+msgstr ""
+
+#: lider/plugins/plugin_software/ui_repository.py:93
+msgid "Repository"
+msgstr ""
+
+#: lider/plugins/plugin_software/ui_repository.py:94 lider/ui_computer.py:78
+#: lider/ui_folder.py:60 lider/ui_group.py:71 lider/ui_user.py:72
+msgid "Name:"
+msgstr ""
+
+#: lider/plugins/plugin_software/ui_repository.py:95
+msgid "URL:"
+msgstr ""
+
+#: lider/plugins/plugin_software/ui_repository.py:96
+msgid "Check URL"
+msgstr ""
+
+#: lider/plugins/plugin_software/ui_software.py:194
+msgid "Software Update"
+msgstr ""
+
+#: lider/plugins/plugin_software/ui_software.py:195
+msgid "Monday"
+msgstr ""
+
+#: lider/plugins/plugin_software/ui_software.py:196
+msgid "Tuesday"
+msgstr ""
+
+#: lider/plugins/plugin_software/ui_software.py:197
+msgid "Wednesday"
+msgstr ""
+
+#: lider/plugins/plugin_software/ui_software.py:198
+msgid "Thursday"
+msgstr ""
+
+#: lider/plugins/plugin_software/ui_software.py:199
+msgid "Friday"
+msgstr ""
+
+#: lider/plugins/plugin_software/ui_software.py:200
+msgid "Saturday"
+msgstr ""
+
+#: lider/plugins/plugin_software/ui_software.py:201
+msgid "Sunday"
+msgstr ""
+
+#: lider/plugins/plugin_software/ui_software.py:202
+msgid "Install updates at:"
+msgstr ""
+
+#: lider/plugins/plugin_software/ui_software.py:203
+msgid "Install security updates only."
+msgstr ""
+
+#: lider/plugins/plugin_software/ui_software.py:204
+msgid "Update system automatically"
+msgstr ""
+
+#: lider/plugins/plugin_software/ui_software.py:205
+msgid "Software Repositories"
+msgstr ""
+
+#: lider/plugins/plugin_web/ui_web.py:145
+msgid "Remote Web Services"
+msgstr ""
+
+#: lider/plugins/plugin_web/ui_web.py:146
+msgid "Back"
+msgstr ""
+
+#: lider/plugins/plugin_web/ui_web.py:147
+msgid "Forward"
+msgstr ""
+
+#: lider/plugins/plugin_web/ui_web.py:148
+msgid "Reload"
+msgstr ""
+
+#: lider/plugins/plugin_web/ui_web.py:149
+msgid "Print"
+msgstr ""
+
+#: lider/plugins/plugin_web/ui_web.py:150
+msgid "View In Browser"
+msgstr ""
+
+#: lider/ui_computer.py:79 lider/ui_user.py:73
+msgid "Password:"
+msgstr ""
+
+#: lider/ui_computer.py:80
+msgid "Confirm Password: "
+msgstr ""
+
+#: lider/ui_computer.py:81 lider/ui_group.py:75 lider/ui_user.py:76
+msgid "Description:"
+msgstr ""
+
+#: lider/ui_computer.py:82
+msgid "Passwords do not match"
+msgstr ""
+
+#: lider/ui_connection.py:1054 lider/ui_formmain.py:436
+msgid "Connection"
+msgstr ""
+
+#: lider/ui_connection.py:1056
+msgid "Server Address"
+msgstr ""
+
+#: lider/ui_connection.py:1057
+msgid "Username"
+msgstr ""
+
+#: lider/ui_connection.py:1058
+msgid "Password"
+msgstr ""
+
+#: lider/ui_connection.py:1059
+msgid "Domain"
+msgstr ""
+
+#: lider/ui_folder.py:61
+msgid "Label:"
+msgstr ""
+
+#: lider/ui_folder.py:62
+msgid "Description: "
+msgstr ""
+
+#: lider/ui_formmain.py:420
+msgid "Computers"
+msgstr ""
+
+#: lider/ui_formmain.py:421
+msgid "Warning: This policy is already defined in one of parent directories."
+msgstr ""
+
+#: lider/ui_formmain.py:422
+msgid "Inherit this policy directly."
+msgstr ""
+
+#: lider/ui_formmain.py:423
+msgid "(All settings in this screen are ignored.)"
+msgstr ""
+
+#: lider/ui_formmain.py:424
+msgid "Define a new policy."
+msgstr ""
+
+#: lider/ui_formmain.py:425
+msgid "Get Policy From Parent"
+msgstr ""
+
+#: lider/ui_formmain.py:426
+msgid "You are editing multiple note items. Previous settings will be overwritten."
+msgstr ""
+
+#: lider/ui_formmain.py:427 lider/ui_formmain.py:428
+msgid "Network Map"
+msgstr ""
+
+#: lider/ui_formmain.py:429 lider/ui_formmain.py:430
+msgid "Utilities"
+msgstr ""
+
+#: lider/ui_formmain.py:433 lider/ui_search.py:45
+msgid "Search"
+msgstr ""
+
+#: lider/ui_formmain.py:434 lider/ui_formmain.py:435
+msgid "Debug Console"
+msgstr ""
+
+#: lider/ui_formmain.py:437
+msgid "Reset Changes"
+msgstr ""
+
+#: lider/ui_formmain.py:438
+msgid "Save Changes"
+msgstr ""
+
+#: lider/ui_formmain.py:439
+msgid "Save && Apply"
+msgstr ""
+
+#: lider/ui_group.py:72
+msgid "Members:"
+msgstr ""
+
+#: lider/ui_group.py:73
+msgid "< Add"
+msgstr ""
+
+#: lider/ui_group.py:74
+msgid "Delete >"
+msgstr ""
+
+#: lider/ui_search.py:46
+msgid "Query:"
+msgstr ""
+
+#: lider/ui_user.py:71 lider/user.py:109 lider/user.py:111
+msgid "User"
+msgstr ""
+
+#: lider/ui_user.py:74
+msgid "Confirm Password:"
+msgstr ""
+
+#: lider/user.py:109
+msgid "Username is missing"
+msgstr ""
+
+#: lider/widgets/list_item/ui_list_item.py:83
+msgid "Active or deactivate module."
+msgstr ""
+
+#: lider/widgets/list_item/ui_list_item.py:84
+msgid "Edit"
+msgstr ""
