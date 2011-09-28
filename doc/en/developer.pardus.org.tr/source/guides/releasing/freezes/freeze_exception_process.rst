@@ -19,7 +19,7 @@ All freeze exception bugs must include the following information, in order to pr
 
 We expect that the requested exceptions have already been prepared.
 
-When the release manager group approves the exception, the bug keyword is changed to **APPROVED**, otherwise the bug report remains in **EXCEPTION** keyword state and wait for the next new Pardus release.
+When the release manager group approves the exception, the bug keyword is changed to **APPROVED**, otherwise the bug status is changed to **RESOLVED/LATER** and keywored remains in **EXCEPTION** state and wait for the next new Pardus release.
 
 Feature Freeze Exceptions for new upstream versions
 ---------------------------------------------------

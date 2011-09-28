@@ -23,10 +23,10 @@ If you want to a Pardus developer you can follow `new contributor`_ part and sta
 If you are a developer
 ^^^^^^^^^^^^^^^^^^^^^^
 
-#. Choose your package from Pardus Bugzilla `New Package Request`_ component (If it is not filed yet, please create a new bug) and changed the status of the bug to ASSIGNED
+#. Choose your package from Pardus Bugzilla `New Package Request`_ component (If it is not filed yet, please create a new bug) and changed the status of the bug to **ASSIGNED**
 #. Follow `package creation guidelines`_ and create the package and commit it to `playground/review source repository`_.
 #. Start `package review process`_ of your package
-#. After the package pass the `package review criteria`_ and merge to `devel source repository`_, please change the New Package Request bug to RESOLVED/FIXED.
+#. After the package pass the `package review criteria`_ and merge to `devel source repository`_, please change the New Package Request bug to **RESOLVED/FIXED**.
 
 
 Deadline for new package merges to new Pardus release

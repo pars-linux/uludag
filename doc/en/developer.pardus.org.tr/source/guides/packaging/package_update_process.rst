@@ -183,7 +183,7 @@ The following workflow applies when the package maintainer decides to merge the 
 
 #. Give **MERGEREQUEST** keyword and CC merge responsible mail lists to the bug report
 #. The merge responsibles review this merge request:
-    #. If the merge request is not approved, bug takes the one of the `insoluable bug resolutions`_ by merge responsibles.
+    #. If the merge request is not approved, bug takes the one of the `insoluable bug resolutions`_ or left for next release and status is changed to **RESOLVED/LATER**  by merge responsibles.
     #. If the merge request is approved, the bug marked with **APPROVED** keyword.
         #. The developer merge it to `testing source repository`_ and reflect it as a comment to merge bug report using the following special keyword in the SVN commit messages and give **MERGED** keyword to the bug::
 
