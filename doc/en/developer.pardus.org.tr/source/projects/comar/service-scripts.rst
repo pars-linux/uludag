@@ -60,6 +60,8 @@ Service API
 startService()
 --------------
 
+This method starts the service with given parameters if available.
+
 Arguments::
 
     command  : Application to execute [str]
@@ -76,6 +78,8 @@ Arguments::
 stopService()
 -------------
 
+This method stops the given service.
+
 Arguments::
 
     pidfile  : PID file of the running process (optional) [str]
@@ -88,4 +92,32 @@ Arguments::
     signalno : Signal to be sent to running process (optional) [int]
     donotify : Emit a System.Service.changed signal and notify all GUIs (optional) [True/False]
                (This should be used. It's optional because some service scripts stop more than one process.)
+
+isServiceRunning()
+------------------
+
+This method checks whether or not the given service is running.
+
+Arguments::
+
+    pidfile  : Process ID of the service is kept in this file when running. [str]
+    command  : Check processes running this executable. [str]
+
+startDependencies()
+-------------------
+
+This method starts the dependent services given as parameter.
+
+Arguments::
+
+    services : A list of dependent service names that will be started. [str]
+
+stopDependencies()
+------------------
+
+This method stops the dependent services given as parameter.
+
+Arguments::
+
+    services : A list of dependent service names that will be stopped. [str]
 
