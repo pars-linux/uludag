@@ -98,7 +98,7 @@ Alpha 1
 Intrusive changes phase completed (about 2 months)
 
 - `Open developement`_
-- High priority features and tasks finished
+- High (P1) priority features and tasks finished 
 
 See details from `Alpha phase`_
 
@@ -107,7 +107,7 @@ Alpha 2
 (about 2 weeks)
 
 - `Open developement`_
-- Medium priority tasks and features finished
+- Medium (p2) priority tasks and features finished
 - At the end of this period, all remamined features reviewed and reprioritized or ignored if needed.
 
 See details from `Alpha phase`_
@@ -118,7 +118,7 @@ Feature development phase completed (about 2 weeks)
 
 - `Open developement`_
 - Where we are meeting to review bugs and possibility to prolonge release.
-- Low priority tasks and features finished
+- Low (P3) priority tasks and features finished
 - `Feature freeze`_
 - `Repo branching`_ for main/base repo
 - `String freeze`_
@@ -130,7 +130,7 @@ Beta 1
 Stabilization phase (about 3 week)
 
 - Review Beta `tracker bugs`_
-- Finish urgent and high priority `tracker bugs`_
+- Finish high (P1) priority `tracker bugs`_
 - Announce EOL of 2 previous release
 - Translation and user documentation check
 
@@ -141,7 +141,7 @@ Beta 2
 Stabilization phase completed (about 2 week)
 
 - Where we are meeting to review bugs and possibility to prolonge release.
-- Finish all normal, low priority `tracker bugs`_
+- Finish all normal (P2), low (P3) priority `tracker bugs`_
 - `Toolchain freeze`_ ?
 - `User interface freeze`_
 - `Beta freeze`_

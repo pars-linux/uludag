@@ -112,16 +112,21 @@ The requests that came from bugzilla are reviewed by release team, related team 
 Acceptance of New Feature Request
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-There exist also another deadline that is the new feature acceptence deadline. Before this deadline, all "newfeature" and "low" severity bugs reviewed by release manager and assigned developer during one week. The aim of this review is to decide whether the feature is accepted for new Pardus Release.
+There exist also another deadline that is the new feature acceptence deadline. Before this deadline, all "newfeature" and "low" severity bugs reviewed by release team, team leaders and assigned developer during one week. The aim of this review is to decide whether the feature is accepted for new Pardus Release.
 
 #. Release team, related team leader and assigned developer review "low" and "newfeature" severity bugs.
     #. If the new feature request is not suitable for `What is a Feature?`_ description, the report status is marked with **RESOLVED/INVALID**.
     #. If this new feature can not be done for this new release but may be done for the next new release, the report status is marked with **RESOLVED/REMIND**.
     #. If this new feaure is suitable for `What is a Feature?`_ description, and can be accepted for this new release:
         #. One of the developers will start to deal with this feature and the report status is marked with **ASSIGNED**.
+        #. The priorty is changed by release team
         #. If necessary the product and component can be changed.
         #. The bug report is marked as the tracker bug of the related release.
-        #. When the bug is became a task in the project management tool, the task is assigned to relevant developer and the task url is given to URL part of the bug report.
+        #. When the bug is became a task in `issue tracking tool`_:
+            - The task is assigned to relevant developer
+            - When the developer start to deal with the bug change the status to **In Progress**
+            - The task url is given to URL part of the bug report.
+            - Due date and priority is given to the task
         #. The SVN commit messages should be traceable in order to enable users to follow changes via bugzilla and issue tracking tool.
 
 Accomplishment of New Feature
@@ -129,8 +134,15 @@ Accomplishment of New Feature
 
 There exist a deadline for the accomplishment of the new feature (`feature freeze time`_).
 
+Bugzilla Part
+.............
     #. If the developer can not be finish the work in due time, the status of the bug report is marked as **RESOLVED/LATER** and the new feature is left to next release.
     #. If the developer can finish the work in time, the bug status is marked as **RESOLVED/FIXED** via SVN commits of the developer.
+
+Issue Tracker Part
+...................
+    #. If the developer can finish the work in time, the bug status is marked as **RESOLVED**.
+    #. If the task could not have been finished in time, the task is left open.
 
 After freeze time new feature can be accepted under some `exceptional circumstances`_.
 
@@ -152,3 +164,4 @@ If the bug status is marked as:
 .. _exceptional circumstances: http://developer.pardus.org.tr/guides/releasing/freezes/freeze_exception_process.html
 .. _new package request:  http://developer.pardus.org.tr/guides/newfeature/new_package_request.html
 .. _mentoring process: http://developer.pardus.org.tr/guides/newcontributor/mentoring_process.html
+.. _issue tracking tool: http://tracker.pardus.org.tr/

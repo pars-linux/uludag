@@ -67,7 +67,7 @@ Alpha 1
 8-4 week before the Alpha 1:
 ----------------------------
 
-#. Intrusive changes phase completed (All high priority features and tasks finished)
+#. Intrusive changes phase completed (All high (P1) priority features and tasks finished)
 #. Create default applications list for desktop menu
 #. Send weekly emails about `urgent package list`_
 #. Start for artwork Pardus
@@ -99,7 +99,7 @@ Alpha 2
 3-2 week before Alpha 2:
 ------------------------
 
-#. Medium priority tasks and features finished
+#. Medium (P2) priority tasks and features finished
 #. At the end of this period, all remained features reviewed and reprioritized or ignored if needed.
 
 1 week before Alpha 2:
@@ -124,7 +124,7 @@ Alpha 3
 ------------------------
 
 #. "Where we are meeting" to review bugs and possibility to prolonge release.
-#. Low priority tasks and features finished
+#. Low (P3) priority tasks and features finished
 #. Warn about `Feature freeze`_ one week before
 #. Warn about `Repo branching`_ one week before
 #. Warn about `String freeze`_
