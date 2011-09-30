@@ -90,8 +90,8 @@ inconsistent and hard to understand states. So remote branches should never be
 rebased. Merging them properly also reflects that development actually happened
 in a side line.
 
-Social Workflow
----------------
+Contribution Workflow
+---------------------
 
 Contribute for an existed issue
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -106,12 +106,12 @@ Contribute Pardus with a New Project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The contributor that wants to develop a new project, for using efficient time
-and labor, he or she should send an e-mail to developer_ or gelistirici_
-mail list to inform other contributors. 
+and labor, he or she should send an e-mail to technical_ mail list to inform
+other contributors.
 
-After the contributor completed an issue or the project, request a review and
-the releated *team leader* starts the review process on either issue tracking
-system or dedicated mail list. If the solutions is approved, *the team leader*
+After the contributor completed the issue or the project, request a review
+from technical_ mail list the releated *team leader* starts the review process
+on technical_ mail list. If the solution is approved, *the team leader*
 send a request to *release team* in order to include the project to official
 Pardus releases.
 
@@ -126,3 +126,4 @@ to the contributor.
 
 .. _gelistirici: http://lists.pardus.org.tr/mailman/listinfo/gelistirici
 .. _developer: http://lists.pardus.org.tr/mailman/listinfo/pardus-devel
+.. _technical: http://lists.pardus.org.tr/mailman/listinfo/teknik
