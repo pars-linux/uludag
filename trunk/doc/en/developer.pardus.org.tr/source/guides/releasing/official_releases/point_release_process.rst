@@ -16,7 +16,7 @@ are checked, last desktop and installation validation tests are done.
 
 Point Release Goals
 ^^^^^^^^^^^^^^^^^^^
-- Adding support for new hardware
+- Adding support for new hardware and server
 - Implementing a missing functionality in a component which will probably be needed to satisfy the original reasons for LTS creation
 - Reduce download for ongoing updates.
 - All work have to finish one month before the release in order to give time for tests
