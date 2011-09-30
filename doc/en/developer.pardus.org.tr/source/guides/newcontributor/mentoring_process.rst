@@ -65,6 +65,8 @@ Mentoring Review
     #. If it a patch of a new feature or bug fix, apply the patch to relevant package and merge it.
     #. Hereafter the `Stable Phase Updates`_ process will be applied
 
+Note: There is also exist an other way to contribute development of Pardus, (this is for espacially git based projects) this is done via `issue tracking system`_, you can see details from there_.
+
 .. _freeze exception: http://developer.pardus.org.tr/guides/releasing/official_releases/freezes/freeze_exception_process.html#exception-process
 .. _Stable Phase Updates: http://developer.pardus.org.tr/guides/packaging/package_update_process.html#stable-phase-updates
 .. _technical mail list: http://liste.pardus.org.tr/mailman/listinfo/teknik
@@ -73,4 +75,5 @@ Mentoring Review
 .. _playground svn: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#playground-folder
 .. _Junior Jobs: http://bugs.pardus.org.tr/buglist.cgi?keywords=JUNIORJOBS&query_format=advanced&keywords_type=allwords&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED
 .. _expecten developers: http://developer.pardus.org.tr/guides/newcontributor/developer_roles.html#expected-developer
-
+.. _issue tracking system: http://tracker.pardus.org.tr
+.. _there: http://developer.pardus.org.tr/guides/releasing/repository_concepts/git-workflow-en.html#contribution-workflow
