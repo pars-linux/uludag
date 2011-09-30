@@ -58,7 +58,7 @@ Beta 1
 -----------------------
 
 #. Review `tracker bugs`_ and no urgent and high bugs present
-#. Finish urgent and high priority `tracker bugs`_
+#. Finish high (P1) priority `tracker bugs`_
 #. Create a list for promotion and publicity materials
 #. Plan and start for artwork pardus
 
@@ -85,7 +85,7 @@ Beta 2
 1 week before Beta 2:
 ---------------------
 
-#. Finish all normal, low priority `tracker bugs`_
+#. Finish all normal (P2), low (P3) priority `tracker bugs`_
 #. `Toolchain freeze`_ start
 #. Warn developers about:
 

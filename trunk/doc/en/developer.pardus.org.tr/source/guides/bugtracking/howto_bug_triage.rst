@@ -21,34 +21,6 @@ Understanding Bugzilla
 
     * See `bug cycle`_
 
-Bug Importance
---------------
-
-We use four types of bug importances and give each a specific meaning and time interval:
-
-Urgent:
-^^^^^^^
-`Freeze, panics`_ and crashes_ that reproducible on all type of systems and makes the whole system unusable and **security** related bugs. These bugs should fixed promptly.
-
-High:
-^^^^^
-Bugs that are reproducible on all type of systems and makes the program unusable (packages which are totally unusable and have missing dependency, like being uninstallable or crashing_ on startup, bugs cause that cause loss of user data). Default desktop application language problems are seemed to be also high. These bugs should be fixed in 1 months.
-
-Normal:
-^^^^^^^
-Bugs that are reproducible on all type of systems and makes a part of the program unusable. These bugs are probably be fixed in 6 months.
-
-New feature:
-^^^^^^^^^^^^
-New feature requests. These requests will probably be done for the next release.
-
-Low:
-^^^^
-The others - a cosmetic problem, such as a misspelled word or misaligned text or an enhancement, bugs that are not reproducible on all systems. These bugs are not schduled to fix in the next 6 months. This is not the same as planning not to fix the bug; it means that we don't know when we will fix it, if at all.
-
-**Notes:**  Hardware specific bugs generally seemed as urgent, but it should be generally high. Because urgent severity is used when the entire distribution does not work, but a bug restricted to a specific hardware usually has a high severity.
-
-
 Check list for bugs have NEW status
 -----------------------------------
 
@@ -56,12 +28,12 @@ This checklist is used for bugs which have **NEW** status.
 
 #. Does the bug report mention about a real bug?
 
-    * In some cases, users need some help about configuring or using software. These reports are not related with bug or feature request. These type of reports should be closed with RESOLVED/INVALID resolution, and a polite comment should be give in order to guide user to related forums or mail lists.
+    * In some cases, users need some help about configuring or using software. These reports are not related with bug or feature request. These type of reports should be closed with **RESOLVED/INVALID** resolution, and a polite comment should be give in order to guide user to related forums or mail lists.
 
 #. Is the bug product and component right?
 
     * To take technical assistance please see :ref:`correct-component`.
-    * If the bug component is assigned to wrong, it should be changed.
+    * If the bug component is wrong, it should be changed.
     * In some cases, it is not possible to find correct component, until the source code is examined. In such a situation, you can take help from assigned developer.
 
 #. Has the bug a duplicate?
@@ -102,7 +74,7 @@ This checklist is used for bugs which have **NEW** status.
 
     During bug triage process, it is very important to state bug severity. Most bugs assigned with severity **Normal**, but the severity of the bug should change related to different `bug importances`_.
 
-#. Is the bug a blocker bug? (For release tracker bugs)
+#. Is the bug a tracker bug? (For `release tracker bugs`_)
 
     Only ongoing releases has tracker bugs. If a bug is a tracker bug of one of the ongoing release it should be fixed before the release time. When it did not fix, it delays the release. Therefore the bug numbers which has a power to block the release should be set to "Depends on" part of release tracker bug.
 
@@ -199,7 +171,7 @@ First Steps to Contribute Triaging
 #. When you feel ready for triaging, please send a message to `test list`_ with your triaged bug ids, the experienced triagers will review your triaged bugs and approve your triaging request (At this point, you will take permissions for changing bug status, severity etc. to deeply triage).
 
 .. _bug cycle: http://developer.pardus.org.tr/guides/bugtracking/bug_cycle.html
-.. _bug importances: http://developer.pardus.org.tr/guides/bugtracking/howto_bug_triage.html#bug-importance
+.. _bug importances: http://developer.pardus.org.tr/guides/bugtracking/bug_cycle.html#bugizlla-severities
 .. _Freeze, panics: http://developer.pardus.org.tr/guides/bugtracking/bug_and_feature_requests.html?highlight=crash#freeze-and-panics
 .. _crashes: http://developer.pardus.org.tr/guides/bugtracking/bug_and_feature_requests.html?highlight=crash#crashes
 .. _crashing: http://developer.pardus.org.tr/guides/bugtracking/bug_and_feature_requests.html?highlight=crash#crashes
@@ -211,3 +183,4 @@ First Steps to Contribute Triaging
 .. _test list: http://lists.pardus.org.tr/mailman/listinfo/testci
 .. _duplicate bug stock response: http://developer.pardus.org.tr/guides/bugtracking/stock_responses.html#duplicate-bugs
 .. _more than one issues on same bug stock response: http://developer.pardus.org.tr/guides/bugtracking/stock_responses.html#more-than-one-issues-reported-in-one-bug
+.. _release tracker bugs: http://developer.pardus.org.tr/guides/bugtracking/tracker_bug_process.html
