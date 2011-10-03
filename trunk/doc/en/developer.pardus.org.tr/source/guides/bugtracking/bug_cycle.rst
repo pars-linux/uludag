@@ -80,6 +80,7 @@ Bugzilla Keywords
 **JUNIORJOBS**  Use when a bug is chosen as a junior job for expected developers
 **NEEDSMENTORING** Use when the expected developer choosed a bug and fixed it, and wants to see fix in Pardus repositories
 **MENTORED** Use when the developer takes review and merge responsibility of an expected developer bug
+**REVIEWED** Use when the expected developer job review was finished and job is ready for merge
 **MENTORASSIGNED**  Use when assigne a mentor to developer applicant
 
 .. _alpha: http://developer.pardus.org.tr/guides/releasing/official_releases/alpha_phase.html
