@@ -5,6 +5,8 @@ Mentoring Process
 
 Mentoring is an assistance to allow `expected developers`_ to have packages reviewed and merged to Pardus repositories. Mentoring process is the time for learning Pardus and a start development for Pardus.
 
+ .. image:: images/images/expected-developer-process.png
+
 Request for Mentoring
 ---------------------
 

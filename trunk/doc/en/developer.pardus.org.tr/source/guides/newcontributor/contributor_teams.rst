@@ -5,6 +5,8 @@ Pardus Teams
 
 In open source projects, people enjoy sharing their knowledge and they hope to learn from the knowledge they receive from others. Together participants are able to achieve great things. A complex software program cannot be created without the help of others. The activities that need to be performed in the communities are different. Examples are the actual creation of new source code; testing the software in all sorts of settings; finding, reporting and fixing bugs; translating software into different languages; writing manuals and other documents; and creating and maintaining support tools, like a website, mailing list. Therefore  open source project life cycles can go-ahead with all of these activities, with people who have different skills. Each performs a part in the quest to together improve the quality of the software. Therefore Pardus has different teams for each different activities.
 
+.. image:: images/teams.png
+
 Core
 ----
 
