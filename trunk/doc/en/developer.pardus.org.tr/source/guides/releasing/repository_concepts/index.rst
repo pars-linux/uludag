@@ -14,3 +14,4 @@ software repository.
    subversion_usage.rst
    version_control_system_rules.rst
    long_term_support_release_plan.rst
+   git_workflow.rst

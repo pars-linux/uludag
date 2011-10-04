@@ -5,7 +5,7 @@ Mentoring Process
 
 Mentoring is an assistance to allow `expected developers`_ to have packages reviewed and merged to Pardus repositories. Mentoring process is the time for learning Pardus and a start development for Pardus.
 
- .. image:: images/images/expected-developer-process.png
+ .. image:: images/expected-developer-process.png
 
 Request for Mentoring
 ---------------------
@@ -76,6 +76,6 @@ Note: There is also exist an other way to contribute development of Pardus, (thi
 .. _freeze exceptions: http://developer.pardus.org.tr/guides/releasing/freezes/index.html
 .. _playground svn: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#playground-folder
 .. _Junior Jobs: http://bugs.pardus.org.tr/buglist.cgi?keywords=JUNIORJOBS&query_format=advanced&keywords_type=allwords&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED
-.. _expecten developers: http://developer.pardus.org.tr/guides/newcontributor/developer_roles.html#expected-developer
+.. _expected developers: http://developer.pardus.org.tr/guides/newcontributor/developer_roles.html#expected-developer
 .. _issue tracking system: http://tracker.pardus.org.tr
 .. _there: http://developer.pardus.org.tr/guides/releasing/repository_concepts/git-workflow-en.html#contribution-workflow

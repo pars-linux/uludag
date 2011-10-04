@@ -58,3 +58,4 @@ New packages are accepted to official Pardus repositories under `some circumstan
 .. _package review: http://developer.pardus.org.tr/guides/packaging/package-review-process.html
 .. _package review criteria: http://developer.pardus.org.tr/guides/packaging/reviewing_guidelines.html
 .. _some circumstances: http://developer.pardus.org.tr/guides/packaging/package-review-process.html#aim-of-review
+.. _mentoring process: http://developer.pardus.org.tr/guides/newcontributor/mentoring_process.html

@@ -17,3 +17,4 @@ New Contributors
    newcontributor_mentors.rst
    developer_roles.rst
    tester_roles.rst
+   contributor_teams.rst

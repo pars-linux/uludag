@@ -19,3 +19,4 @@ releases.
    beta_phase.rst
    release_candidate_phase.rst
    final_phase.rst
+   point_release_process.rst
