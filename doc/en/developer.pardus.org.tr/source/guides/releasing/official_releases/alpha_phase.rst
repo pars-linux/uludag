@@ -1,7 +1,7 @@
 .. _alpha-release:
 
-Alpha Release
-=============
+Alpha Phase
+===========
 
 :Author: Semen Cirit
 :Last Modified Date: |today|

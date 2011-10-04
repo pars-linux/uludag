@@ -1,7 +1,7 @@
 .. _final-release:
 
-Final Release
-=============
+Final Phase
+===========
 
 :Author: Semen Cirit
 :Last Modified Date: |today|

@@ -8,3 +8,4 @@ Testing Process
 
    development_release_test_process.rst
    shipping_release_test_process.rst
+   package_update_tests/index.rst

@@ -10,7 +10,7 @@ Contributor Candidate Mentoring
 Who are mentors?
 ================
 
-The component supervisors and lead developers are the mentors of developer candidates. (See `developer roles`_ for details)
+The component supervisors, team leaders, lead developers are the mentors of developer candidates. (See `developer roles`_ for details)
 
 What is the aim of this notion?
 ===============================

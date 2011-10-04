@@ -1,7 +1,7 @@
 .. _beta-release:
 
-Beta Release
-============
+Beta Phase
+==========
 
 :Author: Semen Cirit
 :Last Modified Date: |today|

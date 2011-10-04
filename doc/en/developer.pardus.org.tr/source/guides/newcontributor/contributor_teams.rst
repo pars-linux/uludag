@@ -33,6 +33,7 @@ Hardware
 This team is dealing with hardware integration of system user-space.
 
 Main subcomponents of these team:
+
 * Printer drivers
 * Scanner subsystem
 * Webcam/TV/V4L
@@ -49,6 +50,7 @@ Network
 This team is dealing with basic networking services and tools
 
 Main subcomponents of this team:
+
 * Network-manager
 * Firewall
 * VPN
@@ -60,6 +62,7 @@ Audio/Video
 This team is dealing with A/V frameworks and codecs
 
 Main subcomponents of this team:
+
 * Codecs
 * APIs and libraries
 * Plug-ins
@@ -70,6 +73,7 @@ Display
 This team is dealing with graphics subsystem.
 
 Main subcomponents of this team:
+
 * Display server (X11, wayland, ...)
 * Display manager (kdm, ...)
 * Display drivers
@@ -80,6 +84,7 @@ Server
 This team is dealing with different servers
 
 Main subcomponents of this team:
+
 * Database
 * Web
 * File
@@ -93,6 +98,7 @@ Desktop Environment
 This team is dealing with main desktop infrastructure of Pardus
 
 Main subcomponents of this team:
+
 * KDE
 * GUI toolkits (Qt, gtk, ...)
 
@@ -101,7 +107,8 @@ Desktop Applications
 
 This team is dealing with user applications which has a GUI
 
-Main subcomponents 
+Main subcomponents:
+
 * Office
 * Internet
 * System Management
@@ -137,6 +144,7 @@ Development
 This team is dealing with development tools
 
 Main subcomponents of this team:
+
 * Programming (Languages, environments, tools, build system etc.)
 * Editor
 * Utilities

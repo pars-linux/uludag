@@ -14,4 +14,4 @@ Guides
    softwaredevelopment/index.rst
    releasing/index.rst
    communication/index.rst
-   lts/index.html
+   lts/index.rst
