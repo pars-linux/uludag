@@ -57,6 +57,8 @@ A feature can be formalize with the following notions:
 New Feature Request Process
 ===========================
 
+ .. image:: images/feature_bugzilla.png
+
 You can make new feature request any time you want.
 
 How do I propose a new feature that I do not contribute?

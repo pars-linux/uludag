@@ -7,6 +7,7 @@ Pardus repositories has different policies for each and this document defines
 what sort of updates needed for each of these repositories. In general, repositories
 devel, testing and stable go from less conservative to more.
 
+ .. image:: images/package-updates.png
 
 Alpha Phase Updates
 ===================

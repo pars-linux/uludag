@@ -7,6 +7,7 @@ Thus, it is important that every contributor is aware of the release process and
 
 Pardus releases occur nearly every 8 months. Each release cycle follows the release plan template, which divides development into milestones that are described in `General Milestones`_ section. We also define various freeze times described in `General Freezes`_ section.
 
+.. image:: images/release_timeline.png
 
 General Freezes
 ---------------
