@@ -3,6 +3,13 @@
 Contributor Availability
 ========================
 
+**Last Modified Date:** |today|
+
+:Author: Semen Cirit
+
+:Version: template
+
+
 Life changes, also your availability may change. Therefore Pardus use
 different status for contributor availability. These are active, away
 or retired.

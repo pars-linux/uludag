@@ -7,7 +7,7 @@ Orphaned and Retired Packages
 
 :Author: Semen Cirit
 
-:Version: 0.1
+:Version: template
 
 Pardus knows that life changes, also your availability may change. When
 package maintainers are not able to deal with their packages more than one
