@@ -1,0 +1,424 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+    <head>
+        <title>Pardus StajProjeleri</title>
+        <script src="js/jquery-1.4.2.min.js"></script>
+        <script src="js/jquery-ui-1.7.2.custom.min.js"></script>
+        <script src="js/jquery.tablesorter.min.js"></script>
+        <script src="js/jquery.tablesorter.pager.js"></script>
+        <link type="text/css" rel="stylesheet" href="css/style.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script>
+            $(document).ready(
+                function()
+                    {
+                        $("#students").tablesorter(
+                            {
+                                sortList: [[0,0]], widthFixed: true, widgets: ['zebra']
+                            }
+                        );
+
+                    }
+
+            );
+
+        </script>
+    </head>
+
+    <style>
+        td {
+            word-wrap: break-word;
+        }
+        body {
+            margin: 0px;
+            padding: 10px;
+            background-color: #f0f0f6
+        }
+
+        textarea {
+            border: 1px solid #aaaaaa;
+            margin: 5px;
+        } 
+
+        img {
+            cursor: pointer;
+        }
+        .pager {
+            margin-top: 10px;
+            background-color: #e6e6e6;
+            text-align: center;
+        }
+        .messages {
+            background-color: #f0f0aa;
+            border: 1px solid #FFF;
+            font-size: 9pt;
+            padding: 5px;
+            font-weight: bold;
+            color: #3D3D3D;
+            margin-bottom: 10px;
+        }
+      .nav_bar {
+            background-color: #e6e6e6;
+            border: 1px solid #FFF;
+            font-size: 8pt;
+            padding: 2px;
+            color: #3D3D3D;
+        }
+        #container{
+            margin: 0px auto;
+
+        }
+
+    </style>
+
+    <body>
+        <table cellspacing="1" width="100%">
+            <tr>
+                <td width = "40"><a style="color:#222222" href="/internshop"><img src="img/mario.png" border="0" width="30" height="30"></a></td>
+                <td><h2><a style="color:#222222; text-decoration: none;" href="/internshop">Pardus InternShop</a></h2></td>
+                <td width="200" align="right"><h6>Hos geldiniz {{ mentor_name }} {{ mentor_surname }}</h6></td>
+                <td width="80" align="right">
+                    <form action="/internshop/" method="post">
+                        <input name="logout" value="true" type="hidden">
+                        <input value="Cikis" type="submit">
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+        {% if messages %}
+        <table cellspacing="1" width="100%" class="messages">
+            <tr>
+                <td width="40" align="center">
+                    <img src="img/exclamation.png" height="30" width="30">
+                </td>
+                <td colspan="2">
+                    {% for m in messages %} {{m}}<br/> {% endfor %}
+                </td>
+            </tr>
+        </table>
+        {% endif %}
+
+
+        <div id="container" style="width:760px">
+{% if student %}
+        <table cellspacing="1" width="100%" >
+            <tr>
+                <td align="left" width="50">
+                    <a href="?student={{ student.id|add:-1 }}"><img border="0" title="Önceki Öğrenci" src="img/left_arrow.png" height="30" width="30"></a>
+                </td>
+                <td align="center">
+                    <h1>{{student.name}} {{student.surname}}</h1>
+                </td>
+                <td align="right" width="50">
+                    <a href="?student={{ student.id|add:1 }}"><img border="0" title="Sonraki Öğrenci" src="img/right_arrow.png" height="30" width="30"></a>
+                </td>
+            </tr>
+        </table>
+
+        <table cellspacing="1" class="tablesorter" >
+            <tbody>
+                <tr><td width="150">ID</td><td>{{student.id}}</td></tr> 
+                <tr><td>Ad</td><td>{{student.name}}</td></tr> 
+                <tr><td>Soyad</td><td>{{student.surname}}</td></tr> 
+                <tr><td>Doğum Tarihi</td><td>{{student.birthdate}}</td></tr> 
+                <tr><td>Cinsiyet</td><td>{{student.gender}}</td></tr> 
+                <tr><td>TC Kimlik No</td><td>{{student.id_number}}</td></tr> 
+                <tr><td>Adres</td><td>{{student.address}}</td></tr> 
+                <tr><td>Cep Telefonu</td><td>{{student.mobile_phone}}</td></tr> 
+                <tr><td>Semt</td><td>{{student.district}}</td></tr> 
+                <tr><td>Şehir</td><td>{{student.city}}</td></tr> 
+                <tr><td>Web Sayfası</td><td>{{ student.website|urlize }}</td></tr> 
+                <tr><td>E-Posta</td><td>{{student.email}}</td></tr> 
+                <tr><td>Jabber</td><td>{{student.jabber}}</td></tr> 
+
+                <tr><td style="background:#cccccc" colspan="2">&nbsp;</td></tr> 
+
+                <tr><td>Zorunlu Staj</td><td>{{student.mandatory_internship}}</td></tr> 
+
+                <tr><td style="background:#cccccc" colspan="2">&nbsp;</td></tr> 
+
+                <tr><td>Okul</td><td>{{student.school}}</td></tr> 
+                <tr><td>Bölüm</td><td>{{student.department}}</td></tr> 
+                <tr><td>Sınıf</td><td>{{student.grade}}</td></tr> 
+                <tr><td>Kaç Dönemdir Okulda</td><td>{{student.semester}}</td></tr> 
+                <tr><td>Ortalama</td><td>{{student.gpa}}</td></tr> 
+                <tr><td>Tahmini Mezuniyet Tarihi</td><td>{{student.expected_grad_date}}</td></tr> 
+
+                <tr><td style="background:#cccccc" colspan="2">&nbsp;</td></tr> 
+
+                <tr><td>İngilizce Seviyesi</td><td>{{student.english}}</td></tr> 
+                <tr><td>Linux Tecrübesi</td><td>{{student.linux_experience|linebreaks}}</td></tr> 
+                <tr><td>Tercih Edilen İşletim Sistemi</td><td>{{student.prefered_os}}</td></tr> 
+                <tr>
+                    <td>Bilinen Programlama Dilleri ve Frameworkler</td>
+                    <td>
+                        {% for language in student.programming_languages_and_frameworks.select_related %}
+                        <div style="width:110px; float:left;">
+                            <li>{{language.name}}</li>
+                        </div>
+                        {% endfor %}
+                    </td>
+                </tr> 
+                <tr><td>Diğer Programlama Dilleri</td><td>{{student.other_programming_languages}}</td></tr> 
+
+                <tr><td style="background:#cccccc" colspan="2">&nbsp;</td></tr> 
+
+                <tr><td>Pardus'a Katkıda Bulundunuz mu?</td><td>{{student.commited_before|linebreaks}}</td></tr> 
+                <tr><td>Projeleriniz?</td><td>{{student.projects_done|linebreaks}}</td></tr> 
+                <tr><td>Ödüller</td><td>{{student.awards|linebreaks}}</td></tr> 
+                <tr><td>Neden Pardus?</td><td>{{student.why_pardus|linebreaks}}</td></tr>
+
+                <tr><td style="background:#cccccc" colspan="2">&nbsp;</td></tr> 
+
+                <tr><td>Stajı Nereden Duydunuz?</td><td>{{student.where_did_you_hear|linebreaks}}</td></tr> 
+                <tr><td>Tercih Edilen Staj Zamanı</td><td>{{student.suitable_date}}</td></tr> 
+                <tr><td>Diğer</td><td>{{student.more|linebreaks}}</td></tr> 
+
+                <tr><td style="background:#cccccc" colspan="2">&nbsp;</td></tr> 
+
+                <tr><td>CV</td><td><a href="/internshop/dosyalar/cv/{{student.cv_upload}}">{{student.cv_upload}}</a></td></tr>
+                <tr>
+                    <td>Kod Örnekleri</td>
+                    <td>
+                        {% if code_uploaded %}
+                            <a href="/internshop/dosyalar/kod/{{student.id_number}}.tar.gz">{{student.id_number}}.tar.gz</a>
+                        {% else %}
+                            -
+                        {% endif %}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table width="100%" cellspacing="1" class="tablesorter">
+            <thead>
+                <tr>
+                    <th align="center" colspan="3">Puan Durumu</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th align="center">Toplam Oy Sayisi</th>
+                    <th align="center">Toplam Puan</th>
+                    <th align="center">Ortalama Puan</th>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <h1>{{ total_votes }}</h1>
+                    </td>
+                    <td align="center">
+                        <h1>{{ total_score }}</h1>
+                    </td>
+                    <td align="center">
+                        <h1>{{ avarage_score }}</h1>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        {% if votes %}
+        <table width="100%" cellspacing="1" class="tablesorter">
+            <thead>
+                <tr>
+                    <th align="center" colspan="2">Oy Detaylari</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td width="200">
+                        {{ mentor_votes_mentor|join:"<br/>" }}
+                    </td>
+                    <td>
+                        {{ mentor_votes_vote|join:"<br/>" }}
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        {% endif %}
+
+        {% if mentor_has_voted_before %}
+        <div class="messages">
+            Bu adayı oyladınız.
+        </div>
+        {% else %}
+        <form id="vote_form" action="/internshop/?student={{student.id}}" method="post">
+            <table width="100%" cellspacing="1" class="tablesorter">
+                <thead>
+                    <tr>
+                        <th colspan="2">Aday Oyla</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td width="200">10 uzerinden puan veriniz.</td>
+                        <td>
+                            <select name="vote">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" value="Oyla"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        {% endif %}
+
+        <table width="100%" cellspacing="1" class="tablesorter">
+            <thead>
+                <tr>
+                    <th colspan="1">Geliştirici Yorumları</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% if not comments %}
+                <tr>
+                    <td>Aday hakkında hiç yorum yapılmamış.</td>
+                </tr>
+            {% endif %}
+            {% for comment in comments %}
+                <tr>
+                    <th>{{ comment.mentor }} &nbsp; {{ comment.timestamp }} </th>
+                </tr>
+                <tr>
+                    <td width="200">
+                        {{ comment|urlize }}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <form id = "comment_form" action="/internshop/?student={{student.id}}" method="post">
+            <table width="100%" cellspacing="1" class="tablesorter">
+                <thead>
+                    <tr>
+                        <th colspan="4">Aday hakkında yorum ve görüşleriniz. Bu kısıma birden fazla yorum girebilirsiniz.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <textarea name="comment" rows="10" cols="40"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"><input type="submit" value="Gönder"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+{% else %}
+    </div>
+        <table cellspacing="1" width="100%" class="messages">
+            <tr>
+                <td width="40" align="center">
+                    <img src="img/exclamation.png" height="30" width="30">
+                </td>
+                <td colspan="2">
+                    Shift tuşuna basılı tutarak başlıklara tıklarsanız çoklu sıralama yapabilirsiniz.<br/>
+                    Tablo basliklarinin uzerine gelerek kisaltmalarin anlamlarini gorebilirsiniz.
+                </td>
+            </tr>
+        </table>
+
+        <table width="100%" cellpadding="0" cellspacing="1" id="students" class="tablesorter">
+            <thead>
+            <tr>
+                <th><span style="margin-right:10px;">ID</span></th>
+                <th title="Zorunlu Staj"><span style="margin-right:10px;">Z.</span></th>
+                <th><span style="margin-right:10px;">Ad</span></th>
+                <th><span style="margin-right:10px;">Soyad</span></th>
+                <th title="Dogum Tarihi"><span style="margin-right:10px;">D.</span></th>
+                <th title="Cinsiyet"><span style="margin-right:10px;">C.</span></th>
+                <!--th><span style="margin-right:10px;">Şehir</span></th>
+                <th><span style="margin-right:10px;">Web Sitesi</span></th>
+                <th><span style="margin-right:10px;">E-Posta</span></th-->
+                <th><span style="margin-right:10px;">Okul</span></th>
+                <th><span style="margin-right:10px;">Bölüm</span></th>
+                <th><span style="margin-right:10px;">Sınıf</span></th>
+                <th><span style="margin-right:10px;">Ortalama</span></th>
+                <!--th><span style="margin-right:10px;">Programlama Dilleri</span></th>
+                <th><span style="margin-right:10px;">Diğer Programlama Dilleri</span></th-->
+                <th title="Number of Comments"><span style="margin-right:10px;">#C</span></th>
+                <th title="Number of Votes"><span style="margin-right:10px;">#V</span></th>
+                <th><span style="margin-right:10px;">Puan</span></th>
+                <th title="Did you vote this student?"><span style="margin-right:10px;">Vtd</span></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for student in studentList %}
+            <tr>
+                <td style="height:40px"><a href="?student={{ student.id }}">{{ student.id }}</a></td>
+                <td>{{ student.mandatory_internship }}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.surname }}</td>
+                <td>{{ student.birthdate|date:"Y" }}</td>
+                <td>{% ifequal student.gender "M" %}
+                        E
+                    {% else %}
+                        K
+                    {% endifequal %}</td>
+                <!--td>{{ student.city }}</td>
+                <td><p style="width:100px; word-wrap: break-word;"><a href="{{ student.website }}">{{ student.website }}</a></p></td>
+                <td>{{ student.email }}</td-->
+                <td>{{ student.school }}</td>
+                <td>{{ student.department }}</td>
+                <td>{{ student.grade }}</td>
+                <td>{{ student.gpa }}</td>
+                <!--td>{% for language in student.programming_languages_and_frameworks.values %}
+                    <div style="width:50px; float:left">{{ language.name }}</div>
+                    {% endfor %}
+                </td>
+                <td><p style="width:100px; word-wrap: break-word;">{{ student.other_programming_languages }}</p></td-->
+
+                <td>{{ student.comment.select_related|length }}</td>
+                <td>{{ student.vote.select_related|length }}</td>
+
+                <td>{{ student.score }}</td>
+
+                <td id="voted{{ forloop.counter }}" align="center">
+                {% for vote in student.vote.select_related %}
+                    {% ifequal vote.mentor.id mentor_id %}
+                        <img src="img/tick.png">
+                    {% endifequal %}
+                {% endfor %}
+                </td>
+
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+{% endif %}
+        <!--div id="pager" class="pager">
+            <form>
+                <img src="img/first.png" class="first"/>
+                <img src="img/prev.png" class="prev"/>
+                <input type="text" class="pagedisplay" readonly="true"/>
+                <img src="img/next.png" class="next"/>
+                <img src="img/last.png" class="last"/>
+                <select class="pagesize">
+                    <option selected="selected" value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+            </form>
+        </div-->
+    </body>
+
+</html>

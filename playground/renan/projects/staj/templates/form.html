@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+    <head>
+        <title>Başvuru Formu</title>
+
+    <style>
+
+*{ margin:0; padding:0;}
+body{ font:100% normal sans-serif, Arial, Helvetica;}
+form,input,select,textarea{margin:0; padding:0; color:#333333; font-size: 12pt;}
+
+div.box {
+padding: 0px;
+margin:0 auto;
+width:340px;
+/*background:#222222;*/
+position:relative;
+top:50px;
+border:0px solid #262626;
+}
+
+div.box h1 {
+font-family: sans-serif, Arial, Helvetica;
+text-shadow: 1px 1px 1px #ffffff;
+margin: 0px;
+color:#334455;
+font-size:24pt;
+padding:5px 0 5px 0px;
+letter-spacing: -3px;
+}
+
+div.box h1.errors {
+font-family: sans-serif, Arial, Helvetica;
+text-shadow: 1px 1px 1px #ffffff;
+margin: 0px;
+color:#990000;
+font-size:24pt;
+padding:5px 0 5px 0px;
+letter-spacing: -3px;
+}
+
+
+div.box h2 {
+font-family: sans-serif, Arial, Helvetica;
+text-shadow: 1px 1px 1px #ffffff;
+margin: 0px;
+line-height: 0px;
+color:#334455;
+font-size:15pt;
+padding:5px 0 5px 0px;
+font-weight: normal;
+}
+
+input[type="checkbox"] {
+text-shadow: 1px 1px 1px #ffffff;
+background: transparent;
+padding:5px 0 5px 0;
+margin:2px;
+}
+
+div.element ul:first-child li {
+    float: left;
+    width: 150px;
+    margin: 3px;
+    list-style-type: none;
+}
+
+input[type="text"] {
+padding:10px 10px;
+width:100%;
+background:#f0f0f0;
+border-bottom: 1px double #d7d7d7;
+border-top: 1px double #d7d7d7;
+border-left:1px double #d3d3d3;
+border-right:1px double #d3d3d3;
+}
+
+select {
+
+margin:0px;
+width: 100%;
+padding:10px 10px;
+}
+
+.short {
+width: 150px;
+}
+
+textarea{
+padding:7px 7px;
+width:100%;
+overflow:hidden;
+height:150px;
+background:#f0f0f0;
+border-bottom: 1px double #d7d7d7;
+border-top: 1px double #d7d7d7;
+border-left:1px double #d3d3d3;
+border-right:1px double #d3d3d3;
+
+}
+
+div.box .button
+{
+margin:0 0 10px 0;
+padding:4px 7px;
+background:#CC0000;
+border:0px;
+position: relative;
+top:10px;
+left:382px;
+width:100px;
+border-bottom: 1px double #660000;
+border-top: 1px double #660000;
+border-left:1px double #FF0033;
+border-right:1px double #FF0033;
+}
+
+div.header
+{
+}
+
+.errorlist li {
+    color: #ff5555;
+    margin: 0px;
+    padding: 0px;
+    float: none;
+    width: 100%;
+}
+
+div.field {
+margin-bottom: 20px;
+display: table;
+width: 100%;
+
+/*
+background: #f0f0f0;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+*/
+}
+
+div.element {
+}
+
+div.label {
+color: #334455;
+text-shadow: 1px 1px 1px #ffffff;
+/*
+-webkit-border-top-left-radius: 3px;
+-webkit-border-top-right-radius: 3px;
+-moz-border-radius-topleft: 3px;
+-moz-border-radius-topright: 3px;
+border-top-left-radius: 3px;
+border-top-right-radius: 3px;
+*/
+margin:0px;
+padding: 0px;
+}
+
+
+    </style>
+
+
+    <link type="text/css" href="css/smoothness/jquery-ui-1.8.10.custom.css" rel="Stylesheet" />
+    <script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.8.10.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.datepicker-tr.js"></script>
+
+    <script src="js/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css"/>
+
+    <script type="text/javascript" src="js/jquery.asmselect.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jquery.asmselect.css" />
+
+
+    <script>
+
+        jQuery(document).ready(function(){
+            jQuery("#form").validationEngine();
+        });
+
+
+        $(function(){
+            $('#id_birthdate').datepicker(
+                {
+                    changeYear: true, yearRange: 'c-30'
+                }
+            );
+
+            $('#id_expected_grad_date').datepicker(
+                {
+                    changeYear: true
+                }
+            );
+
+
+        $("select[multiple]").asmSelect({
+                addItemTarget: 'bottom',
+                animate: true,
+                highlight: true,
+                sortable: false
+            });
+
+        });
+
+
+    </script>
+
+    </head>
+    <body>
+        {% include "header.html" %}
+
+        <div class="box">
+        <h1>Başvuru Formu</h1>
+        <p>Formu doldurmaya başlamadan önce lütfen <a target="_blank" href="http://tr.pardus-wiki.org/Staj2011">Staj 2011 belgesini</a> okuyunuz.</p>
+        {% if form.errors %}
+            <h1 id='errors' class="errors">
+                Form Hatalar İçeriyor!
+            </h1>
+            Lütfen aşağıda bulunan hataları düzeltip tekrar deneyiniz.
+
+<br><br>
+            <div class="errorlist">
+            <ul>
+
+            {% for e in form %}
+                {% if e.errors %}
+                    <li>{{e.label}}</li>
+                {% endif %}
+            {% endfor %}
+            </ul>
+            </div>
+        {% endif %}
+
+<br><br>
+
+        <form id="form" enctype="multipart/form-data" action="/staj/" method="post">
+            {% for element in form %}
+            <div class="field">
+                <div class="label">{{ element.label }}</div>
+                <div class="error">{{ element.errors }}</div>
+                <div class="element">{{ element }}</div>
+            </div>
+
+            {% endfor %}
+
+        <input type="submit" value="Gönder">
+        </form>
+        </div>
+
+    </body>
+</html>
