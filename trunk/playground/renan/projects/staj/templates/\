@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+    <head>
+        <script src="js/jquery-1.3.2.min.js"></script>
+        <script src="js/jquery-ui-1.7.2.custom.min.js"></script>
+        <script src="js/jquery.validate.js"></script>
+        <link type="text/css" href="css/ui-lightness/jquery-ui-1.7.2.custom.css" rel="stylesheet" />
+
+        <script type="text/javascript">
+            jQuery(function($){
+                $.datepicker.regional['tr'] = {
+                    closeText: 'kapat',
+                    prevText: '&#x3c;geri',
+                    nextText: 'ileri&#x3e',
+                    currentText: 'bugün',
+                    monthNames: ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran',
+                    'Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'],
+                    monthNamesShort: ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran',
+                    'Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'],
+                    dayNames: ['Pazar','Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi'],
+                    dayNamesShort: ['Pz','Pt','Sa','Ça','Pe','Cu','Ct'],
+                    dayNamesMin: ['Pz','Pt','Sa','Ça','Pe','Cu','Ct'],
+                    dateFormat: 'dd.mm.yy', firstDay: 1,
+                    isRTL: false};
+                $.datepicker.setDefaults($.datepicker.regional['tr']);
+                });
+
+            jQuery(
+                function() {
+                        jQuery.datepicker.setDefaults(jQuery.datepicker.regional['tr']);
+                        jQuery("#id_birthdate").datepicker({ dateFormat: 'dd/mm/yy', changeMonth: true, changeYear: true, yearRange: '1984:1992' });
+                });
+
+            $(document).ready(function(){
+                    $("#form").validate();
+                });
+
+        </script> 
+        <title>test</title>
+
+        <style type="text/css">
+body
+{
+font-family: Verdana, sans-serif, Arial;
+font-size: 11px;
+margin:0px;
+padding:0px;
+}
+
+.form{
+    border:5px solid #ababbb;
+    margin-top: 20px
+}
+
+.form th
+{
+width: 200px;
+padding:10px;
+border: 0px;
+text-align: left;
+font-family: Verdana, sans-serif, Arial;
+font-weight: bold;
+font-size: 11px;
+color: #404040;
+background-color: #e7e7f2; 
+vertical-align: middle;
+}
+
+
+input, textarea {
+width: 300px;
+border:1px solid #bbbbbb;
+}
+
+.form li{
+    list-style: none;
+    float: left;
+    margin-right:10px;
+}
+
+.form ul{
+    padding: 0px;
+    margin: 0px;
+}
+
+.form td
+{
+width: 400px;
+padding:10px;
+border: 0px;
+text-align: left;
+font-family: Verdana, sans-serif, Arial;
+font-weight: normal;
+font-size: 11px;
+color: #404040;
+background-color: #f5f5ff; 
+vertical-align: middle;
+}
+
+.invalid{
+    margin-left:10px;
+    vertical-align: middle
+}
+
+.form .header{
+    font-family: Verdana, sans-serif, Arial;
+    font-weight: normal;
+    font-size: 20px;
+    color: #404040;
+}
+
+.form .submit{
+    text-align: center;
+}
+
+.form .header .logo{
+    width:50px;
+}
+
+.form .header .title{
+    font-size: 30px;
+    color: #5a736f;
+}
+
+</style>
+
+    </head>
+    <body>
+        {% include "header.html" %}
+
+        {% if errors %}
+            <ul>
+                {% for error in errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <form id="form" action="/contact/" method="post">
+            <table class="form" align="center" cellspacing="2" cellpadding="0">
+                <tr>
+                    <td colspan="2" valign="center">
+                        <table class="header" width="100%" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td class="logo"><img src="img/pardus_logo.png"></td>
+                                <td class="title">Pardus Stajyer Aday Formu</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                {{ form.as_table }}
+                <tr>
+                    <td class="submit" colspan="2"><input type="submit" value="Gönder"></td>
+                </tr>
+            </table>
+        </form>
+
+    </body>
+</html>

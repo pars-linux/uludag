@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+    <head>
+        <title>Pardus StajProjeleri</title>
+    </head>
+    
+    <style>
+
+        body {
+            margin: 0px;
+        }
+        .content {
+            width: 960px;
+            margin: 0 auto;
+            background-color: orange;
+        }
+        .table {
+            background-color: green;
+        }
+
+
+        .list {
+            width:300px;
+            float: left;
+            background-color: gray;
+        }
+
+        .details {
+            width: 960px;
+            float: right;
+            margin: 20px;
+        }
+        .toc {
+            background-color: white;
+        }
+    </style>
+
+    <body>
+        <div class="content">
+            <div id="toc" class="toc">
+                <h2>TOC</h2>
+                    {% for project in list %}
+                        <a href="#{{ project.id}}">{{ project.name }}</a><br>
+
+                    {% endfor %}
+            </div>
+
+            <div class="table">
+                <div class="details">
+                    <h1>Staj Projeleri</h1>
+                    <hr><br>
+                    {% for project in list %}
+                    <h2 id="{{ project.id }}">{{ project.name }} <a href="#toc">Go to TOC</a></h2>
+                        <h3>Amaç</h3>
+                        {{ project.objective|linebreaksbr }} <br>
+                        <h3>Yapılacaklar</h3>
+                        {{ project.todo|linebreaksbr }} <br>
+                        <h3>Ön Şartlar</h3>
+                        {{ project.prerequisites|linebreaksbr }} <br>
+                        <h3>Zorluk Derecesi</h3>
+                        {{ project.score}} <br>
+                        <h3>Referanslar</h3>
+                        {{ project.references|linebreaksbr }} <br>
+                        <h3>Danışmanlar</h3>
+                        {% for mentor in project.mentors.values_list %}
+                        {{ mentor.1 }} {{ mentor.2 }} <a href="mail:{{ mentor.3 }}">{{ mentor.3 }}</a> <br>
+                        {% endfor %}
+                        <br>
+                        <br>
+                        <hr>
+                        <br>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+</html>
