@@ -12,9 +12,12 @@ New Contributors
    mentoring_process.rst
    how-to-be-contributor.rst
    creating-svn-account.rst
+   contributor_teams.rst
    introduction-to-translation.rst
    faq-about-translations.rst
    newcontributor_mentors.rst
    developer_roles.rst
+   contributor_availability.rst
+   orphaned_packages.rst
    tester_roles.rst
-   contributor_teams.rst
+
