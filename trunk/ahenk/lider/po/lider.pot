@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-19 15:59+0300\n"
+"POT-Creation-Date: 2011-10-07 09:56+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,134 +80,134 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: lider/formmain.py:248
+#: lider/formmain.py:247
 msgid "Directory connection established."
 msgstr ""
 
-#: lider/formmain.py:250
+#: lider/formmain.py:249
 msgid "Directory connection closed."
 msgstr ""
 
-#: lider/formmain.py:252
+#: lider/formmain.py:251
 msgid "Directory connection error."
 msgstr ""
 
-#: lider/formmain.py:256
+#: lider/formmain.py:255
 msgid "XMPP connection established."
 msgstr ""
 
-#: lider/formmain.py:258
+#: lider/formmain.py:257
 msgid "XMPP connection closed."
 msgstr ""
 
-#: lider/formmain.py:260
+#: lider/formmain.py:259
 msgid "XMPP connection error."
 msgstr ""
 
-#: lider/formmain.py:498 lider/formmain.py:501 lider/formmain.py:569
-#: lider/formmain.py:576 lider/formmain.py:990 lider/formmain.py:993
-#: lider/formmain.py:996 lider/formmain.py:1029 lider/formmain.py:1032
-#: lider/formmain.py:1035 lider/formmain.py:1061 lider/formmain.py:1064
-#: lider/formmain.py:1067 lider/formmain.py:1099 lider/formmain.py:1102
-#: lider/formmain.py:1105 lider/formmain.py:1143 lider/formmain.py:1146
-#: lider/formmain.py:1149 lider/formmain.py:1181 lider/formmain.py:1184
-#: lider/formmain.py:1187 lider/formmain.py:1429 lider/formmain.py:1432
+#: lider/formmain.py:499 lider/formmain.py:502 lider/formmain.py:570
+#: lider/formmain.py:577 lider/formmain.py:993 lider/formmain.py:996
+#: lider/formmain.py:999 lider/formmain.py:1032 lider/formmain.py:1035
+#: lider/formmain.py:1038 lider/formmain.py:1064 lider/formmain.py:1067
+#: lider/formmain.py:1070 lider/formmain.py:1102 lider/formmain.py:1105
+#: lider/formmain.py:1108 lider/formmain.py:1146 lider/formmain.py:1149
+#: lider/formmain.py:1152 lider/formmain.py:1184 lider/formmain.py:1187
+#: lider/formmain.py:1190 lider/formmain.py:1415 lider/formmain.py:1418
 msgid "Connection Error"
 msgstr ""
 
-#: lider/formmain.py:498 lider/formmain.py:576 lider/formmain.py:990
-#: lider/formmain.py:1029 lider/formmain.py:1061 lider/formmain.py:1099
-#: lider/formmain.py:1143 lider/formmain.py:1181 lider/formmain.py:1429
+#: lider/formmain.py:499 lider/formmain.py:577 lider/formmain.py:993
+#: lider/formmain.py:1032 lider/formmain.py:1064 lider/formmain.py:1102
+#: lider/formmain.py:1146 lider/formmain.py:1184 lider/formmain.py:1415
 msgid "Connection lost. Please re-connect."
 msgstr ""
 
-#: lider/formmain.py:501
+#: lider/formmain.py:502
 msgid "Unable to get policy."
 msgstr ""
 
-#: lider/formmain.py:687
+#: lider/formmain.py:691
 #, python-format
 msgid "XMPP user is online: %s"
 msgstr ""
 
-#: lider/formmain.py:689
+#: lider/formmain.py:693
 #, python-format
 msgid "XMPP user is offline: %s"
 msgstr ""
 
-#: lider/formmain.py:836
+#: lider/formmain.py:839
 msgid "No members found"
 msgstr ""
 
-#: lider/formmain.py:931 lider/formmain.py:1010 lider/formmain.py:1016
-#: lider/formmain.py:1019
+#: lider/formmain.py:934 lider/formmain.py:1013 lider/formmain.py:1019
+#: lider/formmain.py:1022
 msgid "Warning"
 msgstr ""
 
-#: lider/formmain.py:993 lider/formmain.py:1032 lider/formmain.py:1064
-#: lider/formmain.py:1102 lider/formmain.py:1146 lider/formmain.py:1184
+#: lider/formmain.py:996 lider/formmain.py:1035 lider/formmain.py:1067
+#: lider/formmain.py:1105 lider/formmain.py:1149 lider/formmain.py:1187
 msgid "Insufficient access."
 msgstr ""
 
-#: lider/formmain.py:996
+#: lider/formmain.py:999
 msgid "Unable to modify item."
 msgstr ""
 
-#: lider/formmain.py:1010
+#: lider/formmain.py:1013
 msgid "Only one item at a time can be deleted."
 msgstr ""
 
-#: lider/formmain.py:1016
+#: lider/formmain.py:1019
 msgid "The selected item is a non-empty directory. It cannot be deleted."
 msgstr ""
 
-#: lider/formmain.py:1019
+#: lider/formmain.py:1022
 msgid "This is not undoable. Are you sure you want to remove?"
 msgstr ""
 
-#: lider/formmain.py:1035
+#: lider/formmain.py:1038
 msgid "Unable to delete item."
 msgstr ""
 
-#: lider/formmain.py:1067
+#: lider/formmain.py:1070
 msgid "Unable to add computer."
 msgstr ""
 
-#: lider/formmain.py:1105
+#: lider/formmain.py:1108
 msgid "Unable to add user."
 msgstr ""
 
-#: lider/formmain.py:1149
+#: lider/formmain.py:1152
 msgid "Unable to add group."
 msgstr ""
 
-#: lider/formmain.py:1187
+#: lider/formmain.py:1190
 msgid "Unable to add folder."
 msgstr ""
 
-#: lider/formmain.py:1365
+#: lider/formmain.py:1351
 #, python-format
 msgid "%d item(s) will be forced to update policy."
 msgstr ""
 
-#: lider/formmain.py:1366 lider/formmain.py:1384 lider/formmain.py:1445
-#: lider/formmain.py:1475
+#: lider/formmain.py:1352 lider/formmain.py:1370 lider/formmain.py:1433
+#: lider/formmain.py:1463
 msgid "Do you want to continue?"
 msgstr ""
 
-#: lider/formmain.py:1383
+#: lider/formmain.py:1369
 msgid "Policy will be saved."
 msgstr ""
 
-#: lider/formmain.py:1432
+#: lider/formmain.py:1418
 msgid "Unable to modify node."
 msgstr ""
 
-#: lider/formmain.py:1444
+#: lider/formmain.py:1432
 msgid "All changes will be reverted."
 msgstr ""
 
-#: lider/formmain.py:1474
+#: lider/formmain.py:1462
 msgid "Policy from parent directory will be copied."
 msgstr ""
 
@@ -223,52 +223,48 @@ msgstr ""
 msgid "There has to be at least one member."
 msgstr ""
 
-#: lider/main.py:1646
+#: lider/main.py:1647
 msgid "Lider - Ahenk Management Console"
 msgstr ""
 
-#: lider/main.py:1647
+#: lider/main.py:1648
 msgid "Node Browser"
 msgstr ""
 
-#: lider/main.py:1649
+#: lider/main.py:1650
 msgid "Node"
 msgstr ""
 
-#: lider/main.py:1650
+#: lider/main.py:1651
 msgid "Description"
 msgstr ""
 
-#: lider/main.py:1651
+#: lider/main.py:1652
 msgid "Filter Nodes"
 msgstr ""
 
-#: lider/main.py:1652
+#: lider/main.py:1653
 msgid "Inherited Policies"
 msgstr ""
 
-#: lider/main.py:1654
+#: lider/main.py:1655
 msgid "Group Members"
 msgstr ""
 
-#: lider/main.py:1655
+#: lider/main.py:1656
 msgid "Group Membership"
 msgstr ""
 
-#: lider/main.py:1656 lider/main.py:1657 lider/main.py:1658
+#: lider/main.py:1657 lider/main.py:1658 lider/main.py:1659
 msgid "TextLabel"
 msgstr ""
 
-#: lider/main.py:1659
-msgid "Revert"
-msgstr ""
-
 #: lider/main.py:1660
-msgid "Save and Apply"
+msgid "Define new policy"
 msgstr ""
 
 #: lider/main.py:1661
-msgid "Save"
+msgid "Inherit policies from parent"
 msgstr ""
 
 #: lider/main.py:1662
@@ -276,52 +272,56 @@ msgid "Inherit this policy directly"
 msgstr ""
 
 #: lider/main.py:1663
-msgid "Define new policy"
+msgid "Revert"
 msgstr ""
 
 #: lider/main.py:1664
-msgid "Inherit policies from parent"
+msgid "Save and Apply"
 msgstr ""
 
 #: lider/main.py:1665
+msgid "Save"
+msgstr ""
+
+#: lider/main.py:1666
 msgid ""
 "<b>Warning:</b> You are editing multiple nodes. Policies defined specificly "
 "for these nodes will be overwritten."
 msgstr ""
 
-#: lider/main.py:1666 lider/ui_connection.py:1055 lider/ui_formmain.py:419
+#: lider/main.py:1667 lider/ui_connection.py:1055 lider/ui_formmain.py:419
 msgid "Lider"
 msgstr ""
 
-#: lider/main.py:1667
+#: lider/main.py:1668
 msgid "Disconnect"
 msgstr ""
 
-#: lider/main.py:1668
+#: lider/main.py:1669
 msgid "Log"
 msgstr ""
 
-#: lider/main.py:1669
+#: lider/main.py:1670
 msgid "Settings"
 msgstr ""
 
-#: lider/main.py:1670
+#: lider/main.py:1671
 msgid "Network View"
 msgstr ""
 
-#: lider/main.py:1671
+#: lider/main.py:1672
 msgid "Show network members."
 msgstr ""
 
-#: lider/main.py:1672 lider/ui_formmain.py:431 lider/ui_formmain.py:432
+#: lider/main.py:1673 lider/ui_formmain.py:431 lider/ui_formmain.py:432
 msgid "Policies"
 msgstr ""
 
-#: lider/main.py:1673
+#: lider/main.py:1674
 msgid "Edit policies."
 msgstr ""
 
-#: lider/main.py:1674 lider/plugins/plugin_web/ui_web.py:151
+#: lider/main.py:1675 lider/plugins/plugin_web/ui_web.py:151
 msgid "Refresh"
 msgstr ""
 
@@ -405,6 +405,7 @@ msgid "Firewall State"
 msgstr ""
 
 #: lider/plugins/plugin_firewall/ui_firewall.py:230
+#: lider/plugins/plugin_services/main.py:135
 #: lider/plugins/plugin_services/ui_services.py:120
 msgid "Status"
 msgstr ""
@@ -431,6 +432,26 @@ msgstr ""
 
 #: lider/plugins/plugin_firewall/ui_firewall.py:236
 msgid "Load Fail Safe Rules"
+msgstr ""
+
+#: lider/plugins/plugin_services/main.py:120
+msgid "Running"
+msgstr ""
+
+#: lider/plugins/plugin_services/main.py:122
+msgid "Stopped"
+msgstr ""
+
+#: lider/plugins/plugin_services/main.py:126
+msgid "Yes"
+msgstr ""
+
+#: lider/plugins/plugin_services/main.py:128
+msgid "Conditional"
+msgstr ""
+
+#: lider/plugins/plugin_services/main.py:130
+msgid "No"
 msgstr ""
 
 #: lider/plugins/plugin_services/ui_services.py:116

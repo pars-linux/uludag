@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-19 15:59+0300\n"
+"POT-Creation-Date: 2011-10-07 09:51+0300\n"
 "PO-Revision-Date: 2011-08-19 16:05+0300\n"
 "Last-Translator: Gökhan Özbulak <gozbulak@pardus.org.tr>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -80,134 +80,134 @@ msgstr "Güncelle"
 msgid "Delete"
 msgstr "Sil"
 
-#: lider/formmain.py:248
+#: lider/formmain.py:247
 msgid "Directory connection established."
 msgstr "Dizin bağlantısı kuruldu."
 
-#: lider/formmain.py:250
+#: lider/formmain.py:249
 msgid "Directory connection closed."
 msgstr "Dizin bağlantısı kapatıldı."
 
-#: lider/formmain.py:252
+#: lider/formmain.py:251
 msgid "Directory connection error."
 msgstr "Dizin bağlantı hatası."
 
-#: lider/formmain.py:256
+#: lider/formmain.py:255
 msgid "XMPP connection established."
 msgstr "XMPP bağlantısı kuruldu."
 
-#: lider/formmain.py:258
+#: lider/formmain.py:257
 msgid "XMPP connection closed."
 msgstr "XMPP bağlantısı kapatıldı."
 
-#: lider/formmain.py:260
+#: lider/formmain.py:259
 msgid "XMPP connection error."
 msgstr "XMPP bağlantı hatası."
 
-#: lider/formmain.py:498 lider/formmain.py:501 lider/formmain.py:569
-#: lider/formmain.py:576 lider/formmain.py:990 lider/formmain.py:993
-#: lider/formmain.py:996 lider/formmain.py:1029 lider/formmain.py:1032
-#: lider/formmain.py:1035 lider/formmain.py:1061 lider/formmain.py:1064
-#: lider/formmain.py:1067 lider/formmain.py:1099 lider/formmain.py:1102
-#: lider/formmain.py:1105 lider/formmain.py:1143 lider/formmain.py:1146
-#: lider/formmain.py:1149 lider/formmain.py:1181 lider/formmain.py:1184
-#: lider/formmain.py:1187 lider/formmain.py:1429 lider/formmain.py:1432
+#: lider/formmain.py:499 lider/formmain.py:502 lider/formmain.py:570
+#: lider/formmain.py:577 lider/formmain.py:993 lider/formmain.py:996
+#: lider/formmain.py:999 lider/formmain.py:1032 lider/formmain.py:1035
+#: lider/formmain.py:1038 lider/formmain.py:1064 lider/formmain.py:1067
+#: lider/formmain.py:1070 lider/formmain.py:1102 lider/formmain.py:1105
+#: lider/formmain.py:1108 lider/formmain.py:1146 lider/formmain.py:1149
+#: lider/formmain.py:1152 lider/formmain.py:1184 lider/formmain.py:1187
+#: lider/formmain.py:1190 lider/formmain.py:1415 lider/formmain.py:1418
 msgid "Connection Error"
 msgstr "Bağlantı Hatası"
 
-#: lider/formmain.py:498 lider/formmain.py:576 lider/formmain.py:990
-#: lider/formmain.py:1029 lider/formmain.py:1061 lider/formmain.py:1099
-#: lider/formmain.py:1143 lider/formmain.py:1181 lider/formmain.py:1429
+#: lider/formmain.py:499 lider/formmain.py:577 lider/formmain.py:993
+#: lider/formmain.py:1032 lider/formmain.py:1064 lider/formmain.py:1102
+#: lider/formmain.py:1146 lider/formmain.py:1184 lider/formmain.py:1415
 msgid "Connection lost. Please re-connect."
 msgstr "Bağlantı kesildi. Lütfen takrar bağlanın."
 
-#: lider/formmain.py:501
+#: lider/formmain.py:502
 msgid "Unable to get policy."
 msgstr "Politika alınamıyor."
 
-#: lider/formmain.py:687
+#: lider/formmain.py:691
 #, python-format
 msgid "XMPP user is online: %s"
 msgstr "XMPP kullanıcı aktif: %s"
 
-#: lider/formmain.py:689
+#: lider/formmain.py:693
 #, python-format
 msgid "XMPP user is offline: %s"
 msgstr "XMPP kullanıcısı pasif: %s"
 
-#: lider/formmain.py:836
+#: lider/formmain.py:839
 msgid "No members found"
 msgstr "Üye bulunamadı"
 
-#: lider/formmain.py:931 lider/formmain.py:1010 lider/formmain.py:1016
-#: lider/formmain.py:1019
+#: lider/formmain.py:934 lider/formmain.py:1013 lider/formmain.py:1019
+#: lider/formmain.py:1022
 msgid "Warning"
 msgstr "Uyarı"
 
-#: lider/formmain.py:993 lider/formmain.py:1032 lider/formmain.py:1064
-#: lider/formmain.py:1102 lider/formmain.py:1146 lider/formmain.py:1184
+#: lider/formmain.py:996 lider/formmain.py:1035 lider/formmain.py:1067
+#: lider/formmain.py:1105 lider/formmain.py:1149 lider/formmain.py:1187
 msgid "Insufficient access."
 msgstr "Yetersiz erişim."
 
-#: lider/formmain.py:996
+#: lider/formmain.py:999
 msgid "Unable to modify item."
 msgstr "Öğe güncellenemedi."
 
-#: lider/formmain.py:1010
+#: lider/formmain.py:1013
 msgid "Only one item at a time can be deleted."
 msgstr "Bir kerede sadece bir öğe silinebilir."
 
-#: lider/formmain.py:1016
+#: lider/formmain.py:1019
 msgid "The selected item is a non-empty directory. It cannot be deleted."
 msgstr "Seçili öğe boş bir dizin olmadığı için silinemez."
 
-#: lider/formmain.py:1019
+#: lider/formmain.py:1022
 msgid "This is not undoable. Are you sure you want to remove?"
 msgstr "Bu işlem geri alınamaz. Silmek istediğinize emin misiniz?"
 
-#: lider/formmain.py:1035
+#: lider/formmain.py:1038
 msgid "Unable to delete item."
 msgstr "Öğe silinemedi."
 
-#: lider/formmain.py:1067
+#: lider/formmain.py:1070
 msgid "Unable to add computer."
 msgstr "Bilgisayar eklenemedi."
 
-#: lider/formmain.py:1105
+#: lider/formmain.py:1108
 msgid "Unable to add user."
 msgstr "Kullanıcı eklenemedi."
 
-#: lider/formmain.py:1149
+#: lider/formmain.py:1152
 msgid "Unable to add group."
 msgstr "Grup eklenemedi."
 
-#: lider/formmain.py:1187
+#: lider/formmain.py:1190
 msgid "Unable to add folder."
 msgstr "Klasör eklenemedi."
 
-#: lider/formmain.py:1365
+#: lider/formmain.py:1351
 #, python-format
 msgid "%d item(s) will be forced to update policy."
 msgstr "%d öğesi politika güncellemesi için zorlanacak."
 
-#: lider/formmain.py:1366 lider/formmain.py:1384 lider/formmain.py:1445
-#: lider/formmain.py:1475
+#: lider/formmain.py:1352 lider/formmain.py:1370 lider/formmain.py:1433
+#: lider/formmain.py:1463
 msgid "Do you want to continue?"
 msgstr "Devam etmek istiyor musunuz?"
 
-#: lider/formmain.py:1383
+#: lider/formmain.py:1369
 msgid "Policy will be saved."
 msgstr "Politika kaydedilecek."
 
-#: lider/formmain.py:1432
+#: lider/formmain.py:1418
 msgid "Unable to modify node."
 msgstr "Düğüm güncellenemedi."
 
-#: lider/formmain.py:1444
+#: lider/formmain.py:1432
 msgid "All changes will be reverted."
 msgstr "Tüm değişiklikler geri alınacak."
 
-#: lider/formmain.py:1474
+#: lider/formmain.py:1462
 msgid "Policy from parent directory will be copied."
 msgstr "Üst dizindeki politika kopyalanacak."
 
@@ -223,103 +223,103 @@ msgstr "Grup ismi eksik"
 msgid "There has to be at least one member."
 msgstr "En az bir üye olmalı."
 
-#: lider/main.py:1646
+#: lider/main.py:1647
 msgid "Lider - Ahenk Management Console"
 msgstr "Lider - Ahenk Yönetim Aracı"
 
-#: lider/main.py:1647
+#: lider/main.py:1648
 msgid "Node Browser"
 msgstr "Tarayıcı"
 
-#: lider/main.py:1649
+#: lider/main.py:1650
 msgid "Node"
 msgstr "Nesne"
 
-#: lider/main.py:1650
+#: lider/main.py:1651
 msgid "Description"
 msgstr "Tanım"
 
-#: lider/main.py:1651
+#: lider/main.py:1652
 msgid "Filter Nodes"
 msgstr "Nesneleri filtrele"
 
-#: lider/main.py:1652
+#: lider/main.py:1653
 msgid "Inherited Policies"
 msgstr "Kalıtlanmış Politikalar"
 
-#: lider/main.py:1654
+#: lider/main.py:1655
 msgid "Group Members"
 msgstr "Grup Üyeleri"
 
-#: lider/main.py:1655
+#: lider/main.py:1656
 msgid "Group Membership"
 msgstr "Grup Üyeliği"
 
-#: lider/main.py:1656 lider/main.py:1657 lider/main.py:1658
+#: lider/main.py:1657 lider/main.py:1658 lider/main.py:1659
 msgid "TextLabel"
 msgstr "Metin Etiketi"
 
-#: lider/main.py:1659
-msgid "Revert"
-msgstr "Geri al"
-
 #: lider/main.py:1660
-msgid "Save and Apply"
-msgstr "Kaydet ve Uygula"
+msgid "Define new policy"
+msgstr "Yeni politika tanımla"
 
 #: lider/main.py:1661
-msgid "Save"
-msgstr "Kaydet"
+msgid "Inherit policies from parent"
+msgstr "Üstten politikaları kalıtla"
 
 #: lider/main.py:1662
 msgid "Inherit this policy directly"
 msgstr "Bu politikayı doğrudan uygula"
 
 #: lider/main.py:1663
-msgid "Define new policy"
-msgstr "Yeni politika tanımla"
+msgid "Revert"
+msgstr "Geri al"
 
 #: lider/main.py:1664
-msgid "Inherit policies from parent"
-msgstr "Üstten politikaları kalıtla"
+msgid "Save and Apply"
+msgstr "Kaydet ve Uygula"
 
 #: lider/main.py:1665
+msgid "Save"
+msgstr "Kaydet"
+
+#: lider/main.py:1666
 msgid "<b>Warning:</b> You are editing multiple nodes. Policies defined specificly for these nodes will be overwritten."
 msgstr "<b>Uyarı:</b> Birden fazla düğümü değiştiriyorsunuz. Bu düğümler için tanımlanmış politikaların üzerine yazılacak."
 
-#: lider/main.py:1666 lider/ui_connection.py:1055 lider/ui_formmain.py:419
+#: lider/main.py:1667 lider/ui_connection.py:1055 lider/ui_formmain.py:419
 msgid "Lider"
 msgstr "Lider"
 
-#: lider/main.py:1667
+#: lider/main.py:1668
 msgid "Disconnect"
 msgstr "Bağlantıyı kes"
 
-#: lider/main.py:1668
+#: lider/main.py:1669
 msgid "Log"
 msgstr "Log"
 
-#: lider/main.py:1669
+#: lider/main.py:1670
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: lider/main.py:1670
+#: lider/main.py:1671
 msgid "Network View"
 msgstr "Ağ Görünümü"
 
-#: lider/main.py:1671
+#: lider/main.py:1672
 msgid "Show network members."
 msgstr "Ağ üyelerini göster."
 
-#: lider/main.py:1672 lider/ui_formmain.py:431 lider/ui_formmain.py:432
+#: lider/main.py:1673 lider/ui_formmain.py:431 lider/ui_formmain.py:432
 msgid "Policies"
 msgstr "Politikalar"
 
-#: lider/main.py:1673
+#: lider/main.py:1674
 msgid "Edit policies."
 msgstr "Politikaları değiştir."
 
-#: lider/main.py:1674 lider/plugins/plugin_web/ui_web.py:151
+#: lider/main.py:1675 lider/plugins/plugin_web/ui_web.py:151
 msgid "Refresh"
 msgstr "Tazele"
 
@@ -403,6 +403,7 @@ msgid "Firewall State"
 msgstr "Güvenlik Duvarı Durumu"
 
 #: lider/plugins/plugin_firewall/ui_firewall.py:230
+#: lider/plugins/plugin_services/main.py:135
 #: lider/plugins/plugin_services/ui_services.py:120
 msgid "Status"
 msgstr "Durum"
@@ -430,6 +431,26 @@ msgstr "Güvenlik duvarı kurallarını değiştir"
 #: lider/plugins/plugin_firewall/ui_firewall.py:236
 msgid "Load Fail Safe Rules"
 msgstr "Güvenli Kit Kuralları Yükle"
+
+#: lider/plugins/plugin_services/main.py:120
+msgid "Running"
+msgstr "Çalışıyor"
+
+#: lider/plugins/plugin_services/main.py:122
+msgid "Stopped"
+msgstr "Durdu"
+
+#: lider/plugins/plugin_services/main.py:126
+msgid "Yes"
+msgstr "Evet"
+
+#: lider/plugins/plugin_services/main.py:128
+msgid "Conditional"
+msgstr "Şartlı"
+
+#: lider/plugins/plugin_services/main.py:130
+msgid "No"
+msgstr "Hayır"
 
 #: lider/plugins/plugin_services/ui_services.py:116
 msgid "Services"

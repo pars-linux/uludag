@@ -3,6 +3,7 @@
 
 # Standard modules
 import logging
+from dbus import DBusException
 
 # COMAR
 import comar
@@ -18,7 +19,7 @@ def process(message, options):
     """
 
     dryrun = options.dryrun
-  
+
     if message.type == "command":
         if message.command == "service.info":
             link = comar.Link()
@@ -30,8 +31,16 @@ def process(message, options):
         elif message.command == "service.start":
             package = message.arguments[0]
             link = comar.Link()
-            link.System.Service[package].start()
+            try:
+                link.System.Service[package].start()
+                message.reply("service.start.status", "Successful")
+            except DBusException, e:
+                message.reply("service.start.status", str(e))
         elif message.command == "service.stop":
             package = message.arguments[0]
             link = comar.Link()
-            link.System.Service[package].stop()
+            try:
+                link.System.Service[package].stop()
+                message.reply("service.stop.status", "Successful")
+            except DBusException, e:
+                message.reply("service.stop.status", str(e))
