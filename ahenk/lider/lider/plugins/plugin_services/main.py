@@ -18,7 +18,9 @@ from ui_services import Ui_widgetServices
 # Helper modules
 from lider.helpers import plugins
 from lider.helpers import wrappers
+from lider.helpers import i18n
 
+i18n = i18n.i18n
 
 class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
     """
@@ -115,20 +117,22 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
                 self.tableWidget.setItem(index, 3, item_name)
 
                 if status in ['started', 'on', 'conditional_started']:
-                    item_status = QtGui.QTableWidgetItem("Running")
+                    item_status = QtGui.QTableWidgetItem(i18n("Running"))
                 else:
-                    item_status = QtGui.QTableWidgetItem("Stopped")
+                    item_status = QtGui.QTableWidgetItem(i18n("Stopped"))
                 self.tableWidget.setItem(index, 1, item_status)
 
                 if status in ['stopped', 'on']:
-                    item_autostart = QtGui.QTableWidgetItem("Yes")
+                    item_autostart = QtGui.QTableWidgetItem(i18n("Yes"))
                 elif status in ['conditional_started', 'conditional_stopped']:
-                    item_autostart = QtGui.QTableWidgetItem("Conditional")
+                    item_autostart = QtGui.QTableWidgetItem(i18n("Conditional"))
                 else:
-                    item_autostart = QtGui.QTableWidgetItem("No")
+                    item_autostart = QtGui.QTableWidgetItem(i18n("No"))
                 self.tableWidget.setItem(index, 2, item_autostart)
 
                 index += 1
+        elif command in ["service.start.status", "service.stop.status"]:
+            msg = QtGui.QMessageBox.information(self, i18n("Status"), arguments)
 
     def talk_status(self, sender, status):
         """
