@@ -126,6 +126,10 @@ The package reviewing process steps on `Pardus Bug Tracking System
    After the package maintainer has fixed the problem, the reviewer verifies
    the problem and gives an ``ACK`` as an approval comment.
 
+#. When supervisors give ACK, they will add keyword **ACKS** to the bug. After the bug
+    gets an **ACKS** it needs one more ACK from a developer.  When developers give ACK,
+    they will add keyword **ACKD** to the bug.
+
 #. The package that takes the necessary approvals, is taken into the package repositories,
    removed from the review directory and the bug status is changed to
    ``RESOLVED/FIXED``.
