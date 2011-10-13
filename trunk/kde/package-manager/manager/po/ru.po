@@ -401,19 +401,19 @@ msgstr "Выбор операции"
 
 #: src/statemanager.py:114
 msgid "%1 new package(s) have been installed succesfully."
-msgstr "%1 новых пакетов успешно установлены."
+msgstr "%1 новый(ых) пакет(ов) были успешно установлены."
 
 #: src/statemanager.py:115
 msgid "%1 package(s) have been removed succesfully."
-msgstr "%1 пакеты были удалены успешно."
+msgstr "%1 пакет(ов) были успешно удалены. "
 
 #: src/statemanager.py:116
 msgid "%1 package(s) have been upgraded succesfully."
-msgstr "%1 пакеты были обновлены успешно."
+msgstr "%1 пакет(ов) были успешно обновлены."
 
 #: src/statemanager.py:117
 msgid "%1 package(s) have been modified succesfully."
-msgstr "%1 пакеты были изменены успешно."
+msgstr "%1 пакет(ов) были успешно изменены."
 
 #: src/statemanager.py:120
 msgid "You have selected the following package(s) to install:"
