@@ -1,0 +1,263 @@
+==K2.1 Gerekler==
+
+* Süreç ve Politikalar
+  - Depo'nun sadeleşmesi
+      - Takım liderleri takımlara ait atılabilecek paketlerin listesini çıkaracak
+      - Projeler bölümü ön tanımlı uygulamalarımızı listeleyecek (menüde bulunan uygulamaların)
+  - Security ve critical fix depoya alma politika ve süreci
+  - Yeni özellik ve paket alma politika ve süreci
+    - Takım liderleri review edecek
+  - third party depo açılmalı ?
+  - Delta paketler
+* Teknolojiler
+  - PiSi (Metin sorumlusu, Gökmen de yardımcı)
+    1 - Bugfix / güncelleme
+    1 - İmza desteği
+        - Depo index'i temelinde kontrol yapılabilir
+    2 - Son kullanıcıya Lisans gösterme / onaylatma desteği
+        - Depo içerisinde lisanslama paketi olabilir (offline-update için bu şekilde yapılabilir)
+      - Pisi'de third-party desteği eklenebilir (yeni depo açılmasına gerek kalmayabilir) ?
+    2 - Konsolda Needs reboot/restart desteği
+        - En sona service restart sorusu eklenecek
+  - COMAR
+    - Servisler için bağımlılık ve/veya başlatma sırası desteği (Gökhan)
+      - Bağımlılık ağacı çıkarılarak bakılabilir.
+      - Timeout'a gelene kadar bekle
+      (init betiklerinden denenerek bağımlılıklara bakılabilir)
+    - Servisler için network status detection (İbrahim)
+      - timeout'a düşmesi beklenebilir
+      - nm-online'dan bakılarak yapılabilir
+      - diğer dağıtımlara bakılabilir
+    - Restart methodu (stop/start hatalı birbirini beklemiyor) (Gökhan)
+      - Restart methodu tanımlanabilmeli, bakılacak? (İbrahim)
+    - Status, stop timeout iyileştirmesi
+      - Status çıktası ilk seferinde yanlış bilgi döndürüyor, ikinciye çıkıyor.
+    - Servis çıktısını hızlandırmak için parellelleştirme yapılabilir mi?
+    - Log'lama iyileştirmesi
+      - Servis başlatma, durdurma, fail etme durumları
+      - Ekrana da aynı zamanda bastırma
+    - Zamanlanmış görev desteği ?
+      - cron ile çözülebilir
+    - hav komutu değiştirilebilir
+      - comar-call olabilir
+      - Kullanışlılığı da değişsin
+   - PTSP: Güncelleme
+    (ptsp için ltsp araştırmalı ve bir planlama yapılmalı)(Mehmet sorumlusu, Fatih, Ozan)
+    - 10 ekim'e kadar araştırma yapılacak ve toplantıda aktarılacak
+    - USB disk / ses desteği güncellemeleri
+    - NBD desteği
+    - LDM desteği
+    - Lokal uygulama desteği
+    - Lokal cihaz (webcam, yazıcı) desteği
+    - Akıllı kart desteği
+* Merkezi Yönetim (?)
+    - Merkezi servis yönetimi (Test makinaları üzerinden birlikte bakılacak) (15-10-2011)
+      - Servisleri policy olarak kullanacağız
+      - Uç makinelerde firewall açılıp kapanması
+    - Merkezi kullanıcı kaynağı / auth. yönetimi
+       - Ldap üzerinden kullanıcı yönetimi (Ekin detay yazacak)
+       - gosa entegrasyonu
+        - (Mete ve Akın'a danışılacak)
+        - kullanıcılar bilgilerini gosa üzerinden edit edebilecek
+       - Hesap / yetki yönetimi
+        - Şu an ki arayüzde gruplama desteği çalışıyor mu? Varsa arayüz iyileştirilmesi. (Beyza)
+        - Ldap'tan gelen ve local'den gelen gruplar karışıyor mu? (Beyza)
+        - Yoksa eklenmeli
+        - Parola politikası vb.
+            - Windows nasıl yapmış bakılabilir (Beyza)
+            - pamda nasıl yapıldığı (Beyza)
+    - Merkezi paket ve güncelleme yönetimi
+      + Depo kaldırma, ekleme
+    - Merkezi donanım yasaklama/engelleme (k2.1 +2 ay)
+* Kurulum
+  1 - Firstboot
+  1 - Kurtarma modu
+  1 - Kahya (otomatik kurulum) desteği (oz ? bakılabilir)
+  1 - net install
+* Altyapılar
+  - KVM/libvirt güncellemesi
+    - Bridge problemleri
+  - Yeni Kernel
+    - Yeni lts çıkarsa geçilebilir
+  - Yeni Xorg
+    - Fatih karar verecek
+  - Authentication (Hem local'de hem de lider de olacak)
+    - Ldap/AD/Kerberos + Akıllı kart (İbrahim, Gökhan)
+    - Fingerprint login desteği (Beyza kurumsala port edecek)
+    - Yapılandırma arayüzü (Desktop ekibi) Diğerleri ne yapmış (Bertan) (Mockup için)
+    - Authentication comar bacağı yazılacak (Gökhan)
+* Paketler / Kurumsal Çözümler
+  - Log izleme / analiz çözümü (kim yapacak?) (http://tracker.pardus.org.tr/issues/500)
+    Arayüz aranacak
+  - Her daemon için ayrı servis betiği (http://tracker.pardus.org.tr/issues/498)
+      -Servislerin birbiri ile olan bağımlılıkların gözden geçirilmesi
+  - proxy alt yapısı (19311)
+    - sistem genelinde proxy ayarı
+    - libproxy'ye bakılabilir
+  - pam gözden geçirilmeli ve diğer dağırımlar araştırılmalı ve benzer bir yapı oluşturulmalı (Beyza) ( 19306)
+  - Yazıcı ekleme sorunları ve yazıcı sürücüleri
+    - System-config printer ile olabilir  (Ozan)
+  - Java / Tomcat / Jboss ortamları  (19307)
+    - Java 5'in alınması
+    - Birden fazla sürümün aynı anda depoda olması
+    * alternatives kullanılarak yapılabilir
+  - Yedekleme çözümü
+    - Bacula (18412)
+  - Ağ ve servis izleme
+    - nagios, cacti (18437, 19308)
+  - cron yenilemesi  (18474)
+  - Saat editleme için root parolası sormamalı (19310)
+    - yeni policy
+  - libreoffice türkçe çevirisi
+  - tiff mimetype yanlış, kfax ile açılıyor
+  - Default desktop menu gözden geçirilecek http://tracker.pardus.org.tr/issues/504
+   - One of the similar applications will be exist
+   - Wrong descriptions will be fixed
+   - Same application exist more than one menu, it will be fixed.
+
+
+Desktop
+=======
+(Desktop Env, Desktop App)
+Mimetype, desktop dosyaları kontrol edilecek ve düzenlenecek (Serdar, Gökmen)
+
+Buglar
+------
+
+
+release
+=======
+16686 (politika)
+
+Desktop
+=======
+18186 yazıcıya gönderilen sayfa sayısı gösterilmiyor
+17782 Firefox imla denetim dili Türkçe seçilince kaydolmuyor.
+16346 İngilizce dışındaki dillerin yazım denetimini elle seçmek gerekiyor
+16313 Türkçe kurulumdan sonra firefox'ta pardus.org.tr ana sayfası ingilizce geliyor
+19315 Libre office türkçe çeviri sorunlarının giderilmesi
+9316 tiff mimetype yanlışlığı
+14008 Firefox'tan OpenOffice'e sürükle bırak şeklinde metin atıldığında Türkçe karakterler html karşılıklarıyla çıkıyor.
+19310 Saat ve zaman değişikliği için polkit ayarları kullanılmalı
+7003 konqueror'da samba üzerinden dosya paylaştırma problemi
+5159 (Kmenuedit kullanınca menü düzeni bozuluyor)
+6485 (Amarok türkçe karakter sorunu), KDE4'de çözülmüş, KDE3'de devam ediyor
+8630 (Media:/ ile /media/ arasında fark)
+14716 (Kadressbook türkçe kayıt yapamıyor, sadece ingilizce)
+15018 (Firewall manager'de yardım butonu çalışmıyor, Mehmet uludag'ya commit yapmış)
+15149 (Öntanımlı masaüstü sayısı sabitlenmiyor)
+15195 (Skype 64bit depoda yok, develde var zaten, ama pisinin yeni yöntemi ile yapılmadı)
+15200 (Takılan media cihazında # karakteri varsa kio mount edemiyor)
+15302 konqueror içinde yazı tipleri iki defa çalıştırılırsa konqueror çöküyor
+15304 (fsview'de tüm bilgileri oluştur deyince çöküyor)
+16684 (Disk yöneticisi sorunu)
+16847 (Bölgesel Erişebilirlik, çeviri eksikliği) Çeviriler için meta-bug gibi
+17002 (Serdar bakıyorum demiş) VLC'de "dosya aç.." çalışmıyor
+17597 Kurumsal 2'de Kullanıcı Yöneticisi'nde gruba ekleme bilgilendirmesi eksik
+18466 KDE USB bellek gösterim penceresinde Türkçe karakter problemi
+18684 (Metin bakıyordu en son, ne oldu bilmiyorum, Firefox K2 güncellemesi)
+18691 Soffice betiği hatalı, 2011'de düzeltildi (BERTAN) - FIXED
+18827 Libreoffice'in sunucu modunda çalışması için servis betiği (Bertan) - FIXED
+16018 Kaptan, paket yöneticisinin güncelleme aralığını farklı gösteriyor (Renan bilerek yapmış bunu insansıl olsun diye, Meltem'in bir patch'i var bunu geri alan) 
+18258 açılış yöneticisinde check box yerine radio buton kullanılmalı (Bertan)
+
+
+Server
+=====
+
+7780 Samba da sürücü paylaştırırken media:/
+8381 windows etki alanında parola değiştirme süresinin dolması
+9613 PHP de mssql desteği
+14456 Kurumsal 2 de Konquerer ile sftp bağlanma problemi
+16314 NTFS Bölümündeki dizin Samba ile paylaşıma açılmıyor
+16329 Smb4k Çalışma grubundaki bilgisayarları listelemiyor
+18761 slapcat ile ldap yedeği alamama sorunu.
+18412 Yeni paket: Bacula (yedekleme yazılımı)
+18437 Yeni Paket: Webacula (Bacula web arayüzü)
+19308 Yeni paket: nagios (ağ ve servis izleme)
+19309 Yeni paket: cacti (Ağ izleme)
+18474 COMAR'a zamanlanmış görev desteği eklensin.
+19311 proxy ayarların sistem genelinde yapılabilmesi
+
+Yalı
+====
+
+1 14541 Kurumsal 2 günlük ISO'sunda Yalı'nın kurtarma modu çalışmıyor
+    - Kurtarma menüsü tekrar ele alınarak 2011 depolarına girmiş durumda Kurumsal
+deposuna alınması konusunda Kurumsal sürüm yöneticisiyle konuştuktan sonra
+düşünebiliriz.
+2 16231 500Mb'lik baseonly kurulumda dahi yali 3500 MB'den kucuk partition'a kurulumu kabul etmiyor
+    - Your / partition (root yazilsin)
+    - Baseonly partition -> default_partition_size = 1000 MB (= total package size + 500MB ya da adama "yer kalmayacak haci 500 MB ayiralim mi?" uyarisi verilebilir)
+3 16231 Convert last screens next button to Restart
+3 16974 VolGroup-lv_swap aygıtı etkinleştirirken hata: device has not been created
+    - Bu hata gelirse restart yerine "geri don" secenegi cikabilir
+3 17134 yali=collection boot options'tan verilmemeli
+    - boot options ile verilen collections isteği, collections olan iso'lar için
+default olarak gelmeli ve collections penceresi açılmalı. Collections olmayan
+iso'larda ise collections penceresi gözükmemeli.
+3 17135 Hangi collection'in secildigi ozet ekraninda gosterilmeli.
+3 17167  Disk listeleme bölümünde yazıların ve arkaplanın renginin değiştirilmesi, birden fazla disk oldugunda cikiyor
+3 17168  Collection seçimlerinde masaüstü default seçili gelmesine rağmen ileri butonu aktif halde gelmiyor
+3 15309  Disk bölümü tablosu olmadığında çıkan hata erken çıkıyor
+    - Diger ekrana gec, widgetlari gizle, message overlay cikart, bitince widgetlari goster.
+3 14959  Pardus 2011 Beta / Kurumsal 2'de takas alanı seçilmediğinde hatalı bilgi mesajı
+    - Bilgisayarinizi askiya alamazsiniz uyarisi
+3 15341  Sabit disk bölümleme şemalarıyla ilgili uyarı mesajında iyileştirme
+2 18674  Yalı, Türkçe karakterli hdd bölümlerini düzgün gösteremiyor
+    - Carsi ornegini unutma
+2 12260  sistemkurtarma
+3 14791  Manuel kurulumda MB cinsinden verilen değerler GB cinsinden verilmeli
+3 15697  lvm fiziksel bölüm oluşturmadan önce, en az 500 mb'lık boot bölüm oluşturmalısınız gibi bir uyarı versin.
+2 15702  Ntfs yeniden boyutlandırıldıktan sonra filesystem check yapıyor, check edemediğinde patlıyor
+2 15703  Özet sayfasında türkçe kurulumda zaman dilimi Europe/İstanbul olarak gözüküyor
+2 15752  Bölümler arasında boş bir alan yaratılıp kurulum yapılmaya çalışıldığında hata alınıyor
+3 15764  20 Mb gibi küçük bölümler oluşturulabiliyor ve yali uyarı vermiyor
+1 15785  Raid kurulumundan sonra ikinciye kurulum yapılmaya çalışıldığında diskler listelenemiyor
+2 15866  Extended olmayan boş bölümlere bölüm yaratılamayabiliyor
+1 16165  Raid kurulumundan sonra yeniden kurulum yapılmaya çalışıldığında bölümlendirme işleminde takılıyor
+3 16854  Yalı bootable partition LVM ve raid olamaz uyarısı 
+3 16972  Aygıt üzerinde boş yer yok uyarı penceresi 
+2 16983  Disk seçiminden sonra seçilen disk dışında bir diske işlem yapılmaya çalışıldığında algılanmıyor
+1 18236  Var olan bir lvm bölümünü boyutlandıramıyoruz
+3 18266  Takas alanı uyarısını iptal edince kuruluma devam edilemiyor
+
+Hardware
+========
+15000 (Otomatik yazıcı ekleme özelliği)
+16679 Performans - Güç koruma geçişlerinde ekran koruyucu ayarının geri alınmaması
+16758 (libvirt sorunu, Emre Erenoğlu 0.8.7'de K2'de çözülmüş olabilir diyor)
+17245 Tasma üzerinden cups ayarları değiştirilemiyor.
+17976 Blueman Obex FTP tarayıcısı olarak Nautilus açmaya
+18635  Virtualbox'a kurulum yaparken bazen ekrana göstermiyor
+
+Core
+====
+15045 hwclock çağrılarının güncellenmesi (Ozan'ın bir commiti var, uludag trunk'da)
+16796 service komutu içinde tire geçen servislerin adını yanlış gösteriyor(çözüm var, mütabakat sağlanamadı)
+17015 sulogin komutu açılış esnasında girdi kabul etmiyor (Ozan plymouth'dan kaynaklanıyor olabilir diyor)
+18416 (akıllı kart)
+14733 (parmak izi)
+19306 pam alt yapısı iyileştirilmeli
+
+Pisi
+====
+2 18681  Pisi.Api.RepoDB depo geçerliliğini kontrol etmeden veri almaya çalışıyor.
+1 2097  2li paketler icin imzalama destegi
+1 3392  Çoklu depo desteği/yanlış çalışıyor yetersiz
+1 4874  WISHLIST: CD-ROM as a repository too
+1 17884 (offline update)
+1 14840  Pisi upgrade işleminden sonra gerekli durumlarda yeniden başlatma için uyarı verse?
+2 16781  Paket yöneticisi üzerinden depolarda değişiklik yapıldıktan sonra, paket yöneticisi bu değişikliği direk algılamıyor, repo db ile bu değişiklik iletilmeli 
+2 18678  pisi.db.repodb de IOError Hatası
+
+Network
+=======
+16742 Kurumsal 2'de Network Manager SSID'si gizli kablosuz ağlara otomatik bağlanmıyor
+16754 openvpn bağlantısını açmaya çalıştığımda VPN dosya parolası (secret) yok hatası veriyor.
+18981 Kopete cannot connect to icq network
+
+Development
+===========
+18996 php fcgi ile derlendiğinde imap derlenmiyor.
+19307 java 5 kurumsal depoda bulunmalı
