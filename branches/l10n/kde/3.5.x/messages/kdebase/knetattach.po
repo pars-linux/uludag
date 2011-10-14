@@ -1,18 +1,19 @@
-# translation of knetattach.po to Türkçe
+# translation of knetattach.po to T
+#
 # Görkem Çetin <gorkem@kde.org>, 2005.
 # Görkem Çetin <gorkem@kde.org.tr>, 2005.
-#
+# Koray Löker <loker@pardus.org.tr>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: knetattach\n"
 "POT-Creation-Date: 2008-07-08 01:18+0200\n"
-"PO-Revision-Date: 2005-01-03 21:54+0000\n"
-"Last-Translator: Görkem Çetin <gorkem@kde.org.tr>\n"
-"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2011-09-15 16:36+0300\n"
+"Last-Translator: Koray Löker <loker@pardus.org.tr>\n"
+"Language-Team: T <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: _translatorinfo.cpp:1
 msgid ""
@@ -60,7 +61,7 @@ msgstr "&Son bağlantı:"
 #: rc.cpp:12
 #, no-c-format
 msgid "&WebFolder (webdav)"
-msgstr ""
+msgstr "&AğDizini (webdav)"
 
 #. i18n: file knetattach.ui line 78
 #: rc.cpp:15
@@ -154,7 +155,7 @@ msgstr "&Kaydet ve Bağlan"
 msgid ""
 "Enter a name for this <i>WebFolder</i> as well as a server address, port and "
 "folder path to use and press the <b>Save & Connect</b> button."
-msgstr ""
+msgstr "Bu <i>AğDizini</i> için isim, sunucu adresi, kapı (port) ve dizin adresi seçerek <b>Kaydet & Bağlan</b> tuşuna basın."
 
 #: knetattach.ui.h:42
 msgid ""
@@ -187,5 +188,3 @@ msgstr ""
 msgid "C&onnect"
 msgstr "&Bağlan"
 
-#~ msgid "Alt+E"
-#~ msgstr "Alt+E"
