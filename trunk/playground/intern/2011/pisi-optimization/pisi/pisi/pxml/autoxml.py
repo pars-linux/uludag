@@ -558,7 +558,10 @@ class autoxml(oo.autosuper, oo.autoprop):
         def decodeAll(self):
             for k, v in self.ondemand_dict.iteritems():
                 if not self.__dict__.has_key(k):
-                    self.__dict__[k] = v.decode()
+                    decodedItem = v.decode()
+                    self.__dict__[k] = decodedItem
+                    if hasattr(decodedItem, "decodeAll"):
+                        decodedItem.decodeAll()
                 # else:
                 # if changed from outside like index.py:181
                 # "md.package.packageSize = long(os.path.getsize(path))"

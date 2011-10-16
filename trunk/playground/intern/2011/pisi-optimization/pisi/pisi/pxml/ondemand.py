@@ -28,6 +28,9 @@ class OnDemandNode(object):
 
         return r
 
+    def decodeAll(self):
+        pass
+
 class OnDemandList(list):
 
     def __init__(self):
@@ -241,4 +244,6 @@ class OnDemandList(list):
     def decodeAll(self):
         if self.undecoded_count > 0:
             for x in xrange(len(self)):
-                self.__getitem__(x)
+                i = self.__getitem__(x)
+                if hasattr(i, 'decodeAll'):
+                    i.decodeAll()
