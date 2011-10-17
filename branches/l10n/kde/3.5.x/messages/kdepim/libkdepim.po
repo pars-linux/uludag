@@ -3,14 +3,15 @@
 # Barış Metin <baris@uludag.org.tr>, 2004.
 # Ozan Eren BILGEN <oebilgen@uekae.tubitak.gov.tr>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2007.
+# Gökmen Göksel <gokmen@pardus.org.tr>, 2011.
 # Translation of libkdepim.po to Turkish
-# Copyright (C) 2004, 2005, 2007 Free Software Foundation, Inc.
+# Copyright (C) 2004, 2005, 2007, 2011 Free Software Foundation, Inc.
 msgid ""
 msgstr ""
 "Project-Id-Version: libkdepim\n"
 "POT-Creation-Date: 2008-07-14 01:18+0200\n"
-"PO-Revision-Date: 2007-10-01 07:19+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2011-10-17 16:12+0300\n"
+"Last-Translator: Gökmen Göksel <gokmen@pardus.org.tr>\n"
 "Language-Team:  <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -54,15 +55,13 @@ msgstr "E-posta adresi alanına birşeyler girmelisiniz."
 msgid ""
 "The email address you entered is not valid because it does not contain a local "
 "part."
-msgstr ""
-"Girdiğiniz e-posta adresi geçerli değil çünkü bir yerel bölüm içermiyor."
+msgstr "Girdiğiniz e-posta adresi geçerli değil çünkü bir yerel bölüm içermiyor."
 
 #: ../libemailfunctions/email.cpp:472
 msgid ""
 "The email address you entered is not valid because it does not contain a domain "
 "part."
-msgstr ""
-"Girdiğiniz e-posta adresi geçerli değil çünkü bir alan adı kısmı içermiyor."
+msgstr "Girdiğiniz e-posta adresi geçerli değil çünkü bir alan adı kısmı içermiyor."
 
 #: ../libemailfunctions/email.cpp:475
 msgid ""
@@ -96,8 +95,7 @@ msgstr ""
 msgid ""
 "The email address you have entered is not valid because it contains an "
 "unexpected comma."
-msgstr ""
-"Girdiğiniz e-posta adresi geçerli değil çünkü beklenmeyen bir virgül içeriyor."
+msgstr "Girdiğiniz e-posta adresi geçerli değil çünkü beklenmeyen bir virgül içeriyor."
 
 #: ../libemailfunctions/email.cpp:489
 msgid ""
@@ -149,14 +147,13 @@ msgstr "E-posta adresinde bilinmeyen hata"
 msgid ""
 "_: NAME OF TRANSLATORS\n"
 "Your names"
-msgstr "Engin Çağatay, Barış Metin, Ozan Eren BİLGEN"
+msgstr "Engin Çağatay, Barış Metin, Ozan Eren BİLGEN, Gökmen Göksel"
 
 #: _translatorinfo.cpp:3
 msgid ""
 "_: EMAIL OF TRANSLATORS\n"
 "Your emails"
-msgstr ""
-"engincagatay@yahoo.com, baris@uludag.org.tr, oebilgen@uekae.tubitak.gov.tr"
+msgstr "engincagatay@yahoo.com, baris@uludag.org.tr, oebilgen@uekae.tubitak.gov.tr, gokmen@pardus.org.tr"
 
 #: addresseeemailselection.cpp:47 addressesdialog.cpp:238
 #: addressesdialog.cpp:719
@@ -428,7 +425,9 @@ msgstr "İndirme işlemi tamamlandı. %1 KB büyüklüğünde %n ileti."
 msgid ""
 "_n: Transmission complete. %n new message.\n"
 "Transmission complete. %n new messages."
-msgstr "İndirme işlemi tamamlandı. %n yeni ileti."
+msgstr ""
+"_n: İletim tamamlandı. %n yeni mesaj.\n"
+"İletim tamamlandı. %n yeni mesaj."
 
 #: broadcaststatus.cpp:95
 msgid "Transmission complete. No new messages."
@@ -612,8 +611,7 @@ msgid "Showing URL %1"
 msgstr "%1 adresi gösteriliyor"
 
 #: kaddrbook.cpp:76
-msgid ""
-"<qt>The email address <b>%1</b> cannot be found in your addressbook.</qt>"
+msgid "<qt>The email address <b>%1</b> cannot be found in your addressbook.</qt>"
 msgstr "<qt><b>%1</b> e-posta adresi adres defterinizde bulunamadı.</qt>"
 
 #: kaddrbook.cpp:79
@@ -625,8 +623,8 @@ msgid ""
 "<qt>The email address <b>%1</b> was added to your addressbook; you can add more "
 "information to this entry by opening the addressbook.</qt>"
 msgstr ""
-"<qt><b>%1</b> e-posta adresi zaten adres defterinize eklenmişti; bu giriş ile "
-"ilgiyi daha fazla bilgiyi adres defterini açarak ekleyebilirsiniz.</qt>"
+"<qt><b>%1</b> e-posta adresi adres defterinize eklendi; bu kayıt ile "
+"ilgili daha fazla bilgiyi adres defterini açarak ekleyebilirsiniz.</qt>"
 
 #: kaddrbook.cpp:157
 msgid "<qt>The email address <b>%1</b> is already in your addressbook.</qt>"
@@ -637,7 +635,7 @@ msgid ""
 "The VCard was added to your addressbook; you can add more information to this "
 "entry by opening the addressbook."
 msgstr ""
-"VCard adres defterinize eklenmişti; bu giriş ile ilgili daha fazla bilgiyi "
+"VCard adres defterinize eklendi; bu kayıt ile ilgili daha fazla bilgiyi "
 "adres defterini açarak ekleyebilirsiniz."
 
 #: kaddrbook.cpp:195
@@ -1545,122 +1543,113 @@ msgstr "Temizle"
 
 #: ldapsearchdialog.cpp:74 ldapsearchdialog.cpp:291
 msgid "Title"
-msgstr ""
+msgstr "Başlık"
 
 #: ldapsearchdialog.cpp:75 ldapsearchdialog.cpp:274
-#, fuzzy
 msgid "Full Name"
-msgstr "İsim"
+msgstr "Tam İsim"
 
 #: ldapsearchdialog.cpp:77 ldapsearchdialog.cpp:145 ldapsearchdialog.cpp:276
 #: ldapsearchdialog.cpp:348
-#, fuzzy
 msgid "Home Number"
-msgstr "Telefon Numaralarını Sakla"
+msgstr "Ev Numarası"
 
 #: ldapsearchdialog.cpp:78 ldapsearchdialog.cpp:146 ldapsearchdialog.cpp:277
 #: ldapsearchdialog.cpp:350
 msgid "Work Number"
-msgstr ""
+msgstr "İş Numarası"
 
 #: ldapsearchdialog.cpp:79 ldapsearchdialog.cpp:278
 msgid "Mobile Number"
-msgstr ""
+msgstr "Cep Numarası"
 
 #: ldapsearchdialog.cpp:80 ldapsearchdialog.cpp:279
 msgid "Fax Number"
-msgstr ""
+msgstr "Faks Numarası"
 
 #: ldapsearchdialog.cpp:81
 msgid "Pager"
-msgstr ""
+msgstr "Sayfalayıcı"
 
 #: ldapsearchdialog.cpp:82 ldapsearchdialog.cpp:282
 msgid "Street"
-msgstr ""
+msgstr "Sokak"
 
 #: ldapsearchdialog.cpp:83 ldapsearchdialog.cpp:283
-#, fuzzy
 msgid "State"
-msgstr "Durum"
+msgstr "Eyalet"
 
 #: ldapsearchdialog.cpp:84 ldapsearchdialog.cpp:284
 msgid "Country"
-msgstr ""
+msgstr "Ülke"
 
 #: ldapsearchdialog.cpp:85 ldapsearchdialog.cpp:287
 msgid "City"
-msgstr ""
+msgstr "Şehir"
 
 #: ldapsearchdialog.cpp:86 ldapsearchdialog.cpp:281
-#, fuzzy
 msgid "Organization"
-msgstr "Organizatör"
+msgstr "Organizasyon"
 
 #: ldapsearchdialog.cpp:87 ldapsearchdialog.cpp:280
 msgid "Company"
-msgstr ""
+msgstr "Şirket"
 
 #: ldapsearchdialog.cpp:89 ldapsearchdialog.cpp:285
 msgid "Zip Code"
-msgstr ""
+msgstr "Posta Kodu"
 
 #: ldapsearchdialog.cpp:90 ldapsearchdialog.cpp:286
-#, fuzzy
 msgid "Postal Address"
-msgstr "Posta Adreslerini Göster"
+msgstr "Posta Adresi"
 
 #: ldapsearchdialog.cpp:92 ldapsearchdialog.cpp:290
-#, fuzzy
 msgid "User ID"
 msgstr "Kullanıcı No"
 
 #: ldapsearchdialog.cpp:116 ldapsearchdialog.cpp:123
 msgid "Search for Addresses in Directory"
-msgstr ""
+msgstr "Adresleri Dizinde Ara"
 
 #: ldapsearchdialog.cpp:132
-#, fuzzy
 msgid "Search for:"
 msgstr "Ara:"
 
 #: ldapsearchdialog.cpp:139
 msgid "in"
-msgstr ""
+msgstr "içinde"
 
 #: ldapsearchdialog.cpp:152 ldapsearchdialog.cpp:406
-#, fuzzy
 msgid "Search"
 msgstr "Ara:"
 
 #: ldapsearchdialog.cpp:160
 msgid "Recursive search"
-msgstr ""
+msgstr "Yinelemeli arama"
 
 #: ldapsearchdialog.cpp:165
-#, fuzzy
 msgid "Contains"
-msgstr "Durumlar"
+msgstr "İçerir"
 
 #: ldapsearchdialog.cpp:166
-#, fuzzy
 msgid "Starts With"
-msgstr "Başlama zamanı"
+msgstr "Başlayan"
 
 #: ldapsearchdialog.cpp:179
 msgid "Unselect All"
-msgstr ""
+msgstr "Seçimi Bırak"
 
 #: ldapsearchdialog.cpp:181
-#, fuzzy
 msgid "Add Selected"
-msgstr "Adres Seçimi"
+msgstr "Seçiliyi Ekle"
 
 #: ldapsearchdialog.cpp:222
 msgid ""
 "You must select a LDAP server before searching.\n"
 "You can do this from the menu Settings/Configure KAddressBook."
 msgstr ""
+"Aramadan önce bir LDAP sunucu adresi belirtmek zorundasınız.\n"
+"Bu işlemi Ayarlar/Adres Defterini Yapılandır menüsünden gerçekleştirebilirsiniz."
 
 #: maillistdrag.cpp:236
 msgid "Retrieving and storing messages..."
@@ -1740,13 +1729,13 @@ msgstr "&Dağıtım Listesi Olarak Kaydet..."
 #: rc.cpp:42
 #, no-c-format
 msgid "Alt+D"
-msgstr ""
+msgstr "Alt+D"
 
 #. i18n: file addresspicker.ui line 311
 #: rc.cpp:45
 #, no-c-format
 msgid "&Search Directory Service"
-msgstr ""
+msgstr "Dizin Servisinde &Ara"
 
 #. i18n: file categoryeditdialog_base.ui line 36
 #: rc.cpp:51 rc.cpp:63
@@ -1823,3 +1812,4 @@ msgstr "Detaylı işlem penceresini sakla"
 #: statusbarprogresswidget.cpp:283
 msgid "Show detailed progress window"
 msgstr "Detaylı işlem penceresini göster"
+
