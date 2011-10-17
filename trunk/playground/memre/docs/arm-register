@@ -1,0 +1,28 @@
+#!/bin/bash
+DEFAULT_PARM_ROOTFS=/var/cross/sysroots/armv7l
+PARM_ROOTFS=${DEFAULT_PARM_ROOTFS}
+REGISTER_NODE=arm
+EMULATOR="/qemu-arm-debug"
+ARM_ELF_MAGIC="\x7fELF\x01\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x28\x00"
+MASK="\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfb\xff\xff\xff"
+
+# Register magic of the ARM ELF binaries to the binfmt_misc
+#
+# binfmt_misc format:
+#   :<name>:<type>:<offset>:<magic>:<mask>:<interpretter>:<flags>
+#
+#                 -> Name of the registiration.
+#                /
+#               /                -> Say binfmt_misc that "we are
+#              /                /     using **magic file** of this registiration".
+#             /                /
+#            /                / -> No offset
+#           /                / /-> Magic number of the ARM binaries
+#          /                / //
+#         /                / //                -> Mask
+#        /                / //                /
+#       /                / //                /       -> Emulator of the binaries
+#      /                / //                /       /
+#      ----------------:-::----------------:-------:-----------
+echo ":${REGISTER_NODE}:M::${ARM_ELF_MAGIC}:${MASK}:${EMULATOR}:" > /proc/sys/fs/binfmt_misc/register
+
