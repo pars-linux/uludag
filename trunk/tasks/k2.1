@@ -190,44 +190,36 @@ a 19311 proxy ayarların sistem genelinde yapılabilmesi
 
 Yalı
 ====
-a 1 14541 Kurumsal 2 günlük ISO'sunda Yalı'nın kurtarma modu çalışmıyor
-    - Kurtarma menüsü tekrar ele alınarak 2011 depolarına girmiş durumda Kurumsal
-deposuna alınması konusunda Kurumsal sürüm yöneticisiyle konuştuktan sonra
-düşünebiliriz.
-a 2 16231 500Mb'lik baseonly kurulumda dahi yali 3500 MB'den kucuk partition'a kurulumu kabul etmiyor
-    - Your / partition (root yazilsin)
-    - Baseonly partition -> default_partition_size = 1000 MB (= total package size + 500MB ya da adama "yer kalmayacak haci 500 MB ayiralim mi?" uyarisi verilebilir)
-b 3 16231 Convert last screens next button to Restart
-b 3 16974 VolGroup-lv_swap aygıtı etkinleştirirken hata: device has not been created
+
+For Alpha
+---------
+1 14541 Kurumsal 2 günlük ISO'sunda Yalı'nın kurtarma modu çalışmıyor
+        - Kurtarma menüsü tekrar ele alınarak 2011 depolarına girmiş durumda Kurumsal deposuna alınması konusunda Kurumsal sürüm yöneticisiyle konuştuktan sonra düşünebiliriz.
+1 18236 Var olan bir lvm bölümünü boyutlandıramıyoruz
+1 15785 Raid kurulumundan sonra ikinciye kurulum yapılmaya çalışıldığında diskler listelenemiyor
+1 16165 Raid kurulumundan sonra yeniden kurulum yapılmaya çalışıldığında bölümlendirme işleminde takılıyor
+
+2 16231 500Mb'lik baseonly kurulumda dahi yali 3500 MB'den kucuk partition'a kurulumu kabul etmiyor
+        - Your / partition (root yazilsin)
+        - Baseonly partition -> default_partition_size = 1000 MB (= total package size + 500MB ya da adama "yer kalmayacak haci 500 MB ayiralim mi?" uyarisi verilebilir)
+2 18674 Yalı, Türkçe karakterli hdd bölümlerini düzgün gösteremiyor
+        - Carsi ornegini unutma
+2 12260 sistemkurtarma
+2 15702 Ntfs yeniden boyutlandırıldıktan sonra filesystem check yapıyor, check edemediğinde patlıyor
+2 15703 Özet sayfasında türkçe kurulumda zaman dilimi Europe/İstanbul olarak gözüküyor
+2 15752 Bölümler arasında boş bir alan yaratılıp kurulum yapılmaya çalışıldığında hata alınıyor
+2 15866 Extended olmayan boş bölümlere bölüm yaratılamayabiliyor
+2 16983 Disk seçiminden sonra seçilen disk dışında bir diske işlem yapılmaya çalışıldığında algılanmıyor
+
+3 15764 20 Mb gibi küçük bölümler oluşturulabiliyor ve yali uyarı vermiyor
+
+For Beta
+--------
+3 16232 Convert last screens next button to Restart
+3 16974 VolGroup-lv_swap aygıtı etkinleştirirken hata: device has not been created
         - Bu hata gelirse restart yerine "geri don" secenegi cikabilir
-b 3 17134 yali=collection boot options'tan verilmemeli
+3 17134 yali=collection boot options'tan verilmemeli
         - boot options ile verilen collections isteği, collections olan iso'lar için default olarak gelmeli ve collections penceresi açılmalı. Collections olmayan iso'larda ise collections penceresi gözükmemeli.
-b 3 17135 Hangi collection'in secildigi ozet ekraninda gosterilmeli.
-b 3 17167  Disk listeleme bölümünde yazıların ve arkaplanın renginin değiştirilmesi, birden fazla disk oldugunda cikiyor
-b 3 17168  Collection seçimlerinde masaüstü default seçili gelmesine rağmen ileri butonu aktif halde gelmiyor
-b 3 15309  Disk bölümü tablosu olmadığında çıkan hata erken çıkıyor
-    - Diger ekrana gec, widgetlari gizle, message overlay cikart, bitince widgetlari goster.
-b 3 14959  Pardus 2011 Beta / Kurumsal 2'de takas alanı seçilmediğinde hatalı bilgi mesajı
-    - Bilgisayarinizi askiya alamazsiniz uyarisi
-b 3 15341  Sabit disk bölümleme şemalarıyla ilgili uyarı mesajında iyileştirme
-a 2 18674  Yalı, Türkçe karakterli hdd bölümlerini düzgün gösteremiyor
-    - Carsi ornegini unutma
-a 2 12260  sistemkurtarma
-b 3 14791  Manuel kurulumda MB cinsinden verilen değerler GB cinsinden verilmeli
-b 3 15697  lvm fiziksel bölüm oluşturmadan önce, en az 500 mb'lık boot bölüm oluşturmalısınız gibi bir uyarı versin.
-a 2 15702  Ntfs yeniden boyutlandırıldıktan sonra filesystem check yapıyor, check edemediğinde patlıyor
-a 2 15703  Özet sayfasında türkçe kurulumda zaman dilimi Europe/İstanbul olarak gözüküyor
-a 2 15752  Bölümler arasında boş bir alan yaratılıp kurulum yapılmaya çalışıldığında hata alınıyor
-a 3 15764  20 Mb gibi küçük bölümler oluşturulabiliyor ve yali uyarı vermiyor
-a 1 15785  Raid kurulumundan sonra ikinciye kurulum yapılmaya çalışıldığında diskler listelenemiyor
-a 2 15866  Extended olmayan boş bölümlere bölüm yaratılamayabiliyor
-a 1 16165  Raid kurulumundan sonra yeniden kurulum yapılmaya çalışıldığında bölümlendirme işleminde takılıyor
-b 3 16854  Yalı bootable partition LVM ve raid olamaz uyarısı 
-b 3 16972  Aygıt üzerinde boş yer yok uyarı penceresi 
-a 2 16983  Disk seçiminden sonra seçilen disk dışında bir diske işlem yapılmaya çalışıldığında algılanmıyor
-a 1 18236  Var olan bir lvm bölümünü boyutlandıramıyoruz
-b 3 18266  Takas alanı uyarısını iptal edince kuruluma devam edilemiyor
-=======
 3 17135 Hangi collection'in secildigi ozet ekraninda gosterilmeli.
 3 17167 Disk listeleme bölümünde yazıların ve arkaplanın renginin değiştirilmesi, birden fazla disk oldugunda cikiyor
 3 17168 Collection seçimlerinde masaüstü default seçili gelmesine rağmen ileri butonu aktif halde gelmiyor
@@ -238,28 +230,9 @@ b 3 18266  Takas alanı uyarısını iptal edince kuruluma devam edilemiyor
 3 15341 Sabit disk bölümleme şemalarıyla ilgili uyarı mesajında iyileştirme
 3 14791 Manuel kurulumda MB cinsinden verilen değerler GB cinsinden verilmeli
 3 15697 lvm fiziksel bölüm oluşturmadan önce, en az 500 mb'lık boot bölüm oluşturmalısınız gibi bir uyarı versin.
-3 15764 20 Mb gibi küçük bölümler oluşturulabiliyor ve yali uyarı vermiyor
 3 16854 Yalı bootable partition LVM ve raid olamaz uyarısı 
 3 16972 Aygıt üzerinde boş yer yok uyarı penceresi 
->>>>>>> .r38348
-
-2 16231 500Mb'lik baseonly kurulumda dahi yali 3500 MB'den kucuk partition'a kurulumu kabul etmiyor
-        - Your / partition (root yazilsin)
-        - Baseonly partition -> default_partition_size = 1000 MB (= total package size + 500MB ya da adama "yer kalmayacak haci 500 MB ayiralim mi?" uyarisi verilebilir)
-2 18674 Yalı, Türkçe karakterli hdd bölümlerini düzgün gösteremiyor
-        - Carsi ornegini unutma
-2 16983 Disk seçiminden sonra seçilen disk dışında bir diske işlem yapılmaya çalışıldığında algılanmıyor
-2 12260 sistemkurtarma
-2 15702 Ntfs yeniden boyutlandırıldıktan sonra filesystem check yapıyor, check edemediğinde patlıyor
-2 15703 Özet sayfasında türkçe kurulumda zaman dilimi Europe/İstanbul olarak gözüküyor
-2 15752 Bölümler arasında boş bir alan yaratılıp kurulum yapılmaya çalışıldığında hata alınıyor
-2 15866 Extended olmayan boş bölümlere bölüm yaratılamayabiliyor
-
-1 15785 Raid kurulumundan sonra ikinciye kurulum yapılmaya çalışıldığında diskler listelenemiyor
-1 16165 Raid kurulumundan sonra yeniden kurulum yapılmaya çalışıldığında bölümlendirme işleminde takılıyor
-1 18236 Var olan bir lvm bölümünü boyutlandıramıyoruz
-1 14541 Kurumsal 2 günlük ISO'sunda Yalı'nın kurtarma modu çalışmıyor
-        - Kurtarma menüsü tekrar ele alınarak 2011 depolarına girmiş durumda Kurumsal deposuna alınması konusunda Kurumsal sürüm yöneticisiyle konuştuktan sonra düşünebiliriz.
+3 18266 Takas alanı uyarısını iptal edince kuruluma devam edilemiyor
 
 
 Hardware
