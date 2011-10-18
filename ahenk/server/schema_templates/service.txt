@@ -1,0 +1,5 @@
+# name type description
+
+serviceStart [str] Comma seperated list of services that should be run
+serviceStop [str] Comma seperated list of services that should not be run
+
