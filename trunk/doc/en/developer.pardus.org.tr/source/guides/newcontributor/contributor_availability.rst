@@ -32,8 +32,15 @@ you should acquaint the other contributors on related group `mail lists`_.
 You have to change also your status as away and contributor bug keyword as
 **AWAY**.
 
-If you are a developer and have packages, you should orphan_ or retire_ your
-packages that you could not maintain during this period.
+If you are a developer and have packages, you should orphan_ your
+packages that you could not maintain during this period. You may also get
+assistant to to retire_ your packages from related `component supervisor`_
+
+When ever your status is away your package can be updated and bugs can be
+fixed by an other package maintainer.
+
+When you return, you can take back your packages with assistance of related
+component supervisors. You can use devel_ or gelistirici_ mail list for it.
 
 Retired
 -------
@@ -181,6 +188,7 @@ Contributor Availability Coordinator Part
 .. _here: http://bugs.pardus.org.tr/report.cgi?y_axis_field=bug_status&cumulate=0&z_axis_field=assigned_to&format=bar&x_axis_field=&query_format=report-graph&short_desc_type=allwordssubstr&short_desc=&longdesc_type=allwordssubstr&longdesc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&keywords_type=allwords&keywords=&deadlinefrom=&deadlineto=&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailassigned_to1=1&emailtype1=substring&email1=&emaillongdesc2=1&emailtype2=substring&email2=&bugidtype=include&bug_id=&chfieldfrom=&chfieldto=Now&chfieldvalue=&action=wrap&field0-0-0=noop&type0-0-0=noop&value0-0-0=
 .. _component supervisor: http://developer.pardus.org.tr/guides/newcontributor/developer_roles.html#component-supervisor
 .. _gelistirici: http://lists.pardus.org.tr/mailman/listinfo/gelistirici
+.. _devel: http://lists.pardus.org.tr/mailman/listinfo/devel
 .. _takeover: http://svn.pardus.org.tr/uludag/trunk/scripts/takeover
 .. _bugzilla activity page: http://developer.pardus.org.tr/events/recent_events/bug_analysis/index.html
 .. _team leader: http://developer.pardus.org.tr/guides/newcontributor/developer_roles.html#team-leaders
