@@ -102,6 +102,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.connect(self.animator, QtCore.SIGNAL("frameChanged(int)"), self.slotAnimate)
         self.connect(self.animator, QtCore.SIGNAL("finished()"), self.slotAnimationFinished)
 
+
     def hiddenListWorkaround(self):
         """
             Workaround for hidden list items
@@ -145,7 +146,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         """
         widget = ItemWidget(self.listItems, id_, title, description, type_, icon, state)
 
-        self.connect(widget, QtCore.SIGNAL("stateChanged(int)"), self.slotItemState)
+        self.connect(widget, QtCore.SIGNAL("toggled(bool)"), self.slotItemState)
         self.connect(widget, QtCore.SIGNAL("editClicked()"), self.slotItemEdit)
         self.connect(widget, QtCore.SIGNAL("deleteClicked()"), self.slotItemDelete)
 
@@ -202,7 +203,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                         self.addItem(entry["index"], entry["title"], root, entry["os_type"], default)
 
                     if self.listItems.count() == 1:
-                        self.listIatems.itemWidget(self.listItems.item(0)).pushDelete.hide()
+                        self.listItems.itemWidget(self.listItems.item(0)).pushDelete.hide()
 
             self.iface.getEntries(func=handleList)
 

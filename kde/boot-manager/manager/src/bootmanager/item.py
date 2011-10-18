@@ -57,14 +57,14 @@ class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
         if state != None:
             self.setState(state)
         else:
-            self.checkState.hide()
+            self.radioState.hide()
 
         # Buttons
         self.pushEdit.setIcon(KIcon("preferences-other"))
         self.pushDelete.setIcon(KIcon("edit-delete"))
 
         # Signals
-        self.connect(self.checkState, QtCore.SIGNAL("stateChanged(int)"), lambda: self.emit(QtCore.SIGNAL("stateChanged(int)"), self.checkState.checkState()))
+        self.connect(self.radioState, QtCore.SIGNAL("toggled(bool)"), lambda: self.emit(QtCore.SIGNAL("toggled(bool)"), self.radioState.isChecked()))
         self.connect(self.pushEdit, QtCore.SIGNAL("clicked()"), lambda: self.emit(QtCore.SIGNAL("editClicked()")))
         self.connect(self.pushDelete, QtCore.SIGNAL("clicked()"), lambda: self.emit(QtCore.SIGNAL("deleteClicked()")))
 
@@ -93,14 +93,14 @@ class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
         self.labelIcon.setPixmap(icon.pixmap(32, 32))
 
     def getState(self):
-        return self.checkState.checkState()
+        return self.radioState.isChecked()
 
     def setState(self, state):
         if state == True:
-            state = QtCore.Qt.Checked
+            state = True
         elif state == False:
-            state = QtCore.Qt.Unchecked
-        return self.checkState.setCheckState(state)
+            state = False
+        return self.radioState.setChecked(state)
 
     def hideEdit(self):
         self.pushEdit.hide()
