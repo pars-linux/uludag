@@ -70,4 +70,4 @@ sistemleri 8086 sistemlerine kıyasla biraz daha farklı çalışmaktadır.
 İçerisinde ARM çekirdeği bulunduran birçok platformun implementasyonu ayrı ayrı
 gerçeklenmektedir.
 
-
+(will be continued..)
