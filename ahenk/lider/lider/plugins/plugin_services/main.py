@@ -46,6 +46,9 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         # Package index
         self.package_index = {}
 
+        self.start_set = []
+        self.stop_set = []
+
     def set_item(self, item):
         """
             Sets directory item that is being worked on.
@@ -79,14 +82,15 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         """
             Returns a list of policy class names.
         """
-        return []
+        return ["servicePolicy"]
 
     def load_policy(self, policy):
         """
             Main window calls this method when policy is fetched from directory.
             Not required for global widgets.
         """
-        pass
+        self.start_set = policy.get("serviceStart", [])
+        self.start_set = policy.get("serviceStop", [])
 
     def dump_policy(self):
         """
@@ -94,6 +98,8 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
             Not required for global widgets.
         """
         policy = {
+            "serviceStart": self.start_set,
+            "serviceStop": self.stop_set
         }
         return policy
 
@@ -147,8 +153,9 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         item = self.tableWidget.selectedItems()
         item_name = str(item[3].text())
 
-        jid = "%s@%s" % (self.item.name, self.talk.domain)
-        self.talk.send_command(jid, "service.start", [item_name])
+        self.start_set.append(item_name)
+        #jid = "%s@%s" % (self.item.name, self.talk.domain)
+        #self.talk.send_command(jid, "service.start", [item_name])
 
     def __slot_stop_service(self):
         """
@@ -157,5 +164,6 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         item = self.tableWidget.selectedItems()
         item_name = str(item[3].text())
 
-        jid = "%s@%s" % (self.item.name, self.talk.domain)
-        self.talk.send_command(jid, "service.stop", [item_name])
+        self.stop_set.append(item_name)
+        #jid = "%s@%s" % (self.item.name, self.talk.domain)
+        #self.talk.send_command(jid, "service.stop", [item_name])
