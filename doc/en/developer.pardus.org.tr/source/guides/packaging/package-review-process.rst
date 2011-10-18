@@ -140,7 +140,7 @@ The package reviewing process steps on `Pardus Bug Tracking System
    the same commit is preferred.
 
 .. _stable repository: http://developer.pardus.org.tr/guides/releasing/repository_concepts/software_repository.html#stable-binary-repository
-.. _severity based fixing times: http://developer.pardus.org.tr/guides/bugtracking/howto_bug_triage.html#bug-importance
+.. _severity based fixing times: http://developer.pardus.org.tr/guides/bugtracking/bug_cycle.html#bugzilla-severities
 .. _package review requirements: http://developer.pardus.org.tr/guides/packaging/reviewing_guidelines.html
 .. _obsolete: http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html?highlight=obsolete#renaming-replacing-existing-packages
 .. _security website: http://security.pardus.org.tr/
