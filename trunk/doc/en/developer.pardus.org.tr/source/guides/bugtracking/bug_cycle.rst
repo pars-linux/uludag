@@ -104,6 +104,10 @@ Bugzilla Keywords
 
 **MENTORASSIGNED**  Use when assigne a mentor to developer applicant
 
+**ACKS** Use when a component supervisor gives an approvement for package review
+
+**ACKD** Use when a developer gives an approvement for package review
+
 .. _alpha: http://developer.pardus.org.tr/guides/releasing/official_releases/alpha_phase.html
 .. _Alpha 1: http://developer.pardus.org.tr/guides/releasing/official_releases/alpha_phase.html#alpha-1
 .. _Alpha 2: http://developer.pardus.org.tr/guides/releasing/official_releases/alpha_phase.html#alpha-2
