@@ -34,9 +34,10 @@ Retiring Process
 
 #. Announce on devel_ and gelistirici_ which package you want to retire and take
    an approval from an experienced developer.
-#. If the upstream does not exist any more, these packages should be removed
-   from the active Pardus repositories. These packages should be obsoleted_ in
-   distribution.xml file of active repositories.
+#. If the upstream does not exist any more and does not use any more and get
+    obsolete by an other new package, these packages should be removed from
+    the active Pardus repositories. These packages should be obsoleted_ in
+    distribution.xml file of active repositories.
 #. If the package name will change or replaced by another package, `package
    replace procedure`_ is applied.
 
