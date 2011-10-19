@@ -10,6 +10,7 @@ import copy
 import simplejson
 import sys
 import traceback
+import os
 
 # Qt4 modules
 from PyQt4 import QtGui
@@ -45,6 +46,9 @@ from lider.widgets.list_item import list_item
 
 UNABLE_TO_CONNECT = 1
 CONNECTION_LOST = 2
+
+FIREWALL_FILE = "/usr/share/ahenk-lider/firewall.fwb"
+
 
 #class FormMain(QtGui.QWidget, Ui_FormMain):
 class FormMain(QtGui.QWidget, Ui_Main):
@@ -161,8 +165,13 @@ class FormMain(QtGui.QWidget, Ui_Main):
         # Last fetched policy
         self.policy = {}
 
-        # Default firewall rules file 
-        self.rules_xml = file("/usr/share/ahenk-lider/firewall.fwb").read() 
+        # Default firewall rules file
+        if not os.path.exists(FIREWALL_FILE):
+            self.rules_xml = []
+            self.pushSettings.setEnabled(False)
+        else:
+            self.rules_xml = file(FIREWALL_FILE).read()
+            self.pushSettings.setEnabled(True) 
 
         # Directory nodes
         self.nodes_cn = {}
