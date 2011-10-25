@@ -80,7 +80,11 @@ Corporate2.1 (K2.1) Tracker Bugs
 - `Beta phase tracker bugs`_
 - `Final phase tracker bugs`_
 
+Corporate2.1 (K2.1) Issues
+==========================
+- Gantt_
 
+.. _Gantt: http://tracker.pardus.org.tr/projects/k2-1/issues/gantt
 .. _Alpha phase tracker bugs: http://bugs.pardus.org.tr/show_bug.cgi?id=19355
 .. _Beta phase tracker bugs: http://bugs.pardus.org.tr/show_bug.cgi?id=19356
 .. _Final phase tracker bugs: http://bugs.pardus.org.tr/show_bug.cgi?id=19357
