@@ -21,56 +21,64 @@ def process(message, options):
     dryrun = options.dryrun
 
     if message.type == "command":
+
         if message.command == "service.info":
+            logging.info("---- service.info command is got ----")
             link = comar.Link()
             args = []
             for package in link.System.Service:
                 type_, desc_, status_ = link.System.Service[package].info()
                 args.append((package, desc_, status_))
             message.reply("service.info", args)
+            logging.info("---- replied ----")
 
-        elif message.type == "policy":
-            if "serviceStart" in message.policy:
-                start_set = []
-                for packages in message.policy["serviceStart"]:
+    elif message.type == "policy":
 
-                    print "start packages : "
-                    print packages
+        if "serviceStart" in message.policy:
+            start_set = []
+            for packages in message.policy["serviceStart"]:
 
-                    try:
-                        for package in packages.split(","):
-                            start_set.append(package)
-                    except ValueError:
-                        start_set = []
-                        break
+                logging.info("~~~ start packages : ")
+                logging.info(packages)
 
-                    for package in start_set:
-                        try:
-                            link = comar.Link()
-                            link.System.Service[package].start()
-                            message.reply("service.start.status", "Successful")
-                        except DBusException, e:
-                            message.reply("service.start.status", str(e))
+                try:
+                    for package in packages.split(","):
+                        start_set.append(package)
+                except ValueError:
+                    start_set = []
+                    break
 
-            if "serviceStop" in message.policy:
-                stop_set = []
-                for packages in message.policy["serviceStop"]:
+                logging.info("~~~~ start set ~~~~")
+                logging.info(start_set)
+                for package in start_set:
+                    #try:
+                    link = comar.Link()
+                    link.System.Service[package].start()
+                    #message.reply("service.start.status", "Successful")
+                    #except DBusException, e:
+                    #message.reply("service.start.status", str(e))
 
-                    print "stop packages : "
-                    print packages
+        if "serviceStop" in message.policy:
+            stop_set = []
+            for packages in message.policy["serviceStop"]:
 
-                    try:
-                        for package in packages.split(","):
-                            stop_set.append(package)
-                    except ValueError:
-                        stop_set = []
-                        break
+                logging.info("~~~ stop packages : ")
+                logging.info(packages)
 
-                    for package in stop_set:
-                        try:
-                            link = comar.Link()
-                            link.System.Service[package].stop()
-                            message.reply("service.stop.status", "Successful")
-                        except DBusException, e:
-                            message.reply("service.stop.status", str(e))
+                try:
+                    for package in packages.split(","):
+                        stop_set.append(package)
+                except ValueError:
+                    stop_set = []
+                    break
+
+                logging.info("~~~~ stop set ~~~~")
+                logging.info(stop_set)
+                for package in stop_set:
+                    #try:
+                    link = comar.Link()
+                    link.System.Service[package].stop()
+                    #message.reply("service.stop.status", "Successful")
+                    #except DBusException, e:
+                    #message.reply("service.stop.status", str(e))
 
