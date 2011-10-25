@@ -1,4 +1,4 @@
-# translation of ark.po to
+# translation of ark.po to T
 # Mehmet TARIMCI <mehmet@gelecek.com.tr> , 2000.
 # Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
 # Görkem Çetin <gorkem@kde.org>, 2003, 2004.
@@ -7,14 +7,16 @@
 # Engin Çağatay <engincagatay@yahoo.com>, 2004.
 # Onur Küçük <onur@uludag.org.tr>, 2004.
 # Serdar Soytetir <tulliana@gmail.com>, 2007.
-# Copyright (C) 2003, 2004, 2007 Free Software Foundation, Inc.
+# Koray Löker <loker@pardus.org.tr>, 2011.
+# translation of ark.po to
+# Copyright (C) 2003, 2004, 2007, 2011 Free Software Foundation, Inc.
 msgid ""
 msgstr ""
 "Project-Id-Version: ark\n"
 "POT-Creation-Date: 2007-11-07 01:15+0100\n"
-"PO-Revision-Date: 2007-06-17 22:11+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team:  <tr@li.org>\n"
+"PO-Revision-Date: 2011-10-25 09:03+0300\n"
+"Last-Translator: Koray Löker <loker@pardus.org.tr>\n"
+"Language-Team: T <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -94,10 +96,8 @@ msgid "Compressed File"
 msgstr "Sıkıştırılmış Dosya"
 
 #: archiveformatinfo.cpp:114
-msgid ""
-"All Valid Archives\n"
-msgstr ""
-"Tüm Geçerli Arşivler\n"
+msgid "All Valid Archives\n"
+msgstr "Tüm Geçerli Arşivler\n"
 
 #: archiveformatinfo.cpp:115
 msgid "All Files"
@@ -319,7 +319,7 @@ msgstr ""
 
 #: arkwidget.cpp:976
 msgid "Make Into Archive"
-msgstr ""
+msgstr "Arşivin İçinde Gerçekleştir"
 
 #: arkwidget.cpp:976
 msgid "Do Not Make"
@@ -407,8 +407,7 @@ msgid "1 file selected  %2"
 msgstr "1 dosya seçildi  %2"
 
 #: arkwidget.cpp:1891
-msgid ""
-"Do you wish to add this to the current archive or open it as a new archive?"
+msgid "Do you wish to add this to the current archive or open it as a new archive?"
 msgstr ""
 "Bunu şu anki arşive mi eklemek istersiniz yoksa yeni bir arşiv mi açmak "
 "istersiniz?"
@@ -425,8 +424,7 @@ msgstr "&Aç"
 msgid ""
 "There is no archive currently open. Do you wish to create one now for these "
 "files?"
-msgstr ""
-"Şu an açık bir arşiv dosyası yok. Bunlar için yenisini açmak ister misiniz?"
+msgstr "Şu an açık bir arşiv dosyası yok. Bunlar için yenisini açmak ister misiniz?"
 
 #: arkwidget.cpp:1949
 msgid ""
@@ -537,7 +535,9 @@ msgstr " Oran "
 msgid ""
 "_: acronym for Cyclic Redundancy Check\n"
 " CRC "
-msgstr " CRC "
+msgstr ""
+"_: Cyclic Redundancy Check kısaltması\n"
+" CRC "
 
 #: common_texts.cpp:10
 msgid " Method "
@@ -732,10 +732,8 @@ msgid "The folder could not be created. Please check permissions."
 msgstr "Dizin oluşturulamadı. Lütfen izinleri kontrol edin."
 
 #: extractiondialog.cpp:164
-msgid ""
-"You do not have write permission to this folder. Please provide another folder."
-msgstr ""
-"Bu dizine yazma yetkiniz yok. Lütfen yetkiniz olan başka bir dizin belirleyin."
+msgid "You do not have write permission to this folder. Please provide another folder."
+msgstr "Bu dizine yazma yetkiniz yok. Lütfen yetkiniz olan başka bir dizin belirleyin."
 
 #: filelistview.cpp:155
 msgid ""
@@ -947,8 +945,7 @@ msgstr "Dosyaların üzerine yaz (Zip, Tar, Zoo, Rar)"
 msgid ""
 "Overwrite any files that have matching names on disk with the one from the "
 "archive"
-msgstr ""
-"Arşivdeki dosyalarla ayna isme sahip olan diskteki dosyaların üzerine yaz"
+msgstr "Arşivdeki dosyalarla ayna isme sahip olan diskteki dosyaların üzerine yaz"
 
 #. i18n: file ark.kcfg line 24
 #: rc.cpp:87
@@ -998,8 +995,7 @@ msgstr "Dizin isimlerini yoksay (Zip)"
 msgid ""
 "Extract all the files into the extraction folder, ignoring any folder structure "
 "in the archive."
-msgstr ""
-"Tüm dosyaları çıkarma dizinine, arşivdeki dizin yapısını yok sayarak çıkart."
+msgstr "Tüm dosyaları çıkarma dizinine, arşivdeki dizin yapısını yok sayarak çıkart."
 
 #. i18n: file ark.kcfg line 47
 #: rc.cpp:108
@@ -1085,3 +1081,4 @@ msgstr "Bir açıcı bulunamıyor"
 #: tar.cpp:432
 msgid "Trouble writing to the tempfile..."
 msgstr "Geçici dosyaya yazarken bir hata oluştu..."
+
