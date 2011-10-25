@@ -74,5 +74,10 @@
     <file>icons/network48.png</file>
     <file>icons/help48.png</file>
     <file>icons/edit-delete.png</file>
+    <file>icons/flag-black.png</file>
+    <file>icons/flag-blue.png</file>
+    <file>icons/flag-green.png</file>
+    <file>icons/flag-red.png</file>
+    <file>icons/flag-yellow.png</file>
   </qresource>
 </RCC>

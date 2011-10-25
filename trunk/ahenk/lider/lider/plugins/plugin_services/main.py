@@ -49,6 +49,8 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         self.start_set = []
         self.stop_set = []
 
+        self.tableWidget.setUpdatesEnabled(True);
+
     def set_item(self, item):
         """
             Sets directory item that is being worked on.
@@ -68,7 +70,7 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
             print "item name %s , item domain %s" %(self.item.name, self.talk.domain)
             jid = "%s@%s" % (self.item.name, self.talk.domain)
             self.talk.send_command(jid, "service.info")
-            print "----  SERVICE-INFO  ----"
+            print "\n\n----  service.info command is send  ----"
 
     def get_type(self):
         """
@@ -90,7 +92,12 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
             Not required for global widgets.
         """
         self.start_set = policy.get("serviceStart", [])
-        self.start_set = policy.get("serviceStop", [])
+        self.stop_set = policy.get("serviceStop", [])
+        print "load policy ------ start set:"
+        print self.start_set
+        print "load policy -------stop set:"
+        print self.stop_set
+
 
     def dump_policy(self):
         """
@@ -99,7 +106,7 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         """
         policy = {
             "serviceStart": self.start_set,
-            "serviceStop": self.stop_set
+            "serviceStop": self.stop_set,
         }
         return policy
 
@@ -107,12 +114,35 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         """
             Main window calls this method when an XMPP message is received.
         """
-        print "-----  Service Plugin Command  ----- "
+        start_set = []
+        stop_set = []
+        print "-----  TALK MESSAGE IS CALLED  -----"
         print command
+
+
+        print "---- information ----"
+        print "start set size %d" %len(self.start_set)
+        print self.start_set
+        print "stop set size %d" %len(self.stop_set)
+        print self.stop_set
+
+        for services in self.start_set:
+            print services
+            for service in services.split(","):
+                print service
+                start_set.append(service)
+
+
+        for services in self.stop_set:
+            print services
+            for service in services.split(","):
+                print service
+                stop_set.append(service)
+
 
         if command == "service.info":
             self.tableWidget.setRowCount(len(arguments))
-            print "----- INFO ------"
+            print "----- COMMAND IS SERVICE.INFO ------"
             index = 0
 
             for name, desc, status in arguments:
@@ -122,10 +152,25 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
                 item_name = QtGui.QTableWidgetItem(str(name))
                 self.tableWidget.setItem(index, 3, item_name)
 
+                item_status = QtGui.QTableWidgetItem()
+
+
                 if status in ['started', 'on', 'conditional_started']:
-                    item_status = QtGui.QTableWidgetItem(i18n("Running"))
+                    item_status.setText("Running")
+
                 else:
-                    item_status = QtGui.QTableWidgetItem(i18n("Stopped"))
+                    item_status.setText("Stopped")
+
+
+                for start in start_set:
+                    if start== str(name):
+                        item_status.setIcon(wrappers.Icon("flag-green"))
+
+                for stop in stop_set:
+                    if stop == str(name):
+                        item_status.setIcon(wrappers.Icon("flag-red"))
+
+
                 self.tableWidget.setItem(index, 1, item_status)
 
                 if status in ['stopped', 'on']:
@@ -154,8 +199,6 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         item_name = str(item[3].text())
 
         self.start_set.append(item_name)
-        #jid = "%s@%s" % (self.item.name, self.talk.domain)
-        #self.talk.send_command(jid, "service.start", [item_name])
 
     def __slot_stop_service(self):
         """
@@ -165,5 +208,3 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         item_name = str(item[3].text())
 
         self.stop_set.append(item_name)
-        #jid = "%s@%s" % (self.item.name, self.talk.domain)
-        #self.talk.send_command(jid, "service.stop", [item_name])
