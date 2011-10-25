@@ -47,10 +47,11 @@ class Offline(QtGui.QWidget):
         cnt = 0
         packages = {}
         for i in listPackages:
+            package = installdb.get_package(i)
             try:
-                packages[installdb.get_package(i).name] = (installdb.get_package(i).release, 
-                                                           packagedb.get_package_repo(installdb.get_package(i).name)[1], 
-                                                           installdb.get_package(i).version)
+                packages[package.name] = (package.release,
+                                          packagedb.get_package_repo(package.name)[1],
+                                          package.version)
             except:
                 pass
 
