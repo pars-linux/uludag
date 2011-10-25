@@ -1,8 +1,6 @@
-# translation of kcalc.po to turkish
-# translation of kcalc.po to Türkçe
+# translation of kcalc.po to T
 # translation of kcalc.po to
-# translation of kcalc.po to Turkish
-# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+# Copyright (C) 2003, 2004, 2005, 2011 Free Software Foundation, Inc.
 #
 # Görkem Çetin <gorkem@kde.org>, 2002,2003, 2004.
 # Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
@@ -11,17 +9,18 @@
 # İsmail Şimşek <simsek@kde.org.tr>, 2005.
 # Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
 # Ozan Çağlayan <ozan@pardus.org.tr>, 2011.
+# Koray Löker <loker@pardus.org.tr>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcalc\n"
 "POT-Creation-Date: 2008-07-08 01:19+0200\n"
-"PO-Revision-Date: 2011-06-16 09:29+0300\n"
-"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
-"Language-Team: kde-l10n-3.5 <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2011-10-25 09:09+0300\n"
+"Last-Translator: Koray Löker <loker@pardus.org.tr>\n"
+"Language-Team: T <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=1; plural=0;\n"
 "Language: tr\n"
 
@@ -766,6 +765,12 @@ msgid ""
 "\ti.e. notation of the type 2.34e12.\n"
 "      "
 msgstr ""
+"\n"
+"\tKCalc ekrana sığan miktardan çok daha fazla hanede sayıyla\n"
+"\thesaplama yapabilir. Bu ayar ekranda görünecek hane sayısı\n"
+"\tbelirlemeye yarar. Sayı aşıldığında KCalc bilimsel kısaltmalar\n"
+"\tkullanır. Örneğin 2.34e12.\n"
+"......"
 
 #. i18n: file kcalc.kcfg line 65
 #: rc.cpp:143
@@ -838,53 +843,3 @@ msgstr "Kullanıcının programlayabileceği sabitlerin ismi."
 msgid "List of user programmable constants"
 msgstr "Kullanıcının programlayabileceği sabitlerin listesi"
 
-#~ msgid "Decimal &places:"
-#~ msgstr "&Ondalık yeri:"
-
-#~ msgid "&Exp/Log-Buttons"
-#~ msgstr "&Logaritmik Düğmeler"
-
-#~ msgid "&Trigonometric Buttons"
-#~ msgstr "&Trigonometrik Düğmeler"
-
-#, fuzzy
-#~ msgid "Built with 32 bit precision"
-#~ msgstr "%1 bitlik (uzun ikili) hassasiyetiyle derlendi"
-
-#, fuzzy
-#~ msgid "Built with 64 bit precision"
-#~ msgstr "%1 bitlik (uzun ikili) hassasiyetiyle derlendi"
-
-#, fuzzy
-#~ msgid "Built with 96 bit precision"
-#~ msgstr "%1 bitlik (uzun ikili) hassasiyetiyle derlendi"
-
-#, fuzzy
-#~ msgid "Built with %1 bit precision"
-#~ msgstr "%1 bitlik (uzun ikili) hassasiyetiyle derlendi"
-
-#, fuzzy
-#~ msgid ""
-#~ "Note: Due to a broken C library, KCalc's precision \n"
-#~ "was conditionally reduced at compile time from\n"
-#~ "'long double' to 'double'. \n"
-#~ "\n"
-#~ "Owners of systems with a working libc may \n"
-#~ "want to recompile KCalc with 'long double' \n"
-#~ "precision enabled. See the README for details."
-#~ msgstr ""
-#~ "%1 bitlik (uzun ikili) hassasiyetiyle derlendi\n"
-#~ "\n"
-#~ "Not: Bozuk C kütüphanesi sonucu, Hesap \n"
-#~ "Makinası'nın hassasiyeti derleme sırasında 'uzun \n"
-#~ "ikili'den 'ikili'ye indirildi. \n"
-#~ "\n"
-#~ "Çalışan libc kütüphanesi olanlar Hesap Makinası'nı \n"
-#~ "'uzun ikili' hassasiyetiyle derlemek isyebilirler. \n"
-#~ "Ayrıntılar için README dosyasına bakın."
-
-#~ msgid "Whether to show Exp/Log buttons."
-#~ msgstr "Logaritmik düğmelerinin gösterimi."
-
-#~ msgid "Whether to show trigonometric buttons."
-#~ msgstr "Trigonometrik düğmelerin gösterimi."
