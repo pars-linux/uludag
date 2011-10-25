@@ -7,20 +7,20 @@ import cPickle
 import os
 from PyQt4 import QtCore, QtGui
 
-from ui_offline import Ui_Offline 
+from ui_offline import Ui_Offline
 
 class Offline(QtGui.QWidget):
-    
+
     def __init__(self, parent = None):
         QtGui.QWidget.__init__(self, parent)
-        
+
         self.ui = Ui_Offline()
         self.ui.setupUi(self)
-        
+
         self.ui.pb_close.clicked.connect(self.close)
         self.ui.rb_export.setChecked(True)
         self.mode = 1 #Program has two modes; 1: Export , 2:Setup 
-        
+
         self.ui.rb_export.clicked.connect(self.rbExportClickedAction)
         self.ui.rb_setup.clicked.connect(self.rbSetupClickedAction)
         self.ui.le_path_export.setText(os.getenv('USERPROFILE') or os.getenv('HOME'))
@@ -30,14 +30,13 @@ class Offline(QtGui.QWidget):
         self.ui.pb_action.clicked.connect(self.startProgress)
         self.ui.pb_help.clicked.connect(self.showHelp)
         self.setWindowTitle("Pardus Offline-Updater")
-        
+
         self.rbExportClickedAction()
-        
-        
+
     def createFiles(self):
-       
+
         self.ui.pb_action.setEnabled(False)
-       
+
         import math
         installdb = pisi.db.installdb.InstallDB()
         repodb = pisi.db.repodb.RepoDB()
@@ -87,36 +86,33 @@ class Offline(QtGui.QWidget):
             for filename in filenames:
                 if filename.split(".")[-1] == "pisi":
                     packageList.append(str(self.ui.le_path_setup.text())+"/packages/"+filename)
-                    
+
         if len(packageList) == 0:
             self.errorMessage(u"Paket Bulunamadı", u"Belirttiğiniz dizinde kurulacak PiSi paketi bulunamadı!")
             return
-        
+
         command = "pm-install "
         for i in packageList:
-            command+= i+" " 
-            
-        print command 
+            command+= i+" "
+        print command
         os.system(command)
-        
-        
+
     def rbExportClickedAction(self):
         self.ui.le_path_setup.setEnabled(False)
         self.ui.pb_path_setup.setEnabled(False)
-        
+
         self.ui.le_path_export.setEnabled(True)
         self.ui.pb_path_export.setEnabled(True)
         self.mode = 1
-        
+
     def rbSetupClickedAction(self):
         self.ui.le_path_setup.setEnabled(True)
         self.ui.pb_path_setup.setEnabled(True)
-        
+
         self.ui.le_path_export.setEnabled(False)
         self.ui.pb_path_export.setEnabled(False)
         self.mode = 2
-        
-        
+
     def startProgress(self):
         if self.mode == 1:
             self.createFiles()
@@ -125,32 +121,28 @@ class Offline(QtGui.QWidget):
         else:
             self.errorMessage("Hata", u"Bu hatayı gördüğünüze göre en yakın sığınağa koşunuz!")
             return
-            
-            
+
     def setExportPath(self):
         fd = QtGui.QFileDialog(self)
         self.path_export = fd.getExistingDirectory(parent=None, caption=u"Klasör seç", directory=self.ui.le_path_export.text(), options=QtGui.QFileDialog.ShowDirsOnly)
         self.ui.le_path_export.setText(self.path_export)
-    
+
     def setSetupPath(self):
         fd = QtGui.QFileDialog(self)
         self.path_setup = fd.getExistingDirectory(parent=None, caption=u"Klasör seç", directory=self.ui.le_path_setup.text(), options=QtGui.QFileDialog.ShowDirsOnly)
         self.ui.le_path_setup.setText(self.path_setup)
-            
-            
+
     def errorMessage(self, header, message):
         QtGui.QMessageBox.critical(self,
                                         header,
                                         message)
         return False
-    
+
     def showHelp(self):
         return
         help_window = QtGui.QDialog(self)
         help_window.setWindowTitle("Pardus Offline-Updater Yardım")
-        
-        
-            
+
 
 if __name__ == "__main__":
     import sys
@@ -158,4 +150,3 @@ if __name__ == "__main__":
     OfflineMode = Offline()
     OfflineMode.show()
     sys.exit(app.exec_())
-    
