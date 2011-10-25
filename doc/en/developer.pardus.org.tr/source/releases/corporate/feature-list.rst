@@ -67,9 +67,9 @@ Corporate2.1 (K2.1) Feature List
   +------------------+---------------+-------------------+-------------------------------------------------------------------------------------------------------------------+
   |       0%         |      19308_   |    Server         |  Cacti package creation                                                                                           |
   +------------------+---------------+-------------------+-------------------------------------------------------------------------------------------------------------------+
-  |       0%         |      504_     |    Desktop        |  Default menu rearrangement                                                                                       |
+  |       0%         |      572_     |    Desktop        |  Default menu rearrangement                                                                                       |
   +------------------+---------------+-------------------+-------------------------------------------------------------------------------------------------------------------+
-  |       0%         |      509_     |    Desktop        |  All desktop applications menu rearrangement                                                                      |
+  |       0%         |      573_     |    Desktop        |  All desktop applications menu rearrangement                                                                      |
   +------------------+---------------+-------------------+-------------------------------------------------------------------------------------------------------------------+
 
 
@@ -112,8 +112,8 @@ Corporate2.1 (K2.1) Issues
 .. _496: http://tracker.pardus.org.tr/issues/496
 .. _495: http://tracker.pardus.org.tr/issues/495
 .. _494: http://tracker.pardus.org.tr/issues/494
-.. _504: http://tracker.pardus.org.tr/issues/504
-.. _509: http://tracker.pardus.org.tr/issues/509
+.. _573: http://tracker.pardus.org.tr/issues/573
+.. _572: http://tracker.pardus.org.tr/issues/572
 .. _19307: http://bugs.pardus.org.tr/show_bug.cgi?id=19307
 .. _19311: http://bugs.pardus.org.tr/show_bug.cgi?id=19311
 .. _19306: http://bugs.pardus.org.tr/show_bug.cgi?id=19306
