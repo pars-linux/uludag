@@ -112,7 +112,7 @@ Beta 2
 #. Create Beta Test Release for Beta validation tests
 
    * Installation media
-    Live media
+   * Live media
 
 #. Prepare and make "where we are meeting" after validation tests, in order to review bugs and possibility to prolonge release.
 #. Create release-notes

@@ -134,7 +134,6 @@ Alpha 3
 
 #. `Feature freeze`_
 #. `String freeze`_
-#. Prepare and make "where we are meeting" after validation tests, in order to review bugs and possibility to prolonge release.
 #. Create release-notes
 #. Warn mirrors and ULAKBIM
 
@@ -152,6 +151,7 @@ Alpha 3
    * Installation media
    * Live media
 
+#. Prepare and make "where we are meeting" after validation tests, in order to review bugs and possibility to prolonge release.
 #. Review problems and mark as Alpha tracker bug which need resolution before release
 
    * Package conflicts or unresolved package dependencies

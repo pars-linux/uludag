@@ -8,25 +8,31 @@ Package Reviewing Process
 :Version: 0.1
 
 
-Aim of Review
--------------
+Package Inclusion Requirements and Aim of Review
+------------------------------------------------
 
 Pardus `stable repository`_ is officially maintained, supported and recommended
 by Pardus. Security updates are provided for them and standart fixing process
 is applied to these packages. (See `severity based fixing times`_)
 
 Thus, before adding new packages to a Pardus `stable repository`_, special attention
-should be given.
+should be given. The `new package inclusion process`_ is also applied.
+
+One of the following retionale can be a reason for inclusion of the package:
+    - The package is useful for large part of our users
+    - The package is a new built or runtime dependency of a package that already in Pardus `stable repository`_
+    - The package has one of the functionalites in `Pardus Target Audience document`_ and replaces another package that already exists in Pardus `stable repository`_ and promise higher quality and functionality. (The old package should be obsolete_)
 
 Package review is a must before it is added to Pardus repositories. The aim of this
 process is to be ensure the package satisfies packaging rules.
 
-The requirements below should be checked by reviewers:
+The requirements below should be checked by reviewers, if these requirements are not met the package could not been added to Pardus official repositories:
 
     - The package must be suitable to `package review requirements`_ and pass package review
     - The package must build on all architectures
     - The existed upstream bugs of the package and upstream support should be considered
     - GUI applications must be translatable and produce a proper PO template
+    - GUI applications must have Turkish localization support
     - GUI applications should not have turkish language problems
     - GUI applications must have a standart desktop file
     - Package security vulnerabilities must be checked
@@ -34,10 +40,6 @@ The requirements below should be checked by reviewers:
       - Search package name on http://cve.mitre.org/cve/cve.html and http://secunia.com/advisories/search/
       - Check Pardus `security website`_.
 
-One of the following retionale can be a reason for inclusion of the package:
-    - The package is useful for large part of our users
-    - The package is a new built or runtime dependency of a package that already in Pardus `stable repository`_
-    - The package replaces another package that already exists in Pardus `stable repository`_ and promise higher quality and functionality. (The old package should be obsolete_)
 
 
 Package Review Guidelines
@@ -144,4 +146,5 @@ The package reviewing process steps on `Pardus Bug Tracking System
 .. _package review requirements: http://developer.pardus.org.tr/guides/packaging/reviewing_guidelines.html
 .. _obsolete: http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html?highlight=obsolete#renaming-replacing-existing-packages
 .. _security website: http://security.pardus.org.tr/
-
+.. _Pardus Target Audience document: http://developer.pardus.org.tr/guides/targetaudience/target_audience.html
+.. _new package inclusion process: http://developer.pardus.org.tr/guides/newfeature/new_package_requests.html

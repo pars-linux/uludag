@@ -3,7 +3,8 @@ Guides
 
 .. toctree::
    :maxdepth: 2
-
+    
+   targetaudience/index.rst
    newcontributor/index.rst
    packaging/index.rst
    bugtracking/index.rst
