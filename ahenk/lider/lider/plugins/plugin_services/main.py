@@ -200,6 +200,9 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
 
         self.start_set.append(item_name)
 
+        item_status = item[1]
+        item_status.setIcon(wrappers.Icon("flag-green"))
+
     def __slot_stop_service(self):
         """
             This method is called when the stop button clicked to stop the selected service
@@ -208,3 +211,6 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         item_name = str(item[3].text())
 
         self.stop_set.append(item_name)
+
+        item_status = item[1]
+        item_status.setIcon(wrappers.Icon("flag-red"))
