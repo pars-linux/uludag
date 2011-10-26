@@ -15,6 +15,7 @@ For system administrotors:
     #. maintain and operate computer systems and network
     #. install, support and maintain servers and other computer systems
     #. manage network and database services and deal with their problems
+    #. use virtualization technologies for servers
     #. know scripting languages to write programs to automate system service tasks
 
 For officers:
