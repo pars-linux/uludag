@@ -28,7 +28,7 @@ Every pisi package has a Licence tag. The contents of the Licence tag are specif
 Valid License Abbreviations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-License tag must be filled with the appropriate abbreviation of the licence which is listed `here <http://svn.pardus.org.tr/uludag/trunk/doc/en/licenses/>`_. If the licence of your package is not in the list, you should ask it to `Pardus developer list <http://liste.pardus.org.tr/mailman/listinfo/pardus-devel>`_. If the licence is suitable with Pardus Licencing, it will put under this list.
+License tag must be filled with the appropriate abbreviation of the licence which is listed `here <http://svn.pardus.org.tr/uludag/trunk/doc/en/licenses/>`_. If the licence of your package is not in the list, you should ask it to `Pardus developer list <http://liste.pardus.org.tr/mailman/listinfo/pardus-devel>`_. If the licence is suitable with Pardus Licencing, it will put under this list and also the abbreviation also added to `pisi rng file`_.
 
 Versioned licenses
 ^^^^^^^^^^^^^^^^^^
@@ -81,3 +81,5 @@ If the maintainer unsure about the firmare licence, he can ask `Pardus developer
 
 :Author: Semen Cirit
 
+
+.. _pisi rng file: http://svn.pardus.org.tr/uludag/trunk/pisi/pisi-spec.rng
