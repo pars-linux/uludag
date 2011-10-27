@@ -57,5 +57,5 @@ New packages are accepted to official Pardus repositories under `some circumstan
 .. _exception process: http://developer.pardus.org.tr/guides/releasing/freezes/freeze_exception_process.html#feature-freeze-exceptions-for-new-packages
 .. _package review: http://developer.pardus.org.tr/guides/packaging/package-review-process.html
 .. _package review criteria: http://developer.pardus.org.tr/guides/packaging/reviewing_guidelines.html
-.. _some circumstances: http://developer.pardus.org.tr/guides/packaging/package-review-process.html#aim-of-review
+.. _some circumstances: http://developer.pardus.org.tr/guides/packaging/package-review-process.html#package-inclusion-requirements-and-aim-of-review
 .. _mentoring process: http://developer.pardus.org.tr/guides/newcontributor/mentoring_process.html
