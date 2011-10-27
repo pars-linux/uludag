@@ -6,21 +6,27 @@ The person whom wants to use Pardus probably:
     #. is a volunteer switching to Linux
     #. is familiar with computers but is not necessarily a hacker or developer
     #. is likely to collaborate in some fashion when something's wrong with Pardus, and
-    #. wants to use Pardus for daily usage, either using desktop applications or a Web browser.
+    #. wants to use Pardus for daily usage, either using desktop applications or a Web browser
 
-For the Pardus Corporate release we also extend this vision for system administrators and officers.
+For the Pardus Corporate release we extend this vision to support server and development languages and environments.
 
-For system administrotors:
+
+Therefore Pardus target audience extends whom also:
 
     #. maintain and operate computer systems and network
     #. install, support and maintain servers and other computer systems
     #. manage network and database services and deal with their problems
     #. use virtualization technologies for servers
-    #. know scripting languages to write programs to automate system service tasks
-
-For officers:
-
-    #. Use latex/tex functionality
+    #. know version control systems
+    #. know debugging and development languages and environments
+        * Preferential languages that Pardus official repositories support:
+            - Python
+            - C,C++
+            - Java
+            - Perl
+            - Ruby
+            - Bash
+            - Php
 
 
 Daily Usage
@@ -60,18 +66,19 @@ Desktop Experiences
     * Can use multimedia to listen music or watch video or broadcast. (audio, video, raido/TV etc.)
     * Can make basic changes on images (cut, copy, crop, scale, etc.)
 
-Personal Infromation Management and Office applications
+Personal Infromation Management and Office Applications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    * Can use office applications like document writer, presenter, spreadsheet, drawing, etc
+    * Can use office applications like document writer, presenter, spreadsheet, drawing, etc.
+    * Use latex/tex
     * Can use personal information aplications like mail, news reader, address book, calender, scheduler etc.
 
 Network Experince
 ^^^^^^^^^^^^^^^^^
 
     * Know how to connect internet
-    * Can use web browser and searching engines.
-    * Can use plugins when needed.
+    * Can use web browser and searching engines
+    * Can use plugins when needed
     * Can download files over Internet
     * Can use remote desktop
     * Can use file sharing
