@@ -233,7 +233,7 @@ msgstr "Osobna mapa:"
 
 #: ui/ui_edituser.py:234
 msgid "Shell:"
-msgstr ""
+msgstr "Ljuska:"
 
 #: ui/ui_edituser.py:235
 msgid "Give administrator rights"
