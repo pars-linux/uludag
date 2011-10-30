@@ -134,7 +134,7 @@ msgstr "Opcije podizanja sustava za operativni sustav"
 
 #: ui/ui_item.py:78
 msgid "Set or unset entry as default boot entry."
-msgstr ""
+msgstr "Postavi ili ne postavi unos kao zadani unos podizanja sustava."
 
 #: ui/ui_item.py:79
 msgid "Edit"
