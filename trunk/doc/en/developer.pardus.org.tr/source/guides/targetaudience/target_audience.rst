@@ -18,6 +18,7 @@ Therefore Pardus target audience extends whom also:
     #. manage network and database services and deal with their problems
     #. use virtualization technologies for servers
     #. know version control systems
+    #. know project design, management and issue tracking tools
     #. know debugging and development languages and environments
         * Preferential languages that Pardus official repositories support:
             - Python
