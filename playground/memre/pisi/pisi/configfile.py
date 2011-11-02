@@ -27,12 +27,23 @@
 #generateDebug = False
 #enableSandbox = False
 #jobs = "-j3"
-#CFLAGS= -mtune=generic -march=i686 -O2 -pipe -fomit-frame-pointer -fstack-protector -D_FORTIFY_SOURCE=2
-#CXXFLAGS= -mtune=generic -march=i686 -O2 -pipe -fomit-frame-pointer -fstack-protector -D_FORTIFY_SOURCE=2
-#LDFLAGS= -Wl,-O1 -Wl,-z,relro -Wl,--hash-style=gnu -Wl,--as-needed -Wl,--sort-common
+#cflags= -mtune=generic -march=i686 -O2 -pipe -fomit-frame-pointer -fstack-protector -D_FORTIFY_SOURCE=2
+#cxxflags= -mtune=generic -march=i686 -O2 -pipe -fomit-frame-pointer -fstack-protector -D_FORTIFY_SOURCE=2
+#ldflags= -Wl,-O1 -Wl,-z,relro -Wl,--hash-style=gnu -Wl,--as-needed -Wl,--sort-common
+#ar = "ar"
+#assembler = "as"
+#cc = "gcc"
+#cxx = "g++"
+#ld = "ld"
+#nm = "nm"
+#ranlib = "ranlib"
+#f77 = "g77"
+#gcj = "gcj"
+#strip = "strip"
+#objcopy= "objcopy"
 #buildhelper = None / ccache / icecream
 #compressionlevel = 1
-#fallback = "ftp://ftp.pardus.org.tr/pub/source/2009"
+#fallback = "ftp://ftp.pardus.org.tr/pub/source/2011"
 #
 #[directories]
 #lib_dir = /var/lib/pisi
@@ -66,8 +77,8 @@ class GeneralDefaults:
     destinationdirectory = "/"
     autoclean = False
     distribution = "Pardus"
-    distribution_release = "2009"
-    distribution_id = "p9"
+    distribution_release = "2011"
+    distribution_id = "p11"
     architecture = "i686"
     http_proxy = os.getenv("HTTP_PROXY") or None
     https_proxy = os.getenv("HTTPS_PROXY") or None
@@ -81,21 +92,37 @@ class GeneralDefaults:
 class BuildDefaults:
     """Default values for [build] section"""
     build_host = "localhost"
-    build = "i686-pc-linux-gnu"
     host = "i686-pc-linux-gnu"
-    target = "i686-pc-linux-gnu"
     jobs = "-j3"
     generateDebug = False
     enableSandbox = True
-    cppflags = ""
     cflags = "-mtune=generic -march=i686 -O2 -pipe -fomit-frame-pointer -fstack-protector -D_FORTIFY_SOURCE=2"
     cxxflags = "-mtune=generic -march=i686 -O2 -pipe -fomit-frame-pointer -fstack-protector -D_FORTIFY_SOURCE=2"
+
+    # Neccessary just with crosscompiling
+    build = "i686-pc-linux-gnu"
+    target = "i686-pc-linux-gnu"
+    cppflags = ""
+    crosscompiling = False
+
+    # Toolchain defaults
+    ar = "ar"
+    assembler = "as"
+    cc = "gcc"
+    cxx = "g++"
+    ld = "ld"
+    nm = "nm"
+    ranlib = "ranlib"
+    f77 = "g77"
+    gcj = "gcj"
+    strip = "strip"
+    objdump = "objdump"
+    objcopy = "objcopy"
+
     ldflags = "-Wl,-O1 -Wl,-z,relro -Wl,--hash-style=gnu -Wl,--as-needed -Wl,--sort-common"
     buildhelper = None
     compressionlevel = 1
-    crosscompiling = False
-    fallback = "ftp://ftp.pardus.org.tr/pub/source/2009"
-    max_delta_count = 0
+    fallback = "ftp://ftp.pardus.org.tr/pub/source/2011"
     ignored_build_types = ""
 
 class DirectoriesDefaults:
