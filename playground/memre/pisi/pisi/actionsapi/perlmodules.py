@@ -33,13 +33,17 @@ native_arch_dir = '%s-linux-thread-multi' % get.BUILD().split('-')[0]
 target_arch_dir = "" # neccessary only with cross-build
 perl_cmd = 'perl'
 make_cmd = 'make'
+arch = get.ARCH()
 
 if crosscompiling:
     ctx.ui.info(_("cross compiling"))
-    if get.ARCH().startswith('arm'):
-        pisi.actionsapi.variables.glb.generals.architecture = 'arm'
-        target_arch_dir = "arm-linux-thread-multi"
-        # pisi.actionsapi.variables.glb.generals.architecture = 'arm'
+    if arch.startswith('arm'):
+        target_arch_dir = "%s-linux-thread-multi" % arch
+
+        # because of some bugs in qemu, some syscalls cannot be handled of perl.
+        # so we must use native perl for now,
+        # still working on a patch to fix it.
+        #
         # perl_cmd = 'sb2 %s/usr/bin/perl' % get.sysroot() # perl_cmd
         # perl_cmd = 'sb2 %s' % perl_cmd
         # make_cmd = 'sb2 %s' % make_cmd
@@ -95,7 +99,6 @@ def install(parameters = 'install'):
 
     # temporary fix
     if crosscompiling:
-        print " ==> Cross build!!!!!!!!!!!"
         fix_dir_list = os.popen("find %s -name 'x86_64-linux-thread-multi'" % get.installDIR()).read().split()
         for dir in fix_dir_list:
             print 'mv %s %s/%s' % (dir, "/".join(dir.split('/')[:-1]), target_arch_dir)

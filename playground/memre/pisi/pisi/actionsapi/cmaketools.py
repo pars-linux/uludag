@@ -28,6 +28,8 @@ from pisi.actionsapi.shelltools import export
 from pisi.actionsapi.shelltools import can_access_file
 from pisi.actionsapi.shelltools import unlink
 
+arch = get.ARCH()
+
 crosscompiling = ctx.config.values.build.crosscompiling
 if crosscompiling:
     ctx.ui.info(_("cross compiling"))
@@ -53,12 +55,12 @@ if crosscompiling:
     export('QMAKE_INCDIR_OPENGL', "%s/usr/include" % get.sysroot())
     export('QMAKE_LIBS',          "%s/usr/qt/4/lib" % get.sysroot())
     export('QMAKE_LIBS_QT',       "qt")
-    export('QMAKE_LIBS_X11',      "")
+    # export('QMAKE_LIBS_X11',      "")
     export('QMAKE_LIBS_OPENGL',   "%s/usr/lib" % get.sysroot())
 
     export('INCLUDEPATH', "%s/usr/qt/4/include" % get.sysroot())
     export('INCLUDE',     "%s/usr/qt/4/include" % get.sysroot())
-    export('LIB',         "%s/usr/qt/4/include" % get.sysroot())
+    export('LIB',         "%s/usr/qt/4/lib" % get.sysroot())
 
     export('QMAKE_QMAKE', "/usr/qt/4/bin/qmake")
     export('QMAKE_MOC',   "/usr/qt/4/bin/moc")
@@ -70,6 +72,10 @@ if crosscompiling:
     export('QMAKE_QDBUSXML2CPP',  "/usr/qt/4/bin/qdbusxml2cpp4")
 
     export('QMAKE_STRIP', "true") # we dont want qmake to strip executables, pisi does this if neccessary.
+
+    export('QT_INCLUDE_DIR', '%s/usr/qt/4' % get.sysroot())
+    export('QT_LIBRARY_DIR', '%s/usr/qt/4/lib' % get.sysroot())
+    export('QT_LIBRARIES', '%s/usr/qt/4/lib' % get.sysroot())
 
 else:
     ctx.ui.info(_("native compiling"))
@@ -104,19 +110,22 @@ class RunTimeError(pisi.actionsapi.Error):
 def configure(parameters = '', installPrefix = '/%s' % get.defaultprefixDIR(), sourceDir = '.'):
     '''configure source with given cmake parameters = "-DCMAKE_BUILD_TYPE -DCMAKE_CXX_FLAGS ... "'''
     if can_access_file(join_path(sourceDir, 'CMakeLists.txt')):
-        args = 'cmake -Wdev \
+        args = 'cmake -Wnodev \
+                      -DCMAKE_INSTALL_SO_NO_EXE=0 \
+                      -DCMAKE_VERBOSE_MAKEFILE=1 \
                       -DCMAKE_BUILD_TYPE=Release \
                       -DCMAKE_INSTALL_PREFIX=%s \
-                      -DCMAKE_C_FLAGS="%s" \
-                      -DCMAKE_CXX_FLAGS="%s" \
+                      -DCMAKE_C_FLAGS="%s -DNDEBUG" \
+                      -DCMAKE_CXX_FLAGS="%s -DNDEBUG" \
                       -DCMAKE_CPP_FLAGS="%s" \
                       -DCMAKE_LD_FLAGS="%s" \
-                      %s %s' % (installPrefix, get.CFLAGS(), get.CXXFLAGS(), get.CPPFLAGS(), get.LDFLAGS(), parameters, sourceDir)
+                      -DCMAKE_SHARED_LINKER_FLAGS="%s" \
+                      %s %s' % (installPrefix, get.CFLAGS(), get.CXXFLAGS(), get.CPPFLAGS(), get.LDFLAGS(), get.LDFLAGS(), parameters, sourceDir)
 
         if crosscompiling:
             args = "sb2 %s \
-                     -DCMAKE_TOOLCHAIN_FILE=/opt/toolchain/armv7l/c2_parm.cmake \
-                     " % args
+                     -DCMAKE_TOOLCHAIN_FILE=/opt/toolchain/%s/parm.cmake \
+                     " % (args, arch)
 
         if system(args):
             raise ConfigureError(_('Configure failed.'))
@@ -164,7 +173,11 @@ def install(parameters = '', argument = 'install'):
 def rawInstall(parameters = '', argument = 'install'):
     '''install source into install directory with given parameters = PREFIX=%s % get.installDIR()'''
     if can_access_file('makefile') or can_access_file('Makefile') or can_access_file('GNUmakefile'):
-        if system('make %s %s' % (parameters, argument)):
+        args = 'make %s %s' % (parameters, argument)
+        if crosscompiling:
+            args = "sb2 %s" % args
+
+        if system(args):
             raise InstallError(_('Install failed.'))
         else:
             fixInfoDir()

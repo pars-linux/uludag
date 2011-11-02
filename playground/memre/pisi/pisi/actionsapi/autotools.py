@@ -139,7 +139,7 @@ def fixInfoDir():
     if can_access_file(infoDir):
         unlink(infoDir)
 
-def install(parameters = '', argument = 'install'):
+def install(parameters = '', argument = 'install', no_sb2=False):
     '''install source into install directory with given parameters'''
     cmd = 'make prefix=%(prefix)s/%(defaultprefix)s \
            datadir=%(prefix)s/%(data)s \
@@ -160,7 +160,7 @@ def install(parameters = '', argument = 'install'):
                                 'argument':argument,
                            }
 
-    if crosscompiling:
+    if crosscompiling and not no_sb2:
         cmd = "sb2 %s" % cmd
 
     if system(cmd):
@@ -169,11 +169,11 @@ def install(parameters = '', argument = 'install'):
         fixInfoDir()
 
 
-def rawInstall(parameters = '', argument = 'install'):
+def rawInstall(parameters = '', argument = 'install', no_sb2=False):
     '''install source into install directory with given parameters = PREFIX=%s % get.installDIR()'''
     cmd = 'make %s %s' % (parameters, argument)
 
-    if crosscompiling:
+    if crosscompiling and not no_sb2:
         cmd = "sb2 %s" % cmd
 
     if system(cmd):

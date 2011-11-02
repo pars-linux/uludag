@@ -174,14 +174,24 @@ def dumpVersion():
     open(os.path.join(destination, get.srcNAME()), "w").write(__getSuffix())
 
 
-def build(debugSymbols=False):
+def build(parameters='', debugSymbols=False):
+    karch = __getKernelARCH()
     shelltools.export("LDFLAGS", "")
+    if karch == "arm":
+        shelltools.export("CFLAGS", "")
+        shelltools.export("CPPFLAGS", "")
     extra_config = []
     if debugSymbols:
         # Enable debugging symbols (-g -gdwarf2)
         extra_config.append("CONFIG_DEBUG_INFO=y")
 
+    extra_config.append(parameters)
+
     make(" ".join(extra_config))
+
+    if karch == "arm":
+        extra_config.append("uImage")
+        make(" ".join(extra_config))
 
 def install():
     suffix = __getSuffix()
@@ -191,17 +201,17 @@ def install():
     dumpVersion()
 
     if karch == "arm":
-        shelltools.system("%s -O binary -R .note -R .comment -S arch/arm/boot/compressed/vmlinux linux.bin" % get.OBJCOPY())
-        shelltools.system('mkimage \
-                           -A arm \
-                           -O linux \
-                           -T kernel \
-                           -C none \
-                           -a 0x80008000 -e 0x80008000 \
-                           -n "Pardus Linux Kernel for armv7l" \
-                           -d linux.bin arch/arm/boot/uImage')
+        # shelltools.system("%s -O binary -R .note -R .comment -S arch/arm/boot/compressed/vmlinux linux.bin" % get.OBJCOPY())
+        # shelltools.system('mkimage \
+        #                    -A arm \
+        #                    -O linux \
+        #                    -T kernel \
+        #                    -C none \
+        #                    -a 0x80008000 -e 0x80008000 \
+        #                    -n "Pardus Linux Kernel for armv7l" \
+        #                    -d linux.bin arch/arm/boot/uImage')
 
-        pisitools.insinto("/boot/", "arch/arm/boot/uImage", "uImage")
+        pisitools.insinto("/boot/", "arch/arm/boot/uImage", "uImage-%s" % suffix)
         pisitools.insinto("/boot/", "arch/arm/boot/zImage", "kernel-%s" % suffix)
     else:
         # Install kernel image
@@ -283,7 +293,7 @@ def installHeaders(extraHeaders=None):
     pisitools.dosym("build", "/lib/modules/%s/source" % suffix)
 
 
-def installLibcHeaders(excludes=None):
+def installLibcHeaders(excludes=None, defconfig="defconfig"):
     headers_tmp = os.path.join(get.installDIR(), 'tmp-headers')
     headers_dir = os.path.join(get.installDIR(), 'usr/include')
 
@@ -297,7 +307,7 @@ def installLibcHeaders(excludes=None):
     shelltools.makedirs(headers_dir)
 
     # make defconfig and install the headers
-    make("%s defconfig" % make_cmd)
+    make("%s %s" % (make_cmd, defconfig))
     make("%s headers_install" % make_cmd)
 
     oldwd = os.getcwd()
