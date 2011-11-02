@@ -8,14 +8,14 @@ This document defines what steps must be followed for package updates and inclus
 General Rules
 =============
 
-The following rules apply to all alpha, beta and rc phases.
+The following rules apply to all alpha, beta, rc and final phases.
 
 #. `New package inclusion process`_
 #. `New feature inclusion process`_
 #. Bug fix inclusion process:
 
     #. Before a `freeze time`_ all updates are done on devel and testing source repositories without any approval but a bug report MUST exist:
-        #. If it is a security related bug, it must already have a bug record reported on `Security product`_ with the related release specified.
+        #. If it is a security related bug, it must have a bug reported on `Security product`_ with the related release specified
         #. If bug is already reported, it should be triaged by developer or by other triager following the `bug triage`_ checklist
         #. If not, the developer reports a new bug following the `bug triage`_ checklist
         #. If a developer starts to deal with the bug and to implement, the developer changes the bug status to **ASSIGNED**.
@@ -28,9 +28,11 @@ The following rules apply to all alpha, beta and rc phases.
     #. If you fixed the bug, change the bug status as **RESOLVED/FIXED**::
 
         BUG:FIXED:#123456       # Closes the bug report #123456 as RESOLVED/FIXED
-    #. If your package needs an exception, please control Exceptions_ list and follow `exception request`_ process.
-    #. If your package has a new package exception request and accepted please also request for `package review`_ for new packages.
-    #. After a freeze date, package updates and inclusions are restricted according to that particular freeze definiton. However, it is still possible to update or include a package byrequesting an EXCEPTION. This process is depicted in the following figure:
+    #. After a freeze date, `package updates`_ and inclusions_ are restricted according to that particular freeze definiton. However, it is still possible to update or include a package by requesting an EXCEPTION.
+        #. If your package needs an exception, please control Exceptions_ list and follow `exception request`_ process.
+        #. If your package has a `new package exception`_ request and accepted please also request for `package review`_ for new packages.
+
+    All general process is depicted in the following figure:
 
  .. image:: images/package-updates2.png
 
@@ -59,19 +61,21 @@ At the end of the `Alpha Phase`_ first branching is done and testing source_ and
 
 Package updates are build automatically every day and directly ship to `testing binary repository`_ users.
 
-For `testing source repository`_ updates, Maintainers MUST:
-
-    * Avoid major version updates and ABI breakage and API changes
-    * Avoid new package merges
 
 RC Phase
 ========
 
 Package updates are build automatically every day and directly ship to `testing binary repository`_ users.
 
-At the end of RC phase `stable binary repository`_ is opened. Just before this release, package conflicts or unresolved package dependencies, installation and high severity bugs must be fixed. Until final is released, only high and urgent `tracker bugs`_ should be fixed.
+At the end of RC phase `stable binary repository`_ is opened. Just before this release, package conflicts or unresolved package dependencies, installation and high severity `tracker bugs`_ must be fixed. Until final is released, only high and urgent `tracker bugs`_ should be fixed.
 
 
+
+At beta and RC phases, for `testing source repository`_ updates, Maintainers MUST:
+
+    * Avoid major version updates and ABI breakage and API changes
+    * Avoid new package merges
+    * Follow `exception request`_ process for freeze Exceptions_.
 
 Stable Phase
 ============
@@ -110,7 +114,7 @@ Special cases for individual packages should be listed here.
 All Other Updates
 -----------------
 
-These updates also need an approval by merge resposible group.
+.. These updates also need an approval by merge resposible group.
 
 Package maintainers MUST:
 
@@ -120,7 +124,7 @@ Package maintainers MUST:
 #. Avoid new upstream versions of packages which provide new features, but don't fix critical bugs, a backport should be requested instead.
 #. Avoid ABI breakage or API changes if at all possible.
 #. Avoid changing the user experience if at all possible.
-#. Avoid updates that are trivial or don't affect any Pardus users. 
+#. Avoid updates that are trivial or don't affect any Pardus users.
 #. Avoid adding new packages
 
 Package maintainers SHOULD:
@@ -143,7 +147,7 @@ Software packages will not be updated to their new upstream releases or new pack
 
         If the update or new package adding:
             #. converts databases or resources one way to a new format.
-            #. requires user intervention for the service to keep working
+            #. requires user for intervention for the service to keep working
             #. causes authorization and authentication changes
             #. changes the GUI that end user encounters
             #. fixes bugs that no Pardus user or customers has reported.
@@ -248,3 +252,6 @@ Software packages will not be updated to their new upstream releases or new pack
 .. _New feature inclusion process: ../newfeature/newfeature_requests.html#how-my-new-feature-request-is-accepted
 .. _Bug fix inclusion process: ../packaging/package_update_process.html#update*a-package-on-`devel-source-repository`_:
 .. _beta freeze time: ../releasing/freezes/beta_freeze
+.. _new package exception: ../releasing/freezes/freeze_exception_process.html#feature-freeze-exceptions-for-new-packages
+.. _package updates: ../releasing/freezes/freeze_exception_process.html#feature-freeze-exceptions-for-new-upstream-versions
+.. _inclusions: ../releasing/freezes/freeze_exception_process.html#feature-freeze-exceptions-for-new-packages
