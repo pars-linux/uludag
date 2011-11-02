@@ -19,6 +19,7 @@ _ = __trans.ugettext
 
 # PiSi Modules
 import pisi.actionsapi
+import pisi.util
 import pisi.context as ctx
 
 # ActionsAPI Modules
@@ -33,6 +34,7 @@ class BinutilsError(pisi.actionsapi.Error):
 # Globals
 env = pisi.actionsapi.variables.glb.env
 dirs = pisi.actionsapi.variables.glb.dirs
+config = pisi.actionsapi.variables.glb.config
 generals = pisi.actionsapi.variables.glb.generals
 
 def curDIR():
@@ -83,7 +85,7 @@ def lsbINFO():
 # PSPEC Related Functions
 
 def sysroot():
-    return ctx.config.values.general.destinationdirectory
+    return config.values.general.destinationdirectory
 
 def srcNAME():
     return env.src_name
@@ -118,9 +120,6 @@ def CHOST():
     # FIXME: Currently it behave same as HOST,
     # but will be used for cross-compiling when pisi ready...
     return env.host
-
-def CPPFLAGS():
-    return env.cppflags
 
 def CFLAGS():
     return env.cflags
@@ -175,55 +174,35 @@ def qtDIR():
 
 # Binutils Variables
 
-def existBinary(bin):
-    # determine if path has binary
-    path = os.environ['PATH'].split(':')
-    for directory in path:
-        if os.path.exists(os.path.join(directory, bin)):
-            return True
-    return False
-
-def getBinutilsInfo(util):
-    cross_build_name = '%s-%s' % (HOST(), util)
-    if not existBinary(cross_build_name):
-        if not existBinary(util):
-            raise BinutilsError(_('Util %s cannot be found') % util)
-        else:
-            ctx.ui.debug(_('Warning: %s does not exist, using plain name %s') \
-                     % (cross_build_name, util))
-            return util
-    else:
-        return cross_build_name
-
 def AR():
-    return getBinutilsInfo('ar')
+    return config.values.build.ar
 
 def AS():
-    return getBinutilsInfo('as')
+    return config.values.build.assembler
 
 def CC():
-    return getBinutilsInfo('gcc')
+    return config.values.build.cc
 
 def CXX():
-    return getBinutilsInfo('g++')
+    return config.values.build.cxx
 
 def LD():
-    return getBinutilsInfo('ld')
+    return config.values.build.ld
 
 def NM():
-    return getBinutilsInfo('nm')
+    return config.values.build.nm
 
 def RANLIB():
-    return getBinutilsInfo('ranlib')
+    return config.values.build.ranlib
 
 def OBJDUMP():
-    return getBinutilsInfo('objdump')
+    return config.values.build.objdump
 
 def OBJCOPY():
-    return getBinutilsInfo('objcopy')
+    return config.values.build.objcopy
 
 def F77():
-    return getBinutilsInfo('g77')
+    return config.values.build.f77
 
 def GCJ():
-    return getBinutilsInfo('gcj')
+    return config.values.build.gcj

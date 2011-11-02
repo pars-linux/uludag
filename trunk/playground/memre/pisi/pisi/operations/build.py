@@ -207,7 +207,12 @@ class Builder:
         self.set_spec_file(specuri)
 
         if specuri.is_remote_file():
-            self.specdir = self.fetch_files()
+            self.specdiruri = os.path.dirname(self.specuri.get_uri())
+            pkgname = os.path.basename(self.specdiruri)
+            self.specdir = util.join_path(ctx.config.tmp_dir(), pkgname)
+
+            self.fetch_actionsfile()
+            self.fetch_translationsfile()
         else:
             self.specdir = os.path.dirname(self.specuri.get_uri())
 
@@ -323,13 +328,17 @@ class Builder:
         ctx.ui.status(_("Building source package: %s")
                       % self.spec.source.name)
 
+        self.check_build_dependencies()
+
+        if self.specuri.is_remote_file():
+            self.fetch_files()
+
         self.compile_comar_script()
 
         # check if all patch files exists, if there are missing no need
         # to unpack!
         self.check_patches()
 
-        self.check_build_dependencies()
         self.fetch_component()
         self.fetch_source_archives()
 
@@ -401,12 +410,14 @@ class Builder:
         # First check icecream, if not found use ccache
         # TODO: Add support for using both of them
         if ctx.config.values.build.buildhelper == "icecream":
-            if os.path.exists("/opt/icecream/bin/gcc"):
+            if os.path.exists("/opt/icecream/bin/%s" % ctx.config.values.build.cc):
                 self.has_icecream = True
                 os.environ["PATH"] = "/opt/icecream/bin:%(PATH)s" % os.environ
+            else:
+                ctx.ui.warning(_("Specified compiler is not supported by icecream, it will be disabled."))
 
         elif ctx.config.values.build.buildhelper == "ccache":
-            if os.path.exists("/usr/lib/ccache/bin/gcc"):
+            if os.path.exists("/usr/lib/ccache/bin/%s" % ctx.config.values.build.cc):
                 self.has_ccache = True
 
                 os.environ["PATH"] = "/usr/lib/ccache/bin:%(PATH)s" \
@@ -414,35 +425,27 @@ class Builder:
                 # Force ccache to use /root/.ccache instead of $HOME/.ccache
                 # as $HOME can be modified through actions.py
                 os.environ["CCACHE_DIR"] = "/root/.ccache"
+            else:
+                ctx.ui.warning(_("Specified compiler is not supported by ccache, it will be disabled."))
 
     def fetch_files(self):
-        self.specdiruri = os.path.dirname(self.specuri.get_uri())
-        pkgname = os.path.basename(self.specdiruri)
-        self.destdir = util.join_path(ctx.config.tmp_dir(), pkgname)
-        #self.location = os.path.dirname(self.url.uri)
-
-        self.fetch_actionsfile()
-        self.check_build_dependencies()
-        self.fetch_translationsfile()
         self.fetch_patches()
         self.fetch_comarfiles()
         self.fetch_additionalFiles()
 
-        return self.destdir
-
     def fetch_pspecfile(self):
         pspecuri = util.join_path(self.specdiruri, ctx.const.pspec_file)
-        self.download(pspecuri, self.destdir)
+        self.download(pspecuri, self.specdir)
 
     def fetch_actionsfile(self):
         actionsuri = util.join_path(self.specdiruri, ctx.const.actions_file)
-        self.download(actionsuri, self.destdir)
+        self.download(actionsuri, self.specdir)
 
     def fetch_translationsfile(self):
         translationsuri = util.join_path(self.specdiruri,
                                          ctx.const.translations_file)
         try:
-            self.download(translationsuri, self.destdir)
+            self.download(translationsuri, self.specdir)
         except pisi.fetcher.FetchError:
             # translations.xml is not mandatory for PiSi
             pass
@@ -453,7 +456,7 @@ class Builder:
             patchuri = util.join_path(self.specdiruri,
                                       ctx.const.files_dir,
                                       patch.filename)
-            self.download(patchuri, util.join_path(self.destdir,
+            self.download(patchuri, util.join_path(self.specdir,
                                                    ctx.const.files_dir,
                                                    dir_name))
 
@@ -462,7 +465,7 @@ class Builder:
             for pcomar in package.providesComar:
                 comaruri = util.join_path(self.specdiruri,
                                 ctx.const.comar_dir, pcomar.script)
-                self.download(comaruri, util.join_path(self.destdir,
+                self.download(comaruri, util.join_path(self.specdir,
                                                        ctx.const.comar_dir))
 
     def fetch_additionalFiles(self):
@@ -472,7 +475,7 @@ class Builder:
                 dir_name = os.path.dirname(afile.filename)
                 afileuri = util.join_path(self.specdiruri,
                                 ctx.const.files_dir, dir_name, file_name)
-                self.download(afileuri, util.join_path(self.destdir,
+                self.download(afileuri, util.join_path(self.specdir,
                                                        ctx.const.files_dir,
                                                        dir_name))
 
@@ -515,22 +518,18 @@ class Builder:
         self.sourceArchives.fetch()
 
     def unpack_source_archives(self):
-        ctx.ui.action(_("Unpacking archive(s)..."))
-        work_dir = self.pkg_work_dir()
-        self.sourceArchives.unpack(work_dir)
+        # Remove the old work directory if exists
+        util.clean_dir(self.pkg_work_dir())
 
-        sb2_dir = "%s/.scratchbox2" % work_dir
-        if not os.access(sb2_dir, os.O_RDONLY):
-            try:
-                os.symlink("/root/.scratchbox2", sb2_dir)
-            except:
-                print "W: unable to link /root/.scratchbox2 -> %s/.scratchbox2" % work_dir
+        ctx.ui.action(_("Unpacking archive(s)..."))
+        self.sourceArchives.unpack(self.pkg_work_dir())
+
         # Grab AdditionalFiles
         self.copy_additional_source_files()
 
         # apply the patches and prepare a source directory for build.
         if self.apply_patches():
-            ctx.ui.info(_(" unpacked (%s)") % work_dir)
+            ctx.ui.info(_(" unpacked (%s)") % self.pkg_work_dir())
             self.set_state("unpack")
 
     def run_setup_action(self):
@@ -930,7 +929,6 @@ class Builder:
     def gen_files_xml(self, package):
         """Generates files.xml using the path definitions in specfile and
         the files produced by the build system."""
-        files = pisi.files.Files()
 
         if package.debug_package:
             install_dir = self.pkg_debug_dir()
@@ -946,6 +944,7 @@ class Builder:
         # FIXME: material collisions after expanding globs could be
         # reported as errors
 
+        # Use a dict to avoid duplicate entries in files.xml.
         d = {}
 
         def add_path(path):
@@ -965,9 +964,11 @@ class Builder:
                     st = os.stat(fpath)
                 else:
                     st = os.lstat(fpath)
+
                 d[frpath] = pisi.files.FileInfo(path=frpath, type=ftype, permanent=permanent,
                                      size=fsize, hash=fhash, uid=str(st.st_uid), gid=str(st.st_gid),
                                      mode=oct(stat.S_IMODE(st.st_mode)))
+
                 if stat.S_IMODE(st.st_mode) & stat.S_ISUID:
                     ctx.ui.warning(_("/%s has suid bit set") % frpath)
 
@@ -976,7 +977,8 @@ class Builder:
             for path in glob.glob(wildcard_path):
                 add_path(path)
 
-        for (p, fileinfo) in d.iteritems():
+        files = pisi.files.Files()
+        for fileinfo in d.itervalues():
             files.append(fileinfo)
 
         files_xml_path = util.join_path(self.pkg_dir(), ctx.const.files_xml)
@@ -1261,6 +1263,10 @@ order = {"none": 0,
 
 def __buildState_fetch(pb):
     # fetch is the first state to run.
+
+    if pb.specuri.is_remote_file():
+        pb.fetch_files()
+
     pb.check_patches()
     pb.fetch_source_archives()
 
@@ -1309,14 +1315,14 @@ def build_until(pspec, state):
     else:
         pb = Builder.from_name(pspec)
 
-    pb.compile_comar_script()
-
     if state == "fetch":
         __buildState_fetch(pb)
         return
 
     # from now on build dependencies are needed
     pb.check_build_dependencies()
+
+    pb.compile_comar_script()
 
     if state == "package":
         __buildState_buildpackages(pb)

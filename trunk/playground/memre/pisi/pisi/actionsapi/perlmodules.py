@@ -44,9 +44,9 @@ if crosscompiling:
         # so we must use native perl for now,
         # still working on a patch to fix it.
         #
-        # perl_cmd = 'sb2 %s/usr/bin/perl' % get.sysroot() # perl_cmd
+        perl_cmd = 'sb2 %s/usr/bin/perl' % get.sysroot()
         # perl_cmd = 'sb2 %s' % perl_cmd
-        # make_cmd = 'sb2 %s' % make_cmd
+        make_cmd = 'sb2 %s' % make_cmd
 else:
     ctx.ui.info(_("native compiling"))
 

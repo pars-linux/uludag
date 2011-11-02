@@ -541,6 +541,9 @@ def do_patch(sourceDir, patchFile, level=0, name=None, reverse=False):
         if out is None and err is None:
             # Which means stderr and stdout directed so they are None
             raise Error(_("ERROR: patch (%s) failed") % (patchFile))
+        elif ret == 127:
+            # 127 means that shell can't find the given program.
+            raise Error(_("ERROR: %s is not installed on your system.") % "patch")
         else:
             raise Error(_("ERROR: patch (%s) failed: %s") % (patchFile, out))
 
@@ -549,9 +552,7 @@ def do_patch(sourceDir, patchFile, level=0, name=None, reverse=False):
 def strip_file(filepath, fileinfo, outpath):
     """Strip an elf file from debug symbols."""
     def run_strip(f, flags=""):
-        strip_cmd = "strip" if not ctx.config.values.build.crosscompiling else "%s-strip" % ctx.config.values.build.host
-        p = os.popen("%s %s %s" %(strip_cmd, flags, f))
-
+        p = os.popen("%s %s %s" %(ctx.config.values.build.strip, flags, f))
         ret = p.close()
         if ret:
             ctx.ui.warning(_("strip command failed for file '%s'!") % f)
@@ -565,13 +566,13 @@ def strip_file(filepath, fileinfo, outpath):
 
     def save_elf_debug(f, o):
         """copy debug info into file.debug file"""
-        p = os.popen("objcopy --only-keep-debug %s %s%s" % (f, o, ctx.const.debug_file_suffix))
+        p = os.popen("%s --only-keep-debug %s %s%s" % (ctx.config.values.build.objcopy, f, o, ctx.const.debug_file_suffix))
         ret = p.close()
         if ret:
             ctx.ui.warning(_("objcopy (keep-debug) command failed for file '%s'!") % f)
 
         """mark binary/shared objects to use file.debug"""
-        p = os.popen("objcopy --add-gnu-debuglink=%s%s %s" % (o, ctx.const.debug_file_suffix, f))
+        p = os.popen("%s --add-gnu-debuglink=%s%s %s" % (ctx.config.values.build.objcopy, o, ctx.const.debug_file_suffix, f))
         ret = p.close()
         if ret:
             ctx.ui.warning(_("objcopy (add-debuglink) command failed for file '%s'!") % f)

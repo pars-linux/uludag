@@ -178,7 +178,11 @@
                 <value>i686</value>
                 <value>x86_64</value>
                 <value>armv7l</value>
-                <value>armv5t</value>
+                <!--
+                <value>cortex-a8</value> => armv7l based, neon
+                <value>cortex-a9</value> => armv7l based, neon, multicore
+                <value>cortex-a9-tegra</value> => armv7l based, no neon unit, multicore
+                -->
             </choice>
         </element>
     </define>
@@ -514,6 +518,7 @@
                 <value>Tinker</value>
                 <value>UCAR-Unidata</value>
                 <value>UCL</value>
+                <value>UFL</value>
                 <value>VGBA</value>
                 <value>VIGRA</value>
                 <value>VOSTROM</value>
@@ -1171,6 +1176,7 @@
                 <value>locale:ht</value>
                 <value>locale:hu</value>
                 <value>locale:hy</value>
+                <value>locale:ia</value>
                 <value>locale:id</value>
                 <value>locale:ig</value>
                 <value>locale:ik</value>

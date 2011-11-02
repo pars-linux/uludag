@@ -161,7 +161,7 @@ def install(parameters = '', argument = 'install', no_sb2=False):
                            }
 
     if crosscompiling and not no_sb2:
-        cmd = "sb2 %s" % cmd
+        cmd = "sb2 -e %s" % cmd
 
     if system(cmd):
         raise InstallError(_('Install failed.'))

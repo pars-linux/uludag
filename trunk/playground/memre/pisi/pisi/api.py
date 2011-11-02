@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2010, TUBITAK/UEKAE
+# Copyright (C) 2005-2011, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -529,11 +529,16 @@ def delete_cache():
     """
     Deletes cached packages, cached archives, build dirs, db caches
     """
+    ctx.ui.info(_("Cleaning package cache %s...") % ctx.config.cached_packages_dir())
     pisi.util.clean_dir(ctx.config.cached_packages_dir())
+    ctx.ui.info(_("Cleaning source archive cache %s...") % ctx.config.archives_dir())
     pisi.util.clean_dir(ctx.config.archives_dir())
+    ctx.ui.info(_("Cleaning temporary directory %s...") % ctx.config.tmp_dir())
     pisi.util.clean_dir(ctx.config.tmp_dir())
     for cache in filter(lambda x: x.endswith(".cache"), os.listdir(ctx.config.cache_root_dir())):
-        os.unlink(pisi.util.join_path(ctx.config.cache_root_dir(), cache))
+        cache_file = pisi.util.join_path(ctx.config.cache_root_dir(), cache)
+        ctx.ui.info(_("Removing cache file %s...") % cache_file)
+        os.unlink(cache_file)
 
 @locked
 def snapshot():
