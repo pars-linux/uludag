@@ -20,7 +20,7 @@ class Exception(pisi.Exception):
 
 import pisi.context as ctx
 
-__all__ = [ 'variables' ]
+# __all__ = [ 'variables' ]
 
 def error(msg):
     if ctx.config.get_option('ignore_action_errors'):

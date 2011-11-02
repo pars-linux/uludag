@@ -86,6 +86,9 @@
                 <ref name="Description"/>
             </zeroOrMore>
             <optional>
+                <ref name="BuildFlags"/>
+            </optional>
+            <optional>
                 <ref name="BuildType"/>
             </optional>
             <optional>
@@ -172,9 +175,10 @@
     <define name="ExcludeArch">
         <element name="ExcludeArch">
             <choice>
-                <value>i?86</value>
+                <value>i686</value>
                 <value>x86_64</value>
-                <value>arm.*</value>
+                <value>armv7l</value>
+                <value>armv5t</value>
             </choice>
         </element>
     </define>
@@ -211,6 +215,7 @@
                 <value>ATOK</value>
                 <value>ATT</value>
                 <value>AURA</value>
+                <value>AVASYSPL</value>
                 <value>Adaptec</value>
                 <value>Adobe</value>
                 <value>Adobe-SourceCode</value>
@@ -255,6 +260,7 @@
                 <value>CCPL-Attribution-ShareAlike-2.5</value>
                 <value>CCPL-Attribution-ShareAlike-3.0</value>
                 <value>CCPL-Attribution-ShareAlike-NonCommercial-2.5</value>
+                <value>CCPL-Attribution-ShareAlike-NonCommercial-3.0</value>
                 <value>CCPL-ShareAlike-1.0</value>
                 <value>CDDL</value>
                 <value>CDDL-Schily</value>
@@ -305,6 +311,7 @@
                 <value>F-PROT</value>
                 <value>FDL-1.1</value>
                 <value>FDL-1.2</value>
+                <value>FDL-1.3</value>
                 <value>FESTIVAL</value>
                 <value>FIPL-1.0</value>
                 <value>FLEX</value>
@@ -534,6 +541,7 @@
                 <value>ZLIB</value>
                 <value>ZORK</value>
                 <value>ZPL</value>
+                <value>ZPLv2.0</value>
                 <value>ZSH</value>
                 <value>ZendFramework-1.1</value>
                 <value>aczoom</value>
@@ -1330,6 +1338,7 @@
                         <value>bzip2</value>
                         <value>lzma</value>
                         <value>xz</value>
+                        <value>7z</value>
                         <value>binary</value>
                     </choice>
                 </attribute>
@@ -1338,6 +1347,25 @@
                 <attribute name="target"/>
             </optional>
         </group>
+    </define>
+
+    <!-- BuildFlags -->
+    <define name="BuildFlags">
+        <element name="BuildFlags">
+            <oneOrMore>
+                <ref name="Flag"/>
+            </oneOrMore>
+        </element>
+    </define>
+
+    <!-- Flag -->
+    <define name="Flag">
+        <element name="Flag">
+            <choice>
+                <value>noDebug</value>
+                <value>noDelta</value>
+            </choice>
+        </element>
     </define>
 
     <!-- BuildType -->

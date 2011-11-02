@@ -1,3 +1,241 @@
+2011-05-31 Onur Küçük <onur@pardus.org.tr>
+	* actionsapi: Fix typo in shelltools documentation
+
+2011-05-30 Fatih Aşıcı <fatih@pardus.org.tr>
+	* l10n: Update messages
+
+2011-05-30 Fatih Aşıcı <fatih@pardus.org.tr>
+	* l10n/it: Do not break the line in translation
+
+2011-05-27 Gökçen Eraslan <gokcen@pardus.org.tr>
+	* index: Do not traverse hidden directories during index.
+
+2011-05-24 Ozan Çağlayan <ozan@pardus.org.tr>
+	* patches: Drop useless hunk
+
+2011-05-24 Ozan Çağlayan <ozan@pardus.org.tr>
+	* build: Put source additional files before applying patches.
+
+	This way, we can apply a patch on top of an additional
+	source file.
+
+2011-05-23 Ozan Çağlayan <ozan@pardus.org.tr>
+	* rng: Add AVASYSPL license for Epson scanner stuff
+
+2011-05-23 Gökçen Eraslan <gokcen@pardus.org.tr>
+	* index: Make sure that pool is safely closed and joined.
+
+	Make sure we call close and join methods of Pool object 
+	properly in any case. This fixes hundreds of processes
+	appeard in buildfarm.
+
+2011-05-13 Gökçen Eraslan <gokcen@pardus.org.tr>
+	* index: Parallelize indexing procedure using Python's multiprocessing module.
+
+	Create a pool of worker processes to make indexing in a parallel fashion.
+	Normally, all metadata parsing and SHA1 calculation process are done
+	sequentially per package.
+	This commits distributes all package-based parsing, SHA1 calculation process
+	to worker processes to make it faster in multiprocessor/multicore systems.
+
+2011-05-11 Ozan Çağlayan <ozan@pardus.org.tr>
+	* scripts/pisi-sandbox: Update dates, versions
+
+2011-05-07 Gökçen Eraslan <gokcen@pardus.org.tr>
+	* rng: Add ZPLv2.0 license to RNG.
+
+2011-04-27 Mehmet Emre Atasever <memre@pardus.org.tr>
+	* revert <ExcludeArch> regex support, add armv7l to the <ExcludeArch> values
+
+2011-04-27 Mehmet Emre Atasever <memre@pardus.org.tr>
+	* pisi should manage <ExcludeArch> tags with regex
+
+2011-04-12 Ozan Çağlayan <ozan@pardus.org.tr>
+	* l10n: Update messages
+
+2011-04-12 Ozan Çağlayan <ozan@pardus.org.tr>
+	* operations/build: Fix CCache name to reflect upstream name ccache (pb#17713)
+
+	Use ccache instead of CCache which doesn't reflect upstream name
+
+	Fixes the bug reported at http://bugs.pardus.org.tr/17713.
+
+2011-04-12 Ozan Çağlayan <ozan@pardus.org.tr>
+	* cli/listavailable: Fix inconsistent coloring (pb#17716)
+
+	Simplify code to fix the wrong coloring behaviour of pisi list-available
+	command.
+
+	Reported by: Anıl Özbek
+
+	See http://bugs.pardus.org.tr/17716.
+
+2011-04-05 Fatih Aşıcı <fatih@pardus.org.tr>
+	* l10n: Update messages
+
+2011-04-05 Fatih Aşıcı <fatih@pardus.org.tr>
+	* cli/addrepo: Make name and URI parameters mandatory
+
+	Previously it was adding a default repo if those parameters were not
+	given.
+
+	Fixes the bug reported at http://bugs.pardus.org.tr/15196.
+
+2011-04-04 Fatih Aşıcı <fatih@pardus.org.tr>
+	* l10n: Update messages
+
+2011-04-04 Fatih Aşıcı <fatih@pardus.org.tr>
+	* cli/info: Format the info output of source packages
+
+	Thanks to Anıl Özbek for his patch.
+
+	Fixes the bug reported at http://bugs.pardus.org.tr/17595.
+
+2011-04-04 Fatih Aşıcı <fatih@pardus.org.tr>
+	* specfile: Show licenses in package info
+
+	A modified version of the patch provided by Anıl Özbek.
+
+	Fixes the bug reported at http://bugs.pardus.org.tr/17596.
+
+2011-04-04 Fatih Aşıcı <fatih@pardus.org.tr>
+	* delta: Reduce code duplication
+
+2011-04-03 Fatih Aşıcı <fatih@pardus.org.tr>
+	* l10n: Update messages
+
+2011-04-03 Fatih Aşıcı <fatih@pardus.org.tr>
+	* delta: Change the way in previous commit
+
+	No need to use an exception. Comparing the size of changed files and the
+	new files is enough.
+
+2011-04-03 Fatih Aşıcı <fatih@pardus.org.tr>
+	* delta: Do not create delta if all files are different
+
+2011-04-03 Fatih Aşıcı <fatih@pardus.org.tr>
+	* delta: Minor refactoring in find_delta
+
+	Use better variable names and reduce lambda usage.
+
+2011-03-31 Fatih Aşıcı <fatih@pardus.org.tr>
+	* build: Check max_count value
+
+2011-03-31 Fatih Aşıcı <fatih@pardus.org.tr>
+	* archive: Fix failure when a directory is changed with a symlink
+
+2011-03-30 Fatih Aşıcı <fatih@pardus.org.tr>
+	* build: Fix copy/paste error
+
+2011-03-29 Fatih Aşıcı <fatih@pardus.org.tr>
+	* rng: Add FDL-1.3 to the list of licenses
+
+	Fixes the bug reported at http://bugs.pardus.org.tr/17528.
+
+2011-03-26 Gökçen Eraslan <gokcen@pardus.org.tr>
+	* index: Fix usage of remove_suffix.
+
+2011-03-25 Fatih Aşıcı <fatih@pardus.org.tr>
+	* pisi 2.4_alpha4
+
+	This is the forth alpha for the upcoming 2.4.x releases. This release
+	introduces two features as well as bug fixes and translation updates.
+
+	The first feature which is added in this release is an API addition for
+	use in buildfarm. With a new method, it is now possible to determine
+	the old packages that will be used to create delta packages from.
+
+	"Build flags" is another feature introduced in this release. Build flags
+	can be used to enable/disable some operations/packages at build time.
+	Currently, two flags are accepted: noDebug and noDelta.
+
+2011-03-25 Fatih Aşıcı <fatih@pardus.org.tr>
+	* l10n: Update Turkish translations
+
+2011-03-25 Fatih Aşıcı <fatih@pardus.org.tr>
+	* dtd,rng: Accept BuildFlags tag inside Package tags
+
+2011-03-25 Fatih Aşıcı <fatih@pardus.org.tr>
+	* build,specfile: Implement support for build flags
+
+	Currently, it supports two flags: noDebug, noDelta.
+
+	The usage is simple:
+
+	    <Package>
+	        ...
+	        <BuildFlags>
+	            <Flag>noDebug</Flag>
+	            <Flag>noDelta</Flag>
+	        </BuildFlags>
+	        ...
+	    </Package>
+
+	noDebug flag is used to disable building of a debug package for this
+	package tag.
+
+	noDelta flag is used to disable building of delta packages
+	automatically. It doesn't change the behaviour of "pisi delta" command.
+
+2011-03-23 Fatih Aşıcı <fatih@pardus.org.tr>
+	* index: Ignore debug packages of obsoleted packages
+
+2011-03-23 Fatih Aşıcı <fatih@pardus.org.tr>
+	* l10n: Update messages
+
+2011-03-23 Fatih Aşıcı <fatih@pardus.org.tr>
+	* build: Add a method to determine delta packages to be created
+
+	This will be used by buildfarm. It accepts release numbers to create
+	delta packages for stable distribution releases. If the release number
+	is not given, it searches the binary package dirs for old packages and
+	creates delta packages. max_count can be specified to limit numbers of
+	delta packages.
+
+	It is possible to override search paths via search_paths parameter.
+
+	release and max_count parameters cannot be used at the same time.
+
+	This commit also removes the max_delta_count option from config file
+	since it is useless and confusing.
+
+2011-02-28 H. İbrahim Güngör <ibrahim@pardus.org.tr>
+	* l10n: Revert the latest Italian translation which breaks pisi.
+
+2011-02-27 Fatih Aşıcı <fatih@pardus.org.tr>
+	* build: Fail if a path does not start with a slash
+
+2011-02-27 Fatih Aşıcı <fatih@pardus.org.tr>
+	* build: Do not allow duplicate path values in spec file
+
+2011-02-27 Fatih Aşıcı <fatih@pardus.org.tr>
+	* l10n: Update messages
+
+2011-02-23 Fatih Aşıcı <fatih@pardus.org.tr>
+	* installdb: Parse directory names correctly
+
+	parse_package_name cannot parse directory names like "zlib-32bit".
+	Implement a function to split names.
+
+	Bumped cache version to force update.
+
+2011-02-22 Fatih Aşıcı <fatih@pardus.org.tr>
+	* build: Reload actions script for each build type
+
+	So we can use get.buildTYPE() outside the functions in actions.py.
+
+2011-02-21 Fatih Aşıcı <fatih@pardus.org.tr>
+	* pisi 2.4_alpha3
+
+	This is the third alpha for the upcoming 2.4.x releases. This release
+	introduces a new feature for building source packages with different
+	configurations using the same actions.py. This is achieved with
+	BuildType tags specified between Package tags.
+
+	It is also possible to write build dependencies inside Package tags with
+	this release. This is needed since additional build dependencies could
+	be needed for different build types.
+
 2011-02-20 Fatih Aşıcı <fatih@pardus.org.tr>
 	* build,config: Add a new config option to ignore build types
 

@@ -15,6 +15,10 @@ import os
 # Pisi-Core Modules
 import pisi.context as ctx
 
+import gettext
+__trans = gettext.translation('pisi', fallback=True)
+_ = __trans.ugettext
+
 # Set individual information, that are generally needed for ActionsAPI
 
 def exportFlags():
@@ -22,7 +26,8 @@ def exportFlags():
 
     # first reset environ
     os.environ.clear()
-    os.environ.update(ctx.config.environ)
+    env = ctx.config.environ
+    os.environ.update(env)
 
     # Build systems depend on these environment variables. That is why
     # we export them instead of using as (instance) variables.
@@ -63,6 +68,7 @@ def exportFlags():
         os.environ['PYTHON_PREFIX'] = "%s/usr" % sysroot
         os.environ['PYTHONPATH']    = "%s/usr/lib/python2.6" % sysroot
         os.environ['PYTHON']        = "%s/usr/bin/python" % sysroot
+        os.environ['PYTHON_CONFIG'] = "%s/usr/bin/python2.6-config" % sysroot
         # FIXME: sometimes perl fails with qemu.
         # os.environ['PERL']      = "%s/usr/bin/perl" % sysroot
         os.environ['SBOX_TARGET_ROOT'] = sysroot
@@ -76,20 +82,24 @@ def exportFlags():
         os.environ['CXXFLAGS'] += " -I%s/usr/include" % sysroot
         os.environ['LDFLAGS']  += " -L%(sysroot)s/lib -Wl,-rpath-link,%(sysroot)s/lib \
                                     -L%(sysroot)s/usr/lib -Wl,-rpath-link,%(sysroot)s/usr/lib \
+                                    -L%(sysroot)s/usr/qt/4/lib -Wl,-rpath-link,%(sysroot)s/usr/qt/4/lib \
+                                    -L%(sysroot)s/usr/qt/3/lib -Wl,-rpath-link,%(sysroot)s/usr/qt/3/lib \
                                     " % { 'sysroot' : sysroot, }
 
-        # os.environ['PKG_CONFIG_SYSROOT_DIR']  = sysroot
-        os.environ['PKG_CONFIG_PATH']  = "%s/usr/lib/pkgconfig:%s/usr/qt/4/lib/pkgconfig" % (sysroot, sysroot)
-        os.environ['PKGCONFIG']        = "/opt/toolchain/armv7l/bin/pkg-config"
+        os.environ['PKG_CONFIG_SYSROOT_DIR']  = sysroot
+        os.environ['PKG_CONFIG_DISABLE_UNINSTALLED']  = "yes"
+        os.environ['PKG_CONFIG_ALLOW_SYSTEM_CFLAGS']  = "yes"
+        os.environ['PKG_CONFIG_ALLOW_SYSTEM_LIBS']    = "yes"
+        os.environ['PKG_CONFIG_LIBDIR'] = "%s/usr/lib/pkgconfig" % sysroot
+        # os.environ['PKG_CONFIG_PATH']  = "/usr/lib/pkgconfig:/usr/qt/4/lib/pkgconfig:/usr/qt/3/lib/pkgconfig"
+        os.environ['PKG_CONFIG_PATH']  = "%s/usr/lib/pkgconfig:%s/usr/share/pkgconfig:%s/usr/qt/4/lib/pkgconfig:%s/usr/qt/3/lib/pkgconfig" % (sysroot, sysroot, sysroot, sysroot)
 
-        os.environ['PATH'] = "%(path)s:%(sysroot)s/bin:%(sysroot)s/sbin:%(sysroot)s/usr/bin:%(sysroot)s/usr/sbin" % {\
+        os.environ['PATH'] = "%(path)s:%(sysroot)s/bin:%(sysroot)s/sbin:%(sysroot)s/usr/bin:%(sysroot)s/usr/sbin:%(sysroot)s/usr/qt/3/bin:%(sysroot)s/usr/qt/4/bin" % {\
                 'sysroot' : sysroot,
                 'path'    : os.environ['PATH'] }
-
-    if crosscompiling:
-        print " ==> cross compiling <== "
+        ctx.ui.info(_("PISI> cross compiling"))
     else:
-        print " ==> native compiling <== "
+        ctx.ui.info(_("PISI> native compiling"))
 
 class Env(object):
     '''General environment variables used in actions API'''
@@ -100,6 +110,7 @@ class Env(object):
         self.__vars = {
             'pkg_dir'     : 'PKG_DIR',
             'work_dir'    : 'WORK_DIR',
+            'work_dir'    : 'HOME',
             'install_dir' : 'INSTALL_DIR',
             'build_type'  : 'PISI_BUILD_TYPE',
 

@@ -25,7 +25,6 @@ import pisi.actionsapi
 import pisi.actionsapi.get as get
 from pisi.actionsapi.shelltools import system, can_access_file, unlink, isEmpty
 from pisi.actionsapi.pisitools import dodoc
-import pisi.actionsapi.variables as variables
 
 crosscompiling = ctx.config.values.build.crosscompiling
 sysroot = get.sysroot()
@@ -33,8 +32,6 @@ python_cmd = "python"
 
 if crosscompiling:
     python_cmd = "sb2 %s/usr/bin/python" % sysroot
-
-variables.exportFlags()
 
 class ConfigureError(pisi.actionsapi.Error):
     def __init__(self, value=''):

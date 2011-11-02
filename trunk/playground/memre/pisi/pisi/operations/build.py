@@ -242,6 +242,9 @@ class Builder:
 
         self.delta_map = {}
 
+        self.has_ccache = False
+        self.has_icecream = False
+
     def set_spec_file(self, specuri):
         if not specuri.is_remote_file():
             # FIXME: doesn't work for file://
@@ -311,15 +314,11 @@ class Builder:
     def build(self):
         """Build the package in one shot."""
 
-        # excludeArch should accept regex.
-        # eg. <exludeArch>arm*</exludeArch> armv7l, armv5te matches
-        #     <exludeArch>i.86</exludeArch> i586, i686 matches
         architecture = ctx.config.values.general.architecture
-        for arch in self.spec.source.excludeArch:
-            if re.match(arch, architecture):
-                raise ExcludedArchitectureException(
-                        _("pspec.xml avoids this package from building for '%s'")
-                        % architecture)
+        if architecture in self.spec.source.excludeArch:
+            raise ExcludedArchitectureException(
+                    _("pspec.xml avoids this package from building for '%s'")
+                    % architecture)
 
         ctx.ui.status(_("Building source package: %s")
                       % self.spec.source.name)
@@ -337,6 +336,12 @@ class Builder:
         for build_type in self.build_types:
             self.set_build_type(build_type)
             self.unpack_source_archives()
+
+            if self.has_ccache:
+                ctx.ui.info(_("ccache detected..."))
+            if self.has_icecream:
+                ctx.ui.info(_("IceCream detected. Make sure your daemon "
+                              "is up and running..."))
 
             self.run_setup_action()
             self.run_build_action()
@@ -384,6 +389,7 @@ class Builder:
 
         env = {"PKG_DIR": self.pkg_dir(),
                "WORK_DIR": self.pkg_work_dir(),
+               "LC_ALL" : 'C',
                "HOME": self.pkg_work_dir(),
                "INSTALL_DIR": self.pkg_install_dir(),
                "PISI_BUILD_TYPE": self.build_type,
@@ -392,23 +398,22 @@ class Builder:
                "SRC_RELEASE": self.spec.getSourceRelease()}
         os.environ.update(env)
 
-        # First check icecream, if not found use ccache, no need to use both
-        # together (according to kde-wiki it cause performance loss)
+        # First check icecream, if not found use ccache
+        # TODO: Add support for using both of them
         if ctx.config.values.build.buildhelper == "icecream":
             if os.path.exists("/opt/icecream/bin/gcc"):
-                # Add icecream directory for support distributed compiling :)
+                self.has_icecream = True
                 os.environ["PATH"] = "/opt/icecream/bin:%(PATH)s" % os.environ
-                ctx.ui.info(_("IceCream detected. Make sure your daemon "
-                              "is up and running..."))
+
         elif ctx.config.values.build.buildhelper == "ccache":
             if os.path.exists("/usr/lib/ccache/bin/gcc"):
-                # Add ccache directory for support Compiler Cache :)
+                self.has_ccache = True
+
                 os.environ["PATH"] = "/usr/lib/ccache/bin:%(PATH)s" \
                                                                 % os.environ
                 # Force ccache to use /root/.ccache instead of $HOME/.ccache
-                # which can be modified through actions.py
+                # as $HOME can be modified through actions.py
                 os.environ["CCACHE_DIR"] = "/root/.ccache"
-                ctx.ui.info(_("ccache detected..."))
 
     def fetch_files(self):
         self.specdiruri = os.path.dirname(self.specuri.get_uri())
@@ -480,7 +485,6 @@ class Builder:
         if self.spec.source.partOf:
             return
 
-        ctx.ui.info(_('PartOf tag not defined, looking for component'))
         diruri = util.parenturi(self.specuri.get_uri())
         parentdir = util.parenturi(diruri)
         url = util.join_path(parentdir, 'component.xml')
@@ -505,7 +509,6 @@ class Builder:
             path = url
         comp = component.CompatComponent()
         comp.read(path)
-        ctx.ui.info(_('Source is part of %s component') % comp.name)
         self.spec.source.partOf = comp.name
 
     def fetch_source_archives(self):
@@ -522,11 +525,11 @@ class Builder:
                 os.symlink("/root/.scratchbox2", sb2_dir)
             except:
                 print "W: unable to link /root/.scratchbox2 -> %s/.scratchbox2" % work_dir
+        # Grab AdditionalFiles
+        self.copy_additional_source_files()
 
         # apply the patches and prepare a source directory for build.
         if self.apply_patches():
-            # Grab AdditionalFiles
-            self.copy_additional_source_files()
             ctx.ui.info(_(" unpacked (%s)") % work_dir)
             self.set_state("unpack")
 
@@ -731,9 +734,9 @@ class Builder:
                 if ret.violations != []:
                     ctx.ui.error(_("Sandbox violation result:"))
                     for result in ret.violations:
-                        ctx.ui.error("* %s (%s -> %s)" % (result[0],
-                                                          result[1],
-                                                          result[2]))
+                        ctx.ui.error("%s (%s -> %s)" % (result[0],
+                                                        result[1],
+                                                        result[2]))
                     raise Error(_("Sandbox violations!"))
 
                 if ret.code == 1:
@@ -754,12 +757,12 @@ class Builder:
                 path = os.path.normpath(path_info.path)
 
                 if not path.startswith("/"):
-                    raise Error(_("Path must start with a slash: "
-                                  "%s") % path_info.path)
+                    raise Error(_("Source package '%s' defines a relative 'Path' element: "
+                                  "%s") % (self.spec.source.name, path_info.path))
 
                 if path in paths:
-                    raise Error(_("Multiple 'Path' tags specified "
-                                  "for this path: %s") % path_info.path)
+                    raise Error(_("Source package '%s' defines multiple 'Path' tags "
+                                  "for %s") % (self.spec.source.name, path_info.path))
 
                 paths.append(path)
 
@@ -791,8 +794,6 @@ class Builder:
                                util.strlist(extra_names))
                     extra_deps = [dependency.Dependency(package=x) for x in extra_names]
                     build_deps.extend(extra_deps)
-                else:
-                    ctx.ui.info(_('Safety switch: system.devel is already installed'))
             else:
                 ctx.ui.warning(_('Safety switch: the component system.devel cannot be found'))
 
@@ -849,7 +850,7 @@ class Builder:
                                             targetDir=ctx.config.tmp_dir())
                 relativePath = relativePath.rsplit(".%s" % patch.compressionType, 1)[0]
 
-            ctx.ui.action(_("* Applying patch: %s") % patch.filename)
+            ctx.ui.action(_("Applying patch: %s") % patch.filename)
             util.do_patch(self.pkg_src_dir(), patchFile,
                           level=patch.level,
                           name=relativePath,
@@ -1242,7 +1243,7 @@ def build(pspec):
     try:
         pb.build()
     except ActionScriptException, e:
-        ctx.ui.error("Action script error caught.")
+        ctx.ui.error(_("Action script error caught."))
         raise e
     finally:
         if ctx.ui.errors or ctx.ui.warnings:
@@ -1329,7 +1330,7 @@ def build_until(pspec, state):
 
 
 def __build_until(pb, state, last):
-    ctx.ui.info("Last state was %s" % last)
+    ctx.ui.info(_("Last state was '%s'") % last)
 
     if state == "unpack":
         __buildState_unpack(pb, last)
