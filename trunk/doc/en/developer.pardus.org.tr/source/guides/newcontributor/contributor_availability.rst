@@ -67,7 +67,7 @@ Team Leader or Component Supervisor Part
 #. If s/he contributes as a developer, check the svn and bugzilla activity:
     #. In  order to check the developer's SVN activity run the below command::
 
-        svn log  -r {YYYY-MM-DD}:{YYYY-MM-DD}| sed -n '/ozan.caglayan/,/-----$/ p'
+        svn log  -r {YYYY-MM-DD}:{YYYY-MM-DD}| sed -n '/<user name>/,/-----$/ p'
 
     #. The bugzilla activity as a commenter can be controlled with `graph
        reports`_, with changing below fields:
