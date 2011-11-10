@@ -4,8 +4,21 @@
 """
 USAGE: ./get_ack_list.py packs_file awaiting_file Renan
 
+Just copy and paste the contents from the email to a file
+
 pack_file contains a list that has the "Source" key
+    Ex: Source: kaptan (·
+        http://packages.pardus.org.tr/info/2011/testing/source/kaptan.html )
+        Version: 5.0.5
+        Release: 89 (Fix Package Manager update interval. (Pa...)
+        Owner: Renan Çakırerk
+
 awaiting_file contains a list of package names and statuses
+    Ex: U  kaptan-5.0.5-89-p11-x86_64.pisi
+        U  kdebase-workspace-4.6.5-174-p11-x86_64.pisi
+        U  kdebase-workspace-devel-4.6.5-174-p11-x86_64.pisi
+
+Ten minutes coding challange wohoo!
 
 """
 import sys
