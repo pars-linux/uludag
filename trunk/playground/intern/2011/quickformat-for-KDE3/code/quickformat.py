@@ -224,6 +224,7 @@ class QuickFormat(QtGui.QWidget):
             sys.exit()
         else:
             self.notifier.notify(NO_DEVICE)
+            self.ui.volumeLabel.setText("")
 
     def notify_refreshing_device_list(self):
         if not self.refreshing_devices and not self.formatter.formatting:
