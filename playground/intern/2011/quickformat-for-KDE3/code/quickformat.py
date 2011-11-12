@@ -193,12 +193,20 @@ class QuickFormat(QtGui.QWidget):
     def format_device(self):
         """ Starts the formatting operation """
 
+        # Temporary variable for controlling equality of volume to format
+        volume_before_confirm = self.volume_to_format
+
         # Shows a message for confirm format
         if self.format_confirm_message() == ACCEPT:
-            selected_file_system = FILE_SYSTEMS[str(self.ui.fileSystem.currentText())]
-            selected_label = self.ui.volumeLabel.text()
-            self.formatter.set_volume_to_format(self.volume_to_format, selected_file_system, selected_label)
-            self.formatter.start()
+            if not self.get_volumes():
+                self.no_device_notification()
+            else:
+                # if device removes while messagebox visible, cancel formatting, press "Yes" though
+                if volume_before_confirm == self.volume_to_format:
+                    selected_file_system = FILE_SYSTEMS[str(self.ui.fileSystem.currentText())]
+                    selected_label = self.ui.volumeLabel.text()
+                    self.formatter.set_volume_to_format(self.volume_to_format, selected_file_system, selected_label)
+                    self.formatter.start()
 
     def slot_format_started(self):
         self.set_enabled(False)
