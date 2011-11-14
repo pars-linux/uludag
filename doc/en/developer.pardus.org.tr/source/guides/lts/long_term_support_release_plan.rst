@@ -37,7 +37,7 @@ Long Term Support Policy Details
 Long Term Support Schedule
 ==========================
 
-The release cycle is extended in order to harden functionality and ensure stability.
+Development for the new LTS release cycle takes approximately 1 year, which is twice the time we take for a regular Pardus release, in order to harden functionality and ensure stability.
 
 We extend especially our stabilization phase (beta phase). Because we ship a technology preview 6 months before the final release and during the last 6 months, we deeply review, fix and test the bugs that are reported by customers and other LTS users.
 
