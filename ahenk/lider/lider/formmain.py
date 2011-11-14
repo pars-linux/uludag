@@ -665,9 +665,11 @@ class FormMain(QtGui.QWidget, Ui_Main):
                 command: Command
                 arguments: Arguments
         """
+        print "XMPP message from: %s" % sender, "talk", "debug"
         self.__log("XMPP message from: %s" % sender, "talk", "debug")
 
-        print "talk message current index %d" %self.tabPolicy.currentIndex()
+        print "====================================="
+        print "\n talk message current index %d \n\n" %self.tabPolicy.currentIndex()
 
         #if self.tabPolicy.currentIndex() != 0:
         if self.tabPolicy.currentIndex() != -1:
@@ -797,6 +799,7 @@ class FormMain(QtGui.QWidget, Ui_Main):
             self.treeComputers.setItemSelected(item_alt, True)
 
         widget = self.tabPolicy.currentWidget()
+        widget.showEvent()
         self.__show_widget(widget)
 
         # Show node information
@@ -882,6 +885,7 @@ class FormMain(QtGui.QWidget, Ui_Main):
             self.treeComputers.setItemSelected(item_alt, True)
 
         widget = self.tabPolicy.currentWidget()
+        widget.showEvent()
         self.__show_widget(widget)
 
         # Show node information

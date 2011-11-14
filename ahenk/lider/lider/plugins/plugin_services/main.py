@@ -49,7 +49,7 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         self.start_set = []
         self.stop_set = []
 
-        self.tableWidget.setUpdatesEnabled(True);
+        #self.tableWidget.setUpdatesEnabled(True);
 
     def set_item(self, item):
         """
@@ -62,7 +62,8 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         else:
             self.groupBox.setEnabled(False)
 
-    def showEvent(self, event):
+    #def showEvent(self, event):
+    def showEvent(self):
         """
             Things to do before widget is shown.
         """
@@ -114,8 +115,8 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         """
             Main window calls this method when an XMPP message is received.
         """
-        start_set = []
-        stop_set = []
+        startset = []
+        stopset = []
         print "-----  TALK MESSAGE IS CALLED  -----"
         print command
 
@@ -130,14 +131,14 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
             print services
             for service in services.split(","):
                 print service
-                start_set.append(service)
+                startset.append(service)
 
 
         for services in self.stop_set:
             print services
             for service in services.split(","):
                 print service
-                stop_set.append(service)
+                stopset.append(service)
 
 
         if command == "service.info":
@@ -162,11 +163,11 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
                     item_status.setText("Stopped")
 
 
-                for start in start_set:
+                for start in startset:
                     if start== str(name):
                         item_status.setIcon(wrappers.Icon("flag-green"))
 
-                for stop in stop_set:
+                for stop in stopset:
                     if stop == str(name):
                         item_status.setIcon(wrappers.Icon("flag-red"))
 
@@ -198,7 +199,16 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         item = self.tableWidget.selectedItems()
         item_name = str(item[3].text())
 
+        for x in self.stop_set:
+            print "xxxxxxxxx:"
+            print x
+            if x == item_name:
+                print "equal %s" %x
+                self.stop_set.remove(x)
+
         self.start_set.append(item_name)
+        print self.start_set
+        print self.stop_set
 
         item_status = item[1]
         item_status.setIcon(wrappers.Icon("flag-green"))
@@ -210,7 +220,16 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         item = self.tableWidget.selectedItems()
         item_name = str(item[3].text())
 
+        for x in self.start_set:
+            print "xxxxxxxxx:"
+            print x
+            if x == item_name:
+                print "equal %s" %x
+                self.start_set.remove(x)
+
         self.stop_set.append(item_name)
+        print self.start_set
+        print self.stop_set
 
         item_status = item[1]
         item_status.setIcon(wrappers.Icon("flag-red"))
