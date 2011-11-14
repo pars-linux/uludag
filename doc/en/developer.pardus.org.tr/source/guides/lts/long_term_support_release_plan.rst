@@ -26,7 +26,7 @@ Long Term Support Policy Details
 
 #. During maintenance phase, software packages will not be updated to their new major upstream releases unless it is justified. See `exception process`_ for details.
 #. Repository granularity
-    #. Official Pardus LTS release has limited number of new features in order to be stabilized early. The packages are chosen according to these features and the packages, which we leave out, are allowed for users to optionally install and use from separate repositories.
+    #. In order to provide the highest quality and stability in Official Pardus LTS release, the official repository is limited to a number of carefully chosen packages. Users can optionally install and use packages that are not in the official repository by using additional repositories.
     #. Excluding server and network solutions, it is preferred that LTS repository does not contain redundant software packages which implement the same functionality.
 
 #. Addition of new features during the life time of a specific LTS release is limited to some well defined exceptions:
@@ -39,15 +39,15 @@ Long Term Support Schedule
 
 The release cycle is extended in order to harden functionality and ensure stability.
 
-We extend especially our stabilization phase (beta phase). Because we ship a tecnology preview 6 months before the final release and during the last 6 months, we deeply review, fix and test the bugs that are reported by customers and other LTS users.
+We extend especially our stabilization phase (beta phase). Because we ship a technology preview 6 months before the final release and during the last 6 months, we deeply review, fix and test the bugs that are reported by customers and other LTS users.
 
-.. _point LTS release: http://developer.pardus.org.tr/guides/releasing/official_releases/point_release_process.html
+.. _point LTS release: ../../guides/releasing/official_releases/point_release_process.html
 .. _bugzilla: http://bugs.pardus.org.tr/
 .. _issue tracking system: http://tracker.pardus.org.tr/
-.. _expected developer process: http://developer.pardus.org.tr/guides/newcontributor/mentoring_process.html
-.. _exception process: http://developer.pardus.org.tr/guides/releasing/freezes/freeze_exception_process.html
-.. _package update process: http://developer.pardus.org.tr/guides/packaging/package_update_process.html
-.. _package updates: http://developer.pardus.org.tr/guides/packaging/package_update_process.html
-.. _new features: http://developer.pardus.org.tr/guides/newfeature/newfeature_requests.html
-.. _new packages: http://developer.pardus.org.tr/guides/newfeature/new_package_requests.html
+.. _expected developer process: ../../guides/newcontributor/mentoring_process.html
+.. _exception process: ../../guides/releasing/freezes/freeze_exception_process.html
+.. _package update process: ../../guides/packaging/package_update_process.html
+.. _package updates: ../../guides/packaging/package_update_process.html
+.. _new features: ../../guides/newfeature/newfeature_requests.html
+.. _new packages: ../../guides/newfeature/new_package_requests.html
 
