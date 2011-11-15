@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: kdelibs\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-07-08 01:18+0200\n"
-"PO-Revision-Date: 2011-06-16 09:30+0300\n"
+"PO-Revision-Date: 2011-11-15 09:13+0200\n"
 "Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: kde-l10n-3.5 <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -10283,7 +10283,7 @@ msgstr "Bilinmeyen Yazı"
 msgid ""
 "_: QAccel\n"
 "Space"
-msgstr "Boşluk"
+msgstr "Space"
 
 #: kernel/qkeysequence.cpp:94
 msgid ""
@@ -10301,13 +10301,13 @@ msgstr "Tab"
 msgid ""
 "_: QAccel\n"
 "Backtab"
-msgstr "Geritab"
+msgstr "Backtab"
 
 #: kernel/qkeysequence.cpp:97
 msgid ""
 "_: QAccel\n"
 "Backspace"
-msgstr "Sil"
+msgstr "Backspace"
 
 #: kernel/qkeysequence.cpp:98
 msgid ""
@@ -10331,7 +10331,7 @@ msgstr "Ins"
 msgid ""
 "_: QAccel\n"
 "Del"
-msgstr "Sil"
+msgstr "Del"
 
 #: kernel/qkeysequence.cpp:102
 msgid ""
@@ -10451,7 +10451,7 @@ msgstr "Dur"
 msgid ""
 "_: QAccel\n"
 "Refresh"
-msgstr "Tazele"
+msgstr "Yenile"
 
 #: kernel/qkeysequence.cpp:124
 msgid ""
