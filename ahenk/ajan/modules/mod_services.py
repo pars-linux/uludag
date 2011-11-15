@@ -23,7 +23,6 @@ def process(message, options):
     if message.type == "command":
 
         if message.command == "service.info":
-            logging.info("---- service.info command is got ----")
             link = comar.Link()
             args = []
             for package in link.System.Service:
@@ -38,9 +37,6 @@ def process(message, options):
             start_set = []
             for packages in message.policy["serviceStart"]:
 
-                logging.info("~~~ start packages : ")
-                logging.info(packages)
-
                 try:
                     for package in packages.split(","):
                         start_set.append(package)
@@ -48,8 +44,9 @@ def process(message, options):
                     start_set = []
                     break
 
-                logging.info("~~~~ start set ~~~~")
+                logging.info("\n~~~~ start set ~~~~")
                 logging.info(start_set)
+
                 for package in start_set:
                     #try:
                     link = comar.Link()
@@ -62,9 +59,6 @@ def process(message, options):
             stop_set = []
             for packages in message.policy["serviceStop"]:
 
-                logging.info("~~~ stop packages : ")
-                logging.info(packages)
-
                 try:
                     for package in packages.split(","):
                         stop_set.append(package)
@@ -72,8 +66,9 @@ def process(message, options):
                     stop_set = []
                     break
 
-                logging.info("~~~~ stop set ~~~~")
+                logging.info("\n~~~~ stop set ~~~~")
                 logging.info(stop_set)
+
                 for package in stop_set:
                     #try:
                     link = comar.Link()
