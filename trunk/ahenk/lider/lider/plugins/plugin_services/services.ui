@@ -103,7 +103,7 @@ border-top-right-radius: 4px;</string>
       <enum>Qt::SolidLine</enum>
      </property>
      <property name="sortingEnabled">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="cornerButtonEnabled">
       <bool>true</bool>
@@ -127,7 +127,7 @@ border-top-right-radius: 4px;</string>
       <number>50</number>
      </attribute>
      <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
-      <bool>true</bool>
+      <bool>false</bool>
      </attribute>
      <attribute name="horizontalHeaderStretchLastSection">
       <bool>true</bool>
