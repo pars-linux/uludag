@@ -25,7 +25,7 @@ RC Goals
 RC Release Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-In order to do Pardus RC official, the following criterias must be met:
+In order to do Pardus RC official, the following criteria must be met:
 
 * All `beta release requirements`_ must be achieved.
 * All Final `tracker bugs`_ must be closed.
@@ -33,7 +33,7 @@ In order to do Pardus RC official, the following criterias must be met:
 * The installation manager (YALI_) must be able to create partition tables using any file system offered in installer configuration and complete installation for LVM, software, hardware or BIOS RAID, or  IDE, SATA, SCSI and iSCSI storage devices.
 * The installation manager (YALI_) must boot and run on all `supported architectures`_ from install and live images
 * All known bugs can cause corruption of user data be fixed or marked as "High" on `Pardus bugzilla`_
-* The following criterias should be met on both live and default installed system for desktop validation
+* The following criteria should be met on both live and default installed system for desktop validation
     - The icons of desktop menu applications all should exist and have a consistent appearance and sufficiently high resolution to avoid appearing blurry
     - All desktop menu applications must start successfully
     - All desktop menu applications must pass basic functionality tests and not crash after a few minutes of normal use.
@@ -117,15 +117,15 @@ RC release day:
 #. Upload press-release to pardus.org.tr
 #. Release RC
 
-   * Upload iso to FTP servers
-   * Upload iso to torrents
+   * Upload ISO to FTP servers
+   * Upload ISO to torrents
 
 #. Announcement for RC release on `duyuru list`_ and `announce list`_
 
 Final Tracker Bugs
 ^^^^^^^^^^^^^^^^^^
 
-A bug is considered an final tracker bug if one of the following criterias is met:
+A bug is considered a final tracker bug if one of the following criteria is met:
 
 #. If a package in the urgent package list of alpha, beta or final has a bug that can not be fixed with a future update or has a severity_ rating of high or urgent.
 #. Bugs that are a blocks the testing and test process. (Bugs related to untestable products)
@@ -145,22 +145,22 @@ Test team has the responsibility of determining whether the criteria for the
 the test team reports on `Pardus Bugzilla`_ will be reviewed and discussed
 at the "where we are" meeting.
 
-.. _beta release requirements: http://developer.pardus.org.tr/guides/releasing/official_releases/beta_phase.html#beta-release-requirements
-.. _YALI: http://developer.pardus.org.tr/projects/yali/index.html
-.. _Kaptan: http://developer.pardus.org.tr/projects/kaptan/index.html
+.. _beta release requirements: ../../guides/releasing/official_releases/beta_phase.html#beta-release-requirements
+.. _YALI: ../../projects/yali/index.html
+.. _Kaptan: ../../projects/kaptan/index.html
 .. _Pardus bugzilla: http://bugs.pardus.org.tr/
-.. _supported architectures: http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#architecture-support
+.. _supported architectures: ../../guides/packaging/packaging_guidelines.html#architecture-support
 .. _urgent package list: http://svn.pardus.org.tr/uludag/trunk/scripts/find-urgent-packages
-.. _EOL: http://developer.pardus.org.tr/guides/releasing/end_of_life.html
-.. _severity: http://developer.pardus.org.tr/guides/bugtracking/howto_bug_triage.html#bug-importance
-.. _tracker bugs: http://developer.pardus.org.tr/guides/bugtracking/tracker_bug_process.html
+.. _EOL: ../../guides/releasing/end_of_life.html
+.. _severity: ../../guides/bugtracking/howto_bug_triage.html#bug-importance
+.. _tracker bugs: ../../guides/bugtracking/tracker_bug_process.html
 .. _duyuru list: http://lists.pardus.org.tr/mailman/listinfo/duyuru
 .. _announce list: http://lists.pardus.org.tr/mailman/listinfo/pardus-announce
-.. _Translation freeze: http://developer.pardus.org.tr/guides/releasing/freezes/translation_freeze.html
-.. _Repo branching: http://developer.pardus.org.tr/guides/releasing/freezes/repo-freeze.html
-.. _RC freeze: http://developer.pardus.org.tr/guides/releasing/freezes/rc_freeze.html
-.. _Final freeze: http://developer.pardus.org.tr/guides/releasing/freezes/final_freeze.html
-.. _Kernel freeze: http://developer.pardus.org.tr/guides/releasing/freezes/kernel-freeze.html
-.. _stable binary repository: http://developer.pardus.org.tr/guides/releasing/repository_concepts/software_repository.html#stable-binary-repository
+.. _Translation freeze: ../../guides/releasing/freezes/translation_freeze.html
+.. _Repo branching: ../../guides/releasing/freezes/repo-freeze.html
+.. _RC freeze: ../../guides/releasing/freezes/rc_freeze.html
+.. _Final freeze: ../../guides/releasing/freezes/final_freeze.html
+.. _Kernel freeze: ../../guides/releasing/freezes/kernel-freeze.html
+.. _stable binary repository: ../../guides/releasing/repository_concepts/software_repository.html#stable-binary-repository
 .. _testing source repository merge process: tp://developer.pardus.org.tr/guides/packaging/package_update_process.html#merging-to-testing-source-repository:
 

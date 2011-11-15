@@ -95,13 +95,13 @@ The example rsync.conf that changed in servers::
 The EOL release information in rsync.conf file is removed, and the packages web
 site directly sync and its information is disappeared.
 
-.. _tracker bugs: http://developer.pardus.org.tr/guides/bugtracking/tracker_bug_process.html
+.. _tracker bugs: ../../guides/bugtracking/tracker_bug_process.html
 .. _duyuru: http://lists.pardus.org.tr/mailman/listinfo/duyuru
 .. _announce: http://lists.pardus.org.tr/mailman/listinfo/pardus-announce
 .. _gelistirici: http://lists.pardus.org.tr/mailman/listinfo/gelistirici
 .. _devel: http://lists.pardus.org.tr/mailman/listinfo/pardus-devel
 .. _Pardus tracker: http://tracker.pardus.org.tr/
-.. _release life cycle: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html
+.. _release life cycle: ../../guides/releasing/official_releases/release_process.html
 
 **Last Modified Date:** |today|
 

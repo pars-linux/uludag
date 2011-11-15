@@ -11,7 +11,7 @@ Beta phase is bug fixing and detailed test phase in order to stabilize new
 release and takes about 1 month.
 
 At the end of the beta phase, software should be `code complete`_, indicating
-that there only left critical bug fixes left. Code complete version of a software
+that there are only critical bug fixes left. Code complete version of a software
 is almost similar to final.
 
 During this phase Beta `tracker bugs`_ should also be fixed.
@@ -28,7 +28,7 @@ Beta Goals
 Beta Release Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In order to do Pardus Beta official, the following criterias must be meet:
+In order to do Pardus Beta official, the following criteria must be met:
 
 * All `alpha release requirements`_ must be achieved.
 * All bugs blocking the Beta tracker must be closed.
@@ -42,7 +42,7 @@ In order to do Pardus Beta official, the following criterias must be meet:
 * The default browser must run video and music
 * The default video player must run videos with supported extentions from disks, DVD, VCD etc.
 * The default music player must run songs with supported music extentions from disks, DVD, CD etc.
-* The default desktop environment must mount removable media
+* The default desktop environment must be albe to mount removable media
 * The desktop environment must succesfully shutdown, reboot, hibernate, logout etc.
 * Beta release must include default artwork by default for the installation manager (YALI_), graphical boot, firstboot, graphical login, desktop background and splash screens.
 * Release Upgrade should be stabilized and get almost ready to Final Release.
@@ -73,8 +73,8 @@ Beta 1 release day:
 
 #. Release Beta
 
-   * Upload iso to FTP servers
-   * Upload iso to torrents
+   * Upload ISO to FTP servers
+   * Upload ISO to torrents
 
 #. Announcement for Beta release on `gelistirici list`_ and `developer list`_
 #. Announcement for Beta release on `duyuru list`_ and `announce list`_
@@ -93,7 +93,7 @@ Beta 2
    * Package file conflicts or unresolved package dependencies
 
 #. Begin Release Upgrade tests
-#. Warn aout EOL of previous release
+#. Warn about EOL of previous release
 
 1 week before Beta 2:
 ---------------------
@@ -142,8 +142,8 @@ Beta 2 release day:
 #. Upload release-notes to developer.pardus.org.tr
 #. Release Beta
 
-   * Upload iso to FTP servers
-   * Upload iso to torrents
+   * Upload ISO to FTP servers
+   * Upload ISO to torrents
 
 #. Announcement for Beta release on `gelistirici list`_ and `developer list`_
 
@@ -179,30 +179,30 @@ the test team reports on `Pardus Bugzilla`_ will be reviewed and discussed
 at the "where we are" meeting.
 
 
-.. _requested features: http://developer.pardus.org.tr/guides/newfeature/index.html
+.. _requested features: ../../guides/newfeature/index.html
 .. _Pardus Bugzilla: http://bugs.pardus.org.tr/
 .. _urgent package list: http://svn.pardus.org.tr/uludag/trunk/scripts/find-urgent-packages
-.. _package source repository: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#package-source-repository
-.. _devel branch: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#devel-folder
-.. _component based: http://developer.pardus.org.tr/guides/packaging/package_components.html
-.. _alpha release requirements: http://developer.pardus.org.tr/guides/releasing/official_releases/alpha_phase.html#alpha-release-requirements
-.. _severity: http://developer.pardus.org.tr/guides/bugtracking/howto_bug_triage.html#bug-importance
-.. _supported architectures: http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#architecture-support
-.. _YALI: http://developer.pardus.org.tr/projects/yali/index.html
-.. _Kaptan: http://developer.pardus.org.tr/projects/kaptan/index.html
-.. _Pardus technologies: http://developer.pardus.org.tr/projects/index.html
-.. _code complete: http://developer.pardus.org.tr/guides/releasing/freezes/feature_freeze.html
-.. _tracker bugs: http://developer.pardus.org.tr/guides/bugtracking/tracker_bug_process.html#open-tracker-bug-report
+.. _package source repository: ../../guides/releasing/repository_concepts/sourcecode_repository.html#package-source-repository
+.. _devel branch: ../../guides/releasing/repository_concepts/sourcecode_repository.html#devel-folder
+.. _component based: ../../guides/packaging/package_components.html
+.. _alpha release requirements: ../../guides/releasing/official_releases/alpha_phase.html#alpha-release-requirements
+.. _severity: ../../guides/bugtracking/howto_bug_triage.html#bug-importance
+.. _supported architectures: ../../guides/packaging/packaging_guidelines.html#architecture-support
+.. _YALI: ../../projects/yali/index.html
+.. _Kaptan: ../../projects/kaptan/index.html
+.. _Pardus technologies: ../../projects/index.html
+.. _code complete: ../../guides/releasing/freezes/feature_freeze.html
+.. _tracker bugs: ../../guides/bugtracking/tracker_bug_process.html#open-tracker-bug-report
 .. _accepted features: http://bugs.pardus.org.tr/buglist.cgi?query_format=advanced&bug_severity=newfeature&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&resolution=REMIND
-.. _testing source repository: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#testing-folder
+.. _testing source repository: ../../guides/releasing/repository_concepts/sourcecode_repository.html#testing-folder
 .. _duyuru list: http://lists.pardus.org.tr/mailman/listinfo/duyuru
 .. _announce list: http://lists.pardus.org.tr/mailman/listinfo/pardus-announce
-.. _User interface freeze: http://developer.pardus.org.tr/guides/releasing/freezes/user_interface_freeze.html
-.. _Beta freeze: http://developer.pardus.org.tr/guides/releasing/freezes/beta_freeze.html
-.. _next new release: http://developer.pardus.org.tr/guides/releasing/official_releases/release_process.html
-.. _Toolchain freeze: http://developer.pardus.org.tr/guides/releasing/freezes/toolchain_freeze.html
-.. _Translation freeze: http://developer.pardus.org.tr/guides/releasing/freezes/translation_freeze.html
-.. _Final freeze: http://developer.pardus.org.tr/guides/releasing/freezes/final_freeze.html
-.. _Repo branching: http://developer.pardus.org.tr/guides/releasing/freezes/repo_freeze.html
+.. _User interface freeze: ../../guides/releasing/freezes/user_interface_freeze.html
+.. _Beta freeze: ../../guides/releasing/freezes/beta_freeze.html
+.. _next new release: ../../guides/releasing/official_releases/release_process.html
+.. _Toolchain freeze: ../../guides/releasing/freezes/toolchain_freeze.html
+.. _Translation freeze: ../../guides/releasing/freezes/translation_freeze.html
+.. _Final freeze: ../../guides/releasing/freezes/final_freeze.html
+.. _Repo branching: ../../guides/releasing/freezes/repo_freeze.html
 .. _developer list: http://lists.pardus.org.tr/mailman/listinfo/pardus-devel
 .. _gelistirici list: http://lists.pardus.org.tr/mailman/listinfo/gelistirici

@@ -15,14 +15,14 @@ General Freezes
 Open developement
 ^^^^^^^^^^^^^^^^^
 
-- Unrestrained general development activity, new packages, new features and versions are automatically taken and merge without any permission.
+- Unrestrained general development activity, new packages, new features and versions are automatically taken and merged without any permission.
 
 Repo Branching
 ^^^^^^^^^^^^^^
-- At the end of this phase all packages of previous Pardus release packages merge process should be finished.
-- New package creations should be also finish
+- At the end of this phase all merge work of packages of previous Pardus release should be finished.
+- New package creations should also be finished
 - After this period, new packages and new versions can be merged under some permissions and restrictions. (see `freeze exceptions`_)
-- In this freeze time devel branched and testing repository open.
+- In this freeze time devel repository is branched and testing repository is open.
 - See `Repo Branching`_ for details
 
 
@@ -180,7 +180,7 @@ LTS technological updates (point releases)
 - Adding support for new hardware
 - Implementing a missing functionality in a component which will probably be needed to satisfy the original reasons for LTS creation
 - Reduce download for ongoing updates.
-- All work have to finish one month before the release in order to give time for tests
+- All work must be finished one month before the release in order to give time for tests
 
 Maintainance
 ^^^^^^^^^^^^
@@ -212,23 +212,23 @@ EOL
 
 See details from `EOL`_.
 
-.. _Planning Phase: http://developer.pardus.org.tr/guides/releasing/official_releases/planning_phase.html
-.. _tracker bugs: http://developer.pardus.org.tr/guides/bugtracking/tracker_bug_process.html
-.. _feature freeze: http://developer.pardus.org.tr/guides/releasing/freezes/feature_freeze.html
-.. _Alpha phase: http://developer.pardus.org.tr/guides/releasing/official_releases/alpha_phase.html
-.. _Beta phase: http://developer.pardus.org.tr/guides/releasing/official_releases/beta_phase.html
-.. _RC phase: http://developer.pardus.org.tr/guides/releasing/official_releases/release_candidate_phase.html
-.. _Final phase: http://developer.pardus.org.tr/guides/releasing/official_releases/final_phase.html
-.. _EOL: http://developer.pardus.org.tr/guides/releasing/end_of_life.html
+.. _Planning Phase: ../../guides/releasing/official_releases/planning_phase.html
+.. _tracker bugs: ../../guides/bugtracking/tracker_bug_process.html
+.. _feature freeze: ../../guides/releasing/freezes/feature_freeze.html
+.. _Alpha phase: ../../guides/releasing/official_releases/alpha_phase.html
+.. _Beta phase: ../../guides/releasing/official_releases/beta_phase.html
+.. _RC phase: ../../guides/releasing/official_releases/release_candidate_phase.html
+.. _Final phase: ../../guides/releasing/official_releases/final_phase.html
+.. _EOL: ../../guides/releasing/end_of_life.html
 .. _time-based release management: http://fnords.wordpress.com/2011/07/01/time-based-good-for-community/
-.. _freeze exceptions: http://developer.pardus.org.tr/guides/releasing/freezes/freeze_exception_process.html
-.. _Repo Branching: http://developer.pardus.org.tr/guides/releasing/freezes/repo_freeze.html
-.. _user interface freeze: http://developer.pardus.org.tr/guides/releasing/freezes/user_interface_freeze.html
-.. _string freeze: http://developer.pardus.org.tr/guides/releasing/freezes/string_freeze.html
-.. _Beta freeze: http://developer.pardus.org.tr/guides/releasing/freezes/beta_freeze.html
-.. _translation freeze: http://developer.pardus.org.tr/guides/releasing/freezes/translation_freeze.html
-.. _RC freeze: http://developer.pardus.org.tr/guides/releasing/freezes/rc_freeze.html
-.. _kernel freeze: http://developer.pardus.org.tr/guides/releasing/freezes/kernel_freeze.html
-.. _toolchain freeze: http://developer.pardus.org.tr/guides/releasing/freezes/toolchain_freeze.html
-.. _exception process: http://developer.pardus.org.tr/guides/releasing/freezes/freeze_exception_process.html
+.. _freeze exceptions: ../../guides/releasing/freezes/freeze_exception_process.html
+.. _Repo Branching: ../../guides/releasing/freezes/repo_freeze.html
+.. _user interface freeze: ../../guides/releasing/freezes/user_interface_freeze.html
+.. _string freeze: ../../guides/releasing/freezes/string_freeze.html
+.. _Beta freeze: ../../guides/releasing/freezes/beta_freeze.html
+.. _translation freeze: ../../guides/releasing/freezes/translation_freeze.html
+.. _RC freeze: ../../guides/releasing/freezes/rc_freeze.html
+.. _kernel freeze: ../../guides/releasing/freezes/kernel_freeze.html
+.. _toolchain freeze: ../../guides/releasing/freezes/toolchain_freeze.html
+.. _exception process: ../../guides/releasing/freezes/freeze_exception_process.html
 .. _testing source repository merge process: tp://developer.pardus.org.tr/guides/packaging/package_update_process.html#merging-to-testing-source-repository:
