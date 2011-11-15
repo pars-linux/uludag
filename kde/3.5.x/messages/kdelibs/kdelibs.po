@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: kdelibs\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-07-08 01:18+0200\n"
-"PO-Revision-Date: 2011-11-15 09:35+0200\n"
+"PO-Revision-Date: 2011-11-15 10:33+0200\n"
 "Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: kde-l10n-3.5 <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -2359,17 +2359,16 @@ msgid "Geographic Position"
 msgstr "Coğrafi Konum"
 
 #: kab/addressbook.cc:263 kabc/addressee.cpp:689
-#, fuzzy
 msgid ""
 "_: person\n"
 "Title"
-msgstr "Tamil"
+msgstr "Başlık"
 
 #: kabc/addressee.cpp:708
 msgid ""
 "_: person in organization\n"
 "Role"
-msgstr ""
+msgstr "Rol"
 
 #: kab/addressbook.cc:180 kabc/addressee.cpp:746
 msgid "Department"
@@ -4033,7 +4032,7 @@ msgstr "Pencere"
 
 #: kdecore/kkeyserver_x11.cpp:119
 msgid "Backspace"
-msgstr "Sil"
+msgstr "Backspace"
 
 #: kdecore/kkeyserver_x11.cpp:120
 msgid "SysReq"
@@ -4142,9 +4141,8 @@ msgid "Vietnamese"
 msgstr "Viyetnamca"
 
 #: kdecore/kcharsets.cpp:61
-#, fuzzy
 msgid "South-Eastern Europe"
-msgstr "Batı Avrupa"
+msgstr "Güneydoğu Avrupa"
 
 #: kdecore/kcharsets.cpp:516
 msgid ""
@@ -4233,7 +4231,6 @@ msgid "Adar II"
 msgstr "Adar II"
 
 #: kdecore/kaboutdata.cpp:388
-#, fuzzy
 msgid ""
 "_: replace this with information about your translation team\n"
 "<p>KDE is translated into many languages thanks to the work of the "
@@ -4242,11 +4239,11 @@ msgid ""
 "<p>For more information on KDE internationalization visit <a "
 "href=\"http://l10n.kde.org\">http://l10n.kde.org</a></p>"
 msgstr ""
-"<p>KDE, dünya çapındaki yüzlerce programcı tarafından geliştirilmiştir. KDE "
-"yerelleştirme çalışmaları hakkında daha geniş bilgi için KDE Türkiye web "
-"sayfasına (<a href=http://www.kde.org.tr>http://www.kde.org.tr</a>"
-") tıklayabilirsiniz.</p> "
-"<p>Hepinizin Linux'un gelişiminde bir payı olsun.</p>"
+"<p>KDE dünya çapındaki yüzlerce çeviri takımlarınca birçok dile "
+"çevrilmiştir.</p>"
+"<p>KDE yerelleştirme çalışmaları hakkında daha geniş bilgi için KDE Türkiye web "
+"sayfasına <a href=http://l10n.kde.org>http://l10n.kde.org</a>"
+" tıklayabilirsiniz.</p> "
 
 #: kdecore/kaboutdata.cpp:444
 msgid ""
@@ -4556,7 +4553,7 @@ msgstr "Yeni Öğeleri Al"
 
 #: knewstuff/downloaddialog.cpp:228
 msgid "Welcome"
-msgstr "Hoşgeldiniz"
+msgstr "Hoş geldiniz"
 
 #: knewstuff/downloaddialog.cpp:259
 msgid "Highest Rated"
@@ -10273,11 +10270,10 @@ msgid ""
 msgstr "Han (Korece)"
 
 #: kernel/qfontdatabase.cpp:2147
-#, fuzzy
 msgid ""
 "_: QFont\n"
 "Unknown Script"
-msgstr "Bilinmeyen Yazı"
+msgstr "Bilinmeyen Betik"
 
 #: kernel/qkeysequence.cpp:93
 msgid ""
@@ -10502,7 +10498,6 @@ msgid ""
 msgstr "Daha Az Tiz"
 
 #: kernel/qkeysequence.cpp:132
-#, fuzzy
 msgid ""
 "_: QAccel\n"
 "Media Play"
@@ -10572,91 +10567,91 @@ msgstr "Ortam Başlat"
 msgid ""
 "_: QAccel\n"
 "Launch (0)"
-msgstr "(0) Başlat"
+msgstr "Başlat (0)"
 
 #: kernel/qkeysequence.cpp:145
 msgid ""
 "_: QAccel\n"
 "Launch (1)"
-msgstr "(1) Başlat"
+msgstr "Başlat (1)"
 
 #: kernel/qkeysequence.cpp:146
 msgid ""
 "_: QAccel\n"
 "Launch (2)"
-msgstr "(2) Başlat"
+msgstr "Başlat (2)"
 
 #: kernel/qkeysequence.cpp:147
 msgid ""
 "_: QAccel\n"
 "Launch (3)"
-msgstr "(3) Başlat"
+msgstr "Başlat (3)"
 
 #: kernel/qkeysequence.cpp:148
 msgid ""
 "_: QAccel\n"
 "Launch (4)"
-msgstr "(4) Başlat"
+msgstr "Başlat (4)"
 
 #: kernel/qkeysequence.cpp:149
 msgid ""
 "_: QAccel\n"
 "Launch (5)"
-msgstr "(5) Başlat"
+msgstr "Başlat (5)"
 
 #: kernel/qkeysequence.cpp:150
 msgid ""
 "_: QAccel\n"
 "Launch (6)"
-msgstr "(6) Başlat"
+msgstr "Başlat (6)"
 
 #: kernel/qkeysequence.cpp:151
 msgid ""
 "_: QAccel\n"
 "Launch (7)"
-msgstr "(7) Başlat"
+msgstr "Başlat (7)"
 
 #: kernel/qkeysequence.cpp:152
 msgid ""
 "_: QAccel\n"
 "Launch (8)"
-msgstr "(8) Başlat"
+msgstr "Başlat (8)"
 
 #: kernel/qkeysequence.cpp:153
 msgid ""
 "_: QAccel\n"
 "Launch (9)"
-msgstr "(9) Başlat"
+msgstr "Başlat (9)"
 
 #: kernel/qkeysequence.cpp:154
 msgid ""
 "_: QAccel\n"
 "Launch (A)"
-msgstr "(A) Başlat"
+msgstr "Başlat (A)"
 
 #: kernel/qkeysequence.cpp:155
 msgid ""
 "_: QAccel\n"
 "Launch (B)"
-msgstr "(B) Başlat"
+msgstr "Başlat (B)"
 
 #: kernel/qkeysequence.cpp:156
 msgid ""
 "_: QAccel\n"
 "Launch (C)"
-msgstr "(C) Başlat"
+msgstr "Başlat (C)"
 
 #: kernel/qkeysequence.cpp:157
 msgid ""
 "_: QAccel\n"
 "Launch (D)"
-msgstr "(D) Başlat"
+msgstr "Başlat (D)"
 
 #: kernel/qkeysequence.cpp:158
 msgid ""
 "_: QAccel\n"
 "Launch (E)"
-msgstr "(E) Başlat"
+msgstr "Başlat (E)"
 
 #: kernel/qkeysequence.cpp:159
 msgid ""
@@ -10668,19 +10663,19 @@ msgstr "(F) Başlat"
 msgid ""
 "_: QAccel\n"
 "Print Screen"
-msgstr "Ekranı Yazdır"
+msgstr "Print Screen"
 
 #: kernel/qkeysequence.cpp:164
 msgid ""
 "_: QAccel\n"
 "Page Up"
-msgstr "Sayfa Yukarı"
+msgstr "Page Up"
 
 #: kernel/qkeysequence.cpp:165
 msgid ""
 "_: QAccel\n"
 "Page Down"
-msgstr "Sayfa Aşağı"
+msgstr "Page Down"
 
 #: kernel/qkeysequence.cpp:166
 msgid ""
@@ -10716,7 +10711,7 @@ msgstr "Insert"
 msgid ""
 "_: QAccel\n"
 "Delete"
-msgstr "Sil"
+msgstr "Delete"
 
 #: kernel/qkeysequence.cpp:172
 msgid ""
