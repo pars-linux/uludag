@@ -128,23 +128,26 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         print self.stop_set
 
         for services in self.start_set:
-            print services
+            #print services
             for service in services.split(","):
-                print service
+                #print service
                 startset.append(service)
 
 
         for services in self.stop_set:
-            print services
+            #print services
             for service in services.split(","):
-                print service
+                #print service
                 stopset.append(service)
 
 
         if command == "service.info":
             self.tableWidget.setRowCount(len(arguments))
-            print "----- COMMAND IS SERVICE.INFO ------"
+            print "----------- ARGUMENTS --------------"
             index = 0
+
+            arguments.sort(key=lambda t : tuple(t[0].lower()))
+            print arguments
 
             for name, desc, status in arguments:
                 item_description = QtGui.QTableWidgetItem(str(desc))
