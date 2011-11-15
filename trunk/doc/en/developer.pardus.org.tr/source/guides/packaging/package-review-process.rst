@@ -11,29 +11,25 @@ Package Reviewing Process
 Package Inclusion Requirements and Aim of Review
 ------------------------------------------------
 
-Pardus `stable repository`_ is officially maintained, supported and recommended
-by Pardus. Security updates are provided for them and standart fixing process
-is applied to these packages. (See `severity based fixing times`_)
+Pardus `stable repository`_ is officially maintained, supported and recommended by Pardus. Security updates are provided for them and standart fixing process is applied to these packages. (See `severity based fixing times`_)
 
-Thus, before adding new packages to a Pardus `stable repository`_, special attention
-should be given. The `new package inclusion process`_ is also applied.
+Thus, before adding new packages to a Pardus `stable repository`_, special attention should be given. The `new package inclusion process`_ is also applied.
 
-One of the following retionale can be a reason for inclusion of the package:
+One of the following rationale can be a reason for inclusion of the package:
     - The package is useful for large part of our users
-    - The package is a new built or runtime dependency of a package that already in Pardus `stable repository`_
+    - The package is a new build or runtime dependency of a package that is already in Pardus `stable repository`_
     - The package has one of the functionalites in `Pardus Target Audience document`_ and replaces another package that already exists in Pardus `stable repository`_ and promise higher quality and functionality. (The old package should be obsolete_)
 
-Package review is a must before it is added to Pardus repositories. The aim of this
-process is to be ensure the package satisfies packaging rules.
+Package review is a must before it is added to Pardus repositories. The aim of this process is to ensure the package satisfies packaging rules.
 
-The requirements below should be checked by reviewers, if these requirements are not met the package could not been added to Pardus official repositories:
+The requirements below should be checked by reviewers. If these requirements are not met, the package cannot be added to Pardus official repositories:
 
     - The package must be suitable to `package review requirements`_ and pass package review
     - The package must build on all architectures
-    - The existed upstream bugs of the package and upstream support should be considered
+    - The existing upstream bugs of the package and upstream support should be considered
     - GUI applications must be translatable and produce a proper PO template
     - GUI applications must have Turkish localization support
-    - GUI applications should not have turkish language problems
+    - GUI applications should not have Turkish language problems
     - GUI applications must have a standart desktop file
     - Package security vulnerabilities must be checked
 
@@ -45,14 +41,12 @@ The requirements below should be checked by reviewers, if these requirements are
 Package Review Guidelines
 -------------------------
 
-The person who want to put his package in review and add it to Pardus Repositories, he
-should be a Pardus developer. (see :ref:`newcontributor-index` and :ref:`developer-roles` )
+The person who want to put his package in review and add it to Pardus Repositories, should be a Pardus developer. (see :ref:`newcontributor-index` and :ref:`developer-roles` )
 
-Package maintainer and the reviewer must follow the package review process and they
-should pay attention that the package adheres to :ref:`package-naming`,
+Package maintainer and the reviewer must follow the package review process and they should pay attention that the package adheres to :ref:`package-naming`,
 :ref:`packaging-guidelines` and :ref:`licensing-guidelines`.
 
-They also pay attention that the package in review has not in repositories already.
+They also pay attention that the package in review is not already in repositories.
 
 Review Process
 --------------
@@ -141,10 +135,10 @@ The package reviewing process steps on `Pardus Bug Tracking System
    also be applied for this bug. Ideally, closing both review and request bugs at
    the same commit is preferred.
 
-.. _stable repository: http://developer.pardus.org.tr/guides/releasing/repository_concepts/software_repository.html#stable-binary-repository
-.. _severity based fixing times: http://developer.pardus.org.tr/guides/bugtracking/bug_cycle.html#bugzilla-severities
-.. _package review requirements: http://developer.pardus.org.tr/guides/packaging/reviewing_guidelines.html
-.. _obsolete: http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html?highlight=obsolete#renaming-replacing-existing-packages
+.. _stable repository: ../../guides/releasing/repository_concepts/software_repository.html#stable-binary-repository
+.. _severity based fixing times: ../../guides/bugtracking/bug_cycle.html#bugzilla-severities
+.. _package review requirements: ../../guides/packaging/reviewing_guidelines.html
+.. _obsolete: ../../guides/packaging/packaging_guidelines.html?highlight=obsolete#renaming-replacing-existing-packages
 .. _security website: http://security.pardus.org.tr/
-.. _Pardus Target Audience document: http://developer.pardus.org.tr/guides/targetaudience/target_audience.html
-.. _new package inclusion process: http://developer.pardus.org.tr/guides/newfeature/new_package_requests.html
+.. _Pardus Target Audience document: ../../guides/targetaudience/target_audience.html
+.. _new package inclusion process: ../../guides/newfeature/new_package_requests.html

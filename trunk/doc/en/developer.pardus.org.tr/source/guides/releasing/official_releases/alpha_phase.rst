@@ -16,7 +16,7 @@ that no more features will be added to the software. A feature complete version
 of a software is not yet final, (it has lots of bugs) but contains all intended
 functionality of the final version.
 
-All new package additions should be finish before feature freeze time.
+All new package additions should be finished before feature freeze time.
 
 According to this feature completeness, string freeze is also realized..
 
@@ -41,10 +41,10 @@ Alpha Release Requirements
 For each Pardus Alpha releases (Alpha 1, 2, 3), the following criterias must be met:
 
 * All bugs blocking the Alpha tracker must be closed.
-* There must be no file conflicts or unresolved package dependencies in Alpha iso install and live images.
-* The iso image must boot with graphical boot menu and allow the user to select installation options.
+* There must be no file conflicts or unresolved package dependencies in Alpha ISO install and live images.
+* The ISO image must boot with graphical boot menu and allow the user to select installation options.
 * The installation manager (YALI_) must boot and run on all `supported architectures`_ from install and live images
-* The installation manager (YALI_) must be able to complete the installation using the install options use all space or use free space
+* The installation manager (YALI_) must be able to complete the installation using the install options "use all space" or "use free space"
 * The installation manager (YALI_) must be able to complete an installation using IDE, SATA and SCSI storage devices, with the default file system (ext4) and LVM, standart partitioning
 * The rescue mode of (YALI_) must start successfully and be able to detect and mount an existing default installation
 * The installed system must boot to the default desktop environment without user intervention
@@ -55,7 +55,7 @@ For each Pardus Alpha releases (Alpha 1, 2, 3), the following criterias must be 
 * The default web browser must run and be able to download files and load extensions
 * Default applications that exist on desktop menu must be listed.
 * The `Package Manager`_ must have the correct repository and be able to download and install updates with with PiSi_.
-* The new release artwork must either refer to the current release under maintainance, or reference to a temporary test release. This artwork should be for the installer, firstboot, graphical boot, graphical login·
+* The new release artwork must either refer to the current release under maintainance, or reference to a temporary test release. This artwork should be for the installer, firstboot, graphical boot, graphical login
 * Release Upgrade tests should start and upgrade can be possible with some existed bugs.
 
 Alpha Schedule
@@ -86,8 +86,8 @@ Alpha 1 release day:
 
 #. Release Alpha
 
-   * Upload iso to FTP servers
-   * Upload iso to torrents
+   * Upload ISO to FTP servers
+   * Upload ISO to torrents
 
 
 #. Announcement for Alpha release on `gelistirici list`, `developer list`_ and `duyuru list`_, `announce list`_
@@ -112,8 +112,8 @@ Alpha 2 release day:
 
 #. Release Alpha
 
-   * Upload iso to FTP servers
-   * Upload iso to torrents
+   * Upload ISO to FTP servers
+   * Upload ISO to torrents
 
 #. Announcement for Alpha release on `gelistirici list`, `developer list`_
 
@@ -173,8 +173,8 @@ Alpa 3 release day:
 #. Upload release-notes to developer.pardus.org.tr
 #. Release Alpha
 
-   * Upload iso to FTP servers
-   * Upload iso to torrents
+   * Upload ISO to FTP servers
+   * Upload ISO to torrents
 
 
 #. Announcement for Alpha release on `gelistirici list`, `developer list`_
@@ -186,7 +186,7 @@ Release plus 1 week:
 Alpha Tracker Bugs
 ^^^^^^^^^^^^^^^^^^
 
-A bug is considered an alpha tracker bug if one of the following criterias is met:
+A bug is considered an alpha tracker bug if one of the following criteria is met:
 
 #. If a package in the urgent package list of alpha has a bug that can not be fixed with a future update or has a severity_ rating of high or urgent.
 #. Bugs that are a blocks the testing and test process. (Bugs related to untestable products)
@@ -208,36 +208,36 @@ the test team reports on `Pardus Bugzilla`_ will be reviewed and discussed
 at the "where we are" meeting.
 
 
-.. _requested features: http://developer.pardus.org.tr/guides/newfeature/index.html
+.. _requested features: ../../guides/newfeature/index.html
 .. _Pardus Bugzilla: http://bugs.pardus.org.tr/
 .. _urgent package list: http://svn.pardus.org.tr/uludag/trunk/scripts/find-urgent-packages
-.. _package source repository: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#package-source-repository
-.. _devel branch: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#devel-folder
-.. _component based: http://developer.pardus.org.tr/guides/packaging/package_components.html
+.. _package source repository: ../../guides/releasing/repository_concepts/sourcecode_repository.html#package-source-repository
+.. _devel branch: ../../guides/releasing/repository_concepts/sourcecode_repository.html#devel-folder
+.. _component based: ../../guides/packaging/package_components.html
 .. _accepted features: http://bugs.pardus.org.tr/buglist.cgi?query_format=advanced&bug_severity=newfeature&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&resolution=REMIND
-.. _feature complete: http://developer.pardus.org.tr/guides/releasing/freezes/feature_freeze.html
-.. _supported architectures: http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#architecture-support
-.. _YALI: http://developer.pardus.org.tr/projects/yali/index.html
-.. _Kaptan: http://developer.pardus.org.tr/projects/kaptan/index.html
-.. _Package Manager: http://developer.pardus.org.tr/projects/package-manager/index.html
-.. _Pisi: http://developer.pardus.org.tr/projects/pisi/index.html
-.. _severity: http://developer.pardus.org.tr/guides/bugtracking/howto_bug_triage.html#bug-importance
+.. _feature complete: ../../guides/releasing/freezes/feature_freeze.html
+.. _supported architectures: ../../guides/packaging/packaging_guidelines.html#architecture-support
+.. _YALI: ../../projects/yali/index.html
+.. _Kaptan: ../../projects/kaptan/index.html
+.. _Package Manager: ../../projects/package-manager/index.html
+.. _Pisi: ../../projects/pisi/index.html
+.. _severity: ../../guides/bugtracking/howto_bug_triage.html#bug-importance
 .. _tester list: http://lists.pardus.org.tr/mailman/listinfo/testci
-.. _Bootstrap: http://developer.pardus.org.tr/guides/releasing/bootstrapping.html
-.. _buildfarm: http://developer.pardus.org.tr/guides/releasing/preparing_buildfarm.html
-.. _nightly builds: http://developer.pardus.org.tr/guides/releasing/generating_nightly_builds.html
-.. _devel source: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#devel-folder
-.. _devel binary: http://developer.pardus.org.tr/guides/releasing/repository_concepts/software_repository.html#devel-binary-repository
-.. _tracker bugs: http://developer.pardus.org.tr/guides/bugtracking/tracker_bug_process.html#open-tracker-bug-report
-.. _feature request: http://developer.pardus.org.tr/guides/newfeature/newfeature_requests.html#how-do-i-propose-a-new-feature-that-i-do-not-contribute
-.. _feature submission: http://developer.pardus.org.tr/guides/newfeature/newfeature_requests.html#how-my-new-feature-request-is-accepted
-.. _Feature freeze: http://developer.pardus.org.tr/guides/releasing/freezes/feature_freeze.html
+.. _Bootstrap: ../../guides/releasing/bootstrapping.html
+.. _buildfarm: ../../guides/releasing/preparing_buildfarm.html
+.. _nightly builds: ../../guides/releasing/generating_nightly_builds.html
+.. _devel source: ../../guides/releasing/repository_concepts/sourcecode_repository.html#devel-folder
+.. _devel binary: ../../guides/releasing/repository_concepts/software_repository.html#devel-binary-repository
+.. _tracker bugs: ../../guides/bugtracking/tracker_bug_process.html#open-tracker-bug-report
+.. _feature request: ../../guides/newfeature/newfeature_requests.html#how-do-i-propose-a-new-feature-that-i-do-not-contribute
+.. _feature submission: ../../guides/newfeature/newfeature_requests.html#how-my-new-feature-request-is-accepted
+.. _Feature freeze: ../../guides/releasing/freezes/feature_freeze.html
 .. _duyuru list: http://lists.pardus.org.tr/mailman/listinfo/duyuru
 .. _announce list: http://lists.pardus.org.tr/mailman/listinfo/pardus-announce
 .. _developer list: http://lists.pardus.org.tr/mailman/listinfo/pardus-devel
 .. _gelistirici list: http://lists.pardus.org.tr/mailman/listinfo/gelistirici
-.. _binary: http://developer.pardus.org.tr/guides/releasing/repository_concepts/software_repository.html#testing-binary-repository
-.. _source: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#testing-folder
-.. _Pardus technologies: http://developer.pardus.org.tr/projects/index.html
-.. _Repo branching: http://developer.pardus.org.tr/guides/releasing/freezes/repo-freeze.html
-.. _String freeze: http://developer.pardus.org.tr/guides/releasing/freezes/string-freeze.html
+.. _binary: ../../guides/releasing/repository_concepts/software_repository.html#testing-binary-repository
+.. _source: ../../guides/releasing/repository_concepts/sourcecode_repository.html#testing-folder
+.. _Pardus technologies: ../../projects/index.html
+.. _Repo branching: ../../guides/releasing/freezes/repo-freeze.html
+.. _String freeze: ../../guides/releasing/freezes/string-freeze.html

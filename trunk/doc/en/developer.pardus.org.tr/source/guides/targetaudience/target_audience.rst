@@ -103,7 +103,7 @@ This vision is rationale for Pardus official repositories.
 - For other details about package inclusion please follow `package inclusion requirements`_ and `new package inclusion process`_.
 - For other details about package update please follow `package update process`_.
 
-.. _package inclusion requirements: http://developer.pardus.org.tr/guides/packaging/package-review-process.html#package-inclusion-requirements-and-aim-of-review
-.. _package update process: http://developer.pardus.org.tr/guides/packaging/package_update_process.html
-.. _new package inclusion process: http://developer.pardus.org.tr/guides/newfeature/new_package_requests.html
+.. _package inclusion requirements: ../../guides/packaging/package-review-process.html#package-inclusion-requirements-and-aim-of-review
+.. _package update process: ../../guides/packaging/package_update_process.html
+.. _new package inclusion process: ../../guides/newfeature/new_package_requests.html
 
