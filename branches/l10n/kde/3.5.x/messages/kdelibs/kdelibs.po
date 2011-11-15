@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: kdelibs\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-07-08 01:18+0200\n"
-"PO-Revision-Date: 2011-11-15 09:13+0200\n"
+"PO-Revision-Date: 2011-11-15 09:35+0200\n"
 "Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: kde-l10n-3.5 <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -3051,7 +3051,7 @@ msgstr "KLauncher DCOP yardımıyla ulaşılamadı.\n"
 #: kdecore/kwinmodule.cpp:456
 #, c-format
 msgid "Desktop %1"
-msgstr "%1. Masaüstü"
+msgstr "Masaüstü %1"
 
 #: kdecore/kconfigbackend.cpp:1107 kdecore/kconfigbackend.cpp:1116
 msgid "Will not save configuration.\n"
