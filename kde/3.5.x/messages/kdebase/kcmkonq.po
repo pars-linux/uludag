@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonq\n"
 "POT-Creation-Date: 2008-06-08 01:37+0200\n"
-"PO-Revision-Date: 2007-07-05 15:29+0300\n"
+"PO-Revision-Date: 2011-11-15 10:39+0200\n"
 "Last-Translator: Serdar Soytetir\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -195,7 +195,7 @@ msgstr "Masaüstü İ&simleri"
 
 #: desktop.cpp:94 desktop.cpp:96
 msgid "Desktop %1:"
-msgstr "%1. Masaüstü:"
+msgstr " Masaüstü %1:"
 
 #: desktop.cpp:98 desktop.cpp:99 desktop.cpp:100 desktop.cpp:101
 #, c-format
@@ -209,7 +209,7 @@ msgstr "Masaüstünde fare tekeri kullanılması ile masaüstünü değişsin"
 #: desktop.cpp:155
 #, c-format
 msgid "Desktop %1"
-msgstr "%1. Masaüstü"
+msgstr " Masaüstü %1"
 
 #: desktopbehavior_impl.cpp:76
 msgid "Sound Files"
