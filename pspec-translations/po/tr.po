@@ -1,7 +1,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2011.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
@@ -1612,7 +1612,7 @@ msgstr "kdebase-runtime-doc kdebase-runtime paketinden çıkan uygulama ve kitap
 
 #: desktop/kde/base/kdebase-runtime:kdebase-runtime-devel:summary
 msgid "Development files for kdebase-runtime package"
-msgstr ""
+msgstr "kdebase-runtime paketine ait geliştirme dosyaları"
 
 #: desktop/kde/base/kdebase-runtime:kdebase-sounds:summary
 msgid "KDE4 System Sounds"
