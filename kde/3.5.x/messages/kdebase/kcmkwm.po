@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kcmkwm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-04-11 03:54+0200\n"
-"PO-Revision-Date: 2011-09-15 14:44+0300\n"
+"PO-Revision-Date: 2011-11-17 08:58+0200\n"
 "Last-Translator: Koray Löker <loker@pardus.org.tr>\n"
 "Language-Team: T <tr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -866,7 +866,6 @@ msgid "Smart"
 msgstr "Akıllı"
 
 #: windows.cpp:854
-#, fuzzy
 msgid "Maximizing"
 msgstr "Büyüt"
 
@@ -996,11 +995,11 @@ msgstr "Pencereleri göm:"
 
 #: windows.cpp:1284
 msgid "Treat 'keep above' windows as active ones"
-msgstr ""
+msgstr "'Üstte tutulan' pencerelere aktiflermiş gibi davran"
 
 #: windows.cpp:1287
 msgid "Disable ARGB windows (ignores window alpha maps, fixes gtk1 apps)"
-msgstr ""
+msgstr "ARGB pencereleri pasifleştir (gtk1 uygulamalarını düzeltir)"
 
 #: windows.cpp:1291
 msgid "Opacity"
@@ -1019,17 +1018,16 @@ msgid "Inactive window size:"
 msgstr "Etkin olmayan pencere boyutu:"
 
 #: windows.cpp:1319
-#, fuzzy
 msgid "Dock window size:"
-msgstr "Pencereler"
+msgstr ""
 
 #: windows.cpp:1326
 msgid "Vertical offset:"
-msgstr ""
+msgstr "Dikey ofset"
 
 #: windows.cpp:1333
 msgid "Horizontal offset:"
-msgstr ""
+msgstr "Yatay ofset"
 
 #: windows.cpp:1340
 msgid "Shadow color:"
