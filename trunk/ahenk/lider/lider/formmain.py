@@ -1246,7 +1246,7 @@ class FormMain(QtGui.QWidget, Ui_Main):
             widget_classes = widget.get_classes()
             self_policies = classes[self_path]
 
-            self.treeApplied.clear()
+            #self.treeApplied.clear()
 
             for path, policies in classes.iteritems():
 
@@ -1264,9 +1264,9 @@ class FormMain(QtGui.QWidget, Ui_Main):
                 if policy_inherit and classes[path] or len(set(widget_classes).intersection(set(policies))) > 0:
 
                     name = path.split(",")[0].split("=")[1]
-                    node = QtGui.QTreeWidgetItem(self.treeApplied, [name], )
-                    node.setExpanded(True)
-                    node.setIcon(0, wrappers.Icon("star32"))
+                    #node = QtGui.QTreeWidgetItem(self.treeApplied, [name], )
+                    #node.setExpanded(True)
+                    #node.setIcon(0, wrappers.Icon("star32"))
 
 
                     for policy in classes[path]:
