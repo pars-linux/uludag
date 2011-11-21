@@ -1372,6 +1372,15 @@ class FormMain(QtGui.QWidget, Ui_Main):
             for name in names:
                 xmpp_update(name)
 
+            # Wait for force.update to be completed
+            import time
+            time.sleep(5)
+
+            widget = self.tabPolicy.currentWidget()
+            widget.showEvent()
+            self.__show_widget(widget)
+
+
     def __slot_save(self):
         """
             Triggered when user clicks 'save' button.
@@ -1413,6 +1422,7 @@ class FormMain(QtGui.QWidget, Ui_Main):
         else:
             item = self.items[0]
 
+            widget.policy = self.__load_policy(item)
             classes_now, policy_now, classes_new, policy_new = widget.mod_policy(remove=remove)
 
             try:
