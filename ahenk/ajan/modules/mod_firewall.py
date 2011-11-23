@@ -60,11 +60,13 @@ def process(message, options):
         stack.reverse()
         first = True
         logging.info("Firewall: Loading rule sets.")
+
+        # firewallState policy not supported for now
         for policy in stack:
-            firewallState = policy.get("firewallState", [""])[0]
+            #firewallState = policy.get("firewallState", [""])[0]
             firewallRules = policy.get("firewallRules", [""])[0]
-            if firewallState == "on":
-                enable_firewall(firewallRules, options, first)
-            elif firewallState == "off" and first:
-                disable_firewall(options)
+            #if firewallState == "on":
+            enable_firewall(firewallRules, options, first)
+            #elif firewallState == "off" and first:
+            #    disable_firewall(options)
             first = False
