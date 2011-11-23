@@ -541,6 +541,12 @@ class FormMain(QtGui.QWidget, Ui_Main):
         if self.thread.isFinished():
             self.rules_xml = self.thread.rules_xml
             self.rules_compiled = self.thread.rules_compiled
+            #print "\n\n\n\n\n\n ~~~~~~~ formmain ~~~~~~~~~ \n\n\n\n"
+            #print self.rules_xml
+
+            f = open(FIREWALL_FILE, 'w+')
+            f.write(self.rules_xml)
+            f.close()
 
 
     def __slot_modify_default_firewall_rules(self):
