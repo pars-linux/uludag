@@ -212,8 +212,9 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
 
         firewallRules = rules_xml + ":" + rules_compiled
 
+        # Disable firewall state for now
         policy = {
-            "firewallState": [firewallState],
+            #"firewallState": [firewallState],
             "firewallRules": [firewallRules],
         }
         return policy
