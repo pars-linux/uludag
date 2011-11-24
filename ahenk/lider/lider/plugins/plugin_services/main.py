@@ -142,6 +142,7 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
 
 
         if command == "service.info":
+
             self.tableWidget.setRowCount(len(arguments))
             print "----------- ARGUMENTS --------------"
             index = 0
@@ -160,10 +161,10 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
 
 
                 if status in ['started', 'on', 'conditional_started']:
-                    item_status.setText("Running")
+                    item_status.setText(i18n("Running"))
 
                 else:
-                    item_status.setText("Stopped")
+                    item_status.setText(i18n("Stopped"))
 
 
                 for start in startset:

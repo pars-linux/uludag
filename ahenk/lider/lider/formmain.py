@@ -38,7 +38,6 @@ from lider.helpers import i18n
 # Plugin modules 
 from lider.plugins.plugin_firewall import main
 
-
 i18n = i18n.i18n
 
 # Custom widgets
@@ -49,6 +48,41 @@ CONNECTION_LOST = 2
 
 FIREWALL_FILE = "/usr/share/ahenk-lider/firewall.fwb"
 
+from gui import *
+
+from PyQt4.QtGui import QPushButton
+from PyQt4.QtCore import SIGNAL
+from PyQt4.QtCore import SLOT
+from PyQt4.QtCore import QThread
+
+class PThread(QThread):
+    def __init__(self, parent, action, callback=None, \
+                 args=[], kwargs={}, exceptionHandler=None):
+        QThread.__init__(self,parent)
+
+        if callback:
+            parent.connect(self, SIGNAL("finished()"), callback)
+
+        self.action = action
+        self.args = args
+        self.kwargs = kwargs
+        self.exceptionHandler = exceptionHandler
+        self.data = None
+
+    def run(self):
+        try:
+            self.data = self.action(*self.args, **self.kwargs)
+        except Exception, e:
+            if self.exceptionHandler:
+                self.exceptionHandler(e)
+        finally:
+            self.connect(self.parent(), SIGNAL("cleanUp()"), SLOT("deleteLater()"))
+
+    def cleanUp(self):
+        self.deleteLater()
+
+    def get(self):
+        return self.data
 
 #class FormMain(QtGui.QWidget, Ui_FormMain):
 class FormMain(QtGui.QWidget, Ui_Main):
@@ -74,6 +108,10 @@ class FormMain(QtGui.QWidget, Ui_Main):
 
         # Attach generated UI
         self.setupUi(self)
+        self._busy = PMessageBox(self)
+        self._busy_hide_button = QPushButton(i18n("Cancel"), self._busy)
+        self._busy.layout.addWidget(self._busy_hide_button)
+        self._busy_hide_button.clicked.connect(self._hide_busy_message)
 
         self.groupGMembers.hide()
         self.groupGMembership.hide()
@@ -198,6 +236,7 @@ class FormMain(QtGui.QWidget, Ui_Main):
         self.splitter_2.setStretchFactor(0,1)
         self.splitter_2.setStretchFactor(1,0)
 
+        self._thread = PThread(self, self.__wait_for_service_state, self.__service_updated)
 
     def __expand_first_item(self):
         first_node = self.treeComputers.itemAt(0,0)
@@ -695,6 +734,8 @@ class FormMain(QtGui.QWidget, Ui_Main):
             except AttributeError:
                 pass
 
+        self._hide_busy_message()
+
     def __slot_talk_status(self, sender, status):
         """
             Triggered when an XMPP client's status is changed.
@@ -790,86 +831,96 @@ class FormMain(QtGui.QWidget, Ui_Main):
            hide group members box and membership box
         """
 
-        self.splitter_2.refresh()
-
         self.items = []
         for i in self.treeComputers.selectedItems():
             self.items.append(i)
 
-        self.__update_toolbar()
+        if not self.items[0].folder and (item.name in self.talk.online):
 
-        self.treeComputers.clearSelection()
+            if self.tabPolicy.currentWidget().get_classes() == ["servicePolicy"]:
+                self._show_busy_message(i18n("Getting service list..."))
 
-        for item in self.items:
-            item_alt = self.nodes_dn[item.dn]
-            self.treeComputers.setItemSelected(item_alt, True)
+            self.splitter_2.refresh()
 
-        widget = self.tabPolicy.currentWidget()
-        widget.showEvent()
-        self.__show_widget(widget)
+            self.__update_toolbar()
 
-        # Show node information
-        desc = item_alt.widget.get_uid()
-        title = item_alt.widget.get_title()
-        icon = item_alt.widget.get_icon()
+            self.treeComputers.clearSelection()
 
-        self.labelNodeDesc.setText(desc)
-        self.labelNode.setText(title)
-        self.pixmapNode.setPixmap(icon.pixmap())
+            for item in self.items:
+                item_alt = self.nodes_dn[item.dn]
+                self.treeComputers.setItemSelected(item_alt, True)
 
-        # Find group members or find memberships
-        self.listGroupMembers.clear()
+            if not self.items[0].folder:
+                widget = self.tabPolicy.currentWidget()
+                widget.showEvent()
+                self.__show_widget(widget)
+                widget.showEvent()
+                self.__show_widget(widget)
 
-        dn = item_alt.widget.get_uid()
-        dn, old_properties = self.directory.search(dn, scope="base", fields=["member", "description"])[0]
+            # Show node information
+            desc = item_alt.widget.get_uid()
+            title = item_alt.widget.get_title()
+            icon = item_alt.widget.get_icon()
 
-        if len(self.treeComputers.selectedItems()) == 1:
+            self.labelNodeDesc.setText(desc)
+            self.labelNode.setText(title)
+            self.pixmapNode.setPixmap(icon.pixmap())
 
-            try:
-                members = old_properties['member']
+            # Find group members or find memberships
+            self.listGroupMembers.clear()
 
-                self.groupGMembers.show()
-                self.groupGMembership.hide()
+            dn = item_alt.widget.get_uid()
+            dn, old_properties = self.directory.search(dn, scope="base", fields=["member", "description"])[0]
 
-                for member in members:
-                    dn = member
+            if len(self.treeComputers.selectedItems()) == 1:
 
-                    name = dn.split(",")[0].split("=")[1]
-                    label = name
-                    folder = dn.startswith("dc=")
+                try:
+                    members = old_properties['member']
 
-                    self.listGroupMembers.addItem(label)
+                    self.groupGMembers.show()
+                    self.groupGMembership.hide()
 
-                    item = self.listGroupMembers.item(self.listGroupMembers.count() - 1)
-                    item.setIcon(wrappers.Icon("user48"))
+                    for member in members:
+                        dn = member
 
-            except KeyError:
-                self.listGMemberships.clear()
-                memberships = self.get_groups_of_user(self.treeComputers.currentItem().dn)
-                for membership in memberships:
-                    name = membership.split(",")[0].split("=")[1]
+                        name = dn.split(",")[0].split("=")[1]
+                        label = name
+                        folder = dn.startswith("dc=")
 
-                    self.listGMemberships.addItem(name)
+                        self.listGroupMembers.addItem(label)
 
-                    item = self.listGMemberships.item(self.listGMemberships.count() - 1)
-                    item.setIcon(wrappers.Icon("group48"))
+                        item = self.listGroupMembers.item(self.listGroupMembers.count() - 1)
+                        item.setIcon(wrappers.Icon("user48"))
 
-                self.listGroupMembers.addItem(i18n("No members found"))
+                except KeyError:
+                    self.listGMemberships.clear()
+                    memberships = self.get_groups_of_user(self.treeComputers.currentItem().dn)
+                    for membership in memberships:
+                        name = membership.split(",")[0].split("=")[1]
+
+                        self.listGMemberships.addItem(name)
+
+                        item = self.listGMemberships.item(self.listGMemberships.count() - 1)
+                        item.setIcon(wrappers.Icon("group48"))
+
+                    self.listGroupMembers.addItem(i18n("No members found"))
+                    self.groupGMembers.hide()
+                    self.groupGMembership.show()
+
+                if self.listGMemberships.count() == 0:
+                    self.groupGMembership.hide()
+
+                if self.listGroupMembers.count() == 0:
+                    self.groupGMembers.hide()
+
+            else:
                 self.groupGMembers.hide()
-                self.groupGMembership.show()
-
-            if self.listGMemberships.count() == 0:
                 self.groupGMembership.hide()
-
-            if self.listGroupMembers.count() == 0:
-                self.groupGMembers.hide()
-
         else:
-            self.groupGMembers.hide()
-            self.groupGMembership.hide()
-
-
-
+            tw = self.tabPolicy.currentWidget().tableWidget
+            rc = tw.rowCount()
+            for i in range(rc):
+                tw.removeRow(0)
 
     def __slot_tab_clicked(self):
         """
@@ -904,9 +955,6 @@ class FormMain(QtGui.QWidget, Ui_Main):
             self.pixmapNode.setPixmap(icon.pixmap())
         except:
             pass
-
-
-
 
     def __slot_tree2_double_click(self, item, column):
         """
@@ -1378,14 +1426,35 @@ class FormMain(QtGui.QWidget, Ui_Main):
             for name in names:
                 xmpp_update(name)
 
-            # Wait for force.update to be completed
-            import time
-            time.sleep(5)
+            self._show_busy_message("Updating...")
+            self._thread.start()
 
-            widget = self.tabPolicy.currentWidget()
-            widget.showEvent()
-            self.__show_widget(widget)
+    def _show_busy_message(self, message=""):
+        # self._busy_message_owner = self.tabPolicy.currentWidget()
+        self._busy.enableOverlay(False)
+        self._busy.busy.busy()
+        self._busy.setMessage(message)
+        self._busy.animate(start = MIDLEFT,
+                           stop = MIDCENTER,
+                           direction = IN)
 
+    def _hide_busy_message(self):
+        if self._busy.isVisible():# and self._busy_message_owner == self.tabPolicy.currentWidget():
+            self._busy.busy.stopAnimation()
+            self._busy.animate(start = CURRENT,
+                               stop = MIDRIGHT,
+                               direction = OUT)
+
+    def __wait_for_service_state(self):
+        # Wait for force.update to be completed
+        import time
+        time.sleep(5)
+        return
+
+    def __service_updated(self):
+        widget = self.tabPolicy.currentWidget()
+        widget.showEvent()
+        self.__show_widget(widget)
 
     def __slot_save(self):
         """
