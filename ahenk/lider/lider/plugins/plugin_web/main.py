@@ -66,8 +66,7 @@ class WidgetModule(QtGui.QWidget, Ui_widgetWeb, plugins.PluginWidget):
         """
         self.item = item
         if not self.item:
-            self.webView.setUrl("")
-            self.webView.load()
+            self.webView.setUrl("about:blank")
             self.comboServices.clear()
             self.comboServices.addItem("Select...")
 
