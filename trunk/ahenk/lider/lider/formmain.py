@@ -937,24 +937,38 @@ class FormMain(QtGui.QWidget, Ui_Main):
 
         self.treeComputers.clearSelection()
 
-        for item in self.items:
-            item_alt = self.nodes_dn[item.dn]
-            self.treeComputers.setItemSelected(item_alt, True)
 
         widget = self.tabPolicy.currentWidget()
-        widget.showEvent()
-        self.__show_widget(widget)
+        if self.items and (item.name in self.talk.online):
+            for item in self.items:
+                item_alt = self.nodes_dn[item.dn]
+                self.treeComputers.setItemSelected(item_alt, True)
 
-        # Show node information
-        try:
-            desc = item_alt.widget.get_uid()
-            title = item_alt.widget.get_title()
-            icon = item_alt.widget.get_icon()
-            self.labelNodeDesc.setText(desc)
-            self.labelNode.setText(title)
-            self.pixmapNode.setPixmap(icon.pixmap())
-        except:
-            pass
+            if not self.items[0].folder:
+                widget.showEvent()
+                self.__show_widget(widget)
+                widget.showEvent()
+                self.__show_widget(widget)
+
+            # widget = self.tabPolicy.currentWidget()
+            # widget.showEvent()
+            # self.__show_widget(widget)
+
+            # Show node information
+            try:
+                desc = item_alt.widget.get_uid()
+                title = item_alt.widget.get_title()
+                icon = item_alt.widget.get_icon()
+                self.labelNodeDesc.setText(desc)
+                self.labelNode.setText(title)
+                self.pixmapNode.setPixmap(icon.pixmap())
+            except:
+                pass
+        else:
+            widget.set_item(item=None)
+            #rc = cb.count
+            #for i in range(rc):
+            #    cb.removeItem(i)
 
     def __slot_tree2_double_click(self, item, column):
         """

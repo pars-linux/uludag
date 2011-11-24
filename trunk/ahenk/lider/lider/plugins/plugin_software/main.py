@@ -62,7 +62,15 @@ class WidgetModule(QtGui.QWidget, Ui_widgetSoftware, plugins.PluginWidget):
         self.connect(self.pushAddRepo, QtCore.SIGNAL("clicked()"), self.__slot_repo_add)
         self.connect(self.pushRemoveRepo, QtCore.SIGNAL("clicked()"), self.__slot_repo_remove)
 
-    def showEvent(self, event):
+    def set_item(self, item):
+        """
+            Sets directory item that is being worked on.
+            Not required for global widgets.
+        """
+        pass
+
+    # def showEvent(self, event):
+    def showEvent(self):
         """
             Things to do before widget is shown.
         """

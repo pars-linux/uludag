@@ -138,8 +138,15 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
         self.connect(self.pushReset, QtCore.SIGNAL("clicked()"), self.__slot_reset)
         self.connect(self.pushFailsafe, QtCore.SIGNAL("clicked()"), self.__slot_load_failsafe_rules)
 
+    def set_item(self, item):
+        """
+            Sets directory item that is being worked on.
+            Not required for global widgets.
+        """
+        pass
 
-    def showEvent(self, event):
+    # def showEvent(self, event):
+    def showEvent(self):
         """
             Things to do before widget is shown.
         """

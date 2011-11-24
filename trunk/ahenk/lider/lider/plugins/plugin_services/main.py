@@ -49,6 +49,8 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         self.start_set = []
         self.stop_set = []
 
+        self.groupBox = QtGui.QGroupBox()
+
         #self.tableWidget.setUpdatesEnabled(True);
 
     def set_item(self, item):
@@ -57,8 +59,9 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
             Not required for global widgets.
         """
         self.item = item
-        if self.item and not self.item.folder:
-            self.groupBox.setEnabled(True)
+        if self.item:
+            if not self.item.folder:
+                self.groupBox.setEnabled(True)
         else:
             self.groupBox.setEnabled(False)
 
