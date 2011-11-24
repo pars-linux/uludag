@@ -66,18 +66,21 @@ class WidgetModule(QtGui.QWidget, Ui_widgetWeb, plugins.PluginWidget):
         """
         self.item = item
         if not self.item:
-            self.webView.setHtml("")
+            self.webView.setUrl("")
+            self.webView.load()
             self.comboServices.clear()
             self.comboServices.addItem("Select...")
-        else:
+
+    # def showEvent(self, event):
+    def showEvent(self):
+        """
+            Things to do before widget is shown.
+        """
+        if self.item:
             name = self.item.name
             jid = "%s@%s" % (name, self.talk.domain)
             self.talk.send_command(jid, "apache.info")
 
-    def showEvent(self, event):
-        """
-            Things to do before widget is shown.
-        """
         pass
 
     def get_type(self):

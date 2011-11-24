@@ -42,7 +42,16 @@ class WidgetModule(QtGui.QWidget, Ui_widgetAuthentication, plugins.PluginWidget)
         # Reset UI
         self.__update_boxes()
 
-    def showEvent(self, event):
+
+    def set_item(self, item):
+        """
+            Sets directory item that is being worked on.
+            Not required for global widgets.
+        """
+        pass
+
+    # def showEvent(self, event):
+    def showEvent(self):
         """
             Things to do before widget is shown.
         """
