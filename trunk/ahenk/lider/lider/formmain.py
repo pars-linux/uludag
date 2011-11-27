@@ -1329,17 +1329,17 @@ class FormMain(QtGui.QWidget, Ui_Main):
                         # Indentation of this break was one of the problems
                         break
 
-                if policy_inherit and classes[path] or len(set(widget_classes).intersection(set(policies))) > 0:
-
-                    name = path.split(",")[0].split("=")[1]
-                    #node = QtGui.QTreeWidgetItem(self.treeApplied, [name], )
-                    #node.setExpanded(True)
-                    #node.setIcon(0, wrappers.Icon("star32"))
-
-
-                    for policy in classes[path]:
-                        p = QtGui.QTreeWidgetItem(node, [policy])
-                        p.setIcon(0, wrappers.Icon("policy32"))
+                #if policy_inherit and classes[path] or len(set(widget_classes).intersection(set(policies))) > 0:
+                #
+                #    name = path.split(",")[0].split("=")[1]
+                #    #node = QtGui.QTreeWidgetItem(self.treeApplied, [name], )
+                #    #node.setExpanded(True)
+                #    #node.setIcon(0, wrappers.Icon("star32"))
+                #
+                #
+                #    for policy in classes[path]:
+                #        p = QtGui.QTreeWidgetItem(node, [policy])
+                #        p.setIcon(0, wrappers.Icon("policy32"))
 
         try:
             widget.set_item(item)
