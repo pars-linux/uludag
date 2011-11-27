@@ -1440,8 +1440,9 @@ class FormMain(QtGui.QWidget, Ui_Main):
             for name in names:
                 xmpp_update(name)
 
-            self._show_busy_message("Updating...")
-            self._thread.start()
+            if self.tabPolicy.currentWidget().get_classes() == ["servicePolicy"]:
+                self._show_busy_message("Updating...")
+                self._thread.start()
 
     def _show_busy_message(self, message=""):
         # self._busy_message_owner = self.tabPolicy.currentWidget()
