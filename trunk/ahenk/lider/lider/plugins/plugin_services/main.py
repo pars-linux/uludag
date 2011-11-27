@@ -213,7 +213,8 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
                 print "equal %s" %x
                 self.stop_set.remove(x)
 
-        self.start_set.append(item_name)
+        if item_name not in self.start_set:
+            self.start_set.append(item_name)
         print self.start_set
         print self.stop_set
 
@@ -234,7 +235,8 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
                 print "equal %s" %x
                 self.start_set.remove(x)
 
-        self.stop_set.append(item_name)
+        if item_name not in self.stop_set:
+            self.stop_set.append(item_name)
         print self.start_set
         print self.stop_set
 
