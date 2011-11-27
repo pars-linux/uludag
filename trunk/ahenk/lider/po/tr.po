@@ -56,7 +56,6 @@ msgid "Cancel"
 msgstr "Çıkış"
 
 #: lider/formmain.py:129
-#, fuzzy
 msgid "Modify Default Firewall Rules"
 msgstr "Güvenlik duvarı kurallarını değiştir"
 
