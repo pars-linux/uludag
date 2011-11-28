@@ -24,7 +24,9 @@ from ui_firewall import Ui_widgetFirewall
 # Helper modules
 from lider.helpers import plugins
 from lider.helpers import wrappers
+from lider.helpers import i18n
 
+i18n = i18n.i18n
 
 class ThreadFW(QtCore.QThread):
     def __init__(self, group_name= None, rules_xml=None):
@@ -260,6 +262,8 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
         else:
             name = "Group"
 
+        self.plainTextEdit.setPlainText("")
+
         self.pushEdit.setEnabled(False)
         self.pushReset.setEnabled(False)
         self.thread = ThreadFW(name, self.rules_xml)
@@ -296,6 +300,8 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
         self.rules_xml = file(name).read()
         self.rules_compiled = file(name + ".sh").read()
 
+        self.plainTextEdit.setPlainText(i18n("Default rules were loaded"))
+
     def __slot_load_failsafe_rules(self):
         """
             Triggered when user clicks 'Load Failsafe Rules' button.
@@ -325,6 +331,8 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
 
         self.rules_xml = file(name).read()
         self.rules_compiled = file(name + ".sh").read()
+
+        self.plainTextEdit.setPlainText(i18n("Failsafe rules were loaded"))
 
     """
     def __slot_status(self):
