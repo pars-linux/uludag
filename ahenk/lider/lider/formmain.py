@@ -951,6 +951,11 @@ class FormMain(QtGui.QWidget, Ui_Main):
 
         widget = self.tabPolicy.currentWidget()
         if self.items and (item.name in self.talk.online):
+
+            # Show roller before retrieving service list when service tab is clicked
+            if self.tabPolicy.currentWidget().get_classes() == ["servicePolicy"]:
+                self._show_busy_message(i18n("Getting service list..."))
+
             for item in self.items:
                 item_alt = self.nodes_dn[item.dn]
                 self.treeComputers.setItemSelected(item_alt, True)
