@@ -90,6 +90,11 @@ class WidgetModule(QtGui.QWidget, Ui_widgetWeb, plugins.PluginWidget):
         """
         return plugins.TYPE_GLOBAL
 
+    def get_classes(self):
+        """
+            Returns a list of policy class names.
+        """
+        return ""
 
     def load_policy(self, policy):
         """
