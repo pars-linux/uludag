@@ -835,6 +835,16 @@ class FormMain(QtGui.QWidget, Ui_Main):
         for i in self.treeComputers.selectedItems():
             self.items.append(i)
 
+        # Disable Save and Save&Apply buttons if the selected node is not a computer
+        if self.items[0].folder or self.items[0].user or self.items[0].group:
+            self.pushApply.setEnabled(False)
+            self.pushSave.setEnabled(False)
+
+        else:
+            self.pushApply.setEnabled(True)
+            self.pushSave.setEnabled(True)
+
+
         if not self.items[0].folder and (item.name in self.talk.online):
 
             if self.tabPolicy.currentWidget().get_classes() == ["servicePolicy"]:
