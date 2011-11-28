@@ -439,9 +439,6 @@ class FormMain(QtGui.QWidget, Ui_Main):
         self.listGMemberships.clear()
         self.listGroupMembers.clear()
 
-        #self.get_all_users('cn=admins,dc=groups,dc=test,dc=pardus,dc=org,dc=tr')
-        #self.get_groups_of_user('cn=Renan,dc=computers,dc=test,dc=pardus,dc=org,dc=tr')
-
         if not root:
             self.treeComputers.clear()
 
@@ -710,7 +707,7 @@ class FormMain(QtGui.QWidget, Ui_Main):
                 command: Command
                 arguments: Arguments
         """
-        print "XMPP message from: %s" % sender, "talk", "debug"
+        #print "XMPP message from: %s" % sender, "talk", "debug"
         self.__log("XMPP message from: %s" % sender, "talk", "debug")
 
         print "====================================="
@@ -843,6 +840,10 @@ class FormMain(QtGui.QWidget, Ui_Main):
         else:
             self.pushApply.setEnabled(True)
             self.pushSave.setEnabled(True)
+
+            widget = self.tabPolicy.currentWidget()
+            widget.showEvent()
+            self.__show_widget(widget)
 
 
         if not self.items[0].folder and (item.name in self.talk.online):
