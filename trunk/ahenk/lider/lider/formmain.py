@@ -1392,13 +1392,18 @@ class FormMain(QtGui.QWidget, Ui_Main):
 
         if policy_match:
             widget.policy_match = True
-            self.framePolicyInherit.show()
+            #self.framePolicyInherit.show()
+            self.framePolicyInherit.hide()
             if policy_inherit:
-                self.radioPolicyInherit.setChecked(True)
-                self.pushCopyPolicy.setEnabled(False)
+                #self.radioPolicyInherit.setChecked(True)
+                #self.pushCopyPolicy.setEnabled(False)
+                self.radioPolicyInherit.hide()
+                self.pushCopyPolicy.hide()
             else:
-                self.radioPolicyNoInherit.setChecked(True)
-                self.pushCopyPolicy.setEnabled(True)
+                #self.radioPolicyNoInherit.setChecked(True)
+                #self.pushCopyPolicy.setEnabled(True)
+                self.radioPolicyNoInherit.hide()
+                self.pushCopyPolicy.hide()
         else:
             widget.policy_match = False
 
