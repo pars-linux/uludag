@@ -58,11 +58,13 @@ def process(message, options):
     if message.type == "policy":
         stack = message.policy_stack
         stack.reverse()
+
         first = True
         logging.info("Firewall: Loading rule sets.")
 
         # firewallState policy not supported for now
-        for policy in stack:
+        """
+        #for policy in stack:
             #firewallState = policy.get("firewallState", [""])[0]
             firewallRules = policy.get("firewallRules", [""])[0]
             #if firewallState == "on":
@@ -70,3 +72,9 @@ def process(message, options):
             #elif firewallState == "off" and first:
             #    disable_firewall(options)
             first = False
+        """
+
+        # Apply the recent rule instead of all inherited rules
+        firewallRules = stack[0].get("firewallRules", [""])[0]
+        enable_firewall(firewallRules, options, first)
+        first = False
