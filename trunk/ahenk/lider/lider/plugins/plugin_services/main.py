@@ -22,6 +22,10 @@ from lider.helpers import i18n
 
 i18n = i18n.i18n
 
+# Red, Green, Blue
+SERV_START_COLOR = (24, 178, 24)
+SERV_STOP_COLOR = (178, 24, 24)
+
 class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
     """
         Service management UI.
@@ -162,13 +166,12 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
 
                 item_status = QtGui.QTableWidgetItem()
 
-
                 if status in ['started', 'on', 'conditional_started']:
                     item_status.setText(i18n("Running"))
-
+                    state = True
                 else:
                     item_status.setText(i18n("Stopped"))
-
+                    state = False
 
                 for start in startset:
                     if start== str(name):
@@ -188,6 +191,11 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
                 else:
                     item_autostart = QtGui.QTableWidgetItem(i18n("No"))
                 self.tableWidget.setItem(index, 2, item_autostart)
+
+                if state:
+                    self._set_service_item_color(index, SERV_START_COLOR)
+                else:
+                    self._set_service_item_color(index, SERV_STOP_COLOR)
 
                 index += 1
         elif command in ["service.start.status", "service.stop.status"]:
@@ -242,3 +250,10 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
 
         item_status = item[1]
         item_status.setIcon(wrappers.Icon("flag-red"))
+
+    def _set_service_item_color(self, row_index, color):
+
+        col = self.tableWidget.columnCount()
+
+        for col_index in range(col):
+            self.tableWidget.item(row_index, col_index).setForeground(QtGui.QBrush(QtGui.QColor(color[0], color[1], color[2])))
