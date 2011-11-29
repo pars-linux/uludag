@@ -832,24 +832,17 @@ class FormMain(QtGui.QWidget, Ui_Main):
         for i in self.treeComputers.selectedItems():
             self.items.append(i)
 
+        widget = self.tabPolicy.currentWidget()
+
         # Disable Save and Save&Apply buttons if the selected node is not a computer
         if self.items[0].folder or self.items[0].user or self.items[0].group:
             self.pushApply.setEnabled(False)
             self.pushSave.setEnabled(False)
 
+            widget.set_item(item=None)
         else:
             self.pushApply.setEnabled(True)
             self.pushSave.setEnabled(True)
-
-            widget = self.tabPolicy.currentWidget()
-            widget.showEvent()
-            self.__show_widget(widget)
-
-
-        if not self.items[0].folder and (item.name in self.talk.online):
-
-            if self.tabPolicy.currentWidget().get_classes() == ["servicePolicy"]:
-                self._show_busy_message(i18n("Getting service list..."))
 
             self.splitter_2.refresh()
 
@@ -861,12 +854,16 @@ class FormMain(QtGui.QWidget, Ui_Main):
                 item_alt = self.nodes_dn[item.dn]
                 self.treeComputers.setItemSelected(item_alt, True)
 
-            if not self.items[0].folder:
-                widget = self.tabPolicy.currentWidget()
+            if item.name in self.talk.online:
+                if self.tabPolicy.currentWidget().get_classes() == ["servicePolicy"]:
+                    self._show_busy_message(i18n("Getting service list..."))
+
                 widget.showEvent()
                 self.__show_widget(widget)
                 widget.showEvent()
                 self.__show_widget(widget)
+            else:
+                widget.set_item(item=None)
 
             # Show node information
             desc = item_alt.widget.get_uid()
@@ -927,11 +924,6 @@ class FormMain(QtGui.QWidget, Ui_Main):
             else:
                 self.groupGMembers.hide()
                 self.groupGMembership.hide()
-        else:
-            tw = self.tabPolicy.currentWidget().tableWidget
-            rc = tw.rowCount()
-            for i in range(rc):
-                tw.removeRow(0)
 
     def __slot_tab_clicked(self):
         """

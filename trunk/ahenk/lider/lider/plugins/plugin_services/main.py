@@ -68,6 +68,9 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
                 self.groupBox.setEnabled(True)
         else:
             self.groupBox.setEnabled(False)
+            rc = self.tableWidget.rowCount()
+            for i in range(rc):
+                self.tableWidget.removeRow(0)
 
     #def showEvent(self, event):
     def showEvent(self):
