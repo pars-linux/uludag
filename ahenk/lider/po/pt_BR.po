@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-28 16:52+0200\n"
+"POT-Creation-Date: 2011-11-29 15:22+0200\n"
 "PO-Revision-Date: 2011-08-19 11:36+0300\n"
 "Last-Translator: Gökhan Özbulak <gozbulak@pardus.org.tr>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -108,19 +108,19 @@ msgid "XMPP connection error."
 msgstr ""
 
 #: lider/formmain.py:544 lider/formmain.py:547 lider/formmain.py:621
-#: lider/formmain.py:628 lider/formmain.py:1090 lider/formmain.py:1093
-#: lider/formmain.py:1096 lider/formmain.py:1129 lider/formmain.py:1132
-#: lider/formmain.py:1135 lider/formmain.py:1161 lider/formmain.py:1164
-#: lider/formmain.py:1167 lider/formmain.py:1199 lider/formmain.py:1202
-#: lider/formmain.py:1205 lider/formmain.py:1243 lider/formmain.py:1246
-#: lider/formmain.py:1249 lider/formmain.py:1281 lider/formmain.py:1284
-#: lider/formmain.py:1287 lider/formmain.py:1549 lider/formmain.py:1552
+#: lider/formmain.py:628 lider/formmain.py:1082 lider/formmain.py:1085
+#: lider/formmain.py:1088 lider/formmain.py:1121 lider/formmain.py:1124
+#: lider/formmain.py:1127 lider/formmain.py:1153 lider/formmain.py:1156
+#: lider/formmain.py:1159 lider/formmain.py:1191 lider/formmain.py:1194
+#: lider/formmain.py:1197 lider/formmain.py:1235 lider/formmain.py:1238
+#: lider/formmain.py:1241 lider/formmain.py:1273 lider/formmain.py:1276
+#: lider/formmain.py:1279 lider/formmain.py:1541 lider/formmain.py:1544
 msgid "Connection Error"
 msgstr ""
 
-#: lider/formmain.py:544 lider/formmain.py:628 lider/formmain.py:1090
-#: lider/formmain.py:1129 lider/formmain.py:1161 lider/formmain.py:1199
-#: lider/formmain.py:1243 lider/formmain.py:1281 lider/formmain.py:1549
+#: lider/formmain.py:544 lider/formmain.py:628 lider/formmain.py:1082
+#: lider/formmain.py:1121 lider/formmain.py:1153 lider/formmain.py:1191
+#: lider/formmain.py:1235 lider/formmain.py:1273 lider/formmain.py:1541
 msgid "Connection lost. Please re-connect."
 msgstr ""
 
@@ -138,83 +138,84 @@ msgstr ""
 msgid "XMPP user is offline: %s"
 msgstr ""
 
-#: lider/formmain.py:852 lider/formmain.py:957
+#: lider/formmain.py:859 lider/formmain.py:949
 msgid "Getting service list..."
 msgstr ""
 
-#: lider/formmain.py:917
+#: lider/formmain.py:914
 msgid "No members found"
 msgstr ""
 
-#: lider/formmain.py:1031 lider/formmain.py:1110 lider/formmain.py:1116
-#: lider/formmain.py:1119
+#: lider/formmain.py:1023 lider/formmain.py:1102 lider/formmain.py:1108
+#: lider/formmain.py:1111
 msgid "Warning"
 msgstr ""
 
-#: lider/formmain.py:1093 lider/formmain.py:1132 lider/formmain.py:1164
-#: lider/formmain.py:1202 lider/formmain.py:1246 lider/formmain.py:1284
+#: lider/formmain.py:1085 lider/formmain.py:1124 lider/formmain.py:1156
+#: lider/formmain.py:1194 lider/formmain.py:1238 lider/formmain.py:1276
 msgid "Insufficient access."
 msgstr ""
 
-#: lider/formmain.py:1096
+#: lider/formmain.py:1088
 msgid "Unable to modify item."
 msgstr ""
 
-#: lider/formmain.py:1110
+#: lider/formmain.py:1102
 msgid "Only one item at a time can be deleted."
 msgstr ""
 
-#: lider/formmain.py:1116
+#: lider/formmain.py:1108
 msgid "The selected item is a non-empty directory. It cannot be deleted."
 msgstr ""
 
-#: lider/formmain.py:1119
+#: lider/formmain.py:1111
 msgid "This is not undoable. Are you sure you want to remove?"
 msgstr ""
 
-#: lider/formmain.py:1135
+#: lider/formmain.py:1127
 msgid "Unable to delete item."
 msgstr ""
 
-#: lider/formmain.py:1167
+#: lider/formmain.py:1159
 msgid "Unable to add computer."
 msgstr ""
 
-#: lider/formmain.py:1205
+#: lider/formmain.py:1197
 msgid "Unable to add user."
 msgstr ""
 
-#: lider/formmain.py:1249
+#: lider/formmain.py:1241
 msgid "Unable to add group."
 msgstr ""
 
-#: lider/formmain.py:1287
+#: lider/formmain.py:1279
 msgid "Unable to add folder."
 msgstr ""
 
-#: lider/formmain.py:1453
+#: lider/formmain.py:1445
 #, python-format
 msgid "%d item(s) will be forced to update policy."
 msgstr ""
 
-#: lider/formmain.py:1454 lider/formmain.py:1503 lider/formmain.py:1567
-#: lider/formmain.py:1597
+#: lider/formmain.py:1446 lider/formmain.py:1495 lider/formmain.py:1559
+#: lider/formmain.py:1589 lider/plugins/plugin_firewall/main.py:280
+#: lider/plugins/plugin_firewall/main.py:312
 msgid "Do you want to continue?"
 msgstr ""
 
-#: lider/formmain.py:1502
+#: lider/formmain.py:1494
 msgid "Policy will be saved."
 msgstr ""
 
-#: lider/formmain.py:1552
+#: lider/formmain.py:1544
 msgid "Unable to modify node."
 msgstr ""
 
-#: lider/formmain.py:1566
+#: lider/formmain.py:1558
 msgid "All changes will be reverted."
 msgstr ""
 
-#: lider/formmain.py:1596
+#: lider/formmain.py:1588
 msgid "Policy from parent directory will be copied."
 msgstr ""
 
@@ -397,8 +398,16 @@ msgstr ""
 msgid "Active Directory Settings"
 msgstr ""
 
+#: lider/plugins/plugin_firewall/main.py:279
+msgid "Default firewall rules will be loaded."
+msgstr ""
+
 #: lider/plugins/plugin_firewall/main.py:303
 msgid "Default rules were loaded"
+msgstr ""
+
+#: lider/plugins/plugin_firewall/main.py:311
+msgid "Failsafe firewall rules will be loaded."
 msgstr ""
 
 #: lider/plugins/plugin_firewall/main.py:335
@@ -410,7 +419,7 @@ msgid "Firewall"
 msgstr ""
 
 #: lider/plugins/plugin_firewall/ui_firewall.py:171
-#: lider/plugins/plugin_services/main.py:202
+#: lider/plugins/plugin_services/main.py:205
 #: lider/plugins/plugin_services/ui_services.py:121
 msgid "Status"
 msgstr ""
@@ -431,23 +440,23 @@ msgstr ""
 msgid "Load Fail Safe Rules"
 msgstr ""
 
-#: lider/plugins/plugin_services/main.py:170
+#: lider/plugins/plugin_services/main.py:173
 msgid "Running"
 msgstr ""
 
-#: lider/plugins/plugin_services/main.py:173
+#: lider/plugins/plugin_services/main.py:176
 msgid "Stopped"
 msgstr ""
 
-#: lider/plugins/plugin_services/main.py:188
+#: lider/plugins/plugin_services/main.py:191
 msgid "Yes"
 msgstr ""
 
-#: lider/plugins/plugin_services/main.py:190
+#: lider/plugins/plugin_services/main.py:193
 msgid "Conditional"
 msgstr ""
 
-#: lider/plugins/plugin_services/main.py:192
+#: lider/plugins/plugin_services/main.py:195
 msgid "No"
 msgstr ""
 
