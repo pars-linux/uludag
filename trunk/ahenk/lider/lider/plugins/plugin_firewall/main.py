@@ -276,8 +276,8 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
         """
         msg = QtGui.QMessageBox(self)
         msg.setIcon(QtGui.QMessageBox.Question)
-        msg.setText("Do you want to reset all firewall rules?")
-        msg.setInformativeText("Do you want to continue?")
+        msg.setText(i18n("Default firewall rules will be loaded."))
+        msg.setInformativeText(i18n("Do you want to continue?"))
         msg.setStandardButtons(QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
         msg.setDefaultButton(QtGui.QMessageBox.No)
 
@@ -308,8 +308,8 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
         """
         msg = QtGui.QMessageBox(self)
         msg.setIcon(QtGui.QMessageBox.Question)
-        msg.setText("Do you want to return initial firewall rules?")
-        msg.setInformativeText("Do you want to continue?")
+        msg.setText(i18n("Failsafe firewall rules will be loaded."))
+        msg.setInformativeText(i18n("Do you want to continue?"))
         msg.setStandardButtons(QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
         msg.setDefaultButton(QtGui.QMessageBox.No)
 
