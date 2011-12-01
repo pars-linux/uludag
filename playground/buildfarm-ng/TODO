@@ -1,9 +1,0 @@
-New Features
--------------
-
-(/5) Implement a general build service which will communicate with the
-     available buildfarms around,
-(-)  Cleanup/Refactor and Port the current buildfarm code to Twisted.xmlrpc,
-(-)  Add SSL and HTTP Authentication to both XMLPRC servers,
-(-)  Use the build service's offerings to represent a *status-only* web page
-     on pardus.org.tr
