@@ -14,6 +14,9 @@ from twisted.internet import task
 from twisted.words import xish
 from twisted.internet import reactor, error
 
+from datetime import datetime
+import socket
+
 TIMEOUT = 5
 
 
@@ -21,7 +24,8 @@ OPTIONS = None
 XMLSTREAM = None
 Q_IN = None
 Q_OUT = None
-
+myJid = None
+factory = None
 
 def event_session_start(stream):
     """
@@ -72,10 +76,9 @@ def event_connection_lost(connector, reason):
     """
         Reconnects if session ends.
     """
-    if reason.type == error.ConnectionDone:
-        logging.warning("XMPP connection lost. Retrying in %d seconds." % TIMEOUT)
-        time.sleep(TIMEOUT)
-        connect()
+    logging.warning("XMPP connection lost. Retrying in %d seconds." % TIMEOUT)
+    time.sleep(TIMEOUT)
+    connect()
 
 def event_connection_failed(connector, reason):
     """
@@ -97,6 +100,18 @@ def task_message_queue():
     """
         .
     """
+    if( datetime.now().second%30 == 0 ):
+        s = socket.socket()
+        try:
+            logging.warning("Checking Network Link")
+            s.connect((OPTIONS.hostname, port))
+            s.connect((OPTIONS.hostname, OPTIONS.port))
+            s.close()
+            s = None;
+        except:
+            logging.warning("Network is unreachable now. try to reconnect")
+            time.sleep(TIMEOUT)
+            connect()
     if not XMLSTREAM:
         return
     try:
@@ -122,26 +137,28 @@ def task_message_queue():
             XMLSTREAM.send(message)
 
 def connect():
+    reactor.connectTCP(OPTIONS.hostname, 5222, factory, 10)
+
+def xmpp_go(options, q_in, q_out):
+    """
+        Main event loop for XMPP worker
+    """
+    global Q_IN, Q_OUT, OPTIONS, myJid, factory
+
+    Q_IN = q_in
+    Q_OUT = q_out
+    OPTIONS = options
+
+
     myJid = jid.JID('%s@%s/Ahenk' % (OPTIONS.username, OPTIONS.domain))
     factory = client.XMPPClientFactory(myJid, OPTIONS.password)
     factory.clientConnectionLost = event_connection_lost
     factory.clientConnectionFailed = event_connection_failed
     factory.addBootstrap(xmlstream.STREAM_AUTHD_EVENT, event_session_start)
     factory.addBootstrap(xmlstream.INIT_FAILED_EVENT, event_init_failed)
-    reactor.connectTCP(OPTIONS.hostname, 5222, factory)
-
-def xmpp_go(options, q_in, q_out):
-    """
-        Main event loop for XMPP worker
-    """
-    global Q_IN, Q_OUT, OPTIONS
-
-    Q_IN = q_in
-    Q_OUT = q_out
-    OPTIONS = options
 
     # Send messages in queue every 0.1 seconds
-    task.LoopingCall(task_message_queue).start(0.1)
+    task.LoopingCall(task_message_queue).start(1.0)
 
     # Connect to XMPP server
     connect()
