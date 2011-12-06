@@ -194,6 +194,9 @@ class FormMain(QtGui.QWidget, Ui_Main):
         # Selected items
         self.items = []
 
+        # Item name for comaparison
+        self.item_name = ""
+
         # Groups
         self.groups = []
 
@@ -724,12 +727,14 @@ class FormMain(QtGui.QWidget, Ui_Main):
                     arguments = None
             except Exception, e:
                 arguments = None
-            try:
-                widget.talk_message(sender, message, arguments)
-            except Exception, e:
-                pass
-            except AttributeError:
-                pass
+
+            if(sender == self.item_name):             
+                try:
+                    widget.talk_message(sender, message, arguments)
+                except Exception, e:
+                    pass
+                except AttributeError:
+                    pass
 
         self._hide_busy_message()
 
@@ -853,6 +858,9 @@ class FormMain(QtGui.QWidget, Ui_Main):
             for item in self.items:
                 item_alt = self.nodes_dn[item.dn]
                 self.treeComputers.setItemSelected(item_alt, True)
+
+            self.item_name = item.name
+            print "ITEM NAME   %s " %self.item_name
 
             if item.name in self.talk.online:
                 if self.tabPolicy.currentWidget().get_classes() == ["servicePolicy"]:

@@ -78,10 +78,9 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
             Things to do before widget is shown.
         """
         if self.item:
-            print "item name %s , item domain %s" %(self.item.name, self.talk.domain)
+            print "\n\n item name %s , item domain %s" %(self.item.name, self.talk.domain)
             jid = "%s@%s" % (self.item.name, self.talk.domain)
             self.talk.send_command(jid, "service.info")
-            print "\n\n----  service.info command is send  ----"
 
     def get_type(self):
         """
