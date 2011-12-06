@@ -104,8 +104,7 @@ def task_message_queue():
         s = socket.socket()
         try:
             logging.warning("Checking Network Link")
-            s.connect((OPTIONS.hostname, port))
-            s.connect((OPTIONS.hostname, OPTIONS.port))
+            s.connect((OPTIONS.hostname, 5222))
             s.close()
             s = None;
         except:
