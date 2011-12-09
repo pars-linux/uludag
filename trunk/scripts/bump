@@ -111,7 +111,7 @@ def update_sha1sum(pspec):
 
 if __name__ == "__main__":
 
-    usage = "Usage: %s <Release comment> [Bumped version] [options]"
+    usage = "Usage: %prog <Release comment> [Bumped version] [options]"
     parser = OptionParser(usage)
     parser.add_option("-n", "--no-increment",
                       dest="no_increment",
