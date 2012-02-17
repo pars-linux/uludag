@@ -1,0 +1,3 @@
+History Manager provides a front-end gui to pisi history
+tool and allows takeback/snapshot operations in a easy way
+without using command line interface.
