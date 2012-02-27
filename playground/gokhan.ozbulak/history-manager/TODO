@@ -1,0 +1,10 @@
+Calendar:
+    * Calendar should be marked based on operations fetched from historydb [OK]
+
+Pop-Up:
+    * Pop-Up should be populated with operations realized in given date
+    * No pop-up for dates that don't have any operations
+    * Different operations on given date should be segmented (with different background color etc.)
+
+Main Window:
+    * A refresh button may be a good idea to populate calendar if historydb has been changed from cli
