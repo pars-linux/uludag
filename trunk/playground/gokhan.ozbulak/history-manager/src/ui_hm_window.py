@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '../ui/hm_window.ui'
 #
-# Created: Fri Feb 17 16:11:55 2012
+# Created: Mon Feb 20 12:57:47 2012
 #      by: PyQt4 UI code generator 4.8.5
 #
 # WARNING! All changes made in this file will be lost!
@@ -63,7 +63,7 @@ class Ui_MainWindow(object):
         self.widgetCloseButton.setGeometry(QtCore.QRect(190, 10, 31, 23))
         self.widgetCloseButton.setText(_fromUtf8(""))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(_fromUtf8("../../../../../usr/share/icons/oxygen/16x16/actions/dialog-close.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(_fromUtf8("../images/dialog-close.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.widgetCloseButton.setIcon(icon)
         self.widgetCloseButton.setObjectName(_fromUtf8("widgetCloseButton"))
         self.snapshotButton = QtGui.QPushButton(self.centralwidget)
@@ -88,3 +88,4 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         pass
+
