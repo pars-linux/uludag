@@ -5,7 +5,7 @@ Generates INSERT SQL Statements for each package-file statement and
 appends these statements at every 50 package into a file.
 """
 
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 

@@ -461,7 +461,7 @@ Following is the actions.py script of joe package as an example:
 \end_layout
 
 \begin_layout LyX-Code
-#!/usr/bin/python
+#!/usr/bin/env python
 \end_layout
 
 \begin_layout LyX-Code

@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # System
 import socket, time, string, sys, urlparse
 

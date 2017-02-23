@@ -35,7 +35,7 @@ pspecTemplate = u"""<?xml version="1.0" encoding="utf-8" standalone="no"?>
 </PISI>
 """
 
-actionspyTemplate = u"""#!/usr/bin/python
+actionspyTemplate = u"""#!/usr/bin/env python
 # -*- coding: utf-8 -*-·
 #
 # Copyright 2005 TUBITAK/UEKAE

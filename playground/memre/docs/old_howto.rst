@@ -151,7 +151,7 @@ actions.py değişiklikleri
 -------------------------
     İlk actions.py ler şu aşağıdaki gibiydi::
 
-        #!/usr/bin/python
+        #!/usr/bin/env python
         # -*- coding: utf-8 -*-
         #
         # Copyright 2005-2009 TUBITAK/UEKAE
@@ -216,7 +216,7 @@ actions.py değişiklikleri
 
     Bu değişiklik sonrasında actions.py ler şu hale geldiler::
 
-        #!/usr/bin/python
+        #!/usr/bin/env python
         # -*- coding: utf-8 -*-
         #
         # Copyright 2005-2010 TUBITAK/UEKAE
@@ -302,7 +302,7 @@ actions.py değişiklikleri
     paket üzerinde çok az değişiklik yaparak arm için derlenebilir yapabilirsiniz. Örnek bir actions.py aşağıdaki
     gibidir::
 
-        #!/usr/bin/python
+        #!/usr/bin/env python
         # -*- coding: utf-8 -*-
         #
         # Copyright 2005-2010 TUBITAK/UEKAE
@@ -557,7 +557,7 @@ glibc ve ``isystem`` sorunu
        olmayabilir oe patchleri, dikkat etmek lazım). sonuç olarak da actions.py de şu tarz girdiler yapmak
        zorunda kalabilirsiniz::
 
-            #!/usr/bin/python
+            #!/usr/bin/env python
             # -*- coding: utf-8 -*-
             #
             # Copyright 2010 TUBITAK/UEKAE

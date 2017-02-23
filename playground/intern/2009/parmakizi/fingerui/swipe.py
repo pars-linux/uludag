@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """swipe finger dialog."""
 from PyQt4.QtCore import Qt

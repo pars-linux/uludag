@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 from tabbed import Ui_MainWindow
 import sys
 from PyQt4 import QtGui

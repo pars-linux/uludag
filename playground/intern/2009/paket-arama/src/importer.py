@@ -1,5 +1,5 @@
 """Imports the given compressed file (bz2) into mysql database"""
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import os

@@ -1206,7 +1206,7 @@ class _ApportReportTest(unittest.TestCase):
 
         # check correct handling of interpreted executables: python
         (fd, testscript) = tempfile.mkstemp()
-        os.write(fd, '''#!/usr/bin/python
+        os.write(fd, '''#!/usr/bin/env python
 import sys
 sys.stdin.readline()
 ''')

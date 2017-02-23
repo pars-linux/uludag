@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 '''the various package hooks.'''
 
 import unittest, subprocess, tempfile, os, shutil, os.path, sys, optparse

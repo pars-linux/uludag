@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 '''Test crash-digger.'''
 
 import unittest, subprocess, tempfile, os, shutil, os.path, time, signal

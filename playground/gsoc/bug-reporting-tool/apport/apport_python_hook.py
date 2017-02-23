@@ -135,7 +135,7 @@ if __name__ == '__main__':
             else:
                 (fd, script) = tempfile.mkstemp(dir=apport.fileutils.report_dir)
             try:
-                os.write(fd, '''#!/usr/bin/python
+                os.write(fd, '''#!/usr/bin/env python
 def func(x):
     raise Exception, 'This should happen.'
 
@@ -292,7 +292,7 @@ func(42)
             ifpath = os.path.expanduser(apport.report._ignore_file)
             orig_ignore_file = None
             try:
-                os.write(fd, '''#!/usr/bin/python
+                os.write(fd, '''#!/usr/bin/env python
 def func(x):
     raise Exception, 'This should happen.'
 

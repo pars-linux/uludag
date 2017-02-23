@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """finger-manager gui."""
 from PyQt4.QtCore import pyqtSignature, SIGNAL, QEventLoop

@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
 # Bugzilla tool for Pardus. I'm really bored with other distro's tools.

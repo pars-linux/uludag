@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 # Test for mkdir -p /var/pisi/package-1.2.3/install/usr/lib problem
 #

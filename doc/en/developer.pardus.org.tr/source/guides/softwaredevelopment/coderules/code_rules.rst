@@ -742,7 +742,7 @@ No::
 Shebang Line
 ------------
 
-All .py files (except __init__.py package files) should begin with a #!/usr/bin/python<version> shebang line.
+All .py files (except __init__.py package files) should begin with a #!/usr/bin/env python<version> shebang line.
 
 Always use the most specific version that you can to ensure compatibility. For examples, if your program uses a language feature that that first appeared in Python 2.4, use /usr/bin/python2.4 (or something newer) instead of /usr/bin/python2. Otherwise, your program might not behave the way you expect it to, because the interpreter uses an older version of the language.
 

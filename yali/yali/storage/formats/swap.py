@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from parted import PARTITION_SWAP, fileSystemType
 import gettext

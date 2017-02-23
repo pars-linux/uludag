@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 import tempfile, shutil, os.path, os, subprocess, signal, time, stat, sys
 import resource, errno

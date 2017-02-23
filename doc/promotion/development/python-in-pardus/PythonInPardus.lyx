@@ -203,7 +203,7 @@ In the official repository, there are 32641 lines (where 8044 of them are
 \end_layout
 
 \begin_layout LyX-Code
-#!/usr/bin/python
+#!/usr/bin/env python
 \newline
 # -*- coding: utf-8 -*-
 \newline

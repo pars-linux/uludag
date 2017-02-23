@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#!/usr/bin/python
+#!/usr/bin/env python
 
 '''This is the Build Queue file. This controls the build queue for images.
 This is to be run as service externally.

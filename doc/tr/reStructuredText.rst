@@ -395,7 +395,7 @@ Değişmesi istenmeyen kod parçacıkları \:: ile birlikte yazılabilir. Yazıl
     Aşağıdaki örnek actions.py dosyasını inceleyebilirsiniz:
     ::
 
-        #!/usr/bin/python
+        #!/usr/bin/env python
         # -*- coding: utf-8 -*-
         #
         # Licensed under the GNU General Public License, version 2.
@@ -419,7 +419,7 @@ Değişmesi istenmeyen kod parçacıkları \:: ile birlikte yazılabilir. Yazıl
 Aşağıdaki örnek actions.py dosyasını inceleyebilirsiniz:
 ::
 
-    #!/usr/bin/python
+    #!/usr/bin/env python
     # -*- coding: utf-8 -*-
     #
     # Licensed under the GNU General Public License, version 2.
